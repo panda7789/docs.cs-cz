@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 97f15656-8677-4079-8553-a1d8603355d6
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: f4cea67587e4a33b4b9f8cbaa23cb7d299004a46
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e7b3d5bd53bb9e4d6b897bfbf109c1f7307224cd
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67736157"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74442504"
 ---
 # <a name="inotifysink2onsynccallout-method"></a>INotifySink2::OnSyncCallOut – metoda
-Získá vyvolán při volání je navýšení kapacity.  
+Gets invoked when a call is out.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,19 +38,19 @@ HRESULT OnSyncCallOut
   
 ## <a name="parameters"></a>Parametry  
  `in_CallID`  
- [in] ID volání, které je navýšení kapacity. Zobrazit [call_id – struktura](../../../../docs/framework/unmanaged-api/diagnostics/call-id-structure.md).  
+ [in] ID of the call that is out. See [CALL_ID Structure](../../../../docs/framework/unmanaged-api/diagnostics/call-id-structure.md).  
   
  `out_ppBuffer`  
- [out] Volání vyrovnávací paměti.  
+ [out] Call buffer.  
   
  `out_pBufferSize`  
- [out] Velikost vyrovnávací paměti volání, v bajtech.  
+ [out] Size of the call buffer, in bytes.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda uspěje.  
+ S_OK if the method succeeds.  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** ProtocolNotify2.idl  
+ **Header:** ProtocolNotify2.idl  
   
 ## <a name="see-also"></a>Viz také:
 

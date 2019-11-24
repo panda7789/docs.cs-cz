@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 3ef841c2-cade-42ee-ba34-2ef91d6d0879
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ba24f5394ef8fb31d8bfa4e74ac59e7bd4af86d8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 12f31d0bf224e38418818122dad3586ec687b2ad
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67769860"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448574"
 ---
 # <a name="corsymaddrkind-enumeration"></a>CorSymAddrKind – výčet
-Určuje typ přidávané adresy paměti.  
+Indicates the type of memory address.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -48,19 +46,19 @@ typedef enum CorSymAddrKind
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`ADDR_IL_OFFSET`|Označuje, Microsoft intermediate language (MSIL) místní proměnná nebo parametr indexu.|  
-|`ADDR_NATIVE_RVA`|Určuje relativní virtuální adresu do modulu.|  
-|`ADDR_NATIVE_REGISTER`|Označuje registru procesoru.|  
-|`ADDR_NATIVE_REGREL`|Označuje, že první adresa registru a druhá adresa je posun.|  
-|`ADDR_NATIVE_OFFSET`|Určuje posun od základní adresa.|  
-|`ADDR_NATIVE_REGREG`|Označuje, že první adresa je nízká část registru a druhá adresa je vysoké.|  
-|`ADDR_NATIVE_REGSTK`|Označuje, že první adresa je nízká část registru, druhá je vysoká část a třetí je posun.|  
-|`ADDR_NATIVE_STKREG`|Označuje, že první adresa je registr, posun je druhý a třetí je vysoká část do registru.|  
-|`ADDR_BITFIELD`|Označuje, že první adresa je začátek pole a druhý adresa je délka pole.|  
-|`ADDR_NATIVE_ISECTOFFSET`|Označuje, že první adresa je oddíl a druhá adresa je posun.|  
+|`ADDR_IL_OFFSET`|Indicates a Microsoft intermediate language (MSIL) local variable or parameter index.|  
+|`ADDR_NATIVE_RVA`|Indicates a relative virtual address into a module.|  
+|`ADDR_NATIVE_REGISTER`|Indicates a CPU register.|  
+|`ADDR_NATIVE_REGREL`|Indicates that the first address is a register and the second address is an offset.|  
+|`ADDR_NATIVE_OFFSET`|Indicates an offset from a base address.|  
+|`ADDR_NATIVE_REGREG`|Indicates that the first address is the low portion of a register, and the second address is the high portion.|  
+|`ADDR_NATIVE_REGSTK`|Indicates that the first address is the low portion of a register, the second is the high portion, and the third is an offset.|  
+|`ADDR_NATIVE_STKREG`|Indicates that the first address is a register, the second is an offset, and the third is the high portion of the register.|  
+|`ADDR_BITFIELD`|Indicates that the first address is the start of a field and the second address is the field length.|  
+|`ADDR_NATIVE_ISECTOFFSET`|Indicates that the first address is the section and the second address is an offset.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** CorSym.idl, CorSym.h  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -14,29 +14,27 @@ helpviewer_keywords:
 ms.assetid: 37527a84-4b03-4f08-8135-94d898599089
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a6f514cc070a0a38eb09a5387efc8611100765b5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e4a415b21e3980e7603319d7acbb3831462fac9e
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69944100"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74449294"
 ---
 # <a name="isymunmanagedbinder3-interface"></a>ISymUnmanagedBinder3 – rozhraní
-Rozšiřuje rozhraní pořadače symbolů. Získejte toto rozhraní voláním `QueryInterface` objektu, který `ISymUnmanagedBinder` implementuje rozhraní.  
+Extends the symbol binder interface. Obtain this interface by calling `QueryInterface` on an object that implements the `ISymUnmanagedBinder` interface.  
   
 > [!IMPORTANT]
-> Je bezpečnostním rizikem k otevření souboru programu databáze (PDB) z nedůvěryhodného zdroje.  
+> It is a security risk to open a program database (PDB) file from an untrusted source.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[GetReaderFromCallback – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder3-getreaderfromcallback-method.md)|Umožňuje uživateli implementovat nebo dodávkovat prostřednictvím zpětného volání `IID_IDiaReadExeAtRVACallback` buď `IID_IDiaReadExeAtOffsetCallback` nebo, aby získal informace adresáře ladění z paměti.|  
+|[GetReaderFromCallback – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder3-getreaderfromcallback-method.md)|Allows the user to implement or supply via callback either an `IID_IDiaReadExeAtRVACallback` or `IID_IDiaReadExeAtOffsetCallback` to obtain the Debug directory information from memory|  
   
 ## <a name="requirements"></a>Požadavky  
- **Hlaviček** CorSym.idl, CorSym.h  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Viz také:
 

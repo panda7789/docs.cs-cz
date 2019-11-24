@@ -6,43 +6,43 @@ helpviewer_keywords:
 - UI Automation, server-side provider implementation
 - provider implementation, UI Automation
 ms.assetid: 6acc6d08-bd67-4e2e-915c-9c1d34eb86fe
-ms.openlocfilehash: eb7156e0e2794fb7cb18e7bfce0e8488d0b145c3
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 35754d49bf223e7afcdec32e8b24cfb749f48aa6
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71042768"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74446845"
 ---
 # <a name="server-side-ui-automation-provider-implementation"></a>Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru
 
 > [!NOTE]
-> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované <xref:System.Windows.Automation> v oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API služby Windows Automation: Automatizace](https://go.microsoft.com/fwlink/?LinkID=156746)uživatelského rozhraní.
+> This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace. For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](/windows/win32/winauto/entry-uiauto-win32).
 
-Tato část popisuje, jak implementovat zprostředkovatele automatizace uživatelského rozhraní na straně serveru pro vlastní ovládací prvek.
+This section describes how to implement a server-side UI Automation provider for a custom control.
 
-Implementace prvků Windows Presentation Foundation (WPF) a[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] neelementů (například těch, které jsou navrženy pro [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]), se liší od zásad. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]elementy poskytují podporu pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídu odvozenou z. <xref:System.Windows.Automation.Peers.AutomationPeer> Jiné než[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] prvky poskytují podporu prostřednictvím implementací rozhraní poskytovatele.
+The implementation for Windows Presentation Foundation (WPF) elements and non-[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] elements (such as those designed for [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]) is fundamentally different. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] elements provide support for [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] through a class derived from <xref:System.Windows.Automation.Peers.AutomationPeer>. Non-[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] elements provide support through implementations of provider interfaces.
 
 <a name="Security_Considerations"></a>
 
 ## <a name="security-considerations"></a>Důležité informace o zabezpečení
 
-Poskytovatelé by měli být zapsáni tak, aby mohli pracovat v prostředí s částečným vztahem důvěryhodnosti. Vzhledem k tomu, že UIAutomationClient. dll není nakonfigurován tak, aby běžel v rámci částečné důvěryhodnosti, váš kód poskytovatele by neměl odkazovat na toto sestavení. Pokud ano, může kód běžet v prostředí s plnou důvěryhodností, ale pak selže v prostředí s částečnou důvěryhodností.
+Providers should be written so that they can work in a partial-trust environment. Because UIAutomationClient.dll is not configured to run under partial trust, your provider code should not reference that assembly. If it does so, the code may run in a full-trust environment but then fail in a partial-trust environment.
 
-Konkrétně nepoužívejte pole z tříd v UIAutomationClient. dll, jako jsou například v <xref:System.Windows.Automation.AutomationElement>. Místo toho použijte ekvivalentní pole z tříd v UIAutomationTypes. dll, například <xref:System.Windows.Automation.AutomationElementIdentifiers>.
+In particular, do not use fields from classes in UIAutomationClient.dll such as those in <xref:System.Windows.Automation.AutomationElement>. Instead, use the equivalent fields from classes in UIAutomationTypes.dll, such as <xref:System.Windows.Automation.AutomationElementIdentifiers>.
 
 <a name="Provider_Implementation_by_WPF_Elements"></a>
 
-## <a name="provider-implementation-by-windows-presentation-foundation-elements"></a>Implementace poskytovatele pomocí Windows Presentation Foundationch prvků
+## <a name="provider-implementation-by-windows-presentation-foundation-elements"></a>Provider Implementation by Windows Presentation Foundation Elements
 
-Další informace o tomto tématu naleznete v tématu [automatizace uživatelského rozhraní vlastního ovládacího prvku WPF](../wpf/controls/ui-automation-of-a-wpf-custom-control.md).
+For more information on this topic, please see [UI Automation of a WPF Custom Control](../wpf/controls/ui-automation-of-a-wpf-custom-control.md).
 
 <a name="Provider_Implementation_by_non_WPF_Elements"></a>
 
-## <a name="provider-implementation-by-non-wpf-elements"></a>Implementace poskytovatele pomocí elementů, které nejsou WPF
+## <a name="provider-implementation-by-non-wpf-elements"></a>Provider Implementation by non-WPF Elements
 
-Vlastní ovládací prvky, které nejsou součástí [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] rozhraní, ale které jsou napsány ve spravovaném kódu (nejčastěji se [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] jedná o ovládací prvky), poskytují podporu pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] implementující rozhraní. Každý prvek musí implementovat alespoň jedno rozhraní uvedené v první tabulce v následující části. Kromě toho, pokud prvek podporuje jeden nebo více vzorů ovládacích prvků, musí implementovat příslušné rozhraní pro každý model ovládacího prvku.
+Custom controls that are not part of the [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] framework, but that are written in managed code (most often these are [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] controls), provide support for [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] by implementing interfaces. Every element must implement at least one of the interfaces listed in the first table in the next section. In addition, if the element supports one or more control patterns, it must implement the appropriate interface for each control pattern.
 
-Váš [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] projekt poskytovatele musí odkazovat na následující sestavení:
+Your [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] provider project must reference the following assemblies:
 
 - UIAutomationProviders.dll
 
@@ -52,47 +52,47 @@ Váš [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomati
 
 <a name="Provider_Interfaces"></a>
 
-### <a name="provider-interfaces"></a>Rozhraní poskytovatele
+### <a name="provider-interfaces"></a>Provider Interfaces
 
-Každý [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] zprostředkovatel musí implementovat jedno z následujících rozhraní.
-
-|Rozhraní|Popis|
-|---------------|-----------------|
-|<xref:System.Windows.Automation.Provider.IRawElementProviderSimple>|Poskytuje funkce pro jednoduchý ovládací prvek hostovaný v okně, včetně podpory vzorů a vlastností ovládacích prvků.|
-|<xref:System.Windows.Automation.Provider.IRawElementProviderFragment>|Dědí z <xref:System.Windows.Automation.Provider.IRawElementProviderSimple>. Přidává funkce pro element ve složitém ovládacím prvku, včetně navigace v rámci fragmentu, nastavení fokusu a vrácení ohraničujícího obdélníku elementu.|
-|<xref:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot>|Dědí z <xref:System.Windows.Automation.Provider.IRawElementProviderFragment>. Přidává funkce pro kořenový prvek ve složitém ovládacím prvku, včetně vyhledání podřízeného prvku na zadaných souřadnicích a nastavení stavu fokusu pro celý ovládací prvek.|
-
-Následující rozhraní poskytují přidané funkce, ale není nutné je implementovat.
+Every [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] provider must implement one of the following interfaces.
 
 |Rozhraní|Popis|
 |---------------|-----------------|
-|<xref:System.Windows.Automation.Provider.IRawElementProviderAdviseEvents>|Umožňuje poskytovateli sledovat požadavky na události.|
-|<xref:System.Windows.Automation.Provider.IRawElementProviderHwndOverride>|Umožňuje přemístit prvky založené na oknech v rámci [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu fragmentu.|
+|<xref:System.Windows.Automation.Provider.IRawElementProviderSimple>|Provides functionality for a simple control hosted in a window, including support for control patterns and properties.|
+|<xref:System.Windows.Automation.Provider.IRawElementProviderFragment>|Inherits from <xref:System.Windows.Automation.Provider.IRawElementProviderSimple>. Adds functionality for an element in a complex control, including navigation within the fragment, setting focus, and returning the bounding rectangle of the element.|
+|<xref:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot>|Inherits from <xref:System.Windows.Automation.Provider.IRawElementProviderFragment>. Adds functionality for the root element in a complex control, including locating a child element at specified coordinates and setting the focus state for the entire control.|
 
-Všechna ostatní rozhraní v <xref:System.Windows.Automation.Provider> oboru názvů jsou pro podporu vzorů ovládacích prvků.
+The following interfaces provide added functionality but are not required to be implemented.
+
+|Rozhraní|Popis|
+|---------------|-----------------|
+|<xref:System.Windows.Automation.Provider.IRawElementProviderAdviseEvents>|Enables the provider to track requests for events.|
+|<xref:System.Windows.Automation.Provider.IRawElementProviderHwndOverride>|Enables repositioning of window-based elements within the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree of a fragment.|
+
+All other interfaces in the <xref:System.Windows.Automation.Provider> namespace are for control pattern support.
 
 <a name="Requirements_for_Non_WPF_Providers"></a>
 
-### <a name="requirements-for-non-wpf-providers"></a>Požadavky na zprostředkovatele jiných výrobců než WPF
+### <a name="requirements-for-non-wpf-providers"></a>Requirements for Non-WPF Providers
 
-Aby bylo možné komunikovat s [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], musí váš ovládací prvek implementovat následující hlavní oblasti funkčnosti:
+In order to communicate with [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], your control must implement the following main areas of functionality:
 
 |Funkce|Implementace|
 |-------------------|--------------------|
-|Vystavení poskytovatele pro[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|V reakci na zprávu WM_GETOBJECT odeslanou oknu ovládacího prvku vrátí objekt, který implementuje <xref:System.Windows.Automation.Provider.IRawElementProviderSimple> (nebo odvozené rozhraní). U fragmentů musí být to zprostředkovatel pro kořen fragmentu.|
-|Zadejte hodnoty vlastností.|Implementujte <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPropertyValue%2A> pro zadání nebo přepsání hodnot.|
-|Povolení interakce klienta s ovládacím prvkem|Implementujte rozhraní, která podporují vzory ovládacích prvků <xref:System.Windows.Automation.Provider.IInvokeProvider>, jako je například. Vrátí tyto poskytovatele vzorů v implementaci <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPatternProvider%2A>.|
-|Vyvolat události|Zavolejte jednu ze statických metod <xref:System.Windows.Automation.Provider.AutomationInteropProvider> pro k vyvolání události, na kterou může klient naslouchat.|
-|Povolit navigaci a zaostření v rámci fragmentu|Implementujte <xref:System.Windows.Automation.Provider.IRawElementProviderFragment> pro každý prvek v rámci fragmentu. (Není nutné pro prvky, které nejsou součástí fragmentu.)|
-|Povolit zaostření a umístění podřízeného prvku v fragmentu|Implementujte <xref:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot>. (Není nutné pro prvky, které nefragmentují kořeny.)|
+|Expose the provider to [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|In response to a WM_GETOBJECT message sent to the control window, return the object that implements <xref:System.Windows.Automation.Provider.IRawElementProviderSimple> (or a derived interface). For fragments, this must be the provider for the fragment root.|
+|Provide property values|Implement <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPropertyValue%2A> to provide or override values.|
+|Enable the client to interact with the control|Implement interfaces that support control patterns, such as <xref:System.Windows.Automation.Provider.IInvokeProvider>. Return these pattern providers in your implementation of <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPatternProvider%2A>.|
+|Raise events|Call one of the static methods of <xref:System.Windows.Automation.Provider.AutomationInteropProvider> to raise an event that a client can listen for.|
+|Enable navigation and focusing within a fragment|Implement <xref:System.Windows.Automation.Provider.IRawElementProviderFragment> for each element within the fragment. (Not necessary for elements that are not part of a fragment.)|
+|Enable focusing and location of child element in a fragment|Implement <xref:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot>. (Not necessary for elements that are not fragment roots.)|
 
 <a name="Property_Values_in_Non_WPF_Providers"></a>
 
-### <a name="property-values-in-non-wpf-providers"></a>Hodnoty vlastností v jiných zprostředkovatelích než WPF
+### <a name="property-values-in-non-wpf-providers"></a>Property Values in Non-WPF Providers
 
-[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]zprostředkovatelé pro vlastní ovládací prvky musí podporovat některé vlastnosti, které může použít systém automatizace a také klientské aplikace. U elementů, které jsou hostovány ve Windows (HWND [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ), může aplikace načíst některé vlastnosti z výchozího poskytovatele, ale musí si od vlastního poskytovatele získat jiné.
+[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] providers for custom controls must support certain properties that can be used by the automation system as well as by client applications. For elements that are hosted in windows (HWNDs), [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] can retrieve some properties from the default window provider, but must obtain others from the custom provider.
 
-Zprostředkovatelé pro ovládací prvky na bázi HWND nemusejí obvykle zadávat následující vlastnosti (identifikované hodnotami polí):
+Providers for HWND based controls do not usually need to provide the following properties (identified by field values):
 
 - <xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>
 
@@ -115,79 +115,79 @@ Zprostředkovatelé pro ovládací prvky na bázi HWND nemusejí obvykle zadáva
 - <xref:System.Windows.Automation.AutomationElementIdentifiers.RuntimeIdProperty>
 
 > [!NOTE]
-> <xref:System.Windows.Automation.AutomationElementIdentifiers.RuntimeIdProperty> Z okna se získá jednoduchý element nebo kořen fragmentu, který je hostovaný v okně. fragmenty prvků pod kořenem (například položky seznamu v poli se seznamem) musí poskytovat své vlastní identifikátory. Další informace naleznete v tématu <xref:System.Windows.Automation.Provider.IRawElementProviderFragment.GetRuntimeId%2A>.
+> The <xref:System.Windows.Automation.AutomationElementIdentifiers.RuntimeIdProperty> of a simple element or fragment root hosted in a window is obtained from the window; however, fragment elements below the root (such as list items in a list box) must provide their own identifiers. Další informace najdete v tématu <xref:System.Windows.Automation.Provider.IRawElementProviderFragment.GetRuntimeId%2A>.
 >
-> Měla by se vrátit pro poskytovatele hostované [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] v ovládacím prvku. <xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty> V takovém případě nemůže být ve výchozím zprostředkovateli Windows načtena správná hodnota.
+> The <xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty> should be returned for providers hosted in a [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] control. In this case, the default window provider may be unable to retrieve the correct value.
 >
-> <xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty> Je obvykle dodán poskytovatelem hostitele. Například pokud je vlastní ovládací prvek odvozen z <xref:System.Windows.Forms.Control>, název je odvozen `Text` z vlastnosti ovládacího prvku.
+> The <xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty> is usually supplied by the host provider. For example, if a custom control is derived from <xref:System.Windows.Forms.Control>, the name is derived from the `Text` property of the control.
 
-Příklad kódu naleznete v tématu [návratové vlastnosti ze zprostředkovatele automatizace uživatelského rozhraní](return-properties-from-a-ui-automation-provider.md).
+For example code, see [Return Properties from a UI Automation Provider](return-properties-from-a-ui-automation-provider.md).
 
 <a name="Events_in_Non_WPF_Providers"></a>
 
-### <a name="events-in-non-wpf-providers"></a>Události v jiných zprostředkovatelích než WPF
+### <a name="events-in-non-wpf-providers"></a>Events in Non-WPF Providers
 
-[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]Poskytovatelé by měli vyvolat události, které upozorňují klientské aplikace na změny ve stavu uživatelského rozhraní. Následující metody slouží k vyvolání událostí.
-
-|Metoda|Popis|
-|------------|-----------------|
-|<xref:System.Windows.Automation.Provider.AutomationInteropProvider.RaiseAutomationEvent%2A>|Vyvolává různé události, včetně událostí aktivovaných vzorci ovládacích prvků.|
-|<xref:System.Windows.Automation.Provider.AutomationInteropProvider.RaiseAutomationPropertyChangedEvent%2A>|Vyvolá událost, když dojde [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ke změně vlastnosti.|
-|<xref:System.Windows.Automation.Provider.AutomationInteropProvider.RaiseStructureChangedEvent%2A>|Vyvolá událost při změně struktury [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu, například odebráním nebo přidáním prvku.|
-
-Účelem události je upozornit klienta na něco, co se koná v rámci [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)], bez ohledu na to, jestli je aktivita aktivovaná [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] samotným systémem. Například událost identifikovaná <xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent> by měla být vyvolána při každém vyvolání ovládacího prvku, buď prostřednictvím přímého vstupu uživatele nebo voláním <xref:System.Windows.Automation.InvokePattern.Invoke%2A>klientské aplikace.
-
-Pro optimalizaci výkonu může poskytovatel selektivně vyvolat události nebo vyvolat žádné události, pokud není pro jejich příjem registrována žádná klientská aplikace. Pro optimalizaci se používají následující metody.
+[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] providers should raise events to notify client applications of changes in the state of the UI. The following methods are used to raise events.
 
 |Metoda|Popis|
 |------------|-----------------|
-|<xref:System.Windows.Automation.Provider.AutomationInteropProvider.ClientsAreListening%2A>|Tato statická vlastnost určuje, zda se některé klientské aplikace přihlásily k [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] odběru událostí.|
-|<xref:System.Windows.Automation.Provider.IRawElementProviderAdviseEvents>|Implementace poskytovatele tohoto rozhraní v kořenovém adresáři fragmentů umožňuje, aby bylo doporučeno, aby klienti zaregistrovali a zrušili registraci obslužných rutin událostí pro události v fragmentu.|
+|<xref:System.Windows.Automation.Provider.AutomationInteropProvider.RaiseAutomationEvent%2A>|Raises various events, including events triggered by control patterns.|
+|<xref:System.Windows.Automation.Provider.AutomationInteropProvider.RaiseAutomationPropertyChangedEvent%2A>|Raises an event when a [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] property has changed.|
+|<xref:System.Windows.Automation.Provider.AutomationInteropProvider.RaiseStructureChangedEvent%2A>|Raises an event when the structure of the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree has changed; for example, by the removal or addition of an element.|
+
+The purpose of an event is to notify the client of something taking place in the [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)], whether or not the activity is triggered by the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] system itself. For example, the event identified by <xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent> should be raised whenever the control is invoked, either through direct user input or by the client application calling <xref:System.Windows.Automation.InvokePattern.Invoke%2A>.
+
+To optimize performance, a provider can selectively raise events, or raise no events at all if no client application is registered to receive them. The following methods are used for optimization.
+
+|Metoda|Popis|
+|------------|-----------------|
+|<xref:System.Windows.Automation.Provider.AutomationInteropProvider.ClientsAreListening%2A>|This static property specifies whether any client applications have subscribed to [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] events.|
+|<xref:System.Windows.Automation.Provider.IRawElementProviderAdviseEvents>|The provider's implementation of this interface on a fragment root enables it to be advised when clients register and unregister event handlers for events on the fragment.|
 
 <a name="Non_WPF_Provider_Navigation"></a>
 
-### <a name="non-wpf-provider-navigation"></a>Navigace od jiného poskytovatele než WPF
+### <a name="non-wpf-provider-navigation"></a>Non-WPF Provider Navigation
 
-Poskytovatelé jednoduchých ovládacích prvků, jako je vlastní tlačítko hostovaná v okně (HWND), nemusejí podporovat navigaci v rámci [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu. Navigace do a z prvku je zpracována výchozím zprostředkovatelem pro hostitelské okno, které je určeno v implementaci <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.HostRawElementProvider%2A>. Při implementaci poskytovatele pro komplexní vlastní ovládací prvek je však nutné podporovat navigaci mezi kořenovým uzlem fragmentu a jeho následníky a mezi uzly na stejné úrovni.
+Providers for simple controls such as a custom button hosted in a window (HWND) do not need to support navigation within the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree. Navigation to and from the element is handled by the default provider for the host window, which is specified in the implementation of <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.HostRawElementProvider%2A>. When you implement a provider for a complex custom control, however, you must support navigation between the root node of the fragment and its descendants, and between sibling nodes.
 
 > [!NOTE]
-> Elementy jiné fragmenty než kořen musí vracet `null` odkaz z <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.HostRawElementProvider%2A>, protože nejsou přímo hostovány v okně a žádný výchozí zprostředkovatel nemůže podporovat navigaci do a z nich.
+> Elements of a fragment other than the root must return a `null` reference  from <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.HostRawElementProvider%2A>, because they are not directly hosted in a window, and no default provider can support navigation to and from them.
 
-Struktura fragmentu je určena vaší implementací <xref:System.Windows.Automation.Provider.IRawElementProviderFragment.Navigate%2A>. Pro každý možný směr z každého fragmentu vrátí tato metoda objekt Provider pro element v tomto směru. Pokud v tomto směru není žádný element, metoda vrátí `null` referenci.
+The structure of the fragment is determined by your implementation of <xref:System.Windows.Automation.Provider.IRawElementProviderFragment.Navigate%2A>. For each possible direction from each fragment, this method returns the provider object for the element in that direction. If there is no element in that direction, the method returns a `null` reference.
 
-Kořen fragmentu podporuje navigaci pouze na podřízené elementy. Například seznam pole vrátí první položku v seznamu, když je <xref:System.Windows.Automation.Provider.NavigateDirection.FirstChild>směr a poslední položka, když je <xref:System.Windows.Automation.Provider.NavigateDirection.LastChild>směr. Kořen fragmentu nepodporuje navigaci na nadřazený objekt nebo na stejné úrovni. to zpracovává poskytovatel hostitelského okna.
+The fragment root supports navigation only to child elements. For example, a list box returns the first item in the list when the direction is <xref:System.Windows.Automation.Provider.NavigateDirection.FirstChild>, and the last item when the direction is <xref:System.Windows.Automation.Provider.NavigateDirection.LastChild>. The fragment root does not support navigation to a parent or siblings; this is handled by the host window provider.
 
-Prvky fragmentu, které nejsou kořenem, musí podporovat navigaci na nadřazený objekt a na všechny členy na stejné úrovni a podřízené objekty.
+Elements of a fragment that are not the root must support navigation to the parent, and to any siblings and children they have.
 
 <a name="Non_WPF_Provider_Reparenting"></a>
 
-### <a name="non-wpf-provider-reparenting"></a>Opětovné řazení poskytovatele WPF Provider
+### <a name="non-wpf-provider-reparenting"></a>Non-WPF Provider Reparenting
 
-Automaticky otevíraná okna jsou ve skutečnosti okna nejvyšší úrovně, takže ve [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromové struktuře se ve výchozím nastavení zobrazí jako podřízené položky plochy. V mnoha případech jsou však automaticky otevíraná okna logicky podřízeny nějakému jinému ovládacímu prvku. Například rozevírací seznam pole se seznamem je logicky podřízenou položkou pole se seznamem. Podobně automaticky otevírané okno nabídky je logicky podřízenou položkou nabídky. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]poskytuje podporu pro nadřízená překryvná okna tak, aby se zobrazila jako podřízená položka přidruženého ovládacího prvku.
+Pop-up windows are actually top-level windows, and so by default appear in the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree as children of the desktop. In many cases, however, pop-up windows are logically children of some other control. For example, the drop-down list of a combo box is logically a child of the combo box. Similarly, a menu pop-up window is logically a child of the menu. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] provides support to reparent pop-up windows so that they appear to be children of the associated control.
 
-Postup pro opětovné vytvoření nadřazeného okna:
+To reparent a pop-up window:
 
-1. Vytvořte poskytovatele pro místní okno. To vyžaduje, aby byla třída místního okna známa předem.
+1. Create a provider for the pop-up window. This requires that the class of the pop-up window is known in advance.
 
-2. Implementujte všechny vlastnosti a vzory obvyklým způsobem pro automaticky otevírané okno, jako by šlo o ovládací prvek sám o sobě.
+2. Implement all properties and patterns as usual for that pop-up, as though it were a control in its own right.
 
-3. Implementujte <xref:System.Windows.Automation.Provider.AutomationInteropProvider.HostProviderFromHandle%2A>vlastnost tak, aby vracela hodnotu získanou z, kde parametr je obslužná rutina okna v místním okně. <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.HostRawElementProvider%2A>
+3. Implement the <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.HostRawElementProvider%2A> property so that it returns the value obtained from <xref:System.Windows.Automation.Provider.AutomationInteropProvider.HostProviderFromHandle%2A>, where the parameter is the window handle of the pop-up window.
 
-4. Implementujte <xref:System.Windows.Automation.Provider.IRawElementProviderFragment.Navigate%2A> pro automaticky otevírané okno a jeho nadřazený ovládací prvek tak, aby navigace byla správně zpracována z logického nadřazeného objektu na logické podřízené položky a mezi podřízenými položkami na stejné úrovni.
+4. Implement <xref:System.Windows.Automation.Provider.IRawElementProviderFragment.Navigate%2A> for the pop-up window and its parent so that navigation is handled properly from the logical parent to the logical children, and between sibling children.
 
-Když [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] dojde k místnímu oknu, rozpozná, že navigace je přepsána z výchozí hodnoty, a přeskočí v překryvném okně, když se objeví jako podřízená položka plochy. Místo toho bude uzel dosažitelný pouze prostřednictvím fragmentu.
+When [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] encounters the pop-up window, it recognizes that navigation is being overridden from the default, and skips over the pop-up window when it is encountered as a child of the desktop. Instead, the node will only be reachable through the fragment.
 
-Opětovné vytvoření nadřazeného objektu není vhodné pro případy, kdy ovládací prvek může hostovat okno libovolné třídy. Například matrice může hostovat libovolný typ HWND ve svých pásmech. Pro zpracování těchto případů [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] podporuje alternativní forma přemístění HWND, jak je popsáno v následující části.
+Reparenting is not suitable for cases where a control can host a window of any class. For example, a rebar can host any type of HWND in its bands. To handle these cases, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] supports an alternative form of HWND relocation, as described in the next section.
 
 <a name="Non_WPF_Provider_Repositioning"></a>
 
-### <a name="non-wpf-provider-repositioning"></a>Přemístění poskytovatele rozhraní non-WPF
+### <a name="non-wpf-provider-repositioning"></a>Non-WPF Provider Repositioning
 
-[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]fragmenty mohou obsahovat dva nebo více prvků, které jsou obsaženy v okně (HWND). Vzhledem k tomu, že každý HWND má svého vlastního výchozího poskytovatele, který považuje HWND za podřízenou položku obsahující [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] HWND, strom ve výchozím nastavení zobrazí HWND v fragmentu jako podřízené objekty nadřazeného okna. Ve většině případů to je žádoucí chování, ale někdy může vést k záměně, protože se neshoduje s logickou strukturou [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)].
+[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] fragments may contain two or more elements that are each contained in a window (HWND). Because each HWND has its own default provider that considers the HWND to be a child of a containing HWND, the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree will, by default, show the HWNDs in the fragment as children of the parent window. In most cases this is desirable behavior, but sometimes it can lead to confusion because it does not match the logical structure of the [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)].
 
-Dobrým příkladem toho je ovládací prvek matrice. Matrice obsahuje pruhy, z nichž každý může zase obsahovat ovládací prvek založený na HWND, jako je například panel nástrojů, textové pole nebo pole se seznamem. Výchozí zprostředkovatel oken pro matrice HWND uvidí ovládací prvky pruhy HWND jako podřízené a poskytovatel matrice uvidí pásma jako podřízené objekty. Vzhledem k tomu, že zprostředkovatel HWND a poskytovatel matrice pracují v kombinaci a kombinování jejich podřízených prvků, jsou pruhy i ovládací prvky založené na HWND zobrazeny jako podřízené objekty matrice. Logicky by však měly být pouze pruhy zobrazeny jako podřízené položky matrice a každý poskytovatel pásma by měl být spojen s výchozím zprostředkovatelem HWND pro ovládací prvek, který obsahuje.
+A good example of this is a rebar control. A rebar contains bands, each of which can in turn contain an HWND-based control such as a toolbar, an edit box, or a combo box. The default window provider for the rebar HWND sees the band control HWNDs as children, and the rebar provider sees the bands as children. Because the HWND provider and the rebar provider are working in tandem and combining their children, both the bands and the HWND-based controls appear as children of the rebar. Logically, however, only the bands should appear as children of the rebar, and each band provider should be coupled with the default HWND provider for the control it contains.
 
-K tomu je potřeba, aby poskytovatel kořene fragmentu pro matrice vystavil sadu podřízených prvků reprezentujících pásma. Každý panel má jednoho poskytovatele, který může vystavit vlastnosti a vzory. V jeho implementaci <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.HostRawElementProvider%2A>vrátí poskytovatel pásma výchozího zprostředkovatele pro HWND ovládacího prvku, který získá voláním <xref:System.Windows.Automation.Provider.AutomationInteropProvider.HostProviderFromHandle%2A>, předání v popisovači okna ovládacího prvku. Nakonec poskytovatel kořenového prvku fragmentu pro matrice implementuje <xref:System.Windows.Automation.Provider.IRawElementProviderHwndOverride> rozhraní a v jeho <xref:System.Windows.Automation.Provider.IRawElementProviderHwndOverride.GetOverrideProviderForHwnd%2A> implementaci vrátí příslušného poskytovatele pásma pro ovládací prvek obsažený v zadaném HWND.
+To accomplish this, the fragment root provider for the rebar exposes a set of children representing the bands. Each band has a single provider that may expose properties and patterns. In its implementation of <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.HostRawElementProvider%2A>, the band provider returns the default window provider for the control HWND, which it obtains by calling <xref:System.Windows.Automation.Provider.AutomationInteropProvider.HostProviderFromHandle%2A>, passing in the control's window handle. Finally, the fragment root provider for the rebar implements the <xref:System.Windows.Automation.Provider.IRawElementProviderHwndOverride> interface, and in its implementation of <xref:System.Windows.Automation.Provider.IRawElementProviderHwndOverride.GetOverrideProviderForHwnd%2A> it returns the appropriate band provider for the control contained in the specified HWND.
 
 ## <a name="see-also"></a>Viz také:
 

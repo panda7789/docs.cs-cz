@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 634ac28c-a5b7-4fc3-af84-256c24ca8177
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 805ceb60d2ac122df2382656b95b7bf5e7509bfc
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: f6d26abba649b608858fde8beaac750600493869
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70855939"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74442864"
 ---
 # <a name="icorprofilerinfo4getrejitids-method"></a>ICorProfilerInfo4::GetReJITIDs – metoda
-Vrátí pole ID, které identifikují všechny verze rekompilovaných kompilátorů JIT zadané funkce, které jsou stále přiděleny. To zahrnuje verze rekompilovaných funkcí JIT, které byly následně obnoveny, ale nebyly dosud uvolněny (například pokud je stále používána doména aplikace obsahující vrácená funkce).  
+Returns an array of IDs that identify all JIT-recompiled versions of the specified function that are still allocated. This includes JIT-recompiled versions of functions that have been subsequently reverted but not yet freed (for example, when the application domain that contains the reverted function is still in use).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,28 +37,28 @@ HRESULT GetReJITIDs (
   
 ## <a name="parameters"></a>Parametry  
  `functionId`  
- pro `FunctionID` Instance funkce, pro kterou chcete vytvořit výčet verzí.  
+ [in] The `FunctionID` of the function instance for which to enumerate versions.  
   
  `cReJitIds`  
- pro Počet ID rekompilovaných rekompilovaných JIT přidělených `reJitIds` v poli  
+ [in] The number of JIT-recompiled IDs allocated in the `reJitIds` array.  
   
  `pcReJitIds`  
- mimo Skutečný počet rekompilovaných ID JIT.  
+ [out] The actual number of JIT-recompiled IDs.  
   
  `reJitIds`  
- mimo Pole přidělené volajícím, které bude obsahovat ID rekompilovaných JIT pro danou funkci.  
+ [out] A caller-allocated array that will contain the JIT-recompiled IDs for the specified function.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetReJITIDs`Vytvoří výčet aktivních rekompilovaných ID JIT pro danou instanci funkce. Řídí se stejným vzorem použití jako jiné `ICorProfilerInfo` funkce, které přijímají vyrovnávací paměti přidělené volajícím.  
+ `GetReJITIDs` enumerates the active JIT-recompiled IDs for a given function instance. It follows the same usage pattern as other `ICorProfilerInfo` functions that accept caller-allocated buffers.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformu** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlaviček** CorProf.idl, CorProf.h  
+ **Header:** CorProf.idl, CorProf.h  
   
- **Knihovna** CorGuids.lib  
+ **Library:** CorGuids.lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: c9df4087-12b3-46d9-b075-9067dd7805df
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2b46d1f5fb797b74726070ae3cd9814dc46c8f03
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c037b9dce4b7530c952c75122f86335da82e1b27
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778333"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74446027"
 ---
 # <a name="imetadataassemblyimportcloseenum-method"></a>IMetaDataAssemblyImport::CloseEnum – metoda
-Verze odkazu na instanci zadaný výčet.  
+Releases a reference to the specified enumeration instance.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +35,16 @@ void CloseEnum (
   
 ## <a name="parameters"></a>Parametry  
  `hEnum`  
- [in] Instance výčtu bude uzavřen.  
+ [in] The enumeration instance to be closed.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Použít jako prostředek v MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

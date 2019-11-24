@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0fd3bb47-58b5-4083-b241-b9719df7a285
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: edeaefd0792a5cc03ae6d4385ff669a343ffdfc9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 690abec6104f6eed1ad5a0eae9a6b6bb18d35b0d
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778804"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74436685"
 ---
 # <a name="imetadataimportgetuserstring-method"></a>IMetaDataImport::GetUserString – metoda
-Získá reprezentována token metadat zadaného řetězcového literálu.  
+Gets the literal string represented by the specified metadata token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,25 +38,25 @@ HRESULT GetUserString (
   
 ## <a name="parameters"></a>Parametry  
  `stk`  
- [in] Řetězec s tokenem pro vrácení přidružené řetězce pro.  
+ [in] The String token to return the associated string for.  
   
  `szString`  
- [out] Kopie požadovaný řetězec.  
+ [out] A copy of the requested string.  
   
  `cchString`  
- [in] Maximální velikost v širokých znaků požadovaných `szString`.  
+ [in] The maximum size in wide characters of the requested `szString`.  
   
  `pchString`  
- [out] Velikost v široké znaky vráceného `szString`.  
+ [out] The size in wide characters of the returned `szString`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

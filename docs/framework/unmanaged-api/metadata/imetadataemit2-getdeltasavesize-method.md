@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 036db5e7-8211-4645-9a34-03d1a89be955
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 0b0a190ce57091434006421e6d8551c78cbe66b8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 219d3196e3b2125033a23623b7e77e31c6f1ff03
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777168"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74440484"
 ---
 # <a name="imetadataemit2getdeltasavesize-method"></a>IMetaDataEmit2::GetDeltaSaveSize – metoda
-Získá hodnotu, která změnu velikost metadat, která je výsledkem aktuální relace edit-and-continue.  
+Gets a value indicating any change in metadata size that results from the current edit-and-continue session.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +36,19 @@ HRESULT GetDeltaSaveSize (
   
 ## <a name="parameters"></a>Parametry  
  `fSave`  
- [in] Jeden z [corsavesize –](../../../../docs/framework/unmanaged-api/metadata/corsavesize-enumeration.md) hodnoty určující úrovně přesnosti potřeby. Tento parametr je ignorován pro rozhraní .NET Framework verze 2.0.  
+ [in] One of the [CorSaveSize](../../../../docs/framework/unmanaged-api/metadata/corsavesize-enumeration.md) values, indicating the level of precision desired. For the .NET Framework version 2.0, this parameter is ignored.  
   
  `pdwSaveSize`  
- [out] Změna velikosti metadat.  
+ [out] The change in the size of the metadata.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Použít jako prostředek v MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

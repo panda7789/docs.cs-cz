@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: a8624913-2e23-46ad-a0c1-bb8eccbbf20f
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e5de55d74741e9deb33be2f9adf15a970561664b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b0817288040550b5f4c3c4ec063f6a7fdb004137
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779737"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74450062"
 ---
 # <a name="imetadataimportenummethodswithname-method"></a>IMetaDataImport::EnumMethodsWithName – metoda
-Podává výčet metod, které mají se zadaným názvem a typem odkazuje zadaný token TypeDef, která jsou definována.  
+Enumerates methods that have the specified name and that are defined by the type referenced by the specified TypeDef token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,41 +40,41 @@ HRESULT EnumMethodsWithName (
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [out v] Ukazatel na enumerátor. První volání této metody musí mít hodnotu NULL.  
+ [in, out] A pointer to the enumerator. This must be NULL for the first call of this method.  
   
  `cl`  
- [in] Token TypeDef představující typ, jehož metody pro výčet.  
+ [in] A TypeDef token representing the type whose methods to enumerate.  
   
  `szName`  
- [in] Název, který omezuje rozsah výčtu.  
+ [in] The name that limits the scope of the enumeration.  
   
  `rMethods`  
- [out] Pole pro ukládání tokenů MethodDef.  
+ [out] The array used to store the MethodDef tokens.  
   
  `cMax`  
- [in] Maximální velikost `rMethods` pole.  
+ [in] The maximum size of the `rMethods` array.  
   
  `pcTokens`  
- [out] Počet tokenů MethodDef vrácené v `rMethods`.  
+ [out] The number of MethodDef tokens returned in `rMethods`.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda vytváří výčet polí a metod, ale nikoli vlastnosti nebo události. Na rozdíl od [imetadataimport::enummethods –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enummethods-method.md), `EnumMethodsWithName` zahodí všechny tokeny metody, které nemají se zadaným názvem.  
+ This method enumerates fields and methods, but not properties or events. Unlike [IMetaDataImport::EnumMethods](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enummethods-method.md), `EnumMethodsWithName` discards all method tokens that do not have the specified name.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumMethodsWithName` bylo úspěšně vráceno.|  
-|`S_FALSE`|Neexistují žádné tokeny se vytvořit výčet. V takovém případě `pcTokens` je nula.|  
+|`S_OK`|`EnumMethodsWithName` returned successfully.|  
+|`S_FALSE`|There are no tokens to enumerate. In that case, `pcTokens` is zero.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

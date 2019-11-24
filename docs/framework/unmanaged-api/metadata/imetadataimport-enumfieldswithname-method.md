@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 42145e8d-000f-4d0b-ae43-c08201190fa2
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 71a2c7a61d573c1e17d0e8fefcd34d60e05ed3c5
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: b240be3e5b0127de42cea43dd8e89a2cc656b28e
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780473"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74449512"
 ---
 # <a name="imetadataimportenumfieldswithname-method"></a>IMetaDataImport::EnumFieldsWithName – metoda
-Vytvoří výčet FieldDef tokeny zadaného typu se zadaným názvem.  
+Enumerates FieldDef tokens of the specified type with the specified name.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,41 +40,41 @@ HRESULT EnumFieldsWithName (
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [out v] Ukazatel na enumerátor.  
+ [in, out] A pointer to the enumerator.  
   
  `cl`  
- [in] Token typu, jehož pole jsou pro provedení výčtu.  
+ [in] The token of the type whose fields are to be enumerated.  
   
  `szName`  
- [in] Název pole, která omezuje rozsah výčtu.  
+ [in] The field name that limits the scope of the enumeration.  
   
  `rFields`  
- [out] Pole pro ukládání tokenů FieldDef.  
+ [out] Array used to store the FieldDef tokens.  
   
  `cMax`  
- [in] Maximální velikost `rFields` pole.  
+ [in] The maximum size of the `rFields` array.  
   
  `pcTokens`  
- [out] Skutečný počet tokenů FieldDef vrácené v `rFields`.  
+ [out] The actual number of FieldDef tokens returned in `rFields`.  
   
 ## <a name="remarks"></a>Poznámky  
- Na rozdíl od [imetadataimport::enumfields –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumfields-method.md), `EnumFieldsWithName` zahodí všechny tokeny pole, které nemají se zadaným názvem.  
+ Unlike [IMetaDataImport::EnumFields](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumfields-method.md), `EnumFieldsWithName` discards all field tokens that do not have the specified name.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumFieldsWithName` bylo úspěšně vráceno.|  
-|`S_FALSE`|Nejsou žádná pole pro zobrazení výčtu. V takovém případě `pcTokens` je nula.|  
+|`S_OK`|`EnumFieldsWithName` returned successfully.|  
+|`S_FALSE`|There are no fields to enumerate. In that case, `pcTokens` is zero.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 53441f3a-68d2-477c-906e-37c55dfcfb4d
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: afa2d35a193a11360b52bcbdc1d9e5dae16d1c90
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 66186d25e8fee0d6b25c0a2069d46ff9a104c625
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782128"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74450029"
 ---
 # <a name="imetadataimportenummodulerefs-method"></a>IMetaDataImport::EnumModuleRefs – metoda
-Vytvoří výčet Odkaz ModuleRef tokeny, které představují importované moduly.  
+Enumerates ModuleRef tokens that represent imported modules.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,32 +38,32 @@ HRESULT EnumModuleRefs (
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [out v] Ukazatel na enumerátor. První volání této metody musí mít hodnotu NULL.  
+ [in, out] A pointer to the enumerator. This must be NULL for the first call of this method.  
   
  `rModuleRefs`  
- [out] Pole pro ukládání tokenů Odkaz ModuleRef.  
+ [out] The array used to store the ModuleRef tokens.  
   
  `cMax`  
- [in] Maximální velikost `rModuleRefs` pole.  
+ [in] The maximum size of the `rModuleRefs` array.  
   
  `pcModuleRefs`  
- [out] Počet tokenů Odkaz ModuleRef vrácené v `rModuleRefs`.  
+ [out] The number of ModuleRef tokens returned in `rModuleRefs`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumModuleRefs` bylo úspěšně vráceno.|  
-|`S_FALSE`|Neexistují žádné tokeny se vytvořit výčet. V takovém případě `pcModuleRefs` je nula.|  
+|`S_OK`|`EnumModuleRefs` returned successfully.|  
+|`S_FALSE`|There are no tokens to enumerate. In that case, `pcModuleRefs` is zero.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

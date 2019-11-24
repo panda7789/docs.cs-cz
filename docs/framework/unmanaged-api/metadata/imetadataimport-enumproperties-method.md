@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 60573ad7-8821-4721-a068-3f7a6d25926a
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 3c63797b60354b461891f44d32cf1840f7fdcf3d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4fed7dbe4ec8343a3854d1f277e3228b14c0bf21
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67756489"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74450021"
 ---
 # <a name="imetadataimportenumproperties-method"></a>IMetaDataImport::EnumProperties – metoda
-Vytvoří výčet vlastnosti tokeny představující vlastnosti typu odkazuje zadaný token TypeDef.  
+Enumerates PropertyDef tokens representing the properties of the type referenced by the specified TypeDef token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,35 +39,35 @@ HRESULT EnumProperties (
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [out v] Ukazatel na enumerátor. První volání této metody musí mít hodnotu NULL.  
+ [in, out] A pointer to the enumerator. This must be NULL for the first call of this method.  
   
  `td`  
- [in] Token TypeDef představující typ výčet s vlastnostmi.  
+ [in] A TypeDef token representing the type with properties to enumerate.  
   
  `rProperties`  
- [out] Pole pro ukládání tokenů vlastnosti.  
+ [out] The array used to store the PropertyDef tokens.  
   
  `cMax`  
- [in] Maximální velikost `rProperties` pole.  
+ [in] The maximum size of the `rProperties` array.  
   
  `pcProperties`  
- [out] Počet tokenů vlastnosti vrácené v `rProperties`.  
+ [out] The number of PropertyDef tokens returned in `rProperties`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumProperties` bylo úspěšně vráceno.|  
-|`S_FALSE`|Neexistují žádné tokeny se vytvořit výčet. V takovém případě `pcProperties` je nula.|  
+|`S_OK`|`EnumProperties` returned successfully.|  
+|`S_FALSE`|There are no tokens to enumerate. In that case, `pcProperties` is zero.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

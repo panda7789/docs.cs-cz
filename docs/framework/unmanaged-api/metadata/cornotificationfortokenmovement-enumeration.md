@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 1edd1670-976a-4fc8-bef7-7c41e60ad989
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 7a7859bd890a2ecc10b5117f697ff8b06ad569f6
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 411fad0accb59431f776c5bd66e8bd3027ddd907
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781690"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74450155"
 ---
 # <a name="cornotificationfortokenmovement-enumeration"></a>CorNotificationForTokenMovement – výčet
-Určuje oznámení, které se odešlou do metadat rozhraní API klienta, když dojde k tokenu přemapování.  
+Specifies the notifications that will be sent to the metadata API client when a token remap occurs.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -65,39 +63,39 @@ typedef enum CorNotificationForTokenMovement {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`MDNotifyDefault`|Upozornit při `mdTypeRef`, `mdMethodDef`, `mdMemberRef`, nebo `mdFieldDef` přesunout tokeny.|  
-|`MDNotifyAll`|Upozorněte při přesunu žádný token.|  
-|`MDNotifyNone`|Upozorňován přesunout tokeny.|  
-|`MDNotifyMethodDef`|Upozornit při `mdMethodDef` přesune token.|  
-|`MDNotifyMemberRef`|Upozornit při `mdMemberRef` přesune token.|  
-|`MDNotifyFieldDef`|Upozornit při `mdFieldDef` přesune token.|  
-|`MDNotifyTypeRef`|Upozornit při `mdTypeRef` přesune token.|  
-|`MDNotifyTypeDef`|Upozornit při `mdTypeDef` přesune token.|  
-|`MDNotifyParamDef`|Upozornit při `mdParamDef` přesune token.|  
-|`MDNotifyInterfaceImpl`|Upozornit při `mdInterfaceImpl` přesune token.|  
-|`MDNotifyProperty`|Upozornit při `mdProperty` přesune token.|  
-|`MDNotifyEvent`|Upozornit při `mdEvent` přesune token.|  
-|`MDNotifySignature`|Upozornit při `mdSignature` přesune token.|  
-|`MDNotifyTypeSpec`|Upozornit při `mdTypeSpec` přesune token.|  
-|`MDNotifyCustomAttribute`|Upozornit při `mdCustomAttribute` přesune token.|  
-|`MDNotifySecurityValue`|Upozornit při `mdSecurityValue` přesune token.|  
-|`MDNotifyPermission`|Upozornit při `mdPermission` přesune token.|  
-|`MDNotifyModuleRef`|Upozornit při `mdModuleRef` přesune token.|  
-|`MDNotifyNameSpace`|Upozornit při `mdNameSpace` přesune token.|  
-|`MDNotifyAssemblyRef`|Upozornit při `mdAssemblyRef` přesune token.|  
-|`MDNotifyFile`|Upozornit při `mdFile` přesune token.|  
-|`MDNotifyExportedType`|Upozornit při `mdExportedType` přesune token.|  
-|`MDNotifyResource`|Upozornit při `mdManifestResource` přesune token.|  
+|`MDNotifyDefault`|Notify when `mdTypeRef`, `mdMethodDef`, `mdMemberRef`, or `mdFieldDef` tokens move.|  
+|`MDNotifyAll`|Notify when any token moves.|  
+|`MDNotifyNone`|Do not notify when tokens move.|  
+|`MDNotifyMethodDef`|Notify when an `mdMethodDef` token moves.|  
+|`MDNotifyMemberRef`|Notify when an `mdMemberRef` token moves.|  
+|`MDNotifyFieldDef`|Notify when an `mdFieldDef` token moves.|  
+|`MDNotifyTypeRef`|Notify when an `mdTypeRef` token moves.|  
+|`MDNotifyTypeDef`|Notify when an `mdTypeDef` token moves.|  
+|`MDNotifyParamDef`|Notify when an `mdParamDef` token moves.|  
+|`MDNotifyInterfaceImpl`|Notify when an `mdInterfaceImpl` token moves.|  
+|`MDNotifyProperty`|Notify when an `mdProperty` token moves.|  
+|`MDNotifyEvent`|Notify when an `mdEvent` token moves.|  
+|`MDNotifySignature`|Notify when an `mdSignature` token moves.|  
+|`MDNotifyTypeSpec`|Notify when an `mdTypeSpec` token moves.|  
+|`MDNotifyCustomAttribute`|Notify when an `mdCustomAttribute` token moves.|  
+|`MDNotifySecurityValue`|Notify when an `mdSecurityValue` token moves.|  
+|`MDNotifyPermission`|Notify when an `mdPermission` token moves.|  
+|`MDNotifyModuleRef`|Notify when an `mdModuleRef` token moves.|  
+|`MDNotifyNameSpace`|Notify when an `mdNameSpace` token moves.|  
+|`MDNotifyAssemblyRef`|Notify when an `mdAssemblyRef` token moves.|  
+|`MDNotifyFile`|Notify when an `mdFile` token moves.|  
+|`MDNotifyExportedType`|Notify when an `mdExportedType` token moves.|  
+|`MDNotifyResource`|Notify when an `mdManifestResource` token moves.|  
   
 ## <a name="remarks"></a>Poznámky  
- Token může být znovu namapována (přesunuté,) během metadat sloučení.  
+ A token may be re-mapped (that is, moved) during a metadata merge.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorHdr.h  
+ **Header:** CorHdr.h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

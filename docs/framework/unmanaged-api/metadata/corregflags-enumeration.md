@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 8d3080ee-39fe-4c57-8950-51323632d045
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: cf2a1bca6115902d96f72c19dc469d0a1c8588cd
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 79a9e4513a98a29edc11cc76c599f03c9c3a72b4
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67756213"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74450109"
 ---
 # <a name="corregflags-enumeration"></a>CorRegFlags – výčet
-Obsahuje příznak hodnoty se používají pro registraci při instalaci modulu nebo složený image.  
+Provides flag values used for registration when installing a module or composite image.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,18 +39,18 @@ typedef enum
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`regNoCopy`|Určuje, že by neměl být soubory zkopírovány do cíle.|  
-|`regConfig`|Určuje, že modul nebo složený konfigurace.|  
-|`regHasRefs`|Určuje, zda modul nebo složený má odkazy na třídy.|  
+|`regNoCopy`|Specifies that files should not be copied into the destination.|  
+|`regConfig`|Specifies that the module or composite is a configuration.|  
+|`regHasRefs`|Specifies that the module or composite has class references.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

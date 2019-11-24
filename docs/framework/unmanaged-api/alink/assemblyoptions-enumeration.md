@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 84f83921-64cb-49e3-ac8b-22a0b77b18a8
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 49e7b73559e8def890f8df8f596fbe8ad5bb5d3b
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: ed45e06297b77ea60304cdcfe1b08e97f9e4c085
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70777480"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74446587"
 ---
 # <a name="assemblyoptions-enumeration"></a>AssemblyOptions – výčet
-Vytvoří výčet možností sestavení.  
+Enumerates the assembly options.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -58,31 +56,31 @@ typedef enum _AssemblyOptions {
   
 |Pole|Popis|  
 |-----------|-----------------|  
-|optAssemTitle|Řetězec – představuje název sestavení.|  
-|optAssemDescription|Řetězec – obsahuje popis sestavení.|  
-|optAssemConfig|Řetězec – obsahuje konfiguraci sestavení.|  
-|optAssemOS|Řetězec kódovaný jako: "dwOSPlatformId. dwOSMajorVersion. dwOSMinorVersion".|  
+|optAssemTitle|String - Represents the assembly title.|  
+|optAssemDescription|String - Contains the assembly description.|  
+|optAssemConfig|String - Contains the assembly configuration.|  
+|optAssemOS|String - Encoded as: "dwOSPlatformId.dwOSMajorVersion.dwOSMinorVersion".|  
 |optAssemProcessor|ULONG|  
-|optAssemLocale|Řetězec – obsahuje národní prostředí sestavení.|  
-|optAssemVersion|Řetězec kódovaný jako: "Hlavní_verze. podverze. sestavení. revize".|  
-|optAssemCompany|Řetězec – obsahuje společnost.|  
-|optAssemProduct|Řetězec – obsahuje název produktu.|  
-|optAssemProductVersion|String (označuje se také jako InformationalVersion).|  
-|optAssemCopyright|Řetězec – obsahuje informace o autorských právech.|  
-|optAssemTrademark|Řetězec – obsahuje informace o ochranných známkách.|  
-|optAssemKeyFile|String (název souboru).|  
-|optAssemKeyName|Řetězec (název klíče).|  
+|optAssemLocale|String - Contains the assembly locale.|  
+|optAssemVersion|String - Encoded as: "Major.Minor.Build.Revision".|  
+|optAssemCompany|String - Contains the company.|  
+|optAssemProduct|String - Contains the product name.|  
+|optAssemProductVersion|String (also known as InformationalVersion).|  
+|optAssemCopyright|String - Contains the copyright information.|  
+|optAssemTrademark|String - Contains the trademark information.|  
+|optAssemKeyFile|String (file name).|  
+|optAssemKeyName|String (The key name).|  
 |optAssemAlgID|ULONG|  
 |optAssemFlags|ULONG|  
-|optAssemHalfSign|Bool (označuje se také jako DelaySign).|  
-|optAssemFileVersion|Řetězec – zakódovaný jako "hlavní_verze. podverze. sestavení. revize" – stejné jako ProductVersion.|  
-|optAssemSatelliteVer|Řetězec – zakódovaný jako "hlavní_verze. podverze. sestavení. revize".|  
-|optLastAssemOption|Čítač počtu prvků.|  
+|optAssemHalfSign|Bool (Also known as DelaySign).|  
+|optAssemFileVersion|String - Encoded as "Major.Minor.Build.Revision"--same as ProductVersion.|  
+|optAssemSatelliteVer|String - Encoded as "Major.Minor.Build.Revision".|  
+|optLastAssemOption|A counter of the number of elements.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** ALink. h  
+ **Header:** alink.h  
   
- **Knihovna**: ALink. dll  
+ **Library**: alink.dll  
   
 ## <a name="see-also"></a>Viz také:
 

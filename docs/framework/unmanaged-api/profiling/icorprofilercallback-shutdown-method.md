@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1ea194f0-a331-4855-a2ce-37393b8e5f84
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 9d63dd911a5f674a3ce0b02ec78de443c7aebf84
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 63e41df8af85d94df068526ef69708687b341e78
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67747168"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74446940"
 ---
 # <a name="icorprofilercallbackshutdown-method"></a>ICorProfilerCallback::Shutdown – metoda
-Oznámí profileru, že se aplikace vypíná.  
+Notifies the profiler that the application is shutting down.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,20 +32,20 @@ HRESULT Shutdown();
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Profiler kódu nelze bezpečně volat metody [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) rozhraní po `Shutdown` metoda je volána. Všechna volání do `ICorProfilerInfo` metody za následek nedefinované chování po `Shutdown` metoda vrátí hodnotu. Určité neměnné události může stále dojít po vypnutí; profiler byste měli věnovat pozornost k vrácení okamžitě, pokud k tomu dojde.  
+ The profiler code cannot safely call methods of the [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) interface after the `Shutdown` method is called. Any calls to `ICorProfilerInfo` methods result in undefined behavior after the `Shutdown` method returns. Certain immutable events may still occur after shutdown; the profiler should take care to return immediately when this occurs.  
   
- `Shutdown` Metoda bude volána pouze v případě, že spravovaná aplikace, která je právě profilována spuštěn jako spravovaný kód (to znamená, je spravovaný počáteční rámec v zásobníku proces). Pokud aplikace spustil jako nespravovaný kód, ale později vstupovat do spravovaného kódu, a tím vytvoření instance modulu common language runtime (CLR), pak `Shutdown` nebude volána. Pro tyto případy, by měl obsahovat profileru v jeho knihovně `DllMain` rutiny, které používají DLL_PROCESS_DETACH hodnota uvolněte veškeré prostředky a provádět čištění zpracování nad svými daty, jako je vyprazdňování trasování na disk a tak dále.  
+ The `Shutdown` method will be called only if the managed application that is being profiled started as managed code (that is, the initial frame on the process stack is managed). If the application started as unmanaged code but later jumped into managed code, thereby creating an instance of the common language runtime (CLR), then `Shutdown` will not be called. For these cases, the profiler should include in its library a `DllMain` routine that uses the DLL_PROCESS_DETACH value to free any resources and perform clean-up processing of its data, such as flushing traces to disk and so on.  
   
- Obecně platí profiler musí zvládnout neočekávané vypnutí. Například může být proces zastavení na Win32 `TerminateProcess` – metoda (deklarované v Winbase.h). V jiných případech zastaví CLR bez doručováním zpráv řádné zničení pro ně určité spravovaná vlákna (vláken na pozadí).  
+ In general, the profiler must cope with unexpected shutdowns. For example, a process might be halted by Win32's `TerminateProcess` method (declared in Winbase.h). In other cases, the CLR will halt certain managed threads (background threads) without delivering orderly destruction messages for them.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Header:** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids.lib  
+ **Library:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

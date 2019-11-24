@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 603b3881-ea94-4dca-95cd-91eebac873a0
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 120c31b61734cfb4cb0048489632bc0848a9430b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 93c042d760eab4bcb1846701ad92ac38cb473c69
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782182"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74449733"
 ---
 # <a name="icorprofilerinfo3getappdomainscontainingmodule-method"></a>ICorProfilerInfo3::GetAppDomainsContainingModule – metoda
-Získá identifikátory aplikační domény, ve kterých daný modul byl načten.  
+Gets the identifiers of the application domains in which the given module has been loaded.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,28 +38,28 @@ HRESULT GetAppDomainsContainingModule(
   
 ## <a name="parameters"></a>Parametry  
  `moduleId`  
- [in] ID načteného modulu.  
+ [in] The ID of the loaded module.  
   
  `cAppDomainIds`  
- [in] Velikost `appDomainIds` pole.  
+ [in] The size of the `appDomainIds` array.  
   
  `pcAppDomainIds`  
- [out] Ukazatel na celkový počet vrácených prvků.  
+ [out] A pointer to the total number of returned elements.  
   
  `appDomainIds`  
- [out] Pole hodnoty ID domény aplikace.  
+ [out] An array of application domain ID values.  
   
 ## <a name="remarks"></a>Poznámky  
- Metoda používá volající přidělené vyrovnávací paměti.  
+ The method uses caller allocated buffers.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Header:** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids.lib  
+ **Library:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

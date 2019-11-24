@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 72822b95-a7fb-485e-9d55-1cb016d9a458
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 4f5a596608719889e6440e5cd42dafb82abaa074
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f10ec279e67b86448298745a488f5b3e833e8c39
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67753722"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74447367"
 ---
-# <a name="corprfgcreason-enumeration"></a>COR_PRF_GC_REASON – výčet
-Označuje, že uvolňování paměti dochází důvod.  
+# <a name="cor_prf_gc_reason-enumeration"></a>COR_PRF_GC_REASON – výčet
+Indicates the reason that garbage collection is occurring.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,17 +37,17 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`COR_PRF_GC_INDUCED`|Kolekce paměti byla vyvolaná <xref:System.GC.Collect%2A> metody.|  
-|`COR_PRF_GC_OTHER`|Důvod není zadána.|  
+|`COR_PRF_GC_INDUCED`|The garbage collection was induced by a <xref:System.GC.Collect%2A> method.|  
+|`COR_PRF_GC_OTHER`|The reason is unspecified.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Header:** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids.lib  
+ **Library:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

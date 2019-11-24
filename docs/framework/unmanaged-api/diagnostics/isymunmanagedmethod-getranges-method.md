@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: a85283d8-379c-417a-9736-ddeeef9bcf50
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ef5a98d510eee8942a2cad0525b6902e3e4eaa52
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1f1bd9c33f24847eae4ff7d26c5b996cd34afb72
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67769384"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448936"
 ---
 # <a name="isymunmanagedmethodgetranges-method"></a>ISymUnmanagedMethod::GetRanges – metoda
-Danou pozici v dokumentu vrátí pole dvojic počáteční a koncové posunutí, které odpovídají na rozsahy jazyk Microsoft intermediate language (MSIL), která zahrnuje pozici v rámci této metody. Pole je pole celých čísel a má formát [spuštění, end, zahájení, ukončení]. Počet dvojic rozsah je délka pole, děleno 2.  
+Given a position in a document, returns an array of start and end offset pairs that correspond to the ranges of Microsoft intermediate language (MSIL) that the position covers within this method. The array is an array of integers and has the format [start, end, start, end]. The number of range pairs is the length of the array divided by 2.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,28 +40,28 @@ HRESULT GetRanges(
   
 ## <a name="parameters"></a>Parametry  
  `document`  
- [in] Dokument, pro kterou je požadována posun.  
+ [in] The document for which the offset is requested.  
   
  `line`  
- [in] Dokument řádek odpovídající oblasti.  
+ [in] The document line corresponding to the ranges.  
   
  `column`  
- [in] Sloupec dokumentu odpovídající oblasti.  
+ [in] The document column corresponding to the ranges.  
   
  `cRanges`  
- [in] Velikost `ranges` pole.  
+ [in] The size of the `ranges` array.  
   
  `pcRanges`  
- [out] Ukazatel `ULONG32` , která obdrží velikost vyrovnávací paměti musí obsahovat rozsahy.  
+ [out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the ranges.  
   
  `ranges`  
- [out] Ukazatel do vyrovnávací paměti, která přijímá rozsahů.  
+ [out] A pointer to the buffer that receives the ranges.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** CorSym.idl, CorSym.h  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Viz také:
 

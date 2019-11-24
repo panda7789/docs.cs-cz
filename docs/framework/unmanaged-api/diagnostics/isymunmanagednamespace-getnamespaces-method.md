@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 0ea9d9af-8709-4a46-872b-f54d9e840088
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2e11886917964134a2530ae8484dba3cde5e7b61
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: da2906187c02bbc7a35c937663e3fc7db1ebda13
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67759372"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74433895"
 ---
 # <a name="isymunmanagednamespacegetnamespaces-method"></a>ISymUnmanagedNamespace::GetNamespaces – metoda
-Získá podřízené objekty tohoto oboru názvů.  
+Gets the children of this namespace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,19 +37,19 @@ HRESULT GetNamespaces(
   
 ## <a name="parameters"></a>Parametry  
  `cNameSpaces`  
- [in] A `ULONG32` , který označuje velikost `namespaces` pole.  
+ [in] A `ULONG32` that indicates the size of the `namespaces` array.  
   
  `pcNameSpaces`  
- [out] Ukazatel `ULONG32` , která obdrží velikost ve znacích, vyrovnávací paměti musí obsahovat obory názvů.  
+ [out] A pointer to a `ULONG32` that receives the size, in characters, of the buffer required to contain the namespaces.  
   
  `namespaces`  
- [out] Ukazatel do vyrovnávací paměti, která obsahuje obory názvů.  
+ [out] A pointer to the buffer that contains the namespaces.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** CorSym.idl, CorSym.h  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: ffbb3caf-20da-4a4b-8983-77376e72b990
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 0c88c12646a13e5a24f2475bd2db04c8c831141c
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: a76a7a2d4ad68e367e38e175377aff40ce399346
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781755"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74450208"
 ---
 # <a name="cormethodimpl-enumeration"></a>CorMethodImpl – výčet
-Obsahuje hodnoty, které popisují způsob implementace funkce.  
+Contains values that describe method implementation features.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -58,29 +56,29 @@ typedef enum CorMethodImpl {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`miCodeTypeMask`|Příznaky, které popisují typ kódu.|  
-|`miIL`|Určuje, že implementace metody je jazyk Microsoft intermediate language (MSIL).|  
-|`miNative`|Určuje, že je nativní implementace metody.|  
-|`miOPTIL`|Určuje, že implementace metody OPTIL.|  
-|`miRuntime`|Určuje, že implementace metody poskytuje modul common language runtime.|  
-|`miManagedMask`|Příznaky, které označují, zda kód je spravovaná nebo nespravovaná.|  
-|`miUnmanaged`|Určuje, že implementace metody nespravované.|  
-|`miManaged`|Určuje, že je spravovaná implementace metody.|  
-|`miForwardRef`|Určuje, že metoda je definována. Tento příznak se používá především ve scénářích sloučení.|  
-|`miPreserveSig`|Určuje, že podpis metody nemůže být pozměnění pro konverzi HRESULT.|  
-|`miInternalCall`|Modul common language runtime vyhrazené pro interní použití.|  
-|`miSynchronized`|Určuje, že metoda je jednovláknový prostřednictvím svého těla.|  
-|`miNoInlining`|Určuje, že metoda nemůže být vložená.|  
-|`miAggressiveInlining`|Určuje, že metoda by měla být vložit. Pokud je to možné.|  
-|`miNoOptimization`|Určuje, že metoda neměl optimalizovat.|  
-|`miMaxMethodImplVal`|Největší platná hodnota pro `CorMethodImpl`.|  
+|`miCodeTypeMask`|Flags that describe code type.|  
+|`miIL`|Specifies that the method implementation is Microsoft intermediate language (MSIL).|  
+|`miNative`|Specifies that the method implementation is native.|  
+|`miOPTIL`|Specifies that the method implementation is OPTIL.|  
+|`miRuntime`|Specifies that the method implementation is provided by the common language runtime.|  
+|`miManagedMask`|Flags that indicate whether the code is managed or unmanaged.|  
+|`miUnmanaged`|Specifies that the method implementation is unmanaged.|  
+|`miManaged`|Specifies that the method implementation is managed.|  
+|`miForwardRef`|Specifies that the method is defined. This flag is used primarily in merge scenarios.|  
+|`miPreserveSig`|Specifies that the method signature cannot be mangled for an HRESULT conversion.|  
+|`miInternalCall`|Reserved for internal use by the common language runtime.|  
+|`miSynchronized`|Specifies that the method is single-threaded through its body.|  
+|`miNoInlining`|Specifies that the method cannot be inlined.|  
+|`miAggressiveInlining`|Specifies that the method should be inlined if possible.|  
+|`miNoOptimization`|Specifies that the method should not be optimized.|  
+|`miMaxMethodImplVal`|The maximum valid value for a `CorMethodImpl`.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorHdr.h  
+ **Header:** CorHdr.h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

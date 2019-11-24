@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: e774eefe-858c-4362-8d2d-28ebf2ba1a24
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 8fa385805d3e2dca8fef3e1490b2c67dd0583373
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 73f536b4ab98aa596c2395810cb8b616ffd309e9
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67755063"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74438290"
 ---
 # <a name="isymunmanagedwriter2definelocalvariable2-method"></a>ISymUnmanagedWriter2::DefineLocalVariable2 – metoda
-V aktuálním oboru lexikální definuje jednu proměnnou. Tuto metodu lze volat pro proměnnou se stejným názvem, který má více domovů v rámci oboru více než jednou. V takovém případě však hodnoty `startOffset` a `endOffset` parametry se nesmí překrývat.  
+Defines a single variable in the current lexical scope. This method can be called multiple times for a variable of the same name that has multiple homes throughout a scope. In this case, however, the values of the `startOffset` and `endOffset` parameters must not overlap.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,37 +42,37 @@ HRESULT DefineLocalVariable2(
   
 ## <a name="parameters"></a>Parametry  
  `name`  
- [in] Název místní proměnné.  
+ [in] The local variable name.  
   
  `attributes`  
- [in] Místní proměnné atributy.  
+ [in] The local variable attributes.  
   
  `sigToken`  
- [in] Metadata token podpisu.  
+ [in] The metadata token of the signature.  
   
  `addrKind`  
- [in] Typ adresy.  
+ [in] The address type.  
   
  `addr1`  
- [in] První adresa pro specifikaci parametru.  
+ [in] The first address for the parameter specification.  
   
  `addr2`  
- [in] Druhý adresa pro specifikaci parametru.  
+ [in] The second address for the parameter specification.  
   
  `addr3`  
- [in] Je třetí adresa pro specifikaci parametru.  
+ [in] The third address for the parameter specification.  
   
  `startOffset`  
- [in] Počáteční odsazení pro proměnnou. Tento parametr je volitelný. Pokud je 0, tento parametr je ignorován a proměnná je definována v rámci celého rozsahu. Pokud je nenulovou hodnotu, proměnná spadá do posuny aktuálního oboru.  
+ [in] The start offset for the variable. Tento parametr je volitelný. If it is 0, this parameter is ignored and the variable is defined throughout the entire scope. If it is a nonzero value, the variable falls within the offsets of the current scope.  
   
  `endOffset`  
- [in] Koncové odsazení pro proměnnou. Tento parametr je volitelný. Pokud je 0, tento parametr je ignorován a proměnná je definována v rámci celého rozsahu. Pokud je nenulovou hodnotu, proměnná spadá do posuny aktuálního oboru.  
+ [in] The end offset for the variable. Tento parametr je volitelný. If it is 0, this parameter is ignored and the variable is defined throughout the entire scope. If it is a nonzero value, the variable falls within the offsets of the current scope.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** CorSym.idl  
+ **Header:** CorSym.idl  
   
 ## <a name="see-also"></a>Viz také:
 

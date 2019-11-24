@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: ad276f3f-b303-46ac-97e0-66a377adaa4f
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: bd138d0418bb9667a86419d719bf0b95a4bb1b12
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: bee7db61beb9ed8c00cf584924be690a67d92eac
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70777117"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74446948"
 ---
 # <a name="importfileex-method"></a>ImportFileEx – metoda
-Importuje označené sestavení nebo nevázaný modul.  
+Imports indicated assembly or unbound module.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,34 +40,34 @@ HRESULT ImportFileEx(
   
 ## <a name="parameters"></a>Parametry  
  `pszFilename`  
- Plně kvalifikovaný název souboru, ze kterého se má importovat.  
+ Fully qualified name of file from which to import.  
   
  `pszTargetName`  
- Volitelný název cílového souboru.  
+ Optional name of target file.  
   
  `fSmartImport`  
- Při hodnotě TRUE se používá Importtypes –, jinak se import musí provést ručně.  
+ If TRUE, ImportTypes is used, otherwise importing must be performed manually.  
   
  `dwOpenFlags`  
- Příznaky, které mají být předány do [metody OpenScope –](../metadata/imetadatadispenser-openscope-method.md).  
+ Flags to be passed along to [OpenScope Method](../metadata/imetadatadispenser-openscope-method.md).  
   
  `pImportToken`  
- Získá ID importovaného souboru.  
+ Receives ID of the file being imported.  
   
  `ppAssemblyScope`  
- Přijímá import sestavení oboru [rozhraní IMetaDataAssemblyImport](../metadata/imetadataassemblyimport-interface.md) . Je nastaven na hodnotu NULL, pokud soubor není sestavení.  
+ Receives assembly import scope [IMetaDataAssemblyImport Interface](../metadata/imetadataassemblyimport-interface.md) interface. Is set to NULL if file is not an assembly.  
   
  `pdwCountOfScopes`  
- Přijímá počet importovaných souborů a rozsahů.  
+ Receives count of imported files and/or scopes.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrací S_OK, pokud je metoda úspěšná.  
+ Returns S_OK if the method succeeds.  
   
 ## <a name="requirements"></a>Požadavky  
- Vyžaduje ALink. h.  
+ Requires alink.h.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink2 – rozhraní](ialink2-interface.md)
 - [IALink – rozhraní](ialink-interface.md)
-- [Rozhraní API ALink](index.md)
+- [ALink API](index.md)

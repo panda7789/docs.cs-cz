@@ -14,18 +14,16 @@ helpviewer_keywords:
 ms.assetid: dae07d9b-df51-488c-b17e-52d6e48217bd
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: d71d2a5b3007d4e877900443af426a9643b29125
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 93dd8c56176890d04d792f3c336492e4f232825b
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62045224"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74442467"
 ---
 # <a name="corthreadsafetyoptions-enumeration"></a>CorThreadSafetyOptions – výčet
 
-Určuje příznaky a možnosti pro bezpečný přístup z více vláken.
+Specifies flags to select options for thread safety.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -41,17 +39,17 @@ typedef enum CorThreadSafetyOptions {
 
 |Člen|Popis|
 |------------|-----------------|
-|`MDThreadSafetyDefault`|Výchozí hodnota. Stejné jako `MDThreadSafetyOff`.|
-|`MDThreadSafetyOff`|Označuje, že zámek čtení/zápis nelze nastavit.|
-|`MDThreadSafetyOn`|Označuje, že můžete nastavit zámek čtení/zápis.|
+|`MDThreadSafetyDefault`|Default value. Same as `MDThreadSafetyOff`.|
+|`MDThreadSafetyOff`|Indicates that a reader/writer lock cannot be set.|
+|`MDThreadSafetyOn`|Indicates that a reader/writer lock can be set.|
 
 ## <a name="requirements"></a>Požadavky
 
-**Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
+**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).
 
-**Záhlaví:** CorHdr.h
+**Header:** CorHdr.h
 
-**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
 
 ## <a name="see-also"></a>Viz také:
 

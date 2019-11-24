@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: c5e6216f-ae3d-4697-9688-66b69c1251ec
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 4f3883b0cd1b7aca6265b738eace483c81eb37b9
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: beb697d80417b937876a0887e4376341185a47d9
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67760136"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74447208"
 ---
 # <a name="imetadataassemblyimportgetfileprops-method"></a>IMetaDataAssemblyImport::GetFileProps – metoda
-Získá vlastnosti souboru s podpisem Zadaná metadata.  
+Gets the properties of the file with the specified metadata signature.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,34 +41,34 @@ HRESULT GetFileProps (
   
 ## <a name="parameters"></a>Parametry  
  `mdf`  
- [in] `mdFile` Token metadat, který představuje soubor, pro které chcete získat vlastnosti.  
+ [in] The `mdFile` metadata token that represents the file for which to get the properties.  
   
  `szName`  
- [out] Jednoduchý název souboru.  
+ [out] The simple name of the file.  
   
  `cchName`  
- [in] Velikost v široké znaky z `szName`.  
+ [in] The size, in wide chars, of `szName`.  
   
  `pchName`  
- [out] Počet skutečně vrácených v široké znaky `szName`.  
+ [out] The number of wide chars actually returned in `szName`.  
   
  `ppbHashValue`  
- [out] Ukazatel na hodnotu hash. Toto je hodnota hash pomocí algoritmu SHA-1 souboru.  
+ [out] A pointer to the hash value. This is the hash, using the SHA-1 algorithm, of the file.  
   
  `pcbHashValue`  
- [out] Počet široké znaky v hodnotě vrácené hodnoty hash.  
+ [out] The number of wide chars in the returned hash value.  
   
  `pdwFileFlags`  
- [out] Ukazatel na příznaky, které popisují metadata u souboru. Hodnota příznaků je kombinace jedné nebo více [corfileflags –](../../../../docs/framework/unmanaged-api/metadata/corfileflags-enumeration.md) hodnoty.  
+ [out] A pointer to the flags that describe the metadata applied to a file. The flags value is a combination of one or more [CorFileFlags](../../../../docs/framework/unmanaged-api/metadata/corfileflags-enumeration.md) values.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforma:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Použít jako prostředek v MsCorEE.dll  
+ **Library:** Used as a resource in MsCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

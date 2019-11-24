@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 47132dda-fa92-4bd1-ae4b-24cd9a60665a
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 1ccafea78aa2497c52442a10ad1af1c05771df7e
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: efc627619d9abf9cfa6010e1c0ca709989b9cad3
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67737101"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445463"
 ---
 # <a name="imetadataemitsetfieldprops-method"></a>IMetaDataEmit::SetFieldProps – metoda
-Nastaví nebo aktualizuje výchozí hodnota pro pole odkazuje token zadaného pole.  
+Sets or updates the default value for the field referenced by the specified field token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,28 +39,28 @@ HRESULT SetFieldProps (
   
 ## <a name="parameters"></a>Parametry  
  `fd`  
- [in] Token pro cílové pole.  
+ [in] The token for the target field.  
   
  `dwFieldFlags`  
- [in] Atributy pole. To je bitová maska z `CorFieldAttr` hodnoty.  
+ [in] Field attributes. This is a bitmask of `CorFieldAttr` values.  
   
  `dwCPlusTypeFlag`  
- [in] `ELEMENT_TYPE_` *\** Pro konstantní hodnoty. Jedná se `CorElementType` hodnotu. Pokud není definované konstantě, nastavte tuto hodnotu na `ELEMENT_TYPE_END`.  
+ [in] The `ELEMENT_TYPE_` *\** for the constant value. This is a `CorElementType` value. If a constant is not being defined, set this value to `ELEMENT_TYPE_END`.  
   
  `pValue`  
- [in] Konstantní hodnoty pro pole.  
+ [in] The constant value for the field.  
   
  `cchValue`  
- [in] Velikost v znaky Unicode z `pValue`.  
+ [in] The size, in Unicode characters, of `pValue`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Použít jako prostředek v MSCorEE.dll  
+ **Library:** Used as a resource in MSCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

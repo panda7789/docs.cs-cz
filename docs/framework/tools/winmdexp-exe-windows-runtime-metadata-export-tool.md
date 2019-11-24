@@ -5,19 +5,19 @@ helpviewer_keywords:
 - Windows Runtime Metadata Export Tool
 - Winmdexp.exe
 ms.assetid: d2ce0683-343d-403e-bb8d-209186f7a19d
-ms.openlocfilehash: 061baf262342034299c47c22b2f2691f3a61b958
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 52820b78f6ed7b02e80df66f90a01143b31d9b29
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73104220"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74447276"
 ---
 # <a name="winmdexpexe-windows-runtime-metadata-export-tool"></a>Winmdexp.exe (Nástroj pro export metadat prostředí Windows Runtime)
-Nástroj pro export metadat prostředí Windows Runtime (Winmdexp. exe) transformuje modul .NET Framework na soubor, který obsahuje prostředí Windows Runtime metadata. I když .NET Framework sestavení a prostředí Windows Runtime soubory metadat používají stejný fyzický formát, existují rozdíly v obsahu tabulek metadat, což znamená, že .NET Framework sestavení nejsou automaticky použitelná jako prostředí Windows Runtime komponenty . Proces zapnutí modulu .NET Framework do prostředí Windows Runtime komponenty se označuje jako *Export*. V .NET Framework 4,5 a .NET Framework 4.5.1 výsledný soubor metadat Windows (. winmd) obsahuje metadata i implementaci.  
+The Windows Runtime Metadata Export Tool (Winmdexp.exe) transforms a .NET Framework module into a file that contains Windows Runtime metadata. Although .NET Framework assemblies and Windows Runtime metadata files use the same physical format, there are differences in the content of the metadata tables, which means that .NET Framework assemblies are not automatically usable as Windows Runtime Components. The process of turning a .NET Framework module into a Windows Runtime component is referred to as *exporting*. In the .NET Framework 4.5 and .NET Framework 4.5.1, the resulting Windows metadata (.winmd) file contains both metadata and implementation.  
   
- Použijete-li šablonu **prostředí Windows Runtime komponenty** , která je umístěna v části **Windows Store** pro C# a Visual Basic v Visual Studio 2013 nebo Visual Studio 2012, je cílem kompilátoru soubor. winmdobj a následné volání kroků sestavení Winmdexp. exe pro export souboru. winmdobj do souboru. winmd. Toto je doporučený způsob, jak vytvořit součást prostředí Windows Runtime. Jestliže chcete mít lepší kontrolu nad procesem sestavení, než jakou poskytuje sada Visual Studio, použijte přímo nástroj Winmdexp.exe.  
+ When you use the **Windows Runtime Component** template, which is located under **Windows Store** for C# and Visual Basic in Visual Studio 2013 or Visual Studio 2012, the compiler target is a .winmdobj file, and a subsequent build step calls Winmdexp.exe to export the .winmdobj file to a .winmd file. This is the recommended way to build a Windows Runtime component. Jestliže chcete mít lepší kontrolu nad procesem sestavení, než jakou poskytuje sada Visual Studio, použijte přímo nástroj Winmdexp.exe.  
   
- Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](developer-command-prompt-for-vs.md).  
+ Tento nástroj je automaticky nainstalován se sadou Visual Studio. To run the tool, use the Developer Command Prompt for Visual Studio (or the Visual Studio Command Prompt in Windows 7). For more information, see [Command Prompts](developer-command-prompt-for-vs.md).  
   
  V příkazovém řádku zadejte následující:  
   
@@ -31,26 +31,26 @@ winmdexp [options] winmdmodule
   
 |Argument nebo možnost|Popis|  
 |------------------------|-----------------|  
-|`winmdmodule`|Určuje modul (.winmdobj), který má být exportován. Je povolen pouze jeden modul. Chcete-li vytvořit tento modul, použijte možnost kompilátoru `/target` s cílem `winmdobj`. Viz [-target: winmdobj (C# možnosti kompilátoru)](../../csharp/language-reference/compiler-options/target-winmdobj-compiler-option.md) nebo [-target (Visual Basic)](../../visual-basic/reference/command-line-compiler/target.md).|  
-|`/docfile:``docfile`<br /><br /> `/d:``docfile`|Určuje výstupní soubor dokumentace XML, který bude vytvořen nástrojem Winmdexp.exe. V .NET Framework 4,5 je výstupní soubor v podstatě stejný jako vstupní soubor dokumentace XML.|  
-|`/moduledoc:``docfile`<br /><br /> `/md:``docfile`|Určuje název souboru dokumentace XML, který kompilátor vytvořil pomocí `winmdmodule`.|  
-|`/modulepdb:``symbolfile`<br /><br /> `/mp:``symbolfile`|Určuje název souboru programu databáze programu (PDB), který obsahuje symboly pro `winmdmodule`.|  
-|`/nowarn:``warning`|Potlačí zadané číslo upozornění. Pro *Upozornění*zadejte pouze číselnou část kódu chyby bez úvodní nuly.|  
+|`winmdmodule`|Určuje modul (.winmdobj), který má být exportován. Je povolen pouze jeden modul. To create this module, use the `/target` compiler option with the `winmdobj` target. See [-target:winmdobj (C# Compiler Options)](../../csharp/language-reference/compiler-options/target-winmdobj-compiler-option.md) or [-target (Visual Basic)](../../visual-basic/reference/command-line-compiler/target.md).|  
+|`/docfile:``docfile`<br /><br /> `/d:``docfile`|Určuje výstupní soubor dokumentace XML, který bude vytvořen nástrojem Winmdexp.exe. In the .NET Framework 4.5, the output file is essentially the same as the input XML documentation file.|  
+|`/moduledoc:``docfile`<br /><br /> `/md:``docfile`|Specifies the name of the XML documentation file that the compiler produced with `winmdmodule`.|  
+|`/modulepdb:``symbolfile`<br /><br /> `/mp:``symbolfile`|Specifies the name of the program database (PDB) file that contains symbols for `winmdmodule`.|  
+|`/nowarn:``warning`|Potlačí zadané číslo upozornění. For *warning*, supply only the numeric portion of the error code, without leading zeros.|  
 |`/out:``file`<br /><br /> `/o:``file`|Určuje název výstupního souboru metadat Windows (.winmd).|  
 |`/pdb:``symbolfile`<br /><br /> `/p:``symbolfile`|Určuje název výstupního souboru databáze programu (PDB), který bude obsahovat symboly pro exportovaný soubor metadat Windows (.winmd).|  
-|`/reference:``winmd`<br /><br /> `/r:``winmd`|Určuje referenční soubor metadat (.winmd nebo sestavení) používaný při exportu. Použijete-li referenční sestavení v "\Program Files (x86) \Reference Assemblies\Microsoft\Framework \\. NETCore\v4.5" ("\Program Files \\..." v 32ch počítačích), zahrňte odkazy na System. Runtime. dll i mscorlib. dll.|  
+|`/reference:``winmd`<br /><br /> `/r:``winmd`|Určuje referenční soubor metadat (.winmd nebo sestavení) používaný při exportu. If you use the reference assemblies in "\Program Files (x86)\Reference Assemblies\Microsoft\Framework\\.NETCore\v4.5" ("\Program Files\\..." on 32-bit computers), include references to both System.Runtime.dll and mscorlib.dll.|  
 |`/utf8output`|Určuje, že výstupní zpráva má být v kódování UTF-8.|  
 |`/warnaserror+`|Určuje, že všechna upozornění mají být považována za chyby.|  
-|**@** `responsefile`|Určuje soubor odpovědi (. rsp), který obsahuje možnosti (a volitelně `winmdmodule`). Každý řádek v `responsefile` by měl obsahovat jeden argument nebo možnost.|  
+|**@** `responsefile`|Specifies a response (.rsp) file that contains options (and optionally `winmdmodule`). Each line in `responsefile` should contain a single argument or option.|  
   
 ## <a name="remarks"></a>Poznámky  
- Nástroj Winmdexp.exe není určen pro převod libovolného sestavení rozhraní .NET Framework na soubor .winmd. Vyžaduje modul kompilovaný s možností `/target:winmdobj` a platí další omezení. Nejdůležitější z těchto omezení je, že všechny typy, které jsou vystaveny na povrchu rozhraní API sestavení, musí být prostředí Windows Runtime typy. Další informace naleznete v části "deklarace typů v prostředí Windows Runtimech součástech" v článku [vytvoření prostředí Windows runtimech komponent v C# nástroji a Visual Basic](https://go.microsoft.com/fwlink/p/?LinkID=238313) na stránce Windows Dev Center.  
+ Nástroj Winmdexp.exe není určen pro převod libovolného sestavení rozhraní .NET Framework na soubor .winmd. It requires a module that is compiled with the `/target:winmdobj` option, and additional restrictions apply. The most important of these restrictions is that all types that are exposed in the API surface of the assembly must be Windows Runtime types. For more information, see the "Declaring types in Windows Runtime Components" section of the article [Creating Windows Runtime Components in C# and Visual Basic](https://docs.microsoft.com/previous-versions/br230301(v=vs.110)).
   
- Když napíšete [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikaci nebo komponentu prostředí Windows Runtime pomocí C# nástroje nebo Visual Basic, .NET Framework poskytuje podporu k vytváření dalších prostředí Windows runtimech přirozených způsobů programování. Tento článek je popsán v článku [.NET Framework podpoře aplikací pro Windows Store a prostředí Windows Runtime](../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md). V procesu jsou některé běžně používané typy prostředí Windows Runtime namapovány na .NET Framework typy. Winmdexp. exe Tento proces vrátí a vytvoří plochu rozhraní API, která používá odpovídající typy prostředí Windows Runtime. Například typy, které jsou vytvořeny z mapování <xref:System.Collections.Generic.IList%601> rozhraní na typy, které jsou vytvořeny z rozhraní prostředí Windows Runtime[IVector\<t >](https://go.microsoft.com/fwlink/p/?LinkId=251132).  
+ When you write a Windows 8.x Store app or a Windows Runtime component with C# or Visual Basic, the .NET Framework provides support to make programming with the Windows Runtime more natural. This is discussed in the article [.NET Framework Support for Windows Store Apps and Windows Runtime](../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md). In the process, some commonly used Windows Runtime types are mapped to .NET Framework types. Winmdexp.exe reverses this process and produces an API surface that uses the corresponding Windows Runtime types. For example, types that are constructed from the <xref:System.Collections.Generic.IList%601> interface map to types that are constructed from the Windows Runtime <xref:Windows.Foundation.Collections.IVector%601> interface.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Podpora pro aplikace pro web Windows Store a prostředí Windows Runtime v rozhraní .NET Framework](../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)
-- [Vytváření komponent prostředí Windows Runtime v C# nástroji a Visual Basic](https://go.microsoft.com/fwlink/p/?LinkID=238313)
+- [Creating Windows Runtime Components in C# and Visual Basic](https://docs.microsoft.com/previous-versions/br230301(v=vs.110))
 - [Chybové zprávy nástroje Winmdexp.exe](winmdexp-exe-error-messages.md)
-- [Sestavování, nasazování a Konfigurační nástroje (.NET Framework)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd233108(v=vs.100))
+- [Build, Deployment, and Configuration Tools (.NET Framework)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd233108(v=vs.100))

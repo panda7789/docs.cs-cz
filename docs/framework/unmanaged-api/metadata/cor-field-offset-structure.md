@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: cced5298-277f-4a5a-8ecf-a0050c1096ea
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: fdfbb22d231d16be7757ff5df26a5a010928af54
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 646952d5cd55b74081a0ba6171a6eee6b0138512
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67767060"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74443960"
 ---
-# <a name="corfieldoffset-structure"></a>COR_FIELD_OFFSET – struktura
-Ukládá posun v rámci třídy, zadaného pole.  
+# <a name="cor_field_offset-structure"></a>COR_FIELD_OFFSET – struktura
+Stores the offset, within a class, of the specified field.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,18 +37,18 @@ typedef struct COR_FIELD_OFFSET {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`ridOfField`|`mdFieldDef` Token metadat, který představuje pole.|  
-|`ulOffset`|Pole Posun v rámci své třídy.|  
+|`ridOfField`|An `mdFieldDef` metadata token that represents the field.|  
+|`ulOffset`|The field's offset within its class.|  
   
 ## <a name="remarks"></a>Poznámky  
- [Imetadataimport::getclasslayout –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getclasslayout-method.md) a [imetadataemit::setclasslayout –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-setclasslayout-method.md) metody přijímají parametr typu `COR_FIELD_OFFSET`.  
+ [IMetaDataImport::GetClassLayout](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getclasslayout-method.md) and [IMetaDataEmit::SetClassLayout](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-setclasslayout-method.md) methods take a parameter of type `COR_FIELD_OFFSET`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorHdr.h, CorProf.idl  
+ **Header:** CorHdr.h, CorProf.idl  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

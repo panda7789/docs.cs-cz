@@ -6,69 +6,67 @@ helpviewer_keywords:
 - profiling global static functions [.NET Framework]
 - unmanaged global static functions [.NET Framework], profiling
 ms.assetid: 08a13a57-dc49-488d-b937-31e3051fda97
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 3ea65c06871d9762fa6daac229a568594b4c4479
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: d1d9b0a4c61ce7c3f8f9792046fb4bddf0fdfa05
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66457483"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74447432"
 ---
 # <a name="profiling-global-static-functions"></a>Profilace globálních statických funkcí
-Tato část popisuje nespravované funkce rozhraní API, které používá profilování API.  
+This section describes the unmanaged API functions that the profiling API uses.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
-## <a name="net-framework-version-1-profiling-functions"></a>Funkce profilování rozhraní .NET framework verze 1  
+## <a name="net-framework-version-1-profiling-functions"></a>.NET Framework version 1 Profiling Functions  
  [FunctionEnter – funkce](../../../../docs/framework/unmanaged-api/profiling/functionenter-function.md)  
- Oznámí profileru, že se ovládací prvek předán funkci. Zastaralé v rozhraní .NET Framework 2.0.  
+ Notifies the profiler that control is being passed to a function. Deprecated in the .NET Framework 2.0.  
   
  [FunctionLeave – funkce](../../../../docs/framework/unmanaged-api/profiling/functionleave-function.md)  
- Oznámí profileru, že funkce se chystá vrácení volajícímu. Zastaralé v rozhraní .NET Framework 2.0.  
+ Notifies the profiler that a function is about to return to the caller. Deprecated in the .NET Framework 2.0.  
   
  [FunctionTailcall – funkce](../../../../docs/framework/unmanaged-api/profiling/functiontailcall-function.md)  
- Oznámí profileru, že aktuálně prováděné funkce se chystá provést volání funkce tail do jiné funkce. Zastaralé v rozhraní .NET Framework 2.0.  
+ Notifies the profiler that the currently executing function is about to perform a tail call to another function. Deprecated in the .NET Framework 2.0.  
   
-## <a name="net-framework-version-2-profiling-functions"></a>Funkce profilování rozhraní .NET framework verze 2  
+## <a name="net-framework-version-2-profiling-functions"></a>.NET Framework version 2 Profiling Functions  
  [FunctionIDMapper – funkce](../../../../docs/framework/unmanaged-api/profiling/functionidmapper-function.md)  
- Oznámí profileru, že daný identifikátor funkce může přemapován na alternativní ID se použije v [FunctionEnter2](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md), [FunctionLeave2](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md), a [functiontailcall2 –](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md) zpětná volání pro tuto funkci. Také umožňuje profileru označíte, zda si přeje přijmout zpětná volání pro tuto funkci  
+ Notifies the profiler that the given identifier of a function may be remapped to an alternative ID to be used in the [FunctionEnter2](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md), [FunctionLeave2](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md), and [FunctionTailcall2](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md) callbacks for that function. Also enables the profiler to indicate whether it wants to receive callbacks for that function  
   
  [FunctionEnter2 – funkce](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md)  
- Profiler upozorní, že ovládací prvek je předáván funkci a poskytuje informace o zásobníku rámce a funkce argumenty. Zastaralé v rozhraní .NET Framework 4.  
+ Notifies the profiler that control is being passed to a function and provides information about the stack frame and function arguments. Deprecated in the .NET Framework 4.  
   
  [FunctionLeave2 – funkce](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md)  
- Profiler upozorní, že funkce je vracet volajícímu a poskytuje informace o zásobníku rámce a funkce návratová hodnota. Zastaralé v rozhraní .NET Framework 4.  
+ Notifies the profiler that a function is about to return to the caller and provides information about the stack frame and function return value. Deprecated in the .NET Framework 4.  
   
  [FunctionTailcall2 – funkce](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md)  
- Profiler upozorní, že aktuálně prováděné funkci je provést volání funkce tail do jiné funkce a poskytuje informace o zásobníku. Zastaralé v rozhraní .NET Framework 4.  
+ Notifies the profiler that the currently executing function is about to perform a tail call to another function and provides information about the stack frame. Deprecated in the .NET Framework 4.  
   
  [StackSnapshotCallback – funkce](../../../../docs/framework/unmanaged-api/profiling/stacksnapshotcallback-function.md)  
- Poskytuje informace o každý spravovaný rámec a každé spuštění nespravované rámce v zásobníku během procházení zásobníku, která inicializuje profiler [ICorProfilerInfo2::DoStackSnapshot](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md) metody.  
+ Provides the profiler with information about each managed frame and each run of unmanaged frames on the stack during a stack walk, which is initiated by the [ICorProfilerInfo2::DoStackSnapshot](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md) method.  
   
-## <a name="net-framework-version-4-profiling-functions"></a>Funkce profilování rozhraní .NET framework verze 4  
+## <a name="net-framework-version-4-profiling-functions"></a>.NET Framework version 4 Profiling Functions  
  [FunctionIDMapper2 – funkce](../../../../docs/framework/unmanaged-api/profiling/functionidmapper2-function.md)  
- Oznámí profileru, že daný identifikátor funkce může přemapován na alternativní ID se použije v [functionenter3 –](../../../../docs/framework/unmanaged-api/profiling/functionenter3-function.md), [functionleave3 –](../../../../docs/framework/unmanaged-api/profiling/functionleave3-function.md), a [functiontailcall3 –](../../../../docs/framework/unmanaged-api/profiling/functiontailcall3-function.md), nebo[functionenter3withinfo –](../../../../docs/framework/unmanaged-api/profiling/functionenter3withinfo-function.md), [functionleave3withinfo –](../../../../docs/framework/unmanaged-api/profiling/functionleave3withinfo-function.md), a [functiontailcall3withinfo –](../../../../docs/framework/unmanaged-api/profiling/functiontailcall3withinfo-function.md) zpětná volání pro tuto funkci. také umožňuje profileru označíte, zda si přeje přijmout zpětná volání pro tuto funkci.  
+ Notifies the profiler that the given identifier of a function may be remapped to an alternative ID to be used in the [FunctionEnter3](../../../../docs/framework/unmanaged-api/profiling/functionenter3-function.md), [FunctionLeave3](../../../../docs/framework/unmanaged-api/profiling/functionleave3-function.md), and [FunctionTailcall3](../../../../docs/framework/unmanaged-api/profiling/functiontailcall3-function.md), or[FunctionEnter3WithInfo](../../../../docs/framework/unmanaged-api/profiling/functionenter3withinfo-function.md), [FunctionLeave3WithInfo](../../../../docs/framework/unmanaged-api/profiling/functionleave3withinfo-function.md), and [FunctionTailcall3WithInfo](../../../../docs/framework/unmanaged-api/profiling/functiontailcall3withinfo-function.md) callbacks for that function. Also enables the profiler to indicate whether it wants to receive callbacks for that function.  
   
- `FunctionIDMapper2` rozšiřuje [functionidmapper –](../../../../docs/framework/unmanaged-api/profiling/functionidmapper-function.md) pracovat `clientData` parametr, který profilovací programy mohou použít k rozlišení mezi moduly runtime.  
+ `FunctionIDMapper2` extends the [FunctionIDMapper](../../../../docs/framework/unmanaged-api/profiling/functionidmapper-function.md) function with a `clientData` parameter, which profilers may use to disambiguate among runtimes.  
   
  [FunctionEnter3 – funkce](../../../../docs/framework/unmanaged-api/profiling/functionenter3-function.md)  
- Oznámí profileru, že se ovládací prvek předán funkci.  
+ Notifies the profiler that control is being passed to a function.  
   
  [FunctionEnter3WithInfo – funkce](../../../../docs/framework/unmanaged-api/profiling/functionenter3withinfo-function.md)  
- Oznámí profileru, že ovládací prvek je předáván funkci a poskytuje popisovač, který může být předán [icorprofilerinfo3::getfunctionenter3info –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getfunctionenter3info-method.md) načíst zásobník snímků a funkce argumenty.  
+ Notifies the profiler that control is being passed to a function, and provides a handle that can be passed to [ICorProfilerInfo3::GetFunctionEnter3Info](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getfunctionenter3info-method.md) to retrieve the stack frame and function arguments.  
   
  [FunctionLeave3 – funkce](../../../../docs/framework/unmanaged-api/profiling/functionleave3-function.md)  
- Oznámí profileru, že se řízení vrací z funkce.  
+ Notifies the profiler that control is being returned from a function.  
   
  [FunctionLeave3WithInfo – funkce](../../../../docs/framework/unmanaged-api/profiling/functionleave3withinfo-function.md)  
- Profiler upozorní, že ovládací prvek se vrací z funkce a poskytuje popisovač, který může být předán [icorprofilerinfo3::getfunctionleave3info –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getfunctionleave3info-method.md) načíst rámec zásobníku a návratovou hodnotu.  
+ Notifies the profiler that control is being returned from a function, and provides a handle that can be passed to [ICorProfilerInfo3::GetFunctionLeave3Info](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getfunctionleave3info-method.md) to retrieve the stack frame and the return value.  
   
  [FunctionTailcall3 – funkce](../../../../docs/framework/unmanaged-api/profiling/functiontailcall3-function.md)  
- Oznámí profileru, že aktuálně prováděné funkce se chystá provést volání funkce tail do jiné funkce.  
+ Notifies the profiler that the currently executing function is about to perform a tail call to another function.  
   
  [FunctionTailcall3WithInfo – funkce](../../../../docs/framework/unmanaged-api/profiling/functiontailcall3withinfo-function.md)  
- Oznámí profileru, který aktuálně prováděné funkce se chystá provést volání funkce tail do jiné funkce a poskytuje popisovač, který může být předán [icorprofilerinfo3::getfunctiontailcall3info –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getfunctiontailcall3info-method.md) načíst rámec zásobníku.  
+ Notifies the profiler that the currently executing function is about to perform a tail call to another function, and provides a handle that can be passed to [ICorProfilerInfo3::GetFunctionTailcall3Info](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getfunctiontailcall3info-method.md) to retrieve the stack frame.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Přehled profilace](../../../../docs/framework/unmanaged-api/profiling/profiling-overview.md)  

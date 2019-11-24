@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 32f3ba58-9695-41e9-ba58-fd19e45ed396
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ce09eca30e1edb9e1afc02216a07955a5fed4fd2
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 8dae903ab76ab83ac0818c4bc4a76e81094bdf65
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70787253"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445661"
 ---
 # <a name="importtypes2-method"></a>ImportTypes2 – metoda
-Inicializuje import typů. Zavolejte tuto metodu pro zahájení importu typů z každého oboru importovaného prostřednictvím [metody importFile –](importfile-method.md).  
+Initiates the import of types. Call this method to begin importing types from each scope imported via [ImportFile Method](importfile-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,31 +39,31 @@ HRESULT ImportTypes2(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID sestavení, do kterého se má importovat.  
+ ID of assembly into which to import.  
   
  `FileToken`  
- ID souboru, ze kterého se má importovat.  
+ ID of file to from which to import.  
   
  `dwScope`  
- Rozsah od nuly, ze kterého se má importovat.  
+ Zero-based scope from which to import.  
   
  `phEnum`  
- Přijímá popisovač enumerátoru pro typy v daném oboru.  
+ Receives enumerator handle for the types in the given scope.  
   
  `ppImportScope`  
- Volitelně přijímá rozhraní [rozhraní IMetaDataImport2](../metadata/imetadataimport2-interface.md) .  
+ Optionally receives [IMetaDataImport2 Interface](../metadata/imetadataimport2-interface.md) interface.  
   
  `pdwCountOfTypes`  
- Volitelně přijímá počet typů v zadaném oboru.  
+ Optionally receives count of types in the specified scope.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrací S_OK, pokud je metoda úspěšná.  
+ Returns S_OK if the method succeeds.  
   
 ## <a name="requirements"></a>Požadavky  
- Vyžaduje ALink. h  
+ Requires alink.h  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink2 – rozhraní](ialink2-interface.md)
 - [IALink – rozhraní](ialink-interface.md)
-- [Rozhraní API ALink](index.md)
+- [ALink API](index.md)

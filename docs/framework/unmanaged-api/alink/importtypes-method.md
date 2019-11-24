@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 351d4b4c-c939-486d-9471-51914a55f471
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: f19dd114925ed1fd12bcc0056411c3e3d4181215
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 76d2b163f959111923bffb1348890f6fbb29828e
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70777096"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445676"
 ---
 # <a name="importtypes-method"></a>ImportTypes – metoda
-Inicializuje import typů z každého oboru importovaného pomocí [metody importFile –](importfile-method.md).  
+Initiates the importing of types from each scope imported via [ImportFile Method](importfile-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,31 +39,31 @@ HRESULT ImportTypes(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID sestavení, do kterého se má importovat  
+ ID of the assembly to import to.  
   
  `FileToken`  
- ID souboru, ze kterého se má importovat  
+ ID of the file to import from.  
   
  `dwScope`  
- Rozsah založený na nule pro import.  
+ Zero-based scope to import.  
   
  `phEnum`  
- Přijímá popisovač enumerátoru pro typy v tomto oboru.  
+ Receives enumerator handle for the types in this scope.  
   
  `ppImportScope`  
- Volitelně přijímá rozhraní [rozhraní IMetaDataImport](../metadata/imetadataimport-interface.md) .  
+ Optionally receives [IMetaDataImport Interface](../metadata/imetadataimport-interface.md) interface.  
   
  `pdwCountOfTypes`  
- Volitelně přijímá počet typů v označeném rozsahu.  
+ Optionally receives count of types in the indicated scope.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrací S_OK, pokud je metoda úspěšná.  
+ Returns S_OK if the method succeeds.  
   
 ## <a name="requirements"></a>Požadavky  
- Vyžaduje ALink. h  
+ Requires alink.h  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink – rozhraní](ialink-interface.md)
 - [IALink2 – rozhraní](ialink2-interface.md)
-- [Rozhraní API ALink](index.md)
+- [ALink API](index.md)

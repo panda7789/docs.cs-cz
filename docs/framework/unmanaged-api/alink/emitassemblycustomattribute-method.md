@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: b72f5409-79af-4fa7-90a7-7630eec170f1
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 77d54f6c8f67dda5132518d1fbd579a91ce82071
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: ec0a86e3396ad42152bc0a244f74ad13deba16e4
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70777438"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74446516"
 ---
 # <a name="emitassemblycustomattribute-method"></a>EmitAssemblyCustomAttribute – metoda
-Volání pro nastavení vlastních atributů na úrovni sestavení.  
+Call to set assembly-level custom attributes.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,34 +41,34 @@ HRESULT EmitAssemblyCustomAttribute(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID sestavení  
+ ID of the assembly.  
   
  `FileToken`  
- Soubor, který tento atribut odfile. Může mít hodnotu null `AssemblyID` , pokud neoznačuje nevázaný netmodule.  
+ File that defiles the attribute. Can be NULL if `AssemblyID` does not indicate an unbound netmodule.  
   
  `tkType`  
- Typ vlastního atributu  
+ Type of the custom attribute.  
   
  `pCustomValue`  
- Vlastní data hodnoty.  
+ Custom value data.  
   
  `cbCustomValue`  
- Délka dat vlastních hodnot  
+ Length of custom value data.  
   
  `bSecurity`  
- TRUE, pokud vlastní atribut souvisí s podepisováním sestavení.  
+ TRUE if the custom attribute is related to assembly signing.  
   
  `bAllowMulti`  
- TRUE, pokud má být vygenerováno více atributů.  
+ TRUE if multiple attributes are to be emitted.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrací S_OK, pokud je metoda úspěšná.  
+ Returns S_OK if the method succeeds.  
   
 ## <a name="requirements"></a>Požadavky  
- Vyžaduje ALink. h  
+ Requires alink.h  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink – rozhraní](ialink-interface.md)
 - [IALink2 – rozhraní](ialink2-interface.md)
-- [Rozhraní API ALink](index.md)
+- [ALink API](index.md)

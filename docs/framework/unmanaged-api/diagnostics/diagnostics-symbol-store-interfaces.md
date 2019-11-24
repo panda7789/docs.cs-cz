@@ -9,111 +9,109 @@ helpviewer_keywords:
 - debugging interfaces [.NET Framework]
 - interfaces [.NET Framework debugging]
 ms.assetid: f96987d5-e6a5-478b-ac5e-302e16545cce
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 6fca7359888b8b73b2e1cf709ab708d71abf0db6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bdb691570a9a2bf7bd2bb21af500b06c10b0bc53
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61787891"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448522"
 ---
 # <a name="diagnostics-symbol-store-interfaces"></a>Rozhraní úložiště symbolů diagnostiky
-Toto téma popisuje nespravovaná rozhraní, které umožňují kompilátoru generovat informace o symbolech pro použití ladicím programem.  
+This topic describes the unmanaged interfaces that enable a compiler to generate symbol information for use by a debugger.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [IBindingDisplay – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-interface.md)  
- Poskytuje metody, které zobrazení aktuální vazby informací o spuštěné aplikaci.  
+ Provides methods that display current binding information about the running application.  
   
  [IDebugAutoAttach – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/idebugautoattach-interface.md)  
- Definuje rozhraní pro automatické serveru vyvolá ladicí program připojit.  
+ Defines the interface for a server-invoked debugger auto attach.  
   
  [INotifyConnection2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/inotifyconnection2-interface.md)  
- Deklaruje metody pro registraci a zrušení registrace oznámení zdroj připojení.  
+ Declares methods for registering and unregistering a connection notification source.  
   
  [INotifySink2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)  
- Deklaruje metody pro jímku oznámení.  
+ Declares methods for sink notification.  
   
  [INotifySource2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-interface.md)  
- Deklaruje metodu pro nastavení oznámení filtrů.  
+ Declares a method for setting notification filters.  
   
  [ISymENCUnmanagedMethod – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymencunmanagedmethod-interface.md)  
- Obsahuje informace o funkci upravit a pokračovat.  
+ Provides information for the Edit and Continue feature.  
   
  [ISymUnmanagedAsyncMethod – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedasyncmethod-interface.md)  
- Toto rozhraní je doplněk čtení k [isymunmanagedasyncmethodpropertieswriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedasyncmethodpropertieswriter-interface.md).  
+ This interface is the reading complement to [ISymUnmanagedAsyncMethodPropertiesWriter Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedasyncmethodpropertieswriter-interface.md).  
   
  [ISymUnmanagedAsyncMethodPropertiesWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedasyncmethodpropertieswriter-interface.md)  
- Umožňuje definici volitelné asynchronní metoda informace o metoda symbol. Musíte použít s metodou otevřené (tedy mezi voláními [openmethod – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-openmethod-method.md)a [closemethod – metoda](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-closemethod-method.md)).  
+ Allows definition of optional async method information per method symbol. Must use with an opened method (that is, between calls to the [OpenMethod Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-openmethod-method.md)and the [CloseMethod Method](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-closemethod-method.md)).  
   
  [ISymUnmanagedBinder – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-interface.md)  
- Představuje vazač symbolů pro nespravovaný kód.  
+ Represents a symbol binder for unmanaged code.  
   
  [ISymUnmanagedBinder2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder2-interface.md)  
- Představuje vazač symbolů pro nespravovaný kód a rozšiřuje `ISymUnmanagedBinder` rozhraní.  
+ Represents a symbol binder for unmanaged code, and extends the `ISymUnmanagedBinder` interface.  
   
  [ISymUnmanagedBinder3 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder3-interface.md)  
- Představuje vazač symbolů pro nespravovaný kód a rozšiřuje `ISymUnmanagedBinder` rozhraní.  
+ Represents a symbol binder for unmanaged code, and extends the `ISymUnmanagedBinder` interface.  
   
  [ISymUnmanagedConstant – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-interface.md)  
- Poskytuje přístup k nespravované konstanty.  
+ Provides access to unmanaged constants.  
   
  [ISymUnmanagedDispose – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddispose-interface.md)  
- Uvolní nespravované prostředky.  
+ Disposes of unmanaged resources.  
   
  [ISymUnmanagedDocument – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)  
- Reprezentuje dokument odkazuje úložiště symbolů.  
+ Represents a document referenced by a symbol store.  
   
  [ISymUnmanagedDocumentWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocumentwriter-interface.md)  
- Poskytuje metody pro zápis na dokument odkazuje úložiště symbolů.  
+ Provides methods for writing to a document referenced by a symbol store.  
   
  [ISymUnmanagedENCUpdate – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedencupdate-interface.md)  
- Poskytuje metody pro funkci upravit a pokračovat.  
+ Provides methods for the Edit and Continue feature.  
   
  [ISymUnmanagedMethod – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)  
- Představuje metodu v úložišti symbolů.  
+ Represents a method within the symbol store.  
   
  [ISymUnmanagedNamespace – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-interface.md)  
- Představuje obor názvů.  
+ Represents a namespace.  
   
  [ISymUnmanagedReader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)  
- Představuje modul pro načítání symbolů, který poskytuje přístup k dokumentům, metody a proměnných v úložišti symbolů.  
+ Represents a symbol reader that provides access to documents, methods, and variables within a symbol store.  
   
  [ISymUnmanagedReader2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader2-interface.md)  
- Získá token metody a číslo verze upravit a kopírovat metodu čtečky symbolů.  
+ Gets a symbol reader method given a method token and an edit-and-copy version number.  
   
  [ISymUnmanagedReaderSymbolSearchInfo – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreadersymbolsearchinfo-interface.md)  
- Poskytuje metody, které získávají informace hledání symbolu.  
+ Provides methods that get symbol search information.  
   
  [ISymUnmanagedScope – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md)  
- Představuje lexikální rozsah v rámci metody.  
+ Represents a lexical scope within a method.  
   
  [ISymUnmanagedScope2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope2-interface.md)  
- Představuje lexikální rozsah v rámci metody a rozšiřuje `ISymUnmanagedScope` rozhraní s metodami, které získávají informace o konstanty definované v rámci oboru...  
+ Represents a lexical scope within a method, and extends the `ISymUnmanagedScope` interface with methods that get information about constants defined within the scope..  
   
  [ISymUnmanagedSourceServerModule – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedsourceservermodule-interface.md)  
- Pro modul poskytuje data zdrojového serveru.  
+ Provides source server data for a module.  
   
  [ISymUnmanagedSymbolSearchInfo – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedsymbolsearchinfo-interface.md)  
- Poskytuje metody, které získáte informace o cestě pro vyhledávání.  
+ Provides methods that get information about the search path.  
   
  [ISymUnmanagedVariable – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-interface.md)  
- Představuje proměnnou, jako je například parametr, místní proměnné nebo pole.  
+ Represents a variable, such as a parameter, a local variable, or a field.  
   
  [ISymUnmanagedWriter – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)  
- Reprezentuje zapisovač symbolů a poskytuje metody, které definují dokumenty, body sekvence, lexikální obory a proměnné.  
+ Represents a symbol writer, and provides methods to define documents, sequence points, lexical scopes, and variables.  
   
  [ISymUnmanagedWriter2 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter2-interface.md)  
- Reprezentuje zapisovač symbolů a poskytuje metody, které definují dokumenty, body sekvence, lexikální obory a proměnné. Rozšiřuje `ISymUnmanagedWriter` rozhraní.  
+ Represents a symbol writer, and provides methods to define documents, sequence points, lexical scopes, and variables. Extends the `ISymUnmanagedWriter` interface.  
   
  [ISymUnmanagedWriter3 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter3-interface.md)  
- Reprezentuje zapisovač symbolů a poskytuje metody, které definují dokumenty, body sekvence, lexikální obory a proměnné. Rozšiřuje `ISymUnmanagedWriter` rozhraní.  
+ Represents a symbol writer, and provides methods to define documents, sequence points, lexical scopes, and variables. Extends the `ISymUnmanagedWriter` interface.  
   
  [ISymUnmanagedWriter4 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter4-interface.md)  
- Isymunmanagedwriter4 – rozhraní.  
+ ISymUnmanagedWriter4 interface.  
   
  [ISymUnmanagedWriter5 – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter5-interface.md)  
- Isymunmanagedwriter5 – rozhraní.  
+ ISymUnmanagedWriter5 interface.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Výčty pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-enumerations.md)  

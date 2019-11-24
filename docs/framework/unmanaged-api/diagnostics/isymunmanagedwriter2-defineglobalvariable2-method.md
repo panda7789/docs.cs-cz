@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 04d569d6-a151-4957-9872-f3f694c3e4a9
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a54d3cb1bb9abf740c2c9b5a9a8312a9612ae658
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 12475b1ac8a1a81e565aa689eac2ae1a9b55e73a
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894452"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74438282"
 ---
 # <a name="isymunmanagedwriter2defineglobalvariable2-method"></a>ISymUnmanagedWriter2::DefineGlobalVariable2 – metoda
-Definuje jednu globální proměnnou.  
+Defines a single global variable.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,31 +40,31 @@ HRESULT DefineGlobalVariable2(
   
 ## <a name="parameters"></a>Parametry  
  `name`  
- pro Název globální proměnné  
+ [in] The global variable name.  
   
  `attributes`  
- pro Atributy globálních proměnných.  
+ [in] The global variable attributes.  
   
  `sigToken`  
- pro Token metadat podpisu  
+ [in] The metadata token of the signature.  
   
  `addrKind`  
- pro Typ adresy.  
+ [in] The address type.  
   
  `addr1`  
- pro První adresa specifikace parametru.  
+ [in] The first address for the parameter specification.  
   
  `addr2`  
- pro Druhá adresa specifikace parametru.  
+ [in] The second address for the parameter specification.  
   
  `addr3`  
- pro Třetí adresa specifikace parametru.  
+ [in] The third address for the parameter specification.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud je metoda úspěšná; jinak E_FAIL nebo nějaký jiný kód chyby.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## <a name="requirements"></a>Požadavky  
- **Hlaviček** CorSym.idl  
+ **Header:** CorSym.idl  
   
 ## <a name="see-also"></a>Viz také:
 

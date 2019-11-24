@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 08dff60c-f01b-4050-8865-ea3f95361c9f
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 5d8827f46a12bd090fa27e71072d833607d34677
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 6a5b3f1e9bf1444feb73949ef7133fbd9ae35134
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70777359"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74446469"
 ---
 # <a name="enumcustomattributes-method"></a>EnumCustomAttributes – metoda
-Načte vlastní atributy na úrovni sestavení.  
+Retrieves assembly-level custom attributes.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,28 +39,28 @@ HRESULT EnumCustomAttributes(
   
 ## <a name="parameters"></a>Parametry  
  `hEnum`  
- Popisovač čítače.  
+ Handle of enumerator.  
   
  `tkType`  
- Typ atributů, které mají být vyčísleny. Použijte `mdTokenNill` pro všechny atributy.  
+ Type of attributes to be enumerated. Use `mdTokenNill` for all attributes.  
   
  `rCustomValues`  
- Přijímá vlastní tokeny atributů.  
+ Receives custom attributes tokens.  
   
  `cMax`  
- Určuje velikost `rCustomValues` pole.  
+ Specifies size of `rCustomValues` array.  
   
  `pcCustomValues`  
- Volitelně přijímá počet hodnot tokenu.  
+ Optionally receives count of token values.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrací S_OK, pokud je metoda úspěšná.  
+ Returns S_OK if the method succeeds.  
   
 ## <a name="requirements"></a>Požadavky  
- Vyžaduje ALink. h  
+ Requires alink.h  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink – rozhraní](ialink-interface.md)
 - [IALink2 – rozhraní](ialink2-interface.md)
-- [Rozhraní API ALink](index.md)
+- [ALink API](index.md)

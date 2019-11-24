@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: c30a4ce3-2d3e-411a-98df-e62ac4a5dd50
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: f005ee9d3d9d4b8977cd6a1838fe46015e604df5
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 3dfdd473b01bfe83def52f957c52e0f4d11375ad
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777468"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74434379"
 ---
 # <a name="imetadataemitdefinetyperefbyname-method"></a>IMetaDataEmit::DefineTypeRefByName – metoda
-Získá token metadat pro typ, který je definován v zadaném rozsahu, který se nenachází v aktuálním oboru.  
+Gets a metadata token for a type that is defined in the specified scope, which is outside the current scope.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,32 +37,32 @@ HRESULT DefineTypeRefByName (
   
 ## <a name="parameters"></a>Parametry  
  `tkResolutionScope`  
- [in] Token určující rozlišovací obor. Platné jsou následující typy tokenů:  
+ [in] The token specifying the resolution scope. The following token types are valid:  
   
-- `mdModuleRef`, pokud je typ definován ve stejném sestavení, ve kterém je definována volající.  
+- `mdModuleRef`, if the type is defined in the same assembly in which the caller is defined.  
   
-- `mdAssemblyRef`, pokud je typ definovaný v jiném sestavení než ten, ve kterém je definována volající.  
+- `mdAssemblyRef`, if the type is defined in an assembly other than the one in which the caller is defined.  
   
-- `mdTypeRef`, pokud je typ vnořeného typu.  
+- `mdTypeRef`, if the type is a nested type.  
   
-- `mdModule`, pokud je typ definován ve stejném modulu, ve kterém je definována volající.  
+- `mdModule`, if the type is defined in the same module in which the caller is defined.  
   
-- Hodnota Null, pokud je typ definován globálně.  
+- Null, if the type is defined globally.  
   
  `szName`  
- [in] Název cílového typu v kódování Unicode.  
+ [in] The name of the target type in Unicode.  
   
  `ptr`  
- [out] Ukazatel `mdTypeRef` token, který je přiřazen k typu.  
+ [out] A pointer to the `mdTypeRef` token that is assigned to the type.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Použít jako prostředek v MSCorEE.dll  
+ **Library:** Used as a resource in MSCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

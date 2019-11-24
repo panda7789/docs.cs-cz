@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: f1f6b8f3-dcfc-49e8-be76-ea50ea90d5a7
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 5ead38d54d470c3f443ae5e27e4a2d045bc27c79
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e2a4df262e076c960640977bea0d22be19802140
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67783038"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74449665"
 ---
 # <a name="icorprofilerinfo3getmoduleinfo2-method"></a>ICorProfilerInfo3::GetModuleInfo2 – metoda
-Dané ID modulu vrátí název souboru modulu, ID modulu nadřazené sestavení a bitová maska, která popisuje vlastnosti modulu.  
+Given a module ID, returns the file name of the module, the ID of the module's parent assembly, and a bitmask that describes the properties of the module.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,43 +41,43 @@ HRESULT GetModuleInfo2(
   
 ## <a name="parameters"></a>Parametry  
  `moduleId`  
- [in] ID modulu, pro kterou budou načteny informace.  
+ [in] The ID of the module for which information will be retrieved.  
   
  `ppBaseLoadAddress`  
- [out] Základní adresa, načtení modulu.  
+ [out] The base address at which the module is loaded.  
   
  `cchName`  
- [in] Délka ve znacích, nástroje `szName` návratové vyrovnávací paměti.  
+ [in] The length, in characters, of the `szName` return buffer.  
   
  `pcchName`  
- [out] Celkový počet znaků z modulů název souboru, který je vrácen ukazatel.  
+ [out] A pointer to the total character length of the module's file name that is returned.  
   
  `szName`  
- [out] Pokud volající širokého znaku vyrovnávací paměti. Po návratu metody obsahuje tuto vyrovnávací paměť názvu souboru modulu.  
+ [out] A caller-provided wide character buffer. When the method returns, this buffer contains the file name of the module.  
   
  `pAssemblyId`  
- [out] Ukazatel na ID nadřazeného sestavení modulu.  
+ [out] A pointer to the ID of the module's parent assembly.  
   
  `pdwModuleFlags`  
- [out] Bitová maska hodnot z [cor_prf_module_flags –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-module-flags-enumeration.md) výčet, který určit vlastnosti modulu.  
+ [out] A bitmask of values from the [COR_PRF_MODULE_FLAGS](../../../../docs/framework/unmanaged-api/profiling/cor-prf-module-flags-enumeration.md) enumeration that specify the properties of the module.  
   
 ## <a name="remarks"></a>Poznámky  
- Pro dynamické moduly `szName` parametr je název metadata modulu a základní adresa je 0 (nula). Název metadat je hodnota ve sloupci název z tabulky modulu uvnitř metadat. To je také vystavena jako <xref:System.Reflection.Module.ScopeName%2A?displayProperty=nameWithType> vlastnost do spravovaného kódu a jako `szName` parametr [imetadataimport::getscopeprops –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getscopeprops-method.md) metodu pro nespravované metadat klientský kód.  
+ For dynamic modules, the `szName` parameter is the metadata name of the module, and the base address is 0 (zero). The metadata name is the value in the Name column from the Module table inside metadata. This is also exposed as the <xref:System.Reflection.Module.ScopeName%2A?displayProperty=nameWithType> property to managed code, and as the `szName` parameter of the [IMetaDataImport::GetScopeProps](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getscopeprops-method.md) method to unmanaged metadata client code.  
   
- I když `GetModuleInfo2` metoda může být volána jako ID modulu existuje, ID nadřazeného sestavení nebude k dispozici, dokud profiler obdrží [icorprofilercallback::moduleattachedtoassembly –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleattachedtoassembly-method.md) zpětného volání.  
+ Although the `GetModuleInfo2` method may be called as soon as the module's ID exists, the ID of the parent assembly will not be available until the profiler receives the [ICorProfilerCallback::ModuleAttachedToAssembly](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleattachedtoassembly-method.md) callback.  
   
- Když `GetModuleInfo2` vrátí, musíte ověřit, že `szName` vyrovnávací paměť je dostatečně velký, aby obsahovat úplný název souboru modulu. K tomuto účelu porovnat hodnoty, které `pcchName` odkazuje na hodnotu `cchName` parametru. Pokud `pcchName` odkazuje na hodnotu, která je větší než `cchName`, přidělte větší `szName` vyrovnávací paměti, aktualizujte `cchName` nové, větší velikosti a volání `GetModuleInfo2` znovu.  
+ When `GetModuleInfo2` returns, you must verify that the `szName` buffer was large enough to contain the full file name of the module. To do this, compare the value that `pcchName` points to with the value of the `cchName` parameter. If `pcchName` points to a value that is larger than `cchName`, allocate a larger `szName` buffer, update `cchName` with the new, larger size, and call `GetModuleInfo2` again.  
   
- Alternativně můžete nejprve volat `GetModuleInfo2` s nulovou délkou `szName` vyrovnávací paměť pro získání správné vyrovnávací paměť. Pak můžete nastavit velikost vyrovnávací paměti pro hodnotu vrácenou v `pcchName` a volat `GetModuleInfo2` znovu.  
+ Alternatively, you can first call `GetModuleInfo2` with a zero-length `szName` buffer to obtain the correct buffer size. You can then set the buffer size to the value returned in `pcchName` and call `GetModuleInfo2` again.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Header:** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids.lib  
+ **Library:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

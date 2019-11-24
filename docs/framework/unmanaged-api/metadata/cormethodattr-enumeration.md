@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 4e0c3521-e54d-43c1-9857-cc76b49b8ffc
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ff298f73f02f148fc389f389ba86fd9a550998c7
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 74088d1cd018bb07406fc7d00ff83d783a98b663
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781778"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74450225"
 ---
 # <a name="cormethodattr-enumeration"></a>CorMethodAttr – výčet
-Obsahuje hodnoty, které popisují funkce metody.  
+Contains values that describe the features of a method.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -68,37 +66,37 @@ typedef enum CorMethodAttr {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`mdMemberAccessMask`|Určuje přístup ke členu.|  
-|`mdPrivateScope`|Určuje, že člen se nedá odkazovat.|  
-|`mdPrivate`|Určuje, že člen je přístupný pouze pomocí nadřazeného typu.|  
-|`mdFamANDAssem`|Určuje, že člen je přístupný pro podtypy pouze v tomto sestavení.|  
-|`mdAssem`|Určuje, zda člen accessibly kdokoli v sestavení.|  
-|`mdFamily`|Určuje, že člen je přístupný pouze podle typu a podtypy.|  
-|`mdFamORAssem`|Určuje, že člen je přístupný z odvozených tříd a další typy v sestavení.|  
-|`mdPublic`|Určuje, že člen je přístupné pro všechny typy s přístupem k oboru.|  
-|`mdStatic`|Určuje, že člen je definovaný v rámci typu, nikoli jako člena instance.|  
-|`mdFinal`|Určuje, že metoda nemůže být přepsána.|  
-|`mdVirtual`|Určuje, zda lze přepsat metodu.|  
-|`mdHideBySig`|Určuje, že metoda skrývá podle názvu a podpisu, nikoli pouze podle názvu.|  
-|`mdVtableLayoutMask`|Určuje rozložení virtuální tabulky.|  
-|`mdReuseSlot`|Určuje, že slotu použít pro tuto metodu v tabulce virtuální znovu použít. Toto nastavení je výchozí.|  
-|`mdNewSlot`|Určuje, že metoda vždy získá nový slot v tabulce virtuální.|  
-|`mdCheckAccessOnOverride`|Určuje, že metoda se dá přepsat stejné typy, na které je viditelné.|  
-|`mdAbstract`|Určuje, že metoda není implementována.|  
-|`mdSpecialName`|Určuje, že metoda je speciální a že jeho název popisuje jak.|  
-|`mdPinvokeImpl`|Určuje, že implementace metody je dál pomocí služby PInvoke.|  
-|`mdUnmanagedExport`|Určuje, že metoda je spravované metody exportovat do nespravovaného kódu.|  
-|`mdReservedMask`|Modul common language runtime vyhrazené pro interní použití.|  
-|`mdRTSpecialName`|Určuje, že modul common language runtime by měla kontrolovat kódování název metody.|  
-|`mdHasSecurity`|Určuje, že tato metoda má přidruženo zabezpečení.|  
-|`mdRequireSecObject`|Určuje, že metoda volá jinou metodu obsahující zabezpečovací kód.|  
+|`mdMemberAccessMask`|Specifies member access.|  
+|`mdPrivateScope`|Specifies that the member cannot be referenced.|  
+|`mdPrivate`|Specifies that the member is accessible only by the parent type.|  
+|`mdFamANDAssem`|Specifies that the member is accessible by subtypes only in this assembly.|  
+|`mdAssem`|Specifies that the member is accessibly by anyone in the assembly.|  
+|`mdFamily`|Specifies that the member is accessible only by type and subtypes.|  
+|`mdFamORAssem`|Specifies that the member is accessible by derived classes and by other types in its assembly.|  
+|`mdPublic`|Specifies that the member is accessible by all types with access to the scope.|  
+|`mdStatic`|Specifies that the member is defined as part of the type rather than as a member of an instance.|  
+|`mdFinal`|Specifies that the method cannot be overridden.|  
+|`mdVirtual`|Specifies that the method can be overridden.|  
+|`mdHideBySig`|Specifies that the method hides by name and signature, rather than just by name.|  
+|`mdVtableLayoutMask`|Specifies virtual table layout.|  
+|`mdReuseSlot`|Specifies that the slot used for this method in the virtual table be reused. Toto nastavení je výchozí.|  
+|`mdNewSlot`|Specifies that the method always gets a new slot in the virtual table.|  
+|`mdCheckAccessOnOverride`|Specifies that the method can be overridden by the same types to which it is visible.|  
+|`mdAbstract`|Specifies that the method is not implemented.|  
+|`mdSpecialName`|Specifies that the method is special, and that its name describes how.|  
+|`mdPinvokeImpl`|Specifies that the method implementation is forwarded using PInvoke.|  
+|`mdUnmanagedExport`|Specifies that the method is a managed method exported to unmanaged code.|  
+|`mdReservedMask`|Reserved for internal use by the common language runtime.|  
+|`mdRTSpecialName`|Specifies that the common language runtime should check the encoding of the method name.|  
+|`mdHasSecurity`|Specifies that the method has security associated with it.|  
+|`mdRequireSecObject`|Specifies that the method calls another method containing security code.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorHdr.h  
+ **Header:** CorHdr.h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4400fb8c-0407-4791-8557-f011fd2aee51
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 7087864d0305f0cdb0b4977f037cf5a7c4dee18d
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 20556d85655a0a1bbe069a94b99c19c774a13ce6
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67783145"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74449679"
 ---
 # <a name="icorprofilerinfo3getruntimeinformation-method"></a>ICorProfilerInfo3::GetRuntimeInformation – metoda
-Poskytuje informace o verzi o common language runtime (CLR), která je právě profilována.  
+Provides version information about the common language runtime (CLR) that is being profiled.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,43 +43,43 @@ HRESULT GetRuntimeInformation(
   
 ## <a name="parameters"></a>Parametry  
  `pClrInstanceId`  
- [out] Identifikátor zástupce spuštěné instance modulu CLR v procesu. To je stejný jako `ClrInstanceID` , že sestavy trasování událostí pro Windows (ETW) spouštěcí událost.  
+ [out] The representative ID of a running CLR instance in a process. This is the same as the `ClrInstanceID` that the event tracing for Windows (ETW) startup event reports.  
   
  `pRuntimeType`  
- [out] Typ modulu runtime. Tento parametr vrátí `COR_PRF_DESKTOP_CLR` pro desktopovou verzi modulu CLR, nebo `COR_PRF_CORE_CLR` základní verze CLR použít v programu Silverlight.  
+ [out] The runtime type. This parameter returns `COR_PRF_DESKTOP_CLR` for the desktop version of the CLR, or `COR_PRF_CORE_CLR` for the core version of the CLR used in Silverlight.  
   
  `pMajorVersion`  
- [out] Číslo hlavní verze modulu CLR.  
+ [out] The major version number of the CLR.  
   
  `pMinorVersion`  
- [out] Číslo podverze modulu CLR.  
+ [out] The minor version number of the CLR.  
   
  `pBuildVersion`  
- [out] Číslo verze sestavení CLR.  
+ [out] The build version number of the CLR.  
   
  `pQFEVersion`  
- [out] Číslo verze modulu CLR, který je přiřazen k aktualizaci softwaru.  
+ [out] The version number of the CLR that is associated with a software update.  
   
  `cchVersionString`  
- [in] Délka ve znacích, vyrovnávací paměti, která `szVersionString` odkazuje na.  
+ [in] The length, in characters, of the buffer that `szVersionString` points to.  
   
  `pcchVersionString`  
- [out] Délka ve znacích, z `szVersionString`.  
+ [out] The length, in characters, of `szVersionString`.  
   
  `szVersionString`  
- [out] Řetězec verze modulu CLR.  
+ [out] The CLR version string.  
   
 ## <a name="remarks"></a>Poznámky  
- Můžete předat hodnotu null pro žádné parametry. Ale `pcchVersionString` nemůže být null. Pokud `szVersionString` má hodnotu null.  
+ You may pass null for any parameter. However, `pcchVersionString` cannot be null unless `szVersionString` is also null.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Header:** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids.lib  
+ **Library:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

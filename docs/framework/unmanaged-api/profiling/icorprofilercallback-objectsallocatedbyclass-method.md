@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 91d688f3-a80e-419d-9755-ff94bc04188a
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 4229332ef3a079a5a294e27b624dde0e1fb46691
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 9ba021ec223d00e57081567b76f70f59768e6b9a
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782954"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445866"
 ---
 # <a name="icorprofilercallbackobjectsallocatedbyclass-method"></a>ICorProfilerCallback::ObjectsAllocatedByClass – metoda
-Informuje o počtu instancí každé zadané třídy, které byly vytvořeny od posledního shromažďování dat paměti profilerem.  
+Notifies the profiler about the number of instances of each specified class that have been created since the most recent garbage collection.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,29 +36,29 @@ HRESULT ObjectsAllocatedByClass(
   
 ## <a name="parameters"></a>Parametry  
  `cClassCount`  
- [in] Velikost `classIds` a `cObjects` pole.  
+ [in] The size of the `classIds` and `cObjects` arrays.  
   
  `classIds`  
- [in] Pole ID, kde každé ID Určuje třídu s jednu nebo víc instancí tříd.  
+ [in] An array of class IDs, where each ID specifies a class with one or more instances.  
   
  `cObjects`  
- [in] Pole celých čísel, kde každé celé číslo určuje počet instancí pro odpovídající třídu v `classIds` pole.  
+ [in] An array of integers, where each integer specifies the number of instances for the corresponding class in the `classIds` array.  
   
 ## <a name="remarks"></a>Poznámky  
- `classIds` a `cObjects` pole jsou paralelní pole. Například `classIds[i]` a `cObjects[i]` odkazovat na stejnou třídu. Pokud od předchozí uvolňování paměti kolekce byla vytvořena žádná instance třídy, třída je vynechán. `ObjectsAllocatedByClass` Zpětné volání, nebudou podávat objekty přidělené ve velkých objektových haldách.  
+ The `classIds` and `cObjects` arrays are parallel arrays. For example, `classIds[i]` and `cObjects[i]` reference the same class. If no instance of a class has been created since the previous garbage collection, the class is omitted. The `ObjectsAllocatedByClass` callback will not report objects allocated in the large object heap.  
   
- Čísla hlášených `ObjectsAllocatedByClass` jsou pouze odhady. Přesný počet, použijte [ICorProfilerCallback::ObjectAllocated](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectallocated-method.md).  
+ The numbers reported by `ObjectsAllocatedByClass` are only estimates. For exact counts, use [ICorProfilerCallback::ObjectAllocated](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectallocated-method.md).  
   
- `classIds` Pole může obsahovat jeden nebo více položky s hodnotou null, pokud odpovídající `cObjects` pole obsahuje typy, které jsou uvolnění.  
+ The `classIds` array may contain one or more null entries if the corresponding `cObjects` array has types that are unloading.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Header:** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids.lib  
+ **Library:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

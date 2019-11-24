@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: f8ba6fc8-f5aa-4066-ac96-56332758f5ec
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e8a22e958740b69ba0e09bf062bf4d86075c3ff1
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 2dcb363a2a84b3c2e0438e45663b96d9a0f83f61
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70777020"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445550"
 ---
 # <a name="setnonassemblyflags-method"></a>SetNonAssemblyFlags – metoda
-Nastaví příznaky, které nejsou specifické pro sestavení.  
+Sets flags that are not assembly-specific.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,16 +34,16 @@ HRESULT SetNonAssemblyFlags(
   
 ## <a name="parameters"></a>Parametry  
  `afFlags`  
- Příznaky ALink  
+ ALink flags.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrací S_OK, pokud je metoda úspěšná.  
+ Returns S_OK if the method succeeds.  
   
 ## <a name="requirements"></a>Požadavky  
- Vyžaduje ALink. h  
+ Requires alink.h  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink – rozhraní](ialink-interface.md)
 - [IALink2 – rozhraní](ialink2-interface.md)
-- [Rozhraní API ALink](index.md)
+- [ALink API](index.md)

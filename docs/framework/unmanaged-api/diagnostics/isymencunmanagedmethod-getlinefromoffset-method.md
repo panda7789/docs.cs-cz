@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: cc09bad2-fb34-4d13-a521-6ec7b1a1d915
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: b669921bf8d27283ba99f4ca1d97b6abc00e15db
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 94a571a4bc01b805387aebe5a6e23bad0b735313
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67776882"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448648"
 ---
 # <a name="isymencunmanagedmethodgetlinefromoffset-method"></a>ISymENCUnmanagedMethod::GetLineFromOffset – metoda
-Získá informace o řádku, které jsou spojené s posunem. Pokud parametr offset (`dwOffset`) není bod sekvence, tato metoda získá informace o řádku spojené s předchozím posunu.  
+Gets the line information associated with an offset. If the offset parameter (`dwOffset`) is not a sequence point, this method gets the line information associated with the previous offset.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,28 +39,28 @@ HRESULT GetLineFromOffset(
   
 ## <a name="parameters"></a>Parametry  
  `dwOffset`  
- [in] A `ULONG32` obsahující posun.  
+ [in] A `ULONG32` that contains the offset.  
   
  `pline`  
- [out] Ukazatel `ULONG32` , která obdrží řádku.  
+ [out] A pointer to a `ULONG32` that receives the line.  
   
  `pcolumn`  
- [out] Ukazatel `ULONG32` , která obdrží sloupci.  
+ [out] A pointer to a `ULONG32` that receives the column.  
   
  `pendLine`  
- [out] Ukazatel `ULONG32` , který přijímá na konci řádku.  
+ [out] A pointer to a `ULONG32` that receives the end line.  
   
  `pendColumn`  
- [out] Ukazatel `ULONG32` , která obdrží koncový sloupec.  
+ [out] A pointer to a `ULONG32` that receives the end column.  
   
  `pdwStartOffset`  
- [out] Ukazatel `ULONG32` , která obdrží bodu sekvence. přidružené.  
+ [out] A pointer to a `ULONG32` that receives the associated sequence point.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** CorSym.idl, CorSym.h  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Viz také:
 

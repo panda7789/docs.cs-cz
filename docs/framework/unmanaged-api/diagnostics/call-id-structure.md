@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: bfd46324-afec-4782-9c18-586d81fb4740
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2823c018ff22607052cb9a298f69dbd0c4fe2c23
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 8c606f67766334800444f39b115d90f65ecca13d
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67769508"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448593"
 ---
-# <a name="callid-structure"></a>CALL_ID – struktura
-Poskytuje informace o ladicím programu o funkci, která je volána. Zobrazit [inotifysink2 –](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md) rozhraní pro další informace.  
+# <a name="call_id-structure"></a>CALL_ID – struktura
+Provides information to a debugger about a function that is being called. See the [INotifySink2](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md) interface for more information.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,15 +42,15 @@ typedef struct tagCALL_ID
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`szMachine`|Identifikuje počítač, který provádí volání.|  
-|`dwPid`|Určuje procesor počítače.|  
-|`pUserThread`|Identifikuje vlákna, která provádí volání.|  
-|`addrStackPointer`|Určuje adresu zásobníku volání.|  
-|`szEntryPoint`|Určuje adresu volání.|  
-|`szDestinationMachine`|Identifikuje počítač, který provede volání.|  
+|`szMachine`|Identifies the machine that is making the call.|  
+|`dwPid`|Identifies the machine processor.|  
+|`pUserThread`|Identifies the thread that is executing the call.|  
+|`addrStackPointer`|Specifies the address of the call stack.|  
+|`szEntryPoint`|Specifies the address of the call.|  
+|`szDestinationMachine`|Identifies the machine that will execute the call.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** ProtocolNotify2.idl  
+ **Header:** ProtocolNotify2.idl  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 535a6839-c443-405b-a6f4-e2af90725d5b
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: efc097fd9b4da668aafce90ce601a3143ea57dc7
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 25c208c98802be540bde7532c53798e6f7b35446
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67763167"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445948"
 ---
 # <a name="iclrprofilingattachprofiler-method"></a>ICLRProfiling::AttachProfiler – metoda
-Připojí zadaný profiler do určeného procesu.  
+Attaches the specified profiler to the specified process.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,54 +39,54 @@ HRESULT AttachProfiler(
   
 ## <a name="parameters"></a>Parametry  
  `dwProfileeProcessID`  
- [in] Proces ID procesu, ke kterému by měl profiler připojen. Na 64bitovém počítači profilovaný proces bitové verze musí odpovídat počtu bitů aktivační proces, který volá `AttachProfiler`. Pokud uživatelský účet, pod kterým `AttachProfiler` nazývá má oprávnění správce, Cílový proces může být jakýkoli proces v systému. V opačném případě cílový proces musí být vlastněno stejným uživatelským účtem.  
+ [in] The process ID of the process to which the profiler should be attached. On a 64-bit machine, the profiled process's bitness must match the bitness of the trigger process that is calling `AttachProfiler`. If the user account under which `AttachProfiler` is called has administrative privileges, the target process may be any process on the system. Otherwise, the target process must be owned by the same user account.  
   
  `dwMillisecondsMax`  
- [in] Doba trvání v milisekundách pro `AttachProfiler` dokončete. Aktivační proces by měla předat vypršení časového limitu, který je znám jako dostatečná pro konkrétní profiler dokončit jeho inicializaci.  
+ [in] The time duration, in milliseconds, for `AttachProfiler` to complete. The trigger process should pass a timeout that is known to be sufficient for the particular profiler to complete its initialization.  
   
  `pClsidProfiler`  
- [in] Ukazatel na identifikátor CLSID profileru, který se má načíst. Aktivační proces můžete znovu použít tuto paměť po `AttachProfiler` vrátí.  
+ [in] A pointer to the CLSID of the profiler to be loaded. The trigger process can reuse this memory after `AttachProfiler` returns.  
   
  `wszProfilerPath`  
- [in] Úplná cesta k souboru knihovny DLL profileru, který se má načíst. Tento řetězec může obsahovat více než 260 znaků včetně ukončovacího znaku null. Pokud `wszProfilerPath` má hodnotu null nebo prázdný řetězec, modul CLR (CLR) se pokusí najít vyhledáváním v registru CLSID umístění souboru knihovny DLL profileru, který `pClsidProfiler` odkazuje na.  
+ [in] The full path to the profiler’s DLL file to be loaded. This string should contain no more than 260 characters, including the null terminator. If `wszProfilerPath` is null or an empty string, the common language runtime (CLR) will try to find the location of the profiler’s DLL file by looking in the registry for the CLSID that `pClsidProfiler` points to.  
   
  `pvClientData`  
- [in] Ukazatel na data, která má být předán profileru pomocí [ICorProfilerCallback3::InitializeForAttach](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-initializeforattach-method.md) metody. Aktivační proces můžete znovu použít tuto paměť po `AttachProfiler` vrátí. Pokud `pvClientData` má hodnotu null, `cbClientData` musí být 0 (nula).  
+ [in] A pointer to data to be passed to the profiler by the [ICorProfilerCallback3::InitializeForAttach](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-initializeforattach-method.md) method. The trigger process can reuse this memory after `AttachProfiler` returns. If `pvClientData` is null, `cbClientData` must be 0 (zero).  
   
  `cbClientData`  
- [in] Velikost v bajtech, dat, která `pvClientData` odkazuje na.  
+ [in] The size, in bytes, of the data that `pvClientData` points to.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující výsledky HRESULT.  
+ This method returns the following HRESULTs.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|Zadaný profiler byl úspěšně přiřazen do cílového procesu.|  
-|CORPROF_E_PROFILER_ALREADY_ACTIVE|Už existuje profiler aktivní nebo připojení k cílovým procesem.|  
-|CORPROF_E_PROFILER_NOT_ATTACHABLE|Zadaný profiler nepodporuje připojení. Aktivační proces může pokusit o připojení různých profileru.|  
-|CORPROF_E_PROFILEE_INCOMPATIBLE_WITH_TRIGGER|Nemůže požádat o profileru přílohu, protože verze Cílový proces není kompatibilní s aktuální proces, který volá `AttachProfiler`.|  
-|HRESULT_FROM_WIN32(ERROR_ACCESS_DENIED)|Uživatel aktivační proces nemá přístup do cílového procesu.|  
-|HRESULT_FROM_WIN32(ERROR_PRIVILEGE_NOT_HELD)|Uživatel aktivační proces nemá oprávnění potřebná pro připojení profileru k dané cílového procesu. V protokolu událostí aplikace může obsahovat další informace.|  
-|CORPROF_E_IPC_FAILED|Došlo k chybě při komunikaci s cílovým procesem. Běžně se to stane, když Cílový proces se vypíná.|  
-|HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND)|Cílový proces neexistuje nebo není spuštěn CLR, který podporuje přílohy. To může znamenat, že modul CLR byl odpojen od posledního volání enumerační metoda modulu runtime.|  
-|HRESULT_FROM_WIN32(ERROR_TIMEOUT)|Bez začátek načíst profiler vypršel její časový limit. Můžete opakovat operaci připojení. Vypršení časového limitu dojde finalizační metody v cílovém procesu běží po dobu delší než hodnota časového limitu.|  
-|E_INVALIDARG|Jeden nebo více parametrů obsahuje neplatnou hodnotu.|  
-|E_FAIL|Došlo k selhání některých jiných, Neurčeno.|  
-|Další kódy chyb|Pokud profiler [ICorProfilerCallback3::InitializeForAttach](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-initializeforattach-method.md) HRESULT označující selhání, vrátí metoda `AttachProfiler` vrátí to stejné HRESULT. V takovém případě E_NOTIMPL je převedena na CORPROF_E_PROFILER_NOT_ATTACHABLE.|  
+|S_OK|The specified profiler has successfully attached to the target process.|  
+|CORPROF_E_PROFILER_ALREADY_ACTIVE|There is already a profiler active or attaching to the target process.|  
+|CORPROF_E_PROFILER_NOT_ATTACHABLE|The specified profiler does not support attachment. The trigger process may attempt to attach a different profiler.|  
+|CORPROF_E_PROFILEE_INCOMPATIBLE_WITH_TRIGGER|Unable to request a profiler attachment, because the version of the target process is incompatible with the current process that is calling `AttachProfiler`.|  
+|HRESULT_FROM_WIN32(ERROR_ACCESS_DENIED)|The user of the trigger process does not have access to the target process.|  
+|HRESULT_FROM_WIN32(ERROR_PRIVILEGE_NOT_HELD)|The user of the trigger process does not have the privileges necessary to attach a profiler to the given target process. The application event log may contain more information.|  
+|CORPROF_E_IPC_FAILED|A failure occurred when communicating with the target process. This commonly happens if the target process was shutting down.|  
+|HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND)|The target process does not exist or is not running a CLR that supports attachment. This may indicate that the CLR was unloaded since the call to the runtime enumeration method.|  
+|HRESULT_FROM_WIN32(ERROR_TIMEOUT)|The timeout expired without beginning to load the profiler. You can retry the attach operation. Timeouts occur when a finalizer in the target process runs for a longer time than the timeout value.|  
+|E_INVALIDARG|One or more parameters have invalid values.|  
+|E_FAIL|Some other, unspecified failure occurred.|  
+|Other error codes|If the profiler’s [ICorProfilerCallback3::InitializeForAttach](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-initializeforattach-method.md) method returns an HRESULT that indicates failure, `AttachProfiler` returns that same HRESULT. In this case, E_NOTIMPL is converted to CORPROF_E_PROFILER_NOT_ATTACHABLE.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 ## <a name="memory-management"></a>Správa paměti  
- V udržení s modelu COM konvence volající `AttachProfiler` (například aktivační kód vytvořené profilerem vývojáře) zodpovídá za přidělování a zrušení přidělení paměti pro data, která `pvClientData` parametr odkazuje na. Když modul CLR provede `AttachProfiler` volání, vytvoří kopii paměti, která `pvClientData` odkazuje na a odesílá do cílového procesu. Když do cílového procesu CLR obdrží vlastní kopii `pvClientData` bloku, předá bloku do profileru pomocí `InitializeForAttach` metoda a pak zruší přidělení jeho kopii `pvClientData` blok z cílového procesu.  
+ In keeping with COM conventions, the caller of `AttachProfiler` (for example, the trigger code authored by the profiler developer) is responsible for allocating and de-allocating the memory for the data that the `pvClientData` parameter points to. When the CLR executes the `AttachProfiler` call, it makes a copy of the memory that `pvClientData` points to and transmits it to the target process. When the CLR inside the target process receives its own copy of the `pvClientData` block, it passes the block to the profiler through the `InitializeForAttach` method, and then deallocates its copy of the `pvClientData` block from the target process.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Header:** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids.lib  
+ **Library:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

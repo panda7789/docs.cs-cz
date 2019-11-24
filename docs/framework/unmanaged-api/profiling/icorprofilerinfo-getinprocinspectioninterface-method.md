@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 22a92d1d-8849-4af6-8304-ecc53dd1d289
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 67a680727e824cbe29b9e022e00d661e8694f153
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d3fcd859fb11f6a0c660751f16fa175e19e9d03b
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780571"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74439004"
 ---
 # <a name="icorprofilerinfogetinprocinspectioninterface-method"></a>ICorProfilerInfo::GetInprocInspectionInterface – metoda
-Získá objekt, který může být dotazována v rámci rozhraní "ICorDebugProcess". Tato metoda je zastaralé v rozhraní .NET Framework verze 2.0.  
+Gets an object that can be queried for an "ICorDebugProcess" interface. This method is obsolete in the .NET Framework version 2.0.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,19 +34,19 @@ HRESULT GetInprocInspectionInterface(
   
 ## <a name="parameters"></a>Parametry  
  `ppicd`  
- [navýšení kapacity](/cpp/atl/iunknown) objekt, který je možné zadávat dotazy pro `ICorDebugProcess` rozhraní.  
+ [out](/cpp/atl/iunknown) object that can be queried for an `ICorDebugProcess` interface.  
   
 ## <a name="remarks"></a>Poznámky  
- Common language runtime (CLR) ladění v rozhraní API nepodporuje omezené vnitroprocesové ladění v rozhraní .NET Framework verze 1.0. Vnitroprocesové ladění povolit profiler použití kontroly části rozhraní API pro ladění. V důsledku zpětné vazby od zákazníků vnitroprocesové ladění bylo odstraněno z rozhraní .NET Framework verze 2.0 a jsme nahradili sadou funkcí, které jsou více tato rozhraní API profilování.  
+ The common language runtime (CLR) debugging API supported limited in-process debugging in the .NET Framework version 1.0. In-process debugging enabled a profiler to use the inspection portions of the debugging API. As a result of customer feedback, in-process debugging has been removed from the .NET Framework in version 2.0, and replaced with a set of functionality that is more in line with the profiling API.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Header:** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids.lib  
+ **Library:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** 1.0  
+ **.NET Framework Version:** 1.0  
   
 ## <a name="see-also"></a>Viz také:
 

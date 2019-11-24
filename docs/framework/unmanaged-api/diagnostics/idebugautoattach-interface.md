@@ -14,26 +14,24 @@ helpviewer_keywords:
 ms.assetid: d4cc51ac-c1d6-41b9-ab8e-ef0073f13241
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: d13d8226d944b170bd84ce3d069ca79099c6417d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 64e9d5e4bf43c8dac39850dafcd58a547191fc99
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61697821"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74445517"
 ---
 # <a name="idebugautoattach-interface"></a>IDebugAutoAttach – rozhraní
-Definuje rozhraní pro server vyvolá ladicí program automaticky připojit.  
+Defines the interface for server-invoked debugger auto attach.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[AutoAttach – metoda](../../../../docs/framework/unmanaged-api/diagnostics/idebugautoattach-autoattach-method.md)|Provede automaticky serveru vyvolá ladicí program připojit.|  
+|[AutoAttach – metoda](../../../../docs/framework/unmanaged-api/diagnostics/idebugautoattach-autoattach-method.md)|Performs server-invoked debugger auto attach.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** DbgAutoAttach.idl  
+ **Header:** DbgAutoAttach.idl  
   
 ## <a name="see-also"></a>Viz také:
 

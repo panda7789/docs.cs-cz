@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: b9fb1c03-417f-41d4-aed4-02cb4ade8def
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 4b7a4c8dfc9e082b29d462b835886d6bf252bb39
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 2fe4735b7f218e89577702cde04d8d4f4de2a971
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67753665"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74447351"
 ---
-# <a name="corprfgcrootkind-enumeration"></a>COR_PRF_GC_ROOT_KIND – výčet
-Označuje druh kořenové kolekce uvolňování paměti, který je zveřejněný prostřednictvím [ICorProfilerCallback2::RootReferences2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-rootreferences2-method.md) zpětného volání.  
+# <a name="cor_prf_gc_root_kind-enumeration"></a>COR_PRF_GC_ROOT_KIND – výčet
+Indicates the kind of garbage collection root that is exposed by the [ICorProfilerCallback2::RootReferences2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-rootreferences2-method.md) callback.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,19 +39,19 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`COR_PRF_GC_ROOT_STACK`|Kořenový adresář je proměnná v zásobníku.|  
-|`COR_PRF_GC_ROOT_FINALIZER`|Kořenový adresář je položka ve frontě finalizační metodu.|  
-|`COR_PRF_GC_ROOT_HANDLE`|Kořenový adresář je popisovač kolekce uvolnění paměti.|  
-|`COR_PRF_GC_ROOT_OTHER`|Druh root není zadána.|  
+|`COR_PRF_GC_ROOT_STACK`|The root is a variable on the stack.|  
+|`COR_PRF_GC_ROOT_FINALIZER`|The root is an entry in the finalizer queue.|  
+|`COR_PRF_GC_ROOT_HANDLE`|The root is a garbage collection handle.|  
+|`COR_PRF_GC_ROOT_OTHER`|The kind of root is unspecified.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Header:** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids.lib  
+ **Library:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

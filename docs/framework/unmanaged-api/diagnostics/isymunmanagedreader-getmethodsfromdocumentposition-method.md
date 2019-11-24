@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 83605f1e-e4f3-49e6-859b-f13cad68bb54
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e283bea2ce2f4b2e17da6e8dcb85165d3c4d6693
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 923a92ea256f79a1b0130b61c4fd99460fda96a0
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67776958"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74441807"
 ---
 # <a name="isymunmanagedreadergetmethodsfromdocumentposition-method"></a>ISymUnmanagedReader::GetMethodsFromDocumentPosition – metoda
-Vrátí pole z metod, z nichž každý obsahuje zarážku na dané pozici v dokumentu.  
+Returns an array of methods, each of which contains the breakpoint at the given position in a document.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,28 +40,28 @@ HRESULT GetMethodsFromDocumentPosition (
   
 ## <a name="parameters"></a>Parametry  
  `document`  
- [in] Zadaný dokument.  
+ [in] The specified document.  
   
  `line`  
- [in] Řádku zadaný dokument.  
+ [in] The line of the specified document.  
   
  `column`  
- [in] Sloupec zadaný dokument.  
+ [in] The column of the specified document.  
   
  `cMethod`  
- [in] Velikost `pRetVal` pole.  
+ [in] The size of the `pRetVal` array.  
   
  `pcMethod`  
- [out] Ukazatel na proměnnou, která přijímá počtu prvků vrácených v `pRetVal` pole.  
+ [out] A pointer to a variable that receives the number of elements returned in the `pRetVal` array.  
   
  `pRetVal`  
- [out] Pole ukazatelů, každý z nich odkazuje na [isymunmanagedmethod –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md) objekt, který představuje metodu obsahující zarážku.  
+ [out] An array of pointers, each of which points to an [ISymUnmanagedMethod](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md) object that represents a method containing the breakpoint.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** CorSym.idl, CorSym.h  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Viz také:
 

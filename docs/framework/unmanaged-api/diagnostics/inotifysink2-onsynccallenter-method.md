@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: e33265be-c25d-4145-ad02-c3e89d6f26c1
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e5fc8b3e6432475468f1012313c95ddd2e22e026
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 69c7e6c465de5b8185a86b3de6e5c29f902a1d1f
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67736256"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74440864"
 ---
 # <a name="inotifysink2onsynccallenter-method"></a>INotifySink2::OnSyncCallEnter – metoda
-Získá vyvolána při vstupu do volání.  
+Gets invoked when entering a call.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,19 +38,19 @@ HRESULT OnSyncCallEnter
   
 ## <a name="parameters"></a>Parametry  
  `in_CallID`  
- [in] ID volání zadání. Zobrazit [call_id – struktura](../../../../docs/framework/unmanaged-api/diagnostics/call-id-structure.md).  
+ [in] ID of the call being entered. See [CALL_ID Structure](../../../../docs/framework/unmanaged-api/diagnostics/call-id-structure.md).  
   
  `in_pBuffer`  
- [in] Volání vyrovnávací paměti.  
+ [in] Call buffer.  
   
  `in_BufferSize`  
- [in] Velikost vyrovnávací paměti volání, v bajtech.  
+ [in] Size of the call buffer, in bytes.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda uspěje.  
+ S_OK if the method succeeds.  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** ProtocolNotify2.idl  
+ **Header:** ProtocolNotify2.idl  
   
 ## <a name="see-also"></a>Viz také:
 

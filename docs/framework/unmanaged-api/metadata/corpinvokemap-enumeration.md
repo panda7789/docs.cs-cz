@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: f14f986e-f6ce-42bc-aa23-18150c46d28c
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a876ff1ba0d2342f7975bf5adfc8ec03d21578f5
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 17b7af7016cf88fd3ae263dd952502d515b0c833
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67781648"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74441555"
 ---
 # <a name="corpinvokemap-enumeration"></a>CorPinvokeMap – výčet
-Určuje možnosti pro volání PInvoke.  
+Specifies options for a PInvoke call.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -67,35 +65,35 @@ typedef enum  CorPinvokeMap {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`pmNoMangle`|Každý název člena použijte uvedené.|  
-|`pmCharSetMask`|Vyhrazená.|  
-|`pmCharSetNotSpec`|Vyhrazená.|  
-|`pmCharSetAnsi`|Zařazování řetězců v kódu jako více bajtové znaky řetězce.|  
-|`pmCharSetUnicode`|Zařazování řetězců v kódu jako 2bajtové znaky kódování Unicode.|  
-|`pmCharSetAuto`|Automaticky zařazovat řetězce pro cílový operační systém. Výchozí hodnota je kódování Unicode v systému Windows NT, Windows 2000, Windows XP a řady Windows Server 2003; Výchozí hodnota je ANSI na Windows 98 a Windows Me.|  
-|`pmBestFitUseAssem`|Vyhrazená.|  
-|`pmBestFitEnabled`|Provedení přizpůsobený mapování znaků Unicode, které nemají přesnou shodu v znakovou sadu ANSI.|  
-|`pmBestFitDisabled`|Neprovádějte nejlepšího mapování znaků Unicode. V takovém případě budou nahrazeny všechny nemapovatelný znaky "?".|  
-|`pmBestFitMask`|Vyhrazená.|  
-|`pmThrowOnUnmappableCharUseAssem`|Vyhrazená.|  
-|`pmThrowOnUnmappableCharEnabled`|Vyvolání výjimky, když se interoperační zařazovač setká nemapovatelný znak.|  
-|`pmThrowOnUnmappableCharDisabled`|Když se interoperační zařazovač setká nemapovatelný znak není vyvolat výjimku.|  
-|`pmThrowOnUnmappableCharMask`|Vyhrazeno|  
-|`pmSupportsLastError`|Povolit volaný volání Win32 `SetLastError` funkce před návratem z metody s atributy.|  
-|`pmCallConvMask`|Vyhrazeno|  
-|`pmCallConvWinapi`|Používejte výchozí platformu konvence volání. Například na Windows výchozí hodnota je `StdCall` a na Windows CE .NET je `Cdecl`.|  
-|`pmCallConvCdecl`|Použití `Cdecl` konvence volání. V takovém případě volající vyčistí zásobník. To umožňuje volání funkcí s `varargs` (to znamená, funkce, které přijímají proměnný počet parametrů).|  
-|`pmCallConvStdcall`|Použití `StdCall` konvence volání. V takovém případě volaný vyčistí zásobník. To je výchozí konvence pro vyvolání volání nespravovaných funkcí s platformou.|  
-|`pmCallConvThiscall`|Použití `ThisCall` konvence volání. V takovém případě je první parametr `this` ukazatel a je uložen v registru ECX. Další parametry jsou vloženy do zásobníku. `ThisCall` Konvence volání se používá k volání metod třídy exportované z nespravovaná knihovna DLL.|  
-|`pmCallConvFastcall`|Vyhrazená.|  
-|`pmMaxValue`|Vyhrazená.|  
+|`pmNoMangle`|Use each member name as specified.|  
+|`pmCharSetMask`|Reserved.|  
+|`pmCharSetNotSpec`|Reserved.|  
+|`pmCharSetAnsi`|Marshal strings as multiple-byte character strings.|  
+|`pmCharSetUnicode`|Marshal strings as Unicode 2-byte characters.|  
+|`pmCharSetAuto`|Automatically marshal strings appropriately for the target operating system. The default is Unicode on Windows NT, Windows 2000, Windows XP, and the Windows Server 2003 family; the default is ANSI on Windows 98 and Windows Me.|  
+|`pmBestFitUseAssem`|Reserved.|  
+|`pmBestFitEnabled`|Perform best-fit mapping of Unicode characters that lack an exact match in the ANSI character set.|  
+|`pmBestFitDisabled`|Do not perform best-fit mapping of Unicode characters. In this case, all unmappable characters will be replaced by a ‘?’.|  
+|`pmBestFitMask`|Reserved.|  
+|`pmThrowOnUnmappableCharUseAssem`|Reserved.|  
+|`pmThrowOnUnmappableCharEnabled`|Throw an exception when the interop marshaler encounters an unmappable character.|  
+|`pmThrowOnUnmappableCharDisabled`|Do not throw an exception when the interop marshaler encounters an unmappable character.|  
+|`pmThrowOnUnmappableCharMask`|Reserved|  
+|`pmSupportsLastError`|Allow the callee to call the Win32 `SetLastError` function before returning from the attributed method.|  
+|`pmCallConvMask`|Reserved|  
+|`pmCallConvWinapi`|Use the default platform calling convention. For example, on Windows the default is `StdCall` and on Windows CE .NET it is `Cdecl`.|  
+|`pmCallConvCdecl`|Use the `Cdecl` calling convention. In this case, the caller cleans the stack. This enables calling functions with `varargs` (that is, functions that accept a variable number of parameters).|  
+|`pmCallConvStdcall`|Use the `StdCall` calling convention. In this case, the callee cleans the stack. This is the default convention for calling unmanaged functions with platform invoke.|  
+|`pmCallConvThiscall`|Use the `ThisCall` calling convention. In this case, the first parameter is the `this` pointer and is stored in register ECX. Other parameters are pushed on the stack. The `ThisCall` calling convention is used to call methods on classes exported from an unmanaged DLL.|  
+|`pmCallConvFastcall`|Reserved.|  
+|`pmMaxValue`|Reserved.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorHdr.h  
+ **Header:** CorHdr.h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

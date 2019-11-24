@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 6b5be4fc-2e86-499c-8b09-833160bca767
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 057bae1d702fa091ebc3d3178c9fba35d5dd3d90
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 40f24a4ea628ce92a27ab1bfe97fc87a57dfa4f0
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67777653"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74432556"
 ---
 # <a name="imetadataemitdefinefield-method"></a>IMetaDataEmit::DefineField – metoda
-Vytvoří definici pro pole s podpisem Zadaná metadata a získá token pro tuto definici pole.  
+Creates a definition for a field with the specified metadata signature, and gets a token to that field definition.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,40 +43,40 @@ HRESULT DefineField (
   
 ## <a name="parameters"></a>Parametry  
  `td`  
- [in] `mdTypeDef` Token pro nadřazené třídu nebo rozhraní.  
+ [in] The `mdTypeDef` token for the enclosing class or interface.  
   
  `szName`  
- [in] Název pole v kódování Unicode.  
+ [in] The field name in Unicode.  
   
  `dwFieldFlags`  
- [in] Atributy pole. To je bitová maska z `CorFieldAttr` hodnoty.  
+ [in] The field attributes. This is a bitmask of `CorFieldAttr` values.  
   
  `pvSigBlob`  
- [in] Podpis pole jako objekt BLOB.  
+ [in] The field signature as a BLOB.  
   
  `cbSigBlob`  
- [in] Počet bajtů v `pvSigBlob`.  
+ [in] The count of bytes in `pvSigBlob`.  
   
  `dwCPlusTypeFlag`  
- [in] `ELEMENT_TYPE_` *\** Pro konstantní hodnoty. Jedná se `CorElementType` hodnotu. Pokud definujete není konstantní hodnotu pro pole, použijte `ELEMENT_TYPE_END`.  
+ [in] The `ELEMENT_TYPE_` *\** for the constant value. This is a `CorElementType` value. If not defining a constant value for the field, use `ELEMENT_TYPE_END`.  
   
  `pValue`  
- [in] Konstantní hodnoty pro pole.  
+ [in] The constant value for the field.  
   
  `cchValue`  
- [in] Velikost v znaky (Unicode) `pValue`.  
+ [in] The size in (Unicode) characters of `pValue`.  
   
  `pmd`  
- [out] `mdFieldDef` Token přiřazený.  
+ [out] The `mdFieldDef` token assigned.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Použít jako prostředek v MSCorEE.dll  
+ **Library:** Used as a resource in MSCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

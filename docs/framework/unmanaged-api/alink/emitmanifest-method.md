@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: fdebc1f3-b62e-4d9e-b775-8ccaa8ecb250
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: bdab1fd10be8fd245f4348798232964721b4487a
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: f3bb978b8358992fd9aa7da922e28efc1ed1a951
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70777338"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74446491"
 ---
 # <a name="emitmanifest-method"></a>EmitManifest – metoda
-Vygeneruje finální manifest. Po importu všech ostatních souborů a nastavení všech možností volejte tuto metodu. Nevolejte tuto metodu pro nevázané moduly.  
+Emits the final manifest. Call this method after importing all other files and setting all options. Do not call this method for unbound modules.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,22 +37,22 @@ HRESULT EmitManifest(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID sestavení  
+ ID of the assembly.  
   
  `pdwReserveSize`  
- Přijme velikost, která se má rezervovat v souboru sestavení, načtená z [funkce StrongNameSignatureSize –](../strong-naming/strongnamesignaturesize-function.md).  
+ Receives the size to reserve in the assembly file, retrieved from [StrongNameSignatureSize Function](../strong-naming/strongnamesignaturesize-function.md).  
   
  `ptkManifest`  
- Volitelně obdrží token manifestu sestavení.  
+ Optionally receives the assembly manifest token.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrací S_OK, pokud je metoda úspěšná.  
+ Returns S_OK if the method succeeds.  
   
 ## <a name="requirements"></a>Požadavky  
- Vyžaduje ALink. h.  
+ Requires alink.h.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink – rozhraní](ialink-interface.md)
 - [IALink2 – rozhraní](ialink2-interface.md)
-- [Rozhraní API ALink](index.md)
+- [ALink API](index.md)

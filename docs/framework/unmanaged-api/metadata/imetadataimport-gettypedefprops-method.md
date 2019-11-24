@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 00061a25-ba05-47a7-b984-fd916b06b149
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 77f72fb7eb7b0542dc9a3179811a78b189d6b3b0
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: c9ac624e17223def206e86fd92ee4fd2de7f6082
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67778835"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74436745"
 ---
 # <a name="imetadataimportgettypedefprops-method"></a>IMetaDataImport::GetTypeDefProps – metoda
-Vrátí informace metadat pro <xref:System.Type> reprezentována zadaný token TypeDef.  
+Returns metadata information for the <xref:System.Type> represented by the specified TypeDef token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,31 +40,31 @@ HRESULT GetTypeDefProps (
   
 ## <a name="parameters"></a>Parametry  
  `td`  
- [in] Token TypeDef, která představuje typ, který chcete vrátit metadata pro.  
+ [in] The TypeDef token that represents the type to return metadata for.  
   
  `szTypeDef`  
- [out] Vyrovnávací paměti, který obsahuje název typu.  
+ [out] A buffer containing the type name.  
   
  `cchTypeDef`  
- [in] Velikost v širokých znaků `szTypeDef`.  
+ [in] The size in wide characters of `szTypeDef`.  
   
  `pchTypeDef`  
- [out] Počet širokých znaků, které jsou vráceny v `szTypeDef`.  
+ [out] The number of wide characters returned in `szTypeDef`.  
   
  `pdwTypeDefFlags`  
- [out] Ukazatel na libovolný příznaky, které mění definici typu. Tato hodnota je bitová maska z [cortypeattr –](../../../../docs/framework/unmanaged-api/metadata/cortypeattr-enumeration.md) výčtu.  
+ [out] A pointer to any flags that modify the type definition. This value is a bitmask from the [CorTypeAttr](../../../../docs/framework/unmanaged-api/metadata/cortypeattr-enumeration.md) enumeration.  
   
  `ptkExtends`  
- [out] Definice TypeDef nebo TypeRef token metadat, který představuje základní typ požadovaného typu.  
+ [out] A TypeDef or TypeRef metadata token that represents the base type of the requested type.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

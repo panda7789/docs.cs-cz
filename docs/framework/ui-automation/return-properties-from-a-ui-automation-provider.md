@@ -9,20 +9,20 @@ helpviewer_keywords:
 - properties, returned by UI Automation providers
 - UI Automation, providers returning properties
 ms.assetid: 5eba950e-b9e1-48eb-ab8e-b69db76bf589
-ms.openlocfilehash: 5d073af121eae04a973667739c68a90d6dae9f2d
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 742c84bf0e8e9413c83048bce32f29b899c1d339
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71042734"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74446858"
 ---
 # <a name="return-properties-from-a-ui-automation-provider"></a>Vrácení vlastností ze zprostředkovatele automatizace uživatelského rozhraní
 > [!NOTE]
-> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované <xref:System.Windows.Automation> v oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API služby Windows Automation: Automatizace](https://go.microsoft.com/fwlink/?LinkID=156746)uživatelského rozhraní.  
+> This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace. For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
- Toto téma obsahuje vzorový kód, který ukazuje, jak zprostředkovatel automatizace uživatelského rozhraní může vracet vlastnosti prvku klientským aplikacím.  
+ This topic contains sample code that shows how a UI Automation provider can return properties of an element to client applications.  
   
- Pro jakoukoliv vlastnost, kterou explicitně nepodporuje, musí poskytovatel vracet `null` (`Nothing` v Visual Basic). Tím se zajistí [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , že se pokusy o získání vlastnosti z jiného zdroje, jako je například poskytovatel hostitelského okna.  
+ For any property it does not explicitly support, the provider must return `null` (`Nothing` in Visual Basic). This ensures that [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] attempts to obtain the property from another source, such as the host window provider.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[UIAFragmentProvider_snip#117](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIAFragmentProvider_snip/CSharp/ListFragment.cs#117)]

@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7a3c97c3-1e31-47b1-bf23-386785c509c4
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 0b410ef46e96f75d98ee750c760b19d2a77eec2b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 4f3d9bc94d25ca70e0589e1beb86b8ef96807a71
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780216"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448158"
 ---
 # <a name="icorprofilerinfogetassemblyinfo-method"></a>ICorProfilerInfo::GetAssemblyInfo – metoda
-Přijímá ID sestavení a vrátí název sestavení a ID jeho manifestu modulu.  
+Accepts an assembly ID, and returns the assembly's name and the ID of its manifest module.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,36 +40,36 @@ HRESULT GetAssemblyInfo(
   
 ## <a name="parameters"></a>Parametry  
  `assemblyId`  
- [in] Identifikátor sestavení.  
+ [in] The identifier of the assembly.  
   
  `cchName`  
- [in] Délka ve znacích, z `szName`.  
+ [in] The length, in characters, of `szName`.  
   
  `pcchName`  
- [out] Ukazatel na celkový počet znaků názvu sestavení.  
+ [out] A pointer to the total character length of the assembly's name.  
   
  `szName`  
- [out] Pokud volající širokého znaku vyrovnávací paměti. Po návratu funkce bude obsahovat název sestavení.  
+ [out] A caller-provided wide character buffer. When the function returns, it will contain the assembly's name.  
   
  `pAppDomainId`  
- [out] Ukazatel na ID domény aplikace, který obsahuje sestavení.  
+ [out] A pointer to the ID of the application domain that contains the assembly.  
   
  `pModuleId`  
- [out] Ukazatel na ID modul manifestu sestavení.  
+ [out] A pointer to the ID of the assembly's manifest module.  
   
 ## <a name="remarks"></a>Poznámky  
- Po návratu tato metoda je nutné ověřit, `szName` vyrovnávací paměť je dostatečně velký, aby obsahoval úplný název sestavení. K tomuto účelu porovnat hodnoty, které `pcchName` odkazuje na hodnotu `cchName` parametru. Pokud `pcchName` odkazuje na hodnotu, která je větší než `cchName`, přidělte větší `szName` vyrovnávací paměti, aktualizujte `cchName` nové, větší velikosti a volání `GetAssemblyInfo` znovu.  
+ After this method returns, you must verify that the `szName` buffer was large enough to contain the full name of the assembly. To do this, compare the value that `pcchName` points to with the value of the `cchName` parameter. If `pcchName` points to a value that is larger than `cchName`, allocate a larger `szName` buffer, update `cchName` with the new, larger size, and call `GetAssemblyInfo` again.  
   
- Alternativně můžete nejprve volat `GetAssemblyInfo` s nulovou délkou `szName` vyrovnávací paměť pro získání správné vyrovnávací paměť. Potom můžete upravit velikost vyrovnávací paměti na základě hodnoty vráceny v `pcchName` a volat `GetAssemblyInfo` znovu.  
+ Alternatively, you can first call `GetAssemblyInfo` with a zero-length `szName` buffer to obtain the correct buffer size. You can then adjust the buffer size based on the value returned in `pcchName` and call `GetAssemblyInfo` again.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Header:** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids.lib  
+ **Library:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

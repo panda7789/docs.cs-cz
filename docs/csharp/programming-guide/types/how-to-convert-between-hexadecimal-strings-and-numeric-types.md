@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: převod mezi hexadecimálními řetězci a číselnými typy C# – Průvodce programováním'
+title: 'How to: Convert Between Hexadecimal Strings and Numeric Types - C# Programming Guide'
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -8,48 +8,48 @@ helpviewer_keywords:
 - strings [C#], converting hexadecimal strings
 - hexadecimal strings [C#]
 ms.assetid: 7115c49f-7d1d-40c3-8bd9-aae0cc1d46b6
-ms.openlocfilehash: e5013891db827e27b3cda55135fff4ee287cfcb4
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 8b72734f9b617fed2ff65977c9a0e60f46424ae8
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423134"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74429437"
 ---
 # <a name="how-to-convert-between-hexadecimal-strings-and-numeric-types-c-programming-guide"></a>Postupy: Převod mezi hexadecimálními řetězci a číselnými typy (Průvodce programováním v C#)
-Tyto příklady vám ukážou, jak provádět následující úlohy:  
+These examples show you how to perform the following tasks:  
   
-- Získá hexadecimální hodnotu každého znaku v [řetězci](../../language-reference/builtin-types/reference-types.md).  
+- Obtain the hexadecimal value of each character in a [string](../../language-reference/builtin-types/reference-types.md).  
   
-- Získejte [znak](../../language-reference/keywords/char.md) , který odpovídá každé hodnotě v šestnáctkovém řetězci.  
+- Obtain the [char](../../language-reference/builtin-types/char.md) that corresponds to each value in a hexadecimal string.  
   
-- Převeďte hexadecimální `string` na [int](../../language-reference/builtin-types/integral-numeric-types.md).  
+- Convert a hexadecimal `string` to an [int](../../language-reference/builtin-types/integral-numeric-types.md).  
   
-- Převést hexadecimální `string` na typ [float](../../language-reference/builtin-types/floating-point-numeric-types.md).  
+- Convert a hexadecimal `string` to a [float](../../language-reference/builtin-types/floating-point-numeric-types.md).  
   
-- Převeďte [bajtové](../../language-reference/builtin-types/integral-numeric-types.md) pole na hexadecimální `string`.  
+- Convert a [byte](../../language-reference/builtin-types/integral-numeric-types.md) array to a hexadecimal `string`.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad vypíše hexadecimální hodnotu každého znaku v `string`. Nejprve analyzuje `string` na pole znaků. Pak volá <xref:System.Convert.ToInt32%28System.Char%29> u každého znaku a získá tak číselnou hodnotu. Nakonec formátuje číslo jako šestnáctkové vyjádření v `string`.  
+ This example outputs the hexadecimal value of each character in a `string`. First it parses the `string` to an array of characters. Then it calls <xref:System.Convert.ToInt32%28System.Char%29> on each character to obtain its numeric value. Finally, it formats the number as its hexadecimal representation in a `string`.  
   
  [!code-csharp[csProgGuideTypes#30](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#30)]  
   
 ## <a name="example"></a>Příklad  
- Tento příklad analyzuje `string` hexadecimálních hodnot a vypíše znak odpovídající každé hexadecimální hodnotě. Nejprve volá metodu [Split (Char\[\])](xref:System.String.Split(System.Char[])) k získání každé hexadecimální hodnoty jako jednotlivé `string` v poli. Poté volá <xref:System.Convert.ToInt32%28System.String%2CSystem.Int32%29> pro převod hexadecimální hodnoty na desítkovou hodnotu reprezentovanou jako [int](../../language-reference/builtin-types/integral-numeric-types.md). Zobrazuje dva různé způsoby získání znaku odpovídajícího kódu znaku. První technika používá <xref:System.Char.ConvertFromUtf32%28System.Int32%29>, která vrací znak odpovídající celočíselnému argumentu jako `string`. Druhá technika je explicitně přetypování `int` na [znak](../../language-reference/keywords/char.md).  
+ This example parses a `string` of hexadecimal values and outputs the character corresponding to each hexadecimal value. First it calls the [Split(Char\[\])](xref:System.String.Split(System.Char[])) method to obtain each hexadecimal value as an individual `string` in an array. Then it calls <xref:System.Convert.ToInt32%28System.String%2CSystem.Int32%29> to convert the hexadecimal value to a decimal value represented as an [int](../../language-reference/builtin-types/integral-numeric-types.md). It shows two different ways to obtain the character corresponding to that character code. The first technique uses <xref:System.Char.ConvertFromUtf32%28System.Int32%29>, which returns the character corresponding to the integer argument as a `string`. The second technique explicitly casts the `int` to a [char](../../language-reference/builtin-types/char.md).  
   
  [!code-csharp[csProgGuideTypes#31](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#31)]  
   
 ## <a name="example"></a>Příklad  
- Tento příklad ukazuje jiný způsob, jak převést šestnáctkovou `string` na celé číslo, voláním metody <xref:System.Int32.Parse%28System.String%2CSystem.Globalization.NumberStyles%29>.  
+ This example shows another way to convert a hexadecimal `string` to an integer, by calling the <xref:System.Int32.Parse%28System.String%2CSystem.Globalization.NumberStyles%29> method.  
   
  [!code-csharp[csProgGuideTypes#32](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#32)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak převést šestnáctkovou `string` na typ [float](../../language-reference/builtin-types/floating-point-numeric-types.md) pomocí <xref:System.BitConverter?displayProperty=nameWithType> třídy a metody <xref:System.UInt32.Parse%2A?displayProperty=nameWithType>.  
+ The following example shows how to convert a hexadecimal `string` to a [float](../../language-reference/builtin-types/floating-point-numeric-types.md) by using the <xref:System.BitConverter?displayProperty=nameWithType> class and the <xref:System.UInt32.Parse%2A?displayProperty=nameWithType> method.  
   
  [!code-csharp[csProgGuideTypes#39](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#39)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak převést [bajtové](../../language-reference/builtin-types/integral-numeric-types.md) pole na šestnáctkový řetězec pomocí třídy <xref:System.BitConverter?displayProperty=nameWithType>.  
+ The following example shows how to convert a [byte](../../language-reference/builtin-types/integral-numeric-types.md) array to a hexadecimal string by using the <xref:System.BitConverter?displayProperty=nameWithType> class.  
   
  [!code-csharp[csProgGuideTypes#38](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#38)]  
   

@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: d6ece160-26ad-4d39-abd7-05acd6f78c48
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 74e70f58600205d44a9ba052981b2cc67b3a44ec
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d01b864be231e5b0a3fd72dc2f3636a87c8cae83
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67753818"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448625"
 ---
-# <a name="corprfgcgeneration-enumeration"></a>COR_PRF_GC_GENERATION – výčet
-Identifikuje uvolnění paměti generace.  
+# <a name="cor_prf_gc_generation-enumeration"></a>COR_PRF_GC_GENERATION – výčet
+Identifies a garbage-collection generation.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,26 +39,26 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`COR_PRF_GC_GEN_0`|Objekt se uloží jako 0. generace.|  
-|`COR_PRF_GC_GEN_1`|Objekt se uloží jako 1. generace.|  
-|`COR_PRF_GC_GEN_2`|Objekt se uloží jako 2. generace.|  
-|`COR_PRF_GC_LARGE_OBJECT_HEAP`|Objekt se uloží ve velkých objektových haldách.|  
+|`COR_PRF_GC_GEN_0`|The object is stored as generation 0.|  
+|`COR_PRF_GC_GEN_1`|The object is stored as generation 1.|  
+|`COR_PRF_GC_GEN_2`|The object is stored as generation 2.|  
+|`COR_PRF_GC_LARGE_OBJECT_HEAP`|The object is stored in the large-object heap.|  
   
 ## <a name="remarks"></a>Poznámky  
- Systému uvolňování paměti zlepšuje výkon správy paměti dělicí objekty do generací podle věku. Uvolňování paměti aktuálně používá tři generace číslované 0, 1 a 2 plus zvláštní haldy segment, který se používá pro velké objekty. Objekty, jejichž velikost je větší než konkrétní hodnoty jsou uloženy v velkých objektových haldách. Další přidělené objekty se začínají patřící do 0. generace. Všechny objekty, které existují, jakmile dojde k uvolnění paměti generace 0 jsou povýšeny do generace 1. Objekty, které existují, jakmile dojde k uvolnění paměti v generaci 1 přesunout do 2. generace.  
+ The garbage collector improves memory management performance by dividing objects into generations based on age. The garbage collector currently uses three generations, numbered 0, 1, and 2, plus a special heap segment that is used for large objects. Objects whose size is larger than a particular value are stored in the large-object heap. Other allocated objects start out belonging to generation 0. All objects that exist after garbage collection occurs in generation 0 are promoted to generation 1. Objects that exist after garbage collection occurs in generation 1 move into generation 2.  
   
- Použití generace znamená, že má systému uvolňování paměti pro práci s pouze podmnožinu přidělených objektů v daný okamžik.  
+ The use of generations means that the garbage collector has to work with only a subset of the allocated objects at any one time.  
   
- `COR_PRF_GC_GENERATION` Výčet je používán [cor_prf_gc_generation_range –](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-generation-range-structure.md) struktury.  
+ The `COR_PRF_GC_GENERATION` enumeration is used by the [COR_PRF_GC_GENERATION_RANGE](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-generation-range-structure.md) structure.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Header:** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids.lib  
+ **Library:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

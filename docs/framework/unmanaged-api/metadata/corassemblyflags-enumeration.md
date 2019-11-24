@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: bb8db3b6-d81d-49fc-b74c-dbc908a9eab9
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 3532ca0a30d83aa8f61bc4397090f3d589b73257
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: fda890cee5f513ea8cf7e82e710f5451a860c49f
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67780923"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74443906"
 ---
 # <a name="corassemblyflags-enumeration"></a>CorAssemblyFlags – výčet
-Obsahuje hodnoty, které popisují metadata u sestavení.  
+Contains values that describe the metadata applied to an assembly compilation.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -59,31 +57,31 @@ typedef enum CorAssemblyFlags {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`afPublicKey`|Označuje, že odkaz na sestavení obsahuje úplnou nezašifrované veřejný klíč.|  
-|`afPA_None`|Označuje, že neurčená na architektuře procesoru.|  
-|`afPA_MSIL`|Označuje, že je na architektuře procesoru neutrální (PE32).|  
-|`afPA_x86`|Označuje, že je na architektuře procesoru x86 (PE32).|  
-|`afPA_IA64`|Označuje, že je architektura procesorů Itanium (PE32 +).|  
-|`afPA_AMD64`|Označuje, že je architektura procesorů AMD X64 (PE32 +).|  
-|`afPA_ARM`|Označuje, že je na architektuře procesoru ARM (PE32).|  
-|`afPA_NoPlatform`|Označuje, že sestavení je odkaz na sestavení; To znamená platí pro všechny architektury ale nelze je spustit na libovolné architektury. Díky tomu se příznak je stejný jako `afPA_Mask`.|  
-|`afPA_Specified`|Označuje, že příznaky architektura procesoru by mělo být předáno `AssemblyRef` záznamu.|  
-|`afPA_Mask`|Maska, která popisuje architekturu procesoru.|  
-|`afPA_FullMask`|Určuje, že je součástí popis architektury procesoru.|  
-|`afPA_Shift`|Označuje počet posunů v příznacích architekturu procesoru, na a z indexu.|  
-|`afEnableJITcompileTracking`|Určuje odpovídající hodnotu z <xref:System.Diagnostics.DebuggableAttribute.DebuggingModes> z <xref:System.Diagnostics.DebuggableAttribute>.|  
-|`afDisableJITcompileOptimizer`|Určuje odpovídající hodnotu z <xref:System.Diagnostics.DebuggableAttribute.DebuggingModes> z <xref:System.Diagnostics.DebuggableAttribute>.|  
-|`afRetargetable`|Označuje, že sestavení můžete v době běhu změněn na cíl sestavení z jiného vydavatele.|  
-|`afContentType_Mask`|Maska, která popisuje typ obsahu.|  
-|`afContentType_Default`|Určuje výchozí typ obsahu.|  
-|`afContentType_WindowsRuntime`|Určuje typ obsahu modulu Windows Runtime.|  
+|`afPublicKey`|Indicates that the assembly reference holds the full, unhashed public key.|  
+|`afPA_None`|Indicates that the processor architecture is unspecified.|  
+|`afPA_MSIL`|Indicates that the processor architecture is neutral (PE32).|  
+|`afPA_x86`|Indicates that the processor architecture is x86 (PE32).|  
+|`afPA_IA64`|Indicates that the processor architecture is Itanium (PE32+).|  
+|`afPA_AMD64`|Indicates that the processor architecture is AMD X64 (PE32+).|  
+|`afPA_ARM`|Indicates that the processor architecture is ARM (PE32).|  
+|`afPA_NoPlatform`|Indicates that the assembly is a reference assembly; that is, it applies to any architecture but cannot run on any architecture. Thus, the flag is the same as `afPA_Mask`.|  
+|`afPA_Specified`|Indicates that the processor architecture flags should be propagated to the `AssemblyRef` record.|  
+|`afPA_Mask`|A mask that describes the processor architecture.|  
+|`afPA_FullMask`|Specifies that the processor architecture description is included.|  
+|`afPA_Shift`|Indicates a shift count in the processor architecture flags to and from the index.|  
+|`afEnableJITcompileTracking`|Indicates the corresponding value from the <xref:System.Diagnostics.DebuggableAttribute.DebuggingModes> of the <xref:System.Diagnostics.DebuggableAttribute>.|  
+|`afDisableJITcompileOptimizer`|Indicates the corresponding value from the <xref:System.Diagnostics.DebuggableAttribute.DebuggingModes> of the <xref:System.Diagnostics.DebuggableAttribute>.|  
+|`afRetargetable`|Indicates that the assembly can be retargeted at run time to an assembly from a different publisher.|  
+|`afContentType_Mask`|A mask that describes the content type.|  
+|`afContentType_Default`|Indicates the default content type.|  
+|`afContentType_WindowsRuntime`|Indicates the Windows Runtime content type.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorHdr.h  
+ **Header:** CorHdr.h  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

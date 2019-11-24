@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 8bf3cb62-89bf-4159-ad53-de606aba89e8
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 62fa0969044504905d5c835f74873dc6f46cafa8
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f7993ebc15f95df97a9b45523717f318d8c435ce
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67769437"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74448947"
 ---
 # <a name="isymunmanagedmethodgetoffset-method"></a>ISymUnmanagedMethod::GetOffset – metoda
-Vrátí posunutí v rámci této metody, které odpovídá na dané pozici v rámci dokumentu.  
+Returns the offset within this method that corresponds to a given position within a document.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,22 +37,22 @@ HRESULT GetOffset(
   
 ## <a name="parameters"></a>Parametry  
  `document`  
- [in] Ukazatel na dokument, pro kterou je požadována posun.  
+ [in] A pointer to the document for which the offset is requested.  
   
  `line`  
- [in] Řádek dokumentu, pro který je vyžadován posun.  
+ [in] The document line for which the offset is requested.  
   
  `column`  
- [in] Sloupec dokumentu, pro kterou je požadována posun.  
+ [in] The document column for which the offset is requested.  
   
  `pRetVal`  
- [out] Ukazatel `ULONG32` , která obdrží posunutí.  
+ [out] A pointer to a `ULONG32` that receives the offsets.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
+ S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
   
 ## <a name="requirements"></a>Požadavky  
- **Záhlaví:** CorSym.idl, CorSym.h  
+ **Header:** CorSym.idl, CorSym.h  
   
 ## <a name="see-also"></a>Viz také:
 

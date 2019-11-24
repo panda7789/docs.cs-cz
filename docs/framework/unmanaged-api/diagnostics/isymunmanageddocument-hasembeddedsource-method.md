@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 385fc4d3-365c-4645-b7b0-6c4c5344b79f
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 459a24e2ed9b97a67dc0266231fdfc32a9c853a6
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 533d8a5481fe9ba7e7e65775229156a9cc3cf4d7
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67776647"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74449107"
 ---
 # <a name="isymunmanageddocumenthasembeddedsource-method"></a>ISymUnmanagedDocument::HasEmbeddedSource – metoda
-Vrátí `true` Pokud dokument má zdroj součástí symboly ladění; v opačném případě vrátí `false`.  
+Returns `true` if the document has source embedded in the debugging symbols; otherwise, returns `false`.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,10 +34,10 @@ HRESULT HasEmbeddedSource(
   
 ## <a name="parameters"></a>Parametry  
  `pRetVal`  
- [out] Ukazatel na proměnnou, která určuje, jestli má zdrojový dokument vložit symboly pro ladění.  
+ [out] A pointer to a variable that indicates whether the document has source embedded in the debugging symbols.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda uspěje.  
+ S_OK if the method succeeds.  
   
 ## <a name="see-also"></a>Viz také:
 

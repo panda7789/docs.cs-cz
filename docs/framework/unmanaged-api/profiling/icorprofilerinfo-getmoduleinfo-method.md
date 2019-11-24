@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5a90d16f-7929-4987-8f83-a631becf564d
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ceca2133068d3ed011b9499024d127a3dd9279ed
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: aae6d33166a7685e07c4d82f654f803600e37eec
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67782775"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74438890"
 ---
 # <a name="icorprofilerinfogetmoduleinfo-method"></a>ICorProfilerInfo::GetModuleInfo – metoda
-Dané ID modulu vrátí název souboru modulu a ID modulu nadřazené sestavení.  
+Given a module ID, returns the file name of the module and the ID of the module's parent assembly.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,40 +40,40 @@ HRESULT GetModuleInfo(
   
 ## <a name="parameters"></a>Parametry  
  `moduleId`  
- [in] ID modulu, pro kterou budou načteny informace.  
+ [in] The ID of the module for which information will be retrieved.  
   
  `ppBaseLoadAddress`  
- [out] Základní adresa, načtení modulu.  
+ [out] The base address at which the module is loaded.  
   
  `cchName`  
- [in] Délka ve znacích, nástroje `szName` návratové vyrovnávací paměti.  
+ [in] The length, in characters, of the `szName` return buffer.  
   
  `pcchName`  
- [out] Celkový počet znaků z modulů název souboru, který je vrácen ukazatel.  
+ [out] A pointer to the total character length of the module's file name that is returned.  
   
  `szName`  
- [out] Pokud volající širokého znaku vyrovnávací paměti. Po návratu metody obsahuje tuto vyrovnávací paměť názvu souboru modulu.  
+ [out] A caller-provided wide character buffer. When the method returns, this buffer contains the file name of the module.  
   
  `pAssemblyId`  
- [out] Ukazatel na ID nadřazeného sestavení modulu.  
+ [out] A pointer to the ID of the module's parent assembly.  
   
 ## <a name="remarks"></a>Poznámky  
- Pro dynamické moduly `szName` parametru je prázdný řetězec a je základní adresa 0 (nula).  
+ For dynamic modules, the `szName` parameter is an empty string, and the base address is 0 (zero).  
   
- I když `GetModuleInfo` metoda může být volána jako ID modulu existuje, ID nadřazeného sestavení nebude k dispozici, dokud profiler obdrží [icorprofilercallback::moduleattachedtoassembly –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleattachedtoassembly-method.md) zpětného volání.  
+ Although the `GetModuleInfo` method may be called as soon as the module's ID exists, the ID of the parent assembly will not be available until the profiler receives the [ICorProfilerCallback::ModuleAttachedToAssembly](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleattachedtoassembly-method.md) callback.  
   
- Když `GetModuleInfo` vrátí, musíte ověřit, že `szName` vyrovnávací paměť je dostatečně velký, aby obsahovat úplný název souboru modulu. K tomuto účelu porovnat hodnoty, které `pcchName` odkazuje na hodnotu `cchName` parametru. Pokud `pcchName` odkazuje na hodnotu, která je větší než `cchName`, přidělte větší `szName` vyrovnávací paměti, aktualizujte `cchName` nové, větší velikosti a volání `GetModuleInfo` znovu.  
+ When `GetModuleInfo` returns, you must verify that the `szName` buffer was large enough to contain the full file name of the module. To do this, compare the value that `pcchName` points to with the value of the `cchName` parameter. If `pcchName` points to a value that is larger than `cchName`, allocate a larger `szName` buffer, update `cchName` with the new, larger size, and call `GetModuleInfo` again.  
   
- Alternativně můžete nejprve volat `GetModuleInfo` s nulovou délkou `szName` vyrovnávací paměť pro získání správné vyrovnávací paměť. Pak můžete nastavit velikost vyrovnávací paměti pro hodnotu vrácenou v `pcchName` a volat `GetModuleInfo` znovu.  
+ Alternatively, you can first call `GetModuleInfo` with a zero-length `szName` buffer to obtain the correct buffer size. You can then set the buffer size to the value returned in `pcchName` and call `GetModuleInfo` again.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Header:** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids.lib  
+ **Library:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

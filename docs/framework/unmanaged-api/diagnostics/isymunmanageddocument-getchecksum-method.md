@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9bc881b3-e2ce-48a7-ad69-17eaaa304120
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: b34f985f199542612bcdb9b30ebae28649438e1b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 52e1fc20fbe1d8709c21cacde926cf8bebb49425
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67776766"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74449199"
 ---
 # <a name="isymunmanageddocumentgetchecksum-method"></a>ISymUnmanagedDocument::GetCheckSum – metoda
-Získá kontrolní součet.  
+Gets the checksum.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,16 +36,16 @@ HRESULT GetCheckSum(
   
 ## <a name="parameters"></a>Parametry  
  `cData`  
- [in] Délka vyrovnávací paměti poskytované `data` parametr  
+ [in] The length of the buffer provided by the `data` parameter  
   
  `pcData`  
- [out] Velikost a délce kontrolní součet v bajtech.  
+ [out] The size and length of the checksum, in bytes.  
   
  `data`  
- [out] Vyrovnávací paměť, která přijímá kontrolního součtu.  
+ [out] The buffer that receives the checksum.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Pokud metoda uspěje; S_OK v opačném případě chybový kód.  
+ S_OK if the method succeeds; otherwise, an error code.  
   
 ## <a name="see-also"></a>Viz také:
 

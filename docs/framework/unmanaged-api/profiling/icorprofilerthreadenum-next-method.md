@@ -15,17 +15,15 @@ helpviewer_keywords:
 ms.assetid: f3535279-3c63-41a2-ab0e-a129dc5a01e8
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 4c307c09c4593a3e5eefcda2c834132ac57a12d5
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: e78285c915938c553a9b4012ba57257ac43492ad
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67779958"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74447607"
 ---
 # <a name="icorprofilerthreadenumnext-method"></a>ICorProfilerThreadEnum::Next – metoda
-Získá zadaný počet souvislých vlákna z kolekce sekvenčních vláken, od aktuální pozice čítače výčtu v sekvenci.  
+Gets the specified number of contiguous threads from a sequential collection of threads, starting at the enumerator's current position in the sequence.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,30 +37,30 @@ HRESULT Next (    [in]  ULONG      celt,
   
 ## <a name="parameters"></a>Parametry  
  `celt`  
- [in] Počet vláken pro načtení.  
+ [in] The number of threads to retrieve.  
   
  `ids`  
- [out] Pole `ThreadID` hodnot, z nichž každý představuje načtený vlákna.  
+ [out] An array of `ThreadID` values, each of which represents a retrieved thread.  
   
  `pceltFetched`  
- [out] Ukazatel na počet skutečně vrácených v vláken `ids` pole.  
+ [out] A pointer to the number of threads actually returned in the `ids` array.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Tato metoda vrátí následující konkrétní HRESULT, stejně jako hodnota HRESULT chyby, které označují selhání metoda.  
+ This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`celt` elementy byly vráceny.|  
-|S_FALSE|Méně než `celt` prvky byly vráceny, což znamená, že dokončení výčtu.|  
+|S_OK|`celt` elements were returned.|  
+|S_FALSE|Fewer than `celt` elements were returned, which indicates that the enumeration is complete.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Header:** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids.lib  
+ **Library:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

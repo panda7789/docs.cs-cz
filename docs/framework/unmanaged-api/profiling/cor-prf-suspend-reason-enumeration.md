@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 75594833-bed3-47b2-a426-b75c5fe6fbcf
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e084bc957eca9474078ed5ca3aef0276361dbe1b
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: d2d9ca77e764fe439753f1174a42af5ef80faa59
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67745537"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74447704"
 ---
-# <a name="corprfsuspendreason-enumeration"></a>COR_PRF_SUSPEND_REASON – výčet
-Označuje, že je pozastavený, modul runtime důvod.  
+# <a name="cor_prf_suspend_reason-enumeration"></a>COR_PRF_SUSPEND_REASON – výčet
+Indicates the reason that the runtime is suspended.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,26 +42,26 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`COR_PRF_FIELD_SUSPEND_OTHER`|Modul runtime je pozastaven z neznámého důvodu nezdařila.|  
-|`COR_PRF_FIELD_SUSPEND_FOR_GC`|Modul runtime je pozastavený, k plnění požadavků kolekce uvolnění paměti.<br /><br /> Zpětná volání související s kolekcí uvolnění paměti, ke kterým dochází mezi [ICorProfilerCallback::RuntimeSuspendFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendfinished-method.md) a [ICorProfilerCallback::RuntimeResumeStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimeresumestarted-method.md) zpětná volání.|  
-|`COR_PRF_FIELD_SUSPEND_FOR_APPDOMAIN_SHUTDOWN`|Modul runtime je pozastavený, tak, aby `AppDomain` můžete vypnout.<br /><br /> Modul runtime je pozastaven, modul runtime se určit, která vlákna jsou v `AppDomain` , který je právě vypnout a nastavit je na zrušení po jejich obnovení. Neexistují žádné `AppDomain`-konkrétní zpětná volání během této doby pozastavení.|  
-|`COR_PRF_FIELD_SUSPEND_FOR_CODE_PITCHING`|Modul runtime je pozastavený, aby mohla probíhat pitching kódu.<br /><br /> Kód pitching vyplývá, pouze pokud kompilátor just-in-time (JIT) je aktivní s kódem pitching povolené. Kód pitching zpětná volání, ke kterým dochází mezi `ICorProfilerCallback::RuntimeSuspendFinished` a `ICorProfilerCallback::RuntimeResumeStarted` zpětná volání. **Poznámka:**  CLR JIT není představení funkcí v rozhraní .NET Framework verze 2.0, takže tato hodnota se používá ve verzi 2.0.|  
-|`COR_PRF_FIELD_SUSPEND_FOR_SHUTDOWN`|Modul runtime je pozastavený, takže můžete vypnout. Se musí pozastavit všechna vlákna do dokončení operace.|  
-|`COR_PRF_FIELD_SUSPEND_FOR_INPROC_DEBUGGER`|Modul runtime je pozastaven vnitroprocesové ladění.|  
-|`COR_PRF_FIELD_SUSPEND_FOR_GC_PREP`|Modul runtime je pozastavený, příprava pro uvolnění paměti.|  
-|`COR_PRF_SUSPEND_FOR_REJIT`|Modul runtime je pozastaven rekompilace JIT.|  
+|`COR_PRF_FIELD_SUSPEND_OTHER`|The runtime is suspended for an unspecified reason.|  
+|`COR_PRF_FIELD_SUSPEND_FOR_GC`|The runtime is suspended to service a garbage collection request.<br /><br /> The garbage collection-related callbacks occur between the [ICorProfilerCallback::RuntimeSuspendFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendfinished-method.md) and [ICorProfilerCallback::RuntimeResumeStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimeresumestarted-method.md) callbacks.|  
+|`COR_PRF_FIELD_SUSPEND_FOR_APPDOMAIN_SHUTDOWN`|The runtime is suspended so that an `AppDomain` can be shut down.<br /><br /> While the runtime is suspended, the runtime will determine which threads are in the `AppDomain` that is being shut down and set them to abort when they resume. There are no `AppDomain`-specific callbacks during this suspension.|  
+|`COR_PRF_FIELD_SUSPEND_FOR_CODE_PITCHING`|The runtime is suspended so that code pitching can occur.<br /><br /> Code pitching ensues only when the just-in-time (JIT) compiler is active with code pitching enabled. Code pitching callbacks occur between the `ICorProfilerCallback::RuntimeSuspendFinished` and `ICorProfilerCallback::RuntimeResumeStarted` callbacks. **Note:**  The CLR JIT does not pitch functions in the .NET Framework version 2.0, so this value is not used in 2.0.|  
+|`COR_PRF_FIELD_SUSPEND_FOR_SHUTDOWN`|The runtime is suspended so that it can shut down. It must suspend all threads to complete the operation.|  
+|`COR_PRF_FIELD_SUSPEND_FOR_INPROC_DEBUGGER`|The runtime is suspended for in-process debugging.|  
+|`COR_PRF_FIELD_SUSPEND_FOR_GC_PREP`|The runtime is suspended to prepare for a garbage collection.|  
+|`COR_PRF_SUSPEND_FOR_REJIT`|The runtime is suspended for JIT recompilation.|  
   
 ## <a name="remarks"></a>Poznámky  
- Všechna vlákna modulu runtime, které jsou v nespravovaném kódu povoleno spuštění, dokud se pokusí znovu zadat modulu runtime, v tomto okamžiku se bude také být pozastaveno, dokud modul runtime bude pokračovat dál. To platí i pro nová vlákna, které zadejte modul runtime. Všechna vlákna v modulu runtime jsou pozastavena okamžitě, když jsou v paralelní kód nebo dotaz, pozastavit, když dosáhnou paralelní kód.  
+ All runtime threads that are in unmanaged code are permitted to continue running until they try to re-enter the runtime, at which point they will also be suspended until the runtime resumes. This also applies to new threads that enter the runtime. All threads within the runtime are either suspended immediately if they are in interruptible code, or asked to suspend when they do reach interruptible code.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** CorProf.idl, CorProf.h  
+ **Header:** CorProf.idl, CorProf.h  
   
- **Knihovna:** CorGuids.lib  
+ **Library:** CorGuids.lib  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

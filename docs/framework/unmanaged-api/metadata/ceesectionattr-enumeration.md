@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: 0db51881-b869-4677-a715-1726a9216489
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 61fc71c2ab0a9107f5e9fbb354fe0f8c2fb0dace
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 97b28c961f43388679615ac0d5b19c4c69df1e3d
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67776335"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74444244"
 ---
 # <a name="ceesectionattr-enumeration"></a>CeeSectionAttr – výčet
-Obsahuje hodnoty, které určují atributy oddílu pro použití [iceegen –](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md) rozhraní.  
+Provides values that specify attributes of a section for use by the [ICeeGen](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md) interface.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,19 +41,19 @@ typedef enum  {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`sdNone`|Oddíl nemá žádné atributy.|  
-|`sdReadOnly`|Oddíl obsahuje inicializovaná data, která lze pouze číst, nejsou aktualizována.|  
-|`sdReadWrite`|Oddíl obsahuje inicializovaná data, která může číst nebo aktualizovat.|  
-|`sdExecute`|Oddíl obsahuje spustitelný kód, který může číst a spustit.|  
+|`sdNone`|Section has no attributes.|  
+|`sdReadOnly`|Section contains initialized data that can be only read, not updated.|  
+|`sdReadWrite`|Section contains initialized data that can be read or updated.|  
+|`sdExecute`|Section contains executable code that is allowed to be read and executed.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** Zobrazit [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Záhlaví:** Cor.h  
+ **Header:** Cor.h  
   
- **Knihovna:** Zahrnuté jako prostředek v MsCorEE.dll  
+ **Library:** Included as a resource in MsCorEE.dll  
   
- **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

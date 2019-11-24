@@ -14,17 +14,15 @@ helpviewer_keywords:
 ms.assetid: bcbe321f-b83a-4e9a-9f10-8d913e244dc9
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: f7fee7a91de99e2db69609cbc7c73e22d85d045f
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: cda6d90865f8ad2b9d565f6a6378c35b03c65bf7
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70777072"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74446989"
 ---
 # <a name="importfile-method"></a>ImportFile – metoda
-Importuje sestavení a nevázané moduly.  
+Imports assemblies and unbound modules.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,31 +39,31 @@ HRESULT ImportFile(
   
 ## <a name="parameters"></a>Parametry  
  `pszFilename`  
- Plně kvalifikovaný název souboru, který se má importovat  
+ Fully qualified name of file to be imported.  
   
  `pszTargetName`  
- Volitelný název výstupního souboru, který lze použít k přejmenování souboru, protože je propojen do sestavení.  
+ Optional output file name that can be used to rename the file as it is linked into the assembly.  
   
  `fSmartImport`  
- Při hodnotě TRUE se používá Importtypes –, jinak se import musí provést ručně.  
+ If TRUE, ImportTypes is used, otherwise importing must be performed manually.  
   
  `pImportToken`  
- Ukazatel na token, kde bude uložen jedinečný identifikátor souboru. Soubor může být sestavením nebo souborem.  
+ Pointer to token where a unique file ID will be stored. The file can be an assembly or a file.  
   
  `ppAssemblyScope`  
- Přijme ukazatel na [rozhraní IMetaDataAssemblyImport](../metadata/imetadataassemblyimport-interface.md). Pokud soubor není sestavením, může mít hodnotu NULL.  
+ Receives pointer to [IMetaDataAssemblyImport Interface](../metadata/imetadataassemblyimport-interface.md). Can be NULL if the file is not an assembly.  
   
  `pdwCountOfScopes`  
- Ukazatel na počet souborů nebo rozsahů, které byly naimportovány.  
+ Pointer to the count of files and/or scopes that have been imported.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Vrací S_OK, pokud je metoda úspěšná.  
+ Returns S_OK if the method succeeds.  
   
 ## <a name="requirements"></a>Požadavky  
- Vyžaduje ALink. h  
+ Requires alink.h  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink – rozhraní](ialink-interface.md)
 - [IALink2 – rozhraní](ialink2-interface.md)
-- [Rozhraní API ALink](index.md)
+- [ALink API](index.md)

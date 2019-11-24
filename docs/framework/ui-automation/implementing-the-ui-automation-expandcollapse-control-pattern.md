@@ -6,69 +6,69 @@ helpviewer_keywords:
 - ExpandCollapse control pattern
 - control patterns, ExpandCollapse
 ms.assetid: 1dbabb8c-0d68-47c1-a35e-1c01cb01af26
-ms.openlocfilehash: 232bceba8286c2566a7df03b9001a5c43b348b20
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 073ff0727fc6aab1189f73a254aa95da60820cc3
+ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71043461"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74447150"
 ---
 # <a name="implementing-the-ui-automation-expandcollapse-control-pattern"></a>Implementace vzoru ovládacích prvků ExpandCollapse pro automatizaci uživatelského rozhraní
 
 > [!NOTE]
-> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované <xref:System.Windows.Automation> v oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API služby Windows Automation: Automatizace](https://go.microsoft.com/fwlink/?LinkID=156746)uživatelského rozhraní.
+> This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace. For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](/windows/win32/winauto/entry-uiauto-win32).
 
-Toto téma obsahuje pokyny a konvence pro <xref:System.Windows.Automation.Provider.IExpandCollapseProvider>implementaci, včetně informací o vlastnostech, metodách a událostech. Odkazy na další odkazy jsou uvedeny na konci přehledu.
+This topic introduces guidelines and conventions for implementing <xref:System.Windows.Automation.Provider.IExpandCollapseProvider>, including information about properties, methods, and events. Links to additional references are listed at the end of the overview.
 
-Vzor <xref:System.Windows.Automation.ExpandCollapsePattern> ovládacího prvku slouží k podpoře ovládacích prvků, které se vizuálně rozbalí pro zobrazení více obsahu a sbalení pro skrytí obsahu. Příklady ovládacích prvků, které implementují tento vzor ovládacích prvků, naleznete v tématu [mapování vzoru ovládacího prvku pro klienty automatizace uživatelského rozhraní](control-pattern-mapping-for-ui-automation-clients.md).
+The <xref:System.Windows.Automation.ExpandCollapsePattern> control pattern is used to support controls that visually expand to display more content and collapse to hide content. For examples of controls that implement this control pattern, see [Control Pattern Mapping for UI Automation Clients](control-pattern-mapping-for-ui-automation-clients.md).
 
 <a name="Implementation_Guidelines_and_Conventions"></a>
 
-## <a name="implementation-guidelines-and-conventions"></a>Pokyny a konvence implementace
+## <a name="implementation-guidelines-and-conventions"></a>Implementation Guidelines and Conventions
 
-Při implementaci vzoru ovládacího prvku ovládacích prvků ExpandCollapse si všimněte následujících pokynů a konvencí:
+When implementing the ExpandCollapse control pattern, note the following guidelines and conventions:
 
-- Agregační ovládací prvky – sestavené s podřízenými objekty, které poskytují uživatelské rozhraní s funkcí rozbalit/sbalit <xref:System.Windows.Automation.ExpandCollapsePattern> – musí podporovat model ovládacího prvku, zatímco jejich podřízené prvky ne. Například ovládací prvek pole se seznamem je sestaven s kombinací ovládacích prvků seznam, tlačítko a úpravy, ale je to pouze nadřazené pole se seznamem, které musí podporovat <xref:System.Windows.Automation.ExpandCollapsePattern>.
+- Aggregate controls—built with child objects that provide the UI with expand/collapse functionality—must support the <xref:System.Windows.Automation.ExpandCollapsePattern> control pattern whereas their child elements do not. For example, a combo box control is built with a combination of list box, button, and edit controls, but it is only the parent combo box that must support the <xref:System.Windows.Automation.ExpandCollapsePattern>.
 
   > [!NOTE]
-  > Výjimkou je ovládací prvek nabídky, který je agregací jednotlivých objektů MenuItem. Objekty MenuItem mohou podporovat <xref:System.Windows.Automation.ExpandCollapsePattern> vzorek ovládacího prvku, ale nadřazený ovládací prvek nabídky nemůže. Podobná výjimka se vztahuje na ovládací prvky strom a strom položky stromu.
+  > An exception is the menu control, which is an aggregate of individual MenuItem objects. The MenuItem objects can support the <xref:System.Windows.Automation.ExpandCollapsePattern> control pattern, but the parent Menu control cannot. A similar exception applies to the Tree and Tree Item controls.
 
-- Když je ovládací prvek nastaven na <xref:System.Windows.Automation.ExpandCollapseState.LeafNode>, všechny <xref:System.Windows.Automation.ExpandCollapsePattern> funkce jsou aktuálně neaktivní pro ovládací prvek a jediné informace, které lze získat pomocí tohoto vzoru ovládacího prvku, je <xref:System.Windows.Automation.ExpandCollapseState>. <xref:System.Windows.Automation.ExpandCollapseState> Pokud jsou následně přidány podřízené objekty, <xref:System.Windows.Automation.ExpandCollapseState> jsou aktivovány změny a <xref:System.Windows.Automation.ExpandCollapsePattern> funkce.
+- When the <xref:System.Windows.Automation.ExpandCollapseState> of a control is set to <xref:System.Windows.Automation.ExpandCollapseState.LeafNode>, any <xref:System.Windows.Automation.ExpandCollapsePattern> functionality is currently inactive for the control and the only information that can be obtained using this control pattern is the <xref:System.Windows.Automation.ExpandCollapseState>. If any child objects are subsequently added, the <xref:System.Windows.Automation.ExpandCollapseState> changes and <xref:System.Windows.Automation.ExpandCollapsePattern> functionality is activated.
 
-- <xref:System.Windows.Automation.ExpandCollapseState>odkazuje na viditelnost pouze bezprostředních podřízených objektů; neodkazuje na viditelnost všech potomků objektů.
+- <xref:System.Windows.Automation.ExpandCollapseState> refers to the visibility of immediate child objects only; it does not refer to the visibility of all descendant objects.
 
-- Funkce rozbalení a sbalení je specifická pro konkrétní ovládací prvek. Níže jsou uvedeny příklady tohoto chování.
+- Expand and Collapse functionality is control-specific. The following are examples of this behavior.
 
-  - Osobní nabídka Office může být třída MenuItem pro tři<xref:System.Windows.Automation.ExpandCollapseState.Expanded>země ( <xref:System.Windows.Automation.ExpandCollapseState.Collapsed> a <xref:System.Windows.Automation.ExpandCollapseState.PartiallyExpanded>), kde <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> ovládací prvek určuje stav, který se má přijmout při volání <xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A> nebo.
+  - The Office Personal Menu can be a tri-state MenuItem (<xref:System.Windows.Automation.ExpandCollapseState.Expanded>, <xref:System.Windows.Automation.ExpandCollapseState.Collapsed> and <xref:System.Windows.Automation.ExpandCollapseState.PartiallyExpanded>) where the control specifies the state to adopt when an <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> or <xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A> is called.
 
-  - Volání <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> na TreeItem může zobrazit všechny následníky nebo pouze bezprostřední podřízené objekty.
+  - Calling <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> on a TreeItem may display all descendants or only immediate children.
 
-  - Pokud volání <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> nebo <xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A> na ovládacím prvku udržuje stav jeho následníků, měla by být odeslána událost změny viditelnosti, nikoli událost změny stavu, pokud nadřazený ovládací prvek neudržuje stav potomků, pokud je sbalený, ovládací prvek může zničit všechny následníky, kteří již nejsou viditelní a vyvolávají událost zničení; nebo může změnit <xref:System.Windows.Automation.Provider.IExpandCollapseProvider.ExpandCollapseState%2A> pro každého následníka a vyvolat událost změny viditelnosti.
+  - If calling <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> or <xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A> on a control maintains the state of its descendants, a visibility change event should be sent, not a state change event If the parent control does not maintain the state of its descendants when collapsed, the control may destroy all the descendants that are no longer visible and raise a destroyed event; or it may change the <xref:System.Windows.Automation.Provider.IExpandCollapseProvider.ExpandCollapseState%2A> for each descendant and raise a visibility change event.
 
-- Pro zajištění navigace je žádoucí, aby byl objekt ve [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu (s odpovídajícím stavem viditelnosti) bez ohledu na jeho rodiče. <xref:System.Windows.Automation.ExpandCollapseState> Pokud jsou následníky generovány na vyžádání, mohou se zobrazit pouze ve [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromové struktuře po prvním zobrazení nebo pouze v případě, že jsou viditelné.
+- To guarantee navigation, it is desirable for an object to be in the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree (with appropriate visibility state) regardless of its parents <xref:System.Windows.Automation.ExpandCollapseState>. If descendants are generated on demand, they may only appear in the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree after being displayed for the first time or only while they are visible.
 
 <a name="Required_Members_for_the_IValueProvider_Interface"></a>
 
-## <a name="required-members-for-iexpandcollapseprovider"></a>Vyžadovaná členové pro IExpandCollapseProvider
+## <a name="required-members-for-iexpandcollapseprovider"></a>Required Members for IExpandCollapseProvider
 
-Pro implementaci <xref:System.Windows.Automation.Provider.IExpandCollapseProvider>jsou vyžadovány následující vlastnosti a metody.
+The following properties and methods are required for implementing <xref:System.Windows.Automation.Provider.IExpandCollapseProvider>.
 
-|Vyžadovaná členové|Typ člena|Poznámky|
+|Required members|Member type|Poznámky|
 |----------------------|-----------------|-----------|
 |<xref:System.Windows.Automation.Provider.IExpandCollapseProvider.ExpandCollapseState%2A>|Vlastnost|Žádné|
 |<xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A>|Metoda|Žádné|
 |<xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A>|Metoda|Žádné|
-|<xref:System.Windows.Automation.AutomationPropertyChangedEventHandler>|Událost|Tento ovládací prvek nemá žádné přidružené události; Použijte tohoto obecného delegáta.|
+|<xref:System.Windows.Automation.AutomationPropertyChangedEventHandler>|Událost|This control has no associated events; use this generic delegate.|
 
 <a name="Exceptions"></a>
 
 ## <a name="exceptions"></a>Výjimky
 
-Zprostředkovatelé musí vyvolat následující výjimky.
+Providers must throw the following exceptions.
 
 |Typ výjimky|Podmínka|
 |--------------------|---------------|
-|<xref:System.InvalidOperationException>|Buď <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> <xref:System.Windows.Automation.ExpandCollapseState>nebo jevolána = , když .<xref:System.Windows.Automation.ExpandCollapseState.LeafNode> <xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A>|
+|<xref:System.InvalidOperationException>|Either <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> or <xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A> is called when the <xref:System.Windows.Automation.ExpandCollapseState> = <xref:System.Windows.Automation.ExpandCollapseState.LeafNode>.|
 
 ## <a name="see-also"></a>Viz také:
 
