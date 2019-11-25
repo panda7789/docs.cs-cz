@@ -1,17 +1,17 @@
 ---
-title: Halda velkých objektů v systémech Windows
+title: LOH ve Windows – .NET
 ms.date: 05/02/2018
 helpviewer_keywords:
 - large object heap (LOH)"
 - LOH
 - garbage collection, large object heap
 - GC [.NET ], large object heap
-ms.openlocfilehash: 618db9faff137e6ff0f878c928e3a889cff37838
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5125b76dd26ffa4fb363ecf8449f65b490f57b93
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120940"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283622"
 ---
 # <a name="the-large-object-heap-on-windows-systems"></a>Halda velkých objektů v systémech Windows
 
@@ -22,7 +22,7 @@ Uvolňování paměti .NET (GC) rozděluje objekty až do malých a velkých obj
 
 ## <a name="how-an-object-ends-up-on-the-large-object-heap-and-how-gc-handles-them"></a>Jak objekt skončí na haldě velkých objektů a jak je v GC zpracovává
 
-Pokud je objekt větší nebo roven 85 000 bajtů, je považován za velký objekt. Toto číslo bylo určeno vyladěním výkonu. Pokud je požadavek na přidělení objektu na 85 000 nebo více bajtů, modul runtime ho přidělí na haldu velkých objektů.
+Pokud je objekt větší než nebo roven 85 000 bajtů, je považován za velký objekt. Toto číslo bylo určeno vyladěním výkonu. Pokud je požadavek na přidělení objektu na 85 000 nebo více bajtů, modul runtime ho přidělí na haldu velkých objektů.
 
 Pro pochopení toho, co to znamená, je vhodné si prostudovat některé zásadní informace o modulu .NET GC.
 
@@ -32,7 +32,7 @@ Malé objekty jsou vždy přiděleny v generaci 0 a v závislosti na jejich živ
 
 Velké objekty patří do generace 2, protože jsou shromažďovány pouze během kolekce generace 2. Po shromáždění generace se shromažďují také všechny jeho mladší generace. Například když dojde k 1. generaci GC, shromažďují se obě generace 1 a 0. A když dojde k GC generace 2, bude shromážděna celá halda. Z tohoto důvodu se také označuje jako *úplný GC*. generace 2 GC. Tento článek odkazuje na generaci 2 GC místo úplného uvolňování paměti, ale tyto výrazy jsou zaměnitelné.
 
-Generace poskytují logické zobrazení haldy GC. Fyzicky objekty ve spravovaných segmentech haldy jsou živé. *Segment spravované haldy* je blok paměti, který GC vyhradí z operačního systému voláním [funkce VirtualAlloc](/windows/desktop/api/memoryapi/nf-memoryapi-virtualalloc) jménem spravovaného kódu. Když je modul CLR načten, uvolňování paměti přidělí dva počáteční segmenty haldy: jeden pro malé objekty (halda malých objektů nebo SOH) a jeden pro velké objekty (Large Object halda).
+Generace poskytují logické zobrazení haldy GC. Fyzicky objekty ve spravovaných segmentech haldy jsou živé. *Segment spravované haldy* je blok paměti, který GC vyhradí z operačního systému voláním [funkce VirtualAlloc](/windows/desktop/api/memoryapi/nf-memoryapi-virtualalloc) jménem spravovaného kódu. Při načtení modulu CLR přidělí GC dva počáteční segmenty haldy: jeden pro malé objekty (halda malých objektů neboli SOH) a jeden pro velké objekty (halda velkých objektů).
 
 Žádosti o přidělení se pak splní vložením spravovaných objektů na tyto spravované segmenty haldy. Pokud je objekt menší než 85 000 bajtů, je umístěn do segmentu pro SOH; v opačném případě je umístěn na segment LOH. Segmenty jsou potvrzeny (v menších blocích), protože jsou jim přiděleny další a více objektů.
 Pro SOH jsou objekty, které jsou v GC, povýšeny na novou generaci. Objekty, které jsou zachovány kolekcí 0. generace, se nyní považují za objekty generace 1 a tak dále. Nicméně objekty, které zůstávají nejstarší generace, jsou stále považovány za nejstarší generace. Jinými slovy, pozůstaly od generace 2 objekty generace 2; a zbývající objekty z LOH jsou objekty LOH (které jsou shromažďovány pomocí Gen2).
@@ -48,7 +48,7 @@ Obrázek 1 znázorňuje situaci, kdy se generace GC vydává 1 po prvním vygene
 ![Obrázek 1: GC s globálním 0 a GC 1. generace](media/loh/loh-figure-1.jpg)\
 Obrázek 1: generace 0 a 1. generace GC.
 
-Obrázek 2 ukazuje, že po 2. generaci GC, který zjistil, že `Obj1` a `Obj2` jsou neaktivní, tvoří GC volné místo v paměti, která se použila k tomu, aby byla obsazená `Obj1` a `Obj2`, která se pak použila k uspokojení žádosti o přidělení pro `Obj4`. Místo za posledním objektem `Obj3`, do konce segmentu, lze také použít k uspokojení požadavků na přidělení.
+Obrázek 2 ukazuje, že po 2. generaci GC, který zjistil, že `Obj1` a `Obj2` jsou neaktivní, tvoří GC volné místo v paměti, která se používá pro `Obj1` a `Obj2`, která se pak použila k uspokojení žádosti o přidělení pro `Obj4`. Místo za posledním objektem `Obj3`, do konce segmentu, lze také použít k uspokojení požadavků na přidělení.
 
 ![Obrázek 2: po 1. generace GC](media/loh/loh-figure-2.jpg)\
 Obrázek 2: po 2. generaci GC
@@ -154,7 +154,7 @@ Tyto čítače výkonu jsou obvykle dobrým prvním krokem při zkoumání probl
 
 Běžný způsob, jak si prohlédnout čítače výkonu, je nástroj Performance Monitor (Perfmon. exe). Pomocí možnosti Přidat čítače přidejte zajímavé čítače pro procesy, které vás zajímají. Data čítače výkonu můžete uložit do souboru protokolu, jak ukazuje obrázek 4:
 
-![Screenshow, který ukazuje přidání čítačů výkonu.](media/large-object-heap/add-performance-counter.png)
+![snímek obrazovky, který ukazuje přidání čítačů výkonu.](media/large-object-heap/add-performance-counter.png)
 Obrázek 4: LOH po 2. generaci GC
 
 Čítače výkonu se také dají dotazovat programově. Spousta lidí je shromažďuje tímto způsobem v rámci procesu pravidelného testování. Když vydávají čítače s hodnotami, které jsou z obyčejného, používají jiné prostředky k získání podrobnějších dat, která vám pomohou s šetřením.
@@ -306,7 +306,7 @@ Chcete-li ověřit, zda LOH způsobuje fragmentaci virtuálního počítače, m�
 bp kernel32!virtualalloc "j (dwo(@esp+8)>800000) 'kb';'g'"
 ```
 
-Tento příkaz se přeruší do ladicího programu a zobrazí zásobník volání pouze v případě, že je metoda [VirtualAlloc](/windows/desktop/api/memoryapi/nf-memoryapi-virtualalloc) volána s velikostí alokace větší než 8MB (0x800000).
+Tento příkaz se rozdělí do ladicího programu a zobrazí zásobník volání, pouze pokud je metoda [VirtualAlloc](/windows/desktop/api/memoryapi/nf-memoryapi-virtualalloc) volána s velikostí alokace větší než 8MB (0x800000).
 
 CLR 2,0 přidal funkci s názvem *VM hoarding* , která může být užitečná pro scénáře, kdy se často získávají a uvolňují segmenty (včetně v haldách velkých a malých objektů). Pokud chcete zadat hoarding virtuálního počítače, zadejte spouštěcí příznak s názvem `STARTUP_HOARD_GC_VM` prostřednictvím rozhraní API pro hostování. Místo uvolnění prázdných segmentů zpět do operačního systému modul CLR zruší v těchto segmentech paměť a umístí je do úsporného seznamu. (Všimněte si, že modul CLR to neudělá pro segmenty, které jsou příliš velké.) Modul CLR později použije tyto segmenty k uspokojení požadavků na nové segmenty. Až aplikace příště potřebuje nový segment, použije modul CLR jeden z těchto seznamů v pohotovostním režimu, pokud může najít dostatečně velký.
 

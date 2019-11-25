@@ -1,32 +1,32 @@
 ---
-title: Přehled třídy XElement (Visual Basic)
+title: Přehled třídy XElement
 ms.date: 07/20/2015
 ms.assetid: 52331fcd-6023-4d19-b423-7b24f2d86ded
-ms.openlocfilehash: d5ae3feae632c3bc3ce927a6d376e9ec4911e9fd
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ff751a14abf9a9cb5d64e44e601c5d0ca6218c7d
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647386"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74349310"
 ---
-# <a name="xelement-class-overview-visual-basic"></a>Přehled třídy XElement (Visual Basic)
-<xref:System.Xml.Linq.XElement> Třídy je jedním ze základních tříd v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Reprezentuje XML element. Tato třída slouží k vytváření prvků; Změňte obsah elementu; Přidání, změna nebo odstranění podřízené elementy; přidat atributy pro element. nebo serializace obsah prvek v textové podobě. Můžete také spolupracovat s jinými třídami v <xref:System.Xml?displayProperty=nameWithType>, jako například <xref:System.Xml.XmlReader>, <xref:System.Xml.XmlWriter>, a <xref:System.Xml.Xsl.XslCompiledTransform>.  
+# <a name="xelement-class-overview-visual-basic"></a>XElement Class Overview (Visual Basic)
+The <xref:System.Xml.Linq.XElement> class is one of the fundamental classes in [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. It represents an XML element. You can use this class to create elements; change the content of the element; add, change, or delete child elements; add attributes to an element; or serialize the contents of an element in text form. You can also interoperate with other classes in <xref:System.Xml?displayProperty=nameWithType>, such as <xref:System.Xml.XmlReader>, <xref:System.Xml.XmlWriter>, and <xref:System.Xml.Xsl.XslCompiledTransform>.  
   
-## <a name="xelement-functionality"></a>Funkce XElement  
- Toto téma popisuje funkce poskytované službou <xref:System.Xml.Linq.XElement> třídy.  
+## <a name="xelement-functionality"></a>XElement Functionality  
+ This topic describes the functionality provided by the <xref:System.Xml.Linq.XElement> class.  
   
-### <a name="constructing-xml-trees"></a>Vytváření stromů XML  
- Můžete sestavit stromů XML v celou řadu způsobů, včetně následujících:  
+### <a name="constructing-xml-trees"></a>Constructing XML Trees  
+ You can construct XML trees in a variety of ways, including the following:  
   
-- Můžete vytvořit stromu XML v kódu. Další informace najdete v tématu [vytváření stromů XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md).  
+- You can construct an XML tree in code. For more information, see [Creating XML Trees (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md).  
   
-- Můžete analyzovat soubor XML z různých zdrojů, včetně <xref:System.IO.TextReader>, textové soubory nebo webovou adresu (URL). Další informace najdete v tématu [analýza kódu XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md).  
+- You can parse XML from various sources, including a <xref:System.IO.TextReader>, text files, or a Web address (URL). For more information, see [Parsing XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md).  
   
-- Můžete použít <xref:System.Xml.XmlReader> k naplnění stromu. Další informace naleznete v tématu <xref:System.Xml.Linq.XNode.ReadFrom%2A>.  
+- You can use an <xref:System.Xml.XmlReader> to populate the tree. Další informace najdete v tématu <xref:System.Xml.Linq.XNode.ReadFrom%2A>.  
   
-- Pokud máte modul, který může zapisovat obsah tak, aby <xref:System.Xml.XmlWriter>, můžete použít <xref:System.Xml.Linq.XContainer.CreateWriter%2A> metodu pro vytvoření zapisovač, předat modul pro zápis do modulu a pak použít obsah, který je zapsán do <xref:System.Xml.XmlWriter> k naplnění stromu XML.  
+- If you have a module that can write content to an <xref:System.Xml.XmlWriter>, you can use the <xref:System.Xml.Linq.XContainer.CreateWriter%2A> method to create a writer, pass the writer to the module, and then use the content that is written to the <xref:System.Xml.XmlWriter> to populate the XML tree.  
   
- Nejběžnější způsob, jak vytvořit stromu XML je však následujícím způsobem:  
+ However, the most common way to create an XML tree is as follows:  
   
 ```vb  
 Dim contacts As XElement = _  
@@ -44,7 +44,7 @@ Dim contacts As XElement = _
     </Contacts>  
 ```  
   
- Zahrnuje jiného velmi běžná technika pro vytvoření stromu XML pomocí výsledky [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu k naplnění stromu XML, jak je znázorněno v následujícím příkladu:  
+ Another very common technique for creating an XML tree involves using the results of a [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query to populate an XML tree, as shown in the following example:  
   
 ```vb  
 Dim srcTree As XElement = _  
@@ -66,7 +66,7 @@ Dim xmlTree As XElement = _
 Console.WriteLine(xmlTree)  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ This example produces the following output:  
   
 ```xml  
 <Root>  
@@ -79,25 +79,25 @@ Console.WriteLine(xmlTree)
 ```  
   
 ### <a name="serializing-xml-trees"></a>Serializace stromů XML  
- Může serializovat stromu XML <xref:System.IO.File>, <xref:System.IO.TextWriter>, nebo <xref:System.Xml.XmlWriter>.  
+ You can serialize the XML tree to a <xref:System.IO.File>, a <xref:System.IO.TextWriter>, or an <xref:System.Xml.XmlWriter>.  
   
- Další informace najdete v tématu [serializace stromů XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/serializing-xml-trees.md).  
+ For more information, see [Serializing XML Trees (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/serializing-xml-trees.md).  
   
-### <a name="retrieving-xml-data-via-axis-methods"></a>Načítání dat XML pomocí metody osy  
- Načíst atributy, podřízené prvky, následnickým elementům a nadřazených elementů můžete použít metody osy. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy pracovat na metody osy a poskytují několik pružnější a výkonnější způsobů, jak procházet a zpracování stromu XML.  
+### <a name="retrieving-xml-data-via-axis-methods"></a>Retrieving XML Data via Axis Methods  
+ You can use axis methods to retrieve attributes, child elements, descendant elements, and ancestor elements. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] queries operate on axis methods, and provide several flexible and powerful ways to navigate through and process an XML tree.  
   
- Další informace najdete v tématu [osy LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md).  
+ For more information, see [LINQ to XML Axes (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md).  
   
 ### <a name="querying-xml-trees"></a>Dotazování na stromy XML  
- Můžete napsat [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy, které extrahují data z stromu XML.  
+ You can write [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] queries that extract data from an XML tree.  
   
- Další informace najdete v tématu [dotazování na stromy XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/querying-xml-trees.md).  
+ For more information, see [Querying XML Trees (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/querying-xml-trees.md).  
   
-### <a name="modifying-xml-trees"></a>Změna stromů XML  
- Můžete upravovat prvek v celou řadu způsobů, včetně změny jeho obsahu nebo atributů. Můžete také odebrat element ze svého nadřazeného objektu.  
+### <a name="modifying-xml-trees"></a>Modifying XML Trees  
+ You can modify an element in a variety of ways, including changing its content or attributes. You can also remove an element from its parent.  
   
- Další informace najdete v tématu [změna stromů XML (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md).  
+ For more information, see [Modifying XML Trees (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled LINQ to XML programování (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)
+- [LINQ to XML Programming Overview (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)

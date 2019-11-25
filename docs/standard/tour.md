@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 05/22/2017
 ms.technology: dotnet-standard
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.openlocfilehash: 8a2904d02b34058a87a77bbedbed3ccba4c80c58
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: e0e35562e2351f9b985c74b60d8769577c3e3f56
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73421574"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283898"
 ---
 # <a name="tour-of-net"></a>Prohlídka technologie .NET
 
@@ -29,7 +29,7 @@ Rozhraní .NET podporuje více programovacích jazyků. Implementace rozhraní .
 
 Microsoft aktivně vyvíjí a podporuje tři jazyky .NET: C#, F#a Visual Basic (VB). 
 
-* C#je jednoduchý, výkonný, typově bezpečný a objektově orientovaný a přitom zachovává expresivity a elegance jazyků ve stylu jazyka C. Kdokoli, kdo zná jazyk C a podobné jazyky, najde v přizpůsobení několik C#problémů. Další informace o nástroji C#najdete v [ C# příručce](../csharp/index.md) .
+* C#je jednoduchý, výkonný, typově bezpečný a objektově orientovaný a přitom zachovává expresivity a elegance jazyků ve stylu jazyka C. Kdokoli, kdo zná jazyk C a podobné jazyky, najde v přizpůsobení několik C#problémů. Další informace o nástroji C#najdete v [ C# příručce](../csharp/index.yml) .
 
 * F#je programovací jazyk, který je pro více platforem, který podporuje také tradiční objekty orientované a imperativní programování. Další informace o nástroji F#najdete v [ F# příručce](../fsharp/index.md) .
 
@@ -47,19 +47,19 @@ Neexistuje žádné podobné klíčové slovo, které by bylo možné zrušit p�
 
 Systém uvolňování paměti je jednou ze služeb, které pomůžou zajistit *bezpečnost paměti*. Program je bezpečný pro paměť, pokud přistupuje pouze k přidělené paměti. Modul runtime například zajišťuje, že aplikace nemá přístup k nepřidělené paměti mimo hranice pole.
 
-V následujícím příkladu modul runtime vyvolá výjimku `InvalidIndexException` pro vymáhání zabezpečení paměti:
+V následujícím příkladu vyvolá modul runtime výjimku `InvalidIndexException` pro vymáhání zabezpečení paměti:
 
 [!code-csharp[MemoryManagement](../../samples/csharp/snippets/tour/MemoryManagement.csx#L4-L5)]
 
 ## <a name="working-with-unmanaged-resources"></a>Práce s nespravovanými prostředky
 
-Některé objekty odkazují na *nespravované prostředky*. Nespravované prostředky jsou prostředky, které nejsou automaticky spravovány modulem runtime .NET. Například popisovač souboru je nespravovaný prostředek. Objekt <xref:System.IO.FileStream> je spravovaný objekt, ale odkazuje na popisovač souboru, který je nespravovaný. Až budete hotovi s používáním <xref:System.IO.FileStream>, musíte vydávat popisovač souboru.
+Některé objekty odkazují na *nespravované prostředky*. Nespravované prostředky jsou prostředky, které nejsou automaticky spravovány modulem runtime .NET. Například popisovač souboru je nespravovaný prostředek. Objekt <xref:System.IO.FileStream> je spravovaný objekt, ale odkazuje na popisovač souboru, který je nespravovaný. Až budete s použitím <xref:System.IO.FileStream>, musíte vydávat popisovač souboru.
 
-V rozhraní .NET objekty, které odkazují na nespravované prostředky, implementují rozhraní <xref:System.IDisposable>. Po dokončení používání objektu zavoláte <xref:System.IDisposable.Dispose> metodu objektu, která je zodpovědná za uvolnění nespravovaných prostředků. Jazyky .NET poskytují pohodlný [příkaz `using`](../csharp/language-reference/keywords/using.md) pro takové objekty, jak je znázorněno v následujícím příkladu:
+V rozhraní .NET objekty, které odkazují na nespravované prostředky, implementují rozhraní <xref:System.IDisposable>. Po dokončení používání objektu zavoláte <xref:System.IDisposable.Dispose> metodu objektu, která je zodpovědná za uvolnění nespravovaných prostředků. Jazyky .NET poskytují pohodlný [příkaz`using`](../csharp/language-reference/keywords/using.md) pro takové objekty, jak je znázorněno v následujícím příkladu:
 
 [!code-csharp[UnmanagedResources](../../samples/csharp/snippets/tour/UnmanagedResources.csx#L1-L6)]
 
-Po dokončení bloku `using` aplikace .NET runtime automaticky zavolá metodu <xref:System.IDisposable.Dispose> objektu `stream`, která uvolní popisovač souboru. Modul runtime také provádí tuto chybu, pokud výjimka způsobí, že ovládací prvek opustí blok.
+Po dokončení `using` bloku rozhraní .NET runtime automaticky zavolá metodu <xref:System.IDisposable.Dispose> objektu `stream`, která uvolní popisovač souboru. Modul runtime také provádí tuto chybu, pokud výjimka způsobí, že ovládací prvek opustí blok.
 
 Další podrobnosti najdete v následujících tématech:
 
@@ -69,7 +69,7 @@ Další podrobnosti najdete v následujících tématech:
 
 ## <a name="type-safety"></a>Bezpečnost typů
 
-Objekt je instance konkrétního typu. Jediné operace, které jsou povoleny pro daný objekt, jsou typu. Typ `Dog` může mít metody `Jump` a `WagTail`, ale ne metodu `SumTotal`. Program volá pouze metody patřící k danému typu. Všechna ostatní volání mají za následek chybu při kompilaci nebo výjimku za běhu (v případě použití dynamických funkcí nebo `object`).
+Objekt je instance konkrétního typu. Jediné operace, které jsou povoleny pro daný objekt, jsou typu. `Dog` typ může mít metody `Jump` a `WagTail`, ale nikoli metodu `SumTotal`. Program volá pouze metody patřící k danému typu. Všechna ostatní volání mají za následek chybu při kompilaci nebo výjimku za běhu (v případě použití dynamických funkcí nebo `object`).
 
 Jazyky .NET jsou objektově orientované s hierarchiemi základních a odvozených tříd. Modul runtime .NET povoluje pouze přetypování a volání objektů, které odpovídají hierarchii objektů. Pamatujte, že každý typ definovaný v jakémkoli jazyce .NET je odvozen ze základního typu <xref:System.Object>.
 
@@ -79,7 +79,7 @@ Bezpečnost typů se také používá k vymáhání zapouzdření tím, že zaru
 
 [!code-csharp[TypeSafety](../../samples/csharp/snippets/tour/TypeSafety.csx#L3-L3)]
 
-C#, VB a F# podpora *odvození místního typu*. Odvození typu znamená, že kompilátor odvodit typ výrazu na levé straně z výrazu na pravé straně. To neznamená, že bezpečnost typů je přerušena nebo se nepoužívá. Výsledný typ má silný typ se všemi, který implikuje. V předchozím příkladu je přepsána `dog`, aby se zavedlo odvození typu a zbytek příkladu se nezměnil:
+C#, VB a F# podpora *odvození místního typu*. Odvození typu znamená, že kompilátor odvodit typ výrazu na levé straně z výrazu na pravé straně. To neznamená, že bezpečnost typů je přerušena nebo se nepoužívá. Výsledný typ má silný typ se všemi, který implikuje. Z předchozího příkladu je přepsána `dog` pro zavedení odvození typu a zbývající část příkladu je beze změny:
 
 [!code-csharp[TypeSafety](../../samples/csharp/snippets/tour/TypeSafety.csx#L28-L34)]
 
@@ -97,7 +97,7 @@ V rozhraní .NET se delegáti běžně používají v obslužných rutinách ud�
 
 Obecné typy umožňují programátorům zavést *parametr typu* při navrhování tříd, které umožňují kódu klienta (uživatelům typu) zadat přesný typ pro použití namísto parametru typu.
 
-Byly přidány obecné typy, které programátorům pomůžou implementovat generické datové struktury. Před jejich příchodem pro typ, jako je například typ `List`, který má být obecný, by musel pracovat s prvky, které byly typu `object`. Došlo k různým výkonům a sémantickým problémům společně s možnými drobnými chybami za běhu. Nejustrm z nich je, když datová struktura obsahuje, například celá čísla i řetězce a `InvalidCastException` je vyvolána při práci se členy seznamu.
+Byly přidány obecné typy, které programátorům pomůžou implementovat generické datové struktury. Před jejich příchodem pro typ, jako je například `List` typ, který má být obecný, by bylo nutné pracovat s prvky, které byly typu `object`. Došlo k různým výkonům a sémantickým problémům společně s možnými drobnými chybami za běhu. Nejustrm z nich je, když datová struktura obsahuje, například celá čísla i řetězce a `InvalidCastException` je vyvolána při práci se členy seznamu.
 
 Následující příklad ukazuje základní program spuštěný pomocí instance <xref:System.Collections.Generic.List%601>ch typů:
 
@@ -129,9 +129,9 @@ Další informace o nativní interoperabilitě najdete v článku věnovaném [n
 
 ## <a name="unsafe-code"></a>Nebezpečný kód
 
-V závislosti na jazykové podpoře vám modul CLR umožní přístup k nativní paměti a provádění aritmetického ukazatele prostřednictvím kódu `unsafe`. Tyto operace jsou potřeba pro určité algoritmy a interoperabilitu systému. I když je efektivní použití nebezpečného kódu doporučeno, pokud není nutné pro interoperabilitu se systémovými rozhraními API nebo implementaci nejúčinnějšího algoritmu. Nezabezpečený kód nesmí provádět stejný způsob v různých prostředích a také ztratí výhody uvolňování paměti a bezpečnosti typů. Doporučuje se co nejvíc a centralizace nezabezpečeného kódu a testování kódu.
+V závislosti na jazykové podpoře vám CLR umožní přistupovat k nativní paměti a provádět aritmetické ukazatele pomocí kódu `unsafe`. Tyto operace jsou potřeba pro určité algoritmy a interoperabilitu systému. I když je efektivní použití nebezpečného kódu doporučeno, pokud není nutné pro interoperabilitu se systémovými rozhraními API nebo implementaci nejúčinnějšího algoritmu. Nezabezpečený kód nesmí provádět stejný způsob v různých prostředích a také ztratí výhody uvolňování paměti a bezpečnosti typů. Doporučuje se co nejvíc a centralizace nezabezpečeného kódu a testování kódu.
 
-Následující příklad je upravená verze metody `ToString()` z třídy `StringBuilder`. Ukazuje, jak lze pomocí `unsafe` efektivně implementovat algoritmus přesunutím kolem bloků paměti přímo:
+Následující příklad je upravená verze metody `ToString()` z `StringBuilder` třídy. Ukazuje, jak lze pomocí `unsafe` kódu efektivně implementovat algoritmus přesunutím kolem bloků paměti přímo:
 
 [!code-csharp[Unsafe](../../samples/csharp/snippets/tour/Unsafe.csx)]
 

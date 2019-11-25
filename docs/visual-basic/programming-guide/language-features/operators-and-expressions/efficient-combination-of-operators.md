@@ -1,5 +1,5 @@
 ---
-title: Účinná kombinace operátorů (Visual Basic)
+title: Účinná kombinace operátorů
 ms.date: 07/20/2015
 helpviewer_keywords:
 - expressions [Visual Basic], parentheses
@@ -13,45 +13,45 @@ helpviewer_keywords:
 - parentheses [Visual Basic], complex expressions
 - numeric expressions
 ms.assetid: bd22340e-b5be-458b-8772-3916c02309a4
-ms.openlocfilehash: 8f5dd6c56b3e4576b9d798e0e5e10b2996f558dc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 83ad53e4c75490a75eba0f80a6bf0f078aa4d426
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61864649"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348973"
 ---
 # <a name="efficient-combination-of-operators-visual-basic"></a>Účinná kombinace operátorů (Visual Basic)
-Složité výrazy mohou obsahovat mnoho různých operátorů. Toto dokládá následující příklad.  
+Complex expressions can contain many different operators. Toto dokládá následující příklad.  
   
  `x = (45 * (y + z)) ^ (2 / 85) * 5 + z`  
   
- Vytváření složitých výrazů, jako je například v předchozím příkladu vyžaduje důkladné pochopení pravidel priority operátorů. Další informace najdete v tématu [priorita operátorů v jazyce Visual Basic](../../../../visual-basic/language-reference/operators/operator-precedence.md).  
+ Creating complex expressions such as the one in the preceding example requires a thorough understanding of the rules of operator precedence. For more information, see [Operator Precedence in Visual Basic](../../../../visual-basic/language-reference/operators/operator-precedence.md).  
   
-## <a name="parenthetical-expressions"></a>Výrazy se závorkami  
- Často se má operace pokračovat v jiném pořadí od stanovené prioritou operátorů. Podívejte se na následující příklad.  
+## <a name="parenthetical-expressions"></a>Parenthetical Expressions  
+ Often you want operations to proceed in a different order from that determined by operator precedence. Consider the following example.  
   
  `x = z * y + 4`  
   
- Předchozí příklad vynásobí `z` podle `y`, pak přidá výsledek, který má `4`. Ale pokud chcete přidat `y` a `4` před násobením výsledků `z`, priorita operátorů normální můžete přepsat pomocí závorek. Uzavřením výrazu v závorkách vynutit tento výraz, který má být vyhodnocen jako první, bez ohledu na to priorita operátorů. K vynucení předchozí příklad provádět přidání, může přepsat ho jako v následujícím příkladu.  
+ The preceding example multiplies `z` by `y`, then adds the result to `4`. But if you want to add `y` and `4` before multiplying the result by `z`, you can override normal operator precedence by using parentheses. By enclosing an expression in parentheses, you force that expression to be evaluated first, regardless of operator precedence. To force the preceding example to do the addition first, you could rewrite it as in the following example.  
   
  `x = z * (y + 4)`  
   
- Předchozí příklad přidá `y` a `4`, pak vynásobí tohoto součtu podle `z`.  
+ The preceding example adds `y` and `4`, then multiplies that sum by `z`.  
   
-### <a name="nested-parenthetical-expressions"></a>Vnořené výrazy se závorkami  
- Můžete vnořovat výrazy ve více úrovní závorky k přepsání priority ještě více. Výrazy v závorkách k nejhlouběji vnořené jsou vyčíslen první, za nímž následuje další nejhlouběji vnořená, a tak dále nejméně hluboce vnořený a nakonec výrazů mimo závorky. Toto dokládá následující příklad.  
+### <a name="nested-parenthetical-expressions"></a>Nested Parenthetical Expressions  
+ You can nest expressions in multiple levels of parentheses to override precedence even further. The expressions most deeply nested in parentheses are evaluated first, followed by the next most deeply nested, and so on to the least deeply nested, and finally the expressions outside parentheses. Toto dokládá následující příklad.  
   
  `x = (z * 4) ^ (y * (z + 2))`  
   
- V předchozím příkladu `z + 2` je Vyhodnocená první a pak kulatých závorek výrazy. Umocnění, což obvykle má vyšší prioritu než sčítání a násobení, se vyhodnocují jako poslední v tomto příkladu protože dalších výrazů jsou uzavřeny v závorkách.  
+ In the preceding example, `z + 2` is evaluated first, then the other parenthetical expressions. Exponentiation, which normally has higher precedence than addition or multiplication, is evaluated last in this example because the other expressions are enclosed in parentheses.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Aritmetické operátory v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
-- [Operátory porovnání v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
-- [Logické a bitové operátory v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
-- [Logické/bitové operátory (Visual Basic)](../../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)
+- [Arithmetic Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
+- [Comparison Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
+- [Logical and Bitwise Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
+- [Logical/Bitwise Operators (Visual Basic)](../../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)
 - [Logické výrazy](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/boolean-expressions.md)
 - [Porovnání hodnot](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/value-comparisons.md)
 - [Postupy: Výpočet numerických hodnot](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/how-to-calculate-numeric-values.md)
-- [Priorita operátorů v jazyce Visual Basic](../../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Operator Precedence in Visual Basic](../../../../visual-basic/language-reference/operators/operator-precedence.md)

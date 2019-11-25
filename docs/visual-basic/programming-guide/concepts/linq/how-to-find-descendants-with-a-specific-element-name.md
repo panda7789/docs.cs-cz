@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Vyhledání potomků s konkrétním názvem elementu (Visual Basic)'
+title: 'How to: Find Descendants with a Specific Element Name'
 ms.date: 07/20/2015
 ms.assetid: 78915518-0d25-4051-ab55-929779989510
-ms.openlocfilehash: 5c4556ae7bf4c7560618781be51e066f659b0b4c
-ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
+ms.openlocfilehash: 1a8aa07a79d05e62e0d5517c1675bc715e87de42
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72249683"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344407"
 ---
-# <a name="how-to-find-descendants-with-a-specific-element-name-visual-basic"></a>Postupy: Vyhledání potomků s konkrétním názvem elementu (Visual Basic)
-Někdy budete chtít najít všechny následníky s určitým názvem. Můžete napsat kód pro iterování všemi následníky, ale je snazší použít osu <xref:System.Xml.Linq.XContainer.Descendants%2A>.  
+# <a name="how-to-find-descendants-with-a-specific-element-name-visual-basic"></a>How to: Find Descendants with a Specific Element Name (Visual Basic)
+Sometimes you want to find all descendants with a particular name. You could write code to iterate through all of the descendants, but it is easier to use the <xref:System.Xml.Linq.XContainer.Descendants%2A> axis.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak najít následníky na základě názvu elementu.  
+ The following example shows how to find descendants based on the element name.  
   
 ```vb  
 Dim root As XElement = _  
@@ -47,14 +47,14 @@ Dim str As String = textSegs.Aggregate( _
 Console.WriteLine(str)  
 ```  
   
- Tento kód generuje následující výstup:  
+ This code produces the following output:  
   
 ```console  
 Some text that is broken up into multiple segments.  
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje stejný dotaz pro XML, který je v oboru názvů. Další informace najdete v tématu [obory názvů Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).  
+ The following example shows the same query for XML that is in a namespace. For more information, see [Namespaces Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).  
   
 ```vb  
 Imports <xmlns='http://www.adatum.com'>  
@@ -94,13 +94,13 @@ Module Module1
 End Module  
 ```  
   
- Tento kód generuje následující výstup:  
+ This code produces the following output:  
   
 ```console  
 Some text that is broken up into multiple segments.  
 ```  
   
-## <a name="see-also"></a>Související témata
+## <a name="see-also"></a>Viz také:
 
 - <xref:System.Xml.Linq.XContainer.Descendants%2A>
-- [Základní dotazy (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+- [Basic Queries (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

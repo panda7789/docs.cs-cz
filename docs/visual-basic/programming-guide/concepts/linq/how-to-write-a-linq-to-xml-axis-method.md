@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: zápis metody osy LINQ to XML (Visual Basic)'
+title: 'How to: Write a LINQ to XML Axis Method'
 ms.date: 07/20/2015
 ms.assetid: b676f025-a24c-4076-8713-aa809b2b8ce0
-ms.openlocfilehash: 87c068c3a59f1ca8e62c092bf4841f50a26a7f6a
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 88a9df9a2750736cfd34b655cf3ea0f57b2bff39
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71835039"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348336"
 ---
-# <a name="how-to-write-a-linq-to-xml-axis-method-visual-basic"></a>Postupy: zápis metody osy LINQ to XML (Visual Basic)
-Můžete napsat vlastní metody osy pro načtení kolekcí ze stromu XML. Jedním z nejlepších způsobů, jak to provést, je napsat metodu rozšíření, která vrátí kolekci prvků nebo atributů. Můžete napsat metodu rozšíření, která vrátí konkrétní podmnožinu prvků nebo atributů na základě požadavků vaší aplikace.  
+# <a name="how-to-write-a-linq-to-xml-axis-method-visual-basic"></a>How to: Write a LINQ to XML Axis Method (Visual Basic)
+You can write your own axis methods to retrieve collections from an XML tree. One of the best ways to do this is to write an extension method that returns a collection of elements or attributes. You can write your extension method to return specific subsets of elements or attributes, based on the requirements of your application.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá dvě metody rozšíření. První rozšiřující metoda, `GetXPath`, pracuje na <xref:System.Xml.Linq.XObject> a vrátí výraz XPath, který při vyhodnocování vrátí uzel nebo atribut. Druhá rozšiřující metoda `Find` pracuje na <xref:System.Xml.Linq.XElement>. Vrátí kolekci objektů <xref:System.Xml.Linq.XAttribute> a objektů <xref:System.Xml.Linq.XElement>, které obsahují nějaký zadaný text.  
+ The following example uses two extension methods. The first extension method, `GetXPath`, operates on <xref:System.Xml.Linq.XObject>, and returns an XPath expression that when evaluated will return the node or attribute. The second extension method, `Find`, operates on <xref:System.Xml.Linq.XElement>. It returns a collection of <xref:System.Xml.Linq.XAttribute> objects and <xref:System.Xml.Linq.XElement> objects that contain some specified text.  
   
- Tento příklad používá následující dokument XML: [ukázkový soubor XML: více nákupních objednávek (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
+ This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
   
 ```vb  
 Imports System.Runtime.CompilerServices  
@@ -202,7 +202,7 @@ Public Module MyExtensions
 End Module  
 ```  
   
- Tento kód generuje následující výstup:  
+ This code produces the following output:  
   
 ```console  
 /PurchaseOrders/PurchaseOrder[1]/@OrderDate  
@@ -217,4 +217,4 @@ End Module
   
 ## <a name="see-also"></a>Viz také:
 
-- [Pokročilé techniky dotazů (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+- [Advanced Query Techniques (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

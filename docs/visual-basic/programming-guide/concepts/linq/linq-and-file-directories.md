@@ -1,44 +1,44 @@
 ---
-title: LINQ a souborové adresáře (Visual Basic)
+title: LINQ a souborové adresáře
 ms.date: 07/20/2015
 ms.assetid: 159fd5c3-3926-4071-ae78-d8e423287eb7
-ms.openlocfilehash: 56967a82bf63d8421d34af48dcc6384ded85e2ad
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 390d3c7a1c738aea0df8e3dcad0edb70563f8fb6
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61663437"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347790"
 ---
-# <a name="linq-and-file-directories-visual-basic"></a>LINQ a souborové adresáře (Visual Basic)
-Mnoho operací systému souborů jsou v podstatě dotazy a jsou proto vhodné k přístupu LINQ.  
+# <a name="linq-and-file-directories-visual-basic"></a>LINQ and File Directories (Visual Basic)
+Many file system operations are essentially queries and are therefore well-suited to the LINQ approach.  
   
- Všimněte si, že jsou nedestruktivního dotazy v této části. Používají se ke změně obsahu původní soubory nebo složky. To se řídí pravidlo, že dotazů by neměly způsobit žádné vedlejší účinky. Obecně platí jakýkoli kód (včetně dotazů, které provádějí vytvořit / aktualizovat / odstranit operátory), který upravuje zdrojová data by měla být udržovány odděleně od kódu, který se právě dotazuje data.  
+ Note that the queries in this section are non-destructive. They are not used to change the contents of the original files or folders. This follows the rule that queries should not cause any side-effects. In general, any code (including queries that perform create / update / delete operators) that modifies source data should be kept separate from the code that just queries the data.  
   
- Tato část obsahuje následující témata:  
+ This section contains the following topics:  
   
- [Postupy: Dotaz pro soubory s konkrétním atributem či názvem (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-files-with-a-specified-attribute-or-name.md)  
- Ukazuje, jak budou hledány soubory porovnáním jednoho nebo více vlastností jeho <xref:System.IO.FileInfo> objektu.  
+ [How to: Query for Files with a Specified Attribute or Name (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-files-with-a-specified-attribute-or-name.md)  
+ Shows how to search for files by examining one or more properties of its <xref:System.IO.FileInfo> object.  
   
- [Postupy: Skupiny souborů podle přípony (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-group-files-by-extension-linq.md)  
- Ukazuje, jak vrátit skupiny <xref:System.IO.FileInfo> objektu podle přípony názvu souboru.  
+ [How to: Group Files by Extension (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-group-files-by-extension-linq.md)  
+ Shows how to return groups of <xref:System.IO.FileInfo> object based on their file name extension.  
   
- [Postupy: Dotaz pro celkový počet bajtů v sadě složek (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders.md)  
- Ukazuje, jak vrátit celkový počet bajtů ve všech souborech v zadaném adresáři stromu.  
+ [How to: Query for the Total Number of Bytes in a Set of Folders (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders.md)  
+ Shows how to return the total number of bytes in all the files in a specified directory tree.  
   
- [Postupy: Porovnání obsahu dvou složek (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-compare-the-contents-of-two-folders-linq.md)s  
- Ukazuje, jak vrátit všechny soubory, které jsou k dispozici ve dvou zadaných složek a také všechny soubory, které se nacházejí v jedné složce, ale nikoli u druhého.  
+ [How to: Compare the Contents of Two Folders (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-compare-the-contents-of-two-folders-linq.md)s  
+ Shows how to return all the files that are present in two specified folders, and also all the files that are present in one folder but not the other.  
   
- [Postupy: Dotaz na největší soubor či soubory v adresářovém stromu (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-the-largest-file-or-files-in-a-directory-tree.md)  
- Ukazuje, jak vrátit soubor největší nebo nejmenší nebo zadaný počet souborů v adresářovém stromu.  
+ [How to: Query for the Largest File or Files in a Directory Tree (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-the-largest-file-or-files-in-a-directory-tree.md)  
+ Shows how to return the largest or smallest file, or a specified number of files, in a directory tree.  
   
- [Postupy: Dotazu na duplicitní soubory v adresářovém stromu (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-duplicate-files-in-a-directory-tree-linq.md)  
- Ukazuje, jak do skupiny pro všechny názvy souborů, které se vyskytují ve více než jedné oblasti ve stromové struktuře zadaný adresář. Také ukazuje, jak k provádění složitějších porovnání založené na vlastní porovnávací metody.  
+ [How to: Query for Duplicate Files in a Directory Tree (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-duplicate-files-in-a-directory-tree-linq.md)  
+ Shows how to group for all file names that occur in more than one location in a specified directory tree. Also shows how to perform more complex comparisons based on a custom comparer.  
   
- [Postupy: Dotaz na obsah souborů ve složce (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-the-contents-of-files-in-a-folder-linq.md)  
- Ukazuje, jak k iteraci v rámci složky ve stromové struktuře, otevřete každý soubor a dotazování obsah souboru.  
+ [How to query the contents of files in a folder (LINQ) (Visual Basic)](how-to-query-the-contents-of-files-in-a-folder-linq.md)  
+ Shows how to iterate through folders in a tree, open each file, and query the file's contents.  
   
 ## <a name="comments"></a>Komentáře  
- Při vytváření zdroje dat se přesně reprezentuje obsah systému souborů a zpracovává výjimky, bez výpadku je složitost. Příklady v této části vytvořit snímek kolekce <xref:System.IO.FileInfo> objekty, které představují všechny soubory v zadané kořenové složce a jejích podsložkách. Skutečný stav každého <xref:System.IO.FileInfo> v době mezi kdy začínají i končí provádění dotazu se může změnit. Například můžete vytvořit seznam <xref:System.IO.FileInfo> objektů, který se použije jako zdroj dat. Pokud se pokusíte o přístup k `Length` vlastnost v dotazu <xref:System.IO.FileInfo> objekt se pokusí získat přístup a aktualizujte hodnotu v systému souborů `Length`. Pokud soubor už existuje, zobrazí se <xref:System.IO.FileNotFoundException> v dotazu, i když jste nejsou dotazování systému souborů přímo. Některé dotazy v této části použijte samostatné metodě, která využívá tyto konkrétní výjimky v některých případech. Další možností je udržovat zdroje dat pomocí dynamické aktualizace <xref:System.IO.FileSystemWatcher>.  
+ There is some complexity involved in creating a data source that accurately represents the contents of the file system and handles exceptions gracefully. The examples in this section create a snapshot collection of <xref:System.IO.FileInfo> objects that represents all the files under a specified root folder and all its subfolders. The actual state of each <xref:System.IO.FileInfo> may change in the time between when you begin and end executing a query. For example, you can create a list of <xref:System.IO.FileInfo> objects to use as a data source. If you try to access the `Length` property in a query, the <xref:System.IO.FileInfo> object will try to access the file system to update the value of `Length`. If the file no longer exists, you will get a <xref:System.IO.FileNotFoundException> in your query, even though you are not querying the file system directly. Some queries in this section use a separate method that consumes these particular exceptions in certain cases. Another option is to keep your data source updated dynamically by using the <xref:System.IO.FileSystemWatcher>.  
   
 ## <a name="see-also"></a>Viz také:
 

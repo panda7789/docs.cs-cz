@@ -1,5 +1,5 @@
 ---
-title: Sestavení z příkazového řádku (Visual Basic)
+title: Sestavení z příkazového řádku
 ms.date: 07/20/2015
 helpviewer_keywords:
 - builds [Visual Basic], command-line
@@ -13,41 +13,41 @@ helpviewer_keywords:
 - command-line compilers [Visual Basic], Visual Basic
 - command line [Visual Basic], Visual Basic
 ms.assetid: e61947e9-a42e-4717-a699-5f70a98cdd03
-ms.openlocfilehash: 719ca45403ea56a655f06dbfea7c0fb7e32b34f7
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: c7219c0497bb87f0cc44f27229eaf25f9b3eebce
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70046432"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344796"
 ---
 # <a name="building-from-the-command-line-visual-basic"></a>Sestavení z příkazového řádku (Visual Basic)
 
-Visual Basic projekt se skládá z jednoho nebo více samostatných zdrojových souborů. Během procesu známého jako kompilace jsou tyto soubory společně umístěny do jednoho balíčku – jeden spustitelný soubor, který lze spustit jako aplikaci.
+A Visual Basic project is made up of one or more separate source files. During the process known as compilation, these files are brought together into one package—a single executable file that can be run as an application.
 
-Visual Basic poskytuje kompilátor příkazového řádku jako alternativu k kompilování programů z integrovaného vývojového prostředí (IDE) sady Visual Studio. Kompilátor příkazového řádku je určený pro situace, kdy nevyžadujete úplnou sadu funkcí v rozhraní IDE – například při použití nebo psaní počítačů s omezeným systémovou pamětí nebo prostorem úložiště.
+Visual Basic provides a command-line compiler as an alternative to compiling programs from within the Visual Studio integrated development environment (IDE). The command-line compiler is designed for situations in which you do not require the full set of features in the IDE—for example, when you are using or writing for computers with limited system memory or storage space.
 
-Chcete-li kompilovat zdrojové soubory z integrovaného vývojového prostředí sady Visual Studio, v nabídce **sestavení** klikněte na příkaz **sestavit** .
+To compile source files from within the Visual Studio IDE, choose the **Build** command from the **Build** menu.
 
 > [!TIP]
-> Při sestavování souborů projektu pomocí integrovaného vývojového prostředí (IDE) sady Visual Studio můžete zobrazit informace o přidruženém příkazu **Vbc** a jeho přepínačích v okně výstup. Chcete-li zobrazit tyto informace, otevřete [dialogové okno Možnosti, projekty a řešení, sestavte a spusťte](/visualstudio/ide/reference/options-dialog-box-projects-and-solutions-build-and-run)a pak nastavte **Podrobnosti výstupu sestavení projektu MSBuild** na **normální** nebo vyšší úroveň podrobností. Další informace najdete v tématu [jak: Zobrazit, Uložit a nakonfigurovat soubory](/visualstudio/ide/how-to-view-save-and-configure-build-log-files)protokolu sestavení.
+> When you build project files by using the Visual Studio IDE, you can display information about the associated **vbc** command and its switches in the output window. To display this information, open the [Options Dialog Box,  Projects and Solutions, Build and Run](/visualstudio/ide/reference/options-dialog-box-projects-and-solutions-build-and-run), and then set the **MSBuild project build output verbosity** to **Normal** or a higher level of verbosity. For more information, see [How to: View, Save, and Configure Build Log Files](/visualstudio/ide/how-to-view-save-and-configure-build-log-files).
 
-Soubory projektu (. vbproj) můžete kompilovat na příkazovém řádku pomocí nástroje MSBuild. Další informace najdete v tématu [reference](/visualstudio/msbuild/msbuild-command-line-reference) k příkazovému řádku [a návod: Pomocí nástroje](/visualstudio/msbuild/walkthrough-using-msbuild)MSBuild.
+You can compile project (.vbproj) files at a command prompt by using MSBuild. For more information, see [Command-Line Reference](/visualstudio/msbuild/msbuild-command-line-reference) and [Walkthrough: Using MSBuild](/visualstudio/msbuild/walkthrough-using-msbuild).
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
-[Postupy: Vyvolat kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/how-to-invoke-the-command-line-compiler.md) \
-Popisuje, jak vyvolat kompilátor příkazového řádku v příkazovém řádku systému MS-DOS nebo z konkrétního podadresáře.
+[How to: Invoke the Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/how-to-invoke-the-command-line-compiler.md) \
+Describes how to invoke the command-line compiler at the MS-DOS prompt or from a specific subdirectory.
 
-[Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md) \
-Poskytuje seznam ukázkových příkazových řádků, které můžete upravit pro vlastní použití.
+[Sample Compilation Command Lines](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md) \
+Provides a list of sample command lines that you can modify for your own use.
 
 ## <a name="related-sections"></a>Související oddíly
 
-[Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md) \
-Obsahuje seznam možností kompilátoru uspořádaných podle abecedy nebo podle účelu.
+[Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md) \
+Provides lists of compiler options, organized alphabetically or by purpose.
 
-[Podmíněná kompilace](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md) \
-Popisuje, jak zkompilovat konkrétní oddíly kódu.
+[Conditional Compilation](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md) \
+Describes how to compile particular sections of code.
 
-[Sestavování a čištění projektů a řešení v aplikaci Visual Studio](/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio) \
-Popisuje, jak uspořádat, co bude zahrnuto v různých sestaveních, zvolit vlastnosti projektu a zajistit, aby se projekty vytvořily ve správném pořadí.
+[Building and Cleaning Projects and Solutions in Visual Studio](/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio) \
+Describes how to organize what will be included in different builds, choose project properties, and ensure that projects build in the correct order.

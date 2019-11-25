@@ -1,5 +1,5 @@
 ---
-title: Boolean – datový typ (Visual Basic)
+title: Datový typ Boolean
 ms.date: 07/20/2015
 f1_keywords:
 - vb.FALSE
@@ -12,38 +12,42 @@ helpviewer_keywords:
 - True keyword [Visual Basic]
 - Boolean values [Visual Basic], True keyword
 ms.assetid: 4858e630-4813-4216-a55e-f4d0feb884e4
-ms.openlocfilehash: b1e4add39cee6c733a6f4b95aa1668975f2f2d6d
-ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
+ms.openlocfilehash: 5d05514207c5d07e81aab897f40f728570f6bd87
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67268250"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347851"
 ---
 # <a name="boolean-data-type-visual-basic"></a>Boolean – datový typ (Visual Basic)
-Obsahuje hodnoty, které mohou být pouze `True` nebo `False`. Klíčová slova `True` a `False` odpovídají dvěma stavy `Boolean` proměnné.  
+
+Holds values that can be only `True` or `False`. The keywords `True` and `False` correspond to the two states of `Boolean` variables.  
   
 ## <a name="remarks"></a>Poznámky  
- Použití [datový typ Boolean (Visual Basic)](../../../visual-basic/language-reference/data-types/boolean-data-type.md) tak, aby obsahovala hodnoty dvou stavů, jako je true nebo false, Ano/Ne, nebo zapnuto/vypnuto.  
+
+ Use the [Boolean Data Type (Visual Basic)](../../../visual-basic/language-reference/data-types/boolean-data-type.md) to contain two-state values such as true/false, yes/no, or on/off.  
   
- Výchozí hodnota `Boolean` je `False`.  
+ The default value of `Boolean` is `False`.  
   
- `Boolean` hodnoty nejsou uložené jako čísla a uložené hodnoty nejsou určeny jako ekvivalentní čísla. Nikdy by měl napsat kód, který závisí na ekvivalentní číselné hodnoty pro `True` a `False`. Kdykoli je to možné, byste měli omezit využití `Boolean` proměnné logické hodnoty, které jsou určeny.  
+ `Boolean` values are not stored as numbers, and the stored values are not intended to be equivalent to numbers. You should never write code that relies on equivalent numeric values for `True` and `False`. Whenever possible, you should restrict usage of `Boolean` variables to the logical values for which they are designed.  
   
 ## <a name="type-conversions"></a>Převody typu  
- Když Visual Basic převede číselný datový typ hodnoty na `Boolean`, stane 0 `False` a Staňte se všechny ostatní hodnoty `True`. Když Visual Basic převede `Boolean` hodnoty pro číselné typy `False` stane 0 a `True` stane hodnota -1.  
+
+ When Visual Basic converts numeric data type values to `Boolean`, 0 becomes `False` and all other values become `True`. When Visual Basic converts `Boolean` values to numeric types, `False` becomes 0 and `True` becomes -1.  
   
- Při převodu mezi `Boolean` hodnoty a číselné datové typy, mějte na paměti, že převod metod rozhraní .NET Framework vždy neposkytují stejné výsledky jako klíčová slova převodu jazyka Visual Basic. Je to proto, že převod jazyka Visual Basic zachovává chování, které jsou kompatibilní s předchozími verzemi. Další informace najdete v tématu "Logická typ nemá není převést na číselný typ přesně" v [řešení potíží s datovými typy](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md).  
+ When you convert between `Boolean` values and numeric data types, keep in mind that the .NET Framework conversion methods do not always produce the same results as the Visual Basic conversion keywords. This is because the Visual Basic conversion retains behavior compatible with previous versions. For more information, see "Boolean Type Does Not Convert to Numeric Type Accurately" in [Troubleshooting Data Types](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md).  
   
 ## <a name="programming-tips"></a>Tipy k programování  
   
-- **Záporná čísla.** `Boolean` není číselného typu a nemůže představovat záporné hodnoty. V každém případě byste neměli používat `Boolean` pro uložení číselné hodnoty.  
+- **Negative Numbers.** `Boolean` is not a numeric type and cannot represent a negative value. In any case, you should not use `Boolean` to hold numeric values.  
   
-- **Znaky typu.** `Boolean` nemá žádný – znak typu literálu nebo – znak typu identifikátoru.  
+- **Type Characters.** `Boolean` has no literal type character or identifier type character.  
   
-- **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.Boolean?displayProperty=nameWithType> struktury.  
+- **Framework Type.** The corresponding type in the .NET Framework is the <xref:System.Boolean?displayProperty=nameWithType> structure.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu `runningVB` je `Boolean` proměnnou, která ukládá jednoduché nastavení Ano/Ne.  
+
+ In the following example, `runningVB` is a `Boolean` variable, which stores a simple yes/no setting.  
   
 ```vb  
 Dim runningVB As Boolean  

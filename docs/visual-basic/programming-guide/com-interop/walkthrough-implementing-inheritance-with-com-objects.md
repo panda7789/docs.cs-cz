@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Implementace dědičnosti s objekty modelu COM (Visual Basic)'
+title: 'Návod: Implementace dědičnosti s objekty modelu COM'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - inheritance [Visual Basic], COM reusability
@@ -7,43 +7,43 @@ helpviewer_keywords:
 - inheritance [Visual Basic], walkthroughs
 - derived classes [Visual Basic], COM reusability
 ms.assetid: f8e7263a-de13-48d1-b67c-ca1adf3544d9
-ms.openlocfilehash: 7cbf71d7a2bbd1e94864e785894fdea41d522486
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 209e1005b9f944bf4883e8406031fb17d4d60df1
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053336"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347984"
 ---
 # <a name="walkthrough-implementing-inheritance-with-com-objects-visual-basic"></a>Návod: Implementace dědičnosti s objekty modelu COM (Visual Basic)
 
-Třídy Visual Basic můžete odvodit ze `Public` tříd v objektech com, a to i těch, které byly vytvořeny v dřívějších verzích Visual Basic. Vlastnosti a metody tříd zděděných z objektů COM mohou být přepsány nebo přetíženy stejně jako vlastnosti a metody jakékoli jiné základní třídy mohou být přepsány nebo přetíženy. Dědičnost z objektů modelu COM je užitečná v případě, že máte existující knihovnu tříd, kterou nechcete znovu kompilovat.
+You can derive Visual Basic classes from `Public` classes in COM objects, even those created in earlier versions of Visual Basic. The properties and methods of classes inherited from COM objects can be overridden or overloaded just as properties and methods of any other base class can be overridden or overloaded. Inheritance from COM objects is useful when you have an existing class library that you do not want to recompile.
 
-Následující postup ukazuje, jak použít Visual Basic 6,0 k vytvoření objektu modelu COM, který obsahuje třídu, a jeho následné použití jako základní třídy.
+The following procedure shows how to use Visual Basic 6.0 to create a COM object that contains a class, and then use it as a base class.
 
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]
 
-## <a name="to-build-the-com-object-that-is-used-in-this-walkthrough"></a>Vytvoření objektu COM, který je použit v tomto návodu
+## <a name="to-build-the-com-object-that-is-used-in-this-walkthrough"></a>To build the COM object that is used in this walkthrough
 
-1. V Visual Basic 6,0 otevřete nový projekt knihovny DLL ActiveX. Vytvoří se projekt `Project1` s názvem. Obsahuje třídu s názvem `Class1`.
+1. In Visual Basic 6.0, open a new ActiveX DLL project. A project named `Project1` is created. It has a class named `Class1`.
 
-2. V **Průzkumníku projektu**klikněte pravým tlačítkem na **Project1**a pak klikněte na **vlastnosti Project1**. Zobrazí se dialogové okno **Vlastnosti projektu** .
+2. In the **Project Explorer**, right-click **Project1**, and then click **Project1 Properties**. The **Project Properties** dialog box is displayed.
 
-3. Na kartě **Obecné** v dialogovém okně **Vlastnosti projektu** změňte název projektu zadáním `ComObject1` do pole **název projektu** .
+3. On the **General** tab of the **Project Properties** dialog box, change the project name by typing `ComObject1` in the **Project Name** field.
 
-4. V **Průzkumníku projektu**klikněte pravým tlačítkem myši `Class1`a pak klikněte na **vlastnosti**. Zobrazí se okno **vlastnosti** třídy.
+4. In the **Project Explorer**, right-click `Class1`, and then click **Properties**. The **Properties** window for the class is displayed.
 
-5. Změňte vlastnost na `MathFunctions`. `Name`
+5. Change the `Name` property to `MathFunctions`.
 
-6. V **Průzkumníku projektu**klikněte pravým tlačítkem myši `MathFunctions`a pak klikněte na **Zobrazit kód**. Zobrazí se **Editor kódu** .
+6. In the **Project Explorer**, right-click `MathFunctions`, and then click **View Code**. The **Code Editor** is displayed.
 
-7. Přidejte místní proměnnou pro uchování hodnoty vlastnosti:
+7. Add a local variable to hold the property value:
 
     ```vb
     ' Local variable to hold property value
     Private mvarProp1 As Integer
     ```
 
-8. Přidat procedury `Let` vlastností vlastností `Get` a vlastností:
+8. Add Property `Let` and Property `Get` property procedures:
 
     ```vb
     Public Property Let Prop1(ByVal vData As Integer)
@@ -56,7 +56,7 @@ Následující postup ukazuje, jak použít Visual Basic 6,0 k vytvoření objek
     End Property
     ```
 
-9. Přidejte funkci:
+9. Add a function:
 
     ```vb
     Function AddNumbers(
@@ -67,70 +67,70 @@ Následující postup ukazuje, jak použít Visual Basic 6,0 k vytvoření objek
     End Function
     ```
 
-10. Vytvořte a zaregistrujte objekt COM kliknutím na příkaz **vytvořit ComObject1. dll** v nabídce **soubor** .
+10. Create and register the COM object by clicking **Make ComObject1.dll** on the **File** menu.
 
     > [!NOTE]
-    > I když můžete vystavit třídu vytvořenou pomocí Visual Basic jako objekt modelu COM, nejedná se o skutečný objekt COM a nelze ji použít v tomto návodu. Podrobnosti najdete v tématu [interoperabilita modelu COM v aplikacích .NET Framework](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md).
+    > Although you can also expose a class created with Visual Basic as a COM object, it is not a true COM object and cannot be used in this walkthrough. For details, see [COM Interoperability in .NET Framework Applications](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md).
 
-## <a name="interop-assemblies"></a>Definiční sestavení
+## <a name="interop-assemblies"></a>Interop Assemblies
 
-V následujícím postupu vytvoříte definiční sestavení, které funguje jako most mezi nespravovaným kódem (například objektem COM) a spravovaným kódem, který používá Visual Studio. Definiční sestavení, které Visual Basic vytvoří, zpracovává mnoho podrobností o práci s objekty COM, jako je například *Interop Marshaling*, proces balení parametrů a návratové hodnoty do ekvivalentních datových typů při přesunu do a z objektů com. Odkaz v aplikaci Visual Basic odkazuje na definiční sestavení, nikoli na samotný objekt modelu COM.
+In the following procedure, you will create an interop assembly, which acts as a bridge between unmanaged code (such as a COM object) and the managed code Visual Studio uses. The interop assembly that Visual Basic creates handles many of the details of working with COM objects, such as *interop marshaling*, the process of packaging parameters and return values into equivalent data types as they move to and from COM objects. The reference in the Visual Basic application points to the interop assembly, not the actual COM object.
 
-### <a name="to-use-a-com-object-with-visual-basic-2005-and-later-versions"></a>Použití objektu COM s Visual Basic 2005 a novějšími verzemi
+### <a name="to-use-a-com-object-with-visual-basic-2005-and-later-versions"></a>To use a COM object with Visual Basic 2005 and later versions
 
-1. Otevřete nový Visual Basic projekt aplikace systému Windows.
+1. Open a new Visual Basic Windows Application project.
 
-2. V nabídce **projekt** klikněte na příkaz **Přidat odkaz**.
+2. On the **Project** menu, click **Add Reference**.
 
-     **Přidat odkaz** se zobrazí dialogové okno.
+     The **Add Reference** dialog box is displayed.
 
-3. Na kartě **com** poklikejte na `ComObject1` seznam **název součásti** a klikněte na **OK**.
+3. On the **COM** tab, double-click `ComObject1` in the **Component Name** list and click **OK**.
 
-4. V nabídce **projekt** klikněte na příkaz **Přidat novou položku**.
+4. On the **Project** menu, click **Add New Item**.
 
-     **Přidat novou položku** se zobrazí dialogové okno.
+     The **Add New Item** dialog box is displayed.
 
-5. V podokně **šablony** klikněte na **Třída**.
+5. In the **Templates** pane, click **Class**.
 
-     Výchozí název `Class1.vb`souboru se zobrazí v poli **název** . Změňte toto pole na MathClass. vb a klikněte na **Přidat**. Tím se vytvoří třída s `MathClass`názvem a zobrazí se její kód.
+     The default file name, `Class1.vb`, appears in the **Name** field. Change this field to MathClass.vb and click **Add**. This creates a class named `MathClass`, and displays its code.
 
-6. Přidejte následující kód na začátek `MathClass` k dědění z třídy com.
+6. Add the following code to the top of `MathClass` to inherit from the COM class.
 
      [!code-vb[VbVbalrInterop#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#31)]
 
-7. Přetížení veřejné metody základní třídy přidáním následujícího kódu do `MathClass`:
+7. Overload the public method of the base class by adding the following code to `MathClass`:
 
      [!code-vb[VbVbalrInterop#32](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#32)]
 
-8. Rozšíří zděděnou třídu přidáním následujícího kódu do `MathClass`:
+8. Extend the inherited class by adding the following code to `MathClass`:
 
      [!code-vb[VbVbalrInterop#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#33)]
 
-Nová třída zdědí vlastnosti základní třídy v objektu COM, přetěžuje metodu a definuje novou metodu pro rozšiřování třídy.
+The new class inherits the properties of the base class in the COM object, overloads a method, and defines a new method to extend the class.
 
-### <a name="to-test-the-inherited-class"></a>Testování zděděné třídy
+### <a name="to-test-the-inherited-class"></a>To test the inherited class
 
-1. Přidejte tlačítko do formuláře po spuštění a pak dvakrát klikněte na něj, aby se zobrazil jeho kód.
+1. Add a button to your startup form, and then double-click it to view its code.
 
-2. V proceduře obslužné rutiny `Click` události tlačítka přidejte následující kód pro vytvoření `MathClass` instance a volání přetížených metod:
+2. In the button's `Click` event handler procedure, add the following code to create an instance of `MathClass` and call the overloaded methods:
 
      [!code-vb[VbVbalrInterop#34](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#34)]
 
-3. Spusťte projekt stisknutím klávesy F5.
+3. Run the project by pressing F5.
 
-Po kliknutí na tlačítko ve formuláři `AddNumbers` je metoda nejprve volána s `Short` čísly datového typu a Visual Basic zvolí vhodnou metodu ze základní třídy. Druhé volání na `AddNumbers` je přesměrováno na metodu přetížení z `MathClass`. Třetí volání volá `SubtractNumbers` metodu, která rozšiřuje třídu. Vlastnost v základní třídě je nastavena a zobrazí se hodnota.
+When you click the button on the form, the `AddNumbers` method is first called with `Short` data type numbers, and Visual Basic chooses the appropriate method from the base class. The second call to `AddNumbers` is directed to the overload method from `MathClass`. The third call calls the `SubtractNumbers` method, which extends the class. The property in the base class is set, and the value is displayed.
 
 ## <a name="next-steps"></a>Další kroky
 
-Možná jste si všimli, že přetížená `AddNumbers` funkce má stejný datový typ jako metoda zděděná od základní třídy objektu com. Důvodem je, že argumenty a parametry metody základní třídy jsou definovány jako 16bitová celá čísla v Visual Basic 6,0, ale jsou vystavena jako 16bitové celé číslo typu `Short` v pozdějších verzích Visual Basic. Nová funkce přijímá 32 celých čísel a přetěžuje funkci základní třídy.
+You may have noticed that the overloaded `AddNumbers` function appears to have the same data type as the method inherited from the base class of the COM object. This is because the arguments and parameters of the base class method are defined as 16-bit integers in Visual Basic 6.0, but they are exposed as 16-bit integers of type `Short` in later versions of Visual Basic. The new function accepts 32-bit integers, and overloads the base class function.
 
-Při práci s objekty modelu COM ověřte, zda je nutné ověřit velikost a datové typy parametrů. Například při použití objektu COM, který přijímá objekt kolekce Visual Basic 6,0 jako argument, nelze poskytnout kolekci z novější verze Visual Basic.
+When working with COM objects, make sure that you verify the size and data types of parameters. For example, when you are using a COM object that accepts a Visual Basic 6.0 collection object as an argument, you cannot provide a collection from a later version of Visual Basic.
 
-Vlastnosti a metody zděděné z tříd modelu COM lze přepsat, což znamená, že lze deklarovat místní vlastnost nebo metodu, která nahrazuje vlastnost nebo metodu zděděnou ze základní třídy COM. Pravidla pro přepsání zděděných vlastností modelu COM jsou podobná pravidlům pro přepsání dalších vlastností a metod s následujícími výjimkami:
+Properties and methods inherited from COM classes can be overridden, meaning that you can declare a local property or method that replaces a property or method inherited from a base COM class. The rules for overriding inherited COM properties are similar to the rules for overriding other properties and methods with the following exceptions:
 
-- Pokud přepíšete jakoukoliv vlastnost nebo metodu děděnou z třídy modelu COM, je nutné přepsat všechny ostatní zděděné vlastnosti a metody.
+- If you override any property or method inherited from a COM class, you must override all the other inherited properties and methods.
 
-- Vlastnosti, které `ByRef` používají parametry, nelze přepsat.
+- Properties that use `ByRef` parameters cannot be overridden.
 
 ## <a name="see-also"></a>Viz také:
 

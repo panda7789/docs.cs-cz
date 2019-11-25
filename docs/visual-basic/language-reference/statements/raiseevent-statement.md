@@ -1,5 +1,5 @@
 ---
-title: RaiseEvent – příkaz (Visual Basic)
+title: RaiseEvent – příkaz
 ms.date: 07/20/2015
 f1_keywords:
 - vb.RaiseEventMethod
@@ -10,15 +10,15 @@ helpviewer_keywords:
 - RaiseEvent statement [Visual Basic]
 - event handlers, connecting events to
 ms.assetid: f82e380a-1e6b-4047-bea8-c853f4d2c742
-ms.openlocfilehash: efc7da34a297fd01411302b717cfda83aa9f87d2
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: e04f2bbaf57789f0bdaa07c1ebd68b22e3ae6178
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582091"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74333049"
 ---
 # <a name="raiseevent-statement"></a>RaiseEvent – příkaz
-Aktivuje událost deklarovanou na úrovni modulu v rámci třídy, formuláře nebo dokumentu.  
+Triggers an event declared at module level within a class, form, or document.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,52 +28,52 @@ RaiseEvent eventname[( argumentlist )]
   
 ## <a name="parts"></a>Součásti  
  `eventname`  
- Požadováno. Název události, která se má aktivovat  
+ Požadováno. Name of the event to trigger.  
   
  `argumentlist`  
- Volitelné. Seznam proměnných, polí nebo výrazů oddělených čárkami. Argument `argumentlist` musí být uzavřený v závorkách. Pokud neexistují žádné argumenty, musí být uvozovky vynechány.  
+ Volitelné. Comma-delimited list of variables, arrays, or expressions. The `argumentlist` argument must be enclosed by parentheses. If there are no arguments, the parentheses must be omitted.  
   
 ## <a name="remarks"></a>Poznámky  
- Požadovaná `eventname` je název události deklarované v rámci modulu. Postupuje podle Visual Basic konvence pojmenovávání proměnných.  
+ The required `eventname` is the name of an event declared within the module. It follows Visual Basic variable naming conventions.  
   
- Pokud událost nebyla deklarována v modulu, ve kterém je vyvolána, dojde k chybě. Následující fragment kódu ukazuje deklaraci události a proceduru, ve které je událost vyvolána.  
+ If the event has not been declared within the module in which it is raised, an error occurs. The following code fragment illustrates an event declaration and a procedure in which the event is raised.  
   
  [!code-vb[VbVbalrEvents#37](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#37)]  
   
- Pomocí `RaiseEvent` nelze vyvolat události, které nejsou explicitně deklarovány v modulu. Například všechny formuláře dědí událost <xref:System.Windows.Forms.Control.Click> z <xref:System.Windows.Forms.Form?displayProperty=nameWithType>, nelze ji vyvolat pomocí `RaiseEvent` v odvozené formě. Pokud deklarujete událost `Click` v modulu formuláře, vystínuje se událost vlastní <xref:System.Windows.Forms.Control.Click> formuláře. Můžete přesto vyvolat událost <xref:System.Windows.Forms.Control.Click> formuláře voláním metody <xref:System.Windows.Forms.Control.OnClick%2A>.  
+ You cannot use `RaiseEvent` to raise events that are not explicitly declared in the module. For example, all forms inherit a <xref:System.Windows.Forms.Control.Click> event from <xref:System.Windows.Forms.Form?displayProperty=nameWithType>, it cannot be raised using `RaiseEvent` in a derived form. If you declare a `Click` event in the form module, it shadows the form's own <xref:System.Windows.Forms.Control.Click> event. You can still invoke the form's <xref:System.Windows.Forms.Control.Click> event by calling the <xref:System.Windows.Forms.Control.OnClick%2A> method.  
   
- Ve výchozím nastavení událost definovaná v Visual Basic vyvolává obslužné rutiny událostí v pořadí, ve kterém jsou navázána připojení. Vzhledem k tomu, že události mohou mít parametry `ByRef`, proces, který spojuje pozdě, může přijímat parametry, které byly změněny předchozí obslužnou rutinou události. Po provedení obslužné rutiny události je ovládací prvek vrácen do subrutiny, která událost vyvolala.  
-  
-> [!NOTE]
-> Nesdílené události by neměly být vyvolány v rámci konstruktoru třídy, ve které jsou deklarovány. I když takové události nezpůsobí chyby v době běhu, nemusí se podařit zachytit pomocí přidružených obslužných rutin událostí. Pomocí modifikátoru `Shared` vytvořte sdílenou událost, pokud potřebujete vyvolat událost z konstruktoru.  
+ By default, an event defined in Visual Basic raises its event handlers in the order that the connections are established. Because events can have `ByRef` parameters, a process that connects late may receive parameters that have been changed by an earlier event handler. After the event handlers execute, control is returned to the subroutine that raised the event.  
   
 > [!NOTE]
-> Můžete změnit výchozí chování událostí definováním vlastní události. Pro vlastní události příkaz `RaiseEvent` vyvolá přistupující objekt `RaiseEvent` události. Další informace o vlastních událostech naleznete v tématu [příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md).  
+> Non-shared events should not be raised within the constructor of the class in which they are declared. Although such events do not cause run-time errors, they may fail to be caught by associated event handlers. Use the `Shared` modifier to create a shared event if you need to raise an event from a constructor.  
+  
+> [!NOTE]
+> You can change the default behavior of events by defining a custom event. For custom events, the `RaiseEvent` statement invokes the event's `RaiseEvent` accessor. For more information on custom events, see [Event Statement](../../../visual-basic/language-reference/statements/event-statement.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá události pro počítání sekund od 10 do 0. Kód ilustruje několik metod, vlastností a příkazů souvisejících s událostmi, včetně příkazu `RaiseEvent`.  
+ The following example uses events to count down seconds from 10 to 0. The code illustrates several of the event-related methods, properties, and statements, including the `RaiseEvent` statement.  
   
- Třída, která vyvolá událost, je zdrojem události a metody, které zpracovávají události, jsou obslužné rutiny událostí. Zdroj události může mít několik obslužných rutin pro události, které generuje. Když třída vyvolá událost, tato událost je vyvolána na každé třídě, která se rozhodla zpracovávat události pro tuto instanci objektu.  
+ The class that raises an event is the event source, and the methods that process the event are the event handlers. An event source can have multiple handlers for the events it generates. When the class raises the event, that event is raised on every class that has elected to handle events for that instance of the object.  
   
- Příklad také používá formulář (`Form1`) s tlačítkem (`Button1`) a textovým polem (`TextBox1`). Když kliknete na tlačítko, zobrazí se v prvním textovém poli odpočítávání od 10 do 0 sekund. Když uplyne celý čas (10 sekund), zobrazí se v prvním textovém poli "Hotovo".  
+ The example also uses a form (`Form1`) with a button (`Button1`) and a text box (`TextBox1`). When you click the button, the first text box displays a countdown from 10 to 0 seconds. When the full time (10 seconds) has elapsed, the first text box displays "Done".  
   
- Kód pro `Form1` Určuje počáteční a koncovou stavy formuláře. Obsahuje také kód spuštěný při vyvolání události.  
+ The code for `Form1` specifies the initial and terminal states of the form. It also contains the code executed when events are raised.  
   
- Chcete-li použít tento příklad, otevřete nový projekt aplikace pro systém Windows, přidejte tlačítko s názvem `Button1` a textové pole s názvem `TextBox1` do hlavního formuláře s názvem `Form1`. Potom klikněte pravým tlačítkem myši na formulář a kliknutím na **Zobrazit kód** otevřete Editor kódu.  
+ To use this example, open a new Windows Application project, add a button named `Button1` and a text box named `TextBox1` to the main form, named `Form1`. Then right-click the form and click **View Code** to open the Code Editor.  
   
- Přidejte `WithEvents` proměnnou do oddílu deklarace `Form1` třídy.  
+ Add a `WithEvents` variable to the declarations section of the `Form1` class.  
   
  [!code-vb[VbVbalrEvents#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#14)]  
   
 ## <a name="example"></a>Příklad  
- Do kódu pro `Form1` přidejte následující kód. Nahraďte všechny duplicitní procedury, které mohou existovat, například `Form_Load` nebo `Button_Click`.  
+ Add the following code to the code for `Form1`. Replace any duplicate procedures that may exist, such as `Form_Load`, or `Button_Click`.  
   
  [!code-vb[VbVbalrEvents#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#15)]  
   
- Stisknutím klávesy F5 spusťte předchozí příklad a klikněte na tlačítko s názvem **Spustit**. V prvním textovém poli se začne počítat sekundy. Když uplyne celý čas (10 sekund), zobrazí se v prvním textovém poli "Hotovo".  
+ Press F5 to run the preceding example, and click the button labeled **Start**. The first text box starts to count down the seconds. When the full time (10 seconds) has elapsed, the first text box displays "Done".  
   
 > [!NOTE]
-> Metoda `My.Application.DoEvents` nezpracovává události přesně stejným způsobem jako formulář. Chcete-li, aby formulář mohl zpracovávat události přímo, můžete použít multithreading. Další informace najdete v tématu [spravovaná vlákna](../../../standard/threading/index.md).  
+> The `My.Application.DoEvents` method does not process events in exactly the same way as the form does. To allow the form to handle the events directly, you can use multithreading. For more information, see [Managed Threading](../../../standard/threading/index.md).  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -81,4 +81,4 @@ RaiseEvent eventname[( argumentlist )]
 - [Příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md)
 - [Příkaz AddHandler](../../../visual-basic/language-reference/statements/addhandler-statement.md)
 - [Příkaz RemoveHandler](../../../visual-basic/language-reference/statements/removehandler-statement.md)
-- [Řeší](../../../visual-basic/language-reference/statements/handles-clause.md)
+- [Handles](../../../visual-basic/language-reference/statements/handles-clause.md)

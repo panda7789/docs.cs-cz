@@ -1,54 +1,54 @@
 ---
-title: Volný převod delegáta (Visual Basic)
+title: Volný převod delegáta
 ms.date: 07/20/2015
 helpviewer_keywords:
 - relaxed delegate conversion [Visual Basic]
 - delegates [Visual Basic], relaxed conversion
 - conversions [Visual Basic], relaxed delegate
 ms.assetid: 64f371d0-5416-4f65-b23b-adcbf556e81c
-ms.openlocfilehash: ac1246764d26d694d10b817b9195b13169d6d9be
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ffb242842553382ba26121333c38fc65eaa168a9
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64651270"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345220"
 ---
 # <a name="relaxed-delegate-conversion-visual-basic"></a>Volný převod delegáta (Visual Basic)
-Volný převod delegáta umožňuje přiřadit typu Sub a funkce na delegáty nebo obslužné rutiny i v případě, že jejich podpisy nejsou identické. Proto vazbu na delegáty stane konzistentní s vazbou již povolena pro volání metod.  
+Relaxed delegate conversion enables you to assign subs and functions to delegates or handlers even when their signatures are not identical. Therefore, binding to delegates becomes consistent with the binding already allowed for method invocations.  
   
-## <a name="parameters-and-return-type"></a>Parametry a návratový typ  
- Místo podpis přesnou shodu volný převod vyžaduje splnění následujících podmínek při `Option Strict` je nastavena na `On`:  
+## <a name="parameters-and-return-type"></a>Parameters and Return Type  
+ In place of exact signature match, relaxed conversion requires that the following conditions be met when `Option Strict` is set to `On`:  
   
-- Rozšiřující převod musí existovat od datového typu každý parametr delegáta na datový typ odpovídající parametr přiřazené funkce nebo `Sub`. V následujícím příkladu, delegát `Del1` má jeden parametr, `Integer`. Parametr `m` v přiřazené lambda výrazy musí mít datový typ, pro kterou je rozšiřující převod z `Integer`, jako například `Long` nebo `Double`.  
+- A widening conversion must exist from the data type of each delegate parameter to the data type of the corresponding parameter of the assigned function or `Sub`. In the following example, the delegate `Del1` has one parameter, an `Integer`. Parameter `m` in the assigned lambda expressions must have a data type for which there is a widening conversion from `Integer`, such as `Long` or `Double`.  
   
      [!code-vb[VbVbalrRelaxedDelegates#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrRelaxedDelegates/VB/Module1.vb#1)]  
   
      [!code-vb[VbVbalrRelaxedDelegates#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrRelaxedDelegates/VB/Module1.vb#2)]  
   
-     Zužující převody jsou povolené jenom v případě `Option Strict` je nastavena na `Off`.  
+     Narrowing conversions are permitted only when `Option Strict` is set to `Off`.  
   
      [!code-vb[VbVbalrRelaxedDelegates#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrRelaxedDelegates/VB/Module2.vb#8)]  
   
-- Rozšiřující převod musí existovat v opačném směru z návratového typu funkce přiřazené nebo `Sub` na návratový typ delegáta. V následujících příkladech text každého přiřazené lambda výraz se musí vyhodnotit na datový typ, který rozšiřuje na `Integer` protože návratový typ `del1` je `Integer`.  
+- A widening conversion must exist in the opposite direction from the return type of the assigned function or `Sub` to the return type of the delegate. In the following examples, the body of each assigned lambda expression must evaluate to a data type that widens to `Integer` because the return type of `del1` is `Integer`.  
   
      [!code-vb[VbVbalrRelaxedDelegates#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrRelaxedDelegates/VB/Module1.vb#3)]  
   
- Pokud `Option Strict` je nastavena na `Off`, rozšiřující omezení se už v obou směrech.  
+ If `Option Strict` is set to `Off`, the widening restriction is removed in both directions.  
   
  [!code-vb[VbVbalrRelaxedDelegates#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrRelaxedDelegates/VB/Module2.vb#4)]  
   
-## <a name="omitting-parameter-specifications"></a>Vynechání specifikace parametru  
- Uvolněné delegáty lze také kompletně vynechat specifikace parametru v metodě přiřazené:  
+## <a name="omitting-parameter-specifications"></a>Omitting Parameter Specifications  
+ Relaxed delegates also allow you to completely omit parameter specifications in the assigned method:  
   
  [!code-vb[VbVbalrRelaxedDelegates#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrRelaxedDelegates/VB/Module1.vb#5)]  
   
  [!code-vb[VbVbalrRelaxedDelegates#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrRelaxedDelegates/VB/Module1.vb#6)]  
   
- Mějte na paměti, že nelze zadat některé parametry a ostatní vynechat.  
+ Note that you cannot specify some parameters and omit others.  
   
  [!code-vb[VbVbalrRelaxedDelegates#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrRelaxedDelegates/VB/Module1.vb#15)]  
   
- Umožňuje vynechat je užitečné v situaci, například definování obslužné rutiny události, kde se podílejí několik složité parametry. Nejsou použity argumenty, které mají některé obslužné rutiny události. Místo toho obslužnou rutinu přímý přístup k stavu ovládacího prvku, na kterém je zaregistrován události a ignoruje argumenty. Uvolněné delegáty umožňují vynechejte argumenty v těchto prohlášení, pokud žádný výsledek nejednoznačnosti. V následujícím příkladu, plně zadanou metodu `OnClick` může být přepsán ve formátu `RelaxedOnClick`.  
+ The ability to omit parameters is helpful in a situation such as defining an event handler, where several complex parameters are involved. The arguments to some event handlers are not used. Instead, the handler directly accesses the state of the control on which the event is registered, and ignores the arguments. Relaxed delegates allow you to omit the arguments in such declarations when no ambiguities result. In the following example, the fully specified method `OnClick` can be rewritten as `RelaxedOnClick`.  
   
 ```vb  
 Sub OnClick(ByVal sender As Object, ByVal e As EventArgs) Handles b.Click  
@@ -60,10 +60,10 @@ Sub RelaxedOnClick() Handles b.Click
 End Sub  
 ```  
   
-## <a name="addressof-examples"></a>Příklady AddressOf  
- Výrazy lambda se používají v předchozích příkladech k usnadnění vztahům typů zobrazíte. Ale stejné zmírnění jsou povolené pro přiřazení delegáta, které používají `AddressOf`, `Handles`, nebo `AddHandler`.  
+## <a name="addressof-examples"></a>AddressOf Examples  
+ Lambda expressions are used in the previous examples to make the type relationships easy to see. However, the same relaxations are permitted for delegate assignments that use `AddressOf`, `Handles`, or `AddHandler`.  
   
- V následujícím příkladu se funkce `f1`, `f2`, `f3`, a `f4` je všechny možné přiřadit k `Del1`.  
+ In the following example, functions `f1`, `f2`, `f3`, and `f4` can all be assigned to `Del1`.  
   
  [!code-vb[VbVbalrRelaxedDelegates#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrRelaxedDelegates/VB/Module1.vb#1)]  
   
@@ -71,12 +71,12 @@ End Sub
   
  [!code-vb[VbVbalrRelaxedDelegates#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrRelaxedDelegates/VB/Module1.vb#9)]  
   
- Následující příklad je platný jenom v případě `Option Strict` je nastavena na `Off`.  
+ The following example is valid only when `Option Strict` is set to `Off`.  
   
  [!code-vb[VbVbalrRelaxedDelegates#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrRelaxedDelegates/VB/Module2.vb#14)]  
   
-## <a name="dropping-function-returns"></a>Přetažení funkce vrátí  
- Volný převod delegáta umožňuje přiřadit funkce, která se `Sub` delegáta, efektivní systém ignoroval návratovou hodnotu funkce. Však nelze přiřadit `Sub` delegáta funkce. V následujícím příkladu, adresu funkce `doubler` přiřazen `Sub` delegovat `Del3`.  
+## <a name="dropping-function-returns"></a>Dropping Function Returns  
+ Relaxed delegate conversion enables you to assign a function to a `Sub` delegate, effectively ignoring the return value of the function. However, you cannot assign a `Sub` to a function delegate. In the following example, the address of function `doubler` is assigned to `Sub` delegate `Del3`.  
   
  [!code-vb[VbVbalrRelaxedDelegates#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrRelaxedDelegates/VB/Module1.vb#10)]  
   
@@ -86,7 +86,7 @@ End Sub
 
 - [Výrazy lambda](../../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)
 - [Rozšíření a zúžení převodů](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
-- [Delegáti](../../../../visual-basic/programming-guide/language-features/delegates/index.md)
-- [Postupy: Předání procedur jiné proceduře v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/delegates/how-to-pass-procedures-to-another-procedure.md)
+- [Delegáty](../../../../visual-basic/programming-guide/language-features/delegates/index.md)
+- [How to: Pass Procedures to Another Procedure in Visual Basic](../../../../visual-basic/programming-guide/language-features/delegates/how-to-pass-procedures-to-another-procedure.md)
 - [Odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
 - [Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)

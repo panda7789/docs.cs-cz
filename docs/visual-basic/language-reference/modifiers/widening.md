@@ -1,5 +1,5 @@
 ---
-title: Rozšíření (Visual Basic)
+title: Rozšíření
 ms.date: 07/20/2015
 f1_keywords:
 - vb.widening
@@ -10,35 +10,35 @@ helpviewer_keywords:
 - Widening keyword [Visual Basic]
 - data type conversion [Visual Basic]
 ms.assetid: 646ae263-94d3-40a2-b0cc-64f619292f56
-ms.openlocfilehash: d7d43d4f5f931881d5c8b663c719fe7f92559799
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1c9aa78549ca6e41c9fe54c12e0aaec8e7cc30cb
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61778661"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347835"
 ---
 # <a name="widening-visual-basic"></a>Rozšíření (Visual Basic)
-Označuje, že operátor převodu (`CType`) převede třídu nebo strukturu na typ, který může uchovat všechny možné hodnoty původní třídy nebo struktury.  
+Indicates that a conversion operator (`CType`) converts a class or structure to a type that can hold all possible values of the original class or structure.  
   
-## <a name="converting-with-the-widening-keyword"></a>Převod pomocí rozšiřující – klíčové slovo  
- Proces převodu musíte zadat `Public Shared` kromě `Widening`.  
+## <a name="converting-with-the-widening-keyword"></a>Converting with the Widening Keyword  
+ The conversion procedure must specify `Public Shared` in addition to `Widening`.  
   
- Rozšiřující převody proběhnout úspěšně, v době spuštění a nikdy ztrátě dat se vám účtovat. Mezi příklady patří `Single` k `Double`, `Char` k `String`a na jeho základní typ odvozený typ. Tento poslední převod je rozšíření, protože odvozený typ obsahuje všechny členy ze základního typu a tedy instanci základního typu.  
+ Widening conversions always succeed at run time and never incur data loss. Examples are `Single` to `Double`, `Char` to `String`, and a derived type to its base type. This last conversion is widening because the derived type contains all the members of the base type and thus is an instance of the base type.  
   
- Není nutné používat časově náročný kód `CType` pro rozšiřující převody, i když `Option Strict` je `On`.  
+ The consuming code does not have to use `CType` for widening conversions, even if `Option Strict` is `On`.  
   
- `Widening` – Klíčové slovo lze použít v tomto kontextu:  
+ The `Widening` keyword can be used in this context:  
   
  [Příkaz Operator](../../../visual-basic/language-reference/statements/operator-statement.md)  
   
- Příklad naleznete v tématu definice rozšíření a zúžení operátory převodu [jak: Definice operátora převodu](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md).  
+ For example definitions of widening and narrowing conversion operators, see [How to: Define a Conversion Operator](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Příkaz Operator](../../../visual-basic/language-reference/statements/operator-statement.md)
 - [Narrowing](../../../visual-basic/language-reference/modifiers/narrowing.md)
 - [Rozšíření a zúžení převodů](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
-- [Postupy: Definovat operátor](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)
+- [Postupy: Definice operátoru](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)
 - [Funkce CType](../../../visual-basic/language-reference/functions/ctype-function.md)
 - [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)
-- [Postupy: Definice operátora převodu](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)
+- [Postupy: Definice operátoru převodu](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)

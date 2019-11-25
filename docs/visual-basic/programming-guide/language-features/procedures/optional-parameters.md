@@ -1,5 +1,5 @@
 ---
-title: Volitelné parametry (Visual Basic)
+title: Volitelné parametry
 ms.date: 07/20/2015
 helpviewer_keywords:
 - parameters [Visual Basic], optional
@@ -12,15 +12,15 @@ helpviewer_keywords:
 - arguments [Visual Basic], optional
 - optional arguments [Visual Basic], and named arguments
 ms.assetid: 398d2845-1069-4e94-b934-a73b545c8b87
-ms.openlocfilehash: 9236080d50638bc38bbdd3ddaf8aabf9e675e43f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d859f7eaaefa051cfdf703d8589bc8c679a3ee85
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64639126"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345968"
 ---
 # <a name="optional-parameters-visual-basic"></a>Volitelné parametry (Visual Basic)
-Můžete určit, že parametr procedury je volitelný, a při volání této procedury se nemusí zadávat žádný argument. *Volitelné parametry* jsou označeny `Optional` – klíčové slovo v definici procedury. Platí následující pravidla:  
+Můžete určit, že parametr procedury je volitelný, a při volání této procedury se nemusí zadávat žádný argument. *Optional parameters* are indicated by the `Optional` keyword in the procedure definition. Platí následující pravidla:  
   
 - Každý volitelný parametr v definici procedury musí mít výchozí hodnotu.  
   
@@ -43,18 +43,18 @@ Sub name(ByVal parameter1 As datatype1, Optional ByVal parameter2 As datatype2 =
 Sub name(argument 1, , , argument 4)  
 ```  
   
- Následující příklad provede několik volání `MsgBox` funkce. `MsgBox` má jeden povinný parametr a dva volitelné parametry.  
+ The following example makes several calls to the `MsgBox` function. `MsgBox` has one required parameter and two optional parameters.  
   
- První volání `MsgBox` poskytuje všechny tři argumenty v pořadí, které `MsgBox` definuje. Ve druhém volání je zadán pouze povinný argument. Ve třetím a čtvrtém volání je zadán první a třetí argument. Třetí volání tak činí podle pozice a čtvrté volání podle názvu.  
+ The first call to `MsgBox` supplies all three arguments in the order that `MsgBox` defines them. Ve druhém volání je zadán pouze povinný argument. Ve třetím a čtvrtém volání je zadán první a třetí argument. Třetí volání tak činí podle pozice a čtvrté volání podle názvu.  
   
  [!code-vb[VbVbcnProcedures#47](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#47)]  
   
 ## <a name="determining-whether-an-optional-argument-is-present"></a>Určení, zda existuje volitelný argument  
- Procedura nedokáže za běhu zjistit, zda byl daný argument vynechán nebo zda volající kód explicitně poskytuje výchozí hodnotu. Pokud to potřebujete rozlišit, můžete jako výchozí nastavit nějakou nepravděpodobnou hodnotu. Následující procedura definuje volitelný parametr `office`a testováním jeho výchozí hodnotu, `QJZ`, pokud chcete zobrazit, pokud ji má ve volání vynechán:  
+ Procedura nedokáže za běhu zjistit, zda byl daný argument vynechán nebo zda volající kód explicitně poskytuje výchozí hodnotu. Pokud to potřebujete rozlišit, můžete jako výchozí nastavit nějakou nepravděpodobnou hodnotu. The following procedure defines the optional parameter `office`, and tests for its default value, `QJZ`, to see if it has been omitted in the call:  
   
  [!code-vb[VbVbcnProcedures#46](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#46)]  
   
- Pokud volitelný parametr, jako je typem odkazu `String`, můžete použít `Nothing` jako výchozí hodnota zadaná, nejedná se o očekávanou hodnotou pro argument.  
+ If the optional parameter is a reference type such as a `String`, you can use `Nothing` as the default value, provided this is not an expected value for the argument.  
   
 ## <a name="optional-parameters-and-overloading"></a>Volitelné parametry a přetěžování  
  Proceduru s volitelnými parametry lze definovat také pomocí přetěžování. Pokud máte jeden volitelný parametr, můžete definovat dvě přetížené verze procedury – jednu s parametrem a druhou bez parametru. S rostoucím počtem volitelných parametrů se zvyšuje složitost. Výhodou ale je, že máte absolutní jistotu, zda volající program poskytl jednotlivé volitelné argumenty.  

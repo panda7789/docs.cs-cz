@@ -1,27 +1,27 @@
 ---
-title: Atributy (Visual Basic)
+title: Atributy
 ms.date: 07/20/2015
 helpviewer_keywords:
 - attributes [Visual Basic]
 ms.assetid: 5deb2b8a-1afd-4dbd-8ee8-f093d74ad0eb
-ms.openlocfilehash: 1a734823d1fedbbd7bb8196c501ac2ee149f3098
-ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
+ms.openlocfilehash: 226187fc183b12055e9a67a8fdef0178edb317d8
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68869047"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347859"
 ---
 # <a name="attributes-visual-basic"></a>Atributy (Visual Basic)
 
-Visual Basic poskytuje několik atributů, které umožňují objektům spolupracovat s nespravovaným kódem, a jeden atribut, který umožňuje, aby byly členy modulu dostupné bez názvu modulu. V následující tabulce jsou uvedeny atributy, které používá Visual Basic.  
+Visual Basic provides several attributes that allow objects to interoperate with unmanaged code and one attribute that enables module members to be accessed without the module name. The following table lists the attributes used by Visual Basic.  
   
 |||  
 |---|---|  
-|<xref:Microsoft.VisualBasic.ComClassAttribute>|Instruuje kompilátor, aby přidal metadata, která umožňují vystavení třídy jako objekt modelu COM.|
-|<xref:Microsoft.VisualBasic.HideModuleNameAttribute>|Umožňuje, aby ke členům modulu bylo možné přistupovat pouze pomocí kvalifikace potřebné pro modul.|
-|<xref:Microsoft.VisualBasic.VBFixedArrayAttribute>|Označuje, že pole ve struktuře nebo nemístní proměnné by mělo být považováno za pole s pevnou délkou.|
-|<xref:Microsoft.VisualBasic.VBFixedStringAttribute>|Označuje, že řetězec by měl být zpracován, jako by byl pevným délkou.|
+|<xref:Microsoft.VisualBasic.ComClassAttribute>|Instructs the compiler to add metadata that allows a class to be exposed as a COM object.|
+|<xref:Microsoft.VisualBasic.HideModuleNameAttribute>|Allows the module members to be accessed using only the qualification needed for the module.|
+|<xref:Microsoft.VisualBasic.VBFixedArrayAttribute>|Indicates that an array in a structure or non-local variable should be treated as a fixed-length array.|
+|<xref:Microsoft.VisualBasic.VBFixedStringAttribute>|Indicates that a string should be treated as if it were fixed length.|
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled atributů](../../visual-basic/programming-guide/concepts/attributes/index.md)
+- [Attributes overview](../../visual-basic/programming-guide/concepts/attributes/index.md)

@@ -1,32 +1,32 @@
 ---
-title: Řízení toku v asynchronních programech (Visual Basic)
+title: Řízení toku v asynchronních programech
 ms.date: 07/20/2015
 ms.assetid: b0443af7-c586-4cb0-b476-742ae4098a96
-ms.openlocfilehash: 69474b3c8d4ce08da46c9ba793da58786a607d91
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 94b2c2ea89f729e882229d4ecce7faa169c24267
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73420112"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347942"
 ---
-# <a name="control-flow-in-async-programs-visual-basic"></a>Řízení toku v asynchronních programech (Visual Basic)
+# <a name="control-flow-in-async-programs-visual-basic"></a>Control Flow in Async Programs (Visual Basic)
 
-K jednoduššímu psaní a údržbě asynchronních programů můžete použít klíčová slova `Async` a `Await`. Pokud ale nerozumíte tomu, jak program funguje, může se stát, že se výsledky neočekávaně neznají. Toto téma sleduje tok řízení pomocí jednoduchého asynchronního programu, který vám ukáže, kdy se ovládací prvek přesouvá z jedné metody na jinou a jaké informace se přenášejí pokaždé.
+You can write and maintain asynchronous programs more easily by using the `Async` and `Await` keywords. However, the results might surprise you if you don't understand how your program operates. This topic traces the flow of control through a simple async program to show you when control moves from one method to another and what information is transferred each time.
 
 > [!NOTE]
 > Klíčová slova `Async` a `Await` byla zavedena v sadě Visual Studio 2012.
 
-Obecně je třeba označit metody, které obsahují asynchronní kód, pomocí modifikátoru [Async](../../../../visual-basic/language-reference/modifiers/async.md) . V metodě, která je označena modifikátorem Async, můžete použít operátor [await (Visual Basic)](../../../../visual-basic/language-reference/operators/await-operator.md) , chcete-li určit, kde metoda pozastaví čekání na dokončení volaného asynchronního procesu. Další informace naleznete v tématu [asynchronní programování s Async a await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md).
+In general, you mark methods that contain asynchronous code with the [Async](../../../../visual-basic/language-reference/modifiers/async.md) modifier. In a method that's marked with an async modifier, you can use an [Await (Visual Basic)](../../../../visual-basic/language-reference/operators/await-operator.md) operator to specify where the method pauses to wait for a called asynchronous process to complete. For more information, see [Asynchronous Programming with Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md).
 
-Následující příklad používá asynchronní metody ke stažení obsahu zadaného webu jako řetězce a k zobrazení délky řetězce. Příklad obsahuje následující dvě metody.
+The following example uses async methods to download the contents of a specified website as a string and to display the length of the string. The example contains the following two methods.
 
-- `startButton_Click`, která volá `AccessTheWebAsync` a zobrazí výsledek.
+- `startButton_Click`, which calls `AccessTheWebAsync` and displays the result.
 
-- `AccessTheWebAsync`, který stáhne obsah webu jako řetězec a vrátí délku řetězce. `AccessTheWebAsync` používá asynchronní metodu <xref:System.Net.Http.HttpClient>, <xref:System.Net.Http.HttpClient.GetStringAsync%28System.String%29>ke stažení obsahu.
+- `AccessTheWebAsync`, which downloads the contents of a website as a string and returns the length of the string. `AccessTheWebAsync` uses an asynchronous <xref:System.Net.Http.HttpClient> method, <xref:System.Net.Http.HttpClient.GetStringAsync%28System.String%29>, to download the contents.
 
-Číslované zobrazené řádky se zobrazí ve strategických bodech v rámci programu, které vám pomůžou pochopit, jak se program spouští, a vysvětlit, co se stane v každém označeném místě. Zobrazované řádky jsou označeny "ONE" až "šest". Popisky znázorňují pořadí, ve kterém program dosáhne těchto řádků kódu.
+Numbered display lines appear at strategic points throughout the program to help you understand how the program runs and to explain what happens at each point that is marked. The display lines are labeled "ONE" through "SIX." The labels represent the order in which the program reaches these lines of code.
 
-Následující kód ukazuje osnovu programu.
+The following code shows an outline of the program.
 
 ```vb
 Class MainWindow
@@ -62,7 +62,7 @@ Class MainWindow
 End Class
 ```
 
-Každé z označených umístění, "jedna" až "šest", zobrazí informace o aktuálním stavu programu. Vytvoří se následující výstup:
+Each of the labeled locations, "ONE" through "SIX," displays information about the current state of the program. The following output is produced:
 
 ```console
 ONE:   Entering startButton_Click.
@@ -94,44 +94,44 @@ Length of the downloaded string: 33946.
 
 ## <a name="set-up-the-program"></a>Vytvoření programu
 
-Můžete si stáhnout kód, který toto téma používá z MSDN, nebo si ho můžete vytvořit sami.
+You can download the code that this topic uses from MSDN, or you can build it yourself.
 
 > [!NOTE]
-> Chcete-li spustit příklad, musíte mít v počítači nainstalován systém Visual Studio 2012 nebo novější a .NET Framework 4,5 nebo novější.
+> To run the example, you must have Visual Studio 2012 or newer and  the .NET Framework 4.5 or newer installed on your computer.
 
 ### <a name="download-the-program"></a>Stažení programu
 
-Aplikaci pro toto téma si můžete stáhnout z tématu [asynchronní vzorek: tok řízení v asynchronních programech](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0). Následující kroky otevřete a spusťte v programu.
+You can download the application for this topic from [Async Sample: Control Flow in Async Programs](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0). The following steps open and run the program.
 
-1. Rozbalte stažený soubor a potom spusťte Visual Studio.
+1. Unzip the downloaded file, and then start Visual Studio.
 
-2. Na panelu nabídek vyberte možnosti **soubor**, **otevřít**, **projekt/řešení**.
+2. On the menu bar, choose **File**, **Open**, **Project/Solution**.
 
-3. Přejděte do složky, která obsahuje vzorový kód Get, otevřete soubor řešení (. sln) a pak zvolte klávesu F5 pro sestavení a spuštění projektu.
+3. Navigate to the folder that holds the unzipped sample code, open the solution (.sln) file, and then choose the F5 key to build and run the project.
 
 ### <a name="build-the-program-yourself"></a>Vytvoření programu vlastními silami
 
-Následující projekt Windows Presentation Foundation (WPF) obsahuje příklad kódu pro toto téma.
+The following Windows Presentation Foundation (WPF) project contains the code example for this topic.
 
-Chcete-li spustit projekt, proveďte následující kroky:
+To run the project, perform the following steps:
 
-1. Spusťte Visual Studio.
+1. Start Visual Studio.
 
-2. Na panelu nabídek vyberte položku **soubor**, **Nový**, **projekt**.
+2. On the menu bar, choose **File**, **New**, **Project**.
 
-    Otevře se dialogové okno **Nový projekt** .
+    The **New Project** dialog box opens.
 
-3. V podokně **Nainstalované šablony** zvolte možnost **Visual Basic**a v seznamu typů projektů zvolte možnost **aplikace WPF** .
+3. In the **Installed Templates** pane, choose **Visual Basic**, and then choose **WPF Application** from the list of project types.
 
-4. Jako název projektu zadejte `AsyncTracer` a pak klikněte na tlačítko **OK** .
+4. Enter `AsyncTracer` as the name of the project, and then choose the **OK** button.
 
-    Nový projekt se zobrazí v **Průzkumník řešení**.
+    The new project appears in **Solution Explorer**.
 
-5. V editoru Visual Studio Code klikněte na kartu **MainWindow. XAML** .
+5. In the Visual Studio Code Editor, choose the **MainWindow.xaml** tab.
 
-    Pokud karta není viditelná, otevřete místní nabídku pro MainWindow. XAML v **Průzkumník řešení**a pak zvolte **Zobrazit kód**.
+    If the tab isn’t visible, open the shortcut menu for MainWindow.xaml in **Solution Explorer**, and then choose **View Code**.
 
-6. V zobrazení **XAML** souboru MainWindow. xaml nahraďte kód následujícím kódem.
+6. In the **XAML** view of MainWindow.xaml, replace the code with the following code.
 
     ```vb
     <Window
@@ -147,13 +147,13 @@ Chcete-li spustit projekt, proveďte následující kroky:
     </Window>
     ```
 
-    Jednoduché okno obsahující textové pole a tlačítko se zobrazí v zobrazení **Návrh** souboru MainWindow. XAML.
+    A simple window that contains a text box and a button appears in the **Design** view of MainWindow.xaml.
 
-7. Přidejte odkaz na <xref:System.Net.Http>.
+7. Add a reference for <xref:System.Net.Http>.
 
-8. V **Průzkumník řešení**otevřete místní nabídku pro MainWindow. XAML. vb a pak zvolte **Zobrazit kód**.
+8. In **Solution Explorer**, open the shortcut menu for MainWindow.xaml.vb, and then choose **View Code**.
 
-9. V souboru MainWindow. XAML. vb nahraďte kód následujícím kódem.
+9. In MainWindow.xaml.vb , replace the code with the following code.
 
     ```vb
     ' Add an Imports statement and a reference for System.Net.Http.
@@ -218,9 +218,9 @@ Chcete-li spustit projekt, proveďte následující kroky:
     End Class
     ```
 
-10. Zvolte klávesu F5 ke spuštění programu a pak klikněte na tlačítko **Start** .
+10. Choose the F5 key to run the program, and then choose the **Start** button.
 
-    Měl by se zobrazit následující výstup:
+    The following output should appear:
 
     ```console
     ONE:   Entering startButton_Click.
@@ -254,25 +254,25 @@ Chcete-li spustit projekt, proveďte následující kroky:
 
 ### <a name="steps-one-and-two"></a>Kroky 1 a 2
 
-První dva zobrazené řádky sledují cestu jako `startButton_Click` volá `AccessTheWebAsync`a `AccessTheWebAsync` volá asynchronní <xref:System.Net.Http.HttpClient> metodu <xref:System.Net.Http.HttpClient.GetStringAsync%28System.String%29>. Následující obrázek znázorňuje volání metody z metody do metody.
+The first two display lines trace the path as `startButton_Click` calls `AccessTheWebAsync`, and `AccessTheWebAsync` calls the asynchronous <xref:System.Net.Http.HttpClient> method <xref:System.Net.Http.HttpClient.GetStringAsync%28System.String%29>. The following image outlines the calls from method to method.
 
-![Kroky 1 a 2](../../../../csharp/programming-guide/concepts/async/media/asynctrace-onetwo.png "AsyncTrace-ONETWO")
+![Steps ONE and TWO](../../../../csharp/programming-guide/concepts/async/media/asynctrace-onetwo.png "AsyncTrace-ONETWO")
 
-Návratový typ obou `AccessTheWebAsync` a `client.GetStringAsync` je <xref:System.Threading.Tasks.Task%601>. Pro `AccessTheWebAsync`je TResult celé číslo. Pro `GetStringAsync`je TResult řetězec. Další informace o návratových typech asynchronní metody naleznete v tématu [Async Return Types (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md).
+The return type of both `AccessTheWebAsync` and `client.GetStringAsync` is <xref:System.Threading.Tasks.Task%601>. For `AccessTheWebAsync`, TResult is an integer. For `GetStringAsync`, TResult is a string. For more information about async method return types, see [Async Return Types (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md).
 
-Asynchronní metoda vracející úlohu vrátí instanci úlohy, pokud se ovládací prvek posune zpět na volajícího. Řízení se vrátí z asynchronní metody volajícímu buď v případě, že se v volané metodě objevil operátor `Await`, nebo když volaná metoda skončí. V této části procesu jsou zobrazené řádky s označením "tři" až "šest".
+A task-returning async method returns a task instance when control shifts back to the caller. Control returns from an async method to its caller either when an `Await` operator is encountered in the called method or when the called method ends. The display lines that are labeled "THREE" through "SIX" trace this part of the process.
 
 ### <a name="step-three"></a>Krok 3
 
-V `AccessTheWebAsync`je volána asynchronní metoda <xref:System.Net.Http.HttpClient.GetStringAsync%28System.String%29> pro stažení obsahu cílové webové stránky. Ovládací prvek se vrátí z `client.GetStringAsync` do `AccessTheWebAsync`, když `client.GetStringAsync` vrátí.
+In `AccessTheWebAsync`, the asynchronous method <xref:System.Net.Http.HttpClient.GetStringAsync%28System.String%29> is called to download the contents of the target webpage. Control returns from `client.GetStringAsync` to `AccessTheWebAsync` when `client.GetStringAsync` returns.
 
-Metoda `client.GetStringAsync` vrací úkol typu String, který je přiřazen k proměnné `getStringTask` v `AccessTheWebAsync`. Následující řádek v ukázkovém programu zobrazuje volání `client.GetStringAsync` a přiřazení.
+The `client.GetStringAsync` method returns a task of string that’s assigned to the `getStringTask` variable in `AccessTheWebAsync`. The following line in the example program shows the call to `client.GetStringAsync` and the assignment.
 
 ```vb
 Dim getStringTask As Task(Of String) = client.GetStringAsync("https://msdn.microsoft.com")
 ```
 
-Úkol můžete představit jako příslib tím, že `client.GetStringAsync` vytvořit skutečný řetězec nakonec. Pokud `AccessTheWebAsync` má za následek práci, která nezávisí na přislíbeném řetězci z `client.GetStringAsync`, může tato práce pokračovat, i když `client.GetStringAsync` čeká. V příkladu představují následující řádky výstupu, které jsou označeny "tři", možnost provést nezávislou práci.
+You can think of the task as a promise by `client.GetStringAsync` to produce an actual string eventually. In the meantime, if `AccessTheWebAsync` has work to do that doesn't depend on the promised string from `client.GetStringAsync`, that work can continue while  `client.GetStringAsync` waits. In the example, the following lines of output, which are labeled "THREE," represent the opportunity to do independent work
 
 ```console
 THREE: Back in AccessTheWebAsync.
@@ -280,34 +280,34 @@ THREE: Back in AccessTheWebAsync.
            About to await getStringTask & return a Task<int> to startButton_Click.
 ```
 
- Následující příkaz pozastaví průběh `AccessTheWebAsync`, když `getStringTask` očekává.
+ The following statement suspends progress in `AccessTheWebAsync` when `getStringTask` is awaited.
 
 ```vb
 Dim urlContents As String = Await getStringTask
 ```
 
-Následující obrázek ukazuje tok řízení od `client.GetStringAsync` k přiřazení `getStringTask` a vytváření `getStringTask` k použití operátoru await.
+The following image shows the flow of control from `client.GetStringAsync` to the assignment to `getStringTask` and from the creation of `getStringTask` to the application of an Await operator.
 
-![Krok 3](../../../../csharp/programming-guide/concepts/async/media/asynctrace-three.png "AsyncTrace – tři")
+![Step THREE](../../../../csharp/programming-guide/concepts/async/media/asynctrace-three.png "AsyncTrace-Three")
 
-Výraz Await pozastaví `AccessTheWebAsync`, dokud `client.GetStringAsync` nevrátí. Mezitím se ovládací prvek vrátí volajícímu `AccessTheWebAsync`, `startButton_Click`.
+The await expression suspends `AccessTheWebAsync` until `client.GetStringAsync` returns. In the meantime, control returns to the caller of `AccessTheWebAsync`, `startButton_Click`.
 
 > [!NOTE]
-> Obvykle očekáváte okamžité volání asynchronní metody. Například následující přiřazení může nahradit předchozí kód, který vytvoří a následně očekává `getStringTask`: `Dim urlContents As String = Await client.GetStringAsync("https://msdn.microsoft.com")`
+> Typically, you await the call to an asynchronous method immediately. For example, the following assignment could replace the previous code that creates and then awaits `getStringTask`: `Dim urlContents As String = Await client.GetStringAsync("https://msdn.microsoft.com")`
 >
-> V tomto tématu se použije operátor await později, aby se vešel na výstupní řádky, které označují tok řízení přes program.
+> In this topic, the await operator is applied later to accommodate the output lines that mark the flow of control through the program.
 
 ### <a name="step-four"></a>Krok 4
 
-Deklarovaný návratový typ `AccessTheWebAsync` je `Task(Of Integer)`. Proto když je pozastavena `AccessTheWebAsync`, vrátí úlohu celé číslo do `startButton_Click`. Měli byste pochopit, že vrácená úloha není `getStringTask`. Vrácený úkol je nový úkol na celé číslo, který představuje to, co je potřeba udělat v pozastavené metodě, `AccessTheWebAsync`. Úkol je příslib od `AccessTheWebAsync` a vytvoří celé číslo po dokončení úkolu.
+The declared return type of `AccessTheWebAsync` is `Task(Of Integer)`. Therefore, when `AccessTheWebAsync` is suspended, it returns a task of integer to `startButton_Click`. You should understand that the returned task isn’t `getStringTask`. The returned task is a new task of integer that represents what remains to be done in the suspended method, `AccessTheWebAsync`. The task is a promise from `AccessTheWebAsync` to produce an integer when the task is complete.
 
-Následující příkaz přiřadí tuto úlohu k proměnné `getLengthTask`.
+The following statement assigns this task to the `getLengthTask` variable.
 
 ```vb
 Dim getLengthTask As Task(Of Integer) = AccessTheWebAsync()
 ```
 
-Jak je uvedeno v `AccessTheWebAsync`, `startButton_Click` může pokračovat v práci, která nezávisí na výsledcích asynchronní úlohy (`getLengthTask`), až do doby, kdy je úloha očekávána. Následující výstupní řádky označují, že fungují:
+As in `AccessTheWebAsync`, `startButton_Click` can continue with work that doesn’t depend on the results of the asynchronous task (`getLengthTask`) until the task is awaited. The following output lines represent that work:
 
 ```console
 FOUR:  Back in startButton_Click.
@@ -315,19 +315,19 @@ FOUR:  Back in startButton_Click.
            About to await getLengthTask -- no caller to return to.
 ```
 
-Průběh v `startButton_Click` je pozastavený, když se `getLengthTask` očekává. Následující příkaz přiřazení pozastaví `startButton_Click` až do dokončení `AccessTheWebAsync`.
+Progress in `startButton_Click` is suspended when `getLengthTask` is awaited. The following assignment statement suspends `startButton_Click` until `AccessTheWebAsync` is complete.
 
 ```vb
 Dim contentLength As Integer = Await getLengthTask
 ```
 
-Na následujícím obrázku šipky ukazují tok řízení z výrazu await v `AccessTheWebAsync` k přiřazení hodnoty `getLengthTask`a následováno normálním zpracováním v `startButton_Click`, dokud `getLengthTask` neočekává.
+In the following illustration, the arrows show the flow of control from the await expression in `AccessTheWebAsync` to the assignment of a value to `getLengthTask`, followed by normal processing in `startButton_Click` until `getLengthTask` is awaited.
 
-![Krok 4](../../../../csharp/programming-guide/concepts/async/media/asynctrace-four.png "AsyncTrace – čtyři")
+![Step FOUR](../../../../csharp/programming-guide/concepts/async/media/asynctrace-four.png "AsyncTrace-FOUR")
 
 ### <a name="step-five"></a>Krok 5
 
-Když `client.GetStringAsync` signalizuje, že je dokončeno, zpracování v `AccessTheWebAsync` je uvolněno z pozastavení a může pokračovat za příkazem await. Následující řádky výstupu reprezentují pokračování zpracování:
+When `client.GetStringAsync` signals that it’s complete, processing in `AccessTheWebAsync` is released from suspension and can continue past the await statement. The following lines of output represent the resumption of processing:
 
 ```console
 FIVE:  Back in AccessTheWebAsync.
@@ -336,19 +336,19 @@ FIVE:  Back in AccessTheWebAsync.
            Exiting from AccessTheWebAsync.
 ```
 
-Operand příkazu return, `urlContents.Length`, je uložen v úkolu, který `AccessTheWebAsync` vrací. Výraz Await načte tuto hodnotu z `getLengthTask` v `startButton_Click`.
+The operand of the return statement, `urlContents.Length`, is stored in the task that  `AccessTheWebAsync` returns. The await expression retrieves that value from `getLengthTask` in `startButton_Click`.
 
-Následující obrázek znázorňuje přenos řízení po dokončení `client.GetStringAsync` (a `getStringTask`).
+The following image shows the transfer of control after `client.GetStringAsync` (and `getStringTask`) are complete.
 
-![Krok 5](../../../../csharp/programming-guide/concepts/async/media/asynctrace-five.png "AsyncTrace – pět")
+![Step FIVE](../../../../csharp/programming-guide/concepts/async/media/asynctrace-five.png "AsyncTrace-FIVE")
 
-`AccessTheWebAsync` běží na dokončení a řízení se vrátí do `startButton_Click`, což čeká na dokončení.
+`AccessTheWebAsync` runs to completion, and control returns to `startButton_Click`, which is awaiting the completion.
 
 ### <a name="step-six"></a>Krok 6
 
-Když `AccessTheWebAsync` signalizuje, že je dokončeno, zpracování může pokračovat za příkazem await v `startButton_Async`. Ve skutečnosti program nemá nic dalšího.
+When `AccessTheWebAsync` signals that it’s complete, processing can continue past the await statement in `startButton_Async`. In fact, the program has nothing more to do.
 
-Následující řádky výstupu reprezentují pokračování zpracování v `startButton_Async`:
+The following lines of output represent the resumption of processing in `startButton_Async`:
 
 ```console
 SIX:   Back in startButton_Click.
@@ -357,19 +357,19 @@ SIX:   Back in startButton_Click.
            About to display contentLength and exit.
 ```
 
-Výraz Await načte z `getLengthTask` celočíselnou hodnotu, která je operandem příkazu return v `AccessTheWebAsync`. Následující příkaz přiřadí tuto hodnotu k proměnné `contentLength`.
+The await expression retrieves from `getLengthTask` the integer value that’s the operand of the return statement in `AccessTheWebAsync`. The following statement assigns that value to the `contentLength` variable.
 
 ```vb
 Dim contentLength As Integer = Await getLengthTask
 ```
 
-Následující obrázek ukazuje vrácení ovládacího prvku z `AccessTheWebAsync` k `startButton_Click`.
+The following image shows the return of control from `AccessTheWebAsync` to `startButton_Click`.
 
-![Krok 6](../../../../csharp/programming-guide/concepts/async/media/asynctrace-six.png "AsyncTrace – šest")
+![Step SIX](../../../../csharp/programming-guide/concepts/async/media/asynctrace-six.png "AsyncTrace-SIX")
 
 ## <a name="see-also"></a>Viz také:
 
-- [Asynchronní programování s modifikátorem Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
-- [Asynchronní návratové typy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md)
-- [Návod: přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
-- [Asynchronní vzorek: tok řízení v asynchronních programechC# (a Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0)
+- [Asynchronous Programming with Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
+- [Async Return Types (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md)
+- [Walkthrough: Accessing the Web by Using Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
+- [Async Sample: Control Flow in Async Programs (C# and Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0)

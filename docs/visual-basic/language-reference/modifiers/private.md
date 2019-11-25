@@ -1,5 +1,5 @@
 ---
-title: Private (Visual Basic)
+title: Soukromé
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Private
@@ -7,33 +7,33 @@ helpviewer_keywords:
 - Private keyword [Visual Basic]
 - Private keyword [Visual Basic], syntax
 ms.assetid: aba74a2e-5824-4613-bf63-b9ec7787f4e6
-ms.openlocfilehash: ddb2d165de330758f58fbbcb5872e820e639808f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5600744aeca79a54f51a1f9ecd0ef00fed4b00fd
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64642772"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351334"
 ---
 # <a name="private-visual-basic"></a>Private (Visual Basic)
-Určuje, že nejmíň jeden deklarovaný programový prvek je přístupný jenom v rámci kontextu jejich prohlášení, včetně z v rámci žádné typy obsažené.  
+Specifies that one or more declared programming elements are accessible only from within their declaration context, including from within any contained types.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud programovací element představuje speciálních funkcí, nebo obsahuje důvěrná data, obvykle chcete omezit přístup k němu jako přísně. Dosažení maximálního omezení tím, že pouze modul, třídu nebo strukturu, která definuje se k němu přistupovat. Omezení přístupu k elementu tímto způsobem je možné deklarovat s `Private`.  
+ If a programming element represents proprietary functionality, or contains confidential data, you usually want to limit access to it as strictly as possible. You achieve the maximum limitation by allowing only the module, class, or structure that defines it to access it. To limit access to an element in this way, you can declare it with `Private`.  
 
 > [!NOTE]
-> Můžete také použít [Private Protected](private-protected.md) modifikátor přístupu, který zpřístupňuje člen z v rámci třídy a z odvozených tříd, které jsou umístěné v jeho obsahující sestavení.
+> You can also use the [Private Protected](private-protected.md) access modifier, which makes a member accessible from within that class and from derived classes located in its containing assembly.
 
-## <a name="rules"></a>pravidla  
+## <a name="rules"></a>Rules  
 
-- **Místní deklarace.** Můžete použít `Private` pouze na úrovni modulu. To znamená, že deklarace kontext `Private` elementu musí být modulu, třídy nebo struktury a nemůže být zdrojový soubor, obor názvů, rozhraní nebo proceduru.  
+- **Declaration Context.** You can use `Private` only at module level. This means the declaration context for a `Private` element must be a module, class, or structure, and cannot be a source file, namespace, interface, or procedure.  
   
-## <a name="behavior"></a>Chování  
+## <a name="behavior"></a>Behavior  
   
-- **Úroveň přístupu.** Veškerý kód v rámci kontextu deklarace můžete přístup k jeho `Private` elementy. To zahrnuje kód v rámci omezením typu, jako je vnořená třída nebo výrazu přiřazení ve výčtu. Žádný kód mimo kontext deklarace můžete získat přístup k jeho `Private` elementy.  
+- **Access Level.** All code within a declaration context can access its `Private` elements. This includes code within a contained type, such as a nested class or an assignment expression in an enumeration. No code outside of the declaration context can access its `Private` elements.  
   
-- **Modifikátory přístupu.** Klíčová slova, které určují úroveň přístupu se nazývají *modifikátorů přístupu*. Porovnání přístupu modifikátory přístupu najdete v tématu [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+- **Access Modifiers.** The keywords that specify access level are called *access modifiers*. For a comparison of the access modifiers, see [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
- `Private` Modifikátor lze použít v těchto kontextech:  
+ The `Private` modifier can be used in these contexts:  
   
  [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)  
   
@@ -65,7 +65,7 @@ Určuje, že nejmíň jeden deklarovaný programový prvek je přístupný jenom
 - [Protected](../../../visual-basic/language-reference/modifiers/protected.md)
 - [Friend](../../../visual-basic/language-reference/modifiers/friend.md)
 - [Private Protected](./private-protected.md)
-- [Protected Friend](./protected-friend.md)[přístup úrovně v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
+- [Protected Friend](./protected-friend.md)    [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
 - [Procedury](../../../visual-basic/programming-guide/language-features/procedures/index.md)
 - [Struktury](../../../visual-basic/programming-guide/language-features/data-types/structures.md)
 - [Objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

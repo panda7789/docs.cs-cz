@@ -1,5 +1,5 @@
 ---
-title: -Reference (Visual Basic)
+title: -reference
 ms.date: 03/13/2018
 helpviewer_keywords:
 - /reference compiler option [Visual Basic]
@@ -9,15 +9,15 @@ helpviewer_keywords:
 - reference compiler option [Visual Basic]
 - -r compiler option [Visual Basic]
 ms.assetid: 66bdfced-bbf6-43d1-a554-bc0990315737
-ms.openlocfilehash: 8f144dbd9376f15ac92e283472dac786a6972045
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 8b57affa05c77d8ed20bfead7de767a8dd994241
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72775608"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348585"
 ---
-# <a name="-reference-visual-basic"></a>-Reference (Visual Basic)
-Způsobí, že kompilátor provede informace o typech v zadaných sestaveních, které jsou k dispozici pro projekt, který právě kompilujete.  
+# <a name="-reference-visual-basic"></a>-reference (Visual Basic)
+Causes the compiler to make type information in the specified assemblies available to the project you are currently compiling.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,27 +35,27 @@ or
   
 |Termín|Definice|  
 |---|---|  
-|`fileList`|Požadováno. Seznam názvů souborů sestavení oddělených čárkami. Pokud název souboru obsahuje mezeru, uzavřete název do uvozovek.|  
+|`fileList`|Požadováno. Comma-delimited list of assembly file names. If the file name contains a space, enclose the name in quotation marks.|  
   
 ## <a name="remarks"></a>Poznámky  
- Soubory, které importujete, musí obsahovat metadata sestavení. Mimo sestavení jsou viditelné pouze veřejné typy. Možnost [-addmodule –](../../../visual-basic/reference/command-line-compiler/addmodule.md) Importuje metadata z modulu.  
+ The file(s) you import must contain assembly metadata. Only public types are visible outside the assembly. The [-addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md) option imports metadata from a module.  
   
- Pokud odkazujete na sestavení (sestavení A), které odkazuje na jiné sestavení (sestavení B), musíte odkazovat na sestavení B, pokud:  
+ If you reference an assembly (Assembly A) which itself references another assembly (Assembly B), you need to reference Assembly B if:  
   
-- Typ ze sestavení A dědí z typu nebo implementuje rozhraní ze sestavení B.  
+- A type from Assembly A inherits from a type or implements an interface from Assembly B.  
   
-- Je vyvoláno pole, vlastnost, událost nebo metoda, které mají návratový typ nebo typ parametru ze sestavení B.  
+- A field, property, event, or method that has a return type or parameter type from Assembly B is invoked.  
   
- Pomocí [-LIBPATH](../../../visual-basic/reference/command-line-compiler/libpath.md) Určete adresář, ve kterém je umístěn jeden nebo více odkazů na sestavení.  
+ Use [-libpath](../../../visual-basic/reference/command-line-compiler/libpath.md) to specify the directory in which one or more of your assembly references is located.  
   
- Aby kompilátor rozpoznal typ v sestavení (ne v modulu), musí být vynucen přeložit typ. Jedním z příkladů toho, jak to lze provést, je definovat instanci typu. Další způsoby jsou k dispozici pro překlad názvů typů v sestavení pro kompilátor. Například Pokud převezmete z typu v sestavení, název typu je poté pro kompilátor znám.  
+ For the compiler to recognize a type in an assembly (not a module), it must be forced to resolve the type. One example of how you can do this is to define an instance of the type. Other ways are available to resolve type names in an assembly for the compiler. For example, if you inherit from a type in an assembly, the type name then becomes known to the compiler.  
   
- Ve výchozím nastavení se používá soubor odezvy Vbc. rsp, který odkazuje na běžně používaná .NET Framework sestavení. Pokud nechcete, aby kompilátor používal Vbc. rsp, použijte `-noconfig`.  
+ The Vbc.rsp response file, which references commonly used .NET Framework assemblies, is used by default. Use `-noconfig` if you do not want the compiler to use Vbc.rsp.  
   
- Krátká forma `-reference` je `/r`.  
+ The short form of `-reference` is `/r`.  
   
 ## <a name="example"></a>Příklad  
- Následující příkaz zkompiluje zdrojový soubor `Input.vb` a referenční sestavení z `Metad1.dll` a `Metad2.dll` k výrobě `Out.exe`.  
+ The following command compiles source file `Input.vb` and reference assemblies from `Metad1.dll` and `Metad2.dll` to produce `Out.exe`.  
   
 ```console
 vbc -reference:metad1.dll,metad2.dll -out:out.exe input.vb  
@@ -63,8 +63,8 @@ vbc -reference:metad1.dll,metad2.dll -out:out.exe input.vb
   
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
 - [-noconfig](../../../visual-basic/reference/command-line-compiler/noconfig.md)
-- [-Target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)
+- [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)
 - [Public](../../../visual-basic/language-reference/modifiers/public.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

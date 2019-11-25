@@ -1,5 +1,5 @@
 ---
-title: Manipulace se soubory pomocí metod .NET Framework (Visual Basic)
+title: Práce se soubory pomocí metod rozhraní .NET Framework
 ms.date: 07/20/2015
 helpviewer_keywords:
 - I/O [Visual Basic], walkthroughs
@@ -15,142 +15,142 @@ helpviewer_keywords:
 - text files [Visual Basic], reading
 - I/O [Visual Basic], reading text from files
 ms.assetid: 7d2109eb-f98a-4389-b43d-30f384aaa7d5
-ms.openlocfilehash: fc02b795834dba4a777dc78f4c8179238ac593af
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 02cdbcc59e8817ff4ec06c2f78f835cad77b10f2
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582481"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74333786"
 ---
 # <a name="walkthrough-manipulating-files-by-using-net-framework-methods-visual-basic"></a>Návod: Manipulace se soubory pomocí metod rozhraní .NET Framework (Visual Basic)
 
-Tento názorný postup ukazuje, jak otevřít a číst soubor pomocí třídy <xref:System.IO.StreamReader>, zkontrolujte, zda je k souboru přístup, vyhledejte řetězec v souboru, který je čten s instancí třídy <xref:System.IO.StreamReader> a zapište do souboru pomocí třídy <xref:System.IO.StreamWriter>.
+This walkthrough demonstrates how to open and read a file using the <xref:System.IO.StreamReader> class, check to see if a file is being accessed, search for a string within a file read with an instance of the <xref:System.IO.StreamReader> class, and write to a file using the <xref:System.IO.StreamWriter> class.
 
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]
 
-## <a name="creating-the-application"></a>Vytvoření aplikace
+## <a name="creating-the-application"></a>Creating the Application
 
-Spusťte aplikaci Visual Studio a spusťte projekt vytvořením formuláře, který uživatel může použít k zápisu do určeného souboru.
+Start Visual Studio and begin the project by creating a form that the user can use to write to the designated file.
 
 ### <a name="to-create-the-project"></a>Vytvoření projektu
 
-1. V nabídce **soubor** vyberte **Nový projekt**.
+1. On the **File** menu, select **New Project**.
 
-2. V podokně **Nový projekt** klikněte na položku **aplikace systému Windows**.
+2. In the **New Project** pane, click **Windows Application**.
 
-3. Do pole **název** zadejte `MyDiary` a klikněte na **OK**.
+3. In the **Name** box type `MyDiary` and click **OK**.
 
-     Visual Studio přidá projekt do **Průzkumník řešení**a otevře se **Návrhář formulářů** .
+     Visual Studio adds the project to **Solution Explorer**, and the **Windows Forms Designer** opens.
 
-4. Do formuláře přidejte ovládací prvky v následující tabulce a nastavte odpovídající hodnoty jejich vlastností.
+4. Add the controls in the following table to the form and set the corresponding values for their properties.
 
-|**Předmětů**|**Vlastnosti**|**Hodnota**|
+|**Object**|**Vlastnosti**|**Hodnota**|
 |---|---|---|
-|<xref:System.Windows.Forms.Button>|**Jméno**<br /><br /> **Text**|`Submit`<br /><br /> **Odeslat položku**|
-|<xref:System.Windows.Forms.Button>|**Jméno**<br /><br /> **Text**|`Clear`<br /><br /> **Vymazat položku**|
-|<xref:System.Windows.Forms.TextBox>|**Jméno**<br /><br /> **Text**<br /><br /> **Víceřádkový**|`Entry`<br /><br /> **Zadejte prosím něco.**<br /><br /> `False`|
+|<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **Text**|`Submit`<br /><br /> **Submit Entry**|
+|<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **Text**|`Clear`<br /><br /> **Clear Entry**|
+|<xref:System.Windows.Forms.TextBox>|**Name**<br /><br /> **Text**<br /><br /> **Multiline**|`Entry`<br /><br /> **Please enter something.**<br /><br /> `False`|
 
-## <a name="writing-to-the-file"></a>Zápis do souboru
+## <a name="writing-to-the-file"></a>Writing to the File
 
-Chcete-li přidat možnost zapisovat do souboru přes aplikaci, použijte třídu <xref:System.IO.StreamWriter>. <xref:System.IO.StreamWriter> je navržen pro výstup znaku v konkrétním kódování, zatímco <xref:System.IO.Stream> třída je navržena pro bajtový vstup a výstup. Pro zápis řádků informací do standardního textového souboru použijte <xref:System.IO.StreamWriter>. Další informace o třídě <xref:System.IO.StreamWriter> naleznete v tématu <xref:System.IO.StreamWriter>.
+To add the ability to write to a file via the application, use the <xref:System.IO.StreamWriter> class. <xref:System.IO.StreamWriter> is designed for character output in a particular encoding, whereas the <xref:System.IO.Stream> class is designed for byte input and output. Use <xref:System.IO.StreamWriter> for writing lines of information to a standard text file. For more information on the <xref:System.IO.StreamWriter> class, see <xref:System.IO.StreamWriter>.
 
-### <a name="to-add-writing-functionality"></a>Přidání funkce zápisu
+### <a name="to-add-writing-functionality"></a>To add writing functionality
 
-1. V nabídce **zobrazení** vyberte **kód** a otevřete Editor kódu.
+1. From the **View** menu, choose **Code** to open the Code Editor.
 
-2. Vzhledem k tomu, že aplikace odkazuje na obor názvů <xref:System.IO>, přidejte následující příkazy na začátek kódu před deklaraci třídy pro formulář, který začíná `Public Class Form1`.
+2. Because the application references the <xref:System.IO> namespace, add the following statements at the very beginning of your code, before the class declaration for the form, which begins `Public Class Form1`.
 
      [!code-vb[VbVbcnMyFileSystem#35](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#35)]
 
-     Před zápisem do souboru je nutné vytvořit instanci třídy <xref:System.IO.StreamWriter>.
+     Before writing to the file, you must create an instance of a <xref:System.IO.StreamWriter> class.
 
-3. V nabídce **zobrazení** vyberte možnost **Návrhář** a vraťte se k **Návrhář formulářů**. Dvojím kliknutím na tlačítko `Submit` vytvořte obslužnou rutinu události <xref:System.Windows.Forms.Control.Click> pro tlačítko a poté přidejte následující kód.
+3. From the **View** menu, choose **Designer** to return to the **Windows Forms Designer**. Double-click the `Submit` button to create a <xref:System.Windows.Forms.Control.Click> event handler for the button, and then add the following code.
 
      [!code-vb[VbVbcnMyFileSystem#36](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#36)]
 
 > [!NOTE]
-> Integrované vývojové prostředí (IDE) sady Visual Studio se vrátí do editoru kódu a umístí kurzor do obslužné rutiny události, kde byste měli kód přidat.
+> The Visual Studio Integrated Development Environment (IDE) will return to the Code Editor and position the insertion point within the event handler where you should add the code.
 
-1. Chcete-li zapisovat do souboru, použijte metodu <xref:System.IO.StreamWriter.Write%2A> třídy <xref:System.IO.StreamWriter>. Následující kód přidejte přímo po `Dim fw As StreamWriter`. Nemusíte se obávat, že výjimka bude vyvolána, pokud soubor nebyl nalezen, protože bude vytvořen, pokud ještě neexistuje.
+1. To write to the file, use the <xref:System.IO.StreamWriter.Write%2A> method of the <xref:System.IO.StreamWriter> class. Add the following code directly after `Dim fw As StreamWriter`. You do not need to worry that an exception will be thrown if the file is not found, because it will be created if it does not already exist.
 
      [!code-vb[VbVbcnMyFileSystem#37](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#37)]
 
-2. Ujistěte se, že uživatel nemůže odeslat prázdnou položku přidáním následujícího kódu přímo po `Dim ReadString As String`.
+2. Make sure that the user cannot submit a blank entry by adding the following code directly after `Dim ReadString As String`.
 
      [!code-vb[VbVbcnMyFileSystem#38](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#38)]
 
-3. Vzhledem k tomu, že se jedná o Diary, bude uživatel chtít přiřadit datum ke každé položce. Po `fw = New StreamWriter("C:\MyDiary.txt", True)` vložte následující kód, který nastaví proměnnou `Today` na aktuální datum.
+3. Because this is a diary, the user will want to assign a date to each entry. Insert the following code after `fw = New StreamWriter("C:\MyDiary.txt", True)` to set the variable `Today` to the current date.
 
      [!code-vb[VbVbcnMyFileSystem#39](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#39)]
 
-4. Nakonec připojte kód pro vymazání <xref:System.Windows.Forms.TextBox>. Do události <xref:System.Windows.Forms.Control.Click> tlačítka `Clear` přidejte následující kód.
+4. Finally, attach code to clear the <xref:System.Windows.Forms.TextBox>. Add the following code to the `Clear` button's <xref:System.Windows.Forms.Control.Click> event.
 
      [!code-vb[VbVbcnMyFileSystem#40](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#40)]
 
-## <a name="adding-display-features-to-the-diary"></a>Přidání funkcí zobrazení do Diary
+## <a name="adding-display-features-to-the-diary"></a>Adding Display Features to the Diary
 
-V této části přidáte funkci, která zobrazí nejnovější položku v `DisplayEntry` <xref:System.Windows.Forms.TextBox>. Můžete také přidat <xref:System.Windows.Forms.ComboBox>, který zobrazuje různé položky a ze kterého může uživatel vybrat položku, která se zobrazí v <xref:System.Windows.Forms.TextBox> `DisplayEntry`. Instance třídy <xref:System.IO.StreamReader> čte z `MyDiary.txt`. Podobně jako třída <xref:System.IO.StreamWriter> je <xref:System.IO.StreamReader> určena pro použití s textovými soubory.
+In this section, you add a feature that displays the latest entry in the `DisplayEntry`<xref:System.Windows.Forms.TextBox>. You can also add a <xref:System.Windows.Forms.ComboBox> that displays various entries and from which a user can select an entry to display in the `DisplayEntry`<xref:System.Windows.Forms.TextBox>. An instance of the <xref:System.IO.StreamReader> class reads from `MyDiary.txt`. Like the <xref:System.IO.StreamWriter> class, <xref:System.IO.StreamReader> is intended for use with text files.
 
-Pro tuto část návodu přidejte ovládací prvky v následující tabulce do formuláře a nastavte odpovídající hodnoty jejich vlastností.
+For this section of the walkthrough, add the controls in the following table to the form and set the corresponding values for their properties.
 
 |Control|Vlastnosti|Hodnoty|
 |-------------|----------------|------------|
-|<xref:System.Windows.Forms.TextBox>|**Jméno**<br /><br /> **Zobrazeny**<br /><br /> **Hodnota**<br /><br /> **Víceřádkový**|`DisplayEntry`<br /><br /> `False`<br /><br /> `120,60`<br /><br /> `True`|
-|<xref:System.Windows.Forms.Button>|**Jméno**<br /><br /> **Text**|`Display`<br /><br /> **Otevřete**|
-|<xref:System.Windows.Forms.Button>|**Jméno**<br /><br /> **Text**|`GetEntries`<br /><br /> **Získat položky**|
-|<xref:System.Windows.Forms.ComboBox>|**Jméno**<br /><br /> **Text**<br /><br /> **Umožněn**|`PickEntries`<br /><br /> **Vybrat položku**<br /><br /> `False`|
+|<xref:System.Windows.Forms.TextBox>|**Name**<br /><br /> **Visible**<br /><br /> **Size**<br /><br /> **Multiline**|`DisplayEntry`<br /><br /> `False`<br /><br /> `120,60`<br /><br /> `True`|
+|<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **Text**|`Display`<br /><br /> **Display**|
+|<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **Text**|`GetEntries`<br /><br /> **Get Entries**|
+|<xref:System.Windows.Forms.ComboBox>|**Name**<br /><br /> **Text**<br /><br /> **Enabled**|`PickEntries`<br /><br /> **Select an Entry**<br /><br /> `False`|
 
-### <a name="to-populate-the-combo-box"></a>Naplnění pole se seznamem
+### <a name="to-populate-the-combo-box"></a>To populate the combo box
 
-1. @No__t_1 `PickEntries` slouží k zobrazení dat, na kterých uživatel každou položku odesílá, takže uživatel může vybrat položku z konkrétní datum. Vytvořte obslužnou rutinu události <xref:System.Windows.Forms.Control.Click> k tlačítku `GetEntries` a přidejte následující kód.
+1. The `PickEntries`<xref:System.Windows.Forms.ComboBox> is used to display the dates on which a user submits each entry, so the user can select an entry from a specific date. Create a <xref:System.Windows.Forms.Control.Click> event handler to the `GetEntries` button and add the following code.
 
      [!code-vb[VbVbcnMyFileSystem#41](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#41)]
 
-2. Chcete-li otestovat kód, stiskněte klávesu F5 pro zkompilování aplikace a pak klikněte na tlačítko **získat položky**. Kliknutím na šipku rozevíracího seznamu v <xref:System.Windows.Forms.ComboBox> zobrazíte data položky.
+2. To test your code, press F5 to compile the application, and then click **Get Entries**. Click the drop-down arrow in the <xref:System.Windows.Forms.ComboBox> to display the entry dates.
 
-### <a name="to-choose-and-display-individual-entries"></a>Výběr a zobrazení jednotlivých položek
+### <a name="to-choose-and-display-individual-entries"></a>To choose and display individual entries
 
-1. Vytvořte obslužnou rutinu události <xref:System.Windows.Forms.Control.Click> pro tlačítko `Display` a přidejte následující kód.
+1. Create a <xref:System.Windows.Forms.Control.Click> event handler for the `Display` button and add the following code.
 
      [!code-vb[VbVbcnMyFileSystem#42](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#42)]
 
-2. Chcete-li otestovat kód, stiskněte klávesu F5 pro zkompilování aplikace a pak odešlete položku. Klikněte na **získat položky**, vyberte položku z <xref:System.Windows.Forms.ComboBox> a pak klikněte na **Zobrazit**. Obsah vybrané položky se zobrazí v <xref:System.Windows.Forms.TextBox> `DisplayEntry`.
+2. To test your code, press F5 to compile the application, and then submit an entry. Click **Get Entries**, select an entry from the <xref:System.Windows.Forms.ComboBox>, and then click **Display**. The contents of the selected entry appear in the `DisplayEntry`<xref:System.Windows.Forms.TextBox>.
 
-## <a name="enabling-users-to-delete-or-modify-entries"></a>Povolení uživatelům odstraňovat nebo upravovat položky
+## <a name="enabling-users-to-delete-or-modify-entries"></a>Enabling Users to Delete or Modify Entries
 
-Nakonec můžete zahrnout další funkce, které umožní uživatelům odstranit nebo upravit položku pomocí `DeleteEntry` a `EditEntry`ch tlačítek. Obě tlačítka zůstanou zakázaná, pokud není zobrazená položka.
+Finally, you can include additional functionality enables users to delete or modify an entry by using `DeleteEntry` and `EditEntry` buttons. Both buttons remain disabled unless an entry is displayed.
 
-Do formuláře přidejte ovládací prvky v následující tabulce a nastavte odpovídající hodnoty jejich vlastností.
+Add the controls in the following table to the form and set the corresponding values for their properties.
 
 |Control|Vlastnosti|Hodnoty|
 |-------------|----------------|------------|
-|<xref:System.Windows.Forms.Button>|**Jméno**<br /><br /> **Text**<br /><br /> **Umožněn**|`DeleteEntry`<br /><br /> **Odstranit položku**<br /><br /> `False`|
-|<xref:System.Windows.Forms.Button>|**Jméno**<br /><br /> **Text**<br /><br /> **Umožněn**|`EditEntry`<br /><br /> **Upravit položku**<br /><br /> `False`|
-|<xref:System.Windows.Forms.Button>|**Jméno**<br /><br /> **Text**<br /><br /> **Umožněn**|`SubmitEdit`<br /><br /> **Odeslat úpravu**<br /><br /> `False`|
+|<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **Text**<br /><br /> **Enabled**|`DeleteEntry`<br /><br /> **Delete Entry**<br /><br /> `False`|
+|<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **Text**<br /><br /> **Enabled**|`EditEntry`<br /><br /> **Edit Entry**<br /><br /> `False`|
+|<xref:System.Windows.Forms.Button>|**Name**<br /><br /> **Text**<br /><br /> **Enabled**|`SubmitEdit`<br /><br /> **Submit Edit**<br /><br /> `False`|
 
-### <a name="to-enable-deletion-and-modification-of-entries"></a>Povolení odstranění a změny položek
+### <a name="to-enable-deletion-and-modification-of-entries"></a>To enable deletion and modification of entries
 
-1. Po `DisplayEntry.Text = ReadString` přidejte následující kód do události <xref:System.Windows.Forms.Control.Click> tlačítka `Display`.
+1. Add the following code to the `Display` button's <xref:System.Windows.Forms.Control.Click> event, after `DisplayEntry.Text = ReadString`.
 
      [!code-vb[VbVbcnMyFileSystem#43](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#43)]
 
-2. Vytvořte obslužnou rutinu události <xref:System.Windows.Forms.Control.Click> pro tlačítko `DeleteEntry` a přidejte následující kód.
+2. Create a <xref:System.Windows.Forms.Control.Click> event handler for the `DeleteEntry` button and add the following code.
 
      [!code-vb[VbVbcnMyFileSystem#44](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#44)]
 
-3. Když uživatel zobrazí položku, bude tlačítko `EditEntry` aktivní. Po `DisplayEntry.Text = ReadString` přidejte následující kód k události <xref:System.Windows.Forms.Control.Click> `Display` tlačítka.
+3. When a user displays an entry, the `EditEntry` button becomes enabled. Add the following code to the <xref:System.Windows.Forms.Control.Click> event of the `Display` button after `DisplayEntry.Text = ReadString`.
 
      [!code-vb[VbVbcnMyFileSystem#45](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#45)]
 
-4. Vytvořte obslužnou rutinu události <xref:System.Windows.Forms.Control.Click> pro tlačítko `EditEntry` a přidejte následující kód.
+4. Create a <xref:System.Windows.Forms.Control.Click> event handler for the `EditEntry` button and add the following code.
 
      [!code-vb[VbVbcnMyFileSystem#46](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#46)]
 
-5. Vytvořte obslužnou rutinu události <xref:System.Windows.Forms.Control.Click> pro tlačítko `SubmitEdit` a přidejte následující kód.
+5. Create a <xref:System.Windows.Forms.Control.Click> event handler for the `SubmitEdit` button and add the following code
 
      [!code-vb[VbVbcnMyFileSystem#47](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#47)]
 
-Chcete-li otestovat kód, stiskněte klávesu F5 pro zkompilování aplikace. Klikněte na **získat položky**, vyberte položku a pak klikněte na **Zobrazit**. Položka se zobrazí v <xref:System.Windows.Forms.TextBox> `DisplayEntry`. Klikněte na **Upravit položku**. Položka se zobrazí v <xref:System.Windows.Forms.TextBox> `Entry`. Upravte položku v `Entry` <xref:System.Windows.Forms.TextBox> a klikněte na **Odeslat úpravu**. Otevřete soubor `MyDiary.txt` a potvrďte tak opravu. Nyní vyberte položku a klikněte na položku **Odstranit položku**. Po potvrzení žádosti <xref:System.Windows.Forms.MessageBox> klikněte na tlačítko **OK**. Zavřete aplikaci a otevřete `MyDiary.txt` potvrďte odstranění.
+To test your code, press F5 to compile the application. Click **Get Entries**, select an entry, and then click **Display**. The entry appears in the `DisplayEntry`<xref:System.Windows.Forms.TextBox>. Click **Edit Entry**. The entry appears in the `Entry`<xref:System.Windows.Forms.TextBox>. Edit the entry in the `Entry`<xref:System.Windows.Forms.TextBox> and click **Submit Edit**. Open the `MyDiary.txt` file to confirm your correction. Now select an entry and click **Delete Entry**. When the <xref:System.Windows.Forms.MessageBox> requests confirmation, click **OK**. Close the application and open `MyDiary.txt` to confirm the deletion.
 
 ## <a name="see-also"></a>Viz také:
 

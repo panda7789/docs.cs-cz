@@ -1,28 +1,28 @@
 ---
-title: My.Computer.Clock – objekt (Visual Basic)
+title: My.Computer.Clock – objekt
 ms.date: 07/20/2015
 helpviewer_keywords:
 - My.Computer.Clock object
 ms.assetid: a362b270-8a1b-404a-95c8-516a60c607dd
-ms.openlocfilehash: 593f39d6d481d053a772193ffcb4b92bda654e47
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 25b177b21f874e65fbddb59f338662f5d55bc3e1
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62054494"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344085"
 ---
 # <a name="mycomputerclock-object"></a>My.Computer.Clock – objekt
-Poskytuje vlastnosti pro přístup k aktuálním místním časem a koordinovaný světový čas (ekvivalent greenwichský střední čas) ze systémových hodin.  
+Provides properties for accessing the current local time and Universal Coordinated Time (equivalent to Greenwich Mean Time) from the system clock.  
   
 ## <a name="remarks"></a>Poznámky  
- Informace o tom, metody a vlastnosti `My.Computer.Clock` objektu, najdete v článku <xref:Microsoft.VisualBasic.Devices.Clock>.  
+ For information about the methods and properties of the `My.Computer.Clock` object, see <xref:Microsoft.VisualBasic.Devices.Clock>.  
   
 ## <a name="requirements"></a>Požadavky  
  **Namespace:** <xref:Microsoft.VisualBasic.Devices>  
   
- **Třída:** <xref:Microsoft.VisualBasic.Devices.Clock>  
+ **Class:** <xref:Microsoft.VisualBasic.Devices.Clock>  
   
- **Sestavení:** Visual Basic Runtime Library (v souboru Microsoft.VisualBasic.dll)  
+ **Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)  
   
 ## <a name="see-also"></a>Viz také:
 

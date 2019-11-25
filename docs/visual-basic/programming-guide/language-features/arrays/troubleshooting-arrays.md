@@ -1,5 +1,5 @@
 ---
-title: Řešení potíží s poli (Visual Basic)
+title: Řešení potíží s poli
 ms.date: 07/20/2015
 helpviewer_keywords:
 - troubleshooting arrays
@@ -9,20 +9,20 @@ helpviewer_keywords:
 - arrays [Visual Basic], declaration errors
 - arrays [Visual Basic], troubleshooting
 ms.assetid: f4e971c7-c0a4-4ed7-a77a-8d71039f266f
-ms.openlocfilehash: 69d5294eacc59718adb1b0a226594d2cf69273f5
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.openlocfilehash: 3c50c68c2a39aa04cff2dd43b5dfde709aec290f
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64913468"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74349069"
 ---
 # <a name="troubleshooting-arrays-visual-basic"></a>Řešení potíží s poli (Visual Basic)
-Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout při práci s poli.  
+This page lists some common problems that can occur when working with arrays.  
   
-## <a name="compilation-errors-declaring-and-initializing-an-array"></a>Chyby při kompilaci deklarace a inicializace pole  
- Chyby při kompilaci mohou vyplývat z neporozumění pravidla pro deklarování, vytváření a inicializaci polí. Nejběžnější příčiny chyby jsou následující:  
+## <a name="compilation-errors-declaring-and-initializing-an-array"></a>Compilation Errors Declaring and Initializing an Array  
+ Compilation errors can arise from misunderstanding of the rules for declaring, creating, and initializing arrays. The most common causes of errors are the following:  
   
-- Zadávání [operátor New](../../../../visual-basic/language-reference/operators/new-operator.md) klauzule po zadání délky dimenzí v deklaraci proměnné pole. Následující řádky kódu zobrazit neplatná deklarace tohoto typu.  
+- Supplying a [New Operator](../../../../visual-basic/language-reference/operators/new-operator.md) clause after specifying dimension lengths in the array variable declaration. The following code lines show invalid declarations of this type.  
   
      `Dim INVALIDsingleDimByteArray(2) As Byte = New Byte()`  
   
@@ -30,15 +30,15 @@ Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout 
   
      `Dim INVALIDjaggedByteArray(1)() As Byte = New Byte()()`  
   
-- Určení délky dimenzí pro více než pole nejvyšší úrovně vícenásobného pole. Následující řádek kódu obsahuje neplatnou deklarací tohoto typu.  
+- Specifying dimension lengths for more than the top-level array of a jagged array. The following code line shows an invalid declaration of this type.  
   
      `Dim INVALIDjaggedByteArray(1)(1) As Byte`  
   
-- Vynechání `New` – klíčové slovo při zadávání hodnot prvků. Následující řádek kódu obsahuje neplatnou deklarací tohoto typu.  
+- Omitting the `New` keyword when specifying the element values. The following code line shows an invalid declaration of this type.  
   
      `Dim INVALIDoneDimShortArray() As Short = Short() {0, 1, 2, 3}`  
   
-- Zadávání `New` klauzule bez složených závorek (`{}`). Následující řádky kódu zobrazit neplatná deklarace tohoto typu.  
+- Supplying a `New` clause without braces (`{}`). The following code lines show invalid declarations of this type.  
   
      `Dim INVALIDsingleDimByteArray() As Byte = New Byte()`  
   
@@ -48,16 +48,16 @@ Tato stránka obsahuje některé běžné problémy, které se mohou vyskytnout 
   
      `Dim INVALIDtwoDimShortArray(,) As Short = New Short(1, 1)`  
   
-## <a name="accessing-an-array-out-of-bounds"></a>Přístup k poli mimo rozsah  
- Proces inicializace pole přiřadí horní a dolní mez každé dimenze. Každý přístup k elementu pole musíte zadat platný index nebo dolní index pro každou dimenzi. Pokud je jakýkoli index pod její dolní mez nebo nad horní mez <xref:System.IndexOutOfRangeException> dojde k výjimce. Kompilátor nemůže rozpoznat takové chyby, takže dojde k chybě za běhu.  
+## <a name="accessing-an-array-out-of-bounds"></a>Accessing an Array Out of Bounds  
+ The process of initializing an array assigns an upper bound and a lower bound to each dimension. Every access to an element of the array must specify a valid index, or subscript, for every dimension. If any index is below its lower bound or above its upper bound, an <xref:System.IndexOutOfRangeException> exception results. The compiler cannot detect such an error, so an error occurs at run time.  
   
-### <a name="determining-bounds"></a>Určení hranic  
- Pokud jiná komponenta předává pole do kódu, například jako argumentu procedury si nejste jisti velikost pole nebo délky jeho rozměrů. Vždy byste měli určit horní mez pro každou dimenzi pole před pokusem o přístup k žádné prvky. Pokud byl vytvořen pole některé prostředky než v jazyce Visual Basic `New` klauzule dolní mez může být něco jiného než 0 a je nejbezpečnější určit, že dolní mez.  
+### <a name="determining-bounds"></a>Determining Bounds  
+ If another component passes an array to your code, for example as a procedure argument, you do not know the size of that array or the lengths of its dimensions. You should always determine the upper bound for every dimension of an array before you attempt to access any elements. If the array has been created by some means other than a Visual Basic `New` clause, the lower bound might be something other than 0, and it is safest to determine that lower bound as well.  
   
-### <a name="specifying-the-dimension"></a>Určení dimenze  
- Při určování hranice vícerozměrného pole, zajistíme, jak specifikujete dimenze. `dimension` Parametry <xref:System.Array.GetLowerBound%2A> a <xref:System.Array.GetUpperBound%2A> metody jsou založeny na 0 při `Rank` parametrů jazyka Visual Basic <xref:Microsoft.VisualBasic.Information.LBound%2A> a <xref:Microsoft.VisualBasic.Information.UBound%2A> funkce jsou založené na 1.  
+### <a name="specifying-the-dimension"></a>Specifying the Dimension  
+ When determining the bounds of a multidimensional array, take care how you specify the dimension. The `dimension` parameters of the <xref:System.Array.GetLowerBound%2A> and <xref:System.Array.GetUpperBound%2A> methods are 0-based, while the `Rank` parameters of the Visual Basic <xref:Microsoft.VisualBasic.Information.LBound%2A> and <xref:Microsoft.VisualBasic.Information.UBound%2A> functions are 1-based.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md)
-- [Postupy: Inicializace proměnné pole v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)
+- [How to: Initialize an Array Variable in Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)

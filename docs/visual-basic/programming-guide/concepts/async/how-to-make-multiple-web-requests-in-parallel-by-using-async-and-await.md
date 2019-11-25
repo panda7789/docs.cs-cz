@@ -1,23 +1,23 @@
 ---
-title: 'Postupy: paralelní provádění více webových požadavků pomocí modifikátoru Async a operátoru Await (Visual Basic)'
+title: 'Postupy: Paralelní provádění vícenásobných webových dotazů pomocí modifikátoru Async a operátoru Await'
 ms.date: 07/20/2015
 ms.assetid: a894b99b-7cfd-4a38-adfb-20d24f986730
-ms.openlocfilehash: 9241a54b4b0d1a8871ef496d44e1e6db5581af7b
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 616efca79312883f17ba837d17a5ee9c97d15b34
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72583157"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346139"
 ---
-# <a name="how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await-visual-basic"></a>Postupy: paralelní provádění více webových požadavků pomocí modifikátoru Async a operátoru Await (Visual Basic)
+# <a name="how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await-visual-basic"></a>How to: Make Multiple Web Requests in Parallel by Using Async and Await (Visual Basic)
 
-V asynchronní metodě jsou úlohy spouštěny při jejich vytvoření. Operátor [await](../../../../visual-basic/language-reference/operators/await-operator.md) se aplikuje na úkol v místě v metodě, kde zpracování nemůže pokračovat, dokud se úloha nedokončí. Úkol se často očekává ihned po vytvoření, jak ukazuje následující příklad.
+In an async method, tasks are started when they’re created. The [Await](../../../../visual-basic/language-reference/operators/await-operator.md) operator is applied to the task at the point in the method where processing can’t continue until the task finishes. Often a task is awaited as soon as it’s created, as the following example shows.
 
 ```vb
 Dim result = Await someWebAccessMethodAsync(url)
 ```
 
-Můžete ale oddělit vytvoření úlohy z čekání na úkol, pokud má program další práci, která nezávisí na dokončení úkolu.
+However, you can separate creating the task from awaiting the task if your program has other work to accomplish that doesn’t depend on the completion of the task.
 
 ```vb
 ' The following line creates and starts the task.
@@ -32,32 +32,32 @@ Dim myTask = someWebAccessMethodAsync(url)
 Dim result = Await myTask
 ```
 
-Mezi zahájením úlohy a čekáním na ni můžete spustit další úlohy. Další úkoly jsou implicitně spouštěny paralelně, ale nejsou vytvořeny žádné další podprocesy.
+Between starting a task and awaiting it, you can start other tasks. The additional tasks implicitly run in parallel, but no additional threads are created.
 
-Následující program spustí tři asynchronní webové stahování a pak je očekává v pořadí, ve kterém jsou volány. Všimněte si, že při spuštění programu nejsou úlohy vždy dokončeny v pořadí, ve kterém byly vytvořeny a očekávány. Spouštějí se při jejich vytvoření a jedna nebo více úkolů může skončit předtím, než metoda dosáhne výrazů await.
+The following program starts three asynchronous web downloads and then awaits them in the order in which they’re called. Notice, when you run the program, that the tasks don’t always finish in the order in which they’re created and awaited. They start to run when they’re created, and one or more of the tasks might finish before the method reaches the await expressions.
 
 > [!NOTE]
-> Chcete-li dokončit tento projekt, musíte mít v počítači nainstalován systém Visual Studio 2012 nebo vyšší a .NET Framework 4,5 nebo novější.
+> To complete this project, you must have Visual Studio 2012 or higher and the .NET Framework 4.5 or higher installed on your computer.
 
-Další příklad, který spouští více úloh současně, naleznete v tématu [How to: Extending the Async návod pomocí Task. WhenAll (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md).
+For another example that starts multiple tasks at the same time, see [How to: Extend the Async Walkthrough by Using Task.WhenAll (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md).
 
-Kód pro tento příklad si můžete stáhnout z [ukázek kódu pro vývojáře](https://code.msdn.microsoft.com/Async-Make-Multiple-Web-49adb82e).
+You can download the code for this example from [Developer Code Samples](https://code.msdn.microsoft.com/Async-Make-Multiple-Web-49adb82e).
 
 ### <a name="to-set-up-the-project"></a>Vytvoření projektu
 
-1. Chcete-li nastavit aplikaci WPF, proveďte následující kroky. Podrobné pokyny k těmto krokům najdete v [návodu: přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md).
+1. To set up a WPF application, complete the following steps. You can find detailed instructions for these steps in [Walkthrough: Accessing the Web by Using Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md).
 
-    - Vytvořte aplikaci WPF, která obsahuje textové pole a tlačítko. Pojmenujte tlačítko `startButton` a pojmenujte textové pole `resultsTextBox`.
+    - Create a WPF application that contains a text box and a button. Name the button `startButton`, and name the text box `resultsTextBox`.
 
-    - Přidejte odkaz na <xref:System.Net.Http>.
+    - Add a reference for <xref:System.Net.Http>.
 
-    - V souboru MainWindow. XAML. vb přidejte příkaz `Imports` pro `System.Net.Http`.
+    - In the MainWindow.xaml.vb file, add an `Imports` statement for `System.Net.Http`.
 
 ### <a name="to-add-the-code"></a>Přidání kódu
 
-1. V okně návrh MainWindow. XAML dvakrát klikněte na tlačítko a vytvořte obslužnou rutinu události `startButton_Click` v souboru MainWindow. XAML. vb.
+1. In the design window, MainWindow.xaml, double-click the button to create the `startButton_Click` event handler in MainWindow.xaml.vb.
 
-2. Zkopírujte následující kód a vložte ho do textu `startButton_Click` v souboru MainWindow. XAML. vb.
+2. Copy the following code, and paste it into the body of `startButton_Click` in MainWindow.xaml.vb.
 
     ```vb
     resultsTextBox.Clear()
@@ -65,15 +65,15 @@ Kód pro tento příklad si můžete stáhnout z [ukázek kódu pro vývojáře]
     resultsTextBox.Text &= vbCrLf & "Control returned to button1_Click."
     ```
 
-     Kód volá asynchronní metodu, `CreateMultipleTasksAsync`, která řídí aplikaci.
+     The code calls an asynchronous method, `CreateMultipleTasksAsync`, which drives the application.
 
-3. Do projektu přidejte následující metody podpory:
+3. Add the following support methods to the project:
 
-    - `ProcessURLAsync` používá metodu <xref:System.Net.Http.HttpClient> ke stažení obsahu webu jako bajtového pole. Metoda podpory `ProcessURLAsync` pak zobrazí a vrátí délku pole.
+    - `ProcessURLAsync` uses an <xref:System.Net.Http.HttpClient> method to download the contents of a website as a byte array. The support method, `ProcessURLAsync` then displays and returns the length of the array.
 
-    - `DisplayResults` zobrazuje počet bajtů v bajtovém poli pro každou adresu URL. Toto zobrazení ukazuje, kdy se každý úkol dokončí stahováním.
+    - `DisplayResults` displays the number of bytes in the byte array for each URL. This display shows when each task has finished downloading.
 
-     Zkopírujte následující metody a vložte je po `startButton_Click` obslužné rutiny události v souboru MainWindow. XAML. vb.
+     Copy the following methods, and paste them after the `startButton_Click` event handler in MainWindow.xaml.vb.
 
     ```vb
     Private Async Function ProcessURLAsync(url As String, client As HttpClient) As Task(Of Integer)
@@ -95,17 +95,17 @@ Kód pro tento příklad si můžete stáhnout z [ukázek kódu pro vývojáře]
     End Sub
     ```
 
-4. Nakonec definujte metodu `CreateMultipleTasksAsync`, která provede následující kroky.
+4. Finally, define method `CreateMultipleTasksAsync`, which performs the following steps.
 
-    - Metoda deklaruje objekt `HttpClient`, který vyžaduje přístup k metodě <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> v `ProcessURLAsync`.
+    - The method declares an `HttpClient` object,which you need  to access method <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> in `ProcessURLAsync`.
 
-    - Metoda vytvoří a spustí tři úkoly typu <xref:System.Threading.Tasks.Task%601>, kde `TResult` je celé číslo. Po dokončení jednotlivých úloh `DisplayResults` zobrazí adresu URL úkolu a délku staženého obsahu. Vzhledem k tomu, že úlohy jsou spuštěny asynchronně, pořadí, ve kterém se výsledky zobrazují, se může lišit od pořadí, ve kterém byly deklarovány.
+    - The method creates and starts three tasks of type <xref:System.Threading.Tasks.Task%601>, where `TResult` is an integer. As each task finishes, `DisplayResults` displays the task's URL and the length of the downloaded contents. Because the tasks are running asynchronously, the order in which the results appear might differ from the order in which they were declared.
 
-    - Metoda čeká na dokončení každého úkolu. Každý operátor `Await` pozastaví provádění `CreateMultipleTasksAsync`, dokud není dokončen očekávaný úkol. Operátor také načítá návratovou hodnotu z volání `ProcessURLAsync` z každé dokončené úlohy.
+    - The method awaits the completion of each task. Each `Await` operator suspends execution of `CreateMultipleTasksAsync` until the awaited task is finished. The operator also retrieves the return value from the call to `ProcessURLAsync` from each completed task.
 
-    - Po dokončení úloh a načtení celočíselných hodnot metoda sečte délky webů a zobrazí výsledek.
+    - When the tasks have been completed and the integer values have been retrieved, the method sums the lengths of the websites and displays the result.
 
-     Zkopírujte následující metodu a vložte ji do svého řešení.
+     Copy the following method, and paste it into your solution.
 
     ```vb
     Private Async Function CreateMultipleTasksAsync() As Task
@@ -137,13 +137,13 @@ Kód pro tento příklad si můžete stáhnout z [ukázek kódu pro vývojáře]
     End Function
     ```
 
-5. Zvolte klávesu F5 ke spuštění programu a pak klikněte na tlačítko **Start** .
+5. Choose the F5 key to run the program, and then choose the **Start** button.
 
-     Spusťte program několikrát, abyste ověřili, že tři úkoly nejsou vždy dokončeny ve stejném pořadí a že pořadí, ve kterém jsou dokončeny, nemusí být nutně pořadí, ve kterém byly vytvořeny a očekávány.
+     Run the program several times to verify that the three tasks don’t always finish in the same order and that the order in which they finish isn't necessarily the order in which they’re created and awaited.
 
 ## <a name="example"></a>Příklad
 
-Následující kód obsahuje úplný příklad.
+The following code contains the full example.
 
 ```vb
 ' Add the following Imports statements, and add a reference for System.Net.Http.
@@ -207,6 +207,6 @@ End Class
 
 ## <a name="see-also"></a>Viz také:
 
-- [Návod: přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
-- [Asynchronní programování s modifikátorem Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
-- [Postupy: roztažení asynchronního návodu pomocí Task. WhenAll (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md)
+- [Walkthrough: Accessing the Web by Using Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
+- [Asynchronous Programming with Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
+- [How to: Extend the Async Walkthrough by Using Task.WhenAll (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md)

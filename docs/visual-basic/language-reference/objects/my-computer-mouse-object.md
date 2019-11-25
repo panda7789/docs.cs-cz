@@ -1,30 +1,30 @@
 ---
-title: My.Computer.Mouse – objekt (Visual Basic)
+title: My.Computer.Mouse – objekt
 ms.date: 07/20/2015
 helpviewer_keywords:
 - My.Computer.Mouse object
 ms.assetid: da473357-2120-47dd-bd42-c63d695157eb
-ms.openlocfilehash: bcf37eee9d3d05d11ff495aeb3ff0f737929bdde
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 98b87777cfc64807b6cf5b7aa6f0fdd5c7d42caa
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61751303"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347184"
 ---
 # <a name="mycomputermouse-object"></a>My.Computer.Mouse – objekt
-Poskytuje vlastnosti pro získání informací o formátu a konfigurace myši nainstalované na místním počítači.  
+Provides properties for getting information about the format and configuration of the mouse installed on the local computer.  
   
 ## <a name="remarks"></a>Poznámky  
- Informace o tom, metody a vlastnosti `My.Computer.Mouse` objektu, najdete v článku <xref:Microsoft.VisualBasic.Devices.Mouse>.  
+ For information about the methods and properties of the `My.Computer.Mouse` object, see <xref:Microsoft.VisualBasic.Devices.Mouse>.  
   
- Další informace najdete v tématu [přístup k myši](../../../visual-basic/developing-apps/programming/computer-resources/accessing-the-mouse.md).  
+ For more information, see [Accessing the Mouse](../../../visual-basic/developing-apps/programming/computer-resources/accessing-the-mouse.md).  
   
 ## <a name="requirements"></a>Požadavky  
  **Namespace:** <xref:Microsoft.VisualBasic.Devices>  
   
- **Třída:** <xref:Microsoft.VisualBasic.Devices.Mouse>  
+ **Class:** <xref:Microsoft.VisualBasic.Devices.Mouse>  
   
- **Sestavení:** Visual Basic Runtime Library (v souboru Microsoft.VisualBasic.dll)  
+ **Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)  
   
 ## <a name="see-also"></a>Viz také:
 

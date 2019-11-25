@@ -1,23 +1,23 @@
 ---
-title: 'Postupy: zápis dotazů na XML v oborech názvů (Visual Basic)'
+title: 'How to: Write Queries on XML in Namespaces'
 ms.date: 07/20/2015
 ms.assetid: 7d4131b5-3288-414f-b77c-b2edc2a1f465
-ms.openlocfilehash: 71e66791b41e26ea13f828ef6239a8db9a9365b0
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 496cf8daf5136e8aafff000312bbd730a5152e9f
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71835010"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344462"
 ---
-# <a name="how-to-write-queries-on-xml-in-namespaces-visual-basic"></a>Postupy: zápis dotazů na XML v oborech názvů (Visual Basic)
-Chcete-li zapsat dotaz na XML, který je v oboru názvů, je nutné použít objekty <xref:System.Xml.Linq.XName>, které mají správný obor názvů.  
+# <a name="how-to-write-queries-on-xml-in-namespaces-visual-basic"></a>How to: Write Queries on XML in Namespaces (Visual Basic)
+To write a query on XML that is in a namespace, you must use <xref:System.Xml.Linq.XName> objects that have the correct namespace.  
   
- V Visual Basic Nejběžnějším přístupem je definování globálního oboru názvů a pak použití literálů XML a vlastností XML, které používají globální obor názvů. Můžete definovat globální výchozí obor názvů. v takovém případě prvky v literálech XML budou ve výchozím nastavení v oboru názvů. Alternativně můžete definovat globální obor názvů s předponou a potom použít předponu podle požadavků v literálech XML a ve vlastnostech XML. Stejně jako u jiných forem XML nejsou atributy ve výchozím nastavení vždy v žádném oboru názvů.  
+ In Visual Basic, the most common approach is to define a global namespace, and then use XML literals and XML properties that use the global namespace. You can define a global default namespace, in which case elements in the XML literals will be in the namespace by default. Alternatively, you can define a global namespace with a prefix, and then use the prefix as required in the XML literals, and in XML properties. As with other forms of XML, attributes are always in no namespace by default.  
   
- První sada příkladů v tomto tématu ukazuje, jak vytvořit strom XML ve výchozím oboru názvů. Druhá sada ukazuje, jak vytvořit strom XML v oboru názvů s předponou.  
+ The first set of examples in this topic shows how to create an XML tree in a default namespace. The second set shows how to create an XML tree in a namespace with a prefix.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří strom XML, který je ve výchozím oboru názvů. Poté načte kolekci prvků.  
+ The following example creates an XML tree that is in a default namespace. It then retrieves a collection of elements.  
   
 ```vb  
 Imports <xmlns="http://www.adventure-works.com">  
@@ -43,7 +43,7 @@ Module Module1
 End Module  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ This example produces the following output:  
   
 ```console  
 1  
@@ -52,9 +52,9 @@ End Module
 ```  
   
 ## <a name="example"></a>Příklad  
- V Visual Basic však zápis dotazů ve stromu XML, který používá obor názvů s předponou, je poměrně jiný než dotazování stromu XML ve výchozím oboru názvů. Pro import oboru názvů s předponou se obvykle používá příkaz `Imports`. Pak použijte předponu v názvu elementu a atributu při vytváření stromu XML. Také použijte předponu při dotazování stromu XML pomocí vlastností XML.  
+ In Visual Basic, however, writing queries on an XML tree that uses a namespace with a prefix is quite different from querying an XML tree in a default namespace. Typically you use the `Imports` statement to import the namespace with a prefix. You then use the prefix in the element and attribute names when you construct the XML tree. You also use the prefix when querying an XML tree using XML properties.  
   
- Následující příklad vytvoří strom XML, který je v oboru názvů s předponou. Poté načte kolekci prvků.  
+ The following example creates an XML tree that is in a namespace with a prefix. It then retrieves a collection of elements.  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  
@@ -80,7 +80,7 @@ Module Module1
 End Module  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ This example produces the following output:  
   
 ```console  
 1  
@@ -90,4 +90,4 @@ End Module
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled oborů názvů (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md)
+- [Namespaces Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md)

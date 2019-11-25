@@ -1,18 +1,18 @@
 ---
-title: Reflexe (Visual Basic)
+title: Reflexe
 ms.date: 07/20/2015
 ms.assetid: d991bc0f-d16a-4ac5-9351-70e5c5b9891b
-ms.openlocfilehash: 6d1206d84dec4202a7dad8f03c3d88c8a97ff5ba
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 28f33c88f7aaaf51938a7d27fd2218a97b628acd
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70972122"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74349271"
 ---
-# <a name="reflection-visual-basic"></a>Reflexe (Visual Basic)
-Reflexe poskytuje objekty ( <xref:System.Type>typu), které popisují sestavení, moduly a typy. Můžete použít reflexi k dynamickému vytvoření instance typu, svázání typu s existujícím objektem nebo získat typ z existujícího objektu a vyvolat jeho metody nebo získat přístup k jeho polím a vlastnostem. Pokud používáte atributy v kódu, reflexe vám umožní přístup k nim. Další informace najdete v tématu [atributy](../../../standard/attributes/index.md).  
+# <a name="reflection-visual-basic"></a>Reflection (Visual Basic)
+Reflection provides objects (of type <xref:System.Type>) that describe assemblies, modules and types. You can use reflection to dynamically create an instance of a type, bind the type to an existing object, or get the type from an existing object and invoke its methods or access its fields and properties. If you are using attributes in your code, reflection enables you to access them. For more information, see [Attributes](../../../standard/attributes/index.md).  
   
- Tady je jednoduchý příklad reflexe pomocí statické metody `GetType` – zděděné všemi typy `Object` ze základní třídy – pro získání typu proměnné:  
+ Here's a simple example of reflection using the static method `GetType` - inherited by all types from the `Object` base class - to obtain the type of a variable:  
   
 ```vb  
 ' Using GetType to obtain type information:  
@@ -21,11 +21,11 @@ Dim type As System.Type = i.GetType()
 System.Console.WriteLine(type)  
 ```  
   
- Výstup je:  
+ The output is:  
   
  `System.Int32`  
   
- Následující příklad používá reflexi k získání úplného názvu načteného sestavení.  
+ The following example uses reflection to obtain the full name of the loaded assembly.  
   
 ```vb  
 ' Using Reflection to get information from an Assembly:  
@@ -33,20 +33,20 @@ Dim info As System.Reflection.Assembly = GetType(System.Int32).Assembly
 System.Console.WriteLine(info)  
 ```  
   
- Výstup je:  
+ The output is:  
   
  `mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089`  
   
-## <a name="reflection-overview"></a>Přehled reflexe  
- Reflexe je užitečná v následujících situacích:  
+## <a name="reflection-overview"></a>Reflection Overview  
+ Reflection is useful in the following situations:  
   
-- Pokud budete mít přístup k atributům v metadatech vašeho programu. Další informace najdete v tématu [načítání informací uložených v atributech](../../../standard/attributes/retrieving-information-stored-in-attributes.md).  
+- When you have to access attributes in your program's metadata. For more information, see [Retrieving Information Stored in Attributes](../../../standard/attributes/retrieving-information-stored-in-attributes.md).  
   
-- Pro zkoumání a vytváření instancí typů v sestavení.  
+- For examining and instantiating types in an assembly.  
   
-- Pro vytváření nových typů za běhu. Použijte třídy v <xref:System.Reflection.Emit>.  
+- For building new types at runtime. Use classes in <xref:System.Reflection.Emit>.  
   
-- Pro provádění pozdní vazby získáte přístup k metodám typů vytvořeným v době běhu. Viz téma [Dynamické načítání a používání typů](../../../framework/reflection-and-codedom/dynamically-loading-and-using-types.md).  
+- For performing late binding, accessing methods on types created at run time. See the topic [Dynamically Loading and Using Types](../../../framework/reflection-and-codedom/dynamically-loading-and-using-types.md).  
   
 ## <a name="related-sections"></a>Související oddíly  
  Další informace:  
@@ -63,5 +63,5 @@ System.Console.WriteLine(info)
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním Visual Basic](../../../visual-basic/programming-guide/index.md)
+- [Visual Basic Programming Guide](../../../visual-basic/programming-guide/index.md)
 - [Sestavení v .NET](../../../standard/assembly/index.md)

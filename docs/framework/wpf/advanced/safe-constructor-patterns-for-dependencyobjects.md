@@ -6,22 +6,22 @@ helpviewer_keywords:
 - dependency objects [WPF], constructor patterns
 - FXCop tool [WPF]
 ms.assetid: f704b81c-449a-47a4-ace1-9332e3cc6d60
-ms.openlocfilehash: fce17979fbd43df0496f972cac525fd79dcbfe32
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 66e380a9428395c772d0dcfe45a995374774aec6
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991818"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283829"
 ---
 # <a name="safe-constructor-patterns-for-dependencyobjects"></a>Zabezpečené vzory konstruktoru pro DependencyObjects
-Obecně konstruktory třídy by neměly volat zpětná volání, jako jsou virtuální metody nebo delegáti, protože konstruktory lze volat jako základní inicializaci konstruktorů pro odvozenou třídu. Vstup do virtuální sítě může být proveden v neúplném stavu inicializace libovolného daného objektu. Systém vlastností však volá a zpřístupňuje zpětná volání interně jako součást systému vlastností závislosti. Jednoduchá operace jako nastavení hodnoty vlastnosti závislosti s <xref:System.Windows.DependencyObject.SetValue%2A> voláním potenciálně zahrnuje zpětné volání někde v rámci určení. Z tohoto důvodu byste měli být opatrní při nastavování hodnot vlastností závislosti v těle konstruktoru, což může být problematické, pokud je typ použit jako základní třída. Existuje konkrétní vzor pro implementaci <xref:System.Windows.DependencyObject> konstruktorů, které zabraňují konkrétním problémům se stavy vlastností závislosti a podpostupům zpětného volání, která jsou popsána zde.  
+Obecně konstruktory třídy by neměly volat zpětná volání, jako jsou virtuální metody nebo delegáti, protože konstruktory lze volat jako základní inicializaci konstruktorů pro odvozenou třídu. Vstup do virtuální sítě může být proveden v neúplném stavu inicializace libovolného daného objektu. Systém vlastností však volá a zpřístupňuje zpětná volání interně jako součást systému vlastností závislosti. Jednoduchá operace jako nastavení hodnoty vlastnosti závislosti s <xref:System.Windows.DependencyObject.SetValue%2A> volání potenciálně zahrnuje zpětné volání někde v rámci určení. Z tohoto důvodu byste měli být opatrní při nastavování hodnot vlastností závislosti v těle konstruktoru, což může být problematické, pokud je typ použit jako základní třída. Existuje konkrétní vzor pro implementaci <xref:System.Windows.DependencyObject> konstruktorů, které zabraňují konkrétním problémům se stavy vlastností závislosti a podpostupům zpětného volání, která jsou popsána zde.  
 
 <a name="Property_System_Virtual_Methods"></a>   
 ## <a name="property-system-virtual-methods"></a>Virtuální metody systému vlastností  
- Následující virtuální metody nebo zpětná volání jsou <xref:System.Windows.DependencyObject.SetValue%2A> potenciálně volány během výpočtů volání, které nastaví hodnotu vlastnosti závislosti: <xref:System.Windows.ValidateValueCallback>, <xref:System.Windows.PropertyChangedCallback>, <xref:System.Windows.CoerceValueCallback>, <xref:System.Windows.DependencyObject.OnPropertyChanged%2A>. Každá z těchto virtuálních metod nebo zpětných volání slouží k určitému účelu při rozšiřování univerzálnosti [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vlastností systému vlastností a závislostí. Další informace o tom, jak tyto virtuální funkce použít k přizpůsobení hodnoty vlastnosti, najdete v tématu [zpětná volání vlastností závislosti a ověřování](dependency-property-callbacks-and-validation.md).  
+ Následující virtuální metody nebo zpětná volání jsou potenciálně volány během výpočtů <xref:System.Windows.DependencyObject.SetValue%2A> volání, které nastaví hodnotu vlastnosti závislosti: <xref:System.Windows.ValidateValueCallback>, <xref:System.Windows.PropertyChangedCallback>, <xref:System.Windows.CoerceValueCallback>, <xref:System.Windows.DependencyObject.OnPropertyChanged%2A>. Každá z těchto virtuálních metod nebo zpětných volání slouží k určitému účelu při rozšiřování univerzálnosti vlastností systému vlastností [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] a závislostí. Další informace o tom, jak tyto virtuální funkce použít k přizpůsobení hodnoty vlastnosti, najdete v tématu [zpětná volání vlastností závislosti a ověřování](dependency-property-callbacks-and-validation.md).  
   
-### <a name="fxcop-rule-enforcement-vs-property-system-virtuals"></a>Vynucování pravidel FXCop vs. Virtuální systémy vlastností  
- Použijete-li nástroj Microsoft FXCop jako součást procesu sestavení a buď Odvozujete z určitých [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] tříd rozhraní, které volají základní konstruktor, nebo implementujete vlastní vlastnosti závislosti na odvozených třídách, může dojít ke konkrétnímu Porušení pravidla FXCop. Řetězec názvu pro toto porušení je:  
+### <a name="fxcop-rule-enforcement-vs-property-system-virtuals"></a>Vynucení pravidel FXCop vs. systémové virtuální systémy vlastností  
+ Použijete-li nástroj Microsoft FXCop jako součást procesu sestavení a buď Odvozujete z určitých tříd [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Framework, které volají základní konstruktor, nebo implementujte své vlastní vlastnosti závislosti na odvozených třídách, může dojít ke konkrétnímu porušení pravidla FXCop. Řetězec názvu pro toto porušení je:  
   
  `DoNotCallOverridableMethodsInConstructors`  
   
@@ -60,7 +60,7 @@ public class MyClass : DependencyObject
 }  
 ```  
   
- Když volá `new MyClass(objectvalue)`kód aplikace, volá konstruktor bez parametrů a konstruktory základní třídy. Pak nastaví `Property1 = object1`, který volá virtuální metodu `OnPropertyChanged` na vlastnící `MyClass`. <xref:System.Windows.DependencyObject>  Přepsání odkazuje na `_myList`, které ještě nebylo inicializováno.  
+ Když kód aplikace volá `new MyClass(objectvalue)`, volá konstruktor bez parametrů a konstruktory základní třídy. Pak nastaví `Property1 = object1`, která volá virtuální metodu `OnPropertyChanged` na vlastnící `MyClass` <xref:System.Windows.DependencyObject>.  Přepsání odkazuje na `_myList`, které ještě nebyly inicializovány.  
   
  Jedním ze způsobů, jak se těmto problémům vyhnout, je zajistit, že zpětná volání používají pouze jiné vlastnosti závislosti a že každá taková vlastnost závislosti má jako součást svých registrovaných metadat výchozí hodnotu.  
   
@@ -94,9 +94,9 @@ public MyClass : SomeBaseClass {
 ```  
   
 #### <a name="non-default-convenience-constructors-which-do-match-base-signatures"></a>Nevýchozí (pohodlí) konstruktory, které odpovídají základním podpisům  
- Namísto volání základního konstruktoru se stejným Parametrizace znovu zavolejte vlastní konstruktor bez parametrů. Nevolejte základní inicializátor; místo toho byste měli `this()`volat. Pak znovu vytvořte původní chování konstruktoru pomocí předaných parametrů jako hodnot pro nastavení příslušných vlastností. V dokumentaci k základnímu konstruktoru použijte pokyny k určení vlastností, které jsou určeny k nastavení pro konkrétní parametry:  
+ Namísto volání základního konstruktoru se stejným Parametrizace znovu zavolejte vlastní konstruktor bez parametrů. Nevolejte základní inicializátor; místo toho byste měli volat `this()`. Pak znovu vytvořte původní chování konstruktoru pomocí předaných parametrů jako hodnot pro nastavení příslušných vlastností. V dokumentaci k základnímu konstruktoru použijte pokyny k určení vlastností, které jsou určeny k nastavení pro konkrétní parametry:  
   
-```  
+```csharp  
 public MyClass : SomeBaseClass {  
     public MyClass(object toSetProperty1) : this() {  
         // Class initialization NOT done by default.  
@@ -110,7 +110,7 @@ public MyClass : SomeBaseClass {
  V případech, kde má základní typ více signatur, je nutné záměrně porovnat všechny možné podpisy s implementací konstruktoru vlastní, která používá doporučený vzor volání konstruktoru bez parametrů třídy před dalším nastavením. vlastnosti.  
   
 #### <a name="setting-dependency-properties-with-setvalue"></a>Nastavení vlastností závislosti pomocí NastavitHodnotu  
- Tyto stejné vzory platí v případě, že nastavujete vlastnost, která nemá obálku pro usnadnění nastavení vlastností, a nastavíte hodnoty <xref:System.Windows.DependencyObject.SetValue%2A>pomocí. Volání <xref:System.Windows.DependencyObject.SetValue%2A> tohoto konstruktoru Pass by měla také volat konstruktor bez parametrů třídy pro inicializaci.  
+ Tyto stejné vzory platí v případě, že nastavujete vlastnost, která nemá obálku pro usnadnění nastavení vlastností, a nastavíte hodnoty pomocí <xref:System.Windows.DependencyObject.SetValue%2A>. Vaše volání <xref:System.Windows.DependencyObject.SetValue%2A>, která přecházejí do parametrů konstruktoru, by měla také volat konstruktor bez parametrů třídy pro inicializaci.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -1,60 +1,60 @@
 ---
-title: Rozdíly mezi stínováním a přepsáním (Visual Basic)
+title: Rozdíly mezi stínováním a přepsáním
 ms.date: 07/20/2015
 helpviewer_keywords:
 - shadowing, vs. overriding
 - overriding, vs. shadowing
 ms.assetid: 2d014a0b-7630-407d-8f4e-24bd87987923
-ms.openlocfilehash: 8fcf43040e9cbbcb2a59b1e1cf8c1f58951d5d87
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8d1ebdcd0a23dff69a7acca22268c03e30ec06d9
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64610466"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345420"
 ---
 # <a name="differences-between-shadowing-and-overriding-visual-basic"></a>Rozdíly mezi stínováním a přepsáním (Visual Basic)
-Když definujete třídu, která dědí ze základní třídy, můžete někdy chtít znovu definovat jeden nebo více prvků základní třídy v odvozené třídě. Stínováním a přepsáním jsou k dispozici pro tento účel.  
+When you define a class that inherits from a base class, you sometimes want to redefine one or more of the base class elements in the derived class. Shadowing and overriding are both available for this purpose.  
   
 ## <a name="comparison"></a>Srovnání  
- Stínováním a přepsáním se oba používají při odvozená třída dědí ze základní třídy a obě znovu definovat jeden element deklarovaný s jiným. Ale existují významné rozdíly mezi nimi.  
+ Shadowing and overriding are both used when a derived class inherits from a base class, and both redefine one declared element with another. But there are significant differences between the two.  
   
- Následující tabulka porovnává stínový provoz pomocí přepsání.  
+ The following table compares shadowing with overriding.  
   
 ||||  
 |---|---|---|  
-|Porovnání|Stínování|Přepsání|  
-|Účel|Chrání proti následné změny základní třídy, která představuje člena, které jsou již definovány v odvozené třídě|Dosahuje jinou implementaci procedury nebo vlastnost se stejnou volací sekvence definování polymorfismu<sup>1</sup>|  
-|Předefinované – element|Některé deklarovaný typ elementu|Pouze procedury (`Function`, `Sub`, nebo `Operator`) nebo vlastnost|  
-|Element, nově definují obor|Některé deklarovaný typ elementu|Pouze procedura nebo vlastnost s identické volací sekvence<sup>1</sup>|  
-|Úroveň přístupu, nově definují obor – element|Žádné úrovně přístupu|Nelze změnit úroveň přístupu přepsaný prvek|  
-|Hlediska čitelnosti a zapisovatelnosti z elementu, nově definují obor|Libovolná kombinace|Nelze změnit čitelnosti a zapisovatelnosti přepsané vlastnosti|  
-|Možnost ovládat, nově definují obor|Základní třída prvku nelze vynutit nebo zakázat stínování|Můžete určit základní třída prvku `MustOverride`, `NotOverridable`, nebo `Overridable`|  
-|Využití – klíčové slovo|`Shadows` doporučení v odvozené třídě; `Shadows` předpokládá, že pokud ani jedno `Shadows` ani `Overrides` zadané<sup>2</sup>|`Overridable` nebo `MustOverride` vyžaduje v základní třídě; `Overrides` potřebné v odvozené třídě|  
-|Dědičnost třídy odvozené z odvozené třídy, nově definují obor – element|Kontrastními element dědí další odvozené třídy; Stínovaný stále skrytý element<sup>3</sup>|Přepsání element dědí další odvozené třídy; přepsaný prvek stále přepsat.|  
+|Point of comparison|Stínování|Overriding|  
+|Účel|Protects against a subsequent base-class modification that introduces a member you have already defined in your derived class|Achieves polymorphism by defining a different implementation of a procedure or property with the same calling sequence<sup>1</sup>|  
+|Redefined element|Any declared element type|Only a procedure (`Function`, `Sub`, or `Operator`) or property|  
+|Redefining element|Any declared element type|Only a procedure or property with the identical calling sequence<sup>1</sup>|  
+|Access level of redefining element|Any access level|Cannot change access level of overridden element|  
+|Readability and writability of redefining element|Any combination|Cannot change readability or writability of overridden property|  
+|Control over redefining|Base class element cannot enforce or prohibit shadowing|Base class element can specify `MustOverride`, `NotOverridable`, or `Overridable`|  
+|Keyword usage|`Shadows` recommended in derived class; `Shadows` assumed if neither `Shadows` nor `Overrides` specified<sup>2</sup>|`Overridable` or `MustOverride` required in base class; `Overrides` required in derived class|  
+|Inheritance of redefining element by classes deriving from your derived class|Shadowing element inherited by further derived classes; shadowed element still hidden<sup>3</sup>|Overriding element inherited by further derived classes; overridden element still overridden|  
   
- <sup>1</sup> *volání pořadí* se skládá z typ elementu (`Function`, `Sub`, `Operator`, nebo `Property`), pojmenujte, seznam parametrů a návratový typ. Nejde přepsat procedura se vlastnost nebo naopak. Nejde přepsat jeden druh procedury (`Function`, `Sub`, nebo `Operator`) pomocí jiného druhu.  
+ <sup>1</sup> The *calling sequence* consists of the element type (`Function`, `Sub`, `Operator`, or `Property`), name, parameter list, and return type. You cannot override a procedure with a property, or the other way around. You cannot override one kind of procedure (`Function`, `Sub`, or `Operator`) with another kind.  
   
- <sup>2</sup> Pokud nezadáte buď `Shadows` nebo `Overrides`, kompilátor vyvolá upozornění můžete být jisti, jaký druh nová definice, kterou chcete použít. Pokud budete toto upozornění ignorovat, stínového provozu mechanismu, který se používá.  
+ <sup>2</sup> If you do not specify either `Shadows` or `Overrides`, the compiler issues a warning message to help you be sure which kind of redefinition you want to use. If you ignore the warning, the shadowing mechanism is used.  
   
- <sup>3</sup> Pokud stínového provozu prvek je přístupný v další odvozené třídy, není zděděno stínováním. Například, pokud deklarujete stínového provozu prvek jako `Private`, původní elementu namísto stínového provozu element dědí třídu odvozenou z odvozené třídy.  
+ <sup>3</sup> If the shadowing element is inaccessible in a further derived class, shadowing is not inherited. For example, if you declare the shadowing element as `Private`, a class deriving from your derived class inherits the original element instead of the shadowing element.  
   
 ## <a name="guidelines"></a>Pokyny  
- Obvykle použijete přepsání v následujících případech:  
+ You normally use overriding in the following cases:  
   
-- Definování polymorfní odvozené třídy.  
+- You are defining polymorphic derived classes.  
   
-- Chcete, aby bezpečnost s kompilátoru vynutit typ elementu identické a volací sekvence.  
+- You want the safety of having the compiler enforce the identical element type and calling sequence.  
   
- Obvykle použijete stínění v následujících případech:  
+ You normally use shadowing in the following cases:  
   
-- Očekáváte, že základní třídy se může změnit a definovat elementu s použitím se stejným názvem se nenachází žádný.  
+- You anticipate that your base class might be modified and define an element using the same name as yours.  
   
-- Chcete, aby svobody změna typ prvku nebo sekvence volání.  
+- You want the freedom of changing the element type or calling sequence.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
-- [Stínění v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
+- [Shadowing in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
 - [Postupy: Skrytí proměnné se stejným názvem jako má vaše proměnná](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-a-variable-with-the-same-name-as-your-variable.md)
 - [Postupy: Skrytí zděděné proměnné](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-an-inherited-variable.md)
 - [Postupy: Přístup k proměnné skryté odvozenou třídou](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-access-a-variable-hidden-by-a-derived-class.md)

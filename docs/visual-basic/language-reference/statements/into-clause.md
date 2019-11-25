@@ -1,21 +1,21 @@
 ---
-title: Into – klauzule (Visual Basic)
+title: Into – klauzule
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Into keyword [Visual Basic]
 ms.assetid: e1534550-8f4b-4978-b043-fad7b8fd79ac
-ms.openlocfilehash: 8a94309b27ae3ad0c4fb6b13ae4824e4d5dece73
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 038cf9b812d3fbdb54afaca072694bbde4bfb600
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61784173"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348040"
 ---
 # <a name="into-clause-visual-basic"></a>Into – klauzule (Visual Basic)
-Určuje agregační funkce nebo seskupení, které chcete použít pro kolekci.  
+Identifies aggregate functions or groupings to apply to a collection.  
   
 ## <a name="remarks"></a>Poznámky  
- `Each` – Klíčové slovo se používá v kontextech následující:  
+ The `Each` keyword is used in the following contexts:  
   
  [Klauzule Aggregate](../../../visual-basic/language-reference/queries/aggregate-clause.md)  
   

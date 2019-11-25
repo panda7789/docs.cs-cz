@@ -1,6 +1,6 @@
 ---
-title: Syntaxe nástroje DebugView vlastností (Visual Basic)
-description: Popisuje zvláštní syntaxi vlastností nástroje DebugView k vytvoření řetězcové vyjádření stromů výrazů
+title: Syntax used by DebugView property
+description: Describes the special syntax used by the DebugView property to produce a string representation of expression trees
 author: zspitz
 ms.author: wiwagn
 ms.date: 05/22/2019
@@ -8,24 +8,24 @@ ms.topic: reference
 helpviewer_keywords:
 - expression trees
 - debugview
-ms.openlocfilehash: ae2c75607f7b9cdc40fc5c163ce533f0472ab454
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
+ms.openlocfilehash: 98ceba37aa226fab68ae1c1028e2a1139b3b8e7e
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66689537"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346872"
 ---
-# <a name="debugview-syntax"></a>`DebugView` Syntaxe
+# <a name="debugview-syntax"></a>`DebugView` syntax
 
-`DebugView` (K dispozici pouze při ladění) obsahuje řetězec vykreslování stromů výrazů. Většina syntaxe je celkem jasné, abyste pochopili; zvláštní případy jsou popsány v následujících částech.
+The `DebugView` property (available only when debugging) provides a string rendering of expression trees. Most of the syntax is fairly straightforward to understand; the special cases are described in the following sections.
 
-Každý příklad následuje obsahující blok komentáře `DebugView`.
+Each example is followed by a comment block containing the `DebugView`.
 
-## <a name="parameterexpression"></a>Výraz ParameterExpression
+## <a name="parameterexpression"></a>ParameterExpression
 
-<xref:System.Linq.Expressions.ParameterExpression?displayProperty=nameWithType> názvy proměnných jsou zobrazeny se symbolem "$" na začátku.
+<xref:System.Linq.Expressions.ParameterExpression?displayProperty=nameWithType> variable names are displayed with a "$" symbol at the beginning.
 
-Pokud parametr nemá název, je přiřazen automaticky vygenerovaný název, jako například `$var1` nebo `$var2`.
+If a parameter does not have a name, it is assigned an automatically generated name, such as `$var1` or `$var2`.
 
 ### <a name="examples"></a>Příklady
 
@@ -43,17 +43,17 @@ Dim numParam As ParameterExpression = Expression.Parameter(GetType(Integer))
 
 ## <a name="constantexpressions"></a>ConstantExpressions
 
-Pro <xref:System.Linq.Expressions.ConstantExpression?displayProperty=nameWithType> objekty, které představují celočíselných hodnot, řetězce a `null`, zobrazí se hodnota konstanty.
+For <xref:System.Linq.Expressions.ConstantExpression?displayProperty=nameWithType> objects that represent integer values, strings, and `null`, the value of the constant is displayed.
 
-Pro některé číselné typy se přidá přípona k hodnotě:
+For some numeric types, a suffix is added to the value:
 
-| Type | Klíčové slovo | Přípona |
+| Typ | Keyword | Suffix |
 |--|--|--|
 | <xref:System.UInt32> | [UInteger](../../../language-reference/data-types/uinteger-data-type.md) | U |
 | <xref:System.Int64> | [Long](../../../language-reference/data-types/long-data-type.md) | L |
 | <xref:System.UInt64> | [ULong](../../../language-reference/data-types/ulong-data-type.md) | UL |
 | <xref:System.Double> | [Double](../../../language-reference/data-types/double-data-type.md) | D |
-| <xref:System.Single> | [Jeden](../../../language-reference/data-types/single-data-type.md) | F |
+| <xref:System.Single> | [Single](../../../language-reference/data-types/single-data-type.md) | F |
 | <xref:System.Decimal> | [Decimal](../../../language-reference/data-types/decimal-data-type.md) | M |
 
 ### <a name="examples"></a>Příklady
@@ -74,7 +74,7 @@ Dim expr As ConstantExpression = Expression.Constant(num)
 
 ## <a name="blockexpression"></a>BlockExpression
 
-Pokud typ <xref:System.Linq.Expressions.BlockExpression?displayProperty=nameWithType> objektu se liší od typu posledního výrazu v bloku, zobrazí se typ v lomených závorkách (`<` a `>`). V opačném případě typu <xref:System.Linq.Expressions.BlockExpression> objekt se nezobrazuje.
+If the type of a <xref:System.Linq.Expressions.BlockExpression?displayProperty=nameWithType> object differs from the type of the last expression in the block, the type is displayed within angle brackets (`<` and `>`). Otherwise, the type of the <xref:System.Linq.Expressions.BlockExpression> object is not displayed.
 
 ### <a name="examples"></a>Příklady
 
@@ -99,9 +99,9 @@ Dim block As BlockExpression = Expression.Block(
 
 ## <a name="lambdaexpression"></a>LambdaExpression
 
-<xref:System.Linq.Expressions.LambdaExpression?displayProperty=nameWithType> objekty se zobrazí spolu s jejich typy delegátů.
+<xref:System.Linq.Expressions.LambdaExpression?displayProperty=nameWithType> objects are displayed together with their delegate types.
 
-Pokud výraz lambda nemá název, je přiřazen automaticky vygenerovaný název, jako například `#Lambda1` nebo `#Lambda2`.
+If a lambda expression does not have a name, it is assigned an automatically generated name, such as `#Lambda1` or `#Lambda2`.
 
 ### <a name="examples"></a>Příklady
 
@@ -129,11 +129,11 @@ Dim lambda As LambdaExpression = Expression.Lambda(Of Func(Of Integer))(
 
 ## <a name="labelexpression"></a>LabelExpression
 
-Pokud chcete zadat výchozí hodnotu pro <xref:System.Linq.Expressions.LabelExpression?displayProperty=nameWithType> objektu, zobrazí se tato hodnota před <xref:System.Linq.Expressions.LabelTarget?displayProperty=nameWithType> objektu.
+If you specify a default value for the <xref:System.Linq.Expressions.LabelExpression?displayProperty=nameWithType> object, this value is displayed before the <xref:System.Linq.Expressions.LabelTarget?displayProperty=nameWithType> object.
 
-`.Label` Token označuje začátek popisek. `.LabelTarget` Určuje cílové cíl, který chcete přejít na token.
+The `.Label` token indicates the start of the label. The `.LabelTarget` token indicates the destination of the target to jump to.
 
-Pokud popisek nemá název, je přiřazen automaticky vygenerovaný název, jako například `#Label1` nebo `#Label2`.
+If a label does not have a name, it is assigned an automatically generated name, such as `#Label1` or `#Label2`.
 
 ### <a name="examples"></a>Příklady
 
@@ -166,9 +166,9 @@ Dim block As BlockExpression = Expression.Block(
 '
 ```
 
-## <a name="checked-operators"></a>Checked operátory
+## <a name="checked-operators"></a>Checked Operators
 
-Checked operátory jsou zobrazovány `#` symbol před operátor. Například operátor checked sčítání se zobrazí jako `#+`.
+Checked operators are displayed with the `#` symbol in front of the operator. For example, the checked addition operator is displayed as `#+`.
 
 ### <a name="examples"></a>Příklady
 

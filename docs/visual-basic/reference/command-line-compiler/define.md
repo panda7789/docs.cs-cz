@@ -1,5 +1,5 @@
 ---
-title: -define (Visual Basic)
+title: -define
 ms.date: 03/10/2018
 helpviewer_keywords:
 - -d compiler option [Visual Basic]
@@ -9,15 +9,15 @@ helpviewer_keywords:
 - /define compiler option [Visual Basic]
 - define compiler option [Visual Basic]
 ms.assetid: f735c57d-1cf9-4f2f-a26f-0de630fd4077
-ms.openlocfilehash: 5b2c0173416418f67446c5441a93e5b06e93dc12
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: fd0875f09bf3ba7211ede500aa0da45f8b7cd2c7
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72002382"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344766"
 ---
 # <a name="-define-visual-basic"></a>-define (Visual Basic)
-Definuje podmíněné konstanty kompilátoru.  
+Defines conditional compiler constants.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,30 +35,30 @@ or
   
 |Termín|Definice|  
 |---|---|  
-|`symbol`|Požadováno. Symbol, který má být definován.|  
-|`value`|Volitelné. Hodnota, kterou chcete přiřadit `symbol`. Pokud `value` je řetězec, musí být ohraničen znakem zpětného lomítka nebo posloupnosti uvozovek (\\ ") místo uvozovek. Pokud není zadána žádná hodnota, bude provedena hodnota true.|  
+|`symbol`|Požadováno. The symbol to define.|  
+|`value`|Volitelné. The value to assign `symbol`. If `value` is a string, it must be surrounded by backslash/quotation-mark sequences (\\") instead of quotation marks. If no value is specified, then it is taken to be True.|  
   
 ## <a name="remarks"></a>Poznámky  
- Možnost `-define` má podobný účinek jako použití direktivy preprocesoru `#Const` ve zdrojovém souboru s tím rozdílem, že konstanty definované `-define` jsou veřejné a platí pro všechny soubory v projektu.  
+ The `-define` option has an effect similar to using a `#Const` preprocessor directive in your source file, except that constants defined with `-define` are public and apply to all files in the project.  
   
- Symboly vytvořené pomocí této možnosti můžete použít spolu s direktivou `#If`... `Then`... `#Else` pro podmíněné kompilování zdrojových souborů.  
+ You can use symbols created by this option with the `#If`...`Then`...`#Else` directive to compile source files conditionally.  
   
- `-d` je krátká forma `-define`.  
+ `-d` is the short form of `-define`.  
   
- Můžete definovat více symbolů pomocí `-define` pomocí čárky pro oddělení definic symbolů.  
+ You can define multiple symbols with `-define` by using a comma to separate symbol definitions.  
   
-|Nastavení/define v integrovaném vývojovém prostředí sady Visual Studio|  
+|To set /define in the Visual Studio integrated development environment|  
 |---|  
-|1. v **Průzkumník řešení**mít vybraný projekt. V nabídce **projekt** klikněte na příkaz **vlastnosti**. <br />2. klikněte na kartu **kompilovat** .<br />3. klikněte na tlačítko **Upřesnit**.<br />4. upravte hodnotu v poli **vlastní konstanty** .|  
+|1.  Have a project selected in **Solution Explorer**. On the **Project** menu, click **Properties**. <br />2.  Click the **Compile** tab.<br />3.  Click **Advanced**.<br />4.  Modify the value in the **Custom Constants** box.|  
   
 ## <a name="example"></a>Příklad  
- Následující kód definuje a poté používá dvě podmíněné konstanty kompilátoru.  
+ The following code defines and then uses two conditional compiler constants.  
   
  [!code-vb[VbVbalrCompiler#45](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCompiler/VB/Class1.vb#45)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Direktivy #If...Then...#Else](../../../visual-basic/language-reference/directives/if-then-else-directives.md)
 - [Direktiva #Const](../../../visual-basic/language-reference/directives/const-directive.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

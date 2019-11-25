@@ -1,28 +1,28 @@
 ---
-title: Analýza kódu XML (Visual Basic)
+title: Analýza XML
 ms.date: 07/20/2015
 ms.assetid: 5bcbd7e2-d9f1-4c8f-80d6-39915fe17bd1
-ms.openlocfilehash: ec9df29c239d2780b4fc13bb101a22c54eb43da5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 49e77c4f4df27daa96eba4f7a8aa161a667b7271
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61665920"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353169"
 ---
-# <a name="parsing-xml-visual-basic"></a>Analýza kódu XML (Visual Basic)
-Témata v této části popisují, jak k analýze dokumentů XML.  
+# <a name="parsing-xml-visual-basic"></a>Parsing XML (Visual Basic)
+The topics in this section describe how to parse XML documents.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
 |Téma|Popis|  
 |-----------|-----------------|  
-|[Postupy: Analýze řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-parse-a-string.md)|Ukazuje, jak analyzovat řetězec k vytvoření stromu XML.|  
-|[Postupy: Načtení XML ze souboru (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-load-xml-from-a-file.md)|Ukazuje, jak načíst XML z identifikátoru URI pomocí <xref:System.Xml.Linq.XElement.Load%2A> metody.|  
-|[Zachování prázdných znaků při načítání nebo analýze XML](../../../../visual-basic/programming-guide/concepts/linq/preserving-white-space-while-loading-or-parsing-xml.md)|Popisuje, jak řídit chování mezer [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] při načítání stromů XML.|  
-|[Postupy: Zachycení chyb (Visual Basic) při analýze](../../../../visual-basic/programming-guide/concepts/linq/how-to-catch-parsing-errors.md)|Ukazuje, jak detekovat XML chybně vytvořený nebo je neplatný.|  
-|[Postupy: Vytvoření stromu ze třídy XmlReader (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-tree-from-an-xmlreader.md)|Ukazuje, jak vytvořit stromu XML přímo ze <xref:System.Xml.XmlReader>.|  
-|[Postupy: Stream fragmentů XML ze třídy XmlReader (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-from-an-xmlreader.md)|Ukazuje, jak pomocí streamování fragmentů XML <xref:System.Xml.XmlReader>.<br /><br /> Až budete mít ke zpracování libovolně velkých souborů XML, nemusí být možné načíst celý strom XML do paměti. Místo toho můžete streamování fragmentů XML.|  
+|[How to: Parse a String (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-parse-a-string.md)|Shows how to parse a string to create an XML tree.|  
+|[How to: Load XML from a File (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-load-xml-from-a-file.md)|Shows how to load XML from a URI using the <xref:System.Xml.Linq.XElement.Load%2A> method.|  
+|[Zachování prázdných znaků při načítání nebo analýze XML](../../../../visual-basic/programming-guide/concepts/linq/preserving-white-space-while-loading-or-parsing-xml.md)|Describes how to control the white space behavior of [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] while loading XML trees.|  
+|[How to: Catch Parsing Errors (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-catch-parsing-errors.md)|Shows how to detect badly formed or invalid XML.|  
+|[How to: Create a Tree from an XmlReader (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-tree-from-an-xmlreader.md)|Shows how to create an XML tree directly from an <xref:System.Xml.XmlReader>.|  
+|[How to: Stream XML Fragments from an XmlReader (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-from-an-xmlreader.md)|Shows how to stream XML fragments by using an <xref:System.Xml.XmlReader>.<br /><br /> When you have to process arbitrarily large XML files, it might not be feasible to load the whole XML tree into memory. Instead, you can stream XML fragments.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Vytváření stromů XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)
+- [Creating XML Trees (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)

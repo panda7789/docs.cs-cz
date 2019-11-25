@@ -1,36 +1,36 @@
 ---
-title: Přidání elementů, atributů a uzlů do stromu XML (Visual Basic)
+title: Přidání elementů, atributů a uzlů do stromu XML
 ms.date: 07/20/2015
 ms.assetid: e243e694-c987-43aa-8b22-1e33dace582c
-ms.openlocfilehash: 35d3bdb27342dd7a871778ad4749db4d6849bd60
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8d3d3a27194bb022434f09778dbf3960bd0b9853
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62021853"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345813"
 ---
-# <a name="adding-elements-attributes-and-nodes-to-an-xml-tree-visual-basic"></a>Přidání elementů, atributů a uzlů do stromu XML (Visual Basic)
-Obsah (elementy, atributy, komentáře, pokyny pro zpracování, text a CDATA) můžete přidat do existující stromu XML.  
+# <a name="adding-elements-attributes-and-nodes-to-an-xml-tree-visual-basic"></a>Adding Elements, Attributes, and Nodes to an XML Tree (Visual Basic)
+You can add content (elements, attributes, comments, processing instructions, text, and CDATA) to an existing XML tree.  
   
-## <a name="methods-for-adding-content"></a>Metody pro přidávání obsahu  
- Podřízený obsah k přidání následujících metod <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument>:  
-  
-|Metoda|Popis|  
-|------------|-----------------|  
-|<xref:System.Xml.Linq.XContainer.Add%2A>|Přidá obsah na konci podřízený obsah <xref:System.Xml.Linq.XContainer>.|  
-|<xref:System.Xml.Linq.XContainer.AddFirst%2A>|Přidá obsah na začátku podřízený obsah <xref:System.Xml.Linq.XContainer>.|  
-  
- Následující metody přidat jako uzly na stejné úrovni obsah <xref:System.Xml.Linq.XNode>. Nejběžnější uzel, do které přidáte na stejné úrovni obsah je <xref:System.Xml.Linq.XElement>, i když přidáte na stejné úrovni platný obsah na jiné typy uzlů, jako <xref:System.Xml.Linq.XText> nebo <xref:System.Xml.Linq.XComment>.  
+## <a name="methods-for-adding-content"></a>Methods for Adding Content  
+ The following methods add child content to an <xref:System.Xml.Linq.XElement> or an <xref:System.Xml.Linq.XDocument>:  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|<xref:System.Xml.Linq.XNode.AddAfterSelf%2A>|Přidá obsah po <xref:System.Xml.Linq.XNode>.|  
-|<xref:System.Xml.Linq.XNode.AddBeforeSelf%2A>|Přidá obsah před <xref:System.Xml.Linq.XNode>.|  
+|<xref:System.Xml.Linq.XContainer.Add%2A>|Adds content at the end of the child content of the <xref:System.Xml.Linq.XContainer>.|  
+|<xref:System.Xml.Linq.XContainer.AddFirst%2A>|Adds content at the beginning of the child content of the <xref:System.Xml.Linq.XContainer>.|  
+  
+ The following methods add content as sibling nodes of an <xref:System.Xml.Linq.XNode>. The most common node to which you add sibling content is <xref:System.Xml.Linq.XElement>, although you can add valid sibling content to other types of nodes such as <xref:System.Xml.Linq.XText> or <xref:System.Xml.Linq.XComment>.  
+  
+|Metoda|Popis|  
+|------------|-----------------|  
+|<xref:System.Xml.Linq.XNode.AddAfterSelf%2A>|Adds content after the <xref:System.Xml.Linq.XNode>.|  
+|<xref:System.Xml.Linq.XNode.AddBeforeSelf%2A>|Adds content before the <xref:System.Xml.Linq.XNode>.|  
   
 ## <a name="example"></a>Příklad  
   
 ### <a name="description"></a>Popis  
- Následující příklad vytvoří dvě stromů XML a pak jednu z stromy upraví.  
+ The following example creates two XML trees, and then modifies one of the trees.  
   
 ### <a name="code"></a>Kód  
   
@@ -65,7 +65,7 @@ Console.WriteLine(xmlTree)
 ```  
   
 ### <a name="comments"></a>Komentáře  
- Tento kód vytvoří následující výstup:  
+ This code produces the following output:  
   
 ```xml  
 <Root>  
@@ -82,4 +82,4 @@ Console.WriteLine(xmlTree)
   
 ## <a name="see-also"></a>Viz také:
 
-- [Změna stromů XML (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
+- [Modifying XML Trees (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)

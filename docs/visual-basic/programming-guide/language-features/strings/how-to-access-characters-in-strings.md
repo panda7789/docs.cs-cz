@@ -1,35 +1,35 @@
 ---
-title: 'Postupy: Přístup znakům v řetězcích v jazyce Visual Basic'
+title: 'Postupy: Přístup ke znakům v řetězcích'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - strings [Visual Basic], accessing characters
 - characters [Visual Basic], accessing in strings
 ms.assetid: 02c5206c-ffab-494d-b648-3b2ea358dc34
-ms.openlocfilehash: 840a769b0bb322ef7b878a312437c5ec200ab074
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 44a021ed3ce1d10613cf6ab7c959c62feec6046c
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62054026"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74352460"
 ---
-# <a name="how-to-access-characters-in-strings-in-visual-basic"></a>Postupy: Přístup znakům v řetězcích v jazyce Visual Basic
-Tento příklad ukazuje, jak používat <xref:System.String.Chars%2A> vlastnost přístup ke znakům v zadaném umístění v řetězci.  
+# <a name="how-to-access-characters-in-strings-in-visual-basic"></a>Postupy: Přístup ke znakům v řetězcích v jazyce Visual Basic
+This example demonstrates how to use the <xref:System.String.Chars%2A> property to access the character at the specified location in a string.  
   
 ## <a name="example"></a>Příklad  
- Někdy je užitečné mít data o znaky v váš řetězec a umístění těchto znaků v rámci vašeho řetězce. Řetězec si můžete představit jako pole znaků (`Char` instance); určitý znak můžete načíst pomocí odkazu na index tohoto znaku prostřednictvím <xref:System.String.Chars%2A> vlastnost.  
+ Sometimes it is useful to have data about the characters in your string and the positions of those characters within your string. You can think of a string as an array of characters (`Char` instances); you can retrieve a particular character by referencing the index of that character through the <xref:System.String.Chars%2A> property.  
   
  [!code-vb[VbVbalrStrings#49](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#49)]  
   
- `index` Parametr <xref:System.String.Chars%2A> vlastnost je založený na nule.  
+ The `index` parameter of the <xref:System.String.Chars%2A> property is zero-based.  
   
 ## <a name="robust-programming"></a>Robustní programování  
- <xref:System.String.Chars%2A> Vlastnost vrátí znak na zadané pozici. Některé znaky Unicode však může být reprezentována více než jeden znak. Další informace o tom, jak pracovat s znaků Unicode naleznete v tématu [jak: Převod řetězce na pole znaků](../../../../visual-basic/programming-guide/language-features/strings/how-to-convert-a-string-to-an-array-of-characters.md).  
+ The <xref:System.String.Chars%2A> property returns the character at the specified position. However, some Unicode characters can be represented by more than one character. For more information on how to work with Unicode characters, see [How to: Convert a String to an Array of Characters](../../../../visual-basic/programming-guide/language-features/strings/how-to-convert-a-string-to-an-array-of-characters.md).  
   
- <xref:System.String.Chars%2A> Vlastnost vyvolá <xref:System.IndexOutOfRangeException> výjimka pokud `index` parametr je větší než nebo rovna délce řetězce, nebo pokud je menší než nula  
+ The <xref:System.String.Chars%2A> property throws an <xref:System.IndexOutOfRangeException> exception if the `index` parameter is greater than or equal to the length of the string, or if it is less than zero  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.String.Chars%2A>
 - [Postupy: Převod řetězce na pole znaků](../../../../visual-basic/programming-guide/language-features/strings/how-to-convert-a-string-to-an-array-of-characters.md)
-- [Převod mezi řetězci a ostatními datovými typy v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/converting-between-strings-and-other-data-types.md)
+- [Converting Between Strings and Other Data Types in Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/converting-between-strings-and-other-data-types.md)
 - [Řetězce](../../../../visual-basic/programming-guide/language-features/strings/index.md)

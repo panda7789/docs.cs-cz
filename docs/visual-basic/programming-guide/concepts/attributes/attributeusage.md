@@ -1,17 +1,17 @@
 ---
-title: AttributeUsage (Visual Basic)
+title: AttributeUsage
 ms.date: 07/20/2015
 ms.assetid: 48757216-c21d-4051-86d5-8a3e03c39d2c
-ms.openlocfilehash: dbfbfaa6124eacfd9e4043eab9e4769103e554ca
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 7e54e82c1e9edfd0d9d393a014f9d91f82970363
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524313"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353543"
 ---
 # <a name="attributeusage-visual-basic"></a>AttributeUsage (Visual Basic)
 
-Určuje, jak lze použít třídu vlastního atributu. `AttributeUsage` je atribut, který lze použít na definice vlastních atributů pro řízení, jak lze použít nový atribut. Výchozí nastavení vypadají jako v případě explicitního použití:
+Determines how a custom attribute class can be used. `AttributeUsage` is an attribute that can be applied to custom attribute definitions to control how the new attribute can be applied. The default settings look like this when applied explicitly:
 
 ```vb
 <System.AttributeUsage(System.AttributeTargets.All,
@@ -22,9 +22,9 @@ Class NewAttribute
 End Class
 ```
 
-V tomto příkladu lze třídu `NewAttribute` použít na libovolnou entitu kódu s atributem, ale lze ji použít pouze jednou pro každou entitu. Je zděděna odvozenými třídami při použití na základní třídu.
+In this example, the `NewAttribute` class can be applied to any attribute-able code entity, but can be applied only once to each entity. It is inherited by derived classes when applied to a base class.
 
-Argumenty `AllowMultiple` a `Inherited` jsou volitelné, takže tento kód má stejný účinek:
+The `AllowMultiple` and `Inherited` arguments are optional, so this code has the same effect:
 
 ```vb
 <System.AttributeUsage(System.AttributeTargets.All)>
@@ -33,11 +33,7 @@ Class NewAttribute
 End Class
 ```
 
-První argument `AttributeUsage` musí být jeden nebo více prvků výčtu <xref:System.AttributeTargets>. Více cílových typů lze propojit společně s operátorem OR, jako je:
-
-```vb
-Imports System
-```
+The first `AttributeUsage` argument must be one or more elements of the <xref:System.AttributeTargets> enumeration. Multiple target types can be linked together with the OR operator, like this:
 
 ```vb
 <AttributeUsage(AttributeTargets.Property Or AttributeTargets.Field)>
@@ -46,11 +42,7 @@ Class NewPropertyOrFieldAttribute
 End Class
 ```
 
-Pokud je argument `AllowMultiple` nastaven na hodnotu `true`, výsledný atribut lze použít více než jednou pro jednu entitu, například takto:
-
-```vb
-Imports System
-```
+If the `AllowMultiple` argument is set to `true`, then the resulting attribute can be applied more than once to a single entity, like this:
 
 ```vb
 <AttributeUsage(AttributeTargets.Class, AllowMultiple:=True)>
@@ -63,13 +55,9 @@ Class Class1
 End Class
 ```
 
-V tomto případě se `MultiUseAttr` dá použít opakovaně, protože `AllowMultiple` je nastavená na `true`. Oba formáty zobrazené pro použití více atributů jsou platné.
+In this case `MultiUseAttr` can be applied repeatedly because `AllowMultiple` is set to `true`. Both formats shown for applying multiple attributes are valid.
 
-Pokud je `Inherited` nastavené na `false`, pak atribut nedědí třídy, které jsou odvozeny z třídy s atributem. Příklad:
-
-```vb
-Imports System
-```
+If `Inherited` is set to `false`, then the attribute is not inherited by classes that are derived from a class that is attributed. Příklad:
 
 ```vb
 <AttributeUsage(AttributeTargets.Class, Inherited:=False)>
@@ -87,21 +75,17 @@ Class DClass
 End Class
 ```
 
-V tomto případě se `Attr1` neaplikuje na `DClass` prostřednictvím dědičnosti.
+In this case `Attr1` is not applied to `DClass` via inheritance.
 
 ## <a name="remarks"></a>Poznámky
 
-Atribut `AttributeUsage` je atributem jednotného použití--nelze jej použít více než jednou pro stejnou třídu. `AttributeUsage` je alias pro <xref:System.AttributeUsageAttribute>.
+The `AttributeUsage` attribute is a single-use attribute--it cannot be applied more than once to the same class. `AttributeUsage` is an alias for <xref:System.AttributeUsageAttribute>.
 
-Další informace naleznete v tématu [přístup k atributům pomocí reflexe (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md).
+For more information, see [Accessing Attributes by Using Reflection (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md).
 
 ## <a name="example"></a>Příklad
 
-Následující příklad demonstruje účinek `Inherited` a `AllowMultiple` argumentů atributu `AttributeUsage` a způsob, jakým lze vytvořit výčet vlastních atributů u třídy.
-
-```vb
-Imports System
-```
+The following example demonstrates the effect of the `Inherited` and `AllowMultiple` arguments to the `AttributeUsage` attribute, and how the custom attributes applied to a class can be enumerated.
 
 ```vb
 ' Create some custom attributes:
@@ -168,9 +152,9 @@ A2
 
 - <xref:System.Attribute>
 - <xref:System.Reflection>
-- [Průvodce programováním Visual Basic](../../../../visual-basic/programming-guide/index.md)
+- [Visual Basic Programming Guide](../../../../visual-basic/programming-guide/index.md)
 - [Atributy](../../../../standard/attributes/index.md)
-- [Reflexe (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)
-- [Atributy (Visual Basic)](../../../../visual-basic/language-reference/attributes.md)
-- [Vytváření vlastních atributů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)
-- [Přístup k atributům pomocí reflexe (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)
+- [Reflection (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)
+- [Attributes (Visual Basic)](../../../../visual-basic/language-reference/attributes.md)
+- [Creating Custom Attributes (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)
+- [Accessing Attributes by Using Reflection (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)

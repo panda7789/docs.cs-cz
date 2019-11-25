@@ -1,25 +1,25 @@
 ---
-title: Ostatní řídicí struktury (Visual Basic)
+title: Ostatní řídicí struktury
 ms.date: 07/20/2015
 helpviewer_keywords:
 - statements [Visual Basic], control flow
 - control structures [Visual Basic]
 ms.assetid: 24b811f7-98ba-40ec-8dd3-4d528cfa4574
-ms.openlocfilehash: c42070ce2ea866e59e1b2e190f7c05e1ee7cc922
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 758df361f421684655147ae288af3f350e53c4d7
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61907839"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348136"
 ---
 # <a name="other-control-structures-visual-basic"></a>Ostatní řídicí struktury (Visual Basic)
-Visual Basic poskytuje řídicí struktury, které vám pomůžou odstranění prostředku nebo snižte počet, kolikrát je potřeba ji opakovat odkaz na objekt.  
+Visual Basic provides control structures that help you dispose of a resource or reduce the number of times you have to repeat an object reference.  
   
-## <a name="usingend-using-construction"></a>Použití... End s využitím konstrukce  
- `Using...End Using` Konstrukce zavádí blok příkazů, ve kterém provedete využívání prostředků, jako je například připojení SQL. Volitelně můžete získat prostředek s `Using` příkazu. Po ukončení `Using` bloku, Visual Basic automaticky objekt odstraní prostředek tak, aby se pro další kód, který použijete k dispozici. Prostředek musí být místní a na jedno použití. Další informace najdete v tématu [příkazu Using](../../../../visual-basic/language-reference/statements/using-statement.md).  
+## <a name="usingend-using-construction"></a>Using...End Using Construction  
+ The `Using...End Using` construction establishes a statement block within which you make use of a resource such as a SQL connection. You can optionally acquire the resource with the `Using` statement. When you exit the `Using` block, Visual Basic automatically disposes of the resource so that it is available for other code to use. The resource must be local and disposable. For more information, see [Using Statement](../../../../visual-basic/language-reference/statements/using-statement.md).  
   
-## <a name="withend-with-construction"></a>S... Končit konstrukce  
- `With...End With` Konstrukce umožňuje zadat odkaz na objekt jednou a potom spustit sérii příkazů, které přistupovat k jejím členům. To můžete zjednodušit kód a zlepšit výkon, protože není potřeba znovu vytvořit referenční informace pro každý příkaz, který přistupuje k jeho jazyka Visual Basic. Další informace najdete v tématu [s... End With – příkaz](../../../../visual-basic/language-reference/statements/with-end-with-statement.md).  
+## <a name="withend-with-construction"></a>With...End With Construction  
+ The `With...End With` construction lets you specify an object reference once and then run a series of statements that access its members. This can simplify your code and improve performance because Visual Basic does not have to re-establish the reference for each statement that accesses it. For more information, see [With...End With Statement](../../../../visual-basic/language-reference/statements/with-end-with-statement.md).  
   
 ## <a name="see-also"></a>Viz také:
 

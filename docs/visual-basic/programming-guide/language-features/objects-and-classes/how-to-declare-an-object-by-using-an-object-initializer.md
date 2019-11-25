@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Deklarace objektu pomocí inicializátoru objektu (Visual Basic)'
+title: 'Postupy: Deklarace objektu pomocí inicializátoru objektu'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - declaring objects using object initializer
@@ -7,61 +7,61 @@ helpviewer_keywords:
 - initializers [Visual Basic]
 - Video How tos, Visual Basic
 ms.assetid: 0f53a553-efd6-466d-80bf-6b679e5cd174
-ms.openlocfilehash: 850e20fe8b5b6bfd392c80c87950a81a1a8a5c24
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: ae04d338b61027c3917ad3a7f62ff40f0a95e53e
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67755208"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347126"
 ---
 # <a name="how-to-declare-an-object-by-using-an-object-initializer-visual-basic"></a>Postupy: Deklarace objektu pomocí inicializátoru objektu (Visual Basic)
-Inicializátory objektů umožňují deklarovat a vytvoří instanci třídy v jediném příkazu. Kromě toho můžete inicializovat jednoho nebo více členů instance ve stejnou dobu bez vyvolání konstruktoru s parametry.  
+Object initializers enable you to declare and instantiate an instance of a class in a single statement. In addition, you can initialize one or more members of the instance at the same time, without invoking a parameterized constructor.  
   
- Použijete-li vytvořit instanci typu s názvem inicializátoru objektu, se nazývá konstruktor pro třídu, za nímž následuje inicializace členů určené ve vámi určeném pořadí.  
+ When you use an object initializer to create an instance of a named type, the parameterless constructor for the class is called, followed by initialization of designated members in the order you specify.  
   
- Následující postup ukazuje, jak vytvořit instanci `Student` třídy třemi různými způsoby. Třída má křestní jméno, příjmení a vlastnosti třídy rok, mimo jiné. Všechny tři deklarace vytvoří novou instanci třídy `Student`, s vlastností `First` nastavena na "Michael", vlastnost `Last` nastavená na "Tucker" a všechny ostatní členové nastavená na výchozí hodnoty. Výsledek deklaraci v postupu je ekvivalentní v následujícím příkladu, který nepoužívá inicializátoru objektu.  
+ The following procedure shows how to create an instance of a `Student` class in three different ways. The class has first name, last name, and class year properties, among others. Each of the three declarations creates a new instance of `Student`, with property `First` set to "Michael", property `Last` set to "Tucker", and all other members set to their default values. The result of each declaration in the procedure is equivalent to the following example, which does not use an object initializer.  
   
  [!code-vb[VbVbalrObjectInit#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class2.vb#20)]  
   
- Pro implementaci `Student` najdete v tématu [jak: Vytvoření seznamu položek](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-list-of-items.md). Můžete zkopírovat kód z tohoto tématu nastavit třídy a vytvořit seznam `Student` pro práci s objekty.  
+ For an implementation of the `Student` class, see [How to: Create a List of Items](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-list-of-items.md). You can copy the code from that topic to set up the class and create a list of `Student` objects to work with.  
   
-### <a name="to-create-an-object-of-a-named-class-by-using-an-object-initializer"></a>Chcete-li vytvořit objekt s názvem třídy pomocí inicializátoru objektů  
+### <a name="to-create-an-object-of-a-named-class-by-using-an-object-initializer"></a>To create an object of a named class by using an object initializer  
   
-1. Začněte deklarace, jako kdyby jste naplánovali použijte konstruktor.  
+1. Begin the declaration as if you planned to use a constructor.  
   
      `Dim student1 As New Student`  
   
-2. Klíčové slovo `With`následovaný inicializačního seznamu ve složených závorkách.  
+2. Type the keyword `With`, followed by an initialization list in braces.  
   
      `Dim student1 As New Student With { <initialization list> }`  
   
-3. V seznamu inicializace zahrňte každou vlastnost, kterou chcete inicializovat a přiřadit je počáteční hodnota. Název vlastnosti je začínat tečkou.  
+3. In the initialization list, include each property that you want to initialize and assign an initial value to it. The name of the property is preceded by a period.  
   
      [!code-vb[VbVbalrObjectInit#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class2.vb#21)]  
   
-     Můžete inicializovat jednoho nebo více členů třídy.  
+     You can initialize one or more members of the class.  
   
-4. Alternativně můžete deklarovat novou instanci třídy a pak do něj přiřadit hodnotu. Nejprve deklarujte instanci `Student`:  
+4. Alternatively, you can declare a new instance of the class and then assign a value to it. First, declare an instance of `Student`:  
   
      `Dim student2 As Student`  
   
-5. Zahájit vytvoření instance `Student` běžným způsobem.  
+5. Begin the creation of an instance of `Student` in the normal way.  
   
      `Dim student2 As Student = New Student`  
   
-6. Typ `With` a potom inicializátoru objektu inicializovat jednoho nebo více členů nové instance.  
+6. Type `With` and then an object initializer to initialize one or more members of the new instance.  
   
      [!code-vb[VbVbalrObjectInit#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class2.vb#22)]  
   
-7. Definice v předchozím kroku může zjednodušit vynecháním `As Student`. Pokud to uděláte, kompilátor zjistí, že `student3` je instance `Student` pomocí odvození místního typu.  
+7. You can simplify the definition in the previous step by omitting `As Student`. If you do this, the compiler determines that `student3` is an instance of `Student` by using local type inference.  
   
      [!code-vb[VbVbalrObjectInit#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class2.vb#23)]  
   
-     Další informace najdete v tématu [odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md).  
+     For more information, see [Local Type Inference](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
 - [Postupy: Vytvoření seznamu položek](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-list-of-items.md)
-- [Inicializátory objektů: Pojmenované a anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)
+- [Inicializátory objektů: pojmenované a anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)
 - [Anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)

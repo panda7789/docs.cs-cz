@@ -1,5 +1,5 @@
 ---
-title: Vytváření a implementace rozhraní (Visual Basic)
+title: Vytvoření a implementace rozhraní
 ms.date: 07/20/2015
 helpviewer_keywords:
 - interfaces [Visual Basic], walkthroughs
@@ -7,105 +7,105 @@ helpviewer_keywords:
 - interface implementation [Visual Basic], walkthrough
 - interfaces [Visual Basic], creating
 ms.assetid: ded82af2-9f52-4232-98ef-fe458180f112
-ms.openlocfilehash: 62e301e9eb366d14b58088d3e2cda3b567d17f5b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 47176d2e7a512d8e8c27a90ac04d2a2a2af274b5
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69923310"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345044"
 ---
-# <a name="walkthrough-creating-and-implementing-interfaces-visual-basic"></a>Návod: Vytváření a implementace rozhraní (Visual Basic)
+# <a name="walkthrough-creating-and-implementing-interfaces-visual-basic"></a>Návod: Vytvoření a implementace rozhraní (Visual Basic)
 
-Rozhraní popisují charakteristiky vlastností, metod a událostí, ale ponechají podrobnosti o implementaci až do struktur nebo tříd.  
+Interfaces describe the characteristics of properties, methods, and events, but leave the implementation details up to structures or classes.  
   
- Tento návod ukazuje, jak deklarovat a implementovat rozhraní.  
+ This walkthrough demonstrates how to declare and implement an interface.  
   
 > [!NOTE]
-> Tento návod neposkytuje informace o tom, jak vytvořit uživatelské rozhraní.  
+> This walkthrough doesn't provide information about how to create a user interface.  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-## <a name="to-define-an-interface"></a>Definování rozhraní
+## <a name="to-define-an-interface"></a>To define an interface
   
-1. Otevřete nový Visual Basic projekt aplikace systému Windows.  
+1. Open a new Visual Basic Windows Application project.  
   
-2. Přidejte do projektu nový modul kliknutím na **Přidat modul** v nabídce **projekt** .  
+2. Add a new module to the project by clicking **Add Module** on the **Project** menu.  
   
-3. Pojmenujte nový `Module1.vb` modul a klikněte na **Přidat**. Zobrazí se kód nového modulu.  
+3. Name the new module `Module1.vb` and click **Add**. The code for the new module is displayed.  
   
-4. Zadejte rozhraní, které `TestInterface` je `Module1` pojmenované v `Interface TestInterface` rámci, `Module` zadáním mezi příkazy a `End Module` a stisknutím klávesy ENTER. **Editor kódu** odsadí `Interface` `End Interface` klíčové slovo a přidá příkaz pro vytvoření bloku kódu.  
+4. Define an interface named `TestInterface` within `Module1` by typing `Interface TestInterface` between the `Module` and `End Module` statements, and then pressing ENTER. The **Code Editor** indents the `Interface` keyword and adds an `End Interface` statement to form a code block.  
   
-5. Určete vlastnost, metodu a událost pro rozhraní umístěním následujícího kódu mezi `Interface` příkazy a: `End Interface`  
+5. Define a property, method, and event for the interface by placing the following code between the `Interface` and `End Interface` statements:  
   
      [!code-vb[VbVbalrOOP#98](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#98)]
   
 ## <a name="implementation"></a>Implementace
 
- Můžete si všimnout, že syntaxe použitá pro deklaraci členů rozhraní se liší od syntaxe použité k deklaraci členů třídy. Tento rozdíl odráží skutečnost, že rozhraní nemohou obsahovat implementační kód.  
+ You may notice that the syntax used to declare interface members is different from the syntax used to declare class members. This difference reflects the fact that interfaces cannot contain implementation code.  
   
-### <a name="to-implement-the-interface"></a>Implementace rozhraní
+### <a name="to-implement-the-interface"></a>To implement the interface
   
-1. Přidejte třídu s názvem `ImplementationClass` přidáním následujícího příkazu do `Module1`, po `End Interface` příkazu, ale před `End Module` příkazem, a stisknutím klávesy ENTER:  
+1. Add a class named `ImplementationClass` by adding the following statement to `Module1`, after the `End Interface` statement but before the `End Module` statement, and then pressing ENTER:  
   
      [!code-vb[VbVbalrOOP#99](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#99)]
   
-     Pokud pracujete v integrovaném vývojovém prostředí, **Editor kódu** při stisknutí klávesy `End Class` ENTER dodá odpovídajícího příkazu.  
+     If you are working within the integrated development environment, the **Code Editor** supplies a matching `End Class` statement when you press ENTER.  
   
-2. Přidejte následující `Implements` příkaz do `ImplementationClass`, který pojmenuje rozhraní, které třída implementuje:  
+2. Add the following `Implements` statement to `ImplementationClass`, which names the interface the class implements:  
   
      [!code-vb[VbVbalrOOP#100](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#100)]
   
-     Pokud je uvedeno odděleně od jiných položek v horní části třídy nebo struktury, `Implements` příkaz označuje, že třída nebo struktura implementuje rozhraní.  
+     When listed separately from other items at the top of a class or structure, the `Implements` statement indicates that the class or structure implements an interface.  
   
-     Pokud pracujete v integrovaném vývojovém prostředí, **Editor kódu** implementuje členy třídy vyžadované `TestInterface` při stisknutí klávesy ENTER a můžete přeskočit další krok.  
+     If you are working within the integrated development environment, the **Code Editor** implements the class members required by `TestInterface` when you press ENTER, and you can skip the next step.  
   
-3. Pokud nepracujete v integrovaném vývojovém prostředí, je nutné implementovat všechny členy rozhraní `MyInterface`. Přidejte následující kód `ImplementationClass` k implementaci `Event1`, `Method1`a `Prop1`:  
+3. If you are not working within the integrated development environment, you must implement all the members of the interface `MyInterface`. Add the following code to `ImplementationClass` to implement `Event1`, `Method1`, and `Prop1`:  
   
      [!code-vb[VbVbalrOOP#101](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#101)]
   
-     `Implements` Příkaz zajmenovává rozhraní a člen rozhraní, které je implementováno.  
+     The `Implements` statement names the interface and interface member being implemented.  
   
-4. Dokončete definici `Prop1` přidáním soukromého pole do třídy, která ukládá hodnotu vlastnosti:  
+4. Complete the definition of `Prop1` by adding a private field to the class that stored the property value:  
   
      [!code-vb[VbVbalrOOP#102](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#102)]
   
-     Vrátí hodnotu `pval` z přístupového objektu Get vlastnosti.  
+     Return the value of the `pval` from the property get accessor.  
   
      [!code-vb[VbVbalrOOP#103](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#103)]
   
-     Nastavte hodnotu `pval` v přístupovém objektu sady vlastností.  
+     Set the value of `pval` in the property set accessor.  
   
      [!code-vb[VbVbalrOOP#104](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#104)]
   
-5. Dokončete definici `Method1` přidáním následujícího kódu.  
+5. Complete the definition of `Method1` by adding the following code.  
   
      [!code-vb[VbVbalrOOP#105](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#105)]
   
-### <a name="to-test-the-implementation-of-the-interface"></a>Testování implementace rozhraní
+### <a name="to-test-the-implementation-of-the-interface"></a>To test the implementation of the interface
   
-1. Klikněte pravým tlačítkem myši na spouštěcí formulář v **Průzkumník řešení**a klikněte na **Zobrazit kód**. Editor zobrazuje třídu pro úvodní formulář. Ve výchozím nastavení se volá `Form1`formulář pro spuštění.  
+1. Right-click the startup form for your project in the **Solution Explorer**, and click **View Code**. The editor displays the class for your startup form. By default, the startup form is called `Form1`.  
   
-2. Do třídy přidejte `testInstance`následujícípole `Form1` :  
+2. Add the following `testInstance` field to the `Form1` class:  
   
      [!code-vb[VbVbalrOOP#120](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#120)]
   
-     Deklarováním `testInstance` jako `WithEvents` můžetřídazpracovávatsvéudálosti.`Form1`  
+     By declaring `testInstance` as `WithEvents`, the `Form1` class can handle its events.  
   
-3. Přidejte následující obslužnou rutinu události do `Form1` třídy pro zpracování událostí `testInstance`vyvolaných:  
+3. Add the following event handler to the `Form1` class to handle events raised by `testInstance`:  
   
      [!code-vb[VbVbalrOOP#106](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#106)]
   
-4. Přidejte podprogram s názvem `Test` `Form1` do třídy pro otestování třídy implementace:  
+4. Add a subroutine named `Test` to the `Form1` class to test the implementation class:  
   
      [!code-vb[VbVbalrOOP#107](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#107)]
   
-     Procedura vytvoří instanci třídy, která implementuje `MyInterface`, `testInstance` přiřadí tuto instanci k poli, nastaví vlastnost a spustí metodu prostřednictvím rozhraní. `Test`  
+     The `Test` procedure creates an instance of the class that implements `MyInterface`, assigns that instance to the `testInstance` field, sets a property, and runs a method through the interface.  
   
-5. Přidejte kód pro volání `Test` procedury `Form1 Load` z procedury spouštěcího formuláře:  
+5. Add code to call the `Test` procedure from the `Form1 Load` procedure of your startup form:  
   
      [!code-vb[VbVbalrOOP#108](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#108)]
   
-6. `Test` Spusťte proceduru stisknutím klávesy F5. Zobrazí se zpráva "Prop1 byl nastaven na 9". Po kliknutí na tlačítko OK se zobrazí zpráva "parametr X pro – Metoda1 je 5". Klikněte na tlačítko OK a zobrazí se zpráva "obslužná rutina události byla zachycena událost".  
+6. Run the `Test` procedure by pressing F5. The message "Prop1 was set to 9" is displayed. After you click OK, the message "The X parameter for Method1 is 5" is displayed. Click OK, and the message "The event handler caught the event" is displayed.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -1,5 +1,5 @@
 ---
-title: Zpracování událostí (Visual Basic)
+title: Zpracování událostí
 ms.date: 07/20/2015
 helpviewer_keywords:
 - event handling [Visual Basic], walkthroughs
@@ -9,112 +9,112 @@ helpviewer_keywords:
 - WithEvents keyword [Visual Basic], walkthroughs
 - event handlers [Visual Basic], walkthroughs
 ms.assetid: f145b3fc-5ae0-4509-a2aa-1ff6934706bd
-ms.openlocfilehash: 12267e0a70419298bc581421c4f3a220088d205f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: cb42f2e41e366cf8765cb9395d1a5641434bab40
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69956301"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345072"
 ---
 # <a name="walkthrough-handling-events-visual-basic"></a>Návod: Zpracování událostí (Visual Basic)
-Jedná se o druhý ze dvou témat, která ukazují, jak pracovat s událostmi. První téma, [Návod: Deklarování a vyvolávání událostí](../../../../visual-basic/programming-guide/language-features/events/walkthrough-declaring-and-raising-events.md)ukazuje, jak deklarovat a vyvolat události. V této části se používá formulář a třída z tohoto návodu k zobrazení, jak zpracovávat události, když dojde k jejich provedení.  
+This is the second of two topics that demonstrate how to work with events. The first topic, [Walkthrough: Declaring and Raising Events](../../../../visual-basic/programming-guide/language-features/events/walkthrough-declaring-and-raising-events.md), shows how to declare and raise events. This section uses the form and class from that walkthrough to show how to handle events when they take place.  
   
- Příklad `Widget` třídy používá tradiční příkazy pro zpracování událostí. Visual Basic poskytuje další techniky pro práci s událostmi. Jako cvičení můžete tento příklad upravit tak, aby používal `AddHandler` příkazy a. `Handles`  
+ The `Widget` class example uses traditional event-handling statements. Visual Basic provides other techniques for working with events. As an exercise, you can modify this example to use the `AddHandler` and `Handles` statements.  
   
-### <a name="to-handle-the-percentdone-event-of-the-widget-class"></a>Zpracování události PercentDone třídy widgetu  
+### <a name="to-handle-the-percentdone-event-of-the-widget-class"></a>To handle the PercentDone event of the Widget class  
   
-1. Vložte následující kód do `Form1`:  
+1. Place the following code in `Form1`:  
   
      [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnWalkthroughDeclaringAndRaisingEvents/VB/Form1.vb#4)]  
   
-     Klíčové slovo určuje, že proměnná `mWidget` slouží ke zpracování událostí objektu. `WithEvents` Typ objektu určíte zadáním názvu třídy, ze které bude objekt vytvořen.  
+     The `WithEvents` keyword specifies that the variable `mWidget` is used to handle an object's events. You specify the kind of object by supplying the name of the class from which the object will be created.  
   
-     Proměnná `mWidget` je deklarována v `Form1` , `WithEvents` protože proměnné musí být na úrovni třídy. To platí bez ohledu na typ třídy, ve které je umístíte.  
+     The variable `mWidget` is declared in `Form1` because `WithEvents` variables must be class-level. This is true regardless of the type of class you place them in.  
   
-     Proměnná `mblnCancel` slouží ke `LongTask` zrušení metody.  
+     The variable `mblnCancel` is used to cancel the `LongTask` method.  
   
-## <a name="writing-code-to-handle-an-event"></a>Psaní kódu pro zpracování události  
- Jakmile deklarujete proměnnou pomocí `WithEvents`, bude název proměnné zobrazen v levém rozevíracím seznamu **editoru kódu**třídy. Když vyberete `mWidget` `Widget` , zobrazí se události třídy v pravém rozevíracím seznamu. Výběrem události se zobrazí odpovídající procedura události s předponou `mWidget` a podtržítkem. Všem procedurám události přidruženým `WithEvents` k proměnné je dán název proměnné jako předpona.  
+## <a name="writing-code-to-handle-an-event"></a>Writing Code to Handle an Event  
+ As soon as you declare a variable using `WithEvents`, the variable name appears in the left drop-down list of the class's **Code Editor**. When you select `mWidget`, the `Widget` class's events appear in the right drop-down list. Selecting an event displays the corresponding event procedure, with the prefix `mWidget` and an underscore. All the event procedures associated with a `WithEvents` variable are given the variable name as a prefix.  
   
-#### <a name="to-handle-an-event"></a>Postup zpracování události  
+#### <a name="to-handle-an-event"></a>To handle an event  
   
-1. V `mWidget` **editoru kódu**vyberte v rozevíracím seznamu vlevo.  
+1. Select `mWidget` from the left drop-down list in the **Code Editor**.  
   
-2. V rozevíracím seznamu vyberte událost.`PercentDone` **Editor kódu** otevře `mWidget_PercentDone` proceduru události.  
+2. Select the `PercentDone` event from the right drop-down list. The **Code Editor** opens the `mWidget_PercentDone` event procedure.  
   
     > [!NOTE]
-    > **Editor kódu** je užitečný, ale není povinný pro vkládání nových obslužných rutin událostí. V tomto návodu je jednodušší pouze kopírovat obslužné rutiny událostí přímo do kódu.  
+    > The **Code Editor** is useful, but not required, for inserting new event handlers. In this walkthrough, it is more direct to just copy the event handlers directly into your code.  
   
-3. Do obslužné rutiny `mWidget_PercentDone` události přidejte následující kód:  
+3. Add the following code to the `mWidget_PercentDone` event handler:  
   
      [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnWalkthroughDeclaringAndRaisingEvents/VB/Form1.vb#5)]  
   
-     Při každém vyvolání `Label` `PercentDone` události zobrazuje procedura události v ovládacím prvku procentuální hodnotu dokončení. Metoda umožňuje popisku překreslit a také uživateli nabízí možnost kliknout na tlačítko **Storno.** `DoEvents`  
+     Whenever the `PercentDone` event is raised, the event procedure displays the percent complete in a `Label` control. The `DoEvents` method allows the label to repaint, and also gives the user the opportunity to click the **Cancel** button.  
   
-4. Přidejte následující kód pro `Button2_Click` obslužnou rutinu události:  
+4. Add the following code for the `Button2_Click` event handler:  
   
      [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnWalkthroughDeclaringAndRaisingEvents/VB/Form1.vb#6)]  
   
- Pokud uživatel klikne na tlačítko **Storno** , `LongTask` když `Button2_Click` je spuštěn, `DoEvents` událost se spustí, jakmile příkaz umožní, aby bylo provedeno zpracování události. Proměnná `mblnCancel` na úrovni třídy je nastavena na `True`hodnotu a `mWidget_PercentDone` událost pak otestuje a nastaví `ByRef Cancel` argument na `True`.  
+ If the user clicks the **Cancel** button while `LongTask` is running, the `Button2_Click` event is executed as soon as the `DoEvents` statement allows event processing to occur. The class-level variable `mblnCancel` is set to `True`, and the `mWidget_PercentDone` event then tests it and sets the `ByRef Cancel` argument to `True`.  
   
-## <a name="connecting-a-withevents-variable-to-an-object"></a>Připojení proměnné WithEvents k objektu  
- `Form1`je nyní nastaveno na zpracování `Widget` událostí objektu. Vše, co zbývá, je najít `Widget` někde.  
+## <a name="connecting-a-withevents-variable-to-an-object"></a>Connecting a WithEvents Variable to an Object  
+ `Form1` is now set up to handle a `Widget` object's events. All that remains is to find a `Widget` somewhere.  
   
- Pokud deklarujete proměnnou `WithEvents` v době návrhu, k ní není přidružen žádný objekt. `WithEvents` Proměnná je stejně jako jakákoli jiná proměnná objektu. Musíte vytvořit objekt a přiřadit k němu odkaz s `WithEvents` proměnnou.  
+ When you declare a variable `WithEvents` at design time, no object is associated with it. A `WithEvents` variable is just like any other object variable. You have to create an object and assign a reference to it with the `WithEvents` variable.  
   
-#### <a name="to-create-an-object-and-assign-a-reference-to-it"></a>Vytvoření objektu a přiřazení odkazu na něj  
+#### <a name="to-create-an-object-and-assign-a-reference-to-it"></a>To create an object and assign a reference to it  
   
-1. Z levého rozevíracího seznamu v **editoru kódu**vyberte **(události Form1)** .  
+1. Select **(Form1 Events)** from the left drop-down list in the **Code Editor**.  
   
-2. V rozevíracím seznamu vyberte událost.`Load` **Editor kódu** otevře `Form1_Load` proceduru události.  
+2. Select the `Load` event from the right drop-down list. The **Code Editor** opens the `Form1_Load` event procedure.  
   
-3. Přidejte následující kód pro `Form1_Load` proceduru události pro `Widget`vytvoření:  
+3. Add the following code for the `Form1_Load` event procedure to create the `Widget`:  
   
      [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnWalkthroughDeclaringAndRaisingEvents/VB/Form1.vb#7)]  
   
- Když se spustí tento kód, Visual Basic vytvoří `Widget` objekt a připojí své události k procedurám události `mWidget`přidruženým k. Od tohoto okamžiku, kdykoli `Widget` `PercentDone` vyvolá událost, `mWidget_PercentDone` je provedena procedura události.  
+ When this code executes, Visual Basic creates a `Widget` object and connects its events to the event procedures associated with `mWidget`. From that point on, whenever the `Widget` raises its `PercentDone` event, the `mWidget_PercentDone` event procedure is executed.  
   
-#### <a name="to-call-the-longtask-method"></a>Volání metody LongTask  
+#### <a name="to-call-the-longtask-method"></a>To call the LongTask method  
   
-- Do obslužné rutiny `Button1_Click` události přidejte následující kód:  
+- Add the following code to the `Button1_Click` event handler:  
   
      [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnWalkthroughDeclaringAndRaisingEvents/VB/Form1.vb#8)]  
   
- Před voláním `Boolean`metodymusí být inicializován popisek, který zobrazuje procento dokončení, a příznak na úrovni třídy pro zrušení metody musí být nastaven na `False`. `LongTask`  
+ Before the `LongTask` method is called, the label that displays the percent complete must be initialized, and the class-level `Boolean` flag for canceling the method must be set to `False`.  
   
- `LongTask`je volána s dobou trvání úlohy 12,2 sekund. `PercentDone` Událost se vyvolá jednou za každou třetinu sekundy. Při každém vyvolání `mWidget_PercentDone` události se spustí procedura události.  
+ `LongTask` is called with a task duration of 12.2 seconds. The `PercentDone` event is raised once every one-third of a second. Each time the event is raised, the `mWidget_PercentDone` event procedure is executed.  
   
- V `LongTask` případě, že `mblnCancel` je provedena, je Testováno pro zjištění, zda `LongTask` skončila normálně `mblnCancel` nebo pokud bylo `True`zastaveno, protože bylo nastaveno na. Procentuální hodnota dokončení je aktualizována pouze v bývalém případě.  
+ When `LongTask` is done, `mblnCancel` is tested to see if `LongTask` ended normally, or if it stopped because `mblnCancel` was set to `True`. The percent complete is updated only in the former case.  
   
-#### <a name="to-run-the-program"></a>Spuštění programu  
+#### <a name="to-run-the-program"></a>To run the program  
   
-1. Stisknutím klávesy F5 vložte projekt do režimu spuštění.  
+1. Press F5 to put the project in run mode.  
   
-2. Klikněte na tlačítko **Spustit úlohu** . Pokaždé, `PercentDone` když se událost vyvolá, popisek se aktualizuje o procento dokončené úlohy.  
+2. Click the **Start Task** button. Each time the `PercentDone` event is raised, the label is updated with the percentage of the task that is complete.  
   
-3. Kliknutím na tlačítko **Storno** úlohu zastavte. Všimněte si, že se vzhled tlačítka **Zrušit** nemění hned po kliknutí na něj. Událost nemůže nastat, `My.Application.DoEvents` dokud příkaz nepovolí zpracování událostí. `Click`  
+3. Click the **Cancel** button to stop the task. Notice that the appearance of the **Cancel** button does not change immediately when you click it. The `Click` event cannot happen until the `My.Application.DoEvents` statement allows event processing.  
   
     > [!NOTE]
-    > `My.Application.DoEvents` Metoda nezpracovává události přesně stejným způsobem jako formulář. Například v tomto návodu musíte dvakrát kliknout na tlačítko **Zrušit** . Chcete-li, aby formulář mohl zpracovávat události přímo, můžete použít multithreading. Další informace najdete v tématu [spravovaná vlákna](../../../../standard/threading/index.md).
+    > The `My.Application.DoEvents` method does not process events in exactly the same way as the form does. For example, in this walkthrough, you must click the **Cancel** button twice. To allow the form to handle the events directly, you can use multithreading. For more information, see [Managed Threading](../../../../standard/threading/index.md).
   
- Může se stát, že vám dá pokyn spustit program pomocí klávesy F11 a krokovat kód po řádku. Můžete zřetelně vidět, jak se `LongTask`spuštění spouští, a pak krátce znovu `Form1` zadat pokaždé `PercentDone` , když se událost vyvolá.  
+ You may find it instructive to run the program with F11 and step through the code a line at a time. You can clearly see how execution enters `LongTask`, and then briefly re-enters `Form1` each time the `PercentDone` event is raised.  
   
- Co se stane, když při provádění bylo vráceno v kódu `Form1` `LongTask` , metoda byla volána znovu? V nejhorším případě může dojít k přetečení zásobníku, pokud `LongTask` bylo voláno při každém vyvolání události.  
+ What would happen if, while execution was back in the code of `Form1`, the `LongTask` method were called again? At worst, a stack overflow might occur if `LongTask` were called every time the event was raised.  
   
- Můžete způsobit, že proměnná `mWidget` zpracovává události pro jiný `Widget` objekt přiřazením `mWidget`odkazu k novému `Widget` . V takovém případě můžete vytvořit kód `Button1_Click` pokaždé, když kliknete na tlačítko.  
+ You can cause the variable `mWidget` to handle events for a different `Widget` object by assigning a reference to the new `Widget` to `mWidget`. In fact, you can make the code in `Button1_Click` do this every time you click the button.  
   
-#### <a name="to-handle-events-for-a-different-widget"></a>Zpracování událostí pro různé pomůcky  
+#### <a name="to-handle-events-for-a-different-widget"></a>To handle events for a different widget  
   
-- Do `Button1_Click` procedury přidejte následující řádek kódu, bezprostředně před řádek, který čte `mWidget.LongTask(12.2, 0.33)`:  
+- Add the following line of code to the `Button1_Click` procedure, immediately preceding the line that reads `mWidget.LongTask(12.2, 0.33)`:  
   
      [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnWalkthroughDeclaringAndRaisingEvents/VB/Form1.vb#9)]  
   
- Výše uvedený kód vytvoří nové `Widget` pokaždé, když se klikne na tlačítko. Jakmile se `Widget` `Widget` metoda dokončí, odkaz na se uvolní a dojde k jejímu zničení. `LongTask`  
+ The code above creates a new `Widget` each time the button is clicked. As soon as the `LongTask` method completes, the reference to the `Widget` is released, and the `Widget` is destroyed.  
   
- Proměnná může současně obsahovat pouze jeden odkaz na objekt, takže pokud přiřadíte jiný `Widget` objekt k `mWidget`, události předchozího `Widget` objektu již nebudou zpracovány. `WithEvents` Pokud `mWidget` je jedinou proměnnou objektu obsahující odkaz na starou `Widget`, je objekt zničen. Pokud chcete zpracovávat události z několika `Widget` objektů, `AddHandler` použijte příkaz pro zpracování událostí z každého objektu samostatně.  
+ A `WithEvents` variable can contain only one object reference at a time, so if you assign a different `Widget` object to `mWidget`, the previous `Widget` object's events will no longer be handled. If `mWidget` is the only object variable containing a reference to the old `Widget`, the object is destroyed. If you want to handle events from several `Widget` objects, use the `AddHandler` statement to process events from each object separately.  
   
 > [!NOTE]
-> Můžete deklarovat tolik proměnných, `WithEvents` kolik potřebujete, ale `WithEvents` pole proměnných nejsou podporována.  
+> You can declare as many `WithEvents` variables as you need, but arrays of `WithEvents` variables are not supported.  
   
 ## <a name="see-also"></a>Viz také:
 

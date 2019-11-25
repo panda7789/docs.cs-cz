@@ -1,79 +1,79 @@
 ---
-title: Základní informace o řetězcích v jazyce Visual Basic
+title: Základní informace o řetězcích
 ms.date: 07/20/2015
 helpviewer_keywords:
 - strings [Visual Basic], Like operator
 - strings [Visual Basic], Visual Basic
 - strings [Visual Basic], regular expressions
 ms.assetid: 5674418d-f00d-4f72-9f98-d15897793350
-ms.openlocfilehash: f1f6b98d7db510373f2729fab2a6e0ad993ea086
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 7141966e3c8a8cbce42111c56a85a00709e8fe1a
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591380"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344281"
 ---
 # <a name="string-basics-in-visual-basic"></a>Základní informace o řetězcích v jazyce Visual Basic
-`String` Datový typ představuje posloupnost znaků (nichž každý představuje zase instance `Char` datový typ). Toto téma představuje základní koncepty řetězců v jazyce Visual Basic.  
+The `String` data type represents a series of characters (each representing in turn an instance of the `Char` data type). This topic introduces the basic concepts of strings in Visual Basic.  
   
-## <a name="string-variables"></a>Proměnné typu řetězec  
- Instance řetězce je možné přiřadit hodnotu literálu, který představuje posloupnost znaků. Příklad:  
+## <a name="string-variables"></a>String Variables  
+ An instance of a string can be assigned a literal value that represents a series of characters. Příklad:  
   
  [!code-vb[VbVbalrStrings#63](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#63)]  
   
- A `String` proměnnou můžete také přijmout libovolný výraz, který se vyhodnotí jako řetězec. Příklady:  
+ A `String` variable can also accept any expression that evaluates to a string. Příklady:  
   
  [!code-vb[VbVbalrStrings#64](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#64)]  
   
- Žádné literál, který je přiřazen k `String` proměnná musí být uzavřen v uvozovkách (""). To znamená, že uvozovka v řetězci nemůže být reprezentována znak uvozovek. Například následující kód způsobí chybu kompilátoru:  
+ Any literal that is assigned to a `String` variable must be enclosed in quotation marks (""). This means that a quotation mark within a string cannot be represented by a quotation mark. For example, the following code causes a compiler error:  
   
  [!code-vb[VbVbalrStrings#65](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#65)]  
   
- Tento kód způsobí chybu, protože kompilátor ukončí řetězec po druhé uvozovky a zbývající řetězec je interpretován jako kód. Pokud chcete tento problém vyřešit, Visual Basic interpretuje dvě uvozovek v řetězcovém literálu jako jeden znak uvozovek do řetězce. Následující příklad ukazuje správný způsob vložení uvozovek do řetězce:  
+ This code causes an error because the compiler terminates the string after the second quotation mark, and the remainder of the string is interpreted as code. To solve this problem, Visual Basic interprets two quotation marks in a string literal as one quotation mark in the string. The following example demonstrates the correct way to include a quotation mark in a string:  
   
  [!code-vb[VbVbalrStrings#66](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#66)]  
   
- V předchozím příkladu dvě uvozovek předchozí slovo `Look` stát jeden uvozovka v řetězci. Tři uvozovky na konci řádku představují jeden znak uvozovek do řetězce a znak ukončení řetězce.  
+ In the preceding example, the two quotation marks preceding the word `Look` become one quotation mark in the string. The three quotation marks at the end of the line represent one quotation mark in the string and the string termination character.  
   
- Řetězcové literály může obsahovat více řádků:  
+ String literals can contain multiple lines:  
   
 ```vb  
 Dim x = "hello  
 world"  
 ```  
   
- Výsledný řetězec obsahuje sekvence znaku nového řádku, které jste použili do řetězce literálu (vbcr, vbcrlf atd.).  Už nemusíte používat staré alternativní řešení:  
+ The resulting string contains newline sequences that you used in your string literal (vbcr, vbcrlf, etc.).  You no longer need to use the old workaround:  
   
 ```vb  
 Dim x = <xml><![CDATA[Hello  
 World]]></xml>.Value  
 ```  
   
-## <a name="characters-in-strings"></a>Znakům v řetězcích  
- Řetězec si lze představit jako řadu objektů `Char` hodnoty a `String` typ má integrované funkce, které můžete provádět mnoho manipulace na řetězec, které se podobají manipulaci s povolenou pole. Stejně jako všechna pole v rozhraní .NET Framework jsou pole od nuly. Mohou odkazovat na konkrétní znak v řetězci prostřednictvím `Chars` vlastnost, která umožňuje přístup ke znakům podle umístění, ve kterém se zobrazí v řetězci. Příklad:  
+## <a name="characters-in-strings"></a>Characters in Strings  
+ A string can be thought of as a series of `Char` values, and the `String` type has built-in functions that allow you to perform many manipulations on a string that resemble the manipulations allowed by arrays. Like all array in .NET Framework, these are zero-based arrays. You may refer to a specific character in a string through the `Chars` property, which provides a way to access a character by the position in which it appears in the string. Příklad:  
   
  [!code-vb[VbVbalrStrings#67](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#67)]  
   
- Ve výše uvedeném příkladu `Chars` vlastnost řetězce vrátí čtvrtou znak v řetězci, který je `D`a přiřadí ji k `myChar`. Můžete také získat délku znamének určitého řetězce prostřednictvím `Length` vlastnost. Pokud je potřeba manipulace s více typ pole na řetězec, můžete ji převést na pole `Char` instance pomocí `ToCharArray` funkce řetězec. Příklad:  
+ In the above example, the `Chars` property of the string returns the fourth character in the string, which is `D`, and assigns it to `myChar`. You can also get the length of a particular string through the `Length` property. If you need to perform multiple array-type manipulations on a string, you can convert it to an array of `Char` instances using the `ToCharArray` function of the string. Příklad:  
   
  [!code-vb[VbVbalrStrings#68](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#68)]  
   
- Proměnná `myArray` nyní obsahuje celou řadu `Char` hodnoty, každý představující znak z `myString`.  
+ The variable `myArray` now contains an array of `Char` values, each representing a character from `myString`.  
   
-## <a name="the-immutability-of-strings"></a>Neměnnost řetězce  
- Řetězec je *neměnné*, což znamená, že jeho hodnotu nelze změnit po vytvoření. Ale to není vám bránit v přiřazení více než jednu hodnotu k proměnné řetězce. Vezměte v úvahu v následujícím příkladu:  
+## <a name="the-immutability-of-strings"></a>The Immutability of Strings  
+ A string is *immutable*, which means its value cannot be changed once it has been created. However, this does not prevent you from assigning more than one value to a string variable. Consider the following example:  
   
  [!code-vb[VbVbalrStrings#69](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#69)]  
   
- Tady se vytvoří proměnnou s řetězcem, zadána hodnota, a pak se změní jeho hodnotu.  
+ Here, a string variable is created, given a value, and then its value is changed.  
   
- Přesněji řečeno v prvním řádku instanci typu `String` se vytvoří a předána hodnota `This string is immutable`. Na druhém řádku v příkladu se vytvoří a předána hodnota novou instanci `Or is it?`, a proměnné řetězce zahodí svůj odkaz na první instanci a uchovává odkaz na novou instanci.  
+ More specifically, in the first line, an instance of type `String` is created and given the value `This string is immutable`. In the second line of the example, a new instance is created and given the value `Or is it?`, and the string variable discards its reference to the first instance and stores a reference to the new instance.  
   
- Na rozdíl od jiných vnitřních datových typů `String` je typem odkazu. Když proměnné typu odkazu je předán jako argument funkce nebo podprogramu, je předána odkazem na adresu paměti, kde jsou data uložená namísto skutečné hodnoty řetězce. Takže v předchozím příkladu název proměnné zůstala stejná, ale odkazuje na jiný instanci `String` třídu, která obsahuje novou hodnotu.  
+ Unlike other intrinsic data types, `String` is a reference type. When a variable of reference type is passed as an argument to a function or subroutine, a reference to the memory address where the data is stored is passed instead of the actual value of the string. So in the previous example, the name of the variable remains the same, but it points to a new and different instance of the `String` class, which holds the new value.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Úvod do řetězců v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)
+- [Introduction to Strings in Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)
 - [Datový typ String](../../../../visual-basic/language-reference/data-types/string-data-type.md)
 - [Datový typ Char](../../../../visual-basic/language-reference/data-types/char-data-type.md)
 - [Základní operace s řetězci](../../../../standard/base-types/basic-string-operations.md)

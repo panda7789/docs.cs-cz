@@ -1,5 +1,5 @@
 ---
-title: REM – příkaz (Visual Basic)
+title: REM – příkaz
 ms.date: 07/20/2015
 f1_keywords:
 - vb.'
@@ -13,15 +13,15 @@ helpviewer_keywords:
 - Visual Basic code, comments
 - "' comment marker character [Visual Basic]"
 ms.assetid: 34126d7f-e0f9-476d-91e6-b31b398615dc
-ms.openlocfilehash: 729d0710d65c0cda750061e72309ced527bbcfe7
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: bdde4beae242c3175b02cd2af252babb850416f6
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582062"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346733"
 ---
 # <a name="rem-statement-visual-basic"></a>REM – příkaz (Visual Basic)
-Slouží k zahrnutí vysvětlujících poznámek do zdrojového kódu programu.  
+Used to include explanatory remarks in the source code of a program.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,18 +32,18 @@ REM comment
   
 ## <a name="parts"></a>Součásti  
  `comment`  
- Volitelné. Text libovolného komentáře, který chcete zahrnout. Mezi klíčovým slovem `REM` a `comment` se vyžaduje mezera.  
+ Volitelné. The text of any comment you want to include. A space is required between the `REM` keyword and `comment`.  
   
 ## <a name="remarks"></a>Poznámky  
- Příkaz `REM` můžete umístit na řádek, nebo ho můžete umístit na řádek za jiným příkazem. Příkaz `REM` musí být poslední příkaz na řádku. Pokud se tento příkaz řídí jiným příkazem, `REM` musí být od tohoto příkazu oddělen mezerou.  
+ You can put a `REM` statement alone on a line, or you can put it on a line following another statement. The `REM` statement must be the last statement on the line. If it follows another statement, the `REM` must be separated from that statement by a space.  
   
- Místo `REM` můžete použít jednoduchou uvozovku (`'`). To platí bez ohledu na to, jestli váš komentář následuje za jiným příkazem na stejném řádku, nebo se nachází na řádku samostatně.  
+ You can use a single quotation mark (`'`) instead of `REM`. This is true whether your comment follows another statement on the same line or sits alone on a line.  
   
 > [!NOTE]
-> Příkaz `REM` nelze pokračovat pomocí posloupnosti pokračování řádku (`_`). Po zahájení komentáře kompilátor neověřuje znaky pro zvláštní význam. Pro Víceřádkový komentář použijte jiný příkaz `REM` nebo symbol komentáře (`'`) na každém řádku.  
+> You cannot continue a `REM` statement by using a line-continuation sequence (`_`). Once a comment begins, the compiler does not examine the characters for special meaning. For a multiple-line comment, use another `REM` statement or a comment symbol (`'`) on each line.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad znázorňuje příkaz `REM`, který se používá k zahrnutí vysvětlujících poznámek do programu. Také ukazuje alternativu použití jednoduchého znaku pro uvozovky (`'`) místo `REM`.  
+ The following example illustrates the `REM` statement, which is used to include explanatory remarks in a program. It also shows the alternative of using the single quotation-mark character (`'`) instead of `REM`.  
   
  [!code-vb[VbVbalrStatements#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#6)]  
   

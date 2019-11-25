@@ -1,19 +1,19 @@
 ---
-title: <include> (Visual Basic)
+title: <include>
 ms.date: 07/20/2015
 helpviewer_keywords:
 - include XML tag
 - <include> XML tag
 ms.assetid: ba8e9173-82cd-460b-8938-a075a2dfb36d
-ms.openlocfilehash: d9c1c1a50f0e3530c842a6058e288b8d2be15f95
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2f2bebfd06d4614f05cb66834cc5bef40524ce3b
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61940904"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348464"
 ---
-# <a name="include-visual-basic"></a>\<Zahrnout > (Visual Basic)
-Odkazuje na jiný soubor, který popisuje typy a členy ve zdrojovém kódu.  
+# <a name="include-visual-basic"></a>\<include> (Visual Basic)
+Refers to another file that describes the types and members in your source code.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,28 +23,28 @@ Odkazuje na jiný soubor, který popisuje typy a členy ve zdrojovém kódu.
   
 ## <a name="parameters"></a>Parametry  
  `filename`  
- Povinný parametr. Název souboru, který obsahuje dokumentaci. Název souboru může být kvalifikovány s cestou. Uzavřete `filename` do dvojitých uvozovek ("").  
+ Požadováno. The name of the file containing the documentation. The file name can be qualified with a path. Enclose `filename` in double quotation marks (" ").  
   
  `tagpath`  
- Povinný parametr. Cesta klíčových slov do `filename` , který vede ke značce `name`. Vložte cestu do dvojitých uvozovek ("").  
+ Požadováno. The path of the tags in `filename` that leads to the tag `name`. Enclose the path in double quotation marks (" ").  
   
  `name`  
- Povinný parametr. Specifikátor názvem ve značce, který předchází komentáře. `Name` bude mít `id`.  
+ Požadováno. The name specifier in the tag that precedes the comments. `Name` will have an `id`.  
   
  `id`  
- Povinný parametr. ID značky, které předchází komentáře. ID uzavřete do jednoduchých uvozovek ("").  
+ Požadováno. The ID for the tag that precedes the comments. Enclose the ID in single quotation marks (' ').  
   
 ## <a name="remarks"></a>Poznámky  
- Použití `<include>` značka, které odkazují na komentáře do jiného souboru, které popisují typy a členy ve zdrojovém kódu. Jedná se o alternativu k uvedení dokumentační komentáře přímo v souboru zdrojového kódu.  
+ Use the `<include>` tag to refer to comments in another file that describe the types and members in your source code. This is an alternative to placing documentation comments directly in your source code file.  
   
- `<include>` Značky používá doporučení W3C jazyk XML Path (XPath) verze 1.0. Další informace o tom, jak přizpůsobit vaší `<include>` , najdete v tématu <https://www.w3.org/TR/xpath>.  
+ The `<include>` tag uses the W3C XML Path Language (XPath) Version 1.0 Recommendation. For more information about ways to customize your `<include>` use, see <https://www.w3.org/TR/xpath>.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu `<include>` značka Import ze souboru s názvem člena dokumentační komentáře `commentFile.xml`.  
+ This example uses the `<include>` tag to import member documentation comments from a file called `commentFile.xml`.  
   
  [!code-vb[VbVbcnXmlDocComments#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#4)]  
   
- Formát `commentFile.xml` vypadá takto.  
+ The format of the `commentFile.xml` is as follows.  
   
 ```xml  
 <Docs>  

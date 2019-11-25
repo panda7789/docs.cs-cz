@@ -1,37 +1,37 @@
 ---
-title: Úvod do LINQ (Visual Basic)
+title: Úvod do LINQ
 ms.date: 07/20/2015
 ms.assetid: c6339c12-9b2d-433e-961c-0d2b7f0091c2
-ms.openlocfilehash: 7c42cf73dce91bfb4da1b886613635532460f0e6
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: add442583bd81665533b704c0c9721b111cddd78
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67402414"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74338907"
 ---
-# <a name="introduction-to-linq-visual-basic"></a>Úvod do LINQ (Visual Basic)
-Language Integrated Query (LINQ) je že novinka zavedena v rozhraní .NET Framework verze 3.5 této přemostění mezery mezi řadě objekty a světě orientovaném na data.  
+# <a name="introduction-to-linq-visual-basic"></a>Introduction to LINQ (Visual Basic)
+Language-Integrated Query (LINQ) is an innovation introduced in the .NET Framework version 3.5 that bridges the gap between the world of objects and the world of data.  
   
- Tradičně dotazů na data jsou vyjádřené jako jednoduchý řetězce bez kontrolu typu v kompilaci čas nebo podporu technologie IntelliSense. Kromě toho budete muset učit jazyk dotazu pro každý typ zdroje dat: Databáze SQL, dokumenty XML, různé webové služby a tak dále. Díky LINQ *dotazu* typů prvotřídní jazykové konstrukce v jazyce Visual Basic. Psát dotazy proti silně typované kolekce objektů s použitím známých operátory a klíčová slova jazyka.  
+ Traditionally, queries against data are expressed as simple strings without type checking at compile time or IntelliSense support. Furthermore, you have to learn a different query language for each type of data source: SQL databases, XML documents, various Web services, and so on. LINQ makes a *query* a first-class language construct in Visual Basic. You write queries against strongly typed collections of objects by using language keywords and familiar operators.  
   
- Zápis dotazů LINQ v jazyce Visual Basic pro databáze serveru SQL Server, dokumenty XML, datovými sadami ADO.NET a kolekce objektů, který podporuje <xref:System.Collections.IEnumerable> nebo Obecné <xref:System.Collections.Generic.IEnumerable%601> rozhraní. Podpora LINQ se také poskytuje třetími stranami pro mnoho webových služeb a jiné implementace databáze.  
+ You can write LINQ queries in Visual Basic for SQL Server databases, XML documents, ADO.NET Datasets, and any collection of objects that supports <xref:System.Collections.IEnumerable> or the generic <xref:System.Collections.Generic.IEnumerable%601> interface. LINQ support is also provided by third parties for many Web services and other database implementations.  
   
- V nových projektech, nebo spolu s jiný než LINQ dotazy v existujících projektů můžete použít dotazy LINQ. Jediným požadavkem je, že projekt cílit na rozhraní .NET Framework 3.5 nebo novější.  
+ You can use LINQ queries in new projects, or alongside non-LINQ queries in existing projects. The only requirement is that the project target .NET Framework 3.5 or later.  
   
- Na následujícím obrázku ze sady Visual Studio zobrazuje částečně dokončeno LINQ dotaz na databázi systému SQL Server v jazyce C# a Visual Basic s úplným typem kontrolu a podporu technologie IntelliSense.  
+ The following illustration from Visual Studio shows a partially-completed LINQ query against a SQL Server database in both C# and Visual Basic with full type checking and IntelliSense support.  
   
- ![Diagram, který ukazuje dotaz LINQ s podporou technologie Intellisense.](./media/introduction-to-linq/linq-query-intellisense.png)  
+ ![Diagram that shows a LINQ query with Intellisense.](./media/introduction-to-linq/linq-query-intellisense.png)  
   
 ## <a name="next-steps"></a>Další kroky  
- Další informace o dotazech technologie LINQ, začněte tím, že se seznamovat s některé základní pojmy v části Začínáme [Začínáme s dotazy LINQ v jazyce Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md), a pak si můžete přečíst dokumentaci k technologie LINQ, ve kterém jsou chtěli byste:  
+ To learn more details about LINQ, start by becoming familiar with some basic concepts in the Getting Started section [Getting Started with LINQ in Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md), and then read the documentation for the LINQ technology in which you are interested:  
   
-- Databáze systému SQL Server: [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)  
+- SQL Server databases: [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)  
   
-- Dokumenty XML: [LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md)  
+- XML documents: [LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md)  
   
-- Datové sady ADO.NET: [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)  
+- ADO.NET Datasets: [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)  
   
-- Kolekce .NET, soubory, řetězce a tak dále: [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)  
+- .NET collections, files, strings and so on: [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)  
   
 ## <a name="see-also"></a>Viz také:
 

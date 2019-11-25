@@ -1,5 +1,5 @@
 ---
-title: Operátory a výrazy v jazyce Visual Basic
+title: Operátory a výrazy
 ms.date: 07/20/2015
 helpviewer_keywords:
 - operators [Visual Basic], operands
@@ -10,35 +10,35 @@ helpviewer_keywords:
 - operands
 - expressions [Visual Basic]
 ms.assetid: b86f3131-94ee-448f-96cd-79611e028b26
-ms.openlocfilehash: 40d71c5231b8d278f4ca8d9352e6e3cba5104f9b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: fa410a739be2da8802e76a35068448263ddec1fc
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64649710"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74343613"
 ---
 # <a name="operators-and-expressions-in-visual-basic"></a>Operátory a výrazy v jazyce Visual Basic
-*Operátor* je prvek kódu, který provádí operace na jeden nebo více prvků kódu, které obsahují hodnoty. Například prvky hodnotu proměnné, konstanty, literály, vlastnosti, vrátí z `Function` a `Operator` postupy a výrazy.  
+An *operator* is a code element that performs an operation on one or more code elements that hold values. Value elements include variables, constants, literals, properties, returns from `Function` and `Operator` procedures, and expressions.  
   
- *Výraz* je řady hodnota prvků v kombinaci s operátory, které vrací novou hodnotu. Operátory elementů hodnotu zabývat tím, že provádí výpočty, porovnání nebo jiné operace.  
+ An *expression* is a series of value elements combined with operators, which yields a new value. The operators act on the value elements by performing calculations, comparisons, or other operations.  
   
-## <a name="types-of-operators"></a>Typy operátorů  
- Visual Basic poskytuje následující typy operátorů:  
+## <a name="types-of-operators"></a>Types of Operators  
+ Visual Basic provides the following types of operators:  
   
-- [Aritmetické operátory](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md) známých výpočtů na číselných hodnot, včetně jejich bitové vzory posunutí.  
+- [Arithmetic Operators](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md) perform familiar calculations on numeric values, including shifting their bit patterns.  
   
-- [Operátory porovnání](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md) porovnat dva výrazy a vrátí `Boolean` hodnotu představující výsledek porovnání.  
+- [Comparison Operators](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md) compare two expressions and return a `Boolean` value representing the result of the comparison.  
   
-- [Operátory řetězení](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md) připojit k více řetězců do jednoho řetězce.  
+- [Concatenation Operators](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md) join multiple strings into a single string.  
   
-- [Logické a bitové operátory v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md) kombinovat `Boolean` nebo číselné hodnoty a vrátí výsledek stejný datový typ jako hodnoty.  
+- [Logical and Bitwise Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md) combine `Boolean` or numeric values and return a result of the same data type as the values.  
   
- Hodnota prvků, které jsou spojené s operátorem se nazývají *operandy* tohoto operátoru. Operátory v kombinaci s výrazy formuláře prvky hodnot, s výjimkou operátoru přiřazení, které formuláře *příkaz*. Další informace najdete v tématu [příkazy](../../../../visual-basic/programming-guide/language-features/statements.md).  
+ The value elements that are combined with an operator are called *operands* of that operator. Operators combined with value elements form expressions, except for the assignment operator, which forms a *statement*. For more information, see [Statements](../../../../visual-basic/programming-guide/language-features/statements.md).  
   
-## <a name="evaluation-of-expressions"></a>Vyhodnocování výrazů  
- Představuje hodnotu, která je obvykle známých datový typ jako konečný výsledek výrazu `Boolean`, `String`, nebo číselného typu.  
+## <a name="evaluation-of-expressions"></a>Evaluation of Expressions  
+ The end result of an expression represents a value, which is typically of a familiar data type such as `Boolean`, `String`, or a numeric type.  
   
- Následují příklady výrazů.  
+ The following are examples of expressions.  
   
  `5 + 4`  
   
@@ -56,11 +56,11 @@ ms.locfileid: "64649710"
   
  `' The preceding expression evaluates to False.`  
   
- Několik operátorů můžete provádět akce v jednom výrazu nebo příkazu, jak ukazuje následující příklad.  
+ Several operators can perform actions in a single expression or statement, as the following example illustrates.  
   
  [!code-vb[VbVbalrOperators#56](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#56)]  
   
- V předchozím příkladu, Visual Basic provádí operace ve výrazu na pravé straně operátoru přiřazení (`=`), pak přiřadí výslednou hodnotu proměnné `x` na levé straně. Praktické neomezený počet operátorů, které je možné kombinovat do výrazu, ale znalost [priorita operátorů v jazyce Visual Basic](../../../../visual-basic/language-reference/operators/operator-precedence.md) je nutné zajistit, že dostanete nezískáte očekávané výsledky.  
+ In the preceding example, Visual Basic performs the operations in the expression on the right side of the assignment operator (`=`), then assigns the resulting value to the variable `x` on the left. There is no practical limit to the number of operators that can be combined into an expression, but an understanding of [Operator Precedence in Visual Basic](../../../../visual-basic/language-reference/operators/operator-precedence.md) is necessary to ensure that you get the results you expect.  
 
 ## <a name="see-also"></a>Viz také:
 

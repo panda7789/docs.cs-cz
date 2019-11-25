@@ -1,109 +1,109 @@
 ---
-title: 'Návod: přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)'
+title: 'Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await'
 ms.date: 07/20/2015
 ms.assetid: 84fd047f-fab8-4d89-8ced-104fb7310a91
-ms.openlocfilehash: feaa1e298cda852492e020a5fa81845fb887f102
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: c13e592eb155d14c2e7cb2388a96925a7f1fa413
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197027"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74349094"
 ---
-# <a name="walkthrough-accessing-the-web-by-using-async-and-await-visual-basic"></a>Návod: přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)
+# <a name="walkthrough-accessing-the-web-by-using-async-and-await-visual-basic"></a>Walkthrough: Accessing the Web by Using Async and Await (Visual Basic)
 
-Asynchronní programy můžete napsat snadněji a intuitivnější pomocí funkcí Async/await. Můžete napsat asynchronní kód, který vypadá jako synchronní kód, a nechat kompilátor zpracovávat obtížné funkce zpětného volání a pokračování, které obvykle zahrnuje asynchronní kód.
+You can write asynchronous programs more easily and intuitively by using async/await features. You can write asynchronous code that looks like synchronous code and let the compiler handle the difficult callback functions and continuations that asynchronous code usually entails.
 
-Další informace o funkci Async naleznete v tématu [asynchronní programování s Async a await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md).
+For more information about the Async feature, see [Asynchronous Programming with Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md).
 
-Tento návod začíná s aplikací synchronní Windows Presentation Foundation (WPF), která sečte počet bajtů v seznamu webů. Návod pak převede aplikaci na asynchronní řešení pomocí nových funkcí.
+This walkthrough starts with a synchronous Windows Presentation Foundation (WPF) application that sums the number of bytes in a list of websites. The walkthrough then converts the application to an asynchronous solution by using the new features.
 
-Pokud nechcete sestavovat aplikace sami, můžete si stáhnout "asynchronní vzorek: přístup k webovému návodu (C# a Visual Basic)" z [ukázek kódu pro vývojáře](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f).
+If you don't want to build the applications yourself, you can download "Async Sample: Accessing the Web Walkthrough (C# and Visual Basic)" from [Developer Code Samples](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f).
 
-V tomto návodu provedete následující úlohy:
+In this walkthrough, you complete the following tasks:
 
 > [!div class="checklist"]
 >
-> - [Vytvoření aplikace WPF](#create-a-wpf-application)
-> - [Návrh jednoduchého MainWindow WPF](#design-a-simple-wpf-mainwindow)
-> - [Přidat odkaz](#add-a-reference)
-> - [Přidat nezbytné příkazy Imports](#add-necessary-imports-statements)
-> - [Vytvoření synchronní aplikace](#create-a-synchronous-application)
-> - [Test synchronního řešení](#test-the-synchronous-solution)
-> - [Převést GetURLContents na asynchronní metodu](#convert-geturlcontents-to-an-asynchronous-method)
-> - [Převést SumPageSizes na asynchronní metodu](#convert-sumpagesizes-to-an-asynchronous-method)
-> - [Převést startButton_Click na asynchronní metodu](#convert-startbutton_click-to-an-asynchronous-method)
-> - [Testování asynchronního řešení](#test-the-asynchronous-solution)
-> - [Nahraďte metodu GetURLContentsAsync metodou .NET Framework.](#replace-the-geturlcontentsasync-method-with-a-net-framework-method)
+> - [Create a WPF application](#create-a-wpf-application)
+> - [Design a simple WPF MainWindow](#design-a-simple-wpf-mainwindow)
+> - [Add a reference](#add-a-reference)
+> - [Add necessary Imports statements](#add-necessary-imports-statements)
+> - [Create a synchronous application](#create-a-synchronous-application)
+> - [Test the synchronous solution](#test-the-synchronous-solution)
+> - [Convert GetURLContents to an asynchronous method](#convert-geturlcontents-to-an-asynchronous-method)
+> - [Convert SumPageSizes to an asynchronous method](#convert-sumpagesizes-to-an-asynchronous-method)
+> - [Convert startButton_Click to an asynchronous method](#convert-startbutton_click-to-an-asynchronous-method)
+> - [Test the asynchronous solution](#test-the-asynchronous-solution)
+> - [Replace the GetURLContentsAsync method with a .NET Framework method](#replace-the-geturlcontentsasync-method-with-a-net-framework-method)
 
-Kompletní asynchronní příklad najdete v části [příklad](#example) .
+See the [Example](#example) section for the complete asynchronous example.
 
 ## <a name="prerequisites"></a>Požadavky
 
-V počítači musí být nainstalována aplikace Visual Studio 2012 nebo novější. Další informace najdete na stránce [soubory ke stažení](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) pro Visual Studio.
+Visual Studio 2012 or later must be installed on your computer. For more information, see the Visual Studio [Downloads](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) page.
 
 ## <a name="create-a-wpf-application"></a>Vytvoření aplikace WPF
 
-1. Spusťte Visual Studio.
+1. Start Visual Studio.
 
-2. Na panelu nabídek vyberte položku **soubor**, **Nový**, **projekt**.
+2. On the menu bar, choose **File**, **New**, **Project**.
 
-    Otevře se dialogové okno **Nový projekt** .
+    The **New Project** dialog box opens.
 
-3. V podokně **Nainstalované šablony** zvolte možnost Visual Basic a v seznamu typů projektů zvolte možnost **aplikace WPF** .
+3. In the **Installed Templates** pane, choose Visual Basic, and then choose **WPF Application** from the list of project types.
 
-4. Do textového pole **název** zadejte `AsyncExampleWPF`a pak klikněte na tlačítko **OK** .
+4. In the **Name** text box, enter `AsyncExampleWPF`, and then choose the **OK** button.
 
-    Nový projekt se zobrazí v **Průzkumník řešení**.
+    The new project appears in **Solution Explorer**.
 
-## <a name="design-a-simple-wpf-mainwindow"></a>Návrh jednoduchého MainWindow WPF
+## <a name="design-a-simple-wpf-mainwindow"></a>Design a simple WPF MainWindow
 
-1. V editoru Visual Studio Code klikněte na kartu **MainWindow. XAML** .
+1. In the Visual Studio Code Editor, choose the **MainWindow.xaml** tab.
 
-2. Pokud není okno **panelu nástrojů** viditelné, otevřete nabídku **zobrazení** a zvolte možnost **Sada nástrojů**.
+2. If the **Toolbox** window isn’t visible, open the **View** menu, and then choose **Toolbox**.
 
-3. Přidejte ovládací prvek **tlačítko** a ovládací prvek **TextBox** do okna **MainWindow** .
+3. Add a **Button** control and a **TextBox** control to the **MainWindow** window.
 
-4. Zvýrazněte ovládací prvek **TextBox** a v okně **vlastnosti** nastavte následující hodnoty:
+4. Highlight the **TextBox** control and, in the **Properties** window, set the following values:
 
-    - Nastavte vlastnost **název** na `resultsTextBox`.
+    - Set the **Name** property to `resultsTextBox`.
 
-    - Nastavte vlastnost **Height** na 250.
+    - Set the **Height** property to 250.
 
-    - Nastavte vlastnost **Width** na 500.
+    - Set the **Width** property to 500.
 
-    - Na kartě **text** zadejte Neproporcionální písmo, například Lucida konzolu nebo globální neproporcionální.
+    - On the **Text** tab, specify a monospaced font, such as Lucida Console or Global Monospace.
 
-5. Zvýrazněte ovládací prvek **tlačítko** a v okně **vlastnosti** nastavte následující hodnoty:
+5. Highlight the **Button** control and, in the **Properties** window, set the following values:
 
-    - Nastavte vlastnost **název** na `startButton`.
+    - Set the **Name** property to `startButton`.
 
-    - Změňte hodnotu vlastnosti **obsah** z **tlačítka** na **Spustit**.
+    - Change the value of the **Content** property from **Button** to **Start**.
 
-6. Umístěte textové pole a tlačítko tak, aby se obě zobrazily v okně **MainWindow** .
+6. Position the text box and the button so that both appear in the **MainWindow** window.
 
-    Další informace o Návrhář XAML WPF naleznete v tématu [Vytvoření uživatelského rozhraní pomocí Návrhář XAML](/visualstudio/xaml-tools/creating-a-ui-by-using-xaml-designer-in-visual-studio).
+    For more information about the WPF XAML Designer, see [Creating a UI by using XAML Designer](/visualstudio/xaml-tools/creating-a-ui-by-using-xaml-designer-in-visual-studio).
 
-## <a name="add-a-reference"></a>Přidat odkaz
+## <a name="add-a-reference"></a>Add a reference
 
-1. V **Průzkumník řešení**zvýrazněte název svého projektu.
+1. In **Solution Explorer**, highlight your project's name.
 
-2. V panelu nabídek vyberte položku **projekt**, **Přidat odkaz**.
+2. On the menu bar, choose **Project**, **Add Reference**.
 
-    Zobrazí se dialogové okno **Správce odkazů** .
+    The **Reference Manager** dialog box appears.
 
-3. V horní části dialogového okna ověřte, zda je projekt cílen na .NET Framework 4,5 nebo vyšší.
+3. At the top of the dialog box, verify that your project is targeting the .NET Framework 4.5 or higher.
 
-4. V oblasti **sestavení** vyberte možnost **rozhraní** , pokud již není zvolena.
+4. In the **Assemblies** area, choose **Framework** if it isn’t already chosen.
 
-5. V seznamu názvů vyberte zaškrtávací políčko **System .NET. http** .
+5. In the list of names, select the **System.Net.Http** check box.
 
-6. Kliknutím na tlačítko **OK** zavřete dialogové okno.
+6. Choose the **OK** button to close the dialog box.
 
-## <a name="add-necessary-imports-statements"></a>Přidat nezbytné příkazy Imports
+## <a name="add-necessary-imports-statements"></a>Add necessary Imports statements
 
-1. V **Průzkumník řešení**otevřete místní nabídku pro MainWindow. XAML. vb a pak zvolte **Zobrazit kód**.
+1. In **Solution Explorer**, open the shortcut menu for MainWindow.xaml.vb, and then choose **View Code**.
 
-2. Přidejte následující příkazy `Imports` v horní části souboru kódu, pokud již nejsou přítomny.
+2. Add the following `Imports` statements at the top of the code file if they’re not already present.
 
     ```vb
     Imports System.Net.Http
@@ -111,11 +111,11 @@ V počítači musí být nainstalována aplikace Visual Studio 2012 nebo nověj�
     Imports System.IO
     ```
 
-## <a name="create-a-synchronous-application"></a>Vytvoření synchronní aplikace
+## <a name="create-a-synchronous-application"></a>Create a synchronous application
 
-1. V okně návrh MainWindow. XAML dvakrát klikněte na tlačítko **Start** a vytvořte obslužnou rutinu události `startButton_Click` v souboru MainWindow. XAML. vb.
+1. In the design window, MainWindow.xaml, double-click the **Start** button to create the `startButton_Click` event handler in MainWindow.xaml.vb.
 
-2. V souboru MainWindow. XAML. vb zkopírujte následující kód do textu `startButton_Click`:
+2. In MainWindow.xaml.vb, copy the following code into the body of `startButton_Click`:
 
     ```vb
     resultsTextBox.Clear()
@@ -123,19 +123,19 @@ V počítači musí být nainstalována aplikace Visual Studio 2012 nebo nověj�
     resultsTextBox.Text &= vbCrLf & "Control returned to startButton_Click."
     ```
 
-    Kód volá metodu, která aplikaci zařídí, `SumPageSizes`a zobrazí zprávu, když se ovládací prvek vrátí do `startButton_Click`.
+    The code calls the method that drives the application, `SumPageSizes`, and displays a message when control returns to `startButton_Click`.
 
-3. Kód pro synchronní řešení obsahuje následující čtyři metody:
+3. The code for the synchronous solution contains the following four methods:
 
-    - `SumPageSizes`, který získá seznam adres URL webových stránek z `SetUpURLList` a potom zavolá `GetURLContents` a `DisplayResults` ke zpracování každé adresy URL.
+    - `SumPageSizes`, which gets a list of webpage URLs from `SetUpURLList` and then calls `GetURLContents` and `DisplayResults` to process each URL.
 
-    - `SetUpURLList`, která vytvoří a vrátí seznam webových adres.
+    - `SetUpURLList`, which makes and returns a list of web addresses.
 
-    - `GetURLContents`, který stáhne obsah jednotlivých webů a vrátí obsah jako bajtové pole.
+    - `GetURLContents`, which downloads the contents of each website and returns the contents as a byte array.
 
-    - `DisplayResults`, která zobrazuje počet bajtů v bajtovém poli pro každou adresu URL.
+    - `DisplayResults`, which displays  the number of bytes in the byte array for each URL.
 
-    Zkopírujte následující čtyři metody a pak je vložte pod obslužnou rutinu události `startButton_Click` v souboru MainWindow. XAML. vb:
+    Copy the following four methods, and then paste them under the `startButton_Click` event handler in MainWindow.xaml.vb:
 
     ```vb
     Private Sub SumPageSizes()
@@ -211,11 +211,11 @@ V počítači musí být nainstalována aplikace Visual Studio 2012 nebo nověj�
     End Sub
     ```
 
-## <a name="test-the-synchronous-solution"></a>Test synchronního řešení
+## <a name="test-the-synchronous-solution"></a>Test the synchronous solution
 
-1. Zvolte klávesu F5 ke spuštění programu a pak klikněte na tlačítko **Start** .
+1. Choose the F5 key to run the program, and then choose the **Start** button.
 
-    Měl by se zobrazit výstup, který se podobá následujícímu seznamu:
+    Output that resembles the following list should appear:
 
     ```console
     msdn.microsoft.com/library/windows/apps/br211380.aspx        383832
@@ -234,55 +234,55 @@ V počítači musí být nainstalována aplikace Visual Studio 2012 nebo nověj�
     Control returned to startButton_Click.
     ```
 
-    Všimněte si, že pro zobrazení počtů trvá několik sekund. Během této doby je vlákno uživatelského rozhraní blokované při čekání na stažení požadovaných prostředků. V důsledku toho nebudete moct okno zobrazení po kliknutí na tlačítko **Start** přesunout, maximalizovat, minimalizovat ani ani zavřít. Tato snaha selže, dokud se nezobrazují počty bajtů. Pokud web neodpovídá, nemusíte mít žádné informace o tom, který web selhal. Je obtížné dokonce ukončit čekání a ukončit program.
+    Notice that it takes a few seconds to display the counts. During that time, the UI thread is blocked while it waits for requested resources to download. As a result, you can't move, maximize, minimize, or even close the display window after you choose the  **Start** button. These efforts fail until the byte counts start to appear. If a website isn’t responding, you have no indication of which site failed. It is difficult even to stop waiting and close the program.
 
-## <a name="convert-geturlcontents-to-an-asynchronous-method"></a>Převést GetURLContents na asynchronní metodu
+## <a name="convert-geturlcontents-to-an-asynchronous-method"></a>Convert GetURLContents to an asynchronous method
 
-1. Chcete-li převést synchronní řešení na asynchronní řešení, je nejlepším místem, kde začít, je `GetURLContents`, protože volání metody <xref:System.Net.HttpWebRequest.GetResponse%2A?displayProperty=nameWithType> a metody <xref:System.IO.Stream.CopyTo%2A?displayProperty=nameWithType> jsou, kde aplikace přistupuje k webu. .NET Framework usnadňuje převod tím, že poskytuje asynchronní verze obou metod.
+1. To convert the synchronous solution to an asynchronous solution, the best place to start is in `GetURLContents` because the calls to the <xref:System.Net.HttpWebRequest.GetResponse%2A?displayProperty=nameWithType> method and to the <xref:System.IO.Stream.CopyTo%2A?displayProperty=nameWithType> method are where the application accesses the web. The .NET Framework makes the conversion easy by supplying asynchronous versions of both methods.
 
-    Další informace o metodách, které se používají v `GetURLContents`, najdete v tématu <xref:System.Net.WebRequest>.
+    For more information about the methods that are used in `GetURLContents`, see <xref:System.Net.WebRequest>.
 
     > [!NOTE]
-    > Při provedení kroků v tomto návodu se zobrazí několik chyb kompilátoru. Můžete je ignorovat a pokračovat v tomto návodu.
+    > As you follow the steps in this walkthrough, several compiler errors appear. You can ignore them and continue with the walkthrough.
 
-    Změňte metodu, která je volána ve třetí řádce `GetURLContents` z `GetResponse` na asynchronní metodu <xref:System.Net.WebRequest.GetResponseAsync%2A> založenou na úlohách.
+    Change the method that's called in the third line of `GetURLContents` from `GetResponse` to the asynchronous, task-based <xref:System.Net.WebRequest.GetResponseAsync%2A> method.
 
     ```vb
     Using response As WebResponse = webReq.GetResponseAsync()
     ```
 
-2. `GetResponseAsync` vrátí <xref:System.Threading.Tasks.Task%601>. V takovém případě má *vrácená proměnná úlohy*`TResult`typ <xref:System.Net.WebResponse>. Úkol je příslib k vytvoření skutečného `WebResponse` objektu po stažení požadovaných dat a dokončení úlohy.
+2. `GetResponseAsync` returns a <xref:System.Threading.Tasks.Task%601>. In this case, the *task return variable*, `TResult`, has type <xref:System.Net.WebResponse>. The task is a promise to produce an actual `WebResponse` object after the requested data has been downloaded and the task has run to completion.
 
-    Pro načtení `WebResponse` hodnoty z úlohy, použijte operátor [await](../../../../visual-basic/language-reference/operators/await-operator.md) pro volání `GetResponseAsync`, jak ukazuje následující kód.
+    To retrieve the `WebResponse` value from the task, apply an [Await](../../../../visual-basic/language-reference/operators/await-operator.md) operator to the call to `GetResponseAsync`, as the following code shows.
 
     ```vb
     Using response As WebResponse = Await webReq.GetResponseAsync()
     ```
 
-    Operátor `Await` pozastaví provádění aktuální metody, `GetURLContents`, dokud není dokončen očekávaný úkol. Mezitím se ovládací prvek vrátí volajícímu aktuální metody. V tomto příkladu je aktuální metoda `GetURLContents`a volající je `SumPageSizes`. Po dokončení úkolu se přislíbený `WebResponse` objekt vytvoří jako hodnota očekávaného úkolu a přiřazený k proměnné `response`.
+    The `Await` operator suspends the execution of the current method, `GetURLContents`, until the awaited task is complete. In the meantime, control returns to the caller of the current method. In this example, the current method is `GetURLContents`, and the caller is `SumPageSizes`. When the task is finished, the promised `WebResponse` object is produced as the value of the awaited task and assigned to the variable `response`.
 
-    Předchozí příkaz může být rozdělen do následujících dvou příkazů k objasnění toho, co se stane.
+    The previous statement can be separated into the following two statements to clarify what happens.
 
     ```vb
     Dim responseTask As Task(Of WebResponse) = webReq.GetResponseAsync()
     Using response As WebResponse = Await responseTask
     ```
 
-    Volání `webReq.GetResponseAsync` vrátí `Task(Of WebResponse)` nebo `Task<WebResponse>`. Pak se pro úlohu použije operátor `Await`, aby se načetla hodnota `WebResponse`.
+    The call to `webReq.GetResponseAsync` returns a `Task(Of WebResponse)` or `Task<WebResponse>`. Then an `Await` operator is applied to the task to retrieve the `WebResponse` value.
 
-    Pokud vaše asynchronní metoda funguje na to, že nezávisí na dokončení úlohy, může metoda pokračovat v práci s těmito dvěma příkazy po volání asynchronní metody a před použitím operátoru await. Příklady naleznete v tématu [How to: Revícenásobné webové požadavky paralelně pomocí Async a await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md) a [Postupy: rozšíříte-li asynchronní návod pomocí Task. WhenAll (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md).
+    If your async method has work to do that doesn’t depend on the completion of the task, the method can continue with that work between these two statements, after the call to the async method and before the await operator is applied. For examples, see [How to: Make Multiple Web Requests in Parallel by Using Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md) and [How to: Extend the Async Walkthrough by Using Task.WhenAll (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md).
 
-3. Protože jste přidali operátor `Await` v předchozím kroku, dojde k chybě kompilátoru. Operátor lze použít pouze v metodách, které jsou označeny modifikátorem [Async](../../../../visual-basic/language-reference/modifiers/async.md) . Ignorovat chybu při opakování kroků převodu a nahradit volání `CopyTo` voláním `CopyToAsync`.
+3. Because you added the `Await` operator in the previous step, a compiler error occurs. The operator can be used only in methods that are marked with the [Async](../../../../visual-basic/language-reference/modifiers/async.md) modifier. Ignore the error while you repeat the conversion steps to replace the call to `CopyTo` with a call to `CopyToAsync`.
 
-    - Změňte název metody, která je volána pro <xref:System.IO.Stream.CopyToAsync%2A>.
+    - Change the name of the method that’s called to <xref:System.IO.Stream.CopyToAsync%2A>.
 
-    - Metoda `CopyTo` nebo `CopyToAsync` kopíruje bajty do svého argumentu, `content`a nevrací smysluplnou hodnotu. V synchronní verzi je volání `CopyTo` jednoduchý příkaz, který nevrací hodnotu. Asynchronní verze, `CopyToAsync`, vrátí <xref:System.Threading.Tasks.Task>. Úkol funguje jako "Task (void)" a umožňuje, aby metoda byla očekávána. Použijte `Await` nebo `await` pro volání `CopyToAsync`, jak ukazuje následující kód.
+    - The `CopyTo` or `CopyToAsync` method copies bytes to its argument, `content`, and doesn’t return a meaningful value. In the synchronous version, the call to `CopyTo` is a simple statement that doesn't return a value. The asynchronous version, `CopyToAsync`, returns a <xref:System.Threading.Tasks.Task>. The task functions like "Task(void)" and enables the method to be awaited. Apply `Await` or `await` to the call to `CopyToAsync`, as the following code shows.
 
         ```vb
         Await responseStream.CopyToAsync(content)
         ```
 
-         Předchozí příkaz zkracuje následující dva řádky kódu.
+         The previous statement abbreviates the following two lines of code.
 
         ```vb
         ' CopyToAsync returns a Task, not a Task<T>.
@@ -293,45 +293,45 @@ V počítači musí být nainstalována aplikace Visual Studio 2012 nebo nověj�
         Await copyTask
         ```
 
-4. Vše, co je potřeba udělat v `GetURLContents`, je upravit signaturu metody. Operátor `Await` lze použít pouze v metodách, které jsou označeny modifikátorem [Async](../../../../visual-basic/language-reference/modifiers/async.md) . Přidejte modifikátor k označení metody jako *asynchronní metody*, jak ukazuje následující kód.
+4. All that remains to be done in `GetURLContents` is to adjust the method signature. You can use the `Await` operator only in methods that are marked with the [Async](../../../../visual-basic/language-reference/modifiers/async.md) modifier. Add the modifier to mark the method as an *async method*, as the following code shows.
 
     ```vb
     Private Async Function GetURLContents(url As String) As Byte()
     ```
 
-5. Návratový typ asynchronní metody může být pouze <xref:System.Threading.Tasks.Task>, <xref:System.Threading.Tasks.Task%601>. V Visual Basic metoda musí být `Function`, která vrací `Task` nebo `Task(Of T)`, nebo musí být metoda `Sub`. Obvykle se `Sub` metoda používá pouze v asynchronní obslužné rutině události, kde je `Sub` požadováno. V ostatních případech použijete `Task(T)`, pokud metoda Completed má [návratový](../../../../visual-basic/language-reference/statements/return-statement.md) příkaz, který vrací hodnotu typu t, a použijete `Task`, pokud metoda Completed nevrátí smysluplnou hodnotu.
+5. The return type of an async method can only be <xref:System.Threading.Tasks.Task>, <xref:System.Threading.Tasks.Task%601>. In Visual Basic, the method must be a `Function` that returns a `Task` or a `Task(Of T)`, or the method must be a `Sub`. Typically, a `Sub` method  is used only in an async event handler, where `Sub` is required. In other cases, you use `Task(T)` if the completed method has a [Return](../../../../visual-basic/language-reference/statements/return-statement.md) statement that returns a value of type T, and you use `Task` if the completed method doesn’t return a meaningful value.
 
-    Další informace naleznete v tématu [Async Return Types (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md).
+    For more information, see [Async Return Types (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md).
 
-    Metoda `GetURLContents` obsahuje příkaz return a příkaz vrátí bajtové pole. Proto návratový typ asynchronní verze je Task (T), kde T je pole bajtů. V signatuře metody proveďte následující změny:
+    Method `GetURLContents` has a return statement, and the statement returns a byte array. Therefore, the return type of the async version is Task(T), where T is a byte array. Make the following changes in the method signature:
 
-    - Změňte návratový typ na `Task(Of Byte())`.
+    - Change the return type to `Task(Of Byte())`.
 
-    - Podle konvence mají asynchronní metody názvy, které končí "Async", proto přejmenujte metodu `GetURLContentsAsync`.
+    - By convention, asynchronous methods have names that end in "Async," so rename the method `GetURLContentsAsync`.
 
-    Následující kód tyto změny znázorňuje.
+    The following code shows these changes.
 
     ```vb
     Private Async Function GetURLContentsAsync(url As String) As Task(Of Byte())
     ```
 
-    U těchto změn je převod `GetURLContents` na asynchronní metodu dokončen.
+    With those few changes, the conversion of `GetURLContents` to an asynchronous method is complete.
 
-## <a name="convert-sumpagesizes-to-an-asynchronous-method"></a>Převést SumPageSizes na asynchronní metodu
+## <a name="convert-sumpagesizes-to-an-asynchronous-method"></a>Convert SumPageSizes to an asynchronous method
 
-1. Opakujte kroky z předchozího postupu pro `SumPageSizes`. Nejprve změňte volání `GetURLContents` na asynchronní volání.
+1. Repeat the steps from the previous procedure for `SumPageSizes`. First, change the call to `GetURLContents` to an asynchronous call.
 
-    - Změňte název metody, která je volána z `GetURLContents` na `GetURLContentsAsync`, pokud jste tak již neučinili.
+    - Change the name of the method that’s called from `GetURLContents` to `GetURLContentsAsync`, if you haven't already done so.
 
-    - Použijte `Await` u úkolu, který `GetURLContentsAsync` vrátí k získání hodnoty bajtového pole.
+    - Apply `Await` to the task that `GetURLContentsAsync` returns to obtain the byte array value.
 
-    Následující kód tyto změny znázorňuje.
+    The following code shows these changes.
 
     ```vb
     Dim urlContents As Byte() = Await GetURLContentsAsync(url)
     ```
 
-    Předchozí přiřazení zkracuje následující dva řádky kódu.
+    The previous assignment abbreviates the following two lines of code.
 
     ```vb
     ' GetURLContentsAsync returns a task. At completion, the task
@@ -340,31 +340,31 @@ V počítači musí být nainstalována aplikace Visual Studio 2012 nebo nověj�
     Dim urlContents As Byte() = Await getContentsTask
     ```
 
-2. V signatuře metody proveďte následující změny:
+2. Make the following changes in the method's signature:
 
-    - Označte metodu pomocí modifikátoru `Async`.
+    - Mark the method with the `Async` modifier.
 
-    - Do názvu metody přidejte "Async".
+    - Add "Async" to the method name.
 
-    - V tuto chvíli neexistuje žádná vrácená proměnná úlohy, T, protože `SumPageSizesAsync` nevrací hodnotu pro T. (metoda nemá žádný příkaz `Return`.) Metoda však musí vracet `Task`, aby bylo možné očekávat. Proto změňte typ metody z `Sub` na `Function`. Návratový typ funkce je `Task`.
+    - There is no task return variable, T, this time because `SumPageSizesAsync` doesn’t return a value for T. (The method has no `Return` statement.) However, the method must return a `Task` to be awaitable. Therefore, change the method type from `Sub` to `Function`. The return type of the function is `Task`.
 
-    Následující kód tyto změny znázorňuje.
+    The following code shows these changes.
 
     ```vb
     Private Async Function SumPageSizesAsync() As Task
     ```
 
-    Převod `SumPageSizes` na `SumPageSizesAsync` je dokončený.
+    The conversion of `SumPageSizes` to `SumPageSizesAsync` is complete.
 
-## <a name="convert-startbutton_click-to-an-asynchronous-method"></a>Převést startButton_Click na asynchronní metodu
+## <a name="convert-startbutton_click-to-an-asynchronous-method"></a>Convert startButton_Click to an asynchronous method
 
-1. V obslužné rutině události změňte název volané metody z `SumPageSizes` na `SumPageSizesAsync`, pokud jste to ještě neudělali.
+1. In the event handler, change the name of the called method from `SumPageSizes` to `SumPageSizesAsync`, if you haven’t already done so.
 
-2. Vzhledem k tomu, že `SumPageSizesAsync` je asynchronní metoda, změňte kód v obslužné rutině události tak, aby čekal na výsledek.
+2. Because `SumPageSizesAsync` is an async method, change the code in the event handler to await the result.
 
-    Volání `SumPageSizesAsync` zrcadlí volání `CopyToAsync` v `GetURLContentsAsync`. Volání vrátí `Task`, nikoli `Task(T)`.
+    The call to `SumPageSizesAsync` mirrors the call to `CopyToAsync` in `GetURLContentsAsync`. The call returns a `Task`, not a `Task(T)`.
 
-    Stejně jako v předchozích postupech lze volání převést pomocí jednoho příkazu nebo dvou příkazů. Následující kód tyto změny znázorňuje.
+    As in previous procedures, you can convert the call by using one statement or two statements. The following code shows these changes.
 
     ```vb
     ' One-step async call.
@@ -375,47 +375,47 @@ V počítači musí být nainstalována aplikace Visual Studio 2012 nebo nověj�
     Await sumTask
     ```
 
-3. Chcete-li zabránit nechtěnému znovu zadat operaci, přidejte do horní části `startButton_Click` následující příkaz, kterým zakážete tlačítko **Start** .
+3. To prevent accidentally reentering the operation, add the following statement at the top of `startButton_Click` to disable the **Start** button.
 
     ```vb
     ' Disable the button until the operation is complete.
     startButton.IsEnabled = False
     ```
 
-    Tlačítko lze znovu povolit na konci obslužné rutiny události.
+    You can reenable the button at the end of the event handler.
 
     ```vb
     ' Reenable the button in case you want to run the operation again.
     startButton.IsEnabled = True
     ```
 
-    Další informace o Vícenásobný přístup najdete v tématu [zpracování Vícenásobný přístup v asynchronních aplikacích (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/handling-reentrancy-in-async-apps.md).
+    For more information about reentrancy, see [Handling Reentrancy in Async Apps (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/handling-reentrancy-in-async-apps.md).
 
-4. Nakonec přidejte modifikátor `Async` k deklaraci, aby mohla obslužná rutina události očekávat `SumPagSizesAsync`.
+4. Finally, add the `Async` modifier to the declaration so that the event handler can await `SumPagSizesAsync`.
 
     ```vb
     Async Sub startButton_Click(sender As Object, e As RoutedEventArgs) Handles startButton.Click
     ```
 
-    Názvy obslužných rutin událostí se typicky nemění. Návratový typ se nezměnil na `Task`, protože obslužné rutiny události musí být `Sub` procedurami v Visual Basic.
+    Typically, the names of event handlers aren’t changed. The return type isn’t changed to `Task` because event handlers must be `Sub` procedures in Visual Basic.
 
-    Převod projektu z synchronního na asynchronní zpracování je dokončen.
+    The conversion of the project from synchronous to asynchronous processing is complete.
 
-## <a name="test-the-asynchronous-solution"></a>Testování asynchronního řešení
+## <a name="test-the-asynchronous-solution"></a>Test the asynchronous solution
 
-1. Zvolte klávesu F5 ke spuštění programu a pak klikněte na tlačítko **Start** .
+1. Choose the F5 key to run the program, and then choose the **Start** button.
 
-2. Měl by se zobrazit výstup, který se podobá výstupu synchronního řešení. Všimněte si ale následujících rozdílů.
+2. Output that resembles the output of the synchronous solution should appear. However, notice the following differences.
 
-    - Po dokončení zpracování se všechny výsledky neprojeví ve stejnou dobu. Oba programy například obsahují řádek v `startButton_Click`, který vymaže textové pole. Záměrem je vymazat textové pole mezi spuštěním, pokud zvolíte tlačítko **Spustit** pro druhý čas, poté, co se objeví jedna sada výsledků. V synchronní verzi je textové pole vymazáno těsně před tím, než se počty zobrazí podruhé, po dokončení stahování a vlákno uživatelského rozhraní je volné pro další práci. V asynchronní verzi se textové pole vymaže ihned po kliknutí na tlačítko **Start** .
+    - The results don’t all occur at the same time, after the processing is complete. For example, both programs contain a line in `startButton_Click` that clears the text box. The intent is to clear the text box between runs if you choose the **Start** button for a second time, after one set of results has appeared. In the synchronous version, the text box is cleared just before the counts appear for the second time, when the downloads are completed and the UI thread is free to do other work. In the asynchronous version, the text box clears immediately after you choose the **Start** button.
 
-    - Ve většině případů není vlákno UI během stahování zablokované. Během stahování, počítání a zobrazování webových prostředků můžete okno přesunout nebo změnit jeho velikost. Pokud je jeden z webů pomalý nebo neodpovídá, můžete operaci zrušit výběrem tlačítka **Zavřít** (x v poli červené v pravém horním rohu).
+    - Most importantly, the UI thread isn’t blocked during the downloads. You can move or resize the window while the web resources are being downloaded, counted, and displayed. If one of the websites is slow or not responding, you can cancel the operation by choosing the **Close** button (the x in the red field in the upper-right corner).
 
-## <a name="replace-the-geturlcontentsasync-method-with-a-net-framework-method"></a>Nahraďte metodu GetURLContentsAsync metodou .NET Framework.
+## <a name="replace-the-geturlcontentsasync-method-with-a-net-framework-method"></a>Replace the GetURLContentsAsync method with a .NET Framework method
 
-1. .NET Framework poskytuje mnoho asynchronních metod, které můžete použít. Jedna z nich, <xref:System.Net.Http.HttpClient.GetByteArrayAsync%28System.String%29?displayProperty=nameWithType> metoda, dělá přesně to, co potřebujete pro tento návod. Místo metody `GetURLContentsAsync`, kterou jste vytvořili v předchozím postupu, ji můžete použít.
+1. The .NET Framework provides many async methods that you can use. One of them, the <xref:System.Net.Http.HttpClient.GetByteArrayAsync%28System.String%29?displayProperty=nameWithType> method, does just what you need for this walkthrough. You can use it instead of the `GetURLContentsAsync` method that you created in an earlier procedure.
 
-    Prvním krokem je vytvoření objektu <xref:System.Net.Http.HttpClient> v metodě `SumPageSizesAsync`. Přidejte následující deklaraci na začátek metody.
+    The first step is to create an <xref:System.Net.Http.HttpClient> object in the `SumPageSizesAsync` method. Add the following declaration at the start of the method.
 
     ```vb
     ' Declare an HttpClient object and increase the buffer size. The
@@ -424,21 +424,21 @@ V počítači musí být nainstalována aplikace Visual Studio 2012 nebo nověj�
         New HttpClient() With {.MaxResponseContentBufferSize = 1000000}
     ```
 
-2. V `SumPageSizesAsync,` nahraďte volání metody `GetURLContentsAsync` voláním metody `HttpClient`.
+2. In `SumPageSizesAsync,` replace the call to your `GetURLContentsAsync` method with a call to the `HttpClient` method.
 
     ```vb
     Dim urlContents As Byte() = Await client.GetByteArrayAsync(url)
     ```
 
-3. Odeberte nebo Odkomentujte metodu `GetURLContentsAsync`, kterou jste napsali.
+3. Remove or comment out the `GetURLContentsAsync` method that you wrote.
 
-4. Zvolte klávesu F5 ke spuštění programu a pak klikněte na tlačítko **Start** .
+4. Choose the F5 key to run the program, and then choose the **Start** button.
 
-    Chování této verze projektu by se mělo shodovat s chováním, které popisuje postup testování asynchronního řešení, ale s ještě menším úsilím.
+    The behavior of this version of the project should match the behavior that the "To test the asynchronous solution" procedure describes but with even less effort from you.
 
 ## <a name="example"></a>Příklad
 
-Následuje úplný příklad převedeného asynchronního řešení, které používá asynchronní metodu `GetURLContentsAsync`. Všimněte si, že se silně podobá původnímu synchronnímu řešení.
+The following is the full example of the converted asynchronous solution that uses the asynchronous `GetURLContentsAsync` method. Notice that it strongly resembles the original, synchronous solution.
 
 ```vb
 ' Add the following Imports statements, and add a reference for System.Net.Http.
@@ -565,7 +565,7 @@ Class MainWindow
 End Class
 ```
 
-Následující kód obsahuje úplný příklad řešení, které používá metodu `HttpClient`, `GetByteArrayAsync`.
+The following code contains the full example of the solution that uses the `HttpClient` method, `GetByteArrayAsync`.
 
 ```vb
 ' Add the following Imports statements, and add a reference for System.Net.Http.
@@ -660,11 +660,11 @@ End Class
 
 ## <a name="see-also"></a>Viz také:
 
-- [Asynchronní Ukázka: přístup k webovému návoduC# (a Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)
+- [Async Sample: Accessing the Web Walkthrough (C# and Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)
 - [Operátor Await](../../../../visual-basic/language-reference/operators/await-operator.md)
 - [Async](../../../../visual-basic/language-reference/modifiers/async.md)
-- [Asynchronní programování s modifikátorem Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
-- [Asynchronní návratové typy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md)
-- [Asynchronní programování založené na úlohách (klepnutím)](https://go.microsoft.com/fwlink/?LinkId=204847)
-- [Postupy: roztažení asynchronního návodu pomocí Task. WhenAll (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md)
-- [Postupy: paralelní provádění více webových požadavků pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)
+- [Asynchronous Programming with Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
+- [Async Return Types (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md)
+- [Task-based Asynchronous Programming (TAP)](https://go.microsoft.com/fwlink/?LinkId=204847)
+- [How to: Extend the Async Walkthrough by Using Task.WhenAll (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md)
+- [How to: Make Multiple Web Requests in Parallel by Using Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)

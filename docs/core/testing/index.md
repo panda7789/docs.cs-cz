@@ -5,12 +5,12 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 08/30/2017
 ms.custom: seodec18
-ms.openlocfilehash: 006ccf0370f8014e5021275c4d38cc50bf1c076f
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 9fbffea82d75fc06a5aa3b11beffdd2cb540da83
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72522908"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74282259"
 ---
 # <a name="unit-testing-in-net-core-and-net-standard"></a>Testování částí v .NET Core a .NET Standard
 
@@ -39,7 +39,7 @@ Další informace o testování částí v projektech .NET Core:
 
 Projekty testů jednotek .NET Core jsou podporované pro:
 
-- [C#](../../csharp/index.md)
+- [C#](../../csharp/index.yml)
 - [F#](../../fsharp/index.md)
 - [Visual Basic](../../visual-basic/index.md) 
 

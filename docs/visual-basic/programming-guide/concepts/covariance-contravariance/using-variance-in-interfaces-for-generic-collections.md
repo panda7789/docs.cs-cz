@@ -1,25 +1,25 @@
 ---
-title: Použití odchylky v rozhraní pro obecné kolekce (Visual Basic)
+title: Použití odchylky v rozhraní pro obecné kolekce
 ms.date: 07/20/2015
 ms.assetid: c867fcea-7462-4995-b9c5-542feec74036
-ms.openlocfilehash: 3c7cde2baf6d8b163c6765b87d6bebef803eb6ee
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6ee133dfd61d7d7a88243ca592642ff21e0c2223
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61787241"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74349011"
 ---
-# <a name="using-variance-in-interfaces-for-generic-collections-visual-basic"></a>Použití odchylky v rozhraní pro obecné kolekce (Visual Basic)
+# <a name="using-variance-in-interfaces-for-generic-collections-visual-basic"></a>Using Variance in Interfaces for Generic Collections (Visual Basic)
 
-Kovariantní rozhraní umožňuje její metody k vrácení více odvozené typy než procesory zadané v rozhraní. Rozhraní kontravariantní umožňuje její metody přijímají parametry méně odvozené typy než platformám zadaným v rozhraní.
+A covariant interface allows its methods to return more derived types than those specified in the interface. A contravariant interface allows its methods to accept parameters of less derived types than those specified in the interface.
 
-V rozhraní .NET Framework 4, stala několik existujících rozhraní kovariantního a kontravariantního. Patří mezi ně <xref:System.Collections.Generic.IEnumerable%601> a <xref:System.IComparable%601>. To umožňuje znovu použít metody, které pracují s obecné kolekce základních typů pro kolekce odvozené typy.
+In .NET Framework 4, several existing interfaces became covariant and contravariant. These include <xref:System.Collections.Generic.IEnumerable%601> and <xref:System.IComparable%601>. This enables you to reuse methods that operate with generic collections of base types for collections of derived types.
 
-Seznam variantních rozhraní v rozhraní .NET Framework najdete v tématu [odchylky obecných rozhraní (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md).
+For a list of variant interfaces in the .NET Framework, see [Variance in Generic Interfaces (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md).
 
-## <a name="converting-generic-collections"></a>Převádění obecných kolekcí
+## <a name="converting-generic-collections"></a>Converting Generic Collections
 
-Následující příklad ukazuje výhody podpory Kovariance v <xref:System.Collections.Generic.IEnumerable%601> rozhraní. `PrintFullName` Metoda přijímá kolekce `IEnumerable(Of Person)` typ jako parametr. Ale můžete použít pro kolekce `IEnumerable(Of Person)` typu, protože `Employee` dědí `Person`.
+The following example illustrates the benefits of covariance support in the <xref:System.Collections.Generic.IEnumerable%601> interface. The `PrintFullName` method accepts a collection of the `IEnumerable(Of Person)` type as a parameter. However, you can reuse it for a collection of the `IEnumerable(Of Person)` type because `Employee` inherits `Person`.
 
 ```vb
 ' Simple hierarchy of classes.
@@ -51,9 +51,9 @@ Sub Main()
 End Sub
 ```
 
-## <a name="comparing-generic-collections"></a>Porovnání obecné kolekce
+## <a name="comparing-generic-collections"></a>Comparing Generic Collections
 
-Následující příklad ukazuje výhody podpory kontravariance v <xref:System.Collections.Generic.IComparer%601> rozhraní. `PersonComparer` Implementuje třída `IComparer(Of Person)` rozhraní. Ale můžete znovu použít tuto třídu pro porovnání sekvence objektů `Employee` typu, protože `Employee` dědí `Person`.
+The following example illustrates the benefits of contravariance support in the <xref:System.Collections.Generic.IComparer%601> interface. The `PersonComparer` class implements the `IComparer(Of Person)` interface. However, you can reuse this class to compare a sequence of objects of the `Employee` type because `Employee` inherits `Person`.
 
 ```vb
 ' Simple hierarchy of classes.
@@ -114,4 +114,4 @@ End Sub
 
 ## <a name="see-also"></a>Viz také:
 
-- [Odchylky obecných rozhraní (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)
+- [Variance in Generic Interfaces (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)

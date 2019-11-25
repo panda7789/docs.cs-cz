@@ -1,31 +1,31 @@
 ---
-title: Vytváření variantních obecných rozhraní (Visual Basic)
+title: Vytváření variantních obecných rozhraní
 ms.date: 07/20/2015
 ms.assetid: d4037dd2-dfe9-4811-9150-93d4e8b20113
-ms.openlocfilehash: 45454f12cf49994f3d476a9ee27f72442266db65
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 74362b9d9effab028bebb9e9ecf72ac0111366d3
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61787293"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347069"
 ---
-# <a name="creating-variant-generic-interfaces-visual-basic"></a>Vytváření variantních obecných rozhraní (Visual Basic)
+# <a name="creating-variant-generic-interfaces-visual-basic"></a>Creating Variant Generic Interfaces (Visual Basic)
 
-Je možné deklarovat parametry obecného typu v rozhraní jako kovariantní nebo kontravariantní. *Kovariance* umožňuje mají více odvozené návratové typy než určené parametry obecného typu metody rozhraní. *Kontravariance* umožňuje mít typy argumentů, které jsou méně odvozený než je určeno obecné parametry metody rozhraní. Obecná rozhraní, který má kovariantní nebo kontravariantní parametry obecného typu se nazývá *variant*.
+You can declare generic type parameters in interfaces as covariant or contravariant. *Covariance* allows interface methods to have more derived return types than that defined by the generic type parameters. *Contravariance* allows interface methods to have argument types that are less derived than that specified by the generic parameters. A generic interface that has covariant or contravariant generic type parameters is called *variant*.
 
 > [!NOTE]
-> Rozhraní .NET framework 4 zavedena podpora odchylku pro existující několik obecných rozhraní. Seznam variantních rozhraní v rozhraní .NET Framework najdete v tématu [odchylky obecných rozhraní (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md).
+> .NET Framework 4 introduced variance support for several existing generic interfaces. For the list of the variant interfaces in the .NET Framework, see [Variance in Generic Interfaces (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md).
 
-## <a name="declaring-variant-generic-interfaces"></a>Deklarující variantních obecných rozhraní
+## <a name="declaring-variant-generic-interfaces"></a>Declaring Variant Generic Interfaces
 
-Je možné deklarovat s použitím variantních obecných rozhraní `in` a `out` klíčová slova pro parametry obecného typu.
+You can declare variant generic interfaces by using the `in` and `out` keywords for generic type parameters.
 
 > [!IMPORTANT]
-> `ByRef` Parametry v jazyce Visual Basic nemůže být typu variant. Typy hodnot také nepodporují variance.
+> `ByRef` parameters in Visual Basic cannot be variant. Value types also do not support variance.
 
-Je možné deklarovat parametr obecného typu kovariantní s použitím `out` – klíčové slovo. Typ kovariantního musí splňovat následující podmínky:
+You can declare a generic type parameter covariant by using the `out` keyword. The covariant type must satisfy the following conditions:
 
-- Typ je použít jenom jako návratový typ metody rozhraní a nelze použít jako typ argumentů metody. To je znázorněno v následujícím příkladu, ve kterém typ `R` je deklarována jako kovariantní.
+- The type is used only as a return type of interface methods and not used as a type of method arguments. This is illustrated in the following example, in which the type `R` is declared covariant.
 
     ```vb
     Interface ICovariant(Of Out R)
@@ -35,7 +35,7 @@ Je možné deklarovat parametr obecného typu kovariantní s použitím `out` �
     End Interface
     ```
 
-    Existuje jedna výjimka tohoto pravidla. Pokud máte kontravariantní obecného delegáta jako parametr metody, můžete použít typ jako parametr obecného typu pro delegáta. To je znázorněno typem `R` v následujícím příkladu. Další informace najdete v tématu [odchylky v delegátech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md) a [pomocí odchylku pro delegáty Func a Action obecný (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).
+    There is one exception to this rule. If you have a contravariant generic delegate as a method parameter, you can use the type as a generic type parameter for the delegate. This is illustrated by the type `R` in the following example. For more information, see [Variance in Delegates (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md) and [Using Variance for Func and Action Generic Delegates (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).
 
     ```vb
     Interface ICovariant(Of Out R)
@@ -43,7 +43,7 @@ Je možné deklarovat parametr obecného typu kovariantní s použitím `out` �
     End Interface
     ```
 
-- Typ se nepoužívá jako obecná omezení pro metody rozhraní. To je znázorněno v následujícím kódu.
+- The type is not used as a generic constraint for the interface methods. This is illustrated in the following code.
 
     ```vb
     Interface ICovariant(Of Out R)
@@ -54,7 +54,7 @@ Je možné deklarovat parametr obecného typu kovariantní s použitím `out` �
     End Interface
     ```
 
-Můžete deklarovat kontravariantního parametru obecného typu pomocí `in` – klíčové slovo. Kontravariantního typu lze použít pouze jako argumenty metody typu, nikoli jako návratový typ metody rozhraní. Kontravariantního typu můžete použít také pro obecná omezení. Následující kód ukazuje, jak deklarovat kontravariantní rozhraní a používat obecná omezení pro jednu z jeho metod.
+You can declare a generic type parameter contravariant by using the `in` keyword. The contravariant type can be used only as a type of method arguments and not as a return type of interface methods. The contravariant type can also be used for generic constraints. The following code shows how to declare a contravariant interface and use a generic constraint for one of its methods.
 
 ```vb
 Interface IContravariant(Of In A)
@@ -65,7 +65,7 @@ Interface IContravariant(Of In A)
 End Interface
 ```
 
-Je také možné podporují kovarianci a kontravarianci ve stejné rozhraní, ale pro jiný typ parametrů, jak je znázorněno v následujícím příkladu kódu.
+It is also possible to support both covariance and contravariance in the same interface, but for different type parameters, as shown in the following code example.
 
 ```vb
 Interface IVariant(Of Out R, In A)
@@ -75,7 +75,7 @@ Interface IVariant(Of Out R, In A)
 End Interface
 ```
 
-V jazyce Visual Basic nelze deklarovat události v rozhraní typu variant bez zadání typu delegáta. Také variant rozhraní nemůžou být vnořené třídy, výčty a struktury, ale mohou být vnořené rozhraní. To je znázorněno v následujícím kódu.
+In Visual Basic, you can't declare events in variant interfaces without specifying the delegate type. Also, a variant interface can't have nested classes, enums, or structures, but it can have nested interfaces. This is illustrated in the following code.
 
 ```vb
 Interface ICovariant(Of Out R)
@@ -98,9 +98,9 @@ Interface ICovariant(Of Out R)
 End Interface
 ```
 
-## <a name="implementing-variant-generic-interfaces"></a>Implementující variantních obecných rozhraní
+## <a name="implementing-variant-generic-interfaces"></a>Implementing Variant Generic Interfaces
 
-Implementujete variantních obecných rozhraní v třídy pomocí stejné syntaxe, který se používá pro invariantní rozhraní. Následující příklad kódu ukazuje, jak implementovat kovariantní rozhraní v obecné třídě.
+You implement variant generic interfaces in classes by using the same syntax that is used for invariant interfaces. The following code example shows how to implement a covariant interface in a generic class.
 
 ```vb
 Interface ICovariant(Of Out R)
@@ -116,7 +116,7 @@ Class SampleImplementation(Of R)
 End Class
 ```
 
-Třídy, které implementují rozhraní varianty se nebudou měnit. Zvažte například následující kód.
+Classes that implement variant interfaces are invariant. For example, consider the following code.
 
 ```vb
  The interface is covariant.
@@ -132,9 +132,9 @@ Dim button As SampleImplementation(Of Button) =
 ' Dim obj As SampleImplementation(Of Object) = button
 ```
 
-## <a name="extending-variant-generic-interfaces"></a>Rozšiřování variantních obecných rozhraní
+## <a name="extending-variant-generic-interfaces"></a>Extending Variant Generic Interfaces
 
-Když rozšíříte variantních obecných rozhraní, je nutné použít `in` a `out` klíčových slov pro explicitně určit, zda odvozená rozhraní podporuje variance. Kompilátor nelze odvodit odchýlení od rozhraní, které se rozšiřuje. Zvažte například následující rozhraní.
+When you extend a variant generic interface, you have to use the `in` and `out` keywords to explicitly specify whether the derived interface supports variance. The compiler does not infer the variance from the interface that is being extended. For example, consider the following interfaces.
 
 ```vb
 Interface ICovariant(Of Out T)
@@ -149,9 +149,9 @@ Interface IExtCovariant(Of Out T)
 End Interface
 ```
 
-V `Invariant(Of T)` rozhraní, parametr obecného typu `T` je neutrální, zatímco v `IExtCovariant (Of Out T)`parametr typu je kovariant, i když obě rozhraní rozšíření stejné rozhraní. Stejné pravidlo platí pro parametry obecného typu kontravariantní.
+In the `Invariant(Of T)` interface, the generic type parameter `T` is invariant, whereas in `IExtCovariant (Of Out T)`the type parameter is covariant, although both interfaces extend the same interface. The same rule is applied to contravariant generic type parameters.
 
-Můžete vytvořit rozhraní, které rozšiřuje rozhraní kde obecný parametr typu `T` je kovariantní a rozhraní, kde jsou kontravariantní Pokud ve rozšíření rozhraní parametr obecného typu `T` je neutrální. To je znázorněno v následujícím příkladu kódu.
+You can create an interface that extends both the interface where the generic type parameter `T` is covariant and the interface where it is contravariant if in the extending interface the generic type parameter `T` is invariant. This is illustrated in the following code example.
 
 ```vb
 Interface ICovariant(Of Out T)
@@ -165,7 +165,7 @@ Interface IInvariant(Of T)
 End Interface
 ```
 
-Ale pokud parametr obecného typu `T` je deklarován kovariantního v jednom rozhraní, nelze deklarovat je kontravariantní rozšíření rozhraní nebo naopak. To je znázorněno v následujícím příkladu kódu.
+However, if a generic type parameter `T` is declared covariant in one interface, you cannot declare it contravariant in the extending interface, or vice versa. This is illustrated in the following code example.
 
 ```vb
 Interface ICovariant(Of Out T)
@@ -177,14 +177,14 @@ End Interface
 ' End Interface
 ```
 
-### <a name="avoiding-ambiguity"></a>Jak se vyhnout nejednoznačnosti
+### <a name="avoiding-ambiguity"></a>Avoiding Ambiguity
 
-Při implementaci variantních obecných rozhraní variance může někdy vést k nejednoznačnosti. To by se jim vyhnout.
+When you implement variant generic interfaces, variance can sometimes lead to ambiguity. This should be avoided.
 
-Například pokud se explicitně implementovat stejné variantních obecné rozhraní s parametry různých obecného typu v jedné třídy, můžete vytvořit nejednoznačnosti. Kompilátor nevytváří chybu v tomto případě ale není zadaný, která implementace rozhraní se zvolí za běhu. To může vést k drobným chybám v kódu. Zvažte následující příklad kódu.
+For example, if you explicitly implement the same variant generic interface with different generic type parameters in one class, it can create ambiguity. The compiler does not produce an error in this case, but it is not specified which interface implementation will be chosen at runtime. This could lead to subtle bugs in your code. Consider the following code example.
 
 > [!NOTE]
-> S `Option Strict Off`, Visual Basic generuje upozornění kompilátoru při implementaci rozhraní nejednoznačný. S `Option Strict On`, Visual Basic vygeneruje chybu kompilátoru.
+> With `Option Strict Off`, Visual Basic generates a compiler warning when there is an ambiguous interface implementation. With `Option Strict On`, Visual Basic generates a compiler error.
 
 ```vb
 ' Simple class hierarchy.
@@ -228,9 +228,9 @@ Sub Main()
 End Sub
 ```
 
-V tomto příkladu neurčená jak `pets.GetEnumerator` metoda zvolí mezi `Cat` a `Dog`. To může způsobit problémy v kódu.
+In this example, it is unspecified how the `pets.GetEnumerator` method chooses between `Cat` and `Dog`. This could cause problems in your code.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Odchylky obecných rozhraní (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)
-- [Použití odchylek pro delegáty Func a Action obecný (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)
+- [Variance in Generic Interfaces (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)
+- [Using Variance for Func and Action Generic Delegates (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)
