@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Převod řetězce na pole znaků v jazyce Visual Basic'
+title: 'Postupy: Převod řetězce na pole znaků'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - character arrays [Visual Basic], converting strings
@@ -8,30 +8,30 @@ helpviewer_keywords:
 - strings [Visual Basic], converting to arrays
 - string conversion [Visual Basic], arrays
 ms.assetid: 1b54b686-ab29-413b-adce-6bd5422376eb
-ms.openlocfilehash: 921d7ad62545d3a29870aee6c6b354fdadeb0500
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d2f7128f97e576d37216d3aa9736921f13f77004
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61938356"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74352450"
 ---
-# <a name="how-to-convert-a-string-to-an-array-of-characters-in-visual-basic"></a><span data-ttu-id="d3b2c-102">Postupy: Převod řetězce na pole znaků v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="d3b2c-102">How to: Convert a String to an Array of Characters in Visual Basic</span></span>
-<span data-ttu-id="d3b2c-103">Někdy je užitečné mít data o znaky v váš řetězec a umístění těchto znaků v řetězci, například když je analýza řetězce.</span><span class="sxs-lookup"><span data-stu-id="d3b2c-103">Sometimes it is useful to have data about the characters in your string and the positions of those characters within your string, such as when you are parsing a string.</span></span> <span data-ttu-id="d3b2c-104">Tento příklad ukazuje, jak získat pole znaků v řetězci pomocí volání řetězce <xref:System.String.ToCharArray%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="d3b2c-104">This example shows how you can get an array of the characters in a string by calling the string's <xref:System.String.ToCharArray%2A> method.</span></span>  
+# <a name="how-to-convert-a-string-to-an-array-of-characters-in-visual-basic"></a><span data-ttu-id="50b02-102">Postupy: Převod řetězce na pole znaků v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="50b02-102">How to: Convert a String to an Array of Characters in Visual Basic</span></span>
+<span data-ttu-id="50b02-103">Sometimes it is useful to have data about the characters in your string and the positions of those characters within your string, such as when you are parsing a string.</span><span class="sxs-lookup"><span data-stu-id="50b02-103">Sometimes it is useful to have data about the characters in your string and the positions of those characters within your string, such as when you are parsing a string.</span></span> <span data-ttu-id="50b02-104">This example shows how you can get an array of the characters in a string by calling the string's <xref:System.String.ToCharArray%2A> method.</span><span class="sxs-lookup"><span data-stu-id="50b02-104">This example shows how you can get an array of the characters in a string by calling the string's <xref:System.String.ToCharArray%2A> method.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="d3b2c-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="d3b2c-105">Example</span></span>  
- <span data-ttu-id="d3b2c-106">Tento příklad ukazuje, jak rozdělit řetězec do `Char` pole a jak rozdělit řetězec do `String` pole jeho textové znaky kódování Unicode.</span><span class="sxs-lookup"><span data-stu-id="d3b2c-106">This example demonstrates how to split a string into a `Char` array, and how to split a string into a `String` array of its Unicode text characters.</span></span> <span data-ttu-id="d3b2c-107">Důvod pro tento rozdíl je, že znaky kódování Unicode se může skládat ze dvou nebo více `Char` znaky (například náhradní pár nebo kombinování posloupnosti znaků).</span><span class="sxs-lookup"><span data-stu-id="d3b2c-107">The reason for this distinction is that Unicode text characters can be composed of two or more `Char` characters (such as a surrogate pair or a combining character sequence).</span></span> <span data-ttu-id="d3b2c-108">Další informace najdete v tématu <xref:System.Globalization.TextElementEnumerator> a [standardu Unicode](https://www.unicode.org/standard/standard.html).</span><span class="sxs-lookup"><span data-stu-id="d3b2c-108">For more information, see <xref:System.Globalization.TextElementEnumerator> and [The Unicode Standard](https://www.unicode.org/standard/standard.html).</span></span>  
+## <a name="example"></a><span data-ttu-id="50b02-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="50b02-105">Example</span></span>  
+ <span data-ttu-id="50b02-106">This example demonstrates how to split a string into a `Char` array, and how to split a string into a `String` array of its Unicode text characters.</span><span class="sxs-lookup"><span data-stu-id="50b02-106">This example demonstrates how to split a string into a `Char` array, and how to split a string into a `String` array of its Unicode text characters.</span></span> <span data-ttu-id="50b02-107">The reason for this distinction is that Unicode text characters can be composed of two or more `Char` characters (such as a surrogate pair or a combining character sequence).</span><span class="sxs-lookup"><span data-stu-id="50b02-107">The reason for this distinction is that Unicode text characters can be composed of two or more `Char` characters (such as a surrogate pair or a combining character sequence).</span></span> <span data-ttu-id="50b02-108">For more information, see <xref:System.Globalization.TextElementEnumerator> and [The Unicode Standard](https://www.unicode.org/standard/standard.html).</span><span class="sxs-lookup"><span data-stu-id="50b02-108">For more information, see <xref:System.Globalization.TextElementEnumerator> and [The Unicode Standard](https://www.unicode.org/standard/standard.html).</span></span>  
   
  [!code-vb[VbVbalrStrings#75](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class4.vb#75)]  
   
-## <a name="example"></a><span data-ttu-id="d3b2c-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="d3b2c-109">Example</span></span>  
- <span data-ttu-id="d3b2c-110">Je obtížnější rozdělit řetězec na jeho textové znaky Unicode, ale to je nezbytné, pokud potřebujete informace o bude obsahovat vizuální reprezentaci řetězce.</span><span class="sxs-lookup"><span data-stu-id="d3b2c-110">It is more difficult to split a string into its Unicode text characters, but this is necessary if you need information about the visual representation of a string.</span></span> <span data-ttu-id="d3b2c-111">V tomto příkladu <xref:System.Globalization.StringInfo.SubstringByTextElements%2A> metodu k získání informací o textové znaky Unicode, které společně tvoří řetězec.</span><span class="sxs-lookup"><span data-stu-id="d3b2c-111">This example uses the <xref:System.Globalization.StringInfo.SubstringByTextElements%2A> method to get information about the Unicode text characters that make up a string.</span></span>  
+## <a name="example"></a><span data-ttu-id="50b02-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="50b02-109">Example</span></span>  
+ <span data-ttu-id="50b02-110">It is more difficult to split a string into its Unicode text characters, but this is necessary if you need information about the visual representation of a string.</span><span class="sxs-lookup"><span data-stu-id="50b02-110">It is more difficult to split a string into its Unicode text characters, but this is necessary if you need information about the visual representation of a string.</span></span> <span data-ttu-id="50b02-111">This example uses the <xref:System.Globalization.StringInfo.SubstringByTextElements%2A> method to get information about the Unicode text characters that make up a string.</span><span class="sxs-lookup"><span data-stu-id="50b02-111">This example uses the <xref:System.Globalization.StringInfo.SubstringByTextElements%2A> method to get information about the Unicode text characters that make up a string.</span></span>  
   
  [!code-vb[VbVbalrStrings#76](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class4.vb#76)]  
   
-## <a name="see-also"></a><span data-ttu-id="d3b2c-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d3b2c-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="50b02-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="50b02-112">See also</span></span>
 
 - <xref:System.String.Chars%2A>
 - <xref:System.Globalization.StringInfo?displayProperty=nameWithType>
-- [<span data-ttu-id="d3b2c-113">Postupy: Přístup znakům v řetězcích</span><span class="sxs-lookup"><span data-stu-id="d3b2c-113">How to: Access Characters in Strings</span></span>](../../../../visual-basic/programming-guide/language-features/strings/how-to-access-characters-in-strings.md)
-- [<span data-ttu-id="d3b2c-114">Převod mezi řetězci a ostatními datovými typy v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="d3b2c-114">Converting Between Strings and Other Data Types in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/strings/converting-between-strings-and-other-data-types.md)
-- [<span data-ttu-id="d3b2c-115">Řetězce</span><span class="sxs-lookup"><span data-stu-id="d3b2c-115">Strings</span></span>](../../../../visual-basic/programming-guide/language-features/strings/index.md)
+- [<span data-ttu-id="50b02-113">Postupy: Přístup ke znakům v řetězcích</span><span class="sxs-lookup"><span data-stu-id="50b02-113">How to: Access Characters in Strings</span></span>](../../../../visual-basic/programming-guide/language-features/strings/how-to-access-characters-in-strings.md)
+- [<span data-ttu-id="50b02-114">Converting Between Strings and Other Data Types in Visual Basic</span><span class="sxs-lookup"><span data-stu-id="50b02-114">Converting Between Strings and Other Data Types in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/strings/converting-between-strings-and-other-data-types.md)
+- [<span data-ttu-id="50b02-115">Řetězce</span><span class="sxs-lookup"><span data-stu-id="50b02-115">Strings</span></span>](../../../../visual-basic/programming-guide/language-features/strings/index.md)

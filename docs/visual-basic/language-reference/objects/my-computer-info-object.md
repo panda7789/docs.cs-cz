@@ -1,29 +1,29 @@
 ---
-title: My.Computer.info – objekt (Visual Basic)
+title: My.Computer.Info – objekt
 ms.date: 07/20/2015
 helpviewer_keywords:
 - My.Computer.Info object
 ms.assetid: 2eb2aa5f-303d-426c-918d-989c8b7b08d0
-ms.openlocfilehash: 1ef633b8e9fcbfb815c8cd8296fecac3e7c4b041
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0763a97927718eff6fcc79439597f2d4e6f07808
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61751589"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347214"
 ---
-# <a name="mycomputerinfo-object"></a><span data-ttu-id="5583a-102">My.Computer.Info – objekt</span><span class="sxs-lookup"><span data-stu-id="5583a-102">My.Computer.Info Object</span></span>
-<span data-ttu-id="5583a-103">Poskytuje vlastnosti pro získání informací o paměť, načtená sestavení, název a operační systém počítače.</span><span class="sxs-lookup"><span data-stu-id="5583a-103">Provides properties for getting information about the computer's memory, loaded assemblies, name, and operating system.</span></span>  
+# <a name="mycomputerinfo-object"></a><span data-ttu-id="40c1e-102">My.Computer.Info – objekt</span><span class="sxs-lookup"><span data-stu-id="40c1e-102">My.Computer.Info Object</span></span>
+<span data-ttu-id="40c1e-103">Provides properties for getting information about the computer's memory, loaded assemblies, name, and operating system.</span><span class="sxs-lookup"><span data-stu-id="40c1e-103">Provides properties for getting information about the computer's memory, loaded assemblies, name, and operating system.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="5583a-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="5583a-104">Remarks</span></span>  
- <span data-ttu-id="5583a-105">Informace o vlastnostech `My.Computer.Info` objektu, najdete v článku <xref:Microsoft.VisualBasic.Devices.ComputerInfo>.</span><span class="sxs-lookup"><span data-stu-id="5583a-105">For information about the properties of the `My.Computer.Info` object, see <xref:Microsoft.VisualBasic.Devices.ComputerInfo>.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="40c1e-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="40c1e-104">Remarks</span></span>  
+ <span data-ttu-id="40c1e-105">For information about the properties of the `My.Computer.Info` object, see <xref:Microsoft.VisualBasic.Devices.ComputerInfo>.</span><span class="sxs-lookup"><span data-stu-id="40c1e-105">For information about the properties of the `My.Computer.Info` object, see <xref:Microsoft.VisualBasic.Devices.ComputerInfo>.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="5583a-106">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5583a-106">Requirements</span></span>  
- <span data-ttu-id="5583a-107">**Namespace:** <xref:Microsoft.VisualBasic.Devices></span><span class="sxs-lookup"><span data-stu-id="5583a-107">**Namespace:** <xref:Microsoft.VisualBasic.Devices></span></span>  
+## <a name="requirements"></a><span data-ttu-id="40c1e-106">Požadavky</span><span class="sxs-lookup"><span data-stu-id="40c1e-106">Requirements</span></span>  
+ <span data-ttu-id="40c1e-107">**Namespace:** <xref:Microsoft.VisualBasic.Devices></span><span class="sxs-lookup"><span data-stu-id="40c1e-107">**Namespace:** <xref:Microsoft.VisualBasic.Devices></span></span>  
   
- <span data-ttu-id="5583a-108">**Třída:** <xref:Microsoft.VisualBasic.Devices.ComputerInfo></span><span class="sxs-lookup"><span data-stu-id="5583a-108">**Class:** <xref:Microsoft.VisualBasic.Devices.ComputerInfo></span></span>  
+ <span data-ttu-id="40c1e-108">**Class:** <xref:Microsoft.VisualBasic.Devices.ComputerInfo></span><span class="sxs-lookup"><span data-stu-id="40c1e-108">**Class:** <xref:Microsoft.VisualBasic.Devices.ComputerInfo></span></span>  
   
- <span data-ttu-id="5583a-109">**Sestavení:** Visual Basic Runtime Library (v souboru Microsoft.VisualBasic.dll)</span><span class="sxs-lookup"><span data-stu-id="5583a-109">**Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)</span></span>  
+ <span data-ttu-id="40c1e-109">**Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)</span><span class="sxs-lookup"><span data-stu-id="40c1e-109">**Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5583a-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5583a-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="40c1e-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="40c1e-110">See also</span></span>
 
-- [<span data-ttu-id="5583a-111">Objekt My.Computer</span><span class="sxs-lookup"><span data-stu-id="5583a-111">My.Computer Object</span></span>](../../../visual-basic/language-reference/objects/my-computer-object.md)
+- [<span data-ttu-id="40c1e-111">Objekt My.Computer</span><span class="sxs-lookup"><span data-stu-id="40c1e-111">My.Computer Object</span></span>](../../../visual-basic/language-reference/objects/my-computer-object.md)

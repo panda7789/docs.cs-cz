@@ -1,25 +1,25 @@
 ---
-title: 'Postupy: načtení omezené hodnoty elementu (Visual Basic)'
+title: 'How to: Retrieve the Shallow Value of an Element'
 ms.date: 07/20/2015
 ms.assetid: 730a6670-fb8c-41fc-8a1b-eb97a837e432
-ms.openlocfilehash: 184186a92865b022118b9989633a97c75274e7f4
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 7449d6d1230313aef6005284270370bb9d243a3f
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320437"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346915"
 ---
-# <a name="how-to-retrieve-the-shallow-value-of-an-element-visual-basic"></a><span data-ttu-id="9c968-102">Postupy: načtení omezené hodnoty elementu (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="9c968-102">How to: Retrieve the Shallow Value of an Element (Visual Basic)</span></span>
+# <a name="how-to-retrieve-the-shallow-value-of-an-element-visual-basic"></a><span data-ttu-id="07809-102">How to: Retrieve the Shallow Value of an Element (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="07809-102">How to: Retrieve the Shallow Value of an Element (Visual Basic)</span></span>
 
-<span data-ttu-id="9c968-103">Toto téma ukazuje, jak získat omezené hodnoty elementu.</span><span class="sxs-lookup"><span data-stu-id="9c968-103">This topic shows how to get the shallow value of an element.</span></span> <span data-ttu-id="9c968-104">Nedávná hodnota je hodnota pouze konkrétního prvku, na rozdíl od hloubkové hodnoty, která zahrnuje hodnoty všech podřízených prvků zřetězených do jednoho řetězce.</span><span class="sxs-lookup"><span data-stu-id="9c968-104">The shallow value is the value of the specific element only, as opposed to the deep value, which includes the values of all descendent elements concatenated into a single string.</span></span>
+<span data-ttu-id="07809-103">This topic shows how to get the shallow value of an element.</span><span class="sxs-lookup"><span data-stu-id="07809-103">This topic shows how to get the shallow value of an element.</span></span> <span data-ttu-id="07809-104">The shallow value is the value of the specific element only, as opposed to the deep value, which includes the values of all descendent elements concatenated into a single string.</span><span class="sxs-lookup"><span data-stu-id="07809-104">The shallow value is the value of the specific element only, as opposed to the deep value, which includes the values of all descendent elements concatenated into a single string.</span></span>
 
-<span data-ttu-id="9c968-105">Při načítání hodnoty prvku pomocí přetypování nebo vlastnosti <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> načtete hloubkovou hodnotu.</span><span class="sxs-lookup"><span data-stu-id="9c968-105">When you retrieve an element value by using either casting or the <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> property, you retrieve the deep value.</span></span> <span data-ttu-id="9c968-106">K načtení omezené hodnoty můžete použít rozšiřující metodu `ShallowValue`, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="9c968-106">To retrieve the shallow value, you can use the `ShallowValue` extension method, as shown in the following example.</span></span> <span data-ttu-id="9c968-107">Načtení omezené hodnoty je užitečné, pokud chcete vybrat prvky na základě jejich obsahu.</span><span class="sxs-lookup"><span data-stu-id="9c968-107">Retrieving the shallow value is useful when you want to select elements based on their content.</span></span>
+<span data-ttu-id="07809-105">When you retrieve an element value by using either casting or the <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> property, you retrieve the deep value.</span><span class="sxs-lookup"><span data-stu-id="07809-105">When you retrieve an element value by using either casting or the <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> property, you retrieve the deep value.</span></span> <span data-ttu-id="07809-106">To retrieve the shallow value, you can use the `ShallowValue` extension method, as shown in the following example.</span><span class="sxs-lookup"><span data-stu-id="07809-106">To retrieve the shallow value, you can use the `ShallowValue` extension method, as shown in the following example.</span></span> <span data-ttu-id="07809-107">Retrieving the shallow value is useful when you want to select elements based on their content.</span><span class="sxs-lookup"><span data-stu-id="07809-107">Retrieving the shallow value is useful when you want to select elements based on their content.</span></span>
 
-<span data-ttu-id="9c968-108">V následujícím příkladu je deklarována metoda rozšíření, která načte s nejomezeným hodnotou elementu.</span><span class="sxs-lookup"><span data-stu-id="9c968-108">The following example declares an extension method that retrieves the shallow value of an element.</span></span> <span data-ttu-id="9c968-109">Potom používá metodu rozšíření v dotazu k vypsání všech prvků, které obsahují počítanou hodnotu.</span><span class="sxs-lookup"><span data-stu-id="9c968-109">It then uses the extension method in a query to list all elements that contain a calculated value.</span></span>
+<span data-ttu-id="07809-108">The following example declares an extension method that retrieves the shallow value of an element.</span><span class="sxs-lookup"><span data-stu-id="07809-108">The following example declares an extension method that retrieves the shallow value of an element.</span></span> <span data-ttu-id="07809-109">It then uses the extension method in a query to list all elements that contain a calculated value.</span><span class="sxs-lookup"><span data-stu-id="07809-109">It then uses the extension method in a query to list all elements that contain a calculated value.</span></span>
 
-## <a name="example"></a><span data-ttu-id="9c968-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="9c968-110">Example</span></span>
+## <a name="example"></a><span data-ttu-id="07809-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="07809-110">Example</span></span>
 
-<span data-ttu-id="9c968-111">Následující textový soubor, Report. XML, je zdrojem tohoto příkladu.</span><span class="sxs-lookup"><span data-stu-id="9c968-111">The following text file, Report.xml, is the source for this example.</span></span>
+<span data-ttu-id="07809-111">The following text file, Report.xml, is the source for this example.</span><span class="sxs-lookup"><span data-stu-id="07809-111">The following text file, Report.xml, is the source for this example.</span></span>
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -67,7 +67,7 @@ Module Module1
 End Module
 ```
 
-<span data-ttu-id="9c968-112">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="9c968-112">This example produces the following output:</span></span>
+<span data-ttu-id="07809-112">This example produces the following output:</span><span class="sxs-lookup"><span data-stu-id="07809-112">This example produces the following output:</span></span>
 
 ```console
 Column  Name="CustomerId"   =Customer.CustomerId.Heading
@@ -76,6 +76,6 @@ Column  Name="CustomerId"   =Customer.CustomerId
 Column  Name="Name"         =Customer.Name
 ```
 
-## <a name="see-also"></a><span data-ttu-id="9c968-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9c968-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="07809-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="07809-113">See also</span></span>
 
-- [<span data-ttu-id="9c968-114">LINQ to XML osy (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="9c968-114">LINQ to XML Axes (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)
+- [<span data-ttu-id="07809-114">LINQ to XML Axes (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="07809-114">LINQ to XML Axes (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)

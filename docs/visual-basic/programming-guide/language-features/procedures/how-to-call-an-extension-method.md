@@ -1,22 +1,22 @@
 ---
-title: 'Postupy: Volání metody rozšíření (Visual Basic)'
+title: 'Postupy: Volání metody rozšíření'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - calling extension methods [Visual Basic]
 - extension methods [Visual Basic]
 ms.assetid: df07750f-40f4-4c07-a79e-1113a27cfbea
-ms.openlocfilehash: f2058162ab939d2619d7255c884d88c35ee63715
-ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
+ms.openlocfilehash: a19705a8f90833d48869df26a18d19b0ad1488e0
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68512674"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74340395"
 ---
-# <a name="how-to-call-an-extension-method-visual-basic"></a><span data-ttu-id="728ab-102">Postupy: Volání metody rozšíření (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="728ab-102">How to: Call an Extension Method (Visual Basic)</span></span>
+# <a name="how-to-call-an-extension-method-visual-basic"></a><span data-ttu-id="b859b-102">Postupy: Volání metody rozšíření (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b859b-102">How to: Call an Extension Method (Visual Basic)</span></span>
 
-<span data-ttu-id="728ab-103">Metody rozšíření umožňují přidat metody do existující třídy.</span><span class="sxs-lookup"><span data-stu-id="728ab-103">Extension methods enable you to add methods to an existing class.</span></span> <span data-ttu-id="728ab-104">Poté, co je metoda rozšíření deklarována a uvedena do rozsahu, lze ji volat jako metodu instance typu, který rozšiřuje.</span><span class="sxs-lookup"><span data-stu-id="728ab-104">After an extension method is declared and brought into scope, you can call it like an instance method of the type that it extends.</span></span> <span data-ttu-id="728ab-105">Další informace o tom, jak napsat rozšiřující metodu, naleznete v [tématu How to: Napište metodu](./how-to-write-an-extension-method.md)rozšíření.</span><span class="sxs-lookup"><span data-stu-id="728ab-105">For more information about how to write an extension method, see [How to: Write an Extension Method](./how-to-write-an-extension-method.md).</span></span>
+<span data-ttu-id="b859b-103">Extension methods enable you to add methods to an existing class.</span><span class="sxs-lookup"><span data-stu-id="b859b-103">Extension methods enable you to add methods to an existing class.</span></span> <span data-ttu-id="b859b-104">After an extension method is declared and brought into scope, you can call it like an instance method of the type that it extends.</span><span class="sxs-lookup"><span data-stu-id="b859b-104">After an extension method is declared and brought into scope, you can call it like an instance method of the type that it extends.</span></span> <span data-ttu-id="b859b-105">For more information about how to write an extension method, see [How to: Write an Extension Method](./how-to-write-an-extension-method.md).</span><span class="sxs-lookup"><span data-stu-id="b859b-105">For more information about how to write an extension method, see [How to: Write an Extension Method](./how-to-write-an-extension-method.md).</span></span>
 
- <span data-ttu-id="728ab-106">Následující pokyny odkazují na metodu `PrintAndPunctuate`rozšíření, která zobrazí instanci řetězce, která ji vyvolá, a za druhým `punc`parametrem je odeslána jakákoli hodnota.</span><span class="sxs-lookup"><span data-stu-id="728ab-106">The following instructions refer to extension method `PrintAndPunctuate`, which will display the string instance that invokes it, followed by whatever value is sent in for the second parameter, `punc`.</span></span>
+ <span data-ttu-id="b859b-106">The following instructions refer to extension method `PrintAndPunctuate`, which will display the string instance that invokes it, followed by whatever value is sent in for the second parameter, `punc`.</span><span class="sxs-lookup"><span data-stu-id="b859b-106">The following instructions refer to extension method `PrintAndPunctuate`, which will display the string instance that invokes it, followed by whatever value is sent in for the second parameter, `punc`.</span></span>
 
 ```vb
 Imports System.Runtime.CompilerServices
@@ -31,40 +31,40 @@ Module StringExtensions
 End Module
 ```
 
-<span data-ttu-id="728ab-107">Metoda musí být v oboru, pokud je volána.</span><span class="sxs-lookup"><span data-stu-id="728ab-107">The method must be in scope when it is called.</span></span>
+<span data-ttu-id="b859b-107">The method must be in scope when it is called.</span><span class="sxs-lookup"><span data-stu-id="b859b-107">The method must be in scope when it is called.</span></span>
 
-### <a name="to-call-an-extension-method"></a><span data-ttu-id="728ab-108">Volání metody rozšíření</span><span class="sxs-lookup"><span data-stu-id="728ab-108">To call an extension method</span></span>
+### <a name="to-call-an-extension-method"></a><span data-ttu-id="b859b-108">To call an extension method</span><span class="sxs-lookup"><span data-stu-id="b859b-108">To call an extension method</span></span>
 
-1. <span data-ttu-id="728ab-109">Deklarujte proměnnou, která má datový typ prvního parametru metody rozšíření.</span><span class="sxs-lookup"><span data-stu-id="728ab-109">Declare a variable that has the data type of the first parameter of the extension method.</span></span> <span data-ttu-id="728ab-110">`PrintAndPunctuate` Pro<xref:System.String> potřebujete proměnnou:</span><span class="sxs-lookup"><span data-stu-id="728ab-110">For `PrintAndPunctuate`, you need a <xref:System.String> variable:</span></span>
+1. <span data-ttu-id="b859b-109">Declare a variable that has the data type of the first parameter of the extension method.</span><span class="sxs-lookup"><span data-stu-id="b859b-109">Declare a variable that has the data type of the first parameter of the extension method.</span></span> <span data-ttu-id="b859b-110">For `PrintAndPunctuate`, you need a <xref:System.String> variable:</span><span class="sxs-lookup"><span data-stu-id="b859b-110">For `PrintAndPunctuate`, you need a <xref:System.String> variable:</span></span>
 
     ```vb
     Dim example = "Ready"
     ```
 
-2. <span data-ttu-id="728ab-111">Tato proměnná vyvolá metodu rozšíření a její hodnota je svázána s prvním parametrem `aString`.</span><span class="sxs-lookup"><span data-stu-id="728ab-111">That variable will invoke the extension method, and its value is bound to the first parameter, `aString`.</span></span> <span data-ttu-id="728ab-112">Zobrazí `Ready?`se následující volání příkazu.</span><span class="sxs-lookup"><span data-stu-id="728ab-112">The following calling statement will display `Ready?`.</span></span>
+2. <span data-ttu-id="b859b-111">That variable will invoke the extension method, and its value is bound to the first parameter, `aString`.</span><span class="sxs-lookup"><span data-stu-id="b859b-111">That variable will invoke the extension method, and its value is bound to the first parameter, `aString`.</span></span> <span data-ttu-id="b859b-112">The following calling statement will display `Ready?`.</span><span class="sxs-lookup"><span data-stu-id="b859b-112">The following calling statement will display `Ready?`.</span></span>
 
     ```vb
     example.PrintAndPunctuate("?")
     ```
 
-     <span data-ttu-id="728ab-113">Všimněte si, že volání této metody rozšíření vypadá stejně jako volání jakékoli <xref:System.String> metody instance, která vyžaduje jeden parametr:</span><span class="sxs-lookup"><span data-stu-id="728ab-113">Notice that the call to this extension method looks just like a call to any one of the <xref:System.String> instance methods that require one parameter:</span></span>
+     <span data-ttu-id="b859b-113">Notice that the call to this extension method looks just like a call to any one of the <xref:System.String> instance methods that require one parameter:</span><span class="sxs-lookup"><span data-stu-id="b859b-113">Notice that the call to this extension method looks just like a call to any one of the <xref:System.String> instance methods that require one parameter:</span></span>
 
     ```vb
     example.EndsWith("dy")
     example.IndexOf("R")
     ```
 
-3. <span data-ttu-id="728ab-114">Deklarujte další řetězcovou proměnnou a zavolejte metodu znovu, abyste viděli, že funguje s libovolným řetězcem.</span><span class="sxs-lookup"><span data-stu-id="728ab-114">Declare another string variable and call the method again to see that it works with any string.</span></span>
+3. <span data-ttu-id="b859b-114">Declare another string variable and call the method again to see that it works with any string.</span><span class="sxs-lookup"><span data-stu-id="b859b-114">Declare another string variable and call the method again to see that it works with any string.</span></span>
 
     ```vb
     Dim example2 = " or not"
     example2.PrintAndPunctuate("!!!")
     ```
 
-     <span data-ttu-id="728ab-115">Výsledek tohoto času je: `or not!!!`.</span><span class="sxs-lookup"><span data-stu-id="728ab-115">The result this time is: `or not!!!`.</span></span>
+     <span data-ttu-id="b859b-115">The result this time is: `or not!!!`.</span><span class="sxs-lookup"><span data-stu-id="b859b-115">The result this time is: `or not!!!`.</span></span>
 
-## <a name="example"></a><span data-ttu-id="728ab-116">Příklad</span><span class="sxs-lookup"><span data-stu-id="728ab-116">Example</span></span>
- <span data-ttu-id="728ab-117">Následující kód je kompletní příklad vytváření a použití jednoduché metody rozšíření.</span><span class="sxs-lookup"><span data-stu-id="728ab-117">The following code is a complete example of the creation and use of a simple extension method.</span></span>
+## <a name="example"></a><span data-ttu-id="b859b-116">Příklad</span><span class="sxs-lookup"><span data-stu-id="b859b-116">Example</span></span>
+ <span data-ttu-id="b859b-117">The following code is a complete example of the creation and use of a simple extension method.</span><span class="sxs-lookup"><span data-stu-id="b859b-117">The following code is a complete example of the creation and use of a simple extension method.</span></span>
 
 ```vb
 Imports System.Runtime.CompilerServices
@@ -95,8 +95,8 @@ End Module
 ' Goodbye?
 ```
 
-## <a name="see-also"></a><span data-ttu-id="728ab-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="728ab-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b859b-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b859b-118">See also</span></span>
 
-- [<span data-ttu-id="728ab-119">Postupy: Zápis metody rozšíření</span><span class="sxs-lookup"><span data-stu-id="728ab-119">How to: Write an Extension Method</span></span>](./how-to-write-an-extension-method.md)
-- [<span data-ttu-id="728ab-120">Rozšiřující metody</span><span class="sxs-lookup"><span data-stu-id="728ab-120">Extension Methods</span></span>](./extension-methods.md)
-- [<span data-ttu-id="728ab-121">Obor v Visual Basic</span><span class="sxs-lookup"><span data-stu-id="728ab-121">Scope in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
+- [<span data-ttu-id="b859b-119">Postupy: Zápis rozšiřující metody</span><span class="sxs-lookup"><span data-stu-id="b859b-119">How to: Write an Extension Method</span></span>](./how-to-write-an-extension-method.md)
+- [<span data-ttu-id="b859b-120">Rozšiřující metody</span><span class="sxs-lookup"><span data-stu-id="b859b-120">Extension Methods</span></span>](./extension-methods.md)
+- [<span data-ttu-id="b859b-121">Scope in Visual Basic</span><span class="sxs-lookup"><span data-stu-id="b859b-121">Scope in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
