@@ -1,19 +1,19 @@
 ---
-title: <code> (Visual Basic)
+title: <code>
 ms.date: 07/20/2015
 helpviewer_keywords:
 - code XML tag
 - <code> XML tag
 ms.assetid: 925e5342-be05-45f2-bf66-7398bbd6710e
-ms.openlocfilehash: d4e887e3bbbc01e4cef5278f67b8c4afe273bf28
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 1cbac2162bd39cdc8af9a55dfd6e2f90bc40b08a
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524036"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74354326"
 ---
-# <a name="code-visual-basic"></a>\<code > (Visual Basic)
-Označuje, že je text více řádky kódu.  
+# <a name="code-visual-basic"></a>\<code> (Visual Basic)
+Indicates that the text is multiple lines of code.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,15 +23,15 @@ Označuje, že je text více řádky kódu.
   
 ## <a name="parameters"></a>Parametry  
  `content`  
- Text, který se má označit jako kód  
+ The text to mark as code.  
   
 ## <a name="remarks"></a>Poznámky  
- Použijte značku `<code>` k označení více řádků jako kódu. Použijte [\<c >](../../../visual-basic/language-reference/xmldoc/c.md) k označení, že text v rámci popisu by měl být označený jako kód.  
+ Use the `<code>` tag to indicate multiple lines as code. Use [\<c>](../../../visual-basic/language-reference/xmldoc/c.md) to indicate that text within a description should be marked as code.  
   
- Zkompilujte s [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
+ Compile with [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) to process documentation comments to a file.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu se používá značka > \<code k zahrnutí vzorového kódu pro použití pole `ID`.  
+ This example uses the \<code> tag to include example code for using the `ID` field.  
   
  [!code-vb[VbVbcnXmlDocComments#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#2)]  
   

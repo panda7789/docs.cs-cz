@@ -1,5 +1,5 @@
 ---
-title: 'Řešení potíží: čtení a zápis do textových souborů (Visual Basic)'
+title: 'Troubleshooting: reading from and writing to text files'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - troubleshooting file I/O
@@ -9,27 +9,32 @@ helpviewer_keywords:
 - writing to files [Visual Basic], troubleshooting
 - reading text files [Visual Basic], troubleshooting
 ms.assetid: a8e9b44d-facb-4718-8c0f-466537171182
-ms.openlocfilehash: 90a04d9de2ac77c28a92d99e1fe118a1f8ecf448
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: dbc53ca3cc9ae9b2d14b925f891d0409b2b7debd
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61650047"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74333789"
 ---
-# <a name="troubleshooting-reading-from-and-writing-to-text-files-visual-basic"></a>Řešení potíží: čtení a zápis do textových souborů (Visual Basic)
-Toto téma popisuje běžné problémy vzniklé při práci s textem soubory a navrhne přístup ke každému.  
+# <a name="troubleshooting-reading-from-and-writing-to-text-files-visual-basic"></a>Troubleshooting: reading from and writing to text files (Visual Basic)
+
+This topic discusses common problems encountered when working with text files and suggests an approach to each.  
   
-## <a name="common-problems"></a>Běžné problémy  
- Nejběžnějších problémů při práci s textovými soubory zahrnují bezpečnostním výjimkám, kódování souborů nebo neplatné cesty.  
+## <a name="common-problems"></a>Common problems  
+
+ The most common issues encountered when working with text files include security exceptions, file encodings, or invalid paths.  
   
-### <a name="security-exceptions"></a>Výjimky zabezpečení  
- A <xref:System.Security.SecurityException> je vyvolána, když dojde k chybě zabezpečení. To je často důsledkem nedostatečných oprávnění, která může vyřešit přidáním oprávnění nebo práce se soubory v izolovaném úložišti uživatele.  
+### <a name="security-exceptions"></a>Security exceptions  
+
+ A <xref:System.Security.SecurityException> is thrown when a security error occurs. This is often a result of the user lacking necessary permissions, which may be solved by adding permissions or working with files in isolated storage.  
   
-### <a name="file-encodings"></a>Kódování souborů  
- Kódování souborů, označované také jako kódování znaků, určete, jak reprezentaci znaků při zpracování textu. Z nesprávné kódování může způsobit neočekávané znaky do textového souboru. Pro většinu souborů kódování může být vhodnější před jiným z hlediska znaků jazyka může nebo nemůže zpracovat, i když je obvykle ve formátu Unicode. Další informace najdete v tématu [kódování souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/file-encodings.md) a <xref:System.Text.Encoding>.  
+### <a name="file-encodings"></a>File encodings  
+
+ File encodings, also known as character encodings, specify how to represent characters when text processing. Unexpected characters in a text file may result from incorrect encoding. For most files, one encoding may be preferable over another in terms of which language characters it can or cannot handle, although Unicode is usually preferred. For more information, see [File Encodings](../../../../visual-basic/developing-apps/programming/drives-directories-files/file-encodings.md) and <xref:System.Text.Encoding>.  
   
-### <a name="incorrect-paths"></a>Nesprávné cesty  
- Při analýze cesty k souborům, zejména relativní cesty, je snadné slouží k poskytování chybná data. Mnoho problémů může být vyřešen a ujistěte se, že zadáváte správnou cestu. Další informace najdete v tématu [jak: Analýza cest k souborům](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md).  
+### <a name="incorrect-paths"></a>Incorrect paths  
+
+ When parsing file paths, particularly relative paths, it is easy to supply the wrong data. Many problems can be corrected by making sure you are supplying the correct path. For more information, see [How to: Parse File Paths](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md).  
   
 ## <a name="see-also"></a>Viz také:
 

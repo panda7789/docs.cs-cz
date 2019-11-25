@@ -1,5 +1,5 @@
 ---
-title: Do...Loop – příkaz (Visual Basic)
+title: Do...Loop – příkaz
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Do
@@ -20,15 +20,15 @@ helpviewer_keywords:
 - loops, exiting
 - Loop keyword [Visual Basic], Do...Loop statement
 ms.assetid: 892f9096-b3e2-4aee-834d-83bc4e2c379d
-ms.openlocfilehash: eff5239e07ca27f40ece5af68f46c491be91cf09
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 9384cbb355189be448fa4b8d274721b4a7ca6a20
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72583446"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351258"
 ---
 # <a name="doloop-statement-visual-basic"></a>Do...Loop – příkaz (Visual Basic)
-Opakuje blok příkazů, dokud je podmínka `Boolean` `True` nebo dokud podmínka nebude `True`.  
+Repeats a block of statements while a `Boolean` condition is `True` or until the condition becomes `True`.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -54,55 +54,55 @@ Loop { While | Until } condition
   
 |Termín|Definice|  
 |---|---|  
-|`Do`|Požadováno. Spustí definici smyčky `Do`.|  
-|`While`|Povinné, pokud se nepoužívá `Until`. Opakujte smyčku, dokud není `False` `condition`.|  
-|`Until`|Povinné, pokud se nepoužívá `While`. Opakujte smyčku, dokud není `True` `condition`.|  
-|`condition`|Volitelné. výraz `Boolean` Pokud je `condition` `Nothing`, Visual Basic považuje za `False`.|  
-|`statements`|Volitelné. Jeden nebo více příkazů, které se opakují, nebo dokud `condition` `True`.|  
-|`Continue Do`|Volitelné. Přenese řízení na další iteraci `Do` smyčky.|  
-|`Exit Do`|Volitelné. Přenáší řízení ze smyčky `Do`.|  
-|`Loop`|Požadováno. Ukončí definici smyčky `Do`.|  
+|`Do`|Požadováno. Starts the definition of the `Do` loop.|  
+|`While`|Required unless `Until` is used. Repeat the loop until `condition` is `False`.|  
+|`Until`|Required unless `While` is used. Repeat the loop until `condition` is `True`.|  
+|`condition`|Volitelné. `Boolean` expression. If `condition` is `Nothing`, Visual Basic treats it as `False`.|  
+|`statements`|Volitelné. One or more statements that are repeated while, or until, `condition` is `True`.|  
+|`Continue Do`|Volitelné. Transfers control to the next iteration of the `Do` loop.|  
+|`Exit Do`|Volitelné. Transfers control out of the `Do` loop.|  
+|`Loop`|Požadováno. Terminates the definition of the `Do` loop.|  
   
 ## <a name="remarks"></a>Poznámky  
- @No__t_0 strukturu použijte v případě, že chcete opakovat sadu příkazů v neurčitém počtu výskytů, dokud není splněna podmínka. Pokud chcete příkazy opakovat v nastaveném počtu opakování, [pro... Další příkaz](../../../visual-basic/language-reference/statements/for-next-statement.md) je obvykle lepší volbou.  
+ Use a `Do...Loop` structure when you want to repeat a set of statements an indefinite number of times, until a condition is satisfied. If you want to repeat the statements a set number of times, the [For...Next Statement](../../../visual-basic/language-reference/statements/for-next-statement.md) is usually a better choice.  
   
- K určení `condition`, ale ne obojí, můžete použít buď `While`, nebo `Until`.  
+ You can use either `While` or `Until` to specify `condition`, but not both.  
   
- Můžete testovat `condition` jenom jednou, a to buď na začátku, nebo na konci smyčky. Pokud testujete `condition` na začátku smyčky (v příkazu `Do`), smyčka nemusí běžet ještě jednou. Pokud testujete na konci smyčky (v příkazu `Loop`), smyčka vždy proběhne alespoň jednou.  
+ You can test `condition` only one time, at either the start or the end of the loop. If you test `condition` at the start of the loop (in the `Do` statement), the loop might not run even one time. If you test at the end of the loop (in the `Loop` statement), the loop always runs at least one time.  
   
- Podmínka obvykle je výsledkem porovnání dvou hodnot, ale může to být libovolný výraz, který je vyhodnocen jako logická hodnota [datového typu](../../../visual-basic/language-reference/data-types/boolean-data-type.md) (`True` nebo `False`). To zahrnuje hodnoty jiných datových typů, například číselné typy, které byly převedeny na `Boolean`.  
+ The condition usually results from a comparison of two values, but it can be any expression that evaluates to a [Boolean Data Type](../../../visual-basic/language-reference/data-types/boolean-data-type.md) value (`True` or `False`). This includes values of other data types, such as numeric types, that have been converted to `Boolean`.  
   
- Smyčky `Do` můžete vnořovat vložením jedné smyčky do jiné. Můžete také vnořit různé druhy řídicích struktur mezi sebou. Další informace najdete v tématu [vnořené řídicí struktury](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md).  
+ You can nest `Do` loops by putting one loop within another. You can also nest different kinds of control structures within each other. For more information, see [Nested Control Structures](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md).  
   
 > [!NOTE]
-> Struktura `Do...Loop` poskytuje větší flexibilitu než [while... Příkaz End While](../../../visual-basic/language-reference/statements/while-end-while-statement.md) , protože umožňuje rozhodnout, jestli se má ukončit smyčka, když se `condition` zastaví `True` nebo když se poprvé stane `True`. Také umožňuje testovat `condition` na začátku nebo na konci smyčky.  
+> The `Do...Loop` structure gives you more flexibility than the [While...End While Statement](../../../visual-basic/language-reference/statements/while-end-while-statement.md) because it enables you to decide whether to end the loop when `condition` stops being `True` or when it first becomes `True`. It also enables you to test `condition` at either the start or the end of the loop.  
   
-## <a name="exit-do"></a>Ukončit  
- Příkaz [Exit](../../../visual-basic/language-reference/statements/exit-statement.md) do může nabídnout alternativní způsob, jak ukončit `Do…Loop`. `Exit Do` přenáší řízení okamžitě na příkaz, který následuje po příkazu `Loop`.  
+## <a name="exit-do"></a>Exit Do  
+ The [Exit Do](../../../visual-basic/language-reference/statements/exit-statement.md) statement can provide an alternative way to exit a `Do…Loop`. `Exit Do` transfers control immediately to the statement that follows the `Loop` statement.  
   
- `Exit Do` se často používá po vyhodnocení některé podmínky, například ve struktuře `If...Then...Else`. Můžete chtít ukončit smyčku, pokud zjistíte podmínku, která je nepotřebná nebo nemožná, aby pokračovala v iteraci, jako je například chybná hodnota nebo žádost o ukončení. Jedním z použití `Exit Do` je testování podmínky, která by mohla způsobit nekonečnou *smyčku*, což je smyčka, která by mohla běžet velkým nebo dokonce nekonečným počtem výskytů. K ukončení smyčky můžete použít `Exit Do`.  
+ `Exit Do` is often used after some condition is evaluated, for example in an `If...Then...Else` structure. You might want to exit a loop if you detect a condition that makes it unnecessary or impossible to continue iterating, such as an erroneous value or a termination request. One use of `Exit Do` is to test for a condition that could cause an *endless loop*, which is a loop that could run a large or even infinite number of times. You can use `Exit Do` to escape the loop.  
   
- Libovolný počet příkazů `Exit Do` můžete umístit kdekoli v `Do…Loop`.  
+ You can include any number of `Exit Do` statements anywhere in a `Do…Loop`.  
   
- Při použití ve vnořených cyklech `Do` `Exit Do` přenáší řízení z nejvnitřnější smyčky a na další vyšší úroveň vnoření.  
+ When used within nested `Do` loops, `Exit Do` transfers control out of the innermost loop and into the next higher level of nesting.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu budou příkazy ve smyčce nadále spuštěny, dokud je proměnná `index` větší než 10. Klauzule `Until` je na konci smyčky.  
+ In the following example, the statements in the loop continue to run until the `index` variable is greater than 10. The `Until` clause is at the end of the loop.  
   
  [!code-vb[VbVbalrStatements#131](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class10.vb#131)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá klauzuli `While` namísto klauzule `Until` a `condition` je testován na začátku cyklu namísto na konci.  
+ The following example uses a `While` clause instead of an `Until` clause, and `condition` is tested at the start of the loop instead of at the end.  
   
  [!code-vb[VbVbalrStatements#132](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class10.vb#132)]  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu `condition` zastaví smyčku, pokud je proměnná `index` větší než 100. Příkaz `If` ve smyčce ale způsobí, že příkaz `Exit Do` zastaví smyčku v případě, že je proměnná indexu větší než 10.  
+ In the following example, `condition` stops the loop when the `index` variable is greater than 100. The `If` statement in the loop, however, causes the `Exit Do` statement to stop the loop when the index variable is greater than 10.  
   
  [!code-vb[VbVbalrStatements#133](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class10.vb#133)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad přečte všechny řádky v textovém souboru. Metoda <xref:System.IO.File.OpenText%2A> otevře soubor a vrátí <xref:System.IO.StreamReader>, který přečte znaky. V `Do...Loop` podmínka určuje <xref:System.IO.StreamReader.Peek%2A> metoda `StreamReader`, zda existují nějaké další znaky.  
+ The following example reads all lines in a text file. The <xref:System.IO.File.OpenText%2A> method opens the file and returns a <xref:System.IO.StreamReader> that reads the characters. In the `Do...Loop` condition, the <xref:System.IO.StreamReader.Peek%2A> method of the `StreamReader` determines whether there are any additional characters.  
   
  [!code-vb[VbVbalrStatements#134](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class10.vb#134)]  
   

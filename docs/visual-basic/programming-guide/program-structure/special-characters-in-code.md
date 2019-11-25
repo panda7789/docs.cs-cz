@@ -1,5 +1,5 @@
 ---
-title: Speciální znaky v kódu (Visual Basic)
+title: Speciální znaky v kódu
 ms.date: 07/20/2015
 f1_keywords:
 - vb.)
@@ -30,62 +30,62 @@ helpviewer_keywords:
 - exclamation point operator (!)
 - Visual Basic code, special characters
 ms.assetid: 310dce0c-45b5-4e0d-83e9-32df258d2a3e
-ms.openlocfilehash: 95bef937912e35cd828bf0090b4cf48ccb3290cc
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f4ab35b56d48ae86bdb024ffea27735b39decdc2
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69962466"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347256"
 ---
 # <a name="special-characters-in-code-visual-basic"></a>Speciální znaky v kódu (Visual Basic)
-Někdy je nutné použít ve svém kódu speciální znaky, tj. znaky, které nejsou abecední nebo číselné. Interpunkční znaménka a speciální znaky ve znakové sadě Visual Basic mají různá použití, od uspořádání textu programu k definování úkolů, které kompilátor nebo zkompilovaný program provádí. Neurčují operaci, která má být provedena.  
+Sometimes you have to use special characters in your code, that is, characters that are not alphabetical or numeric. The punctuation and special characters in the Visual Basic character set have various uses, from organizing program text to defining the tasks that the compiler or the compiled program performs. They do not specify an operation to be performed.  
   
-## <a name="parentheses"></a>Závorky  
- Při definování procedury, jako je `Sub` například nebo `Function`, použijte závorky. Všechny seznamy argumentů procedury musí být uzavřeny v závorkách. Můžete také použít kulaté závorky pro vložení proměnných nebo argumentů do logických skupin, zejména pro přepsání výchozího pořadí priorit operátoru ve složitém výrazu. Toto dokládá následující příklad.  
+## <a name="parentheses"></a>Parentheses  
+ Use parentheses when you define a procedure, such as a `Sub` or `Function`. You must enclose all procedure argument lists in parentheses. You also use parentheses for putting variables or arguments into logical groups, especially to override the default order of operator precedence in a complex expression. Toto dokládá následující příklad.  
   
  [!code-vb[VbVbcnConventions#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#11)]  
   
- Po provedení předchozího kódu se `d` jedná o hodnotu 8,225 a `e` hodnota je 3. Výpočet pro `d` používá výchozí `/` prioritu přes `+` a je ekvivalentní s `d = b + (c / a)`. Závorky ve výpočtu pro `e` přepsání výchozí priority.  
+ Following execution of the previous code, the value of `d` is 8.225 and the value of `e` is 3. The calculation for `d` uses the default precedence of `/` over `+` and is equivalent to `d = b + (c / a)`. The parentheses in the calculation for `e` override the default precedence.  
   
 ## <a name="separators"></a>Oddělovače  
- Oddělovače podle jejich názvu: oddělují oddíly kódu. V Visual Basic je znak oddělovače dvojtečkou (`:`). Oddělovače použijte, pokud chcete zahrnout více příkazů na jeden řádek místo samostatných řádků. Tím ušetříte místo a zlepšíte čitelnost kódu. Následující příklad ukazuje tři příkazy oddělené dvojtečkami.  
+ Separators do what their name suggests: they separate sections of code. In Visual Basic, the separator character is the colon (`:`). Use separators when you want to include multiple statements on a single line instead of separate lines. This saves space and improves the readability of your code. The following example shows three statements separated by colons.  
   
  [!code-vb[VbVbcnConventions#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#12)]  
   
- Další informace najdete v tématu [jak: Přerušit a kombinovat příkazy v](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)kódu.  
+ For more information, see [How to: Break and Combine Statements in Code](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md).  
   
- Znak dvojtečky`:`() slouží také k identifikaci popisku příkazu. Další informace najdete v tématu [jak: Příkazy](../../../visual-basic/programming-guide/program-structure/how-to-label-statements.md)Label.  
+ The colon (`:`) character is also used to identify a statement label. For more information, see [How to: Label Statements](../../../visual-basic/programming-guide/program-structure/how-to-label-statements.md).  
   
 ## <a name="concatenation"></a>Zřetězení  
- Použijte operátor pro zřetězení nebo propojení řetězců dohromady. `&` Nepleťte si ho s `+` operátorem, který přidá dohromady číselné hodnoty. Použijete-li `+` operátor k zřetězení při práci s číselnými hodnotami, můžete získat nesprávné výsledky. Následující příklad ukazuje to.  
+ Use the `&` operator for *concatenation*, or linking strings together. Do not confuse it with the `+` operator, which adds together numeric values. If you use the `+` operator to concatenate when you operate on numeric values, you can obtain incorrect results. Následující příklad ukazuje to.  
   
  [!code-vb[VbVbcnConventions#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#13)]  
   
- Po provedení předchozího kódu se `resultA` jedná o hodnotu 21,01 a `resultB` hodnota je "10,0111".  
+ Following execution of the previous code, the value of `resultA` is 21.01 and the value of `resultB` is "10.0111".  
   
-## <a name="member-access-operators"></a>Operátory přístupu členů  
- Chcete-li získat přístup ke členu typu, použijte operátor tečka`.`() nebo vykřičník (`!`) mezi názvem typu a názvem člena.  
+## <a name="member-access-operators"></a>Member Access Operators  
+ To access a member of a type, you use the dot (`.`) or exclamation point (`!`) operator between the type name and the member name.  
   
-### <a name="dot--operator"></a>Tečka (.) Operátor  
- `.` Použijte operátor pro třídu, strukturu, rozhraní nebo výčet jako operátor přístupu členů. Členem může být pole, vlastnost, událost nebo metoda. Toto dokládá následující příklad.  
+### <a name="dot--operator"></a>Dot (.) Operator  
+ Use the `.` operator on a class, structure, interface, or enumeration as a member access operator. The member can be a field, property, event, or method. Toto dokládá následující příklad.  
   
  [!code-vb[VbVbcnConventions#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#14)]  
   
-### <a name="exclamation-point--operator"></a>Vykřičník (!) Operátor  
- `!` Použijte operátor pouze pro třídu nebo rozhraní jako operátor přístupu ke slovníku. Třída nebo rozhraní musí mít výchozí vlastnost, která přijímá jeden `String` argument. Identifikátor hned za `!` operátorem se bude hodnotou argumentu předanou výchozí vlastnosti jako řetězec. Následující příklad ukazuje to.  
+### <a name="exclamation-point--operator"></a>Exclamation Point (!) Operator  
+ Use the `!` operator only on a class or interface as a dictionary access operator. The class or interface must have a default property that accepts a single `String` argument. The identifier immediately following the `!` operator becomes the argument value passed to the default property as a string. Následující příklad ukazuje to.  
   
  [!code-vb[VbVbcnConventions#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#15)]  
   
- Tři výstupní řádky `MsgBox` všech zobrazuje hodnotu `32856`. První řádek používá tradiční přístup k vlastnosti `index`, druhá využívá fakt, který `index` je výchozí vlastností třídy `hasDefault`, a třetí používá slovník přístup ke třídě.  
+ The three output lines of `MsgBox` all display the value `32856`. The first line uses the traditional access to property `index`, the second makes use of the fact that `index` is the default property of class `hasDefault`, and the third uses dictionary access to the class.  
   
- Všimněte si, že druhý operand `!` operátoru musí být platný identifikátor Visual Basic, který není uzavřen v uvozovkách (`" "`). Jinými slovy, nelze použít řetězcový literál nebo řetězcovou proměnnou. Následující změna na poslední řádek `MsgBox` volání vygeneruje chybu, protože `"X"` je uzavřený řetězcový literál.  
+ Note that the second operand of the `!` operator must be a valid Visual Basic identifier not enclosed in double quotation marks (`" "`). In other words, you cannot use a string literal or string variable. The following change to the last line of the `MsgBox` call generates an error because `"X"` is an enclosed string literal.  
   
  `"Dictionary access returns " & hD!"X")`  
   
 > [!NOTE]
-> Odkazy na výchozí kolekce musí být explicitní. Konkrétně nemůžete použít `!` operátor pro proměnnou s pozdní vazbou.  
+> References to default collections must be explicit. In particular, you cannot use the `!` operator on a late-bound variable.  
   
- Znak je také použit `Single` jako znak typu. `!`  
+ The `!` character is also used as the `Single` type character.  
   
 ## <a name="see-also"></a>Viz také:
 

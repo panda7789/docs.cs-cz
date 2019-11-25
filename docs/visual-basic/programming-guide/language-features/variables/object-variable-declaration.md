@@ -1,5 +1,5 @@
 ---
-title: Deklarace proměnné objektu (Visual Basic)
+title: Deklarace proměnné objektu
 ms.date: 07/20/2015
 helpviewer_keywords:
 - early binding [Visual Basic]
@@ -12,28 +12,28 @@ helpviewer_keywords:
 - declaring classes [Visual Basic]
 - late binding [Visual Basic]
 ms.assetid: 2a5a41a3-1aa8-4236-b1f0-2382af7bf715
-ms.openlocfilehash: 9e57d49965537a45bc62b9078079389efcfb2e2c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d1964e3768124dde1deeabfada9006ff5a59def0
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64598750"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351806"
 ---
 # <a name="object-variable-declaration-visual-basic"></a>Deklarace proměnné objektu (Visual Basic)
-Pomocí příkazu normální deklarace můžete deklarovat proměnné objektu. Pro datový typ, můžete zadat buď `Object` (to znamená, [datový typ objektu](../../../../visual-basic/language-reference/data-types/object-data-type.md)) nebo konkrétnější třídy, ze kterého má být vytvořen objekt.  
+You use a normal declaration statement to declare an object variable. For the data type, you specify either `Object` (that is, the [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md)) or a more specific class from which the object is to be created.  
   
- Deklarace proměnné jako `Object` je stejné jako deklarování jako <xref:System.Object?displayProperty=nameWithType>.  
+ Declaring a variable as `Object` is the same as declaring it as <xref:System.Object?displayProperty=nameWithType>.  
   
- Pokud deklarujete proměnnou s konkrétní objekt třídy, má přístup k všechny metody a vlastnosti, které jsou vystavené třídy a třídy, ze které dědí. Pokud deklarujete proměnnou <xref:System.Object>, má přístup pouze členové <xref:System.Object> třídy, pokud posunete `Option Strict Off` umožňující pozdní vazbu.  
+ When you declare a variable with a specific object class, it can access all the methods and properties exposed by that class and the classes from which it inherits. If you declare the variable with <xref:System.Object>, it can access only the members of the <xref:System.Object> class, unless you turn `Option Strict Off` to allow late binding.  
   
 ## <a name="declaration-syntax"></a>Syntaxe deklarace  
- Použijte následující syntaxi pro deklaraci proměnné objektu:  
+ Use the following syntax to declare an object variable:  
   
 ```vb  
 Dim variablename As [New] { objectclass | Object }  
 ```  
   
- Můžete také určit [veřejné](../../../../visual-basic/language-reference/modifiers/public.md), [chráněné](../../../../visual-basic/language-reference/modifiers/protected.md), [Friend](../../../../visual-basic/language-reference/modifiers/friend.md), `Protected Friend`, [privátní](../../../../visual-basic/language-reference/modifiers/private.md), [Shared](../../../../visual-basic/language-reference/modifiers/shared.md), nebo [statické](../../../../visual-basic/language-reference/modifiers/static.md) v deklaraci. Následující příklad deklarace jsou platné:  
+ You can also specify [Public](../../../../visual-basic/language-reference/modifiers/public.md), [Protected](../../../../visual-basic/language-reference/modifiers/protected.md), [Friend](../../../../visual-basic/language-reference/modifiers/friend.md), `Protected Friend`, [Private](../../../../visual-basic/language-reference/modifiers/private.md), [Shared](../../../../visual-basic/language-reference/modifiers/shared.md), or [Static](../../../../visual-basic/language-reference/modifiers/static.md) in the declaration. The following example declarations are valid:  
   
 ```vb  
 Private objA As Object  
@@ -41,30 +41,30 @@ Static objB As System.Windows.Forms.Label
 Dim objC As System.OperatingSystem  
 ```  
   
-## <a name="late-binding-and-early-binding"></a>Časné vazby a pozdní vazby  
- Někdy Neznámý určité třídy, dokud váš kód běží. V takovém případě je třeba deklarovat proměnnou objektu s `Object` datového typu. Tím se vytvoří Obecné referenční informace pro libovolný typ objektu a v době běhu je přiřazena určité třídy. Tento postup se nazývá *pozdní vazby*. Pozdní vazba vyžaduje další čas spuštění. Také omezuje kód do metody a vlastnosti třídy, které jste přiřadili naposledy k němu. To může způsobit chyby za běhu, pokud váš kód se pokusí o přístup ke členům jiné třídy.  
+## <a name="late-binding-and-early-binding"></a>Late Binding and Early Binding  
+ Sometimes the specific class is unknown until your code runs. In this case, you must declare the object variable with the `Object` data type. This creates a general reference to any type of object, and the specific class is assigned at run time. This is called *late binding*. Late binding requires additional execution time. It also limits your code to the methods and properties of the class you have most recently assigned to it. This can cause run-time errors if your code attempts to access members of a different class.  
   
- Pokud znáte konkrétní třídu v době kompilace, by měla deklarovat proměnnou objekt této třídy. Tento postup se nazývá *časné vazby*. Časná vazba zlepšuje výkon a garantuje váš kód přístup k metodám a vlastnostem konkrétní třídy. V předchozím příkladu deklarace, pokud proměnné `objA` používá jenom objekty třídy <xref:System.Windows.Forms.Label?displayProperty=nameWithType>, měli byste zadat `As System.Windows.Forms.Label` v jeho deklaraci.  
+ When you know the specific class at compile time, you should declare the object variable to be of that class. This is called *early binding*. Early binding improves performance and guarantees your code access to all the methods and properties of the specific class. In the preceding example declarations, if variable `objA` uses only objects of class <xref:System.Windows.Forms.Label?displayProperty=nameWithType>, you should specify `As System.Windows.Forms.Label` in its declaration.  
   
-### <a name="advantages-of-early-binding"></a>Výhody časná vazba  
- Deklarace proměnné objektu jako konkrétní třídy přináší řadu výhod:  
+### <a name="advantages-of-early-binding"></a>Advantages of Early Binding  
+ Declaring an object variable as a specific class gives you several advantages:  
   
-- Kontrola automatické typu  
+- Automatic type checking  
   
-- Zaručeno, že přístup všech členů určité třídy  
+- Guaranteed access to all members of the specific class  
   
-- Podpora Microsoft IntelliSense v editoru kódu  
+- Microsoft IntelliSense support in the Code Editor  
   
-- Lepší čitelnost kódu  
+- Improved readability of your code  
   
-- Méně chyb v kódu  
+- Fewer errors in your code  
   
-- Chyby zachycena v době kompilace spíše než čas spuštění  
+- Errors caught at compile time rather than run time  
   
-- Rychlejší provádění kódu  
+- Faster code execution  
   
-## <a name="access-to-object-variable-members"></a>Přístup k proměnné členů objektu  
- Když `Option Strict` zapnuté `On`, proměnné objektu přístupné pouze metody a vlastnosti třídy, se kterým se deklaruje. Toto dokládá následující příklad.  
+## <a name="access-to-object-variable-members"></a>Access to Object Variable Members  
+ When `Option Strict` is turned `On`, an object variable can access only the methods and properties of the class with which you declare it. Toto dokládá následující příklad.  
   
 ```vb  
 ' Option statements must precede all other source file lines.  
@@ -84,10 +84,10 @@ Public Sub accessMembers()
 End Sub  
 ```  
   
- V tomto příkladu `p` lze použít pouze členové <xref:System.Object> třídu, která nejsou zahrnuté `Left` vlastnost. Na druhé straně `q` byl deklarován jako typ <xref:System.Windows.Forms.Label>, takže ho můžete použít všechny metody a vlastnosti <xref:System.Windows.Forms.Label> třídy v <xref:System.Windows.Forms> oboru názvů.  
+ In this example, `p` can use only the members of the <xref:System.Object> class itself, which do not include the `Left` property. On the other hand, `q` was declared to be of type <xref:System.Windows.Forms.Label>, so it can use all the methods and properties of the <xref:System.Windows.Forms.Label> class in the <xref:System.Windows.Forms> namespace.  
   
-## <a name="flexibility-of-object-variables"></a>Flexibilita objektových proměnných  
- Při práci s objekty v hierarchii dědičnosti, máte možnost volby z třídy pro deklarace objektových proměnných. Při vytváření tohoto výběru, musí zajistit rovnováhu mezi flexibilitu přiřazení objektu pro přístup k členům třídy. Představte si třeba, který vede k hierarchii dědičnosti <xref:System.Windows.Forms.Form?displayProperty=nameWithType> třídy:  
+## <a name="flexibility-of-object-variables"></a>Flexibility of Object Variables  
+ When working with objects in an inheritance hierarchy, you have a choice of which class to use for declaring your object variables. In making this choice, you must balance flexibility of object assignment against access to members of a class. For example, consider the inheritance hierarchy that leads to the <xref:System.Windows.Forms.Form?displayProperty=nameWithType> class:  
   
  <xref:System.Object>  
   
@@ -103,7 +103,7 @@ End Sub
   
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<xref:System.Windows.Forms.Form>  
   
- Předpokládejme, že vaše aplikace definuje třídu formulář s názvem `specialForm`, který dědí z třídy <xref:System.Windows.Forms.Form>. Můžete deklarovat proměnné objektu, který se vztahuje konkrétně pro `specialForm`, jak ukazuje následující příklad.  
+ Suppose your application defines a form class called `specialForm`, which inherits from class <xref:System.Windows.Forms.Form>. You can declare an object variable that refers specifically to `specialForm`, as the following example shows.  
   
 ```vb  
 Public Class specialForm  
@@ -113,25 +113,25 @@ End Class
 Dim nextForm As New specialForm  
 ```  
   
- Deklarace v předchozím příkladu omezuje proměnnou `nextForm` pro objekty třídy `specialForm`, ale také umožní všechny metody a vlastnosti `specialForm` k dispozici `nextForm`, stejně jako všechny členy všechny třídy, ze kterého `specialForm` dědí.  
+ The declaration in the preceding example limits the variable `nextForm` to objects of class `specialForm`, but it also makes all the methods and properties of `specialForm` available to `nextForm`, as well as all the members of all the classes from which `specialForm` inherits.  
   
- Provedete proměnné objektu obecnější deklarováním typu <xref:System.Windows.Forms.Form>, jak ukazuje následující příklad.  
+ You can make an object variable more general by declaring it to be of type <xref:System.Windows.Forms.Form>, as the following example shows.  
   
 ```vb  
 Dim anyForm As System.Windows.Forms.Form  
 ```  
   
- Deklarace v předchozím příkladu umožňuje přiřadit libovolného formuláře v aplikaci k `anyForm`. Nicméně i když `anyForm` můžete přístup ke všem členům třídy <xref:System.Windows.Forms.Form>, se nemůže používat žádné další metody nebo vlastnosti, které jsou definovány pro konkrétní formulářů, jako `specialForm`.  
+ The declaration in the preceding example lets you assign any form in your application to `anyForm`. However, although `anyForm` can access all the members of class <xref:System.Windows.Forms.Form>, it cannot use any of the additional methods or properties defined for specific forms such as `specialForm`.  
   
- Všechny členy základní třídy jsou k dispozici k odvozeným třídám, ale další členy odvozené třídy nejsou k dispozici pro základní třídy.  
+ All the members of a base class are available to derived classes, but the additional members of a derived class are unavailable to the base class.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)
 - [Přiřazení objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variable-assignment.md)
 - [Hodnoty objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variable-values.md)
-- [Postupy: Deklarace objektové proměnné a přiřazení objektu k v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/variables/how-to-declare-an-object-variable-and-assign-an-object-to-it.md)
-- [Postupy: Přístup k členům v objektu](../../../../visual-basic/programming-guide/language-features/variables/how-to-access-members-of-an-object.md)
+- [How to: Declare an Object Variable and Assign an Object to It in Visual Basic](../../../../visual-basic/programming-guide/language-features/variables/how-to-declare-an-object-variable-and-assign-an-object-to-it.md)
+- [Postupy: Přístup ke členům v objektu](../../../../visual-basic/programming-guide/language-features/variables/how-to-access-members-of-an-object.md)
 - [Operátor New](../../../../visual-basic/language-reference/operators/new-operator.md)
 - [Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)
 - [Odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)

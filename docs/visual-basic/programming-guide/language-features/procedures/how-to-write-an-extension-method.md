@@ -1,41 +1,41 @@
 ---
-title: 'Postupy: Zápis metody rozšíření (Visual Basic)'
+title: 'Postupy: Zápis metody rozšíření'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - extending data types [Visual Basic]
 - writing extension methods [Visual Basic]
 - extension methods [Visual Basic]
 ms.assetid: fb2739cc-958d-4ef4-a38b-214a74c93413
-ms.openlocfilehash: 4671728330614f0f3da23fd90f5e635ddcf46578
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 697508f86ff4ff0a89150b65782121395d0fed12
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72581160"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346016"
 ---
 # <a name="how-to-write-an-extension-method-visual-basic"></a>Postupy: Zápis metody rozšíření (Visual Basic)
 
-Metody rozšíření umožňují přidat metody do existující třídy. Metodu rozšíření lze volat, jako kdyby byla instancí této třídy.
+Extension methods enable you to add methods to an existing class. The extension method can be called as if it were an instance of that class.
 
-### <a name="to-define-an-extension-method"></a>Definování rozšiřující metody
+### <a name="to-define-an-extension-method"></a>To define an extension method
 
-1. Otevřete v aplikaci Visual Studio novou nebo existující aplikaci Visual Basic.
+1. Open a new or existing Visual Basic application in Visual Studio.
 
-2. V horní části souboru, ve kterém chcete definovat metodu rozšíření, zahrňte následující příkaz import:
+2. At the top of the file in which you want to define an extension method, include the following import statement:
 
     ```vb
     Imports System.Runtime.CompilerServices
     ```
 
-3. V rámci modulu ve vaší nové nebo existující aplikaci spusťte definici metody s atributem [`<Extension>`](xref:System.Runtime.CompilerServices.ExtensionAttribute) :
+3. Within a module in your new or existing application, begin the method definition with the [`<Extension>`](xref:System.Runtime.CompilerServices.ExtensionAttribute) attribute:
 
     ```vb
     <Extension()>
     ```
 
-    Všimněte si, že atribut `Extension` lze použít pouze pro metodu (proceduru `Sub` nebo `Function`) v [modulu](../../../language-reference/statements/module-statement.md)Visual Basic. Pokud ji použijete pro metodu v `Class` nebo `Structure`, kompilátor Visual Basic generuje Error [BC36551](../../../misc/bc36551.md), "metody rozšíření mohou být definovány pouze v modulech".
+    Note that the `Extension` attribute can only be applied to a method (a `Sub` or `Function` procedure) in a Visual Basic [Module](../../../language-reference/statements/module-statement.md). If you apply it to a method in a `Class` or a `Structure`, the Visual Basic compiler generates error [BC36551](../../../misc/bc36551.md), "Extension methods can be defined only in modules."
 
-4. Deklarujte svou metodu běžným způsobem, s tím rozdílem, že typ prvního parametru musí být datový typ, který chcete zvětšit.
+4. Declare your method in the ordinary way, except that the type of the first parameter must be the data type you want to extend.
 
     ```vb
     <Extension()>
@@ -46,7 +46,7 @@ Metody rozšíření umožňují přidat metody do existující třídy. Metodu 
 
 ## <a name="example"></a>Příklad
 
-Následující příklad deklaruje metodu rozšíření v modulu `StringExtensions`. Druhý modul, `Module1`, importuje `StringExtensions` a volá metodu. Metoda rozšíření musí být v oboru, pokud je volána. Metoda rozšíření `PrintAndPunctuate` rozšiřuje třídu <xref:System.String> s metodou, která zobrazuje instanci řetězce následovaný řetězcem interpunkčních znamének odeslaných v podobě parametru.
+The following example declares an extension method in module `StringExtensions`. A second module, `Module1`, imports `StringExtensions` and calls the method. The extension method must be in scope when it is called. Extension method `PrintAndPunctuate` extends the <xref:System.String> class with a method that displays the string instance followed by a string of punctuation symbols sent in as a parameter.
 
 ```vb
 ' Declarations will typically be in a separate module.
@@ -78,7 +78,7 @@ Module Module1
 End Module
 ```
 
-Všimněte si, že metoda je definována se dvěma parametry a volána pouze s jedním. První parametr `aString` v definici metody je vázán na `example`, instance `String`, která volá metodu. Výstup příkladu je následující:
+Notice that the method is defined with two parameters and called with only one. The first parameter, `aString`, in the method definition is bound to `example`, the instance of `String` that calls the method. The output of the example is as follows:
 
 ```console
 Hello?
@@ -91,4 +91,4 @@ Hello!!!!
 - [Rozšiřující metody](extension-methods.md)
 - [Příkaz Module](../../../language-reference/statements/module-statement.md)
 - [Parametry a argumenty procedury](procedure-parameters-and-arguments.md)
-- [Obor v Visual Basic](../declared-elements/scope.md)
+- [Scope in Visual Basic](../declared-elements/scope.md)

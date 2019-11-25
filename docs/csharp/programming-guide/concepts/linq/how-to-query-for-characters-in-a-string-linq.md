@@ -1,16 +1,16 @@
 ---
-title: 'Postupy: Dotaz na znaky v řetězci (LINQ) (C#)'
+title: 'Postupy: dotaz na znaky v řetězci (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 727a1be7-dbec-4ab8-b414-bc2d56feb6ff
-ms.openlocfilehash: 1212ebcf264aab756eca1acb81ae617c2218a065
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: bc72c4370ff408a60f48aa020a16dae7f48f702a
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69592889"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74140969"
 ---
-# <a name="how-to-query-for-characters-in-a-string-linq-c"></a>Postupy: Dotaz na znaky v řetězci (LINQ) (C#)
-Vzhledem k tomu, že <xref:System.Collections.Generic.IEnumerable%601> Třídaimplementujeobecnérozhraní,můžebýtlibovolnýřetězecdotazovánjakoposloupnostznaků.<xref:System.String> Nejedná se však o běžné použití LINQ. Pro komplexní operace porovnávání vzorů použijte <xref:System.Text.RegularExpressions.Regex> třídu.  
+# <a name="how-to-query-for-characters-in-a-string-linq-c"></a>Postupy: dotaz na znaky v řetězci (LINQ) (C#)
+Vzhledem k tomu, že třída <xref:System.String> implementuje obecné rozhraní <xref:System.Collections.Generic.IEnumerable%601>, může být libovolný řetězec dotazován jako posloupnost znaků. Nejedná se však o běžné použití LINQ. Pro komplexní operace porovnávání vzorů použijte třídu <xref:System.Text.RegularExpressions.Regex>.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad vyhledá řetězec, který určí počet číslic, které obsahuje. Všimněte si, že po prvním spuštění dotazu je dotaz znovu použit. To je možné, protože samotný dotaz neukládá žádné skutečné výsledky.  
@@ -55,9 +55,9 @@ class QueryAString
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvořte projekt C# konzolové aplikace se `using` direktivami pro obory názvů System. Linq a System.IO.  
+ Vytvořte projekt C# konzolové aplikace s direktivami `using` pro obory názvů System. Linq a System.IO.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [LINQ a řetězce (C#)](./linq-and-strings.md)
-- [Postupy: Kombinování dotazů LINQ s regulárnímiC#výrazy ()](./how-to-combine-linq-queries-with-regular-expressions.md)
+- [Jak kombinovat dotazy LINQ s regulárními výrazy (C#)](./how-to-combine-linq-queries-with-regular-expressions.md)

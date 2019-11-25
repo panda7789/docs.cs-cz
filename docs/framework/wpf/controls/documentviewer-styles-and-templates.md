@@ -9,15 +9,15 @@ helpviewer_keywords:
 - parts [WPF], DocumentViewer
 - styles [WPF], DocumentViewer
 ms.assetid: 6bd4ff8f-ea6a-4084-ac58-e7a67446ce1c
-ms.openlocfilehash: 7a812ff913703e3aa8408da8a11d28ee5adfa7fd
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: ac1dc4f74a8e8f3ad2e84c6d50239ec827306c28
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460344"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283534"
 ---
 # <a name="documentviewer-styles-and-templates"></a>DocumentViewer – styly a šablony
-Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.DocumentViewer>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [přizpůsobení vzhledu existujícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.DocumentViewer>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
   
 ## <a name="documentviewer-parts"></a>DocumentViewer části  
  V následující tabulce jsou uvedeny pojmenované části ovládacího prvku <xref:System.Windows.Controls.DocumentViewer>.  
@@ -54,4 +54,4 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
 - [Styly a šablony ovládacích prvků](control-styles-and-templates.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)
 - [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md)

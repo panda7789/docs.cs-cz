@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: zápis dotazu, který vyhledává elementy na základě kontextu (Visual Basic)'
+title: 'How to: Write a Query that Finds Elements Based on Context'
 ms.date: 07/20/2015
 ms.assetid: 0b085290-ddc1-4126-aaa0-e4c95a3d9a09
-ms.openlocfilehash: a7661ea35ff829875ee4c625c45da533865fea9f
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: d25c6d47eee2ae092c84c3db3c08c3e21e7d98d6
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71835030"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346206"
 ---
-# <a name="how-to-write-a-query-that-finds-elements-based-on-context-visual-basic"></a>Postupy: zápis dotazu, který vyhledává elementy na základě kontextu (Visual Basic)
-Někdy může být nutné napsat dotaz, který vybere prvky na základě jejich kontextu. Je možné, že budete chtít filtrovat na základě předchozích nebo následujících prvků na stejné úrovni. Je možné, že budete chtít filtrovat na základě podřízených nebo nadřazených prvků.  
+# <a name="how-to-write-a-query-that-finds-elements-based-on-context-visual-basic"></a>How to: Write a Query that Finds Elements Based on Context (Visual Basic)
+Sometimes you might have to write a query that selects elements based on their context. You might want to filter based on preceding or following sibling elements. You might want to filter based on child or ancestor elements.  
   
- To můžete provést vytvořením dotazu a použitím výsledků dotazu v klauzuli `where`. Pokud je nutné nejprve otestovat proti hodnotě null a potom otestovat hodnotu, je vhodnější provést dotaz v klauzuli `let` a potom použít výsledky v klauzuli `where`.  
+ You can do this by writing a query and using the results of the query in the `where` clause. If you have to first test against null, and then test the value, it is more convenient to do the query in a `let` clause, and then use the results in the `where` clause.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vybere všechny prvky `p`, které bezprostředně následuje element `ul`.  
+ The following example selects all `p` elements that are immediately followed by a `ul` element.  
   
 ```vb  
 Dim doc As XElement = _  
@@ -49,7 +49,7 @@ For Each e As XElement In items
 Next  
 ```  
   
- Tento kód generuje následující výstup:  
+ This code produces the following output:  
   
 ```console  
 id = 1  
@@ -58,7 +58,7 @@ id = 6
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje stejný dotaz pro XML, který je v oboru názvů. Další informace najdete v tématu [obory názvů Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).  
+ The following example shows the same query for XML that is in a namespace. For more information, see [Namespaces Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).  
   
 ```vb  
 Imports <xmlns='http://www.adatum.com'>  
@@ -98,7 +98,7 @@ Module Module1
 End Module  
 ```  
   
- Tento kód generuje následující výstup:  
+ This code produces the following output:  
   
 ```console  
 id = 1  
@@ -112,4 +112,4 @@ id = 6
 - <xref:System.Xml.Linq.XContainer.Descendants%2A>
 - <xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A>
 - <xref:System.Linq.Enumerable.FirstOrDefault%2A>
-- [Základní dotazy (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+- [Basic Queries (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

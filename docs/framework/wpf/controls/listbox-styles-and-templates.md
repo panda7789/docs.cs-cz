@@ -9,15 +9,15 @@ helpviewer_keywords:
 - parts [WPF], ListBox
 - ListBox [WPF], styles and templates
 ms.assetid: fc5764cb-c27b-495b-88d4-d969a8213ccb
-ms.openlocfilehash: 279683752e6767bbf3e5bc359ec1e72193602c00
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: cb7043a21020193a4b2a2569ec610f311834a698
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459290"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283744"
 ---
 # <a name="listbox-styles-and-templates"></a>ListBox – styly a šablony
-Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.ListBox>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [přizpůsobení vzhledu existujícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.ListBox>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
   
 ## <a name="listbox-parts"></a>Části seznamu  
  Ovládací prvek <xref:System.Windows.Controls.ListBox> neobsahuje žádné pojmenované části.  
@@ -41,13 +41,13 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
   
 |Název VisualState|Název VisualStateGroup|Popis|  
 |-|-|-|  
-|Běžnou|CommonStates|Výchozí stav.|  
+|Normální|CommonStates|Výchozí stav.|  
 |MouseOver|CommonStates|Ukazatel myši je umístěn nad ovládacím prvkem.|  
-|Zabezpečen|CommonStates|Položka je zakázána.|  
+|Zakázáno|CommonStates|Položka je zakázána.|  
 |Zaměřil|FocusStates|Položka má fokus.|  
 |Bez fokusu|FocusStates|Položka nemá fokus.|  
 |Nevybrané|SelectionStates|Položka není vybrána.|  
-|Vyberte|SelectionStates|Položka je currentlyplate vybraná.|  
+|Vybráno|SelectionStates|Položka je currentlyplate vybraná.|  
 |SelectedUnfocused|SelectionStates|Položka je vybrána, ale nemá fokus.|  
 |Platné|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
 |InvalidFocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
@@ -71,4 +71,4 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
 - [Styly a šablony ovládacích prvků](control-styles-and-templates.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)
 - [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md)

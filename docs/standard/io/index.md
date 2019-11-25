@@ -1,5 +1,5 @@
 ---
-title: Souborová služba a Stream vstupně-výstupní operace – .NET
+title: File and Stream I/O - .NET
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -12,46 +12,46 @@ helpviewer_keywords:
 ms.assetid: 4f4a33a9-66b7-4cd7-a285-4ad3e4276cd2
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d3b3dcc3b96e12f89508f4d2708c5ab083516dba
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
+ms.openlocfilehash: 889271ca41fb84b44757adfffc61ffbfbc0a03a8
+ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025497"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74204799"
 ---
 # <a name="file-and-stream-io"></a>I/O souborů a proudů
 
-Vstupem/výstupem souborů a datových proudů se rozumí přenos dat z úložného média nebo na něj. V rozhraní .NET Framework `System.IO` obory názvů obsahují typy, které umožňují čtení a zápis, synchronně i asynchronně, na soubory a datovými proudy. Tyto obory názvů obsahují také typy provádějící kompresi a dekompresi souborů a typy umožňující komunikaci pomocí kanálů a sériových portů.
+Vstupem/výstupem souborů a datových proudů se rozumí přenos dat z úložného média nebo na něj. In the .NET Framework, the `System.IO` namespaces contain types that enable reading and writing, both synchronously and asynchronously, on data streams and files. Tyto obory názvů obsahují také typy provádějící kompresi a dekompresi souborů a typy umožňující komunikaci pomocí kanálů a sériových portů.
 
 Soubor je uspořádaná a pojmenovaná kolekce bajtů s trvalým úložištěm. Pracujete-li se soubory, pracujete s cestami adresářů, diskovým úložištěm a názvy souborů a adresářů. Naproti tomu datový proud je posloupnost bajtů, kterou lze použít ke čtení nebo zápisu na záložní úložiště, jímž může být jedno nebo více úložných médií (například disky nebo paměť). Stejně jako existuje několik záložních úložišť jiných než disky, existuje několik druhů datových proudů jiných než datové proudy souborů, například proudy sítí, pamětí nebo kanálů.
 
-## <a name="files-and-directories"></a>Soubory a adresáře
+## <a name="files-and-directories"></a>Files and directories
 
-Můžete použít typy v <xref:System.IO?displayProperty=nameWithType> obor názvů pro interakci se soubory a adresáře. Lze tak například načíst nebo nastavit vlastnosti souborů a adresářů nebo načíst kolekce souborů a adresářů na základě kritérií vyhledávání.
+You can use the types in the <xref:System.IO?displayProperty=nameWithType> namespace to interact with files and directories. Lze tak například načíst nebo nastavit vlastnosti souborů a adresářů nebo načíst kolekce souborů a adresářů na základě kritérií vyhledávání.
 
-Cesta konvence pojmenování a způsoby, jak vyjádřit cestu k souboru pro systémy Windows, včetně syntaxi zařízení DOS, podporuje se v .NET Core 1.1 nebo novější a rozhraní .NET Framework 4.6.2 nebo novější, najdete v článku [cesta formáty souborů v systémech Windows](file-path-formats.md).
+For path naming conventions and the ways to express a file path for Windows systems, including with the DOS device syntax supported in .NET Core 1.1 and later and the .NET Framework 4.6.2 and later, see [File path formats on Windows systems](file-path-formats.md).
 
 Zde jsou některé běžně používané třídy souborů a adresářů:
 
-- <xref:System.IO.File> – poskytuje statické metody pro vytváření, kopírování, odstraňování, přesouvání a otevírání souborů a pomáhá vytvářet <xref:System.IO.FileStream> objektu.
+- <xref:System.IO.File> - provides static methods for creating, copying, deleting, moving, and opening files, and helps create a <xref:System.IO.FileStream> object.
 
-- <xref:System.IO.FileInfo> – poskytuje instanční metody pro vytváření, kopírování, odstraňování, přesouvání a otevírání souborů a pomáhá vytvářet <xref:System.IO.FileStream> objektu.
+- <xref:System.IO.FileInfo> - provides instance methods for creating, copying, deleting, moving, and opening files, and helps create a <xref:System.IO.FileStream> object.
 
-- <xref:System.IO.Directory> – poskytuje statické metody pro vytváření, přesouvání a vytváření výčtů adresářů a podadresářů.
+- <xref:System.IO.Directory> - provides static methods for creating, moving, and enumerating through directories and subdirectories.
 
-- <xref:System.IO.DirectoryInfo> – poskytuje instanční metody pro vytváření, přesouvání a vytváření výčtů adresářů a podadresářů.
+- <xref:System.IO.DirectoryInfo> - provides instance methods for creating, moving, and enumerating through directories and subdirectories.
 
-- <xref:System.IO.Path> – poskytuje metody a vlastnosti pro zpracování řetězců adresářů způsobem napříč platformami.
+- <xref:System.IO.Path> - provides methods and properties for processing directory strings in a cross-platform manner.
 
-Vždy byste měli poskytnout robustní zpracování při volání metody systému souborů výjimek. Další informace najdete v tématu [vstupně-výstupních operací zpracování chyb](handling-io-errors.md).
+You should always provide robust exception handling when calling filesystem methods. For more information, see [Handling I/O errors](handling-io-errors.md).
 
-Kromě použití těchto tříd, uživatelé jazyka Visual Basic můžete použít metody a vlastnosti poskytované třídou <xref:Microsoft.VisualBasic.FileIO.FileSystem?displayProperty=nameWithType> třídy pro soubor vstupně-výstupních operací.
+In addition to using these classes, Visual Basic users can use the methods and properties provided by the <xref:Microsoft.VisualBasic.FileIO.FileSystem?displayProperty=nameWithType> class for file I/O.
 
-Zobrazit [jak: Kopírování adresářů](how-to-copy-directories.md), [jak: Create a Directory Listing](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/5cf8zcfh(v=vs.100)), a [jak: Vytvoření výčtu adresářů a souborů](how-to-enumerate-directories-and-files.md).
+See [How to: Copy Directories](how-to-copy-directories.md), [How to: Create a Directory Listing](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/5cf8zcfh(v=vs.100)), and [How to: Enumerate Directories and Files](how-to-enumerate-directories-and-files.md).
 
 ## <a name="streams"></a>Datové proudy
 
-Abstraktní základní třída <xref:System.IO.Stream> podporuje čtení a zápis bajtů. Dědí všechny třídy, které představují datové proudy <xref:System.IO.Stream> třídy. <xref:System.IO.Stream> Třída a odvozené třídy poskytují běžné zobrazení datových zdrojů a úložišť a izolují programátora od konkrétních podrobností operačního systému a použitých zařízení.
+The abstract base class <xref:System.IO.Stream> supports reading and writing bytes. All classes that represent streams inherit from the <xref:System.IO.Stream> class. The <xref:System.IO.Stream> class and its derived classes provide a common view of data sources and repositories, and isolate the programmer from the specific details of the operating system and underlying devices.
 
 Datové proudy zahrnují tři základní operace:
 
@@ -61,125 +61,125 @@ Datové proudy zahrnují tři základní operace:
 
 - Hledání – dotazování a úprava současné pozice v datovém proudu.
 
-Datový proud může podporovat pouze některé z těchto možností v závislosti na použitém zdroji dat nebo úložišti. Například <xref:System.IO.Pipes.PipeStream> třída nepodporuje vyhledávání. <xref:System.IO.Stream.CanRead%2A>, <xref:System.IO.Stream.CanWrite%2A>, A <xref:System.IO.Stream.CanSeek%2A> vlastnosti datového proudu určují operace, které podporuje datového proudu.
+Datový proud může podporovat pouze některé z těchto možností v závislosti na použitém zdroji dat nebo úložišti. For example, the <xref:System.IO.Pipes.PipeStream> class does not support seeking. The <xref:System.IO.Stream.CanRead%2A>, <xref:System.IO.Stream.CanWrite%2A>, and <xref:System.IO.Stream.CanSeek%2A> properties of a stream specify the operations that the stream supports.
 
 Toto jsou některé běžně používané třídy datového proudu:
 
-- <xref:System.IO.FileStream> – pro čtení a zápis do souboru.
+- <xref:System.IO.FileStream> – for reading and writing to a file.
 
-- <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> – pro čtení a zápis do souboru v izolovaném úložišti.
+- <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> – for reading and writing to a file in isolated storage.
 
-- <xref:System.IO.MemoryStream> – pro čtení a zápis do paměti jako záložního úložiště.
+- <xref:System.IO.MemoryStream> – for reading and writing to memory as the backing store.
 
-- <xref:System.IO.BufferedStream> – pro zvýšení výkonu pro čtení a zápisu operace.
+- <xref:System.IO.BufferedStream> – for improving performance of read and write operations.
 
-- <xref:System.Net.Sockets.NetworkStream> – pro čtení a zápis přes síťové sokety.
+- <xref:System.Net.Sockets.NetworkStream> – for reading and writing over network sockets.
 
-- <xref:System.IO.Pipes.PipeStream> – pro čtení a zápis přes anonymní a pojmenované kanály.
+- <xref:System.IO.Pipes.PipeStream> – for reading and writing over anonymous and named pipes.
 
-- <xref:System.Security.Cryptography.CryptoStream> – pro propojení datových proudů na kryptografické transformace.
+- <xref:System.Security.Cryptography.CryptoStream> – for linking data streams to cryptographic transformations.
 
-Příklad asynchronní práce s datovými proudy naleznete v tématu [asynchronní vstupně-výstupní operace souboru](asynchronous-file-i-o.md).
+For an example of working with streams asynchronously, see [Asynchronous File I/O](asynchronous-file-i-o.md).
 
-## <a name="readers-and-writers"></a>Čtečky a zapisovače
+## <a name="readers-and-writers"></a>Readers and writers
 
-<xref:System.IO?displayProperty=nameWithType> Názvů také obsahuje typy pro čtení kódovaných znaků z datových proudů a jejich zápis do datových proudů. Datové proudy jsou obvykle navrženy pro bajtový vstup a výstup. Typy čtečky a zapisovače zajišťují převod kódovaných znaků na bajty a zpět, aby datový proud mohl dokončit operaci. Každá třída čtečky nebo zapisovače je přidružena k datovému proudu, které se dají získat pomocí třídy `BaseStream` vlastnost.
+The <xref:System.IO?displayProperty=nameWithType> namespace also provides types for reading encoded characters from streams and writing them to streams. Datové proudy jsou obvykle navrženy pro bajtový vstup a výstup. Typy čtečky a zapisovače zajišťují převod kódovaných znaků na bajty a zpět, aby datový proud mohl dokončit operaci. Each reader and writer class is associated with a stream, which can be retrieved through the class's `BaseStream` property.
 
 Toto jsou některé běžně používané třídy čteček a zapisovačů:
 
-- <xref:System.IO.BinaryReader> a <xref:System.IO.BinaryWriter> – pro čtení a zápis primitivních datových typů jako binárních hodnot.
+- <xref:System.IO.BinaryReader> and <xref:System.IO.BinaryWriter> – for reading and writing primitive data types as binary values.
 
-- <xref:System.IO.StreamReader> a <xref:System.IO.StreamWriter> – pro čtení a zápis znaků pomocí kódovací hodnoty pro převod znaků do a z bajtů.
+- <xref:System.IO.StreamReader> and <xref:System.IO.StreamWriter> – for reading and writing characters by using an encoding value to convert the characters to and from bytes.
 
-- <xref:System.IO.StringReader> a <xref:System.IO.StringWriter> – pro čtení a zápis znaků do a z řetězce.
+- <xref:System.IO.StringReader> and <xref:System.IO.StringWriter> – for reading and writing characters to and from strings.
 
-- <xref:System.IO.TextReader> a <xref:System.IO.TextWriter> – slouží jako abstraktní základní třída pro jiné čtečky a zapisovače, které čtou a zapisují znaky a řetězce, ale nikoli binární data.
+- <xref:System.IO.TextReader> and <xref:System.IO.TextWriter> – serve as the abstract base classes for other readers and writers that read and write characters and strings, but not binary data.
 
-Zobrazit [jak: Čtení textu ze souboru](how-to-read-text-from-a-file.md), [jak: Zápis textu do souboru](how-to-write-text-to-a-file.md), [jak: Čtení znaků z řetězce](how-to-read-characters-from-a-string.md), a [jak: Zápis znaků do řetězce](how-to-write-characters-to-a-string.md).
+See [How to: Read Text from a File](how-to-read-text-from-a-file.md), [How to: Write Text to a File](how-to-write-text-to-a-file.md), [How to: Read Characters from a String](how-to-read-characters-from-a-string.md), and [How to: Write Characters to a String](how-to-write-characters-to-a-string.md).
 
-## <a name="asynchronous-io-operations"></a>Asynchronní vstupně-výstupních operací
+## <a name="asynchronous-io-operations"></a>Asynchronous I/O operations
 
-Čtení a zápis velkého množství dat může zatěžovat prostředky. Má-li aplikace nadále reagovat na uživatele, je zapotřebí tyto úkoly provádět asynchronně. Při synchronních vstupně-výstupních operacích je vlákno uživatelského rozhraní zablokováno, dokud není operace náročná na prostředky dokončena.  Použít asynchronní vstupně-výstupní operace při vývoji [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikacím zabránit dojmu, že vaše aplikace přestala fungovat.
+Čtení a zápis velkého množství dat může zatěžovat prostředky. Má-li aplikace nadále reagovat na uživatele, je zapotřebí tyto úkoly provádět asynchronně. Při synchronních vstupně-výstupních operacích je vlákno uživatelského rozhraní zablokováno, dokud není operace náročná na prostředky dokončena.  Use asynchronous I/O operations when developing Windows 8.x Store apps to prevent creating the impression that your app has stopped working.
 
-Asynchronní členy obsahují `Async` v jejich názvy, například <xref:System.IO.Stream.CopyToAsync%2A>, <xref:System.IO.Stream.FlushAsync%2A>, <xref:System.IO.Stream.ReadAsync%2A>, a <xref:System.IO.Stream.WriteAsync%2A> metody. Používejte tyto metody s `async` a `await` klíčová slova.
+The asynchronous members contain `Async` in their names, such as the <xref:System.IO.Stream.CopyToAsync%2A>, <xref:System.IO.Stream.FlushAsync%2A>,  <xref:System.IO.Stream.ReadAsync%2A>, and <xref:System.IO.Stream.WriteAsync%2A> methods. You use these methods with the `async` and `await` keywords.
 
-Další informace najdete v tématu [asynchronní vstupně-výstupní operace souboru](asynchronous-file-i-o.md).
+For more information, see [Asynchronous File I/O](asynchronous-file-i-o.md).
 
 ## <a name="compression"></a>Komprese
 
-Kompresí se rozumí proces zmenšení velikosti ukládaného souboru. Dekomprese je proces extrahování obsahu komprimovaného souboru do použitelného formátu. <xref:System.IO.Compression?displayProperty=nameWithType> Obor názvů obsahuje typy pro kompresi a dekompresi souborů a datových proudů.
+Kompresí se rozumí proces zmenšení velikosti ukládaného souboru. Dekomprese je proces extrahování obsahu komprimovaného souboru do použitelného formátu. The <xref:System.IO.Compression?displayProperty=nameWithType> namespace contains types for compressing and decompressing files and streams.
 
 Následující třídy jsou při kompresi a dekompresi souborů a datových proudů často používány:
 
-- <xref:System.IO.Compression.ZipArchive> – pro vytváření a získávání záznamů v archívu zip.
+- <xref:System.IO.Compression.ZipArchive> – for creating and retrieving entries in the zip archive.
 
-- <xref:System.IO.Compression.ZipArchiveEntry> – pro reprezentaci komprimovaného souboru.
+- <xref:System.IO.Compression.ZipArchiveEntry> – for representing a compressed file.
 
-- <xref:System.IO.Compression.ZipFile> – pro vytváření, extrahování a otevírání komprimovaného balíku.
+- <xref:System.IO.Compression.ZipFile> – for creating,  extracting, and opening a compressed package.
 
-- <xref:System.IO.Compression.ZipFileExtensions> – pro vytváření a extrahování záznamů v komprimovaném balíku.
+- <xref:System.IO.Compression.ZipFileExtensions> – for creating and extracting entries in a compressed package.
 
-- <xref:System.IO.Compression.DeflateStream> – pro kompresi a dekompresi datových proudů algoritmem Deflate.
+- <xref:System.IO.Compression.DeflateStream> – for compressing and decompressing streams using the Deflate algorithm.
 
-- <xref:System.IO.Compression.GZipStream> – pro kompresi a dekompresi datových proudů v datovém formátu gzip.
+- <xref:System.IO.Compression.GZipStream> – for compressing and decompressing streams in gzip data format.
 
-Zobrazit [jak: Komprese a extrahování souborů](how-to-compress-and-extract-files.md).
+See [How to: Compress and Extract Files](how-to-compress-and-extract-files.md).
 
-## <a name="isolated-storage"></a>Izolované úložiště
+## <a name="isolated-storage"></a>Isolated storage
 
 Izolované úložiště je mechanismus pro ukládání dat poskytující izolaci a bezpečnost definováním standardizovaných způsobů asociace kódu s uloženými daty. Úložiště poskytuje virtuální systém souborů izolovaný uživatelem, sestavením a (volitelně) doménou. Izolované úložiště je obzvláště užitečné, nemá-li aplikace oprávnění k přístupu k uživatelským souborům. Lze tak ukládat nastavení nebo soubory aplikace způsobem řízeným zásadami zabezpečení daného počítače.
 
-Izolované úložiště není k dispozici pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace; místo toho použít třídy aplikačních dat v <xref:Windows.Storage?displayProperty=nameWithType> oboru názvů. Další informace najdete v tématu [data aplikací](https://docs.microsoft.com/previous-versions/windows/apps/hh464917%28v=win.10%29).
+Isolated storage is not available for Windows 8.x Store apps; instead, use application data classes in the <xref:Windows.Storage?displayProperty=nameWithType> namespace. For more information, see [Application data](https://docs.microsoft.com/previous-versions/windows/apps/hh464917%28v=win.10%29).
 
 Při implementaci izolovaného úložiště jsou běžně používány následující třídy:
 
-- <xref:System.IO.IsolatedStorage.IsolatedStorage> – poskytuje základní třídu pro implementace izolovaného úložiště.
+- <xref:System.IO.IsolatedStorage.IsolatedStorage> – provides the base class for isolated storage implementations.
 
-- <xref:System.IO.IsolatedStorage.IsolatedStorageFile> – poskytuje oblast izolovaného úložiště, který obsahuje soubory a adresáře.
+- <xref:System.IO.IsolatedStorage.IsolatedStorageFile> – provides an isolated storage area that contains files and directories.
 
-- <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> – zpřístupňuje soubor uvnitř izolovaného úložiště.
+- <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> - exposes a file within isolated storage.
 
-Zobrazit [izolované úložiště](isolated-storage.md).
+See [Isolated Storage](isolated-storage.md).
 
-## <a name="io-operations-in-windows-store-apps"></a>Vstupně-výstupní operace v aplikacích pro Windows Store
+## <a name="io-operations-in-windows-store-apps"></a>I/O operations in Windows Store apps
 
-[!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] Obsahuje celou řadu typů pro čtení a zápis datových proudů, ale tato sada neobsahuje všechny typy rozhraní .NET Framework vstupně-výstupních operací.
+The [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] contains many of the types for reading from and writing to streams; however, this set does not include all the .NET Framework I/O types.
 
-Některé důležité rozdíly při používání vstupně-výstupních operací v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace:
+Some important differences to note when using I/O operations in Windows 8.x Store apps:
 
-- Typy výslovně související s operacemi se soubory, jako například <xref:System.IO.File>, <xref:System.IO.FileInfo>, <xref:System.IO.Directory> a <xref:System.IO.DirectoryInfo>, nejsou součástí [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]. Místo toho použít typy v <xref:Windows.Storage?displayProperty=nameWithType> obor názvů modulu Windows Runtime, jako například <xref:Windows.Storage.StorageFile> a <xref:Windows.Storage.StorageFolder>.
+- Types specifically related to file operations, such as <xref:System.IO.File>, <xref:System.IO.FileInfo>, <xref:System.IO.Directory> and <xref:System.IO.DirectoryInfo>, are not included in the [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]. Instead, use the types in the <xref:Windows.Storage?displayProperty=nameWithType> namespace of the Windows Runtime, such as <xref:Windows.Storage.StorageFile> and <xref:Windows.Storage.StorageFolder>.
 
-- Izolované úložiště není k dispozici. Místo toho použijte [data aplikací](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)).
+- Isolated storage is not available; instead, use [application data](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)).
 
-- Použití asynchronních metod, jako například <xref:System.IO.Stream.ReadAsync%2A> a <xref:System.IO.Stream.WriteAsync%2A>, chcete-li zabránit zablokování vlákna uživatelského rozhraní.
+- Use asynchronous methods, such as <xref:System.IO.Stream.ReadAsync%2A> and <xref:System.IO.Stream.WriteAsync%2A>, to prevent blocking the UI thread.
 
-- Na základě cest kompresní typy <xref:System.IO.Compression.ZipFile> a <xref:System.IO.Compression.ZipFileExtensions> nejsou k dispozici. Místo toho použít typy v <xref:Windows.Storage.Compression?displayProperty=nameWithType> oboru názvů.
+- The path-based compression types <xref:System.IO.Compression.ZipFile> and <xref:System.IO.Compression.ZipFileExtensions> are not available. Instead, use the types in the <xref:Windows.Storage.Compression?displayProperty=nameWithType> namespace.
 
-V případě potřeby je možné převádět mezi proudy rozhraní .NET Framework a proudy Windows Runtime. Další informace najdete v tématu [jak: Převádění mezi streamy rozhraní .NET Framework a datovými proudy Windows Runtime](how-to-convert-between-dotnet-streams-and-winrt-streams.md) nebo <xref:System.IO.WindowsRuntimeStreamExtensions>.
+V případě potřeby je možné převádět mezi proudy rozhraní .NET Framework a proudy Windows Runtime. For more information, see [How to: Convert Between .NET Framework Streams and Windows Runtime Streams](how-to-convert-between-dotnet-streams-and-winrt-streams.md) or <xref:System.IO.WindowsRuntimeStreamExtensions>.
 
-Další informace o vstupně-výstupních operací v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace, najdete v článku [rychlý start: Čtení a zápis do souborů](https://docs.microsoft.com/previous-versions/windows/apps/hh758325(v=win.10)).
+For more information about I/O operations in a Windows 8.x Store app, see [Quickstart: Reading and writing files](https://docs.microsoft.com/previous-versions/windows/apps/hh758325(v=win.10)).
 
-## <a name="io-and-security"></a>Vstupně-výstupní operace a zabezpečení
+## <a name="io-and-security"></a>I/O and security
 
-Při použití třídy v <xref:System.IO?displayProperty=nameWithType> obor názvů, je třeba dodržovat požadavky zabezpečení operačního systému jako je například seznamy řízení přístupu (ACL) pro řízení přístupu k souborům a adresářům. Tento požadavek je <xref:System.Security.Permissions.FileIOPermission> požadavky. Seznamy ACL lze spravovat programově. Další informace najdete v tématu [jak: Přidání nebo odebrání položek seznamu řízení přístupu](how-to-add-or-remove-access-control-list-entries.md).
+When you use the classes in the <xref:System.IO?displayProperty=nameWithType> namespace, you must follow operating system security requirements such as access control lists (ACLs) to control access to files and directories. This requirement is in addition to any <xref:System.Security.Permissions.FileIOPermission> requirements. Seznamy ACL lze spravovat programově. For more information, see [How to: Add or Remove Access Control List Entries](how-to-add-or-remove-access-control-list-entries.md).
 
-Výchozí zásady zabezpečení zabraňují internetovým a intranetovým aplikacím v přístupu k souborům na počítači uživatele. Proto při psaní kódu, který bude stažen přes internet nebo intranet, nepoužívejte vstupně-výstupní třídy požadující cestu k fyzickému souboru. Místo toho použijte [izolované úložiště](isolated-storage.md) pro tradiční aplikace rozhraní .NET Framework, nebo použijte [data aplikací](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)) pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace.
+Výchozí zásady zabezpečení zabraňují internetovým a intranetovým aplikacím v přístupu k souborům na počítači uživatele. Proto při psaní kódu, který bude stažen přes internet nebo intranet, nepoužívejte vstupně-výstupní třídy požadující cestu k fyzickému souboru. Instead, use [isolated storage](isolated-storage.md) for traditional .NET Framework applications, or use [application data](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)) for Windows 8.x Store apps.
 
 Kontrola zabezpečení se provádí pouze při konstrukci datového proudu. Proto neotevírejte datový proud a poté jej nepředávejte méně důvěryhodnému kódu nebo doménám aplikace.
 
 ## <a name="related-topics"></a>Související témata
 
-- [Běžné vstupně-výstupní úlohy](common-i-o-tasks.md)\
+- [Common I/O Tasks](common-i-o-tasks.md)\
 Poskytuje seznam vstupně-výstupních úkolů přidružených k souborům, adresářům a datovým proudům a odkazuje pro každý úkol na relevantní obsah a příklady.
 
-- [Asynchronní I/O soubory](asynchronous-file-i-o.md)\
+- [Asynchronous File I/O](asynchronous-file-i-o.md)\
 Popisuje výhody výkonu a základní operace asynchronních vstupně-výstupních operací.
 
-- [Izolované úložiště](isolated-storage.md)\
+- [Isolated Storage](isolated-storage.md)\
 Popisuje mechanismus pro ukládání dat poskytující izolaci a bezpečnost definováním standardizovaných způsobů asociace kódu s uloženými daty.
 
-- [Kanály](pipe-operations.md)\
+- [Pipes](pipe-operations.md)\
 Popisuje operace anonymních a pojmenovaných kanálů v rozhraní .NET Framework.
 
-- [Soubory mapované paměti](memory-mapped-files.md)\
+- [Memory-Mapped Files](memory-mapped-files.md)\
 Popisuje soubory mapované paměti, které obsahují obsah souborů na disku ve virtuální paměti. Soubory mapované paměti lze použít k úpravě velmi velkých souborů a k vytváření sdílené paměti pro komunikaci mezi procesy.

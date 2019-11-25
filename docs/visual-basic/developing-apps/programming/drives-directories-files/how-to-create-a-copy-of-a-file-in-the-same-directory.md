@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytvoření kopie souboru ve stejném adresáři v jazyce Visual Basic'
+title: 'Postupy: Vytvoření kopie souboru ve stejném adresáři'
 ms.date: 07/20/2015
 f1_keywords:
 - File.Copy
@@ -9,58 +9,60 @@ helpviewer_keywords:
 - CopyFile method [Visual Basic], copying files in Visual Basic
 - I/O [Visual Basic], copying files
 ms.assetid: b2fdda86-e666-42c2-9706-9527e9fa68ff
-ms.openlocfilehash: 747d985cbd9e2f2cc7f9b07f5723455a63a87b8f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 33a4f5424ac50de7b5dc988034ca15127dc1ed02
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64629085"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348825"
 ---
-# <a name="how-to-create-a-copy-of-a-file-in-the-same-directory-in-visual-basic"></a>Postupy: Vytvoření kopie souboru ve stejném adresáři v jazyce Visual Basic
-Použití `My.Computer.FileSystem.CopyFile` metoda kopírování souborů. Parametry umožňují přepsat existující soubory, přejmenujte soubor, zobrazí průběh operace a umožní uživateli na zrušení operace.  
+# <a name="how-to-create-a-copy-of-a-file-in-the-same-directory-in-visual-basic"></a>Postupy: Vytvoření kopie souboru ve stejném adresáři v jazyce Visual Basic
+
+Use the `My.Computer.FileSystem.CopyFile` method to copy files. The parameters allow you to overwrite existing files, rename the file, show the progress of the operation, and allow the user to cancel the operation.  
   
-### <a name="to-create-a-copy-of-a-file-in-the-same-folder"></a>K vytvoření kopie souboru ve stejné složce  
+### <a name="to-create-a-copy-of-a-file-in-the-same-folder"></a>To create a copy of a file in the same folder  
   
-- Použití `CopyFile` metodu cílový soubor a umístění. Následující příklad vytvoří kopii `test.txt` volá `test2.txt`.  
+- Use the `CopyFile` method, supplying the target file and the location. The following example creates a copy of `test.txt` called `test2.txt`.  
   
      [!code-vb[VbVbcnMyFileSystem#51](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#51)]  
   
-### <a name="to-create-a-copy-of-a-file-in-the-same-folder-overwriting-existing-files"></a>K vytvoření kopie souboru ve stejné složce, že přepíšete existující soubory  
+### <a name="to-create-a-copy-of-a-file-in-the-same-folder-overwriting-existing-files"></a>To create a copy of a file in the same folder, overwriting existing files  
   
-- Použití `CopyFile` metoda poskytnutím cílový soubor a umístění a nastavení `overwrite` k `True`. Následující příklad vytvoří kopii `test.txt` volá `test2.txt` a přepíše všechny existující soubory s tímto názvem.  
+- Use the `CopyFile` method, supplying the target file and location, and setting `overwrite` to `True`. The following example creates a copy of `test.txt` called `test2.txt` and overwrites any existing files by that name.  
   
      [!code-vb[VbVbcnMyFileSystem#52](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#52)]  
   
 ## <a name="robust-programming"></a>Robustní programování  
- Následující podmínky mohou způsobit výjimku, která je vyvolána:  
+
+ The following conditions may cause an exception to be thrown:  
   
-- Cesta není platná pro jednu z následujících důvodů: Jedná se o řetězec nulové délky, obsahuje pouze mezeru, obsahuje neplatné znaky nebo je cesta zařízení (začíná \\ \\.\\) (<xref:System.ArgumentException>).  
+- The path is not valid for one of the following reasons: it is a zero-length string, it contains only white space, it contains invalid characters, or it is a device path (starts with \\\\.\\) (<xref:System.ArgumentException>).  
   
-- Systém nemohl načíst absolutní cesta (<xref:System.ArgumentException>).  
+- The system could not retrieve the absolute path (<xref:System.ArgumentException>).  
   
-- Cesta není platná, protože se jedná `Nothing` (<xref:System.ArgumentNullException>).  
+- The path is not valid because it is `Nothing` (<xref:System.ArgumentNullException>).  
   
-- Zdrojový soubor je neplatný nebo neexistuje (<xref:System.IO.FileNotFoundException>).  
+- The source file is not valid or does not exist (<xref:System.IO.FileNotFoundException>).  
   
-- Kombinované cesta odkazuje na existující adresář (<xref:System.IO.IOException>).  
+- The combined path points to an existing directory (<xref:System.IO.IOException>).  
   
-- Cílový soubor existuje a `overwrite` je nastavena na `False` (<xref:System.IO.IOException>).  
+- The destination file exists and `overwrite` is set to `False` (<xref:System.IO.IOException>).  
   
-- Uživatel nemá dostatečná oprávnění pro přístup k souboru (<xref:System.IO.IOException>).  
+- The user does not have sufficient permissions to access the file (<xref:System.IO.IOException>).  
   
-- Soubor v cílové složce se stejným názvem se používá (<xref:System.IO.IOException>).  
+- A file in the target folder with the same name is in use (<xref:System.IO.IOException>).  
   
-- Název souboru nebo složky v cestě obsahuje dvojtečku (:) nebo je v neplatném formátu (<xref:System.NotSupportedException>).  
+- A file or folder name in the path contains a colon (:) or is in an invalid format (<xref:System.NotSupportedException>).  
   
-- `ShowUI` je nastavena na `True`, `onUserCancel` je nastavena na `ThrowException`, a uživatel zrušil operaci (<xref:System.OperationCanceledException>).  
+- `ShowUI` is set to `True`, `onUserCancel` is set to `ThrowException`, and the user has cancelled the operation (<xref:System.OperationCanceledException>).  
   
-- `ShowUI` je nastavena na `True`, `onUserCancel` je nastavena na `ThrowException`, a dojde k nespecifikované chybě vstupně-výstupních operací (<xref:System.OperationCanceledException>).  
+- `ShowUI` is set to `True`, `onUserCancel` is set to `ThrowException`, and an unspecified I/O error occurs (<xref:System.OperationCanceledException>).  
   
-- Cesta přesahuje maximální délka definovaná systémem (<xref:System.IO.PathTooLongException>).  
+- The path exceeds the system-defined maximum length (<xref:System.IO.PathTooLongException>).  
   
-- Uživatel nemá požadovaná oprávnění (<xref:System.UnauthorizedAccessException>).  
+- The user does not have required permission (<xref:System.UnauthorizedAccessException>).  
   
-- Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).  
+- The user lacks necessary permissions to view the path (<xref:System.Security.SecurityException>).  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -68,6 +70,6 @@ Použití `My.Computer.FileSystem.CopyFile` metoda kopírování souborů. Param
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyFile%2A>
 - <xref:Microsoft.VisualBasic.FileIO.UICancelOption>
 - [Postupy: Kopírování souborů vyhovujících určitému vzoru do jiného adresáře](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-files-with-a-specific-pattern-to-a-directory.md)
-- [Postupy: Vytvoření kopie souboru v jiném adresáři](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-a-different-directory.md)
+- [Postupy: Vytvoření kopie souboru v jiném adresáři](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-create-a-copy-of-a-file-in-a-different-directory.md)
 - [Postupy: Zkopírování adresáře do jiného adresáře](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-copy-a-directory-to-another-directory.md)
-- [Postupy: Přejmenovat soubor](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-rename-a-file.md)
+- [Postupy: Přejmenování souboru](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-rename-a-file.md)

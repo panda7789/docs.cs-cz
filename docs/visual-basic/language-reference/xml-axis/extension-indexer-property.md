@@ -1,5 +1,5 @@
 ---
-title: Vlastnost indexeru rozšíření (Visual Basic)
+title: Vlastnost indexeru rozšíření
 ms.date: 07/20/2015
 f1_keywords:
 - vb.XmlPropertyExtensionIndexer
@@ -9,15 +9,15 @@ helpviewer_keywords:
 - extension indexer [Visual Basic]
 - XML [Visual Basic], accessing
 ms.assetid: a16a4b13-54be-432c-82b3-a87091464ada
-ms.openlocfilehash: 660cebadc78d260350f2849f7f4926f9cef7c8d2
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 5f91dc8a6b1a0d82daa4891cf826c16e2716839f
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582189"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74352700"
 ---
 # <a name="extension-indexer-property-visual-basic"></a>Vlastnost indexeru rozšíření (Visual Basic)
-Poskytuje přístup k jednotlivým prvkům v kolekci.  
+Provides access to individual elements in a collection.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,29 +29,29 @@ object(index)
   
 |Termín|Definice|  
 |---|---|  
-|`object`|Požadováno. Kolekce Queryable. To znamená, že kolekce, která implementuje <xref:System.Collections.Generic.IEnumerable%601> nebo <xref:System.Linq.IQueryable%601>.|  
-|(|Požadováno. Označuje začátek vlastnosti indexeru.|  
-|`index`|Požadováno. Celočíselný výraz, který určuje pozici prvku kolekce na základě nuly.|  
-|)|Požadováno. Označuje konec vlastnosti indexeru.|  
+|`object`|Požadováno. A queryable collection. That is, a collection that implements <xref:System.Collections.Generic.IEnumerable%601> or <xref:System.Linq.IQueryable%601>.|  
+|(|Požadováno. Denotes the start of the indexer property.|  
+|`index`|Požadováno. An integer expression that specifies the zero-based position of an element of the collection.|  
+|)|Požadováno. Denotes the end of the indexer property.|  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Objekt ze zadaného umístění v kolekci, nebo `Nothing`, pokud je index mimo rozsah.  
+ The object from the specified location in the collection, or `Nothing` if the index is out of range.  
   
 ## <a name="remarks"></a>Poznámky  
- Vlastnost indexeru rozšíření můžete použít pro přístup k jednotlivým prvkům v kolekci. Tato vlastnost indexeru se obvykle používá ve výstupu vlastností osy XML. Vlastnosti podřízenosti a podřízené osy XML vrací kolekce objektů <xref:System.Xml.Linq.XElement> nebo hodnoty atributu.  
+ You can use the extension indexer property to access individual elements in a collection. This indexer property is typically used on the output of XML axis properties. The XML child and XML descendent axis properties return collections of <xref:System.Xml.Linq.XElement> objects or an attribute value.  
   
- Kompilátor Visual Basic převádí vlastnosti indexeru rozšíření na volání metody `ElementAtOrDefault`. Na rozdíl od indexeru pole vrací metoda `ElementAtOrDefault` `Nothing`, pokud je index mimo rozsah. Toto chování je užitečné, pokud nemůžete snadno určit počet prvků v kolekci.  
+ The Visual Basic compiler converts extension indexer properties to calls to the `ElementAtOrDefault` method. Unlike an array indexer, the `ElementAtOrDefault` method returns `Nothing` if the index is out of range. This behavior is useful when you cannot easily determine the number of elements in a collection.  
   
- Tato vlastnost indexeru je stejná jako vlastnost rozšíření pro kolekce, které implementují <xref:System.Collections.Generic.IEnumerable%601> nebo <xref:System.Linq.IQueryable%601>: používá se pouze v případě, že kolekce nemá indexer nebo výchozí vlastnost.  
+ This indexer property is like an extension property for collections that implement <xref:System.Collections.Generic.IEnumerable%601> or <xref:System.Linq.IQueryable%601>: it is used only if the collection does not have an indexer or a default property.  
   
- Pro přístup k hodnotě prvního prvku v kolekci objektů <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XAttribute> můžete použít vlastnost `Value` XML. Další informace najdete v tématu [vlastnost hodnoty XML](../../../visual-basic/language-reference/xml-axis/xml-value-property.md).  
+ To access the value of the first element in a collection of <xref:System.Xml.Linq.XElement> or <xref:System.Xml.Linq.XAttribute> objects, you can use the XML `Value` property. For more information, see [XML Value Property](../../../visual-basic/language-reference/xml-axis/xml-value-property.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak použít indexer rozšíření pro přístup k druhému podřízenému uzlu v kolekci objektů <xref:System.Xml.Linq.XElement>. Ke kolekci je přistupovaná pomocí vlastnosti podřízené osy, která získá všechny podřízené prvky s názvem `phone` v objektu `contact`.  
+ The following example shows how to use the extension indexer to access the second child node in a collection of <xref:System.Xml.Linq.XElement> objects. The collection is accessed by using the child axis property, which gets all child elements named `phone` in the `contact` object.  
   
  [!code-vb[VbXMLSamples#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples11.vb#24)]  
   
- Tento kód zobrazí následující text:  
+ This code displays the following text:  
   
  `Second phone number: 425-555-0145`  
   
@@ -60,5 +60,5 @@ object(index)
 - <xref:System.Xml.Linq.XElement>
 - [Vlastnosti osy XML](../../../visual-basic/language-reference/xml-axis/index.md)
 - [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)
-- [Vytváření XML v Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [Creating XML in Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
 - [Vlastnost hodnoty XML](../../../visual-basic/language-reference/xml-axis/xml-value-property.md)

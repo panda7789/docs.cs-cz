@@ -1,27 +1,27 @@
 ---
-title: Definice autonomního typu (Visual Basic)
+title: Definice autonomního typu
 ms.date: 07/20/2015
 helpviewer_keywords:
 - anonymous types [Visual Basic], type definition
 ms.assetid: 7a8a0ddc-55ba-4d67-869e-87a84d938bac
-ms.openlocfilehash: 5f6486965d9e44524420975523e10ded32a135b7
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: f8ac26577a7fbef865605a7ecf643fa733b2c2c0
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67755212"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344919"
 ---
 # <a name="anonymous-type-definition-visual-basic"></a>Definice autonomního typu (Visual Basic)
 
-V reakci na deklarace instanci anonymního typu kompilátor vytvoří novou definici třídy, která obsahuje zadané vlastnosti pro typy.
+In response to the declaration of an instance of an anonymous type, the compiler creates a new class definition that contains the specified properties for the type.
 
-## <a name="compiler-generated-code"></a>Kód generovaný kompilátorem
+## <a name="compiler-generated-code"></a>Compiler-Generated Code
 
-Pro následující definici `product`, kompilátor vytvoří novou definici třídy, který obsahuje vlastnosti `Name`, `Price`, a `OnHand`.
+For the following definition of `product`, the compiler creates a new class definition that contains properties `Name`, `Price`, and `OnHand`.
 
 [!code-vb[VbVbalrAnonymousTypes#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class2.vb#25)]
 
-Definice třídy obsahuje vlastnosti definice podobný následujícímu. Všimněte si, že neexistuje žádná `Set` metodu pro klíčové vlastnosti. Hodnoty vlastnosti klíče jsou jen pro čtení.
+The class definition contains property definitions similar to the following. Notice that there is no `Set` method for the key properties. The values of key properties are read-only.
 
 ```vb
 Public Class $Anonymous1
@@ -52,38 +52,38 @@ Public Class $Anonymous1
 End Class
 ```
 
-Kromě toho definice anonymního typu obsahuje konstruktor bez parametrů. Konstruktory, které vyžadují parametry nejsou povoleny.
+In addition, anonymous type definitions contain a parameterless constructor. Constructors that require parameters are not permitted.
 
-Pokud deklarace anonymního typu obsahuje alespoň jednu klíčovou vlastnost, přepíše definice typu tři členy zděděné z <xref:System.Object>: <xref:System.Object.Equals%2A>, <xref:System.Object.GetHashCode%2A>, a <xref:System.Object.ToString%2A>. Pokud jsou deklarovány žádné vlastnosti klíče, pouze <xref:System.Object.ToString%2A> je přepsána. Přepsání poskytují následující funkce:
+If an anonymous type declaration contains at least one key property, the type definition overrides three members inherited from <xref:System.Object>: <xref:System.Object.Equals%2A>, <xref:System.Object.GetHashCode%2A>, and <xref:System.Object.ToString%2A>. If no key properties are declared, only <xref:System.Object.ToString%2A> is overridden. The overrides provide the following functionality:
 
-- `Equals` Vrátí `True` Pokud dvě instance anonymního typu jsou stejnou instanci, nebo pokud nebudou splňovat následující podmínky:
+- `Equals` returns `True` if two anonymous type instances are the same instance, or if they meet the following conditions:
 
-  - Mají stejný počet vlastností.
+  - They have the same number of properties.
 
-  - Vlastnosti jsou deklarovány ve stejném pořadí, se stejnými názvy a stejné odvozené typy. Název porovnání nerozlišují malá a velká písmena.
+  - The properties are declared in the same order, with the same names and the same inferred types. Name comparisons are not case-sensitive.
 
-  - Nejméně jedna z vlastností je klíčová vlastnost a `Key` – klíčové slovo platí stejné vlastnosti.
+  - At least one of the properties is a key property, and the `Key` keyword is applied to the same properties.
 
-  - Porovnání jednotlivých odpovídající dvojice klíčů vlastnosti vrátí `True`.
+  - Comparison of each corresponding pair of key properties returns `True`.
 
-    Například v následujících příkladech `Equals` vrátí `True` pouze pro `employee01` a `employee08`. Komentář před každý řádek Určuje důvod, proč novou instanci se neshoduje s `employee01`.
+    For example, in the following examples, `Equals` returns `True` only for `employee01` and `employee08`. The comment before each line specifies the reason why the new instance does not match `employee01`.
 
     [!code-vb[VbVbalrAnonymousTypes#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class2.vb#24)]
 
-- `GetHashcode` poskytuje odpovídajícím způsobem jedinečný algoritmus GetHashCode. Tento algoritmus se používá pouze klíčové vlastnosti k výpočtu kódů hash.
+- `GetHashcode` provides an appropriately unique GetHashCode algorithm. The algorithm uses only the key properties to compute the hash code.
 
-- `ToString` Vrátí řetězec hodnoty zřetězených vlastností, jak je znázorněno v následujícím příkladu. Klíče a vlastnosti neklíčovým jsou zahrnuty.
+- `ToString` returns a string of concatenated property values, as shown in the following example. Both key and non-key properties are included.
 
   [!code-vb[VbVbalrAnonymousTypes#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class2.vb#29)]
 
-Explicitně pojmenované vlastnosti anonymního typu nelze v konfliktu s těmito generované metody. To znamená, že nelze použít `.Equals`, `.GetHashCode`, nebo `.ToString` název vlastnosti.
+Explicitly named properties of an anonymous type cannot conflict with these generated methods. That is, you cannot use `.Equals`, `.GetHashCode`, or `.ToString` to name a property.
 
-Definice anonymního typu, které obsahují alespoň jeden klíčové vlastnosti také implementovat <xref:System.IEquatable%601?displayProperty=nameWithType> rozhraní, ve kterém `T` je typ anonymního typu.
+Anonymous type definitions that include at least one key property also implement the <xref:System.IEquatable%601?displayProperty=nameWithType> interface, where `T` is the type of the anonymous type.
 
 > [!NOTE]
-> Anonymní typ deklarace vytvoření stejné anonymního typu pouze v případě, že se objeví ve stejném sestavení, jejich vlastnosti mají stejné názvy a stejné odvodit typy, vlastnosti jsou deklarovány ve stejném pořadí a stejné vlastnosti jsou označeny jako vlastnosti klíče.
+> Anonymous type declarations create the same anonymous type only if they occur in the same assembly, their properties have the same names and the same inferred types, the properties are declared in the same order, and the same properties are marked as key properties.
 
 ## <a name="see-also"></a>Viz také:
 
 - [Anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)
-- [Postupy: Odvození názvů a typů v deklaracích anonymního typu vlastností](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)
+- [Postupy: Odvození názvů a typů vlastností v deklaracích anonymního typu](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)

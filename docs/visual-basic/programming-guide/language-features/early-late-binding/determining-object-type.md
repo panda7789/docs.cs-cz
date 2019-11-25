@@ -1,5 +1,5 @@
 ---
-title: Určení typu objektu (Visual Basic)
+title: Určení typu objektu
 ms.date: 07/20/2015
 helpviewer_keywords:
 - classes [Visual Basic], discovering which an object belongs to
@@ -9,38 +9,38 @@ helpviewer_keywords:
 - TypeName function
 - objects [Visual Basic], type determining
 ms.assetid: d95e7ad1-cd63-41d6-9a28-d7a1380d49c1
-ms.openlocfilehash: 4014bef2e0c27a0f6a684bc1ed95019f392062a5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a77cc0603a0b61f58a4aa703c4b1e6ef4c26729c
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62050516"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345190"
 ---
 # <a name="determining-object-type-visual-basic"></a>Určení typu objektu (Visual Basic)
-Generický objekt proměnné (tedy proměnné můžete deklarovat jako `Object`) může obsahovat objekty z jiné třídy. Při použití proměnné typu `Object`, možná budete muset provést různé akce na základě třídy objektu; například nemusí podporovat některé objekty určité vlastnosti nebo metody. Visual Basic poskytuje dva prostředky určující, jaký typ objektu je uložen v proměnné objektu: `TypeName` funkce a `TypeOf...Is` operátor.  
+Generic object variables (that is, variables you declare as `Object`) can hold objects from any class. When using variables of type `Object`, you may need to take different actions based on the class of the object; for example, some objects might not support a particular property or method. Visual Basic provides two means of determining which type of object is stored in an object variable: the `TypeName` function and the `TypeOf...Is` operator.  
   
-## <a name="typename-and-typeofis"></a>Vlastnosti TypeName a TypeOf... Je  
- `TypeName` Funkce vrátí řetězec a je nejlepší volbou, pokud potřebujete uložit nebo zobrazit název třídy objektu, jak je znázorněno v následujícím fragmentu kódu:  
+## <a name="typename-and-typeofis"></a>TypeName and TypeOf…Is  
+ The `TypeName` function returns a string and is the best choice when you need to store or display the class name of an object, as shown in the following code fragment:  
   
  [!code-vb[VbVbalrOOP#92](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#92)]  
   
- `TypeOf...Is` Operátor je nejlepší volbou pro testování typ objektu, protože je mnohem rychlejší než porovnání odpovídající řetězec pomocí `TypeName`. Následující fragment kódu používá `TypeOf...Is` v rámci `If...Then...Else` – příkaz:  
+ The `TypeOf...Is` operator is the best choice for testing an object's type, because it is much faster than an equivalent string comparison using `TypeName`. The following code fragment uses `TypeOf...Is` within an `If...Then...Else` statement:  
   
  [!code-vb[VbVbalrOOP#93](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#93)]  
   
- Tady je termín slovo upozornění. `TypeOf...Is` Operátor vrátí `True` Pokud objekt je určitého typu nebo je odvozen z určitého typu. Téměř vše, co dělat s jazykem Visual Basic zahrnuje objekty, které obsahují některé prvky, které nejsou běžně považují za objekty, jako jsou řetězce a celá čísla. Tyto objekty jsou odvozeny z a dědí z metody <xref:System.Object>. Po uplynutí `Integer` a vyhodnocené s `Object`, `TypeOf...Is` operátor vrátí `True`. Následující příklad uvádí, že parametr `InParam` je oba směry `Object` a `Integer`:  
+ A word of caution is due here. The `TypeOf...Is` operator returns `True` if an object is of a specific type, or is derived from a specific type. Almost everything you do with Visual Basic involves objects, which include some elements not normally thought of as objects, such as strings and integers. These objects are derived from and inherit methods from <xref:System.Object>. When passed an `Integer` and evaluated with `Object`, the `TypeOf...Is` operator returns `True`. The following example reports that the parameter `InParam` is both an `Object` and an `Integer`:  
   
  [!code-vb[VbVbalrOOP#94](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#94)]  
   
- Následující příklad používá obě `TypeOf...Is` a `TypeName` k určení typu objektu do ní předán v `Ctrl` argument. `TestObject` Volání procedur `ShowType` s tři různé typy ovládacích prvků.  
+ The following example uses both `TypeOf...Is` and `TypeName` to determine the type of object passed to it in the `Ctrl` argument. The `TestObject` procedure calls `ShowType` with three different kinds of controls.  
   
 #### <a name="to-run-the-example"></a>Chcete-li spustit příklad  
   
-1. Vytvořte nový projekt aplikace Windows a přidejte <xref:System.Windows.Forms.Button> ovládací prvek, <xref:System.Windows.Forms.CheckBox> ovládacího prvku a <xref:System.Windows.Forms.RadioButton> ovládacího prvku na formuláři.  
+1. Create a new Windows Application project and add a <xref:System.Windows.Forms.Button> control, a <xref:System.Windows.Forms.CheckBox> control, and a <xref:System.Windows.Forms.RadioButton> control to the form.  
   
-2. Pomocí tlačítka na formuláři, zavolejte `TestObject` postup.  
+2. From the button on your form, call the `TestObject` procedure.  
   
-3. Přidejte následující kód do svého formuláře:  
+3. Add the following code to your form:  
   
      [!code-vb[VbVbalrOOP#95](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#95)]  
   

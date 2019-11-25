@@ -1,89 +1,89 @@
 ---
-title: Funkce řetězce (Visual Basic)
+title: Funkce řetězce
 ms.date: 07/20/2015
 helpviewer_keywords:
 - string functions
 ms.assetid: f1bf9ac2-cbcf-4298-ae51-53182076bdc8
-ms.openlocfilehash: 0002a3dd19b493f690f91f9b6c68a9241e6d6ea0
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 2608159e28ee63a0fdb10c82054fd65efe79ac62
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72583005"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74349984"
 ---
 # <a name="string-functions-visual-basic"></a>Funkce řetězce (Visual Basic)
 
-V následující tabulce jsou uvedeny funkce, které Visual Basic poskytuje ve třídě <xref:Microsoft.VisualBasic.Strings?displayProperty=nameWithType> k vyhledávání a manipulaci s řetězci. Je možné je považovat za Visual Basic vnitřních funkcí; To znamená, že je nemusíte volat jako explicitní členy třídy, jak je znázorněno v příkladu. Další metody a v některých případech doplňkové metody jsou k dispozici ve třídě <xref:System.String?displayProperty=nameWithType>.
+The following table lists the functions that Visual Basic provides in the <xref:Microsoft.VisualBasic.Strings?displayProperty=nameWithType> class to search and manipulate strings. They can be regarded as Visual Basic intrinsic functions; that is, you do not have to call them as explicit members of a class, as the examples show. Additional methods, and in some cases complementary methods, are available in the <xref:System.String?displayProperty=nameWithType> class.
 
-|.NET Framework – metoda|Popis|
+|.NET Framework method|Popis|
 |---------------------------|-----------------|
-|<xref:Microsoft.VisualBasic.Strings.Asc%2A> <xref:Microsoft.VisualBasic.Strings.AscW%2A>|Vrací hodnotu `Integer` představující kód znaku odpovídající znaku.|
-|<xref:Microsoft.VisualBasic.Strings.Chr%2A> <xref:Microsoft.VisualBasic.Strings.ChrW%2A>|Vrátí znak přiřazený k určenému kódu znaku.|
-|<xref:Microsoft.VisualBasic.Strings.Filter%2A>|Vrací pole s nulovým základem obsahující podmnožinu pole `String` na základě zadaných kritérií filtru.|
-|<xref:Microsoft.VisualBasic.Strings.Format%2A>|Vrátí řetězec formátovaný podle pokynů obsažených ve formátu `String` výrazu.|
-|<xref:Microsoft.VisualBasic.Strings.FormatCurrency%2A>|Vrací výraz formátovaný jako hodnota měny pomocí symbolu měny definovaného na ovládacím panelu systému.|
-|<xref:Microsoft.VisualBasic.Strings.FormatDateTime%2A>|Vrátí řetězcový výraz představující hodnotu data a času.|
-|<xref:Microsoft.VisualBasic.Strings.FormatNumber%2A>|Vrátí výraz formátovaný jako číslo.|
-|<xref:Microsoft.VisualBasic.Strings.FormatPercent%2A>|Vrátí výraz formátovaný jako procento (vynásobený 100) s koncovým znakem%.|
-|<xref:Microsoft.VisualBasic.Strings.InStr%2A>|Vrací celé číslo určující počáteční pozici prvního výskytu jednoho řetězce v rámci druhého.|
-|<xref:Microsoft.VisualBasic.Strings.InStrRev%2A>|Vrátí pozici prvního výskytu jednoho řetězce v rámci druhého počínaje od pravé strany řetězce.|
-|<xref:Microsoft.VisualBasic.Strings.Join%2A>|Vrátí řetězec vytvořený spojením několika podřetězců obsažených v poli.|
-|<xref:Microsoft.VisualBasic.Strings.LCase%2A>|Vrátí řetězec nebo znak převedený na malá písmena.|
-|<xref:Microsoft.VisualBasic.Strings.Left%2A>|Vrátí řetězec obsahující zadaný počet znaků od levé strany řetězce.|
-|<xref:Microsoft.VisualBasic.Strings.Len%2A>|Vrátí celé číslo, které obsahuje počet znaků v řetězci.|
-|<xref:Microsoft.VisualBasic.Strings.LSet%2A>|Vrátí řetězec zarovnaný doleva obsahující zadaný řetězec upravený na zadanou délku.|
-|<xref:Microsoft.VisualBasic.Strings.LTrim%2A>|Vrátí řetězec obsahující kopii zadaného řetězce bez počátečních mezer.|
-|<xref:Microsoft.VisualBasic.Strings.Mid%2A>|Vrátí řetězec obsahující zadaný počet znaků z řetězce.|
-|<xref:Microsoft.VisualBasic.Strings.Replace%2A>|Vrátí řetězec, ve kterém byl zadaný dílčí řetězec nahrazen jiným dílčím řetězcem, který je určený počtem opakování.|
-|<xref:Microsoft.VisualBasic.Strings.Right%2A>|Vrátí řetězec obsahující zadaný počet znaků z pravé strany řetězce.|
-|<xref:Microsoft.VisualBasic.Strings.RSet%2A>|Vrátí řetězec zarovnaný doprava obsahující zadaný řetězec upravený na zadanou délku.|
-|<xref:Microsoft.VisualBasic.Strings.RTrim%2A>|Vrátí řetězec obsahující kopii zadaného řetězce bez koncových mezer.|
-|<xref:Microsoft.VisualBasic.Strings.Space%2A>|Vrátí řetězec sestávající z určeného počtu mezer.|
-|<xref:Microsoft.VisualBasic.Strings.Split%2A>|Vrací jednorozměrné pole s nulovým základem obsahující určený počet podřetězců.|
-|<xref:Microsoft.VisualBasic.Strings.StrComp%2A>|Vrátí hodnotu-1, 0 nebo 1 na základě výsledku porovnání řetězců.|
-|<xref:Microsoft.VisualBasic.Strings.StrConv%2A>|Vrátí řetězec převedený podle zadání.|
-|<xref:Microsoft.VisualBasic.Strings.StrDup%2A>|Vrátí řetězec nebo objekt skládající se ze zadaného znaku, který se opakuje po zadaném počtu opakování.|
-|<xref:Microsoft.VisualBasic.Strings.StrReverse%2A>|Vrátí řetězec, ve kterém je obráceno pořadí znaků zadaného řetězce.|
-|<xref:Microsoft.VisualBasic.Strings.Trim%2A>|Vrátí řetězec obsahující kopii zadaného řetězce bez mezer na začátku nebo na konci.|
-|<xref:Microsoft.VisualBasic.Strings.UCase%2A>|Vrátí řetězec nebo znak obsahující určený řetězec převedený na velká písmena.|
+|<xref:Microsoft.VisualBasic.Strings.Asc%2A>, <xref:Microsoft.VisualBasic.Strings.AscW%2A>|Returns an `Integer` value representing the character code corresponding to a character.|
+|<xref:Microsoft.VisualBasic.Strings.Chr%2A>, <xref:Microsoft.VisualBasic.Strings.ChrW%2A>|Returns the character associated with the specified character code.|
+|<xref:Microsoft.VisualBasic.Strings.Filter%2A>|Returns a zero-based array containing a subset of a `String` array based on specified filter criteria.|
+|<xref:Microsoft.VisualBasic.Strings.Format%2A>|Returns a string formatted according to instructions contained in a format `String` expression.|
+|<xref:Microsoft.VisualBasic.Strings.FormatCurrency%2A>|Returns an expression formatted as a currency value using the currency symbol defined in the system control panel.|
+|<xref:Microsoft.VisualBasic.Strings.FormatDateTime%2A>|Returns a string expression representing a date/time value.|
+|<xref:Microsoft.VisualBasic.Strings.FormatNumber%2A>|Returns an expression formatted as a number.|
+|<xref:Microsoft.VisualBasic.Strings.FormatPercent%2A>|Returns an expression formatted as a percentage (that is, multiplied by 100) with a trailing % character.|
+|<xref:Microsoft.VisualBasic.Strings.InStr%2A>|Returns an integer specifying the start position of the first occurrence of one string within another.|
+|<xref:Microsoft.VisualBasic.Strings.InStrRev%2A>|Returns the position of the first occurrence of one string within another, starting from the right side of the string.|
+|<xref:Microsoft.VisualBasic.Strings.Join%2A>|Returns a string created by joining a number of substrings contained in an array.|
+|<xref:Microsoft.VisualBasic.Strings.LCase%2A>|Returns a string or character converted to lowercase.|
+|<xref:Microsoft.VisualBasic.Strings.Left%2A>|Returns a string containing a specified number of characters from the left side of a string.|
+|<xref:Microsoft.VisualBasic.Strings.Len%2A>|Returns an integer that contains the number of characters in a string.|
+|<xref:Microsoft.VisualBasic.Strings.LSet%2A>|Returns a left-aligned string containing the specified string adjusted to the specified length.|
+|<xref:Microsoft.VisualBasic.Strings.LTrim%2A>|Returns a string containing a copy of a specified string with no leading spaces.|
+|<xref:Microsoft.VisualBasic.Strings.Mid%2A>|Returns a string containing a specified number of characters from a string.|
+|<xref:Microsoft.VisualBasic.Strings.Replace%2A>|Returns a string in which a specified substring has been replaced with another substring a specified number of times.|
+|<xref:Microsoft.VisualBasic.Strings.Right%2A>|Returns a string containing a specified number of characters from the right side of a string.|
+|<xref:Microsoft.VisualBasic.Strings.RSet%2A>|Returns a right-aligned string containing the specified string adjusted to the specified length.|
+|<xref:Microsoft.VisualBasic.Strings.RTrim%2A>|Returns a string containing a copy of a specified string with no trailing spaces.|
+|<xref:Microsoft.VisualBasic.Strings.Space%2A>|Returns a string consisting of the specified number of spaces.|
+|<xref:Microsoft.VisualBasic.Strings.Split%2A>|Returns a zero-based, one-dimensional array containing a specified number of substrings.|
+|<xref:Microsoft.VisualBasic.Strings.StrComp%2A>|Returns -1, 0, or 1, based on the result of a string comparison.|
+|<xref:Microsoft.VisualBasic.Strings.StrConv%2A>|Returns a string converted as specified.|
+|<xref:Microsoft.VisualBasic.Strings.StrDup%2A>|Returns a string or object consisting of the specified character repeated the specified number of times.|
+|<xref:Microsoft.VisualBasic.Strings.StrReverse%2A>|Returns a string in which the character order of a specified string is reversed.|
+|<xref:Microsoft.VisualBasic.Strings.Trim%2A>|Returns a string containing a copy of a specified string with no leading or trailing spaces.|
+|<xref:Microsoft.VisualBasic.Strings.UCase%2A>|Returns a string or character containing the specified string converted to uppercase.|
 
-Pomocí příkazu [Compare Option](../../../visual-basic/language-reference/statements/option-compare-statement.md) lze nastavit, zda jsou řetězce porovnány pomocí řazení textu bez rozlišení velkých a malých písmen, určených národním prostředím systému (`Text`) nebo vnitřními binárními reprezentacemi znaků (`Binary`). Výchozí metoda porovnání textu je `Binary`.
+You can use the [Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md) statement to set whether strings are compared using a case-insensitive text sort order determined by your system's locale (`Text`) or by the internal binary representations of the characters (`Binary`). The default text comparison method is `Binary`.
 
-## <a name="example-ucase"></a>Příklad: UCase
+## <a name="example-ucase"></a>Example: UCase
 
-V tomto příkladu se používá funkce `UCase` pro vrácení velké verze řetězce.
+This example uses the `UCase` function to return an uppercase version of a string.
 [!code-vb[VbVbalrStrings#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#31)]
 
-## <a name="example-ltrim"></a>Příklad: LTrim
+## <a name="example-ltrim"></a>Example: LTrim
 
-V tomto příkladu se používá funkce `LTrim` k obložení počátečních mezer a funkce `RTrim` pro obložení koncových mezer z řetězcové proměnné. K odstranění obou typů mezer používá funkci `Trim`.
+This example uses the `LTrim` function to strip leading spaces and the `RTrim` function to strip trailing spaces from a string variable. It uses the `Trim` function to strip both types of spaces.
 
 [!code-vb[VbVbalrStrings#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#25)]
 
-## <a name="example-mid"></a>Příklad: Mid
+## <a name="example-mid"></a>Example: Mid
 
-V tomto příkladu se pomocí funkce `Mid` vrátí zadaný počet znaků z řetězce.
+This example uses the `Mid` function to return a specified number of characters from a string.
 
 [!code-vb[VbVbalrStrings#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#17)]
 
-## <a name="example-len"></a>Příklad: len
+## <a name="example-len"></a>Example: Len
 
-Tento příklad používá `Len` pro vrácení počtu znaků v řetězci.
+This example uses `Len` to return the number of characters in a string.
 
 [!code-vb[VbVbalrStrings#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#33)]
 
-## <a name="example-instr"></a>Příklad: InStr
+## <a name="example-instr"></a>Example: InStr
 
-V tomto příkladu se pomocí funkce `InStr` vrátí pozice prvního výskytu jednoho řetězce v jiném.
+This example uses the `InStr` function to return the position of the first occurrence of one string within another.
 
 [!code-vb[VbVbalrStrings#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#8)]
 
-## <a name="example-format"></a>Příklad: formát
+## <a name="example-format"></a>Example: Format
 
-Tento příklad ukazuje různá použití funkce `Format` k formátování hodnot pomocí formátů `String` a uživatelsky definovaných formátů. V případě oddělovače data (`/`), oddělovače času (`:`) a indikátory AM/PM (`t` a `tt`) se skutečný formátovaný výstup zobrazený systémem závisí na nastavení národního prostředí, které kód používá. Když jsou časy a kalendářní data zobrazeny ve vývojovém prostředí, je použit krátký formát času a formát krátkého data národního prostředí kódu.
+This example shows various uses of the `Format` function to format values using both `String` formats and user-defined formats. For the date separator (`/`), time separator (`:`), and the AM/PM indicators (`t` and `tt`), the actual formatted output displayed by your system depends on the locale settings the code is using. When times and dates are displayed in the development environment, the short time format and short date format of the code locale are used.
 
 > [!NOTE]
-> Pro národní prostředí, která používají 24hodinové hodiny, se indikátory AM/PM (`t` a `tt`) nezobrazí nic.
+> For locales that use a 24-hour clock, the AM/PM indicators (`t` and `tt`) display nothing.
 
 [!code-vb[VbVbalrStrings#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#27)]
 
@@ -92,4 +92,4 @@ Tento příklad ukazuje různá použití funkce `Format` k formátování hodno
 - [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)
 - [Členové knihovny modulu runtime jazyka Visual Basic](../../../visual-basic/language-reference/runtime-library-members.md)
 - [Souhrn manipulace s řetězci](../../../visual-basic/language-reference/keywords/string-manipulation-summary.md)
-- [Metody třídy System. String](xref:System.String#methods)
+- [System.String class methods](xref:System.String#methods)

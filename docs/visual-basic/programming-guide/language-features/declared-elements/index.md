@@ -1,18 +1,18 @@
 ---
-title: Deklarované elementy v jazyce Visual Basic
+title: Deklarované elementy
 ms.date: 07/20/2015
 ms.assetid: 0d1d1bb5-ac0b-485f-8922-cdcec5574c79
-ms.openlocfilehash: 3430517aea32eeb79aeb586d3a1eb0df1524998b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a61ba32e2235bfb6a2112a28f1de7479ca82556c
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64639178"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345332"
 ---
 # <a name="declared-elements-in-visual-basic"></a>Deklarované elementy v jazyce Visual Basic
-A *deklarovat element* je programovací prvek, který je definován v příkazu deklarace. Deklarované elementy patří proměnné, konstanty, výčty, třídy, struktury, moduly, rozhraní, postupy, parametry procedury, funkce vrátí, odkazy na externí procedura, operátory, vlastnosti, události a delegáti.  
+A *declared element* is a programming element that is defined in a declaration statement. Declared elements include variables, constants, enumerations, classes, structures, modules, interfaces, procedures, procedure parameters, function returns, external procedure references, operators, properties, events, and delegates.  
   
- Příkazy deklarace patří:  
+ Declaration statements include the following:  
   
 - [Příkaz Dim](../../../../visual-basic/language-reference/statements/dim-statement.md)  
   
@@ -44,20 +44,20 @@ A *deklarovat element* je programovací prvek, který je definován v příkazu 
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Deklarované názvy elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)  
- Popisuje, jak prvky názvu a abecední případu použití.  
+ Describes how to name elements and use alphabetic case.  
   
  [Deklarované charakteristiky elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)  
- Popisuje vlastnosti, například oboru, které má k dispozici deklarované elementy.  
+ Covers characteristics, such as scope, possessed by declared elements.  
   
  [Odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)  
- Popisuje, jak kompilátor shoduje s odkazem na prohlášení a kvalifikovat název.  
+ Describes how the compiler matches a reference to a declaration and how to qualify a name.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Struktura programu a zásady týkající se kódu](../../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)  
- Uvede počet pokyny pro snadnější čtení, pochopitelný a udržovatelný kód.  
+ Presents guidelines for making your code easier to read, understand, and maintain.  
   
  [Příkazy](../../../../visual-basic/language-reference/statements/index.md)  
- Popisuje příkazy, které pojmenujte a definovat postupy, proměnné, polí a konstanty.  
+ Describes statements that name and define procedures, variables, arrays, and constants.  
   
  [Kontexty deklarace a výchozí úrovně přístupu](../../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md)  
- Jsou uvedeny typy deklarované elementy a zobrazuje u každé z nich jeho příkazu deklarace, v jaké kontextu je možné deklarovat a jeho výchozí úroveň přístupu.
+ Lists the types of declared elements and shows for each one its declaration statement, in what context you can declare it, and its default access level.

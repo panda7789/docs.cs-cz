@@ -1,49 +1,49 @@
 ---
-title: 'Postupy: použití poznámek k transformaci LINQ to XMLch stromů ve stylu XSLT (Visual Basic)'
+title: 'How to: Use Annotations to Transform LINQ to XML Trees in an XSLT Style'
 ms.date: 07/20/2015
 ms.assetid: 08e91fa2-dac2-4463-9ef1-87b1ac3fa890
-ms.openlocfilehash: b8f15c4dc6016e48619d26e7cc8717a2a3c5acd5
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: d9cb32462535f099107343bd9069b4da3508c5b0
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72581979"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348360"
 ---
-# <a name="how-to-use-annotations-to-transform-linq-to-xml-trees-in-an-xslt-style-visual-basic"></a>Postupy: použití poznámek k transformaci LINQ to XMLch stromů ve stylu XSLT (Visual Basic)
+# <a name="how-to-use-annotations-to-transform-linq-to-xml-trees-in-an-xslt-style-visual-basic"></a>How to: Use Annotations to Transform LINQ to XML Trees in an XSLT Style (Visual Basic)
 
-Poznámky lze použít k usnadnění transformací stromu XML.
+Annotations can be used to facilitate transforms of an XML tree.
 
-Některé dokumenty XML jsou "dokumenty orientované na smíšený obsah". S takovými dokumenty nemusíte nutně znát tvar podřízených uzlů prvku. Například uzel, který obsahuje text, může vypadat takto:
+Some XML documents are "document centric with mixed content." With such documents, you don't necessarily know the shape of child nodes of an element. For instance, a node that contains text may look like this:
 
 ```xml
 <text>A phrase with <b>bold</b> and <i>italic</i> text.</text>
 ```
 
-Pro libovolný daný textový uzel může existovat libovolný počet podřízených prvků `<b>` a `<i>`. Tento přístup se rozšiřuje na řadu dalších situací: například stránky, které mohou obsahovat různé podřízené prvky, jako jsou například běžné odstavce, odstavce s odrážkami a rastry. Buňky v tabulce mohou obsahovat text, rozevírací seznamy nebo rastrové obrázky. Jednou z hlavních charakteristik XML orientovaného dokumentu je, že nevíte, který podřízený prvek bude mít konkrétní prvek.
+For any given text node, there may be any number of child `<b>` and `<i>` elements. This approach extends to a number of other situations: such as, pages that can contain a variety of child elements, such as regular paragraphs, bulleted paragraphs, and bitmaps. Cells in a table may contain text, drop down lists, or bitmaps. One of the primary characteristics of document centric XML is that you do not know which child element any particular element will have.
 
-Pokud chcete transformovat prvky ve stromové struktuře, kde nevíte nutně o podřízených objektech prvků, které chcete transformovat, pak tento přístup, který používá poznámky, představuje účinný přístup.
+If you want to transform elements in a tree where you don't necessarily know much about the children of the elements that you want to transform, then this approach that uses annotations is an effective approach.
 
-Souhrn tohoto přístupu:
+The summary of the approach is:
 
-- Nejprve opatřit poznámkami prvky ve stromové struktuře náhradním elementem.
+- First, annotate elements in the tree with a replacement element.
 
-- Potom Iterujte celý strom a vytvořte nový strom, ve kterém nahradíte jednotlivé prvky jeho anotací. Tento příklad implementuje iteraci a vytvoření nového stromu ve funkci s názvem `XForm`.
+- Second, iterate through the entire tree, creating a new tree where you replace each element with its annotation. This example implements the iteration and creation of the new tree in a function named `XForm`.
 
-Tento přístup se skládá z těchto možností:
+In detail, the approach consists of:
 
-- Proveďte jeden nebo více LINQ to XML dotazů, které vracejí sadu prvků, které chcete transformovat z jednoho obrazce na jiný. Pro každý prvek v dotazu přidejte nový objekt <xref:System.Xml.Linq.XElement> jako anotaci k elementu. Tento nový element nahradí element s poznámkou v novém, transformované stromové struktuře. Toto je jednoduchý kód pro zápis, jak je znázorněno v příkladu.
+- Execute one or more LINQ to XML queries that return the set of elements that you want to transform from one shape to another. For each element in the query, add a new <xref:System.Xml.Linq.XElement> object as an annotation to the element. This new element will replace the annotated element in the new, transformed tree. This is simple code to write, as demonstrated by the example.
 
-- Nový prvek, který je přidán jako anotace, může obsahovat nové podřízené uzly; může vytvořit dílčí strom s libovolným požadovaným tvarem.
+- The new element that is added as an annotation can contain new child nodes; it can form a sub-tree with any desired shape.
 
-- Existuje zvláštní pravidlo: Pokud je podřízený uzel nového elementu v jiném oboru názvů, který je vytvořen pro tento účel (v tomto příkladu je obor názvů `http://www.microsoft.com/LinqToXmlTransform/2007`), pak tento podřízený element není zkopírován do nového stromu. Místo toho, pokud je obor názvů výše zmíněným speciálním oborem názvů a místní název elementu je `ApplyTransforms`, pak jsou v podřízených uzlech elementu ve stromu zdrojového kódu iterace a zkopírovány do nového stromu (s výjimkou, že jsou podřízené prvky s poznámkami. Tato pravidla se transformují podle těchto pravidel.
+- There is a special rule: If a child node of the new element is in a different namespace, a namespace that is made up for this purpose (in this example, the namespace is `http://www.microsoft.com/LinqToXmlTransform/2007`), then that child element is not copied to the new tree. Instead, if the namespace is the above mentioned special namespace, and the local name of the element is `ApplyTransforms`, then the child nodes of the element in the source tree are iterated, and copied to the new tree (with the exception that annotated child elements are themselves transformed according to these rules).
 
-- To je trochu podobné určení transformací v prvku XSL. Dotaz, který vybere sadu uzlů, je podobný výrazu XPath pro šablonu. Kód pro vytvoření nového <xref:System.Xml.Linq.XElement>, který je uložen jako anotace, je podobný konstruktoru sekvence v prvku XSL a prvek `ApplyTransforms` je podobný funkci jako element `xsl:apply-templates` v prvku XSL.
+- This is somewhat analogous to the specification of transforms in XSL. The query that selects a set of nodes is analogous to the XPath expression for a template. The code to create the new <xref:System.Xml.Linq.XElement> that is saved as an annotation is analogous to the sequence constructor in XSL, and the `ApplyTransforms` element is analogous in function to the `xsl:apply-templates` element in XSL.
 
-- Jednou z výhod tohoto přístupu – při formulování dotazů vždy zapisujete dotazy na neupravený zdrojový strom. Nemusíte si dělat starosti s tím, jak změny stromu ovlivňují dotazy, které píšete.
+- One advantage to taking this approach - as you formulate queries, you are always writing queries on the unmodified source tree. You need not worry about how modifications to the tree affect the queries that you are writing.
 
-## <a name="transforming-a-tree"></a>Transformace stromu
+## <a name="transforming-a-tree"></a>Transforming a Tree
 
-Tento první příklad přejmenuje všechny uzly `Paragraph` na `para`:
+This first example renames all `Paragraph` nodes to `para`:
 
 ```vb
 Imports <xmlns:xf="http://www.microsoft.com/LinqToXmlTransform/2007">
@@ -74,7 +74,7 @@ Module Module1
 End Module
 ```
 
- Tento příklad vytvoří následující výstup:
+ This example produces the following output:
 
 ```xml
 <Root>
@@ -83,9 +83,9 @@ End Module
 </Root>
 ```
 
-## <a name="a-more-complicated-transform"></a>Složitější transformace
+## <a name="a-more-complicated-transform"></a>A more complicated transform
 
-Následující příklad dotazuje strom a vypočítá průměr a součet prvků `Data` a přidá je jako nové prvky do stromu.
+The following example queries the tree and calculates the average and sum of the `Data` elements, and adds them as new elements to the tree.
 
 ```vb
 Imports <xmlns:xf="http://www.microsoft.com/LinqToXmlTransform/2007">
@@ -136,7 +136,7 @@ Module Module1
 End Module
 ```
 
-Tento příklad vytvoří následující výstup:
+This example produces the following output:
 
 ```console
 Before Transform
@@ -158,29 +158,29 @@ After Transform
 </Root>
 ```
 
-## <a name="effecting-the-transform"></a>Ovlivnění transformace
+## <a name="effecting-the-transform"></a>Effecting the transform
 
-Malá funkce `XForm` vytvoří nový transformovaný strom z originálu s poznámkou stromu.
+A small function, `XForm`, creates a new transformed tree from the original, annotated tree.
 
-Pseudo kód pro funkci je poměrně jednoduchý:
+The pseudo code for the function is quite simple:
 
-> Funkce přebírá jako argument XElement a vrátí XElement.
+> The function takes an XElement as an argument and returns an XElement.
 >
-> Pokud má element anotaci XElement, vraťte novou XElement:
+> If an element has an XElement annotation, then return a new XElement:
 >
-> - Název nového XElement je název prvku poznámky.
-> - Všechny atributy jsou zkopírovány z poznámky do nového uzlu.
-> - Všechny podřízené uzly jsou zkopírovány z anotace s výjimkou, že speciální uzel XF: ApplyTransforms je rozpoznán a podřízené uzly zdrojového elementu jsou iterace. Pokud zdrojový podřízený uzel není XElement, je zkopírován do nového stromu. Pokud je zdrojový podřízený objekt XElement, je transformované voláním této funkce rekurzivně.
+> - The name of the new XElement is the annotation element's name.
+> - All attributes are copied from the annotation to the new node.
+> - All child nodes are copied from the annotation, with the exception that the special node xf:ApplyTransforms is recognized, and the source element's child nodes are iterated. If the source child node is not an XElement, it is copied to the new tree. If the source child is an XElement, then it is transformed by calling this function recursively.
 >
-> Pokud element není opatřen poznámkami:
+> If an element is not annotated:
 >
-> - Vrátit novou XElement
->   - Název nového XElement je název zdrojového elementu.
->   - Všechny atributy jsou zkopírovány ze zdrojového elementu do elementu cíle.
->   - Všechny podřízené uzly jsou zkopírovány ze zdrojového elementu.
->   - Pokud zdrojový podřízený uzel není XElement, je zkopírován do nového stromu. Pokud je zdrojový podřízený objekt XElement, je transformované voláním této funkce rekurzivně.
+> - Return a new XElement
+>   - The name of the new XElement is the source element's name.
+>   - All attributes are copied from the source element to the destination's element.
+>   - All child nodes are copied from the source element.
+>   - If the source child node is not an XElement, it is copied to the new tree. If the source child is an XElement, then it is transformed by calling this function recursively.
 
-Následující kód je implementace této funkce:
+The following code is the implementation of this function:
 
 ```vb
 ' Build a transformed XML tree per the annotations.
@@ -222,12 +222,11 @@ Private Function GetExpandedNodes(ByVal n2 As XNode) As XNode
 End Function
 ```
 
-## <a name="complete-example"></a>Kompletní příklad
+## <a name="complete-example"></a>Complete example
 
-Následující kód je kompletní příklad, který obsahuje funkci `XForm`. Obsahuje několik typických použití tohoto typu transformace:
+The following code is a complete example that includes the `XForm` function. It includes a few of the typical uses of this type of transform:
 
 ```vb
-Imports System
 Imports System.Collections.Generic
 Imports System.Linq
 Imports System.Text
@@ -341,7 +340,7 @@ Module Module1
 End Module
 ```
 
-Tento příklad vytvoří následující výstup:
+This example produces the following output:
 
 ```console
 Before Transform
@@ -377,4 +376,4 @@ After Transform
 
 ## <a name="see-also"></a>Viz také:
 
-- [Rozšířené programování LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+- [Advanced LINQ to XML Programming (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

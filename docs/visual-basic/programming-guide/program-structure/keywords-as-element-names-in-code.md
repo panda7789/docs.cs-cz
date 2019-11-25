@@ -1,5 +1,5 @@
 ---
-title: Klíčová slova jako názvy elementu v kódu (Visual Basic)
+title: Klíčová slova jako názvy elementu v kódu
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Visual Basic code, naming conventions
@@ -7,31 +7,31 @@ helpviewer_keywords:
 - name conflicts [Visual Basic]
 - element names [Visual Basic], in code
 ms.assetid: 2e4e8e02-23f7-49b9-a1c8-2b0402b6b525
-ms.openlocfilehash: 2e3613bd4a74da51cf7dbb63e52eddca811ca8e1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 4cdcda7c5c78481af1633bf29d75070c521ab393
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69947667"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347396"
 ---
 # <a name="keywords-as-element-names-in-code-visual-basic"></a>Klíčová slova jako názvy elementu v kódu (Visual Basic)
-Libovolný prvek programu, například proměnná, třída nebo člen – může mít stejný název jako klíčové slovo s omezením. Můžete například vytvořit proměnnou s názvem `Loop`. Chcete-li však odkazovat na svou verzi, která má stejný název jako klíčové slovo s omezeným přístupem `Loop` , je nutné před něj přednést úplný řetězec kvalifikace nebo jej uzavřít do hranatých závorek (`[ ]`), jak ukazuje následující příklad.  
+Any program element — such as a variable, class, or member — can have the same name as a restricted keyword. For example, you can create a variable named `Loop`. However, to refer to your version of it — which has the same name as the restricted `Loop` keyword — you must either precede it with a full qualification string or enclose it in square brackets (`[ ]`), as the following example shows.  
   
  [!code-vb[VbVbcnConventions#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#8)]  
   
- Pokud to neuděláte, Visual Basic předpokládá použití klíčového slova vnitřní `Loop` a vytvoří chybu, jako v následujícím příkladu:  
+ If you do not do either of these, then Visual Basic assumes use of the intrinsic `Loop` keyword and produces an error, as in the following example:  
   
  `' The following statement causes a compiler error.`  
   
  `Loop.Visible = True`  
   
- Můžete použít hranaté závorky při odkazování na formuláře a ovládací prvky a při deklaraci proměnné nebo definování procedury se stejným názvem jako klíčové slovo s omezením. Může být snadné zapomenout názvy nebo zahrnovat hranaté závorky a tím do kódu začlenit chyby a ztížit jeho čtení. Z tohoto důvodu doporučujeme, abyste nepoužívali omezená klíčová slova jako názvy prvků programu. Nicméně pokud budoucí verze Visual Basic definuje nové klíčové slovo, které je v konfliktu s existujícím formulářem nebo názvem ovládacího prvku, můžete použít tuto techniku při aktualizaci kódu pro práci s novou verzí.  
+ You can use square brackets when referring to forms and controls, and when declaring a variable or defining a procedure with the same name as a restricted keyword. It can be easy to forget to qualify names or include square brackets, and thus introduce errors into your code and make it harder to read. For this reason, we recommend that you not use restricted keywords as the names of program elements. However, if a future version of Visual Basic defines a new keyword that conflicts with an existing form or control name, then you can use this technique when updating your code to work with the new version.  
   
 > [!NOTE]
-> Program může také obsahovat názvy elementů, které jsou k dispozici v jiných odkazovaných sestaveních. Pokud tyto názvy jsou v konfliktu s omezenými klíčovými slovy, pak při jejich umístění hranaté závorky způsobí, Visual Basic je interpretovat jako definované prvky.  
+> Your program also might include element names provided by other referenced assemblies. If these names conflict with restricted keywords, then placing square brackets around them causes Visual Basic to interpret them as your defined elements.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic konvence pojmenování](../../../visual-basic/programming-guide/program-structure/naming-conventions.md)
+- [Visual Basic Naming Conventions](../../../visual-basic/programming-guide/program-structure/naming-conventions.md)
 - [Struktura programu a zásady týkající se kódu](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)
 - [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)

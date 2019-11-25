@@ -1,81 +1,81 @@
 ---
-title: Koncepty a terminologie (funkce Transformation) (Visual Basic)
+title: Koncepty a terminologie (funkční transformace)
 ms.date: 07/20/2015
 ms.assetid: 24fd244d-ebae-4721-8858-89bb544aea0b
-ms.openlocfilehash: 763321d99edf404ee17e8ec29af5424a378f83b1
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: efc1fc5bb738e3d5d9d3fa2a8226c37da69c045c
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70046594"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345697"
 ---
-# <a name="concepts-and-terminology-functional-transformation-visual-basic"></a>Koncepty a terminologie (funkce Transformation) (Visual Basic)
-V tomto tématu se seznámíte s koncepty a terminologií čistě funkčních transformací. Přístup k funkcím transformace pro transformaci dat poskytuje kód, který je často rychlejší pro program, větší vyjádření a jednodušší ladění a udržování než tradiční, imperativní programování.
+# <a name="concepts-and-terminology-functional-transformation-visual-basic"></a>Concepts and Terminology (Functional Transformation) (Visual Basic)
+This topic introduces the concepts and terminology of pure functional transformations. The functional transformation approach to transforming data yields code that is often quicker to program, more expressive, and easier to debug and maintain than more traditional, imperative programming.
 
-Všimněte si, že témata v této části nejsou určena k úplnému vysvětlení funkčního programování. Místo toho tato témata identifikují některé funkce funkčního programování, které usnadňují transformaci XML z jednoho tvaru na druhý.
+Note that the topics in this section are not intended to fully explain functional programming. Instead, these topics identify some of the functional programming capabilities that make it easier to transform XML from one shape to another.
 
-## <a name="what-is-pure-functional-transformation"></a>Co je čistě funkční transformace?
+## <a name="what-is-pure-functional-transformation"></a>What Is Pure Functional Transformation?
 
-V *čistě funkční transformaci*sada funkcí s názvem *Pure Functions*definují, jak transformovat sadu strukturovaných dat z původního formuláře do jiného formuláře. Slovo "Pure" označuje, že funkce jsou sestavitelované, což vyžaduje:
+In *pure functional transformation*, a set of functions, called *pure functions*, define how to transform a set of structured data from its original form into another form. The word "pure" indicates that the functions are *composable*, which requires that they are:
 
-- *Samostatně obsažený*, aby bylo možné je volně seřadit a uspořádat bez entanglement nebo vzájemné závislosti se zbytkem programu. Čisté transformace nemají na svém prostředí žádné znalosti ani neplatí. To znamená, že funkce použité v transformaci nemají žádné *vedlejší účinky*.
+- *Self-contained*, so that they can be freely ordered and rearranged without entanglement or interdependencies with the rest of the program. Pure transformations have no knowledge of or effect upon their environment. That is, the functions used in the transformation have no *side effects*.
 
-- *Bez stavu*, takže spuštění stejné funkce nebo konkrétní sady funkcí na stejném vstupu bude mít vždycky stejný výstup. Čisté transformace nemají žádnou paměť jejich předchozího použití.
+- *Stateless*, so that executing the same function or specific set of functions on the same input will always result in the same output. Pure transformations have no memory of their prior use.
 
 > [!IMPORTANT]
-> Ve zbývající části tohoto kurzu se výraz "čistá funkce" používá v obecném smyslu k označení přístup k programování a nikoli konkrétní funkce jazyka.
+> In the rest of this tutorial, the term "pure function" is used in a general sense to indicate a programming approach, and not a specific language feature.
 >
-> Všimněte si, že funkce Pure musí být implementována jako funkce v Visual Basic.
+> Note that pure functions must be implemented as functions in Visual Basic.
 >
-> Nepleťte si také čistě virtuální funkce s čistě virtuálními metodami v C++nástroji. Druhá označuje, že obsahující třídu je abstraktní a není dodána žádná část metody.
+> Also, you should not confuse pure functions with pure virtual methods in C++. The latter indicates that the containing class is abstract and that no method body is supplied.
 
-### <a name="functional-programming"></a>Funkční programování
+### <a name="functional-programming"></a>Functional Programming
 
-*Funkční programování* je programovací přístup, který přímo podporuje čistě funkční transformaci.
+*Functional programming* is a programming approach that directly supports pure functional transformation.
 
-Historické programovací jazyky pro obecné účely, jako je ML, schéma, Haskell a F#, byly primárně důležité pro akademickou komunitu. I když je vždycky možné zapsat čistě funkční transformace v Visual Basic, tak obtížnost by neudělala atraktivní možnost většiny programátorů. V novějších verzích Visual Basic však nové jazykové konstrukce, jako jsou výrazy lambda a odvození typu, umožňují programování mnohem jednodušší a produktivnější.
+Historically, general-purpose functional programming languages, such as ML, Scheme, Haskell, and F#, have been primarily of interest to the academic community. Although it has always been possible to write pure functional transformations in Visual Basic, the difficulty of doing so has not made it an attractive option to most programmers. With later versions of Visual Basic, however, new language constructs such as lambda expressions and type inference make it functional programming much easier and more productive.
 
-Další informace o funkčním programování naleznete v [tématu funkční programování vs. Imperativní programování (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-programming-vs-imperative-programming.md).
+For more information about functional programming, see [Functional Programming vs. Imperative Programming (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-programming-vs-imperative-programming.md).
 
-#### <a name="domain-specific-fp-languages"></a>Jazyky FP specifické pro doménu
+#### <a name="domain-specific-fp-languages"></a>Domain-Specific FP Languages
 
-I když se všeobecně nepřijaly obecné funkční programovací jazyky, měly by lepší úspěšnost konkrétních programovacích jazyků specifických pro doménu. Například šablony stylů CSS (CSS) se používají k určení vzhledu a chování mnoha webových stránek a šablony stylů XSLT (Extensible Stylesheet Language Transformations) se v manipulaci s daty XML používají rozsáhle. Další informace o XSLT naleznete v tématu [transformace XSLT](../../../../standard/data/xml/xslt-transformations.md).
+Although general functional programming languages have not been widely adopted, specific domain-specific functional programming languages have had better success. For example, Cascading Style Sheets (CSS) are used to determine the look and feel of many Web pages, and Extensible Stylesheet Language Transformations (XSLT) style sheets are used extensively in XML data manipulation. For more information about XSLT, see [XSLT Transformations](../../../../standard/data/xml/xslt-transformations.md).
 
 ## <a name="terminology"></a>Terminologie
 
-Následující tabulka definuje některé z podmínek souvisejících s funkcemi transformace.
+The following table defines some terms related to functional transformations.
 
-funkce vyššího řádu (první třídy) \
-Funkce, která může být považována za programový objekt. Například funkce vyššího pořadí může být předána nebo vrácena z jiných funkcí. V Visual Basic Delegáti a lambda výrazy jsou jazykové funkce, které podporují funkce vyššího řádu. Chcete-li napsat funkci s vyšším pořadím, deklarujete jeden nebo více argumentů pro převzetí delegátů a často používáte lambda výrazy při volání. Mnoho standardních operátorů dotazu je funkce vyššího řádu.
+higher-order (first-class) function \
+A function that can be treated as a programmatic object. For example, a higher-order function can be passed to or returned from other functions. In Visual Basic, delegates and lambda expressions are language features that support higher-order functions. To write a higher-order function, you declare one or more arguments to take delegates, and you often use lambda expressions when calling it. Many of the standard query operators are higher-order functions.
 
-Další informace najdete v tématu [Přehled standardních operátorů dotazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md).
+For more information, see [Standard Query Operators Overview (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md).
 
-výraz lambda \
-V podstatě vložená anonymní funkce, kterou lze použít všude, kde se očekává typ delegáta. Toto je zjednodušená definice výrazů lambda, ale je vhodná pro účely tohoto kurzu.
+lambda expression \
+Essentially, an inline anonymous function that can be used wherever a delegate type is expected. This is a simplified definition of lambda expressions, but it is adequate for the purposes of this tutorial.
 
-Další informace o naleznete v tématu [lambda Expressions](../../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).
+For more information about, see [Lambda Expressions](../../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).
 
-kolekce
-Strukturovaná sada dat, obvykle s jednotným typem. Aby bylo možné kompatibilitu s LINQ, kolekce musí <xref:System.Collections.IEnumerable> implementovat rozhraní <xref:System.Linq.IQueryable> nebo rozhraní (nebo jeden z <xref:System.Collections.Generic.IEnumerator%601> jeho obecných protějšků nebo <xref:System.Linq.IQueryable%601>).
+collection \
+A structured set of data, usually of a uniform type. To be compatible with LINQ, a collection must implement the <xref:System.Collections.IEnumerable> interface or the <xref:System.Linq.IQueryable> interface (or one of their generic counterparts, <xref:System.Collections.Generic.IEnumerator%601> or <xref:System.Linq.IQueryable%601>).
 
-řazená kolekce členů (anonymní typy) \
-Matematický koncept, řazená kolekce členů je konečná sekvence objektů, z nichž každý konkrétní typ. Řazená kolekce členů je také známá jako uspořádaný seznam. Anonymní typy jsou implementací jazyka tohoto konceptu, která umožňuje deklaraci nepojmenovaného typu třídy a vytváření instancí objektu daného typu ve stejnou dobu.
+tuple (anonymous types) \
+A mathematical concept, a tuple is a finite sequence of objects, each of a specific type. A tuple is also known as an ordered list. Anonymous types are a language implementation of this concept, which enable an unnamed class type to be declared and an object of that type to be instantiated at the same time.
 
-Další informace najdete v tématu [anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).
+For more information, see  [Anonymous Types](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).
 
-odvození typu (implicitní zadání) \
-Schopnost kompilátoru určit typ proměnné v absence explicitní deklarace typu.
+type inference (implicit typing) \
+The ability of a compiler to determine the type of a variable in the absence of an explicit type declaration.
 
-Další informace naleznete v tématu [odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md).
+For more information, see [Local Type Inference](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md).
 
-odložené provádění a opožděné vyhodnocení \
-Zpoždění vyhodnocení výrazu, dokud není skutečně vyžadováno jeho vyřešená hodnota. Odložené provádění je v kolekcích podporováno.
+deferred execution and lazy evaluation \
+The delaying of evaluation of an expression until its resolved value is actually required. Deferred execution is supported in collections.
 
-Další informace naleznete v tématu [základní operace dotazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md) a [odložené provádění a opožděné vyhodnocení v LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).
+For more information, see [Basic Query Operations (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md) and [Deferred Execution and Lazy Evaluation in LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).
 
-Tyto jazykové funkce budou použity v ukázkách kódu v této části.
+These language features will be used in code samples throughout this section.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Úvod do čistě funkční transformace (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)
-- [Funkční programování vs. Imperativní programování (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-programming-vs-imperative-programming.md)
+- [Introduction to Pure Functional Transformations (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)
+- [Functional Programming vs. Imperative Programming (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-programming-vs-imperative-programming.md)

@@ -1,5 +1,5 @@
 ---
-title: Let – klauzule (Visual Basic)
+title: Let – klauzule
 ms.date: 07/20/2015
 f1_keywords:
 - vb.QueryLet
@@ -8,15 +8,15 @@ helpviewer_keywords:
 - Let clause [Visual Basic]
 - Let statement [Visual Basic]
 ms.assetid: 981aa516-16eb-4c53-b1f1-5aa3e82f316e
-ms.openlocfilehash: 88166a040823cfefe623f672e556c364d652a7fc
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 63eaf97016db259870eb77199651ecbdc5f809c7
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72004726"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350436"
 ---
 # <a name="let-clause-visual-basic"></a>Let – klauzule (Visual Basic)
-Vypočítá hodnotu a přiřadí ji k nové proměnné v rámci dotazu.  
+Computes a value and assigns it to a new variable within the query.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,22 +28,22 @@ Let variable = expression [, ...]
   
 |Termín|Definice|  
 |---|---|  
-|`variable`|Požadováno. Alias, který lze použít k odkazování na výsledky poskytnutého výrazu.|  
-|`expression`|Požadováno. Výraz, který bude vyhodnocen a přiřazen k zadané proměnné.|  
+|`variable`|Požadováno. An alias that can be used to reference the results of the supplied expression.|  
+|`expression`|Požadováno. An expression that will be evaluated and assigned to the specified variable.|  
   
 ## <a name="remarks"></a>Poznámky  
- Klauzule `Let` umožňuje vypočítat hodnoty pro každý výsledek dotazu a odkazovat na ně pomocí aliasu. Alias lze použít v jiných klauzulích, například v klauzuli `Where`. Klauzule `Let` umožňuje vytvořit příkaz dotazu, který je snazší číst, protože můžete zadat alias pro klauzuli Expression, který je součástí dotazu, a nahradit alias pokaždé, když se použije klauzule Expression.  
+ The `Let` clause enables you to compute values for each query result and reference them by using an alias. The alias can be used in other clauses, such as the `Where` clause. The `Let` clause enables you to create a query statement that is easier to read because you can specify an alias for an expression clause included in the query and substitute the alias each time the expression clause is used.  
   
- V klauzuli `Let` můžete zahrnout libovolný počet přiřazení `variable` a `expression`. Jednotlivá přiřazení oddělte čárkou (,).  
+ You can include any number of `variable` and `expression` assignments in the `Let` clause. Separate each assignment with a comma (,).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu používá klauzuli `Let` pro výpočet 10% slevy na produkty.  
+ The following code example uses the `Let` clause to compute a 10 percent discount on products.  
   
  [!code-vb[VbSimpleQuerySamples#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#16)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Úvod do jazyka LINQ v Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Introduction to LINQ in Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
 - [Dotazy](../../../visual-basic/language-reference/queries/index.md)
 - [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)
 - [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)

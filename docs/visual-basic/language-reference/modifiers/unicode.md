@@ -1,5 +1,5 @@
 ---
-title: Unicode (Visual Basic)
+title: Kódování Unicode
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Unicode
@@ -9,29 +9,29 @@ helpviewer_keywords:
 - Unicode keyword [Visual Basic]
 - Unicode, marshaling strings
 ms.assetid: 0021d5ff-3209-444e-8497-420f3e6ee075
-ms.openlocfilehash: b3c9452f8d144fb18ea3efcb35b85caed80e8692
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c4286ed9e9d5fd768ae29b7050b3d1505ccca9dd
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61778674"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344225"
 ---
 # <a name="unicode-visual-basic"></a>Unicode (Visual Basic)
-Určuje, že by měl Visual Basic zařazovat všechny řetězce k hodnotám Unicode bez ohledu na název externí procedury byl deklarován.  
+Specifies that Visual Basic should marshal all strings to Unicode values regardless of the name of the external procedure being declared.  
   
- Při volání procedury definován vně vašeho projektu, kompilátor jazyka Visual Basic nemá přístup k informacím, musíte mít k voláním procedury správně. Tyto informace zahrnují, kde se nachází postup, jak je identifikovaný, jeho volací sekvence a návratový typ a řetězec znakové sady, ji používá. [Deklaraci příkazu](../../../visual-basic/language-reference/statements/declare-statement.md) vytvoří odkaz na externí procedura a poskytuje tyto nezbytné informace.  
+ When you call a procedure defined outside your project, the Visual Basic compiler does not have access to the information it must have in order to call the procedure correctly. This information includes where the procedure is located, how it is identified, its calling sequence and return type, and the string character set it uses. The [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md) creates a reference to an external procedure and supplies this necessary information.  
   
- `charsetmodifier` Část v `Declare` příkaz poskytuje informace o sadě znak k zařazování řetězců v kódu při volání do externí procedury. Také ovlivní, jak Visual Basic vyhledá externí soubor pro název externí procedury. `Unicode` Modifikátor Určuje, že jazyka Visual Basic by měla zařazovat všechny řetězce k hodnotám Unicode a by měl vyhledávat proceduru bez úpravy jejího názvu během vyhledávání.  
+ The `charsetmodifier` part in the `Declare` statement supplies the character set information to marshal strings during a call to the external procedure. It also affects how Visual Basic searches the external file for the external procedure name. The `Unicode` modifier specifies that Visual Basic should marshal all strings to Unicode values and should look up the procedure without modifying its name during the search.  
   
- Pokud není zadána žádná modifikátor sady znaků, `Ansi` je výchozí nastavení.  
+ If no character set modifier is specified, `Ansi` is the default.  
   
 ## <a name="remarks"></a>Poznámky  
- `Unicode` Modifikátor lze použít v tomto kontextu:  
+ The `Unicode` modifier can be used in this context:  
   
  [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
 ## <a name="smart-device-developer-notes"></a>Poznámky pro vývojáře inteligentního zařízení  
- Toto klíčové slovo se nepodporuje.  
+ This keyword is not supported.  
   
 ## <a name="see-also"></a>Viz také:
 

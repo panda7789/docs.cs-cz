@@ -9,16 +9,16 @@ helpviewer_keywords:
 - ControlTemplate [WPF], RepeatButton
 - states [WPF], RepeatButton
 ms.assetid: fd340743-f44f-4990-9077-085301469670
-ms.openlocfilehash: 9c6a8ad0a954d244fb693e25965ab52dda114068
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 8585e98536fd908daa11f21da395cab44924d612
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459845"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283430"
 ---
 # <a name="repeatbutton-styles-and-templates"></a>RepeatButton – styly a šablony
 
-Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.Primitives.RepeatButton>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [přizpůsobení vzhledu existujícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).
+Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.Primitives.RepeatButton>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md).
 
 ## <a name="repeatbutton-parts"></a>RepeatButton části
 
@@ -30,10 +30,10 @@ V následující tabulce jsou uvedeny vizuální stavy pro ovládací prvek <xre
 
 |Název VisualState|Název VisualStateGroup|Popis|
 |-|-|-|
-|Běžnou|CommonStates|Výchozí stav.|
+|Normální|CommonStates|Výchozí stav.|
 |MouseOver|CommonStates|Ukazatel myši je umístěn nad ovládacím prvkem.|
-|Stisknete|CommonStates|Ovládací prvek se stiskne.|
-|Zabezpečen|CommonStates|Ovládací prvek je zakázán.|
+|Stisknutí|CommonStates|Ovládací prvek se stiskne.|
+|Zakázáno|CommonStates|Ovládací prvek je zakázán.|
 |Zaměřil|FocusStates|Ovládací prvek má fokus.|
 |Bez fokusu|FocusStates|Ovládací prvek nemá fokus.|
 |Platné|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|
@@ -59,4 +59,4 @@ Předchozí příklad používá jeden nebo více následujících zdrojů.
 - [Styly a šablony ovládacích prvků](control-styles-and-templates.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)
 - [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md)

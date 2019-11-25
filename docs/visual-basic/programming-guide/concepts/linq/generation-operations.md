@@ -1,29 +1,29 @@
 ---
-title: Generování operací (Visual Basic)
+title: Generování operací
 ms.date: 07/20/2015
 ms.assetid: 22b8e380-8eb0-4c93-b4ff-7ac21caf27d5
-ms.openlocfilehash: cbc3de23fc8ef691c0342b318728c035db9a36b6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8d1170349762d8475d8862a01f8152143072b000
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61927702"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353397"
 ---
-# <a name="generation-operations-visual-basic"></a>Generování operací (Visual Basic)
-Generování odkazuje na vytvoření nového pořadí hodnot.  
+# <a name="generation-operations-visual-basic"></a>Generation Operations (Visual Basic)
+Generation refers to creating a new sequence of values.  
   
- Standardní metody operátoru dotazu, které provádějí generace jsou uvedeny v následující části.  
+ The standard query operator methods that perform generation are listed in the following section.  
   
 ## <a name="methods"></a>Metody  
   
-|Název metody|Popis|Syntaxe výrazu dotazu jazyka Visual Basic|Další informace|  
+|Method Name|Popis|Visual Basic Query Expression Syntax|Další informace|  
 |-----------------|-----------------|------------------------------------------|----------------------|  
-|DefaultIfEmpty|Nahradí výchozí s hodnotou typu singleton kolekci prázdnou kolekci.|Není k dispozici.|<xref:System.Linq.Enumerable.DefaultIfEmpty%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.DefaultIfEmpty%2A?displayProperty=nameWithType>|  
-|prázdný|Vrátí prázdnou kolekci.|Není k dispozici.|<xref:System.Linq.Enumerable.Empty%2A?displayProperty=nameWithType>|  
-|Rozsah|Vytvoří kolekci, která obsahuje posloupnost čísel.|Není k dispozici.|<xref:System.Linq.Enumerable.Range%2A?displayProperty=nameWithType>|  
-|Opakovat|Vytvoří kolekci, která obsahuje opakované jednu hodnotu.|Není k dispozici.|<xref:System.Linq.Enumerable.Repeat%2A?displayProperty=nameWithType>|  
+|DefaultIfEmpty|Replaces an empty collection with a default valued singleton collection.|Nelze použít.|<xref:System.Linq.Enumerable.DefaultIfEmpty%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.DefaultIfEmpty%2A?displayProperty=nameWithType>|  
+|Empty|Returns an empty collection.|Nelze použít.|<xref:System.Linq.Enumerable.Empty%2A?displayProperty=nameWithType>|  
+|Rozsah|Generates a collection that contains a sequence of numbers.|Nelze použít.|<xref:System.Linq.Enumerable.Range%2A?displayProperty=nameWithType>|  
+|Repeat|Generates a collection that contains one repeated value.|Nelze použít.|<xref:System.Linq.Enumerable.Repeat%2A?displayProperty=nameWithType>|  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Linq>
-- [Přehled standardních operátorů dotazu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
+- [Standard Query Operators Overview (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)

@@ -1,5 +1,5 @@
 ---
-title: Aspekty přetížení procedur (Visual Basic)
+title: Aspekty přetížení procedur
 ms.date: 07/20/2015
 helpviewer_keywords:
 - signatures [Visual Basic], ParamArray arguments
@@ -25,65 +25,65 @@ helpviewer_keywords:
 - restrictions [Visual Basic], overloading procedures
 - procedures [Visual Basic], parameter lists
 ms.assetid: a2001248-10d0-42c5-b0ce-eeedc987319f
-ms.openlocfilehash: bd5b0032ca63ccb2f2cc30d72a5b3f3c7eb3c346
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 4a0cfe176a59b3f90f5850ae8b4e34784c400c6b
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72775739"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351001"
 ---
 # <a name="considerations-in-overloading-procedures-visual-basic"></a>Aspekty přetížení procedur (Visual Basic)
-Pokud převedete proceduru, musíte pro každou přetíženou verzi použít jiný *podpis* . To obvykle znamená, že každá verze musí určovat jiný seznam parametrů. Další informace naleznete v části "různé signatury" v tématu [Process Overloads](./procedure-overloading.md).  
+When you overload a procedure, you must use a different *signature* for each overloaded version. This usually means each version must specify a different parameter list. For more information, see "Different Signature" in [Procedure Overloading](./procedure-overloading.md).  
   
- Můžete přetížit `Function` proceduru pomocí `Sub` procedury a naopak, pokud mají různé signatury. Dvě přetížení se nemohou lišit pouze v tom, že jedna má návratovou hodnotu a druhá ne.  
+ You can overload a `Function` procedure with a `Sub` procedure, and vice versa, provided they have different signatures. Two overloads cannot differ only in that one has a return value and the other does not.  
   
- Můžete přetížit vlastnost stejným způsobem jako procedura přetížení a se stejnými omezeními. Nemůžete však přetížit proceduru s vlastností, ani naopak.  
+ You can overload a property the same way you overload a procedure, and with the same restrictions. However, you cannot overload a procedure with a property, or vice versa.  
   
-## <a name="alternatives-to-overloaded-versions"></a>Alternativy k přetíženým verzím  
- Někdy máte alternativu k přetíženým verzím, zejména v případě, že je přítomnost argumentů volitelná nebo jejich počet je proměnná.  
+## <a name="alternatives-to-overloaded-versions"></a>Alternatives to Overloaded Versions  
+ You sometimes have alternatives to overloaded versions, particularly when the presence of arguments is optional or their number is variable.  
   
- Mějte na paměti, že volitelné argumenty nejsou nutně podporovány všemi jazyky a pole parametrů jsou omezeny na Visual Basic. Pokud píšete proceduru, která je pravděpodobně volána z kódu napsaného v některém z několika různých jazyků, přetížené verze nabízejí největší flexibilitu.  
+ Keep in mind that optional arguments are not necessarily supported by all languages, and parameter arrays are limited to Visual Basic. If you are writing a procedure that is likely to be called from code written in any of several different languages, overloaded versions offer the greatest flexibility.  
   
-### <a name="overloads-and-optional-arguments"></a>Přetížení a volitelné argumenty  
- Když volající kód může volitelně zadat nebo vynechat jeden nebo více argumentů, můžete definovat více přetížených verzí nebo použít volitelné parametry.  
+### <a name="overloads-and-optional-arguments"></a>Overloads and Optional Arguments  
+ When the calling code can optionally supply or omit one or more arguments, you can define multiple overloaded versions or use optional parameters.  
   
-#### <a name="when-to-use-overloaded-versions"></a>Kdy použít přetížené verze  
- Můžete zvážit definování řady přetížených verzí v následujících případech:  
+#### <a name="when-to-use-overloaded-versions"></a>When to Use Overloaded Versions  
+ You can consider defining a series of overloaded versions in the following cases:  
   
-- Logika v kódu procedury je výrazně odlišná v závislosti na tom, zda volající kód dodává nepovinný argument nebo ne.  
+- The logic in the procedure code is significantly different depending on whether the calling code supplies an optional argument or not.  
   
-- Kód procedury nemůže spolehlivě testovat, zda volající kód zadal volitelný argument. Jedná se například o případ, kdy není možný kandidát na výchozí hodnotu, kterou by volající kód nemohl dodat.  
+- The procedure code cannot reliably test whether the calling code has supplied an optional argument. This is the case, for example, if there is no possible candidate for a default value that the calling code could not be expected to supply.  
   
-#### <a name="when-to-use-optional-parameters"></a>Kdy použít volitelné parametry  
- V následujících případech můžete preferovat jeden nebo více volitelných parametrů:  
+#### <a name="when-to-use-optional-parameters"></a>When to Use Optional Parameters  
+ You might prefer one or more optional parameters in the following cases:  
   
-- Jediná požadovaná akce, když volající kód neposkytne volitelný argument, je nastavit parametr na výchozí hodnotu. V takovém případě může být kód procedury méně komplikovaný, pokud definujete jednu verzi s jedním nebo více `Optional` parametry.  
+- The only required action when the calling code does not supply an optional argument is to set the parameter to a default value. In such a case, the procedure code can be less complicated if you define a single version with one or more `Optional` parameters.  
   
- Další informace najdete v tématu [volitelné parametry](./optional-parameters.md).  
+ For more information, see [Optional Parameters](./optional-parameters.md).  
   
-### <a name="overloads-and-paramarrays"></a>Přetížení a ParamArray  
- Když volající kód může předat proměnný počet argumentů, můžete definovat více přetížených verzí nebo použít pole parametrů.  
+### <a name="overloads-and-paramarrays"></a>Overloads and ParamArrays  
+ When the calling code can pass a variable number of arguments, you can define multiple overloaded versions or use a parameter array.  
   
-#### <a name="when-to-use-overloaded-versions"></a>Kdy použít přetížené verze  
- Můžete zvážit definování řady přetížených verzí v následujících případech:  
+#### <a name="when-to-use-overloaded-versions"></a>When to Use Overloaded Versions  
+ You can consider defining a series of overloaded versions in the following cases:  
   
-- Víte, že volající kód nikdy nepředává více než malý počet hodnot do pole parametrů.  
+- You know that the calling code never passes more than a small number of values to the parameter array.  
   
-- Logika v kódu procedury je výrazně odlišná v závislosti na tom, kolik hodnot volající kód předává.  
+- The logic in the procedure code is significantly different depending on how many values the calling code passes.  
   
-- Volající kód může předat hodnoty různých datových typů.  
+- The calling code can pass values of different data types.  
   
-#### <a name="when-to-use-a-parameter-array"></a>Kdy použít pole parametrů  
- V následujících případech je lepší obsluhou `ParamArray` parametrem:  
+#### <a name="when-to-use-a-parameter-array"></a>When to Use a Parameter Array  
+ You are better served by a `ParamArray` parameter in the following cases:  
   
-- Nemůžete odhadnout, kolik hodnot může volající kód předat poli parametrů, a může to být velké číslo.  
+- You are not able to predict how many values the calling code can pass to the parameter array, and it could be a large number.  
   
-- Procedura procedury je sama o sobě k iterování všech hodnot, které volající kód projde, a provádí v podstatě stejné operace na každé hodnotě.  
+- The procedure logic lends itself to iterating through all the values the calling code passes, performing essentially the same operations on every value.  
   
- Další informace naleznete v tématu [pole parametrů](./parameter-arrays.md).  
+ For more information, see [Parameter Arrays](./parameter-arrays.md).  
   
-## <a name="implicit-overloads-for-optional-parameters"></a>Implicitní přetížení pro volitelné parametry  
- Procedura s [volitelným](../../../../visual-basic/language-reference/modifiers/optional.md) parametrem je ekvivalentní dvou přetíženým procedurám, jeden s volitelným parametrem a druhý bez něj. Taková procedura se nedá přetížit se seznamem parametrů, který odpovídá některé z nich. Tuto ilustraci ilustrují následující deklarace.  
+## <a name="implicit-overloads-for-optional-parameters"></a>Implicit Overloads for Optional Parameters  
+ A procedure with an [Optional](../../../../visual-basic/language-reference/modifiers/optional.md) parameter is equivalent to two overloaded procedures, one with the optional parameter and one without it. You cannot overload such a procedure with a parameter list corresponding to either of these. The following declarations illustrate this.  
   
  [!code-vb[VbVbcnProcedures#58](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#58)]  
   
@@ -91,35 +91,35 @@ Pokud převedete proceduru, musíte pro každou přetíženou verzi použít jin
   
  [!code-vb[VbVbcnProcedures#61](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#61)]  
   
- Pro proceduru s více než jedním volitelným parametrem je množina implicitních přetížení, kterou dorazila v logice podobně jako v předchozím příkladu.  
+ For a procedure with more than one optional parameter, there is a set of implicit overloads, arrived at by logic similar to that in the preceding example.  
   
-## <a name="implicit-overloads-for-a-paramarray-parameter"></a>Implicitní přetížení parametru ParamArray  
- Kompilátor považuje proceduru s parametrem [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) za nekonečný počet přetížení a liší se od sebe v tom, co volající kód předává do pole parametrů, následovně:  
+## <a name="implicit-overloads-for-a-paramarray-parameter"></a>Implicit Overloads for a ParamArray Parameter  
+ The compiler considers a procedure with a [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) parameter to have an infinite number of overloads, differing from each other in what the calling code passes to the parameter array, as follows:  
   
-- Jedno přetížení pro, když volající kód nedodá argument pro `ParamArray`  
+- One overload for when the calling code does not supply an argument to the `ParamArray`  
   
-- Jedno přetížení pro, když volající kód dodá jednorozměrné pole typu elementu `ParamArray`.  
+- One overload for when the calling code supplies a one-dimensional array of the `ParamArray` element type  
   
-- Pro každé kladné celé číslo jedno přetížení pro, když volající kód dodá tento počet argumentů, každý z `ParamArray` typ elementu.  
+- For every positive integer, one overload for when the calling code supplies that number of arguments, each of the `ParamArray` element type  
   
- Následující deklarace ilustrují tato implicitní přetížení.  
+ The following declarations illustrate these implicit overloads.  
   
  [!code-vb[VbVbcnProcedures#68](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#68)]  
   
  [!code-vb[VbVbcnProcedures#70](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#70)]  
   
- Taková procedura se nedá přetížit se seznamem parametrů, který přebírá jednorozměrné pole pro pole parametrů. Můžete však použít signatury dalších implicitních přetížení. Tuto ilustraci ilustrují následující deklarace.  
+ You cannot overload such a procedure with a parameter list that takes a one-dimensional array for the parameter array. However, you can use the signatures of the other implicit overloads. The following declarations illustrate this.  
   
  [!code-vb[VbVbcnProcedures#71](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#71)]  
   
-## <a name="typeless-programming-as-an-alternative-to-overloading"></a>Programování jako alternativa k přetížení  
- Pokud chcete, aby volající kód předával jiné datové typy parametru, alternativním přístupem je beztyp programování. Můžete nastavit přepínač pro kontrolu typu na `Off` s použitím [příkazu Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md) nebo pomocí možnosti kompilátoru [-OptionStrict –](../../../../visual-basic/reference/command-line-compiler/optionstrict.md) . Pak nemusíte deklarovat datový typ parametru. Tento přístup ale má v porovnání s přetížením následující nevýhody:  
+## <a name="typeless-programming-as-an-alternative-to-overloading"></a>Typeless Programming as an Alternative to Overloading  
+ If you want to allow the calling code to pass different data types to a parameter, an alternative approach is typeless programming. You can set the type checking switch to `Off` with either the [Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md) or the [-optionstrict](../../../../visual-basic/reference/command-line-compiler/optionstrict.md) compiler option. Then you do not have to declare the parameter's data type. However, this approach has the following disadvantages compared to overloading:  
   
-- Programování bez typů produkuje méně efektivní kód spuštění.  
+- Typeless programming produces less efficient execution code.  
   
-- Procedura musí být testována pro každý datový typ, který předpokládá předání.  
+- The procedure must test for every data type it anticipates being passed.  
   
-- Kompilátor nemůže signalizovat chybu, pokud volající kód předává datový typ, který procedura nepodporuje.  
+- The compiler cannot signal an error if the calling code passes a data type that the procedure does not support.  
   
 ## <a name="see-also"></a>Viz také:
 

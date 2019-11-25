@@ -1,65 +1,65 @@
 ---
-title: Práce s protokoly aplikací v jazyce Visual Basic
+title: Práce s protokoly aplikací
 ms.date: 07/20/2015
 helpviewer_keywords:
 - logs, application
 - application event logs, Visual Basic
 - application event logs
 ms.assetid: 2581afd1-5791-4bc4-86b2-46244e9fe468
-ms.openlocfilehash: 00c54a59ccfe2a49dcf35b322ca077a10a48ae7d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 617b940d2cf15779ae3c10e4663b63c9771d44b6
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61712080"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345902"
 ---
 # <a name="working-with-application-logs-in-visual-basic"></a>Práce s protokoly aplikací v jazyce Visual Basic
 
-`My.Application.Log` a `My.Log` objekty usnadňují zapsat informace trasování a protokolování do protokolů.
+The `My.Application.Log` and `My.Log` objects make it easy to write logging and tracing information to logs.
 
-## <a name="how-messages-are-logged"></a>Jak jsou zprávy zaznamenány
+## <a name="how-messages-are-logged"></a>How Messages are Logged
 
-Nejprve je zkontrolován závažnost zprávy <xref:System.Diagnostics.TraceSource.Switch%2A> vlastnost v protokolu <xref:Microsoft.VisualBasic.Logging.Log.TraceSource%2A> vlastnost. Ve výchozím pouze zprávy závažnosti "Informace" a vyšší jsou předány pro posluchače trasování, zadaný do protokolu `TraceListener` kolekce. Poté porovnává každý naslouchací proces závažnost zpráv pro posluchače <xref:System.Diagnostics.TraceSource.Switch%2A> vlastnost. Pokud závažnost zprávy je dostatečně vysoká, naslouchací proces zapíše zprávu.
+First, the severity of the message is checked with the <xref:System.Diagnostics.TraceSource.Switch%2A> property of the log's <xref:Microsoft.VisualBasic.Logging.Log.TraceSource%2A> property. By default, only messages of severity "Information" and higher are passed on to the trace listeners, specified in the log's `TraceListener` collection. Then, each listener compares the severity of the message to the listener's <xref:System.Diagnostics.TraceSource.Switch%2A> property. If the message's severity is high enough, the listener writes out the message.
 
-Následující obrázek ukazuje, jak se zprávy zapisují do `WriteEntry` metoda bude předána do `WriteLine` naslouchací procesy trasování metody v protokolu:
+The following diagram shows how a message written to the `WriteEntry` method gets passed to the `WriteLine` methods of the log's trace listeners:
 
-![Diagram zobrazující průběh Moje volání protokolu.](./media/working-with-application-logs/my-log-call-messages.png)
+![Diagram that shows My log call.](./media/working-with-application-logs/my-log-call-messages.png)
 
-Chování protokolu a naslouchacími procesy trasování můžete změnit změnou souboru konfigurace aplikace. Následující diagram ukazuje souvztažnost mezi částmi v protokolu a konfigurační soubor.
+You can change the behavior of the log and the trace listeners by changing the application's configuration file. The following diagram shows the correspondence between the parts of the log and the configuration file.
 
-![Diagram znázorňující konfiguraci protokolu.](./media/working-with-application-logs/my-log-configuration.png)
+![Diagram that shows My log configuration.](./media/working-with-application-logs/my-log-configuration.png)
 
-## <a name="where-messages-are-logged"></a>Kde jsou zprávy zaznamenány
+## <a name="where-messages-are-logged"></a>Where Messages are Logged
 
-Pokud sestavení nemá žádný konfigurační soubor `My.Application.Log` a `My.Log` objektů zapisovat do výstupu ladění aplikace (prostřednictvím <xref:System.Diagnostics.DefaultTraceListener> třídy). Kromě toho `My.Application.Log` zapíše objekt do souboru protokolu sestavení. (prostřednictvím <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener> třídy), zatímco `My.Log` zapíše objekt do výstupu webová stránka ASP.NET (prostřednictvím <xref:System.Web.WebPageTraceListener> třídy).
+If the assembly has no configuration file, the `My.Application.Log` and `My.Log` objects write to the application's debug output (through the <xref:System.Diagnostics.DefaultTraceListener> class). In addition, the `My.Application.Log` object writes to the assembly's log file (through the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener> class), while the `My.Log` object writes to the ASP.NET Web page's output (through the <xref:System.Web.WebPageTraceListener> class).
 
-Výstup ladění můžete zobrazit v sadě Visual Studio **výstup** okno při spuštění aplikace v režimu ladění. Otevřete **výstup** okna, klikněte na tlačítko **ladění** položku nabídky, přejděte na **Windows**a potom klikněte na tlačítko **výstup**. V **výstup** okně **ladění** z **zobrazit výstup z:** pole.
+The debug output can be viewed in the Visual Studio **Output** window when running your application in debug mode. To open the **Output** window, click the **Debug** menu item, point to **Windows**, and then click **Output**. In the **Output** window, select **Debug** from the **Show output from** box.
 
-Ve výchozím nastavení `My.Application.Log` zapíše soubor protokolu v umístění pro data aplikací uživatele. Můžete získat cestu z <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName%2A> vlastnost <xref:Microsoft.VisualBasic.Logging.Log.DefaultFileLogWriter%2A> objektu. Formát cesty je následujícím způsobem:
+By default, `My.Application.Log` writes the log file in the path for the user's application data. You can get the path from the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.FullLogFileName%2A> property of the <xref:Microsoft.VisualBasic.Logging.Log.DefaultFileLogWriter%2A> object. The format of that path is as follows:
 
 `BasePath`\\`CompanyName`\\`ProductName`\\`ProductVersion`
 
-Typická hodnota `BasePath` vypadá takto.
+A typical value for `BasePath` is as follows.
 
-C:\Documents and nastavení\\`username`\Application dat
+C:\Documents and Settings\\`username`\Application Data
 
-Hodnoty `CompanyName`, `ProductName`, a `ProductVersion` pocházejí z informací o sestavení aplikace. Název souboru protokolu má *AssemblyName*.log, kde *AssemblyName* je název souboru sestavení bez přípony. V případě potřeby je více než jeden soubor protokolu, třeba když původní protokolu není k dispozici aplikace pokusy o zápis do protokolu, je formulář pro název souboru protokolu *AssemblyName*-*iterace* .log, kde `iteration` pozitivní `Integer`.
+The values of `CompanyName`, `ProductName`, and `ProductVersion` come from the application's assembly information. The form of the log file name is *AssemblyName*.log, where *AssemblyName* is the file name of the assembly without the extension. If more than one log file is needed, such as when the original log is unavailable when the application attempts to write to the log, the form for the log file name is *AssemblyName*-*iteration*.log, where `iteration` is a positive `Integer`.
 
-Výchozí chování můžete přepsat přidáním nebo změnou konfiguračních souborů aplikace a počítače. Další informace najdete v tématu [názorný postup: Změna, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md).
+You can override the default behavior by adding or changing the computer's and the application's configuration files. For more information, see [Walkthrough: Changing Where My.Application.Log Writes Information](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md).
 
-## <a name="configuring-log-settings"></a>Konfigurace nastavení protokolu
+## <a name="configuring-log-settings"></a>Configuring Log Settings
 
-`Log` Objekt má výchozí implementaci, která funguje bez konfiguračního souboru aplikace, app.config. Chcete-li změnit výchozí hodnoty, je nutné přidat konfigurační soubor s novým nastavením. Další informace najdete v tématu [názorný postup: Filtrování výstupu My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md).
+The `Log` object has a default implementation that works without an application configuration file, app.config. To change the defaults, you must add a configuration file with the new settings. For more information, see [Walkthrough: Filtering My.Application.Log Output](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md).
 
-Konfigurační oddíly funkce protokolu jsou umístěné v `<system.diagnostics>` uzlu v hlavním `<configuration>` uzlu ze souboru app.config. Informace o protokolu je definován v několika uzly:
+The log configuration sections are located in the `<system.diagnostics>` node in the main `<configuration>` node of the app.config file. Log information is defined in several nodes:
 
-- Naslouchací procesy pro `Log` objektu jsou definovány v `<sources>` uzel s názvem DefaultSource.
+- The listeners for the `Log` object are defined in the `<sources>` node named DefaultSource.
 
-- Závažnost filtr `Log` objekt je definovaný v `<switches>` uzel s názvem DefaultSwitch.
+- The severity filter for the `Log` object is defined in the `<switches>` node named DefaultSwitch.
 
-- Součásti naslouchající protokolům, které jsou definovány v `<sharedListeners>` uzlu.
+- The log listeners are defined in the `<sharedListeners>` node.
 
- Příklady `<sources>`, `<switches>`, a `<sharedListeners>` uzly jsou uvedeny v následujícím kódu:
+ Examples of `<sources>`, `<switches>`, and `<sharedListeners>` nodes are shown in the following code:
 
 ```xml
 <configuration>
@@ -86,25 +86,25 @@ Konfigurační oddíly funkce protokolu jsou umístěné v `<system.diagnostics>
 </configuration>
 ```
 
-## <a name="changing-log-settings-after-deployment"></a>Změna nastavení protokolu po nasazení
+## <a name="changing-log-settings-after-deployment"></a>Changing Log Settings after Deployment
 
-Když vyvíjíte aplikaci, jeho nastavení konfigurace jsou uloženy v souboru app.config, jak je znázorněno výše uvedených příkladech. Po nasazení aplikace, můžete stále nakonfigurovat protokol úpravou konfiguračního souboru. V aplikaci založené na Windows, tento název souboru je *applicationName*. exe.config který se musí nacházet ve stejné složce jako spustitelný soubor. Pro webovou aplikaci Toto je soubor Web.config, který je přidružený k projektu.
+When you develop an application, its configuration settings are stored in the app.config file, as shown in the examples above. After you deploy your application, you can still configure the log by editing the configuration file. In a Windows-based application, this file's name is *applicationName*.exe.config, and it must reside in the same folder as the executable file. For a Web application, this is the Web.config file associated with the project.
 
-Pokud vaše aplikace spustí kód, který vytvoří instanci třídy poprvé, ověří konfigurační soubor pro informace o objektu. Pro `Log` objektu, to se stane první `Log` přístupu k objektu. Systém zkontroluje konfigurační soubor jen jednou pro každý konkrétní objekt – poprvé vaše aplikace vytvoří objekt. Proto budete muset restartovat aplikaci, aby se změny projevily.
+When your application executes the code that creates an instance of a class for the first time, it checks the configuration file for information about the object. For the `Log` object, this happens the first time the `Log` object is accessed. The system examines the configuration file only once for any particular object—the first time your application creates the object. Therefore, you may need to restart the application for the changes to take effect.
 
-V nasazené aplikaci povolit trasování kódu překonfigurováním přepínače objektů před spuštěním vaší aplikace. Obvykle to zahrnuje zapnutí přepínače objektů a vypnout nebo změnou úrovně trasování a následného restartování aplikace.
+In a deployed application, you enable trace code by reconfiguring switch objects before your application starts. Typically, this involves turning the switch objects on and off or by changing the tracing levels, and then restarting your application.
 
 ## <a name="security-considerations"></a>Důležité informace o zabezpečení
 
-Při zápisu dat do protokolu, zvažte následující:
+Consider the following when writing data to the log:
 
-- **Vyhněte se úniku informací o uživateli.** Ujistěte se, že vaše aplikace zapisuje pouze schválená informace do protokolu. Například může být přijatelný aplikačního protokolu obsahující uživatelská jména, ale ne hesla uživatele.
+- **Avoid leaking user information.** Ensure that your application writes only approved information to the log. For example, it may be acceptable for the application log to contain user names, but not user passwords.
 
-- **Zabezpečte umístění protokolu.** Libovolný protokol, který obsahuje potenciálně citlivé informace ukládat na bezpečném místě.
+- **Make log locations secure.** Any log that contains potentially sensitive information should be stored in a secure location.
 
-- **Vyhněte se zavádějící informace.** Vaše aplikace měla ověřit obecně platí, všechna data zadaná uživatelem, než začnete používat tato data. Jedná se o zápisu dat do protokolu aplikace.
+- **Avoid misleading information.** In general, your application should validate all data entered by a user before using that data. This includes writing data to the application log.
 
-- **Vyhněte se útok DoS.** Pokud vaše aplikace zapisuje příliš mnoho informace do protokolu, může zaplnit protokol nebo nalezení obtížné důležité informace.
+- **Avoid denial of service.** If your application writes too much information to the log, it could fill the log or make finding important information difficult.
 
 ## <a name="see-also"></a>Viz také:
 

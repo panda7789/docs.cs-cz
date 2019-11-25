@@ -1,23 +1,23 @@
 ---
-title: 'Postupy: Vyhledání podřízeného elementu (XPath-LINQ to XML) (Visual Basic)'
+title: 'How to: Find a Child Element (XPath-LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: adb46c98-a650-42e2-b62d-835920fe8421
-ms.openlocfilehash: 9dac53f70882791fb05265d4a04444c98adff451
-ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
+ms.openlocfilehash: 3697dabb1b277ceab7b7bb9be54b72ef8be6974d
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72249992"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353034"
 ---
-# <a name="how-to-find-a-child-element-xpath-linq-to-xml-visual-basic"></a>Postupy: Vyhledání podřízeného elementu (XPath-LINQ to XML) (Visual Basic)
-Toto téma porovnává podřízenou osu elementu XPath s metodou [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] <xref:System.Xml.Linq.XContainer.Element%2A>.  
+# <a name="how-to-find-a-child-element-xpath-linq-to-xml-visual-basic"></a>How to: Find a Child Element (XPath-LINQ to XML) (Visual Basic)
+This topic compares the XPath child element axis to the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] <xref:System.Xml.Linq.XContainer.Element%2A> method.  
   
- Výraz XPath je `DeliveryNotes`.  
+ The XPath expression is `DeliveryNotes`.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad najde podřízený element `DeliveryNotes`.  
+ This example finds the child element `DeliveryNotes`.  
   
- Tento příklad používá následující dokument XML: [ukázkový soubor XML: více nákupních objednávek (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
+ This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
   
 ```vb  
 Dim cpo As XDocument = XDocument.Load("PurchaseOrders.xml")  
@@ -39,13 +39,13 @@ End If
 Console.WriteLine(el1)  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ This example produces the following output:  
   
 ```console
 Results are identical  
 <DeliveryNotes>Please leave packages in shed by driveway.</DeliveryNotes>  
 ```  
   
-## <a name="see-also"></a>Související témata
+## <a name="see-also"></a>Viz také:
 
-- [LINQ to XML pro uživatele XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML for XPath Users (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

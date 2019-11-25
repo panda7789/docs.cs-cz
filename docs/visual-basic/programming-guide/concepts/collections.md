@@ -1,36 +1,36 @@
 ---
-title: Kolekce (Visual Basic)
+title: Kolekce
 ms.date: 07/20/2015
 ms.assetid: 5f7749f3-aaf2-4319-b63c-bfa72e1e2b7a
-ms.openlocfilehash: 7a4b891aa490d727a7f09bc19c11b8e505ef81f0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ba16d04e781bcf69356b1f603d92e104816a0860
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64754991"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347097"
 ---
-# <a name="collections-visual-basic"></a>Kolekce (Visual Basic)
+# <a name="collections-visual-basic"></a>Collections (Visual Basic)
 
-U mnoha aplikací chcete vytvářet a spravovat skupiny souvisejících objektů. Existují dva způsoby, jak seskupit objekty: vytvořením polí objektů a vytvořením kolekcí objektů.
+For many applications, you want to create and manage groups of related objects. There are two ways to group objects: by creating arrays of objects, and by creating collections of objects.
 
-Pole jsou zvláště užitečná pro vytváření a práci s pevným počtem silně typovaných objektů. Informace o polích naleznete v tématu [pole](../../../visual-basic/programming-guide/language-features/arrays/index.md).
+Arrays are most useful for creating and working with a fixed number of strongly-typed objects. For information about arrays, see [Arrays](../../../visual-basic/programming-guide/language-features/arrays/index.md).
 
-Kolekce poskytují pružnější způsob práce se skupinami objektů. Na rozdíl od pole skupiny objektů, které při práci s můžete zvětšení a zmenšení dynamicky podle potřeb změn aplikace. Pro některé kolekce můžete přiřadit klíč na libovolný objekt, který vložíte do kolekce, takže můžete snadno obnovit objekt pomocí klíče.
+Collections provide a more flexible way to work with groups of objects. Unlike arrays, the group of objects you work with can grow and shrink dynamically as the needs of the application change. For some collections, you can assign a key to any object that you put into the collection so that you can quickly retrieve the object by using the key.
 
-Kolekce je třída, proto je třeba deklarovat instanci třídy, než budete moct přidat prvky do této kolekce.
+A collection is a class, so you must declare an instance of the class before you can add elements to that collection.
 
-Pokud kolekce obsahuje prvky pouze jednoho datového typu, můžete použít jednu z tříd v <xref:System.Collections.Generic?displayProperty=nameWithType> oboru názvů. Obecná kolekce vynucuje bezpečnost typů tak, aby žádný jiný typ dat můžete do ní přidá. Při načítání elementu z obecné kolekce není nutné zjistit jeho typ dat nebo ji převést.
+If your collection contains elements of only one data type, you can use one of the classes in the <xref:System.Collections.Generic?displayProperty=nameWithType> namespace. A generic collection enforces type safety so that no other data type can be added to it. When you retrieve an element from a generic collection, you do not have to determine its data type or convert it.
 
 > [!NOTE]
-> Příklady v tomto tématu, zahrnují [importy](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) příkazů `System.Collections.Generic` a `System.Linq` obory názvů.
+> For the examples in this topic, include [Imports](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) statements for the `System.Collections.Generic` and `System.Linq` namespaces.
 
 <a name="BKMK_SimpleCollection"></a>
 
 ## <a name="using-a-simple-collection"></a>Používání jednoduché kolekce
 
-Příklady v této části použít obecný <xref:System.Collections.Generic.List%601> třídu, která umožňuje pracovat s výrazným seznamem objektů.
+The examples in this section use the generic <xref:System.Collections.Generic.List%601> class, which enables you to work with a strongly typed list of objects.
 
-Následující příklad vytvoří seznam řetězců a provede iteraci řetězců pomocí [For Each... Další](../../../visual-basic/language-reference/statements/for-each-next-statement.md) příkazu.
+The following example creates a list of strings and then iterates through the strings by using a [For Each…Next](../../../visual-basic/language-reference/statements/for-each-next-statement.md) statement.
 
 ```vb
 ' Create a list of strings.
@@ -47,9 +47,9 @@ Next
 'Output: chinook coho pink sockeye
 ```
 
-Pokud obsah kolekce znám předem, můžete použít *inicializátor kolekce* pro inicializace kolekce. Další informace najdete v tématu [inicializátory kolekce](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md).
+If the contents of a collection are known in advance, you can use a *collection initializer* to initialize the collection. For more information, see [Collection Initializers](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md).
 
-Následující příklad je stejný jako předchozí příklad, s výjimkou inicializátoru kolekce je použít k přidání prvků do kolekce.
+The following example is the same as the previous example, except a collection initializer is used to add elements to the collection.
 
 ```vb
 ' Create a list of strings by using a
@@ -63,9 +63,9 @@ Next
 'Output: chinook coho pink sockeye
 ```
 
-Můžete použít [pro... Další](../../../visual-basic/language-reference/statements/for-next-statement.md) příkaz místo `For Each` příkaz pro iteraci prostřednictvím kolekce. Toto dokončíte pomocí přístupu k elementům kolekce pomocí indexu umístění. Index prvků začíná hodnotou 0 a končí počtem prvků mínus 1.
+You can use a [For…Next](../../../visual-basic/language-reference/statements/for-next-statement.md) statement instead of a `For Each` statement to iterate through a collection. You accomplish this by accessing the collection elements by the index position. The index of the elements starts at 0 and ends at the element count minus 1.
 
-Následující příklad provede iteraci prvků kolekce pomocí `For…Next` místo `For Each`.
+The following example iterates through the elements of a collection by using `For…Next` instead of `For Each`.
 
 ```vb
 Dim salmons As New List(Of String) From
@@ -77,7 +77,7 @@ Next
 'Output: chinook coho pink sockeye
 ```
 
-Následující příklad odstraní prvek z kolekce zadáním objektu, který chcete odebrat.
+The following example removes an element from the collection by specifying the object to remove.
 
 ```vb
 ' Create a list of strings by using a
@@ -95,7 +95,7 @@ Next
 'Output: chinook pink sockeye
 ```
 
-Následující příklad odebere prvky z obecného seznamu. Místo `For Each` příkaz, [pro... Další](../../../visual-basic/language-reference/statements/for-next-statement.md) se používá s itinerací v sestupném pořadí. Je to proto, <xref:System.Collections.Generic.List%601.RemoveAt%2A> metoda způsobí, že prvky po odebraném prvku mají nižší hodnotu indexu.
+The following example removes elements from a generic list. Instead of a `For Each` statement, a [For…Next](../../../visual-basic/language-reference/statements/for-next-statement.md) statement that iterates in descending order is used. This is because the <xref:System.Collections.Generic.List%601.RemoveAt%2A> method causes elements after a removed element to have a lower index value.
 
 ```vb
 Dim numbers As New List(Of Integer) From
@@ -118,7 +118,7 @@ numbers.ForEach(
 ' Output: 0 2 4 6 8
 ```
 
-Pro typ prvků v <xref:System.Collections.Generic.List%601>, můžete také definovat své vlastní třídy. V následujícím příkladu `Galaxy` třídu, která se používá <xref:System.Collections.Generic.List%601> je definována v kódu.
+For the type of elements in the <xref:System.Collections.Generic.List%601>, you can also define your own class. In the following example, the `Galaxy` class that is used by the <xref:System.Collections.Generic.List%601> is defined in the code.
 
 ```vb
 Private Sub IterateThroughList()
@@ -153,86 +153,86 @@ End Class
 
 ## <a name="kinds-of-collections"></a>Typy kolekcí
 
-Mnoho nejběžnějších kolekcí jsou k dispozici v rozhraní .NET Framework. Každý typ kolekce je navržená pro určitý účel.
+Many common collections are provided by the .NET Framework. Each type of collection is designed for a specific purpose.
 
-V této části jsou popsány některé běžné třídy kolekce:
+Some of the common collection classes are described in this section:
 
-- <xref:System.Collections.Generic> Třídy
+- <xref:System.Collections.Generic> – třídy
 
-- <xref:System.Collections.Concurrent> Třídy
+- <xref:System.Collections.Concurrent> – třídy
 
-- <xref:System.Collections> Třídy
+- <xref:System.Collections> – třídy
 
-- Visual Basic `Collection` třídy
+- Visual Basic `Collection` class
 
 <a name="BKMK_Generic"></a>
 
 ### <a name="systemcollectionsgeneric-classes"></a>Třídy System.Collections.Generic
 
-Obecnou kolekci můžete vytvořit pomocí jedné ze tříd v <xref:System.Collections.Generic> oboru názvů. Obecná kolekce je užitečná, když má každá položka v kolekci stejný datový typ. Obecná kolekce vynucuje silné typování tím, že pouze žádaného datového typu.
+You can create a generic collection by using one of the classes in the <xref:System.Collections.Generic> namespace. A generic collection is useful when every item in the collection has the same data type. A generic collection enforces strong typing by allowing only the desired data type to be added.
 
-Následující tabulka uvádí některé často používané třídy <xref:System.Collections.Generic?displayProperty=nameWithType> obor názvů:
+The following table lists some of the frequently used classes of the <xref:System.Collections.Generic?displayProperty=nameWithType> namespace:
 
 |Třída|Popis|
 |---|---|
-|<xref:System.Collections.Generic.Dictionary%602>|Představuje kolekci dvojic klíč/hodnota, které jsou uspořádány na základě klíče.|
-|<xref:System.Collections.Generic.List%601>|Reprezentuje seznam objektů, které lze využívat pomocí indexu. Poskytuje metody pro vyhledávání, řazení a úpravu seznamů.|
-|<xref:System.Collections.Generic.Queue%601>|Představuje first-in-first-out (FIFO) kolekci objektů.|
-|<xref:System.Collections.Generic.SortedList%602>|Představuje kolekci párů klíč/hodnota, které jsou seřazeny podle klíče na základě přidružené <xref:System.Collections.Generic.IComparer%601> implementace.|
-|<xref:System.Collections.Generic.Stack%601>|Představuje last-in-first-out (LIFO) kolekci objektů.|
+|<xref:System.Collections.Generic.Dictionary%602>|Represents a collection of key/value pairs that are organized based on the key.|
+|<xref:System.Collections.Generic.List%601>|Represents a list of objects that can be accessed by index. Provides methods to search, sort, and modify lists.|
+|<xref:System.Collections.Generic.Queue%601>|Represents a first in, first out (FIFO) collection of objects.|
+|<xref:System.Collections.Generic.SortedList%602>|Represents a collection of key/value pairs that are sorted by key based on the associated <xref:System.Collections.Generic.IComparer%601> implementation.|
+|<xref:System.Collections.Generic.Stack%601>|Represents a last in, first out (LIFO) collection of objects.|
 
-Další informace najdete v tématu [běžně používané typy kolekcí](../../../standard/collections/commonly-used-collection-types.md), [výběr třídy kolekce](../../../standard/collections/selecting-a-collection-class.md), a <xref:System.Collections.Generic?displayProperty=nameWithType>.
+For additional information, see [Commonly Used Collection Types](../../../standard/collections/commonly-used-collection-types.md), [Selecting a Collection Class](../../../standard/collections/selecting-a-collection-class.md), and <xref:System.Collections.Generic?displayProperty=nameWithType>.
 
 <a name="BKMK_Concurrent"></a>
 
 ### <a name="systemcollectionsconcurrent-classes"></a>Třídy System.Collections.Concurrent
 
-V rozhraní .NET Framework 4 nebo novější, kolekce v <xref:System.Collections.Concurrent> obor názvů poskytují efektivní operace bezpečné pro vlákna pro přístup položky kolekce z více vláken.
+In the .NET Framework 4 or newer, the collections in the <xref:System.Collections.Concurrent> namespace provide efficient thread-safe operations for accessing collection items from multiple threads.
 
-Třídy v <xref:System.Collections.Concurrent> oboru názvů by měl použít namísto odpovídajících typů v <xref:System.Collections.Generic?displayProperty=nameWithType> a <xref:System.Collections?displayProperty=nameWithType> obory názvů pokaždé, když přistupuje více podprocesů kolekci současně. Další informace najdete v tématu [kolekce bezpečné pro vlákna](../../../standard/collections/thread-safe/index.md) a <xref:System.Collections.Concurrent>.
+The classes in the <xref:System.Collections.Concurrent> namespace should be used instead of the corresponding types in the <xref:System.Collections.Generic?displayProperty=nameWithType> and <xref:System.Collections?displayProperty=nameWithType> namespaces whenever multiple threads are accessing the collection concurrently. For more information, see [Thread-Safe Collections](../../../standard/collections/thread-safe/index.md) and <xref:System.Collections.Concurrent>.
 
-Některé třídy v <xref:System.Collections.Concurrent> obor názvů jsou <xref:System.Collections.Concurrent.BlockingCollection%601>, <xref:System.Collections.Concurrent.ConcurrentDictionary%602>, <xref:System.Collections.Concurrent.ConcurrentQueue%601>, a <xref:System.Collections.Concurrent.ConcurrentStack%601>.
+Some classes included in the <xref:System.Collections.Concurrent> namespace are <xref:System.Collections.Concurrent.BlockingCollection%601>, <xref:System.Collections.Concurrent.ConcurrentDictionary%602>, <xref:System.Collections.Concurrent.ConcurrentQueue%601>, and <xref:System.Collections.Concurrent.ConcurrentStack%601>.
 
 <a name="BKMK_Collections"></a>
 
 ### <a name="systemcollections-classes"></a>System.Collections Classes
 
-Třídy v <xref:System.Collections?displayProperty=nameWithType> obor názvů neukládají prvky jako objekty s konkrétním typem, ale jako objekty typu `Object`.
+The classes in the <xref:System.Collections?displayProperty=nameWithType> namespace do not store elements as specifically typed objects, but as objects of type `Object`.
 
-Kdykoli je to možné, použijte obecné kolekce v <xref:System.Collections.Generic?displayProperty=nameWithType> oboru názvů nebo <xref:System.Collections.Concurrent> místo třídy zastaralých typů v `System.Collections` oboru názvů.
+Whenever possible, you should use the generic collections in the <xref:System.Collections.Generic?displayProperty=nameWithType> namespace or the <xref:System.Collections.Concurrent> namespace instead of the legacy types in the `System.Collections` namespace.
 
-Následující tabulka uvádí některé často používané třídy v `System.Collections` obor názvů:
+The following table lists some of the frequently used classes in the `System.Collections` namespace:
 
 |Třída|Popis|
 |---|---|
-|<xref:System.Collections.ArrayList>|Představuje pole objektů, jejichž velikost se dynamicky mění jako povinné.|
-|<xref:System.Collections.Hashtable>|Představuje kolekci párů klíč/hodnota, které jsou uspořádány na základě kódu hodnoty hash klíče.|
-|<xref:System.Collections.Queue>|Představuje first-in-first-out (FIFO) kolekci objektů.|
-|<xref:System.Collections.Stack>|Představuje last-in-first-out (LIFO) kolekci objektů.|
+|<xref:System.Collections.ArrayList>|Represents an array of objects whose size is dynamically increased as required.|
+|<xref:System.Collections.Hashtable>|Represents a collection of key/value pairs that are organized based on the hash code of the key.|
+|<xref:System.Collections.Queue>|Represents a first in, first out (FIFO) collection of objects.|
+|<xref:System.Collections.Stack>|Represents a last in, first out (LIFO) collection of objects.|
 
-<xref:System.Collections.Specialized> Obor názvů obsahuje třídy specializované a typově silné kolekcí, jako je například kolekce pouze pro řetězce a propojené seznamy a hybridní slovníky.
+The <xref:System.Collections.Specialized> namespace provides specialized and strongly typed collection classes, such as string-only collections and linked-list and hybrid dictionaries.
 
 <a name="BKMK_VisualBasic"></a>
 
 ### <a name="visual-basic-collection-class"></a>Třída Collection v jazyce Visual Basic
 
-Můžete použít Visual Basic <xref:Microsoft.VisualBasic.Collection> třídy pro přístup položky kolekce pomocí numerického indexu nebo `String` klíč. Přidat položky do objektu kolekce s nebo bez udání klíče. Pokud chcete přidat položku bez klíče, musíte použít jeho číselný index k němu přistupovat.
+You can use the Visual Basic <xref:Microsoft.VisualBasic.Collection> class to access a collection item by using either a numeric index or a `String` key. You can add items to a collection object either with or without specifying a key. If you add an item without a key, you must use its numeric index to access it.
 
-Visual Basic `Collection` třída uchovává všechny prvky jako typ `Object`, takže můžete přidat položky libovolného datového typu. Neexistuje žádná ochrana proti přidání typů nevhodných dat.
+The Visual Basic `Collection` class stores all its elements as type `Object`, so you can add an item of any data type. There is no safeguard against inappropriate data types being added.
 
-Při použití jazyka Visual Basic `Collection` obsahuje třídy, první položku v kolekci index 1. Tím se liší od kolekcí tříd rozhraní .NET Framework, pro které je počáteční index 0.
+When you use the Visual Basic `Collection` class, the first item in a collection has an index of 1. This differs from the .NET Framework collection classes, for which the starting index is 0.
 
-Kdykoli je to možné, použijte obecné kolekce v <xref:System.Collections.Generic?displayProperty=nameWithType> oboru názvů nebo <xref:System.Collections.Concurrent> místo jazyka Visual Basic `Collection` třídy.
+Whenever possible, you should use the generic collections in the <xref:System.Collections.Generic?displayProperty=nameWithType> namespace or the <xref:System.Collections.Concurrent> namespace instead of the Visual Basic `Collection` class.
 
-Další informace naleznete v tématu <xref:Microsoft.VisualBasic.Collection>.
+Další informace najdete v tématu <xref:Microsoft.VisualBasic.Collection>.
 
 <a name="BKMK_KeyValuePairs"></a>
 
 ## <a name="implementing-a-collection-of-keyvalue-pairs"></a>Implementace kolekce párů klíč/hodnota
 
-<xref:System.Collections.Generic.Dictionary%602> Obecné kolekce umožňuje přístup k prvkům kolekce pomocí klíče každého prvku. Každé přidání do slovníku se skládá z hodnoty a odpovídajícího klíče. Načítání hodnoty pomocí obsaženého klíče je velmi rychle, protože `Dictionary` třídy je implementovaný jako zatřiďovací tabulku.
+The <xref:System.Collections.Generic.Dictionary%602> generic collection enables you to access to elements in a collection by using the key of each element. Each addition to the dictionary consists of a value and its associated key. Retrieving a value by using its key is fast because the `Dictionary` class is implemented as a hash table.
 
-Následující příklad vytvoří `Dictionary` kolekce a iteruje ve slovníku s využitím `For Each` příkazu.
+The following example creates a `Dictionary` collection and iterates through the dictionary by using a `For Each` statement.
 
 ```vb
 Private Sub IterateThroughDictionary()
@@ -278,7 +278,7 @@ Public Class Element
 End Class
 ```
 
-Místo toho použít inicializátor kolekce k sestavení `Dictionary` kolekci, můžete nahradit `BuildDictionary` a `AddToDictionary` metody pomocí následujících metod.
+To instead use a collection initializer to build the `Dictionary` collection, you can replace the `BuildDictionary` and `AddToDictionary` methods with the following method.
 
 ```vb
 Private Function BuildDictionary2() As Dictionary(Of String, Element)
@@ -296,7 +296,7 @@ Private Function BuildDictionary2() As Dictionary(Of String, Element)
 End Function
 ```
 
-V následujícím příkladu <xref:System.Collections.Generic.Dictionary%602.ContainsKey%2A> metoda a <xref:System.Collections.Generic.Dictionary%602.Item%2A> vlastnost `Dictionary` pro rychlé vyhledání položky podle klíče. `Item` Vlastnost umožňuje přístup k položce v `elements` kolekce s použitím `elements(symbol)` kód v jazyce Visual Basic.
+The following example uses the <xref:System.Collections.Generic.Dictionary%602.ContainsKey%2A> method and the <xref:System.Collections.Generic.Dictionary%602.Item%2A> property of `Dictionary` to quickly find an item by key. The `Item` property enables you to access an item in the `elements` collection by using the `elements(symbol)` code in Visual Basic.
 
 ```vb
 Private Sub FindInDictionary(ByVal symbol As String)
@@ -311,7 +311,7 @@ Private Sub FindInDictionary(ByVal symbol As String)
 End Sub
 ```
 
-Následující příklad používá místo toho <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> metoda rychlé vyhledání položky podle klíče.
+The following example instead uses the <xref:System.Collections.Generic.Dictionary%602.TryGetValue%2A> method quickly find an item by key.
 
 ```vb
 Private Sub FindInDictionary2(ByVal symbol As String)
@@ -330,9 +330,9 @@ End Sub
 
 ## <a name="using-linq-to-access-a-collection"></a>Přístup ke kolekci pomocí jazyka LINQ
 
-LINQ (Language-Integrated Query) lze použít pro přístup ke kolekci. Dotazy LINQ poskytují možnost filtrování, řazení a seskupování schopností. Další informace najdete v tématu [Začínáme s dotazy LINQ v jazyce Visual Basic](../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md).
+LINQ (Language-Integrated Query) can be used to access collections. LINQ queries provide filtering, ordering, and grouping capabilities. For more information, see [Getting Started with LINQ in Visual Basic](../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md).
 
-Následující příklad spustí dotaz LINQ v rámci obecného `List`. Dotaz LINQ vrátí jinou kolekci, která obsahuje výsledky.
+The following example runs a LINQ query against a generic `List`. The LINQ query returns a different collection that contains the results.
 
 ```vb
 Private Sub ShowLINQ()
@@ -378,11 +378,11 @@ End Class
 
 ## <a name="sorting-a-collection"></a>Řazení kolekce
 
-Následující příklad ukazuje postup při řazení kolekce. Příklad řadí instance třídy `Car` třídy, které jsou uložené v <xref:System.Collections.Generic.List%601>. `Car` Implementuje třída <xref:System.IComparable%601> rozhraní, které vyžaduje, aby <xref:System.IComparable%601.CompareTo%2A> implementaci metody.
+The following example illustrates a procedure for sorting a collection. The example sorts instances of the `Car` class that are stored in a <xref:System.Collections.Generic.List%601>. The `Car` class implements the <xref:System.IComparable%601> interface, which requires that the <xref:System.IComparable%601.CompareTo%2A> method be implemented.
 
-Každé volání <xref:System.IComparable%601.CompareTo%2A> metoda provádí jedno porovnání, který se používá pro řazení. Uživatelem zapsaný kód v `CompareTo` metoda vrátí hodnotu pro všechna porovnání aktuálního objektu s jiným objektem. Vrácená hodnota je menší než nula, pokud se aktuální objekt menší než druhý objekt, větší než nula, pokud je aktuální objekt větší než druhý objekt a nula jestli jsou shodné. To umožňuje v kódu definovat kritéria pro větší, menší než a rovná.
+Each call to the <xref:System.IComparable%601.CompareTo%2A> method makes a single comparison that is used for sorting. User-written code in the `CompareTo` method returns a value for each comparison of the current object with another object. The value returned is less than zero if the current object is less than the other object, greater than zero if the current object is greater than the other object, and zero if they are equal. This enables you to define in code the criteria for greater than, less than, and equal.
 
-V `ListCars` metody, `cars.Sort()` příkaz Seřadí seznam. Toto volání <xref:System.Collections.Generic.List%601.Sort%2A> metodu <xref:System.Collections.Generic.List%601> způsobí, že `CompareTo` metoda bude automaticky volána pro `Car` objekty v `List`.
+In the `ListCars` method, the `cars.Sort()` statement sorts the list. This call to the <xref:System.Collections.Generic.List%601.Sort%2A> method of the <xref:System.Collections.Generic.List%601> causes the `CompareTo` method to be called automatically for the `Car` objects in the `List`.
 
 ```vb
 Public Sub ListCars()
@@ -458,13 +458,13 @@ End Class
 
 ## <a name="defining-a-custom-collection"></a>Definice vlastní kolekce
 
-Můžete definovat kolekce implementací <xref:System.Collections.Generic.IEnumerable%601> nebo <xref:System.Collections.IEnumerable> rozhraní. Další informace najdete v tématu [vytvoření výčtu kolekce](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hwyysy67(v=vs.100)).
+You can define a collection by implementing the <xref:System.Collections.Generic.IEnumerable%601> or <xref:System.Collections.IEnumerable> interface. For additional information, see [Enumerating a Collection](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hwyysy67(v=vs.100)).
 
-Přestože můžete definovat vlastní kolekci, je obvykle vhodnější použít namísto toho kolekce, které jsou zahrnuty v rozhraní .NET Framework, které jsou popsány v [typy kolekcí](#kinds-of-collections) výše v tomto tématu.
+Although you can define a custom collection, it is usually better to instead use the collections that are included in the .NET Framework, which are described in [Kinds of Collections](#kinds-of-collections) earlier in this topic.
 
-Následující příklad definuje vlastní třídu kolekce s názvem `AllColors`. Tato třída implementuje <xref:System.Collections.IEnumerable> rozhraní, které vyžaduje, aby <xref:System.Collections.IEnumerable.GetEnumerator%2A> implementaci metody.
+The following example defines a custom collection class named `AllColors`. This class implements the <xref:System.Collections.IEnumerable> interface, which requires that the <xref:System.Collections.IEnumerable.GetEnumerator%2A> method be implemented.
 
-`GetEnumerator` Metoda vrací instanci `ColorEnumerator` třídy. `ColorEnumerator` implementuje <xref:System.Collections.IEnumerator> rozhraní, které vyžaduje, aby <xref:System.Collections.IEnumerator.Current%2A> vlastnost <xref:System.Collections.IEnumerator.MoveNext%2A> metoda, a <xref:System.Collections.IEnumerator.Reset%2A> implementaci metody.
+The `GetEnumerator` method returns an instance of the `ColorEnumerator` class. `ColorEnumerator` implements the <xref:System.Collections.IEnumerator> interface, which requires that the <xref:System.Collections.IEnumerator.Current%2A> property, <xref:System.Collections.IEnumerator.MoveNext%2A> method, and <xref:System.Collections.IEnumerator.Reset%2A> method be implemented.
 
 ```vb
 Public Sub ListColors()
@@ -538,13 +538,13 @@ End Class
 
 ## <a name="iterators"></a>Iterátory
 
-*Iterátoru* se používá k provedení vlastní iterace nad kolekcí. Iterátor může být metoda nebo `get` přistupujícího objektu. Iterátor používá [Yield](../../../visual-basic/language-reference/statements/yield-statement.md) příkaz k vrácení každého prvku kolekce jeden po druhém.
+An *iterator* is used to perform a custom iteration over a collection. An iterator can be a method or a `get` accessor. An iterator uses a [Yield](../../../visual-basic/language-reference/statements/yield-statement.md) statement to return each element of the collection one at a time.
 
-Můžete volat iterátor pomocí [For Each... Další](../../../visual-basic/language-reference/statements/for-each-next-statement.md) příkazu. Každá iterace `For Each` smyčky volá iterátor. Když `Yield` je dosažen příkaz v iterátoru, je vrácen výraz a je zachováno aktuální umístění v kódu. Provádění je restartováno z tohoto umístění při příštím volání iterátoru.
+You call an iterator by using a [For Each…Next](../../../visual-basic/language-reference/statements/for-each-next-statement.md) statement. Each iteration of the `For Each` loop calls the iterator. When a `Yield` statement is reached in the iterator, an expression is returned, and the current location in code is retained. Execution is restarted from that location the next time that the iterator is called.
 
-Další informace najdete v tématu [iterátory (Visual Basic)](../../../visual-basic/programming-guide/concepts/iterators.md).
+For more information, see [Iterators (Visual Basic)](../../../visual-basic/programming-guide/concepts/iterators.md).
 
-Následující příklad používá metodu iterátoru. Iterační metoda obsahuje `Yield` , který se nachází uvnitř [pro... Další](../../../visual-basic/language-reference/statements/for-next-statement.md) smyčky. V `ListEvenNumbers` metodě, každé iterace `For Each` tělo s příkazy vytvoří volání metody iterátoru, který pokračuje k dalšímu `Yield` příkazu.
+The following example uses an iterator method. The iterator method has a `Yield` statement that is inside a [For…Next](../../../visual-basic/language-reference/statements/for-next-statement.md) loop. In the `ListEvenNumbers` method, each iteration of the `For Each` statement body creates a call to the iterator method, which proceeds to the next `Yield` statement.
 
 ```vb
 Public Sub ListEvenNumbers()
@@ -571,7 +571,7 @@ End Function
 ## <a name="see-also"></a>Viz také:
 
 - [Inicializátory kolekcí](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)
-- [Koncepty programování (Visual Basic)](../../../visual-basic/programming-guide/concepts/index.md)
+- [Programming Concepts (Visual Basic)](../../../visual-basic/programming-guide/concepts/index.md)
 - [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)
 - [LINQ to Objects (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
 - [Paralelní LINQ (PLINQ)](../../../standard/parallel-programming/parallel-linq-plinq.md)

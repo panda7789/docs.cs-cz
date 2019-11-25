@@ -1,5 +1,5 @@
 ---
-title: New – operátor (Visual Basic)
+title: Operátor new
 ms.date: 07/20/2015
 f1_keywords:
 - vb.new
@@ -11,40 +11,40 @@ helpviewer_keywords:
 - New constraint
 - New keyword [Visual Basic]
 ms.assetid: d7d566d7-fe0e-4336-91f7-641a542de4d0
-ms.openlocfilehash: c0870f4b056658a22928769c369024cdda24f354
-ms.sourcegitcommit: 9bd1c09128e012b6e34bdcbdf3576379f58f3137
+ms.openlocfilehash: 27b5b4516ef729045036c36fedc24b6c576a4f61
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72799035"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348321"
 ---
 # <a name="new-operator-visual-basic"></a>New – operátor (Visual Basic)
 
-Zavádí klauzuli `New` pro vytvoření nové instance objektu, určuje omezení konstruktoru pro parametr typu nebo identifikuje `Sub` proceduru jako konstruktor třídy.
+Introduces a `New` clause to create a new object instance, specifies a constructor constraint on a type parameter, or identifies a `Sub` procedure as a class constructor.
 
 ## <a name="remarks"></a>Poznámky
 
-V deklaraci nebo příkazu přiřazení musí klauzule `New` určovat definovanou třídu, ze které lze instanci vytvořit. To znamená, že třída musí vystavit jeden nebo více konstruktorů, ke kterým může přistupovat volající kód.
+In a declaration or assignment statement, a `New` clause must specify a defined class from which the instance can be created. This means that the class must expose one or more constructors that the calling code can access.
 
-V příkazu deklarace nebo příkazu přiřazení můžete použít klauzuli `New`. Při spuštění příkazu volá příslušný konstruktor zadané třídy a předává všechny argumenty, které jste zadali. Následující příklad ukazuje to vytvořením instancí třídy `Customer`, která má dva konstruktory, jeden, který přebírá žádné parametry a jeden, který přijímá řetězcový parametr:
+You can use a `New` clause in a declaration statement or an assignment statement. When the statement runs, it calls the appropriate constructor of the specified class, passing any arguments you have supplied. The following example demonstrates this by creating instances of a `Customer` class that has two constructors, one that takes no parameters and one that takes a string parameter:
 
 [!code-vb[VbVbalrKeywords#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/Class6.vb#11)]
 
-Vzhledem k tomu, že pole jsou třídy, `New` mohou vytvořit novou instanci pole, jak je znázorněno v následujícím příkladu:
+Since arrays are classes, `New` can create a new array instance, as shown in the following example:
 
 [!code-vb[VbVbalrKeywords#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/Class6.vb#12)]
 
-Modul CLR (Common Language Runtime) vyvolá chybu <xref:System.OutOfMemoryException>, pokud není k dispozici dostatek paměti pro vytvoření nové instance.
+The common language runtime (CLR) throws an <xref:System.OutOfMemoryException> error if there is insufficient memory to create the new instance.
 
 > [!NOTE]
-> Klíčové slovo `New` se používá také v seznamech parametrů typu k určení toho, že zadaný typ musí vystavit přístupný konstruktor bez parametrů. Další informace o parametrech typu a omezeních najdete v tématu [seznam typů](../statements/type-list.md).
+> The `New` keyword is also used in type parameter lists to specify that the supplied type must expose an accessible parameterless constructor. For more information about type parameters and constraints, see [Type List](../statements/type-list.md).
 
-Chcete-li vytvořit proceduru konstruktoru pro třídu, nastavte název `Sub` procedury na klíčové slovo `New`. Další informace naleznete v tématu [Doba života objektu: vytváření a zničení objektů](../../programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md).
+To create a constructor procedure for a class, set the name of a `Sub` procedure to the `New` keyword. For more information, see [Object Lifetime: How Objects Are Created and Destroyed](../../programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md).
 
-Klíčové slovo `New` lze použít v těchto kontextech:
+The `New` keyword can be used in these contexts:
 
 - [Příkaz Dim](../statements/dim-statement.md)
-- [Tohoto](../statements/of-clause.md)
+- [Of](../statements/of-clause.md)
 - [Příkaz Sub](../statements/sub-statement.md)
 
 ## <a name="see-also"></a>Viz také:
@@ -52,5 +52,5 @@ Klíčové slovo `New` lze použít v těchto kontextech:
 - <xref:System.OutOfMemoryException>
 - [Klíčová slova](../keywords/index.md)
 - [Seznam typů](../statements/type-list.md)
-- [Obecné typy v Visual Basic](../../programming-guide/language-features/data-types/generic-types.md)
+- [Generic Types in Visual Basic](../../programming-guide/language-features/data-types/generic-types.md)
 - [Doba života objektu: Vytváření a zničení objektů](../../programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)

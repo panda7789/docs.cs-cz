@@ -1,26 +1,26 @@
 ---
-title: 'Kurz: Odložené provedení (Visual Basic)'
+title: 'Tutorial: Deferred Execution'
 ms.date: 07/20/2015
 ms.assetid: c80d53a8-1a30-4115-b232-52f0d089fec5
-ms.openlocfilehash: d78d298f7691c4f1df291fa865c92894414ead58
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a38ec1540d44dbc8710866de804a4935f8d17a2c
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61907748"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350532"
 ---
-# <a name="tutorial-deferred-execution-visual-basic"></a>Kurz: Odložené provedení (Visual Basic)
-Tento kurz ukazuje zpracování modelu při řetězení dotazů společně. Zřetězení dotazů je klíčovou součástí vytváření funkční transformace. Je důležité pochopit, přesně jak zřetězených dotazů práce.  
+# <a name="tutorial-deferred-execution-visual-basic"></a>Tutorial: Deferred Execution (Visual Basic)
+This tutorial illustrates the processing model when you chain queries together. Chaining queries together is a key part of writing functional transformations. It is important to understand exactly how chained queries work.  
   
- Tento postup použít dotazy, které zpracovávají dokumenty Office Open XML neúmyslné.  
+ The queries that process Office Open XML documents use this technique extensively.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
 |Téma|Popis|  
 |-----------|-----------------|  
-|[Odložené provedení a opožděné vyhodnocení v LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)|Popisuje koncepty odložené provedení a opožděné vyhodnocení.|  
-|[Příklad odloženého provedení (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-example.md)|Poskytuje příklad odloženého provedení.|  
+|[Deferred Execution and Lazy Evaluation in LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)|Describes the concepts of deferred execution and lazy evaluation.|  
+|[Deferred Execution Example (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-example.md)|Provides an example of deferred execution.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Čistě funkční transformace XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/pure-functional-transformations-of-xml.md)
+- [Pure Functional Transformations of XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/pure-functional-transformations-of-xml.md)

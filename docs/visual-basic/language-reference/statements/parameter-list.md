@@ -1,5 +1,5 @@
 ---
-title: Seznam parametrů (Visual Basic)
+title: Seznam parametrů
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Visual Basic code, procedures
@@ -10,16 +10,16 @@ helpviewer_keywords:
 - arguments [Visual Basic], Visual Basic
 - procedures [Visual Basic], parameter lists
 ms.assetid: 5d737319-0c34-4df9-a23d-188fc840becd
-ms.openlocfilehash: 0dded7fd68256b9b9de8ebe4b48073eb40696c12
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: ec4ce0f12b540478d889832fb18f1ef008613f1f
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582171"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346486"
 ---
 # <a name="parameter-list-visual-basic"></a>Seznam parametrů (Visual Basic)
 
-Určuje parametry, které procedura očekává při volání. Více parametrů je odděleno čárkami. Následuje syntaxe pro jeden parametr.
+Specifies the parameters a procedure expects when it is called. Multiple parameters are separated by commas. The following is the syntax for one parameter.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -31,62 +31,62 @@ parametername[( )] [ As parametertype ] [ = defaultvalue ]
 ## <a name="parts"></a>Součásti
 
 `attributelist`  
-Volitelné. Seznam atributů, které se vztahují na tento parametr. [Seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md) je nutné uzavřít do lomených závorek ("`<`" a "`>`").
+Volitelné. List of attributes that apply to this parameter. You must enclose the [Attribute List](../../../visual-basic/language-reference/statements/attribute-list.md) in angle brackets ("`<`" and "`>`").
 
 `Optional`  
-Volitelné. Určuje, že tento parametr není při volání procedury vyžadován.
+Volitelné. Specifies that this parameter is not required when the procedure is called.
 
 `ByVal`  
-Volitelné. Určuje, že procedura nemůže nahradit nebo změnit přiřazení elementu proměnné odpovídající argumentu v volajícím kódu.
+Volitelné. Specifies that the procedure cannot replace or reassign the variable element underlying the corresponding argument in the calling code.
 
 `ByRef`  
-Volitelné. Určuje, že procedura může upravit základní prvek proměnné v volajícím kódu stejným způsobem, jako může samotný volající kód.
+Volitelné. Specifies that the procedure can modify the underlying variable element in the calling code the same way the calling code itself can.
 
 `ParamArray`  
-Volitelné. Určuje, že poslední parametr v seznamu parametrů je volitelné pole prvků zadaného datového typu. To umožňuje volajícímu kódu předat libovolný počet argumentů postupu.
+Volitelné. Specifies that the last parameter in the parameter list is an optional array of elements of the specified data type. This lets the calling code pass an arbitrary number of arguments to the procedure.
 
 `parametername`  
-Požadováno. Název místní proměnné představující parametr
+Požadováno. Name of the local variable representing the parameter.
 
 `parametertype`  
-Vyžaduje se, pokud je `Option Strict` `On`. Datový typ lokální proměnné představující parametr
+Required if `Option Strict` is `On`. Data type of the local variable representing the parameter.
 
 `defaultvalue`  
-Vyžaduje se pro parametry `Optional`. Libovolný konstantní nebo konstantní výraz, který je vyhodnocen jako datový typ parametru. Pokud je typ `Object` nebo třída, rozhraní, pole nebo struktura, může být výchozí hodnota pouze `Nothing`.
+Required for `Optional` parameters. Any constant or constant expression that evaluates to the data type of the parameter. If the type is `Object`, or a class, interface, array, or structure, the default value can only be `Nothing`.
 
 ## <a name="remarks"></a>Poznámky
 
-Parametry jsou obklopeny závorkami a odděleny čárkami. Parametr lze deklarovat s libovolným datovým typem. Pokud nezadáte `parametertype`, použije se výchozí hodnota `Object`.
+Parameters are surrounded by parentheses and separated by commas. A parameter can be declared with any data type. If you do not specify `parametertype`, it defaults to `Object`.
 
-Když volající kód volá proceduru, předá *argument* každému požadovanému parametru. Další informace najdete v tématu [rozdíly mezi parametry a argumenty](../../../visual-basic/programming-guide/language-features/procedures/differences-between-parameters-and-arguments.md).
+When the calling code calls the procedure, it passes an *argument* to each required parameter. For more information, see [Differences Between Parameters and Arguments](../../../visual-basic/programming-guide/language-features/procedures/differences-between-parameters-and-arguments.md).
 
-Argument, který volající kód předává každému parametru, je ukazatel na základní prvek v volajícím kódu. Pokud je tento prvek *neproměnný* (konstanta, literál, výčet nebo výraz), není možné, aby se kód změnil. Pokud se jedná o prvek *proměnné* (deklarovaná proměnná, pole, vlastnost, prvek pole nebo prvek struktury), volající kód ho může změnit. Další informace naleznete v tématu [rozdíly mezi upravitelnými a neupravitelnými argumenty](../../../visual-basic/programming-guide/language-features/procedures/differences-between-modifiable-and-nonmodifiable-arguments.md).
+The argument the calling code passes to each parameter is a pointer to an underlying element in the calling code. If this element is *nonvariable* (a constant, literal, enumeration, or expression), it is impossible for any code to change it. If it is a *variable* element (a declared variable, field, property, array element, or structure element), the calling code can change it. For more information, see [Differences Between Modifiable and Nonmodifiable Arguments](../../../visual-basic/programming-guide/language-features/procedures/differences-between-modifiable-and-nonmodifiable-arguments.md).
 
-Pokud je předán prvek proměnné `ByRef`, může postup změnit také. Další informace naleznete v tématu [rozdíly mezi předáním argumentu podle hodnoty a podle reference](../../../visual-basic/programming-guide/language-features/procedures/differences-between-passing-an-argument-by-value-and-by-reference.md).
+If a variable element is passed `ByRef`, the procedure can change it as well. For more information, see [Differences Between Passing an Argument By Value and By Reference](../../../visual-basic/programming-guide/language-features/procedures/differences-between-passing-an-argument-by-value-and-by-reference.md).
 
-## <a name="rules"></a>Pravidly
+## <a name="rules"></a>Rules
 
-- **Závorky.** Pokud zadáte seznam parametrů, je nutné jej uzavřít do závorek. Pokud žádné parametry neexistují, můžete stále používat kulaté závorky ohraničující prázdný seznam. Tím se zlepší čitelnost kódu tím, že objasněte, že prvek je procedura.
+- **Parentheses.** If you specify a parameter list, you must enclose it in parentheses. If there are no parameters, you can still use parentheses enclosing an empty list. This improves the readability of your code by clarifying that the element is a procedure.
 
-- **Volitelné parametry.** Použijete-li modifikátor `Optional` u parametru, všechny následující parametry v seznamu musí být také nepovinné a deklarovány pomocí modifikátoru `Optional`.
+- **Optional Parameters.** If you use the `Optional` modifier on a parameter, all subsequent parameters in the list must also be optional and be declared by using the `Optional` modifier.
 
-     Každá deklarace volitelného parametru musí poskytovat klauzuli `defaultvalue`.
+     Every optional parameter declaration must supply the `defaultvalue` clause.
 
-     Další informace najdete v tématu [volitelné parametry](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md).
+     For more information, see [Optional Parameters](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md).
 
-- **Pole parametrů.** Pro parametr `ParamArray` je nutné zadat `ByVal`.
+- **Parameter Arrays.** You must specify `ByVal` for a `ParamArray` parameter.
 
-     Ve stejném seznamu parametrů nelze použít současně `Optional` i `ParamArray`.
+     You cannot use both `Optional` and `ParamArray` in the same parameter list.
 
-     Další informace naleznete v tématu [pole parametrů](../../../visual-basic/programming-guide/language-features/procedures/parameter-arrays.md).
+     For more information, see [Parameter Arrays](../../../visual-basic/programming-guide/language-features/procedures/parameter-arrays.md).
 
-- **Mechanismus předávání.** Výchozí mechanismus pro každý argument je `ByVal`, což znamená, že procedura nemůže změnit základní prvek proměnné. Nicméně pokud je prvek odkazový typ, může procedura změnit obsah nebo členy podkladového objektu, přestože nemůže nahradit nebo změnit přiřazení samotného objektu.
+- **Passing Mechanism.** The default mechanism for every argument is `ByVal`, which means the procedure cannot change the underlying variable element. However, if the element is a reference type, the procedure can modify the contents or members of the underlying object, even though it cannot replace or reassign the object itself.
 
-- **Názvy parametrů** Je-li datovým typem parametru pole, postupujte `parametername` bezprostředně závorkami. Další informace o názvech parametrů naleznete v tématu [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).
+- **Parameter Names.** If the parameter's data type is an array, follow `parametername` immediately by parentheses. For more information on parameter names, see [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje `Function` proceduru, která definuje dva parametry.
+The following example shows a `Function` procedure that defines two parameters.
 
 [!code-vb[VbVbalrStatements#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#2)]
 
@@ -98,5 +98,5 @@ Následující příklad ukazuje `Function` proceduru, která definuje dva param
 - [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)
 - [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)
 - [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)
-- [Přehled atributů](../../../visual-basic/programming-guide/concepts/attributes/index.md)
+- [Attributes overview](../../../visual-basic/programming-guide/concepts/attributes/index.md)
 - [Postupy: Přerušení a kombinace příkazů v kódu](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)

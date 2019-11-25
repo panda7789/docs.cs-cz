@@ -1,27 +1,27 @@
 ---
-title: 'Postupy: Vyhledání uzlů na stejné úrovni (XPath-LINQ to XML) (Visual Basic)'
+title: 'How to: Find Sibling Nodes (XPath-LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 73082738-2113-4438-8545-98d5df0927cb
-ms.openlocfilehash: 9640c8708082965515d4b90c979519f7efdaa2ba
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 52151c939bbf67df37a9535b1081ff902d357123
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582711"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344632"
 ---
-# <a name="how-to-find-sibling-nodes-xpath-linq-to-xml-visual-basic"></a>Postupy: Vyhledání uzlů na stejné úrovni (XPath-LINQ to XML) (Visual Basic)
+# <a name="how-to-find-sibling-nodes-xpath-linq-to-xml-visual-basic"></a>How to: Find Sibling Nodes (XPath-LINQ to XML) (Visual Basic)
 
-Možná budete chtít najít všechny uzly na stejné úrovni, které mají konkrétní název. Výsledná kolekce může zahrnovat kontextový uzel, pokud má uzel kontextu také konkrétní název.
+You might want to find all siblings of a node that have a specific name. The resulting collection might include the context node if the context node also has the specific name.
 
-Výraz XPath je:
+The XPath expression is:
 
 `../Book`
 
 ## <a name="example"></a>Příklad
 
-Tento příklad nejprve vyhledá prvek `Book` a pak najde všechny prvky na stejné úrovni s názvem `Book`. Výsledná kolekce obsahuje kontextový uzel.
+This example first finds a `Book` element, and then finds all sibling elements named `Book`. The resulting collection includes the context node.
 
-Tento příklad používá následující dokument XML: [ukázkový soubor XML: Books (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).
+This example uses the following XML document: [Sample XML File: Books (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).
 
 ```vb
 Dim books As XDocument = XDocument.Load("Books.xml")
@@ -44,7 +44,7 @@ For Each el As XElement In list1
 Next
 ```
 
-Tento příklad vytvoří následující výstup:
+This example produces the following output:
 
 ```console
 Results are identical
@@ -71,4 +71,4 @@ Results are identical
 
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ to XML pro uživatele XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML for XPath Users (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

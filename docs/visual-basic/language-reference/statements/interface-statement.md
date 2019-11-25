@@ -1,5 +1,5 @@
 ---
-title: Interface – příkaz (Visual Basic)
+title: Interface – příkaz
 ms.date: 05/12/2018
 f1_keywords:
 - vb.Interface
@@ -7,15 +7,15 @@ helpviewer_keywords:
 - interface statement [Visual Basic]
 - interfaces [Visual Basic], interface definition
 ms.assetid: 8997af73-bda3-4f79-bd41-ca396b610260
-ms.openlocfilehash: 68590702835e47e5f0f2e0380bc0fe4017d5eb15
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: b606f24cf3baa13746834dfbf7ca6b9215fd3558
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582673"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348057"
 ---
 # <a name="interface-statement-visual-basic"></a>Interface – příkaz (Visual Basic)
-Deklaruje název rozhraní a zavádí definice členů, které rozhraní zahrnuje.  
+Declares the name of an interface and introduces the definitions of the members that the interface comprises.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,80 +37,80 @@ End Interface
   
 |Termín|Definice|  
 |---|---|  
-|`attributelist`|Volitelné. Viz [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md).|  
-|`accessmodifier`|Volitelné. Může to být jedna z následujících:<br /><br /> -   [veřejné](../../../visual-basic/language-reference/modifiers/public.md)<br />-   [chráněno](../../../visual-basic/language-reference/modifiers/protected.md)<br />-    –[přítel](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [privátní](../../../visual-basic/language-reference/modifiers/private.md)<br />[přítel chráněný](../../language-reference/modifiers/protected-friend.md) -  <br/>- [Private Protected](../../language-reference/modifiers/private-protected.md)<br /><br /> Podívejte [se na úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).|  
-|`Shadows`|Volitelné. Viz [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md).|  
-|`name`|Požadováno. Název tohoto rozhraní Viz [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|  
-|`Of`|Volitelné. Určuje, že se jedná o obecné rozhraní.|  
-|`typelist`|Povinné, pokud použijete klíčové slovo [of](../../../visual-basic/language-reference/statements/of-clause.md) . Seznam parametrů typu pro toto rozhraní Volitelně lze každý parametr typu deklarovat jako typ variant pomocí `In` a `Out` obecných modifikátorů. Viz [seznam typů](../../../visual-basic/language-reference/statements/type-list.md).|  
-|`Inherits`|Volitelné. Označuje, že toto rozhraní dědí atributy a členy jiného rozhraní nebo rozhraní. Viz [příkaz Inherits](../../../visual-basic/language-reference/statements/inherits-statement.md).|  
-|`interfacenames`|Vyžaduje se, pokud použijete příkaz `Inherits`. Názvy rozhraní, ze kterých je toto rozhraní odvozeno.|  
-|`modifiers`|Volitelné. Odpovídající modifikátory pro člena rozhraní, který je definován.|  
-|`Property`|Volitelné. Definuje vlastnost, která je členem rozhraní.|  
-|`Function`|Volitelné. Definuje proceduru `Function`, která je členem rozhraní.|  
-|`Sub`|Volitelné. Definuje proceduru `Sub`, která je členem rozhraní.|  
-|`Event`|Volitelné. Definuje událost, která je členem rozhraní.|  
-|`Interface`|Volitelné. Definuje rozhraní, které je vnořené v rámci tohoto rozhraní. Definice vnořeného rozhraní musí končit příkazem `End Interface`.|  
-|`Class`|Volitelné. Definuje třídu, která je členem rozhraní. Definice členské třídy musí končit příkazem `End Class`.|  
-|`Structure`|Volitelné. Definuje strukturu, která je členem rozhraní. Definice struktury členů musí být ukončena příkazem `End Structure`.|  
-|`membername`|Požadováno pro každou vlastnost, proceduru, událost, rozhraní, třídu nebo strukturu definovanou jako člen rozhraní. Název člena.|  
-|`End Interface`|Ukončí definici `Interface`.|  
+|`attributelist`|Volitelné. See [Attribute List](../../../visual-basic/language-reference/statements/attribute-list.md).|  
+|`accessmodifier`|Volitelné. Can be one of the following:<br /><br /> -   [Public](../../../visual-basic/language-reference/modifiers/public.md)<br />-   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [Private](../../../visual-basic/language-reference/modifiers/private.md)<br />-  [Protected Friend](../../language-reference/modifiers/protected-friend.md)<br/>- [Private Protected](../../language-reference/modifiers/private-protected.md)<br /><br /> See [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).|  
+|`Shadows`|Volitelné. See [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md).|  
+|`name`|Požadováno. Name of this interface. See [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|  
+|`Of`|Volitelné. Specifies that this is a generic interface.|  
+|`typelist`|Required if you use the [Of](../../../visual-basic/language-reference/statements/of-clause.md) keyword. List of type parameters for this interface. Optionally, each type parameter can be declared variant by using `In` and `Out` generic modifiers. See [Type List](../../../visual-basic/language-reference/statements/type-list.md).|  
+|`Inherits`|Volitelné. Indicates that this interface inherits the attributes and members of another interface or interfaces. See [Inherits Statement](../../../visual-basic/language-reference/statements/inherits-statement.md).|  
+|`interfacenames`|Required if you use the `Inherits` statement. The names of the interfaces from which this interface derives.|  
+|`modifiers`|Volitelné. Appropriate modifiers for the interface member being defined.|  
+|`Property`|Volitelné. Defines a property that is a member of the interface.|  
+|`Function`|Volitelné. Defines a `Function` procedure that is a member of the interface.|  
+|`Sub`|Volitelné. Defines a `Sub` procedure that is a member of the interface.|  
+|`Event`|Volitelné. Defines an event that is a member of the interface.|  
+|`Interface`|Volitelné. Defines an interface that is a nested within this interface. The nested interface definition must terminate with an `End Interface` statement.|  
+|`Class`|Volitelné. Defines a class that is a member of the interface. The member class definition must terminate with an `End Class` statement.|  
+|`Structure`|Volitelné. Defines a structure that is a member of the interface. The member structure definition must terminate with an `End Structure` statement.|  
+|`membername`|Required for each property, procedure, event, interface, class, or structure defined as a member of the interface. The name of the member.|  
+|`End Interface`|Terminates the `Interface` definition.|  
   
 ## <a name="remarks"></a>Poznámky  
- *Rozhraní* definuje sadu členů, jako jsou například vlastnosti a postupy, které mohou implementovat třídy a struktury. Rozhraní definuje pouze podpisy členů a nikoli jejich interní úkoly.  
+ An *interface* defines a set of members, such as properties and procedures, that classes and structures can implement. The interface defines only the signatures of the members and not their internal workings.  
   
- Třída nebo struktura implementuje rozhraní zadáním kódu pro každého člena definovaného rozhraním. Nakonec, když aplikace vytvoří instanci z této třídy nebo struktury, objekt existuje a spustí se v paměti. Další informace naleznete v tématu [objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md) a [rozhraní](../../../visual-basic/programming-guide/language-features/interfaces/index.md).  
+ A class or structure implements the interface by supplying code for every member defined by the interface. Finally, when the application creates an instance from that class or structure, an object exists and runs in memory. For more information, see [Objects and Classes](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md) and [Interfaces](../../../visual-basic/programming-guide/language-features/interfaces/index.md).  
   
- @No__t_0 můžete použít jenom na úrovni oboru názvů nebo modulu. To znamená, že *kontext deklarace* pro rozhraní musí být zdrojový soubor, obor názvů, třída, struktura, modul nebo rozhraní a nemůže být procedura nebo blok. Další informace najdete v tématu [deklarace kontextů a výchozích úrovní přístupu](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).  
+ You can use `Interface` only at namespace or module level. This means the *declaration context* for an interface must be a source file, namespace, class, structure, module, or interface, and cannot be a procedure or block. For more information, see [Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).  
   
- Ve výchozím nastavení rozhraní [přítel](../../../visual-basic/language-reference/modifiers/friend.md) přístup. Můžete upravit jejich úrovně přístupu modifikátory přístupu. Další informace najdete v tématu [úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+ Interfaces default to [Friend](../../../visual-basic/language-reference/modifiers/friend.md) access. You can adjust their access levels with the access modifiers. For more information, see [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
-## <a name="rules"></a>Pravidly  
+## <a name="rules"></a>Rules  
   
-- **Vnořování rozhraní.** Můžete definovat jedno rozhraní v rámci jiného. Vnější rozhraní se nazývá *obsahující rozhraní*a vnitřní rozhraní se nazývá *vnořené rozhraní*.  
+- **Nesting Interfaces.** You can define one interface within another. The outer interface is called the *containing interface*, and the inner interface is called a *nested interface*.  
   
-- **Deklarace člena** Při deklaraci vlastnosti nebo procedury jako člena rozhraní definujete pouze *podpis* této vlastnosti nebo procedury. To zahrnuje typ elementu (vlastnost nebo procedura), jeho parametry a typy parametrů a jeho návratový typ. Z tohoto důvodu definice členů používá pouze jeden řádek kódu a ukončovací příkazy, jako `End Function` nebo `End Property`, nejsou v rozhraní platné.  
+- **Member Declaration.** When you declare a property or procedure as a member of an interface, you are defining only the *signature* of that property or procedure. This includes the element type (property or procedure), its parameters and parameter types, and its return type. Because of this, the member definition uses only one line of code, and terminating statements such as `End Function` or `End Property` are not valid in an interface.  
   
-     Naproti tomu, při definování výčtu nebo struktury, nebo vnořené třídy nebo rozhraní, je nutné zahrnout jejich datové členy.  
+     In contrast, when you define an enumeration or structure, or a nested class or interface, it is necessary to include their data members.  
   
-- **Modifikátory členů.** Při definování členů modulu nelze použít žádné modifikátory přístupu, ani nelze zadat [Shared](../../../visual-basic/language-reference/modifiers/shared.md) ani modifikátory procedury s výjimkou [přetížení](../../../visual-basic/language-reference/modifiers/overloads.md). Můžete deklarovat libovolného člena pomocí [stínů](../../../visual-basic/language-reference/modifiers/shadows.md)a můžete použít [výchozí](../../../visual-basic/language-reference/modifiers/default.md) při definování vlastnosti a také [jen pro čtení](../../../visual-basic/language-reference/modifiers/readonly.md) nebo [WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md).  
+- **Member Modifiers.** You cannot use any access modifiers when defining module members, nor can you specify [Shared](../../../visual-basic/language-reference/modifiers/shared.md) or any procedure modifier except [Overloads](../../../visual-basic/language-reference/modifiers/overloads.md). You can declare any member with [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md), and you can use [Default](../../../visual-basic/language-reference/modifiers/default.md) when defining a property, as well as [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md) or [WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md).  
   
-- **Dědičnost.** Pokud rozhraní používá [příkaz Inherits](../../../visual-basic/language-reference/statements/inherits-statement.md), můžete zadat jedno nebo více základních rozhraní. Můžete Zdědit ze dvou rozhraní i v případě, že každý definuje člena se stejným názvem. Pokud to uděláte, implementace kódu musí použít kvalifikaci názvu k určení, který člen implementuje.  
+- **Inheritance.** If the interface uses the [Inherits Statement](../../../visual-basic/language-reference/statements/inherits-statement.md), you can specify one or more base interfaces. You can inherit from two interfaces even if they each define a member with the same name. If you do so, the implementing code must use name qualification to specify which member it is implementing.  
   
-     Rozhraní nemůže dědit z jiného rozhraní s více omezující úrovní přístupu. Rozhraní `Public` například nemůže dědit z rozhraní `Friend`.  
+     An interface cannot inherit from another interface with a more restrictive access level. For example, a `Public` interface cannot inherit from a `Friend` interface.  
   
-     Rozhraní nemůže dědit z rozhraní, které je v něm vnořené.  
+     An interface cannot inherit from an interface nested within it.  
   
-- **Provádění.** Pokud třída používá příkaz [Implements](../../../visual-basic/language-reference/statements/implements-clause.md) pro implementaci tohoto rozhraní, musí implementovat každého člena definovaného v rámci rozhraní. Kromě toho každý podpis v implementaci kódu musí přesně odpovídat odpovídajícímu podpisu definovanému v tomto rozhraní. Název členu v implementaci kódu však nemusí odpovídat názvu člena, jak je definován v rozhraní.  
+- **Implementation.** When a class uses the [Implements](../../../visual-basic/language-reference/statements/implements-clause.md) statement to implement this interface, it must implement every member defined within the interface. Furthermore, each signature in the implementing code must exactly match the corresponding signature defined in this interface. However, the name of the member in the implementing code does not have to match the member name as defined in the interface.  
   
-     Když třída implementuje proceduru, nemůže určit proceduru jako `Shared`.  
+     When a class is implementing a procedure, it cannot designate the procedure as `Shared`.  
   
-- **Výchozí vlastnost.** Rozhraní může zadat maximálně jednu vlastnost jako *výchozí vlastnost*, na kterou se dá odkazovat bez použití názvu vlastnosti. Tuto vlastnost určíte tak, že ji deklarujete s [výchozím](../../../visual-basic/language-reference/modifiers/default.md) modifikátorem.  
+- **Default Property.** An interface can specify at most one property as its *default property*, which can be referenced without using the property name. You specify such a property by declaring it with the [Default](../../../visual-basic/language-reference/modifiers/default.md) modifier.  
   
-     Všimněte si, že rozhraní může definovat výchozí vlastnost pouze v případě, že je děděna není.  
+     Notice that this means that an interface can define a default property only if it inherits none.  
   
-## <a name="behavior"></a>Předvídatelně  
+## <a name="behavior"></a>Behavior  
   
-- **Úroveň přístupu.** Všechny členy rozhraní mají implicitně [veřejný](../../../visual-basic/language-reference/modifiers/public.md) přístup. Při definování člena nelze použít žádný modifikátor přístupu. Třída implementující rozhraní však může deklarovat úroveň přístupu pro každého implementovaného člena.  
+- **Access Level.** All interface members implicitly have [Public](../../../visual-basic/language-reference/modifiers/public.md) access. You cannot use any access modifier when defining a member. However, a class implementing the interface can declare an access level for each implemented member.  
   
-     Pokud přiřadíte instanci třídy proměnné, úroveň přístupu jeho členů může záviset na tom, zda je datovým typem proměnné základní rozhraní nebo implementující třída. Toto dokládá následující příklad.  
+     If you assign a class instance to a variable, the access level of its members can depend on whether the data type of the variable is the underlying interface or the implementing class. Toto dokládá následující příklad.  
   
      [!code-vb[VbVbalrStatements#39](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#39)]  
   
-     Pokud přistupujete ke členům třídy prostřednictvím `varAsInterface`, všichni mají veřejný přístup. Pokud však ke členům přistupujete prostřednictvím `varAsClass`, má `Sub` procedura `doSomething` privátní přístup.  
+     If you access class members through `varAsInterface`, they all have public access. However, if you access members through `varAsClass`, the `Sub` procedure `doSomething` has private access.  
   
-- **Oboru.** Rozhraní je v rozsahu celého oboru názvů, třídy, struktury nebo modulu.  
+- **Scope.** An interface is in scope throughout its namespace, class, structure, or module.  
   
-     Rozsah každého člena rozhraní je celé rozhraní.  
+     The scope of every interface member is the entire interface.  
   
-- **Platné.** Rozhraní samo o sobě nemá dobu života ani jeho členy. Když třída implementuje rozhraní a objekt je vytvořen jako instance této třídy, má objekt životnost v rámci aplikace, ve které je spuštěna. Další informace naleznete v části "doba života" v [příkazu třídy](../../../visual-basic/language-reference/statements/class-statement.md).  
+- **Lifetime.** An interface does not itself have a lifetime, nor do its members. When a class implements an interface and an object is created as an instance of that class, the object has a lifetime within the application in which it is running. For more information, see "Lifetime" in [Class Statement](../../../visual-basic/language-reference/statements/class-statement.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá příkaz `Interface` k definování rozhraní s názvem `thisInterface`, které musí být implementovány pomocí příkazu `Property` a příkazu `Function`.  
+ The following example uses the `Interface` statement to define an interface named `thisInterface`, which must be implemented with a `Property` statement and a `Function` statement.  
   
  [!code-vb[VbVbalrStatements#40](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#40)]  
   
- Všimněte si, že příkazy `Property` a `Function` nezavádějí bloky končící `End Property` a `End Function` v rámci rozhraní. Rozhraní definuje pouze signatury svých členů. Všechny bloky `Property` a `Function` se zobrazí ve třídě, která implementuje `thisInterface`.  
+ Note that the `Property` and `Function` statements do not introduce blocks ending with `End Property` and `End Function` within the interface. The interface defines only the signatures of its members. The full `Property` and `Function` blocks appear in a class that implements `thisInterface`.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -121,7 +121,7 @@ End Interface
 - [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)
 - [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)
 - [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)
-- [Obecné typy v Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [Generic Types in Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
 - [Odchylky obecných rozhraní](../../programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)
-- [Pro](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md)
-- [Mimo](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)
+- [In](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md)
+- [Out](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)

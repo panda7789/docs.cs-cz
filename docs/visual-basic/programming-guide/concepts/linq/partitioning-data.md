@@ -1,58 +1,58 @@
 ---
-title: Dělení dat (Visual Basic)
+title: Segmentace dat
 ms.date: 07/20/2015
 ms.assetid: 69c59379-b66e-422c-b324-5b5c07760ef7
-ms.openlocfilehash: 2da63a1f6b73c8592d6036a90fa374a0d4385f4c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2ab4e27ef6d825b9100fc3c15b7a9554ae49e516
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61665895"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353156"
 ---
-# <a name="partitioning-data-visual-basic"></a>Dělení dat (Visual Basic)
-Vytváření oddílů v technologii LINQ odkazuje na operaci dělení vstupní sekvence na dva oddíly bez uspořádání prvků a vrácení jednoho z částí.  
+# <a name="partitioning-data-visual-basic"></a>Partitioning Data (Visual Basic)
+Partitioning in LINQ refers to the operation of dividing an input sequence into two sections, without rearranging the elements, and then returning one of the sections.  
   
- Následující obrázek znázorňuje výsledky tři různé dělení operace na sekvenci znaků. První operace vrátí první tři prvky v sekvenci. Druhou operaci přeskočí první tři prvky a vrátí zbývající prvky. Třetí operace přeskočí první dva prvky v pořadí a vrátí následující tři elementy.  
+ The following illustration shows the results of three different partitioning operations on a sequence of characters. The first operation returns the first three elements in the sequence. The second operation skips the first three elements and returns the remaining elements. The third operation skips the first two elements in the sequence and returns the next three elements.  
   
- ![Obrázek, který ukazuje tři operace dělení LINQ.](./media/partitioning-data/linq-partitioning-operations.png)  
+ ![Illustration that shows three LINQ partitioning operations.](./media/partitioning-data/linq-partitioning-operations.png)  
   
- V následující části jsou uvedeny standardní metody operátoru dotazu, které oddílu pořadí.  
+ The standard query operator methods that partition sequences are listed in the following section.  
   
 ## <a name="operators"></a>Operátory  
   
-|Název operátoru|Popis|Syntaxe výrazu dotazu jazyka Visual Basic|Další informace|  
+|Název operátoru|Popis|Visual Basic Query Expression Syntax|Další informace|  
 |-------------------|-----------------|------------------------------------------|----------------------|  
-|Skip|Přeskočí elementy až do zadané pozice v pořadí.|`Skip`|<xref:System.Linq.Enumerable.Skip%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Skip%2A?displayProperty=nameWithType>|  
-|SkipWhile –|Vynechává prvky podle funkce predikátu, dokud element nesplňuje podmínku.|`Skip While`|<xref:System.Linq.Enumerable.SkipWhile%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.SkipWhile%2A?displayProperty=nameWithType>|  
-|Take|Získá prvků až do zadané pozice v pořadí.|`Take`|<xref:System.Linq.Enumerable.Take%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Take%2A?displayProperty=nameWithType>|  
-|TakeWhile –|Přijímá prvky podle funkce predikátu, dokud element nesplňuje podmínku.|`Take While`|<xref:System.Linq.Enumerable.TakeWhile%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.TakeWhile%2A?displayProperty=nameWithType>|  
+|Skip|Skips elements up to a specified position in a sequence.|`Skip`|<xref:System.Linq.Enumerable.Skip%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Skip%2A?displayProperty=nameWithType>|  
+|SkipWhile|Skips elements based on a predicate function until an element does not satisfy the condition.|`Skip While`|<xref:System.Linq.Enumerable.SkipWhile%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.SkipWhile%2A?displayProperty=nameWithType>|  
+|Take|Takes elements up to a specified position in a sequence.|`Take`|<xref:System.Linq.Enumerable.Take%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Take%2A?displayProperty=nameWithType>|  
+|TakeWhile|Takes elements based on a predicate function until an element does not satisfy the condition.|`Take While`|<xref:System.Linq.Enumerable.TakeWhile%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.TakeWhile%2A?displayProperty=nameWithType>|  
   
-## <a name="query-expression-syntax-examples"></a>Příklady syntaxe výrazů dotazů  
+## <a name="query-expression-syntax-examples"></a>Query Expression Syntax Examples  
   
 ### <a name="skip"></a>Skip  
- Následující příklad kódu používá `Skip` klauzule v jazyce Visual Basic mají přeskočit první čtyři řetězce v poli řetězců před vrácením zbývající řetězce v poli.  
+ The following code example uses the `Skip` clause in Visual Basic to skip over the first four strings in an array of strings before returning the remaining strings in the array.  
   
  [!code-vb[CsLINQPartitioning#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/CsLINQPartitioning/VB/Partitioning.vb#1)]  
   
-### <a name="skipwhile"></a>SkipWhile –  
- Následující příklad kódu používá `Skip While` klauzule v jazyce Visual Basic mají přeskočit řetězce v poli je první písmeno řetězce "a". Zbývající řetězce v poli jsou vráceny.  
+### <a name="skipwhile"></a>SkipWhile  
+ The following code example uses the `Skip While` clause in Visual Basic to skip over the strings in an array while the first letter of the string is "a". The remaining strings in the array are returned.  
   
  [!code-vb[CsLINQPartitioning#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/CsLINQPartitioning/VB/Partitioning.vb#2)]  
   
 ### <a name="take"></a>Take  
- Následující příklad kódu používá `Take` klauzule v jazyce Visual Basic se vraťte na první dva řetězce v poli řetězců.  
+ The following code example uses the `Take` clause in Visual Basic to return the first two strings in an array of strings.  
   
  [!code-vb[CsLINQPartitioning#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/CsLINQPartitioning/VB/Partitioning.vb#3)]  
   
-### <a name="takewhile"></a>TakeWhile –  
- Následující příklad kódu používá `Take While` klauzuli v jazyce Visual Basic k vrácení řetězce z pole Délka řetězce je pět nebo méně.  
+### <a name="takewhile"></a>TakeWhile  
+ The following code example uses the `Take While` clause in Visual Basic to return strings from an array while the length of the string is five or less.  
   
  [!code-vb[CsLINQPartitioning#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/CsLINQPartitioning/VB/Partitioning.vb#4)]  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Linq>
-- [Přehled standardních operátorů dotazu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
+- [Standard Query Operators Overview (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [Klauzule Skip](../../../../visual-basic/language-reference/queries/skip-clause.md)
 - [Klauzule Skip While](../../../../visual-basic/language-reference/queries/skip-while-clause.md)
 - [Klauzule Take](../../../../visual-basic/language-reference/queries/take-clause.md)

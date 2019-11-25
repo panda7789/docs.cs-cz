@@ -1,5 +1,5 @@
 ---
-title: Datový typ objektu (Visual Basic)
+title: Datový typ objektu
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Object
@@ -10,26 +10,26 @@ helpviewer_keywords:
 - Object data type
 - Object data type [Visual Basic], reference
 ms.assetid: 61ea4a7c-3b3d-48d4-adc4-eacfa91779b2
-ms.openlocfilehash: 1ac906494c49810e3d389591b1044f412e7320bc
-ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
+ms.openlocfilehash: 2ccb9b69b865c259d078ed9642d63c7f83514756
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68513052"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74343954"
 ---
 # <a name="object-data-type"></a>Datový typ objektu
 
-Obsahuje adresy, které odkazují na objekty. `Object` Proměnné můžete přiřadit libovolný typ odkazu (řetězec, pole, třída nebo rozhraní). Proměnná může také odkazovat na data libovolného typu hodnoty ( `Char`číselná, `Boolean` `Date`,,, struktura nebo výčet). `Object`
+Holds addresses that refer to objects. You can assign any reference type (string, array, class, or interface) to an `Object` variable. An `Object` variable can also refer to data of any value type (numeric, `Boolean`, `Char`, `Date`, structure, or enumeration).
 
 ## <a name="remarks"></a>Poznámky
 
-`Object` Datový typ může ukazovat na data libovolného datového typu, včetně jakékoli instance objektu, kterou vaše aplikace rozpoznává. Použijte `Object` , pokud v době kompilace neznáte, na jaký datový typ proměnné může odkazovat.
+The `Object` data type can point to data of any data type, including any object instance your application recognizes. Use `Object` when you do not know at compile time what data type the variable might point to.
 
-Výchozí hodnota `Object` je `Nothing` (odkaz s hodnotou null).
+The default value of `Object` is `Nothing` (a null reference).
 
 ## <a name="data-types"></a>Datové typy
 
-Proměnné, konstanty nebo výrazy libovolného datového typu `Object` můžete přiřadit proměnné. Chcete-li určit datový typ `Object` , na který proměnná aktuálně odkazuje, můžete <xref:System.Type.GetTypeCode%2A> použít metodu <xref:System.Type?displayProperty=nameWithType> třídy. Toto dokládá následující příklad.
+You can assign a variable, constant, or expression of any data type to an `Object` variable. To determine the data type an `Object` variable currently refers to, you can use the <xref:System.Type.GetTypeCode%2A> method of the <xref:System.Type?displayProperty=nameWithType> class. Toto dokládá následující příklad.
 
 ```vb
 Dim myObject As Object
@@ -38,31 +38,31 @@ Dim datTyp As Integer
 datTyp = Type.GetTypeCode(myObject.GetType())
 ```
 
-`Object` Datový typ je odkazový typ. Nicméně Visual Basic považuje `Object` proměnnou jako typ hodnoty, když odkazuje na data typu hodnoty.
+The `Object` data type is a reference type. However, Visual Basic treats an `Object` variable as a value type when it refers to data of a value type.
 
 ## <a name="storage"></a>Úložiště
 
-Libovolný datový typ, na který odkazuje, `Object` proměnná neobsahuje datovou hodnotu samotnou, ale spíše ukazatel na hodnotu. Vždycky používá čtyři bajty v paměti počítače, ale nezahrnuje úložiště dat, která představují hodnotu proměnné. Z důvodu kódu, který používá ukazatel k vyhledání dat, jsou proměnné `Object` , které mají typy hodnot, mírně pomalejší pro přístup, než explicitně typované proměnné.
+Whatever data type it refers to, an `Object` variable does not contain the data value itself, but rather a pointer to the value. It always uses four bytes in computer memory, but this does not include the storage for the data representing the value of the variable. Because of the code that uses the pointer to locate the data, `Object` variables holding value types are slightly slower to access than explicitly typed variables.
 
 ## <a name="programming-tips"></a>Tipy k programování
 
-- **Problematika spolupráce.** Pokud procházejíte s komponentami, které nejsou napsané pro .NET Framework, například automatizace nebo objekty COM, pamatujte, že typy ukazatelů v jiných prostředích nejsou kompatibilní s typem Visual Basic `Object` .
+- **Interop Considerations.** If you are interfacing with components not written for the .NET Framework, for example Automation or COM objects, keep in mind that pointer types in other environments are not compatible with the Visual Basic `Object` type.
 
-- **Výkon.** Proměnná, kterou deklarujete s `Object` typem, je dostatečně flexibilní, aby obsahovala odkaz na libovolný objekt. Nicméně pokud pro takovou proměnnou vyvoláte metodu nebo vlastnost, vždy se vám bude účtovat *pozdní vazba* (za běhu). Chcete-li vynutit *počáteční vazbu* (v době kompilace) a lepší výkon, deklarujte proměnnou pomocí konkrétního názvu třídy nebo ji přetypujte na konkrétní datový typ.
+- **Performance.** A variable you declare with the `Object` type is flexible enough to contain a reference to any object. However, when you invoke a method or property on such a variable, you always incur *late binding* (at run time). To force *early binding* (at compile time) and better performance, declare the variable with a specific class name, or cast it to the specific data type.
 
-  Pokud deklarujete proměnnou objektu, zkuste použít konkrétní typ třídy, <xref:System.OperatingSystem>například namísto `Object` zobecněného typu. Měli byste také použít nejvíce dostupné třídy, <xref:System.Windows.Forms.TextBox> jako je například <xref:System.Windows.Forms.Control>namísto, abyste měli přístup k jeho vlastnostem a metodám. Můžete obvykle použít seznam **třídy** v **Prohlížeč objektů** k vyhledání dostupných názvů tříd.
+  When you declare an object variable, try to use a specific class type, for example <xref:System.OperatingSystem>, instead of the generalized `Object` type. You should also use the most specific class available, such as <xref:System.Windows.Forms.TextBox> instead of <xref:System.Windows.Forms.Control>, so that you can access its properties and methods. You can usually use the **Classes** list in the **Object Browser** to find available class names.
 
-- **Rozšiřující.** Všechny datové typy a všechny typy odkazů se rozšíří na `Object` datový typ. To znamená, že můžete převést libovolný typ `Object` na bez výskytu <xref:System.OverflowException?displayProperty=nameWithType> chyby.
+- **Widening.** All data types and all reference types widen to the `Object` data type. This means you can convert any type to `Object` without encountering a <xref:System.OverflowException?displayProperty=nameWithType> error.
 
-  Nicméně pokud převedete mezi typy hodnot a `Object`, Visual Basic provádí operace s názvem zabalení a rozbalení, které provádějí zpracování pomaleji.
+  However, if you convert between value types and `Object`, Visual Basic performs operations called *boxing* and *unboxing*, which make execution slower.
 
-- **Znaky typu.** `Object`nemá žádný znak typu literálu nebo znak typu identifikátoru.
+- **Type Characters.** `Object` has no literal type character or identifier type character.
 
-- **Typ rozhraní.** Odpovídající typ v .NET Framework je <xref:System.Object?displayProperty=nameWithType> třída.
+- **Framework Type.** The corresponding type in the .NET Framework is the <xref:System.Object?displayProperty=nameWithType> class.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje `Object` proměnnou odkazující na instanci objektu.
+The following example illustrates an `Object` variable pointing to an object instance.
 
 ```vb
 Dim objDb As Object
@@ -78,5 +78,5 @@ objDb = myCollection.Item(1)
 - [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
 - [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)
 - [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
-- [Postupy: Určení, zda dva objekty souvisejí](../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-related.md)
-- [Postupy: Určení, zda jsou dva objekty identické](../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-identical.md)
+- [Postupy: Určení, zda dva objekty spolu souvisí](../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-related.md)
+- [Postupy: Určení, zda dva objekty jsou identické](../../../visual-basic/programming-guide/language-features/variables/how-to-determine-whether-two-objects-are-identical.md)

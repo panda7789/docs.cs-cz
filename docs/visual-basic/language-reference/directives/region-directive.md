@@ -1,5 +1,5 @@
 ---
-title: '#Region – direktiva (Visual Basic)'
+title: '#Region – direktiva'
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Region
@@ -10,15 +10,16 @@ helpviewer_keywords:
 - region directive (#region)
 - '#Region keyword [Visual Basic]'
 ms.assetid: 90a6a104-3cbf-47d0-bdc4-b585d0921b87
-ms.openlocfilehash: eaaf0f8279ec905767be3f364a88357f0d393bba
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4cf9b103486378d001b588aa285f590980b51bb8
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61812642"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74343795"
 ---
 # <a name="region-directive"></a>#Region – direktiva
-Sbalí a skryje části kódu v souborech Visual Basicu.  
+
+Collapses and hides sections of code in Visual Basic files.  
   
 ## <a name="syntax"></a>Syntaxe  
 
@@ -31,14 +32,16 @@ Sbalí a skryje části kódu v souborech Visual Basicu.
   
 |Termín|Definice|  
 |---|---|  
-|`identifier_string`|Povinný parametr. Řetězec, který funguje jako název oblasti, když je sbalené. Ve výchozím nastavení je sbalený oblastech.|  
-|`#End Region`|Ukončuje `#Region` bloku.|  
+|`identifier_string`|Požadováno. String that acts as the title of a region when it is collapsed. Regions are collapsed by default.|  
+|`#End Region`|Terminates the `#Region` block.|  
   
 ## <a name="remarks"></a>Poznámky  
- Použití `#Region` směrnice určit blok kódu, který rozbalit nebo sbalit při použití funkce sbalování z editoru kódu sady Visual Studio. Můžete umístit, nebo *vnořit*, oblastem v jiných oblastech, které chcete seskupit podobné oblastech.  
+
+ Use the `#Region` directive to specify a block of code to expand or collapse when using the outlining feature of the Visual Studio Code Editor. You can place, or *nest*, regions within other regions to group similar regions together.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu `#Region` směrnice.  
+
+ This example uses the `#Region` directive.  
   
  [!code-vb[VbVbalrConditionalComp#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrConditionalComp/VB/Class1.vb#4)]  
   

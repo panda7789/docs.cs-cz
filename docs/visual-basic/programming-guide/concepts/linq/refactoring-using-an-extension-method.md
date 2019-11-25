@@ -1,27 +1,27 @@
 ---
-title: Refaktoring pomocí metody rozšíření (Visual Basic)
+title: Refaktoring pomocí rozšiřující metody
 ms.date: 07/20/2015
 ms.assetid: d87ae99a-cfa9-4a31-a5e4-9d6437be6810
-ms.openlocfilehash: e6ed0e81a7139411507d8f3c16b34a50b2e7aebf
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 1045a649907f877bddd0ec2d8c0e5dfa2a5d0830
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834896"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346509"
 ---
-# <a name="refactoring-using-an-extension-method-visual-basic"></a>Refaktoring pomocí metody rozšíření (Visual Basic)
-Tento příklad sestaví v předchozím příkladu a [načítá text z odstavců (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md)refaktoringem zřetězení řetězců pomocí funkce Pure, která je implementována jako metoda rozšíření.  
+# <a name="refactoring-using-an-extension-method-visual-basic"></a>Refactoring Using an Extension Method (Visual Basic)
+This example builds on the previous example, [Retrieving the Text of the Paragraphs (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md), by refactoring the concatenation of strings using a pure function that is implemented as an extension method.  
   
- Předchozí příklad použil standardní operátor dotazu <xref:System.Linq.Enumerable.Aggregate%2A> k zřetězení více řetězců do jednoho řetězce. Je ale pohodlnější napsat metodu rozšíření k tomu, protože výsledný dotaz je menší a jednodušší.  
+ The previous example used the <xref:System.Linq.Enumerable.Aggregate%2A> standard query operator to concatenate multiple strings into one string. However, it is more convenient to write an extension method to do this, because the resulting query smaller and more simple.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad zpracovává dokument WordprocessingML, načítá odstavce, styl každého odstavce a text každého odstavce. Tento příklad sestaví na předchozích příkladech v tomto kurzu.  
+ This example processes a WordprocessingML document, retrieving the paragraphs, the style of each paragraph, and the text of each paragraph. This example builds on the previous examples in this tutorial.  
   
- Příklad obsahuje více přetížení metody `StringConcatenate`.  
+ The example contains multiple overloads of the `StringConcatenate` method.  
   
- Pokyny pro vytvoření zdrojového dokumentu pro tento příklad najdete v [tématu vytvoření zdrojového dokumentu XML pro Office Open (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
+ You can find instructions for creating the source document for this example in [Creating the Source Office Open XML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
   
- Tento příklad používá třídy ze sestavení WindowsBase. Používá typy v oboru názvů <xref:System.IO.Packaging?displayProperty=nameWithType>.  
+ This example uses classes from the WindowsBase assembly. It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.  
   
 ```vb  
 <System.Runtime.CompilerServices.Extension()> _  
@@ -65,9 +65,9 @@ End Function
 ```  
   
 ## <a name="example"></a>Příklad  
- Existují čtyři přetížení metody `StringConcatenate`. Jedno přetížení jednoduše převezme kolekci řetězců a vrátí jeden řetězec. Jiné přetížení může převzít kolekci libovolného typu a delegáta, který je projektem z typu Singleton, na řetězec. Existují dvě přetížení, která umožňují zadat řetězec oddělovače.  
+ There are four overloads of the `StringConcatenate` method. One overload simply takes a collection of strings and returns a single string. Another overload can take a collection of any type, and a delegate that projects from a singleton of the collection to a string. There are two more overloads that allow you to specify a separator string.  
   
- Následující kód používá všechna čtyři přetížení.  
+ The following code uses all four overloads.  
   
 ```vb  
 Dim numbers As String() = {"one", "two", "three"}  
@@ -80,7 +80,7 @@ Console.WriteLine("{0}", intNumbers.StringConcatenate(Function(i) i.ToString()))
 Console.WriteLine("{0}", intNumbers.StringConcatenate(Function(i) i.ToString(), ":"))  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ This example produces the following output:  
   
 ```console  
 onetwothree  
@@ -90,7 +90,7 @@ one:two:three:
 ```  
   
 ## <a name="example"></a>Příklad  
- Nyní lze příklad upravit tak, aby využil nové metody rozšíření:  
+ Now, the example can be modified to take advantage of the new extension method:  
   
 ```vb  
 Imports <xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">  
@@ -216,7 +216,7 @@ Module Module1
 End Module  
 ```  
   
- Tento příklad vytvoří následující výstup při použití v dokumentu popsaném v [tématu vytvoření zdrojového dokumentu XML pro Office Open (Visual Basic)](creating-the-source-office-open-xml-document.md).
+ This example produces the following output when applied to the document described in [Creating the Source Office Open XML Document (Visual Basic)](creating-the-source-office-open-xml-document.md).
   
 ```console  
 StyleName:Heading1 >Parsing WordprocessingML with LINQ to XML<  
@@ -236,14 +236,14 @@ StyleName:Normal ><
 StyleName:Code >Hello World<  
 ```  
   
- Všimněte si, že tento refaktoring je variantou refaktoringu do funkce Pure. V dalším tématu se dozvíte, jak podrobnější informace o faktorování čistě funkcí.  
+ Note that this refactoring is a variant of refactoring into a pure function. The next topic will introduce the idea of factoring into pure functions in more detail.  
   
 ## <a name="next-steps"></a>Další kroky  
- Následující příklad ukazuje, jak refaktorovat tento kód jiným způsobem pomocí funkce Pure:  
+ The next example shows how to refactor this code in another way, by using pure functions:  
   
-- [Refaktoring pomocí funkce Pure (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)  
+- [Refactoring Using a Pure Function (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Kurz: manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
-- [Refaktoring na čistě funkce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)
+- [Tutorial: Manipulating Content in a WordprocessingML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [Refactoring Into Pure Functions (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)

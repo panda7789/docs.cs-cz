@@ -1,5 +1,5 @@
 ---
-title: Deklarované názvy elementu (Visual Basic)
+title: Deklarované názvy elementu
 ms.date: 07/20/2015
 helpviewer_keywords:
 - declared elements [Visual Basic], case sensitivity
@@ -23,36 +23,36 @@ helpviewer_keywords:
 - names [Visual Basic], naming conventions
 - identifiers [Visual Basic], elements
 ms.assetid: 09d8843b-c0dc-4afe-9dab-87c439a69e66
-ms.openlocfilehash: 0ace2b13473db30a4500648a67f6ce34edf3e587
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: e8620517b934a5f1a97ea25c5a94c8b932bb47b2
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197557"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345435"
 ---
 # <a name="declared-element-names-visual-basic"></a>Deklarované názvy elementu (Visual Basic)
-Každý deklarovaný element má název, který se označuje také jako *identifikátor*, který kód používá pro odkazování na něj.  
+Every declared element has a name, also called an *identifier*, which is what the code uses to refer to it.  
   
-## <a name="rules"></a>Pravidly  
- Název elementu v Visual Basic musí splňovat následující pravidla:  
+## <a name="rules"></a>Rules  
+ An element name in Visual Basic must observe the following rules:  
   
-- Musí začínat znakem abecedy nebo podtržítkem (`_`).  
+- It must begin with an alphabetic character or an underscore (`_`).  
   
-- Musí obsahovat jenom abecední znaky, desítkové číslice a podtržítka.  
+- It must only contain alphabetic characters, decimal digits, and underscores.  
   
-- Musí obsahovat alespoň jeden abecední znak nebo desítkovou číslici, pokud začíná podtržítkem.  
+- It must contain at least one alphabetic character or decimal digit if it begins with an underscore.  
   
-- Nesmí být delší než 1023 znaků.  
+- It must not be more than 1023 characters long.  
   
- Omezení délky 1023 znaků platí také pro celý řetězec plně kvalifikovaného názvu, například `outerNamespace.middleNamespace.innerNamespace.thisClass.thisElement`.  
+ The length limit of 1023 characters also applies to the entire string of a fully qualified name, such as `outerNamespace.middleNamespace.innerNamespace.thisClass.thisElement`.  
   
- Následující příklad ukazuje některé platné názvy elementů.  
+ The following example shows some valid element names.  
   
  `aB123__45`  
   
  `_567`  
   
- Následující příklad ukazuje některé neplatné názvy elementů. První obsahuje pouze podtržítko, druhý začíná desítkovou číslicí a třetí obsahuje neplatný znak ($).  
+ The following example shows some invalid element names. The first contains only an underscore, the second begins with a decimal digit, and the third contains an invalid character ($).  
   
  `' Three INVALID element names`  
   
@@ -63,31 +63,31 @@ Každý deklarovaný element má název, který se označuje také jako *identif
  `xyz$wv`  
   
 > [!CAUTION]
-> Názvy elementů začínající podtržítkem (`_`) nejsou součástí nezávislého [jazyka a jazykově nezávislých komponent](../../../../standard/language-independence-and-language-independent-components.md) (CLS), takže kód kompatibilní se specifikací CLS nemůže použít komponentu, která tyto názvy definuje. Podtržítko na jakékoli jiné pozici v názvu elementu však je kompatibilní se specifikací CLS.  
+> Element names starting with an underscore (`_`) are not part of the [Language Independence and Language-Independent Components](../../../../standard/language-independence-and-language-independent-components.md) (CLS), so CLS-compliant code cannot use a component that defines such names. However, an underscore in any other position in an element name is CLS-compliant.  
   
-### <a name="name-length-guidelines"></a>Pokyny pro délku názvu  
- V důsledku praktického hlediska by mělo být vaše jméno co nejkratší, přičemž stále jasně identifikujete povahu prvku. To zlepšuje čitelnost kódu a zkracuje délku řádku a velikost zdrojového souboru.  
+### <a name="name-length-guidelines"></a>Name Length Guidelines  
+ As a practical matter, your name should be as short as possible while still clearly identifying the nature of the element. This improves the readability of your code and reduces line length and source-file size.  
   
- Na druhé straně vaše jméno by nemělo být tak krátké, že není dostatečně důležité, co element představuje a jak ho váš kód používá. To je důležité pro čitelnost kódu. Pokud se někdo jiný snaží ho pochopit, nebo pokud si ho po jeho zapsání sami napíšete, můžete vhodný název prvku ušetřit značnou dobu.  
+ On the other hand, your name should not be so short that it does not adequately describe what the element represents and how your code uses it. This is important for the readability of your code. If somebody else is trying to understand it, or if you yourself are looking at it a long time after you wrote it, suitable element names can save a considerable amount of time.  
   
-## <a name="escaped-names"></a>Řídicí názvy  
- Obecně platí, že název elementu nesmí odpovídat žádnému z klíčových slov rezervovaných Visual Basic, například `Case` nebo `Friend`. Můžete ale definovat *řídicí název*, který je uzavřený hranatými závorkami (`[ ]`). Název řídicího panelu může odpovídat libovolnému klíčovému slovu Visual Basic, protože hranaté závorky odstraňují jakoukoli nejednoznačnost. Hranaté závorky můžete použít také při odkazování na název později v kódu.  
+## <a name="escaped-names"></a>Escaped Names  
+ Generally, an element name must not match any of the keywords reserved by Visual Basic, such as `Case` or `Friend`. However, you can define an *escaped name*, which is enclosed by brackets (`[ ]`). An escaped name can match any Visual Basic keyword, since the brackets remove any ambiguity. You also use the brackets when you refer to the name later in your code.  
   
- Obecně byste měli používat řídicí názvy pouze v případě, že:  
+ In general, you should use escaped names only when:  
   
-- Váš kód se migruje z předchozí verze Visual Basic, která nerezervovala klíčové slovo, které se používá jako název; ani  
+- Your code has migrated from a previous version of Visual Basic that did not reserve the keyword being used as a name; or  
   
-- Pracujete s kódem napsaným v jiném jazyce, ve kterém dané klíčové slovo není rezervované.  
+- You are working with code written in another language in which the given keyword is not reserved.  
   
- V opačném případě byste měli zvážit přejmenování elementu, je-li jeho název v konfliktu s klíčovým slovem. Integrované vývojové prostředí (IDE) poskytuje snadný způsob, jak to provést. Další informace najdete v tématu [refaktoring](/visualstudio/ide/refactoring-in-visual-studio).  
+ Otherwise, you should consider renaming the element if its name conflicts with a keyword. The integrated development environment (IDE) provides an easy way to do this. For more information, see [Refactoring](/visualstudio/ide/refactoring-in-visual-studio).  
   
-## <a name="case-sensitivity-in-names"></a>Rozlišování velkých a malých písmen v názvech  
- Názvy elementů v Visual Basic rozlišují malá a velká písmena. To znamená, že když kompilátor Porovná dva názvy, které se liší pouze v abecedním případě, interpretuje je jako stejný název. Například se považuje za `ABC` a `abc`, aby odkazovaly na stejný deklarovaný element.  
+## <a name="case-sensitivity-in-names"></a>Case Sensitivity in Names  
+ Element names in Visual Basic are case-insensitive. This means that when the compiler compares two names that differ in alphabetic case only, it interprets them as the same name. For example, it considers `ABC` and `abc` to refer to the same declared element.  
   
- Modul CLR (Common Language Runtime) však používá vazby s rozlišováním velkých a malých písmen. Proto při vytváření sestavení nebo knihovny DLL a zpřístupnění pro jiná sestavení, vaše jména nebudou rozlišovat velká a malá písmena. Například pokud definujete třídu s prvkem s názvem `ABC`a další sestavení využívají třídu pomocí modulu CLR (Common Language Runtime), musí odkazovat na prvek jako `ABC`. Pokud následně znovu zkompilujete třídu a změníte název prvku na `abc`, ostatní sestavení, která používají vaši třídu, již nebudou mít k tomuto prvku přístup. Proto při vydání aktualizované verze sestavení byste neměli měnit abecední případ všech veřejných prvků.  
+ However, the common language runtime (CLR) uses case-sensitive binding. Therefore, when you produce an assembly or a DLL and make it available to other assemblies, your names are no longer case-insensitive. For example, if you define a class with an element called `ABC`, and other assemblies make use of your class through the common language runtime, they must refer to the element as `ABC`. If you subsequently recompile your class and change the element's name to `abc`, the other assemblies using your class could no longer access that element. Therefore, when you release an updated version of an assembly, you should not change the alphabetic case of any public elements.  
   
-## <a name="names-and-locales"></a>Názvy a národní prostředí  
- Porovnání názvů je nezávislé na národním prostředí. Pokud se dva názvy shodují v jednom národním prostředí, je zaručeno, že budou odpovídat ve všech národních prostředích.  
+## <a name="names-and-locales"></a>Names and Locales  
+ Comparison of names is independent of locale. If two names match in one locale, they are guaranteed to match in all locales.  
   
 ## <a name="see-also"></a>Viz také:
 

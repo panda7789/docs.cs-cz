@@ -9,15 +9,15 @@ helpviewer_keywords:
 - styles [WPF], TreeView
 - TreeView [WPF], styles and templates
 ms.assetid: a49adb77-0202-4caa-b94a-8bb110d7fa9a
-ms.openlocfilehash: f6dbe54324a5ad5e2f85719d819c035abfd644b1
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 45276d23380fe956fc3d59b90d5baae23ee8a7e2
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460182"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283635"
 ---
 # <a name="treeview-styles-and-templates"></a>TreeView – styly a šablony
-Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.TreeView>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [přizpůsobení vzhledu existujícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.TreeView>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
   
 ## <a name="treeview-parts"></a>Části prvku TreeView  
  Ovládací prvek <xref:System.Windows.Controls.TreeView> neobsahuje žádné pojmenované části.  
@@ -45,16 +45,16 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
   
 |Název VisualState|Název VisualStateGroup|Popis|  
 |----------------------|---------------------------|-----------------|  
-|Běžnou|CommonStates|Výchozí stav.|  
+|Normální|CommonStates|Výchozí stav.|  
 |MouseOver|CommonStates|Ukazatel myši je umístěn na <xref:System.Windows.Controls.TreeViewItem>.|  
-|Zabezpečen|CommonStates|<xref:System.Windows.Controls.TreeViewItem> je zakázaný.|  
+|Zakázáno|CommonStates|<xref:System.Windows.Controls.TreeViewItem> je zakázaný.|  
 |Zaměřil|FocusStates|<xref:System.Windows.Controls.TreeViewItem> má fokus.|  
 |Bez fokusu|FocusStates|<xref:System.Windows.Controls.TreeViewItem> nemá fokus.|  
 |Rozbalil|ExpansionStates|Ovládací prvek <xref:System.Windows.Controls.TreeViewItem> je rozbalený.|  
 |Sbalený|ExpansionStates|Ovládací prvek <xref:System.Windows.Controls.TreeViewItem> je sbalený.|  
 |HasItems|HasItemsStates|<xref:System.Windows.Controls.TreeViewItem> obsahuje položky.|  
 |Žádné položky|HasItemsStates|<xref:System.Windows.Controls.TreeViewItem> nemá položky.|  
-|Vyberte|SelectionStates|Je vybrána <xref:System.Windows.Controls.TreeViewItem>.|  
+|Vybráno|SelectionStates|Je vybrána <xref:System.Windows.Controls.TreeViewItem>.|  
 |SelectedInactive|SelectionStates|<xref:System.Windows.Controls.TreeViewItem> je vybrán, ale není aktivní.|  
 |Nevybrané|SelectionStates|Není vybrána <xref:System.Windows.Controls.TreeViewItem>.|  
 |Platné|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
@@ -79,4 +79,4 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
 - [Styly a šablony ovládacích prvků](control-styles-and-templates.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)
 - [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md)

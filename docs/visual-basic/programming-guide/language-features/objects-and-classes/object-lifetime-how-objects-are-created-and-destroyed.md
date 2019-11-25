@@ -1,5 +1,5 @@
 ---
-title: 'Doba života objektu: Vytváření a zničení objektů (Visual Basic)'
+title: 'Doba života objektu: Vytváření a zničení objektů'
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Constructor
@@ -22,82 +22,82 @@ helpviewer_keywords:
 - Sub Dispose destructor
 - garbage collection [Visual Basic], Visual Basic
 ms.assetid: f1ee8458-b156-44e0-9a8a-5dd171648cd8
-ms.openlocfilehash: 932f56a9a277360b11c551aaa1faf819f8e07fe6
-ms.sourcegitcommit: bbfcc913c275885381820be28f61efcf8e83eecc
+ms.openlocfilehash: 8d9647fa490077f9f6ef82f30eccc4d5ee271985
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/05/2019
-ms.locfileid: "68796670"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346110"
 ---
 # <a name="object-lifetime-how-objects-are-created-and-destroyed-visual-basic"></a>Doba života objektu: Vytváření a zničení objektů (Visual Basic)
 
-Instance třídy, objektu, je vytvořena pomocí `New` klíčového slova. Inicializační úlohy je často nutné provést u nových objektů před jejich použitím. Mezi běžné inicializační úlohy patří otevírání souborů, připojování k databázím a čtení hodnot klíčů registru. Visual Basic řídí inicializaci nových objektů pomocí procedur nazývaných *konstruktory* (speciální metody, které umožňují kontrolu při inicializaci).
+An instance of a class, an object, is created by using the `New` keyword. Initialization tasks often must be performed on new objects before they are used. Common initialization tasks include opening files, connecting to databases, and reading values of registry keys. Visual Basic controls the initialization of new objects using procedures called *constructors* (special methods that allow control over initialization).
 
-Poté, co objekt opustí rozsah, je vydaný modulem CLR (Common Language Runtime). Visual Basic řídí vydání systémových prostředků pomocí procedur nazývaných *destruktory*. Společně konstruktory a destruktory podporují vytváření robustních a předvídatelných knihoven tříd.
+After an object leaves scope, it is released by the common language runtime (CLR). Visual Basic controls the release of system resources using procedures called *destructors*. Together, constructors and destructors support the creation of robust and predictable class libraries.
 
-## <a name="using-constructors-and-destructors"></a>Použití konstruktorů a destruktorů
+## <a name="using-constructors-and-destructors"></a>Using Constructors and Destructors
 
-Konstruktory a destruktory řídí vytváření a zničení objektů. `Class_Initialize` `Class_Terminate` Procedury a v`Sub Finalize` Visual Basic Inicializuje a zničí objekty; nahrazují metody a použité v Visual Basic 6,0 a dřívějších verzích. `Sub New`
+Constructors and destructors control the creation and destruction of objects. The `Sub New` and `Sub Finalize` procedures in Visual Basic initialize and destroy objects; they replace the `Class_Initialize` and `Class_Terminate` methods used in Visual Basic 6.0 and earlier versions.
 
 ### <a name="sub-new"></a>Sub New
 
-`Sub New` Konstruktor lze spustit pouze jednou při vytvoření třídy. Nemůže být volána explicitně jinde než v prvním řádku kódu jiného konstruktoru ze stejné třídy nebo z odvozené třídy. Kromě toho kód v `Sub New` metodě se vždy spouští před jakýmkoli jiným kódem ve třídě. Visual Basic implicitně vytvoří `Sub New` konstruktor v době běhu, pokud explicitně `Sub New` nedefinujete proceduru pro třídu.
+The `Sub New` constructor can run only once when a class is created. It cannot be called explicitly anywhere other than in the first line of code of another constructor from either the same class or from a derived class. Furthermore, the code in the `Sub New` method always runs before any other code in a class. Visual Basic implicitly creates a `Sub New` constructor at run time if you do not explicitly define a `Sub New` procedure for a class.
 
-Chcete-li vytvořit konstruktor pro třídu, vytvořte proceduru s `Sub New` názvem kdekoli v definici třídy. Chcete-li vytvořit parametrizovaný konstruktor, zadejte názvy a datové typy argumentů `Sub New` stejným způsobem, jako byste určili argumenty pro jakékoli jiné procedury, jako v následujícím kódu:
+To create a constructor for a class, create a procedure named `Sub New` anywhere in the class definition. To create a parameterized constructor, specify the names and data types of arguments to `Sub New` just as you would specify arguments for any other procedure, as in the following code:
 
 [!code-vb[VbVbalrOOP#42](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/WhidbeyStuff.vb#42)]
 
-Konstruktory jsou často přetíženy, jak je uvedeno v následujícím kódu:
+Constructors are frequently overloaded, as in the following code:
 
 [!code-vb[VbVbalrOOP#116](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/WhidbeyStuff.vb#116)]
 
-Při definování třídy odvozené z jiné třídy musí být prvním řádkem konstruktoru volání konstruktoru základní třídy, pokud základní třída nemá přístupný konstruktor, který nepřijímá žádné parametry. Volání základní třídy, která obsahuje výše konstruktor, by například bylo `MyBase.New(s)`. V opačném případě je volitelná a Visual Basic runtime je implicitně volá. `MyBase.New`
+When you define a class derived from another class, the first line of a constructor must be a call to the constructor of the base class, unless the base class has an accessible constructor that takes no parameters. A call to the base class that contains the above constructor, for example, would be `MyBase.New(s)`. Otherwise, `MyBase.New` is optional, and the Visual Basic runtime calls it implicitly.
 
-Po napsání kódu pro volání konstruktoru nadřazeného objektu můžete do `Sub New` procedury přidat libovolný další inicializační kód. `Sub New`může přijmout argumenty při volání jako parametrizovaný konstruktor. Tyto parametry jsou předány z procedury, která volá konstruktor, `Dim AnObject As New ThisClass(X)`například.
+After you write the code to call the parent object's constructor, you can add any additional initialization code to the `Sub New` procedure. `Sub New` can accept arguments when called as a parameterized constructor. These parameters are passed from the procedure calling the constructor, for example, `Dim AnObject As New ThisClass(X)`.
 
-### <a name="sub-finalize"></a>Dílčí finalizace
+### <a name="sub-finalize"></a>Sub Finalize
 
-Před uvolněním objektů CLR automaticky volá `Finalize` metodu pro objekty, které `Sub Finalize` definují proceduru. `Finalize` Metoda může obsahovat kód, který musí být proveden těsně před tím, než je objekt zničen, například kód pro zavírání souborů a ukládání informací o stavu. Je k `Sub Finalize`dispozici mírné snížení výkonu, takže byste měli `Sub Finalize` definovat metodu pouze v případě, že je třeba objekty vydávat explicitně.
-
-> [!NOTE]
-> Systém uvolňování paměti v modulu CLR (a nemůže) Dispose nespravovaných *objektů*, objektů, které operační systém provádí přímo, mimo prostředí CLR. Důvodem je, že různé nespravované objekty musí být vyřazeny různými způsoby. Tyto informace nejsou přímo přidruženy k nespravovanému objektu; musí být nalezen v dokumentaci pro daný objekt. Třída, která používá nespravované objekty, musí být ve své `Finalize` metodě odstraněna.
-
-`Finalize` Destruktor je chráněná metoda, kterou lze volat pouze z třídy, do které patří, nebo z odvozených tříd. Systém volá `Finalize` automaticky, když dojde ke zničení objektu, takže byste neměli explicitně volat `Finalize` z nezávisle na `Finalize` implementaci odvozené třídy.
-
-Na rozdíl `Class_Terminate`od, který se spustí, jakmile je objekt nastaven na hodnotu Nothing, je obvykle zpoždění mezi objektem ztratí rozsah a při Visual Basic `Finalize` volání destruktoru. Visual Basic .NET umožňuje pro druhý druh destruktoru <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>, který lze explicitně vyvolat kdykoli, aby bylo možné okamžitě uvolnit prostředky.
+Before releasing objects, the CLR automatically calls the `Finalize` method for objects that define a `Sub Finalize` procedure. The `Finalize` method can contain code that needs to execute just before an object is destroyed, such as code for closing files and saving state information. There is a slight performance penalty for executing `Sub Finalize`, so you should define a `Sub Finalize` method only when you need to release objects explicitly.
 
 > [!NOTE]
-> `Finalize` Destruktor by neměl vyvolat výjimky, protože nemůže být zpracován aplikací a může způsobit ukončení aplikace.
+> The garbage collector in the CLR does not (and cannot) dispose of *unmanaged objects*, objects that the operating system executes directly, outside the CLR environment. This is because different unmanaged objects must be disposed of in different ways. That information is not directly associated with the unmanaged object; it must be found in the documentation for the object. A class that uses unmanaged objects must dispose of them in its `Finalize` method.
 
-### <a name="how-new-and-finalize-methods-work-in-a-class-hierarchy"></a>Jak fungují nové a finalizační metody v hierarchii tříd
+The `Finalize` destructor is a protected method that can be called only from the class it belongs to, or from derived classes. The system calls `Finalize` automatically when an object is destroyed, so you should not explicitly call `Finalize` from outside of a derived class's `Finalize` implementation.
 
-Pokaždé, když je vytvořena instance třídy, modul CLR (Common Language Runtime) se pokusí spustit proceduru s `New`názvem, pokud existuje v tomto objektu. `New`je typ procedury označované jako `constructor` , který se používá k inicializaci nových objektů před spuštěním jakéhokoli jiného kódu v objektu. `New` Konstruktor lze použít k otevření souborů, připojení k databázím, inicializaci proměnných a postarání o jakékoli další úkoly, které je třeba provést před použitím objektu.
+Unlike `Class_Terminate`, which executes as soon as an object is set to nothing, there is usually a delay between when an object loses scope and when Visual Basic calls the `Finalize` destructor. Visual Basic .NET allows for a second kind of destructor, <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType>, which can be explicitly called at any time to immediately release resources.
 
-Když je vytvořena instance odvozené třídy, nejprve se `Sub New` spustí konstruktor základní třídy následovaný konstruktory v odvozených třídách. K tomu dochází, protože první řádek kódu v `Sub New` konstruktoru používá syntaxi `MyBase.New()`pro volání konstruktoru třídy přímo nad sebe v hierarchii tříd. `Sub New` Konstruktor je poté volán pro každou třídu v hierarchii třídy, dokud není dosaženo konstruktoru pro základní třídu. V tomto okamžiku se spustí kód v konstruktoru základní třídy následovaný kódem v každém konstruktoru ve všech odvozených třídách a kód v nejvíce odvozených třídách je proveden jako poslední.
+> [!NOTE]
+> A `Finalize` destructor should not throw exceptions, because they cannot be handled by the application and can cause the application to terminate.
 
-![Snímek obrazovky znázorňující konstruktory a dědičnost hierarchií tříd](./media/object-lifetime-how-objects-are-created-and-destroyed/subnew-constructor-inheritance.gif)
+### <a name="how-new-and-finalize-methods-work-in-a-class-hierarchy"></a>How New and Finalize Methods Work in a Class Hierarchy
 
-Když objekt již není potřeba, modul CLR před uvolněním paměti <xref:System.Object.Finalize%2A> zavolá metodu pro daný objekt. <xref:System.Object.Finalize%2A> Metoda je `destructor` volána, protože provádí úlohy čištění, jako je například ukládání informací o stavu, zavírání souborů a připojení k databázím a další úkoly, které je nutné provést před uvolněním objektu.
+Whenever an instance of a class is created, the common language runtime (CLR) attempts to execute a procedure named `New`, if it exists in that object. `New` is a type of procedure called a `constructor` that is used to initialize new objects before any other code in an object executes. A `New` constructor can be used to open files, connect to databases, initialize variables, and take care of any other tasks that need to be done before an object can be used.
 
-![Snímek obrazovky znázorňující destruktor metody Finalize](./media/object-lifetime-how-objects-are-created-and-destroyed/finalize-method-destructor.gif)
+When an instance of a derived class is created, the `Sub New` constructor of the base class executes first, followed by constructors in derived classes. This happens because the first line of code in a `Sub New` constructor uses the syntax `MyBase.New()`to call the constructor of the class immediately above itself in the class hierarchy. The `Sub New` constructor is then called for each class in the class hierarchy until the constructor for the base class is reached. At that point, the code in the constructor for the base class executes, followed by the code in each constructor in all derived classes and the code in the most derived classes is executed last.
 
-## <a name="idisposable-interface"></a>Rozhraní IDisposable
+![Screenshot showing class hierarchy constructors and inheritance.](./media/object-lifetime-how-objects-are-created-and-destroyed/subnew-constructor-inheritance.gif)
 
-Instance tříd často ovládají prostředky nespravované modulem CLR, jako jsou například popisovače systému Windows a databázová připojení. Tyto prostředky musí být vyřazeny z `Finalize` metody třídy, aby byly uvolněny, když je objekt zničen systémem uvolňování paměti. Systém uvolňování paměti však zničí objekty pouze v případě, že modul CLR vyžaduje více volné paměti. To znamená, že prostředky nemusejí být uvolněny až do doby, kdy se objekt dostane mimo rozsah.
+When an object is no longer needed, the CLR calls the <xref:System.Object.Finalize%2A> method for that object before freeing its memory. The <xref:System.Object.Finalize%2A> method is called a `destructor` because it performs cleanup tasks, such as saving state information, closing files and connections to databases, and other tasks that must be done before releasing the object.
 
-Pro doplňování uvolňování paměti vaše třídy mohou poskytnout mechanismus pro aktivně spravovat systémové prostředky, pokud implementují <xref:System.IDisposable> rozhraní. <xref:System.IDisposable>má jednu metodu, <xref:System.IDisposable.Dispose%2A>která by klienti měli zavolat při dokončení používání objektu. Tuto <xref:System.IDisposable.Dispose%2A> metodu můžete použít k okamžitému vydání prostředků a provádění úloh, jako je zavření souborů a připojení k databázi. `Finalize` Na<xref:System.IDisposable.Dispose%2A> rozdíl od destruktoru není metoda volána automaticky. Klienti třídy musí explicitně volat <xref:System.IDisposable.Dispose%2A> , pokud chcete ihned uvolnit prostředky.
+![Screenshot showing the Finalize method destructor.](./media/object-lifetime-how-objects-are-created-and-destroyed/finalize-method-destructor.gif)
 
-### <a name="implementing-idisposable"></a>Implementace rozhraní IDisposable
+## <a name="idisposable-interface"></a>IDisposable Interface
 
-Třída, která implementuje <xref:System.IDisposable> rozhraní, by měla obsahovat tyto části kódu:
+Class instances often control resources not managed by the CLR, such as Windows handles and database connections. These resources must be disposed of in the `Finalize` method of the class, so that they will be released when the object is destroyed by the garbage collector. However, the garbage collector destroys objects only when the CLR requires more free memory. This means that the resources may not be released until long after the object goes out of scope.
 
-- Pole pro udržení přehledu o tom, zda byl objekt vyřazen:
+To supplement garbage collection, your classes can provide a mechanism to actively manage system resources if they implement the <xref:System.IDisposable> interface. <xref:System.IDisposable> has one method, <xref:System.IDisposable.Dispose%2A>, which clients should call when they finish using an object. You can use the <xref:System.IDisposable.Dispose%2A> method to immediately release resources and perform tasks such as closing files and database connections. Unlike the `Finalize` destructor, the <xref:System.IDisposable.Dispose%2A> method is not called automatically. Clients of a class must explicitly call <xref:System.IDisposable.Dispose%2A> when you want to immediately release resources.
+
+### <a name="implementing-idisposable"></a>Implementing IDisposable
+
+A class that implements the <xref:System.IDisposable> interface should include these sections of code:
+
+- A field for keeping track of whether the object has been disposed:
 
   ```vb
   Protected disposed As Boolean = False
   ```
 
-- Přetížení <xref:System.IDisposable.Dispose%2A> , které uvolňuje prostředky třídy. Tato metoda by měla být volána <xref:System.IDisposable.Dispose%2A> metodami a `Finalize` základní třídou:
+- An overload of the <xref:System.IDisposable.Dispose%2A> that frees the class's resources. This method should be called by the <xref:System.IDisposable.Dispose%2A> and `Finalize` methods of the base class:
 
   ```vb
   Protected Overridable Sub Dispose(ByVal disposing As Boolean)
@@ -111,7 +111,7 @@ Třída, která implementuje <xref:System.IDisposable> rozhraní, by měla obsah
   End Sub
   ```
 
-- Implementace <xref:System.IDisposable.Dispose%2A> obsahující pouze následující kód:
+- An implementation of <xref:System.IDisposable.Dispose%2A> that contains only the following code:
 
   ```vb
   Public Sub Dispose() Implements IDisposable.Dispose
@@ -120,7 +120,7 @@ Třída, která implementuje <xref:System.IDisposable> rozhraní, by měla obsah
   End Sub
   ```
 
-- Přepsání `Finalize` metody, která obsahuje pouze následující kód:
+- An override of the `Finalize` method that contains only the following code:
 
   ```vb
   Protected Overrides Sub Finalize()
@@ -129,9 +129,9 @@ Třída, která implementuje <xref:System.IDisposable> rozhraní, by měla obsah
   End Sub
   ```
 
-### <a name="deriving-from-a-class-that-implements-idisposable"></a>Odvození od třídy, která implementuje rozhraní IDisposable
+### <a name="deriving-from-a-class-that-implements-idisposable"></a>Deriving from a Class that Implements IDisposable
 
-Třída, která je odvozena ze základní třídy, která implementuje <xref:System.IDisposable> rozhraní, nemusí přepsat žádnou základní metodu, pokud nepoužívá další prostředky, které je třeba uvolnit. V takovém případě by měla odvozená třída přepsat `Dispose(disposing)` metodu základní třídy pro uvolnění prostředků odvozené třídy. Toto přepsání musí volat `Dispose(disposing)` metodu základní třídy.
+A class that derives from a base class that implements the <xref:System.IDisposable> interface does not need to override any of the base methods unless it uses additional resources that need to be disposed. In that situation, the derived class should override the base class's `Dispose(disposing)` method to dispose of the derived class's resources. This override must call the base class's `Dispose(disposing)` method.
 
 ```vb
 Protected Overrides Sub Dispose(ByVal disposing As Boolean)
@@ -145,20 +145,20 @@ Protected Overrides Sub Dispose(ByVal disposing As Boolean)
 End Sub
 ```
 
-Odvozená třída by neměla přepsat základní třídu <xref:System.IDisposable.Dispose%2A> a `Finalize` metody. Pokud jsou tyto metody volány z instance odvozené třídy, implementace těchto metod základní třídy volá přepsání `Dispose(disposing)` metody odvozené třídy.
+A derived class should not override the base class's <xref:System.IDisposable.Dispose%2A> and `Finalize` methods. When those methods are called from an instance of the derived class, the base class's implementation of those methods call the derived class's override of the `Dispose(disposing)` method.
 
-## <a name="garbage-collection-and-the-finalize-destructor"></a>Uvolňování paměti a destruktor Finalize
+## <a name="garbage-collection-and-the-finalize-destructor"></a>Garbage Collection and the Finalize Destructor
 
-.NET Framework používá systém *uvolňování paměti pro trasování odkazů* k pravidelnému uvolňování nepoužívaných prostředků. Visual Basic 6,0 a starší verze používaly pro správu prostředků jiný systém nazvaný *počítání odkazů* . I když oba systémy provádějí stejnou funkci automaticky, existuje několik důležitých rozdílů.
+The .NET Framework uses the *reference-tracing garbage collection* system to periodically release unused resources. Visual Basic 6.0 and earlier versions used a different system called *reference counting* to manage resources. Although both systems perform the same function automatically, there are a few important differences.
 
-Modul CLR pravidelně zničí objekty, když systém zjistí, že tyto objekty již nejsou potřeba. Objekty jsou vydávány rychleji, když jsou systémové prostředky v krátkém zdroji a méně často, jinak. Zpoždění mezi tím, kdy objekt ztratí rozsah a při vydání CLR znamená, že na rozdíl od objektů v Visual Basic 6,0 a starších verzích, nelze přesně určit, kdy bude objekt zničen. V takové situaci jsou objekty označeny jako nedeterministické. Ve většině případů nedeterministické životnost nemění způsob psaní aplikací, pokud si pamatujete, že `Finalize` destruktor se nemusí hned spustit, když objekt ztratí rozsah.
+The CLR periodically destroys objects when the system determines that such objects are no longer needed. Objects are released more quickly when system resources are in short supply, and less frequently otherwise. The delay between when an object loses scope and when the CLR releases it means that, unlike with objects in Visual Basic 6.0 and earlier versions, you cannot determine exactly when the object will be destroyed. In such a situation, objects are said to have *non-deterministic lifetime*. In most cases, non-deterministic lifetime does not change how you write applications, as long as you remember that the `Finalize` destructor may not immediately execute when an object loses scope.
 
-Další rozdíl mezi systémy uvolňování paměti zahrnuje použití `Nothing`nástroje. Chcete-li využít výhod počítání odkazů v Visual Basic 6,0 a starších verzích, programátoři někdy `Nothing` přiřadí k proměnným objektu, aby uvolnili odkazy na tyto proměnné. Pokud proměnná drží poslední odkaz na objekt, prostředky objektu byly vydány okamžitě. V novějších verzích Visual Basic, i když existují případy, kdy je tato procedura stále cenná, nezpůsobí, že se v odkazovaném objektu okamžitě uvolní prostředky. K okamžitému vydání prostředků použijte <xref:System.IDisposable.Dispose%2A> metodu objektu, je-li k dispozici. Jediná doba, na `Nothing` kterou byste měli nastavit proměnnou, je v případě, že je její životnost dlouhá vzhledem k času, který systém uvolňování paměti potřebuje k detekci osamocených objektů.
+Another difference between the garbage-collection systems involves the use of `Nothing`. To take advantage of reference counting in Visual Basic 6.0 and earlier versions, programmers sometimes assigned `Nothing` to object variables to release the references those variables held. If the variable held the last reference to the object, the object's resources were released immediately. In later versions of Visual Basic, while there may be cases in which this procedure is still valuable, performing it never causes the referenced object to release its resources immediately. To release resources immediately, use the object's <xref:System.IDisposable.Dispose%2A> method, if available. The only time you should set a variable to `Nothing` is when its lifetime is long relative to the time the garbage collector takes to detect orphaned objects.
 
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.IDisposable.Dispose%2A>
-- [Inicializace a ukončení komponent](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ws9dc6t6(v=vs.120))
+- [Initialization and Termination of Components](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ws9dc6t6(v=vs.120))
 - [Operátor New](../../../../visual-basic/language-reference/operators/new-operator.md)
 - [Vymazání nespravovaných prostředků](../../../../standard/garbage-collection/unmanaged.md)
 - [Nothing](../../../../visual-basic/language-reference/nothing.md)

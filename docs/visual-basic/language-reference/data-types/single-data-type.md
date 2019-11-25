@@ -1,5 +1,5 @@
 ---
-title: Single – datový typ (Visual Basic)
+title: Single – datový typ
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Single
@@ -20,32 +20,34 @@ helpviewer_keywords:
 - zeros, trailing
 - numbers [Visual Basic], floating point
 ms.assetid: 224a2795-4cd5-496c-8f7a-a4f05a06d45d
-ms.openlocfilehash: af75f5eb5a4281f6efae8ec3c9442ce2b28f595e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 60a688c510f6e36dca5809566b37a388429e18c7
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64646983"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74343922"
 ---
 # <a name="single-data-type-visual-basic"></a>Single – datový typ (Visual Basic)
-Blokování podepsané IEEE 32bitová (4bajtová) jednoduchou přesnost s plovoucí desetinnou čárkou čísla v rozmezí od - 3.4028235E + 38 prostřednictvím - 1, 401298E-45 pro záporné hodnoty a z 1, 401298E-45 prostřednictvím 3.4028235E + 38 pro kladné hodnoty. Čísla s jednoduchou přesností ukládání aproximaci reálné číslo.  
+
+Holds signed IEEE 32-bit (4-byte) single-precision floating-point numbers ranging in value from -3.4028235E+38 through -1.401298E-45 for negative values and from 1.401298E-45 through 3.4028235E+38 for positive values. Single-precision numbers store an approximation of a real number.  
   
 ## <a name="remarks"></a>Poznámky  
- Použití `Single` datový typ tak, aby obsahovala s plovoucí desetinnou čárkou hodnoty, které nevyžadují šířku úplná `Double`. V některých případech může být schopni pack modul common language runtime vaše `Single` proměnné úzce spolupracují a uložit spotřebu paměti.  
+
+ Use the `Single` data type to contain floating-point values that do not require the full data width of `Double`. In some cases the common language runtime might be able to pack your `Single` variables closely together and save memory consumption.  
   
- Výchozí hodnota `Single` je 0.  
+ The default value of `Single` is 0.  
   
 ## <a name="programming-tips"></a>Tipy k programování  
   
-- **Přesnost.** Při práci s čísly s plovoucí desetinnou čárkou, mějte na paměti, že vždy nemají přesnou reprezentací v paměti. To může vést k neočekávaným výsledkům z určité operace, jako je například porovnání hodnoty a `Mod` operátor. Další informace najdete v tématu [řešení potíží s datovými typy](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md).  
+- **Precision.** When you work with floating-point numbers, keep in mind that they do not always have a precise representation in memory. This could lead to unexpected results from certain operations, such as value comparison and the `Mod` operator. For more information, see [Troubleshooting Data Types](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md).  
   
-- **Rozšíření.** `Single` Datový typ rozšiřuje na `Double`. To znamená, že můžete převést `Single` k `Double` aniž se objeví <xref:System.OverflowException?displayProperty=nameWithType> chyby.  
+- **Widening.** The `Single` data type widens to `Double`. This means you can convert `Single` to `Double` without encountering a <xref:System.OverflowException?displayProperty=nameWithType> error.  
   
-- **Koncové nuly.** S plovoucí desetinnou čárkou datové typy, které nemají žádné vnitřní reprezentaci koncové znaky 0. Například že nerozlišuje mezi 4.2000 a 4.2. V důsledku toho koncové znaky 0 se nezobrazují při zobrazení nebo tisk hodnoty s plovoucí desetinnou čárkou.  
+- **Trailing Zeros.** The floating-point data types do not have any internal representation of trailing 0 characters. For example, they do not distinguish between 4.2000 and 4.2. Consequently, trailing 0 characters do not appear when you display or print floating-point values.  
   
-- **Znaky typu.** Přidávání znak typu literálu `F` k literálu se z něj stane `Single` datového typu. Přidávání znak typu identifikátoru `!` k libovolnému identifikátoru se z něj stane `Single`.  
+- **Type Characters.** Appending the literal type character `F` to a literal forces it to the `Single` data type. Appending the identifier type character `!` to any identifier forces it to `Single`.  
   
-- **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.Single?displayProperty=nameWithType> struktury.  
+- **Framework Type.** The corresponding type in the .NET Framework is the <xref:System.Single?displayProperty=nameWithType> structure.  
   
 ## <a name="see-also"></a>Viz také:
 

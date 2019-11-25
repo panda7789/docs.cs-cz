@@ -1,5 +1,5 @@
 ---
-title: -help, -? (Visual Basic)
+title: -help, -?
 ms.date: 03/10/2018
 helpviewer_keywords:
 - /? compiler option [Visual Basic]
@@ -9,15 +9,15 @@ helpviewer_keywords:
 - -? compiler option [Visual Basic]
 - '? compiler option [Visual Basic]'
 ms.assetid: eb984aa5-ac98-4d0b-a0d2-24238d7bc8dc
-ms.openlocfilehash: 33b1837415001253122388f7b4992abf6f96903f
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 6013b92206e00a77a8ca30d38846c87372c3873e
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005601"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344273"
 ---
 # <a name="-help---visual-basic"></a>-help, -? (Visual Basic)
-Zobrazí možnosti kompilátoru.  
+Displays the compiler options.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,13 +32,13 @@ or
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud zahrnete tuto možnost do kompilace, není vytvořen žádný výstupní soubor a nebude provedena žádná kompilace.  
+ If you include this option in a compilation, no output file is created and no compilation takes place.  
   
 > [!NOTE]
-> Možnost `-help` není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  
+> The `-help` option is not available from within the Visual Studio development environment; it is available only when compiling from the command line.  
   
 ## <a name="example"></a>Příklad  
- Následující kód zobrazí pomocníka z příkazového řádku.  
+ The following code displays help from the command line.  
   
 ```console  
 vbc -help  
@@ -46,5 +46,5 @@ vbc -help
   
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

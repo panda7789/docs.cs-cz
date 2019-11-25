@@ -1,57 +1,57 @@
 ---
-title: Funkční programování vs. Imperativní programování (Visual Basic)
+title: Functional Programming vs. Imperative Programming
 ms.date: 07/20/2015
 ms.assetid: 6a1f3b57-00e6-447d-9906-74c7c4d5d85c
-ms.openlocfilehash: 140e9b8cae78c3e3ad073c2aace0636dacd11c1e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 704beadc29af0de606b8f246360dc6fffca8cfcc
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64618291"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353431"
 ---
-# <a name="functional-programming-vs-imperative-programming-visual-basic"></a>Funkční programování vs. Imperativní programování (Visual Basic)
-Toto téma porovnává a výrazně liší od tradičnější imperativního (procesního) programování s funkčního programování.  
+# <a name="functional-programming-vs-imperative-programming-visual-basic"></a>Functional Programming vs. Imperative Programming (Visual Basic)
+This topic compares and contrasts functional programming with more traditional imperative (procedural) programming.  
   
-## <a name="functional-programming-vs-imperative-programming"></a>Funkční programování vs. imperativní programování  
- *Funkční programování* paradigma byla explicitně vytvořili za účelem podpory čistě funkční přístup k řešení problémů. Funkční programování je forma *programování deklarativních*. Naproti tomu byly navrženy většiny běžných jazyků, včetně objektově orientované programovací jazyky (OOP) jako je C#, Visual Basic, C++ a jazyka Java, především podpoře *imperativní* (procesního) programování.  
+## <a name="functional-programming-vs-imperative-programming"></a>Functional Programming vs. Imperative Programming  
+ The *functional programming* paradigm was explicitly created to support a pure functional approach to problem solving. Functional programming is a form of *declarative programming*. In contrast, most mainstream languages, including object-oriented programming (OOP) languages such as C#, Visual Basic, C++, and Java, were designed to primarily support *imperative* (procedural) programming.  
   
- S imperativní přístup vývojář píše kód, který popisuje v přesnější podrobností kroky, které počítače nutné provést k dosažení tohoto cíle. To se někdy označuje jako *vylepšením* programování. Naproti tomu funkční přístup zahrnuje vytváření problému jako sadu funkcí, které má být proveden. Můžete definovat důkladně vstup pro každou funkci a jaké každá funkce vrátí. Následující tabulka popisuje některé obecné rozdíly mezi těmito dvěma přístupy.  
+ With an imperative approach, a developer writes code that describes in exacting detail the steps that the computer must take to accomplish the goal. This is sometimes referred to as *algorithmic* programming. In contrast, a functional approach involves composing the problem as a set of functions to be executed. You define carefully the input to each function, and what each function returns. The following table describes some of the general differences between these two approaches.  
   
-|Vlastnost|Imperativní přístup|Funkční přístup|  
+|Characteristic|Imperative approach|Functional approach|  
 |--------------------|-------------------------|-------------------------|  
-|Programátor fokus|Jak provádět úkoly (algoritmy) a jak sledovat změny stavu.|Jaké informace je požadován a jaké transformace jsou povinné.|  
-|Změny stavu|Důležité.|Neexistující.|  
-|Pořadí provádění|Důležité.|S nízkou důležitostí.|  
-|Řízení toku na primární|Smyčky, podmíněné příkazy a volání funkcí (metoda).|Volání funkcí, včetně rekurze.|  
-|Manipulace s primární částí|Instance struktur nebo tříd.|Funkce jako první třídy objektů a dat kolekce.|  
+|Programmer focus|How to perform tasks (algorithms) and how to track changes in state.|What information is desired and what transformations are required.|  
+|State changes|Important.|Non-existent.|  
+|Order of execution|Important.|Low importance.|  
+|Primary flow control|Loops, conditionals, and function (method) calls.|Function calls, including recursion.|  
+|Primary manipulation unit|Instances of structures or classes.|Functions as first-class objects and data collections.|  
   
- I když většina jazyků byly navrženy pro podporu konkrétní programovacího paradigmatu, mnoho obecné jazyky jsou dostatečně flexibilní, aby podporovat více paradigmat. Většina jazyků, které obsahují ukazatele na funkce lze například hrozit podporu funkčního programování. Kromě toho Visual Basic obsahuje explicitní jazyková rozšíření pro podporu funkčního programování, včetně výrazů lambda a odvození typu. Technologie LINQ je forma deklarativní, funkční programování.  
+ Although most languages were designed to support a specific programming paradigm, many general languages are flexible enough to support multiple paradigms. For example, most languages that contain function pointers can be used to credibly support functional programming. Furthermore, Visual Basic includes explicit language extensions to support functional programming, including lambda expressions and type inference. LINQ technology is a form of declarative, functional programming.  
   
-## <a name="functional-programming-using-xslt"></a>Funkční programování pomocí XSLT  
- Mnoho vývojářů XSLT obeznámeni s čistě funkční přístup. Nejúčinnější způsob, jak vyvíjet šablony stylů XSLT je považovat za každou šablonu izolované, sestavitelný transformace. Pořadí provádění není úplně zruší zvýrazněné. XSLT nepovoluje vedlejší účinky (s výjimkou, že uvození mechanismy pro provádění kódu procedury může způsobovat vedlejší účinky, jejichž výsledkem funkční nečistot). Ale efektivní nástroj sice XSLT některé jeho vlastnosti nejsou optimální. Například vyjádření programovací konstrukce jazyka XML je kód relativně podrobné a proto obtížné udržovat. Navíc může způsobit náročné závislost na rekurze pro řízení toku kód, který je obtížné číst. Další informace o XSLT, naleznete v tématu [transformace XSLT](../../../../standard/data/xml/xslt-transformations.md).  
+## <a name="functional-programming-using-xslt"></a>Functional Programming Using XSLT  
+ Many XSLT developers are familiar with the pure functional approach. The most effective way to develop an XSLT style sheet is to treat each template as an isolated, composable transformation. The order of execution is completely de-emphasized. XSLT does not allow side effects (with the exception that escaping mechanisms for executing procedural code can introduce side effects that result in functional impurity). However, although XSLT is an effective tool, some of its characteristics are not optimal. For example, expressing programming constructs in XML makes code relatively verbose, and therefore difficult to maintain. Also, the heavy reliance on recursion for flow control can result in code that is hard to read. For more information about XSLT, see [XSLT Transformations](../../../../standard/data/xml/xslt-transformations.md).  
   
- XSLT se ukázalo jako hodnotu použití čistě funkční přístup pro transformaci XML z jednoho obrazce na jiný. Čistě funkční programování s LINQ to XML je podobná ve spoustě ohledů XSLT. Programovací konstrukce zavedených v technologii LINQ to XML a Visual Basic vám ale umožní k zápisu čistě funkční transformace, které jsou čitelnější a udržovatelný než XSLT.  
+ However, XSLT has proved the value of using a pure functional approach for transforming XML from one shape to another. Pure functional programming with LINQ to XML is similar in many ways to XSLT. However, the programming constructs introduced by LINQ to XML and Visual Basic allow you to write pure functional transformations that are more readable and maintainable than XSLT.  
   
-## <a name="advantages-of-pure-functions"></a>Výhody čisté funkce  
- Hlavním důvodem pro implementaci funkční transformace jako čistě funkce je, že čistě funkce sestavitelný: to znamená, samostatná a bezstavové. Tyto vlastnosti přinést řadu výhod, včetně následujících:  
+## <a name="advantages-of-pure-functions"></a>Advantages of Pure Functions  
+ The primary reason to implement functional transformations as pure functions is that pure functions are composable: that is, self-contained and stateless. These characteristics bring a number of benefits, including the following:  
   
-- Zvýšení přehlednosti a udržovatelnosti. Toto je vzhledem k tomu, že každá funkce je navržená k provedení určitého úkolu přiřazena svých argumentů. Funkce nevyžaduje žádné externího stavu.  
+- Increased readability and maintainability. This is because each function is designed to accomplish a specific task given its arguments. The function does not rely on any external state.  
   
-- Snadnější reiterative vývoje. Vzhledem k tomu je snazší Refaktorovat kód, změny návrhu jsou často usnadnil. Předpokládejme například, můžete psát složitější transformace a potom dobré si uvědomit, že nějaký kód je několikrát opakovat v transformace. Pokud refaktorujete prostřednictvím čistě metody, může volat vaši čistě metodu kdykoli bez starostí o vedlejší účinky.  
+- Easier reiterative development. Because the code is easier to refactor, changes to design are often easier to implement. For example, suppose you write a complicated transformation, and then realize that some code is repeated several times in the transformation. If you refactor through a pure method, you can call your pure method at will without worrying about side effects.  
   
-- Snazší testování a ladění. Protože čistě funkce můžete snadněji zkoušet v izolaci, můžete napsat kód testu, který volá funkci čistě s typické hodnoty platné hraniční případy a neplatný hraniční případy.  
+- Easier testing and debugging. Because pure functions can more easily be tested in isolation, you can write test code that calls the pure function with typical values, valid edge cases, and invalid edge cases.  
   
-## <a name="transitioning-for-oop-developers"></a>Přechod pro vývojáře OOP  
- V tradičních objektově orientované programování (OOP), jsou zvyklí na programování ve stylu dnešní/procedurální Většina vývojářů. Přepnout na vývoj ve stylu čistě funkční, musí provést přechod v jejich přemýšlení a jejich přístup k vývoji.  
+## <a name="transitioning-for-oop-developers"></a>Transitioning for OOP Developers  
+ In traditional object-oriented programming (OOP), most developers are accustomed to programming in the imperative/procedural style. To switch to developing in a pure functional style, they have to make a transition in their thinking and their approach to development.  
   
- K řešení problémů, vývojáře OOP návrhu hierarchií tříd, zaměřte se na řádné zapouzdření a uvažují v rámci smluv třídy. Chování a stav typy objektů jsou prvořadá a jazykové funkce, jako jsou třídy, rozhraní, dědičnosti a polymorfismu, jsou k dispozici k těmto problémům.  
+ To solve problems, OOP developers design class hierarchies, focus on proper encapsulation, and think in terms of class contracts. The behavior and state of object types are paramount, and language features, such as classes, interfaces, inheritance, and polymorphism, are provided to address these concerns.  
   
- Naproti tomu funkční programování blíží výpočetní problémy jako cvičení v pořadí vyhodnocování čistě funkční transformace dat kolekce. Funkční programování se vyhnete stavu a proměnlivé datové a místo toho klade důraz aplikaci funkcí.  
+ In contrast, functional programming approaches computational problems as an exercise in the evaluation of pure functional transformations of data collections. Functional programming avoids state and mutable data, and instead emphasizes the application of functions.  
   
- Naštěstí jazyka Visual Basic nevyžaduje úplnou i pro funkční programování, protože podporuje imperativní a funkční programování přístupy. Vývojář můžete zvolit, jaký přístup je pro konkrétní scénář nejvhodnější. Ve skutečnosti programy často kombinací obou metod.  
+ Fortunately, Visual Basic doesn't require the full leap to functional programming, because it supports both imperative and functional programming approaches. A developer can choose which approach is most appropriate for a particular scenario. In fact, programs often combine both approaches.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Úvod k čistě funkčním transformacím (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)
+- [Introduction to Pure Functional Transformations (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)
 - [Transformace XSLT](../../../../standard/data/xml/xslt-transformations.md)
-- [Refaktoring do čistých funkcí (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)
+- [Refactoring Into Pure Functions (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)

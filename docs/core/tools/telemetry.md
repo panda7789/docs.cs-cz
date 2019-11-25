@@ -4,12 +4,12 @@ description: Objevte funkce telemetrie .NET Core SDK, které shromažďují info
 author: KathleenDollard
 ms.date: 08/27/2019
 ms.custom: seodec18
-ms.openlocfilehash: 253f69392f034e330a75ed387d9346e8a5ae2a08
-ms.sourcegitcommit: 77e33b682db39955e331b8e8eda4ef1925a24e78
+ms.openlocfilehash: ecb8dbed036a04726867d004dbadf6205c1fa09f
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70133697"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74281778"
 ---
 # <a name="net-core-sdk-telemetry"></a>Telemetrie .NET Core SDK
 
@@ -17,9 +17,9 @@ ms.locfileid: "70133697"
 
 Shromážděná data jsou anonymní a publikovaná v rámci [licence Creative](https://creativecommons.org/licenses/by/4.0/)navýšení. 
 
-## <a name="scope"></a>Scope
+## <a name="scope"></a>Rozsah
 
-`dotnet`má dvě funkce: spouštění aplikací a provádění příkazů CLI. Telemetrii *není shromažďována* při `dotnet` použití ke spuštění aplikace v následujícím formátu:
+`dotnet` má dvě funkce: ke spuštění aplikací a k provádění příkazů rozhraní příkazového řádku. Při použití `dotnet` k spuštění aplikace v následujícím formátu *není shromažďována* telemetrie:
 
 - `dotnet [path-to-app].dll`
 
@@ -31,13 +31,13 @@ Telemetrie *se shromáždí* při použití některého z [.NET Core CLI příka
 
 ## <a name="how-to-opt-out"></a>Jak odhlásit
 
-Funkce telemetrie .NET Core SDK je ve výchozím nastavení povolená. Chcete-li se odhlásit z funkce telemetrie, `DOTNET_CLI_TELEMETRY_OPTOUT` nastavte proměnnou prostředí `1` na `true`nebo. 
+Funkce telemetrie .NET Core SDK je ve výchozím nastavení povolená. Pokud se chcete odhlásit od funkce telemetrie, nastavte proměnnou prostředí `DOTNET_CLI_TELEMETRY_OPTOUT` na `1` nebo `true`. 
 
-V případě, že dojde k úspěšné instalaci, posílá instalační program .NET Core SDK také jednu položku telemetrie. Pokud se chcete odhlásit, `DOTNET_CLI_TELEMETRY_OPTOUT` nastavte proměnnou prostředí před instalací .NET Core SDK.
+V případě, že dojde k úspěšné instalaci, posílá instalační program .NET Core SDK také jednu položku telemetrie. Chcete-li se odhlásit, nastavte před instalací .NET Core SDK proměnnou prostředí `DOTNET_CLI_TELEMETRY_OPTOUT`.
 
 ## <a name="disclosure"></a>Námitk
 
-.NET Core SDK zobrazí text podobný následujícímu při prvním spuštění jednoho z [.NET Core CLI příkazů](index.md) (například `dotnet build`). Text se může v závislosti na verzi sady SDK, kterou používáte, mírně lišit. Toto je postup "prvního spuštění", který vás Microsoft upozorní na shromažďování dat.
+Při prvním spuštění jednoho z [příkazů .NET Core CLI](index.md) (například `dotnet build`) zobrazí .NET Core SDK text podobný následujícímu. Text se může v závislosti na verzi sady SDK, kterou používáte, mírně lišit. Toto je postup "prvního spuštění", který vás Microsoft upozorní na shromažďování dat.
 
 ```console
 Telemetry
@@ -51,7 +51,7 @@ Read more about .NET Core CLI Tools telemetry: https://aka.ms/dotnet-cli-telemet
 
 Funkce telemetrie neshromažďuje osobní údaje, jako jsou uživatelská jména nebo e-mailové adresy. Nekontroluje váš kód a neextrahuje data na úrovni projektu, jako je název, úložiště nebo autor. Data se odesílají zabezpečeně na servery Microsoftu pomocí [Azure monitor](https://azure.microsoft.com/services/monitor/) technologie, která se drží pod omezeným přístupem, a publikují se v rámci striktních bezpečnostních mechanismů pro [Azure Storage](https://azure.microsoft.com/services/storage/) systémy.
 
-Ochrana vašich osobních údajů je pro nás důležitá. Pokud máte podezření, že telemetrie shromažďuje citlivá data nebo jsou data nezabezpečená nebo nevhodně zpracovaná, zapište problém do úložiště [dotnet/CLI](https://github.com/dotnet/cli/issues) nebo odešlete e-mail k [dotnet@microsoft.com](mailto:dotnet@microsoft.com) šetření.
+Ochrana vašich osobních údajů je pro nás důležitá. Pokud máte podezření, že telemetrie shromažďuje citlivá data, nebo jsou data nezabezpečená nebo nevhodně zpracovaná, zapište problém do úložiště [dotnet/CLI](https://github.com/dotnet/cli/issues) nebo odešlete e-mail [dotnet@microsoft.com](mailto:dotnet@microsoft.com) k šetření.
 
 Funkce telemetrie shromažďuje následující data:
 
@@ -66,7 +66,7 @@ Funkce telemetrie shromažďuje následující data:
 | Všechny          | Profil telemetrie: volitelná hodnota se používá jenom s výslovným výslovným souhlasem uživatele a používá se interně v Microsoftu. |
 | > = 2.0        | Argumenty a možnosti příkazu: několik argumentů a možností je shromažďováno (nejedná se o libovolný řetězec). Viz [shromážděné možnosti](#collected-options). Hodnota hash po 2.1.300 |
 | > = 2.0         | Určuje, jestli je sada SDK spuštěná v kontejneru. |
-| > = 2.0         | Cílová rozhraní (z `TargetFramework` události) vyhodnotí hodnotu hash začínající v 2,1. |
+| > = 2.0         | Cílové architektury (z události `TargetFramework`), které začínají algoritmem hash 2,1. |
 | > = 2.0         | Adresa MAC Access Control médií (MAC): kryptograficky (SHA256) anonymní a jedinečné ID pro počítač. |
 | > = 2.0         | Aktuální pracovní adresář má hodnotu hash. |
 | > = 2.0         | Sestava úspěšné instalace s názvem souboru EXE instalačního programu s algoritmem hash |
@@ -83,11 +83,11 @@ Některé příkazy odesílají další data. Podmnožina příkazů odesílá p
 |-----------------------|-----------------------------------------|
 | `dotnet help <arg>`   | Dotaz na příkaz se dotazuje na.  |
 | `dotnet new <arg>`    | Název šablony (s algoritmem hash)             |
-| `dotnet add <arg>`    | Slovo `package` nebo .`reference`      |
-| `dotnet remove <arg>` | Slovo `package` nebo .`reference`      |
-| `dotnet list <arg>`   | Slovo `package` nebo .`reference`      |
-| `dotnet sln <arg>`    | Slovo `add`, `list`, nebo `remove`.    |
-| `dotnet nuget <arg>`  | Slovo `delete`, `locals`, nebo `push`. |
+| `dotnet add <arg>`    | Slovo `package` nebo `reference`.      |
+| `dotnet remove <arg>` | Slovo `package` nebo `reference`.      |
+| `dotnet list <arg>`   | Slovo `package` nebo `reference`.      |
+| `dotnet sln <arg>`    | Slovo `add`, `list`nebo `remove`.    |
+| `dotnet nuget <arg>`  | Slovo `delete`, `locals`nebo `push`. |
 
 Podmnožina příkazů odesílá vybrané možnosti, pokud jsou použity, spolu s jejich hodnotami:
 
@@ -97,12 +97,12 @@ Podmnožina příkazů odesílá vybrané možnosti, pokud jsou použity, spolu 
 | `--language`            | `dotnet new`                                                                                   |
 | `--configuration`       | `dotnet build`, `dotnet clean`, `dotnet publish`, `dotnet run`, `dotnet test`                  |
 | `--framework`           | `dotnet build`, `dotnet clean`, `dotnet publish`, `dotnet run`, `dotnet test`, `dotnet vstest` |
-| `--runtime`             | `dotnet build`,`dotnet publish`                                                              |
+| `--runtime`             | `dotnet build``dotnet publish`                                                              |
 | `--platform`            | `dotnet vstest`                                                                                |
 | `--logger`              | `dotnet vstest`                                                                                |
 | `--sdk-package-version` | `dotnet migrate`                                                                               |
 
-S výjimkou `--sdk-package-version`ajsouvšechny ostatní hodnoty hash od .NET Core 2.1.100 SDK. `--verbosity`
+S výjimkou `--verbosity` a `--sdk-package-version`jsou všechny ostatní hodnoty hash od .NET Core 2.1.100 SDK.
 
 ## <a name="net-core-clisdk-crash-exception-telemetry-collected"></a>Shromážděná telemetrie výjimek při selhání .NET Core CLI/SDK
 
@@ -114,7 +114,7 @@ Pokud .NET Core CLI/SDK selže, shromažďuje název výjimky a trasování zás
 
 Následující příklad znázorňuje druh shromažďovaných dat:
 
-```
+```console
 System.IO.IOException
 at System.ConsolePal.WindowsConsoleStream.Write(Byte[] buffer, Int32 offset, Int32 count)
 at System.IO.StreamWriter.Flush(Boolean flushStream, Boolean flushEncoder)

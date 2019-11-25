@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vložení hodnoty do vlastnosti (Visual Basic)'
+title: 'Postupy: Vložení hodnoty do vlastnosti'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - property values [Visual Basic]
@@ -8,31 +8,31 @@ helpviewer_keywords:
 - Visual Basic code, properties
 - properties [Visual Basic], values
 ms.assetid: c39401e5-b5fc-4439-8f31-ed640f7ce6ed
-ms.openlocfilehash: e6aee5ea36c0315d5b01ae2734d17c9e7dab8e93
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ad0d0e81f94dd3dead50f21c3bd6ff580c004dd6
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61863893"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346058"
 ---
 # <a name="how-to-put-a-value-in-a-property-visual-basic"></a>Postupy: Vložení hodnoty do vlastnosti (Visual Basic)
-Uložení hodnoty do vlastnosti tak, že vložíte název vlastnosti na levé straně příkazu přiřazení.  
+You store a value in a property by putting the property name on the left side of an assignment statement.  
   
- Vlastnosti `Set` postup uloží hodnotu, ale můžete explicitně ho nevolají podle názvu. Vlastnost se stejným způsobem, jako by proměnná. Visual Basic provede volání do procedury vlastnosti.  
+ The property's `Set` procedure stores a value, but you do not explicitly call it by name. You use the property just as you would use a variable. Visual Basic makes the calls to the property's procedures.  
   
-### <a name="to-store-a-value-in-a-property"></a>K uložení hodnoty do vlastnosti  
+### <a name="to-store-a-value-in-a-property"></a>To store a value in a property  
   
-1. Použijte název vlastnosti na levé straně příkazu přiřazení.  
+1. Use the property name on the left side of an assignment statement.  
   
-     Následující příklad nastaví hodnotu jazyka Visual Basic `TimeOfDay` vlastnost noon, implicitně volání jeho `Set` postup.  
+     The following example sets the value of the Visual Basic `TimeOfDay` property to noon, implicitly calling its `Set` procedure.  
   
      [!code-vb[VbVbcnProcedures#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#11)]  
   
-2. Pokud vlastnost přebírá argumenty, postupujte podle názvu vlastnosti se závorkami uvést seznam argumentů. Pokud neexistují žádné argumenty, můžete volitelně vynechejte závorky.  
+2. If the property takes arguments, follow the property name with parentheses to enclose the argument list. If there are no arguments, you can optionally omit the parentheses.  
   
-3. Umístěte argumenty v seznamu argumentů v závorkách, oddělené čárkami. Ujistěte se, že zadáte argumenty ve stejném pořadí, že vlastnost definuje odpovídající parametry.  
+3. Place the arguments in the argument list within the parentheses, separated by commas. Be sure you supply the arguments in the same order that the property defines the corresponding parameters.  
   
-4. Hodnota generovaná na pravé straně příkazu přiřazení je uložená ve vlastnosti.  
+4. The value generated on the right side of the assignment statement is stored in the property.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -40,9 +40,9 @@ Uložení hodnoty do vlastnosti tak, že vložíte název vlastnosti na levé st
 - [Procedury vlastnosti](./property-procedures.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
 - [Příkaz Property](../../../../visual-basic/language-reference/statements/property-statement.md)
-- [Rozdíly mezi vlastnostmi a proměnnými v jazyce Visual Basic](./differences-between-properties-and-variables.md)
+- [Differences Between Properties and Variables in Visual Basic](./differences-between-properties-and-variables.md)
 - [Postupy: Vytvoření vlastnosti](./how-to-create-a-property.md)
 - [Postupy: Deklarace vlastnosti se smíšenými úrovněmi přístupu](./how-to-declare-a-property-with-mixed-access-levels.md)
 - [Postupy: Volání procedury vlastnosti](./how-to-call-a-property-procedure.md)
-- [Postupy: Deklarace a volání výchozí vlastnosti v jazyce Visual Basic](./how-to-declare-and-call-a-default-property.md)
+- [How to: Declare and Call a Default Property in Visual Basic](./how-to-declare-and-call-a-default-property.md)
 - [Postupy: Získání hodnoty z vlastnosti](./how-to-get-a-value-from-a-property.md)

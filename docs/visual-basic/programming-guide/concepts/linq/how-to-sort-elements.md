@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: řazení elementů (Visual Basic)'
+title: 'How to: Sort Elements'
 ms.date: 07/20/2015
 ms.assetid: c2c09279-6c8a-482e-8e71-b1453a815052
-ms.openlocfilehash: 1bd76ade02f8f891e98b048ac866b6b9de65062f
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 84d791a73c27b9acf1eaa5a5e4a31d6798a6c76d
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71835100"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74341537"
 ---
-# <a name="how-to-sort-elements-visual-basic"></a>Postupy: řazení elementů (Visual Basic)
-Tento příklad ukazuje, jak napsat dotaz, který seřadí jeho výsledky.  
+# <a name="how-to-sort-elements-visual-basic"></a>How to: Sort Elements (Visual Basic)
+This example shows how to write a query that sorts its results.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá následující dokument XML: [ukázkový soubor XML: numerická data (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).  
+ This example uses the following XML document: [Sample XML File: Numerical Data (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).  
   
 ```vb  
 Dim root As XElement = XElement.Load("Data.xml")  
@@ -27,7 +27,7 @@ For Each el As Decimal In prices
 Next  
 ```  
   
- Tento kód generuje následující výstup:  
+ This code produces the following output:  
   
 ```console  
 0.99  
@@ -40,9 +40,9 @@ Next
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje stejný dotaz pro XML, který je v oboru názvů. Další informace najdete v tématu [obory názvů Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).  
+ The following example shows the same query for XML that is in a namespace. For more information, see [Namespaces Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).  
   
- Tento příklad používá následující dokument XML: [ukázkový soubor XML: numerická data v oboru názvů](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-in-a-namespace.md).  
+ This example uses the following XML document: [Sample XML File: Numerical Data in a Namespace](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-in-a-namespace.md).  
   
 ```vb  
 Imports <xmlns='http://www.adatum.com'>  
@@ -62,7 +62,7 @@ Module Module1
 End Module  
 ```  
   
- Tento kód generuje následující výstup:  
+ This code produces the following output:  
   
 ```console  
 0.99  
@@ -77,4 +77,4 @@ End Module
 ## <a name="see-also"></a>Viz také:
 
 - [Řazení dat](../../../../visual-basic/programming-guide/concepts/linq/sorting-data.md)
-- [Základní dotazy (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+- [Basic Queries (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

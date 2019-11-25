@@ -1,87 +1,87 @@
 ---
-title: Společné atributy (Visual Basic)
+title: Běžné atributy
 ms.date: 07/20/2015
 ms.assetid: 11fe4894-1bf9-4525-a36b-cddcd3a5d22b
-ms.openlocfilehash: 5bc568279a6952fdc5e0a000b1208cd7f9cfd6e7
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 2889411779a275baa8c91862d4cac2f820d660d0
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524278"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353532"
 ---
-# <a name="common-attributes-visual-basic"></a>Společné atributy (Visual Basic)
+# <a name="common-attributes-visual-basic"></a>Common Attributes (Visual Basic)
 
-Toto téma popisuje atributy, které se nejčastěji používají v Visual Basicch programech.
+This topic describes the attributes that are most commonly used in Visual Basic programs.
 
-- [Globální atributy](#Global)
+- [Global Attributes](#Global)
 
-- [Zastaralý atribut](#Obsolete)
+- [Obsolete Attribute](#Obsolete)
 
-- [Podmíněný atribut](#Conditional)
+- [Conditional Attribute](#Conditional)
 
-- [Atributy informací o volajícím](#CallerInfo)
+- [Caller Info Attributes](#CallerInfo)
 
-- [Atributy Visual Basic](#VB)
+- [Visual Basic Attributes](#VB)
 
-## <a name="Global"></a>Globální atributy
+## <a name="Global"></a> Global Attributes
 
-Většina atributů je aplikována na konkrétní prvky jazyka, jako jsou třídy nebo metody. Některé atributy jsou však globální – platí pro celé sestavení nebo modul. Například atribut <xref:System.Reflection.AssemblyVersionAttribute> lze použít k vložení informací o verzi do sestavení, například takto:
+Most attributes are applied to specific language elements such as classes or methods; however, some attributes are global—they apply to an entire assembly or module. For example, the <xref:System.Reflection.AssemblyVersionAttribute> attribute can be used to embed version information into an assembly, like this:
 
 ```vb
 <Assembly: AssemblyVersion("1.0.0.0")>
 ```
 
-Globální atributy se zobrazí ve zdrojovém kódu po všech příkazech `Imports` nejvyšší úrovně a před všemi deklaracemi typu, modulu nebo oboru názvů. Globální atributy se mohou objevit ve více zdrojových souborech, ale soubory musí být kompilovány v rámci jedné kompilační fáze. U Visual Basic projektů jsou globální atributy obecně vloženy do souboru AssemblyInfo. vb (soubor je vytvořen automaticky při vytvoření projektu v aplikaci Visual Studio).
+Global attributes appear in the source code after any top-level `Imports` statements and before any type, module, or namespace declarations. Global attributes can appear in multiple source files, but the files must be compiled in a single compilation pass. For Visual Basic projects, global attributes are generally put in the AssemblyInfo.vb file (the file is created automatically when you create a project in Visual Studio).
 
-Atributy sestavení jsou hodnoty, které poskytují informace o sestavení. Spadají do následujících kategorií:
+Assembly attributes are values that provide information about an assembly. They fall into the following categories:
 
-- Atributy identity sestavení
+- Assembly identity attributes
 
-- Informativní atributy
+- Informational attributes
 
-- Atributy manifestu sestavení
+- Assembly manifest attributes
 
-### <a name="assembly-identity-attributes"></a>Atributy identity sestavení
+### <a name="assembly-identity-attributes"></a>Assembly Identity Attributes
 
-Tři atributy (se silným názvem, pokud jsou k dispozici) určují identitu sestavení: název, verze a jazyková verze. Tyto atributy tvoří úplný název sestavení a jsou vyžadovány při odkazování v kódu. Můžete nastavit verzi a jazykovou verzi sestavení pomocí atributů. Hodnota name je však nastavena kompilátorem, rozhraním IDE sady Visual Studio v [dialogovém okně informace o sestavení](/visualstudio/ide/reference/assembly-information-dialog-box)nebo linker sestavení (Al. exe), když je sestavení vytvořeno, na základě souboru, který obsahuje manifest sestavení. Atribut <xref:System.Reflection.AssemblyFlagsAttribute> určuje, zda více kopií sestavení může existovat současně.
+Three attributes (with a strong name, if applicable) determine the identity of an assembly: name, version, and culture. These attributes form the full name of the assembly and are required when you reference it in code. You can set an assembly's version and culture using attributes. However, the name value is set by the compiler, the Visual Studio IDE in the [Assembly Information Dialog Box](/visualstudio/ide/reference/assembly-information-dialog-box), or the Assembly Linker (Al.exe) when the assembly is created, based on the file that contains the assembly manifest. The <xref:System.Reflection.AssemblyFlagsAttribute> attribute specifies whether multiple copies of the assembly can coexist.
 
-V následující tabulce jsou uvedeny atributy identity.
-
-|Atribut|Účel|
-|---------------|-------------|
-|<xref:System.Reflection.AssemblyName>|Plně popisuje identitu sestavení.|
-|<xref:System.Reflection.AssemblyVersionAttribute>|Určuje verzi sestavení.|
-|<xref:System.Reflection.AssemblyCultureAttribute>|Určuje jazykovou verzi, kterou sestavení podporuje.|
-|<xref:System.Reflection.AssemblyFlagsAttribute>|Určuje, zda sestavení podporuje souběžné spouštění ve stejném počítači, ve stejném procesu nebo ve stejné doméně aplikace.|
-
-### <a name="informational-attributes"></a>Informativní atributy
-
-Pomocí informativních atributů lze poskytnout další informace o společnosti nebo produktu pro sestavení. V následující tabulce jsou uvedeny informativní atributy definované v oboru názvů <xref:System.Reflection?displayProperty=nameWithType>.
+The following table shows the identity attributes.
 
 |Atribut|Účel|
 |---------------|-------------|
-|<xref:System.Reflection.AssemblyProductAttribute>|Definuje vlastní atribut, který určuje název produktu pro manifest sestavení.|
-|<xref:System.Reflection.AssemblyTrademarkAttribute>|Definuje vlastní atribut, který určuje ochrannou známku pro manifest sestavení.|
-|<xref:System.Reflection.AssemblyInformationalVersionAttribute>|Definuje vlastní atribut, který určuje informační verzi manifestu sestavení.|
-|<xref:System.Reflection.AssemblyCompanyAttribute>|Definuje vlastní atribut, který určuje název společnosti pro manifest sestavení.|
-|<xref:System.Reflection.AssemblyCopyrightAttribute>|Definuje vlastní atribut, který určuje autorská práva pro manifest sestavení.|
-|<xref:System.Reflection.AssemblyFileVersionAttribute>|Instruuje kompilátor, aby pro prostředek verze souboru Win32 použil konkrétní číslo verze.|
-|<xref:System.CLSCompliantAttribute>|Určuje, zda je sestavení kompatibilní se specifikací CLS (Common Language Specification).|
+|<xref:System.Reflection.AssemblyName>|Fully describes the identity of an assembly.|
+|<xref:System.Reflection.AssemblyVersionAttribute>|Specifies the version of an assembly.|
+|<xref:System.Reflection.AssemblyCultureAttribute>|Specifies which culture the assembly supports.|
+|<xref:System.Reflection.AssemblyFlagsAttribute>|Specifies whether an assembly supports side-by-side execution on the same computer, in the same process, or in the same application domain.|
 
-### <a name="assembly-manifest-attributes"></a>Atributy manifestu sestavení
+### <a name="informational-attributes"></a>Informational Attributes
 
-Atributy manifestu sestavení lze použít k poskytnutí informací v manifestu sestavení. Patří sem název, popis, výchozí alias a konfigurace. V následující tabulce jsou uvedeny atributy manifestu sestavení definované v oboru názvů <xref:System.Reflection?displayProperty=nameWithType>.
+You can use informational attributes to provide additional company or product information for an assembly. The following table shows the informational attributes defined in the <xref:System.Reflection?displayProperty=nameWithType> namespace.
 
 |Atribut|Účel|
 |---------------|-------------|
-|<xref:System.Reflection.AssemblyTitleAttribute>|Definuje vlastní atribut, který určuje název sestavení pro manifest sestavení.|
-|<xref:System.Reflection.AssemblyDescriptionAttribute>|Definuje vlastní atribut, který určuje popis sestavení pro manifest sestavení.|
-|<xref:System.Reflection.AssemblyConfigurationAttribute>|Definuje vlastní atribut, který určuje konfiguraci sestavení (například maloobchodní nebo ladicí) pro manifest sestavení.|
-|<xref:System.Reflection.AssemblyDefaultAliasAttribute>|Definuje popisný výchozí alias pro manifest sestavení.|
+|<xref:System.Reflection.AssemblyProductAttribute>|Defines a custom attribute that specifies a product name for an assembly manifest.|
+|<xref:System.Reflection.AssemblyTrademarkAttribute>|Defines a custom attribute that specifies a trademark for an assembly manifest.|
+|<xref:System.Reflection.AssemblyInformationalVersionAttribute>|Defines a custom attribute that specifies an informational version for an assembly manifest.|
+|<xref:System.Reflection.AssemblyCompanyAttribute>|Defines a custom attribute that specifies a company name for an assembly manifest.|
+|<xref:System.Reflection.AssemblyCopyrightAttribute>|Defines a custom attribute that specifies a copyright for an assembly manifest.|
+|<xref:System.Reflection.AssemblyFileVersionAttribute>|Instructs the compiler to use a specific version number for the Win32 file version resource.|
+|<xref:System.CLSCompliantAttribute>|Indicates whether the assembly is compliant with the Common Language Specification (CLS).|
 
-## <a name="Obsolete"></a>Zastaralý atribut
+### <a name="assembly-manifest-attributes"></a>Assembly Manifest Attributes
 
-Atribut `Obsolete` označuje entitu programu jako tu, která se již nedoporučuje používat. Každé použití entity označené jako zastaralé bude následně generovat upozornění nebo chybu v závislosti na tom, jak je atribut nakonfigurován. Příklad:
+You can use assembly manifest attributes to provide information in the assembly manifest. This includes title, description, default alias, and configuration. The following table shows the assembly manifest attributes defined in the <xref:System.Reflection?displayProperty=nameWithType> namespace.
+
+|Atribut|Účel|
+|---------------|-------------|
+|<xref:System.Reflection.AssemblyTitleAttribute>|Defines a custom attribute that specifies an assembly title for an assembly manifest.|
+|<xref:System.Reflection.AssemblyDescriptionAttribute>|Defines a custom attribute that specifies an assembly description for an assembly manifest.|
+|<xref:System.Reflection.AssemblyConfigurationAttribute>|Defines a custom attribute that specifies an assembly configuration (such as retail or debug) for an assembly manifest.|
+|<xref:System.Reflection.AssemblyDefaultAliasAttribute>|Defines a friendly default alias for an assembly manifest|
+
+## <a name="Obsolete"></a> Obsolete Attribute
+
+The `Obsolete` attribute marks a program entity as one that is no longer recommended for use. Each use of an entity marked obsolete will subsequently generate a warning or an error, depending on how the attribute is configured. Příklad:
 
 ```vb
 <System.Obsolete("use class B")>
@@ -100,9 +100,9 @@ Class B
 End Class
 ```
 
-V tomto příkladu je atribut `Obsolete` použit pro třídu `A` a na metodu `B.OldMethod`. Vzhledem k tomu, že druhý argument konstruktoru atributu použité pro `B.OldMethod` je nastaven na `true`, tato metoda způsobí chybu kompilátoru, zatímco použití třídy `A` bude pouze generovat upozornění. Volání `B.NewMethod` však negeneruje žádné upozornění nebo chybu.
+In this example the `Obsolete` attribute is applied to class `A` and to method `B.OldMethod`. Because the second argument of the attribute constructor applied to `B.OldMethod` is set to `true`, this method will cause a compiler error, whereas using class `A` will just produce a warning. Calling `B.NewMethod`, however, produces no warning or error.
 
-Řetězec poskytnutý jako první argument konstruktoru atributu se zobrazí jako součást upozornění nebo chyby. Například když použijete s předchozími definicemi, následující kód vygeneruje dvě upozornění a jednu chybu:
+The string provided as the first argument to attribute constructor will be displayed as part of the warning or error. For example, when you use it with the previous definitions, the following code generates two warnings and one error:
 
 ```vb
 ' Generates 2 warnings:
@@ -116,22 +116,22 @@ b.NewMethod()
 ' b.OldMethod()
 ```
 
-Pro třídu `A` jsou generována dvě upozornění: jedna pro deklaraci odkazu na třídu a druhá pro konstruktor třídy.
+Two warnings for class `A` are generated: one for the declaration of the class reference, and one for the class constructor.
 
-Atribut `Obsolete` lze použít bez argumentů, ale včetně vysvětlení, proč je položka zastaralá a co použít místo toho se doporučuje.
+The `Obsolete` attribute can be used without arguments, but including an explanation of why the item is obsolete and what to use instead is recommended.
 
-Atribut `Obsolete` je atributem s jedním použitím a lze jej použít pro libovolnou entitu, která povoluje atributy. `Obsolete` je alias pro <xref:System.ObsoleteAttribute>.
+The `Obsolete` attribute is a single-use attribute and can be applied to any entity that allows attributes. `Obsolete` is an alias for <xref:System.ObsoleteAttribute>.
 
-## <a name="Conditional"></a>Podmíněný atribut
+## <a name="Conditional"></a> Conditional Attribute
 
-Atribut `Conditional` provádí provedení metody závislé na identifikátoru předběžného zpracování. Atribut `Conditional` je aliasem pro <xref:System.Diagnostics.ConditionalAttribute> a lze jej použít na metodu nebo třídu atributu.
+The `Conditional` attribute makes the execution of a method dependent on a preprocessing identifier. The `Conditional` attribute is an alias for <xref:System.Diagnostics.ConditionalAttribute>, and can be applied to a method or an attribute class.
 
-V tomto příkladu je `Conditional` použita na metodu pro povolení nebo zakázání zobrazení diagnostických informací specifických pro program:
+In this example, `Conditional` is applied to a method to enable or disable the display of program-specific diagnostic information:
 
 ```vb
 #Const TRACE_ON = True
-Imports System
 Imports System.Diagnostics
+
 Module TestConditionalAttribute
     Public Class Trace
         <Conditional("TRACE_ON")>
@@ -148,9 +148,9 @@ Module TestConditionalAttribute
 End Module
 ```
 
-Pokud není definován `TRACE_ON` identifikátor, nebude zobrazen žádný výstup trasování.
+If the `TRACE_ON` identifier is not defined, no trace output will be displayed.
 
-Atribut `Conditional` se často používá s identifikátorem `DEBUG` k povolení funkcí trasování a protokolování pro sestavení ladění, ale ne v sestaveních vydaných verzí, například:
+The `Conditional` attribute is often used with the `DEBUG` identifier to enable trace and logging features for debug builds but not in release builds, like this:
 
 ```vb
 <Conditional("DEBUG")>
@@ -159,7 +159,7 @@ Shared Sub DebugMethod()
 End Sub
 ```
 
-Když je volána metoda označená jako podmíněná, přítomnost nebo absence zadaného symbolu předzpracování určuje, zda je volání zahrnuto nebo vynecháno. Pokud je symbol definován, volání je zahrnuto; v opačném případě je volání vynecháno. Použití `Conditional` je čistší, jasnější a méně náchylné k chybám, které lze použít k uzavření metod uvnitř `#if…#endif`ch bloků, například takto:
+When a method marked as conditional is called, the presence or absence of the specified preprocessing symbol determines whether the call is included or omitted. If the symbol is defined, the call is included; otherwise, the call is omitted. Using `Conditional` is a cleaner, more elegant, and less error-prone alternative to enclosing methods inside `#if…#endif` blocks, like this:
 
 ```vb
 #If DEBUG Then
@@ -168,11 +168,11 @@ Když je volána metoda označená jako podmíněná, přítomnost nebo absence 
 #End If
 ```
 
-Podmíněná metoda musí být metoda v deklaraci třídy nebo struktury a nesmí mít návratovou hodnotu.
+A conditional method must be a method in a class or struct declaration and must not have a return value.
 
-### <a name="using-multiple-identifiers"></a>Použití více identifikátorů
+### <a name="using-multiple-identifiers"></a>Using Multiple Identifiers
 
-Pokud má metoda více `Conditional` atributů, volání metody je zahrnuto, pokud je definován alespoň jeden z podmíněných symbolů (jinými slovy, symboly jsou logicky propojeny pomocí operátoru OR). V tomto příkladu přítomnost buď `A`, nebo `B`, bude výsledkem volání metody:
+If a method has multiple `Conditional` attributes, a call to the method is included if at least one of the conditional symbols is defined (in other words, the symbols are logically linked together by using the OR operator). In this example, the presence of either `A` or `B` will result in a method call:
 
 ```vb
 <Conditional("A"), Conditional("B")>
@@ -181,7 +181,7 @@ Shared Sub DoIfAorB()
 End Sub
 ```
 
-Chcete-li dosáhnout vlivu logického propojení symbolů pomocí operátoru AND, můžete definovat sériové podmíněné metody. Například druhá metoda níže se spustí pouze v případě, že jsou definovány obě `A` i `B`:
+To achieve the effect of logically linking symbols by using the AND operator, you can define serial conditional methods. For example, the second method below will execute only if both `A` and `B` are defined:
 
 ```vb
 <Conditional("A")>
@@ -195,9 +195,9 @@ Shared Sub DoIfAandB()
 End Sub
 ```
 
-### <a name="using-conditional-with-attribute-classes"></a>Použití podmíněné s třídami atributů
+### <a name="using-conditional-with-attribute-classes"></a>Using Conditional with Attribute Classes
 
-Atribut `Conditional` lze také použít pro definici třídy atributu. V tomto příkladu vlastní atribut `Documentation` přidá do metadat informace pouze v případě, že je definován ladění.
+The `Conditional` attribute can also be applied to an attribute class definition. In this example, the custom attribute `Documentation` will only add information to the metadata if DEBUG is defined.
 
 ```vb
 <Conditional("DEBUG")>
@@ -218,42 +218,42 @@ Class SampleClass
 End Class
 ```
 
-## <a name="CallerInfo"></a>Atributy informací o volajícím
+## <a name="CallerInfo"></a> Caller Info Attributes
 
-Pomocí atributů Informace o volajícím můžete získat informace o volajícím metody. Můžete získat cestu k souboru zdrojového kódu, číslo řádku ve zdrojovém kódu a název členu volajícího.
+Pomocí atributů Informace o volajícím můžete získat informace o volajícím metody. You can obtain the file path of the source code, the line number in the source code, and the member name of the caller.
 
-Chcete-li získat informace o volajícím členu, použijte atributy, které se použijí na volitelné parametry. Každý volitelný parametr určuje výchozí hodnotu. V následující tabulce jsou uvedeny atributy informací o volajícím, které jsou definovány v oboru názvů <xref:System.Runtime.CompilerServices?displayProperty=nameWithType>:
+To obtain member caller information, you use attributes that are applied to optional parameters. Each optional parameter specifies a default value. The following table lists the Caller Info attributes that are defined in the <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> namespace:
 
 |Atribut|Popis|Typ|
 |---|---|---|
-|<xref:System.Runtime.CompilerServices.CallerFilePathAttribute>|Úplná cesta zdrojového souboru, který obsahuje volajícího. Toto je cesta v době kompilace.|`String`|
-|<xref:System.Runtime.CompilerServices.CallerLineNumberAttribute>|Číslo řádku ve zdrojovém souboru, ze kterého je metoda volána.|`Integer`|
-|<xref:System.Runtime.CompilerServices.CallerMemberNameAttribute>|Název metody nebo název vlastnosti volajícího. Další informace najdete v tématu [informace o volajícím (Visual Basic)](../../../../visual-basic/programming-guide/concepts/caller-information.md).|`String`|
+|<xref:System.Runtime.CompilerServices.CallerFilePathAttribute>|Úplná cesta zdrojového souboru, který obsahuje volajícího. This is the path at compile time.|`String`|
+|<xref:System.Runtime.CompilerServices.CallerLineNumberAttribute>|Line number in the source file from which the method is called.|`Integer`|
+|<xref:System.Runtime.CompilerServices.CallerMemberNameAttribute>|Method name or property name of the caller. For more information, see [Caller Information (Visual Basic)](../../../../visual-basic/programming-guide/concepts/caller-information.md).|`String`|
 
-Další informace o atributech informace o volajícím naleznete v tématu [informace o volajícím (Visual Basic)](../../../../visual-basic/programming-guide/concepts/caller-information.md).
+For more information about the Caller Info attributes, see [Caller Information (Visual Basic)](../../../../visual-basic/programming-guide/concepts/caller-information.md).
 
-## <a name="VB"></a>Atributy Visual Basic
+## <a name="VB"></a> Visual Basic Attributes
 
-V následující tabulce jsou uvedeny atributy, které jsou specifické pro Visual Basic.
+The following table lists the attributes that are specific to Visual Basic.
 
 |Atribut|Účel|
 |---------------|-------------|
-|<xref:Microsoft.VisualBasic.ComClassAttribute>|Určuje kompilátoru, že by měla být třída vystavena jako objekt modelu COM.|
-|<xref:Microsoft.VisualBasic.HideModuleNameAttribute>|Umožňuje, aby byly členy modulu dostupné pouze pomocí kvalifikace potřebné pro modul.|
-|<xref:Microsoft.VisualBasic.VBFixedStringAttribute>|Určuje velikost řetězce s pevnou délkou ve struktuře pro použití s funkcemi vstupu a výstupu souboru.|
-|<xref:Microsoft.VisualBasic.VBFixedArrayAttribute>|Určuje velikost fixního pole ve struktuře pro použití s funkcemi vstupu a výstupu souboru.|
+|<xref:Microsoft.VisualBasic.ComClassAttribute>|Indicates to the compiler that the class should be exposed as a COM object.|
+|<xref:Microsoft.VisualBasic.HideModuleNameAttribute>|Allows module members to be accessed using only the qualification needed for the module.|
+|<xref:Microsoft.VisualBasic.VBFixedStringAttribute>|Specifies the size of a fixed-length string in a structure for use with file input and output functions.|
+|<xref:Microsoft.VisualBasic.VBFixedArrayAttribute>|Specifies the size of a fixed array in a structure for use with file input and output functions.|
 
 ### <a name="comclassattribute"></a>COMClassAttribute
 
-Použití `COMClassAttribute` ke zjednodušení procesu vytváření komponent modelu COM z Visual Basic. Objekty COM se výrazně liší od .NET Framework sestavení a bez `COMClassAttribute`, je nutné postupovat podle řady kroků pro vygenerování objektu COM z Visual Basic. Pro třídy označené `COMClassAttribute` kompilátor provede mnoho z těchto kroků automaticky.
+Use `COMClassAttribute` to simplify the process of creating COM components from Visual Basic. COM objects are considerably different from .NET Framework assemblies, and without `COMClassAttribute`, you need to follow a number of steps to generate a COM object from Visual Basic. For classes marked with `COMClassAttribute`, the compiler performs many of these steps automatically.
 
 ### <a name="hidemodulenameattribute"></a>HideModuleNameAttribute
 
-Pomocí `HideModuleNameAttribute` můžete uživatelům modulu dovolit, aby měli k dispozici pouze kvalifikaci potřebnou pro modul.
+Use `HideModuleNameAttribute` to allow module members to be accessed by using only the qualification needed for the module.
 
 ### <a name="vbfixedstringattribute"></a>VBFixedStringAttribute
 
-K vynucení Visual Basic vytvoření řetězce s pevnou délkou použijte `VBFixedStringAttribute`. Řetězce mají ve výchozím nastavení proměnlivou délku a tento atribut je užitečný při ukládání řetězců do souborů. Následující kód demonstruje:
+Use `VBFixedStringAttribute` to force Visual Basic to create a fixed-length string. Strings are of variable length by default, and this attribute is useful when storing strings to files. The following code demonstrates this:
 
 ```vb
 Structure Worker
@@ -267,13 +267,13 @@ End Structure
 
 ### <a name="vbfixedarrayattribute"></a>VBFixedArrayAttribute
 
-Použijte `VBFixedArrayAttribute` k deklaraci polí, která mají pevně danou velikost. Stejně jako řetězce Visual Basic, pole mají ve výchozím nastavení proměnlivou délku. Tento atribut je užitečný při serializaci nebo zápisu dat do souborů.
+Use `VBFixedArrayAttribute` to declare arrays that are fixed in size. Like Visual Basic strings, arrays are of variable length by default. This attribute is useful when serializing or writing data to files.
 
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Reflection>
 - <xref:System.Attribute>
-- [Průvodce programováním Visual Basic](../../../../visual-basic/programming-guide/index.md)
+- [Visual Basic Programming Guide](../../../../visual-basic/programming-guide/index.md)
 - [Atributy](../../../../standard/attributes/index.md)
-- [Reflexe (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)
-- [Přístup k atributům pomocí reflexe (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)
+- [Reflection (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)
+- [Accessing Attributes by Using Reflection (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)

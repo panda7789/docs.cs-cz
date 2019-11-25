@@ -1,25 +1,25 @@
 ---
-title: 'Postupy: Přidávání vlastních metod do dotazů LINQ (Visual Basic)'
+title: 'Postupy: Přidávání vlastních metod do dotazů LINQ'
 ms.date: 07/20/2015
 ms.assetid: 099b2e2a-83cd-45c6-aa4d-01b398b5faaf
-ms.openlocfilehash: 59d08f7b7799964063514ad294567aadd11b0579
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3004a9c9c7abeffd9993b848ad765e7ae2dc8876
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61855371"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353375"
 ---
-# <a name="how-to-add-custom-methods-for-linq-queries-visual-basic"></a>Postupy: Přidávání vlastních metod do dotazů LINQ (Visual Basic)
+# <a name="how-to-add-custom-methods-for-linq-queries-visual-basic"></a>How to: Add Custom Methods for LINQ Queries (Visual Basic)
 
-Můžete rozšířit sadu metod, které můžete použít pro LINQ dotazy přidáním rozšiřující metody, které <xref:System.Collections.Generic.IEnumerable%601> rozhraní. Kromě standardní průměr nebo maximální operace, například můžete vytvořit vlastní agregační metody pro výpočet jednu hodnotu ze sekvence hodnot. Můžete také vytvořit metodu, která funguje jako vlastní filtr a transformovat data specifická pro sekvenci hodnot a vrátí novou sekvenci. Příklady těchto metod jsou <xref:System.Linq.Enumerable.Distinct%2A>, <xref:System.Linq.Enumerable.Skip%2A>, a <xref:System.Linq.Enumerable.Reverse%2A>.
+You can extend the set of methods that you can use for LINQ queries by adding extension methods to the <xref:System.Collections.Generic.IEnumerable%601> interface. For example, in addition to the standard average or maximum operations, you can create a custom aggregate method to compute a single value from a sequence of values. You can also create a method that works as a custom filter or a specific data transform for a sequence of values and returns a new sequence. Examples of such methods are <xref:System.Linq.Enumerable.Distinct%2A>, <xref:System.Linq.Enumerable.Skip%2A>, and <xref:System.Linq.Enumerable.Reverse%2A>.
 
-Když rozšíříte <xref:System.Collections.Generic.IEnumerable%601> rozhraní, vlastních metod můžete použít na jakékoli vyčíslitelné kolekce. Další informace najdete v tématu [rozšiřující metody](../../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md).
+When you extend the <xref:System.Collections.Generic.IEnumerable%601> interface, you can apply your custom methods to any enumerable collection. For more information, see [Extension Methods](../../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md).
 
-## <a name="adding-an-aggregate-method"></a>Přidání agregované – metoda
+## <a name="adding-an-aggregate-method"></a>Adding an Aggregate Method
 
-Metodu agregace vypočítá jedna hodnota ze sady hodnot. LINQ poskytuje několik metod agregace, včetně <xref:System.Linq.Enumerable.Average%2A>, <xref:System.Linq.Enumerable.Min%2A>, a <xref:System.Linq.Enumerable.Max%2A>. Můžete vytvořit vlastní metoda aggregate přidáním metodu rozšíření k <xref:System.Collections.Generic.IEnumerable%601> rozhraní.
+An aggregate method computes a single value from a set of values. LINQ provides several aggregate methods, including <xref:System.Linq.Enumerable.Average%2A>, <xref:System.Linq.Enumerable.Min%2A>, and <xref:System.Linq.Enumerable.Max%2A>. You can create your own aggregate method by adding an extension method to the <xref:System.Collections.Generic.IEnumerable%601> interface.
 
-Následující příklad kódu ukazuje, jak vytvořit rozšiřující metoda volá `Median` vypočítat medián pro sekvenci čísel typu `double`.
+The following code example shows how to create an extension method called `Median` to compute a median for a sequence of numbers of type `double`.
 
 ```vb
 Imports System.Runtime.CompilerServices
@@ -50,12 +50,12 @@ Module LINQExtension
 End Module
 ```
 
-Volání této metody rozšíření pro jakékoli vyčíslitelné kolekce stejným způsobem, volání metod agregační z <xref:System.Collections.Generic.IEnumerable%601> rozhraní.
+You call this extension method for any enumerable collection in the same way you call other aggregate methods from the <xref:System.Collections.Generic.IEnumerable%601> interface.
 
 > [!NOTE]
-> V jazyce Visual Basic můžete použít buď volání metody nebo syntaxe standardního dotazu `Aggregate` nebo `Group By` klauzuli. Další informace najdete v tématu [Aggregate – klauzule](../../../../visual-basic/language-reference/queries/aggregate-clause.md) a [klauzule Group](../../../../visual-basic/language-reference/queries/group-by-clause.md).
+> In Visual Basic, you can either use a method call or standard query syntax for the `Aggregate` or `Group By` clause. For more information, see [Aggregate Clause](../../../../visual-basic/language-reference/queries/aggregate-clause.md) and [Group By Clause](../../../../visual-basic/language-reference/queries/group-by-clause.md).
 
-Následující příklad kódu ukazuje, jak používat `Median` metodu pro pole typu `double`.
+The following code example shows how to use the `Median` method for an array of type `double`.
 
 ```vb
 Dim numbers1() As Double = {1.9, 2, 8, 4, 5.7, 6, 7.2, 0}
@@ -71,13 +71,13 @@ Console.WriteLine("Double: Median = " & query1)
 ' Double: Median = 4.85
 ```
 
-### <a name="overloading-an-aggregate-method-to-accept-various-types"></a>Přetížení agregační metodu tak, aby přijímal různé typy
+### <a name="overloading-an-aggregate-method-to-accept-various-types"></a>Overloading an Aggregate Method to Accept Various Types
 
-Můžete použít přetížení agregační metodu tak, aby přijímá pořadí podle různých typů. Standardní přístup je přetížení pro každý typ vytvoření. Další možností je vytvořit přetížení, které bude trvat obecného typu a proveďte převod na určitý typ pomocí delegáta. Oba přístupy můžete také kombinovat.
+You can overload your aggregate method so that it accepts sequences of various types. The standard approach is to create an overload for each type. Another approach is to create an overload that will take a generic type and convert it to a specific type by using a delegate. You can also combine both approaches.
 
-#### <a name="to-create-an-overload-for-each-type"></a>Chcete-li vytvořit přetížení pro každý typ
+#### <a name="to-create-an-overload-for-each-type"></a>To create an overload for each type
 
-Můžete vytvořit na konkrétní přetížení pro každý typ, který chcete podporovat. Následující příklad kódu ukazuje přetížení `Median` metodu `integer` typu.
+You can create a specific overload for each type that you want to support. The following code example shows an overload of the `Median` method for the `integer` type.
 
 ```vb
 ' Integer overload
@@ -88,7 +88,7 @@ Function Median(ByVal source As IEnumerable(Of Integer)) As Double
 End Function
 ```
 
-Nyní můžete volat `Median` přetížení pro obě `integer` a `double` typů, jak je znázorněno v následujícím kódu:
+You can now call the `Median` overloads for both `integer` and `double` types, as shown in the following code:
 
 ```vb
 Dim numbers1() As Double = {1.9, 2, 8, 4, 5.7, 6, 7.2, 0}
@@ -113,11 +113,11 @@ Console.WriteLine("Integer: Median = " & query2)
 ' Integer: Median = 3
 ```
 
-#### <a name="to-create-a-generic-overload"></a>Chcete-li vytvořit obecné přetížení
+#### <a name="to-create-a-generic-overload"></a>To create a generic overload
 
-Můžete také vytvořit přetížení přijímající posloupnost obecných objektů. Toto přetížení přebírá jako parametr delegáta a použije ho k převedení sekvence objektů obecného typu určitého typu.
+You can also create an overload that accepts a sequence of generic objects. This overload takes a delegate as a parameter and uses it to convert a sequence of objects of a generic type to a specific type.
 
-Následující kód ukazuje přetížení `Median` metodu, která přebírá <xref:System.Func%602> jako parametr. Tento delegát přebírá objekt obecný typ a vrátí objekt typu `double`.
+The following code shows an overload of the `Median` method that takes the <xref:System.Func%602> delegate as a parameter. This delegate takes an object of generic type T and returns an object of type `double`.
 
 ```vb
 ' Generic overload.
@@ -129,9 +129,9 @@ Function Median(Of T)(ByVal source As IEnumerable(Of T),
 End Function
 ```
 
-Nyní můžete volat `Median` metodu pro sekvenci objektů libovolného typu. Pokud typ nemá žádné vlastní přetížení metody, musíte předat parametr delegátu. V jazyce Visual Basic můžete použít výraz lambda pro tento účel. Navíc pokud použijete `Aggregate` nebo `Group By` klauzule namísto volání metody, které můžete předat libovolná hodnota nebo výraz, který je v oboru tuto klauzuli.
+You can now call the `Median` method for a sequence of objects of any type. If the type does not have its own method overload, you have to pass a delegate parameter. In Visual Basic, you can use a lambda expression for this purpose. Also, if you use the `Aggregate` or `Group By` clause instead of the method call, you can pass any value or expression that is in the scope this clause.
 
-Následující příklad kódu ukazuje, jak volat `Median` metodu pro pole celých čísel a pole řetězců. Pro řetězce se vypočítá Medián pro délky řetězce v poli. Tento příklad ukazuje, jak předat <xref:System.Func%602> parametr do delegáta `Median` metodu pro každý případ.
+The following example code shows how to call the `Median` method for an array of integers and an array of strings. For strings, the median for the lengths of strings in the array is calculated. The example shows how to pass the <xref:System.Func%602> delegate parameter to the `Median` method for each case.
 
 ```vb
 Dim numbers3() As Integer = {1, 2, 3, 4, 5}
@@ -159,11 +159,11 @@ Console.WriteLine("String: Median = " & query4)
 ' String: Median = 4
 ```
 
-## <a name="adding-a-method-that-returns-a-collection"></a>Přidání metody, která vrátí kolekci
+## <a name="adding-a-method-that-returns-a-collection"></a>Adding a Method That Returns a Collection
 
-Můžete rozšířit <xref:System.Collections.Generic.IEnumerable%601> rozhraní s metodou vlastního dotazu, která vrátí sekvenci hodnot. V takovém případě metoda musí vracet kolekci typu <xref:System.Collections.Generic.IEnumerable%601>. Tyto metody slouží k použití filtrů nebo data transformací na sekvenci hodnot.
+You can extend the <xref:System.Collections.Generic.IEnumerable%601> interface with a custom query method that returns a sequence of values. In this case, the method must return a collection of type <xref:System.Collections.Generic.IEnumerable%601>. Such methods can be used to apply filters or data transforms to a sequence of values.
 
-Následující příklad ukazuje, jak vytvořit metodu rozšíření s názvem `AlternateElements` , která vrací každý prvek v kolekci, počínaje prvním prvkem.
+The following example shows how to create an extension method named `AlternateElements` that returns every other element in a collection, starting from the first element.
 
 ```vb
 ' Extension method for the IEnumerable(of T) interface.
@@ -186,7 +186,7 @@ Function AlternateElements(Of T)(
 End Function
 ```
 
-Lze tuto metodu lze volat rozšíření pro jakékoli vyčíslitelné kolekce stejně, jako by volání z jiné metody <xref:System.Collections.Generic.IEnumerable%601> rozhraní, jak je znázorněno v následujícím kódu:
+You can call this extension method for any enumerable collection just as you would call other methods from the <xref:System.Collections.Generic.IEnumerable%601> interface, as shown in the following code:
 
 ```vb
 Dim strings() As String = {"a", "b", "c", "d", "e"}

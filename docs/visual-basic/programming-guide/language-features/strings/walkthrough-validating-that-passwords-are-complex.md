@@ -1,22 +1,22 @@
 ---
-title: Ověřování složitosti hesla (Visual Basic)
+title: Validating Passwords Complexity
 ms.date: 07/20/2015
 helpviewer_keywords:
 - String data type [Visual Basic], validation
 ms.assetid: 5d9a918f-6c1f-41a3-a019-b5c2b8ce0381
-ms.openlocfilehash: ff0ac933be917b5604966240ff1fbd331a34ba77
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6e8697379a6fbb5cc15b60291e5b822897c2c013
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64663618"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348326"
 ---
-# <a name="walkthrough-validating-that-passwords-are-complex-visual-basic"></a>Návod: Ověření, že hesla jsou složitá (Visual Basic)
-Tato metoda zkontroluje některé vlastnosti silné heslo a aktualizuje řetězcový parametr s informacemi o tom, které kontroluje heslo selže.  
+# <a name="walkthrough-validating-that-passwords-are-complex-visual-basic"></a>Návod: Ověření, že hesla jsou složitá (Visual Basic).
+This method checks for some strong-password characteristics and updates a string parameter with information about which checks the password fails.  
   
- Hesla je možné v zabezpečeném systému k autorizaci uživatele. Hesla musí být ale obtížné pro neoprávněné uživatele o. Útočníci můžou používat *slovníkový útok* programu, který prochází všechna slova ve slovníku (nebo více adresářů v různých jazycích) a testuje, jestli některý z slov fungovat jako heslo uživatele. Slabá hesla, jako je například "Yankees" nebo "Mustang" dají uhodnout rychle. Volba bezpečnějších hesel, jako například "? Je "L1N3vaFiNdMeyeP@sSWerd!", jsou mnohem méně pravděpodobné, že dají uhodnout. Systém chráněný heslem se ujistěte, že uživatelé vybrat silná hesla.  
+ Passwords can be used in a secure system to authorize a user. However, the passwords must be difficult for unauthorized users to guess. Attackers can use a *dictionary attack* program, which iterates through all of the words in a dictionary (or multiple dictionaries in different languages) and tests whether any of the words work as a user's password. Weak passwords such as "Yankees" or "Mustang" can be guessed quickly. Stronger passwords, such as "?You'L1N3vaFiNdMeyeP@sSWerd!", are much less likely to be guessed. A password-protected system should ensure that users choose strong passwords.  
   
- Silné heslo je složitý (obsahují kombinaci velká písmena, malá písmena, číselné a speciální znaky) a není u slov velká. Tento příklad ukazuje, jak ověřit složitost.  
+ A strong password is complex (containing a mixture of uppercase, lowercase, numeric, and special characters) and is not a word. This example demonstrates how to verify complexity.  
   
 ## <a name="example"></a>Příklad  
   
@@ -24,26 +24,26 @@ Tato metoda zkontroluje některé vlastnosti silné heslo a aktualizuje řetězc
  [!code-vb[VbVbcnRegEx#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnRegEx/VB/Class1.vb#1)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Tuto metodu volejte předáním řetězce, který obsahuje toto heslo.  
+ Call this method by passing the string that contains that password.  
   
- Tento příklad vyžaduje:  
+ This example requires:  
   
-- Přístup k členům <xref:System.Text.RegularExpressions> oboru názvů. Přidat `Imports` příkazu, pokud jste nejsou kvalifikaci plně názvy členů ve vašem kódu. Další informace najdete v tématu [příkaz Imports (Namespace .NET a typ)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).  
+- Access to the members of the <xref:System.Text.RegularExpressions> namespace. Add an `Imports` statement if you are not fully qualifying member names in your code. For more information, see [Imports Statement (.NET Namespace and Type)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).  
   
 ## <a name="security"></a>Zabezpečení  
- Pokud přesouváte hesla přes síť, budete muset použít bezpečnou metodu pro přenášení dat. Další informace najdete v tématu [ASP.NET Web Application Security](https://docs.microsoft.com/previous-versions/aspnet/330a99hc(v=vs.100)).
+ If you're moving the password across a network, you need to use a secure method for transferring data. For more information, see [ASP.NET Web Application Security](https://docs.microsoft.com/previous-versions/aspnet/330a99hc(v=vs.100)).
   
- Můžete zvýšit jeho přesnost `ValidatePassword` funkce tak, že přidáte další složitosti kontroly:  
+ You can improve the accuracy of the `ValidatePassword` function by adding additional complexity checks:  
   
-- Porovnejte heslo a jeho dílčí řetězce na jméno uživatele, identifikátor uživatele a slovníku definovaného aplikací. Kromě toho považovat za vizuálně podobné znaky ekvivalent při provádění porovnání. Například považovat za písmena "l" a "e" odpovídá číslice "1" a "3".  
+- Compare the password and its substrings against the user's name, user identifier, and an application-defined dictionary. In addition, treat visually similar characters as equivalent when performing the comparisons. For example, treat the letters "l" and "e" as equivalent to the numerals "1" and "3".  
   
-- Pokud existuje pouze jedno velké písmeno, ujistěte se, že se nejedná o první znak hesla.  
+- If there is only one uppercase character, make sure it is not the password's first character.  
   
-- Ujistěte se, že poslední dva znaky heslo jsou znaky písmena.  
+- Make sure that the last two characters of the password are letter characters.  
   
-- Nepovolit hesla, ve které jsou zadány všechny symboly z horní řádek klávesnici.  
+- Do not allow passwords in which all the symbols are entered from the keyboard's top row.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Text.RegularExpressions.Regex>
-- [Zabezpečení webové aplikace ASP.NET](https://docs.microsoft.com/previous-versions/aspnet/330a99hc(v=vs.100))
+- [ASP.NET Web Application Security](https://docs.microsoft.com/previous-versions/aspnet/330a99hc(v=vs.100))

@@ -1,26 +1,26 @@
 ---
-title: Souhrn objektů kolekce (Visual Basic)
+title: Souhrn objektů kolekce
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Collection object, summary
 ms.assetid: c4586369-d817-4453-9cb0-1a272fc66737
-ms.openlocfilehash: 50174f2af5e52b0fd71a590e7daf0285b5e043ad
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 92247c55fb247864b25670a2ca25d867e5b22d15
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61802441"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74349931"
 ---
 # <a name="collection-object-summary-visual-basic"></a>Souhrn objektů kolekce (Visual Basic)
-Klíčová slova jazyka Visual Basic a členy běhové knihovny jsou uspořádány podle účelu a použití.  
+Visual Basic language keywords and run-time library members are organized by purpose and use.  
   
 |Akce|Prvek jazyka|  
 |------------|----------------------|  
-|Vytvoření `Collection` objektu.|<xref:Microsoft.VisualBasic.Collection>|  
-|Přidání položky do kolekce.|<xref:Microsoft.VisualBasic.Collection.Add*>|  
-|Odstraníte objekt z kolekce.|<xref:Microsoft.VisualBasic.Collection.Remove*>|  
-|Odkažte na položku v kolekci.|<xref:Microsoft.VisualBasic.Collection.Item*>|  
-|Vrátí odkaz na <xref:System.Collections.IEnumerator> rozhraní.|<xref:Microsoft.VisualBasic.Collection.System%23Collections%23IEnumerable%23GetEnumerator%2A>|  
+|Create a `Collection` object.|<xref:Microsoft.VisualBasic.Collection>|  
+|Add an item to a collection.|<xref:Microsoft.VisualBasic.Collection.Add*>|  
+|Remove an object from a collection.|<xref:Microsoft.VisualBasic.Collection.Remove*>|  
+|Reference an item in a collection.|<xref:Microsoft.VisualBasic.Collection.Item*>|  
+|Return a reference to an <xref:System.Collections.IEnumerator> interface.|<xref:Microsoft.VisualBasic.Collection.System%23Collections%23IEnumerable%23GetEnumerator%2A>|  
   
 ## <a name="see-also"></a>Viz také:
 

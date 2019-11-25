@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: Řízení typu projekce (Visual Basic)'
+title: 'How to: Control the Type of a Projection'
 ms.date: 07/20/2015
 ms.assetid: a0171276-0b46-4817-aee5-a8d5191b12fe
-ms.openlocfilehash: 8ec53d1f8e0ae4957857d4b71fddd05205dee6b5
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: b9620e7dab7abecce5161c5e7f50b187dbb3a71e
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71351740"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351091"
 ---
-# <a name="how-to-control-the-type-of-a-projection-visual-basic"></a>Postupy: Řízení typu projekce (Visual Basic)
-Projekcí je proces pořízení jedné sady dat, její filtrování, změna jejího tvaru a dokonce i změna jejího typu. Většina výrazů dotazů provádí projekce. Většina výrazů dotazu zobrazených v této části vyhodnocuje <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement>, ale můžete řídit typ projekce pro vytváření kolekcí dalších typů. V tomto tématu se dozvíte, jak to provést.  
+# <a name="how-to-control-the-type-of-a-projection-visual-basic"></a>How to: Control the Type of a Projection (Visual Basic)
+Projection is the process of taking one set of data, filtering it, changing its shape, and even changing its type. Most query expressions perform projections. Most of the query expressions shown in this section evaluate to <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement>, but you can control the type of the projection to create collections of other types. This topic shows how to do this.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad definuje nový typ `Customer`. Výraz dotazu potom vytvoří instanci nových objektů `Customer` v klauzuli `Select`. To způsobí, že typ výrazu dotazu bude <xref:System.Collections.Generic.IEnumerable%601> z `Customer`.  
+ The following example defines a new type, `Customer`. The query expression then instantiates new `Customer` objects in the `Select` clause. This causes the type of the query expression to be <xref:System.Collections.Generic.IEnumerable%601> of `Customer`.  
   
- V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML) ](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
+ This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
   
 ```vb  
 Public Class Customer  
@@ -77,7 +77,7 @@ Sub Main()
 End Sub  
 ```  
   
- Tento kód generuje následující výstup:  
+ This code produces the following output:  
   
 ```console  
 GREAL:Great Lakes Food Market:Howard Snyder  
@@ -89,4 +89,4 @@ LETSS:Let's Stop N Shop:Jaime Yorres
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Linq.Enumerable.Select%2A>
-- [Projekce a transformace (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+- [Projections and Transformations (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

@@ -1,28 +1,28 @@
 ---
-title: 'Postupy: Vyplňování kolekcí objektů z více zdrojů (LINQ) (Visual Basic)'
+title: 'Postupy: Vyplňování kolekcí objektů z více zdrojů (LINQ)'
 ms.date: 06/22/2018
 ms.assetid: 63062a22-e6a9-42c0-b357-c7c965f58f33
-ms.openlocfilehash: 21474758cffd15c0cb4193cdb2a7bc33c981c938
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 74a2a0f71e575136f1758f72f9a8db72549a9489
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65586198"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346982"
 ---
-# <a name="how-to-populate-object-collections-from-multiple-sources-linq-visual-basic"></a>Postupy: Vyplňování kolekcí objektů z více zdrojů (LINQ) (Visual Basic)
+# <a name="how-to-populate-object-collections-from-multiple-sources-linq-visual-basic"></a>How to: Populate Object Collections from Multiple Sources (LINQ) (Visual Basic)
 
-Tento příklad ukazuje, jak sloučit data z různých zdrojů do sekvence nových typů.
+This example shows how to merge data from different sources into a sequence of new types.
 
 > [!NOTE]
-> Nedoporučujeme připojení dat v paměti nebo dat v systému souborů s daty, která je stále v databázi. Takové spojení mezi doménami může přinést nedefinované výsledky z důvodu různé způsoby, ve kterém mohou být definovány operace spojení pro databázové dotazy a jiné druhy zdrojů. Kromě toho existuje riziko, že tato operace může způsobit výjimku paměti, pokud je příliš velká množství dat v databázi. K připojení dat z databáze pro data v paměti, nejprve volat `ToList` nebo `ToArray` v databázi dotaz a pak provedením příkazu join na vrácené kolekci.
+> Don't try to join in-memory data or data in the file system with data that is still in a database. Such cross-domain joins can yield undefined results because of different ways in which join operations might be defined for database queries and other types of sources. Additionally, there is a risk that such an operation could cause an out-of-memory exception if the amount of data in the database is large enough. To join data from a database to in-memory data, first call `ToList` or `ToArray` on the database query, and then perform the join on the returned collection.
 
-## <a name="to-create-the-data-file"></a>Vytvoření datového souboru
+## <a name="to-create-the-data-file"></a>To create the data file
 
-- Zkopírujte soubory names.csv a scores.csv do složky vašeho projektu, jak je popsáno v [jak: Připojte se k obsahu z Nepodobných souborů (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md).
+- Copy the names.csv and scores.csv files into your project folder, as described in [How to: Join Content from Dissimilar Files (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md).
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje způsob použití pojmenovaného typu `Student` k uložení sloučených data ze dvou kolekcích v paměti řetězců, které simulují data z tabulky ve formátu .csv. První kolekce řetězců představuje jména studentů a ID, a druhá kolekce, kterou představuje ID studenta (v prvním sloupci) a čtyři skóre zkoušku. ID je použít jako cizí klíč.
+The following example shows how to use a named type `Student` to store merged data from two in-memory collections of strings that simulate spreadsheet data in .csv format. The first collection of strings represents the student names and IDs, and the second collection represents the student ID (in the first column) and four exam scores. The ID is used as the foreign key.
 
 ```vb
 Imports System.Collections.Generic
@@ -100,9 +100,9 @@ End Class
 ' The average score of Michael Tucker is 92
 ```
 
-V [klauzule Select](../../../../visual-basic/language-reference/queries/select-clause.md) klauzule inicializátoru objektu se používá k vytvoření instance každé nové `Student` s použitím data ze dvou zdrojů.
+In the [Select Clause](../../../../visual-basic/language-reference/queries/select-clause.md) clause, an object initializer is used to instantiate each new `Student` object by using the data from the two sources.
 
-Pokud nemáte k dispozici pro ukládání výsledků dotazu, může být vhodnější než pojmenované typy anonymních typů. Pokud předáte výsledky dotazu mimo metodu spuštění dotazu, je nutné pojmenovaných typů. Následující příklad provede stejné úkoly, jako předchozí příklad, ale místo pojmenované typy používá anonymní typy:
+If you don't have to store the results of a query, anonymous types can be more convenient than named types. Named types are required if you pass the query results outside the method in which the query is executed. The following example performs the same task as the previous example, but uses anonymous types instead of named types:
 
 ```vb
 ' Merge the data by using an anonymous type.
@@ -130,4 +130,4 @@ Next
 
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [LINQ and Strings (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)

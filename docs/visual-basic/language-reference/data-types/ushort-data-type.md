@@ -1,5 +1,5 @@
 ---
-title: UShort – datový typ (Visual Basic)
+title: UShort – datový typ
 ms.date: 01/31/2018
 f1_keywords:
 - vb.ushort
@@ -16,39 +16,39 @@ helpviewer_keywords:
 - UShort data type
 - US literal type characters [Visual Basic]
 ms.assetid: 138db892-665d-4ba8-9cae-d8d91c4a8f39
-ms.openlocfilehash: d85219fad631b09c19eac054b87d4843b0c73a45
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7cdbd5fb192fd5cc1be6260dcdcdb1f30cf3f865
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64646941"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74343857"
 ---
-# <a name="ushort-data-type-visual-basic"></a>Ushort – datový typ (Visual Basic)
+# <a name="ushort-data-type-visual-basic"></a>UShort data type (Visual Basic)
 
-Blokování 16 bitů (2bajtových) celá čísla bez znaménka v rozmezí od 0 do 65 535.  
+Holds unsigned 16-bit (2-byte) integers ranging in value from 0 through 65,535.  
   
 ## <a name="remarks"></a>Poznámky
 
- Použití `UShort` datový typ obsahující binární data jsou příliš velká pro `Byte`.  
+ Use the `UShort` data type to contain binary data too large for `Byte`.  
   
- Výchozí hodnota `UShort` je 0.  
+ The default value of `UShort` is 0.  
 
-## <a name="literal-assignments"></a>Literál přiřazení
+## <a name="literal-assignments"></a>Literal assignments
 
-Můžete deklarovat a inicializovat `UShort` proměnnou ji přiřadíte desítkový literál, šestnáctkové literál, osmičkové literální, nebo (od verze 2017 jazyka Visual Basic) binární literál. Pokud celočíselný literál je mimo rozsah `UShort` (tj. Pokud je menší než <xref:System.UInt16.MinValue?displayProperty=nameWithType> nebo větší než <xref:System.UInt16.MaxValue?displayProperty=nameWithType>, dojde k chybě kompilace.
+You can declare and initialize a `UShort` variable by assigning it a decimal literal, a hexadecimal literal, an octal literal, or (starting with Visual Basic 2017) a binary literal. If the integer literal is outside the range of `UShort` (that is, if it is less than <xref:System.UInt16.MinValue?displayProperty=nameWithType> or greater than <xref:System.UInt16.MaxValue?displayProperty=nameWithType>, a compilation error occurs.
 
-V následujícím příkladu celých čísel je rovno 65,034, které jsou reprezentovány jako desítkové, hexadecimální, a binární literály jsou přiřazeny k `UShort` hodnoty.
+In the following example, integers equal to 65,034 that are represented as decimal, hexadecimal, and binary literals are assigned to `UShort` values.
   
 [!code-vb[UShort](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#UShort)]
 
 > [!NOTE]
-> Použijte předponu `&h` nebo `&H` k označení šestnáctkové literálu předpona `&b` nebo `&B` k označení binárního typu literal a předponu `&o` nebo `&O` k označení osmičkové literální. Desítkové literály mají žádná předpona.
+> You use the prefix `&h` or `&H` to denote a hexadecimal literal, the prefix `&b` or `&B` to denote a binary literal, and the prefix `&o` or `&O` to denote an octal literal. Decimal literals have no prefix.
 
-Počínaje rokem 2017 jazyka Visual Basic, můžete použít také znak podtržítka `_`, jako oddělovač číslice za účelem zlepšení čitelnosti jako následující příklad ukazuje.
+Starting with Visual Basic 2017, you can also use the underscore character, `_`, as a digit separator to enhance readability, as the following example shows.
 
 [!code-vb[UShort](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#UShortS)]
 
-Od verze 15.5 jazyka Visual Basic, můžete také použít znak podtržítka (`_`) jako počáteční oddělovač mezi prefix a šestnáctkové, binární nebo osmičkové číslice. Příklad:
+Starting with Visual Basic 15.5, you can also use the underscore character (`_`) as a leading separator between the prefix and the hexadecimal, binary, or octal digits. Příklad:
 
 ```vb
 Dim number As UShort = &H_FF8C
@@ -56,23 +56,23 @@ Dim number As UShort = &H_FF8C
 
 [!INCLUDE [supporting-underscores](../../../../includes/vb-separator-langversion.md)]
 
-Číselné literály může také zahrnovat `US` nebo `us` [znak](../../programming-guide/language-features/data-types/type-characters.md) k označení `UShort` datového typu, jak ukazuje následující příklad.
+Numeric literals can also include the `US` or `us` [type character](../../programming-guide/language-features/data-types/type-characters.md) to denote the `UShort` data type, as the following example shows.
 
 ```vb
 Dim number = &H_5826us
 ```
 
-## <a name="programming-tips"></a>Tipy pro programování
+## <a name="programming-tips"></a>Tipy k programování
   
-- **Záporná čísla.** Protože `UShort` typ bez znaménka, je ho nemůže představovat záporné číslo. Pokud používáte Unární minus (`-`) operátor na výraz, který se vyhodnotí na typ `UShort`, Visual Basic Převede výraz, který má `Integer` první.  
+- **Negative Numbers.** Because `UShort` is an unsigned type, it cannot represent a negative number. If you use the unary minus (`-`) operator on an expression that evaluates to type `UShort`, Visual Basic converts the expression to `Integer` first.  
   
-- **Dodržování specifikace CLS.** `UShort` Datový typ není součástí [Common Language Specification](https://www.ecma-international.org/publications/standards/Ecma-335.htm) (CLS), takže kód kompatibilní se Specifikací CLS nemůže využívat komponentu, která ji používá.
+- **CLS Compliance.** The `UShort` data type is not part of the [Common Language Specification](https://www.ecma-international.org/publications/standards/Ecma-335.htm) (CLS), so CLS-compliant code cannot consume a component that uses it.
   
-- **Rozšíření.** `UShort` Datový typ rozšiřuje na `Integer`, `UInteger`, `Long`, `ULong`, `Decimal`, `Single`, a `Double`. To znamená, že můžete převést `UShort` ke kterékoli z těchto typů, aniž se objeví <xref:System.OverflowException?displayProperty=nameWithType> chyby.  
+- **Widening.** The `UShort` data type widens to `Integer`, `UInteger`, `Long`, `ULong`, `Decimal`, `Single`, and `Double`. This means you can convert `UShort` to any of these types without encountering a <xref:System.OverflowException?displayProperty=nameWithType> error.  
   
-- **Znaky typu.** Přidávání znaky literálového typu `US` k literálu se z něj stane `UShort` datového typu. `UShort` nemá žádné – znak typu identifikátoru.  
+- **Type Characters.** Appending the literal type characters `US` to a literal forces it to the `UShort` data type. `UShort` has no identifier type character.  
   
-- **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.UInt16?displayProperty=nameWithType> struktury.  
+- **Framework Type.** The corresponding type in the .NET Framework is the <xref:System.UInt16?displayProperty=nameWithType> structure.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -80,5 +80,5 @@ Dim number = &H_5826us
 - [Datové typy](../../../visual-basic/language-reference/data-types/index.md)
 - [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
 - [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)
-- [Postupy: Volání funkce Windows, která přebírá typy bez znaménka](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)
+- [Postupy: Volání funkce systému Windows, která přebírá nepřiřazené typy](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)
 - [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

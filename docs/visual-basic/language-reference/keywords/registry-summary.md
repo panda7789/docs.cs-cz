@@ -1,26 +1,26 @@
 ---
-title: Souhrn registru (Visual Basic)
+title: Souhrn registru
 ms.date: 07/20/2015
 helpviewer_keywords:
 - registry [Visual Basic]
 ms.assetid: 6e90eb8a-1a4e-4387-8a68-9287dc7875e8
-ms.openlocfilehash: 88b9c530da3da39c0d70d9d8e90626bd5e133cf3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6564b4c3ad2025da4ebaeaca84e23c97a85f007d
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61802412"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351687"
 ---
 # <a name="registry-summary-visual-basic"></a>Souhrn registru (Visual Basic)
-Klíčová slova jazyka Visual Studio a členy běhové knihovny jsou uspořádány podle účelu a použití.  
+Visual Studio language keywords and run-time library members are organized by purpose and use.  
   
- Použití `My` funkce vám poskytuje větší produktivitu a výkon operací registru než tyto prvky. Další informace naleznete v tématu <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>.  
+ Using the `My` feature provides you with greater productivity and performance in registry operations than these elements. Další informace najdete v tématu <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>.  
   
-|**Akce**|**Prvek jazyka**|  
+|**Action**|**Language element**|  
 |----------------|--------------------------|  
-|Smazat nastavení programu.|<xref:Microsoft.VisualBasic.Interaction.DeleteSetting%2A>|  
-|Přečtěte si nastavení aplikace.|<xref:Microsoft.VisualBasic.Interaction.GetSetting%2A>, <xref:Microsoft.VisualBasic.Interaction.GetAllSettings%2A>|  
-|Uložte nastavení programu.|<xref:Microsoft.VisualBasic.Interaction.SaveSetting%2A>|  
+|Delete program settings.|<xref:Microsoft.VisualBasic.Interaction.DeleteSetting%2A>|  
+|Read program settings.|<xref:Microsoft.VisualBasic.Interaction.GetSetting%2A>, <xref:Microsoft.VisualBasic.Interaction.GetAllSettings%2A>|  
+|Save program settings.|<xref:Microsoft.VisualBasic.Interaction.SaveSetting%2A>|  
   
 ## <a name="see-also"></a>Viz také:
 

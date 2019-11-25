@@ -1,19 +1,19 @@
 ---
-title: Přístup k atributům pomocí reflexe (Visual Basic)
+title: Přístup k atributům pomocí reflexe
 ms.date: 07/20/2015
 ms.assetid: c56e41da-5433-464f-a7bf-2a722e78bc9f
-ms.openlocfilehash: a50c308a66637768dbe0089e612fcfe73bafdfa2
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 94352f07cf1f7e4a35f023503f138596ae5ac227
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524346"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353560"
 ---
-# <a name="accessing-attributes-by-using-reflection-visual-basic"></a>Přístup k atributům pomocí reflexe (Visual Basic)
+# <a name="accessing-attributes-by-using-reflection-visual-basic"></a>Accessing Attributes by Using Reflection (Visual Basic)
 
-Fakt, že můžete definovat vlastní atributy a umístit je do zdrojového kódu, by měl být malými hodnotami bez jakéhokoli způsobu, jak tyto informace načítat a na ni bude působit. Pomocí reflexe můžete načíst informace, které byly definovány s vlastními atributy. Klíčovou metodou je `GetCustomAttributes`, která vrací pole objektů, které jsou ekvivalenty v době běhu atributů zdrojového kódu. Tato metoda má několik přetížených verzí. Další informace najdete v tématu <xref:System.Attribute>.
+The fact that you can define custom attributes and place them in your source code would be of little value without some way of retrieving that information and acting on it. By using reflection, you can retrieve the information that was defined with custom attributes. The key method is `GetCustomAttributes`, which returns an array of objects that are the run-time equivalents of the source code attributes. This method has several overloaded versions. Další informace najdete v tématu <xref:System.Attribute>.
 
-Specifikace atributu jako:
+An attribute specification such as:
 
 ```vb
 <Author("P. Ackerman", Version:=1.1)>
@@ -22,18 +22,18 @@ Class SampleClass
 End Class
 ```
 
- je koncepční ekvivalent:
+ is conceptually equivalent to this:
 
 ```vb
 Dim anonymousAuthorObject As Author = New Author("P. Ackerman")
 anonymousAuthorObject.version = 1.1
 ```
 
-Kód však není proveden, dokud není `SampleClass` dotazování pro atributy. Volání `GetCustomAttributes` v `SampleClass` způsobí, že se objekt `Author` vytvoří a inicializuje jako výše. Pokud má třída jiné atributy, další objekty atributů jsou konstruovány podobně. `GetCustomAttributes` pak vrátí objekt `Author` a všechny objekty atributů v poli. Pak můžete iterovat přes toto pole, určit, jaké atributy byly aplikovány na základě typu každého prvku pole a extrahovat informace z objektů atributů.
+However, the code is not executed until `SampleClass` is queried for attributes. Calling `GetCustomAttributes` on `SampleClass` causes an `Author` object to be constructed and initialized as above. If the class has other attributes, other attribute objects are constructed similarly. `GetCustomAttributes` then returns the `Author` object and any other attribute objects in an array. You can then iterate over this array, determine what attributes were applied based on the type of each array element, and extract information from the attribute objects.
 
 ## <a name="example"></a>Příklad
 
-Tady je kompletní příklad. Vlastní atribut je definován, aplikován na několik entit a načten prostřednictvím reflexe.
+Here is a complete example. A custom attribute is defined, applied to several entities, and retrieved via reflection.
 
 ```vb
 ' Multiuse attribute
@@ -105,8 +105,8 @@ End Class
 
 - <xref:System.Reflection>
 - <xref:System.Attribute>
-- [Průvodce programováním Visual Basic](../../../../visual-basic/programming-guide/index.md)
+- [Visual Basic Programming Guide](../../../../visual-basic/programming-guide/index.md)
 - [Načítání informací uložených v atributech](../../../../standard/attributes/retrieving-information-stored-in-attributes.md)
-- [Reflexe (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)
-- [Atributy (Visual Basic)](../../../../visual-basic/language-reference/attributes.md)
-- [Vytváření vlastních atributů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)
+- [Reflection (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)
+- [Attributes (Visual Basic)](../../../../visual-basic/language-reference/attributes.md)
+- [Creating Custom Attributes (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)

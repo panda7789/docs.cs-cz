@@ -1,46 +1,46 @@
 ---
-title: Kdy použít výčet (Visual Basic)
+title: Kdy použít výčet
 ms.date: 07/20/2015
 helpviewer_keywords:
 - enumerations [Visual Basic]
 ms.assetid: e6e47b5b-3ed9-452d-a481-9c3fed88519a
-ms.openlocfilehash: a43c55d4ad6a895957b53ae18c3641c5383a24ce
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5daae8d487ddfe079a54e305e59e32e8ded8f65e
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64585077"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353961"
 ---
 # <a name="when-to-use-an-enumeration-visual-basic"></a>Kdy použít výčet (Visual Basic)
-Výčty nabízí snadný způsob, jak pracovat se sadami související s konstantami. Což je výčet nebo `Enum`, je symbolický název pro sadu hodnot. Výčty jsou považovány za datových typů a můžete využít k vytvoření sady konstanty pro použití s proměnných a vlastností.  
+Enumerations offer an easy way to work with sets of related constants. An enumeration, or `Enum`, is a symbolic name for a set of values. Enumerations are treated as data types, and you can use them to create sets of constants for use with variables and properties.  
   
 ## <a name="when-to-use-an-enumeration"></a>Kdy použít výčet  
- Pokaždé, když procedury přijímá omezenou sadu proměnných, zvažte možnost použít výčet. Výčty usnadňují srozumitelnější a čitelnější kód, zejména v případě, že používají smysluplné názvy.  
+ Whenever a procedure accepts a limited set of variables, consider using an enumeration. Enumerations make for clearer and more readable code, particularly when meaningful names are used.  
   
- Výhody používání výčtů patří:  
+ The benefits of using enumerations include:  
   
-- Snižuje chyby způsobené transpozice nebo chybným zadáním čísla.  
+- Reduces errors caused by transposing or mistyping numbers.  
   
-- Umožňuje snadno ke změně hodnot v budoucnu.  
+- Makes it easy to change values in the future.  
   
-- Díky kód lépe čitelný, což znamená, že je méně pravděpodobné, že se do něj ovládat chyby.  
+- Makes code easier to read, which means it is less likely that errors will creep into it.  
   
-- Zajišťuje kompatibilitu. S výčty váš kód je méně pravděpodobné, že selhat, pokud v budoucnu někdo změní hodnoty odpovídající názvy členů.  
+- Ensures forward compatibility. With enumerations, your code is less likely to fail if in the future someone changes the values corresponding to the member names.  
   
-## <a name="naming-enumerations"></a>Názvy výčtů  
- Použijte zásady vytváření názvů pro členy výčtu. Pokud jazyka Visual Basic narazí název člena výčtu, může vyvolána výjimka, pokud obsahují další odkazované knihovny typů se stejným názvem. Použijte jedinečnou předponu, která identifikuje hodnoty z vaší aplikace nebo komponenty.  
+## <a name="naming-enumerations"></a>Naming Enumerations  
+ Use a naming convention for enumeration members. When Visual Basic encounters an enumeration member name, an exception may be thrown if other referenced type libraries contain the same name. Use a unique prefix that identifies the values from your application or component.  
   
- Při odkazování na člena výčtu, které musí kvalifikovat název člena s názvem výčtu jinak použít `Imports` příkazu. Další informace najdete v tématu [výčty a kvalifikace názvu](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md).  
+ When referring to a member of an enumeration, you must qualify the member name with the enumeration name or else use the `Imports` statement. For more information, see [Enumerations and Name Qualification](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md).  
   
-## <a name="predefined-enumerations"></a>Předdefinované výčty  
- Visual Basic nabízí celou řadu předdefinovaných výčty, jako například `FirstDayOfWeek` a `MsgBoxResult`, které usnadní váš kód. Jejich seznam naleznete v tématu [konstanty a výčty](../../../../visual-basic/language-reference/constants-and-enumerations.md).  
+## <a name="predefined-enumerations"></a>Predefined Enumerations  
+ Visual Basic provides a number of predefined enumerations, such as `FirstDayOfWeek` and `MsgBoxResult`, to facilitate your code. For a list of these see [Constants and Enumerations](../../../../visual-basic/language-reference/constants-and-enumerations.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Deklarace výčtů](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)
+- [How to: Declare an Enumeration](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)
 - [Postupy: Odkazování na člena výčtu](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-refer-to-an-enumeration-member.md)
 - [Výčty a kvalifikace názvu](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md)
-- [Postupy: Iterace ve výčtu v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-iterate-through-an-enumeration.md)
+- [How to: Iterate Through An Enumeration in Visual Basic](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-iterate-through-an-enumeration.md)
 - [Postupy: Určení řetězce spojeného s hodnotou výčtu](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-determine-the-string-associated-with-an-enumeration-value.md)
 - [Příkaz Enum](../../../../visual-basic/language-reference/statements/enum-statement.md)
 - [Konstanty a výčty](../../../../visual-basic/language-reference/constants-and-enumerations.md)

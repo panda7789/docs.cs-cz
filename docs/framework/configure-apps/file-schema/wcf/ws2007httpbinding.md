@@ -2,12 +2,12 @@
 title: <ws2007HttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 8586ecc9-bdaa-44d6-8d4d-7038e4ea1741
-ms.openlocfilehash: 2f8cff87280f08af0c426b7a726949b9a9c40197
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 379552f461a79415e3140a8084901e0c1d6b2c32
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73732523"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74140490"
 ---
 # <a name="ws2007httpbinding"></a>\<ws2007HttpBinding >
 Definuje interoperabilní vazbu, která poskytuje podporu pro správné verze prvků vazby <xref:System.ServiceModel.WSHttpBinding.Security%2A>, <xref:System.ServiceModel.ReliableSession>a <xref:System.ServiceModel.WSHttpBindingBase.TransactionFlow%2A>.  
@@ -72,7 +72,7 @@ Definuje interoperabilní vazbu, která poskytuje podporu pro správné verze pr
 |`maxBufferPoolSize`|Maximální velikost fondu vyrovnávací paměti pro tuto vazbu. Výchozí hodnota je 524 288 bajtů (512 × 1 024). Mnoho částí Windows Communication Foundation (WCF) používá vyrovnávací paměti. Vytváření a zničení vyrovnávacích pamětí pokaždé, když se používají, jsou nákladné, stejně jako uvolňování paměti pro vyrovnávací paměti. Pomocí fondů vyrovnávacích pamětí můžete z fondu získat vyrovnávací paměť, použít ji a po dokončení vrátit ji do fondu. Tím se vyhnete režie při vytváření a ničení vyrovnávacích pamětí.|  
 |`maxReceivedMessageSize`|Maximální velikost zprávy (v bajtech), která je v bajtech nakonfigurovaná pomocí této vazby, může získat. Odesílatel zprávy překračující toto omezení obdrží chybu protokolu SOAP. Příjemce zprávu zruší a vytvoří záznam události v protokolu trasování. Výchozí hodnota je 65536.|  
 |`messageEncoding`|Definuje kodér použitý ke kódování zprávy. Platné hodnoty jsou následující:<br /><br /> -   `Text`: Použijte kodér textové zprávy.<br />-   `Mtom`: Použijte kodér 1,0 (pro organizaci přenosu zpráv).<br /><br /> Výchozí hodnota je `Text`.<br /><br /> Tento atribut je typu <xref:System.ServiceModel.WSMessageEncoding>.|  
-|`name`|Název konfigurace vazby Tato hodnota by měla být jedinečná, protože se používá jako identifikace vazby. Počínaje [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)]nejsou vazby a chování nutné mít název. Další informace o výchozích konfiguracích a Nameless vazbách a chování najdete v tématu [zjednodušená konfigurace](../../../wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../wcf/samples/simplified-configuration-for-wcf-services.md).|  
+|`name`|Název konfigurace vazby Tato hodnota by měla být jedinečná, protože se používá jako identifikace vazby. Počínaje .NET Framework 4 nejsou vazby a chování nutné mít název. Další informace o výchozích konfiguracích a Nameless vazbách a chování najdete v tématu [zjednodušená konfigurace](../../../wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../wcf/samples/simplified-configuration-for-wcf-services.md).|  
 |`openTimeout`|Hodnota <xref:System.TimeSpan>, která určuje časový interval poskytnutý pro dokončení operace otevření. Tato hodnota by měla být větší nebo rovna <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
 |`proxyAddress`|Identifikátor URI, který určuje adresu proxy serveru HTTP. Pokud je `true``useSystemWebProxy`, musí být toto nastavení `null`. Výchozí hodnota je `null`.|  
 |`receiveTimeout`|Hodnota <xref:System.TimeSpan>, která určuje časový interval poskytnutý pro dokončení operace Receive. Tato hodnota by měla být větší nebo rovna <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  

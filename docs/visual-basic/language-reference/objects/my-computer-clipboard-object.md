@@ -1,34 +1,34 @@
 ---
-title: My. Computer. Clipboard – objekt (Visual Basic)
+title: My.Computer.Clipboard – objekt
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Clipboard
 - My.Computer.Clipboard object
 ms.assetid: 05d4ede9-1f9a-4495-87f0-77350b8d2e5d
-ms.openlocfilehash: f372ff3ac97a1c970d436ed57fa2760e78656ac4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: c1587a109d1dfd75505db9bb638aa829222ca4b0
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963723"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344097"
 ---
 # <a name="mycomputerclipboard-object"></a>My.Computer.Clipboard – objekt
-Poskytuje metody pro manipulaci se schránkou.  
+Provides methods for manipulating the Clipboard.  
   
 ## <a name="remarks"></a>Poznámky  
- Informace o metodách a vlastnostech `My.Computer.Clipboard` objektu naleznete v tématu. <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy>  
+ For information about the methods and properties of the `My.Computer.Clipboard` object, see <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy>.  
   
- Další informace najdete v tématu [ukládání a čtení dat ze schránky](../../../visual-basic/developing-apps/programming/computer-resources/storing-data-to-and-reading-from-the-clipboard.md).  
+ For more information, see [Storing Data to and Reading from the Clipboard](../../../visual-basic/developing-apps/programming/computer-resources/storing-data-to-and-reading-from-the-clipboard.md).  
   
 > [!NOTE]
-> K manipulaci se schránkou můžete také <xref:System.Windows.Forms.Clipboard?displayProperty=nameWithType> použít metody třídy.  
+> You can also use methods of the <xref:System.Windows.Forms.Clipboard?displayProperty=nameWithType> class to manipulate the Clipboard.  
   
 ## <a name="requirements"></a>Požadavky  
- **Obor názvů:** <xref:Microsoft.VisualBasic.MyServices>  
+ **Namespace:** <xref:Microsoft.VisualBasic.MyServices>  
   
- **Třída:** (poskytuje přístup k <xref:System.Windows.Forms.Clipboard>) <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy>  
+ **Class:** <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy> (provides access to <xref:System.Windows.Forms.Clipboard>)  
   
- **Shromážděním** Visual Basic Runtime Library (v souboru Microsoft.VisualBasic.dll)  
+ **Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)  
   
 ## <a name="see-also"></a>Viz také:
 

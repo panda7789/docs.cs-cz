@@ -2,30 +2,30 @@
 title: Rozhraní MEF pro .NET pro aplikace pro Windows Store
 ms.date: 03/30/2017
 ms.assetid: 7667770e-d163-4ad6-a303-085cf73db2f2
-ms.openlocfilehash: dafa6ddcd55940ea9bab61b79b6ab77896a1916f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a9c6e757cebc5dd1ad501c1cf1e2c2b666f385a1
+ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126352"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74204707"
 ---
 # <a name="mef-for-net-for-windows-store-apps"></a>Rozhraní MEF pro .NET pro aplikace pro Windows Store
-<xref:System.Composition?displayProperty=nameWithType> a jeho podřízené obory názvů obsahují typy pro vývoj rozšiřitelných [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací pomocí Managed Extensibility Framework (MEF). Tyto obory názvů jsou součástí [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] podmnožiny pro [!INCLUDE[win8](../../../includes/win8-md.md)] operační systém.  
+<xref:System.Composition?displayProperty=nameWithType> and its child namespaces contain types for developing extensible Windows 8.x Store apps with Managed Extensibility Framework (MEF). These namespaces are part of the [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] subset for the [!INCLUDE[win8](../../../includes/win8-md.md)] operating system.  
   
- Tyto obory názvů nejsou součástí základní knihovny tříd distribuované s .NET Framework. Chcete-li tyto obory názvů nainstalovat, otevřete projekt v aplikaci Visual Studio, v nabídce **projekt** vyberte možnost **Spravovat balíčky NuGet** a na balíček Microsoft. kompozice vyhledejte online.  
+ These namespaces are not part of the core class library distributed with the .NET Framework. To install these namespaces, open your project in Visual Studio, choose **Manage NuGet Packages** from the **Project** menu, and search online for the Microsoft.Composition package.  
   
-- <xref:System.Composition?displayProperty=nameWithType> poskytuje třídy, které představují základní MEF pro aplikace [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)].  
+- <xref:System.Composition?displayProperty=nameWithType> provides classes that constitute the core MEF for Windows 8.x Store apps.  
   
-- <xref:System.Composition.Convention?displayProperty=nameWithType> poskytuje typy, které podporují použití rozhraní MEF s modelem konfigurace založeném na konvencích.  
+- <xref:System.Composition.Convention?displayProperty=nameWithType> provides types that support using MEF with a convention-based configuration model.  
   
-- <xref:System.Composition.Hosting?displayProperty=nameWithType> poskytuje typy MEF, které jsou užitečné pro vývojáře hostitelských aplikací.  
+- <xref:System.Composition.Hosting?displayProperty=nameWithType> provides MEF types that are useful to developers of host applications.  
   
-- <xref:System.Composition.Hosting.Core?displayProperty=nameWithType> poskytuje typy MEF používané interně modulem pro kompozici.  
+- <xref:System.Composition.Hosting.Core?displayProperty=nameWithType> provides MEF types used internally by the composition engine.  
   
- Další informace o [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] a seznam oborů názvů a typů, které obsahuje, naleznete v tématu [Přehled rozhraní .NET pro aplikace Windows Store](https://go.microsoft.com/fwlink/p/?LinkID=238312) na stránce Windows Dev Center.  
+ For more information about [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] and a list of namespaces and types that it contains, see [.NET for Windows Store apps overview](https://docs.microsoft.com/previous-versions/br230302(v=vs.110)).
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled aplikace .NET pro Windows Store](https://go.microsoft.com/fwlink/p/?LinkID=238312)
-- [.NET pro aplikace pro Windows Store – podporovaná rozhraní API](https://go.microsoft.com/fwlink/p/?LinkID=247912)
+- [.NET for Windows Store apps overview](https://docs.microsoft.com/previous-versions/br230302(v=vs.110))
+- [.NET for Windows Store apps – supported APIs](https://docs.microsoft.com/previous-versions/br230232(v=vs.110))
 - [Managed Extensibility Framework (MEF)](index.md)

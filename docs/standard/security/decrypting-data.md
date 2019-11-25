@@ -13,22 +13,22 @@ helpviewer_keywords:
 ms.assetid: 9b266b6c-a9b2-4d20-afd8-b3a0d8fd48a0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4cf0ffae2c5803324d4941581855d5dc10224e07
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e287d3c73df247febf99967a9dc4b0413f01def0
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61795223"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353853"
 ---
 # <a name="decrypting-data"></a>Dešifrování dat
 
-Dešifrování se zpětná operace šifrování. K šifrování tajného klíče musíte znát klíč a vektor IV použitý k šifrování dat. Pro šifrování s veřejným klíčem je třeba znát veřejného klíče (Pokud byla data zašifrována pomocí soukromého klíče) nebo privátní klíč (Pokud byla data zašifrována pomocí veřejného klíče).
+Decryption is the reverse operation of encryption. For secret-key encryption, you must know both the key and IV that were used to encrypt the data. For public-key encryption, you must know either the public key (if the data was encrypted using the private key) or the private key (if the data was encrypted using the public key).
 
-## <a name="symmetric-decryption"></a>Symetrické dešifrování
+## <a name="symmetric-decryption"></a>Symmetric Decryption
 
-Dešifrování data zašifrovaná pomocí symetrických algoritmů je podobný procesu použité k šifrování dat pomocí symetrických algoritmů. <xref:System.Security.Cryptography.CryptoStream> Třída se používá s třídami symetrické šifrování poskytované rozhraní .NET Framework se dešifrovat data načtená z libovolného objektu spravovaný datový proud.
+The decryption of data encrypted with symmetric algorithms is similar to the process used to encrypt data with symmetric algorithms. The <xref:System.Security.Cryptography.CryptoStream> class is used with symmetric cryptography classes provided by the .NET Framework to decrypt data read from any managed stream object.
 
-Následující příklad ukazuje, jak vytvořit novou instanci třídy <xref:System.Security.Cryptography.RijndaelManaged> třídy a použít ho k dešifrování na <xref:System.Security.Cryptography.CryptoStream> objektu. Tento příklad nejprve vytvoří novou instanci třídy **RijndaelManaged** třídy. Vedle vytváření **CryptoStream** objektu a inicializuje ji na hodnotu spravovaný datový proud volá `myStream`. Dále **CreateDecryptor** metodu z **RijndaelManaged** třídy je předán stejný klíč a vektor IV, který se použil pro šifrování a je pak předán **CryptoStream** konstruktor. Nakonec **CryptoStream** výčtu je předán **CryptoStream** konstruktor k zadání oprávnění ke čtení pro datový proud.
+The following example illustrates how to create a new instance of the <xref:System.Security.Cryptography.RijndaelManaged> class and use it to perform decryption on a <xref:System.Security.Cryptography.CryptoStream> object. This example first creates a new instance of the **RijndaelManaged** class. Next it creates a **CryptoStream** object and initializes it to the value of a managed stream called `myStream`. Next, the **CreateDecryptor** method from the **RijndaelManaged** class is passed the same key and IV that was used for encryption and is then passed to the **CryptoStream** constructor. Finally, the **CryptoStreamMode.Read** enumeration is passed to the **CryptoStream** constructor to specify read access to the stream.
 
 ```vb
 Dim rmCrypto As New RijndaelManaged()
@@ -40,15 +40,14 @@ RijndaelManaged rmCrypto = new RijndaelManaged();
 CryptoStream cryptStream = new CryptoStream(myStream, rmCrypto.CreateDecryptor(Key, IV), CryptoStreamMode.Read);
 ```
 
-Následující příklad ukazuje celý proces vytváření datového proudu, dešifrování datového proudu, čtení z datového proudu a zavření datových proudů. A <xref:System.Net.Sockets.TcpListener> je vytvořen objekt, který inicializuje sítě datového proudu při připojení k naslouchání objektu. Datový proud sítě je pak dešifrovat pomocí **CryptoStream** třídy a **RijndaelManaged** třídy. Tento příklad předpokládá, že klíč a vektor IV hodnoty byly buď úspěšně převeden nebo dříve dohodnutých. Nezobrazuje se kód potřebný k šifrování a přenést tyto hodnoty.
+The following example shows the entire process of creating a stream, decrypting the stream, reading from the stream, and closing the streams. A <xref:System.Net.Sockets.TcpListener> object is created that initializes a network stream when a connection to the listening object is made. The network stream is then decrypted using the **CryptoStream** class and the **RijndaelManaged** class. This example assumes that the key and IV values have been either successfully transferred or previously agreed upon. It does not show the code needed to encrypt and transfer these values.
 
 ```vb
-Imports System
-Imports System.Net.Sockets
-Imports System.Threading
 Imports System.IO
 Imports System.Net
+Imports System.Net.Sockets
 Imports System.Security.Cryptography
+Imports System.Threading
 
 Module Module1
     Sub Main()
@@ -105,11 +104,11 @@ End Module
 
 ```csharp
 using System;
-using System.Net.Sockets;
-using System.Threading;
 using System.IO;
 using System.Net;
+using System.Net.Sockets;
 using System.Security.Cryptography;
+using System.Threading;
 
 class Class1
 {
@@ -171,15 +170,15 @@ class Class1
 }
 ```
 
-Předchozí ukázka fungovala musí provést šifrované připojení k naslouchacímu procesu. Připojení musí používat stejný klíč, IV a algoritmus používaný v naslouchací proces. Pokud je toto připojení, zpráva se dešifrují a zobrazí v konzole.
+For the previous sample to work, an encrypted connection must be made to the listener. The connection must use the same key, IV, and algorithm used in the listener. If such a connection is made, the message is decrypted and displayed to the console.
 
-## <a name="asymmetric-decryption"></a>Asymetrické dešifrování
+## <a name="asymmetric-decryption"></a>Asymmetric Decryption
 
-Strana (stran A) obvykle generuje i veřejného a privátního klíče a uloží klíč v paměti nebo v kontejneru kryptografických klíčů. Party, A poté odešle veřejný klíč do jiného (strana B). Pomocí veřejného klíče, strana B šifruje data a odešle data zpět do strany A. Po přijetí dat, strana A dešifruje ji pomocí soukromého klíče, který odpovídá. Dešifrování bude úspěšné pouze v případě, že strana A privátní klíč, který odpovídá veřejnému klíči stran B používá k šifrování dat používá.
+Typically, a party (party A) generates both a public and private key and stores the key either in memory or in a cryptographic key container. Party A then sends the public key to another party (party B). Using the public key, party B encrypts data and sends the data back to party A. After receiving the data, party A decrypts it using the private key that corresponds. Decryption will be successful only if party A uses the private key that corresponds to the public key Party B used to encrypt the data.
 
-Informace o způsobu uložení asymetrického klíče v kontejneru zabezpečené kryptografické klíče a jak později načíst asymetrického klíče, naleznete v tématu [jak: Store asymetrického klíče v kontejneru klíčů](../../../docs/standard/security/how-to-store-asymmetric-keys-in-a-key-container.md).
+For information on how to store an asymmetric key in secure cryptographic key container and how to later retrieve the asymmetric key, see [How to: Store Asymmetric Keys in a Key Container](../../../docs/standard/security/how-to-store-asymmetric-keys-in-a-key-container.md).
 
-Následující příklad ukazuje dešifrování dvě pole bajtů, která představuje symetrický klíč a vektor IV. Informace o tom, jak extrahovat asymetrického veřejný klíč z <xref:System.Security.Cryptography.RSACryptoServiceProvider> objektu ve formátu, který můžete snadno odesílat žádné třetí straně, přečtěte si téma [šifrování dat](../../../docs/standard/security/encrypting-data.md).
+The following example illustrates the decryption of two arrays of bytes that represent a symmetric key and IV. For information on how to extract the asymmetric public key from the <xref:System.Security.Cryptography.RSACryptoServiceProvider> object in a format that you can easily send to a third party, see [Encrypting Data](../../../docs/standard/security/encrypting-data.md).
 
 ```vb
 'Create a new instance of the RSACryptoServiceProvider class.

@@ -1,5 +1,5 @@
 ---
-title: ParamArray (Visual Basic)
+title: ParamArray
 ms.date: 07/20/2015
 f1_keywords:
 - vb.ParamArray
@@ -8,25 +8,25 @@ helpviewer_keywords:
 - ParamArray keyword [Visual Basic]
 - ParamArray keyword [Visual Basic], syntax
 ms.assetid: a5f18789-92bd-488f-9c7e-cf3719963635
-ms.openlocfilehash: 8fc5d1afd9e9723e6b3c58e100b0519ef8fdfab4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: fbc87bffebc265e6062512e96fc29a64334b3c65
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968366"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351376"
 ---
 # <a name="paramarray-visual-basic"></a>ParamArray (Visual Basic)
-Určuje, že parametr procedury přijímá volitelné pole prvků zadaného typu. `ParamArray`dá se použít jenom pro poslední parametr seznamu parametrů.  
+Specifies that a procedure parameter takes an optional array of elements of the specified type. `ParamArray` can be used only on the last parameter of a parameter list.  
   
 ## <a name="remarks"></a>Poznámky  
- `ParamArray`umožňuje předat libovolnému počtu argumentů proceduru. Parametr je vždy deklarován pomocí [ByVal.](../../../visual-basic/language-reference/modifiers/byval.md) `ParamArray`  
+ `ParamArray` allows you to pass an arbitrary number of arguments to the procedure. A `ParamArray` parameter is always declared using [ByVal](../../../visual-basic/language-reference/modifiers/byval.md).  
   
- Jednomu nebo více argumentům `ParamArray` můžete zadat parametr předáním pole vhodného datového typu, seznamu hodnot oddělených čárkami nebo nic vůbec. Podrobnosti naleznete v tématu "volání ParamArray" v [polích parametrů](../../../visual-basic/programming-guide/language-features/procedures/parameter-arrays.md).  
+ You can supply one or more arguments to a `ParamArray` parameter by passing an array of the appropriate data type, a comma-separated list of values, or nothing at all. For details, see "Calling a ParamArray" in [Parameter Arrays](../../../visual-basic/programming-guide/language-features/procedures/parameter-arrays.md).  
   
 > [!IMPORTANT]
-> Kdykoli budete pracovat s polem, které může být neomezeně velké, existuje riziko, že dojde k přeběhu některé interní kapacity vaší aplikace. Pokud přijímáte pole parametrů z volajícího kódu, měli byste otestovat jeho délku a provést příslušné kroky, pokud je pro vaši aplikaci příliš velká.  
+> Whenever you deal with an array which can be indefinitely large, there is a risk of overrunning some internal capacity of your application. If you accept a parameter array from the calling code, you should test its length and take appropriate steps if it is too large for your application.  
   
- V těchto kontextech lze použít Modifikátor:`ParamArray`  
+ The `ParamArray` modifier can be used in these contexts:  
   
  [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)  
   

@@ -1,5 +1,5 @@
 ---
-title: My. Computer. FileSystem – objekt (Visual Basic)
+title: My.Computer.FileSystem – objekt
 ms.date: 07/20/2015
 helpviewer_keywords:
 - FileSystem module
@@ -12,30 +12,30 @@ helpviewer_keywords:
 - Seek function
 - FileOpen function
 ms.assetid: 4c145456-5453-4bda-aab5-578dc8bee59a
-ms.openlocfilehash: 311f605d3f4e77ac2828b8851cbf318da1a0e582
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 958483be7eb200b5f3d3b46738df0a3c50c4f3c3
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963698"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347242"
 ---
 # <a name="mycomputerfilesystem-object"></a>My.Computer.FileSystem – objekt
-Poskytuje vlastnosti a metody pro práci s jednotkami, soubory a adresáři.  
+Provides properties and methods for working with drives, files, and directories.  
   
 ## <a name="remarks"></a>Poznámky  
- Informace o metodách a vlastnostech `My.Computer.FileSystem` objektu naleznete v tématu. <xref:Microsoft.VisualBasic.FileIO.FileSystem>  
+ For information about the methods and properties of the `My.Computer.FileSystem` object, see <xref:Microsoft.VisualBasic.FileIO.FileSystem>.  
   
- Další informace najdete v tématu [přístup k souborům pomocí Visual Basic](../../../visual-basic/developing-apps/programming/drives-directories-files/file-access.md).  
+ For more information, see [File Access with Visual Basic](../../../visual-basic/developing-apps/programming/drives-directories-files/file-access.md).  
   
 > [!NOTE]
-> Můžete také použít třídy v <xref:System.IO?displayProperty=nameWithType> oboru názvů pro práci s jednotkami, soubory a adresáři.  
+> You can also use classes in the <xref:System.IO?displayProperty=nameWithType> namespace to work with drives, files, and directories.  
   
 ## <a name="requirements"></a>Požadavky  
- **Obor názvů:** <xref:Microsoft.VisualBasic.MyServices>  
+ **Namespace:** <xref:Microsoft.VisualBasic.MyServices>  
   
- **Třída:** (poskytuje přístup k <xref:Microsoft.VisualBasic.FileIO.FileSystem>) <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy>  
+ **Class:** <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy> (provides access to <xref:Microsoft.VisualBasic.FileIO.FileSystem>)  
   
- **Shromážděním** Visual Basic Runtime Library (v souboru Microsoft.VisualBasic.dll)  
+ **Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)  
   
 ## <a name="see-also"></a>Viz také:
 

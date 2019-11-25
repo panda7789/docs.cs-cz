@@ -1,5 +1,5 @@
 ---
-title: Hodnoty proměnné objektu (Visual Basic)
+title: Hodnoty proměnné objektu
 ms.date: 07/20/2015
 helpviewer_keywords:
 - object variables [Visual Basic], values
@@ -7,35 +7,35 @@ helpviewer_keywords:
 - data types [Visual Basic], object variable
 - variables [Visual Basic], object
 ms.assetid: 31555704-58a3-49f1-9a0a-6421f605664f
-ms.openlocfilehash: 728f097b3c084e5292cb2d2bf5a0c1d20bdad922
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 8b93063d2d97802b1a7fdbc93e01040ff3337753
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72004581"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351803"
 ---
 # <a name="object-variable-values-visual-basic"></a>Hodnoty proměnné objektu (Visual Basic)
-Proměnná [datového typu objektu](../../../../visual-basic/language-reference/data-types/object-data-type.md) může odkazovat na data libovolného typu. Hodnota, kterou uložíte v proměnné `Object`, je ponechána jinde v paměti, zatímco proměnná sama obsahuje ukazatel na data.  
+A variable of the [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md) can refer to data of any type. The value you store in an `Object` variable is kept elsewhere in memory, while the variable itself holds a pointer to the data.  
   
-## <a name="object-classifier-functions"></a>Funkce třídění objektů  
- Visual Basic poskytuje funkce, které vracejí informace o tom, co proměnná `Object` odkazuje na, jak je znázorněno v následující tabulce.  
+## <a name="object-classifier-functions"></a>Object Classifier Functions  
+ Visual Basic supplies functions that return information about what an `Object` variable refers to, as shown in the following table.  
   
-|Funkce|Vrátí hodnotu true, pokud proměnná objektu odkazuje na|  
+|Funkce|Returns True if the Object variable refers to|  
 |--------------|---------------------------------------------------|  
-|<xref:Microsoft.VisualBasic.Information.IsArray%2A>|Pole hodnot, nikoli jediná hodnota|  
-|<xref:Microsoft.VisualBasic.Information.IsDate%2A>|Hodnota [datového typu](../../../../visual-basic/language-reference/data-types/date-data-type.md) data nebo řetězec, který může být interpretován jako hodnota data a času.|  
-|<xref:Microsoft.VisualBasic.Information.IsDBNull%2A>|Objekt typu <xref:System.DBNull>, který představuje chybějící nebo neexistující data|  
-|<xref:Microsoft.VisualBasic.Information.IsError%2A>|Objekt výjimky, který je odvozen z <xref:System.Exception>|  
-|<xref:Microsoft.VisualBasic.Information.IsNothing%2A>|[Nothing](../../../../visual-basic/language-reference/nothing.md), to znamená, že žádný objekt není aktuálně přiřazen k proměnné|  
-|<xref:Microsoft.VisualBasic.Information.IsNumeric%2A>|Číslo nebo řetězec, který může být interpretován jako číslo|  
-|<xref:Microsoft.VisualBasic.Information.IsReference%2A>|Typ odkazu (například řetězec, pole, delegát nebo typ třídy)|  
+|<xref:Microsoft.VisualBasic.Information.IsArray%2A>|An array of values, rather than a single value|  
+|<xref:Microsoft.VisualBasic.Information.IsDate%2A>|A [Date Data Type](../../../../visual-basic/language-reference/data-types/date-data-type.md) value, or a string that can be interpreted as a date and time value|  
+|<xref:Microsoft.VisualBasic.Information.IsDBNull%2A>|An object of type <xref:System.DBNull>, which represents missing or nonexistent data|  
+|<xref:Microsoft.VisualBasic.Information.IsError%2A>|An exception object, which derives from <xref:System.Exception>|  
+|<xref:Microsoft.VisualBasic.Information.IsNothing%2A>|[Nothing](../../../../visual-basic/language-reference/nothing.md), that is, no object is currently assigned to the variable|  
+|<xref:Microsoft.VisualBasic.Information.IsNumeric%2A>|A number, or a string that can be interpreted as a number|  
+|<xref:Microsoft.VisualBasic.Information.IsReference%2A>|A reference type (such as a string, array, delegate, or class type)|  
   
- Tyto funkce můžete použít, chcete-li se vyhnout odeslání neplatné hodnoty do operace nebo procedury.  
+ You can use these functions to avoid submitting an invalid value to an operation or a procedure.  
   
 ## <a name="typeof-operator"></a>TypeOf – operátor  
- Můžete také použít [operátor typeof](../../../../visual-basic/language-reference/operators/typeof-operator.md) k určení, zda objektová proměnná aktuálně odkazuje na konkrétní datový typ. Výraz `TypeOf`... `Is` je vyhodnocen jako `True`, pokud je typ běhu operand odvozen z nebo implementuje zadaný typ.  
+ You can also use the [TypeOf Operator](../../../../visual-basic/language-reference/operators/typeof-operator.md) to determine whether an object variable currently refers to a specific data type. The `TypeOf`...`Is` expression evaluates to `True` if the run-time type of the operand is derived from or implements the specified type.  
   
- Následující příklad používá `TypeOf` u proměnných objektu odkazujících na typy hodnot a odkazů.  
+ The following example uses `TypeOf` on object variables referring to value and reference types.  
   
 ```vb  
 ' The following statement puts a value type (Integer) in an Object variable.  
@@ -51,7 +51,7 @@ If TypeOf frm Is Label Then Debug.WriteLine("frm is Label")
 If TypeOf frm Is Object Then Debug.WriteLine("frm is Object")  
 ```  
   
- Předchozí příklad zapíše následující řádky do okna **ladění** :  
+ The preceding example writes the following lines to the **Debug** window:  
   
  `num is Integer`  
   
@@ -61,10 +61,10 @@ If TypeOf frm Is Object Then Debug.WriteLine("frm is Object")
   
  `frm is Object`  
   
- Proměnná objektu `num` odkazuje na data typu `Integer` a `frm` odkazuje na objekt třídy <xref:System.Windows.Forms.Form>.  
+ The object variable `num` refers to data of type `Integer`, and `frm` refers to an object of class <xref:System.Windows.Forms.Form>.  
   
-## <a name="object-arrays"></a>Pole objektů  
- Můžete deklarovat a použít pole proměnných `Object`. To je užitečné v případě, že potřebujete zpracovat nejrůznější datové typy a třídy objektů. Všechny elementy v poli musí mít stejný deklarovaný datový typ. Deklarování tohoto datového typu jako `Object` umožňuje ukládat objekty a instance třídy společně s jinými datovými typy v poli.  
+## <a name="object-arrays"></a>Object Arrays  
+ You can declare and use an array of `Object` variables. This is useful when you need to handle a variety of data types and object classes. All the elements in an array must have the same declared data type. Declaring this data type as `Object` allows you to store objects and class instances alongside other data types in the array.  
   
 ## <a name="see-also"></a>Viz také:
 

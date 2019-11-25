@@ -1,63 +1,63 @@
 ---
-title: Používání regulárních výrazů s ovládacím prvkem MaskedTextBox v jazyce Visual Basic
+title: Používání regulárních výrazů s ovládacím prvkem MaskedTextBox
 ms.date: 07/20/2015
 helpviewer_keywords:
 - strings [Visual Basic], regular expressions
 - strings [Visual Basic], masked edit
 ms.assetid: 2a048fb0-7053-487d-b2c5-ffa5e22ed6f9
-ms.openlocfilehash: e0165fb8d573878ae19378b2656d89627680b804
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 12d500fa0ff4945dcf2d5009bdba6d337834707e
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62024505"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346265"
 ---
 # <a name="using-regular-expressions-with-the-maskedtextbox-control-in-visual-basic"></a>Používání regulárních výrazů s ovládacím prvkem MaskedTextBox v jazyce Visual Basic
-Tento příklad ukazuje, jak převést jednoduché regulárních výrazů pro práci s <xref:System.Windows.Forms.MaskedTextBox> ovládacího prvku.  
+This example demonstrates how to convert simple regular expressions to work with the <xref:System.Windows.Forms.MaskedTextBox> control.  
   
-## <a name="description-of-the-masking-language"></a>Popis jazyka maskování  
- Standardní <xref:System.Windows.Forms.MaskedTextBox> maskování jazyka podle používají `Masked Edit` řízení v jazyce Visual Basic 6.0 a měla by být migraci z této platformy uživatelé znají.  
+## <a name="description-of-the-masking-language"></a>Description of the Masking Language  
+ The standard <xref:System.Windows.Forms.MaskedTextBox> masking language is based on the one used by the `Masked Edit` control in Visual Basic 6.0 and should be familiar to users migrating from that platform.  
   
- <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> Vlastnost <xref:System.Windows.Forms.MaskedTextBox> ovládacího prvku určuje, jaké vstupní maska používat. Maska musí být řetězec skládá z jedné nebo více prvků maskování z následující tabulky.  
+ The <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> property of the <xref:System.Windows.Forms.MaskedTextBox> control specifies what input mask to use. The mask must be a string composed of one or more of the masking elements from the following table.  
   
-|Element maskování|Popis|Regulární výraz element|  
+|Masking element|Popis|Regular expression element|  
 |---------------------|-----------------|--------------------------------|  
-|0|Libovolná číslice od 0 do 9. Je nutné provést zadání.|\d|  
-|9|Číslice nebo mezera. Položka je nepovinná.|[ \d]?|  
-|#|Číslice nebo mezera. Položka je nepovinná. Pokud toto umístění je prázdné v masce, zobrazí se jako mezera. Plus (+) a minus (-) jsou povolené znaky.|[ \d+-]?|  
-|L|Písmeno ASCII. Je nutné provést zadání.|[a-zA-Z]|  
-|?|Písmeno ASCII. Položka je nepovinná.|[a-zA-Z]?|  
-|&|znak. Je nutné provést zadání.|[\p{Ll}\p{Lu}\p{Lt}\p{Lm}\p{Lo}]|  
-|C|znak. Položka je nepovinná.|[\p{Ll}\p{Lu}\p{Lt}\p{Lm}\p{Lo}]?|  
-|OBJEKT|Alfanumerické znaky. Položka je nepovinná.|\W|  
-|.|Odpovídající jazykovou verzi zástupný znak desetinné čárky.|Není k dispozici.|  
-|, |Zástupný symbol tisíců odpovídající jazykovou verzi.|Není k dispozici.|  
-|:|Oddělovač času odpovídající jazykovou verzi.|Není k dispozici.|  
-|/|Oddělovač data odpovídající jazykovou verzi.|Není k dispozici.|  
-|$|Symbol měny odpovídající jazykovou verzi.|Není k dispozici.|  
-|\<|Převede všechny znaky, které následují na malá písmena.|Není k dispozici.|  
-|>|Převede všechny znaky, které následují na velká písmena.|Není k dispozici.|  
-|&#124;|Vrátí zpět předchozí posunutí nahoru a přesunout.|Není k dispozici.|  
-|&#92;|Řídicí sekvence znaku masky zapnutí na literál. "\\\\" je řídicí sekvenci zpětného lomítka.|&#92;|  
-|Všechny ostatní znaky.|Literály. Všechny elementy bez masky se zobrazí jako sami v rámci <xref:System.Windows.Forms.MaskedTextBox>.|Všechny ostatní znaky.|  
+|0|Any single digit between 0 and 9. Entry required.|\d|  
+|9|Digit or space. Entry optional.|[ \d]?|  
+|#|Digit or space. Entry optional. If this position is left blank in the mask, it will be rendered as a space. Plus (+) and minus (-) signs are allowed.|[ \d+-]?|  
+|L|ASCII letter. Entry required.|[a-zA-Z]|  
+|?|ASCII letter. Entry optional.|[a-zA-Z]?|  
+|&|Character. Entry required.|[\p{Ll}\p{Lu}\p{Lt}\p{Lm}\p{Lo}]|  
+|C|Character. Entry optional.|[\p{Ll}\p{Lu}\p{Lt}\p{Lm}\p{Lo}]?|  
+|OBJEKT|Alphanumeric. Entry optional.|\W|  
+|.|Culture-appropriate decimal placeholder.|Not available.|  
+|,|Culture-appropriate thousands placeholder.|Not available.|  
+|:|Culture-appropriate time separator.|Not available.|  
+|/|Culture-appropriate date separator.|Not available.|  
+|$|Culture-appropriate currency symbol.|Not available.|  
+|\<|Converts all characters that follow to lowercase.|Not available.|  
+|>|Converts all characters that follow to uppercase.|Not available.|  
+|&#124;|Undoes a previous shift up or shift down.|Not available.|  
+|&#92;|Escapes a mask character, turning it into a literal. "\\\\" is the escape sequence for a backslash.|&#92;|  
+|All other characters.|Literals. All non-mask elements will appear as themselves within <xref:System.Windows.Forms.MaskedTextBox>.|All other characters.|  
   
- Desetinné číslo (.), tisícin (,), čas (:), datum (/) a výchozí symboly měny ($) k zobrazení těchto symbolů podle jazykové verze vaší aplikace. Můžete vynutit, je pro zobrazení symbolů pro jinou jazykovou verzi pomocí <xref:System.Windows.Forms.MaskedTextBox.FormatProvider%2A> vlastnost.  
+ The decimal (.), thousandths (,), time (:), date (/), and currency ($) symbols default to displaying those symbols as defined by the application's culture. You can force them to display symbols for another culture by using the <xref:System.Windows.Forms.MaskedTextBox.FormatProvider%2A> property.  
   
-## <a name="regular-expressions-and-masks"></a>Regulární výrazy a masek  
- I když regulárních výrazů a masek slouží k ověření vstupu uživatele, nejsou zcela ekvivalentní. Regulární výrazy můžete vyjádřit složitější vzorce než masky, ale masky můžete vyjádřit stejné informace, informace ve zhuštěné a jazykově odpovídající formát.  
+## <a name="regular-expressions-and-masks"></a>Regular Expressions and Masks  
+ Although you can use regular expressions and masks to validate user input, they are not completely equivalent. Regular expressions can express more complex patterns than masks, but masks can express the same information more succinctly and in a culturally relevant format.  
   
- Následující tabulka porovnává pro všechny čtyři regulárních výrazů a odpovídající masku.  
+ The following table compares four regular expressions and the equivalent mask for each.  
   
-|Regulární výraz|Maska|Poznámky|  
+|Regulární výraz|Mask|Poznámky|  
 |------------------------|----------|-----------|  
-|`\d{2}/\d{2}/\d{4}`|`00/00/0000`|`/` Znak v maska je logický oddělovač, se zobrazí uživateli jako oddělovač data pro aktuální jazykovou verzi aplikace.|  
-|`\d{2}-[A-Z][a-z]{2}-\d{4}`|`00->L<LL-0000`|Datum (den, zkratku měsíce a roku) ve Spojených státech amerických formát, ve kterém se zobrazí zkratku měsíce tří písmen s počáteční velkým písmenem, za nímž následuje dvě písmena malá.|  
-|`(\(\d{3}\)-)?\d{3}-d{4}`|`(999)-000-0000`|Spojené státy telefonní číslo, předčíslí volitelné. Pokud uživatel nechce zadejte volitelné znaky, které můžete zadat mezery nebo umístěte ukazatel myši přímo na pozici v masce reprezentována první 0.|  
-|`$\d{6}.00`|`$999,999.00`|Hodnota měny v rozsahu 0-999999. Měna, / 1 000 a decimální znaky se nahradí za běhu ekvivalenty specifické pro jazykovou verzi.|  
+|`\d{2}/\d{2}/\d{4}`|`00/00/0000`|The `/` character in the mask is a logical date separator, and it will appear to the user as the date separator appropriate to the application's current culture.|  
+|`\d{2}-[A-Z][a-z]{2}-\d{4}`|`00->L<LL-0000`|A date (day, month abbreviation, and year) in United States format in which the three-letter month abbreviation is displayed with an initial uppercase letter followed by two lowercase letters.|  
+|`(\(\d{3}\)-)?\d{3}-d{4}`|`(999)-000-0000`|United States phone number, area code optional. If the user does not wish to enter the optional characters, she can either enter spaces or place the mouse pointer directly at the position in the mask represented by the first 0.|  
+|`$\d{6}.00`|`$999,999.00`|A currency value in the range of 0 to 999999. The currency, thousandth, and decimal characters will be replaced at run-time with their culture-specific equivalents.|  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.MaskedTextBox.Mask%2A>
 - <xref:System.Windows.Forms.MaskedTextBox>
-- [Ověřování řetězců v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/validating-strings.md)
+- [Validating Strings in Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/validating-strings.md)
 - [Ovládací prvek MaskedTextBox](../../../../framework/winforms/controls/maskedtextbox-control-windows-forms.md)

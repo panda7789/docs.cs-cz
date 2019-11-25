@@ -1,5 +1,5 @@
 ---
-title: Struktury a třídy (Visual Basic)
+title: Struktury a třídy
 ms.date: 07/20/2015
 helpviewer_keywords:
 - classes [Visual Basic], vs. structures
@@ -9,82 +9,82 @@ helpviewer_keywords:
 - structures [Visual Basic], structure variables
 - structure variables [Visual Basic]
 ms.assetid: a221e74a-ffcf-4bdc-a0f6-a088a9bf26cc
-ms.openlocfilehash: b947109f99d94b0ecb1d798835c311f2374e96fc
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 3353935a74bb77fa4a630e706aa425063c7a610a
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64601037"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346320"
 ---
 # <a name="structures-and-classes-visual-basic"></a>Struktury a třídy (Visual Basic)
-Visual Basic sjednocuje syntaxe struktur a tříd, s tím, že obě entity podporuje většinu stejné funkce. Existují však i důležité rozdíly mezi strukturami a třídami.  
+Visual Basic unifies the syntax for structures and classes, with the result that both entities support most of the same features. However, there are also important differences between structures and classes.  
   
- Třídy mají výhodou odkazové typy – předáním odkazu je efektivnější než předání proměnnou struktury obsahující všechna jeho data. Na druhé straně struktury nevyžadují přidělení paměti v haldě globální.  
+ Classes have the advantage of being reference types — passing a reference is more efficient than passing a structure variable with all its data. On the other hand, structures do not require allocation of memory on the global heap.  
   
- Protože nemůže dědit ze struktury, struktury by měla sloužit pouze pro objekty, které není potřeba prodloužit. Struktury použijte, pokud objekt, který chcete vytvořit má velikost malých instancí a vezměte v úvahu charakteristiky výkonu třídy a struktury.  
+ Because you cannot inherit from a structure, structures should be used only for objects that do not need to be extended. Use structures when the object you wish to create has a small instance size, and take into account the performance characteristics of classes versus structures.  
   
-## <a name="similarities"></a>Podobnosti  
- Třídy a struktury jsou podobné jako u těchto ohledech:  
+## <a name="similarities"></a>Similarities  
+ Structures and classes are similar in the following respects:  
   
-- Obě jsou *kontejneru* typy, což znamená, že sloupce obsahují další typy jako členy.  
+- Both are *container* types, meaning that they contain other types as members.  
   
-- Obě mají členy, které může obsahovat konstruktory, metody, vlastnosti, pole, konstanty, výčty, události a obslužné rutiny událostí. Nezaměňujte však tito členové s deklarovaný *prvky* struktury.  
+- Both have members, which can include constructors, methods, properties, fields, constants, enumerations, events, and event handlers. However, do not confuse these members with the declared *elements* of a structure.  
   
-- Členy obou můžete své úrovně přístupu. Například lze deklarovat jeden člen `Public` a další `Private`.  
+- Members of both can have individualized access levels. For example, one member can be declared `Public` and another `Private`.  
   
-- Jak můžete implementovat rozhraní.  
+- Both can implement interfaces.  
   
-- Obojí může mít sdílené konstruktory, s nebo bez parametrů.  
+- Both can have shared constructors, with or without parameters.  
   
-- Jak můžete zveřejnit *výchozí vlastnost*za předpokladu, že vlastnost používá nejméně jeden parametr.  
+- Both can expose a *default property*, provided that property takes at least one parameter.  
   
-- Obě deklarace a vyvolávání událostí, a obě deklarování delegátů.  
+- Both can declare and raise events, and both can declare delegates.  
   
-## <a name="differences"></a>Rozdíly  
- Struktury a třídy se liší v následující údaje:  
+## <a name="differences"></a>Differences  
+ Structures and classes differ in the following particulars:  
   
-- Struktury jsou *typů hodnot*; třídy jsou *referenční typy*. Proměnné typu struktura obsahuje data struktury, spíše než obsahující odkaz na data jako typ třídy nemá.  
+- Structures are *value types*; classes are *reference types*. A variable of a structure type contains the structure's data, rather than containing a reference to the data as a class type does.  
   
-- Struktury použijte přidělení zásobníku; třídy použijte přidělení haldy.  
+- Structures use stack allocation; classes use heap allocation.  
   
-- Všechny prvky struktury jsou `Public` ve výchozím nastavení; třída proměnné a konstanty jsou `Private` ostatních členů třídy jsou standardně `Public` ve výchozím nastavení. Toto chování pro členy třídy zajišťuje kompatibilitu se systémem Visual Basic 6.0 výchozích hodnot.  
+- All structure elements are `Public` by default; class variables and constants are `Private` by default, while other class members are `Public` by default. This behavior for class members provides compatibility with the Visual Basic 6.0 system of defaults.  
   
-- Struktura musí mít aspoň jeden nesdílené proměnné nebo nesdílené, noncustom element události. Třída může být úplně prázdná.  
+- A structure must have at least one nonshared variable or nonshared, noncustom event element; a class can be completely empty.  
   
-- Elementy struktury nelze deklarovat jako `Protected`; můžete členy třídy.  
+- Structure elements cannot be declared as `Protected`; class members can.  
   
-- Proceduru struktury můžete zpracovávat události, pouze pokud je [sdílené](../../../../visual-basic/language-reference/modifiers/shared.md) `Sub` postupu a pouze pomocí Řešitele [AddHandler – příkaz](../../../../visual-basic/language-reference/statements/addhandler-statement.md); všechny třídy procedury můžete zpracovávat události, pomocí buď [ Zpracovává](../../../../visual-basic/language-reference/statements/handles-clause.md) – klíčové slovo nebo `AddHandler` příkazu. Další informace najdete v tématu [události](../../../../visual-basic/programming-guide/language-features/events/index.md).  
+- A structure procedure can handle events only if it is a [Shared](../../../../visual-basic/language-reference/modifiers/shared.md)`Sub` procedure, and only by means of the [AddHandler Statement](../../../../visual-basic/language-reference/statements/addhandler-statement.md); any class procedure can handle events, using either the [Handles](../../../../visual-basic/language-reference/statements/handles-clause.md) keyword or the `AddHandler` statement. For more information, see [Events](../../../../visual-basic/programming-guide/language-features/events/index.md).  
   
-- Deklarace proměnné struktury nelze zadat inicializátory nebo počáteční velikosti pole; deklarace proměnných třídy můžete.  
+- Structure variable declarations cannot specify initializers or initial sizes for arrays; class variable declarations can.  
   
-- Struktury implicitně dědí z <xref:System.ValueType?displayProperty=nameWithType> třídu a nemůže dědit z žádného jiného typu; třídy mohou dědit z libovolné třídy nebo tříd jiných než <xref:System.ValueType?displayProperty=nameWithType>.  
+- Structures implicitly inherit from the <xref:System.ValueType?displayProperty=nameWithType> class and cannot inherit from any other type; classes can inherit from any class or classes other than <xref:System.ValueType?displayProperty=nameWithType>.  
   
-- Struktury nejsou odvoditelný; třídy jsou.  
+- Structures are not inheritable; classes are.  
   
-- Struktury jsou nikdy ukončena, takže nikdy nevolá common language runtime (CLR) <xref:System.Object.Finalize%2A> metody na jinou strukturu; třídy jsou ukončeny systému uvolňování paměti (GC), která volá <xref:System.Object.Finalize%2A> ve třídě, když zjistí, že neexistují žádné aktivní odkazy Zbývající.  
+- Structures are never terminated, so the common language runtime (CLR) never calls the <xref:System.Object.Finalize%2A> method on any structure; classes are terminated by the garbage collector (GC), which calls <xref:System.Object.Finalize%2A> on a class when it detects there are no active references remaining.  
   
-- Struktura nevyžaduje konstruktor; Třída nemá.  
+- A structure does not require a constructor; a class does.  
   
-- Struktury mohou mít nesdílené konstruktory pouze v případě, že přijímají parametry; třídy mohou mít je s nebo bez parametrů.  
+- Structures can have nonshared constructors only if they take parameters; classes can have them with or without parameters.  
   
- Každá konstrukce má implicitní veřejný konstruktor bez parametrů. Tento konstruktor inicializuje všechny struktury datové prvky, aby jejich výchozí hodnoty. Toto chování nelze předefinovat.  
+ Every structure has an implicit public constructor without parameters. This constructor initializes all the structure's data elements to their default values. You cannot redefine this behavior.  
   
-## <a name="instances-and-variables"></a>Instance a proměnné  
- Protože struktury jsou typy hodnot, každou proměnnou struktury je trvale svázána s instancí jednotlivých struktury. Ale třídy jsou odkazové typy a proměnné objektu mohou odkazovat na různé instance třídy v různých časech. Toto rozlišení ovlivňuje využití struktury a třídy následujícími způsoby:  
+## <a name="instances-and-variables"></a>Instances and Variables  
+ Because structures are value types, each structure variable is permanently bound to an individual structure instance. But classes are reference types, and an object variable can refer to various class instances at different times. This distinction affects your usage of structures and classes in the following ways:  
   
-- **Inicializace.** Proměnné struktury implicitně obsahuje inicializaci prvků pomocí konstrukcí konstruktor bez parametrů. Proto `Dim s As struct1` je ekvivalentní `Dim s As struct1 = New struct1()`.  
+- **Initialization.** A structure variable implicitly includes an initialization of the elements using the structure's parameterless constructor. Therefore, `Dim s As struct1` is equivalent to `Dim s As struct1 = New struct1()`.  
   
-- **Přiřazení proměnné.** Při přiřazení jednu proměnnou struktury do jiné nebo předat instanci struktury argumentu procedury, aktuální hodnoty prvků všechny proměnné zkopírují do novou strukturu. Při přiřadit jednu proměnnou objekt do jiné nebo předání proměnné objektu proceduře, zkopíruje pouze odkaz na ukazatel.  
+- **Assigning Variables.** When you assign one structure variable to another, or pass a structure instance to a procedure argument, the current values of all the variable elements are copied to the new structure. When you assign one object variable to another, or pass an object variable to a procedure, only the reference pointer is copied.  
   
-- **Přiřazení žádnou akci.** Přiřadíte hodnotu [nic](../../../../visual-basic/language-reference/nothing.md) na strukturu proměnnou, ale instance nadále být spojen s proměnnou. Stále můžete volat jeho metody a přístup k jeho prvkům data, i když proměnné prvky jsou opětovně inicializovány pomocí přiřazení.  
+- **Assigning Nothing.** You can assign the value [Nothing](../../../../visual-basic/language-reference/nothing.md) to a structure variable, but the instance continues to be associated with the variable. You can still call its methods and access its data elements, although variable elements are reinitialized by the assignment.  
   
-     Naopak pokud nastavíte proměnné objektu na `Nothing`oddělit z libovolné instance třídy a žádné členy nelze přistupovat prostřednictvím proměnné dokud přiřadit jinou instancí.  
+     In contrast, if you set an object variable to `Nothing`, you dissociate it from any class instance, and you cannot access any members through the variable until you assign another instance to it.  
   
-- **Více instancí.** Objektová proměnná může mít jinou třídu instancí přiřazená v různou dobu a několik objektových proměnných mohou odkazovat na stejnou instanci třídy ve stejnou dobu. Změny provedené na hodnoty členů třídy. ovlivňují tyto členy, když přistupuje prostřednictvím jiné proměnné odkazující na stejné instanci.  
+- **Multiple Instances.** An object variable can have different class instances assigned to it at different times, and several object variables can refer to the same class instance at the same time. Changes you make to the values of class members affect those members when accessed through another variable pointing to the same instance.  
   
-     Prvky struktury, ale jsou izolované v rámci své vlastní instance. Změny jejich hodnoty se neprojeví v jakékoli jiné proměnné struktury, dokonce i v dalších instancí stejného `Structure` deklarace.  
+     Structure elements, however, are isolated within their own instance. Changes to their values are not reflected in any other structure variables, even in other instances of the same `Structure` declaration.  
   
-- **Rovnost.** Testování rovnosti dvou struktur, je nutné provést s testu prvek po prvku. Dvě proměnné objektu lze porovnat pomocí <xref:System.Object.Equals%2A> metody. <xref:System.Object.Equals%2A> Určuje, zda dvě proměnné odkazovat na stejné instanci.  
+- **Equality.** Equality testing of two structures must be performed with an element-by-element test. Two object variables can be compared using the <xref:System.Object.Equals%2A> method. <xref:System.Object.Equals%2A> indicates whether the two variables point to the same instance.  
   
 ## <a name="see-also"></a>Viz také:
 

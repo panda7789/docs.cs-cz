@@ -1,45 +1,47 @@
 ---
-title: 'Postupy: Připojování k textovým souborům v jazyce Visual Basic'
+title: 'Postupy: Připojování k textovým souborům'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - I/O [Visual Basic], appending to files
 - I/O [Visual Basic], My.Computer.FileSystem.WriteAllText method
 - I/O [Visual Basic], WriteAllText method
 ms.assetid: bbbd7fb5-f169-41a9-b53f-520ea9613913
-ms.openlocfilehash: e855293ac3636049520a85abdf685091d437bb60
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 97bcb5c511452e418df010f12d4b63f04251d021
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64628909"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348874"
 ---
-# <a name="how-to-append-to-text-files-in-visual-basic"></a>Postupy: Připojování k textovým souborům v jazyce Visual Basic
-<xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A> Metodu lze použít k připojení do textového souboru, který zadáte `append` parametr je nastaven na `True`.  
+# <a name="how-to-append-to-text-files-in-visual-basic"></a>Postupy: Připojování k textovým souborům v jazyce Visual Basic
+
+The <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A> method can be used to append to a text file by specifying that the `append` parameter is set to `True`.  
   
-### <a name="to-append-to-a-text-file"></a>K připojení do textového souboru  
+### <a name="to-append-to-a-text-file"></a>To append to a text file  
   
-- Použití `WriteAllText` způsob určení cílového souboru a řetězce, které se mají připojit a nastavení `append` parametr `True`.  
+- Use the `WriteAllText` method, specifying the target file and string to be appended and setting the `append` parameter to `True`.  
   
-     Tento příklad zapíše řetězec `"This is a test string."` do souboru s názvem `Testfile.txt`.  
+     This example writes the string `"This is a test string."` to the file named `Testfile.txt`.  
   
      [!code-vb[VbFileIOWrite#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIOWrite/VB/Class1.vb#6)]  
   
 ## <a name="robust-programming"></a>Robustní programování  
+
  Následující podmínky mohou způsobit výjimku:  
   
-- Cesta není platná pro jednu z následujících důvodů: Jedná se o řetězec nulové délky, obsahuje pouze mezeru, obsahuje neplatné znaky nebo je cesta zařízení (začíná \\ \\.\\) (<xref:System.ArgumentException>).  
+- The path is not valid for one of the following reasons: it is a zero-length string, it contains only white space, it contains invalid characters, or it is a device path (starts with \\\\.\\) (<xref:System.ArgumentException>).  
   
-- Cesta není platná, protože se jedná `Nothing` (<xref:System.ArgumentNullException>).  
+- The path is not valid because it is `Nothing` (<xref:System.ArgumentNullException>).  
   
-- `File` odkazuje na cestu, která neexistuje (<xref:System.IO.FileNotFoundException> nebo <xref:System.IO.DirectoryNotFoundException>).  
+- `File` points to a path that does not exist (<xref:System.IO.FileNotFoundException> or <xref:System.IO.DirectoryNotFoundException>).  
   
-- Soubor je používán jiným procesem nebo dojde k chybě vstupně-výstupních operací (<xref:System.IO.IOException>).  
+- The file is in use by another process, or an I/O error occurs (<xref:System.IO.IOException>).  
   
-- Cesta přesahuje maximální délka definovaná systémem (<xref:System.IO.PathTooLongException>).  
+- The path exceeds the system-defined maximum length (<xref:System.IO.PathTooLongException>).  
   
-- Název souboru nebo adresáře v cestě obsahuje dvojtečku (:) nebo je v neplatném formátu (<xref:System.NotSupportedException>).  
+- A file or directory name in the path contains a colon (:) or is in an invalid format (<xref:System.NotSupportedException>).  
   
-- Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).  
+- The user lacks necessary permissions to view the path (<xref:System.Security.SecurityException>).  
   
 ## <a name="see-also"></a>Viz také:
 

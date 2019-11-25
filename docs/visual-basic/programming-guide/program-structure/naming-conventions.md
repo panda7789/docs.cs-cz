@@ -1,5 +1,5 @@
 ---
-title: Zásady vytváření názvů jazyka Visual Basic
+title: Konvence vytváření názvů
 ms.date: 07/20/2015
 helpviewer_keywords:
 - names [Visual Basic], Visual Basic rules
@@ -10,35 +10,35 @@ helpviewer_keywords:
 - names [Visual Basic], naming conventions
 - naming conventions [Visual Basic], classes
 ms.assetid: 164949a4-2a7c-4736-9d82-9c3078e2e56c
-ms.openlocfilehash: ce8d4c5ede0d722d2c1768b9c2cd7929f296114e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 98fdda2934c9df1b33f41b6e0442a39246efe168
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64651237"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347310"
 ---
 # <a name="visual-basic-naming-conventions"></a>Zásady vytváření názvů jazyka Visual Basic
-Pokud název elementu v aplikaci Visual Basic, první znak s tímto názvem musí být abecední znak nebo podtržítko. Upozorňujeme, že názvy začínající podtržítkem jsou nekompatibilní s [jazyková nezávislost a jazykově nezávislé komponenty](../../../standard/language-independence-and-language-independent-components.md) (CLS).  
+When you name an element in your Visual Basic application, the first character of that name must be an alphabetic character or an underscore. Note, however, that names beginning with an underscore are not compliant with the [Language Independence and Language-Independent Components](../../../standard/language-independence-and-language-independent-components.md) (CLS).  
   
- Následující doporučení platí pro pojmenování.  
+ The following suggestions apply to naming.  
   
-- Začněte všech samostatných slov v názvu s velkým písmenem, stejně jako v `FindLastRecord` a `RedrawMyForm`.  
+- Begin each separate word in a name with a capital letter, as in `FindLastRecord` and `RedrawMyForm`.  
   
-- Začněte názvy funkce a metody s operací, jako v `InitNameArray` nebo `CloseDialog`.  
+- Begin function and method names with a verb, as in `InitNameArray` or `CloseDialog`.  
   
-- Začněte třída, struktura, modul a názvy vlastností s podstatné jméno, stejně jako v `EmployeeName` nebo `CarAccessory`.  
+- Begin class, structure, module, and property names with a noun, as in `EmployeeName` or `CarAccessory`.  
   
-- Začněte názvy rozhraní s předponou "I", za nímž následuje podstatné jméno nebo fráze podstatné jméno, jako je třeba `IComponent`, nebo s přídavné popisující chování rozhraní, jako je třeba `IPersistable`. Nepoužívají podtržítko a zkratky používejte opatrně, protože zkratky, může způsobit zmatení.  
+- Begin interface names with the prefix "I", followed by a noun or a noun phrase, like `IComponent`, or with an adjective describing the interface's behavior, like `IPersistable`. Do not use the underscore, and use abbreviations sparingly, because abbreviations can cause confusion.  
   
-- Názvy obslužných rutin událostí začínat podstatné jméno popisující typ události, za nímž následuje "`EventHandler`"příponu, například"`MouseEventHandler`".  
+- Begin event handler names with a noun describing the type of event followed by the "`EventHandler`" suffix, as in "`MouseEventHandler`".  
   
-- V názvech tříd argument události, zahrnout "`EventArgs`" příponu.  
+- In names of event argument classes, include the "`EventArgs`" suffix.  
   
-- Pokud událost obsahuje koncept "before" nebo "after", je nutné použít příponu v přítomný a minulý čas, stejně jako v "`ControlAdd`"nebo"`ControlAdded`".  
+- If an event has a concept of "before" or "after," use a suffix in present or past tense, as in "`ControlAdd`" or "`ControlAdded`".  
   
-- Dlouhé nebo často používané termíny použijte zkratky zachovat název délky přiměřenou, například "HTML" místo "Jazyk HTML". Obecně jsou delší než 32 znaků. názvy proměnných mohou ztížit čtení na monitoru nastavit s nízkým rozlišením. Také ujistěte se, že vaše zkratky jsou konzistentní vzhledem k aplikacím v celé aplikaci. V projektu mezi "HTML" a "Jazyk" náhodně přepínání může vést k nejasnostem.  
+- For long or frequently used terms, use abbreviations to keep name lengths reasonable, for example, "HTML", instead of "Hypertext Markup Language". In general, variable names greater than 32 characters are difficult to read on a monitor set to a low resolution. Also, make sure your abbreviations are consistent throughout the entire application. Randomly switching in a project between "HTML" and "Hypertext Markup Language" can lead to confusion.  
   
-- Nepoužívejte názvy ve vnitřním oboru, které jsou stejné jako názvy ve vnějším oboru. K chybám může dojít, pokud nesprávné proměnnou přistupuje. Pokud dojde ke konfliktu mezi proměnnou a klíčové slovo se stejným názvem, je nutné určit klíčového slova před s knihovnou příslušného typu. Například, pokud máte proměnnou s názvem `Date`, můžete použít vnitřní objekt `Date` funkce pouze voláním <xref:System.DateTime.Date%2A?displayProperty=nameWithType>.  
+- Avoid using names in an inner scope that are the same as names in an outer scope. Errors can result if the wrong variable is accessed. If a conflict occurs between a variable and the keyword of the same name, you must identify the keyword by preceding it with the appropriate type library. For example, if you have a variable called `Date`, you can use the intrinsic `Date` function only by calling <xref:System.DateTime.Date%2A?displayProperty=nameWithType>.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -1,32 +1,32 @@
 ---
-title: Přehled výčtů (Visual Basic)
+title: Přehled výčtů
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Visual Basic code, enumerations
 - enumerations [Visual Basic], about enumerations
 ms.assetid: b42a38ee-5e77-4f99-a037-e3a127ead89c
-ms.openlocfilehash: 1c3465a3b2d12b110096ceedf2602d6560b82f4d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 623a3db818f589fb98f2c7efb02ea2f4a3b5b0ca
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61907397"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347485"
 ---
 # <a name="enumerations-overview-visual-basic"></a>Přehled výčtů (Visual Basic)
-Výčty poskytují pohodlný způsob pro práci se sadami související s konstantami a přidružení konstantních hodnot s názvy. Můžete třeba deklarovat výčet sady konstanty typu integer, které jsou spojené s dny v týdnu a potom použít názvy dní, namísto jejich celočíselných hodnot ve vašem kódu.  
+Enumerations provide a convenient way to work with sets of related constants and to associate constant values with names. For example, you can declare an enumeration for a set of integer constants associated with the days of the week, and then use the names of the days rather than their integer values in your code.  
   
-## <a name="tasks-involving-enumerations"></a>Úlohy zahrnující výčty  
- V následující tabulce jsou uvedeny běžné úlohy zahrnující výčty.  
+## <a name="tasks-involving-enumerations"></a>Tasks involving Enumerations  
+ The following table lists common tasks involving enumerations.  
   
-|Provedete to tak|Další informace naleznete v tématu|  
+|To do this|Další informace naleznete v tématu|  
 |----------------|---------|  
-|Najít předem definovaných výčet|[Konstanty a výčty](../../../../visual-basic/language-reference/constants-and-enumerations.md)|  
-|Deklarace výčtů|[Postupy: Deklarace výčtů](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)|  
-|Plně kvalifikovat název výčtu.|[Výčty a kvalifikace názvu](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md)|  
-|Odkazování na člena výčtu|[Postupy: Odkazování na člena výčtu](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-refer-to-an-enumeration-member.md)|  
-|Iterace ve výčtu|[Postupy: Iterace ve výčtu v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-iterate-through-an-enumeration.md)|  
-|Určení řetězce spojeného s výčet|[Postupy: Určení řetězce spojeného s hodnotou výčtu](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-determine-the-string-associated-with-an-enumeration-value.md)|  
-|Při rozhodování, kdy použít výčet|[Kdy použít výčet](../../../../visual-basic/programming-guide/language-features/constants-enums/when-to-use-an-enumeration.md)|  
+|Find a pre-defined enumeration|[Konstanty a výčty](../../../../visual-basic/language-reference/constants-and-enumerations.md)|  
+|Declare an enumeration|[How to: Declare an Enumeration](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)|  
+|Fully qualify an enumeration's name|[Výčty a kvalifikace názvu](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md)|  
+|Refer to an enumeration member|[Postupy: Odkazování na člena výčtu](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-refer-to-an-enumeration-member.md)|  
+|Iterate through an enumeration|[How to: Iterate Through An Enumeration in Visual Basic](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-iterate-through-an-enumeration.md)|  
+|Determine the string associated with an enumeration|[Postupy: Určení řetězce spojeného s hodnotou výčtu](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-determine-the-string-associated-with-an-enumeration-value.md)|  
+|Decide when to use an enumeration|[Kdy použít výčet](../../../../visual-basic/programming-guide/language-features/constants-enums/when-to-use-an-enumeration.md)|  
   
 ## <a name="see-also"></a>Viz také:
 

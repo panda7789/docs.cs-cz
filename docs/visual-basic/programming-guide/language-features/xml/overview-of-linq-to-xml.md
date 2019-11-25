@@ -1,69 +1,69 @@
 ---
-title: Přehled technologie LINQ to XML v jazyce Visual Basic
+title: Přehled technologie LINQ to XML
 ms.date: 07/20/2015
 helpviewer_keywords:
 - LINQ to XML [Visual Basic], about LINQ to XML
 - LINQ [Visual Basic], LINQ to XML
 ms.assetid: 01c62a79-6d58-468e-84fb-039c05947701
-ms.openlocfilehash: 5080efdf10a8e3b1f6815e836f9fffe968a8e4e0
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 80d94ecb7dcc196ad831be7418bfecc785015cf9
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69939249"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346239"
 ---
 # <a name="overview-of-linq-to-xml-in-visual-basic"></a>Přehled technologie LINQ to XML v jazyce Visual Basic
-Visual Basic poskytuje podporu pro [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] prostřednictvím literálů XML a vlastností osy XML. To vám umožňuje používat známou a pohodlný Syntax pro práci s XML ve vašem kódu Visual Basic. *Literály XML* umožňují zahrnout XML přímo do kódu. *Vlastnosti osy XML* umožňují přístup k podřízeným uzlům, podřízeným uzlům a atributům literálu XML. Další informace naleznete v tématu [Přehled literálů XML](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-overview.md) a [přístup k XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md).  
+Visual Basic provides support for [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] through XML literals and XML axis properties. This enables you to use a familiar, convenient syntax for working with XML in your Visual Basic code. *XML literals* enable you to include XML directly in your code. *XML axis properties* enable you to access child nodes, descendant nodes, and attributes of an XML literal. For more information, see [XML Literals Overview](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-overview.md) and [Accessing XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md).  
   
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]je rozhraní API pro programování v paměti, které je navrženo speciálně pro [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]využití. I když můžete volat [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] rozhraní API přímo, umožňuje pouze Visual Basic deklarovat literály XML a přistupovat přímo k vlastnostem osy XML.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] is an in-memory XML programming API designed specifically to take advantage of [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]. Although you can call the [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] APIs directly, only Visual Basic enables you to declare XML literals and directly access XML axis properties.  
   
 > [!NOTE]
-> Literály XML a vlastnosti OS XML nejsou podporovány v deklarativním kódu na stránce ASP.NET. Chcete-li použít funkce Visual Basic XML, vložte svůj kód do stránky s kódem na pozadí v aplikaci ASP.NET.  
+> XML literals and XML axis properties are not supported in declarative code in an ASP.NET page. To use Visual Basic XML features, put your code in a code-behind page in your ASP.NET application.  
   
- [Tlačítko Přehrát](./media/overview-of-linq-to-xml/play-video-icon-example.gif) Související video ukázky najdete v tématu [jak začít s LINQ to XML?](/aspnet/web-forms/videos/data-access/linq-videos-from-the-vb-team/how-do-i-get-started-with-linq-to-xml) a [jak vytvořit excelové tabulky pomocí LINQ to XML?](/aspnet/web-forms/videos/data-access/linq-videos-from-the-vb-team/how-do-i-create-excel-spreadsheets-using-linq-to-xml).   
+ [Play button](./media/overview-of-linq-to-xml/play-video-icon-example.gif) For related video demonstrations, see [How Do I Get Started with LINQ to XML?](/aspnet/web-forms/videos/data-access/linq-videos-from-the-vb-team/how-do-i-get-started-with-linq-to-xml) and [How Do I Create Excel Spreadsheets using LINQ to XML?](/aspnet/web-forms/videos/data-access/linq-videos-from-the-vb-team/how-do-i-create-excel-spreadsheets-using-linq-to-xml).   
   
 ## <a name="creating-xml"></a>Vytváření XML  
- Existují dva způsoby, jak vytvořit stromy XML v Visual Basic. Můžete deklarovat literál XML přímo v kódu nebo můžete použít [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] rozhraní API k vytvoření stromu. Oba procesy umožňují kódu odrážet konečnou strukturu stromu XML. Například následující příklad kódu vytvoří element XML:  
+ There are two ways to create XML trees in Visual Basic. You can declare an XML literal directly in code, or you can use the [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] APIs to create the tree. Both processes enable the code to reflect the final structure of the XML tree. For example, the following code example creates an XML element:  
   
  [!code-vb[VbXmlSamples#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples2.vb#5)]  
   
- Další informace naleznete v tématu [CREATING XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md).  
+ For more information, see [Creating XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md).  
   
-## <a name="accessing-and-navigating-xml"></a>Přístup a navigace v XML  
- Visual Basic poskytuje vlastnosti osy XML pro přístup k strukturám XML a jejich procházení. Tyto vlastnosti umožňují přístup k elementům a atributům XML zadáním názvů podřízených elementů XML. Alternativně můžete explicitně volat [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] metody pro procházení a vyhledávání prvků a atributů. Například následující příklad kódu používá vlastnosti osy XML pro odkazování na atributy a podřízené prvky elementu XML. Příklad kódu používá [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotaz k načtení podřízených prvků a jejich výstupu jako XML elementů, což efektivně provádí transformaci.  
+## <a name="accessing-and-navigating-xml"></a>Accessing and Navigating XML  
+ Visual Basic provides XML axis properties for accessing and navigating XML structures. These properties enable you to access XML elements and attributes by specifying the XML child element names. Alternatively, you can explicitly call the [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] methods for navigating and locating elements and attributes. For example, the following code example uses XML axis properties to refer to the attributes and child elements of an XML element. The code example uses a [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query to retrieve child elements and output them as XML elements, effectively performing a transform.  
   
  [!code-vb[VbXmlSamples#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples3.vb#8)]  
   
- Další informace najdete v tématu [přístup k XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md).  
+ For more information, see [Accessing XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md).  
   
-## <a name="xml-namespaces"></a>XML – obory názvů  
- Visual Basic umožňuje zadat alias do globálního oboru názvů XML pomocí `Imports` příkazu. Následující příklad ukazuje, jak použít `Imports` příkaz pro import oboru názvů XML:  
+## <a name="xml-namespaces"></a>XML Namespaces  
+ Visual Basic enables you to specify an alias to a global XML namespace by using the `Imports` statement. The following example shows how to use the `Imports` statement to import an XML namespace:  
   
  [!code-vb[VbXMLSamples#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples1.vb#1)]  
   
- Můžete použít alias oboru názvů XML, pokud přistupujete k vlastnostem osy XML a deklarujete literály XML pro dokumenty a elementy XML.  
+ You can use an XML namespace alias when you access XML axis properties and declare XML literals for XML documents and elements.  
   
- Můžete načíst <xref:System.Xml.Linq.XNamespace> objekt pro konkrétní předponu oboru názvů pomocí [operátoru GetXmlNamespace](../../../../visual-basic/language-reference/operators/getxmlnamespace-operator.md).  
+ You can retrieve an <xref:System.Xml.Linq.XNamespace> object for a particular namespace prefix by using the [GetXmlNamespace Operator](../../../../visual-basic/language-reference/operators/getxmlnamespace-operator.md).  
   
- Další informace naleznete v tématu [příkaz Imports (obor názvů XML)](../../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md).  
+ For more information, see [Imports Statement (XML Namespace)](../../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md).  
   
-### <a name="using-xml-namespaces-in-xml-literals"></a>Použití oborů názvů XML v literálech XML  
- Následující příklad ukazuje, jak vytvořit <xref:System.Xml.Linq.XElement> objekt, který používá globální obor názvů: `ns`  
+### <a name="using-xml-namespaces-in-xml-literals"></a>Using XML Namespaces in XML Literals  
+ The following example shows how to create an <xref:System.Xml.Linq.XElement> object that uses the global namespace `ns`:  
   
  [!code-vb[VbXMLSamples#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples1.vb#2)]  
   
- Kompilátor Visual Basic překládá literály XML, které obsahují aliasy oboru názvů XML, do ekvivalentního kódu, který používá zápis XML pro použití oborů názvů `xmlns` XML, s atributem. Při kompilaci kódu v příkladu předchozí části se v podstatě vytvoří stejný spustitelný kód jako v následujícím příkladu:  
+ The Visual Basic compiler translates XML literals that contain XML namespace aliases into equivalent code that uses the XML notation for using XML namespaces, with the `xmlns` attribute. When compiled, the code in the previous section's example produces essentially the same executable code as the following example:  
   
  [!code-vb[VbXMLSamples#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples1.vb#3)]  
   
-### <a name="using-xml-namespaces-in-xml-axis-properties"></a>Použití oborů názvů XML ve vlastnostech osy XML  
- Obory názvů XML deklarované v literálech XML nejsou k dispozici pro použití ve vlastnostech osy XML. Globální obory názvů však lze použít s vlastnostmi osy XML. Použijte dvojtečku pro oddělení předpony oboru názvů XML z názvu místního elementu. Následuje příklad:  
+### <a name="using-xml-namespaces-in-xml-axis-properties"></a>Using XML Namespaces in XML Axis Properties  
+ XML namespaces declared in XML literals are not available for use in XML axis properties. However, global namespaces can be used with the XML axis properties. Use a colon to separate the XML namespace prefix from the local element name. Following is an example:  
   
  [!code-vb[VbXMLSamples#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples1.vb#4)]  
   
 ## <a name="see-also"></a>Viz také:
 
 - [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)
-- [Vytváření XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
-- [Přístup k XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md)
-- [Manipulace s XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)
+- [Creating XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [Accessing XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md)
+- [Manipulating XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)

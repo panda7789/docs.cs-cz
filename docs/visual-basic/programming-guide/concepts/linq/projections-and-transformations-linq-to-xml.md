@@ -1,30 +1,30 @@
 ---
-title: Projekce a transformace (LINQ to XML) (Visual Basic)
+title: Projekce a transformace (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: 297de224-b625-44cf-8c00-186b6189aa0e
-ms.openlocfilehash: dc53141a5fd9f3cd029c1694f489c683cc3ee271
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3bcef46b690ab57b8d718773c34c2d70f4f14929
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61766516"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346616"
 ---
-# <a name="projections-and-transformations-linq-to-xml-visual-basic"></a>Projekce a transformace (LINQ to XML) (Visual Basic)
-Tato část obsahuje příklady [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] projekce a transformace.  
+# <a name="projections-and-transformations-linq-to-xml-visual-basic"></a>Projections and Transformations (LINQ to XML) (Visual Basic)
+This section provides examples of [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] projections and transformations.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
 |Téma|Popis|  
 |-----------|-----------------|  
-|[Postupy: Práce se slovníky pomocí LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-work-with-dictionaries-using-linq-to-xml.md)|Ukážeme, jak transformovat slovníky do XML a transformujte XML na slovníky.|  
-|[Postupy: Transformace tvaru stromu XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-transform-the-shape-of-an-xml-tree.md)|Ukazuje, jak můžete transformovat tvar dokumentu XML.|  
-|[Postupy: Řízení typu projekce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-control-the-type-of-a-projection.md)|Ukazuje, jak řídit typ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazu.|  
-|[Postupy: Projektování nového typu (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-project-a-new-type-linq-to-xml.md)|Ukazuje, jak kolekci uživatelem definovaného typu z projektu [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazu.|  
-|[Postupy: Projektování grafu objektu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-project-an-object-graph.md)|Ukazuje, jak složitější graf objektu z projektu [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazu.|  
-|[Postupy: Projektování anonymního typu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-project-an-anonymous-type.md)|Ukazuje, jak kolekci anonymních objektů z projektu [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazu.|  
-|[Postupy: Generování textových souborů z XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-generate-text-files-from-xml.md)|Ukazuje, jak transformovat soubor XML do textového souboru bez XML.|  
-|[Postupy: Generování XML ze souborů CSV (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-generate-xml-from-csv-files.md)|Ukazuje, jak používat [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] analyzovat soubor CSV a generování kódu XML z něj.|  
+|[How to: Work with Dictionaries Using LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-work-with-dictionaries-using-linq-to-xml.md)|Shows how to transform dictionaries to XML, and how to transform XML into dictionaries.|  
+|[How to: Transform the Shape of an XML Tree (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-transform-the-shape-of-an-xml-tree.md)|Shows how to transform the shape of an XML document.|  
+|[How to: Control the Type of a Projection (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-control-the-type-of-a-projection.md)|Shows how to control the type of a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] query.|  
+|[How to: Project a New Type (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-project-a-new-type-linq-to-xml.md)|Shows how to project a collection of a user-defined type from a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] query.|  
+|[How to: Project an Object Graph (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-project-an-object-graph.md)|Shows how to project a more complex object graph from a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] query.|  
+|[How to: Project an Anonymous Type (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-project-an-anonymous-type.md)|Shows how to project a collection of anonymous objects from a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] query.|  
+|[How to: Generate Text Files from XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-generate-text-files-from-xml.md)|Shows how to transform an XML file to a non-XML text file.|  
+|[How to: Generate XML from CSV Files (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-generate-xml-from-csv-files.md)|Shows how to use [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] to parse a CSV file and generate XML from it.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Dotazování na stromy XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/querying-xml-trees.md)
+- [Querying XML Trees (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/querying-xml-trees.md)

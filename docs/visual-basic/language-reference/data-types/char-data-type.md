@@ -1,5 +1,5 @@
 ---
-title: Char – datový typ (Visual Basic)
+title: Char – datový typ
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Char
@@ -10,34 +10,34 @@ helpviewer_keywords:
 - data types [Visual Basic], assigning
 - Char data type [Visual Basic], character literals
 ms.assetid: cd7547a9-7855-4e8e-b216-35d74a362657
-ms.openlocfilehash: 8313c2282a3b4b7b035f9f3b685a786c4471f53a
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 1ed5b19a307d094fc1d5a6bb0251c57052dc9bc1
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630151"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344051"
 ---
 # <a name="char-data-type-visual-basic"></a>Char – datový typ (Visual Basic)
 
-Obsahuje nepodepsaný 16bitový (2 bajt) body kódu v rozsahu od 0 do 65535. Každý *bod kódu*nebo kód znaku představuje jeden znak Unicode.
+Holds unsigned 16-bit (2-byte) code points ranging in value from 0 through 65535. Each *code point*, or character code, represents a single Unicode character.
 
 ## <a name="remarks"></a>Poznámky
 
-Datový typ `Char` použijte v případě, že potřebujete držet jenom jeden znak a nemusíte mít `String`režii. V některých případech můžete použít `Char()` `Char` pole prvků pro uložení více znaků.
+Use the `Char` data type when you need to hold only a single character and do not need the overhead of `String`. In some cases you can use `Char()`, an array of `Char` elements, to hold multiple characters.
 
-Výchozí hodnota `Char` je znak s bodem kódu 0.
+The default value of `Char` is the character with a code point of 0.
 
-## <a name="unicode-characters"></a>Znaky Unicode
+## <a name="unicode-characters"></a>Unicode Characters
 
-Prvních 128 kódových bodů (0 – 127) Unicode odpovídá písmenům a symbolům na standardní americké klávesnici. Tyto první body kódu 128 jsou stejné jako ty, které definuje znaková sada ASCII. Druhý bod kódu 128 (128 – 255) představuje speciální znaky, jako jsou písmena abecedy založená na latince, zvýraznění, symboly měn a zlomky. Kódování Unicode používá zbývající body kódu (256-65535) pro širokou škálu symbolů, včetně celosvětových textových znaků, diakritických znamének a matematických a technických symbolů.
+The first 128 code points (0–127) of Unicode correspond to the letters and symbols on a standard U.S. keyboard. These first 128 code points are the same as those the ASCII character set defines. The second 128 code points (128–255) represent special characters, such as Latin-based alphabet letters, accents, currency symbols, and fractions. Unicode uses the remaining code points (256-65535) for a wide variety of symbols, including worldwide textual characters, diacritics, and mathematical and technical symbols.
 
-K určení klasifikace Unicode můžete <xref:System.Char.IsDigit%2A> použít <xref:System.Char.IsPunctuation%2A> metody jako `Char` a na proměnné.
+You can use methods like <xref:System.Char.IsDigit%2A> and <xref:System.Char.IsPunctuation%2A> on a `Char` variable to determine its Unicode classification.
 
 ## <a name="type-conversions"></a>Převody typu
 
-Visual Basic nepřevádí přímo mezi `Char` a číselnými typy. Můžete použít <xref:Microsoft.VisualBasic.Strings.Asc%2A> funkci nebo <xref:Microsoft.VisualBasic.Strings.AscW%2A> `Char` pro`Integer` převod hodnoty na, která představuje jeho bod kódu. Můžete použít <xref:Microsoft.VisualBasic.Strings.Chr%2A> funkci nebo <xref:Microsoft.VisualBasic.Strings.ChrW%2A> `Integer` pro`Char` převod hodnoty na, která má tento kódový bod.
+Visual Basic does not convert directly between `Char` and the numeric types. You can use the <xref:Microsoft.VisualBasic.Strings.Asc%2A> or <xref:Microsoft.VisualBasic.Strings.AscW%2A> function to convert a `Char` value to an `Integer` that represents its code point. You can use the <xref:Microsoft.VisualBasic.Strings.Chr%2A> or <xref:Microsoft.VisualBasic.Strings.ChrW%2A> function to convert an `Integer` value to a `Char` that has that code point.
 
-Pokud je přepínač pro kontrolu typu ( [příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)) zapnutý, je nutné připojit znak literálového typu k řetězcovému literálu s jedním znakem a identifikovat ho `Char` jako datový typ. Toto dokládá následující příklad. První přiřazení k `charVar` proměnné generuje chybu kompilátoru [BC30512](../../misc/bc30512.md) , protože `Option Strict` je zapnuto. Druhé kompilování bylo úspěšné, protože `c` literální znak literálu identifikuje literál `Char` jako hodnotu.
+If the type checking switch (the [Option Strict Statement](../../../visual-basic/language-reference/statements/option-strict-statement.md)) is on, you must append the literal type character to a single-character string literal to identify it as the `Char` data type. Toto dokládá následující příklad. The first assignment to the `charVar` variable generates compiler error [BC30512](../../misc/bc30512.md) because `Option Strict` is on. The second compiles successfully because the `c` literal type character identifies the literal as a `Char` value.
 
 ```vb
 Option Strict On
@@ -57,15 +57,15 @@ End Module
 
 ## <a name="programming-tips"></a>Tipy k programování
 
-- **Záporná čísla.** `Char`je typ bez znaménka a nemůže představovat zápornou hodnotu. V žádném případě byste neměli používat `Char` k ukládání číselných hodnot.
+- **Negative Numbers.** `Char` is an unsigned type and cannot represent a negative value. In any case, you should not use `Char` to hold numeric values.
 
-- **Problematika spolupráce.** Pokud rozhraní s komponentami, které nejsou zapsány pro .NET Framework, například automatizace nebo objekty COM, pamatujte, že typy znaků mají v jiných prostředích jinou šířku dat (8 bitů). Pokud předáte 8bitovému argumentu takové součásti, deklarujte ji jako `Byte` `Char` místo v novém Visual Basic kódu.
+- **Interop Considerations.** If you interface with components not written for the .NET Framework, for example Automation or COM objects, remember that character types have a different data width (8 bits) in other environments. If you pass an 8-bit argument to such a component, declare it as `Byte` instead of `Char` in your new Visual Basic code.
 
-- **Rozšiřující.** Datový typ se rozšíří na `String`. `Char` To znamená, že můžete `Char` převést `String` na a nemůžete <xref:System.OverflowException?displayProperty=nameWithType>se setkat s.
+- **Widening.** The `Char` data type widens to `String`. This means you can convert `Char` to `String` and will not encounter a <xref:System.OverflowException?displayProperty=nameWithType>.
 
-- **Znaky typu.** Připojení znaku `C` literálového typu k řetězcovému literálu s jedním znakem vynutí `Char` datový typ. `Char`nemá žádný znak typu identifikátoru.
+- **Type Characters.** Appending the literal type character `C` to a single-character string literal forces it to the `Char` data type. `Char` has no identifier type character.
 
-- **Typ rozhraní.** Odpovídající typ v .NET Framework je <xref:System.Char?displayProperty=nameWithType> struktura.
+- **Framework Type.** The corresponding type in the .NET Framework is the <xref:System.Char?displayProperty=nameWithType> structure.
 
 ## <a name="see-also"></a>Viz také:
 
@@ -78,5 +78,5 @@ End Module
 - [Datový typ String](../../../visual-basic/language-reference/data-types/string-data-type.md)
 - [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
 - [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)
-- [Postupy: Volání funkce Windows, která přebírá typy bez znaménka](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)
+- [Postupy: Volání funkce systému Windows, která přebírá nepřiřazené typy](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)
 - [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

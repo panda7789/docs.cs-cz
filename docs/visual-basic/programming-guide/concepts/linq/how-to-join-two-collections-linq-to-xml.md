@@ -1,37 +1,37 @@
 ---
-title: 'Postupy: spojení dvou kolekcí (LINQ to XML) (Visual Basic)'
+title: 'How to: Join Two Collections (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 5a5758d4-906b-4285-908d-5b930db192e6
-ms.openlocfilehash: cb39895ec5916eb417fb2a161e7c1307087c09c5
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 404a43f52fce141b515da389090c81c57186f2e2
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320568"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344536"
 ---
-# <a name="how-to-join-two-collections-linq-to-xml-visual-basic"></a>Postupy: spojení dvou kolekcí (LINQ to XML) (Visual Basic)
-Element nebo atribut v dokumentu XML může někdy odkazovat na jiný element nebo atribut. Například [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md) dokument XML obsahuje seznam zákazníků a seznam objednávek. Každý prvek `Customer` obsahuje atribut `CustomerID`. Každý prvek `Order` obsahuje prvek `CustomerID`. Element `CustomerID` v každé objednávce odkazuje na atribut `CustomerID` zákazníka.  
+# <a name="how-to-join-two-collections-linq-to-xml-visual-basic"></a>How to: Join Two Collections (LINQ to XML) (Visual Basic)
+An element or attribute in an XML document can sometimes refer to another element or attribute. For example, the [Sample XML File: Customers and Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md) XML document contains a list of customers and a list of orders. Each `Customer` element contains a `CustomerID` attribute. Each `Order` element contains a `CustomerID` element. The `CustomerID` element in each order refers to the `CustomerID` attribute in a customer.  
   
- [Ukázkový soubor XSD: zákazníci a objednávky](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md) obsahují XSD, které lze použít k ověření tohoto dokumentu. Používá funkce `xs:key` a `xs:keyref` v XSD k určení toho, že atribut `CustomerID` elementu `Customer` je klíč a k navázání vztahu mezi prvkem `CustomerID` v každém prvku `Order` a atribut `CustomerID` v každém prvku `Customer`.  
+ The topic [Sample XSD File: Customers and Orders](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md) contains an XSD that can be used to validate this document. It uses the `xs:key` and `xs:keyref` features of XSD to establish that the `CustomerID` attribute of the `Customer` element is a key, and to establish a relationship between the `CustomerID` element in each `Order` element and the `CustomerID` attribute in each `Customer` element.  
   
- U [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] můžete využít výhod tohoto vztahu pomocí klauzule `Join`.  
+ With [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], you can take advantage of this relationship by using the `Join` clause.  
   
- Všimněte si, že protože není k dispozici žádný index, takové spojení bude mít špatný běhový výkon.  
+ Note that because there is no index available, such joining will have poor runtime performance.  
   
- Podrobnější informace o `Join` najdete v tématu [operace join (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/join-operations.md).  
+ For more detailed information about `Join`, see [Join Operations (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/join-operations.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad spojuje prvky `Customer` s prvky `Order` a generuje nový dokument XML, který obsahuje prvek `CompanyName` v objednávkách.  
+ The following example joins the `Customer` elements to the `Order` elements, and generates a new XML document that includes the `CompanyName` element in the orders.  
   
- Před provedením dotazu v příkladu se ověří, že dokument vyhovuje schématu v [ukázkovém souboru XSD: zákazníci a objednávky](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md). Tím se zajistí, že klauzule JOIN bude vždycky fungovat.  
+ Before executing the query, the example validates that the document complies with the schema in [Sample XSD File: Customers and Orders](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md). This ensures that the join clause will always work.  
   
- Tento dotaz nejprve načte všechny prvky `Customer` a pak je spojí s prvky `Order`. Vybere pouze objednávky pro zákazníky s `CustomerID` větší než "K". Potom projekty vytvoří nový prvek `Order`, který obsahuje informace o zákaznících v rámci jednotlivých objednávek.  
+ This query first retrieves all `Customer` elements, and then joins them to the `Order` elements. It selects only the orders for customers with a `CustomerID` greater than "K". It then projects a new `Order` element that contains the customer information within each order.  
   
- Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
+ This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
   
- V tomto příkladu se používá následující schéma XSD: [ukázkový soubor XSD: zákazníci a objednávky](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md).  
+ This example uses the following XSD schema: [Sample XSD File: Customers and Orders](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md).  
   
- Všimněte si, že připojení tímto způsobem nebude fungovat velmi dobře. Spojení se provádí pomocí lineárního hledání. Neexistují žádné zatřiďovací tabulky ani indexy, které by měly pomáhat s výkonem.  
+ Note that joining in this fashion will not perform very well. Joins are performed via a linear search. There are no hash tables or indexes to help with performance.  
   
 ```vb  
 Public Class Program  
@@ -85,7 +85,7 @@ Public Class Program
 End Class  
 ```  
   
- Tento kód generuje následující výstup:  
+ This code produces the following output:  
   
 ```console
 Attempting to validate, custOrdDoc validated  
@@ -137,4 +137,4 @@ Attempting to validate, custOrdDoc validated
   
 ## <a name="see-also"></a>Viz také:
 
-- [Pokročilé techniky dotazů (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+- [Advanced Query Techniques (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

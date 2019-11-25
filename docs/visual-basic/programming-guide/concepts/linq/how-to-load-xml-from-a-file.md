@@ -1,30 +1,30 @@
 ---
-title: 'Postupy: načtení XML ze souboru (Visual Basic)'
+title: 'How to: Load XML from a File'
 ms.date: 07/20/2015
 ms.assetid: e2d337ad-8ac8-4671-b694-30e5ca1413b7
-ms.openlocfilehash: 985c011d78b8386996ff4803194c8510e7ea0048
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 72a5adb8c7165f8113584f27bea64efde4ec58fb
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582077"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74336114"
 ---
-# <a name="how-to-load-xml-from-a-file-visual-basic"></a>Postupy: načtení XML ze souboru (Visual Basic)
+# <a name="how-to-load-xml-from-a-file-visual-basic"></a>How to: Load XML from a File (Visual Basic)
 
-Toto téma ukazuje, jak načíst XML z identifikátoru URI pomocí metody <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>.
+This topic shows how to load XML from a URI by using the <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType> method.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak načíst dokument XML ze souboru. Následující příklad načte soubor Books. XML a vytvoří výstup stromu XML do konzoly.
+The following example shows how to load an XML document from a file. The following example loads books.xml and outputs the XML tree to the console.
 
-Tento příklad používá následující dokument XML: [ukázkový soubor XML: Books (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).
+This example uses the following XML document: [Sample XML File: Books (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).
 
 ```vb
 Dim booksFromFile As XElement = XElement.Load("books.xml")
 Console.WriteLine(booksFromFile)
 ```
 
-Tento kód generuje následující výstup:
+This code produces the following output:
 
 ```xml
 <Catalog>
@@ -52,4 +52,4 @@ Tento kód generuje následující výstup:
 
 ## <a name="see-also"></a>Viz také:
 
-- [Analýza kódu XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+- [Parsing XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)

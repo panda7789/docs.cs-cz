@@ -1,72 +1,72 @@
 ---
-title: Analyzátory zabezpečení .NET – .NET
-description: Přečtěte si, jak pomocí analyzátorů zabezpečení .NET v balíčku .NET Framework analyzátory najít a vyřešit bezpečnostní rizika.
+title: .NET Framework Analyzers - .NET
+description: Learn how to use the .NET Framework Analyzers in the .NET Framework Analyzers package to find and address security risks
 author: billwagner
 ms.author: wiwagn
 ms.date: 01/25/2018
 ms.technology: dotnet-standard
-ms.openlocfilehash: 03268375739b34a43f38c60fbfd2c993da9f3840
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 7e64b00eb6fd2c2dbb12c54a2c725590b4d22e15
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197961"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345948"
 ---
-# <a name="the-net-framework-analyzer"></a>Analyzátor .NET Framework
+# <a name="the-net-framework-analyzer"></a>The .NET Framework Analyzer
 
-K nalezení potenciálních problémů v kódu aplikace založeném na .NET Framework můžete použít analyzátor .NET Framework. Tento analyzátor vyhledá možné problémy a navrhne jejich opravy.
+You can use the .NET Framework Analyzer to find potential issues in your .NET Framework-based application code. This analyzer finds potential issues and suggests fixes to them.
 
-Analyzátor se spustí interaktivně v aplikaci Visual Studio při psaní kódu nebo jako součást sestavení CI. Analyzátor byste měli přidat do projektu co nejdříve ve vašem vývoji. Dříve najdete případné problémy v kódu, což je snazší opravit. Můžete ho ale kdykoli přidat do vývojového cyklu. Vyhledá všechny problémy s existujícím kódem a upozorní na nové problémy při vývoji.
+The analyzer runs interactively in Visual Studio as you write your code or as part of a CI build. You should add the analyzer to your project as early as possible in your development. The sooner you find any potential issues in your code, the easier they are to fix. However, you can add it at any time in the development cycle. It finds any issues with the existing code and warns about new issues as you keep developing.
 
-## <a name="installing-and-configuring-the-net-framework-analyzer"></a>Instalace a konfigurace analyzátoru .NET Framework
+## <a name="installing-and-configuring-the-net-framework-analyzer"></a>Installing and configuring the .NET Framework Analyzer
 
-Analyzátory zabezpečení .NET musí být nainstalované jako balíček NuGet v každém projektu, kde se mají spouštět. Pouze jeden vývojář potřebuje přidat do projektu. Balíček analyzátoru je závislý na projektu a spustí se na každém počítači vývojáře, jakmile bude mít aktualizované řešení.
+The .NET Framework Analyzers must be installed as a NuGet package on every project where you want them to run. Only one developer needs to add them to the project. The analyzer package is a project dependency and will run on every developer's machine once it has the updated solution.
 
-Analyzátor .NET Framework je dodán v balíčku NuGet [Microsoft. NETFramework. analyzers](https://www.nuget.org/packages/Microsoft.NetFramework.Analyzers/) . Tento balíček poskytuje jenom analyzátory, které jsou specifické pro .NET Framework, které zahrnují analyzátory zabezpečení. Ve většině případů budete chtít balíček NuGet [Microsoft. CodeAnalysis. FxCopAnalyzers](https://www.nuget.org/packages/Microsoft.CodeAnalysis.FxCopAnalyzers) . FxCopAnalyzers agregovaný balíček obsahuje všechny analyzátory rozhraní, které jsou součástí balíčku Framework. Analyzers a také následující analyzátory:
+The .NET Framework Analyzer is delivered in the [Microsoft.NetFramework.Analyzers](https://www.nuget.org/packages/Microsoft.NetFramework.Analyzers/) NuGet package. This package provides only the analyzers specific to the .NET Framework, which includes security analyzers. In most cases, you'll want the [Microsoft.CodeAnalysis.FxCopAnalyzers](https://www.nuget.org/packages/Microsoft.CodeAnalysis.FxCopAnalyzers) NuGet package. The FxCopAnalyzers aggregate package contains all the framework analyzers included in the Framework.Analyzers package as well as the following analyzers:
 
-- [Microsoft. CodeQuality. analyzers](https://www.nuget.org/packages/Microsoft.CodeQuality.Analyzers): poskytuje obecné pokyny a pokyny pro rozhraní api pro .NET Standard.
-- [Microsoft. Netcore. analyzers](https://www.nuget.org/packages/Microsoft.NetCore.Analyzers): poskytuje analyzátory specifické pro rozhraní API .NET Core.
-- [Text. analyzers](https://www.nuget.org/packages/Text.Analyzers): poskytuje pokyny pro text zahrnutý jako kód včetně komentářů.
+- [Microsoft.CodeQuality.Analyzers](https://www.nuget.org/packages/Microsoft.CodeQuality.Analyzers): Provides general guidance and guidance for .NET Standard APIs
+- [Microsoft.NetCore.Analyzers](https://www.nuget.org/packages/Microsoft.NetCore.Analyzers): Provides analyzers specific to .NET Core APIs.
+- [Text.Analyzers](https://www.nuget.org/packages/Text.Analyzers): Provides guidance for text included as code, including comments.
 
-Pokud ho chcete nainstalovat, klikněte pravým tlačítkem na projekt a vyberte spravovat závislosti.
-V Průzkumníku NuGet vyhledejte "NetFramework Analyzer", nebo pokud dáváte přednost, "FX VPP Analyzer". Nainstalujte nejnovější stabilní verzi do všech projektů ve vašem řešení.
+To install it, right-click on the project, and select "Manage Dependencies".
+From the NuGet explorer, search for "NetFramework Analyzer", or if you prefer, "Fx Cop Analyzer". Install the latest stable version in all projects in your solution.
 
-## <a name="using-the-net-framework-analyzer"></a>Použití analyzátoru .NET Framework
+## <a name="using-the-net-framework-analyzer"></a>Using the .NET Framework Analyzer
 
-Po instalaci balíčku NuGet si sestavte řešení. Analyzátor ohlásí všechny problémy, které najde ve vašem základu kódu. Problémy jsou hlášeny jako upozornění v okně Visual Studio Seznam chyb, jak je znázorněno na následujícím obrázku:
+Once the NuGet package is installed, build your solution. The analyzer will report any issues it locates in your codebase. The issues are reported as warnings in the Visual Studio Error List window, as shown in the following image:
 
-![problémy hlášené analyzátorem rozhraní Framework](./media/framework-analyzers-2.png)
+![issues reported by the framework analyzer](./media/framework-analyzers-2.png)
 
-Při psaní kódu se zobrazí vlnovky pod jakýmkoli potenciálním problémem v kódu.
-Najeďte myší na libovolný problém a zobrazí se podrobnosti o problému a návrhy na případné opravy, jak je znázorněno na následujícím obrázku:
+As you write code, you see squiggles underneath any potential issue in your code.
+Hover over any issue and you see details about the issue, and suggestions for any possible fix, as shown in the following image:
 
-![interaktivní sestava problémů zjištěných analyzátorem rozhraní](./media/framework-analyzers-1.png)
+![interactive report of issues found by the framework analyzer](./media/framework-analyzers-1.png)
 
-Analyzátory prozkoumají kód ve vašem řešení a poskytnou vám seznam upozornění pro některý z těchto problémů:
+The analyzers examine the code in your solution and provide you with a list of warnings for any of these issues:
 
 ### <a name="ca1058-types-should-not-extend-certain-base-types"></a>CA1058: Typy by neměly rozšířit určité základní typy
 
-V .NET Framework existuje malý počet typů, které byste neměli odvozovat přímo. 
+There are a small number of types in the .NET Framework that you should not derived from directly. 
 
-**Kategorie:** Vytvořit
+**Category:** Design
 
-**Závažnost:** Upozornění
+**Severity:** Warning
 
-Další informace: [certifikační autorita: 1058: typy by neměly rozkrývat určité základní typy](/visualstudio/code-quality/ca1058-types-should-not-extend-certain-base-types)
+Additional information: [CA:1058: Types should not extend certain base types](/visualstudio/code-quality/ca1058-types-should-not-extend-certain-base-types)
 
-### <a name="ca2153-do-not-catch-corrupted-state-exceptions"></a>CA2153: nezachytit poškozené výjimky stavu
+### <a name="ca2153-do-not-catch-corrupted-state-exceptions"></a>CA2153: Do not catch corrupted state exceptions
 
-Výsledkem zachycení poškozených výjimek stavu mohou být chyby maskování (například porušení přístupu), což vede k nekonzistentnímu stavu provádění nebo je snazší útočníkům napadnout systém. Místo toho Zachyťte a zpracujte konkrétnější sadu typů výjimek nebo znovu vyvolejte výjimku.
+Catching corrupted state exceptions could mask errors (such as access violations), resulting in an inconsistent state of execution or making it easier for attackers to compromise a system. Instead, catch and handle a more specific set of exception type(s) or re-throw the exception
 
-**Kategorie:** Bezpečnost
+**Category:** Security
 
-**Závažnost:** Upozornění
+**Severity:** Warning
 
-Další informace: [# # CA2153: nezachytit poškozené výjimky stavu](/visualstudio/code-quality/ca2153-avoid-handling-corrupted-state-exceptions)
+Additional information: [## CA2153: Do not catch corrupted state exceptions](/visualstudio/code-quality/ca2153-avoid-handling-corrupted-state-exceptions)
 
 ### <a name="ca2229-implement-serialization-constructors"></a>CA2229: Implementovat serializační konstruktory
 
-Analyzátor vygeneruje toto upozornění, když vytvoříte typ, který implementuje rozhraní <xref:System.Runtime.Serialization.ISerializable>, ale nedefinuje požadovaný konstruktor serializace. Implementací konstruktoru serializace se vyřeší porušení tohoto pravidla. Pro zapečetěnou třídu musí být konstruktor soukromý. V ostatních případech musí být chráněný. Konstruktor serializace má následující signaturu:
+The analyzer generates this warning when you create a type that implements the <xref:System.Runtime.Serialization.ISerializable> interface but does not define the required serialization constructor. Implementací konstruktoru serializace se vyřeší porušení tohoto pravidla. Pro zapečetěnou třídu musí být konstruktor soukromý. V ostatních případech musí být chráněný. The serialization constructor has the following signature:
 
 ```csharp
 public class MyItemType
@@ -79,58 +79,58 @@ public class MyItemType
 }
 ```
 
-**Kategorie:** Využívání
+**Category:** Usage
 
-**Závažnost:** Upozornění
+**Severity:** Warning
 
-Další informace: [CA2229: implementace serializacch konstruktorů](/visualstudio/code-quality/ca2229-implement-serialization-constructors)
+Additional information: [CA2229: Implement serialization constructors](/visualstudio/code-quality/ca2229-implement-serialization-constructors)
 
 ### <a name="ca2235-mark-all-non-serializable-fields"></a>CA2235: Označte všechna neserializovatelná pole
 
-Neserializovatelný typ pole instance je deklarován v serializovatelném typu. Chcete-li toto upozornění vyřešit, musíte toto pole explicitně označit <xref:System.NonSerializedAttribute>.
+Neserializovatelný typ pole instance je deklarován v serializovatelném typu. You must explicitly mark that field with the <xref:System.NonSerializedAttribute> to fix this warning.
 
-**Kategorie:** Využívání
+**Category:** Usage
 
-**Závažnost:** Upozornění
+**Severity:** Warning
 
-Další informace: [CA2235: Označte všechna Neserializovatelný pole](/visualstudio/code-quality/ca2235-mark-all-non-serializable-fields)
+Additional information: [CA2235: Mark all non-serializable fields](/visualstudio/code-quality/ca2235-mark-all-non-serializable-fields)
 
-### <a name="ca2237-mark-iserializable-types-with-serializable"></a>CA2237: Označte typy ISerializable pomocí serializovatelných
+### <a name="ca2237-mark-iserializable-types-with-serializable"></a>CA2237: Mark ISerializable types with serializable
 
-Aby je bylo možné rozpoznat modulem CLR (Common Language Runtime) jako serializovatelný, musí být typy označeny pomocí atributu <xref:System.SerializableAttribute>, i když typ používá vlastní rutinu serializace implementací rozhraní <xref:System.Runtime.Serialization.ISerializable>.
+To be recognized by the common language runtime as serializable, types must be marked by using the <xref:System.SerializableAttribute> attribute even when the type uses a custom serialization routine by implementing the <xref:System.Runtime.Serialization.ISerializable> interface.
 
-**Kategorie:** Využívání
+**Category:** Usage
 
-**Závažnost:** Upozornění
+**Severity:** Warning
 
-Další informace: [CA2237: Označte typy ISerializable s serializovatelným](/visualstudio/code-quality/ca2237-mark-iserializable-types-with-serializableattribute)
+Additional information: [CA2237: Mark ISerializable types with serializable](/visualstudio/code-quality/ca2237-mark-iserializable-types-with-serializableattribute)
 
-### <a name="ca3075-insecure-dtd-processing-in-xml"></a>CA3075: nezabezpečené zpracování DTD v XML
+### <a name="ca3075-insecure-dtd-processing-in-xml"></a>CA3075: Insecure DTD processing in XML
 
-Pokud používáte nezabezpečené <xref:System.Xml.XmlReaderSettings.DtdProcessing%2A> instance nebo odkazujete na zdroje externích entit, může analyzátor přijmout nedůvěryhodné vstupní a únik citlivých informací útočníkům.  
+If you use insecure <xref:System.Xml.XmlReaderSettings.DtdProcessing%2A> instances or reference external entity sources, the parser may accept untrusted input and disclose sensitive information to attackers.  
 
-**Kategorie:** Bezpečnost
+**Category:** Security
 
-**Závažnost:** Upozornění
+**Severity:** Warning
 
-Další informace: [A3075: nezabezpečené zpracování DTD v XML](/visualstudio/code-quality/ca2237-mark-iserializable-types-with-serializableattribute)
+Additional information: [A3075: Insecure DTD processing in XML](/visualstudio/code-quality/ca2237-mark-iserializable-types-with-serializableattribute)
 
-### <a name="ca5350-do-not-use-weak-cryptographic-algorithms"></a>CA5350: Nepoužívejte slabé kryptografické algoritmy.
+### <a name="ca5350-do-not-use-weak-cryptographic-algorithms"></a>CA5350: Do not use weak cryptographic algorithms
 
-Kryptografické algoritmy se v průběhu času degradují, jakmile se útoky stanou pokročilejší. V závislosti na typu a aplikaci tohoto kryptografického algoritmu může další degradace jeho kryptografické síly umožnit útočníkům číst enciphered zprávy, manipulovat s enciphered, zfalšovat digitální podpisy, manipulovat s obsahem s hashy nebo v opačném případě ohrožení všech cryptosystem na základě tohoto algoritmu. Pro šifrování použijte algoritmus AES (AES-256, AES-192 a AES-128 jsou přijatelné) s délkou klíče větší nebo rovnou 128 bitů. V případě hashování použijte funkci hash v rodině SHA-2, například SHA-2 512, SHA-2 384 nebo SHA-2 256.
+Cryptographic algorithms degrade over time as attacks become more advanced. Depending on the type and application of this cryptographic algorithm, further degradation of its cryptographic strength may allow attackers to read enciphered messages, tamper with enciphered messages, forge digital signatures, tamper with hashed content, or otherwise compromise any cryptosystem based on this algorithm. For encryption, use an AES algorithm (AES-256, AES-192 and AES-128 are acceptable) with a key length greater than or equal to 128 bits. For hashing, use a hashing function in the SHA-2 family, such as SHA-2 512, SHA-2 384, or SHA-2 256.
 
-**Kategorie:** Bezpečnost
+**Category:** Security
 
-**Závažnost:** Upozornění
+**Severity:** Warning
 
-Další informace: [CA5350: Nepoužívejte slabé kryptografické algoritmy](/visualstudio/code-quality/ca5350-do-not-use-weak-cryptographic-algorithms) .
+Additional information: [CA5350: Do not use weak cryptographic algorithms](/visualstudio/code-quality/ca5350-do-not-use-weak-cryptographic-algorithms)
 
-### <a name="ca5351-do-not-use-broken-cryptographic-algorithms"></a>CA5351: Nepoužívejte nefunkční kryptografické algoritmy.
+### <a name="ca5351-do-not-use-broken-cryptographic-algorithms"></a>CA5351: Do not use broken cryptographic algorithms
 
-Útok, který provádí výpočetně vhodným důvodem pro přerušení tohoto algoritmu, existuje. To umožňuje útočníkům přerušit kryptografické záruky, které je navržena pro poskytování. V závislosti na typu a aplikaci tohoto kryptografického algoritmu může útočníkům umožnit čtení zpráv enciphered, manipulace s enciphered zprávami, zfalšovat digitálních podpisů, manipulace s hash obsahem nebo jiné ohrožení zabezpečení založeného na cryptosystem. u tohoto algoritmu. Pro šifrování použijte algoritmus AES (AES-256, AES-192 a AES-128 jsou přijatelné) s délkou klíče větší nebo rovnou 128 bitů. V případě hashování použijte funkci hash, která je v rodině SHA-2, například SHA512, SHA384 nebo SHA256. U digitálních podpisů použijte RSA s délkou klíče větší nebo rovnou 2048 bitů nebo ECDSA s délkou klíče větší nebo rovnou 256 bitů.
+An attack making it computationally feasible to break this algorithm exists. This allows attackers to break the cryptographic guarantees it is designed to provide. Depending on the type and application of this cryptographic algorithm, this may allow attackers to read enciphered messages, tamper with enciphered messages, forge digital signatures, tamper with hashed content, or otherwise compromise any cryptosystem based on this algorithm. For encryption, use an AES algorithm (AES-256, AES-192 and AES-128 are acceptable) with a key length greater than or equal to 128 bits. For hashing, use a hashing function in the SHA-2 family, such as SHA512, SHA384, or SHA256. For digital signatures, use RSA with a key length greater than or equal to 2048-bits, or ECDSA with a key length greater than or equal to 256 bits.
 
-**Kategorie:** Bezpečnost
+**Category:** Security
 
-**Závažnost:** Upozornění
+**Severity:** Warning
 
-Další informace: [CA5351: Nepoužívejte nefunkční kryptografické algoritmy](/visualstudio/code-quality/ca5351) .
+Additional Information: [CA5351: Do not use broken cryptographic algorithms](/visualstudio/code-quality/ca5351)

@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Generování XML ze souborů CSV (Visual Basic)'
+title: 'How to: Generate XML from CSV Files'
 ms.date: 07/20/2015
 ms.assetid: fe4dbc87-7b0d-40bf-88c3-5d706ee89a4d
-ms.openlocfilehash: 056cb1545ac296f0b0861155c5ec5c08b19dd5b8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2e2d76fdae8473e47e397f2559f3051c47a180fd
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61780585"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344596"
 ---
-# <a name="how-to-generate-xml-from-csv-files-visual-basic"></a>Postupy: Generování XML ze souborů CSV (Visual Basic)
-Tento příklad ukazuje způsob použití [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ke generování souboru XML ze souboru hodnot oddělených čárkami (CSV).  
+# <a name="how-to-generate-xml-from-csv-files-visual-basic"></a>How to: Generate XML from CSV Files (Visual Basic)
+This example shows how to use [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] and [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] to generate an XML file from a comma-separated value (CSV) file.  
   
 ## <a name="example"></a>Příklad  
- Následující kód provede [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotaz na pole řetězců.  
+ The following code performs a [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query on an array of strings.  
   
 ```vb  
       ' Create the text file.  
@@ -48,7 +48,7 @@ Dim cust As XElement = _
 Console.WriteLine(cust)  
 ```  
   
- Tento kód vytvoří následující výstup:  
+ This code produces the following output:  
   
 ```xml  
 <Root>  
@@ -109,4 +109,4 @@ Console.WriteLine(cust)
   
 ## <a name="see-also"></a>Viz také:
 
-- [Projekce a transformace (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+- [Projections and Transformations (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

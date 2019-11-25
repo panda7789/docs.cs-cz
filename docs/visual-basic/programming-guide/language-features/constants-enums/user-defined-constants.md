@@ -1,5 +1,5 @@
 ---
-title: Uživatelem definované konstanty (Visual Basic)
+title: Uživatelem definované konstanty
 ms.date: 07/20/2015
 helpviewer_keywords:
 - constants [Visual Basic], circular references
@@ -9,51 +9,51 @@ helpviewer_keywords:
 - constants [Visual Basic], user-defined
 - circular references between constants [Visual Basic]
 ms.assetid: a1206d5c-c45e-4ac2-970a-4a0be6a05fdd
-ms.openlocfilehash: 5d4fe5d1b9048f4a8ae22a84e14456318ca38f0f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 194a420b3749ca5c858a65c07b8c164287c1582a
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64645866"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74354010"
 ---
 # <a name="user-defined-constants-visual-basic"></a>Uživatelem definované konstanty (Visual Basic)
-Konstanta je smysluplný název, který probíhá číslo nebo řetězec, který se nemění. Konstanty ukládání hodnot, které, jak již název napovídá, zůstanou neměnný po celou dobu spuštění aplikace. Můžete použít konstanty, které jsou definovány ovládací prvky nebo komponenty, které můžete pracovat, nebo můžete vytvořit svoje vlastní. Konstanty, které si sami vytvoříte, jsou popsány jako *uživatelem definované*.  
+A constant is a meaningful name that takes the place of a number or string that does not change. Constants store values that, as the name implies, remain constant throughout the execution of an application. You can use constants that are defined by the controls or components you work with, or you can create your own. Constants you create yourself are described as *user-defined*.  
   
- Deklarace konstanty s `Const` příkaz pomocí stejné pokyny jako byste to udělali pro vytvoření názvu proměnné. Pokud `Option Strict` je `On`, musíte explicitně deklarovat typ konstanty.  
+ You declare a constant with the `Const` statement, using the same guidelines you would for creating a variable name. If `Option Strict` is `On`, you must explicitly declare the constant type.  
   
-## <a name="const-statement-usage"></a>Const – příkaz využití  
- A `Const` příkaz může představovat matematické nebo datum a čas, množství:  
+## <a name="const-statement-usage"></a>Const Statement Usage  
+ A `Const` statement can represent a mathematical or date/time quantity:  
   
  [!code-vb[VbEnumsTask#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#10)]  
   
- Je také definovat `String` konstanty:  
+ It also can define `String` constants:  
   
  [!code-vb[VbEnumsTask#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#13)]  
   
- Výraz na pravé straně znaménka rovnosti ( `=` ) je často číslo nebo řetězcový literál, ale také může být výraz, jehož výsledkem číslo nebo řetězec (i když tento výraz nemůže obsahovat volání funkcí). Můžete dokonce definovat konstanty z hlediska dříve definované konstanty:  
+ The expression on the right side of the equal sign ( `=` ) is often a number or literal string, but it also can be an expression that results in a number or string (although that expression cannot contain calls to functions). You can even define constants in terms of previously defined constants:  
   
  [!code-vb[VbEnumsTask#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#15)]  
   
-## <a name="scope-of-user-defined-constants"></a>Rozsah uživatelem definované konstanty  
- A `Const` obor příkazu je stejné jako u proměnné deklarované ve stejném umístění. Zadejte rozsah v některém z následujících způsobů:  
+## <a name="scope-of-user-defined-constants"></a>Scope of User-Defined Constants  
+ A `Const` statement's scope is the same as that of a variable declared in the same location. You can specify scope in any of the following ways:  
   
-- Chcete-li vytvořit konstantu, která existuje pouze v rámci procedury, deklarujte ho v rámci tohoto postupu.  
+- To create a constant that exists only within a procedure, declare it within that procedure.  
   
-- K vytvoření konstantu k dispozici pro všechny postupy v rámci třídy, ale ne k žádným kódem mimo modul, ji deklarujte v sekci prohlášení třídy.  
+- To create a constant available to all procedures within a class, but not to any code outside that module, declare it in the declarations section of the class.  
   
-- Pokud chcete vytvořit konstantu, která je k dispozici všem členům sestavení, ale ne ke klientům mimo sestavení, deklarujete jej s použitím `Friend` – klíčové slovo v sekci prohlášení třídy.  
+- To create a constant that is available to all members of an assembly, but not to outside clients of the assembly, declare it using the `Friend` keyword in the declarations section of the class.  
   
-- Pokud chcete vytvořit konstantní k dispozici v celé aplikaci, deklarujete jej s použitím `Public` části – klíčové slovo v deklaracích třídy.  
+- To create a constant available throughout the application, declare it using the `Public` keyword in the declarations section the class.  
   
- Další informace najdete v tématu [jak: Deklarace konstanty](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-a-constant.md).  
+ For more information, see [How to: Declare A Constant](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-a-constant.md).  
   
-### <a name="avoiding-circular-references"></a>Jak se vyhnout cyklické odkazy  
- Protože jde o dalších konstant lze definovat konstanty, je možné neúmyslně vytvořit *cyklu*, nebo cyklický odkaz mezi dva nebo více konstant. Cyklus dojde, pokud mají dvě nebo více veřejné konstanty, z nichž každý je definována v jiné, jako v následujícím příkladu:  
+### <a name="avoiding-circular-references"></a>Avoiding Circular References  
+ Because constants can be defined in terms of other constants, it is possible to inadvertently create a *cycle*, or circular reference, between two or more constants. A cycle occurs when you have two or more public constants, each of which is defined in terms of the other, as in the following example:  
   
  [!code-vb[VbEnumsTask#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#16)]  
 [!code-vb[VbEnumsTask#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#17)]  
   
- Pokud dochází k zacyklení, Visual Basic vygeneruje chybu kompilátoru.  
+ If a cycle occurs, Visual Basic generates a compiler error.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -63,6 +63,6 @@ Konstanta je smysluplný název, který probíhá číslo nebo řetězec, který
 - [Konstanty a výčty](../../../../visual-basic/language-reference/constants-and-enumerations.md)
 - [Přehled výčtů](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-overview.md)
 - [Přehled konstant](../../../../visual-basic/programming-guide/language-features/constants-enums/constants-overview.md)
-- [Postupy: Deklarace výčtů](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)
+- [How to: Declare an Enumeration](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)
 - [Výčty a kvalifikace názvu](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md)
 - [Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)

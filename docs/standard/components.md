@@ -5,12 +5,12 @@ author: cartermp
 ms.author: mairaw
 ms.date: 08/23/2017
 ms.technology: dotnet-standard
-ms.openlocfilehash: f43cd61fbcb3c1c872961476449822c574f76cff
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: b55b2f9266477a0bb12c39840c9f2108a5c0f0c4
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71835285"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283922"
 ---
 # <a name="net-architectural-components"></a>Komponenty architektury .NET
 
@@ -88,7 +88,7 @@ Máte přístup k rozsáhlé sadě nástrojů a komponent infrastruktury, které
 
 Specifikace C# jazyka a Common Language Infrastructure (CLI) jsou standardizovány prostřednictvím [mezinárodní® ECMA](https://www.ecma-international.org/). První edice těchto standardů byly publikovány ECMA v prosinci 2001.
 
-Následné Revize standardů byly vyvinuty skupinami úloh TC49-TG2 (C#) a TC49-TG3 (CLI) v rámci technického výboru programovacích jazyků ([TC49](https://www.ecma-international.org/memento/tc49.htm)) a přijímají se do obecného sestavení ECMA a následně podle normy ISO/IEC JTC 1. prostřednictvím procesu rychlého sledování ISO.
+Další Revize standardů byly vyvinuty skupinami úloh TC49-TG2 (C#) a TC49-TG3 (CLI) v rámci technického výboru programovacích jazyků ([TC49](https://www.ecma-international.org/memento/tc49.htm)), které jsou přijaty obecným sestavením ECMA a následně podle normy ISO/IEC JTC 1 prostřednictvím procesu ISO Fast-Track.
 
 ### <a name="latest-standards"></a>Nejnovější standardy
 
@@ -110,6 +110,6 @@ Oficiální dokumenty ISO/IEC jsou k dispozici na stránce Standard ISO/IEC – 
 - [.NET Standard](net-standard.md)
 - [Průvodce platformou .NET Core](../core/index.md)
 - [Průvodce rozhraním .NET Framework](../framework/index.md)
-- [Průvodce jazykem C#](../csharp/index.md)
+- [Průvodce jazykem C#](../csharp/index.yml)
 - [Průvodce jazykem F#](../fsharp/index.md)
 - [Průvodce VB.NET](../visual-basic/index.md)

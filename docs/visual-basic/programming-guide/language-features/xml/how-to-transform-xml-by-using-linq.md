@@ -1,30 +1,30 @@
 ---
-title: 'Postupy: Transformace XML pomocí LINQ (Visual Basic)'
+title: 'Postupy: Transformace XML pomocí LINQ'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - XML [Visual Basic], transforming
 - LINQ to XML [Visual Basic], transforming XML
 ms.assetid: 815687f4-0bc2-4c0b-adc6-d78744aa356f
-ms.openlocfilehash: 347ca45c2417c1ffb9a86f3bcb51c75f3382bfad
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: a531b189074ac7bdd1c02935368c408ff506a6f1
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524816"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353649"
 ---
 # <a name="how-to-transform-xml-by-using-linq-visual-basic"></a>Postupy: Transformace XML pomocí LINQ (Visual Basic)
 
-[Literály XML](../../../../visual-basic/language-reference/xml-literals/index.md) usnadňují čtení XML z jednoho zdroje a jejich transformaci do nového formátu XML. Můžete využít výhod dotazů LINQ k načtení obsahu pro transformaci nebo změnu obsahu v existujícím dokumentu do nového formátu XML.
+[XML Literals](../../../../visual-basic/language-reference/xml-literals/index.md) make it easy to read XML from one source and transform it to a new XML format. You can take advantage of LINQ queries to retrieve the content to transform, or change content in an existing document to a new XML format.
 
-Příklad v tomto tématu transformuje obsah ze zdrojového dokumentu XML do HTML pro zobrazení v prohlížeči.
+The example in this topic transforms content from an XML source document to HTML to be viewed in a browser.
 
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]
 
-### <a name="to-transform-an-xml-document"></a>Transformace dokumentu XML
+### <a name="to-transform-an-xml-document"></a>To transform an XML document
 
-1. V aplikaci Visual Studio vytvořte nový projekt Visual Basic v šabloně projektu **Konzolová aplikace** .
+1. In Visual Studio, create a new Visual Basic project in the **Console Application** project template.
 
-2. Dvojím kliknutím na soubor Module1. vb, který jste vytvořili v projektu, upravte kód Visual Basic. Přidejte následující kód do `Sub Main` modulu `Module1`. Tento kód vytvoří zdrojový dokument XML jako objekt <xref:System.Xml.Linq.XDocument>.
+2. Double-click the Module1.vb file created in the project to modify the Visual Basic code. Add the following code to the `Sub Main` of the `Module1` module. This code creates the source XML document as an <xref:System.Xml.Linq.XDocument> object.
 
     ```vb
     Dim catalog =
@@ -58,11 +58,11 @@ Příklad v tomto tématu transformuje obsah ze zdrojového dokumentu XML do HTM
         </Catalog>
     ```
 
-     [Postupy: načtení XML ze souboru, řetězce nebo datového proudu](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md).
+     [How to: Load XML from a File, String, or Stream](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md).
 
-3. Po vytvoření zdrojového dokumentu XML přidejte následující kód, který načte všechny prvky \<Book > z objektu a převede je na dokument HTML. Seznam > prvků \<Book je vytvořen pomocí dotazu LINQ, který vrací kolekci objektů <xref:System.Xml.Linq.XElement>, které obsahují transformovaný kód HTML. Vložené výrazy můžete použít k umístění hodnot ze zdrojového dokumentu do nového formátu XML.
+3. After the code to create the source XML document, add the following code to retrieve all the \<Book> elements from the object and transform them into an HTML document. The list of \<Book> elements is created by using a LINQ query that returns a collection of <xref:System.Xml.Linq.XElement> objects that contain the transformed HTML. You can use embedded expressions to put the values from the source document in the new XML format.
 
-     Výsledný dokument HTML je zapsán do souboru pomocí metody <xref:System.Xml.Linq.XElement.Save%2A>.
+     The resulting HTML document is written to a file by using the <xref:System.Xml.Linq.XElement.Save%2A> method.
 
     ```vb
     Dim htmlOutput =
@@ -83,11 +83,11 @@ Příklad v tomto tématu transformuje obsah ze zdrojového dokumentu XML do HTM
     htmlOutput.Save("BookDescription.html")
     ```
 
-4. Po `Sub Main` `Module1` přidejte novou metodu (`Sub`) pro transformaci > uzlu \<Description do zadaného formátu HTML. Tato metoda je volána kódem v předchozím kroku a slouží k uchování formátu > prvků \<Description.
+4. After `Sub Main` of `Module1`, add a new method (`Sub`) to transform a \<Description> node into the specified HTML format. This method is called by the code in the previous step and is used to preserve the format of the \<Description> elements.
 
-     Tato metoda nahrazuje dílčí prvky \<Description > elementu pomocí HTML. Metoda `ReplaceWith` slouží k zachování umístění dílčích prvků. Transformovaný obsah prvku \<Description > je obsažen v elementu odstavce HTML (\<p >). Vlastnost <xref:System.Xml.Linq.XContainer.Nodes%2A> slouží k načtení transformovanýho obsahu prvku \<Description >. Tím se zajistí, že dílčí prvky budou zahrnuty v transformovaným obsahu.
+     This method replaces sub-elements of the \<Description> element with HTML. The `ReplaceWith` method is used to preserve the location of the sub-elements. The transformed content of the \<Description> element is included in an HTML paragraph (\<p>) element. The <xref:System.Xml.Linq.XContainer.Nodes%2A> property is used to retrieve the transformed content of the \<Description> element. This ensures that sub-elements are included in the transformed content.
 
-     Následující kód přidejte po `Sub Main` `Module1`.
+     Add the following code after `Sub Main` of `Module1`.
 
     ```vb
     Public Function TransformDescription(ByVal desc As XElement) As XElement
@@ -117,7 +117,7 @@ Příklad v tomto tématu transformuje obsah ze zdrojového dokumentu XML do HTM
 
 5. Uložte provedené změny.
 
-6. Stisknutím klávesy F5 spusťte kód. Výsledný uložený dokument bude vypadat přibližně takto:
+6. Press F5 to run the code. The resulting saved document will resemble the following:
 
     ```html
     <?xml version="1.0"?>
@@ -159,8 +159,8 @@ Příklad v tomto tématu transformuje obsah ze zdrojového dokumentu XML do HTM
 ## <a name="see-also"></a>Viz také:
 
 - [Literály XML](../../../../visual-basic/language-reference/xml-literals/index.md)
-- [Manipulace s XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)
+- [Manipulating XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)
 - [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)
 - [Postupy: Načtení XML ze souboru, řetězce nebo streamu](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md)
 - [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
-- [Úvod do jazyka LINQ v Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Introduction to LINQ in Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)

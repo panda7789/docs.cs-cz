@@ -1,5 +1,5 @@
 ---
-title: Logické a bitové operátory v jazyce Visual Basic
+title: Logické a bitové operátory
 ms.date: 07/20/2015
 helpviewer_keywords:
 - short-circuiting
@@ -21,41 +21,41 @@ helpviewer_keywords:
 - OrElse operator [Visual Basic]
 - logical operators [Visual Basic], unary
 ms.assetid: ca474e13-567d-4b1d-a18b-301433705e57
-ms.openlocfilehash: 40076b2ad6606b4c565bcd39dbeea9e55da47211
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 55a246c0d56501a409ebbc7d0d0aa39ae9fa1770
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963308"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74343597"
 ---
 # <a name="logical-and-bitwise-operators-in-visual-basic"></a>Logické a bitové operátory v jazyce Visual Basic
-Logické operátory porovnávají `Boolean` výrazy a `Boolean` vracejí výsledek. `And` `Not` Operátory, `Or`, `AndAlso`, ajsoubinární,protožepřebírajídvaoperandy,zatímcooperátorjeunární,protožepoužívájedenoperand.`OrElse` `Xor` Některé z těchto operátorů mohou také provádět bitové logické operace s celočíselnými hodnotami.  
+Logical operators compare `Boolean` expressions and return a `Boolean` result. The `And`, `Or`, `AndAlso`, `OrElse`, and `Xor` operators are *binary* because they take two operands, while the `Not` operator is *unary* because it takes a single operand. Some of these operators can also perform bitwise logical operations on integral values.  
   
-## <a name="unary-logical-operator"></a>Unární logický operátor  
- [Operátor NOT](../../../../visual-basic/language-reference/operators/not-operator.md) provádí logickou *negaci* `Boolean` výrazu. Vrací logický opak svého operandu. Pokud se výraz vyhodnotí `True`jako, `Not` pak `False`vrátí hodnotu; Pokud se výraz vyhodnotí `Not` `False`jako `True`, pak vrátí. Toto dokládá následující příklad.  
+## <a name="unary-logical-operator"></a>Unary Logical Operator  
+ The [Not Operator](../../../../visual-basic/language-reference/operators/not-operator.md) performs logical *negation* on a `Boolean` expression. It yields the logical opposite of its operand. If the expression evaluates to `True`, then `Not` returns `False`; if the expression evaluates to `False`, then `Not` returns `True`. Toto dokládá následující příklad.  
   
  [!code-vb[VbVbalrOperators#77](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#77)]  
   
-## <a name="binary-logical-operators"></a>Binární logické operátory  
- [Operátor and](../../../../visual-basic/language-reference/operators/and-operator.md) provádí logickou *kombinaci* dvou `Boolean` výrazů. Pokud se oba výrazy vyhodnotí `True`, `True`pak `And` vrátí. Pokud se alespoň jeden z výrazů vyhodnotí `False`jako, pak `And` vrátí. `False`  
+## <a name="binary-logical-operators"></a>Binary Logical Operators  
+ The [And Operator](../../../../visual-basic/language-reference/operators/and-operator.md) performs logical *conjunction* on two `Boolean` expressions. If both expressions evaluate to `True`, then `And` returns `True`. If at least one of the expressions evaluates to `False`, then `And` returns `False`.  
   
- [Operátor OR](../../../../visual-basic/language-reference/operators/or-operator.md) provádí logickou disjunkci nebo *zahrnutí* ve `Boolean` dvou výrazech. Pokud se jeden `True`výraz vyhodnotí jako, nebo vyhodnotí na `True` `True`, a pak `Or` vrátí. Pokud není žádný výraz vyhodnocen `True`jako `Or` , `False`vrátí.  
+ The [Or Operator](../../../../visual-basic/language-reference/operators/or-operator.md) performs logical *disjunction* or *inclusion* on two `Boolean` expressions. If either expression evaluates to `True`, or both evaluate to `True`, then `Or` returns `True`. If neither expression evaluates to `True`, `Or` returns `False`.  
   
- [Operátor XOR](../../../../visual-basic/language-reference/operators/xor-operator.md) provádí logické *vyloučení* dvou `Boolean` výrazů. Pokud se přesně jeden výraz vyhodnotí `True`jako, ale ne obojí, `Xor` vrátí `True`. Pokud `True` `False`jsou oba výrazy vyhodnoceny nebo vyhodnoceny `False`jako, `Xor` vrátí.  
+ The [Xor Operator](../../../../visual-basic/language-reference/operators/xor-operator.md) performs logical *exclusion* on two `Boolean` expressions. If exactly one expression evaluates to `True`, but not both, `Xor` returns `True`. If both expressions evaluate to `True` or both evaluate to `False`, `Xor` returns `False`.  
   
- Následující příklad ukazuje `And`operátory, `Or`a `Xor` .  
+ The following example illustrates the `And`, `Or`, and `Xor` operators.  
   
  [!code-vb[VbVbalrOperators#78](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#78)]  
   
-## <a name="short-circuiting-logical-operations"></a>Logické operace krátkodobého okruhu  
- [Operátor AndAlso –](../../../../visual-basic/language-reference/operators/andalso-operator.md) je velmi podobný `And` operátoru, v tom, že také provádí logické spojení dvou `Boolean` výrazů. Klíčový rozdíl mezi těmito dvěma prvky je, `AndAlso` který vykazuje chování při *krátkém okruhu* . Pokud se `AndAlso` první výraz ve výrazu vyhodnocuje `False`jako, pak druhý výraz není vyhodnocen, protože nemůže změnit konečný výsledek a `AndAlso` vrátí `False`.  
+## <a name="short-circuiting-logical-operations"></a>Short-Circuiting Logical Operations  
+ The [AndAlso Operator](../../../../visual-basic/language-reference/operators/andalso-operator.md) is very similar to the `And` operator, in that it also performs logical conjunction on two `Boolean` expressions. The key difference between the two is that `AndAlso` exhibits *short-circuiting* behavior. If the first expression in an `AndAlso` expression evaluates to `False`, then the second expression is not evaluated because it cannot alter the final result, and `AndAlso` returns `False`.  
   
- Podobně [operátor OrElse](../../../../visual-basic/language-reference/operators/orelse-operator.md) provádí zkrácenou logickou disjunkci dvou `Boolean` výrazů. Pokud se `OrElse` první výraz ve výrazu vyhodnocuje `True`jako, pak druhý výraz není vyhodnocen, protože nemůže změnit konečný výsledek a `OrElse` vrátí `True`.  
+ Similarly, the [OrElse Operator](../../../../visual-basic/language-reference/operators/orelse-operator.md) performs short-circuiting logical disjunction on two `Boolean` expressions. If the first expression in an `OrElse` expression evaluates to `True`, then the second expression is not evaluated because it cannot alter the final result, and `OrElse` returns `True`.  
   
-### <a name="short-circuiting-trade-offs"></a>Krátkodobé kompromisy  
- Krátkodobé okruhy mohou zvýšit výkon tím, že nevyhodnotí výraz, který nemůže změnit výsledek logické operace. Nicméně pokud tento výraz provede další akce, při krátkém okruhu se tyto akce přeskočí. Například pokud výraz obsahuje volání `Function` procedury, tato procedura není volána, pokud je výraz zkrácen a jakýkoliv další kód obsažený `Function` v nespustí. Proto může být funkce spuštěna pouze občas a nemusí být testována správně. Nebo je možné, že logika programu může záviset na `Function`kódu v.  
+### <a name="short-circuiting-trade-offs"></a>Short-Circuiting Trade-Offs  
+ Short-circuiting can improve performance by not evaluating an expression that cannot alter the result of the logical operation. However, if that expression performs additional actions, short-circuiting skips those actions. For example, if the expression includes a call to a `Function` procedure, that procedure is not called if the expression is short-circuited, and any additional code contained in the `Function` does not run. Therefore, the function might run only occasionally, and might not be tested correctly. Or the program logic might depend on the code in the `Function`.  
   
- Následující příklad znázorňuje rozdíl mezi `And`, `Or`a jejich protějšky na jejich krátkodobé okruhy.  
+ The following example illustrates the difference between `And`, `Or`, and their short-circuiting counterparts.  
   
  [!code-vb[VbVbalrOperators#81](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#81)]  
   
@@ -63,43 +63,43 @@ Logické operátory porovnávají `Boolean` výrazy a `Boolean` vracejí výsled
   
  [!code-vb[VbVbalrOperators#79](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#79)]  
   
- V předchozím příkladu si všimněte, že některé důležité kódy uvnitř `checkIfValid()` nejsou spouštěny, když je volání zkráceno. `If` První příkaz volá `checkIfValid()` i když `12 > 45` vrátí `False`, protože`And` není krátký okruh. Druhý `If` příkaz nevolá `checkIfValid()`, protože když `12 > 45` vrátí `False`, `AndAlso` je pro něj druhý výraz. `If` Třetí příkaz volá `checkIfValid()` i když `12 < 45` vrátí `True`, protože`Or` není krátký okruh. Čtvrtý `If` příkaz nevolá `checkIfValid()`, protože když `12 < 45` vrátí `True`, `OrElse` je pro něj druhý výraz.  
+ In the preceding example, note that some important code inside `checkIfValid()` does not run when the call is short-circuited. The first `If` statement calls `checkIfValid()` even though `12 > 45` returns `False`, because `And` does not short-circuit. The second `If` statement does not call `checkIfValid()`, because when `12 > 45` returns `False`, `AndAlso` short-circuits the second expression. The third `If` statement calls `checkIfValid()` even though `12 < 45` returns `True`, because `Or` does not short-circuit. The fourth `If` statement does not call `checkIfValid()`, because when `12 < 45` returns `True`, `OrElse` short-circuits the second expression.  
   
-## <a name="bitwise-operations"></a>Bitové operace  
- Bitové operace vyhodnocují dvě integrální hodnoty v binárním formátu (2. základ). Porovná bity s odpovídajícími pozicemi a pak přiřadí hodnoty na základě porovnání. Následující příklad znázorňuje `And` operátor.  
+## <a name="bitwise-operations"></a>Bitwise Operations  
+ Bitwise operations evaluate two integral values in binary (base 2) form. They compare the bits at corresponding positions and then assign values based on the comparison. The following example illustrates the `And` operator.  
   
  [!code-vb[VbVbalrConcepts#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrConcepts/VB/Class1.vb#2)]  
   
- Předchozí příklad nastaví hodnotu `x` na 1. K tomu dochází z následujících důvodů:  
+ The preceding example sets the value of `x` to 1. This happens for the following reasons:  
   
-- Hodnoty se považují za binární:  
+- The values are treated as binary:  
   
-     3 v binárním tvaru = 011  
+     3 in binary form = 011  
   
-     5 v binárním tvaru = 101  
+     5 in binary form = 101  
   
-- `And` Operátor porovnává binární reprezentace, jednu binární pozici (bitovou) v jednom okamžiku. Pokud jsou obě bity na dané pozici 1, pak je ve výsledku umístěna jedna pozice. Pokud má bit hodnotu 0, pak je na této pozici ve výsledku umístěný 0. V předchozím příkladu to funguje takto:  
+- The `And` operator compares the binary representations, one binary position (bit) at a time. If both bits at a given position are 1, then a 1 is placed in that position in the result. If either bit is 0, then a 0 is placed in that position in the result. In the preceding example this works out as follows:  
   
-     011 (3 v binárním formátu)  
+     011 (3 in binary form)  
   
-     101 (5 v binárním formátu)  
+     101 (5 in binary form)  
   
-     001 (výsledek, v binárním formátu)  
+     001 (The result, in binary form)  
   
-- Výsledek je považován za desetinný. Hodnota 001 je binární reprezentace 1, takže `x` = 1.  
+- The result is treated as decimal. The value 001 is the binary representation of 1, so `x` = 1.  
   
- Bitová `Or` operace je podobná, s tím rozdílem, že k výslednému bitu je přiřazena 1, pokud je jedna nebo obě z porovnávaných bitů 1. `Xor`přiřadí ke výslednému bitu 1, pokud je přesně jedna z porovnávaných bitů (ne obojí) 1. `Not`provede jeden operand a Invertuje všechny bity, včetně znaku znaménka, a přiřadí tuto hodnotu k výsledku. To znamená, že u podepsaných kladných čísel `Not` vždycky vrátí zápornou hodnotu a pro záporná `Not` čísla vždycky Vrátí kladnou nebo nulovou hodnotu.  
+ The bitwise `Or` operation is similar, except that a 1 is assigned to the result bit if either or both of the compared bits is 1. `Xor` assigns a 1 to the result bit if exactly one of the compared bits (not both) is 1. `Not` takes a single operand and inverts all the bits, including the sign bit, and assigns that value to the result. This means that for signed positive numbers, `Not` always returns a negative value, and for negative numbers, `Not` always returns a positive or zero value.  
   
- Operátory `AndAlso` a`OrElse` nepodporují bitové operace.  
+ The `AndAlso` and `OrElse` operators do not support bitwise operations.  
   
 > [!NOTE]
-> Bitové operace lze provádět pouze na integrálních typech. Hodnoty s plovoucí desetinnou čárkou musí být převedeny na integrální typy předtím, než může pokračovat bitová operace.  
+> Bitwise operations can be performed on integral types only. Floating-point values must be converted to integral types before bitwise operation can proceed.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Logické/bitové operátory (Visual Basic)](../../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)
+- [Logical/Bitwise Operators (Visual Basic)](../../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)
 - [Logické výrazy](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/boolean-expressions.md)
-- [Aritmetické operátory v Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
-- [Operátory porovnávání v Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
-- [Operátory zřetězení v Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md)
+- [Arithmetic Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
+- [Comparison Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
+- [Concatenation Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md)
 - [Účinná kombinace operátorů](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/efficient-combination-of-operators.md)

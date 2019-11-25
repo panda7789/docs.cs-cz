@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Načtení hodnoty z klíče registru v jazyce Visual Basic'
+title: 'Postupy: Načtení hodnoty z klíče registru'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - registry keys [Visual Basic], determining if a value exists in
@@ -8,49 +8,52 @@ helpviewer_keywords:
 - registry keys [Visual Basic], reading from
 - registry [Visual Basic], reading
 ms.assetid: 775d0a57-68c9-464e-8949-9a39bd29cc64
-ms.openlocfilehash: 36183290a1ffdf4216eb845625aa38d63739eff6
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 73c32aefe06a68bb42fcb5f4615da0927e57e892
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662757"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345605"
 ---
-# <a name="how-to-read-a-value-from-a-registry-key-in-visual-basic"></a>Postupy: Načtení hodnoty z klíče registru v jazyce Visual Basic
-`GetValue` Metodu `My.Computer.Registry` objekt lze použít ke čtení hodnoty registru Windows.  
+# <a name="how-to-read-a-value-from-a-registry-key-in-visual-basic"></a>Postupy: Načtení hodnoty z klíče registru v jazyce Visual Basic
+
+The `GetValue` method of the `My.Computer.Registry` object can be used to read values in the Windows registry.  
   
- Pokud není k dispozici klíč "Software\MyApp" v následujícím příkladu, je vyvolána výjimka. Pokud `ValueName`, "Název" v následujícím příkladu, neexistuje, `Nothing` je vrácena.  
+ If the key, "Software\MyApp" in the following example, does not exist, an exception is thrown. If the `ValueName`,  "Name" in the following example, does not exist, `Nothing` is returned.  
   
- `GetValue` Metoda slouží také k určení, zda daná hodnota existuje v klíči registru.  
+ The `GetValue` method can also be used to determine whether a given value exists in a specific registry key.  
   
- Když kód čte registru z webové aplikace, je aktuální uživatel je vzhledem k ověřování a zosobnění, která je implementována ve webové aplikaci.  
+ When code reads the registry from a Web application, the current user is determined by the authentication and impersonation that is implemented in the Web application.  
   
-### <a name="to-read-a-value-from-a-registry-key"></a>K načtení hodnoty z klíče registru  
+### <a name="to-read-a-value-from-a-registry-key"></a>To read a value from a registry key  
   
-- Použít `GetValue` metoda zadáním cesty a názvu) k načtení hodnoty z klíče registru. Následující příklad přečte hodnotu `Name` z `HKEY_CURRENT_USER\Software\MyApp` a zobrazí jej v okně se zprávou.  
+- Use the `GetValue` method, specifying the path and name) to read a value from registry key. The following example reads the value `Name` from `HKEY_CURRENT_USER\Software\MyApp` and displays it in a message box.  
   
      [!code-vb[VbResourceTasks#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#4)]  
   
- Tento příklad kódu je také dostupný jako fragment kódu technologie IntelliSense. V dialogu pro výběr fragmentu kódu je umístěn v **operačního systému Windows > registru**. Další informace najdete v tématu [fragmenty kódu](/visualstudio/ide/code-snippets).  
+ This code example is also available as an IntelliSense code snippet. In the code snippet picker, it is located in **Windows Operating System > Registry**. For more information, see [Code Snippets](/visualstudio/ide/code-snippets).  
   
-### <a name="to-determine-whether-a-value-exists-in-a-registry-key"></a>Chcete-li zjistit, zda je hodnota v klíči registru existuje  
+### <a name="to-determine-whether-a-value-exists-in-a-registry-key"></a>To determine whether a value exists in a registry key  
   
-- Použití `GetValue` metody k načtení hodnoty. Následující kód ověří, zda hodnota existuje a vrátí zprávu, pokud tomu tak není.  
+- Use the `GetValue` method to retrieve the value. The following code checks whether the value exists and returns a message if it does not.  
   
      [!code-vb[VbResourceTasks#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#12)]  
   
 ## <a name="robust-programming"></a>Robustní programování  
- Registr obsahuje nejvyšší úrovně a kořenové klíče, které se používají k ukládání dat. Například HKEY_LOCAL_MACHINE kořenový klíč se používá pro ukládání nastavení na úrovni počítače používané všichni uživatelé, i když HKEY_CURRENT_USER slouží k ukládání dat specifických pro jednotlivé uživatele.  
+
+ The registry holds top-level, or root, keys that are used to store data. For instance, the HKEY_LOCAL_MACHINE root key is used for storing machine-level settings used by all users, while HKEY_CURRENT_USER is used for storing data specific to an individual user.  
   
  Následující podmínky mohou způsobit výjimku:  
   
-- Název klíče je `Nothing` (<xref:System.ArgumentNullException>).  
+- The name of the key is `Nothing` (<xref:System.ArgumentNullException>).  
   
-- Uživatel nemá oprávnění ke čtení z klíče registru (<xref:System.Security.SecurityException>).  
+- The user does not have permissions to read from registry keys (<xref:System.Security.SecurityException>).  
   
-- Název klíče překračuje limit 255 znaků (<xref:System.ArgumentException>).  
+- The key name exceeds the 255-character limit (<xref:System.ArgumentException>).  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- Pokud chcete spustit tento proces, vaše sestavení vyžaduje úroveň oprávnění udělenou <xref:System.Security.Permissions.RegistryPermission> třídy. Pokud používáte v kontextu částečným vztahem důvěryhodnosti, proces může vyvolat výjimku, protože nedostatečná oprávnění. Podobně uživatel musí mít správné seznamy ACL pro vytvoření nebo zápis do nastavení. Místní aplikace, který má oprávnění zabezpečení přístupu kódu například nemusí mít oprávnění operačního systému. Další informace najdete v tématu [Základy zabezpečení přístupu kódu](../../../../framework/misc/code-access-security-basics.md).  
+
+ To run this process, your assembly requires a privilege level granted by the <xref:System.Security.Permissions.RegistryPermission> class. If you are running in a partial-trust context, the process might throw an exception due to insufficient privileges. Similarly, the user must have the correct ACLs for creating or writing to settings. For example, a local application that has the code access security permission might not have operating system permission. For more information, see [Code Access Security Basics](../../../../framework/misc/code-access-security-basics.md).  
   
 ## <a name="see-also"></a>Viz také:
 

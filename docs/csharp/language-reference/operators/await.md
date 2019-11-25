@@ -1,19 +1,19 @@
 ---
 title: await – operátor C# – referenční informace
 ms.custom: seodec18
-ms.date: 08/30/2019
+ms.date: 11/08/2019
 f1_keywords:
 - await_CSharpKeyword
 helpviewer_keywords:
 - await keyword [C#]
 - await [C#]
 ms.assetid: 50725c24-ac76-4ca7-bca1-dd57642ffedb
-ms.openlocfilehash: 5ed9d467bcbfa37a9809a530d11b3692fd2b984e
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 36cb4a5def6b75281edbe878d89af0c18ab226ec
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73036335"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74140654"
 ---
 # <a name="await-operator-c-reference"></a>await – operátorC# (Referenční dokumentace)
 
@@ -32,13 +32,15 @@ Operátor `await` lze použít pouze v metodě, [lambda výrazu](../../programmi
 
 Operand operátoru `await` je obvykle jeden z následujících typů .NET: <xref:System.Threading.Tasks.Task>, <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.ValueTask>nebo <xref:System.Threading.Tasks.ValueTask%601>. Nicméně libovolný výraz, který lze očekávat, může být operandem operátoru `await`. Další informace naleznete v oddílu [await Expressions](~/_csharplang/spec/expressions.md#awaitable-expressions) [ C# specifikace jazyka](~/_csharplang/spec/introduction.md).
 
+Počínaje C# 8,0 můžete použít příkaz `await foreach` pro využívání asynchronního datového proudu dat. Další informace najdete v části věnované [asynchronním proudům](../../whats-new/csharp-8.md#asynchronous-streams) [v článku Co je nového C# v 8,0](../../whats-new/csharp-8.md) .
+
 Typ výrazu `await t` je `TResult`, pokud je typ `t` výrazu <xref:System.Threading.Tasks.Task%601> nebo <xref:System.Threading.Tasks.ValueTask%601>. Pokud je typ `t` <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.ValueTask>, typ `await t` je `void`. V obou případech, pokud `t` vyvolá výjimku, `await t` znovu vyvolá výjimku. Další informace o zpracování výjimek naleznete v části [výjimky v asynchronních metodách v](../keywords/try-catch.md#exceptions-in-async-methods) článku [příkazu try-catch](../keywords/try-catch.md) .
 
 Klíčová slova `async` a `await` jsou k C# dispozici v 5 a novějších verzích.
 
 ## <a name="await-operator-in-the-main-method"></a>await – operátor v metodě Main
 
-Počínaje C# 7,1 [`Main` metoda](../../programming-guide/main-and-command-args/index.md), která je vstupním bodem aplikace, může vracet`Task`nebo`Task<int>`, což umožňuje, aby byla asynchronní, takže můžete použít operátor`await`ve svém těle. V dřívějších C# verzích, abyste zajistili, že`Main`metoda čeká na dokončení asynchronní operace, můžete načíst hodnotu vlastnosti<xref:System.Threading.Tasks.Task%601.Result?displayProperty=nameWithType>instance<xref:System.Threading.Tasks.Task%601>, která je vrácena odpovídající asynchronní metodou. Pro asynchronní operace, které neposkytují hodnotu, můžete zavolat metodu <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType>. Informace o tom, jak vybrat jazykovou verzi, najdete v tématu [ C# jazyková verze](../configure-language-version.md).
+Počínaje C# 7,1 [`Main` metoda](../../programming-guide/main-and-command-args/index.md), která je vstupním bodem aplikace, může vracet`Task`nebo`Task<int>`, což umožňuje, aby byla asynchronní, takže můžete použít operátor`await`ve svém těle. V dřívějších C# verzích, abyste zajistili, že `Main` metoda čeká na dokončení asynchronní operace, můžete načíst hodnotu vlastnosti <xref:System.Threading.Tasks.Task%601.Result?displayProperty=nameWithType> instance <xref:System.Threading.Tasks.Task%601>, která je vrácena odpovídající asynchronní metodou. Pro asynchronní operace, které neposkytují hodnotu, můžete zavolat metodu <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType>. Informace o tom, jak vybrat jazykovou verzi, najdete v tématu [ C# jazyková verze](../configure-language-version.md).
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
@@ -53,3 +55,4 @@ Další informace naleznete v oddílu [await Expressions](~/_csharplang/spec/exp
 - [Asynchronní programování](../../async.md)
 - [Asynchronní v hloubkě](../../../standard/async-in-depth.md)
 - [Návod: přístup k webu pomocí modifikátoru Async a operátoru await](../../programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
+- [Kurz: generování a využívání asynchronních datových C# proudů pomocí 8,0 a .net Core 3,0](../../tutorials/generate-consume-asynchronous-stream.md)

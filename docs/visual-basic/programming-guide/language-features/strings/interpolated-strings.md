@@ -1,30 +1,30 @@
 ---
-title: Interpolované řetězce (Visual Basic)
+title: Interpolované řetězce
 ms.date: 10/31/2017
-ms.openlocfilehash: b9dd055154c86da370a984a465ed412f1fd9908c
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: d1220f3804d571f6da229dc5dfa099a22ab1478d
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666941"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344326"
 ---
-# <a name="interpolated-strings-visual-basic-reference"></a>Interpolované řetězce (Visual Basic Reference)
+# <a name="interpolated-strings-visual-basic-reference"></a>Interpolated Strings (Visual Basic Reference)
 
-Slouží k vytváření řetězců.  Interpolovaná řetězcová událost vypadá jako řetězec šablony, který obsahuje *interpolované výrazy*.  Interpolovaná řetězcová funkce vrátí řetězec, který nahradí interpolované výrazy, které obsahuje, spolu s jejich řetězcovými reprezentacemi. Tato funkce je k dispozici v Visual Basic 14 a novějších verzích.
+Used to construct strings.  An interpolated string looks like a template string that contains *interpolated expressions*.  An interpolated string returns a string that replaces the interpolated expressions that it contains with their string representations. This feature is available in Visual Basic 14 and later versions.
 
-Argumenty interpolované řetězcové řetězce jsou snazší pochopit než [složený formátovací řetězec](../../../../standard/base-types/composite-formatting.md#composite-format-string).  Například interpolovaná řetězcová
+The arguments of an interpolated string are easier to understand than a [composite format string](../../../../standard/base-types/composite-formatting.md#composite-format-string).  For example, the interpolated string
 
 ```vb
 Console.WriteLine($"Name = {name}, hours = {hours:hh}")
 ```
 
-obsahuje dva interpolované výrazy {Name} a {hours: hh}. Ekvivalentní řetězec složeného formátu je:
+contains two interpolated expressions, '{name}' and '{hours:hh}'. The equivalent composite format string is:
 
 ```vb
-Console.WriteLine("Name = {0}, hours = {1:hh}", name, hours);
+Console.WriteLine("Name = {0}, hours = {1:hh}", name, hours)
 ```
 
-Struktura interpolované řetězcové řetězce je:
+The structure of an interpolated string is:
 
 ```vb
 $"<text> {<interpolated-expression> [,<field-width>] [:<format-string>] } <text> ..."
@@ -32,48 +32,48 @@ $"<text> {<interpolated-expression> [,<field-width>] [:<format-string>] } <text>
 
 kde:
 
-- *Šířka pole* je celé číslo se znaménkem, které označuje počet znaků v poli. Pokud je kladné, pole je zarovnáno vpravo; If negativně zarovnaný doleva.
+- *field-width* is a signed integer that indicates the number of characters in the field. If it is positive, the field is right-aligned; if negative, left-aligned.
 
-- *řetězec formátu* je řetězec formátu vhodný pro typ objektu, který se má formátovat. Například pro <xref:System.DateTime> hodnotu může být [standardní formátovací řetězec data a času](../../../../standard/base-types/standard-date-and-time-format-strings.md) , například "d" nebo "d".
+- *format-string* is a format string appropriate for the type of object being formatted. For example, for a <xref:System.DateTime> value, it could be a [standard date and time format string](../../../../standard/base-types/standard-date-and-time-format-strings.md) such as "D" or "d".
 
 > [!IMPORTANT]
-> Mezi `$` znakem `"` a, který začíná řetězcem, nemůže být mezera. V důsledku toho dojde k chybě kompilátoru.
+> You cannot have any white space between the `$` and the `"` that starts the string. Doing so causes a compiler error.
 
-Můžete použít interpolované řetězce kdekoli, kde můžete použít řetězcový literál.  Interpolovaná řetězcová doba je vyhodnocena pokaždé, když se spustí kód s interpolovaná řetězcovou dobou. To umožňuje oddělit definici a vyhodnocení interpolované řetězcové lhůty.
+You can use an interpolated string anywhere you can use a string literal.  The interpolated string is evaluated each time the code with the interpolated string executes. This allows you to separate the definition and evaluation of an interpolated string.
 
-Chcete-li zahrnout složenou závorku ("{" nebo "}") do interpolované řetězcové řetězce, použijte dvě složené závorky, "{{" nebo "}}".  Další podrobnosti najdete v části implicitní převody.
+To include a curly brace ("{" or "}") in an interpolated string, use two curly braces, "{{" or "}}".  See the Implicit Conversions section for more details.
 
-Pokud interpolovaná řetězec obsahuje jiné znaky se zvláštními významy v interpolované řetězci, například uvozovky ("), dvojtečka (:) nebo čárka (,), měla by být uvozena řídicím znakem, pokud k nim dojde v textovém literálu, nebo by měly být zahrnuty ve výrazu odděleném závorky, pokud jsou prvky jazyka zahrnuté do interpolované výrazu. Následující příklad označuje uvozovky, které mají být zahrnuty ve výsledném řetězci, a používá závorky k vymezení výrazu `(age == 1 ? "" : "s")` tak, aby dvojtečka nebyla interpretována jako začátek řetězce formátu.
+If the interpolated string contains other characters with special meaning in an interpolated string, such as the quotation mark ("), colon (:), or comma (,), they should be escaped if they occur in literal text, or they should be included in an expression delimited by parentheses if they are language elements included in an interpolated expression. The following example escapes quotation marks to include them in the result string, and it uses parentheses to delimit the expression `(age == 1 ? "" : "s")` so that the colon is not interpreted as beginning a format string.
 
 [!code-vb[interpolated-strings](../../../../../samples/snippets/visualbasic/programming-guide/language-features/strings/interpolated-strings4.vb)]
 
-## <a name="implicit-conversions"></a>Implicitní převody
+## <a name="implicit-conversions"></a>Implicit Conversions
 
-Existují tři implicitní převody typu z interpolované řetězce:
+There are three implicit type conversions from an interpolated string:
 
-1. Konverze interpolované řetězcové na <xref:System.String>. Následující příklad vrátí řetězec, jehož interpolované řetězcové výrazy byly nahrazeny svými reprezentacemi řetězců. Příklad:
+1. Conversion of an interpolated string to a <xref:System.String>. The following example returns a string whose interpolated string expressions have been replaced with their string representations. Příklad:
 
    [!code-vb[interpolated-strings1](../../../../../samples/snippets/visualbasic/programming-guide/language-features/strings/interpolated-strings1.vb)]
 
-   Toto je konečný výsledek interpretace řetězce. Všechny výskyty dvojitých složených závorek ("{{" a "}}") jsou převedeny na jednu složenou závorku.
+   This is the final result of a string interpretation. All occurrences of double curly braces ("{{" and "}}") are converted to a single curly brace.
 
-2. Převod interpolované řetězce na <xref:System.IFormattable> proměnnou, která umožňuje vytvořit více výsledných řetězců s obsahem specifickým pro jazykovou verzi z jedné <xref:System.IFormattable> instance. To je užitečné pro zahrnutí takových věcí jako správných formátů číselného a data pro jednotlivé kultury.  Všechny výskyty dvojitých složených závorek ("{{" a "}}") zůstávají jako dvojité složené závorky, dokud řetězec neformátujete explicitně nebo implicitně voláním <xref:System.Object.ToString> metody.  Všechny obsažené výrazy interpolace jsou převedeny na {0}, {1}a tak dále.
+2. Conversion of an interpolated string to an <xref:System.IFormattable> variable that allows you create multiple result strings with culture-specific content from a single <xref:System.IFormattable> instance. This is useful for including such things as the correct numeric and date formats for individual cultures.  All occurrences of double curly braces ("{{" and "}}") remain as double curly braces until you format the string by explicitly or implicitly calling the <xref:System.Object.ToString> method.  All contained interpolation expressions are converted to {0}, {1}, and so on.
 
-   Následující příklad používá reflexi k zobrazení členů a hodnot pole a vlastností <xref:System.IFormattable> proměnné, která je vytvořena z interpolované řetězcové hodnoty. Také předá <xref:System.IFormattable> proměnnou <xref:System.Console.WriteLine(System.String)?displayProperty=nameWithType> metodě.
+   The following example uses reflection to display the members as well as the field and property values of an <xref:System.IFormattable> variable that is created from an interpolated string. It also passes the <xref:System.IFormattable> variable to the <xref:System.Console.WriteLine(System.String)?displayProperty=nameWithType> method.
 
    [!code-vb[interpolated-strings2](../../../../../samples/snippets/visualbasic/programming-guide/language-features/strings/interpolated-strings2.vb)]
 
-   Všimněte si, že interpolovaná řetězcová operace může být zkontrolována pouze pomocí reflexe. Pokud je předána metodě formátování řetězce, například <xref:System.Console.WriteLine(System.String)>, jsou vyřešeny jeho položky formátu a výsledný řetězec je vrácen.
+   Note that the interpolated string can be inspected only by using reflection. If it is passed to a string formatting method, such as <xref:System.Console.WriteLine(System.String)>, its format items are resolved and the result string returned.
 
-3. Konverze interpolované řetězce na <xref:System.FormattableString> proměnnou, která představuje řetězec složeného formátu. Kontrola složeného formátovacího řetězce a jeho vykreslení jako výsledný řetězec může například přispět k ochraně proti útoku prostřednictvím injektáže, pokud jste sestavování dotazu. Zahrnuje <xref:System.FormattableString> také:
+3. Conversion of an interpolated string to a <xref:System.FormattableString> variable that represents a composite format string. Inspecting the composite format string and how it renders as a result string might, for example, help you protect against an injection attack if you were building a query. A <xref:System.FormattableString> also includes:
 
-      - Přetížení, které vytváří výsledný řetězec <xref:System.Globalization.CultureInfo.CurrentCulture>pro. <xref:System.FormattableString.ToString>
+      - A <xref:System.FormattableString.ToString> overload that produces a result string for the <xref:System.Globalization.CultureInfo.CurrentCulture>.
 
-      - Metoda, která vytváří řetězec <xref:System.Globalization.CultureInfo.InvariantCulture>pro. <xref:System.FormattableString.Invariant%2A>
+      - A <xref:System.FormattableString.Invariant%2A> method that produces a string for the <xref:System.Globalization.CultureInfo.InvariantCulture>.
 
-      - <xref:System.FormattableString.ToString(System.IFormatProvider)> Metoda, která vytváří výsledný řetězec pro zadanou jazykovou verzi.
+      - A <xref:System.FormattableString.ToString(System.IFormatProvider)> method that produces a result string for a specified culture.
 
-    Všechny výskyty dvojitých složených závorek ("{{" a "}}") zůstávají jako dvojité složené závorky, dokud je neformátujete.  Všechny obsažené výrazy interpolace jsou převedeny na {0}, {1}a tak dále.
+    All occurrences of double curly braces ("{{" and "}}") remain as double curly braces until you format.  All contained interpolation expressions are converted to {0}, {1}, and so on.
 
    [!code-vb[interpolated-strings3](../../../../../samples/snippets/visualbasic/programming-guide/language-features/strings/interpolated-strings3.vb)]
 

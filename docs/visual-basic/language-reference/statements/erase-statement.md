@@ -1,5 +1,5 @@
 ---
-title: Erase – příkaz (Visual Basic)
+title: Erase – příkaz
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Erase
@@ -7,15 +7,15 @@ helpviewer_keywords:
 - Erase keyword [Visual Basic]
 - Erase statement [Visual Basic]
 ms.assetid: 7a8133d7-b750-4d74-8b66-ba1dd9778d4b
-ms.openlocfilehash: 7dec2a859f664ee8dcbb305082ec33aeacbaccb4
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 6d2052ceccbecd772c4e4bb18052aed74223a36e
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72583391"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74343704"
 ---
 # <a name="erase-statement-visual-basic"></a>Erase – příkaz (Visual Basic)
-Slouží k uvolnění proměnných pole a navrácení paměti používané pro jejich elementy.  
+Used to release array variables and deallocate the memory used for their elements.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -25,15 +25,15 @@ Erase arraylist
   
 ## <a name="parts"></a>Součásti  
  `arraylist`  
- Požadováno. Seznam proměnných pole, které mají být smazány. Více proměnných je odděleno čárkami.  
+ Požadováno. List of array variables to be erased. Multiple variables are separated by commas.  
   
 ## <a name="remarks"></a>Poznámky  
- Příkaz `Erase` se může vyskytovat pouze na úrovni procedury. To znamená, že můžete uvolnit pole v proceduře, ale ne na úrovni třídy nebo modulu.  
+ The `Erase` statement can appear only at procedure level. This means you can release arrays inside a procedure but not at class or module level.  
   
- Příkaz `Erase` je ekvivalentní k přiřazování `Nothing` na každou proměnnou pole.  
+ The `Erase` statement is equivalent to assigning `Nothing` to each array variable.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu je použit příkaz `Erase` pro vymazání dvou polí a uvolnění paměti (v uvedeném pořadí) paměti (1000 a 100 prvků úložiště). Příkaz `ReDim` potom přiřadí novou instanci pole k trojrozměrnému poli.  
+ The following example uses the `Erase` statement to clear two arrays and free their memory (1000 and 100 storage elements, respectively). The `ReDim` statement then assigns a new array instance to the three-dimensional array.  
   
  [!code-vb[VbVbalrStatements#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#19)]  
   

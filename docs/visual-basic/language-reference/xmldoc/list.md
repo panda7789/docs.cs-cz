@@ -1,5 +1,5 @@
 ---
-title: <list> (Visual Basic)
+title: <list>
 ms.date: 07/20/2015
 helpviewer_keywords:
 - listheader XML tag
@@ -13,15 +13,15 @@ helpviewer_keywords:
 - item XML tag
 - <term> XML tag
 ms.assetid: ec35fced-d58e-4520-a764-0691256e014b
-ms.openlocfilehash: 5d4295d485611e75e8b6c8d8f95e079654f0cfa3
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: db5c571d2f2c59419c886f6596f4e4dbd30d7baf
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524748"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74352323"
 ---
-# <a name="list-visual-basic"></a>\<list > (Visual Basic)
-Definuje seznam nebo tabulku.  
+# <a name="list-visual-basic"></a>\<list> (Visual Basic)
+Defines a list or table.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,25 +40,25 @@ Definuje seznam nebo tabulku.
   
 ## <a name="parameters"></a>Parametry  
  `type`  
- Typ seznamu U seznamu s odrážkami, "Number" pro číslovaný seznam nebo "Tabulka" pro tabulku se dvěma sloupci musí být "Bullet".  
+ The type of the list. Must be a "bullet" for a bulleted list, "number" for a numbered list, or "table" for a two-column table.  
   
  `term`  
- Používá se pouze v případě, `type` je "Table". Termín, který má definovat, který je definován ve značce Description.  
+ Only used when `type` is "table." A term to define, which is defined in the description tag.  
   
  `description`  
- Pokud je `type` "Bullet" nebo "Number", "`description` je položka v seznamu, pokud `type` je" Table ", `description` je definice `term`.  
+ When `type` is "bullet" or "number," `description` is an item in the list When `type` is "table," `description` is the definition of `term`.  
   
 ## <a name="remarks"></a>Poznámky  
- Blok `<listheader>` definuje nadpis tabulky nebo seznamu definic. Při definování tabulky stačí zadat položku pro `term` v záhlaví.  
+ The `<listheader>` block defines the heading of either a table or definition list. When defining a table, you only have to supply an entry for `term` in the heading.  
   
- Každá položka v seznamu je určena pomocí `<item>` bloku. Při vytváření seznamu definic je nutné zadat jak `term`, tak `description`. U tabulky, seznamu s odrážkami nebo číslovaného seznamu ale stačí zadat položku pro `description`.  
+ Each item in the list is specified with an `<item>` block. When creating a definition list, you must specify both `term` and `description`. However, for a table, bulleted list, or numbered list, you only have to supply an entry for `description`.  
   
- Seznam nebo tabulka může mít podle potřeby tolik `<item>` bloků.  
+ A list or table can have as many `<item>` blocks as needed.  
   
- Zkompilujte s [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
+ Compile with [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) to process documentation comments to a file.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá značku `<list>` k definování seznamu s odrážkami v oddílu poznámky.  
+ This example uses the `<list>` tag to define a bulleted list in the remarks section.  
   
  [!code-vb[VbVbcnXmlDocComments#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#5)]  
   

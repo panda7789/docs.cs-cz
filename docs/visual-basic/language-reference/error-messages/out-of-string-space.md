@@ -1,24 +1,24 @@
 ---
-title: Nedostatek místa pro řetězce (Visual Basic)
+title: Nedostatek místa pro řetězec
 ms.date: 07/20/2015
 f1_keywords:
 - vbrID14
 ms.assetid: 16681c75-a400-422d-9351-c691d3c7614e
-ms.openlocfilehash: 119d17e1aea974a0c40451260e671994653cee46
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d5e44b44c63ed23697ffc639cc4f42c6424409b1
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61946559"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74349177"
 ---
 # <a name="out-of-string-space-visual-basic"></a>Nedostatek místa pro řetězce (Visual Basic)
-Pomocí jazyka Visual Basic můžete použít velmi dlouhých řetězců. Požadavky na ostatní programy a způsob práce s řetězci však může způsobit stále k této chybě.  
+With Visual Basic, you can use very large strings. However, the requirements of other programs and the way you work with your strings can still cause this error.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Ujistěte se, že vyžadování vytváření dočasných řetězců při vyhodnocování výrazu není příčinou chyby.  
+1. Make sure that an expression requiring temporary string creation during evaluation is not causing the error.  
   
-2. Odeberte všechny nepotřebné aplikace z paměti k vytvoření více místa.  
+2. Remove any unnecessary applications from memory to create more space.  
   
 ## <a name="see-also"></a>Viz také:
 
