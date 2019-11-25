@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Otestujte, zda jsou oba objekty stejné (Visual Basic)'
+title: 'Postupy: Test, zda jsou dva objekty stejné.'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - variables [Visual Basic], reference
@@ -9,26 +9,26 @@ helpviewer_keywords:
 - objects [Visual Basic], variables referring to same
 - Visual Basic code, operators
 ms.assetid: f760e828-8704-4256-bc2d-c22a4c93b524
-ms.openlocfilehash: 6301228d786fe55e8851b6207dd84819671656f4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 22e8e1e688d9e3bc3804899103ee78814aac235b
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64649684"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74343621"
 ---
-# <a name="how-to-test-whether-two-objects-are-the-same-visual-basic"></a><span data-ttu-id="6fd73-102">Postupy: Otestujte, zda jsou oba objekty stejné (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="6fd73-102">How to: Test Whether Two Objects Are the Same (Visual Basic)</span></span>
-<span data-ttu-id="6fd73-103">Pokud budete mít dvě proměnné, které odkazují na objekty, můžete použít buď `Is` nebo `IsNot` operátor nebo obojí, chcete-li zjistit, jestli se odkazují na stejnou instanci.</span><span class="sxs-lookup"><span data-stu-id="6fd73-103">If you have two variables that refer to objects, you can use either the `Is` or `IsNot` operator, or both, to determine whether they refer to the same instance.</span></span>  
+# <a name="how-to-test-whether-two-objects-are-the-same-visual-basic"></a><span data-ttu-id="c0433-102">Postupy: Test, zda jsou dva objekty stejné (Visual Basic).</span><span class="sxs-lookup"><span data-stu-id="c0433-102">How to: Test Whether Two Objects Are the Same (Visual Basic)</span></span>
+<span data-ttu-id="c0433-103">If you have two variables that refer to objects, you can use either the `Is` or `IsNot` operator, or both, to determine whether they refer to the same instance.</span><span class="sxs-lookup"><span data-stu-id="c0433-103">If you have two variables that refer to objects, you can use either the `Is` or `IsNot` operator, or both, to determine whether they refer to the same instance.</span></span>  
   
-### <a name="to-test-whether-two-objects-are-the-same"></a><span data-ttu-id="6fd73-104">K ověření, zda jsou dva objekty stejné</span><span class="sxs-lookup"><span data-stu-id="6fd73-104">To test whether two objects are the same</span></span>  
+### <a name="to-test-whether-two-objects-are-the-same"></a><span data-ttu-id="c0433-104">To test whether two objects are the same</span><span class="sxs-lookup"><span data-stu-id="c0433-104">To test whether two objects are the same</span></span>  
   
-- <span data-ttu-id="6fd73-105">Použití [je operátor](../../../../visual-basic/language-reference/operators/is-operator.md) nebo [IsNot operátor](../../../../visual-basic/language-reference/operators/isnot-operator.md) se dvěma proměnnými jako operandy.</span><span class="sxs-lookup"><span data-stu-id="6fd73-105">Use the [Is Operator](../../../../visual-basic/language-reference/operators/is-operator.md) or the [IsNot Operator](../../../../visual-basic/language-reference/operators/isnot-operator.md) with the two variables as operands.</span></span>  
+- <span data-ttu-id="c0433-105">Use the [Is Operator](../../../../visual-basic/language-reference/operators/is-operator.md) or the [IsNot Operator](../../../../visual-basic/language-reference/operators/isnot-operator.md) with the two variables as operands.</span><span class="sxs-lookup"><span data-stu-id="c0433-105">Use the [Is Operator](../../../../visual-basic/language-reference/operators/is-operator.md) or the [IsNot Operator](../../../../visual-basic/language-reference/operators/isnot-operator.md) with the two variables as operands.</span></span>  
   
      [!code-vb[VbVbalrOperators#69](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#69)]  
   
- <span data-ttu-id="6fd73-106">Můžete chtít provést určité akce v závislosti na tom, zda dva objekty odkazují na stejnou instanci.</span><span class="sxs-lookup"><span data-stu-id="6fd73-106">You might want to take a certain action depending on whether two objects refer to the same instance.</span></span> <span data-ttu-id="6fd73-107">Předchozí příklad porovnává `c` proti aktivním ovládacím prvkem na formuláři `f`.</span><span class="sxs-lookup"><span data-stu-id="6fd73-107">The preceding example compares control `c` against the active control on form `f`.</span></span> <span data-ttu-id="6fd73-108">Pokud neexistuje žádná aktivní ovládací prvek, nebo pokud není ten ale není stejnou instanci ovládacího prvku jako `c`, pak bude `If` příkaz selže a postup vrátí bez dalšího zpracování.</span><span class="sxs-lookup"><span data-stu-id="6fd73-108">If there is no active control, or if there is one but it is not the same control instance as `c`, then the `If` statement fails and the procedure returns without further processing.</span></span>  
+ <span data-ttu-id="c0433-106">You might want to take a certain action depending on whether two objects refer to the same instance.</span><span class="sxs-lookup"><span data-stu-id="c0433-106">You might want to take a certain action depending on whether two objects refer to the same instance.</span></span> <span data-ttu-id="c0433-107">The preceding example compares control `c` against the active control on form `f`.</span><span class="sxs-lookup"><span data-stu-id="c0433-107">The preceding example compares control `c` against the active control on form `f`.</span></span> <span data-ttu-id="c0433-108">If there is no active control, or if there is one but it is not the same control instance as `c`, then the `If` statement fails and the procedure returns without further processing.</span><span class="sxs-lookup"><span data-stu-id="c0433-108">If there is no active control, or if there is one but it is not the same control instance as `c`, then the `If` statement fails and the procedure returns without further processing.</span></span>  
   
- <span data-ttu-id="6fd73-109">Ať už používáte `Is` nebo `IsNot` je otázkou osobní usnadnění práce vás.</span><span class="sxs-lookup"><span data-stu-id="6fd73-109">Whether you use `Is` or `IsNot` is a matter of personal convenience to you.</span></span> <span data-ttu-id="6fd73-110">Jedna může být snadněji čtou než ten druhý v daném výrazu.</span><span class="sxs-lookup"><span data-stu-id="6fd73-110">One might be easier to read than the other in a given expression.</span></span>  
+ <span data-ttu-id="c0433-109">Whether you use `Is` or `IsNot` is a matter of personal convenience to you.</span><span class="sxs-lookup"><span data-stu-id="c0433-109">Whether you use `Is` or `IsNot` is a matter of personal convenience to you.</span></span> <span data-ttu-id="c0433-110">One might be easier to read than the other in a given expression.</span><span class="sxs-lookup"><span data-stu-id="c0433-110">One might be easier to read than the other in a given expression.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="6fd73-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6fd73-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c0433-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c0433-111">See also</span></span>
 
-- [<span data-ttu-id="6fd73-112">Operátory porovnání v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="6fd73-112">Comparison Operators in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
+- [<span data-ttu-id="c0433-112">Comparison Operators in Visual Basic</span><span class="sxs-lookup"><span data-stu-id="c0433-112">Comparison Operators in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)

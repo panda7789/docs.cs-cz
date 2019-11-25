@@ -1,5 +1,5 @@
 ---
-title: -unlogo (Visual Basic)
+title: -nologo
 ms.date: 03/13/2018
 helpviewer_keywords:
 - -nologo compiler option [Visual Basic]
@@ -7,36 +7,36 @@ helpviewer_keywords:
 - nologo compiler option [Visual Basic]
 - /nologo compiler option [Visual Basic]
 ms.assetid: 25ef54b6-d676-4639-a2d2-a747a158bc07
-ms.openlocfilehash: bb64a468f67745b80b47b42c4fac18852279035d
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 03dc98c45a894304a67765c3e49cd19bbb089c8c
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005423"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74335438"
 ---
-# <a name="-nologo-visual-basic"></a><span data-ttu-id="7c776-102">-unlogo (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7c776-102">-nologo (Visual Basic)</span></span>
-<span data-ttu-id="7c776-103">Potlačí zobrazení nápisu copyrightu a informativní zprávy během kompilace.</span><span class="sxs-lookup"><span data-stu-id="7c776-103">Suppresses display of the copyright banner and informational messages during compilation.</span></span>  
+# <a name="-nologo-visual-basic"></a><span data-ttu-id="de138-102">-nologo (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="de138-102">-nologo (Visual Basic)</span></span>
+<span data-ttu-id="de138-103">Suppresses display of the copyright banner and informational messages during compilation.</span><span class="sxs-lookup"><span data-stu-id="de138-103">Suppresses display of the copyright banner and informational messages during compilation.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="7c776-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7c776-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="de138-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="de138-104">Syntax</span></span>  
   
 ```console  
 -nologo  
 ```  
   
-## <a name="remarks"></a><span data-ttu-id="7c776-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="7c776-105">Remarks</span></span>  
- <span data-ttu-id="7c776-106">Pokud zadáte `-nologo`, kompilátor nezobrazí banner s copyrightem.</span><span class="sxs-lookup"><span data-stu-id="7c776-106">If you specify `-nologo`, the compiler does not display a copyright banner.</span></span> <span data-ttu-id="7c776-107">Ve výchozím nastavení není `-nologo` v platnosti.</span><span class="sxs-lookup"><span data-stu-id="7c776-107">By default, `-nologo` is not in effect.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="de138-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="de138-105">Remarks</span></span>  
+ <span data-ttu-id="de138-106">If you specify `-nologo`, the compiler does not display a copyright banner.</span><span class="sxs-lookup"><span data-stu-id="de138-106">If you specify `-nologo`, the compiler does not display a copyright banner.</span></span> <span data-ttu-id="de138-107">By default, `-nologo` is not in effect.</span><span class="sxs-lookup"><span data-stu-id="de138-107">By default, `-nologo` is not in effect.</span></span>  
   
 > [!NOTE]
-> <span data-ttu-id="7c776-108">Možnost `-nologo` není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="7c776-108">The `-nologo` option is not available from within the Visual Studio development environment; it is available only when compiling from the command line.</span></span>  
+> <span data-ttu-id="de138-108">The `-nologo` option is not available from within the Visual Studio development environment; it is available only when compiling from the command line.</span><span class="sxs-lookup"><span data-stu-id="de138-108">The `-nologo` option is not available from within the Visual Studio development environment; it is available only when compiling from the command line.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="7c776-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="7c776-109">Example</span></span>  
- <span data-ttu-id="7c776-110">Následující kód zkompiluje `T2.vb` a nezobrazuje banner s copyrightem.</span><span class="sxs-lookup"><span data-stu-id="7c776-110">The following code compiles `T2.vb` and does not display a copyright banner.</span></span>  
+## <a name="example"></a><span data-ttu-id="de138-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="de138-109">Example</span></span>  
+ <span data-ttu-id="de138-110">The following code compiles `T2.vb` and does not display a copyright banner.</span><span class="sxs-lookup"><span data-stu-id="de138-110">The following code compiles `T2.vb` and does not display a copyright banner.</span></span>  
   
 ```console
 vbc -nologo t2.vb  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="7c776-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7c776-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="de138-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="de138-111">See also</span></span>
 
-- [<span data-ttu-id="7c776-112">Visual Basic Kompilátor příkazového řádku</span><span class="sxs-lookup"><span data-stu-id="7c776-112">Visual Basic Command-Line Compiler</span></span>](../../../visual-basic/reference/command-line-compiler/index.md)
-- [<span data-ttu-id="7c776-113">Příkazové řádky ukázkové kompilace</span><span class="sxs-lookup"><span data-stu-id="7c776-113">Sample Compilation Command Lines</span></span>](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [<span data-ttu-id="de138-112">Visual Basic Command-Line Compiler</span><span class="sxs-lookup"><span data-stu-id="de138-112">Visual Basic Command-Line Compiler</span></span>](../../../visual-basic/reference/command-line-compiler/index.md)
+- [<span data-ttu-id="de138-113">Příkazové řádky ukázkové kompilace</span><span class="sxs-lookup"><span data-stu-id="de138-113">Sample Compilation Command Lines</span></span>](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

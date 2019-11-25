@@ -1,23 +1,23 @@
 ---
-title: 'Postupy: Změna pořadí polí souboru s oddělovači (LINQ) (Visual Basic)'
+title: 'Postupy: Změna pořadí polí v souboru s oddělovači (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: c451c7db-663b-4daf-b8ba-a2093095d672
-ms.openlocfilehash: 21c887dbcf008cbdd9a8a4197f4739f9271ba95f
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 736f0218f14f0077683456599d3d7ef3ecec7517
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582802"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347606"
 ---
-# <a name="how-to-reorder-the-fields-of-a-delimited-file-linq-visual-basic"></a><span data-ttu-id="eaa86-102">Postupy: Změna pořadí polí souboru s oddělovači (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="eaa86-102">How to: Reorder the Fields of a Delimited File (LINQ) (Visual Basic)</span></span>
+# <a name="how-to-reorder-the-fields-of-a-delimited-file-linq-visual-basic"></a><span data-ttu-id="d617e-102">How to: Reorder the Fields of a Delimited File (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d617e-102">How to: Reorder the Fields of a Delimited File (LINQ) (Visual Basic)</span></span>
 
-<span data-ttu-id="eaa86-103">Textový soubor s oddělovači (CSV) je textový soubor, který se často používá k ukládání dat tabulky nebo jiných tabulkových dat, která jsou reprezentovaná řádky a sloupci.</span><span class="sxs-lookup"><span data-stu-id="eaa86-103">A comma-separated value (CSV) file is a text file that is often used to store spreadsheet data or other tabular data that is represented by rows and columns.</span></span> <span data-ttu-id="eaa86-104">Pomocí metody <xref:System.String.Split%2A> k oddělení polí je velmi snadné dotazování a manipulace se soubory CSV pomocí LINQ.</span><span class="sxs-lookup"><span data-stu-id="eaa86-104">By using the <xref:System.String.Split%2A> method to separate the fields, it is very easy to query and manipulate CSV files by using LINQ.</span></span> <span data-ttu-id="eaa86-105">Ve skutečnosti lze stejnou techniku použít k přeřazení částí libovolného strukturovaného řádku textu; Nejedná se pouze o soubory CSV.</span><span class="sxs-lookup"><span data-stu-id="eaa86-105">In fact, the same technique can be used to reorder the parts of any structured line of text; it is not limited to CSV files.</span></span>
+<span data-ttu-id="d617e-103">A comma-separated value (CSV) file is a text file that is often used to store spreadsheet data or other tabular data that is represented by rows and columns.</span><span class="sxs-lookup"><span data-stu-id="d617e-103">A comma-separated value (CSV) file is a text file that is often used to store spreadsheet data or other tabular data that is represented by rows and columns.</span></span> <span data-ttu-id="d617e-104">By using the <xref:System.String.Split%2A> method to separate the fields, it is very easy to query and manipulate CSV files by using LINQ.</span><span class="sxs-lookup"><span data-stu-id="d617e-104">By using the <xref:System.String.Split%2A> method to separate the fields, it is very easy to query and manipulate CSV files by using LINQ.</span></span> <span data-ttu-id="d617e-105">In fact, the same technique can be used to reorder the parts of any structured line of text; it is not limited to CSV files.</span><span class="sxs-lookup"><span data-stu-id="d617e-105">In fact, the same technique can be used to reorder the parts of any structured line of text; it is not limited to CSV files.</span></span>
 
-<span data-ttu-id="eaa86-106">V následujícím příkladu Předpokládejme, že tři sloupce zastupují studenty "" příjmení "," křestní jméno "a" ID ".</span><span class="sxs-lookup"><span data-stu-id="eaa86-106">In the following example, assume that the three columns represent students' "last name," "first name", and "ID."</span></span> <span data-ttu-id="eaa86-107">Pole jsou v abecedním pořadí podle příjmení studentů.</span><span class="sxs-lookup"><span data-stu-id="eaa86-107">The fields are in alphabetical order based on the students' last names.</span></span> <span data-ttu-id="eaa86-108">Dotaz vytvoří nové pořadí, ve kterém se nejprve zobrazí sloupec ID následovaný druhým sloupcem, který kombinuje křestní jméno a příjmení studenta.</span><span class="sxs-lookup"><span data-stu-id="eaa86-108">The query produces a new sequence in which the ID column appears first, followed by a second column that combines the student's first name and last name.</span></span> <span data-ttu-id="eaa86-109">Řádky se přesměrují podle pole ID.</span><span class="sxs-lookup"><span data-stu-id="eaa86-109">The lines are reordered according to the ID field.</span></span> <span data-ttu-id="eaa86-110">Výsledky se uloží do nového souboru a původní data se nezmění.</span><span class="sxs-lookup"><span data-stu-id="eaa86-110">The results are saved into a new file and the original data is not modified.</span></span>
+<span data-ttu-id="d617e-106">In the following example, assume that the three columns represent students' "last name," "first name", and "ID."</span><span class="sxs-lookup"><span data-stu-id="d617e-106">In the following example, assume that the three columns represent students' "last name," "first name", and "ID."</span></span> <span data-ttu-id="d617e-107">The fields are in alphabetical order based on the students' last names.</span><span class="sxs-lookup"><span data-stu-id="d617e-107">The fields are in alphabetical order based on the students' last names.</span></span> <span data-ttu-id="d617e-108">The query produces a new sequence in which the ID column appears first, followed by a second column that combines the student's first name and last name.</span><span class="sxs-lookup"><span data-stu-id="d617e-108">The query produces a new sequence in which the ID column appears first, followed by a second column that combines the student's first name and last name.</span></span> <span data-ttu-id="d617e-109">The lines are reordered according to the ID field.</span><span class="sxs-lookup"><span data-stu-id="d617e-109">The lines are reordered according to the ID field.</span></span> <span data-ttu-id="d617e-110">The results are saved into a new file and the original data is not modified.</span><span class="sxs-lookup"><span data-stu-id="d617e-110">The results are saved into a new file and the original data is not modified.</span></span>
 
-### <a name="to-create-the-data-file"></a><span data-ttu-id="eaa86-111">Vytvoření datového souboru</span><span class="sxs-lookup"><span data-stu-id="eaa86-111">To create the data file</span></span>
+### <a name="to-create-the-data-file"></a><span data-ttu-id="d617e-111">To create the data file</span><span class="sxs-lookup"><span data-stu-id="d617e-111">To create the data file</span></span>
 
-1. <span data-ttu-id="eaa86-112">Zkopírujte následující řádky do souboru prostého textu s názvem Spreadsheet1. csv.</span><span class="sxs-lookup"><span data-stu-id="eaa86-112">Copy the following lines into a plain text file that is named spreadsheet1.csv.</span></span> <span data-ttu-id="eaa86-113">Uložte soubor do složky projektu.</span><span class="sxs-lookup"><span data-stu-id="eaa86-113">Save the file in your project folder.</span></span>
+1. <span data-ttu-id="d617e-112">Copy the following lines into a plain text file that is named spreadsheet1.csv.</span><span class="sxs-lookup"><span data-stu-id="d617e-112">Copy the following lines into a plain text file that is named spreadsheet1.csv.</span></span> <span data-ttu-id="d617e-113">Save the file in your project folder.</span><span class="sxs-lookup"><span data-stu-id="d617e-113">Save the file in your project folder.</span></span>
 
     ```csv
     Adams,Terry,120
@@ -34,7 +34,7 @@ ms.locfileid: "72582802"
     Zabokritski,Eugene,121
     ```
 
-## <a name="example"></a><span data-ttu-id="eaa86-114">Příklad</span><span class="sxs-lookup"><span data-stu-id="eaa86-114">Example</span></span>
+## <a name="example"></a><span data-ttu-id="d617e-114">Příklad</span><span class="sxs-lookup"><span data-stu-id="d617e-114">Example</span></span>
 
 ```vb
 Class CSVFiles
@@ -75,8 +75,8 @@ End Class
 ' 122, Michael Tucker
 ```
 
-## <a name="see-also"></a><span data-ttu-id="eaa86-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="eaa86-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d617e-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d617e-115">See also</span></span>
 
-- [<span data-ttu-id="eaa86-116">LINQ a řetězce (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="eaa86-116">LINQ and Strings (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
-- [<span data-ttu-id="eaa86-117">LINQ a souborové adresáře (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="eaa86-117">LINQ and File Directories (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
-- [<span data-ttu-id="eaa86-118">Postupy: Generování XML ze souborů CSV</span><span class="sxs-lookup"><span data-stu-id="eaa86-118">How to: Generate XML from CSV Files</span></span>](../../../../visual-basic/programming-guide/concepts/linq/how-to-generate-xml-from-csv-files.md)
+- [<span data-ttu-id="d617e-116">LINQ and Strings (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d617e-116">LINQ and Strings (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [<span data-ttu-id="d617e-117">LINQ and File Directories (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d617e-117">LINQ and File Directories (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [<span data-ttu-id="d617e-118">Postupy: Generování XML ze souborů CSV</span><span class="sxs-lookup"><span data-stu-id="d617e-118">How to: Generate XML from CSV Files</span></span>](../../../../visual-basic/programming-guide/concepts/linq/how-to-generate-xml-from-csv-files.md)
