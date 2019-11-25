@@ -1,20 +1,20 @@
 ---
-title: 'Postupy: Vytvoření služby WCF, která komunikuje přes WebSockets'
+title: 'Postupy: vytvoření služby WCF, která komunikuje přes objekty WebSockets'
 ms.date: 03/30/2017
 ms.assetid: bafbbd89-eab8-4e9a-b4c3-b7b0178e12d8
-ms.openlocfilehash: 706c2886bda9497835d98eeeb594e68c2191d8d8
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 8f8cf715269fd0ed67e2265eee4139a509f70cd1
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70969994"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977129"
 ---
-# <a name="how-to-create-a-wcf-service-that-communicates-over-websockets"></a><span data-ttu-id="bd57f-102">Postupy: Vytvoření služby WCF, která komunikuje přes WebSockets</span><span class="sxs-lookup"><span data-stu-id="bd57f-102">How to: Create a WCF Service that Communicates over WebSockets</span></span>
-<span data-ttu-id="bd57f-103">Služby a Klienti WCF mohou pomocí <xref:System.ServiceModel.NetHttpBinding> vazby komunikovat přes objekty WebSockets.</span><span class="sxs-lookup"><span data-stu-id="bd57f-103">WCF services and clients can use the <xref:System.ServiceModel.NetHttpBinding> binding to communicate over WebSockets.</span></span>  <span data-ttu-id="bd57f-104">WebSockets se použijí, když <xref:System.ServiceModel.NetHttpBinding> určí kontrakt služby, který definuje kontrakt zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="bd57f-104">WebSockets will be used when the <xref:System.ServiceModel.NetHttpBinding> determines the service contract defines a callback contract.</span></span> <span data-ttu-id="bd57f-105">Toto téma popisuje, jak implementovat službu WCF a klienta, který používá <xref:System.ServiceModel.NetHttpBinding> ke komunikaci přes objekty WebSockets.</span><span class="sxs-lookup"><span data-stu-id="bd57f-105">This topic describes how to implement a WCF service and client that uses the <xref:System.ServiceModel.NetHttpBinding> to communicate over WebSockets.</span></span>  
+# <a name="how-to-create-a-wcf-service-that-communicates-over-websockets"></a><span data-ttu-id="0a690-102">Postupy: vytvoření služby WCF, která komunikuje přes objekty WebSockets</span><span class="sxs-lookup"><span data-stu-id="0a690-102">How to: Create a WCF Service that Communicates over WebSockets</span></span>
+<span data-ttu-id="0a690-103">Služby a Klienti WCF mohou pomocí vazby <xref:System.ServiceModel.NetHttpBinding> komunikovat přes objekty WebSockets.</span><span class="sxs-lookup"><span data-stu-id="0a690-103">WCF services and clients can use the <xref:System.ServiceModel.NetHttpBinding> binding to communicate over WebSockets.</span></span>  <span data-ttu-id="0a690-104">WebSockets se použijí, když <xref:System.ServiceModel.NetHttpBinding> určí kontrakt služby, který definuje kontrakt zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="0a690-104">WebSockets will be used when the <xref:System.ServiceModel.NetHttpBinding> determines the service contract defines a callback contract.</span></span> <span data-ttu-id="0a690-105">Toto téma popisuje, jak implementovat službu WCF a klienta, který používá <xref:System.ServiceModel.NetHttpBinding> ke komunikaci přes objekty WebSockets.</span><span class="sxs-lookup"><span data-stu-id="0a690-105">This topic describes how to implement a WCF service and client that uses the <xref:System.ServiceModel.NetHttpBinding> to communicate over WebSockets.</span></span>  
   
-### <a name="define-the-service"></a><span data-ttu-id="bd57f-106">Definování služby</span><span class="sxs-lookup"><span data-stu-id="bd57f-106">Define the Service</span></span>  
+### <a name="define-the-service"></a><span data-ttu-id="0a690-106">Definování služby</span><span class="sxs-lookup"><span data-stu-id="0a690-106">Define the Service</span></span>  
   
-1. <span data-ttu-id="bd57f-107">Definování kontraktu zpětného volání</span><span class="sxs-lookup"><span data-stu-id="bd57f-107">Define a callback contract</span></span>  
+1. <span data-ttu-id="0a690-107">Definování kontraktu zpětného volání</span><span class="sxs-lookup"><span data-stu-id="0a690-107">Define a callback contract</span></span>  
   
     ```csharp  
     [ServiceContract]  
@@ -25,9 +25,9 @@ ms.locfileid: "70969994"
         }  
     ```  
   
-     <span data-ttu-id="bd57f-108">Tato smlouva bude implementována klientskou aplikací, aby mohla služba odesílat zprávy zpět klientovi.</span><span class="sxs-lookup"><span data-stu-id="bd57f-108">This contract will be implemented by the client application to allow the service to send messages back to the client.</span></span>  
+     <span data-ttu-id="0a690-108">Tato smlouva bude implementována klientskou aplikací, aby mohla služba odesílat zprávy zpět klientovi.</span><span class="sxs-lookup"><span data-stu-id="0a690-108">This contract will be implemented by the client application to allow the service to send messages back to the client.</span></span>  
   
-2. <span data-ttu-id="bd57f-109">Definujte kontrakt služby a určete `IStockQuoteCallback` rozhraní jako kontrakt zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="bd57f-109">Define the service contract and specify the `IStockQuoteCallback` interface as the callback contract.</span></span>  
+2. <span data-ttu-id="0a690-109">Definujte kontrakt služby a zadejte `IStockQuoteCallback` rozhraní jako kontrakt zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="0a690-109">Define the service contract and specify the `IStockQuoteCallback` interface as the callback contract.</span></span>  
   
     ```csharp  
     [ServiceContract(CallbackContract = typeof(IStockQuoteCallback))]  
@@ -38,30 +38,30 @@ ms.locfileid: "70969994"
         }  
     ```  
   
-3. <span data-ttu-id="bd57f-110">Implementujte kontrakt služby.</span><span class="sxs-lookup"><span data-stu-id="bd57f-110">Implement the service contract.</span></span>  
+3. <span data-ttu-id="0a690-110">Implementujte kontrakt služby.</span><span class="sxs-lookup"><span data-stu-id="0a690-110">Implement the service contract.</span></span>  
   
     ```csharp
     public class StockQuoteService : IStockQuoteService  
+    {  
+        public async Task StartSendingQuotes()  
         {  
-            public async Task StartSendingQuotes()  
+            var callback = OperationContext.Current.GetCallbackChannel<IStockQuoteCallback>();  
+            var random = new Random();  
+            double price = 29.00;  
+
+            while (((IChannel)callback).State == CommunicationState.Opened)  
             {  
-                var callback = OperationContext.Current.GetCallbackChannel<IStockQuoteCallback>();  
-                var random = new Random();  
-                double price = 29.00;  
-  
-                while (((IChannel)callback).State == CommunicationState.Opened)  
-                {  
-                    await callback.SendQuote("MSFT", price);  
-                    price += random.NextDouble();  
-                    await Task.Delay(1000);  
-                }  
+                await callback.SendQuote("MSFT", price);  
+                price += random.NextDouble();  
+                await Task.Delay(1000);  
             }  
         }  
+    }  
     ```  
   
-     <span data-ttu-id="bd57f-111">Operace `StartSendingQuotes` služby je implementována jako asynchronní volání.</span><span class="sxs-lookup"><span data-stu-id="bd57f-111">The service operation `StartSendingQuotes` is implemented as an asynchronous call.</span></span> <span data-ttu-id="bd57f-112">Kanál zpětného volání načteme pomocí `OperationContext` operátoru a, pokud je kanál otevřený, provádíme asynchronní volání na kanálu zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="bd57f-112">We retrieve the callback channel using the `OperationContext` and if the channel is open, we make an async call on the callback channel.</span></span>  
+     <span data-ttu-id="0a690-111">Operace služby `StartSendingQuotes` je implementována jako asynchronní volání.</span><span class="sxs-lookup"><span data-stu-id="0a690-111">The service operation `StartSendingQuotes` is implemented as an asynchronous call.</span></span> <span data-ttu-id="0a690-112">Kanál zpětného volání načteme pomocí `OperationContext` a pokud je kanál otevřený, vytvoříme na kanálu zpětného volání asynchronní volání.</span><span class="sxs-lookup"><span data-stu-id="0a690-112">We retrieve the callback channel using the `OperationContext` and if the channel is open, we make an async call on the callback channel.</span></span>  
   
-4. <span data-ttu-id="bd57f-113">Konfigurace služby</span><span class="sxs-lookup"><span data-stu-id="bd57f-113">Configure the service</span></span>  
+4. <span data-ttu-id="0a690-113">Konfigurace služby</span><span class="sxs-lookup"><span data-stu-id="0a690-113">Configure the service</span></span>  
   
     ```xml  
     <configuration>  
@@ -90,11 +90,11 @@ ms.locfileid: "70969994"
     </configuration>  
     ```  
   
-     <span data-ttu-id="bd57f-114">Konfigurační soubor služby spoléhá na výchozí koncové body WCF.</span><span class="sxs-lookup"><span data-stu-id="bd57f-114">The service’s configuration file relies on WCF’s default endpoints.</span></span> <span data-ttu-id="bd57f-115">Oddíl slouží k určení `NetHttpBinding` , zda má být použit pro výchozí koncové body. `<protocolMapping>`</span><span class="sxs-lookup"><span data-stu-id="bd57f-115">The `<protocolMapping>` section is used to specify that the `NetHttpBinding` should be used for the default endpoints created.</span></span>  
+     <span data-ttu-id="0a690-114">Konfigurační soubor služby spoléhá na výchozí koncové body WCF.</span><span class="sxs-lookup"><span data-stu-id="0a690-114">The service’s configuration file relies on WCF’s default endpoints.</span></span> <span data-ttu-id="0a690-115">Oddíl `<protocolMapping>` slouží k určení, že `NetHttpBinding` má být použit pro výchozí koncové body.</span><span class="sxs-lookup"><span data-stu-id="0a690-115">The `<protocolMapping>` section is used to specify that the `NetHttpBinding` should be used for the default endpoints created.</span></span>  
   
-### <a name="define-the-client"></a><span data-ttu-id="bd57f-116">Definování klienta</span><span class="sxs-lookup"><span data-stu-id="bd57f-116">Define the Client</span></span>  
+### <a name="define-the-client"></a><span data-ttu-id="0a690-116">Definování klienta</span><span class="sxs-lookup"><span data-stu-id="0a690-116">Define the Client</span></span>  
   
-1. <span data-ttu-id="bd57f-117">Implementujte kontrakt zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="bd57f-117">Implement the callback contract.</span></span>  
+1. <span data-ttu-id="0a690-117">Implementujte kontrakt zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="0a690-117">Implement the callback contract.</span></span>  
   
     ```csharp  
     private class CallbackHandler : StockQuoteServiceReference.IStockQuoteServiceCallback  
@@ -106,9 +106,9 @@ ms.locfileid: "70969994"
             }  
     ```  
   
-     <span data-ttu-id="bd57f-118">Operace kontraktu zpětného volání je implementována jako asynchronní metoda.</span><span class="sxs-lookup"><span data-stu-id="bd57f-118">The callback contract operation is implemented as an asynchronous method.</span></span>  
+     <span data-ttu-id="0a690-118">Operace kontraktu zpětného volání je implementována jako asynchronní metoda.</span><span class="sxs-lookup"><span data-stu-id="0a690-118">The callback contract operation is implemented as an asynchronous method.</span></span>  
   
-    1. <span data-ttu-id="bd57f-119">Implementujte kód klienta.</span><span class="sxs-lookup"><span data-stu-id="bd57f-119">Implement the client code.</span></span>  
+    1. <span data-ttu-id="0a690-119">Implementujte kód klienta.</span><span class="sxs-lookup"><span data-stu-id="0a690-119">Implement the client code.</span></span>  
   
         ```csharp  
         class Program  
@@ -131,9 +131,9 @@ ms.locfileid: "70969994"
         }  
         ```  
   
-         <span data-ttu-id="bd57f-120">Hodnota CallbackHandler se tady opakuje pro přehlednost.</span><span class="sxs-lookup"><span data-stu-id="bd57f-120">The CallbackHandler is repeated here for clarity.</span></span> <span data-ttu-id="bd57f-121">Klientská aplikace vytvoří novou funkci InstanceContext a určí implementaci rozhraní zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="bd57f-121">The client application creates a new InstanceContext and specifies the implementation of the callback interface.</span></span> <span data-ttu-id="bd57f-122">V dalším kroku se vytvoří instance třídy proxy, která posílá odkaz na nově vytvořenou třídu InstanceContext.</span><span class="sxs-lookup"><span data-stu-id="bd57f-122">Next it creates an instance of the proxy class sending a reference to the newly created InstanceContext.</span></span> <span data-ttu-id="bd57f-123">Když klient zavolá službu, služba zavolá klienta pomocí zadaného kontraktu zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="bd57f-123">When the client calls the service, the service will call the client using the callback contract specified.</span></span>  
+         <span data-ttu-id="0a690-120">Hodnota CallbackHandler se tady opakuje pro přehlednost.</span><span class="sxs-lookup"><span data-stu-id="0a690-120">The CallbackHandler is repeated here for clarity.</span></span> <span data-ttu-id="0a690-121">Klientská aplikace vytvoří novou funkci InstanceContext a určí implementaci rozhraní zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="0a690-121">The client application creates a new InstanceContext and specifies the implementation of the callback interface.</span></span> <span data-ttu-id="0a690-122">V dalším kroku se vytvoří instance třídy proxy, která posílá odkaz na nově vytvořenou třídu InstanceContext.</span><span class="sxs-lookup"><span data-stu-id="0a690-122">Next it creates an instance of the proxy class sending a reference to the newly created InstanceContext.</span></span> <span data-ttu-id="0a690-123">Když klient zavolá službu, služba zavolá klienta pomocí zadaného kontraktu zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="0a690-123">When the client calls the service, the service will call the client using the callback contract specified.</span></span>  
   
-    2. <span data-ttu-id="bd57f-124">Konfigurace klienta</span><span class="sxs-lookup"><span data-stu-id="bd57f-124">Configure the client</span></span>  
+    2. <span data-ttu-id="0a690-124">Konfigurace klienta</span><span class="sxs-lookup"><span data-stu-id="0a690-124">Configure the client</span></span>  
   
         ```xml  
         <?xml version="1.0" encoding="utf-8" ?>  
@@ -158,10 +158,10 @@ ms.locfileid: "70969994"
         </configuration>  
         ```  
   
-         <span data-ttu-id="bd57f-125">V konfiguraci klienta nemusíte nic dělat, stačí zadat koncový bod na straně klienta pomocí `NetHttpBinding`.</span><span class="sxs-lookup"><span data-stu-id="bd57f-125">There is nothing special you need to do in the client configuration, just specify the client side endpoint using the `NetHttpBinding`.</span></span>  
+         <span data-ttu-id="0a690-125">V konfiguraci klienta nemusíte nic dělat, stačí zadat koncový bod na straně klienta pomocí `NetHttpBinding`.</span><span class="sxs-lookup"><span data-stu-id="0a690-125">There is nothing special you need to do in the client configuration, just specify the client side endpoint using the `NetHttpBinding`.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="bd57f-126">Příklad</span><span class="sxs-lookup"><span data-stu-id="bd57f-126">Example</span></span>  
- <span data-ttu-id="bd57f-127">Následuje kompletní kód, který se používá v tomto tématu.</span><span class="sxs-lookup"><span data-stu-id="bd57f-127">The following is the complete code used in this topic.</span></span>  
+## <a name="example"></a><span data-ttu-id="0a690-126">Příklad</span><span class="sxs-lookup"><span data-stu-id="0a690-126">Example</span></span>  
+ <span data-ttu-id="0a690-127">Následuje kompletní kód, který se používá v tomto tématu.</span><span class="sxs-lookup"><span data-stu-id="0a690-127">The following is the complete code used in this topic.</span></span>  
   
 ```csharp  
 // IStockQuoteService.cs  
@@ -318,7 +318,7 @@ namespace Client
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="bd57f-128">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bd57f-128">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0a690-128">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0a690-128">See also</span></span>
 
-- [<span data-ttu-id="bd57f-129">Synchronní a asynchronní operace</span><span class="sxs-lookup"><span data-stu-id="bd57f-129">Synchronous and Asynchronous Operations</span></span>](../../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md)
-- [<span data-ttu-id="bd57f-130">Používání NetHttpBinding</span><span class="sxs-lookup"><span data-stu-id="bd57f-130">Using the NetHttpBinding</span></span>](../../../../docs/framework/wcf/feature-details/using-the-nethttpbinding.md)
+- [<span data-ttu-id="0a690-129">Synchronní a asynchronní operace</span><span class="sxs-lookup"><span data-stu-id="0a690-129">Synchronous and Asynchronous Operations</span></span>](../../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md)
+- [<span data-ttu-id="0a690-130">Používání NetHttpBinding</span><span class="sxs-lookup"><span data-stu-id="0a690-130">Using the NetHttpBinding</span></span>](../../../../docs/framework/wcf/feature-details/using-the-nethttpbinding.md)

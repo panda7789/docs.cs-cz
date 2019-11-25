@@ -7,7 +7,7 @@
       items:
         - name: Rozhraní ML.NET API
           href: how-does-mldotnet-work.md
-    - name: Nástroje
+    - name: Model Builder a rozhraní příkazového řádku
       items:
         - name: Nástroj ML.NET Model Builder
           href: automate-training-with-model-builder.md
@@ -97,7 +97,7 @@
               href: how-to-guides/serve-model-serverless-azure-functions-ml-net.md
             - name: Nasazení modelu do webového rozhraní API
               href: how-to-guides/serve-model-web-api-ml-net.md
-    - name: Nástroje
+    - name: Model Builder a rozhraní příkazového řádku
       items:
         - name: Načtení dat do Model Builderu
           href: how-to-guides/load-data-model-builder.md
@@ -109,18 +109,12 @@
           href: how-to-guides/how-to-use-the-automl-api.md
 - name: Odkaz
   items:
-    - name: rozhraní API
-      items:
-        - name: Reference k rozhraní ML.NET API
-          href: 'https://docs.microsoft.com/dotnet/api/?view=ml-dotnet'
-        - name: "Reference k\_rozhraní ML.NET API verze Preview"
-          href: 'https://docs.microsoft.com/dotnet/api/?view=ml-dotnet-preview'
-    - name: Nástroje
-      items:
-        - name: Reference k rozhraní příkazového řádku
-          href: reference/ml-net-cli-reference.md
-        - name: Reference k rozhraní ML.NET AutoML API
-          href: 'https://docs.microsoft.com/dotnet/api/index?view=automl-dotnet'
+    - name: Reference k rozhraní ML.NET API
+      href: 'https://docs.microsoft.com/dotnet/api/?view=ml-dotnet'
+    - name: "Reference k\_rozhraní ML.NET API verze Preview"
+      href: 'https://docs.microsoft.com/dotnet/api/?view=ml-dotnet-preview'
+    - name: Reference k rozhraní příkazového řádku
+      href: reference/ml-net-cli-reference.md
 - name: Prostředky
   items:
     - name: Přehled
