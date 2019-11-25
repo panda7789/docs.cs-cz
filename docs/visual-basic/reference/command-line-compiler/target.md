@@ -1,21 +1,21 @@
 ---
-title: -Target (Visual Basic)
+title: -target
 ms.date: 03/13/2018
 helpviewer_keywords:
 - target compiler options [Visual Basic]
 - -target compiler options [Visual Basic]
 - /target compiler options [Visual Basic]
 ms.assetid: e0954147-548b-461f-9c4b-a8f88845616c
-ms.openlocfilehash: 78b01082a3918212255d2a2ab094b5892f4dd681
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: bd79d95a18fb1935d97fff2d1b2c7767752b9765
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582127"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351722"
 ---
-# <a name="-target-visual-basic"></a>-Target (Visual Basic)
+# <a name="-target-visual-basic"></a>-target (Visual Basic)
 
-Určuje formát výstupu kompilátoru.
+Specifies the format of compiler output.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -25,34 +25,34 @@ Určuje formát výstupu kompilátoru.
 
 ## <a name="remarks"></a>Poznámky
 
-Následující tabulka shrnuje efekt možnosti `-target`.
+The following table summarizes the effect of the `-target` option.
 
-|**Nastavení**|**Předvídatelně**|
+|**Option**|**Behavior**|
 |----------------|------------------|
-|`-target:exe`|Způsobí, že kompilátor vytvoří spustitelnou konzolovou aplikaci.<br /><br /> Toto je výchozí možnost, pokud není zadána možnost `-target`. Spustitelný soubor se vytvoří s příponou. exe.<br /><br /> Pokud není uvedeno jinak s možností `/out`, název výstupního souboru převezme název vstupního souboru, který obsahuje proceduru `Sub Main`.<br /><br /> V souborech zdrojového kódu, které jsou zkompilovány do souboru. exe, je vyžadována pouze jedna procedura `Sub Main`. Pomocí možnosti kompilátoru `-main` určete, která třída obsahuje proceduru `Sub Main`.|
-|`-target:library`|Způsobí, že kompilátor vytvoří dynamickou knihovnu (DLL).<br /><br /> Soubor dynamické knihovny je vytvořen s příponou. dll.<br /><br /> Pokud není uvedeno jinak s možností `-out`, název výstupního souboru vezme název prvního vstupního souboru.<br /><br /> Při sestavování knihovny DLL není nutná procedura `Sub Main`.|
-|`-target:module`|Způsobí, že kompilátor vygeneruje modul, který lze přidat do sestavení.<br /><br /> Výstupní soubor je vytvořen s příponou. netmodule.<br /><br /> Modul CLR (Common Language Runtime) .NET nemůže načíst soubor, který nemá sestavení. Takový soubor však lze začlenit do manifestu sestavení sestavení pomocí `-reference`.<br /><br /> Když kód v jednom modulu odkazuje na interní typy v jiném modulu, oba moduly musí být začleněny do manifestu sestavení pomocí `-reference`.<br /><br /> Možnost [-addmodule –](../../../visual-basic/reference/command-line-compiler/addmodule.md) Importuje metadata z modulu.|
-|`-target:winexe`|Způsobí, že kompilátor vytvoří spustitelnou aplikaci založenou na Windows.<br /><br /> Spustitelný soubor se vytvoří s příponou. exe. Aplikace pro systém Windows je taková, která poskytuje uživatelské rozhraní z knihovny tříd .NET Framework nebo pomocí rozhraní API systému Windows.<br /><br /> Pokud není uvedeno jinak s možností `-out`, název výstupního souboru převezme název vstupního souboru, který obsahuje proceduru `Sub Main`.<br /><br /> V souborech zdrojového kódu, které jsou zkompilovány do souboru. exe, je vyžadována pouze jedna procedura `Sub Main`. V případech, kdy má váš kód více než jednu třídu, která má postup `Sub Main`, použijte možnost kompilátoru `-main` k určení, která třída obsahuje proceduru `Sub Main`.|
-|`-target:appcontainerexe`|Způsobí, že kompilátor vytvoří spustitelnou aplikaci pro Windows, která musí být spuštěna v kontejneru aplikace. Toto nastavení je určené k použití pro [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] aplikace.<br /><br /> Nastavení **appcontainerexe** nastaví bit v poli vlastností [přenositelného spustitelného](/windows/desktop/Debug/pe-format) souboru. Tento bit znamená, že aplikace musí být spuštěná v kontejneru aplikace. Pokud je tento bit nastaven, dojde k chybě, pokud se metoda `CreateProcess` pokusí spustit aplikaci mimo kontejner aplikace. Kromě tohoto bitového nastavení **-target: appcontainerexe** je ekvivalentní k **target: winexe**.<br /><br /> Spustitelný soubor se vytvoří s příponou. exe.<br /><br /> Pokud neurčíte jinak pomocí možnosti `-out`, název výstupního souboru převezme název vstupního souboru, který obsahuje proceduru `Sub Main`.<br /><br /> V souborech zdrojového kódu, které jsou zkompilovány do souboru. exe, je vyžadována pouze jedna procedura `Sub Main`. Pokud váš kód obsahuje více než jednu třídu, která má postup `Sub Main`, použijte možnost kompilátoru `-main` k určení, která třída obsahuje proceduru `Sub Main`.|
-|`-target:winmdobj`|Způsobí, že kompilátor vytvoří zprostředkující soubor, který lze převést na soubor prostředí Windows Runtime binární (. winmd). Soubor. winmd lze kromě spravovaných jazykových programů spotřebovat pomocí JavaScriptu a C++ programů.<br /><br /> Zprostředkující soubor se vytvoří s příponou. winmdobj.<br /><br /> Pokud neurčíte jinak pomocí možnosti `-out`, název výstupního souboru vezme název prvního vstupního souboru. Procedura `Sub Main` se nevyžaduje.<br /><br /> Soubor. winmdobj je navržený tak, aby se použil jako vstup pro nástroj pro export <xref:Microsoft.Build.Tasks.WinMDExp> a vytvořil soubor Windows metadata (WinMD). Soubor WinMD má příponu. winmd a obsahuje jak kód z původní knihovny, tak definice WinMD, které JavaScript, C++a prostředí Windows Runtime použít.|
+|`-target:exe`|Causes the compiler to create an executable console application.<br /><br /> This is the default option when no `-target` option is specified. The executable file is created with an .exe extension.<br /><br /> Unless otherwise specified with the `/out` option, the output file name takes the name of the input file that contains the `Sub Main` procedure.<br /><br /> Only one `Sub Main` procedure is required in the source-code files that are compiled into an .exe file. Use the `-main` compiler option to specify which class contains the `Sub Main` procedure.|
+|`-target:library`|Causes the compiler to create a dynamic-link library (DLL).<br /><br /> The dynamic-link library file is created with a .dll extension.<br /><br /> Unless otherwise specified with the `-out` option, the output file name takes the name of the first input file.<br /><br /> When building a DLL, a `Sub Main` procedure is not required.|
+|`-target:module`|Causes the compiler to generate a module that can be added to an assembly.<br /><br /> The output file is created with an extension of .netmodule.<br /><br /> The .NET common language runtime cannot load a file that does not have an assembly. However, you can incorporate such a file into the assembly manifest of an assembly by using `-reference`.<br /><br /> When code in one module references internal types in another module, both modules must be incorporated into an assembly manifest by using `-reference`.<br /><br /> The [-addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md) option imports metadata from a module.|
+|`-target:winexe`|Causes the compiler to create an executable Windows-based application.<br /><br /> The executable file is created with an .exe extension. A Windows-based application is one that provides a user interface from either the .NET Framework class library or with the Windows APIs.<br /><br /> Unless otherwise specified with the `-out` option, the output file name takes the name of the input file that contains the `Sub Main` procedure.<br /><br /> Only one `Sub Main` procedure is required in the source-code files that are compiled into an .exe file. In cases where your code has more than one class that has a `Sub Main` procedure, use the `-main` compiler option to specify which class contains the `Sub Main` procedure|
+|`-target:appcontainerexe`|Causes the compiler to create an executable Windows-based application that must be run in an app container. This setting is designed to be used for Windows 8.x Store applications.<br /><br /> The **appcontainerexe** setting sets a bit in the Characteristics field of the [Portable Executable](/windows/desktop/Debug/pe-format) file. This bit indicates that the app must be run in an app container. When this bit is set, an error occurs if the `CreateProcess` method tries to launch the application outside of an app container. Aside from this bit setting, **-target:appcontainerexe** is equivalent to **-target:winexe**.<br /><br /> The executable file is created with an .exe extension.<br /><br /> Unless you specify otherwise by using the `-out` option, the output file name takes the name of the input file that contains the `Sub Main` procedure.<br /><br /> Only one `Sub Main` procedure is required in the source-code files that are compiled into an .exe file. If your code contains more than one class that has a `Sub Main` procedure, use the `-main` compiler option to specify which class contains the `Sub Main` procedure|
+|`-target:winmdobj`|Causes the compiler to create an intermediate file that you can convert to a Windows Runtime binary (.winmd) file. The .winmd file can be consumed by JavaScript and C++ programs, in addition to managed language programs.<br /><br /> The intermediate file is created with a .winmdobj extension.<br /><br /> Unless you specify otherwise by using the `-out` option, the output file name takes the name of the first input file. A `Sub Main` procedure isn’t required.<br /><br /> The .winmdobj file is designed to be used as input for the <xref:Microsoft.Build.Tasks.WinMDExp> export tool to produce a Windows metadata (WinMD) file. The WinMD file has a .winmd extension and contains both the code from the original library and the WinMD definitions that JavaScript, C++, and  the Windows Runtime use.|
 
-Pokud nezadáte `-target:module`, `-target` způsobí přidání manifestu sestavení .NET Framework do výstupního souboru.
+Unless you specify `-target:module`, `-target` causes a .NET Framework assembly manifest to be added to an output file.
 
-Každá instance nástroje Vbc. exe vytváří nejvýše jeden výstupní soubor. Zadáte-li možnost kompilátoru, jako je například `-out` nebo `-target` více než jednou, bude poslední proces kompilátoru platit. Do manifestu jsou přidány informace o všech souborech v kompilaci. Všechny výstupní soubory kromě těch, které byly vytvořeny pomocí `-target:module` obsahují metadata sestavení v manifestu. K zobrazení metadat ve výstupním souboru použijte [Ildasm. exe (IL Disassembler)](../../../framework/tools/ildasm-exe-il-disassembler.md) .
+Each instance of Vbc.exe produces, at most, one output file. If you specify a compiler option such as `-out` or `-target` more than one time, the last one the compiler processes is put into effect. Information about all files in a compilation is added to the manifest. All output files except those created with `-target:module` contain assembly metadata in the manifest. Use [Ildasm.exe (IL Disassembler)](../../../framework/tools/ildasm-exe-il-disassembler.md) to view the metadata in an output file.
 
-Krátká forma `-target` je `-t`.
+The short form of `-target` is `-t`.
 
-### <a name="to-set--target-in-the-visual-studio-ide"></a>Nastavení cíle v integrovaném vývojovém prostředí sady Visual Studio
+### <a name="to-set--target-in-the-visual-studio-ide"></a>To set -target in the Visual Studio IDE
 
-1. Máte projekt vybraný v **Průzkumník řešení**. V nabídce **projekt** klikněte na příkaz **vlastnosti**.
+1. Have a project selected in **Solution Explorer**. On the **Project** menu, click **Properties**.
 
-2. Klikněte na kartu **aplikace** .
+2. Click the **Application** tab.
 
-3. Upravte hodnotu v poli **Typ aplikace** .
+3. Modify the value in the **Application Type** box.
 
 ## <a name="example"></a>Příklad
 
-Následující kód zkompiluje `in.vb` a vytvoří `in.dll`:
+The following code compiles `in.vb`, creating `in.dll`:
 
 ```console
 vbc -target:library in.vb
@@ -60,10 +60,10 @@ vbc -target:library in.vb
 
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
 - [-main](../../../visual-basic/reference/command-line-compiler/main.md)
 - [-out (Visual Basic)](../../../visual-basic/reference/command-line-compiler/out.md)
-- [-Reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)
+- [-reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)
 - [-addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md)
 - [-moduleassemblyname](../../../visual-basic/reference/command-line-compiler/moduleassemblyname.md)
 - [Sestavení v .NET](../../../standard/assembly/index.md)

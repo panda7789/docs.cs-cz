@@ -1,36 +1,36 @@
 ---
-title: Chyba při načítání knihovny DLL (Visual Basic)
+title: Chyba při načítání knihovny DLL
 ms.date: 07/20/2015
 f1_keywords:
 - vbrID48
 ms.assetid: 4226cd1f-028c-477d-88a5-cb57f7e0cdc8
-ms.openlocfilehash: 5a26443a49b0b853f2f2188fb58d7ed907d671b4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 36452cc6ff03042939cd4066aef76129b5bb8f0a
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64659602"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74329556"
 ---
 # <a name="error-in-loading-dll-visual-basic"></a>Chyba při načítání knihovny DLL (Visual Basic)
-Dynamická knihovna (DLL) je knihovna podle `Lib` klauzuli `Declare` příkazu. Možné příčiny této chyby patří:  
+A dynamic-link library (DLL) is a library specified in the `Lib` clause of a `Declare` statement. Possible causes for this error include:  
   
-- Soubor není spustitelný soubor knihovny DLL.  
+- The file is not DLL executable.  
   
-- Soubor není knihovny DLL Microsoft Windows.  
+- The file is not a Microsoft Windows DLL.  
   
-- Knihovnu DLL odkazuje na jiné knihovně DLL, která není k dispozici.  
+- The DLL references another DLL that is not present.  
   
-- Knihovna DLL nebo odkazované knihovny DLL není v adresáři uvedeném na cestu.  
+- The DLL or referenced DLL is not in a directory specified in the path.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Pokud je soubor zdroj textového souboru a proto není spustitelný soubor knihovny DLL, musí být zkompilovány a propojeny s DLL spustitelný soubor formuláře.  
+- If the file is a source-text file and therefore not DLL executable, it must be compiled and linked to a DLL-executable form.  
   
-- Pokud soubor není knihovny DLL Microsoft Windows, získáte odpovídající Microsoft Windows.  
+- If the file is not a Microsoft Windows DLL, obtain the Microsoft Windows equivalent.  
   
-- Pokud je knihovna DLL odkazuje na jiné knihovně DLL, která není k dispozici, získejte odkazované knihovny DLL a ji dejte k dispozici.  
+- If the DLL references another DLL that is not present, obtain the referenced DLL and make it available.  
   
-- Pokud knihovna DLL nebo odkazované knihovny DLL není v adresáři zadané cesty, přesune odkazovaný adresáře knihovny DLL.  
+- If the DLL or referenced DLL is not in a directory specified by the path, move the DLL to a referenced directory.  
   
 ## <a name="see-also"></a>Viz také:
 

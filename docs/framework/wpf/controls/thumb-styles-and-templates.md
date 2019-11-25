@@ -9,16 +9,16 @@ helpviewer_keywords:
 - ControlTemplate [WPF], Thumb
 - parts [WPF], Thumb
 ms.assetid: 86a49235-62d9-414e-923e-53126e3f930a
-ms.openlocfilehash: c2114a02016db96d898a394b6892b6d3042d81ff
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 0d0d88e3b527beacfa5f879027e696aa75b18147
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458233"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283682"
 ---
 # <a name="thumb-styles-and-templates"></a>Styly a šablony jezdce
 
-Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.Primitives.Thumb>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [přizpůsobení vzhledu existujícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).
+Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.Primitives.Thumb>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md).
 
 ## <a name="thumb-parts"></a>Části s miniaturami
 
@@ -30,10 +30,10 @@ V následující tabulce jsou uvedeny vizuální stavy pro ovládací prvek <xre
 
 |Název VisualState|Název VisualStateGroup|Popis|
 |-|-|-|
-|Běžnou|CommonStates|Výchozí stav.|
+|Normální|CommonStates|Výchozí stav.|
 |MouseOver|CommonStates|Ukazatel myši je umístěn nad ovládacím prvkem.|
-|Stisknete|CommonStates|Ovládací prvek se stiskne.|
-|Zabezpečen|CommonStates|Ovládací prvek je zakázán.|
+|Stisknutí|CommonStates|Ovládací prvek se stiskne.|
+|Zakázáno|CommonStates|Ovládací prvek je zakázán.|
 |Zaměřil|FocusStates|Ovládací prvek má fokus.|
 |Bez fokusu|FocusStates|Ovládací prvek nemá fokus.|
 |Platné|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|
@@ -59,4 +59,4 @@ Předchozí příklad používá jeden nebo více následujících zdrojů.
 - [Styly a šablony ovládacích prvků](control-styles-and-templates.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)
 - [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md)

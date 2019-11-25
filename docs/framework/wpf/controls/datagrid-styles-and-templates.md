@@ -9,15 +9,15 @@ helpviewer_keywords:
 - styles [WPF], DataGrid
 - parts [WPF], DataGrid
 ms.assetid: 9cb31d63-f148-4d25-b079-816e73f988c7
-ms.openlocfilehash: d1ef962132f4c057229c8150a8d49809ce8c7430
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 066e8c9ce1112399be8128d0821498f0d56a3dc3
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460401"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283807"
 ---
 # <a name="datagrid-styles-and-templates"></a>DataGrid – styly a šablony
-Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.DataGrid>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [přizpůsobení vzhledu existujícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.DataGrid>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
   
 ## <a name="datagrid-parts"></a>Části DataGrid  
  V následující tabulce jsou uvedeny pojmenované části ovládacího prvku <xref:System.Windows.Controls.DataGrid>.  
@@ -35,8 +35,8 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
   
 |Název VisualState|Název VisualStateGroup|Popis|  
 |-|-|-|  
-|Běžnou|CommonStates|Výchozí stav.|  
-|Zabezpečen|CommonStates|Ovládací prvek je zakázán.|  
+|Normální|CommonStates|Výchozí stav.|  
+|Zakázáno|CommonStates|Ovládací prvek je zakázán.|  
 |InvalidFocused|ValidationStates|Ovládací prvek není platný a má fokus.|  
 |InvalidUnfocused|ValidationStates|Ovládací prvek není platný a nemá fokus.|  
 |Platné|ValidationStates|Ovládací prvek je platný.|  
@@ -49,15 +49,15 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
   
 |Název VisualState|Název VisualStateGroup|Popis|  
 |-|-|-|  
-|Běžnou|CommonStates|Výchozí stav.|  
+|Normální|CommonStates|Výchozí stav.|  
 |MouseOver|CommonStates|Ukazatel myši je umístěn nad buňkou.|  
 |Zaměřil|FocusStates|Buňka má fokus.|  
 |Bez fokusu|FocusStates|Buňka nemá fokus.|  
 |Aktivní|CurrentStates|Buňka je aktuální buňkou.|  
 |Platné|CurrentStates|Buňka není aktuální buňkou.|  
 |Displej|InteractionStates|Buňka je v režimu zobrazení.|  
-|Úprava|InteractionStates|Buňka je v režimu úprav.|  
-|Vyberte|SelectionStates|Buňka je vybrána.|  
+|Úpravy|InteractionStates|Buňka je v režimu úprav.|  
+|Vybráno|SelectionStates|Buňka je vybrána.|  
 |Nevybrané|SelectionStates|Buňka není vybrána.|  
 |InvalidFocused|ValidationStates|Buňka není platná a má fokus.|  
 |InvalidUnfocused|ValidationStates|Buňka není platná a nemá fokus.|  
@@ -71,7 +71,7 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
   
 |Název VisualState|Název VisualStateGroup|Popis|  
 |-|-|-|  
-|Běžnou|CommonStates|Výchozí stav.|  
+|Normální|CommonStates|Výchozí stav.|  
 |MouseOver|CommonStates|Ukazatel myši je umístěn na řádku.|  
 |MouseOver_Editing|CommonStates|Ukazatel myši je umístěn na řádku a řádek je v režimu úprav.|  
 |MouseOver_Selected|CommonStates|Ukazatel myši se umístí na řádek a vybere se řádek.|  
@@ -99,7 +99,7 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
   
 |Název VisualState|Název VisualStateGroup|Popis|  
 |-|-|-|  
-|Běžnou|CommonStates|Výchozí stav.|  
+|Normální|CommonStates|Výchozí stav.|  
 |MouseOver|CommonStates|Ukazatel myši je umístěn na řádku.|  
 |MouseOver_CurrentRow|CommonStates|Ukazatel myši je umístěn na řádku a řádek je aktuální řádek.|  
 |MouseOver_CurrentRow_Selected|CommonStates|Ukazatel myši se umístí na řádek a řádek je aktuální a vybraný.|  
@@ -148,9 +148,9 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
   
 |Název VisualState|Název VisualStateGroup|Popis|  
 |-|-|-|  
-|Běžnou|CommonStates|Výchozí stav.|  
+|Normální|CommonStates|Výchozí stav.|  
 |MouseOver|CommonStates|Ukazatel myši je umístěn nad ovládacím prvkem.|  
-|Stisknete|CommonStates|Ovládací prvek se stiskne.|  
+|Stisknutí|CommonStates|Ovládací prvek se stiskne.|  
 |SortAscending|SortStates|Sloupec je seřazen ve vzestupném pořadí.|  
 |SortDescending|SortStates|Sloupec je seřazen v sestupném pořadí.|  
 |Seřazená|SortStates|Sloupec není seřazen.|  
@@ -176,4 +176,4 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
 - [Styly a šablony ovládacích prvků](control-styles-and-templates.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)
 - [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md)

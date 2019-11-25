@@ -2,12 +2,12 @@
 title: Jednorázový postup nastavení pro ukázky Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: a5848ffd-3eb5-432d-812e-bd948ccb6bca
-ms.openlocfilehash: 90463a83b8a10085d4df90a2832886e43c51c734
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 7dbc4a1b5235c0cb6aa154379358c7761bc4ab1d
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424931"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141854"
 ---
 # <a name="one-time-setup-procedure-for-the-windows-communication-foundation-samples"></a>Jednorázový postup nastavení pro ukázky Windows Communication Foundation
 
@@ -22,7 +22,7 @@ Virtuální adresář **ServiceModelSamples** se používá k sestavování a sp
 
 1. Ujistěte se, že je nastavené ASP.NET. Další informace o tom, jak nastavit ASP.NET, najdete v tématu [pokyny pro hostování internetové informační služby](../../../../docs/framework/wcf/samples/internet-information-service-hosting-instructions.md).
 
-2. Ujistěte se, že je nainstalovaná [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)]. V tomto adresáři vyhledejte v 4.0 (nebo novějším): **\WINDOWS\Microsoft.NET\Framework**
+2. Ujistěte se, že je nainstalovaná .NET Framework 4. V tomto adresáři vyhledejte v 4.0 (nebo novějším): **\WINDOWS\Microsoft.NET\Framework**
 
 3. Pokud není nainstalováno Visual Studio 2012 a váš operační systém není Windows Server 2008 SP2 nebo novější, nainstalujte [opravu Hotfix 251798](https://go.microsoft.com/fwlink/?LinkId=184693).
 
@@ -37,15 +37,15 @@ Virtuální adresář **ServiceModelSamples** se používá k sestavování a sp
     ```
 
     > [!WARNING]
-    > Spuštěním příkazu `aspnet_regiis –i –enable` nastavíte výchozí fond aplikací pomocí [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)], což může způsobit problémy s nekompatibilitou pro jiné aplikace ve stejném počítači.
+    > Spuštěním příkazu `aspnet_regiis –i –enable` nastavíte výchozí fond aplikací s využitím .NET Framework 4, což může způsobit problémy s nekompatibilitou pro jiné aplikace ve stejném počítači.
 
 5. Pokud chcete povolit porty používané ukázkami, postupujte podle [pokynů pro bránu firewall](../../../../docs/framework/wcf/samples/firewall-instructions.md) .
 
-6. Ověřte následující výchozí adresář: \<InstallDrive >: **\WF_WCF_Samples**. Pokud byly ukázky dříve nainstalovány, jedná se o výchozí adresář.
+6. Ověřte následující výchozí adresář: \<InstallDrive >: **\ WF_WCF_Samples**. Pokud byly ukázky dříve nainstalovány, jedná se o výchozí adresář.
 
 7. Pokud ukázky nejsou nainstalovány, nainstalujte je z umístění pro stažení ukázek pro [C#](https://go.microsoft.com/fwlink/?LinkId=190939).
 
-8. Po instalaci ukázek použijte: \<InstallDrive >: **\WF_WCF_Samples\WCF\Setup\\**
+8. Po instalaci ukázek použijte: \<InstallDrive >: **\ WF_WCF_Samples \wcf\setup\\**
 
 9. Spusťte dávkový soubor **Setupvroot. bat** . Provedou se následující kroky:
 
@@ -65,7 +65,7 @@ Virtuální adresář **ServiceModelSamples** se používá k sestavování a sp
 
 11. Vytvořte v počítači adresář C:\Logs.; může to očekávat několik ukázek. Ujistěte se, že příslušný účet má udělený přístup pro zápis do této složky. Pro Windows 7, [!INCLUDE[wv](../../../../includes/wv-md.md)]a Windows Server 2008 R2 je tento účet **Network Service**. Pro [!INCLUDE[lserver](../../../../includes/lserver-md.md)]účet je NT Authority\Network Service. Pro [!INCLUDE[wxp](../../../../includes/wxp-md.md)] a [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]je účet ASPNET.
 
-12. Spusťte soubor setupCertTool. bat. Tento soubor je umístěný ve složce \<InstallPath > \WF_WCF_Samples\WCF\Setup\.  Tento skript provede následující úlohy:
+12. Spusťte soubor setupCertTool. bat. Tento soubor je umístěný ve složce \<InstallPath > \ WF_WCF_Samples \WCF\Setup\.  Tento skript provede následující úlohy:
 
     - Sestavte Nástroj FindPrivateKey.
 

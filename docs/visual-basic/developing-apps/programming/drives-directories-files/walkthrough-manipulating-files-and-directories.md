@@ -1,5 +1,5 @@
 ---
-title: Práce se soubory a adresáře v jazyce Visual Basic
+title: Práce se soubory a adresáři
 ms.date: 07/20/2015
 helpviewer_keywords:
 - files [Visual Basic], reading text
@@ -15,147 +15,150 @@ helpviewer_keywords:
 - writing to files [Visual Basic], walkthroughs
 - I/O [Visual Basic], reading text from files
 ms.assetid: cae77565-9f78-4e46-8e42-eb2f9f8e1ffd
-ms.openlocfilehash: 4d0aac533759f8cc20ac4f19d7f0e49fef17bf56
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 83dc6ce0d29c1c368c36b51fc84ecad34d72e01f
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62052518"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74333810"
 ---
-# <a name="walkthrough-manipulating-files-and-directories-in-visual-basic"></a>Návod: Práce se soubory a adresáře v jazyce Visual Basic
-Tento názorný postup obsahuje úvod do základní informace o souboru vstupně-výstupních operací v jazyce Visual Basic. Popisuje postup vytvoření malou aplikaci, která obsahuje seznam a zkoumá textových souborů v adresáři. Pro každý soubor vybraný text aplikace poskytuje atributy souboru a prvního řádku obsahu. Je k dispozici možnost při zápisu informací do souboru protokolu.  
+# <a name="walkthrough-manipulating-files-and-directories-in-visual-basic"></a>Návod: Práce se soubory a adresáři v jazyce Visual Basic
+
+This walkthrough provides an introduction to the fundamentals of file I/O in Visual Basic. It describes how to create a small application that lists and examines text files in a directory. For each selected text file, the application provides file attributes and the first line of content. There is an option to write information to a log file.  
   
- Tento návod používá členy `My.Computer.FileSystem Object`, které jsou k dispozici v jazyce Visual Basic. Další informace naleznete v tématu <xref:Microsoft.VisualBasic.FileIO.FileSystem>. Na konci tohoto průvodce, ekvivalentem příkladu je zadána, který používá třídy z <xref:System.IO> oboru názvů.  
+ This walkthrough uses members of the `My.Computer.FileSystem Object`, which are available in Visual Basic. Další informace naleznete v tématu <xref:Microsoft.VisualBasic.FileIO.FileSystem>. At the end of the walkthrough, an equivalent example is provided that uses classes from the <xref:System.IO> namespace.  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
 ### <a name="to-create-the-project"></a>Vytvoření projektu  
   
-1. Na **souboru** nabídky, klikněte na tlačítko **nový projekt**.  
+1. On the **File** menu, click **New Project**.  
   
-     Zobrazí se dialogové okno **Nový projekt**.  
+     The **New Project** dialog box appears.  
   
-2. V **nainstalované šablony** podokně rozbalte **jazyka Visual Basic**a potom klikněte na tlačítko **Windows**. V **šablony** podokně kliknout prostředním tlačítkem myši, **formulářová aplikace Windows**.  
+2. In the **Installed Templates** pane, expand **Visual Basic**, and then click **Windows**. In the **Templates** pane in the middle, click **Windows Forms Application**.  
   
-3. V **název** zadejte `FileExplorer` název projektu a potom klikněte na **OK**.  
+3. In the **Name** box, type `FileExplorer` to set the project name, and then click **OK**.  
   
-     Visual Studio přidá projekt do **Průzkumníka řešení**, a otevře se Návrhář formulářů Windows.  
+     Visual Studio adds the project to **Solution Explorer**, and the Windows Forms Designer opens.  
   
-4. Přidat ovládací prvky do formuláře v následující tabulce a nastavit odpovídající hodnoty pro jejich vlastností.  
+4. Add the controls in the following table to the form, and set the corresponding values for their properties.  
   
     |Control|Vlastnost|Hodnota|  
     |-------------|--------------|-----------|  
-    |**ListBox**|**Název**|`filesListBox`|  
-    |**Tlačítko**|**Název**<br /><br /> **Text**|`browseButton`<br /><br /> **Procházet**|  
-    |**Tlačítko**|**Název**<br /><br /> **Text**|`examineButton`<br /><br /> **Prozkoumat**|  
-    |**CheckBox**|**Název**<br /><br /> **Text**|`saveCheckBox`<br /><br /> **Uložit výsledky**|  
-    |**FolderBrowserDialog**|**Název**|`FolderBrowserDialog1`|  
+    |**ListBox**|**Name**|`filesListBox`|  
+    |**Tlačítko**|**Name**<br /><br /> **Text**|`browseButton`<br /><br /> **Browse**|  
+    |**Tlačítko**|**Name**<br /><br /> **Text**|`examineButton`<br /><br /> **Examine**|  
+    |**CheckBox**|**Name**<br /><br /> **Text**|`saveCheckBox`<br /><br /> **Save Results**|  
+    |**FolderBrowserDialog**|**Name**|`FolderBrowserDialog1`|  
   
-### <a name="to-select-a-folder-and-list-files-in-a-folder"></a>Vyberte složku, a seznam souborů ve složce  
+### <a name="to-select-a-folder-and-list-files-in-a-folder"></a>To select a folder, and list files in a folder  
   
-1. Vytvoření `Click` obslužné rutiny události pro `browseButton` dvojitým kliknutím na ovládací prvek na formuláři. Otevře se Editor kódu.  
+1. Create a `Click` event handler for `browseButton` by double-clicking the control on the form. The Code Editor opens.  
   
-2. Přidejte následující kód, který `Click` obslužné rutiny události.  
+2. Add the following code to the `Click` event handler.  
   
      [!code-vb[VbVbcnMyFileSystem#103](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/class2.vb#103)]  
   
-     `FolderBrowserDialog1.ShowDialog` Volání otevře **vyhledat složku** dialogové okno. Když uživatel klikne na tlačítko **OK**, <xref:System.Windows.Forms.FolderBrowserDialog.SelectedPath%2A> vlastnosti je předána jako argument pro `ListFiles` metoda, která se přidá v dalším kroku.  
+     The `FolderBrowserDialog1.ShowDialog` call opens the **Browse For Folder** dialog box. After the user clicks **OK**, the <xref:System.Windows.Forms.FolderBrowserDialog.SelectedPath%2A> property is sent as an argument to the `ListFiles` method, which is added in the next step.  
   
-3. Přidejte následující `ListFiles` metody.  
+3. Add the following `ListFiles` method.  
   
      [!code-vb[VbVbcnMyFileSystem#104](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/class2.vb#104)]  
   
-     Tento kód nejprve vymaže **ListBox**.  
+     This code first clears the **ListBox**.  
   
-     <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles%2A> Metoda pak načte kolekci řetězců, jeden pro každý soubor v adresáři. `GetFiles` Metoda přijímá argument vzor hledání pro načtení souborů vyhovujících určitému vzoru. V tomto příkladu jsou vráceny pouze soubory, které mají příponu .txt.  
+     The <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles%2A> method then retrieves a collection of strings, one for each file in the directory. The `GetFiles` method accepts a search pattern argument to retrieve files that match a particular pattern. In this example, only files that have the extension .txt are returned.  
   
-     Řetězce, které jsou vrácené `GetFiles` metoda se poté přidají ke **ListBox**.  
+     The strings that are returned by the `GetFiles` method are then added to the **ListBox**.  
   
-4. Spusťte aplikaci. Klikněte na tlačítko **Procházet** tlačítko. V **vyhledat složku** dialogovém okně, přejděte do složky, která obsahuje soubory s příponou .txt, a potom vyberte složku a klikněte na **OK**.  
+4. Spusťte aplikaci. Click the **Browse** button. In the **Browse For Folder** dialog box, browse to a folder that contains .txt files, and then select the folder and click **OK**.  
   
-     `ListBox` Obsahuje seznam souborů .txt ve vybrané složce.  
+     The `ListBox` contains a list of .txt files in the selected folder.  
   
-5. Zastavení, spuštění aplikace.  
+5. Stop running the application.  
   
-### <a name="to-obtain-attributes-of-a-file-and-content-from-a-text-file"></a>Získání atributů souboru a obsahu z textového souboru  
+### <a name="to-obtain-attributes-of-a-file-and-content-from-a-text-file"></a>To obtain attributes of a file, and content from a text file  
   
-1. Vytvoření `Click` obslužné rutiny události pro `examineButton` dvojitým kliknutím na ovládací prvek na formuláři.  
+1. Create a `Click` event handler for `examineButton` by double-clicking the control on the form.  
   
-2. Přidejte následující kód, který `Click` obslužné rutiny události.  
+2. Add the following code to the `Click` event handler.  
   
      [!code-vb[VbVbcnMyFileSystem#105](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/class2.vb#105)]  
   
-     Kód zkontroluje, zda je položka vybrána v `ListBox`. Potom získá položka z cesty k souboru `ListBox`. <xref:Microsoft.VisualBasic.FileIO.FileSystem.FileExists%2A> Metoda se používá ke kontrole, jestli soubor stále existuje.  
+     The code verifies that an item is selected in the `ListBox`. It then obtains the file path entry from the `ListBox`. The <xref:Microsoft.VisualBasic.FileIO.FileSystem.FileExists%2A> method is used to check whether the file still exists.  
   
-     Cesta k souboru je předána jako argument pro `GetTextForOutput` metoda, která se přidá v dalším kroku. Tato metoda vrátí řetězec, který obsahuje informace o souboru. Informace o souboru se zobrazí v **MessageBox**.  
+     The file path is sent as an argument to the `GetTextForOutput` method, which is added in the next step. This method returns a string that contains file information. The file information appears in a **MessageBox**.  
   
-3. Přidejte následující `GetTextForOutput` metody.  
+3. Add the following `GetTextForOutput` method.  
   
      [!code-vb[VbVbcnMyFileSystem#107](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/class2.vb#107)]  
   
-     Tento kód použije <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFileInfo%2A> metoda získat soubor parametrů. Soubor parametrů jsou přidány do <xref:System.Text.StringBuilder>.  
+     The code uses the <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFileInfo%2A> method to obtain file parameters. The file parameters are added to a <xref:System.Text.StringBuilder>.  
   
-     <xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileReader%2A> Přečte obsah souboru do metody <xref:System.IO.StreamReader>. První řádek obsah se získávají z `StreamReader` a je přidán `StringBuilder`.  
+     The <xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileReader%2A> method reads the file contents into a <xref:System.IO.StreamReader>. The first line of the contents is obtained from the `StreamReader` and is added to the `StringBuilder`.  
   
-4. Spusťte aplikaci. Klikněte na tlačítko **Procházet**a přejděte do složky obsahující soubory s příponou .txt. Klikněte na **OK**.  
+4. Spusťte aplikaci. Click **Browse**, and browse to a folder that contains .txt files. Click **OK**.  
   
-     Vyberte soubor v `ListBox`a potom klikněte na tlačítko **vyhledejte**. A `MessageBox` zobrazuje informace o souboru.  
+     Select a file in the `ListBox`, and then click **Examine**. A `MessageBox` shows the file information.  
   
-5. Zastavení, spuštění aplikace.  
+5. Stop running the application.  
   
-### <a name="to-add-a-log-entry"></a>Chcete-li přidat položky protokolu  
+### <a name="to-add-a-log-entry"></a>To add a log entry  
   
-1. Přidejte následující kód do konce `examineButton_Click` obslužné rutiny události.  
+1. Add the following code to the end of the `examineButton_Click` event handler.  
   
      [!code-vb[VbVbcnMyFileSystem#106](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/class2.vb#106)]  
   
-     Kód nastaví cestu k souboru protokolu pro umístění souboru protokolu ve stejném adresáři jako u vybraného souboru. Text položky protokolu nastavena na aktuální datum a čas, za nímž následuje informace o souboru.  
+     The code sets the log file path to put the log file in the same directory as that of the selected file. The text of the log entry is set to the current date and time followed by the file information.  
   
-     <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A> Metody s `append` argument nastaven na `True`, se používá k vytvoření položky protokolu.  
+     The <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A> method, with the `append` argument set to `True`, is used to create the log entry.  
   
-2. Spusťte aplikaci. Přejděte do textového souboru, vyberte ho v `ListBox`, vyberte **uložit výsledky** zaškrtněte políčko a potom klikněte na tlačítko **vyhledejte**. Ověřte, že záznam protokolu se zapisují na `log.txt` souboru.  
+2. Spusťte aplikaci. Browse to a text file, select it in the `ListBox`, select the **Save Results** check box, and then click **Examine**. Verify that the log entry is written to the `log.txt` file.  
   
-3. Zastavení, spuštění aplikace.  
+3. Stop running the application.  
   
-### <a name="to-use-the-current-directory"></a>Chcete-li používat aktuální adresář  
+### <a name="to-use-the-current-directory"></a>To use the current directory  
   
-1. Vytvořte obslužnou rutinu události pro `Form1_Load` poklepáním na formuláři.  
+1. Create an event handler for `Form1_Load` by double-clicking the form.  
   
-2. Přidejte následující kód do obslužné rutiny události.  
+2. Add the following code to the event handler.  
   
      [!code-vb[VbVbcnMyFileSystem#102](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/class2.vb#102)]  
   
-     Tento kód nastaví výchozí adresář prohlížeč složek do aktuálního adresáře.  
+     This code sets the default directory of the folder browser to the current directory.  
   
-3. Spusťte aplikaci. Po kliknutí na **Procházet** poprvé, **vyhledat složku** dialogové okno k aktuálnímu adresáři.  
+3. Spusťte aplikaci. When you click **Browse** the first time, the **Browse For Folder** dialog box opens to the current directory.  
   
-4. Zastavení, spuštění aplikace.  
+4. Stop running the application.  
   
-### <a name="to-selectively-enable-controls"></a>Povolit některé ovládací prvky  
+### <a name="to-selectively-enable-controls"></a>To selectively enable controls  
   
-1. Přidejte následující `SetEnabled` metody.  
+1. Add the following `SetEnabled` method.  
   
      [!code-vb[VbVbcnMyFileSystem#108](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/class2.vb#108)]  
   
-     `SetEnabled` Metoda povolí nebo zakáže ovládací prvky v závislosti na tom, zda je položka vybrána v `ListBox`.  
+     The `SetEnabled` method enables or disables controls depending on whether an item is selected in the `ListBox`.  
   
-2. Vytvoření `SelectedIndexChanged` obslužné rutiny události pro `filesListBox` dvojitým kliknutím `ListBox` ovládací prvek na formuláři.  
+2. Create a `SelectedIndexChanged` event handler for `filesListBox` by double-clicking the `ListBox` control on the form.  
   
-3. Přidejte volání do `SetEnabled` na novém `filesListBox_SelectedIndexChanged` obslužné rutiny události.  
+3. Add a call to `SetEnabled` in the new `filesListBox_SelectedIndexChanged` event handler.  
   
-4. Přidejte volání do `SetEnabled` na konci `browseButton_Click` obslužné rutiny události.  
+4. Add a call to `SetEnabled` at the end of the `browseButton_Click` event handler.  
   
-5. Přidejte volání do `SetEnabled` na konci `Form1_Load` obslužné rutiny události.  
+5. Add a call to `SetEnabled` at the end of the `Form1_Load` event handler.  
   
-6. Spusťte aplikaci. **Uložit výsledky** zaškrtávací políčko a **vyhledejte** tlačítka jsou zakázané, pokud položka není vybraný `ListBox`.  
+6. Spusťte aplikaci. The **Save Results** check box and the **Examine** button are disabled if an item is not selected in the `ListBox`.  
   
-## <a name="full-example-using-mycomputerfilesystem"></a>Úplný příklad použití My.Computer.FileSystem  
- Následuje Úplný příklad.  
+## <a name="full-example-using-mycomputerfilesystem"></a>Full example using My.Computer.FileSystem  
+
+ Following is the complete example.  
   
  [!code-vb[VbVbcnMyFileSystem#101](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/class2.vb#101)]  
   
-## <a name="full-example-using-systemio"></a>Úplný příklad using System.IO  
- Následující příklad ekvivalentní používá třídy z <xref:System.IO> obor názvů namísto použití `My.Computer.FileSystem` objekty.  
+## <a name="full-example-using-systemio"></a>Full example using System.IO  
+
+ The following equivalent example uses classes from the <xref:System.IO> namespace instead of using `My.Computer.FileSystem` objects.  
   
  [!code-vb[VbVbcnMyFileSystem#111](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/class3.vb#111)]  
   
@@ -164,4 +167,4 @@ Tento názorný postup obsahuje úvod do základní informace o souboru vstupně
 - <xref:System.IO>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.CurrentDirectory%2A>
-- [Návod: Manipulace se soubory pomocí metod rozhraní .NET Framework](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)
+- [Návod: Práce se soubory pomocí metod rozhraní .NET Framework](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)

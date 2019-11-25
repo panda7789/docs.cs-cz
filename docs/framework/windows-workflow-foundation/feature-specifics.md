@@ -2,154 +2,154 @@
 title: Specifické funkce Windows Workflow Foundation
 ms.date: 03/30/2017
 ms.assetid: e84d12da-a055-45f6-b4d1-878d127b46b6
-ms.openlocfilehash: 063d2472443431423cea9b164831cd1e7a669408
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0c312eed1a5ba064771e7cc4c260b43d97b16315
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64753717"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141881"
 ---
 # <a name="windows-workflow-foundation-feature-specifics"></a>Specifické funkce Windows Workflow Foundation
 
-[!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] Přidá celou řadu funkcí pro Windows Workflow Foundation. Tento dokument popisuje několik nových funkcí a poskytuje podrobnosti o scénářích, ve kterých mohou být užitečné.
+.NET Framework 4 přidává k programovací model Windows Workflow Foundation řadu funkcí. Tento dokument popisuje řadu nových funkcí a poskytuje podrobnosti o scénářích, ve kterých mohou být užitečné.
 
 ## <a name="messaging-activities"></a>Aktivity zasílání zpráv
 
-Zasílání zpráv aktivity (<xref:System.ServiceModel.Activities.Receive>, <xref:System.ServiceModel.Activities.SendReply>, <xref:System.ServiceModel.Activities.Send>, <xref:System.ServiceModel.Activities.ReceiveReply>) se používají k odesílání a příjem zpráv WCF z pracovního postupu. <xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.SendReply> aktivity se používají k vytvoření operaci služby Windows Communication Foundation (WCF), který je zveřejněný prostřednictvím WSDL stejně jako standardní webové služby WCF. <xref:System.ServiceModel.Activities.Send> a <xref:System.ServiceModel.Activities.ReceiveReply> se používají k využívání webové služby WCF podobný <xref:System.ServiceModel.ChannelFactory>; **přidat odkaz na službu** prostředí existuje také pro Workflow Foundation, který generuje předem nakonfigurované aktivity.
+Aktivity zasílání zpráv (<xref:System.ServiceModel.Activities.Receive>, <xref:System.ServiceModel.Activities.SendReply>, <xref:System.ServiceModel.Activities.Send>, <xref:System.ServiceModel.Activities.ReceiveReply>) se používají k posílání a přijímání zpráv WCF z pracovního postupu. Aktivity <xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.SendReply> slouží k vytvoření operace služby Windows Communication Foundation (WCF), která je vystavena prostřednictvím WSDL stejně jako standardní webové služby WCF. <xref:System.ServiceModel.Activities.Send> a <xref:System.ServiceModel.Activities.ReceiveReply> se používají ke využívání webové služby podobné <xref:System.ServiceModel.ChannelFactory>WCF; pro portál Workflow Foundation, který generuje předem konfigurované aktivity, existuje i **Přidat odkaz na službu** prostředí.
 
-### <a name="getting-started-with-messaging-activities"></a>Začínáme se službou zasílání zpráv aktivity
+### <a name="getting-started-with-messaging-activities"></a>Začínáme s aktivitami zasílání zpráv
 
-- V sadě Visual Studio 2012 vytvořte projekt aplikace služby pracovního postupu WCF. A <xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.SendReply> pár se umístí na plátně.
+- V aplikaci Visual Studio 2012 vytvořte projekt aplikace služby pracovního postupu WCF. Na plátno budou vloženy páry <xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.SendReply>.
 
-- Klikněte pravým tlačítkem na projekt a vyberte **přidat odkaz na službu**. Přejděte do existující webové služby WSDL a klikněte na tlačítko **OK**. Sestavení projektu zobrazíte generované aktivity (implementované pomocí <xref:System.ServiceModel.Activities.Send> a <xref:System.ServiceModel.Activities.ReceiveReply>) ve vašem panelu nástrojů.
+- Klikněte pravým tlačítkem na projekt a vyberte **Přidat odkaz na službu**. Přejděte na existující prvek WSDL webové služby a klikněte na tlačítko **OK**. Sestavte projekt, aby se zobrazily vygenerované aktivity (implementované pomocí <xref:System.ServiceModel.Activities.Send> a <xref:System.ServiceModel.Activities.ReceiveReply>) ve vaší sadě nástrojů.
 
-- [Dokumentace služby pracovního postupu](../wcf/feature-details/workflow-services.md)
+- [Dokumentace ke službám Workflow Services](../wcf/feature-details/workflow-services.md)
 
-### <a name="messaging-activities-example-scenario"></a>Zasílání zpráv aktivity ukázkový scénář
+### <a name="messaging-activities-example-scenario"></a>Příklad scénáře aktivity zasílání zpráv
 
-A `BestPriceFinder` služby zdůrazňuje k více službám letecká společnost najít tu nejlepší cenu lístek pro konkrétní trasy. Implementace této situace se vyžaduje použití zpráv aktivit k přijímání požadavků cena, načíst ceny z back endové služby a odpovědět na požadavek cena tu nejlepší cenu. To by také vyžadují, abyste pomocí další aktivity out-of-box můžete vytvořit obchodní logiku pro výpočet tu nejlepší cenu.
+Služba `BestPriceFinder` volá více leteckých služeb a hledá nejlepší cenu za lístek pro konkrétní trasu. Implementace tohoto scénáře by vyžadovala, abyste mohli používat aktivity zpráv pro příjem žádosti o cenu, načítat ceny z back-endové služby a odpovědět na žádost o cenu s nejlepší cenou. Také vyžaduje, abyste k vytvoření obchodní logiky pro výpočet nejlepší ceny použili další připravené aktivity.
 
 ## <a name="workflowservicehost"></a>WorkflowServiceHost
 
-<xref:System.ServiceModel.WorkflowServiceHost> Je hostitele pracovního postupu out-of-box, která podporuje víc instancí, konfiguraci a zasílání zpráv WCF (i když nejsou potřeba použít zasílání aby bylo možné hostovat pracovních postupů). Je integrován se sadou trvalost, sledování a řízení instance prostřednictvím sady chování služby. Stejně jako jeho WCF <xref:System.ServiceModel.ServiceHost>, <xref:System.ServiceModel.WorkflowServiceHost> můžete v aplikaci konzoly a WinForms nebo WPF nebo služba Windows v místním prostředí nebo web hostovaný (jako soubor .xamlx) v IIS nebo WAS.
+<xref:System.ServiceModel.WorkflowServiceHost> je předem připravený hostitel pracovního postupu, který podporuje více instancí, konfigurací a zasílání zpráv WCF (i když pracovní postupy nevyžadují, aby používaly zasílání zpráv, aby je bylo možné hostovat). Integruje se taky se zachováním, sledováním a instancí prostřednictvím sady chování služby. Stejně jako <xref:System.ServiceModel.ServiceHost>WCF, <xref:System.ServiceModel.WorkflowServiceHost> může být v místním prostředí v konzole/WinForms/prostředí WPF nebo ve službě systému Windows nebo v hostovaném webu (jako soubor. xamlx) ve službě IIS nebo WAS.
 
-### <a name="getting-started-with-workflow-service-host"></a>Začínáme se službou hostitel služby pracovního postupu
+### <a name="getting-started-with-workflow-service-host"></a>Začínáme s hostitelem služby pracovního postupu
 
-- V sadě Visual Studio 2010, vytvořte projekt aplikace služby pracovního postupu WCF: Tento projekt bude nastaven používat <xref:System.ServiceModel.WorkflowServiceHost> v prostředí webového hostitele.
+- V sadě Visual Studio 2010 vytvořte projekt aplikace služby pracovního postupu WCF: Tento projekt bude nastaven na použití <xref:System.ServiceModel.WorkflowServiceHost> v prostředí webového hostitele.
 
-- Abyste mohli hostovat pracovního postupu zasílání zpráv, přidejte vlastní <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> , který se vytvoří instance na základě zprávy.
+- Chcete-li hostovat pracovní postup bez zasílání zpráv, přidejte vlastní <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint>, která vytvoří instanci na základě zprávy.
 
-- Instance pracovních postupů je možné řídit (např. pozastaven nebo ukončen) tak, že přidáte <xref:System.ServiceModel.Activities.WorkflowControlEndpoint> k <xref:System.ServiceModel.WorkflowServiceHost> a následným použitím <xref:System.ServiceModel.Activities.WorkflowControlClient>.
+- Instance pracovního postupu lze řídit (například pozastaveno nebo ukončeno) přidáním <xref:System.ServiceModel.Activities.WorkflowControlEndpoint> do <xref:System.ServiceModel.WorkflowServiceHost> a následným použitím <xref:System.ServiceModel.Activities.WorkflowControlClient>.
 
 - Ukázky pro <xref:System.ServiceModel.WorkflowServiceHost> najdete v následujících částech:
 
   - [Spuštění](./samples/execution.md)
 
-  - Aplikace: [Správa pozastavené instance](./samples/suspended-instance-management.md)
+  - Aplikace: [pozastavená Správa instancí](./samples/suspended-instance-management.md)
 
 - [Přehled hostování služeb pracovních postupů](../wcf/feature-details/hosting-workflow-services-overview.md)
 
-### <a name="workflowservicehost-scenario"></a>WorkflowServiceHost Scenario
+### <a name="workflowservicehost-scenario"></a>Scénář WorkflowServiceHost
 
-Služba BestPriceFinder zdůrazňuje k více službám letecká společnost najít tu nejlepší cenu lístek pro konkrétní trasy. Implementace této situace se vyžaduje k hostování pracovního postupu v <xref:System.ServiceModel.WorkflowServiceHost>. Aktivit zpráv ho využít také k přijímání požadavků cena, načíst ceny z back endové služby a odpovědět na požadavek cena tu nejlepší cenu.
+Služba BestPriceFinder volá více leteckých služeb a hledá nejlepší cenu za lístek pro konkrétní trasu. Implementace tohoto scénáře by vyžadovala hostování pracovního postupu v <xref:System.ServiceModel.WorkflowServiceHost>. Tyto aktivity by také používaly aktivity zpráv pro příjem žádosti o cenu, načetla ceny z back-endové služby a odpovědět na žádost o cenu s nejlepší cenou.
 
 ## <a name="correlation"></a>Korelace
 
-Korelaci je jedním ze dvou kroků:
+Korelace je jednou ze dvou věcí:
 
-- Způsob seskupování zpráv najednou; To znamená, o vztah mezi zprávu požadavku a jeho odpověď.
+- Způsob, jak seskupovat zprávy; To znamená vztah mezi zprávou požadavku a odpovědí.
 
-- Způsob mapování část dat na instanci služby
+- Způsob mapování částí dat na instanci služby
 
 ### <a name="getting-started"></a>Začínáme
 
-- Abyste mohli začít s korelací, vytvořte nový projekt v sadě Visual Studio. Vytvořte proměnnou typu <xref:System.ServiceModel.Activities.CorrelationHandle>.
+- Chcete-li začít s korelací, vytvořte nový projekt v aplikaci Visual Studio. Vytvořte proměnnou typu <xref:System.ServiceModel.Activities.CorrelationHandle>.
 
-- Příklad korelace společně umožňují seskupovat zprávy je korelaci požadavek-odpověď, která seskupuje zprávy.
+- Příkladem korelace používaného k seskupení zpráv je korelace požadavek-odpověď, která seskupuje zprávy dohromady.
 
-  - Na <xref:System.ServiceModel.Activities.Receive> aktivity, klikněte na <xref:System.ServiceModel.Activities.Receive.CorrelationInitializers%2A> vlastnost a přidejte <xref:System.ServiceModel.Activities.RequestReplyCorrelationInitializer> pomocí rutiny CorrelationHandle vytvořili v prvním kroku požadavků.
+  - V <xref:System.ServiceModel.Activities.Receive> aktivity klikněte na vlastnost <xref:System.ServiceModel.Activities.Receive.CorrelationInitializers%2A> a přidejte <xref:System.ServiceModel.Activities.RequestReplyCorrelationInitializer> pomocí popisovač CorrelationHandle vytvořeného v prvním kroku.
 
-  - Vytvoření <xref:System.ServiceModel.Activities.SendReply> kliknutím pravým tlačítkem na aktivitu <xref:System.ServiceModel.Activities.Receive> a kliknutím na "Vytvoření odeslání odpovědi SendReply". Vložte ji do pracovního postupu po <xref:System.ServiceModel.Activities.Receive> aktivity.
+  - <xref:System.ServiceModel.Activities.SendReply> aktivitu vytvoříte tak, že kliknete pravým tlačítkem na <xref:System.ServiceModel.Activities.Receive> a kliknete na vytvořit aktivitu SendReply. Vložte ji do pracovního postupu po aktivitě <xref:System.ServiceModel.Activities.Receive>.
 
-- Příklad mapování část dat do instance služby je korelace na základě obsahu, který mapuje část dat (například ID objednávky) na instance určitý pracovní postup.
+- Příkladem mapování částí dat na instanci služby je korelace založená na obsahu, která mapuje část dat (například ID objednávky) do konkrétní instance pracovního postupu.
 
-  - U všech aktivit, zasílání zpráv, klikněte na `CorrelationInitializers` vlastnost a přidejte <xref:System.ServiceModel.Activities.QueryCorrelationInitializer> pomocí <xref:System.ServiceModel.Activities.CorrelationHandle> proměnné vytvořené výše. Dvakrát klikněte na požadovanou vlastnost zprávy (třeba OrderID) z rozevírací nabídky. Nastavte `CorrelatesWith` vlastnost <xref:System.ServiceModel.Activities.CorrelationHandle> proměnné využité nad.
+  - U jakékoli aktivity zasílání zpráv klikněte na vlastnost `CorrelationInitializers` a přidejte <xref:System.ServiceModel.Activities.QueryCorrelationInitializer> pomocí <xref:System.ServiceModel.Activities.CorrelationHandle> proměnné vytvořené výše. Dvakrát klikněte na požadovanou vlastnost ve zprávě (např. ČísloObjednávky) z rozevírací nabídky. Vlastnost `CorrelatesWith` nastavte na výše použitou <xref:System.ServiceModel.Activities.CorrelationHandle> proměnnou.
 
-- [Rámcové dokumentaci korelace](../wcf/feature-details/correlation.md)
+- [Rámcová dokumentace korelace](../wcf/feature-details/correlation.md)
 
 ### <a name="correlation-scenario"></a>Scénář korelace
 
-Pracovního postupu zpracování objednávky se používá k vytvoření nového pořadí a aktualizuje se existující objednávky, které jsou v procesu. Implementace této situace se vyžaduje k hostování pracovního postupu v <xref:System.ServiceModel.WorkflowServiceHost> a použít pro zasílání zpráv aktivity. Bude také vyžadovat korelace na základě `orderId` zajistit, že jsou provedeny aktualizace správné pracovního postupu.
+Pracovní postup zpracování objednávek se používá ke zpracování nových objednávek a aktualizaci stávajících objednávek, které jsou zpracovávány. Implementace tohoto scénáře by vyžadovala hostování pracovního postupu v <xref:System.ServiceModel.WorkflowServiceHost> a používání aktivit zasílání zpráv. Bude také vyžadovat korelaci na základě `orderId`, aby bylo zajištěno, že budou aktualizace provedeny ve správném pracovním postupu.
 
 ## <a name="simplified-configuration"></a>Zjednodušená konfigurace
 
-Konfigurační schéma služby WCF je složitá a poskytuje uživatelům s mnoha obtížné najít funkce. V [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)], jsme se zaměřili na pomoc uživatelům WCF svoji službu nakonfigurovat následující funkce:
+Schéma konfigurace WCF je složité a poskytuje uživatelům mnoho obtížnéch funkcí hledání. V [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]jsme se zaměřili na pomoc uživatelům WCF s konfigurací svých služeb pomocí následujících funkcí:
 
-- Odstraňuje potřebu explicitní za služby konfigurace. Pokud nenakonfigurujete žádné \<služby > prvky pro vaši službu a vaše služba nedefinuje programově libovolný koncový bod a potom sadu koncových bodů se automaticky přidat do vaší služby, za základní adresa služby a za kontraktu implementované vaší služby.
+- Odebrání potřeby explicitní konfigurace podle služby. Pokud neprovedete konfiguraci žádného prvku > služby \<pro vaši službu a služba nedefinuje programově žádný koncový bod, pak se do vaší služby automaticky přidají sada koncových bodů, jednu pro každou základní adresu služby a pro každou smlouvu, kterou služba implementuje.
 
-- Umožňuje uživateli zadat výchozí hodnoty pro vazby WCF a chování, které se použijí ke službám bez explicitní konfigurace.
+- Umožňuje uživateli definovat výchozí hodnoty pro vazby a chování WCF, které budou aplikovány na služby bez explicitní konfigurace.
 
-- Standardní koncové body definují opakovaně použitelnými koncovými body, které mají pevné hodnoty pro jeden nebo více vlastností koncový bod (adresa, vazba a kontrakt) a umožňují definovat vlastní vlastnosti.
+- Standardní koncové body definují opakovaně používané předem nakonfigurované koncové body, které mají pevné hodnoty pro jednu nebo více vlastností koncového bodu (adresa, vazba a kontrakt) a umožňují definovat vlastní vlastnosti.
 
-- Nakonec <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> umožňuje centrální správu z konfigurace klienta WCF, užitečné v situacích, ve kterých je konfigurace vybrané nebo čas načtení domény aplikace se nemění.
+- Nakonec <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> umožňuje provádět centrální správu konfigurace klienta WCF, která je užitečná ve scénářích, ve kterých je vybraná konfigurace nebo se změnila po dobu načtení domény aplikace.
 
 ### <a name="getting-started"></a>Začínáme
 
-- [Příručka pro vývojáře k WCF 4.0](https://go.microsoft.com/fwlink/?LinkId=204940)
+- [Příručka pro vývojáře k WCF 4,0](https://go.microsoft.com/fwlink/?LinkId=204940)
 
 - [Objekt pro vytváření kanálů konfigurace](https://go.microsoft.com/fwlink/?LinkId=204941)
 
-- [Standardní koncový bod elementu](https://go.microsoft.com/fwlink/?LinkId=204942)
+- [Element standardního koncového bodu](https://go.microsoft.com/fwlink/?LinkId=204942)
 
-- [Služba konfigurace vylepšení v rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=204943)
+- [Vylepšení konfigurace služby v .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=204943)
 
-- [Běžnou chybou uživatele v rozhraní .NET 4: Chybným zadáním názvu služby konfigurace WF/WCF](https://go.microsoft.com/fwlink/?LinkId=204944)
+- [Běžná chyba uživatele v rozhraní .NET 4: zadání názvu konfigurace služby WF/WCF](https://go.microsoft.com/fwlink/?LinkId=204944)
 
-### <a name="simplified-configuration-scenarios"></a>Zjednodušená konfigurace scénáře
+### <a name="simplified-configuration-scenarios"></a>Zjednodušené scénáře konfigurace
 
-- Pokud chcete začít používat WCF chce, aby vývojáři ASMX. Ale WCF zdá se, že příliš složité! Co je všechny informace, které je potřeba napsat v konfiguračním souboru? V rozhraní .NET 4 můžete i rozhodnete mít konfigurační soubor není vůbec.
+- Zkušený vývojář ASMX chce začít používat WCF. WCF se ale jeví jako moc komplikované. Jaké jsou všechny informace, které potřebuji k zápisu do konfiguračního souboru? V rozhraní .NET 4 se můžete rozhodnout, že ještě nemáte konfigurační soubor.
 
-- Existující sady služeb WCF je velmi obtížné konfiguraci a údržbu. Konfigurační soubor obsahuje tisíce řádků kódu XML, které jsou velmi nebezpečné dotykového ovládání. Pro snížení velikosti kódu na něco lépe zvládnutelné je potřeba pomoc.
+- Existující sada služeb WCF je velmi obtížné nakonfigurovat a udržovat. Konfigurační soubor obsahuje tisíce řádků kódu XML, které jsou mimořádně nebezpečné dotykem. Je potřeba, abyste snížili množství kódu na něco, co je možné spravovat.
 
 ## <a name="data-contract-resolver"></a>Překladač kontraktu dat
 
-V rozhraní .NET 3.5 byly několik omezení v návrhu známé typy:
+V rozhraní .NET 3,5 bylo při návrhu známých typů zjištěno několik omezení:
 
-- Dynamické přidání známé typy, při serializaci nebo deserializaci, nebylo možné.
+- Přidávání známých typů dynamicky, během serializace nebo deserializace nebylo možné.
 
-- Serializátory nelze zacházet s informacemi o neznámé xsi: Type.
+- Serializátory nemohly zabývat s neznámými informacemi xsi: Type.
 
-- Nebylo možné pro uživatele k určení, jaké xsi: type mají zobrazovat na přenosu, aby, zmenšete velikost serializace instance na lince.
+- Uživatelé nedokázali určit, jaký typ xsi: Type by se měl na lince zobrazit, například nastavit velikost instance serializace na malém kabelu.
 
-[DataContractResolver](../wcf/samples/datacontractresolver.md) řeší tyto problémy v rozhraní .NET 4.5.
+[DataContractResolver](../wcf/samples/datacontractresolver.md) tyto problémy řeší v rozhraní .NET 4,5.
 
 ### <a name="getting-started"></a>Začínáme
 
-- [Dokumentace k API překladač kontraktu dat](https://go.microsoft.com/fwlink/?LinkId=204946)
+- [Dokumentace k rozhraní API překladače kontraktů dat](https://go.microsoft.com/fwlink/?LinkId=204946)
 
-- [Úvod do překladače kontraktů dat](https://go.microsoft.com/fwlink/?LinkId=204947)
+- [Představení překladače kontraktů dat](https://go.microsoft.com/fwlink/?LinkId=204947)
 
-- Ukázky:
+- Vzory
 
   - [DataContractResolver](../wcf/samples/datacontractresolver.md)
 
   - [KnownAssemblyAttribute](../wcf/samples/knownassemblyattribute.md)
 
-### <a name="data-contract-resolver-scenarios"></a>Scénáře překladač kontraktu dat
+### <a name="data-contract-resolver-scenarios"></a>Scénáře překladače kontraktů dat
 
-- Jak se vyhnout by bylo nutné deklarovat desítky <xref:System.Runtime.Serialization.KnownTypeAttribute> objektů ve službě.
+- Zamezení nutnosti deklarovat desítky <xref:System.Runtime.Serialization.KnownTypeAttribute> objektů ve službě.
 
-- Zmenšení velikosti objektu XML blob.
+- Zmenšení velikosti objektu blob XML.
 
 ## <a name="flowchart"></a>Vývojový diagram
 
-Vývojový diagram je dobře známé paradigma vizuálně znázornit domény problémy. Je nový styl tok řízení, které Zavádíme v rozhraní .NET 4. Základní charakteristik vývojový diagram je, že je v daném okamžiku provést pouze jednu aktivitu. Vývojových diagramů můžete vyjádřit smyčky a alternativní výsledků, ale nejde nativně express souběžné spouštění více uzlů.
+Vývojové diagramy jsou dobře známé paradigmaty, které vizuálně reprezentují problémy v doméně. Je to nový styl toku ovládacích prvků, který zavádíme v rozhraní .NET 4. Základní charakteristika vývojového diagramu je, že v daném okamžiku se spustí jenom jedna aktivita. Vývojové diagramy mohou vyjádřit smyčky a alternativní výsledky, ale nemohou nativně expresní souběžné provádění více uzlů.
 
 ### <a name="getting-started"></a>Začínáme
 
-- V sadě Visual Studio 2012 Vytvořte konzolovou aplikaci pracovního postupu. Vývojový diagram přidáte v Návrháři pracovních postupů.
+- V aplikaci Visual Studio 2012 vytvořte konzolovou aplikaci pracovního postupu. Přidejte vývojový diagram do návrháře pracovních postupů.
 
-- Vývojový diagram funkce používá následující třídy:
+- Funkce vývojového diagramu používá následující třídy:
 
   - <xref:System.Activities.Statements.Flowchart>
 
@@ -161,19 +161,19 @@ Vývojový diagram je dobře známé paradigma vizuálně znázornit domény pro
 
   - <xref:System.Activities.Statements.FlowSwitch%601>
 
-- Ukázky:
+- Vzory
 
   - [Zpracování chyb v aktivitě FlowChart pomocí TryCatch](./samples/fault-handling-in-a-flowchart-activity-using-trycatch.md)
 
   - [Proces náboru](./samples/hiring-process.md)
 
-- Návrháře dokumentace:
+- Dokumentace k Návrháři:
 
   - [Návrháři aktivit vývojového diagramu](/visualstudio/workflow-designer/flowchart-activity-designers)
 
-### <a name="flowchart-scenarios"></a>Vývojový diagram scénáře
+### <a name="flowchart-scenarios"></a>Scénáře vývojového diagramu
 
-Vývojový diagram aktivita slouží k implementaci rozluštění hru. Využití hry je velmi jednoduchý: náhodné číslo vybere počítače a hráč musí odhadnout toto číslo. Když hráč odešle každý odhad, počítač zobrazí mu pomocného parametru (to znamená "zkuste nižší číslo"). Pokud hráč najde číslo menší než 7 pokusů o přihlášení, dostane speciální Blahopřání z počítače. V této hře je možné implementovat pomocí kombinace následujících procedurálních aktivit:
+Aktivitu vývojového diagramu lze použít k implementaci odhadované hry. Odhadovaná hra je velmi jednoduchá: počítač vybere náhodné číslo a přehrávač musí toto číslo odhadnout. Když hráč každý odhad odešle, zobrazí mu nápovědu (tzn. "zkusit nižší číslo"). Pokud hráč najde číslo během méně než 7 pokusů, obdrží od počítače speciální congratulation. Tato hra se dá implementovat s kombinací následujících procedurálních aktivit:
 
 - <xref:System.Activities.Statements.Sequence>
 
@@ -187,174 +187,174 @@ Vývojový diagram aktivita slouží k implementaci rozluštění hru. Využití
 
 - <xref:System.Activities.Statements.If>
 
-## <a name="procedural-activities-sequence-if-foreach-switch-assign-dowhile-while"></a>Procedurálních aktivit (pořadí, v případě, ForEach, přepínač, přiřadit, DoWhile, zatímco)
+## <a name="procedural-activities-sequence-if-foreach-switch-assign-dowhile-while"></a>Procesní aktivity (sekvence, if, ForEach, přepínač, Assign, DoWhile, while)
 
-Procedurálních aktivit poskytují mechanismus pro model sekvenční řízení toku pomocí konceptů, které jsou pro programátory srozumitelná. Tyto aktivity povolit tradičně structured programování jazykovým konstrukcím a v případě potřeby a poskytne paritu jazyka common Procedurální jazyků, jako je C# / VB.
+Procesní aktivity poskytují mechanismus pro modelování sekvenčního řízení toku pomocí konceptů, které jsou obeznámeny s programátory. Tyto aktivity umožňují tradičně strukturované konstrukce programovacích jazyků a v případě potřeby poskytují jazykovou paritu běžných procedurálních jazyků, C#jako je/vb.
 
 ### <a name="getting-started"></a>Začínáme
 
-- V sadě Visual Studio 2012 Vytvořte konzolovou aplikaci pracovního postupu. Přidáte procedurálních aktivit v Návrháři pracovních postupů.
+- V aplikaci Visual Studio 2012 vytvořte konzolovou aplikaci pracovního postupu. Přidejte procedurální aktivity v Návrháři pracovních postupů.
 
-- Ukázky:
+- Vzory
 
   - [Proces náboru](./samples/hiring-process.md)
 
   - [Proces nákupu v podniku](./samples/corporate-purchase-process.md)
 
-- Návrháře dokumentace:
+- Dokumentace k Návrháři:
 
   - [Návrhář aktivity Parallel](/visualstudio/workflow-designer/parallel-activity-designer)
 
-  - [ParallelForEach\<T > návrháře aktivit](/visualstudio/workflow-designer/parallelforeach-t-activity-designer)
+  - [Návrhář aktivit > ParallelForEach\<T](/visualstudio/workflow-designer/parallelforeach-t-activity-designer)
 
-### <a name="procedural-activity-scenarios"></a>Scénáře procedurálních aktivit
+### <a name="procedural-activity-scenarios"></a>Scénáře činnosti procedurálního řízení
 
-- <xref:System.Activities.Statements.Parallel>: Systém správy intranetu dokumentu má pracovní postup schvalování dokumentů. Dokumenty vyžadují schválení uživatelé ve více oblastech, před publikováním na intranetu. Není k dispozici stanovené pořadí pro schválení; mohou probíhat kdykoli dokumentu je ve fázi "čekající schválení". Když uživatel odešle dokumentu ke kontrole ho musí schválit manažerovi s přímým přístupem, správce sítě intranet a správce interní komunikace.
+- <xref:System.Activities.Statements.Parallel>: systém správy dokumentů v intranetu má pracovní postup schvalování dokumentů. Než bude možné publikovat dokumenty v intranetu, je nutné, aby je uživatelé schválili v několika odděleních. Pro schválení není stanoveno pořadí; k tomu může dojít kdykoli, když je dokument ve fázi schválení "čeká na schválení". Když uživatel dokument pošle k revizi, musí ho schválit jeho přímý nadřízený, správce intranetu a interní komunikační správce.
 
-- <xref:System.Activities.Statements.ParallelForEach%601>: WF aplikace spravuje firemní koupí ve velké společnosti. Firemní pravidla určují, že před plánování všechny operace nákupu, je vyžadována ocenění tří různých výrobců. Zaměstnanci z oddělení nákupu vybere tři dodavatelům společnosti dodavatele seznamu. Po těchto dodavatelů byly vybrané a upozornění, bude společnost čekat jejich ekonomické návrhy. Návrhy můžou mít v libovolném pořadí. Tento scénář implementovat v WF, použijeme <xref:System.Activities.Statements.ParallelForEach%601> , který bude iteraci v rámci naší kolekce dodavatelů a požádat o jejich ekonomické návrhy. Když jsou shromážděné všechny nabídky, je ten nejlepší vybrané a zobrazit.
+- <xref:System.Activities.Statements.ParallelForEach%601>: aplikace WF spravuje podnikové koupě v rámci velké společnosti. Podniková pravidla je určují, že před plánováním operací nákupu se vyžadují ocenění tří různých dodavatelů. Zaměstnanec z nákupního oddělení vybere tři dodavatele ze seznamu dodavatelů společnosti. Po výběru a oznámení těchto dodavatelů bude společnost čekat na jejich ekonomické návrhy. Návrhy můžou být v libovolném pořadí. K implementaci tohoto scénáře na WF používáme <xref:System.Activities.Statements.ParallelForEach%601>, který se bude iterovat prostřednictvím naší kolekce dodavatelů a požádat o jejich ekonomické návrhy. Po shromáždění všech nabídek se vybere a zobrazí nejlepší z nich.
 
 ## <a name="invokemethod"></a>InvokeMethod
 
-<xref:System.Activities.Statements.InvokeMethod> Aktivity umožňuje vyvolání veřejných metod v objektech nebo typy v oboru. To podporuje volání instance a statické metody s nebo bez parametrů (včetně pole parametrů) a obecné metody. Umožňuje také synchronního a asynchronního provedení metody.
+Aktivita <xref:System.Activities.Statements.InvokeMethod> umožňuje vyvolání veřejných metod v objektech nebo typech v oboru. Podporuje vyvolání instance a statických metod s parametry nebo bez parametrů (včetně polí parametrů) a obecných metod. Také umožňuje provádět synchronní a asynchronní provádění metody.
 
 ### <a name="getting-started"></a>Začínáme
 
-- V sadě Visual Studio 2012 Vytvořte konzolovou aplikaci pracovního postupu. Přidat <xref:System.Activities.Statements.InvokeMethod> aktivity v Návrháři pracovních postupů a nakonfigurovat statické a instanci metody na něj.
+- V aplikaci Visual Studio 2012 vytvořte konzolovou aplikaci pracovního postupu. Přidejte aktivitu <xref:System.Activities.Statements.InvokeMethod> v Návrháři postupu a nakonfigurujte pro ni statické a instanční metody.
 
-- Návrháře dokumentace: [Návrhář aktivity InvokeMethod](/visualstudio/workflow-designer/invokemethod-activity-designer)
+- Dokumentace návrháře: [Návrhář aktivity InvokeMethod](/visualstudio/workflow-designer/invokemethod-activity-designer)
 
-### <a name="invokemethod-scenarios"></a>InvokeMethod scénáře
+### <a name="invokemethod-scenarios"></a>Scénáře InvokeMethod
 
-- Metoda v objektu v oboru musí být vyvolána. Například hodnota musí být přidán do slovníku. Vyvolání metody přidat instance slovníku a jsou k dispozici klíč a hodnotu.
+- Metoda v objektu v oboru musí být vyvolána. Například hodnota musí být přidána do slovníku. Metoda Add instance slovníku je vyvolána a klíč a hodnota jsou k dispozici.
 
-- Metody se musí zavolat na objekt starší verze CLR. Místo vytváření vlastní aktivitu pro zabalte volání do starší verze třídy, pokud se nachází v oboru během provádění pracovního postupu <xref:System.Activities.Statements.InvokeMethod> lze použít.
+- Metoda musí být vyvolána na starší verzi objektu CLR. Namísto vytvoření vlastní aktivity pro zabalení volání této starší třídy, pokud je v oboru během provádění pracovního postupu, lze použít <xref:System.Activities.Statements.InvokeMethod>.
 
-## <a name="error-handling-activities"></a>Chyba zpracování aktivity
+## <a name="error-handling-activities"></a>Aktivity zpracovávající chyby
 
-<xref:System.Activities.Statements.TryCatch> Aktivita poskytuje mechanismus pro zachycování výjimek, ke kterým dochází při spuštění sady obsažené aktivity (podobně jako bloku Try/Catch konstrukce v jazyce C# /VB). <xref:System.Activities.Statements.TryCatch> nabízí na úrovni pracovního postupu zpracování výjimek. Když dojde k neošetřené výjimce, pracovní postup je zrušen a nakonec nebude provedeno bloku. Toto chování je konzistentní s jazykem C#.
+Aktivita <xref:System.Activities.Statements.TryCatch> poskytuje mechanismus pro zachycení výjimek, ke kterým dochází během provádění sady obsažených aktivit (podobně jako konstrukce try/catch v C#/VB). <xref:System.Activities.Statements.TryCatch> poskytuje zpracování výjimek na úrovni pracovního postupu. Pokud je vyvolána neošetřená výjimka, je pracovní postup přerušen a blok finally nebude proveden. Toto chování je konzistentní s C#.
 
 ### <a name="getting-started"></a>Začínáme
 
-- V sadě Visual Studio 2012 Vytvořte konzolovou aplikaci pracovního postupu. Přidat <xref:System.Activities.Statements.TryCatch> aktivity v Návrháři pracovních postupů.
+- V aplikaci Visual Studio 2012 vytvořte konzolovou aplikaci pracovního postupu. Přidejte aktivitu <xref:System.Activities.Statements.TryCatch> v Návrháři pracovních postupů.
 
-- Ukázka: [Zpracování chyb v aktivitě FlowChart pomocí TryCatch](./samples/fault-handling-in-a-flowchart-activity-using-trycatch.md)
+- Ukázka: [zpracování chyb v aktivitě vývojového diagramu pomocí TryCatch](./samples/fault-handling-in-a-flowchart-activity-using-trycatch.md)
 
-- Návrháře dokumentace: [Návrháři aktivit zpracování chyb](/visualstudio/workflow-designer/error-handling-activity-designers)
+- Dokumentace návrháře: [zpracování chyb návrháři aktivit](/visualstudio/workflow-designer/error-handling-activity-designers)
 
 ### <a name="error-handling-scenarios"></a>Scénáře zpracování chyb
 
-Sada aktivit je nutné spustit a logika specifická pro je potřeba provést, když dojde k chybě. Pokud se během tohoto logiku zpracování chyb nenajde, chyby se nedá vrátit zpátky, bude znovu vyvolána výjimka a Nadřazená aktivita (nebo hostiteli) bude řešit potíže.
+Je nutné provést sadu aktivit a při výskytu chyby musí být provedena konkrétní logika. Pokud v této logice zpracování chyb zjistíte, že chyba není obnovitelná, výjimka se znovu vyvolá a Nadřazená aktivita (nebo hostitel) se tomuto problému zaměří.
 
-## <a name="pick-activity"></a>Výběr aktivity
+## <a name="pick-activity"></a>Aktivita výběru
 
-<xref:System.Activities.Statements.Pick> Aktivita poskytuje modelování v WF toku řízení založené na událostech. <xref:System.Activities.Statements.Pick> obsahuje mnoho větví, kde každá větev čeká čekají na výskyt dřív, než spustíte konkrétní události. V tomto nastavení <xref:System.Activities.Statements.Pick> chová podobně jako <xref:System.Activities.Statements.Switch%601> do které aktivita bude provedena pouze jednu sadu událostí, které naslouchá. Každá větev je řízené událostmi a události, ke které dojde k první běží odpovídající větev. Všechny ostatní větve zrušit a ukončit naslouchání událostem.
+Aktivita <xref:System.Activities.Statements.Pick> poskytuje modelování toku řízení založeného na událostech na WF. <xref:System.Activities.Statements.Pick> obsahuje mnoho větví, ve kterých každá větev čeká na určitou událost před spuštěním. V tomto nastavení se <xref:System.Activities.Statements.Pick> chová podobně jako <xref:System.Activities.Statements.Switch%601>, na které aktivita spustí pouze jednu ze sady událostí, kterou naslouchá. Každá větev je řízený událost a událost, ke které dojde, spustí nejprve příslušnou větev. Všechny ostatní větve zruší a zastaví naslouchání pro události.
 
 ### <a name="getting-started"></a>Začínáme
 
-- V sadě Visual Studio 2012 Vytvořte konzolovou aplikaci pracovního postupu. Přidat <xref:System.Activities.Statements.Pick> aktivity v Návrháři pracovních postupů.
+- V aplikaci Visual Studio 2012 vytvořte konzolovou aplikaci pracovního postupu. Přidejte aktivitu <xref:System.Activities.Statements.Pick> v Návrháři pracovních postupů.
 
-- Ukázka: [Použití aktivity Pick](./samples/using-the-pick-activity.md)
+- Ukázka: [použití aktivity výběru](./samples/using-the-pick-activity.md)
 
-- Návrháře dokumentace: [Návrhář aktivity Pick](/visualstudio/workflow-designer/pick-activity-designer)
+- Dokumentace návrháře: [Návrhář aktivity výběru](/visualstudio/workflow-designer/pick-activity-designer)
 
-### <a name="pick-scenario"></a>Vyberte si scénáře
+### <a name="pick-scenario"></a>Scénář výběru
 
-Uživatel musí být vyzváni k zadání vstupu. Za normálních okolností byste použili vývojář volání metody, například <xref:System.Console.ReadLine%2A> výzvu k zadání uživatele. Problém s tímto nastavením je, že program čeká, dokud uživatel nezadá něco. V tomto scénáři je potřeba vypršení časového limitu pro odblokování blokující aktivity. Běžný scénář, kdy je takový, který se vyžaduje pro dokončení v rámci dané dobu trvání úkolu. Vypršení časového limitu blokující aktivity je scénář, ve kterém výběr přidá spoustu vylepšení.
+Uživatel musí být vyzván k zadání vstupu. Za normálních okolností by vývojář používal volání metody, jako je <xref:System.Console.ReadLine%2A> k zobrazení výzvy k zadání uživatele. Problém s tímto nastavením je, že program čeká, dokud uživatel nezadá něco. V tomto scénáři je potřeba časový limit odblokování blokující aktivity. Běžným scénářem je jeden, který vyžaduje dokončení úkolu v rámci dané doby trvání. Načasování blokující aktivity je scénář, ve kterém nástroj pro výběr přidá hodně hodnot.
 
 ## <a name="wcf-routing-service"></a>Směrovací služba WCF
 
-Směrovací služba je navržena jako obecný softwaru směrovač, který umožňuje řídit, jak tok zpráv WCF mezi klienty a služby. Směrovací služba umožňuje oddělit klienty od služeb, které dává větší svobodu z hlediska konfigurace, může podporovat a flexibilitu, je nutné při úvahách o tom, jak hostovat vaše služby. V rozhraní .NET 3.5 klienty a služby byly úzce párované; Klient musí vědět o všechny potřebné ke komunikaci a kde se nachází služby. Kromě toho WCF v rozhraní .NET Framework 3.5 mělo následující omezení:
+Směrovací služba je navržená jako obecný softwarový směrovač, který umožňuje řídit, jak se zprávy WCF směrují mezi klienty a službami. Směrovací služba umožňuje oddělit klienty od služeb, což vám dává mnohem větší volnost v souvislosti s konfiguracemi, které můžete podporovat, a flexibilitou, kterou máte při zvažování toho, jak vaše služby hostovat. V rozhraní .NET 3,5 byly klienti a služby úzce spojeni. klient musel znát všechny služby, které potřebují ke komunikaci s a kde se nacházejí. Kromě toho WCF v .NET Framework 3,5 má následující omezení:
 
-- Zpracování chyb bylo složité, jak tuto logiku, musela být pevně zakódovaný do klienta.
+- Zpracování chyb bylo složité, protože tato logika musela být pevně zakódována do klienta.
 
-- Služby a klienti měli vždy používat stejné vazby.
+- Klienti a služby museli vždy používat stejné vazby.
 
-- Služby byly jen zřídka a dostaneme: jde snadno můžete mít klienta, obraťte se na jednu službu, která implementuje všechno, co, nikoli vyžadující si vybrat mezi více služeb.
+- Služby byly zřídka dobře vyladěny: klient je snazší, aby mohl komunikovat s jednou službou, která implementuje vše a nepotřebuje vybírat mezi více službami.
 
-Služba směrování v rozhraní .NET 4 je navržené tak, aby tyto problémy snadněji řešit. Nová služba Směrování má následující funkce:
+Směrovací služba v .NET 4 je navržená tak, aby se tyto problémy lépe vyřešily. Nová směrovací služba má následující funkce:
 
-1. Směrování na základě obsahu (<xref:System.ServiceModel.Dispatcher.MessageFilter> objekty zkontrolovat zprávy k určení, kde má být odeslána.)
+1. Směrování založené na obsahu (<xref:System.ServiceModel.Dispatcher.MessageFilter> objekty prozkoumají zprávu a určíte, kam se má odeslat.)
 
-2. Protokol přemostění Datacenter (přenosu a zprávy)
+2. Přemostění protokolu (přenosová & zpráva)
 
-3. Zpracování chyb (router zachytí výjimky komunikace a převezme služby při selhání zálohování koncových bodů)
+3. Zpracování chyb (směrovač zachytává výjimky komunikace a převzetí služeb při selhání koncovými body zálohování)
 
-4. (V paměti) dynamickou aktualizaci <xref:System.ServiceModel.Dispatcher.MessageFilterTable%601> a konfiguraci směrování.
+4. Dynamická aktualizace (v paměti) <xref:System.ServiceModel.Dispatcher.MessageFilterTable%601> a konfigurace směrování.
 
 ### <a name="getting-started"></a>Začínáme
 
-1. Dokumentace ke službě: [Směrování](../wcf/feature-details/routing.md)
+1. Dokumentace: [Směrování](../wcf/feature-details/routing.md)
 
-2. Ukázky: [Směrovací služby &#91;Ukázky WCF&#93;](../wcf/samples/routing-services.md)
+2. Ukázky: [ukázky&#93; služby &#91;Routing Services WCF](../wcf/samples/routing-services.md)
 
-3. Blog: [Pravidla směrování!](https://go.microsoft.com/fwlink/?LinkId=204956)
+3. Blog: [pravidla směrování!](https://go.microsoft.com/fwlink/?LinkId=204956)
 
 ### <a name="routing-scenarios"></a>Scénáře směrování
 
 Směrovací služba je užitečná v následujících scénářích:
 
-- Klienty můžete komunikovat s víc služeb bez nutnosti je řešit všechny přímo.
+- Klienti můžou komunikovat s více službami, aniž by museli je řešit přímo.
 
-- Klienty můžete provádět další logiku k určení, kam směruje žádosti klienta
+- Klienti mohou provést další logiku na žádost klienta o určení místa směrování
 
-- Rozložit operace, které klient provede do více implementací služby bez refaktoring klienta.
+- Rozloží operace, které klient provádí, do více implementací služeb bez refaktoringu klienta.
 
-- Služby a klienti mohou mluvit různých vazby s nastavením zabezpečení.
+- Klienti a služby můžou namluvit s různými nastaveními zabezpečení různé vazby.
 
-- Klienty je možné povolit bude větší odolnost proti selhání nebo nedostupnosti služby.
+- U klientů se dá povolit větší robustnost před selháním nebo nedostupností služeb.
 
 ## <a name="wcf-discovery"></a>Zjišťování WCF
 
-Zjišťování WCF je technologie rozhraní framework, která umožňuje začlenit zjišťování mechanismus pro vaší aplikační infrastruktury. Můžete to použít zjistitelnost služby a nakonfigurovat vaši klienti pro vyhledání služeb. Klienti už nemusí být obtížné programového s koncovým bodem, provádění vaší aplikace je robustnější a odolnost proti chybám. Zjišťování je ideální platformu pro automatickou konfiguraci funkcí pro sestavení do vaší aplikace.
+Zjišťování WCF je technologie architektury, která umožňuje začlenit mechanismus zjišťování do vaší aplikační infrastruktury. Pomocí tohoto nastavení můžete službu zjistit a nakonfigurovat klienty tak, aby vyhledali služby. Klienti už nemusejí být pevně kódované s koncovým bodem, takže vaše aplikace bude robustnější a odolná proti chybám. Zjišťování je ideální platformou pro sestavování možností automatické konfigurace do vaší aplikace.
 
-Produkt je postavený na standardu WS-Discovery. Je navržena tak, aby se interoperabilní, rozšiřitelné a obecné. Produkt podporuje dva režimy činnosti:
+Produkt je postaven nad standardem WS-Discovery. Je navržený tak, aby byl interoperabilní, rozšiřitelný a obecný. Produkt podporuje dva režimy provozu:
 
-1. Spravované: níž se nachází entity v síti informovanosti ohledně existujících služeb, klienti se ho dotazovat přímo na informace. To je obdobou služby Active Directory.
+1. Spravované: v případě, že je v síti dostupná nějaká entita o stávajících službách, klienti se dotazují přímo na informace. To je obdobou služby Active Directory.
 
-2. Ad-hoc: kde klienti používat zprávy vícesměrového vysílání pro vyhledání služeb.
+2. Ad hoc: kde klienti používají zprávy vícesměrového vysílání k vyhledání služeb.
 
-Kromě toho zjišťování zprávy jsou nezávislá na protokolu sítě; můžete je v horní části libovolného protokolu, který podporuje požadavky dané režimu. Například zjišťování odesílat zprávy vícesměrového vysílání přes kanál protokolu UDP nebo jinou síť, která podporuje zasílání zpráv vícesměrového vysílání. Tyto body, v kombinaci s funkcí flexibilitu, umožňuje přizpůsobit zjišťování speciálně pro vaše řešení návrhu.
+Zprávy zjišťování jsou navíc síťový protokol nezávislá; můžete je použít v jakémkoli protokolu, který podporuje požadavky na režim. Například zprávy vícesměrového vysílání se dají odesílat přes kanál UDP nebo jakoukoli jinou síť, která podporuje zasílání zpráv vícesměrového vysílání. Tyto body návrhu v kombinaci s flexibilitou funkcí umožňují přizpůsobit zjišťování specificky pro vaše řešení.
 
 ### <a name="getting-started"></a>Začínáme
 
-- Dokumentace ke službě: [Zjišťování WCF](../wcf/feature-details/wcf-discovery.md)
+- Dokumentace: [zjišťování WCF](../wcf/feature-details/wcf-discovery.md)
 
-- Ukázky: [Zjišťování (Ukázky)](../wcf/samples/discovery-samples.md)
+- Ukázky: [zjišťování (ukázky)](../wcf/samples/discovery-samples.md)
 
-### <a name="discovery-scenarios"></a>Zjišťování scénáře
+### <a name="discovery-scenarios"></a>Scénáře zjišťování
 
-Vývojář nechce pevný kód koncové body, protože není známo, kdy bude služba k dispozici. Místo toho vývojář chce vybrat službu za běhu. Další oddělení, odolnosti a Automatická konfigurace je potřeba mezi součástmi aplikace.
+Vývojář nechce, aby se koncovým bodům nezměnil, protože není znám, když bude k dispozici moje služba. Místo toho chce vývojář zvolit službu za běhu. Mezi komponentami v aplikaci je potřeba víc oddálení, odolnost a Automatická konfigurace.
 
 ## <a name="tracking"></a>Sledování
 
-Pracovní postup sledování poskytuje přehled o spuštění instance pracovního postupu. Sledování události se vysílají z pracovního postupu na úrovni instance pracovního postupu a při spuštění aktivity v rámci pracovního postupu. Sledování účastník pracovního postupu musí být přidán do hostitele pracovního postupu k odběru sledování záznamů. Na sledování záznamy jsou filtrovány pomocí profilu sledování. Rozhraní .NET Framework poskytuje účastník sledování ETW (událost trasování pro Windows) a základní profil je nainstalovaný v souboru machine.config.
+Sledování pracovního postupu nabízí přehled o provádění instance pracovního postupu. Události sledování se generují z pracovního postupu na úrovni instance pracovního postupu a při provádění aktivit v rámci pracovního postupu. Účastník sledování pracovního postupu musí být přidán do hostitele pracovního postupu, aby se mohl přihlásit k odběru sledování záznamů. Záznamy sledování se filtrují pomocí sledovacího profilu. .NET Framework poskytuje účastník sledování trasování událostí pro Windows (Event Tracing for Windows) a v souboru Machine. config je nainstalovaný základní profil.
 
 ### <a name="getting-started"></a>Začínáme
 
-1. V sadě Visual Studio 2010 vytvořte projekt aplikace služby pracovního postupu WCF. A <xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.SendReply> pár se umístí na plátně spustit.
+1. V aplikaci Visual Studio 2010 vytvořte projekt aplikace služby pracovního postupu WCF. Na plátno se umístí pár <xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.SendReply>, aby se spustila.
 
-2. Otevřete soubor web.config a přidat trasování událostí pro Windows sledování chování se žádný profil.
+2. Otevřete soubor Web. config a přidejte chování sledování ETW bez profilu.
 
-    1. Výchozí profil se používá.
+    1. Použije se výchozí profil.
 
-    2. Otevřete Prohlížeč událostí a povolení analytického kanálu v následující uzel: **Prohlížeč událostí**, **protokoly aplikací a služeb**, **Microsoft**, **Windows**, **serverové aplikace – aplikace**. Klikněte pravým tlačítkem na **analytické** a vyberte **povolit protokol**.
+    2. Otevřete Prohlížeč událostí a povolte analytický kanál v následujícím uzlu: **Prohlížeč událostí**, **protokoly aplikací a služeb**, **Microsoft**, **Windows**, **aplikační server – aplikace**. Klikněte pravým tlačítkem na možnost **analytické** a vyberte **Povolit protokol**.
 
-    3. Spuštění služby pracovního postupu.
+    3. Spusťte službu pracovního postupu.
 
-    4. Sledujte pracovního postupu událostí sledování v prohlížeči událostí.
+    4. Sledujte události sledování pracovních postupů v prohlížeči událostí.
 
-3. Ukázky: [Sledování](./samples/tracking.md)
+3. Ukázky: [sledování](./samples/tracking.md)
 
-4. Rámcové dokumentaci: [Sledování a trasování pracovních postupů](workflow-tracking-and-tracing.md)
+4. Koncepční dokumentace: [sledování a trasování pracovních postupů](workflow-tracking-and-tracing.md)
 
 ## <a name="sql-workflow-instance-store"></a>Úložiště instancí pracovních postupů SQL
 
-<xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> Je implementace úložiště instance systémem SQL Server. Úložiště instance ukládá stav spuštěné instance společně se všechna data potřebná pro načtení a pokračovat v této instanci. Hostitel služby instruuje v úložišti instancí uložit stav instance, pokud pracovní postup se opakuje a nastaví v úložišti instancí načíst stav instance při přijetí e-mailu pro danou instanci nebo aktivitě delay vyprší platnost.
+<xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> je implementace instance na základě SQL Server. Úložiště instancí ukládá stav spuštěné instance společně se všemi daty potřebnými pro načtení a obnovení této instance. Hostitel služby instruuje úložiště instancí, aby uložil stav instance, pokud pracovní postup přetrvává, a nastaví úložiště instancí, aby načetlo stav instance, když se do této instance dorazí zpráva pro tuto instanci nebo když platnost aktivity zpoždění vyprší.
 
 ### <a name="getting-started"></a>Začínáme
 
-1. V sadě Visual Studio 2012, vytvořit pracovní postup, který obsahuje implicitní nebo explicitní <xref:System.Activities.Statements.Persist> aktivity. Přidat <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> chování na hostitele služby pracovního postupu. To můžete udělat v kódu nebo konfiguračního souboru aplikace.
+1. V aplikaci Visual Studio 2012 vytvořte pracovní postup, který obsahuje implicitní nebo explicitní aktivitu <xref:System.Activities.Statements.Persist>. Přidejte <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> chování do hostitele služby pracovního postupu. To lze provést v kódu nebo v konfiguračním souboru aplikace.
 
-2. Ukázky: [Uchování](./samples/persistence.md)
+2. Ukázky: [trvalost](/previous-versions/dotnet/netframework-4.0/dd699769(v%3dvs.100))
 
-3. Rámcové dokumentaci: [Store Instance pracovního postupu SQL](sql-workflow-instance-store.md).
+3. Koncepční dokumentace: [úložiště instancí pracovních postupů SQL](sql-workflow-instance-store.md)

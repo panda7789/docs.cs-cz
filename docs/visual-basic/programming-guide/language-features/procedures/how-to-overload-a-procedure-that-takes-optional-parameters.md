@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přetížení procedury, která přebírá volitelné parametry (Visual Basic)'
+title: 'Postupy: Přetížení procedury, která přebírá volitelné parametry'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - procedures [Visual Basic], parameters
@@ -10,33 +10,33 @@ helpviewer_keywords:
 - procedures [Visual Basic], overloading
 - procedures [Visual Basic], multiple versions
 ms.assetid: 825f9d56-4cde-43fd-993a-b9171717e2eb
-ms.openlocfilehash: 4374a229392d51b67c99210da91ae05dd3342e96
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
+ms.openlocfilehash: 4d31980e4b968cff274091ba4f307dffddab1100
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66424053"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350866"
 ---
 # <a name="how-to-overload-a-procedure-that-takes-optional-parameters-visual-basic"></a>Postupy: Přetížení procedury, která přebírá volitelné parametry (Visual Basic)
-Pokud procedura má jeden nebo více [volitelné](../../../../visual-basic/language-reference/modifiers/optional.md) parametry, nelze definovat přetížený verzi, která odpovídá některé z jeho implicitní přetížení. Další informace najdete v tématu "Implicitní přetížení pro volitelné parametry" [aspekty přetížení procedur](./considerations-in-overloading-procedures.md).  
+If a procedure has one or more [Optional](../../../../visual-basic/language-reference/modifiers/optional.md) parameters, you cannot define an overloaded version matching any of its implicit overloads. For more information, see "Implicit Overloads for Optional Parameters" in [Considerations in Overloading Procedures](./considerations-in-overloading-procedures.md).  
   
-## <a name="one-optional-parameter"></a>Jeden volitelný parametr  
+## <a name="one-optional-parameter"></a>One Optional Parameter  
   
-#### <a name="to-overload-a-procedure-that-takes-one-optional-parameter"></a>Přetížení procedury, která přijímá jeden volitelný parametr  
+#### <a name="to-overload-a-procedure-that-takes-one-optional-parameter"></a>To overload a procedure that takes one optional parameter  
   
-1. Zápis `Sub` nebo `Function` příkazu deklarace, která obsahuje volitelný parametr v seznamu parametrů. Nepoužívejte `Optional` – klíčové slovo v této verzi přetížená.  
+1. Write a `Sub` or `Function` declaration statement that includes the optional parameter in the parameter list. Do not use the `Optional` keyword in this overloaded version.  
   
-2. Předcházet `Sub` nebo `Function` – klíčové slovo se [přetížení](../../../../visual-basic/language-reference/modifiers/overloads.md) – klíčové slovo.  
+2. Precede the `Sub` or `Function` keyword with the [Overloads](../../../../visual-basic/language-reference/modifiers/overloads.md) keyword.  
   
-3. Napište kód postup, který by se měl spustit, když volající kód poskytuje nepovinný argument.  
+3. Write the procedure code that should execute when the calling code supplies the optional argument.  
   
-4. Ukončí proceduru s `End Sub` nebo `End Function` příkaz podle potřeby.  
+4. Terminate the procedure with the `End Sub` or `End Function` statement as appropriate.  
   
-5. Zápis druhého příkazu deklarace, která je stejná jako první deklarace s tím rozdílem, že neobsahuje volitelný parametr v seznamu parametrů.  
+5. Write a second declaration statement that is identical to the first declaration except that it does not include the optional parameter in the parameter list.  
   
-6. Napište kód postup, který by se měl spustit, když volající kód neposkytuje nepovinný argument. Ukončí proceduru s `End Sub` nebo `End Function` příkaz podle potřeby.  
+6. Write the procedure code that should execute when the calling code does not supply the optional argument. Terminate the procedure with the `End Sub` or `End Function` statement as appropriate.  
   
-     Následující příklad ukazuje definované s volitelným parametrem, ekvivalentní sadu dvě přetížení procedury a nakonec příkladem neplatné a platný přetížené verze procedury.  
+     The following example shows a procedure defined with an optional parameter,  an equivalent set of two overloaded procedures, and finally examples of both invalid and valid overloaded versions.  
   
      [!code-vb[VbVbcnProcedures#59](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#59)]  
   
@@ -44,22 +44,22 @@ Pokud procedura má jeden nebo více [volitelné](../../../../visual-basic/langu
   
      [!code-vb[VbVbcnProcedures#61](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#61)]  
   
-## <a name="multiple-optional-parameters"></a>Více volitelné parametry  
- Pro proceduru s více než jeden volitelný parametr musíte obvykle více než dvě přetížené verze. Například pokud existují dva volitelné parametry a volající kód můžete zadat nebo vynechat, nechte každé z nich nezávisle na druhém, je třeba čtyři přetížené verze, jeden pro jednotlivých možných kombinací zadaným argumentům.  
+## <a name="multiple-optional-parameters"></a>Multiple Optional Parameters  
+ For a procedure with more than one optional parameter, you normally need more than two overloaded versions. For example, if there are two optional parameters, and the calling code can supply or omit each one independently of the other, you need four overloaded versions, one for each possible combination of supplied arguments.  
   
- Jak se zvyšuje počet volitelné parametry, zvyšuje složitost přetížení. Není-li některá kombinace zadané argumenty nejsou přípustné, nepovinných parametrů. N potřebujete 2 ^ N přetížené verze. V závislosti na povaze postup můžete zjistit, že srozumitelnost logiky odůvodňuje další úsilí definice přetížené verze.  
+ As the number of optional parameters increases, the complexity of the overloading increases. Unless some combinations of supplied arguments are not acceptable, for N optional parameters you need 2 ^ N overloaded versions. Depending on the nature of the procedure, you might find that the clarity of logic justifies the extra effort of defining all the overloaded versions.  
   
-#### <a name="to-overload-a-procedure-that-takes-more-than-one-optional-parameter"></a>Přetížení procedury, která má více než jeden volitelný parametr  
+#### <a name="to-overload-a-procedure-that-takes-more-than-one-optional-parameter"></a>To overload a procedure that takes more than one optional parameter  
   
-1. Určete, jaké kombinace zadaná volitelné argumenty jsou přijatelné logiku podle postupu. Nepřijatelné kombinaci může nastat, pokud jeden volitelný parametr, závisí na jiném. Například pokud jméno osoby přijímá jeden parametr a jiné přijímá věku osoby, kombinace argumentů poskytnutí stáří, ale bez názvu nepřijatelné.  
+1. Determine which combinations of supplied optional arguments are acceptable to the logic of the procedure. An unacceptable combination might arise if one optional parameter depends on another. For example, if one parameter accepts a person's name and another accepts the person's age, a combination of arguments supplying the age but omitting the name is unacceptable.  
   
-2. Pro každý přijatelné kombinace zadaná volitelné argumenty zapisovat `Sub` nebo `Function` příkazu deklarace, která definuje odpovídající seznamu parametrů. Nepoužívejte `Optional` – klíčové slovo.  
+2. For each acceptable combination of supplied optional arguments, write a `Sub` or `Function` declaration statement that defines the corresponding parameter list. Do not use the `Optional` keyword.  
   
-3. V deklaraci, předcházet `Sub` nebo `Function` – klíčové slovo se [přetížení](../../../../visual-basic/language-reference/modifiers/overloads.md) – klíčové slovo.  
+3. In each declaration, precede the `Sub` or `Function` keyword with the [Overloads](../../../../visual-basic/language-reference/modifiers/overloads.md) keyword.  
   
-4. Po deklaraci psát kód postup, který by se měl spustit, když volající kód poskytuje seznam argumentů odpovídající této deklarace seznamu parametrů.  
+4. Following each declaration, write the procedure code that should execute when the calling code supplies an argument list corresponding to that declaration's parameter list.  
   
-5. Ukončit každý postup s `End Sub` nebo `End Function` příkaz podle potřeby.  
+5. Terminate each procedure with the `End Sub` or `End Function` statement as appropriate.  
   
 ## <a name="see-also"></a>Viz také:
 

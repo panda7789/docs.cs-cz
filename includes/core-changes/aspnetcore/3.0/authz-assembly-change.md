@@ -1,21 +1,20 @@
 ---
-ms.openlocfilehash: 65bac44c84589fb55d2b04c39088c2825c451a6b
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: b91cdc7a0d2e4258662155a840500ce21ab35760
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72394065"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74100819"
 ---
 ### <a name="authorization-addauthorization-overload-moved-to-different-assembly"></a>Autorizace: přetížení AddAuthorization se přesunulo do jiného sestavení.
 
-Základní metody `AddAuthorization`, které se nacházejí v `Microsoft.AspNetCore.Authorization`, byly přejmenovány na `AddAuthorizationCore`. Staré metody `AddAuthorization` stále existují, ale místo toho jsou v balíčku `Microsoft.AspNetCore.Authorization.Policy`. U aplikací, které používají obě metody, by se měl zobrazit žádný vliv. Aplikace, které balíček zásad nepoužívaly, se musí přepnout na použití `AddAuthorizationCore`.
+Základní metody `AddAuthorization`, které se nacházejí v `Microsoft.AspNetCore.Authorization`, byly přejmenovány na `AddAuthorizationCore`. Staré metody `AddAuthorization` stále existují, ale jsou místo toho v sestavení `Microsoft.AspNetCore.Authorization.Policy`. U aplikací, které používají obě metody, by se měl zobrazit žádný vliv. Všimněte si, že `Microsoft.AspNetCore.Authorization.Policy` nyní dodává do sdíleného rozhraní, nikoli jako samostatný balíček, jak je popsáno v tématu [Shared Framework: sestavení byla odebrána z Microsoft. AspNetCore. app](#shared-framework-assemblies-removed-from-microsoftaspnetcoreapp).
 
 #### <a name="version-introduced"></a>Představená verze
 
 3.0
 
 #### <a name="old-behavior"></a>Staré chování
-
 v `Microsoft.AspNetCore.Authorization` existovaly metody `AddAuthorization`.
 
 #### <a name="new-behavior"></a>Nové chování

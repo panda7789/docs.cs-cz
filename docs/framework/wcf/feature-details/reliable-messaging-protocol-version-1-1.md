@@ -2,79 +2,79 @@
 title: Protokol spolehlivého zasílání zpráv verze 1.1
 ms.date: 03/30/2017
 ms.assetid: 0da47b82-f8eb-42da-8bfe-e56ce7ba6f59
-ms.openlocfilehash: 349c4dec8f127640d2709abcd63295aace6826df
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9320787317131f42c4a82c6114a16fdea87567f4
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64754113"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283302"
 ---
 # <a name="reliable-messaging-protocol-version-11"></a>Protokol spolehlivého zasílání zpráv verze 1.1
 
-Toto téma obsahuje podrobné informace o nasazení Windows Communication Foundation (WCF) pro WS-ReliableMessaging protokol února 2007 (verze 1.1) nezbytné pro spolupráci pomocí přenos pomocí protokolu HTTP. WCF dodržuje specifikaci WS-ReliableMessaging s omezením a vyjasnění je vysvětleno v tomto tématu. Všimněte si, že se implementuje protokol WS-ReliableMessaging verze 1.1 počínaje [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)].
+Toto téma obsahuje podrobnosti o implementaci Windows Communication Foundation (WCF) pro protokol WS-ReliableMessaging únor 2007 (verze 1,1), který je nezbytný pro meziprovozu pomocí přenosu HTTP. WCF sleduje specifikace WS-ReliableMessaging s omezeními a vysvětleními, které jsou vysvětleny v tomto tématu. Počítejte s tím, že protokol WS-ReliableMessaging verze 1,1 je implementován od .NET Framework 3,5.
 
-WS-ReliableMessaging února 2007 protokol je implementován ve službě WCF pomocí <xref:System.ServiceModel.Channels.ReliableSessionBindingElement>.
+Protokol WS-ReliableMessaging únor 2007 je v rámci WCF implementován pomocí <xref:System.ServiceModel.Channels.ReliableSessionBindingElement>.
 
-Pro usnadnění práce tématu používá Tyhle role:
+Pro usnadnění práce téma používá následující role:
 
-- Iniciátor: Klient, který zahájí vytváření pořadí zpráv WS-Reliable.
+- Iniciátor: klient, který iniciuje vytvoření sekvence zpráv WS-Reliable.
 
-- Respondér: Služba, která bude přijímat žádosti je iniciátor.
+- Responder: služba, která přijímá žádosti iniciátoru.
 
  Tento dokument používá předpony a obory názvů v následující tabulce.
 
-|Předpona|Obor názvů|
+|směr|Obor názvů|
 |-|-|
-|wsrm|http://docs.oasis-open.org/ws-rx/wsrm/200702|
+|správcem|http://docs.oasis-open.org/ws-rx/wsrm/200702|
 |netrm|http://schemas.microsoft.com/ws/2006/05/rm|
 |s|http://www.w3.org/2003/05/soap-envelope|
 |wsa|http://schemas.xmlsoap.org/ws/2005/08/addressing|
 |wsse|http://docs.oasis-open.org/wss/2004/01/oasis-200401-wssecurity-secext-1.0.xsd|
 |wsrmp|http://docs.oasis-open.org/ws-rx/wsrmp/200702|
 |netrmp|http://schemas.microsoft.com/ws-rx/wsrmp/200702|
-|wsp|(WS-Policy 1.2 nebo WS-Policy 1.5)|
+|WSP|(WS-Policy 1,2 nebo WS-Policy 1,5)|
 
-## <a name="messaging"></a>Zasílání zpráv
+## <a name="messaging"></a>Messaging
 
-### <a name="sequence-creation"></a>Vytváření pořadí
+### <a name="sequence-creation"></a>Vytvoření sekvence
 
-Implementuje WCF `CreateSequence` a `CreateSequenceResponse` pořadí zpráv k navázání spolehlivé zasílání zpráv. Platí následující omezení:
+Služba WCF implementuje `CreateSequence` a `CreateSequenceResponse` zprávy k navázání spolehlivé sekvence zasílání zpráv. Platí následující omezení:
 
-- B1101: Iniciátor WCF používá stejný koncový bod odkaz jako `CreateSequence` zprávy `ReplyTo`, `AcksTo` a `Offer/Endpoint`.
+- B1101: iniciátor WCF používá stejný odkaz na koncový bod jako `ReplyTo``CreateSequence` zprávy, `AcksTo` a `Offer/Endpoint`.
 
-- R1102: `AcksTo`, `ReplyTo` a `Offer/Endpoint` v odkazuje na koncový bod `CreateSequence` zpráva musí mít identickou řetězcovou reprezentaci hodnoty adres tak, aby odpovídaly octet-wise.
+- R1102: odkazy na koncový bod `AcksTo`, `ReplyTo` a `Offer/Endpoint` ve zprávě `CreateSequence` musí mít hodnoty adresy se identickými reprezentacemi řetězců tak, aby odpovídaly oktetu.
 
-  - WCF respondér ověřuje, že část identifikátoru URI `AcksTo`, `ReplyTo` a `Endpoint` Reference koncového bodu jsou identické před vytvořením sekvenci.
+  - Respondér WCF ověřuje, zda je část identifikátoru URI `AcksTo`, `ReplyTo` a `Endpoint` odkazů na koncový bod před vytvořením sekvence identická.
 
-- R1103: `AcksTo`, `ReplyTo` a `Offer/Endpoint` v odkazuje na koncový bod `CreateSequence` zpráva by měla mít stejnou sadu parametrů odkazu.
+- R1103: odkazy na koncový bod `AcksTo`, `ReplyTo` a `Offer/Endpoint` ve zprávě `CreateSequence` by měly mít stejnou sadu parametrů odkazu.
 
-  - WCF nevynucuje, ale předpokládá velikost tento odkaz parametry `AcksTo`, `ReplyTo` a `Offer/Endpoint` koncový bod odkazuje na `CreateSequence` jsou identické a používá parametry odkazů z `ReplyTo` reference koncového bodu pro potvrzení a konverzace pořadí zpráv.
+  - Služba WCF neuplatňuje, ale předpokládá, že referenční parametry `AcksTo`, `ReplyTo` a `Offer/Endpoint` odkazy koncového bodu na `CreateSequence` jsou identické a používají referenční parametry z referenčního bodu `ReplyTo` pro zprávy o potvrzeních a sekvenci konverzace.
 
-- B1104: Iniciátor WCF negeneruje nepovinný `Expires` nebo `Offer/Expires` element v `CreateSequence` zprávy.
+- B1104: iniciátor WCF negeneruje v `CreateSequence` zprávě volitelný prvek `Expires` nebo `Offer/Expires`.
 
-- B1105: Při přístupu k `CreateSequence` zprávy WCF respondér používá `Expires` hodnota v `CreateSequence` prvek jako `Expires` hodnota v `CreateSequenceResponse` elementu. V opačném případě respondér WCF přečte a ignoruje `Expires` a `Offer/Expires` hodnoty.
+- B1105: při přístupu ke zprávě `CreateSequence` použije respondér WCF hodnotu `Expires` v elementu `CreateSequence` jako hodnotu `Expires` v prvku `CreateSequenceResponse`. V opačném případě respondér WCF načte a ignoruje hodnoty `Expires` a `Offer/Expires`.
 
-- B1106: Při přístupu k `CreateSequenceResponse` zprávu, iniciátor WCF načte volitelný `Expires` hodnotu, ale nepoužívá se.
+- B1106: při přístupu k `CreateSequenceResponse` zprávě vyhledá iniciátor WCF volitelnou `Expires` hodnotu, ale nepoužije ji.
 
-- B1107: WCF iniciátor i respondér vždy generovat nepovinný `IncompleteSequenceBehavior` prvek `CreateSequence/Offer` a `CreateSequenceResponse` elementy.
+- B1107: iniciátor WCF a respondér vždy vygeneruje volitelný `IncompleteSequenceBehavior` element v elementech `CreateSequence/Offer` a `CreateSequenceResponse`.
 
-- B1108: WCF použije pouze `DiscardFollowingFirstGap` a `NoDiscard` hodnoty v `IncompleteSequenceBehavior` elementu.
+- B1108: WCF používá v elementu `IncompleteSequenceBehavior` pouze hodnoty `DiscardFollowingFirstGap` a `NoDiscard`.
 
-  - Využívá WS-ReliableMessaging `Offer` mechanismus k navázání dvou komunikaci korelační sekvence, které tvoří relace.
+  - WS-ReliableMessaging využívá mechanismus `Offer` k vytvoření dvou převedených korelačních sekvencí, které tvoří relaci.
 
-- B1109: Pokud `CreateSequence` obsahuje `Offer` elementu jedním ze způsobů respondér WCF odmítne nabízený pořadí reakcí s `CreateSequenceResponse` bez `Accept` elementu.
+- B1109: Pokud `CreateSequence` obsahuje `Offer` element, pak jednosměrné respondér WCF odmítne nabízenou sekvenci tím, že reaguje na `CreateSequenceResponse` bez `Accept` elementu.
 
-- B1110: Pokud spolehlivé zasílání zpráv respondér odmítne nabízený pořadí, iniciátor WCF chyb nově zavedených pořadí.
+- B1110: Pokud spolehlivý respondér zasílání zpráv odmítne nabízenou sekvenci, vyhledá iniciátor WCF nově vytvořenou sekvenci.
 
-- B1111: Pokud `CreateSequence` neobsahuje `Offer` prvku obousměrný respondér WCF odmítne nabízený pořadí reakcí s `CreateSequenceRefused` selhání.
+- B1111: Pokud `CreateSequence` neobsahuje element `Offer`, obousměrný respondér WCF odmítne nabízenou sekvenci tím, že reaguje na chybu `CreateSequenceRefused`.
 
-- R1112: Při dvou sekvencí konverzace jsou vytvořena pomocí `Offer` mechanismus, `[address]` vlastnost `CreateSequenceResponse/Accept/AcksTo` reference koncového bodu musí odpovídat cílový identifikátor URI z `CreateSequence` zpráva bajtu bajtů.
+- R1112: při vytváření dvou sekvencí konverzace pomocí mechanismu `Offer` musí vlastnost `[address]` odkazu na koncový bod `CreateSequenceResponse/Accept/AcksTo` odpovídat cílovému identifikátoru URI `CreateSequence` bajtu zprávy.
 
-- R1113: Při dvou sekvencí konverzace jsou vytvořena pomocí `Offer` mechanismus, všechny zprávy v obou pořadí z iniciátoru tok na straně odpovídajícího se musí odeslat na stejné reference koncového bodu.
+- R1113: při vytváření dvou sekvencí konverzace pomocí mechanismu `Offer` musí být všechny zprávy v obou sekvencích toku od iniciátoru k tomuto partnerovi odesílány do stejného odkazu na koncový bod.
 
-WCF WS-ReliableMessaging používá k navázání spolehlivé relace mezi iniciátorem a příjemce. Implementace WCF WS-ReliableMessaging poskytuje spolehlivé relace pro jednosměrný požadavek odpověď a plně duplexní způsobů zasílání zpráv. WS-ReliableMessaging `Offer` mechanismus `CreateSequence` a `CreateSequenceResponse` vám umožní navázání dvou korelační konverzace pořadí a poskytuje protokol relace, který je vhodný pro všechny koncové body zprávy. Protože WCF poskytuje záruku zabezpečení pro relaci, včetně začátku do konce ochranu integrity relace, je potřeba Ujistěte se, že zprávy určené pro stejný stranu přejít na stejný cíl. Díky tomu také "Prasátko zálohováním" pořadí potvrzení na zprávy aplikace. Proto platí omezení R1102 R1112 a R1113 pro WCF.
+WCF používá ke zřízení spolehlivých relací mezi iniciátorem a respondérem WS-ReliableMessaging. Implementace WCF WS-ReliableMessaging poskytuje spolehlivou relaci pro jednosměrné, požadavek-odpověď a plně duplexní vzory zasílání zpráv. Mechanismus `Offer` WS-ReliableMessaging na `CreateSequence` a `CreateSequenceResponse` umožňuje vytvořit dvě korelační posloupnosti konverzace a poskytuje protokol relace, který je vhodný pro všechny koncové body zprávy. Vzhledem k tomu, že WCF poskytuje záruku zabezpečení pro takovou relaci, včetně ucelené ochrany integrity relací, je praktické zajistit, aby zprávy určené pro stejnou stranu byly doručeny do stejného umístění. To také umožňuje "Piggy-Back" (potvrzování sekvencí) pro zprávy aplikací. Proto se omezení R1102, R1112 a R1113 vztahují na WCF.
 
-Příklad `CreateSequence` zprávy.
+Příklad zprávy `CreateSequence`
 
 ```xml
 <s:Envelope>
@@ -103,7 +103,7 @@ Příklad `CreateSequence` zprávy.
 </s:Envelope>
 ```
 
-Příklad `CreateSequenceResponse` zprávy.
+Příklad zprávy `CreateSequenceResponse`
 
 ```xml
 <s:Envelope>
@@ -126,21 +126,21 @@ Příklad `CreateSequenceResponse` zprávy.
 </s:Envelope>
 ```
 
-### <a name="closing-a-sequence"></a>Zavření sekvence
+### <a name="closing-a-sequence"></a>Uzavírání sekvence
 
-Používá WCF `CloseSequence` a `CloseSequenceResponse` zprávy pro vypnutí spolehlivé zasílání zpráv spuštěno zdrojem. Spolehlivé zasílání zpráv WCF cílové nespustí, vypnutí a zdroj spolehlivé zasílání zpráv WCF nepodporuje vypnutí iniciované cílové spolehlivé zasílání zpráv. Platí následující omezení:
+WCF používá `CloseSequence` a `CloseSequenceResponse` zprávy pro vypnutí spolehlivého zdroje zpráv. Cíl spolehlivého zasílání zpráv WCF neinicializuje vypnutí a zdroj spolehlivého zasílání zpráv WCF nepodporuje vypnutí spolehlivého cíle zasílání zpráv. Platí následující omezení:
 
-- B1201: Spolehlivé zasílání zpráv WCF zdroje vždy posílá `CloseSequence` zprávu ukončení sekvence.
+- B1201: zdroj spolehlivého zasílání zpráv WCF vždy pošle zprávu `CloseSequence` pro vypnutí sekvence.
 
-- B1202: Zdroj spolehlivé zasílání zpráv čeká na potvrzení z široké spektrum pořadí zprávy před odesláním `CloseSequence` zprávy.
+- B1202: zdroj spolehlivého zasílání zpráv čeká na potvrzení plného rozsahu zpráv sekvence před odesláním zprávy `CloseSequence`.
 
-- B1203: Spolehlivé zasílání zpráv zdroj vždy obsahuje volitelný `LastMsgNumber` element není-li posloupnost neobsahuje zprávy.
+- B1203: spolehlivý zdroj zasílání zpráv vždy obsahuje volitelný element `LastMsgNumber`, pokud sekvence neobsahuje zprávy.
 
-- R1204: Spolehlivé zasílání zpráv cílové nesmí iniciovat vypnutí odesláním `CloseSequence` zprávy.
+- R1204: cíl spolehlivého zasílání zpráv nesmí iniciovat vypnutí odesláním zprávy `CloseSequence`.
 
-- B1205: Po přijetí `CloseSequence` zprávy, zdroje spolehlivé zasílání zpráv WCF považuje za neúplné sekvence a odesílá chybu.
+- B1205: po přijetí `CloseSequence` zprávy nepovažuje zdroj spolehlivých zpráv WCF pořadí za nekompletní a pošle chybu.
 
- Příklad `CloseSequence` zprávy.
+ Příklad zprávy `CloseSequence`
 
 ```xml
 <s:Envelope>
@@ -186,17 +186,17 @@ Příklad `CloseSequenceResponse` zpráva:
 
 ### <a name="sequence-termination"></a>Ukončení sekvence
 
-WCF primárně používá `TerminateSequence/TerminateSequenceResponse` handshake po dokončení `CloseSequence/CloseSequenceResponse` handshake. Spolehlivé zasílání zpráv WCF cílové nespustí, ukončení a spolehlivé zasílání zpráv zdroj nepodporuje ukončení iniciované cílové spolehlivé zasílání zpráv. Platí následující omezení:
+WCF primárně používá `TerminateSequence/TerminateSequenceResponse` handshake po dokončení `CloseSequence/CloseSequenceResponse` handshake. Cíl spolehlivého zasílání zpráv WCF nezahajuje ukončení a spolehlivý zdroj přenosu dat nepodporuje ukončení iniciované spolehlivým cílem zasílání zpráv. Platí následující omezení:
 
-- B1301: Iniciátor WCF odesílá pouze `TerminateSequence` po úspěšném dokončení se zobrazí zpráva `CloseSequence/CloseSequenceResponse` handshake.
+- B1301: iniciátor WCF odesílá zprávu `TerminateSequence` až po úspěšném dokončení `CloseSequence/CloseSequenceResponse` handshake.
 
-- R1302: WCF ověří, jestli `LastMsgNumber` element je konzistentní napříč všemi `CloseSequence` a `TerminateSequence` zpráv pro dané sekvence. To znamená, že `LastMsgNumber` buď není k dispozici na všech `CloseSequence` a `TerminateSequence` zprávy, nebo je k dispozici a stejné ve všech `CloseSequence` a `TerminateSequence` zprávy.
+- R1302: WCF ověří, že `LastMsgNumber` element je konzistentní napříč všemi `CloseSequence` a `TerminateSequence`ými zprávami pro danou sekvenci. To znamená, že `LastMsgNumber` buď není přítomna na všech `CloseSequence` a `TerminateSequence` zprávy, nebo je přítomna a shodná se všemi `CloseSequence` a `TerminateSequence`mi zprávami.
 
-- B1303: Při přijímání `TerminateSequence` zpráv po `CloseSequence/CloseSequenceResponse` handshake, odpoví cílové spolehlivé zasílání zpráv `TerminateSequenceResponse` zprávy. Vzhledem k tomu, že zdroj spolehlivé zasílání zpráv má závěrečné potvrzení před odesláním `TerminateSequence` zprávy, cílový spolehlivé zasílání zpráv ví bez nepochybně, že sekvence se ukončí a okamžitě uvolní prostředky.
+- B1303: když se po `CloseSequence/CloseSequenceResponse` handshake dokončí zpráva `TerminateSequence`, bude cíl spolehlivého zasílání zpráv odpovídat `TerminateSequenceResponse` zprávě. Vzhledem k tomu, že zdroj spolehlivého zasílání zpráv obsahuje závěrečné potvrzení před odesláním `TerminateSequence` zprávy, bude cíl spolehlivého zasílání zpráv vědět bez pochybnosti o ukončení sekvence a okamžitě Redeklarace prostředků.
 
-- B1304: Při přijímání `TerminateSequence` zpráv starších než `CloseSequence/CloseSequenceResponse` handshake, odpoví cílové WCF spolehlivé zasílání zpráv `TerminateSequenceResponse` zprávy. Pokud cílový spolehlivé zasílání zpráv zjistí, že neexistují žádné nekonzistence v sekvenci, spolehlivé zasílání zpráv místo určení čeká, dobu zadané cílové aplikace před uvolní prostředky, by klientovi umožňoval riziko pro příjem závěrečné potvrzení. V opačném případě cílové spolehlivé zasílání zpráv okamžitě uvolní prostředky a označuje cílové aplikace, že sekvence končí nejisté vyvoláním `Faulted` událostí.
+- B1304: při přijímání zprávy o `TerminateSequence` před `CloseSequence/CloseSequenceResponse` handshake se jako cíl služby WCF pro doručování zpráv odpoví zpráva `TerminateSequenceResponse`. Pokud cíl spolehlivého zasílání zpráv zjistí, že v sekvenci nejsou žádné nekonzistence, čeká cíl spolehlivého zasílání zpráv po dobu určenou pro určitý cíl aplikace, aby mohl klientovi získat možnost přijímání. konečné potvrzení. V opačném případě cíl spolehlivého zasílání zpráv Redeklarace prostředků okamžitě a označuje cíl aplikace, který sekvence končí, tím, že vyvolává událost `Faulted`.
 
-Příklad `TerminateSequence` zprávy.
+Příklad zprávy `TerminateSequence`
 
 ```xml
 <s:Envelope>
@@ -242,11 +242,11 @@ Příklad `TerminateSequenceResponse` zpráva:
 
 ### <a name="sequences"></a>Sekvence
 
-Následuje seznam omezení, které se vztahují na pořadí:
+Následuje seznam omezení, která platí pro sekvence:
 
-- Generuje B1401:WCF a přístupy pořadí čísel vyšší než `xs:long`na maximální hodnotu (včetně), 9223372036854775807.
+- B1401: WCF vygeneruje a přistupuje k pořadovým číslům, která nejsou větší než maximální povolená hodnota `xs:long`9223372036854775807.
 
-Příklad `Sequence` záhlaví.
+Příklad záhlaví `Sequence`.
 
 ```xml
 <wsrm:Sequence s:mustUnderstand="1">
@@ -255,11 +255,11 @@ Příklad `Sequence` záhlaví.
 </wsrm:Sequence>
 ```
 
-### <a name="request-acknowledgement"></a>Žádost o potvrzení
+### <a name="request-acknowledgement"></a>Potvrzení žádosti
 
-Používá WCF `AckRequested` záhlaví jako vhodný mechanismus keep-alive.
+WCF používá hlavičku `AckRequested` jako mechanizmus Keep-Alive.
 
-Příklad `AckRequested` záhlaví.
+Příklad záhlaví `AckRequested`.
 
 ```xml
 <wsrm:AckRequested>
@@ -267,15 +267,15 @@ Příklad `AckRequested` záhlaví.
 </wsrm:AckRequested>
 ```
 
-### <a name="sequenceacknowledgement"></a>Třída SequenceAcknowledgement
+### <a name="sequenceacknowledgement"></a>SequenceAcknowledgement
 
-WCF používá mechanismus "Prasátko zpět" pro potvrzení pořadí součástí zasílání zpráv WS-Reliable. Platí následující omezení:
+WCF používá mechanizmus "Piggy-Back" pro potvrzení sekvencí, které jsou k dispozici v zasílání zpráv WS-Reliable. Platí následující omezení:
 
-- R1601: Po dvou sekvencí konverzace jsou vytvořena pomocí `Offer` mechanismus, `SequenceAcknowledgement` záhlaví mohou být zahrnuty do jakékoli aplikace zprávy odesílané informace zamýšlený příjemce. Vzdálený koncový bod musí být schopen získat přístup zařazována složená `SequenceAcknowledgement` záhlaví.
+- R1601: při vytváření dvou sekvencí konverzace pomocí mechanismu `Offer` může být záhlaví `SequenceAcknowledgement` zahrnuté do jakékoli zprávy aplikace předané zamýšlenému příjemci. Vzdálený koncový bod musí být schopný získat přístup k hlavičce složeného `SequenceAcknowledgement`.
 
-- B1602: WCF negeneruje `SequenceAcknowledgement` hlavičky, které obsahují `Nack` elementy. WCF ověří, že každý `Nack` element obsahuje pořadové číslo, ale jinak ignoruje `Nack` elementu a hodnotu.
+- B1602: WCF negeneruje `SequenceAcknowledgement` hlaviček, které obsahují `Nack` elementy. WCF ověřuje, že každý prvek `Nack` obsahuje pořadové číslo, ale v opačném případě ignoruje `Nack` prvek a hodnotu.
 
- Příklad `SequenceAcknowledgement` záhlaví.
+ Příklad záhlaví `SequenceAcknowledgement`.
 
 ```xml
 <wsrm:SequenceAcknowledgement>
@@ -284,13 +284,13 @@ WCF používá mechanismus "Prasátko zpět" pro potvrzení pořadí součástí
 </wsrm:SequenceAcknowledgement>
 ```
 
-### <a name="ws-reliablemessaging-faults"></a>WS-ReliableMessaging chyb
+### <a name="ws-reliablemessaging-faults"></a>Chyby WS-ReliableMessaging
 
-Následuje seznam omezení, které se vztahují k implementaci WCF WS-ReliableMessaging chyb. Platí následující omezení:
+Následující seznam obsahuje omezení, která se vztahují na implementaci WCF s chybami WS-ReliableMessaging. Platí následující omezení:
 
-- B1701: WCF negeneruje `MessageNumberRollover` chyb.
+- B1701: WCF negeneruje chyby `MessageNumberRollover`.
 
-- B1702: Přes protokol SOAP 1.2, když koncový bod služby dosáhne svého limitu připojení a nemůže zpracovat nová připojení, WCF vygeneruje vnořený `CreateSequenceRefused` selhání podřízeného, `netrm:ConnectionLimitReached`, jak je znázorněno v následujícím příkladu.
+- B1702: přes SOAP 1,2, když koncový bod služby dosáhne svého limitu připojení a nemůže zpracovat nová připojení, WCF vygeneruje podřízený kód chyby `CreateSequenceRefused`, `netrm:ConnectionLimitReached`, jak je znázorněno v následujícím příkladu.
 
 ```xml
 <s:Envelope>
@@ -316,85 +316,85 @@ Následuje seznam omezení, které se vztahují k implementaci WCF WS-ReliableMe
 </s:Envelope>
 ```
 
-### <a name="ws-addressing-faults"></a>WS-Addressing chyb
+### <a name="ws-addressing-faults"></a>Chyby WS-Addressing
 
-Vzhledem k tomu WS-ReliableMessaging používá WS-Addressing, může provádění WCF WS-ReliableMessaging generování a přenosu WS-Addressing chyb. Tato část zahrnuje chyby WS-Addressing, WCF explicitně generuje a odesílá ve vrstvě WS-ReliableMessaging:
+Vzhledem k tomu, že WS-ReliableMessaging používá WS-ReliableMessaging, implementace WCF WS-ReliableMessaging může generovat a odesílat chyby WS-Addressing. Tato část se zabývá chybami WS-Addressing, které WCF explicitně generuje a odesílá ve vrstvě WS-ReliableMessaging:
 
-- B1801:WCF generuje a přenáší `Message Addressing Header Required` selhání, když je splněna jedna z následujících akcí:
+- B1801: WCF generuje a přenáší chybu `Message Addressing Header Required`, pokud je splněna jedna z následujících podmínek:
 
-  - A `CreateSequence`, `CloseSequence` nebo `TerminateSequence` chybí zpráva `MessageId` záhlaví.
+  - Ve zprávě `CreateSequence`, `CloseSequence` nebo `TerminateSequence` chybí hlavička `MessageId`.
 
-  - A `CreateSequence`, `CloseSequence` nebo `TerminateSequence` chybí zpráva `ReplyTo` záhlaví.
+  - Ve zprávě `CreateSequence`, `CloseSequence` nebo `TerminateSequence` chybí hlavička `ReplyTo`.
 
-  - A `CreateSequenceResponse`, `CloseSequenceResponse`, nebo `TerminateSequenceResponse` chybí zpráva `RelatesTo` záhlaví.
+  - Ve zprávě `CreateSequenceResponse`, `CloseSequenceResponse`nebo `TerminateSequenceResponse` chybí hlavička `RelatesTo`.
 
-- B1802:WCF generuje a přenáší `Endpoint Unavailable` selhání k označení, neexistuje žádný koncový bod, který dokáže zpracovat pořadí založené na posouzení adresování záhlaví ve `CreateSequence` zprávy.
+- B1802: WCF vygeneruje a přenáší chybu `Endpoint Unavailable`, aby označovala, že nenaslouchá žádný koncový bod, který může zpracovat sekvenci na základě zkoumání hlaviček adres ve zprávě `CreateSequence`.
 
-## <a name="protocol-composition"></a>Protokol sestavení
+## <a name="protocol-composition"></a>Složení protokolu
 
-### <a name="composition-with-ws-addressing"></a>Kompozice s WS-Addressing
+### <a name="composition-with-ws-addressing"></a>Složení pomocí WS-Addressing
 
-WCF podporuje dvě verze WS-Addressing: WS-Addressing 2004/08 [WS-ADDR] a W3C WS-Addressing 1.0 doporučení [WS-ADDR – CORE] a [WS-ADDR SOAP].
+Služba WCF podporuje dvě verze elementu WS-Addressing: WS-Addressing 2004/08 [WS-ADDR] a W3C WS-Addressing 1,0 Recommendations [WS-ADDR-CORE] a [WS-ADDR-SOAP].
 
-Zatímco zmínky WS-ReliableMessaging specifikace WS-Addressing 2004/08 pouze neomezuje verze WS-Addressing má být použit. Následuje seznam omezení, které se vztahují na WCF:
+I když specifikace WS-ReliableMessaging zmiňuje pouze WS-Addressing 2004/08, neomezuje použití verze WS-Addressing. Následuje seznam omezení, která platí pro WCF:
 
-- R2101: WS-Addressing 2004/08 a WS-Addressing 1.0 je možné pomocí zasílání zpráv WS-Reliable.
+- R2101: Služba WS-Addressing 2004/08 a WS-Addressing 1,0 se dá použít se zasíláním zpráv WS-Reliable.
 
-- R2102: Jednu verzi elementu WS-Addressing musí využívat v rámci dané sekvence WS-ReliableMessaging nebo dvojice posloupností první korelační pomocí `Offer` mechanismus.
+- R2102: v rámci dané sekvence WS-ReliableMessaging musí být použita jedna verze elementu WS-Addressing nebo dvojice sekvencí konverzace s použitím mechanismu `Offer`.
 
-### <a name="composition-with-soap"></a>Složení u protokolu SOAP
+### <a name="composition-with-soap"></a>Složení pomocí protokolu SOAP
 
-WCF podporuje použití SOAP 1.1 a SOAP 1.2 zasílání zpráv WS-Reliable.
+Služba WCF podporuje použití protokolu SOAP 1,1 i SOAP 1,2 se zasíláním zpráv WS-Reliable.
 
-### <a name="composition-with-ws-security-and-ws-secureconversation"></a>Kompozice s WS-Security a WS-SecureConversation
+### <a name="composition-with-ws-security-and-ws-secureconversation"></a>Složení pomocí WS-Security a WS-SecureConversation
 
-WCF poskytuje ochranu pro WS-ReliableMessaging pořadí pomocí zabezpečeného přenosu (HTTPS), kompozice s WS-Security a skládání s WS-Secure Conversation. Protokol WS-ReliableMessaging 1.1, WS-Security 1.1 a protokol WS-Secure 1.3 konverzace musí použít společně. Následuje seznam omezení, které se vztahují na WCF:
+Služba WCF poskytuje ochranu pro sekvence WS-ReliableMessaging pomocí zabezpečeného přenosu (HTTPS), složení pomocí WS-Security a složení pomocí konverzace WS-Secure. Protokol WS-ReliableMessaging 1,1, WS-Security 1,1 a WS-Secure konverzace 1,3 by se měl používat společně. Následuje seznam omezení, která platí pro WCF:
 
-- R2301: Pro ochranu integrity WS-ReliableMessaging pořadí kromě integritu a důvěrnost jednotlivé zprávy, WCF vyžaduje, že musí použít WS-Secure Conversation.
+- R2301: aby byla zajištěna ochrana integrity sekvence WS-ReliableMessaging Kromě integrity a důvěrnosti jednotlivých zpráv, služba WCF vyžaduje, aby se používala konverzace WS-Secure.
 
-- R2302:awS-zabezpečenou konverzací relace musí být vytvořen před navazování WS-ReliableMessaging sequence(s).
+- R2302: AWS – před vytvořením posloupností WS-ReliableMessaging je nutné vytvořit relaci konverzace s zabezpečenou relací.
 
-- R2303: Pokud pořadí životnost WS-ReliableMessaging překročí WS-Secure Conversation životnost relace `SecurityContextToken` lze navázat pomocí WS-Secure Conversation musí obnovovat pomocí odpovídající vazby WS-Secure obnovení konverzace.
+- R2303: Pokud doba trvání sekvence WS-ReliableMessaging přesáhne dobu života relace WS-, je nutné obnovit `SecurityContextToken` navázané pomocí konverzace protokolu WS-Secure pomocí odpovídající vazby obnovení WS-Secure konverzace.
 
-- B2304:WS-ReliableMessaging pořadí nebo dvojice posloupností korelační konverzace jsou vždy vázány na jedné relace WS-SecureConversation.
+- B2304: sekvence WS-ReliableMessaging nebo dvojice korelačních sekvencí konverzace jsou vždycky vázané na jednu relaci WS-SecureConversation.
 
-- R2305: Při skládání s WS-Secure Conversation, respondér WCF vyžaduje, aby `CreateSequence` zpráva obsahovat `wsse:SecurityTokenReference` elementu a `wsrm:UsesSequenceSTR` záhlaví.
+- R2305: Pokud se skládá s konverzací WS-Secure, WCF respondér WCF vyžaduje, aby zpráva `CreateSequence` obsahovala `wsse:SecurityTokenReference` prvek a hlavičku `wsrm:UsesSequenceSTR`.
 
- Příklad `UsesSequenceSTR` záhlaví.
+ Příklad záhlaví `UsesSequenceSTR`.
 
 ```xml
 <wsrm:UsesSequenceSTR></wsrm:UsesSequenceSTR>
 ```
 
-### <a name="composition-with-ssltls-sessions"></a>Složení pomocí relace protokolu SSL/TLS
+### <a name="composition-with-ssltls-sessions"></a>Složení s relacemi SSL/TLS
 
-WCF nepodporuje složení pomocí relace protokolu SSL/TLS:
+WCF nepodporuje kompozici s relacemi SSL/TLS:
 
-- B2401: WCF negeneruje `wsrm:UsesSequenceSSL` záhlaví.
+- B2401: WCF negeneruje hlavičku `wsrm:UsesSequenceSSL`.
 
-- R2402: Spolehlivé zasílání zpráv iniciátoru nesmí odeslat `CreateSequence` zprávy s `wsrm:UsesSequenceSSL` záhlaví respondér WCF.
+- R2402: iniciátor spolehlivého zasílání zpráv nesmí odeslat zprávu `CreateSequence` s hlavičkou `wsrm:UsesSequenceSSL` na respondér WCF.
 
-### <a name="composition-with-ws-policy"></a>Kompozice s WS-Policy
+### <a name="composition-with-ws-policy"></a>Složení pomocí WS-Policy
 
-WCF podporuje dvě verze WS-Policy: WS-Policy 1.2 a WS-Policy 1.5.
+WCF podporuje dvě verze WS-Policy: WS-Policy 1,2 a WS-Policy 1,5.
 
-## <a name="ws-reliablemessaging-ws-policy-assertion"></a>WS-ReliableMessaging WS-kontrolní výraz zásad
+## <a name="ws-reliablemessaging-ws-policy-assertion"></a>Kontrolní výraz WS-ReliableMessaging WS-Policy
 
-WCF používá WS-ReliableMessaging WS-Policy kontrolní `wsrm:RMAssertion` k popisu funkce koncových bodů. Následuje seznam omezení, které se vztahují na WCF:
+WCF používá kontrolní výraz WS-ReliableMessaging WS-Policy `wsrm:RMAssertion` k popisu možností koncových bodů. Následuje seznam omezení, která platí pro WCF:
 
-- B3001: Připojí WCF `wsrmn:RMAssertion` WS-Policy kontrolního výrazu k `wsdl:binding` elementy. WCF podporuje obě příloh `wsdl:binding` a `wsdl:port` elementy.
+- B3001: WCF připojí `wsrmn:RMAssertion` kontrolní výraz WS-Policy pro `wsdl:binding` elementy. WCF podporuje obě přílohy pro `wsdl:binding` a `wsdl:port` prvky.
 
-- B3002: Nikdy generuje WCF `wsp:Optional` značky.
+- B3002: WCF nikdy negeneruje značku `wsp:Optional`.
 
-- B3003: Při přístupu k `wsrmp:RMAssertion` kontrolní výraz WS-Policy, ignoruje WCF `wsp:Optional` označit a zpracovává zásady WS-RM jako povinné.
+- B3003: při přístupu `wsrmp:RMAssertion` k kontrolnímu výrazu WS-Policy technologie WCF ignoruje značku `wsp:Optional` a považuje zásadu WS-RM za povinnou.
 
-- R3004: Protože WCF compose není s relací SSL/TLS, WCF nepřijímá žádné zásady, které určují `wsrmp:SequenceTransportSecurity`.
+- R3004: protože WCF nevytváří relace SSL/TLS, WCF neakceptuje zásady, které určují `wsrmp:SequenceTransportSecurity`.
 
-- B3005: Vždy generovat WCF `wsrmp:DeliveryAssurance` elementu.
+- B3005: WCF vždy generuje prvek `wsrmp:DeliveryAssurance`.
 
-- B3006: Vždy určuje WCF `wsrmp:ExactlyOnce` pojištění doručení.
+- B3006: WCF vždy určuje záruku doručování `wsrmp:ExactlyOnce`.
 
-- B3007: WCF generuje a přečte následující vlastnosti WS-ReliableMessaging kontrolní výraz a zajišťuje kontrolu nad nimi v WCF`ReliableSessionBindingElement`:
+- B3007: WCF generuje a přečte následující vlastnosti kontrolního výrazu WS-ReliableMessaging a poskytuje jejich kontrolu na`ReliableSessionBindingElement`WCF:
 
   - `netrmp:InactivityTimeout`
 
@@ -418,13 +418,13 @@ WCF používá WS-ReliableMessaging WS-Policy kontrolní `wsrm:RMAssertion` k po
   </wsrmp:RMAssertion>
   ```
 
-## <a name="flow-control-ws-reliablemessaging-extension"></a>Tok řízení WS-ReliableMessaging rozšíření
+## <a name="flow-control-ws-reliablemessaging-extension"></a>Rozšíření pro řízení toku WS-ReliableMessaging
 
-K zajištění volitelné další přesnější kontrolu nad tok pořadí zpráv WCF používá WS-ReliableMessaging rozšiřitelnosti.
+WCF používá rozšiřitelnost WS-ReliableMessaging k zajištění volitelného dalšího užšího řízení toku zpráv sekvence.
 
-Řízení toku se povoluje nastavením <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.FlowControlEnabled?displayProperty=nameWithType> vlastnost `true`. Následuje seznam omezení, které se vztahují na WCF:
+Řízení toku je povoleno nastavením vlastnosti <xref:System.ServiceModel.Channels.ReliableSessionBindingElement.FlowControlEnabled?displayProperty=nameWithType> na hodnotu `true`. Následuje seznam omezení, která platí pro WCF:
 
-- B4001: Pokud spolehlivé zasílání zpráv řízení toku je povolena, vygeneruje WCF `netrm:BufferRemaining` element v elementu rozšiřitelnost `SequenceAcknowledgement` záhlaví, jak je znázorněno v následujícím příkladu.
+- B4001: když je povolený spolehlivý ovládací prvek toku zpráv, WCF vygeneruje element `netrm:BufferRemaining` v rozšiřitelnosti elementu `SequenceAcknowledgement` záhlaví, jak je znázorněno v následujícím příkladu.
 
   ```xml
   <wsrm:SequenceAcknowledgement>
@@ -434,136 +434,136 @@ K zajištění volitelné další přesnější kontrolu nad tok pořadí zpráv
   </wsrm:SequenceAcknowledgement>
   ```
 
-- B4002: I když spolehlivé zasílání zpráv řízení toku je povoleno, WCF nevyžaduje, aby `netrm:BufferRemaining` prvek `SequenceAcknowledgement` záhlaví.
+- B4002: i když je povolené řízení toku spolehlivého zasílání zpráv, WCF nevyžaduje `netrm:BufferRemaining` element v hlavičce `SequenceAcknowledgement`.
 
-- B4003: Cíl pro spolehlivé zasílání zpráv WCF používá `netrm:BufferRemaining` označuje, kolik nové zprávy uložit do vyrovnávací paměti.
+- B4003: cíl spolehlivého zasílání zpráv WCF používá `netrm:BufferRemaining` k určení, kolik nových zpráv může ukládat do vyrovnávací paměti.
 
-- Je povolený B4004:when spolehlivé zasílání zpráv řízení toku, zdroj WCF spolehlivé zasílání zpráv používá hodnotu `netrm:BufferRemaining` pro přenos zpráv omezení.
+- B4004: když je povolené řízení toku spolehlivých přenosů zpráv, používá zdroj dat služby WCF hodnotu `netrm:BufferRemaining` k omezení přenosu zpráv.
 
-- B4005: Generuje WCF `netrm:BufferRemaining` celočíselné hodnoty rozsahu od 0 do 4096 (včetně) a čte hodnoty celé číslo mezi 0 a `xs:int`společnosti `maxInclusive` hodnota 214748364 (včetně).
+- B4005: WCF generuje `netrm:BufferRemaining` celočíselné hodnoty mezi 0 a 4096 včetně a čte celočíselné hodnoty mezi 0 a `xs:int``maxInclusive` hodnotou 214748364 včetně.
 
-## <a name="message-exchange-patterns"></a>Vzorky serveru Exchange zprávu
+## <a name="message-exchange-patterns"></a>Vzorce výměny zpráv
 
-Tato část popisuje chování WCF. Pokud WS-ReliableMessaging slouží pro různé vzorce výměny zpráv. Pro každý vzoru výměny zpráv se považují následující scénáře dvě nasazení:
+Tato část popisuje chování služby WCF při použití protokolu WS-ReliableMessaging pro různé vzorce výměny zpráv. Pro každý vzor výměny zpráv se považují za tyto dva scénáře nasazení:
 
-- Bajtově Adresovatelného iniciátor: Iniciátor nachází za bránou firewall; Respondér doručovat zprávy do iniciátor pouze na odpovědi HTTP.
+- Neadresovatelný iniciátor: iniciátor je za bránou firewall; Respondér může doručovat zprávy do iniciátoru pouze na odpovědích HTTP.
 
-- Adresovatelný iniciátor: Iniciátor i respondér mohou být odesílány požadavky HTTP; jinými slovy je možné navázat připojení prostřednictvím protokolu HTTP dvě konverzace.
+- Adresovatelný iniciátor: odesílat požadavky HTTP můžou jenom iniciátor a respondér. Jinými slovy, lze navázat dvě připojení s opačným protokolem HTTP.
 
-### <a name="one-way-non-addressable-initiator"></a>Jednosměrný, bajtově adresovatelného iniciátor
+### <a name="one-way-non-addressable-initiator"></a>Jednosměrný, neadresovatelný iniciátor
 
 #### <a name="binding"></a>Vazba
 
-WCF poskytuje vzoru výměny zpráv jednosměrné pomocí jednoho pořadí přes jeden kanál protokolu HTTP. Přenést všechny zprávy z iniciátoru do odpovědí respondéru a HTTP přenášet všechny zprávy z straně odpovídajícího iniciátoru pomocí WCF požadavky HTTP.
+WCF poskytuje jednosměrný vzor výměny zpráv pomocí jedné sekvence přes jeden kanál HTTP. WCF používá požadavky HTTP k přenosu všech zpráv od iniciátoru do respondérů a odpovědí HTTP na předávání všech zpráv od odpovídajícího příjemce k iniciátoru.
 
 #### <a name="createsequence-exchange"></a>CreateSequence Exchange
 
-Iniciátor WCF přenáší `CreateSequence` zprávu bez `Offer` elementu na požadavek HTTP a očekává, že `CreateSequenceResponse` zprávy na odpovědi HTTP. Vytvoří posloupnost respondér WCF a přenáší `CreateSequenceResponse` zprávu bez `Accept` element na odpovědi HTTP.
+Iniciátor WCF přenáší zprávu `CreateSequence` bez `Offer` elementu na požadavku HTTP a očekává zprávu `CreateSequenceResponse` v odpovědi HTTP. Respondér WCF vytvoří sekvenci a přenáší `CreateSequenceResponse` zprávu bez `Accept` elementu na odpovědi HTTP.
 
-#### <a name="sequenceacknowledgement"></a>Třída SequenceAcknowledgement
+#### <a name="sequenceacknowledgement"></a>SequenceAcknowledgement
 
-Iniciátor WCF zpracovává potvrzování odpověď všech zpráv s výjimkou `CreateSequence` zprávu a chybové zprávy. WCF respondér vždy přenese samostatné potvrzení na odpovědi HTTP do všech pořadí a `AckRequested` zprávy.
+Iniciátor WCF zpracovává odpověď na odpověď všech zpráv s výjimkou `CreateSequence` zprávy a chybové zprávy. Respondér WCF vždy přenáší samostatné potvrzení odezvy HTTP na všechny sekvence a `AckRequested` zprávy.
 
 #### <a name="closesequence-exchange"></a>CloseSequence Exchange
 
-Iniciátor WCF přenáší `CloseSequence` zprávy na požadavek HTTP a očekává, že `CreateSequenceResponse` zprávy na odpovědi HTTP. Přenáší respondér WCF `CloseSequenceResponse` zprávy na odpovědi HTTP.
+Iniciátor WCF přenáší zprávu `CloseSequence` na požadavek HTTP a očekává `CreateSequenceResponse` zprávu v odpovědi HTTP. Respondér WCF přenáší zprávu `CloseSequenceResponse` v odpovědi HTTP.
 
-#### <a name="terminatesequence-exchange"></a>TerminateSequence dříve Exchange
+#### <a name="terminatesequence-exchange"></a>TerminateSequence – Exchange
 
-Iniciátor WCF přenáší `TerminateSequence` zprávy na požadavek HTTP a očekává, že `TerminateSequenceResponse` zprávy na odpovědi HTTP. Přenáší respondér WCF `TerminateSequenceResponse` zprávy na odpovědi HTTP.
+Iniciátor WCF přenáší zprávu `TerminateSequence` na požadavek HTTP a očekává `TerminateSequenceResponse` zprávu v odpovědi HTTP. Respondér WCF přenáší zprávu `TerminateSequenceResponse` v odpovědi HTTP.
 
-### <a name="one-way-addressable-initiator"></a>Jedním ze způsobů, adresovatelný iniciátor
+### <a name="one-way-addressable-initiator"></a>Jedním ze způsobů, jak adresovatelné iniciátory
 
 #### <a name="binding"></a>Vazba
 
-WCF poskytuje vzoru výměny zpráv jednosměrné pomocí jednoho pořadí přes jednu vstupní a jednu výstupní kanál protokolu HTTP. WCF používá k přenosu všech zpráv požadavků HTTP. Všechny odpovědi protokolu HTTP být prázdným textem zprávy a stavovým kódem HTTP 202.
+WCF poskytuje jednosměrný vzor výměny zpráv pomocí jedné sekvence přes jeden příchozí a jeden odchozí kanál HTTP. WCF používá požadavky HTTP k přenosu všech zpráv. Všechny odpovědi HTTP mají prázdný text a stavový kód HTTP 202.
 
 #### <a name="createsequence-exchange"></a>CreateSequence Exchange
 
-Iniciátor WCF přenáší `CreateSequence` zprávu bez `Offer` elementu na požadavek HTTP. Vytvoří posloupnost respondér WCF a přenáší `CreateSequenceResponse` zprávu bez `Accept` elementu na požadavek HTTP.
+Iniciátor WCF přenáší zprávu `CreateSequence` bez `Offer` elementu v požadavku HTTP. Respondér WCF vytvoří sekvenci a přenáší `CreateSequenceResponse` zprávu bez `Accept` elementu na požadavek HTTP.
 
 ### <a name="duplex-addressable-initiator"></a>Duplexní, adresovatelný iniciátor
 
 #### <a name="binding"></a>Vazba
 
-Poskytuje WCF pomocí dvou vzoru výměny zpráv plně asynchronní, pokud vytvoříte obousměrný pořadí více než jeden vstupní a jednu výstupní kanál protokolu HTTP. Tento vzorce výměny zpráv lze kombinovat s `Request/Reply`, `Addressable` vzoru výměny zpráv iniciátoru omezeným způsobem. WCF používá k přenosu všech zpráv požadavků HTTP. Všechny odpovědi protokolu HTTP být prázdným textem zprávy a stavovým kódem HTTP 202.
+WCF poskytuje plně asynchronní obousměrný způsob výměny zpráv pomocí dvou sekvencí přes jeden příchozí a jeden odchozí kanál HTTP. Tento vzor výměny zpráv je možné kombinovat s `Request/Reply`, `Addressable` vzor výměny zpráv iniciátoru. WCF používá k přenosu všech zpráv požadavky HTTP. Všechny odpovědi HTTP mají prázdný text a stavový kód HTTP 202.
 
 #### <a name="createsequence-exchange"></a>CreateSequence Exchange
 
-Iniciátor WCF přenáší `CreateSequence` zprávy s `Offer` elementu na požadavek HTTP. WCF respondér zajišťuje, že `CreateSequence` má `Offer` elementu, pak vytvoří sekvenci a přenáší `CreateSequenceResponse` zprávy s `Accept` elementu.
+Iniciátor WCF přenáší `CreateSequence` zprávu s `Offer` elementu v požadavku HTTP. Respondér WCF zajišťuje, že `CreateSequence` má `Offer` element, pak vytvoří sekvenci a přenáší zprávu `CreateSequenceResponse` s `Accept` elementem.
 
-#### <a name="sequence-lifetime"></a>Doba života pořadí
+#### <a name="sequence-lifetime"></a>Doba platnosti sekvence
 
-WCF považuje dvou sekvencí jeden plně duplexní relace.
+WCF považuje dvě sekvence za jednu plně duplexní relaci.
 
-Při generování chybu, která chyb jedním sekvenčním WCF očekává, že vzdálený koncový bod na selhání obou pořadí. Při čtení chybu, která jedním sekvenčním chyb, chyb WCF obou pořadí.
+Při generování chyby, která chybí jednu sekvenci, služba WCF očekává, že vzdálený koncový bod selže v obou sekvencích. Při čtení chyby, která chybí jednu sekvenci, chyby WCF obě sekvence.
 
-WCF zavřít jeho odchozí pořadí a pokračovat ve zpracování zprávy na jeho příchozí pořadí. Naopak WCF zpracovávat zavřít příchozí pořadí a i nadále odesílat zprávy v jeho výstupní sekvence.
+WCF může zavřít svou odchozí sekvenci a nadále zpracovávat zprávy v její vstupní sekvenci. V opačném případě může WCF zpracovat ukončení příchozí sekvence a pokračovat v posílání zpráv ve výstupní sekvenci.
 
-### <a name="request-reply-and-one-way-non-addressable-initiator"></a>Požadavek odpověď a jednosměrný, bajtově Adresovatelného iniciátor
+### <a name="request-reply-and-one-way-non-addressable-initiator"></a>Požadavek – odpověď a jednosměrný, neadresovatelný iniciátor
 
 #### <a name="binding"></a>Vazba
 
-Poskytuje jednosměrný WCF a vzorce výměny zpráv žádost odpověď pomocí dvou pořadí více než jeden kanál protokolu HTTP. Přenést všechny zprávy z iniciátoru do odpovědí respondéru a HTTP přenášet všechny zprávy z straně odpovídajícího iniciátoru pomocí WCF požadavky HTTP.
+WCF poskytuje jednosměrné a rychlé zprávy s požadavkem na odpověď pomocí dvou sekvencí přes jeden kanál HTTP. WCF používá požadavky HTTP k přenosu všech zpráv od iniciátoru do respondérů a odpovědí HTTP na předávání všech zpráv od odpovídajícího příjemce k iniciátoru.
 
 #### <a name="createsequence-exchange"></a>CreateSequence Exchange
 
-Iniciátor WCF přenáší `CreateSequence` zprávy s `Offer` elementu na požadavek HTTP a očekává, že `CreateSequenceResponse` zprávy na odpovědi HTTP. Vytvoří posloupnost respondér WCF a přenáší `CreateSequenceResponse` zprávy s `Accept` element na odpovědi HTTP.
+Iniciátor WCF přenáší `CreateSequence` zprávu s `Offer` elementu v požadavku HTTP a očekává zprávu `CreateSequenceResponse` v odpovědi HTTP. Respondér WCF vytvoří sekvenci a přenáší `CreateSequenceResponse`ovou zprávu pomocí elementu `Accept` na odpovědi HTTP.
 
 #### <a name="one-way-message"></a>Jednosměrná zpráva
 
-Jednosměrná zpráva exchange úspěšně dokončit, iniciátor WCF přenáší zprávy sekvence do požadavku na požadavku HTTP a přijímá samostatný `SequenceAcknowledgement` zprávy na odpovědi HTTP. `SequenceAcknowledgement` Musí potvrzení zprávy odesílané informace.
+Aby bylo možné provést jednosměrnou výměnu zpráv, iniciátor WCF odešle zprávu sekvence požadavku na požadavek HTTP a obdrží samostatnou `SequenceAcknowledgement`ovou zprávu s odpovědí HTTP. `SequenceAcknowledgement` musí potvrdit přenesenou zprávu.
 
-WCF respondér může odpovědět na požadavek na potvrzení, chybu nebo jinou odpověď s prázdným textem zprávy a stavovým kódem HTTP 202.
+Respondér WCF může odpovědět na žádost s potvrzením, chybou nebo odpovědí s prázdným tělem a kódem stavu HTTP 202.
 
-#### <a name="two-way-messages"></a>Dvě způsob, jak zprávy
+#### <a name="two-way-messages"></a>Dvě jednosměrné zprávy
 
-Protokol pro výměnu zpráv dvousměrné úspěšně dokončit, iniciátor WCF přenáší zprávy sekvence do požadavku na požadavku HTTP a přijímá zprávy sekvence odpovědí na odpovědi HTTP. Odpovědi musí mít `SequenceAcknowledgement` potvrdil pořadí zprávy s požadavkem přenosu.
+Aby bylo možné úspěšně dokončit oboustranný protokol výměny zpráv, iniciátor WCF přenese zprávu sekvence požadavku na požadavek HTTP a obdrží zprávu sekvence odpovědi v odpovědi HTTP. Odpověď musí mít `SequenceAcknowledgement` potvrzující zprávu sekvence požadavků.
 
-WCF respondér může odpovědět na požadavek odpovědi na žádost, chybu nebo jinou odpověď s prázdným textem zprávy a stavovým kódem HTTP 202.
+Respondér WCF může odpovědět na požadavek pomocí odpovědi aplikace, chyby nebo odpovědi s prázdným kódem a stavovým kódem HTTP 202.
 
-Z důvodu přítomnosti jednosměrné zprávy a načasování odpovědi aplikace mít žádnou souvislost pořadové číslo sekvence zprávy požadavku a pořadovým číslem zprávy odpovědi.
+Z důvodu přítomnosti jednosměrných zpráv a časování odpovědí na aplikace není pořadové číslo zprávy sekvence požadavku a pořadové číslo zprávy odpovědi nijak korelace.
 
-#### <a name="retrying-replies"></a>Opakování pokusu o odpovědi
+#### <a name="retrying-replies"></a>Opakování odpovědí
 
-WCF spoléhá na korelace požadavku a odpovědi HTTP pro korelace protokol exchange obousměrný zprávy. Z tohoto důvodu je iniciátor WCF nezastaví opakování zprávy sekvence do požadavku při potvrzení pořadí zprávy s požadavkem, ale spíše, při představuje odpověď HTTP `SequenceAcknowledgement`, odpověď aplikace nebo selhání. WCF respondér zopakuje pokus o odpovědi na odpovědi HTTP požadavku, ke kterému je korelační odpověď.
+WCF spoléhá na korelaci požadavku HTTP na korelaci protokolu výměny zpráv se dvěma způsoby. Z tohoto důvodu se iniciátor WCF neukončí opakování zprávy sekvence požadavku při potvrzení zprávy sekvence požadavku, ale místo toho, aby odpověď protokolu HTTP zajišťovala `SequenceAcknowledgement`, odpověď aplikace nebo chybu. Služby WCF respondér opakuje odpovědi na odpověď HTTP žádosti, na kterou je tato odpověď korelační.
 
 #### <a name="closesequence-exchange"></a>CloseSequence Exchange
 
-Po přijetí všechny zprávy sekvence odpovědí a potvrzení pro všechny zprávy sekvence jednosměrný požadavek, přenáší iniciátoru WCF `CloseSequence` zpráva sekvence požadavku na požadavek HTTP a očekává, že `CloseSequenceResponse` na odpovědi HTTP.
+Po přijetí všech zpráv sekvence odpovědí a potvrzení pro všechny jednosměrné zprávy sekvence požadavků iniciátor WCF přenáší `CloseSequence`ovou zprávu pro sekvenci požadavku HTTP a očekává `CloseSequenceResponse` v odpovědi HTTP.
 
-Zavřením sekvence požadavku implicitně zavření sekvence odpovědí. To znamená, že je iniciátor WCF obsahuje koncový sekvence odpovědí `SequenceAcknowledgement` na `CloseSequence` zprávu a sekvence odpovědí nemá `CloseSequence` exchange.
+Uzavírání sekvence požadavků implicitně uzavře sekvenci odpovědí. To znamená, že iniciátor WCF zahrnuje konečné `SequenceAcknowledgement` sekvence odpovědí ve zprávě `CloseSequence` a sekvence odpovědí nemá `CloseSequence` Exchange.
 
-WCF respondér zajišťuje všechny odpovědi jsou potvrzeny a vysílá `CloseSequenceResponse` zprávy na odpovědi HTTP.
+Respondér WCF zajišťuje potvrzení všech odpovědí a přenáší zprávu `CloseSequenceResponse` v odpovědi HTTP.
 
-#### <a name="terminatesequence-exchange"></a>TerminateSequence dříve Exchange
+#### <a name="terminatesequence-exchange"></a>TerminateSequence – Exchange
 
-Po přijetí `CloseSequenceResponse` přenáší zprávy, iniciátor WCF `TerminateSequence` zpráva sekvence požadavku na požadavek HTTP a očekává, že `TerminateSequenceResponse` na odpovědi HTTP.
+Po přijetí zprávy `CloseSequenceResponse` odešle iniciátor WCF zprávu `TerminateSequence` pro sekvenci požadavku HTTP a očekává `TerminateSequenceResponse` na odpovědi HTTP.
 
-Podobně jako `CloseSequence` exchange ukončuje sekvence požadavku implicitně ukončí sekvence odpovědí. To znamená, že je iniciátor WCF obsahuje koncový sekvence odpovědí `SequenceAcknowledgement` na `TerminateSequence` zprávu a sekvence odpovědí nemá `TerminateSequence` exchange.
+Stejně jako u `CloseSequence` Exchange ukončí sekvence požadavku implicitně ukončení sekvence odpovědí. To znamená, že iniciátor WCF zahrnuje konečné `SequenceAcknowledgement` sekvence odpovědí ve zprávě `TerminateSequence` a sekvence odpovědí nemá `TerminateSequence` Exchange.
 
-Přenáší respondér WCF `TerminateSequenceResponse` zprávy na odpovědi HTTP.
+Respondér WCF přenáší zprávu `TerminateSequenceResponse` v odpovědi HTTP.
 
-### <a name="requestreply-addressable-initiator"></a>Žádost odpověď, adresovatelný iniciátor
+### <a name="requestreply-addressable-initiator"></a>Požadavek nebo odpověď, adresovatelný iniciátor
 
 #### <a name="binding"></a>Vazba
 
-WCF poskytuje vzoru výměny zpráv žádost odpověď pomocí dvou pořadí více než jeden vstupní a jednu výstupní kanál protokolu HTTP. Tento vzorce výměny zpráv lze kombinovat s `Duplex, Addressable` vzoru výměny zpráv iniciátoru omezeným způsobem. WCF používá k přenosu všech zpráv požadavků HTTP. Všechny odpovědi protokolu HTTP být prázdným textem zprávy a stavovým kódem HTTP 202.
+WCF poskytuje vzor výměny zpráv požadavek-odpověď pomocí dvou sekvencí přes jeden příchozí a jeden odchozí kanál HTTP. Tento vzor výměny zpráv může být smíšený se vzorem výměny zpráv iniciátora `Duplex, Addressable`. WCF používá požadavky HTTP k přenosu všech zpráv. Všechny odpovědi HTTP mají prázdný text a stavový kód HTTP 202.
 
 #### <a name="createsequence-exchange"></a>CreateSequence Exchange
 
-Iniciátor WCF přenáší `CreateSequence` zprávy s `Offer` elementu na požadavek HTTP. WCF respondér zajišťuje, že `CreateSequence` má `Offer` prvek pak vytvoří sekvenci a přenáší `CreateSequenceResponse` zprávy s `Accept` elementu.
+Iniciátor WCF přenáší `CreateSequence` zprávu s `Offer` elementu v požadavku HTTP. Respondér WCF zajišťuje, že `CreateSequence` má `Offer` element, potom vytvoří sekvenci a přenáší zprávu `CreateSequenceResponse` s `Accept` elementem.
 
-#### <a name="requestreply-correlation"></a>Korelace požadavku/odpovědi
+#### <a name="requestreply-correlation"></a>Korelace žádosti a odpovědi
 
-Následující část se vztahuje na všechny korelační požadavky a odpovědi:
+Následující postup se týká všech korelačních požadavků a odpovědí:
 
-- Zajišťuje také nesete zprávy požadavku všechny aplikace, WCF `ReplyTo` reference koncového bodu a `MessageId`.
+- Služba WCF zajišťuje, aby všechny zprávy žádosti o aplikace byly označeny odkazem na `ReplyTo` koncový bod a `MessageId`.
 
-- WCF platí odkaz na místní koncový bod jako každou zprávu požadavku aplikace `ReplyTo`. Odkaz na místním koncovým bodem je `CreateSequence` zprávy `ReplyTo` pro iniciátor a `CreateSequence` zprávy `To` pro respondér.
+- WCF používá odkaz na místní koncový bod jako každou `ReplyTo`zprávy žádosti o aplikaci. Odkaz na místní koncový bod je `ReplyTo` `CreateSequence` zprávy pro iniciátor a `To` zprávy `CreateSequence` pro respondér.
 
-- WCF zajišťuje také nesete zprávy příchozí žádosti `MessageId` a `ReplyTo`.
+- WCF zajišťuje, aby příchozí zprávy s požadavkem byly označeny `MessageId` a `ReplyTo`.
 
-- Zajišťuje WCF `ReplyTo` reference koncového bodu identifikátor URI zprávy požadavku všechny aplikace odpovídat odkaz na místní koncový bod definovaný dříve.
+- Služba WCF zajišťuje, aby se identifikátor URI odkazu na koncový bod `ReplyTo` všech zpráv žádostí o aplikace shodoval s odkazem na místní koncový bod definovaným dříve.
 
-- WCF se zajistí, že všechny odpovědi označena správná `RelatesTo` a `To` záhlaví po `wsa` pravidla korelace požadavku/odpovědi.
+- WCF zajišťuje, aby všechny odpovědi byly označeny správnými `RelatesTo` a `To` hlavičkymi po `wsa` pravidla korelace požadavků a odpovědí.

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - implicitly-typed local variables [C#]
 - var [C#]
 ms.assetid: b9218fb2-ef5d-4814-8a8e-2bc29b0bbc9b
-ms.openlocfilehash: 7010c38797ab64e5106c96c06cd814c143ca9c24
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: dab708bfbc33458bc2664c0d04757f0badcc2575
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73419378"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141602"
 ---
 # <a name="implicitly-typed-local-variables-c-programming-guide"></a>Implicitně typované lokální proměnné (C# Průvodce programováním)
 
@@ -30,13 +30,13 @@ Klíčové slovo `var` může být použito v následujících kontextech:
 - V příkazu [for](../../language-reference/keywords/for.md) Initialization.
 
     ```csharp
-    for(var x = 1; x < 10; x++)
+    for (var x = 1; x < 10; x++)
     ```
 
 - V příkazu [foreach](../../language-reference/keywords/foreach-in.md) Initialization.
 
     ```csharp
-    foreach(var item in list){...}
+    foreach (var item in list) {...}
     ```
 
 - V příkazu [using](../../language-reference/keywords/using-statement.md) .
@@ -45,7 +45,7 @@ Klíčové slovo `var` může být použito v následujících kontextech:
     using (var file = new StreamReader("C:\\myfile.txt")) {...}
     ```
 
-Další informace najdete v tématu [Postupy: použití implicitního typu lokálních proměnných a polí ve výrazu dotazu](how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md).
+Další informace najdete v tématu [použití implicitního typu lokálních proměnných a polí ve výrazu dotazu](how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md).
 
 ## <a name="var-and-anonymous-types"></a>var a anonymní typy
 
@@ -63,7 +63,7 @@ Následující omezení platí pro implicitně typové deklarace proměnných:
 
 - `var` nelze použít pro pole v oboru třídy.
 
-- Proměnné deklarované pomocí `var` nelze použít ve výrazu inicializace. Jinými slovy je tento výraz právní`: int i = (i = 20);`, ale tento výraz vytvoří chybu při kompilaci: `var i = (i = 20);`
+- Proměnné deklarované pomocí `var` nelze použít ve výrazu inicializace. Jinými slovy, tento výraz je platný: `int i = (i = 20);` ale tento výraz vytvoří chybu při kompilaci: `var i = (i = 20);`
 
 - V rámci stejného příkazu nelze inicializovat více proměnných s implicitním typem.
 
@@ -95,7 +95,7 @@ Použití `var` však má alespoň potenciál, aby bylo obtížné pochopit kód
 
 - [C#Odkaz](../../language-reference/index.md)
 - [Implicitně typovaná pole](../arrays/implicitly-typed-arrays.md)
-- [Postupy: Použití implicitně typovaných lokálních proměnných a polí ve výrazu dotazu.](how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md)
+- [Použití implicitního typu lokálních proměnných a polí ve výrazu dotazu](how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md)
 - [Anonymní typy](anonymous-types.md)
 - [Inicializátory objektu a kolekce](object-and-collection-initializers.md)
 - [var](../../language-reference/keywords/var.md)

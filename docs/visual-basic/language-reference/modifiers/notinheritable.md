@@ -1,5 +1,5 @@
 ---
-title: NotInheritable (Visual Basic)
+title: NotInheritable
 ms.date: 07/20/2015
 f1_keywords:
 - NotInheritable
@@ -15,20 +15,20 @@ helpviewer_keywords:
 - sealed classes [Visual Basic]
 - classes [Visual Basic], not inheritable
 ms.assetid: 5c4da7c9-9562-4653-a947-1972e992f9f9
-ms.openlocfilehash: 05adafaf26cab7f7ed00c51ee23fafbe02f2a408
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c7e820fe4c6de78171be0510608d7b9da1f97f2f
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61920689"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351467"
 ---
 # <a name="notinheritable-visual-basic"></a>NotInheritable (Visual Basic)
-Určuje, zda třídu nelze použít jako základní třídu.  
+Specifies that a class cannot be used as a base class.  
   
 ## <a name="remarks"></a>Poznámky  
- **Alternativní podmínky**. Někdy se označuje jako třída, která nelze dědit *zapečetěné* třídy.  
+ **Alternate Terms**. A class that cannot be inherited is sometimes called a *sealed* class.  
   
- `NotInheritable` Modifikátor lze použít v tomto kontextu:  
+ The `NotInheritable` modifier can be used in this context:  
   
  [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)  
   

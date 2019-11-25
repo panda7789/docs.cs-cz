@@ -6,33 +6,17 @@ helpviewer_keywords:
 - performance counters
 - performance monitoring, counters
 ms.assetid: 06a4ae8c-eeb2-4d5a-817e-b1b95c0653e1
-ms.openlocfilehash: 02163f923bc93a1cf377cc608b5f390472c60edd
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a592cbb49c1b9ec8f36b90f2ec1097f6c84efbe9
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121603"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74281813"
 ---
-# <a name="performance-counters-in-the-net-framework"></a>Čítače výkonu v rozhraní .NET Framework
+# <a name="performance-counters-in-the-net-framework"></a>Čítače výkonu v .NET Framework
+
 V tomto tématu najdete seznam čítačů výkonu, které můžete najít v [nástroji Sledování výkonu systému Windows](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749249%28v=ws.11%29).  
-  
-- [Čítače výkonu výjimek](#exception)  
-  
-- [Čítače výkonu spolupráce](#interop)  
-  
-- [Čítače výkonu JIT](#jit)  
-  
-- [Načítají se čítače výkonu.](#loading)  
-  
-- [Čítače výkonu zámků a vláken](#lockthread)  
-  
-- [Čítače výkonu paměti](#memory)  
-  
-- [Čítače výkonu sítě](#networking)  
-  
-- [Čítače výkonu zabezpečení](#security)  
-  
-<a name="exception"></a>   
+
 ## <a name="exception-performance-counters"></a>Čítače výkonu výjimek  
  Kategorie výjimky modulu .NET CLR konzoly Performance obsahuje čítače, které poskytují informace o výjimkách vyvolaných aplikací. Následující tabulka popisuje tyto čítače výkonu.  
   
@@ -43,8 +27,7 @@ V tomto tématu najdete seznam čítačů výkonu, které můžete najít v [ná
 |**počet filtrů za sekundu**|Zobrazuje počet zpracovaných filtrů výjimek .NET za sekundu. Filtr výjimek vyhodnocuje bez ohledu na to, zda je výjimka zpracována.<br /><br /> Tento čítač nepředstavuje průměr v čase. zobrazuje rozdíl mezi hodnotami zjištěnými v posledních dvou vzorcích dělený délkou intervalu vzorkování.|  
 |**počet finally za sekundu**|Zobrazuje počet bloků finally spuštěných za sekundu. Je zaručeno provedení bloku finally bez ohledu na to, jak byl blok try ukončen.  Počítají se pouze bloky finally provedené pro výjimku. v tomto čítači se nepočítají bloky finally k běžným cestám kódu.<br /><br /> Tento čítač nepředstavuje průměr v čase. zobrazuje rozdíl mezi hodnotami zjištěnými v posledních dvou vzorcích dělený délkou intervalu vzorkování.|  
 |**Zahodit na hloubku zachycení za sekundu**|Zobrazuje počet prodaných rámců zásobníku z rámce, který vyvolal výjimku do rámce, který zpracovává výjimku, za sekundu. Tento čítač je nastaven na hodnotu nula, pokud je zadána obslužná rutina výjimky, takže vnořené výjimky znázorňují hloubku zásobníku obslužných rutin.<br /><br /> Tento čítač nepředstavuje průměr v čase. zobrazuje rozdíl mezi hodnotami zjištěnými v posledních dvou vzorcích dělený délkou intervalu vzorkování.|  
-  
-<a name="interop"></a>   
+     
 ## <a name="interop-performance-counters"></a>Čítače výkonu spolupráce  
  Kategorie interoperability .NET CLR konzoly Performance obsahuje čítače, které poskytují informace o interakci aplikace s komponentami modelu COM, službami COM+ a externími knihovnami typů. Následující tabulka popisuje tyto čítače výkonu.  
   
@@ -55,8 +38,7 @@ V tomto tématu najdete seznam čítačů výkonu, které můžete najít v [ná
 |**počet zástupných procedur**|Zobrazuje aktuální počet zástupných procedur vytvořených modulem CLR (Common Language Runtime). Zástupné procedury jsou zodpovědné za zařazování argumentů a návratové hodnoty ze spravovaného do nespravovaného kódu a naopak, během volání Interop modelu COM nebo volání vyvolání platformy.|  
 |**počet exportů TLB za sekundu**|Vyhrazeno pro budoucí použití.|  
 |**počet importů TLB za sekundu**|Vyhrazeno pro budoucí použití.|  
-  
-<a name="jit"></a>   
+    
 ## <a name="jit-performance-counters"></a>JIT – čítače výkonu  
  Kategorie JIT konzoly Performance .NET CLR obsahuje čítače, které poskytují informace o kódu, který byl zkompilován JIT. Následující tabulka popisuje tyto čítače výkonu.  
   
@@ -68,8 +50,7 @@ V tomto tématu najdete seznam čítačů výkonu, které můžete najít v [ná
 |**IL – bajty zpracovaných kompilátorem JIT/s**|Zobrazuje počet bajtů jazyka MSIL, které jsou kompilovány JIT za sekundu. Tento čítač nepředstavuje průměr v čase. zobrazuje rozdíl mezi hodnotami zjištěnými v posledních dvou vzorcích dělený délkou intervalu vzorkování.|  
 |**Standardní chyby JIT**|Zobrazuje nejvyšší počet metod, které kompilátor JIT nedokázal zkompilovat od spuštění aplikace. K této chybě může dojít, pokud jazyk MSIL nelze ověřit nebo pokud došlo k vnitřní chybě v kompilátoru JIT.|  
 |**Celkový počet bajtů zpracovaných kompilátorem JIT úrovně důvěryhodnosti**|Zobrazuje celkový počet bajtů jazyka MSIL spouštěných JIT od spuštění aplikace. Tento čítač je ekvivalentem čítače **# zpracovaných kompilátorem JIT bajtů úrovně Il** .|  
-  
-<a name="loading"></a>   
+     
 ## <a name="loading-performance-counters"></a>Načítají se čítače výkonu.  
  Kategorie načítání modulu .NET CLR konzoly Performance obsahuje čítače, které poskytují informace o sestaveních, třídách a doménách aplikace, které jsou načteny. Následující tabulka popisuje tyto čítače výkonu.  
   
@@ -91,8 +72,7 @@ V tomto tématu najdete seznam čítačů výkonu, které můžete najít v [ná
 |**Celkový počet nenačtených objektů AppDomain**|Zobrazuje celkový počet aplikačních domén uvolněných od spuštění aplikace. Pokud je doména aplikace načtena a uvolněna několikrát, tento čítač se zvýší pokaždé, když se doména aplikace uvolní.|  
 |**Celkem sestavení**|Zobrazuje celkový počet sestavení načtených od spuštění aplikace. Pokud je sestavení načteno jako doménově neutrální z více domén aplikace, tento čítač se zvyšuje pouze jednou.|  
 |**Celkový počet načtených tříd**|Zobrazuje kumulativní počet tříd zavedených ve všech sestaveních od spuštění aplikace.|  
-  
-<a name="lockthread"></a>   
+   
 ## <a name="lock-and-thread-performance-counters"></a>Čítače výkonu zámků a vláken  
  Kategorie LocksAndThreads modulu .NET CLR konzoly Performance obsahuje čítače, které poskytují informace o spravovaných zámkech a vláknech, které aplikace používá. Následující tabulka popisuje tyto čítače výkonu.  
   
@@ -108,8 +88,7 @@ V tomto tématu najdete seznam čítačů výkonu, které můžete najít v [ná
 |**Maximální délka fronty**|Zobrazuje celkový počet vláken, která od spuštění aplikace čekala na získání spravovaného zámku.|  
 |**frekvence rozpoznaných vláken za sekundu**|Zobrazí počet vláken za sekundu, které byly rozpoznány modulem runtime. Tato vlákna jsou přidružena k odpovídajícímu objektu spravovaného vlákna. Modul runtime nevytváří Tato vlákna, ale byly spuštěny v modulu runtime alespoň jednou.<br /><br /> Jsou sledována pouze jedinečná vlákna; vlákna se stejným ID vlákna, která znovu vstupují modul runtime nebo se znovu vytvoří po ukončení vlákna, se nepočítají dvakrát.<br /><br /> Tento čítač nepředstavuje průměr v čase. zobrazuje rozdíl mezi hodnotami zjištěnými v posledních dvou vzorcích dělený délkou intervalu vzorkování.|  
 |**Celkový počet sporů**|Zobrazuje celkový počet pokusů, kolikrát se vlákna v modulu runtime pokusila získat spravovaný zámek neúspěšně.|  
-  
-<a name="memory"></a>   
+    
 ## <a name="memory-performance-counters"></a>Čítače výkonu paměti  
  Kategorie paměti modulu .NET CLR konzoly Performance obsahuje čítače, které poskytují informace o uvolňování paměti. Následující tabulka popisuje tyto čítače výkonu.  
   
@@ -117,9 +96,9 @@ V tomto tématu najdete seznam čítačů výkonu, které můžete najít v [ná
 |-------------------------|-----------------|  
 |**Počet bajtů ve všech haldách**|Zobrazuje součet čítače velikosti haldy **1**. generace, **velikosti haldy 2. generace**a **large object čítačů velikosti haldy** . Tento čítač označuje aktuální paměť přidělenou v bajtech pro haldy uvolňování paměti.|  
 |**Počet popisovačů GC**|Zobrazuje aktuální počet používaných obslužných rutin uvolňování paměti. Popisovače uvolňování paměti jsou popisovače pro prostředky externě pro modul CLR (Common Language Runtime) a spravované prostředí.|  
-|**Počet kolekcí 0. generace**|Zobrazuje počet uvolnění objektů generace 0 (tj. nejmladšího sourozence, naposledy přidělených objektů) od spuštění aplikace.<br /><br /> K uvolňování paměti generace 0 dochází, když volná paměť v generaci 0 nestačí pro splnění žádosti o přidělení. Tento čítač se zvyšuje na konci uvolňování paměti generace 0. Generace paměti vyšší úrovně zahrnuje všechny kolekce nižší generace. Tento čítač se explicitně zvýší, když dojde k uvolnění paměti generace vyšší (generace 1 nebo 2).<br /><br /> Tento čítač zobrazuje poslední zjištěnou hodnotu. Hodnota čítače **_global\_** není přesná a měla by být ignorována.|  
-|**Počet kolekcí 1. generace**|Zobrazuje počet uvolnění paměti objektů generace 1 od spuštění aplikace.<br /><br /> Čítač se zvyšuje na konci uvolňování paměti 1. generace. Generace paměti vyšší úrovně zahrnuje všechny kolekce nižší generace. Tento čítač se explicitně zvýší, když dojde k uvolnění paměti vyšší generace (generace 2).<br /><br /> Tento čítač zobrazuje poslední zjištěnou hodnotu. Hodnota čítače **_global\_** není přesná a měla by být ignorována.|  
-|**Počet kolekcí generace 2**|Zobrazuje počet uvolnění paměti objektů generace 2 od spuštění aplikace. Čítač se zvyšuje na konci uvolňování paměti 2. generace (označuje se také jako úplné uvolňování paměti).<br /><br /> Tento čítač zobrazuje poslední zjištěnou hodnotu. Hodnota čítače **_global\_** není přesná a měla by být ignorována.|  
+|**Počet kolekcí 0. generace**|Zobrazuje počet uvolnění objektů generace 0 (tj. nejmladšího sourozence, naposledy přidělených objektů) od spuštění aplikace.<br /><br /> K uvolňování paměti generace 0 dochází, když volná paměť v generaci 0 nestačí pro splnění žádosti o přidělení. Tento čítač se zvyšuje na konci uvolňování paměti generace 0. Generace paměti vyšší úrovně zahrnuje všechny kolekce nižší generace. Tento čítač se explicitně zvýší, když dojde k uvolnění paměti generace vyšší (generace 1 nebo 2).<br /><br /> Tento čítač zobrazuje poslední zjištěnou hodnotu. Hodnota čítače **_Global\_** není přesná a měla by být ignorována.|  
+|**Počet kolekcí 1. generace**|Zobrazuje počet uvolnění paměti objektů generace 1 od spuštění aplikace.<br /><br /> Čítač se zvyšuje na konci uvolňování paměti 1. generace. Generace paměti vyšší úrovně zahrnuje všechny kolekce nižší generace. Tento čítač se explicitně zvýší, když dojde k uvolnění paměti vyšší generace (generace 2).<br /><br /> Tento čítač zobrazuje poslední zjištěnou hodnotu. Hodnota čítače **_Global\_** není přesná a měla by být ignorována.|  
+|**Počet kolekcí generace 2**|Zobrazuje počet uvolnění paměti objektů generace 2 od spuštění aplikace. Čítač se zvyšuje na konci uvolňování paměti 2. generace (označuje se také jako úplné uvolňování paměti).<br /><br /> Tento čítač zobrazuje poslední zjištěnou hodnotu. Hodnota čítače **_Global\_** není přesná a měla by být ignorována.|  
 |**Počet vyvolaných GC**|Zobrazuje nejvyšší počet, kolikrát bylo provedeno uvolňování paměti z důvodu explicitního volání <xref:System.GC.Collect%2A?displayProperty=nameWithType>. Je vhodné nechat systém uvolňování paměti, aby vypravil četnost jeho kolekcí.|  
 |**počet připnutých objektů**|Zobrazuje počet připnutých objektů zjištěných při posledním uvolňování paměti. Připnutý objekt je objekt, který systém uvolňování paměti nemůže přesunout do paměti. Tento čítač sleduje připnuté objekty pouze v haldách, které jsou shromažďovány z paměti. Například uvolňování paměti generace 0 způsobuje vyčíslení připnuté objekty pouze v haldě generace 0.|  
 |**Počet používaných bloků jímky**|Zobrazuje aktuální počet používaných synchronizačních bloků. Bloky synchronizace jsou datové struktury pro jednotlivé objekty přidělené pro ukládání informací o synchronizaci. Obsahují slabé odkazy na spravované objekty a musí být prohledávány systémem uvolňování paměti. Synchronizační bloky nejsou omezeny na ukládání informací o synchronizaci; můžou také ukládat definiční metadata COM. Tento čítač indikuje problémy s výkonem při velkém použití primitiv synchronizace.|  
@@ -133,15 +112,15 @@ V tomto tématu najdete seznam čítačů výkonu, které můžete najít v [ná
 |**Velikost haldy 1. generace**|Zobrazuje aktuální počet bajtů v generaci 1; Tento čítač nezobrazuje maximální velikost 1. generace. Objekty nejsou v této generaci přímo přiděleny; jsou povýšeny z předchozích generací paměti generace 0. Tento čítač se aktualizuje na konci uvolňování paměti, ne při každém přidělení.|  
 |**Bajty úrovně 1. generace (KB/s)**|Zobrazuje počet bajtů za sekundu, které jsou povýšeny z generace 1 na generaci 2. Objekty, které jsou povýšeny pouze proto, že čekají na finalizaci, nejsou zahrnuty do tohoto čítače.<br /><br /> V případě, že se zachová uvolňování paměti, je podporována paměť. Z generace 2 se nic nezvyšuje, protože se jedná o nejstarší generaci. Tento čítač je indikátorem velmi dlouhých objektů, které jsou vytvářeny za sekundu.<br /><br /> Tento čítač zobrazuje rozdíl mezi hodnotami zjištěnými v posledních dvou vzorcích dělený délkou intervalu vzorkování.|  
 |**Velikost haldy 2. generace**|Zobrazí aktuální počet bajtů v generaci 2. Objekty nejsou v této generaci přímo přiděleny; jsou povýšeny z generace 1 v předchozích kolekcích uvolnění paměti 1. generace. Tento čítač se aktualizuje na konci uvolňování paměti, ne při každém přidělení.|  
-|**Velikost haldy Large Object**|Zobrazí aktuální velikost haldy Large Object v bajtech. Objekty, které jsou větší než přibližně 85 000 bajtů, jsou považovány za velké objekty uvolňováním paměti a jsou přímo přiděleny ve speciální haldě. nejsou povýšené prostřednictvím generací. Tento čítač se aktualizuje na konci uvolňování paměti, ne při každém přidělení.|  
+|**Velikost haldy Large Object**|Zobrazí aktuální velikost haldy velkých objektů v bajtech. Objekty, které jsou větší než přibližně 85 000 bajtů, jsou považovány za velké objekty uvolňováním paměti a jsou přímo přiděleny ve speciální haldě. Nejsou povýšené prostřednictvím generací. Tento čítač se aktualizuje na konci uvolňování paměti, ne při každém přidělení.|  
 |**ID procesu**|Zobrazuje ID procesu monitorované instance procesu CLR.|  
 |**Povýšená finalizace – paměť z 0. generace**|Zobrazí bajty paměti, které jsou povýšeny z 0. generace do 1. generace, protože čekají na dokončení. Tento čítač není kumulativní; zobrazuje hodnotu zjištěnou na konci posledního uvolňování paměti.|  
 |**Propagovaná paměť z gen 0**|Zobrazí bajty paměti, které zadržely uvolňování paměti a jsou povýšeny z generace 0 na generaci 1. Objekty, které jsou povýšeny pouze proto, že čekají na finalizaci, nejsou zahrnuty do tohoto čítače. Tento čítač není kumulativní; zobrazuje hodnotu zjištěnou na konci posledního uvolňování paměti.|  
 |**Propagace paměti z 1. generace**|Zobrazuje počet bajtů paměti, které zadržely uvolňování paměti a jsou povýšeny z generace 1 na generaci 2. Objekty, které jsou povýšeny pouze proto, že čekají na finalizaci, nejsou zahrnuty do tohoto čítače. Tento čítač není kumulativní; zobrazuje hodnotu zjištěnou na konci posledního uvolňování paměti. Hodnota tohoto čítače je nastavena na hodnotu 0, pokud poslední uvolňování paměti bylo pouze kolekcí generace 0.|  
-  
-<a name="networking"></a>   
+     
 ## <a name="networking-performance-counters"></a>Čítače výkonu sítě  
- Kategorie sítě .NET CLR konzoly Performance obsahuje čítače, které poskytují informace o datech, která aplikace odesílá a přijímá přes síť. Následující tabulka popisuje tyto čítače výkonu.  
+
+Kategorie sítě .NET CLR konzoly Performance obsahuje čítače, které poskytují informace o datech, která aplikace odesílá a přijímá přes síť. Následující tabulka popisuje tyto čítače výkonu.  
   
 |Čítač výkonu|Popis|  
 |-------------------------|-----------------|  
@@ -167,7 +146,7 @@ V tomto tématu najdete seznam čítačů výkonu, které můžete najít v [ná
   
 - Čítače podle intervalu, které měří počet objektů, které provádějí určitý přechod na interval (obvykle za sekundu).  
   
- Mezi čítače výkonu sítě pro události patří následující:  
+Mezi čítače výkonu sítě pro události patří následující:  
   
 - **Navázaná připojení**  
   
@@ -175,7 +154,7 @@ V tomto tématu najdete seznam čítačů výkonu, které můžete najít v [ná
   
 - **Odeslané datagramy**  
   
- Tyto čítače výkonu poskytují počty od spuštění procesu. Počty navázaných připojení <xref:System.Net.Sockets.Socket> zahrnují explicitní volání metod <xref:System.Net.Sockets.Socket> v rámci aplikace pro připojení soketu streamu, které bylo navázáno, i interní volání prováděná jinými třídami (<xref:System.Net.HttpWebRequest>, <xref:System.Net.FtpWebRequest>, <xref:System.Net.WebClient>a <xref:System.Net.Sockets.TcpClient>například pro <xref:System.Net.Sockets.Socket> třídy  
+ Tyto čítače výkonu poskytují počty od spuštění procesu. Počet navázaných připojení <xref:System.Net.Sockets.Socket> zahrnuje explicitní volání metod <xref:System.Net.Sockets.Socket> pomocí aplikace pro připojení soketu datového proudu, které bylo navázáno, a také interní volání prováděná jinými třídami (<xref:System.Net.HttpWebRequest>, <xref:System.Net.FtpWebRequest>, <xref:System.Net.WebClient>a <xref:System.Net.Sockets.TcpClient>, například) pro <xref:System.Net.Sockets.Socket> třídy.  
   
  Počty **přijatých datagramů** a **odeslaných datagramů** zahrnují pakety datagramů odeslané nebo přijaté pomocí explicitního volání metody <xref:System.Net.Sockets.Socket> v rámci aplikace a také interní volání prováděná jinými třídami (například<xref:System.Net.Sockets.UdpClient>) do <xref:System.Net.Sockets.Socket>. Deník. Počty **přijatých datagramů** a **Odeslané datagramy** mohou být také použity k zajištění velmi hrubé míry, kolik bajtů bylo odesláno nebo přijato pomocí datagramů, za předpokladu, že je pro datagram k dispozici Průměrná velikost.  
   
@@ -236,8 +215,7 @@ for (int i = 0; i < Array.Length; i++)
 - ".NET CLR Networking 4.0.0.0" – všechny výše uvedené čítače soketu a nové čítače výkonu podporované ve verzi .NET Framework 4 a novější. Tyto nové čítače poskytují informace o výkonu <xref:System.Net.HttpWebRequest> objektů.  
   
  Další informace o přístupu k čítačům výkonu a jejich správě v aplikaci najdete v tématu [čítače výkonu](performance-counters.md).  
-  
-<a name="security"></a>   
+    
 ## <a name="security-performance-counters"></a>Čítače výkonu zabezpečení  
  Kategorie zabezpečení modulu .NET CLR konzoly Performance obsahuje čítače, které poskytují informace o kontrolách zabezpečení, které modul CLR (Common Language Runtime) provádí pro aplikaci. Následující tabulka popisuje tyto čítače výkonu.  
   

@@ -2,12 +2,12 @@
 title: 'Postupy: Analýza řetězce (C#)'
 ms.date: 07/20/2015
 ms.assetid: 81e5686c-9658-42d8-a7e3-b11be0a2c98b
-ms.openlocfilehash: 16310e37afec950c372c7b47637986bb0eb399b8
-ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.openlocfilehash: 086a4baecee9ee927b08d6da53d16324ef32e8a8
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71956610"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74140974"
 ---
 # <a name="how-to-parse-a-string-c"></a>Postupy: Analýza řetězce (C#)
 
@@ -47,7 +47,7 @@ XElement contacts = XElement.Parse(
 Console.WriteLine(contacts);
 ```
 
-Kořenový uzel `Contacts` má dva uzly `Contact`. Chcete-li získat přístup k určitým datům v analyzovaném kódu XML, použijte metodu [XElement. Elements ()](xref:System.Xml.Linq.XContainer.Elements) , která v tomto případě vrátí podřízené prvky uzlu root `Contacts`. Následující příklad vytiskne první uzel `Contact` do konzoly:
+Uzel kořenového `Contacts` má dva uzly `Contact`. Chcete-li získat přístup k určitým datům v analyzovaném kódu XML, použijte metodu [XElement. Elements ()](xref:System.Xml.Linq.XContainer.Elements) , která v tomto případě vrátí podřízené prvky kořenového uzlu `Contacts`. Následující příklad vytiskne první `Contact` uzel do konzoly:
 
 ```csharp
 List<XElement> contactNodes = contacts.Elements("Contact").ToList();
@@ -56,4 +56,4 @@ Console.WriteLine(contactNodes[0]);
 
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Vyhledání elementu s konkrétním atributem (C#)](how-to-find-an-element-with-a-specific-attribute.md)
+- [Jak najít element s konkrétním atributem (C#)](how-to-find-an-element-with-a-specific-attribute.md)

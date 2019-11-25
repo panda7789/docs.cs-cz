@@ -1,20 +1,20 @@
 ---
-title: 'Postupy: Najde množinu rozdílů mezi dvěma seznamy (LINQ)C#().'
+title: 'Postupy: Vyhledání rozdílového nastavení mezi dvěma seznamy (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 8e8945f0-4aba-439d-8d5d-c8d1eeef4e71
-ms.openlocfilehash: decdbe45afd12581a53ed70ec843ee72f54f0409
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 9e2a42a466a71d4e351df89398be197197a54042
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69593336"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74140986"
 ---
-# <a name="how-to-find-the-set-difference-between-two-lists-linq-c"></a>Postupy: Najde množinu rozdílů mezi dvěma seznamy (LINQ)C#().
+# <a name="how-to-find-the-set-difference-between-two-lists-linq-c"></a>Postupy: Vyhledání rozdílového nastavení mezi dvěma seznamy (LINQ) (C#)
 Tento příklad ukazuje, jak použít LINQ k porovnání dvou seznamů řetězců a výstupu těchto řádků, které jsou v names1. txt, ale ne v names2. txt.  
   
 ### <a name="to-create-the-data-files"></a>Vytvoření datových souborů  
   
-1. Zkopírujte names1. txt a names2. txt do složky řešení, jak je znázorněno v [tématu How to: Kombinování a porovnávání kolekcí řetězců (LINQ)C#(](./how-to-combine-and-compare-string-collections-linq.md)).  
+1. Zkopírujte names1. txt a names2. txt do složky řešení, jak je znázorněno v tématu [jak kombinovat a porovnat kolekce řetězců (LINQC#) ()](./how-to-combine-and-compare-string-collections-linq.md).  
   
 ## <a name="example"></a>Příklad  
   
@@ -52,10 +52,10 @@ class CompareLists
      */  
 ```  
   
- Některé typy C#operací dotazů v, například <xref:System.Linq.Enumerable.Except%2A>, <xref:System.Linq.Enumerable.Distinct%2A> <xref:System.Linq.Enumerable.Union%2A>, a <xref:System.Linq.Enumerable.Concat%2A>, lze vyjádřit pouze v syntaxi založené na metodě.  
+ Některé typy operací dotazů v C#, například <xref:System.Linq.Enumerable.Except%2A>, <xref:System.Linq.Enumerable.Distinct%2A>, <xref:System.Linq.Enumerable.Union%2A>a <xref:System.Linq.Enumerable.Concat%2A>, lze vyjádřit pouze v syntaxi založené na metodě.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvořte projekt C# konzolové aplikace se `using` direktivami pro obory názvů System. Linq a System.IO.  
+ Vytvořte projekt C# konzolové aplikace s direktivami `using` pro obory názvů System. Linq a System.IO.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -1,30 +1,30 @@
 ---
-title: Výkon (LINQ to XML) (Visual Basic)
+title: Výkon (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: 155557f6-5d7e-4784-9d00-f42092a28857
-ms.openlocfilehash: c58bcecbe196f32c0a6ce885929292490b37e052
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c892b48459252af4901052215f2f991747760ffb
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61666167"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353142"
 ---
-# <a name="performance-linq-to-xml-visual-basic"></a>Výkon (LINQ to XML) (Visual Basic)
-Tato část obsahuje informace o výkonu v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], konkrétně výkonu funkční konstrukce a dotazy.  
+# <a name="performance-linq-to-xml-visual-basic"></a>Performance (LINQ to XML) (Visual Basic)
+This section provides information about performance in [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], specifically the performance of functional construction and queries.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Výkon zřetězených dotazů (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/performance-of-chained-queries-linq-to-xml.md)  
- Poskytuje informace o výkonu o zřetězené [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy.  
+ [Performance of Chained Queries (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/performance-of-chained-queries-linq-to-xml.md)  
+ Provides performance information about chained [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] queries.  
   
- [Atomizované objekty XName a Xnamespace (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/atomized-xname-and-xnamespace-objects-linq-to-xml.md)  
- Poskytuje informace o výkonu o atomizace z <xref:System.Xml.Linq.XName> a <xref:System.Xml.Linq.XNamespace> objekty.  
+ [Atomized XName and XNamespace Objects (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/atomized-xname-and-xnamespace-objects-linq-to-xml.md)  
+ Provides performance information about the atomization of <xref:System.Xml.Linq.XName> and <xref:System.Xml.Linq.XNamespace> objects.  
   
- [Předběžná atomizace objektů XName (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/pre-atomization-of-xname-objects-linq-to-xml.md)  
- Popisuje postup, chcete-li předem atomizovat <xref:System.Xml.Linq.XName> a <xref:System.Xml.Linq.XNamespace> objekty. To může výrazně zlepšit výkon v některých scénářích.  
+ [Pre-Atomization of XName Objects (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/pre-atomization-of-xname-objects-linq-to-xml.md)  
+ Describes a technique to pre-atomize <xref:System.Xml.Linq.XName> and <xref:System.Xml.Linq.XNamespace> objects. This can significantly improve performance in some scenarios.  
   
- [Staticky zkompilován dotazy (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/statically-compiled-queries-linq-to-xml.md)  
- Poskytuje informace o výkonu staticky kompilované dotazy, na rozdíl od analýzu a zpracování, které musíte udělat vyhodnocovače výrazů XPath.  
+ [Statically Compiled Queries (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/statically-compiled-queries-linq-to-xml.md)  
+ Provides performance information about statically compiled queries, in contrast to the parsing and processing that must be done by an XPath expression evaluator.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)
+- [Programming Guide (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)
