@@ -1,5 +1,5 @@
 ---
-title: TypeOf – operátor (Visual Basic)
+title: TypeOf – operátor
 ms.date: 07/20/2015
 f1_keywords:
 - TypeOf
@@ -12,15 +12,15 @@ helpviewer_keywords:
 - TypeOf operator [Visual Basic]
 - compatible data types [Visual Basic]
 ms.assetid: 33f65296-659a-4b9a-9a29-c2a91cff68b2
-ms.openlocfilehash: c6028f524a16b836310f0c8d564205244515cdc9
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 22af5b8f8488ca44e388596530decd52e33525dc
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71701286"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350894"
 ---
 # <a name="typeof-operator-visual-basic"></a>TypeOf – operátor (Visual Basic)
-Kontroluje, zda typ modulu runtime výsledku výrazu je kompatibilní s typem zadaného typu.
+Checks whether the runtime type of an expression's result is type-compatible with the specified type.
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,39 +34,39 @@ result = TypeOf objectexpression IsNot typename
   
 ## <a name="parts"></a>Součásti  
  `result`  
- Vrátil. Hodnota `Boolean`.  
+ Returned. A `Boolean` value.  
   
  `objectexpression`  
- Požadováno. Libovolný výraz, který je vyhodnocen jako typ odkazu.  
+ Požadováno. Any expression that evaluates to a reference type.  
   
  `typename`  
- Požadováno. Libovolný název datového typu.  
+ Požadováno. Any data type name.  
   
 ## <a name="remarks"></a>Poznámky  
- Operátor `TypeOf` určuje, zda je běhový typ `objectexpression` kompatibilní s `typename`. Kompatibilita závisí na kategorii typu `typename`. Následující tabulka ukazuje, jak je určována kompatibilita.  
+ The `TypeOf` operator determines whether the run-time type of `objectexpression` is compatible with `typename`. The compatibility depends on the type category of `typename`. The following table shows how compatibility is determined.  
   
-|Typ kategorie `typename`|Kritérium kompatibility|  
+|Type category of `typename`|Compatibility criterion|  
 |---------------------------------|-----------------------------|  
-|Třída|`objectexpression` je typu `typename` nebo dědí z `typename`.|  
-|Struktura|`objectexpression` je typu `typename`.|  
-|Rozhraní|`objectexpression` implementuje `typename` nebo dědí ze třídy, která implementuje `typename`.|  
+|Třída|`objectexpression` is of type `typename` or inherits from `typename`|  
+|Struktura|`objectexpression` is of type `typename`|  
+|Rozhraní|`objectexpression` implements `typename` or inherits from a class that implements `typename`|  
   
- Pokud typ běhu `objectexpression` splňuje kritérium kompatibility, `result` je `True`. V opačném případě `result` `False`.  Pokud je hodnota `objectexpression` null, pak `TypeOf`... `Is` vrátí `False` a... `IsNot` vrátí `True`.  
+ If the run-time type of `objectexpression` satisfies the compatibility criterion, `result` is `True`. Otherwise, `result` is `False`.  If `objectexpression` is null, then `TypeOf`...`Is` returns `False`, and ...`IsNot` returns `True`.  
   
- `TypeOf` se vždy používá s klíčovým slovem `Is` k vytvoření výrazu `TypeOf`... `Is` nebo pomocí klíčového slova `IsNot` pro vytvoření výrazu `TypeOf`... `IsNot`.  
+ `TypeOf` is always used with the `Is` keyword to construct a `TypeOf`...`Is` expression, or with the `IsNot` keyword to construct a `TypeOf`...`IsNot` expression.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu jsou použity výrazy `TypeOf`... `Is` k otestování kompatibility typů dvou proměnných odkazu na objekt s různými datovými typy.  
+ The following example uses `TypeOf`...`Is` expressions to test the type compatibility of two object reference variables with various data types.  
   
  [!code-vb[VbVbalrOperators#39](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#39)]  
   
- Proměnná `refInteger` má běhový typ `Integer`. Je kompatibilní s `Integer`, ale ne s `Double`. Proměnná `refForm` má běhový typ <xref:System.Windows.Forms.Form>. Je kompatibilní s <xref:System.Windows.Forms.Form>, protože to je jeho typ s <xref:System.Windows.Forms.Control>, protože <xref:System.Windows.Forms.Form> dědí od <xref:System.Windows.Forms.Control> a <xref:System.ComponentModel.IComponent>, protože <xref:System.Windows.Forms.Form> dědí z <xref:System.ComponentModel.Component>, které implementuje <xref:System.ComponentModel.IComponent>. @No__t-0 však není kompatibilní s <xref:System.Windows.Forms.Label>.  
+ The variable `refInteger` has a run-time type of `Integer`. It is compatible with `Integer` but not with `Double`. The variable `refForm` has a run-time type of <xref:System.Windows.Forms.Form>. It is compatible with <xref:System.Windows.Forms.Form> because that is its type, with <xref:System.Windows.Forms.Control> because <xref:System.Windows.Forms.Form> inherits from <xref:System.Windows.Forms.Control>, and with <xref:System.ComponentModel.IComponent> because <xref:System.Windows.Forms.Form> inherits from <xref:System.ComponentModel.Component>, which implements <xref:System.ComponentModel.IComponent>. However, `refForm` is not compatible with <xref:System.Windows.Forms.Label>.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Operátor Is](../../../visual-basic/language-reference/operators/is-operator.md)
 - [Operátor IsNot](../../../visual-basic/language-reference/operators/isnot-operator.md)
-- [Operátory porovnávání v Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
-- [Priorita operátorů v Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Comparison Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
+- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
 - [Operátory a výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)

@@ -1,19 +1,19 @@
 ---
-title: <exception> (Visual Basic)
+title: <exception>
 ms.date: 07/20/2015
 helpviewer_keywords:
 - <exception> XML tag
 - exception XML tag
 ms.assetid: c0517549-171e-4dae-ab88-a9c1700b6eee
-ms.openlocfilehash: 16ffb4f6b57dabb3650376c913a7d7608a00646d
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: e1e7f2d0fb06599f83ba224ed52a10429d9b11fe
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72523931"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346962"
 ---
-# <a name="exception-visual-basic"></a>\<exception > (Visual Basic)
-Určuje, které výjimky mohou být vyvolány.  
+# <a name="exception-visual-basic"></a>\<exception> (Visual Basic)
+Specifies which exceptions can be thrown.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,18 +23,18 @@ Určuje, které výjimky mohou být vyvolány.
   
 ## <a name="parameters"></a>Parametry  
  `member`  
- Odkaz na výjimku, která je k dispozici z aktuálního prostředí kompilace. Kompilátor kontroluje, zda daná výjimka existuje, a překládá `member` na název kanonického prvku ve výstupním souboru XML. `member` musí být v uvozovkách ("").  
+ A reference to an exception that is available from the current compilation environment. The compiler checks that the given exception exists and translates `member` to the canonical element name in the output XML. `member` must appear within double quotation marks (" ").  
   
  `description`  
- Popis.  
+ A description.  
   
 ## <a name="remarks"></a>Poznámky  
- Pomocí značky `<exception>` určete, které výjimky mohou být vyvolány. Tato značka se aplikuje na definici metody.  
+ Use the `<exception>` tag to specify which exceptions can be thrown. This tag is applied to a method definition.  
   
- Zkompilujte s [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
+ Compile with [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) to process documentation comments to a file.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu se používá značka `<exception>` k popisu výjimky, kterou může funkce `IntDivide` vyvolat.  
+ This example uses the `<exception>` tag to describe an exception that the `IntDivide` function can throw.  
   
  [!code-vb[VbVbcnXmlDocComments#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#3)]  
   

@@ -1,5 +1,5 @@
 ---
-title: Throw – příkaz (Visual Basic)
+title: Throw – příkaz
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Throw
@@ -14,16 +14,16 @@ helpviewer_keywords:
 - exception handling, unstructured
 - throw statement [Visual Basic]
 ms.assetid: a6e07406-5c8a-4498-87a2-8339f3651d62
-ms.openlocfilehash: 9680700267f17c8e316de351fead61f1dc4aded0
-ms.sourcegitcommit: 9ee6cd851b6e176a5811ea28ed0d5935c71950f9
+ms.openlocfilehash: 147345990b625e034e651e69b322bc098d0bd8de
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68869026"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74352781"
 ---
 # <a name="throw-statement-visual-basic"></a>Throw – příkaz (Visual Basic)
 
-Vyvolá výjimku v rámci procedury.
+Throws an exception within a procedure.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -31,22 +31,22 @@ Vyvolá výjimku v rámci procedury.
 Throw [ expression ]
 ```
 
-## <a name="part"></a>Částí
+## <a name="part"></a>Part
 
 `expression`\
-Poskytuje informace o výjimce, která má být vyvolána. Volitelné, pokud je umístěn v `Catch` příkazu, v opačném případě vyžadováno.
+Provides information about the exception to be thrown. Optional when residing in a `Catch` statement, otherwise required.
 
 ## <a name="remarks"></a>Poznámky
 
-Příkaz vyvolá výjimku, kterou lze zpracovat pomocí strukturovaného kódu zpracování výjimek (`Try`... `Throw` `Catch`... ) nebo nestrukturovaný kód pro ošetření výjimek (`On Error GoTo`). `Finally` Můžete použít `Throw` příkaz k zachycení chyb v rámci kódu, protože Visual Basic přesune zásobník volání, dokud nenajde příslušný kód pro zpracování výjimek.
+The `Throw` statement throws an exception that you can handle with structured exception-handling code (`Try`...`Catch`...`Finally`) or unstructured exception-handling code (`On Error GoTo`). You can use the `Throw` statement to trap errors within your code because Visual Basic moves up the call stack until it finds the appropriate exception-handling code.
 
-Příkaz bez výrazu lze použít pouze `Catch` v příkazu. v takovém případě příkaz znovu vyvolá výjimku, která je `Catch` aktuálně zpracována příkazem. `Throw`
+A `Throw` statement with no expression can only be used in a `Catch` statement, in which case the statement rethrows the exception currently being handled by the `Catch` statement.
 
-Příkaz obnoví zásobník volání `expression` pro výjimku. `Throw` Pokud `expression` není zadán, zásobník volání zůstane beze změny. Můžete získat přístup k zásobníku volání pro výjimku prostřednictvím <xref:System.Exception.StackTrace%2A> vlastnosti.
+The `Throw` statement resets the call stack for the `expression` exception. If `expression` is not provided, the call stack is left unchanged. You can access the call stack for the exception through the <xref:System.Exception.StackTrace%2A> property.
 
 ## <a name="example"></a>Příklad
 
-Následující kód používá `Throw` příkaz k vyvolání výjimky:
+The following code uses the `Throw` statement to throw an exception:
 
 [!code-vb[VbVbalrStatements#84](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#84)]
 

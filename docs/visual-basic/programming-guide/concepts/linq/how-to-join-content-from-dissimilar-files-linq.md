@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: spojení obsahu z nepodobných souborů (LINQ) (Visual Basic)'
+title: 'Postupy: Spojení obsahu z nepodobných souborů (LINQ)'
 ms.date: 06/27/2018
 ms.assetid: e7530857-c467-41ea-9730-84e6b1065a4d
-ms.openlocfilehash: f5bdfecc91f5b2f0ed3764d0f38dee99570d66d4
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: a6528f623d084003bb85dc5bae784b8d96c84d02
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524204"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344555"
 ---
-# <a name="how-to-join-content-from-dissimilar-files-linq-visual-basic"></a>Postupy: spojení obsahu z nepodobných souborů (LINQ) (Visual Basic)
+# <a name="how-to-join-content-from-dissimilar-files-linq-visual-basic"></a>How to: Join Content from Dissimilar Files (LINQ) (Visual Basic)
 
-Tento příklad ukazuje, jak spojit data ze dvou souborů oddělených čárkami, které sdílejí společnou hodnotu, která se používá jako odpovídající klíč. Tato technika může být užitečná, pokud potřebujete kombinovat data ze dvou tabulek nebo z tabulky a ze souboru, který má jiný formát, do nového souboru. Můžete upravit příklad pro práci s libovolným druhem strukturovaného textu.
+This example shows how to join data from two comma-delimited files that share a common value that is used as a matching key. This technique can be useful if you have to combine data from two spreadsheets, or from a spreadsheet and from a file that has another format, into a new file. You can modify the example to work with any kind of structured text.
 
-## <a name="to-create-the-data-files"></a>Vytvoření datových souborů
+## <a name="to-create-the-data-files"></a>To create the data files
 
-1. Zkopírujte následující řádky do souboru s názvem skóre. csv a uložte ho do složky vašeho projektu. Soubor představuje data v tabulce. Sloupec 1 je ID studenta a sloupce 2 až 5 jsou skóre testů.
+1. Copy the following lines into a file that is named scores.csv and save it to your project folder. The file represents spreadsheet data. Column 1 is the student's ID, and columns 2 through 5 are test scores.
 
     ```csv
     111, 97, 92, 81, 60
@@ -32,7 +32,7 @@ Tento příklad ukazuje, jak spojit data ze dvou souborů oddělených čárkami
     122, 94, 92, 91, 91
     ```
 
-2. Zkopírujte následující řádky do souboru s názvem Names. csv a uložte ho do složky projektu. Tento soubor představuje tabulku, která obsahuje příjmení, jméno a ID studenta.
+2. Copy the following lines into a file that is named names.csv and save it to your project folder. The file represents a spreadsheet that contains the student's last name, first name, and student ID.
 
     ```csv
     Omelchenko,Svetlana,111
@@ -122,5 +122,5 @@ End Class
 
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
-- [LINQ a souborové adresáře (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [LINQ and Strings (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [LINQ and File Directories (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Volání rozhraní API Windows (Visual Basic)'
+title: 'Postupy: Volání rozhraní API systému Windows'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - API calls [Visual Basic]
@@ -7,38 +7,38 @@ helpviewer_keywords:
 - API calls [Visual Basic], platform invoke
 - calls [Visual Basic], stored procedures
 ms.assetid: 27d75f0a-54ab-4ee1-b91d-43513a19b12d
-ms.openlocfilehash: 3769da28e1c9a27c8363b0d6ec639cedaf0f03be
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6f3c53243d7aeb73be81796d5ca185c3a3c41c72
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64624845"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348699"
 ---
-# <a name="how-to-call-windows-apis-visual-basic"></a>Postupy: Volání rozhraní API Windows (Visual Basic)
-Tento příklad definuje a volá `MessageBox` funkce v user32.dll a poté předá řetězec k němu.  
+# <a name="how-to-call-windows-apis-visual-basic"></a>Postupy: Volání rozhraní API systému Windows (Visual Basic)
+This example defines and calls the `MessageBox` function in user32.dll and then passes a string to it.  
   
 ## <a name="example"></a>Příklad  
  [!code-vb[VbVbalrInterop#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#1)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Tento příklad vyžaduje:  
+ This example requires:  
   
-- Odkaz na <xref:System> oboru názvů.  
+- A reference to the <xref:System> namespace.  
   
 ## <a name="robust-programming"></a>Robustní programování  
  Následující podmínky mohou způsobit výjimku:  
   
-- Metoda není statická, je abstraktní nebo dříve definované. Nadřazený typ je rozhraní nebo délka *název* nebo *názevsouboru* je nula. (<xref:System.ArgumentException>)  
+- The method is not static, is abstract, or has been previously defined. The parent type is an interface, or the length of *name* or *dllName* is zero. (<xref:System.ArgumentException>)  
   
-- *Název* nebo *názevsouboru* je `Nothing`. (<xref:System.ArgumentNullException>)  
+- The *name* or *dllName* is `Nothing`. (<xref:System.ArgumentNullException>)  
   
-- Nadřazený typ byl dříve vytvořen pomocí `CreateType`. (<xref:System.InvalidOperationException>)  
+- The containing type has been previously created using `CreateType`. (<xref:System.InvalidOperationException>)  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Bližší pohled na vyvolání platformy](../../../framework/interop/consuming-unmanaged-dll-functions.md#a-closer-look-at-platform-invoke)
+- [A Closer Look at Platform Invoke](../../../framework/interop/consuming-unmanaged-dll-functions.md#a-closer-look-at-platform-invoke)
 - [Příklady vyvolání platformy](../../../framework/interop/platform-invoke-examples.md)
 - [Používání nespravovaných funkcí DLL](../../../framework/interop/consuming-unmanaged-dll-functions.md)
-- [Definování metody pomocí reflexe generování](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w63y4d4f(v=vs.100))
+- [Defining a Method with Reflection Emit](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w63y4d4f(v=vs.100))
 - [Návod: Volání rozhraní API systému Windows](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)
 - [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md)

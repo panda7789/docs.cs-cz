@@ -1,5 +1,5 @@
 ---
-title: Řešení potíží s obslužnými rutinami zděděných událostí v jazyce Visual Basic
+title: Řešení potíží s obslužnými rutinami zděděných událostí
 ms.date: 07/20/2015
 helpviewer_keywords:
 - troubleshooting events [Visual Basic]
@@ -8,25 +8,25 @@ helpviewer_keywords:
 - event handling, troubleshooting
 - event handlers, troubleshooting
 ms.assetid: e1c8759f-5370-4308-8476-8c48b73509bf
-ms.openlocfilehash: f2ddef64ca02ca7c96c6c906f5ee79e3cf99dece
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: fd2ef1c25233cc1eaad6bcde68923688393b471d
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64604065"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345109"
 ---
 # <a name="troubleshooting-inherited-event-handlers-in-visual-basic"></a>Řešení potíží s obslužnými rutinami zděděných událostí v jazyce Visual Basic
-Toto téma obsahuje seznam běžných problémů, které vznikají u obslužných rutin událostí v zděděné součásti.  
+This topic lists common issues that arise with event handlers in inherited components.  
   
 ## <a name="procedures"></a>Procedury  
   
-#### <a name="code-in-event-handler-executes-twice-for-every-call"></a>Spustí kód v obslužné rutině události dvakrát za každé volání  
+#### <a name="code-in-event-handler-executes-twice-for-every-call"></a>Code in Event Handler Executes Twice for Every Call  
   
-- Nesmí obsahovat obslužnou rutinu zděděné události [zpracovává](../../../../visual-basic/language-reference/statements/handles-clause.md) klauzuli. Metodu v základní třídě je již přidruženo k události a odpovídajícím způsobem se aktivuje. Odeberte `Handles` klauzule z zděděné metody.  
+- An inherited event handler must not include a [Handles](../../../../visual-basic/language-reference/statements/handles-clause.md) clause. The method in the base class is already associated with the event and will fire accordingly. Remove the `Handles` clause from the inherited method.  
   
      [!code-vb[VbVbalrEvents#32](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#32)]  
   
-- Pokud nemá žádné zděděné metody `Handles` – klíčové slovo, ověřte, že váš kód neobsahuje speciální [AddHandler – příkaz](../../../../visual-basic/language-reference/statements/addhandler-statement.md) nebo jakékoli další metody, které zpracovávají stejné události.  
+- If the inherited method does not have a `Handles` keyword, verify that your code does not contain an extra [AddHandler Statement](../../../../visual-basic/language-reference/statements/addhandler-statement.md) or any additional methods that handle the same event.  
   
 ## <a name="see-also"></a>Viz také:
 

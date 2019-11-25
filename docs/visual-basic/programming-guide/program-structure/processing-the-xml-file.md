@@ -1,43 +1,43 @@
 ---
-title: Zpracování souboru XML (Visual Basic)
+title: Zpracování souboru XML
 ms.date: 07/20/2015
 helpviewer_keywords:
 - XML comments [Visual Basic], parsing [Visual Basic]
 ms.assetid: 78a15cd0-7708-4e79-85d1-c154b7a14a8c
-ms.openlocfilehash: 91583612940282b05ebbf38bd5f0a59d6af5bbcd
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 4230fd88b4b60c631135f5b7fb15f4b6272b5351
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524446"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347304"
 ---
 # <a name="processing-the-xml-file-visual-basic"></a>Zpracování souboru XML (Visual Basic)
-Kompilátor generuje řetězec ID pro každou konstrukci v kódu, který je označen pro generování dokumentace. (Informace o tom, jak označit svůj kód, naleznete v tématu [značky komentářů XML](../../../visual-basic/language-reference/xmldoc/index.md).) Řetězec ID jednoznačně identifikuje konstrukci. Programy, které zpracovávají soubor XML, mohou pomocí řetězce ID identifikovat odpovídající .NET Framework metadat nebo položku reflexe.  
+The compiler generates an ID string for each construct in your code that is tagged to generate documentation. (For information on how to tag your code, see [XML Comment Tags](../../../visual-basic/language-reference/xmldoc/index.md).) The ID string uniquely identifies the construct. Programs that process the XML file can use the ID string to identify the corresponding .NET Framework metadata/reflection item.  
   
- Soubor XML není hierarchická reprezentace vašeho kódu; Jedná se o plochý seznam s vygenerovaným ID pro každý prvek.  
+ The XML file is not a hierarchical representation of your code; it is a flat list with a generated ID for each element.  
   
- Kompilátor při generování řetězců ID sleduje následující pravidla:  
+ The compiler observes the following rules when it generates the ID strings:  
   
-- V řetězci není vložen prázdný znak.  
+- No white space is placed in the string.  
   
-- První část řetězce ID identifikuje druh identifikovaného člena s jedním znakem následovaným dvojtečkou. Používají se následující typy členů.  
+- The first part of the ID string identifies the kind of member being identified, with a single character followed by a colon. The following member types are used.  
   
 |Znak|Popis|  
 |---|---|  
-|N|– obor názvů<br /><br /> Do oboru názvů nemůžete přidávat komentáře k dokumentaci, ale můžete na ně CREF odkazy, kde se podporují.|  
-|T|Typ: `Class`, `Module`, `Interface`, `Structure`, `Enum`, `Delegate`|  
-|F|pole: `Dim`|  
-|P|vlastnost: `Property` (včetně výchozích vlastností)|  
-|M|Metoda: `Sub`, `Function`, `Declare`, `Operator`|  
-|E|událost: `Event`|  
-|!|Řetězec chyby<br /><br /> Zbytek řetězce poskytuje informace o chybě. Kompilátor Visual Basic generuje informace o chybě pro odkazy, které nelze přeložit.|  
+|N|– obor názvů<br /><br /> You cannot add documentation comments to a namespace, but you can make CREF references to them, where supported.|  
+|T|type: `Class`, `Module`, `Interface`, `Structure`, `Enum`, `Delegate`|  
+|F|field: `Dim`|  
+|P|property: `Property` (including default properties)|  
+|M|method: `Sub`, `Function`, `Declare`, `Operator`|  
+|E|event: `Event`|  
+|!|error string<br /><br /> The rest of the string provides information about the error. The Visual Basic compiler generates error information for links that cannot be resolved.|  
   
-- Druhá část `String` je plně kvalifikovaný název položky začínající v kořenu oboru názvů. Název položky, její ohraničující typ (y) a obor názvů jsou odděleny tečkami. Pokud název samotné položky obsahuje tečky, nahradí se znakem čísla (#). Předpokládá se, že žádná položka nemá znak čísla přímo v názvu. Například plně kvalifikovaný název konstruktoru `String` by byl `System.String.#ctor`.  
+- The second part of the `String` is the fully qualified name of the item, starting at the root of the namespace. The name of the item, its enclosing type(s), and the namespace are separated by periods. If the name of the item itself contains periods, they are replaced by the number sign (#). It is assumed that no item has a number sign directly in its name. For example, the fully qualified name of the `String` constructor would be `System.String.#ctor`.  
   
-- V případě vlastností a metod, pokud jsou argumenty metody, seznam argumentů uzavřený v závorkách následuje. Pokud nejsou žádné argumenty, nejsou k dispozici žádné závorky. Argumenty jsou odděleny čárkami. Kódování každého argumentu následuje přímo, jak je kódováno v signatuře .NET Framework.  
+- For properties and methods, if there are arguments to the method, the argument list enclosed in parentheses follows. If there are no arguments, no parentheses are present. The arguments are separated by commas. The encoding of each argument follows directly how it is encoded in a .NET Framework signature.  
   
 ## <a name="example"></a>Příklad  
- Následující kód ukazuje, jak jsou generovány řetězce ID pro třídu a její členy.  
+ The following code shows how the ID strings for a class and its members are generated.  
   
  [!code-vb[VbVbcnXmlDocComments#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#10)]  
   

@@ -1,5 +1,5 @@
 ---
-title: Rozdíly mezi vlastnostmi a proměnnými v jazyce Visual Basic
+title: Rozdíly mezi vlastnostmi a proměnnými
 ms.date: 07/20/2015
 helpviewer_keywords:
 - property values [Visual Basic]
@@ -14,35 +14,35 @@ helpviewer_keywords:
 - variables [Visual Basic], and properties
 - properties [Visual Basic], and variables
 ms.assetid: 7a03a8be-5381-431f-bd7c-16e887e4e07b
-ms.openlocfilehash: de4800e23519c2cc1c8b2b219287b9fa018b9bbf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bbed3248840803d36607a67c8373fed15c07445f
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61864571"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74341211"
 ---
 # <a name="differences-between-properties-and-variables-in-visual-basic"></a>Rozdíly mezi vlastnostmi a proměnnými v jazyce Visual Basic
-Proměnné a vlastnosti představují hodnoty, které můžete přistupovat. Nicméně existují rozdíly v úložišti a implementaci.  
+Variables and properties both represent values that you can access. However, there are differences in storage and implementation.  
   
 ## <a name="variables"></a>Proměnné  
- A *proměnnou* odpovídá na umístění v paměti. Definujte proměnnou s příkazem jedné deklarace. Proměnná může být *lokální proměnná*, definované uvnitř procedury a k dispozici pouze v rámci tohoto postupu, nebo může být *členskou proměnnou*, definované v modulu, třídy nebo struktury, ale ne uvnitř žádné postup. Členské proměnné se také nazývá *pole*.  
+ A *variable* corresponds directly to a memory location. You define a variable with a single declaration statement. A variable can be a *local variable*, defined inside a procedure and available only within that procedure, or it can be a *member variable*, defined in a module, class, or structure but not inside any procedure. A member variable is also called a *field*.  
   
 ## <a name="properties"></a>Vlastnosti  
- A *vlastnost* je datový prvek definovaný v modulu, třídy nebo struktury. Definovat vlastnost s bloku kódu mezi `Property` a `End Property` příkazy. Obsahuje blok kódu `Get` postupu `Set` procedury nebo obojí. Tyto postupy jsou volány *procedury vlastnosti* nebo *přistupující objekty vlastnosti*. Kromě načítání nebo ukládání hodnotu vlastnosti, se můžete také provádět vlastní akce, jako je aktualizace čítače k přístupu.  
+ A *property* is a data element defined on a module, class, or structure. You define a property with a code block between the `Property` and `End Property` statements. The code block contains a `Get` procedure, a `Set` procedure, or both. These procedures are called *property procedures* or *property accessors*. In addition to retrieving or storing the property's value, they can also perform custom actions, such as updating an access counter.  
   
-## <a name="differences"></a>Rozdíly  
- V následující tabulce jsou uvedeny některé rozdíly mezi proměnných a vlastností.  
+## <a name="differences"></a>Differences  
+ The following table shows some important differences between variables and properties.  
   
-|Bod rozdíl|Proměnná|Vlastnost|  
+|Point of difference|Proměnná|Vlastnost|  
 |-------------------------|--------------|--------------|  
-|Deklarace|Příkaz jediné deklaraci|Řadu příkazů v bloku kódu|  
-|Implementace|Jedno umístění úložiště|Spustitelný kód (procedury vlastnosti)|  
-|Úložiště|Přímo přidružené k hodnotě proměnné|Obvykle má interní úložiště není k dispozici mimo vlastnosti obsahující třídu nebo modul<br /><br /> Hodnota vlastnosti může nebo nemusí existovat jako prvek uložené <sup>1</sup>|  
-|Spustitelný kód|Žádný|Musí mít alespoň jeden postup|  
-|Oprávnění ke čtení a zápis|Čtení a zápis nebo jen pro čtení|Čtení a zápis, jen pro čtení nebo jen pro zápis|  
-|Vlastní akce (navíc k přijetí nebo vrácení hodnoty)|Není možná.|Můžete provést v rámci nastavení nebo načtení hodnoty vlastnosti|  
+|Deklarace|Single declaration statement|Series of statements in a code block|  
+|Implementace|Single storage location|Executable code (property procedures)|  
+|Úložiště|Directly associated with variable's value|Typically has internal storage not available outside the property's containing class or module<br /><br /> Property's value might or might not exist as a stored element <sup>1</sup>|  
+|Executable code|Žádné|Must have at least one procedure|  
+|Read and write access|Read/write or read-only|Read/write, read-only, or write-only|  
+|Custom actions (in addition to accepting or returning value)|Not possible|Can be performed as part of setting or retrieving property value|  
   
- <sup>1</sup> na rozdíl od proměnné, nemusí odpovídat hodnotu vlastnosti přímo na jednu položku z úložiště. Úložiště může rozdělit na části pro usnadnění práce nebo zabezpečení, nebo hodnota může být uložena v šifrovaném tvaru. V těchto případech `Get` procedury by spojit nebo dešifrovat uložené hodnoty a `Set` procedury by šifrování novou hodnotu nebo ho rozdělte do základní úložiště. Hodnota vlastnosti může být dočasné, jako je čas, v takovém případě `Get` postup by vypočítat průběžně pokaždé, když je přístup k vlastnosti.  
+ <sup>1</sup> Unlike a variable, the value of a property might not correspond directly to a single item of storage. The storage might be split into pieces for convenience or security, or the value might be stored in an encrypted form. In these cases the `Get` procedure would assemble the pieces or decrypt the stored value, and the `Set` procedure would encrypt the new value or split it into the constituent storage. A property value might be ephemeral, like time of day, in which case the `Get` procedure would calculate it on the fly each time you access the property.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -53,6 +53,6 @@ Proměnné a vlastnosti představují hodnoty, které můžete přistupovat. Nic
 - [Postupy: Vytvoření vlastnosti](./how-to-create-a-property.md)
 - [Postupy: Deklarace vlastnosti se smíšenými úrovněmi přístupu](./how-to-declare-a-property-with-mixed-access-levels.md)
 - [Postupy: Volání procedury vlastnosti](./how-to-call-a-property-procedure.md)
-- [Postupy: Deklarace a volání výchozí vlastnosti v jazyce Visual Basic](./how-to-declare-and-call-a-default-property.md)
+- [How to: Declare and Call a Default Property in Visual Basic](./how-to-declare-and-call-a-default-property.md)
 - [Postupy: Vložení hodnoty do vlastnosti](./how-to-put-a-value-in-a-property.md)
 - [Postupy: Získání hodnoty z vlastnosti](./how-to-get-a-value-from-a-property.md)

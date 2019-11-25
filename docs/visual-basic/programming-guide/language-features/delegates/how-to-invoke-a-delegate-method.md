@@ -1,27 +1,27 @@
 ---
-title: 'Postupy: Vyvolání metody delegáta (Visual Basic)'
+title: 'Postupy: Volání metody delegáta'
 ms.date: 07/20/2015
 ms.assetid: b56866ae-abf9-4a5a-a855-486359455e9c
-ms.openlocfilehash: c2bdb65c9d060e854db3319e4aa5b2e93b9681af
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 520bacfbe6103490e0459cd5af149c1d55a8fce4
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68629586"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345254"
 ---
-# <a name="how-to-invoke-a-delegate-method-visual-basic"></a>Postupy: Vyvolání metody delegáta (Visual Basic)
+# <a name="how-to-invoke-a-delegate-method-visual-basic"></a>Postupy: Volání metody delegáta (Visual Basic)
 
-Tento příklad ukazuje, jak přidružit metodu k delegátovi a následně tuto metodu vyvolat prostřednictvím delegáta.
+This example shows how to associate a method with a delegate and then invoke that method through the delegate.
 
-### <a name="create-the-delegate-and-matching-procedures"></a>Vytvořit delegáta a postupy pro porovnání
+### <a name="create-the-delegate-and-matching-procedures"></a>Create the delegate and matching procedures
 
-1. Vytvořte delegáta s `MySubDelegate`názvem.
+1. Create a delegate named `MySubDelegate`.
 
     ```vb
     Delegate Sub MySubDelegate(ByVal x As Integer)
     ```
 
-2. Deklarujte třídu, která obsahuje metodu se stejnou signaturou jako delegát.
+2. Declare a class that contains a method with the same signature as the delegate.
 
     ```vb
     Class class1
@@ -31,7 +31,7 @@ Tento příklad ukazuje, jak přidružit metodu k delegátovi a následně tuto 
     End Class
     ```
 
-3. Definujte metodu, která vytvoří instanci delegáta a vyvolá metodu přidruženou k delegátovi voláním předdefinované `Invoke` metody.
+3. Define a method that creates an instance of the delegate and invokes the method associated with the delegate by calling the built-in `Invoke` method.
 
     ```vb
     Protected Sub DelegateTest()
@@ -46,6 +46,6 @@ Tento příklad ukazuje, jak přidružit metodu k delegátovi a následně tuto 
 ## <a name="see-also"></a>Viz také:
 
 - [Příkaz Delegate](../../../../visual-basic/language-reference/statements/delegate-statement.md)
-- [Delegáti](../../../../visual-basic/programming-guide/language-features/delegates/index.md)
+- [Delegáty](../../../../visual-basic/programming-guide/language-features/delegates/index.md)
 - [Události](../../../../visual-basic/programming-guide/language-features/events/index.md)
 - [Vícevláknové aplikace](../../../../standard/threading/using-threads-and-threading.md)

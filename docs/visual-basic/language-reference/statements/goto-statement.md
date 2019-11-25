@@ -1,5 +1,5 @@
 ---
-title: GoTo – příkaz (Visual Basic)
+title: GoTo – příkaz
 ms.date: 07/20/2015
 f1_keywords:
 - vb.GoTo
@@ -13,15 +13,15 @@ helpviewer_keywords:
 - conditional statements [Visual Basic], GoTo statement
 - GoTo statement [Visual Basic], syntax
 ms.assetid: 313274c2-8ab3-4b9c-9ba3-0fd6798e4f6d
-ms.openlocfilehash: 4b7a5cce56dfdd2bdc7e068aadbc18b92bba269d
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: d5cdcd214c9679e245645505fe11cb5d521ce085
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72581821"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351088"
 ---
 # <a name="goto-statement"></a>GoTo – příkaz
-Větve nepodmíněně na určený řádek v proceduře.  
+Branches unconditionally to a specified line in a procedure.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,35 +29,35 @@ Větve nepodmíněně na určený řádek v proceduře.
 GoTo line  
 ```  
   
-## <a name="part"></a>Částí  
+## <a name="part"></a>Part  
  `line`  
- Požadováno. Libovolný popisek čáry.  
+ Požadováno. Any line label.  
   
 ## <a name="remarks"></a>Poznámky  
- Příkaz `GoTo` se může větvit jenom na řádky v proceduře, ve které se vyskytuje. Řádek musí mít popisek čáry, na který `GoTo` může odkazovat. Další informace naleznete v tématu [How to: Label Statements](../../../visual-basic/programming-guide/program-structure/how-to-label-statements.md).  
+ The `GoTo` statement can branch only to lines in the procedure in which it appears. The line must have a line label that `GoTo` can refer to. For more information, see [How to: Label Statements](../../../visual-basic/programming-guide/program-structure/how-to-label-statements.md).  
   
 > [!NOTE]
-> příkazy `GoTo` mohou ztížit čtení a údržbu kódu. Kdykoli je to možné, použijte místo toho strukturu ovládacího prvku. Další informace najdete v tématu [tok řízení](../../../visual-basic/programming-guide/language-features/control-flow/index.md).  
+> `GoTo` statements can make code difficult to read and maintain. Whenever possible, use a control structure instead. For more information, see [Control Flow](../../../visual-basic/programming-guide/language-features/control-flow/index.md).  
   
- Příkaz `GoTo` nelze použít pro větev mimo `For`... `Next`, `For Each`... `Next`, `SyncLock`... `End SyncLock`, `Try`... `Catch`... `Finally`, 0... 1 nebo 2... 3 konstrukce na popisek uvnitř.  
+ You cannot use a `GoTo` statement to branch from outside a `For`...`Next`, `For Each`...`Next`, `SyncLock`...`End SyncLock`, `Try`...`Catch`...`Finally`, `With`...`End With`, or `Using`...`End Using` construction to a label inside.  
   
-## <a name="branching-and-try-constructions"></a>Větvení a vytváření try  
- V rámci `Try`... `Catch`... `Finally` konstrukce se následující pravidla vztahují na větvení pomocí příkazu `GoTo`.  
+## <a name="branching-and-try-constructions"></a>Branching and Try Constructions  
+ Within a `Try`...`Catch`...`Finally` construction, the following rules apply to branching with the `GoTo` statement.  
   
-|Blok nebo oblast|Větvení z vnějšku|Vyskočení z vnitřku|  
+|Block or region|Branching in from outside|Branching out from inside|  
 |---------------------|-------------------------------|-------------------------------|  
-|blok `Try`|Pouze z `Catch`ho bloku stejné konstrukce <sup>1</sup>|Jenom mimo celou konstrukci|  
-|blok `Catch`|Nikdy Nepovoleno|Pouze mimo celou konstrukci nebo do `Try`ho bloku stejné konstrukce <sup>1</sup>|  
-|blok `Finally`|Nikdy Nepovoleno|Nikdy Nepovoleno|  
+|`Try` block|Only from a `Catch` block of the same construction <sup>1</sup>|Only to outside the whole construction|  
+|`Catch` block|Never allowed|Only to outside the whole construction, or to the `Try` block of the same construction <sup>1</sup>|  
+|`Finally` block|Never allowed|Never allowed|  
   
- <sup>1</sup> , pokud jedna `Try`... `Catch`... `Finally` konstrukce je vnořená do jiného, `Catch` blok se může větvit do `Try` bloku na vlastní úrovni vnoření, ale ne do žádného jiného `Try` bloku. Vnořený `Try`... `Catch`... konstrukce `Finally` musí být zcela obsažena v bloku `Try` nebo `Catch` konstrukce, v rámci které je vnořena.  
+ <sup>1</sup> If one `Try`...`Catch`...`Finally` construction is nested within another, a `Catch` block can branch into the `Try` block at its own nesting level, but not into any other `Try` block. A nested `Try`...`Catch`...`Finally` construction must be contained completely in a `Try` or `Catch` block of the construction within which it is nested.  
   
- Následující ilustrace znázorňuje jeden `Try` konstrukce vnořené v rámci jiného. Různé větve mezi bloky dvou konstrukcí jsou označeny jako platné nebo neplatné.  
+ The following illustration shows one `Try` construction nested within another. Various branches among the blocks of the two constructions are indicated as valid or invalid.  
   
- ![Grafický diagram větvení v konstrukcích try](./media/goto-statement/try-construction-branching.gif)  
+ ![Graphic diagram of branching in Try constructions](./media/goto-statement/try-construction-branching.gif)  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá příkaz `GoTo` pro větvení popiskům čáry v proceduře.  
+ The following example uses the `GoTo` statement to branch to line labels in a procedure.  
   
  [!code-vb[VbVbalrStatements#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#31)]  
   

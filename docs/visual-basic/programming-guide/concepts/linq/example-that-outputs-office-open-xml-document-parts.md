@@ -1,21 +1,21 @@
 ---
-title: Příklad, jejichž výstupem jsou části dokumentu Office Open XML (Visual Basic)
+title: Příklad, jehož výstupem jsou části dokumentu Office Open XML
 ms.date: 07/20/2015
 ms.assetid: a951925b-c985-48ed-b215-2a68b58f1ae5
-ms.openlocfilehash: 98ef8390c75b7efbf57040e9723c117a6ae18a66
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 47a4ac649fb370145962247e07e1d8841411cac0
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61931561"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353502"
 ---
-# <a name="example-that-outputs-office-open-xml-document-parts-visual-basic"></a>Příklad, jejichž výstupem jsou části dokumentu Office Open XML (Visual Basic)
-Toto téma ukazuje, jak otevření dokumentu Office Open XML a přístup k částem v rámci ho.  
+# <a name="example-that-outputs-office-open-xml-document-parts-visual-basic"></a>Example that Outputs Office Open XML Document Parts (Visual Basic)
+This topic shows how to open an Office Open XML document and access parts within it.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad otevře dokumentu Office Open XML a vytiskne část dokumentu a část stylu do konzoly.  
+ The following example opens an Office Open XML document, and prints the document part and the style part to the console.  
   
- Tento příklad používá třídy z WindowsBase sestavení. Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.  
+ This example uses classes from the WindowsBase assembly. It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.  
   
 ```vb  
 Const fileName As String = "SampleDoc.docx"  
@@ -66,4 +66,4 @@ End Using
   
 ## <a name="see-also"></a>Viz také:
 
-- [Podrobnosti sady Office otevírání dokumentů WordprocessingML XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)
+- [Details of Office Open XML WordprocessingML Documents (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)

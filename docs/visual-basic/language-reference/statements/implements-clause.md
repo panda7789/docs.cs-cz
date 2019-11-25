@@ -1,5 +1,5 @@
 ---
-title: Implements – klauzule (Visual Basic)
+title: Implements – klauzule
 ms.date: 07/20/2015
 f1_keywords:
 - vb.ImplementsClause
@@ -17,28 +17,28 @@ helpviewer_keywords:
 - members [Visual Basic], Implements keyword
 - reimplementation
 ms.assetid: 5252cdf9-964d-4fc6-af0f-0449b7126b5a
-ms.openlocfilehash: dcd20f21a989c327dcfcf27d5638d500b6e4b6da
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: f114aee75356e59eafd9d3ba6af9c64402cb374f
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929321"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345875"
 ---
 # <a name="implements-clause-visual-basic"></a>Implements – klauzule (Visual Basic)
-Indikuje, že člen třídy nebo struktury poskytuje implementaci pro člena definovaného v rozhraní.  
+Indicates that a class or structure member is providing the implementation for a member defined in an interface.  
   
 ## <a name="remarks"></a>Poznámky  
-Klíčové slovo není stejné jako [příkaz Implements.](../../../visual-basic/language-reference/statements/implements-statement.md) `Implements` Pomocí `Implements` příkazu určíte, že třída nebo struktura implementuje jedno nebo více rozhraní, a poté pro každého člena, který `Implements` použijete klíčové slovo k určení, které rozhraní a který člen implementuje.
+The `Implements` keyword is not the same as the [Implements Statement](../../../visual-basic/language-reference/statements/implements-statement.md). You use the `Implements` statement to specify that a class or structure implements one or more interfaces, and then for each member you use the `Implements` keyword to specify which interface and which member it implements.
 
-Pokud třída nebo struktura implementuje rozhraní, musí obsahovat `Implements` příkaz ihned po příkazu [třídy](../../../visual-basic/language-reference/statements/class-statement.md) nebo [příkazu struktury](../../../visual-basic/language-reference/statements/structure-statement.md)a musí implementovat všechny členy definované rozhraním.
+If a class or structure implements an interface, it must include the `Implements` statement immediately after the [Class Statement](../../../visual-basic/language-reference/statements/class-statement.md) or [Structure Statement](../../../visual-basic/language-reference/statements/structure-statement.md), and it must implement all the members defined by the interface.
 
-## <a name="reimplementation"></a>Implementaci  
-V odvozené třídě můžete znovu implementovat člena rozhraní, který je základní třídou již implementován. To se liší od přepsání člena základní třídy v následujících ohledech:
+## <a name="reimplementation"></a>Reimplementation  
+In a derived class, you can reimplement an interface member that the base class has already implemented. This is different from overriding the base class member in the following respects:
 
-- Člen základní třídy není nutné [přepsat](../../../visual-basic/language-reference/modifiers/overridable.md) , aby jej bylo možné znovu implementovat.
-- Člena můžete znovu implementovat s jiným názvem.
+- The base class member does not need to be [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md) to be reimplemented.
+- You can reimplement the member with a different name.
 
-`Implements` Klíčové slovo lze použít v následujících kontextech:
+The `Implements` keyword can be used in the following contexts:
 
 - [Příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md)
 - [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)

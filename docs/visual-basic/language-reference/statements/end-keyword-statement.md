@@ -1,21 +1,21 @@
 ---
-title: End <keyword> – příkaz (Visual Basic)
+title: End <keyword> – příkaz
 ms.date: 07/20/2015
 f1_keywords:
 - vb.EndDefinition
 helpviewer_keywords:
 - End keyword [Visual Basic]
 ms.assetid: 42d6e088-ab0f-4cda-88e8-fdce3e5fcf4f
-ms.openlocfilehash: 96dc8ce6b0d3b7545f5caeef43358936e426f566
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 87f4724cc036e6e0bdf0b558854a4034f45b9ab5
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61638152"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74343737"
 ---
-# <a name="end-keyword-statement-visual-basic"></a>End \<– klíčové slovo > – příkaz (Visual Basic)
+# <a name="end-keyword-statement-visual-basic"></a>End \<keyword> Statement (Visual Basic)
 
-Pokud následuje další klíčové slovo, ukončí definici bloku příkazů zavedených v dané klíčové slovo.
+When followed by an additional keyword, terminates the definition of the statement block introduced by that keyword.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -46,36 +46,36 @@ End With
   
 ## <a name="parts"></a>Součásti
 
-|Část|Popis|
+|Part|Popis|
 |---|---|
-|`End`|Povinný parametr. Ukončí definici programovací element.|
-|`AddHandler`|Povinnost ukončit `AddHandler` přistupující objekt zahájené odpovídající `AddHandler` příkaz ve vlastním [Event – příkaz](event-statement.md).|
-|`Class`|Povinnost ukončit definici třídy zahájené odpovídající [Class – příkaz](class-statement.md).|
-|`Enum`|Povinnost ukončit definice výčtu zahájené odpovídající [Enum – příkaz](enum-statement.md).|
-|`Event`|Povinnost ukončit `Custom` definice události zahájené odpovídající [Event – příkaz](event-statement.md).|  
-|`Function`|Povinnost ukončit `Function` definici procedury zahájené odpovídající [Function – příkaz](function-statement.md). Pokud se zjistí spuštění `End Function` prohlášení, ovládací prvek vrátí volajícímu kódu.|
-|`Get`|Povinnost ukončit `Property` definici procedury zahájené odpovídající [získat příkaz](get-statement.md). Pokud se zjistí spuštění `End Get` prohlášení, ovládací prvek vrátí příkaz požaduje hodnotu vlastnosti.|
-|`If`|Povinnost ukončit `If`... `Then`... `Else` blokovat definice zahájené odpovídající `If` příkazu. Zobrazit [Pokud... Potom... Else – příkaz](if-then-else-statement.md).|
-|`Interface`|Povinnost ukončit definici rozhraní zahájené odpovídající [Interface – příkaz](interface-statement.md).|
-|`Module`|Povinnost ukončit modulu definice zahájené odpovídající [Module – příkaz](module-statement.md).|
-|`Namespace`|Povinnost ukončit definice oboru názvů zahájené odpovídající [příkaz Namespace](namespace-statement.md).|
-|`Operator`|Povinnost ukončit definici operátoru zahájené odpovídající [Operator – příkaz](operator-statement.md).|
-|`Property`|Povinnost ukončit definici vlastnosti zahájené odpovídající [Property – příkaz](property-statement.md).|
-|`RaiseEvent`|Povinnost ukončit `RaiseEvent` přistupující objekt zahájené odpovídající `RaiseEvent` příkaz ve vlastním [Event – příkaz](event-statement.md).|
-|`RemoveHandler`|Povinnost ukončit `RemoveHandler` přistupující objekt zahájené odpovídající `RemoveHandler` příkaz ve vlastním [Event – příkaz](event-statement.md).|
-|`Select`|Povinnost ukončit `Select`... `Case` blokovat definice zahájené odpovídající `Select` příkazu. Zobrazit [vyberte... Case – příkaz](select-case-statement.md).  
-|`Set`|Povinnost ukončit `Property` definici procedury zahájené odpovídající [nastavit příkaz](set-statement.md). Pokud se zjistí spuštění `End Set` prohlášení, ovládací prvek vrátí příkaz pro nastavení vlastnosti na hodnotu.  
-|`Structure`|Povinnost ukončit definici struktury zahájené odpovídající [Structure – příkaz](structure-statement.md).  
-|`Sub`|Povinnost ukončit `Sub` definici procedury zahájené odpovídající [příkaz Sub](sub-statement.md). Pokud se zjistí spuštění `End Sub` prohlášení, ovládací prvek vrátí volajícímu kódu.  
-|`SyncLock`|Povinnost ukončit `SyncLock` blokovat definice zahájené odpovídající `SyncLock` příkazu. Zobrazit [příkaz SyncLock](synclock-statement.md).  
-|`Try`|Povinnost ukončit `Try`... `Catch`... `Finally` blokovat definice zahájené odpovídající `Try` příkazu. Zobrazit [zkuste... Catch... Příkaz finally](try-catch-finally-statement.md).  
-|`While`|Povinnost ukončit `While` smyčky definice zahájené odpovídající `While` příkazu. Zobrazit [během... End While – příkaz](while-end-while-statement.md).  
-|`With`| Povinnost ukončit `With` blokovat definice zahájené odpovídající `With` příkazu. Zobrazit [s... End With – příkaz](with-end-with-statement.md).  
+|`End`|Požadováno. Terminates the definition of the programming element.|
+|`AddHandler`|Required to terminate an `AddHandler` accessor begun by a matching `AddHandler` statement in a custom [Event Statement](event-statement.md).|
+|`Class`|Required to terminate a class definition begun by a matching [Class Statement](class-statement.md).|
+|`Enum`|Required to terminate an enumeration definition begun by a matching [Enum Statement](enum-statement.md).|
+|`Event`|Required to terminate a `Custom` event definition begun by a matching [Event Statement](event-statement.md).|  
+|`Function`|Required to terminate a `Function` procedure definition begun by a matching [Function Statement](function-statement.md). If execution encounters an `End Function` statement, control returns to the calling code.|
+|`Get`|Required to terminate a `Property` procedure definition begun by a matching [Get Statement](get-statement.md). If execution encounters an `End Get` statement, control returns to the statement requesting the property's value.|
+|`If`|Required to terminate an `If`...`Then`...`Else` block definition begun by a matching `If` statement. See [If...Then...Else Statement](if-then-else-statement.md).|
+|`Interface`|Required to terminate an interface definition begun by a matching [Interface Statement](interface-statement.md).|
+|`Module`|Required to terminate a module definition begun by a matching [Module Statement](module-statement.md).|
+|`Namespace`|Required to terminate a namespace definition begun by a matching [Namespace Statement](namespace-statement.md).|
+|`Operator`|Required to terminate an operator definition begun by a matching [Operator Statement](operator-statement.md).|
+|`Property`|Required to terminate a property definition begun by a matching [Property Statement](property-statement.md).|
+|`RaiseEvent`|Required to terminate a `RaiseEvent` accessor begun by a matching `RaiseEvent` statement in a custom [Event Statement](event-statement.md).|
+|`RemoveHandler`|Required to terminate a `RemoveHandler` accessor begun by a matching `RemoveHandler` statement in a custom [Event Statement](event-statement.md).|
+|`Select`|Required to terminate a `Select`...`Case` block definition begun by a matching `Select` statement. See [Select...Case Statement](select-case-statement.md).  
+|`Set`|Required to terminate a `Property` procedure definition begun by a matching [Set Statement](set-statement.md). If execution encounters an `End Set` statement, control returns to the statement setting the property's value.  
+|`Structure`|Required to terminate a structure definition begun by a matching [Structure Statement](structure-statement.md).  
+|`Sub`|Required to terminate a `Sub` procedure definition begun by a matching [Sub Statement](sub-statement.md). If execution encounters an `End Sub` statement, control returns to the calling code.  
+|`SyncLock`|Required to terminate a `SyncLock` block definition begun by a matching `SyncLock` statement. See [SyncLock Statement](synclock-statement.md).  
+|`Try`|Required to terminate a `Try`...`Catch`...`Finally` block definition begun by a matching `Try` statement. See [Try...Catch...Finally Statement](try-catch-finally-statement.md).  
+|`While`|Required to terminate a `While` loop definition begun by a matching `While` statement. See [While...End While Statement](while-end-while-statement.md).  
+|`With`| Required to terminate a `With` block definition begun by a matching `With` statement. See [With...End With Statement](with-end-with-statement.md).  
 |||
   
 ## <a name="directives"></a>Direktivy
 
-Když uvozená znakem čísla (`#`), `End` – klíčové slovo ukončí blok předzpracování zavedených v direktivě odpovídající.  
+When preceded by a number sign (`#`), the `End` keyword terminates a preprocessing block introduced by the corresponding directive.  
 
 ```vb
 #End ExternalSource
@@ -83,21 +83,21 @@ Když uvozená znakem čísla (`#`), `End` – klíčové slovo ukončí blok p�
 #End Region
 ```
 
-|Část|Popis|
+|Part|Popis|
 |---|---|
-|`#End`|Povinný parametr. Ukončí definici bloku předběžného zpracování.|
-|`ExternalSource`|Povinnost ukončit z externího zdroje bloku zahájené odpovídající [#ExternalSource – direktiva](../directives/externalsource-directive.md).|
-|`If`|Povinnost ukončit blok podmíněné kompilace zahájené odpovídající `#If` směrnice. Zobrazit [#If... Then... #Else – direktivy](../directives/if-then-else-directives.md).|
-|`Region`|Povinnost ukončit blok zdrojové oblasti zahájené odpovídající [#Region – direktiva](../directives/region-directive.md).|
+|`#End`|Požadováno. Terminates the definition of the preprocessing block.|
+|`ExternalSource`|Required to terminate an external source block begun by a matching [#ExternalSource Directive](../directives/externalsource-directive.md).|
+|`If`|Required to terminate a conditional compilation block begun by a matching `#If` directive. See [#If...Then...#Else Directives](../directives/if-then-else-directives.md).|
+|`Region`|Required to terminate a source region block begun by a matching [#Region Directive](../directives/region-directive.md).|
 |||
 
 ## <a name="remarks"></a>Poznámky
 
-[End – příkaz](end-statement.md), bez dodatečné klíčové slovo ukončí provádění okamžitě.
+The [End Statement](end-statement.md), without an additional keyword, terminates execution immediately.
 
 ## <a name="smart-device-developer-notes"></a>Poznámky pro vývojáře inteligentního zařízení  
 
-`End` Příkaz bez další klíčové slovo, není podporován.  
+The `End` statement, without an additional keyword, is not supported.  
   
 ## <a name="see-also"></a>Viz také:
 

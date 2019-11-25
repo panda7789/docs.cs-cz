@@ -1,21 +1,21 @@
 ---
-title: Příklad odloženého provedení (Visual Basic)
+title: Příklad odloženého provedení
 ms.date: 07/20/2015
 ms.assetid: 9a22bea1-c755-4aac-800a-fcd9e5107ace
-ms.openlocfilehash: e0bb7f3d125cc48607a534e2c24cbf7083353945
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 6ab8f6434bb24b7a66ca4afd1d082911481671f6
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72583322"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74354230"
 ---
-# <a name="deferred-execution-example-visual-basic"></a>Příklad odloženého provedení (Visual Basic)
+# <a name="deferred-execution-example-visual-basic"></a>Deferred Execution Example (Visual Basic)
 
-Toto téma ukazuje, jak odložené provádění a opožděné vyhodnocení ovlivní spuštění dotazů LINQ to XML.
+This topic shows how deferred execution and lazy evaluation affect the execution of your LINQ to XML queries.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje pořadí spouštění při použití metody rozšíření, která používá odložené provádění. Příklad deklaruje pole tří řetězců. Poté provede iteraci kolekcí vrácenou `ConvertCollectionToUpperCase`.
+The following example shows the order of execution when using an extension method that uses deferred execution. The example declares an array of three strings. It then iterates through the collection returned by `ConvertCollectionToUpperCase`.
 
 ```vb
 Imports System.Runtime.CompilerServices
@@ -46,7 +46,7 @@ Module Module1
 End Module
 ```
 
-Tento příklad vytvoří následující výstup:
+This example produces the following output:
 
 ```console
 ToUpper: source abc
@@ -57,10 +57,10 @@ ToUpper: source ghi
 Main: str GHI
 ```
 
-Všimněte si, že při iteraci v kolekci vrácené `ConvertCollectionToUpperCase` je každá položka načtena ze zdrojového pole řetězce a převedena na velká písmena před načtením další položky ze zdrojového pole řetězce.
+Notice that when iterating through the collection returned by `ConvertCollectionToUpperCase`, each item is retrieved from the source string array and converted to uppercase before the next item is retrieved from the source string array.
 
-Můžete vidět, že celé pole řetězců není převedeno na velká písmena před tím, než se každá položka v vrácené kolekci zpracuje v `foreach` smyčce v `Main`.
+You can see that the entire array of strings is not converted to uppercase before each item in the returned collection is processed in the `foreach` loop in `Main`.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Kurz: odložené provádění (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-deferred-execution.md)
+- [Tutorial: Deferred Execution (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-deferred-execution.md)

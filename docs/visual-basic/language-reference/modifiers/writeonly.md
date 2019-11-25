@@ -1,5 +1,5 @@
 ---
-title: WriteOnly (Visual Basic)
+title: WriteOnly
 ms.date: 07/20/2015
 f1_keywords:
 - WriteOnly
@@ -11,40 +11,40 @@ helpviewer_keywords:
 - properties [Visual Basic], write-only
 - sensitive data
 ms.assetid: 488d2899-b09f-4cee-92f0-6f9f9fc4f944
-ms.openlocfilehash: 43507ac8e9b5843e8fa9496737a3d77b3a425a7f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 847617ea6534089857a759fbea3bb16a3a5a36a1
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963773"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344193"
 ---
 # <a name="writeonly-visual-basic"></a>WriteOnly (Visual Basic)
-Určuje, že vlastnost může být zapsána, ale nebude přečtena.  
+Specifies that a property can be written but not read.  
   
 ## <a name="remarks"></a>Poznámky  
   
-## <a name="rules"></a>Pravidly  
- **Kontext deklarace** Můžete použít `WriteOnly` pouze na úrovni modulu. To znamená, že kontext deklarace pro `WriteOnly` vlastnost musí být třída, struktura nebo modul a nemůže se jednat o zdrojový soubor, obor názvů nebo proceduru.  
+## <a name="rules"></a>Rules  
+ **Declaration Context.** You can use `WriteOnly` only at module level. This means the declaration context for a `WriteOnly` property must be a class, structure, or module, and cannot be a source file, namespace, or procedure.  
   
- Vlastnost můžete deklarovat jako `WriteOnly`, ale ne jako proměnnou.  
+ You can declare a property as `WriteOnly`, but not a variable.  
   
-## <a name="when-to-use-writeonly"></a>Kdy použít WriteOnly  
- Někdy budete chtít, aby kód byl schopný nastavit hodnotu, ale nezjistit, co je. Například citlivá data, jako je číslo rodného čísla nebo heslo, musí být chráněna před přístupem libovolné součásti, která ji nestavila. V těchto případech můžete použít `WriteOnly` vlastnost k nastavení hodnoty.  
+## <a name="when-to-use-writeonly"></a>When to Use WriteOnly  
+ Sometimes you want the consuming code to be able to set a value but not discover what it is. For example, sensitive data, such as a social registration number or a password, needs to be protected from access by any component that did not set it. In these cases, you can use a `WriteOnly` property to set the value.  
   
 > [!IMPORTANT]
-> Při definování a použití `WriteOnly` vlastnosti Vezměte v úvahu následující dodatečná ochranná opatření:  
+> When you define and use a `WriteOnly` property, consider the following additional protective measures:  
   
-- **Přitom.** Pokud je vlastnost členem třídy, umožněte jí, aby jí bylo možné [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)a Nedeklarujte ji `Overridable`. `MustOverride` Tím zabráníte odvozeným třídám v provedení nežádoucího přístupu prostřednictvím přepsání.  
+- **Overriding.** If the property is a member of a class, allow it to default to [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md), and do not declare it `Overridable` or `MustOverride`. This prevents a derived class from making undesired access through an override.  
   
-- **Úroveň přístupu.** Pokud podržíte citlivá data vlastnosti v jedné nebo více proměnných, deklarujte je jako [soukromá](../../../visual-basic/language-reference/modifiers/private.md) , aby k nim nikdo nepřístupoval žádný jiný kód.  
+- **Access Level.** If you hold the property's sensitive data in one or more variables, declare them [Private](../../../visual-basic/language-reference/modifiers/private.md) so that no other code can access them.  
   
-- **Šifr.** Ukládat všechna citlivá data v zašifrované podobě, nikoli v prostém textu. Pokud škodlivý kód nějakým způsobem získá přístup k této oblasti paměti, je obtížnější využít data. Šifrování je užitečné také v případě, že je nutné serializovat citlivá data.  
+- **Encryption.** Store all sensitive data in encrypted form rather than in plain text. If malicious code somehow gains access to that area of memory, it is more difficult to make use of the data. Encryption is also useful if it is necessary to serialize the sensitive data.  
   
-- **Resetování.** Když je ukončena třída, struktura nebo modul definující vlastnost, resetujte citlivé údaje na výchozí hodnoty nebo jiné nevýznamné hodnoty. To poskytuje dodatečnou ochranu, pokud je tato oblast paměti uvolněna pro obecný přístup.  
+- **Resetting.** When the class, structure, or module defining the property is being terminated, reset the sensitive data to default values or to other meaningless values. This gives extra protection when that area of memory is freed for general access.  
   
-- **Dočasné.** Neuchovávat žádná citlivá data, například na disku, pokud se k tomu můžete vyhnout. Nepište také žádná citlivá data do schránky.  
+- **Persistence.** Do not persist any sensitive data, for example on disk, if you can avoid it. Also, do not write any sensitive data to the Clipboard.  
   
- V tomto kontextu lze použít Modifikátor:`WriteOnly`  
+ The `WriteOnly` modifier can be used in this context:  
   
  [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
   

@@ -1,5 +1,5 @@
 ---
-title: Rozsah v jazyce Visual Basic
+title: Rozsah
 ms.date: 07/20/2015
 helpviewer_keywords:
 - module scope [Visual Basic]
@@ -15,63 +15,63 @@ helpviewer_keywords:
 - scope [Visual Basic], Visual Basic
 - procedure scope [Visual Basic]
 ms.assetid: 208106fe-79c9-4eec-93c6-55f08548895f
-ms.openlocfilehash: 7f7e32d6ac838e250c260987d3d5c375f8697c45
-ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
+ms.openlocfilehash: 37fcfa897accb23e9c8c56407ce4ebd956b39c4d
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68512851"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345291"
 ---
 # <a name="scope-in-visual-basic"></a>Rozsah v jazyce Visual Basic
 
-*Obor* deklarovaného prvku je sada veškerého kódu, který se na něj může odkazovat bez kvalifikovaného názvu nebo jeho zpřístupnění prostřednictvím [příkazu Imports (obor názvů a typ .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md). Element může mít obor na jedné z následujících úrovní:
+The *scope* of a declared element is the set of all code that can refer to it without qualifying its name or making it available through an [Imports Statement (.NET Namespace and Type)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md). An element can have scope at one of the following levels:
 
 |Level|Popis|
 |-----------|-----------------|
-|Rozsah bloku|K dispozici pouze v bloku kódu, ve kterém je deklarována|
-|Rozsah procedury|K dispozici pro veškerý kód v rámci postupu, ve kterém je deklarována|
-|Rozsah modulu|K dispozici pro veškerý kód v rámci modulu, třídy nebo struktury, ve které je deklarována|
-|Obor názvů|K dispozici pro veškerý kód v oboru názvů, ve kterém je deklarována|
+|Rozsah bloku|Available only within the code block in which it is declared|
+|Procedure scope|Available to all code within the procedure in which it is declared|
+|Module scope|Available to all code within the module, class, or structure in which it is declared|
+|Namespace scope|Available to all code in the namespace in which it is declared|
 
-Tyto úrovně postupu rozsahu od nejužšího (bloku) po nejširší (obor názvů), kde *nejužší rozsah* znamená nejmenší sadu kódu, který může odkazovat na prvek bez kvalifikace. Další informace najdete v části "úrovně oboru" na této stránce.
+These levels of scope progress from the narrowest (block) to the widest (namespace), where *narrowest scope* means the smallest set of code that can refer to the element without qualification. For more information, see "Levels of Scope" on this page.
 
-## <a name="specifying-scope-and-defining-variables"></a>Určení rozsahu a definování proměnných
+## <a name="specifying-scope-and-defining-variables"></a>Specifying Scope and Defining Variables
 
-Rozsah prvku určíte při jeho deklaraci. Rozsah může záviset na následujících faktorech:
+You specify the scope of an element when you declare it. The scope can depend on the following factors:
 
-- Oblast (blok, procedura, modul, třída nebo struktura), ve které deklarujete element
+- The region (block, procedure, module, class, or structure) in which you declare the element
 
-- Obor názvů obsahující deklaraci elementu
+- The namespace containing the element's declaration
 
-- Úroveň přístupu, kterou deklarujete pro element
+- The access level you declare for the element
 
-Pokud definujete proměnné se stejným názvem, ale s jiným rozsahem, postupujte opatrně, protože by to mohlo vést k neočekávaným výsledkům. Další informace naleznete v tématu [odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).
+Use care when you define variables with the same name but different scope, because doing so can lead to unexpected results. For more information, see [References to Declared Elements](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).
 
-## <a name="levels-of-scope"></a>Úrovně rozsahu
+## <a name="levels-of-scope"></a>Levels of Scope
 
-Programový prvek je k dispozici v celé oblasti, ve které jej deklarujete. Veškerý kód ve stejné oblasti může odkazovat na prvek bez kvalifikovaného názvu.
+A programming element is available throughout the region in which you declare it. All code in the same region can refer to the element without qualifying its name.
 
-### <a name="block-scope"></a>Rozsah bloku
+### <a name="block-scope"></a>Block Scope
 
-Blok je sada příkazů, které jsou uzavřeny v rámci inicializační a ukončovací příkazy deklarace, například následující:
+A block is a set of statements enclosed within initiating and terminating declaration statements, such as the following:
 
-- `Do` a `Loop`
+- `Do` and `Loop`
 
-- `For`[`Each`] a`Next`
+- `For` [`Each`] and `Next`
 
-- `If` a `End If`
+- `If` and `End If`
 
-- `Select` a `End Select`
+- `Select` and `End Select`
 
-- `SyncLock` a `End SyncLock`
+- `SyncLock` and `End SyncLock`
 
-- `Try` a `End Try`
+- `Try` and `End Try`
 
-- `While` a `End While`
+- `While` and `End While`
 
-- `With` a `End With`
+- `With` and `End With`
 
-Pokud deklarujete proměnnou v rámci bloku, můžete ji použít pouze v rámci tohoto bloku. V následujícím příkladu je rozsah `cube` proměnné celého čísla blok mezi `If` a `End If`a nemůžete již odkazovat na `cube` , pokud provádění projde z bloku.
+If you declare a variable within a block, you can use it only within that block. In the following example, the scope of the integer variable `cube` is the block between `If` and `End If`, and you can no longer refer to `cube` when execution passes out of the block.
 
 ```vb
 If n < 1291 Then
@@ -81,26 +81,26 @@ End If
 ```
 
 > [!NOTE]
-> I v případě, že rozsah proměnné je omezen na blok, je jeho životnost stále i u celého postupu. Pokud zadáte blok více než jednou během postupu, každá proměnná bloku uchová svou předchozí hodnotu. Chcete-li se vyhnout neočekávaným výsledkům v takovém případě, je vhodné inicializovat blokové proměnné na začátku bloku.
+> Even if the scope of a variable is limited to a block, its lifetime is still that of the entire procedure. If you enter the block more than once during the procedure, each block variable retains its previous value. To avoid unexpected results in such a case, it is wise to initialize block variables at the beginning of the block.
 
-### <a name="procedure-scope"></a>Rozsah procedury
+### <a name="procedure-scope"></a>Procedure Scope
 
-Element deklarovaný v proceduře není k dispozici mimo tento postup. Může použít pouze postup, který obsahuje deklaraci. Proměnné na této úrovni se označují také jako *místní proměnné*. Deklarujete je pomocí [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md)s klíčovým slovem [static](../../../../visual-basic/language-reference/modifiers/static.md) nebo bez něj.
+An element declared within a procedure is not available outside that procedure. Only the procedure that contains the declaration can use it. Variables at this level are also known as *local variables*. You declare them with the [Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md), with or without the [Static](../../../../visual-basic/language-reference/modifiers/static.md) keyword.
 
-Postup a rozsah bloku úzce souvisejí. Pokud deklarujete proměnnou uvnitř procedury, ale mimo libovolný blok v rámci této procedury, můžete si považovat proměnnou jako s rozsahem bloku, kde blok je celý postup.
+Procedure and block scope are closely related. If you declare a variable inside a procedure but outside any block within that procedure, you can think of the variable as having block scope, where the block is the entire procedure.
 
 > [!NOTE]
-> Všechny místní prvky, i když jsou `Static` proměnné, jsou soukromé pro proceduru, ve které se vyskytují. V proceduře nelze deklarovat žádný element pomocí klíčového slova [Public](../../../../visual-basic/language-reference/modifiers/public.md) .
+> All local elements, even if they are `Static` variables, are private to the procedure in which they appear. You cannot declare any element using the [Public](../../../../visual-basic/language-reference/modifiers/public.md) keyword within a procedure.
 
-### <a name="module-scope"></a>Rozsah modulu
+### <a name="module-scope"></a>Module Scope
 
-Pro usnadnění práce se *úroveň modulu* s jedním termínem aplikuje rovnoměrně na moduly, třídy a struktury. Můžete deklarovat prvky na této úrovni tím, že umístíte příkaz deklarace mimo jakýkoli postup nebo blok, ale v rámci modulu, třídy nebo struktury.
+For convenience, the single term *module level* applies equally to modules, classes, and structures. You can declare elements at this level by placing the declaration statement outside of any procedure or block but within the module, class, or structure.
 
-Při vytváření deklarace na úrovni modulu určuje úroveň přístupu, kterou zvolíte, obor. Obor názvů, který obsahuje modul, třídu nebo strukturu, má vliv také na obor.
+When you make a declaration at the module level, the access level you choose determines the scope. The namespace that contains the module, class, or structure also affects the scope.
 
-Prvky, pro které deklarujete úroveň [privátního](../../../../visual-basic/language-reference/modifiers/private.md) přístupu, jsou k dispozici pro každý postup v daném modulu, ale nikoli pro jakýkoliv kód v jiném modulu. Pokud nepoužíváte žádná klíčová `Private` slova úrovně přístupu, příkaznaúrovnimodulusenastavínavýchozíhodnotu.`Dim` Pomocí `Private` klíčového slova `Dim` v příkazu však můžete nastavit rozsah a úroveň přístupu.
+Elements for which you declare [Private](../../../../visual-basic/language-reference/modifiers/private.md) access level are available to every procedure in that module, but not to any code in a different module. The `Dim` statement at module level defaults to `Private` if you do not use any access level keywords. However, you can make the scope and access level more obvious by using the `Private` keyword in the `Dim` statement.
 
-V následujícím příkladu mohou všechny procedury definované v modulu odkazovat na řetězcovou proměnnou `strMsg`. Při volání druhého postupu se v dialogovém okně zobrazí obsah řetězcové proměnné `strMsg` .
+In the following example, all procedures defined in the module can refer to the string variable `strMsg`. When the second procedure is called, it displays the contents of the string variable `strMsg` in a dialog box.
 
 ```vb
 ' Put the following declaration at module level (not in any procedure).
@@ -115,40 +115,40 @@ Sub usePrivateVariable()
 End Sub
 ```
 
-### <a name="namespace-scope"></a>Obor názvů
+### <a name="namespace-scope"></a>Namespace Scope
 
-Pokud deklarujete element na úrovni modulu pomocí klíčového slova [Friend](../../../../visual-basic/language-reference/modifiers/friend.md) nebo [Public](../../../../visual-basic/language-reference/modifiers/public.md) , bude zpřístupněn všem procedurám v rámci oboru názvů, ve kterém je element deklarován. S následující změnou v předchozím příkladu může být řetězcová proměnná `strMsg` odkazována pomocí kódu kdekoli v oboru názvů své deklarace.
+If you declare an element at module level using the [Friend](../../../../visual-basic/language-reference/modifiers/friend.md) or [Public](../../../../visual-basic/language-reference/modifiers/public.md) keyword, it becomes available to all procedures throughout the namespace in which the element is declared. With the following alteration to the preceding example, the string variable `strMsg` can be referred to by code anywhere in the namespace of its declaration.
 
 ```vb
 ' Include this declaration at module level (not inside any procedure).
 Public strMsg As String
 ```
 
-Obor názvů zahrnuje vnořené obory názvů. Element dostupný v rámci oboru názvů je také k dispozici v rámci jakéhokoli oboru názvů vnořeného uvnitř daného oboru názvů.
+Namespace scope includes nested namespaces. An element available from within a namespace is also available from within any namespace nested inside that namespace.
 
-Pokud projekt neobsahuje žádné [Příkazy oboru názvů](../../../../visual-basic/language-reference/statements/namespace-statement.md), je vše v projektu ve stejném oboru názvů. V tomto případě lze obor názvů představit jako rozsah projektu. `Public`prvky v modulu, třídě nebo struktuře jsou také k dispozici pro každý projekt, který odkazuje na svůj projekt.
+If your project does not contain any [Namespace Statement](../../../../visual-basic/language-reference/statements/namespace-statement.md)s, everything in the project is in the same namespace. In this case, namespace scope can be thought of as project scope. `Public` elements in a module, class, or structure are also available to any project that references their project.
 
-## <a name="choice-of-scope"></a>Volba rozsahu
+## <a name="choice-of-scope"></a>Choice of Scope
 
-Při deklaraci proměnné byste měli při výběru jejího rozsahu brát v úvahu následující body.
+When you declare a variable, you should keep in mind the following points when choosing its scope.
 
-### <a name="advantages-of-local-variables"></a>Výhody místních proměnných
+### <a name="advantages-of-local-variables"></a>Advantages of Local Variables
 
-Místní proměnné jsou dobrou volbou pro jakýkoliv druh dočasného výpočtu, a to z následujících důvodů:
+Local variables are a good choice for any kind of temporary calculation, for the following reasons:
 
-- **Vyhnout se konfliktu názvů.** Názvy místních proměnných nejsou náchylné ke konfliktu. Můžete například vytvořit několik různých postupů obsahujících proměnnou s názvem `intTemp`. Pokud je každý `intTemp` deklarován jako místní proměnná, každý postup rozpoznává pouze svou vlastní `intTemp`verzi. Kterýkoli z těchto postupů může změnit hodnotu v místním prostředí `intTemp` , aniž `intTemp` by to ovlivnilo proměnné v jiných postupech.
+- **Name Conflict Avoidance.** Local variable names are not susceptible to conflict. For example, you can create several different procedures containing a variable called `intTemp`. As long as each `intTemp` is declared as a local variable, each procedure recognizes only its own version of `intTemp`. Any one procedure can alter the value in its local `intTemp` without affecting `intTemp` variables in other procedures.
 
-- **Spotřeba paměti.** Místní proměnné spotřebovávají paměť pouze v době, kdy je spuštěn jejich postup. Jejich paměť je uvolněna v případě, že se procedura vrátí na volající kód. Naproti tomu [sdílené](../../../../visual-basic/language-reference/modifiers/shared.md) a [statické](../../../../visual-basic/language-reference/modifiers/static.md) proměnné využívají paměťové prostředky, dokud se vaše aplikace neukončí, takže je používejte, jenom když je to potřeba. *Proměnné instance* spotřebovávají paměť, zatímco jejich instance stále existují, což snižuje efektivitu než lokální proměnné, ale potenciálně účinnější než `Shared` nebo `Static` proměnných.
+- **Memory Consumption.** Local variables consume memory only while their procedure is running. Their memory is released when the procedure returns to the calling code. By contrast, [Shared](../../../../visual-basic/language-reference/modifiers/shared.md) and [Static](../../../../visual-basic/language-reference/modifiers/static.md) variables consume memory resources until your application stops running, so use them only when necessary. *Instance variables* consume memory while their instance continues to exist, which makes them less efficient than local variables, but potentially more efficient than `Shared` or `Static` variables.
 
-### <a name="minimizing-scope"></a>Minimalizace rozsahu
+### <a name="minimizing-scope"></a>Minimizing Scope
 
-Obecně platí, že při deklaraci jakékoli proměnné nebo konstanty je dobrým postupem způsob, jak rozsah co nejblíže omezit (rozsah bloku je nejužší). To pomáhá šetřit paměť a minimalizovat šance na to, že váš kód chybně odkazuje na nesprávnou proměnnou. Podobně byste měli deklarovat proměnnou, která bude [statická](../../../../visual-basic/language-reference/modifiers/static.md) pouze v případě, že je nutné zachovat hodnotu mezi voláními procedur.
+In general, when declaring any variable or constant, it is good programming practice to make the scope as narrow as possible (block scope is the narrowest). This helps conserve memory and minimizes the chances of your code erroneously referring to the wrong variable. Similarly, you should declare a variable to be [Static](../../../../visual-basic/language-reference/modifiers/static.md) only when it is necessary to preserve its value between procedure calls.
 
 ## <a name="see-also"></a>Viz také:
 
 - [Deklarované charakteristiky elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md)
 - [Postupy: Řízení rozsahu proměnné](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-scope-of-a-variable.md)
-- [Doba života v Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)
-- [Úrovně přístupu v Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
+- [Lifetime in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)
+- [Access levels in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
 - [Odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
 - [Deklarace proměnné](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)

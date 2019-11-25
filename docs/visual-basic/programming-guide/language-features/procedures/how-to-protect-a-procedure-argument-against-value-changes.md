@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Ochrana argumentu procedury proti změnám hodnoty (Visual Basic)'
+title: 'Postupy: Ochrana argumentu procedury proti změnám hodnoty'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - procedures [Visual Basic], arguments
@@ -14,20 +14,20 @@ helpviewer_keywords:
 - arguments [Visual Basic], ByRef
 - arguments [Visual Basic], changing value
 ms.assetid: d2b7c766-ce16-4d2c-8d79-3fc0e7ba2227
-ms.openlocfilehash: 70378b57c6d3af5a98e0ba9c6e3aebc319561b1b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 36092eb597b5b20e1da42cd9d15ab8633636cfb1
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61665738"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344860"
 ---
 # <a name="how-to-protect-a-procedure-argument-against-value-changes-visual-basic"></a>Postupy: Ochrana argumentu procedury proti změnám hodnoty (Visual Basic)
-Pokud se deklaruje jako parametr procedury [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), Visual Basic poskytuje kód procedury přímý odkaz na programovací prvek základní argumentu ve volajícím kódu. To umožňuje změnit hodnotu argumentu ve volajícím kódu základní postup. V některých případech volající kód může být vhodné pro ochranu před tuto změnu.  
+If a procedure declares a parameter as [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), Visual Basic gives the procedure code a direct reference to the programming element underlying the argument in the calling code. This permits the procedure to change the value underlying the argument in the calling code. In some cases the calling code might want to protect against such a change.  
   
- Argument lze vždy chránit před změnu deklarováním odpovídajícího parametru [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) v postupu. Pokud chcete být schopni změnit daný argument v některých případech ale jiné ne, je možné deklarovat `ByRef` a umožní volajícím kódu určit předávání mechanismus při každém volání. Dělá to tak, že nadřazený odpovídající argument v závorkách předat hodnotou nebo není nadřazený v závorkách předávání pomocí odkazu. Další informace najdete v tématu [jak: Vynucení argumentu být předána podle hodnoty](./how-to-force-an-argument-to-be-passed-by-value.md).  
+ You can always protect an argument from change by declaring the corresponding parameter [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) in the procedure. If you want to be able to change a given argument in some cases but not others, you can declare it `ByRef` and let the calling code determine the passing mechanism in each call. It does this by enclosing the corresponding argument in parentheses to pass it by value, or not enclosing it in parentheses to pass it by reference. For more information, see [How to: Force an Argument to Be Passed by Value](./how-to-force-an-argument-to-be-passed-by-value.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje dva postupy, které trvat proměnnou pole a provozují na jeho prvků. `increase` Procedura přidá pouze jednu na každý prvek. `replace` Postup přiřadí nové pole parametru `a()` a pak přidá jednu na každý prvek. Opětovné přiřazení neovlivní základní proměnné pole ve volajícím kódu.  
+ The following example shows two procedures that take an array variable and operate on its elements. The `increase` procedure simply adds one to each element. The `replace` procedure assigns a new array to the parameter `a()` and then adds one to each element. However, the reassignment does not affect the underlying array variable in the calling code.  
   
  [!code-vb[VbVbcnProcedures#35](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#35)]  
   
@@ -35,12 +35,12 @@ Pokud se deklaruje jako parametr procedury [ByRef](../../../../visual-basic/lang
   
  [!code-vb[VbVbcnProcedures#37](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#37)]  
   
- První `MsgBox` volání zobrazí "po increase(n): 11, 21, 31, 41". Protože pole `n` je typem odkazu `increase` lze měnit její členy, i když je mechanismus předávání `ByVal`.  
+ The first `MsgBox` call displays "After increase(n): 11, 21, 31, 41". Because the array `n` is a reference type, `increase` can change its members, even though the passing mechanism is `ByVal`.  
   
- Druhá `MsgBox` volání zobrazí "po replace(n): 11, 21, 31, 41". Protože `n` je předán `ByVal`, `replace` nelze upravit proměnnou `n` ve volajícím kódu tak, že k němu přiřadíte nové pole. Když `replace` vytvoří novou instanci pole `k` a přiřadí ji na místní proměnnou `a`, ztratí odkaz na `n` předaných v volající kód. Při změně členů `a`, pouze místní pole `k` má vliv. Proto `replace` nezvyšuje hodnoty pole `n` ve volajícím kódu.  
+ The second `MsgBox` call displays "After replace(n): 11, 21, 31, 41". Because `n` is passed `ByVal`, `replace` cannot modify the variable `n` in the calling code by assigning a new array to it. When `replace` creates the new array instance `k` and assigns it to the local variable `a`, it loses the reference to `n` passed in by the calling code. When it changes the members of `a`, only the local array `k` is affected. Therefore, `replace` does not increment the values of array `n` in the calling code.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Ve výchozím nastavení v jazyce Visual Basic je předání argumentů podle hodnoty. Ale při programování je dobrým zvykem zahrnout buď [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) nebo [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) – klíčové slovo s každou deklarovaný parametr. Díky tomu váš kód lépe čitelný.  
+ The default in Visual Basic is to pass arguments by value. However, it is good programming practice to include either the [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) or [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) keyword with every declared parameter. This makes your code easier to read.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -51,6 +51,6 @@ Pokud se deklaruje jako parametr procedury [ByRef](../../../../visual-basic/lang
 - [Rozdíly mezi upravitelnými a neupravitelnými argumenty](./differences-between-modifiable-and-nonmodifiable-arguments.md)
 - [Rozdíly mezi předáním argumentu podle hodnoty a podle reference](./differences-between-passing-an-argument-by-value-and-by-reference.md)
 - [Postupy: Změna hodnoty argumentu procedury](./how-to-change-the-value-of-a-procedure-argument.md)
-- [Postupy: Vynucení argumentu být předána podle hodnoty](./how-to-force-an-argument-to-be-passed-by-value.md)
+- [Postupy: Vynucení předání argumentu podle hodnoty](./how-to-force-an-argument-to-be-passed-by-value.md)
 - [Předávání argumentů podle pozice a názvu](./passing-arguments-by-position-and-by-name.md)
 - [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)

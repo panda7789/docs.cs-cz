@@ -1,5 +1,5 @@
 ---
-title: Určení místa, kde aplikace My. Application. Log zapisuje informace (Visual Basic)
+title: Zjištění, kam objekt My.Application.Log zapisuje informace
 ms.date: 07/20/2015
 helpviewer_keywords:
 - My.Log object, output location
@@ -9,59 +9,59 @@ helpviewer_keywords:
 - application event logs, output location
 - applications [Visual Basic], output location
 ms.assetid: 5b70143a-7741-45f2-ae1d-03324a3a4189
-ms.openlocfilehash: 305c29e33f6cd421f39004e09d27c75b02ba8354
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f3fd0ed0388276f1400bf77d0abfb488634a45a5
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69912559"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353610"
 ---
-# <a name="walkthrough-determining-where-myapplicationlog-writes-information-visual-basic"></a>Návod: Určení místa, kde aplikace My. Application. Log zapisuje informace (Visual Basic)
+# <a name="walkthrough-determining-where-myapplicationlog-writes-information-visual-basic"></a>Návod: Zjištění, kam objekt My.Application.Log zapisuje informace (Visual Basic)
 
-`My.Application.Log` Objekt může zapisovat informace do několika posluchačů protokolů. Naslouchací procesy protokolu jsou nakonfigurovány pomocí konfiguračního souboru počítače a mohou být přepsány konfiguračním souborem aplikace. Toto téma popisuje výchozí nastavení a způsob určení nastavení aplikace.
+The `My.Application.Log` object can write information to several log listeners. The log listeners are configured by the computer's configuration file and can be overridden by an application's configuration file. This topic describes the default settings and how to determine the settings for your application.
 
-Další informace o výchozích umístěních výstupu najdete v tématu [práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md).
+For more information about the default output locations, see [Working with Application Logs](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md).
 
-### <a name="to-determine-the-listeners-for-myapplicationlog"></a>Určení naslouchacího procesu pro My. Application. log
+### <a name="to-determine-the-listeners-for-myapplicationlog"></a>To determine the listeners for My.Application.Log
 
-1. Vyhledejte konfigurační soubor sestavení. Pokud vyvíjíte sestavení, můžete získat přístup k souboru App. config v aplikaci Visual Studio z **Průzkumník řešení**. V opačném případě je název konfiguračního souboru názvem sestavení připojeným pomocí ". config" a je umístěn ve stejném adresáři jako sestavení.
+1. Locate the assembly's configuration file. If you are developing the assembly, you can access the app.config in Visual Studio from the **Solution Explorer**. Otherwise, the configuration file name is the assembly's name appended with ".config", and it is located in the same directory as the assembly.
 
     > [!NOTE]
-    > Ne každé sestavení má konfigurační soubor.
+    > Not every assembly has a configuration file.
 
-    Konfigurační soubor je soubor XML.
+    The configuration file is an XML file.
 
-2. Vyhledejte část v části s `name` atributem "DefaultSource", který se nachází v části.`<sources>` `<source>` `<listeners>` Oddíl je umístěný `<system.diagnostics>` v části v části nejvyšší úrovně `<configuration>`. `<sources>`
+2. Locate the `<listeners>` section, in the `<source>` section with the `name` attribute "DefaultSource", located in the `<sources>` section. The `<sources>` section is located in the `<system.diagnostics>` section, in the top-level `<configuration>` section.
 
-    Pokud tyto oddíly neexistují, může konfigurační soubor počítače nakonfigurovat `My.Application.Log` naslouchací procesy protokolu. Následující postup popisuje, jak určit, jaký konfigurační soubor počítače definuje:
+    If these sections do not exist, then the computer's configuration file may configure the `My.Application.Log` log listeners. The following steps describe how to determine what the computer configuration file defines:
 
-    1. Vyhledejte soubor Machine. config počítače. Obvykle se nachází v adresáři *SystemRoot\Microsoft.NET\Framework\frameworkVersion\CONFIG* , kde `SystemRoot` je adresář operačního systému, a `frameworkVersion` je verze .NET Framework.
+    1. Locate the computer's machine.config file. Typically, it is located in the *SystemRoot\Microsoft.NET\Framework\frameworkVersion\CONFIG* directory, where `SystemRoot` is the operating system directory, and `frameworkVersion` is the version of the .NET Framework.
 
-        Nastavení v souboru Machine. config může přepsat konfigurační soubor aplikace.
+        The settings in machine.config can be overridden by an application's configuration file.
 
-        Pokud volitelné prvky uvedené níže neexistují, můžete je vytvořit.
+        If the optional elements listed below do not exist, you can create them.
 
-    2. `name` `<system.diagnostics>` `<configuration>` `<sources>` Vyhledejte část v`<source>` části s atributem "DefaultSource" v části v části v části v sekci nejvyšší úrovně. `<listeners>`
+    2. Locate the `<listeners>` section, in the `<source>` section with the `name` attribute "DefaultSource", in the `<sources>` section, in the `<system.diagnostics>` section, in the top-level `<configuration>` section.
 
-        Pokud tyto oddíly neexistují, pak `My.Application.Log` má pouze výchozí naslouchací procesy protokolu.
+        If these sections do not exist, then the `My.Application.Log` has only the default log listeners.
 
-3. V části <`add>` `listeners>` vyhledejte prvky <.
+3. Locate the <`add>` elements in the <`listeners>` section.
 
-     Tyto prvky přidávají pojmenované naslouchací procesy protokolu `My.Application.Log` ke zdroji.
+     These elements add the named log listeners to `My.Application.Log` source.
 
-4. Vyhledejte prvky s názvy naslouchacího procesu protokolu `<sharedListeners>` v části `<system.diagnostics>` v části v oddílu nejvyšší úrovně `<configuration>`. `<add>`
+4. Locate the `<add>` elements with the names of the log listeners in the `<sharedListeners>` section, in the `<system.diagnostics>` section, in the top-level `<configuration>` section.
 
-5. Pro mnoho typů sdílených posluchačů obsahuje inicializační data naslouchacího procesu popis, kde naslouchací proces přesměruje data:
+5. For many types of shared listeners, the listener's initialization data includes a description of where the listener directs the data:
 
-    - <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener?displayProperty=nameWithType> Naslouchací proces zapisuje do protokolu souborů, jak je popsáno v úvodu.
+    - A <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener?displayProperty=nameWithType> listener writes to a file log, as described in the introduction.
 
-    - Naslouchací proces zapisuje informace do protokolu událostí počítače určeného `initializeData` parametrem. <xref:System.Diagnostics.EventLogTraceListener?displayProperty=nameWithType> Chcete-li zobrazit protokol událostí, můžete použít **Průzkumník serveru** nebo **Windows Prohlížeč událostí**. Další informace najdete v tématu [události ETW v .NET Framework](../../../../framework/performance/etw-events.md).
+    - A <xref:System.Diagnostics.EventLogTraceListener?displayProperty=nameWithType> listener writes information to the computer event log specified by the `initializeData` parameter. To view an event log, you can use **Server Explorer** or **Windows Event Viewer**. For more information, see [ETW Events in the .NET Framework](../../../../framework/performance/etw-events.md).
 
-    - Naslouchací procesy <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType>azapisují do souboru zadaného v `initializeData` parametru. <xref:System.Diagnostics.DelimitedListTraceListener?displayProperty=nameWithType>
+    - The <xref:System.Diagnostics.DelimitedListTraceListener?displayProperty=nameWithType> and <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType> listeners write to the file specified in the `initializeData` parameter.
 
-    - <xref:System.Diagnostics.ConsoleTraceListener?displayProperty=nameWithType> Naslouchací proces zapisuje do konzoly příkazového řádku.
+    - A <xref:System.Diagnostics.ConsoleTraceListener?displayProperty=nameWithType> listener writes to the command-line console.
 
-    - Informace o tom, kde jiné typy protokolových posluchačů zapisují informace, najdete v dokumentaci k tomuto typu.
+    - For information about where other types of log listeners write information, consult that type's documentation.
 
 ## <a name="see-also"></a>Viz také:
 
@@ -73,8 +73,8 @@ Další informace o výchozích umístěních výstupu najdete v tématu [práce
 - <xref:System.Diagnostics.ConsoleTraceListener>
 - <xref:System.Diagnostics>
 - [Práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
-- [Postupy: Protokolovat výjimky](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
+- [Postupy: Protokolování výjimek](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
 - [Postupy: Zápis zpráv protokolu](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)
-- [Návod: Změna místa, kam aplikace My. Application. Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)
+- [Návod: Změna místa, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)
 - [Trasování událostí pro Windows – události v rozhraní .NET Framework](../../../../framework/performance/etw-events.md)
-- [Odstraňování potíží: Protokoly naslouchacího procesu](../../../../visual-basic/developing-apps/programming/log-info/troubleshooting-log-listeners.md)
+- [Řešení potíží: Součásti naslouchající protokolům](../../../../visual-basic/developing-apps/programming/log-info/troubleshooting-log-listeners.md)

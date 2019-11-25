@@ -1,5 +1,5 @@
 ---
-title: Představení technologie LINQ v jazyce Visual Basic
+title: Úvod do LINQ
 ms.date: 08/28/2018
 helpviewer_keywords:
 - queries [LINQ in Visual Basic], about LINQ in Visual Basic queries
@@ -12,243 +12,243 @@ helpviewer_keywords:
 - deferred execution
 - iteration variables [Visual Basic]
 ms.assetid: 3047d86e-0d49-40e2-928b-dc02e46c7984
-ms.openlocfilehash: c9a8149ecf4f2a1c76ba00b0f80bc703114e11ca
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
+ms.openlocfilehash: 610f2a1020cc15f855b3ddfc0917e14aae34fb82
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69660777"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344940"
 ---
 # <a name="introduction-to-linq-in-visual-basic"></a>Představení technologie LINQ v jazyce Visual Basic
-LINQ (Language-Integrated Query) přidává funkce pro dotazy do Visual Basic a poskytuje jednoduché a výkonné funkce, když pracujete se všemi druhy dat. Místo odeslání dotazu do databáze, která se má zpracovat, nebo práce s jinou syntaxí dotazu pro každý typ vyhledávaných dat, LINQ zavádí dotazy jako součást Visual Basicho jazyka. Používá sjednocenou syntaxi bez ohledu na typ dat.  
+Language-Integrated Query (LINQ) adds query capabilities to Visual Basic and provides simple and powerful capabilities when you work with all kinds of data. Rather than sending a query to a database to be processed, or working with different query syntax for each type of data that you are searching, LINQ introduces queries as part of the Visual Basic language. It uses a unified syntax regardless of the type of data.  
   
- LINQ umožňuje dotazovat se na data z databáze SQL Server, XML, polí v paměti a kolekcí, datových sad ADO.NET nebo jakýchkoli jiných vzdálených nebo místních zdrojů dat, které podporují technologii LINQ. To lze provést pomocí běžných Visual Basic prvků jazyka. Vzhledem k tomu, že vaše dotazy jsou napsány v jazyce Visual Basic, jsou výsledky dotazu vráceny jako objekty silného typu. Tyto objekty podporují technologii IntelliSense, která umožňuje psát kód rychleji a zachytit chyby v dotazech v době kompilace místo v době běhu. Dotazy LINQ lze použít jako zdroj dalších dotazů pro upřesnění výsledků. Mohou být také vázány na ovládací prvky, aby uživatelé mohli snadno zobrazit a upravit výsledky dotazu.  
+ LINQ enables you to query data from a SQL Server database, XML, in-memory arrays and collections, ADO.NET datasets, or any other remote or local data source that supports LINQ. You can do all this with common Visual Basic language elements. Because your queries are written in the Visual Basic language, your query results are returned as strongly-typed objects. These objects support IntelliSense, which enables you to write code faster and catch errors in your queries at compile time instead of at run time. LINQ queries can be used as the source of additional queries to refine results. They can also be bound to controls so that users can easily view and modify your query results.  
   
- Například následující příklad kódu ukazuje dotaz LINQ, který vrátí seznam zákazníků z kolekce a seskupí je na základě jejich umístění.  
+ For example, the following code example shows a LINQ query that returns a list of customers from a collection and groups them based on their location.  
   
  [!code-vb[VbVbalrIntroToLINQ#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/class2.vb#1)]  
   
-## <a name="running-the-examples"></a>Spuštění příkladů  
- Chcete-li spustit příklady v úvodu a ve [struktuře oddílu dotazu LINQ](#structure-of-a-linq-query) , zahrňte následující kód, který vrátí seznam zákazníků a objednávek.  
+## <a name="running-the-examples"></a>Running the examples  
+ To run the examples in the introduction and in the [Structure of a LINQ Query](#structure-of-a-linq-query) section, include the following code, which returns lists of customers and orders.  
   
  [!code-vb[VbVbalrIntroToLINQ#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/class2.vb#31)]  
   
-## <a name="linq-providers"></a>Zprostředkovatelé LINQ  
- *Zprostředkovatel LINQ* mapuje vaše Visual Basic dotazy LINQ na zdroj dat, se kterým se dotazuje. Když napíšete dotaz LINQ, zprostředkovatel převezme dotaz a převede ho na příkazy, které bude zdroj dat moci spustit. Zprostředkovatel také převede data ze zdroje na objekty, které tvoří výsledek dotazu. Nakonec převede objekty na data při odeslání aktualizací do zdroje dat.  
+## <a name="linq-providers"></a>LINQ providers  
+ A *LINQ provider* maps your Visual Basic LINQ queries to the data source being queried. When you write a LINQ query, the provider takes that query and translates it into commands that the data source will be able to execute. The provider also converts data from the source to the objects that make up your query result. Finally, it converts objects to data when you send updates to the data source.  
   
- Visual Basic obsahuje následující poskytovatele LINQ.  
+ Visual Basic includes the following LINQ providers.  
   
-|Poskytovatel|Popis|  
+|Provider|Popis|  
 |---|---|  
-|LINQ na objekty|Poskytovatel LINQ to Objects umožňuje zadat dotaz na kolekce a pole v paměti. Pokud objekt podporuje <xref:System.Collections.IEnumerable> rozhraní nebo <xref:System.Collections.Generic.IEnumerable%601> , poskytovatel LINQ to Objects vám umožní dotazovat se na něj.<br /><br /> Poskytovatele LINQ to Objects můžete povolit importováním <xref:System.Linq> oboru názvů, který je importován ve výchozím nastavení pro všechny projekty Visual Basic.<br /><br /> Další informace o poskytovateli LINQ to Objects najdete v tématu [LINQ to Objects](../../concepts/linq/linq-to-objects.md).|  
-|Technologie LINQ to SQL|Poskytovatel LINQ to SQL umožňuje zadávat dotazy a upravovat data v databázi SQL Server. To usnadňuje mapování objektového modelu pro aplikaci na tabulky a objekty v databázi.<br /><br /> Visual Basic usnadňuje práci s LINQ to SQL včetně Návrhář relací objektů (O/R Designer). Tento Návrhář slouží k vytvoření objektového modelu v aplikaci, která je mapována na objekty v databázi. Návrhář o/R také poskytuje funkce pro mapování uložených procedur a funkcí na <xref:System.Data.Linq.DataContext> objekt, který spravuje komunikaci s databází a ukládá stav pro optimistické kontroly souběžnosti.<br /><br /> Další informace o poskytovateli LINQ to SQL najdete v tématu [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md). Další informace o Návrhář relací objektů naleznete v tématu [LINQ to SQL Tools v aplikaci Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).|  
-|Technologie LINQ to XML|Poskytovatel LINQ to XML umožňuje zadávat dotazy a upravovat XML. Můžete upravit XML v paměti nebo můžete načíst XML z a uložit XML do souboru.<br /><br /> Kromě toho poskytovatel LINQ to XML povoluje literály XML a vlastnosti OS XML, které umožňují psát XML přímo v kódu Visual Basic. Další informace najdete v tématu [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md).|  
-|LINQ na DataSet|Poskytovatel LINQ to DataSet umožňuje dotazování a aktualizaci dat v datové sadě ADO.NET. Můžete přidat sílu technologie LINQ do aplikací, které používají datové sady, aby bylo možné zjednodušit a roztáhnout funkce pro dotazování, agregaci a aktualizaci dat v datové sadě.<br /><br /> Další informace najdete v tématu [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md).|  
+|LINQ na objekty|The LINQ to Objects provider enables you to query in-memory collections and arrays. If an object supports either the <xref:System.Collections.IEnumerable> or <xref:System.Collections.Generic.IEnumerable%601> interface, the LINQ to Objects provider enables you to query it.<br /><br /> You can enable the LINQ to Objects provider by importing the <xref:System.Linq> namespace, which is imported by default for all Visual Basic projects.<br /><br /> For more information about the LINQ to Objects provider, see [LINQ to Objects](../../concepts/linq/linq-to-objects.md).|  
+|Technologie LINQ to SQL|The LINQ to SQL provider enables you to query and modify data in a SQL Server database. This makes it easy to map the object model for an application to the tables and objects in a database.<br /><br /> Visual Basic makes it easier to work with LINQ to SQL by including the Object Relational Designer (O/R Designer). This designer is used to create an object model in an application that maps to objects in a database. The O/R Designer also provides functionality to map stored procedures and functions to the <xref:System.Data.Linq.DataContext> object, which manages communication with the database and stores state for optimistic concurrency checks.<br /><br /> For more information about the LINQ to SQL provider, see [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md). For more information about the Object Relational Designer, see [LINQ to SQL Tools in Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).|  
+|Technologie LINQ to XML|The LINQ to XML provider enables you to query and modify XML. You can modify in-memory XML, or you can load XML from and save XML to a file.<br /><br /> Additionally, the LINQ to XML provider enables XML literals and XML axis properties that enable you to write XML directly in your Visual Basic code. For more information, see [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md).|  
+|LINQ na DataSet|The LINQ to DataSet provider enables you to query and update data in an ADO.NET dataset. You can add the power of LINQ to applications that use datasets in order to simplify and extend your capabilities for querying, aggregating, and updating the data in your dataset.<br /><br /> For more information, see [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md).|  
   
-## <a name="structure-of-a-linq-query"></a>Struktura dotazu LINQ  
- Dotaz LINQ, který se často označuje jako *výraz dotazu*, se skládá z kombinace klauzulí dotazu, které identifikují zdroje dat a proměnné iterace pro dotaz. Výraz dotazu může také obsahovat pokyny pro řazení, filtrování, seskupování a spojování nebo výpočty, které se mají použít na zdrojová data. Syntaxe výrazu dotazu se podobá syntaxi SQL; Proto se může stát, že se seznámíte se syntaxí.  
+## <a name="structure-of-a-linq-query"></a>Structure of a LINQ query  
+ A LINQ query, often referred to as a *query expression*, consists of a combination of query clauses that identify the data sources and iteration variables for the query. A query expression can also include instructions for sorting, filtering, grouping, and joining, or calculations to apply to the source data. Query expression syntax resembles the syntax of SQL; therefore, you may find much of the syntax familiar.  
   
- Výraz dotazu začíná `From` klauzulí. Tato klauzule identifikuje zdrojová data pro dotaz a proměnné, které se používají k odkazování na jednotlivé prvky zdrojových dat. Tyto proměnné jsou pojmenované *proměnné rozsahu* nebo *proměnné iterace*. Klauzule je vyžadována pro dotaz, `Aggregate` s výjimkou dotazů, kde `From` klauzule je volitelná. `From` Po identifikaci oboru a zdroje dotazu v `From` klauzulích or `Aggregate` můžete zahrnout libovolnou kombinaci klauzulí dotazu pro upřesnění dotazu. Podrobnosti o klauzulích dotazu naleznete v tématu Visual Basic operátory dotazů LINQ dále v tomto tématu. Následující dotaz například identifikuje zdrojovou kolekci zákaznických dat jako `customers` proměnnou a proměnnou iterace s názvem. `cust`  
+ A query expression starts with a `From` clause. This clause identifies the source data for a query and the variables that are used to refer to each element of the source data individually. These variables are named *range variables* or *iteration variables*. The `From` clause is required for a query, except for `Aggregate` queries, where the `From` clause is optional. After the scope and source of the query are identified in the `From` or `Aggregate` clauses, you can include any combination of query clauses to refine the query. For details about query clauses, see Visual Basic LINQ Query Operators later in this topic. For example, the following query identifies a source collection of customer data as the `customers` variable, and an iteration variable named `cust`.  
   
  [!code-vb[VbVbalrIntroToLINQ#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/class2.vb#2)]  
   
- Tento příklad je platný dotaz sám o sobě; Dotaz však bude mnohem výkonnější, pokud přidáte další klauzule dotazu pro upřesnění výsledku. Můžete například přidat `Where` klauzuli pro filtrování výsledku podle jedné nebo více hodnot. Výrazy dotazů jsou jedním řádkem kódu; na konec dotazu můžete jednoduše připojit další klauzule dotazu. Dotaz můžete rozdělit na více řádků textu, aby se zlepšila čitelnost pomocí znaku podtržítka (\_) pro pokračování řádku. Následující příklad kódu ukazuje příklad dotazu, který obsahuje `Where` klauzuli.  
+ This example is a valid query by itself; however, the query becomes far more powerful when you add more query clauses to refine the result. For example, you can add a `Where` clause to filter the result by one or more values. Query expressions are a single line of code; you can just append additional query clauses to the end of the query. You can break up a query across multiple lines of text to improve readability by using the underscore (\_) line-continuation character. The following code example shows an example of a query that includes a `Where` clause.  
   
  [!code-vb[VbVbalrIntroToLINQ#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/class2.vb#3)]  
   
- Další výkonnou klauzulí dotazu je `Select` klauzule, která umožňuje vracet pouze vybraná pole ze zdroje dat. Dotazy LINQ vracejí vyčíslitelné kolekce objektů silně typovaného typu. Dotaz může vrátit kolekci anonymních typů nebo pojmenovaných typů. `Select` Klauzuli můžete použít k vrácení pouze jednoho pole ze zdroje dat. Pokud to provedete, typ vrácené kolekce je typ tohoto jediného pole. Můžete také použít `Select` klauzuli pro vrácení více polí ze zdroje dat. Pokud to provedete, typ vrácené kolekce je nový anonymní typ. Můžete také porovnat pole vrácená dotazem s poli zadaného pojmenovaného typu. Následující příklad kódu ukazuje výraz dotazu, který vrací kolekci anonymních typů, které mají členy vyplněné daty z vybraných polí ze zdroje dat.  
+ Another powerful query clause is the `Select` clause, which enables you to return only selected fields from the data source. LINQ queries return enumerable collections of strongly typed objects. A query can return a collection of anonymous types or named types. You can use the `Select` clause to return only a single field from the data source. When you do this, the type of the collection returned is the type of that single field. You can also use the `Select` clause to return multiple fields from the data source. When you do this, the type of the collection returned is a new anonymous type. You can also match the fields returned by the query to the fields of a specified named type. The following code example shows a query expression that returns a collection of anonymous types that have members populated with data from the selected fields from the data source.  
   
  [!code-vb[VbVbalrIntroToLINQ#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/class2.vb#4)]  
   
- Dotazy LINQ lze také použít ke kombinování více zdrojů dat a vrácení jediného výsledku. To lze provést s jednou nebo více `From` klauzulemi nebo `Join` pomocí klauzulí dotazu nebo `Group Join` . Následující příklad kódu ukazuje výraz dotazu, který kombinuje data o zákaznících a objednávkách a vrátí kolekci anonymních typů obsahujících data zákazníka a objednávky.  
+ LINQ queries can also be used to combine multiple sources of data and return a single result. This can be done with one or more `From` clauses, or by using the `Join` or `Group Join` query clauses. The following code example shows a query expression that combines customer and order data and returns a collection of anonymous types containing customer and order data.  
   
  [!code-vb[VbVbalrIntroToLINQ#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/class2.vb#5)]  
   
- Pomocí `Group Join` klauzule můžete vytvořit hierarchický výsledek dotazu, který obsahuje kolekci zákaznických objektů. Každý objekt zákazníka má vlastnost, která obsahuje kolekci všech objednávek pro daného zákazníka. Následující příklad kódu ukazuje výraz dotazu, který kombinuje data o zákaznících a objednávkách jako hierarchický výsledek a vrátí kolekci anonymních typů. Dotaz vrátí typ, který `CustomerOrders` obsahuje vlastnost, která obsahuje kolekci dat objednávky pro zákazníka. Obsahuje `OrderTotal` také vlastnost, která obsahuje součet součtů pro všechny objednávky daného zákazníka. (Tento dotaz je ekvivalentem levého VNĚJŠÍho spojení.)  
+ You can use the `Group Join` clause to create a hierarchical query result that contains a collection of customer objects. Each customer object has a property that contains a collection of all orders for that customer. The following code example shows a query expression that combines customer and order data as a hierarchical result and returns a collection of anonymous types. The query returns a type that includes a `CustomerOrders` property that contains a collection of order data for the customer. It also includes an `OrderTotal` property that contains the sum of the totals for all the orders for that customer. (This query is equivalent to a LEFT OUTER JOIN.)  
   
  [!code-vb[VbVbalrIntroToLINQ#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/class2.vb#6)]  
   
- Existuje několik dalších operátorů dotazů LINQ, pomocí kterých můžete vytvářet výkonné výrazy dotazů. Další část tohoto tématu popisuje různé klauzule dotazu, které můžete zahrnout do výrazu dotazu. Podrobnosti o Visual Basic klauzulích dotazů najdete v tématu [dotazy](../../../../visual-basic/language-reference/queries/index.md).  
+ There are several additional LINQ query operators that you can use to create powerful query expressions. The next section of this topic discusses the various query clauses that you can include in a query expression. For details about Visual Basic query clauses, see [Queries](../../../../visual-basic/language-reference/queries/index.md).  
   
-## <a name="visual-basic-linq-query-operators"></a>Visual Basic operátory dotazů LINQ  
+## <a name="visual-basic-linq-query-operators"></a>Visual Basic LINQ query operators  
 
-Třídy v <xref:System.Linq> oboru názvů a další obory názvů, které podporují dotazy LINQ, obsahují metody, které lze volat pro vytváření a zpřesnění dotazů na základě potřeb vaší aplikace. Visual Basic obsahuje klíčová slova pro následující klauzule běžných dotazů. Podrobnosti o Visual Basic klauzulích dotazů najdete v tématu [dotazy](../../../language-reference/queries/index.md).
+The classes in the <xref:System.Linq> namespace and the other namespaces that support LINQ queries include methods that you can call to create and refine queries based on the needs of your application. Visual Basic includes keywords for the following common query clauses. For details about Visual Basic query clauses, see [Queries](../../../language-reference/queries/index.md).
 
 ### <a name="from-clause"></a>Klauzule From
 
-Pro zahájení dotazu je vyžadována `Aggregate` [ klauzuleneboklauzule.`From` ](../../../../visual-basic/language-reference/queries/from-clause.md) `From` Klauzule Určuje zdrojovou kolekci a proměnnou iterace pro dotaz. Příklad:
+Either a [`From` clause](../../../../visual-basic/language-reference/queries/from-clause.md) or an `Aggregate` clause is required to begin a query. A `From` clause specifies a source collection and an iteration variable for a query. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#7)]
 
 ### <a name="select-clause"></a>Select – klauzule
 
-Volitelný parametr. Klauzule deklaruje sadu proměnných iterace pro dotaz. [ `Select` ](../../../../visual-basic/language-reference/queries/select-clause.md) Příklad:
+Volitelné. A [`Select` clause](../../../../visual-basic/language-reference/queries/select-clause.md) declares a set of iteration variables for a query. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#8)]
 
-Není- `Select` li zadána klauzule, proměnné iterace pro dotaz se skládají z proměnných iterace určených `From` klauzulí or `Aggregate` .
+If a `Select` clause is not specified, the iteration variables for the query consist of the iteration variables specified by the `From` or `Aggregate` clause.
 
 ### <a name="where-clause"></a>Klauzule Where
 
-Volitelný parametr. Klauzule určuje podmínku filtrování pro dotaz. [ `Where` ](../../../../visual-basic/language-reference/queries/where-clause.md) Příklad:
+Volitelné. A [`Where` clause](../../../../visual-basic/language-reference/queries/where-clause.md) specifies a filtering condition for a query. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#9)]
 
-### <a name="order-by-clause"></a>ORDER by – klauzule]
+### <a name="order-by-clause"></a>Order By clause]
 
-| Volitelné. Klauzule určuje pořadí řazení pro sloupce v dotazu. [ `Order By` ](../../../../visual-basic/language-reference/queries/order-by-clause.md) Příklad:
+|Optional. An [`Order By` clause](../../../../visual-basic/language-reference/queries/order-by-clause.md) specifies the sort order for columns in a query. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#10)]
 
 ### <a name="join-clause"></a>Join – klauzule
 
-Volitelný parametr. Klauzule kombinuje dvě kolekce do jedné kolekce. [ `Join` ](../../../../visual-basic/language-reference/queries/join-clause.md) Příklad:
+Volitelné. A [`Join` clause](../../../../visual-basic/language-reference/queries/join-clause.md) combines two collections into a single collection. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#11)]
 
 ### <a name="group-by-clause"></a>Group By – klauzule
 
-Volitelný parametr. Klauzule seskupí prvky výsledku dotazu. [ `Group By` ](../../../../visual-basic/language-reference/queries/group-by-clause.md) Dá se použít k aplikování agregačních funkcí na každou skupinu. Příklad:
+Volitelné. A [`Group By` clause](../../../../visual-basic/language-reference/queries/group-by-clause.md) groups the elements of a query result. It can be used to apply aggregate functions to each group. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#12)]
 
 ### <a name="group-join-clause"></a>Group Join – klauzule
 
-Volitelný parametr. Klauzule kombinuje dvě kolekce do jedné hierarchické kolekce. [ `Group Join` ](../../../../visual-basic/language-reference/queries/group-join-clause.md) Příklad:
+Volitelné. A [`Group Join` clause](../../../../visual-basic/language-reference/queries/group-join-clause.md) combines two collections into a single hierarchical collection. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#13)]
 
 ### <a name="aggregate-clause"></a>Aggregate – klauzule
 
-Pro zahájení dotazu je vyžadována `From` [ klauzuleneboklauzule.`Aggregate` ](../../../../visual-basic/language-reference/queries/aggregate-clause.md) `Aggregate` Klauzule aplikuje jednu nebo více agregačních funkcí na kolekci. Například můžete použít `Aggregate` klauzuli pro výpočet součtu všech prvků vrácených dotazem, jak je uvedeno v následujícím příkladu.
+Either an [`Aggregate` clause](../../../../visual-basic/language-reference/queries/aggregate-clause.md) or a `From` clause is required to begin a query. An `Aggregate` clause applies one or more aggregate functions to a collection. For example, you can use the `Aggregate` clause to calculate a sum for all the elements returned by a query, as the following example does.
 
  [!code-vb[VbVbalrIntroToLINQ#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#14)]
 
-Můžete také použít `Aggregate` klauzuli pro úpravu dotazu. Například můžete použít `Aggregate` klauzuli k provedení výpočtu v související kolekci dotazů. Příklad:
+You can also use the `Aggregate` clause to modify a query. For example, you can use the `Aggregate` clause to perform a calculation on a related query collection. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#15)]
 
 ### <a name="let-clause"></a>Let – klauzule
 
-Volitelný parametr. Klauzule vypočítá hodnotu a přiřadí ji k nové proměnné v dotazu. [ `Let` ](../../../../visual-basic/language-reference/queries/let-clause.md) Příklad:
+Volitelné. A [`Let` clause](../../../../visual-basic/language-reference/queries/let-clause.md) computes a value and assigns it to a new variable in the query. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#16)]
 
 ### <a name="distinct-clause"></a>Distinct – klauzule
 
-Volitelný parametr. `Distinct` Klauzule omezuje hodnoty aktuální proměnné iterace tak, aby se vyloučily duplicitní hodnoty ve výsledcích dotazu. Příklad:
+Volitelné. A `Distinct` clause restricts the values of the current iteration variable to eliminate duplicate values in query results. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#17)]
 
 ### <a name="skip-clause"></a>Skip – klauzule
 
-Volitelný parametr. Klauzule obchází zadaný počet prvků v kolekci a vrátí zbývající prvky. [ `Skip` ](../../../../visual-basic/language-reference/queries/skip-clause.md) Příklad:
+Volitelné. A [`Skip` clause](../../../../visual-basic/language-reference/queries/skip-clause.md) bypasses a specified number of elements in a collection and then returns the remaining elements. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#18)]
 
 ### <a name="skip-while-clause"></a>Skip While – klauzule
 
-Volitelný parametr. Klauzule obchází prvky v kolekci, pokud je `true` zadaná podmínka a vrátí zbývající prvky. [ `Skip While` ](../../../../visual-basic/language-reference/queries/skip-while-clause.md) Příklad:
+Volitelné. A [`Skip While` clause](../../../../visual-basic/language-reference/queries/skip-while-clause.md) bypasses elements in a collection as long as a specified condition is `true` and then returns the remaining elements. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#19)]
 
 ### <a name="take-clause"></a>Take – klauzule
 
-Volitelný parametr. Klauzule vrátí zadaný počet souvislých prvků od začátku kolekce. [ `Take` ](../../../../visual-basic/language-reference/queries/take-clause.md) Příklad:
+Volitelné. A [`Take` clause](../../../../visual-basic/language-reference/queries/take-clause.md) returns a specified number of contiguous elements from the start of a collection. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#20)]
 
 ### <a name="take-while-clause"></a>Take While – klauzule
 
-Volitelný parametr. Klauzule obsahuje prvky v kolekci, pokud je zadaná podmínka a jsou `true` vynechány zbývající prvky. [ `Take While` ](../../../../visual-basic/language-reference/queries/take-while-clause.md) Příklad:
+Volitelné. A [`Take While` clause](../../../../visual-basic/language-reference/queries/take-while-clause.md) includes elements in a collection as long as a specified condition is `true` and bypasses the remaining elements. Příklad:
 
  [!code-vb[VbVbalrIntroToLINQ#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#21)]
   
-## <a name="use-additional-linq-query-features"></a>Použití dalších funkcí dotazů LINQ  
+## <a name="use-additional-linq-query-features"></a>Use additional LINQ query features  
   
-Můžete použít další funkce dotazů LINQ voláním členů výčtových a Queryable typů poskytovaných LINQ. Tyto další funkce můžete použít voláním konkrétního operátoru dotazu na výsledek výrazu dotazu. Například následující příklad používá <xref:System.Linq.Enumerable.Union%2A?displayProperty=nameWithType> metodu ke kombinování výsledků dvou dotazů do jednoho výsledku dotazu. Používá <xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType> metodu k vrácení výsledku dotazu jako obecného seznamu.
+You can use additional LINQ query features by calling members of the enumerable and queryable types provided by LINQ. You can use these additional capabilities by calling a particular query operator on the result of a query expression. For example, the following example uses the <xref:System.Linq.Enumerable.Union%2A?displayProperty=nameWithType> method to combine the results of two queries into one query result. It uses the <xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType> method to return the query result as a generic list.
   
  [!code-vb[VbVbalrIntroToLINQ#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#22)]  
   
- Podrobnosti o dalších možnostech LINQ najdete v tématu [Přehled standardních operátorů dotazů](../../concepts/linq/standard-query-operators-overview.md).  
+ For details about additional LINQ capabilities, see [Standard Query Operators Overview](../../concepts/linq/standard-query-operators-overview.md).  
   
-## <a name="connect-to-a-database-by-using-linq-to-sql"></a>Připojení k databázi pomocí LINQ to SQL  
- V Visual Basic identifikujete SQL Server databázových objektů, jako jsou tabulky, zobrazení a uložené procedury, ke kterým chcete získat přístup pomocí souboru LINQ to SQL. Soubor LINQ to SQL má příponu. dbml.  
+## <a name="connect-to-a-database-by-using-linq-to-sql"></a>Connect to a database by using LINQ to SQL  
+ In Visual Basic, you identify the SQL Server database objects, such as tables, views, and stored procedures, that you want to access by using a LINQ to SQL file. A LINQ to SQL file has an extension of .dbml.  
   
- Pokud máte platné připojení k databázi SQL Server, můžete do projektu přidat šablonu položky **LINQ to SQL třídy** . Tím se zobrazí Návrhář relací objektů (Návrhář O/R). Návrhář o/R umožňuje přetahovat položky, ke kterým chcete přistupovat, z okna **Průzkumník serveru**/**Průzkumník databáze** na plochu návrháře. LINQ to SQL soubor přidá <xref:System.Data.Linq.DataContext> objekt do projektu. Tento objekt obsahuje vlastnosti a kolekce pro tabulky a zobrazení, ke kterým chcete získat přístup, a metody pro uložené procedury, které chcete volat. Po uložení změn do souboru LINQ to SQL (. dbml) máte přístup k těmto objektům ve vašem kódu odkazem na <xref:System.Data.Linq.DataContext> objekt, který je definován návrhářem relací O/R. <xref:System.Data.Linq.DataContext> Objekt pro projekt je pojmenován na základě názvu souboru LINQ to SQL. Například LINQ to SQL soubor s názvem Northwind. dbml vytvoří <xref:System.Data.Linq.DataContext> objekt s názvem. `NorthwindDataContext`  
+ When you have a valid connection to a SQL Server database, you can add a **LINQ to SQL Classes** item template to your project. This will display the Object Relational Designer (O/R designer). The O/R Designer enables you to drag the items that you want to access in your code from the **Server Explorer**/**Database Explorer** onto the designer surface. The LINQ to SQL file adds a <xref:System.Data.Linq.DataContext> object to your project. This object includes properties and collections for the tables and views that you want access to, and methods for the stored procedures that you want to call. After you have saved your changes to the LINQ to SQL (.dbml) file, you can access these objects in your code by referencing the <xref:System.Data.Linq.DataContext> object that is defined by the O/R Designer. The <xref:System.Data.Linq.DataContext> object for your project is named based on the name of your LINQ to SQL file. For example, a LINQ to SQL file that is named Northwind.dbml will create a <xref:System.Data.Linq.DataContext> object named `NorthwindDataContext`.  
   
- Příklady s podrobnými pokyny naleznete v tématu [How to: Dotaz na databázi](how-to-query-a-database-by-using-linq.md) a [postupy: Zavolejte uloženou proceduru](how-to-call-a-stored-procedure-by-using-linq.md).  
+ For examples with step-by-step instructions, see [How to: Query a Database](how-to-query-a-database-by-using-linq.md) and [How to: Call a Stored Procedure](how-to-call-a-stored-procedure-by-using-linq.md).  
   
-## <a name="visual-basic-features-that-support-linq"></a>Visual Basic funkce podporující technologii LINQ  
- Visual Basic zahrnuje další důležité funkce, které zjednodušují použití LINQ a snižují množství kódu, který musíte napsat k provádění dotazů LINQ. Patří mezi ně například:  
+## <a name="visual-basic-features-that-support-linq"></a>Visual Basic features that support LINQ  
+ Visual Basic includes other notable features that make the use of LINQ simple and reduce the amount of code that you must write to perform LINQ queries. Patří mezi ně například:  
   
-- **Anonymní typy**, které umožňují vytvořit nový typ založený na výsledku dotazu.  
+- **Anonymous types**, which enable you to create a new type based on a query result.  
   
-- **Implicitně typované proměnné**, které umožňují odložit určení typu a nechat kompilátor odvodit typ na základě výsledku dotazu.  
+- **Implicitly typed variables**, which enable you to defer specifying a type and let the compiler infer the type based on the query result.  
   
-- **Metody rozšíření**, které umožňují rozšířit existující typ vlastními metodami, aniž by bylo potřeba měnit samotný typ.  
+- **Extension methods**, which enable you to extend an existing type with your own methods without modifying the type itself.  
   
- Podrobnosti najdete v tématu [Visual Basic funkce, které podporují technologii LINQ](../../concepts/linq/features-that-support-linq.md).  
+ For details, see [Visual Basic Features That Support LINQ](../../concepts/linq/features-that-support-linq.md).  
   
-## <a name="deferred-and-immediate-query-execution"></a>Odložené a okamžité provedení dotazu
+## <a name="deferred-and-immediate-query-execution"></a>Deferred and immediate query execution
 
- Provádění dotazů je oddělené od vytvoření dotazu. Po vytvoření dotazu se jeho spuštění aktivuje pomocí samostatného mechanismu. Dotaz může být proveden hned po definování (*okamžité provedení*), nebo může být definice uložena a dotaz může být proveden později (*odložené spuštění*).  
+ Query execution is separate from creating a query. After a query is created, its execution is triggered by a separate mechanism. A query can be executed as soon as it is defined (*immediate execution*), or the definition can be stored and the query can be executed later (*deferred execution*).  
   
- Ve výchozím nastavení se při vytváření dotazu samotný dotaz nespustí okamžitě. Místo toho je definice dotazu uložena v proměnné, která se používá k odkazování na výsledek dotazu. Pokud je výsledkem proměnné výsledku dotazu později v kódu, například ve `For…Next` smyčce, je dotaz proveden. Tento proces se označuje jako *odložené provádění*.  
+ By default, when you create a query, the query itself does not execute immediately. Instead, the query definition is stored in the variable that is used to reference the query result. When the query result variable is accessed later in code, such as in a `For…Next` loop, the query is executed. This process is referred to as *deferred execution*.  
   
- Dotazy mohou být provedeny také při jejich definování, což se označuje jako *okamžité provedení*. Okamžité spuštění můžete aktivovat aplikováním metody, která vyžaduje přístup k jednotlivým prvkům výsledku dotazu. Může to být výsledek zahrnutí agregační `Count`funkce, jako například `Average`, `Sum` `Min`,, nebo `Max`. Další informace o agregačních funkcích naleznete v tématu [klauzule Aggregate](../../../language-reference/queries/aggregate-clause.md).  
+ Queries can also be executed when they are defined, which is referred to as *immediate execution*. You can trigger immediate execution by applying a method that requires access to individual elements of the query result. This can be the result of including an aggregate function, such as `Count`, `Sum`, `Average`, `Min`, or `Max`. For more information about aggregate functions, see [Aggregate Clause](../../../language-reference/queries/aggregate-clause.md).  
   
- Použití metod `ToArray` nebo bude také vynutit okamžité provedení. `ToList` To může být užitečné, když chcete spustit dotaz okamžitě a uložit výsledky do mezipaměti. Další informace o těchto metodách naleznete v tématu [Převod datových typů](../../concepts/linq/converting-data-types.md).  
+ Using the `ToList` or `ToArray` methods will also force immediate execution. This can be useful when you want to execute the query immediately and cache the results. For more information about these methods, see [Converting Data Types](../../concepts/linq/converting-data-types.md).  
   
- Další informace o provádění dotazů naleznete v tématu [zápis prvního dotazu LINQ](../../concepts/linq/writing-your-first-linq-query.md).  
+ For more information about query execution, see [Writing Your First LINQ Query](../../concepts/linq/writing-your-first-linq-query.md).  
   
 ## <a name="xml-in-visual-basic"></a>XML v jazyce Visual Basic  
- Funkce XML v Visual Basic zahrnují literály XML a vlastnosti osy XML, které umožňují snadno vytvářet, přistupovat, dotazovat a upravovat XML ve vašem kódu. Literály XML umožňují psát XML přímo v kódu. Kompilátor Visual Basic považuje XML za datový objekt první třídy.  
+ The XML features in Visual Basic include XML literals and XML axis properties, which enable you easily to create, access, query, and modify XML in your code. XML literals enable you to write XML directly in your code. The Visual Basic compiler treats the XML as a first-class data object.  
   
- Následující příklad kódu ukazuje, jak vytvořit element XML, získat přístup k jeho dílčím elementům a atributům a zadat dotaz na obsah elementu pomocí LINQ.  
+ The following code example shows how to create an XML element, access its sub-elements and attributes, and query the contents of the element by using LINQ.  
   
  [!code-vb[VbXmlSamples#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples3.vb#8)]  
   
- Další informace najdete v tématu [XML](../xml/index.md).  
+ For more information, see [XML](../xml/index.md).  
   
-## <a name="related-resources"></a>Související prostředky  
+## <a name="related-resources"></a>Related resources  
   
 |Téma|Popis|  
 |---|---|  
-|[XML](../../language-features/xml/index.md)|Popisuje funkce XML v Visual Basic, které lze dotazovat a které umožňují zahrnout XML jako datové objekty první třídy v kódu Visual Basic.|  
-|[Dotazy](../../../language-reference/queries/index.md)|Poskytuje referenční informace o klauzulích dotazu, které jsou k dispozici v Visual Basic.|  
-|[LINQ (jazykově integrovaný dotaz)](../../concepts/linq/index.md)|Obsahuje obecné informace, pokyny pro programování a ukázky pro LINQ.|  
-|[LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)|Obsahuje obecné informace, pokyny pro programování a ukázky pro LINQ to SQL.|  
-|[LINQ to Objects](../../concepts/linq/linq-to-objects.md)|Obsahuje obecné informace, pokyny pro programování a ukázky pro LINQ to Objects.|  
-|[LINQ to ADO.NET (stránka portálu)](../../concepts/linq/linq-to-adonet-portal-page.md)|Obsahuje odkazy na Obecné informace, pokyny pro programování a ukázky pro LINQ to ADO.NET.|  
-|[LINQ to XML](../../concepts/linq/linq-to-xml.md)|Obsahuje obecné informace, pokyny pro programování a ukázky pro LINQ to XML.|  
+|[XML](../../language-features/xml/index.md)|Describes the XML features in Visual Basic that can be queried and that enable you to include XML as first-class data objects in your Visual Basic code.|  
+|[Dotazy](../../../language-reference/queries/index.md)|Provides reference information about the query clauses that are available in Visual Basic.|  
+|[LINQ (Language-Integrated Query)](../../concepts/linq/index.md)|Includes general information, programming guidance, and samples for LINQ.|  
+|[LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)|Includes general information, programming guidance, and samples for LINQ to SQL.|  
+|[LINQ to Objects](../../concepts/linq/linq-to-objects.md)|Includes general information, programming guidance, and samples for LINQ to Objects.|  
+|[LINQ to ADO.NET (stránka portálu)](../../concepts/linq/linq-to-adonet-portal-page.md)|Includes links to general information, programming guidance, and samples for LINQ to ADO.NET.|  
+|[LINQ to XML](../../concepts/linq/linq-to-xml.md)|Includes general information, programming guidance, and samples for LINQ to XML.|  
   
-## <a name="how-to-and-walkthrough-topics"></a>Témata postupy a návody
- [Postupy: Dotazování databáze](how-to-query-a-database-by-using-linq.md)  
+## <a name="how-to-and-walkthrough-topics"></a>How to and walkthrough topics
+ [How to: Query a Database](how-to-query-a-database-by-using-linq.md)  
   
- [Postupy: Volání uložené procedury](how-to-call-a-stored-procedure-by-using-linq.md)  
+ [How to: Call a Stored Procedure](how-to-call-a-stored-procedure-by-using-linq.md)  
   
- [Postupy: Úprava dat v databázi](how-to-modify-data-in-a-database-by-using-linq.md)  
+ [How to: Modify Data in a Database](how-to-modify-data-in-a-database-by-using-linq.md)  
   
- [Postupy: Kombinování dat pomocí spojení](how-to-combine-data-with-linq-by-using-joins.md)  
+ [How to: Combine Data with Joins](how-to-combine-data-with-linq-by-using-joins.md)  
   
- [Postupy: Seřadit výsledky dotazu](how-to-sort-query-results-by-using-linq.md)  
+ [How to: Sort Query Results](how-to-sort-query-results-by-using-linq.md)  
   
- [Postupy: Filtrovat výsledky dotazu](how-to-filter-query-results-by-using-linq.md)  
+ [How to: Filter Query Results](how-to-filter-query-results-by-using-linq.md)  
   
- [Postupy: Data o počtu, součtech nebo průměrech](how-to-count-sum-or-average-data-by-using-linq.md)  
+ [How to: Count, Sum, or Average Data](how-to-count-sum-or-average-data-by-using-linq.md)  
   
- [Postupy: Hledání minimální nebo maximální hodnoty ve výsledku dotazu](how-to-find-the-minimum-or-maximum-value-in-a-query-result.md)  
+ [How to: Find the Minimum or Maximum Value in a Query Result](how-to-find-the-minimum-or-maximum-value-in-a-query-result.md)  
   
  [Postupy: Přiřazení uložených procedur za účelem aktualizací, vkládání a odstraňování (Návrhář relací objektů)](/visualstudio/data-tools/how-to-assign-stored-procedures-to-perform-updates-inserts-and-deletes-o-r-designer)  
   
-## <a name="featured-book-chapters"></a>Doporučené kapitoly knihy  
- [Kapitola 17: LINQ](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652502(v=orm.10)) v [programování Visual Basic 2008](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652504(v=orm.10))  
+## <a name="featured-book-chapters"></a>Featured book chapters  
+ [Chapter 17: LINQ](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652502(v=orm.10)) in [Programming Visual Basic 2008](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ff652504(v=orm.10))  
   
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ (jazykově integrovaný dotaz)](../../concepts/linq/index.md)
-- [Přehled LINQ to XML v Visual Basic](../../language-features/xml/overview-of-linq-to-xml.md)
+- [LINQ (Language-Integrated Query)](../../concepts/linq/index.md)
+- [Overview of LINQ to XML in Visual Basic](../../language-features/xml/overview-of-linq-to-xml.md)
 - [Přehled LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset-overview.md)
 - [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)
 - [Nástroje LINQ to SQL v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)

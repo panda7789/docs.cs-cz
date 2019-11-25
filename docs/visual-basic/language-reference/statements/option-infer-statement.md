@@ -1,5 +1,5 @@
 ---
-title: Option odvod – příkaz (Visual Basic)
+title: Option Infer – příkaz
 ms.date: 07/20/2015
 f1_keywords:
 - vb.OptionInfer
@@ -11,16 +11,16 @@ helpviewer_keywords:
 - declaring variables [Visual Basic], inferred
 - inferred variable declaration
 ms.assetid: 4ad3e6e9-8f5b-4209-a248-de22ef6e4652
-ms.openlocfilehash: 4dcca0f0ed9989577ded27bab7cf3b16f3036964
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 53bc9d41f28f63061db2012395480aa6be7515dd
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72775459"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346496"
 ---
 # <a name="option-infer-statement"></a>Option Infer – příkaz
 
-Umožňuje použití odvození místního typu v deklaraci proměnných.
+Enables the use of local type inference in declaring variables.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -32,72 +32,72 @@ Option Infer { On | Off }
 
 |Termín|Definice|
 |---|---|
-|`On`|Volitelné. Povoluje odvození místního typu.|
-|`Off`|Volitelné. Zakáže odvození místního typu.|
+|`On`|Volitelné. Enables local type inference.|
+|`Off`|Volitelné. Disables local type inference.|
 
 ## <a name="remarks"></a>Poznámky
 
-Chcete-li nastavit `Option Infer` v souboru, zadejte `Option Infer On` nebo `Option Infer Off` v horní části souboru před jakýkoliv jiný zdrojový kód. Pokud je hodnota nastavená pro `Option Infer` v souboru v konfliktu s hodnotou nastavenou v integrovaném vývojovém prostředí (IDE) nebo na příkazovém řádku, má hodnota v souboru přednost.
+To set `Option Infer` in a file, type `Option Infer On` or `Option Infer Off` at the top of the file, before any other source code. If the value set for `Option Infer` in a file conflicts with the value set in the IDE or on the command line, the value in the file has precedence.
 
-Když nastavíte `Option Infer` na `On`, můžete deklarovat místní proměnné bez explicitního oznámení datového typu. Kompilátor odvodí datový typ proměnné z typu jeho inicializačního výrazu.
+When you set `Option Infer` to `On`, you can declare local variables without explicitly stating a data type. The compiler infers the data type of a variable from the type of its initialization expression.
 
-Na následujícím obrázku je `Option Infer` zapnutý. Proměnná v deklaraci `Dim someVar = 2` je deklarována jako celé číslo podle odvození typu.
+In the following illustration, `Option Infer` is turned on. The variable in the declaration `Dim someVar = 2` is declared as an integer by type inference.
 
-Následující snímek obrazovky ukazuje IntelliSense, pokud je možnost odvozená:
+The following screenshot shows IntelliSense when Option Infer is on:
 
-![Snímek obrazovky znázorňující zobrazení IntelliSense, pokud je zapnutá možnost odvodit.](./media/option-infer-statement/option-infer-as-integer-on.png)
+![Screenshot showing IntelliSense view when Option Infer is on.](./media/option-infer-statement/option-infer-as-integer-on.png)
 
-Na následujícím obrázku je `Option Infer` vypnuto. Proměnná v deklaraci `Dim someVar = 2` je deklarována jako `Object` podle odvození typu. V tomto příkladu je **možnost Option Strict** nastavená na hodnotu **vypnuto** na [stránce kompilovat, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic).
+In the following illustration, `Option Infer` is turned off. The variable in the declaration `Dim someVar = 2` is declared as an `Object` by type inference. In this example, the **Option Strict** setting is set to **Off** on the [Compile Page, Project Designer (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic).
 
-Následující snímek obrazovky ukazuje IntelliSense, pokud je volba odvoditelné:
+The following screenshot shows IntelliSense when Option Infer is off:
 
-![Snímek obrazovky znázorňující zobrazení IntelliSense, pokud je volba odvoditelné](./media/option-infer-statement/option-infer-as-object-off.png)
+![Screenshot showing IntelliSense view when Option Infer is off.](./media/option-infer-statement/option-infer-as-object-off.png)
 
 > [!NOTE]
-> Když je proměnná deklarována jako `Object`, může se typ běhu změnit, i když je program spuštěn. Visual Basic provádí operace označované jako *zabalení* a *rozbalení* pro převod mezi `Object` a typem hodnoty, což činí provádění pomaleji. Informace o zabalení a rozbalení najdete v tématu [specifikace jazyka Visual Basic](~/_vblang/spec/conversions.md#value-type-conversions).
+> When a variable is declared as an `Object`, the run-time type can change while the program is running. Visual Basic performs operations called *boxing* and *unboxing* to convert between an `Object` and a value type, which makes execution slower. For information about boxing and unboxing, see the [Visual Basic Language Specification](~/_vblang/spec/conversions.md#value-type-conversions).
 
-Odvození typu se vztahuje na úroveň procedury a neplatí mimo proceduru ve třídě, struktuře, modulu nebo rozhraní.
+Type inference applies at the procedure level, and does not apply outside a procedure in a class, structure, module, or interface.
 
-Další informace naleznete v tématu [odvození místního typu](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md).
+For additional information, see [Local Type Inference](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md).
 
-## <a name="when-an-option-infer-statement-is-not-present"></a>Pokud není k dispozici příkaz k odvození možnosti
+## <a name="when-an-option-infer-statement-is-not-present"></a>When an Option Infer Statement Is Not Present
 
-Pokud zdrojový kód neobsahuje příkaz `Option Infer`, je použita **možnost odvodit** nastavení na [stránce kompilovat, návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic) . Pokud je použit kompilátor příkazového řádku, je použita možnost kompilátoru [-optioninfer –](../../../visual-basic/reference/command-line-compiler/optioninfer.md) .
+If the source code does not contain an `Option Infer` statement, the **Option Infer** setting on the [Compile Page, Project Designer (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic) is used. If the command-line compiler is used, the [-optioninfer](../../../visual-basic/reference/command-line-compiler/optioninfer.md) compiler option is used.
 
-#### <a name="to-set-option-infer-in-the-ide"></a>Nastavení volby odvoditelné v integrovaném vývojovém prostředí
+#### <a name="to-set-option-infer-in-the-ide"></a>To set Option Infer in the IDE
 
-1. V **Průzkumník řešení**vyberte projekt. V nabídce **projekt** klikněte na příkaz **vlastnosti**.
+1. In **Solution Explorer**, select a project. On the **Project** menu, click **Properties**.
 
-2. Klikněte na kartu **kompilovat** .
+2. Click the **Compile** tab.
 
-3. Nastavte hodnotu v poli **odvoditelné možnosti** .
+3. Set the value in the **Option infer** box.
 
-Při vytváření nového projektu je **možnost odvodit** nastavení na kartě **kompilovat** nastavena na **možnost odvodit** nastavení v dialogovém okně **výchozí hodnoty VB** . Chcete-li získat přístup k dialogovému oknu **výchozí hodnoty VB** , v nabídce **nástroje** klikněte na možnost **Možnosti**. V dialogovém okně **Možnosti** rozbalte **projekty a řešení**a potom klikněte na **výchozí hodnoty VB**. Počáteční výchozí nastavení ve **výchozích hodnotách VB** je `On`.
+When you create a new project, the **Option Infer** setting on the **Compile** tab is set to the **Option Infer** setting in the **VB Defaults** dialog box. To access the **VB Defaults** dialog box, on the **Tools** menu, click **Options**. In the **Options** dialog box, expand **Projects and Solutions**, and then click **VB Defaults**. The initial default setting in **VB Defaults** is `On`.
 
-#### <a name="to-set-option-infer-on-the-command-line"></a>Nastavení možnosti odvození v příkazovém řádku
+#### <a name="to-set-option-infer-on-the-command-line"></a>To set Option Infer on the command line
 
-Do příkazu **Vbc** zahrňte možnost kompilátoru [-optioninfer –](../../../visual-basic/reference/command-line-compiler/optioninfer.md) .
+Include the [-optioninfer](../../../visual-basic/reference/command-line-compiler/optioninfer.md) compiler option in the **vbc** command.
 
-## <a name="default-data-types-and-values"></a>Výchozí datové typy a hodnoty
+## <a name="default-data-types-and-values"></a>Default Data Types and Values
 
-Následující tabulka popisuje výsledky různých kombinací určení datového typu a inicializátoru v příkazu `Dim`.
+The following table describes the results of various combinations of specifying the data type and initializer in a `Dim` statement.
 
-|Byl zadán datový typ?|Byl určen inicializátor?|Příklad|Výsledek|
+|Data type specified?|Initializer specified?|Příklad|Výsledek|
 |---|---|---|---|
-|Ne|Ne|`Dim qty`|Pokud je `Option Strict` vypnuto (výchozí nastavení), proměnná je nastavena na hodnotu `Nothing`.<br /><br /> Pokud je `Option Strict` zapnutý, dojde k chybě při kompilaci.|
-|Ne|Ano|`Dim qty = 5`|Pokud je `Option Infer` zapnuto (výchozí), proměnná převezme datový typ inicializátoru. Viz [odvození místního typu](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md).<br /><br /> Pokud je `Option Infer` vypnuto a `Option Strict` je vypnutý, proměnná převezme datový typ `Object`.<br /><br /> Pokud je `Option Infer` vypnuto a `Option Strict` je zapnutá, dojde k chybě při kompilaci.|
-|Ano|Ne|`Dim qty As Integer`|Proměnná je inicializována na výchozí hodnotu pro datový typ. Další informace naleznete v tématu [Dim – příkaz](../../../visual-basic/language-reference/statements/dim-statement.md).|
-|Ano|Ano|`Dim qty  As Integer = 5`|Pokud datový typ inicializátoru nelze převést na zadaný datový typ, dojde k chybě při kompilaci.|
+|Ne|Ne|`Dim qty`|If `Option Strict` is off (the default), the variable is set to `Nothing`.<br /><br /> If `Option Strict` is on, a compile-time error occurs.|
+|Ne|Ano|`Dim qty = 5`|If `Option Infer` is on (the default), the variable takes the data type of the initializer. See [Local Type Inference](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md).<br /><br /> If `Option Infer` is off and `Option Strict` is off, the variable takes the data type of `Object`.<br /><br /> If `Option Infer` is off and `Option Strict` is on, a compile-time error occurs.|
+|Ano|Ne|`Dim qty As Integer`|The variable is initialized to the default value for the data type. For more information, see [Dim Statement](../../../visual-basic/language-reference/statements/dim-statement.md).|
+|Ano|Ano|`Dim qty  As Integer = 5`|If the data type of the initializer is not convertible to the specified data type, a compile-time error occurs.|
 
 ## <a name="example"></a>Příklad
 
-Následující příklady ukazují, jak příkaz `Option Infer` umožňuje odvození místního typu.
+The following examples demonstrate how the `Option Infer` statement enables local type inference.
 
 [!code-vb[VbVbalrTypeInference#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTypeInference/VB/Class1.vb#6)]
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, že běhový typ se může lišit, když je proměnná identifikována jako `Object`.
+The following example demonstrates that the run-time type can differ when a variable is identified as an `Object`.
 
 [!code-vb[VbVbalrTypeInference#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTypeInference/VB/Class1.vb#11)]
 

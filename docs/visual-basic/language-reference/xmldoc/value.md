@@ -1,19 +1,19 @@
 ---
-title: <value> (Visual Basic)
+title: <value>
 ms.date: 07/20/2015
 helpviewer_keywords:
 - <value> XML tag
 - value XML tag
 ms.assetid: 0b84b02e-9e6d-41b5-a926-0d5dc76dacb5
-ms.openlocfilehash: 516ff6ba534478d066b8ca06baee46bdd4b35265
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 240c2131179420834e6dade729ee631c0d7811a4
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524603"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74352175"
 ---
-# <a name="value-visual-basic"></a>\<value > (Visual Basic)
-Určuje popis vlastnosti.  
+# <a name="value-visual-basic"></a>\<value> (Visual Basic)
+Specifies the description of a property.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,15 +23,15 @@ Určuje popis vlastnosti.
   
 ## <a name="parameters"></a>Parametry  
  `property-description`  
- Popis vlastnosti  
+ A description for the property.  
   
 ## <a name="remarks"></a>Poznámky  
- K popisu vlastnosti použijte značku `<value>`. Všimněte si, že při přidání vlastnosti pomocí průvodce kódem ve vývojovém prostředí sady Visual Studio bude přidána značka [\<summary >](../../../visual-basic/language-reference/xmldoc/summary.md) pro novou vlastnost. Měli byste pak ručně přidat značku `<value>` k popisu hodnoty, kterou vlastnost představuje.  
+ Use the `<value>` tag to describe a property. Note that when you add a property using the code wizard in the Visual Studio development environment, it will add a [\<summary>](../../../visual-basic/language-reference/xmldoc/summary.md) tag for the new property. You should then manually add a `<value>` tag to describe the value that the property represents.  
   
- Zkompilujte s [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
+ Compile with [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) to process documentation comments to a file.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu se používá značka `<value>` k popisu hodnoty, které vlastnost `Counter` obsahuje.  
+ This example uses the `<value>` tag to describe what value the `Counter` property holds.  
   
  [!code-vb[VbVbcnXmlDocComments#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#1)]  
   

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vyvolání kompilátoru příkazového řádku (Visual Basic)'
+title: 'Postupy: Volání kompilátoru příkazového řádku'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - command-line arguments
@@ -7,58 +7,58 @@ helpviewer_keywords:
 - Visual Basic compiler, starting
 - command line [Visual Basic], arguments
 ms.assetid: 0fd9a8f6-f34e-4c35-a49d-9b9bbd8da4a9
-ms.openlocfilehash: a81d5b4f4eae76b0306e2d27475cb8527bda0ff2
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 3b34ebba68c9c9b2a8335822d0ffaef2a9b06d7c
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71054221"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344263"
 ---
-# <a name="how-to-invoke-the-command-line-compiler-visual-basic"></a>Postupy: Vyvolání kompilátoru příkazového řádku (Visual Basic)
+# <a name="how-to-invoke-the-command-line-compiler-visual-basic"></a>Postupy: Volání kompilátoru příkazového řádku (Visual Basic)
 
-Kompilátor příkazového řádku můžete vyvolat zadáním názvu spustitelného souboru do příkazového řádku, který se označuje také jako příkazový řádek MS-DOS. Pokud kompilujete z výchozího příkazového řádku systému Windows, je nutné zadat plně kvalifikovanou cestu ke spustitelnému souboru. Chcete-li přepsat toto výchozí chování, můžete buď použít Developer Command Prompt pro Visual Studio, nebo upravit proměnnou prostředí PATH. Obě umožňují kompilovat z libovolného adresáře pouhým zadáním názvu kompilátoru.
+You can invoke the command-line compiler by typing the name of its executable file into the command line, also known as the MS-DOS prompt. If you compile from the default Windows Command Prompt, you must type the fully qualified path to the executable file. To override this default behavior, you can either use the Developer Command Prompt for Visual Studio, or modify the PATH environment variable. Both allow you to compile from any directory by simply typing the compiler name.
 
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]
 
-## <a name="to-invoke-the-compiler-using-the-developer-command-prompt-for-visual-studio"></a>Volání kompilátoru pomocí Developer Command Prompt pro Visual Studio
+## <a name="to-invoke-the-compiler-using-the-developer-command-prompt-for-visual-studio"></a>To invoke the compiler using the Developer Command Prompt for Visual Studio
 
-1. Otevřete složku Visual Studio Tools program ve skupině Microsoft Visual Studio programu.
+1. Open the Visual Studio Tools program folder within the Microsoft Visual Studio program group.
 
-2. Pokud je nainstalována aplikace Visual Studio, můžete použít Developer Command Prompt pro Visual Studio k přístupu k kompilátoru z libovolného adresáře na vašem počítači.
+2. You can use the Developer Command Prompt for Visual Studio to access the compiler from any directory on your machine, if Visual Studio is installed.
 
-3. Vyvolejte Developer Command Prompt pro Visual Studio.
+3. Invoke the Developer Command Prompt for Visual Studio.
 
-4. Do příkazového řádku zadejte `vbc.exe` *sourceFileName* a stiskněte klávesu ENTER.
+4. At the command line, type `vbc.exe` *sourceFileName* and then press ENTER.
 
-    Pokud jste například uložili zdrojový kód do adresáře s názvem `SourceFiles`, otevřete příkazový řádek a zadejte `cd SourceFiles` příkaz pro změnu do tohoto adresáře. Pokud adresář obsahoval zdrojový soubor s názvem `Source.vb`, můžete ho zkompilovat zadáním. `vbc.exe Source.vb`
+    For example, if you stored your source code in a directory called `SourceFiles`, you would open the Command Prompt and type `cd SourceFiles` to change to that directory. If the directory contained a source file named `Source.vb`, you could compile it by typing `vbc.exe Source.vb`.
 
-## <a name="to-set-the-path-environment-variable-to-the-compiler-for-the-windows-command-prompt"></a>Nastavení proměnné prostředí PATH na kompilátor příkazového řádku systému Windows
+## <a name="to-set-the-path-environment-variable-to-the-compiler-for-the-windows-command-prompt"></a>To set the PATH environment variable to the compiler for the Windows Command Prompt
 
-1. K vyhledání Vbc. exe na místním disku použijte funkci Windows Search.
+1. Use the Windows Search feature to find Vbc.exe on your local disk.
 
-    Přesný název adresáře, ve kterém je kompilátor umístěný, závisí na umístění adresáře systému Windows a ve verzi nainstalovaného ".NET Framework". Pokud máte nainstalovanou více než jednu verzi .NET Framework, musíte určit, která verze se má použít (obvykle nejnovější verze).
+    The exact name of the directory where the compiler is located depends on the location of the Windows directory and the version of the ".NET Framework" installed. If you have more than one version of the ".NET Framework" installed, you must determine which version to use (typically the latest version).
 
-2. V nabídce **Start** klikněte pravým tlačítkem myši na položku **Tento počítač**a potom v místní nabídce klikněte na příkaz **vlastnosti** .
+2. From your **Start** Menu, right-click **My Computer**, and then click **Properties** from the shortcut menu.
 
-3. Klikněte na kartu **Upřesnit** a pak klikněte na **proměnné prostředí**.
+3. Click the **Advanced** tab, and then click **Environment Variables**.
 
-4. V podokně **systémové** proměnné vyberte v seznamu možnost **cesta** a klikněte na **Upravit**.
+4. In the **System** variables pane, select **Path** from the list and click **Edit**.
 
-5. V dialogovém okně **upravit systémovou** proměnnou přesuňte kurzor na konec řetězce v poli **hodnota proměnné** a zadejte středník (;) Následuje úplný název adresáře, který byl nalezen v kroku 1.
+5. In the **Edit System** Variable dialog box, move the insertion point to the end of the string in the **Variable Value** field and type a semicolon (;) followed by the full directory name found in Step 1.
 
-6. Kliknutím na tlačítko **OK** potvrďte provedené úpravy a zavřete dialogová okna.
+6. Click **OK** to confirm your edits and close the dialog boxes.
 
-     Po změně proměnné prostředí PATH můžete spustit kompilátor Visual Basic v příkazovém řádku systému Windows z libovolného adresáře v počítači.
+     After you change the PATH environment variable, you can run the Visual Basic compiler at the Windows Command Prompt from any directory on the computer.
 
-## <a name="to-invoke-the-compiler-using-the-windows-command-prompt"></a>Vyvolání kompilátoru pomocí příkazového řádku systému Windows
+## <a name="to-invoke-the-compiler-using-the-windows-command-prompt"></a>To invoke the compiler using the Windows Command Prompt
 
-1. V nabídce **Start** klikněte na složku **příslušenství** a pak otevřete **příkazový řádek systému Windows**.
+1. From the **Start** menu, click on the **Accessories** folder, and then open the **Windows Command Prompt**.
 
-2. Do příkazového řádku zadejte `vbc.exe` *sourceFileName* a stiskněte klávesu ENTER.
+2. At the command line, type `vbc.exe`*sourceFileName* and then press ENTER.
 
-     Pokud jste například uložili zdrojový kód do adresáře s názvem `SourceFiles`, otevřete příkazový řádek a zadejte `cd SourceFiles` příkaz pro změnu do tohoto adresáře. Pokud adresář obsahoval zdrojový soubor s názvem `Source.vb`, můžete ho zkompilovat zadáním. `vbc.exe Source.vb`
+     For example, if you stored your source code in a directory called `SourceFiles`, you would open the Command Prompt and type `cd SourceFiles` to change to that directory. If the directory contained a source file named `Source.vb`, you could compile it by typing `vbc.exe Source.vb`.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Podmíněná kompilace](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)

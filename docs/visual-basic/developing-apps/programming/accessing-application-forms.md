@@ -1,5 +1,5 @@
 ---
-title: Přístup k formulářům aplikace (Visual Basic)
+title: Přístup k formulářům aplikace
 ms.date: 07/20/2015
 helpviewer_keywords:
 - forms [Visual Basic], communicating between
@@ -8,24 +8,26 @@ helpviewer_keywords:
 - My.Forms object
 - forms [Visual Basic], accessing all open
 ms.assetid: 9aaf5aaf-2012-4f97-89c7-6e62b9d17863
-ms.openlocfilehash: 85de915f4dc9a79e0161411951062afbeb764513
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 332b6a7563160528b6c17210170af0db6e9bc0e7
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62014463"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74349243"
 ---
 # <a name="accessing-application-forms-visual-basic"></a>Přístup k formulářům aplikace (Visual Basic)
-`My.Forms` Objekt, který poskytuje snadný způsob, jak získat přístup instanci jednotlivých formulářů Windows deklarované v projektu aplikace. Můžete také použít vlastnosti `My.Application` objektu pro přístup k aplikačním úvodní obrazovky a hlavní formulář a získání seznamu formulářů otevřít v aplikaci.  
+
+The `My.Forms` object provides an easy way to access an instance of each Windows Form declared in the application's project. You can also use properties of the `My.Application` object to access the application's splash screen and main form, and get a list of the application's open forms.  
   
 ## <a name="tasks"></a>Úkoly  
- V následující tabulce jsou uvedeny příklady jak získat přístup k formulářům aplikace.  
+
+ The following table lists examples showing how to access an application's forms.  
   
 |Chcete-li|Další informace naleznete v tématu|  
 |---|---|  
-|Jeden formulář z jiného formuláře v aplikaci.|[Objekt My.Forms](../../../visual-basic/language-reference/objects/my-forms-object.md)|  
-|Zobrazení názvů všech aplikace otevřít formulářů.|<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OpenForms%2A>|  
-|Aktualizujte úvodní obrazovka s informací o stavu spuštění aplikace.|<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.SplashScreen%2A>|  
+|Access one form from another form in an application.|[Objekt My.Forms](../../../visual-basic/language-reference/objects/my-forms-object.md)|  
+|Display the titles of all the application's open forms.|<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OpenForms%2A>|  
+|Update the splash screen with status information as the application starts.|<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.SplashScreen%2A>|  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -1,5 +1,5 @@
 ---
-title: My. WebServices – objekt (Visual Basic)
+title: My.WebServices – objekt
 ms.date: 07/20/2015
 f1_keywords:
 - My.WebServices
@@ -7,60 +7,60 @@ f1_keywords:
 helpviewer_keywords:
 - My.WebServices object
 ms.assetid: f188dc05-2c75-41b6-bb68-122d1c3110a2
-ms.openlocfilehash: c887f9b7c5a41c0aa02016354c46d5507b103d25
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 290d025985663bc45fe605a2e9904fc90fb2bc63
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69918184"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350340"
 ---
 # <a name="mywebservices-object"></a>My.WebServices – objekt
-Poskytuje vlastnosti pro vytvoření a přístup k jedné instanci každé webové služby XML, na kterou odkazuje aktuální projekt.  
+Provides properties for creating and accessing a single instance of each XML Web service referenced by the current project.  
   
 ## <a name="remarks"></a>Poznámky  
- `My.WebServices` Objekt poskytuje instanci každé webové služby, na kterou odkazuje aktuální projekt. Každá instance je vytvořena na vyžádání. K těmto webovým službám můžete přistupovat prostřednictvím vlastností `My.WebServices` objektu. Název vlastnosti je stejný jako název webové služby, ke které vlastnost přistupuje. Libovolná třída, která <xref:System.Web.Services.Protocols.SoapHttpClientProtocol> dědí z, je webová služba. Informace o tom, jak přidat webové služby do projektu, najdete v tématu [přístup k aplikačním webovým službám](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md).  
+ The `My.WebServices` object provides an instance of each Web service referenced by the current project. Each instance is instantiated on demand. You can access these Web services through the properties of the `My.WebServices` object. The name of the property is the same as the name of the Web service that the property accesses. Any class that inherits from <xref:System.Web.Services.Protocols.SoapHttpClientProtocol> is a Web service. For information about adding Web services to a project, see [Accessing Application Web Services](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md).  
   
- `My.WebServices` Objekt zveřejňuje pouze webové služby přidružené k aktuálnímu projektu. Neposkytuje přístup k webovým službám deklarovaným v odkazovaných knihovnách DLL. Chcete-li získat přístup k webové službě, kterou poskytuje knihovna DLL, je nutné použít kvalifikovaný název webové služby ve formě *Název_souboru_DLL*. *Služba WebService*. Další informace najdete v tématu [přístup k aplikačním webovým službám](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md).  
+ The `My.WebServices` object exposes only the Web services associated with the current project. It does not provide access to Web services declared in referenced DLLs. To access a Web service that a DLL provides, you must use the qualified name of the Web service, in the form *DllName*.*WebServiceName*. For more information, see [Accessing Application Web Services](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md).  
   
- Objekt a jeho vlastnosti nejsou k dispozici pro webové aplikace.  
+ The object and its properties are not available for Web applications.  
   
 ## <a name="properties"></a>Vlastnosti  
- Každá vlastnost `My.WebServices` objektu poskytuje přístup k instanci webové služby, na kterou odkazuje aktuální projekt. Název vlastnosti je stejný jako název webové služby, ke které vlastnost přistupuje, a typ vlastnosti je stejný jako typ webové služby.  
+ Each property of the `My.WebServices` object provides access to an instance of a Web service referenced by the current project. The name of the property is the same as the name of the Web service that the property accesses, and the property type is the same as the Web service's type.  
   
 > [!NOTE]
-> Pokud dojde ke kolizi názvů, název vlastnosti pro přístup k webové službě je *RootNamespace*_*obor názvů*\_*ServiceName*. Zvažte například dvě webové služby s názvem `Service1`. Pokud se jedna z těchto služeb nachází v kořenovém `WindowsApplication1` oboru názvů a v `Namespace1`oboru názvů, měli byste k této službě `My.WebServices.WindowsApplication1_Namespace1_Service1`přistupovat pomocí.  
+> If there is a name collision, the property name for accessing a Web service is *RootNamespace*_*Namespace*\_*ServiceName*. For example, consider two Web services named `Service1`. If one of these services is in the root namespace `WindowsApplication1` and in the namespace `Namespace1`, you would access that service by using `My.WebServices.WindowsApplication1_Namespace1_Service1`.  
   
- Při prvním přístupu k jedné z `My.WebServices` vlastností objektu vytvoří nová instance webové služby a uloží ji. Následné přístupy této vlastnosti vrátí tuto instanci webové služby.  
+ When you first access one of the `My.WebServices` object's properties, it creates a new instance of the Web service and stores it. Subsequent accesses of that property return that instance of the Web service.  
   
- Webovou službu můžete vyřadit tak, že přiřadíte `Nothing` vlastnost pro tuto webovou službu. Vlastnost setter přiřadí `Nothing` uložené hodnotě. Pokud přiřadíte jinou hodnotu než `Nothing` k vlastnosti, metoda setter <xref:System.ArgumentException> vyvolá výjimku.  
+ You can dispose of a Web service by assigning `Nothing` to the property for that Web service. The property setter assigns `Nothing` to the stored value. If you assign any value other than `Nothing` to the property, the setter throws an <xref:System.ArgumentException> exception.  
   
- Můžete otestovat, zda vlastnost `My.WebServices` objektu ukládá instanci webové služby `Is` pomocí operátoru OR `IsNot` . Tyto operátory můžete použít ke kontrole, zda je `Nothing`hodnota vlastnosti.  
+ You can test whether a property of the `My.WebServices` object stores an instance of the Web service by using the `Is` or `IsNot` operator. You can use those operators to check if the value of the property is `Nothing`.  
   
 > [!NOTE]
-> `Is` Operátor OR `IsNot` obvykle musí číst hodnotu vlastnosti pro provedení porovnání. Pokud je však vlastnost aktuálně uložena `Nothing`, vytvoří vlastnost novou instanci webové služby a poté vrátí tuto instanci. Nicméně kompilátor Visual Basic považuje vlastnosti `My.WebServices` objektu za speciálně a `Is` umožňuje operátoru OR `IsNot` kontrolovat stav vlastnosti bez změny její hodnoty.  
+> Typically, the `Is` or `IsNot` operator has to read the value of the property to perform the comparison. However, if the property currently stores `Nothing`, the property creates a new instance of the Web service and then returns that instance. However, the Visual Basic compiler treats the properties of the `My.WebServices` object specially, and allows the `Is` or `IsNot` operator to check the status of the property without altering its value.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad volá `FahrenheitToCelsius` metodu `TemperatureConverter` webové služby XML a vrátí výsledek.  
+ This example calls the `FahrenheitToCelsius` method of the `TemperatureConverter` XML Web service, and returns the result.  
   
  [!code-vb[VbVbalrMyWebService#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyWebService/VB/Form1.vb#1)]  
   
- Aby tento příklad fungoval, musí mít projekt odkaz na webovou službu s názvem `Converter`a tato webová služba musí vystavit `ConvertTemperature` tuto metodu. Další informace najdete v tématu [přístup k aplikačním webovým službám](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md).  
+ For this example to work, your project must reference a Web service named `Converter`, and that Web service must expose the `ConvertTemperature` method. For more information, see [Accessing Application Web Services](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md).  
   
- Tento kód nefunguje v projektu webové aplikace.  
+ This code does not work in a Web application project.  
   
 ## <a name="requirements"></a>Požadavky  
   
 ### <a name="availability-by-project-type"></a>Dostupnost podle typu projektu  
   
-|Typ projektu|K dispozici|  
+|Project type|K dispozici|  
 |---|---|  
-|Aplikace systému Windows|**Ano**|  
-|Knihovna tříd|**Ano**|  
-|Konzolová aplikace|**Ano**|  
-|Knihovna ovládacích prvků Windows|**Ano**|  
-|Knihovna webového ovládacího prvku|**Ano**|  
-|Služba systému Windows|**Ano**|  
-|Web|Ne|  
+|Windows Application|**Yes**|  
+|Knihovna tříd|**Yes**|  
+|Konzolová aplikace|**Yes**|  
+|Windows Control Library|**Yes**|  
+|Web Control Library|**Yes**|  
+|Služba systému Windows|**Yes**|  
+|Web Site|Ne|  
   
 ## <a name="see-also"></a>Viz také:
 

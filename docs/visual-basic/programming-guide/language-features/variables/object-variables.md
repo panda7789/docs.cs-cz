@@ -1,5 +1,5 @@
 ---
-title: Proměnné objektu v jazyce Visual Basic
+title: Proměnné objektu
 ms.date: 07/20/2015
 helpviewer_keywords:
 - object variables [Visual Basic], about object variables
@@ -7,26 +7,26 @@ helpviewer_keywords:
 - objects [Visual Basic], accessing
 - object variables [Visual Basic]
 ms.assetid: 6169a196-2b13-4ba5-a205-154bc1b87844
-ms.openlocfilehash: cc5be13293a89e73d1790e94a99d7936f1711e12
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7eb860bc732f923316b8ce1d7b94ecdb368bfec3
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61961231"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351786"
 ---
 # <a name="object-variables-in-visual-basic"></a>Proměnné objektu v jazyce Visual Basic
 
-Kromě ukládání hodnot přímo, mohou proměnné odkazovat na objekt. Přiřazení objektu k proměnné ze stejného důvodu, kterou přiřadíte libovolnou hodnotu proměnné:
+In addition to storing values directly, a variable can refer to an object. You assign an object to a variable for the same reasons you assign any value to a variable:
 
-- Název proměnné je často kratší a snadněji mějte na paměti než úplnou cestu k metodám a vlastnostem, které jsou potřebné pro přístup k objektu samotného.
+- A variable name is often shorter and easier to remember than the full path of methods and properties necessary to access the object itself.
 
-- Použití proměnné, která odkazuje na objekt je efektivnější než opakovaně přístup k objektu samotného prostřednictvím nezbytné metody nebo vlastnosti.
+- Using a variable that refers to an object is more efficient than repeatedly accessing the object itself through the necessary methods or properties.
 
-- Můžete změnit proměnné k odkazování na jiné objekty, když váš kód běží.
+- You can change a variable to refer to other objects while your code is running.
 
-## <a name="making-code-shorter"></a>Provádění kódu kratší
+## <a name="making-code-shorter"></a>Making Code Shorter
 
-Objektové proměnné můžete použít ke zkrácení kód, který je nutné zadat. Následující příklad používá pro přístup k úplnou cestu k metodám a vlastnostem <xref:System.Windows.Forms.Control> objektu.
+You can use object variables to shorten the code you have to type. The following example uses the full path of methods and properties to access a <xref:System.Windows.Forms.Control> object.
 
 ```vb
 ' Assume Me is a valid Form, or replace Me with a valid Form.
@@ -35,7 +35,7 @@ Me.ActiveForm.ActiveControl.Location = New Point(100, 100)
 Me.ActiveForm.ActiveControl.Show()
 ```
 
-Můžete zkrátit tento kód a rychlejší spuštění, pokud používáte proměnné objektu ovládacího prvku. By měla deklarovat proměnné objektu s konkrétní třídou, která máte v úmyslu přiřadit k ní (`Control` v tomto případě). Po přiřazení objektu k proměnné lze považovat ho stejně jako považovat objektu, na který odkazuje. Můžete nastavit nebo načíst vlastnosti objektu nebo použít některou z jeho metod. Následující příklad používá proměnné objektu pro zjednodušení kódu v předchozím příkladu.
+You can shorten this code, and speed up execution, if you use an object variable for the control. You should declare the object variable with the specific class that you intend to assign to it (`Control` in this case). Once you assign an object to the variable, you can treat it exactly the same as you treat the object to which it refers. You can set or retrieve the properties of the object or use any of its methods. The following example uses an object variable to simplify the code in the preceding example.
 
 ```vb
 Dim ctrlActv As System.Windows.Forms.Control = Me.ActiveForm.ActiveControl
@@ -47,7 +47,7 @@ ctrlActv.Show()
 ## <a name="see-also"></a>Viz také:
 
 - [Deklarace proměnné](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
-- [Postupy: Urychlení přístupu k objektu pomocí cesty dlouhou kvalifikací](../../../../visual-basic/programming-guide/language-features/variables/how-to-speed-up-access-to-an-object-with-a-long-qualification-path.md)
+- [Postupy: Urychlení přístupu k objektu pomocí cesty s dlouhou kvalifikací](../../../../visual-basic/programming-guide/language-features/variables/how-to-speed-up-access-to-an-object-with-a-long-qualification-path.md)
 - [Deklarace objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variable-declaration.md)
 - [Přiřazení objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variable-assignment.md)
 - [Hodnoty objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variable-values.md)

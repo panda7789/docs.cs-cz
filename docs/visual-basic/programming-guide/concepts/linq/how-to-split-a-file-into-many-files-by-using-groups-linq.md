@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: rozdělení souboru na více souborů pomocí skupin (LINQ) (Visual Basic)'
+title: 'Postupy: Rozdělení souboru na více souborů pomocí skupin (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: 5e8b2a2b-0b1d-4933-8a2b-03e91dfaf77f
-ms.openlocfilehash: d438da7eb50e13c23a9c1b77a74f19fba8d95e04
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: bd210f5119540bd35c18a07a21fc836339222bd0
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524056"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74341360"
 ---
-# <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-visual-basic"></a>Postupy: rozdělení souboru na více souborů pomocí skupin (LINQ) (Visual Basic)
+# <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-visual-basic"></a>How to: Split a File Into Many Files by Using Groups (LINQ) (Visual Basic)
 
-Tento příklad ukazuje jeden ze způsobů, jak sloučit obsah dvou souborů a pak vytvořit sadu nových souborů, které data organizují novým způsobem.
+This example shows one way to merge the contents of two files and then create a set of new files that organize the data in a new way.
 
-### <a name="to-create-the-data-files"></a>Vytvoření datových souborů
+### <a name="to-create-the-data-files"></a>To create the data files
 
-1. Zkopírujte tyto názvy do textového souboru s názvem names1. txt a uložte je do složky projektu:
+1. Copy these names into a text file that is named names1.txt and save it in your project folder:
 
     ```text
     Bankov, Peter
@@ -30,7 +30,7 @@ Tento příklad ukazuje jeden ze způsobů, jak sloučit obsah dvou souborů a p
     Garcia, Debra
     ```
 
-2. Zkopírujte tyto názvy do textového souboru s názvem names2. txt a uložte je do složky projektu: Všimněte si, že dva soubory mají některé běžné názvy.
+2. Copy these names into a text file that is named names2.txt and save it in your project folder: Note that the two files have some names in common.
 
     ```text
     Liu, Jinghao
@@ -114,13 +114,13 @@ End Class
 '    Toyoshima, Tim
 ```
 
-Program zapisuje samostatný soubor pro každou skupinu ve stejné složce jako datové soubory.
+The program writes a separate file for each group in the same folder as the data files.
 
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu
 
-Vytvořte projekt konzolové aplikace VB.NET s příkazem `Imports` pro obor názvů System. Linq.
+Create a VB.NET console application project, with an `Imports` statement for the System.Linq namespace.
 
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
-- [LINQ a souborové adresáře (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [LINQ and Strings (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [LINQ and File Directories (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

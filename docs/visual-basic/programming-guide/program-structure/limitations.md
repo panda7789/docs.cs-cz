@@ -1,5 +1,5 @@
 ---
-title: Omezení jazyka Visual Basic
+title: Omezení
 ms.date: 07/20/2015
 helpviewer_keywords:
 - limits
@@ -8,31 +8,31 @@ helpviewer_keywords:
 - limits, Visual Basic code
 - Visual Basic code, limitations
 ms.assetid: cf1646b7-5d24-48c6-9616-bda8a4849d91
-ms.openlocfilehash: 9fa0844f4508906ae30b936e41fb4392b74d1437
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f7e19977a011565bb4b1536af5cab195f8a01017
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648736"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347371"
 ---
 # <a name="visual-basic-limitations"></a>Omezení jazyka Visual Basic
-Starší verze jazyka Visual Basic vynutí hranice v kódu, jako je délka názvy proměnných, počet proměnných v moduly a velikost modulu povoleny. V jazyce Visual Basic .NET tato omezení mají byla zmírnit, získáte tak větší volnost při psaní a organizaci kódu.  
+Earlier versions of Visual Basic enforced boundaries in code, such as the length of variable names, the number of variables allowed in modules, and module size. In Visual Basic .NET, these restrictions have been relaxed, giving you greater freedom in writing and arranging your code.  
   
- Fyzických omezení jsou závislé další z paměti za běhu, než na důležité informace o kompilaci. Pokud používáte překročené programovací postupy a rozdělení velké aplikace do více tříd a moduly, je velmi malé pravděpodobnost vzniku vnitřní omezení jazyka Visual Basic.  
+ Physical limits are dependent more on run-time memory than on compile-time considerations. If you use prudent programming practices, and divide large applications into multiple classes and modules, then there is very little chance of encountering an internal Visual Basic limitation.  
   
- Toto jsou některá omezení, které můžete narazit v extrémních případech:  
+ The following are some limitations that you might encounter in extreme cases:  
   
-- **Délka názvu.** Maximální počet znaků pro název každé deklarovaný programový prvek je. Toto maximum platí na řetězec, celé kvalifikace, pokud je kvalifikován názvem elementu. Zobrazit [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
+- **Name Length.** There is a maximum number of characters for the name of every declared programming element. This maximum applies to an entire qualification string if the element name is qualified. See [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
   
-- **Délka řádku.** Je maximálně 65535 znaků fyzického řádku zdrojového kódu. Řádky logické zdrojového kódu může být déle, pokud používáte znaky pokračování řádku. Zobrazit [jak: Přerušení a kombinace příkazů v kódu](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md).  
+- **Line Length.** There is a maximum of 65535 characters in a physical line of source code. The logical source code line can be longer if you use line continuation characters. See [How to: Break and Combine Statements in Code](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md).  
   
-- **Rozměry pole.** Je maximální počet dimenzí, které je možné deklarovat pro pole. To omezuje počet indexů, můžete použít k určení k elementu pole. Zobrazit [pole dimenze v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/arrays/array-dimensions.md).  
+- **Array Dimensions.** There is a maximum number of dimensions you can declare for an array. This limits how many indexes you can use to specify an array element. See [Array Dimensions in Visual Basic](../../../visual-basic/programming-guide/language-features/arrays/array-dimensions.md).  
   
-- **Délka řetězce.** Je maximální počet znaků Unicode, které můžete ukládat do jednoho řetězce. Zobrazit [řetězcový datový typ.](../../../visual-basic/language-reference/data-types/string-data-type.md).  
+- **String Length.** There is a maximum number of Unicode characters you can store in a single string. See [String Data Type](../../../visual-basic/language-reference/data-types/string-data-type.md).  
   
-- **Délka řetězce prostředí.** Je maximálně 32768 znaků pro libovolný řetězec prostředí použít jako argument příkazového řádku. Jedná se o omezení na všech platformách.  
+- **Environment String Length.** There is a maximum of 32768 characters for any environment string used as a command-line argument. This is a limitation on all platforms.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Struktura programu a zásady týkající se kódu](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)
-- [Zásady vytváření názvů jazyka Visual Basic](../../../visual-basic/programming-guide/program-structure/naming-conventions.md)
+- [Visual Basic Naming Conventions](../../../visual-basic/programming-guide/program-structure/naming-conventions.md)

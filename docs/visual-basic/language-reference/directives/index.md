@@ -1,31 +1,33 @@
 ---
-title: Direktivy (Visual Basic)
+title: Direktivy
 ms.date: 07/20/2015
 helpviewer_keywords:
 - directives, Visual Basic compiler
 - Visual Basic code, directives
 - directives
 ms.assetid: 20d5fe65-490a-4c23-88c2-ee4f490ed762
-ms.openlocfilehash: 38d54feae5cf7bf41a825d1f6000811e2b56f319
-ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
+ms.openlocfilehash: d76e10ad5ce8ad3accdc84f97146e0816048d8f3
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67268203"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74343806"
 ---
 # <a name="directives-visual-basic"></a>Direktivy (Visual Basic)
-Témata v této části dokumentu direktivy kompilátoru jazyka Visual Basic zdrojového kódu.  
+
+The topics in this section document the Visual Basic source code compiler directives.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [#Const – direktiva](../../../visual-basic/language-reference/directives/const-directive.md) – Definujte konstantu kompilátoru  
+
+ [#Const Directive](../../../visual-basic/language-reference/directives/const-directive.md) -- Define a compiler constant  
   
- [#ExternalSource – direktiva](../../../visual-basic/language-reference/directives/externalsource-directive.md) – určete mapování mezi zdrojovými řádky a textem mimo zdroj  
+ [#ExternalSource Directive](../../../visual-basic/language-reference/directives/externalsource-directive.md) -- Indicate a mapping between source lines and text external to the source  
   
- [#If... Pak... #Else direktivy](../../../visual-basic/language-reference/directives/if-then-else-directives.md) – zkompilujte vybrané bloky kódu  
+ [#If...Then...#Else Directives](../../../visual-basic/language-reference/directives/if-then-else-directives.md) -- Compile selected blocks of code  
   
- [#Region – direktiva](../../../visual-basic/language-reference/directives/region-directive.md) – sbalit a skrýt části kódu v editoru sady Visual Studio  
+ [#Region Directive](../../../visual-basic/language-reference/directives/region-directive.md) -- Collapse and hide sections of code in the Visual Studio editor  
   
- **#Disable, #Enable** – zakažte a povolte určité varování pro oblasti kódu.  
+ **#Disable, #Enable** -- Disable and enable specific warnings for regions of code.  
   
 ```vb  
 #Disable Warning BC42356 ' suppress warning about no awaits in this method  
@@ -35,9 +37,10 @@ Témata v této části dokumentu direktivy kompilátoru jazyka Visual Basic zdr
 #Enable Warning BC42356  
 ```  
   
- Můžete zakázat a povolit příliš čárkou oddělený seznam kódů upozornění.  
+ You can disable and enable a comma-separated list of warning codes too.  
   
 ## <a name="related-sections"></a>Související oddíly  
+
  [Referenční příručka jazyka Visual Basic](../../../visual-basic/language-reference/index.md)  
   
  [Visual Basic](../../../visual-basic/index.md)

@@ -1,5 +1,5 @@
 ---
-title: Parametry a argumenty procedury (Visual Basic)
+title: Parametry a argumenty procedury
 ms.date: 07/20/2015
 helpviewer_keywords:
 - procedures [Visual Basic], arguments
@@ -18,45 +18,45 @@ helpviewer_keywords:
 - argument lists [Visual Basic]
 - procedures [Visual Basic], parameter lists
 ms.assetid: ff275aff-aa13-40df-bd4c-63486db8c1e9
-ms.openlocfilehash: 08bb05f681d5f795bc448ddc62976d7675696023
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7dfbbcb39cf7bb05c8a62a7a252e425f287c9a09
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64638838"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74352573"
 ---
 # <a name="procedure-parameters-and-arguments-visual-basic"></a>Parametry a argumenty procedury (Visual Basic)
-Ve většině případů postup potřebuje určité informace o okolnostech, ve kterých byla volána. Postup, který provádí úlohy opakovaných nebo sdílené používá různé informace pro každé volání. Tyto informace se skládá z proměnné, konstanty a výrazy, které předáváte k postupu při jeho volání.  
+In most cases, a procedure needs some information about the circumstances in which it has been called. A procedure that performs repeated or shared tasks uses different information for each call. This information consists of variables, constants, and expressions that you pass to the procedure when you call it.  
   
- A *parametr* představuje hodnotu, která procedura očekává, že můžete zadat při jeho volání. Podle postupu prohlášení definuje jeho parametry.  
+ A *parameter* represents a value that the procedure expects you to supply when you call it. The procedure's declaration defines its parameters.  
   
- Můžete definovat postup s žádné parametry, jeden parametr nebo více než jeden. Je volána část definice procedury, která určuje parametry *seznam parametrů*.  
+ You can define a procedure with no parameters, one parameter, or more than one. The part of the procedure definition that specifies the parameters is called the *parameter list*.  
   
- *Argument* představuje hodnotu zadáte parametr procedury při volání procedury. Volající kód poskytuje argumenty při volání postup. Část volání procedury, která určuje argumenty se nazývá *seznam argumentů*.  
+ An *argument* represents the value you supply to a procedure parameter when you call the procedure. The calling code supplies the arguments when it calls the procedure. The part of the procedure call that specifies the arguments is called the *argument list*.  
   
- Následující obrázek znázorňuje kódu volající proces `safeSquareRoot` ze dvou různých míst. První volání předá hodnotu proměnné `x` (4.0) k parametru `number`a návratová hodnota v `root` (2.0) je přiřazená k proměnné `y`. Druhé volání předá hodnotu literálu 9.0 na `number`a přiřadí proměnné návratovou hodnotu (3.0) `z`.  
+ The following illustration shows code calling the procedure `safeSquareRoot` from two different places. The first call passes the value of the variable `x` (4.0) to the parameter `number`, and the return value in `root` (2.0) is assigned to the variable `y`. The second call passes the literal value 9.0 to `number`, and assigns the return value (3.0) to variable `z`.  
   
- ![Diagram zobrazující průběh předání argumentu pro parametr](./media/procedure-parameters-and-arguments/pass-argument-parameter.gif)  
+ ![Diagram that shows passing an argument to a parameter](./media/procedure-parameters-and-arguments/pass-argument-parameter.gif)  
   
- Další informace najdete v tématu [rozdíly mezi parametry a argumenty](./differences-between-parameters-and-arguments.md).  
+ For more information, see [Differences Between Parameters and Arguments](./differences-between-parameters-and-arguments.md).  
   
-## <a name="parameter-data-type"></a>Datový typ parametru  
- Definovat datový typ pro parametr pomocí `As` klauzule v jeho deklaraci. Například následující funkce přijímá řetězec a celé číslo.  
+## <a name="parameter-data-type"></a>Parameter Data Type  
+ You define a data type for a parameter by using the `As` clause in its declaration. For example, the following function accepts a string and an integer.  
   
  [!code-vb[VbVbcnProcedures#32](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#32)]  
   
- Pokud kontrola typu ([Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) je `Off,` `As` klauzule je volitelné, s tím rozdílem, že pokud ho používáte jakékoli jeden parametr, musíte použít všechny parametry, ho. Pokud je kontrola typu `On`, `As` klauzule se vyžaduje pro všechny parametry procedury.  
+ If the type checking switch ([Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) is `Off,` the `As` clause is optional, except that if any one parameter uses it, all parameters must use it. If type checking is `On`, the `As` clause is required for all procedure parameters.  
   
- Pokud volající kód očekává, že chcete zadat argument s datovým typem, který se liší od odpovídajícího parametru, například `Byte` k `String` parametr, musíte udělat jednu z následujících:  
+ If the calling code expects to supply an argument with a data type different from that of its corresponding parameter, such as `Byte` to a `String` parameter, it must do one of the following:  
   
-- Zadejte pouze argumenty s datovými typy, které rozšířit na datový typ parametru;  
+- Supply only arguments with data types that widen to the parameter data type;  
   
-- Nastavte `Option Strict Off` povolit implicitní zužující převody; nebo  
+- Set `Option Strict Off` to allow implicit narrowing conversions; or  
   
-- Použijte klíčové slovo převodu k explicitnímu převodu datového typu.  
+- Use a conversion keyword to explicitly convert the data type.  
   
 ### <a name="type-parameters"></a>Parametry typu  
- A *obecný postup* také definuje jeden nebo více *parametry typu* kromě své normální parametry. Obecný postup umožňuje volajícímu kódu k předání různých typů dat pokaždé, když volá proceduru, takže ho můžete přizpůsobit datové typy s požadavky každého jednotlivého volání. Zobrazit [obecné procedury v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md).  
+ A *generic procedure* also defines one or more *type parameters* in addition to its normal parameters. A generic procedure allows the calling code to pass different data types each time it calls the procedure, so it can tailor the data types to the requirements of each individual call. See [Generic Procedures in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md).  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -69,4 +69,4 @@ Ve většině případů postup potřebuje určité informace o okolnostech, ve 
 - [Postupy: Předání argumentů proceduře](./how-to-pass-arguments-to-a-procedure.md)
 - [Předávání argumentů podle hodnoty a reference](./passing-arguments-by-value-and-by-reference.md)
 - [Přetížení procedury](./procedure-overloading.md)
-- [Převody typů v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [Type Conversions in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)

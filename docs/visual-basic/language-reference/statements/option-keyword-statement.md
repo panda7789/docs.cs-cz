@@ -1,25 +1,25 @@
 ---
-title: Možnost <keyword> – příkaz (Visual Basic)
+title: Option <keyword> – příkaz
 ms.date: 07/20/2015
 f1_keywords:
 - vb.option
 helpviewer_keywords:
 - Option keyword [Visual Basic]
 ms.assetid: 6b2f41c4-2403-43b6-8a14-94a3775e5b47
-ms.openlocfilehash: 96ab02bf61f6b326c3f09615bf19f9e2ecae7e86
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6ac0116b56fac7a5bfdc6545c8570317376791a1
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61784017"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353778"
 ---
-# <a name="option-keyword-statement"></a>Možnost \<– klíčové slovo > – příkaz
-Zavádí příkaz, který určuje možnost kompilátoru, která se vztahuje k celému zdrojovému souboru.  
+# <a name="option-keyword-statement"></a>Option \<keyword> Statement
+Introduces a statement that specifies a compiler option that applies to the entire source file.  
   
 ## <a name="remarks"></a>Poznámky  
- Možnosti kompilátoru můžete řídit, jestli všechny proměnné musí být explicitně deklarovány, zda zužujících převodů typu musí být explicitní nebo určuje, zda by měly být porovnány řetězců jako text nebo binární množství.  
+ The compiler options can control whether all variables must be explicitly declared, whether narrowing type conversions must be explicit, or whether strings should be compared as text or as binary quantities.  
   
- `Option` – Klíčové slovo lze použít v těchto kontextech:  
+ The `Option` keyword can be used in these contexts:  
   
  [Příkaz Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md)  
   

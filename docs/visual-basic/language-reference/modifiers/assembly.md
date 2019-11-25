@@ -1,5 +1,5 @@
 ---
-title: Sestavení (Visual Basic)
+title: Assembly
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Assembly
@@ -10,24 +10,24 @@ helpviewer_keywords:
 - Assembly keyword [Visual Basic]
 - attribute blocks, Assembly keyword
 ms.assetid: 925e7471-3bdf-4b51-bb93-cbcfc6efc52f
-ms.openlocfilehash: 819fa9cf1bd25e9426fb1e75925a269fcf7a71cd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1385919a1205a60104125fff1bdd24f409a091df
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61801983"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351638"
 ---
 # <a name="assembly-visual-basic"></a>Sestavení (Visual Basic)
-Určuje, že atribut na začátku zdrojového souboru se vztahuje na celé sestavení.  
+Specifies that an attribute at the beginning of a source file applies to the entire assembly.  
   
 ## <a name="remarks"></a>Poznámky  
- Mnoho atributů se vztahují na jednotlivý programový element, jako je třída nebo vlastnost. Použijte takový atribut připojením atribut bloku, v lomených závorkách (`< >`), přímo do příkazu deklarace.  
+ Many attributes pertain to an individual programming element, such as a class or property. You apply such an attribute by attaching the attribute block, within angle brackets (`< >`), directly to the declaration statement.  
   
- Pokud atribut se vztahuje pouze na tento element, ale na celé sestavení, umístěte blok atribut na začátku zdrojového souboru a identifikovat atribut s `Assembly` – klíčové slovo. Pokud se vztahuje na aktuální modul sestavení, můžete použít [modulu](../../../visual-basic/language-reference/modifiers/module-keyword.md) – klíčové slovo.  
+ If an attribute pertains not only to the following element but to the entire assembly, you place the attribute block at the beginning of the source file and identify the attribute with the `Assembly` keyword. If it applies to the current assembly module, you use the [Module](../../../visual-basic/language-reference/modifiers/module-keyword.md) keyword.  
   
- Můžete také použít atribut na sestavení v souboru AssemblyInfo.vb v takovém případě není potřeba použít blok atributu v souboru hlavní zdrojového kódu.  
+ You can also apply an attribute to an assembly in the AssemblyInfo.vb file, in which case you do not have to use an attribute block in your main source-code file.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Module \<keyword>](../../../visual-basic/language-reference/modifiers/module-keyword.md)
-- [Přehled atributy](../../../visual-basic/programming-guide/concepts/attributes/index.md)
+- [Attributes overview](../../../visual-basic/programming-guide/concepts/attributes/index.md)

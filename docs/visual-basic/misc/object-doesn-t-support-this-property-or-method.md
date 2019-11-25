@@ -1,22 +1,22 @@
 ---
-title: Objekt nepodporuje tuto vlastnost nebo metodu (Visual Basic)
+title: Objekt tuto vlastnost nebo metodu nepodporuje.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrID438
 ms.assetid: d6b1a52b-47bc-4391-b5a4-5c359b2169b9
-ms.openlocfilehash: 351bca3b7b60a687bd9d7c3fad25ceb4c733bf9a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5435c4193bf620d49cbd9ea14ad76fe38f40474a
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64601393"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353860"
 ---
-# <a name="object-doesnt-support-this-property-or-method-visual-basic"></a>Objekt nepodporuje tuto vlastnost nebo metodu (Visual Basic)
-Zadali jste metodu nebo vlastnost, která neexistuje pro tento objekt automatizace.  
+# <a name="object-doesnt-support-this-property-or-method-visual-basic"></a>Object doesn't support this property or method (Visual Basic)
+You specified a method or property that does not exist for this automation object.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Přečtěte si dokumentaci k objektu pro další informace o objektu a zkontrolujte pravopis vlastností a metod.  
+- Read the object's documentation for more information on the object and check the spellings of properties and methods.  
   
 ## <a name="see-also"></a>Viz také:
 

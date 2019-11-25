@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Kvalifikace názvů elementů a atributů XML'
+title: 'How to: Qualify XML Element and XML Attribute Names'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,16 +9,16 @@ helpviewer_keywords:
 - qualifying XML elements
 - XML namespaces, qualifying elements and names in
 ms.assetid: 44719f90-7e15-42e8-a9e2-282287e2b5bf
-ms.openlocfilehash: 04e9dd3c135c516fa5554b9b547306337fb6a668
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1f79caf6ff295d793c615b17d387cdd165e440e7
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64755402"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353097"
 ---
-# <a name="how-to-qualify-xml-element-and-xml-attribute-names"></a>Postupy: Kvalifikace názvů elementů a atributů XML
+# <a name="how-to-qualify-xml-element-and-xml-attribute-names"></a>How to: Qualify XML Element and XML Attribute Names
 
-Obory názvů XML, které obsahují touto instancí <xref:System.Xml.Serialization.XmlSerializerNamespaces> třída musí odpovídat specifikaci World Wide Web Consortium (W3C) volá [obory názvů v XML](https://www.w3.org/TR/REC-xml-names/).
+XML namespaces contained by instances of the <xref:System.Xml.Serialization.XmlSerializerNamespaces> class must conform to the World Wide Web Consortium (W3C) specification called [Namespaces in XML](https://www.w3.org/TR/REC-xml-names/).
 
 Obory názvů XML poskytuje metodu pro kvalifikované názvy elementů XML a atributy ve formátu XML v dokumentech XML. Úplný název se skládá z předpony a názvu místní, oddělených středníkem. Předpona, která funguje pouze jako zástupný symbol; je mapován na identifikátor URI, který určuje obor názvů. Kombinace oboru názvů univerzálně spravované identifikátoru URI a místní název vytváří název, který je musí být jedinečný.
 
@@ -42,6 +42,7 @@ Po vytvoření instance `XmlSerializerNamespaces` a přidání dvojice názvů d
 
 Následující příklad vytvoří `XmlSerializerNamespaces`, a přidá dvě dvojice předpony a oboru názvů do objektu. Kód vytvoří `XmlSerializer` která je použita k serializaci instancí `Books` třídy. Volání kódu `Serialize` metodu se `XmlSerializerNamespaces`, povolení XML tak, aby obsahovala s předponou obory názvů.
 
+<!-- TODO: THE FOLLOWING VB SNIPPET ISN'T CORRECT!! -->
 ```vb
 Option Explicit
 public class Price
@@ -176,6 +177,6 @@ public class Book
 - [Představení serializace XML](introducing-xml-serialization.md)
 - [XmlSerializer Class](xref:System.Xml.Serialization.XmlSerializer)
 - [Seznam atributů řídících serializaci XML](attributes-that-control-xml-serialization.md)
-- [Postupy: Určení alternativního názvu elementu pro Stream XML](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
+- [Postupy: Zadání alternativního názvu elementu pro XML stream](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
 - [Postupy: Serializace objektu](how-to-serialize-an-object.md)
 - [Postupy: Deserializace objektu](how-to-deserialize-an-object.md)

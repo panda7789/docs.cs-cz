@@ -1,5 +1,5 @@
 ---
-title: Dim – příkaz (Visual Basic)
+title: Dim – příkaz
 ms.date: 05/12/2018
 f1_keywords:
 - vb.Dim
@@ -29,16 +29,16 @@ helpviewer_keywords:
 - Dim statement [Visual Basic], syntax
 - variables [Visual Basic], member and local
 ms.assetid: fae3eca1-f0b2-4400-994b-7aa58a848448
-ms.openlocfilehash: 5663935db5fc7ad03d18ff94fae2be9a569290ac
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: ac66ffdba622673ef42017d147c05b2a2733dede
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72583425"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74343759"
 ---
 # <a name="dim-statement-visual-basic"></a>Dim – příkaz (Visual Basic)
 
-Deklaruje a přiděluje prostor úložiště pro jednu nebo více proměnných.
+Declares and allocates storage space for one or more variables.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -51,11 +51,11 @@ Dim [ WithEvents ] variablelist
 
 - `attributelist`
 
-  Volitelné. Viz [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md).
+  Volitelné. See [Attribute List](../../../visual-basic/language-reference/statements/attribute-list.md).
 
 - `accessmodifier`
 
-  Volitelné. Může to být jedna z následujících:
+  Volitelné. Can be one of the following:
 
   - [Public](../../../visual-basic/language-reference/modifiers/public.md)
 
@@ -69,77 +69,77 @@ Dim [ WithEvents ] variablelist
 
   - [Private Protected](../../language-reference/modifiers/private-protected.md)
 
-  Podívejte [se na úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).
+  See [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).
 
 - `Shared`
 
-  Volitelné. Viz [Shared](../../../visual-basic/language-reference/modifiers/shared.md).
+  Volitelné. See [Shared](../../../visual-basic/language-reference/modifiers/shared.md).
 
 - `Shadows`
 
-  Volitelné. Viz [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md).
+  Volitelné. See [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md).
 
 - `Static`
 
-  Volitelné. Viz [static](../../../visual-basic/language-reference/modifiers/static.md).
+  Volitelné. See [Static](../../../visual-basic/language-reference/modifiers/static.md).
 
 - `ReadOnly`
 
-  Volitelné. Zobrazit [jen pro čtení](../../../visual-basic/language-reference/modifiers/readonly.md).
+  Volitelné. See [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md).
 
 - `WithEvents`
 
-Volitelné. Určuje, že se jedná o objektové proměnné, které odkazují na instance třídy, které mohou vyvolat události. Viz [WithEvents](../../../visual-basic/language-reference/modifiers/withevents.md).
+Volitelné. Specifies that these are object variables that refer to instances of a class that can raise events. See [WithEvents](../../../visual-basic/language-reference/modifiers/withevents.md).
 
 - `variablelist`
 
-  Požadováno. Seznam proměnných, které jsou deklarovány v tomto příkazu.
+  Požadováno. List of variables being declared in this statement.
 
   `variable [ , variable ... ]`
 
-  Každý `variable` má následující syntaxi a části:
+  Each `variable` has the following syntax and parts:
 
-  `variablename [ ( [ boundslist ] ) ] [ As [ New ] datatype [ With` {`[ .propertyname = propinitializer [ , ... ] ] } ] ] [ = initializer ]`
+  `variablename [ ( [ boundslist ] ) ] [ As [ New ] datatype [ With`{`[ .propertyname = propinitializer [ , ... ] ] } ] ] [ = initializer ]`
 
-  |Částí|Popis|
+  |Part|Popis|
   |---|---|
-  |`variablename`|Požadováno. Název proměnné Viz [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|
-  |`boundslist`|Volitelné. Seznam mezí jednotlivých dimenzí proměnné pole|
-  |`New`|Volitelné. Vytvoří novou instanci třídy při spuštění příkazu `Dim`.|
-  |`datatype`|Volitelné. Datový typ proměnné|
-  |`With`|Volitelné. Zavádí seznam inicializátorů objektů.|
-  |`propertyname`|Volitelné. Název vlastnosti ve třídě, pro kterou vytváříte instanci.|
-  |`propinitializer`|Vyžadováno po `propertyname` =. Výraz, který je vyhodnocen a přiřazen k názvu vlastnosti.|
-  |`initializer`|Volitelné, pokud není zadán `New`. Výraz, který je vyhodnocen a přiřazen k proměnné při jejím vytvoření.|
+  |`variablename`|Požadováno. Name of the variable. See [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|
+  |`boundslist`|Volitelné. List of bounds of each dimension of an array variable.|
+  |`New`|Volitelné. Creates a new instance of the class when the `Dim` statement runs.|
+  |`datatype`|Volitelné. Data type of the variable.|
+  |`With`|Volitelné. Introduces the object initializer list.|
+  |`propertyname`|Volitelné. The name of a property in the class you are making an instance of.|
+  |`propinitializer`|Required after `propertyname` =. The expression that is evaluated and assigned to the property name.|
+  |`initializer`|Optional if `New` is not specified. Expression that is evaluated and assigned to the variable when it is created.|
 
 ## <a name="remarks"></a>Poznámky
 
-Kompilátor Visual Basic používá příkaz `Dim` k určení datového typu proměnné a dalších informací, jako je například jaký kód má přístup k proměnné. Následující příklad deklaruje proměnnou pro uchování `Integer` hodnoty.
+The Visual Basic compiler uses the `Dim` statement to determine the variable's data type and other information, such as what code can access the variable. The following example declares a variable to hold an `Integer` value.
 
 ```vb
 Dim numberOfStudents As Integer
 ```
 
-Můžete zadat libovolný datový typ nebo název výčtu, struktury, třídy nebo rozhraní.
+You can specify any data type or the name of an enumeration, structure, class, or interface.
 
 ```vb
 Dim finished As Boolean
 Dim monitorBox As System.Windows.Forms.Form
 ```
 
-Pro typ odkazu použijete klíčové slovo `New` k vytvoření nové instance třídy nebo struktury, která je určena datovým typem. Použijete-li `New`, nepoužijete výraz inicializátoru. Místo toho zadáte argumenty, pokud jsou požadovány, do konstruktoru třídy, ze které vytváříte proměnnou.
+For a reference type, you use the `New` keyword to create a new instance of the class or structure that is specified by the data type. If you use `New`, you do not use an initializer expression. Instead, you supply arguments, if they are required, to the constructor of the class from which you are creating the variable.
 
 ```vb
 Dim bottomLabel As New System.Windows.Forms.Label
 ```
 
-Proměnnou lze deklarovat v proceduře, bloku, třídě, struktuře nebo modulu. Nelze deklarovat proměnnou ve zdrojovém souboru, oboru názvů nebo rozhraní. Další informace najdete v tématu [deklarace kontextů a výchozích úrovní přístupu](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).
+You can declare a variable in a procedure, block, class, structure, or module. You cannot declare a variable in a source file, namespace, or interface. For more information, see [Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).
 
-Proměnná deklarovaná na úrovni modulu, mimo jakoukoli proceduru, je *členskou proměnnou* nebo *polem*. Členské proměnné jsou v oboru v rámci své třídy, struktury nebo modulu. Proměnná, která je deklarována na úrovni procedury, je *místní proměnná*. Lokální proměnné jsou v oboru pouze v rámci jejich procedury nebo bloku.
+A variable that is declared at module level, outside any procedure, is a *member variable* or *field*. Member variables are in scope throughout their class, structure, or module. A variable that is declared at procedure level is a *local variable*. Local variables are in scope only within their procedure or block.
 
-Následující modifikátory přístupu se používají k deklarování proměnných mimo proceduru: `Public`, `Protected`, `Friend`, `Protected Friend` a `Private`. Další informace najdete v tématu [úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).
+The following access modifiers are used to declare variables outside a procedure: `Public`, `Protected`, `Friend`, `Protected Friend`, and `Private`. For more information, see [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).
 
-Klíčové slovo `Dim` je nepovinné a obvykle se vynechává, pokud zadáte některý z následujících modifikátorů: `Public`, `Protected`, `Friend`, `Protected Friend`, `Private`, `Shared`, `Shadows`, `Static`, `ReadOnly` nebo 0.
+The `Dim` keyword is optional and usually omitted if you specify any of the following modifiers: `Public`, `Protected`, `Friend`, `Protected Friend`, `Private`, `Shared`, `Shadows`, `Static`, `ReadOnly`, or `WithEvents`.
 
 ```vb
 Public maximumAllowed As Double
@@ -148,18 +148,18 @@ Private salary As Decimal
 Static runningTotal As Integer
 ```
 
-Pokud je `Option Explicit` zapnuto (výchozí), kompilátor vyžaduje deklaraci pro každou proměnnou, kterou používáte. Další informace naleznete v tématu [Option Explicit – příkaz](../../../visual-basic/language-reference/statements/option-explicit-statement.md).
+If `Option Explicit` is on (the default), the compiler requires a declaration for every variable you use. For more information, see [Option Explicit Statement](../../../visual-basic/language-reference/statements/option-explicit-statement.md).
 
-## <a name="specifying-an-initial-value"></a>Určení počáteční hodnoty
+## <a name="specifying-an-initial-value"></a>Specifying an Initial Value
 
-Můžete přiřadit hodnotu proměnné při jejím vytvoření. Pro typ hodnoty použijete *inicializátor* k zadání výrazu, který má být přiřazen proměnné. Výraz se musí vyhodnotit na konstantu, kterou lze vypočítat v době kompilace.
+You can assign a value to a variable when it is created. For a value type, you use an *initializer* to supply an expression to be assigned to the variable. The expression must evaluate to a constant that can be calculated at compile time.
 
 ```vb
 Dim quantity As Integer = 10
 Dim message As String = "Just started"
 ```
 
-Pokud je určen inicializátor a datový typ není zadán v klauzuli `As`, je použita *odvození typu* pro odvození datového typu z inicializátoru. V následujícím příkladu jsou oba `num1` a `num2` silně typu Integer. Ve druhé deklaraci typu odvození typu odvodí typ z hodnoty 3.
+If an initializer is specified and a data type is not specified in an `As` clause, *type inference* is used to infer the data type from the initializer. In the following example, both `num1` and `num2` are strongly typed as integers. In the second declaration, type inference infers the type from the value 3.
 
 ```vb
 ' Use explicit typing.
@@ -169,30 +169,30 @@ Dim num1 As Integer = 3
 Dim num2 = 3
 ```
 
-Odvození typu se vztahuje na úroveň procedury. Nevztahuje se mimo proceduru ve třídě, struktuře, modulu nebo rozhraní. Další informace o odvození typu naleznete v tématu [Option include Statement](../../../visual-basic/language-reference/statements/option-infer-statement.md) a [místní typ odvození](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md).
+Type inference applies at the procedure level. It does not apply outside a procedure in a class, structure, module, or interface. For more information about type inference, see [Option Infer Statement](../../../visual-basic/language-reference/statements/option-infer-statement.md) and [Local Type Inference](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md).
 
-Informace o tom, co se stane, když není zadán datový typ nebo inicializátor, naleznete v části [výchozí datové typy a hodnoty](../../../visual-basic/language-reference/statements/dim-statement.md#default) dále v tomto tématu.
+For information about what happens when a data type or initializer is not specified, see [Default Data Types and Values](../../../visual-basic/language-reference/statements/dim-statement.md#default) later in this topic.
 
-Můžete použít *inicializátor objektu* pro deklaraci instancí pojmenovaného a anonymního typu. Následující kód vytvoří instanci třídy `Student` a k inicializaci vlastností používá inicializátor objektu.
+You can use an *object initializer* to declare instances of named and anonymous types. The following code creates an instance of a `Student` class and uses an object initializer to initialize properties.
 
 ```vb
 Dim student1 As New Student With {.First = "Michael",
                                   .Last = "Tucker"}
 ```
 
-Další informace o inicializátorech objektů naleznete v tématu [How to: Declare a Object Using](../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-declare-an-object-by-using-an-object-initializer.md)a inicializátor Object, [Inicializátory objektů: pojmenované a anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)a [anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).
+For more information about object initializers, see [How to: Declare an Object by Using an Object Initializer](../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-declare-an-object-by-using-an-object-initializer.md), [Object Initializers: Named and Anonymous Types](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md), and [Anonymous Types](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).
 
-## <a name="declaring-multiple-variables"></a>Deklarace více proměnných
+## <a name="declaring-multiple-variables"></a>Declaring Multiple Variables
 
-Můžete deklarovat několik proměnných v jednom příkazu deklarace, zadat název proměnné pro každý z nich a za každým názvem pole pomocí závorek. Více proměnných je odděleno čárkami.
+You can declare several variables in one declaration statement, specifying the variable name for each one, and following each array name with parentheses. Multiple variables are separated by commas.
 
 ```vb
 Dim lastTime, nextTime, allTimes() As Date
 ```
 
-Pokud deklarujete více než jednu proměnnou s jednou `As` klauzulí, nemůžete pro tuto skupinu proměnných dodat inicializátor.
+If you declare more than one variable with one `As` clause, you cannot supply an initializer for that group of variables.
 
-Pro každou proměnnou, kterou deklarujete, můžete určit různé typy dat pro různé proměnné pomocí samostatné klauzule `As`. Každá proměnná přebírá datový typ zadaný v první klauzuli `As`, který se objevil po jeho `variablename` část.
+You can specify different data types for different variables by using a separate `As` clause for each variable you declare. Each variable takes the data type specified in the first `As` clause encountered after its `variablename` part.
 
 ```vb
 Dim a, b, c As Single, x, y As Double, i As Integer
@@ -201,26 +201,26 @@ Dim a, b, c As Single, x, y As Double, i As Integer
 
 ## <a name="arrays"></a>Pole
 
-Můžete deklarovat proměnnou pro uchování *pole*, které může obsahovat více hodnot. Chcete-li určit, že proměnná obsahuje pole, postupujte podle `variablename` hned pomocí závorek. Další informace o polích naleznete v tématu [Arrays](../../../visual-basic/programming-guide/language-features/arrays/index.md).
+You can declare a variable to hold an *array*, which can hold multiple values. To specify that a variable holds an array, follow its `variablename` immediately with parentheses. For more information about arrays, see [Arrays](../../../visual-basic/programming-guide/language-features/arrays/index.md).
 
-Můžete zadat dolní a horní mez každého rozměru pole. Chcete-li to provést, zahrňte `boundslist` do závorek. Pro každou dimenzi `boundslist` určuje horní mez a volitelně i dolní mez. Dolní mez je vždycky nulová, ať už ji zadáte, nebo ne. Každý index se může od nuly pohybovat od hodnoty horní meze.
+You can specify the lower and upper bound of each dimension of an array. To do this, include a `boundslist` inside the parentheses. For each dimension, the `boundslist` specifies the upper bound and optionally the lower bound. The lower bound is always zero, whether you specify it or not. Each index can vary from zero through its upper bound value.
 
-Následující dva příkazy jsou ekvivalentní. Každý příkaz deklaruje pole 21 `Integer` prvků. Když přistupujete k poli, index se může lišit od 0 do 20.
+The following two statements are equivalent. Each statement declares an array of 21 `Integer` elements. When you access the array, the index can vary from 0 through 20.
 
 ```vb
 Dim totals(20) As Integer
 Dim totals(0 To 20) As Integer
 ```
 
-Následující příkaz deklaruje dvojrozměrné pole typu `Double`. Pole má 4 řádky (3 + 1) z 6 sloupců (5 + 1). Všimněte si, že horní mez představuje nejvyšší možnou hodnotu indexu, nikoli délku dimenze. Délka dimenze je horní mez plus jedna.
+The following statement declares a two-dimensional array of type `Double`. The array has 4 rows (3 + 1) of 6 columns (5 + 1) each. Note that an upper bound represents the highest possible value for the index, not the length of the dimension. The length of the dimension is the upper bound plus one.
 
 ```vb
 Dim matrix2(3, 5) As Double
 ```
 
-Pole může mít 1 až 32 dimenzí.
+An array can have from 1 to 32 dimensions.
 
-V deklaraci pole můžete ponechat všechny meze prázdné. Pokud to uděláte, pole má počet dimenzí, které zadáte, ale není inicializovaný. Má hodnotu `Nothing`, dokud neinicializujete alespoň některé z jeho prvků. Příkaz `Dim` musí určovat meze buď pro všechny dimenze, nebo pro žádné dimenze.
+You can leave all the bounds blank in an array declaration. If you do this, the array has the number of dimensions you specify, but it is uninitialized. It has a value of `Nothing` until you initialize at least some of its elements. The `Dim` statement must specify bounds either for all dimensions or for no dimensions.
 
 ```vb
 ' Declare an array with blank array bounds.
@@ -229,97 +229,97 @@ Dim messages() As String
 ReDim messages(4)
 ```
 
-Pokud má pole více než jednu dimenzi, je nutné zahrnout čárky mezi závorky, které označují počet rozměrů.
+If the array has more than one dimension, you must include commas between the parentheses to indicate the number of dimensions.
 
 ```vb
 Dim oneDimension(), twoDimensions(,), threeDimensions(,,) As Byte
 ```
 
-*Pole s nulovou délkou* můžete deklarovat deklarováním jednoho z dimenzí pole, které je-1. Proměnná, která obsahuje pole s nulovou délkou, nemá hodnotu `Nothing`. Pole s nulovou délkou jsou vyžadovány některými funkcemi modulu CLR (Common Language Runtime). Pokud se pokusíte o přístup k takovému poli, dojde k výjimce modulu runtime. Další informace naleznete v tématu [pole](../../../visual-basic/programming-guide/language-features/arrays/index.md).
+You can declare a *zero-length array* by declaring one of the array's dimensions to be -1. A variable that holds a zero-length array does not have the value `Nothing`. Zero-length arrays are required by certain common language runtime functions. If you try to access such an array, a runtime exception occurs. For more information, see [Arrays](../../../visual-basic/programming-guide/language-features/arrays/index.md).
 
-Hodnoty pole lze inicializovat pomocí literálu pole. Provedete to tak, že tyto inicializační hodnoty uzavřete do složených závorek (`{}`).
+You can initialize the values of an array by using an array literal. To do this, surround the initialization values with braces (`{}`).
 
 ```vb
 Dim longArray() As Long = {0, 1, 2, 3}
 ```
 
-Pro multidimenzionální pole je inicializace pro každou samostatnou dimenzi uzavřena do složených závorek ve vnější dimenzi. Prvky jsou uvedeny v pořadí podle hlavní řady.
+For multidimensional arrays, the initialization for each separate dimension is enclosed in braces in the outer dimension. The elements are specified in row-major order.
 
 ```vb
 Dim twoDimensions(,) As Integer = {{0, 1, 2}, {10, 11, 12}}
 ```
 
-Další informace o literálech pole naleznete v tématu [Arrays](../../../visual-basic/programming-guide/language-features/arrays/index.md).
+For more information about array literals, see [Arrays](../../../visual-basic/programming-guide/language-features/arrays/index.md).
 
-## <a name="default"></a>Výchozí datové typy a hodnoty
+## <a name="default"></a> Default Data Types and Values
 
-Následující tabulka popisuje výsledky různých kombinací určení datového typu a inicializátoru v příkazu `Dim`.
+The following table describes the results of various combinations of specifying the data type and initializer in a `Dim` statement.
 
-|Byl zadán datový typ?|Byl určen inicializátor?|Příklad|Výsledek|
+|Data type specified?|Initializer specified?|Příklad|Výsledek|
 |---|---|---|---|
-|Ne|Ne|`Dim qty`|Pokud je [možnost Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md) vypnutá (výchozí nastavení), proměnná je nastavená na `Nothing`.<br /><br /> Pokud je `Option Strict` zapnutý, dojde k chybě při kompilaci.|
-|Ne|Ano|`Dim qty = 5`|Pokud je nastavená [možnost odvodit](../../../visual-basic/language-reference/statements/option-infer-statement.md) (výchozí), proměnná vezme datový typ inicializátoru. Viz [odvození místního typu](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md).<br /><br /> Pokud je `Option Infer` vypnuto a `Option Strict` je vypnutý, proměnná převezme datový typ `Object`.<br /><br /> Pokud je `Option Infer` vypnuto a `Option Strict` je zapnutá, dojde k chybě při kompilaci.|
-|Ano|Ne|`Dim qty As Integer`|Proměnná je inicializována na výchozí hodnotu pro datový typ. Další informace najdete v tabulce dále v této části.|
-|Ano|Ano|`Dim qty  As Integer = 5`|Pokud datový typ inicializátoru nelze převést na zadaný datový typ, dojde k chybě při kompilaci.|
+|Ne|Ne|`Dim qty`|If [Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md) is off (the default), the variable is set to `Nothing`.<br /><br /> If `Option Strict` is on, a compile-time error occurs.|
+|Ne|Ano|`Dim qty = 5`|If [Option Infer](../../../visual-basic/language-reference/statements/option-infer-statement.md) is on (the default), the variable takes the data type of the initializer. See [Local Type Inference](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md).<br /><br /> If `Option Infer` is off and `Option Strict` is off, the variable takes the data type of `Object`.<br /><br /> If `Option Infer` is off and `Option Strict` is on, a compile-time error occurs.|
+|Ano|Ne|`Dim qty As Integer`|The variable is initialized to the default value for the data type. See the table later in this section.|
+|Ano|Ano|`Dim qty  As Integer = 5`|If the data type of the initializer is not convertible to the specified data type, a compile-time error occurs.|
 
-Zadáte-li datový typ, ale nezadáte inicializátor, Visual Basic inicializuje proměnnou na výchozí hodnotu pro svůj datový typ. V následující tabulce jsou uvedeny výchozí inicializační hodnoty.
+If you specify a data type but do not specify an initializer, Visual Basic initializes the variable to the default value for its data type. The following table shows the default initialization values.
 
-|Datový typ|Výchozí hodnota|
+|Datový typ|Default value|
 |---|---|
-|Všechny číselné typy (včetně `Byte` a `SByte`)|0,8|
-|`Char`|Binární hodnota 0|
-|Všechny typy odkazů (včetně `Object`, `String` a všech polí)|`Nothing`|
+|All numeric types (including `Byte` and `SByte`)|0|
+|`Char`|Binary 0|
+|All reference types (including `Object`, `String`, and all arrays)|`Nothing`|
 |`Boolean`|`False`|
-|`Date`|12:00 z 1. ledna v roce 1 (01/01/0001 12:00:00 dop.)|
+|`Date`|12:00 AM of January 1 of the year 1 (01/01/0001 12:00:00 AM)|
 
-Každý prvek struktury je inicializován, jako by šlo o samostatnou proměnnou. Pokud deklarujete délku pole, ale neinicializujete jeho prvky, každý prvek je inicializován, jako by šlo o samostatnou proměnnou.
+Each element of a structure is initialized as if it were a separate variable. If you declare the length of an array but do not initialize its elements, each element is initialized as if it were a separate variable.
 
-## <a name="static-local-variable-lifetime"></a>Životnost statické lokální proměnné
+## <a name="static-local-variable-lifetime"></a>Static Local Variable Lifetime
 
-@No__t_0 místní proměnná má delší dobu života, než je procedura, ve které je deklarována. Hranice životnosti proměnné závisí na tom, kde je procedura deklarována a zda je `Shared`.
+A `Static` local variable has a longer lifetime than that of the procedure in which it is declared. The boundaries of the variable's lifetime depend on where the procedure is declared and whether it is `Shared`.
 
-|Deklarace procedury|Proměnná inicializovaná|Proměnná zastaví existující.|
+|Procedure declaration|Variable initialized|Variable stops existing|
 |---|---|---|
-|V modulu|Při prvním volání procedury|Když váš program zastaví provádění|
-|V rámci třídy nebo struktury je procedura `Shared`|Při prvním volání procedury buď na konkrétní instanci, nebo v samotné třídě nebo struktuře|Když váš program zastaví provádění|
-|V třídě nebo struktuře není procedura `Shared`|Při prvním volání procedury na konkrétní instanci|Při uvolnění instance pro uvolňování paměti (GC)|
+|In a module|The first time the procedure is called|When your program stops execution|
+|In a class or structure, procedure is `Shared`|The first time the procedure is called either on a specific instance or on the class or structure itself|When your program stops execution|
+|In a class or structure, procedure isn't `Shared`|The first time the procedure is called on a specific instance|When the instance is released for garbage collection (GC)|
 
-## <a name="attributes-and-modifiers"></a>Atributy a modifikátory
+## <a name="attributes-and-modifiers"></a>Attributes and Modifiers
 
-Můžete použít atributy pouze na členské proměnné, nikoli na lokální proměnné. Atribut přispívá k metadatům sestavení, která nejsou smysluplná pro dočasné úložiště, jako jsou místní proměnné.
+You can apply attributes only to member variables, not to local variables. An attribute contributes information to the assembly's metadata, which is not meaningful for temporary storage such as local variables.
 
-Na úrovni modulu nemůžete použít modifikátor `Static` k deklaraci proměnných členů. Na úrovni procedury nelze použít `Shared`, `Shadows`, `ReadOnly`, `WithEvents` nebo žádné modifikátory přístupu k deklaraci místních proměnných.
+At module level, you cannot use the `Static` modifier to declare member variables. At procedure level, you cannot use `Shared`, `Shadows`, `ReadOnly`, `WithEvents`, or any access modifiers to declare local variables.
 
-Můžete určit, který kód má přístup k proměnné, zadáním `accessmodifier`. Proměnné členů třídy a modulu (mimo všechny procedury) výchozí pro privátní přístup a proměnné členů struktury jako výchozí pro veřejný přístup. Můžete upravit jejich úrovně přístupu modifikátory přístupu. Modifikátory přístupu nemůžete použít u místních proměnných (uvnitř procedury).
+You can specify what code can access a variable by supplying an `accessmodifier`. Class and module member variables (outside any procedure) default to private access, and structure member variables default to public access. You can adjust their access levels with the access modifiers. You cannot use access modifiers on local variables (inside a procedure).
 
-@No__t_0 lze zadat pouze pro členské proměnné, nikoli pro lokální proměnné v rámci procedury. Pokud zadáte `WithEvents`, datový typ proměnné musí být konkrétní typ třídy, ne `Object`. Pole nelze deklarovat pomocí `WithEvents`. Další informace o událostech najdete v tématu [události](../../../visual-basic/programming-guide/language-features/events/index.md).
+You can specify `WithEvents` only on member variables, not on local variables inside a procedure. If you specify `WithEvents`, the data type of the variable must be a specific class type, not `Object`. You cannot declare an array with `WithEvents`. For more information about events, see [Events](../../../visual-basic/programming-guide/language-features/events/index.md).
 
 > [!NOTE]
-> Kód mimo třídu, strukturu nebo modul musí kvalifikovat název členské proměnné s názvem této třídy, struktury nebo modulu. Kód mimo proceduru nebo blok nemůže odkazovat na žádné místní proměnné v rámci tohoto postupu nebo bloku.
+> Code outside a class, structure, or module must qualify a member variable's name with the name of that class, structure, or module. Code outside a procedure or block cannot refer to any local variables within that procedure or block.
 
-## <a name="releasing-managed-resources"></a>Uvolňování spravovaných prostředků
+## <a name="releasing-managed-resources"></a>Releasing Managed Resources
 
-Systém uvolňování paměti .NET Framework uvolní spravované prostředky bez jakéhokoli dalšího kódování na vaší straně. Místo toho, abyste čekali na uvolňování paměti, ale můžete vynutit vyřazení spravovaného prostředku.
+The .NET Framework garbage collector disposes of managed resources without any extra coding on your part. However, you can force the disposal of a managed resource instead of waiting for the garbage collector.
 
-Pokud třída obsahuje obzvláště cenný a omezených prostředek (například připojení k databázi nebo popisovač souboru), nebudete chtít počkat do dalšího uvolňování paměti, aby se vyčistila instance třídy, která se už nepoužívá. Třída může implementovat rozhraní <xref:System.IDisposable>, aby poskytovala způsob, jak uvolnit prostředky před uvolňováním paměti. Třída, která implementuje toto rozhraní, zpřístupňuje `Dispose` metodu, která může být volána, aby vynutila okamžité vydání cenných prostředků.
+If a class holds onto a particularly valuable and scarce resource (such as a database connection or file handle), you might not want to wait until the next garbage collection to clean up a class instance that's no longer in use. A class may implement the <xref:System.IDisposable> interface to provide a way to release resources before a garbage collection. A class that implements that interface exposes a `Dispose` method that can be called to force valuable resources to be released immediately.
 
-Příkaz `Using` automatizuje proces získání prostředku, spuštění sady příkazů a následné likvidaci prostředku. Prostředek však musí implementovat rozhraní <xref:System.IDisposable>. Další informace naleznete v tématu [using – příkaz](../../../visual-basic/language-reference/statements/using-statement.md).
+The `Using` statement automates the process of acquiring a resource, executing a set of statements, and then disposing of the resource. However, the resource must implement the <xref:System.IDisposable> interface. For more information, see [Using Statement](../../../visual-basic/language-reference/statements/using-statement.md).
 
 ## <a name="example"></a>Příklad
 
-Následující příklad deklaruje proměnné pomocí příkazu `Dim` s různými možnostmi.
+The following example declares variables by using the `Dim` statement with various options.
 
 [!code-vb[VbVbalrStatements#141](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class11.vb#141)]
 
 ## <a name="example"></a>Příklad
 
-Následující příklad uvádí hlavní čísla mezi 1 a 30. Rozsah místních proměnných je popsán v komentářích ke kódu.
+The following example lists the prime numbers between 1 and 30. The scope of local variables is described in code comments.
 
 [!code-vb[VbVbalrStatements#142](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class11.vb#142)]
 
 ## <a name="example"></a>Příklad
 
-V následujícím příkladu je proměnná `speedValue` deklarována na úrovni třídy. Klíčové slovo `Private` slouží k deklaraci proměnné. K proměnné lze přistupovat jakýmkoli postupem ve třídě `Car`.
+In the following example, the `speedValue` variable is declared at the class level. The `Private` keyword is used to declare the variable. The variable can be accessed by any procedure in the `Car` class.
 
 [!code-vb[VbVbalrStatements#144](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class11.vb#144)]
 

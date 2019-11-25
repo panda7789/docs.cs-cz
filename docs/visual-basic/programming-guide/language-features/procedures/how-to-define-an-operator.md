@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Definice operátora (Visual Basic)'
+title: 'Postupy: Definice operátora'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - procedures [Visual Basic], defining
@@ -13,36 +13,36 @@ helpviewer_keywords:
 - return values [Visual Basic], Operator procedures
 - operator overloading
 ms.assetid: d4b0e253-092a-4e6e-9fe2-01f562140a29
-ms.openlocfilehash: 14aa25de78eb357f8474d3828aa45e48e7a4f9c7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b99af8ff4d5428f1749bfc1a4c51a136f12405ee
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61863842"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344864"
 ---
 # <a name="how-to-define-an-operator-visual-basic"></a>Postupy: Definice operátora (Visual Basic)
-Pokud jste definovali třídy nebo struktury, můžete definovat chování standardní – operátor (například `*`, `<>`, nebo `And`) Pokud je jeden nebo oba operandy typu třídy nebo struktury.  
+If you have defined a class or structure, you can define the behavior of a standard operator (such as `*`, `<>`, or `And`) when one or both of the operands is of the type of your class or structure.  
   
- Standardní operátor definujte jako procedury operátora v rámci třídy nebo struktury. Musí být všechny procedury operátoru `Public` `Shared`.  
+ Define the standard operator as an operator procedure within the class or structure. All operator procedures must be `Public` `Shared`.  
   
- Definování v třídě nebo struktuře operátor se také nazývá *přetížení* operátor.  
+ Defining an operator on a class or structure is also called *overloading* the operator.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad definuje `+` volat operátor pro strukturu `height`. Struktura používá měřené v stopy a palce výšky. Jeden *palec* je 2,54 cm a jedno *zápatí* 12 palců. Aby bylo zajištěno normalizované hodnoty (palce < 12.0), konstruktor provádí *modulo* aritmetické 12. `+` Operátor používá konstruktor k vygenerování normalizované hodnoty.  
+ The following example defines the `+` operator for a structure called `height`. The structure uses heights measured in feet and inches. One *inch* is 2.54 centimeters, and one *foot* is 12 inches. To ensure normalized values (inches < 12.0), the constructor performs *modulo* 12 arithmetic. The `+` operator uses the constructor to generate normalized values.  
   
  [!code-vb[VbVbcnProcedures#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#25)]  
   
- Můžete otestovat strukturu `height` následujícím kódem.  
+ You can test the structure `height` with the following code.  
   
  [!code-vb[VbVbcnProcedures#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#26)]  
 
 ## <a name="see-also"></a>Viz také:
 
 - [Procedury operátoru](./operator-procedures.md)
-- [Postupy: Definice operátora převodu](./how-to-define-a-conversion-operator.md)
-- [Postupy: Volání procedury operátora](./how-to-call-an-operator-procedure.md)
+- [Postupy: Definice operátoru převodu](./how-to-define-a-conversion-operator.md)
+- [Postupy: Volání procedury operátoru](./how-to-call-an-operator-procedure.md)
 - [Postupy: Použití třídy, která definuje operátory](./how-to-use-a-class-that-defines-operators.md)
 - [Příkaz Operator](../../../../visual-basic/language-reference/statements/operator-statement.md)
 - [Příkaz Structure](../../../../visual-basic/language-reference/statements/structure-statement.md)
-- [Postupy: Deklarace struktury](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)
+- [Postupy: Definice struktury](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)
 - [Operátor Mod](../../../../visual-basic/language-reference/operators/mod-operator.md)
