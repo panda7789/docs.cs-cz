@@ -1,25 +1,25 @@
 ---
-title: Hledání textu v dokumentech aplikace Word (Visual Basic)
+title: Vyhledání textu v dokumentech Wordu
 ms.date: 07/20/2015
 ms.assetid: eea9819b-a78a-4552-bf13-8837fc0e7a37
-ms.openlocfilehash: 9eb5eaa8326167501792745da047f904cf001c29
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: a9af050abe13bfd2f0af0a31c102f8a6ab026128
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71352922"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353475"
 ---
-# <a name="finding-text-in-word-documents-visual-basic"></a>Hledání textu v dokumentech aplikace Word (Visual Basic)
+# <a name="finding-text-in-word-documents-visual-basic"></a>Finding Text in Word Documents (Visual Basic)
 
-Toto téma rozšiřuje předchozí dotazy, aby bylo možné něco využít: vyhledá všechny výskyty řetězce v dokumentu.
+This topic extends the previous queries to do something useful: find all occurrences of a string in the document.
 
 ## <a name="example"></a>Příklad
 
-Tento příklad zpracovává dokument WordprocessingML, aby bylo možné najít všechny výskyty určitého textu v dokumentu. K tomu použijeme dotaz, který najde řetězec "Hello". Tento příklad sestaví na předchozích příkladech v tomto kurzu. Nový dotaz se zavolá v komentářích v následujícím kódu.
+This example processes a WordprocessingML document, to find all the occurrences of a specific piece of text in the document. To do this, we use a query that finds the string "Hello". This example builds on the previous examples in this tutorial. The new query is called out in comments in the code below.
 
-Pokyny k vytvoření zdrojového dokumentu pro tento příklad najdete v tématu [vytvoření zdrojového dokumentu XML pro Office Open (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).
+For instructions for creating the source document for this example, see [Creating the Source Office Open XML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).
 
-Tento příklad používá třídy nalezené v sestavení WindowsBase. Používá typy v oboru názvů <xref:System.IO.Packaging?displayProperty=nameWithType>.
+This example uses classes found in the WindowsBase assembly. It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.
 
 ```vb
 Imports <xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
@@ -153,14 +153,14 @@ Module Module1
 End Module
 ```
 
-Tento příklad vytvoří následující výstup:
+This example produces the following output:
 
 ```console
 StyleName:Code >        Console.WriteLine("Hello World")<
 StyleName:Code >Hello World<
 ```
 
-Můžete samozřejmě upravit hledání tak, aby vyhledalo řádky s konkrétním stylem. Následující dotaz vyhledá všechny prázdné řádky, které mají styl kódu:
+You can, of course, modify the search so that it searches for lines with a specific style. The following query finds all blank lines that have the Code style:
 
 ```vb
 Imports System.IO.Packaging
@@ -294,24 +294,24 @@ Module Module1
 End Module
 ```
 
-Tento příklad vytvoří následující výstup:
+This example produces the following output:
 
 ```console
 StyleName:Code ><
 ```
 
-Tento příklad je samozřejmě možné rozšířit různými způsoby. Například můžeme použít regulární výrazy pro hledání textu, můžeme iterovat všemi soubory aplikace Word v konkrétním adresáři a tak dále.
+Of course, this example could be enhanced in a number of ways. For example, we could use regular expressions to search for text, we could iterate through all the Word files in a particular directory, and so on.
 
-Všimněte si, že v tomto příkladu se provádí přibližně i když byl zapsaný jako jeden dotaz. Vzhledem k tomu, že každý dotaz je implementován v opožděném, odvoditelné podobě, každý dotaz nepřinese výsledky, dokud se dotaz neopakuje. Další informace o provádění a opožděném vyhodnocení naleznete [v tématu Odložené provádění a opožděné hodnocení v LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).
+Note that this example performs approximately as well as if it were written as a single query. Because each query is implemented in a lazy, deferred fashion, each query does not yield its results until the query is iterated. For more information about execution and lazy evaluation, see [Deferred Execution and Lazy Evaluation in LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md).
 
 ## <a name="next-steps"></a>Další kroky
 
-V další části najdete další informace o WordprocessingML dokumentech:
+The next section provides more information about WordprocessingML documents:
 
-- [Podrobnosti dokumentů Office Open XML WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)
+- [Details of Office Open XML WordprocessingML Documents (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)
 
 ## <a name="see-also"></a>Viz také:
 
-- [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (Visual Basic) ](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
-- [Refaktoring pomocí funkce Pure (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)
-- [Odložené provádění a opožděné vyhodnocení v LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)
+- [Tutorial: Manipulating Content in a WordprocessingML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [Refactoring Using a Pure Function (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)
+- [Deferred Execution and Lazy Evaluation in LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)

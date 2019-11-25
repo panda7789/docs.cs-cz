@@ -2,27 +2,28 @@
 title: Výkon Windows Workflow Foundation 4
 ms.date: 03/30/2017
 ms.assetid: 67d2b3e8-3777-49f8-9084-abbb33b5a766
-ms.openlocfilehash: c656d1e23c7314cfd7b772faef842296d03e4af1
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 9a7e1dd2c5ab92ace955aa3b3095f2ed04ee3272
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "70989586"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283225"
 ---
 # <a name="windows-workflow-foundation-4-performance"></a>Výkon Windows Workflow Foundation 4
 
- Microsoft [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] obsahuje zásadní revizi programovací model Windows Workflow Foundation (WF) s vysokými investicemi do výkonu.  Tato nová revize přináší významné změny návrhu z předchozích verzí [!INCLUDE[wf1](../../../includes/wf1-md.md)], které byly dodány jako součást .NET Framework 3,0 a [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)]. Byl znovu navržený z jádra programovacího modelu, modulu runtime a nástrojů, aby významně vylepšil výkon a použitelnost. Toto téma ukazuje důležité charakteristiky výkonu těchto revizí a porovnává je s předchozími verzemi.
+ .NET Framework 4 zahrnuje zásadní revizi programovací model Windows Workflow Foundation (WF) s vysokými investicemi do výkonu. Tato nová revize přináší významné změny návrhu z předchozích verzí [!INCLUDE[wf1](../../../includes/wf1-md.md)], které byly dodávány jako součást .NET Framework 3,0 a .NET Framework 3,5. Byl znovu navržený z jádra programovacího modelu, modulu runtime a nástrojů, aby významně vylepšil výkon a použitelnost. Toto téma ukazuje důležité charakteristiky výkonu těchto revizí a porovnává je s předchozími verzemi.
 
  Výkon součásti jednotlivého pracovního postupu se zvýšil o objednávky podle velikosti mezi WF3 a WF4.  To znamená, že mezera mezi ručně kódovanými službami Windows Communication Foundation (WCF) a službami pracovního postupu WCF budou poměrně malé.  Latence pracovního postupu se výrazně snížila v WF4.  Výkon trvalosti se zvýšil o faktor 2,5-3,0.  Sledování stavu prostřednictvím sledování pracovního postupu má výrazně menší nároky na režii.  Jedná se o přesvědčivé důvody k migraci na nebo přijetí WF4 ve vašich aplikacích.
 
 ## <a name="terminology"></a>Terminologie
- Verze [!INCLUDE[wf1](../../../includes/wf1-md.md)] představená v [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] bude pro zbytek tohoto tématu označovat jako WF4.  [!INCLUDE[wf1](../../../includes/wf1-md.md)] byla představena v rozhraní .NET 3,0 a měla několik menších revizí prostřednictvím [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] SP1. Verze [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] Workflow Foundation bude pro zbytek tohoto tématu označovat jako WF3. WF3 se dodává v [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] vedle sebe s WF4. Další informace o migraci artefaktů WF3 do WF4 najdete v tématu [Průvodce migrací programovací model Windows Workflow Foundation 4](https://go.microsoft.com/fwlink/?LinkID=153313) .
+
+ Verze [!INCLUDE[wf1](../../../includes/wf1-md.md)] představená v .NET Framework 4 bude pro zbytek tohoto tématu označovat jako WF4. [!INCLUDE[wf1](../../../includes/wf1-md.md)] byla představena v .NET Framework 3,0 a měla několik menších revizí prostřednictvím .NET Framework 3,5 SP1. Verze modelu Workflow Foundation pro .NET Framework 3,5 bude pro zbytek tohoto tématu označovat jako WF3. WF3 se dodává v .NET Framework 4 vedle sebe s WF4. Další informace o migraci artefaktů WF3 do WF4 naleznete v tématu: [Průvodce migrací programovací model Windows Workflow Foundation 4](https://go.microsoft.com/fwlink/?LinkID=153313).
 
  Windows Communication Foundation (WCF) je jednotný programovací model Microsoftu pro vytváření aplikací orientovaných na služby. Byl nejprve představen jako součást .NET 3,0 společně s WF3 a teď je jednou z klíčových součástí .NET Framework.
 
  Windows Server AppFabric je sada integrovaných technologií, které usnadňují vytváření, škálování a správu webových a složených aplikací, které běží na službě IIS. Poskytuje nástroje pro monitorování a správu služeb a pracovních postupů. Další informace najdete v tématu [Windows Server AppFabric 1,0](https://docs.microsoft.com/previous-versions/appfabric/ff384253(v=azure.10)).
 
-## <a name="goals"></a>Hlavních
+## <a name="goals"></a>Cíle
  Cílem tohoto tématu je Ukázat výkonnostní charakteristiky WF4 s daty měřenými pro různé scénáře. Poskytuje také podrobná porovnání mezi WF4 a WF3, a proto zobrazuje Skvělé vylepšení, která byla provedena v této nové revizi. Scénáře a data uvedená v tomto článku kvantifikují základní náklady na různé aspekty WF4 a WF3. Tato data jsou užitečná v seznámení s výkonnostními charakteristikami WF4 a mohou být užitečné při plánování migrace z WF3 na WF4 nebo použití WF4 při vývoji aplikací. Doporučuje se však vzít v potaz závěry z dat uvedených v tomto článku. Výkon aplikace kompozitního pracovního postupu je vysoce závislý na způsobu implementace pracovního postupu a způsobu integrace různých součástí. Jeden musí měřit jednotlivé aplikace, aby bylo možné určit výkonnostní charakteristiky této aplikace.
 
 ## <a name="overview-of-wf4-performance-enhancements"></a>Přehled vylepšení výkonu WF4
@@ -54,7 +55,7 @@ ms.locfileid: "70989586"
  Jednotný kanál zpracování zpráv poskytovaný v technologii WCF v rozhraní .NET 4 pomáhá službám WF4 významně zlepšit výkon a škálovatelnost než WF3. WF4 také poskytuje bohatou podporu programování pro zasílání zpráv, která může modelovat složité vzory výměny zpráv (MEPs). Vývojáři mohou použít buď typové smlouvy o poskytování služeb, aby bylo dosaženo lepšího výkonu, aniž by bylo nutné platit náklady na serializaci. Podpora ukládání do mezipaměti kanálu na straně klienta prostřednictvím třídy <xref:System.ServiceModel.Activities.SendMessageChannelCache> v WF4 pomáhá vývojářům vytvářet rychlé aplikace s minimálním úsilím. Další informace najdete v tématu [Změna úrovní sdílení mezipaměti pro aktivity odeslat](../wcf/feature-details/changing-the-cache-sharing-levels-for-send-activities.md).
 
 ### <a name="declarative-programming"></a>Deklarativní programování
- WF4 poskytuje čistou a jednoduchou deklarativní programovací architekturu pro modelování obchodních procesů a služeb. Programovací model podporuje plně deklarativní složení aktivit bez jakýchkoli kódů, což výrazně zjednodušuje vytváření pracovních postupů. V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] byla deklarativní programovací architektura založená na jazyce XAML sjednocena do jediného sestavení System. XAML. dll pro podporu WPF i WF.
+ WF4 poskytuje čistou a jednoduchou deklarativní programovací architekturu pro modelování obchodních procesů a služeb. Programovací model podporuje plně deklarativní složení aktivit bez jakýchkoli kódů, což výrazně zjednodušuje vytváření pracovních postupů. V .NET Framework 4 byla deklarativní programovací architektura založená na jazyce XAML sjednocena do jediného sestavení System. XAML. dll pro podporu WPF i WF.
 
  V WF4 poskytuje XAML skutečně deklarativní prostředí a umožňuje definovat celou definici pracovního postupu v kódu XML, odkazování na aktivity a typy sestavené pomocí .NET. To bylo obtížné dělat v WF3 s formátem XOML bez zahrnutí vlastní logiky kódu na pozadí. Nový zásobník XAML v rozhraní .NET 4 má mnohem lepší výkon při serializaci nebo deserializaci artefaktů pracovního postupu a deklarativní programování je přitažlivé a plné.
 
@@ -69,8 +70,8 @@ ms.locfileid: "70989586"
 
  Výše uvedený obrázek ukazuje konfiguraci počítače, která se používá pro měření výkonu na úrovni součásti. Jeden server a pět klientů připojených přes jedno síťové rozhraní sítě Ethernet s rychlostí 1 GB/s. Pro snazší měření je server nakonfigurovaný tak, aby používal jeden jádro serveru s duálním nebo čtyřjádrovým jádrem, na kterém běží Windows Server 2008 x86. Využití CPU systému je udržováno téměř 100%.
 
-### <a name="test-details"></a>Podrobnosti testu
- @No__t_0 WF3 je pravděpodobně nejjednodušší aktivita, kterou lze použít v pracovním postupu WF3.  Aktivita volá metodu v kódu, na kterou programátor pracovního postupu může vložit vlastní kód do.  V WF4 neexistuje žádný přímý analogový WF3 <xref:System.Workflow.Activities.CodeActivity>, která poskytuje stejné funkce.  Všimněte si, že v WF4 je základní třída <xref:System.Activities.CodeActivity>, která nesouvisí s <xref:System.Workflow.Activities.CodeActivity> WF3.  Autoři pracovního postupu jsou doporučováni k vytváření vlastních aktivit a vytváření pracovních postupů pouze v jazyce XAML.  V testech níže se jako místo prázdného <xref:System.Workflow.Activities.CodeActivity> v pracovních postupech WF4 používá aktivita s názvem `Comment`.  Kód v `Comment` aktivitě je následující:
+### <a name="test-details"></a>Podrobnosti o testu
+ <xref:System.Workflow.Activities.CodeActivity> WF3 je pravděpodobně nejjednodušší aktivita, kterou lze použít v pracovním postupu WF3.  Aktivita volá metodu v kódu, na kterou programátor pracovního postupu může vložit vlastní kód do.  V WF4 neexistuje žádný přímý analogový WF3 <xref:System.Workflow.Activities.CodeActivity>, která poskytuje stejné funkce.  Všimněte si, že v WF4 je základní třída <xref:System.Activities.CodeActivity>, která nesouvisí s <xref:System.Workflow.Activities.CodeActivity>WF3.  Autoři pracovního postupu jsou doporučováni k vytváření vlastních aktivit a vytváření pracovních postupů pouze v jazyce XAML.  V testech níže se jako místo prázdného <xref:System.Workflow.Activities.CodeActivity> v pracovních postupech WF4 používá aktivita s názvem `Comment`.  Kód v `Comment` aktivitě je následující:
 
 ```csharp
 [ContentProperty("Body")]
@@ -104,7 +105,7 @@ ms.locfileid: "70989586"
  Pracovní postup sekvence obsahuje jednu aktivitu <xref:System.Activities.Statements.While> s jednou podřízenou aktivitou ve smyčce, která neprovádí žádnou práci.
 
 ### <a name="replicator-compared-to-parallelforeach"></a>Replikátor ve srovnání s ParallelForEach
- <xref:System.Workflow.Activities.ReplicatorActivity> v WF3 má sekvenční a paralelní režimy spuštění.  V sekvenčním režimu je výkon aktivity podobný <xref:System.Workflow.Activities.WhileActivity>.  @No__t_0 je nejužitečnější pro paralelní spouštění.  WF4 analogová pro toto je aktivita <xref:System.Activities.Statements.ParallelForEach%601>.
+ <xref:System.Workflow.Activities.ReplicatorActivity> v WF3 má sekvenční a paralelní režimy spuštění.  V sekvenčním režimu je výkon aktivity podobný <xref:System.Workflow.Activities.WhileActivity>.  <xref:System.Workflow.Activities.ReplicatorActivity> je nejužitečnější pro paralelní spouštění.  WF4 analogová pro toto je aktivita <xref:System.Activities.Statements.ParallelForEach%601>.
 
  Následující diagram znázorňuje pracovní postupy použité pro tento test. Pracovní postup WF3 je na levé straně a pracovní postup WF4 je na pravé straně.
 
@@ -138,7 +139,7 @@ class WorkScope :
     }
 ```
 
- Obslužná rutina chyb cílí na aktivitu `WorkScope`. Pracovní postup WF4 je rovnoměrně zjednodušený.  @No__t_0 má tělo a obslužnou rutinu kompenzace.  Explicitní kompenzace je v posloupnosti další.  Aktivita aktivity těla a obslužné rutiny kompenzace jsou prázdné implementace:
+ Obslužná rutina chyb cílí na aktivitu `WorkScope`. Pracovní postup WF4 je rovnoměrně zjednodušený.  <xref:System.Activities.Statements.CompensableActivity> má tělo a obslužnou rutinu kompenzace.  Explicitní kompenzace je v posloupnosti další.  Aktivita aktivity těla a obslužné rutiny kompenzace jsou prázdné implementace:
 
 ```csharp
 public sealed class CompensableActivityEmptyCompensation : CodeActivity
@@ -283,7 +284,7 @@ Následující diagram znázorňuje základní pracovní postup kompenzace. Prac
 
  I u složitých pracovních postupů s hodně hloubkou a vysokým počtem aktivit jsou výsledky výkonu konzistentní s ostatními čísly propustnosti, které jsou uvedené dříve v tomto článku.  WF4's propustnost je rychlejší a musí se porovnávat podle logaritmické stupnice.
 
-### <a name="memory"></a>Rezident
+### <a name="memory"></a>Memory (Paměť)
  Režie paměti programovací model Windows Workflow Foundation se měří ve dvou klíčových oblastech: složitost pracovního postupu a počet definicí pracovních postupů.  Měření paměti byla provedena na pracovní stanici Windows 7 64.  Existuje mnoho způsobů, jak získat měření velikosti pracovní sady, jako jsou čítače výkonu monitorování, prostředí cyklického dotazování. WorkingSet nebo použití nástroje, jako je VMMap, který je k dispozici v [VMMap](/sysinternals/downloads/vmmap). Kombinace metod byla použita k získání a ověření výsledků každého testu.
 
 ### <a name="workflow-complexity-test"></a>Test složitosti pracovního postupu
@@ -304,7 +305,7 @@ Následující diagram znázorňuje základní pracovní postup kompenzace. Prac
 
  Vytvoření mnoha definicí pracovních postupů pro test definice pracovního postupu lze provést několika způsoby.  Například jedna by mohla použít generování kódu k vytvoření sady 1000 pracovních postupů, které jsou identické s výjimkou názvu a uložení každého z těchto pracovních postupů do samostatných souborů.  Tento přístup byl proveden pro test hostovaný v konzole.  V WF3 se ke spuštění definice pracovního postupu použila třída <xref:System.Workflow.Runtime.WorkflowRuntime>.  WF4 může buď pomocí <xref:System.Activities.WorkflowApplication> vytvořit jednu instanci pracovního postupu nebo přímo použít <xref:System.Activities.WorkflowInvoker> ke spuštění aktivity, jako by šlo o volání metody.  <xref:System.Activities.WorkflowApplication> je hostitel jedné instance pracovního postupu a má pro <xref:System.Workflow.Runtime.WorkflowRuntime> paritu funkcí, které byly použity v tomto testu.
 
- Při hostování pracovních postupů ve službě IIS je možné použít <xref:System.Web.Hosting.VirtualPathProvider> k vytvoření nového <xref:System.ServiceModel.WorkflowServiceHost> namísto generování všech souborů XAMLX nebo XOML.  @No__t_0 zpracuje příchozí požadavek a odpoví "virtuálním souborem", který lze načíst z databáze nebo v tomto případě vygenerovaného za běhu.  Je proto nutné vytvořit 1000 fyzických souborů.
+ Při hostování pracovních postupů ve službě IIS je možné použít <xref:System.Web.Hosting.VirtualPathProvider> k vytvoření nového <xref:System.ServiceModel.WorkflowServiceHost> namísto generování všech souborů XAMLX nebo XOML.  <xref:System.Web.Hosting.VirtualPathProvider> zpracuje příchozí požadavek a odpoví "virtuálním souborem", který lze načíst z databáze nebo v tomto případě vygenerovaného za běhu.  Je proto nutné vytvořit 1000 fyzických souborů.
 
  Definice pracovního postupu použité v testu konzoly byly jednoduché sekvenční pracovní postupy s jednou aktivitou.  Jediná aktivita byla prázdná <xref:System.Workflow.Activities.CodeActivity> pro případ WF3 a aktivitu `Comment` pro případ WF4.  Případ hostovaný v rámci služby IIS používaný při přijímání zprávy a ukončení odeslání odpovědi:
 
@@ -376,13 +377,13 @@ public class Workflow1 : Activity
 
  Všimněte si, že zprostředkovatel trvalosti WF4 SQL provádí více práce v databázové vrstvě.  SQL Database se může stát kritickým bodem, takže je důležité monitorovat využití procesoru a disku.  Nezapomeňte do aplikace pracovní postup testování výkonu zahrnout následující čítače výkonu z databáze SQL:
 
-- Fyzický disk \\% doba čtení disku
+- Fyzický disk\\% doba čtení disku
 
-- Fyzický disk \\% času disku
+- Fyzický disk\\% času disku
 
-- Fyzický disk \\% času zápisu na disk
+- Fyzický disk\\% času zápisu na disk
 
-- Fyzický disk \\% Průměrná délka fronty disku
+- Fyzický disk\\% Průměrná délka fronty disku
 
 - Délka fronty čtení z disku fyzický
 
@@ -390,7 +391,7 @@ public class Workflow1 : Activity
 
 - Délka fronty disku fyzický
 
-- Informace o procesoru \\% času procesoru
+- Informace o procesoru\\% času procesoru
 
 - SQLServer: Latches\Average doba čekání na západku (MS)
 
@@ -444,9 +445,9 @@ V následující tabulce jsou uvedeny výsledky spuštění pracovního postupu 
 
 |Test|Propustnost (pracovní postupy/s)|
 |----------|-----------------------------------|
-|Sekvence WF3 v modulu runtime WF3|1 576|
-|Sekvence WF3 v modulu runtime WF4 pomocí spolupráce|2 745|
-|WF4 sekvence|153 582|
+|Sekvence WF3 v modulu runtime WF3|1,576|
+|Sekvence WF3 v modulu runtime WF4 pomocí spolupráce|2,745|
+|WF4 sekvence|153,582|
 
  Existuje významné zvýšení výkonu při použití zprostředkovatele komunikace přes rovnou WF3.  Nicméně při porovnání s aktivitami WF4 je nárůst zanedbatelný.
 

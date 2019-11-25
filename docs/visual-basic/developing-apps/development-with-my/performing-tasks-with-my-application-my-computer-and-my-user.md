@@ -1,5 +1,5 @@
 ---
-title: Provádění úloh s objekty My.Application, My.Computer a My.User (Visual Basic)
+title: Provádění úloh s objekty My.Application, My.Computer a My.User
 ms.date: 07/20/2015
 helpviewer_keywords:
 - My.Application object [Visual Basic], developing applications
@@ -9,30 +9,32 @@ helpviewer_keywords:
 - My.Computer object [Visual Basic], developing applications
 - My.User object [Visual Basic], developing applications
 ms.assetid: c8af61bd-4dd3-4a0f-9af5-795b594b240b
-ms.openlocfilehash: 0372fbf63f6d12e266674f92225183911aa4ca30
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fc9fd9093a3db4785bfc94719dbae9ec1d586050
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62014125"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74329583"
 ---
 # <a name="performing-tasks-with-myapplication-mycomputer-and-myuser-visual-basic"></a>Provádění úloh s objekty My.Application, My.Computer a My.User (Visual Basic)
-Tři centrální `My` objekty, které poskytují přístup k informacím a běžně používané funkce jsou `My.Application` (<xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>), `My.Computer` (<xref:Microsoft.VisualBasic.Devices.Computer>), a `My.User` (<xref:Microsoft.VisualBasic.ApplicationServices.User>). Můžete použít tyto objekty se dostat k informacím, která souvisí s aktuální aplikace, počítači, na kterém je aplikace nainstalovaná na nebo aktuálního uživatele aplikace, v uvedeném pořadí.  
+
+The three central `My` objects that provide access to information and commonly used functionality are `My.Application` (<xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>), `My.Computer` (<xref:Microsoft.VisualBasic.Devices.Computer>), and `My.User` (<xref:Microsoft.VisualBasic.ApplicationServices.User>). You can use these objects to access information that is related to the current application, the computer that the application is installed on, or the current user of the application, respectively.  
   
-## <a name="myapplication-mycomputer-and-myuser"></a>Objekty My.Application, My.Computer a My.User  
- Následující příklady ukazují, jak informace mohou být načteny pomocí `My`.  
+## <a name="myapplication-mycomputer-and-myuser"></a>My.Application, My.Computer, and My.User  
+
+ The following examples demonstrate how information can be retrieved using `My`.  
   
  [!code-vb[VbVbcnMy#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMy/VB/Class1.vb#1)]  
   
  [!code-vb[VbVbcnMy#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMy/VB/Class1.vb#2)]  
   
- Kromě načítání informací o členy zveřejněné prostřednictvím těchto tří objektů umožňují spouštět metody vztahující se na tento objekt. Například můžete zpřístupnit různé druhy metody pro práci se soubory nebo aktualizaci registru, které prostřednictvím `My.Computer`.  
+ In addition to retrieving information, the members exposed through these three objects also allow you to execute methods related to that object. For instance, you can access a variety of methods to manipulate files or update the registry through `My.Computer`.  
   
- Soubor vstupně-výstupních operací je výrazně jednodušší a rychlejší při použití `My`, která zahrnuje celou řadu metod a vlastností pro práce se soubory, adresáře a jednotky. <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> Objekt umožňuje čtení z velké soubory, které máte oddělených nebo pole s pevnou šířkou. Tento příklad otevře `TextFieldParser` `reader` a používá ke čtení z `C:\TestFolder1\test1.txt`.  
+ File I/O is significantly easier and faster with `My`, which includes a variety of methods and properties for manipulating files, directories, and drives. The <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> object allows you to read from large structured files that have delimited or fixed-width fields. This example opens the `TextFieldParser` `reader` and uses it to read from `C:\TestFolder1\test1.txt`.  
   
  [!code-vb[VbVbalrTextFieldParser#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTextFieldParser/VB/Class1.vb#23)]  
   
- `My.Application` Umožňuje změnit jazykové verze pro vaši aplikaci. Následující příklad ukazuje, jak tuto metodu lze volat.  
+ `My.Application` allows you to change the culture for your application. The following example demonstrates how this method can be called.  
   
  [!code-vb[VbVbcnMy#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMy/VB/Class1.vb#3)]  
   

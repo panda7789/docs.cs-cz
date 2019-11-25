@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Umístit více než jednu hodnotu v proměnné (Visual Basic)'
+title: 'Postupy: Do proměnné umístit více než jednu hodnotu'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - classes [Visual Basic], composite data types
@@ -11,36 +11,36 @@ helpviewer_keywords:
 - arrays [Visual Basic], compilation errors
 - types [Visual Basic], composite
 ms.assetid: 5fe0e558-aac2-4a40-b7f2-7cfea7336917
-ms.openlocfilehash: 8d07a34a98303f9d220dba0a3c955120b421340e
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: d452fbf35f9d200348234b38c40f8636f0ec4b4e
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71054201"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350019"
 ---
-# <a name="how-to-hold-more-than-one-value-in-a-variable-visual-basic"></a>Postupy: Umístit více než jednu hodnotu v proměnné (Visual Basic)
+# <a name="how-to-hold-more-than-one-value-in-a-variable-visual-basic"></a>Postupy: Do proměnné umístit více než jednu hodnotu (Visual Basic)
 
-Proměnná obsahuje více než jednu hodnotu, pokud deklarujete jako *složený datový typ*.
+A variable holds more than one value if you declare it to be of a *composite data type*.
 
-[Složené datové typy](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md) zahrnují struktury, pole a třídy. Proměnná složeného datového typu může obsahovat kombinaci základních datových typů a dalších složených typů. Struktury a třídy mohou uchovávat kód i data.
+[Composite Data Types](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md) include structures, arrays, and classes. A variable of a composite data type can hold a combination of elementary data types and other composite types. Structures and classes can hold code as well as data.
 
-## <a name="to-hold-more-than-one-value-in-a-variable"></a>Uložení více než jedné hodnoty v proměnné
+## <a name="to-hold-more-than-one-value-in-a-variable"></a>To hold more than one value in a variable
 
-1. Určete, jaký typ složeného dat chcete pro proměnnou použít.
+1. Determine what composite data type you want to use for your variable.
 
-2. Pokud se složený datový typ ještě nedefinuje, definujte ho, aby ho vaše proměnná mohla použít.
+2. If the composite data type is not already defined, define it so that your variable can use it.
 
-    - Definujte strukturu pomocí [příkazu struktury](../../../../visual-basic/language-reference/statements/structure-statement.md).
+    - Define a structure with a [Structure Statement](../../../../visual-basic/language-reference/statements/structure-statement.md).
 
-    - Definujte pole pomocí [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md).
+    - Define an array with a [Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md).
 
-    - Definujte třídu pomocí [příkazu třídy](../../../../visual-basic/language-reference/statements/class-statement.md).
+    - Define a class with a [Class Statement](../../../../visual-basic/language-reference/statements/class-statement.md).
 
-3. Deklarujte proměnnou pomocí `Dim` příkazu.
+3. Declare your variable with a `Dim` statement.
 
-4. Použijte název proměnné s `As` klauzulí.
+4. Follow the variable name with an `As` clause.
 
-5. `As` Použijte klíčové slovo s názvem vhodného složeného datového typu.
+5. Follow the `As` keyword with the name of the appropriate composite data type.
 
 ## <a name="see-also"></a>Viz také:
 

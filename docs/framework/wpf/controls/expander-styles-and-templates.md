@@ -9,15 +9,15 @@ helpviewer_keywords:
 - states [WPF], Expander
 - parts [WPF], Expander
 ms.assetid: da2e5a1c-5230-4c21-98a5-59c7895facd7
-ms.openlocfilehash: 26989474f264161be12bcc14fed614fdc7f775b6
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 39f81aacb24b0b68b550da622b1e3038eb9eac9b
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460328"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283514"
 ---
 # <a name="expander-styles-and-templates"></a>Styly a šablony rozšíření
-Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.Expander>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [přizpůsobení vzhledu existujícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.Expander>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
   
 ## <a name="expander-parts"></a>Části rozšíření  
  Ovládací prvek <xref:System.Windows.Controls.Expander> neobsahuje žádné pojmenované části.  
@@ -27,9 +27,9 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
   
 |Název VisualState|Název VisualStateGroup|Popis|  
 |-|-|-|  
-|Běžnou|CommonStates|Výchozí stav.|  
+|Normální|CommonStates|Výchozí stav.|  
 |MouseOver|CommonStates|Ukazatel myši je umístěn nad ovládacím prvkem.|  
-|Zabezpečen|CommonStates|Ovládací prvek je zakázán.|  
+|Zakázáno|CommonStates|Ovládací prvek je zakázán.|  
 |Zaměřil|FocusStates|Ovládací prvek má fokus.|  
 |Bez fokusu|FocusStates|Ovládací prvek nemá fokus.|  
 |Rozbalil|ExpansionStates|Ovládací prvek je rozbalený.|  
@@ -60,4 +60,4 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
 - [Styly a šablony ovládacích prvků](control-styles-and-templates.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)
 - [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md)

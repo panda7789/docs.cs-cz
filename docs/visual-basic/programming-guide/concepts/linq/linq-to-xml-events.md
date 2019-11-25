@@ -1,40 +1,40 @@
 ---
-title: Události LINQ to XML (Visual Basic)
+title: Události LINQ to XML
 ms.date: 07/20/2015
 ms.assetid: 34923928-b99c-4004-956e-38f6db25e910
-ms.openlocfilehash: d35f8063fe87ee4be3dd49a3c0221cb9c47cb22e
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 06191fb94f808d9a3ece8de000dec1c5de769dde
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834986"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351929"
 ---
-# <a name="linq-to-xml-events-visual-basic"></a>Události LINQ to XML (Visual Basic)
-události [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] umožňují upozorňování při změně stromu XML.  
+# <a name="linq-to-xml-events-visual-basic"></a>LINQ to XML Events (Visual Basic)
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] events enable you to be notified when an XML tree is altered.  
   
- Události můžete přidat do instance libovolného <xref:System.Xml.Linq.XObject>. Obslužná rutina události poté obdrží události pro úpravy tohoto <xref:System.Xml.Linq.XObject> a kteréhokoli z jeho potomků. Například můžete přidat obslužnou rutinu události do kořenového adresáře stromu a zpracovat všechny změny stromu z této obslužné rutiny události.  
+ You can add events to an instance of any <xref:System.Xml.Linq.XObject>. The event handler will then receive events for modifications to that <xref:System.Xml.Linq.XObject> and any of its descendants. For example, you can add an event handler to the root of the tree, and handle all modifications to the tree from that event handler.  
   
- Příklady událostí [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] najdete v článku <xref:System.Xml.Linq.XObject.Changing> a <xref:System.Xml.Linq.XObject.Changed>.  
+ For examples of [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] events, see <xref:System.Xml.Linq.XObject.Changing> and <xref:System.Xml.Linq.XObject.Changed>.  
   
-## <a name="types-and-events"></a>Typy a události  
- Při práci s událostmi můžete použít následující typy:  
+## <a name="types-and-events"></a>Types and Events  
+ You use the following types when working with events:  
   
 |Typ|Popis|  
 |----------|-----------------|  
-|<xref:System.Xml.Linq.XObjectChange>|Určuje typ události při vyvolání události pro <xref:System.Xml.Linq.XObject>.|  
-|<xref:System.Xml.Linq.XObjectChangeEventArgs>|Poskytuje data pro události <xref:System.Xml.Linq.XObject.Changing> a <xref:System.Xml.Linq.XObject.Changed>.|  
+|<xref:System.Xml.Linq.XObjectChange>|Specifies the event type when an event is raised for an <xref:System.Xml.Linq.XObject>.|  
+|<xref:System.Xml.Linq.XObjectChangeEventArgs>|Provides data for the <xref:System.Xml.Linq.XObject.Changing> and <xref:System.Xml.Linq.XObject.Changed> events.|  
   
- Při úpravě stromu XML jsou vyvolány následující události:  
+ The following events are raised when you modify an XML tree:  
   
 |Událost|Popis|  
 |-----------|-----------------|  
-|<xref:System.Xml.Linq.XObject.Changing>|Proběhne těsně před tímto <xref:System.Xml.Linq.XObject> nebo kterýkoli z jeho potomků bude změněn.|  
-|<xref:System.Xml.Linq.XObject.Changed>|Vyvolá se v případě, že došlo ke změně <xref:System.Xml.Linq.XObject> nebo při změně některého z jeho potomků.|  
+|<xref:System.Xml.Linq.XObject.Changing>|Occurs just before this <xref:System.Xml.Linq.XObject> or any of its descendants is going to change.|  
+|<xref:System.Xml.Linq.XObject.Changed>|Occurs when an <xref:System.Xml.Linq.XObject> has changed or any of its descendants have changed.|  
   
 ## <a name="example"></a>Příklad  
   
 ### <a name="description"></a>Popis  
- Události jsou užitečné, pokud chcete zachovat některé agregované informace ve stromu XML. Například můžete chtít zachovat celkovou částku faktury, která je součtem položek řádků faktury. V tomto příkladu se používají události pro udržování celkového počtu všech podřízených elementů v rámci komplexního prvku `Items`.  
+ Events are useful when you want to maintain some aggregate information in an XML tree. For example, you may want maintain an invoice total that is the sum of the line items of the invoice. This example uses events to maintain the total of all of the child elements under the complex element `Items`.  
   
 ### <a name="code"></a>Kód  
   
@@ -93,7 +93,7 @@ End Module
 ```  
   
 ### <a name="comments"></a>Komentáře  
- Tento kód generuje následující výstup:  
+ This code produces the following output:  
   
 ```console  
 Changed System.Xml.Linq.XElement Add  
@@ -116,4 +116,4 @@ Total:308
   
 ## <a name="see-also"></a>Viz také:
 
-- [Rozšířené programování LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+- [Advanced LINQ to XML Programming (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

@@ -1,5 +1,5 @@
 ---
-title: Group By – klauzule (Visual Basic)
+title: Group By – klauzule
 ms.date: 07/20/2015
 f1_keywords:
 - vb.QueryGroupByInto
@@ -12,15 +12,15 @@ helpviewer_keywords:
 - Group By statement [Visual Basic]
 - Group By clause [Visual Basic]
 ms.assetid: b1b5dcea-6654-473b-a2db-01f7e4c265d7
-ms.openlocfilehash: 8b3a480c226debc529c268e83437d15192592bd3
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 87080254ad5d237a593f0c35e7c3fdaef3a8ad59
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72004751"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350479"
 ---
 # <a name="group-by-clause-visual-basic"></a>Group By – klauzule (Visual Basic)
-Seskupí prvky výsledku dotazu. Lze také použít k aplikování agregačních funkcí na každou skupinu. Operace seskupení je založena na jednom nebo více klíčích.  
+Groups the elements of a query result. Can also be used to apply aggregate functions to each group. The grouping operation is based on one or more keys.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,19 +33,19 @@ Group [ listField1 [, listField2 [...] ] By keyExp1 [, keyExp2 [...] ]
   
 - `listField1`, `listField2`  
   
-     Volitelné. Jedno nebo více polí proměnné nebo proměnných dotazu, které explicitně identifikují pole, která mají být součástí seskupeného výsledku. Nejsou-li zadána žádná pole, jsou v seskupeném výsledku obsažena všechna pole proměnné dotazu nebo proměnné.  
+     Volitelné. One or more fields of the query variable or variables that explicitly identify the fields to be included in the grouped result. If no fields are specified, all fields of the query variable or variables are included in the grouped result.  
   
 - `keyExp1`  
   
-     Požadováno. Výraz, který identifikuje klíč, který se má použít k určení skupin prvků. Můžete zadat více než jeden klíč, který určí složený klíč.  
+     Požadováno. An expression that identifies the key to use to determine the groups of elements. You can specify more than one key to specify a composite key.  
   
 - `keyExp2`  
   
-     Volitelné. Jeden nebo více dalších klíčů, které jsou kombinovány s `keyExp1` pro vytvoření složeného klíče.  
+     Volitelné. One or more additional keys that are combined with `keyExp1` to create a composite key.  
   
 - `aggregateList`  
   
-     Požadováno. Jeden nebo více výrazů, které identifikují způsob agregace skupin. Chcete-li identifikovat název člena pro seskupené výsledky, použijte klíčové slovo `Group`, které může být v jednom z následujících forem:  
+     Požadováno. One or more expressions that identify how the groups are aggregated. To identify a member name for the grouped results, use the `Group` keyword, which can be in either of the following forms:  
   
     ```vb  
     Into Group  
@@ -57,21 +57,21 @@ Group [ listField1 [, listField2 [...] ] By keyExp1 [, keyExp2 [...] ]
     Into <alias> = Group  
     ```  
   
-     Můžete také zahrnout agregační funkce, které se mají použít pro skupinu.  
+     You can also include aggregate functions to apply to the group.  
   
 ## <a name="remarks"></a>Poznámky  
- K přerušení výsledků dotazu do skupin lze použít klauzuli `Group By`. Seskupení je založeno na klíči nebo složeném klíči, který se skládá z více klíčů. Prvky, které jsou přidruženy k odpovídajícím hodnotám klíčů, jsou zahrnuty ve stejné skupině.  
+ You can use the `Group By` clause to break the results of a query into groups. The grouping is based on a key or a composite key consisting of multiple keys. Elements that are associated with matching key values are included in the same group.  
   
- Použijete parametr `aggregateList` klauzule `Into` a klíčové slovo `Group` k identifikaci názvu člena, který se používá k odkazování na skupinu. V klauzuli `Into` můžete také zahrnout agregační funkce pro výpočet hodnot seskupených prvků. Seznam standardních agregačních funkcí naleznete v tématu [klauzule Aggregate](../../../visual-basic/language-reference/queries/aggregate-clause.md).  
+ You use the `aggregateList` parameter of the `Into` clause and the `Group` keyword to identify the member name that is used to reference the group. You can also include aggregate functions in the `Into` clause to compute values for the grouped elements. For a list of standard aggregate functions, see [Aggregate Clause](../../../visual-basic/language-reference/queries/aggregate-clause.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu seskupuje seznam zákazníků na základě jejich umístění (země/oblast) a poskytuje počet zákazníků v každé skupině. Výsledky jsou seřazené podle názvu země nebo oblasti. Seskupené výsledky jsou seřazené podle názvu města.  
+ The following code example groups a list of customers based on their location (country/region) and provides a count of the customers in each group. The results are ordered by country/region name. The grouped results are ordered by city name.  
   
  [!code-vb[VbSimpleQuerySamples#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#11)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Úvod do jazyka LINQ v Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Introduction to LINQ in Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
 - [Dotazy](../../../visual-basic/language-reference/queries/index.md)
 - [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)
 - [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)

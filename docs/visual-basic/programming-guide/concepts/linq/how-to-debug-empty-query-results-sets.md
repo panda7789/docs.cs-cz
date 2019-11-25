@@ -1,27 +1,27 @@
 ---
-title: 'Postupy: Ladit prázdné sady výsledků dotazu (Visual Basic)'
+title: 'How to: Debug Empty Query Results Sets'
 ms.date: 07/20/2015
 ms.assetid: b242c90a-d2b8-4309-8a1e-e4e70736c727
-ms.openlocfilehash: 6fc194432b1d44c1214da32d2c6978a4eeb316dc
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 21c161a702338c0c6943fa09212deaea7fdd72f9
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71351774"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353077"
 ---
-# <a name="how-to-debug-empty-query-results-sets-visual-basic"></a>Postupy: Ladit prázdné sady výsledků dotazu (Visual Basic)
+# <a name="how-to-debug-empty-query-results-sets-visual-basic"></a>How to: Debug Empty Query Results Sets (Visual Basic)
 
-Jedním z nejběžnějších problémů při dotazování na stromy XML je, že pokud má strom XML výchozí obor názvů, vývojář někdy zapíše dotaz, jako by kód XML nebyl v oboru názvů.
+One of the most common problems when querying XML trees is that if the XML tree has a default namespace, the developer sometimes writes the query as though the XML were not in a namespace.
 
-První sada příkladů v tomto tématu ukazuje typický způsob, jakým je načten XML ve výchozím oboru názvů a je dotaz na něj nesprávně.
+The first set of examples in this topic shows a typical way that XML in a default namespace is loaded, and is queried improperly.
 
-Druhá sada příkladů ukazuje nezbytné opravy, aby bylo možné dotazovat XML v oboru názvů.
+The second set of examples show the necessary corrections so that you can query XML in a namespace.
 
-Další informace najdete v tématu [obory názvů Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).
+For more information, see [Namespaces Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).
 
 ## <a name="example"></a>Příklad
 
-Tento příklad ukazuje vytvoření XML v oboru názvů a dotaz, který vrací prázdnou sadu výsledků dotazu.
+This example shows creation of XML in a namespace, and a query that returns an empty result set.
 
 ```vb
 Dim root As XElement = _
@@ -43,7 +43,7 @@ Next
 Console.WriteLine("End of result set")
 ```
 
-Tento příklad vytvoří následující výsledek:
+This example produces the following result:
 
 ```console
 Result set follows:
@@ -52,9 +52,9 @@ End of result set
 
 ## <a name="example"></a>Příklad
 
-Tento příklad ukazuje vytvoření XML v oboru názvů a dotaz, který je správně kódován.
+This example shows creation of XML in a namespace, and a query that is coded properly.
 
-Řešením je deklarovat a inicializovat globální výchozí obor názvů. Tím se umístí všechny vlastnosti XML ve výchozím oboru názvů. V příkladu nejsou k dispozici žádné další úpravy, aby mohla správně fungovat.
+The solution is to declare and initialize a global default namespace. This places all XML properties in the default namespace. No other modifications are required to the example to make it work properly.
 
 ```vb
 Imports <xmlns="http://www.adventure-works.com">
@@ -82,7 +82,7 @@ Module Module1
 End Module
 ```
 
-Tento příklad vytvoří následující výsledek:
+This example produces the following result:
 
 ```console
 Result set follows:
@@ -94,4 +94,4 @@ End of result set
 
 ## <a name="see-also"></a>Viz také:
 
-- [Základní dotazy (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+- [Basic Queries (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

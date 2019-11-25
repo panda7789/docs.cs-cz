@@ -1,38 +1,38 @@
 ---
-title: Funkční transformace XML (Visual Basic)
+title: Funkční transformace XML
 ms.date: 07/20/2015
 ms.assetid: fdbe5b91-f457-4b4e-a11b-def4bdd77bab
-ms.openlocfilehash: 147f36241fd2b8cec03adfac3273d2155af82922
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7e029fd562ae3f221a8aaef40f332a1e3fa896eb
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64618276"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353428"
 ---
-# <a name="functional-transformation-of-xml-visual-basic"></a>Funkční transformace XML (Visual Basic)
-Toto téma popisuje čistě funkční transformace přístup k úpravě XML dokumenty a liší se od procedurálního přístupu.  
+# <a name="functional-transformation-of-xml-visual-basic"></a>Functional Transformation of XML (Visual Basic)
+This topic discusses the pure functional transformation approach to modifying XML documents, and contrasts it with a procedural approach.  
   
-## <a name="modifying-an-xml-document"></a>Úpravy dokumentu XML  
- Jeden z nejčastějších úloh pro programátor XML je transformace XML z jednoho obrazce na jiný. Tvar dokument XML je struktura dokument, který zahrnuje následující:  
+## <a name="modifying-an-xml-document"></a>Modifying an XML Document  
+ One of the most common tasks for an XML programmer is transforming XML from one shape to another. The shape of an XML document is the structure of the document, which includes the following:  
   
-- Hierarchie vyjádřený v dokumentu.  
+- The hierarchy expressed by the document.  
   
-- Názvy prvků a atributů.  
+- The element and attribute names.  
   
-- Datové typy elementů a atributů.  
+- The data types of the elements and attributes.  
   
- Obecně platí největší efektivity dosáhnete, přístup k transformaci XML z jednoho obrazce na jiný je čistě funkční transformace. V takovém případě se má úloha primární programátor vytvoření transformace, která se použije pro celý dokument XML (nebo na jeden nebo více uzly striktně definované). Funkční transformace je pravděpodobně nejsnadněji kódu (po programátor zkušenosti s přístupem), poskytuje nejvíc udržovatelného kódu a je často více než přístupy komprimovat.  
+ In general, the most effective approach to transforming XML from one shape to another is that of pure functional transformation. In this approach, the primary programmer task is to create a transformation which is applied to the entire XML document (or to one or more strictly defined nodes). Functional transformation is arguably the easiest to code (after a programmer is familiar with the approach), yields the most maintainable code, and is often more compact than alternative approaches.  
   
-### <a name="xml-functional-transformational-technologies"></a>Funkční transformace, jehož technologie XML  
- Společnost Microsoft nabízí dvě technologie funkční transformace pro použití v dokumentech XML: XSLT a LINQ to XML. XSLT se podporuje v <xref:System.Xml.Xsl> spravované obor názvů a v nativní implementaci modelu COM MSXML. I když XSLT je robustní technologie pro manipulaci s XML dokumenty, vyžaduje znalosti týkající se specializované domény, a to jazyka XSLT a jeho podpůrné rozhraní API.  
+### <a name="xml-functional-transformational-technologies"></a>XML Functional Transformational Technologies  
+ Microsoft offers two functional transformation technologies for use on XML documents: XSLT and LINQ to XML. XSLT is supported in the <xref:System.Xml.Xsl> managed namespace and in the native COM implementation of MSXML. Although XSLT is a robust technology for manipulating XML documents, it requires expertise in a specialized domain, namely the XSLT language and its supporting APIs.  
   
- Technologie LINQ to XML poskytuje nástroje potřebné k čistě funkčním transformacím kód výkonná a výrazová způsobem, v rámci kódu C# nebo Visual Basic. Například mnoho příkladů v LINQ k dokumentaci XML pomocí čistě funkční přístup. Také v [kurzu: Manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md) kurzu používáme LINQ to XML v funkční přístup k manipulaci s informace v dokumentu aplikace Microsoft Word.  
+ LINQ to XML provides the tools necessary to code pure functional transformations in an expressive and powerful way, within C# or Visual Basic code. For example, many of the examples in the LINQ to XML documentation use a pure functional approach. Also, in the [Tutorial: Manipulating Content in a WordprocessingML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md) tutorial, we use LINQ to XML in a functional approach to manipulate information in a Microsoft Word document.  
   
- Podrobnější srovnání technologie LINQ to XML s dalšími technologiemi Microsoftu XML, naleznete v tématu [LINQ to XML versus. Jiné technologie XML](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-vs-other-xml-technologies.md).  
+ For a more complete comparison of LINQ to XML with other Microsoft XML technologies, see [LINQ to XML vs. Other XML Technologies](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-vs-other-xml-technologies.md).  
   
- XSLT je doporučeným nástrojem pro zaměřené na dokument transformace, když zdrojový dokument má nestandardní strukturu. Však technologie LINQ to XML můžete také provádět transformace zaměřené na dokument. Další informace najdete v tématu [jak: Použití anotací transformace stromů LINQ to XML ve stylu XSLT (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-use-annotation-trees-to-transform-linq-to-xml-trees-in-an-xslt-style.md).  
+ XSLT is the recommended tool for  document-centric transformations when the source document has an irregular structure. However, LINQ to XML can also perform document-centric transforms. For more information, see [How to: Use Annotations to Transform LINQ to XML Trees in an XSLT Style (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-use-annotation-trees-to-transform-linq-to-xml-trees-in-an-xslt-style.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Úvod k čistě funkčním transformacím (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)
-- [Technologie LINQ to XML versus jiné technologie XML](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-vs-other-xml-technologies.md)
+- [Introduction to Pure Functional Transformations (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)
+- [LINQ to XML vs. Other XML Technologies](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-vs-other-xml-technologies.md)

@@ -1,34 +1,34 @@
 ---
-title: Různé datové typy (Visual Basic)
+title: Různé datové typy
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Object data type [Visual Basic], data types
 - data types [Visual Basic], choosing
 ms.assetid: 64c71a12-9057-4dbf-baca-7379c4aada69
-ms.openlocfilehash: 4808d87322d5b21b70ec38e2eb31b2b204938745
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cc6262b5bb305bb839917e222d831fa3340a1b14
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62008238"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346333"
 ---
 # <a name="miscellaneous-data-types-visual-basic"></a>Různé datové typy (Visual Basic)
-Visual Basic poskytuje několik typů dat, které nejsou orientovány čísel nebo znaků. Místo toho se vypořádají s specializované dat, jako Ano/ne hodnoty, hodnoty data a času a adresy objektu.  
+Visual Basic supplies several data types that are not oriented toward numbers or characters. Instead, they deal with specialized data such as yes/no values, date/time values, and object addresses.  
   
- Tabulka zobrazující vedle sebe porovnání datových typů jazyka Visual Basic, naleznete v tématu [datové typy](../../../../visual-basic/language-reference/data-types/index.md).  
+ For a table showing a side-by-side comparison of the Visual Basic data types, see [Data Types](../../../../visual-basic/language-reference/data-types/index.md).  
   
-## <a name="boolean-type"></a>Typ Boolean  
- [Datový typ Boolean](../../../../visual-basic/language-reference/data-types/boolean-data-type.md) je hodnoty bez znaménka, je interpretován jako buď `True` nebo `False`. Šířku dat závisí na implementaci platformy. Pokud proměnná může obsahovat jenom hodnoty dvou stavů například true nebo false, Ano/Ne, nebo zapnuto/vypnuto, deklarujte ho jako `Boolean`.  
+## <a name="boolean-type"></a>Boolean Type  
+ The [Boolean Data Type](../../../../visual-basic/language-reference/data-types/boolean-data-type.md) is an unsigned value that is interpreted as either `True` or `False`. Its data width depends on the implementing platform. If a variable can contain only two-state values such as true/false, yes/no, or on/off, declare it as `Boolean`.  
   
-## <a name="date-type"></a>Date – typ  
- [Date – datový typ](../../../../visual-basic/language-reference/data-types/date-data-type.md) je 64 bitů hodnotu, která uchovává informace o datu a času. Každý přírůstek představuje 100 nanosekund uplynulý čas od počátku (12:00 AM) z 1. ledna roku 1 v gregoriánském kalendáři. Pokud proměnná může obsahovat hodnotu Datum a časové hodnoty, deklarujte ho jako `Date`.  
+## <a name="date-type"></a>Date Type  
+ The [Date Data Type](../../../../visual-basic/language-reference/data-types/date-data-type.md) is a 64-bit value that holds both date and time information. Each increment represents 100 nanoseconds of elapsed time since the beginning (12:00 AM) of January 1 of the year 1 in the Gregorian calendar. If a variable can contain a date value, a time value, or both, declare it as `Date`.  
   
-## <a name="object-type"></a>Typ objektu  
- [Datový typ objektu](../../../../visual-basic/language-reference/data-types/object-data-type.md) je 32bitová adresa, která odkazuje na instanci objektu v rámci vaší aplikace nebo v nějaké jiné aplikaci. `Object` Proměnné může odkazovat na libovolný objekt aplikace rozpozná, nebo k datům z libovolného datového typu. To zahrnuje i *typů hodnot*, jako například `Integer`, `Boolean`a struktura instance a *referenční typy*, které jsou instancemi objekty vytvořené z třídy, jako `String`a <xref:System.Windows.Forms.Form>a pole instance.  
+## <a name="object-type"></a>Object Type  
+ The [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md) is a 32-bit address that points to an object instance within your application or in some other application. An `Object` variable can refer to any object your application recognizes, or to data of any data type. This includes both *value types*, such as `Integer`, `Boolean`, and structure instances, and *reference types*, which are instances of objects created from classes such as `String` and <xref:System.Windows.Forms.Form>, and array instances.  
   
- Pokud proměnná uchovává ukazatel na instanci třídy, která si nejste jisti v době kompilace, nebo pokud může odkazovat na data různých typů dat, deklarujte ho jako `Object`.  
+ If a variable stores a pointer to an instance of a class that you do not know at compile time, or if it can point to data of various data types, declare it as `Object`.  
   
- Výhodou `Object` datový typ je, že se použije k ukládání dat libovolného datového typu. Nevýhodou je, že se vám účtovat žádné další operace, které potřebují delší dobu spuštění a vaše aplikace pracovat pomaleji. Pokud používáte `Object` proměnné pro typy hodnot, se vám účtovat *zabalení* a *rozbalení*. Když ho používáte pro typy odkazů, se vám účtovat *pozdní vazby*.  
+ The advantage of the `Object` data type is that you can use it to store data of any data type. The disadvantage is that you incur extra operations that take more execution time and make your application perform slower. If you use an `Object` variable for value types, you incur *boxing* and *unboxing*. If you use it for reference types, you incur *late binding*.  
   
 ## <a name="see-also"></a>Viz také:
 

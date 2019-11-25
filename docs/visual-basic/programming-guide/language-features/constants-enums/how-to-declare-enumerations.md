@@ -1,44 +1,44 @@
 ---
-title: 'Postupy: Deklarace výčtů (Visual Basic)'
+title: 'How to: Declare Enumerations'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - declarations [Visual Basic], enumerations
 - enumerations [Visual Basic], declaring
 - declaring enumerations [Visual Basic]
 ms.assetid: db4ca1c3-f429-4c81-ae81-29e0157b29fd
-ms.openlocfilehash: c74b75adf0f56dd198375cb1ff24656d39ec074c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 042aea045313bcaf3832274acf1000f87a084b72
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64610582"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74354047"
 ---
 # <a name="how-to-declare-enumerations-visual-basic"></a>Postupy: Deklarace výčtů (Visual Basic)
-Vytvořit výčet s `Enum` příkazu v části deklarace třídy nebo modulu. Nelze deklarovat výčet v rámci metody. Pokud chcete zadat odpovídající úroveň přístupu, použijte `Private`, `Protected`, `Friend`, nebo `Public`.  
+You create an enumeration with the `Enum` statement in the declarations section of a class or module. You cannot declare an enumeration within a method. To specify the appropriate level of access, use `Private`, `Protected`, `Friend`, or `Public`.  
   
- `Enum` Typ má název, nadřízený typ a sadu polí, každý představuje konstantu. Název musí být platný kvalifikátor Visual Basic .NET. Základní typ musí být jeden z typů celé číslo –`Byte`, `Short`, `Long` nebo `Integer`. `Integer` je výchozí nastavení. Výčty jsou vždy silného typu a se nedají zaměňovat s číselné typy celých čísel.  
+ An `Enum` type has a name, an underlying type, and a set of fields, each representing a constant. The name must be a valid Visual Basic .NET qualifier. The underlying type must be one of the integer types—`Byte`, `Short`, `Long` or `Integer`. `Integer` is the default. Enumerations are always strongly typed and are not interchangeable with integer number types.  
   
- Výčty nemůžou mít hodnoty s plovoucí desetinnou čárkou. Pokud výčtu je přiřazena hodnota s plovoucí desetinnou čárkou s `Option Strict On`, výsledcích chyb kompilátoru. Pokud `Option Strict` je `Off`, hodnota je automaticky převedena na `Enum` typu.  
+ Enumerations cannot have floating-point values. If an enumeration is assigned a floating-point value with `Option Strict On`, a compiler error results. If `Option Strict` is `Off`, the value is automatically converted to the `Enum` type.  
   
- Informace o názvech a jak používat `Imports` naleznete v tématu příkazu nezbytné, aby kvalifikace názvu [výčty a kvalifikace názvu](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md).  
+ For information on names, and how to use the `Imports` statement to make name qualification unnecessary, see [Enumerations and Name Qualification](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md).  
   
-### <a name="to-declare-an-enumeration"></a>Chcete-li deklarovat výčet  
+### <a name="to-declare-an-enumeration"></a>To declare an enumeration  
   
-1. Zápis deklarace, která zahrnuje úroveň přístupu kódu, `Enum` – klíčové slovo a platný název, jako v následujících příkladech, z nichž každý deklaruje jiný `Enum`.  
+1. Write a declaration that includes a code access level, the `Enum` keyword, and a valid name, as in the following examples, each of which declares a different `Enum`.  
   
      [!code-vb[VbEnumsTask#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#3)]  
   
-2. Definujte konstanty ve výčtu. Ve výchozím nastavení, první konstanta ve výčtu je inicializován na `0`, a následné konstanty jsou inicializovány na hodnotu některého jiného než předchozí – konstanta. Například následující výčet `Days`, obsahuje konstanty s názvem `Sunday` s hodnotou `0`, konstanta s názvem `Monday` s hodnotou `1`, konstanta s názvem `Tuesday` s hodnotou `2`, a tak dále.  
+2. Define the constants in the enumeration. By default, the first constant in an enumeration is initialized to `0`, and subsequent constants are initialized to a value of one more than the previous constant. For example, the following enumeration, `Days`, contains a constant named `Sunday` with the value `0`, a constant named `Monday` with the value `1`, a constant named `Tuesday` with the value of `2`, and so on.  
   
      [!code-vb[VbEnumsTask#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#4)]  
   
-3. Můžete explicitně přiřadit hodnoty konstant ve výčtu s použitím příkazu přiřazení. Můžete přiřadit libovolnou celočíselnou hodnotu, včetně záporná čísla. Například můžete konstanty s hodnoty menší než nula, která představuje chybové stavy. V následující výčet konstanty `Invalid` explicitně přiřazena hodnota `–1`a konstanty `Sunday` je přiřazena hodnota `0`. Protože se jedná o první konstanta výčtu, `Saturday` je také inicializován na hodnotu `0`. Hodnota `Monday` je `1` (jedno více než hodnota `Sunday`); hodnota `Tuesday` je `2`, a tak dále.  
+3. You can explicitly assign values to constants in an enumeration by using an assignment statement. You can assign any integer value, including negative numbers. For example, you may want constants with values less than zero to represent error conditions. In the following enumeration, the constant `Invalid` is explicitly assigned the value `–1`, and the constant `Sunday` is assigned the value `0`. Because it is the first constant in the enumeration, `Saturday` is also initialized to the value `0`. The value of `Monday` is `1` (one more than the value of `Sunday`); the value of `Tuesday` is `2`, and so on.  
   
      [!code-vb[VbEnumsTask#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#5)]  
   
-### <a name="to-declare-an-enumeration-as-an-explicit-type"></a>Chcete-li deklarovat výčet jako explicitní typ  
+### <a name="to-declare-an-enumeration-as-an-explicit-type"></a>To declare an enumeration as an explicit type  
   
-- Zadejte typ výčtu s použitím `As` klauzule, jak je znázorněno v následujícím příkladu.  
+- Specify the type of the enum by using the `As` clause, as shown in the following example.  
   
      [!code-vb[VbEnumsTask#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#6)]  
   
@@ -46,7 +46,7 @@ Vytvořit výčet s `Enum` příkazu v části deklarace třídy nebo modulu. Ne
 
 - [Výčty a kvalifikace názvu](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md)
 - [Postupy: Odkazování na člena výčtu](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-refer-to-an-enumeration-member.md)
-- [Postupy: Iterace ve výčtu v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-iterate-through-an-enumeration.md)
+- [How to: Iterate Through An Enumeration in Visual Basic](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-iterate-through-an-enumeration.md)
 - [Postupy: Určení řetězce spojeného s hodnotou výčtu](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-determine-the-string-associated-with-an-enumeration-value.md)
 - [Kdy použít výčet](../../../../visual-basic/programming-guide/language-features/constants-enums/when-to-use-an-enumeration.md)
 - [Přehled konstant](../../../../visual-basic/programming-guide/language-features/constants-enums/constants-overview.md)

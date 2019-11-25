@@ -1,5 +1,5 @@
 ---
-title: Nepovinné (Visual Basic)
+title: Nepovinné
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Optional
@@ -8,24 +8,24 @@ helpviewer_keywords:
 - Optional keyword [Visual Basic], contexts
 - Optional keyword [Visual Basic]
 ms.assetid: 4571ce88-a539-4115-b230-54eb277c6aa7
-ms.openlocfilehash: 3758f17634395236abf2cd7059418bf6f8b6c062
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: a16dae35bf4bc84d95501624c4f023f390a8dda8
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630931"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351439"
 ---
 # <a name="optional-visual-basic"></a>Nepovinné (Visual Basic)
 
-Určuje, že při volání procedury lze argument procedury vynechat.
+Specifies that a procedure argument can be omitted when the procedure is called.
 
 ## <a name="remarks"></a>Poznámky
 
-Pro každý volitelný parametr je nutné zadat konstantní výraz jako výchozí hodnotu tohoto parametru. Pokud je výraz vyhodnocen jako [Nothing](../../../visual-basic/language-reference/nothing.md), je jako výchozí hodnota parametru použita výchozí hodnota datového typu value.
+For each optional parameter, you must specify a constant expression as the default value of that parameter. If the expression evaluates to [Nothing](../../../visual-basic/language-reference/nothing.md), the default value of the value data type is used as the default value of the parameter.
 
-Pokud seznam parametrů obsahuje volitelný parametr, všechny parametry, které následují, musí být také volitelné.
+If the parameter list contains an optional parameter, every parameter that follows it must also be optional.
 
-V těchto kontextech lze použít Modifikátor:`Optional`
+The `Optional` modifier can be used in these contexts:
 
 - [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)
 
@@ -36,14 +36,14 @@ V těchto kontextech lze použít Modifikátor:`Optional`
 - [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)
 
 > [!NOTE]
-> Při volání procedury s nepovinnými parametry nebo bez nich můžete předat argumenty podle umístění nebo podle názvu. Další informace najdete v tématu [předávání argumentů podle pozice a názvu](../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md).
+> When calling a procedure with or without optional parameters, you can pass arguments by position or by name. For more information, see [Passing Arguments by Position and by Name](../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md).
 
 > [!NOTE]
-> Můžete také definovat proceduru s nepovinnými parametry pomocí přetížení. Pokud máte jeden volitelný parametr, můžete definovat dvě přetížené verze procedury, jednu, která přijímá parametr a druhý. Další informace najdete v tématu [přetížení procedury](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md).
+> You can also define a procedure with optional parameters by using overloading. If you have one optional parameter, you can define two overloaded versions of the procedure, one that accepts the parameter and one that doesn’t. For more information, see [Procedure Overloading](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md).
 
 ## <a name="example"></a>Příklad
 
-Následující příklad definuje proceduru, která má volitelný parametr.
+The following example defines a procedure that has an optional parameter.
 
 ```vb
 Public Function FindMatches(ByRef values As List(Of String),
@@ -66,7 +66,7 @@ End Function
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje způsob volání procedury s argumenty předanými pozicí a s argumenty předanými názvem. Procedura má dva volitelné parametry.
+The following example demonstrates how to call a procedure with arguments passed by position and with arguments passed by name. The procedure has two optional parameters.
 
 [!code-vb[VbVbalrKeywords#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/class8.vb#21)]
 

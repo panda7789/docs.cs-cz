@@ -1,5 +1,5 @@
 ---
-title: MustOverride (Visual Basic)
+title: MustOverride
 ms.date: 07/20/2015
 f1_keywords:
 - vb.MustOverride
@@ -15,30 +15,30 @@ helpviewer_keywords:
 - MustOverride keyword [Visual Basic]
 - properties [Visual Basic], overriding
 ms.assetid: 6e9d9ad6-bb64-433f-b32b-3ef84293bf96
-ms.openlocfilehash: f5932b28c4664dd59dad829228f2186e78108af5
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: dc6a153a604fd0e5cee9d7d46ebcd63294f33628
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64661245"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351481"
 ---
 # <a name="mustoverride-visual-basic"></a>MustOverride (Visual Basic)
-Určuje, že se vlastnost nebo procedura není implementovaná v této třídě a předtím, než je možné, musí se přepsat v odvozené třídě.  
+Specifies that a property or procedure is not implemented in this class and must be overridden in a derived class before it can be used.  
   
 ## <a name="remarks"></a>Poznámky  
- Můžete použít `MustOverride` pouze v příkazu deklarace vlastnost nebo procedura. Vlastnost nebo proceduru, která určuje `MustOverride` musíte být členem třídy, a musí být třída označena [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md).  
+ You can use `MustOverride` only in a property or procedure declaration statement. The property or procedure that specifies `MustOverride` must be a member of a class, and the class must be marked [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md).  
   
-## <a name="rules"></a>pravidla  
+## <a name="rules"></a>Rules  
   
-- **Neúplné deklarace.** Pokud zadáte `MustOverride`, nezadáte nejsou žádné další řádky kódu pro vlastnost nebo procedura, dokonce i pomocí `End Function`, `End Property`, nebo `End Sub` příkazu.  
+- **Incomplete Declaration.** When you specify `MustOverride`, you do not supply any additional lines of code for the property or procedure, not even the `End Function`, `End Property`, or `End Sub` statement.  
   
-- **Kombinované modifikátory.** Nelze zadat `MustOverride` spolu s `NotOverridable`, `Overridable`, nebo `Shared` ve stejné deklaraci.  
+- **Combined Modifiers.** You cannot specify `MustOverride` together with `NotOverridable`, `Overridable`, or `Shared` in the same declaration.  
   
-- **Stínováním a přepsáním.** Jak stínováním a přepsáním znovu definovat element zděděné, ale existují významné rozdíly mezi dvěma přístupy. Další informace najdete v tématu [stínění v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).  
+- **Shadowing and Overriding.** Both shadowing and overriding redefine an inherited element, but there are significant differences between the two approaches. For more information, see [Shadowing in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).  
   
-- **Alternativní podmínky.** Někdy se označuje jako element, který nelze použít s výjimkou v přepsání *čistě virtuální* elementu.  
+- **Alternate Terms.** An element that cannot be used except in an override is sometimes called a *pure virtual* element.  
   
- `MustOverride` Modifikátor lze použít v těchto kontextech:  
+ The `MustOverride` modifier can be used in these contexts:  
   
  [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
   
@@ -53,4 +53,4 @@ Určuje, že se vlastnost nebo procedura není implementovaná v této třídě 
 - [Overrides](../../../visual-basic/language-reference/modifiers/overrides.md)
 - [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md)
 - [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)
-- [Stínění v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
+- [Shadowing in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)

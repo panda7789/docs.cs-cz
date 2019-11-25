@@ -1,22 +1,23 @@
 ---
-title: 'Postupy: Načíst obsah adresáři MyDocuments v jazyce Visual Basic'
+title: 'Postupy: Načtení obsahu adresáře Moje dokumenty'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - My Documents directory
 ms.assetid: 26560d01-7dda-4457-8e95-21db23d71aea
-ms.openlocfilehash: f03dbe1811dd5367dab2d32d94ba35ff05fad198
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: cf4470020507c581999b9d72602ddb6e3e76ed74
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623152"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74334539"
 ---
-# <a name="how-to-retrieve-the-contents-of-the-my-documents-directory-in-visual-basic"></a>Postupy: Načíst obsah adresáři MyDocuments v jazyce Visual Basic
-<xref:Microsoft.VisualBasic.FileIO.SpecialDirectories> Objekt lze použít ke čtení z mnoha **všichni uživatelé** adresáře, jako například **dokumenty** nebo **Desktop**.  
+# <a name="how-to-retrieve-the-contents-of-the-my-documents-directory-in-visual-basic"></a>Postupy: Načtení obsahu adresáře Moje dokumenty v jazyce Visual Basic
+
+The <xref:Microsoft.VisualBasic.FileIO.SpecialDirectories> object can be used to read from many of the **All Users** directories, such as **My Documents** or **Desktop**.  
   
-### <a name="to-read-from-the-my-documents-folder"></a>Čtení ze složky Dokumenty  
+### <a name="to-read-from-the-my-documents-folder"></a>To read from the My Documents folder  
   
-- Použití `ReadAllText` metodu za účelem čtení textu z každého souboru v konkrétním adresáři. Následující kód určuje adresář a soubor a potom použije `ReadAllText` pro načtení do řetězce s názvem `patients`.  
+- Use the `ReadAllText` method to read the text from each file in a specific directory. The following code specifies a directory and file and then uses `ReadAllText` to read them into the string named `patients`.  
   
      [!code-vb[VbVbcnMyFileSystem#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#15)]  
   

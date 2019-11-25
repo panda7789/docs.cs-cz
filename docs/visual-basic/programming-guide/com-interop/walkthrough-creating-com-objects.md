@@ -1,5 +1,5 @@
 ---
-title: 'Návod: Vytváření objektů COM pomocí Visual Basic'
+title: 'Walkthrough: Creating COM Objects'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - COM interop [Visual Basic], creating COM objects
@@ -8,87 +8,87 @@ helpviewer_keywords:
 - object creation [Visual Basic], COM objects
 - COM objects, walkthroughs
 ms.assetid: 7b07a463-bc72-4392-9ba0-9dfcb697a44f
-ms.openlocfilehash: 39012ebdd8946f707fe459cb09bb2bbfc8e50088
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 5d00aff07358a0c40159fde9c12c70e0842d848b
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69958269"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74338621"
 ---
-# <a name="walkthrough-creating-com-objects-with-visual-basic"></a>Návod: Vytváření objektů COM pomocí Visual Basic
-Při vytváření nových aplikací nebo součástí je nejvhodnější vytvořit .NET Framework sestavení. Visual Basic ale také usnadňuje vystavení .NET Framework součásti modelu COM. To vám umožní poskytnout nové komponenty pro starší sady aplikací, které vyžadují komponenty modelu COM. Tento návod ukazuje, jak použít Visual Basic k vystavení objektů .NET Framework jako objektů COM, a to s šablonou třídy modelu COM i bez ní.  
+# <a name="walkthrough-creating-com-objects-with-visual-basic"></a>Návod: Vytváření objektů modelu COM pomocí jazyka Visual Basic
+When creating new applications or components, it is best to create .NET Framework assemblies. However, Visual Basic also makes it easy to expose a .NET Framework component to COM. This enables you to provide new components for earlier application suites that require COM components. This walkthrough demonstrates how to use Visual Basic to expose .NET Framework objects as COM objects, both with and without the COM class template.  
   
- Nejjednodušší způsob, jak vystavit objekty COM, je použití šablony třídy modelu COM. Šablona třídy modelu COM vytvoří novou třídu a potom nakonfiguruje projekt tak, aby generoval třídu a interoperabilitu vrstvu jako objekt modelu COM a zaregistroval jej s operačním systémem.  
+ The easiest way to expose COM objects is by using the COM class template. The COM class template creates a new class, and then configures your project to generate the class and interoperability layer as a COM object and register it with the operating system.  
   
 > [!NOTE]
-> I když můžete vystavit třídu vytvořenou v Visual Basic jako objekt modelu COM pro použití nespravovaného kódu, nejedná se o skutečný objekt COM a nelze jej použít Visual Basic. Další informace najdete v tématu [interoperabilita modelu COM v aplikacích .NET Framework](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md).  
+> Although you can also expose a class created in Visual Basic as a COM object for unmanaged code to use, it is not a true COM object and cannot be used by Visual Basic. For more information, see [COM Interoperability in .NET Framework Applications](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md).  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-### <a name="to-create-a-com-object-by-using-the-com-class-template"></a>Vytvoření objektu COM pomocí šablony třídy modelu COM  
+### <a name="to-create-a-com-object-by-using-the-com-class-template"></a>To create a COM object by using the COM class template  
   
-1. Kliknutím na **Nový projekt**otevřete v nabídce **soubor** nový projekt aplikace pro Windows.  
+1. Open a new Windows Application project from the **File** menu by clicking **New Project**.  
   
-2. V dialogovém okně **Nový projekt** v poli **typy projektů** zaškrtněte políčko Windows je vybráno. V seznamu **šablony** vyberte možnost **Knihovna tříd** a pak klikněte na tlačítko **OK**. Zobrazí se nový projekt.  
+2. In the **New Project** dialog box under the **Project Types** field, check that Windows is selected. Select **Class Library** from the **Templates** list, and then click **OK**. The new project is displayed.  
   
-3. V nabídce **projekt** vyberte **Přidat novou položku** . **Přidat novou položku** se zobrazí dialogové okno.  
+3. Select **Add New Item** from the **Project** menu. The **Add New Item** dialog box is displayed.  
   
-4. V seznamu **šablony** vyberte možnost **třída com** a potom klikněte na tlačítko **Přidat**. Visual Basic přidá novou třídu a nakonfiguruje nový projekt pro zprostředkovatele komunikace s objekty COM.  
+4. Select **COM Class** from the **Templates** list, and then click **Add**. Visual Basic adds a new class and configures the new project for COM interop.  
   
-5. Přidejte do třídy COM kód, jako jsou vlastnosti, metody a události.  
+5. Add code such as properties, methods, and events to the COM class.  
   
-6. V nabídce **sestavení** vyberte **Build ClassLibrary1** . Visual Basic sestavení sestavení a registruje objekt COM s operačním systémem.  
+6. Select **Build ClassLibrary1** from the **Build** menu. Visual Basic builds the assembly and registers the COM object with the operating system.  
   
-## <a name="creating-com-objects-without-the-com-class-template"></a>Vytváření objektů COM bez šablony třídy modelu COM  
- Třídu COM lze také vytvořit ručně namísto použití šablony třídy modelu COM. Tento postup je užitečný při práci z příkazového řádku nebo v případě, že chcete mít větší kontrolu nad tím, jak jsou objekty modelu COM definovány.  
+## <a name="creating-com-objects-without-the-com-class-template"></a>Creating COM Objects without the COM Class Template  
+ You can also create a COM class manually instead of using the COM class template. This procedure is helpful when you are working from the command line or when you want more control over how COM objects are defined.  
   
-#### <a name="to-set-up-your-project-to-generate-a-com-object"></a>Nastavení projektu pro vygenerování objektu COM  
+#### <a name="to-set-up-your-project-to-generate-a-com-object"></a>To set up your project to generate a COM object  
   
-1. Kliknutím na **NewProject**otevřete v nabídce **soubor** nový projekt aplikace pro Windows.  
+1. Open a new Windows Application project from the **File** menu by clicking **NewProject**.  
   
-2. V dialogovém okně **Nový projekt** v poli **typy projektů** zaškrtněte políčko Windows je vybráno. V seznamu **šablony** vyberte možnost **Knihovna tříd** a pak klikněte na tlačítko **OK**. Zobrazí se nový projekt.  
+2. In the **New Project** dialog box under the **Project Types** field, check that Windows is selected. Select **Class Library** from the **Templates** list, and then click **OK**. The new project is displayed.  
   
-3. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt a pak klikněte na **vlastnosti**. Zobrazí se **Návrhář projektu** .  
+3. In **Solution Explorer**, right-click your project, and then click **Properties**. The **Project Designer** is displayed.  
   
-4. Klikněte na kartu **kompilovat** .  
+4. Click the **Compile** tab.  
   
-5. Zaškrtněte políčko **zaregistrovat pro zprostředkovatele komunikace s objekty COM** .  
+5. Select the **Register for COM Interop** check box.  
   
-#### <a name="to-set-up-the-code-in-your-class-to-create-a-com-object"></a>Nastavení kódu ve vaší třídě pro vytvoření objektu COM  
+#### <a name="to-set-up-the-code-in-your-class-to-create-a-com-object"></a>To set up the code in your class to create a COM object  
   
-1. V **Průzkumník řešení**dvakrát klikněte na **Class1. vb** pro zobrazení kódu.  
+1. In **Solution Explorer**, double-click **Class1.vb** to display its code.  
   
-2. Přejmenujte třídu `ComClass1`na.  
+2. Rename the class to `ComClass1`.  
   
-3. Přidejte následující konstanty do `ComClass1`. Budou ukládat konstanty globálně jedinečného identifikátoru (GUID), které objekty COM musí mít.  
+3. Add the following constants to `ComClass1`. They will store the Globally Unique Identifier (GUID) constants that the COM objects are required to have.  
   
      [!code-vb[VbVbalrInterop#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#2)]  
   
-4. V nabídce **nástroje** klikněte na příkaz **vytvořit identifikátor GUID**. V dialogovém okně **vytvořit GUID** klikněte na **Formát registru** a pak klikněte na **Kopírovat**. Klikněte na tlačítko **ukončovací**.  
+4. On the **Tools** menu, click **Create Guid**. In the **Create GUID** dialog box, click **Registry Format** and then click **Copy**. Click **Exit**.  
   
-5. Nahraďte prázdný řetězec pro `ClassId` identifikátor GUID odebráním počátečních a koncových složených závorek. Například pokud je `"{2C8B0AEE-02C9-486e-B809-C780A11530FE}"` identifikátor GUID poskytovaný nástrojem Guidgen, váš kód by měl vypadat takto.  
+5. Replace the empty string for the `ClassId` with the GUID, removing the leading and trailing braces. For example, if the GUID provided by Guidgen is `"{2C8B0AEE-02C9-486e-B809-C780A11530FE}"` then your code should appear as follows.  
   
      [!code-vb[VbVbalrInterop#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#3)]  
   
-6. Opakujte předchozí kroky pro `InterfaceId` konstanty a `EventsId` , jak je uvedeno v následujícím příkladu.  
+6. Repeat the previous steps for the `InterfaceId` and `EventsId` constants, as in the following example.  
   
      [!code-vb[VbVbalrInterop#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#4)]  
   
     > [!NOTE]
-    > Ujistěte se, že identifikátory GUID jsou nové a jedinečné; v opačném případě by komponenta modelu COM mohla být v konfliktu s jinými komponentami modelu COM.  
+    > Make sure that the GUIDs are new and unique; otherwise, your COM component could conflict with other COM components.  
   
-7. Přidejte atribut do `ComClass1`, zadejte identifikátory GUID pro ID třídy, ID rozhraní a ID událostí, jako v následujícím příkladu: `ComClass`  
+7. Add the `ComClass` attribute to `ComClass1`, specifying the GUIDs for the Class ID, Interface ID, and Events ID as in the following example:  
   
      [!code-vb[VbVbalrInterop#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#5)]  
   
-8. Třídy COM musí mít `Public Sub New()` konstruktor bez parametrů, jinak se třída nebude registrovat správně. Přidejte do třídy konstruktor bez parametrů:  
+8. COM classes must have a parameterless `Public Sub New()` constructor, or the class will not register correctly. Add a parameterless constructor to the class:  
   
      [!code-vb[VbVbalrInterop#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#6)]  
   
-9. Přidat vlastnosti, metody a události do třídy a ukončit ji `End Class` příkazem. V nabídce **sestavení** vyberte **sestavení řešení** . Visual Basic sestavení sestavení a registruje objekt COM s operačním systémem.  
+9. Add properties, methods, and events to the class, ending it with an `End Class` statement. Select **Build Solution** from the **Build** menu. Visual Basic builds the assembly and registers the COM object with the operating system.  
   
     > [!NOTE]
-    > Objekty modelu COM, které vygenerujete pomocí Visual Basic, nemohou být používány jinými Visual Basic aplikacemi, protože neplatí pro objekty COM. Pokusí se přidat odkazy na takové objekty COM a vyvolá chybu. Podrobnosti najdete v tématu [interoperabilita modelu COM v aplikacích .NET Framework](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md).  
+    > The COM objects you generate with Visual Basic cannot be used by other Visual Basic applications because they are not true COM objects. Attempts to add references to such COM objects will raise an error. For details, see [COM Interoperability in .NET Framework Applications](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md).  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Řazení pole v jazyce Visual Basic'
+title: 'How to: Sort An Array'
 ms.date: 07/20/2015
 f1_keywords:
 - Array.Sort
@@ -7,20 +7,20 @@ helpviewer_keywords:
 - arrays [Visual Basic], sorting
 - examples [Visual Basic], arrays
 ms.assetid: 9289aeaa-9626-4698-94a7-1d1fd3702b87
-ms.openlocfilehash: 467d1bcce6bda2feb5a8e59c152cb292d753e79b
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 3fb9af8de0fc86075fdccd64506c855c1c720660
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71700979"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351857"
 ---
-# <a name="how-to-sort-an-array-in-visual-basic"></a>Postupy: řazení pole v Visual Basic
+# <a name="how-to-sort-an-array-in-visual-basic"></a>How to: sort an array in Visual Basic
 
-Tento článek ukazuje příklad řazení pole řetězců v Visual Basic.
+This article shows an example of how to sort an array of strings in Visual Basic.
 
 ## <a name="example"></a>Příklad
 
-Tento příklad deklaruje pole objektů `String` s názvem `zooAnimals`, naplní ho a pak ho seřadí podle abecedy:
+This example declares an array of `String` objects named `zooAnimals`, populates it, and then sorts it alphabetically:
   
 ```vb
 Private Sub SortAnimals()
@@ -32,13 +32,13 @@ Private Sub SortAnimals()
 End Sub
 ```
 
-## <a name="robust-programming"></a>Robustní programování
+## <a name="robust-programming"></a>Robust programming
 
 Následující podmínky mohou způsobit výjimku:
 
-- Pole je prázdné (<xref:System.ArgumentNullException> Class).
-- Array je multidimenzionální (<xref:System.RankException> Class).
-- Jeden nebo více prvků pole neimplementuje rozhraní <xref:System.IComparable> (třída <xref:System.InvalidOperationException>).
+- Array is empty (<xref:System.ArgumentNullException> class).
+- Array is multidimensional (<xref:System.RankException> class).
+- One or more elements of the array don't implement the <xref:System.IComparable> interface (<xref:System.InvalidOperationException> class).
 
 ## <a name="see-also"></a>Viz také:
 

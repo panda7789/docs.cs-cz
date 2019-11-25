@@ -1,20 +1,20 @@
 ---
-title: Function – výraz (Visual Basic)
+title: Function – výraz
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Function expression [Visual Basic]
 - functions [Visual Basic], function expressions
 - lambda expressions [Visual Basic], function expression
 ms.assetid: e8a47a45-4b8a-4f45-a623-7653625dffbc
-ms.openlocfilehash: 0ab4a77395b478df06f34240212438f3e6e18f6e
-ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
+ms.openlocfilehash: d14d7c9bc701b5e06c51202c07c3b79832aba7cc
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/28/2019
-ms.locfileid: "71592209"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74331082"
 ---
 # <a name="function-expression-visual-basic"></a>Function – výraz (Visual Basic)
-Deklaruje parametry a kód, které definují výraz lambda funkce.  
+Declares the parameters and code that define a function lambda expression.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -30,49 +30,49 @@ End Function
   
 |Termín|Definice|  
 |---|---|  
-|`parameterlist`|Volitelný parametr. Seznam místních názvů proměnných, které reprezentují parametry tohoto postupu. Závorky musí být přítomny i v případě, že je seznam prázdný. Viz [seznam parametrů](../../../visual-basic/language-reference/statements/parameter-list.md).|  
-|`expression`|Povinný parametr. Jeden výraz. Typ výrazu je návratový typ funkce.|  
-|`statements`|Povinný parametr. Seznam příkazů, které vrací hodnotu pomocí příkazu `Return`. (Viz [návratový příkaz](../../../visual-basic/language-reference/statements/return-statement.md).) Typ vrácené hodnoty je návratový typ funkce.|  
+|`parameterlist`|Volitelné. A list of local variable names that represent the parameters of this procedure. The parentheses must be present even when the list is empty. See [Parameter List](../../../visual-basic/language-reference/statements/parameter-list.md).|  
+|`expression`|Požadováno. A single expression. The type of the expression is the return type of the function.|  
+|`statements`|Požadováno. A list of statements that returns a value by using the `Return` statement. (See [Return Statement](../../../visual-basic/language-reference/statements/return-statement.md).) The type of the value returned is the return type of the function.|  
   
 ## <a name="remarks"></a>Poznámky  
- *Výraz lambda* je funkce bez názvu, který počítá a vrací hodnotu. Výraz lambda můžete použít kdekoli, kde můžete použít typ delegáta, s výjimkou argumentu pro `RemoveHandler`. Další informace o delegátech a použití výrazů lambda s delegáty naleznete v tématu [příkaz Delegate](../../../visual-basic/language-reference/statements/delegate-statement.md) a [odlehčený převod delegáta](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md).  
+ A *lambda expression* is a function without a name that calculates and returns a value. You can use a lambda expression anywhere you can use a delegate type, except as an argument to `RemoveHandler`. For more information about delegates, and the use of lambda expressions with delegates, see [Delegate Statement](../../../visual-basic/language-reference/statements/delegate-statement.md) and [Relaxed Delegate Conversion](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md).  
   
 ## <a name="lambda-expression-syntax"></a>Syntaxe výrazu lambda  
- Syntaxe výrazu lambda se podobá funkci standardní funkce. Rozdíly jsou následující:  
+ The syntax of a lambda expression resembles that of a standard function. The differences are as follows:  
   
-- Výraz lambda nemá název.  
+- A lambda expression does not have a name.  
   
-- Výrazy lambda nemůžou mít modifikátory, například `Overloads` nebo `Overrides`.  
+- Lambda expressions cannot have modifiers, such as `Overloads` or `Overrides`.  
   
-- Výrazy lambda nepoužívají klauzuli `As` k určení návratového typu funkce. Místo toho je typ odvozen z hodnoty, na kterou se tělo jednořádkového výrazu lambda vyhodnocuje, nebo návratovou hodnotu víceřádkového výrazu lambda. Například pokud tělo jednořádkového výrazu lambda je `Where cust.City = "London"`, jeho návratový typ je `Boolean`.  
+- Lambda expressions do not use an `As` clause to designate the return type of the function. Instead, the type is inferred from the value that the body of a single-line lambda expression evaluates to, or the return value of a multiline lambda expression. For example, if the body of a single-line lambda expression is `Where cust.City = "London"`, its return type is `Boolean`.  
   
-- Tělo výrazu lambda s jedním řádkem musí být výraz, nikoli příkaz. Tělo může být tvořeno voláním procedury funkce, ale nikoli voláním procedury Sub.  
+- The body of a single-line lambda expression must be an expression, not a statement. The body can consist of a call to a function procedure, but not a call to a sub procedure.  
   
-- Buď musí mít všechny parametry zadané datové typy, nebo musí být všechny odvoditelné.  
+- Either all parameters must have specified data types or all must be inferred.  
   
-- Nepovinné parametry a parametry ParamArray nejsou povoleny.  
+- Optional and Paramarray parameters are not permitted.  
   
-- Obecné parametry nejsou povolené.  
+- Generic parameters are not permitted.  
   
 ## <a name="example"></a>Příklad  
- Následující příklady znázorňují dva způsoby, jak vytvořit jednoduché výrazy lambda. První používá `Dim` k poskytnutí názvu funkce. Chcete-li zavolat funkci, odešlete hodnotu parametru.  
+ The following examples show two ways to create simple lambda expressions. The first uses a `Dim` to provide a name for the function. To call the function, you send in a value for the parameter.  
   
  [!code-vb[VbVbalrLambdas#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#1)]  
   
  [!code-vb[VbVbalrLambdas#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#2)]  
   
 ## <a name="example"></a>Příklad  
- Alternativně můžete deklarovat a spustit funkci ve stejnou dobu.  
+ Alternatively, you can declare and run the function at the same time.  
   
  [!code-vb[VbVbalrLambdas#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#3)]  
   
 ## <a name="example"></a>Příklad  
- Následuje příklad výrazu lambda, který zvyšuje svůj argument a vrací hodnotu. V příkladu se zobrazuje jak jednoduchá, tak víceřádková syntaxe výrazu lambda pro funkci. Další příklady naleznete v tématu [lambda Expressions](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
+ Following is an example of a lambda expression that increments its argument and returns the value. The example shows both the single-line and multiline lambda expression syntax for a function. For more examples, see [Lambda Expressions](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
   
  [!code-vb[VbVbalrLambdas#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#14)]  
   
 ## <a name="example"></a>Příklad  
- Lambda výrazy tvoří mnoho operátorů dotazu v [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] a lze je použít explicitně v dotazech založených na metodách. Následující příklad ukazuje typický dotaz [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] následovaný překladem dotazu do formátu metody.  
+ Lambda expressions underlie many of the query operators in [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)], and can be used explicitly in method-based queries. The following example shows a typical [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query, followed by the translation of the query into method format.  
   
 ```vb  
 Dim londonCusts = From cust In db.Customers  
@@ -85,7 +85,7 @@ Dim londonCusts = db.Customers.
                   Select(Function(cust) cust)  
 ```  
   
- Další informace o metodách dotazů naleznete v tématu [dotazy](../../../visual-basic/language-reference/queries/index.md). Další informace o standardních operátorech dotazu najdete v tématu [Přehled standardních operátorů dotazů](../../programming-guide/concepts/linq/standard-query-operators-overview.md).  
+ For more information about query methods, see [Queries](../../../visual-basic/language-reference/queries/index.md). For more information about standard query operators, see [Standard Query Operators Overview](../../programming-guide/concepts/linq/standard-query-operators-overview.md).  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: Porovnat obsah dvou složek (LINQ) (C#)'
+title: Postup porovnání obsahu dvou složek (LINQ) (C#)
 ms.date: 07/20/2015
 ms.assetid: c7c4870e-c500-4de3-afa4-2c8e07f510e6
-ms.openlocfilehash: df71712ca1b59c706ede66488af8b1580677e299
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f64c82fcc63085c9479b0a3af91f0bdf5ee9eb95
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69924226"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141389"
 ---
-# <a name="how-to-compare-the-contents-of-two-folders-linq-c"></a>Postupy: Porovnat obsah dvou složek (LINQ) (C#)
+# <a name="how-to-compare-the-contents-of-two-folders-linq-c"></a>Postup porovnání obsahu dvou složek (LINQ) (C#)
 Tento příklad ukazuje tři způsoby, jak porovnat dva seznamy souborů:  
   
 - Dotazování na logickou hodnotu, která určuje, zda jsou dva seznamy souborů identické.  
@@ -21,7 +21,7 @@ Tento příklad ukazuje tři způsoby, jak porovnat dva seznamy souborů:
     > [!NOTE]
     > Zde uvedené techniky lze přizpůsobit pro porovnání sekvencí objektů libovolného typu.  
   
- Zde `FileComparer` uvedená třída ukazuje, jak použít vlastní třídu porovnávače společně se standardními operátory dotazu. Třída není určena pro použití ve scénářích reálného světa. Používá pouze název a délku v bajtech jednotlivých souborů, aby bylo možné určit, zda obsah každé složky je identický nebo nikoli. Ve scénáři reálného světa byste tuto porovnávací metodu měli upravit, aby prováděla přísnější kontrolu rovnosti.  
+ Třída `FileComparer` zobrazená zde ukazuje, jak použít vlastní třídu porovnávače společně se standardními operátory dotazu. Třída není určena pro použití ve scénářích reálného světa. Používá pouze název a délku v bajtech jednotlivých souborů, aby bylo možné určit, zda obsah každé složky je identický nebo nikoli. Ve scénáři reálného světa byste tuto porovnávací metodu měli upravit, aby prováděla přísnější kontrolu rovnosti.  
   
 ## <a name="example"></a>Příklad  
   
@@ -126,7 +126,7 @@ namespace QueryCompareTwoDirs
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvořte projekt C# konzolové aplikace se `using` direktivami pro obory názvů System. Linq a System.IO.  
+ Vytvořte projekt C# konzolové aplikace s direktivami `using` pro obory názvů System. Linq a System.IO.  
   
 ## <a name="see-also"></a>Viz také:
 

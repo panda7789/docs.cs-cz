@@ -1,5 +1,5 @@
 ---
-title: Předávání argumentů podle pozice a názvu (Visual Basic)
+title: Předávání argumentů podle pozice a názvu
 ms.date: 02/01/2018
 helpviewer_keywords:
 - arguments [Visual Basic], passing by name
@@ -22,66 +22,66 @@ helpviewer_keywords:
 - argument passing [Visual Basic], by position
 - arguments [Visual Basic], listing by name
 ms.assetid: 1ad7358f-1da9-48da-a95b-f3c7ed41eff3
-ms.openlocfilehash: 2fa07a4ecf31b9dc0fee91593e793f3b00c5a83b
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: b6588335f7634cc87a9fc14cbfc4ba80baad1abb
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524444"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74352624"
 ---
 # <a name="passing-arguments-by-position-and-by-name-visual-basic"></a>Předávání argumentů podle pozice a názvu (Visual Basic)
 
-Když zavoláte `Sub` nebo `Function` postup, můžete předat argumenty *podle pozice* – v pořadí, v jakém jsou uvedeny v definici procedury, nebo je můžete předat *podle názvu*bez ohledu na pozici.
+When you call a `Sub` or `Function` procedure, you can pass arguments *by position* — in the order in which they appear in the procedure's definition — or you can pass them *by name*, without regard to position.
 
-Pokud předáte argument podle názvu, zadáte deklarovaný název argumentu následovaný dvojtečkou a symbolem rovná se (`:=`) následovaný hodnotou argumentu. Pojmenované argumenty můžete dodat v libovolném pořadí.
+When you pass an argument by name, you specify the argument's declared name followed by a colon and an equal sign (`:=`), followed by the argument value. You can supply named arguments in any order.
 
-Například následující `Sub` procedura přijímá tři argumenty:
+For example, the following `Sub` procedure takes three arguments:
 
 [!code-vb[SampleProcedure](../../../../../samples/snippets/visualbasic/programming-guide/language-features/passing-named-arguments/module1.vb#1)]
 
-Při volání tohoto postupu můžete dodat argumenty podle pozice, názvu nebo pomocí kombinace obou.
+When you call this procedure, you can supply the arguments by position, by name, or by using a mixture of both.
 
-## <a name="passing-arguments-by-position"></a>Předávání argumentů podle pozice
+## <a name="passing-arguments-by-position"></a>Passing Arguments by Position
 
-Metodu `Display` můžete volat s argumenty předanými pozicí a oddělenými čárkami, jak je znázorněno v následujícím příkladu:
+You can call the `Display` method with its arguments passed by position and delimited by commas, as shown in the following example:
 
 [!code-vb[ByPosition](../../../../../samples/snippets/visualbasic/programming-guide/language-features/passing-named-arguments/module1.vb#2)]
 
-Vynecháte-li volitelný argument v seznamu pozičních argumentů, je nutné umístit jeho umístění do čárky. Následující příklad volá metodu `Display` bez argumentu `age`:
+If you omit an optional argument in a positional argument list, you must hold its place with a comma. The following example calls the `Display` method without the `age` argument:
 
 [!code-vb[ByPositionWithOptionalArgument](../../../../../samples/snippets/visualbasic/programming-guide/language-features/passing-named-arguments/module1.vb#3)]
 
-## <a name="passing-arguments-by-name"></a>Předávání argumentů podle názvu
+## <a name="passing-arguments-by-name"></a>Passing Arguments by Name
 
-Alternativně můžete volat `Display` s argumenty předanými podle názvu, také oddělené čárkami, jak je znázorněno v následujícím příkladu:
+Alternatively, you can call `Display` with the arguments passed by name, also delimited by commas, as shown in the following example:
 
 [!code-vb[ByName](../../../../../samples/snippets/visualbasic/programming-guide/language-features/passing-named-arguments/module1.vb#4)]
 
-Předávání argumentů podle názvu tímto způsobem je zvlášť užitečné při volání procedury, která má více než jeden volitelný argument. Pokud zadáte argumenty podle názvu, nemusíte používat po sobě jdoucí čárky k označení chybějících argumentů. Předávání argumentů podle názvu také usnadňuje sledování předávaného argumentu a těch, které jsou vynechány.
+Passing arguments by name in this way is especially useful when you call a procedure that has more than one optional argument. If you supply arguments by name, you do not have to use consecutive commas to denote missing positional arguments. Passing arguments by name also makes it easier to keep track of which arguments you are passing and which ones you are omitting.
 
-## <a name="mixing-arguments-by-position-and-by-name"></a>Kombinování argumentů podle pozice a názvu
+## <a name="mixing-arguments-by-position-and-by-name"></a>Mixing Arguments by Position and by Name
 
-Můžete dodat argumenty podle umístění a podle názvu v rámci jednoho volání procedury, jak je znázorněno v následujícím příkladu:
+You can supply arguments both by position and by name in a single procedure call, as shown in the following example:
 
 [!code-vb[ByNameAndPosition](../../../../../samples/snippets/visualbasic/programming-guide/language-features/passing-named-arguments/module1.vb#5)]
 
-V předchozím příkladu není k dispozici žádná extra čárka pro umístění vynechaného `age` argumentu, protože `birth` je předána názvem.
+In the preceding example, no extra comma is necessary to hold the place of the omitted `age` argument, since `birth` is passed by name.
 
-Ve verzích Visual Basic před 15,5, pokud zadáváte argumenty podle kombinace pozice a názvu, musí být argumenty pozice napřed. Po zadání argumentu podle názvu musí všechny zbývající argumenty předávat název.  Například následující volání metody `Display` zobrazí chybu kompilátoru [BC30241: očekával se pojmenovaný argument](../../../misc/bc30241.md).
+In versions of Visual Basic before 15.5, when you supply arguments by a mixture of position and name, the positional arguments must all come first. Once you supply an argument by name, any remaining arguments must all be passed by name.  For example, the following call to the `Display` method displays compiler error [BC30241: Named argument expected](../../../misc/bc30241.md).
 
 [!code-vb[ByNameAndPosition](../../../../../samples/snippets/visualbasic/programming-guide/language-features/passing-named-arguments/module1.vb#6)]
 
-Počínaje Visual Basic 15,5 se Poziční argumenty mohou pořídit pojmenovanými argumenty, pokud jsou konečné Poziční argumenty ve správné pozici. Pokud je kompilace v rámci Visual Basic 15,5, předchozí volání metody `Display` se úspěšně zkompiluje a již negeneruje chybu kompilátoru [BC30241](../../../misc/bc30241.md).
+Starting with Visual Basic 15.5, positional arguments can follow named arguments if the ending positional arguments are in the correct position. If compiled under Visual Basic 15.5, the previous call to the `Display` method compiles successfully and no longer generates compiler error [BC30241](../../../misc/bc30241.md).
 
-Tuto schopnost sloučit a porovnat pojmenované a poziční argumenty v libovolném pořadí je zvláště užitečné, pokud chcete použít pojmenovaný argument k lepšímu čitelnosti kódu. Například následující konstruktor třídy `Person` vyžaduje dva argumenty typu `Person`, které mohou být `Nothing`.
+This ability to mix and match named and positional arguments in any order is particularly useful when you want to use a named argument to make your code more readable. For example, the following `Person` class constructor requires two arguments of type `Person`, both of which can be `Nothing`.
 
 [!code-vb[ByNameAndPosition](../../../../../samples/snippets/visualbasic/programming-guide/language-features/passing-named-arguments/module1.vb#7)]
 
-Použití smíšených pojmenovaných a pozičních argumentů pomáhá zajistit, aby byl záměr kódu jasný, pokud je hodnota `father` a `mother` argumenty `Nothing`:
+Using mixed named and positional arguments helps to make the intent of the code clear when the value of the `father` and `mother` arguments is `Nothing`:
 
 [!code-vb[ByNameAndPosition](../../../../../samples/snippets/visualbasic/programming-guide/language-features/passing-named-arguments/module1.vb#8)]
 
-Chcete-li následovat Poziční argumenty s pojmenovanými argumenty, je nutné přidat následující prvek do souboru Visual Basic projektu (\*. vbproj):
+To follow positional arguments with named arguments, you must add the following element to your Visual Basic project (\*.vbproj) file:
 
 ```xml
 <PropertyGroup>
@@ -89,13 +89,13 @@ Chcete-li následovat Poziční argumenty s pojmenovanými argumenty, je nutné 
 </PropertyGroup>
 ```
 
-Další informace najdete v tématu [nastavení jazykové verze Visual Basic](../../../language-reference/configure-language-version.md).
+For more information see [setting the Visual Basic language version](../../../language-reference/configure-language-version.md).
 
-## <a name="restrictions-on-supplying-arguments-by-name"></a>Omezení pro zadání argumentů podle názvu
+## <a name="restrictions-on-supplying-arguments-by-name"></a>Restrictions on Supplying Arguments by Name
 
-Argumenty nelze předat podle názvu, abyste se vyhnuli zadávání požadovaných argumentů. Můžete vynechat jenom nepovinné argumenty.
+You cannot pass arguments by name to avoid entering required arguments. You can omit only the optional arguments.
 
-Pole parametrů nelze předat podle názvu. Důvodem je, že při volání procedury zadáte nekonečný počet argumentů oddělených čárkou pro pole parametrů a kompilátor nemůže přidružit více než jeden argument s jediným názvem.
+You cannot pass a parameter array by name. This is because when you call the procedure, you supply an indefinite number of comma-separated arguments for the parameter array, and the compiler cannot associate more than one argument with a single name.
 
 ## <a name="see-also"></a>Viz také:
 

@@ -1,5 +1,5 @@
 ---
-title: Výchozí (Visual Basic)
+title: Výchozí
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Default
@@ -10,32 +10,32 @@ helpviewer_keywords:
 - Default keyword [Visual Basic]
 - default properties
 ms.assetid: 45fce9b9-d212-4b2d-ab86-6e359b8b57af
-ms.openlocfilehash: f78ffe42a9d618d44da2a50c0de831396576430c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ad4c9528f208cc2c31f07b0506d1b049a7568c86
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61800929"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351572"
 ---
 # <a name="default-visual-basic"></a>Výchozí (Visual Basic)
-Identifikuje vlastnost jako výchozí vlastnost své třídy, struktury nebo rozhraní.  
+Identifies a property as the default property of its class, structure, or interface.  
   
 ## <a name="remarks"></a>Poznámky  
- Třídy, struktury nebo rozhraní můžete určit jenom jedna z jeho vlastnosti, jako *výchozí vlastnost*za předpokladu, že vlastnost používá nejméně jeden parametr. Pokud kód provede odkaz na třídy nebo struktury bez zadání členem, Visual Basic přeloží tento odkaz na výchozí vlastnost.  
+ A class, structure, or interface can designate at most one of its properties as the *default property*, provided that property takes at least one parameter. If code makes a reference to a class or structure without specifying a member, Visual Basic resolves that reference to the default property.  
   
- Výchozí vlastnosti může vést k malé snížení zdrojového kódu – znaků, ale váš kód mohl provést obtížněji čitelný. Pokud volající kód není znáte třídy nebo struktury, když se vytváří odkaz na název třídy nebo struktury nemůže být určité Určuje, zda přistupuje k této referenční třídy nebo struktury samotné nebo výchozí vlastnost. To může vést k chybám kompilátoru nebo běhové logiky drobné chyby.  
+ Default properties can result in a small reduction in source code-characters, but they can make your code more difficult to read. If the calling code is not familiar with your class or structure, when it makes a reference to the class or structure name it cannot be certain whether that reference accesses the class or structure itself, or a default property. This can lead to compiler errors or subtle run-time logic errors.  
   
- Můžete poněkud snížit pravděpodobnost vzniku chyby výchozí vlastnost vždy používat [Option Strict – příkaz](../../../visual-basic/language-reference/statements/option-strict-statement.md) nastavení kompilátoru kontroly typů pro `On`.  
+ You can somewhat reduce the chance of default property errors by always using the [Option Strict Statement](../../../visual-basic/language-reference/statements/option-strict-statement.md) to set compiler type checking to `On`.  
   
- Pokud máte v úmyslu použít předdefinované třídy nebo struktury v kódu, musíte určit, zda má výchozí vlastnosti a pokud ano, co její název je.  
+ If you are planning to use a predefined class or structure in your code, you must determine whether it has a default property, and if so, what its name is.  
   
- Z důvodu tyto nevýhody měli byste zvážit, není definování výchozí vlastnosti. Pro lepší čitelnost kódu byste také vzít v úvahu vždy odkazuje na všechny vlastnosti explicitně, dokonce i výchozí vlastnosti.  
+ Because of these disadvantages, you should consider not defining default properties. For code readability, you should also consider always referring to all properties explicitly, even default properties.  
   
- `Default` Modifikátor lze použít v tomto kontextu:  
+ The `Default` modifier can be used in this context:  
   
  [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Deklarace a volání výchozí vlastnosti v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/procedures/how-to-declare-and-call-a-default-property.md)
+- [How to: Declare and Call a Default Property in Visual Basic](../../../visual-basic/programming-guide/language-features/procedures/how-to-declare-and-call-a-default-property.md)
 - [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)

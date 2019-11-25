@@ -1,5 +1,5 @@
 ---
-title: Literál komentáře XML (Visual Basic)
+title: Literál komentáře XML
 ms.date: 07/20/2015
 f1_keywords:
 - vb.XmlLiteralComment
@@ -9,15 +9,15 @@ helpviewer_keywords:
 - XML comment literal [Visual Basic]
 - XML literals [Visual Basic], comment
 ms.assetid: 634c1cee-5e01-48d0-88d7-2dd55e4a9e52
-ms.openlocfilehash: 91369392f33f2a86a7a4cb5ffb3faa668c113348
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 8d9db66aabe344bd5c8f9a92ac8618b7bc1abb43
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965401"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74349388"
 ---
 # <a name="xml-comment-literal-visual-basic"></a>Literál komentáře XML (Visual Basic)
-Literál představující <xref:System.Xml.Linq.XComment> objekt.  
+A literal representing an <xref:System.Xml.Linq.XComment> object.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,29 +29,29 @@ Literál představující <xref:System.Xml.Linq.XComment> objekt.
   
 |Termín|Definice|  
 |---|---|  
-|`<!--`|Povinný parametr. Označuje začátek komentáře XML.|  
-|`content`|Povinný parametr. Text, který se má zobrazit v komentáři XML Nemůže obsahovat řadu dvou spojovníků (--) nebo končit spojovníkem, které je vedle uzavírací značky.|  
-|`-->`|Povinný parametr. Označuje konec komentáře XML.|  
+|`<!--`|Požadováno. Denotes the start of the XML comment.|  
+|`content`|Požadováno. Text to appear in the XML comment. Cannot contain a series of two hyphens (--) or end with a hyphen adjacent to the closing tag.|  
+|`-->`|Požadováno. Denotes the end of the XML comment.|  
   
 ## <a name="return-value"></a>Návratová hodnota  
- <xref:System.Xml.Linq.XComment> Objekt.  
+ An <xref:System.Xml.Linq.XComment> object.  
   
 ## <a name="remarks"></a>Poznámky  
- Literály komentářů XML neobsahují obsah dokumentu. obsahují informace o dokumentu. Oddíl komentáře XML končí sekvencí "-->". To zahrnuje následující body:  
+ XML comment literals do not contain document content; they contain information about the document. The XML comment section ends with the sequence "-->". This implies the following points:  
   
-- V literálu komentáře XML nemůžete použít vložený výraz, protože oddělovače vložených výrazů jsou platným obsahem komentáře XML.  
+- You cannot use an embedded expression in an XML comment literal because the embedded expression delimiters are valid XML comment content.  
   
-- Oddíly komentářů XML nemůžou být vnořené, `content` protože nesmí obsahovat hodnotu-->.  
+- XML comment sections cannot be nested, because `content` cannot contain the value "-->".  
   
- Můžete přiřadit literál komentáře XML proměnné nebo ji můžete zahrnout do literálu elementu XML.  
+ You can assign an XML comment literal to a variable, or you can include it in an XML element literal.  
   
 > [!NOTE]
-> Literál XML může zahrnovat více řádků bez použití znaků pro pokračování řádku. Tato funkce umožňuje kopírovat obsah z dokumentu XML a vložit ho přímo do Visual Basic programu.  
+> An XML literal can span multiple lines without using line continuation characters. This feature enables you to copy content from an XML document and paste it directly into a Visual Basic program.  
   
- Kompilátor Visual Basic převádí literál komentáře XML na volání <xref:System.Xml.Linq.XComment.%23ctor%2A> konstruktoru.  
+ The Visual Basic compiler converts the XML comment literal to a call to the <xref:System.Xml.Linq.XComment.%23ctor%2A> constructor.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří komentář XML, který obsahuje text "Toto je komentář".  
+ The following example creates an XML comment that contains the text "This is a comment".  
   
  [!code-vb[VbXMLSamples#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples4.vb#9)]  
   
@@ -60,4 +60,4 @@ Literál představující <xref:System.Xml.Linq.XComment> objekt.
 - <xref:System.Xml.Linq.XComment>
 - [Literál XML elementu](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)
 - [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)
-- [Vytváření XML v Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [Creating XML in Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)

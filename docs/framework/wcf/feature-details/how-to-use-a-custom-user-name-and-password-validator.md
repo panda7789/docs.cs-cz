@@ -7,16 +7,16 @@ dev_langs:
 helpviewer_keywords:
 - WCF, username and password
 ms.assetid: 8e08b74b-fa44-4018-b63d-0d0805f85e3f
-ms.openlocfilehash: 98ffad7e717aac949509fa701c77d8ba2b80a695
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 3d01a29671f42e80fdb7ca45223007aa60273ba9
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834697"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283260"
 ---
 # <a name="how-to-use-a-custom-user-name-and-password-validator"></a>Postupy: Použití validátoru vlastního uživatelského jména a hesla
 
-Ve výchozím nastavení platí, že když se pro ověřování používá uživatelské jméno a heslo, Windows Communication Foundation (WCF) použije Windows k ověření uživatelského jména a hesla. WCF však umožňuje vlastní uživatelské jméno a ověřovací schémata hesla, označované také jako *validátory*. Chcete-li začlenit vlastní validátor uživatelského jména a hesla, vytvořte třídu, která je odvozena z <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> a pak ji nakonfigurujte.
+Ve výchozím nastavení platí, že když se pro ověřování používá uživatelské jméno a heslo, Windows Communication Foundation (WCF) použije Windows k ověření uživatelského jména a hesla. WCF však umožňuje vlastní uživatelské jméno a ověřovací schémata hesla, označované také jako *validátory*. Chcete-li začlenit vlastní validátor uživatelského jména a hesla, vytvořte třídu, která je odvozena z <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> a poté ji nakonfigurujte.
 
 Ukázkovou aplikaci najdete v tématu [validátor hesla uživatelského jména](../samples/user-name-password-validator.md).
 
@@ -40,30 +40,30 @@ Ukázkovou aplikaci najdete v tématu [validátor hesla uživatelského jména](
 
 1. Nakonfigurujte vazbu, která používá zabezpečení zpráv prostřednictvím jakéhokoli přenosu nebo zabezpečení na úrovni přenosu přes HTTP (S).
 
-    Pokud používáte zabezpečení zpráv, přidejte jednu z systémových vazeb, například [\<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md), nebo [> \<customBinding](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) , který podporuje zabezpečení zpráv a typ přihlašovacích údajů `UserName`.
+    Pokud používáte zabezpečení zpráv, přidejte jednu z systémových vazeb, například [\<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)nebo [>\<CustomBinding](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) , která podporuje zabezpečení zpráv a typ přihlašovacích údajů `UserName`.
 
-    Pokud používáte zabezpečení na úrovni přenosu přes protokol HTTP (S), přidejte [\<wsHttpBinding >](../../configure-apps/file-schema/wcf/wshttpbinding.md) nebo [\<basicHttpBinding >](../../configure-apps/file-schema/wcf/basichttpbinding.md), @no__t > [5NetTcpBinding @no__t](../../configure-apps/file-schema/wcf/nettcpbinding.md) nebo [>-7CustomBinding](../../configure-apps/file-schema/wcf/custombinding.md) , který používá HTTP (S) a schéma ověřování `Basic`.
+    Pokud používáte zabezpečení na úrovni přenosu přes protokol HTTP, přidejte buď [\<wsHttpBinding >](../../configure-apps/file-schema/wcf/wshttpbinding.md) nebo [\<basicHttpBinding >](../../configure-apps/file-schema/wcf/basichttpbinding.md), [\<netTcpBinding >](../../configure-apps/file-schema/wcf/nettcpbinding.md) nebo [\<CustomBinding >](../../configure-apps/file-schema/wcf/custombinding.md) , který používá protokol HTTP a `Basic` schéma ověřování.
 
     > [!NOTE]
-    > Pokud se používá [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] nebo novější, můžete použít vlastní validátor uživatelského jména a hesla se zabezpečením zpráv a přenosů. Pomocí WinFX se vlastní validátor uživatelského jména a hesla dá použít jenom se zabezpečením zpráv.
+    > Při použití .NET Framework 3,5 nebo novějších verzí můžete používat vlastní validátor uživatelského jména a hesla se zabezpečením zpráv a přenosů. Pomocí WinFX se vlastní validátor uživatelského jména a hesla dá použít jenom se zabezpečením zpráv.
 
     > [!TIP]
-    > Další informace o použití \<netTcpBinding > v tomto kontextu najdete v [> \<security](../../configure-apps/file-schema/wcf/security-of-nettcpbinding.md).
+    > Další informace o použití \<netTcpBinding > v tomto kontextu najdete v tématu [\<zabezpečení >](../../configure-apps/file-schema/wcf/security-of-nettcpbinding.md).
 
-    1. V konfiguračním souboru pod prvkem [\<System. serviceModel >](../../configure-apps/file-schema/wcf/system-servicemodel.md) přidejte [> prvek \<bindings](../../configure-apps/file-schema/wcf/bindings.md) .
+    1. V konfiguračním souboru pod prvkem [\<System. serviceModel >](../../configure-apps/file-schema/wcf/system-servicemodel.md) přidejte [\<vazby >](../../configure-apps/file-schema/wcf/bindings.md) element.
 
-    2. Do oddílu Bindings přidejte > element [\<wsHttpBinding >](../../configure-apps/file-schema/wcf/wshttpbinding.md) nebo [\<basicHttpBinding](../../configure-apps/file-schema/wcf/basichttpbinding.md) . Další informace o vytvoření elementu vazby WCF naleznete v tématu [How to: zadat vazbu služby v konfiguraci](../how-to-specify-a-service-binding-in-configuration.md).
+    2. Do oddílu Bindings přidejte [\<wsHttpBinding >](../../configure-apps/file-schema/wcf/wshttpbinding.md) nebo [\<prvek >u BasicHttpBinding](../../configure-apps/file-schema/wcf/basichttpbinding.md) . Další informace o vytvoření elementu vazby WCF naleznete v tématu [How to: zadat vazbu služby v konfiguraci](../how-to-specify-a-service-binding-in-configuration.md).
 
-    3. Nastavte atribut `mode` [\<security >](../../configure-apps/file-schema/wcf/security-of-wshttpbinding.md) nebo [\<security >](../../configure-apps/file-schema/wcf/security-of-basichttpbinding.md) na `Message`, `Transport` nebo `TransportWithMessageCredential`.
+    3. Nastavte atribut `mode` [\<> zabezpečení](../../configure-apps/file-schema/wcf/security-of-wshttpbinding.md) nebo [\<zabezpečení >](../../configure-apps/file-schema/wcf/security-of-basichttpbinding.md) na `Message`, `Transport`nebo `TransportWithMessageCredential`.
 
-    4. Nastavte atribut `clientCredentialType` [\<message >](../../../../docs/framework/configure-apps/file-schema/wcf/message-of-wshttpbinding.md) nebo [\<transport >](../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-wshttpbinding.md).
+    4. Nastavte atribut `clientCredentialType` [\<zprávy >](../../../../docs/framework/configure-apps/file-schema/wcf/message-of-wshttpbinding.md) nebo [\<přenosu >](../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-wshttpbinding.md).
 
-        Pokud používáte zabezpečení zprávy, nastavte atribut `clientCredentialType` [\<message >](../../../../docs/framework/configure-apps/file-schema/wcf/message-of-wshttpbinding.md) na `UserName`.
+        Pokud používáte zabezpečení zprávy, nastavte atribut `clientCredentialType` [\<zprávy >](../../../../docs/framework/configure-apps/file-schema/wcf/message-of-wshttpbinding.md) na `UserName`.
 
-        Při použití zabezpečení na úrovni přenosu přes HTTP (S) nastavte atribut `clientCredentialType` [\<transport >](../../configure-apps/file-schema/wcf/transport-of-wshttpbinding.md) nebo [\<transport >](../../configure-apps/file-schema/wcf/transport-of-basichttpbinding.md) na `Basic`.
+        Při použití zabezpečení na úrovni přenosu přes HTTP (S) nastavte atribut `clientCredentialType` [\<přenosů >](../../configure-apps/file-schema/wcf/transport-of-wshttpbinding.md) nebo [\<přenosových >](../../configure-apps/file-schema/wcf/transport-of-basichttpbinding.md) na `Basic`.
 
         > [!NOTE]
-        > Když je služba WCF hostovaná ve službě Internetová informační služba (IIS) pomocí zabezpečení na úrovni přenosu a vlastnost <xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.UserNamePasswordValidationMode%2A> je nastavená na <xref:System.ServiceModel.Security.UserNamePasswordValidationMode.Custom>, vlastní schéma ověřování používá podmnožinu ověřování systému Windows. To znamená, že v tomto scénáři provede služba IIS ověřování systému Windows předtím, než WCF vyvolá vlastní ověřovatel.
+        > Když je služba WCF hostovaná ve službě Internetová informační služba (IIS) pomocí zabezpečení na úrovni přenosu a vlastnost <xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.UserNamePasswordValidationMode%2A> je nastavená na <xref:System.ServiceModel.Security.UserNamePasswordValidationMode.Custom>, používá vlastní schéma ověřování podmnožinu ověřování systému Windows. To znamená, že v tomto scénáři provede služba IIS ověřování systému Windows předtím, než WCF vyvolá vlastní ověřovatel.
 
     Další informace o vytvoření elementu vazby WCF naleznete v tématu [How to: zadat vazbu služby v konfiguraci](../how-to-specify-a-service-binding-in-configuration.md).
 
@@ -83,22 +83,22 @@ Ukázkovou aplikaci najdete v tématu [validátor hesla uživatelského jména](
     </system.serviceModel>
     ```
 
-2. Nakonfigurujte chování, které určuje, že se k ověření párů uživatelského jména a hesla pro příchozí tokeny zabezpečení <xref:System.IdentityModel.Tokens.UserNameSecurityToken> používá vlastní validátor uživatelského jména a hesla.
+2. Nakonfigurujte chování, které určuje, že se k ověření párů uživatelského jména a hesla pro příchozí <xref:System.IdentityModel.Tokens.UserNameSecurityToken> tokeny zabezpečení používá vlastní validátor uživatelského jména a hesla.
 
-    1. Jako podřízený prvku [\<System. serviceModel >](../../configure-apps/file-schema/wcf/system-servicemodel.md) přidejte [> prvek \<behaviors](../../configure-apps/file-schema/wcf/behaviors.md) .
+    1. Jako podřízený prvku [\<System. serviceModel >](../../configure-apps/file-schema/wcf/system-servicemodel.md) přidejte [\<chování >](../../configure-apps/file-schema/wcf/behaviors.md) elementu.
 
-    2. Přidejte [> \<serviceBehaviors](../../configure-apps/file-schema/wcf/servicebehaviors.md) do prvku [> \<behaviors](../../configure-apps/file-schema/wcf/behaviors.md) .
+    2. Přidejte [\<serviceBehaviors >](../../configure-apps/file-schema/wcf/servicebehaviors.md) do [chování\<>](../../configure-apps/file-schema/wcf/behaviors.md) elementu.
 
-    3. Přidejte prvek [> \<behavior](../../configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md) a nastavte atribut `name` na odpovídající hodnotu.
+    3. Přidejte [> prvek chování\<](../../configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md) a nastavte atribut `name` na odpovídající hodnotu.
 
-    4. Přidejte [> \<serviceCredentials](../../configure-apps/file-schema/wcf/servicecredentials.md) do prvku [> \<behavior](../../configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md) .
+    4. Přidejte [\<serviceCredentials >](../../configure-apps/file-schema/wcf/servicecredentials.md) do [\<chování >](../../configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md) elementu.
 
-    5. Do [> \<serviceCredentials](../../configure-apps/file-schema/wcf/servicecredentials.md)přidejte [\<userNameAuthentication >](../../configure-apps/file-schema/wcf/usernameauthentication.md) .
+    5. Do [>\<ServiceCredentials](../../configure-apps/file-schema/wcf/servicecredentials.md)přidejte [\<UserNameAuthentication >](../../configure-apps/file-schema/wcf/usernameauthentication.md) .
 
     6. Nastavte `userNamePasswordValidationMode` na `Custom`.
 
         > [!IMPORTANT]
-        > Pokud není nastavená hodnota `userNamePasswordValidationMode`, používá WCF místo vlastního uživatelského jména a validátoru hesla ověřování systému Windows.
+        > Pokud hodnota `userNamePasswordValidationMode` není nastavená, WCF místo vlastního uživatelského jména a validátoru hesla použije ověřování systému Windows.
 
     7. Nastavte `customUserNamePasswordValidatorType` na typ, který představuje vaše vlastní validátor uživatelského jména a hesla.
 

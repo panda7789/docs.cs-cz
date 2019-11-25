@@ -1,5 +1,5 @@
 ---
-title: Vložené výrazy v XML (Visual Basic)
+title: Vložené výrazy v XML
 ms.date: 07/20/2015
 f1_keywords:
 - vb.XmlEmbeddedExpression
@@ -8,21 +8,21 @@ helpviewer_keywords:
 - LINQ to XML [Visual Basic], embedded expressions
 - XML literals [Visual Basic], embedded expressions
 ms.assetid: bf2eb779-b751-4b7c-854f-9f2161482352
-ms.openlocfilehash: 525fa04db86a299d88e1612aac76d014f35124eb
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 0cdb960160457108ddf18c554dae5f5993269833
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69922619"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74332357"
 ---
 # <a name="embedded-expressions-in-xml-visual-basic"></a>Vložené výrazy v XML (Visual Basic)
-Vložené výrazy umožňují vytvořit literály XML, které obsahují výrazy, které jsou vyhodnocovány v době běhu. Syntaxe vloženého výrazu je `<%=` `expression` `%>`, která je stejná jako syntaxe použitá v ASP.NET.  
+Embedded expressions enable you to create XML literals that contain expressions that are evaluated at run time. The syntax for an embedded expression is `<%=` `expression` `%>`, which is the same as the syntax used in ASP.NET.  
   
- Můžete například vytvořit literál elementu XML a zkombinovat vložené výrazy s textovým obsahem literálu.  
+ For example, you can create an XML element literal, combining embedded expressions with literal text content.  
   
  [!code-vb[VbXMLSamples#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples13.vb#27)]  
   
- Pokud `isbnNumber` obsahuje celé číslo 12345 a `modifiedDate` obsahuje datum 3/5/2006, když se tento kód `book` spustí, hodnota je:  
+ If `isbnNumber` contains the integer 12345 and `modifiedDate` contains the date 3/5/2006, when this code executes, the value of `book` is:  
   
 ```xml  
 <book category="fiction" isbn="12345">  
@@ -30,59 +30,59 @@ Vložené výrazy umožňují vytvořit literály XML, které obsahují výrazy,
 </book>  
 ```  
   
-## <a name="embedded-expression-location-and-validation"></a>Umístění a ověřování vloženého výrazu  
- Vložené výrazy mohou být zobrazeny pouze v určitých umístěních ve výrazech literálů XML. Umístění výrazu určuje, které typy výrazů mohou vracet a jak `Nothing` je zpracována. Následující tabulka popisuje povolená umístění a typy vložených výrazů.  
+## <a name="embedded-expression-location-and-validation"></a>Embedded Expression Location and Validation  
+ Embedded expressions can appear only at certain locations within XML literal expressions. The expression location controls which types the expression can return and how `Nothing` is handled. The following table describes the allowed locations and types of embedded expressions.  
   
-|Umístění v literálu|Typ výrazu|Manipulace s`Nothing`|  
+|Location in literal|Type of expression|Handling of `Nothing`|  
 |---|---|---|  
-|Název elementu XML|<xref:System.Xml.Linq.XName>|Chyba|  
-|Obsah elementu XML|`Object`nebo pole`Object`|Ignorováno|  
-|Název atributu elementu XML|<xref:System.Xml.Linq.XName>|Chyba, pokud není hodnota atributu také`Nothing`|  
-|Hodnota atributu elementu XML|`Object`|Deklarace atributu se ignorovala.|  
-|Atribut elementu XML|<xref:System.Xml.Linq.XAttribute>nebo kolekce<xref:System.Xml.Linq.XAttribute>|Ignorováno|  
-|Kořenový element dokumentu XML|<xref:System.Xml.Linq.XElement>nebo kolekce jednoho <xref:System.Xml.Linq.XElement> objektu a libovolného <xref:System.Xml.Linq.XProcessingInstruction> počtu objektů a <xref:System.Xml.Linq.XComment> .|Ignorováno|  
+|XML element name|<xref:System.Xml.Linq.XName>|Chyba|  
+|XML element content|`Object` or array of `Object`|Ignorováno|  
+|XML element attribute name|<xref:System.Xml.Linq.XName>|Error, unless the attribute value is also `Nothing`|  
+|XML element attribute value|`Object`|Attribute declaration ignored|  
+|XML element attribute|<xref:System.Xml.Linq.XAttribute> or a collection of <xref:System.Xml.Linq.XAttribute>|Ignorováno|  
+|XML document root element|<xref:System.Xml.Linq.XElement> or a collection of one <xref:System.Xml.Linq.XElement> object and an arbitrary number of <xref:System.Xml.Linq.XProcessingInstruction> and <xref:System.Xml.Linq.XComment> objects|Ignorováno|  
   
-- Příklad vloženého výrazu v názvu elementu XML:  
+- Example of an embedded expression in an XML element name:  
   
      [!code-vb[VbXMLSamples#32](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples13.vb#32)]  
   
-- Příklad vloženého výrazu v obsahu elementu XML:  
+- Example of an embedded expression in the content of an XML element:  
   
      [!code-vb[VbXMLSamples#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples13.vb#33)]  
   
-- Příklad vloženého výrazu v názvu atributu elementu XML:  
+- Example of an embedded expression in an XML element attribute name:  
   
      [!code-vb[VbXMLSamples#34](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples13.vb#34)]  
   
-- Příklad vloženého výrazu v hodnotě atributu elementu XML:  
+- Example of an embedded expression in an XML element attribute value:  
   
      [!code-vb[VbXMLSamples#35](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples13.vb#35)]  
   
-- Příklad vloženého výrazu v atributu elementu XML:  
+- Example of an embedded expression in an XML element attribute:  
   
      [!code-vb[VbXMLSamples#36](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples13.vb#36)]  
   
-- Příklad vloženého výrazu v kořenovém elementu dokumentu XML:  
+- Example of an embedded expression in an XML document root element:  
   
      [!code-vb[VbXMLSamples#37](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples13.vb#37)]  
   
- Pokud povolíte `Option Strict`, kompilátor zkontroluje, že se typ každého vloženého výrazu rozšíří na požadovaný typ. Jediná výjimka je určena pro kořenový prvek dokumentu XML, který je ověřen při spuštění kódu. Pokud kompilujete bez `Option Strict`, můžete vkládat výrazy typu `Object` a jejich typ je ověřován za běhu.  
+ If you enable `Option Strict`, the compiler checks that the type of each embedded expression widens to the required type. The only exception is for the root element of an XML document, which is verified when the code runs. If you compile without `Option Strict`, you can embed expressions of type `Object` and their type is verified at run time.  
   
- V místech, kde je obsah nepovinný, vložené `Nothing` výrazy, které obsahují, se ignorují. To znamená, že nemusíte kontrolovat obsah elementu, hodnoty atributů a prvky `Nothing` pole, než použijete literál XML. Požadované hodnoty, jako jsou názvy elementů a atributů, nemůžou být `Nothing`.  
+ In locations where content is optional, embedded expressions that contain `Nothing` are ignored. This means you do not have to check that element content, attribute values, and array elements are not `Nothing` before you use an XML literal. Required values, such as element and attribute names, cannot be `Nothing`.  
   
- Další informace o použití vloženého výrazu v konkrétním typu literálu naleznete v tématu [literál dokumentu XML](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md), [literál elementu XML](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md).  
+ For more information about using an embedded expression in a particular type of literal, see [XML Document Literal](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md), [XML Element Literal](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md).  
   
-## <a name="scoping-rules"></a>Pravidla oboru  
- Kompilátor převede každý literál XML na volání konstruktoru pro příslušný typ literálu. Obsah literálu a vložené výrazy v literálu XML jsou předány jako argumenty konstruktoru. To znamená, že všechny programové prvky Visual Basic dostupné pro literál XML jsou také k dispozici pro vložené výrazy.  
+## <a name="scoping-rules"></a>Scoping Rules  
+ The compiler converts each XML literal into a constructor call for the appropriate literal type. The literal content and embedded expressions in an XML literal are passed as arguments to the constructor. This means that all Visual Basic programming elements available to an XML literal are also available to its embedded expressions.  
   
- V rámci literálu XML máte přístup k předponám oboru názvů XML deklarovaným pomocí `Imports` příkazu. Můžete deklarovat novou předponu oboru názvů XML nebo vytvořit stín předpony oboru názvů XML v elementu pomocí `xmlns` atributu. Nový obor názvů je k dispozici podřízeným uzlům daného prvku, ale nikoli k literálům XML ve vložených výrazech.  
+ Within an XML literal, you can access the XML namespace prefixes declared with the `Imports` statement. You can declare a new XML namespace prefix, or shadow an existing XML namespace prefix, in an element by using the `xmlns` attribute. The new namespace is available to the child nodes of that element, but not to XML literals in embedded expressions.  
   
 > [!NOTE]
-> Pokud deklarujete předponu oboru názvů XML pomocí `xmlns` atributu namespace, hodnota atributu musí být konstantní řetězec. V tomto ohledu použití `xmlns` atributu je například `Imports` použití příkazu k deklaraci oboru názvů XML. Vložený výraz nelze použít k určení hodnoty oboru názvů XML.  
+> When you declare an XML namespace prefix by using the `xmlns` namespace attribute, the attribute value must be a constant string. In this regard, using the `xmlns` attribute is like using the `Imports` statement to declare an XML namespace. You cannot use an embedded expression to specify the XML namespace value.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Vytváření XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [Creating XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
 - [Literál dokumentu XML](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)
 - [Literál XML elementu](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)
 - [Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)

@@ -1,5 +1,5 @@
 ---
-title: Skip – klauzule (Visual Basic)
+title: Skip – klauzule
 ms.date: 07/20/2015
 f1_keywords:
 - vb.QuerySkip
@@ -8,15 +8,15 @@ helpviewer_keywords:
 - Skip statement [Visual Basic]
 - Skip clause [Visual Basic]
 ms.assetid: f00eb172-3907-4c43-9745-d8546ab86234
-ms.openlocfilehash: e52de186e1475bfabd02821a0cd2384d8350eed3
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: c582b014bad4fa8fa3165d2b756f4bc955840cfc
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72004764"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74349659"
 ---
 # <a name="skip-clause-visual-basic"></a>Skip – klauzule (Visual Basic)
-Obchází zadaný počet prvků v kolekci a vrátí zbývající prvky.  
+Bypasses a specified number of elements in a collection and then returns the remaining elements.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,25 +26,25 @@ Skip count
   
 ## <a name="parts"></a>Součásti  
  `count`  
- Požadováno. Hodnota nebo výraz, který se vyhodnotí na počet prvků sekvence, která se má přeskočit.  
+ Požadováno. A value or an expression that evaluates to the number of elements of the sequence to skip.  
   
 ## <a name="remarks"></a>Poznámky  
- Klauzule `Skip` způsobí, že dotaz obchází prvky na začátku seznamu výsledků a vrátí zbývající prvky. Počet elementů, které mají být přeskočeny, je identifikován parametrem `count`.  
+ The `Skip` clause causes a query to bypass elements at the beginning of a results list and return the remaining elements. The number of elements to skip is identified by the `count` parameter.  
   
- Klauzuli `Skip` s klauzulí `Take` můžete použít k vrácení rozsahu dat z libovolného segmentu dotazu. Provedete to tak, že předáte index prvního prvku rozsahu na klauzuli `Skip` a velikost rozsahu na klauzuli `Take`.  
+ You can use the `Skip` clause with the `Take` clause to return a range of data from any segment of a query. To do this, pass the index of the first element of the range to the `Skip` clause and the size of the range to the `Take` clause.  
   
- Použijete-li v dotazu klauzuli `Skip`, může být také nutné zajistit, aby výsledky byly vráceny v pořadí, které umožní, aby klauzule `Skip` využívala zamýšlené výsledky. Další informace o řazení výsledků dotazu naleznete v tématu [ORDER by klauzule](../../../visual-basic/language-reference/queries/order-by-clause.md).  
+ When you use the `Skip` clause in a query, you may also need to ensure that the results are returned in an order that will enable the `Skip` clause to bypass the intended results. For more information about ordering query results, see [Order By Clause](../../../visual-basic/language-reference/queries/order-by-clause.md).  
   
- Pomocí klauzule `SkipWhile` můžete určit, že se v závislosti na zadané podmínce ignorují jenom určité prvky.  
+ You can use the `SkipWhile` clause to specify that only certain elements are ignored, depending on a supplied condition.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu používá klauzuli `Skip` spolu s klauzulí `Take` pro vrácení dat z dotazu na stránkách. Funkce `GetCustomers` používá klauzuli `Skip` pro obejít zákazníky v seznamu do zadané hodnoty počátečního indexu a pomocí klauzule `Take` vrátí stránku zákazníků počínaje touto hodnotou indexu.  
+ The following code example uses the `Skip` clause together with the `Take` clause to return data from a query in pages. The `GetCustomers` function uses the `Skip` clause to bypass the customers in the list until the supplied starting index value, and uses the `Take` clause to return a page of customers starting from that index value.  
   
  [!code-vb[VbSimpleQuerySamples#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Úvod do jazyka LINQ v Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Introduction to LINQ in Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
 - [Dotazy](../../../visual-basic/language-reference/queries/index.md)
 - [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)
 - [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)

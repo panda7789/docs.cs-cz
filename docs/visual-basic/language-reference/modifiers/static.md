@@ -1,5 +1,5 @@
 ---
-title: Static (Visual Basic)
+title: Static
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Static
@@ -7,42 +7,42 @@ helpviewer_keywords:
 - static modifier
 - Static keyword [Visual Basic]
 ms.assetid: 19013910-4658-47b6-a22e-1744b527979e
-ms.openlocfilehash: f1031fe005a2fc264b50116b8ea3311dc7065dbc
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f020756466888f51298abb423997906ddc7caff7
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647643"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350763"
 ---
 # <a name="static-visual-basic"></a>Static (Visual Basic)
-Určuje, že nejmíň jeden z deklarovaných lokálních proměnných jsou dál existovat a zachovat svou poslední hodnotu po ukončení procesu, ve kterém jsou deklarovány.  
+Specifies that one or more declared local variables are to continue to exist and retain their latest values after termination of the procedure in which they are declared.  
   
 ## <a name="remarks"></a>Poznámky  
- Za normálních okolností místní proměnné v postupu zaniká ihned poté, co proces se zastaví. Statická proměnná existuje i nadále a zachová svou poslední hodnotu. Při příštím kódu volá proceduru, proměnná není opakování inicializace odběrů a dál obsahuje nejnovější hodnotu, který jste přiřadili. Statická proměnná nebude existuje po dobu životnosti třídu nebo modul, který je definován v i nadále.  
+ Normally, a local variable in a procedure ceases to exist as soon as the procedure stops. A static variable continues to exist and retains its most recent value. The next time your code calls the procedure, the variable is not reinitialized, and it still holds the latest value that you assigned to it. A static variable continues to exist for the lifetime of the class or module that it is defined in.  
   
-## <a name="rules"></a>pravidla  
+## <a name="rules"></a>Rules  
   
-- **Místní deklarace.** Můžete použít `Static` pouze pro místní proměnné. To znamená, že deklarace kontext `Static` proměnná musí být procedura nebo blok v postupu, a nemůže být zdrojový soubor, obor názvů, třídy, struktury nebo modulu.  
+- **Declaration Context.** You can use `Static` only on local variables. This means the declaration context for a `Static` variable must be a procedure or a block in a procedure, and it cannot be a source file, namespace, class, structure, or module.  
   
-     Nemůžete použít `Static` uvnitř procedury struktury.  
+     You cannot use `Static` inside a structure procedure.  
   
-- Datové typy `Static` lokální proměnné nelze odvodit. Další informace najdete v tématu [odvození místního typu](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md).  
+- The data types of `Static` local variables cannot be inferred. For more information, see [Local Type Inference](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md).  
   
-- **Kombinované modifikátory.** Nelze zadat `Static` spolu s `ReadOnly`, `Shadows`, nebo `Shared` ve stejné deklaraci.  
+- **Combined Modifiers.** You cannot specify `Static` together with `ReadOnly`, `Shadows`, or `Shared` in the same declaration.  
   
-## <a name="behavior"></a>Chování  
- Pokud deklarujete statickou proměnnou `Shared` postupu jenom jednu kopii statická proměnná je k dispozici pro celou aplikaci. Volání `Shared` název postupu pomocí třídy, není proměnná, která odkazuje na instanci třídy.  
+## <a name="behavior"></a>Behavior  
+ When you declare a static variable in a `Shared` procedure, only one copy of the static variable is available for the whole application. You call a `Shared` procedure by using the class name, not a variable that points to an instance of the class.  
   
- Pokud deklarujete statická proměnná v postupu, který není `Shared`pouze jednu kopii proměnné je k dispozici pro každou instanci třídy. Volání procedury nesdílené pomocí proměnné, která odkazuje na konkrétní instanci třídy.  
+ When you declare a static variable in a procedure that isn't `Shared`, only one copy of the variable is available for each instance of the class. You call a non-shared procedure by using a variable that points to a specific instance of the class.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje použití `Static`.  
+ The following example demonstrates the use of `Static`.  
   
  [!code-vb[VbVbalrKeywords#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/Class1.vb#5)]  
   
- `Static` Proměnnou `totalSales` je inicializován na hodnotu 0 pouze jednou. Pokaždé, když zadáte `updateSales`, `totalSales` stále obsahuje nejnovější hodnotu, kterou jste vypočítali pro něj.  
+ The `Static` variable `totalSales` is initialized to 0 only one time. Each time that you enter `updateSales`, `totalSales` still has the most recent value that you calculated for it.  
   
- `Static` Modifikátor lze použít v tomto kontextu:  
+ The `Static` modifier can be used in this context:  
   
  [Příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md)  
   
@@ -50,7 +50,7 @@ Určuje, že nejmíň jeden z deklarovaných lokálních proměnných jsou dál 
 
 - [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)
 - [Shared](../../../visual-basic/language-reference/modifiers/shared.md)
-- [Doba platnosti v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)
+- [Lifetime in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)
 - [Deklarace proměnné](../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
 - [Struktury](../../../visual-basic/programming-guide/language-features/data-types/structures.md)
 - [Odvození místního typu](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)

@@ -1,38 +1,38 @@
 ---
-title: 'Postupy: Vytvořit proceduru, která vrací hodnotu (Visual Basic)'
+title: 'Postupy: Vytvoření procedury, která vrátí hodnotu.'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - procedures [Visual Basic], defining
 - Visual Basic code, procedures
 - procedures [Visual Basic], returning a value
 ms.assetid: 8ee19f95-a9ef-4033-963b-d224dca207c4
-ms.openlocfilehash: 115c1df4bd49d5848d72c4cbd0242a49a12740c7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 218dbb52abc0100724d38d10be91ef24252d5226
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61863724"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74349725"
 ---
-# <a name="how-to-create-a-procedure-that-returns-a-value-visual-basic"></a>Postupy: Vytvořit proceduru, která vrací hodnotu (Visual Basic)
-Můžete použít `Function` postup, který vrací hodnotu volajícímu kódu.  
+# <a name="how-to-create-a-procedure-that-returns-a-value-visual-basic"></a>Postupy: Vytvoření procedury, která vrátí hodnotu (Visual Basic).
+You use a `Function` procedure to return a value to the calling code.  
   
-### <a name="to-create-a-procedure-that-returns-a-value"></a>Chcete-li vytvořit proceduru, která vrací hodnotu  
+### <a name="to-create-a-procedure-that-returns-a-value"></a>To create a procedure that returns a value  
   
-1. Mimo všechny procedury, použijte `Function` příkazu, za nímž následuje `End Function` příkazu.  
+1. Outside any other procedure, use a `Function` statement, followed by an `End Function` statement.  
   
-2. V `Function` prohlášení, postupujte `Function` – klíčové slovo s názvem podle postupu a seznam parametrů v závorkách.  
+2. In the `Function` statement, follow the `Function` keyword with the name of the procedure, and then the parameter list in parentheses.  
   
-3. Postupujte podle závorek s `As` klauzule zadejte datový typ vrácené hodnoty.  
+3. Follow the parentheses with an `As` clause to specify the data type of the returned value.  
   
-4. Umístit příkazy kódu podle postupu mezi `Function` a `End Function` příkazy.  
+4. Place the procedure's code statements between the `Function` and `End Function` statements.  
   
-5. Použití `Return` příkazu vrátí hodnotu volajícímu kódu.  
+5. Use a `Return` statement to return the value to the calling code.  
   
-     Následující `Function` postup vypočítá nejdelší strana nebo přepony pravoúhlého trojúhelníku, pro obě strany zadané hodnoty.  
+     The following `Function` procedure calculates the longest side, or hypotenuse, of a right triangle, given the values for the other two sides.  
   
      [!code-vb[VbVbcnProcedures#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#1)]  
   
-     Následující příklad ukazuje typické volání `hypotenuse`.  
+     The following example shows a typical call to `hypotenuse`.  
   
      [!code-vb[VbVbcnProcedures#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#6)]  
   
@@ -45,4 +45,4 @@ Můžete použít `Function` postup, který vrací hodnotu volajícímu kódu.
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
 - [Příkaz Function](../../../../visual-basic/language-reference/statements/function-statement.md)
 - [Postupy: Vrácení hodnoty z procedury](./how-to-return-a-value-from-a-procedure.md)
-- [Postupy: Volání procedury, která vrací hodnotu](./how-to-call-a-procedure-that-returns-a-value.md)
+- [Postupy. Volání procedury, která vrací hodnotu](./how-to-call-a-procedure-that-returns-a-value.md)

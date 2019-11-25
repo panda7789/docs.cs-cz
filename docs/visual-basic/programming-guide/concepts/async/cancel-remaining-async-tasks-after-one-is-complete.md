@@ -1,50 +1,50 @@
 ---
-title: Zrušení zbývajících asynchronních úloh po dokončení jednoho z nich (Visual Basic)
+title: Zrušení zbývajících asynchronních úloh po dokončení jedné z nich
 ms.date: 07/20/2015
 ms.assetid: c928b5a1-622f-4441-8baf-adca1dde197f
-ms.openlocfilehash: 329c1eb738f065ae34540e9980c80d44248da05c
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: e6747f35e665611ac7a48a87f955c8b893ee2b99
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73419802"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347927"
 ---
-# <a name="cancel-remaining-async-tasks-after-one-is-complete-visual-basic"></a>Zrušení zbývajících asynchronních úloh po dokončení jednoho z nich (Visual Basic)
+# <a name="cancel-remaining-async-tasks-after-one-is-complete-visual-basic"></a>Cancel Remaining Async Tasks after One Is Complete (Visual Basic)
 
-Pomocí metody <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> spolu s <xref:System.Threading.CancellationToken>můžete zrušit všechny zbývající úlohy, když je jeden úkol dokončený. Metoda `WhenAny` přebírá argument, který je kolekcí úkolů. Metoda spustí všechny úlohy a vrátí jeden úkol. Jedna úloha je dokončena, když je dokončen libovolný úkol v kolekci.
+By using the <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> method together with a <xref:System.Threading.CancellationToken>, you can cancel all remaining tasks when one task is complete. The `WhenAny` method takes an argument that’s a collection of tasks. The method starts all the tasks and returns a single task. The single task is complete when any task in the collection is complete.
 
-Tento příklad ukazuje, jak použít token zrušení ve spojení s `WhenAny` pro uložení na první úkol pro dokončení z kolekce úloh a zrušení zbývajících úkolů. Každý úkol stáhne obsah webu. V příkladu se zobrazí délka obsahu prvního stažení, která se má dokončit, a ostatní soubory ke stažení se zruší.
+This example demonstrates how to use a cancellation token in conjunction with `WhenAny` to hold onto the first task to finish from the collection of tasks and to cancel the remaining tasks. Each task downloads the contents of a website. The example displays the length of the contents of the first download to complete and cancels the other downloads.
 
 > [!NOTE]
-> Chcete-li spustit příklady, je nutné mít v počítači nainstalován systém Visual Studio 2012 nebo novější a .NET Framework 4,5 nebo novější.
+> To run the examples, you must have Visual Studio 2012 or newer and the .NET Framework 4.5 or newer installed on your computer.
 
 ## <a name="downloading-the-example"></a>Stažení příkladu
 
-Z Async Sample si můžete stáhnout dokončený projekt Windows Presentation Foundation (WPF) [: jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) a pak postupujte podle těchto kroků.
+You can download the complete Windows Presentation Foundation (WPF) project from [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea) and then follow these steps.
 
-1. Dekomprimovat soubor, který jste stáhli, a potom spusťte Visual Studio.
+1. Decompress the file that you downloaded, and then start Visual Studio.
 
-2. Na panelu nabídek vyberte možnosti **soubor**, **otevřít**, **projekt/řešení**.
+2. On the menu bar, choose **File**, **Open**, **Project/Solution**.
 
-3. V dialogovém okně **Otevřít projekt** otevřete složku, která obsahuje ukázkový kód, který jste dekomprimujei, a poté otevřete soubor řešení (. sln) pro AsyncFineTuningVB.
+3. In the **Open Project** dialog box, open the folder that holds the sample code that you decompressed, and then open the solution (.sln) file for AsyncFineTuningVB.
 
-4. V **Průzkumník řešení**otevřete místní nabídku pro projekt **CancelAfterOneTask** a pak zvolte **nastavit jako projekt po spuštění**.
+4. In **Solution Explorer**, open the shortcut menu for the **CancelAfterOneTask** project, and then choose **Set as StartUp Project**.
 
-5. Kliknutím na klávesu F5 spusťte projekt.
+5. Choose the F5 key to run the project.
 
-    Vyberte klávesy CTRL + F5 pro spuštění projektu bez ladění.
+    Choose the Ctrl+F5 keys to run the project without debugging it.
 
-6. Spusťte program několikrát, abyste ověřili, že se nejdřív dokončily jiné soubory ke stažení.
+6. Run the program several times to verify that different downloads finish first.
 
-Pokud nechcete stáhnout projekt, můžete zkontrolovat soubor MainWindow. XAML. vb na konci tohoto tématu.
+If you don't want to download the project, you can review the MainWindow.xaml.vb file at the end of this topic.
 
-## <a name="building-the-example"></a>Vytvoření příkladu
+## <a name="building-the-example"></a>Building the Example
 
-Příklad v tomto tématu se přidá do projektu, který je vyvíjen v části [zrušení asynchronní úlohy nebo seznamu úloh](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md) pro zrušení seznamu úkolů. V příkladu se používá stejné uživatelské rozhraní, i když se tlačítko **Storno** nepoužívá explicitně.
+The example in this topic adds to the project that's developed in [Cancel an Async Task or a List of Tasks](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md) to cancel a list of tasks. The example uses the same UI, although the **Cancel** button isn’t used explicitly.
 
-Chcete-li sestavit příklad sami, postupujte podle pokynů v části "stažení příkladu", ale jako **spouštěný projekt**vyberte **CancelAListOfTasks** . Přidejte změny v tomto tématu do projektu.
+To build the example yourself, step by step, follow the instructions in the "Downloading the Example" section, but choose **CancelAListOfTasks** as the **StartUp Project**. Add the changes in this topic to that project.
 
-V souboru MainWindow. XAML. vb projektu **CancelAListOfTasks** spusťte přechod přesunutím kroků zpracování pro každý web ze smyčky v `AccessTheWebAsync` na následující asynchronní metodu.
+In the MainWindow.xaml.vb file of the **CancelAListOfTasks** project, start the transition by moving the processing steps for each website from the loop in `AccessTheWebAsync` to the following async method.
 
 ```vb
 ' ***Bundle the processing steps for a website into one async method.
@@ -60,13 +60,13 @@ Async Function ProcessURLAsync(url As String, client As HttpClient, ct As Cancel
 End Function
 ```
 
-V `AccessTheWebAsync`tento příklad používá dotaz, metodu <xref:System.Linq.Enumerable.ToArray%2A> a metodu `WhenAny` k vytvoření a spuštění pole úkolů. Aplikace `WhenAny` do pole vrací jeden úkol, který, pokud se očekává, se vyhodnotí jako první úkol, aby se dosáhlo dokončení v poli úkolů.
+In `AccessTheWebAsync`, this example uses a query, the  <xref:System.Linq.Enumerable.ToArray%2A> method, and the `WhenAny` method to create and start an array of tasks. The application of `WhenAny` to the array returns a single task that, when awaited, evaluates to the first task to reach completion in the array of tasks.
 
-Proveďte následující změny v `AccessTheWebAsync`. Hvězdičky označují změny v souboru kódu.
+Make the following changes in `AccessTheWebAsync`. Asterisks mark the changes in the code file.
 
-1. Odkomentujte nebo odstraňte smyčku.
+1. Comment out or delete the loop.
 
-2. Vytvoří dotaz, který při spuštění vytvoří kolekci obecných úloh. Každé volání `ProcessURLAsync` vrátí <xref:System.Threading.Tasks.Task%601>, kde `TResult` je celé číslo.
+2. Create a query that, when executed, produces a collection of generic tasks. Each call to `ProcessURLAsync` returns a <xref:System.Threading.Tasks.Task%601> where `TResult` is an integer.
 
     ```vb
     ' ***Create a query that, when executed, returns a collection of tasks.
@@ -74,14 +74,14 @@ Proveďte následující změny v `AccessTheWebAsync`. Hvězdičky označují zm
         From url In urlList Select ProcessURLAsync(url, client, ct)
     ```
 
-3. Voláním `ToArray` spusťte dotaz a spusťte úkoly. Při použití metody `WhenAny` v dalším kroku se spustí dotaz a spustí se úlohy bez použití `ToArray`, ale jiné metody nemusí. Nejbezpečnější praxí je vynutit provádění dotazu explicitně.
+3. Call `ToArray` to execute the query and start the tasks. The application of the `WhenAny` method in the next step would execute the query and start the tasks without using `ToArray`, but other methods might not. The safest practice is to force execution of the query explicitly.
 
     ```vb
     ' ***Use ToArray to execute the query and start the download tasks.
     Dim downloadTasks As Task(Of Integer)() = downloadTasksQuery.ToArray()
     ```
 
-4. Vyvolejte `WhenAny` v kolekci úkolů. `WhenAny` vrátí `Task(Of Task(Of Integer))` nebo `Task<Task<int>>`.  To znamená, `WhenAny` vrátí úlohu, která se vyhodnotí na jeden `Task(Of Integer)` nebo `Task<int>`, když je očekávána. Tento jeden úkol je prvním úkolem v kolekci, který má být dokončen. Úloha, která byla dokončena jako první, je přiřazena `firstFinishedTask`. Typ `firstFinishedTask` je <xref:System.Threading.Tasks.Task%601> kde `TResult` je celé číslo, protože to je návratový typ `ProcessURLAsync`.
+4. Call `WhenAny` on the collection of tasks. `WhenAny` returns a `Task(Of Task(Of Integer))` or `Task<Task<int>>`.  That is, `WhenAny` returns a task that evaluates to a single `Task(Of Integer)` or `Task<int>` when it’s awaited. That single task is the first task in the collection to finish. The task that finished first is assigned to `firstFinishedTask`. The type of `firstFinishedTask` is <xref:System.Threading.Tasks.Task%601> where `TResult` is an integer because that's the return type of `ProcessURLAsync`.
 
     ```vb
     ' ***Call WhenAny and then await the result. The task that finishes
@@ -89,29 +89,29 @@ Proveďte následující změny v `AccessTheWebAsync`. Hvězdičky označují zm
     Dim firstFinishedTask As Task(Of Integer) = Await Task.WhenAny(downloadTasks)
     ```
 
-5. V tomto příkladu vás zajímá jenom úkol, který končí jako první. Proto pomocí <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> zrušit zbývající úkoly.
+5. In this example, you’re interested only in the task that finishes first. Therefore, use <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> to cancel the remaining tasks.
 
     ```vb
     ' ***Cancel the rest of the downloads. You just want the first one.
     cts.Cancel()
     ```
 
-6. Nakonec očekává `firstFinishedTask` načíst délku staženého obsahu.
+6. Finally, await `firstFinishedTask` to retrieve the length of the downloaded content.
 
     ```vb
     Dim length = Await firstFinishedTask
     resultsTextBox.Text &= vbCrLf & $"Length of the downloaded website:  {length}" & vbCrLf
     ```
 
-Spusťte program několikrát, abyste ověřili, že se nejdřív dokončily jiné soubory ke stažení.
+Run the program several times to verify that different downloads finish first.
 
 ## <a name="complete-example"></a>Kompletní příklad
 
-Následující kód je úplný soubor MainWindow. XAML. vb nebo MainWindow.xaml.cs pro příklad. Hvězdičky označují prvky, které byly přidány pro tento příklad.
+The following code is the complete MainWindow.xaml.vb or MainWindow.xaml.cs file for the example. Asterisks mark the elements that were added for this example.
 
-Všimněte si, že je nutné přidat odkaz na <xref:System.Net.Http>.
+Notice that you must add a reference for <xref:System.Net.Http>.
 
-Projekt si můžete stáhnout z části [Async Sample: jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea).
+You can download the project from [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea).
 
 ```vb
 ' Add an Imports directive and a reference for System.Net.Http.
@@ -239,6 +239,6 @@ End Class
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Threading.Tasks.Task.WhenAny%2A>
-- [Vyladění aplikace v asynchronním prostředí (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)
-- [Asynchronní programování s modifikátorem Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
-- [Asynchronní vzorek: jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)
+- [Fine-Tuning Your Async Application (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)
+- [Asynchronous Programming with Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
+- [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)

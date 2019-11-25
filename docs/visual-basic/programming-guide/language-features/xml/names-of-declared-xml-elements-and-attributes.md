@@ -1,5 +1,5 @@
 ---
-title: Názvy deklarovaných XML elementů a atributů (Visual Basic)
+title: Názvy deklarovaných XML elementů a atributů
 ms.date: 07/20/2015
 helpviewer_keywords:
 - declarations [XML in Visual Basic]
@@ -8,43 +8,43 @@ helpviewer_keywords:
 - attribute names [XML in Visual Basic]
 - XML literals [Visual Basic], element names
 ms.assetid: cc110118-b6cf-4ff9-a4e4-6233c90c9fbf
-ms.openlocfilehash: dbe85b456f46c40c9cc9a703b38e11992edd24cf
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 12fbd1f4332391b1acdcf12e101d82627ebbeaff
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64598282"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74335988"
 ---
 # <a name="names-of-declared-xml-elements-and-attributes-visual-basic"></a>Názvy deklarovaných XML elementů a atributů (Visual Basic)
-Toto téma obsahuje pokyny pro Visual Basic pro vytváření názvů XML elementů a atributů v literálech XML.  V literálu XML můžete zadat místní název nebo kvalifikovaný název. Úplný název se skládá z předponu oboru názvů XML, dvojtečku a místní název. Další informace o předpon názvového prostoru XML, naleznete v tématu [literál XML elementu](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md).  
+This topic provides Visual Basic guidelines for naming XML elements and attributes in XML literals.  In an XML literal, you can specify a local name or a qualified name. A qualified name consists of an XML namespace prefix, a colon, and a local name. For more information about XML namespace prefixes, see [XML Element Literal](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md).  
   
-## <a name="rules"></a>pravidla  
- Místní název elementu nebo atributu v jazyce Visual Basic musí splňovat následující pravidla.  
+## <a name="rules"></a>Rules  
+ A local name of an element or attribute in Visual Basic must adhere to the following rules.  
   
-- Můžete začít s oborem názvů. Musí začínat znakem abecedy nebo podtržítkem (`_`).  
+- It can begin with a namespace. It must begin with an alphabetical character or an underscore (`_`).  
   
-- Musí obsahovat jenom abecední znaky, desítkové číslice, podtržítka, tečky (.) a pomlčky (-).  
+- It must contain only alphabetical characters, decimal digits, underscores, periods (.), and hyphens (-).  
   
-- Nesmí být více než 1024 znaků.  
+- It must not be more than 1,024 characters long.  
   
-- Použití dvojteček, které se zobrazují v názvech označení vymezení oboru názvů. Proto můžete pomocí dvojtečky pouze k určení obor názvů XML pro konkrétní název.  
+- Colons that appear in names indicate namespace demarcation. Therefore, you can use colons only to specify an XML namespace for a particular name.  
   
- Kromě toho by měl splňovat následujícími pravidly.  
+ In addition, you should adhere to the following guideline.  
   
-- Specifikace XML 1.0 si vyhrazuje všechna jména začíná tímto řetězcem "xml" jakékoliv změny malá a velká písmena. Proto nepoužívejte tyto názvy pro prvek a atributů.  
+- The XML 1.0 specification reserves all names starting with the string "xml", of any capitalization variation. Therefore, do not use those names for your element and attribute names.  
   
-### <a name="name-length-guidelines"></a>Pokyny pro délka názvu  
- Prakticky, název by měl být co nejkratší při identifikaci zjevně povaze elementu. To zlepšuje čitelnost vašeho kódu a zmenší velikost řádku délku a zdrojový soubor.  
+### <a name="name-length-guidelines"></a>Name Length Guidelines  
+ As a practical matter, a name should be as short as possible while still clearly identifying the nature of the element. This improves the readability of your code and reduces line length and source-file size.  
   
- Vaše jméno však by neměl být tak krátký, nezabývá se odpovídajícím způsobem elementu nebo jak se váš kód používá. To je důležité pro čitelnost kódu. Pokud někdo jiný se snaží ho chápat, nebo pokud chcete sami se na něj dlouhou dobu, po ho napsal, odpovídající prvek názvy můžete ušetřit čas.  
+ However, your name should not be so short that it does not adequately describe the element or how your code uses it. This is important for the readability of your code. If somebody else is trying to understand it, or if you yourself are looking at it a long time after you wrote it, appropriate element names can save time.  
   
-## <a name="case-sensitivity-in-names"></a>Rozlišování velikosti písmen v názvech  
- Názvy elementů XML jsou malá a velká písmena. To znamená, že když kompilátor jazyka Visual Basic porovná dva názvy, které se liší abecedním pouze velikostí písmen, to je interpretuje jako odlišné názvy. Například interpretuje `ABC` a `abc` jako odkazující na jednotlivé prvky.  
+## <a name="case-sensitivity-in-names"></a>Case Sensitivity in Names  
+ XML element names are case sensitive. This means that when the Visual Basic compiler compares two names that differ in alphabetical case only, it interprets them as different names. For example, it interprets `ABC` and `abc` as referring to separate elements.  
   
-## <a name="xml-namespaces"></a>Obory názvů XML  
- Při vytváření XML element literal, můžete zadat předponu oboru názvů XML pro název elementu. Další informace najdete v tématu [literál XML elementu](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md).  
+## <a name="xml-namespaces"></a>XML Namespaces  
+ When creating an XML element literal, you can specify the XML namespace prefix for the element name. For more information, see [XML Element Literal](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Vytvoření XML v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [Creating XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
 - [Literál XML elementu](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)

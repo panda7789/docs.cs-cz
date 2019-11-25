@@ -1,5 +1,5 @@
 ---
-title: Kontexty deklarace a výchozí úrovně přístupu (Visual Basic)
+title: Kontexty deklarace a výchozí úrovně přístupu
 ms.date: 07/20/2015
 helpviewer_keywords:
 - module level, defined
@@ -9,47 +9,47 @@ helpviewer_keywords:
 - access levels, Visual Basic
 - access levels, default levels
 ms.assetid: bf63b96e-e825-4745-88c8-5dae222728db
-ms.openlocfilehash: 05c2d6420526b660ead2f50eba7feb6b20524705
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1ba25d830b1e7529bdf09c1195cc1fe7f9b2243b
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64623945"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74354106"
 ---
 # <a name="declaration-contexts-and-default-access-levels-visual-basic"></a>Kontexty deklarace a výchozí úrovně přístupu (Visual Basic)
-Toto téma popisuje typy jazyka Visual Basic, které mohou být deklarovány v rámci které typy a jaké úroveň přístupu ve výchozím nastavení, pokud není zadána.  
+This topic describes which Visual Basic types can be declared within which other types, and what their access levels default to if not specified.  
   
-## <a name="declaration-context-levels"></a>Úrovně kontextu deklarace  
- *Kontext deklarace* programovací element je oblasti kódu, ve kterém je deklarována. To je často jiný programový element, který pak volá *obsahující element*.  
+## <a name="declaration-context-levels"></a>Declaration Context Levels  
+ The *declaration context* of a programming element is the region of code in which it is declared. This is often another programming element, which is then called the *containing element*.  
   
- Kontexty deklarace úrovně jsou následující:  
+ The levels for declaration contexts are the following:  
   
-- *Úroveň Namespace* – v rámci zdrojového souboru nebo oboru názvů, ale není v rozsahu třídy, struktury, modul nebo rozhraní  
+- *Namespace level* — within a source file or namespace but not within a class, structure, module, or interface  
   
-- *Úroveň modulu* – v rámci třídy, struktury, modul nebo rozhraní, ale ne v rámci proceduru nebo blok  
+- *Module level* — within a class, structure, module, or interface but not within a procedure or block  
   
-- *Úroveň procedury* – uvnitř procedury nebo bloku (jako například `If` nebo `For`)  
+- *Procedure level* — within a procedure or block (such as `If` or `For`)  
   
- V následující tabulce jsou uvedeny výchozí úrovně přístupu pro různé deklarovaný programový prvek, v závislosti na jejich kontexty deklarace.  
+ The following table shows the default access levels for various declared programming elements, depending on their declaration contexts.  
   
-|Element deklarovaný|Úroveň Namespace|Úroveň modulu|Úroveň procedury|  
+|Declared element|Namespace level|Module level|Procedure level|  
 |----------------------|---------------------|------------------|---------------------|  
-|Proměnné ([Dim – příkaz](../../../visual-basic/language-reference/statements/dim-statement.md))|Nepovoleno|`Private` (`Public` v `Structure`, není povoleno v `Interface`)|`Public`|  
-|Konstanty ([Const – příkaz](../../../visual-basic/language-reference/statements/const-statement.md))|Nepovoleno|`Private` (`Public` v `Structure`, není povoleno v `Interface`)|`Public`|  
-|Výčet ([Enum – příkaz](../../../visual-basic/language-reference/statements/enum-statement.md))|`Friend`|`Public`|Nepovoleno|  
-|Třídy ([Class – příkaz](../../../visual-basic/language-reference/statements/class-statement.md))|`Friend`|`Public`|Nepovoleno|  
-|Struktury ([struktury příkaz](../../../visual-basic/language-reference/statements/structure-statement.md))|`Friend`|`Public`|Nepovoleno|  
-|Modul ([Module – příkaz](../../../visual-basic/language-reference/statements/module-statement.md))|`Friend`|Nepovoleno|Nepovoleno|  
-|Rozhraní ([Interface – příkaz](../../../visual-basic/language-reference/statements/interface-statement.md))|`Friend`|`Public`|Nepovoleno|  
-|Postup ([funkce příkaz](../../../visual-basic/language-reference/statements/function-statement.md), [dílčí příkaz](../../../visual-basic/language-reference/statements/sub-statement.md))|Nepovoleno|`Public`|Nepovoleno|  
-|Externí odkaz ([deklaraci příkazu](../../../visual-basic/language-reference/statements/declare-statement.md))|Nepovoleno|`Public` (není povolené v `Interface`)|Nepovoleno|  
-|– Operátor ([Operator – příkaz](../../../visual-basic/language-reference/statements/operator-statement.md))|Nepovoleno|`Public` (není povolené v `Interface` nebo `Module`)|Nepovoleno|  
-|Vlastnosti ([Property – příkaz](../../../visual-basic/language-reference/statements/property-statement.md))|Nepovoleno|`Public`|Nepovoleno|  
-|Výchozí vlastnost ([výchozí](../../../visual-basic/language-reference/modifiers/default.md))|Nepovoleno|`Public` (není povolené v `Module`)|Nepovoleno|  
-|Události ([Event – příkaz](../../../visual-basic/language-reference/statements/event-statement.md))|Nepovoleno|`Public`|Nepovoleno|  
-|Delegáta ([Delegate – příkaz](../../../visual-basic/language-reference/statements/delegate-statement.md))|`Friend`|`Public`|Nepovoleno|  
+|Variable ([Dim Statement](../../../visual-basic/language-reference/statements/dim-statement.md))|Not allowed|`Private` (`Public` in `Structure`, not allowed in `Interface`)|`Public`|  
+|Constant ([Const Statement](../../../visual-basic/language-reference/statements/const-statement.md))|Not allowed|`Private` (`Public` in `Structure`, not allowed in `Interface`)|`Public`|  
+|Enumeration ([Enum Statement](../../../visual-basic/language-reference/statements/enum-statement.md))|`Friend`|`Public`|Not allowed|  
+|Class ([Class Statement](../../../visual-basic/language-reference/statements/class-statement.md))|`Friend`|`Public`|Not allowed|  
+|Structure ([Structure Statement](../../../visual-basic/language-reference/statements/structure-statement.md))|`Friend`|`Public`|Not allowed|  
+|Module ([Module Statement](../../../visual-basic/language-reference/statements/module-statement.md))|`Friend`|Not allowed|Not allowed|  
+|Interface ([Interface Statement](../../../visual-basic/language-reference/statements/interface-statement.md))|`Friend`|`Public`|Not allowed|  
+|Procedure ([Function Statement](../../../visual-basic/language-reference/statements/function-statement.md), [Sub Statement](../../../visual-basic/language-reference/statements/sub-statement.md))|Not allowed|`Public`|Not allowed|  
+|External reference ([Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md))|Not allowed|`Public` (not allowed in `Interface`)|Not allowed|  
+|Operator ([Operator Statement](../../../visual-basic/language-reference/statements/operator-statement.md))|Not allowed|`Public` (not allowed in `Interface` or `Module`)|Not allowed|  
+|Property ([Property Statement](../../../visual-basic/language-reference/statements/property-statement.md))|Not allowed|`Public`|Not allowed|  
+|Default property ([Default](../../../visual-basic/language-reference/modifiers/default.md))|Not allowed|`Public` (not allowed in `Module`)|Not allowed|  
+|Event ([Event Statement](../../../visual-basic/language-reference/statements/event-statement.md))|Not allowed|`Public`|Not allowed|  
+|Delegate ([Delegate Statement](../../../visual-basic/language-reference/statements/delegate-statement.md))|`Friend`|`Public`|Not allowed|  
   
- Další informace najdete v tématu [úrovní v jazyce Visual Basic přístupu](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+ For more information, see [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
 ## <a name="see-also"></a>Viz také:
 

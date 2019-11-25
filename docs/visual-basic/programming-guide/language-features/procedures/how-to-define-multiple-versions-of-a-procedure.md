@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Definice více verzí procedury (Visual Basic)'
+title: 'Postupy: Definice více verzí procedury'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - procedures [Visual Basic], defining
@@ -8,46 +8,46 @@ helpviewer_keywords:
 - procedures [Visual Basic], multiple versions
 - procedure overloading [Visual Basic], multiple versions
 ms.assetid: 71ccdd66-1b00-4b66-bee4-6926c0d696f4
-ms.openlocfilehash: fc7a8e18394b904f0c22a80f71dee091d4f786ab
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 83e96e271f6613aa325d59a0ca2fce9fc69fe059
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61863828"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350489"
 ---
 # <a name="how-to-define-multiple-versions-of-a-procedure-visual-basic"></a>Postupy: Definice více verzí procedury (Visual Basic)
-Můžete definovat postup ve více verzích přidáním *přetížení* jeho pomocí se stejným názvem, ale odlišným seznamem parametrů pro každou verzi. Účelem přetížení je definovat několik úzce související verze procedury, aniž byste museli rozlišit podle názvu.  
+You can define a procedure in multiple versions by *overloading* it, using the same name but a different parameter list for each version. The purpose of overloading is to define several closely related versions of a procedure without having to differentiate them by name.  
   
- Další informace najdete v tématu [přetížení procedury](./procedure-overloading.md).  
+ For more information, see [Procedure Overloading](./procedure-overloading.md).  
   
-### <a name="to-define-multiple-versions-of-a-procedure"></a>Chcete-li definovat více verzí procedury  
+### <a name="to-define-multiple-versions-of-a-procedure"></a>To define multiple versions of a procedure  
   
-1. Zápis `Sub` nebo `Function` příkazu deklarace pro jednotlivé verze můžete definovat postup. Použijte stejný název procedury v každé deklaraci.  
+1. Write a `Sub` or `Function` declaration statement for each version of the procedure you want to define. Use the same procedure name in every declaration.  
   
-2. Předcházet `Sub` nebo `Function` – klíčové slovo v deklaraci s [přetížení](../../../../visual-basic/language-reference/modifiers/overloads.md) – klíčové slovo. Volitelně můžete vynechat `Overloads` v deklaracích, ale pokud je zahrnout v některém z deklarací, je třeba jej zahrnout v každou deklaraci.  
+2. Precede the `Sub` or `Function` keyword in each declaration with the [Overloads](../../../../visual-basic/language-reference/modifiers/overloads.md) keyword. You can optionally omit `Overloads` in the declarations, but if you include it in any of the declarations, you must include it in every declaration.  
   
-3. Po každé příkazu deklarace napište kód procedury pro zpracování konkrétního případu, pokud volající kód poskytuje argumenty odpovídající seznam parametrů pro tuto verzi. Nemáte k otestování pro parametry, které má zadaný volajícímu kódu. Visual Basic odpovídající verzi procedura předá řízení.  
+3. Following each declaration statement, write procedure code to handle the specific case where the calling code supplies arguments matching that version's parameter list. You do not have to test for which parameters the calling code has supplied. Visual Basic passes control to the matching version of your procedure.  
   
-4. Ukončit všechny verze procedury s `End Sub` nebo `End Function` příkaz podle potřeby.  
+4. Terminate each version of the procedure with the `End Sub` or `End Function` statement as appropriate.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad definuje `Sub` postup pro transakci proti zůstatku zákazníka. Používá `Overloads` – klíčové slovo definovat dvě verze procedury, ten, který přijímá zákazníka podle názvu a druhé číslo účtu.  
+ The following example defines a `Sub` procedure to post a transaction against a customer's balance. It uses the `Overloads` keyword to define two versions of the procedure, one that accepts the customer by name and the other by account number.  
   
  [!code-vb[VbVbcnProcedures#72](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#72)]  
   
- Volající kód může získat Identifikace zákazníka jako buď `String` nebo `Integer`a potom pomocí stejné volání příkazu v obou případech.  
+ The calling code can obtain the customer identification as either a `String` or an `Integer`, and then use the same calling statement in either case.  
   
- Informace o tom, jak volat tyto verze `post` postupu naleznete v tématu [jak: Volání přetížené procedury](./how-to-call-an-overloaded-procedure.md).  
+ For information on how to call these versions of the `post` procedure, see [How to: Call an Overloaded Procedure](./how-to-call-an-overloaded-procedure.md).  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Ujistěte se, že všechny přetížené verze má stejný název procedury, ale odlišným seznamem parametrů.  
+ Make sure each of your overloaded versions has the same procedure name but a different parameter list.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Procedury](./index.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
 - [Řešení potíží s procedurami](./troubleshooting-procedures.md)
-- [Postupy: Přetížení procedury, která přebírá volitelné parametry](./how-to-overload-a-procedure-that-takes-optional-parameters.md)
+- [Postupy: Přetížení procedury, která přebírá nepovinné parametry](./how-to-overload-a-procedure-that-takes-optional-parameters.md)
 - [Postupy: Přetížení procedury, která přebírá nekonečný počet parametrů](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)
 - [Aspekty přetížení procedur](./considerations-in-overloading-procedures.md)
 - [Řešení přetížení](./overload-resolution.md)

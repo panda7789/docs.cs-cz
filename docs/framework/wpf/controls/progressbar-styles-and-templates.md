@@ -9,15 +9,15 @@ helpviewer_keywords:
 - templates [WPF], ProgressBar
 - states [WPF], ProgressBar
 ms.assetid: 935aa600-16e6-4947-a905-37a189a583dd
-ms.openlocfilehash: 3a1bea39ba9b6d2cff9937a3fee1d1de41daf16b
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 6551701e86dd6abcd42f143f146c7bdadfeabbcf
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459882"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283452"
 ---
 # <a name="progressbar-styles-and-templates"></a>ProgressBar – styly a šablony
-Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.ProgressBar>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [přizpůsobení vzhledu existujícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.ProgressBar>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
   
 ## <a name="progressbar-parts"></a>Součásti ProgressBar  
  V následující tabulce jsou uvedeny pojmenované části ovládacího prvku <xref:System.Windows.Controls.ProgressBar>.  
@@ -33,8 +33,8 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
   
 |Název VisualState|Název VisualStateGroup|Popis|  
 |----------------------|---------------------------|-----------------|  
-|Zrušit ukončení|CommonStates|<xref:System.Windows.Controls.ProgressBar> sestaví průběh na základě vlastnosti <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>.|  
-|Definované|CommonStates|<xref:System.Windows.Controls.ProgressBar> sestavuje obecný průběh pomocí opakujícího se vzoru.|  
+|Determinate|CommonStates|<xref:System.Windows.Controls.ProgressBar> sestaví průběh na základě vlastnosti <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>.|  
+|Neurčitá|CommonStates|<xref:System.Windows.Controls.ProgressBar> sestavuje obecný průběh pomocí opakujícího se vzoru.|  
 |Platné|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
 |InvalidFocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
 |InvalidUnfocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
@@ -57,4 +57,4 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
 - [Styly a šablony ovládacích prvků](control-styles-and-templates.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)
 - [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Změna hodnoty argumentu procedury (Visual Basic)'
+title: 'Postupy: Změna hodnoty argumentu procedury'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - procedures [Visual Basic], arguments
@@ -13,49 +13,49 @@ helpviewer_keywords:
 - arguments [Visual Basic], ByRef
 - arguments [Visual Basic], changing value
 ms.assetid: 6fad2368-5da7-4c07-8bf8-0f4e65a1be67
-ms.openlocfilehash: a56bdf888163c9559b87e857abb33522c547ed45
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e562c0f5ec01380c792b4dc064554171cfb007e7
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61665829"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74339958"
 ---
 # <a name="how-to-change-the-value-of-a-procedure-argument-visual-basic"></a>Postupy: Změna hodnoty argumentu procedury (Visual Basic)
-Při volání procedury, každý argument, který zadáte odpovídá jednomu z parametrů definovaných v postupu. V některých případech můžete změnit kód procedury hodnotu základní argumentu ve volajícím kódu. V ostatních případech procedura může změnit pouze místní kopie argumentu.  
+When you call a procedure, each argument you supply corresponds to one of the parameters defined in the procedure. In some cases, the procedure code can change the value underlying an argument in the calling code. In other cases, the procedure can change only its local copy of an argument.  
   
- Při volání postupu Visual Basic vytvoří místní kopii každý argument, který je předán [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md). Každý argument předaný [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), Visual Basic poskytuje kód procedury přímý odkaz na programovací prvek základní argumentu ve volajícím kódu.  
+ When you call the procedure, Visual Basic makes a local copy of every argument that is passed [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md). For each argument passed [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), Visual Basic gives the procedure code a direct reference to the programming element underlying the argument in the calling code.  
   
- Pokud základní prvek ve volajícím kódu je upravitelná prvek a argument je předán `ByRef`, kód procedury můžete použít přímý odkaz ke změně hodnoty prvku ve volajícím kódu.  
+ If the underlying element in the calling code is a modifiable element and the argument is passed `ByRef`, the procedure code can use the direct reference to change the element's value in the calling code.  
   
-## <a name="changing-the-underlying-value"></a>Změna zdrojové hodnoty  
+## <a name="changing-the-underlying-value"></a>Changing the Underlying Value  
   
-#### <a name="to-change-the-underlying-value-of-a-procedure-argument-in-the-calling-code"></a>Chcete-li změnit nadřazenou hodnotu argumentu ve volajícím kódu procedury  
+#### <a name="to-change-the-underlying-value-of-a-procedure-argument-in-the-calling-code"></a>To change the underlying value of a procedure argument in the calling code  
   
-1. V deklaraci procedury zadejte [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) parametru odpovídající argument.  
+1. In the procedure declaration, specify [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) for the parameter corresponding to the argument.  
   
-2. Ve volajícím kódu předáte jako argument upravitelná programovací element.  
+2. In the calling code, pass a modifiable programming element as the argument.  
   
-3. Ve volajícím kódu neuvádějte argument v závorkách v seznamu argumentů.  
+3. In the calling code, do not enclose the argument in parentheses in the argument list.  
   
-4. V kódu procedury používejte název parametru pro přiřazení hodnoty na základní element ve volajícím kódu.  
+4. In the procedure code, use the parameter name to assign a value to the underlying element in the calling code.  
   
- Podívejte se na příklad dále dolů ukázku.  
+ See the example further down for a demonstration.  
   
-## <a name="changing-local-copies"></a>Změna místní kopie  
- Pokud základní prvek ve volajícím kódu je neupravitelnými prvek, nebo pokud je argument předaný `ByVal`, postup nelze změnit jeho hodnotu ve volajícím kódu. Postup však můžete změnit jeho místní kopii těchto argument.  
+## <a name="changing-local-copies"></a>Changing Local Copies  
+ If the underlying element in the calling code is a nonmodifiable element, or if the argument is passed `ByVal`, the procedure cannot change its value in the calling code. However, the procedure can change its local copy of such an argument.  
   
-#### <a name="to-change-the-copy-of-a-procedure-argument-in-the-procedure-code"></a>Chcete-li změnit kopie argumentu procedury v kódu procedury  
+#### <a name="to-change-the-copy-of-a-procedure-argument-in-the-procedure-code"></a>To change the copy of a procedure argument in the procedure code  
   
-1. V deklaraci procedury zadejte [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) parametru odpovídající argument.  
+1. In the procedure declaration, specify [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) for the parameter corresponding to the argument.  
   
      -nebo-  
   
-     Ve volajícím kódu uzavřete jej do v závorkách v seznamu argumentů. To vynutí jazyka Visual Basic k předání argumentu podle hodnoty, i v případě, že odpovídající parametr určuje `ByRef`.  
+     In the calling code, enclose the argument in parentheses in the argument list. This forces Visual Basic to pass the argument by value, even if the corresponding parameter specifies `ByRef`.  
   
-2. V kódu procedury používejte název parametru pro přiřazení hodnoty k místní kopie argumentu. Základní hodnota ve volajícím kódu se nezmění.  
+2. In the procedure code, use the parameter name to assign a value to the local copy of the argument. The underlying value in the calling code is not changed.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje dva postupy, které trvat proměnnou pole a provozují na jeho prvků. `increase` Procedura přidá pouze jednu na každý prvek. `replace` Postup přiřadí nové pole parametru `a()` a pak přidá jednu na každý prvek.  
+ The following example shows two procedures that take an array variable and operate on its elements. The `increase` procedure simply adds one to each element. The `replace` procedure assigns a new array to the parameter `a()` and then adds one to each element.  
   
  [!code-vb[VbVbcnProcedures#35](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#35)]  
   
@@ -63,19 +63,19 @@ Při volání procedury, každý argument, který zadáte odpovídá jednomu z p
   
  [!code-vb[VbVbcnProcedures#37](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#37)]  
   
- První `MsgBox` volání zobrazí "po increase(n): 11, 21, 31, 41". Protože pole `n` je typem odkazu `replace` lze měnit její členy, i když je mechanismus předávání `ByVal`.  
+ The first `MsgBox` call displays "After increase(n): 11, 21, 31, 41". Because the array `n` is a reference type, `replace` can change its members, even though the passing mechanism is `ByVal`.  
   
- Druhá `MsgBox` volání zobrazí "po replace(n): 101, 201, 301". Protože `n` je předán `ByRef`, `replace` můžete upravit proměnnou `n` v volající kód a přiřaďte nové pole do něj. Protože `n` je typem odkazu `replace` můžete také změnit jeho členů.  
+ The second `MsgBox` call displays "After replace(n): 101, 201, 301". Because `n` is passed `ByRef`, `replace` can modify the variable `n` in the calling code and assign a new array to it. Because `n` is a reference type, `replace` can also change its members.  
   
- Postup lze zabránit ve změně samotného proměnné ve volajícím kódu. Zobrazit [jak: Ochrana argumentu procedury proti změnám hodnoty](./how-to-protect-a-procedure-argument-against-value-changes.md).  
+ You can prevent the procedure from modifying the variable itself in the calling code. See [How to: Protect a Procedure Argument Against Value Changes](./how-to-protect-a-procedure-argument-against-value-changes.md).  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Při předání proměnné podle odkazu, je nutné použít `ByRef` – klíčové slovo k určení tento mechanismus.  
+ When you pass a variable by reference, you must use the `ByRef` keyword to specify this mechanism.  
   
- Ve výchozím nastavení v jazyce Visual Basic je předání argumentů podle hodnoty. Ale při programování je dobrým zvykem zahrnout buď [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) nebo [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) – klíčové slovo s každou deklarovaný parametr. Díky tomu váš kód lépe čitelný.  
+ The default in Visual Basic is to pass arguments by value. However, it is good programming practice to include either the [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) or [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) keyword with every declared parameter. This makes your code easier to read.  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- Je vždycky představuje potenciální riziko postup, chcete-li změnit hodnotu argumentu ve volajícím kódu základní, kterému je povoleno. Ujistěte se, že očekáváte, že tuto hodnotu změnit a připravit tak zkontrolovat, že platnost před jeho použitím.  
+ There is always a potential risk in allowing a procedure to change the value underlying an argument in the calling code. Make sure you expect this value to be changed, and be prepared to check it for validity before using it.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -85,7 +85,7 @@ Při volání procedury, každý argument, který zadáte odpovídá jednomu z p
 - [Předávání argumentů podle hodnoty a reference](./passing-arguments-by-value-and-by-reference.md)
 - [Rozdíly mezi upravitelnými a neupravitelnými argumenty](./differences-between-modifiable-and-nonmodifiable-arguments.md)
 - [Rozdíly mezi předáním argumentu podle hodnoty a podle reference](./differences-between-passing-an-argument-by-value-and-by-reference.md)
-- [Postupy: Ochrana argumentu procedury proti změnám hodnoty](./how-to-protect-a-procedure-argument-against-value-changes.md)
-- [Postupy: Vynucení argumentu být předána podle hodnoty](./how-to-force-an-argument-to-be-passed-by-value.md)
+- [Postupy: Ochrana argumentu procedury před změnami hodnoty](./how-to-protect-a-procedure-argument-against-value-changes.md)
+- [Postupy: Vynucení předání argumentu podle hodnoty](./how-to-force-an-argument-to-be-passed-by-value.md)
 - [Předávání argumentů podle pozice a názvu](./passing-arguments-by-position-and-by-name.md)
 - [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)

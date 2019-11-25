@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Dispose method
 - garbage collection, Dispose method
 ms.assetid: eb4e1af0-3b48-4fbc-ad4e-fc2f64138bf9
-ms.openlocfilehash: 95726d4bfae6da43cd845d461caf8f1848d774f1
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 0583329ae75fa54cf000212479895ccebdbd30d8
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424333"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74142053"
 ---
 # <a name="implementing-a-dispose-method"></a>Implementace metody Dispose
 
@@ -103,7 +103,7 @@ Zde je obecný vzor pro implementaci vzoru dispose pro základní třídu, kter�
   
 ## <a name="implementing-the-dispose-pattern-for-a-derived-class"></a>Implementace vzoru Dispose pro odvozenou třídu
 
-Třída odvozená od třídy, která implementuje rozhraní <xref:System.IDisposable>, by neměla implementovat <xref:System.IDisposable>, protože implementace základní třídy <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> je zděděna svými odvozenými třídami. Pokud chcete namísto toho implementovat pro odvozenou třídu vzor Dispose, musíte poskytnout následující:  
+Třída odvozená od třídy, která implementuje rozhraní <xref:System.IDisposable>, by neměla implementovat <xref:System.IDisposable>, protože implementace základní třídy <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> je zděděna svými odvozenými třídami. Namísto toho, abyste uvolnili prostředky odvozené třídy, je třeba zadat následující:  
   
 - `protected Dispose(Boolean)` metoda, která přepíše metodu základní třídy a provede skutečnou práci uvolnění prostředků odvozené třídy. Tato metoda by měla také volat metodu `Dispose(Boolean)` základní třídy a předávat svůj stav disposing argumentu.  
   

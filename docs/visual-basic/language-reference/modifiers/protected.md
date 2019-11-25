@@ -1,5 +1,5 @@
 ---
-title: Protected (Visual Basic)
+title: Chráněno
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Protected
@@ -10,40 +10,40 @@ helpviewer_keywords:
 - Protected access modifier
 - Protected keyword [Visual Basic]
 ms.assetid: 74ad3d56-309f-49d2-b60c-1d0157d010e8
-ms.openlocfilehash: 8370d15e99a6f7ed0868441a4e44360fb258be13
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 740c998b8a6ccc6798bce37e9b08e408dac7c17d
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72583071"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351306"
 ---
 # <a name="protected-visual-basic"></a>Protected (Visual Basic)
 
-Modifikátor přístupu ke členu, který určuje, že nejmíň jeden deklarovaný programový prvek je přístupný jenom v rámci své vlastní třídy nebo z odvozené třídy.
+A member access modifier that specifies that one or more declared programming elements are accessible only from within their own class or from a derived class.
 
 ## <a name="remarks"></a>Poznámky
 
-V některých případech programovací element deklarovaný ve třídě obsahuje citlivá data nebo omezený kód a vy chcete omezit přístup k elementu. Nicméně, pokud je třída děděna a očekáváte hierarchii odvozených tříd, může být nutné, aby tyto odvozené třídy měly přístup k datům nebo kódu. V takovém případě chcete, aby byl prvek přístupný jak ze základní třídy, tak ze všech odvozených tříd. Chcete-li omezit přístup k prvku tímto způsobem, můžete jej deklarovat pomocí `Protected`.
+Sometimes a programming element declared in a class contains sensitive data or restricted code, and you want to limit access to the element. However, if the class is inheritable and you expect a hierarchy of derived classes, it might be necessary for these derived classes to access the data or code. In such a case, you want the element to be accessible both from the base class and from all derived classes. To limit access to an element in this manner, you can declare it with `Protected`.
 
 > [!NOTE]
-> Modifikátor přístupu `Protected` lze kombinovat se dvěma dalšími modifikátory:
+> The `Protected` access modifier can be combined with two other modifiers:
 >
-> - [Chráněný modifikátor Friend](protected-friend.md) zpřístupňuje člena třídy v rámci této třídy, z odvozených tříd a ze stejného sestavení, ve kterém je třída definovaná.
-> - Modifikátor [Private protecter](private-protected.md) zpřístupňuje člena třídy, který je přístupný odvozeným typům, ale pouze v rámci jeho nadřazeného sestavení.
+> - The [Protected Friend](protected-friend.md) modifier makes a class member accessible from within that class, from derived classes, and from the same assembly in which the class is defined.
+> - The [Private Protected](private-protected.md) modifier makes a class member accessible by derived types, but only within its containing assembly.
 
-## <a name="rules"></a>Pravidly
+## <a name="rules"></a>Rules
 
-**Kontext deklarace** @No__t_0 lze použít pouze na úrovni třídy. To znamená, že kontext deklarace pro prvek `Protected` musí být třída a nemůže se jednat o zdrojový soubor, obor názvů, rozhraní, modul, strukturu nebo proceduru.
+**Declaration Context.** You can use `Protected` only at the class level. This means the declaration context for a `Protected` element must be a class, and cannot be a source file, namespace, interface, module, structure, or procedure.
 
-## <a name="behavior"></a>Předvídatelně
+## <a name="behavior"></a>Behavior
 
-- **Úroveň přístupu.** Veškerý kód ve třídě má přístup k jeho prvkům. Kód v jakékoli třídě, která je odvozena od základní třídy, má přístup ke všem prvkům `Protected` základní třídy. To platí pro všechny generace odvození. To znamená, že třída může přistupovat k prvkům `Protected` základní třídy základní třídy a tak dále.
+- **Access Level.** All code in a class can access its elements. Code in any class that derives from a base class can access all the `Protected` elements of the base class. This is true for all generations of derivation. This means that a class can access `Protected` elements of the base class of the base class, and so on.
 
-     Protected Access není nadmnožinou ani podmnožinou přístupu typu Friend.
+     Protected access is not a superset or subset of friend access.
 
-- **Modifikátory přístupu.** Klíčová slova, která určují úroveň přístupu, se nazývají *modifikátory přístupu*. Porovnání modifikátorů přístupu najdete [v tématu úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).
+- **Access Modifiers.** The keywords that specify access level are called *access modifiers*. For a comparison of the access modifiers, see [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).
 
-V těchto kontextech lze použít modifikátor `Protected`:
+The `Protected` modifier can be used in these contexts:
 
 - [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)
 
@@ -76,7 +76,7 @@ V těchto kontextech lze použít modifikátor `Protected`:
 - [Private](../../../visual-basic/language-reference/modifiers/private.md)
 - [Private Protected](private-protected.md)
 - [Protected Friend](protected-friend.md)
-- [Úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
+- [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
 - [Procedury](../../../visual-basic/programming-guide/language-features/procedures/index.md)
 - [Struktury](../../../visual-basic/programming-guide/language-features/data-types/structures.md)
 - [Objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

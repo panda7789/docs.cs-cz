@@ -1,5 +1,5 @@
 ---
-title: Derivované matematické funkce (Visual Basic)
+title: Derivované matematické funkce
 ms.date: 07/20/2015
 helpviewer_keywords:
 - arithmetic operations, derived math functions
@@ -21,38 +21,38 @@ helpviewer_keywords:
 - degrees
 - arccosine function
 ms.assetid: 63e449d8-9444-44fb-8db1-6d9cf346e2aa
-ms.openlocfilehash: 0d0606c52d1d50fcc2fd8eea3ad2851c95b18a69
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 73cf56dd72f2baac0474d6f5c4e88228a1fe38cf
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61801891"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74349851"
 ---
 # <a name="derived-math-functions-visual-basic"></a>Derivované matematické funkce (Visual Basic)
-V následující tabulce jsou uvedeny – vnitřní matematické funkce, které může být odvozena z vnitřní matematické funkce <xref:System.Math?displayProperty=nameWithType> objektu. Vnitřní matematické funkce se zpřístupní po přidání `Imports System.Math` do souboru nebo projektu.  
+The following table shows non-intrinsic math functions that can be derived from the intrinsic math functions of the <xref:System.Math?displayProperty=nameWithType> object. You can access the intrinsic math functions by adding `Imports System.Math` to your file or project.  
   
-|Funkce|Odvozené ekvivalenty|  
+|Funkce|Derived equivalents|  
 |--------------|-------------------------|  
-|Secant – (Sec(x))|1 / Cos(x)|  
-|Cosecant – (Csc(x))|1 / Sin(x)|  
+|Secant (Sec(x))|1 / Cos(x)|  
+|Cosecant (Csc(x))|1 / Sin(x)|  
 |Cotangent (Ctan(x))|1 / Tan(x)|  
-|Inverzní sinus (Asin(x))|Atan(x / Sqrt(-x * x + 1))|  
-|Inverzní kosinus (Acos(x))|Atan(-x / Sqrt(-x * x + 1)) + 2 \* Atan(1)|  
-|Inverzní secant – (Asec(x))|2 * Atan(1) – Atan(Sign(x) / Sqrt (x \* x – 1))|  
-|Inverzní cosecant – (Acsc(x))|Atan(Sign(x) / Sqrt (x * x – 1))|  
-|Inverzní kotangens (Acot(x))|2 * Atan(1) - Atan(x)|  
-|Hyperbolický sinus (Sinh(x))|(Exp(x) – Exp(-x)) / 2|  
-|Hyperbolický kosinus (Cosh(x))|(Exp(x) + Exp(-x)) / 2|  
-|Hyperbolický tangens (Tanh(x))|(Exp(x) – Exp(-x)) / (Exp(x) + Exp(-x))|  
-|Hyperbolický secant – (Sech(x))|2 / (Exp(x) + Exp(-x))|  
-|Hyperbolický cosecant – (Csch(x))|2 / (Exp(x) – Exp(-x))|  
-|Hyperbolický kotangens (Coth(x))|(Exp(x) + Exp(-x)) / (Exp(x) – Exp(-x))|  
-|Inverzní hyperbolický sinus (Asinh(x))|Log(x + Sqrt(x * x + 1))|  
-|Inverzní hyperbolický kosinus (Acosh(x))|Protokol (x + Sqrt (x * x – 1))|  
-|Inverzní hyperbolický tangens (Atanh(x))|Protokol ((1 + x) / (1 – x)) / 2|  
-|Inverzní hyperbolický secant – (AsecH(x))|Protokol ((Sqrt (-x * x + 1) + 1) / x)|  
-|Inverzní hyperbolický cosecant – (Acsch(x))|Log((Sign(x) * Sqrt(x \* x + 1) + 1) / x)|  
-|Inverzní hyperbolický kotangens (Acoth(x))|Protokol ((x + 1) / (x – 1)) / 2|  
+|Inverse sine (Asin(x))|Atan(x / Sqrt(-x * x + 1))|  
+|Inverse cosine (Acos(x))|Atan(-x / Sqrt(-x * x + 1)) + 2 \* Atan(1)|  
+|Inverse secant (Asec(x))|2 * Atan(1) – Atan(Sign(x) / Sqrt(x \* x – 1))|  
+|Inverse cosecant (Acsc(x))|Atan(Sign(x) / Sqrt(x * x – 1))|  
+|Inverse cotangent (Acot(x))|2 * Atan(1) - Atan(x)|  
+|Hyperbolic sine (Sinh(x))|(Exp(x) – Exp(-x)) / 2|  
+|Hyperbolic cosine (Cosh(x))|(Exp(x) + Exp(-x)) / 2|  
+|Hyperbolic tangent (Tanh(x))|(Exp(x) – Exp(-x)) / (Exp(x) + Exp(-x))|  
+|Hyperbolic secant (Sech(x))|2 / (Exp(x) + Exp(-x))|  
+|Hyperbolic cosecant (Csch(x))|2 / (Exp(x) – Exp(-x))|  
+|Hyperbolic cotangent (Coth(x))|(Exp(x) + Exp(-x)) / (Exp(x) – Exp(-x))|  
+|Inverse hyperbolic sine (Asinh(x))|Log(x + Sqrt(x * x + 1))|  
+|Inverse hyperbolic cosine (Acosh(x))|Log(x + Sqrt(x * x – 1))|  
+|Inverse hyperbolic tangent (Atanh(x))|Log((1 + x) / (1 – x)) / 2|  
+|Inverse hyperbolic secant (AsecH(x))|Log((Sqrt(-x * x + 1) + 1) / x)|  
+|Inverse hyperbolic cosecant (Acsch(x))|Log((Sign(x) * Sqrt(x \* x + 1) + 1) / x)|  
+|Inverse hyperbolic cotangent (Acoth(x))|Log((x + 1) / (x – 1)) / 2|  
   
 ## <a name="see-also"></a>Viz také:
 

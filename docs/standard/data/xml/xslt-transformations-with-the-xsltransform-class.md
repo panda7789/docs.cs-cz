@@ -8,47 +8,46 @@ dev_langs:
 ms.assetid: 500335af-f9b5-413b-968a-e6d9a824478c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ee35ce1016d9e0a825254fad4b08d4b94da16943
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: d534553fcc6ee63d560e731a535d44c3acd1a214
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67170959"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347900"
 ---
 # <a name="xslt-transformations-with-the-xsltransform-class"></a>Transformace XSLT s třídou XslTransform
 
 > [!NOTE]
-> <xref:System.Xml.Xsl.XslTransform> Třída je zastaralé v rozhraní .NET Framework 2.0. Můžete provádět rozšiřitelný jazyk šablony stylů transformace XSLT () transformaci pomocí <xref:System.Xml.Xsl.XslCompiledTransform> třídy. Zobrazit [používání třídy XslCompiledTransform](using-the-xslcompiledtransform-class.md) a [migrace z třídy XslTransform](migrating-from-the-xsltransform-class.md) Další informace.
+> The <xref:System.Xml.Xsl.XslTransform> class is obsolete in the .NET Framework 2.0. You can perform Extensible Stylesheet Language for Transformations (XSLT) transformations using the <xref:System.Xml.Xsl.XslCompiledTransform> class. See [Using the XslCompiledTransform Class](using-the-xslcompiledtransform-class.md) and [Migrating From the XslTransform Class](migrating-from-the-xsltransform-class.md) for more information.
 
-Cílem XSLT je transformace do jiného dokumentu, který se liší ve formátu nebo strukturu (například pro transformaci XML do kódu HTML k použití na webové stránce nebo k transformaci do dokumentu, který obsahuje pouze požadovaná b pole obsahu zdrojovém dokumentu XML y aplikace). Tento proces transformace je určená World Wide Web Consortium (W3C)[XSLT verze 1.0 doporučení](https://www.w3.org/TR/1999/REC-xslt-19991116). V rozhraní .NET Framework <xref:System.Xml.Xsl.XslTransform> třída součástí <xref:System.Xml.Xsl> je obor názvů, procesoru XSLT, který implementuje funkce téhle specifikaci. Malý počet funkcí, které nejsou implementované v doporučení W3C XSLT 1.0, uvedené v [výstupy z XslTransform](outputs-from-an-xsltransform.md). Následující obrázek ukazuje architekturu transformace rozhraní .NET Framework.
+The goal of the XSLT is to transform the content of a source XML document into another document that is different in format or structure (for example, to transform XML into HTML for use on a Web site or to transform it into a document that contains only the fields required by an application). This transformation process is specified by the World Wide Web Consortium (W3C)[XSLT version 1.0 recommendation](https://www.w3.org/TR/1999/REC-xslt-19991116). In the .NET Framework, the <xref:System.Xml.Xsl.XslTransform> class, found in the <xref:System.Xml.Xsl> namespace, is the XSLT processor that implements the functionality of this specification. There are a small number of features that have not been implemented from the W3C XSLT 1.0 recommendation, listed in [Outputs from an XslTransform](outputs-from-an-xsltransform.md). The following figure shows the transformation architecture of the .NET Framework.
 
 ## <a name="overview"></a>Přehled
 
-![Diagram znázorňující architekturu transformace XSLT.](./media/xslt-transformations-with-the-xsltransform-class/xslt-transformation-architecture.gif) 
+![Diagram that shows the XSLT transformation architecture.](./media/xslt-transformations-with-the-xsltransform-class/xslt-transformation-architecture.gif) 
 
-Doporučení XSLT používá jazyk XML Path (XPath) pro výběr součástí dokumentu XML, pokud výraz XPath je dotazovací jazyk pro pohyb mezi uzly stromu dokumentu. Jak je znázorněno v diagramu, implementace rozhraní .NET Framework XPath slouží k výběru součástí jazyka XML uložené v několik tříd, jako například <xref:System.Xml.XmlDocument>, <xref:System.Xml.XmlDataDocument>a <xref:System.Xml.XPath.XPathDocument>. <xref:System.Xml.XPath.XPathDocument> Je optimalizované XSLT datové úložiště a při použití s <xref:System.Xml.Xsl.XslTransform>, poskytuje transformace XSLT s dobrého výkonu.
+The XSLT recommendation uses XML Path Language (XPath) to select parts of an XML document, where XPath is a query language used to navigate nodes of a document tree. As shown in the diagram, the .NET Framework implementation of XPath is used to select parts of XML stored in several classes, such as an <xref:System.Xml.XmlDocument>, an <xref:System.Xml.XmlDataDocument>, and an <xref:System.Xml.XPath.XPathDocument>. An <xref:System.Xml.XPath.XPathDocument> is an optimized XSLT data store, and when used with <xref:System.Xml.Xsl.XslTransform>, it provides XSLT transformations with good performance.
 
-V následujícím seznamu tabulku běžně používá třídy při práci s <xref:System.Xml.Xsl.XslTransform> a XPath a jejich funkce.
+The following table list commonly uses classes when working with <xref:System.Xml.Xsl.XslTransform> and XPath and their function.
 
-|Třída nebo rozhraní|Funkce|
+|Class or Interface|Funkce|
 |------------------------|--------------|
-|<xref:System.Xml.XPath.XPathNavigator>|Je rozhraní API, které poskytuje model styl kurzoru pro navigaci v úložišti, společně s podporou dotaz XPath. Neposkytuje úpravy základní úložiště. Pro úpravy, použijte <xref:System.Xml.XmlDocument> třídy.|
-|<xref:System.Xml.XPath.IXPathNavigable>|Je rozhraní, které poskytuje `CreateNavigator` metodu <xref:System.Xml.XPath.XPathNavigator> pro úložiště.|
-|<xref:System.Xml.XmlDocument>|Umožňuje úpravy tohoto dokumentu. Implementuje <xref:System.Xml.XPath.IXPathNavigable>, umožňující úpravy dokumentu scénáře, kde se následně vyžadují transformace XSLT. Další informace najdete v tématu [vstup XmlDocument do XslTransform](xmldocument-input-to-xsltransform.md).|
-|<xref:System.Xml.XmlDataDocument>|Je odvozen z <xref:System.Xml.XmlDocument>. Překlenuje relační a světů XML pomocí <xref:System.Data.DataSet> pro optimalizaci úložiště strukturovaných dat v dokumentu XML podle zadaného mapování na <xref:System.Data.DataSet>. Implementuje <xref:System.Xml.XPath.IXPathNavigable>, umožňuje scénáře, kde lze provádět transformace XSLT nad relační data načtená z databáze. Další informace najdete v tématu [integrace XML s relačními daty a ADO.NET](xml-integration-with-relational-data-and-adonet.md).|
-|<xref:System.Xml.XPath.XPathDocument>|Tato třída je optimalizována pro <xref:System.Xml.Xsl.XslTransform> zpracování a dotazů XPath a poskytuje jen pro čtení vysoký výkon mezipaměti. Implementuje <xref:System.Xml.XPath.IXPathNavigable> a je upřednostňovaný úložiště pro transformace XSLT.|
-|<xref:System.Xml.XPath.XPathNodeIterator>|Poskytuje navigace prostřednictvím sady uzlu XPath. Všechny metody výběr XPath <xref:System.Xml.XPath.XPathNavigator> vrátit <xref:System.Xml.XPath.XPathNodeIterator>. Více <xref:System.Xml.XPath.XPathNodeIterator> objekty mohou být vytvořeny prostřednictvím stejné úložiště, ve nichž každý představuje vybrané sady uzlů.|
+|<xref:System.Xml.XPath.XPathNavigator>|It is an API that provides a cursor style model for navigating over a store, along with XPath query support. It does not provide editing of the underlying store. For editing, use the <xref:System.Xml.XmlDocument> class.|
+|<xref:System.Xml.XPath.IXPathNavigable>|It is an interface that provides a `CreateNavigator` method to an <xref:System.Xml.XPath.XPathNavigator> for the store.|
+|<xref:System.Xml.XmlDocument>|It enables editing of this document. It implements <xref:System.Xml.XPath.IXPathNavigable>, allowing document-editing scenarios where XSLT transformations are subsequently required. For more information, see [XmlDocument Input to XslTransform](xmldocument-input-to-xsltransform.md).|
+|<xref:System.Xml.XmlDataDocument>|It is derived from the <xref:System.Xml.XmlDocument>. It bridges the relational and XML worlds by using a <xref:System.Data.DataSet> to optimize storage of structured data within the XML document according to specified mappings on the <xref:System.Data.DataSet>. It implements <xref:System.Xml.XPath.IXPathNavigable>, allowing scenarios where XSLT transformations can be performed over relational data retrieved from a database. For more information, see [XML Integration with Relational Data and ADO.NET](xml-integration-with-relational-data-and-adonet.md).|
+|<xref:System.Xml.XPath.XPathDocument>|This class is optimized for <xref:System.Xml.Xsl.XslTransform> processing and XPath queries, and it provides a read-only high performance cache. It implements <xref:System.Xml.XPath.IXPathNavigable> and is the preferred store to use for XSLT transformations.|
+|<xref:System.Xml.XPath.XPathNodeIterator>|It provides navigation over XPath node sets. All XPath selection methods on the <xref:System.Xml.XPath.XPathNavigator> return an <xref:System.Xml.XPath.XPathNodeIterator>. Multiple <xref:System.Xml.XPath.XPathNodeIterator> objects can be created over the same store, each representing a selected set of nodes.|
 
-## <a name="msxml-xslt-extensions"></a>Rozšíření MSXML XSLT
+## <a name="msxml-xslt-extensions"></a>MSXML XSLT Extensions
 
-`msxsl:script` a `msxsl:node-set` funkce jsou pouze rozšíření XSLT Microsoft XML Core Services (MSXML) podporuje <xref:System.Xml.Xsl.XslTransform> třídy.
+The `msxsl:script` and `msxsl:node-set` functions are the only Microsoft XML Core Services (MSXML) XSLT extensions supported by the <xref:System.Xml.Xsl.XslTransform> class.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad kódu načte šablony stylů XSLT, načte soubor s názvem data.XML do <xref:System.Xml.XPath.XPathDocument>a provede transformaci na data na fiktivní soubor s názvem myStyleSheet.xsl odesílání formátovaný výstup do konzoly.
+The following code example loads an XSLT style sheet, reads a file called mydata.xml into an <xref:System.Xml.XPath.XPathDocument>, and performs a transformation on the data on a fictitious file called myStyleSheet.xsl, sending the formatted output to the console.
 
 ```vb
-Imports System
 Imports System.IO
 Imports System.Xml
 Imports System.Xml.XPath

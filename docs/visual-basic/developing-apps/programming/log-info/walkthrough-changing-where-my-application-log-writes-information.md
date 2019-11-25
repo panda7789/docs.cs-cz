@@ -1,44 +1,44 @@
 ---
-title: Změna místa, kam aplikace My. Application. Log zapisuje informace (Visual Basic)
+title: Změna místa, kam objekt My.Application.Log zapisuje informace
 ms.date: 07/20/2015
 helpviewer_keywords:
 - My.Application.Log object, walkthroughs
 - event logs, changing output location
 ms.assetid: ecc74f95-743c-450d-93f6-09a30db0fe4a
-ms.openlocfilehash: 358638d50e347334487665b950b33a045b6a39f9
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: bdee0a91360580b156c1734ef4c82139b18ce2b5
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524406"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74336734"
 ---
 # <a name="walkthrough-changing-where-myapplicationlog-writes-information-visual-basic"></a>Návod: Změna místa, kam objekt My.Application.Log zapisuje informace (Visual Basic)
 
-Pomocí objektů `My.Application.Log` a `My.Log` můžete protokolovat informace o událostech, ke kterým dochází ve vaší aplikaci. Tento návod ukazuje, jak přepsat výchozí nastavení a způsobit, `Log` objekt zapisovat do jiných posluchačů protokolů.
+You can use the `My.Application.Log` and `My.Log` objects to log information about events that occur in your application. This walkthrough shows how to override the default settings and cause the `Log` object to write to other log listeners.
 
 ## <a name="prerequisites"></a>Požadavky
 
-Objekt `Log` může zapisovat informace do několika posluchačů protokolů. Před změnou konfigurace je třeba určit aktuální konfiguraci naslouchacího procesu protokolu. Další informace naleznete v tématu [Návod: zjištění, kam aplikace My. Application. Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md).
+The `Log` object can write information to several log listeners. You need to determine the current configuration of the log listeners before changing the configurations. For more information, see [Walkthrough: Determining Where My.Application.Log Writes Information](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md).
 
-Můžete si přečíst [Postupy: zápis informací o události do textového souboru](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-event-information-to-a-text-file.md) nebo [Postupy: zápis do protokolu událostí aplikace](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-to-an-application-event-log.md).
+You may want to review [How to: Write Event Information to a Text File](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-event-information-to-a-text-file.md) or [How to: Write to an Application Event Log](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-to-an-application-event-log.md).
 
-### <a name="to-add-listeners"></a>Přidání posluchačů
+### <a name="to-add-listeners"></a>To add listeners
 
-1. V **Průzkumník řešení** klikněte pravým tlačítkem na soubor App. config a vyberte **otevřít**.
+1. Right-click app.config in **Solution Explorer** and choose **Open**.
 
-     \- nebo-
+     \- or -
 
-     Pokud neexistuje žádný soubor App. config:
+     If there is no app.config file:
 
-    1. V nabídce **projekt** klikněte na příkaz **Přidat novou položku**.
+    1. On the **Project** menu, choose **Add New Item**.
 
-    2. V dialogovém okně **Přidat novou položku** vyberte možnost **konfigurační soubor aplikace**.
+    2. From the **Add New Item** dialog box, select **Application Configuration File**.
 
-    3. Klikněte na tlačítko **Přidat**.
+    3. Click **Add**.
 
-2. Vyhledejte část `<listeners>` v části `<source>` s atributem `name` "DefaultSource" v části pro `<sources>`. Část `<sources>` je v části `<system.diagnostics>` v části `<configuration>` nejvyšší úrovně.
+2. Locate the `<listeners>` section, under the `<source>` section with the `name` attribute "DefaultSource", in the `<sources>` section. The `<sources>` section is in the `<system.diagnostics>` section, in the top-level `<configuration>` section.
 
-3. Přidejte tyto prvky do oddílu `<listeners>`.
+3. Add these elements to that `<listeners>` section.
 
     ```xml
     <!-- Uncomment to connect the application file log. -->
@@ -53,11 +53,11 @@ Můžete si přečíst [Postupy: zápis informací o události do textového sou
     <!-- <add name="Console" /> -->
     ```
 
-4. Odkomentujte naslouchací procesy protokolů, které chcete dostávat `Log` zprávy.
+4. Uncomment the log listeners that you want to receive `Log` messages.
 
-5. Vyhledejte část `<sharedListeners>` v části `<system.diagnostics>` v části `<configuration>` nejvyšší úrovně.
+5. Locate the `<sharedListeners>` section, in the `<system.diagnostics>` section, in the top-level `<configuration>` section.
 
-6. Přidejte tyto prvky do oddílu `<sharedListeners>`.
+6. Add these elements to that `<sharedListeners>` section.
 
     ```xml
     <add name="FileLog"
@@ -88,7 +88,7 @@ Můžete si přečíst [Postupy: zápis informací o události do textového sou
          initializeData="true" />
     ```
 
-7. Obsah souboru App. config by měl vypadat podobně jako následující kód XML:
+7. The content of the app.config file should be similar to the following XML:
 
     ```xml
     <?xml version="1.0" encoding="utf-8" ?>
@@ -147,39 +147,39 @@ Můžete si přečíst [Postupy: zápis informací o události do textového sou
     </configuration>
     ```
 
-### <a name="to-reconfigure-a-listener"></a>Postup překonfigurování naslouchacího procesu
+### <a name="to-reconfigure-a-listener"></a>To reconfigure a listener
 
-1. V části `<sharedListeners>` vyhledejte `<add>` element naslouchacího procesu.
+1. Locate the listener's `<add>` element from the `<sharedListeners>` section.
 
-2. Atribut `type` poskytuje název typu naslouchacího procesu. Tento typ musí dědit z třídy <xref:System.Diagnostics.TraceListener>. Použijte název silně pojmenovaného typu k zajištění toho, aby byl použit správný typ. Další informace naleznete níže v části "odkazování na silně pojmenovaný typ".
+2. The `type` attribute gives the name of the listener type. This type must inherit from the <xref:System.Diagnostics.TraceListener> class. Use the strongly named type name to ensure that the right type is used. For more information, see the "To reference a strongly named type" section below.
 
-     Mezi typy, které můžete použít, patří:
+     Some types that you can use are:
 
-    - Naslouchací proces <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener?displayProperty=nameWithType>, který zapisuje do protokolu souborů.
+    - A <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener?displayProperty=nameWithType> listener, which writes to a file log.
 
-    - @No__t_0 naslouchací proces, který zapisuje informace do protokolu událostí počítače určeného parametrem `initializeData`.
+    - A <xref:System.Diagnostics.EventLogTraceListener?displayProperty=nameWithType> listener, which writes information to the computer event log specified by the `initializeData` parameter.
 
-    - Naslouchací procesy <xref:System.Diagnostics.DelimitedListTraceListener?displayProperty=nameWithType> a <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType>, které zapisují do souboru zadaného v parametru `initializeData`.
+    - The <xref:System.Diagnostics.DelimitedListTraceListener?displayProperty=nameWithType> and <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType> listeners, which write to the file specified in the `initializeData` parameter.
 
-    - Naslouchací proces <xref:System.Diagnostics.ConsoleTraceListener?displayProperty=nameWithType>, který zapisuje do konzoly příkazového řádku.
+    - A <xref:System.Diagnostics.ConsoleTraceListener?displayProperty=nameWithType> listener, which writes to the command-line console.
 
-     Informace o tom, kde jiné typy protokolových posluchačů zapisují informace, najdete v dokumentaci k tomuto typu.
+     For information about where other types of log listeners write information, consult that type's documentation.
 
-3. Když aplikace vytvoří objekt naslouchacího procesu protokolu, předá atribut `initializeData` jako parametr konstruktoru. Význam atributu `initializeData` závisí na naslouchací službě trasování.
+3. When the application creates the log-listener object, it passes the `initializeData` attribute as the constructor parameter. The meaning of the `initializeData` attribute depends on the trace listener.
 
-4. Po vytvoření naslouchacího procesu protokolu aplikace nastaví vlastnosti naslouchacího procesu. Tyto vlastnosti jsou definovány jinými atributy v prvku `<add>`. Další informace o vlastnostech konkrétního naslouchacího procesu najdete v dokumentaci pro daný typ naslouchacího procesu.
+4. After creating the log listener, the application sets the listener's properties. These properties are defined by the other attributes in the `<add>` element. For more information on the properties for a particular listener, see the documentation for that listener's type.
 
-### <a name="to-reference-a-strongly-named-type"></a>Odkazování na silně pojmenovaný typ
+### <a name="to-reference-a-strongly-named-type"></a>To reference a strongly named type
 
-1. Chcete-li zajistit, aby byl pro naslouchací proces protokolu použit správný typ, nezapomeňte použít plně kvalifikovaný název typu a silně pojmenovaný název sestavení. Syntaxe silně pojmenovaného typu je následující:
+1. To ensure that the right type is used for your log listener, make sure to use the fully qualified type name and the strongly named assembly name. The syntax of a strongly named type is as follows:
 
-     *název typu*\< >, \<*název sestavení*>, \<*číslo verze*>, \<*jazyková verze*>, \<*silný název* 0
+     \<*type name*>, \<*assembly name*>, \<*version number*>, \<*culture*>, \<*strong name*>
 
-2. Tento příklad kódu ukazuje, jak určit název silně pojmenovaného typu pro plně kvalifikovaný typ – "System. Diagnostics. FileLogTraceListener" v tomto případě.
+2. This code example shows how to determine the strongly named type name for a fully qualified type—"System.Diagnostics.FileLogTraceListener" in this case.
 
      [!code-vb[VbVbalrMyApplicationLog#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#15)]
 
-     Toto je výstup a lze jej použít k jedinečnému odkazu silně pojmenovaného typu, jak je uvedeno výše v proceduře "Přidat naslouchací procesy".
+     This is the output, and it can be used to uniquely reference a strongly named type, as in the "To add listeners" procedure above.
 
      `Microsoft.VisualBasic.Logging.FileLogTraceListener, Microsoft.VisualBasic, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a`
 

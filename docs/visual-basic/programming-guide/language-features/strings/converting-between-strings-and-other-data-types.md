@@ -1,5 +1,5 @@
 ---
-title: Převod mezi řetězci a ostatními datovými typy v Visual Basic
+title: Converting between strings and other data types
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Visual Basic, strings
@@ -7,33 +7,33 @@ helpviewer_keywords:
 - conversions [Visual Basic], Visual Basic
 - string conversion [Visual Basic], Visual Basic
 ms.assetid: 06085ed5-191d-4930-8fbc-da63930da400
-ms.openlocfilehash: 5b30bfe180bed62ea330b78ec50d8fbfa1bcd9c1
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: da9f4fb707b2df2812afd0f8b0a5317a75e69935
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72580994"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74352494"
 ---
-# <a name="converting-between-strings-and-other-data-types-in-visual-basic"></a>Převod mezi řetězci a ostatními datovými typy v Visual Basic
+# <a name="converting-between-strings-and-other-data-types-in-visual-basic"></a>Converting between strings and other data types in Visual Basic
 
-Tato část popisuje, jak převést řetězce na jiné datové typy.
+This section describes how to convert strings into other data types.
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
-[Postupy: převedení pole bajtů na řetězec v Visual Basic](how-to-convert-an-array-of-bytes-into-a-string.md)  
-Jak převést bajty z bajtového pole na řetězec.
+[How to: Convert an Array of Bytes into a String in Visual Basic](how-to-convert-an-array-of-bytes-into-a-string.md)  
+How to convert the bytes from a byte array into a string.
 
-[Postupy: převod řetězců na pole bajtů v Visual Basic](how-to-convert-strings-into-an-array-of-bytes.md)  
-Převod řetězce na pole bajtů.
+[How to: Convert Strings into an Array of Bytes in Visual Basic](how-to-convert-strings-into-an-array-of-bytes.md)  
+How to convert a string into an array of bytes.
 
 [Postupy: Vytvoření řetězce z pole hodnot typu Char](how-to-create-a-string-from-an-array-of-char-values.md)  
-Jak vytvořit řetězec "abcd" z jednotlivých znaků.
+How to create the string "abcd" from individual characters.
 
 [Postupy: Převod hexadecimálních řetězců na čísla](how-to-convert-hexadecimal-strings-to-numbers.md)  
-Převod šestnáctkového řetězce na celé číslo.
+How to convert a hexadecimal string into an integer.
 
-[Postupy: převod řetězce na pole znaků v Visual Basic](how-to-convert-a-string-to-an-array-of-characters.md)  
-Převod řetězce na pole znaků.
+[How to: Convert a String to an Array of Characters in Visual Basic](how-to-convert-a-string-to-an-array-of-characters.md)  
+How to convert a string into an array of characters.
 
-[Postupy: přístup ke znakům v řetězcích v Visual Basic](how-to-access-characters-in-strings.md)  
-Jak získat přístup k znaku v řetězci podle jeho indexu.
+[How to: Access Characters in Strings in Visual Basic](how-to-access-characters-in-strings.md)  
+How to access a character in a string by its index.

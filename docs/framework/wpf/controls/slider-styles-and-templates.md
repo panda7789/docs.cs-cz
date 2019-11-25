@@ -9,15 +9,15 @@ helpviewer_keywords:
 - templates [WPF], Slider
 - ControlTemplate [WPF], Slider
 ms.assetid: d89aa97b-075a-4752-9c41-9679df65c491
-ms.openlocfilehash: 334cb4a44788980262110eadac3305283bb61a92
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: f533142d5ba202bd4aaf628487eaaa2a18a535d0
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458388"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283390"
 ---
 # <a name="slider-styles-and-templates"></a>Styly a šablony posuvníku
-Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.Slider>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [přizpůsobení vzhledu existujícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.Slider>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
   
 ## <a name="slider-parts"></a>Části jezdce  
  V následující tabulce jsou uvedeny pojmenované části ovládacího prvku <xref:System.Windows.Controls.Slider>.  
@@ -32,9 +32,9 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
   
 |Název VisualState|Název VisualStateGroup|Popis|  
 |----------------------|---------------------------|-----------------|  
-|Běžnou|CommonStates|Výchozí stav.|  
+|Normální|CommonStates|Výchozí stav.|  
 |MouseOver|CommonStates|Ukazatel myši je umístěn nad ovládacím prvkem.|  
-|Zabezpečen|CommonStates|Ovládací prvek je zakázán.|  
+|Zakázáno|CommonStates|Ovládací prvek je zakázán.|  
 |Zaměřil|FocusStates|Ovládací prvek má fokus.|  
 |Bez fokusu|FocusStates|Ovládací prvek nemá fokus.|  
 |Platné|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
@@ -59,4 +59,4 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
 - [Styly a šablony ovládacích prvků](control-styles-and-templates.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)
 - [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md)

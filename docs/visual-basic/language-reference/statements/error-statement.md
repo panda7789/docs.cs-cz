@@ -1,5 +1,5 @@
 ---
-title: Error – příkaz (Visual Basic)
+title: Error – příkaz
 ms.date: 07/20/2015
 f1_keywords:
 - vb.error
@@ -10,15 +10,15 @@ helpviewer_keywords:
 - run-time errors [Visual Basic], codes
 - errors [Visual Basic], simulating
 ms.assetid: 85cd5c59-5224-4f02-aaf5-fcfefab17a29
-ms.openlocfilehash: c7b2adfe7f6b6ff5e89598cb318a90c51595ff6f
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 668ffbc7b8db73a706c5771bb0734a77f8fc0206
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72583383"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351237"
 ---
 # <a name="error-statement"></a>Error – příkaz
-Simuluje výskyt chyby.  
+Simulates the occurrence of an error.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,29 +28,29 @@ Error errornumber
   
 ## <a name="parts"></a>Součásti  
  `errornumber`  
- Požadováno. Může to být jakékoli platné číslo chyby.  
+ Požadováno. Can be any valid error number.  
   
 ## <a name="remarks"></a>Poznámky  
- Příkaz `Error` je podporován z důvodu zpětné kompatibility. V novém kódu, zejména při vytváření objektů, použijte metodu `Raise` `Err`ho objektu k vygenerování běhových chyb.  
+ The `Error` statement is supported for backward compatibility. In new code, especially when creating objects, use the `Err` object's `Raise` method to generate run-time errors.  
   
- Je-li definována `errornumber`, příkaz `Error` volá obslužnou rutinu chyby poté, co jsou vlastnosti objektu `Err` přiřazeny následující výchozí hodnoty:  
+ If `errornumber` is defined, the `Error` statement calls the error handler after the properties of the `Err` object are assigned the following default values:  
   
 |Vlastnost|Hodnota|  
 |--------------|-----------|  
-|`Number`|Hodnota zadaná jako argument pro příkaz `Error`. Může to být jakékoli platné číslo chyby.|  
-|`Source`|Název aktuálního projektu Visual Basic.|  
-|`Description`|Řetězcový výraz odpovídající hodnotě vrácené funkce `Error` pro zadaný `Number`, pokud tento řetězec existuje. Pokud řetězec neexistuje, `Description` obsahuje řetězec s nulovou délkou ("").|  
-|`HelpFile`|Plně kvalifikovaná jednotka, cesta a název souboru pro příslušný soubor s Visual Basic Help.|  
-|`HelpContext`|Příslušné ID kontextového souboru Help Visual Basic pro chybu odpovídající vlastnosti `Number`.|  
-|`LastDLLError`|Vynulujte.|  
+|`Number`|Value specified as argument to `Error` statement. Can be any valid error number.|  
+|`Source`|Name of the current Visual Basic project.|  
+|`Description`|String expression corresponding to the return value of the `Error` function for the specified `Number`, if this string exists. If the string does not exist, `Description` contains a zero-length string ("").|  
+|`HelpFile`|The fully qualified drive, path, and file name of the appropriate Visual Basic Help file.|  
+|`HelpContext`|The appropriate Visual Basic Help file context ID for the error corresponding to the `Number` property.|  
+|`LastDLLError`|Zero.|  
   
- Pokud neexistují žádné obslužné rutiny chyb nebo pokud není žádná povolená, vytvoří se chybová zpráva, která se zobrazí z vlastností objektu `Err`.  
+ If no error handler exists, or if none is enabled, an error message is created and displayed from the `Err` object properties.  
   
 > [!NOTE]
-> Některé hostitelské aplikace Visual Basic nemůžou vytvářet objekty. Informace o tom, zda může vytvořit třídy a objekty, naleznete v dokumentaci hostitelské aplikace.  
+> Some Visual Basic host applications cannot create objects. See your host application's documentation to determine whether it can create classes and objects.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu se k vygenerování čísla chyby 11 používá příkaz `Error`.  
+ This example uses the `Error` statement to generate error number 11.  
   
 ```vb  
 On Error Resume Next   ' Defer error handling.  
@@ -58,9 +58,9 @@ Error 11   ' Simulate the "Division by zero" error.
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Obor názvů:** [Microsoft. VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  
+ **Namespace:** [Microsoft.VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  
   
- **Sestavení:** Knihovna Visual Basic runtime (v souboru Microsoft. VisualBasic. dll)  
+ **Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)  
   
 ## <a name="see-also"></a>Viz také:
 

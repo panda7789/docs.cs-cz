@@ -1,29 +1,29 @@
 ---
-title: 'Postupy: Vytvoření dokumentu s obory názvů (LINQ to XML) (Visual Basic)'
+title: 'How to: Create a Document with Namespaces (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: cc5b0d4d-360c-4ada-94fa-2d2916e989be
-ms.openlocfilehash: c61076da5616d98673c4b9258125e3ff0c8821aa
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: bbd23840b0356cf14d2c7d6cb71591fe6461a8bd
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68710445"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74332589"
 ---
-# <a name="how-to-create-a-document-with-namespaces-linq-to-xml-visual-basic"></a>Postupy: Vytvoření dokumentu s obory názvů (LINQ to XML) (Visual Basic)
-V tomto tématu se dozvíte, jak vytvořit dokument s obory názvů v Visual Basic.  
+# <a name="how-to-create-a-document-with-namespaces-linq-to-xml-visual-basic"></a>How to: Create a Document with Namespaces (LINQ to XML) (Visual Basic)
+This topic shows how to create a document with namespaces in Visual Basic.  
   
- Při použití literálů XML v Visual Basic mohou uživatelé definovat jeden globální výchozí obor názvů XML. Tento obor názvů je výchozím oborem názvů pro literály XML a vlastnosti XML. Výchozí obor názvů XML lze definovat buď na úrovni projektu, nebo na úrovni souboru. Pokud je definována na úrovni souboru, přepisuje výchozí obor názvů na úrovni projektu.  
+ When using XML literals in Visual Basic, users can define one global default XML namespace. This namespace is the default namespace for both XML literals and XML properties. The default XML namespace can be defined at either the project level or the file level. If it is defined at the file level, it overrides the default namespace at the project level.  
   
- Můžete také definovat jiné obory názvů a zadat předpony oboru názvů pro tyto obory názvů.  
+ You can also define other namespaces, and specify the namespace prefixes for those namespaces.  
   
- Můžete definovat výchozí obory názvů a obory názvů s předponou `Imports` pomocí klíčového slova.  
+ You define both default namespaces and namespaces with a prefix by using the `Imports` keyword.  
   
- Další informace naleznete v tématu [Úvod do literálů XML v Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-xml-literals.md).  
+ For more information, see [Introduction to XML Literals in Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-xml-literals.md).  
   
- Všimněte si, že výchozí obor názvů XML se vztahuje pouze na elementy a nikoli na atributy. Atributy jsou ve výchozím nastavení vždy v žádném oboru názvů. Můžete však použít předponu oboru názvů pro vložení atributu do oboru názvů.  
+ Note that the default XML namespace only applies to elements and not to attributes. Attributes are by default always in no namespace. However, you can use a namespace prefix to put an attribute in a namespace.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad vytvoří dokument, který obsahuje obor názvů.  
+ This example creates a document that contains a namespace.  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  
@@ -38,7 +38,7 @@ Module Module1
 End Module  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ This example produces the following output:  
   
 ```xml  
 <aw:Root xmlns:aw="http://www.adventure-works.com">  
@@ -47,7 +47,7 @@ End Module
 ```  
   
 ## <a name="example"></a>Příklad  
- Tento příklad vytvoří dokument, který obsahuje dva obory názvů, z nichž jeden je výchozím oborem názvů.  
+ This example creates a document that contains two namespaces, one of which is the default namespace.  
   
 ```vb  
 Imports <xmlns="http://www.adventure-works.com">  
@@ -67,7 +67,7 @@ Module Module1
 End Module  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ This example produces the following output:  
   
 ```xml  
 <Root xmlns:fc="www.fourthcoffee.com" xmlns="http://www.adventure-works.com">  
@@ -77,9 +77,9 @@ End Module
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří dokument, který obsahuje více oborů názvů, s předponami oboru názvů.  
+ The following example creates a document that contains multiple namespaces, both with namespace prefixes.  
   
- Při serializaci stromu [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] XML vygeneruje deklarace oboru názvů podle potřeby, aby byl každý element v jeho určeném oboru názvů.  
+ When serializing an XML tree, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] emits namespace declarations as required so that each element is in its designated namespace.  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  
@@ -102,7 +102,7 @@ Module Module1
 End Module  
 ```  
   
- Tento příklad vytvoří následující výstup:  
+ This example produces the following output:  
   
 ```xml  
 <aw:Root xmlns:fc="www.fourthcoffee.com" xmlns:aw="http://www.adventure-works.com">  
@@ -116,4 +116,4 @@ End Module
   
 ## <a name="see-also"></a>Viz také:
 
-- [Přehled oborů názvů (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md)
+- [Namespaces Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md)

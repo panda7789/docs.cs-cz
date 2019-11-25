@@ -1,64 +1,64 @@
 ---
-title: Dotazy (Visual Basic)
+title: Dotazy
 ms.date: 07/20/2015
 helpviewer_keywords:
 - queries [Visual Basic]
 - LINQ, queries
 ms.assetid: 8edc717c-4a24-4cbc-9c16-11f479c935db
-ms.openlocfilehash: 1ea49b16f70c0af87bbd3a8978fb10fe08d5ce6b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a4a926d089a8bec1abaa47404f6c9112687e6df2
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62052141"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350441"
 ---
 # <a name="queries-visual-basic"></a>Dotazy (Visual Basic)
-Visual Basic umožňuje vytvářet [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] výrazy ve vašem kódu.  
+Visual Basic enables you to create [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] expressions in your code.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Klauzule Aggregate](../../../visual-basic/language-reference/queries/aggregate-clause.md)  
- Popisuje `Aggregate` klauzuli, která se vztahuje jedna nebo více agregačních funkcí na kolekci.  
+ Describes the `Aggregate` clause, which applies one or more aggregate functions to a collection.  
   
  [Klauzule Distinct](../../../visual-basic/language-reference/queries/distinct-clause.md)  
- Popisuje `Distinct` klauzuli, která omezí hodnoty aktuální proměnnou rozsahu eliminovaly duplicitní hodnoty ve výsledcích dotazu.  
+ Describes the `Distinct` clause, which restricts the values of the current range variable to eliminate duplicate values in query results.  
   
  [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)  
- Popisuje `From` klauzuli, která určuje kolekci a proměnnou rozsahu pro dotaz.  
+ Describes the `From` clause, which specifies a collection and a range variable for a query.  
   
  [Klauzule Group By](../../../visual-basic/language-reference/queries/group-by-clause.md)  
- Popisuje `Group By` klauzuli, která seskupuje prvky sady výsledků dotazu a slouží k aplikaci agregačních funkcí na každou skupinu.  
+ Describes the `Group By` clause, which groups the elements of a query result and can be used to apply aggregate functions to each group.  
   
  [Klauzule Group Join](../../../visual-basic/language-reference/queries/group-join-clause.md)  
- Popisuje `Group Join` klauzuli, která kombinuje dvě kolekce do jedné hierarchické kolekce.  
+ Describes the `Group Join` clause, which combines two collections into a single hierarchical collection.  
   
  [Klauzule Join](../../../visual-basic/language-reference/queries/join-clause.md)  
- Popisuje `Join` klauzuli, která kombinuje dvě kolekce do jedné kolekce.  
+ Describes the `Join` clause, which combines two collections into a single collection.  
   
  [Klauzule Let](../../../visual-basic/language-reference/queries/let-clause.md)  
- Popisuje `Let` klauzuli, která vypočítá hodnotu a přiřadí ji nové proměnné v dotazu.  
+ Describes the `Let` clause, which computes a value and assigns it to a new variable in the query.  
   
  [Klauzule Order By](../../../visual-basic/language-reference/queries/order-by-clause.md)  
- Popisuje `Order By` klauzuli, která určuje pořadí řazení pro sloupce v dotazu.  
+ Describes the `Order By` clause, which specifies the sort order for columns in a query.  
   
  [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)  
- Popisuje `Select` klauzuli, která deklaruje sadu proměnných rozsahu pro dotaz.  
+ Describes the `Select` clause, which declares a set of range variables for a query.  
   
  [Klauzule Skip](../../../visual-basic/language-reference/queries/skip-clause.md)  
- Popisuje `Skip` klauzuli, která vynechá zadaný počet prvků v kolekci a vrátí zbývající prvky.  
+ Describes the `Skip` clause, which bypasses a specified number of elements in a collection and then returns the remaining elements.  
   
  [Klauzule Skip While](../../../visual-basic/language-reference/queries/skip-while-clause.md)  
- Popisuje `Skip While` klauzuli, která vynechává prvky v kolekci, tak dlouho, dokud je zadaná podmínka `true` a vrací zbývající prvky.  
+ Describes the `Skip While` clause, which bypasses elements in a collection as long as a specified condition is `true` and then returns the remaining elements.  
   
  [Klauzule Take](../../../visual-basic/language-reference/queries/take-clause.md)  
- Popisuje `Take` klauzuli, která vrací zadaný počet souvislých prvků od začátku kolekce.  
+ Describes the `Take` clause, which returns a specified number of contiguous elements from the start of a collection.  
   
  [Klauzule Take While](../../../visual-basic/language-reference/queries/take-while-clause.md)  
- Popisuje `Take While` klauzuli, která zahrnuje elementy v kolekci, tak dlouho, dokud je zadaná podmínka `true` a vynechány zbývající prvky.  
+ Describes the `Take While` clause, which includes elements in a collection as long as a specified condition is `true` and bypasses the remaining elements.  
   
  [Klauzule Where](../../../visual-basic/language-reference/queries/where-clause.md)  
- Popisuje `Where` klauzuli, která určuje podmínku filtrování dotazu.  
+ Describes the `Where` clause, which specifies a filtering condition for a query.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [LINQ](../../../visual-basic/programming-guide/language-features/linq/index.md)
-- [Úvod do LINQ v JAZYKU Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Introduction to LINQ in Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)

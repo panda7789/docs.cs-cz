@@ -1,19 +1,19 @@
 ---
-title: <typeparam> (Visual Basic)
+title: <typeparam>
 ms.date: 07/20/2015
 helpviewer_keywords:
 - typeparam XML tag
 - <typeparam> XML tag
 ms.assetid: 1bb5ba78-f060-478c-905c-77a2e43639af
-ms.openlocfilehash: dbd99997fed33c192a2160fb45a739addbae254a
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 00cb62827381146c172e0d15a2c64b167c21f025
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524620"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74352192"
 ---
-# <a name="typeparam-visual-basic"></a>\<typeparam > (Visual Basic)
-Definuje název a popis parametru typu.  
+# <a name="typeparam-visual-basic"></a>\<typeparam> (Visual Basic)
+Defines a type parameter name and description.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,18 +23,18 @@ Definuje název a popis parametru typu.
   
 ## <a name="parameters"></a>Parametry  
  `name`  
- Název parametru typu. Název uzavřete do uvozovek ("").  
+ The name of the type parameter. Enclose the name in double quotation marks (" ").  
   
  `description`  
- Popis parametru typu.  
+ A description of the type parameter.  
   
 ## <a name="remarks"></a>Poznámky  
- Použijte značku `<typeparam>` v komentáři pro obecný typ nebo deklaraci obecného člena k popisu jednoho z parametrů typu.  
+ Use the `<typeparam>` tag in the comment for a generic type or generic member declaration to describe one of the type parameters.  
   
- Zkompilujte s [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
+ Compile with [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) to process documentation comments to a file.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu se používá značka `<typeparam>` k popisu `id` parametru.  
+ This example uses the `<typeparam>` tag to describe the `id` parameter.  
   
  [!code-vb[VbVbcnXmlDocComments#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#8)]  
   

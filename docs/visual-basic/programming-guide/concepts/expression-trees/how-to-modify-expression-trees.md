@@ -1,25 +1,25 @@
 ---
-title: 'Postupy: Úprava stromů výrazů (Visual Basic)'
+title: 'Postupy: Úpravy stromů výrazů'
 ms.date: 07/20/2015
 ms.assetid: d1309fff-28bd-4d8e-a2cf-75725999e8f2
-ms.openlocfilehash: ac196b56f178659765437a97a25f46c04f8040fa
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 12ccad6df7d6c7d91ebc290163db362eae173209
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71054203"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353750"
 ---
-# <a name="how-to-modify-expression-trees-visual-basic"></a>Postupy: Úprava stromů výrazů (Visual Basic)
+# <a name="how-to-modify-expression-trees-visual-basic"></a>How to: Modify Expression Trees (Visual Basic)
 
-V tomto tématu se dozvíte, jak upravit strom výrazu. Stromy výrazů jsou neměnné, což znamená, že je nelze upravovat přímo. Chcete-li změnit strom výrazu, je nutné vytvořit kopii existujícího stromu výrazů a při vytváření kopie provést požadované změny. <xref:System.Linq.Expressions.ExpressionVisitor> Třídu můžete použít k procházení existujícího stromu výrazů a ke zkopírování jednotlivých uzlů, které navštíví.
+This topic shows you how to modify an expression tree. Expression trees are immutable, which means that they cannot be modified directly. To change an expression tree, you must create a copy of an existing expression tree and when you create the copy, make the required changes. You can use the <xref:System.Linq.Expressions.ExpressionVisitor> class to traverse an existing expression tree and to copy each node that it visits.
 
-## <a name="to-modify-an-expression-tree"></a>Úprava stromu výrazu
+## <a name="to-modify-an-expression-tree"></a>To modify an expression tree
 
-1. Vytvořte nový projekt **konzolové aplikace** .
+1. Create a new **Console Application** project.
 
-2. Přidejte příkaz do souboru `System.Linq.Expressions` pro obor názvů. `Imports`
+2. Add an `Imports` statement to the file for the `System.Linq.Expressions` namespace.
 
-3. `AndAlsoModifier` Přidejte třídu do projektu.
+3. Add the `AndAlsoModifier` class to your project.
 
     ```vb
     Public Class AndAlsoModifier
@@ -45,11 +45,11 @@ V tomto tématu se dozvíte, jak upravit strom výrazu. Stromy výrazů jsou nem
     End Class
     ```
 
-    Tato třída dědí <xref:System.Linq.Expressions.ExpressionVisitor> třídu a je specializovaná na úpravu výrazů, které reprezentují podmíněné `AND` operace. Tyto operace mění z podmíněného `AND` na podmíněný. `OR` K tomu třída Přepisuje <xref:System.Linq.Expressions.ExpressionVisitor.VisitBinary%2A> metodu základního typu, protože podmíněné `AND` výrazy jsou reprezentovány jako binární výrazy. V případě, že výraz, který je předán do, představuje podmíněnou `AND` operaci, kód vytvoří nový výraz, který obsahuje podmíněný `OR` operátor místo podmíněného `AND`. `VisitBinary` podnikatel. Pokud výraz, který je předán do `VisitBinary` , nepředstavuje podmíněnou `AND` operaci, metoda se odloží k implementaci základní třídy. Metody základní třídy konstrukce uzly, které jsou jako stromy výrazů, které jsou předány, ale uzly mají své dílčí stromy nahrazené stromy výrazů, které jsou vytvářeny rekurzivně návštěvníkem.
+    This class inherits the <xref:System.Linq.Expressions.ExpressionVisitor> class and is specialized to modify expressions that represent conditional `AND` operations. It changes these operations from a conditional `AND` to a conditional `OR`. To do this, the class overrides the <xref:System.Linq.Expressions.ExpressionVisitor.VisitBinary%2A> method of the base type, because conditional `AND` expressions are represented as binary expressions. In the `VisitBinary` method, if the expression that is passed to it represents a conditional `AND` operation, the code constructs a new expression that contains the conditional `OR` operator instead of the conditional `AND` operator. If the expression that is passed to `VisitBinary` does not represent a conditional `AND` operation, the method defers to the base class implementation. The base class methods construct nodes that are like the expression trees that are passed in, but the nodes have their sub trees replaced with the expression trees that are produced recursively by the visitor.
 
-4. Přidejte příkaz do souboru `System.Linq.Expressions` pro obor názvů. `Imports`
+4. Add an `Imports` statement to the file for the `System.Linq.Expressions` namespace.
 
-5. Přidejte kód do `Main` metody v souboru Module1. vb pro vytvoření stromu výrazu a předejte ho do metody, která ho upraví.
+5. Add code to the `Main` method in the Module1.vb file to create an expression tree and pass it to the method that will modify it.
 
     ```vb
     Dim expr As Expression(Of Func(Of String, Boolean)) = _
@@ -67,11 +67,11 @@ V tomto tématu se dozvíte, jak upravit strom výrazu. Stromy výrazů jsou nem
     ' name => ((name.Length > 10) || name.StartsWith("G"))
     ```
 
-    Kód vytvoří výraz, který obsahuje podmíněnou `AND` operaci. Potom vytvoří instanci `AndAlsoModifier` třídy a předá výraz `Modify` metodě této třídy. Původní a upravené stromy výrazů jsou zobrazeny, aby se změna zobrazila.
+    The code creates an expression that contains a conditional `AND` operation. It then creates an instance of the `AndAlsoModifier` class and passes the expression to the `Modify` method of this class. Both the original and the modified expression trees are outputted to show the change.
 
-6. Zkompilujte a spusťte aplikaci.
+6. Compile and run the application.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Spuštění stromů výrazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)
-- [Stromy výrazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)
+- [How to: Execute Expression Trees (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)
+- [Expression Trees (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)

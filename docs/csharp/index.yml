@@ -1,0 +1,113 @@
+### YamlMime:Landing
+title: C#nápovědě
+summary: Naučte se vytvářet aplikace pomocí C# programovacího jazyka na platformě .NET.
+metadata:
+  title: C#dokumentace – Začínáme, kurzy, reference.
+  description: Seznámení C# s programováním – pro zahájení vývojářů, vývojářů novinek C#a zkušeností C# a vývojářů .NET
+  ms.topic: landing-page
+  author: billwagner
+  ms.author: wiwagn
+  ms.date: 11/19/2019
+  ms.openlocfilehash: 5af88b8a75ecd3cfca7c93b08cb262f161498903
+  ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 11/21/2019
+  ms.locfileid: "74284015"
+landingContent:
+- title: Informace k programu vC#
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Online, interaktivní Hello World
+      url: tutorials/intro-to-csharp/hello-world.yml
+    - text: Matematické a číslice vC#
+      url: tutorials/intro-to-csharp/numbers-in-csharp.yml
+    - text: Úvodní kurzy
+      url: tutorials/intro-to-csharp/index.md
+    - text: Vytváření C# aplikací pomocí sady Visual Studio
+      url: https://docs.microsoft.com/visualstudio/get-started/csharp/tutorial-console
+  - linkListType: video
+    links:
+    - text: Co je C#to?
+      url: https://channel9.msdn.com/Series/CSharp-101/What-is-C/player
+    - text: C#série videí 101
+      url: https://aka.ms/dotnet3-csharp
+  - linkListType: download
+    links:
+    - text: Stáhnout .NET Core SDK
+      url: https://dotnet.microsoft.com/download
+- title: C#Základy
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: ProhlídkaC#
+      url: tour-of-csharp/index.md
+    - text: V programu jazyka C#
+      url: programming-guide/inside-a-program/index.md
+    - text: Main() a argumenty příkazového řádku
+      url: programming-guide/main-and-command-args/index.md
+  - linkListType: concept
+    links:
+    - text: Systém C# a typ .NET
+      url: programming-guide/types/index.md
+    - text: LINQ (Language Integrated Query)
+      url: linq/index.md
+    - text: Async a await
+      url: programming-guide/concepts/async/index.md
+  - linkListType: tutorial
+    links:
+    - text: Objektově orientované dědění
+      url: tutorials/inheritance.md
+    - text: Použití LINQ k dotazování dat
+      url: tutorials/working-with-linq.md
+    - text: Formátování textu pomocí interpolace řetězce
+      url: tutorials/string-interpolation.md
+    - text: Procházet všechny kurzy
+      url: tutorials/index.md
+- title: Nové funkce v C# 8,0
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: Co je nového v C# 8,0
+      url: whats-new/csharp-8.md
+  - linkListType: overview
+    links:
+    - text: Porovnávání vzorů
+      url: pattern-matching.md
+    - text: Odkazové typy s možnou hodnotou null
+      url: nullable-references.md
+  - linkListType: concept
+    links:
+    - text: Opatřit poznámkami rozhraní API pro možnost použití hodnoty null
+      url: nullable-attributes.md
+  - linkListType: tutorial
+    links:
+    - text: Využívání a generování asynchronních datových proudů
+      url: tutorials/generate-consume-asynchronous-stream.md
+    - text: Vývoj s použitím typů odkazů s možnou hodnotou null
+      url: tutorials/nullable-reference-types.md
+    - text: Upgradovat existující kód na použití typů odkazů s možnou hodnotou null
+      url: tutorials/upgrade-to-nullable-references.md
+    - text: Použít porovnávání vzorů pro užitečnější algoritmy
+      url: tutorials/pattern-matching.md
+    - text: Bezpečné rozhraní verze s výchozími členy rozhraní
+      url: tutorials/default-interface-methods-versions.md
+    - text: Kombinace funkcí s výchozími členy rozhraní
+      url: tutorials/mixins-with-default-interface-methods.md
+    - text: Práce s podmnožinami pomocí rozsahů a indexů
+      url: tutorials/ranges-indexes.md
+- title: Referenční dokumentace jazyka C#
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Referenční dokumentace jazyka
+      url: language-reference/index.md
+    - text: Klíčová slova jazyka C#
+      url: language-reference/keywords/index.md
+    - text: Operátory jazyka C#
+      url: language-reference/operators/index.md
+    - text: Konfigurace verze jazyka
+      url: language-reference/configure-language-version.md
+    - text: specifikace jazyka C#
+      url: ../../_csharplang/spec/introduction.md

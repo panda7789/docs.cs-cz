@@ -1,20 +1,20 @@
 ---
-title: Sub – výraz (Visual Basic)
+title: Sub – výraz
 ms.date: 07/20/2015
 helpviewer_keywords:
 - lambda expressions [Visual Basic], sub expression
 - Sub Expression [Visual Basic]
 - subroutines [Visual Basic], sub expressions
 ms.assetid: 36b6bfd1-6539-4d8f-a5eb-6541a745ffde
-ms.openlocfilehash: 2330b410f54b54d8f6cb7d8ad6f9b39a3f4d31bc
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: d284e629ea0b0a4e9b6eb9e098612bb07c38723b
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71701340"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350902"
 ---
 # <a name="sub-expression-visual-basic"></a>Sub – výraz (Visual Basic)
-Deklaruje parametry a kód definující výraz subrutiny lambda.  
+Declares the parameters and code that define a subroutine lambda expression.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -30,30 +30,30 @@ End Sub
   
 |Termín|Definice|  
 |---|---|  
-|`parameterlist`|Volitelné. Seznam místních názvů proměnných, které reprezentují parametry procedury. Závorky musí být přítomny i v případě, že je seznam prázdný. Další informace najdete v tématu [seznam parametrů](../../../visual-basic/language-reference/statements/parameter-list.md).|  
-|`statement`|Požadováno. Jediný příkaz.|  
-|`statements`|Požadováno. Seznam příkazů.|  
+|`parameterlist`|Volitelné. A list of local variable names that represent the parameters of the procedure. The parentheses must be present even when the list is empty. For more information, see [Parameter List](../../../visual-basic/language-reference/statements/parameter-list.md).|  
+|`statement`|Požadováno. A single statement.|  
+|`statements`|Požadováno. A list of statements.|  
   
 ## <a name="remarks"></a>Poznámky  
- *Výraz lambda* je podprogram, který nemá název a který provádí jeden nebo více příkazů. Můžete použít výraz lambda kdekoli, kde můžete použít typ delegáta, s výjimkou argumentu pro `RemoveHandler`. Další informace o delegátech a použití výrazů lambda s delegáty naleznete v tématu [příkaz Delegate](../../../visual-basic/language-reference/statements/delegate-statement.md) a [odlehčený převod delegáta](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md).  
+ A *lambda expression* is a subroutine that does not have a name and that executes one or more statements. You can use a lambda expression anywhere that you can use a delegate type, except as an argument to `RemoveHandler`. For more information about delegates, and the use of lambda expressions with delegates, see [Delegate Statement](../../../visual-basic/language-reference/statements/delegate-statement.md) and [Relaxed Delegate Conversion](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md).  
   
 ## <a name="lambda-expression-syntax"></a>Syntaxe výrazu lambda  
- Syntaxe výrazu lambda se podobá standardní podrutině. Rozdíly jsou následující:  
+ The syntax of a lambda expression resembles that of a standard subroutine. The differences are as follows:  
   
-- Výraz lambda nemá název.  
+- A lambda expression does not have a name.  
   
-- Výraz lambda nemůže obsahovat modifikátor, například `Overloads` nebo `Overrides`.  
+- A lambda expression cannot have a modifier, such as `Overloads` or `Overrides`.  
   
-- Tělo výrazu lambda s jedním řádkem musí být příkaz, nikoli výraz. Tělo může být tvořeno voláním procedury Sub, ale nikoli voláním procedury funkce.  
+- The body of a single-line lambda expression must be a statement, not an expression. The body can consist of a call to a sub procedure, but not a call to a function procedure.  
   
-- Ve výrazu lambda musí mít buď všechny parametry zadané datové typy, nebo musí být všechny parametry odvozeny.  
+- In a lambda expression, either all parameters must have specified data types or all parameters must be inferred.  
   
-- Volitelné parametry a parametry `ParamArray` nejsou ve výrazech lambda povoleny.  
+- Optional and `ParamArray` parameters are not permitted in lambda expressions.  
   
-- Obecné parametry nejsou ve výrazech lambda povoleny.  
+- Generic parameters are not permitted in lambda expressions.  
   
 ## <a name="example"></a>Příklad  
- Následuje příklad výrazu lambda, který zapisuje hodnotu do konzoly. V příkladu se zobrazuje jak jednoduchá, tak víceřádková syntaxe výrazu lambda pro podprogram. Další příklady naleznete v tématu [lambda Expressions](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
+ Following is an example of a lambda expression that writes a value to the console. The example shows both the single-line and multiline lambda expression syntax for a subroutine. For more examples, see [Lambda Expressions](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
   
  [!code-vb[VbVbalrLambdas#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#15)]  
   

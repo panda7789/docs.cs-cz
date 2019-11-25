@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: Převedení objektu na jiný typ v jazyce Visual Basic'
+title: 'How to: Convert an Object to Another Type'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - objects [Visual Basic], converting
 ms.assetid: 60cb5fc7-7ba4-4ab5-9c24-480fa12ddcdc
-ms.openlocfilehash: 39083fc55d30e24c357ec162a15466f81655f4c8
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 19708d03b0514f4572c2baa53e05781e5949766b
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582330"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350074"
 ---
 # <a name="how-to-convert-an-object-to-another-type-in-visual-basic"></a>Postupy: Převedení objektu na jiný typ v jazyce Visual Basic
-Převedete `Object` proměnnou na jiný datový typ pomocí klíčového slova převodu, jako je [CType funkce](../../../../visual-basic/language-reference/functions/ctype-function.md).  
+You convert an `Object` variable to another data type by using a conversion keyword such as [CType Function](../../../../visual-basic/language-reference/functions/ctype-function.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad převede `Object` proměnnou na `Integer` a `String`.  
+ The following example converts an `Object` variable to an `Integer` and a `String`.  
   
 ```vb  
 Public Sub objectConversion(ByVal anObject As Object)  
@@ -26,17 +26,17 @@ Public Sub objectConversion(ByVal anObject As Object)
 End Sub  
 ```  
   
- Pokud víte, že obsah `Object` proměnné jsou konkrétního datového typu, je lepší převést proměnnou na tento datový typ. Pokud budete nadále používat `Object` proměnnou, bude se vám účtovat *zabalení* a *rozbalení* (pro typ hodnoty) nebo *pozdní vazba* (pro typ odkazu). Tyto operace vybírají delší dobu spuštění a zpomalují výkon.  
+ If you know that the contents of an `Object` variable are of a particular data type, it is better to convert the variable to that data type. If you continue to use the `Object` variable, you incur either *boxing* and *unboxing* (for a value type) or *late binding* (for a reference type). These operations all take extra execution time and make your performance slower.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Tento příklad vyžaduje:  
+ This example requires:  
   
-- Odkaz na obor názvů <xref:System?displayProperty=nameWithType>.  
+- A reference to the <xref:System?displayProperty=nameWithType> namespace.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Object>
-- [Převody typu v Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [Type Conversions in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
 - [Rozšíření a zúžení převodů](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
 - [Implicitní a explicitní převody](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)
 - [Převody mezi řetězci a ostatními typy](../../../../visual-basic/programming-guide/language-features/data-types/conversions-between-strings-and-other-types.md)

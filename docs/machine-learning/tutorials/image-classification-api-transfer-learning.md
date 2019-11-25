@@ -1,199 +1,187 @@
 ---
-title: 'Kurz: automatizované vizuální prověřování pomocí učení přenosu'
-description: V tomto kurzu se dozvíte, jak pomocí funkce Transfer Learning vytvořit TensorFlow model hloubkového učení v ML.NET pomocí rozhraní API pro detekci imagí pro klasifikaci imagí konkrétních ploch jako prasklé nebo neprasklé.
+title: 'Tutorial: Automated visual inspection using transfer learning'
+description: This tutorial illustrates how to use transfer learning to train a TensorFlow deep learning model in ML.NET using the image detection API to classify images of concrete surfaces as cracked or not cracked.
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 11/07/2019
+ms.date: 11/14/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: f5fc08b2944374c0be00249ec9e2a4b819762e13
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 443f9e9a83ebf31bb6c62323015af4a554323b67
+ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73733224"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74205059"
 ---
-# <a name="tutorial-automated-visual-inspection-using-transfer-learning-with-the-mlnet-image-classification-api"></a>Kurz: automatizované vizuální prověřování pomocí přenosu přenosu s rozhraním API pro klasifikaci imagí ML.NET
+# <a name="tutorial-automated-visual-inspection-using-transfer-learning-with-the-mlnet-image-classification-api"></a>Tutorial: Automated visual inspection using transfer learning with the ML.NET Image Classification API
 
-Naučte se naučit vlastní model hloubkového učení s využitím učení přenosu, předTensorFlowho modelu a rozhraní API pro klasifikaci imagí ml.NET pro klasifikaci imagí konkrétních povrchů jako prasklé nebo prolomené.
+Learn how to train a custom deep learning model using transfer learning, a pretrained TensorFlow model and the ML.NET Image Classification API to classify images of concrete surfaces as cracked or uncracked.
 
 V tomto kurzu se naučíte:
 > [!div class="checklist"]
 >
 > - Pochopení problému
-> - Další informace o rozhraní API pro klasifikaci imagí ML.NET
-> - Pochopení předvýukového modelu
-> - Použití učení transferu k výuce vlastního modelu klasifikace imagí TensorFlow
-> - Klasifikace imagí pomocí vlastního modelu
+> - Learn about ML.NET Image Classification API
+> - Understand the pretrained model
+> - Use transfer learning to train a custom TensorFlow image classification model
+> - Classify images with the custom model
 
 ## <a name="prerequisites"></a>Požadavky
 
-- [Visual Studio 2017 15,6 nebo novější](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) s nainstalovanou úlohou vývoj .NET Core pro různé platformy.
+- [Visual Studio 2017 15.6 or later](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) with the ".NET Core cross-platform development" workload installed.
 
-## <a name="image-classification-transfer-learning-sample-overview"></a>Přehled výukového kurzu přenosu klasifikace obrázků
+## <a name="image-classification-transfer-learning-sample-overview"></a>Image classification transfer learning sample overview
 
-Tato ukázka je Konzolová aplikace C# .NET Core, která klasifikuje Image pomocí předvýukového modelu TensorFlow hloubkového učení. Kód pro tuto ukázku najdete v [úložišti dotnet/machinelearning-Samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary) na GitHubu.
+This sample is a C# .NET Core console application that classifies images using a pretrained deep learning TensorFlow model. The code for this sample can be found on the [dotnet/machinelearning-samples repository](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary) on GitHub.
 
 ## <a name="understand-the-problem"></a>Pochopení problému
 
-Klasifikace obrázku je problém počítačové vize. Klasifikace obrázku bere jako vstup obrázek a zařadí ho do předepsané třídy. Některé scénáře, kde je klasifikace obrázku užitečná, zahrnují:
+Image classification is a computer vision problem. Image classification takes an image as input and categorizes it into a prescribed class. Some scenarios where image classification is useful include:
 
 - Rozpoznávání obličeje
-- Detekce emoce
-- Lékařské diagnostiky
-- Detekce orientačních bodů
+- Emotion detection
+- Medical diagnosis
+- Landmark detection
 
-V tomto kurzu se nasazuje model klasifikace vlastních imagí, který provede automatizovanou vizuální kontrolu balíčku mostu a identifikuje tak struktury, které jsou poškozené prasklinami.
+This tutorial trains a custom image classification model to perform automated visual inspection of bridge decks to identify structures that are damaged by cracks.
 
-## <a name="mlnet-image-classification-api"></a>Rozhraní API pro klasifikaci imagí ML.NET
+## <a name="mlnet-image-classification-api"></a>ML.NET Image Classification API
 
-ML.NET poskytuje různé způsoby provádění klasifikace imagí. Tento kurz se týká učení přenosu pomocí rozhraní API klasifikace imagí. Rozhraní API pro klasifikaci imagí využívá [TensorFlow.NET](https://github.com/SciSharp/TensorFlow.NET)knihovnu nižší úrovně, která poskytuje C# vazby pro rozhraní TensorFlow C++ API.
+ML.NET provides various ways of performing image classification. This tutorial applies transfer learning using the Image Classification API. The Image Classification API makes use of [TensorFlow.NET](https://github.com/SciSharp/TensorFlow.NET), a low-level library that provides C# bindings for the TensorFlow C++ API.
 
-## <a name="what-is-transfer-learning"></a>Co je učení přenosu?
+## <a name="what-is-transfer-learning"></a>What is transfer learning?
 
-Učení pro přenos používá znalostní bázi získaná od řešení jednoho problému s jiným souvisejícím problémem.
+Transfer learning applies knowledge gained from solving one problem to another related problem.
 
-Školení modelu hloubkového učení od začátku vyžaduje nastavení několika parametrů, velkého množství podrobných školicích dat a obrovského množství výpočetních prostředků (stovky hodin GPU). Použití předzpracovaného modelu spolu s učením přenosu vám umožní zástupce školicího procesu. 
+Training a deep learning model from scratch requires setting several parameters, a large amount of labeled training data, and a vast amount of compute resources (hundreds of GPU hours). Using a pretrained model along with transfer learning allows you to shortcut the training process.
 
-## <a name="training-process"></a>Školicí proces
+## <a name="training-process"></a>Training process
 
-Rozhraní API klasifikace imagí spustí školicí proces načtením předinstalovaného modelu TensorFlow. Školicí proces se skládá ze dvou kroků:
+The Image Classification API starts the training process by loading a pretrained TensorFlow model. The training process consists of two steps:
 
-1. Fáze kritického bodu
-2. Fáze školení
+1. Bottleneck phase
+2. Training phase
 
-![Postup školení](./media/image-classification-api-transfer-learning/training.png)
+![Training Steps](./media/image-classification-api-transfer-learning/training.png)
 
-### <a name="bottleneck-phase"></a>Fáze kritického bodu
+### <a name="bottleneck-phase"></a>Bottleneck phase
 
-Během fáze kritických míst se načte sada školicích imagí a jako vstup a funkce se použijí pixelové hodnoty pro zmrazené vrstvy předinstalovaného modelu. Zmrazené vrstvy zahrnují všechny vrstvy v neuronové síti až do poslední vrstvy, která je Poznáma jako kritická vrstva. Tyto vrstvy se označují jako zmrazené, protože na těchto vrstvách a operacích neproběhne žádné školení. Je v těchto zmrazených vrstvách, kde jsou vypočítány vzory nižší úrovně, které usnadňují model odlišení různých tříd. Čím větší je počet vrstev, tím více výpočetně náročné je tento krok. Naštěstí, protože se jedná o jednorázový výpočet, mohou být výsledky uloženy do mezipaměti a použity v pozdějších spuštěních při experimentování s různými parametry.
+During the bottleneck phase, the set of training images is loaded and the pixel values are used as input, or features, for the frozen layers of the pretrained model. The frozen layers include all of the layers in the neural network up to the penultimate layer, informally known as the bottleneck layer. These layers are referred to as frozen because no training will occur on these layers and operations are pass-through. It's at these frozen layers where the lower-level patterns that help a model differentiate between the different classes are computed. The larger the number of layers, the more computationally intensive this step is. Fortunately, since this is a one-time calculation, the results can be cached and used in later runs when experimenting with different parameters.
 
-### <a name="training-phase"></a>Fáze školení
+### <a name="training-phase"></a>Training phase
 
-Až budou výstupní hodnoty z kritické fáze vypočítány, používají se jako vstup k přeškolování finální vrstvy modelu. Tento proces je iterativní a spouští se v počtu pokusů určených parametry modelu. Během každého spuštění jsou vyhodnocovány ztráty a přesnost. Pak jsou provedeny příslušné úpravy pro zlepšení modelu s cílem minimalizovat ztrátu a maximalizovat přesnost. Po dokončení školení jsou výstupem dva formáty modelů. Jednou z nich je `.pb` verze modelu a druhá je serializovaná verze modelu `.zip` ML.NET. Při práci v prostředích podporovaných aplikací ML.NET se doporučuje použít verzi modelu `.zip`. V prostředích, kde ML.NET není podporovaný, máte ale možnost použít verzi `.pb`.
+Once the output values from the bottleneck phase are computed, they are used as input to retrain the final layer of the model. This process is iterative and runs for the number of times specified by model parameters. During each run, the loss and accuracy are evaluated. Then, the appropriate adjustments are made to improve the model with the goal of minimizing the loss and maximizing the accuracy. Once training is finished, two model formats are output. One of them is the `.pb` version of the model and the other is the `.zip` ML.NET serialized version of the model. When working in environments supported by ML.NET, it is recommended to use the `.zip` version of the model. However, in environments where ML.NET is not supported, you have the option of using the `.pb` version.
 
-## <a name="understand-the-pretrained-model"></a>Pochopení předvýukového modelu
+## <a name="understand-the-pretrained-model"></a>Understand the pretrained model
 
-Předem vydaný model použitý v tomto kurzu je 101 varianta modelu zbytkové sítě (ResNet) v2. Původní model je vyškolen pro klasifikaci imagí do tisíc kategorií. Model bere jako vstup obrázek o velikosti 224 × 224 a vypisuje pravděpodobnosti třídy pro každou třídu, na které je technologie IT vyškolená. Součástí tohoto modelu je vyučování nového modelu pomocí vlastních imagí, aby bylo možné předpovědi mezi dvěma třídami. 
+The pretrained model used in this tutorial is the 101-layer variant of the Residual Network (ResNet) v2 model. The original model is trained to classify images into a thousand categories. The model takes as input an image of size 224 x 224 and outputs the class probabilities for each of the classes it's trained on. Part of this model is used to train a new model using custom images to make predictions between two classes.
 
-## <a name="create-console-application"></a>Vytvořit konzolovou aplikaci
+## <a name="create-console-application"></a>Create console application
 
-Teď, když máte obecné znalosti o učení přenosů a rozhraní API klasifikace imagí, je čas sestavování aplikace.
+Now that you have a general understanding of transfer learning and the Image Classification API, it's time to build the application.
 
-1. Vytvořte  **C# konzolovou aplikaci .NET Core** nazvanou "DeepLearning_ImageClassification_Binary".
-1. Nainstalujte balíček NuGet verze **Microsoft.ml** **1.4.0** :
-    1. V Průzkumník řešení klikněte pravým tlačítkem na projekt a vyberte **Spravovat balíčky NuGet**.
-    1. Jako zdroj balíčku vyberte "nuget.org".
-    1. Vyberte kartu **Procházet** .
-    1. Zaškrtněte políčko **zahrnout předběžné verze** .
-    1. Vyhledejte **Microsoft.ml**.
-    1. Vyberte tlačítko **instalovat** .
-    1. Pokud souhlasíte s licenčními podmínkami pro uvedené balíčky, klikněte na tlačítko **OK** v dialogovém okně **Náhled změn** a potom v dialogovém okně pro **přijetí licence** vyberte tlačítko **přijmout** .
-    1. Opakujte tyto kroky pro balíček **Microsoft. ml. Vision** verze **1.4.0**, **SciSharp. TensorFlow. Redist** verze **1.15.0**a **Microsoft. ml. ImageAnalytics** verze **1.4.0** NuGet Packages.
+1. Create a **C# .NET Core Console Application** called "DeepLearning_ImageClassification_Binary".
+1. Install the **Microsoft.ML** version **1.4.0** NuGet Package:
+    1. In Solution Explorer, right-click on your project and select **Manage NuGet Packages**.
+    1. Choose "nuget.org" as the Package source.
+    1. Select the **Browse** tab.
+    1. Check the **Include prerelease** checkbox.
+    1. Search for **Microsoft.ML**.
+    1. Select the **Install** button.
+    1. Select the **OK** button on the **Preview Changes** dialog and then select the **I Accept** button on the **License Acceptance** dialog if you agree with the license terms for the packages listed.
+    1. Repeat these steps for the **Microsoft.ML.Vision** version **1.4.0**, **SciSharp.TensorFlow.Redist** version **1.15.0**, and **Microsoft.ML.ImageAnalytics** version **1.4.0** NuGet packages.
 
-### <a name="prepare-and-understand-the-data"></a>Příprava a pochopení dat
+### <a name="prepare-and-understand-the-data"></a>Prepare and understand the data
 
 > [!NOTE]
-> Datové sady pro tento kurz jsou z Maguire, matolin; Dorafshan, Sattar; a Tomáš, Robert J., "SDNET2018: konkrétní datová sada obrázku trhlin pro aplikace pro strojové učení" (2018). Procházet všechny datové sady. Papír 48. https://digitalcommons.usu.edu/all_datasets/48
+> The datasets for this tutorial are from Maguire, Marc; Dorafshan, Sattar; and Thomas, Robert J., "SDNET2018: A concrete crack image dataset for machine learning applications" (2018). Browse all Datasets. Paper 48. https://digitalcommons.usu.edu/all_datasets/48
 
-SDNET2018 je datová sada obrázků, která obsahuje poznámky pro neprasklé a neprasklé konkrétní struktury (balíčky mostů, stěny a Pavement). 
+SDNET2018 is an image dataset that contains annotations for cracked and non-cracked concrete structures (bridge decks, walls, and pavement).
 
-![Ukázky balíčku pro přemostění datových sad SDNET2018](./media/image-classification-api-transfer-learning/sdnet2018decksamples.png)
+![SDNET2018 dataset bridge deck samples](./media/image-classification-api-transfer-learning/sdnet2018decksamples.png)
 
-Data jsou uspořádaná ve třech podadresářích:
+The data is organized in three subdirectories:
 
-- D obsahuje obrázky na balíčku mostu.
-- P obsahuje image Pavement
-- W obsahuje obrázky na zdi
+- D contains bridge deck images
+- P contains pavement images
+- W contains wall images
 
-Každý z těchto podadresářů obsahuje dva další předem opravené podadresáře:
+Each of these subdirectories contains two additional prefixed subdirectories:
 
-- C je předpona používaná pro prasklé povrchy
-- U je předpona používaná pro prolomené povrchy.
+- C is the prefix used for cracked surfaces
+- U is the prefix used for uncracked surfaces
 
-V tomto kurzu se používají jenom balíčky balíčku mostu.
+In this tutorial, only bridge deck images are used.
 
-1. Stáhněte si [datovou sadu](https://github.com/dotnet/machinelearning-samples/raw/master/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/assets.zip) a rozbalte ji.
-1. Vytvořte ve svém projektu adresář s názvem "assety" a uložte soubory DataSet.
-1. Zkopírujte podadresáře *CD* a *ud* z naposledy nekomprimovaného adresáře do adresáře *assety* .
+1. Download the [dataset](https://github.com/dotnet/machinelearning-samples/raw/master/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/assets.zip) and unzip.
+1. Create a directory named "assets" in your project to save your dataset files.
+1. Copy the *CD* and *UD* subdirectories from the recently unzipped directory to the *assets* directory.
 
-### <a name="create-input-and-output-classes"></a>Vytvoření vstupní a výstupní třídy
+### <a name="create-input-and-output-classes"></a>Create input and output classes
 
-1. Otevřete soubor *program.cs* a nahraďte existující příkazy `using` v horní části souboru následujícím způsobem:
+1. Open the *Program.cs* file and replace the existing `using` statements at the top of the file with the following:
 
-    ```csharp
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.IO;
-    using Microsoft.ML;
-    using static Microsoft.ML.DataOperationsCatalog;
-    using Microsoft.ML.Vision;
-    ```
+    [!code-csharp [ProgramUsings](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L1-L7)]
 
-1. Pod třídou `Program` v *program.cs*vytvořte třídu s názvem `ImageData`. Tato třída slouží k reprezentaci počátečních načtených dat. 
+1. Below the `Program` class in *Program.cs*, create a class called `ImageData`. This class is used to represent the initially loaded data.
 
-    [!code-csharp [ImageDataClass](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L135-L140)]
+    [!code-csharp [ImageDataClass](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L137-L142)]
 
-    `ImageData` obsahuje následující vlastnosti:
+    `ImageData` contains the following properties:
 
-    - `ImagePath` je plně kvalifikovaná cesta, kde je obrázek uložený.
-    - `Label` je kategorie, do které patří obrázek. Toto je hodnota, která se má předpovědět.
+    - `ImagePath` is the fully qualified path where the image is stored.
+    - `Label` is the category the image belongs to. This is the value to predict.
 
-1. Vytváření tříd pro vstupní a výstupní data
+1. Create classes for your input and output data
 
-    1. Pod `ImageData` třídou definujte schéma vstupních dat v nové třídě s názvem `ModelInput`.
+    1. Below the `ImageData` class, define the schema of your input data in a new class called `ModelInput`.
 
-        [!code-csharp [ModelInputClass](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L142-L151)]
+        [!code-csharp [ModelInputClass](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L144-L153)]
 
-        `ModelInput` obsahuje následující vlastnosti:
+        `ModelInput` contains the following properties:
 
-        - `ImagePath` je plně kvalifikovaná cesta, kde je obrázek uložený. 
-        - `Label` je kategorie, do které patří obrázek. Toto je hodnota, která se má předpovědět.
-        - `Image` je `byte[]` reprezentace obrázku. Model očekává, že budou data obrázku tohoto typu pro účely školení.
-        - `LabelAsKey` je numerická reprezentace `Label`. 
+        - `ImagePath` is the fully qualified path where the image is stored.
+        - `Label` is the category the image belongs to. This is the value to predict.
+        - `Image` is the `byte[]` representation of the image. The model expects image data to be of this type for training.
+        - `LabelAsKey` is the numerical representation of the `Label`.
 
-        Pro výuku modelu a předpovědi se používají jenom `Image` a `LabelAsKey`. Vlastnosti `ImagePath` a `Label` jsou pro usnadnění přístupu k původnímu názvu souboru bitové kopie a kategorii zachovány.
+        Only `Image` and `LabelAsKey` are used to train the model and make predictions. The `ImagePath` and `Label` properties are kept for convenience to access the original image file name and category.
 
-    1. Pak pod `ModelInput` třídy definujte schéma výstupních dat v nové třídě s názvem `ModelOutput`. 
+    1. Then, below the `ModelInput` class, define the schema of your output data in a new class called `ModelOutput`.
 
-        [!code-csharp [ModelOutputClass](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L153-L160)]
+        [!code-csharp [ModelOutputClass](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L155-L162)]
 
-        `ModelOutput` obsahuje následující vlastnosti:
+        `ModelOutput` contains the following properties:
 
-        - `ImagePath` je plně kvalifikovaná cesta, kde je obrázek uložený.
-        - `Label` je původní kategorie, do které patří obrázek. Toto je hodnota, která se má předpovědět. 
-        - `PredictedLabel` je hodnota předpokládaná modelem.
+        - `ImagePath` is the fully qualified path where the image is stored.
+        - `Label` is the original category the image belongs to. This is the value to predict.
+        - `PredictedLabel` is the value predicted by the model.
 
-        Podobně jako u `ModelInput`se vyžaduje jenom `PredictedLabel` k předpovědi, protože obsahuje předpovědi vytvořenou modelem. Vlastnosti `ImagePath` a `Label` jsou pro usnadnění přístupu k původnímu názvu souboru bitové kopie a kategorii zachovány.
+        Similar to `ModelInput`, only the `PredictedLabel` is required to make predictions since it contains the prediction made by the model. The `ImagePath` and `Label` properties are retained for convenience to access the original image file name and category.
 
-### <a name="create-workspace-directory"></a>Vytvořit adresář pracovního prostoru
+### <a name="create-workspace-directory"></a>Create workspace directory
 
-Když se data o školení a ověřování často nemění, je vhodné při dalších spuštěních ukládat do mezipaměti vypočtené kritické hodnoty.
+When training and validation data do not change often, it is good practice to cache the computed bottleneck values for further runs.
 
-1. V projektu vytvořte nový adresář s názvem *pracovní prostor* pro uložení vypočítaných kritických hodnot a `.pb` verze modelu.
+1. In your project, create a new directory called *workspace* to store the computed bottleneck values and `.pb` version of the model.
 
-### <a name="define-paths-and-initialize-variables"></a>Definování cest a inicializovat proměnné
+### <a name="define-paths-and-initialize-variables"></a>Define paths and initialize variables
 
-1. V rámci metody `Main` definujte umístění vašich assetů, vypočtených kritických hodnot a `.pb` verze modelu.
+1. Inside the `Main` method, define the location of your assets, computed bottleneck values and `.pb` version of the model.
 
-    ```csharp
-    var projectDirectory = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "../../../"));
-    var workspaceRelativePath = Path.Combine(projectDirectory, "workspace");
-    var assetsRelativePath = Path.Combine(projectDirectory, "assets");
-    ```
+    [!code-csharp [DefinePaths](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L15-L17)]
 
-1. Pak inicializujte `mlContext` proměnnou novou instancí třídy [MLContext](xref:Microsoft.ML.MLContext).
+1. Then, initialize the `mlContext` variable with a new instance of [MLContext](xref:Microsoft.ML.MLContext).
 
-    [!code-csharp [MLContext](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L18)]
+    [!code-csharp [MLContext](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L19)]
 
-    Třída [MLContext](xref:Microsoft.ML.MLContext) je výchozím bodem pro všechny operace ml.NET a inicializuje MLContext vytvoří nové prostředí ml.NET, které lze sdílet napříč objekty pracovního postupu pro vytváření modelů. Je podobné, koncepčně, `DBContext` v Entity Framework.
+    The [MLContext](xref:Microsoft.ML.MLContext) class is a starting point for all ML.NET operations, and initializing mlContext creates a new ML.NET environment that can be shared across the model creation workflow objects. It's similar, conceptually, to `DBContext` in Entity Framework.
 
-## <a name="load-the-data"></a>Načtení dat
+## <a name="load-the-data"></a>Load the data
 
-### <a name="create-data-loading-utility-method"></a>Metoda vytvoření nástroje pro načítání dat
+### <a name="create-data-loading-utility-method"></a>Create data loading utility method
 
-Bitové kopie jsou uloženy ve dvou podadresářích. Před načtením dat je třeba ji naformátovat na seznam `ImageData` objektů. Provedete to tak, že vytvoříte metodu `LoadImagesFromDirectory` pod metodou `Main`.
+The images are stored in two subdirectories. Before loading the data, it needs to be formatted into a list of `ImageData` objects. To do so, create the `LoadImagesFromDirectory` method below the `Main` method.
 
 ```csharp
 public static IEnumerable<ImageData> LoadImagesFromDirectory(string folder, bool useFolderNameAsLabel = true)
@@ -202,11 +190,11 @@ public static IEnumerable<ImageData> LoadImagesFromDirectory(string folder, bool
 }
 ```
 
-1. Uvnitř `LoadImagesDirectory` přidejte následující kód pro získání všech cest k souborům z podadresářů:
+1. Inside the `LoadImagesDirectory` add the following code to get all of the file paths from the subdirectories:
 
-    [!code-csharp [GetFiles](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L102-L103)]
+    [!code-csharp [GetFiles](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L104-L105)]
 
-1. Potom Iterujte každý ze souborů pomocí příkazu `foreach`.
+1. Then, iterate through each of the files using a `foreach` statement.
 
     ```csharp
     foreach (var file in files)
@@ -215,115 +203,91 @@ public static IEnumerable<ImageData> LoadImagesFromDirectory(string folder, bool
     }
     ```
 
-1. V rámci příkazu `foreach` ověřte, zda jsou přípony souborů podporovány. Rozhraní API klasifikace obrázků podporuje formáty JPEG a PNG.
+1. Inside the `foreach` statement, check that the file extensions are supported. The Image Classification API supports JPEG and PNG formats.
 
-    [!code-csharp [CheckExtension](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L107-L108)]
+    [!code-csharp [CheckExtension](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L109-L110)]
 
-1. Pak Získejte popisek pro soubor. Je-li parametr `useFolderNameAsLabel` nastaven na hodnotu `true`, bude jako popisek použit nadřazený adresář, kde je soubor uložen. V opačném případě očekává, že popisek bude prefixem názvu souboru nebo samotného názvu souboru.
+1. Then, get the label for the file. If the `useFolderNameAsLabel` parameter is set to `true`, then the parent directory where the file is saved is used as the label. Otherwise, it expects the label to be a prefix of the file name or the file name itself.
 
-    [!code-csharp [GetLabel](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L110-L124)]
+    [!code-csharp [GetLabel](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L112-L126)]
 
-1. Nakonec vytvořte novou instanci `ModelInput`.
+1. Finally, create a new instance of `ModelInput`.
 
-    [!code-csharp [CreateImageData](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L126-L130)]
+    [!code-csharp [CreateImageData](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L128-L132)]
 
-### <a name="prepare-the-data"></a>Příprava dat
+### <a name="prepare-the-data"></a>Prepare the data
 
-1. Zpět v metodě `Main` použijte metodu `LoadFromDirectory` Utility k získání seznamu imagí použitých pro školení.
+1. Back in the `Main` method, use the `LoadFromDirectory` utility method to get the list of images used for training.
 
-    [!code-csharp [LoadImages](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L20)]
+    [!code-csharp [LoadImages](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L21)]
 
-1. Pak načtěte obrázky do [`IDataView`](xref:Microsoft.ML.IDataView) pomocí metody [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable*) .
+1. Then, load the images into an [`IDataView`](xref:Microsoft.ML.IDataView) using the [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable*) method.
 
-    [!code-csharp [CreateIDataView](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L22)]    
+    [!code-csharp [CreateIDataView](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L23)]
 
-1. Data se načítají v pořadí, v jakém byla načtena z adresářů. Chcete-li vyrovnávat data, přemístěte je pomocí metody [`ShuffleRows`](xref:Microsoft.ML.DataOperationsCatalog.ShuffleRows*) .
+1. The data is loaded in the order it was read from the directories. To balance the data, shuffle it using the [`ShuffleRows`](xref:Microsoft.ML.DataOperationsCatalog.ShuffleRows*) method.
 
-    [!code-csharp [ShuffleRows](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L24)]
+    [!code-csharp [ShuffleRows](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L25)]
 
-1. Modely strojového učení očekávají, že vstup bude v číselném formátu. Proto je nutné před školením provést některé předzpracování dat. Vytvoří [`EstimatorChain`](xref:Microsoft.ML.Data.EstimatorChain%601) tvořená [`MapValueToKey`](xref:Microsoft.ML.ConversionsExtensionsCatalog.MapValueToKey*) a `LoadRawImageBytes`mi transformacemi. `MapValueToKey` transformace přebírá hodnotu kategorií ve sloupci `Label`, převede ji na číselnou `KeyType` hodnotu a uloží ji do nového sloupce s názvem `LabelAsKey`. `LoadImages` přebírá hodnoty z `ImagePath` sloupce spolu s parametrem `imageFolder` pro načtení imagí pro školení.
+1. Machine learning models expect input to be in numerical format. Therefore, some preprocessing needs to be done on the data prior to training. Create an [`EstimatorChain`](xref:Microsoft.ML.Data.EstimatorChain%601) made up of the [`MapValueToKey`](xref:Microsoft.ML.ConversionsExtensionsCatalog.MapValueToKey*) and `LoadRawImageBytes` transforms. The `MapValueToKey` transform takes the categorical value in the `Label` column, converts it to a numerical `KeyType` value and stores it in a new column called `LabelAsKey`. The `LoadImages` takes the values from the `ImagePath` column along with the `imageFolder` parameter to load images for training.
 
-    ```csharp
-    var preprocessingPipeline = mlContext.Transforms.Conversion.MapValueToKey(
-            inputColumnName: "Label",
-            outputColumnName: "LabelAsKey")
-        .Append(mlContext.Transforms.LoadRawImageBytes(
-            outputColumnName: "Image",
-            imageFolder: assetsRelativePath,
-            inputColumnName: "ImagePath"));
-    ```
+    [!code-csharp [PreprocessingPipeline](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L27-L33)]
 
-1. Použijte metodu [`Fit`](xref:Microsoft.ML.Data.EstimatorChain%601.Fit*) pro použití dat na `preprocessingPipeline` [`EstimatorChain`](xref:Microsoft.ML.Data.EstimatorChain%601) následovaný metodou [`Transform`](xref:Microsoft.ML.Data.TransformerChain`1.Transform*) , která vrací [`IDataView`](xref:Microsoft.ML.IDataView) obsahující předem zpracovaná data.
+1. Use the [`Fit`](xref:Microsoft.ML.Data.EstimatorChain%601.Fit*) method to apply the data to the `preprocessingPipeline` [`EstimatorChain`](xref:Microsoft.ML.Data.EstimatorChain%601) followed by the [`Transform`](xref:Microsoft.ML.Data.TransformerChain`1.Transform*) method, which returns an [`IDataView`](xref:Microsoft.ML.IDataView) containing the pre-processed data.
 
     [!code-csharp [PreprocessData](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L35-L37)]
 
-1. Pro výuku modelu je důležité, abyste měli školicí datovou sadu i ověřovací datovou sadu. Model je vyškolený v sadě školení. Jak dobře je předpovědi na nezpracovaných datech, je měřeno výkonem proti sadě ověřování. V závislosti na výsledcích tohoto výkonu model provádí úpravy podle toho, co se naučilo ve snaze zlepšit. Sada ověření může pocházet z rozdělení původní datové sady nebo z jiného zdroje, který již byl pro tento účel vyhrazen. V tomto případě je předem zpracovaná datová sada rozdělena do školicích, ověřovacích a testovacích sad.
+1. To train a model, it's important to have a training dataset as well as a validation dataset. The model is trained on the training set. How well it makes predictions on unseen data is measured by the performance against the validation set. Based on the results of that performance, the model makes adjustments to what it has learned in an effort to improve. The validation set can come from either splitting your original dataset or from another source that has already been set aside for this purpose. In this case, the pre-processed dataset is split into training, validation and test sets.
 
     [!code-csharp [CreateDataSplits](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L39-L40)]
 
-    Výše uvedený vzor kódu provádí dvě rozdělení. Předem zpracovaná data jsou nejprve rozdělena a 70% se používá pro školení, zatímco se k ověřování používá zbývajících 30%. Potom je 30% ověřovací sada dále rozdělena na ověřování a sady testů, kde se pro ověřování používá 90% a pro testování se používá 10%. 
+    The code sample above performs two splits. First, the pre-processed data is split and 70% is used for training while the remaining 30% is used for validation. Then, the 30% validation set is further split into validation and test sets where 90% is used for validation and 10% is used for testing.
 
-    Způsob, jak se zamyslet na účel těchto datových oddílů, je provedení zkoušky. Při studiu pro zkoušku si Projděte poznámky, knihy nebo jiné prostředky, abyste získali informace o konceptech, které se na této zkoušce nacházejí. To je to, pro který je vlaková sada. Pak můžete pořizovat napodobnou zkoušku k ověření vašeho vědomí. Tady se objeví ověřovací sada. Chcete před provedením samotné zkoušky ověřit, zda máte dobré pojetí konceptů. Na základě těchto výsledků si poznamenejte, co se vám nepovedlo nebo nerozumělo, a zahrňte své změny do kontroly skutečné zkoušky. Nakonec můžete provést zkoušku. To je to, co je testovací sada používána pro. Nikdy jste neviděli otázky, které se týkají zkoušky, a teď pomocí toho, co jste se naučili při školení a ověřování, abyste mohli vaše znalosti na úkol použít. 
+    A way to think about the purpose of these data partitions is taking an exam. When studying for an exam, you review your notes, books, or other resources to get a grasp on the concepts that are on the exam. This is what the train set is for. Then, you might take a mock exam to validate your knowledge. This is where the validation set comes in handy. You want to check whether you have a good grasp of the concepts before taking the actual exam. Based on those results, you take note of what you got wrong or didn't understand well and incorporate your changes as you review for the real exam. Finally, you take the exam. This is what the test set is used for. You've never seen the questions that are on the exam and now use what you learned from training and validation to apply your knowledge to the task at hand.
 
-1. Přiřaďte oddíly jejich příslušné hodnoty pro data vlaku, ověřování a testování.
+1. Assign the partitions their respective values for the train, validation and test data.
 
     [!code-csharp [CreateDatasets](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L42-L44)]
 
-## <a name="define-the-training-pipeline"></a>Definování školicího kanálu
+## <a name="define-the-training-pipeline"></a>Define the training pipeline
 
-Školení modelů se skládá z několika kroků. Rozhraní API pro klasifikaci imagí slouží jako první, používá se k učení modelu. Zakódované popisky ve sloupci `PredictedLabel` se pak převádějí zpátky na původní hodnotu kategorií pomocí `MapKeyToValue` transformaci. 
+Model training consists of a couple of steps. First, Image Classification API is used to train the model. Then, the encoded labels in the `PredictedLabel` column are converted back to their original categorical value using the `MapKeyToValue` transform.
 
-1. Vytvořte novou proměnnou pro uložení sady požadovaných a volitelných parametrů pro `ImageClassificationTrainer`. 
+1. Create a new variable to store a set of required and optional parameters for an `ImageClassificationTrainer`. 
 
-    ```csharp
-    var classifierOptions = new ImageClassificationTrainer.Options()
-    {
-        FeatureColumnName = "Image",
-        LabelColumnName = "LabelAsKey",
-        ValidationSet = validationSet,
-        Arch = ImageClassificationTrainer.Architecture.ResnetV2101,
-        MetricsCallback = (metrics) => Console.WriteLine(metrics),
-        TestOnTrainSet = false,
-        ReuseTrainSetBottleneckCachedValues = true,
-        ReuseValidationSetBottleneckCachedValues = true,
-        WorkspacePath=workspaceRelativePath
-    };
-    ```
+    [!code-csharp [ClassifierOptions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L46-L57)]
 
-    `ImageClassificationTrainer` přebírá několik volitelných parametrů:
+    An `ImageClassificationTrainer` takes several optional parameters:
 
-    - `FeatureColumnName` je sloupec, který se používá jako vstup pro model.
-    - `LabelColumnName` je sloupec, jehož hodnota se má předpovědět.
-    - `ValidationSet` je [`IDataView`](xref:Microsoft.ML.IDataView) obsahující ověřovací data.
-    - `Arch` definuje, které z předdefinovaných architektur modelů se mají použít. V tomto kurzu použijeme 101 variant modelu ResNetv2.
-    - `MetricsCallback` váže funkci, aby sledovala průběh během školení.
-    - `TestOnTrainSet` oznamuje modelu, aby měřil výkon proti školicí sadě, když není k dispozici žádná ověřovací sada.
-    - `ReuseTrainSetBottleneckCachedValues` instruuje model, zda se mají v následných fázích použít hodnoty uložené v mezipaměti z fáze kritického bodu. Kritická fáze je jednorázové výpočtu předávacího přenosu, který je výpočetně náročný při prvním provedení. Pokud se školicí data nezmění a chcete experimentovat s jiným počtem epochs nebo dávky, použití hodnot uložených v mezipaměti významně zkracuje dobu potřebnou k výuce modelu.
-    - `ReuseValidationSetBottleneckCachedValues` je podobná `ReuseTrainSetBottleneckCachedValues` pouze v tomto případě je to pro datovou sadu ověřování.
-    - `WorkspacePath` definuje adresář, kam se mají ukládat vypočítané kritické hodnoty a `.pb` verze modelu.
+    - `FeatureColumnName` is the column that is used as input for the model.
+    - `LabelColumnName` is the column for the value to predict.
+    - `ValidationSet` is the [`IDataView`](xref:Microsoft.ML.IDataView) containing the validation data.
+    - `Arch` defines which of the pretrained model architectures to use. This tutorial uses the 101-layer variant of the ResNetv2 model.
+    - `MetricsCallback` binds a function to track the progress during training.
+    - `TestOnTrainSet` tells the model to measure performance against the training set when no validation set is present.
+    - `ReuseTrainSetBottleneckCachedValues` tells the model whether to use the cached values from the bottleneck phase in subsequent runs. The bottleneck phase is a one-time pass-through computation that is computationally intensive the first time it is performed. If the training data does not change and you want to experiment using a different number of epochs or batch size, using the cached values significantly reduces the amount of time required to train a model.
+    - `ReuseValidationSetBottleneckCachedValues` is similar to `ReuseTrainSetBottleneckCachedValues` only that in this case it's for the validation dataset.
+    - `WorkspacePath` defines the directory where to store the computed bottleneck values and `.pb` version of the model.
 
-1. Definujte kanál školení [`EstimatorChain`](xref:Microsoft.ML.Data.EstimatorChain%601) , který se skládá z `mapLabelEstimator` a `ImageClassificationTrainer`.
+1. Define the [`EstimatorChain`](xref:Microsoft.ML.Data.EstimatorChain%601) training pipeline that consists of both the `mapLabelEstimator` and the `ImageClassificationTrainer`.
 
-    ```csharp
-    var trainingPipeline = mlContext.MulticlassClassification.Trainers.ImageClassification(classifierOptions)
-        .Append(mlContext.Transforms.Conversion.MapKeyToValue("PredictedLabel"));
-    ```
+    [!code-csharp [TrainingPipeline](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L59-L60)]
 
-1. Pro výuku modelu použijte metodu [`Fit`](xref:Microsoft.ML.Data.EstimatorChain%601.Fit*) .
+1. Use the [`Fit`](xref:Microsoft.ML.Data.EstimatorChain%601.Fit*) method to train your model.
 
-    [!code-csharp [TrainModel](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L60)]
+    [!code-csharp [TrainModel](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L62)]
 
-## <a name="use-the-model"></a>Použití modelu
+## <a name="use-the-model"></a>Use the model
 
-Teď, když jste si proškole svůj model, je čas ho použít ke klasifikaci imagí.
+Now that you have trained your model, it's time to use it to classify images.
 
-Pod metodou `Main` vytvořte novou metodu Utility nazvanou `OutputPrediction`, která zobrazí informace o předpovědi v konzole nástroje.
+Below the `Main` method, create a new utility method called `OutputPrediction` to display prediction information in the console.
 
-[!code-csharp [OuputPredictionMethod](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L94-L98)]
+[!code-csharp [OuputPredictionMethod](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L96-L100)]
 
-### <a name="classify-a-single-image"></a>Klasifikace jednoho obrázku
+### <a name="classify-a-single-image"></a>Classify a single image
 
-1. Přidejte novou metodu nazvanou `ClassifySingleImage` pod `Main` metodu pro vytvoření a výstup jedné předpovědi imagí.
+1. Add a new method called `ClassifySingleImage` below the `Main` method to make and output a single image prediction.
 
     ```csharp
     public static void ClassifySingleImage(MLContext mlContext, IDataView data, ITransformer trainedModel)
@@ -332,29 +296,29 @@ Pod metodou `Main` vytvořte novou metodu Utility nazvanou `OutputPrediction`, k
     }
     ```
 
-1. V rámci metody `ClassifySingleImage` vytvořte [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) . [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) je praktické rozhraní API, které umožňuje předat a následně provést předpovědi pro jednu instanci dat.
+1. Create a [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) inside the `ClassifySingleImage` method. The [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) is a convenience API, which allows you to pass in and then perform a prediction on a single instance of data.
 
-    [!code-csharp [CreatePredictionEngine](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L71)]    
+    [!code-csharp [CreatePredictionEngine](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L73)]
 
-1. Chcete-li získat přístup k jedné instanci `ModelInput`, převeďte [`IDataView`](xref:Microsoft.ML.IDataView) `data` na [`IEnumerable`](xref:System.Collections.Generic.IEnumerable%601) pomocí metody [`CreateEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable*) a poté Získejte první sledování. 
+1. To access a single `ModelInput` instance, convert the `data` [`IDataView`](xref:Microsoft.ML.IDataView) into an [`IEnumerable`](xref:System.Collections.Generic.IEnumerable%601) using the [`CreateEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable*) method and then get the first observation.
 
-    [!code-csharp [GetTestInputData](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L73)]
+    [!code-csharp [GetTestInputData](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L75)]
 
-1. K klasifikaci obrázku použijte metodu [`Predict`](xref:Microsoft.ML.PredictionEngine%602.Predict*) .
+1. Use the [`Predict`](xref:Microsoft.ML.PredictionEngine%602.Predict*) method to classify the image.
 
-    [!code-csharp [MakeSinglePrediction](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L75)]
+    [!code-csharp [MakeSinglePrediction](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L77)]
 
-1. Výstup předpovědi do konzoly s metodou `OutputPrediction`.
+1. Output the prediction to the console with the `OutputPrediction` method.
 
-    [!code-csharp [OuputSinglePrediction](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L77-L78)]
+    [!code-csharp [OuputSinglePrediction](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L79-L80)]
 
-1. Uvnitř metody `Main` volejte `ClassifySingleImage` pomocí testovací sady imagí.
+1. Inside the `Main` method, call `ClassifySingleImage` using the test set of images.
 
-    [!code-csharp [ClassifySingleImage](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L62)]
+    [!code-csharp [ClassifySingleImage](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L64)]
 
-### <a name="classify-multiple-images"></a>Klasifikace více imagí
+### <a name="classify-multiple-images"></a>Classify multiple images
 
-1. Přidejte novou metodu nazvanou `ClassifyImages` pod `ClassifySingleImage` metodu pro vytvoření a výstup více předpovědi obrázků.
+1. Add a new method called `ClassifyImages` below the `ClassifySingleImage` method to make and output multiple image predictions.
 
     ```csharp
     public static void ClassifyImages(MLContext mlContext, IDataView data, ITransformer trainedModel)
@@ -363,38 +327,38 @@ Pod metodou `Main` vytvořte novou metodu Utility nazvanou `OutputPrediction`, k
     }
     ```
 
-1. Vytvořte [`IDataView`](xref:Microsoft.ML.IDataView) obsahující předpovědi pomocí metody [`Transform`](xref:Microsoft.ML.ITransformer.Transform*) . Do metody `ClassifyImages` přidejte následující kód.
+1. Create an [`IDataView`](xref:Microsoft.ML.IDataView) containing the predictions by using the [`Transform`](xref:Microsoft.ML.ITransformer.Transform*) method. Add the following code inside the `ClassifyImages` method.
 
-    [!code-csharp [MakeMultiplePredictions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L83)]
+    [!code-csharp [MakeMultiplePredictions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L85)]
 
-1. Chcete-li iterovat přes předpovědi, převeďte `predictionData` [`IDataView`](xref:Microsoft.ML.IDataView) na [`IEnumerable`](xref:System.Collections.Generic.IEnumerable%601) pomocí metody [`CreateEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable*) a potom Získejte prvních 10 pozorování.
+1. In order to iterate over the predictions, convert the `predictionData` [`IDataView`](xref:Microsoft.ML.IDataView) into an [`IEnumerable`](xref:System.Collections.Generic.IEnumerable%601) using the [`CreateEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable*) method and then get the first 10 observations.
 
-    [!code-csharp [IEnumerablePredictions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L85)]
+    [!code-csharp [IEnumerablePredictions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L87)]
 
-1. Iterujte a navýstupujte původní a předpovězené popisky pro předpovědi.
+1. Iterate and output the original and predicted labels for the predictions.
 
-    [!code-csharp [OutputMultiplePredictions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L87-L91)]
+    [!code-csharp [OutputMultiplePredictions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L89-L93)]
 
-1. Nakonec v rámci metody `Main` volejte `ClassifyImages` pomocí testovací sady imagí.
+1. Finally, inside the `Main` method, call `ClassifyImages` using the test set of images.
 
-    [!code-csharp [ClassifyImages](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L64)]
+    [!code-csharp [ClassifyImages](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L66)]
 
-## <a name="run-the-application"></a>Spuštění aplikace
+## <a name="run-the-application"></a>Run the application
 
-Spusťte konzolovou aplikaci. Výstup by měl vypadat podobně jako na následujícím obrázku. Můžou se zobrazovat upozornění nebo zprávy o zpracování, ale tyto zprávy se z následujících výsledků odebraly z důvodu srozumitelnosti. V případě zkrácení byl výstup zúžený.
+Run your console app. The output should be similar to that below. You may see warnings or processing messages, but these messages have been removed from the following results for clarity. For brevity, the output has been condensed.
 
-**Fáze kritického bodu**
+**Bottleneck phase**
 
-Pro název Image se nevytiskne žádná hodnota, protože image jsou načtené jako `byte[]` proto, že není k dispozici žádný název Image k zobrazení.
+No value is printed for the image name because the images are loaded as a `byte[]` therefore there is no image name to display.
 
 ```test
-Phase: Bottleneck Computation, Dataset used:      Train, Image Index: 279, Image Name:
-Phase: Bottleneck Computation, Dataset used:      Train, Image Index: 280, Image Name:
-Phase: Bottleneck Computation, Dataset used: Validation, Image Index:   1, Image Name:
-Phase: Bottleneck Computation, Dataset used: Validation, Image Index:   2, Image Name:
+Phase: Bottleneck Computation, Dataset used:      Train, Image Index: 279
+Phase: Bottleneck Computation, Dataset used:      Train, Image Index: 280
+Phase: Bottleneck Computation, Dataset used: Validation, Image Index:   1
+Phase: Bottleneck Computation, Dataset used: Validation, Image Index:   2
 ```
 
-**Fáze školení**
+**Training phase**
 
 ```text
 Phase: Training, Dataset used: Validation, Batch Processed Count:   6, Epoch:  21, Accuracy:  0.6797619
@@ -402,7 +366,7 @@ Phase: Training, Dataset used: Validation, Batch Processed Count:   6, Epoch:  2
 Phase: Training, Dataset used: Validation, Batch Processed Count:   6, Epoch:  23, Accuracy:  0.7916667
 ```
 
-**Klasifikovat výstup imagí**
+**Classify images output**
 
 ```text
 Classifying single image
@@ -414,31 +378,31 @@ Image: 7001-163.jpg | Actual Value: UD | Predicted Value: UD
 Image: 7001-210.jpg | Actual Value: UD | Predicted Value: UD
 ```
 
-Po kontrole obrázku *7001 -220. jpg* vidíte, že ve skutečnosti není prasklý. 
+Upon inspection of the *7001-220.jpg* image, you can see that it in fact is not cracked.
 
-![Obrázek datové sady SDNET2018 použité pro předpověď](./media/image-classification-api-transfer-learning/predictedimage.jpg)
+![SDNET2018 dataset image used for prediction](./media/image-classification-api-transfer-learning/predictedimage.jpg)
 
-Blahopřejeme! Teď jste úspěšně vytvořili model hloubkového učení pro klasifikaci imagí.
+Congratulations! You've now successfully built a deep learning model for classifying images.
 
-### <a name="improve-the-model"></a>Zlepšení modelu
+### <a name="improve-the-model"></a>Improve the model
 
-Pokud nejste spokojeni s výsledky modelu, můžete se pokusit zvýšit jeho výkon tak, že zkusíte některé z následujících přístupů:
+If you're not satisfied with the results of your model, you can try to improve its performance by trying some of the following approaches:
 
-- **Další data**: Další příklady, ze kterých se model učí, je lepší. Stáhněte si úplnou [datovou sadu SDNET2018](https://digitalcommons.usu.edu/cgi/viewcontent.cgi?filename=2&article=1047&context=all_datasets&type=additional) a využijte ji ke školení. 
-- **Rozšíření dat**: běžnou technikou pro přidání různých druhů dat je rozšíření dat pomocí obrázku a použití různých transformací (otočení, překlopení, posunutí a oříznutí). Tím se přidá více různých příkladů modelu, ze kterého se naučíte. 
-- **Školení pro delší dobu**: čím delší je, tím bude model lépe vyladěný. Zvýšení počtu epochs může zlepšit výkon modelu.
-- **Experiment s parametrem Hyper-Parameters**: Kromě parametrů používaných v tomto kurzu můžete další parametry vyladit tak, aby potenciálně vylepšily výkon. Změna studijní frekvence, která určuje velikost aktualizací v modelu po každém epocha, může zlepšit výkon.
-- **Použití jiné architektury modelů**: v závislosti na tom, jak vaše data vypadají, se může model, který se nejlépe učí jeho funkcí, lišit. Pokud nejste spokojeni s výkonem modelu, zkuste změnit architekturu.
+- **More Data**: The more examples a model learns from, the better it performs. Download the full [SDNET2018 dataset](https://digitalcommons.usu.edu/cgi/viewcontent.cgi?filename=2&article=1047&context=all_datasets&type=additional) and use it to train.
+- **Augment the data**: A common technique to add variety to the data is to augment the data by taking an image and applying different transforms (rotate, flip, shift, crop). This adds more varied examples for the model to learn from.
+- **Train for a longer time**: The longer you train, the more tuned the model will be. Increasing the number of epochs may improve the performance of your model.
+- **Experiment with the hyper-parameters**: In addition to the parameters used in this tutorial, other parameters can be tuned to potentially improve performance. Changing the learning rate, which determines the magnitude of updates made to the model after each epoch may improve performance.
+- **Use a different model architecture**: Depending on what your data looks like, the model that can best learn its features may differ. If you're not satisfied with the performance of your model, try changing the architecture.
 
 ### <a name="additional-resources"></a>Další prostředky
 
-- [Obsáhlý Learning vs Machine Learning](/azure/machine-learning/service/concept-deep-learning-vs-machine-learning).
+- [Deep Learning vs Machine Learning](/azure/machine-learning/service/concept-deep-learning-vs-machine-learning).
 
 ## <a name="next-steps"></a>Další kroky
 
-V tomto kurzu jste zjistili, jak vytvořit vlastní model hloubkového učení s využitím učení přenosu, předTensorFlowho modelu klasifikace imagí a rozhraní API pro klasifikaci ml.NET pro klasifikaci imagí konkrétních povrchů jako prasklé nebo prolomené.
+In this tutorial, you learned how to build a custom deep learning model using transfer learning, a pretrained image classification TensorFlow model and the ML.NET Image Classification API to classify images of concrete surfaces as cracked or uncracked.
 
-Pokud se chcete dozvědět víc, přejděte k dalšímu kurzu.
+Advance to the next tutorial to learn more.
 
 > [!div class="nextstepaction"]
-> [Detekce objektu](object-detection-onnx.md)
+> [Object Detection](object-detection-onnx.md)

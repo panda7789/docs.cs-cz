@@ -1,27 +1,27 @@
 ---
-title: 'Postupy: Přiřazení jednoho pole ke druhému (Visual Basic)'
+title: 'Postupy: Přiřazení jednoho pole ke druhému'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - covariance, arrays
 - arrays [Visual Basic], assigning
 - arrays [Visual Basic], covariance
 ms.assetid: 1ae89ea5-f292-4282-bcfc-e9b06b37fbd5
-ms.openlocfilehash: a39888f19e5033a5c6622313fb7451d6463b2f7c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: be5337e36c2cc7ad9f9b32182b8575ac66bb4a50
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64858880"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351894"
 ---
 # <a name="how-to-assign-one-array-to-another-array-visual-basic"></a>Postupy: Přiřazení jednoho pole ke druhému (Visual Basic)
 
-Protože pole jsou objekty, které lze využít v přiřazovací příkazy jako ostatní typy objektů. Proměnné pole tvořící prvky pole a informace o počet rozměrů a délka dat obsahuje ukazatel a přiřazení zkopíruje pouze tento ukazatel.
+Because arrays are objects, you can use them in assignment statements like other object types. An array variable holds a pointer to the data constituting the array elements and the rank and length information, and an assignment copies only this pointer.
 
-### <a name="to-assign-one-array-to-another-array"></a>K přiřazení jednoho pole ke druhému
+### <a name="to-assign-one-array-to-another-array"></a>To assign one array to another array
 
-1. Ujistěte se, že dvě pole mají stejné pořadí (počet rozměrů) a kompatibilní element datové typy.
+1. Ensure that the two arrays have the same rank (number of dimensions) and compatible element data types.
 
-2. Použijte standardní přiřazovací příkaz přiřaďte pole zdrojového do cílového pole. Nepostupujte podle buď název pole v závorkách.
+2. Use a standard assignment statement to assign the source array to the destination array. Do not follow either array name with parentheses.
 
     ```vb
     Dim formArray() As System.Windows.Forms.Form
@@ -29,19 +29,19 @@ Protože pole jsou objekty, které lze využít v přiřazovací příkazy jako 
     controlArray = formArray
     ```
 
-Při přiřazení jednoho pole do jiného, platí následující pravidla:
+When you assign one array to another, the following rules apply:
 
-- **Stejné rozměry.** Rozměr (počet rozměrů) cílového pole musí být stejné jako u zdrojového pole.
+- **Equal Ranks.** The rank (number of dimensions) of the destination array must be the same as that of the source array.
 
-  Pokud jsou stejné rozměry dvě pole, není potřeba rovnat dimenze. Během přiřazování můžete změnit počet prvků v dané dimenzi.
+  Provided the ranks of the two arrays are equal, the dimensions do not need to be equal. The number of elements in a given dimension can change during assignment.
 
-- **Typy elementů.** Buď obě pole musí mít *odkazovat na typ* elementy nebo obě pole musí mít *typ hodnoty* elementy. Další informace najdete v tématu [typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md).
+- **Element Types.** Either both arrays must have *reference type* elements or both arrays must have *value type* elements. For more information, see [Value Types and Reference Types](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md).
 
-  - Pokud obě pole mají prvky typu hodnoty, element datové typy, které musí být přesně stejný. Jedinou výjimkou je, že můžete přiřadit pole `Enum` prvky do pole Základní typ, který `Enum`.
+  - If both arrays have value type elements, the element data types must be exactly the same. The only exception to this is that you can assign an array of `Enum` elements to an array of the base type of that `Enum`.
 
-  - Pokud obě pole mít odkaz na typ prvků, typ zdrojového prvku musí být odvozen z typu cílového elementu. Pokud tomu tak, máte dvě pole stejné relaci dědičnosti jako jejich prvky. Tento postup se nazývá *kovariance polí*.
+  - If both arrays have reference type elements, the source element type must derive from the destination element type. When this is the case, the two arrays have the same inheritance relationship as their elements. This is called *array covariance*.
 
-Kompilátor hlásí chybu, pokud se výše uvedených pravidel se poruší, například pokud datové typy, které nejsou kompatibilní, nebo je pořadí nerovnost. Můžete přidat do vašeho kódu, abyste měli jistotu, že tato pole jsou kompatibilní před pokusem o přiřazení pro zpracování chyb. Můžete také použít [TryCast – operátor](../../../../visual-basic/language-reference/operators/trycast-operator.md) – klíčové slovo, pokud chcete, aby se zabránilo došlo k výjimce.
+The compiler reports an error if the above rules are violated, for example if the data types are not compatible or the ranks are unequal. You can add error handling to your code to make sure that the arrays are compatible before attempting an assignment. You can also use the [TryCast Operator](../../../../visual-basic/language-reference/operators/trycast-operator.md) keyword if you want to avoid throwing an exception.
 
 ## <a name="see-also"></a>Viz také:
 

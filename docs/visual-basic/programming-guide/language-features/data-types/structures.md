@@ -1,5 +1,5 @@
 ---
-title: Struktury (Visual Basic)
+title: Struktury
 ms.date: 07/20/2015
 helpviewer_keywords:
 - structures [Visual Basic]
@@ -9,36 +9,36 @@ helpviewer_keywords:
 - user-defined data types [Visual Basic], about user-defined data types
 - types [Visual Basic], user-defined
 ms.assetid: 55e86462-5e99-4d33-8018-6d097ca491b2
-ms.openlocfilehash: ebfc82665bb18d96c83db8f29a6c206a9a71fd7f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b5f1f8d6d783c6612fdb2bd2058b61a5a46024cc
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61663359"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350778"
 ---
 # <a name="structures-visual-basic"></a>Struktury (Visual Basic)
-A *struktura* je generalizace uživatelem definovaný typ (UDT) podporované v předchozích verzích jazyka Visual Basic. Kromě polí můžete zveřejnit struktury vlastnosti, metody a události. Struktura může implementovat jedno nebo více rozhraní a je možné deklarovat individuální úrovně přístupu pro každé pole.  
+A *structure* is a generalization of the user-defined type (UDT) supported by previous versions of Visual Basic. In addition to fields, structures can expose properties, methods, and events. A structure can implement one or more interfaces, and you can declare individual access levels for each field.  
   
- Můžete kombinovat data položky různých typů vytvořit strukturu. Struktura přidružuje jednu nebo více *prvky* mezi sebou a s struktury samotné. Když je deklarovat strukturu, stane se *složené datový typ*, a můžete deklarovat proměnné tohoto typu.  
+ You can combine data items of different types to create a structure. A structure associates one or more *elements* with each other and with the structure itself. When you declare a structure, it becomes a *composite data type*, and you can declare variables of that type.  
   
- Struktury jsou užitečné, pokud chcete jednu proměnnou pro uchování několik související údaje. Například můžete chtít zachovat název zaměstnance, telefonní číslo a salary společně. Tyto informace můžete použít několik proměnných, nebo může definovat strukturu a použít ji pro proměnnou jednoho zaměstnance. Výhodou struktury pocítíte, když máte mnoho zaměstnanců a proto velký počet instancí proměnné.  
+ Structures are useful when you want a single variable to hold several related pieces of information. For example, you might want to keep an employee's name, telephone extension, and salary together. You could use several variables for this information, or you could define a structure and use it for a single employee variable. The advantage of the structure becomes apparent when you have many employees and therefore many instances of the variable.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: Deklarace struktury](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)  
- Ukazuje, jak deklarovat strukturu a jeho elementy.  
+ [Postupy: Definice struktury](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)  
+ Shows how to declare a structure and its elements.  
   
  [Proměnné struktury](../../../../visual-basic/programming-guide/language-features/data-types/structure-variables.md)  
- Popisuje strukturu přiřadí proměnné a přístup k jeho prvkům.  
+ Covers assigning a structure to a variable and accessing its elements.  
   
  [Struktury a ostatní programovací elementy](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-other-programming-elements.md)  
- Shrnuje interakci struktury s poli, objekty, postupy a mezi sebou.  
+ Summarizes how structures interact with arrays, objects, procedures, and each other.  
   
  [Struktury a třídy](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md)  
- Popisuje podobnosti a rozdíly mezi strukturami a třídami.  
+ Describes the similarities and differences between structures and classes.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  
- Představuje datové typy jazyka Visual Basic a popisuje, jak je používat.  
+ Introduces the Visual Basic data types and describes how to use them.  
   
  [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)  
- Seznam základních datových typů poskytnutých jazyka Visual Basic.
+ Lists the elementary data types supplied by Visual Basic.

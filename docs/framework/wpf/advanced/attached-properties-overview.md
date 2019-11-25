@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - attached properties [WPF Designer]
 ms.assetid: 75928354-dc01-47e8-a018-8409aec1f32d
-ms.openlocfilehash: 403c4e76e302536513b9de0694ab7b0de621d5d2
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: f4e8ea9fb0643a4a434bf20fa719c3fd2d01435b
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73455516"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74089322"
 ---
 # <a name="attached-properties-overview"></a>Přehled připojených vlastností
 
@@ -60,7 +60,7 @@ Nejběžnějším scénářem, kde WPF definuje připojenou vlastnost, je, když
 
 ## Připojené vlastnosti v kódu<a name="attached_properties_code"></a>
 
-Připojené vlastnosti v subsystému WPF nemají typické metody "obálky" CLR pro snadný přístup get/set. Je to proto, že připojená vlastnost není nutně součástí oboru názvů CLR pro instance, kde je nastavena vlastnost. Procesor XAML však musí být schopný nastavit tyto hodnoty při analýze XAML. Pro podporu efektivního použití připojené vlastnosti musí typ vlastníka připojené vlastnosti implementovat metody vyhrazeného přístupového objektu ve formě **Get_PropertyName_** a **Set_PropertyName_** . Tyto vyhrazené přístupové metody jsou také užitečné k získání nebo nastavení připojené vlastnosti v kódu. Z hlediska kódu je připojená vlastnost podobná zálohovacímu poli, které má přístupové objekty metod namísto přistupujících objektů vlastností, a toto pole pro zálohování může existovat na jakémkoli objektu, a nikoli proto, aby bylo nutné je konkrétně definovat.
+Připojené vlastnosti v subsystému WPF nemají typické metody "obálky" CLR pro snadný přístup get/set. Je to proto, že připojená vlastnost není nutně součástí oboru názvů CLR pro instance, kde je nastavena vlastnost. Procesor XAML však musí být schopný nastavit tyto hodnoty při analýze XAML. Pro podporu efektivního použití připojené vlastnosti musí typ vlastníka připojené vlastnosti implementovat metody vyhrazeného přístupového objektu ve formuláři **Get_PropertyName_** a **Set_PropertyName_** . Tyto vyhrazené přístupové metody jsou také užitečné k získání nebo nastavení připojené vlastnosti v kódu. Z hlediska kódu je připojená vlastnost podobná zálohovacímu poli, které má přístupové objekty metod namísto přistupujících objektů vlastností, a toto pole pro zálohování může existovat na jakémkoli objektu, a nikoli proto, aby bylo nutné je konkrétně definovat.
 
 Následující příklad ukazuje, jak lze nastavit připojenou vlastnost v kódu. V tomto příkladu je `myCheckBox` instancí třídy <xref:System.Windows.Controls.CheckBox>.
 
@@ -91,7 +91,7 @@ Jak už bylo uvedeno dříve, měli byste se zaregistrovat jako připojenou vlas
 
 Pokud vaše třída definuje připojenou vlastnost výhradně pro použití v jiných typech, pak třída nemusí odvozovat z <xref:System.Windows.DependencyObject>. Musíte ale odvozovat od <xref:System.Windows.DependencyObject>, pokud budete postupovat podle celkového modelu WPF, který má přiřazenou vlastnost, ale také vlastnost závislosti.
 
-Definujte připojenou vlastnost jako vlastnost závislosti deklarováním pole `public static readonly` typu <xref:System.Windows.DependencyProperty>. Toto pole definujete pomocí návratové hodnoty metody <xref:System.Windows.DependencyProperty.RegisterAttached%2A>. Název pole musí odpovídat názvu připojené vlastnosti připojenému k řetězci `Property`, aby bylo možné postupovat podle zavedeného vzoru WPF pro pojmenovávání identifikačních polí a vlastností, které představují. Připojený zprostředkovatel vlastností musí také poskytovat statické metody **Get_PropertyName_** a **Set_PropertyName_** jako přístupové objekty pro připojenou vlastnost; Pokud se to nepovede, výsledkem bude, že systém vlastností nemůže použít vaši připojenou vlastnost.
+Definujte připojenou vlastnost jako vlastnost závislosti deklarováním pole `public static readonly` typu <xref:System.Windows.DependencyProperty>. Toto pole definujete pomocí návratové hodnoty metody <xref:System.Windows.DependencyProperty.RegisterAttached%2A>. Název pole musí odpovídat názvu připojené vlastnosti připojenému k řetězci `Property`, aby bylo možné postupovat podle zavedeného vzoru WPF pro pojmenovávání identifikačních polí a vlastností, které představují. Připojený zprostředkovatel vlastností musí také poskytovat statické **Get_PropertyName_** a **Set_PropertyName_** metody jako přístupové objekty pro připojenou vlastnost; Pokud se to nepovede, výsledkem bude, že systém vlastností nemůže použít vaši připojenou vlastnost.
 
 > [!NOTE]
 > Vynecháte-li přistupující objekt get připojené vlastnosti, datová vazba u vlastnosti nebude fungovat v nástrojích pro návrh, jako je například Visual Studio a Blend pro Visual Studio.
@@ -116,14 +116,14 @@ Podpis přístupového objektu **Set_PropertyName_** musí být:
 
 - Objekt `value` může být zadán jako konkrétnější typ v implementaci. Například <xref:System.Windows.Controls.DockPanel.SetDock%2A> metoda je typu jako <xref:System.Windows.Controls.Dock>, protože hodnota může být nastavena pouze na tento výčet. Pamatujte, že hodnota pro tuto metodu je vstup pocházející z zavaděče XAML, když narazí na připojenou vlastnost v použití přidružené vlastnosti v kódu. Tento vstup je hodnota zadaná jako hodnota atributu XAML v kódu. Proto pro typ, který používáte, musí být podporován převod typu, serializátor hodnoty nebo rozšíření značek, aby příslušný typ mohl být vytvořen z hodnoty atributu (což je nakonec pouze řetězec).
 
-Následující příklad ukazuje registraci vlastnosti závislosti (pomocí <xref:System.Windows.DependencyProperty.RegisterAttached%2A> metody) a také přístupové objekty **Get_PropertyName_** a **Set_PropertyName_** . V tomto příkladu je název připojené vlastnosti `IsBubbleSource`. Proto musí být přistupující objekty pojmenovány `GetIsBubbleSource` a `SetIsBubbleSource`.
+Následující příklad ukazuje registraci vlastnosti závislosti (pomocí metody <xref:System.Windows.DependencyProperty.RegisterAttached%2A>), jakož i přístupové objekty **Get_PropertyName_** a **Set_PropertyName_** . V tomto příkladu je název připojené vlastnosti `IsBubbleSource`. Proto musí být přistupující objekty pojmenovány `GetIsBubbleSource` a `SetIsBubbleSource`.
 
 [!code-csharp[WPFAquariumSln#RegisterAttachedBubbler](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAquariumSln/CSharp/WPFAquariumObjects/Class1.cs#registerattachedbubbler)]
 [!code-vb[WPFAquariumSln#RegisterAttachedBubbler](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAquariumSln/visualbasic/wpfaquariumobjects/class1.vb#registerattachedbubbler)]
 
 #### <a name="attached-property-attributes"></a>Atributy připojených vlastností
 
-WPF definuje několik [!INCLUDE[TLA2#tla_netframewkattr#plural](../../../../includes/tla2sharptla-netframewkattrsharpplural-md.md)], které mají poskytnout informace o připojených vlastnostech k procesům reflexe a typickým uživatelům informací o reflexi a vlastnostech, jako jsou například návrháři. Vzhledem k tomu, že připojené vlastnosti mají typ neomezeného rozsahu, návrháři potřebují způsob, jak vyhnout zahlcení uživatelů globálním seznamem všech připojených vlastností, které jsou definovány v konkrétní implementaci technologie využívající XAML. [!INCLUDE[TLA2#tla_netframewkattr#plural](../../../../includes/tla2sharptla-netframewkattrsharpplural-md.md)], které WPF definuje pro připojené vlastnosti, lze použít k určení rozsahu situací, kdy by se daná připojená vlastnost měla zobrazit v okně Vlastnosti. Můžete zvážit použití těchto atributů také pro vlastní připojené vlastnosti. Účel a syntax [!INCLUDE[TLA2#tla_netframewkattr#plural](../../../../includes/tla2sharptla-netframewkattrsharpplural-md.md)] jsou popsány na příslušných referenčních stránkách:
+WPF definuje několik atributů rozhraní .NET, které mají poskytovat informace o připojených vlastnostech k procesům reflexe a typickým uživatelům informací o reflexi a vlastnostech, jako jsou například návrháři. Vzhledem k tomu, že připojené vlastnosti mají typ neomezeného rozsahu, návrháři potřebují způsob, jak vyhnout zahlcení uživatelů globálním seznamem všech připojených vlastností, které jsou definovány v konkrétní implementaci technologie využívající XAML. Atributy rozhraní .NET, které WPF definuje pro připojené vlastnosti, lze použít k určení rozsahu situací, kdy se má daná připojená vlastnost zobrazit v okně Vlastnosti. Můžete zvážit použití těchto atributů také pro vlastní připojené vlastnosti. Účel a syntax atributů rozhraní .NET jsou popsány na příslušných referenčních stránkách:
 
 - <xref:System.Windows.AttachedPropertyBrowsableAttribute>
 

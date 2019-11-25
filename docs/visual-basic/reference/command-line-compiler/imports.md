@@ -1,20 +1,20 @@
 ---
-title: -Imports (Visual Basic)
+title: -imports
 ms.date: 03/10/2018
 helpviewer_keywords:
 - /imports compiler option [Visual Basic]
 - imports compiler option [Visual Basic]
 - -imports compiler option [Visual Basic]
 ms.assetid: 9a93fb53-c080-497b-bf9b-441022dbbc39
-ms.openlocfilehash: 929e24a1ffd02d4e21ab1b925ddd59050b5d3cc4
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 380e71e462f736d4564a37b83567007fa9461b05
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005572"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74332956"
 ---
-# <a name="-imports-visual-basic"></a>-Imports (Visual Basic)
-Importuje obory názvů z určeného sestavení.  
+# <a name="-imports-visual-basic"></a>-imports (Visual Basic)
+Imports namespaces from a specified assembly.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,19 +26,19 @@ Importuje obory názvů z určeného sestavení.
   
 |Termín|Definice|  
 |---|---|  
-|`namespaceList`|Požadováno. Seznam oborů názvů oddělených čárkami, které se mají importovat|  
+|`namespaceList`|Požadováno. Comma-delimited list of namespaces to be imported.|  
   
 ## <a name="remarks"></a>Poznámky  
- Možnost `-imports` importuje libovolný obor názvů definovaný v aktuální sadě zdrojových souborů nebo z libovolného odkazovaného sestavení.  
+ The `-imports` option imports any namespace defined within the current set of source files or from any referenced assembly.  
   
- Členy v oboru názvů zadané s `-imports` jsou k dispozici pro všechny soubory zdrojového kódu v kompilaci. Použijte [příkaz Imports (obor názvů a typ .NET)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) k použití oboru názvů v jednom souboru zdrojového kódu.  
+ The members in a namespace specified with `-imports` are available to all source-code files in the compilation. Use the [Imports Statement (.NET Namespace and Type)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) to use a namespace in a single source-code file.  
   
-|Nastavení/Imports v integrovaném vývojovém prostředí sady Visual Studio|  
+|To set /imports in the Visual Studio integrated development environment|  
 |---|  
-|1. v **Průzkumník řešení**mít vybraný projekt. V nabídce **projekt** klikněte na příkaz **vlastnosti**. <br />2. klikněte na kartu **odkazy** .<br />3. Zadejte název oboru názvů do pole vedle tlačítka **Přidat import uživatele** .<br />4. klikněte na tlačítko **Přidat import uživatele** .|  
+|1.  Have a project selected in **Solution Explorer**. On the **Project** menu, click **Properties**. <br />2.  Click the **References** tab.<br />3.  Enter the namespace name in the box beside the **Add User Import** button.<br />4.  Click the **Add User Import** button.|  
   
 ## <a name="example"></a>Příklad  
- Následující kód zkompiluje, pokud je zadána hodnota `/imports:system.globalization`. Bez této akce kompilace vyžaduje, aby příkaz `Imports System.Globalization` byl zahrnut na začátku souboru zdrojového kódu nebo aby byla vlastnost plně kvalifikovaná jako `System.Globalization.CultureInfo.CurrentCulture.Name`.
+ The following code compiles when `/imports:system.globalization` is specified. Without it, successful compilation requires either that an `Imports System.Globalization` statement be included at the beginning of the source code file, or that the property be fully qualified as `System.Globalization.CultureInfo.CurrentCulture.Name`.
 
 ```vb
 Module Example
@@ -50,6 +50,6 @@ End Module
 
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Odkazy a příkaz Imports](../../../visual-basic/programming-guide/program-structure/references-and-the-imports-statement.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

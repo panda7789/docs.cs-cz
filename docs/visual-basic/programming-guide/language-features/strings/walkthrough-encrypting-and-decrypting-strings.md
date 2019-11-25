@@ -1,5 +1,5 @@
 ---
-title: Šifrování a dešifrování řetězců v Visual Basic
+title: Šifrování a dešifrování řetězců
 ms.date: 07/20/2015
 helpviewer_keywords:
 - encryption [Visual Basic], strings
@@ -7,72 +7,72 @@ helpviewer_keywords:
 - decryption [Visual Basic], strings
 - strings [Visual Basic], decrypting
 ms.assetid: 1f51e40a-2f88-43e2-a83e-28a0b5c0d6fd
-ms.openlocfilehash: ee8691fedb537d1aa588eaac61624b445da64d1f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 36e405c7362993471d3e6da8e319bccb854e1026
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69944427"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74343587"
 ---
-# <a name="walkthrough-encrypting-and-decrypting-strings-in-visual-basic"></a>Návod: Šifrování a dešifrování řetězců v Visual Basic
-V <xref:System.Security.Cryptography.DESCryptoServiceProvider> tomto návodu se dozvíte, jak používat třídu pro šifrování a dešifrování řetězců pomocí verze zprostředkovatele kryptografických služeb (CSP) algoritmu Triple Data Encryption Standard<xref:System.Security.Cryptography.TripleDES>(). Prvním krokem je vytvořit jednoduchou obálkovou třídu, která zapouzdřuje algoritmus 3DES a uloží šifrovaná data jako řetězec s kódováním Base-64. Tato obálka pak slouží k bezpečnému ukládání privátních uživatelských dat do veřejně přístupného textového souboru.  
+# <a name="walkthrough-encrypting-and-decrypting-strings-in-visual-basic"></a>Návod: Šifrování a dešifrování řetězců v jazyce Visual Basic
+This walkthrough shows you how to use the <xref:System.Security.Cryptography.DESCryptoServiceProvider> class to encrypt and decrypt strings using the cryptographic service provider (CSP) version of the Triple Data Encryption Standard (<xref:System.Security.Cryptography.TripleDES>) algorithm. The first step is to create a simple wrapper class that encapsulates the 3DES algorithm and stores the encrypted data as a base-64 encoded string. Then, that wrapper is used to securely store private user data in a publicly accessible text file.  
   
- Šifrování můžete použít k ochraně uživatelských tajných klíčů (například hesel) a k zpřístupnění přihlašovacích údajů neautorizovanými uživateli. To může chránit identitu oprávněného uživatele proti krádeži, která chrání prostředky uživatele a zajišťuje Neodmítnutí. Šifrování může také chránit data uživatele před přístupem neautorizovaných uživatelů.  
+ You can use encryption to protect user secrets (for example, passwords) and to make credentials unreadable by unauthorized users. This can protect an authorized user's identity from being stolen, which protects the user's assets and provides non-repudiation. Encryption can also protect a user's data from being accessed by unauthorized users.  
   
- Další informace najdete v tématu [kryptografické služby](../../../../standard/security/cryptographic-services.md).  
+ For more information, see [Cryptographic Services](../../../../standard/security/cryptographic-services.md).  
   
 > [!IMPORTANT]
-> Rozhraní Rijndael (nyní označované jako standard AES (Advanced Encryption Standard) [AES]) a algoritmy 3DES (Triple Data Encryption Standard) poskytují lepší zabezpečení než algoritmus DES, protože jsou výpočty mnohem náročné. Další informace naleznete v tématu <xref:System.Security.Cryptography.DES> a <xref:System.Security.Cryptography.Rijndael>.  
+> The Rijndael (now referred to as Advanced Encryption Standard [AES]) and Triple Data Encryption Standard (3DES) algorithms provide greater security than DES because they are more computationally intensive. Další informace naleznete v tématu <xref:System.Security.Cryptography.DES> a <xref:System.Security.Cryptography.Rijndael>.  
   
-### <a name="to-create-the-encryption-wrapper"></a>Vytvoření obálky pro šifrování  
+### <a name="to-create-the-encryption-wrapper"></a>To create the encryption wrapper  
   
-1. `Simple3Des` Vytvořte třídu pro zapouzdření šifrovacích a dešifrovacích metod.  
+1. Create the `Simple3Des` class to encapsulate the encryption and decryption methods.  
   
      [!code-vb[VbVbalrStrings#38](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class3.vb#38)]  
   
-2. Přidejte import oboru názvů kryptografie na začátek souboru, který obsahuje `Simple3Des` třídu.  
+2. Add an import of the cryptography namespace to the start of the file that contains the `Simple3Des` class.  
   
      [!code-vb[VbVbalrStrings#77](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class3.vb#77)]  
   
-3. `Simple3Des` Ve třídě přidejte soukromé pole pro uložení poskytovatele kryptografických služeb 3DES.  
+3. In the `Simple3Des` class, add a private field to store the 3DES cryptographic service provider.  
   
      [!code-vb[VbVbalrStrings#39](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class3.vb#39)]  
   
-4. Přidejte soukromou metodu, která vytvoří pole bajtů o zadané délce z hodnoty hash zadaného klíče.  
+4. Add a private method that creates a byte array of a specified length from the hash of the specified key.  
   
      [!code-vb[VbVbalrStrings#41](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class3.vb#41)]  
   
-5. Přidejte konstruktor pro inicializaci zprostředkovatele kryptografických služeb 3DES.  
+5. Add a constructor to initialize the 3DES cryptographic service provider.  
   
-     Parametr řídí metody`DecryptData` a `EncryptData`. `key`  
+     The `key` parameter controls the `EncryptData` and `DecryptData` methods.  
   
      [!code-vb[VbVbalrStrings#40](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class3.vb#40)]  
   
-6. Přidejte veřejnou metodu, která šifruje řetězec.  
+6. Add a public method that encrypts a string.  
   
      [!code-vb[VbVbalrStrings#42](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class3.vb#42)]  
   
-7. Přidejte veřejnou metodu, která dešifruje řetězec.  
+7. Add a public method that decrypts a string.  
   
      [!code-vb[VbVbalrStrings#43](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class3.vb#43)]  
   
-     Obálková třída se teď dá použít k ochraně prostředků uživatele. V tomto příkladu se používá k bezpečnému ukládání privátních uživatelských dat do veřejně přístupného textového souboru.  
+     The wrapper class can now be used to protect user assets. In this example, it is used to securely store private user data in a publicly accessible text file.  
   
-### <a name="to-test-the-encryption-wrapper"></a>Otestování obálky šifrování  
+### <a name="to-test-the-encryption-wrapper"></a>To test the encryption wrapper  
   
-1. V samostatné třídě přidejte metodu, která používá `EncryptData` metodu obálky k zašifrování řetězce a zapište ho do složky Dokumenty uživatele.  
+1. In a separate class, add a method that uses the wrapper's `EncryptData` method to encrypt a string and write it to the user's My Documents folder.  
   
      [!code-vb[VbVbalrStrings#78](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class3.vb#78)]  
   
-2. Přidejte metodu, která přečte zašifrovaný řetězec ze složky dokumenty daného uživatele a dešifruje řetězec pomocí `DecryptData` metody obálky.  
+2. Add a method that reads the encrypted string from the user's My Documents folder and decrypts the string with the wrapper's `DecryptData` method.  
   
      [!code-vb[VbVbalrStrings#79](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class3.vb#79)]  
   
-3. Přidejte kód uživatelského rozhraní pro volání `TestEncoding` metod a. `TestDecoding`  
+3. Add user interface code to call the `TestEncoding` and `TestDecoding` methods.  
   
 4. Spusťte aplikaci.  
   
-     Když otestujete aplikaci, Všimněte si, že nebude dešifrovat data, pokud zadáte chybné heslo.  
+     When you test the application, notice that it will not decrypt the data if you provide the wrong password.  
   
 ## <a name="see-also"></a>Viz také:
 
