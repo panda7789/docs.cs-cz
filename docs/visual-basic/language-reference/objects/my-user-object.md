@@ -1,29 +1,29 @@
 ---
-title: My.User – objekt (Visual Basic)
+title: My.User – objekt
 ms.date: 07/20/2015
 helpviewer_keywords:
 - My.User property
 - My.User object
 ms.assetid: caa7462e-2149-4bdb-8850-802b80b93cbf
-ms.openlocfilehash: 7154b52f6bbd45756702deccbec3d8d45778b641
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 26ecb4a29080a8691217e1093805a7b40f63f022
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62050290"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350639"
 ---
-# <a name="myuser-object"></a><span data-ttu-id="450e4-102">My.User – objekt</span><span class="sxs-lookup"><span data-stu-id="450e4-102">My.User Object</span></span>
-<span data-ttu-id="450e4-103">Poskytuje přístup k informacím o aktuálním uživateli.</span><span class="sxs-lookup"><span data-stu-id="450e4-103">Provides access to information about the current user.</span></span>  
+# <a name="myuser-object"></a><span data-ttu-id="4d4ae-102">My.User – objekt</span><span class="sxs-lookup"><span data-stu-id="4d4ae-102">My.User Object</span></span>
+<span data-ttu-id="4d4ae-103">Provides access to information about the current user.</span><span class="sxs-lookup"><span data-stu-id="4d4ae-103">Provides access to information about the current user.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="450e4-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="450e4-104">Remarks</span></span>  
- <span data-ttu-id="450e4-105">Informace o tom, metody a vlastnosti `My.User` objektu, najdete v článku <xref:Microsoft.VisualBasic.ApplicationServices.User?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="450e4-105">For information about the methods and properties of the `My.User` object, see <xref:Microsoft.VisualBasic.ApplicationServices.User?displayProperty=nameWithType>.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="4d4ae-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="4d4ae-104">Remarks</span></span>  
+ <span data-ttu-id="4d4ae-105">For information about the methods and properties of the `My.User` object, see <xref:Microsoft.VisualBasic.ApplicationServices.User?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="4d4ae-105">For information about the methods and properties of the `My.User` object, see <xref:Microsoft.VisualBasic.ApplicationServices.User?displayProperty=nameWithType>.</span></span>  
   
- <span data-ttu-id="450e4-106">Další informace najdete v tématu [přístup k datům uživatele](../../../visual-basic/developing-apps/programming/accessing-user-data.md).</span><span class="sxs-lookup"><span data-stu-id="450e4-106">For more information, see [Accessing User Data](../../../visual-basic/developing-apps/programming/accessing-user-data.md).</span></span>  
+ <span data-ttu-id="4d4ae-106">For more information, see [Accessing User Data](../../../visual-basic/developing-apps/programming/accessing-user-data.md).</span><span class="sxs-lookup"><span data-stu-id="4d4ae-106">For more information, see [Accessing User Data](../../../visual-basic/developing-apps/programming/accessing-user-data.md).</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="450e4-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="450e4-107">Requirements</span></span>  
- <span data-ttu-id="450e4-108">**Sestavení:** Visual Basic Runtime Library (v souboru Microsoft.VisualBasic.dll)</span><span class="sxs-lookup"><span data-stu-id="450e4-108">**Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)</span></span>  
+## <a name="requirements"></a><span data-ttu-id="4d4ae-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="4d4ae-107">Requirements</span></span>  
+ <span data-ttu-id="4d4ae-108">**Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)</span><span class="sxs-lookup"><span data-stu-id="4d4ae-108">**Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="450e4-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="450e4-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4d4ae-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4d4ae-109">See also</span></span>
 
 - <xref:System.Security.Principal.IPrincipal>
 - <xref:System.Threading.Thread.CurrentPrincipal%2A>

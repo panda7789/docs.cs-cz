@@ -1,5 +1,5 @@
 ---
-title: My.Settings – objekt (Visual Basic)
+title: My.Settings – objekt
 ms.date: 07/20/2015
 f1_keywords:
 - My.MySettingsProperty.Settings
@@ -7,63 +7,63 @@ f1_keywords:
 helpviewer_keywords:
 - My.Settings object
 ms.assetid: 41f30dc1-202a-4273-b9b7-5728941f996c
-ms.openlocfilehash: 9533e8e1ccc51078fefcf6bf73feb2683ae8febb
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9560a51332ea596d4cf2228f1e07c158a0457ece
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64625283"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350362"
 ---
-# <a name="mysettings-object"></a><span data-ttu-id="f47d1-102">My.Settings – objekt</span><span class="sxs-lookup"><span data-stu-id="f47d1-102">My.Settings Object</span></span>
-<span data-ttu-id="f47d1-103">Poskytuje vlastnosti a metody pro přístup k nastavení aplikace.</span><span class="sxs-lookup"><span data-stu-id="f47d1-103">Provides properties and methods for accessing the application's settings.</span></span>  
+# <a name="mysettings-object"></a><span data-ttu-id="6127e-102">My.Settings – objekt</span><span class="sxs-lookup"><span data-stu-id="6127e-102">My.Settings Object</span></span>
+<span data-ttu-id="6127e-103">Provides properties and methods for accessing the application's settings.</span><span class="sxs-lookup"><span data-stu-id="6127e-103">Provides properties and methods for accessing the application's settings.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="f47d1-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="f47d1-104">Remarks</span></span>  
- <span data-ttu-id="f47d1-105">`My.Settings` Objekt poskytuje přístup k nastavení aplikace a umožňuje dynamicky ukládat a načítat nastavení vlastností a další informace pro vaši aplikaci.</span><span class="sxs-lookup"><span data-stu-id="f47d1-105">The `My.Settings` object provides access to the application's settings and allows you to dynamically store and retrieve property settings and other information for your application.</span></span> <span data-ttu-id="f47d1-106">Další informace najdete v tématu [Správa nastavení aplikace (.NET)](/visualstudio/ide/managing-application-settings-dotnet).</span><span class="sxs-lookup"><span data-stu-id="f47d1-106">For more information, see [Managing Application Settings (.NET)](/visualstudio/ide/managing-application-settings-dotnet).</span></span>  
+## <a name="remarks"></a><span data-ttu-id="6127e-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="6127e-104">Remarks</span></span>  
+ <span data-ttu-id="6127e-105">The `My.Settings` object provides access to the application's settings and allows you to dynamically store and retrieve property settings and other information for your application.</span><span class="sxs-lookup"><span data-stu-id="6127e-105">The `My.Settings` object provides access to the application's settings and allows you to dynamically store and retrieve property settings and other information for your application.</span></span> <span data-ttu-id="6127e-106">For more information, see [Managing Application Settings (.NET)](/visualstudio/ide/managing-application-settings-dotnet).</span><span class="sxs-lookup"><span data-stu-id="6127e-106">For more information, see [Managing Application Settings (.NET)](/visualstudio/ide/managing-application-settings-dotnet).</span></span>  
   
-## <a name="properties"></a><span data-ttu-id="f47d1-107">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="f47d1-107">Properties</span></span>  
- <span data-ttu-id="f47d1-108">Vlastnosti `My.Settings` objekt poskytnout přístup k nastavení aplikace.</span><span class="sxs-lookup"><span data-stu-id="f47d1-108">The properties of the `My.Settings` object provide access to your application's settings.</span></span> <span data-ttu-id="f47d1-109">Chcete-li přidat nebo odebrat nastavení, použijte **návrháře nastavení**.</span><span class="sxs-lookup"><span data-stu-id="f47d1-109">To add or remove settings, use the **Settings Designer**.</span></span>  
+## <a name="properties"></a><span data-ttu-id="6127e-107">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="6127e-107">Properties</span></span>  
+ <span data-ttu-id="6127e-108">The properties of the `My.Settings` object provide access to your application's settings.</span><span class="sxs-lookup"><span data-stu-id="6127e-108">The properties of the `My.Settings` object provide access to your application's settings.</span></span> <span data-ttu-id="6127e-109">To add or remove settings, use the **Settings Designer**.</span><span class="sxs-lookup"><span data-stu-id="6127e-109">To add or remove settings, use the **Settings Designer**.</span></span>  
   
- <span data-ttu-id="f47d1-110">Každé nastavení má **název**, **typ**, **oboru**, a **hodnota**, a tato nastavení určují, jak vlastnost, která má přístup ke každé nastavení Zobrazí se v `My.Settings` objektu:</span><span class="sxs-lookup"><span data-stu-id="f47d1-110">Each setting has a **Name**, **Type**, **Scope**, and **Value**, and these settings determine how the property to access each setting appears in the `My.Settings` object:</span></span>  
+ <span data-ttu-id="6127e-110">Each setting has a **Name**, **Type**, **Scope**, and **Value**, and these settings determine how the property to access each setting appears in the `My.Settings` object:</span><span class="sxs-lookup"><span data-stu-id="6127e-110">Each setting has a **Name**, **Type**, **Scope**, and **Value**, and these settings determine how the property to access each setting appears in the `My.Settings` object:</span></span>  
   
-- <span data-ttu-id="f47d1-111">**Název** Určuje název vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="f47d1-111">**Name** determines the name of the property.</span></span>  
+- <span data-ttu-id="6127e-111">**Name** determines the name of the property.</span><span class="sxs-lookup"><span data-stu-id="6127e-111">**Name** determines the name of the property.</span></span>  
   
-- <span data-ttu-id="f47d1-112">**Typ** Určuje typ vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="f47d1-112">**Type** determines the type of the property.</span></span>  
+- <span data-ttu-id="6127e-112">**Type** determines the type of the property.</span><span class="sxs-lookup"><span data-stu-id="6127e-112">**Type** determines the type of the property.</span></span>  
   
-- <span data-ttu-id="f47d1-113">**Obor** značí, zda je vlastnost jen pro čtení.</span><span class="sxs-lookup"><span data-stu-id="f47d1-113">**Scope** indicates if the property is read-only.</span></span> <span data-ttu-id="f47d1-114">Pokud je hodnota **aplikace**, vlastnost je jen pro čtení; Pokud je hodnota **uživatele**, je vlastnost pro čtení i zápis.</span><span class="sxs-lookup"><span data-stu-id="f47d1-114">If the value is **Application**, the property is read-only; if the value is **User**, the property is read-write.</span></span>  
+- <span data-ttu-id="6127e-113">**Scope** indicates if the property is read-only.</span><span class="sxs-lookup"><span data-stu-id="6127e-113">**Scope** indicates if the property is read-only.</span></span> <span data-ttu-id="6127e-114">If the value is **Application**, the property is read-only; if the value is **User**, the property is read-write.</span><span class="sxs-lookup"><span data-stu-id="6127e-114">If the value is **Application**, the property is read-only; if the value is **User**, the property is read-write.</span></span>  
   
-- <span data-ttu-id="f47d1-115">**Hodnota** je výchozí hodnota vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="f47d1-115">**Value** is the default value of the property.</span></span>  
+- <span data-ttu-id="6127e-115">**Value** is the default value of the property.</span><span class="sxs-lookup"><span data-stu-id="6127e-115">**Value** is the default value of the property.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="f47d1-116">Metody</span><span class="sxs-lookup"><span data-stu-id="f47d1-116">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="6127e-116">Metody</span><span class="sxs-lookup"><span data-stu-id="6127e-116">Methods</span></span>  
   
-|<span data-ttu-id="f47d1-117">Metoda</span><span class="sxs-lookup"><span data-stu-id="f47d1-117">Method</span></span>|<span data-ttu-id="f47d1-118">Popis</span><span class="sxs-lookup"><span data-stu-id="f47d1-118">Description</span></span>|  
+|<span data-ttu-id="6127e-117">Metoda</span><span class="sxs-lookup"><span data-stu-id="6127e-117">Method</span></span>|<span data-ttu-id="6127e-118">Popis</span><span class="sxs-lookup"><span data-stu-id="6127e-118">Description</span></span>|  
 |---|---|  
-|`Reload`|<span data-ttu-id="f47d1-119">Znovu načte nastavení uživatele z poslední uložené hodnoty.</span><span class="sxs-lookup"><span data-stu-id="f47d1-119">Reloads the user settings from the last saved values.</span></span>|  
-|`Save`|<span data-ttu-id="f47d1-120">Uloží aktuální nastavení uživatele.</span><span class="sxs-lookup"><span data-stu-id="f47d1-120">Saves the current user settings.</span></span>|  
+|`Reload`|<span data-ttu-id="6127e-119">Reloads the user settings from the last saved values.</span><span class="sxs-lookup"><span data-stu-id="6127e-119">Reloads the user settings from the last saved values.</span></span>|  
+|`Save`|<span data-ttu-id="6127e-120">Saves the current user settings.</span><span class="sxs-lookup"><span data-stu-id="6127e-120">Saves the current user settings.</span></span>|  
   
- <span data-ttu-id="f47d1-121">`My.Settings` Objekt poskytuje také pokročilé vlastností a metod zděděných z <xref:System.Configuration.ApplicationSettingsBase> třídy.</span><span class="sxs-lookup"><span data-stu-id="f47d1-121">The `My.Settings` object also provides advanced properties and methods, inherited from the <xref:System.Configuration.ApplicationSettingsBase> class.</span></span>  
+ <span data-ttu-id="6127e-121">The `My.Settings` object also provides advanced properties and methods, inherited from the <xref:System.Configuration.ApplicationSettingsBase> class.</span><span class="sxs-lookup"><span data-stu-id="6127e-121">The `My.Settings` object also provides advanced properties and methods, inherited from the <xref:System.Configuration.ApplicationSettingsBase> class.</span></span>  
   
-## <a name="tasks"></a><span data-ttu-id="f47d1-122">Úkoly</span><span class="sxs-lookup"><span data-stu-id="f47d1-122">Tasks</span></span>  
- <span data-ttu-id="f47d1-123">Následující tabulka uvádí příklady úloh týkajících `My.Settings` objektu.</span><span class="sxs-lookup"><span data-stu-id="f47d1-123">The following table lists examples of tasks involving the `My.Settings` object.</span></span>  
+## <a name="tasks"></a><span data-ttu-id="6127e-122">Úkoly</span><span class="sxs-lookup"><span data-stu-id="6127e-122">Tasks</span></span>  
+ <span data-ttu-id="6127e-123">The following table lists examples of tasks involving the `My.Settings` object.</span><span class="sxs-lookup"><span data-stu-id="6127e-123">The following table lists examples of tasks involving the `My.Settings` object.</span></span>  
   
-|<span data-ttu-id="f47d1-124">Chcete-li</span><span class="sxs-lookup"><span data-stu-id="f47d1-124">To</span></span>|<span data-ttu-id="f47d1-125">Další informace naleznete v tématu</span><span class="sxs-lookup"><span data-stu-id="f47d1-125">See</span></span>|  
+|<span data-ttu-id="6127e-124">Chcete-li</span><span class="sxs-lookup"><span data-stu-id="6127e-124">To</span></span>|<span data-ttu-id="6127e-125">Další informace naleznete v tématu</span><span class="sxs-lookup"><span data-stu-id="6127e-125">See</span></span>|  
 |---|---|  
-|<span data-ttu-id="f47d1-126">Čtení nastavení aplikace</span><span class="sxs-lookup"><span data-stu-id="f47d1-126">Read an application setting</span></span>|[<span data-ttu-id="f47d1-127">Postupy: Čtení nastavení aplikace v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="f47d1-127">How to: Read Application Settings in Visual Basic</span></span>](../../../visual-basic/developing-apps/programming/app-settings/how-to-read-application-settings.md)|  
-|<span data-ttu-id="f47d1-128">Změna uživatelského nastavení</span><span class="sxs-lookup"><span data-stu-id="f47d1-128">Change a user setting</span></span>|[<span data-ttu-id="f47d1-129">Postupy: Změna uživatelského nastavení v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="f47d1-129">How to: Change User Settings in Visual Basic</span></span>](../../../visual-basic/developing-apps/programming/app-settings/how-to-change-user-settings.md)|  
-|<span data-ttu-id="f47d1-130">Zachování uživatelského nastavení</span><span class="sxs-lookup"><span data-stu-id="f47d1-130">Persist user settings</span></span>|[<span data-ttu-id="f47d1-131">Postupy: Zachování uživatelského nastavení v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="f47d1-131">How to: Persist User Settings in Visual Basic</span></span>](../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md)|  
-|<span data-ttu-id="f47d1-132">Vytvořit mřížku vlastností pro uživatelská nastavení</span><span class="sxs-lookup"><span data-stu-id="f47d1-132">Create a property grid for user settings</span></span>|[<span data-ttu-id="f47d1-133">Postupy: Vytváření mřížek vlastností pro uživatelská nastavení v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="f47d1-133">How to: Create Property Grids for User Settings in Visual Basic</span></span>](../../../visual-basic/developing-apps/programming/app-settings/how-to-create-property-grids-for-user-settings.md)|  
+|<span data-ttu-id="6127e-126">Read an application setting</span><span class="sxs-lookup"><span data-stu-id="6127e-126">Read an application setting</span></span>|[<span data-ttu-id="6127e-127">How to: Read Application Settings in Visual Basic</span><span class="sxs-lookup"><span data-stu-id="6127e-127">How to: Read Application Settings in Visual Basic</span></span>](../../../visual-basic/developing-apps/programming/app-settings/how-to-read-application-settings.md)|  
+|<span data-ttu-id="6127e-128">Change a user setting</span><span class="sxs-lookup"><span data-stu-id="6127e-128">Change a user setting</span></span>|[<span data-ttu-id="6127e-129">How to: Change User Settings in Visual Basic</span><span class="sxs-lookup"><span data-stu-id="6127e-129">How to: Change User Settings in Visual Basic</span></span>](../../../visual-basic/developing-apps/programming/app-settings/how-to-change-user-settings.md)|  
+|<span data-ttu-id="6127e-130">Persist user settings</span><span class="sxs-lookup"><span data-stu-id="6127e-130">Persist user settings</span></span>|[<span data-ttu-id="6127e-131">How to: Persist User Settings in Visual Basic</span><span class="sxs-lookup"><span data-stu-id="6127e-131">How to: Persist User Settings in Visual Basic</span></span>](../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md)|  
+|<span data-ttu-id="6127e-132">Create a property grid for user settings</span><span class="sxs-lookup"><span data-stu-id="6127e-132">Create a property grid for user settings</span></span>|[<span data-ttu-id="6127e-133">How to: Create Property Grids for User Settings in Visual Basic</span><span class="sxs-lookup"><span data-stu-id="6127e-133">How to: Create Property Grids for User Settings in Visual Basic</span></span>](../../../visual-basic/developing-apps/programming/app-settings/how-to-create-property-grids-for-user-settings.md)|  
   
-## <a name="example"></a><span data-ttu-id="f47d1-134">Příklad</span><span class="sxs-lookup"><span data-stu-id="f47d1-134">Example</span></span>  
- <span data-ttu-id="f47d1-135">Tento příklad zobrazuje hodnotu `Nickname` nastavení.</span><span class="sxs-lookup"><span data-stu-id="f47d1-135">This example displays the value of the `Nickname` setting.</span></span>  
+## <a name="example"></a><span data-ttu-id="6127e-134">Příklad</span><span class="sxs-lookup"><span data-stu-id="6127e-134">Example</span></span>  
+ <span data-ttu-id="6127e-135">This example displays the value of the `Nickname` setting.</span><span class="sxs-lookup"><span data-stu-id="6127e-135">This example displays the value of the `Nickname` setting.</span></span>  
   
  [!code-vb[VbVbalrMyResources#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyResources/VB/Form1.vb#14)]  
   
- <span data-ttu-id="f47d1-136">Pro tento příklad fungoval, musí mít vaše aplikace `Nickname` typu nastavení `String`.</span><span class="sxs-lookup"><span data-stu-id="f47d1-136">For this example to work, your application must have a `Nickname` setting, of type `String`.</span></span>  
+ <span data-ttu-id="6127e-136">For this example to work, your application must have a `Nickname` setting, of type `String`.</span><span class="sxs-lookup"><span data-stu-id="6127e-136">For this example to work, your application must have a `Nickname` setting, of type `String`.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f47d1-137">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f47d1-137">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="6127e-137">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6127e-137">See also</span></span>
 
 - <xref:System.Configuration.ApplicationSettingsBase>
-- [<span data-ttu-id="f47d1-138">Postupy: Čtení nastavení aplikace v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="f47d1-138">How to: Read Application Settings in Visual Basic</span></span>](../../../visual-basic/developing-apps/programming/app-settings/how-to-read-application-settings.md)
-- [<span data-ttu-id="f47d1-139">Postupy: Změna uživatelského nastavení v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="f47d1-139">How to: Change User Settings in Visual Basic</span></span>](../../../visual-basic/developing-apps/programming/app-settings/how-to-change-user-settings.md)
-- [<span data-ttu-id="f47d1-140">Postupy: Zachování uživatelského nastavení v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="f47d1-140">How to: Persist User Settings in Visual Basic</span></span>](../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md)
-- [<span data-ttu-id="f47d1-141">Postupy: Vytváření mřížek vlastností pro uživatelská nastavení v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="f47d1-141">How to: Create Property Grids for User Settings in Visual Basic</span></span>](../../../visual-basic/developing-apps/programming/app-settings/how-to-create-property-grids-for-user-settings.md)
-- [<span data-ttu-id="f47d1-142">Správa nastavení aplikace (.NET)</span><span class="sxs-lookup"><span data-stu-id="f47d1-142">Managing Application Settings (.NET)</span></span>](/visualstudio/ide/managing-application-settings-dotnet)
+- [<span data-ttu-id="6127e-138">How to: Read Application Settings in Visual Basic</span><span class="sxs-lookup"><span data-stu-id="6127e-138">How to: Read Application Settings in Visual Basic</span></span>](../../../visual-basic/developing-apps/programming/app-settings/how-to-read-application-settings.md)
+- [<span data-ttu-id="6127e-139">How to: Change User Settings in Visual Basic</span><span class="sxs-lookup"><span data-stu-id="6127e-139">How to: Change User Settings in Visual Basic</span></span>](../../../visual-basic/developing-apps/programming/app-settings/how-to-change-user-settings.md)
+- [<span data-ttu-id="6127e-140">How to: Persist User Settings in Visual Basic</span><span class="sxs-lookup"><span data-stu-id="6127e-140">How to: Persist User Settings in Visual Basic</span></span>](../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md)
+- [<span data-ttu-id="6127e-141">How to: Create Property Grids for User Settings in Visual Basic</span><span class="sxs-lookup"><span data-stu-id="6127e-141">How to: Create Property Grids for User Settings in Visual Basic</span></span>](../../../visual-basic/developing-apps/programming/app-settings/how-to-create-property-grids-for-user-settings.md)
+- [<span data-ttu-id="6127e-142">Správa nastavení aplikace (.NET)</span><span class="sxs-lookup"><span data-stu-id="6127e-142">Managing Application Settings (.NET)</span></span>](/visualstudio/ide/managing-application-settings-dotnet)

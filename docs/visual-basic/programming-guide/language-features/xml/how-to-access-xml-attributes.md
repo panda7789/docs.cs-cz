@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Přístup k atributům XML (Visual Basic)'
+title: 'Postupy: Přístup k atributům XML'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - attribute axis property [Visual Basic]
@@ -7,22 +7,22 @@ helpviewer_keywords:
 - XML axis [Visual Basic], attribute
 - XML [Visual Basic], accessing
 ms.assetid: 66cd704f-990c-4f8d-9b49-2b6aa76ca8fd
-ms.openlocfilehash: ce22781584ad31766058f59a7ebf3081cb5e11cf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 905d6c4bb63323bad790bc833647a5c602d02ada
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61971558"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74332328"
 ---
-# <a name="how-to-access-xml-attributes-visual-basic"></a><span data-ttu-id="86468-102">Postupy: Přístup k atributům XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="86468-102">How to: Access XML Attributes (Visual Basic)</span></span>
-<span data-ttu-id="86468-103">Tento příklad ukazuje způsob použití vlastnost osy atributu pro přístup k atributům XML v elementu XML podle názvu.</span><span class="sxs-lookup"><span data-stu-id="86468-103">This example shows how to use an attribute axis property to access XML attributes in an XML element by name.</span></span> <span data-ttu-id="86468-104">Konkrétně se použije `type` atribut vlastnosti OS pro přístup k atributu s názvem `type` v `phone` objektu.</span><span class="sxs-lookup"><span data-stu-id="86468-104">In particular, it uses the `type` attribute axis property to access the attribute named `type` in the `phone` object.</span></span>  
+# <a name="how-to-access-xml-attributes-visual-basic"></a><span data-ttu-id="162ca-102">Postupy: Přístup k atributům XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="162ca-102">How to: Access XML Attributes (Visual Basic)</span></span>
+<span data-ttu-id="162ca-103">This example shows how to use an attribute axis property to access XML attributes in an XML element by name.</span><span class="sxs-lookup"><span data-stu-id="162ca-103">This example shows how to use an attribute axis property to access XML attributes in an XML element by name.</span></span> <span data-ttu-id="162ca-104">In particular, it uses the `type` attribute axis property to access the attribute named `type` in the `phone` object.</span><span class="sxs-lookup"><span data-stu-id="162ca-104">In particular, it uses the `type` attribute axis property to access the attribute named `type` in the `phone` object.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="86468-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="86468-105">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="162ca-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="162ca-105">Example</span></span>  
  [!code-vb[VbXMLSamples#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples5.vb#11)]  
   
-## <a name="see-also"></a><span data-ttu-id="86468-106">Viz také:</span><span class="sxs-lookup"><span data-stu-id="86468-106">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="162ca-106">Viz také:</span><span class="sxs-lookup"><span data-stu-id="162ca-106">See also</span></span>
 
 - <xref:System.Xml.Linq.XElement.Attributes%2A?displayProperty=nameWithType>
-- [<span data-ttu-id="86468-107">Vlastnost osy atributu XML</span><span class="sxs-lookup"><span data-stu-id="86468-107">XML Attribute Axis Property</span></span>](../../../../visual-basic/language-reference/xml-axis/xml-attribute-axis-property.md)
-- [<span data-ttu-id="86468-108">Přístup ke XML v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="86468-108">Accessing XML in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md)
-- [<span data-ttu-id="86468-109">XML</span><span class="sxs-lookup"><span data-stu-id="86468-109">XML</span></span>](../../../../visual-basic/programming-guide/language-features/xml/index.md)
+- [<span data-ttu-id="162ca-107">Vlastnost osy atributu XML</span><span class="sxs-lookup"><span data-stu-id="162ca-107">XML Attribute Axis Property</span></span>](../../../../visual-basic/language-reference/xml-axis/xml-attribute-axis-property.md)
+- [<span data-ttu-id="162ca-108">Accessing XML in Visual Basic</span><span class="sxs-lookup"><span data-stu-id="162ca-108">Accessing XML in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md)
+- [<span data-ttu-id="162ca-109">XML</span><span class="sxs-lookup"><span data-stu-id="162ca-109">XML</span></span>](../../../../visual-basic/programming-guide/language-features/xml/index.md)
