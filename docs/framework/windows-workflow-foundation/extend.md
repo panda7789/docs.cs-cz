@@ -6,19 +6,19 @@ helpviewer_keywords:
 - Windows Workflow Foundation [WF], extending
 - extending [WF]
 ms.assetid: d6861f28-9c8c-4225-872d-9a80e2e59034
-ms.openlocfilehash: 8449c1f229ffb993036dbb909d6f4c98c47498af
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1394e86738ce38683bb3f5b0e847b952cf6138eb
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61945688"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141883"
 ---
-# <a name="extending-windows-workflow-foundation"></a><span data-ttu-id="5b74e-102">Rozšíření Windows Workflow Foundation</span><span class="sxs-lookup"><span data-stu-id="5b74e-102">Extending Windows Workflow Foundation</span></span>
-<span data-ttu-id="5b74e-103">Následující část popisuje, jak vlastní aktivity a návrhářů v prostředí provádění se změněným hostováním mimo sadu Visual Studio 2010 rozšiřují Windows Workflow Foundation (WF).</span><span class="sxs-lookup"><span data-stu-id="5b74e-103">The following section describes how to extend Windows Workflow Foundation (WF) with custom activities and designers in rehosted environments outside Visual Studio 2010.</span></span>
+# <a name="extending-windows-workflow-foundation"></a><span data-ttu-id="acd67-102">Rozšíření Windows Workflow Foundation</span><span class="sxs-lookup"><span data-stu-id="acd67-102">Extending Windows Workflow Foundation</span></span>
+<span data-ttu-id="acd67-103">V následující části je popsán postup rozšiřování programovací model Windows Workflow Foundation (WF) s vlastními aktivitami a návrháři v přehostitelských prostředích mimo Visual Studio 2010.</span><span class="sxs-lookup"><span data-stu-id="acd67-103">The following section describes how to extend Windows Workflow Foundation (WF) with custom activities and designers in rehosted environments outside Visual Studio 2010.</span></span>
 
-## <a name="in-this-section"></a><span data-ttu-id="5b74e-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="5b74e-104">In This Section</span></span>
- <span data-ttu-id="5b74e-105">[Kustomizace možností návrhu pracovního postupu](customizing-the-workflow-design-experience.md) označuje jak scénářů pro návrh vlastní aktivity a změna hostování [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] byly výrazně zjednodušené [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)].</span><span class="sxs-lookup"><span data-stu-id="5b74e-105">[Customizing the Workflow Design Experience](customizing-the-workflow-design-experience.md) Indicates how the scenarios for designing custom activities and for rehosting the [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] have been greatly simplified in [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)].</span></span> <span data-ttu-id="5b74e-106">Vývoj a nasazení jsou teď jednodušší a flexibilnější protože nové návrháře programovací model aktivity je postavená na Windows Presentation Foundation (WPF).</span><span class="sxs-lookup"><span data-stu-id="5b74e-106">Development and deployment are now both easier and more flexible because the new activity designer programming model is built upon Windows Presentation Foundation (WPF).</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="acd67-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="acd67-104">In This Section</span></span>
+ <span data-ttu-id="acd67-105">[Přizpůsobení prostředí pro návrh pracovního postupu](customizing-the-workflow-design-experience.md) Určuje, jak se v .NET Framework 4 významně zjednodušily scénáře návrhu vlastních aktivit a pro opětovné hostování [!INCLUDE[wfd1](../../../includes/wfd1-md.md)].</span><span class="sxs-lookup"><span data-stu-id="acd67-105">[Customizing the Workflow Design Experience](customizing-the-workflow-design-experience.md) Indicates how the scenarios for designing custom activities and for rehosting the [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] have been greatly simplified in .NET Framework 4.</span></span> <span data-ttu-id="acd67-106">Vývoj a nasazení jsou teď jednodušší a flexibilnější, protože nový programovací model návrháře aktivit je sestavený po Windows Presentation Foundation (WPF).</span><span class="sxs-lookup"><span data-stu-id="acd67-106">Development and deployment are now both easier and more flexible because the new activity designer programming model is built upon Windows Presentation Foundation (WPF).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="5b74e-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5b74e-107">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="acd67-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="acd67-107">See also</span></span>
 
-- [<span data-ttu-id="5b74e-108">Windows Workflow Foundation</span><span class="sxs-lookup"><span data-stu-id="5b74e-108">Windows Workflow Foundation</span></span>](index.md)
+- [<span data-ttu-id="acd67-108">Windows Workflow Foundation</span><span class="sxs-lookup"><span data-stu-id="acd67-108">Windows Workflow Foundation</span></span>](index.md)

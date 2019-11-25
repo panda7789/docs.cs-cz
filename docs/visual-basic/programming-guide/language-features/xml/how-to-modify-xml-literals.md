@@ -1,33 +1,33 @@
 ---
-title: 'Postupy: Změna literálů XML (Visual Basic)'
+title: 'Postupy: Změna literálů XML'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - XML axis [Visual Basic], Value
 - XML literals [Visual Basic]
 - XML literals [Visual Basic], modifying
 ms.assetid: 4e864522-a37a-43a2-8236-af80277c5482
-ms.openlocfilehash: 003715b04f3a5c0fb41e846beb189f117378ea58
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 99ec35addcb9fc8d886c9151cde87227b5113eb9
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62053025"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74330858"
 ---
-# <a name="how-to-modify-xml-literals-visual-basic"></a><span data-ttu-id="ca6ae-102">Postupy: Změna literálů XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ca6ae-102">How to: Modify XML Literals (Visual Basic)</span></span>
+# <a name="how-to-modify-xml-literals-visual-basic"></a><span data-ttu-id="cf5e5-102">Postupy: Změna literálů XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="cf5e5-102">How to: Modify XML Literals (Visual Basic)</span></span>
 
-<span data-ttu-id="ca6ae-103">Visual Basic poskytuje pohodlný způsob změna literálů XML.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-103">Visual Basic provides convenient ways to modify XML literals.</span></span> <span data-ttu-id="ca6ae-104">Můžete přidat nebo odstranit elementy a atributy, a můžete také nahradit existující prvek nový prvek XML.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-104">You can add or delete elements and attributes, and you can also replace an existing element with a new XML element.</span></span> <span data-ttu-id="ca6ae-105">Toto téma obsahuje několik příkladů toho, jak změnit existující literálu XML.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-105">This topic provides several examples of how to modify an existing XML literal.</span></span>
+<span data-ttu-id="cf5e5-103">Visual Basic provides convenient ways to modify XML literals.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-103">Visual Basic provides convenient ways to modify XML literals.</span></span> <span data-ttu-id="cf5e5-104">You can add or delete elements and attributes, and you can also replace an existing element with a new XML element.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-104">You can add or delete elements and attributes, and you can also replace an existing element with a new XML element.</span></span> <span data-ttu-id="cf5e5-105">This topic provides several examples of how to modify an existing XML literal.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-105">This topic provides several examples of how to modify an existing XML literal.</span></span>
 
-### <a name="to-modify-the-value-of-an-xml-literal"></a><span data-ttu-id="ca6ae-106">Chcete-li změnit hodnotu literál XML</span><span class="sxs-lookup"><span data-stu-id="ca6ae-106">To modify the value of an XML literal</span></span>
+### <a name="to-modify-the-value-of-an-xml-literal"></a><span data-ttu-id="cf5e5-106">To modify the value of an XML literal</span><span class="sxs-lookup"><span data-stu-id="cf5e5-106">To modify the value of an XML literal</span></span>
 
-1. <span data-ttu-id="ca6ae-107">Chcete-li změnit hodnotu literál XML, získat odkaz na XML literál a nastavte `Value` vlastnost na požadovanou hodnotu.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-107">To modify the value of an XML literal, obtain a reference to the XML literal and set the `Value` property to the desired value.</span></span>
+1. <span data-ttu-id="cf5e5-107">To modify the value of an XML literal, obtain a reference to the XML literal and set the `Value` property to the desired value.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-107">To modify the value of an XML literal, obtain a reference to the XML literal and set the `Value` property to the desired value.</span></span>
 
-    <span data-ttu-id="ca6ae-108">Následující příklad kódu aktualizuje hodnotu všech \<cena > elementy v dokumentu XML.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-108">The following code example updates the value of all the \<Price> elements in an XML document.</span></span>
+    <span data-ttu-id="cf5e5-108">The following code example updates the value of all the \<Price> elements in an XML document.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-108">The following code example updates the value of all the \<Price> elements in an XML document.</span></span>
 
     [!code-vb[VbXmlSamples2#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXmlSamples2/VB/Module2.vb#4)]
 
-    <span data-ttu-id="ca6ae-109">Následující znázorňuje vzorový zdroj XML a změnit tento příklad kódu XML.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-109">The following shows sample source XML and modified XML from this code example.</span></span>
+    <span data-ttu-id="cf5e5-109">The following shows sample source XML and modified XML from this code example.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-109">The following shows sample source XML and modified XML from this code example.</span></span>
 
-    <span data-ttu-id="ca6ae-110">Zdrojového kódu XML:</span><span class="sxs-lookup"><span data-stu-id="ca6ae-110">Source XML:</span></span>
+    <span data-ttu-id="cf5e5-110">Source XML:</span><span class="sxs-lookup"><span data-stu-id="cf5e5-110">Source XML:</span></span>
 
     ```xml
     <?xml version="1.0"?>
@@ -45,7 +45,7 @@ ms.locfileid: "62053025"
     </Catalog>
     ```
 
-    <span data-ttu-id="ca6ae-111">Upravené XML:</span><span class="sxs-lookup"><span data-stu-id="ca6ae-111">Modified XML:</span></span>
+    <span data-ttu-id="cf5e5-111">Modified XML:</span><span class="sxs-lookup"><span data-stu-id="cf5e5-111">Modified XML:</span></span>
 
     ```xml
     <?xml version="1.0"?>
@@ -64,17 +64,17 @@ ms.locfileid: "62053025"
     ```
 
     > [!NOTE]
-    > <span data-ttu-id="ca6ae-112">`Value` Vlastnost odkazuje na první prvek XML v kolekci.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-112">The `Value` property refers to the first XML element in a collection.</span></span> <span data-ttu-id="ca6ae-113">Pokud existuje více než jeden element, který má stejný název v kolekci, nastavení `Value` vlastnost ovlivňuje pouze první prvek v kolekci.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-113">If there is more than one element that has the same name in a collection, setting the `Value` property affects only the first element in the collection.</span></span>
+    > <span data-ttu-id="cf5e5-112">The `Value` property refers to the first XML element in a collection.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-112">The `Value` property refers to the first XML element in a collection.</span></span> <span data-ttu-id="cf5e5-113">If there is more than one element that has the same name in a collection, setting the `Value` property affects only the first element in the collection.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-113">If there is more than one element that has the same name in a collection, setting the `Value` property affects only the first element in the collection.</span></span>
 
-### <a name="to-add-an-attribute-to-an-xml-literal"></a><span data-ttu-id="ca6ae-114">Chcete-li přidat atribut literál XML</span><span class="sxs-lookup"><span data-stu-id="ca6ae-114">To add an attribute to an XML literal</span></span>
+### <a name="to-add-an-attribute-to-an-xml-literal"></a><span data-ttu-id="cf5e5-114">To add an attribute to an XML literal</span><span class="sxs-lookup"><span data-stu-id="cf5e5-114">To add an attribute to an XML literal</span></span>
 
-1. <span data-ttu-id="ca6ae-115">Pokud chcete přidat atribut literálu XML, nejprve získejte odkaz na literál XML.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-115">To add an attribute to an XML literal, first obtain a reference to the XML literal.</span></span> <span data-ttu-id="ca6ae-116">Potom můžete přidat atribut tak, že přidáte novou vlastnost osy atributu XML.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-116">You can then add an attribute by adding a new XML attribute axis property.</span></span> <span data-ttu-id="ca6ae-117">Můžete také přidat nový <xref:System.Xml.Linq.XAttribute> objekt pomocí literálů XML <xref:System.Xml.Linq.XContainer.Add%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-117">You can also add a new <xref:System.Xml.Linq.XAttribute> object to the XML literal by using the <xref:System.Xml.Linq.XContainer.Add%2A> method.</span></span> <span data-ttu-id="ca6ae-118">Následující příklad ukazuje obě možnosti.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-118">The following example shows both options.</span></span>
+1. <span data-ttu-id="cf5e5-115">To add an attribute to an XML literal, first obtain a reference to the XML literal.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-115">To add an attribute to an XML literal, first obtain a reference to the XML literal.</span></span> <span data-ttu-id="cf5e5-116">You can then add an attribute by adding a new XML attribute axis property.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-116">You can then add an attribute by adding a new XML attribute axis property.</span></span> <span data-ttu-id="cf5e5-117">You can also add a new <xref:System.Xml.Linq.XAttribute> object to the XML literal by using the <xref:System.Xml.Linq.XContainer.Add%2A> method.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-117">You can also add a new <xref:System.Xml.Linq.XAttribute> object to the XML literal by using the <xref:System.Xml.Linq.XContainer.Add%2A> method.</span></span> <span data-ttu-id="cf5e5-118">The following example shows both options.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-118">The following example shows both options.</span></span>
 
     [!code-vb[VbXmlSamples2#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXmlSamples2/VB/Module2.vb#5)]
 
-    <span data-ttu-id="ca6ae-119">Následující znázorňuje vzorový zdroj XML a změnit tento příklad kódu XML.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-119">The following shows sample source XML and modified XML from this code example.</span></span>
+    <span data-ttu-id="cf5e5-119">The following shows sample source XML and modified XML from this code example.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-119">The following shows sample source XML and modified XML from this code example.</span></span>
 
-    <span data-ttu-id="ca6ae-120">Zdrojového kódu XML:</span><span class="sxs-lookup"><span data-stu-id="ca6ae-120">Source XML:</span></span>
+    <span data-ttu-id="cf5e5-120">Source XML:</span><span class="sxs-lookup"><span data-stu-id="cf5e5-120">Source XML:</span></span>
 
     ```xml
     <?xml version="1.0"?>
@@ -92,7 +92,7 @@ ms.locfileid: "62053025"
     </Catalog>
     ```
 
-    <span data-ttu-id="ca6ae-121">Upravené XML:</span><span class="sxs-lookup"><span data-stu-id="ca6ae-121">Modified XML:</span></span>
+    <span data-ttu-id="cf5e5-121">Modified XML:</span><span class="sxs-lookup"><span data-stu-id="cf5e5-121">Modified XML:</span></span>
 
     ```xml
     <?xml version="1.0"?>
@@ -110,21 +110,21 @@ ms.locfileid: "62053025"
     </Catalog>
     ```
 
-    <span data-ttu-id="ca6ae-122">Další informace o vlastnosti osy atributu XML, naleznete v tématu [vlastnost osy atributu XML](../../../../visual-basic/language-reference/xml-axis/xml-attribute-axis-property.md).</span><span class="sxs-lookup"><span data-stu-id="ca6ae-122">For more information about XML attribute axis properties, see [XML Attribute Axis Property](../../../../visual-basic/language-reference/xml-axis/xml-attribute-axis-property.md).</span></span>
+    <span data-ttu-id="cf5e5-122">For more information about XML attribute axis properties, see [XML Attribute Axis Property](../../../../visual-basic/language-reference/xml-axis/xml-attribute-axis-property.md).</span><span class="sxs-lookup"><span data-stu-id="cf5e5-122">For more information about XML attribute axis properties, see [XML Attribute Axis Property](../../../../visual-basic/language-reference/xml-axis/xml-attribute-axis-property.md).</span></span>
 
-### <a name="to-add-an-element-to-an-xml-literal"></a><span data-ttu-id="ca6ae-123">Chcete-li přidat prvek literál XML</span><span class="sxs-lookup"><span data-stu-id="ca6ae-123">To add an element to an XML literal</span></span>
+### <a name="to-add-an-element-to-an-xml-literal"></a><span data-ttu-id="cf5e5-123">To add an element to an XML literal</span><span class="sxs-lookup"><span data-stu-id="cf5e5-123">To add an element to an XML literal</span></span>
 
-1. <span data-ttu-id="ca6ae-124">Chcete-li přidat element do literálů XML, nejprve získejte odkaz na literál XML.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-124">To add an element to an XML literal, first obtain a reference to the XML literal.</span></span> <span data-ttu-id="ca6ae-125">Poté můžete přidat nový <xref:System.Xml.Linq.XElement> objektu jako poslední dílčí element elementu s použitím <xref:System.Xml.Linq.XContainer.Add%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-125">You can then add a new <xref:System.Xml.Linq.XElement> object as the last sub-element of the element by using the <xref:System.Xml.Linq.XContainer.Add%2A> method.</span></span> <span data-ttu-id="ca6ae-126">Můžete přidat nový <xref:System.Xml.Linq.XElement> objekt jako první dílčí element s použitím <xref:System.Xml.Linq.XContainer.AddFirst%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-126">You can add a new <xref:System.Xml.Linq.XElement> object as the first sub-element by using the <xref:System.Xml.Linq.XContainer.AddFirst%2A> method.</span></span>
+1. <span data-ttu-id="cf5e5-124">To add an element to an XML literal, first obtain a reference to the XML literal.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-124">To add an element to an XML literal, first obtain a reference to the XML literal.</span></span> <span data-ttu-id="cf5e5-125">You can then add a new <xref:System.Xml.Linq.XElement> object as the last sub-element of the element by using the <xref:System.Xml.Linq.XContainer.Add%2A> method.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-125">You can then add a new <xref:System.Xml.Linq.XElement> object as the last sub-element of the element by using the <xref:System.Xml.Linq.XContainer.Add%2A> method.</span></span> <span data-ttu-id="cf5e5-126">You can add a new <xref:System.Xml.Linq.XElement> object as the first sub-element by using the <xref:System.Xml.Linq.XContainer.AddFirst%2A> method.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-126">You can add a new <xref:System.Xml.Linq.XElement> object as the first sub-element by using the <xref:System.Xml.Linq.XContainer.AddFirst%2A> method.</span></span>
 
-    <span data-ttu-id="ca6ae-127">Chcete-li přidat nový prvek v konkrétním umístění vzhledem k další dílčí prvky, nejprve získejte odkaz na sousední dílčí element.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-127">To add a new element in a specific location relative to other sub-elements, first obtain a reference to an adjacent sub-element.</span></span> <span data-ttu-id="ca6ae-128">Poté můžete přidat nové <xref:System.Xml.Linq.XElement> objektu před sousední dílčí element s použitím <xref:System.Xml.Linq.XNode.AddBeforeSelf%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-128">You can then add the new <xref:System.Xml.Linq.XElement> object before the adjacent sub-element by using the <xref:System.Xml.Linq.XNode.AddBeforeSelf%2A> method.</span></span> <span data-ttu-id="ca6ae-129">Můžete také přidat nové <xref:System.Xml.Linq.XElement> objektu po sousední dílčí element s použitím <xref:System.Xml.Linq.XNode.AddAfterSelf%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-129">You can also add the new <xref:System.Xml.Linq.XElement> object after the adjacent sub-element by using the <xref:System.Xml.Linq.XNode.AddAfterSelf%2A> method.</span></span>
+    <span data-ttu-id="cf5e5-127">To add a new element in a specific location relative to other sub-elements, first obtain a reference to an adjacent sub-element.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-127">To add a new element in a specific location relative to other sub-elements, first obtain a reference to an adjacent sub-element.</span></span> <span data-ttu-id="cf5e5-128">You can then add the new <xref:System.Xml.Linq.XElement> object before the adjacent sub-element by using the <xref:System.Xml.Linq.XNode.AddBeforeSelf%2A> method.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-128">You can then add the new <xref:System.Xml.Linq.XElement> object before the adjacent sub-element by using the <xref:System.Xml.Linq.XNode.AddBeforeSelf%2A> method.</span></span> <span data-ttu-id="cf5e5-129">You can also add the new <xref:System.Xml.Linq.XElement> object after the adjacent sub-element by using the <xref:System.Xml.Linq.XNode.AddAfterSelf%2A> method.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-129">You can also add the new <xref:System.Xml.Linq.XElement> object after the adjacent sub-element by using the <xref:System.Xml.Linq.XNode.AddAfterSelf%2A> method.</span></span>
 
-    <span data-ttu-id="ca6ae-130">Následující příklad ukazuje příklady každého z následujících postupů.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-130">The following example shows examples of each of these techniques.</span></span>
+    <span data-ttu-id="cf5e5-130">The following example shows examples of each of these techniques.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-130">The following example shows examples of each of these techniques.</span></span>
 
     [!code-vb[VbXmlSamples2#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXmlSamples2/VB/Module2.vb#6)]
 
-    <span data-ttu-id="ca6ae-131">Následující znázorňuje vzorový zdroj XML a změnit tento příklad kódu XML.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-131">The following shows sample source XML and modified XML from this code example.</span></span>
+    <span data-ttu-id="cf5e5-131">The following shows sample source XML and modified XML from this code example.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-131">The following shows sample source XML and modified XML from this code example.</span></span>
 
-    <span data-ttu-id="ca6ae-132">Zdrojového kódu XML:</span><span class="sxs-lookup"><span data-stu-id="ca6ae-132">Source XML:</span></span>
+    <span data-ttu-id="cf5e5-132">Source XML:</span><span class="sxs-lookup"><span data-stu-id="cf5e5-132">Source XML:</span></span>
 
     ```xml
     <?xml version="1.0"?>
@@ -142,7 +142,7 @@ ms.locfileid: "62053025"
     </Catalog>
     ```
 
-    <span data-ttu-id="ca6ae-133">Upravené XML:</span><span class="sxs-lookup"><span data-stu-id="ca6ae-133">Modified XML:</span></span>
+    <span data-ttu-id="cf5e5-133">Modified XML:</span><span class="sxs-lookup"><span data-stu-id="cf5e5-133">Modified XML:</span></span>
 
     ```xml
     <?xml version="1.0"?>
@@ -164,15 +164,15 @@ ms.locfileid: "62053025"
     </Catalog>
     ```
 
-### <a name="to-remove-an-element-or-attribute-from-an-xml-literal"></a><span data-ttu-id="ca6ae-134">K odebrání literál XML elementu nebo atributu</span><span class="sxs-lookup"><span data-stu-id="ca6ae-134">To remove an element or attribute from an XML literal</span></span>
+### <a name="to-remove-an-element-or-attribute-from-an-xml-literal"></a><span data-ttu-id="cf5e5-134">To remove an element or attribute from an XML literal</span><span class="sxs-lookup"><span data-stu-id="cf5e5-134">To remove an element or attribute from an XML literal</span></span>
 
-1. <span data-ttu-id="ca6ae-135">Chcete-li odebrat ze literál XML elementu nebo atributu, získat odkaz na element nebo atribut a volání `Remove` způsob, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-135">To remove an element or an attribute from an XML literal, obtain a reference to the element or attribute and call the `Remove` method, as shown in the following example.</span></span>
+1. <span data-ttu-id="cf5e5-135">To remove an element or an attribute from an XML literal, obtain a reference to the element or attribute and call the `Remove` method, as shown in the following example.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-135">To remove an element or an attribute from an XML literal, obtain a reference to the element or attribute and call the `Remove` method, as shown in the following example.</span></span>
 
     [!code-vb[VbXmlSamples2#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXmlSamples2/VB/Module2.vb#7)]
 
-    <span data-ttu-id="ca6ae-136">Následující znázorňuje vzorový zdroj XML a změnit tento příklad kódu XML.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-136">The following shows sample source XML and modified XML from this code example.</span></span>
+    <span data-ttu-id="cf5e5-136">The following shows sample source XML and modified XML from this code example.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-136">The following shows sample source XML and modified XML from this code example.</span></span>
 
-    <span data-ttu-id="ca6ae-137">Zdrojového kódu XML:</span><span class="sxs-lookup"><span data-stu-id="ca6ae-137">Source XML:</span></span>
+    <span data-ttu-id="cf5e5-137">Source XML:</span><span class="sxs-lookup"><span data-stu-id="cf5e5-137">Source XML:</span></span>
 
     ```xml
     <?xml version="1.0"?>
@@ -192,7 +192,7 @@ ms.locfileid: "62053025"
     </Catalog>
     ```
 
-    <span data-ttu-id="ca6ae-138">Upravené XML:</span><span class="sxs-lookup"><span data-stu-id="ca6ae-138">Modified XML:</span></span>
+    <span data-ttu-id="cf5e5-138">Modified XML:</span><span class="sxs-lookup"><span data-stu-id="cf5e5-138">Modified XML:</span></span>
 
     ```xml
     <?xml version="1.0"?>
@@ -210,21 +210,21 @@ ms.locfileid: "62053025"
       </Book></Catalog>
     ```
 
-    <span data-ttu-id="ca6ae-139">Pokud chcete odebrat všechny elementy nebo atributy ze literál XML, získejte odkaz na literál XML a volat <xref:System.Xml.Linq.XElement.RemoveAll%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-139">To remove all elements or attributes from an XML literal, obtain a reference to the XML literal and call the <xref:System.Xml.Linq.XElement.RemoveAll%2A> method.</span></span>
+    <span data-ttu-id="cf5e5-139">To remove all elements or attributes from an XML literal, obtain a reference to the XML literal and call the <xref:System.Xml.Linq.XElement.RemoveAll%2A> method.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-139">To remove all elements or attributes from an XML literal, obtain a reference to the XML literal and call the <xref:System.Xml.Linq.XElement.RemoveAll%2A> method.</span></span>
 
-### <a name="to-modify-an-xml-literal"></a><span data-ttu-id="ca6ae-140">Chcete-li změnit literál XML</span><span class="sxs-lookup"><span data-stu-id="ca6ae-140">To modify an XML literal</span></span>
+### <a name="to-modify-an-xml-literal"></a><span data-ttu-id="cf5e5-140">To modify an XML literal</span><span class="sxs-lookup"><span data-stu-id="cf5e5-140">To modify an XML literal</span></span>
 
-1. <span data-ttu-id="ca6ae-141">Chcete-li změnit název elementu XML, nejprve získejte odkaz na element.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-141">To change the name of an XML element, first obtain a reference to the element.</span></span> <span data-ttu-id="ca6ae-142">Potom můžete vytvořit nový <xref:System.Xml.Linq.XElement> objekt, který se má nový název a předejte nový <xref:System.Xml.Linq.XElement> objektu <xref:System.Xml.Linq.XNode.ReplaceWith%2A> metoda existující <xref:System.Xml.Linq.XElement> objektu.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-142">You can then create a new <xref:System.Xml.Linq.XElement> object that has a new name and pass the new <xref:System.Xml.Linq.XElement> object to the <xref:System.Xml.Linq.XNode.ReplaceWith%2A> method of the existing <xref:System.Xml.Linq.XElement> object.</span></span>
+1. <span data-ttu-id="cf5e5-141">To change the name of an XML element, first obtain a reference to the element.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-141">To change the name of an XML element, first obtain a reference to the element.</span></span> <span data-ttu-id="cf5e5-142">You can then create a new <xref:System.Xml.Linq.XElement> object that has a new name and pass the new <xref:System.Xml.Linq.XElement> object to the <xref:System.Xml.Linq.XNode.ReplaceWith%2A> method of the existing <xref:System.Xml.Linq.XElement> object.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-142">You can then create a new <xref:System.Xml.Linq.XElement> object that has a new name and pass the new <xref:System.Xml.Linq.XElement> object to the <xref:System.Xml.Linq.XNode.ReplaceWith%2A> method of the existing <xref:System.Xml.Linq.XElement> object.</span></span>
 
-    <span data-ttu-id="ca6ae-143">Pokud má element, který chcete nahradit dílčím prvkům, které musí být zachovány, nastavte hodnotu nového <xref:System.Xml.Linq.XElement> objektu <xref:System.Xml.Linq.XContainer.Nodes%2A> vlastnosti existujícího elementu.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-143">If the element that you are replacing has sub-elements that must be preserved, set the value of the new <xref:System.Xml.Linq.XElement> object to the <xref:System.Xml.Linq.XContainer.Nodes%2A> property of the existing element.</span></span> <span data-ttu-id="ca6ae-144">To se nastavit hodnotu nového elementu na vnitřní XML z existujícího elementu.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-144">This will set the value of the new element to the inner XML of the existing element.</span></span> <span data-ttu-id="ca6ae-145">V opačném případě můžete nastavit hodnotu nový prvek `Value` vlastnosti existujícího elementu.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-145">Otherwise, you can set the value of the new element to the `Value` property of the existing element.</span></span>
+    <span data-ttu-id="cf5e5-143">If the element that you are replacing has sub-elements that must be preserved, set the value of the new <xref:System.Xml.Linq.XElement> object to the <xref:System.Xml.Linq.XContainer.Nodes%2A> property of the existing element.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-143">If the element that you are replacing has sub-elements that must be preserved, set the value of the new <xref:System.Xml.Linq.XElement> object to the <xref:System.Xml.Linq.XContainer.Nodes%2A> property of the existing element.</span></span> <span data-ttu-id="cf5e5-144">This will set the value of the new element to the inner XML of the existing element.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-144">This will set the value of the new element to the inner XML of the existing element.</span></span> <span data-ttu-id="cf5e5-145">Otherwise, you can set the value of the new element to the `Value` property of the existing element.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-145">Otherwise, you can set the value of the new element to the `Value` property of the existing element.</span></span>
 
-    <span data-ttu-id="ca6ae-146">Následující příklad kódu nahradí všechny \<popis > elementy \<abstraktní > element.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-146">The following code example replaces all \<Description> elements with an \<Abstract> element.</span></span> <span data-ttu-id="ca6ae-147">Obsah \<popis > element je zachováno v novém \<abstraktní > elementu s použitím <xref:System.Xml.Linq.XContainer.Nodes%2A> vlastnost \<popis > <xref:System.Xml.Linq.XElement> objektu.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-147">The content of the \<Description> element is preserved in the new \<Abstract> element by using the <xref:System.Xml.Linq.XContainer.Nodes%2A> property of the \<Description> <xref:System.Xml.Linq.XElement> object.</span></span>
+    <span data-ttu-id="cf5e5-146">The following code example replaces all \<Description> elements with an \<Abstract> element.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-146">The following code example replaces all \<Description> elements with an \<Abstract> element.</span></span> <span data-ttu-id="cf5e5-147">The content of the \<Description> element is preserved in the new \<Abstract> element by using the <xref:System.Xml.Linq.XContainer.Nodes%2A> property of the \<Description> <xref:System.Xml.Linq.XElement> object.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-147">The content of the \<Description> element is preserved in the new \<Abstract> element by using the <xref:System.Xml.Linq.XContainer.Nodes%2A> property of the \<Description> <xref:System.Xml.Linq.XElement> object.</span></span>
 
     [!code-vb[VbXmlSamples2#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXmlSamples2/VB/Module2.vb#8)]
 
-    <span data-ttu-id="ca6ae-148">Následující znázorňuje vzorový zdroj XML a změnit tento příklad kódu XML.</span><span class="sxs-lookup"><span data-stu-id="ca6ae-148">The following shows sample source XML and modified XML from this code example.</span></span>
+    <span data-ttu-id="cf5e5-148">The following shows sample source XML and modified XML from this code example.</span><span class="sxs-lookup"><span data-stu-id="cf5e5-148">The following shows sample source XML and modified XML from this code example.</span></span>
 
-    <span data-ttu-id="ca6ae-149">Zdrojového kódu XML:</span><span class="sxs-lookup"><span data-stu-id="ca6ae-149">Source XML:</span></span>
+    <span data-ttu-id="cf5e5-149">Source XML:</span><span class="sxs-lookup"><span data-stu-id="cf5e5-149">Source XML:</span></span>
 
     ```xml
     <?xml version="1.0"?>
@@ -256,7 +256,7 @@ ms.locfileid: "62053025"
     </Catalog>
     ```
 
-    <span data-ttu-id="ca6ae-150">Upravené XML:</span><span class="sxs-lookup"><span data-stu-id="ca6ae-150">Modified XML:</span></span>
+    <span data-ttu-id="cf5e5-150">Modified XML:</span><span class="sxs-lookup"><span data-stu-id="cf5e5-150">Modified XML:</span></span>
 
     ```xml
     <?xml version="1.0"?>
@@ -286,10 +286,10 @@ ms.locfileid: "62053025"
     </Catalog>
     ```
 
-## <a name="see-also"></a><span data-ttu-id="ca6ae-151">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ca6ae-151">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="cf5e5-151">Viz také:</span><span class="sxs-lookup"><span data-stu-id="cf5e5-151">See also</span></span>
 
-- [<span data-ttu-id="ca6ae-152">Manipulace s kódem XML v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="ca6ae-152">Manipulating XML in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)
-- [<span data-ttu-id="ca6ae-153">XML</span><span class="sxs-lookup"><span data-stu-id="ca6ae-153">XML</span></span>](../../../../visual-basic/programming-guide/language-features/xml/index.md)
-- [<span data-ttu-id="ca6ae-154">Postupy: Načtení XML ze souboru, řetězce nebo Stream</span><span class="sxs-lookup"><span data-stu-id="ca6ae-154">How to: Load XML from a File, String, or Stream</span></span>](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md)
-- [<span data-ttu-id="ca6ae-155">LINQ</span><span class="sxs-lookup"><span data-stu-id="ca6ae-155">LINQ</span></span>](../../../../visual-basic/programming-guide/language-features/linq/index.md)
-- [<span data-ttu-id="ca6ae-156">Úvod do LINQ v JAZYKU Visual Basic</span><span class="sxs-lookup"><span data-stu-id="ca6ae-156">Introduction to LINQ in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [<span data-ttu-id="cf5e5-152">Manipulating XML in Visual Basic</span><span class="sxs-lookup"><span data-stu-id="cf5e5-152">Manipulating XML in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)
+- [<span data-ttu-id="cf5e5-153">XML</span><span class="sxs-lookup"><span data-stu-id="cf5e5-153">XML</span></span>](../../../../visual-basic/programming-guide/language-features/xml/index.md)
+- [<span data-ttu-id="cf5e5-154">Postupy: Načtení XML ze souboru, řetězce nebo streamu</span><span class="sxs-lookup"><span data-stu-id="cf5e5-154">How to: Load XML from a File, String, or Stream</span></span>](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md)
+- [<span data-ttu-id="cf5e5-155">LINQ</span><span class="sxs-lookup"><span data-stu-id="cf5e5-155">LINQ</span></span>](../../../../visual-basic/programming-guide/language-features/linq/index.md)
+- [<span data-ttu-id="cf5e5-156">Introduction to LINQ in Visual Basic</span><span class="sxs-lookup"><span data-stu-id="cf5e5-156">Introduction to LINQ in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
