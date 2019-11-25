@@ -5,12 +5,12 @@ helpviewer_keywords:
 - .NET Framework 4.5, migrating from 1.1
 - .NET Framework 1.1, migrating to .NET Framework 4.5
 ms.assetid: 7ead0cb3-3b19-414a-8417-a1c1fa198d9e
-ms.openlocfilehash: a553d24a12b7ea227325a76d255e2ad53ada716f
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 11fe9ba36d32a4c9fe363b48f76a8bb2b24f073b
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739623"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73974972"
 ---
 # <a name="migrate-from-the-net-framework-11"></a>Migrace z .NET Framework 1,1
 
@@ -56,9 +56,9 @@ V některých případech však může být nutné upravit zdrojový kód a znov
 
 Chcete-li posoudit dopad možných nejnovějších změn v aplikaci, je nutné zkontrolovat následující seznamy změn:
 
-- Zásadní [změny v .NET Framework 2,0](https://go.microsoft.com/fwlink/?LinkId=125263) mění dokumenty v .NET Framework 2,0 SP1, které mohou ovlivnit aplikaci, která cílí na .NET Framework 1,1.
+- Zásadní [změny v .NET Framework 2,0](https://docs.microsoft.com/previous-versions/aa570326(v=msdn.10)) mění dokumenty v .NET Framework 2,0 SP1, které mohou ovlivnit aplikaci, která cílí na .NET Framework 1,1.
 
-- [Změny v .NET Framework 3,5 SP1 mění v](https://go.microsoft.com/fwlink/?LinkID=186989) dokumentu .NET Framework 3,5 a .NET Framework 3,5 SP1.
+- [Změny v .NET Framework 3,5 SP1 mění v](https://docs.microsoft.com/previous-versions/dotnet/articles/dd310284(v=msdn.10)) dokumentu .NET Framework 3,5 a .NET Framework 3,5 SP1.
 
 - [.NET Framework 4 problémy s migrací](net-framework-4-migration-issues.md) mění dokumenty mezi .NET Framework 3,5 SP1 a .NET Framework 4.
 

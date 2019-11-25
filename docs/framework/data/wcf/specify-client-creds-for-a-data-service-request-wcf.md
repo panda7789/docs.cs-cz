@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zadání přihlašovacích údajů klienta pro žádost o datovou službu (WCF Data Services)'
+title: 'Postupy: zadání přihlašovacích údajů klienta pro žádost o datovou službu (WCF Data Services)'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,20 +7,20 @@ dev_langs:
 helpviewer_keywords:
 - WCF Data Services, customizing requests
 ms.assetid: 1632f9af-e45f-4363-9222-03823daa8e28
-ms.openlocfilehash: 4177b7f5138bd3e3ddd63e4a0d8d4bcb2be01fbb
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: bb25319e3a4b1f8c7a3586c546ce1d589b48e438
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70790320"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975155"
 ---
-# <a name="how-to-specify-client-credentials-for-a-data-service-request-wcf-data-services"></a>Postupy: Zadání přihlašovacích údajů klienta pro žádost o datovou službu (WCF Data Services)
-Ve výchozím nastavení neposkytuje Klientská knihovna při odesílání žádosti [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] službě pověření. Můžete ale zadat, aby se přihlašovací údaje poslaly k ověření požadavků na datovou službu, a to <xref:System.Net.NetworkCredential> zadáním <xref:System.Data.Services.Client.DataServiceContext.Credentials%2A> vlastnosti <xref:System.Data.Services.Client.DataServiceContext>pro. Další informace najdete v tématu [zabezpečení WCF Data Services](securing-wcf-data-services.md). V příkladu v tomto tématu se dozvíte, jak explicitně zadat přihlašovací údaje, které [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klient používá při požadování dat z datové služby.  
+# <a name="how-to-specify-client-credentials-for-a-data-service-request-wcf-data-services"></a>Postupy: zadání přihlašovacích údajů klienta pro žádost o datovou službu (WCF Data Services)
+Ve výchozím nastavení neposkytuje Klientská knihovna při odesílání požadavku službě OData přihlašovací údaje. Můžete ale zadat, aby se přihlašovací údaje poslaly k ověření požadavků na datovou službu, a to zadáním <xref:System.Net.NetworkCredential> pro vlastnost <xref:System.Data.Services.Client.DataServiceContext.Credentials%2A> <xref:System.Data.Services.Client.DataServiceContext>. Další informace najdete v tématu [zabezpečení WCF Data Services](securing-wcf-data-services.md). V příkladu v tomto tématu se dozvíte, jak explicitně zadat přihlašovací údaje, které používá klient [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] při požadování dat z datové služby.  
   
- V příkladu v tomto tématu se používá ukázková datová služba Northwind a automaticky vygenerované třídy klientské datové služby. Tato služba a klientské datové třídy se vytvoří po dokončení [WCF Data Services rychlý Start](quickstart-wcf-data-services.md). Můžete také použít [ukázkovou datovou službu Northwind](https://go.microsoft.com/fwlink/?LinkId=187426) publikovanou na [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] webu. Tato ukázková datová služba je jen pro čtení a pokus o uložení změn vrátí chybu. Vzorové datové služby na [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] webu umožňují anonymní ověřování.  
+ V příkladu v tomto tématu se používá ukázková datová služba Northwind a automaticky vygenerované třídy klientské datové služby. Tato služba a klientské datové třídy se vytvoří po dokončení [WCF Data Services rychlý Start](quickstart-wcf-data-services.md). Můžete také použít [ukázkovou datovou službu Northwind](https://go.microsoft.com/fwlink/?LinkId=187426) , která je publikována na webu OData. Tato ukázková datová služba je jen pro čtení a při pokusu o uložení změn se vrátí chyba. Služba ukázkových dat na webu OData povoluje anonymní ověřování.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad je ze stránky s kódem na pozadí pro soubor jazyk Extensible Application Markup Language (XAML) (XAML), který je hlavní stránkou aplikace Windows Presentation Framework. V tomto příkladu se `LoginWindow` zobrazí instance pro shromažďování ověřovacích přihlašovacích údajů od uživatele a pak tyto přihlašovací údaje použije při vytváření žádosti o datovou službu.  
+ Následující příklad je ze stránky s kódem na pozadí pro soubor jazyk Extensible Application Markup Language (XAML) (XAML), který je hlavní stránkou aplikace Windows Presentation Framework. Tento příklad zobrazí instanci `LoginWindow` ke shromáždění přihlašovacích údajů od uživatele a pak použije tyto přihlašovací údaje při vytváření žádosti o datovou službu.  
   
  [!code-csharp[Astoria Northwind Client#ClientCredentials](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/clientcredentials.xaml.cs#clientcredentials)]  
  [!code-vb[Astoria Northwind Client#ClientCredentials](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/clientcredentials.xaml.vb#clientcredentials)]

@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 21271167-fe7f-46ba-a81f-a6812ea649d4
 author: jkoritzinsky
 ms.author: jekoritz
-ms.openlocfilehash: 8f9624414a2b423bd43e8790d11b70ae1ca6286d
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 8d9b8eb274777a0ed019a207c6e8610cc73ec390
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216228"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73973312"
 ---
 # <a name="exposing-net-core-components-to-com"></a>Vystavení součástí .NET Core pro COM
 
@@ -37,38 +37,38 @@ Prvním krokem je vytvoření knihovny.
     dotnet new classlib
     ```
 
-2. Otevřít `Class1.cs`.
-3. Přidejte `using System.Runtime.InteropServices;` na začátek souboru.
+2. Otevřete `Class1.cs`.
+3. Do horní části souboru přidejte `using System.Runtime.InteropServices;`.
 4. Vytvořte rozhraní s názvem `IServer`. Příklad:
 
    [!code-csharp[The IServer interface](~/samples/core/extensions/COMServerDemo/COMContract/IServer.cs)]
 
-5. `[Guid("<IID>")]` Přidejte atribut do rozhraní s identifikátorem GUID rozhraní pro rozhraní modelu COM, které implementujete. Například, `[Guid("fe103d6e-e71b-414c-80bf-982f18f6c1c7")]`. Všimněte si, že tento identifikátor GUID musí být jedinečný, protože se jedná o jediný identifikátor tohoto rozhraní pro COM. V aplikaci Visual Studio můžete vygenerovat GUID tak, že kliknete na nástroje > vytvořit GUID a otevřete nástroj vytvořit GUID.
-6. Přidejte do rozhraní atribut a určete, jaká základní rozhraní com by měla vaše rozhraní implementovat. `[InterfaceType]`
-7. Vytvořte třídu s názvem `Server` , která `IServer`implementuje.
-8. `[Guid("<CLSID>")]` Přidejte atribut do třídy s identifikátorem GUID třídy pro třídu com, kterou implementujete. Například, `[Guid("9f35b6f5-2c05-4e7f-93aa-ee087f6e7ab6")]`. Stejně jako u identifikátoru GUID rozhraní musí být tento identifikátor GUID jedinečný, protože se jedná o jediný identifikátor tohoto rozhraní modelu COM.
-9. `[ComVisible(true)]` Přidejte atribut do rozhraní i do třídy.
+5. Přidejte atribut `[Guid("<IID>")]` do rozhraní s identifikátorem GUID rozhraní pro rozhraní modelu COM, které implementujete. Například `[Guid("fe103d6e-e71b-414c-80bf-982f18f6c1c7")]`. Všimněte si, že tento identifikátor GUID musí být jedinečný, protože se jedná o jediný identifikátor tohoto rozhraní pro COM. V aplikaci Visual Studio můžete vygenerovat GUID tak, že kliknete na nástroje > vytvořit GUID a otevřete nástroj vytvořit GUID.
+6. Přidejte atribut `[InterfaceType]` do rozhraní a určete, jaká základní rozhraní COM by měla vaše rozhraní implementovat.
+7. Vytvořte třídu s názvem `Server`, která implementuje `IServer`.
+8. Přidejte atribut `[Guid("<CLSID>")]` do třídy s identifikátorem GUID třídy pro třídu COM, kterou implementujete. Například `[Guid("9f35b6f5-2c05-4e7f-93aa-ee087f6e7ab6")]`. Stejně jako u identifikátoru GUID rozhraní musí být tento identifikátor GUID jedinečný, protože se jedná o jediný identifikátor tohoto rozhraní modelu COM.
+9. Přidejte atribut `[ComVisible(true)]` do rozhraní i do třídy.
 
 > [!IMPORTANT]
 > Na rozdíl od .NET Framework vyžaduje .NET Core zadání identifikátoru CLSID libovolné třídy, kterou chcete aktivovatelné prostřednictvím modelu COM.
 
 ## <a name="generate-the-com-host"></a>Generování hostitele COM
 
-1. Otevřete soubor `<EnableComHosting>true</EnableComHosting>` projektu a přidejte ho dovnitř `<PropertyGroup></PropertyGroup>` tagu. `.csproj`
+1. Otevřete `.csproj` soubor projektu a přidejte `<EnableComHosting>true</EnableComHosting>` dovnitř značky `<PropertyGroup></PropertyGroup>`.
 2. Sestavte projekt.
 
-Výsledný výstup `ProjectName.dll`bude obsahovat soubor `ProjectName.runtimeconfig.json` , `ProjectName.deps.json`a `ProjectName.comhost.dll` .
+Výsledný výstup bude mít `ProjectName.dll`, `ProjectName.deps.json`, `ProjectName.runtimeconfig.json` a soubor `ProjectName.comhost.dll`.
 
 ## <a name="register-the-com-host-for-com"></a>Registrace hostitele COM pro COM
 
-Otevřete příkazový řádek se zvýšenými oprávněními `regsvr32 ProjectName.comhost.dll`a spusťte příkaz. Tím zaregistrujete všechny vystavené objekty .NET pomocí modelu COM.
+Otevřete příkazový řádek se zvýšenými oprávněními a spusťte `regsvr32 ProjectName.comhost.dll`. Tím zaregistrujete všechny vystavené objekty .NET pomocí modelu COM.
 
 ## <a name="enabling-regfree-com"></a>Povolení RegFree COM
 
-1. Otevřete soubor `<EnableRegFreeCom>true</EnableRegFreeCom>` projektu a přidejte ho dovnitř `<PropertyGroup></PropertyGroup>` tagu. `.csproj`
+1. Otevřete `.csproj` soubor projektu a přidejte `<EnableRegFreeCom>true</EnableRegFreeCom>` dovnitř značky `<PropertyGroup></PropertyGroup>`.
 2. Sestavte projekt.
 
-Výsledný výstup teď bude mít `ProjectName.X.manifest` i soubor. Tento soubor je souběžný manifest pro použití s modelem COM bez registru.
+Výsledný výstup teď bude mít taky soubor `ProjectName.X.manifest`. Tento soubor je souběžný manifest pro použití s modelem COM bez registru.
 
 ## <a name="sample"></a>Ukázka
 
@@ -76,6 +76,6 @@ V úložišti dotnet/Samples na GitHubu je plně funkční [Ukázka serveru com]
 
 ## <a name="additional-notes"></a>Další poznámky
 
-Na rozdíl od .NET Framework neexistuje žádná podpora v .NET Core pro generování knihovny typů COM (TLB) ze sestavení .NET Core. Buď budete muset ručně napsat soubor IDL nebo C++ hlavičku pro nativní deklarace vašich rozhraní.
+Na rozdíl od .NET Framework neexistuje žádná podpora v .NET Core pro generování knihovny typů COM (TLB) ze sestavení .NET Core. Pokyny jsou buď k ručnímu zápisu souboru IDL, nebo C/C++ hlavičku pro nativní deklarace rozhraní com.
 
-Kromě toho se nepodporují načítání .NET Framework a .NET Core do stejného procesu a jako výsledek načtení serveru COM .NET Core do procesu klienta .NET Framework COM nebo naopak není podporována.
+Kromě toho mají při načítání .NET Framework a .NET Core do stejného procesu diagnostické omezení. Primární omezení je ladění spravovaných komponent, protože není možné současně ladit .NET Framework i .NET Core. Kromě toho tyto dvě instance modulu runtime nesdílejí spravovaná sestavení. To znamená, že není možné sdílet skutečné typy .NET napříč dvěma moduly runtime a místo toho musí být všechny interakce omezeny na vystavené kontrakty COM rozhraní.

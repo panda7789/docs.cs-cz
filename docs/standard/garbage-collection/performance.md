@@ -6,48 +6,30 @@ helpviewer_keywords:
 - garbage collection, troubleshooting
 - garbage collection, performance
 ms.assetid: c203467b-e95c-4ccf-b30b-953eb3463134
-ms.openlocfilehash: 833bf46b973988196fea37da18bac9923ecd6dcc
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8d40091420c29c86f2ebb25f14c17ae4f7a1c44a
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73141370"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73974766"
 ---
 # <a name="garbage-collection-and-performance"></a>Uvolnění paměti a výkon
 
-<a name="top"></a>Toto téma popisuje problémy související s uvolňováním paměti a využití paměti. Řeší problémy, které se týkají spravované haldy, a vysvětluje, jak minimalizovat vliv uvolňování paměti v aplikacích. Každý problém obsahuje odkazy na postupy, které můžete použít k prozkoumání problémů.
-
-Toto téma obsahuje následující oddíly:
-
-- [Nástroje pro analýzu výkonu](#performance_analysis_tools)
-
-- [Řešení potíží s výkonem](#troubleshooting_performance_issues)
-
-- [Pokyny pro řešení potíží](#troubleshooting_guidelines)
-
-- [Postupy kontroly výkonu](#performance_check_procedures)
-
-<a name="performance_analysis_tools"></a>
+Toto téma popisuje problémy související s uvolňováním paměti a využití paměti. Řeší problémy, které se týkají spravované haldy, a vysvětluje, jak minimalizovat vliv uvolňování paměti v aplikacích. Každý problém obsahuje odkazy na postupy, které můžete použít k prozkoumání problémů.
 
 ## <a name="performance-analysis-tools"></a>Nástroje pro analýzu výkonu
 
-V následujících částech jsou popsány nástroje, které jsou k dispozici pro zkoumání potíží s využitím paměti a uvolňování paměti. [Postupy](#performance_check_procedures) uvedené dále v tomto tématu se týkají těchto nástrojů.
-
-<a name="perf_counters"></a>
+V následujících částech jsou popsány nástroje, které jsou k dispozici pro zkoumání potíží s využitím paměti a uvolňování paměti. [Postupy](#performance-check-procedures) uvedené dále v tomto tématu se týkají těchto nástrojů.
 
 ### <a name="memory-performance-counters"></a>Čítače výkonu paměti
 
 K shromažďování údajů o výkonu můžete použít čítače výkonu. Pokyny najdete v tématu [profilace modulu runtime](../../../docs/framework/debug-trace-profile/runtime-profiling.md). Kategorie paměti .NET CLR čítače výkonu, jak je popsáno v tématu [čítače výkonu v .NET Framework](../../../docs/framework/debug-trace-profile/performance-counters.md), poskytuje informace o uvolňování paměti.
-
-<a name="sos"></a>
 
 ### <a name="debugging-with-sos"></a>Ladění pomocí SOS
 
 K prozkoumání objektů na spravované haldě můžete použít [ladicí program systému Windows (WinDbg)](/windows-hardware/drivers/debugger/index) .
 
 Chcete-li nainstalovat nástroj WinDbg, nainstalujte ladicí nástroje pro systém Windows ze stránky [Stáhnout ladicí nástroje pro Windows](/windows-hardware/drivers/debugger/debugger-download-tools) .
-
-<a name="etw"></a>
 
 ### <a name="garbage-collection-etw-events"></a>Události Trasování událostí pro Windows uvolnění paměti
 
@@ -61,8 +43,6 @@ Trasování událostí pro Windows (ETW) je systém trasování, který doplňuj
 
 Protokolování událostí ETW je efektivní a nebude maskovat žádné problémy s výkonem spojené s uvolňováním paměti. Proces může poskytovat vlastní události ve spojení s událostmi ETW. Při protokolu mohou být události aplikace i události uvolňování paměti v souvislosti s určením, jak a kdy dochází k problémům s haldou. Například serverová aplikace může poskytovat události na začátku a konci žádosti klienta.
 
-<a name="profiling_api"></a>
-
 ### <a name="the-profiling-api"></a>Rozhraní API profilování
 
 Rozhraní pro profilaci modulu CLR (Common Language Runtime) poskytují podrobné informace o objektech, které byly ovlivněny během uvolňování paměti. Profiler může být upozorněn při zahájení a ukončení uvolňování paměti. Může poskytovat sestavy o objektech na spravované haldě, včetně identifikace objektů v každé generaci. Další informace najdete v tématu [profilace – přehled](../../../docs/framework/unmanaged-api/profiling/profiling-overview.md).
@@ -72,10 +52,6 @@ Profilery můžou poskytovat komplexní informace. Složité profilery ale můž
 ### <a name="application-domain-resource-monitoring"></a>Sledování prostředků domény aplikace
 
 Počínaje .NET Framework 4 umožňuje monitorování prostředků domény aplikace (ARM) hostitelům monitorovat využití procesoru a paměti podle aplikační domény. Další informace najdete v tématu [monitorování prostředků domény aplikace](../../../docs/standard/garbage-collection/app-domain-resource-monitoring.md).
-
-[Zpět na začátek](#top)
-
-<a name="troubleshooting_performance_issues"></a>
 
 ## <a name="troubleshooting-performance-issues"></a>Řešení potíží s výkonem
 
@@ -213,10 +189,6 @@ Doba trvání kolekce je primárně faktorem počtu objektů, které jsou po př
 |------------------------|
 |[Zjistěte, jestli je vysoké využití procesoru způsobeno uvolňováním paměti.](#HighCPU)<br /><br /> [Nastavte zarážku na konci uvolňování paměti.](#GenBreak)|
 
-[Zpět na začátek](#top)
-
-<a name="troubleshooting_guidelines"></a>
-
 ## <a name="troubleshooting-guidelines"></a>Pokyny pro řešení potíží
 
 Tato část popisuje pokyny, které byste měli vzít v úvahu při zahájení šetření.
@@ -258,10 +230,6 @@ Následující postup popisuje, jak nastavit zarážku, abyste mohli změřit sp
   Tento příkaz vynutí přerušení, pokud je **RestartEE** provedeno po uvolnění objektů generace 2 pro uvolňování paměti.
 
   V uvolňování paměti serveru pouze jedno vlákno volá **RestartEE**, takže během uvolňování paměti 2. generace dojde k zarážce pouze jednou.
-
-[Zpět na začátek](#top)
-
-<a name="performance_check_procedures"></a>
 
 ## <a name="performance-check-procedures"></a>Postupy kontroly výkonu
 
@@ -556,7 +524,7 @@ Tato část popisuje následující postupy k izolaci příčiny problému s vý
     4    df0    GC SuspendEE
     ```
 
-    Finalizační vlákno indikuje, který finalizační metodu (pokud existuje) se právě spouští. Když finalizační vlákno nespouští žádné finalizační metody, čeká na událost, aby ji informovala o své práci. Ve většině případů se v tomto stavu zobrazí finalizační vlákno, protože běží na THREAD_HIGHEST_PRIORITY a má za následek, že se mají dokončit spuštěné finalizační metody, pokud jsou nějaké velmi rychlé.
+    Finalizační vlákno indikuje, který finalizační metodu (pokud existuje) se právě spouští. Když finalizační vlákno nespouští žádné finalizační metody, čeká na událost, aby ji informovala o své práci. Ve většině případů se v tomto stavu zobrazí finalizační vlákna, protože se spustí na THREAD_HIGHEST_PRIORITY a má by se dokončit spouštění finalizační metody, pokud jsou nějaké velmi rychlé.
 
 <a name="Fragmented"></a>
 

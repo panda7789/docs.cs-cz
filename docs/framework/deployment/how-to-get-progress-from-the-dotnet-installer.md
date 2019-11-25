@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 0a1a3ba3-7e46-4df2-afd3-f3a8237e1c4f
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bdd2832f112706cef6050774ce3f6db5a940424a
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: e07bb3443fb9461fa707d66e74350a39980c60c0
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052090"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975555"
 ---
 # <a name="how-to-get-progress-from-the-net-framework-45-installer"></a>Postupy: Získání procesu z instalačního programu .NET Framework 4.5
 
@@ -26,7 +26,7 @@ ms.locfileid: "71052090"
 
         `dotNetFx45_Full_x86_x64.exe /q /norestart /pipe section-name`
 
-        Kde *název oddílu* je libovolný název, který chcete použít k identifikaci vaší aplikace. .NET Framework instalační program asynchronně načítá a zapisuje do MMIO oddílu, takže v této době může být užitečné používat události a zprávy. V tomto příkladu je proces instalace .NET Framework vytvořen konstruktorem, který obě přiděluje oddíl MMIO (`TheSectionName`) a definuje událost (`TheEventName`):
+        Kde *název oddílu* je libovolný název, který chcete použít k identifikaci vaší aplikace. .NET Framework instalační program asynchronně načítá a zapisuje do MMIO oddílu, takže v této době může být užitečné používat události a zprávy. V tomto příkladu je proces instalace .NET Framework vytvořen konstruktorem, který současně přiděluje oddíl MMIO (`TheSectionName`) a definuje událost (`TheEventName`):
 
         ```cpp
         Server():ChainerSample::MmioChainer(L"TheSectionName", L"TheEventName")
@@ -34,7 +34,7 @@ ms.locfileid: "71052090"
 
         Nahraďte prosím názvy názvy, které jsou jedinečné pro instalační program.
 
-    2. Přečtěte si část MMIO. V .NET Framework 4,5 jsou operace stažení a instalace současné: V průběhu stahování jiné součásti se může nainstalovat jedna součást .NET Framework. V důsledku toho se do části MMIO pošle zpět (tj. zápis) jako dvě čísla (`m_downloadSoFar` a `m_installSoFar`), která se zvyšují od 0 do 255. Po napsání 255 a ukončení .NET Framework se instalace dokončí.
+    2. Přečtěte si část MMIO. V .NET Framework 4,5 jsou operace stažení a instalace současné: během stahování jiné součásti se může nainstalovat jedna součást .NET Framework. V důsledku toho se do části MMIO pošle zpět (tj. zápis) jako dvě čísla (`m_downloadSoFar` a `m_installSoFar`), která se zvyšují od 0 do 255. Po napsání 255 a ukončení .NET Framework se instalace dokončí.
 
 - **Ukončovací kódy**. Následující ukončovací kódy z příkazu pro volání nástroje .NET Framework 4,5 Redistributable program označují, zda byla instalace úspěšná nebo neúspěšná:
 
@@ -46,7 +46,7 @@ ms.locfileid: "71052090"
 
   - Všechny ostatní kódy – při instalaci došlo k chybám. Podrobnější informace najdete v souborech protokolu vytvořených v% Temp%.
 
-- **Ruší se instalace**. Instalaci můžete kdykoli zrušit pomocí `Abort` metody pro `m_downloadAbort` nastavení příznaků a `m_ installAbort` v oddílu MMIO.
+- **Ruší se instalace**. Instalaci můžete kdykoli zrušit pomocí metody `Abort` k nastavení příznaků `m_downloadAbort` a `m_ installAbort` v části MMIO.
 
 ## <a name="chainer-sample"></a>Ukázka řetězu
 
@@ -55,15 +55,15 @@ Ukázka zřetězení Tichy spustí a sleduje nastavení .NET Framework 4,5 běhe
 > [!WARNING]
 > Příklad musíte spustit jako správce.
 
-Kompletní řešení sady Visual Studio pro [ukázku .NET Framework 4,5 chainer](https://go.microsoft.com/fwlink/?LinkId=231345) si můžete stáhnout z Galerie UKÁZEK na webu MSDN.
+Kompletní řešení sady Visual Studio pro [ukázku .NET Framework 4,5 chainer](https://code.msdn.microsoft.com/NET-Framework-45-Developer-e416a0ba) si můžete stáhnout z Galerie UKÁZEK na webu MSDN.
 
-V následujících částech najdete popis důležitých souborů v této ukázce: MMIOChainer. h, ChainingdotNet4. cpp a IProgressObserver. h.
+V následujících částech jsou popsány významné soubory v této ukázce: MMIOChainer. h, ChainingdotNet4. cpp a IProgressObserver. h.
 
-#### <a name="mmiochainerh"></a>MMIOChainer.h
+#### <a name="mmiochainerh"></a>MMIOChainer. h
 
-- Soubor MMIOChainer. h (viz [kompletní kód](https://go.microsoft.com/fwlink/?LinkId=231369)) obsahuje definici datové struktury a základní třídu, ze které by měla být odvozena třída řetězení. .NET Framework 4,5 rozšiřuje strukturu dat MMIO pro zpracování dat, která vyžaduje Instalační program .NET Framework 4,5. Změny struktury MMIO jsou zpětně kompatibilní, takže .NET Framework 4 chainer může pracovat s nastavením .NET Framework 4,5 bez nutnosti opětovné kompilace. Tento scénář ale nepodporuje funkci pro snížení restartu systému.
+- Soubor MMIOChainer. h (viz [kompletní kód](https://code.msdn.microsoft.com/NET-Framework-45-Developer-e416a0ba/sourcecode?fileId=47345&pathId=663039622)) obsahuje definici datové struktury a základní třídu, ze které by měla být odvozena třída řetězení. .NET Framework 4,5 rozšiřuje strukturu dat MMIO pro zpracování dat, která vyžaduje Instalační program .NET Framework 4,5. Změny struktury MMIO jsou zpětně kompatibilní, takže .NET Framework 4 chainer může pracovat s nastavením .NET Framework 4,5 bez nutnosti opětovné kompilace. Tento scénář ale nepodporuje funkci pro snížení restartu systému.
 
-    Pole verze poskytuje způsob identifikace revizí struktury a formátu zpráv. Instalační program určuje verzi rozhraní chainer voláním `VirtualQuery` funkce k určení velikosti mapování souboru. .NET Framework Pokud je velikost dostatečně velká, aby se vešla do pole verze, .NET Framework instalační program používá zadanou hodnotu. Pokud mapování souborů je příliš malé, aby obsahovalo pole verze, což je případ s .NET Framework 4, proces instalace předpokládá, že verze je 0 (4). Pokud řetěz nepodporuje verzi zprávy, kterou .NET Framework instalační program potřebuje odeslat, .NET Framework instalační program předpokládá odpověď ignore.
+    Pole verze poskytuje způsob identifikace revizí struktury a formátu zpráv. .NET Framework instalační program určuje verzi rozhraní chainer voláním funkce `VirtualQuery` a určí velikost mapování souboru. Pokud je velikost dostatečně velká, aby se vešla do pole verze, .NET Framework instalační program používá zadanou hodnotu. Pokud mapování souborů je příliš malé, aby obsahovalo pole verze, což je případ s .NET Framework 4, proces instalace předpokládá, že verze je 0 (4). Pokud řetěz nepodporuje verzi zprávy, kterou .NET Framework instalační program potřebuje odeslat, .NET Framework instalační program předpokládá odpověď ignore.
 
     Struktura dat MMIO je definována takto:
 
@@ -94,11 +94,11 @@ V následujících částech najdete popis důležitých souborů v této ukázc
         };
     ```
 
-- Struktura dat by neměla být použita přímo; místo toho `MmioChainer` použijte třídu k implementaci vašeho řetězu. `MmioDataStructure` Je odvozen od `MmioChainer` třídy za účelem zřetězení .NET Framework 4,5 distribuovatelné.
+- Struktura dat `MmioDataStructure` by se neměla používat přímo; místo toho použijte třídu `MmioChainer` k implementaci vašeho řetězu. Je odvozena od třídy `MmioChainer` pro zřetězení .NET Framework 4,5 distribuovatelných.
 
-#### <a name="iprogressobserverh"></a>IProgressObserver.h
+#### <a name="iprogressobserverh"></a>IProgressObserver. h
 
-- Soubor IProgressObserver. h Implementuje pozorovatele průběhu ([Viz kompletní kód](https://go.microsoft.com/fwlink/?LinkId=231370)). Tento pozorovatel se upozorní na průběh stahování a instalace (zadaný jako nepodepsaný `char`, 0-255, který indikuje 1%-100% dokončení). Pozorovatel je upozorněn také v případě, že chainee odesílá zprávu a pozorovatel by měl poslat odpověď.
+- Soubor IProgressObserver. h Implementuje pozorovatele průběhu ([Viz kompletní kód](https://code.msdn.microsoft.com/NET-Framework-45-Developer-e416a0ba/sourcecode?fileId=47345&pathId=1263700592)). Tento pozorovatel se upozorní na průběh stahování a instalace (zadaný jako nepodepsaný `char`, 0-255, který indikuje 1%-100% dokončení). Pozorovatel je upozorněn také v případě, že chainee odesílá zprávu a pozorovatel by měl poslat odpověď.
 
     ```cpp
         class IProgressObserver
@@ -110,9 +110,9 @@ V následujících částech najdete popis důležitých souborů v této ukázc
         };
     ```
 
-#### <a name="chainingdotnet45cpp"></a>ChainingdotNet4.5.cpp
+#### <a name="chainingdotnet45cpp"></a>ChainingdotNet 4.5. cpp
 
-- Soubor [chainingdotnet 4.5. cpp](https://go.microsoft.com/fwlink/?LinkId=231368) implementuje `Server` třídu, která `MmioChainer` je odvozena z třídy, a přepíše příslušné metody pro zobrazení informací o průběhu. MmioChainer vytvoří oddíl se zadaným názvem oddílu a inicializuje řetěz se zadaným názvem události. Název události je uložen v mapované datové struktuře. Název oddílu a události by měl být jedinečný. `Server` Třída v následujícím kódu spustí zadaný instalační program, monitoruje jeho průběh a vrátí ukončovací kód.
+- Soubor [chainingdotnet 4.5. cpp](https://code.msdn.microsoft.com/NET-Framework-45-Developer-e416a0ba/sourcecode?fileId=47345&pathId=1757268882) implementuje třídu `Server`, která je odvozena z třídy `MmioChainer` a přepíše příslušné metody pro zobrazení informací o průběhu. MmioChainer vytvoří oddíl se zadaným názvem oddílu a inicializuje řetěz se zadaným názvem události. Název události je uložen v mapované datové struktuře. Název oddílu a události by měl být jedinečný. Třída `Server` v následujícím kódu spustí zadaný instalační program, monitoruje jeho průběh a vrátí ukončovací kód.
 
     ```cpp
     class Server : public ChainerSample::MmioChainer, public ChainerSample::IProgressObserver
@@ -202,7 +202,7 @@ V následujících částech najdete popis důležitých souborů v této ukázc
     }
     ```
 
-- Můžete změnit cestu spustitelného souboru (Setup. exe v příkladu) v `Launch` metodě, aby odkazovala na správné umístění, nebo přizpůsobit kód pro určení umístění. Základní třída poskytuje blokující `Run()` metodu, která volá odvozenou třídu. `MmioChainer`
+- Můžete změnit cestu spustitelného souboru (Setup. exe v příkladu) v metodě `Launch`, který odkazuje na správné umístění, nebo přizpůsobit kód pro určení umístění. Třída `MmioChainer` Base poskytuje blokující `Run()` metodu, která volá odvozená třída.
 
     ```cpp
     bool Launch(const CString& args)
@@ -230,7 +230,7 @@ V následujících částech najdete popis důležitých souborů v této ukázc
     }
     ```
 
-- `Send` Metoda zachycuje a zpracovává zprávy. V této verzi .NET Framework jediná podporovaná zpráva je zpráva Zavřít aplikaci.
+- Metoda `Send` zachycuje a zpracovává zprávy. V této verzi .NET Framework jediná podporovaná zpráva je zpráva Zavřít aplikaci.
 
     ```cpp
             // SendMessage
@@ -284,7 +284,7 @@ V následujících částech najdete popis důležitých souborů v této ukázc
     };
     ```
 
-- Data o průběhu jsou bez `char` znaménka mezi 0 (0%) a 255 (100%).
+- Data o průběhu jsou nepodepsaný `char` mezi 0 (0%) a 255 (100%).
 
     ```cpp
     private: // IProgressObserver
@@ -293,7 +293,7 @@ V následujících částech najdete popis důležitých souborů v této ukázc
        }
     ```
 
-- Hodnota HRESULT je předána `Finished` metodě.
+- Hodnota HRESULT je předána metodě `Finished`.
 
     ```cpp
     virtual void Finished(HRESULT hr)
@@ -305,9 +305,9 @@ V následujících částech najdete popis důležitých souborů v této ukázc
     ```
 
     > [!IMPORTANT]
-    > Distribuovatelné součásti .NET Framework 4,5 obvykle zapisuje mnoho zpráv o průběhu a jednu zprávu, která indikuje dokončení (na straně řetězení). Také se čte asynchronně a hledá `Abort` záznamy. Pokud obdrží `Abort` záznam, zruší instalaci a zapíše dokončený záznam se E_ABORT jako jeho data po přerušení instalace a instalaci operací byla vrácena zpět.
+    > Distribuovatelné součásti .NET Framework 4,5 obvykle zapisuje mnoho zpráv o průběhu a jednu zprávu, která indikuje dokončení (na straně řetězení). Také se čte asynchronně a hledá záznamy `Abort`. Pokud obdrží záznam `Abort`, zruší instalaci a zapíše dokončený záznam s E_ABORT jako jeho data po dokončení instalace a vrácení operací s nastavením zpět.
 
-Typický Server vytvoří náhodný název souboru MMIO, vytvoří soubor (jak je znázorněno v předchozím příkladu kódu v `Server::CreateSection`části) a spustí Distribuovatelný `CreateProcess` pomocí metody a předání názvu kanálu s `-pipe someFileSectionName` možností. Server by měl implementovat `OnProgress`metody `Send`, a `Finished` s kódem specifickým pro uživatelské rozhraní aplikace.
+Typický Server vytvoří náhodný název souboru MMIO, vytvoří soubor (jak je znázorněno v předchozím příkladu kódu, v `Server::CreateSection`), a spustí Redistributable pomocí metody `CreateProcess` a předáním názvu kanálu s možností `-pipe someFileSectionName`. Server by měl implementovat metody `OnProgress`, `Send`a `Finished` s kódem specifickým pro uživatelské rozhraní aplikace.
 
 ## <a name="see-also"></a>Viz také:
 

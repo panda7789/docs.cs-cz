@@ -4,12 +4,12 @@ description: Popis podrobností algoritmu načítání spravovaného sestavení 
 ms.date: 08/09/2019
 author: sdmaclea
 ms.author: stmaclea
-ms.openlocfilehash: bf95cbd0eebed064f0198ae9b0f7a4288a938f8a
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.openlocfilehash: 312a320676be6eb453697e0704ab771a6707618b
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105369"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73973502"
 ---
 # <a name="managed-assembly-loading-algorithm"></a>Algoritmus načítání spravovaného sestavení
 
@@ -19,7 +19,7 @@ Všechna spravovaná sestavení s výjimkou satelitních sestavení a `WinRT` se
 
 ## <a name="when-are-managed-assemblies-loaded"></a>Kdy jsou spravovaná sestavení načtena?
 
-Nejběžnějším mechanismem pro aktivaci spravovaného zatížení sestavení je statický odkaz na sestavení. Tyto odkazy jsou vloženy kompilátorem vždy, když kód používá typ definovaný v jiném sestavení. Tato sestavení jsou načtena`load-by-name`() podle potřeby modulem runtime.
+Nejběžnějším mechanismem pro aktivaci spravovaného zatížení sestavení je statický odkaz na sestavení. Tyto odkazy jsou vloženy kompilátorem vždy, když kód používá typ definovaný v jiném sestavení. Tato sestavení jsou načtena (`load-by-name`) podle potřeby modulem runtime.
 
 Přímé použití specifických rozhraní API také spustí načítání:
 
@@ -28,43 +28,43 @@ Přímé použití specifických rozhraní API také spustí načítání:
 |<xref:System.Runtime.Loader.AssemblyLoadContext.LoadFromAssemblyName%2A?displayProperty=nameWithType>|`Load-by-name`|[Tato](../../csharp/language-reference/keywords/this.md) instance.|
 |<xref:System.Runtime.Loader.AssemblyLoadContext.LoadFromAssemblyPath%2A?displayProperty=nameWithType><p><xref:System.Runtime.Loader.AssemblyLoadContext.LoadFromNativeImagePath%2A?displayProperty=nameWithType>|Načtení z cesty|[Tato](../../csharp/language-reference/keywords/this.md) instance.|
 <xref:System.Runtime.Loader.AssemblyLoadContext.LoadFromStream%2A?displayProperty=nameWithType>|Načíst z objektu.|[Tato](../../csharp/language-reference/keywords/this.md) instance.|
-|<xref:System.Reflection.Assembly.LoadFile%2A?displayProperty=nameWithType>|Načtení z cesty v nové <xref:System.Runtime.Loader.AssemblyLoadContext> instanci|Nová <xref:System.Runtime.Loader.AssemblyLoadContext> instance.|
-<xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>|Načtení z cesty v <xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType> instanci.<p>Přidá obslužnou rutinu <xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType>do. <xref:System.Runtime.Loader.AssemblyLoadContext.Resolving> Obslužná rutina načte závislosti sestavení z jeho adresáře.|<xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType> Instance.|
+|<xref:System.Reflection.Assembly.LoadFile%2A?displayProperty=nameWithType>|Načtení z cesty v nové instanci <xref:System.Runtime.Loader.AssemblyLoadContext>|Nová instance <xref:System.Runtime.Loader.AssemblyLoadContext>.|
+<xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>|Načtení z cesty v instanci <xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType>.<p>Přidá obslužnou rutinu <xref:System.Runtime.Loader.AssemblyLoadContext.Resolving> k <xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType>. Obslužná rutina načte závislosti sestavení z jeho adresáře.|Instance <xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType>.|
 |<xref:System.Reflection.Assembly.Load(System.Reflection.AssemblyName)?displayProperty=nameWithType><p><xref:System.Reflection.Assembly.Load(System.String)?displayProperty=nameWithType><p><xref:System.Reflection.Assembly.LoadWithPartialName%2A?displayProperty=nameWithType>|`Load-by-name`.|Odvozeno od volajícího.<p>Preferovat <xref:System.Runtime.Loader.AssemblyLoadContext> metody.|
-|<xref:System.Reflection.Assembly.Load(System.Byte[])?displayProperty=nameWithType><p><xref:System.Reflection.Assembly.Load(System.Byte[],System.Byte[])?displayProperty=nameWithType>|Načíst z objektu.|Odvozeno od volajícího.<p>Preferovat <xref:System.Runtime.Loader.AssemblyLoadContext> metody.|
-<xref:System.Type.GetType(System.String)?displayProperty=nameWithType><p><xref:System.Type.GetType(System.String,System.Boolean)?displayProperty=nameWithType><p><xref:System.Type.GetType(System.String,System.Boolean,System.Boolean)?displayProperty=nameWithType>|`Load-by-name`.|Odvozeno od volajícího.<p>Preferovat <xref:System.Type.GetType%2A?displayProperty=nameWithType> metody`assemblyResolver` pomocí argumentu.|
-<xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType>|Pokud typ `name` popisuje kvalifikovaný obecný typ sestavení, Trigger a `Load-by-name`.|Odvozeno od volajícího.<p>Preferovat <xref:System.Type.GetType%2A?displayProperty=nameWithType> při použití kvalifikovaného typu názvů sestavení.|
-<xref:System.Activator.CreateInstance(System.String,System.String)?displayProperty=nameWithType><p><xref:System.Activator.CreateInstance(System.String,System.String,System.Object[])?displayProperty=nameWithType><p><xref:System.Activator.CreateInstance(System.String,System.String,System.Boolean,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo,System.Object[])?displayProperty=nameWithType>|`Load-by-name`.|Odvozeno od volajícího.<p>Dáváte <xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType> přednost metodám, <xref:System.Type> které přebírají argument.|
+|<xref:System.Reflection.Assembly.Load(System.Byte[])?displayProperty=nameWithType><p><xref:System.Reflection.Assembly.Load(System.Byte[],System.Byte[])?displayProperty=nameWithType>|Načtení z objektu v nové instanci <xref:System.Runtime.Loader.AssemblyLoadContext>.|Nová instance <xref:System.Runtime.Loader.AssemblyLoadContext>.|
+<xref:System.Type.GetType(System.String)?displayProperty=nameWithType><p><xref:System.Type.GetType(System.String,System.Boolean)?displayProperty=nameWithType><p><xref:System.Type.GetType(System.String,System.Boolean,System.Boolean)?displayProperty=nameWithType>|`Load-by-name`.|Odvozeno od volajícího.<p>Preferovat <xref:System.Type.GetType%2A?displayProperty=nameWithType> metody pomocí argumentu `assemblyResolver`.|
+<xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType>|Pokud typ `name` popisuje kvalifikovaný obecný typ sestavení, aktivujte `Load-by-name`.|Odvozeno od volajícího.<p>Preferovat <xref:System.Type.GetType%2A?displayProperty=nameWithType> při použití kvalifikovaného názvu typu sestavení.|
+<xref:System.Activator.CreateInstance(System.String,System.String)?displayProperty=nameWithType><p><xref:System.Activator.CreateInstance(System.String,System.String,System.Object[])?displayProperty=nameWithType><p><xref:System.Activator.CreateInstance(System.String,System.String,System.Boolean,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object[],System.Globalization.CultureInfo,System.Object[])?displayProperty=nameWithType>|`Load-by-name`.|Odvozeno od volajícího.<p>Dáváte přednost <xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType> metodám, které přebírají argument <xref:System.Type>.|
 
 ## <a name="algorithm"></a>Algoritmus
 
 Následující algoritmus popisuje, jak modul runtime načítá spravované sestavení.
 
-1. `active` Určete .<xref:System.Runtime.Loader.AssemblyLoadContext>
+1. Určete `active` <xref:System.Runtime.Loader.AssemblyLoadContext>.
 
-    - Pro statický odkaz na `active` <xref:System.Runtime.Loader.AssemblyLoadContext> sestavení je instance, která načte odkazované sestavení.
-    - Upřednostňovaná rozhraní API `active` vytvářejí <xref:System.Runtime.Loader.AssemblyLoadContext> explicitní.
-    - Další rozhraní API odvozují `active`. <xref:System.Runtime.Loader.AssemblyLoadContext> Pro tato rozhraní API <xref:System.Runtime.Loader.AssemblyLoadContext.CurrentContextualReflectionContext?displayProperty=nameWithType> se použije vlastnost. Pokud je `null`jeho hodnota, použije se <xref:System.Runtime.Loader.AssemblyLoadContext> odvozená instance.
+    - Pro statický odkaz na sestavení je `active` <xref:System.Runtime.Loader.AssemblyLoadContext> instance, která načte odkazující sestavení.
+    - Upřednostňovaná rozhraní API nastaví `active` <xref:System.Runtime.Loader.AssemblyLoadContext> explicitní.
+    - Jiná rozhraní API odvozují `active` <xref:System.Runtime.Loader.AssemblyLoadContext>. Pro tato rozhraní API se použije vlastnost <xref:System.Runtime.Loader.AssemblyLoadContext.CurrentContextualReflectionContext?displayProperty=nameWithType>. Je-li jeho hodnota `null`, je použita odvozená instance <xref:System.Runtime.Loader.AssemblyLoadContext>.
     - Viz tabulka výše.
 
-2. Pro metody aktivní <xref:System.Runtime.Loader.AssemblyLoadContext> načte sestavení. `Load-by-name` V pořadí podle priority podle:
+2. Pro `Load-by-name` metody načte aktivní <xref:System.Runtime.Loader.AssemblyLoadContext> sestavení. V pořadí podle priority podle:
     - Probíhá kontrola `cache-by-name`.
 
-    - <xref:System.Runtime.Loader.AssemblyLoadContext.Load%2A?displayProperty=nameWithType> Volání funkce.
+    - Volání funkce <xref:System.Runtime.Loader.AssemblyLoadContext.Load%2A?displayProperty=nameWithType>.
 
-    - Kontroluje se <xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType> mezipaměť instancí a spouští se [výchozí logika pro zjišťování spravovaného sestavení](default-probing.md#managed-assembly-default-probing) .
+    - Kontroluje se mezipaměť instancí <xref:System.Runtime.Loader.AssemblyLoadContext.Default%2A?displayProperty=nameWithType> a spouští se [výchozí logika pro zjišťování spravovaného sestavení](default-probing.md#managed-assembly-default-probing) .
 
-    - Vyvolává se <xref:System.Runtime.Loader.AssemblyLoadContext.Resolving?displayProperty=nameWithType> událost pro aktivní AssemblyLoadContext.
+    - Vyvolává se událost <xref:System.Runtime.Loader.AssemblyLoadContext.Resolving?displayProperty=nameWithType> pro aktivní AssemblyLoadContext.
 
-    - Vyvolává se <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událost.
+    - Vyvolává se událost <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType>.
 
-3. Pro ostatní typy zatížení `active` <xref:System.Runtime.Loader.AssemblyLoadContext> načte sestavení. V pořadí podle priority podle:
+3. Pro ostatní typy načtení `active` <xref:System.Runtime.Loader.AssemblyLoadContext> načte sestavení. V pořadí podle priority podle:
     - Probíhá kontrola `cache-by-name`.
 
     - Načítání ze zadané cesty nebo nezpracovaného objektu sestavení.
 
 4. V obou případech, pokud je sestavení nově načteno, pak:
-   - <xref:System.AppDomain.AssemblyLoad?displayProperty=nameWithType> Událost je vyvolána.
-   - Odkaz je přidán do <xref:System.Runtime.Loader.AssemblyLoadContext> `cache-by-name`instance sestavení.
+   - Vyvolá se událost <xref:System.AppDomain.AssemblyLoad?displayProperty=nameWithType>.
+   - Do `cache-by-name`<xref:System.Runtime.Loader.AssemblyLoadContext> instance sestavení se přidá odkaz.
 
-5. Pokud je sestavení nalezeno, odkaz je přidán podle potřeby `active` <xref:System.Runtime.Loader.AssemblyLoadContext> instance `cache-by-name`.
+5. Pokud je sestavení nalezeno, přidá se podle potřeby odkaz na `cache-by-name`instance `active` <xref:System.Runtime.Loader.AssemblyLoadContext>.

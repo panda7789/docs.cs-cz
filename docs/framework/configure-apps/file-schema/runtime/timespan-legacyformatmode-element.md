@@ -8,14 +8,14 @@ helpviewer_keywords:
 - <TimeSpan_LegacyFormatMode> element
 - TimeSpan_LegacyFormatMode element
 ms.assetid: 865e7207-d050-4442-b574-57ea29d5e2d6
-ms.openlocfilehash: c835e1bcef7bbfdc990c8db177eafed4ec6bb30c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9d9eedf52f5d711412e4549e39e6ea23abb68ff3
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73115204"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73968910"
 ---
-# <a name="timespan_legacyformatmode-element"></a>\<element > TimeSpan_LegacyFormatMode
+# <a name="timespan_legacyformatmode-element"></a>Element \<TimeSpan_LegacyFormatMode >
 
 Určuje, zda modul runtime zachovává starší chování při formátování operací s <xref:System.TimeSpan?displayProperty=nameWithType> hodnotami.
 
@@ -75,13 +75,13 @@ Následující příklad vytvoří instanci objektu <xref:System.TimeSpan> a pok
 
 Když spustíte příklad na .NET Framework 3,5 nebo v dřívější verzi, zobrazí se následující výstup:
 
-```
+```console
 12:30:45
 ```
 
 To se liší od výstupu, pokud spustíte příklad na .NET Framework 4 nebo novější verzi:
 
-```
+```console
 Invalid Format
 ```
 

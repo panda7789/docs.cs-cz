@@ -9,12 +9,12 @@ metadata:
   level: Beginner
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: c3c4927a4afbf69f2101aa2596389e6f94cea243
-  ms.sourcegitcommit: 4aeac5d588ded58246f58030919e56b70a7674e4
+  ms.openlocfilehash: bc2d600afabbac9783e8fb12e3bd47e83a3495b7
+  ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 10/27/2019
-  ms.locfileid: "72966969"
+  ms.lasthandoff: 11/12/2019
+  ms.locfileid: "73969432"
 items:
 - durationInMinutes: 2
   content: >
@@ -22,7 +22,7 @@ items:
 - title: Vytvořit interpolované řetězce
   durationInMinutes: 2
   content: >
-    Spusťte následující kód v interaktivním okně. Provedete to tak, že do interaktivního okna zadáte kód (nahraďte `<name>` názvem) a vyberete **Spustit**:
+    Spusťte následující kód v interaktivním okně. Vyberte tlačítko pro **zadání detailního režimu** . Potom do interaktivního okna zadejte následující blok kódu (nahraďte `<name>` názvem) a vyberte **Spustit**:
 
 
     ```csharp
@@ -58,7 +58,7 @@ items:
     V předchozím kroku jste použili interpolaci řetězců pro vložení jednoho řetězce do jiného. Každý výraz interpolace, který je součástí interpolující řetězcového výrazu, může být libovolného datového typu, ale. Pojďme do interpolované řetězce zahrnout hodnoty různých výrazů typu datový typ.
 
 
-    V následujícím příkladu jsme nejdřív definovali [řazenou kolekci členů](../../tuples.md) , která má `Name`, `Price`a členy `perPackage`. V interaktivním okně spusťte následující kód:
+    V následujícím příkladu jsme nejdřív definovali [řazenou kolekci členů](../../tuples.md) , která má `Name`, `Price` a členy `perPackage`. V interaktivním okně spusťte následující kód:
 
 
     ```csharp

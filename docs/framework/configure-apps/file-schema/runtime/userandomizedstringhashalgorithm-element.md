@@ -8,12 +8,12 @@ helpviewer_keywords:
 - UseRandomizedStringHashAlgorithm element
 - <UseRandomizedStringHashAlgorithm> element
 ms.assetid: c08125d6-56cc-4b23-b482-813ff85dc630
-ms.openlocfilehash: cc9708b8cca6520932fbf0e1975a05cad5fad485
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3863bc1376d89ef804022fb9c87fac3a25fc910f
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73115044"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73968834"
 ---
 # <a name="userandomizedstringhashalgorithm-element"></a>\<element > UseRandomizedStringHashAlgorithm
 Určuje, zda modul CLR (Common Language Runtime) vypočítá kódy hash pro řetězce v jednotlivých doménách aplikace.  
@@ -70,7 +70,7 @@ Určuje, zda modul CLR (Common Language Runtime) vypočítá kódy hash pro řet
   
  Pokud spustíte příklad bez zadání konfiguračního souboru, zobrazí se výstup podobný následujícímu. Všimněte si, že kódy hash pro řetězec jsou identické ve dvou doménách aplikace.  
   
-```  
+```console
 String 'This is a string.' in domain 'PerDomain.exe': 941BCEAC  
 String 'This is a string.' in domain 'NewDomain': 941BCEAC  
 ```  
@@ -88,7 +88,7 @@ String 'This is a string.' in domain 'NewDomain': 941BCEAC
   
  Když je konfigurační soubor přítomen, v příkladu se zobrazí následující výstup:  
   
-```  
+```console
 String 'This is a string.' in domain 'PerDomain.exe': 5435776D  
 String 'This is a string.' in domain 'NewDomain': 75CC8236  
 ```  

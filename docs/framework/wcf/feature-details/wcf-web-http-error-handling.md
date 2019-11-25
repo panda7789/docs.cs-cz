@@ -2,33 +2,36 @@
 title: Zpracování chyb HTTP programování webové služby WCF
 ms.date: 03/30/2017
 ms.assetid: 02891563-0fce-4c32-84dc-d794b1a5c040
-ms.openlocfilehash: 491c39d97c48e2f92ff258ac42b9576d407b898e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 34912bccaefb645541f47d083c5c307b20ff77c5
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648421"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975958"
 ---
 # <a name="wcf-web-http-error-handling"></a>Zpracování chyb HTTP programování webové služby WCF
-Zpracování chyb webových služeb HTTP Windows Communication Foundation (WCF) umožňuje vrátit chyby z webových služeb HTTP WCF služby, které zadejte stavový kód HTTP a vrátí podrobnosti o chybě pomocí stejný formát jako operace (například XML nebo JSON).  
+Zpracování chyb webového http Windows Communication Foundation (WCF) umožňuje vracet chyby ze služeb WCF Web HTTP, které určují stavový kód HTTP, a vracet podrobnosti o chybách pomocí stejného formátu jako operace (například XML nebo JSON).  
   
 ## <a name="wcf-web-http-error-handling"></a>Zpracování chyb HTTP programování webové služby WCF  
- <xref:System.ServiceModel.Web.WebFaultException> Třída definuje konstruktor, který vám umožní určit stavový kód HTTP. Tento kód stavu je pak vrácen do klienta. Obecné verzi <xref:System.ServiceModel.Web.WebFaultException> třídy, <xref:System.ServiceModel.Web.WebFaultException%601> umožňuje vrátit uživatelem definovaný typ, který obsahuje informace o této chybě, ke které došlo. Tato vlastní objekt serializován ve formátu určeném operaci a vrácen do klienta. Následující příklad ukazuje, jak vrátit stavový kód HTTP.  
+ Třída <xref:System.ServiceModel.Web.WebFaultException> definuje konstruktor, který umožňuje určit stavový kód HTTP. Tento stavový kód se pak vrátí klientovi. Obecná verze <xref:System.ServiceModel.Web.WebFaultException> třídy, <xref:System.ServiceModel.Web.WebFaultException%601> umožňuje vrátit uživatelem definovaný typ, který obsahuje informace o chybě, ke které došlo. Tento vlastní objekt je serializován pomocí formátu zadaného operací a vráceného klientovi. Následující příklad ukazuje, jak vrátit stavový kód HTTP.  
   
-```  
-Public string Operation1()  
-{   // Operation logic  
-   // ...  
-   Throw new WebFaultException(HttpStatusCode.Forbidden);  
+```csharp
+public string Operation1()
+{
+    // Operation logic  
+   // ...
+   throw new WebFaultException(HttpStatusCode.Forbidden);
 }  
 ```  
   
- Následující příklad ukazuje, jak vrátit stavový kód HTTP a další informace služby v uživatelem definovaného typu. `MyErrorDetail` je uživatelem definovaný typ, který obsahuje další informace o chybě, ke které došlo.  
+ Následující příklad ukazuje, jak vrátit stavový kód HTTP a další informace v uživatelsky definovaném typu. `MyErrorDetail` je uživatelsky definovaný typ, který obsahuje další informace o chybě, ke které došlo.  
   
-```  
-Public string Operation2()  
+```csharp
+public string Operation2()
+{
    // Operation logic  
-   // ...   MyErrorDetail detail = new MyErrorDetail  
+   // ...
+   MyErrorDetail detail = new MyErrorDetail()
    {  
       Message = "Error Message",  
       ErrorCode = 123,  
@@ -37,17 +40,17 @@ Public string Operation2()
 }  
 ```  
   
- Předchozí kód vrátí odpověď HTTP s zakázané stavový kód a text, který obsahuje instanci `MyErrorDetails` objektu. Formát `MyErrorDetails` objektu se určuje podle:  
+ Předchozí kód vrátí odpověď HTTP s kódem stavu zakázáno a textem, který obsahuje instanci objektu `MyErrorDetails`. Formát objektu `MyErrorDetails` určuje:  
   
-- Hodnota `ResponseFormat` parametr <xref:System.ServiceModel.Web.WebGetAttribute> nebo <xref:System.ServiceModel.Web.WebInvokeAttribute> atribut zadaný u operace služby.  
+- Hodnota parametru `ResponseFormat` atributu <xref:System.ServiceModel.Web.WebGetAttribute> nebo <xref:System.ServiceModel.Web.WebInvokeAttribute> zadaného v rámci operace služby.  
   
 - Hodnota <xref:System.ServiceModel.Description.WebHttpBehavior.AutomaticFormatSelectionEnabled%2A>.  
   
-- Hodnota <xref:System.ServiceModel.Web.OutgoingWebResponseContext.Format%2A> vlastnost díky přístupu <xref:System.ServiceModel.Web.OutgoingWebResponseContext>.  
+- Hodnota vlastnosti <xref:System.ServiceModel.Web.OutgoingWebResponseContext.Format%2A> přístupem k <xref:System.ServiceModel.Web.OutgoingWebResponseContext>.  
   
- Další informace o tom, jak tyto hodnoty ovlivňují formátování operaci najdete v tématu [WCF Web HTTP formátování](../../../../docs/framework/wcf/feature-details/wcf-web-http-formatting.md).  
+ Další informace o tom, jak tyto hodnoty ovlivňují formátování operace, najdete v tématu [formátování webového HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-formatting.md).  
   
- <xref:System.ServiceModel.Web.WebFaultException> je <xref:System.ServiceModel.FaultException> a lze proto použít jako selhání výjimka programovací model pro služby, které zpřístupňují koncové body SOAP, stejně jako webových koncových bodů HTTP.  
+ <xref:System.ServiceModel.Web.WebFaultException> je <xref:System.ServiceModel.FaultException> a je možné ho použít jako programovací model pro výjimku chyb pro služby, které zveřejňují koncové body SOAP a také webové koncové body HTTP.  
   
 ## <a name="see-also"></a>Viz také:
 

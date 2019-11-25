@@ -26,99 +26,73 @@ helpviewer_keywords:
 ms.assetid: f96284bc-7b73-44b5-ac59-fac613ad09f8
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c026174e881768af245860d1b719184dc47f1798
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 6f0e268995449bc27b93c92ac8654c09fca9cd14
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67663989"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975830"
 ---
 # <a name="cryptographic-services"></a>Šifrovací služby
 
-<a name="top"></a> Veřejné sítě, jako je Internet se neposkytuje způsob zabezpečenou komunikaci mezi entitami. Komunikace v těchto sítích je náchylné ke čtení nebo dokonce i změnit neoprávněné třetími stranami. Šifrování pomáhá chránit data před zobrazením, poskytuje způsoby, jak zjistit, zda byla data změněna, a pomáhá zajistit zabezpečený způsob komunikace přes jinak nezabezpečené kanály. Například data může být zašifrovaný pomocí algoritmu, přenášet do šifrovaného stavu a později dešifrovat určenou stranou. Pokud třetích stran zachycuje šifrovaná data, bude obtížné je dešifrovat.
+Veřejné sítě, jako je Internet, neposkytují způsob zabezpečené komunikace mezi entitami. Komunikace přes tyto sítě je náchylná ke čtení nebo dokonce úpravám neoprávněnými třetími stranami. Kryptografie pomáhá chránit data před zobrazením, poskytuje způsoby, jak zjistit, zda byla data upravena, a pomáhá zajistit zabezpečený způsob komunikace v jiném nezabezpečeném kanálu. Data mohou být například šifrována pomocí kryptografického algoritmu, přenášena v zašifrovaném stavu a později dešifrována zamýšlenou stranou. Pokud třetí strana zachytí zašifrovaná data, bude obtížné je dešifrovat.
 
-V rozhraní .NET Framework, třídy v <xref:System.Security.Cryptography?displayProperty=nameWithType> obor názvů spravovat mnoho podrobností kryptografie za vás. Některé jsou obálky pro nespravované Microsoft Cryptography API (rozhraní CryptoAPI), zatímco jiné jsou čistě spravovaná implementace. Nemusíte být odborníky na kryptografii k použití těchto tříd. Při vytváření nové instance jednoho šifrování třídy algoritmus klíče jsou automaticky generované pro snadné použití a výchozí vlastnosti jsou bezpečné a co nevíce zabezpečený.
+V .NET Framework třídy v oboru názvů <xref:System.Security.Cryptography?displayProperty=nameWithType> spravují mnoho podrobností kryptografie za vás. Některé jsou obálky pro nespravované rozhraní CryptoAPI (Microsoft Cryptography API), zatímco jiné jsou čistě spravované implementace. Pro použití těchto tříd nemusíte být odborníkem na kryptografii. Když vytváříte novou instanci jedné z tříd šifrovacího algoritmu, klíče se generují automaticky pro snadné použití a výchozí vlastnosti jsou co nejbezpečnější a bezpečné.
 
-Tento přehled obsahuje souhrn metody šifrování a postupy podporované rozhraním .NET Framework, včetně manifesty ClickOnce, Suite B a kryptografické služby nové generace (CNG) podporu zavedena v rozhraní .NET Framework 3.5.
+Tento přehled obsahuje souhrn metod a postupů šifrování podporovaných .NET Framework, včetně manifestů ClickOnce, Suite B a podpory kryptografie nové generace (CNG) představené v .NET Framework 3,5.
 
-Tento přehled obsahuje následující části:
+Další informace o kryptografii a o službách, součástech a nástrojích společnosti Microsoft, které vám umožní přidat kryptografické zabezpečení do aplikací, naleznete v části vývoj Win32 a COM, zabezpečení této dokumentace.
 
-- [Cryptographic Primitives](#primitives)
+## <a name="cryptographic-primitives"></a>Kryptografické primitivy
 
-- [Šifrování tajného klíče](#secret_key)
+V typické situaci, kdy se používá kryptografie, dvě strany (Alice a Bob) komunikují přes nezabezpečený kanál. Alice a Bob chtějí zajistit, aby jejich komunikace zůstala nesrozumitelná pro kohokoli, kdo může naslouchat. Vzhledem k tomu, že Alice a Bob jsou ve vzdálených umístěních, Alice musí zajistit, aby informace, které obdrží od Boba, nebyly během přenosu změněny kýmkoli. Kromě toho musí mít jistotu, že informace skutečně pocházejí od Boba a nikoli od někoho, kdo zosobňuje Boba.
 
-- [Šifrování s veřejným klíčem](#public_key)
+Kryptografie se používá k dosažení následujících cílů:
 
-- [Digitální podpisy](#digital_signatures)
+- Důvěrné: slouží k ochraně před čtením identity uživatele nebo dat.
 
-- [Hodnoty hash](#hash_values)
+- Integrita dat: pro lepší ochranu dat před změnou.
 
-- [Náhodné generování čísel](#random_numbers)
+- Ověřování: zajistí, že data pocházejí z konkrétní strany.
 
-- [Manifesty ClickOnce](#clickonce)
+- Neodmítnutí: Pokud chcete zabránit určité straně v odepření, že poslali zprávu.
 
-- [Podpora Suite B](#suite_b)
-
-- [Související témata](#related_topics)
-
-Další informace o šifrování a služeb Microsoftu, komponenty a nástroje, které vám umožní přidat kryptografické zabezpečení pro vaše aplikace najdete v systému Win32 a COM Development sekci zabezpečení v této dokumentaci.
-
-<a name="primitives"></a>
-
-## <a name="cryptographic-primitives"></a>Kryptografické primitiv
-
-V typické situace, ve kterém se používá šifrování obě strany (Alice a Bob) komunikaci přes nezabezpečený kanál. Alice a Bob chcete zajistit, aby jejich komunikace zůstal Nesrozumitelná každý, kdo může naslouchat. Navíc vzhledem k tomu, že Alice a Bob jsou ve vzdálených umístěních, Alice musí zajistit, že informace, které se od Boba přijde nebyl změněn kdokoli během přenosu. Kromě toho také musí zajistit, že informace skutečně pocházejí od Boba a ne z někoho, kdo je zosobňující Bob.
-
-Šifrování se používá k naplnění následujících cílů:
-
-- Důvěrnost: Chcete-li zabránit čtená data nebo identity uživatele.
-
-- Integrita dat: Chcete-li chránit data před změnou.
-
-- Ověřování: K zajištění, že data pochází od určitého výrobce.
-
-- Nepopiratelnost odpovědnosti: Zabránit konkrétní stran odepření, byla odeslána zpráva.
-
-K dosažení těchto cílů, slouží k vytvoření kryptografických schémat kombinaci algoritmů a postupy, které jsou známé jako kryptografické primitiv. V následující tabulce jsou uvedeny kryptografické primitiv a jejich použití.
+Pro dosažení těchto cílů můžete použít kombinaci algoritmů a postupů známých jako kryptografické primitivy k vytvoření kryptografického schématu. V následující tabulce jsou uvedeny kryptografické primitivy a jejich použití.
 
 |Kryptografická primitiva|Použití|
 |-----------------------------|---------|
-|Šifrování tajného klíče (symetrického šifrování)|Provede transformaci na data před čtením třetím stranám. Tento typ šifrování používá jediný sdílený tajný klíč k šifrování a dešifrování dat.|
-|Šifrování s veřejným klíčem (asymetrické šifrování)|Provede transformaci na data před čtením třetím stranám. Tento typ šifrování používá k šifrování a dešifrování dat dvojice veřejného/soukromého klíče.|
-|Kryptografický podpis|Pomáhá ověřit, že data pochází z určité skupiny tak, že vytvoříte digitální podpis, který je jedinečný pro tuto skupinu. Tento proces také používá funkce hash.|
-|Kryptografické hodnoty hash|Mapuje data z jakékoli délky na sekvenci bajtů pevné délky. Hodnoty hash jsou statisticky jedinečný.; jiné pořadí dvoubajtový nebude na stejnou hodnotu hash.|
-
-[Zpět na začátek](#top)
-
-<a name="secret_key"></a>
+|Šifrování tajného klíče (symetrické kryptografie)|Provede transformaci dat za účelem zachování jejich čtení třetími stranami. Tento typ šifrování používá jediný sdílený tajný klíč k šifrování a dešifrování dat.|
+|Šifrování veřejného klíče (asymetrické šifrování)|Provede transformaci dat za účelem zachování jejich čtení třetími stranami. Tento typ šifrování používá k šifrování a dešifrování dat dvojici veřejného a privátního klíče.|
+|Kryptografické podepisování|Pomáhá ověřit, jestli data pocházejí z konkrétní strany vytvořením digitálního podpisu, který je pro danou stranu jedinečný. Tento proces také používá funkce hash.|
+|Kryptografické hodnoty hash|Mapuje data z libovolné délky na bajtovou sekvenci s pevnou délkou. Hodnoty hash jsou statisticky jedinečné; jiná posloupnost dvou bajtů nebude mít hodnotu hash na stejnou hodnotu.|
 
 ## <a name="secret-key-encryption"></a>Šifrování tajného klíče
 
-Algoritmy šifrování tajného klíče šifrování a dešifrování dat pomocí jednoho tajný klíč. Klíč z přístup neoprávněné agenty musí zabezpečit, protože každá strana, která má klíč můžete použít pro data dešifrovat nebo šifrovat vlastní data, nárokování, že pochází od vás.
+Šifrovací algoritmy tajného klíče používají pro šifrování a dešifrování dat jeden tajný klíč. Klíč musíte zabezpečit od přístupu neautorizovanými agenty, protože kterákoli z nich, který klíč obsahuje, ho může použít k dešifrování vašich dat nebo k šifrování svých vlastních dat. Tato deklarace vzniklá od vás.
 
-Šifrování tajného klíče je také označovány jako symetrického šifrování, protože se používá stejný klíč k šifrování a dešifrování. Algoritmy šifrování tajného klíče jsou velmi rychlé zpracování (ve srovnání s algoritmy veřejného klíče) a jsou vhodné pro provedení kryptografické transformace na velkých datových proudů. Asymetrických šifrovacích algoritmů třeba RSA, jsou omezeny matematicky v tom, kolik dat můžete šifrovat. Algoritmy šifrování se symetrickým obvykle není nutné tyto problémy.
+Šifrování tajného klíče se také označuje jako symetrické šifrování, protože se ke šifrování a dešifrování používá stejný klíč. Šifrovací algoritmy tajného klíče jsou velmi rychlé (ve srovnání s algoritmy veřejného klíče) a jsou vhodné pro provádění kryptografických transformací velkých proudů dat. Asymetrické šifrovací algoritmy, jako je RSA, jsou omezené matematicky v množství dat, která můžou šifrovat. Algoritmy symetrického šifrování obvykle nemají tyto problémy.
 
-Typ tajného klíče algoritmu volá bloková šifra se používá k šifrování jeden blok dat v čase. Blokové šifry, jako je Standard DES (Data Encryption), TripleDES, a Advanced Encryption (Standard AES), kryptograficky transformují vstupní blok *n* bajtů do výstupního bloku šifrovaných bajtů. Pokud chcete šifrovat nebo dešifrovat sekvenci bajtů, je nutné provést blok po bloku. Protože *n* je malá (8 bajtů pro algoritmus DES a TripleDES, 16 bajtů [výchozí], 24 bajtů nebo 32 bajtů pro algoritmus AES), datových hodnot, které jsou větší než *n* musela být šifrovaná jeden blok najednou. Hodnoty dat, které jsou menší než *n* musí rozbalí se *n* zpracování.
+Typ algoritmu tajného klíče, který se nazývá Block šifra, se používá k šifrování jednoho bloku dat najednou. Blokové šifry, jako je DES (Data Encryption Standard), TripleDES a standard AES (Advanced Encryption Standard) (AES), kryptograficky transformují vstupní blok *n* bajtů do výstupního bloku šifrovaných bajtů. Chcete-li zašifrovat nebo dešifrovat sekvenci bajtů, je nutné ji zablokovat blokem. Vzhledem k tomu, že *n* je malé (8 bajtů pro des a TripleDES; 16 bajtů [výchozí], 24 bajtů nebo 32 bajtů pro AES), hodnoty dat větší než *n* musí být zašifrované po jednom bloku. Hodnoty dat, které jsou menší než *n* , musí být rozšířeny na *n* , aby je bylo možné zpracovat.
 
-Jednoduchá forma bloková šifra se nazývá režim electronic codebook (ECB). Režim ECB se nepovažuje za bezpečnou, protože nepoužívá inicializační vektor k inicializaci prvního bloku ve formátu prostého textu. Pro daný tajný klíč *k*, bude jednoduchá bloková šifra, která nepoužívá inicializační vektor bude šifrovat stejný vstupní blok prostého textu do stejného výstupního bloku šifrovaného textu. Proto pokud váš datový proud ve formátu prostého textu vstupu obsahuje duplicitní bloky, budete mít duplicitní bloky v výstupní datový proud šifrovaného textu. Tyto bloky duplicitním výstupem výstrah neoprávněným uživatelům slabé šifrování používá algoritmy, které byly použity a možné režimy útoku. Režim šifrování ECB proto je poměrně snadno napadnutelný analýzy a nakonec klíč zjišťování.
+Jedna jednoduchá forma bloku Block je označována jako Codebook režim elektronického šifrování (ECB). Režim ECB není považován za zabezpečený, protože nepoužívá inicializační vektor k inicializaci prvního bloku prostého textu. Pro daný tajný klíč *k*, jednoduchá bloková šifra, která nepoužívá inicializační vektor, zašifruje stejný vstupní blok prostého textu do stejného výstupního bloku šifrovaného textu. Proto pokud máte duplicitní bloky ve vstupním datovém proudu prostého textu, budete mít ve svém výstupním streamu šifrovaných dat duplicitní bloky. Tyto duplicitní výstupní bloky upozorňují neoprávněné uživatele na slabé šifrování při použití algoritmů, které mohly být zaměstnány, a možných způsobů útoku. Režim šifry ECB je proto poměrně zranitelný za účelem analýzy a nakonec pro zjišťování klíčů.
 
-Třídy blokové šifry, které jsou k dispozici v knihovně základních tříd pomocí řetězení režim s názvem bloků šifer řetězení CBC (), i když toto výchozí nastavení můžete změnit, pokud chcete výchozí hodnotu.
+Třídy blokové šifry, které jsou k dispozici v knihovně základních tříd, používají výchozí režim zřetězení s názvem cipher-Blocking Chaining (CBC), i když můžete změnit toto výchozí nastavení, pokud chcete.
 
-CBC šifrování překonat problémy spojené se ECB šifry pomocí inicializační vektor (IV) k šifrování první blok prostého textu. Každý další blok prostého textu při bitový exkluzivní operátor OR (`XOR`) operace u předchozího bloku šifrovaného textu předtím, než je šifrovaný. Každý blok šifrovaného textu je proto závisí na všechny předchozí bloky. Pokud je tento systém záhlaví použit, běžné zpráv, které může být známé neoprávněný uživatel nemůže být umožňuje provádět zpětnou analýzu klíč.
+CBC šifry překonat problémy spojené s šiframi ECB pomocí inicializačního vektoru (IV) k šifrování prvního bloku prostého textu. Každý následující blok prostého textu podchází logickou exkluzivní nebo (`XOR`) operaci s předchozím blokem šifrovaného textu před jeho zašifrováním. Každý blok šifrovaného textu je proto závislý na všech předchozích blocích. Při použití tohoto systému se běžná záhlaví zpráv, která mohou být známá neoprávněným uživatelům, nelze použít k zpětnou analýzu klíče.
 
-Jedním ze způsobů k ohrožení dat, která je zašifrovaný pomocí CBC šifer s nižší sílou je provést během důkladného prohledání objektu všechny možné klíče. V závislosti na velikosti klíč, který se používá k provádění šifrování tento druh vyhledávání je velmi časově náročné, dokonce i nejrychlejší počítačů a proto je nemožné. Větší velikosti klíče jsou obtížnější dekódovat. I když šifrování není znemožnit teoreticky pro nežádoucí osobu načíst šifrovaná data, zvýšit náklady na to. Pokud trvá tří měsíců provádět během důkladného prohledání data, která má smysl pouze pro několik dní, během důkladného prohledání metodou je nepraktické.
+Jedním ze způsobů, jak ohrozit data zašifrovaná pomocí CBC šifry, je provést důkladné prohledávání každého možného klíče. V závislosti na velikosti klíče, který se používá k šifrování, je tento druh hledání velmi časově náročný pomocí i nejrychlejších počítačů, a proto je neproveditelný. Větší velikosti klíčů je obtížné dešifrovat. I když při šifrování není teoreticky nemožné, aby nežádoucí osoba načetla šifrovaná data, vyvolají to náklady. Pokud se po uplynutí tří měsíců provede vyčerpávající hledání, aby se načetla data, která jsou smysluplná jenom několik dní, je metoda podrobného vyhledávání nepraktická.
 
-Nevýhodou šifrování tajného klíče je, že předpokládá, že obě strany mají dohodnutou klíč a vektor IV a předávají jejich hodnoty. Vektor IV se nepovažuje za tajného kódu a může být přenášen ve formátu prostého textu se zprávou. Ale klíč musí být udržen v tajnosti před neoprávněnými uživateli. Kvůli těmto problémům šifrování tajného klíče se často používá společně s veřejným klíčem šifrování komunikovat soukromě hodnoty klíč a vektor IV.
+Nevýhodou šifrování tajného klíče je to, že se obě strany dohodly na klíči a IV a sdělily jejich hodnoty. Velikost IV není považována za tajnou a je možné ji přenést do prostého textu se zprávou. Klíč se ale musí uchovávat jako tajný klíč od neautorizovaných uživatelů. Z důvodu těchto problémů se šifrování tajného klíče často používá společně s šifrováním veřejného klíče pro soukromou komunikaci hodnot klíče a IV.
 
-Za předpokladu, že Alice a Bob se dvěma stranami, které chcete komunikovat přes nezabezpečený kanál, můžou používat šifrování tajného klíče následujícím způsobem: Alice a Bob svůj souhlas s konkrétním klíč a vektor IV používat jeden konkrétní algoritmus (například standard AES). Alice vytvoří zprávu a vytváří datový proud sítě (třeba pojmenovaného kanálu nebo sítě e-mail s) na základě které chcete odeslat zprávu. V dalším kroku Jana zašifruje text pomocí klíč a vektor IV a odešle zašifrovanou zprávu a vektor IV Bob prostřednictvím sítě intranet. Bob obdrží šifrovaného textu a dešifruje ji pomocí vektor IV a dříve dohodnutých klíč. Pokud je přenos, sběrač nelze obnovit původní zprávu, protože nezná klíč. V tomto scénáři musí zůstat pouze klíč tajného kódu. Ve scénáři reálného světa Alice a Bob vygeneruje tajný klíč a šifrování veřejného klíče (asymetricky) používá k přenosu tajných kódů (symetrického) klíče na druhou stranu. Další informace o šifrování s veřejným klíčem najdete v další části.
+Za předpokladu, že Alice a Bob jsou dvě strany, které chtějí komunikovat přes nezabezpečený kanál, můžou použít šifrování tajného klíče takto: Alice a Bob souhlasí, že používají jeden konkrétní algoritmus (například AES) s určitým klíčem a IV. Alice vytvoří zprávu a vytvoří síťový datový proud (například pojmenovaný kanál nebo síťový e-mail), na který se má zpráva poslat. V dalším kroku šifruje text pomocí klíče a IV a pošle šifrovanou zprávu a IV k Bobovi přes intranet. Bob obdrží zašifrovaný text a dešifruje ho pomocí IV a dřív souhlasil na klíči. Pokud je přenos zachycen, zachytávací modul nemůže obnovit původní zprávu, protože nezná klíč. V tomto scénáři musí být klíč v tajnosti. Ve scénáři reálného světa buď Alice, nebo Bob vygeneruje tajný klíč a pomocí šifrování veřejného klíče (asymetrického klíče) přenáší tajný klíč (symetrický) na druhou stranu. Další informace o šifrování veřejného klíče najdete v další části.
 
-Rozhraní .NET Framework poskytuje následující třídy, které implementují algoritmy šifrování tajného klíče:
+.NET Framework poskytuje následující třídy, které implementují šifrovací algoritmy tajného klíče:
 
-- <xref:System.Security.Cryptography.AesManaged> (zavedena v rozhraní .NET Framework 3.5).
+- <xref:System.Security.Cryptography.AesManaged> (představeno v .NET Framework 3,5).
 
 - <xref:System.Security.Cryptography.DESCryptoServiceProvider>.
 
-- <xref:System.Security.Cryptography.HMACSHA1> (To je technicky algoritmu tajného klíče, protože představuje ověřovací kód zprávy, které se počítá pomocí funkce kryptografická hodnota hash v kombinaci s tajným klíčem. Zobrazit [hodnoty Hash](#hash_values)dále v tomto tématu.)
+- <xref:System.Security.Cryptography.HMACSHA1> (Jedná se o technicky klíč tajného klíče, protože představuje ověřovací kód zprávy vypočtený pomocí kryptografické funkce hash kombinované s tajným klíčem. Viz [hodnoty hash](#hash-values)dále v tomto tématu.)
 
 - <xref:System.Security.Cryptography.RC2CryptoServiceProvider>.
 
@@ -126,104 +100,92 @@ Rozhraní .NET Framework poskytuje následující třídy, které implementují 
 
 - <xref:System.Security.Cryptography.TripleDESCryptoServiceProvider>.
 
-[Zpět na začátek](#top)
+## <a name="public-key-encryption"></a>Šifrování veřejného klíče
 
-<a name="public_key"></a>
+Šifrování s veřejným klíčem používá privátní klíč, který se musí uchovávat jako tajný klíč od neautorizovaných uživatelů a veřejný klíč, který je možné zveřejnit pro kohokoli. Veřejný klíč a soukromý klíč jsou matematicky propojeny; data zašifrovaná pomocí veřejného klíče lze dešifrovat pouze pomocí privátního klíče a data, která jsou podepsána pomocí privátního klíče, lze ověřit pouze pomocí veřejného klíče. Veřejný klíč může být zpřístupněn všem uživatelům; slouží k šifrování dat, která se mají zasílat do uchování privátního klíče. Kryptografické algoritmy veřejného klíče jsou známé také jako asymetrické algoritmy, protože pro šifrování dat je vyžadován jeden klíč a k dešifrování dat je vyžadován další klíč. Základní kryptografické pravidlo zakazuje opakované použití klíče a oba klíče by měly být pro každou relaci komunikace jedinečné. Nicméně v praxi jsou asymetrické klíče všeobecně dlouhodobé.
 
-## <a name="public-key-encryption"></a>Šifrování s veřejným klíčem
+Dvě strany (Alice a Bob) můžou používat šifrování pomocí veřejného klíče takto: nejdřív Alice vygeneruje pár veřejného a privátního klíče. Pokud Bob chce odeslat Alici šifrovanou zprávu, požádá o jeho veřejný klíč. Alice pošle Bobovi svůj veřejný klíč přes nezabezpečenou síť a Bob použije tento klíč k zašifrování zprávy. Bob pošle šifrovanou zprávu Alici a dešifruje ji pomocí jejího privátního klíče. Pokud Bob přijal klíč Alice přes nezabezpečený kanál, jako je například veřejná síť, Bob je otevřený útok prostředníkem. Proto musí Bob ověřit s Alicí, že má správnou kopii jejího veřejného klíče.
 
-Šifrování s veřejným klíčem používá soukromý klíč, který musí být udržen v tajnosti před neoprávněnými uživateli a veřejného klíče, který lze zveřejnit všem uživatelům. Veřejný klíč a soukromý klíč matematicky propojenou; data, která je zašifrovaná pomocí veřejného klíče, mohou ho dešifrovat jenom s privátním klíčem, a data, která je podepsaná pomocí soukromého klíče můžete ověřit pouze pomocí veřejného klíče. Veřejný klíč může být k dispozici všem uživatelům; používá se pro šifrování dat k odeslání do držitele privátní klíč. Veřejného klíče kryptografické algoritmy jsou také známé jako asymetrické algoritmy, protože jeden z nich je potřeba šifrovat data a jiný klíč se vyžaduje k dešifrování dat. Základní pravidlo kryptografických zakazuje opětovné použití klíčů a oba klíče musí být jedinečná pro každou relaci komunikace. V praxi, jsou však obvykle dlouhodobé asymetrické klíče.
+Během přenosu veřejného klíče Alice může klíč zachytit neautorizovaný agent. Kromě toho může stejný agent zachytit šifrovanou zprávu od Boba. Agent ale nemůže dešifrovat zprávu pomocí veřejného klíče. Zpráva může být dešifrována pouze s privátním klíčem Alice, který nebyl přenesen. Alice nepoužívá svůj privátní klíč k šifrování zprávy s odpovědí Bobovi, protože kdokoli s veřejným klíčem by mohl zprávu dešifrovat. Pokud Alice chce poslat zprávu zpět Bobovi, požádá Bob o jeho veřejný klíč a zašifruje jeho zprávu pomocí tohoto veřejného klíče. Bob pak dešifruje zprávu pomocí jejího přidruženého privátního klíče.
 
-Obě strany (Alice a Bob) mohou použít šifrování s veřejným klíčem následujícím způsobem: Nejprve Alice vytvoří pár veřejného a privátního klíče. Pokud Bob chce odeslat Alice zašifrovanou zprávu, požádá ji pro svůj veřejný klíč. Alice odešle Bob veřejného klíče v nezabezpečené síti a Bob použije tento klíč k šifrování zpráv. Zašifrovanou zprávu: Bob pošle Alici, a Jana dešifruje ji pomocí vlastního soukromého klíče. Pokud Bob obdržel Alice klíč přes nezabezpečený kanál, jako je například veřejnou síť, Bob je otevřená pro útok man-in-the-middle. Proto musíte Bob ověřit pomocí Alice, že má správnou kopii svůj veřejný klíč.
+V tomto scénáři Alice a Bob používá šifrování veřejného klíče (asymetrické) k přenosu tajného (symetrického) klíče a pro zbytek relace používá šifrování tajného klíče.
 
-Během přenosu Alice veřejný klíč může zachytit neoprávněný agent klíč. Kromě toho stejný agent, kterého může zachytit zašifrovanou zprávu od Boba. Agenta však nemůže dešifrování zprávy s veřejným klíčem. Zpráva může dešifrovat jenom s privátním klíčem Alice, který nebyl bylo přeneseno. Alice svůj privátní klíč k šifrování zprávy s odpovědí Bobovi nepoužívá, protože každý, kdo má veřejný klíč může dešifrování zprávy. Alice chce, aby se pro odeslání zprávy zpět uživateli, že Bob vyzve k zadání jeho veřejný klíč a šifruje své zprávy pomocí veřejného klíče. Bob dešifruje pak zprávy pomocí jeho přidružený privátní klíč.
+Následující seznam obsahuje porovnání kryptografických algoritmů veřejného klíče a tajného klíče:
 
-V tomto scénáři Alice a Bob šifrování veřejného klíče (asymetricky) pro přenos tajných kódů (symetrického) klíče a tajného klíče šifrování pro zbývající část jeho relace.
+- Kryptografické algoritmy veřejného klíče používají pevnou velikost vyrovnávací paměti, zatímco kryptografické algoritmy tajného klíče používají vyrovnávací paměť s proměnlivou délkou.
 
-Následující seznam nabízí porovnání veřejného klíče a tajného klíče kryptografické algoritmy:
+- Algoritmy veřejného klíče nelze použít k zřetězení dat společně do datových proudů, jako jsou algoritmy tajného klíče, protože je možné šifrovat pouze malé objemy dat. Proto asymetrické operace nepoužívají stejný model streamování jako symetrické operace.
 
-- Kryptografické algoritmy veřejného klíče použít vyrovnávací paměť pevné velikosti, že kryptografické algoritmy tajného klíče používat do vyrovnávací paměti proměnné délky.
+- Šifrování veřejného klíče má mnohem větší prostor (rozsah možných hodnot pro klíč) než šifrování tajného klíče. Proto je šifrování veřejného klíče méně náchylné k vyčerpávajícím útokům, které se pokoušejí o každý možný klíč.
 
-- Algoritmy veřejného klíče nelze použít na řetězec data společně do datových proudů způsob, jakým lze algoritmy tajného klíče, protože pouze malé množství dat mohou být zašifrovaná. Asymetrické operace proto nepoužívejte stejný model streamování jako symetrický operace.
+- Veřejné klíče se snadno distribuují, protože není nutné je zabezpečit, pokud k tomu existuje nějaký způsob, jak ověřit identitu odesilatele.
 
-- Šifrování veřejného klíče má mnohem větší keyspace (rozsah možných hodnot pro klíč) než šifrování tajného klíče. Proto je méně náchylný k vyčerpávající útoků, které se pokoušejí všechny možné klíče šifrování s veřejným klíčem.
+- Některé algoritmy veřejného klíče (například RSA a DSA, ale ne Diffie-Hellman) se dají použít k vytvoření digitálních podpisů, které ověřují identitu odesilatele dat.
 
-- Veřejné klíče se snadno distribuovat, protože nemají být zabezpečené, za předpokladu, že existuje způsob, chcete-li ověřit totožnost odesílatele.
+- Algoritmy veřejného klíče jsou ve srovnání s algoritmy tajného klíče velmi pomalé a nejsou navržené k šifrování velkých objemů dat. Algoritmy veřejného klíče jsou užitečné jenom pro přenos velmi malých objemů dat. Šifrování pomocí veřejného klíče se obvykle používá k šifrování klíče a IV pro použití algoritmem tajného klíče. Po přesunu klíče a IV se pro zbytek relace použije šifrování tajného klíče.
 
-- Některé algoritmy veřejného klíče (např. RSA a DSA, ale ne Diffie-Hellman) slouží k vytváření digitálních podpisů, chcete-li ověřit totožnost odesílatele data.
-
-- Algoritmy veřejného klíče jsou velmi pomalé ve srovnání s algoritmy tajného klíče a nejsou určeny k zašifrování velké objemy dat. Jsou užitečné pouze pro přenos velmi malé množství dat algoritmy veřejného klíče. Šifrování s veřejným klíčem se obvykle používá k šifrování klíč a vektor IV použije algoritmus tajný klíč. Po přenesení klíč a vektor IV šifrování tajného klíče se používá pro zbytek relace.
-
-Rozhraní .NET Framework poskytuje následující třídy, které implementují algoritmy šifrování s veřejným klíčem:
+.NET Framework poskytuje následující třídy, které implementují šifrovací algoritmy veřejného klíče:
 
 - <xref:System.Security.Cryptography.DSACryptoServiceProvider>
 
 - <xref:System.Security.Cryptography.RSACryptoServiceProvider>
 
-- <xref:System.Security.Cryptography.ECDiffieHellman> (základní třídy)
+- <xref:System.Security.Cryptography.ECDiffieHellman> (základní třída)
 
 - <xref:System.Security.Cryptography.ECDiffieHellmanCng>
 
-- <xref:System.Security.Cryptography.ECDiffieHellmanCngPublicKey> (základní třídy)
+- <xref:System.Security.Cryptography.ECDiffieHellmanCngPublicKey> (základní třída)
 
-- <xref:System.Security.Cryptography.ECDiffieHellmanKeyDerivationFunction> (základní třídy)
+- <xref:System.Security.Cryptography.ECDiffieHellmanKeyDerivationFunction> (základní třída)
 
 - <xref:System.Security.Cryptography.ECDsaCng>
 
-RSA umožňuje šifrování a podepisování, ale DSA lze použít pouze pro podepisování a Diffie-Hellman lze použít pouze pro generování klíčů. Obecně platí algoritmy veřejného klíče jsou limitovanější v jejich použití než algoritmy soukromého klíče.
-
-[Zpět na začátek](#top)
-
-<a name="digital_signatures"></a>
+RSA umožňuje šifrování i podepisování, ale DSA se dá použít jenom pro podepisování a Diffie-Hellman se dá použít jenom pro generování klíče. Obecně platí, že algoritmy veřejného klíče jsou více omezené při jejich použití než algoritmy privátního klíče.
 
 ## <a name="digital-signatures"></a>Digitální podpisy
 
-Veřejný klíč algoritmy lze také tvoří digitální podpisy. Digitální podpisy ověřit totožnost odesílatele (v případě, že důvěřujete odesílatele veřejný klíč) a chránit integritu dat. Pomocí veřejného klíče generované Alice, příjemce dat Alice můžete ověřit, že Alice je odeslání porovnáním digitální podpis k datům uživatele Jaroslava a veřejný klíč od Alice.
+Algoritmy veřejného klíče se dají použít i k vytvoření digitálních podpisů. Digitální podpisy ověřují identitu odesilatele (Pokud důvěřujete veřejnému klíči odesílatele) a zajistíte ochranu integrity dat. Pomocí veřejného klíče vygenerovaného Alicí může příjemce dat Alice ověřit, že je Alice poslala porovnáním digitálního podpisu s daty Alice a veřejným klíčem Alice.
 
-Použití kryptografie využívající veřejný klíč k podepsání zprávy, Alice nejprve platí pro zpráva, kterou chcete vytvořit hodnota hash algoritmu hash. Hodnota hash je kompaktní a jedinečný reprezentace data. Hodnota hash Alice potom šifruje s jeho privátním klíčem k vytvoření své osobní podpisu. Při přijetí zprávy a podpis, dešifruje Bob podpis pomocí veřejného klíče uživatele Jaroslava obnovení zpráv pomocí stejné hashovacího algoritmu, který používá Alice hodnoty hash a hodnoty hash. Pokud hodnota hash, která vypočítá Bob přesně odpovídá hodnota hash přijatých od Alice, Bob jistotu, že zpráva pochází od vlastníka privátního klíče a nebyl změněn data. Pokud Bob vztahy důvěryhodnosti, že Alice je vlastník privátního klíče, ví, že zpráva pochází od Alice.
+Chcete-li použít kryptografii veřejného klíče k digitálnímu podpisu zprávy, Alice nejprve pro zprávu použije algoritmus hash k vytvoření výtahu zprávy. Hodnota Digest zprávy je kompaktní a jedinečná reprezentace dat. Alice pak zašifruje výtah zprávy pomocí jeho privátního klíče a vytvoří svůj osobní podpis. Po přijetí zprávy a podpisu Bob dešifruje podpis pomocí veřejného klíče Alice pro obnovení výtahu zprávy a hodnotu hash zprávy pomocí stejného algoritmu hash, který Alice použila. Pokud se výtah zprávy, který Bob počítá, přesně shoduje se výtahem zprávy přijatým od Alice, je zaručeno, že zpráva pochází od držitele privátního klíče a že data nebyla změněna. Pokud Bob důvěřuje, že Alice je držitelem privátního klíče, ví, že zpráva pochází od Alice.
 
 > [!NOTE]
-> Podpis můžete ověřit kdokoli, protože veřejného klíče odesílatele je společné znalosti a je obvykle součástí formátu digitální podpis. Tato metoda nezachovává tajemství zprávy. pro zprávy být tajný se musí také být zašifrován.
+> Podpis může být ověřený kýmkoli, protože veřejný klíč odesílatele je běžnou znalostí a obvykle je zahrnutý ve formátu digitálního podpisu. Tato metoda nezachovává tajnost zprávy; zpráva, která má být tajná, musí být také zašifrovaná.
 
-Rozhraní .NET Framework poskytuje následující třídy, které implementují algoritmy digitální podpis:
+.NET Framework poskytuje následující třídy, které implementují algoritmy digitálního podpisu:
 
 - <xref:System.Security.Cryptography.DSACryptoServiceProvider>
 
 - <xref:System.Security.Cryptography.RSACryptoServiceProvider>
 
-- <xref:System.Security.Cryptography.ECDsa> (základní třídy)
+- <xref:System.Security.Cryptography.ECDsa> (základní třída)
 
 - <xref:System.Security.Cryptography.ECDsaCng>
 
- [Zpět na začátek](#top)
-
-<a name="hash_values"></a>
-
 ## <a name="hash-values"></a>Hodnoty hash
 
-Hashovacích algoritmů mapování binárních hodnot libovolné délky na menší binárních hodnot pevné délky, známé jako hodnoty hash. Číselné vyjádření část dat je hodnota hash. Pokud hodnotu hash odstavce ve formátu prostého textu a změníte ještě jedno písmeno odstavce, vytvoří následující hodnoty hash jinou hodnotu. Pokud je hodnota hash kryptograficky silnou, jeho hodnota se změní výrazně. Například pokud se změní část zprávy silné hashovací funkci může vytvořit výstup, který se liší o 50 procent. Počet vstupních hodnot může stejné výstupní hodnotu hash. Je však výpočetně najít dva odlišné vstupy tuto hodnotu hash na stejnou hodnotu.
+Algoritmy hash mapují binární hodnoty libovolné délky na menší binární hodnoty s pevnou délkou, označované jako hodnoty hash. Hodnota hash je numerická reprezentace části dat. Pokud zadáte hodnotu hash v podobě prostého textu a změníte dokonce i jedno písmeno odstavce, další hodnota hash vytvoří jinou hodnotu. Pokud je hash kryptograficky silný, jeho hodnota se významně změní. Například pokud je jeden bit zprávy změněn, silná funkce hash může vytvořit výstup, který se liší o 50 procent. Mnoho vstupních hodnot může mít hodnotu hash na stejnou výstupní hodnotu. Je ale výpočetně neproveditelný, aby bylo možné najít dvě odlišné vstupy, které se hash shodují se stejnou hodnotou.
 
-Obě strany (Alice a Bob) použít k zajištění integrity zprávy funkce hash. Vyberou by hashovací algoritmus jejich zprávy. Alice by zapsat zprávu a pak vytvoří hodnotu hash této zprávy s použitím vybrané algoritmus. Jejich by postupujte podle jednoho z následujících metod:
+Dvě strany (Alice a Bob) můžou použít funkci hash k zajištění integrity zprávy. Vybraly algoritmus hash pro podepsání svých zpráv. Alice by napsala zprávu a pak vytvořila hodnotu hash této zprávy pomocí vybraného algoritmu. Pak by pak následovaly jednu z následujících metod:
 
-- Alice odesílá do zprávy ve formátu prostého textu a hodnotu hash zprávy (digitální podpis). Bob obdrží hashuje zprávu a porovnává jeho hodnotu hash pro hodnotu hash, který obdržel od Alice. Pokud jsou hodnoty hash stejné, zpráva nebyla změněna. Pokud hodnoty nejsou shodné, zprávy byl změněn po ho napsal Alice.
+- Alice pošle zprávu nešifrovaného textu a zatřiďovací zprávu (digitální podpis) Bobovi. Bob obdrží a vytvoří hodnotu hash zprávy a porovná hodnotu hash s hodnotou hash, kterou obdržel od Alice. Pokud jsou hodnoty hash identické, zpráva se nezměnila. Pokud hodnoty nejsou shodné, zpráva se po jejím zapsání nezměnila.
 
-  Tato metoda však nevytváří pravosti odesílatele. Kdokoli na nich může zosobnit Alice a Bob odešlete zprávu. Můžou použít stejný algoritmus hash a podepisování jejich zpráva a všechno, co můžete určit Bob je, že zpráva odpovídá jeho podpis. Toto je jedna podoba útok man-in-the-middle. Další informace najdete v tématu [kryptografické služby nové generace (CNG) zabezpečené komunikace příklad](https://docs.microsoft.com/previous-versions/cc488018(v=vs.100)).
+  Tato metoda bohužel nevytváří pravost odesilatele. Kdokoli může zosobnit Alici a poslat zprávu Bobovi. Můžou použít stejný algoritmus hash k podepsání své zprávy a všichni Bob můžou určit, že se zpráva shoduje s jejím podpisem. Jedná se o jednu formu útoku prostředníkem. Další informace najdete v tématu [Příklad zabezpečené komunikace CNG (Cryptography Next Generation)](https://docs.microsoft.com/previous-versions/cc488018(v=vs.100)).
 
-- Alice odešle zprávu ve formátu prostého textu Bob přes nezabezpečený kanál veřejné. Odešle hodnotu hash zprávy uživateli přes zabezpečený kanál privátní. Bob obdrží zprávu ve formátu prostého textu, rozdělí a porovná součet hash soukromě výměně hodnotou hash. Pokud se klíče hash shodují, Bob ví dvě věci:
+- Alice pošle zprávu nešifrovaného textu Bobovi přes nezabezpečený veřejný kanál. Pošle zprávu hash Bobovi přes zabezpečený privátní kanál. Bob obdrží zprávu ve formátu prostého textu, vytvoří hodnotu hash a porovná hodnotu hash s soukromou vyměněnou hodnotou hash. Pokud se hodnoty hash shodují, Bob zná dvě věci:
 
-  - Zpráva nebyla změněna.
+  - Zpráva se nezměnila.
 
-  - Odesílatel zprávy (Alice) je platná.
+  - Odesílatel zprávy (Alice) je pravý.
 
-  Pro tento systém fungovat musí skrýt Alice ze všech stran, s výjimkou Bob její původní hodnotu hash.
+  Aby tento systém fungoval, musí skrýt jeho původní hodnotu hash ze všech stran kromě Boba.
 
-- Alice odešle zprávu ve formátu prostého textu Bob přes nezabezpečený kanál veřejné a umístí hodnotu hash zprávy na svůj veřejně přístupný webový server.
+- Alice pošle zprávu nešifrovaného textu Bobovi přes nezabezpečený veřejný kanál a umístí do jejího veřejně dostupného webu zprávu s hodnotou hash.
 
-  Tato metoda zabraňuje v manipulaci se zprávami tak, že všem uživatelům zabrání změně hodnoty hash. I když každý lze číst zprávy a jeho hodnotu hash, hodnota hash může změnit pouze Alice. Útočník, který chce zosobnit Alice potřeboval by přístup k webovému serveru Alice.
+  Tato metoda brání manipulaci se zprávou tím, že brání komukoli v úpravě hodnoty hash. I když může být zpráva a její hodnota hash přečtena kýmkoli, hodnota hash může být změněna pouze Alicí. Útočník, který chce zosobnit Alici, by vyžadoval přístup k webu Alice.
 
-Žádná z předchozích metod zabrání někdo čtení zprávy od Alice, protože se přenáší ve formátu prostého textu. Úplné zabezpečení zpravidla vyžaduje, aby digitální podpisy (podepisování zpráv) a šifrování.
+Žádná z předchozích metod nebrání někomu v čtení zpráv Alice, protože jsou přenášeny ve formátu prostého textu. Úplné zabezpečení obvykle vyžaduje digitální podpisy (podepisování zpráv) a šifrování.
 
-Rozhraní .NET Framework poskytuje následující třídy, které implementují algoritmy hash:
+.NET Framework poskytuje následující třídy, které implementují algoritmy hash:
 
 - <xref:System.Security.Cryptography.HMACSHA1>.
 
@@ -241,95 +203,75 @@ Rozhraní .NET Framework poskytuje následující třídy, které implementují 
 
 - <xref:System.Security.Cryptography.SHA512Managed>.
 
-- Varianty HMAC všechny algoritmy zabezpečení hashovací algoritmus (SHA), Message Digest 5 (MD5) a RIPEMD 160.
+- Varianty HMAC všech algoritmů SHA (Secure Hash Algorithm), MD5 (Message Digest 5) a RIPEMD-160.
 
-- CryptoServiceProvider implementace všechny algoritmy SHA (spravovaný kód obálky).
+- Implementace CryptoServiceProvider (obálky spravovaného kódu) všech algoritmů SHA.
 
-- Kryptografie generace (CNG) implementace všech algoritmů MD5 a SHA.
+- Implementace kryptografie nové generace (CNG) pro všechny algoritmy MD5 a SHA.
 
 > [!NOTE]
-> V roce 1996 byly zjištěny chyby návrhu MD5 a SHA-1 se doporučuje místo. V 2004 další chyby byly zjištěny a algoritmus MD5 se už nepovažuje za bezpečný. Být nezabezpečené také byla nalezena algoritmus SHA-1 a SHA-2 je teď doporučujeme místo toho.
-
-[Zpět na začátek](#top)
-
-<a name="random_numbers"></a>
+> Chyby návrhu MD5 byly zjištěny v 1996 a místo toho byly doporučeny SHA-1. V 2004 byly zjištěny další chyby a algoritmus MD5 již není považován za zabezpečený. Algoritmus SHA-1 byl také zjištěn jako nezabezpečený a místo toho se doporučuje SHA-2.
 
 ## <a name="random-number-generation"></a>Náhodné generování čísel
 
-Náhodné generování čísel je nedílnou součástí mnoha kryptografické operace. Například kryptografické klíče musí být jako náhodné, jak je to možné, tak, aby se reprodukovat. Kryptografické generátorů náhodných čísel musí generovat výstup, který je výpočetně odhadnout pravděpodobnost, že je obecně lepší než polovinu. Proto jakékoli metody objektu předpověď Další bit výstup nesmí mít lepší výkon než náhodných opakovaně uhodnout. Třídy v rozhraní .NET Framework pomocí generátorů náhodných čísel pro generování kryptografických klíčů.
+Generování náhodného čísla je celé řady kryptografických operací. Například kryptografické klíče musí být co nejnáhodný, aby bylo možné je znovu rekládat. Generátory náhodných náhodných čísel musí generovat výstup, který je výpočetně nevhodný pro předpověď pravděpodobnosti, která je lepší než jedna polovina. Proto jakákoli metoda předpovědi dalšího výstupního bitu nesmí vylepšit více než náhodné odhadování. Třídy v .NET Framework používají generátory náhodných čísel ke generování kryptografických klíčů.
 
-<xref:System.Security.Cryptography.RNGCryptoServiceProvider> Třída je implementací algoritmu generátor náhodných čísel.
-
-[Zpět na začátek](#top)
-
-<a name="clickonce"></a>
+Třída <xref:System.Security.Cryptography.RNGCryptoServiceProvider> je implementací algoritmu generátoru náhodných čísel.
 
 ## <a name="clickonce-manifests"></a>Manifesty ClickOnce
 
-V rozhraní .NET Framework 3.5, následující šifrovacích tříd umožňují získat a zkontrolovat informace o manifestu podpisy pro aplikace, které jsou nasazeny pomocí [technologie ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment):
+V .NET Framework 3,5 následující kryptografické třídy umožňují získat a ověřit informace o signaturách manifestu pro aplikace, které jsou nasazeny pomocí [technologie ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment):
 
-- <xref:System.Security.Cryptography.ManifestSignatureInformation> Třídy získává informace o podpisu manifestu při použití jeho <xref:System.Security.Cryptography.ManifestSignatureInformation.VerifySignature%2A> přetížení metody.
+- Třída <xref:System.Security.Cryptography.ManifestSignatureInformation> získává informace o podpisu manifestu při použití přetížení metod <xref:System.Security.Cryptography.ManifestSignatureInformation.VerifySignature%2A>.
 
-- Můžete použít <xref:System.Security.ManifestKinds> výčet určit, které manifesty ověření. Výsledek ověření je jedním z <xref:System.Security.Cryptography.SignatureVerificationResult> hodnot výčtu.
+- Pomocí výčtu <xref:System.Security.ManifestKinds> můžete určit, které manifesty se mají ověřit. Výsledkem ověření je jedna z hodnot <xref:System.Security.Cryptography.SignatureVerificationResult> výčtu.
 
-- <xref:System.Security.Cryptography.ManifestSignatureInformationCollection> Třída poskytuje kolekci jen pro čtení <xref:System.Security.Cryptography.ManifestSignatureInformation> objekty ověřených podpisů.
+- Třída <xref:System.Security.Cryptography.ManifestSignatureInformationCollection> poskytuje kolekci <xref:System.Security.Cryptography.ManifestSignatureInformation> objektů ověřených podpisů, které jsou jen pro čtení.
 
- Navíc následující třídy poskytují informace o konkrétní podpisu:
+ Kromě toho následující třídy poskytují konkrétní informace o podpisu:
 
-- <xref:System.Security.Cryptography.StrongNameSignatureInformation> Obsahuje informace o podpisu silného názvu pro manifest.
+- <xref:System.Security.Cryptography.StrongNameSignatureInformation> obsahuje informace o podpisu silného názvu pro manifest.
 
 - <xref:System.Security.Cryptography.X509Certificates.AuthenticodeSignatureInformation> představuje informace o podpisu Authenticode pro manifest.
 
-- <xref:System.Security.Cryptography.X509Certificates.TimestampInformation> obsahuje informace o časové razítko na podpis Authenticode.
+- <xref:System.Security.Cryptography.X509Certificates.TimestampInformation> obsahuje informace o časovém razítku podpisu Authenticode.
 
-- <xref:System.Security.Cryptography.X509Certificates.TrustStatus> poskytuje jednoduchý způsob, jak zkontrolovat, zda je důvěryhodný podpis Authenticode.
-
-[Zpět na začátek](#top)
-
-<a name="suite_b"></a>
+- <xref:System.Security.Cryptography.X509Certificates.TrustStatus> poskytuje jednoduchý způsob, jak ověřit, zda je podpis Authenticode důvěryhodný.
 
 ## <a name="suite-b-support"></a>Podpora Suite B
 
-Rozhraní .NET Framework 3.5 podporuje sady Suite B kryptografické algoritmy, které jsou publikovány National Security Agency (NSA). Další informace o Suite B, najdete v článku [NSA Suite B kryptografie fakt Sheet](https://www.nsa.gov/what-we-do/information-assurance/).
+.NET Framework 3,5 podporuje Suite B sadu kryptografických algoritmů publikovaných národním bezpečnostním úřadem (National Security Agency). Další informace o Suite B najdete v [listu faktu Suite B kryptografie](https://www.nsa.gov/what-we-do/information-assurance/).
 
-Tyto algoritmy jsou zahrnuty:
+K dispozici jsou tyto algoritmy:
 
-- Pokročilé algoritmus standardu šifrování (AES) s velikostí klíče 128, 192 a 256 bitů pro šifrování.
+- Algoritmus standard AES (Advanced Encryption Standard) (AES) s velikostí klíčů 128, 192, a 256 bitů pro šifrování.
 
-- Pro vytvoření hodnoty hash zabezpečení hashovací algoritmy SHA-1, SHA-256, SHA-384 a SHA-512. (Poslední tři jsou obecně seskupené dohromady a označovány jako SHA-2.)
+- Algoritmy SHA-1, SHA-256, SHA-384 a SHA-512 pro algoritmus hash. (Poslední tři jsou obecně seskupené dohromady a označují se jako SHA-2.)
 
-- Křivky digitální podpis algoritmů ECDSA (Elliptic), pomocí křivky 256 bitů, 384 bitů a 521-bit 521bitů primárního modulu pro podepisování. Dokumentace NSA speciálně definuje tyto křivky a je volá p-256, p-384 a p-521. Tento algoritmus poskytuje <xref:System.Security.Cryptography.ECDsaCng> třídy. Umožňuje vám přihlášení s privátním klíčem a ověřit podpis s veřejným klíčem.
+- Algoritmus ECDSA (s eliptickou křivkou digitálního podpisu), který při podepisování používá křivky 256 bitů, 384 bitů a 521-bit. Dokumentace k bezpečnostnímu orgánu konkrétně definuje tyto křivky a volá je P-256, P-384 a P-521. Tento algoritmus poskytuje třída <xref:System.Security.Cryptography.ECDsaCng>. Umožňuje vám podepsat privátní klíč a ověřit podpis pomocí veřejného klíče.
 
-- Eliptické křivky Diffie-Hellman (ECDH) algoritmus, pomocí křivky 256 bitů, 384 bitů a 521-bit 521bitů primárního modulu pro výměnu klíčů a tajných kódů smlouvy. Tento algoritmus poskytuje <xref:System.Security.Cryptography.ECDiffieHellmanCng> třídy.
+- Algoritmus ECDH s eliptickou křivkou (ECDH), který používá křivky 256 bitů, 384 bitů a 521-bit pro výměnu klíčů a tajnou adresu. Tento algoritmus poskytuje třída <xref:System.Security.Cryptography.ECDiffieHellmanCng>.
 
-Spravovaný kód obálky pro federální informace o zpracování Standard (FIPS) certified implementace AES, SHA-256, SHA-384 a SHA-512 jsou dostupná na novém <xref:System.Security.Cryptography.AesCryptoServiceProvider>, <xref:System.Security.Cryptography.SHA256CryptoServiceProvider>, <xref:System.Security.Cryptography.SHA384CryptoServiceProvider>, a <xref:System.Security.Cryptography.SHA512CryptoServiceProvider> třídy.
+Obálka spravovaného kódu pro implementace standardu FIPS (Federal Information Processing Standard) s certifikací AES, SHA-256, SHA-384 a SHA-512 jsou k dispozici v nových třídách <xref:System.Security.Cryptography.AesCryptoServiceProvider>, <xref:System.Security.Cryptography.SHA256CryptoServiceProvider>, <xref:System.Security.Cryptography.SHA384CryptoServiceProvider>a <xref:System.Security.Cryptography.SHA512CryptoServiceProvider>.
 
-[Zpět na začátek](#top)
+## <a name="cryptography-next-generation-cng-classes"></a>Třídy kryptografie nové generace (CNG)
 
-<a name="cng"></a>
+Třídy kryptografie nové generace (CNG) poskytují spravovanou obálku kolem nativních funkcí CNG. (CNG je náhradou pro rozhraní CryptoAPI.) Tyto třídy mají v rámci svých názvů "CNG". Základem základních tříd CNG je <xref:System.Security.Cryptography.CngKey> třída kontejneru klíčů, která vyabstrakce úložiště a použití klíčů CNG. Tato třída umožňuje bezpečně uložit dvojici klíčů nebo veřejný klíč a odkazovat na ni pomocí jednoduchého názvu řetězce. Třída signatury <xref:System.Security.Cryptography.ECDsaCng> založená na eliptické křivce a <xref:System.Security.Cryptography.ECDiffieHellmanCng> třída šifrování může používat <xref:System.Security.Cryptography.CngKey> objektů.
 
-## <a name="cryptography-next-generation-cng-classes"></a>Další generace (CNG) třídy šifrování
+Třída <xref:System.Security.Cryptography.CngKey> se používá pro celou řadu dalších operací, včetně otevírání, vytváření, odstraňování a exportování klíčů. Poskytuje také přístup k základnímu popisovači klíče, který se použije při přímém volání nativních funkcí.
 
-Kryptografické služby nové generace (CNG) třídy poskytují spravovaná obálka kolem nativní funkce CNG. (CNG je náhradou rozhraní CryptoAPI.) Tyto třídy mají "Cng" jako součást jejich názvy. Z centrální na obálkové třídy CNG je <xref:System.Security.Cryptography.CngKey> třída kontejneru, který abstrahuje úložiště a použití klíčů CNG klíčů. Tato třída umožňuje bezpečně dvojici klíčů nebo veřejný klíč a na něj odkazovat pomocí názvu jednoduchým řetězcem. Na eliptické založené na křivku <xref:System.Security.Cryptography.ECDsaCng> Třída podpisu a <xref:System.Security.Cryptography.ECDiffieHellmanCng> pomocí tříd šifrování <xref:System.Security.Cryptography.CngKey> objekty.
+.NET Framework 3,5 obsahuje také řadu podporovaných tříd CNG, například následující:
 
-<xref:System.Security.Cryptography.CngKey> Třída se používá pro celou řadu dalších operací, včetně otevření, vytváření, odstraňování a export klíčů. Poskytuje také přístup k podkladové popisovač klíče pro použití při volání nativních funkcí přímo.
+- <xref:System.Security.Cryptography.CngProvider> udržuje poskytovatele úložiště klíčů.
 
-Rozhraní .NET Framework 3.5 také zahrnuje celou řadu pomocných tříd CNG, jako je následující:
-
-- <xref:System.Security.Cryptography.CngProvider> udržuje zprostředkovatele úložiště klíčů.
-
-- <xref:System.Security.Cryptography.CngAlgorithm> udržuje CNG algoritmus.
+- <xref:System.Security.Cryptography.CngAlgorithm> udržuje algoritmus CNG.
 
 - <xref:System.Security.Cryptography.CngProperty> udržuje často používané vlastnosti klíče.
-
-[Zpět na začátek](#top)
-
-<a name="related_topics"></a>
 
 ## <a name="related-topics"></a>Související témata
 
 |Název|Popis|
 |-----------|-----------------|
-|[Kryptografický model](../../../docs/standard/security/cryptography-model.md)|Popisuje, jak je implementovaná šifrování v knihovně základních tříd.|
-|[Návod: Vytvoření šifrovací aplikace](../../../docs/standard/security/walkthrough-creating-a-cryptographic-application.md)|Ukazuje základní úlohy pro šifrování a dešifrování.|
-|[Konfigurace šifrovacích tříd](../../../docs/framework/configure-apps/configure-cryptography-classes.md)|Popisuje způsob mapování názvů algoritmů na třídy šifrování a mapování identifikátorů objektů na kryptografický algoritmus.|
+|[Kryptografický model](../../../docs/standard/security/cryptography-model.md)|Popisuje, jak je kryptografie implementována v knihovně základní třídy.|
+|[Návod: Vytvoření šifrovací aplikace](../../../docs/standard/security/walkthrough-creating-a-cryptographic-application.md)|Ukazuje základní úlohy šifrování a dešifrování.|
+|[Konfigurace šifrovacích tříd](../../../docs/framework/configure-apps/configure-cryptography-classes.md)|Popisuje způsob mapování názvů algoritmů na kryptografické třídy a mapování identifikátorů objektů na kryptografický algoritmus.|

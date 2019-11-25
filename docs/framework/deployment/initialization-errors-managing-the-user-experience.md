@@ -1,5 +1,5 @@
 ---
-title: 'Chyby inicializace .NET Framework: Správa prostředí pro uživatele'
+title: 'Chyby inicializace .NET Framework: Správa prostředí uživatele'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - no framework found experience
@@ -8,18 +8,18 @@ helpviewer_keywords:
 ms.assetid: 680a7382-957f-4f6e-b178-4e866004a07e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ce022e92e8b6770c42800a04a349eff751bdb708
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 3cd881044d45a276ec361d24097b59b8ce76b7e4
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052067"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975690"
 ---
-# <a name="net-framework-initialization-errors-managing-the-user-experience"></a>Chyby inicializace .NET Framework: Správa prostředí pro uživatele
+# <a name="net-framework-initialization-errors-managing-the-user-experience"></a>Chyby inicializace .NET Framework: Správa prostředí uživatele
 
 Systém aktivace modulu CLR (Common Language Runtime) určuje verzi modulu CLR, která bude použita ke spuštění kódu spravované aplikace. V některých případech nemusí být aktivační systém schopný najít verzi CLR, která se má načíst. K této situaci obvykle dochází, když aplikace vyžaduje verzi CLR, která je neplatná nebo není v daném počítači nainstalovaná. Pokud se požadovaná verze nenajde, vrátí systém aktivace CLR kód chyby HRESULT z funkce nebo rozhraní, které bylo voláno, a může zobrazit chybovou zprávu uživateli, který aplikaci spouští. Tento článek obsahuje seznam kódů HRESULT a vysvětluje, jak můžete zabránit zobrazení chybové zprávy.
 
-Modul CLR poskytuje infrastrukturu protokolování, která vám umožní ladit problémy s aktivací CLR, jak [je popsáno v tématu How to: Ladění problémů s](how-to-debug-clr-activation-issues.md)aktivací CLR. Tato infrastruktura by se neměla zaměňovat s [protokoly vazeb sestavení](../tools/fuslogvw-exe-assembly-binding-log-viewer.md), které jsou zcela odlišné.
+Modul CLR poskytuje infrastrukturu protokolování, která vám může pomáhat při ladění problémů s aktivací CLR, jak je popsáno v tématu [How to: Debug CLR Activation problémy](how-to-debug-clr-activation-issues.md). Tato infrastruktura by se neměla zaměňovat s [protokoly vazeb sestavení](../tools/fuslogvw-exe-assembly-binding-log-viewer.md), které jsou zcela odlišné.
 
 ## <a name="clr-activation-hresult-codes"></a>Kódy HRESULT aktivace CLR
 
@@ -51,17 +51,17 @@ Chcete-li vyřešit základní problémy a poskytnout nejlepší uživatelské p
 
 - Pro .NET Framework 3,5 (a starší) aplikace: Nakonfigurujte svou aplikaci tak, aby podporovala .NET Framework 4 nebo novější verze (viz [pokyny](../migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)).
 
-- Pro aplikace .NET Framework 4: Nainstalujte Distribuovatelný balíček .NET Framework 4 jako součást instalace aplikace. V tématu [Průvodce nasazením pro vývojáře](deployment-guide-for-developers.md).
+- Pro aplikace .NET Framework 4: nainstalujte .NET Framework 4 Distribuovatelný balíček jako součást instalace aplikace. V tématu [Průvodce nasazením pro vývojáře](deployment-guide-for-developers.md).
 
 ## <a name="controlling-the-error-message"></a>Řízení chybové zprávy
 
 Zobrazuje se chybová zpráva, která oznamuje, že se nenašla požadovaná verze .NET Framework můžete zobrazit jako užitečnou službu nebo menší nepříjemnost pro uživatele. V obou případech můžete toto uživatelské rozhraní řídit předáním příznaků aktivačním rozhraním API.
 
-Metoda [ICLRMetaHostPolicy –:: GetRequestedRuntime –](../unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md) přijímá člena výčtu [METAHOST_POLICY_FLAGS](../unmanaged-api/hosting/metahost-policy-flags-enumeration.md) jako vstup. Pokud se požadovaná verze modulu CLR nenajde, můžete pro vyžádání chybové zprávy zadat příznak METAHOST_POLICY_SHOW_ERROR_DIALOG. Ve výchozím nastavení se chybová zpráva nezobrazí. (Metoda [ICLRMetaHost:: GetRuntime](../unmanaged-api/hosting/iclrmetahost-getruntime-method.md) nepřijímá tento příznak a neposkytuje žádný jiný způsob, jak zobrazit chybovou zprávu.)
+Metoda [ICLRMetaHostPolicy –:: GetRequestedRuntime –](../unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md) přijímá jako vstup člena výčtu [METAHOST_POLICY_FLAGS](../unmanaged-api/hosting/metahost-policy-flags-enumeration.md) . Můžete zahrnout příznak METAHOST_POLICY_SHOW_ERROR_DIALOG pro vyžádání chybové zprávy, pokud se nenalezne požadovaná verze modulu CLR. Ve výchozím nastavení se chybová zpráva nezobrazí. (Metoda [ICLRMetaHost:: GetRuntime](../unmanaged-api/hosting/iclrmetahost-getruntime-method.md) nepřijímá tento příznak a neposkytuje žádný jiný způsob, jak zobrazit chybovou zprávu.)
 
-Systém Windows poskytuje funkci [SetErrorMode](https://go.microsoft.com/fwlink/p/?LinkID=255242) , kterou můžete použít k deklaraci, jestli chcete, aby se chybové zprávy zobrazovaly jako výsledek kódu spuštěného v rámci procesu. Můžete zadat příznak SEM_FAILCRITICALERRORS, který zabrání zobrazení chybové zprávy.
+Systém Windows poskytuje funkci [SetErrorMode](/windows/win32/api/errhandlingapi/nf-errhandlingapi-seterrormode) , kterou můžete použít k deklaraci, jestli chcete, aby se chybové zprávy zobrazovaly jako výsledek kódu spuštěného v rámci procesu. Můžete zadat příznak SEM_FAILCRITICALERRORS, aby se zabránilo zobrazení chybové zprávy.
 
-V některých scénářích je však důležité přepsat nastavení SEM_FAILCRITICALERRORS nastavené procesem aplikace. Například pokud máte nativní komponentu modelu COM, která je hostitelem CLR a která je hostována v procesu, kde je nastavena SEM_FAILCRITICALERRORS, může být vhodné přepsat příznak v závislosti na dopadu zobrazení chybových zpráv v rámci tohoto konkrétního procesu aplikace. V takovém případě můžete použít jeden z následujících příznaků k přepsání SEM_FAILCRITICALERRORS:
+V některých scénářích je však důležité přepsat nastavení SEM_FAILCRITICALERRORS nastavené procesem aplikace. Například pokud máte nativní komponentu modelu COM, která je hostitelem CLR a která je hostována v procesu, kde je nastavena SEM_FAILCRITICALERRORS, je vhodné přepsat příznak v závislosti na vlivu zobrazení chybových zpráv v rámci daného procesu aplikace. V takovém případě můžete použít jeden z následujících příznaků k přepsání SEM_FAILCRITICALERRORS:
 
 - Použijte METAHOST_POLICY_IGNORE_ERROR_MODE s metodou [ICLRMetaHostPolicy –:: GetRequestedRuntime –](../unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md) .
 
@@ -80,20 +80,20 @@ CLR obsahuje sadu hostitelů pro celou řadu scénářů a tito hostitelé zobra
 
 ## <a name="windows-8-behavior-and-ui"></a>Chování Windows 8 a uživatelské rozhraní
 
-Systém aktivace CLR poskytuje stejné chování a uživatelské rozhraní [!INCLUDE[win8](../../../includes/win8-md.md)] jako v jiných verzích operačního systému Windows, s výjimkou případů, kdy dojde k potížím při načítání CLR 2,0. [!INCLUDE[win8](../../../includes/win8-md.md)]zahrnuje .NET Framework 4,5, který používá CLR 4,5. [!INCLUDE[win8](../../../includes/win8-md.md)] Nezahrnuje však .NET Framework 2,0, 3,0 nebo 3,5, které všechny používají CLR 2,0. V důsledku toho aplikace, které závisí na CLR 2,0, ve výchozím nastavení [!INCLUDE[win8](../../../includes/win8-md.md)] neběží. Místo toho se zobrazí následující dialogové okno, které uživatelům umožní nainstalovat .NET Framework 3,5. Uživatelé také mohou povolit .NET Framework 3,5 v Ovládacích panelech. Obě možnosti jsou popsány v článku [instalace .NET Framework 3,5 ve Windows 10, Windows 8.1 a Windows 8](../install/dotnet-35-windows-10.md).
+Systém aktivace CLR poskytuje stejné chování a uživatelské rozhraní v [!INCLUDE[win8](../../../includes/win8-md.md)] jako v jiných verzích operačního systému Windows, s výjimkou případů, kdy dojde k potížím při načítání CLR 2,0. [!INCLUDE[win8](../../../includes/win8-md.md)] zahrnuje .NET Framework 4,5, které používá CLR 4,5. [!INCLUDE[win8](../../../includes/win8-md.md)] ale neobsahuje .NET Framework 2,0, 3,0 nebo 3,5, které všechny používají CLR 2,0. V důsledku toho aplikace, které závisí na CLR 2,0, se ve výchozím nastavení nespouštějí na [!INCLUDE[win8](../../../includes/win8-md.md)]. Místo toho se zobrazí následující dialogové okno, které uživatelům umožní nainstalovat .NET Framework 3,5. Uživatelé také mohou povolit .NET Framework 3,5 v Ovládacích panelech. Obě možnosti jsou popsány v článku [instalace .NET Framework 3,5 ve Windows 10, Windows 8.1 a Windows 8](../install/dotnet-35-windows-10.md).
 
 ![Dialogové okno pro 3,5 instalaci v systému Windows 8](./media/initialization-errors-managing-the-user-experience/install-framework-on-demand-dialog.png "Výzva k instalaci .NET Framework 3,5 na vyžádání")
 
 > [!NOTE]
-> .NET Framework 4,5 nahrazuje .NET Framework 4 (CLR 4) v počítači uživatele. Proto aplikace .NET Framework 4 běží bez problémů bez zobrazení tohoto dialogového okna v [!INCLUDE[win8](../../../includes/win8-md.md)].
+> .NET Framework 4,5 nahrazuje .NET Framework 4 (CLR 4) v počítači uživatele. Proto se aplikace .NET Framework 4 spouštějí bez problémů bez zobrazení tohoto dialogového okna v [!INCLUDE[win8](../../../includes/win8-md.md)].
 
-Když je nainstalovaná .NET Framework 3,5, můžou uživatelé spouštět aplikace, které na svých [!INCLUDE[win8](../../../includes/win8-md.md)] počítačích závisejí na .NET Framework 2,0, 3,0 nebo 3,5. Můžou taky spouštět .NET Framework 1,0 a 1,1 aplikace za předpokladu, že tyto aplikace nejsou explicitně nakonfigurované tak, aby se spouštěly jenom v .NET Framework 1,0 nebo 1,1. Viz [migrace z .NET Framework 1,1](../migration-guide/migrating-from-the-net-framework-1-1.md).
+Když je nainstalovaná .NET Framework 3,5, můžou uživatelé spouštět aplikace, které na svých [!INCLUDE[win8](../../../includes/win8-md.md)]ch počítačích závisejí na .NET Framework 2,0, 3,0 nebo 3,5. Můžou taky spouštět .NET Framework 1,0 a 1,1 aplikace za předpokladu, že tyto aplikace nejsou explicitně nakonfigurované tak, aby se spouštěly jenom v .NET Framework 1,0 nebo 1,1. Viz [migrace z .NET Framework 1,1](../migration-guide/migrating-from-the-net-framework-1-1.md).
 
-Počínaje .NET Framework 4,5 byl vylepšeno protokolování aktivace CLR, aby zahrnovalo položky protokolu, které se zaznamenávají, kdy a proč se zobrazila chybová zpráva o inicializaci. Další informace najdete v tématu [jak: Ladění problémů s](how-to-debug-clr-activation-issues.md)aktivací CLR.
+Počínaje .NET Framework 4,5 byl vylepšeno protokolování aktivace CLR, aby zahrnovalo položky protokolu, které se zaznamenávají, kdy a proč se zobrazila chybová zpráva o inicializaci. Další informace naleznete v tématu [How to: Debug CLR problémy Activation](how-to-debug-clr-activation-issues.md).
 
 ## <a name="see-also"></a>Viz také:
 
 - [Průvodce nasazením pro vývojáře](deployment-guide-for-developers.md)
 - [Postupy: Konfigurace aplikace pro podporu .NET Framework 4 nebo novějších verzí](../migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)
-- [Postupy: Ladění problémů s aktivací CLR](how-to-debug-clr-activation-issues.md)
+- [Postupy: Ladění problémů aktivace CLR](how-to-debug-clr-activation-issues.md)
 - [Instalace rozhraní .NET Framework 3.5 v systému Windows 10, Windows 8.1 a Windows 8](../install/dotnet-35-windows-10.md)

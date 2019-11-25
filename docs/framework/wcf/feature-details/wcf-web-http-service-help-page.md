@@ -2,33 +2,33 @@
 title: Stránka nápovědy webové služby HTTP WCF
 ms.date: 03/30/2017
 ms.assetid: 63c7c695-44b6-4f31-bb9c-00f2763f525e
-ms.openlocfilehash: 60fd909d6e7d3ba0e0c0254024ef7eb40263b59e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8d798c8080bf1afee87305cd00a27db2ece7e970
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62050403"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975924"
 ---
 # <a name="wcf-web-http-service-help-page"></a>Stránka nápovědy webové služby HTTP WCF
-[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] poskytuje automatickou stránku nápovědy pro služby webových služeb HTTP WCF. Tato stránka nápovědy obsahuje popis jednotlivých operace, požadavků a odpovědí formáty a schémata. Tato funkce je ve výchozím nastavení vypnuté. Když uživatel přejde do služby webových služeb HTTP WCF a přidá "/ Help" na konci adresy URL, například `http://localhost:8000/Customers/Help`, stránku nápovědy jako tento text.  
+[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] poskytuje automatickou stránku s nápovědu pro webové HTTP služby WCF. Tato stránka help obsahuje popis jednotlivých operací, formátů požadavků a odpovědí a schémat. Tato funkce je ve výchozím nastavení vypnutá. Když uživatel přejde na webovou službu HTTP WCF a připojí na konec adresy URL "/Help", například `http://localhost:8000/Customers/Help`, zobrazí se stránka s nápovědu, například následující.  
   
- ![Otevřete prohlížeč se stránkou pomáhají REST WCF.](./media/wcf-web-http-service-help-page/windows-communication-foundation-rest-help-page.gif)  
+ ![Prohlížeč s otevřenou stránkou pomocníka WCF REST.](./media/wcf-web-http-service-help-page/windows-communication-foundation-rest-help-page.gif)  
   
- Uživatel potom můžete kliknutím na libovolnou metodu uvedené na stránce nápovědy a zobrazí se podrobné stránka pro danou operaci, zobrazuje další informace o metodě, včetně formáty zpráv a ukázkové odpovědi. Na následujícím obrázku je příklad stránky nápovědy pro metodu.  
+ Uživatel pak může kliknout na libovolnou metodu uvedenou na stránce s nápovědu a na podrobné stránce pro tuto operaci se zobrazí další informace o metodě, včetně formátů zpráv a ukázkových odpovědí. Následující obrázek je příkladem stránky s nápovědu pro metodu.  
   
- ![Otevřete prohlížeč s podrobnostmi o stránku nápovědy REST WCF pro metodu GetCustomers.](./media/wcf-web-http-service-help-page/windows-communication-foundation-rest-help-page-detail.gif)  
+ ![V prohlížeči se zobrazí podrobnosti stránky s nápovědu služby WCF na stránce s informacemi o otevřené metodě GetCustomers.](./media/wcf-web-http-service-help-page/windows-communication-foundation-rest-help-page-detail.gif)  
   
-## <a name="using-the-wcf-web-http-help-page"></a>Na stránce nápovědy webových služeb HTTP WCF  
- Na stránce nápovědy WCF WEB HTTP zobrazuje krátký popis pro každou operaci za předpokladu, že zadáte jednu <xref:System.ComponentModel.DescriptionAttribute>. Tento atribut přebírá řetězec, který obsahuje stručný popis operace, které bylo použito. Například následující kód ukazuje způsob použití <xref:System.ComponentModel.DescriptionAttribute> zadejte krátký popis.  
+## <a name="using-the-wcf-web-http-help-page"></a>Stránka s podporou webu HTTP pro WCF  
+ Stránka s podporou webového protokolu HTTP WCF zobrazuje krátký popis každé zadané operace, kterou zadáte pomocí <xref:System.ComponentModel.DescriptionAttribute>. Tento atribut přebírá řetězec, který obsahuje krátký popis operace, na kterou se aplikuje. Například následující kód ukazuje, jak použít <xref:System.ComponentModel.DescriptionAttribute> k zadání krátkého popisu.  
   
-```  
+```csharp
 [OperationContract]  
 [WebGet(UriTemplate="/template1", BodyStyle = WebMessageBodyStyle.Bare)]  
 [Description("Description for GET /template1")]  
 SyndicationFeedFormatter GetTemplate1();  
 ```  
   
- Chcete-li na stránce nápovědy WCF WEB HTTP, je nutné přidat chování koncového bodu do koncových bodů vaší služby. To můžete udělat v konfiguraci nebo kódu. Pokud chcete povolit stáří nápovědy WCF WEB HTTP v konfiguraci, přidejte chování koncového bodu s `<webHttp>` elementu, nastavte `enableHelp` k `true`a přidání koncového bodu a nakonfigurujte ho na použití chování koncového bodu. Následující konfigurační kód ukazuje, jak to provést.  
+ Pokud chcete zapnout stránku WCF WEB HTTP Help, musíte do koncových bodů služby Přidat chování koncového bodu. To lze provést v konfiguraci nebo kódu. Chcete-li povolit stáří webové HTTP protokolu HTTP v konfiguraci, přidejte chování koncového bodu s `<webHttp>` prvkem, nastavte `enableHelp` na `true`a přidejte koncový bod a nakonfigurujte ho tak, aby používal chování koncového bodu. Následující konfigurační kód ukazuje, jak to provést.  
   
 ```xml  
 <endpointBehaviors>  
@@ -45,9 +45,9 @@ SyndicationFeedFormatter GetTemplate1();
 </services>  
 ```  
   
- Chcete-li v kódu stránky nápovědy WCF Web HTTP, přidání koncového bodu služby a přidejte <xref:System.ServiceModel.Description.WebHttpBehavior> nastavení koncového bodu <xref:System.ServiceModel.Description.WebHttpBehavior.HelpEnabled%2A> k `true`. Následující kód ukazuje, jak to provést.  
+ Chcete-li povolit stránku WCF Web HTTP Help v kódu, přidejte koncový bod služby a přidejte <xref:System.ServiceModel.Description.WebHttpBehavior> do nastavení koncového bodu <xref:System.ServiceModel.Description.WebHttpBehavior.HelpEnabled%2A> na `true`. Následující kód ukazuje, jak to provést.  
   
-```  
+```csharp
 using (WebServiceHost host = new WebServiceHost(typeof(Service), new Uri("http://localhost:8000/Customers")))  
 {  
    host.AddServiceEndpoint(typeof(ICustomerCollection), new WebHttpBinding(), "");
@@ -56,10 +56,10 @@ using (WebServiceHost host = new WebServiceHost(typeof(Service), new Uri("http:/
 }  
 ```  
   
- Na stránce nápovědy je XHTML s mark-up, který identifikuje různé části stránky. To umožňuje klientům programově přístup pomocí stránky <xref:System.Xml.Linq.XElement> nebo jiná XLinq rozhraní API.  
+ Stránka Nápověda je založena na XHTML s označením, které identifikuje různé části stránky. To umožňuje klientům programově přistupovat ke stránce pomocí <xref:System.Xml.Linq.XElement> nebo jiných rozhraní XLinq API.  
   
-## <a name="schemas-used-in-the-wcf-web-http-service-help-page"></a>Stránka nápovědy schémata použitá v webové služby HTTP WCF  
- Na stránce nápovědy služby webových služeb HTTP WCF se používají následující schémata.  
+## <a name="schemas-used-in-the-wcf-web-http-service-help-page"></a>Schémata použitá na stránce s podporou služby HTTP webu WCF  
+ Následující schémata se používají na stránce help webové služby HTTP WCF.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-16"?>  
@@ -240,4 +240,4 @@ using (WebServiceHost host = new WebServiceHost(typeof(Service), new Uri("http:/
 </xs:schema>  
 ```  
   
- Další informace o schématu data smlouvy serializace naleznete v tématu [schéma kontraktů dat – referenční informace](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md).
+ Další informace o schématu serializace kontraktu dat najdete v [referenčních informacích o schématu kontraktu](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)dat.

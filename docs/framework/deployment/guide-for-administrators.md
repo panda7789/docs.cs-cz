@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: bee14036-0436-44e8-89f5-4bc61317977a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 91099b9b4d230839bc14c5fe4d5eafd05ac95541
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: dc842713a16df8e5ada5ad6c71ca19f91ecbc405
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052148"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975572"
 ---
 # <a name="net-framework-deployment-guide-for-administrators"></a>.NET Framework – průvodce nasazením pro administrátory
 
@@ -21,7 +21,7 @@ V tomto podrobném článku se dozvíte, jak může správce systému nasadit .N
 > [!NOTE]
 > Software odkazovaný v tomto dokumentu, včetně, bez omezení, .NET Framework 4,5, System Center Configuration Manager a Active Directory, podléhá licenčním podmínkám a podmínkám. V těchto pokynech se předpokládá, že nabyvatel licence k softwaru si tyto licenční podmínky přečetl a schválil je. Tyto pokyny neodporují žádné z podmínek takovýchto licenčních smluv.
 >
-> Informace o podpoře pro .NET Framework najdete v tématu [Zásady životního cyklu podpory Microsoft .NET Framework](https://go.microsoft.com/fwlink/?LinkId=196607) na webu Podpora Microsoftu.
+> Informace o podpoře pro .NET Framework najdete v článku [.NET Framework oficiální zásady podpory](https://dotnet.microsoft.com/platform/support/policy/dotnet-framework) na webu Podpora Microsoftu.
 
 Toto téma obsahuje následující oddíly:
 
@@ -83,9 +83,9 @@ Postup vytvoření kolekce:
 
 5. Zvolte **Procházet** a zadejte omezující kolekci.
 
-6. Na stránce **pravidla členství** zvolte možnost **Přidat pravidlo**a pak zvolte možnost **přímé pravidlo** . otevře se **Průvodce vytvořením pravidla přímého členství**. Zvolte **Další**.
+6. Na stránce **pravidla členství** zvolte možnost **Přidat pravidlo**a pak zvolte možnost **přímé pravidlo** . otevře se **Průvodce vytvořením pravidla přímého členství**. Klikněte na tlačítko **Další**.
 
-7. Na stránce **Hledat prostředky** v seznamu **Třída prostředků** vyberte položku **systémový prostředek**. V seznamu **název atributu** vyberte možnost **název**. Do pole **hodnota** zadejte `%`a klikněte na tlačítko **Další**.
+7. Na stránce **Hledat prostředky** v seznamu **Třída prostředků** vyberte položku **systémový prostředek**. V seznamu **název atributu** vyberte možnost **název**. Do pole **hodnota** zadejte `%`a pak klikněte na tlačítko **Další**.
 
 8. Na stránce **vybrat prostředky** zaškrtněte políčko u každého počítače, do kterého chcete nasadit .NET Framework. Klikněte na tlačítko **Další**a dokončete průvodce.
 
@@ -107,9 +107,9 @@ Postup vytvoření balíčku:
 
 4. Na stránce **balíček** v **Průvodci vytvořením balíčku a programu**zadejte následující informace:
 
-    - Jméno:`.NET Framework 4.5`
+    - Název: `.NET Framework 4.5`
 
-    - Výrobců`Microsoft`
+    - Výrobce: `Microsoft`
 
     - Jazyk. `English (US)`
 
@@ -121,9 +121,9 @@ Postup vytvoření balíčku:
 
     1. **Název:** `.NET Framework 4.5`
 
-    2. **Příkazový řádek:** `dotNetFx45_Full_x86_x64.exe /q /norestart /ChainingPackage ADMINDEPLOYMENT` (možnosti příkazového řádku jsou popsané v tabulce po těchto krocích)
+    2. **Příkazový řádek:** `dotNetFx45_Full_x86_x64.exe /q /norestart /ChainingPackage ADMINDEPLOYMENT` (parametry příkazového řádku jsou popsány v tabulce po těchto krocích)
 
-    3. **Spouštěl** Vyberte **skrytý**.
+    3. **Spusťte:** Vyberte **skrytý**.
 
     4. **Program lze spustit:** Vyberte možnost, která určuje, zda může program běžet bez ohledu na to, zda je uživatel přihlášen.
 
@@ -133,11 +133,11 @@ Následující tabulka popisuje možnosti příkazového řádku zadané v krok
 
 |Možnost|Popis|
 |------------|-----------------|
-|**/q**|Nastaví tichý režim. Není vyžadován žádný vstup uživatele a nebude zobrazen žádný výstup.|
-|**/ norestart /**|Zabrání instalačnímu programu v automatickém restartování. Pokud použijete tuto možnost, musí restartování počítače zpracovat nástroj Správce konfigurace.|
-|**/chainingpackage** Soubor s *balíčkem*|Určuje název balíčku, který provádí řetězení. Tyto informace jsou hlášeny s dalšími informacemi o Instalační relaci pro ty, kteří se zaregistrovali v [programu Microsoft program Zlepšování softwaru a služeb na základě zkušeností uživatelů (CEIP)](https://go.microsoft.com/fwlink/p/?LinkId=248244). Pokud název balíčku obsahuje mezery, použijte dvojité uvozovky jako oddělovače. Příklad: **/chainingpackage "řetězení produktu"** .|
+|**parametr**|Nastaví tichý režim. Není vyžadován žádný vstup uživatele a nebude zobrazen žádný výstup.|
+|**/norestart**|Zabrání instalačnímu programu v automatickém restartování. Pokud použijete tuto možnost, musí restartování počítače zpracovat nástroj Správce konfigurace.|
+|**/chainingpackage** – *balíček*|Určuje název balíčku, který provádí řetězení. Tyto informace jsou hlášeny s dalšími informacemi o Instalační relaci pro ty, kteří se zaregistrovali v programu Microsoft program Zlepšování softwaru a služeb na základě zkušeností uživatelů (CEIP). Pokud název balíčku obsahuje mezery, použijte dvojité uvozovky jako oddělovače. Příklad: **/chainingpackage "řetězení produktu"** .|
 
-Podle těchto kroků vytvoříte balíček s názvem .NET Framework 4.5. Program provede nasazení tiché instalace rozhraní .NET Framework 4.5. V tiché instalaci uživatelé nepracují s procesem instalace a zřetězená aplikace musí zachytit návratový kód a zpracovat restartování. viz [získání informací o průběhu z instalačního balíčku](https://go.microsoft.com/fwlink/?LinkId=179606).
+Podle těchto kroků vytvoříte balíček s názvem .NET Framework 4.5. Program provede nasazení tiché instalace rozhraní .NET Framework 4.5. V tiché instalaci uživatelé nepracují s procesem instalace a zřetězená aplikace musí zachytit návratový kód a zpracovat restartování. viz [získání informací o průběhu z instalačního balíčku](https://docs.microsoft.com/previous-versions/cc825975(v=vs.100)).
 
 <a name="select_dist_point"></a>
 
@@ -179,18 +179,18 @@ Postup nasazení balíčku a programu .NET Framework 4.5:
 
 4. Na kartě **Domů** ve skupině **nasazení** klikněte na možnost **nasadit**.
 
-5. Na stránce **Obecné** v **Průvodci nasazením softwaru**klikněte na tlačítko **Procházet**a poté vyberte kolekci, kterou jste vytvořili dříve. Zvolte **Další**.
+5. Na stránce **Obecné** v **Průvodci nasazením softwaru**klikněte na tlačítko **Procházet**a poté vyberte kolekci, kterou jste vytvořili dříve. Klikněte na tlačítko **Další**.
 
 6. Na stránce **obsah** v průvodci ověřte, zda je zobrazen bod, ze kterého chcete distribuovat software, a pak zvolte možnost **Další**.
 
-7. Na stránce **nastavení nasazení** v průvodci potvrďte, že **Akce** je nastavená na **instalovat**a **účel** je nastavený na **požadováno**. Díky tomuto nastavení bude softwarový balíček nastaven jako povinná instalace na cílových počítačích. Zvolte **Další**.
+7. Na stránce **nastavení nasazení** v průvodci potvrďte, že **Akce** je nastavená na **instalovat**a **účel** je nastavený na **požadováno**. Díky tomuto nastavení bude softwarový balíček nastaven jako povinná instalace na cílových počítačích. Klikněte na tlačítko **Další**.
 
-8. Na stránce **plánování** v průvodci určete, kdy chcete .NET Framework nainstalovat. Můžete zvolit možnost **nové** a přiřadit čas instalace nebo dát pokyn k instalaci softwaru, když se uživatel přihlásí nebo vypíná nebo co nejdříve. Zvolte **Další**.
+8. Na stránce **plánování** v průvodci určete, kdy chcete .NET Framework nainstalovat. Můžete zvolit možnost **nové** a přiřadit čas instalace nebo dát pokyn k instalaci softwaru, když se uživatel přihlásí nebo vypíná nebo co nejdříve. Klikněte na tlačítko **Další**.
 
 9. Na stránce **činnost koncového uživatele** v průvodci použijte výchozí hodnoty a klikněte na tlačítko **Další**.
 
     > [!WARNING]
-    > Na vaše provozní prostředí se mohou vztahovat zásady, které vyžadují jiná nastavení plánu nasazení. Informace o těchto možnostech najdete v tématu [vlastnosti názvu inzerce: Karta](https://docs.microsoft.com/previous-versions/system-center/configuration-manager-2007/bb694016%28v=technet.10%29)plán
+    > Na vaše provozní prostředí se mohou vztahovat zásady, které vyžadují jiná nastavení plánu nasazení. Informace o těchto možnostech naleznete v tématu [Vlastnosti názvu inzerce: karta plán](https://docs.microsoft.com/previous-versions/system-center/configuration-manager-2007/bb694016%28v=technet.10%29).
 
 10. Na stránce **distribuční body** v průvodci použijte výchozí hodnoty a klikněte na tlačítko **Další**.
 
@@ -214,7 +214,7 @@ Další informace o infrastruktuře pro testování nasazení .NET Framework 4,5
 
 **SQL Server 2008:**
 
-- [Installing SQL Server 2008 (SQL Server Video)](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/dd299415(v=sql.100))
+- [Instalace SQL Server 2008 (SQL Server video)](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/dd299415(v=sql.100))
 
 - [Přehled zabezpečení SQL Server 2008 pro správce databáze](https://download.microsoft.com/download/a/c/d/acd8e043-d69b-4f09-bc9e-4168b65aaa71/SQL2008SecurityOverviewforAdmins.docx)
 
@@ -236,12 +236,12 @@ Další informace o infrastruktuře pro testování nasazení .NET Framework 4,5
 
 Během .NET Frameworkho nastavení se generují následující soubory protokolu:
 
-- %Temp%\Microsoft .NET Framework *verze*\*. txt
-- %Temp%\Microsoft .NET Framework *verze*\*. html
+- %temp%\Microsoft .NET Framework *verze*\*. txt
+- %temp%\Microsoft .NET Framework *verze*\*. html
 
 kde *verze* je verze .NET Framework, kterou instalujete, například 4,5 nebo 4.7.2.
 
-Můžete taky určit adresář, do kterého se budou zapisovat soubory protokolu, a to `/log` pomocí možnosti příkazového řádku v instalačním příkazu .NET Framework. Další informace najdete v tématu [Průvodce nasazením .NET Framework pro vývojáře](deployment-guide-for-developers.md#command-line-options).
+Můžete také zadat adresář, do kterého se budou zapisovat soubory protokolu, pomocí možnosti příkazového řádku `/log` v instalačním příkazu .NET Framework. Další informace najdete v tématu [Průvodce nasazením .NET Framework pro vývojáře](deployment-guide-for-developers.md#command-line-options).
 
 [Nástroj pro shromažďování protokolů](https://www.microsoft.com/download/details.aspx?id=12493) můžete použít ke shromáždění souborů protokolu .NET Framework a k vytvoření komprimovaného souboru CAB (. cab), který zmenší velikost souborů.
 
@@ -255,7 +255,7 @@ Odkazy na podrobné informace naleznete v další části, [stažení kódů chy
 
 |Návratový kód|Popis|
 |-----------------|-----------------|
-|0|Instalace byla úspěšně dokončena.|
+|0,8|Instalace byla úspěšně dokončena.|
 |1602|Instalace byla zrušena uživatelem.|
 |1603|Při instalaci došlo k závažné chybě.|
 |1641|K dokončení instalace je nutné provést restart. Tato zpráva znamená úspěch.|

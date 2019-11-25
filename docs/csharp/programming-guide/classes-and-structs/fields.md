@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - fields [C#]
 ms.assetid: 3cbb2f61-75f8-4cce-b4ef-f5d1b3de0db7
-ms.openlocfilehash: c07f058eb081fa1c9e0a3756959570d1ba9e47f6
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 3a04d07f90ea9e1e536082f2cf0151555305d9e6
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69924519"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73971047"
 ---
 # <a name="fields-c-programming-guide"></a>Pole (Průvodce programováním v C#)
 *Pole* je proměnná libovolného typu, který je deklarován přímo ve [třídě](../../language-reference/keywords/class.md) nebo [struktuře](../../language-reference/keywords/struct.md). Pole jsou *členy* jejich nadřazeného typu.  
@@ -25,11 +25,11 @@ ms.locfileid: "69924519"
   
  [!code-csharp[csProgGuideObjects#61](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#61)]  
   
- Chcete-li získat přístup k poli v objektu, přidejte tečku za název objektu následovaný názvem pole, jako v `objectname.fieldname`. Příklad:  
+ Chcete-li získat přístup k poli v objektu, přidejte tečku za název objektu následovaný názvem pole, jak je uvedeno v `objectname.fieldname`. Příklad:  
   
  [!code-csharp[csProgGuideObjects#62](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#62)]  
   
- Poli lze předávat počáteční hodnotu pomocí operátoru přiřazení při deklaraci pole. K automatickému přiřazení `day` `"Monday"`pole například byste měli deklarovat `day` jako v následujícím příkladu:  
+ Poli lze předávat počáteční hodnotu pomocí operátoru přiřazení při deklaraci pole. Chcete-li automaticky přiřadit pole `day` jako `"Monday"`, například byste deklarovali `day` jako v následujícím příkladu:  
   
  [!code-csharp[csProgGuideObjects#63](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#63)]  
   
@@ -38,11 +38,11 @@ ms.locfileid: "69924519"
 > [!NOTE]
 > Inicializátor pole nemůže odkazovat na jiná pole instance.  
   
- Pole mohou být označena jako [Veřejná](../../language-reference/keywords/public.md), [soukromá](../../language-reference/keywords/private.md), chráněná, [interní](../../language-reference/keywords/internal.md), [chráněná interní](../../language-reference/keywords/protected-internal.md) nebo [soukromá ochrana](../../language-reference/keywords/private-protected.md). [](../../language-reference/keywords/protected.md) Tyto modifikátory přístupu definují, jak budou uživatelé třídy mít přístup k polím. Další informace najdete v tématu [modifikátory přístupu](./access-modifiers.md).  
+ Pole mohou být označena jako [Veřejná](../../language-reference/keywords/public.md), [soukromá](../../language-reference/keywords/private.md), [chráněná](../../language-reference/keywords/protected.md), [interní](../../language-reference/keywords/internal.md), [chráněná interní](../../language-reference/keywords/protected-internal.md) nebo [soukromá ochrana](../../language-reference/keywords/private-protected.md). Tyto modifikátory přístupu definují, jak budou uživatelé třídy mít přístup k polím. Další informace najdete v tématu [modifikátory přístupu](./access-modifiers.md).  
   
  Pole může být volitelně deklarováno jako [static](../../language-reference/keywords/static.md). Tím je pole dostupné volajícím kdykoli, i když žádná instance třídy neexistuje. Další informace naleznete v tématu [statické třídy a statické členy třídy](./static-classes-and-static-class-members.md).  
   
- Pole může být deklarované [jen pro čtení](../../language-reference/keywords/readonly.md). Poli jen pro čtení může být přiřazena hodnota pouze během inicializace nebo v konstruktoru. Pole je velmi podobné konstantě s tím rozdílem, že C# kompilátor nemá přístup k hodnotě statického pole jen pro čtení v době kompilace, pouze v době běhu. `static readonly` Další informace naleznete v tématu [konstanty](./constants.md).  
+ Pole může být deklarované [jen pro čtení](../../language-reference/keywords/readonly.md). Poli jen pro čtení může být přiřazena hodnota pouze během inicializace nebo v konstruktoru. `static readonly` pole je velmi podobné konstantě s tím rozdílem, že C# kompilátor nemá přístup k hodnotě statického pole jen pro čtení v době kompilace, pouze v době běhu. Další informace naleznete v tématu [konstanty](./constants.md).  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  

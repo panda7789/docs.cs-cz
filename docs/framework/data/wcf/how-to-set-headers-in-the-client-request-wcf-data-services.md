@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Nastavení hlaviček v žádosti klienta (WCF Data Services)'
+title: 'Postupy: nastavení hlaviček v žádosti klienta (WCF Data Services)'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,29 +7,29 @@ dev_langs:
 helpviewer_keywords:
 - WCF Data Services, customizing requests
 ms.assetid: 3d55168d-5901-4f48-8117-6c93da3ab5ae
-ms.openlocfilehash: 42987b1a855589954d45dae13b70ffc056c35f3b
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 420b13df0cc9d3f89087e18b58a2b416ce0bab7f
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70790466"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975254"
 ---
-# <a name="how-to-set-headers-in-the-client-request-wcf-data-services"></a>Postupy: Nastavení hlaviček v žádosti klienta (WCF Data Services)
-Když použijete [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientskou knihovnu pro přístup k datové službě, která [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]podporuje, knihovna klienta automaticky nastaví požadované hlavičky protokolu HTTP v žádostech odesílaných do datové služby. Klientská knihovna však neví, že v některých případech nastavuje záhlaví zpráv, která jsou vyžadována v některých případech, například pokud datová služba vyžaduje ověřování založené na deklaracích nebo soubory cookie. Další informace najdete v tématu [zabezpečení WCF Data Services](securing-wcf-data-services.md#clientAuthentication). V těchto případech je před odesláním nutné ručně nastavit záhlaví zpráv ve zprávě požadavku. V příkladu v tomto tématu se dozvíte, jak <xref:System.Data.Services.Client.DataServiceContext.SendingRequest> zpracovat událost pro přidání nové hlavičky do zprávy požadavku předtím, než se pošle do datové služby.  
+# <a name="how-to-set-headers-in-the-client-request-wcf-data-services"></a>Postupy: nastavení hlaviček v žádosti klienta (WCF Data Services)
+Při použití klientské knihovny [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] pro přístup k datové službě, která podporuje protokol OData (Open Data Protocol), Klientská knihovna automaticky nastaví požadované hlavičky protokolu HTTP v žádostech odesílaných na datovou službu. Klientská knihovna však neví, že v některých případech nastavuje záhlaví zpráv, která jsou vyžadována v některých případech, například pokud datová služba vyžaduje ověřování založené na deklaracích nebo soubory cookie. Další informace najdete v tématu [zabezpečení WCF Data Services](securing-wcf-data-services.md#clientAuthentication). V těchto případech je před odesláním nutné ručně nastavit záhlaví zpráv ve zprávě požadavku. V příkladu v tomto tématu se dozvíte, jak zpracovat událost <xref:System.Data.Services.Client.DataServiceContext.SendingRequest>, abyste před odesláním do datové služby přidali do zprávy požadavku novou hlavičku.  
   
- V příkladu v tomto tématu se používá ukázková datová služba Northwind a automaticky vygenerované třídy klientské datové služby. Tato služba a klientské datové třídy se vytvoří po dokončení [WCF Data Services rychlý Start](quickstart-wcf-data-services.md). Můžete také použít [ukázkovou datovou službu Northwind](https://go.microsoft.com/fwlink/?LinkId=187426) publikovanou na [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] webu. Tato ukázková datová služba je jen pro čtení a pokus o uložení změn vrátí chybu. Vzorové datové služby na [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] webu umožňují anonymní ověřování.  
+ V příkladu v tomto tématu se používá ukázková datová služba Northwind a automaticky vygenerované třídy klientské datové služby. Tato služba a klientské datové třídy se vytvoří po dokončení [WCF Data Services rychlý Start](quickstart-wcf-data-services.md). Můžete také použít [ukázkovou datovou službu Northwind](https://go.microsoft.com/fwlink/?LinkId=187426) , která je publikována na webu OData. Tato ukázková datová služba je jen pro čtení a při pokusu o uložení změn se vrátí chyba. Služba ukázkových dat na webu OData povoluje anonymní ověřování.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad zaregistruje obslužnou rutinu <xref:System.Data.Services.Client.DataServiceContext.SendingRequest> pro událost a pak provede dotaz na datovou službu.  
+ Následující příklad zaregistruje obslužnou rutinu pro událost <xref:System.Data.Services.Client.DataServiceContext.SendingRequest> a pak provede dotaz na datovou službu.  
   
 > [!NOTE]
-> Pokud datová služba vyžaduje, abyste ručně nastavili hlavičku zprávy pro každý požadavek, zvažte registraci obslužné rutiny pro <xref:System.Data.Services.Client.DataServiceContext.SendingRequest> událost `OnContextCreated` přepsáním částečné metody v kontejneru entit, který představuje datovou službu, která je v v tomto případě `NorthwindEntities`je to.  
+> Pokud datová služba vyžaduje, abyste ručně nastavili hlavičku zprávy pro každý požadavek, zvažte registraci obslužné rutiny pro událost <xref:System.Data.Services.Client.DataServiceContext.SendingRequest> přepsáním `OnContextCreated` částečné metody v kontejneru entit, který představuje datovou službu, která je v tomto případě `NorthwindEntities`.  
   
 [!code-csharp[Astoria Northwind Client#RegisterHeadersQuery](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#registerheadersquery)]   
 [!code-vb[Astoria Northwind Client#RegisterHeadersQuery](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#registerheadersquery)]
   
 ## <a name="example"></a>Příklad  
- Následující metoda zpracuje <xref:System.Data.Services.Client.DataServiceContext.SendingRequest> událost a přidá do žádosti hlavičku ověřování.  
+ Následující metoda zpracuje událost <xref:System.Data.Services.Client.DataServiceContext.SendingRequest> a přidá do žádosti hlavičku ověřování.  
   
  [!code-csharp[Astoria Northwind Client#OnSendingRequest](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#onsendingrequest)]  
  [!code-vb[Astoria Northwind Client#OnSendingRequest](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#onsendingrequest)]  

@@ -4,16 +4,16 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF Data Services, configuring
 ms.assetid: 05006ff3-02dc-410e-831e-54ec3e7e24ef
-ms.openlocfilehash: b9280936a16d50283c01120c9dc046e65a0a79ae
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 26cfee95f7cd3b956ff263d90b713e9d70b98202
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70790868"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975336"
 ---
 # <a name="defining-wcf-data-services"></a>Definování datových služeb WCF Data Services
 
-Tato část popisuje, jak vytvořit a nakonfigurovat WCF Data Services k vystavení dat [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] jako informačního kanálu. Další informace o základních krocích požadovaných k vytvoření datové služby najdete v tématu vystavení [dat jako služby](exposing-your-data-as-a-service-wcf-data-services.md).
+Tato část popisuje, jak vytvořit a nakonfigurovat WCF Data Services k vystavení dat jako informačního kanálu OData (Open Data Protocol). Další informace o základních krocích požadovaných k vytvoření datové služby najdete v tématu vystavení [dat jako služby](exposing-your-data-as-a-service-wcf-data-services.md).
 
 ## <a name="in-this-section"></a>V tomto oddílu
 

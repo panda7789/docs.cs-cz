@@ -4,12 +4,12 @@ description: Postup pro automatické učení modelu Machine Learning pomocí Tv�
 author: natke
 ms.date: 08/07/2019
 ms.custom: overview
-ms.openlocfilehash: 77b5e75fede1a4aa93eadcf7e21591d82f565cab
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 77fe56dba3532617ad9fb0c89bfaac7c8e031ce7
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929472"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73971528"
 ---
 # <a name="what-is-model-builder-and-how-does-it-work"></a>Co je tvůrce modelů a jak to funguje?
 
@@ -39,11 +39,11 @@ Scénář je popis typu předpovědi, kterou chcete použít pro vaše data. Př
 
 V Tvůrci modelů musíte vybrat typ modelu Machine Learning. Typ modelu závisí na tom, co se chystáte provést.
 
-Pro scénáře, které předpovídá číslo, se zavolá `regression`typ modelu Machine Learning.
+Pro scénáře, které předpovídá číslo, se typ modelu Machine Learning nazývá `regression`.
 
-Pro scénáře, které předpovídá kategorii, je `classification`typ modelu. Existují dva typy klasifikace:
+Pro scénáře, které předpovídá kategorii, je typ modelu `classification`. Existují dva typy klasifikace:
 
-- kde jsou pouze 2 kategorie: `binary classification`.
+- v případě, že existuje pouze 2 kategorie: `binary classification`.
 - kde jsou tři nebo více kategorií: `multiclass classification`.
 
 ### <a name="which-model-type-is-right-for-me"></a>Který typ modelu je pro mě nejvhodnější?
@@ -60,7 +60,7 @@ Pokud váš scénář vyžaduje klasifikaci ve dvou kategoriích, můžete použ
 
 #### <a name="predict-a-category-when-there-are-three-or-more-categories"></a>Předpověď kategorie (pokud existují tři nebo více kategorií)
 
-Pro kategorizaci dat do tří nebo více tříd lze použít klasifikaci s více třídami. 
+Pro kategorizaci dat do tří nebo více tříd lze použít klasifikaci s více třídami.
 
 ![Příklady klasifikace s více třídami včetně klasifikace dokumentů a produktů, směrování lístků podpory a stanovení priorit zákaznických problémů](media/multiclass-classification-examples.png)
 
@@ -112,12 +112,12 @@ Pokud ještě nemáte vlastní data, vyzkoušejte jednu z těchto datových sad:
 |Scénář|Typ modelu|Data|Popisek|Funkce|
 |-|-|-|-|-|
 |Předpověď ceny|Nevýhody|[data taxislužby tarifů](https://github.com/dotnet/machinelearning-samples/blob/master/datasets/taxi-fare-train.csv)|Vozov|Doba odezvy, vzdálenost|
-|Detekce anomálií|Binární klasifikace|[prodejní data produktu](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/AnomalyDetection_Sales/SpikeDetection/Data/product-sales.csv)|Prodej produktu|Měsíčně|
-|Analýza mínění|Binární klasifikace|[data komentáře webu](https://raw.githubusercontent.com/dotnet/machinelearning/master/test/data/wikipedia-detox-250-line-data.tsv)|Popisek (0, pokud je negativní mínění, 1 Při kladném)|Komentář, rok|
-|Zjišťování podvodů|Binární klasifikace|[data platebních karet](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/BinaryClassification_CreditCardFraudDetection/CreditCardFraudDetection.Trainer/assets/input/creditcardfraud-dataset.zip)|Třída (1, pokud je podvodný, 0 jinak)|Množství, V1-v28 (funkce Anonyme)|
-|Klasifikace textu|Klasifikace s více třídami|[Data o problému na GitHubu](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/end-to-end-apps/MulticlassClassification-GitHubLabeler/GitHubLabeler/Data/corefx-issues-train.tsv)|Oblast|Název, popis|
+|Detekce anomálií|binární klasifikace|[prodejní data produktu](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/AnomalyDetection_Sales/SpikeDetection/Data/product-sales.csv)|Prodej produktu|Měsíčně|
+|Analýza mínění|binární klasifikace|[data komentáře webu](https://raw.githubusercontent.com/dotnet/machinelearning/master/test/data/wikipedia-detox-250-line-data.tsv)|Popisek (0, pokud je negativní mínění, 1 Při kladném)|Komentář, rok|
+|Zjišťování podvodů|binární klasifikace|[data platebních karet](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/BinaryClassification_CreditCardFraudDetection/CreditCardFraudDetection.Trainer/assets/input/creditcardfraud-dataset.zip)|Třída (1, pokud je podvodný, 0 jinak)|Množství, V1-v28 (funkce Anonyme)|
+|Klasifikace textu|klasifikace s více třídami|[Data o problému na GitHubu](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/end-to-end-apps/MulticlassClassification-GitHubLabeler/GitHubLabeler/Data/corefx-issues-train.tsv)|Oblast|Název, popis|
 
-## <a name="train"></a>Trénování
+## <a name="train"></a>průřez
 
 Když vyberete svůj scénář, data a popisek, tvůrce modelů navlakuje model.
 
@@ -127,7 +127,7 @@ Když vyberete svůj scénář, data a popisek, tvůrce modelů navlakuje model.
 
 Vzhledem k tomu, že tvůrce modelů používá automatizované Machine Learning (AutoML), nevyžaduje během školení žádné vstupy nebo ladění.
 
-## <a name="evaluate"></a>vyhodnotit
+## <a name="evaluate"></a>Vyhodnotit
 
 Vyhodnocení je proces použití výukového modelu k vytvoření předpovědi s novými testovacími daty a k měření toho, jak dobrý je předpovědi.
 
@@ -149,7 +149,7 @@ Po fázi vyhodnocení výstup tvůrce modelů vytvoří soubor modelu a kód, kt
 
 Kromě toho tvůrce modelů vypíše kód, který model vygeneroval, takže můžete pochopit postup, který se používá ke generování modelu. Můžete také použít kód školení modelu k revýuce modelu s novými daty.
 
-## <a name="whats-next"></a>Co dále?
+## <a name="whats-next"></a>Co dál?
 
 [Instalace](how-to-guides/install-model-builder.md) rozšíření pro tvůrce modelů sady Visual Studio
 

@@ -12,19 +12,19 @@ helpviewer_keywords:
 ms.assetid: 56d051c3-012c-42c1-9a58-7270edc624aa
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d06d1ef8e1508aefa8c9ed9327b89f58ff6976fa
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: a2cb2ef473d6870da47e0e4c00fecf6bd60707f3
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052753"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975573"
 ---
 # <a name="how-to-compile-conditionally-with-trace-and-debug"></a>Postupy: Podmíněná kompilace pomocí atributu Trace a Debug
 Při ladění aplikace během vývoje přejde výstup trasování i ladění do okna výstup v aplikaci Visual Studio. Chcete-li však do nasazené aplikace zahrnout funkce trasování, je nutné zkompilovat vaše instrumentované aplikace s povolenou direktivou překladače **trasování** . To umožňuje zkompilovat kód pro vydanou verzi aplikace. Pokud nepovolíte direktivu **Trace** , veškerý trasovací kód se během kompilace ignoruje a není zahrnutý do spustitelného kódu, který nasadíte.  
   
  Metody trasování i ladění mají přidružené podmíněné atributy. Například pokud má podmíněný atribut pro trasování **hodnotu true**, všechny příkazy trasování jsou zahrnuty v rámci sestavení (zkompilovaného souboru. exe nebo. dll); Pokud má atribut **Trace** podmíněný **hodnotu false**, nejsou k dispozici příkazy TRACE.  
   
- Můžete mít pro sestavení zapnutý podmíněný atribut **trasování** nebo **ladění** , nebo ani jeden z nich. Proto existují čtyři typy sestavení: **Ladění**, **trasování**, obojí nebo ani jeden z nich. Některá sestavení vydaných verzí pro produkční nasazení mohou obsahovat ani jednu z těchto možností: Většina sestavení ladění obsahuje obě.  
+ Můžete mít pro sestavení zapnutý podmíněný atribut **trasování** nebo **ladění** , nebo ani jeden z nich. Proto existují čtyři typy sestavení: **Debug**, **Trace**, obojí nebo ani jeden z nich. Některá sestavení vydaných verzí pro produkční nasazení mohou obsahovat ani jednu z těchto možností: Většina sestavení ladění obsahuje obě.  
   
  Nastavení kompilátoru pro aplikaci můžete zadat několika způsoby:  
   
@@ -59,7 +59,7 @@ Při ladění aplikace během vývoje přejde výstup trasování i ladění do 
   
      Význam direktiv podmíněné kompilace použitých ve výše uvedených příkladech je následující:  
   
-    |– Direktiva|Význam|  
+    |Směrnici|Význam|  
     |---------------|-------------|  
     |`vbc`|Visual Basic – kompilátor|  
     |`csc`|C#přepínač|  
@@ -67,7 +67,7 @@ Při ladění aplikace během vývoje přejde výstup trasování i ladění do 
     |`-d:`|Definuje symbol podmíněné kompilace.|  
   
     > [!NOTE]
-    > Je nutné provést trasování nebo ladění velkými písmeny. Další informace o příkazech podmíněné kompilace získáte zadáním `vbc /?` příkazu (pro Visual Basic) `csc /?` nebo ( C#pro) v příkazovém řádku. Další informace naleznete v tématu [sestavování z příkazového řádku](../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md) (C#) nebo [vyvolání kompilátoru příkazového řádku](../../visual-basic/reference/command-line-compiler/how-to-invoke-the-command-line-compiler.md) (Visual Basic).  
+    > Je nutné provést trasování nebo ladění velkými písmeny. Další informace o příkazech podmíněné kompilace získáte zadáním `vbc /?` (pro Visual Basic) nebo `csc /?` (pro C#) na příkazovém řádku. Další informace naleznete v tématu [sestavování z příkazového řádku](../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md) (C#) nebo [vyvolání kompilátoru příkazového řádku](../../visual-basic/reference/command-line-compiler/how-to-invoke-the-command-line-compiler.md) (Visual Basic).  
   
 ### <a name="to-perform-conditional-compilation-using-const-or-define"></a>Provedení podmíněné kompilace pomocí #CONST nebo #define  
   
@@ -88,7 +88,7 @@ Při ladění aplikace během vývoje přejde výstup trasování i ladění do 
   
 Odstraní direktivu kompilátoru ze zdrojového kódu.  
   
-\- nebo –  
+\- nebo-  
   
 Odkomentujte direktivu kompilátoru.  
   
@@ -102,5 +102,5 @@ Odkomentujte direktivu kompilátoru.
 - [Přepínače trasování](trace-switches.md)
 - [Moduly naslouchání trasování](trace-listeners.md)
 - [Postupy: Přidání příkazů trasování do kódu aplikace](how-to-add-trace-statements-to-application-code.md)
-- [Postupy: Nastavení proměnných prostředí pro příkazový řádek sady Visual Studio](../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md)
+- [Postup nastavení proměnných prostředí pro příkazový řádek sady Visual Studio](../../csharp/language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md)
 - [Postupy: Volání kompilátoru příkazového řádku](../../visual-basic/reference/command-line-compiler/how-to-invoke-the-command-line-compiler.md)

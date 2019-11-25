@@ -6,12 +6,12 @@ ms.date: 05/01/2019
 ms.topic: overview
 ms.custom: mvc
 ms.author: nakersha
-ms.openlocfilehash: da2d764e678debc78a25faeb8e48facb44fc4021
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 263004e67bf88af4182788e8c74cb410460e9201
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929426"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73971406"
 ---
 # <a name="automated-machine-learning-with-mlnet"></a>Automatizované Machine Learning s ML.NET
 
@@ -22,7 +22,7 @@ Automatizované Machine Learning je funkce ML.NET, která provádí automatický
 - zdrojový kód, který se používá pro výběr funkcí a pro školení modelů (pro pochopení modelu)
 
 > [!NOTE]
-> Tato funkce je aktuálně ve verzi Preview a může se stát, že se změní materiál. 
+> Tato funkce je aktuálně ve verzi Preview a může se stát, že se změní materiál.
 
 Automatizované ML je aktuálně omezené na [úlohy](resources/tasks.md) strojového učení binární klasifikace, klasifikace s více třídami a regrese. Ostatní úkoly strojového učení budou v budoucích vydáních podporovány.
 

@@ -1,28 +1,28 @@
 ---
-title: 'Postupy: Definovat abstraktní vlastnosti – C# Průvodce programováním'
+title: Definování abstraktních vlastností – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - properties [C#], abstract
 - abstract properties [C#]
 ms.assetid: 672a90eb-47b9-4ae0-9914-af53852fddcb
-ms.openlocfilehash: 57fd2ed3a26bf5986f9c8a1a6cae6b041811e84c
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 1b6dc1dfe932ffff161b0eef667bd35a75b66cf9
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70970901"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73971006"
 ---
-# <a name="how-to-define-abstract-properties-c-programming-guide"></a>Postupy: Definování abstraktních vlastnostíC# (Průvodce programováním)
+# <a name="how-to-define-abstract-properties-c-programming-guide"></a>Definování abstraktních vlastností (C# Průvodce programováním)
 Následující příklad ukazuje, jak definovat [abstraktní](../../language-reference/keywords/abstract.md) vlastnosti. Deklarace abstraktní vlastnosti neposkytuje implementaci přistupujících objektů vlastnosti – deklaruje, že třída podporuje vlastnosti, ale ponechá implementaci přistupující objekty odvozeným třídám. Následující příklad ukazuje, jak implementovat abstraktní vlastnosti zděděné ze základní třídy.  
   
  Tato ukázka se skládá ze tří souborů, z nichž každá je zkompilována individuálně a na výsledné sestavení je odkazováno pomocí další kompilace:  
   
-- abstractshape.cs: `Shape` třída, která obsahuje abstraktní `Area` vlastnost.  
+- abstractshape.cs: třída `Shape`, která obsahuje abstraktní vlastnost `Area`.  
   
-- shapes.cs: Podtřídy `Shape` třídy.  
+- shapes.cs: podtřídy třídy `Shape`.  
   
-- shapetest.cs: Testovací program pro zobrazení oblastí objektů odvozených od `Shape`sebe.  
+- shapetest.cs: testovací program pro zobrazení oblastí některých objektů odvozených od `Shape`.  
   
  Chcete-li zkompilovat příklad, použijte následující příkaz:  
   
@@ -31,7 +31,7 @@ Následující příklad ukazuje, jak definovat [abstraktní](../../language-ref
  Tím se vytvoří spustitelný soubor shapetest. exe.  
   
 ## <a name="example"></a>Příklad  
- Tento soubor deklaruje `Shape` třídu, která `Area` obsahuje vlastnost typu `double`.  
+ Tento soubor deklaruje třídu `Shape`, která obsahuje vlastnost `Area` typu `double`.  
   
  [!code-csharp[csProgGuideInheritance#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#1)]  
   
@@ -41,15 +41,15 @@ Následující příklad ukazuje, jak definovat [abstraktní](../../language-ref
     public abstract double Area  
     ```  
   
-- Při deklaraci abstraktní vlastnosti ( `Area` jako v tomto příkladu) jednoduše označíte, jaké přístupové objekty vlastnosti jsou k dispozici, ale neimplementují. V tomto příkladu je k dispozici pouze přistupující objekt [Get](../../language-reference/keywords/get.md) , takže vlastnost je určena jen pro čtení.  
+- Při deklaraci abstraktní vlastnosti (například `Area` v tomto příkladu) jednoduše označíte, jaké přístupové objekty vlastnosti jsou k dispozici, ale neimplementují. V tomto příkladu je k dispozici pouze přistupující objekt [Get](../../language-reference/keywords/get.md) , takže vlastnost je určena jen pro čtení.  
   
 ## <a name="example"></a>Příklad  
- Následující kód ukazuje tři podtřídy `Shape` a způsob, jak `Area` přepisují vlastnost k poskytnutí vlastní implementace.  
+ Následující kód ukazuje tři podtřídy `Shape` a způsob, jak přepíší vlastnost `Area` k poskytnutí vlastní implementace.  
   
  [!code-csharp[csProgGuideInheritance#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#2)]  
   
 ## <a name="example"></a>Příklad  
- Následující kód ukazuje testovací program, který vytváří mnoho `Shape`objektů odvozených a tiskne jejich oblasti.  
+ Následující kód ukazuje testovací program, který vytvoří mnoho objektů odvozených od `Shape`a vytiskne své oblasti.  
   
  [!code-csharp[csProgGuideInheritance#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#3)]  
   

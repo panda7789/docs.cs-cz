@@ -7,33 +7,21 @@ helpviewer_keywords:
 ms.assetid: 4f3dd841-82f7-4659-aab0-6d2db2166c65
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4e4e472185b3b2ba39393c029bca3966fb5ec4b3
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: f90b64b5e9ab5a167333a594ace7f247b1b2b7e7
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70206051"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975531"
 ---
 # <a name="security-transparent-code"></a>Kód transparentní pro zabezpečení
 
-<a name="top"></a>
-
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]
 
-Zabezpečení zahrnuje tři vzájemně komunikující součásti: sandboxing, oprávnění a vynucování. Sandboxing odkazuje na postupy vytváření izolovaných domén, kde určitý kód je považován za plně důvěryhodný a jiný kód je omezen na oprávnění v sadě udělení pro izolovaný prostor (sandbox). Kód aplikace, který běží v sadě udělení izolovaného prostoru (sandbox), je považován za transparentní; To znamená, že nemůže provádět žádné operace, které mohou ovlivnit zabezpečení. Sada udělení pro izolovaný prostor (sandbox) je určena<xref:System.Security.Policy.Evidence> legitimací (třída). Legitimace určuje, jaká konkrétní oprávnění jsou požadována v izolovaném prostoru a jaké druhy izolovaných prostorů lze vytvořit. Vynucení označuje, že transparentní kód se dá provádět jenom v rámci své sady udělení.
+Zabezpečení zahrnuje tři vzájemně komunikující součásti: sandboxing, oprávnění a vynucování. Sandboxing odkazuje na postupy vytváření izolovaných domén, kde určitý kód je považován za plně důvěryhodný a jiný kód je omezen na oprávnění v sadě udělení pro izolovaný prostor (sandbox). Kód aplikace, který běží v sadě udělení izolovaného prostoru (sandbox), je považován za transparentní; To znamená, že nemůže provádět žádné operace, které mohou ovlivnit zabezpečení. Sada udělení pro izolovaný prostor (sandbox) je určena legitimací (<xref:System.Security.Policy.Evidence> třídy). Legitimace určuje, jaká konkrétní oprávnění jsou požadována v izolovaném prostoru a jaké druhy izolovaných prostorů lze vytvořit. Vynucení označuje, že transparentní kód se dá provádět jenom v rámci své sady udělení.
 
 > [!IMPORTANT]
 > Zásady zabezpečení byly klíčovým prvkem v předchozích verzích .NET Framework. Počínaje .NET Framework 4 je zásada zabezpečení zastaralá. Odstranění zásad zabezpečení je nezávislé na transparentnosti zabezpečení. Informace o účincích této změny najdete v tématu [Kompatibilita a migrace zásad zabezpečení přístupu kódu](code-access-security-policy-compatibility-and-migration.md).
-
-Toto téma popisuje model transparentnosti podrobněji. Obsahuje následující oddíly:
-
-- [Účel modelu transparentnosti](#purpose)
-
-- [Určení úrovně transparentnosti](#level)
-
-- [Vynucování transparentnosti](#enforcement)
-
-<a name="purpose"></a>
 
 ## <a name="purpose-of-the-transparency-model"></a>Účel modelu transparentnosti
 
@@ -47,15 +35,11 @@ Hlavním cílem vynucení transparentnosti je poskytnutí jednoduchého a efekti
 Transparentnost byla představena ve verzi .NET Framework 2,0, která zjednodušuje model zabezpečení a usnadňuje psaní a nasazování zabezpečených knihoven a aplikací. Transparentní kód se používá také v programu Microsoft Silverlight pro zjednodušení vývoje částečně důvěryhodných aplikací.
 
 > [!NOTE]
-> Při vývoji částečně důvěryhodné aplikace musíte mít na paměti požadavky na oprávnění pro vaše cílové hostitele. Můžete vyvíjet aplikace, které používají prostředky, které nejsou povoleny některými hostiteli. Tato aplikace bude zkompilována bez chyby, ale při jejím načtení do hostovaného prostředí se nezdaří. Pokud jste aplikaci vyvinuli pomocí sady Visual Studio, můžete povolit ladění v částečném vztahu důvěryhodnosti nebo v sadě s omezeným oprávněním z vývojového prostředí. Další informace najdete v tématu [jak: Ladění aplikace ClickOnce s omezenými oprávněními](/visualstudio/deployment/how-to-debug-a-clickonce-application-with-restricted-permissions). Funkce Vypočti oprávnění poskytovaná pro aplikace ClickOnce je dostupná také pro všechny částečně důvěryhodné aplikace.
-
-[Zpět na začátek](#top)
-
-<a name="level"></a>
+> Při vývoji částečně důvěryhodné aplikace musíte mít na paměti požadavky na oprávnění pro vaše cílové hostitele. Můžete vyvíjet aplikace, které používají prostředky, které nejsou povoleny některými hostiteli. Tato aplikace bude zkompilována bez chyby, ale při jejím načtení do hostovaného prostředí se nezdaří. Pokud jste aplikaci vyvinuli pomocí sady Visual Studio, můžete povolit ladění v částečném vztahu důvěryhodnosti nebo v sadě s omezeným oprávněním z vývojového prostředí. Další informace naleznete v tématu [How to: Debug a aplikace ClickOnce s omezenými oprávněními](/visualstudio/deployment/how-to-debug-a-clickonce-application-with-restricted-permissions). Funkce Vypočti oprávnění poskytovaná pro aplikace ClickOnce je dostupná také pro všechny částečně důvěryhodné aplikace.
 
 ## <a name="specifying-the-transparency-level"></a>Určení úrovně transparentnosti
 
-Atribut na úrovni <xref:System.Security.SecurityRulesAttribute> sestavení explicitně <xref:System.Security.SecurityRuleSet> vybere pravidla, která bude pokračovat v sestavení. Pravidla jsou uspořádaná v rámci systému číselné úrovně, kde vyšší úrovně znamenají užší vynucování pravidel zabezpečení.
+Atribut <xref:System.Security.SecurityRulesAttribute> na úrovni sestavení explicitně vybere pravidla <xref:System.Security.SecurityRuleSet>, která bude sestavení následovat. Pravidla jsou uspořádaná v rámci systému číselné úrovně, kde vyšší úrovně znamenají užší vynucování pravidel zabezpečení.
 
 Úrovně jsou následující:
 
@@ -66,7 +50,7 @@ Atribut na úrovni <xref:System.Security.SecurityRulesAttribute> sestavení expl
 Hlavním rozdílem mezi těmito dvěma úrovněmi transparentnosti je, že úroveň 1 neuplatňuje pravidla transparentnosti pro volání mimo sestavení a je určena pouze pro zajištění kompatibility.
 
 > [!IMPORTANT]
-> Měli byste zadat transparentnost první úrovně pouze pro kompatibilitu; To znamená, že zadáte úroveň 1 pouze pro kód, který byl vyvinut s .NET Framework 3,5 nebo starším <xref:System.Security.AllowPartiallyTrustedCallersAttribute> , který používá atribut nebo nepoužívá model transparentnosti. Například použijte transparentnost první úrovně pro sestavení .NET Framework 2,0, která umožňují volání z částečně důvěryhodných volajících (APTCA). Pro kód vyvinutý pro .NET Framework 4 vždy použijte transparentnost úrovně 2.
+> Měli byste zadat transparentnost první úrovně pouze pro kompatibilitu; To znamená, že zadáte úroveň 1 pouze pro kód, který byl vyvinut s .NET Framework 3,5 nebo starším, který používá atribut <xref:System.Security.AllowPartiallyTrustedCallersAttribute> nebo nepoužívá model transparentnosti. Například použijte transparentnost první úrovně pro sestavení .NET Framework 2,0, která umožňují volání z částečně důvěryhodných volajících (APTCA). Pro kód vyvinutý pro .NET Framework 4 vždy použijte transparentnost úrovně 2.
 
 ### <a name="level-2-transparency"></a>Transparentnost úrovně 2
 
@@ -74,15 +58,15 @@ Transparentnost úrovně 2 byla představena v .NET Framework 4. Tři principy t
 
 - Transparentní kód, bez ohledu na oprávnění udělená (včetně úplné důvěryhodnosti), může volat pouze jiný transparentní kód nebo bezpečný a kritický kód pro zabezpečení. Pokud je kód částečně důvěryhodný, může provádět pouze akce, které jsou povoleny sadou oprávnění domény. Transparentní kód nemůže provádět následující:
 
-  - <xref:System.Security.CodeAccessPermission.Assert%2A> Provedení operace nebo zvýšení oprávnění.
+  - Proveďte <xref:System.Security.CodeAccessPermission.Assert%2A> operaci nebo zvýšení oprávnění.
 
   - Obsahuje nezabezpečený nebo neověřitelný kód.
 
   - Přímo zavolejte kritický kód.
 
-  - Zavolejte nativní kód nebo kód, který má <xref:System.Security.SuppressUnmanagedCodeSecurityAttribute> atribut.
+  - Zavolejte nativní kód nebo kód, který má atribut <xref:System.Security.SuppressUnmanagedCodeSecurityAttribute>.
 
-  - Zavolejte člen, který je chráněn pomocí <xref:System.Security.Permissions.SecurityAction.LinkDemand>.
+  - Zavolejte člen, který je chráněn <xref:System.Security.Permissions.SecurityAction.LinkDemand>.
 
   - Dědí z kritických typů.
 
@@ -108,13 +92,9 @@ Model transparentnosti úrovně 1 má následující omezení:
 
 - Potenciál existuje pro transparentní kód, který umožňuje škodlivé věci při spuštění v úplném vztahu důvěryhodnosti.
 
-[Zpět na začátek](#top)
-
-<a name="enforcement"></a>
-
 ## <a name="transparency-enforcement"></a>Vynucování transparentnosti
 
-Pravidla transparentnosti se nevynutily, dokud se nevypočítá průhlednost. V tomto okamžiku <xref:System.InvalidOperationException> je vyvolána výjimka, pokud je porušeno pravidlo transparentnosti. Čas, kdy je transparentnost počítána, závisí na několika faktorech a nelze je předpovědět. Počítá se co nejblíže. V .NET Framework 4 proběhne výpočet transparentnosti na úrovni sestavení dřív než v .NET Framework 2,0. Jedinou jistotou je, že k výpočtu transparentnosti dojde v době, kdy je to potřeba. To se podobá tomu, jak kompilátor JIT (just-in-time) může změnit bod, když je metoda zkompilována, a zda jsou zjištěny chyby v této metodě. Výpočet transparentnosti není viditelný, pokud váš kód neobsahuje žádné chyby transparentnosti.
+Pravidla transparentnosti se nevynutily, dokud se nevypočítá průhlednost. V tomto okamžiku je vyvolána <xref:System.InvalidOperationException>, pokud je porušení pravidla transparentnosti. Čas, kdy je transparentnost počítána, závisí na několika faktorech a nelze je předpovědět. Počítá se co nejblíže. V .NET Framework 4 proběhne výpočet transparentnosti na úrovni sestavení dřív než v .NET Framework 2,0. Jedinou jistotou je, že k výpočtu transparentnosti dojde v době, kdy je to potřeba. To se podobá tomu, jak kompilátor JIT (just-in-time) může změnit bod, když je metoda zkompilována, a zda jsou zjištěny chyby v této metodě. Výpočet transparentnosti není viditelný, pokud váš kód neobsahuje žádné chyby transparentnosti.
 
 ## <a name="see-also"></a>Viz také:
 

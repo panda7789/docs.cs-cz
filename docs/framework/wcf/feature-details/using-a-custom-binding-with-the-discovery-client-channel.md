@@ -2,20 +2,20 @@
 title: Použití vlastní vazby s kanálem klienta zjišťování
 ms.date: 03/30/2017
 ms.assetid: 36f95e75-04f7-44f3-a995-a0d623624d7f
-ms.openlocfilehash: 6fe9370bb22ca424774fc8cb4566e0802bc06697
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 406a53dece6370fbb56daa5a30b52621ca1dcd6d
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61918616"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975982"
 ---
 # <a name="using-a-custom-binding-with-the-discovery-client-channel"></a>Použití vlastní vazby s kanálem klienta zjišťování
-Při použití vlastní vazby s <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement>, je nutné definovat <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider> , který vytváří <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> instancí.  
+Při použití vlastní vazby s <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement>je nutné definovat <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider>, který vytváří instance <xref:System.ServiceModel.Discovery.DiscoveryEndpoint>.  
   
-## <a name="creating-a-discoveryendpointprovider"></a>Vytváření DiscoveryEndpointProvider  
- <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider> Zodpovídá za vytvoření <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> instancí na vyžádání. K definování poskytovatele koncového bodu zjišťování, odvoďte třídu z <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider> a přepsat <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider.GetDiscoveryEndpoint%2A> metodu a vrátí nový koncový bod zjišťování. Následující příklad ukazuje, jak vytvořit poskytovatele koncového bodu zjišťování.  
+## <a name="creating-a-discoveryendpointprovider"></a>Vytvoření DiscoveryEndpointProvider  
+ <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider> zodpovídá za vytváření instancí <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> na vyžádání. Chcete-li definovat poskytovatele koncového bodu zjišťování, odvodit třídu z <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider> a přepsat metodu <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider.GetDiscoveryEndpoint%2A> a vrátit nový koncový bod zjišťování. Následující příklad ukazuje, jak vytvořit poskytovatele koncového bodu zjišťování.  
   
-```  
+```csharp
 // Extend DiscoveryEndpointProvider class to change the default DiscoveryEndpoint  
 // to the DiscoveryClientBindingElement. The Discovery ClientChannel   
 // uses this endpoint to send Probe message.  
@@ -28,9 +28,9 @@ public class UdpDiscoveryEndpointProvider : DiscoveryEndpointProvider
 }  
 ```  
   
- Po definování poskytovatele koncového bodu zjišťování můžete vytvořit vlastní vazby a přidat <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement>, který odkazuje na poskytovateli koncový bod zjišťování, jak je znázorněno v následujícím příkladu.  
+ Po definování poskytovatele koncového bodu zjišťování můžete vytvořit vlastní vazbu a přidat <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement>, která odkazuje na poskytovatele koncového bodu zjišťování, jak je znázorněno v následujícím příkladu.  
   
-```  
+```csharp
 DiscoveryClientBindingElement discoveryBindingElement = new DiscoveryClientBindingElement();  
   
 // Provide the search criteria and the endpoint over which the probe is sent.  

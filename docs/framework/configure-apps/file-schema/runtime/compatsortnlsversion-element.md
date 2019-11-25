@@ -8,12 +8,12 @@ helpviewer_keywords:
 - <CompatSortNLSVersion> element
 - CompatSortNLSVersion element
 ms.assetid: 782cc82e-83f7-404a-80b7-6d3061a8b6e3
-ms.openlocfilehash: f13265e2056c8eca62cd510154dd7c096eeabb00
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5de760fe07283ddee36b3475fa0975c8d46776e5
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73117684"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73969256"
 ---
 # <a name="compatsortnlsversion-element"></a>\<element > CompatSortNLSVersion
 Určuje, zda by modul runtime měl při porovnávání řetězců použít starší pořadí řazení.  
@@ -68,15 +68,15 @@ Určuje, zda by modul runtime měl při porovnávání řetězců použít star�
  [!code-csharp[String.BreakingChanges#1](../../../../../samples/snippets/csharp/VS_Snippets_CLR/string.breakingchanges/cs/example1.cs#1)]
  [!code-vb[String.BreakingChanges#1](../../../../../samples/snippets/visualbasic/VS_Snippets_CLR/string.breakingchanges/vb/example1.vb#1)]  
   
- Když spustíte příklad na .NET Framework 4, zobrazí se následující výstup.  
+ Když spustíte příklad na .NET Framework 4, zobrazí se následující výstup:
   
-```  
+```console
 sta follows a in the sort order.  
 ```  
   
- To se zcela liší od výstupu, který se zobrazí při spuštění příkladu na .NET Framework 3,5.  
+ To se zcela liší od výstupu, který se zobrazí, když spustíte příklad na .NET Framework 3,5:
   
-```  
+```console
 sta equals a in the sort order.  
 ```  
   

@@ -6,12 +6,12 @@ author: luisquintanilla
 ms.author: luquinta
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 4a97fb70caafd7b0003830259ddbb0ec72a2ca8a
-ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+ms.openlocfilehash: 5e5b60a53db70b33ed798bcf33497b74911ba727
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72180274"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73974799"
 ---
 # <a name="tutorial-analyze-sentiment-of-website-comments-in-a-web-application-using-mlnet-model-builder"></a>Kurz: analýza mínění komentářů k webu ve webové aplikaci pomocí Tvůrce modelů ML.NET
 
@@ -70,7 +70,7 @@ první | = = OK! = = IM VANDALIZE VOLNĚ ŽIJÍCÍ NA WIKIWEBU A POTOM!!!
 
 Abyste mohli model vyškolit, musíte si vybrat ze seznamu dostupných scénářů strojového učení, které poskytuje tvůrce modelů.
 
-1. V **Průzkumník řešení**klikněte pravým tlačítkem na projekt *SentimentRazor* a vyberte **Přidat** > **Machine Learning**.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt *SentimentRazor* a vyberte **Přidat** > **Machine Learning**.
 1. V této ukázce je scénář analýzou mínění. V kroku *scénář* nástroje Tvůrce modelů vyberte **Analýza mínění** scénář.
 
 ## <a name="load-the-data"></a>Načtení dat
@@ -92,7 +92,7 @@ Tvůrce modelů přijímá data ze dvou zdrojů, SQL Server databáze nebo míst
 1. I když tvůrce modelů nastaví hodnotu **času na vlak (sekundy)** až 10 sekund, narůstá na 30 sekund. Školení po delší dobu umožňuje tvůrci modelů prozkoumat větší počet algoritmů a kombinaci parametrů při hledání nejlepšího modelu.
 1. Vyberte **Spustit školení**.
 
-    V průběhu procesu školení se data o průběhu zobrazují v části `Progress` kroku výukového programu.
+    V průběhu procesu školení se data o průběhu zobrazují v části `Progress` v kroku výuka.
 
     - Stav zobrazuje stav dokončení procesu školení.
     - Nejlepší přesnost zobrazuje přesnost nejlepšího modelu, kterou najde tvůrce modelů, zatím. Vyšší přesnost znamená, že model se v testovacích datech podrobnějším způsobem vypovídat.
@@ -124,7 +124,7 @@ V důsledku školicího procesu se vytvoří dva projekty.
 
 ### <a name="configure-the-predictionengine-pool"></a>Konfigurace PredictionEngine fondu
 
-Chcete-li udělat jednu předpověď, je nutné vytvořit [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602). [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) není bezpečná pro přístup z více vláken. Kromě toho musíte vytvořit instanci, která je všude, kde je to potřeba v rámci vaší aplikace. Jak vaše aplikace roste, tento proces může být nespravovatelný. Pro zlepšení výkonu a zabezpečení vlákna použijte kombinaci injektáže a `PredictionEnginePool`, která vytvoří [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) objektů [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pro použití v celé aplikaci.
+Chcete-li udělat jednu předpověď, je nutné vytvořit [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602). [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) není bezpečný pro přístup z více vláken. Kromě toho musíte vytvořit instanci, která je všude, kde je to potřeba v rámci vaší aplikace. Jak vaše aplikace roste, tento proces může být nespravovatelný. Pro zlepšení výkonu a bezpečnosti vláken použijte kombinaci injektáže a `PredictionEnginePool` služby, která vytváří [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) objektů [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pro použití v celé aplikaci.
 
 1. Nainstalujte balíček NuGet *Microsoft.Extensions.ml* :
 
@@ -150,7 +150,7 @@ Chcete-li udělat jednu předpověď, je nutné vytvořit [`PredictionEngine`](x
     private readonly string _modelPath;
     ```
 
-1. Soubor modelu je uložen v adresáři buildu spolu se soubory sestavení vaší aplikace. Aby byl přístup snazší, vytvořte pomocnou metodu nazvanou `GetAbsolutePath` po metodě `Configure`.
+1. Soubor modelu je uložen v adresáři buildu spolu se soubory sestavení vaší aplikace. Aby byl přístup snazší, vytvořte pomocnou metodu nazvanou `GetAbsolutePath` za metodou `Configure`
 
     ```csharp
     public static string GetAbsolutePath(string relativePath)
@@ -160,16 +160,16 @@ Chcete-li udělat jednu předpověď, je nutné vytvořit [`PredictionEngine`](x
 
         string fullPath = Path.Combine(assemblyFolderPath, relativePath);
         return fullPath;
-    }    
+    }
     ```
 
-1. K nastavení `_modelPath` použijte metodu `GetAbsolutePath` v konstruktoru třídy `Startup`.
+1. Použijte metodu `GetAbsolutePath` v konstruktoru `Startup` třídy k nastavení `_modelPath`.
 
     ```csharp
     _modelPath = GetAbsolutePath("MLModel.zip");
     ```
 
-1. Nakonfigurujte `PredictionEnginePool` pro aplikaci v metodě `ConfigureServices`:
+1. Nakonfigurujte `PredictionEnginePool` pro vaši aplikaci v metodě `ConfigureServices`:
 
     ```csharp
     services.AddPredictionEnginePool<ModelInput, ModelOutput>()
@@ -187,26 +187,26 @@ Předpovědi se provede uvnitř hlavní stránky aplikace. Proto metoda, která 
     using SentimentRazorML.Model;
     ```
 
-    Aby bylo možné použít `PredictionEnginePool` nakonfigurované ve třídě `Startup`, je nutné ji vložit do konstruktoru modelu, kde jej chcete použít.
+    Aby bylo možné použít `PredictionEnginePool` nakonfigurované ve `Startup` třídě, je nutné ji vložit do konstruktoru modelu, kde jej chcete použít.
 
-1. Přidejte proměnnou pro odkazování na `PredictionEnginePool` uvnitř třídy `IndexModel`.
+1. Přidejte proměnnou pro odkazování na `PredictionEnginePool` uvnitř `IndexModel` třídy.
 
     ```csharp
     private readonly PredictionEnginePool<ModelInput, ModelOutput> _predictionEnginePool;
     ```
 
-1. Vytvořte konstruktor ve třídě `IndexModel` a do něj vloží službu `PredictionEnginePool`.
+1. Vytvořte konstruktor ve třídě `IndexModel` a za do něj službu `PredictionEnginePool`.
 
     ```csharp
     public IndexModel(PredictionEnginePool<ModelInput, ModelOutput> predictionEnginePool)
     {
         _predictionEnginePool = predictionEnginePool;
-    }    
+    }
     ```
 
 1. Vytvořte obslužnou rutinu metody, která používá `PredictionEnginePool` k provedení předpovědi ze vstupu uživatele přijatého z webové stránky.
 
-    1. Pod metodou `OnGet` vytvořte novou metodu nazvanou `OnGetAnalyzeSentiment`.
+    1. Pod `OnGet` metodou vytvořte novou metodu nazvanou `OnGetAnalyzeSentiment`
 
         ```csharp
         public IActionResult OnGetAnalyzeSentiment([FromQuery] string text)
@@ -221,7 +221,7 @@ Předpovědi se provede uvnitř hlavní stránky aplikace. Proto metoda, která 
         if (String.IsNullOrEmpty(text)) return Content("Neutral");
         ```
 
-    1. Když je zadaný platný vstup, vytvoří se nová instance `ModelInput`.
+    1. Když se dostanou platný vstup, vytvoří se nová instance `ModelInput`.
 
         ```csharp
         var input = new ModelInput { SentimentText = text };
@@ -233,7 +233,7 @@ Předpovědi se provede uvnitř hlavní stránky aplikace. Proto metoda, která 
         var prediction = _predictionEnginePool.Predict(input);
         ```
 
-    1. Převeďte předpokládanou hodnotu `bool` na toxické nebo netoxické pomocí následujícího kódu.
+    1. Převeďte předpokládanou `bool` hodnotu na toxické nebo netoxické pomocí následujícího kódu.
 
         ```csharp
         var sentiment = Convert.ToBoolean(prediction.Prediction) ? "Toxic" : "Not Toxic";
@@ -259,11 +259,11 @@ Výsledky vrácené `OnGetAnalyzeSentiment` budou dynamicky zobrazeny na webové
 
 1. Pak přidejte kód, který odešle vstupy z webové stránky do obslužné rutiny `OnGetAnalyzeSentiment`.
 
-    1. V souboru *site. js* umístěném v adresáři *wwwroot\js* vytvořte funkci s názvem `getSentiment`, která vytvoří požadavek GET http s uživatelským vstupem k obslužné rutině `OnGetAnalyzeSentiment`.
+    1. V souboru *site. js* v adresáři *wwwroot\js* vytvořte funkci s názvem `getSentiment`, která vytvoří požadavek GET http s uživatelským vstupem k obslužné rutině `OnGetAnalyzeSentiment`.
 
         [!code-javascript [GetSentimentMethod](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/wwwroot/js/site.js#L5-L10)]
 
-    1. Níže přidejte další funkci s názvem `updateMarker`, aby se dynamicky aktualizovala pozice značky na webové stránce, protože mínění je předpokládaná.
+    1. Níže přidejte další funkci s názvem `updateMarker`, aby se dynamicky aktualizovala pozice značky na webové stránce, protože mínění je předpověď.
 
         [!code-javascript [UpdateMarkerMethod](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/wwwroot/js/site.js#L12-L15)]
 
@@ -271,7 +271,7 @@ Výsledky vrácené `OnGetAnalyzeSentiment` budou dynamicky zobrazeny na webové
 
         [!code-javascript [UpdateSentimentMethod](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/wwwroot/js/site.js#L17-L34)]
 
-    1. Nakonec zaregistrujte obslužnou rutinu události a navažte ji k elementu `textarea` s atributem `id=Message`.
+    1. Nakonec zaregistrujte obslužnou rutinu události a navažte ji na element `textarea` s atributem `id=Message`.
 
         [!code-javascript [UpdateSentimentEvtHandler](~/machinelearning-samples/samples/modelbuilder/BinaryClassification_Sentiment_Razor/SentimentRazor/wwwroot/js/site.js#L36)]
 
@@ -283,7 +283,7 @@ Až se aplikace spustí, zadejte *Tvůrce modelů.* do textové oblasti. Zobraze
 
 ![Spuštění okna s předpokládaným oknem mínění](./media/sentiment-analysis-model-builder/web-app.png)
 
-Pokud potřebujete odkazovat na projekty generované tvůrcem modelů později v jiném řešení, můžete je najít v adresáři `C:\Users\%USERNAME%\AppData\Local\Temp\MLVSTools`.
+Pokud potřebujete odkazovat na projekty vygenerované tvůrcem modelu později v jiném řešení, můžete je najít v adresáři `C:\Users\%USERNAME%\AppData\Local\Temp\MLVSTools`.
 
 ## <a name="next-steps"></a>Další kroky
 

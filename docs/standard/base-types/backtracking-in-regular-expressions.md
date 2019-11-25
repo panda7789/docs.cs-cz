@@ -18,30 +18,19 @@ helpviewer_keywords:
 - parsing text with regular expressions, backtracking
 ms.assetid: 34df1152-0b22-4a1c-a76c-3c28c47b70d8
 ms.custom: seodec18
-ms.openlocfilehash: 06f1094d872c84f2f277c7695a8858edc285449f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6504430f94f800bb9f41761ad64c65fefecb68d6
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140513"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73968261"
 ---
 # <a name="backtracking-in-regular-expressions"></a>Zpětné navracení v regulárních výrazech
-<a name="top"></a>K zpětnému navrácení dojde, když vzor regulárního výrazu obsahuje volitelné [kvantifikátory](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md) nebo [konstrukce alternace](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md)a modul regulárních výrazů se vrátí do předchozího uloženého stavu, aby bylo možné pokračovat ve vyhledávání shody. Navracení má klíčový význam pro výkon regulárních výrazů, což umožňuje, aby výrazy byly výkonné a pružné a aby vyhovovaly velmi složitým vzorům. Tento výkon však zároveň něco stojí. Navracení je často jediným nejdůležitějším faktorem, který ovlivňuje výkon modulu regulárních výrazů. Vývojář má naštěstí vliv na chování modulu regulárních výrazů a způsob používání mechanismu navracení. V tomto tématu je vysvětleno fungování a ovládání mechanismu navracení.  
+K zpětnému navrácení dojde, když vzor regulárního výrazu obsahuje volitelné [kvantifikátory](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md) nebo [konstrukce alternace](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md)a modul regulárních výrazů se vrátí do předchozího uloženého stavu, aby bylo možné pokračovat ve vyhledávání shody. Navracení má klíčový význam pro výkon regulárních výrazů, což umožňuje, aby výrazy byly výkonné a pružné a aby vyhovovaly velmi složitým vzorům. Tento výkon však zároveň něco stojí. Navracení je často jediným nejdůležitějším faktorem, který ovlivňuje výkon modulu regulárních výrazů. Vývojář má naštěstí vliv na chování modulu regulárních výrazů a způsob používání mechanismu navracení. V tomto tématu je vysvětleno fungování a ovládání mechanismu navracení.  
   
 > [!NOTE]
 > Obecně platí, že nedeterministické Automation modul (NFA), jako je modul .NET regulárních výrazů, je zodpovědný za vytváření efektivních a rychlých regulárních výrazů pro vývojáře.  
-  
- Toto téma obsahuje následující oddíly:  
-  
-- [Lineární porovnání bez navrácení](#linear_comparison_without_backtracking)  
-  
-- [Navrácení se nepovinnými kvantifikátory nebo konstrukcemi alternace](#backtracking_with_optional_quantifiers_or_alternation_constructs)  
-  
-- [Navrácení pomocí vnořených volitelných kvantifikátorů](#backtracking_with_nested_optional_quantifiers)  
-  
-- [Řízení zpětného navrácení](#controlling_backtracking)  
-  
-<a name="linear_comparison_without_backtracking"></a>   
+
 ## <a name="linear-comparison-without-backtracking"></a>Lineární porovnání bez mechanismu navracení  
  Pokud vzor regulárního výrazu nemá žádné volitelné kvantifikátory nebo konstrukce alternace, bude modul regulárních výrazů spuštěn v lineárním čase. Což znamená, že jakmile se modul regulárních výrazů shoduje s prvním prvkem jazyka ve vzorci s textem ve vstupním řetězci, pokusí se vyhledat další prvek jazyka ve vzoru s dalším znakem nebo skupinou znaků ve vstupním řetězci. Tento postup se opakuje, dokud je shoda buď úspěšná, anebo neúspěšná. V obou případech se modul regulárních výrazů posune vždy o jeden znak ve vstupním řetězci.  
   
@@ -74,11 +63,8 @@ ms.locfileid: "73140513"
 |let|\w|"d" (index 13)|Možná shoda.|  
 |čl|\b|"" (index 14)|Shoda.|  
   
- Pokud vzor regulárního výrazu neobsahuje žádné volitelné kvantifikátory nebo konstrukce alternace, musí maximální počet porovnání odpovídající vzoru regulárního výrazu se vstupním řetězcem být zhruba ekvivalentní počtu znaků ve vstupním řetězci. V tomto případě používá modul regulárních výrazů 19 porovnání k identifikaci možných shod v tomto řetězci o 13 znacích.  Jinými slovy to znamená, že modul regulárních výrazů je spuštěn v téměř lineárním čase, pokud neobsahuje žádné volitelné kvantifikátory nebo konstrukce alternace.  
-  
- [Zpět na začátek](#top)  
-  
-<a name="backtracking_with_optional_quantifiers_or_alternation_constructs"></a>   
+ Pokud vzor regulárního výrazu neobsahuje žádné volitelné kvantifikátory nebo konstrukce alternace, musí maximální počet porovnání odpovídající vzoru regulárního výrazu se vstupním řetězcem být zhruba ekvivalentní počtu znaků ve vstupním řetězci. V tomto případě používá modul regulárních výrazů 19 porovnání k identifikaci možných shod v tomto řetězci o 13 znacích.  Jinými slovy to znamená, že modul regulárních výrazů je spuštěn v téměř lineárním čase, pokud neobsahuje žádné volitelné kvantifikátory nebo konstrukce alternace.   
+
 ## <a name="backtracking-with-optional-quantifiers-or-alternation-constructs"></a>Navracení pomocí volitelných kvantifikátorů nebo konstrukcí alternace  
  Pokud regulární výraz zahrnuje volitelné kvantifikátory nebo alternace konstrukce, hodnocení vstupního řetězce již není lineární. Porovnání vzorů s modulem NFA řídí prvky jazyka v regulárním výrazu, nikoli znaky, které se musí shodovat ve vstupním řetězci. Proto se modul regulárních výrazů pokouší o úplnou shodu volitelných nebo alternativních dílčích výrazů. Jakmile přejde na další prvek jazyka v dílčím výrazu a shoda není úspěšná, může modul regulárních výrazů opustit část úspěšné shody a vrátit se ke dříve uloženému stavu v zájmu shody celého regulárního výrazu ve vstupním řetězci. Tento proces návratu k předchozímu stavu pro vyhledání shody se označuje jako navracení.  
   
@@ -99,11 +85,8 @@ ms.locfileid: "73140513"
   
 - Porovná písmeno „s“ ve vzoru s písmenem „s“, které následuje za shodujícím se znakem „e“ (první výskyt písmene „s“ ve výrazu „expressions“). Tato shoda je úspěšná.  
   
- Pokud použijete mechanismus navracení, vyžaduje shoda vzoru regulárního výrazu se vstupním řetězcem, který má 55 znaků, celkem 67 operací porovnání. Obecně platí, že pokud vzor regulárních výrazů má jedinou konstrukci alternace nebo jediný volitelný kvantifikátor, je počet operací porovnání vyžadovaný pro shodu vzoru více než dvakrát větší než počet znaků ve vstupním řetězci.  
-  
- [Zpět na začátek](#top)  
-  
-<a name="backtracking_with_nested_optional_quantifiers"></a>   
+ Pokud použijete mechanismus navracení, vyžaduje shoda vzoru regulárního výrazu se vstupním řetězcem, který má 55 znaků, celkem 67 operací porovnání. Obecně platí, že pokud vzor regulárních výrazů má jedinou konstrukci alternace nebo jediný volitelný kvantifikátor, je počet operací porovnání vyžadovaný pro shodu vzoru více než dvakrát větší než počet znaků ve vstupním řetězci.   
+
 ## <a name="backtracking-with-nested-optional-quantifiers"></a>Mechanismus navracení s vnořenými volitelnými kvantifikátory  
  Počet operací porovnání vyžadovaný pro shodu vzoru regulárního výrazu lze zvýšit exponenciálně, pokud vzor obsahuje velký počet konstrukcí alternace, pokud obsahuje vnořené konstrukce alternace, nebo pokud obsahuje vnořené volitelné kvantifikátory, což je nejčastější případ. Například vzor regulárního výrazu `^(a+)+$` je navržen tak, aby odpovídal kompletnímu řetězci, který obsahuje jeden nebo více znaků "a". Příklad obsahuje dva vstupní řetězce stejné délky, ale pouze první řetězec odpovídá vzoru. Třída <xref:System.Diagnostics.Stopwatch?displayProperty=nameWithType> slouží k určení, jak dlouho operace porovnávání trvá.  
   
@@ -118,15 +101,11 @@ ms.locfileid: "73140513"
   
 - Vrátí se k dřív uložené shodě 3. Určí, že existují další dva znaky „a“, které lze přiřadit dodatečné zachycené skupině. Test konce řetězce se však nezdaří. Poté se vrátí ke shodě 3 a pokusí se porovnat další dva znaky „a“ v dodatečné zachycené skupině. Test konce řetězce se však ani tentokrát nezdaří. Tyto nezdařené shody vyžadují 12 porovnání. Doposud byl proveden celkem 25 porovnání.  
   
- Porovnání vstupního řetězce s regulárním výrazem pokračuje tímto způsobem, dokud se modul regulárních výrazů nepokusí vyhledat všechny možné kombinace shody, a poté dojde k závěru, že neexistuje žádná shoda. Vzhledem k vnořeným kvantifikátorům je toto porovnání typu O (2<sup>n</sup>) nebo exponenciální operace, kde *n* je počet znaků ve vstupním řetězci. To znamená, že v nejhorším případě vyžaduje vstupní znak o délce 30 znaků přibližně 1 073 741 824 porovnání a vstupní znak o délce 40 znaků vyžaduje přibližně 1 099 511 627 776 porovnání. Pokud používáte řetězce o této nebo větší délce, může dokončení metod regulárních výrazů trvat extrémně dlouhou dobu, pokud zpracovávají obsah, který se neshoduje se vzorem regulárního výrazu.  
-  
- [Zpět na začátek](#top)  
-  
-<a name="controlling_backtracking"></a>   
+ Porovnání vstupního řetězce s regulárním výrazem pokračuje tímto způsobem, dokud se modul regulárních výrazů nepokusí vyhledat všechny možné kombinace shody, a poté dojde k závěru, že neexistuje žádná shoda. Vzhledem k vnořeným kvantifikátorům je toto porovnání typu O (2<sup>n</sup>) nebo exponenciální operace, kde *n* je počet znaků ve vstupním řetězci. To znamená, že v nejhorším případě vyžaduje vstupní znak o délce 30 znaků přibližně 1 073 741 824 porovnání a vstupní znak o délce 40 znaků vyžaduje přibližně 1 099 511 627 776 porovnání. Pokud používáte řetězce o této nebo větší délce, může dokončení metod regulárních výrazů trvat extrémně dlouhou dobu, pokud zpracovávají obsah, který se neshoduje se vzorem regulárního výrazu. 
+
 ## <a name="controlling-backtracking"></a>Řídicí mechanismus navracení  
- Mechanismus navracení umožňuje vytvářet výkonné a pružné regulární výrazy. Jak již však bylo znázorněno v předchozích částech, mohou tyto výhody být vázány na nepřijatelně nízký výkon. Chcete-li zabránit nadměrnému zpětnému navracení, měli byste definovat interval časového limitu při vytváření instance <xref:System.Text.RegularExpressions.Regex>ho objektu nebo volání statické metody pro porovnání regulárního výrazu. Tento postup je popsán v následujícím oddíle. Kromě toho rozhraní .NET podporuje tři prvky regulárního výrazu, které omezují nebo potlačí zpětné navracení a které podporují složité regulární výrazy s minimální nebo žádnou pokutou výkonu: [nemechanismus](#Nonbacktracking)zpětného navracení zpět. [ kontrolní výrazy](#Lookbehind)a [kontrolní výrazy dopředného vyhledávání](#Lookahead). Další informace o jednotlivých prvcích jazyka naleznete v tématu [Grouping konstrukcís](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
-  
-<a name="Timeout"></a>   
+ Mechanismus navracení umožňuje vytvářet výkonné a pružné regulární výrazy. Jak již však bylo znázorněno v předchozích částech, mohou tyto výhody být vázány na nepřijatelně nízký výkon. Chcete-li zabránit nadměrnému zpětnému navracení, měli byste definovat interval časového limitu při vytváření instance <xref:System.Text.RegularExpressions.Regex>ho objektu nebo volání statické metody pro porovnání regulárního výrazu. Tento postup je popsán v následujícím oddíle. Kromě toho rozhraní .NET podporuje tři prvky regulárního výrazu, které omezují nebo potlačí zpětné navracení a které podporují složité regulární výrazy s minimální nebo žádnou pokutou výkonu: [nemechanismus](#nonbacktracking-subexpression)zpětného navracení zpět. [ kontrolní výrazy](#lookbehind-assertions)a [kontrolní výrazy dopředného vyhledávání](#lookahead-assertions). Další informace o jednotlivých prvcích jazyka naleznete v tématu [Grouping konstrukcís](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
+
 ### <a name="defining-a-time-out-interval"></a>Definování intervalu časového limitu  
  Počínaje .NET Framework 4,5 můžete nastavit hodnotu časového limitu, která představuje nejdelší interval, který modul regulárních výrazů vyhledá jednu shodu předtím, než tento pokus opustí a vyvolá výjimku <xref:System.Text.RegularExpressions.RegexMatchTimeoutException>. Interval časového limitu určíte zadáním <xref:System.TimeSpan> hodnoty do konstruktoru <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29?displayProperty=nameWithType> pro instance regulárních výrazů. Kromě toho každá statická metoda porovnávání vzorů má přetížení s parametrem <xref:System.TimeSpan>, který umožňuje zadat hodnotu časového limitu. Ve výchozím nastavení je interval časového limitu nastaven na <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType> a modul regulárních výrazů nevyprší časový limit.  
   
@@ -139,8 +118,7 @@ ms.locfileid: "73140513"
   
  [!code-csharp[System.Text.RegularExpressions.Regex.ctor#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.text.regularexpressions.regex.ctor/cs/ctor1.cs#1)]
  [!code-vb[System.Text.RegularExpressions.Regex.ctor#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.text.regularexpressions.regex.ctor/vb/ctor1.vb#1)]  
-  
-<a name="Nonbacktracking"></a>   
+
 ### <a name="nonbacktracking-subexpression"></a>Podvýraz bez mechanismu navracení  
  *`)` prvek* jazyka `(?>` v dílčím výrazu potlačuje navrácení. Slouží k zamezení problémům s výkonem, které souvisí s neúspěšnými shodami.  
   
@@ -148,8 +126,7 @@ ms.locfileid: "73140513"
   
  [!code-csharp[Conceptual.RegularExpressions.Backtracking#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.backtracking/cs/backtracking4.cs#4)]
  [!code-vb[Conceptual.RegularExpressions.Backtracking#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.backtracking/vb/backtracking4.vb#4)]  
-  
-<a name="Lookbehind"></a>   
+
 ### <a name="lookbehind-assertions"></a>Kontrolní výrazy zpětného vyhledávání  
  Rozhraní .NET obsahuje dva prvky jazyka, `(?<=`dílčí *výraz*`)` a `(?<!`dílčí *výraz*`)`, které odpovídají předchozímu znaku nebo znakům ve vstupním řetězci. Oba prvky jazyka jsou kontrolní výrazy s nulovou šířkou; To znamená, že určují, zda znak nebo znaky, které bezprostředně předcházejí aktuálnímu znaku, mohou odpovídat *podvýrazu*bez posunutí nebo navrácení.  
   
@@ -180,8 +157,7 @@ ms.locfileid: "73140513"
 |`[-.\w]*`|Porovná žádný výskyt nebo několik výskytů spojovníku, tečky nebo znaku slova.|  
 |`(?<=[0-9A-Z])`|Ověří poslední shodující se znak a pokračuje v porovnání, pokud se jedná o znak alfanumerický. Alfanumerické znaky jsou podmnožinou množiny, která sestává z teček, spojovníků a znaků slov.|  
 |`@`|Porovná znak po ("\@").|  
-  
-<a name="Lookahead"></a>   
+
 ### <a name="lookahead-assertions"></a>Kontrolní výrazy dopředného vyhledávání  
  Rozhraní .NET obsahuje dva prvky jazyka, `(?=`dílčí *výraz*`)` a `(?!`dílčí *výraz*`)`, které odpovídají dalšímu znaku nebo znakům ve vstupním řetězci. Oba prvky jazyka jsou kontrolní výrazy s nulovou šířkou; To znamená, že určují, zda znak nebo znaky, které bezprostředně následují za aktuálním znakem, mohou odpovídat *podvýrazu*bez posunutí nebo navrácení.  
   
@@ -212,8 +188,6 @@ ms.locfileid: "73140513"
 |`((?=[A-Z])\w+\.)*`|Porovná vzor jednoho nebo několika znaků slova následovaných tečkou nulakrát nebo vícekrát. Prvním znakem slova musí být abecední znak.|  
 |`[A-Z]\w*`|Porovná abecední znak následovaný žádným nebo několika znaky slova.|  
 |`$`|Ukončí porovnávání na konci vstupního řetězce.|  
-  
- [Zpět na začátek](#top)  
   
 ## <a name="see-also"></a>Viz také:
 

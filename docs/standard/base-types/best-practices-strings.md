@@ -19,12 +19,12 @@ helpviewer_keywords:
 - strings [.NET Framework],comparing
 ms.assetid: b9f0bf53-e2de-4116-8ce9-d4f91a1df4f7
 ms.custom: seodec18
-ms.openlocfilehash: b427c579b4190acaf715147908b38ea57ab7aea3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: cd6b24a6dd893f0c522573a0e19914164c15141f
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120639"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73973946"
 ---
 # <a name="best-practices-for-using-strings-in-net"></a>Osvědčené postupy pro používání řetězců v .NET
 
@@ -316,7 +316,7 @@ Když zobrazíte data, která nejsou řetězcová, například čísla a data a 
 
 Chcete-li explicitně určit, že by měl být řetězec formátován pomocí konvencí určené jazykové verze nebo [invariantní jazykové verze](xref:System.Globalization.CultureInfo.InvariantCulture), můžete provést následující:
 
-- Při použití metod <xref:System.String.Format%2A?displayProperty=nameWithType> a `ToString` zavolejte přetížení, které má parametr `provider`, jako je například <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> nebo <xref:System.DateTime.ToString%28System.IFormatProvider%29?displayProperty=nameWithType>, a předejte jí vlastnost <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>, která představuje požadovanou jazykovou verzi. nebo vlastnost <xref:System.Globalization.CultureInfo.InvariantCulture?displayProperty=nameWithType>.
+- Při použití metod <xref:System.String.Format%2A?displayProperty=nameWithType> a `ToString` zavolejte přetížení, které má parametr `provider`, například <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> nebo <xref:System.DateTime.ToString%28System.IFormatProvider%29?displayProperty=nameWithType>, a předejte mu vlastnost <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>, <xref:System.Globalization.CultureInfo> instanci, která představuje požadovanou jazykovou verzi nebo vlastnost <xref:System.Globalization.CultureInfo.InvariantCulture?displayProperty=nameWithType>.
 
 - Pro zřetězení řetězců nepovolujte, aby kompilátor prováděl žádné implicitní převody. Místo toho proveďte explicitní převod voláním `ToString` přetížení s parametrem `provider`. Například kompilátor implicitně používá aktuální jazykovou verzi při převodu <xref:System.Double> hodnoty na řetězec v následujícím C# kódu:
 
@@ -340,7 +340,7 @@ Neřetězcová data můžete zachovat buď jako binární data, nebo jako formá
 Následující příklad znázorňuje omezené přenositelnosti, která je výsledkem použití formátování zohledňující jazykovou verzi pro zachování dat. V příkladu se uloží pole hodnot data a času do souboru. Tyto jsou formátovány pomocí konvencí jazykové verze anglické (USA). Poté, co aplikace změní aktuální jazykovou verzi vlákna na francouzštinu (Švýcarsko), se pokusí přečíst uložené hodnoty pomocí formátovacích úmluv aktuální jazykové verze. Pokus o čtení dvou datových položek vyvolá výjimku <xref:System.FormatException> a pole dat nyní obsahuje dva nesprávné prvky, které se rovnají <xref:System.DateTime.MinValue>.
 
 [!code-csharp[Conceptual.Strings.BestPractices#21](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.strings.bestpractices/cs/persistence.cs#21)]
- [!code-vb[Conceptual.Strings.BestPractices#21](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/persistence.vb#21)]
+[!code-vb[Conceptual.Strings.BestPractices#21](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.strings.bestpractices/vb/persistence.vb#21)]
 
 Pokud však nahradíte vlastnost <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> parametrem <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> v voláních <xref:System.DateTime.ToString%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType> a <xref:System.DateTime.Parse%28System.String%2CSystem.IFormatProvider%29?displayProperty=nameWithType>, budou data trvalého data a času úspěšně obnovena, jak ukazuje následující výstup:
 

@@ -2,12 +2,12 @@
 title: Úloha asynchronního programovacího modelu (klepnutím) s modifikátorem AsyncC#a await ()
 ms.date: 05/22/2017
 ms.assetid: 9bcf896a-5826-4189-8c1a-3e35fa08243a
-ms.openlocfilehash: 644830ac62a4df23f22d8f91e9b3c768dd611451
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 8f88ecc05fd21a3526478cf564dc4fa97f309f7e
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72395692"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73969969"
 ---
 # <a name="task-asynchronous-programming-model"></a>Model asynchronního programování úloh
 
@@ -26,8 +26,8 @@ Následující tabulka ukazuje typické oblasti, kde asynchronní programování
 | Oblast aplikace    | Typy .NET s asynchronními metodami     | Typy prostředí Windows Runtime s asynchronními metodami  |
 |---------------------|-----------------------------------|-------------------------------------------|
 |Webový přístup|<xref:System.Net.Http.HttpClient>|<xref:Windows.Web.Syndication.SyndicationClient>|
-|Práce se soubory|<xref:System.IO.StreamWriter>, <xref:System.IO.StreamReader> <xref:System.Xml.XmlReader>|<xref:Windows.Storage.StorageFile>|
-|Práce s obrázky||<xref:Windows.Media.Capture.MediaCapture>, <xref:Windows.Graphics.Imaging.BitmapEncoder> <xref:Windows.Graphics.Imaging.BitmapDecoder>|
+|Práce se soubory|<xref:System.IO.StreamWriter>, <xref:System.IO.StreamReader><xref:System.Xml.XmlReader>|<xref:Windows.Storage.StorageFile>|
+|Práce s obrázky||<xref:Windows.Media.Capture.MediaCapture>, <xref:Windows.Graphics.Imaging.BitmapEncoder><xref:Windows.Graphics.Imaging.BitmapDecoder>|
 |Programování WCF|[Synchronní a asynchronní operace](../../../../framework/wcf/synchronous-and-asynchronous-operations.md)||
 
 Asynchronie je obzvláště užitečná pro aplikace, které přistupují k vláknu UI, protože všechny aktivity související s uživatelským rozhraním obvykle sdílí jedno vlákno. Pokud je jakýkoli proces blokován v synchronní aplikaci, jsou blokovány všechny. Vaše aplikace přestane reagovat a můžete dojít k závěru, že selhala, i když místo toho čeká.
@@ -70,16 +70,16 @@ async Task<int> AccessTheWebAsync()
 }
 ```
 
-V předchozím příkladu se můžete seznámit s několika postupy. Začněte s podpisem metody. Obsahuje modifikátor `async`. Návratový typ je `Task<int>` (další možnosti naleznete v části "návratové typy"). Název metody končí na `Async`. V těle metody `GetStringAsync` vrátí `Task<string>`. To znamená, že když `await` úkol, získáte `string` (`urlContents`).  Před čekáním na úlohu můžete provádět práci, která nespoléhá na `string` od `GetStringAsync`.
+V předchozím příkladu se můžete seznámit s několika postupy. Začněte s podpisem metody. Obsahuje modifikátor `async`. Návratový typ je `Task<int>` (další možnosti naleznete v části "návratové typy"). Název metody končí `Async`. V těle metody `GetStringAsync` vrátí `Task<string>`. To znamená, že při `await` úkolu získáte `string` (`urlContents`).  Před čekáním na úlohu můžete provádět práci, která nespoléhá na `string` z `GetStringAsync`.
 
 Věnujte velkou pozornost operátoru `await`. Pozastaví `AccessTheWebAsync`;
 
-- `AccessTheWebAsync` nemůže pokračovat, dokud se nedokončí `getStringTask`.
+- `AccessTheWebAsync` nemůže pokračovat, dokud `getStringTask` nedokončí.
 - Mezitím se ovládací prvek vrátí volajícímu `AccessTheWebAsync`.
-- Pokud je dokončeno `getStringTask`, ovládací prvky se obnoví.
+- Po dokončení `getStringTask` ovládací prvek obnoví.
 - Operátor `await` potom načte výsledek `string` z `getStringTask`.
 
-Příkaz return určuje celočíselný výsledek. Všechny metody, které čekají `AccessTheWebAsync` načte hodnotu length.
+Příkaz return určuje celočíselný výsledek. Všechny metody, které čekají `AccessTheWebAsync` načtou hodnotu length.
 
 Pokud `AccessTheWebAsync` nemá žádnou práci, kterou může provést mezi voláním `GetStringAsync` a čekáním na jeho dokončení, můžete zjednodušit kód voláním a čekáním v následujícím jediném příkazu.
 
@@ -93,14 +93,14 @@ Následující charakteristiky shrnují, co dělá předchozí příklad asynchr
 - Název asynchronní metody končí podle konvence příponou „Async“.
 - Návratový typ je jeden z následujících typů:
 
-  - <xref:System.Threading.Tasks.Task%601>, pokud vaše metoda má návratový příkaz, ve kterém je operand typu `TResult`.
+  - <xref:System.Threading.Tasks.Task%601>, zda má vaše metoda návratový příkaz, ve kterém je operand typu `TResult`.
   - <xref:System.Threading.Tasks.Task>, pokud vaše metoda nemá návratový příkaz nebo má návratový příkaz bez operandu.
   - `void`, pokud píšete asynchronní obslužnou rutinu události.
   - Jakýkoli jiný typ, který má metodu `GetAwaiter` (počínaje C# 7,0).
 
   Další informace naleznete v části [návratové typy a parametry](#BKMK_ReturnTypesandParameters) .
 
-- Metoda obvykle zahrnuje nejméně jeden výraz `await`, který označuje bod, kde metoda nemůže pokračovat, dokud se neočekává dokončená asynchronní operace. Během této doby je metoda pozastavena a ovládací prvek se vrátí volajícímu metody. Další část tohoto tématu ukazuje, co se stane v okamžiku pozastavení.
+- Metoda obvykle zahrnuje nejméně jeden `await` výraz, který označuje bod, kde metoda nemůže pokračovat, dokud není dokončena očekávaná asynchronní operace. Během této doby je metoda pozastavena a ovládací prvek se vrátí volajícímu metody. Další část tohoto tématu ukazuje, co se stane v okamžiku pozastavení.
 
 V asynchronních metodách používáte zadaná klíčová slova a typy pro označení, jakou akci chcete provést, a kompilátor udělá zbytek, včetně udržování přehledu o tom, co musí nastat, když se řízení vrátí do bodu „await“ pozastavené metody. Některé běžné procesy, jako je zpracování smyček a výjimek, může být v tradičním asynchronním kódu obtížné zpracovat. V asynchronní metodě zapisujete tyto prvky podobně, jako byste to udělali v synchronním řešení, a problém je vyřešen.
 
@@ -116,45 +116,45 @@ Nejdůležitějším principem, který je třeba pochopit v asynchronním progra
 
 1. Obslužná rutina události volá a očekává asynchronní metodu `AccessTheWebAsync`.
 
-2. `AccessTheWebAsync` vytvoří instanci <xref:System.Net.Http.HttpClient> a zavolá asynchronní metodu <xref:System.Net.Http.HttpClient.GetStringAsync%2A> pro stažení obsahu webu jako řetězce.
+2. `AccessTheWebAsync` vytvoří instanci <xref:System.Net.Http.HttpClient> a zavolá <xref:System.Net.Http.HttpClient.GetStringAsync%2A> asynchronní metodu pro stažení obsahu webu jako řetězce.
 
 3. Něco se stane v `GetStringAsync`, které pozastaví jeho průběh. Možná je třeba vyčkat na dokončení stahování nebo jiné blokující aktivity na webu. Aby nedocházelo k blokování prostředků, `GetStringAsync` poskytne řízení volajícímu, `AccessTheWebAsync`.
 
-     `GetStringAsync` vrátí <xref:System.Threading.Tasks.Task%601>, kde `TResult` je řetězec a `AccessTheWebAsync` přiřadí úkol proměnné `getStringTask`. Úkol představuje nepřetržitý proces pro volání `GetStringAsync` s závazkem vytvořit skutečnou řetězcovou hodnotu po dokončení práce.
+     `GetStringAsync` vrátí <xref:System.Threading.Tasks.Task%601>, kde `TResult` je řetězec a `AccessTheWebAsync` přiřadí úkol proměnné `getStringTask`. Úkol představuje nepřetržitý proces pro volání `GetStringAsync`a závazek vytvořit skutečnou řetězcovou hodnotu po dokončení práce.
 
-4. Vzhledem k tomu, že `getStringTask` nebyl dosud očekáván, `AccessTheWebAsync` může pokračovat v práci s dalšími úkoly, které nezávisí na konečném výsledku z `GetStringAsync`. Tato práce je reprezentována voláním synchronní metody `DoIndependentWork`.
+4. Vzhledem k tomu, že `getStringTask` ještě nečekala, `AccessTheWebAsync` může pokračovat v jiné práci, která nezávisí na konečném výsledku z `GetStringAsync`. Tato práce je reprezentována voláním synchronní metody `DoIndependentWork`.
 
 5. `DoIndependentWork` je synchronní metoda, která provede svou práci a vrátí jejímu volajícímu.
 
 6. `AccessTheWebAsync` vyčerpala práci, kterou může provádět bez výsledku z `getStringTask`. `AccessTheWebAsync` další chce vypočítat a vrátit délku staženého řetězce, ale metoda nemůže tuto hodnotu vypočítat, dokud metoda nemá řetězec.
 
-     Proto `AccessTheWebAsync` používá operátor await k pozastavení průběhu a k řízení metody, která se nazývá `AccessTheWebAsync`. `AccessTheWebAsync` vrátí volajícímu hodnotu `Task<int>`. Úloha představuje slib vyrábět celé číslo výsledku, který má délku staženého řetězce.
+     Proto `AccessTheWebAsync` pomocí operátoru await pozastaví svůj průběh a vrátí řízení metodě, která se nazývá `AccessTheWebAsync`. `AccessTheWebAsync` vrátí `Task<int>` volajícímu. Úloha představuje slib vyrábět celé číslo výsledku, který má délku staženého řetězce.
 
     > [!NOTE]
-    > Pokud je `GetStringAsync` (a tedy `getStringTask`) dokončeno před tím, než `AccessTheWebAsync` očekává, řízení zůstane v `AccessTheWebAsync`. Náklady na pozastavení a návrat do `AccessTheWebAsync` by byly vyvolány, pokud se volal asynchronní proces (`getStringTask`) již dokončen a `AccessTheWebAsync` nemusí čekat na konečný výsledek.
+    > Pokud se `GetStringAsync` (a proto `getStringTask`) dokončí před tím, `AccessTheWebAsync` očekává, řízení zůstane v `AccessTheWebAsync`. Náklady na pozastavení a návrat do `AccessTheWebAsync` by byly nevyužité, pokud se pojmenovaný asynchronní proces (`getStringTask`) už dokončil a `AccessTheWebAsync` nemusí čekat na konečný výsledek.
 
-     Uvnitř volajícího (v tomto případě obslužná rutina události) bude vzor zpracování pokračovat. Volající může provést další práci, která nezávisí na výsledku z `AccessTheWebAsync` před čekáním na výsledek, nebo volající může očekávat okamžitě.   Obslužná rutina události čeká na `AccessTheWebAsync` a `AccessTheWebAsync` čeká na `GetStringAsync`.
+     Uvnitř volajícího (v tomto případě obslužná rutina události) bude vzor zpracování pokračovat. Volající může provést další práci, která nezávisí na výsledku z `AccessTheWebAsync` před čekáním na výsledek nebo volající může očekávat okamžitě.   Obslužná rutina události čeká na `AccessTheWebAsync`a `AccessTheWebAsync` čeká na `GetStringAsync`.
 
-7. `GetStringAsync` se dokončí a vytvoří výsledek řetězce. Výsledek řetězce není vrácen voláním `GetStringAsync` způsobem, který byste mohli očekávat. (Nezapomeňte, že metoda již vrátila úlohu v kroku 3.) Místo toho je výsledek řetězce uložen v úkolu, který představuje dokončení metody, `getStringTask`. Operátor await načte výsledek z `getStringTask`. Příkaz přiřazení přiřadí načtený výsledek do `urlContents`.
+7. `GetStringAsync` dokončí a vytvoří výsledek řetězce. Výsledek řetězce není vrácen voláním `GetStringAsync` způsobem, který byste mohli očekávat. (Nezapomeňte, že metoda již vrátila úlohu v kroku 3.) Místo toho je výsledek řetězce uložen v úkolu, který představuje dokončení metody, `getStringTask`. Operátor await načte výsledek z `getStringTask`. Příkaz přiřazení přiřadí načtený výsledek do `urlContents`.
 
-8. Když `AccessTheWebAsync` má výsledek řetězce, metoda může vypočítat délku řetězce. Pak se dokončí i práce `AccessTheWebAsync` a může pokračovat obslužná rutina čekající události. V úplném příkladu na konci tématu si můžete potvrdit, že obslužná rutina události načte a vytiskne hodnotu výsledné délky.
+8. Pokud má `AccessTheWebAsync` výsledek řetězce, metoda může vypočítat délku řetězce. Pak je dokončena i práce `AccessTheWebAsync` a může pokračovat obslužná rutina čekající události. V úplném příkladu na konci tématu si můžete potvrdit, že obslužná rutina události načte a vytiskne hodnotu výsledné délky.
 Pokud jste v oblasti asynchronního programování nováčky, zvažte rozdíl mezi synchronním a asynchronním chováním. Synchronní metoda je vrácena, jakmile je její práce dokončena (krok 5), ale asynchronní metoda vrátí hodnotu úlohy, když je její práce pozastavena (kroky 3 a 6). Když asynchronní metoda nakonec dokončí svou práci, je úloha označena jako dokončená a výsledek, pokud existuje, je uložen v úloze.
 
 Další informace o toku řízení naleznete v tématu [Flow Control in Async ProgramsC#()](control-flow-in-async-programs.md).
 
 ## <a name="BKMK_APIAsyncMethods"></a>Asynchronní metody rozhraní API
 
-Možná vás zajímá, kde najít metody jako `GetStringAsync`, které podporují asynchronní programování. .NET Framework 4,5 nebo vyšší a .NET Core obsahují mnoho členů, kteří pracují s `async` a `await`. Můžete je rozpoznat pomocí přípony "Async", která je připojena k názvu člena, a jejich návratovým typem <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601>. Například třída `System.IO.Stream` obsahuje metody jako <xref:System.IO.Stream.CopyToAsync%2A>, <xref:System.IO.Stream.ReadAsync%2A> a <xref:System.IO.Stream.WriteAsync%2A> vedle synchronních metod <xref:System.IO.Stream.CopyTo%2A>, <xref:System.IO.Stream.Read%2A> a <xref:System.IO.Stream.Write%2A>.
+Možná vás zajímá, kde najít metody jako `GetStringAsync`, které podporují asynchronní programování. .NET Framework 4,5 nebo vyšší a .NET Core obsahují mnoho členů, kteří pracují s `async` a `await`. Můžete je rozpoznat pomocí přípony "Async", která je připojena k názvu člena a jejich návratovým typem <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601>. Například třída `System.IO.Stream` obsahuje metody jako <xref:System.IO.Stream.CopyToAsync%2A>, <xref:System.IO.Stream.ReadAsync%2A>a <xref:System.IO.Stream.WriteAsync%2A> spolu se synchronními metodami <xref:System.IO.Stream.CopyTo%2A>, <xref:System.IO.Stream.Read%2A>a <xref:System.IO.Stream.Write%2A>.
 
-Prostředí Windows Runtime také obsahuje řadu metod, které můžete použít s `async` a `await` v aplikacích pro Windows. Další informace najdete v tématech [dělení vlákna a asynchronní programování](/windows/uwp/threading-async/) pro vývoj UWP a [asynchronní programování (aplikace pro Windows Store)](https://docs.microsoft.com/previous-versions/windows/apps/hh464924(v=win.10)) a [rychlý Start: volání asynchronních C# rozhraní API v nebo Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/hh452713(v=win.10)) , pokud používáte starší verze nástroje prostředí Windows Runtime.
+Prostředí Windows Runtime také obsahuje řadu metod, které můžete použít s `async` a `await` v aplikacích pro Windows. Další informace najdete v tématech [dělení vlákna a asynchronní programování](/windows/uwp/threading-async/) pro vývoj UWP a [asynchronní programování (aplikace pro Windows Store)](https://docs.microsoft.com/previous-versions/windows/apps/hh464924(v=win.10)) a [rychlý Start: volání asynchronních C# rozhraní API v nebo Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/hh452713(v=win.10)) , pokud používáte starší verze prostředí Windows Runtime.
 
 ## <a name="BKMK_Threads"></a>Vláken
 
 Asynchronní metody mají být neblokující operace. Výraz `await` v asynchronní metodě neblokuje aktuální vlákno, zatímco je spuštěn očekávaný úkol. Namísto toho se výraz zaregistruje pro zbývající metody jako pokračování a vrátí řízení volajícímu asynchronní metody.
 
-Klíčová slova `async` a `await` nezpůsobí vytvoření dalších vláken. Asynchronní metody nevyžadují multithreading, protože asynchronní metoda není spuštěna ve vlastním vlákně. Metoda pracuje na aktuálním kontextu synchronizace a používá čas ve vlákně pouze v případě, že je metoda aktivní. @No__t-0 můžete použít pro přesun práce vázané na procesor do vlákna na pozadí, ale vlákno na pozadí nepomůže s procesem, který právě čeká na zpřístupnění výsledků.
+Klíčová slova `async` a `await` nezpůsobí vytvoření dalších vláken. Asynchronní metody nevyžadují multithreading, protože asynchronní metoda není spuštěna ve vlastním vlákně. Metoda pracuje na aktuálním kontextu synchronizace a používá čas ve vlákně pouze v případě, že je metoda aktivní. Můžete použít <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> pro přesun práce vázané na procesor do vlákna na pozadí, ale vlákno na pozadí nepomůže s procesem, který právě čeká na zpřístupnění výsledků.
 
-Asynchronní přístup při asynchronním programování se doporučuje v téměř každém případě existujících přístupů. Konkrétně tento přístup je lepší než třída <xref:System.ComponentModel.BackgroundWorker> pro operace vázané na vstupně-výstupní operace, protože kód je jednodušší a nemusíte se chránit před konflikty časování. V kombinaci s metodou <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> je asynchronní programování lepší než <xref:System.ComponentModel.BackgroundWorker> pro operace vázané na procesor, protože asynchronní programování odděluje koordinační informace o spuštění kódu z práce, která `Task.Run` přenáší do fondu vláken.
+Asynchronní přístup při asynchronním programování se doporučuje v téměř každém případě existujících přístupů. Konkrétně tento přístup je lepší než <xref:System.ComponentModel.BackgroundWorker> třída pro operace vázané na vstup/výstup, protože kód je jednodušší a nemusíte se chránit před konflikty časování. V kombinaci s metodou <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> je asynchronní programování lepší než <xref:System.ComponentModel.BackgroundWorker> pro operace vázané na procesor, protože asynchronní programování odděluje koordinační informace o spuštění kódu z práce, která `Task.Run` přenáší do fondu.
 
 ## <a name="BKMK_AsyncandAwait"></a>Async a await
 
@@ -162,11 +162,11 @@ Pokud určíte, že metoda je asynchronní metodou pomocí modifikátoru [Async]
 
 - Označená asynchronní metoda může použít [operátor await](../../../language-reference/operators/await.md) k určení bodů zavěšení. Operátor `await` instruuje kompilátor, že asynchronní metoda nemůže pokračovat za tímto bodem, dokud není dokončen očekávaný asynchronní proces. Během této doby se ovládací prvek vrátí volajícímu asynchronní metody.
 
-     Pozastavení asynchronní metody na výrazu `await` nepředstavuje příkaz exit z metody a bloky `finally` nejsou spouštěny.
+     Pozastavení asynchronní metody ve výrazu `await` nepředstavuje příkaz exit z metody a bloky `finally` neběží.
 
 - Samotná označená asynchronní metoda může být očekávána metodami, které ji volaly.
 
-Asynchronní metoda obvykle obsahuje jeden nebo více výskytů operátoru `await`, ale absence výrazů `await` nezpůsobí chybu kompilátoru. Pokud asynchronní metoda nepoužívá operátor `await` k označení bodu pozastavení, metoda se spustí jako synchronní metoda bez ohledu na modifikátor `async`. Kompilátor u takových metod zahlásí upozornění.
+Asynchronní metoda obvykle obsahuje jeden nebo více výskytů operátoru `await`, ale absence `await` výrazy nezpůsobí chybu kompilátoru. Pokud asynchronní metoda nepoužívá operátor `await` k označení bodu pozastavení, metoda se spustí jako synchronní metoda bez ohledu na modifikátor `async`. Kompilátor u takových metod zahlásí upozornění.
 
 `async` a `await` jsou kontextová klíčová slova. Další informace a příklady naleznete v následujících tématech:
 
@@ -179,7 +179,7 @@ Asynchronní metoda obvykle vrací <xref:System.Threading.Tasks.Task> nebo <xref
 
 Zadejte <xref:System.Threading.Tasks.Task%601> jako návratový typ, pokud metoda obsahuje příkaz [`return`](../../../language-reference/keywords/return.md) , který určuje operand typu `TResult`.
 
-@No__t-0 použijete jako návratový typ, pokud metoda nemá žádný návratový příkaz nebo má návratový příkaz, který nevrací operand.
+Použijte <xref:System.Threading.Tasks.Task> jako návratový typ, pokud metoda nemá žádný návratový příkaz nebo má návratový příkaz, který nevrací operand.
 
 Počínaje C# 7,0 můžete také zadat jakýkoli jiný návratový typ za předpokladu, že typ obsahuje metodu `GetAwaiter`. <xref:System.Threading.Tasks.ValueTask%601> je příklad takového typu. Je k dispozici v balíčku NuGet [System. Threading. Tasks. Extension](https://www.nuget.org/packages/System.Threading.Tasks.Extensions/) .
 
@@ -217,7 +217,7 @@ await GetTaskAsync();
 
 Každá vrácená úloha představuje probíhající práci. Úloha zapouzdřuje informace o stavu asynchronního procesu a posléze buď konečný výsledek z procesu, nebo výjimku, kterou proces vyvolá v případě neúspěchu.
 
-Asynchronní metoda může mít také návratový typ `void`. Tento návratový typ slouží primárně k definování obslužných rutin událostí, kde je požadován návratový typ `void`. Asynchronní obslužné rutiny událostí často slouží jako výchozí bod pro asynchronní programy.
+Asynchronní metoda může mít také `void` návratový typ. Tento návratový typ slouží primárně k definování obslužných rutin událostí, kde je požadován `void` návratový typ. Asynchronní obslužné rutiny událostí často slouží jako výchozí bod pro asynchronní programy.
 
 Asynchronní metoda, která má návratový typ `void`, nemůže být očekávána a volající metody vracející typ void nemůže zachytit žádné výjimky, které metoda vyvolá.
 
@@ -243,16 +243,16 @@ Můžete ignorovat konvenci, kde událost, základní třída a rozhraní smlouv
 |Název|Popis|Ukázka|
 |-----------|-----------------|------------|
 |[Návod: přístup k webu pomocí modifikátoru Async a operátoru Await (C#)](./walkthrough-accessing-the-web-by-using-async-and-await.md)|Ukazuje, jak převést synchronní řešení WPF na asynchronní řešení WPF. Aplikace stáhne řadu webových stránek.|[Asynchronní Ukázka: přístup k webovému návodu](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)|
-|[Postupy: roztažení asynchronního návodu pomocí Task. WhenAll (C#)](./how-to-extend-the-async-walkthrough-by-using-task-whenall.md)|Přidá do předchozího návodu <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>. Použití `WhenAll` spustí všechna stahování ve stejnou dobu.||
-|[Postupy: paralelní provádění více webových požadavků pomocí modifikátoru Async a operátoru awaitC#()](./how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)|Ukazuje, jak spustit několik úloh současně.|[Asynchronní vzorek: paralelní provádění více webových požadavků](https://code.msdn.microsoft.com/Async-Make-Multiple-Web-49adb82e)|
+|[Postup rozšiřování asynchronního návodu pomocí Task. WhenAll (C#)](./how-to-extend-the-async-walkthrough-by-using-task-whenall.md)|Přidá <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> k předchozímu návodu. Použití `WhenAll` spouští všechna stahování ve stejnou dobu.||
+|[Jak zajistit paralelní více webových požadavků pomocí modifikátoru Async a operátoru awaitC#()](./how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)|Ukazuje, jak spustit několik úloh současně.|[Asynchronní vzorek: paralelní provádění více webových požadavků](https://code.msdn.microsoft.com/Async-Make-Multiple-Web-49adb82e)|
 |[Asynchronní návratové typyC#()](./async-return-types.md)|Znázorňuje typy, které může vrátit asynchronní metoda, a vysvětluje, kdy se každý typ hodí.||
 |[Řízení toku v asynchronních programechC#()](./control-flow-in-async-programs.md)|Podrobně sleduje tok řízení pomocí sledu očekávání výrazů v asynchronním programu.|[Asynchronní vzorek: tok řízení v asynchronních programech](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0)|
-|[Vyladění asynchronní aplikace (C#)](./fine-tuning-your-async-application.md)|Ukazuje, jak přidat k asynchronnímu řešení následující funkce:<br /><br /> - [zrušení asynchronní úlohy nebo seznamu úkolůC#()](./cancel-an-async-task-or-a-list-of-tasks.md)<br />- [zrušit asynchronní úlohy po určitém časovém intervaluC#()](./cancel-async-tasks-after-a-period-of-time.md)<br />- [zrušit zbývající asynchronní úlohy po dokončení jedné operace (C#)](./cancel-remaining-async-tasks-after-one-is-complete.md)<br />@no__t – 0[spustí několik asynchronních úloh a zpracuje je po dokončení (C#)](./start-multiple-async-tasks-and-process-them-as-they-complete.md) .|[Asynchronní vzorek: jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)|
+|[Vyladění asynchronní aplikace (C#)](./fine-tuning-your-async-application.md)|Ukazuje, jak přidat k asynchronnímu řešení následující funkce:<br /><br /> - [zrušení asynchronní úlohy nebo seznamu úkolůC#()](./cancel-an-async-task-or-a-list-of-tasks.md)<br />- [zrušení asynchronních úloh po určitém časovémC#intervalu ()](./cancel-async-tasks-after-a-period-of-time.md)<br />- [zrušení zbývajících asynchronních úloh po dokončení jedné zC#nich ()](./cancel-remaining-async-tasks-after-one-is-complete.md)<br />- [spustit více asynchronních úloh a zpracovat je po dokončení (C#)](./start-multiple-async-tasks-and-process-them-as-they-complete.md)|[Asynchronní vzorek: jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)|
 |[Zpracování Vícenásobný přístup v asynchronních aplikacíchC#()](./handling-reentrancy-in-async-apps.md)|Ukazuje, jak zpracovat případy, ve kterých je aktivní asynchronní operace restartována v době, kdy běží.||
-|[WhenAny: přemostění mezi .NET Framework a prostředí Windows Runtime](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/jj635140(v=vs.120))|Ukazuje, jak přemostění mezi typy úloh v .NET Framework a IAsyncOperations v prostředí Windows Runtime, aby bylo možné použít <xref:System.Threading.Tasks.Task.WhenAny%2A> s metodou prostředí Windows Runtime.|[Asynchronní vzorek: přemostění mezi rozhraním .NET a prostředí Windows Runtime (AsTask a WhenAny)](https://code.msdn.microsoft.com/Async-Sample-Bridging-d6a2f739)|
-|Asynchronní zrušení: přemostění rozhraní .NET Framework a prostředí Windows Runtime|Ukazuje, jak přemostění mezi typy úloh v .NET Framework a IAsyncOperations v prostředí Windows Runtime, aby bylo možné použít <xref:System.Threading.CancellationTokenSource> s metodou prostředí Windows Runtime.|[Asynchronní vzorek: přemostění mezi rozhraním .NET a prostředí Windows Runtime (zrušení & AsTask)](https://code.msdn.microsoft.com/Async-Sample-Bridging-9479eca3)|
+|[WhenAny: přemostění mezi .NET Framework a prostředí Windows Runtime](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/jj635140(v=vs.120))|Ukazuje, jak přemostění mezi typy úloh v .NET Framework a IAsyncOperations v prostředí Windows Runtime, abyste mohli <xref:System.Threading.Tasks.Task.WhenAny%2A> používat s metodou prostředí Windows Runtime.|[Asynchronní vzorek: přemostění mezi rozhraním .NET a prostředí Windows Runtime (AsTask a WhenAny)](https://code.msdn.microsoft.com/Async-Sample-Bridging-d6a2f739)|
+|Asynchronní zrušení: přemostění rozhraní .NET Framework a prostředí Windows Runtime|Ukazuje, jak přemostění mezi typy úloh v .NET Framework a IAsyncOperations v prostředí Windows Runtime, abyste mohli <xref:System.Threading.CancellationTokenSource> používat s metodou prostředí Windows Runtime.|[Asynchronní vzorek: přemostění mezi rozhraním .NET a prostředí Windows Runtime (zrušení & AsTask)](https://code.msdn.microsoft.com/Async-Sample-Bridging-9479eca3)|
 |[Použití Async pro přístup k souborůmC#()](./using-async-for-file-access.md)|Seznam a ukázka výhod použití operátorů async a await při přístupu k souborům.||
-|[Asynchronní vzor založený na úlohách (TAP)](../../../../standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md)|Popisuje nový vzor pro asynchronii v rozhraní .NET Framework. Vzor je založen na typech <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601>.||
+|[Asynchronní vzor založený na úlohách (TAP)](../../../../standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md)|Popisuje nový vzor pro asynchronii v rozhraní .NET Framework. Vzor je založen na <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> typech.||
 |[Asynchronní videa na Channel 9](https://channel9.msdn.com/search?term=async%20&type=All#pubDate=year&ch9Search&lang-en=en)|Poskytuje odkazy na různá videa o asynchronním programování.||
 
 ## <a name="BKMK_CompleteExample"></a>Kompletní příklad

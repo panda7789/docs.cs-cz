@@ -4,16 +4,16 @@ description: Tento rozšířený kurz poskytuje Úvod k odkazům s možnou hodno
 ms.date: 02/19/2019
 ms.technology: csharp-null-safety
 ms.custom: mvc
-ms.openlocfilehash: 9cb9ac1b292e61d6a8a5f84be29a6a6c323725fc
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: d0faea19ac1c7c7f28d9775fc3b69c71a752fbcb
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039689"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73969349"
 ---
 # <a name="tutorial-migrate-existing-code-with-nullable-reference-types"></a>Kurz: migrace stávajícího kódu s odkazy s možnou hodnotou null
 
-C#8 zavádí **typy odkazů s možnou hodnotou null**, které připlňují odkazové typy stejným způsobem jako typy hodnot s možnou hodnotou null. Deklarujete proměnnou, která bude představovat **typ odkazu s možnou hodnotou null** připojením `?` k typu. Například `string?` představuje hodnotu null `string`. Tyto nové typy můžete použít k přehlednějšímu vyjádření záměru návrhu: některé proměnné *musí mít vždy hodnotu*, jiné *mohou chybět hodnoty*. Všechny existující proměnné typu odkazu by byly interpretovány jako typ odkazu, který není null. 
+C#8 zavádí **typy odkazů s možnou hodnotou null**, které připlňují odkazové typy stejným způsobem jako typy hodnot s možnou hodnotou null. Deklarujete proměnnou, která bude představovat **typ odkazu s možnou hodnotou null** připojením `?` k typu. `string?` například představuje `string`s možnou hodnotou null. Tyto nové typy můžete použít k přehlednějšímu vyjádření záměru návrhu: některé proměnné *musí mít vždy hodnotu*, jiné *mohou chybět hodnoty*. Všechny existující proměnné typu odkazu by byly interpretovány jako typ odkazu, který není null. 
 
 V tomto kurzu se naučíte:
 
@@ -32,7 +32,7 @@ V tomto kurzu se předpokládá, že C# máte zkušenosti s platformou a .NET, v
 
 ## <a name="explore-the-sample-application"></a>Prozkoumejte ukázkovou aplikaci
 
-Ukázková aplikace, kterou migrujete, je webová aplikace čtečky informačního kanálu RSS. Čte z jednoho informačního kanálu RSS a zobrazuje souhrny pro nejnovější články. Můžete kliknout na některý z článků a navštívit web. Aplikace je relativně nová, ale byla zapsána před přístupným odkazem s možnou hodnotou null. Rozhodnutí o návrhu aplikace představují zásady zvuku, ale nevyužívají tuto důležitou funkci jazyka.
+Ukázková aplikace, kterou migrujete, je webová aplikace čtečky informačního kanálu RSS. Čte z jednoho informačního kanálu RSS a zobrazuje souhrny pro nejnovější články. Můžete vybrat některý z článků pro návštěvě webu. Aplikace je relativně nová, ale byla zapsána před přístupným odkazem s možnou hodnotou null. Rozhodnutí o návrhu aplikace představují zásady zvuku, ale nevyužívají tuto důležitou funkci jazyka.
 
 Ukázková aplikace obsahuje knihovnu testů jednotek, která ověřuje hlavní funkčnost aplikace. Tento projekt usnadňuje upgrade bezpečně, pokud změníte jakoukoli implementaci na základě vygenerovaných upozornění. Počáteční kód si můžete stáhnout z úložiště [dotnet/Samples](https://github.com/dotnet/samples/tree/master/csharp/tutorials/nullable-reference-migration/start) GitHub.
 

@@ -6,33 +6,33 @@ helpviewer_keywords:
 - WCF Data Services, client library
 - Add Service Reference dialog box
 ms.assetid: 314077c1-ac10-47e1-bed4-940b5462359d
-ms.openlocfilehash: d53f2d209d6fb0a6f3cadb96245338060ece87db
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: f73ea93fe76f31c81935dbfb29183c247e41d8cd
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70780288"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975276"
 ---
 # <a name="generating-the-data-service-client-library-wcf-data-services"></a>Generování klientské knihovny datové služby (WCF Data Services)
-Datová služba, která implementuje rozhraní [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] , může vracet dokument metadat služby, který popisuje datový model vystavený [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačním kanálem. Další informace najdete v tématu [OData: Dokument](https://go.microsoft.com/fwlink/?LinkId=186070)metadat služby Pomocí dialogového okna **Přidat odkaz na službu** v aplikaci Visual Studio můžete přidat odkaz na [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]službu založenou na službě. Při použití tohoto nástroje k přidání odkazu na metadata vrácená [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačním kanálem v klientském projektu provede následující akce:  
+Datová služba, která implementuje protokol OData (Open Data Protocol), může vrátit dokument metadat služby, který popisuje datový model vystavený datovým kanálem OData. Další informace najdete v [dokumentu metadata služby OData:](https://go.microsoft.com/fwlink/?LinkId=186070). Pomocí dialogového okna **Přidat odkaz na službu** v aplikaci Visual Studio můžete přidat odkaz na službu OData. Při použití tohoto nástroje k přidání odkazu na metadata vrácená kanálem OData v klientském projektu provede následující akce:  
   
 - Požádá o dokument metadat služby z datové služby a interpretuje vrácená metadata.  
   
     > [!NOTE]
-    > Vrácená metadata jsou uložena v projektu klienta jako soubor. edmx. Tento soubor. edmx nejde otevřít pomocí návrháře model EDM (Entity Data Model), protože nemá stejný formát jako soubor. edmx, který používá Entity Framework. Tento soubor metadat můžete zobrazit pomocí editoru XML nebo libovolného textového editoru. Další informace najdete v tématu [ \[MC-EDMX\]: Specifikace formátu](https://go.microsoft.com/fwlink/?LinkID=178833) balíčku pro Data Services model EDM (Entity Data Model)  
+    > Vrácená metadata jsou uložena v projektu klienta jako soubor. edmx. Tento soubor. edmx nejde otevřít pomocí návrháře model EDM (Entity Data Model), protože nemá stejný formát jako soubor. edmx, který používá Entity Framework. Tento soubor metadat můžete zobrazit pomocí editoru XML nebo libovolného textového editoru. Další informace najdete v tématu [\[MC-EDMX\]: model EDM (Entity Data Model) pro specifikaci formátu balíčku Data Services.](https://go.microsoft.com/fwlink/?LinkID=178833)  
   
-- Generuje reprezentace služby jako třídu kontejneru entity, ze <xref:System.Data.Services.Client.DataServiceContext>které dědí. Tato generovaná třída kontejneru entity se podobá kontejneru entit, který generují nástroje model EDM (Entity Data Model). Další informace najdete v tématu [Přehled služby Object Services (Entity Framework)](https://docs.microsoft.com/previous-versions/bb386871(v=vs.100)).  
+- Generuje reprezentace služby jako třídu kontejneru entity, která dědí z <xref:System.Data.Services.Client.DataServiceContext>. Tato generovaná třída kontejneru entity se podobá kontejneru entit, který generují nástroje model EDM (Entity Data Model). Další informace najdete v tématu [Přehled služby Object Services (Entity Framework)](https://docs.microsoft.com/previous-versions/bb386871(v=vs.100)).  
   
 - Generuje datové třídy pro typy datových modelů, které zjišťuje v metadatech služby.  
   
 - Přidá do projektu odkaz na `System.Data.Services.Client` sestavení.  
   
- Další informace najdete v tématu [jak: Přidejte odkaz](how-to-add-a-data-service-reference-wcf-data-services.md)na datovou službu.  
+ Další informace najdete v tématu [Postup: Přidání odkazu na datovou službu](how-to-add-a-data-service-reference-wcf-data-services.md).  
   
- Třídy klientské datové služby je také možné vygenerovat pomocí nástroje [DataSvcUtil. exe](wcf-data-service-client-utility-datasvcutil-exe.md) v příkazovém řádku. Další informace najdete v tématu [jak: Ručně vygenerujte třídy](how-to-manually-generate-client-data-service-classes-wcf-data-services.md)datové služby klienta.  
+ Třídy klientské datové služby je také možné vygenerovat pomocí nástroje [DataSvcUtil. exe](wcf-data-service-client-utility-datasvcutil-exe.md) v příkazovém řádku. Další informace najdete v tématu [Postup: ruční generování tříd klientských datových služeb](how-to-manually-generate-client-data-service-classes-wcf-data-services.md).  
   
 ## <a name="client-data-type-mapping"></a>Mapování datových typů klienta  
- Při použití dialogového okna **Přidat odkaz na službu** v aplikaci Visual Studio nebo `DataSvcUtil.exe` v nástroji ke generování datových tříd klienta, které [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] jsou založeny na informačním kanálu, jsou .NET Framework datové typy mapovány na primitivní typy z datového modelu následujícím způsobem:  
+ Při použití dialogového okna **Přidat odkaz na službu** v aplikaci Visual Studio nebo nástroje `DataSvcUtil.exe` k vygenerování tříd dat klienta, které jsou založeny na datovém kanálu OData, jsou .NET Framework datové typy mapovány na primitivní typy z datového modelu následujícím způsobem:  
   
 |Typ datového modelu|.NET Framework datový typ|  
 |---------------------|------------------------------|  
@@ -50,7 +50,7 @@ Datová služba, která implementuje rozhraní [!INCLUDE[ssODataFull](../../../.
 |`Edm.Single`|<xref:System.Single>|  
 |`Edm.String`|<xref:System.String>|  
   
- Další informace najdete v tématu [OData: Primitivní datové typy](https://go.microsoft.com/fwlink/?LinkId=186072).  
+ Další informace najdete v tématu [datové typy OData: primitiv](https://go.microsoft.com/fwlink/?LinkId=186072).  
   
 ## <a name="see-also"></a>Viz také:
 

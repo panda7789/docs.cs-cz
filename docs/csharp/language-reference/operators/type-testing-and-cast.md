@@ -18,12 +18,12 @@ helpviewer_keywords:
 - cast expression [C#]
 - () operator [C#]
 - typeof operator [C#]
-ms.openlocfilehash: d2fd43644949c842ff883731d3c7f00228cabfd7
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: c3550a593eafb9b50fa7e419e2f747c3e7a0e2ea
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73038871"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73972652"
 ---
 # <a name="type-testing-and-cast-operators-c-reference"></a>Operátory testování typů a přetypování (C# Referenční dokumentace)
 
@@ -154,5 +154,5 @@ Další informace najdete v následujících oddílech [ C# specifikace jazyka](
 
 - [C#odkaz](../index.md)
 - [Operátory jazyka C#](index.md)
-- [Postupy: Bezpečné přetypování pomocí porovnávání vzorů a operátorů is a as](../../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md)
+- [Jak bezpečně přetypovat pomocí porovnávání vzorů a operátorů is a as](../../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md)
 - [Obecné typy v .NET](../../../standard/generics/index.md)

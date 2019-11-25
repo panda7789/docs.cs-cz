@@ -2,12 +2,12 @@
 title: Požadavky na zabezpečení (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: 84758642-9b72-4447-86f9-f831fef46962
-ms.openlocfilehash: d9adf4ed9e340ff589117f160e370c7d1595a207
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 9a560db5dbcb7a87a1c933febfb8bf676cc8816b
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039871"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73968408"
 ---
 # <a name="security-considerations-entity-framework"></a>Požadavky na zabezpečení (Entity Framework)
 Toto téma popisuje požadavky na zabezpečení, které jsou specifické pro vývoj, nasazování a spouštění aplikací Entity Framework. Měli byste také postupovat podle doporučení pro vytváření zabezpečených .NET Framework aplikací. Další informace najdete v tématu [Přehled zabezpečení](../security-overview.md).  
@@ -119,11 +119,11 @@ Toto téma popisuje požadavky na zabezpečení, které jsou specifické pro vý
  Vyhněte se vrácení <xref:System.Linq.IQueryable%601> typů z metod, které jsou vystaveny potenciálně nedůvěryhodným volajícím z následujících důvodů:  
   
 - Příjemce dotazu, který zveřejňuje typ <xref:System.Linq.IQueryable%601>, může volat metody pro výsledek, který zveřejňuje zabezpečená data nebo zvětší velikost sady výsledků dotazu. Zvažte například následující signatura metody:  
-  
-    ```csharp  
-    public IQueryable<Customer> GetCustomer(int customerId)  
-    ```  
-  
+
+    ```csharp
+    public IQueryable<Customer> GetCustomer(int customerId)
+    ```
+
     Příjemce tohoto dotazu může volat `.Include("Orders")` u vrácených `IQueryable<Customer>` a načíst data, která dotaz nechtěl vystavit. To lze vyhnout změnou návratového typu metody pro <xref:System.Collections.Generic.IEnumerable%601> a voláním metody (například `.ToList()`), která materializuje výsledky.  
   
 - Vzhledem k tomu, že <xref:System.Linq.IQueryable%601> dotazy jsou spouštěny při iteraci výsledků, příjemce dotazu, který zveřejňuje typ <xref:System.Linq.IQueryable%601>, může zachytit výjimky, které jsou vyvolány. Výjimky mohou obsahovat informace, které nejsou určeny pro příjemce.  

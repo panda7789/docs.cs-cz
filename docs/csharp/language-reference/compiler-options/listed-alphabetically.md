@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Visual C# compiler, options listed alphabetically
 - Visual C#, compiler options listed alphabetically
 ms.assetid: 43535ea0-ca47-4a15-b528-615087a86092
-ms.openlocfilehash: 450463100782f98b6ded0781b1d3c19b0db97534
-ms.sourcegitcommit: 3ac05b2c386c8cc5e73f4c7665f6c0a7ed3da1bd
+ms.openlocfilehash: d6d471cd27f35de6325a130e6c909d13cb1dcc85
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71151767"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73972745"
 ---
 # <a name="c-compiler-options-listed-alphabetically"></a>Možnosti kompilátoru C# (abecední pořadí)
 
@@ -29,7 +29,7 @@ Následující možnosti kompilátoru jsou seřazené abecedně. Seznam kategori
 |[-baseaddress](baseaddress-compiler-option.md)|Určuje základní adresu pro knihovnu, která má být sestavena.|
 |[-bugreport](bugreport-compiler-option.md)|Vytvoří soubor hlášení o chybě. Tento soubor se pošle spolu s případnými informacemi o chybách, pokud se použije s-errorreport: prompt nebo-errorreport: Send.|
 |[-checked](checked-compiler-option.md)|Způsobí, že kompilátor generuje kontroly přetečení.|
-|-checksumalgorithm:\<ALG >|Určuje algoritmus pro výpočet kontrolního součtu zdrojového souboru uloženého v souboru PDB.  Podporované hodnoty jsou: SHA256 (výchozí) nebo SHA1.<br>Microsoft doporučuje SHA256 z důvodu kolizí problémů se SHA1. |
+|-checksumalgorithm:\<ALG >|Určuje algoritmus pro výpočet kontrolního součtu zdrojového souboru uloženého v souboru PDB.  Podporované hodnoty jsou: SHA256 (default) nebo SHA1.<br>Microsoft doporučuje SHA256 z důvodu kolizí problémů se SHA1. |
 |[-codepage](codepage-compiler-option.md)|Určuje znakovou stránku, která má být použita při otevírání zdrojových souborů.|
 |[-debug](debug-compiler-option.md)|Vygeneruje ladicí informace.|
 |[-define](define-compiler-option.md)|Definuje symboly podmíněné kompilace.|
@@ -37,9 +37,9 @@ Následující možnosti kompilátoru jsou seřazené abecedně. Seznam kategori
 |[-deterministic](deterministic-compiler-option.md)|Způsobí, že kompilátor výstupuje sestavení, jehož binární obsah je identický v rámci kompilací, pokud jsou vstupy identické.|
 |[-doc](doc-compiler-option.md)|Určuje soubor dokumentace XML, který má být vygenerován.|
 |– Vložit|Vložte všechny zdrojové soubory do souboru PDB.|
-|-embed:\<> seznamu souborů|Vloží konkrétní soubory do souboru PDB.|
+|-embed:\<seznam souborů >|Vloží konkrétní soubory do souboru PDB.|
 |-errorendlocation|Výstupní řádek a sloupec koncového umístění jednotlivých chyb|
-|-protokolu chyb\<: soubor >|Zadejte soubor pro protokolování všech diagnostik kompilátorů a analyzátorů.|
+|-protokolu chyb:\<soubor >|Zadejte soubor pro protokolování všech diagnostik kompilátorů a analyzátorů.|
 |[-errorreport](errorreport-compiler-option.md)|Určuje, jak zpracovat vnitřní chyby kompilátoru: prompt, Send nebo None (žádný). Výchozí hodnota je None.|
 |[-filealign](filealign-compiler-option.md)|Určuje zarovnání použité pro oddíly výstupního souboru.|
 |[-fullpaths](fullpaths-compiler-option.md)|Způsobí, že kompilátor vygeneruje plně kvalifikované cesty.|
@@ -48,7 +48,7 @@ Následující možnosti kompilátoru jsou seřazené abecedně. Seznam kategori
 |– přírůstkové|Povolí přírůstkovou kompilaci [zastaralé].|
 |[-keycontainer](keycontainer-compiler-option.md)|Určuje kontejner klíče se silným názvem.|
 |[-keyfile](keyfile-compiler-option.md)|Určuje soubor klíče se silným názvem.|
-|[-langversion –:\<> řetězců](langversion-compiler-option.md)|Určete jazykovou verzi: Výchozí, ISO-1, ISO-2, 3, 4, 5, 6, 7, 7,1, 7,2, 7,3 nebo nejnovější |
+|[-langversion –:\<> řetězců](langversion-compiler-option.md)|Zadejte jazykovou verzi: výchozí, ISO-1, ISO-2, 3, 4, 5, 6, 7, 7,1, 7,2, 7,3 nebo nejnovější. |
 |[-lib](lib-compiler-option.md)|Určuje další adresáře, ve kterých budou hledány odkazy.|
 |[-link](link-compiler-option.md)|Zpřístupní informace o typu modelu COM v zadaných sestaveních pro projekt.|
 |[-linkresource](linkresource-compiler-option.md)|Propojí zadaný prostředek s tímto sestavením.|
@@ -74,7 +74,7 @@ Následující možnosti kompilátoru jsou seřazené abecedně. Seznam kategori
 |[-refonly](refonly-compiler-option.md)|Vygenerujte referenční sestavení namísto primárního sestavení.|
 |-reportanalyzer|Nahlásit Další informace analyzátoru, například čas spuštění.|
 |[-resource](resource-compiler-option.md)|Vloží zadaný prostředek.|
-|-RuleSet:\<soubor >|Zadejte soubor RuleSet, který zakáže konkrétní diagnostiku.|
+|-RuleSet: soubor\<|Zadejte soubor RuleSet, který zakáže konkrétní diagnostiku.|
 |[-subsystemversion](subsystemversion-compiler-option.md)|Určuje minimální verzi subsystému, který může spustitelný soubor použít.|
 |[-target](target-compiler-option.md)|Určuje formát výstupního souboru pomocí jedné ze čtyř možností: [-target: appcontainerexe](target-appcontainerexe-compiler-option.md), [-target: exe](target-exe-compiler-option.md), [-target: Library](target-library-compiler-option.md), [-target: Module](target-module-compiler-option.md), [-target: winexe](target-winexe-compiler-option.md), [-target: winmdobj](target-winmdobj-compiler-option.md).|
 |[-unsafe](unsafe-compiler-option.md)|Umožňuje [nezabezpečený](../keywords/unsafe.md) kód.|
@@ -90,5 +90,5 @@ Následující možnosti kompilátoru jsou seřazené abecedně. Seznam kategori
 
 - [Možnosti kompilátoru jazyka C#](index.md)
 - [Možnosti kompilátoru jazyka C# uvedené podle kategorie](listed-by-category.md)
-- [Postupy: Nastavení proměnných prostředí pro příkazový řádek sady Visual Studio](how-to-set-environment-variables-for-the-visual-studio-command-line.md)
-- [\<> – element kompilátoru](../../../framework/configure-apps/file-schema/compiler/compiler-element.md)
+- [Postup nastavení proměnných prostředí pro příkazový řádek sady Visual Studio](how-to-set-environment-variables-for-the-visual-studio-command-line.md)
+- [\<element > kompilátoru](../../../framework/configure-apps/file-schema/compiler/compiler-element.md)

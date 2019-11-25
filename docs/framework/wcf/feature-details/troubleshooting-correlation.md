@@ -1,19 +1,19 @@
 ---
-title: Řešení potíží s korelacemi
+title: Řešení potíží – korelace
 ms.date: 03/30/2017
 ms.assetid: 98003875-233d-4512-a688-4b2a1b0b5371
-ms.openlocfilehash: d4b7b4ecd724416256cf0b2499d7180200f4e75c
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: be48a55a87d199829de4038e7e2a7642c102acf2
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291561"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976022"
 ---
-# <a name="troubleshooting-correlation"></a>Řešení potíží s korelacemi
+# <a name="troubleshooting-correlation"></a>Řešení potíží – korelace
 Korelace se používá ke vzájemnému propojení zpráv služby pracovních postupů a ke správné instanci pracovního postupu, ale pokud není správně nakonfigurovaná, zprávy se neobdrží a aplikace nebudou fungovat správně. V tomto tématu najdete přehled několika metod pro řešení problémů s korelací a také uvádí některé běžné problémy, které mohou nastat při použití korelace.
 
 ## <a name="handle-the-unknownmessagereceived-event"></a>Zpracování události UnknownMessageReceived
- Událost <xref:System.ServiceModel.ServiceHostBase.UnknownMessageReceived> nastane, když služba obdrží neznámou zprávu, včetně zpráv, které nelze korelovat s existující instancí. V případě samoobslužných služeb je možné tuto událost zpracovat v hostitelské aplikaci.
+ K události <xref:System.ServiceModel.ServiceHostBase.UnknownMessageReceived> dojde, když služba obdrží neznámou zprávu, včetně zpráv, které nelze korelovat s existující instancí. V případě samoobslužných služeb je možné tuto událost zpracovat v hostitelské aplikaci.
 
 ```csharp
 host.UnknownMessageReceived += delegate(object sender, UnknownMessageReceivedEventArgs e)
@@ -45,13 +45,11 @@ class CustomFactory : WorkflowServiceHostFactory
 }
 ```
 
- Tento vlastní <xref:System.ServiceModel.Activities.Activation.WorkflowServiceHostFactory> lze potom zadat v souboru `svc` pro službu.
+ Tento vlastní <xref:System.ServiceModel.Activities.Activation.WorkflowServiceHostFactory> pak můžete zadat v souboru `svc` pro službu.
 
-```
-<% @ServiceHost Language="C#" Service="OrderServiceWorkflow" Factory="CustomFactory" %>
-```
+`<% @ServiceHost Language="C#" Service="OrderServiceWorkflow" Factory="CustomFactory" %>`
 
- Při vyvolání této obslužné rutiny lze zprávu načíst pomocí vlastnosti <xref:System.ServiceModel.UnknownMessageReceivedEventArgs.Message%2A> <xref:System.ServiceModel.UnknownMessageReceivedEventArgs> a bude vypadat podobně jako následující zpráva.
+ Při vyvolání této obslužné rutiny lze zprávu načíst pomocí vlastnosti <xref:System.ServiceModel.UnknownMessageReceivedEventArgs.Message%2A> <xref:System.ServiceModel.UnknownMessageReceivedEventArgs>a bude vypadat podobně jako následující zpráva.
 
 ```xml
 <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
@@ -67,7 +65,7 @@ class CustomFactory : WorkflowServiceHostFactory
 </s:Envelope>
 ```
 
- Kontrola zpráv odeslaných do obslužné rutiny <xref:System.ServiceModel.ServiceHostBase.UnknownMessageReceived> může poskytnout informace o tom, proč se zpráva nekoreluje s instancí služby pracovního postupu.
+ Kontrola zpráv odeslaných do obslužné rutiny <xref:System.ServiceModel.ServiceHostBase.UnknownMessageReceived> může poskytnout přípravné informace o tom, proč se zpráva nekoreluje s instancí služby pracovního postupu.
 
 ## <a name="use-tracking-to-monitor-the-progress-of-the-workflow"></a>Sledování průběhu pracovního postupu pomocí sledování
  Sledování poskytuje způsob, jak monitorovat průběh pracovního postupu. Ve výchozím nastavení jsou záznamy sledování vydávány pro události životního cyklu pracovního cyklu, události životního cyklu aktivity, šíření chyb a opětovné pokračování záložek. Vlastní záznamy sledování je navíc možné vysílat vlastními aktivitami. Při řešení potíží s korelacemi, záznamy sledování aktivity, pokračování záznamů a záznamy o šíření chyb jsou nejužitečnější. Záznamy sledování aktivit se dají použít k určení aktuálního průběhu pracovního postupu a můžou vám pomůžou určit, které aktivity zasílání zpráv aktuálně čekají na zprávy. Záznamy pokračování v záložek jsou užitečné, protože označují, že pracovní postup přijal zprávu, a záznamy o šíření chyb poskytují záznam všech chyb v pracovním postupu. Chcete-li povolit sledování, zadejte požadované <xref:System.Activities.Tracking.TrackingParticipant> v <xref:System.ServiceModel.Activities.WorkflowServiceHost.WorkflowExtensions%2A> <xref:System.ServiceModel.Activities.WorkflowServiceHost>. V následujícím příkladu je `ConsoleTrackingParticipant` (z [vlastní ukázky sledování](../../../../docs/framework/windows-workflow-foundation/samples/custom-tracking.md) ) nakonfigurovaná pomocí výchozího profilu sledování.
@@ -76,12 +74,12 @@ class CustomFactory : WorkflowServiceHostFactory
 host.WorkflowExtensions.Add(new ConsoleTrackingParticipant());
 ```
 
- Sledování účastníka, jako je ConsoleTrackingParticipant, je užitečné pro samoobslužné služby pracovních postupů, které mají okno konzoly. V případě služby hostované na webu by se měla použít sledování účastníka, který zaznamenává informace o sledování do trvalého úložiště, jako je například integrovaný <xref:System.Activities.Tracking.EtwTrackingParticipant> nebo vlastní účastník sledování, který zaznamená informace do souboru.
+ Sledování účastníka, jako je ConsoleTrackingParticipant, je užitečné pro samoobslužné služby pracovních postupů, které mají okno konzoly. V případě služby hostované na webu by se měla použít sledování účastníka, který zaznamenává informace o sledování do trvalého úložiště, jako je například integrovaná <xref:System.Activities.Tracking.EtwTrackingParticipant>, nebo vlastní účastník sledování, který zaznamená informace do souboru.
 
  Další informace o sledování a konfiguraci sledování pro službu pracovního postupu hostované na webu najdete v tématech [sledování a trasování pracovních postupů](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md), [Konfigurace sledování pracovního postupu](../../../../docs/framework/windows-workflow-foundation/configuring-tracking-for-a-workflow.md)a ukázky ukázek [ &#91;WF&#93; ](../../../../docs/framework/windows-workflow-foundation/samples/tracking.md) .
 
 ## <a name="use-wcf-tracing"></a>Použití trasování WCF
- Trasování WCF poskytuje trasování toku zpráv do a ze služby pracovního postupu. Tyto trasovací informace jsou užitečné při řešení problémů korelace, zejména u korelace na základě obsahu. Chcete-li povolit trasování, zadejte požadované naslouchací procesy trasování v části `system.diagnostics` souboru `web.config`, pokud je služba pracovního postupu hostitelem webu nebo soubor `app.config`, pokud je služba pracovního postupu v místním prostředí. Chcete-li zahrnout obsah zpráv do trasovacího souboru, zadejte `true` pro `logEntireMessage` v prvku `messageLogging` v části `diagnostics` `system.serviceModel`. V následujícím příkladu jsou informace o trasování, včetně obsahu zpráv, nakonfigurované tak, aby se zapsaly do souboru s názvem `service.svclog`.
+ Trasování WCF poskytuje trasování toku zpráv do a ze služby pracovního postupu. Tyto trasovací informace jsou užitečné při řešení problémů korelace, zejména u korelace na základě obsahu. Chcete-li povolit trasování, zadejte požadované naslouchací procesy trasování v části `system.diagnostics` souboru `web.config`, pokud je služba pracovního postupu hostitelem webu nebo `app.config` soubor, pokud je služba pracovního postupu v místním prostředí. Chcete-li zahrnout obsah zpráv do trasovacího souboru, zadejte `true` pro `logEntireMessage` v prvku `messageLogging` v části `diagnostics` `system.serviceModel`. V následujícím příkladu jsou informace o trasování, včetně obsahu zpráv, nakonfigurované tak, aby se zapsaly do souboru s názvem `service.svclog`.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -116,10 +114,10 @@ host.WorkflowExtensions.Add(new ConsoleTrackingParticipant());
 </configuration>
 ```
 
- Chcete-li zobrazit informace o trasování, které jsou obsaženy v `service.svclog`, je použit [Nástroj Prohlížeč trasování služby (SvcTraceViewer. exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) . To je zvlášť užitečné při řešení problémů s korelací na základě obsahu, protože můžete zobrazit obsah zprávy a přesně zjistit, co se předává, a zda odpovídá <xref:System.ServiceModel.CorrelationQuery> pro korelaci na základě obsahu. Další informace o trasování WCF naleznete v tématu [Nástroj pro prohlížeč trasování služby (SvcTraceViewer. exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md), [Konfigurace trasování](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)a [používání trasování pro řešení potíží s aplikací](../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md).
+ Chcete-li zobrazit informace o trasování, které jsou obsaženy v `service.svclog`, je použit [Nástroj Prohlížeč trasování služby (SvcTraceViewer. exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) . To je užitečné hlavně při řešení problémů korelace na základě obsahu, protože můžete zobrazit obsah zprávy a přesně zjistit, co se předává, a zda odpovídá <xref:System.ServiceModel.CorrelationQuery> pro korelaci na základě obsahu. Další informace o trasování WCF naleznete v tématu [Nástroj pro prohlížeč trasování služby (SvcTraceViewer. exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md), [Konfigurace trasování](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)a [používání trasování pro řešení potíží s aplikací](../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md).
 
 ## <a name="common-context-exchange-correlation-issues"></a>Problémy s korelací běžných kontextových Exchange
- Určité typy korelace vyžadují, aby se při správné práci korelace použil konkrétní typ vazby. Mezi příklady patří korelace požadavku a odpovědi, která vyžaduje obousměrnou vazbu, jako je například <xref:System.ServiceModel.BasicHttpBinding> a korelace kontextu Exchange, která vyžaduje kontextovou vazbu, jako je například <xref:System.ServiceModel.BasicHttpContextBinding>. Většina vazeb podporuje obousměrné operace, takže se nejedná o běžný problém korelace požadavek-odpověď, ale pouze několik kontextových vazeb, včetně <xref:System.ServiceModel.BasicHttpContextBinding>, <xref:System.ServiceModel.WSHttpContextBinding> a <xref:System.ServiceModel.NetTcpContextBinding>. Pokud se jedna z těchto vazeb nepoužívá, bude počáteční volání služby pracovního postupu úspěšné, ale následné volání selžou s následujícím <xref:System.ServiceModel.FaultException>.
+ Určité typy korelace vyžadují, aby se při správné práci korelace použil konkrétní typ vazby. Mezi příklady patří korelace požadavku a odpovědi, která vyžaduje obousměrnou vazbu, jako je <xref:System.ServiceModel.BasicHttpBinding>, a korelaci kontextu Exchange, která vyžaduje kontextovou vazbu, jako je například <xref:System.ServiceModel.BasicHttpContextBinding>. Většina vazeb podporuje obousměrné operace, takže se nejedná o běžný problém korelace požadavek-odpověď, ale pouze několik kontextových vazeb, včetně <xref:System.ServiceModel.BasicHttpContextBinding>, <xref:System.ServiceModel.WSHttpContextBinding>a <xref:System.ServiceModel.NetTcpContextBinding>. Pokud se jedna z těchto vazeb nepoužívá, bude počáteční volání služby pracovního postupu úspěšné, ale následující <xref:System.ServiceModel.FaultException>volání selžou.
 
 ```output
 There is no context attached to the incoming message for the service
@@ -128,12 +126,12 @@ In order to communicate with this service check whether the incoming binding
 supports the context protocol and has a valid context initialized.
 ```
 
- Kontextové informace, které se používají pro korelaci kontextu, mohou být vráceny <xref:System.ServiceModel.Activities.SendReply> do aktivity <xref:System.ServiceModel.Activities.Receive>, která inicializuje korelaci kontextu při použití obousměrné operace, nebo může být zadána volajícím, pokud je operace jednosměrná. Pokud kontext není odesílán volajícím nebo vráceným službou pracovního postupu, pak se při vyvolání následné operace vrátí stejný <xref:System.ServiceModel.FaultException> popsané dříve.
+ Kontextové informace, které se používají pro korelaci kontextu, mohou být vráceny <xref:System.ServiceModel.Activities.SendReply> do <xref:System.ServiceModel.Activities.Receive> aktivity, která inicializuje korelaci kontextu při použití obousměrné operace, nebo může být zadána volajícím v případě, že operace je jednosměrná. Pokud kontext není odesílán volajícím nebo vráceným službou pracovního postupu, bude po vyvolání následné operace vrácen stejný <xref:System.ServiceModel.FaultException> popsaný výše.
 
 ## <a name="common-request-reply-correlation-issues"></a>Běžné problémy s korelacemi požadavků a odpovědí
- Korelace požadavek-odpověď se používá s dvojicí <xref:System.ServiceModel.Activities.Receive> @ no__t-1 @ no__t-2 k implementaci obousměrné operace ve službě pracovních postupů a s dvojicí <xref:System.ServiceModel.Activities.Send> @ no__t-4 @ no__t-5, která vyvolává obousměrnou operaci v jiné webové službě. Při volání obousměrné operace ve službě WCF může být služba buď tradiční imperativní služba WCF založená na kódu, nebo může být služba pracovního postupu. Chcete-li použít korelaci požadavek-odpověď, je nutné použít obousměrnou vazbu, například <xref:System.ServiceModel.BasicHttpBinding> a operace musí být obousměrné.
+ Korelace požadavku a odpovědi se používá s <xref:System.ServiceModel.Activities.Receive>/<xref:System.ServiceModel.Activities.SendReply> páry k implementaci obousměrné operace ve službě pracovních postupů a s dvojicí <xref:System.ServiceModel.Activities.Send>/<xref:System.ServiceModel.Activities.ReceiveReply>, která vyvolává obousměrnou operaci v jiné webové službě. Při volání obousměrné operace ve službě WCF může být služba buď tradiční imperativní služba WCF založená na kódu, nebo může být služba pracovního postupu. Pro použití korelace požadavku a odpovědi musí být použita Obousměrná vazba, například <xref:System.ServiceModel.BasicHttpBinding>, a operace musí být obousměrné.
 
- Pokud má služba pracovních postupů obousměrné operace paralelně nebo překrývající se páry <xref:System.ServiceModel.Activities.Receive> @ no__t-1 @ no__t-2 nebo <xref:System.ServiceModel.Activities.Send> @ no__t-4 @ no__t-5, nemusí být implicitní Správa korelace poskytovaná <xref:System.ServiceModel.Activities.WorkflowServiceHost> dostačující, obzvláště v horních zátěžích. scénáře a zprávy nemusí být správně směrovány. Chcete-li zabránit tomu, aby k tomuto problému došlo, doporučujeme při použití korelace požadavek-odpověď vždy zadat <xref:System.ServiceModel.Activities.CorrelationHandle>. Při použití šablon **SendAndReceiveReply** a **ReceiveAndSendReply** z části zasílání zpráv v sadě **nástrojů** návrháře pracovních postupů je ve výchozím nastavení explicitně nakonfigurován <xref:System.ServiceModel.Activities.CorrelationHandle>. Při sestavování pracovního postupu pomocí kódu je <xref:System.ServiceModel.Activities.CorrelationHandle> zadáno v <xref:System.ServiceModel.Activities.Receive.CorrelationInitializers%2A> první aktivity ve páru. V následujícím příkladu je aktivita <xref:System.ServiceModel.Activities.Receive> konfigurovaná s explicitní <xref:System.ServiceModel.Activities.CorrelationInitializer.CorrelationHandle%2A> určenou v <xref:System.ServiceModel.Activities.RequestReplyCorrelationInitializer>.
+ Pokud má služba pracovních postupů obousměrné operace paralelně nebo překrývající <xref:System.ServiceModel.Activities.Receive>/<xref:System.ServiceModel.Activities.SendReply> nebo <xref:System.ServiceModel.Activities.Send>páry /<xref:System.ServiceModel.Activities.ReceiveReply>, pak implicitní Správa korelace, kterou poskytuje <xref:System.ServiceModel.Activities.WorkflowServiceHost>, nemusí být dostačující, zejména ve scénářích s vysokým důrazem a zprávy nemusí být správně směrovány. Chcete-li zabránit tomu, aby k tomuto problému došlo, doporučujeme při použití korelace požadavek-odpověď vždy zadat <xref:System.ServiceModel.Activities.CorrelationHandle>. Při použití šablon **SendAndReceiveReply** a **ReceiveAndSendReply** z části zasílání zpráv v sadě **nástrojů** návrháře pracovních postupů je <xref:System.ServiceModel.Activities.CorrelationHandle> ve výchozím nastavení explicitně nakonfigurován. Při sestavování pracovního postupu pomocí kódu je <xref:System.ServiceModel.Activities.CorrelationHandle> určena v <xref:System.ServiceModel.Activities.Receive.CorrelationInitializers%2A> první aktivity ve dvojici. V následujícím příkladu je <xref:System.ServiceModel.Activities.Receive> aktivita nakonfigurovaná s explicitní <xref:System.ServiceModel.Activities.CorrelationInitializer.CorrelationHandle%2A> zadanou v <xref:System.ServiceModel.Activities.RequestReplyCorrelationInitializer>.
 
 ```csharp
 Variable<CorrelationHandle> RRHandle = new Variable<CorrelationHandle>();
@@ -161,7 +159,7 @@ SendReply ReplyToStartOrder = new SendReply
 // Construct a workflow using StartOrder and ReplyToStartOrder.
 ```
 
- Trvalost není povolená mezi dvojicí <xref:System.ServiceModel.Activities.Receive> @ no__t-1 @ no__t-2 nebo dvojicí <xref:System.ServiceModel.Activities.Send> @ no__t-4 @ no__t-5. Vytvoří se zóna bez trvalého uložení, která trvá až do dokončení obou aktivit. Pokud je aktivita, například aktivita zpoždění, v této zóně No-retrvalá a způsobí, že pracovní postup přestane být činný, pracovní postup zůstane neuložený ani v případě, že je hostitel nakonfigurovaný tak, aby zachoval pracovní postupy, když se stanou nečinné. Pokud se aktivita, jako je aktivita trvalosti, pokusí výslovně uchovávat v zóně bez trvalého uložení, je vyvolána závažná výjimka, pracovní postup se přeruší a <xref:System.ServiceModel.FaultException> se vrátí volajícímu. Zpráva o závažných výjimkách je "System. InvalidOperationException: trvalé aktivity nelze zahrnout do bloků trvalého uložení". Tato výjimka se nevrátí volajícímu, ale může být pozorována v případě, že je povoleno sledování. Zpráva pro <xref:System.ServiceModel.FaultException> vrácená volajícímu je "operace nemohla být provedena, protože instance WorkflowInstance" 5836145b-7da2-49d0-A052-a49162adeab6 "byla dokončena".
+ Trvalost není povolená mezi <xref:System.ServiceModel.Activities.Receive>/<xref:System.ServiceModel.Activities.SendReply> páry nebo dvojice <xref:System.ServiceModel.Activities.Send>/<xref:System.ServiceModel.Activities.ReceiveReply>. Vytvoří se zóna bez trvalého uložení, která trvá až do dokončení obou aktivit. Pokud je aktivita, například aktivita zpoždění, v této zóně No-retrvalá a způsobí, že pracovní postup přestane být činný, pracovní postup zůstane neuložený ani v případě, že je hostitel nakonfigurovaný tak, aby zachoval pracovní postupy, když se stanou nečinné. Pokud se aktivita, jako je trvalá aktivita, pokusí explicitně uchovat v zóně bez trvalého uložení, je vyvolána závažná výjimka, pracovní postup se přeruší a <xref:System.ServiceModel.FaultException> se vrátí volajícímu. Zpráva o závažných výjimkách je "System. InvalidOperationException: trvalé aktivity nelze zahrnout do bloků trvalého uložení". Tato výjimka se nevrátí volajícímu, ale může být pozorována v případě, že je povoleno sledování. Zpráva pro <xref:System.ServiceModel.FaultException> vrácena volajícímu je "operace nemohla být provedena, protože instance WorkflowInstance" 5836145b-7da2-49d0-A052-a49162adeab6 "byla dokončena".
 
  Další informace o korelaci požadavků a odpovědí najdete v tématu [požadavek-odpověď](../../../../docs/framework/wcf/feature-details/request-reply-correlation.md).
 
@@ -175,7 +173,7 @@ SendReply ReplyToStartOrder = new SendReply
  Mezi službou, která přijímá zprávu, existuje malá mezera a v rámci které se v současnosti inicializuje korelace, během které budou následné zprávy ignorovány. Pokud služba pracovního postupu inicializuje korelaci založenou na obsahu pomocí dat předávaných z klienta přes jednosměrnou operaci a volající odesílá okamžité následné zprávy, budou tyto zprávy během tohoto intervalu ignorovány. K tomu je možné se vyhnout pomocí oboustranné operace pro inicializaci korelace nebo pomocí <xref:System.ServiceModel.Activities.TransactedReceiveScope>.
 
 ### <a name="correlation-query-issues"></a>Problémy s dotazem korelace
- Korelační dotazy se používají k určení toho, jaká data se ve zprávě mají použít ke korelaci zprávy. Tato data se zadává pomocí dotazu XPath. Pokud zprávy ke službě nejsou odesílány, i když vše vypadá jako správné, jedna strategie pro řešení potíží je zadat hodnotu literálu, která odpovídá hodnotě dat zprávy namísto dotazu XPath. Chcete-li zadat hodnotu literálu, použijte funkci `string`. V následujícím příkladu je <xref:System.ServiceModel.MessageQuerySet> nakonfigurován pro použití literálové hodnoty `11445` pro `OrderId` a dotaz XPath je zakomentován.
+ Korelační dotazy se používají k určení toho, jaká data se ve zprávě mají použít ke korelaci zprávy. Tato data se zadává pomocí dotazu XPath. Pokud zprávy ke službě nejsou odesílány, i když vše vypadá jako správné, jedna strategie pro řešení potíží je zadat hodnotu literálu, která odpovídá hodnotě dat zprávy namísto dotazu XPath. Chcete-li zadat hodnotu literálu, použijte funkci `string`. V následujícím příkladu je <xref:System.ServiceModel.MessageQuerySet> nakonfigurována pro použití literálové hodnoty `11445` pro `OrderId` a dotaz XPath je zakomentován.
 
 ```csharp
 MessageQuerySet = new MessageQuerySet
@@ -202,13 +200,13 @@ public class AddItemMessage
 }
 ```
 
- Tento kontrakt zprávy používá aktivita <xref:System.ServiceModel.Activities.Receive> v pracovním postupu. @No__t-0 v hlavičce zprávy slouží ke korelaci zprávy se správnou instancí. Pokud se dotaz XPath, který načítá `CartId`, vytvoří pomocí dialogových oken korelace v Návrháři pracovních postupů, vygeneruje se následující nesprávný dotaz XPath.
+ Tento kontrakt zprávy používá aktivita <xref:System.ServiceModel.Activities.Receive> v pracovním postupu. `CartId` v hlavičce zprávy se používá ke korelaci zprávy se správnou instancí. Pokud se dotaz XPath, který načítá `CartId`, vytvoří pomocí dialogových oken korelace v Návrháři pracovních postupů, vygeneruje se následující nesprávný dotaz XPath.
 
 ```
 sm:body()/xg0:AddItemMessage/xg0:CartId
 ```
 
- Tento dotaz XPath by byl správný, pokud aktivita <xref:System.ServiceModel.Activities.Receive> použila pro data parametry, ale vzhledem k tomu, že používá kontrakt zprávy, není správný. Následující dotaz XPath je správný dotaz XPath pro načtení `CartId` z hlavičky.
+ Tento dotaz XPath by byl správný, pokud <xref:System.ServiceModel.Activities.Receive> aktivita použila parametry pro data, ale vzhledem k tomu, že používá kontrakt zprávy, není správný. Následující dotaz XPath je správný dotaz XPath pro načtení `CartId` z hlavičky.
 
 ```
 sm:header()/tempuri:CartId

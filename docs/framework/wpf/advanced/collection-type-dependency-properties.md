@@ -10,12 +10,12 @@ helpviewer_keywords:
 - dependency properties [WPF]
 - collection-type properties [WPF]
 ms.assetid: 99f96a42-3ab7-4f64-a16b-2e10d654e97c
-ms.openlocfilehash: f7f8c25844f41dd8915c0f4404d6714b4c81233c
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 039ae0cb314eba2f1bb3e5b39f2127a5e694f334
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458476"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73974160"
 ---
 # <a name="collection-type-dependency-properties"></a>Vlastnosti závislostí typu kolekce
 Toto téma poskytuje pokyny a navrhované vzory pro implementaci vlastnosti závislosti, kde typ vlastnosti je typ kolekce.  
@@ -28,8 +28,11 @@ Toto téma poskytuje pokyny a navrhované vzory pro implementaci vlastnosti záv
 ## <a name="initializing-the-collection-beyond-the-default-value"></a>Inicializuje se kolekce nad rámec výchozí hodnoty.  
  Při vytváření vlastnosti závislosti neurčíte výchozí hodnotu vlastnosti jako počáteční hodnotu pole. Místo toho zadáte výchozí hodnotu prostřednictvím metadat vlastnosti závislostí. Pokud je vlastnost typem odkazu, výchozí hodnota zadaná v metadatech vlastnosti závislosti není výchozí hodnotou pro instanci. místo toho je výchozí hodnota, která se vztahuje na všechny instance daného typu. Proto musíte mít pozor, abyste nepoužívali statickou kolekci v jednotném definování metadat vlastnosti kolekce jako pracovní výchozí hodnotu pro nově vytvořené instance daného typu. Místo toho je nutné zajistit, aby byla hodnota kolekce záměrně nastavena na jedinečnou kolekci (instance) jako součást logiky konstruktoru třídy. V opačném případě budete mít vytvořenou neúmyslnou třídu singleton.  
   
- Vezměte v úvahu následující příklad. Následující část příkladu ukazuje definici pro třídu `Aquarium`. Třída definuje vlastnost závislosti typu kolekce `AquariumObjects`, která používá obecný typ <xref:System.Collections.Generic.List%601> s omezením typu <xref:System.Windows.FrameworkElement>. V <xref:System.Windows.DependencyProperty.Register%28System.String%2CSystem.Type%2CSystem.Type%2CSystem.Windows.PropertyMetadata%29> volání vlastnosti závislosti vytvoří metadata výchozí hodnotu jako nový obecný <xref:System.Collections.Generic.List%601>.  
-  
+ Vezměte v úvahu následující příklad. Následující část příkladu ukazuje definici pro třídu `Aquarium`, která obsahuje chybu s výchozí hodnotou. Třída definuje vlastnost závislosti typu kolekce `AquariumObjects`, která používá obecný typ <xref:System.Collections.Generic.List%601> s omezením typu <xref:System.Windows.FrameworkElement>. V <xref:System.Windows.DependencyProperty.Register%28System.String%2CSystem.Type%2CSystem.Type%2CSystem.Windows.PropertyMetadata%29> volání vlastnosti závislosti vytvoří metadata výchozí hodnotu jako nový obecný <xref:System.Collections.Generic.List%601>.
+
+> [!WARNING]
+> Následující kód se nesprávně chová.
+
  [!code-csharp[PropertiesOvwSupport2#CollectionProblemDefinition](~/samples/snippets/csharp/VS_Snippets_Wpf/PropertiesOvwSupport2/CSharp/page.xaml.cs#collectionproblemdefinition)]
  [!code-vb[PropertiesOvwSupport2#CollectionProblemDefinition](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PropertiesOvwSupport2/visualbasic/page.xaml.vb#collectionproblemdefinition)]  
   

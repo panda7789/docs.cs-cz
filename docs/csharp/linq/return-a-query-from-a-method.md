@@ -1,22 +1,22 @@
 ---
 title: Vrácení dotazu z metody
-description: Postup vrácení dotazu.
+description: Jak vrátit dotaz.
 ms.date: 11/30/2016
 ms.assetid: db220f79-c35b-41f2-886c-cd068672d42d
-ms.openlocfilehash: fe2192a3edb683d7284ffae3b66cb9f70e8854b1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1df533770f76301432b104d6f8398f1687750cce
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61659823"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73972512"
 ---
-# <a name="how-to-return-a-query-from-a-method-c-programming-guide"></a>Postupy: Vrácení dotazu z metody (C# Průvodce programováním v)
-Tento příklad ukazuje, jak jako návratovou hodnotu a vrácení dotazu z metody `out` parametru.  
+# <a name="how-to-return-a-query-from-a-method-c-programming-guide"></a>Postup vrácení dotazu z metody (C# Průvodce programováním)
+Tento příklad ukazuje, jak vrátit dotaz z metody jako návratovou hodnotu a jako parametr `out`.  
   
- Dotaz objekty jsou složení, což znamená, že jste vrácení dotazu z metody. Objekty, které zastupují dotaz neukládejte výsledný kolekce, ale spíše kroky pro vytvoření výsledku v případě potřeby. Výhodou vrací objekty dotazu z metody je, že můžou být další skládá nebo upravit. Proto všechny návratové hodnoty nebo `out` parametru metody, která vrací dotaz musí mít také tohoto typu. Pokud bude metoda realizována dotaz do konkrétní <xref:System.Collections.Generic.List%601> nebo <xref:System.Array> typ, považuje se vracejí výsledky dotazu namísto samotný dotaz. Proměnné dotazu, který je vrácen z metody lze stále skládá nebo upravit.  
+ Objekty dotazů jsou sestavitelné, což znamená, že můžete vracet dotaz z metody. Objekty, které reprezentují dotazy, neukládají výslednou kolekci, ale v případě potřeby pak kroky k vyprodukování výsledků. Výhodou vrácení objektů dotazů z metod je, že je lze dále sestavit nebo upravit. Proto všechny vrácené hodnoty nebo parametry `out` metody, která vrací dotaz, musí mít také tento typ. Pokud metoda materializuje dotaz do konkrétního <xref:System.Collections.Generic.List%601> nebo <xref:System.Array> typu, považuje se za vracené výsledky dotazu místo dotazu samotného. Proměnnou dotazu, která je vrácena z metody, lze stále sestavit nebo upravit.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu první metoda vrací dotaz jako návratovou hodnotu a druhá metoda vrací dotaz jako `out` parametru. Všimněte si, že v obou případech se dotaz, který je vrácen, nejsou výsledky dotazu.  
+ V následujícím příkladu vrátí první metoda dotaz jako návratovou hodnotu a druhá metoda vrátí dotaz jako parametr `out`. Všimněte si, že v obou případech se jedná o dotaz, který je vrácen, nikoli výsledky dotazu.  
   
  [!code-csharp[csProgGuideLINQ#80](~/samples/snippets/csharp/concepts/linq/how-to-return-a-query-from-a-method_1.cs)]  
 

@@ -2,12 +2,12 @@
 title: Vyhodnotit přerušující změny – .NET Core
 description: Přečtěte si o způsobech, kterými se .NET Core snaží zachovat kompatibilitu pro vývojáře napříč verzemi .NET.
 ms.date: 06/10/2019
-ms.openlocfilehash: f4e18a17f58452c9325f36390626ae690f5ed777
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 3ad3cbe36ee09d371e26dc7da36a31207a6c1b25
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739345"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73973653"
 ---
 # <a name="evaluate-breaking-changes-in-net-core"></a>Vyhodnotit poslední změny v .NET Core
 
@@ -103,7 +103,7 @@ Změny v této kategorii *upravují* oblast veřejného povrchu typu. Většina 
 
   Všimněte si, že zavedení přepsání může způsobit, že předchozí příjemci přeskočí přepsání při volání [základny](../../csharp/language-reference/keywords/base.md).
 
-- **✔️ Přidání konstruktoru do třídy spolu s výchozím konstruktorem (bez parametrů), pokud třída předtím neměla žádné konstruktory**
+- **✔️ Přidání konstruktoru do třídy spolu s konstruktorem bez parametrů, pokud třída předtím neměla žádné konstruktory**
 
    Nicméně přidání konstruktoru do třídy, která dříve neměla žádné konstruktory bez přidání konstruktoru *bez* parametrů, není povoleno.
 

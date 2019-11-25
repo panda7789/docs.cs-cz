@@ -4,12 +4,12 @@ description: Instalace a použití nástroje příkazového řádku dotnet-dump.
 author: sdmaclea
 ms.author: stmaclea
 ms.date: 10/14/2019
-ms.openlocfilehash: 7eba0cba28f0575be4b374b26e9aca26a70df603
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: bb4f7827f898431c55603b070f5b7a23fe44cba5
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321594"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73973458"
 ---
 # <a name="dump-collection-and-analysis-utility-dotnet-dump"></a>Vypsat shromažďování a nástroj pro analýzu (`dotnet-dump`)
 
@@ -75,7 +75,7 @@ dotnet-dump collect [-h|--help] [-p|--process-id] [--type] [-o|--output] [--diag
 
 - **`--type <Heap|Mini>`**
 
-  Určuje typ Dumb, který určuje typy informací shromažďovaných z procesu. Existují dva typy:
+  Určuje typ výpisu, který určuje typy informací shromažďovaných z procesu. Existují dva typy:
 
   - `Heap` – velký a poměrně obsáhlý výpis, který obsahuje seznamy modulů, seznam vláken, všechny zásobníky, informace o výjimkách, informace o popisovači a veškerou paměť s výjimkou mapovaných imagí.
   - `Mini` – malý výpis obsahující seznamy modulů, seznam vláken, informace o výjimce a všechny zásobníky.
@@ -88,7 +88,7 @@ dotnet-dump collect [-h|--help] [-p|--process-id] [--type] [-o|--output] [--diag
 
   Pokud není zadán:
 
-  - Výchozí hodnota je *.\dump_YYYYMMDD_HHMMSS.dmp* ve Windows.
+  - Výchozí hodnota je *. \ dump_YYYYMMDD_HHMMSS. dmp* ve Windows.
   - Výchozí hodnota je *./core_YYYYMMDD_HHMMSS* v systému Linux.
 
   RRRRMMDD je rok/měsíc/den a HHMMSS je hodina/minuta za sekundu.
@@ -218,7 +218,7 @@ HResult: 80131604
 
 ## <a name="special-instructions-for-docker"></a>Speciální pokyny pro Docker
 
-Pokud používáte v Docker, vyžaduje shromažďování výpisu `SYS_PTRACE` (`--cap-add=SYS_PTRACE` nebo `--privileged`).
+Pokud pracujete v Docker, vyžaduje výpis kolekce výpisu `SYS_PTRACE` (`--cap-add=SYS_PTRACE` nebo `--privileged`).
 
 V obrázcích Docker systému Microsoft .NET Core SDK Linux mohou některé příkazy `dotnet-dump` vyvolat následující výjimku:
 

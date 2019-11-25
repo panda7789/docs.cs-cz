@@ -1,20 +1,20 @@
 ---
 title: Sekvence
 description: Naučte se používat F# sekvence, když máte rozsáhlou uspořádanou kolekci dat, ale nemusí nutně očekávat použití všech prvků.
-ms.date: 02/19/2019
-ms.openlocfilehash: 76aeeb8b89ed8146ee1b7f909af6bf0764fcc55d
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.date: 11/04/2019
+ms.openlocfilehash: 34e03f1cead0a9f678f637afcb6c8397ef7572bc
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424984"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73971449"
 ---
 # <a name="sequences"></a>Sekvence
 
 > [!NOTE]
 > Odkazy na reference k rozhraní API v tomto článku vás převezmou na MSDN.  Reference k rozhraní docs.microsoft.com API není dokončená.
 
-*Sekvence* je logická řada prvků všech jednoho typu. Sekvence jsou zvláště užitečné v případě, že máte rozsáhlou uspořádanou kolekci dat, ale nemusí nutně očekávat použití všech prvků. Jednotlivé prvky sekvence jsou vypočítány pouze jako povinné, takže sekvence může poskytovat lepší výkon než seznam v situacích, kdy nejsou použity všechny prvky. Sekvence jsou reprezentovány typem `seq<'T>`, který je aliasem pro `System.Collections.Generic.IEnumerable`. Proto může být jakýkoli typ .NET Framework, který implementuje `System.IEnumerable`, použit jako sekvence. [Modul SEQ](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684) poskytuje podporu pro manipulace zahrnující sekvence.
+*Sekvence* je logická řada prvků všech jednoho typu. Sekvence jsou zvláště užitečné v případě, že máte rozsáhlou uspořádanou kolekci dat, ale nemusí nutně očekávat použití všech prvků. Jednotlivé prvky sekvence jsou vypočítány pouze jako povinné, takže sekvence může poskytovat lepší výkon než seznam v situacích, kdy nejsou použity všechny prvky. Sekvence jsou reprezentovány typem `seq<'T>`, který je aliasem pro <xref:System.Collections.Generic.IEnumerable%601>. Proto může být jakýkoli typ rozhraní .NET, který implementuje rozhraní <xref:System.Collections.Generic.IEnumerable%601>, použit jako sekvence. [Modul SEQ](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684) poskytuje podporu pro manipulace zahrnující sekvence.
 
 ## <a name="sequence-expressions"></a>Výrazy sekvence
 
@@ -22,17 +22,17 @@ ms.locfileid: "73424984"
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1502.fs)]
 
-Výrazy sekvence jsou tvořeny F# výrazy, které vytvářejí hodnoty sekvence. Mohou použít klíčové slovo `yield` k tvorbě hodnot, které se stanou součástí sekvence.
-
-Následuje příklad.
+Výrazy sekvence jsou tvořeny F# výrazy, které vytvářejí hodnoty sekvence. Hodnoty můžete také generovat programově:
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1503.fs)]
 
-Místo `yield`můžete použít operátor `->`, v takovém případě můžete vynechat klíčové slovo `do`, jak je znázorněno v následujícím příkladu.
+Předchozí příklad používá operátor `->`, který umožňuje určit výraz, jehož hodnota se stane součástí sekvence. `->` lze použít pouze v případě, že každá část kódu, která následuje, vrací hodnotu.
+
+Alternativně můžete zadat klíčové slovo `do` s volitelným `yield`, které následuje:
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1504.fs)]
 
-Následující kód vygeneruje seznam dvojic souřadnic spolu s indexem do pole, které představuje mřížku.
+Následující kód vygeneruje seznam dvojic souřadnic spolu s indexem do pole, které představuje mřížku. Všimněte si, že první výraz `for` vyžaduje, aby byl zadán `do`.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1505.fs)]
 
@@ -40,9 +40,34 @@ Výraz `if` použitý v sekvenci je filtr. Chcete-li například vygenerovat sek
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1506.fs)]
 
-Při použití `yield` nebo `->` v iteraci se očekává, že každá iterace vygeneruje jediný prvek sekvence. Pokud Každá iterace vytvoří sekvenci prvků, použijte `yield!`. V takovém případě jsou elementy vygenerované při každé iteraci zřetězeny, aby vytvořily finální sekvenci.
+Jak bylo zmíněno dříve, `do` je zde požadováno, protože neexistuje žádná `else` větev, která přechází do `if`. Pokud se pokusíte použít `->`, zobrazí se chyba oznamující, že ne všechny větve vrací hodnotu.
 
-Ve výrazu pořadí můžete kombinovat více výrazů dohromady. Prvky generované jednotlivými výrazy jsou zřetězeny dohromady. Příklad naleznete v části Příklady v tomto tématu.
+## <a name="the-yield-keyword"></a>Klíčové slovo `yield!`
+
+V některých případech můžete chtít zahrnout sekvenci prvků do jiné sekvence. Chcete-li zahrnout sekvenci v rámci jiné sekvence, je nutné použít klíčové slovo `yield!`:
+
+```fsharp
+// Repeats '1 2 3 4 5' ten times
+seq {
+    for _ in 1..10 do
+        yield! seq { 1; 2; 3; 4; 5}
+}
+```
+
+Dalším způsobem, jak se `yield!`, je, že se sloučí vnitřní sekvence a pak se do ní vloží v obsaženém pořadí.
+
+Pokud se ve výrazu používá `yield!`, všechny ostatní jednotlivé hodnoty musí používat klíčové slovo `yield`:
+
+```fsharp
+// Combine repeated values with their values
+seq {
+    for x in 1..10 do
+        yield x
+        yield! seq { for i in 1..x -> i}
+}
+```
+
+Výsledkem určení pouze `x` v předchozím příkladu bude sekvence nevygenerovala žádné hodnoty.
 
 ## <a name="examples"></a>Příklady
 
@@ -50,7 +75,7 @@ První příklad používá výraz sekvence, který obsahuje iteraci, filtr a v�
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1507.fs)]
 
-Následující kód používá `yield` k vytvoření násobení tabulky, která se skládá z řazených kolekcí členů tří prvků, každý skládající se ze dvou faktorů a produktu.
+Následující příklad vytvoří tabulku násobení, která se skládá z řazených kolekcí členů tří prvků, z nichž každý obsahuje dva faktory a produkt:
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1508.fs)]
 
@@ -62,7 +87,7 @@ Následující příklad ukazuje použití `yield!` ke kombinování jednotlivý
 
 Sekvence podporují mnoho stejných funkcí jako [seznamy](lists.md). Sekvence také podporují operace, jako je seskupování a počítání, pomocí funkcí pro generování klíčů. Sekvence také podporují více různorodých funkcí pro extrakci dílčích sekvencí.
 
-Mnoho datových typů, například seznamy, pole, sady a mapy, jsou implicitně sekvencované, protože se jedná o vyčíslitelné kolekce. Funkce, která přebírá sekvenci jako argument funguje s některým z běžných F# datových typů, kromě libovolných .NET Framework dat, která implementuje `System.Collections.Generic.IEnumerable<'T>`. Naproti tomu funkci, která přebírá seznam jako argument, který může přijímat jenom seznamy. Typ `seq<'T>` je zkratka typu pro `IEnumerable<'T>`. To znamená, že každý typ, který implementuje obecné `System.Collections.Generic.IEnumerable<'T>`, které zahrnuje pole, seznamy, sady a mapy v F#a také většinu .NET Framework typů kolekcí, je kompatibilní s typem `seq` a lze jej použít všude, kde je očekávána sekvence.
+Mnoho datových typů, například seznamy, pole, sady a mapy, jsou implicitně sekvencované, protože se jedná o vyčíslitelné kolekce. Funkce, která přebírá sekvenci jako argument funguje s libovolnými běžnými F# datovými typy, kromě libovolného datového typu .NET, který implementuje `System.Collections.Generic.IEnumerable<'T>`. Naproti tomu funkci, která přebírá seznam jako argument, který může přijímat jenom seznamy. Typ `seq<'T>` je zkratka typu pro `IEnumerable<'T>`. To znamená, že každý typ, který implementuje obecné `System.Collections.Generic.IEnumerable<'T>`, včetně polí, seznamů, sad a map v F#a také většiny typů kolekcí .NET, je kompatibilní s typem `seq` a lze jej použít všude, kde je očekávána sekvence.
 
 ## <a name="module-functions"></a>Funkce modulu
 

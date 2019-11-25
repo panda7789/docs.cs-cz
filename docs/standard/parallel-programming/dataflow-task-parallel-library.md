@@ -9,38 +9,27 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - TPL dataflow library
 ms.assetid: 643575d0-d26d-4c35-8de7-a9c403e97dd6
-ms.openlocfilehash: 7f5969bc6f73b2260ae1ffa4b0026d5b4119ff88
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6c589e85a0bbfb3f0b5858698ffb2a294ff88cf2
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134262"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73973783"
 ---
 # <a name="dataflow-task-parallel-library"></a>Tok dat (Task Parallel Library)
-<a name="top"></a>Task Parallel Library (TPL) poskytuje součásti toku dat, které vám pomůžou zvýšit odolnost aplikací s podporou souběžného zpracování. Tyto komponenty toku dat jsou souhrnně označovány jako *Knihovna rozhraní TPL Dataflow*. Tento model toku dat propaguje programování založené na objektu actor tím, že zajišťuje předávání zpráv v procesu pro hrubý úlohy toku dat a zřetězení. Komponenty toku dat se vytvářejí na typech a plánování infrastruktury aplikace TPL a integrují se s podporou C#, Visual Basic a F# jazykovou podporou pro asynchronní programování. Tyto součásti toku dat jsou užitečné v případě, že máte více operací, které musí komunikovat s jiným asynchronním nebo pokud chcete data zpracovat, jakmile budou k dispozici. Zvažte například aplikaci, která zpracovává obrazová data z webové kamery. Pomocí modelu toku dat aplikace může zpracovat snímky imagí, jakmile budou k dispozici. Pokud aplikace vylepšuje snímky obrázků, například provedením světlé nápravy nebo snížení červeného oka, můžete vytvořit *kanál* komponent toku dat. Každá fáze kanálu může použít více hrubých paralelních funkcí, jako jsou funkce, které poskytuje TPL, k transformaci image.  
+Task Parallel Library (TPL) poskytuje součásti toku dat, které vám pomůžou zvýšit odolnost aplikací s podporou souběžného zpracování. Tyto komponenty toku dat jsou souhrnně označovány jako *Knihovna rozhraní TPL Dataflow*. Tento model toku dat propaguje programování založené na objektu actor tím, že zajišťuje předávání zpráv v procesu pro hrubý úlohy toku dat a zřetězení. Komponenty toku dat se vytvářejí na typech a plánování infrastruktury aplikace TPL a integrují se s podporou C#, Visual Basic a F# jazykovou podporou pro asynchronní programování. Tyto součásti toku dat jsou užitečné v případě, že máte více operací, které musí komunikovat s jiným asynchronním nebo pokud chcete data zpracovat, jakmile budou k dispozici. Zvažte například aplikaci, která zpracovává obrazová data z webové kamery. Pomocí modelu toku dat aplikace může zpracovat snímky imagí, jakmile budou k dispozici. Pokud aplikace vylepšuje snímky obrázků, například provedením světlé nápravy nebo snížení červeného oka, můžete vytvořit *kanál* komponent toku dat. Každá fáze kanálu může použít více hrubých paralelních funkcí, jako jsou funkce, které poskytuje TPL, k transformaci image.  
   
  Tento dokument poskytuje přehled knihovny toku dat TPL. Popisuje programovací model, předdefinované typy bloků toku dat a způsob konfigurace bloků toku dat pro splnění konkrétních požadavků vašich aplikací.  
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
-  
- Tento dokument obsahuje následující části:  
-  
-- [Programovací model](#model)  
-  
-- [Předdefinované typy bloků toku dat](#predefined_types)  
-  
-- [Konfigurace chování bloku toku dat](#behavior)  
-  
-- [Vlastní bloky toku dat](#custom)  
-  
-<a name="model"></a>   
-## <a name="programming-model"></a>Programovací model  
+
+## <a name="programming-model"></a>Programovací model
  Knihovna TPL Dataflow poskytuje základ pro předávání zpráv a virtuálního aplikací náročných na výkon procesoru a vstupně-výstupní operace s vysokou propustností a nízkou latencí. Poskytuje vám také explicitní kontrolu nad tím, jak jsou data ukládána do vyrovnávací paměti a pohybují se systémem. Pro lepší pochopení programovacího modelu toku dat zvažte aplikaci, která asynchronně načte obrázky z disku a vytvoří složený z těchto imagí. Tradiční programovací modely obvykle vyžadují, abyste k koordinaci úloh a přístupu ke sdíleným datům použili zpětná volání a synchronizační objekty, jako jsou zámky. Pomocí modelu programování toku dat můžete vytvořit objekty Dataflow, které zpracovávají obrázky při jejich čtení z disku. V modelu toku dat deklarujete, jakým způsobem jsou data zpracována, jakmile budou k dispozici, a také všechny závislosti mezi daty. Vzhledem k tomu, že modul runtime spravuje závislosti mezi daty, můžete se často vyhnout nutnosti synchronizovat přístup ke sdíleným datům. Kromě toho, vzhledem k tomu, že modul runtime plánuje práci na základě asynchronního příjezdu dat, může tok dat zlepšit odezvu a propustnost tím, že efektivně spravuje podkladová vlákna. Příklad, který používá programovací model Dataflow k implementaci zpracování bitové kopie v aplikaci model Windows Forms, naleznete v tématu [Návod: použití toku dat v aplikaci model Windows Forms](../../../docs/standard/parallel-programming/walkthrough-using-dataflow-in-a-windows-forms-application.md).  
   
 ### <a name="sources-and-targets"></a>Zdroje a cíle  
  Knihovna TPL Dataflow se skládá z *bloků toku*dat, což jsou datové struktury, které ukládají data do vyrovnávací paměti a zpracovávají data. TPL definuje tři druhy bloků toku: *zdrojové bloky*, *cílové bloky*a *bloky pro šíření*. Zdrojový blok funguje jako zdroj dat a lze ho číst z. Cílový blok funguje jako přijímač dat a lze do něj zapisovat. Blok šíření funguje jako zdrojový blok i cílový blok a lze ho číst z a zapisovat do. TPL definuje rozhraní <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601?displayProperty=nameWithType> pro reprezentaci zdrojů, <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601?displayProperty=nameWithType> k reprezentování cílů a <xref:System.Threading.Tasks.Dataflow.IPropagatorBlock%602?displayProperty=nameWithType> k reprezentování přenosů. <xref:System.Threading.Tasks.Dataflow.IPropagatorBlock%602> dědí z <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601>a <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601>.  
   
- Knihovna TPL Dataflow poskytuje několik předdefinovaných typů bloků toku dat, které implementují rozhraní <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601>, <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601>a <xref:System.Threading.Tasks.Dataflow.IPropagatorBlock%602>. Tyto typy bloků toku dat jsou popsány v tomto dokumentu v části [předdefinované typy bloků toku](#predefined_types)dat.  
+ Knihovna TPL Dataflow poskytuje několik předdefinovaných typů bloků toku dat, které implementují rozhraní <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601>, <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601>a <xref:System.Threading.Tasks.Dataflow.IPropagatorBlock%602>. Tyto typy bloků toku dat jsou popsány v tomto dokumentu v části [předdefinované typy bloků toku](#predefined-dataflow-block-types)dat.  
   
 ### <a name="connecting-blocks"></a>Spojovací bloky  
  Bloky toku dat můžete propojit s *kanály*pro formuláře, které jsou lineární sekvence bloků toku dat nebo *sítě*, které jsou grafy bloků toku dat. Kanál je jedna forma sítě. V kanálu nebo v síti zdroje asynchronně šíří data do cílů, jakmile budou tato data k dispozici. Metoda <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601.LinkTo%2A?displayProperty=nameWithType> propojuje zdrojový blok toku dat s cílovým blokem. Zdroj může být propojený s žádným nebo více cíli. cíle lze propojit z nula nebo více zdrojů. Bloky toku dat můžete do nebo z kanálu nebo sítě souběžně přidávat nebo odebírat. Předdefinované typy bloků toku dat zpracovávají všechny aspekty bezpečnosti pro přístup z více vláken při propojování a odpojování.  
@@ -54,7 +43,7 @@ ms.locfileid: "73134262"
 > Vzhledem k tomu, že každý předdefinovaný typ bloku toku dat zaručuje, že se zprávy šíří v pořadí, ve kterém byly přijaty, musí být každá zpráva načtena ze zdrojového bloku předtím, než může zdrojový blok zpracovat další zprávu. Proto když použijete filtrování k připojení více cílů ke zdroji, ujistěte se, že alespoň jeden cílový blok obdrží každou zprávu. V opačném případě se aplikace může zablokovat.  
   
 ### <a name="message-passing"></a>Předávání zpráv  
- Programovací model Dataflow se vztahuje na pojem *předávání zpráv*, kde nezávislé komponenty programu spolu komunikují prostřednictvím posílání zpráv. Jedním ze způsobů, jak šířit zprávy mezi součástmi aplikace, je volat <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Post%2A> a <xref:System.Threading.Tasks.Dataflow.DataflowBlock.SendAsync%2A?displayProperty=nameWithType> metody pro odesílání zpráv do cílového bloku toku dat post (<xref:System.Threading.Tasks.Dataflow.DataflowBlock.Post%2A> funguje synchronně; <xref:System.Threading.Tasks.Dataflow.DataflowBlock.SendAsync%2A> funguje asynchronně) a <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Receive%2A><xref:System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAsync%2A>a <xref:System.Threading.Tasks.Dataflow.DataflowBlock.TryReceive%2A> metody pro příjem zpráv ze zdrojových bloků. Tyto metody můžete kombinovat s kanály toku dat nebo sítěmi tím, že odesíláte vstupní data do hlavního uzlu (cílový blok) a přijímáte výstupní data z uzlu terminálu kanálu nebo uzlů terminálů sítě (jeden nebo více zdrojových bloků). Můžete také použít metodu <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Choose%2A> ke čtení z prvního z poskytnutých zdrojů, které mají data k dispozici a k provádění akcí u těchto dat.  
+ Programovací model Dataflow se vztahuje na pojem *předávání zpráv*, kde nezávislé komponenty programu spolu komunikují prostřednictvím posílání zpráv. Jedním ze způsobů, jak šířit zprávy mezi součástmi aplikace, je volat <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Post%2A> a <xref:System.Threading.Tasks.Dataflow.DataflowBlock.SendAsync%2A?displayProperty=nameWithType> metody pro odesílání zpráv do cílového bloku toku dat post (<xref:System.Threading.Tasks.Dataflow.DataflowBlock.Post%2A> fungují synchronně; <xref:System.Threading.Tasks.Dataflow.DataflowBlock.SendAsync%2A> funguje asynchronně) a <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Receive%2A>, <xref:System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAsync%2A>a <xref:System.Threading.Tasks.Dataflow.DataflowBlock.TryReceive%2A> metody pro příjem zpráv ze zdrojových bloků. Tyto metody můžete kombinovat s kanály toku dat nebo sítěmi tím, že odesíláte vstupní data do hlavního uzlu (cílový blok) a přijímáte výstupní data z uzlu terminálu kanálu nebo uzlů terminálů sítě (jeden nebo více zdrojových bloků). Můžete také použít metodu <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Choose%2A> ke čtení z prvního z poskytnutých zdrojů, které mají data k dispozici a k provádění akcí u těchto dat.  
   
  Zdrojové bloky nabízejí data do cílových bloků voláním metody <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601.OfferMessage%2A?displayProperty=nameWithType>. Cílový blok odpoví na nabízenou zprávu jedním ze tří způsobů: může přijmout zprávu, odmítnout zprávu nebo odložit zprávu. Když cíl přijme zprávu, metoda <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601.OfferMessage%2A> vrátí <xref:System.Threading.Tasks.Dataflow.DataflowMessageStatus.Accepted>. Když cíl zprávu odmítne, metoda <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601.OfferMessage%2A> vrátí <xref:System.Threading.Tasks.Dataflow.DataflowMessageStatus.Declined>. Pokud cíl vyžaduje, aby již nepřijímal žádné zprávy ze zdroje, <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601.OfferMessage%2A> vrátí <xref:System.Threading.Tasks.Dataflow.DataflowMessageStatus.DecliningPermanently>. Předdefinované typy zdrojových bloků nenabízejí zprávy do propojených cílů po přijetí takové návratové hodnoty a automaticky odpojí z těchto cílů.  
   
@@ -78,10 +67,7 @@ ms.locfileid: "73134262"
  [!code-vb[TPLDataflow_Overview#11](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_overview/vb/program.vb#11)]  
   
  V těle úlohy pokračování můžete také použít vlastnosti, například <xref:System.Threading.Tasks.Task.IsCanceled%2A>, a určit tak další informace o stavu dokončení bloku toku dat. Další informace o pokračujících úkolech a jejich vztahu ke zrušení a zpracování chyb naleznete v tématu [zřetězení úloh pomocí úloh pokračování](../../../docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md), [zrušení úkolu](../../../docs/standard/parallel-programming/task-cancellation.md)a [zpracování výjimek](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md).  
-  
- [[Přejít na začátek](#top)]  
-  
-<a name="predefined_types"></a>   
+
 ## <a name="predefined-dataflow-block-types"></a>Předdefinované typy bloků toku dat  
  Knihovna TPL Dataflow poskytuje několik předdefinovaných typů bloků toku dat. Tyto typy jsou rozděleny do tří kategorií: *bloky ukládání do vyrovnávací paměti*, *bloky spouštění*a *bloky seskupení*. Následující části popisují typy bloků, které tvoří tyto kategorie.  
   
@@ -201,10 +187,7 @@ ms.locfileid: "73134262"
  [!code-vb[TPLDataflow_Overview#9](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_overview/vb/program.vb#9)]  
   
  Kompletní příklad, který používá <xref:System.Threading.Tasks.Dataflow.BatchedJoinBlock%602> k zachycení výsledků a všech výjimek, ke kterým dojde, když program načítá z databáze, najdete v tématu [Návod: použití tříd BatchBlock a BatchedJoinBlock ke zvýšení efektivity](../../../docs/standard/parallel-programming/walkthrough-using-batchblock-and-batchedjoinblock-to-improve-efficiency.md).  
-  
- [[Přejít na začátek](#top)]  
-  
-<a name="behavior"></a>   
+
 ## <a name="configuring-dataflow--block-behavior"></a>Konfigurace chování bloku toku dat  
  Můžete povolit další možnosti poskytnutím <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions?displayProperty=nameWithType> objektu konstruktoru typu bloku toku dat. Tyto možnosti řídí chování, jako je Plánovač, který spravuje základní úlohu a stupeň paralelismu. <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions> má také odvozené typy, které určují chování specifické pro určité typy bloků toku dat. Následující tabulka shrnuje, které typy možností jsou spojené s každým typem bloku toku dat.  
   
@@ -254,16 +237,11 @@ ms.locfileid: "73134262"
   
  Pro typy bloku JOIN, jako je například <xref:System.Threading.Tasks.Dataflow.JoinBlock%602>, hladový režim znamená, že blok okamžitě přijímá data, i když odpovídající data, ke kterým se má připojit, ještě nejsou k dispozici. Nehladový režim znamená, že blok odloží všechny příchozí zprávy, dokud není k dispozici na všech svých cílech pro dokončení spojení. Pokud již žádná z odložených zpráv není k dispozici, blok spojení uvolní všechny odložené zprávy a restartuje proces. Pro třídu <xref:System.Threading.Tasks.Dataflow.BatchBlock%601>, hladové a nehladé chování je podobné, s výjimkou toho, že v nehladovém režimu, objekt <xref:System.Threading.Tasks.Dataflow.BatchBlock%601> odloží všechny příchozí zprávy, dokud není dostatek dostupných z různých zdrojů k dokončení dávky.  
   
- Chcete-li určit Nehladový režim pro blok toku dat, nastavte <xref:System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions.Greedy%2A> na `False`. Příklad, který ukazuje, jak použít nehladý režim pro povolení více spojovacích bloků pro efektivnější sdílení zdroje dat, naleznete v tématu [How to: use JoinBlock ke čtení dat z více zdrojů](../../../docs/standard/parallel-programming/how-to-use-joinblock-to-read-data-from-multiple-sources.md).  
-  
- [[Přejít na začátek](#top)]  
-  
-<a name="custom"></a>   
+ Chcete-li určit Nehladový režim pro blok toku dat, nastavte <xref:System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions.Greedy%2A> na `False`. Příklad, který ukazuje, jak použít nehladý režim pro povolení více spojovacích bloků pro efektivnější sdílení zdroje dat, naleznete v tématu [How to: use JoinBlock ke čtení dat z více zdrojů](../../../docs/standard/parallel-programming/how-to-use-joinblock-to-read-data-from-multiple-sources.md).
+
 ## <a name="custom-dataflow-blocks"></a>Vlastní bloky toku dat  
- I když knihovna TPL Dataflow poskytuje mnoho předdefinovaných typů bloku, můžete vytvořit další typy bloků, které provádějí vlastní chování. Implementujte rozhraní <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601> nebo <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601> přímo nebo použijte metodu <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Encapsulate%2A> k sestavení komplexního bloku, který zapouzdřuje chování existujících typů bloků. Příklady, které ukazují, jak implementovat vlastní funkci bloku toku dat, naleznete v tématu [Návod: Vytvoření vlastního typu bloku toku](../../../docs/standard/parallel-programming/walkthrough-creating-a-custom-dataflow-block-type.md)dat.  
-  
- [[Přejít na začátek](#top)]  
-  
+ I když knihovna TPL Dataflow poskytuje mnoho předdefinovaných typů bloku, můžete vytvořit další typy bloků, které provádějí vlastní chování. Implementujte rozhraní <xref:System.Threading.Tasks.Dataflow.ISourceBlock%601> nebo <xref:System.Threading.Tasks.Dataflow.ITargetBlock%601> přímo nebo použijte metodu <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Encapsulate%2A> k sestavení komplexního bloku, který zapouzdřuje chování existujících typů bloků. Příklady, které ukazují, jak implementovat vlastní funkci bloku toku dat, naleznete v tématu [Návod: Vytvoření vlastního typu bloku toku](../../../docs/standard/parallel-programming/walkthrough-creating-a-custom-dataflow-block-type.md)dat.
+
 ## <a name="related-topics"></a>Související témata  
   
 |Název|Popis|  

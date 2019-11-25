@@ -14,12 +14,12 @@ helpviewer_keywords:
 - parameters [C#], optional
 - named and optional arguments [C#]
 ms.assetid: 839c960c-c2dc-4d05-af4d-ca5428e54008
-ms.openlocfilehash: 83e465651762fce33a62009fb3add40373a33c51
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 30475b637202d3b614ac968897e467956bc78646
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72772128"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73970510"
 ---
 # <a name="named-and-optional-arguments-c-programming-guide"></a>Pojmenované a nepovinné argumenty (Průvodce programováním v C#)
 C#4 zavádí pojmenované a volitelné argumenty. *Pojmenované argumenty* umožňují zadat argument pro konkrétní parametr přiřazením argumentu s názvem parametru, nikoli zadáním pozice parametru v seznamu parametrů. *Volitelné argumenty* umožňují vynechat argumenty pro některé parametry. Oba postupy lze použít s metodami, indexery, konstruktory a delegáty.  
@@ -113,7 +113,7 @@ C#4 zavádí pojmenované a volitelné argumenty. *Pojmenované argumenty* umož
   
  [!code-csharp[csProgGuideNamedAndOptional#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/namedandoptcom.cs#13)]  
   
- Další informace a příklady najdete v tématu [Postupy: použití pojmenovaných a nepovinných argumentů v programování pro systém Office](./how-to-use-named-and-optional-arguments-in-office-programming.md) a [Postup: přístup k objektům Interop sady Office pomocí vizuálních C# funkcí](../interop/how-to-access-office-onterop-objects.md).  
+ Další informace a příklady najdete v tématu [použití pojmenovaných a nepovinných argumentů v programování pro systém Office](./how-to-use-named-and-optional-arguments-in-office-programming.md) a [Postup: přístup k objektům C# Interop sady Office pomocí vizuálních funkcí](../interop/how-to-access-office-onterop-objects.md).  
   
 ## <a name="overload-resolution"></a>Rozlišení přetěžování  
  Použití pojmenovaných a nepovinných argumentů má vliv na rozlišení přetížení následujícími způsoby:  
@@ -129,7 +129,7 @@ C#4 zavádí pojmenované a volitelné argumenty. *Pojmenované argumenty* umož
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Použití pojmenovaných a nepovinných argumentů v programování pro sadu Office](./how-to-use-named-and-optional-arguments-in-office-programming.md)
+- [Postupy: použití pojmenovaných a nepovinných argumentů v programování pro systém Office](./how-to-use-named-and-optional-arguments-in-office-programming.md)
 - [Použití typu dynamic](../types/using-type-dynamic.md)
 - [Použití konstruktorů](./using-constructors.md)
 - [Použití indexerů](../indexers/using-indexers.md)

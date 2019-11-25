@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, polymorphism
 - polymorphism [C#]
 ms.assetid: 086af969-29a5-4ce8-a993-0b7d53839dab
-ms.openlocfilehash: e98399ac49e70f9139281ab75947c4acaf2dee7c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: be075c358d9ca2c36b6d173fca983c16f6b0d78c
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69922072"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73970340"
 ---
 # <a name="polymorphism-c-programming-guide"></a>Polymorfismus (Průvodce programováním v C#)
 Polymorfismus se často označuje jako třetí pilíř objektově orientovaného programování, a to po zapouzdření a dědičnosti. Polymorfismus je řecký Word, který znamená "velký tvar" a má dva odlišné aspekty:  
@@ -26,7 +26,7 @@ Polymorfismus se často označuje jako třetí pilíř objektově orientovaného
   
 2. Použijte virtuální metodu k vyvolání vhodné metody pro jakoukoli odvozenou třídu prostřednictvím jediného volání metody základní třídy.  
   
- Nejprve vytvořte `Shape`základní třídu s názvem a odvozené třídy `Rectangle`, jako například, `Circle`a `Triangle`. Poskytněte třídě virtuální metodu s názvem `Draw`a přepište ji v každé odvozené třídě pro vykreslení konkrétního tvaru, který třída představuje. `Shape` `List<Shape>` Vytvořte objekt a přidejte do něj kruh, trojúhelník a obdélník. Chcete-li aktualizovat plochu pro kreslení, použijte smyčku [foreach](../../language-reference/keywords/foreach-in.md) k iterování seznamu a zavolejte `Draw` metodu pro každý `Shape` objekt v seznamu. I když každý objekt v seznamu má deklarovaný typ `Shape`, je typ za běhu (přepsaná verze metody v každé odvozené třídě), která bude vyvolána.  
+ Nejprve vytvořte základní třídu s názvem `Shape`a odvozené třídy jako `Rectangle`, `Circle`a `Triangle`. Poskytněte třídu `Shape` virtuální metodu nazvanou `Draw`a přepište ji v každé odvozené třídě pro vykreslení konkrétního tvaru, který třída představuje. Vytvořte objekt `List<Shape>` a přidejte do něj kruh, trojúhelník a obdélník. Chcete-li aktualizovat plochu pro kreslení, použijte smyčku [foreach](../../language-reference/keywords/foreach-in.md) k iterování seznamu a zavolejte metodu `Draw` u každého objektu `Shape` v seznamu. I když každý objekt v seznamu má deklarovaný typ `Shape`, je typ za běhu (přepsaná verze metody v každé odvozené třídě), která bude vyvolána.  
   
  [!code-csharp[csProgGuideInheritance#50](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#50)]  
   
@@ -54,7 +54,7 @@ Polymorfismus se často označuje jako třetí pilíř objektově orientovaného
  Virtuální metody a vlastnosti umožňují odvozeným třídám rozšiřuje základní třídu bez nutnosti použití implementace základní třídy metody. Další informace najdete v tématu [Správa verzí pomocí klíčových slov override a New](./versioning-with-the-override-and-new-keywords.md). Rozhraní poskytuje další způsob, jak definovat metodu nebo sadu metod, jejichž implementace je ponechána na odvozené třídy. Další informace naleznete v tématu [rozhraní](../interfaces/index.md).  
   
 ### <a name="hiding-base-class-members-with-new-members"></a>Skrytí členů základní třídy novými členy  
- Pokud chcete, aby měl váš odvozený člen stejný název jako člen v základní třídě, ale nechcete, aby se účastnil ve virtuálním vyvolání, můžete použít klíčové slovo [New](../../language-reference/keywords/new-modifier.md) . `new` Klíčové slovo je vloženo před návratový typ člena třídy, který se nahrazuje. Následující kód poskytuje příklad:  
+ Pokud chcete, aby měl váš odvozený člen stejný název jako člen v základní třídě, ale nechcete, aby se účastnil ve virtuálním vyvolání, můžete použít klíčové slovo [New](../../language-reference/keywords/new-modifier.md) . Klíčové slovo `new` je vloženo před návratový typ člena třídy, který se nahrazuje. Následující kód poskytuje příklad:  
   
  [!code-csharp[csProgGuideInheritance#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#18)]  
   
@@ -67,25 +67,25 @@ Polymorfismus se často označuje jako třetí pilíř objektově orientovaného
   
  [!code-csharp[csProgGuideInheritance#22](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#22)]  
   
- Odvozená třída může zastavit virtuální dědičnost deklarací override jako [sealed](../../language-reference/keywords/sealed.md). To vyžaduje vložení `sealed` klíčového slova `override` před klíčové slovo v deklaraci člena třídy. Následující kód poskytuje příklad:  
+ Odvozená třída může zastavit virtuální dědičnost deklarací override jako [sealed](../../language-reference/keywords/sealed.md). To vyžaduje vložení klíčového slova `sealed` před klíčovým slovem `override` v deklaraci člena třídy. Následující kód poskytuje příklad:  
   
  [!code-csharp[csProgGuideInheritance#24](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#24)]  
   
- V předchozím příkladu již metoda `DoWork` není typu Virtual pro žádnou třídu odvozenou z jazyka C. Stále je virtuální pro instance C, i když jsou přetypování na typ B nebo typ A. zapečetěné metody lze nahradit odvozenými třídami pomocí `new` klíčového slova, jak ukazuje následující příklad:  
+ V předchozím příkladu je `DoWork` metody již nevirtuální pro žádnou třídu odvozenou z jazyka C. Je stále Virtual pro instance C, i když jsou přetypování na typ B nebo typ A. zapečetěné metody lze nahradit odvozenými třídami pomocí klíčového slova `new`, jak ukazuje následující příklad:  
   
  [!code-csharp[csProgGuideInheritance#25](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#25)]  
   
- V tomto případě, pokud `DoWork` je volána na D pomocí proměnné typu d, je volána nová. `DoWork` Pokud proměnná typu C, B nebo a se používá pro přístup k instanci D, volání metody `DoWork` bude následovat pravidla virtuální dědičnosti, směrování těchto volání do `DoWork` implementace třídy C.  
+ V tomto případě, pokud je `DoWork` volána na D pomocí proměnné typu D, je volána nová `DoWork`. Pokud proměnná typu C, B nebo A se používá pro přístup k instanci D, volání `DoWork` bude následovat pravidla virtuální dědičnosti, směrování těchto volání do implementace `DoWork` na třídu C.  
   
 ### <a name="accessing-base-class-virtual-members-from-derived-classes"></a>Přístup k virtuálním členům základní třídy z odvozených tříd  
- Odvozená třída, která nahradila nebo přepsala metodu nebo vlastnost, může stále přistupovat k metodě nebo vlastnosti základní třídy pomocí `base` klíčového slova. Následující kód poskytuje příklad:  
+ Odvozená třída, která nahradila nebo přepsala metodu nebo vlastnost, může stále přistupovat k metodě nebo vlastnosti základní třídy pomocí klíčového slova `base`. Následující kód poskytuje příklad:  
   
  [!code-csharp[csProgGuideInheritance#26](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#26)]  
   
  Další informace naleznete v tématu [Base](../../language-reference/keywords/base.md).  
   
 > [!NOTE]
-> Doporučuje se, aby virtuální členové použili `base` k volání implementace základní třídy tohoto člena ve své vlastní implementaci. V případě, že dojde k chování základní třídy, umožňuje odvozeným třídám soustředit se na implementaci konkrétního chování, které je specifické pro odvozenou třídu. Pokud není volána implementace základní třídy, je až do odvozené třídy, aby jejich chování bylo kompatibilní s chováním základní třídy.  
+> Doporučuje se, aby virtuální členové používali `base` k volání implementace základní třídy tohoto člena ve vlastní implementaci. V případě, že dojde k chování základní třídy, umožňuje odvozeným třídám soustředit se na implementaci konkrétního chování, které je specifické pro odvozenou třídu. Pokud není volána implementace základní třídy, je až do odvozené třídy, aby jejich chování bylo kompatibilní s chováním základní třídy.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
@@ -93,7 +93,7 @@ Polymorfismus se často označuje jako třetí pilíř objektově orientovaného
   
 - [Znalost, kdy použít klíčová slova override a new](./knowing-when-to-use-override-and-new-keywords.md)  
   
-- [Postupy: Přepsat metodu ToString](./how-to-override-the-tostring-method.md)  
+- [Jak přepsat metodu ToString](./how-to-override-the-tostring-method.md)
   
 ## <a name="see-also"></a>Viz také:
 

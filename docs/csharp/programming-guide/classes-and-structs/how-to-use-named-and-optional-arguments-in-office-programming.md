@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: použití pojmenovaných a nepovinných argumentů v C# programování pro systém Office – Průvodce programováním'
+title: Použití pojmenovaných a nepovinných argumentů v programování C# pro systém Office – Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - optional arguments [C#], Office programming
 - named arguments [C#], Office programming
 ms.assetid: 65b8a222-bcd8-454c-845f-84adff5a356f
-ms.openlocfilehash: 90b60a6410ffbe7f9802b01bf3303b6e842a1424
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: d7efd13f26912f8cd944bcbc5568e9bbca92c3a0
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72002786"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73970498"
 ---
-# <a name="how-to-use-named-and-optional-arguments-in-office-programming-c-programming-guide"></a>Postupy: Použití pojmenovaných a nepovinných argumentů v programování pro sadu Office (Průvodce programováním v C#)
+# <a name="how-to-use-named-and-optional-arguments-in-office-programming-c-programming-guide"></a>Použití pojmenovaných a nepovinných argumentů v programováníC# pro systém Office (Průvodce programováním)
 
 Pojmenované argumenty a volitelné argumenty, představené C# ve 4, zvyšují pohodlí, flexibilitu a čitelnost při C# programování. Kromě toho tyto funkce významně usnadňují přístup k rozhraním COM, jako jsou systém Microsoft Office rozhraní API pro automatizaci.
 
@@ -54,7 +54,7 @@ Aby bylo možné dokončit tyto postupy, je nutné, aby byl v počítači nainst
 
 1. V **Průzkumník řešení**klikněte pravým tlačítkem na soubor *program.cs* a pak klikněte na **Zobrazit kód**.
 
-2. Přidejte následující direktivy `using` do horní části souboru kódu:
+2. Do horní části souboru kódu přidejte následující direktivy `using`:
 
      [!code-csharp[csProgGuideNamedAndOptional#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/wordprogram.cs#4)]
 
@@ -94,11 +94,11 @@ Aby bylo možné dokončit tyto postupy, je nutné, aby byl v počítači nainst
 
 ## <a name="to-experiment-with-other-parameters"></a>Experimentování s jinými parametry
 
-1. Chcete-li změnit tabulku tak, aby měla jeden sloupec a tři řádky, nahraďte poslední řádek v `DisplayInWord` následujícím příkazem a zadejte <kbd>CTRL</kbd>+<kbd>F5</kbd>.  
+1. Chcete-li změnit tabulku tak, aby měla jeden sloupec a tři řádky, nahraďte poslední řádek v `DisplayInWord` následujícím příkazem a potom zadejte <kbd>CTRL</kbd>+<kbd>F5</kbd>.  
 
      [!code-csharp[csProgGuideNamedAndOptional#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/wordprogram.cs#10)]
 
-2. Chcete-li zadat předdefinovaný formát tabulky, nahraďte poslední řádek v `DisplayInWord` následujícím příkazem a potom zadejte <kbd>CTRL</kbd>+<kbd>F5</kbd>. Formát může být libovolná konstanta [WdTableFormat](<xref:Microsoft.Office.Interop.Word.WdTableFormat>) .
+2. Chcete-li pro tabulku zadat předdefinovaný formát, nahraďte poslední řádek v `DisplayInWord` následujícím příkazem a zadejte <kbd>CTRL</kbd>+<kbd>F5</kbd>. Formát může být libovolná konstanta [WdTableFormat](<xref:Microsoft.Office.Interop.Word.WdTableFormat>) .
 
      [!code-csharp[csProgGuideNamedAndOptional#11](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/wordprogram.cs#11)]
 

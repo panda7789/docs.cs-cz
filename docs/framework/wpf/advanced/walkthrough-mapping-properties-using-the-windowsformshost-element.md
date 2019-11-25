@@ -8,12 +8,12 @@ helpviewer_keywords:
 - mapping properties [WPF]
 - WindowsFormsHost element property mapping [WPF]
 ms.assetid: 74809167-bf8e-48b7-a2e7-b4ea08bc7d8c
-ms.openlocfilehash: c8a83dd3f7327d00979431ca7fa801ff642a4eef
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 94d175ec58f35b7e807786c221437d05c605c0bc
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197809"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73974215"
 ---
 # <a name="walkthrough-mapping-properties-using-the-windowsformshost-element"></a>Návod: Mapování vlastností použitím elementu WindowsFormsHost
 
@@ -57,7 +57,7 @@ K dokončení tohoto návodu budete potřebovat následující komponenty:
 
 ### <a name="to-define-the-application-layout"></a>Definování rozložení aplikace
 
-1. Otevřete Window1. XAML v [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].
+1. Otevřete Window1. XAML v Návrháři WPF.
 
 2. Nahraďte existující kód následujícím kódem.
 

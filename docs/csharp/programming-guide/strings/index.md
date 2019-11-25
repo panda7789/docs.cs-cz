@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, strings
 - strings [C#]
 ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
-ms.openlocfilehash: ad8d7075e609a1b03ec403b91126bbce7084923f
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: c6e29781f566fac0fd1219ac842a4838d631afb6
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423159"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73969721"
 ---
 # <a name="strings-c-programming-guide"></a>Řetězce (Průvodce programováním v C#)
 Řetězec je objekt typu <xref:System.String> jehož hodnota je text. Interně je text uložen jako sekvenční kolekce objektů <xref:System.Char> jen pro čtení. Na konci C# řetězce se nenachází ukončovací znak null; C# řetězec tedy může obsahovat libovolný počet vložených znaků null (' \ 0 '). Vlastnost <xref:System.String.Length%2A> řetězce představuje počet `Char` objektů, které obsahuje, nikoli počet znaků Unicode. Pro přístup k jednotlivým bodům kódu Unicode v řetězci použijte objekt <xref:System.Globalization.StringInfo>.  
@@ -37,7 +37,7 @@ ms.locfileid: "73423159"
   
  [!code-csharp[csProgGuideStrings#25](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#25)]  
   
- Další informace o tom, jak vytvořit nové řetězce, které jsou založeny na úpravách, jako jsou například operace hledání a nahrazení v původním řetězci, naleznete v tématu [How to: Modify String Contents](../../how-to/modify-string-contents.md).  
+ Další informace o tom, jak vytvořit nové řetězce, které jsou založeny na úpravách, jako je například operace hledání a nahrazení v původním řetězci, naleznete v tématu [How to Modify String String](../../how-to/modify-string-contents.md).  
   
 ## <a name="regular-and-verbatim-string-literals"></a>Regulární a doslovné řetězcové literály  
  Použijte regulární řetězcové literály v případě, že je nutné vložit C#řídicí znaky poskytnuté pomocí, jak je znázorněno v následujícím příkladu:  
@@ -91,7 +91,7 @@ Použijte interpolaci řetězců pro zlepšení čitelnosti a udržovatelnosti k
 Další informace o formátování typů .NET naleznete [v tématu formátování typů v rozhraní .NET](../../../standard/base-types/formatting-types.md).
   
 ## <a name="substrings"></a>Podřetězců  
- Podřetězec je libovolná sekvence znaků, která je obsažena v řetězci. Použijte metodu <xref:System.String.Substring%2A> k vytvoření nového řetězce z části původního řetězce. Jeden nebo více výskytů podřetězce můžete vyhledat pomocí metody <xref:System.String.IndexOf%2A>. Použijte metodu <xref:System.String.Replace%2A>, chcete-li nahradit všechny výskyty zadaného podřetězce novým řetězcem. Podobně jako metoda <xref:System.String.Substring%2A>, <xref:System.String.Replace%2A> ve skutečnosti vrátí nový řetězec a původní řetězec neupraví. Další informace naleznete v tématech [How to: Search Strings](../../how-to/search-strings.md) and [to: Modify text String](../../how-to/modify-string-contents.md).  
+ Podřetězec je libovolná sekvence znaků, která je obsažena v řetězci. Použijte metodu <xref:System.String.Substring%2A> k vytvoření nového řetězce z části původního řetězce. Jeden nebo více výskytů podřetězce můžete vyhledat pomocí metody <xref:System.String.IndexOf%2A>. Použijte metodu <xref:System.String.Replace%2A>, chcete-li nahradit všechny výskyty zadaného podřetězce novým řetězcem. Podobně jako metoda <xref:System.String.Substring%2A>, <xref:System.String.Replace%2A> ve skutečnosti vrátí nový řetězec a původní řetězec neupraví. Další informace naleznete v tématu [jak hledat řetězce](../../how-to/search-strings.md) a [jak upravit obsah řetězce](../../how-to/modify-string-contents.md).
   
  [!code-csharp[csProgGuideStrings#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#9)]  
   
@@ -131,12 +131,12 @@ string s = String.Empty;
   
 |Téma|Popis|  
 |-----------|-----------------|  
-|[Postupy: Změna obsahu řetězce](../../how-to/modify-string-contents.md)|Ukazuje techniky pro transformaci řetězců a úpravu obsahu řetězců.|  
-|[Postupy: Porovnávání řetězců](../../how-to/compare-strings.md)|Ukazuje, jak provádět porovnání s ordinálními a konkrétní jazykovou verzí řetězců.|  
-|[Postupy: Zřetězení více řetězců](../../how-to/concatenate-multiple-strings.md)|Ukazuje různé způsoby, jak připojit více řetězců k jednomu.|
-|[Postupy: Analýza řetězců metodou String.Split](../../how-to/parse-strings-using-split.md)|Obsahuje příklady kódu, které ilustrují použití metody `String.Split` k analýze řetězců.|  
-|[Postupy: vyhledávání řetězců](../../how-to/search-strings.md)|Vysvětluje, jak používat hledání určitého textu nebo vzorů v řetězcích.|  
-|[Postupy: Určení, zda řetězec reprezentuje číselnou hodnotu](./how-to-determine-whether-a-string-represents-a-numeric-value.md)|Ukazuje, jak bezpečně analyzovat řetězec, abyste viděli, zda má platnou číselnou hodnotu.|  
+|[Jak změnit obsah řetězce](../../how-to/modify-string-contents.md)|Ukazuje techniky pro transformaci řetězců a úpravu obsahu řetězců.|  
+|[Jak porovnat řetězce](../../how-to/compare-strings.md)|Ukazuje, jak provádět porovnání s ordinálními a konkrétní jazykovou verzí řetězců.|  
+|[Jak zřetězit více řetězců](../../how-to/concatenate-multiple-strings.md)|Ukazuje různé způsoby, jak připojit více řetězců k jednomu.|
+|[Jak analyzovat řetězce pomocí String. Split](../../how-to/parse-strings-using-split.md)|Obsahuje příklady kódu, které ilustrují použití metody `String.Split` k analýze řetězců.|  
+|[Jak hledat řetězce](../../how-to/search-strings.md)|Vysvětluje, jak používat hledání určitého textu nebo vzorů v řetězcích.|  
+|[Jak zjistit, zda řetězec představuje číselnou hodnotu](./how-to-determine-whether-a-string-represents-a-numeric-value.md)|Ukazuje, jak bezpečně analyzovat řetězec, abyste viděli, zda má platnou číselnou hodnotu.|  
 |[Interpolace řetězců](../../language-reference/tokens/interpolated.md)|Popisuje funkci interpolace řetězce, která poskytuje pohodlný Syntax pro formátování řetězců.|
 |[Základní operace s řetězci](../../../standard/base-types/basic-string-operations.md)|Obsahuje odkazy na témata, která používají <xref:System.String?displayProperty=nameWithType> a <xref:System.Text.StringBuilder?displayProperty=nameWithType> metody k provádění základních operací s řetězci.|  
 |[Analýza řetězců](../../../standard/base-types/parsing-strings.md)|Popisuje, jak převést řetězcové reprezentace základních typů .NET na instance odpovídajících typů.|  

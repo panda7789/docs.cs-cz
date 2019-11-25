@@ -5,34 +5,34 @@ helpviewer_keywords:
 - WCF Data Services, learn more
 - WCF Data Services, scenarios
 ms.assetid: 7c82658f-e7c0-46b6-834d-6592f67ab5ea
-ms.openlocfilehash: 9e70e2fff0bee22bcb7d7668f33302f7e7013117
-ms.sourcegitcommit: 3caa92cb97e9f6c31f21769c7a3f7c4304024b39
+ms.openlocfilehash: 50e481dd67a56233fcbb3714c86d71dd7e5307e8
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "71273140"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975417"
 ---
 # <a name="application-scenarios-wcf-data-services"></a>Scénáře aplikací (WCF Data Services)
 
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]podporuje základní sadu scénářů, které vystavují a spotřebovávají data [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] jako informační kanály. Toto téma vás odkazuje na témata, která jsou relevantní pro tyto scénáře.
+[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] podporuje základní sadu scénářů pro vystavení a využívání dat jako informační kanály OData (Open Data Protocol). Toto téma vás odkazuje na témata, která jsou relevantní pro tyto scénáře.
 
-Zveřejňujte relační data z databáze jako [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informační kanál.
+Zveřejňujte relační data z databáze jako datový kanál OData.
 
 - [Rychlý start](quickstart-wcf-data-services.md)
 
 - [Vystavení dat jako služby](exposing-your-data-as-a-service-wcf-data-services.md)
 
-- [Postupy: Vytvoření datové služby pomocí zdroje dat Entity Framework ADO.NET](create-a-data-service-using-an-adonet-ef-data-wcf.md)
+- [Postupy: Vytvoření datové služby pomocí zdroje dat ADO.NET Entity Framework](create-a-data-service-using-an-adonet-ef-data-wcf.md)
 
-Vystavení libovolných datových tříd [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] CLR jako informačního kanálu.
+Vystavte si libovolné datové třídy CLR jako datový kanál OData.
 
 - [Vystavení dat jako služby](exposing-your-data-as-a-service-wcf-data-services.md)
 
-- [Postupy: Vytvoření datové služby pomocí zprostředkovatele reflexe](create-a-data-service-using-rp-wcf-data-services.md)
+- [Postupy: Vytvoření datové služby pomocí zprostředkovatel reflexe](create-a-data-service-using-rp-wcf-data-services.md)
 
 - [Zprostředkovatelé datových služeb](data-services-providers-wcf-data-services.md)
 
-[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] Využívání informačního kanálu v klientské aplikaci založené na .NET Framework.
+Využijte informační kanál OData v klientské aplikaci založené na .NET Framework.
 
 - [Rychlý start](quickstart-wcf-data-services.md)
 
@@ -40,23 +40,23 @@ Vystavení libovolných datových tříd [!INCLUDE[ssODataShort](../../../../inc
 
 - [Klientská knihovna pro WCF Data Services](wcf-data-services-client-library.md)
 
-[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] Využívání informačního kanálu v klientské aplikaci založené na technologii Silverlight
+Využijte informační kanál OData v klientské aplikaci založené na Silverlightu.
 
 - [WCF Data Services (Silverlight)](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838234(v=vs.95))
 
 - [Asynchronní operace](asynchronous-operations-wcf-data-services.md)
 
-- [Postupy: Vázání dat datové služby k ovládacím prvkům (klient Silverlight)](https://docs.microsoft.com/previous-versions/dotnet/wcf-data-services/ee681614(v=vs.103))
+- [Postupy: vázání dat datové služby k ovládacím prvkům (klient Silverlight)](https://docs.microsoft.com/previous-versions/dotnet/wcf-data-services/ee681614(v=vs.103))
 
-[!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] Využívání informačního kanálu v klientské aplikaci založené na AJAX
+Využívání datového kanálu OData v klientské aplikaci založené na AJAX
 
 - [Použití datové služby v klientské aplikaci](using-a-data-service-in-a-client-application-wcf-data-services.md)
 
-- [OData: Konvence identifikátoru URI](https://go.microsoft.com/fwlink/?LinkId=185564)
+- [OData: konvence identifikátoru URI](https://go.microsoft.com/fwlink/?LinkId=185564)
 
-- [OData: Formát JavaScript Object Notation (JSON)](https://go.microsoft.com/fwlink/?LinkId=185790)
+- [OData: formát JavaScript Object Notation (JSON)](https://go.microsoft.com/fwlink/?LinkId=185790)
 
-Vytvořte ucelené řešení dat, které nástroj používá [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] k přenosu dat mezi klientem a serverem.
+Vytvořte ucelené řešení dat, které používá OData k přenosu dat mezi klientem a serverem.
 
 - [Rychlý start](quickstart-wcf-data-services.md)
 
@@ -64,37 +64,37 @@ Vytvořte ucelené řešení dat, které nástroj používá [!INCLUDE[ssODataSh
 
 - [Klientská knihovna pro WCF Data Services](wcf-data-services-client-library.md)
 
-Vytvoření klientské aplikace založené na .NET Framework, která spotřebovává [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informační kanál asynchronně, aby nedocházelo k problémům s latencí v klientovi.
+Vytvoření klientské aplikace založené na .NET Framework, která spotřebovává datové kanály OData asynchronně, aby se předešlo problémům s latencí v klientovi.
 
-- [Postupy: Spouštění dotazů na asynchronní datové služby](how-to-execute-asynchronous-data-service-queries-wcf-data-services.md)
+- [Postupy: Provádění asynchronních dotazů v datové službě](how-to-execute-asynchronous-data-service-queries-wcf-data-services.md)
 
 - [Asynchronní operace](asynchronous-operations-wcf-data-services.md)
 
 - [WCF Data Services (Silverlight)](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838234(v=vs.95))
 
-Vystavení a [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] používání informačního kanálu s binárním rozsáhlým objektem, který je k dispozici a změněn jako datový proud.
+Vystavte a využijte datový kanál OData s binárním rozsáhlým objektem, který je k dispozici a změněný jako datový proud.
 
 - [Zprostředkovatel streamování](streaming-provider-wcf-data-services.md)
 
 - [Práce s binárními daty](working-with-binary-data-wcf-data-services.md)
 
-Vytvoří [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] vazby kanálů k ovládacím prvkům v aplikaci WPF (Windows Presentation Framework).
+Připojte kanály OData k ovládacím prvkům v aplikaci WPF (Windows Presentation Framework).
 
 - [Vazba dat k ovládacím prvkům](binding-data-to-controls-wcf-data-services.md)
 
-- [Postupy: Vázání dat na prvky Windows Presentation Foundation](bind-data-to-wpf-elements-wcf-data-services.md)
+- [Postupy: Vytvoření vazby dat na elementy Windows Presentation Foundation](bind-data-to-wpf-elements-wcf-data-services.md)
 
-- [Postupy: Vázání dat pomocí zdroje dat projektu](how-to-bind-data-using-a-project-data-source-wcf-data-services.md)
+- [Postupy: Vytvoření vazby dat pomocí zdroje dat projektu](how-to-bind-data-using-a-project-data-source-wcf-data-services.md)
 
 Zachytit příchozí zprávy do datové služby, aby se provádělo ověřování dat a filtrování dotazů na základě rolí.
 
-- [Postupy: Zachytávání zpráv datových služeb](how-to-intercept-data-service-messages-wcf-data-services.md)
+- [Postupy: Zachycování zpráv datové služby](how-to-intercept-data-service-messages-wcf-data-services.md)
 
 - [Zachycovače](interceptors-wcf-data-services.md)
 
 Vytvořením koncových bodů v datové službě povolíte vlastní chování služby.
 
-- [Postupy: Definovat operaci služby](how-to-define-a-service-operation-wcf-data-services.md)
+- [Postupy: Definování operace služby](how-to-define-a-service-operation-wcf-data-services.md)
 
 - [Operace služby](service-operations-wcf-data-services.md)
 

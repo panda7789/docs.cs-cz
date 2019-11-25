@@ -6,12 +6,12 @@ helpviewer_keywords:
 - compiler options [C#], listed by category
 - Visual C#, compiler options listed by category
 ms.assetid: 96437ecc-6502-4cd3-b070-e9386a298e83
-ms.openlocfilehash: 7319d424b84d5edd41fc255e3aea763da55961a9
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 5cd5607c25dabd8f56ebb58366116666e8e649ea
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69606731"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73972706"
 ---
 # <a name="c-compiler-options-listed-by-category"></a>Možnosti kompilátoru C# uvedené podle kategorie
 
@@ -55,7 +55,7 @@ Následující možnosti kompilátoru jsou seřazené podle kategorie. Abecední
 |– Analyzátor|Spustit analyzátory z tohoto sestavení (krátký tvar:/a)|
 |-additionalfile|Názvy dalších souborů, které přímo neovlivňují generování kódu, ale mohou být využívány analyzátory pro vytváření chyb nebo upozornění.|
 |– Vložit|Vložte všechny zdrojové soubory do souboru PDB.|
-|-embed:\<> seznamu souborů|Vloží konkrétní soubory do souboru PDB.|
+|-embed:\<seznam souborů >|Vloží konkrétní soubory do souboru PDB.|
 ## <a name="debuggingerror-checking"></a>Ladění/kontrola chyb
 
 |Možnost|Účel|
@@ -68,7 +68,7 @@ Následující možnosti kompilátoru jsou seřazené podle kategorie. Abecední
 |[-nowarn](nowarn-compiler-option.md)|Potlačí generování zadaných upozornění kompilátorem.|
 |[-warn](warn-compiler-option.md)|Nastaví úroveň upozornění.|
 |[-warnaserror](warnaserror-compiler-option.md)|Propaguje upozornění na chyby.|
-|-RuleSet:\<soubor >|Zadejte soubor RuleSet, který zakáže konkrétní diagnostiku.|
+|-RuleSet: soubor\<|Zadejte soubor RuleSet, který zakáže konkrétní diagnostiku.|
 
 ## <a name="preprocessor"></a>Preprocesor
 
@@ -96,13 +96,13 @@ Následující možnosti kompilátoru jsou seřazené podle kategorie. Abecední
 |[-codepage](codepage-compiler-option.md)|Určuje znakovou stránku, která se má použít pro všechny soubory zdrojového kódu v kompilaci.|
 |[-Help](help-compiler-option.md)|Zobrazí seznam možností kompilátoru pro STDOUT.|
 |[-highentropyva](highentropyva-compiler-option.md)|Určuje, že spustitelný soubor podporuje náhodnost rozložení adresního prostoru (ASLR).|
-|[-langversion](langversion-compiler-option.md)|Určete jazykovou verzi: Výchozí, ISO-1, ISO-2, 3, 4, 5, 6, 7, 7,1, 7,2, 7,3 nebo nejnovější |
+|[-langversion](langversion-compiler-option.md)|Zadejte jazykovou verzi: výchozí, ISO-1, ISO-2, 3, 4, 5, 6, 7, 7,1, 7,2, 7,3 nebo nejnovější. |
 |[-main](main-compiler-option.md)|Určuje umístění metody **Main** .|
 |[-noconfig](noconfig-compiler-option.md)|Instruuje kompilátor, aby nekompiluje pomocí CSc. rsp.|
 |[-nologo](nologo-compiler-option.md)|Potlačí informace banneru kompilátoru.|
 |[-recurse](recurse-compiler-option.md)|Vyhledá v podadresářích zdrojové soubory, které se mají kompilovat.|
 |[-subsystemversion](subsystemversion-compiler-option.md)|Určuje minimální verzi subsystému, který může spustitelný soubor použít.|
-|[-unsafe](unsafe-compiler-option.md)|Povolí kompilaci kódu, který používá klíčové [](../keywords/unsafe.md) slovo unsafe.|
+|[-unsafe](unsafe-compiler-option.md)|Povolí kompilaci kódu, který používá klíčové slovo [unsafe](../keywords/unsafe.md) .|
 |[-utf8output](utf8output-compiler-option.md)|Zobrazí výstup kompilátoru pomocí kódování UTF-8.|
 |– paralelní [+&#124;-]|Určuje, jestli se má použít souběžné sestavení (+).|
 |-checksumalgorithm:\<ALG >|Zadejte algoritmus pro výpočet kontrolního součtu zdrojového souboru uloženého v souboru PDB.  Podporované hodnoty jsou: SHA1 (výchozí) nebo SHA256.<br>Microsoft doporučuje SHA256 z důvodu kolizí problémů se SHA1.|
@@ -117,4 +117,4 @@ Následující možnosti kompilátoru jsou seřazené podle kategorie. Abecední
 
 - [Možnosti kompilátoru jazyka C#](index.md)
 - [Možnosti kompilátoru jazyka C# (abecední pořadí)](listed-alphabetically.md)
-- [Postupy: Nastavení proměnných prostředí pro příkazový řádek sady Visual Studio](how-to-set-environment-variables-for-the-visual-studio-command-line.md)
+- [Postup nastavení proměnných prostředí pro příkazový řádek sady Visual Studio](how-to-set-environment-variables-for-the-visual-studio-command-line.md)

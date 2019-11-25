@@ -14,12 +14,12 @@ helpviewer_keywords:
 - dependency properties [WPF]
 - resources [WPF], references to
 ms.assetid: d119d00c-3afb-48d6-87a0-c4da4f83dee5
-ms.openlocfilehash: 663dd7a785200ddbc78cc0cd1fb5b43531982f42
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 5803d656d765f3f4fe3039e28b9c06202218fcfc
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458952"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73973990"
 ---
 # <a name="dependency-properties-overview"></a>Přehled vlastností závislosti
 
@@ -168,7 +168,7 @@ Následující příklad ukazuje vazbu a nastavuje vlastnost <xref:System.Window
 Další informace najdete v tématu [Dědičnost hodnot vlastností](property-value-inheritance.md).
 
 ### <a name="wpf-designer-integration"></a>Integrace návrháře WPF
-Vlastní ovládací prvek s vlastnostmi, které jsou implementované jako vlastnosti závislosti, obdrží odpovídající [!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)] podporu. Jedním z příkladů je možnost upravovat vlastnosti přímé a připojené závislosti v okně **vlastnosti** . Další informace najdete v tématu [Přehled tvorby řízení](../controls/control-authoring-overview.md).
+Vlastní ovládací prvek s vlastnostmi, které jsou implementovány jako vlastnosti závislosti, obdrží vhodného návrháře WPF pro podporu sady Visual Studio. Jedním z příkladů je možnost upravovat vlastnosti přímé a připojené závislosti v okně **vlastnosti** . Další informace najdete v tématu [Přehled tvorby řízení](../controls/control-authoring-overview.md).
 
 ## <a name="dependency-property-value-precedence"></a>Priorita hodnoty vlastnosti závislosti
 Po získání hodnoty vlastnosti závislosti můžete potenciálně získat hodnotu, která byla nastavena na danou vlastnost prostřednictvím jakékoli jiné vstupy založené na vlastnostech, které se účastní systému vlastností WPF. Priorita hodnoty vlastnosti závislosti existuje, takže celá řada scénářů, jak vlastnosti získají jejich hodnoty, může popracovat předvídatelným způsobem.

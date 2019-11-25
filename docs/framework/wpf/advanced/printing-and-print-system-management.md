@@ -5,15 +5,15 @@ helpviewer_keywords:
 - printing [WPF]
 - print system management [WPF]
 ms.assetid: 637911b3-0c78-4493-a4fb-91db56d767cd
-ms.openlocfilehash: 5d2380db3b8d2c5c41d04a34f9b86a97eb7b27b1
-ms.sourcegitcommit: 3eeea78f52ca771087a6736c23f74600cc662658
+ms.openlocfilehash: 3e27e6ff526edc33e06bfc19ff7d5a284c0d30f2
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/31/2019
-ms.locfileid: "68672032"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975762"
 ---
 # <a name="printing-and-print-system-management"></a>Tisk a systémová správa tisku
-[!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)]a Microsoft .NET Framework zavádí novou tiskovou cestu – alternativou k tisku pomocí programu Microsoft Windows GDI (GDI) a rozsáhly rozbalené sady rozhraní API pro správu tiskových systémů.  
+Systémy Windows Vista a Microsoft .NET Framework zavádí novou tiskovou cestu – alternativou k tisku pomocí programu Microsoft Windows GDI (GDI) a rozsáhlé rozbalené sady rozhraní API pro správu tiskových systémů.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled tisku](printing-overview.md)  

@@ -6,21 +6,21 @@ helpviewer_keywords:
 - Custom Places [Windows Forms], Known Folder GUIDs
 - Windows Vista Known Folder GUIDs [Windows Forms], Custom Places
 ms.assetid: d8d8b544-8b4d-4da5-ba3a-b05e93244778
-ms.openlocfilehash: ae4b89eb45a82299b6f35827eb576968f6cc5bae
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 0ae9c406e91bc947ec73bb2393bb05962ca41177
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69962588"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73974359"
 ---
 # <a name="known-folder-guids-for-file-dialog-custom-places"></a>Známé identifikátory GUID pro vlastní místa dialogového okna souboru
-Pomocí a <xref:System.Guid> [!INCLUDE[wiprlhext](../../../../includes/wiprlhext-md.md)] určíte známou složku při přidávání složek do <xref:System.Windows.Forms.FileDialog.CustomPlaces%2A> kolekce. Známé identifikátory GUID složky nerozlišují velká a malá písmena a jsou definovány v souboru KnownFolders. h v Windows SDK.  
+Pomocí <xref:System.Guid> určíte známou složku systému Windows Vista při přidávání složek do kolekce <xref:System.Windows.Forms.FileDialog.CustomPlaces%2A>. Známé identifikátory GUID složky nerozlišují velká a malá písmena a jsou definovány v souboru KnownFolders. h v Windows SDK.  
   
 > [!NOTE]
-> V některých případech se v oblasti **Oblíbené odkazy** nezobrazí známá <xref:System.Windows.Forms.FileDialogCustomPlacesCollection> složka přidaná do. Pokud například zadaná známá složka není v počítači, na kterém je spuštěná aplikace, uvedena, není zobrazená známá složka.  
+> V některých případech se v oblasti **Oblíbené odkazy** nezobrazí známá složka přidaná do <xref:System.Windows.Forms.FileDialogCustomPlacesCollection>. Pokud například zadaná známá složka není v počítači, na kterém je spuštěná aplikace, uvedena, není zobrazená známá složka.  
   
 ## <a name="list-of-guids"></a>Seznam identifikátorů GUID  
- V následující tabulce jsou [!INCLUDE[wiprlhext](../../../../includes/wiprlhext-md.md)] uvedeny známé složky a jejich <xref:System.Guid>přidružené.  
+ V následující tabulce jsou uvedené známé složky Windows Vista a jejich přidružené <xref:System.Guid>.  
   
  AddNewPrograms  
  DE61D971-5EBC-4F02-A3A9-6C82895E5C04  
@@ -44,7 +44,7 @@ Pomocí a <xref:System.Guid> [!INCLUDE[wiprlhext](../../../../includes/wiprlhext
  D0384E7D-BAC3-4797-8F14-CBA229B392B5  
   
  CommonOEMLinks  
- C1BAE2D0-10DF-4334-BEDD-7AA20B227A9D  
+ C1BAE2D0-10DF-4334 – STELIV – 7AA20B227A9D  
   
  CommonPrograms  
  0139D44E-6AFE-49F2-8690-3DAFCAE6FFB8  
@@ -58,16 +58,16 @@ Pomocí a <xref:System.Guid> [!INCLUDE[wiprlhext](../../../../includes/wiprlhext
  CommonTemplates  
  B94237E7-57AC-4347-9151-B08C6C32D1F7  
   
- Computer  
+ Počítač  
  0AC0837C-BBF8-452A-850D-79D08E667CA7  
   
- Konflikt  
+ Došlo  
  4BFEFB45-347D-4006-A5BE-AC0CB0567192  
   
  Připojení  
  6F0CD92B-2E97-45D1-88FF-B0D186B8DEDD  
   
- Kontakty  
+ Složce  
  56784854-C6CB-462B-8169-88E350ACB882  
   
  ControlPanel  
@@ -85,7 +85,7 @@ Pomocí a <xref:System.Guid> [!INCLUDE[wiprlhext](../../../../includes/wiprlhext
  Soubory ke stažení  
  374DE290-123F-4565-9164-39C4925E467B  
   
- Oblíbené položky  
+ Položek  
  1777F761-68AD-4D8A-87BD-30B759FA33DD  
   
  Písma  
@@ -115,13 +115,13 @@ Pomocí a <xref:System.Guid> [!INCLUDE[wiprlhext](../../../../includes/wiprlhext
  LocalizedResourcesDir  
  2A00375E-224C-49DE-B8D1-440DF7EF3DDC  
   
- Hudba  
+ skladby  
  4BD8D571-6D19-48D3-BE97-422220080E43  
   
  NetHood  
  C5ABBF53-E17F-4121-8900-86626FC2C973  
   
- Síť  
+ Sítě  
  D20BEEC4-5CA8-4905-AE3B-BF251EA09B53  
   
  OriginalImages  
@@ -142,10 +142,10 @@ Pomocí a <xref:System.Guid> [!INCLUDE[wiprlhext](../../../../includes/wiprlhext
  PrintHood  
  9274BD8D-CFD1-41C3-B35E-B13F55A758F4  
   
- Profil  
+ profilu  
  5E6C858F-0E22-4760-9AFE-EA3317B67173  
   
- ProgramData  
+ Složka ProgramData  
  62AB5D82-FDC1-4DC3-A9DD-070D1D495D97  
   
  ProgramFiles  
@@ -226,7 +226,7 @@ Pomocí a <xref:System.Guid> [!INCLUDE[wiprlhext](../../../../includes/wiprlhext
  SavedGames  
  4C5C32FF-BB9D-43B0-B5B4-2D72E54EAAA4  
   
- SavedSearches  
+ savedSearches  
  7D1D3A04-DEBB-4115-95CF-2F29DA2920DA  
   
  SEARCH_CSC  
@@ -250,7 +250,7 @@ Pomocí a <xref:System.Guid> [!INCLUDE[wiprlhext](../../../../includes/wiprlhext
  StartMenu  
  625B53C3-AB48-4EC1-BA1F-A1EF4146FC19  
   
- Třída pro spuštění  
+ Úvod  
  B97D20BB-F46A-4C97-BA10-5E3608430854  
   
  SyncManager  
@@ -289,4 +289,4 @@ Pomocí a <xref:System.Guid> [!INCLUDE[wiprlhext](../../../../includes/wiprlhext
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Windows.Forms.FileDialogCustomPlace>
-- [Postupy: Přidat vlastní místo do dialogového okna souboru](how-to-add-a-custom-place-to-a-file-dialog-box.md)
+- [Postupy: Přidání vlastního prostoru do dialogového okna souboru](how-to-add-a-custom-place-to-a-file-dialog-box.md)

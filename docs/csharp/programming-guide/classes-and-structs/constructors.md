@@ -7,16 +7,16 @@ helpviewer_keywords:
 - classes [C#], constructors
 - C# language, constructors
 ms.assetid: df2e2e9d-7998-418b-8e7d-890c17ff6c95
-ms.openlocfilehash: ea780fc983ed46c8a5ccb54ab618d1a0a2a928d1
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 13597275460c075309b7457485a17655cf93f251
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69597098"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73971097"
 ---
 # <a name="constructors-c-programming-guide"></a>Konstruktory (Průvodce programováním v C#)
 
-Pokaždé, když se vytvoří [Třída](../../language-reference/keywords/class.md) nebo [Struktura](../../language-reference/keywords/struct.md) , zavolá se její konstruktor. Třída nebo struktura může mít více konstruktorů, které přijímají různé argumenty. Konstruktory umožňují programátorovi nastavit výchozí hodnoty, omezit vytváření instancí a napsat kód, který je flexibilní a snadno čitelný. Další informace a příklady naleznete v tématu [using](./using-constructors.md) a konstruktory [instancí](./instance-constructors.md).  
+Pokaždé, když se vytvoří [Třída](../../language-reference/keywords/class.md) nebo [Struktura](../../language-reference/keywords/struct.md) , zavolá se její konstruktor. Třída nebo struktura může mít více konstruktorů, které přijímají různé argumenty. Konstruktory umožňují programátorovi nastavit výchozí hodnoty, omezit vytváření instancí a napsat kód, který je flexibilní a snadno čitelný. Další informace a příklady naleznete v tématu [using](./using-constructors.md) a [konstruktory instancí](./instance-constructors.md).  
 
 ## <a name="parameterless-constructors"></a>Konstruktory bez parametrů
   
@@ -28,7 +28,7 @@ Konstruktor je metoda, jejíž název je stejný jako název jeho typu. Signatur
 
 [!code-csharp[constructors](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/constructors1.cs#1)]  
 
-Pokud konstruktor může být implementován jako jediný příkaz, můžete použít [definici těla výrazu](../statements-expressions-operators/expression-bodied-members.md). Následující příklad definuje `Location` třídu, jejíž konstruktor má jeden řetězcový parametr s názvem *Name*. Definice těla výrazu přiřadí argument `locationName` poli.
+Pokud konstruktor může být implementován jako jediný příkaz, můžete použít [definici těla výrazu](../statements-expressions-operators/expression-bodied-members.md). Následující příklad definuje třídu `Location`, jejíž konstruktor má jeden řetězcový parametr s názvem *Name*. Definice těla výrazu přiřadí argument poli `locationName`.
 
 [!code-csharp[expression-bodied-constructor](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/expr-bodied-ctor.cs#1)]  
 
@@ -55,7 +55,7 @@ Další informace a příklady naleznete v tématu [statické konstruktory](./st
   
  [Statické konstruktory](./static-constructors.md)  
   
- [Postupy: Zápis kopírovacího konstruktoru](./how-to-write-a-copy-constructor.md)  
+ [Zápis kopírovacího konstruktoru](./how-to-write-a-copy-constructor.md)  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - controls [WPF], authoring overview
 - authoring overview for controls [WPF]
 ms.assetid: 3d864748-cff0-4e63-9b23-d8e5a635b28f
-ms.openlocfilehash: fe7704b9366bf46f0c9965f78ce441000ead6334
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 1ac8964f915206205d5c9e6ab782fcaa59bf2a99
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460791"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975719"
 ---
 # <a name="control-authoring-overview"></a>Přehled řízeného vytváření
 
@@ -36,7 +36,7 @@ Pokud jste si chtěli přizpůsobené prostředí získat z existujícího ovlá
   > [!NOTE]
   > I když <xref:System.Windows.Controls.RadioButton> může použít <xref:System.Windows.DataTemplate>, <xref:System.Windows.DataTemplate> není v tomto příkladu dostačující.  <xref:System.Windows.DataTemplate> definuje vzhled obsahu ovládacího prvku. V případě <xref:System.Windows.Controls.RadioButton>se obsah zobrazuje napravo od kruhu, který označuje, jestli je vybraná <xref:System.Windows.Controls.RadioButton>.  Přepínač v příkladu semaforu potřebuje jenom kruh, který může "světlo". Vzhledem k tomu, že je požadavek na zobrazení semaforu jiný než výchozí vzhled <xref:System.Windows.Controls.RadioButton>, je nutné předefinovat <xref:System.Windows.Controls.ControlTemplate>.  Obecně <xref:System.Windows.DataTemplate> slouží k definování obsahu (nebo dat) ovládacího prvku a k definování způsobu strukturování ovládacího prvku se používá <xref:System.Windows.Controls.ControlTemplate>.
 
-- **Zpráv.** <xref:System.Windows.Trigger> umožňuje dynamicky měnit vzhled a chování ovládacího prvku bez vytvoření nového ovládacího prvku. Předpokládejme například, že máte v aplikaci více <xref:System.Windows.Controls.ListBox> ovládacích prvků a chcete, aby byly položky v každém <xref:System.Windows.Controls.ListBox> v případě výběru tučné a červené. První Instinct může být vytvořit třídu, která dědí z <xref:System.Windows.Controls.ListBox> a přepsat metodu <xref:System.Windows.Controls.Primitives.Selector.OnSelectionChanged%2A>, aby změnila vzhled vybrané položky, ale lepší přístup je přidání triggeru do stylu <xref:System.Windows.Controls.ListBoxItem>, který mění vzhled vybrané položky. . Aktivační událost umožňuje změnit hodnoty vlastností nebo provést akce na základě hodnoty vlastnosti. <xref:System.Windows.EventTrigger> umožňuje provádět akce, když dojde k události.
+- **Zpráv.** <xref:System.Windows.Trigger> umožňuje dynamicky měnit vzhled a chování ovládacího prvku bez vytvoření nového ovládacího prvku. Předpokládejme například, že máte v aplikaci více <xref:System.Windows.Controls.ListBox> ovládacích prvků a chcete, aby byly položky v každém <xref:System.Windows.Controls.ListBox> v případě výběru tučné a červené. První Instinct může být vytvořit třídu, která dědí z <xref:System.Windows.Controls.ListBox> a přepsat metodu <xref:System.Windows.Controls.Primitives.Selector.OnSelectionChanged%2A>, aby změnila vzhled vybrané položky, ale lepším přístupem je přidat Trigger do stylu <xref:System.Windows.Controls.ListBoxItem>, který změní vzhled vybrané položky. Aktivační událost umožňuje změnit hodnoty vlastností nebo provést akce na základě hodnoty vlastnosti. <xref:System.Windows.EventTrigger> umožňuje provádět akce, když dojde k události.
 
 Další informace o stylech, šablonách a triggerech naleznete v tématu [stylování and šablonování](styling-and-templating.md).
 
@@ -187,7 +187,7 @@ Další informace o datové vazbě najdete v tématu [Přehled datových vazeb](
 
 ### <a name="design-for-designers"></a>Návrh pro návrháře
 
-Chcete-li získat podporu pro vlastní ovládací prvky WPF v [!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)] (například pro úpravu vlastností pomocí okno Vlastnosti), postupujte podle těchto pokynů.  Další informace o vývoji pro [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)]najdete [v tématu návrh XAML v aplikaci Visual Studio](/visualstudio/xaml-tools/designing-xaml-in-visual-studio).
+Chcete-li získat podporu pro vlastní ovládací prvky WPF v Návrháři WPF pro Visual Studio (například úpravy vlastností pomocí okno Vlastnosti), postupujte podle těchto pokynů.  Další informace o vývoji pro návrháře WPF naleznete [v tématu Design XAML v aplikaci Visual Studio](/visualstudio/xaml-tools/designing-xaml-in-visual-studio).
 
 #### <a name="dependency-properties"></a>Vlastnosti závislosti
 

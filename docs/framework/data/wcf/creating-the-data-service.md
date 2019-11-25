@@ -5,16 +5,16 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 34d1d971-5e18-4c22-9bf6-d3612e27ea59
-ms.openlocfilehash: 582f5f2d6d82613736ed795eebe5129284cdac6e
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: d30b2e30639837730ecb185a2c0f659a63955004
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052987"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975400"
 ---
 # <a name="create-the-data-service"></a>Vytvoření datové služby
 
-V tomto tématu vytvoříte ukázkovou datovou službu, která používá WCF Data Services k vystavení [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informačního kanálu, který je založen na ukázkové databázi Northwind. Úkol zahrnuje následující základní kroky:
+V tomto tématu vytvoříte ukázkovou datovou službu, která používá WCF Data Services k vystavení informačního kanálu OData (Open Data Protocol), který je založen na ukázkové databázi Northwind. Úkol zahrnuje následující základní kroky:
 
 1. Vytvoření webové aplikace v ASP.NET
 
@@ -26,15 +26,15 @@ V tomto tématu vytvoříte ukázkovou datovou službu, která používá WCF Da
 
 ## <a name="create-the-aspnet-web-app"></a>Vytvoření webové aplikace v ASP.NET
 
-1. V aplikaci Visual Studio v nabídce **soubor** vyberte **Nový** > **projekt**.
+1. V aplikaci Visual Studio v nabídce **soubor** vyberte **Nový**  > **projekt**.
 
 1. V dialogovém okně **Nový projekt** v části buď Visual Basic nebo Visual C# vyberte kategorii **Web** a pak vyberte **ASP.NET webová aplikace**.
 
-1. Jako `NorthwindService` název projektu zadejte a pak vyberte **OK**.
+1. Jako název projektu zadejte `NorthwindService` a pak vyberte **OK**.
 
 1. V dialogovém okně **Nová webová aplikace ASP.NET** vyberte **prázdné** a pak vyberte **OK**.
 
-1. Volitelné Zadejte konkrétní číslo portu pro vaši webovou aplikaci. Poznámka: číslo `12345` portu se používá v této řadě témat pro rychlý Start.
+1. Volitelné Zadejte konkrétní číslo portu pro vaši webovou aplikaci. Poznámka: číslo portu `12345` se používá v této řadě témat pro rychlý Start.
 
     1. V **Průzkumník řešení**klikněte pravým tlačítkem na projekt ASP.NET, který jste právě vytvořili, a pak zvolte **vlastnosti**.
 
@@ -42,7 +42,7 @@ V tomto tématu vytvoříte ukázkovou datovou službu, která používá WCF Da
 
 ## <a name="define-the-data-model"></a>Definování datového modelu
 
-1. V **Průzkumník řešení**klikněte pravým tlačítkem na název projektu ASP.NET a pak klikněte na **Přidat** > **novou položku**.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na název projektu ASP.NET a potom klikněte na **Přidat** > **Nová položka**.
 
 2. V dialogovém okně **Přidat novou položku** vyberte kategorii **dat** a pak vyberte **ADO.NET model EDM (Entity Data Model)** .
 
@@ -52,9 +52,9 @@ V tomto tématu vytvoříte ukázkovou datovou službu, která používá WCF Da
 
 5. Pomocí jednoho z následujících kroků připojte datový model k databázi a potom klikněte na tlačítko **Další**:
 
-    - Pokud nemáte připojení databáze již nakonfigurováno, klikněte na tlačítko **nové připojení** a vytvořte nové připojení. Další informace najdete v tématu [jak: Umožňuje vytvořit připojení k SQL Server](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/s4yys16a(v=vs.90))databází. Tato instance SQL Server musí mít připojenou ukázkovou databázi Northwind.
+    - Pokud nemáte připojení databáze již nakonfigurováno, klikněte na tlačítko **nové připojení** a vytvořte nové připojení. Další informace naleznete v tématu [How to: Create Connections to SQL Server databases](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/s4yys16a(v=vs.90)). Tato instance SQL Server musí mít připojenou ukázkovou databázi Northwind.
 
-         \- nebo –
+         \- nebo-
 
     - Pokud máte připojení k databázi, které je už nakonfigurované pro připojení k databázi Northwind, vyberte toto připojení ze seznamu připojení.
 
@@ -64,7 +64,7 @@ V tomto tématu vytvoříte ukázkovou datovou službu, která používá WCF Da
 
 ## <a name="create-the-wcf-data-service"></a>Vytvoření datové služby WCF
 
-1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt ASP.NET a pak zvolte možnost **Přidat** > **novou položku**.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem na projekt ASP.NET a pak zvolte **Přidat** > **novou položku**.
 
 2. V dialogovém okně **Přidat novou položku** vyberte v kategorii **Web** šablonu položky **datové služby WCF** .
 
@@ -77,14 +77,14 @@ V tomto tématu vytvoříte ukázkovou datovou službu, která používá WCF Da
 
      Visual Studio vytvoří kód XML a soubory kódu pro novou službu. Ve výchozím nastavení se otevře okno Editor kódu. V **Průzkumník řešení**služba má název Northwind s příponou *. svc.cs* nebo *. svc. vb*.
 
-4. V kódu pro datovou službu nahraďte komentář `/* TODO: put your data source class name here */` v definici třídy definující datovou službu typem, který je kontejnerem entit datového modelu, který je v tomto `NorthwindEntities`případě. Definice třídy by měla vypadat takto:
+4. V kódu pro datovou službu nahraďte komentář `/* TODO: put your data source class name here */` v definici třídy definující datovou službu s typem, který je kontejnerem entit datového modelu, který je v tomto případě `NorthwindEntities`. Definice třídy by měla vypadat takto:
 
      [!code-csharp[Astoria Quickstart Service#ServiceDefinition](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_quickstart_service/cs/northwind.svc.cs#servicedefinition)]
      [!code-vb[Astoria Quickstart Service#ServiceDefinition](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_quickstart_service/vb/northwind.svc.vb#servicedefinition)]
 
 ## <a name="enable-access-to-data-service-resources"></a>Povolit přístup k prostředkům datové služby
 
-1. V kódu pro datovou službu nahraďte zástupný kód ve `InitializeService` funkci následujícím textem:
+1. V kódu pro datovou službu nahraďte zástupný kód ve funkci `InitializeService` následujícím způsobem:
 
      [!code-csharp[Astoria Quickstart Service#AllReadConfig](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_quickstart_service/cs/northwind.svc.cs#allreadconfig)]
      [!code-vb[Astoria Quickstart Service#AllReadConfig](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_quickstart_service/vb/northwind.svc.vb#allreadconfig)]
@@ -94,7 +94,7 @@ V tomto tématu vytvoříte ukázkovou datovou službu, která používá WCF Da
     > [!NOTE]
     > Každý klient, který má přístup k aplikaci ASP.NET, může také přistupovat k prostředkům vystaveným datovou službou. V provozní datové službě, abyste zabránili neoprávněnému přístupu k prostředkům, měli byste také zabezpečit samotnou aplikaci. Další informace najdete v tématu [zabezpečení WCF Data Services](securing-wcf-data-services.md).
 
-## <a name="next-steps"></a>Další postup
+## <a name="next-steps"></a>Další kroky
 
 Úspěšně jste vytvořili novou datovou službu, která zveřejňuje kanál OData založený na ukázkové databázi Northwind a povolili jste přístup k informačnímu kanálu pro klienty, kteří mají oprávnění k webové aplikaci ASP.NET. V dalším kroku spustíte datovou službu ze sady Visual Studio a získáte přístup k datovému kanálu OData odesláním požadavků HTTP GET přes webový prohlížeč:
 

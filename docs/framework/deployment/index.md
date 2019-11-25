@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 238d8284-6042-4a38-a7f6-1ee8efd719da
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f1d13c4c3e27b5af5b3c3e84995cae3df94a307d
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 04cbfb8d41135b57c3e090959e041f95fcda2840
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052082"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975682"
 ---
 # <a name="deploying-the-net-framework-and-applications"></a>Nasazení .NET Framework a aplikací
 
@@ -66,7 +66,7 @@ Pro konkrétní informace o nasazení a údržbě .NET Framework použijte násl
 
 **Údržba**
 
-- Obecné informace najdete na [blogu .NET Framework](https://go.microsoft.com/fwlink/p/?LinkId=254977) .
+- Obecné informace najdete na [blogu .NET Framework](https://devblogs.microsoft.com/dotnet/).
 
 - [Zjišťují se verze](../migration-guide/how-to-determine-which-versions-are-installed.md)
 
@@ -118,7 +118,7 @@ Pro konkrétní informace o nasazení a údržbě .NET Framework použijte násl
 
 ## <a name="packaging-and-distributing-net-framework-applications"></a>Balení a distribuce .NET Frameworkch aplikací
 
-Některé informace o balení a nasazení pro .NET Framework jsou popsány v dalších částech dokumentace. Tyto části poskytují informace o jednotkách, které jsou označovány jako [sestavení](../../standard/assembly/index.md), které nevyžadují žádné položky registru, [sestavení se silným názvem](../../standard/assembly/strong-named.md), která zajišťují jedinečnost názvů a brání falšování názvů a [správu verzí sestavení](../../standard/assembly/versioning.md) , který řeší mnohé problémy spojené se konflikty knihoven DLL. Následující části obsahují informace o balení a distribuci .NET Frameworkch aplikací.
+Některé informace o balení a nasazení pro .NET Framework jsou popsány v dalších částech dokumentace. Tyto části poskytují informace o jednotkách, které jsou označovány jako [sestavení](../../standard/assembly/index.md), které nevyžadují žádné položky registru, [sestavení se silným názvem](../../standard/assembly/strong-named.md), které zajišťují jedinečnost názvu a brání falšování názvů a [správu verzí sestavení](../../standard/assembly/versioning.md), které řeší mnohé problémy spojené s konflikty knihoven DLL. Následující části obsahují informace o balení a distribuci .NET Frameworkch aplikací.
 
 ### <a name="packaging"></a>Balení
 
@@ -136,7 +136,7 @@ Některé informace o balení a nasazení pro .NET Framework jsou popsány v dal
 
      Pomocí této možnosti vytvoříte soubory. msi pro použití s Instalační služba systému Windows nebo zabalíte aplikaci pro použití s nějakým jiným instalačním programem.
 
-### <a name="distribution"></a>Distribuce
+### <a name="distribution"></a>Šíření
 
 .NET Framework poskytuje následující možnosti pro distribuci aplikací:
 
@@ -163,7 +163,7 @@ Požadavky na zabezpečení mohou také ovlivnit způsob nasazení aplikace. Opr
 |Název|Popis|
 |-----------|-----------------|
 |[Jak běhové prostředí vyhledává sestavení](how-the-runtime-locates-assemblies.md)|Popisuje, jak modul CLR (Common Language Runtime) určuje, které sestavení se má použít ke splnění požadavku vazby.|
-|[Doporučené postupy pro načtení sestavení](best-practices-for-assembly-loading.md)|Popisuje způsoby, jak zabránit problémům s typem identity, který může <xref:System.InvalidCastException>vést <xref:System.MissingMethodException>k chybám, a.|
+|[Doporučené postupy pro načtení sestavení](best-practices-for-assembly-loading.md)|Popisuje způsoby, jak zabránit problémům s typem identity, který může vést k <xref:System.InvalidCastException>, <xref:System.MissingMethodException>a dalším chybám.|
 |[Omezení restartů systému při instalaci rozhraní .NET Framework 4.5](reducing-system-restarts.md)|Popisuje správce restartování, který znemožňuje restartování, kdykoli je to možné, a vysvětluje, jak můžou aplikace, které instalují .NET Framework, využít.|
 |[Příručka nasazení pro administrátory](guide-for-administrators.md)|Vysvětluje, jak může správce systému nasadit .NET Framework a jeho systémové závislosti v síti pomocí System Center Configuration Manager (SCCM).|
 |[Průvodce nasazením pro vývojáře](deployment-guide-for-developers.md)|Vysvětluje, jak můžou vývojáři instalovat .NET Framework na počítačích uživatelů s jejich aplikacemi.|
@@ -171,7 +171,7 @@ Požadavky na zabezpečení mohou také ovlivnit způsob nasazení aplikace. Opr
 |[Publikování aplikací ClickOnce](/visualstudio/deployment/publishing-clickonce-applications)|Popisuje, jak zabalit aplikaci model Windows Forms a nasadit ji pomocí technologie ClickOnce na klientské počítače v síti.|
 |[Zabalení a nasazení prostředků](../resources/packaging-and-deploying-resources-in-desktop-apps.md)|Popisuje model hvězdicové a paprsky, které .NET Framework používá k zabalení a nasazení prostředků. Popisuje zásady vytváření názvů prostředků, záložní proces a alternativy balení.|
 |[Nasazení aplikace spolupráce](../interop/deploying-an-interop-application.md)|Vysvětluje, jak dodávat a instalovat aplikace spolupráce, které obvykle zahrnují .NET Framework sestavení klienta, jedno nebo více definičních sestavení představujících odlišné knihovny typů modelu COM a jednu nebo více registrovaných komponent modelu COM.|
-|[Postupy: Získání průběhu z instalačního programu .NET Framework 4,5](how-to-get-progress-from-the-dotnet-installer.md)|V této části najdete popis postupu při tichém spuštění a sledování procesu instalace .NET Framework při zobrazení vlastního zobrazení průběhu instalace.|
+|[Postupy: Získání procesu z instalačního programu .NET Framework 4.5](how-to-get-progress-from-the-dotnet-installer.md)|V této části najdete popis postupu při tichém spuštění a sledování procesu instalace .NET Framework při zobrazení vlastního zobrazení průběhu instalace.|
 
 ## <a name="see-also"></a>Viz také:
 

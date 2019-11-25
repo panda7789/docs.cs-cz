@@ -1,77 +1,77 @@
 ---
-title: 'Postupy: Změna obsahu řetězce - C# Průvodce'
+title: Postup úpravy obsahu řetězce – C# Průvodce
 ms.date: 02/26/2018
 helpviewer_keywords:
 - strings [C#], modifying
-ms.openlocfilehash: 2cc1166d98a6cc07e0827a138cecb09c0530b899
-ms.sourcegitcommit: 4c41ec195caf03d98b7900007c3c8e24eba20d34
+ms.openlocfilehash: 539e313173d46c2c92399cefe94207c8beed03b4
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2019
-ms.locfileid: "67267758"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73973254"
 ---
-# <a name="how-to-modify-string-contents-in-c"></a>Postupy: Změna obsahu řetězce v jazyce C\#
+# <a name="how-to-modify-string-contents-in-c"></a>Postup úpravy obsahu řetězce v jazyce C\#
 
-Tento článek ukazuje řadu technik k vytvoření `string` změnou existující `string`. Všechny metody vrátí výsledek změny jako nový jsme vám ukázali `string` objektu. Všechny příklady jasně ukazuje to, uloží výsledek v nové proměnné. Poté můžete prozkoumat původní `string` a `string` vyplývající z změny, když spustíte každý příklad.
+Tento článek ukazuje několik postupů, jak vytvořit `string` úpravou stávajícího `string`. Všechny techniky ukázaly, že vrátí výsledek úprav jako nový objekt `string`. Pokud to chcete jasně ukázat, příklady všechny ukládají výsledek do nové proměnné. Pak můžete prošetřit původní `string` i `string`, které se při spuštění každého příkladu vyplývají z úprav.
 
 [!INCLUDE[interactive-note](~/includes/csharp-interactive-note.md)]
 
-Existuje několik technik naznačených v tomto článku. Můžete nahradit existující text. Můžete vyhledat a nahradit odpovídající text jiným textem. Řetězec lze považovat jako posloupnost znaků. Můžete také použít vhodné metody, které odebrat prázdné znaky. Měli byste zvolit techniky, které nejvíce odpovídají vašemu scénáři.
+V tomto článku je znázorněno několik postupů. Můžete nahradit existující text. Můžete vyhledat vzory a nahradit shodný text jiným textem. Řetězec lze považovat za sekvenci znaků. Můžete také použít praktické metody, které odstraňují prázdné znaky. Měli byste zvolit techniky, které nejlépe vyhovují vašemu scénáři.
 
 ## <a name="replace-text"></a>Nahradit text
 
-Následující kód vytvoří nový řetězec tak, že nahradíte existující text s náhradou.
+Následující kód vytvoří nový řetězec nahrazením stávajícího textu náhradou.
 
 [!code-csharp-interactive[replace creates a new string](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#1)]
 
-Předchozí kód ukazuje to *neměnné* vlastnosti řetězců. Zobrazí se v předchozím příkladu, který původní řetězec `source`, se nezmění. <xref:System.String.Replace%2A?displayProperty=nameWithType> Metoda vytvoří nový `string` obsahující změny.
+Předchozí kód ukazuje tuto *neproměnlivou* vlastnost řetězců. V předchozím příkladu můžete vidět, že původní řetězec, `source`, se nezmění. Metoda <xref:System.String.Replace%2A?displayProperty=nameWithType> vytvoří nové `string` obsahující úpravy.
 
-<xref:System.String.Replace%2A> Metody lze nahradit řetězce nebo jednotlivé znaky. V obou případech se nahradí všechny výskyty hledané kombinaci textu.  Následující příklad nahradí všechny ' "znaků a obsahující"\_":
+Metoda <xref:System.String.Replace%2A> může nahradit buď řetězce, nebo jeden znak. V obou případech se nahradí všechny výskyty hledaného textu.  Následující příklad nahrazuje všechny znaky ' ' ' s '\_':
 
 [!code-csharp-interactive[replace characters](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#2)]
 
-Zdrojový řetězec se nezmění a vrátí nový řetězec se nahrazení.
+Zdrojový řetězec je nezměněný a je vrácen nový řetězec s náhradou.
 
-## <a name="trim-white-space"></a>Trim prázdný znak
+## <a name="trim-white-space"></a>Oříznout prázdné znaky
 
-Můžete použít <xref:System.String.Trim%2A?displayProperty=nameWithType>, <xref:System.String.TrimStart%2A?displayProperty=nameWithType>, a <xref:System.String.TrimEnd%2A?displayProperty=nameWithType> metody odebere všechny úvodní a koncové prázdné znaky.  Následující kód ukazuje příklad každého. Zdrojový řetězec nemění; Tyto metody vrátí nový řetězec s upravený obsah.
+Pomocí metod <xref:System.String.Trim%2A?displayProperty=nameWithType>, <xref:System.String.TrimStart%2A?displayProperty=nameWithType>a <xref:System.String.TrimEnd%2A?displayProperty=nameWithType> můžete odebrat všechny úvodní a koncové prázdné znaky.  Následující kód ukazuje příklad každého z nich. Zdrojový řetězec se nemění; Tyto metody vrátí nový řetězec se změněným obsahem.
 
 [!code-csharp-interactive[trim white space](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#3)]
 
-## <a name="remove-text"></a>Odeberte text
+## <a name="remove-text"></a>Odebrat text
 
-Text lze odebrat z řetězce pomocí <xref:System.String.Remove%2A?displayProperty=nameWithType> metody. Tato metoda odebere počet znaků počínaje konkrétním indexem. Následující příklad ukazuje, jak používat <xref:System.String.IndexOf%2A?displayProperty=nameWithType> následovaný <xref:System.String.Remove%2A> text odebrat z řetězce:
+Text z řetězce můžete odebrat pomocí metody <xref:System.String.Remove%2A?displayProperty=nameWithType>. Tato metoda odebere počet znaků, které začínají na specifickém indexu. Následující příklad ukazuje, jak použít <xref:System.String.IndexOf%2A?displayProperty=nameWithType> následovaných <xref:System.String.Remove%2A> k odebrání textu z řetězce:
 
 [!code-csharp-interactive[remove text](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#4)]
 
-## <a name="replace-matching-patterns"></a>Nahraďte vzory pro porovnávání
+## <a name="replace-matching-patterns"></a>Nahradit vyhovující vzorce
 
-Můžete použít [regulární výrazy](../../standard/base-types/regular-expressions.md) nahradit text porovnávání vzorů novým textem, může být definované vzorem. V následujícím příkladu <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> třídy pro vzor hledání zdrojový řetězec a nahraďte ji metodou správné malá a velká písmena. <xref:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.Text.RegularExpressions.MatchEvaluator,System.Text.RegularExpressions.RegexOptions)?displayProperty=nameWithType> Metoda má funkci, která poskytuje logiku nahrazení jako jeden z jejích argumentů. V tomto příkladu, tuto funkci `LocalReplaceMatchCase` je **lokální funkce** deklarované uvnitř ukázka metody. `LocalReplaceMatchCase` používá <xref:System.Text.StringBuilder?displayProperty=nameWithType> třída pro sestavení řetězci pro nahrazení se správné malá a velká písmena.
+[Regulární výrazy](../../standard/base-types/regular-expressions.md) můžete použít k nahrazení textu, který odpovídá vzorům, s novým textem, případně definovaným vzorem. Následující příklad používá třídu <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> k nalezení vzoru ve zdrojovém řetězci a jeho nahrazení se správnými velkými písmeny. Metoda <xref:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.Text.RegularExpressions.MatchEvaluator,System.Text.RegularExpressions.RegexOptions)?displayProperty=nameWithType> přebírá funkci, která poskytuje logiku náhrady jako jeden z jejích argumentů. V tomto příkladu je tato funkce `LocalReplaceMatchCase` **lokální funkci** deklarovanou uvnitř ukázkové metody. `LocalReplaceMatchCase` používá třídu <xref:System.Text.StringBuilder?displayProperty=nameWithType> k sestavení řetězce pro nahrazení se správnými velkými písmeny.
 
-Regulární výrazy jsou nejužitečnější při hledání a nahrazování textu, který následuje vzor, nikoli textové. Zobrazit [postupy: vyhledávání řetězců](search-strings.md) další podrobnosti. Vzor hledání "the\s" hledá slovo "the" následované prázdným znakem. Tuto část vzorce zajistíte, že se pravděpodobně neshoduje s "není" ve zdrojovém řetězci. Další informace o prvky jazyka regulárních výrazů, naleznete v tématu [jazyk regulárních výrazů – Stručná referenční příručka](../../standard/base-types/regular-expression-language-quick-reference.md).
+Regulární výrazy jsou nejužitečnější pro vyhledávání a nahrazování textu, který následuje vzor, spíše než známý text. Další podrobnosti najdete v tématu [jak hledat řetězce](search-strings.md) . Vzor hledání "the\s" vyhledá slovo "a" následovaný prázdným znakem. Tato část vzoru zajišťuje, že se neshoduje s "ve zdrojovém řetězci". Další informace o prvcích jazyka regulárních výrazů najdete v tématu [Jazyk regulárních výrazů – rychlé reference](../../standard/base-types/regular-expression-language-quick-reference.md).
 
 [!code-csharp-interactive[replace creates a new string](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#5)]
 
-<xref:System.Text.StringBuilder.ToString%2A?displayProperty=nameWithType> Vrátí metoda neměnné řetězec s obsahem v <xref:System.Text.StringBuilder> objektu.
+Metoda <xref:System.Text.StringBuilder.ToString%2A?displayProperty=nameWithType> vrací neměnné řetězce s obsahem v objektu <xref:System.Text.StringBuilder>.
 
-## <a name="modifying-individual-characters"></a>Úprava jednotlivých znaků
+## <a name="modifying-individual-characters"></a>Změna jednotlivých znaků
 
-Můžete vytvořit pole znaků z řetězce, upravovat obsah pole a poté vytvořit nový řetězec z změněný obsah pole.
+Můžete vytvořit pole znaků z řetězce, upravit obsah pole a pak vytvořit nový řetězec ze změněného obsahu pole.
 
-Následující příklad ukazuje, jak nahradit sady znaků v řetězci. Nejprve, použije <xref:System.String.ToCharArray?displayProperty=nameWithName> metodu pro vytvoření pole znaků. Používá <xref:System.String.IndexOf%2A> metody k vyhledání počáteční index slovo "fox." Následující tři znaky jsou nahrazena různá slova. Nakonec je vytvořen nový řetězec z pole aktualizované znaků.
+Následující příklad ukazuje, jak nahradit sadu znaků v řetězci. Nejprve používá metodu <xref:System.String.ToCharArray?displayProperty=nameWithName> k vytvoření pole znaků. Používá metodu <xref:System.String.IndexOf%2A> k vyhledání počátečního indexu slova "Fox". Následující tři znaky jsou nahrazeny jiným slovem. Nakonec je nový řetězec vytvořen z aktualizovaného pole znaků.
 
 [!code-csharp-interactive[replace creates a new string](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#6)]
 
-## <a name="unsafe-modifications-to-string"></a>Nezabezpečený změny na řetězec
+## <a name="unsafe-modifications-to-string"></a>Nezabezpečené změny řetězce
 
-Pomocí **nebezpečné** kódu, můžete upravit řetězec "místo" po jejím vytvoření. Nezabezpečený kód vynechá řadu funkcí .NET určená k minimalizaci určité typy chyb v kódu. Je třeba použít nezabezpečený kód upravit řetězec na místě, protože třída string je navržena jako **neměnné** typu. Po jeho vytvoření, jeho hodnota se nezmění. Nezabezpečený kód neodpovídá této vlastnosti přístupu a úpravou paměť používanou `string` bez použití normální `string` metody.
-Následující příklad je k dispozici pro těchto výjimečných případech, ve které chcete upravit řetězce v místě použití nezabezpečeného kódu. Tento příklad ukazuje způsob použití `fixed` – klíčové slovo. `fixed` – Klíčové slovo zabraňuje systému uvolňování paměti (GC) získat přechodem na objekt řetězce v paměti, zatímco kód přistupuje k paměťově pomocí nebezpečné ukazatele. Ukazuje také jeden možný vedlejším účinkem nebezpečné operace s řetězci, který je výsledkem způsobu, jakým kompilátor jazyka C# interně uchovává řetězce (učně). Obecně byste neměli používat tuto techniku, pokud to není nezbytně nutné. Další informace najdete v článcích na [nebezpečné](../language-reference/keywords/unsafe.md) a [oprava](../language-reference/keywords/fixed-statement.md). Referenční dokumentace rozhraní API pro <xref:System.String.Intern%2A> obsahuje informace o interning řetězce.
+Pomocí **nebezpečného** kódu můžete upravit řetězec "na místě" po jeho vytvoření. Nezabezpečený kód obchází mnoho funkcí rozhraní .NET navržených tak, aby minimalizovaly určité typy chyb v kódu. Je nutné použít nezabezpečený kód pro úpravu řetězce v místě, protože třída String je navržena jako **neměnný** typ. Po vytvoření se hodnota nezmění. Nezabezpečený kód obchází tuto vlastnost pomocí přístupu a úprav paměti používané `string` bez použití normálních `string`ch metod.
+Následující příklad je k dispozici pro případy, kdy chcete upravit řetězec na místě pomocí nezabezpečeného kódu. Příklad ukazuje použití klíčového slova `fixed`. Klíčové slovo `fixed` zabraňuje uvolňování paměti (GC) v přesunutí objektu String v paměti, zatímco kód přistupuje k paměti pomocí nebezpečného ukazatele. Ukazuje také jeden možný vedlejší účinek nebezpečných operací na řetězcích, které jsou výsledkem způsobu, C# jakým interně ukládají řetězce (interny) řetězce. Obecně platí, že tuto techniku byste neměli používat, pokud to není nezbytně nutné. Další informace najdete v článcích o [nebezpečných](../language-reference/keywords/unsafe.md) a [opravených](../language-reference/keywords/fixed-statement.md). Reference k rozhraní API pro <xref:System.String.Intern%2A> obsahuje informace o interning pro řetězce.
 
 [!code-csharp[unsafe ways to create a new string](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#7)]
 
-Tyto ukázky můžete zkusit pohledem na kód v našich [úložiště GitHub](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/strings). Nebo si můžete stáhnout ukázky [jako soubor zip](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/strings.zip).
+Tyto ukázky můžete vyzkoušet na základě kódu v našem [úložišti GitHub](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/strings). Nebo si můžete stáhnout ukázky [jako soubor zip](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/strings.zip).
 
 ## <a name="see-also"></a>Viz také:
 
-- [Regulárních výrazech .NET Frameworku](../../standard/base-types/regular-expressions.md)
+- [.NET Framework regulární výrazy](../../standard/base-types/regular-expressions.md)
 - [Jazyk regulárních výrazů – stručná referenční dokumentace](../../standard/base-types/regular-expression-language-quick-reference.md)

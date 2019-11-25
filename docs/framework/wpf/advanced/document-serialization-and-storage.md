@@ -6,12 +6,12 @@ helpviewer_keywords:
 - documents [WPF], storage
 - documents [WPF], serialization
 ms.assetid: 4839cd87-e206-4571-803f-0200098ad37b
-ms.openlocfilehash: d56968ad390d4681b3c1bb1580a864f9a9f0e10c
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: ff0555105f219db5ed891c02400b0587c825718e
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424307"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73974651"
 ---
 # <a name="document-serialization-and-storage"></a>Serializace a úložiště dokumentu
 
@@ -43,7 +43,7 @@ Aplikace často poskytují více možností serializace, které uživateli umož
 
 ### <a name="xps-print-path"></a>Cesta tisku XPS
 
-Cesta pro tisk v Microsoft .NET Framework XPS také poskytuje rozšiřitelný mechanismus pro psaní dokumentů prostřednictvím výstupu tisku.  XPS slouží jako formát souboru dokumentu a je nativní formát pro zařazování tisku [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)].  Dokumenty XPS je možné odesílat přímo do tiskáren kompatibilních s XPS bez nutnosti konverze do mezilehlého formátu.  Další informace o možnostech výstupu cesty tisku a možnostech najdete v tématu [Přehled tisku](printing-overview.md) .
+Cesta pro tisk v Microsoft .NET Framework XPS také poskytuje rozšiřitelný mechanismus pro psaní dokumentů prostřednictvím výstupu tisku.  XPS slouží jako formát souboru dokumentu a je nativní formát pro zařazování tisku pro systém Windows Vista.  Dokumenty XPS je možné odesílat přímo do tiskáren kompatibilních s XPS bez nutnosti konverze do mezilehlého formátu.  Další informace o možnostech výstupu cesty tisku a možnostech najdete v tématu [Přehled tisku](printing-overview.md) .
 
 <a name="PluginSerializers"></a>
 
@@ -55,7 +55,7 @@ Serializátory modulů plug-in pomáhají vývojářům aplikací poskytovat roz
 
 ### <a name="using-a-plug-in-serializer"></a>Použití serializátoru modulu plug-in
 
-Moduly pro serializace modulu plug-in se snadno používají.  Třída <xref:System.Windows.Documents.Serialization.SerializerProvider> vytváří výčet <xref:System.Windows.Documents.Serialization.SerializerDescriptor>ch objektů pro každý modul plug-in nainstalovaný v systému.  Vlastnost <xref:System.Windows.Documents.Serialization.SerializerDescriptor.IsLoadable%2A> filtruje nainstalované moduly plug-in na základě aktuální konfigurace a ověřuje, že se serializátor dá načíst a používat v aplikaci.  <xref:System.Windows.Documents.Serialization.SerializerDescriptor> také poskytuje další vlastnosti, například <xref:System.Windows.Documents.Serialization.SerializerDescriptor.DisplayName%2A> a <xref:System.Windows.Documents.Serialization.SerializerDescriptor.DefaultFileExtension%2A>, které může aplikace použít k zobrazení výzvy uživateli při výběru serializátoru pro dostupný výstupní formát.  Výchozí modul plug-in pro XPS je k dispozici s .NET Framework a je vždy vyhodnocen.  Jakmile uživatel vybere výstupní formát, metoda <xref:System.Windows.Documents.Serialization.SerializerProvider.CreateSerializerWriter%2A> slouží k vytvoření <xref:System.Windows.Documents.Serialization.SerializerWriter> pro konkrétní formát.  <xref:System.Windows.Documents.Serialization.SerializerWriter>.<xref:System.Windows.Documents.Serialization.SerializerWriter.Write%2A> Metoda může být poté volána pro výstup datového proudu dokumentu do úložiště dat.
+Moduly pro serializace modulu plug-in se snadno používají.  Třída <xref:System.Windows.Documents.Serialization.SerializerProvider> vytváří výčet <xref:System.Windows.Documents.Serialization.SerializerDescriptor>ch objektů pro každý modul plug-in nainstalovaný v systému.  Vlastnost <xref:System.Windows.Documents.Serialization.SerializerDescriptor.IsLoadable%2A> filtruje nainstalované moduly plug-in na základě aktuální konfigurace a ověřuje, že se serializátor dá načíst a používat v aplikaci.  <xref:System.Windows.Documents.Serialization.SerializerDescriptor> také poskytuje další vlastnosti, například <xref:System.Windows.Documents.Serialization.SerializerDescriptor.DisplayName%2A> a <xref:System.Windows.Documents.Serialization.SerializerDescriptor.DefaultFileExtension%2A>, které může aplikace použít k zobrazení výzvy uživateli při výběru serializátoru pro dostupný výstupní formát.  Výchozí modul plug-in pro XPS je k dispozici s .NET Framework a je vždy vyhodnocen.  Jakmile uživatel vybere výstupní formát, metoda <xref:System.Windows.Documents.Serialization.SerializerProvider.CreateSerializerWriter%2A> slouží k vytvoření <xref:System.Windows.Documents.Serialization.SerializerWriter> pro konkrétní formát.  Metodu <xref:System.Windows.Documents.Serialization.SerializerWriter.Write%2A?displayProperty=nameWithType> lze následně volat pro výstup datového proudu dokumentu do úložiště dat.
 
 Následující příklad znázorňuje aplikaci, která používá metodu <xref:System.Windows.Documents.Serialization.SerializerProvider> ve vlastnosti "PlugInFileFilter".  PlugInFileFilter vytvoří výčet nainstalovaných modulů plug-in a sestaví řetězec filtru s dostupnými možnostmi souborů pro <xref:Microsoft.Win32.SaveFileDialog>.
 

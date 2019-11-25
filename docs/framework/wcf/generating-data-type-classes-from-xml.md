@@ -2,12 +2,12 @@
 title: Generování tříd datových typů z XML
 ms.date: 03/30/2017
 ms.assetid: e4e5e4e8-527f-44d1-92fa-8904a08784ea
-ms.openlocfilehash: bf5596211e78842153b7406273626a7fa3c3aeea
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 977b12b5c61c196a4f033361d37785e4ed0af73a
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70990278"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975857"
 ---
 # <a name="generating-data-type-classes-from-xml"></a>Generování tříd datových typů z XML
 .NET Framework 4,5 obsahuje novou funkci pro generování tříd datových typů z XML. Toto téma popisuje, jak automaticky generovat datové typy pro informační kanál RSS blogu .NET.  
@@ -28,13 +28,13 @@ ms.locfileid: "70990278"
   
 3. Vyberte **Upravit**, **Vložit speciální**a **Vložit XML jako třídy**.  
   
-4. Třídy s `link`názvem ,,ajsou`rss`vytvořeny pomocínezbytnýchčlenůpropřístupkprvkůmvinformačnímkanáluRSS.`rssChannel` `rssChannelImage` `rssChannelItem` `rssChannelItemGuid`  
+4. Třídy s názvem `link`, `rss`, `rssChannel`, `rssChannelImage`, `rssChannelItem` a `rssChannelItemGuid` jsou vytvořeny s potřebnými členy pro přístup k prvkům v informačním kanálu RSS.  
   
 ### <a name="using-the-generated-classes"></a>Použití vygenerovaných tříd  
   
-1. Po vygenerování tříd je lze použít v kódu, podobně jako jakékoli jiné třídy. Následující příklad kódu vrátí novou instanci `rssChannelImage` třídy.  
+1. Po vygenerování tříd je lze použít v kódu, podobně jako jakékoli jiné třídy. Následující příklad kódu vrátí novou instanci třídy `rssChannelImage`.  
   
-    ```csharp  
+    ```csharp
     var channelImage = new rssChannelImage()   
     {   
         title = "MyImage",   

@@ -1,36 +1,36 @@
 ---
-title: 'Postupy: Rozšíříte asynchronní návod pomocí Task. WhenAll (C#).'
+title: Postup rozšiřování asynchronního návodu pomocí Task. WhenAll (C#)
 ms.date: 07/20/2015
 ms.assetid: f6927ef2-dc6c-43f8-bc82-bbeac42de423
-ms.openlocfilehash: f44595a409113e4b7ff3ad2c6d0712e5debaad08
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: afd7dda4e876b7faa54ae4a8e62d640d2b9aaf07
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70040653"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73970026"
 ---
-# <a name="how-to-extend-the-async-walkthrough-by-using-taskwhenall-c"></a>Postupy: Rozšíříte asynchronní návod pomocí Task. WhenAll (C#).
+# <a name="how-to-extend-the-async-walkthrough-by-using-taskwhenall-c"></a>Postup rozšiřování asynchronního návodu pomocí Task. WhenAll (C#)
 
-Můžete zvýšit výkon asynchronního řešení v [tomto návodu: Přístup k webu pomocí modifikátoru Async a operátoru](./walkthrough-accessing-the-web-by-using-async-and-await.md) await (C#) <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> pomocí metody. Tato metoda asynchronně očekává více asynchronních operací, které jsou reprezentovány jako kolekce úkolů.
+Můžete zvýšit výkon asynchronního řešení v [návodu: přístup k webu pomocí modifikátoruC#Async a await ()](./walkthrough-accessing-the-web-by-using-async-and-await.md) pomocí metody <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>. Tato metoda asynchronně očekává více asynchronních operací, které jsou reprezentovány jako kolekce úkolů.
 
 Možná jste si všimli v návodu, že se weby stahují různými sazbami. Někdy je jeden z webů velmi pomalý, což zpozdí všechna zbývající stahování. Při spuštění asynchronních řešení, která sestavíte v tomto návodu, můžete program ukončit, pokud nechcete čekat, ale lepší možností je zahájit všechna stahování ve stejnou dobu a umožnit rychlejší stahování i nadále, aniž byste čekali na to, který z nich je  platba.
 
-`Task.WhenAll` Metodu použijete pro kolekci úkolů. Aplikace `WhenAll` vrátí jednu úlohu, která není dokončena, dokud není dokončen každý úkol v kolekci. Úkoly se zdají běžet paralelně, ale nevytvoří se žádné další podprocesy. Úkoly mohou být dokončeny v libovolném pořadí.
+Metodu `Task.WhenAll` použijete pro kolekci úkolů. Aplikace `WhenAll` vrátí jednu úlohu, která není dokončena, dokud není dokončen každý úkol v kolekci. Úkoly se zdají běžet paralelně, ale nevytvoří se žádné další podprocesy. Úkoly mohou být dokončeny v libovolném pořadí.
 
 > [!IMPORTANT]
-> Následující postupy popisují rozšíření pro asynchronní aplikace, které jsou vyvíjeny v [návodu: Přístup k webu pomocí modifikátoru Async a operátoru](./walkthrough-accessing-the-web-by-using-async-and-await.md)await (C#). Můžete vyvíjet aplikace buď dokončením návodu, nebo stažením kódu z [ukázek kódu pro vývojáře](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f).
+> Následující postupy popisují rozšíření pro asynchronní aplikace, které jsou vyvíjeny v [návodu: přístup k webu pomocí modifikátoru Async a operátoru Await (C#)](./walkthrough-accessing-the-web-by-using-async-and-await.md). Můžete vyvíjet aplikace buď dokončením návodu, nebo stažením kódu z [ukázek kódu pro vývojáře](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f).
 >
 > Chcete-li spustit příklad, musíte mít v počítači nainstalován systém Visual Studio 2012 nebo novější.
 
 ### <a name="to-add-taskwhenall-to-your-geturlcontentsasync-solution"></a>Přidání metody Task.WhenAll do řešení GetURLContentsAsync
 
-1. Přidejte metodu do první aplikace, která je vyvíjena v [návodu: `ProcessURLAsync` Přístup k webu pomocí modifikátoru Async a operátoru](./walkthrough-accessing-the-web-by-using-async-and-await.md)await (C#).
+1. Přidejte metodu `ProcessURLAsync` do první aplikace, která je vyvíjena v [návodu: přístup k webu pomocí modifikátoru Async a operátoru Await (C#)](./walkthrough-accessing-the-web-by-using-async-and-await.md).
 
-    - Pokud jste stáhli kód z [ukázek kódu pro vývojáře](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f), otevřete projekt AsyncWalkthrough a pak přidejte `ProcessURLAsync` do souboru MainWindow.XAML.cs.
+    - Pokud jste stáhli kód z [ukázek kódu pro vývojáře](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f), otevřete projekt AsyncWalkthrough a poté přidejte `ProcessURLAsync` do souboru MainWindow.XAML.cs.
 
-    - Pokud jste kód vyvinuli dokončením návodu, přidejte `ProcessURLAsync` do aplikace, která `GetURLContentsAsync` obsahuje metodu. Soubor MainWindow.xaml.cs pro tuto aplikaci je prvním příkladem v části kompletní příklady kódu z návodu.
+    - Pokud jste kód vyvinuli dokončením návodu, přidejte `ProcessURLAsync` do aplikace, která obsahuje metodu `GetURLContentsAsync`. Soubor MainWindow.xaml.cs pro tuto aplikaci je prvním příkladem v části kompletní příklady kódu z návodu.
 
-    Metoda slučuje akce v těle `foreach` smyčky v `SumPageSizesAsync` původním návodu. `ProcessURLAsync` Metoda asynchronně stáhne obsah zadaného webu jako bajtové pole a poté zobrazí a vrátí délku bajtového pole.
+    Metoda `ProcessURLAsync` slučuje akce v těle `foreach` smyčky v `SumPageSizesAsync` v původním návodu. Metoda asynchronně stáhne obsah zadaného webu jako bajtové pole a poté zobrazí a vrátí délku bajtového pole.
 
     ```csharp
     private async Task<int> ProcessURLAsync(string url)
@@ -41,7 +41,7 @@ Možná jste si všimli v návodu, že se weby stahují různými sazbami. Někd
     }
     ```
 
-2. Odkomentujte nebo odstraňte `foreach` smyčku `SumPageSizesAsync`v, jak ukazuje následující kód.
+2. Odkomentujte nebo odstraňte smyčku `foreach` v `SumPageSizesAsync`, jak ukazuje následující kód.
 
     ```csharp
     //var total = 0;
@@ -62,9 +62,9 @@ Možná jste si všimli v návodu, že se weby stahují různými sazbami. Někd
     //}
     ```
 
-3. Vytvořte kolekci úkolů. Následující kód definuje [dotaz](../linq/index.md) , který při spuštění <xref:System.Linq.Enumerable.ToArray%2A> metodou vytvoří kolekci úkolů, které stáhnou obsah každého webu. Úkoly se spustí, když se dotaz vyhodnotí.
+3. Vytvořte kolekci úkolů. Následující kód definuje [dotaz](../linq/index.md) , který při spuštění metodou <xref:System.Linq.Enumerable.ToArray%2A> vytvoří kolekci úkolů, které stáhnou obsah každého webu. Úkoly se spustí, když se dotaz vyhodnotí.
 
-    Přidejte následující kód do metody `SumPageSizesAsync` po `urlList`deklaraci.
+    Přidejte následující kód do metody `SumPageSizesAsync` po deklaraci `urlList`.
 
     ```csharp
     // Create a query.
@@ -75,9 +75,9 @@ Možná jste si všimli v návodu, že se weby stahují různými sazbami. Někd
     Task<int>[] downloadTasks = downloadTasksQuery.ToArray();
     ```
 
-4. Platí `Task.WhenAll` pro kolekci úloh, `downloadTasks`. `Task.WhenAll`Vrátí jeden úkol, který skončí po dokončení všech úkolů v kolekci úkolů.
+4. Použijte `Task.WhenAll` pro kolekci úloh `downloadTasks`. `Task.WhenAll` vrátí jednu úlohu, která skončí po dokončení všech úloh v kolekci úkolů.
 
-    V následujícím příkladu `await` výraz čeká na dokončení jedné úlohy, která se `WhenAll` vrátí. Výraz je vyhodnocen jako pole celých čísel, kde každé celé číslo je délka staženého webu. Přidejte následující kód do `SumPageSizesAsync`, hned po kódu, který jste přidali v předchozím kroku.
+    V následujícím příkladu výraz `await` čeká na dokončení jedné úlohy, která `WhenAll` vrací. Výraz je vyhodnocen jako pole celých čísel, kde každé celé číslo je délka staženého webu. Do `SumPageSizesAsync` přidejte následující kód, a to hned za kód, který jste přidali v předchozím kroku.
 
     ```csharp
     // Await the completion of all the running tasks.
@@ -88,7 +88,7 @@ Možná jste si všimli v návodu, že se weby stahují různými sazbami. Někd
     //int[] lengths = await whenAllTask;
     ```
 
-5. Nakonec použijte <xref:System.Linq.Enumerable.Sum%2A> metodu pro výpočet součtu délek všech webů. Přidejte následující řádek do `SumPageSizesAsync`.
+5. Nakonec použijte metodu <xref:System.Linq.Enumerable.Sum%2A> pro výpočet součtu délek všech webů. Přidejte následující řádek pro `SumPageSizesAsync`.
 
     ```csharp
     int total = lengths.Sum();
@@ -96,15 +96,15 @@ Možná jste si všimli v návodu, že se weby stahují různými sazbami. Někd
 
 ### <a name="to-add-taskwhenall-to-the-httpclientgetbytearrayasync-solution"></a>Přidání metody Task.WhenAll do řešení HttpClient.GetByteArrayAsync
 
-1. Přidejte následující verzi `ProcessURLAsync` do druhé aplikace, která je vyvíjena v [návodu: Přístup k webu pomocí modifikátoru Async a operátoru](./walkthrough-accessing-the-web-by-using-async-and-await.md)await (C#).
+1. Do druhé aplikace, která je vyvíjena v návodu, přidejte následující verzi `ProcessURLAsync` [: přístup k webu pomocí modifikátoru Async a operátoru awaitC#()](./walkthrough-accessing-the-web-by-using-async-and-await.md).
 
-    - Pokud jste stáhli kód z [ukázek kódu pro vývojáře](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f), otevřete projekt AsyncWalkthrough_HttpClient a pak přidejte `ProcessURLAsync` do souboru MainWindow.XAML.cs.
+    - Pokud jste stáhli kód z [ukázek kódu pro vývojáře](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f), otevřete AsyncWalkthrough_HttpClient projekt a pak přidejte `ProcessURLAsync` do souboru MainWindow.XAML.cs.
 
-    - Pokud jste kód vyvinuli dokončením návodu, přidejte `ProcessURLAsync` do aplikace, která `HttpClient.GetByteArrayAsync` používá metodu. Soubor MainWindow.xaml.cs pro tuto aplikaci je druhým příkladem v části kompletní příklady kódu z návodu.
+    - Pokud jste kód vyvinuli dokončením návodu, přidejte `ProcessURLAsync` do aplikace, která používá metodu `HttpClient.GetByteArrayAsync`. Soubor MainWindow.xaml.cs pro tuto aplikaci je druhým příkladem v části kompletní příklady kódu z návodu.
 
-    Metoda slučuje akce v těle `foreach` smyčky v `SumPageSizesAsync` původním návodu. `ProcessURLAsync` Metoda asynchronně stáhne obsah zadaného webu jako bajtové pole a poté zobrazí a vrátí délku bajtového pole.
+    Metoda `ProcessURLAsync` slučuje akce v těle `foreach` smyčky v `SumPageSizesAsync` v původním návodu. Metoda asynchronně stáhne obsah zadaného webu jako bajtové pole a poté zobrazí a vrátí délku bajtového pole.
 
-    Jediným rozdílem z `ProcessURLAsync` metody v předchozím postupu je použití <xref:System.Net.Http.HttpClient> instance, `client`.
+    Jediným rozdílem od metody `ProcessURLAsync` v předchozím postupu je použití instance <xref:System.Net.Http.HttpClient> `client`.
 
     ```csharp
     async Task<int> ProcessURLAsync(string url, HttpClient client)
@@ -115,7 +115,7 @@ Možná jste si všimli v návodu, že se weby stahují různými sazbami. Někd
     }
     ```
 
-2. Odkomentujte nebo odstraňte `For Each` smyčku nebo `SumPageSizesAsync` `foreach` v, jak ukazuje následující kód.
+2. Odkomentujte nebo odstraňte `For Each` nebo smyčku `foreach` v `SumPageSizesAsync`, jak ukazuje následující kód.
 
     ```csharp
     //var total = 0;
@@ -137,9 +137,9 @@ Možná jste si všimli v návodu, že se weby stahují různými sazbami. Někd
     //}
     ```
 
-3. Definujte [dotaz](../linq/index.md) , který při spuštění <xref:System.Linq.Enumerable.ToArray%2A> metodou vytvoří kolekci úkolů, které stáhnou obsah každého webu. Úkoly se spustí, když se dotaz vyhodnotí.
+3. Definujte [dotaz](../linq/index.md) , který při spuštění metodou <xref:System.Linq.Enumerable.ToArray%2A> vytvoří kolekci úkolů, které stáhnou obsah každého webu. Úkoly se spustí, když se dotaz vyhodnotí.
 
-    Po `SumPageSizesAsync` deklaraci`urlList`apřidejtenásledující kód do metody. `client`
+    Přidejte následující kód do metody `SumPageSizesAsync` po deklaraci `client` a `urlList`.
 
     ```csharp
     // Create a query.
@@ -150,9 +150,9 @@ Možná jste si všimli v návodu, že se weby stahují různými sazbami. Někd
     Task<int>[] downloadTasks = downloadTasksQuery.ToArray();
     ```
 
-4. Dále platí `Task.WhenAll` pro kolekci úkolů, `downloadTasks`. `Task.WhenAll`Vrátí jeden úkol, který skončí po dokončení všech úkolů v kolekci úkolů.
+4. Dále `Task.WhenAll` použít pro kolekci úloh `downloadTasks`. `Task.WhenAll` vrátí jednu úlohu, která skončí po dokončení všech úloh v kolekci úkolů.
 
-    V následujícím příkladu `await` výraz čeká na dokončení jedné úlohy, která se `WhenAll` vrátí. Po dokončení `await` se výraz vyhodnotí jako pole celých čísel, kde každé celé číslo je délka staženého webu. Přidejte následující kód do `SumPageSizesAsync`, hned po kódu, který jste přidali v předchozím kroku.
+    V následujícím příkladu výraz `await` čeká na dokončení jedné úlohy, která `WhenAll` vrací. Po dokončení se výraz `await` vyhodnotí jako pole celých čísel, kde každé celé číslo je délka staženého webu. Do `SumPageSizesAsync` přidejte následující kód, a to hned za kód, který jste přidali v předchozím kroku.
 
     ```csharp
     // Await the completion of all the running tasks.
@@ -163,7 +163,7 @@ Možná jste si všimli v návodu, že se weby stahují různými sazbami. Někd
     //int[] lengths = await whenAllTask;
     ```
 
-5. Nakonec použijte <xref:System.Linq.Enumerable.Sum%2A> metodu k získání součtu délek všech webů. Přidejte následující řádek do `SumPageSizesAsync`.
+5. Nakonec použijte metodu <xref:System.Linq.Enumerable.Sum%2A> k získání součtu délek všech webů. Přidejte následující řádek pro `SumPageSizesAsync`.
 
     ```csharp
     int total = lengths.Sum();
@@ -171,11 +171,11 @@ Možná jste si všimli v návodu, že se weby stahují různými sazbami. Někd
 
 ### <a name="to-test-the-taskwhenall-solutions"></a>Otestování řešení Task.WhenAll
 
-- Pro jedno řešení zvolte klávesu F5 pro spuštění programu a pak klikněte na tlačítko **Start** . Výstup by měl vypadat podobně jako výstup z asynchronních řešení v [návodu: Přístup k webu pomocí modifikátoru Async a operátoru](./walkthrough-accessing-the-web-by-using-async-and-await.md)await (C#). Všimněte si ale, že se weby v každé době zobrazují v jiném pořadí.
+- Pro jedno řešení zvolte klávesu F5 pro spuštění programu a pak klikněte na tlačítko **Start** . Výstup by měl vypadat podobně jako výstup z asynchronních řešení v [návodu: přístup k webu pomocí modifikátoru Async a operátoru Await (C#)](./walkthrough-accessing-the-web-by-using-async-and-await.md). Všimněte si ale, že se weby v každé době zobrazují v jiném pořadí.
 
 ## <a name="example"></a>Příklad
 
-Následující kód ukazuje rozšíření pro projekt, který používá `GetURLContentsAsync` metodu ke stažení obsahu z webu.
+Následující kód ukazuje rozšíření pro projekt, který používá metodu `GetURLContentsAsync` ke stažení obsahu z webu.
 
 ```csharp
 // Add the following using directives, and add a reference for System.Net.Http.
@@ -440,4 +440,4 @@ namespace AsyncExampleWPF_HttpClient_WhenAll
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>
-- [Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (C#)](./walkthrough-accessing-the-web-by-using-async-and-await.md)
+- [Návod: přístup k webu pomocí modifikátoru Async a operátoru Await (C#)](./walkthrough-accessing-the-web-by-using-async-and-await.md)

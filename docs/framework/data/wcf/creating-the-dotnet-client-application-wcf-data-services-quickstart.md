@@ -5,16 +5,16 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 41ade767-eeab-437d-9121-9797e8fb8045
-ms.openlocfilehash: 9995a509bf997298d991a1f66cfdf3cae6cd0395
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 4beaba24e42b15ebc45ece6e5319a2b14df54ab6
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70790965"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975385"
 ---
 # <a name="creating-the-net-framework-client-application-wcf-data-services-quickstart"></a>Vytvoření klientské aplikace .NET Framework (WCF Data Services rychlý Start)
 
-Toto je konečný úkol pro rychlý Start WCF Data Services. V této úloze přidáte do řešení konzolovou aplikaci, do této nové klientské aplikace přidáte odkaz na [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informační kanál a získáte přístup k datovému kanálu OData z klientské aplikace pomocí generovaných tříd klientské datové služby a klientských knihoven. .
+Toto je konečný úkol pro rychlý Start WCF Data Services. V této úloze přidáte konzolovou aplikaci do řešení, přidáte odkaz na informační kanál OData (Open Data Protocol) do této nové klientské aplikace a získáte přístup k datovému kanálu OData z klientské aplikace pomocí generovaných tříd klientských datových služeb a klienta. Knihovna.
 
 > [!NOTE]
 > Klientská aplikace založená na .NET Framework není nutná pro přístup k datovému kanálu. Datová služba je k dispozici pro libovolnou komponentu aplikace, která využívá datový kanál OData. Další informace najdete v tématu [použití datové služby v klientské aplikaci](using-a-data-service-in-a-client-application-wcf-data-services.md).
@@ -25,7 +25,7 @@ Toto je konečný úkol pro rychlý Start WCF Data Services. V této úloze při
 
 2. V levém podokně vyberte **nainstalované** > [ **C# Visual** nebo **Visual Basic**] > **Windows Desktop**a pak vyberte šablonu **aplikace WPF** .
 
-3. Jako `NorthwindClient` název projektu zadejte a klikněte na **OK**.
+3. Jako název projektu zadejte `NorthwindClient` a pak klikněte na **OK**.
 
 4. Otevřete soubor MainWindow. XAML a nahraďte kód XAML následujícím kódem:
 
@@ -33,11 +33,11 @@ Toto je konečný úkol pro rychlý Start WCF Data Services. V této úloze při
 
 ## <a name="to-add-a-data-service-reference-to-the-project"></a>Přidání odkazu na datovou službu do projektu
 
-1. V **Průzkumník řešení**klikněte pravým tlačítkem na projekt NorthwindClient, klikněte na **Přidat** > **odkaz na službu**a pak klikněte na **Vyhledat**.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem na projekt NorthwindClient, klikněte na **Přidat** > **odkaz na službu**a pak klikněte na **zjistit**.
 
      Tím se zobrazí datová služba Northwind, kterou jste vytvořili v prvním úkolu.
 
-2. Do textového pole **obor názvů** zadejte `Northwind`a klikněte na **OK**.
+2. Do textového pole **obor názvů** zadejte `Northwind`a pak klikněte na **OK**.
 
      Tím se do projektu přidá nový soubor kódu, který obsahuje datové třídy, které slouží k přístupu k prostředkům datové služby a k interakci s nimi. Datové třídy jsou vytvořeny v oboru názvů `NorthwindClient.Northwind`.
 
@@ -47,15 +47,15 @@ Toto je konečný úkol pro rychlý Start WCF Data Services. V této úloze při
 
 2. V dialogovém okně **Přidat odkaz** klikněte na kartu **.NET** , vyberte sestavení System. data. Services. Client. dll a potom klikněte na tlačítko **OK**.
 
-3. V **Průzkumník řešení** v části **NorthwindClient**otevřete znakovou stránku souboru MainWindow. XAML a přidejte následující `using` příkaz (`Imports` v Visual Basic).
+3. V **Průzkumník řešení** v části **NorthwindClient**otevřete znakovou stránku souboru MainWindow. XAML a přidejte následující příkaz `using` (`Imports` v Visual Basic).
 
     [!code-csharp[Astoria Quickstart Client#Using](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_quickstart_client/cs/window1.xaml.cs#using)]
     [!code-vb[Astoria Quickstart Client#Using](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_quickstart_client/vb/window1.xaml.vb#using)]
 
-4. Vložte následující kód, který odešle dotaz na datovou službu a vytvoří vazby výsledku k <xref:System.Data.Services.Client.DataServiceCollection%601> `MainWindow` do třídy:
+4. Vložte následující kód, který odešle dotaz na datovou službu a vytvoří vazby výsledku k <xref:System.Data.Services.Client.DataServiceCollection%601> do `MainWindow` třídy:
 
     > [!NOTE]
-    > Je nutné nahradit název `localhost:12345` hostitele serverem a portem, který je hostitelem vaší instance datové služby Northwind.
+    > Název hostitele musíte nahradit `localhost:12345` serverem a portem, který je hostitelem vaší instance datové služby Northwind.
 
      [!code-csharp[Astoria Quickstart Client#QueryCode](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_quickstart_client/cs/window1.xaml.cs#querycode)]
      [!code-vb[Astoria Quickstart Client#QueryCode](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_quickstart_client/vb/window1.xaml.vb#querycode)]

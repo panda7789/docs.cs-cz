@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: použití implicitního typu lokálních proměnných a polí ve výrazu dotazu – C# Průvodce programováním'
+title: Použití implicitního typu lokálních proměnných a polí ve výrazu dotazu – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - implicitly-typed local variables [C#], how to use
 ms.assetid: 6b7354d2-af79-427a-b6a8-f74eb8fd0b91
-ms.openlocfilehash: 3cb47f9e80e1fc067a8bac860aa06f3e1860d33d
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: c6022aaa4c37bc0c11c09375d3637d8287fce61a
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73419323"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73970426"
 ---
-# <a name="how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression-c-programming-guide"></a>Postupy: Použití implicitně typovaných lokálních proměnných a polí ve výrazu dotazu (Průvodce programováním v C#)
+# <a name="how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression-c-programming-guide"></a>Použití implicitního typu lokálních proměnných a polí ve výrazu dotazu (C# Průvodce programováním)
 Můžete použít implicitně typované lokální proměnné, kdykoli chcete, aby kompilátor určil typ místní proměnné. Pro uložení anonymních typů, které se často používají ve výrazech dotazů, je nutné použít implicitní typové lokální proměnné. Následující příklady ilustrují volitelná i požadovaná použití implicitních typů místních proměnných v dotazech.  
   
  Implicitně typované lokální proměnné jsou deklarovány pomocí klíčového slova [var](../../language-reference/keywords/var.md) . Další informace naleznete v tématu [implicitně typované lokální proměnné](./implicitly-typed-local-variables.md) a [implicitně typované pole](../arrays/implicitly-typed-arrays.md).  

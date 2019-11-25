@@ -10,12 +10,12 @@ helpviewer_keywords:
 - documents [WPF], types of
 - documents [WPF], browser-viewable
 ms.assetid: 6e8db7bc-050a-4070-aa72-bb8c46e87ff8
-ms.openlocfilehash: fbd4df8820073a3cdf2a8d5aad9c56bd7ca751df
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 36704d56b66de977ac7f63fd7e766c925ef9023b
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460525"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73974688"
 ---
 # <a name="documents-in-wpf"></a>Dokumenty v platformě WPF
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] nabízí široké spektrum funkcí dokumentu, které umožňují vytvářet obsah s vysokou přesností, který je navržený tak, aby byl snadněji přistupný a čtený než v předchozích generacích systému Windows. Kromě rozšířených možností a kvality [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] taky nabízí integrované služby pro zobrazení dokumentů, balení a zabezpečení. Toto téma poskytuje Úvod do [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] typů dokumentů a balení dokumentu.  
@@ -125,13 +125,13 @@ ms.locfileid: "73460525"
   
 <a name="XPS_Documents"></a>   
 ## <a name="xps-documents"></a>Dokumenty XPS  
- Dokument XPS (XML Paper Specification) je balíček, který obsahuje jeden nebo více pevných dokumentů společně se všemi prostředky a informacemi potřebnými pro vykreslování.  XPS je také nativní [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] formát souboru tiskové fronty.  <xref:System.Windows.Xps.Packaging.XpsDocument> je uložený ve standardní datové sadě ZIP a může zahrnovat kombinaci XML a binárních komponent, jako jsou obrázky a soubory písem. [PackageRelationships](#PackageRelationships) slouží k definování závislostí mezi obsahem a prostředky potřebnými k úplnému vygenerování dokumentu.  <xref:System.Windows.Xps.Packaging.XpsDocument> design poskytuje jedno řešení dokumentu s vysokou přesností, které podporuje více použití:  
+ Dokument XPS (XML Paper Specification) je balíček, který obsahuje jeden nebo více pevných dokumentů společně se všemi prostředky a informacemi potřebnými pro vykreslování.  XPS je také nativní formát souboru zařazování tisku ve Windows Vista.  <xref:System.Windows.Xps.Packaging.XpsDocument> je uložený ve standardní datové sadě ZIP a může zahrnovat kombinaci XML a binárních komponent, jako jsou obrázky a soubory písem. [PackageRelationships](#PackageRelationships) slouží k definování závislostí mezi obsahem a prostředky potřebnými k úplnému vygenerování dokumentu.  <xref:System.Windows.Xps.Packaging.XpsDocument> design poskytuje jedno řešení dokumentu s vysokou přesností, které podporuje více použití:  
   
 - Čtení, zápis a ukládání obsahu a prostředků s pevným dokumentem jako jednoho, přenosného a snadno distribuovaného souboru.  
   
 - Zobrazení dokumentů v aplikaci prohlížeč XPS.  
   
-- Probíhá výstup dokumentů do nativního formátu výstupu tiskové fronty [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)].  
+- Probíhá výstup dokumentů v nativním výstupním formátu tiskové fronty systému Windows Vista.  
   
 - Směrování dokumentů přímo do tiskárny kompatibilní s XPS.  
   

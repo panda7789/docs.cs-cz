@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Visual C# compiler
 - Visual C#, compiler options
 ms.assetid: d3403556-1816-4546-a782-e8223a772e44
-ms.openlocfilehash: dab91ddd1f2b9c91560329eeb1c51ca7f6f175bd
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 787f9c5fff79eb67e2d74043782532c1fc4034b5
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73455244"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73972751"
 ---
 # <a name="c-compiler-options"></a>Možnosti kompilátoru C#
 
@@ -29,7 +29,7 @@ V sadě Visual Studio jste v souboru *Web. config* nastavili možnosti kompilát
 
 - [Sestavování z příkazového řádku pomocí CSc. exe](command-line-building-with-csc-exe.md) Informace o vytvoření vizuální C# aplikace z příkazového řádku.
 
-- [Postupy: nastavení proměnných prostředí pro příkazový řádek sady Visual Studio](how-to-set-environment-variables-for-the-visual-studio-command-line.md) Popisuje kroky, jak spustit *vsvars32. bat* pro povolení sestavení příkazového řádku.
+- [Postup nastavení proměnných prostředí pro příkazový řádek sady Visual Studio](how-to-set-environment-variables-for-the-visual-studio-command-line.md) Popisuje kroky, jak spustit *vsvars32. bat* pro povolení sestavení příkazového řádku.
 
 - [Možnosti kompilátoru uvedené podle kategorie C# ](listed-by-category.md) Seznam kategorií možností kompilátoru.
 

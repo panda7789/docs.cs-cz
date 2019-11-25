@@ -7,32 +7,20 @@ helpviewer_keywords:
 ms.assetid: 167a4459-bb6e-476c-9046-7920880f2bb5
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 48e1c2271d6d011296d347e7d74fb363cc4d8527
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: fd29d07b6253cb8c177cc1e8854435ce0079b520
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834555"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73974914"
 ---
 # <a name="method-etw-events"></a>Události Trasování událostí pro Windows metod
 
-<a name="top"></a>Tyto události shromažďují informace, které jsou specifické pro metody. Datová část těchto událostí je požadována pro rozlišení symbolu. Kromě toho tyto události poskytují užitečné informace, jako je počet volání metody.
+Tyto události shromažďují informace, které jsou specifické pro metody. Datová část těchto událostí je požadována pro rozlišení symbolu. Kromě toho tyto události poskytují užitečné informace, jako je počet volání metody.
 
 Všechny události metody mají úroveň "informativní" (4). Všechny podrobné události metody mají úroveň verbose (5).
 
-Všechny události metody jsou vyvolány klíčovým slovem `JITKeyword` (0x10) nebo klíčovým slovem `NGenKeyword` (0x20) pod poskytovatelem modulu runtime nebo `JitRundownKeyword` (0x10) nebo `NGENRundownKeyword` (0x20) pod poskytovatelem doběhu.
-
-Události metody CLR jsou dále rozděleny na následující:
-
-- [Události metody CLR](#clr_method_events)
-
-- [Události značky metody CLR](#clr_method_marker_events)
-
-- [Podrobná událost metody CLR](#clr_method_verbose_events)
-
-- [Událost MethodJittingStarted](#methodjittingstarted_event)
-
-<a name="clr_method_events"></a>
+Všechny události metody jsou vyvolány klíčovým slovem `JITKeyword` (0x10) nebo klíčovým slovem `NGenKeyword` (0x20) pod poskytovatelem modulu runtime, nebo `JitRundownKeyword` (0x10) nebo `NGENRundownKeyword` (0x20) pod poskytovatelem doběhu.
 
 ## <a name="clr-method-events"></a>Události metody CLR
 
@@ -56,7 +44,7 @@ Následující tabulka uvádí informace o událostech:
 
 Následující tabulka ukazuje data události:
 
-|Název pole|Datový typ|Popis|
+|název pole|Datový typ|Popis|
 |----------------|---------------|-----------------|
 |MethodID|Win: UInt64|Jedinečný identifikátor metody V případě pomocných metod JIT je tato metoda nastavena na počáteční adresu metody.|
 |ModuleID|Win: UInt64|Identifikátor modulu, ke kterému patří tato metoda (0 pro pomocníky JIT.)|
@@ -66,13 +54,9 @@ Následující tabulka ukazuje data události:
 |MethodFlags|Win: UInt32|0x1: dynamická metoda.<br /><br /> 0x2: obecná metoda.<br /><br /> 0x4: metoda kódu kompilovaná JIT (jinak kód nativní bitové kopie NGEN).<br /><br /> 0x8: pomocná metoda|
 |ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|
 
-[Zpět na začátek](#top)
-
-<a name="clr_method_marker_events"></a>
-
 ## <a name="clr-method-marker-events"></a>Události značky metody CLR
 
-Tyto události jsou vyvolány pouze pod poskytovatelem doběhu. Označují konec výčtu metod během počátečního nebo koncového doběhu. (To znamená, že jsou vyvolány, pokud je povoleno klíčové slovo `NGENRundownKeyword`, `JitRundownKeyword`, `LoaderRundownKeyword` nebo `AppDomainResourceManagementRundownKeyword`.)
+Tyto události jsou vyvolány pouze pod poskytovatelem doběhu. Označují konec výčtu metod během počátečního nebo koncového doběhu. (To znamená, že jsou vyvolány, pokud je povoleno klíčové slovo `NGENRundownKeyword`, `JitRundownKeyword`, `LoaderRundownKeyword`nebo `AppDomainResourceManagementRundownKeyword`.)
 
 Klíčové slovo a úroveň jsou uvedeny v následující tabulce:
 
@@ -93,13 +77,9 @@ Následující tabulka uvádí informace o událostech:
 
 Následující tabulka ukazuje data události:
 
-|Název pole|Datový typ|Popis|
+|název pole|Datový typ|Popis|
 |----------------|---------------|-----------------|
 |ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|
-
-[Zpět na začátek](#top)
-
-<a name="clr_method_verbose_events"></a>
 
 ## <a name="clr-method-verbose-events"></a>Podrobná událost metody CLR
 
@@ -123,7 +103,7 @@ Následující tabulka uvádí informace o událostech:
 
 Následující tabulka ukazuje data události:
 
-|Název pole|Datový typ|Popis|
+|název pole|Datový typ|Popis|
 |----------------|---------------|-----------------|
 |MethodID|Win: UInt64|Jedinečný identifikátor metody V případě pomocných metod JIT nastavte na počáteční adresu metody.|
 |ModuleID|Win: UInt64|Identifikátor modulu, ke kterému patří tato metoda (0 pro pomocníky JIT.)|
@@ -135,10 +115,6 @@ Následující tabulka ukazuje data události:
 |MethodName|Win: UnicodeString|Úplný název třídy přidružený k metodě|
 |MethodSignature|Win: UnicodeString|Podpis metody (čárkami oddělený seznam názvů typů)|
 |ClrInstanceID|Win: UInt16|Jedinečné ID pro instanci CLR nebo CoreCLR.|
-
-[Zpět na začátek](#top)
-
-<a name="methodjittingstarted_event"></a>
 
 ## <a name="methodjittingstarted-event"></a>Událost MethodJittingStarted
 
@@ -159,7 +135,7 @@ Následující tabulka uvádí informace o událostech:
 
 Následující tabulka ukazuje data události:
 
-|Název pole|Datový typ|Popis|
+|název pole|Datový typ|Popis|
 |----------------|---------------|-----------------|
 |MethodID|Win: UInt64|Jedinečný identifikátor metody|
 |ModuleID|Win: UInt64|Identifikátor modulu, ke kterému patří tato metoda|

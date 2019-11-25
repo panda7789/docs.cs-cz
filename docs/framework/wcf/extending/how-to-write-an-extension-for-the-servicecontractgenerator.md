@@ -2,62 +2,62 @@
 title: 'Postupy: Vytvoření rozšíření pro třídu ServiceContractGenerator'
 ms.date: 03/30/2017
 ms.assetid: 876ca823-bd16-4bdf-9e0f-02092df90e51
-ms.openlocfilehash: af23babd9255c45b9fa89b5c167de6960f0f690e
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 68b380a40448f21ba770aa47c7188b818fa8f9e7
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70855720"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975882"
 ---
 # <a name="how-to-write-an-extension-for-the-servicecontractgenerator"></a>Postupy: Vytvoření rozšíření pro třídu ServiceContractGenerator
-Toto téma popisuje, jak napsat rozšíření pro <xref:System.ServiceModel.Description.ServiceContractGenerator>. To lze provést implementací <xref:System.ServiceModel.Description.IOperationContractGenerationExtension> rozhraní v chování operace nebo <xref:System.ServiceModel.Description.IServiceContractGenerationExtension> implementací rozhraní v chování kontraktu. Toto téma ukazuje, jak implementovat <xref:System.ServiceModel.Description.IServiceContractGenerationExtension> rozhraní v chování kontraktu.  
+Toto téma popisuje, jak napsat rozšíření pro <xref:System.ServiceModel.Description.ServiceContractGenerator>. To lze provést implementací rozhraní <xref:System.ServiceModel.Description.IOperationContractGenerationExtension> v chování operace nebo implementací rozhraní <xref:System.ServiceModel.Description.IServiceContractGenerationExtension> v chování kontraktu. Toto téma ukazuje, jak implementovat rozhraní <xref:System.ServiceModel.Description.IServiceContractGenerationExtension> pro chování kontraktu.  
   
- Vygeneruje kontrakty služby, typy klientů a konfigurace klienta z <xref:System.ServiceModel.Description.ServiceEndpoint>instancí <xref:System.ServiceModel.Description.ContractDescription>, a <xref:System.ServiceModel.Channels.Binding>. <xref:System.ServiceModel.Description.ServiceContractGenerator> Obvykle importujete <xref:System.ServiceModel.Description.ServiceEndpoint>, <xref:System.ServiceModel.Description.ContractDescription>a <xref:System.ServiceModel.Channels.Binding> instance z metadat služby a pak tyto instance použít k vygenerování kódu pro volání služby. V tomto příkladu <xref:System.ServiceModel.Description.IWsdlImportExtension> se implementace používá ke zpracování poznámek WSDL a následné přidání rozšíření pro generování kódu do importovaných smluv za účelem generování komentářů k vygenerovanému kódu.  
+ <xref:System.ServiceModel.Description.ServiceContractGenerator> generuje kontrakty služby, typy klientů a konfigurace klienta z <xref:System.ServiceModel.Description.ServiceEndpoint>, <xref:System.ServiceModel.Description.ContractDescription>a instancí <xref:System.ServiceModel.Channels.Binding>. Obvykle importujete instance <xref:System.ServiceModel.Description.ServiceEndpoint>, <xref:System.ServiceModel.Description.ContractDescription>a <xref:System.ServiceModel.Channels.Binding> z metadat služby a pak tyto instance použít k vygenerování kódu pro volání služby. V tomto příkladu se <xref:System.ServiceModel.Description.IWsdlImportExtension> implementace používá ke zpracování poznámek WSDL a pak přidání rozšíření pro generování kódu do importovaných smluv za účelem generování komentářů k vygenerovanému kódu.  
   
 ### <a name="to-write-an-extension-for-the-servicecontractgenerator"></a>Zápis rozšíření pro ServiceContractGenerator  
   
-1. Implementujte <xref:System.ServiceModel.Description.IServiceContractGenerationExtension>. Chcete-li upravit vygenerovanou kontrakt služby, <xref:System.ServiceModel.Description.ServiceContractGenerationContext> použijte instanci předanou <xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%28System.ServiceModel.Description.ServiceContractGenerationContext%29> metodě.  
+1. Implementujte <xref:System.ServiceModel.Description.IServiceContractGenerationExtension>. Chcete-li upravit vygenerovanou kontrakt služby, použijte instanci <xref:System.ServiceModel.Description.ServiceContractGenerationContext> předanou do metody <xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%28System.ServiceModel.Description.ServiceContractGenerationContext%29>.  
   
     ```csharp
     public void GenerateContract(ServiceContractGenerationContext context)  
     {  
         Console.WriteLine("In generate contract.");  
-    context.ContractType.Comments.AddRange(Formatter.FormatComments(commentText));  
+        context.ContractType.Comments.AddRange(Formatter.FormatComments(commentText));  
     }  
     ```  
   
-2. Implementovat <xref:System.ServiceModel.Description.IWsdlImportExtension> na stejnou třídu. Metoda může zpracovat konkrétní rozšíření WSDL (anotace WSDL v tomto případě) přidáním rozšíření pro generování kódu do importované <xref:System.ServiceModel.Description.ContractDescription> instance. <xref:System.ServiceModel.Description.IWsdlImportExtension.ImportContract%28System.ServiceModel.Description.WsdlImporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29>  
+2. Implementujte <xref:System.ServiceModel.Description.IWsdlImportExtension> stejné třídy. Metoda <xref:System.ServiceModel.Description.IWsdlImportExtension.ImportContract%28System.ServiceModel.Description.WsdlImporter%2CSystem.ServiceModel.Description.WsdlContractConversionContext%29> může zpracovat konkrétní rozšíření WSDL (poznámky WSDL v tomto případě) přidáním rozšíření pro generování kódu do importované instance <xref:System.ServiceModel.Description.ContractDescription>.  
   
     ```csharp
-    public void ImportContract(WsdlImporter importer, WsdlContractConversionContext context)  
-       {  
-                // Contract documentation  
-             if (context.WsdlPortType.Documentation != null)  
-             {  
-                    context.Contract.Behaviors.Add(new WsdlDocumentationImporter(context.WsdlPortType.Documentation));  
-             }  
-             // Operation documentation  
-             foreach (Operation operation in context.WsdlPortType.Operations)  
-             {  
-                if (operation.Documentation != null)  
-                {  
-                   OperationDescription operationDescription = context.Contract.Operations.Find(operation.Name);  
-                   if (operationDescription != null)  
-                   {  
-                            operationDescription.Behaviors.Add(new WsdlDocumentationImporter(operation.Documentation));  
-                   }  
-                }  
-             }  
-          }  
-          public void BeforeImport(ServiceDescriptionCollection wsdlDocuments, XmlSchemaSet xmlSchemas, ICollection<XmlElement> policy)   
-            {  
-                Console.WriteLine("BeforeImport called.");  
-            }  
-  
-          public void ImportEndpoint(WsdlImporter importer, WsdlEndpointConversionContext context)   
-            {  
-                Console.WriteLine("ImportEndpoint called.");  
-            }  
+    public void ImportContract(WsdlImporter importer, WsdlContractConversionContext context)
+    {
+        // Contract documentation
+        if (context.WsdlPortType.Documentation != null)
+        {
+            context.Contract.Behaviors.Add(new WsdlDocumentationImporter(context.WsdlPortType.Documentation));
+        }
+        // Operation documentation
+        foreach (Operation operation in context.WsdlPortType.Operations)
+        {
+            if (operation.Documentation != null)
+            {
+                OperationDescription operationDescription = context.Contract.Operations.Find(operation.Name);
+                if (operationDescription != null)
+                {
+                    operationDescription.Behaviors.Add(new WsdlDocumentationImporter(operation.Documentation));
+                }
+            }
+        }
+    }
+    public void BeforeImport(ServiceDescriptionCollection wsdlDocuments, XmlSchemaSet xmlSchemas, ICollection<XmlElement> policy)
+    {
+        Console.WriteLine("BeforeImport called.");
+    }
+
+    public void ImportEndpoint(WsdlImporter importer, WsdlEndpointConversionContext context)
+    {
+        Console.WriteLine("ImportEndpoint called.");
+    }
     ```  
   
 3. Přidejte nástroj WSDL import do konfigurace klienta.  
@@ -70,24 +70,25 @@ Toto téma popisuje, jak napsat rozšíření pro <xref:System.ServiceModel.Desc
     </metadata>  
     ```  
   
-4. V klientském kódu vytvořte `MetadataExchangeClient` volání `GetMetadata`a.  
+4. V klientském kódu vytvořte `MetadataExchangeClient` a zavolejte `GetMetadata`.  
   
-    ```csharp  
-    MetadataExchangeClient mexClient = new MetadataExchangeClient(metadataAddress);  
+    ```csharp
+    var mexClient = new MetadataExchangeClient(metadataAddress);  
     mexClient.ResolveMetadataReferences = true;  
     MetadataSet metaDocs = mexClient.GetMetadata();  
     ```  
   
-5. Vytvořte volání `WsdlImporter` `ImportAllContracts`a.  
+5. Vytvořte `WsdlImporter` a zavolejte `ImportAllContracts`.  
   
-    ```csharp  
-    WsdlImporter importer = new WsdlImporter(metaDocs);            System.Collections.ObjectModel.Collection<ContractDescription> contracts = importer.ImportAllContracts();  
+    ```csharp
+    var importer = new WsdlImporter(metaDocs);
+    System.Collections.ObjectModel.Collection<ContractDescription> contracts = importer.ImportAllContracts();  
     ```  
   
-6. Vytvořte a zavolejte `GenerateServiceContractType` pro každou kontrakt. `ServiceContractGenerator`  
+6. Vytvořte `ServiceContractGenerator` a zavolejte `GenerateServiceContractType` pro každou smlouvu.  
   
-    ```csharp  
-    ServiceContractGenerator generator = new ServiceContractGenerator();  
+    ```csharp
+    var generator = new ServiceContractGenerator();  
     foreach (ContractDescription contract in contracts)  
     {  
        generator.GenerateServiceContractType(contract);  
@@ -96,9 +97,9 @@ Toto téma popisuje, jak napsat rozšíření pro <xref:System.ServiceModel.Desc
        throw new Exception("There were errors during code compilation.");  
     ```  
   
-7. <xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%28System.ServiceModel.Description.ServiceContractGenerationContext%29>se nazývá automaticky pro každé chování kontraktu v dané kontraktu, <xref:System.ServiceModel.Description.IServiceContractGenerationExtension>který implementuje. Tato metoda pak může změnit <xref:System.ServiceModel.Description.ServiceContractGenerationContext> předanou funkci. V tomto příkladu jsou přidány komentáře.  
+7. <xref:System.ServiceModel.Description.IServiceContractGenerationExtension.GenerateContract%28System.ServiceModel.Description.ServiceContractGenerationContext%29> se zavolá automaticky pro každé chování kontraktu u dané smlouvy, která implementuje <xref:System.ServiceModel.Description.IServiceContractGenerationExtension>. Tato metoda pak může změnit předanou <xref:System.ServiceModel.Description.ServiceContractGenerationContext>. V tomto příkladu jsou přidány komentáře.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Metadata](../feature-details/metadata.md)
-- [Postupy: Importovat vlastní WSDL](how-to-import-custom-wsdl.md)
+- [Postupy: Import vlastního WSDL](how-to-import-custom-wsdl.md)

@@ -5,12 +5,12 @@ ms.date: 04/18/2019
 helpviewer_keywords:
 - versions, .NET Framework
 ms.assetid: f75a72de-e2f2-4a7a-9574-3f278684ea90
-ms.openlocfilehash: eadb456bafb1703c687e73c6aecc81c9dccae72c
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: bf0b4e5f85da48ad5d7cb08efd09ff925b6b04d9
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739564"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975545"
 ---
 # <a name="net-framework-versions-and-dependencies"></a>.NET Framework verze a závislosti
 
@@ -64,7 +64,7 @@ V tabulce jsou verze .NET Framework nainstalované na verzích operačního syst
   > [!NOTE]
   > .NET Framework 4.5.1 a .NET Framework 4,5 se tady používají jenom jako příklady. Popsaná zásada se vztahuje na všechny aplikace, které cílí na novější verzi .NET Framework než ta, která je nainstalovaná v systému, ve kterém je spuštěná.  
   
-Některé změny v .NET Framework mohou vyžadovat změny kódu vaší aplikace. Pokud používáte existující aplikaci v .NET Framework 4,5 nebo novějším, přečtěte si článek [Kompatibilita aplikací](application-compatibility.md). Informace o instalaci aktuální verze najdete v tématu [instalace .NET Framework pro vývojáře](../install/guide-for-developers.md). Informace o podpoře pro .NET Framework najdete v tématu [Zásady životního cyklu podpory Microsoft .NET Framework](https://support.microsoft.com/help/17455/lifecycle-faq-net-framework) na webu Podpora Microsoftu.  
+Některé změny v .NET Framework mohou vyžadovat změny kódu vaší aplikace. než začnete používat stávající aplikace s .NET Framework 4,5 nebo novějšími verzemi, podívejte se na [kompatibilitu aplikací](application-compatibility.md) . Další informace o instalaci aktuální verze najdete v tématu [instalace .NET Framework pro vývojáře](../install/guide-for-developers.md). Informace o podpoře pro .NET Framework najdete v tématu [.NET Framework oficiální zásady podpory](https://dotnet.microsoft.com/platform/support/policy/dotnet-framework) na webu .NET.
   
 ## <a name="target-and-run-apps-for-older-versions"></a>Cílení a spouštění aplikací pro starší verze  
 
@@ -85,5 +85,5 @@ Kromě toho, pokud je vaše aplikace cílena na verzi 2,0, 3,0 nebo 3,5, mohou b
 ## <a name="see-also"></a>Viz také:
 
 - [Kompatibilita verzí](version-compatibility.md)
-- [Zásady životního cyklu podpory pro Microsoft .NET Framework](https://support.microsoft.com/help/17455/lifecycle-faq-net-framework)
+- [.NET Framework oficiálních zásad podpory](https://dotnet.microsoft.com/platform/support/policy/dotnet-framework)
 - [Řešení potíží se zablokovanými instalacemi a odinstalacemi rozhraní .NET Framework](../install/troubleshoot-blocked-installations-and-uninstallations.md)

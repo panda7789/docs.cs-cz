@@ -13,28 +13,28 @@ helpviewer_keywords:
 - constructs, substitutions
 - substitutions
 ms.assetid: d1f52431-1c7d-4dc6-8792-6b988256892e
-ms.openlocfilehash: 5934a342f653f294c07e00d38d51dae6b159dab9
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: db0e2234055c6869c4cf55196d9f3b62a6996c96
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122484"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73972066"
 ---
 # <a name="substitutions-in-regular-expressions"></a>Nahrazení v regulárních výrazech
-<a name="Top"></a>Náhrady jsou prvky jazyka, které jsou rozpoznávány pouze v rámci vzorů pro nahrazování. Pro definování celého textu nebo jeho části, která má nahradit odpovídající text ve vstupním řetězci, používají vzor regulárního výrazu. Vzor pro nahrazení se může skládat z jedné nebo několika substitucí spolu s literálními znaky. Vzory nahrazení jsou k dispozici pro přetížení metody <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType>, které mají `replacement` parametr a metodu <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType>. Metody nahradí odpovídající vzor vzorem, který je definován parametrem `replacement`.  
+Substituce jsou prvky jazyka, které jsou rozpoznány pouze v rámci vzorů pro nahrazení. Pro definování celého textu nebo jeho části, která má nahradit odpovídající text ve vstupním řetězci, používají vzor regulárního výrazu. Vzor pro nahrazení se může skládat z jedné nebo několika substitucí spolu s literálními znaky. Vzory nahrazení jsou k dispozici pro přetížení metody <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType>, které mají `replacement` parametr a metodu <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType>. Metody nahradí odpovídající vzor vzorem, který je definován parametrem `replacement`.  
   
  Rozhraní .NET Framework definuje prvky substituce uvedené v následující tabulce.  
   
 |Substituce|Popis|  
 |------------------|-----------------|  
-|$ *číslo*|Zahrnuje poslední podřetězec odpovídající zachytávající skupině, která je identifikována *číslem*, kde *Number* je desítková hodnota v řetězci pro nahrazení. Další informace najdete v tématu [Nahrazování číslované skupiny](#Numbered).|  
-|$ { *Name* }|Zahrnuje poslední podřetězec odpovídající pojmenované skupině, která je určena názvem `(?<`*název*`> )` v řetězci pro nahrazení. Další informace naleznete v tématu [nahrazování pojmenované skupiny](#Named).|  
-|$$|Zahrnuje jediný literál "$" v řetězci pro nahrazení. Další informace naleznete v tématu [nahrazování symbolu "$"](#DollarSign).|  
-|$&|Zahrnuje kopii celé shody v řetězci pro nahrazení. Další informace naleznete v tématu [Nahrazování celé shody](#EntireMatch).|  
-|$\`|Zahrnuje celý text vstupního řetězce před porovnáním v řetězci pro nahrazení. Další informace naleznete v tématu [nahrazování textu před porovnáváním](#BeforeMatch).|  
-|$'|Zahrnuje celý text vstupního řetězce po porovnání v řetězci pro nahrazení. Další informace naleznete v tématu [nahrazování textu po porovnávání](#AfterMatch).|  
-|$+|Zahrnuje poslední skupinu zachycenou v řetězci pro nahrazení. Další informace najdete v tématu [Nahrazování poslední zachycené skupiny](#LastGroup).|  
-|$_|Zahrnuje celý vstupní řetězec v řetězci pro nahrazení. Další informace naleznete v tématu [Nahrazování celého vstupního řetězce](#EntireString).|  
+|$ *číslo*|Zahrnuje poslední podřetězec odpovídající zachytávající skupině, která je identifikována *číslem*, kde *Number* je desítková hodnota v řetězci pro nahrazení. Další informace najdete v tématu [Nahrazování číslované skupiny](#substituting-a-numbered-group).|  
+|$ { *Name* }|Zahrnuje poslední podřetězec odpovídající pojmenované skupině, která je určena názvem `(?<`*název*`> )` v řetězci pro nahrazení. Další informace naleznete v tématu [nahrazování pojmenované skupiny](#substituting-a-named-group).|  
+|$$|Zahrnuje jediný literál "$" v řetězci pro nahrazení. Další informace naleznete v tématu [nahrazování symbolu "$"](#substituting-a--character).|  
+|$&|Zahrnuje kopii celé shody v řetězci pro nahrazení. Další informace naleznete v tématu [Nahrazování celé shody](#substituting-the-entire-match).|  
+|$\`|Zahrnuje celý text vstupního řetězce před porovnáním v řetězci pro nahrazení. Další informace naleznete v tématu [nahrazování textu před porovnáváním](#substituting-the-text-before-the-match).|  
+|$'|Zahrnuje celý text vstupního řetězce po porovnání v řetězci pro nahrazení. Další informace naleznete v tématu [nahrazování textu po porovnávání](#substituting-the-text-after-the-match).|  
+|$+|Zahrnuje poslední skupinu zachycenou v řetězci pro nahrazení. Další informace najdete v tématu [Nahrazování poslední zachycené skupiny](#substituting-the-last-captured-group).|  
+|$\_|Zahrnuje celý vstupní řetězec v řetězci pro nahrazení. Další informace naleznete v tématu [Nahrazování celého vstupního řetězce](#substituting-the-entire-input-string).|  
   
 ## <a name="substitution-elements-and-replacement-patterns"></a>Prvky substituce a vzory pro nahrazení  
  Substituce jsou jediné speciální konstrukce, které jsou rozpoznány ve vzorech pro nahrazení. Nejsou podporovány žádné jiné prvky jazyka regulárních výrazů, včetně řídicích znaků a tečky (`.`), která odpovídá jakémukoli znaku. Obdobně jsou prvky jazyka pro substituci rozpoznány jen ve vzorech pro nahrazení a nejsou nikdy platné ve vzorech regulárního výrazu.  
@@ -43,12 +43,11 @@ ms.locfileid: "73122484"
   
 > [!NOTE]
 > Pro funkce podobné vzoru pro nahrazení v rámci regulárního výrazu použijte zpětný odkaz. Další informace o zpětných odkazech naleznete v tématu [konstrukce zpětných odkazů](../../../docs/standard/base-types/backreference-constructs-in-regular-expressions.md).  
-  
-<a name="Numbered"></a>   
+
 ## <a name="substituting-a-numbered-group"></a>Nahrazování číslované skupiny  
  Prvek jazyka `$`*číslo* zahrnuje poslední podřetězec, který odpovídá skupině zachycení *Number* v řetězci pro nahrazení, kde *Number* je index zachytávající skupiny. Například vzor pro nahrazení `$1` označuje, že odpovídající podřetězec má být nahrazen první zachycenou skupinou. Další informace o číslovaných zachytávajících skupinách naleznete v tématu [Grouping konstrukcís](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
   
- Všechny číslice, které následují `$` jsou interpretovány jako patřící do skupiny *Number* . Pokud to však není vaším záměrem, můžete namísto toho nahradit pojmenovanou skupinu. Například můžete použít náhradní řetězec `${1}1` namísto `$11` definovat řetězec pro nahrazení jako hodnotu první zachycené skupiny spolu s číslem "1". Další informace naleznete v tématu [nahrazování pojmenované skupiny](#Named).  
+ Všechny číslice, které následují `$` jsou interpretovány jako patřící do skupiny *Number* . Pokud to však není vaším záměrem, můžete namísto toho nahradit pojmenovanou skupinu. Například můžete použít náhradní řetězec `${1}1` namísto `$11` definovat řetězec pro nahrazení jako hodnotu první zachycené skupiny spolu s číslem "1". Další informace naleznete v tématu [nahrazování pojmenované skupiny](#substituting-a-named-group).  
   
  Zachytávající skupiny, kterým nejsou explicitně přiřazeny názvy pomocí `(?<`*název*`>)` syntaxe, jsou číslovány zleva doprava od čísla 1. Pojmenované skupiny jsou rovněž číslovány zleva doprava. Číslování začíná číslem o jedno vyšším než index poslední nepojmenované skupiny. Například v regulárním výrazu `(\w)(?<digit>\d)`index `digit` pojmenované skupiny je 2.  
   
@@ -69,10 +68,7 @@ ms.locfileid: "73122484"
 |`[.,]?`|Porovná žádnou nebo jednu tečku či čárku.|  
 |`\d*`|Porovná žádnou nebo několik desítkových číslic.|  
 |`(\s?\d+[.,]?\d*)`|Porovná prázdný znak, následovaný jednou nebo několika desítkovými číslicemi, následovanými žádnou nebo jednou tečkou nebo čárkou, následovanou žádnou nebo několika desítkovými číslicemi. Toto je první zachytávající skupina. Vzhledem k tomu, že je vzor pro nahrazení `$1`, volání metody <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> nahradí celý odpovídající podřetězec touto zachycenou skupinou.|  
-  
- [Zpět na začátek](#Top)  
-  
-<a name="Named"></a>   
+
 ## <a name="substituting-a-named-group"></a>Nahrazování pojmenované skupiny  
  *Název* `${``}` prvek jazyka nahradí poslední podřetězec shodný se skupinou zachycení *názvu* , kde *název* je název zachytávající skupiny definované `(?<`*název*`>)` element Language. Další informace o pojmenovaných zachycujících skupinách naleznete v tématu [Grouping konstrukcís](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
   
@@ -95,10 +91,7 @@ ms.locfileid: "73122484"
 |`[.,]?`|Porovná žádnou nebo jednu tečku či čárku.|  
 |`\d*`|Porovná žádnou nebo několik desítkových číslic.|  
 |`(?<amount>\s?\d[.,]?\d*)`|Porovná prázdný znak, následovaný jednou nebo několika desítkovými číslicemi, následovanými žádnou nebo jednou tečkou nebo čárkou, následovanou žádnou nebo několika desítkovými číslicemi. Toto je zachytávající skupina s názvem `amount`. Vzhledem k tomu, že je vzor pro nahrazení `${amount}`, volání metody <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> nahradí celý odpovídající podřetězec touto zachycenou skupinou.|  
-  
- [Zpět na začátek](#Top)  
-  
-<a name="DollarSign"></a>   
+
 ## <a name="substituting-a--character"></a>Nahrazování znaku "$"  
  Nahrazení `$$` vloží literál "$" do nahrazeného řetězce.  
   
@@ -116,8 +109,7 @@ ms.locfileid: "73122484"
 |`\.`|Porovná tečku (oddělovač desetinných míst).|  
 |`(\d+)`|Porovná jednu nebo více desítkových číslic. Toto je třetí zachytávající skupina.|  
 |`(\.(\d+))?`|Porovná žádný nebo jeden výskyt tečky následované jednou nebo několika desítkovými číslicemi. Toto je druhá zachytávající skupina.|  
-  
-<a name="EntireMatch"></a>   
+
 ## <a name="substituting-the-entire-match"></a>Nahrazování celé shody  
  Nahrazení `$&` zahrnuje celou shodu v řetězci pro nahrazení. Často se používá k přidání podřetězce na začátek nebo konec porovnávaného řetězce. Například vzor pro nahrazení `($&)` přidá závorky na začátek a konec každé shody. Pokud se neshoduje, náhrada `$&` nemá žádný vliv.  
   
@@ -135,10 +127,7 @@ ms.locfileid: "73122484"
 |`$`|Porovná konec vstupního řetězce.|  
   
  Vzor pro nahrazení `"$&"` přidá literální znak citace na začátek a konec každé shody.  
-  
- [Zpět na začátek](#Top)  
-  
-<a name="BeforeMatch"></a>   
+
 ## <a name="substituting-the-text-before-the-match"></a>Nahrazování textu před porovnáváním  
  Nahrazení ``$` `` nahradí porovnávaný řetězec celým vstupním řetězcem před shodou. To znamená, že duplikuje vstupní řetězec až po shodu a odebírá odpovídající text. Jakýkoli text, který následuje za odpovídajícím textem, zůstane ve výsledném řetězci nezměněn. Pokud existuje více shod ve vstupním řetězci, je text pro nahrazení odvozen z původního vstupního řetězce, nikoli z řetězce, ve kterém byl text nahrazen předchozími shodami. \(příklad poskytuje ilustraci. Pokud se neshoduje,\) nahrazení ``$` `` nijak neovlivní.  
   
@@ -155,11 +144,8 @@ ms.locfileid: "73122484"
 |odst|5|aa1bb|aaaabb**aa1bb**cc3dd4ee5|  
 |3|8|aa1bb2cc|aaaabbaa1bbcc**aa1bb2cc**dd4ee5|  
 |4|odst|aa1bb2cc3dd|aaaabbaa1bbccaa1bb2ccdd**aa1bb2cc3dd**ee5|  
-|5|čtrnáct|aa1bb2cc3dd4ee|aaaabbaa1bbccaa1bb2ccddaa1bb2cc3ddee**aa1bb2cc3dd4ee**|  
-  
- [Zpět na začátek](#Top)  
-  
-<a name="AfterMatch"></a>   
+|5|čtrnáct|aa1bb2cc3dd4ee|aaaabbaa1bbccaa1bb2ccddaa1bb2cc3ddee**aa1bb2cc3dd4ee**| 
+
 ## <a name="substituting-the-text-after-the-match"></a>Nahrazování textu po shodě  
  Nahrazení `$'` nahradí odpovídající řetězec celým vstupním řetězcem po shodě. To znamená, že duplikuje vstupní řetězec po shodě a odebírá odpovídající text. Jakýkoli text, který předchází odpovídajícímu textu, zůstává ve výsledném řetězci nezměněn. Pokud se neshoduje, náhrada `$'` nemá žádný vliv.  
   
@@ -177,10 +163,7 @@ ms.locfileid: "73122484"
 |3|8|dd4ee5|aabb2cc3dd4ee5bbcc3dd4ee5cc**dd4ee5**dd4ee5|  
 |4|odst|ee5|aabb2cc3dd4ee5bbcc3dd4ee5ccdd4ee5dd**ee5**ee5|  
 |5|čtrnáct|<xref:System.String.Empty?displayProperty=nameWithType>|aabb2cc3dd4ee5bbcc3dd4ee5ccdd4ee5ddee5ee|  
-  
- [Zpět na začátek](#Top)  
-  
-<a name="LastGroup"></a>   
+
 ## <a name="substituting-the-last-captured-group"></a>Nahrazování poslední zachycené skupiny  
  Nahrazení `$+` nahradí porovnávaný řetězec poslední zachycenou skupinou. Pokud nejsou k dispozici žádné zachycené skupiny nebo pokud je hodnota poslední zachycené skupiny <xref:System.String.Empty?displayProperty=nameWithType>, náhrada `$+` nemá žádný vliv.  
   
@@ -198,10 +181,7 @@ ms.locfileid: "73122484"
 |`\s`|Porovná prázdný znak.|  
 |`\1`|Porovná první zachycenou skupinu.|  
 |`\b`|Ukončí porovnání na hranici slova.|  
-  
- [Zpět na začátek](#Top)  
-  
-<a name="EntireString"></a>   
+
 ## <a name="substituting-the-entire-input-string"></a>Nahrazování celého vstupního řetězce  
  Nahrazení `$_` nahradí porovnávaný řetězec celým vstupním řetězcem. To znamená, že odebere odpovídající text a nahradí jej celým řetězcem, včetně odpovídajícího textu.  
   

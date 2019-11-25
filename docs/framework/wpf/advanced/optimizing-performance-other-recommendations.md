@@ -11,12 +11,12 @@ helpviewer_keywords:
 - ScrollBarVisibility enumeration [WPF]
 - brushes [WPF], performance
 ms.assetid: d028cc65-7e97-4a4f-9859-929734eaf40d
-ms.openlocfilehash: cf621ab5f423e2465999b26f32489af1132bece0
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 6b4a5379145ebdffde0d5b76d8c7b9ab57261007
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582454"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73975793"
 ---
 # <a name="optimizing-performance-other-recommendations"></a>Optimalizace výkonu: Další doporučení
 <a name="introduction"></a>Toto téma poskytuje doporučení pro výkon kromě těch, které jsou pokryty v tématech v části [optimalizace výkonu aplikace WPF](optimizing-wpf-application-performance.md) .  
@@ -70,7 +70,7 @@ ms.locfileid: "72582454"
   
 <a name="FontCache"></a>   
 ## <a name="configure-font-cache-service-to-reduce-start-up-time"></a>Nakonfigurujte Cache Service písma, aby se snížil čas spuštění.  
- Služba mezipaměť písem [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sdílí data písma mezi [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikacemi. První spouštěná aplikace [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] spustí tuto službu, pokud služba ještě není spuštěná. Pokud používáte [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)], můžete nastavit službu mezipaměť písem "Windows Presentation Foundation (WPF) 3.0.0.0" z "Manual" (výchozí) na "automaticky (zpožděné spuštění)", aby se snížila doba počátečního spuštění [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací.  
+ Služba mezipaměť písem [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sdílí data písma mezi [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikacemi. První spouštěná aplikace [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] spustí tuto službu, pokud služba ještě není spuštěná. Pokud používáte systém Windows Vista, můžete Windows Presentation Foundation nastavit službu 3.0.0.0 (WPF) Font cache (WPF) z ručního (výchozí) na automaticky (zpožděné spuštění) a snížit tak počáteční dobu spuštění [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací.  
   
 ## <a name="see-also"></a>Viz také:
 
