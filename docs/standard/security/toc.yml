@@ -3,6 +3,8 @@
   items:
     - name: Klíčové koncepty zabezpečení
       href: key-security-concepts.md
+    - name: Dodržování standardu FIPS pro .NET Core
+      href: fips-compliance.md
     - name: Zabezpečení na základě rolí
       href: role-based-security.md
       items:

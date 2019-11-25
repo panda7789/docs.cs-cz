@@ -8,12 +8,12 @@ helpviewer_keywords:
 - type libraries
 - COM interop, importing type library
 ms.assetid: 4afd40c3-68f2-41c5-8ec1-4951bc148b9c
-ms.openlocfilehash: 7cca21630bd1dbd6896f882d058f288f603e95df
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f4f099dfaf5ff02edd3958d7eab9354ce727a239
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123896"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74281806"
 ---
 # <a name="how-to-generate-interop-assemblies-from-type-libraries"></a>Postupy: Generování sestavení vzájemné spolupráce z knihoven typů
 Modul pro [Import knihovny typů (Tlbimp. exe)](../tools/tlbimp-exe-type-library-importer.md) je nástroj příkazového řádku, který převede třídy coclass a rozhraní, které jsou obsaženy v knihovně typů modelu COM, na metadata. Tento nástroj vytvoří definiční sestavení a obor názvů pro informace o typu automaticky. Po zpřístupnění metadat třídy mohou spravované klienty vytvářet instance typu modelu COM a volat jeho metody, stejně jako by šlo o instanci rozhraní .NET. Nástroj Tlbimp. exe převede celou knihovnu typů na metadata najednou a nemůže generovat informace o typu pro podmnožinu typů definovaných v knihovně typů.  
@@ -29,13 +29,13 @@ Modul pro [Import knihovny typů (Tlbimp. exe)](../tools/tlbimp-exe-type-library
 ## <a name="example"></a>Příklad  
  Následující příkaz vytvoří sestavení LOANLib. dll v oboru názvů `Loanlib`.  
   
-```  
+```console  
 tlbimp Loanlib.tlb  
 ```  
   
  Následující příkaz vytvoří definiční sestavení se změněným názvem (LOANLib. dll).  
   
-```  
+```console  
 tlbimp LoanLib.tlb /out: LOANLib.dll  
 ```  
   

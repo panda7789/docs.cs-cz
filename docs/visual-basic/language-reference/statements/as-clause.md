@@ -1,5 +1,5 @@
 ---
-title: As – klauzule (Visual Basic)
+title: As – klauzule
 ms.date: 07/20/2015
 f1_keywords:
 - vb.as
@@ -8,18 +8,18 @@ helpviewer_keywords:
 - As keyword [Visual Basic], statement syntax
 - As keyword [Visual Basic]
 ms.assetid: b4281ec8-2be5-49f7-aae8-ae0a96265b0d
-ms.openlocfilehash: 4b0ebbb6a86cc2c71882427afd33e7d9e0fe7a04
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: cf1acbfeee150f1ea353ce134a4e94dab9928e8a
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61945090"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350172"
 ---
 # <a name="as-clause-visual-basic"></a>As – klauzule (Visual Basic)
-Zavádí `As` klauzuli, která určuje datový typ v příkazu deklarace nebo v seznamu omezení na parametr obecného typu.  
+Introduces an `As` clause, which identifies a data type in a declaration statement or a constraint list on a generic type parameter.  
   
 ## <a name="remarks"></a>Poznámky  
- `As` – Klíčové slovo lze použít v těchto kontextech:  
+ The `As` keyword can be used in these contexts:  
   
  [Klauzule Aggregate](../../../visual-basic/language-reference/queries/aggregate-clause.md)  
   
@@ -37,9 +37,9 @@ Zavádí `As` klauzuli, která určuje datový typ v příkazu deklarace nebo v 
   
  [Příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md)  
   
- [Pro... Next – příkazy](../../../visual-basic/language-reference/statements/for-next-statement.md)  
+ [For...Next Statements](../../../visual-basic/language-reference/statements/for-next-statement.md)  
   
- [Pro každý... Next – příkazy](../../../visual-basic/language-reference/statements/for-each-next-statement.md)  
+ [For Each...Next Statements](../../../visual-basic/language-reference/statements/for-each-next-statement.md)  
   
  [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)  
   
@@ -57,7 +57,7 @@ Zavádí `As` klauzuli, která určuje datový typ v příkazu deklarace nebo v 
   
  [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
- [Try... Catch... Finally – příkazy](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)  
+ [Try...Catch...Finally Statements](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -65,5 +65,5 @@ Zavádí `As` klauzuli, která určuje datový typ v příkazu deklarace nebo v 
 - [Datové typy](../../../visual-basic/programming-guide/language-features/data-types/index.md)
 - [Deklarace proměnné](../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
 - [Seznam typů](../../../visual-basic/language-reference/statements/type-list.md)
-- [Obecné typy v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [Generic Types in Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
 - [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)

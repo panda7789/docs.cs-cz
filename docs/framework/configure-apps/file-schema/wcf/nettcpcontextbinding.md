@@ -2,12 +2,12 @@
 title: <netTcpContextBinding>
 ms.date: 03/30/2017
 ms.assetid: 1d4715e1-5fff-4c3d-a226-18f21d0b30c4
-ms.openlocfilehash: 8e3feeea7d94048985c7bf864b95ee90f5f53798
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 360cdf76e013d085022f45eba5f8549e11cd68d3
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73736551"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74140711"
 ---
 # <a name="nettcpcontextbinding"></a>\<netTcpContextBinding >
 Určuje kontext pro <xref:System.ServiceModel.NetTcpBinding>, který vyžaduje, aby úroveň ochrany byla podepsána. ContextExchangeMechanism pro NetTcpContextBinding je SOAPHeader.  
@@ -76,11 +76,11 @@ Určuje kontext pro <xref:System.ServiceModel.NetTcpBinding>, který vyžaduje, 
 |Třída|Celé kladné číslo určující maximální velikost vyrovnávací paměti, která se používá k ukládání zpráv v paměti, v bajtech. Pokud je vyrovnávací paměť plná, nadbytečná data zůstanou v podkladovém soketu, dokud vyrovnávací paměť neuvolní. Tato hodnota nemůže být menší než `maxReceivedMessageSize` atribut. Výchozí hodnota je 65536. Další informace najdete v tématu <xref:System.ServiceModel.Configuration.NetNamedPipeBindingElement.MaxBufferSize%2A>.|  
 |maxConnections|Celé číslo, které určuje maximální počet odchozích a příchozích připojení, které služba vytvoří nebo přijme. Příchozí a odchozí připojení se počítají na základě zvláštního limitu určeného tímto atributem.<br /><br /> Příchozí připojení přesahující tento limit se zařadí do fronty, dokud nebude k dispozici mezera pod limitem.<br /><br /> Odchozí připojení přesahující limit se zařadí do fronty, dokud nebude k dispozici mezera pod limitem.<br /><br /> Výchozí hodnota je 10.|  
 |maxReceivedMessageSize|Celé kladné číslo určující maximální velikost zprávy v bajtech, včetně hlaviček, které lze přijmout na kanálu nakonfigurovaném pomocí této vazby. Odesílateli zprávy překračující tento limit obdrží chybu protokolu SOAP. Příjemce zprávu zruší a vytvoří záznam události v protokolu trasování. Výchozí hodnota je 65536.|  
-|name|Řetězec, který obsahuje název konfigurace vazby. Tato hodnota by měla být jedinečná, protože se používá jako identifikace vazby. Počínaje [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)]nejsou vazby a chování nutné mít název. Další informace o výchozích konfiguracích a Nameless vazbách a chování najdete v tématu [zjednodušená konfigurace](../../../wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../wcf/samples/simplified-configuration-for-wcf-services.md).|  
+|name|Řetězec, který obsahuje název konfigurace vazby. Tato hodnota by měla být jedinečná, protože se používá jako identifikace vazby. Počínaje .NET Framework 4 nejsou vazby a chování nutné mít název. Další informace o výchozích konfiguracích a Nameless vazbách a chování najdete v tématu [zjednodušená konfigurace](../../../wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../wcf/samples/simplified-configuration-for-wcf-services.md).|  
 |openTimeout|Hodnota <xref:System.TimeSpan>, která určuje časový interval poskytnutý pro dokončení operace otevření. Tato hodnota by měla být větší nebo rovna <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
 |portSharingEnabled|Logická hodnota, která určuje, zda je pro toto připojení povoleno sdílení portu TCP. Pokud je to `false`, každá vazba používá vlastní výhradní port. Toto nastavení je relevantní pouze pro služby, protože nejsou ovlivněni klienti.|  
 |receiveTimeout|Hodnota <xref:System.TimeSpan>, která určuje časový interval poskytnutý pro dokončení operace Receive. Tato hodnota by měla být větší nebo rovna <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:10:00.|  
-|SendTimeout|Hodnota <xref:System.TimeSpan>, která určuje časový interval poskytnutý pro dokončení operace odeslání. Tato hodnota by měla být větší nebo rovna <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
+|sendTimeout|Hodnota <xref:System.TimeSpan>, která určuje časový interval poskytnutý pro dokončení operace odeslání. Tato hodnota by měla být větší nebo rovna <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
 |transactionFlow|Logická hodnota určující, zda vazba podporuje tok dat WS-Transactions. Výchozí hodnota je `false`.|  
 |transactionProtocol|Určuje transakční protokol, který se má použít s touto vazbou. Platné hodnoty jsou<br /><br /> – OleTransactions<br />- WSAtomicTransactionOctober2004<br /><br /> Výchozí hodnota je OleTransactions. Tento atribut je typu <xref:System.ServiceModel.TransactionProtocol>.|  
 |Třídy TransferMode|Hodnota <xref:System.ServiceModel.TransferMode>, která určuje, zda jsou zprávy ukládány do vyrovnávací paměti nebo zpracovány nebo jsou požadavkem či odpovědí.|  

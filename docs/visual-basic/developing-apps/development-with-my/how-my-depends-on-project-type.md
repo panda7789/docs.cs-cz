@@ -1,59 +1,62 @@
 ---
-title: Závislost oboru názvů My na typu projektu (Visual Basic)
+title: Závislost oboru názvů My na typu projektu
 ms.date: 07/20/2015
 helpviewer_keywords:
 - _MYTYPE
 ms.assetid: c188b38e-bd9d-4121-9983-41ea6a94d28e
-ms.openlocfilehash: 989329da7dc57cd50b9ce6c88117152d0cb93d66
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 975b8feb001bcab22185be0a360b0512de099b79
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72775191"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74330270"
 ---
 # <a name="how-my-depends-on-project-type-visual-basic"></a>Závislost oboru názvů My na typu projektu (Visual Basic)
-`My` zpřístupňuje pouze objekty, které jsou vyžadovány konkrétním typem projektu. Například objekt `My.Forms` je k dispozici v aplikaci model Windows Forms, ale není k dispozici v konzolové aplikaci. Toto téma popisuje, které `My` objekty jsou k dispozici v různých typech projektů.  
+
+`My` exposes only those objects required by a particular project type. For example, the `My.Forms` object is available in a Windows Forms application but not available in a console application. This topic describes which `My` objects are available in different project types.  
   
-## <a name="my-in-windows-applications-and-web-sites"></a>My v aplikacích a webech Windows  
- `My` zveřejňuje pouze objekty, které jsou užitečné v aktuálním typu projektu. potlačí objekty, které nejsou k dispozici. Například následující obrázek ukazuje model objektu `My` v projektu model Windows Forms.  
+## <a name="my-in-windows-applications-and-web-sites"></a>My in Windows Applications and Web Sites  
+
+ `My` exposes only objects that are useful in the current project type; it suppresses objects that are not applicable. For example, the following image shows the `My` object model in a Windows Forms project.  
   
- ![Diagram, který zobrazuje model My Object ve model Windows Forms aplikaci.](./media/how-my-depends-on-project-type/my-object-model-windows-forms.png)  
+ ![Diagram that shows the My object model in a Windows Forms application.](./media/how-my-depends-on-project-type/my-object-model-windows-forms.png)  
   
- V projektu webu `My` zveřejňuje objekty, které jsou relevantní pro webový vývojář (například objekty `My.Request` a `My.Response`) při potlačení objektů, které nejsou relevantní (například objekt `My.Forms`). Na následujícím obrázku je znázorněn objektový model `My` v projektu webu:  
+ In a Web site project, `My` exposes objects that are relevant to a Web developer (such as the `My.Request` and `My.Response` objects) while suppressing objects that are not relevant (such as the `My.Forms` object). The following image shows the `My` object model in a Web site project:  
   
- ![Diagram, který zobrazuje objektový model ve webové aplikaci.](./media/how-my-depends-on-project-type/my-object-model-web.png)  
+ ![Diagram that shows the My object model in a Web application.](./media/how-my-depends-on-project-type/my-object-model-web.png)  
   
-## <a name="project-details"></a>Podrobnosti o projektu  
- Následující tabulka ukazuje, které `My` objekty jsou standardně povoleny pro osm typů projektů: aplikace systému Windows, knihovna tříd, konzolová aplikace, knihovna ovládacích prvků systému Windows, knihovna webového ovládacího prvku, služba systému Windows, prázdná a webový server.  
+## <a name="project-details"></a>Project Details  
+
+ The following table shows which `My` objects are enabled by default for eight project types: Windows application, class Library, console application, Windows control library, Web control library, Windows service, empty, and Web site.  
   
- Existují tři verze objektu `My.Application`, dvě verze objektu `My.Computer` a dvě verze objektu `My.User`; Podrobnosti o těchto verzích jsou uvedeny v poznámkách pod čarou po tabulce.  
+ There are three versions of the `My.Application` object, two versions of the `My.Computer` object, and two versions of `My.User` object; details about these versions are given in the footnotes after the table.  
   
-|Můj objekt|Aplikace systému Windows|Knihovna tříd|Konzolová aplikace|Knihovna ovládacích prvků Windows|Knihovna webového ovládacího prvku|Služba systému Windows|Obsahovat|Web|  
+|My Object|Windows Application|Knihovna tříd|Konzolová aplikace|Windows Control Library|Web Control Library|Služba systému Windows|Empty|Web Site|  
 |---|---|---|---|---|---|---|---|---|  
-|`My.Application`|**Ano** <sup>1</sup>|**Ano** <sup>2</sup>|**Ano** <sup>3</sup>|**Ano** <sup>2</sup>|Ne|**Ano** <sup>3</sup>|Ne|Ne|  
-|`My.Computer`|**Ano** <sup>4</sup>|**Ano** <sup>4</sup>|**Ano** <sup>4</sup>|**Ano** <sup>4</sup>|**Ano** <sup>5</sup>|**Ano** <sup>4</sup>|Ne|**Ano** <sup>5</sup>|  
-|`My.Forms`|**Ano**|Ne|Ne|**Ano**|Ne|Ne|Ne|Ne|  
-|`My.Log`|Ne|Ne|Ne|Ne|Ne|Ne|Ne|**Ano**|  
-|`My.Request`|Ne|Ne|Ne|Ne|Ne|Ne|Ne|**Ano**|  
-|`My.Resources`|**Ano**|**Ano**|**Ano**|**Ano**|**Ano**|**Ano**|Ne|Ne|  
-|`My.Response`|Ne|Ne|Ne|Ne|Ne|Ne|Ne|**Ano**|  
-|`My.Settings`|**Ano**|**Ano**|**Ano**|**Ano**|**Ano**|**Ano**|Ne|Ne|  
-|`My.User`|**Ano** <sup>6</sup>|**Ano** <sup>6</sup>|**Ano** <sup>6</sup>|**Ano** <sup>6</sup>|**Ano** <sup>7</sup>|**Ano** <sup>6</sup>|Ne|**Ano** <sup>7</sup>|  
-|`My.WebServices`|**Ano**|**Ano**|**Ano**|**Ano**|**Ano**|**Ano**|Ne|Ne|  
+|`My.Application`|**Yes** <sup>1</sup>|**Yes** <sup>2</sup>|**Yes** <sup>3</sup>|**Yes** <sup>2</sup>|Ne|**Yes** <sup>3</sup>|Ne|Ne|  
+|`My.Computer`|**Yes** <sup>4</sup>|**Yes** <sup>4</sup>|**Yes** <sup>4</sup>|**Yes** <sup>4</sup>|**Yes** <sup>5</sup>|**Yes** <sup>4</sup>|Ne|**Yes** <sup>5</sup>|  
+|`My.Forms`|**Yes**|Ne|Ne|**Yes**|Ne|Ne|Ne|Ne|  
+|`My.Log`|Ne|Ne|Ne|Ne|Ne|Ne|Ne|**Yes**|  
+|`My.Request`|Ne|Ne|Ne|Ne|Ne|Ne|Ne|**Yes**|  
+|`My.Resources`|**Yes**|**Yes**|**Yes**|**Yes**|**Yes**|**Yes**|Ne|Ne|  
+|`My.Response`|Ne|Ne|Ne|Ne|Ne|Ne|Ne|**Yes**|  
+|`My.Settings`|**Yes**|**Yes**|**Yes**|**Yes**|**Yes**|**Yes**|Ne|Ne|  
+|`My.User`|**Yes** <sup>6</sup>|**Yes** <sup>6</sup>|**Yes** <sup>6</sup>|**Yes** <sup>6</sup>|**Yes** <sup>7</sup>|**Yes** <sup>6</sup>|Ne|**Yes** <sup>7</sup>|  
+|`My.WebServices`|**Yes**|**Yes**|**Yes**|**Yes**|**Yes**|**Yes**|Ne|Ne|  
   
- <sup>1</sup> model Windows Forms verze `My.Application`. Je odvozena z verze konzoly nástroje (viz poznámku 3); přidává podporu pro interakci s okny aplikace a poskytuje model aplikace Visual Basic.  
+ <sup>1</sup> Windows Forms version of `My.Application`. Derives from the console version (see Note 3); adds support for interacting with the application's windows and provides the Visual Basic Application model.  
   
- <sup>2</sup> `My.Application` knihovny. Poskytuje základní funkce, které vyžaduje aplikace: poskytuje členům zápis do aplikačního protokolu a přístup k informacím o aplikaci.  
+ <sup>2</sup> Library version of `My.Application`. Provides the basic functionality needed by an application: provides members for writing to the application log and accessing application information.  
   
- <sup>3</sup> `My.Application` verze konzoly Je odvozena z verze knihovny (viz poznámku 2) a přidává další členy pro přístup k argumentům příkazového řádku aplikace a k informacím o nasazení ClickOnce.  
+ <sup>3</sup> Console version of `My.Application`. Derives from the library version (see Note 2), and adds additional members for accessing the application's command-line arguments and ClickOnce deployment information.  
   
- <sup>4</sup> `My.Computer` verze Windows Je odvozena z verze serveru (viz poznámku 5) a poskytuje přístup k užitečným objektům v klientském počítači, jako jsou klávesnice, obrazovka a myš.  
+ <sup>4</sup> Windows version of `My.Computer`. Derives from the Server version (see Note 5), and provides access to useful objects on a client machine, such as the keyboard, screen, and mouse.  
   
- <sup>5</sup> `My.Computer` verze serveru. Poskytuje základní informace o počítači, jako je třeba název, přístup k hodinám a tak dále.  
+ <sup>5</sup> Server version of `My.Computer`. Provides basic information about the computer, such as the name, access to the clock, and so on.  
   
- <sup>6</sup> `My.User` verze Windows Tento objekt je přidružen k aktuální identitě vlákna.  
+ <sup>6</sup> Windows version of `My.User`. This object is associated with the thread's current identity.  
   
- <sup>7</sup> webová verze `My.User`. Tento objekt je přidružený k identitě uživatele aktuálního požadavku HTTP aplikace.  
+ <sup>7</sup> Web version of `My.User`. This object is associated with the user identity of the application's current HTTP request.  
   
 ## <a name="see-also"></a>Viz také:
 

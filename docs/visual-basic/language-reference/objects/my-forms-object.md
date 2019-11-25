@@ -1,5 +1,5 @@
 ---
-title: My. Forms – objekt (Visual Basic)
+title: My.Forms – objekt
 ms.date: 07/20/2015
 f1_keywords:
 - My.Forms
@@ -7,68 +7,68 @@ f1_keywords:
 helpviewer_keywords:
 - My.Forms object
 ms.assetid: f6bff4e6-6769-4294-956b-037aa6106d2a
-ms.openlocfilehash: 9a0b3b9202972122aea4a7147d8d872486418264
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: db86704fdc8120ccac5f4489c80a515834ad888f
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72581873"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350363"
 ---
 # <a name="myforms-object"></a>My.Forms – objekt
 
-Poskytuje vlastnosti pro přístup k instanci každého formuláře Windows deklarovaného v aktuálním projektu.
+Provides properties for accessing an instance of each Windows form declared in the current project.
 
 ## <a name="remarks"></a>Poznámky
 
-Objekt `My.Forms` poskytuje instanci každého formuláře v aktuálním projektu. Název vlastnosti je stejný jako název formuláře, ke kterému vlastnost přistupuje.
+The `My.Forms` object provides an instance of each form in the current project. The name of the property is the same as the name of the form that the property accesses.
 
-K formulářům poskytovaným objektem `My.Forms` můžete přistupovat pomocí názvu formuláře bez kvalifikace. Vzhledem k tomu, že název vlastnosti je stejný jako název typu formuláře, umožňuje přístup k formuláři, jako by měl výchozí instanci. Například `My.Forms.Form1.Show` je ekvivalentem `Form1.Show`.
+You can access the forms provided by the `My.Forms` object by using the name of the form, without qualification. Because the property name is the same as the form's type name, this allows you to access a form as if it had a default instance. For example, `My.Forms.Form1.Show` is equivalent to `Form1.Show`.
 
-Objekt `My.Forms` zpřístupňuje pouze formuláře přidružené k aktuálnímu projektu. Neposkytuje přístup k formulářům deklarovaným v odkazovaných knihovnách DLL. Chcete-li získat přístup k formuláři, který poskytuje knihovna DLL, je nutné použít kvalifikovaný název formuláře, který je napsán jako *Název_souboru_DLL*. *Formace*.
+The `My.Forms` object exposes only the forms associated with the current project. It does not provide access to forms declared in referenced DLLs. To access a form that a DLL provides, you must use the qualified name of the form, written as *DllName*.*FormName*.
 
-Vlastnost <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OpenForms%2A> lze použít k získání kolekce všech otevřených formulářů aplikace.
+You can use the <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OpenForms%2A> property to get a collection of all the application's open forms.
 
-Objekt a jeho vlastnosti jsou k dispozici pouze pro aplikace systému Windows.
+The object and its properties are available only for Windows applications.
 
 ## <a name="properties"></a>Vlastnosti
 
-Každá vlastnost objektu `My.Forms` poskytuje přístup k instanci formuláře v aktuálním projektu. Název vlastnosti je stejný jako název formuláře, ke kterému vlastnost přistupuje, a typ vlastnosti je stejný jako typ formuláře.
+Each property of the `My.Forms` object provides access to an instance of a form in the current project. The name of the property is the same as the name of the form that the property accesses, and the property type is the same as the form's type.
 
 > [!NOTE]
-> Pokud dojde ke kolizi názvů, název vlastnosti pro přístup k formuláři je *RootNamespace*_*názvový prostor* \_ název*formuláře*. Například uvažujte dva formuláře s názvem `Form1.`If jeden z těchto formulářů je v kořenovém oboru názvů `WindowsApplication1` a v `Namespace1` oboru názvů, měli byste k tomuto formuláři přistupovat prostřednictvím `My.Forms.WindowsApplication1_Namespace1_Form1`.
+> If there is a name collision, the property name to access a form is *RootNamespace*_*Namespace*\_*FormName*. For example, consider two forms named `Form1.`If one of these forms is in the root namespace `WindowsApplication1` and in the namespace `Namespace1`, you would access that form through `My.Forms.WindowsApplication1_Namespace1_Form1`.
 
-Objekt `My.Forms` poskytuje přístup k instanci hlavního formuláře aplikace, který byl vytvořen při spuštění. Pro všechny ostatní formuláře vytvoří objekt `My.Forms` novou instanci formuláře, když je k němu přidaný a uložený. Následné pokusy o přístup k této vlastnosti vrátí tuto instanci formuláře.
+The `My.Forms` object provides access to the instance of the application's main form that was created on startup. For all other forms, the `My.Forms` object creates a new instance of the form when it is accessed and stores it. Subsequent attempts to access that property return that instance of the form.
 
-Formulář můžete vyřadit přiřazením `Nothing` k vlastnosti tohoto formuláře. Vlastnost setter volá metodu <xref:System.Windows.Forms.Form.Close%2A> formuláře a potom přiřadí `Nothing` uložené hodnotě. Pokud k vlastnosti přiřadíte jinou hodnotu než `Nothing`, vyvolá metoda setter výjimku <xref:System.ArgumentException>.
+You can dispose of a form by assigning `Nothing` to the property for that form. The property setter calls the <xref:System.Windows.Forms.Form.Close%2A> method of the form, and then assigns `Nothing` to the stored value. If you assign any value other than `Nothing` to the property, the setter throws an <xref:System.ArgumentException> exception.
 
-Můžete otestovat, zda vlastnost objektu `My.Forms` ukládá instanci formuláře pomocí operátoru `Is` nebo `IsNot`. Tyto operátory můžete použít ke kontrole, zda je hodnota vlastnosti `Nothing`.
+You can test whether a property of the `My.Forms` object stores an instance of the form by using the `Is` or `IsNot` operator. You can use those operators to check if the value of the property is `Nothing`.
 
 > [!NOTE]
-> Operátor `Is` nebo `IsNot` obvykle musí číst hodnotu vlastnosti pro provedení porovnání. Pokud však vlastnost aktuálně ukládá `Nothing`, vlastnost vytvoří novou instanci formuláře a následně vrátí tuto instanci. Nicméně kompilátor Visual Basic pracuje s vlastnostmi objektu `My.Forms` odlišně a umožňuje operátoru `Is` nebo `IsNot` ke kontrole stavu vlastnosti bez změny její hodnoty.
+> Typically, the `Is` or `IsNot` operator has to read the value of the property to perform the comparison. However, if the property currently stores `Nothing`, the property creates a new instance of the form and then returns that instance. However, the Visual Basic compiler treats the properties of the `My.Forms` object differently and allows the `Is` or `IsNot` operator to check the status of the property without altering its value.
 
 ## <a name="example"></a>Příklad
 
-Tento příklad změní název výchozího formuláře `SidebarMenu`.
+This example changes the title of the default `SidebarMenu` form.
 
 [!code-vb[VbVbalrMyForms#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyForms/VB/Class1.vb#2)]
 
-Aby tento příklad fungoval, projekt musí mít formulář s názvem `SidebarMenu`.
+For this example to work, your project must have a form named `SidebarMenu`.
 
-Tento kód bude fungovat pouze v projektu aplikace systému Windows.
+This code will work only in a Windows Application project.
 
 ## <a name="requirements"></a>Požadavky
 
 ### <a name="availability-by-project-type"></a>Dostupnost podle typu projektu
 
-|Typ projektu|K dispozici|
+|Project type|K dispozici|
 |---|---|
-|Aplikace systému Windows|**Ano**|
+|Windows Application|**Yes**|
 |Knihovna tříd|Ne|
 |Konzolová aplikace|Ne|
-|Knihovna ovládacích prvků Windows|Ne|
-|Knihovna webového ovládacího prvku|Ne|
+|Windows Control Library|Ne|
+|Web Control Library|Ne|
 |Služba systému Windows|Ne|
-|Web|Ne|
+|Web Site|Ne|
 
 ## <a name="see-also"></a>Viz také:
 

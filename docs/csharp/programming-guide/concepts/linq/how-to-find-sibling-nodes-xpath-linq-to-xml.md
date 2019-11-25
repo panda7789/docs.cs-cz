@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: Najít uzly na stejné úrovni (XPath-LINQ to XMLC#) ()'
+title: Jak najít uzly na stejné úrovni (XPath-LINQ to XML)C#()
 ms.date: 07/20/2015
 ms.assetid: e2c73d10-a8ca-4e11-b5aa-d055de285874
-ms.openlocfilehash: 6c7509ea0667bb84d62ee804f4d232d74fa7f6e0
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 24bad37151f3d63b03ec28c0fbea95bef02ab614
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253616"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141023"
 ---
-# <a name="how-to-find-sibling-nodes-xpath-linq-to-xml-c"></a>Postupy: Najít uzly na stejné úrovni (XPath-LINQ to XMLC#) ()
+# <a name="how-to-find-sibling-nodes-xpath-linq-to-xml-c"></a>Jak najít uzly na stejné úrovni (XPath-LINQ to XML)C#()
 Možná budete chtít najít všechny uzly na stejné úrovni, které mají konkrétní název. Výsledná kolekce může zahrnovat kontextový uzel, pokud má uzel kontextu také konkrétní název.  
   
  Výraz XPath je:  
@@ -17,9 +17,9 @@ Možná budete chtít najít všechny uzly na stejné úrovni, které mají konk
  `../Book`  
   
 ## <a name="example"></a>Příklad  
- Tento příklad nejprve vyhledá `Book` prvek a poté vyhledá všechny prvky na stejné `Book`úrovni s názvem. Výsledná kolekce obsahuje kontextový uzel.  
+ Tento příklad nejprve vyhledá prvek `Book` a poté vyhledá všechny prvky na stejné úrovni s názvem `Book`. Výsledná kolekce obsahuje kontextový uzel.  
   
- V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Books (LINQ to XML](./sample-xml-file-books-linq-to-xml.md)).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: Books (LINQ to XML)](./sample-xml-file-books-linq-to-xml.md).  
   
 ```csharp  
 XDocument books = XDocument.Load("Books.xml");  

@@ -1,5 +1,5 @@
 ---
-title: Literál XML CDATA (Visual Basic)
+title: Literál XML CDATA
 ms.date: 07/20/2015
 f1_keywords:
 - vb.XmlLiteralCdata
@@ -8,15 +8,15 @@ helpviewer_keywords:
 - XML CDATA literal [Visual Basic]
 - XML literals [Visual Basic], CDATA
 ms.assetid: 9eafb6a4-dd9d-4866-85e8-0654c65abc44
-ms.openlocfilehash: 248f3cf31f686de3af2ea06012aa4a6d4f3f29fc
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 72e899e7bd30f2edf0e88207bb3b75bdf36fa11c
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69942921"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74349437"
 ---
 # <a name="xml-cdata-literal-visual-basic"></a>Literál XML CDATA (Visual Basic)
-Literál představující <xref:System.Xml.Linq.XCData> objekt.  
+A literal representing an <xref:System.Xml.Linq.XCData> object.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,33 +26,33 @@ Literál představující <xref:System.Xml.Linq.XCData> objekt.
   
 ## <a name="parts"></a>Součásti  
  `<![CDATA[`  
- Povinný parametr. Označuje začátek oddílu CDATA XML.  
+ Požadováno. Denotes the start of the XML CDATA section.  
   
  `content`  
- Povinný parametr. Textový obsah, který se má zobrazit v oddílu CDATA XML  
+ Požadováno. Text content to appear in the XML CDATA section.  
   
  `]]>`  
- Povinný parametr. Označuje konec oddílu.  
+ Požadováno. Denotes the end of the section.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- <xref:System.Xml.Linq.XCData> Objekt.  
+ An <xref:System.Xml.Linq.XCData> object.  
   
 ## <a name="remarks"></a>Poznámky  
- Oddíly XML CDATA obsahují nezpracovaný text, který by měl být zahrnut, ale ne analyzován, s XML, který jej obsahuje. Oddíl CDATA XML může obsahovat libovolný text. To zahrnuje vyhrazené znaky XML. Oddíl CDATA XML končí sekvencí "]] >". To zahrnuje následující body:  
+ XML CDATA sections contain raw text that should be included, but not parsed, with the XML that contains it. A XML CDATA section can contain any text. This includes reserved XML characters. The XML CDATA section ends with the sequence "]]>". This implies the following points:  
   
-- V literálu CDATA XML nelze použít vložený výraz, protože oddělovače vložených výrazů jsou platným obsahem CDATA XML.  
+- You cannot use an embedded expression in an XML CDATA literal because the embedded expression delimiters are valid XML CDATA content.  
   
-- Oddíly XML CDATA nemůžou být vnořené, `content` protože nesmí obsahovat hodnotu "]] >".  
+- XML CDATA sections cannot be nested, because `content` cannot contain the value "]]>".  
   
- Můžete přiřadit literál CDATA XML proměnné nebo jej zahrnout do literálu elementu XML.  
+ You can assign an XML CDATA literal to a variable, or include it in an XML element literal.  
   
 > [!NOTE]
-> Literál XML může zahrnovat více řádků, ale nepoužívá znaky pro pokračování řádku. To vám umožní zkopírovat obsah z dokumentu XML a vložit ho přímo do Visual Basic programu.  
+> An XML literal can span multiple lines but does not use line continuation characters. This enables you to copy content from an XML document and paste it directly into a Visual Basic program.  
   
- Kompilátor Visual Basic převádí literál XML CDATA na volání <xref:System.Xml.Linq.XCData.%23ctor%2A> konstruktoru.  
+ The Visual Basic compiler converts the XML CDATA literal to a call to the <xref:System.Xml.Linq.XCData.%23ctor%2A> constructor.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří oddíl CDATA, který obsahuje text "může obsahovat literál \<XML > značek".  
+ The following example creates a CDATA section that contains the text "Can contain literal \<XML> tags".  
   
  [!code-vb[VbXMLSamples#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples11.vb#23)]  
   
@@ -61,4 +61,4 @@ Literál představující <xref:System.Xml.Linq.XCData> objekt.
 - <xref:System.Xml.Linq.XCData>
 - [Literál XML elementu](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)
 - [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)
-- [Vytváření XML v Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [Creating XML in Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)

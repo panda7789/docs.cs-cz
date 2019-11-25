@@ -8,12 +8,12 @@ helpviewer_keywords:
 - service contracts [WCF], synchronous operations
 - service contracts [WCF], asynchronous operations
 ms.assetid: db8a51cb-67e6-411b-9035-e5821ed350c9
-ms.openlocfilehash: 61dfa257676d6c274d846300c7ccae75a219cf4c
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 39a7db3fb7dc3651f2cf6c850e7ebb5525e24963
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424900"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74281634"
 ---
 # <a name="synchronous-and-asynchronous-operations"></a>Synchronní a asynchronní operace
 Toto téma popisuje implementaci a volání asynchronních operací služby.  
@@ -34,7 +34,7 @@ Toto téma popisuje implementaci a volání asynchronních operací služby.
 - Výměna zpráv může být jednosměrná, bez ohledu na implementaci klienta nebo služby.  
   
 ### <a name="suggested-asynchronous-scenarios"></a>Navrhované asynchronní scénáře  
- Použijte asynchronní přístup v implementaci operace služby, pokud implementace služby operace znemožňuje blokující volání, jako je například zpracování vstupně-výstupních operací. Pokud jste v implementaci asynchronní operace, zkuste volat asynchronní operace a metody, aby co nejvíce rozšířily cestu asynchronního volání. Například volejte `BeginOperationTwo()` z v rámci `BeginOperationOne()`.  
+ Použijte asynchronní přístup v implementaci operace služby, pokud implementace služby operace znemožňuje blokující volání, jako je například zpracování vstupně-výstupních operací. Pokud jste v implementaci asynchronní operace, zkuste volat asynchronní operace a metody, aby co nejvíce rozšířily cestu asynchronního volání. Například volejte `BeginOperationTwo()` v rámci `BeginOperationOne()`.  
   
 - Použijte asynchronní přístup v klientovi nebo volání aplikace v následujících případech:  
   
@@ -116,13 +116,13 @@ public class AsyncExample
   
  Příklad naleznete v tématu [How to: implementace asynchronní operace služby](how-to-implement-an-asynchronous-service-operation.md).  
   
- Definování operace kontraktu `X`, který se provádí asynchronně bez ohledu na to, jak se volá v klientské aplikaci:  
+ Definování operace kontraktu `X`, která se provádí asynchronně bez ohledu na to, jak se volá v klientské aplikaci:  
   
-- Pomocí vzoru `BeginOperation` a `EndOperation` definujte dvě metody.  
+- Pomocí `BeginOperation` vzorů a `EndOperation`definujte dvě metody.  
   
 - Metoda `BeginOperation` zahrnuje parametry `in` a `ref` pro operaci a vrací typ <xref:System.IAsyncResult>.  
   
-- Metoda `EndOperation` zahrnuje parametr <xref:System.IAsyncResult> a také parametry `out` a `ref` a vrací návratový typ operací.  
+- Metoda `EndOperation` obsahuje parametr <xref:System.IAsyncResult> a parametry `out` a `ref` a vrací návratový typ operací.  
   
  Podívejte se například na následující metodu.  
   
@@ -155,7 +155,7 @@ Function EndDoWork(ByRef inout As String, ByRef outonly As String, ByVal result 
 ```  
   
 > [!NOTE]
-> Atribut <xref:System.ServiceModel.OperationContractAttribute> se používá pouze pro metodu `BeginDoWork`. Výsledný kontrakt má jednu operaci WSDL s názvem `DoWork`.  
+> Atribut <xref:System.ServiceModel.OperationContractAttribute> je použit pouze pro metodu `BeginDoWork`. Výsledný kontrakt má jednu operaci WSDL s názvem `DoWork`.  
   
 ### <a name="client-side-asynchronous-invocations"></a>Asynchronní volání na straně klienta  
  Klientská aplikace WCF může použít kterýkoli ze tří modelů asynchronního volání popsaných výše.  
@@ -174,7 +174,7 @@ svcutil http://localhost:8000/servicemodelsamples/service/mex /async /tcv:Versio
   
  Po dokončení Svcutil. exe vygeneruje třídu klienta WCF s infrastrukturou událostí, která umožňuje volající aplikaci implementovat a přiřadit obslužnou rutinu události pro příjem odpovědi a provedení příslušné akce. Úplný příklad naleznete v tématu [Postupy: asynchronní volání operací služby](./feature-details/how-to-call-wcf-service-operations-asynchronously.md).  
   
- Asynchronní model založený na událostech je však k dispozici pouze v [!INCLUDE[netfx35_long](../../../includes/netfx35-long-md.md)]. Kromě toho není podporován ani v [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)], když je kanál klienta WCF vytvořen pomocí <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType>. S objekty kanálu klienta WCF je nutné použít objekty <xref:System.IAsyncResult?displayProperty=nameWithType> k asynchronnímu vyvolání vašich operací. Chcete-li použít tento přístup, zadejte možnost příkazu **/Async** pomocí nástroje pro dodávání [metadat (Svcutil. exe)](servicemodel-metadata-utility-tool-svcutil-exe.md), jak je uvedeno v následujícím příkladu.  
+ Asynchronní model založený na událostech je však k dispozici pouze v .NET Framework 3,5. Kromě toho není podporován ani v .NET Framework 3,5, když je kanál klienta WCF vytvořen pomocí <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType>. S objekty kanálu klienta WCF je nutné použít <xref:System.IAsyncResult?displayProperty=nameWithType> objekty k asynchronnímu vyvolání vašich operací. Chcete-li použít tento přístup, zadejte možnost příkazu **/Async** pomocí nástroje pro dodávání [metadat (Svcutil. exe)](servicemodel-metadata-utility-tool-svcutil-exe.md), jak je uvedeno v následujícím příkladu.  
   
 ```console  
 svcutil http://localhost:8000/servicemodelsamples/service/mex /async   
@@ -188,7 +188,7 @@ svcutil http://localhost:8000/servicemodelsamples/service/mex /async
  Můžete také vytvořit vzorec asynchronní výměny zpráv, ve kterém jednosměrné operace (operace, pro které <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A?displayProperty=nameWithType> `true` nemají žádnou korelační odpověď), mohou být odesílány buď klientem nebo službou nezávisle na druhé straně. (Používá se jednosměrné zprávy pro výměnu zpráv.) V tomto případě kontrakt služby určuje jednosměrnou výměnu zpráv, kterou může kterákoli strana implementovat jako asynchronní volání nebo implementace nebo nemusí (případně ne). Obecně platí, že pokud je kontraktem výměna jednosměrných zpráv, implementace mohou být převážně asynchronní, protože jakmile se pošle zpráva, aplikace nečeká na odpověď a může pokračovat v práci.  
   
 ### <a name="event-based-asynchronous-clients-and-message-contracts"></a>Asynchronní klienti založené na událostech a kontrakty zpráv  
- Pokyny pro návrh stavu asynchronního modelu založeného na událostech, pokud je vrácena více než jedna hodnota, je vrácena jedna hodnota jako vlastnost `Result` a ostatní jsou vráceny jako vlastnosti objektu <xref:System.EventArgs>. Jeden z těchto výsledků znamená, že pokud klient Importuje metadata pomocí asynchronních příkazů příkazu založeného na událostech a operace vrátí více než jednu hodnotu, vrátí výchozí objekt <xref:System.EventArgs> jednu hodnotu jako vlastnost `Result` a zbytek je vlastnosti @no objekt __t-2.  
+ Pokyny pro návrh stavu asynchronního modelu založeného na událostech, pokud je vrácena více než jedna hodnota, je vrácena jedna hodnota jako vlastnost `Result` a ostatní jsou vráceny jako vlastnosti objektu <xref:System.EventArgs>. Jedním z těchto výsledků je, že pokud klient Importuje metadata pomocí parametrů asynchronního příkazu založeného na událostech a operace vrátí více než jednu hodnotu, výchozí objekt <xref:System.EventArgs> vrátí jednu hodnotu jako vlastnost `Result` a zbytek je vlastnosti objektu <xref:System.EventArgs>.  
   
  Pokud chcete objekt zprávy přijmout jako vlastnost `Result` a vracet hodnoty jako vlastnosti tohoto objektu, použijte možnost příkazového řádku **/MessageContract** . Tím se vygeneruje podpis, který vrátí zprávu odpovědi jako vlastnost `Result` objektu <xref:System.EventArgs>. Všechny interní návratové hodnoty jsou potom vlastnostmi objektu zprávy odpovědi.  
   

@@ -9,15 +9,15 @@ helpviewer_keywords:
 - Calendar [WPF], styles and templates
 - ControlTemplate [WPF], Calendar
 ms.assetid: f4fcf046-7a8f-41b8-b5a8-534b64e0345c
-ms.openlocfilehash: 49d9ced42572ac06a4ff824ec41a59c14497d215
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 64cb62a3459a3eeea6aa5e91b433a58a88ab08ea
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460935"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283560"
 ---
 # <a name="calendar-styles-and-templates"></a>Styly a šablony kalendáře
-Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.Calendar>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [přizpůsobení vzhledu existujícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.Calendar>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
   
 ## <a name="calendar-parts"></a>Části kalendáře  
  V následující tabulce jsou uvedeny pojmenované části ovládacího prvku <xref:System.Windows.Controls.Calendar>.  
@@ -72,17 +72,17 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
   
 |Název VisualState|Název VisualStateGroup|Popis|  
 |-|-|-|  
-|Běžnou|CommonStates|Výchozí stav.|  
-|Zabezpečen|CommonStates|<xref:System.Windows.Controls.Primitives.CalendarDayButton> je zakázaný.|  
+|Normální|CommonStates|Výchozí stav.|  
+|Zakázáno|CommonStates|<xref:System.Windows.Controls.Primitives.CalendarDayButton> je zakázaný.|  
 |MouseOver|CommonStates|Ukazatel myši je umístěn na <xref:System.Windows.Controls.Primitives.CalendarDayButton>.|  
-|Stisknete|CommonStates|Stiskne se <xref:System.Windows.Controls.Primitives.CalendarDayButton>.|  
-|Vyberte|SelectionStates|Je vybráno tlačítko.|  
+|Stisknutí|CommonStates|Stiskne se <xref:System.Windows.Controls.Primitives.CalendarDayButton>.|  
+|Vybráno|SelectionStates|Je vybráno tlačítko.|  
 |Nevybrané|SelectionStates|Tlačítko není vybráno.|  
 |CalendarButtonFocused|CalendarButtonFocusStates|Tlačítko má fokus.|  
 |CalendarButtonUnfocused|CalendarButtonFocusStates|Tlačítko nemá fokus.|  
 |Zaměřil|FocusStates|Tlačítko má fokus.|  
 |Bez fokusu|FocusStates|Tlačítko nemá fokus.|  
-|Aktivně|ActiveStates|Tlačítko je aktivní.|  
+|Aktivní|ActiveStates|Tlačítko je aktivní.|  
 |Termín|ActiveStates|Tlačítko je neaktivní.|  
 |RegularDay|DayStates|Tlačítko nepředstavuje <xref:System.DateTime.Today%2A?displayProperty=nameWithType>.|  
 |Si|DayStates|Tlačítko představuje <xref:System.DateTime.Today%2A?displayProperty=nameWithType>.|  
@@ -100,17 +100,17 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
   
 |Název VisualState|Název VisualStateGroup|Popis|  
 |-|-|-|  
-|Běžnou|CommonStates|Výchozí stav.|  
-|Zabezpečen|CommonStates|<xref:System.Windows.Controls.Primitives.CalendarButton> je zakázaný.|  
+|Normální|CommonStates|Výchozí stav.|  
+|Zakázáno|CommonStates|<xref:System.Windows.Controls.Primitives.CalendarButton> je zakázaný.|  
 |MouseOver|CommonStates|Ukazatel myši je umístěn na <xref:System.Windows.Controls.Primitives.CalendarButton>.|  
-|Stisknete|CommonStates|Stiskne se <xref:System.Windows.Controls.Primitives.CalendarButton>.|  
-|Vyberte|SelectionStates|Je vybráno tlačítko.|  
+|Stisknutí|CommonStates|Stiskne se <xref:System.Windows.Controls.Primitives.CalendarButton>.|  
+|Vybráno|SelectionStates|Je vybráno tlačítko.|  
 |Nevybrané|SelectionStates|Tlačítko není vybráno.|  
 |CalendarButtonFocused|CalendarButtonFocusStates|Tlačítko má fokus.|  
 |CalendarButtonUnfocused|CalendarButtonFocusStates|Tlačítko nemá fokus.|  
 |Zaměřil|FocusStates|Tlačítko má fokus.|  
 |Bez fokusu|FocusStates|Tlačítko nemá fokus.|  
-|Aktivně|ActiveStates|Tlačítko je aktivní.|  
+|Aktivní|ActiveStates|Tlačítko je aktivní.|  
 |Termín|ActiveStates|Tlačítko je neaktivní.|  
 |Platné|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
 |InvalidFocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
@@ -134,4 +134,4 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
 - [Styly a šablony ovládacích prvků](control-styles-and-templates.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)
 - [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md)

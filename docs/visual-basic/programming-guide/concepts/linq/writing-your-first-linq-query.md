@@ -1,38 +1,38 @@
 ---
-title: Napište svůj první dotaz LINQ (Visual Basic)
+title: Napište svůj první dotaz LINQ
 ms.date: 07/20/2015
 helpviewer_keywords:
 - queries [LINQ in Visual Basic], writing
 - LINQ queries [Visual Basic]
 - LINQ [Visual Basic], writing queries
 ms.assetid: 4affb732-3e9b-4479-aa31-1f9bd8183cbe
-ms.openlocfilehash: 5c83d888f65ce5c216327e94c5d4d1267fb93c29
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: a9fe4241972815a04ec9c6a51a45760d72a8bbb2
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69951998"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74349337"
 ---
 # <a name="writing-your-first-linq-query-visual-basic"></a>Napište svůj první dotaz LINQ (Visual Basic)
-*Dotaz* je výraz, který načítá data ze zdroje dat. Dotazy jsou vyjádřeny ve vyhrazeném dotazovacím jazyce. V průběhu času byly vyvinuty různé jazyky pro různé typy zdrojů dat, například SQL pro relační databáze a XQuery pro XML. To umožňuje vývojářům aplikací zjistit nový dotazovací jazyk pro každý typ zdroje dat nebo formátu dat, který je podporovaný.  
+A *query* is an expression that retrieves data from a data source. Queries are expressed in a dedicated query language. Over time, different languages have been developed for different types of data sources, for example, SQL for relational databases and XQuery for XML. This makes it necessary for the application developer to learn a new query language for each type of data source or data format that is supported.  
   
- [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]zjednodušuje situaci tím, že nabízí jednotný model pro práci s daty napříč různými druhy datových zdrojů a formátů. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] V dotazu vždy pracujete s objekty. Použijete stejné základní vzory kódování pro dotazování a transformaci dat v dokumentech XML, databázích SQL, ADO.NET datových sadách a entitách, .NET Framework kolekcích a jakémkoli jiném zdroji nebo formátu [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] , pro který je poskytovatel k dispozici. Tento dokument popisuje tři fáze vytváření a používání základních [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazů.  
+ [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] simplifies the situation by offering a consistent model for working with data across various kinds of data sources and formats. In a [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query, you are always working with objects. You use the same basic coding patterns to query and transform data in XML documents, SQL databases, ADO.NET datasets and entities, .NET Framework collections, and any other source or format for which a [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] provider is available. This document describes the three phases of the creation and use of basic [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] queries.  
   
 ## <a name="three-stages-of-a-query-operation"></a>Tři fáze operace dotazu  
- [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]operace dotazů se skládají ze tří akcí:  
+ [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query operations consist of three actions:  
   
-1. Získání zdroje dat nebo zdrojů.  
+1. Obtain the data source or sources.  
   
-2. Vytvořte dotaz.  
+2. Create the query.  
   
-3. Spusťte dotaz.  
+3. Execute the query.  
   
- V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]nástroji se provedení dotazu liší od vytvoření dotazu. Nenačtete žádná data pouhým vytvořením dotazu. Tento bod je podrobněji popsán dále v tomto tématu.  
+ In [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], the execution of a query is distinct from the creation of the query. You do not retrieve any data just by creating a query. This point is discussed in more detail later in this topic.  
   
- Následující příklad znázorňuje tři části operace dotazu. V příkladu se jako vhodný zdroj dat pro demonstrační účely používá pole celých čísel. Stejné koncepty se však vztahují i na jiné zdroje dat.  
+ The following example illustrates the three parts of a query operation. The example uses an array of integers as a convenient data source for demonstration purposes. However, the same concepts also apply to other data sources.  
   
 > [!NOTE]
-> Na [stránce kompilovat Návrháře projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic)zajistěte, aby byla **možnost** odvoditelné na hodnotu **zapnuto**.  
+> On the [Compile Page, Project Designer (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic), ensure that **Option infer** is set to **On**.  
   
  [!code-vb[VbLINQFirstQuery#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#1)]  
   
@@ -41,15 +41,15 @@ ms.locfileid: "69951998"
  `0 2 4 6`  
   
 ## <a name="the-data-source"></a>Zdroj dat  
- Vzhledem k tomu, že zdroj dat v předchozím příkladu je pole, implicitně podporuje obecné <xref:System.Collections.Generic.IEnumerable%601> rozhraní. Je to fakt, který umožňuje použít pole jako zdroj dat pro [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotaz. Typy, které <xref:System.Collections.Generic.IEnumerable%601> podporují nebo odvozené rozhraní, jako je například <xref:System.Linq.IQueryable%601> obecné, se nazývají *Queryable typy*.  
+ Because the data source in the previous example is an array, it implicitly supports the generic <xref:System.Collections.Generic.IEnumerable%601> interface. It is this fact that enables you to use an array as a data source for a [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query. Types that support <xref:System.Collections.Generic.IEnumerable%601> or a derived interface such as the generic <xref:System.Linq.IQueryable%601> are called *queryable types*.  
   
- Jako implicitně Queryable typ pole nevyžaduje žádné úpravy nebo speciální zacházení, které slouží jako [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zdroj dat. Totéž platí pro jakýkoli typ kolekce, který podporuje <xref:System.Collections.Generic.IEnumerable%601>, včetně obecných <xref:System.Collections.Generic.List%601>, <xref:System.Collections.Generic.Dictionary%602>a dalších tříd v knihovně tříd .NET Framework.  
+ As an implicitly queryable type, the array requires no modification or special treatment to serve as a [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] data source. The same is true for any collection type that supports <xref:System.Collections.Generic.IEnumerable%601>, including the generic <xref:System.Collections.Generic.List%601>, <xref:System.Collections.Generic.Dictionary%602>, and other classes in the .NET Framework class library.  
   
- Pokud zdrojová data ještě nejsou implementovaná <xref:System.Collections.Generic.IEnumerable%601> [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] , je nutné, aby zprostředkovatel implementoval funkce *standardních operátorů dotazu* pro daný zdroj dat. Například [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] zpracovává práci dokumentu XML do typu Queryable <xref:System.Xml.Linq.XElement> , jak je znázorněno v následujícím příkladu. Další informace o standardních operátorech dotazu najdete v tématu [Přehled standardních operátorů dotazů (Visual Basic)](standard-query-operators-overview.md).  
+ If the source data does not already implement <xref:System.Collections.Generic.IEnumerable%601>, a [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] provider is needed to implement the functionality of the *standard query operators* for that data source. For example, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] handles the work of loading an XML document into a queryable <xref:System.Xml.Linq.XElement> type, as shown in the following example. For more information about standard query operators, see [Standard Query Operators Overview (Visual Basic)](standard-query-operators-overview.md).  
   
  [!code-vb[VbLINQFirstQuery#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#2)]  
   
- Pomocí [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]nástroje nejprve vytvoříte mapování relačních objektů v době návrhu, a to buď ručně, nebo pomocí [LINQ to SQLch nástrojů v aplikaci Visual](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2) Studio v aplikaci Visual Studio. Zapisujete dotazy na objekty a v době běhu [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] zpracovává komunikaci s databází. V následujícím příkladu `customers` představuje konkrétní tabulku v databázi a <xref:System.Data.Linq.Table%601> podporuje obecné <xref:System.Linq.IQueryable%601>.  
+ With [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], you first create an object-relational mapping at design time, either manually or by using the [LINQ to SQL Tools in Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2) in Visual Studio. You write your queries against the objects, and at run-time [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] handles the communication with the database. In the following example, `customers` represents a specific table in the database, and <xref:System.Data.Linq.Table%601> supports generic <xref:System.Linq.IQueryable%601>.  
   
 ```vb  
 ' Create a data source from a SQL table.  
@@ -57,33 +57,33 @@ Dim db As New DataContext("C:\Northwind\Northwnd.mdf")
 Dim customers As Table(Of Customer) = db.GetTable(Of Customer)  
 ```  
   
- Další informace o tom, jak vytvořit konkrétní typy zdrojů dat, najdete v dokumentaci pro různé [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] poskytovatele. (Seznam těchto zprostředkovatelů naleznete v tématu [LINQ (jazykově integrovaný dotaz)](../../../../visual-basic/programming-guide/concepts/linq/index.md).) Základní pravidlo je jednoduché: [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zdroj dat je libovolný objekt, který podporuje obecné <xref:System.Collections.Generic.IEnumerable%601> rozhraní, nebo rozhraní, které z něj dědí.  
+ For more information about how to create specific types of data sources, see the documentation for the various [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] providers. (For a list of these providers, see [LINQ (Language-Integrated Query)](../../../../visual-basic/programming-guide/concepts/linq/index.md).) The basic rule is simple: a [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] data source is any object that supports the generic <xref:System.Collections.Generic.IEnumerable%601> interface, or an interface that inherits from it.  
   
 > [!NOTE]
-> Typy, jako je například podpora neobecného <xref:System.Collections.IEnumerable> rozhraní, lze také použít jako [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zdroje dat. <xref:System.Collections.ArrayList> Příklad, který používá <xref:System.Collections.ArrayList>, naleznete v tématu [How to: Dotazování objektu ArrayList pomocí LINQ (Visual Basic](how-to-query-an-arraylist-with-linq.md)).  
+> Types such as <xref:System.Collections.ArrayList> that support the non-generic <xref:System.Collections.IEnumerable> interface can also be used as [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] data sources. For an example that uses an <xref:System.Collections.ArrayList>, see [How to: Query an ArrayList with LINQ (Visual Basic)](how-to-query-an-arraylist-with-linq.md).  
   
 ## <a name="the-query"></a>Dotaz  
- V dotazu určíte, jaké informace chcete načíst ze zdroje dat nebo zdrojů. Máte také možnost určit, jak se tyto informace mají seřadit, seskupit nebo strukturovat před tím, než se vrátí. Pokud chcete povolit vytváření dotazů, Visual Basic zahrnul do jazyka novou syntaxi dotazu.  
+ In the query, you specify what information you want to retrieve from the data source or sources. You also have the option of specifying how that information should be sorted, grouped, or structured before it is returned. To enable query creation, Visual Basic has incorporated new query syntax into the language.  
   
- Při spuštění dotaz v následujícím příkladu vrátí všechna sudá čísla z celočíselného pole, `numbers`.  
+ When it is executed, the query in the following example returns all the even numbers from an integer array, `numbers`.  
   
  [!code-vb[VbLINQFirstQuery#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#1)]  
   
- Výraz dotazu obsahuje tři klauzule: `From`, `Where`a `Select`. Konkrétní funkce a účel každé klauzule dotazového výrazu jsou popsány v tématu [základní operace dotazů (Visual Basic)](basic-query-operations.md). Další informace najdete v tématu [dotazy](../../../../visual-basic/language-reference/queries/index.md). Všimněte si, [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]že v je definice dotazu často uložená v proměnné a provede se později. Proměnná dotazu, například `evensQuery` v předchozím příkladu, musí být typu Queryable. Typ `evensQuery` je`IEnumerable(Of Integer)`přiřazen kompilátorem pomocí odvození místního typu.  
+ The query expression contains three clauses: `From`, `Where`, and `Select`. The specific function and purpose of each query expression clause is discussed in [Basic Query Operations (Visual Basic)](basic-query-operations.md). For more information, see [Queries](../../../../visual-basic/language-reference/queries/index.md). Note that in [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], a query definition often is stored in a variable and executed later. The query variable, such as `evensQuery` in the previous example, must be a queryable type. The type of `evensQuery` is `IEnumerable(Of Integer)`, assigned by the compiler using local type inference.  
   
- Je důležité si uvědomit, že proměnná dotazu sám neprovede žádnou akci a nevrátí žádná data. Ukládá pouze definici dotazu. V předchozím příkladu je `For Each` to smyčka, která spouští dotaz.  
+ It is important to remember that the query variable itself takes no action and returns no data. It only stores the query definition. In the previous example, it is the `For Each` loop that executes the query.  
   
 ## <a name="query-execution"></a>Provádění dotazů  
- Provádění dotazů je oddělené od vytvoření dotazu. Vytvoření dotazu definuje dotaz, ale provádění je aktivováno jiným mechanismem. Dotaz může být proveden hned po definování (*okamžité provedení*), nebo může být definice uložena a dotaz může být proveden později (*odložené spuštění*).  
+ Query execution is separate from query creation. Query creation defines the query, but execution is triggered by a different mechanism. A query can be executed as soon as it is defined (*immediate execution*), or the definition can be stored and the query can be executed later (*deferred execution*).  
   
 ### <a name="deferred-execution"></a>Odložené provedení  
- Typický [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotaz se podobá v předchozím příkladu, ve kterém `evensQuery` je definována. Vytvoří dotaz, ale nespustí ho hned. Místo toho je definice dotazu uložena v proměnné `evensQuery`dotazu. Dotaz spouštíte později, obvykle pomocí `For Each` smyčky, která vrací sekvenci hodnot, nebo použitím standardního operátoru dotazu, `Count` například nebo `Max`. Tento proces se označuje jako *odložené provádění*.  
+ A typical [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query resembles the one in the previous example, in which `evensQuery` is defined. It creates the query but does not execute it immediately. Instead, the query definition is stored in the query variable `evensQuery`. You execute the query later, typically by using a `For Each` loop, which returns a sequence of values, or by applying a standard query operator, such as `Count` or `Max`. This process is referred to as *deferred execution*.  
   
  [!code-vb[VbLINQFirstQuery#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#7)]  
   
- V případě posloupnosti hodnot získáte přístup k načteným datům pomocí proměnné iterace ve `For Each` smyčce (`number` v předchozím příkladu). Vzhledem k tomu, že `evensQuery`proměnná dotazu obsahuje definici dotazu namísto výsledků dotazu, můžete spustit dotaz tak často, jak chcete, pomocí proměnné dotazu více než jednou. Můžete mít například databázi ve vaší aplikaci, která je průběžně aktualizována samostatnou aplikací. Po vytvoření dotazu, který načte data z této databáze, můžete použít `For Each` smyčku a spustit dotaz opakovaně a kdykoli načíst nejnovější data.  
+ For a sequence of values, you access the retrieved data by using the iteration variable in the `For Each` loop (`number` in the previous example). Because the query variable, `evensQuery`, holds the query definition rather than the query results, you can execute a query as often as you want by using the query variable more than one time. For example, you might have a database in your application that is being updated continually by a separate application. After you have created a query that retrieves data from that database, you can use a `For Each` loop to execute the query repeatedly, retrieving the most recent data every time.  
   
- Následující příklad ukazuje, jak odložené provádění funguje. Po `evensQuery2` definování a spuštění `For Each` se smyčkou, jako v předchozích příkladech, se změní některé prvky ve zdroji `numbers` dat. Pak se znovu `For Each` spustí `evensQuery2` druhá smyčka. Výsledky se liší podruhé, protože `For Each` smyčka znovu spustí dotaz pomocí nových hodnot v. `numbers`  
+ The following example demonstrates how deferred execution works. After `evensQuery2` is defined and executed with a `For Each` loop, as in the previous examples, some elements in the data source `numbers` are changed. Then a second `For Each` loop runs `evensQuery2` again. The results are different the second time, because the `For Each` loop executes the query again, using the new values in `numbers`.  
   
  [!code-vb[VbLINQFirstQuery#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#3)]  
   
@@ -98,31 +98,31 @@ Dim customers As Table(Of Customer) = db.GetTable(Of Customer)
  `0  10  2  22  8`  
   
 ### <a name="immediate-execution"></a>Okamžité provedení  
- V odloženém spuštění dotazů je definice dotazu uložena v proměnné dotazu pro pozdější spuštění. V bezprostředním provádění se dotaz spustí v době jeho definice. Spuštění se aktivuje při použití metody, která vyžaduje přístup k jednotlivým prvkům výsledku dotazu. Okamžité provedení je vynuceno pomocí jednoho ze standardních operátorů dotazu, který vrací jednotlivé hodnoty. Příklady jsou `Count` `Max` ,,a`First`. `Average` Tyto standardní operátory dotazování spustí dotaz hned po použití, aby bylo možné vypočítat a vrátit výsledek typu singleton. Další informace o standardních operátorech dotazu, které vracejí jednotlivé hodnoty, naleznete v tématu [operace agregace](aggregation-operations.md), [operace elementů](element-operations.md)a [kvantifikátory operací](quantifier-operations.md).  
+ In deferred execution of queries, the query definition is stored in a query variable for later execution. In immediate execution, the query is executed at the time of its definition. Execution is triggered when you apply a method that requires access to individual elements of the query result. Immediate execution often is forced by using one of the standard query operators that return single values. Examples are `Count`, `Max`, `Average`, and `First`. These standard query operators execute the query as soon as they are applied in order to calculate and return a singleton result. For more information about standard query operators that return single values, see [Aggregation Operations](aggregation-operations.md), [Element Operations](element-operations.md), and [Quantifier Operations](quantifier-operations.md).  
   
- Následující dotaz vrátí počet sudých čísel v poli celých čísel. Definice dotazu není uložena a `numEvens` je jednoduchá. `Integer`  
+ The following query returns a count of the even numbers in an array of integers. The query definition is not saved, and `numEvens` is a simple `Integer`.  
   
  [!code-vb[VbLINQFirstQuery#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#4)]  
   
- Stejný výsledek můžete dosáhnout pomocí `Aggregate` metody.  
+ You can achieve the same result by using the `Aggregate` method.  
   
  [!code-vb[VbLINQFirstQuery#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#5)]  
   
- Můžete také vynutit provedení dotazu voláním `ToList` metody nebo `ToArray` na dotaz (bezprostřední) nebo proměnnou dotazu (odloženo), jak je znázorněno v následujícím kódu.  
+ You can also force execution of a query by calling the `ToList` or `ToArray` method on a query (immediate) or query variable (deferred), as shown in the following code.  
   
  [!code-vb[VbLINQFirstQuery#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#6)]  
   
- V předchozích příkladech `evensQuery3` je proměnná dotazu, ale `evensList` je to seznam a `evensArray` je pole.  
+ In the previous examples, `evensQuery3` is a query variable, but `evensList` is a list and `evensArray` is an array.  
   
- Použití `ToList` nebo`ToArray` k vynucení okamžitého provedení je zvlášť užitečné ve scénářích, ve kterých chcete spustit dotaz okamžitě, a uložit výsledky do mezipaměti v jediném objektu kolekce. Další informace o těchto metodách naleznete v tématu [Převod datových typů](converting-data-types.md).  
+ Using `ToList` or `ToArray` to force immediate execution is especially useful in scenarios in which you want to execute the query immediately and cache the results in a single collection object. For more information about these methods, see [Converting Data Types](converting-data-types.md).  
   
- Můžete také způsobit spuštění dotazu pomocí `IEnumerable` metody, jako je <xref:Microsoft.VisualBasic.Collection.System%23Collections%23IEnumerable%23GetEnumerator%2A> například metoda.  
+ You can also cause a query to be executed by using an `IEnumerable` method such as the <xref:Microsoft.VisualBasic.Collection.System%23Collections%23IEnumerable%23GetEnumerator%2A> method.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Začínáme pomocí LINQ v Visual Basic](getting-started-with-linq.md)
+- [Getting Started with LINQ in Visual Basic](getting-started-with-linq.md)
 - [Odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
-- [Přehled standardních operátorů dotazů (Visual Basic)](standard-query-operators-overview.md)
-- [Úvod do jazyka LINQ v Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Standard Query Operators Overview (Visual Basic)](standard-query-operators-overview.md)
+- [Introduction to LINQ in Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
 - [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
 - [Dotazy](../../../../visual-basic/language-reference/queries/index.md)

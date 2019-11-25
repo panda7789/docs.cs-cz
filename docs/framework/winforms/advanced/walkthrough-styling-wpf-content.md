@@ -9,12 +9,12 @@ ms.assetid: e574aac7-7ea4-4cdb-8034-bab541f000df
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 581fcbfdfd7806b8f0f70347ac96f1bf09fa9098
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: d0aa2c54f05cea658c95dc2c23b7ba4bb78835c9
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460948"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74138926"
 ---
 # <a name="walkthrough-style-wpf-content"></a>Návod: styl obsahu WPF
 
@@ -61,7 +61,7 @@ Můžete použít různé styly pro ovládací prvek WPF a změnit jeho vzhled a
 
    `UserControl1` se otevře v Návrháři WPF.
 
-1. V zobrazení XAML vložte následující kód XAML po `<UserControl>` počáteční značku. Tento kód XAML vytvoří přechod s kontrastem ohraničení přechodu. Při kliknutí na ovládací prvek se přechody změní tak, aby se vygenerovalo tlačítko při stisknutí tlačítka. Další informace najdete v tématu [stylování a šablonování](../../wpf/controls/styling-and-templating.md).
+1. V zobrazení XAML vložte následující kód XAML po `<UserControl>` počáteční značku. Tento kód XAML vytvoří přechod s kontrastem ohraničení přechodu. Při kliknutí na ovládací prvek se přechody změní tak, aby se vygenerovalo tlačítko při stisknutí tlačítka. Další informace najdete v tématu [stylování a šablonování](../../../desktop-wpf/fundamentals/styles-templates-overview.md).
 
    ```xaml
    <UserControl.Resources>
@@ -142,4 +142,4 @@ Můžete použít různé styly pro ovládací prvek WPF a změnit jeho vzhled a
 - [Používání ovládacích prvků WPF](using-wpf-controls.md)
 - [Návrh kódu XAML v sadě Visual Studio](/visualstudio/xaml-tools/designing-xaml-in-visual-studio)
 - [Přehled XAML (WPF)](../../wpf/advanced/xaml-overview-wpf.md)
-- [Styly a šablony](../../wpf/controls/styling-and-templating.md)
+- [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)

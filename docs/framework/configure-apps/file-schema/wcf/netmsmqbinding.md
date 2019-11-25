@@ -2,12 +2,12 @@
 title: <netMsmqBinding>
 ms.date: 03/30/2017
 ms.assetid: a68b44d7-7799-43a3-9e63-f07c782810a6
-ms.openlocfilehash: 4bc8884b2d4cb6f8201e2038894c69d0805bddda
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 7456c6373c64e07b73e15e7e2bb229dce4032121
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73738830"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74140749"
 ---
 # <a name="netmsmqbinding"></a>\<netMsmqBinding >
 Definuje vazbu s frontou vhodnou pro komunikaci mezi počítači.  
@@ -75,7 +75,7 @@ Definuje vazbu s frontou vhodnou pro komunikaci mezi počítači.
 |`maxBufferPoolSize`|Celé číslo, které určuje maximální velikost fondu vyrovnávací paměti pro tuto vazbu. Výchozí hodnota je 8.|  
 |`maxReceivedMessageSize`|Kladné celé číslo, které definuje maximální velikost zprávy v bajtech, včetně hlaviček zpracovávaných touto vazbou. Odesílateli zprávy překračující tento limit obdrží chybu protokolu SOAP. Příjemce zprávu zruší a vytvoří záznam události v protokolu trasování. Výchozí hodnota je 65536. Cílem této velikosti zprávy je omezit vystavení útokům DOS (Denial of Service).|  
 |`maxRetryCycles`|Celé číslo, které označuje počet opakovaných cyklů používaných funkcí detekce nepoškozených zpráv. Zpráva se zobrazí jako nepoškozená zpráva, když dojde k chybě všech pokusů o doručení všech cyklů. Výchozí hodnota je 3. Další informace najdete v tématu <xref:System.ServiceModel.MsmqBindingBase.MaxRetryCycles%2A>.|  
-|`name`|Požadovaný atribut. Řetězec, který obsahuje název konfigurace vazby. Tato hodnota by měla být jedinečná, protože se používá jako identifikace vazby. Počínaje [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)]nejsou vazby a chování nutné mít název. Další informace o výchozích konfiguracích a Nameless vazbách a chování najdete v tématu [zjednodušená konfigurace](../../../wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../wcf/samples/simplified-configuration-for-wcf-services.md).|  
+|`name`|Požadovaný atribut. Řetězec, který obsahuje název konfigurace vazby. Tato hodnota by měla být jedinečná, protože se používá jako identifikace vazby. Počínaje .NET Framework 4 nejsou vazby a chování nutné mít název. Další informace o výchozích konfiguracích a Nameless vazbách a chování najdete v tématu [zjednodušená konfigurace](../../../wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../wcf/samples/simplified-configuration-for-wcf-services.md).|  
 |`openTimeout`|Hodnota <xref:System.TimeSpan>, která určuje časový interval poskytnutý pro dokončení operace otevření. Tato hodnota by měla být větší nebo rovna <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
 |`QueueTransferProtocol`|Platná <xref:System.ServiceModel.QueueTransferProtocol> hodnota, která určuje přenos komunikačního kanálu ve frontě, který tato vazba používá. Služba MSMQ nepodporuje adresování služby Active Directory při použití protokolu SOAP Reliable Messaging Protocol. Proto byste neměli nastavit tento atribut na `Srmp` nebo `Srmps`, pokud je atribut `useActiveDirectory` nastaven na `true`.|  
 |`receiveErrorHandling`|Hodnota <xref:System.ServiceModel.ReceiveErrorHandling>, která určuje, jak jsou zpracovávány nezpracované zprávy.|  

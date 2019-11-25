@@ -2,31 +2,31 @@
 title: Rozšiřitelnost
 ms.date: 03/30/2017
 ms.assetid: cd7ddffc-a261-44aa-bd50-33c1c74f0df0
-ms.openlocfilehash: af6bbb5ea703c83ec38b97fae5a6f4bd266479b3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 099d36c52207e462692ddaa6bcc4800686066594
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61969335"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74140692"
 ---
 # <a name="extensibility"></a>Rozšiřitelnost
-Tato část obsahuje ukázky, které pracují s vlastní rozšíření a další funkce služby Windows Communication Foundation (WCF).  
+Tato část obsahuje ukázky, které se týkají vlastní rozšiřitelnosti a dalších funkcí Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Rozšiřitelnost kanálů](../../../../docs/framework/wcf/samples/channels-extensibility.md)  
  Ukazuje vlastní kanály.  
   
- [Rozšiřitelnost zjišťování](../../../../docs/framework/wcf/samples/discovery-extensibility.md)  
+ [Rozšiřitelnost zjišťování](/previous-versions/dotnet/netframework-4.0/dd807503(v%3dvs.100))  
  Ukazuje vlastní zjišťování.  
   
  [Rozšiřitelnost vytváření instancí](../../../../docs/framework/wcf/samples/instancing-extensibility.md)  
- Ukazuje vlastní rozšíření.  
+ Ukazuje vlastní rozšiřitelnost.  
   
  [Rozšiřitelnost interoperability](../../../../docs/framework/wcf/samples/interop-extensibility.md)  
- Ukazuje interoperabilitu vlastní.  
+ Ukazuje vlastní interoperabilitu.  
   
  [Rozšiřitelnost kodéru zpráv](../../../../docs/framework/wcf/samples/message-encoder-extensibility.md)  
- Ukazuje vlastní zprávu kódování.  
+ Ukazuje vlastní kódování zpráv.  
   
  [Rozšiřitelnost metadat](../../../../docs/framework/wcf/samples/metadata-extensibility.md)  
  Ukazuje vlastní metadata.  
@@ -35,28 +35,28 @@ Tato část obsahuje ukázky, které pracují s vlastní rozšíření a další
  Ukazuje vlastní zabezpečení.  
   
  [Ukázky rozšiřitelnosti syndikace](../../../../docs/framework/wcf/samples/syndication-extensibility-samples.md)  
- Ukazuje vlastní syndikace.  
+ Ukazuje vlastní syndikaci.  
   
  [Rozšiřitelnost přenosů](../../../../docs/framework/wcf/samples/transport-extensibility.md)  
- Ukazuje vlastní přenosy.
+ Ukazuje vlastní přenos.
   
  [Formátovací modul a selektor operace](../../../../docs/framework/wcf/samples/operation-formatter-and-operation-selector.md)  
- Ukazuje, jak body rozšiřitelnosti můžou využívat vlastní zprávu datových formátů.  
+ Ukazuje, jak body rozšiřitelnosti můžou využívat vlastní formáty dat zpráv.  
   
  [Vlastní filtr zpráv](../../../../docs/framework/wcf/samples/custom-message-filter.md)  
- ukazuje, jak nahradit filtry zpráv, které Windows Communication Foundation (WCF) používá k odeslání zpráv do koncových bodů.  
+ ukazuje, jak nahradit filtry zpráv, které Windows Communication Foundation (WCF) používá k odesílání zpráv do koncových bodů.  
   
  [Vlastní hostitel služby](../../../../docs/framework/wcf/samples/custom-service-host.md)  
- Ukazuje, jak použít vlastní odvozený ze <xref:System.ServiceModel.ServiceHost> třídy pro úpravu chování za běhu služby.  
+ Ukazuje, jak použít vlastní odvozenou třídu <xref:System.ServiceModel.ServiceHost> pro změnu chování služby za běhu.  
   
  [Náhrada kontraktu dat](../../../../docs/framework/wcf/samples/datacontract-surrogate.md)  
- Ukazuje, jak procesy, jako jsou serializace, deserializace, schéma export a import schématu je možné přizpůsobit pomocí kontraktu dat náhradní třídy.  
+ Ukazuje, jak mohou být procesy jako serializace, deserializace, Export schématu a import schématu přizpůsobeny pomocí náhradní třídy kontraktu dat.  
   
  [Rozšíření kontroly nad zpracováním a vykazováním chyb](../../../../docs/framework/wcf/samples/extending-control-over-error-handling-and-reporting.md)  
- Ukazuje, jak rozšířit řídit zpracování chyb a zpráv o chybách pomocí služby WCF <xref:System.ServiceModel.Dispatcher.IErrorHandler> rozhraní.  
+ Ukazuje, jak lze prostřednictvím rozhraní <xref:System.ServiceModel.Dispatcher.IErrorHandler> v rámci služby WCF zvětšit kontrolu nad zpracováním chyb a zasíláním zpráv o chybách.  
   
  [Inspektoři zpráv](../../../../docs/framework/wcf/samples/message-inspectors.md)  
- Ukazuje, jak implementovat a konfigurovat messageinspectors klienta a služby.  
+ Ukazuje, jak implementovat a nakonfigurovat kontrolory zpráv klienta a služby.  
   
  [WebContentTypeMapper](../../../../docs/framework/wcf/samples/webcontenttypemapper-sample.md)  
- Ukazuje, jak mapovat nových typů obsahu do formátů tělo zprávy WCF.
+ Ukazuje, jak namapovat nové typy obsahu na formáty textu zpráv WCF.

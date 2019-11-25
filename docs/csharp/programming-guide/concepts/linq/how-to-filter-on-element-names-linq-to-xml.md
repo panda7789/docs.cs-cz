@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: Filtrovat podle názvů elementů (LINQ to XML)C#()'
+title: Jak filtrovat názvy elementů (LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: 1849fb03-f075-421f-863c-e8fb32773cdf
-ms.openlocfilehash: 2a4eccac3bc24005af0efee0785393de00039228
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 74efb19ef5ec77ca29145d27a8e5aa977530b68b
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253809"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141260"
 ---
-# <a name="how-to-filter-on-element-names-linq-to-xml-c"></a>Postupy: Filtrovat podle názvů elementů (LINQ to XML)C#()
-Při volání jedné z metod, které vrací <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement>hodnotu, můžete filtrovat podle názvu elementu.  
+# <a name="how-to-filter-on-element-names-linq-to-xml-c"></a>Jak filtrovat názvy elementů (LINQ to XML) (C#)
+Při volání jedné z metod, které vracejí <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement>, můžete filtrovat podle názvu elementu.  
   
 ## <a name="example"></a>Příklad  
  Tento příklad načte kolekci následníků, které jsou filtrovány tak, aby obsahovaly pouze následníky se zadaným názvem.  
   
- V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Typická nákupní objednávka (LINQ to XML)](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md).  
+ Tento příklad používá následující dokument XML: [vzorový soubor XML: typická nákupní objednávka (LINQ to XML)](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md).  
   
 ```csharp  
 XElement po = XElement.Load("PurchaseOrder.xml");  
@@ -33,7 +33,7 @@ ProductName:Lawnmower
 ProductName:Baby Monitor  
 ```  
   
- Jiné metody, které vracejí <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement> kolekce, budou následovat po stejném vzoru. Jejich signatury jsou podobné <xref:System.Xml.Linq.XContainer.Elements%2A> a <xref:System.Xml.Linq.XContainer.Descendants%2A>. Následuje úplný seznam metod, které mají podobné signatury metody:  
+ Další metody, které vracejí <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement> Collections, se řídí stejným vzorem. Signatury jsou podobné <xref:System.Xml.Linq.XContainer.Elements%2A> a <xref:System.Xml.Linq.XContainer.Descendants%2A>. Následuje úplný seznam metod, které mají podobné signatury metody:  
   
 - <xref:System.Xml.Linq.XNode.Ancestors%2A>  
   
@@ -52,7 +52,7 @@ ProductName:Baby Monitor
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje stejný dotaz pro XML, který je v oboru názvů. Další informace najdete v tématu [obory názvů Overview (LINQ to XMLC#) ()](namespaces-overview-linq-to-xml.md).  
   
- V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Typická nákupní objednávka v oboru názvů](./sample-xml-file-typical-purchase-order-in-a-namespace.md).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: typická nákupní objednávka v oboru názvů](./sample-xml-file-typical-purchase-order-in-a-namespace.md).  
   
 ```csharp  
 XNamespace aw = "http://www.adventure-works.com";  

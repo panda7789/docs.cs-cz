@@ -26,6 +26,8 @@
               href: fundamentals/styles-templates-overview.md
             - name: Vytvoření a použití stylu
               href: fundamentals/styles-templates-create-apply-style.md
+            - name: Vytvoření a použití šablony
+              href: themes/how-to-create-apply-template.md
     - name: Práce s daty
       items:
         - name: Přehled datových vazeb

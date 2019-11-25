@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Najít jednoho následníka pomocí metody Descendants (C#)'
+title: Jak najít jednoho následníka pomocí metody Descendants (C#)
 ms.date: 07/20/2015
 ms.assetid: 6f735be9-0293-4680-8007-ca9d96bfebed
-ms.openlocfilehash: 29cac5a666f7e9a560c550ad20a5bb68d02ee1ea
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 59d8cfb93ec527a6ceaa58b422a154e16d712533
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253800"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141196"
 ---
-# <a name="how-to-find-a-single-descendant-using-the-descendants-method-c"></a>Postupy: Najít jednoho následníka pomocí metody Descendants (C#)
-Můžete použít <xref:System.Xml.Linq.XContainer.Descendants%2A> metodu Axis k rychlému psaní kódu pro vyhledání jediného jedinečného pojmenovaného elementu. Tato technika je užitečná hlavně v případě, že chcete najít konkrétního následníka s konkrétním názvem. Můžete napsat kód pro přechod na požadovaný prvek, ale je často rychlejší a snazší napsat kód pomocí <xref:System.Xml.Linq.XContainer.Descendants%2A> osy.  
+# <a name="how-to-find-a-single-descendant-using-the-descendants-method-c"></a>Jak najít jednoho následníka pomocí metody Descendants (C#)
+Můžete použít metodu <xref:System.Xml.Linq.XContainer.Descendants%2A> osa k rychlému psaní kódu pro nalezení jediného jednoznačně pojmenovaného elementu. Tato technika je užitečná hlavně v případě, že chcete najít konkrétního následníka s konkrétním názvem. Můžete napsat kód pro přechod na požadovaný prvek, ale je často rychlejší a snazší psát kód pomocí <xref:System.Xml.Linq.XContainer.Descendants%2A> osy.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu se <xref:System.Linq.Enumerable.First%2A> používá standardní operátor dotazu.  
+ V tomto příkladu se používá operátor dotazu <xref:System.Linq.Enumerable.First%2A> Standard.  
   
 ```csharp  
 XElement root = XElement.Parse(@"<Root>  

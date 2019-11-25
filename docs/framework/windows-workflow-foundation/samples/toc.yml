@@ -24,8 +24,6 @@
               href: fault-handling-in-a-flowchart-activity-using-trycatch.md
             - name: Načtení z XAML
               href: load-from-xaml.md
-            - name: Použití aktivity InvokeMethod
-              href: using-the-invokemethod-activity.md
             - name: Použití aktivity Pick
               href: using-the-pick-activity.md
         - name: Vlastní aktivity

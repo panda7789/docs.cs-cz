@@ -1,19 +1,19 @@
 ---
-title: <seealso> (Visual Basic)
+title: <seealso>
 ms.date: 07/20/2015
 helpviewer_keywords:
 - <seealso> XML tag
 - seealso XML tag
 ms.assetid: 36050c95-1af2-4284-b9b6-1a70691ed978
-ms.openlocfilehash: 0231ff748949874f4b477cac15d891d313b25f4f
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 27bb2c271631170082709d9e3d76cd39eefbc860
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524648"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74352219"
 ---
-# <a name="seealso-visual-basic"></a>\<seealso > (Visual Basic)
-Určuje odkaz, který se zobrazí v části Viz také.  
+# <a name="seealso-visual-basic"></a>\<seealso> (Visual Basic)
+Specifies a link that appears in the See Also section.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,15 +23,15 @@ Určuje odkaz, který se zobrazí v části Viz také.
   
 ## <a name="parameters"></a>Parametry  
  `member`  
- Odkaz na člena nebo na pole, které lze volat z prostředí aktuální kompilace. Kompilátor zkontroluje, zda daný prvek kódu existuje a předá `member` k názvu elementu ve výstupním souboru XML. `member` musí být v uvozovkách ("").  
+ Odkaz na člena nebo na pole, které lze volat z prostředí aktuální kompilace. The compiler checks that the given code element exists and passes `member` to the element name in the output XML. `member` must appear within double quotation marks (" ").  
   
 ## <a name="remarks"></a>Poznámky  
- Pomocí značky `<seealso>` můžete zadat text, který se má zobrazit v části Viz také. Pomocí [\<see >](../../../visual-basic/language-reference/xmldoc/see.md) zadat odkaz v rámci textu.  
+ Use the `<seealso>` tag to specify the text that you want to appear in a See Also section. Use [\<see>](../../../visual-basic/language-reference/xmldoc/see.md) to specify a link from within text.  
   
- Zkompilujte s [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
+ Compile with [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) to process documentation comments to a file.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá značku `<seealso>` v části `DoesRecordExist` poznámky pro odkaz na metodu `UpdateRecord`.  
+ This example uses the `<seealso>` tag in the `DoesRecordExist` remarks section to refer to the `UpdateRecord` method.  
   
  [!code-vb[VbVbcnXmlDocComments#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#6)]  
   

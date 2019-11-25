@@ -2,53 +2,53 @@
 title: 'Postupy: Zabezpečené zprávy ve spolehlivých relacích'
 ms.date: 03/30/2017
 ms.assetid: aee33e50-936f-4486-9ca8-c1520c19a62d
-ms.openlocfilehash: ee35f2a36ca08814423b5a3d0b1432bacd28c2e5
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: edff27fe9649387c1922c34e72ef59d615e52b90
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61973001"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141667"
 ---
 # <a name="how-to-secure-messages-within-reliable-sessions"></a>Postupy: Zabezpečené zprávy ve spolehlivých relacích
 
-Toto téma popisuje kroky potřebné k povolení zabezpečení na úrovni zprávy ve spolehlivých relacích pomocí jedné vazby poskytované systémem, které podporují tyto relace, ale není ve výchozím nastavení, které si vyměňují zprávy. Povolení zabezpečené a spolehlivé relace imperativně pomocí kódu nebo deklarativně v konfiguračním souboru. Tento postup používá konfiguračních souborů klienta a služby umožňuje zabezpečené a spolehlivé relace.
+Toto téma popisuje kroky potřebné k povolení zabezpečení na úrovni zprávy pro zprávy vyměňované v rámci spolehlivé relace pomocí jedné z vazeb poskytovaných systémem, které podporují takovou relaci, ale nejsou ve výchozím nastavení. Povolit zabezpečenou a spolehlivou relaci buď imperativně, pomocí kódu nebo deklarativního v konfiguračním souboru. Tento postup využívá konfigurační soubory klienta a služby k zajištění zabezpečené a spolehlivé relace.
 
-Tento postup se skládá ze tří následujících klíčových úlohách:
+Tento postup se skládá z následujících tří klíčových úloh:
 
-1. Zadejte, že klient a služba výměna zpráv ve spolehlivých relacích.
+1. Určete, že zprávy klienta a služby Exchange v rámci spolehlivé relace.
 
-1. Vyžadují zabezpečení na úrovni zprávy ve spolehlivých relacích.
+1. Vyžadovat zabezpečení na úrovni zpráv v rámci spolehlivé relace.
 
-1. Určení typu pověření klienta, který klient musí použít k ověření ve službě.
+1. Zadejte typ přihlašovacích údajů klienta, který musí klient použít pro ověření u služby.
 
-Je důležité v první úloze, která obsahují element konfigurace koncového bodu `bindingConfiguration` atribut, který odkazuje na konfiguraci vazby s názvem (v tomto příkladu) `MessageSecurity`. [  **\<Vazby >** ](../../../../docs/framework/misc/binding.md) konfigurační prvek pak odkazuje na tento název a povolit tak, že nastavíte spolehlivé relace `enabled` atribut [  **\<reliableSession >** ](https://docs.microsoft.com/previous-versions/ms731375(v=vs.90)) elementu `true`. Může vyžadovat, že záruky objednané dodání jsou k dispozici ve spolehlivých relacích tak, že nastavíte `ordered` atribut `true`.
+Je důležité v prvním úkolu, který prvek konfigurace koncového bodu obsahuje atribut `bindingConfiguration`, který odkazuje na konfiguraci vazby s názvem (v tomto příkladu) `MessageSecurity`. [ **\<vazba >** ](../../configure-apps/file-schema/wcf/bindings.md) prvek konfigurace pak na tento název odkazuje, aby se povolily spolehlivé relace, nastavením atributu `enabled` prvku [ **\<reliableSession >** ](https://docs.microsoft.com/previous-versions/ms731375(v=vs.90)) na `true`. Můžete požadovat, aby v rámci spolehlivé relace byly dostupné seřazené záruky doručení nastavením atributu `ordered` na hodnotu `true`.
 
-Zdroj kopie v příkladu, na kterém je založen tento postup konfigurace najdete v článku [spolehlivá relace WS](../../../../docs/framework/wcf/samples/ws-reliable-session.md).
+Zdrojovou kopii příkladu, na kterém je tato procedura Konfigurace založená, najdete v tématu [Spolehlivá relace WS](../../../../docs/framework/wcf/samples/ws-reliable-session.md).
 
-Základní položky druhý úkol můžete provést tak, že nastavíte `mode` atribut  **\<zabezpečení >** obsažených v elementu  **\<vazby >** prvek klienta a služby do `Message`.
+Základní položky druhé úlohy se dosahují nastavením atributu `mode` elementu **\<zabezpečení >** obsaženého v **\<vazby >** elementu klienta a služby na `Message`.
 
-Základní položky třetí úloh můžete provést tak, že nastavíte `clientCredentialType` atribut  **\<zpráva >** obsažených v elementu  **\<zabezpečení >** prvek klienta a služby do `Certificate`.
+Základní položky třetí úlohy se dosahují nastavením atributu `clientCredentialType` **\<zprávy >** elementu obsaženého v elementu **\<Security >** klienta a služby na `Certificate`.
 
 > [!NOTE]
-> Při používání zabezpečení zpráv s spolehlivé relace, spolehlivé zasílání zpráv pokus o ověření neověřené klientské dokud namísto vyvolání výjimky po prvním selhání dojde k vypršení časového limitu.
+> Při použití zabezpečení zpráv u spolehlivých relací se spolehlivé zasílání zpráv pokusí ověřit neověřeného klienta, dokud nedojde k vypršení časového limitu namísto vyvolání výjimky při prvním selhání.
 
-### <a name="configure-the-service-with-a-wshttpbinding-to-use-a-reliable-session"></a>Nakonfigurovat službu pomocí WSHttpBinding používat spolehlivé relace
+### <a name="configure-the-service-with-a-wshttpbinding-to-use-a-reliable-session"></a>Konfigurace služby s WSHttpBinding pro použití spolehlivé relace
 
-Tento postup je popsaný v [jak: Výměna zpráv ve spolehlivých relacích](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-within-a-reliable-session.md).
+Tento postup je popsaný v tématu [Postupy: Výměna zpráv v rámci spolehlivé relace](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-within-a-reliable-session.md).
 
-### <a name="configure-the-client-with-a-wshttpbinding-to-use-a-reliable-session"></a>Konfigurace klienta s WSHttpBinding používat spolehlivé relace
+### <a name="configure-the-client-with-a-wshttpbinding-to-use-a-reliable-session"></a>Konfigurace klienta s WSHttpBinding pro použití spolehlivé relace
 
-Tento postup je popsaný v [jak: Výměna zpráv ve spolehlivých relacích](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-within-a-reliable-session.md).
+Tento postup je popsaný v tématu [Postupy: Výměna zpráv v rámci spolehlivé relace](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-within-a-reliable-session.md).
 
-### <a name="set-the-mode-and-clientcredentialtype-in-configuration"></a>Nastavte režim a nebyl typ ClientCredentialType v konfiguraci
+### <a name="set-the-mode-and-clientcredentialtype-in-configuration"></a>Nastavení režimu a ClientCredentialType v konfiguraci
 
-1. Přidat element příslušnou datovou vazbu [  **\<vazby >** ](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) element konfiguračního souboru. Následující příklad přidá [  **\<wsHttpBinding >** ](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) elementu.
+1. Přidejte vhodný element vazby do [ **\<vazeb >** ](../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md) elementu konfiguračního souboru. Následující příklad přidá prvek [ **\<wsHttpBinding >** ](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) .
 
-1. Přidat  **\<vazby >** elementu a nastavte jeho `name` atribut na odpovídající hodnotu. V příkladu se používá název `MessageSecurity`.
+1. Přidejte **\<vazbu >** elementu a nastavte jeho atribut `name` na odpovídající hodnotu. V příkladu se používá název `MessageSecurity`.
 
-1. Přidat  **\<zabezpečení >** elementu a nastavte `mode` atribut `Message`.
+1. Přidejte prvek **> zabezpečení\<** a nastavte atribut `mode` na `Message`.
 
-1. V rámci  **\<zabezpečení >** elementu, přidat  **\<zpráva >** elementu a nastavte `clientCredentialType` atribut `Certificate`.
+1. V rámci prvku **\<zabezpečení >** přidejte prvek **\<zprávy >** a nastavte atribut `clientCredentialType` na `Certificate`.
 
 ```xml
 <wsHttpBinding>

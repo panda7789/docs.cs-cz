@@ -1,52 +1,61 @@
 ---
-title: Použití XSLT transformace stromu XML (C#)
+title: Transformace stromu XML (C#) pomocí XSLT
 ms.date: 07/20/2015
 ms.assetid: 373a2699-d4c5-471b-9bda-c1f0ab73b477
-ms.openlocfilehash: 69d1dd639b5bee226c8e295efe5d623eed169ac6
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 7ebcfbd6be86fdd5e12bfc48a0fe80a084c6f9b5
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66487022"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74140912"
 ---
-# <a name="using-xslt-to-transform-an-xml-tree-c"></a>Použití XSLT transformace stromu XML (C#)
-Můžete vytvořit stromu XML, vytvořit <xref:System.Xml.XmlReader> ze stromu XML vytvoříte nový textový dokument a vytvoření <xref:System.Xml.XmlWriter> , která bude zapisovat do nového dokumentu. Potom můžete vyvolat transformace XSLT, předá <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter> k transformaci. Po úspěšném dokončení transformace nového stromu XML je vyplněno pomocí výsledků transformace.  
+# <a name="using-xslt-to-transform-an-xml-tree-c"></a>Transformace stromu XML (C#) pomocí XSLT
+Můžete vytvořit strom XML, vytvořit <xref:System.Xml.XmlReader> ze stromu XML, vytvořit nový dokument a vytvořit <xref:System.Xml.XmlWriter>, který bude zapisovat do nového dokumentu. Pak můžete vyvolat transformaci XSLT, předání <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter> transformaci. Po úspěšném dokončení transformace se nový strom XML naplní výsledky transformace.  
   
 ## <a name="example"></a>Příklad  
   
 ```csharp  
-string xslMarkup = @"<?xml version='1.0'?>  
-<xsl:stylesheet xmlns:xsl='http://www.w3.org/1999/XSL/Transform' version='1.0'>  
-    <xsl:template match='/Parent'>  
-        <Root>  
-            <C1>  
-            <xsl:value-of select='Child1'/>  
-            </C1>  
-            <C2>  
-            <xsl:value-of select='Child2'/>  
-            </C2>  
-        </Root>  
-    </xsl:template>  
-</xsl:stylesheet>";  
-  
-XDocument xmlTree = new XDocument(  
-    new XElement("Parent",  
-        new XElement("Child1", "Child1 data"),  
-        new XElement("Child2", "Child2 data")  
-    )  
-);  
-  
-XDocument newTree = new XDocument();  
-using (XmlWriter writer = newTree.CreateWriter()) {  
-    // Load the style sheet.  
-    XslCompiledTransform xslt = new XslCompiledTransform();  
-    xslt.Load(XmlReader.Create(new StringReader(xslMarkup)));  
-  
-    // Execute the transform and output the results to a writer.  
-    xslt.Transform(xmlTree.CreateReader(), writer);  
-}  
-  
-Console.WriteLine(newTree);  
+string xslt = @"<?xml version='1.0'?>  
+    <xsl:stylesheet xmlns:xsl='http://www.w3.org/1999/XSL/Transform' version='1.0'>  
+        <xsl:template match='/Parent'>  
+            <Root>  
+                <C1>  
+                <xsl:value-of select='Child1'/>  
+                </C1>  
+                <C2>  
+                <xsl:value-of select='Child2'/>  
+                </C2>  
+            </Root>  
+        </xsl:template>  
+    </xsl:stylesheet>";
+
+var oldDocument = new XDocument(
+    new XElement("Parent",
+        new XElement("Child1", "Child1 data"),
+        new XElement("Child2", "Child2 data")
+    )
+);
+
+var newDocument = new XDocument();
+
+using (var stringReader = new StringReader(xslt))
+{
+    using (XmlReader xsltReader = XmlReader.Create(stringReader))
+    {
+        var transformer = new XslCompiledTransform();
+        transformer.Load(xsltReader);
+        using (XmlReader oldDocumentReader = oldDocument.CreateReader())
+        {
+            using (XmlWriter newDocumentWriter = newDocument.CreateWriter())
+            {
+                transformer.Transform(oldDocumentReader, newDocumentWriter);
+            }
+        }
+    }
+}
+
+string result = newDocument.ToString();
+Console.WriteLine(result);
 ```  
   
  Tento příklad vytvoří následující výstup:  

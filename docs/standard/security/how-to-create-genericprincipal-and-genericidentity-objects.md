@@ -13,20 +13,20 @@ helpviewer_keywords:
 ms.assetid: 465694cf-258b-4747-9dae-35b01a5bcdbb
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1f768242bffe619051779f87e950138ae9fcec6c
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 37f5543ceaca83a024132c5d010b6d969876454f
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353184"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353832"
 ---
 # <a name="how-to-create-genericprincipal-and-genericidentity-objects"></a>Postupy: Vytváření objektů GenericPrincipal a GenericIdentity
 
-Třídu <xref:System.Security.Principal.GenericIdentity> ve spojení s třídou <xref:System.Security.Principal.GenericPrincipal> můžete použít k vytvoření autorizačního schématu, které existuje nezávisle na doméně systému Windows.
+You can use the <xref:System.Security.Principal.GenericIdentity> class in conjunction with the <xref:System.Security.Principal.GenericPrincipal> class to create an authorization scheme that exists independent of a Windows domain.
 
-### <a name="to-create-a-genericprincipal-object"></a>Vytvoření objektu GenericPrincipal
+### <a name="to-create-a-genericprincipal-object"></a>To create a GenericPrincipal object
 
-1. Vytvořte novou instanci třídy identity a inicializujte ji s názvem, který má být uchováván. Následující kód vytvoří nový objekt **GenericIdentity** a inicializuje jej s názvem `MyUser`.
+1. Create a new instance of the identity class and initialize it with the name you want it to hold. The following code creates a new **GenericIdentity** object and initializes it with the name `MyUser`.
 
     ```vb
     Dim myIdentity As New GenericIdentity("MyUser")
@@ -36,7 +36,7 @@ Třídu <xref:System.Security.Principal.GenericIdentity> ve spojení s třídou 
     GenericIdentity myIdentity = new GenericIdentity("MyUser");
     ```
 
-2. Vytvořte novou instanci třídy **GenericPrincipal** a inicializujte ji pomocí dříve vytvořeného objektu **GenericIdentity** a pole řetězců, které představuje role, které mají být přidruženy k tomuto objektu zabezpečení. Následující příklad kódu určuje pole řetězců, které reprezentují roli správce a roli uživatele. **GenericPrincipal** se pak inicializuje s předchozím **GenericIdentity** a polem řetězců.
+2. Create a new instance of the **GenericPrincipal** class and initialize it with the previously created **GenericIdentity** object and an array of strings that represent the roles that you want associated with this principal. The following code example specifies an array of strings that represent an administrator role and a user role. The **GenericPrincipal** is then initialized with the previous **GenericIdentity** and the string array.
 
     ```vb
     Dim myStringArray As String() = {"Manager", "Teller"}
@@ -48,7 +48,7 @@ Třídu <xref:System.Security.Principal.GenericIdentity> ve spojení s třídou 
     GenericPrincipal myPrincipal = new GenericPrincipal(myIdentity, myStringArray);
     ```
 
-3. Použijte následující kód k připojení objektu zabezpečení k aktuálnímu vláknu. To je užitečné v situacích, kdy je nutné ověřit objekt zabezpečení několikrát, musí být ověřen jiným kódem spuštěným v aplikaci nebo musí být ověřen objektem <xref:System.Security.Permissions.PrincipalPermission>. Můžete i nadále provádět ověřování na základě rolí u objektu zabezpečení bez jeho připojení ke vláknu. Další informace naleznete v tématu [nahrazování objektu zabezpečení](../../../docs/standard/security/replacing-a-principal-object.md).
+3. Use the following code to attach the principal to the current thread. This is valuable in situations where the principal must be validated several times, it must be validated by other code running in your application, or it must be validated by a <xref:System.Security.Permissions.PrincipalPermission> object. You can still perform role-based validation on the principal object without attaching it to the thread. For more information, see [Replacing a Principal Object](../../../docs/standard/security/replacing-a-principal-object.md).
 
     ```vb
     Thread.CurrentPrincipal = myPrincipal
@@ -60,10 +60,9 @@ Třídu <xref:System.Security.Principal.GenericIdentity> ve spojení s třídou 
 
 ## <a name="example"></a>Příklad
 
-Následující příklad kódu ukazuje, jak vytvořit instanci třídy **GenericPrincipal** a **GenericIdentity**. Tento kód zobrazí hodnoty těchto objektů do konzoly.
+The following code example demonstrates how to create an instance of a **GenericPrincipal** and a **GenericIdentity**. This code displays the values of these objects to the console.
 
 ```vb
-Imports System
 Imports System.Security.Principal
 Imports System.Threading
 
@@ -134,7 +133,7 @@ public class Class1
 }
 ```
 
-Po spuštění aplikace zobrazí výstup podobný následujícímu.
+When executed, the application displays output similar to the following.
 
 ```console
 The Name is: MyIdentity

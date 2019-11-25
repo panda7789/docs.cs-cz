@@ -3,14 +3,14 @@ title: Vytváření Mixin typů pomocí výchozích metod rozhraní
 description: Pomocí výchozích členů rozhraní můžete roztáhnout rozhraní s nepovinnými výchozími implementacemi pro implementátory.
 ms.technology: csharp-advanced-concepts
 ms.date: 10/04/2019
-ms.openlocfilehash: 798413f0071159893de39f3e190a9b2693571bb7
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: fb8fc1f432bdf909bae4f54bb76d10d7619f71a3
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039275"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74140842"
 ---
-# <a name="tutorial-mix-in-functionality-when-creating-classes-using-interfaces-with-default-interface-methods"></a>Kurz: kombinace funkcí při vytváření tříd pomocí rozhraní s výchozími metodami rozhraní
+# <a name="tutorial-mix-functionality-in-when-creating-classes-using-interfaces-with-default-interface-methods"></a>Kurz: kombinace funkcí při vytváření tříd pomocí rozhraní s výchozími metodami rozhraní
 
 Počínaje C# 8,0 na .net Core 3,0 můžete definovat implementaci při deklaraci člena rozhraní. Tato funkce poskytuje nové funkce, kde můžete definovat výchozí implementace pro funkce deklarované v rozhraních. Třídy mohou vybírat, kdy přepsat funkce, kdy použít výchozí funkce a kdy není deklarována podpora diskrétních funkcí.
 
@@ -65,7 +65,7 @@ Nyní nadefinujte rozhraní pro světlo, které se může automaticky vypnout po
 
 [!code-csharp[pure Timer interface](~/samples/csharp/tutorials/mixins-with-interfaces/UnusedExampleCode.cs?name=SnippetPureTimerInterface)]
 
-Můžete přidat základní implementaci do režijního světla, ale lepším řešením je upravit tuto definici rozhraní a poskytnout tak výchozí implementaci `virtual`:
+Můžete přidat základní implementaci do režijního světla, ale lepším řešením je upravit tuto definici rozhraní a poskytnout `virtual` výchozí implementaci:
 
 [!code-csharp[Timer interface](~/samples/csharp/tutorials/mixins-with-interfaces/ITimerLight.cs?name=SnippetTimerLightFinal)]
 
@@ -79,7 +79,7 @@ Jiný typ světla může podporovat propracovanější protokol. Může poskytno
 
 [!code-csharp[Override the timer function](~/samples/csharp/tutorials/mixins-with-interfaces/HalogenLight.cs?name=SnippetHalogenLight)]
 
-Na rozdíl od přepisu metod virtuální třídy nepoužívá deklarace `TurnOnFor` v třídě `HalogenLight` klíčové slovo `override`. 
+Na rozdíl od přepisu metod virtuální třídy nepoužívá deklarace `TurnOnFor` ve třídě `HalogenLight` klíčové slovo `override`. 
 
 ## <a name="mix-and-match-capabilities"></a>Možnosti kombinace a shody
 
@@ -91,7 +91,7 @@ Výchozí implementace umožňuje jakékoli světlo blikat. Režijní náklady m
 
 [!code-csharp[Use the default blink function](~/samples/csharp/tutorials/mixins-with-interfaces/OverheadLight.cs?name=SnippetOverheadLight)]
 
-Nový typ světla, `LEDLight` podporuje přímo funkci Timer i funkci Blink. Tento styl světla implementuje rozhraní `ITimerLight` i `IBlinkingLight` a přepíše metodu `Blink`:
+Nový typ světla, `LEDLight` podporuje přímo funkci Timer i funkci Blink. Tento styl světla implementuje rozhraní `ITimerLight` i `IBlinkingLight` a přepisuje metodu `Blink`:
 
 [!code-csharp[Override the blink function](~/samples/csharp/tutorials/mixins-with-interfaces/LEDLight.cs?name=SnippetLEDLight)]
 
@@ -99,7 +99,7 @@ Nový typ světla, `LEDLight` podporuje přímo funkci Timer i funkci Blink. Ten
 
 [!code-csharp[Override the blink and timer function](~/samples/csharp/tutorials/mixins-with-interfaces/ExtraFancyLight.cs?name=SnippetExtraFancyLight)]
 
-`HalogenLight`, který jste vytvořili dříve, nepodporuje blikání. Nepřidejte tedy `IBlinkingLight` do seznamu podporovaných rozhraní.
+`HalogenLight`, který jste vytvořili dříve, nepodporuje blikání. Nepřidejte `IBlinkingLight` do seznamu podporovaných rozhraní.
 
 ## <a name="detect-the-light-types-using-pattern-matching"></a>Detekovat světlo typy pomocí porovnávání vzorů
 
@@ -123,6 +123,6 @@ Výchozí implementace předpokládá napájení z elektrické sítě:
 
 Tyto změny se zkompiluje čistě, i když `ExtraFancyLight` deklaruje podporu rozhraní `ILight` a obou odvozených rozhraní, `ITimerLight` a `IBlinkingLight`. V rozhraní `ILight` je deklarována pouze jedna "nejbližší" implementace. Jakákoliv třída, která deklarovaná přepsání by se stala jedinou implementací "nejbližší". Viděli jste příklady v předchozích třídách, které overrode členy jiných odvozených rozhraní.
 
-Vyhněte se přepsání stejné metody ve více odvozených rozhraních. Tím se vytvoří dvojznačné volání metody vždy, když třída implementuje jak odvozená rozhraní. Kompilátor nemůže vybrat jedinou lepší metodu, takže dojde k chybě. Například pokud `IBlinkingLight` a `ITimerLight` implementovala přepsání `PowerStatus`, `OverheadLight` by muselo poskytnout konkrétnější přepsání. V opačném případě kompilátor nemůže vybírat mezi implementacemi ve dvou odvozených rozhraních. Tuto situaci lze obvykle vyhnout tím, že zachováte definice rozhraní v malém a zaměření na jednu funkci. V tomto scénáři je každá schopnost světla jeho vlastním rozhraním; více rozhraní dědí pouze třídy.
+Vyhněte se přepsání stejné metody ve více odvozených rozhraních. Tím se vytvoří dvojznačné volání metody vždy, když třída implementuje jak odvozená rozhraní. Kompilátor nemůže vybrat jedinou lepší metodu, takže dojde k chybě. Například pokud `IBlinkingLight` i `ITimerLight` implementovaly přepsání `PowerStatus`, `OverheadLight` by musel poskytnout konkrétnější přepsání. V opačném případě kompilátor nemůže vybírat mezi implementacemi ve dvou odvozených rozhraních. Tuto situaci lze obvykle vyhnout tím, že zachováte definice rozhraní v malém a zaměření na jednu funkci. V tomto scénáři je každá schopnost světla jeho vlastním rozhraním; více rozhraní dědí pouze třídy.
 
 Tento příklad ukazuje jeden scénář, kde můžete definovat diskrétní funkce, které mohou být smíchány do tříd. Deklarujete jakoukoli sadu podporovaných funkcí tím, že deklarujete, která rozhraní podporuje třída. Použití virtuálních výchozích metod rozhraní umožňuje třídám použít nebo definovat odlišnou implementaci pro jakékoli nebo všechny metody rozhraní. Tato funkce jazyka poskytuje nové způsoby modelování reálných systémů, které vytváříte. Výchozí metody rozhraní poskytují jasný způsob, jak vyjádřit související třídy, které se mohou kombinovat a porovnat s různými funkcemi pomocí virtuálních implementací těchto schopností.

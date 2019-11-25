@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - msmqIntegrationBinding Element
 ms.assetid: edf277f3-e3bf-4ed8-9f55-83b5788430a7
-ms.openlocfilehash: 95942e9818eccc018c123148949c6f2dee4fa6e0
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: ba28a81dd2ea0684ed863821afd3a8f31c0fb064
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73736622"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74140764"
 ---
 # <a name="msmqintegrationbinding"></a>\<msmqIntegrationBinding >
 Definuje vazbu, která poskytuje podporu fronty směrováním zpráv prostřednictvím služby MSMQ.  
@@ -62,14 +62,14 @@ Definuje vazbu, která poskytuje podporu fronty směrováním zpráv prostředni
 |Třída|Logická hodnota, která označuje, zda je každá zpráva doručena pouze jednou. Odesílatel bude upozorněn na selhání doručení. Pokud je `false``durable`, tento atribut se ignoruje a zprávy se přenesou bez záruky doručení. Výchozí hodnota je `true`. Další informace najdete v tématu <xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A>.|  
 |maxReceivedMessageSize|Kladné celé číslo, které definuje maximální velikost zprávy v bajtech, včetně hlaviček zpracovávaných touto vazbou. Odesílateli zprávy překračující tento limit obdrží chybu protokolu SOAP. Příjemce zprávu zruší a vytvoří záznam události v protokolu trasování. Výchozí hodnota je 65536. Cílem této velikosti zprávy je omezit vystavení útokům DOS (Denial of Service).|  
 |maxRetryCycles|Celé číslo, které označuje počet opakovaných cyklů používaných funkcí detekce nepoškozených zpráv. Zpráva se zobrazí jako nepoškozená zpráva, když dojde k chybě všech pokusů o doručení všech cyklů. Výchozí hodnota je 2. Další informace najdete v tématu <xref:System.ServiceModel.MsmqBindingBase.MaxRetryCycles%2A>.|  
-|name|Řetězec, který obsahuje název konfigurace vazby. Tato hodnota by měla být jedinečná, protože se používá jako identifikace vazby. Počínaje [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)]nejsou vazby a chování nutné mít název. Další informace o výchozích konfiguracích a Nameless vazbách a chování najdete v tématu [zjednodušená konfigurace](../../../wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../wcf/samples/simplified-configuration-for-wcf-services.md).|  
+|name|Řetězec, který obsahuje název konfigurace vazby. Tato hodnota by měla být jedinečná, protože se používá jako identifikace vazby. Počínaje .NET Framework 4 nejsou vazby a chování nutné mít název. Další informace o výchozích konfiguracích a Nameless vazbách a chování najdete v tématu [zjednodušená konfigurace](../../../wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../wcf/samples/simplified-configuration-for-wcf-services.md).|  
 |openTimeout|Hodnota <xref:System.TimeSpan>, která určuje časový interval poskytnutý pro dokončení operace otevření. Tato hodnota by měla být větší nebo rovna <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
 |receiveErrorHandling|Hodnota <xref:System.ServiceModel.ReceiveErrorHandling>, která určuje, jak jsou zpracovávány nezpracované zprávy.|  
 |receiveRetryCount|Celé číslo, které určuje maximální počet okamžitých opakovaných pokusů, by se měl správce fronty pokusit, pokud se nezdaří přenos zprávy z fronty aplikace do aplikace.<br /><br /> Pokud jste dosáhli maximálního počtu pokusů o doručení a zpráva k ní nepoužívá aplikace, pošle se zpráva do fronty opakovaných pokusů o opětovné doručení v pozdějším čase. Doba před přenosem zprávy zpět do odesílající fronty je řízena `retryCycleDelay`. Pokud opakované cykly dosáhnou `maxRetryCycles` hodnoty, zpráva se buď pošle do fronty nepotvrzené zprávy, nebo se pošle zpět do odesilatele negativní potvrzení.|  
 |receiveTimeout|Hodnota <xref:System.TimeSpan>, která určuje časový interval poskytnutý pro dokončení operace Receive. Tato hodnota by měla být větší nebo rovna <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:10:00.|  
 |receiveContextEnabled|Logická hodnota, která určuje, zda je povolen kontext příjmu pro zpracování zpráv ve frontách. Pokud je tato možnost nastavená na `true`, může služba "prohlížet" zprávy ve frontě, aby ji bylo možné začít zpracovávat, a pokud se něco nepovede a vyvolá se výjimka, zůstane ve frontě. Služba může také "uzamknout" zprávy, aby bylo možné opakovat zpracování později v pozdějším časovém bodě. ReceiveContext poskytuje mechanismus pro "dokončování" zprávu po zpracování, aby ji bylo možné odebrat z fronty. Zprávy již nejsou čteny a znovu zapisovány do front přes síť a jednotlivé zprávy nejsou během zpracování skákající napříč různými instancemi služby.|  
 |retryCycleDelay|Hodnota TimeSpan, která určuje časovou prodlevu mezi opakovanými cykly při pokusu o doručení zprávy, která nemohla být doručena okamžitě. Hodnota definuje pouze minimální dobu čekání, protože skutečná čekací doba může být delší. Výchozí hodnota je 00:30:00. Další informace najdete v tématu <xref:System.ServiceModel.MsmqBindingBase.RetryCycleDelay%2A>.|  
-|SendTimeout|Hodnota <xref:System.TimeSpan>, která určuje časový interval poskytnutý pro dokončení operace odeslání. Tato hodnota by měla být větší nebo rovna <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
+|sendTimeout|Hodnota <xref:System.TimeSpan>, která určuje časový interval poskytnutý pro dokončení operace odeslání. Tato hodnota by měla být větší nebo rovna <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
 |serializationFormat|Definuje formát použitý pro serializaci těla zprávy. Tento atribut je typu <xref:System.ServiceModel.MsmqIntegration.MsmqMessageSerializationFormat>.|  
 |timeToLive|Hodnota TimeSpan, která určuje, jak dlouho jsou zprávy platné, než vyprší jejich platnost, a umístí se do fronty nedoručených zpráv. Výchozí hodnota je 1,00:00:00.<br /><br /> Tento atribut je nastaven tak, aby bylo zajištěno, že zprávy citlivé na čas nejsou před zpracováním přijímajícími aplikacemi zastaraly. U zprávy ve frontě, kterou přijímající aplikace nespotřebovává v zadaném časovém intervalu, se říká, že platnost vypršela. Zprávy s vypršenou platností se odesílají do speciální fronty označované jako fronta nedoručených zpráv. Umístění fronty nedoručených zpráv je nastaveno s atributem `DeadLetterQueue` nebo odpovídajícím výchozím nastavením na základě ujištění.|  
 |useMsmqTracing|Logická hodnota určující, zda mají být zprávy zpracované touto vazbou sledovány. Výchozí hodnota je `false`. Je-li povoleno trasování, jsou vytvořeny zprávy sestavy a odesílány do fronty sestav pokaždé, když zpráva opustí nebo dorazí na počítač služby Řízení front zpráv.|  

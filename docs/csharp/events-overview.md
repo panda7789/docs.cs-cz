@@ -1,16 +1,16 @@
 ---
-title: Úvod do událostí
+title: Seznámení s událostmi
 description: Přečtěte si o událostech v .NET Core a cílech návrhu jazyka pro události v tomto přehledu.
 ms.date: 06/20/2016
 ms.assetid: 9b8d2a00-1584-4a5b-8994-5003d54d8e0c
-ms.openlocfilehash: b1fd2ebe2ae91b55c9179f280d8894f6b40ced9b
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: ceae2b9319a1de9f01102987735c7db2c2883f18
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72771920"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74138515"
 ---
-# <a name="introduction-to-events"></a>Úvod do událostí
+# <a name="introduction-to-events"></a>Seznámení s událostmi
 
 [Předchozí](delegates-patterns.md)
 
@@ -26,13 +26,13 @@ Přihlášení k odběru události také vytvoří propojení mezi dvěma objekt
 
 ## <a name="design-goals-for-event-support"></a>Cíle návrhu pro podporu událostí
 
-Návrh jazyka pro události, které cílí na tyto cíle.
+Návrh jazyka pro události, které cílí na tyto cíle:
 
-Nejdřív povolte velmi minimální spojení mezi zdrojem událostí a jímkou událostí. Tyto dvě komponenty možná nebudou zapsány stejnou organizací a mohou být aktualizovány i na zcela různých plánech.
+- Povoluje velmi minimální spojení mezi zdrojem událostí a jímkou událostí. Tyto dvě komponenty možná nebudou zapsány stejnou organizací a mohou být aktualizovány i na zcela různých plánech.
 
-Za druhé by mělo být velmi jednoduché přihlásit se k odběru události a zrušit odběr této události.
+- Mělo by být velmi jednoduché přihlásit se k odběru události a zrušit odběr této události.
 
-A konečně, zdroje událostí by měly podporovat více předplatitelů událostí. Měla by také podporovat nepřipojené předplatitele událostí.
+- Zdroje událostí by měly podporovat více odběratelů událostí. Měla by také podporovat nepřipojené předplatitele událostí.
 
 Můžete vidět, že cíle pro události jsou velmi podobné cílům pro delegáty.
 To je důvod, proč je podpora jazyka událostí založená na podpoře jazyka delegáta.
@@ -69,7 +69,7 @@ EventHandler<FileListArgs> onProgress = (sender, eventArgs) =>
 fileLister.Progress += onProgress;
 ```
 
-Metoda obslužné rutiny je obvykle prefix "on" následovaný názvem události, jak je uvedeno výše.
+Metoda obslužné rutiny má obvykle předponu "on" následovaný názvem události, jak je uvedeno výše.
 
 Pomocí operátoru `-=` se odhlásíte k odběru:
 

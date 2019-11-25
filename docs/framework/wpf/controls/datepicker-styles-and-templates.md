@@ -9,15 +9,15 @@ helpviewer_keywords:
 - styles [WPF], DatePicker
 - states [WPF], DatePicker
 ms.assetid: c430a657-692f-44bd-a549-2341f92d6115
-ms.openlocfilehash: 323768b6221061d46446ab18f85555f5f7415e74
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 002d1c3271827239dcd3a319621f66fb5bc68d4e
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460365"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283776"
 ---
 # <a name="datepicker-styles-and-templates"></a>DatePicker – styly a šablony
-Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.DatePicker>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [přizpůsobení vzhledu existujícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.DatePicker>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
   
 ## <a name="datepicker-parts"></a>DatePicker části  
  V následující tabulce jsou uvedeny pojmenované části ovládacího prvku <xref:System.Windows.Controls.DatePicker>.  
@@ -34,8 +34,8 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
   
 |Název VisualState|Název VisualStateGroup|Popis|  
 |-|-|-|  
-|Běžnou|CommonStates|Výchozí stav.|  
-|Zabezpečen|CommonStates|<xref:System.Windows.Controls.DatePicker> je zakázaný.|  
+|Normální|CommonStates|Výchozí stav.|  
+|Zakázáno|CommonStates|<xref:System.Windows.Controls.DatePicker> je zakázaný.|  
 |Platné|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
 |InvalidFocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
 |InvalidUnfocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
@@ -53,8 +53,8 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
   
 |Název VisualState|Název VisualStateGroup|Popis|  
 |-|-|-|  
-|Běžnou|CommonStates|Výchozí stav.|  
-|Zabezpečen|CommonStates|<xref:System.Windows.Controls.Primitives.DatePickerTextBox> je zakázaný.|  
+|Normální|CommonStates|Výchozí stav.|  
+|Zakázáno|CommonStates|<xref:System.Windows.Controls.Primitives.DatePickerTextBox> je zakázaný.|  
 |MouseOver|CommonStates|Ukazatel myši je umístěn na <xref:System.Windows.Controls.Primitives.DatePickerTextBox>.|  
 |ReadOnly|CommonStates|Uživatel nemůže měnit text v <xref:System.Windows.Controls.Primitives.DatePickerTextBox>.|  
 |Zaměřil|FocusStates|Ovládací prvek má fokus.|  
@@ -83,4 +83,4 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
 - [Styly a šablony ovládacích prvků](control-styles-and-templates.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)
 - [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md)

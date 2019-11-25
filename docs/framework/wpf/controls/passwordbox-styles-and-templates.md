@@ -9,16 +9,16 @@ helpviewer_keywords:
 - PasswordBox [WPF], styles and templates
 - parts [WPF], PasswordBox
 ms.assetid: deb52107-959f-4a60-b303-d21a0a933060
-ms.openlocfilehash: 227ccbda8d570868258508935a5d95f0f40663ab
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 4ba90182468466773644c7375059f0cc01675b33
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458836"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283462"
 ---
 # <a name="passwordbox-styles-and-templates"></a>PasswordBox – styly a šablony
 
-Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.PasswordBox>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [přizpůsobení vzhledu existujícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).
+Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.PasswordBox>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md).
 
 ## <a name="passwordbox-parts"></a>PasswordBox části
 
@@ -34,9 +34,9 @@ V následující tabulce jsou uvedeny vizuální stavy pro ovládací prvek <xre
 
 |Název VisualState|Název VisualStateGroup|Popis|
 |-|-|-|
-|Běžnou|CommonStates|Výchozí stav.|
+|Normální|CommonStates|Výchozí stav.|
 |MouseOver|CommonStates|Ukazatel myši je umístěn nad ovládacím prvkem.|
-|Zabezpečen|CommonStates|Ovládací prvek je zakázán.|
+|Zakázáno|CommonStates|Ovládací prvek je zakázán.|
 |Zaměřil|FocusStates|Ovládací prvek má fokus.|
 |Bez fokusu|FocusStates|Ovládací prvek nemá fokus.|
 |Platné|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|
@@ -62,4 +62,4 @@ Předchozí příklad používá jeden nebo více následujících zdrojů.
 - [Styly a šablony ovládacích prvků](control-styles-and-templates.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)
 - [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md)

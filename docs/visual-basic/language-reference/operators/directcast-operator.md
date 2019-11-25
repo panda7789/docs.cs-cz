@@ -1,5 +1,5 @@
 ---
-title: DirectCast – operátor (Visual Basic)
+title: DirectCast – operátor
 ms.date: 07/20/2015
 f1_keywords:
 - vb.directCast
@@ -7,39 +7,39 @@ f1_keywords:
 helpviewer_keywords:
 - DirectCast keyword [Visual Basic]
 ms.assetid: 63e5a1d0-4d9e-4732-bf8f-e90c0c8784b8
-ms.openlocfilehash: 628ce4f06b91d0f514f71dea3aad8ea0fee6dccf
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8ea29b80cf27bbb2c21a8cebbfaa0a294e05f11d
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61778544"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74331311"
 ---
 # <a name="directcast-operator-visual-basic"></a>DirectCast – operátor (Visual Basic)
-Zavádí operaci převodu typu na základě dědičnosti nebo implementace.  
+Introduces a type conversion operation based on inheritance or implementation.  
   
 ## <a name="remarks"></a>Poznámky  
- `DirectCast` nepoužívá jazyka Visual Basic za běhu pomocné rutiny pro převod, tak může poskytnout mírně vyšší výkon než `CType` při převodu do a z datového typu `Object`.  
+ `DirectCast` does not use the Visual Basic run-time helper routines for conversion, so it can provide somewhat better performance than `CType` when converting to and from data type `Object`.  
   
- Můžete použít `DirectCast` – klíčové slovo podobným způsobem, jakým používáte [funkce CType](../../../visual-basic/language-reference/functions/ctype-function.md) a [TryCast – operátor](../../../visual-basic/language-reference/operators/trycast-operator.md) – klíčové slovo. Můžete zadat výraz jako první argument a typ převést tak, jako druhý argument. `DirectCast` vyžaduje vztahu dědičnosti nebo implementace mezi datovými typy obou argumentů. To znamená, že jeden typ musí dědit z nebo implementovat druhé.  
+ You use the `DirectCast` keyword similar to the way you use the [CType Function](../../../visual-basic/language-reference/functions/ctype-function.md) and the [TryCast Operator](../../../visual-basic/language-reference/operators/trycast-operator.md) keyword. You supply an expression as the first argument and a type to convert it to as the second argument. `DirectCast` requires an inheritance or implementation relationship between the data types of the two arguments. This means that one type must inherit from or implement the other.  
   
-## <a name="errors-and-failures"></a>Chyby a selhání  
- `DirectCast` vygeneruje chybu kompilátoru, pokud zjistí, že neexistuje žádný vztah dědičnosti nebo implementace. Nezaručuje chybějící chybu kompilátoru úspěšný převod. Pokud je požadovaný převod zužující, může v době běhu selhat. Pokud se to stane, modul runtime vyvolá výjimku <xref:System.InvalidCastException> chyby.  
+## <a name="errors-and-failures"></a>Errors and Failures  
+ `DirectCast` generates a compiler error if it detects that no inheritance or implementation relationship exists. But the lack of a compiler error does not guarantee a successful conversion. If the desired conversion is narrowing, it could fail at run time. If this happens, the runtime throws an <xref:System.InvalidCastException> error.  
   
 ## <a name="conversion-keywords"></a>Klíčová slova převodu  
- Porovnání klíčová slova převodu typu je následujícím způsobem.  
+ A comparison of the type conversion keywords is as follows.  
   
-|Klíčové slovo|Typy dat|Argument vztah|Chyba za běhu|  
+|Keyword|Typy dat|Argument relationship|Run-time failure|  
 |---|---|---|---|  
-|[Funkce CType](../../../visual-basic/language-reference/functions/ctype-function.md)|Všechny datové typy|Rozšíření ani zúžení při převodu musí být definovány mezi těmito dvěma datovými typy|Vyvolá výjimku <xref:System.InvalidCastException>|  
-|`DirectCast`|Všechny datové typy|Jeden typ musí dědit z nebo implementoval další typ.|Vyvolá výjimku <xref:System.InvalidCastException>|  
-|[Operátor TryCast](../../../visual-basic/language-reference/operators/trycast-operator.md)|Odkazové typy pouze|Jeden typ musí dědit z nebo implementoval další typ.|Vrátí [nic](../../../visual-basic/language-reference/nothing.md)|  
+|[Funkce CType](../../../visual-basic/language-reference/functions/ctype-function.md)|Any data types|Widening or narrowing conversion must be defined between the two data types|Throws <xref:System.InvalidCastException>|  
+|`DirectCast`|Any data types|One type must inherit from or implement the other type|Throws <xref:System.InvalidCastException>|  
+|[Operátor TryCast](../../../visual-basic/language-reference/operators/trycast-operator.md)|Reference types only|One type must inherit from or implement the other type|Returns [Nothing](../../../visual-basic/language-reference/nothing.md)|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje dva způsoby použití `DirectCast`, jeden, který selže v době běhu a jeden neuspěje.  
+ The following example demonstrates two uses of `DirectCast`, one that fails at run time and one that succeeds.  
   
  [!code-vb[VbVbalrKeywords#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/Class1.vb#1)]  
   
- V předchozím příkladu za běhu typ `q` je `Double`. `CType` úspěšná, protože `Double` lze převést na `Integer`. Nicméně první `DirectCast` selže v době běhu, protože typ za běhu `Double` nemá žádný vztah dědičnosti s `Integer`, i když existuje převod. Druhá `DirectCast` proběhne úspěšně, protože ji převede z typu <xref:System.Windows.Forms.Form> na typ <xref:System.Windows.Forms.Control>, ze kterého <xref:System.Windows.Forms.Form> dědí.  
+ In the preceding example, the run-time type of `q` is `Double`. `CType` succeeds because `Double` can be converted to `Integer`. However, the first `DirectCast` fails at run time because the run-time type of `Double` has no inheritance relationship with `Integer`, even though a conversion exists. The second `DirectCast` succeeds because it converts from type <xref:System.Windows.Forms.Form> to type <xref:System.Windows.Forms.Control>, from which <xref:System.Windows.Forms.Form> inherits.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: Hodnoty výpočetních sloupců v textovém souboru CSV (LINQ) (C#)'
+title: Jak vypočítat hodnoty sloupce v textovém souboru CSV (LINQ) (C#)
 ms.date: 07/20/2015
 ms.assetid: 4747f37a-a198-4df2-8efe-5b0731e0ea27
-ms.openlocfilehash: 08b4f936532b3ba3744ec31dc691b166e7ba7109
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: a48850e8f6229b80ebd9207bb1b7353f8b0c9e02
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69594023"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141368"
 ---
-# <a name="how-to-compute-column-values-in-a-csv-text-file-linq-c"></a>Postupy: Hodnoty výpočetních sloupců v textovém souboru CSV (LINQ) (C#)
+# <a name="how-to-compute-column-values-in-a-csv-text-file-linq-c"></a>Jak vypočítat hodnoty sloupce v textovém souboru CSV (LINQ) (C#)
 Tento příklad ukazuje, jak provádět agregované výpočty, jako je součet, průměr, minimum a maximum ve sloupcích souboru. csv. Příklady zásad, které jsou zde uvedeny, lze použít na jiné typy strukturovaného textu.  
   
 ## <a name="to-create-the-source-file"></a>Vytvoření zdrojového souboru  
@@ -156,10 +156,10 @@ class SumColumns
  */  
 ```  
   
- Dotaz funguje pomocí <xref:System.String.Split%2A> metody pro převod každého řádku textu na pole. Každý prvek pole představuje sloupec. Nakonec se text v každém sloupci převede na jeho číselné vyjádření. Pokud je soubor soubor oddělený tabulátory, stačí aktualizovat argument v `Split` metodě na. `\t`  
+ Dotaz funguje pomocí metody <xref:System.String.Split%2A> k převedení každého řádku textu do pole. Každý prvek pole představuje sloupec. Nakonec se text v každém sloupci převede na jeho číselné vyjádření. Pokud se jedná o soubor oddělený tabulátorem, stačí aktualizovat argument v metodě `Split` na `\t`.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvořte projekt C# konzolové aplikace se `using` direktivami pro obory názvů System. Linq a System.IO.  
+ Vytvořte projekt C# konzolové aplikace s direktivami `using` pro obory názvů System. Linq a System.IO.  
   
 ## <a name="see-also"></a>Viz také:
 

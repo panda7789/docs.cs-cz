@@ -1,300 +1,273 @@
 ---
-title: Základní informace o uvolňování paměti
-description: Přečtěte si, jak systém uvolňování paměti funguje a jak je možné ho nakonfigurovat pro optimální výkon.
-ms.date: 03/08/2018
+title: Fundamentals of garbage collection
+description: Learn how the garbage collector works and how it can be configured for optimum performance.
+ms.date: 11/15/2019
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - garbage collection, generations
-- garbage collection, background garbage collection
-- garbage collection, concurrent garbage collection
-- garbage collection, server garbage collection
-- garbage collection, workstation garbage collection
+- garbage collection, background
+- garbage collection, concurrent
+- garbage collection, server
+- garbage collection, workstation
 - garbage collection, managed heap
 ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
-ms.openlocfilehash: 840fe972192c6beb5d84017c288455f1cdf52177
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ea8aef03d2f5837f35ecb31209e57853c0c8257b
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121235"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74330420"
 ---
-# <a name="fundamentals-of-garbage-collection"></a>Základní informace o uvolňování paměti
+# <a name="fundamentals-of-garbage-collection"></a>Fundamentals of garbage collection
 
-<a name="top"></a>V modulu CLR (Common Language Runtime) slouží systém uvolňování paměti jako automatický správce paměti. Přináší následující výhody:
+In the common language runtime (CLR), the garbage collector (GC) serves as an automatic memory manager. It provides the following benefits:
 
-- Umožňuje vyvíjet aplikace bez nutnosti ruční uvolnění paměti pro objekty, které vytvoříte.
+- Enables you to develop your application without having to manually free memory.
 
-- Přiděluje objekty na spravované haldě efektivně.
+- Allocates objects on the managed heap efficiently.
 
-- Redeklarace objektů, které se již nepoužívají, vymaže jejich paměť a udržuje dostupnou paměť pro budoucí přidělení. Spravované objekty automaticky dostanou čistým obsahem, takže jejich konstruktory nemusí inicializovat každé datové pole.
+- Reclaims objects that are no longer being used, clears their memory, and keeps the memory available for future allocations. Managed objects automatically get clean content to start with, so their constructors do not have to initialize every data field.
 
-- Zajišťuje bezpečnost paměti tím, že zajistí, že objekt nemůže použít obsah jiného objektu.
+- Provides memory safety by making sure that an object cannot use the content of another object.
 
- Toto téma popisuje základní koncepty uvolňování paměti.
+This article describes the core concepts of garbage collection.
 
-<a name="fundamentals_of_memory"></a>
+## <a name="fundamentals-of-memory"></a>Fundamentals of memory
 
-## <a name="fundamentals-of-memory"></a>Základy paměti
+The following list summarizes important CLR memory concepts.
 
-Následující seznam shrnuje důležité koncepty paměti CLR.
+- Each process has its own, separate virtual address space. All processes on the same computer share the same physical memory and the page file, if there is one.
 
-- Každý proces má vlastní, oddělený virtuální adresní prostor. Všechny procesy na stejném počítači sdílejí stejnou fyzickou paměť a nasdílí stránkovací soubor, pokud je nějaký.
+- By default, on 32-bit computers, each process has a 2-GB user-mode virtual address space.
 
-- Ve výchozím nastavení na 32 počítačích má každý proces virtuální adresní prostor 2 GB v uživatelském režimu.
+- As an application developer, you work only with virtual address space and never manipulate physical memory directly. The garbage collector allocates and frees virtual memory for you on the managed heap.
 
-- Jako vývojář aplikací pracujete jenom s virtuálním adresním prostorem a nikdy nepracujete s fyzickou pamětí přímo. Systém uvolňování paměti přiděluje a uvolňuje virtuální paměť na spravované haldě.
+  If you are writing native code, you use Windows functions to work with the virtual address space. These functions allocate and free virtual memory for you on native heaps.
 
-  Pokud píšete nativní kód, použijte funkce Win32 pro práci s virtuálním adresním prostorem. Tyto funkce přidělují a uvolňují virtuální paměti pro vás na nativních haldách.
+- Virtual memory can be in three states:
 
-- Virtuální paměť může být ve třech stavech:
+  - Free. The block of memory has no references to it and is available for allocation.
 
-  - Dost. Blok paměti neobsahuje žádné odkazy a je k dispozici pro přidělení.
+  - Reserved. The block of memory is available for your use and cannot be used for any other allocation request. However, you cannot store data to this memory block until it is committed.
 
-  - Rezervovaný. Blok paměti je k dispozici pro vaše použití a nelze jej použít pro žádnou jinou žádost o přidělení. Do tohoto bloku paměti však nelze ukládat data, dokud není potvrzeno.
+  - Committed. The block of memory is assigned to physical storage.
 
-  - Kterých. Blok paměti je přiřazený k fyzickému úložišti.
+- Virtual address space can get fragmented. This means that there are free blocks, also known as holes, in the address space. When a virtual memory allocation is requested, the virtual memory manager has to find a single free block that is large enough to satisfy that allocation request. Even if you have 2 GB of free space, the allocation that requires 2 GB will be unsuccessful unless all of that free space is in a single address block.
 
-- Virtuální adresní prostor se může fragmentovat. To znamená, že v adresním prostoru jsou k dispozici bezplatné bloky, označované také jako díry. Po vyžádání přidělení virtuální paměti musí správce virtuální paměti najít jeden bezplatný blok, který je dostatečně velký pro splnění této žádosti o přidělení. I v případě, že máte 2 GB volného místa, přidělení, které vyžaduje 2 GB, bude neúspěšné, pokud všechny volné místo nejsou v jednom bloku adres.
+- You can run out of memory if there isn't enough virtual address space to reserve or physical space to commit.
 
-- Pokud vyčerpáte volné místo ve virtuálním adresním prostoru pro rezervaci nebo fyzické místo pro potvrzení, může dobíhat nedostatek paměti.
+  The page file is used even if physical memory pressure (that is, demand for physical memory) is low. The first time physical memory pressure is high, the operating system must make room in physical memory to store data, and it backs up some of the data that is in physical memory to the page file. That data is not paged until it's needed, so it's possible to encounter paging in situations where the physical memory pressure is low.
 
-Stránkovací soubor se používá i v případě, že je nízká tlak fyzické paměti (tj. poptávka pro fyzickou paměť). Při prvním vysokém zatížení fyzické paměti musí operační systém uvolnit místo ve fyzické paměti pro ukládání dat a pak zálohuje některá data, která jsou ve fyzické paměti pro stránkovací soubor. Tato data nejsou stránkovaná, dokud je nepotřebujete, takže je možné vyskytnout stránkování v situacích, kdy je tlak fyzické paměti velmi nízký.
+## <a name="conditions-for-a-garbage-collection"></a>Conditions for a garbage collection
 
-[Zpět na začátek](#top)
+Garbage collection occurs when one of the following conditions is true:
 
-<a name="conditions_for_a_garbage_collection"></a>
+- The system has low physical memory. This is detected by either the low memory notification from the OS or low memory as indicated by the host.
 
-## <a name="conditions-for-a-garbage-collection"></a>Podmínky pro uvolňování paměti
+- The memory that is used by allocated objects on the managed heap surpasses an acceptable threshold. This threshold is continuously adjusted as the process runs.
 
-Uvolňování paměti nastane, pokud je splněna jedna z následujících podmínek:
+- The <xref:System.GC.Collect%2A?displayProperty=nameWithType> method is called. In almost all cases, you do not have to call this method, because the garbage collector runs continuously. This method is primarily used for unique situations and testing.
 
-- Systém má nedostatek fyzické paměti. To se detekuje buď oznámením o nedostatku paměti z operačního systému, nebo s nedostatkem paměti, kterou uvádí hostitel.
+## <a name="the-managed-heap"></a>The managed heap
 
-- Paměť, kterou používají přidělené objekty na spravované haldě, překročí přijatelnou prahovou hodnotu. Tato prahová hodnota je průběžně upravována při spuštění procesu.
+After the garbage collector is initialized by the CLR, it allocates a segment of memory to store and manage objects. This memory is called the managed heap, as opposed to a native heap in the operating system.
 
-- Je volána metoda <xref:System.GC.Collect%2A?displayProperty=nameWithType>. Ve většině případů není nutné volat tuto metodu, protože systém uvolňování paměti běží nepřetržitě. Tato metoda se primárně používá pro jedinečné situace a testování.
+There is a managed heap for each managed process. All threads in the process allocate memory for objects on the same heap.
 
-[Zpět na začátek](#top)
-
-<a name="the_managed_heap"></a>
-
-## <a name="the-managed-heap"></a>Spravovaná halda
-
-Po inicializaci uvolňování paměti modulem CLR přidělí segment paměti pro ukládání a správu objektů. Tato paměť se nazývá spravovaná halda, nikoli nativní halda v operačním systému.
-
-Pro každý spravovaný proces existuje spravovaná halda. Všechna vlákna v procesu přidělují paměť pro objekty ve stejné haldě.
-
-Pro vyhradení paměti systém uvolňování paměti zavolá funkci Win32 [VirtualAlloc](/windows/desktop/api/memoryapi/nf-memoryapi-virtualalloc) a rezervuje jeden segment paměti v okamžiku pro spravované aplikace. Systém uvolňování paměti také vyhrazuje segmenty podle potřeby a uvolňuje segmenty zpět do operačního systému (po vymazání všech objektů) voláním funkce Win32 [VirtualFree](/windows/desktop/api/memoryapi/nf-memoryapi-virtualfree) .
+To reserve memory, the garbage collector calls the Windows [VirtualAlloc](/windows/desktop/api/memoryapi/nf-memoryapi-virtualalloc) function and reserves one segment of memory at a time for managed applications. The garbage collector also reserves segments, as needed, and releases segments back to the operating system (after clearing them of any objects) by calling the Windows [VirtualFree](/windows/desktop/api/memoryapi/nf-memoryapi-virtualfree) function.
 
 > [!IMPORTANT]
-> Velikost segmentů přidělených systémem uvolňování paměti je specifická pro konkrétní implementaci a může se kdykoli změnit, včetně pravidelných aktualizací. Vaše aplikace by nikdy neměla zabývat ani záviset na konkrétní velikosti segmentu, ani by se neměla pokoušet nakonfigurovat množství paměti dostupné pro přidělení segmentů.
+> The size of segments allocated by the garbage collector is implementation-specific and is subject to change at any time, including in periodic updates. Your app should never make assumptions about or depend on a particular segment size, nor should it attempt to configure the amount of memory available for segment allocations.
 
-Čím méně objektů bylo přiděleno haldě, tím méně práce musí systém uvolňování paměti dělat. Při přidělování objektů nepoužívejte zaoblené hodnoty, které překračují vaše potřeby, jako je například přidělení pole 32 bajtů, pokud potřebujete pouze 15 bajtů.
+The fewer objects allocated on the heap, the less work the garbage collector has to do. When you allocate objects, do not use rounded-up values that exceed your needs, such as allocating an array of 32 bytes when you need only 15 bytes.
 
-Když je aktivováno uvolňování paměti, uvolňování paměti uvolní paměť, která je obsazena mrtvými objekty. Proces opětovného získání komprimuje živé objekty tak, aby se přesunuly dohromady, a nedoručené místo se odebere, takže halda bude menší. Tím zajistíte, aby objekty, které jsou přiděleny dohromady, zůstaly na spravované haldě, aby se zachovaly jejich místní chování.
+When a garbage collection is triggered, the garbage collector reclaims the memory that is occupied by dead objects. The reclaiming process compacts live objects so that they are moved together, and the dead space is removed, thereby making the heap smaller. This ensures that objects that are allocated together stay together on the managed heap, to preserve their locality.
 
-Rušivost (četnost a doba trvání) uvolňování paměti je výsledkem objemu přidělení a množství zachované paměti na spravované haldě.
+The intrusiveness (frequency and duration) of garbage collections is the result of the volume of allocations and the amount of survived memory on the managed heap.
 
-Halda může být považována za akumulaci dvou hald: [halda velkých objektů](large-object-heap.md) a haldy malých objektů.
+The heap can be considered as the accumulation of two heaps: the [large object heap](large-object-heap.md) and the small object heap.
 
-[Halda velkých objektů](large-object-heap.md) obsahuje velmi velké objekty, které jsou 85 000 bajtů a větší. Objekty v haldě velkých objektů jsou obvykle pole. Je vzácná, že objekt instance bude velmi velký.
+The [large object heap](large-object-heap.md) contains very large objects that are 85,000 bytes and larger. The objects on the large object heap are usually arrays. It is rare for an instance object to be extremely large.
 
-[Zpět na začátek](#top)
+> [!TIP]
+> You can [configure the threshold size](../../core/run-time-config/garbage-collector.md#large-object-heap-threshold) for objects to go on the large object heap.
 
-<a name="generations"></a>
+## <a name="generations"></a>Generations
 
-## <a name="generations"></a>Všechna
+The heap is organized into generations so it can handle long-lived and short-lived objects. Garbage collection primarily occurs with the reclamation of short-lived objects that typically occupy only a small part of the heap. There are three generations of objects on the heap:
 
-Halda je uspořádána do generací, aby mohla zpracovávat dlouhodobé a krátkodobé nedlouhodobé objekty. K uvolňování paměti dochází hlavně v důsledku opětovného získávání krátkodobých objektů, které obvykle zabírají pouze malou část haldy. Existují tři generace objektů v haldě:
+- **Generation 0**. This is the youngest generation and contains short-lived objects. An example of a short-lived object is a temporary variable. Garbage collection occurs most frequently in this generation.
 
-- **Generace 0**. Toto je nejmladšího sourozence generace a obsahuje krátkodobé objekty. Příkladem krátkodobého objektu je dočasná proměnná. K uvolňování paměti dochází nejčastěji v této generaci.
+  Newly allocated objects form a new generation of objects and are implicitly generation 0 collections. However, if they are large objects, they go on the large object heap in a generation 2 collection.
 
-  Nově přidělené objekty tvoří novou generaci objektů a jsou implicitně kolekcemi generace 0, pokud se nejedná o velké objekty. v takovém případě přecházejí na haldu velkých objektů v kolekci generace 2.
+  Most objects are reclaimed for garbage collection in generation 0 and do not survive to the next generation.
 
-  Většina objektů je uvolněna pro uvolňování paměti v generaci 0 a nepředržela se do další generace.
+- **Generation 1**. This generation contains short-lived objects and serves as a buffer between short-lived objects and long-lived objects.
 
-- **Generace 1**. Tato generace obsahuje krátkodobé objekty a slouží jako vyrovnávací paměť mezi krátkodobé a dlouhodobé objekty.
+- **Generation 2**. This generation contains long-lived objects. An example of a long-lived object is an object in a server application that contains static data that's live for the duration of the process.
 
-- **Generace 2**. Tato generace obsahuje dlouhodobě nedlouhodobé objekty. Příkladem dlouhotrvajícího objektu je objekt v serverové aplikaci, který obsahuje statická data, která jsou po dobu trvání procesu aktivní.
+Garbage collections occur on specific generations as conditions warrant. Collecting a generation means collecting objects in that generation and all its younger generations. A generation 2 garbage collection is also known as a full garbage collection, because it reclaims all objects in all generations (that is, all objects in the managed heap).
 
-K uvolňování paměti dochází na určitých generacích, protože podmínky zaručují. Shromáždění generace znamená shromažďování objektů v této generaci a všech jejích mladších generací. Uvolňování paměti 2. generace se označuje také jako úplné uvolňování paměti, protože přebírá všechny objekty ve všech generacích (tj. všechny objekty ve spravované haldě).
+### <a name="survival-and-promotions"></a>Survival and promotions
 
-### <a name="survival-and-promotions"></a>Přežití a propagační akce
+Objects that are not reclaimed in a garbage collection are known as survivors and are promoted to the next generation. Objects that survive a generation 0 garbage collection are promoted to generation 1; objects that survive a generation 1 garbage collection are promoted to generation 2; and objects that survive a generation 2 garbage collection remain in generation 2.
 
-Objekty, které nejsou znovu získány v uvolňování paměti, jsou označovány jako pozůstaly a povýšeny na další generaci. Objekty, které jsou zachovány uvolňováním paměti generace 0, jsou povýšeny na generaci 1; objekty, které jsou zachovány uvolňováním paměti generace 1, jsou povýšeny na generaci 2; a objekty, které jsou v procesu uvolňování paměti generace 2, zůstávají v generaci 2.
+When the garbage collector detects that the survival rate is high in a generation, it increases the threshold of allocations for that generation. The next collection gets a substantial size of reclaimed memory. The CLR continually balances two priorities: not letting an application's working set get too large by delaying garbage collection and not letting the garbage collection run too frequently.
 
-Když systém uvolňování paměti zjistí, že je míra přežití vysoká v generaci, zvyšuje prahovou hodnotu přidělení pro tuto generaci, takže další kolekce získá značnou velikost uvolněné paměti. CLR průběžně vyrovnává dvě priority: Pokud nechcete, aby pracovní sada aplikace byla příliš velká, pomocí opožděného uvolňování paměti a neumožnilo spouštění uvolňování paměti příliš často.
+### <a name="ephemeral-generations-and-segments"></a>Ephemeral generations and segments
 
-### <a name="ephemeral-generations-and-segments"></a>Dočasné generace a segmenty
+Because objects in generations 0 and 1 are short-lived, these generations are known as the ephemeral generations.
 
-Vzhledem k tomu, že objekty v generacích 0 a 1 jsou krátkodobé, tyto generace jsou známy jako dočasné generace.
+Ephemeral generations must be allocated in the memory segment that is known as the ephemeral segment. Each new segment acquired by the garbage collector becomes the new ephemeral segment and contains the objects that survived a generation 0 garbage collection. The old ephemeral segment becomes the new generation 2 segment.
 
-Dočasné generace musí být přiděleny v segmentu paměti, který je znám jako dočasný segment. Každý nový segment získaný systémem uvolňování paměti se stal novým dočasným segmentem a obsahuje objekty, které předržely uvolňování paměti generace 0. Starý dočasný segment se vytvoří jako nový segment 2. generace.
-
-Velikost dočasného segmentu se liší v závislosti na tom, zda je systém 32 nebo 64 a na typu uvolňování paměti, které je spuštěn. Výchozí hodnoty jsou uvedeny v následující tabulce.
+The size of the ephemeral segment varies depending on whether a system is 32-bit or 64-bit, and on the type of garbage collector it is running. Default values are shown in the following table.
 
 ||32bitová|64bitová|
 |-|-------------|-------------|
-|GC pracovní stanice|16 MB|256 MB|
-|Uvolňování paměti serveru|64 MB|4 GB|
-|GC serveru s logickými procesory > 4|32 MB|2 GB|
-|Uvolňování paměti serveru s využitím > 8 logických procesorů|16 MB|1 GB|
+|Workstation GC|16 MB|256 MB|
+|Server GC|64 MB|4 GB|
+|Server GC with > 4 logical CPUs|32 MB|2 GB|
+|Server GC with > 8 logical CPUs|16 MB|1 GB|
 
-Dočasný segment může zahrnovat objekty generace 2. Objekty generace 2 můžou používat víc segmentů (tolik, kolik je váš proces vyžaduje, a paměť umožňuje).
+The ephemeral segment can include generation 2 objects. Generation 2 objects can use multiple segments (as many as your process requires and memory allows for).
 
-Velikost volné paměti z dočasného uvolňování paměti je omezená na velikost dočasného segmentu. Velikost paměti, která je uvolněna, je úměrná místu, které byly obsazeny neaktivními objekty.
+The amount of freed memory from an ephemeral garbage collection is limited to the size of the ephemeral segment. The amount of memory that is freed is proportional to the space that was occupied by the dead objects.
 
-[Zpět na začátek](#top)
+## <a name="what-happens-during-a-garbage-collection"></a>What happens during a garbage collection
 
-<a name="what_happens_during_a_garbage_collection"></a>
+A garbage collection has the following phases:
 
-## <a name="what-happens-during-a-garbage-collection"></a>Co se stane během uvolňování paměti
+- A marking phase that finds and creates a list of all live objects.
 
-Uvolňování paměti má následující fáze:
+- A relocating phase that updates the references to the objects that will be compacted.
 
-- Fáze označení, která najde a vytvoří seznam všech živých objektů.
+- A compacting phase that reclaims the space occupied by the dead objects and compacts the surviving objects. The compacting phase moves objects that have survived a garbage collection toward the older end of the segment.
 
-- Fáze přemístění, která aktualizuje odkazy na objekty, které budou zkomprimovány.
+  Because generation 2 collections can occupy multiple segments, objects that are promoted into generation 2 can be moved into an older segment. Both generation 1 and generation 2 survivors can be moved to a different segment, because they are promoted to generation 2.
 
-- Kompaktní fáze, která uvolňuje místo obsazené neaktivními objekty a komprimuje zbývající objekty. Fáze komprimace přesune objekty, které předržely uvolňování paměti směrem na starší konec segmentu.
+  Ordinarily, the large object heap (LOH) is not compacted, because copying large objects imposes a performance penalty. However, in .NET Core and in .NET Framework 4.5.1 and later, you can use the <xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType> property to compact the large object heap on demand. In addition, the LOH is automatically compacted when a hard limit is set by specifying either:
 
-  Vzhledem k tomu, že kolekce 2. generace mohou zabírat více segmentů, objekty, které jsou povýšeny do generace 2, lze přesunout do staršího segmentu. Generace 1 i 2, zachované, je možné přesunout do jiného segmentu, protože jsou povýšeny na generaci 2.
+  - a memory limit on a container, or
+  - the [GCHeapHardLimit](../../core/run-time-config/garbage-collector.md#systemgcheaphardlimitcomplus_gcheaphardlimit) or [GCHeapHardLimitPercent](../../core/run-time-config/garbage-collector.md#systemgcheaphardlimitpercentcomplus_gcheaphardlimitpercent) run-time configuration options
 
-  Obvykle se nekomprimuje halda velkých objektů, protože kopírování velkých objektů ukládá snížení výkonu. Počínaje .NET Framework 4.5.1 ale můžete použít vlastnost <xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType> k komprimaci haldy velkých objektů na vyžádání.
+The garbage collector uses the following information to determine whether objects are live:
 
-Systém uvolňování paměti používá následující informace k určení, zda jsou objekty živé:
+- **Stack roots**. Stack variables provided by the just-in-time (JIT) compiler and stack walker. JIT optimizations can lengthen or shorten regions of code within which stack variables are reported to the garbage collector.
 
-- **Kořeny zásobníku**. Proměnné zásobníku poskytované kompilátorem JIT (just-in-time) a zásobníkem Stack prohlížeč. Optimalizace JIT může prodloužit nebo zkrátit oblasti kódu, ve kterých jsou proměnné zásobníku hlášeny do uvolňování paměti.
+- **Garbage collection handles**. Handles that point to managed objects and that can be allocated by user code or by the common language runtime.
 
-- **Popisovače uvolňování paměti**. Obslužné rutiny, které odkazují na spravované objekty a které mohou být přiděleny uživatelským kódem nebo modulem CLR (Common Language Runtime).
+- **Static data**. Static objects in application domains that could be referencing other objects. Each application domain keeps track of its static objects.
 
-- **Statická data**. Statické objekty v aplikačních doménách, které by mohly odkazovat na jiné objekty. Každá doména aplikace udržuje přehled o svých statických objektech.
+Before a garbage collection starts, all managed threads are suspended except for the thread that triggered the garbage collection.
 
-Před spuštěním uvolňování paměti jsou všechna spravovaná vlákna pozastavena s výjimkou vlákna, které vyvolalo uvolňování paměti.
+The following illustration shows a thread that triggers a garbage collection and causes the other threads to be suspended.
 
-Následující ilustrace znázorňuje vlákno, které spouští uvolňování paměti a způsobuje pozastavení ostatních vláken.
+![When a thread triggers a Garbage Collection](./media/gc-triggered.png)
 
-![Když vlákno spustí uvolňování paměti](../../../docs/standard/garbage-collection/media/gc-triggered.png "Když vlákno spustí uvolňování paměti")
+## <a name="manipulate-unmanaged-resources"></a>Manipulate unmanaged resources
 
-[Zpět na začátek](#top)
+If managed objects reference unmanaged objects by using their native file handles, you have to explicitly free the unmanaged objects, because the garbage collector only tracks memory on the managed heap.
 
-<a name="manipulating_unmanaged_resources"></a>
+Users of the managed object may not dispose the native resources used by the object. To perform the cleanup, you can make the managed object finalizable. Finalization consists of cleanup actions that execute when the object is no longer in use. When the managed object dies, it performs cleanup actions that are specified in its finalizer method.
 
-## <a name="manipulating-unmanaged-resources"></a>Manipulace s nespravovanými prostředky
+When a finalizable object is discovered to be dead, its finalizer is put in a queue so that its cleanup actions are executed, but the object itself is promoted to the next generation. Therefore, you have to wait until the next garbage collection that occurs on that generation (which is not necessarily the next garbage collection) to determine whether the object has been reclaimed.
 
-Pokud spravované objekty odkazují na nespravované objekty pomocí jejich nativních popisovačů souborů, je nutné explicitně uvolnit nespravované objekty, protože systém uvolňování paměti sleduje paměť pouze na spravované haldě.
+For more information about finalization, see <xref:System.Object.Finalize?displayProperty=nameWithType>.
 
-Uživatelé spravovaného objektu nemohou uvolnit nativní prostředky používané objektem. K provedení vyčištění můžete provést finalizaci spravovaného objektu. Finalizace se skládá z akcí čištění, které se spustí, když se objekt již nepoužívá. Když váš spravovaný objekt zemře, provede čisticí akce, které jsou určeny v jeho metodě finalizační metody.
+## <a name="workstation-and-server-garbage-collection"></a>Workstation and server garbage collection
 
-Když je zjištěna nekonečná činnost objektu, je jeho finalizační metoda vložena do fronty, aby byly provedeny jeho akce čištění, ale samotný objekt je povýšen na novou generaci. Proto musíte počkat až do dalšího uvolňování paměti, ke kterému dojde v této generaci (což není nutně další uvolňování paměti), abyste zjistili, zda byl objekt uvolněn.
+The garbage collector is self-tuning and can work in a wide variety of scenarios. You can use a [configuration file setting](../../core/run-time-config/garbage-collector.md#flavors-of-garbage-collection) to set the type of garbage collection based on the characteristics of the workload. The CLR provides the following types of garbage collection:
 
-[Zpět na začátek](#top)
+- Workstation garbage collection (GC) is designed for client apps. It is the default GC flavor for standalone apps. For hosted apps, for example, those hosted by ASP.NET, the host determines the default GC flavor.
 
-<a name="workstation_and_server_garbage_collection"></a>
+  Workstation garbage collection can be concurrent or non-concurrent. Concurrent garbage collection enables managed threads to continue operations during a garbage collection. [Background garbage collection](#background-workstation-garbage-collection) replaces [concurrent garbage collection](#concurrent-garbage-collection) in .NET Framework 4 and later versions.
 
-## <a name="workstation-and-server-garbage-collection"></a>Uvolnění paměti pracovní stanice a serveru
+- Server garbage collection, which is intended for server applications that need high throughput and scalability.
 
-Systém uvolňování paměti je samoobslužné ladění a může fungovat v nejrůznějších scénářích. Pomocí nastavení konfiguračního souboru můžete nastavit typ uvolňování paměti na základě charakteristik zatížení. CLR poskytuje následující typy uvolňování paměti:
+  - In .NET Core, server garbage collection can be non-concurrent or background.
 
-- Uvolnění paměti pracovní stanice, které platí pro všechny pracovní stanice klienta a samostatné počítače. Toto je výchozí nastavení pro [prvek \<gcServer >](../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md) ve schématu konfigurace modulu runtime.
+  - In .NET Framework 4.5 and later versions, server garbage collection can be non-concurrent or background (background garbage collection replaces concurrent garbage collection). In .NET Framework 4 and previous versions, server garbage collection is non-concurrent.
 
-  Uvolňování paměti pracovní stanice může být souběžné nebo nesouběžné. Souběžné uvolňování paměti umožňuje spravovaným vláknům pokračovat v operacích během uvolňování paměti.
+The following illustration shows the dedicated threads that perform the garbage collection on a server:
 
-  Počínaje .NET Framework 4 nahrazuje shromažďování paměti na pozadí souběžné uvolňování paměti.
+![Server Garbage Collection Threads](./media/gc-server.png)
 
-- Uvolňování paměti serveru, které je určeno pro serverové aplikace, které vyžadují vysokou propustnost a škálovatelnost. Uvolňování paměti serveru může být jiné než souběžné nebo pozadí.
+### <a name="compare-workstation-and-server-garbage-collection"></a>Compare workstation and server garbage collection
 
-Následující ilustrace znázorňuje vyhrazená vlákna, která provádějí uvolňování paměti na serveru.
+The following are threading and performance considerations for workstation garbage collection:
 
-![Vlákna uvolňování paměti serveru](../../../docs/standard/garbage-collection/media/gc-server.png "Vlákna uvolňování paměti serveru")
+- The collection occurs on the user thread that triggered the garbage collection and remains at the same priority. Because user threads typically run at normal priority, the garbage collector (which runs on a normal priority thread) must compete with other threads for CPU time. (Threads that run native code are not suspended on either server or workstation garbage collection.)
 
-### <a name="configuring-garbage-collection"></a>Konfigurace uvolňování paměti
+- Workstation garbage collection is always used on a computer that has only one processor, regardless of the [configuration setting](../../core/run-time-config/garbage-collector.md#systemgcservercomplus_gcserver).
 
-Pomocí [elementu \<gcServer >](../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md) schématu konfigurace modulu runtime můžete určit typ uvolňování paměti, které má modul CLR provést. Pokud je atribut `enabled` tohoto prvku nastaven na hodnotu `false` (výchozí), modul CLR provede uvolňování paměti pracovní stanice. Když nastavíte atribut `enabled` na hodnotu `true`, modul CLR provede uvolňování paměti serveru.
+The following are threading and performance considerations for server garbage collection:
 
-Souběžné uvolňování paměti je zadáno pomocí [elementu \<gcConcurrent >](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) schématu konfigurace modulu runtime. Výchozí nastavení je `enabled`. Toto nastavení řídí souběžné i uvolňování paměti na pozadí.
+- The collection occurs on multiple dedicated threads that are running at `THREAD_PRIORITY_HIGHEST` priority level.
 
-Můžete také zadat uvolnění paměti serveru s nespravovanými hostujícími rozhraními. Všimněte si, že ASP.NET a SQL Server povolit automatické uvolňování paměti serveru, pokud je vaše aplikace hostována v jednom z těchto prostředí.
+- A heap and a dedicated thread to perform garbage collection are provided for each CPU, and the heaps are collected at the same time. Each heap contains a small object heap and a large object heap, and all heaps can be accessed by user code. Objects on different heaps can refer to each other.
 
-### <a name="comparing-workstation-and-server-garbage-collection"></a>Porovnání shromažďování paměti pracovní stanice a serveru
+- Because multiple garbage collection threads work together, server garbage collection is faster than workstation garbage collection on the same size heap.
 
-Následují požadavky na vlákna a výkon pro uvolňování paměti pracovních stanic:
+- Server garbage collection often has larger size segments. However, this is only a generalization: segment size is implementation-specific and is subject to change. Don't make assumptions about the size of segments allocated by the garbage collector when tuning your app.
 
-- Kolekce probíhá na uživatelském vlákně, které aktivovalo uvolňování paměti a zůstává ve stejné prioritě. Vzhledem k tomu, že se uživatelské vlákna obvykle spouští s normální prioritou, musí být systém uvolňování paměti (který běží na normální prioritní vlákně) s ostatními vlákny pro čas procesoru.
+- Server garbage collection can be resource-intensive. For example, imagine that there are 12 processes that use server GC running on a computer that has 4 processors. If all the processes happen to collect garbage at the same time, they would interfere with each other, as there would be 12 threads scheduled on the same processor. If the processes are active, it's not a good idea to have them all use server GC.
 
-  Vlákna, která spouštějí nativní kód, nejsou pozastavena.
+If you're running hundreds of instances of an application, consider using workstation garbage collection with concurrent garbage collection disabled. This will result in less context switching, which can improve performance.
 
-- Uvolňování paměti pracovní stanice se vždycky používá v počítači, který má jenom jeden procesor, bez ohledu na nastavení [\<gcServer >](../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md) . Pokud zadáte uvolňování paměti serveru, CLR používá uvolňování paměti pracovní stanice se zakázanou souběžnou úlohou.
+## <a name="background-workstation-garbage-collection"></a>Background workstation garbage collection
 
-Následují požadavky na vlákna a výkon pro uvolňování paměti serveru:
+In background workstation garbage collection, ephemeral generations (0 and 1) are collected as needed while the collection of generation 2 is in progress. Background workstation garbage collection is performed on a dedicated thread and applies only to generation 2 collections.
 
-- Kolekce probíhá na několika vyhrazených vláknech, které jsou spuštěny na úrovni priority `THREAD_PRIORITY_HIGHEST`.
-
-- Halda a vyhrazené vlákno pro provádění uvolňování paměti jsou k dispozici pro každý procesor a haldy jsou shromažďovány ve stejnou dobu. Každá halda obsahuje malou haldu objektů a velké haldy objektů a ke všem haldám je možné přistupovat pomocí uživatelského kódu. Objekty na různých haldách mohou vzájemně odkazovat.
-
-- Vzhledem k tomu, že více vláken uvolňování paměti současně spolupracuje, je uvolňování paměti serveru rychlejší než uvolnění paměti pracovní stanice ve stejné velikosti haldy.
-
-- Uvolňování paměti serveru má často větší velikost segmentů. Upozorňujeme však, že toto je pouze generalizace: velikost segmentu je specifická pro konkrétní implementaci a může se změnit. Při ladění aplikace byste neměli dělat žádné předpoklady týkající se velikosti segmentů, které jsou přidělené systémem uvolňování paměti.
-
-- Uvolňování paměti serveru může být náročné na prostředky. Například pokud máte 12 procesů spuštěných v počítači, který má 4 procesory, budou k dispozici 48 vyhrazená vlákna uvolňování paměti, pokud se všechny používají pro uvolňování paměti serveru. V případě vysokého vytížení paměti budou v případě, že všechny procesy začnou uvolňování paměti, mít systém uvolňování paměti 48 vláken k naplánování.
-
-Pokud používáte stovky instancí aplikace, zvažte použití uvolňování paměti pracovní stanice se zakázaným souběžným uvolňováním paměti. Výsledkem bude méně přepínání kontextu, což může zlepšit výkon.
-
-[Zpět na začátek](#top)
-
-<a name="concurrent_garbage_collection"></a>
-
-## <a name="concurrent-garbage-collection"></a>Souběžné uvolňování paměti
-
-V pracovní stanici nebo uvolňování paměti serveru můžete povolit souběžné uvolňování paměti, které umožňuje spouštět vlákna souběžně s vyhrazeným vláknem, které provádí uvolňování paměti po většinu doby trvání kolekce. Tato možnost má vliv jenom na uvolňování paměti v generaci 2. generace 0 a 1 jsou vždy nesouběžná, protože dokončí velmi rychle.
-
-Souběžné uvolňování paměti umožňuje interaktivním aplikacím lépe reagovat tím, že minimalizuje pozastavení kolekce. Spravovaná vlákna mohou i nadále běžet v době, kdy běží souběžné vlákno uvolňování paměti. Výsledkem je kratší pozastavení během uvolňování paměti.
-
-Chcete-li zvýšit výkon, když je spuštěno několik procesů, zakažte souběžné uvolňování paměti. To lze provést přidáním [prvku \<gcConcurrent >](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) do konfiguračního souboru aplikace a nastavením hodnoty atributu `enabled` na `"false"`.
-
-Souběžné uvolňování paměti se provádí ve vyhrazeném vlákně. Ve výchozím nastavení spustí modul CLR uvolnění paměti pracovní stanice s povoleným souběžným uvolňováním paměti. To platí pro počítače s jedním procesorem a více procesory.
-
-Schopnost přidělit malé objekty haldy během souběžného uvolňování paměti je omezena objekty, které jsou ponechány v dočasném segmentu při spuštění souběžného uvolňování paměti. Jakmile dosáhnete konce segmentu, budete muset počkat, až se souběžné uvolňování paměti dokončí, zatímco spravovaná vlákna, která musí provést menší přidělení objektů, se pozastaví.
-
-Souběžné uvolňování paměti má mírně větší pracovní sadu (ve srovnání s nesouběžným uvolňováním paměti), protože objekty můžete přidělit během souběžné kolekce. To však může ovlivnit výkon, protože přidělené objekty se stanou součástí vaší pracovní sady. Souběžné uvolňování paměti v podstatě dobírá procesor a paměť pro kratší pozastavení.
-
-Následující ilustrace znázorňuje souběžné uvolňování paměti prováděné na samostatném vyhrazeném vlákně.
-
-![Souběžná vlákna uvolňování paměti](../../../docs/standard/garbage-collection/media/gc-concurrent.png "Souběžná vlákna uvolňování paměti")
-
-[Zpět na začátek](#top)
-
-<a name="background_garbage_collection"></a>
-
-## <a name="background-workstation-garbage-collection"></a>Uvolňování paměti pracovní stanice na pozadí
-
-Uvolňování paměti na pozadí nahrazuje souběžnou uvolňování paměti pracovní stanice počínaje .NET Framework 4 a nahrazuje souběžné uvolňování paměti serveru počínaje .NET Framework 4,5.  V uvolňování paměti na pozadí jsou dočasné generace (0 a 1) shromažďovány podle potřeby, zatímco probíhá shromažďování 2. generace. Provádí se ve vyhrazeném vlákně a vztahuje se pouze na kolekce 2. generace. Uvolňování paměti na pozadí je automaticky povolené ve výchozím nastavení a dá se zapnout nebo vypnout pomocí nastavení [\<gcConcurrent >](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) konfigurace v aplikacích .NET Framework. 
+Background garbage collection is enabled by default and can be enabled or disabled with the [gcConcurrent](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) configuration setting in .NET Framework apps or the [System.GC.Concurrent](../../core/run-time-config/garbage-collector.md#systemgcconcurrentcomplus_gcconcurrent) setting in .NET Core apps.
 
 > [!NOTE]
-> Uvolňování paměti na pozadí je k dispozici pouze v .NET Framework 4 a novějších verzích. V .NET Framework 4 se podporuje jenom pro uvolňování paměti pracovní stanice. Počínaje .NET Framework 4,5 je uvolňování paměti na pozadí k dispozici pro pracovní stanice i pro uvolňování paměti serveru.
+> Background garbage collection replaces [concurrent garbage collection](#concurrent-garbage-collection) and is available in .NET Framework 4 and later versions. In .NET Framework 4, it's supported only for workstation garbage collection. Starting with .NET Framework 4.5, background garbage collection is available for both workstation and server garbage collection.
 
-Kolekce na dočasných generacích během uvolňování paměti na pozadí je známá jako uvolnění paměti na popředí. Když dojde k uvolnění paměti na popředí, pozastaví se všechna spravovaná vlákna.
+A collection on ephemeral generations during background garbage collection is known as foreground garbage collection. When foreground garbage collections occur, all managed threads are suspended.
 
-Když probíhá uvolňování paměti na pozadí a přidělíte dostatek objektů v generaci 0, modul CLR provede uvolňování paměti od generace 0 nebo 1. generace v popředí. Vyhrazené vlákno uvolňování paměti na pozadí kontroluje v častých bezpečných bodech, aby bylo možné zjistit, zda existuje požadavek na uvolnění paměti na popředí. V takovém případě se kolekce na pozadí odblokuje, aby mohlo dojít k uvolnění paměti na popředí. Po dokončení uvolňování paměti na popředí se obnoví vyhrazené vlákno kolekce uvolnění paměti na pozadí a uživatelské vlákna.
+When background garbage collection is in progress and you've allocated enough objects in generation 0, the CLR performs a generation 0 or generation 1 foreground garbage collection. The dedicated background garbage collection thread checks at frequent safe points to determine whether there is a request for foreground garbage collection. If there is, the background collection suspends itself so that foreground garbage collection can occur. After the foreground garbage collection is completed, the dedicated background garbage collection thread and user threads resume.
 
-Uvolňování paměti na pozadí odebírá omezení přidělení, která jsou vynucená souběžným uvolňováním paměti, protože dočasné uvolňování paměti mohou nastat během uvolňování paměti na pozadí. To znamená, že uvolňování paměti na pozadí může odebrat nepoužívané objekty v dočasných generacích a může také v případě potřeby rozšířit haldu při uvolňování paměti 1. generace.
+Background garbage collection removes allocation restrictions imposed by concurrent garbage collection, because ephemeral garbage collections can occur during background garbage collection. Background garbage collection can remove dead objects in ephemeral generations. It can also expand the heap if needed during a generation 1 garbage collection.
 
-Následující obrázek znázorňuje pozadí uvolňování paměti prováděné na samostatném vyhrazeném vlákně pracovní stanice:
+The following illustration shows background garbage collection performed on a separate dedicated thread on a workstation:
 
-![Diagram, který znázorňuje uvolnění paměti pracovní stanice na pozadí.](./media/fundamentals/background-workstation-garbage-collection.png "Diagram, který znázorňuje uvolnění paměti pracovní stanice na pozadí.")
+![Background workstation garbage collection](./media/fundamentals/background-workstation-garbage-collection.png)
 
-[Zpět na začátek](#top)
+### <a name="background-server-garbage-collection"></a>Background server garbage collection
 
-<a name="background_server_garbage_collection"></a>
+Starting with .NET Framework 4.5, background server garbage collection is the default mode for server garbage collection.
 
-## <a name="background-server-garbage-collection"></a>Uvolňování paměti serveru na pozadí
+Background server garbage collection functions similarly to background workstation garbage collection, described in the previous section, but there are a few differences:
 
-Počínaje .NET Framework 4,5 je uvolňování paměti serveru na pozadí výchozím režimem pro uvolňování paměti serveru. Chcete-li zvolit tento režim, nastavte atribut `enabled` [elementu \<gcServer >](../../../docs/framework/configure-apps/file-schema/runtime/gcserver-element.md) na `true` ve schématu konfigurace modulu runtime. Tento režim funguje podobně jako uvolnění paměti pracovní stanice na pozadí, které je popsané v předchozí části, ale existuje několik rozdílů. Uvolňování paměti pracovní stanice na pozadí používá jedno vyhrazené vlákno uvolňování paměti na pozadí, zatímco uvolňování paměti serveru na pozadí používá více vláken, obvykle vyhrazené vlákno pro každý logický procesor. Na rozdíl od vlákna uvolňování paměti na pozadí pracovní stanice nevypršel časový limit těchto vláken.
+- Background workstation garbage collection uses one dedicated background garbage collection thread, whereas background server garbage collection uses multiple threads. Typically, there's a dedicated thread for each logical processor.
 
-Následující obrázek znázorňuje pozadí uvolňování paměti prováděné na samostatném vyhrazeném vlákně na serveru:
+- Unlike the workstation background garbage collection thread, these threads do not time out.
 
-![Diagram, který zobrazuje uvolňování paměti serveru na pozadí.](./media/fundamentals/background-server-garbage-collection.png "Diagram, který zobrazuje uvolňování paměti serveru na pozadí.")
+The following illustration shows background garbage collection performed on a separate dedicated thread on a server:
+
+![Background server garbage collection](./media/fundamentals/background-server-garbage-collection.png)
+
+## <a name="concurrent-garbage-collection"></a>Concurrent garbage collection
+
+> [!TIP]
+> This section applies to:
+>
+> - .NET Framework 3.5 and earlier for workstation garbage collection
+> - .NET Framework 4 and earlier for server garbage collection
+>
+> Concurrent garbage is replaced by [background garbage collection](#background-workstation-garbage-collection) in later versions.
+
+In workstation or server garbage collection, you can [enable concurrent garbage collection](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md), which enables threads to run concurrently with a dedicated thread that performs the garbage collection for most of the duration of the collection. This option affects only garbage collections in generation 2; generations 0 and 1 are always non-concurrent because they finish very fast.
+
+Concurrent garbage collection enables interactive applications to be more responsive by minimizing pauses for a collection. Managed threads can continue to run most of the time while the concurrent garbage collection thread is running. This results in shorter pauses while a garbage collection is occurring.
+
+Concurrent garbage collection is performed on a dedicated thread. By default, the CLR runs workstation garbage collection with concurrent garbage collection enabled. This is true for single-processor and multi-processor computers.
+
+The following illustration shows concurrent garbage collection performed on a separate dedicated thread.
+
+![Concurrent Garbage Collection Threads](./media/gc-concurrent.png)
 
 ## <a name="see-also"></a>Viz také:
 
-- [Uvolňování paměti](../../../docs/standard/garbage-collection/index.md)
+- [Configuration options for GC](../../core/run-time-config/garbage-collector.md)
+- [Garbage collection](index.md)

@@ -4,12 +4,12 @@ description: Naučte se ladit rozhraní .NET pro Apache Spark aplikace ve Window
 ms.date: 08/15/2019
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: dcaca96f6eb871c15a37adc18190b073c63c8e93
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 098c7519fe99ef04773c5e4b81685ca0f06f1272
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70206141"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74281531"
 ---
 # <a name="debug-a-net-for-apache-spark-application"></a>Ladění aplikace .NET pro Apache Spark
 
@@ -29,19 +29,19 @@ spark-submit \
 
 Po spuštění příkazu se zobrazí následující výstup:
 
-```
+```console
 ***********************************************************************
 * .NET Backend running debug mode. Press enter to exit *
 ***********************************************************************
 ```
 
-V tomto režimu `DotnetRunner` ladění aplikace nespustí aplikaci .NET, ale čeká na připojení. Nechte okno příkazového řádku otevřené.
+V tomto režimu ladění `DotnetRunner` nespustí aplikaci .NET, ale počká na připojení. Nechte okno příkazového řádku otevřené.
 
 Nyní můžete spustit aplikaci .NET pomocí libovolného ladicího programu pro ladění aplikace.
 
 ## <a name="debug-scala-code"></a>Ladění kódu Scala
 
-Pokud potřebujete ladit kód na straně Scala, například `DotnetRunner` nebo `DotnetBackendHandler`, spusťte následující příkaz:
+Pokud potřebujete ladit Scala na straně kódu, například `DotnetRunner` nebo `DotnetBackendHandler`, spusťte následující příkaz:
 
 ```shell
 spark-submit \
@@ -54,7 +54,7 @@ spark-submit \
 
 Po spuštění příkazu připojte ladicí program k běžícímu procesu pomocí [IntelliJ](https://www.jetbrains.com/help/idea/attaching-to-local-process.html).
 
-## <a name="next-steps"></a>Další postup
+## <a name="next-steps"></a>Další kroky
 
 * [Začínáme s .NET pro Apache Spark](../tutorials/get-started.md)
 * [Nasazení aplikace .NET pro Apache Spark do Azure HDInsight](../tutorials/hdinsight-deployment.md)

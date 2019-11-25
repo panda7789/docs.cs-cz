@@ -8,122 +8,124 @@ dev_langs:
 ms.assetid: dd6dc920-b011-418a-b3db-f1580a7d9251
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9cbef07e3db294dd4c0ffca1f25c15ec39e6ecf3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e9445f16b6470b1d2066fcae749b1623ec5e11ac
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647932"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74138949"
 ---
 # <a name="creating-new-attributes-for-elements-in-the-dom"></a>Vytváření nových atributů pro elementy v modelu DOM
-Vytvoření nového atributu se liší od vytvoření jiných typů uzlu, protože atributy nejsou uzly, ale jsou vlastnosti uzlu elementu jsou součástí **XmlAttributeCollection** spojené s tímto prvkem. Existuje několik způsobů, jak vytvořit atribut a připojit ho k elementu:  
-  
-- Získejte uzlu elementu a použijte **SetAttribute** přidání atributu do kolekce atributů daného prvku.  
-  
-- Vytvoření **XmlAttribute** pomocí uzlu **CreateAttribute** metody get uzlu elementu, a pak pomocí **SetAttributeNode** k přidání uzlu do kolekce atributů, které element.  
-  
- Následující příklad ukazuje, jak přidat atribut do elementu pomocí **SetAttribute** metody.  
-  
-```vb  
-Imports System  
-Imports System.IO  
-Imports System.Xml  
-  
-public class Sample  
-  
-  public shared sub Main()  
-  
-  Dim doc as XmlDocument = new XmlDocument()  
-  doc.LoadXml("<book xmlns:bk='urn:samples' bk:ISBN='1-861001-57-5'>" & _  
-              "<title>Pride And Prejudice</title>" & _  
-              "</book>")  
-  Dim root as XmlElement = doc.DocumentElement  
-  
-  'Add a new attribute.  
-  root.SetAttribute("genre", "urn:samples", "novel")  
-  
-  Console.WriteLine("Display the modified XML...")  
-  Console.WriteLine(doc.InnerXml)  
-  
-  end sub  
-end class  
+
+Vytváření nových atributů se liší od vytvoření jiných typů uzlů, protože atributy nejsou uzly, ale jsou vlastnosti uzlu elementu a jsou obsaženy v objektu **XmlAttributeCollection** přidruženého k elementu. Existuje několik způsobů, jak vytvořit atribut a připojit jej k elementu:
+
+- Získejte uzel element a použijte atribut **SetAttributes** pro přidání atributu do kolekce atributů daného elementu.
+
+- Vytvořte uzel **XmlAttribute** pomocí metody **CreateAttribute** , Získejte uzel element a pak použijte **SetAttributeNode** pro přidání uzlu do kolekce atributů daného elementu.
+
+Následující příklad ukazuje, jak přidat atribut k elementu pomocí metody **SetAttributes** :
+
+```vb
+Imports System.IO
+Imports System.Xml
+
+Public Class Sample
+
+    Public Shared Sub Main()
+
+        Dim doc As New XmlDocument()
+        doc.LoadXml("<book xmlns:bk='urn:samples' bk:ISBN='1-861001-57-5'>" & _
+                    "<title>Pride And Prejudice</title>" & _
+                    "</book>")
+        Dim root As XmlElement = doc.DocumentElement
+
+        ' Add a new attribute.
+        root.SetAttribute("genre", "urn:samples", "novel")
+
+        Console.WriteLine("Display the modified XML...")
+        Console.WriteLine(doc.InnerXml)
+    End Sub
+End Class
 ```  
   
-```csharp  
-using System;  
-using System.IO;  
-using System.Xml;  
+```csharp
+using System;
+using System.IO;
+using System.Xml;
+
+public class Sample
+{
+    public static void Main()
+    {
+        var doc = new XmlDocument();
+        doc.LoadXml("<book xmlns:bk='urn:samples' bk:ISBN='1-861001-57-5'>" +
+                    "<title>Pride And Prejudice</title>" +
+                    "</book>");
+        XmlElement root = doc.DocumentElement;
+
+        // Add a new attribute.
+        root.SetAttribute("genre", "urn:samples", "novel");
+
+        Console.WriteLine("Display the modified XML...");
+        Console.WriteLine(doc.InnerXml);
+    }
+}
+```
+
+Následující příklad ukazuje nový atribut, který je vytvářen pomocí metody **CreateAttribute** . Pak zobrazuje atribut přidaný do kolekce atributů prvku **Book** pomocí metody **SetAttributeNode** .
+
+S ohledem na následující kód XML:
   
-public class Sample  
-{  
-  public static void Main()  
-  {  
-    XmlDocument doc = new XmlDocument();  
-    doc.LoadXml("<book xmlns:bk='urn:samples' bk:ISBN='1-861001-57-5'>" +  
-                "<title>Pride And Prejudice</title>" +  
-                "</book>");  
-    XmlElement root = doc.DocumentElement;  
-  
-    // Add a new attribute.  
-    root.SetAttribute("genre", "urn:samples", "novel");  
-  
-    Console.WriteLine("Display the modified XML...");  
-    Console.WriteLine(doc.InnerXml);  
-  }  
-```  
-  
- Následující příklad ukazuje nový atribut vytváří pomocí **CreateAttribute** metody. Pak znázorňuje atribut přidána do kolekce atributů **knihy** prvku pomocí **SetAttributeNode** metoda.  
-  
- Daný následující kód XML:  
-  
-```xml  
-<book genre='novel' ISBN='1-861001-57-5'>  
-<title>Pride And Prejudice</title>  
-</book>  
-```  
-  
- Vytvořte nový atribut a přiřaďte jí hodnotu:  
-  
-```vb  
-Dim attr As XmlAttribute = doc.CreateAttribute("publisher")  
-   attr.Value = "WorldWide Publishing"  
-```  
-  
-```csharp  
-XmlAttribute attr = doc.CreateAttribute("publisher");  
-attr.Value = "WorldWide Publishing";  
-```  
-  
- a připojit ho k elementu:  
-  
-```vb  
-doc.DocumentElement.SetAttributeNode(attr)  
-```  
-  
-```csharp  
-doc.DocumentElement.SetAttributeNode(attr);  
-```  
-  
- **Output**  
-  
-```xml  
-<book genre="novel" ISBN="1-861001-57-5" publisher="WorldWide Publishing">  
-<title>Pride And Prejudice</title>  
-</book>  
-```  
-  
- Úplný příklad najdete tady <xref:System.Xml.XmlDocument.CreateAttribute%2A>.  
-  
- Můžete taky vytvořit **XmlAttribute** uzlu a použití **InsertBefore** nebo **InsertAfter** metody umístit na odpovídající pozici v kolekci. Pokud atribut se stejným názvem už existuje v kolekci atributů existující **XmlAttribute** uzel je odebrán z kolekce a nové **XmlAttribute** uzlu je vložen. To se provádí stejným způsobem jako **SetAttribute** metody. Tyto metody přijímají jako parametr, existující uzel jako referenční bod provedete **InsertBefore** a **InsertAfter**. Pokud nezadáte uzel odkazu určující, kam chcete vložit nový uzel, na výchozí hodnoty pro **InsertAfter** se vložit nový uzel na začátku kolekce. Výchozí umístění **InsertBefore**, pokud je k dispozici žádný uzel odkazu, je na konec kolekce.  
-  
- Pokud jste vytvořili **XmlNamedNodeMap** atributů, můžete přidat atribut s použitím názvu <xref:System.Xml.XmlNamedNodeMap.SetNamedItem%2A>. Další informace najdete v tématu [kolekce uzlů v NamedNodeMaps a NodeLists](../../../../docs/standard/data/xml/node-collections-in-namednodemaps-and-nodelists.md).  
-  
-## <a name="default-attributes"></a>Výchozí atributy  
- Pokud vytvoříte element, který je deklarován mít atribut výchozí, nový výchozí atribut s jeho výchozí hodnota je vytvořené pomocí XML Document Object Model (DOM) a připojen k elementu. V tuto chvíli jsou také vytvořit podřízené uzly výchozího atributu.  
-  
-## <a name="attribute-child-nodes"></a>Atribut podřízené uzly  
- Hodnota uzlu atributu se změní jeho podřízených uzlů. Existují jenom dva druhy platný podřízené uzly: **XmlText** uzly, a **XmlEntityReference** uzly. Tyto jsou podřízené uzly v tom smyslu, že tyto metody, jako **FirstChild** a **LastChild** zpracovat jako podřízené uzly. Toto rozlišení atribut s podřízenými uzly je důležité při pokusu o odebrání atributů nebo atribut podřízené uzly. Další informace najdete v tématu [odebrání atributů z uzlu elementu v modelu DOM](../../../../docs/standard/data/xml/removing-attributes-from-an-element-node-in-the-dom.md).  
-  
+```xml
+<book genre='novel' ISBN='1-861001-57-5'>
+<title>Pride And Prejudice</title>
+</book>
+```
+
+Vytvořte nový atribut a poskytněte mu hodnotu:
+
+```vb
+Dim attr As XmlAttribute = doc.CreateAttribute("publisher")
+attr.Value = "WorldWide Publishing"
+```
+
+```csharp
+XmlAttribute attr = doc.CreateAttribute("publisher");
+attr.Value = "WorldWide Publishing";
+```
+
+a připojte jej k elementu:
+
+```vb
+doc.DocumentElement.SetAttributeNode(attr)
+```
+
+```csharp
+doc.DocumentElement.SetAttributeNode(attr);
+```
+
+**Output**
+
+```xml
+<book genre="novel" ISBN="1-861001-57-5" publisher="WorldWide Publishing">
+<title>Pride And Prejudice</title>
+</book>
+```
+
+Úplný vzorek kódu najdete na adrese <xref:System.Xml.XmlDocument.CreateAttribute%2A>.
+
+Můžete také vytvořit uzel **XmlAttribute** a použít metody **InsertBefore** nebo **InsertAfter** k umístění do příslušné pozice v kolekci. Pokud je v kolekci atributů již přítomen atribut se stejným názvem, existující uzel **XmlAttribute** je odebrán z kolekce a je vložen nový uzel **XmlAttribute** . To funguje stejným způsobem jako metoda **SetAttributes** . Tyto metody přebírají jako parametr existující uzel jako referenční bod pro provádění **InsertBefore** a **InsertAfter**. Pokud neposkytnete referenční uzel určující, kam vložit nový uzel, je výchozím nastavením pro metodu **InsertAfter** vložení nového uzlu na začátek kolekce. Výchozí pozice pro **InsertBefore**, pokud není k dispozici žádný uzel odkazu, je na konci kolekce.
+
+Pokud jste vytvořili **XmlNamedNodeMap** atributů, můžete přidat atribut podle názvu pomocí metody <xref:System.Xml.XmlNamedNodeMap.SetNamedItem%2A>. Další informace najdete v tématu [kolekce uzlů v NamedNodeMaps a NodeLists](node-collections-in-namednodemaps-and-nodelists.md).
+
+## <a name="default-attributes"></a>Výchozí atributy
+
+Vytvoříte-li prvek, který je deklarován jako výchozí atribut, je vytvořen nový výchozí atribut s výchozí hodnotou v souboru XML model DOM (Document Object Model) (DOM) a připojen k elementu. V tuto chvíli se vytvoří i podřízených uzlů výchozích atributů.
+
+## <a name="attribute-child-nodes"></a>Podřízené uzly atributu
+
+Hodnota uzlu atributu se bude jednat o své podřízené uzly. Existují pouze dva typy platných podřízených uzlů: uzly **XmlText** a uzly **XmlEntityReference** . Jedná se o podřízené uzly v tom smyslu, že metody jako **hodnotu FirstChild** a **LastChild** je zpracovávají jako podřízené uzly. Toto rozlišení atributu s podřízenými uzly je důležité při pokusu o odebrání atributů nebo podřízených uzlů atributů. Další informace naleznete v tématu [Odebrání atributů z uzlu elementu v modelu DOM](removing-attributes-from-an-element-node-in-the-dom.md).
+
 ## <a name="see-also"></a>Viz také:
 
-- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [Model DOM (Document Object Model) dokumentu XML](xml-document-object-model-dom.md)

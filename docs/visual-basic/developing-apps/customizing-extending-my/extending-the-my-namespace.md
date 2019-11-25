@@ -1,5 +1,5 @@
 ---
-title: Rozšíření oboru názvů My v jazyce Visual Basic
+title: Rozšíření oboru názvů My
 ms.date: 07/20/2015
 f1_keywords:
 - vb.AddingMyExtensions
@@ -8,83 +8,83 @@ helpviewer_keywords:
 - My namespace
 - My namespace [Visual Basic], extending
 ms.assetid: 808e8617-b01c-4135-8b21-babe87389e8e
-ms.openlocfilehash: 6da0914c9d2d4dc1220ede5d6fa9f1aa6b43426a
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 2a7b0b84061fccd9a333a68e4a19477bd19ca4ff
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72775302"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74330323"
 ---
-# <a name="extending-the-my-namespace-in-visual-basic"></a>Rozšíření oboru názvů `My` v Visual Basic
+# <a name="extending-the-my-namespace-in-visual-basic"></a>Extending the `My` Namespace in Visual Basic
 
-Obor názvů `My` v Visual Basic zpřístupňuje vlastnosti a metody, které vám umožní snadno využít sílu .NET Framework. Obor názvů `My` zjednodušuje běžné programové problémy, často zkracuje obtížné úlohu na jeden řádek kódu. Kromě toho je obor názvů `My` plně rozšiřitelný, takže můžete přizpůsobit chování `My` a přidat nové služby do své hierarchie, abyste je přizpůsobili konkrétním potřebám aplikací. Toto téma popisuje, jak přizpůsobit stávající členy `My` oboru názvů a jak přidat vlastní třídy do oboru názvů `My`.
+The `My` namespace in Visual Basic exposes properties and methods that enable you to easily take advantage of the power of the .NET Framework. The `My` namespace simplifies common programming problems, often reducing a difficult task to a single line of code. Additionally, the `My` namespace is fully extensible so that you can customize the behavior of `My` and add new services to its hierarchy to adapt to specific application needs. This topic discusses both how to customize existing members of the `My` namespace and how to add your own custom classes to the `My` namespace.
 
-## <a name="customizing-existing-my-namespace-members"></a>Přizpůsobení stávajících `My` členů oboru názvů
+## <a name="customizing-existing-my-namespace-members"></a>Customizing existing `My` namespace members
 
-Obor názvů `My` v Visual Basic zpřístupňuje často používané informace o vaší aplikaci, počítači a dalších. Úplný seznam objektů v oboru názvů `My` naleznete v části [můj odkaz](../../language-reference/keywords/my-reference.md). Je možné, že budete muset přizpůsobit stávající členy `My` oboru názvů tak, aby lépe odpovídaly potřebám vaší aplikace. Vlastnost objektu v oboru názvů `My`, která není jen pro čtení, může být nastavena na vlastní hodnotu.
+The `My` namespace in Visual Basic exposes frequently used information about your application, your computer, and more. For a complete list of the objects in the `My` namespace, see [My Reference](../../language-reference/keywords/my-reference.md). You may have to customize existing members of the `My` namespace so that they better match the needs of your application. Any property of an object in the `My` namespace that is not read-only can be set to a custom value.
 
-Předpokládejme například, že často používáte objekt `My.User` pro přístup k aktuálnímu kontextu zabezpečení pro uživatele, který spouští vaši aplikaci. Vaše společnost ale používá vlastní objekt uživatele k vystavování dalších informací a možností pro uživatele v rámci společnosti. V tomto scénáři můžete nahradit výchozí hodnotu vlastnosti `My.User.CurrentPrincipal` instance vlastního objektu zabezpečení, jak je znázorněno v následujícím příkladu:
+For example, assume that you frequently use the `My.User` object to access the current security context for the user running your application. However, your company uses a custom user object to expose additional information and capabilities for users within the company. In this scenario, you can replace the default value of the `My.User.CurrentPrincipal` property with an instance of your own custom principal object, as shown in the following example:
 
 [!code-vb[VbVbcnExtendingMy#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnExtendingMy/VB/Class1.vb#1)]
 
-Nastavením vlastnosti `CurrentPrincipal` u objektu `My.User` se změní identita, pod kterou je aplikace spuštěná. Objekt `My.User` zase vrátí informace o nově zadaném uživateli.
+Setting the `CurrentPrincipal` property on the `My.User` object changes the identity under which the application runs. The `My.User` object, in turn, returns information about the newly specified user.
   
-## <a name="adding-members-to-my-objects"></a>Přidávání členů do objektů `My`
+## <a name="adding-members-to-my-objects"></a>Adding members to `My` objects
 
-Typy vrácené z `My.Application` a `My.Computer` jsou definovány jako třídy `Partial`. Proto můžete objekty `My.Application` a `My.Computer` rozšíříte tak, že vytvoříte třídu `Partial` s názvem `MyApplication` nebo `MyComputer`. Třída nemůže být třída `Private`. Pokud zadáte třídu jako součást oboru názvů `My`, můžete přidat vlastnosti a metody, které budou zahrnuty do objektů `My.Application` nebo `My.Computer`.
+The types returned from `My.Application` and `My.Computer` are defined as `Partial` classes. Therefore, you can extend the `My.Application` and `My.Computer` objects by creating a `Partial` class named `MyApplication` or `MyComputer`. The class cannot be a `Private` class. If you specify the class as part of the `My` namespace, you can add properties and methods that will be included with the `My.Application` or `My.Computer` objects.
 
-Následující příklad přidá vlastnost s názvem `DnsServerIPAddresses` do objektu `My.Computer`:
+The following example adds a property named `DnsServerIPAddresses` to the `My.Computer` object:
 
 [!code-vb[VbVbcnExtendingMy#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnExtendingMy/VB/Class2.vb#2)]
 
-## <a name="adding-custom-objects-to-the-my-namespace"></a>Přidání vlastních objektů do oboru názvů `My`
+## <a name="adding-custom-objects-to-the-my-namespace"></a>Adding custom objects to the `My` namespace
 
-I když obor názvů `My` poskytuje řešení pro mnoho běžných programovacích úloh, může dojít k úlohám, které obor názvů `My` neřeší. Vaše aplikace může například získat přístup k vlastním adresářovým službám pro uživatelská data nebo vaše aplikace může používat sestavení, která nejsou ve výchozím nastavení nainstalovaná pomocí Visual Basic. Obor názvů `My` můžete zvětšit tak, aby zahrnoval vlastní řešení běžných úloh, které jsou specifické pro vaše prostředí. Obor názvů `My` lze snadno rozšířit a přidat nové členy pro splnění rostoucích potřeb aplikací. Kromě toho můžete nasadit rozšíření `My` oboru názvů jiným vývojářům jako šablonu Visual Basic.
+Although the `My` namespace provides solutions for many common programming tasks, you may encounter tasks that the `My` namespace does not address. For example, your application might access custom directory services for user data, or your application might use assemblies that are not installed by default with Visual Basic. You can extend the `My` namespace to include custom solutions to common tasks that are specific to your environment. The `My` namespace can easily be extended to add new members to meet growing application needs. Additionally, you can deploy your `My` namespace extensions to other developers as a Visual Basic template.
   
-### <a name="adding-members-to-the-my-namespace"></a>Přidávání členů do oboru názvů `My`
+### <a name="adding-members-to-the-my-namespace"></a>Adding members to the `My` namespace
 
-Vzhledem k tomu, že `My` je obor názvů stejným způsobem jako jakýkoli jiný obor názvů, můžete do něj přidat vlastnosti nejvyšší úrovně pouhým přidáním modulu a určením `Namespace` `My`. Přihlaste se k modulu pomocí atributu `HideModuleName`, jak je znázorněno v následujícím příkladu. Atribut `HideModuleName` zajišťuje, že technologie IntelliSense nebude zobrazovat název modulu, když zobrazuje členy `My` oboru názvů.
+Because `My` is a namespace like any other namespace, you can add top-level properties to it by just adding a module and specifying a `Namespace` of `My`. Annotate the module with the `HideModuleName` attribute as shown in the following example. The `HideModuleName` attribute ensures that IntelliSense will not display the module name when it displays the members of the `My` namespace.
 
 [!code-vb[VbVbcnExtendingMy#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnExtendingMy/VB/Class1.vb#3)]
 
-Chcete-li přidat členy do oboru názvů `My`, přidejte do modulu vlastnosti podle potřeby. Pro každou vlastnost přidanou do oboru názvů `My` přidejte soukromé pole typu `ThreadSafeObjectProvider(Of T)`, kde typ je typ vrácený vaší vlastní vlastností. Toto pole se používá k vytvoření instancí objektů bezpečných pro přístup z více vláken, které jsou vráceny vlastností voláním metody `GetInstance`. V důsledku toho každé vlákno, které přistupuje k rozšířené vlastnosti, obdrží svou vlastní instanci vráceného typu. Následující příklad přidá vlastnost s názvem `SampleExtension`, která je typu `SampleExtension` na obor názvů `My`:
+To add members to the `My` namespace, add properties as needed to the module. For each property added to the `My` namespace, add a private field of type `ThreadSafeObjectProvider(Of T)`, where the type is the type returned by your custom property. This field is used to create thread-safe object instances to be returned by the property by calling the `GetInstance` method. As a result, each thread that is accessing the extended property receives its own instance of the returned type. The following example adds a property named `SampleExtension` that is of type `SampleExtension` to the `My` namespace:
 
 [!code-vb[VbVbcnExtendingMy#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnExtendingMy/VB/Class1.vb#4)]
 
-## <a name="adding-events-to-custom-my-objects"></a>Přidávání událostí do vlastních objektů `My`
+## <a name="adding-events-to-custom-my-objects"></a>Adding events to custom `My` objects
 
-Objekt `My.Application` lze použít k vystavení událostí pro vlastní objekty `My` rozšířením `MyApplication` částečné třídy v oboru názvů `My`. Pro projekty založené na systému Windows můžete dvakrát kliknout na uzel **můj projekt** v pro projekt v **Průzkumník řešení**. V **Návrháři projektu**Visual Basic klikněte na kartu **aplikace** a pak klikněte na tlačítko **Zobrazit události aplikace** . Vytvoří se nový soubor s názvem *ApplicationEvents. vb* . Obsahuje následující kód pro rozšíření `MyApplication` třídy:
+You can use the `My.Application` object to expose events for your custom `My` objects by extending the `MyApplication` partial class in the `My` namespace. For Windows-based projects, you can double-click the **My Project** node in for your project in **Solution Explorer**. In the Visual Basic **Project Designer**, click the **Application** tab and then click the **View Application Events** button. A new file that is named *ApplicationEvents.vb* will be created. It contains the following code for extending the `MyApplication` class:
 
 [!code-vb[VbVbcnExtendingMy#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnExtendingMy/VB/Class1.vb#5)]
 
-Můžete přidat obslužné rutiny událostí pro vlastní objekty `My` přidáním vlastních obslužných rutin událostí do třídy `MyApplication`. Vlastní události umožňují přidat kód, který se spustí při přidání, odebrání nebo vyvolání obslužné rutiny události. Všimněte si, že kód `AddHandler` vlastní události se spustí pouze v případě, že uživatel přidá kód pro zpracování události. Například zvažte, že objekt `SampleExtension` z předchozí části obsahuje událost `Load`, do které chcete přidat vlastní obslužnou rutinu události pro. Následující příklad kódu ukazuje vlastní obslužnou rutinu události s názvem `SampleExtensionLoad`, která bude vyvolána při výskytu události `My.SampleExtension.Load`. Když je přidán kód pro zpracování nové události `My.SampleExtensionLoad`, je provedena `AddHandler` část tohoto vlastního kódu události. Metoda `MyApplication_SampleExtensionLoad` je obsažena v příkladu kódu k zobrazení příkladu obslužné rutiny události, která zpracovává událost `My.SampleExtensionLoad`. Všimněte si, že událost `SampleExtensionLoad` bude k dispozici po výběru možnosti **Moje události aplikace** v levém rozevíracím seznamu nad Editor kódu při úpravách souboru *ApplicationEvents. vb* .
+You can add event handlers for your custom `My` objects by adding custom event handlers to the `MyApplication` class. Custom events enable you to add code that will execute when an event handler is added, removed, or the event is raised. Note that the `AddHandler` code for a custom event runs only if code is added by a user to handle the event. For example, consider that the `SampleExtension` object from the previous section has a `Load` event that you want to add a custom event handler for. The following code example shows a custom event handler named `SampleExtensionLoad` that will be invoked when the `My.SampleExtension.Load` event occurs. When code is added to handle the new `My.SampleExtensionLoad` event, the `AddHandler` part of this custom event code is executed. The `MyApplication_SampleExtensionLoad` method is included in the code example to show an example of an event handler that handles the `My.SampleExtensionLoad` event. Note that the `SampleExtensionLoad` event will be available when you select the **My Application Events** option in the left drop-down list above the Code Editor when you are editing the *ApplicationEvents.vb* file.
 
 [!code-vb[VbVbcnExtendingMy#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnExtendingMy/VB/Class1.vb#6)]
 
-## <a name="design-guidelines"></a>Pokyny pro návrh
+## <a name="design-guidelines"></a>Design guidelines
 
-Při vývoji rozšíření na obor názvů `My` použijte následující pokyny, které vám pomohou minimalizovat náklady na údržbu vašich komponent rozšíření:
+When you develop extensions to the `My` namespace, use the following guidelines to help minimize the maintenance costs of your extension components:
 
-- **Zahrňte pouze logiku rozšíření.** Logika obsažená v rozšíření `My` oboru názvů by měla obsahovat pouze kód, který je nezbytný k vystavení požadované funkce v oboru názvů `My`. Vzhledem k tomu, že se rozšíření bude nacházet v uživatelských projektech jako zdrojový kód, aktualizace komponenty rozšíření má za následek vysoké náklady na údržbu a je třeba se jim vyhnout, pokud je to možné.
-- **Minimalizujte předpoklady projektu.** Při vytváření rozšíření oboru názvů `My` nemusíte předpokládat sadu odkazů, import na úrovni projektu ani specifická nastavení kompilátoru (například `Option Strict` vypnuto). Místo toho minimalizujte závislosti a plně zařaďte všechny odkazy na typy pomocí klíčového slova `Global`. Také se ujistěte, že se rozšíření zkompiluje s `Option Strict` pro minimalizaci chyb v rozšíření.
-- **Izolujte kód rozšíření.** Vložení kódu do jediného souboru způsobí, že se rozšíření dá snadno nasadit jako šablona položky Visual Studio. Další informace najdete v části "balení a nasazování rozšíření" dále v tomto tématu. Umístění veškerého kódu rozšíření `My` oboru názvů do jednoho souboru nebo samostatné složky v projektu pomůže uživatelům také najít `My` oboru názvů.
+- **Include only the extension logic.** The logic included in the `My` namespace extension should include only the code that is needed to expose the required functionality in the `My` namespace. Because your extension will reside in user projects as source code, updating the extension component incurs a high maintenance cost and should be avoided if possible.
+- **Minimize project assumptions.** When you create your extensions of the `My` namespace, do not assume a set of references, project-level imports, or specific compiler settings (for example, `Option Strict` off). Instead, minimize dependencies and fully qualify all type references by using the `Global` keyword. Also, ensure that the extension compiles with `Option Strict` on to minimize errors in the extension.
+- **Isolate the extension code.** Placing the code in a single file makes your extension easily deployable as a Visual Studio item template. For more information, see "Packaging and Deploying Extensions" later in this topic. Placing all the `My` namespace extension code in a single file or a separate folder in a project will also help users locate the `My` namespace extension.
 
-## <a name="designing-class-libraries-for-my"></a>Návrh knihoven tříd pro `My`
+## <a name="designing-class-libraries-for-my"></a>Designing class libraries for `My`
 
-Stejně jako u většiny objektových modelů mají některé vzory návrhu v oboru názvů `My` dobře fungovat a jiné ne. Při návrhu rozšíření na obor názvů `My` Vezměte v úvahu následující principy:
+As is the case with most object models, some design patterns work well in the `My` namespace and others do not. When designing an extension to the `My` namespace, consider the following principles:
 
-- **Bezstavové metody.** Metody v oboru názvů `My` by měly pro určitý úkol poskytnout kompletní řešení. Zajistěte, aby hodnoty parametrů předané metodě poskytovaly veškerý vstup potřebný k dokončení konkrétního úkolu. Vyhněte se vytváření metod, které spoléhají na předchozí stav, jako je například otevření připojení k prostředkům.
-- **Globální instance.** Jediný stav, který je udržován v oboru názvů `My`, je globální pro projekt. Například `My.Application.Info` zapouzdřuje stav, který je sdílen v celé aplikaci.
-- **Jednoduché typy parametrů.** Zachovejte věci jednoduché, protože se vyhnete složitým typům parametrů. Místo toho vytvořte metody, které buď nevyužívají vstup parametrů, nebo které přebírají jednoduché vstupní typy, jako jsou například řetězce, primitivní typy a tak dále.
-- **Metody pro vytváření.** Vytváření instancí je nutně obtížné u některých typů. Poskytování produkčních metod jako rozšíření oboru názvů `My` umožňuje snadněji zjišťovat a využívat typy, které spadají do této kategorie. Příklad metody továrny, která funguje dobře, je `My.Computer.FileSystem.OpenTextFileReader`. V .NET Framework je k dispozici několik typů datových proudů. Zadáním textových souborů konkrétně `OpenTextFileReader` pomůže uživateli pochopit, který datový proud chcete použít.
+- **Stateless methods.** Methods in the `My` namespace should provide a complete solution to a specific task. Ensure that the parameter values that are passed to the method provide all the input required to complete the particular task. Avoid creating methods that rely on prior state, such as open connections to resources.
+- **Global instances.** The only state that is maintained in the `My` namespace is global to the project. For example, `My.Application.Info` encapsulates state that is shared throughout the application.
+- **Simple parameter types.** Keep things simple by avoiding complex parameter types. Instead, create methods that either take no parameter input or that take simple input types such as strings, primitive types, and so on.
+- **Factory methods.** Some types are necessarily difficult to instantiate. Providing factory methods as extensions to the `My` namespace enables you to more easily discover and consume types that fall into this category. An example of a factory method that works well is `My.Computer.FileSystem.OpenTextFileReader`. There are several stream types available in the .NET Framework. By specifying text files specifically, the `OpenTextFileReader` helps the user understand which stream to use.
 
-Tyto pokyny nevylučují obecné principy návrhu pro knihovny tříd. Místo toho jsou doporučení optimalizovaná pro vývojáře, kteří používají Visual Basic a obor názvů `My`. Obecné principy navrhování pro vytváření knihoven tříd naleznete v tématu [pokyny pro návrh rozhraní](../../../standard/design-guidelines/index.md).
+These guidelines do not preclude general design principles for class libraries. Rather, they are recommendations that are optimized for developers who are using Visual Basic and the `My` namespace. For general design principles for creating class libraries, see [Framework Design Guidelines](../../../standard/design-guidelines/index.md).
 
-## <a name="packaging-and-deploying-extensions"></a>Balení a nasazení rozšíření
+## <a name="packaging-and-deploying-extensions"></a>Packaging and deploying extensions
 
-Do šablony projektu sady Visual Studio můžete zahrnout `My` rozšíření oboru názvů, nebo můžete zabalit rozšíření a nasadit je jako šablonu položky sady Visual Studio. Když zabalíte rozšíření oboru názvů `My` jako šablonu položky sady Visual Studio, můžete využít výhod dalších funkcí poskytovaných Visual Basic. Tyto možnosti umožňují zahrnout rozšíření, když projekt odkazuje na konkrétní sestavení, nebo povolit uživatelům explicitní přidání `My`ho rozšíření oboru názvů pomocí stránky **Moje rozšíření** v návrháři projektu Visual Basic.
+You can include `My` namespace extensions in a Visual Studio project template, or you can package your extensions and deploy them as a Visual Studio item template. When you package your `My` namespace extensions as a Visual Studio item template, you can take advantage of additional capabilities provided by Visual Basic. These capabilities enable you to include an extension when a project references a particular assembly, or enable users to explicitly add your `My` namespace extension by using the **My Extensions** page of the Visual Basic Project Designer.
 
-Podrobnosti o tom, jak nasadit rozšíření oboru názvů `My`, najdete v tématu [balení a nasazení vlastních rozšíření](packaging-and-deploying-custom-my-extensions.md).
+For details about how to deploy `My` namespace extensions, see [Packaging and Deploying Custom My Extensions](packaging-and-deploying-custom-my-extensions.md).
 
 ## <a name="see-also"></a>Viz také:
 

@@ -1,19 +1,19 @@
 ---
-title: Logické bitové operátory (Visual Basic)
+title: Logické bitové operátory
 ms.date: 07/20/2015
 helpviewer_keywords:
 - operators [Visual Basic], logical
 - logical operators [Visual Basic], Visual Basic
 ms.assetid: 55de4889-7679-4859-8063-bee15abca53f
-ms.openlocfilehash: b501d21efd02a0b96d98bc32af7968a61aae1f29
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 7f957a6e4f2dfea3f744365d2d065442d3b85183
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61774787"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350932"
 ---
 # <a name="logicalbitwise-operators-visual-basic"></a>Logické/bitové operátory (Visual Basic)
-Níže jsou logické/bitové operátory definované v jazyce Visual Basic.  
+The following are the logical/bitwise operators defined in Visual Basic.  
   
  [Operátor And](../../../visual-basic/language-reference/operators/and-operator.md)  
   
@@ -33,5 +33,5 @@ Níže jsou logické/bitové operátory definované v jazyce Visual Basic.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
-- [Logické a bitové operátory v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
+- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Logical and Bitwise Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)

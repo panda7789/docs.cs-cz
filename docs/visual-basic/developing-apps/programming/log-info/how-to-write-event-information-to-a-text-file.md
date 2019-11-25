@@ -1,49 +1,49 @@
 ---
-title: 'Postupy: Zápis informací o události do textového souboru (Visual Basic)'
+title: 'Postupy: Zápis informací o události do textového souboru'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - event logs [Visual Studio], writing event information
 - text files [Visual Basic], writing event information to a text file
 - events [Visual Basic], writing event information to a text file
 ms.assetid: 9ca7cc03-bf99-4933-9e5e-61ee28e9a6b4
-ms.openlocfilehash: 54169f1133ed4f77026c4332493a7b5f4532aec0
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: c3c81e331eb3d8ee450ba0cac38e57976846ee63
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72583289"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74352076"
 ---
 # <a name="how-to-write-event-information-to-a-text-file-visual-basic"></a>Postupy: Zápis informací o události do textového souboru (Visual Basic)
 
-Pomocí objektů `My.Application.Log` a `My.Log` můžete protokolovat informace o událostech, ke kterým dochází ve vaší aplikaci. Tento příklad ukazuje, jak použít metodu `My.Application.Log.WriteEntry` k protokolování informací o trasování do souboru protokolu.
+You can use the `My.Application.Log` and `My.Log` objects to log information about events that occur in your application. This example shows how to use the `My.Application.Log.WriteEntry` method to log tracing information to a log file.
 
-### <a name="to-add-and-configure-the-file-log-listener"></a>Přidání a konfigurace naslouchacího procesu protokolu souborů
+### <a name="to-add-and-configure-the-file-log-listener"></a>To add and configure the file log listener
 
-1. V **Průzkumník řešení** klikněte pravým tlačítkem na soubor App. config a vyberte **otevřít**.
+1. Right-click app.config in **Solution Explorer** and choose **Open**.
 
-     \- nebo-
+     \- or -
 
-     Pokud neexistuje žádný soubor App. config:
+     If there is no app.config file:
 
-    1. V nabídce **projekt** klikněte na příkaz **Přidat novou položku**.
+    1. On the **Project** menu, choose **Add New Item**.
 
-    2. V dialogovém okně **Přidat novou položku** vyberte možnost **konfigurační soubor aplikace**.
+    2. From the **Add New Item** dialog box, choose **Application Configuration File**.
 
-    3. Klikněte na tlačítko **Přidat**.
+    3. Click **Add**.
 
-2. V konfiguračním souboru aplikace vyhledejte část `<listeners>`.
+2. Locate the `<listeners>` section in the application configuration file.
 
-     Část \<listeners > najdete v oddílu \<source > s atributem Name "DefaultSource", který je vnořený do oddílu \<system. Diagnostics >, který je vnořený pod \<configuration na nejvyšší úrovni > section.
+     You will find the \<listeners> section in the \<source> section with the name attribute "DefaultSource", which is nested under the \<system.diagnostics> section, which is nested under the top-level \<configuration> section.
 
-3. Přidejte tento prvek do tohoto `<listeners>` části:
+3. Add this element to that `<listeners>` section:
 
     ```xml
     <add name="FileLogListener" />
     ```
 
-4. Vyhledejte část `<sharedListeners>` v části `<system.diagnostics>`, která je vnořená do oddílu `<configuration>` nejvyšší úrovně.
+4. Locate the `<sharedListeners>` section in the `<system.diagnostics>` section, nested under the top-level `<configuration>` section.
 
-5. Přidejte tento prvek do tohoto `<sharedListeners>` části:
+5. Add this element to that `<sharedListeners>` section:
 
     ```xml
     <add name="FileLogListener"
@@ -55,16 +55,16 @@ Pomocí objektů `My.Application.Log` a `My.Log` můžete protokolovat informace
         customlocation="c:\temp\" />
     ```
 
-     Změňte hodnotu atributu `customlocation` na adresář protokolu.
+     Change the value of the `customlocation` attribute to the log directory.
 
     > [!NOTE]
-    > Chcete-li nastavit hodnotu vlastnosti naslouchacího procesu, použijte atribut, který má stejný název jako vlastnost, přičemž všechna písmena v názvu jsou malá. Například atributy `location` a `customlocation` nastavují hodnoty vlastností <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Location%2A> a <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.CustomLocation%2A>.
+    > To set the value of a listener property, use an attribute that has the same name as the property, with all letters in the name lowercase. For example, the `location` and `customlocation` attributes set the values of the <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.Location%2A> and <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener.CustomLocation%2A> properties.
 
-### <a name="to-write-event-information-to-the-file-log"></a>Zápis informací o události do protokolu souborů
+### <a name="to-write-event-information-to-the-file-log"></a>To write event information to the file log
 
-K zápisu informací do protokolu souborů použijte metodu `My.Application.Log.WriteEntry` nebo `My.Application.Log.WriteException`. Další informace naleznete v tématu [How to: Write log messages](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md) and [to: log Exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md).
+Use the `My.Application.Log.WriteEntry` or `My.Application.Log.WriteException` method to write information to the file log. For more information, see [How to: Write Log Messages](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md) and [How to: Log Exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md).
 
-Po nakonfigurování naslouchacího procesu protokolu souborů pro sestavení obdrží všechny zprávy, které `My.Application.Log` zápisy z tohoto sestavení.
+After you configure the file log listener for an assembly, it receives all messages that `My.Application.Log` writes from that assembly.
 
 ## <a name="see-also"></a>Viz také:
 

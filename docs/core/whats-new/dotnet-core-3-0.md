@@ -3,16 +3,15 @@ title: Co je nového v .NET Core 3.0
 description: Přečtěte si o nových funkcích, které najdete v .NET Core 3,0.
 dev_langs:
 - csharp
-- vb
 author: thraka
 ms.author: adegeo
 ms.date: 10/22/2019
-ms.openlocfilehash: dcbf1073c12650101efdcf6022db0b29ace2eb3f
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 9cb2568aa36af9ced0525660962966375d69e35b
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73420762"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74140678"
 ---
 # <a name="whats-new-in-net-core-30"></a>Co je nového v .NET Core 3.0
 
@@ -57,10 +56,10 @@ Pokud používáte Visual Studio, budete potřebovat [Visual studio 2019](https:
 
 .NET Core teď ve výchozím nastavení vytváří [spustitelné soubory závislé na rozhraní](../deploying/index.md#framework-dependent-executables-fde) . Toto chování je nové u aplikací, které používají globálně nainstalovanou verzi .NET Core. Dříve mohli pouze [samostatně nasazená nasazení](../deploying/index.md#self-contained-deployments-scd) vyvolat spustitelný soubor.
 
-Během `dotnet build` nebo `dotnet publish` se vytvoří spustitelný soubor, který odpovídá prostředí a platformě sady SDK, kterou používáte. Pomocí těchto spustitelných souborů můžete očekávat stejné věci jako jiné nativní spustitelné soubory, jako například:
+Během `dotnet build` nebo `dotnet publish`se vytvoří spustitelný soubor, který odpovídá prostředí a platformě sady SDK, kterou používáte. Pomocí těchto spustitelných souborů můžete očekávat stejné věci jako jiné nativní spustitelné soubory, jako například:
 
 - Můžete dvakrát kliknout na spustitelný soubor.
-- Aplikaci můžete spustit z příkazového řádku přímo, například `myapp.exe` v systému Windows a `./myapp` v systémech Linux a macOS.
+- Aplikaci můžete spustit z příkazového řádku přímo, například `myapp.exe` ve Windows, a `./myapp` v systémech Linux a macOS.
 
 ### <a name="single-file-executables"></a>Spustitelné soubory s jedním souborem
 
@@ -91,7 +90,7 @@ Samostatné aplikace zahrnují vše potřebné ke spuštění kódu, aniž by by
 
 Rozhraní .NET Core nyní obsahuje nastavení, které bude používat nástroj [linkeru Il](https://github.com/mono/linker) ke kontrole Il vaší aplikace. Tento nástroj zjistí, jaký kód je požadován, a poté ořízne nepoužívané knihovny. Tento nástroj může významně snížit velikost nasazení některých aplikací.
 
-Pokud chcete tento nástroj povolit, přidejte do svého projektu nastavení `<PublishTrimmed>` a publikujte samostatně uzavřenou aplikaci:
+Chcete-li tento nástroj povolit, přidejte do projektu nastavení `<PublishTrimmed>` a publikujte samostatně uzavřenou aplikaci:
 
 ```xml
 <PropertyGroup>
@@ -117,19 +116,32 @@ Další informace o nástroji linkeru IL naleznete v [dokumentaci](https://aka.m
 
 Hlavní výhodou TC je povolit (znovu) jitting metody s úrovní nižší kvality, ale rychleji nebo s vyšší kvalitou, ale nižší úrovní. To pomáhá zvýšit výkon aplikace, protože projde různými fázemi provádění, od spuštění po ustáleném stavu. To se liší od přístupu bez použití TC, kde je každá metoda zkompilována jedním způsobem (stejně jako vysoká úroveň kvality), která je pro výkon při spuštění posunuta na ustálený stav.
 
-Chcete-li povolit rychlou JIT (zpracovaných kompilátorem JIT kód vrstvy 0), použijte toto nastavení v souboru projektu:
+Když je povolená TC, při spuštění pro metodu, která je volána:
+
+- Pokud metoda obsahuje kód zkompilovaného kódu AOT (ReadyToRun), bude použit předgenerovaný kód.
+- V opačném případě bude metoda zpracovaných kompilátorem JIT. Tyto metody jsou obvykle Obecné v rámci hodnotových typů.
+  - Rychlá kompilátor JIT rychleji generuje kód nižší kvality. Rychlá kompilátor JIT je ve výchozím nastavení povolen v .NET Core 3,0 pro metody, které neobsahují smyčky a jsou při spuštění upřednostňovány.
+  - Plně optimalizuje JIT vytváří vyšší kvalitu kódu. Pro metody, kde by se nepoužila rychlá JIT (například pokud je metoda s atributem `[MethodImpl(MethodImplOptions.AggressiveOptimization)]`), se používá kompletní optimalizace JIT.
+
+Nakonec, jakmile jsou metody volány několikrát, jsou znovu zpracovaných kompilátorem JIT s plnou optimalizací JIT na pozadí.
+
+Kód generovaný rychlou JIT může běžet pomaleji, přidělit více paměti nebo použít více místa v zásobníku. V případě problémů může být rychlá JIT zakázána pomocí tohoto nastavení v souboru projektu:
 
 ```xml
 <PropertyGroup>
-  <TieredCompilationQuickJit>true</TieredCompilationQuickJit>
+  <TieredCompilationQuickJit>false</TieredCompilationQuickJit>
 </PropertyGroup>
 ```
 
 Chcete-li úplně zakázat použití TC, použijte toto nastavení v souboru projektu:
 
 ```xml
-<TieredCompilation>false</TieredCompilation>
+<PropertyGroup>
+  <TieredCompilation>false</TieredCompilation>
+</PropertyGroup>
 ```
+
+Všechny změny výše uvedených nastavení v souboru projektu mohou vyžadovat, aby se vyčistilo čisté sestavení (odstranit `obj` a `bin` adresáře a znovu sestavit).
 
 ### <a name="readytorun-images"></a>ReadyToRun image
 
@@ -204,7 +216,7 @@ Existují některé operace, jako je propojování a publikování stránek Razo
 > [!WARNING]
 > Pokud jste zkusili místní nástroje v rozhraní .NET Core 3,0 Preview 1, jako je například spuštění `dotnet tool restore` nebo `dotnet tool install`, odstraňte složku mezipaměti místních nástrojů. V opačném případě místní nástroje nebudou fungovat v novější verzi. Tato složka je umístěna v umístění:
 >
-> Na macOS, Linux: `rm -r $HOME/.dotnet/toolResolverCache`
+> V macOS, Linux: `rm -r $HOME/.dotnet/toolResolverCache`
 >
 > Ve Windows: `rmdir /s %USERPROFILE%\.dotnet\toolResolverCache`
 
@@ -236,7 +248,7 @@ Další informace o tom, jak se správou verzí, najdete v tématu Přehled toho
 
 Součást Desktop systému Windows je součástí sady Windows .NET Core 3,0 SDK.
 
-Novou aplikaci WPF nebo model Windows Forms můžete vytvořit pomocí následujících příkazů `dotnet`:
+Novou aplikaci WPF nebo model Windows Forms můžete vytvořit pomocí následujících `dotnet` příkazů:
 
 ```dotnetcli
 dotnet new wpf
@@ -249,9 +261,9 @@ Další informace o tom, jak přenést existující aplikaci .NET Framework, nal
 
 #### <a name="winforms-high-dpi"></a>Vysoké rozlišení DPI pro WinForms
 
-Aplikace .NET Core model Windows Forms můžou nastavit režim s vysokým rozlišením DPI pomocí <xref:System.Windows.Forms.Application.SetHighDpiMode(System.Windows.Forms.HighDpiMode)?displayProperty=nameWithType>. Metoda `SetHighDpiMode` nastaví odpovídající režim vysoké úrovně DPI, pokud nastavení nebylo nastaveno jiným způsobem jako `App.Manifest` nebo P/Invoke před `Application.Run`.
+Aplikace .NET Core model Windows Forms můžou nastavit režim vysokého rozlišení DPI pomocí <xref:System.Windows.Forms.Application.SetHighDpiMode(System.Windows.Forms.HighDpiMode)?displayProperty=nameWithType>. Metoda `SetHighDpiMode` nastaví odpovídající režim vysoké úrovně DPI, pokud nastavení nebylo nastaveno jiným způsobem jako `App.Manifest` nebo P/Invoke před `Application.Run`.
 
-Možné hodnoty `highDpiMode` vyjádřené výčtem <xref:System.Windows.Forms.HighDpiMode?displayProperty=nameWithType> jsou:
+Možné hodnoty `highDpiMode`, jak vyjadřují <xref:System.Windows.Forms.HighDpiMode?displayProperty=nameWithType> výčtu:
 
 - `DpiUnaware`
 - `SystemAware`
@@ -332,20 +344,20 @@ Balíčky GPIO obsahují rozhraní API pro zařízení *GPIO*, *SPI*, *I2C*a *PW
 
 V případě, že je k dispozici, .NET Core 3,0 používá **OpenSSL 1.1.1**, **OpenSSL 1.1.0**nebo **OpenSSL 1.0.2** v systému Linux. Když je k dispozici **OpenSSL 1.1.1** , budou používat <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> **TLS 1,3** (za předpokladu <xref:System.Net.Security.SslStream?displayProperty=nameWithType>, že klient i server podporují protokol **TLS 1,3**).
 
->[!IMPORTANT]
->Windows a macOS ještě nepodporují **TLS 1,3**. Až bude podpora k dispozici, bude .NET Core 3,0 podporovat **TLS 1,3** v těchto operačních systémech.
+> [!IMPORTANT]
+> Windows a macOS ještě nepodporují **TLS 1,3**. Až bude podpora k dispozici, bude .NET Core 3,0 podporovat **TLS 1,3** v těchto operačních systémech.
 
 Následující C# příklad 8,0 ukazuje rozhraní .net Core 3,0 na Ubuntu 18,10 připojení k <https://www.cloudflare.com>:
 
-[!CODE-csharp[TLSExample](~/samples/snippets/core/whats-new/whats-new-in-30/cs/TLS.cs#TLS)]
+[!code-csharp[TLSExample](~/samples/snippets/core/whats-new/whats-new-in-30/cs/TLS.cs#TLS)]
 
 ### <a name="cryptography-ciphers"></a>Kryptografická šifry
 
-Rozhraní .NET 3,0 přidává podporu pro šifry **AES-GCM** a **AES-ccm** implementovaná pomocí <xref:System.Security.Cryptography.AesGcm?displayProperty=nameWithType> a <xref:System.Security.Cryptography.AesCcm?displayProperty=nameWithType> v uvedeném pořadí. Tyto algoritmy jsou jak [ověřené šifrování, tak i algoritmy AEAD (Association data)](https://en.wikipedia.org/wiki/Authenticated_encryption).
+.NET 3,0 přidává podporu pro šifry **AES-GCM** a **AES-ccm** , implementovaná pomocí <xref:System.Security.Cryptography.AesGcm?displayProperty=nameWithType> a <xref:System.Security.Cryptography.AesCcm?displayProperty=nameWithType> v uvedeném pořadí. Tyto algoritmy jsou jak [ověřené šifrování, tak i algoritmy AEAD (Association data)](https://en.wikipedia.org/wiki/Authenticated_encryption).
 
-Následující kód ukazuje použití šifry `AesGcm` k šifrování a dešifrování náhodných dat.
+Následující kód demonstruje použití `AesGcm` šifry k šifrování a dešifrování náhodných dat.
 
-[!CODE-csharp[AesGcm](~/samples/snippets/core/whats-new/whats-new-in-30/cs/Cipher.cs#AesGcm)]
+[!code-csharp[AesGcm](~/samples/snippets/core/whats-new/whats-new-in-30/cs/Cipher.cs#AesGcm)]
 
 ### <a name="cryptographic-key-importexport"></a>Import/export kryptografického klíče
 
@@ -370,15 +382,15 @@ Klíče RSA podporují i:
 
 Metody exportu vytváří binární data kódovaná v kódování DER a metody importu očekávají stejné. Pokud je klíč uložený v textovém formátu PEM, volající bude muset před voláním metody import kódování Base64 a dekódovat obsah.
 
-[!CODE-csharp[RSA](~/samples/snippets/core/whats-new/whats-new-in-30/cs/RSA.cs#Rsa)]
+[!code-csharp[RSA](~/samples/snippets/core/whats-new/whats-new-in-30/cs/RSA.cs#Rsa)]
 
-Soubory **PKCS # 8** je možné zkontrolovat pomocí <xref:System.Security.Cryptography.Pkcs.Pkcs8PrivateKeyInfo?displayProperty=nameWithType> a souborů **PFX/PKCS # 12** je možné zkontrolovat pomocí <xref:System.Security.Cryptography.Pkcs.Pkcs12Info?displayProperty=nameWithType>. Soubory **PFX/PKCS # 12** se můžou manipulovat s <xref:System.Security.Cryptography.Pkcs.Pkcs12Builder?displayProperty=nameWithType>.
+Soubory **PKCS # 8** lze kontrolovat pomocí <xref:System.Security.Cryptography.Pkcs.Pkcs8PrivateKeyInfo?displayProperty=nameWithType> a soubory **PFX/PKCS # 12** lze zkontrolovat pomocí <xref:System.Security.Cryptography.Pkcs.Pkcs12Info?displayProperty=nameWithType>. Soubory **PFX/PKCS # 12** se můžou manipulovat s <xref:System.Security.Cryptography.Pkcs.Pkcs12Builder?displayProperty=nameWithType>.
 
 ## <a name="net-core-30-api-changes"></a>Změny rozhraní API .NET Core 3,0
 
 ### <a name="ranges-and-indices"></a>Rozsahy a indexy
 
-Nový typ <xref:System.Index?displayProperty=nameWithType> se dá použít k indexování. Můžete vytvořit jednu z `int`, která se počítá od začátku, nebo s předponou `^` operátor (C#), která se počítá od konce:
+Nový typ <xref:System.Index?displayProperty=nameWithType> lze použít k indexování. Můžete vytvořit jednu z `int`, která se počítá od začátku, nebo s předponou `^` operátor (C#), která se počítá od konce:
 
 ```csharp
 Index i1 = 3;  // number 3 from beginning
@@ -387,7 +399,7 @@ int[] a = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 Console.WriteLine($"{a[i1]}, {a[i2]}"); // "3, 6"
 ```
 
-K dispozici je také typ <xref:System.Range?displayProperty=nameWithType>, který se skládá ze dvou hodnot `Index`, jeden pro začátek a druhý pro konec a je možné ho zapsat pomocí výrazu rozsahu `x..y` (C#). Potom můžete indexovat pomocí `Range`, což vytvoří řez:
+K dispozici je také typ <xref:System.Range?displayProperty=nameWithType>, který se skládá ze dvou hodnot `Index`, jeden pro začátek a druhý pro konec a je možné ho zapsat pomocí výrazu `x..y` rozsahu (C#). Pak můžete indexovat pomocí `Range`, který vytvoří řez:
 
 ```csharp
 var slice = a[i1..i2]; // { 3, 4, 5 }
@@ -397,9 +409,9 @@ Další informace najdete v [kurzu rozsahy a indexy](../../csharp/tutorials/rang
 
 ### <a name="async-streams"></a>Asynchronní streamy
 
-<xref:System.Collections.Generic.IAsyncEnumerable%601> typ je nová asynchronní verze <xref:System.Collections.Generic.IEnumerable%601>. Jazyk vám umožňuje `await foreach` přes `IAsyncEnumerable<T>` pro využití jejich prvků a k vytváření elementů použít `yield return`.
+<xref:System.Collections.Generic.IAsyncEnumerable%601> typ je nová asynchronní verze <xref:System.Collections.Generic.IEnumerable%601>. Jazyk vám umožňuje `await foreach` přes `IAsyncEnumerable<T>` využívat jejich prvky a použít `yield return` pro vytváření elementů.
 
-Následující příklad ukazuje produkci a spotřebu asynchronních datových proudů. Příkaz `foreach` je asynchronní a sám používá `yield return` k tvorbě asynchronního datového proudu pro volající. Tento vzor (pomocí `yield return`) je doporučeným modelem pro vytváření asynchronních datových proudů.
+Následující příklad ukazuje produkci a spotřebu asynchronních datových proudů. Příkaz `foreach` je asynchronní a sám používá `yield return` k tvorbě asynchronního datového proudu pro volající. Tento vzor (použití `yield return`) je doporučeným modelem pro vytváření asynchronních datových proudů.
 
 ```csharp
 async IAsyncEnumerable<int> GetBigResultsAsync()
@@ -411,7 +423,7 @@ async IAsyncEnumerable<int> GetBigResultsAsync()
 }
 ```
 
-Kromě možnosti `await foreach` můžete také vytvořit asynchronní iterátory, například iterátor, který vrátí `IAsyncEnumerable/IAsyncEnumerator`, který můžete `await` a `yield` v. Pro objekty, které je třeba uvolnit, můžete použít `IAsyncDisposable`, které implementují různé typy BCL, například `Stream` a `Timer`.
+Kromě toho, že je možné `await foreach`, můžete také vytvořit asynchronní iterátory, například iterátor, který vrátí `IAsyncEnumerable/IAsyncEnumerator`, který můžete `await` a `yield` v. Pro objekty, které je třeba uvolnit, můžete použít `IAsyncDisposable`, které implementují různé typy BCL, například `Stream` a `Timer`.
 
 Další informace najdete v [kurzu asynchronní streamy](../../csharp/tutorials/generate-consume-asynchronous-stream.md).
 
@@ -423,30 +435,30 @@ Mezi aktualizace pro analýzu a formátování patří:
 
 - Správně Analyzujte a zaokrouhlujte vstupy libovolné délky.
 - Správně Analyzujte a formátujete záporné hodnoty nula.
-- Správně Analyzujte `Infinity` a `NaN`, a to provedením kontroly bez rozlišování velkých a malých písmen a povolením volitelného předchozího `+`, pokud je to možné.
+- Správně Analyzujte `Infinity` a `NaN` provedením kontroly bez rozlišování velkých a malých písmen a povolením nepovinné předchozí `+`, pokud je to možné.
 
-Nová rozhraní API <xref:System.Math?displayProperty=nameWithType> zahrnují:
+Mezi nová rozhraní <xref:System.Math?displayProperty=nameWithType> API patří:
 
 - <xref:System.Math.BitIncrement(System.Double)> a <xref:System.Math.BitDecrement(System.Double)> \
-Odpovídá operacím IEEE `nextUp` a `nextDown`. Vrátí nejmenší číslo s plovoucí desetinnou čárkou, které porovná větší nebo menší než vstup (v uvedeném pořadí). Například `Math.BitIncrement(0.0)` vrátí `double.Epsilon`.
+Odpovídá `nextUp` a `nextDown` operace IEEE. Vrátí nejmenší číslo s plovoucí desetinnou čárkou, které porovná větší nebo menší než vstup (v uvedeném pořadí). `Math.BitIncrement(0.0)` například vrátí `double.Epsilon`.
 
 - <xref:System.Math.MaxMagnitude(System.Double,System.Double)> a <xref:System.Math.MinMagnitude(System.Double,System.Double)> \
-Odpovídá operacím IEEE `maxNumMag` a `minNumMag`, vrací hodnotu, která je větší nebo menší v rozsahu dvou vstupů (v uvedeném pořadí). Například `Math.MaxMagnitude(2.0, -3.0)` vrátí `-3.0`.
+Odpovídá `maxNumMag` a `minNumMag` operace IEEE, vrací hodnotu, která je větší nebo menší v rozsahu dvou vstupů (v uvedeném pořadí). `Math.MaxMagnitude(2.0, -3.0)` například vrátí `-3.0`.
 
 - <xref:System.Math.ILogB(System.Double)>\
-Odpovídá vstupně-výstupní operaci `logB`, která vrací celočíselnou hodnotu, vrátí celočíselný protokol dekadický-2 vstupního parametru. Tato metoda je efektivně stejná jako `floor(log2(x))`, ale byla provedena s minimální chybou zaokrouhlení.
+Odpovídá `logB` operace IEEE, která vrací celočíselnou hodnotu, vrátí protokol integrálního protokolu Base-2 vstupního parametru. Tato metoda je efektivně stejná jako `floor(log2(x))`, ale byla provedena s minimální chybou zaokrouhlení.
 
 - <xref:System.Math.ScaleB(System.Double,System.Int32)>\
-Odpovídá operaci `scaleB` IEEE, která přebírá celočíselnou hodnotu, vrátí efektivně `x * pow(2, n)`, ale provede s minimální chybou zaokrouhlení.
+Odpovídá `scaleB` operace IEEE, která přebírá celočíselnou hodnotu, vrátí efektivně `x * pow(2, n)`, ale provede se minimální chybou zaokrouhlení.
 
 - <xref:System.Math.Log2(System.Double)>\
-Odpovídá logaritmus `log2` IEEE, vrátí logaritmus o základu 2. Minimalizuje chybu zaokrouhlování.
+Odpovídá `log2` operace IEEE, vrátí logaritmus o základu 2. Minimalizuje chybu zaokrouhlování.
 
 - <xref:System.Math.FusedMultiplyAdd(System.Double,System.Double,System.Double)>\
-Odpovídá `fma` IEEE operace, provádí přidaný násobek. To znamená, že v rámci jedné operace provádí `(x * y) + z`, což minimalizuje chybu zaokrouhlování. Příkladem může být `FusedMultiplyAdd(1e308, 2.0, -1e308)`, který vrátí `1e308`. Normální `(1e308 * 2.0) - 1e308` vrátí `double.PositiveInfinity`.
+Odpovídá `fma` operace IEEE, provádí přidaný násobek. To znamená, že se `(x * y) + z` jako jediná operace, čímž se minimalizuje chyba zaokrouhlování. Příkladem může být `FusedMultiplyAdd(1e308, 2.0, -1e308)`, který vrací `1e308`. Regulární `(1e308 * 2.0) - 1e308` vrátí `double.PositiveInfinity`.
 
 - <xref:System.Math.CopySign(System.Double,System.Double)>\
-Odpovídá `copySign` IEEE operace, vrátí hodnotu `x`, ale s znaménkem `y`.
+Odpovídá `copySign` operace IEEE, vrátí hodnotu `x`, ale s znaménkem `y`.
 
 ### <a name="net-platform-dependent-intrinsics"></a>Vnitřní objekty závislé na platformě .NET
 
@@ -495,15 +507,15 @@ Typ <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> podporuje pro
 
 Výchozí protokol zůstává HTTP/1.1, ale protokol HTTP/2 může být povolen dvěma různými způsoby. Nejdřív můžete nastavit zprávu požadavku HTTP na používání HTTP/2:
 
-[!CODE-csharp[Http2Request](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#Request)]
+[!code-csharp[Http2Request](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#Request)]
 
-Za druhé můžete změnit <xref:System.Net.Http.HttpClient>, aby se ve výchozím nastavení použil protokol HTTP/2:
+V druhém případě můžete <xref:System.Net.Http.HttpClient> ve výchozím nastavení změnit na použití HTTP/2:
 
-[!CODE-csharp[Http2Client](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#Client)]
+[!code-csharp[Http2Client](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#Client)]
 
 V mnoha případech, kdy vyvíjíte aplikaci, chcete použít nešifrované připojení. Pokud víte, že cílový koncový bod bude používat protokol HTTP/2, můžete zapnout nezašifrovaná připojení pro HTTP/2. Můžete ji zapnout nastavením proměnné prostředí `DOTNET_SYSTEM_NET_HTTP_SOCKETSHTTPHANDLER_HTTP2UNENCRYPTEDSUPPORT` na `1` nebo povolením v kontextu aplikace:
 
-[!CODE-csharp[Http2Context](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#AppContext)]
+[!code-csharp[Http2Context](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#AppContext)]
 
 ## <a name="next-steps"></a>Další kroky
 

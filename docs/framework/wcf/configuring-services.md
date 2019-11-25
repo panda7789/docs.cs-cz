@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - configuration [WCF]
 ms.assetid: beac771e-f28e-4f84-9ff1-ad9251c726d3
-ms.openlocfilehash: 4fcf01c9f65f2b1bd11462a6f7d61b3551f37b86
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 332a88530010197187ca3ea787e152b0c95a5514
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320652"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141595"
 ---
 # <a name="configuring-wcf-services"></a>Konfigurace služeb WCF
 
@@ -19,7 +19,7 @@ Po navržení a implementaci kontraktu služby jste připraveni ke konfiguraci s
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Zjednodušená konfigurace](simplified-configuration.md)  
- Počínaje [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] se WCF dodává s novým výchozím modelem konfigurace, který zjednodušuje požadavky na konfiguraci WCF. Pokud neposkytnete konfiguraci služby WCF pro konkrétní službu, modul runtime automaticky nakonfiguruje vaši službu s výchozími koncovými body, vazbami a chováními.  
+ Počínaje .NET Framework 4 přichází WCF k dispozici nový výchozí konfigurační model, který zjednodušuje požadavky na konfiguraci WCF. Pokud neposkytnete konfiguraci služby WCF pro konkrétní službu, modul runtime automaticky nakonfiguruje vaši službu s výchozími koncovými body, vazbami a chováními.  
   
  [Konfigurace služeb pomocí konfiguračních souborů](configuring-services-using-configuration-files.md)  
  Službu Windows Communication Foundation (WCF) lze konfigurovat pomocí technologie .NET Framework konfigurace. Nejčastěji se prvky XML přidávají do souboru Web. config pro web Internetová informační služba (IIS), který je hostitelem služby WCF. Tyto prvky umožňují změnit podrobnosti, jako jsou adresy koncových bodů (skutečné adresy používané ke komunikaci se službou) na počítačích jednotlivých počítačů.  

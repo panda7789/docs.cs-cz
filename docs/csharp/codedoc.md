@@ -4,12 +4,12 @@ description: Naučte se dokumentovat kód pomocí dokumentačních komentářů 
 ms.date: 02/14/2017
 ms.technology: csharp-fundamentals
 ms.assetid: 8e75e317-4a55-45f2-a866-e76124171838
-ms.openlocfilehash: a9142b36586de4d08dec6c4b72bfd1725b4830ac
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: c858a92309710a0ac6b68e9194f2d7ef4c9577a0
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73037655"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74140662"
 ---
 # <a name="documenting-your-code-with-xml-comments"></a>Dokumentace kódu s komentáři XML
 
@@ -21,16 +21,16 @@ Komentáře dokumentace XML, stejně jako všechny ostatní komentáře, jsou ko
 
 Soubor XML můžete vygenerovat v době kompilace jedním z následujících způsobů:
 
-- Pokud vyvíjíte aplikaci pomocí .NET Core z příkazového řádku, můžete přidat [prvek DocumentationFile](/visualstudio/msbuild/common-msbuild-project-properties) do oddílu `<PropertyGroup>` souboru projektu. csproj. Následující příklad generuje soubor XML v adresáři projektu se stejným kořenovým názvem souboru jako sestavení:
+- Pokud vyvíjíte aplikaci pomocí .NET Core z příkazového řádku, můžete přidat `GenerateDocumentationFile` element do části `<PropertyGroup>` souboru projektu. csproj. Můžete také zadat cestu k souboru dokumentace přímo pomocí [`DocumentationFile` elementu](/visualstudio/msbuild/common-msbuild-project-properties). Následující příklad generuje soubor XML v adresáři projektu se stejným kořenovým názvem souboru jako sestavení:
 
+   ```xml
+   <GenerateDocumentationFile>true</GenerateDocumentationFile>
+   ```
+   
+   To je ekvivalentní následujícímu:
+   
    ```xml
    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
-   ```
-
-   Můžete také zadat přesný absolutní nebo relativní cestu a název souboru XML. Následující příklad vygeneruje soubor XML ve stejném adresáři jako ladicí verze aplikace:
-
-   ```xml
-   <DocumentationFile>bin\Debug\netcoreapp2.1\App.xml</DocumentationFile>
    ```
 
 - Pokud vyvíjíte aplikaci pomocí sady Visual Studio, klikněte pravým tlačítkem na projekt a vyberte **vlastnosti**. V dialogovém okně Vlastnosti vyberte kartu **sestavení** a Prohlédněte si **soubor dokumentace XML**. Můžete také změnit umístění, do kterého kompilátor zapisuje soubor.

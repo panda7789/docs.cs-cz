@@ -1,38 +1,38 @@
 ---
-title: Smíšeného deklarativního a imperativního kódu chyby (LINQ to XML) (Visual Basic)
+title: Chyby smíšeného deklarativního a imperativního kódu (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: f12b1ab4-bb92-4b92-a648-0525e45b3ce7
-ms.openlocfilehash: e7b3b624bb91525d2cda9477c29291e25eba1b07
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 369fae59516df785ac686645d47e74e69a8f1457
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61775983"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74331650"
 ---
-# <a name="mixed-declarative-codeimperative-code-bugs-linq-to-xml-visual-basic"></a>Smíšený kód deklarativní nebo imperativní kód chyby (LINQ to XML) (Visual Basic)
-[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] obsahuje různé metody, které umožňují upravit stromu XML přímo. Můžete přidat prvky, odstranění prvků, změňte obsah elementu, přidejte atributy a tak dále. Toto programovací rozhraní je popsán v [změna stromů XML (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md). Pokud jste se provede iterace přes jeden z OS, jako <xref:System.Xml.Linq.XContainer.Elements%2A>a jak iterovat na ose upravujete stromu XML, můžete skončit s některé chyby neobvyklé.  
+# <a name="mixed-declarative-codeimperative-code-bugs-linq-to-xml-visual-basic"></a>Mixed Declarative Code/Imperative Code Bugs (LINQ to XML) (Visual Basic)
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] contains various methods that allow you to modify an XML tree directly. You can add elements, delete elements, change the contents of an element, add attributes, and so on. This programming interface is described in [Modifying XML Trees (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md). If you are iterating through one of the axes, such as <xref:System.Xml.Linq.XContainer.Elements%2A>, and you are modifying the XML tree as you iterate through the axis, you can end up with some strange bugs.  
   
- Tento problém se někdy označuje jako "The Halloweenem problém".  
+ This problem is sometimes known as "The Halloween Problem".  
   
-## <a name="definition-of-the-problem"></a>Definice problému  
- Při psaní kódu s využitím LINQ, který Iteruje přes kolekci jsou deklarativní stylem psaní kódu. Se více podobají popisující *co* chcete, místo toho, který *jak* chcete pracovat efektivněji. Pokud píšete kód, který 1) získá první prvek, 2) testy se některé podmínky, 3) upraví jeho a 4) vloží jej zpět do seznamu, pak by to imperativního kódu. Oznamujete tím počítače *jak* udělat, co chcete Hotovo.  
+## <a name="definition-of-the-problem"></a>Definition of the Problem  
+ When you write some code using LINQ that iterates through a collection, you are writing code in a declarative style. It is more akin to describing *what* you want, rather that *how* you want to get it done. If you write code that 1) gets the first element, 2) tests it for some condition, 3) modifies it, and 4) puts it back into the list, then this would be imperative code. You are telling the computer *how* to do what you want done.  
   
- Kombinování tyto styly kódu v rámci jedné operace je co vede k problémům. Zvažte použití těchto zdrojů:  
+ Mixing these styles of code in the same operation is what leads to problems. Consider the following:  
   
- Předpokládejme, že v něm máte odkazovaného seznamu se tři položky (a, b a c):  
+ Suppose you have a linked list with three items in it (a, b, and c):  
   
  `a -> b -> c`  
   
- Nyní předpokládejme, že chcete přesunout prostřednictvím propojeného seznamu přidáte tři nové položky (", b" a jazyka c "). Chcete, aby výsledný odkazovaného seznamu vypadat nějak takto:  
+ Now, suppose that you want to move through the linked list, adding three new items (a', b', and c'). You want the resulting linked list to look like this:  
   
  `a -> a' -> b -> b' -> c -> c'`  
   
- Proto můžete napsat kód, který Iteruje přes seznam a pro každou položku, přidá nové právo položku za ním. Co se stane, je, že váš kód se nejprve zobrazí `a` elementu a vložit `a'` po něm. Nyní, váš kód se přesune na další uzel v seznamu, který je teď `a'`! Využívá elastic přidá novou položku do seznamu, `a''`.  
+ So you write code that iterates through the list, and for every item, adds a new item right after it. What happens is that your code will first see the `a` element, and insert `a'` after it. Now, your code will move to the next node in the list, which is now `a'`! It happily adds a new item to the list, `a''`.  
   
- Jak by vás tento problém vyřešit v reálném světě? Dobře můžete vytvořit kopii původní propojeného seznamu a vytvořit zcela nový seznam. Nebo pokud vytváříte čistě imperativního kódu, můžete se setkat na první položku Přidat novou položku a pak přejděte dvakrát v propojeném seznamu posunutí je nad prvkem, který jste právě přidali.  
+ How would you solve this in the real world? Well, you might make a copy of the original linked list, and create a completely new list. Or if you are writing purely imperative code, you might find the first item, add the new item, and then advance twice in the linked list, advancing over the element that you just added.  
   
-## <a name="adding-while-iterating"></a>Přidání během iterace  
- Předpokládejme například, že chcete napsat kód pro každý element ve stromové struktuře chcete vytvořit duplicitní element:  
+## <a name="adding-while-iterating"></a>Adding While Iterating  
+ For example, suppose you want to write some code that for every element in a tree, you want to create a duplicate element:  
   
 ```vb  
 Dim root As XElement = _  
@@ -46,9 +46,9 @@ For Each e As XElement In root.Elements()
 Next  
 ```  
   
- Tento kód přejde do nekonečné smyčky. `foreach` Příkaz prochází `Elements()` osy, přidávání nových elementů do `doc` elementu. To končí také iterace prvků, které právě přidali. A vzhledem k tomu, že ji přidělí nové objekty při každé iteraci smyčky, budou nakonec spotřebovávat veškerou dostupnou paměť.  
+ This code goes into an infinite loop. The `foreach` statement iterates through the `Elements()` axis, adding new elements to the `doc` element. It ends up iterating also through the elements it just added. And because it allocates new objects with every iteration of the loop, it will eventually consume all available memory.  
   
- Tento problém můžete vyřešit přidáním kolekci do paměti pomocí <xref:System.Linq.Enumerable.ToList%2A> standardní operátor dotazu, následujícím způsobem:  
+ You can fix this problem by pulling the collection into memory using the <xref:System.Linq.Enumerable.ToList%2A> standard query operator, as follows:  
   
 ```vb  
 Dim root As XElement = _  
@@ -63,7 +63,7 @@ Next
 Console.WriteLine(root)  
 ```  
   
- Nyní kód funguje. Výsledný strom XML je následující:  
+ Now the code works. The resulting XML tree is the following:  
   
 ```xml  
 <Root>  
@@ -76,8 +76,8 @@ Console.WriteLine(root)
 </Root>  
 ```  
   
-## <a name="deleting-while-iterating"></a>Odstraňuje se během iterace  
- Pokud chcete odstranit všechny uzly na určité úrovni, můžete mít tendenci psát kód podobný tomuto:  
+## <a name="deleting-while-iterating"></a>Deleting While Iterating  
+ If you want to delete all nodes at a certain level, you might be tempted to write code like the following:  
   
 ```vb  
 Dim root As XElement = _  
@@ -92,9 +92,9 @@ Next
 Console.WriteLine(root)  
 ```  
   
- Ale to není nutné co chcete. V takovém případě po odebrání prvního prvku, A odebere se ze stromu XML obsažených v kořenovém adresáři a kód v metodě prvků, který provádí iteraci nelze najít další prvek.  
+ However, this does not do what you want. In this situation, after you have removed the first element, A, it is removed from the XML tree contained in root, and the code in the Elements method that is doing the iterating cannot find the next element.  
   
- Předcházející kód vygeneruje následující výstup:  
+ The preceding code produces the following output:  
   
 ```xml  
 <Root>  
@@ -103,7 +103,7 @@ Console.WriteLine(root)
 </Root>  
 ```  
   
- Toto řešení je opět volání <xref:System.Linq.Enumerable.ToList%2A> sloučit kolekci, následujícím způsobem:  
+ The solution again is to call <xref:System.Linq.Enumerable.ToList%2A> to materialize the collection, as follows:  
   
 ```vb  
 Dim root As XElement = _  
@@ -118,13 +118,13 @@ Next
 Console.WriteLine(root)  
 ```  
   
- To vytvoří následující výstup:  
+ This produces the following output:  
   
 ```xml  
 <Root />  
 ```  
   
- Alternativně můžete eliminovat iterace úplně voláním <xref:System.Xml.Linq.XElement.RemoveAll%2A> na nadřazený element:  
+ Alternatively, you can eliminate the iteration altogether by calling <xref:System.Xml.Linq.XElement.RemoveAll%2A> on the parent element:  
   
 ```vb  
 Dim root As XElement = _  
@@ -137,10 +137,10 @@ root.RemoveAll()
 Console.WriteLine(root)  
 ```  
   
-## <a name="why-cant-linq-automatically-handle-this"></a>Proč nelze LINQ umožňují automaticky zpracovat to?  
- Jedním z přístupů je vždy přenést vše do paměti namísto provádění opožděné vyhodnocení. Nicméně by bylo velmi náročné z hlediska výkonu a paměti. Ve skutečnosti LINQ a (LINQ to XML) byly pro tento postup, je selže v reálných situacích.  
+## <a name="why-cant-linq-automatically-handle-this"></a>Why Can't LINQ Automatically Handle This?  
+ One approach would be to always bring everything into memory instead of doing lazy evaluation. However, it would be very expensive in terms of performance and memory use. In fact, if LINQ and (LINQ to XML) were to take this approach, it would fail in real-world situations.  
   
- Další z možných způsobů je vložit nějaký druh transakce syntaxe na LINQ a mít kompilátoru pokus o analýzu kódu a určit, pokud materializace potřeba žádné konkrétní kolekce. Pokus o určení veškerý kód, který má vedlejší účinky je ale mimořádně složité. Vezměte v úvahu následující kód:  
+ Another possible approach would be to put in some sort of transaction syntax into LINQ, and have the compiler attempt to analyze the code and determine if any particular collection needed to be materialized. However, attempting to determine all code that has side-effects is incredibly complex. Consider the following code:  
   
 ```vb  
 Dim z = _  
@@ -149,20 +149,20 @@ Dim z = _
     Select DoMyProjection(e)  
 ```  
   
- Tyto analýzy kódu by bylo potřeba analyzovat metody TestSomeCondition a DoMyProjection a všechny metody, které tyto metody volat k určení, pokud žádný kód má vedlejší účinky. Ale analýzy kódu nelze právě hledat jakýkoli kód, který má vedlejší účinky. Je potřeba zvolit pro přesně takový kód, který má vedlejší účinky na podřízených elementů `root` v této situaci.  
+ Such analysis code would need to analyze the methods TestSomeCondition and DoMyProjection, and all methods that those methods called, to determine if any code had side-effects. But the analysis code could not just look for any code that had side-effects. It would need to select for just the code that had side-effects on the child elements of `root` in this situation.  
   
- Technologie LINQ to XML nebude pokoušet provést tyto analýzy.  
+ LINQ to XML does not attempt to do any such analysis.  
   
- Je vás, abyste se těmto problémům vyhnuli.  
+ It is up to you to avoid these problems.  
   
 ## <a name="guidance"></a>Doprovodné materiály  
- Nekombinujte nejprve deklarativního a imperativního kódu.  
+ First, do not mix declarative and imperative code.  
   
- I v případě, že víte přesně sémantiku kolekce a sémantika metody, které určuje stromu XML, pokud napsání chytřejší kódu, které se vyhýbají tyto druhy problémů, váš kód bude nutné udržovat jinými vývojáři v budoucnu , a nemusí být jako prostý na problémy. Pokud kombinujete deklarativního a imperativního programování styly, bude váš kód více křehký.  
+ Even if you know exactly the semantics of your collections and the semantics of the methods that modify the XML tree, if you write some clever code that avoids these categories of problems, your code will need to be maintained by other developers in the future, and they may not be as clear on the issues. If you mix declarative and imperative coding styles, your code will be more brittle.  
   
- Pokud píšete kód, který bude realizována kolekce tak, aby se vyhnout těmto problémům, poznamenejte si ji s komentáři, případně ve vašem kódu tak, aby programátoři údržba bude porozumět danému problému.  
+ If you write code that materializes a collection so that these problems are avoided, note it with comments as appropriate in your code, so that maintenance programmers will understand the issue.  
   
- Za druhé Pokud výkon a další důležité informace povolit, použijte pouze deklarativního kódu. Neupravujte vaše stávající stromu XML. Vygenerujte nový token.  
+ Second, if performance and other considerations allow, use only declarative code. Don't modify your existing XML tree. Generate a new one.  
   
 ```vb  
 Dim root As XElement = _  
@@ -178,4 +178,4 @@ Console.WriteLine(newRoot)
   
 ## <a name="see-also"></a>Viz také:
 
-- [Pokročilé technologie LINQ to XML programování (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+- [Advanced LINQ to XML Programming (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

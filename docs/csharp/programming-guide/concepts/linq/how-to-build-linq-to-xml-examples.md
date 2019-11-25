@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Příklady sestavení LINQ to XML (C#)'
+title: Postup sestavení příkladů LINQ to XML (C#)
 ms.date: 07/20/2015
 ms.assetid: e5d18fa1-2704-48fe-a44b-1564f97c9e9c
-ms.openlocfilehash: 9bbd04731854d67b9276f339a15f2c7f2193f9b4
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 289a13daed7e3c871156bf50c6fa04c113c0cd13
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69594126"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141464"
 ---
-# <a name="how-to-build-linq-to-xml-examples-c"></a>Postupy: Příklady sestavení LINQ to XML (C#)
+# <a name="how-to-build-linq-to-xml-examples-c"></a>Postup sestavení příkladů LINQ to XML (C#)
 Jednotlivé fragmenty kódu a příklady v této dokumentaci využívají třídy a typy z různých oborů názvů. Při kompilování C# kódu je nutné dodat příslušné `using` direktivy.  
   
 ## <a name="example"></a>Příklad  
- Následující kód obsahuje `using` direktivy, které C# příklady vyžadují pro sestavení a spuštění. Ne všechny `using` direktivy jsou požadovány pro každý příklad.  
+ Následující kód obsahuje direktivy `using`, které C# příklady vyžadují pro sestavení a spuštění. Pro každý příklad nejsou vyžadovány všechny direktivy `using`.  
   
 ```csharp  
 using System;  

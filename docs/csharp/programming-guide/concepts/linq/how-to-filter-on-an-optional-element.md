@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Filtrovat podle volitelného prvku (C#)'
+title: Postup filtrování volitelného prvku (C#)
 ms.date: 07/20/2015
 ms.assetid: f99e2f93-fca5-403f-8a0c-770761d4905a
-ms.openlocfilehash: 0f8e17d99085ad04ed76b83bce806418ca6d60cd
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: c9f844619cbb3d7a66ca66989baa900e0fd7bc2f
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253823"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141250"
 ---
-# <a name="how-to-filter-on-an-optional-element-c"></a>Postupy: Filtrovat podle volitelného prvku (C#)
-Někdy je vhodné vyfiltrovat element, i když si nejste jistí, že existuje v dokumentu XML. Hledání by mělo být provedeno, aby v případě, že konkrétní prvek nemá podřízený element, neaktivovali výjimku odkazu s hodnotou null filtrováním. V následujícím příkladu `Child5` element `Type` nemá podřízený element, ale dotaz se stále provede správně.  
+# <a name="how-to-filter-on-an-optional-element-c"></a>Postup filtrování volitelného prvku (C#)
+Někdy je vhodné vyfiltrovat element, i když si nejste jistí, že existuje v dokumentu XML. Hledání by mělo být provedeno, aby v případě, že konkrétní prvek nemá podřízený element, neaktivovali výjimku odkazu s hodnotou null filtrováním. V následujícím příkladu `Child5` element nemá podřízený element `Type`, ale dotaz se stále provádí správně.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu se <xref:System.Xml.Linq.Extensions.Elements%2A> používá metoda rozšíření.  
+ V tomto příkladu se používá metoda rozšíření <xref:System.Xml.Linq.Extensions.Elements%2A>.  
   
 ```csharp  
 XElement root = XElement.Parse(@"<Root>  

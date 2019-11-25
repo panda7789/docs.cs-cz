@@ -1,17 +1,17 @@
 ---
-title: 'Postupy: Najde elementy v oboru názvů (XPath-LINQ to XML) (C#).'
+title: Jak najít elementy v oboru názvů (XPath-LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: cae1c4ac-6cd5-46cf-9b1c-bd85bc9b7ea9
-ms.openlocfilehash: d85426cf7a7073c35b51157e59687e2b3bcdcf8a
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: da9d819be5234a2429b6eab276f89bd0d877d4a7
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253684"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141064"
 ---
-# <a name="how-to-find-elements-in-a-namespace-xpath-linq-to-xml-c"></a>Postupy: Najde elementy v oboru názvů (XPath-LINQ to XML) (C#).
+# <a name="how-to-find-elements-in-a-namespace-xpath-linq-to-xml-c"></a>Jak najít elementy v oboru názvů (XPath-LINQ to XML) (C#)
 
-Výrazy XPath můžou najít uzly v konkrétním oboru názvů. Výrazy XPath používají předpony oboru názvů pro zadání oborů názvů. Chcete-li analyzovat výraz XPath, který obsahuje předpony oboru názvů, je nutné předat objekt metodám XPath, které <xref:System.Xml.IXmlNamespaceResolver>implementuje. Tento příklad používá <xref:System.Xml.XmlNamespaceManager>.
+Výrazy XPath můžou najít uzly v konkrétním oboru názvů. Výrazy XPath používají předpony oboru názvů pro zadání oborů názvů. Chcete-li analyzovat výraz XPath, který obsahuje předpony oboru názvů, je nutné předat objekt metodám XPath implementující <xref:System.Xml.IXmlNamespaceResolver>. Tento příklad používá <xref:System.Xml.XmlNamespaceManager>.
 
 Výraz XPath je:
 
@@ -19,7 +19,7 @@ Výraz XPath je:
 
 ## <a name="example"></a>Příklad
 
-Následující příklad přečte strom XML, který obsahuje dva obory názvů. Používá <xref:System.Xml.XmlReader> ke čtení dokumentu XML. Pak získá <xref:System.Xml.XmlNameTable> <xref:System.Xml.XmlNamespaceManager> z <xref:System.Xml.XmlReader> ,<xref:System.Xml.XmlNameTable>a z. Používá <xref:System.Xml.XmlNamespaceManager> při výběru elementů.
+Následující příklad přečte strom XML, který obsahuje dva obory názvů. Používá <xref:System.Xml.XmlReader> ke čtení dokumentu XML. Pak získá <xref:System.Xml.XmlNameTable> z <xref:System.Xml.XmlReader>a <xref:System.Xml.XmlNamespaceManager> ze <xref:System.Xml.XmlNameTable>. Při výběru elementů používá <xref:System.Xml.XmlNamespaceManager>.
 
 ```csharp
 XmlReader reader = XmlReader.Create("ConsolidatedPurchaseOrders.xml");

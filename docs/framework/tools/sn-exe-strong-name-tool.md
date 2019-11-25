@@ -10,12 +10,12 @@ helpviewer_keywords:
 - strong-named assemblies, signing files
 - key pairs for signing files
 ms.assetid: c1d2b532-1b8e-4c7a-8ac5-53b801135ec6
-ms.openlocfilehash: dc9b8beafe1b174543afaf9da7e7180638d561ff
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 90cad6529b3ac2a8afedaca0c43d5c7561dcf9e6
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73104359"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74138960"
 ---
 # <a name="snexe-strong-name-tool"></a>Sn.exe (nástroj pro silný název)
 Nástroj Strong Name (Sn. exe) pomáhá podepisovat sestavení se [silnými názvy](../../standard/assembly/strong-named.md). Nástroj Sn.exe poskytuje možnosti pro správu klíčů, generování podpisů a ověřování podpisů.  
@@ -55,7 +55,7 @@ sn [-quiet][option [parameter(s)]]
 |`-o infile [outfile]`|Extrahuje veřejný klíč ze *souboru InFile* a uloží jej do souboru. csv. Každý bajt veřejného klíče je oddělen čárkou. Tento formát je užitečný pro pevné zakódování odkazů na klíče jako inicializovaných polí ve zdrojovém kódu. Pokud nezadáte žádný *soubor*, tato možnost umístí výstup do schránky. **Poznámka:**  Tato možnost neověřuje, zda je vstup pouze veřejný klíč. Pokud `infile` obsahuje dvojici klíčů s privátním klíčem, je také extrahován soukromý klíč.|  
 |`-p infile outfile [hashalg]`|Extrahuje veřejný klíč z páru klíčů v *souboru InFile* a uloží jej do *souboru*s možností volitelně pomocí algoritmu RSA určeného parametrem *hashAlg*. Tento veřejný klíč lze použít k zpožděnému podepsání sestavení pomocí možností **/delaysign +** a **/keyfile** [linkeru sestavení (Al. exe)](al-exe-assembly-linker.md). Pokud je sestavení podepsáno opožděně, je v době kompilace nastaven pouze veřejný klíč a v souboru je vyhrazen prostor pro pozdější přidání podpisu, až bude znám soukromý klíč.|  
 |`-pc container outfile [hashalg]`|Extrahuje veřejný klíč z páru klíčů v *kontejneru* a uloží jej do *souboru*. Použijete-li možnost *hashAlg* , použije se k extrakci veřejného klíče algoritmus RSA.|  
-|`-Pb [y &#124; n]`|Určí, zda bude vynucena zásada potlačení silných názvů. Zadáte-li hodnotu *y*, silné názvy pro sestavení s úplným vztahem důvěryhodnosti nejsou ověřovány, pokud jsou načteny do <xref:System.AppDomain>plně důvěryhodného vztahu důvěryhodnosti. Zadáte-li hodnotu *n*, silné názvy jsou ověřovány pro správnost, ale ne pro konkrétní silný název. <xref:System.Security.Permissions.StrongNameIdentityPermission> nemá žádný vliv na sestavení s úplným vztahem důvěryhodnosti. Je zapotřebí provést vlastní kontrolu shody silných názvů.<br /><br /> Pokud není zadán žádný `y` ani `n`, zobrazí tato možnost aktuální nastavení. Výchozí hodnota je `y`. **Poznámka:**  Na 64 počítačů, je nutné nastavit tento parametr v rámci 32 i v instancích systému sn. exe pro 64.|  
+|`-Pb [y|n]`|Určí, zda bude vynucena zásada potlačení silných názvů. Zadáte-li hodnotu *y*, silné názvy pro sestavení s úplným vztahem důvěryhodnosti nejsou ověřovány, pokud jsou načteny do <xref:System.AppDomain>plně důvěryhodného vztahu důvěryhodnosti. Zadáte-li hodnotu *n*, silné názvy jsou ověřovány pro správnost, ale ne pro konkrétní silný název. <xref:System.Security.Permissions.StrongNameIdentityPermission> nemá žádný vliv na sestavení s úplným vztahem důvěryhodnosti. Je zapotřebí provést vlastní kontrolu shody silných názvů.<br /><br /> Pokud není zadán žádný `y` ani `n`, zobrazí tato možnost aktuální nastavení. Výchozí hodnota je `y`. **Poznámka:**  Na 64 počítačů, je nutné nastavit tento parametr v rámci 32 i v instancích systému sn. exe pro 64.|  
 |`-q[uiet]`|Určuje použití tichého režimu; potlačí zobrazování zpráv o úspěchu.|  
 |`-R[a] assembly infile`|Znovu podepíše dříve podepsané nebo zpožděné podepsané sestavení s dvojicí klíčů v *souboru InFile*.<br /><br /> Je **-li použito-RA** , jsou hodnoty hash přepočítány pro všechny soubory v sestavení.|  
 |`-Rc[a] assembly container`|Znovu podepíše dříve podepsané nebo zpožděné podepsané sestavení s dvojicí klíčů v *kontejneru*.<br /><br /> Je **-li použit-RCA** , jsou pro všechny soubory v sestavení přepočítány hodnoty hash.|  

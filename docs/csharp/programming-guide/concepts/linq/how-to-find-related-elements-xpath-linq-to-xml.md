@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: Najít související elementy (XPath-LINQ to XML) (C#)'
+title: Jak najít související elementy (XPath-LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: 41b386ee-562d-4841-bd6b-e44a7eb69f26
-ms.openlocfilehash: 2aa3f6c6c2c2ac327ff2dffc206cdd294e12d7a2
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: cdc281d0b08ee7b7f93ac28b14e82fa113a3379d
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253647"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141029"
 ---
-# <a name="how-to-find-related-elements-xpath-linq-to-xml-c"></a>Postupy: Najít související elementy (XPath-LINQ to XML) (C#)
+# <a name="how-to-find-related-elements-xpath-linq-to-xml-c"></a>Jak najít související elementy (XPath-LINQ to XML) (C#)
 Toto téma ukazuje, jak získat prvek pro výběr atributu, na který odkazuje hodnota jiného prvku.  
   
  Výraz XPath je:  
@@ -17,11 +17,11 @@ Toto téma ukazuje, jak získat prvek pro výběr atributu, na který odkazuje h
  `.//Customer[@CustomerID=/Root/Orders/Order[12]/CustomerID]`  
   
 ## <a name="example"></a>Příklad  
- Tento příklad vyhledá 12 `Order` . element pak vyhledá zákazníka pro tuto objednávku.  
+ Tento příklad najde 12 `Order` prvek a potom vyhledá zákazníka pro tuto objednávku.  
   
  Všimněte si, že indexování do seznamu v rozhraní .NET je založené na nule. Indexování do kolekce uzlů v predikátu XPath je založené na "One". Tento příklad odráží tento rozdíl.  
   
- V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
   
 ```csharp  
 XDocument co = XDocument.Load("CustomersOrders.xml");  

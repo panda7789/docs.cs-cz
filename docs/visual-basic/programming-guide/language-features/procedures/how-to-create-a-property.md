@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Vytvoření vlastnosti (Visual Basic)'
+title: 'Postupy: Vytvoření vlastnosti'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - procedures [Visual Basic], defining
@@ -7,56 +7,56 @@ helpviewer_keywords:
 - Visual Basic code, properties
 - properties [Visual Basic]
 ms.assetid: 4d229712-6be8-4c5c-bac5-06995ce9185a
-ms.openlocfilehash: 91f34de36e88724ccab21097bf54a4604f7eee37
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ee5a9f687765ce064eb3c3f84218ed36eb916d9d
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61665777"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74349701"
 ---
 # <a name="how-to-create-a-property-visual-basic"></a>Postupy: Vytvoření vlastnosti (Visual Basic)
-Použijte definici vlastnosti mezi `Property` příkazu a `End Property` příkazu. V rámci této definice můžete definovat `Get` postupu `Set` procedury nebo obojí. Všechny vlastnosti kódu je v rámci těchto postupů.  
+You enclose a property definition between a `Property` statement and an `End Property` statement. Within this definition you define a `Get` procedure, a `Set` procedure, or both. All the property's code lies within these procedures.  
   
- `Get` Načte hodnotu vlastnosti, procedury a `Set` postup uloží hodnotu. Pokud chcete vlastnost, která má mít přístup pro čtení a zápis, je nutné definovat oba postupy. Pro vlastnost jen pro čtení, můžete definovat pouze `Get`, a pro vlastnost jen pro zápis, můžete definovat pouze `Set`.  
+ The `Get` procedure retrieves the property's value, and the `Set` procedure stores a value. If you want the property to have read/write access, you must define both procedures. For a read-only property, you define only `Get`, and for a write-only property, you define only `Set`.  
   
-### <a name="to-create-a-property"></a>Pro vytvoření vlastnosti  
+### <a name="to-create-a-property"></a>To create a property  
   
-1. Mimo vlastnost nebo procedura, použijte [Property – příkaz](../../../../visual-basic/language-reference/statements/property-statement.md)následovaný `End Property` příkazu.  
+1. Outside any property or procedure, use a [Property Statement](../../../../visual-basic/language-reference/statements/property-statement.md), followed by an `End Property` statement.  
   
-2. Pokud vlastnost přijímá parametry, postupujte `Property` – klíčové slovo s názvem podle postupu, pak se seznam parametrů v závorkách.  
+2. If the property takes parameters, follow the `Property` keyword with the name of the procedure, then the parameter list in parentheses.  
   
-3. Postupujte podle závorek s `As` klauzule zadejte datový typ hodnoty vlastnosti. Je třeba zadat typ dat i pro vlastnost jen pro zápis.  
+3. Follow the parentheses with an `As` clause to specify the data type of the property's value. You must specify the data type even for a write-only property.  
   
-4. Přidat `Get` a `Set` postupy, podle potřeby. Viz následující pokyny.  
+4. Add `Get` and `Set` procedures, as appropriate. See the following directions.  
   
-### <a name="to-create-a-get-procedure-that-retrieves-a-property-value"></a>Chcete-li vytvořit procedury Get, která načte hodnotu vlastnosti  
+### <a name="to-create-a-get-procedure-that-retrieves-a-property-value"></a>To create a Get procedure that retrieves a property value  
   
-1. Mezi `Property` a `End Property` psát příkazy, [získat příkaz](../../../../visual-basic/language-reference/statements/get-statement.md)následovaný `End Get` příkazu. Není potřeba definujte libovolné parametry pro `Get` postup.  
+1. Between the `Property` and `End Property` statements, write a [Get Statement](../../../../visual-basic/language-reference/statements/get-statement.md), followed by an `End Get` statement. You do not need to define any parameters for the `Get` procedure.  
   
-2. Umístit příkazy kódu k načtení hodnoty vlastnosti mezi `Get` a `End Get` příkazy. Tento kód může obsahovat další výpočty a manipulace dat kromě generování a vrací hodnotu vlastnosti.  
+2. Place the code statements to retrieve the property's value between the `Get` and `End Get` statements. This code can include other calculations and data manipulations in addition to generating and returning the property's value.  
   
-3. Použití `Return` příkazu vrátí hodnotu vlastnosti volajícímu kódu.  
+3. Use a `Return` statement to return the property's value to the calling code.  
   
- Je nutné napsat `Get` postup pro vlastnost pro čtení i zápis a pro vlastnost jen pro čtení. Nesmí definovat `Get` postup pro vlastnost jen pro zápis.  
+ You must write a `Get` procedure for a read-write property and for a read-only property. You must not define a `Get` procedure for a write-only property.  
   
-### <a name="to-create-a-set-procedure-that-writes-a-propertys-value"></a>Vytvořte sadu proceduru, která zapíše hodnoty vlastnosti  
+### <a name="to-create-a-set-procedure-that-writes-a-propertys-value"></a>To create a Set procedure that writes a property's value  
   
-1. Mezi `Property` a `End Property` příkazy, zápis [nastavit příkaz](../../../../visual-basic/language-reference/statements/set-statement.md)následovaný `End Set` příkaz.  
+1. Between the `Property` and `End Property` statements, write a [Set Statement](../../../../visual-basic/language-reference/statements/set-statement.md), followed by an `End Set` statement.  
   
-2. V `Set` prohlášení, postupujte `Set` – klíčové slovo se seznamem parametrů v závorkách. Tento seznam parametrů musí obsahovat alespoň hodnotu parametru pro hodnotu předanou ve volajícím kódu. Je výchozí název pro tento parametr hodnotu `Value`, ale v případě potřeby můžete použít jiný název. Parametr value musí mít stejný datový typ jako samotné vlastnosti.  
+2. In the `Set` statement, follow the `Set` keyword with a parameter list in parentheses. This parameter list must include at least a value parameter for the value passed by the calling code. The default name for this value parameter is `Value`, but you can use a different name if appropriate. The value parameter must have the same data type as the property itself.  
   
-3. Umístit příkazy kódu k uložení hodnoty do vlastnosti mezi `Set` a `End Set` příkazy. Tento kód může obsahovat další výpočty a manipulace dat kromě ověřování a uložení hodnoty vlastnosti.  
+3. Place the code statements to store a value in the property between the `Set` and `End Set` statements. This code can include other calculations and data manipulations in addition to validating and storing the property's value.  
   
-4. Použijte parametr hodnoty tak, aby přijímal hodnoty poskytnuté volajícím kódu. Můžete přímo v příkazu přiřazení uložte tuto hodnotu, nebo použít ve výrazu k výpočtu interní hodnota, která má být uložena.  
+4. Use the value parameter to accept the value supplied by the calling code. You can either store this value directly in an assignment statement, or use it in an expression to calculate the internal value to be stored.  
   
- Je nutné napsat `Set` postup pro vlastnost pro čtení i zápis a pro vlastnost jen pro zápis. Nesmí definovat `Set` postup pro vlastnost jen pro čtení.  
+ You must write a `Set` procedure for a read-write property and for a write-only property. You must not define a `Set` procedure for a read-only property.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří vlastnost pro čtení a zápis, která ukládá celé jméno, křestní jméno a příjmení dvě základní názvy jako. Když volající kód čte `fullName`, `Get` postup kombinuje dva základní názvy a vrátí úplný název. Pokud volající kód přiřadí nový úplný název, `Set` postup pokusy o jeho rozdělení na dva základní názvy. Pokud nelze najít mezeru, uloží jej jako křestní jméno.  
+ The following example creates a read/write property that stores a full name as two constituent names, the first name and the last name. When the calling code reads `fullName`, the `Get` procedure combines the two constituent names and returns the full name. When the calling code assigns a new full name, the `Set` procedure attempts to break it into two constituent names. If it does not find a space, it stores it all as the first name.  
   
  [!code-vb[VbVbcnProcedures#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#8)]  
   
- Následující příklad ukazuje typické volání procedury vlastnosti z `fullName`. První volání nastaví hodnotu vlastnosti a druhé volání obnoví.  
+ The following example shows typical calls to the property procedures of `fullName`. The first call sets the property value and the second call retrieves it.  
   
  [!code-vb[VbVbcnProcedures#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#9)]  
   
@@ -65,9 +65,9 @@ Použijte definici vlastnosti mezi `Property` příkazu a `End Property` příka
 - [Procedury](./index.md)
 - [Procedury vlastnosti](./property-procedures.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
-- [Rozdíly mezi vlastnostmi a proměnnými v jazyce Visual Basic](./differences-between-properties-and-variables.md)
+- [Differences Between Properties and Variables in Visual Basic](./differences-between-properties-and-variables.md)
 - [Postupy: Deklarace vlastnosti se smíšenými úrovněmi přístupu](./how-to-declare-a-property-with-mixed-access-levels.md)
 - [Postupy: Volání procedury vlastnosti](./how-to-call-a-property-procedure.md)
-- [Postupy: Deklarace a volání výchozí vlastnosti v jazyce Visual Basic](./how-to-declare-and-call-a-default-property.md)
+- [How to: Declare and Call a Default Property in Visual Basic](./how-to-declare-and-call-a-default-property.md)
 - [Postupy: Vložení hodnoty do vlastnosti](./how-to-put-a-value-in-a-property.md)
 - [Postupy: Získání hodnoty z vlastnosti](./how-to-get-a-value-from-a-property.md)

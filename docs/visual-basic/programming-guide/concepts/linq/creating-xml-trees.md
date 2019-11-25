@@ -1,29 +1,29 @@
 ---
-title: Vytváření stromů XML (Visual Basic)
+title: Vytváření stromů XML
 ms.date: 07/20/2015
 ms.assetid: e86ba12b-17de-4579-81bb-66322b84cfbe
-ms.openlocfilehash: f22dcb111b3c6da01fa60b3ea918b91cb89031b3
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 971b1a31c016eb88c80a8898cb92d7e6ad28d34e
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62028483"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74354287"
 ---
-# <a name="creating-xml-trees-visual-basic"></a>Vytváření stromů XML (Visual Basic)
-Jeden z nejčastějších úloh XML je sestavením stromu XML. Tato část popisuje několik způsobů, jak je vytvářet.  
+# <a name="creating-xml-trees-visual-basic"></a>Creating XML Trees (Visual Basic)
+One of the most common XML tasks is constructing an XML tree. This section describes several ways to create them.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
 |Téma|Popis|  
 |-----------|-----------------|  
-|[Funkční konstrukce (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-construction-linq-to-xml.md)|Poskytuje přehled o funkční konstrukce v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Funkční konstrukce umožňuje vytvořit nebo její část vaší stromu XML v jediném příkazu. V tomto tématu najdete postup při vytváření stromu XML pro vložení dotazy.|  
-|[Úvod k Literálům XML v jazyce Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-xml-literals.md)|Poskytuje rychlý úvod k vytváření stromů v jazyce Visual Basic pomocí literálů XML. Toto téma obsahuje odkazy na dokumentaci jazyka Visual Basic literálů XML.|  
-|[Klonování vs. Připojení (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/cloning-vs-attaching.md)|Ukazuje rozdíl mezi přidáním uzlů z existující stromu XML (uzly se klonovat a pak přidá) a přidávání uzlů s žádný nadřazený objekt (jsou jednoduše připojeny).|  
-|[Analýza kódu XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)|Ukazuje, jak analyzovat soubor XML z různých zdrojů. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] tvoří vrstvu nad <xref:System.Xml.XmlReader>, který se používá k analýze souboru XML.|  
-|[Postupy: Naplnění stromu XML pomocí třídy XmlWriter (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-populate-an-xml-tree-with-an-xmlwriter-linq-to-xml.md)|Ukazuje, jak naplnění stromu XML pomocí <xref:System.Xml.XmlWriter>.|  
-|[Postupy: Ověření pomocí XSD (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-validate-using-xsd-linq-to-xml.md)|Ukazuje, jak ověřit stromu XML pomocí XSD.|  
-|[Platný obsah objektů XElement a XDocument](../../../../visual-basic/programming-guide/concepts/linq/valid-content-of-xelement-and-xdocument-objects.md)|Popisuje platné argumenty, které mohou být předány konstruktorů a metod, které se používají k přidání obsahu do prvků a dokumenty.|  
+|[Functional Construction (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-construction-linq-to-xml.md)|Provides an overview of functional construction in [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Functional construction enables you to create all or part of your XML tree in a single statement. This topic also shows how to embed queries when constructing an XML tree.|  
+|[Introduction to XML Literals in Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-xml-literals.md)|Provides a quick introduction to creating trees in Visual Basic by using XML literals. This topic includes links to the Visual Basic documentation of XML literals.|  
+|[Cloning vs. Attaching (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/cloning-vs-attaching.md)|Demonstrates the difference between adding nodes from an existing XML tree (nodes are cloned and then added) and adding nodes with no parent (they are simply attached).|  
+|[Parsing XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)|Shows how to parse XML from a variety of sources. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] is layered on top of <xref:System.Xml.XmlReader>, which is used to parse the XML.|  
+|[How to: Populate an XML Tree with an XmlWriter (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-populate-an-xml-tree-with-an-xmlwriter-linq-to-xml.md)|Shows how to populate an XML tree by using an <xref:System.Xml.XmlWriter>.|  
+|[How to: Validate Using XSD (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-validate-using-xsd-linq-to-xml.md)|Shows how to validate an XML tree using XSD.|  
+|[Platný obsah objektů XElement a XDocument](../../../../visual-basic/programming-guide/concepts/linq/valid-content-of-xelement-and-xdocument-objects.md)|Describes the valid arguments that can be passed to the constructors and methods that are used to add content to elements and documents.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)
+- [Programming Guide (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)

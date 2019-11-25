@@ -9,15 +9,15 @@ helpviewer_keywords:
 - styles [WPF], GroupBox
 - templates [WPF], GroupBox
 ms.assetid: 33df7037-0a1b-476f-b9d0-41566a777699
-ms.openlocfilehash: 0835c106ffbda86bca8e01bc61adebfc1ab0c2cb
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: e5befffc86f26176da4accfc01239a08d4978713
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459638"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283767"
 ---
 # <a name="groupbox-styles-and-templates"></a>GroupBox – styly a šablony
-<a name="introduction"></a>Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.GroupBox>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [přizpůsobení vzhledu existujícího ovládacího prvku vytvořením ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+<a name="introduction"></a>Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.Controls.GroupBox>. Výchozí <xref:System.Windows.Controls.ControlTemplate> můžete změnit tak, aby měl ovládací prvek jedinečný vzhled. Další informace najdete v tématu [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
   
 <a name="groupbox_parts"></a>   
 ## <a name="groupbox-parts"></a>Části Skupinový rámeček  
@@ -52,4 +52,4 @@ ms.locfileid: "73459638"
 - [Styly a šablony ovládacích prvků](control-styles-and-templates.md)
 - [Přizpůsobení ovládacího prvku](control-customization.md)
 - [Styly a šablony](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením šablony ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Vytvoření šablony pro ovládací prvek](../../../desktop-wpf/themes/how-to-create-apply-template.md)

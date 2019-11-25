@@ -2,12 +2,12 @@
 title: LINQ to Objects (C#)
 ms.date: 07/20/2015
 ms.assetid: c5c2c178-3529-4f6c-b3df-2d5267af7f22
-ms.openlocfilehash: 8c0eb71fffdd29d9599d74c789a66ec7caf1faeb
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: b0cc47604b65a5883643d61b44b1e9878ec4b1bf
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73418180"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74140889"
 ---
 # <a name="linq-to-objects-c"></a>LINQ to Objects (C#)
 Pojem "LINQ to Objects" odkazuje na použití dotazů LINQ s jakoukoli <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601> kolekcí přímo, bez použití zprostředkujícího poskytovatele LINQ nebo rozhraní API, jako je například [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md) nebo [LINQ to XML](./linq-to-xml-overview.md). Pomocí LINQ můžete zadávat dotazy na všechny vyčíslitelné kolekce, například <xref:System.Collections.Generic.List%601>, <xref:System.Array>nebo <xref:System.Collections.Generic.Dictionary%602>. Kolekce může být definovaná uživatelem nebo může být vrácena rozhraním .NET Framework API.  
@@ -39,7 +39,7 @@ Pojem "LINQ to Objects" odkazuje na použití dotazů LINQ s jakoukoli <xref:Sys
  [Postupy: dotazování objektu ArrayList pomocí LINQ (C#)](./how-to-query-an-arraylist-with-linq.md)  
  Ukazuje, jak se dotázat na objekt C#ArrayList v.  
   
- [Postupy: Přidání vlastních metod pro dotazy LINQ (C#)](./how-to-add-custom-methods-for-linq-queries.md)  
+ [Postup přidání vlastních metod pro dotazy LINQ (C#)](./how-to-add-custom-methods-for-linq-queries.md)  
  Vysvětluje, jak rozšířit sadu metod, které lze použít pro dotazy LINQ přidáním rozšiřujících metod do rozhraní <xref:System.Collections.Generic.IEnumerable%601>.  
   
  [Dotaz integrovaný na jazyku (LINQ)C#()](./index.md)  

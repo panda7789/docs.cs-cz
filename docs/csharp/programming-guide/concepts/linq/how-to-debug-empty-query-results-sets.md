@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: Ladit prázdné sady výsledků dotazu (C#)'
+title: Jak ladit prázdné sady výsledků dotazu (C#)
 ms.date: 07/20/2015
 ms.assetid: b569f0dc-425e-45a6-acbf-770fb761c981
-ms.openlocfilehash: 12d2132f1f088050fdd109d067069870b82f2661
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 2716f7c525ac6bee8d2fb374e4ecc4c975d852a0
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205314"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141292"
 ---
-# <a name="how-to-debug-empty-query-results-sets-c"></a>Postupy: Ladit prázdné sady výsledků dotazu (C#)
+# <a name="how-to-debug-empty-query-results-sets-c"></a>Jak ladit prázdné sady výsledků dotazu (C#)
 Jedním z nejběžnějších problémů při dotazování na stromy XML je, že pokud má strom XML výchozí obor názvů, vývojář někdy zapíše dotaz, jako by kód XML nebyl v oboru názvů.  
   
  První sada příkladů v tomto tématu ukazuje typický způsob, jakým je načten XML ve výchozím oboru názvů a je dotaz na něj nesprávně.  
@@ -50,7 +50,7 @@ End of result set
 ## <a name="example"></a>Příklad  
  Tento příklad ukazuje vytvoření XML v oboru názvů a dotaz, který je správně kódován.  
   
- Řešením je deklarovat a inicializovat <xref:System.Xml.Linq.XNamespace> objekt a použít ho při zadávání <xref:System.Xml.Linq.XName> objektů. V tomto případě argument <xref:System.Xml.Linq.XContainer.Elements%2A> metody <xref:System.Xml.Linq.XName> je objekt.  
+ Řešením je deklarovat a inicializovat objekt <xref:System.Xml.Linq.XNamespace> a použít ho při určení <xref:System.Xml.Linq.XName> objektů. V tomto případě je argumentem metody <xref:System.Xml.Linq.XContainer.Elements%2A> <xref:System.Xml.Linq.XName> objekt.  
   
 ```csharp  
 XElement root = XElement.Parse(  

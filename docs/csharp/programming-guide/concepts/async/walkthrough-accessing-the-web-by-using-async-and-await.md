@@ -2,12 +2,12 @@
 title: 'Návod: přístup k webu pomocí modifikátoru Async a operátoru Await (C#)'
 ms.date: 07/20/2015
 ms.assetid: c95d8d71-5a98-4bf0-aaf4-45fed2ebbacd
-ms.openlocfilehash: 30677be2299dfa4411263dc5c61093fc0ca0f442
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 42b09dab26fd514e184163eaf41aff117d3a463f
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73195647"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74281782"
 ---
 # <a name="walkthrough-accessing-the-web-by-using-async-and-await-c"></a>Návod: přístup k webu pomocí modifikátoru Async a operátoru Await (C#)
 
@@ -26,9 +26,9 @@ Pokud nechcete sestavovat aplikace sami, můžete si stáhnout [asynchronní vzo
 
 1. Spusťte Visual Studio.
 
-2. Na panelu nabídek vyberte možnost **soubor**  > **Nový**  > **projekt**.
+2. V panelu nabídky zvolte **souboru** > **nový** > **projektu**.
 
-     Otevře se dialogové okno **Nový projekt** .
+     **Nový projekt** zobrazí se dialogové okno.
 
 3. V podokně **Nainstalované šablony** zvolte možnost Visual C#a v seznamu typů projektů zvolte možnost **aplikace WPF** .
 
@@ -254,7 +254,7 @@ Všimněte si, že pro zobrazení počtů trvá několik sekund. Během této do
 
      Volání `webReq.GetResponseAsync` vrátí `Task(Of WebResponse)` nebo `Task<WebResponse>`. Pak se pro úlohu použije operátor await pro načtení hodnoty `WebResponse`.
 
-     Pokud vaše asynchronní metoda funguje na to, že nezávisí na dokončení úlohy, může metoda pokračovat v práci s těmito dvěma příkazy po volání asynchronní metody a před použitím operátoru `await`. Příklady naleznete v tématu [How to: Udělejte více webových požadavků paralelně pomocí Async a await (C#)](./how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md) a [Postupy: rozšíříte-li asynchronní návod pomocí Task. WhenAll (C#)](./how-to-extend-the-async-walkthrough-by-using-task-whenall.md).
+     Pokud vaše asynchronní metoda funguje na to, že nezávisí na dokončení úlohy, může metoda pokračovat v práci s těmito dvěma příkazy po volání asynchronní metody a před použitím operátoru `await`. Příklady naleznete v tématu [Jak udělat více webových požadavků paralelně pomocí Async a await (C#)](./how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md) a [jak pomocí Task. WhenAll (C#) rozšíříte asynchronní návod](./how-to-extend-the-async-walkthrough-by-using-task-whenall.md).
 
 3. Protože jste přidali operátor `await` v předchozím kroku, dojde k chybě kompilátoru. Operátor lze použít pouze v metodách, které jsou označeny modifikátorem [Async](../../../language-reference/keywords/async.md) . Ignorovat chybu při opakování kroků převodu a nahradit volání `CopyTo` voláním `CopyToAsync`.
 
@@ -690,11 +690,11 @@ namespace AsyncExampleWPF
 
 ## <a name="see-also"></a>Viz také:
 
-- [Asynchronní Ukázka: přístup k webovému návoduC# (a Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)
+- [Asynchronní Ukázka: přístup k webovému návoduC# (a Visual Basic)](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/hh300224(v=vs.110))
 - [async](../../../language-reference/keywords/async.md)
 - [await](../../../language-reference/operators/await.md)
 - [Asynchronní programování s modifikátorem Async aC#operátoru Await ()](./index.md)
 - [Asynchronní návratové typyC#()](./async-return-types.md)
 - [Asynchronní programování založené na úlohách (klepnutím)](https://www.microsoft.com/download/details.aspx?id=19957)
-- [Postupy: roztažení asynchronního návodu pomocí Task. WhenAll (C#)](./how-to-extend-the-async-walkthrough-by-using-task-whenall.md)
-- [Postupy: paralelní provádění více webových požadavků pomocí modifikátoru Async a operátoru awaitC#()](./how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)
+- [Postup rozšiřování asynchronního návodu pomocí Task. WhenAll (C#)](./how-to-extend-the-async-walkthrough-by-using-task-whenall.md)
+- [Jak zajistit paralelní více webových požadavků pomocí modifikátoru Async a operátoru awaitC#()](./how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)

@@ -2,16 +2,16 @@
 title: <bindings>
 ms.date: 01/22/2018
 ms.assetid: b62cd369-5409-4030-8490-9759a462dd3a
-ms.openlocfilehash: cd4c4cd4c1bfe7920c438eddc15aba00d995b8cb
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: fe8f620668e35183890b8bba1f254a74c962f8d3
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039623"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74139660"
 ---
 # <a name="bindings"></a>vazby \<
 
-Pomocí elementu `bindings` můžete nakonfigurovat kolekci standardních a vlastních vazeb pro Windows Communication Foundation (WCF). Každá položka je `binding` prvek, který lze identifikovat jeho jedinečným `name`. Služby používají vazby jejich propojením pomocí `name`. Počínaje [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)]nejsou vazby a chování nutné mít název. Další informace o výchozích konfiguracích a Nameless vazbách a chování najdete v tématu [zjednodušená konfigurace](../../../wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../wcf/samples/simplified-configuration-for-wcf-services.md).
+Pomocí elementu `bindings` můžete nakonfigurovat kolekci standardních a vlastních vazeb pro Windows Communication Foundation (WCF). Každá položka je `binding` prvek, který lze identifikovat jeho jedinečným `name`. Služby používají vazby jejich propojením pomocí `name`. Počínaje .NET Framework 4 nejsou vazby a chování nutné mít název. Další informace o výchozích konfiguracích a Nameless vazbách a chování najdete v tématu [zjednodušená konfigurace](../../../wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../wcf/samples/simplified-configuration-for-wcf-services.md).
 
 ## <a name="system-provided-bindings"></a>Vazby poskytované systémem
 

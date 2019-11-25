@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - netTcpBinding Element
 ms.assetid: 5c5104a7-8754-4335-8233-46a45322503e
-ms.openlocfilehash: a3d5b87bc53ca541776d9f131204868fbe25d5b1
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: c43c141093c8287adb6d5a841a43ac893deefccd
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73738797"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74139339"
 ---
 # <a name="nettcpbinding"></a>\<netTcpBinding >
 
@@ -72,7 +72,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 |`maxBufferSize`|Celé kladné číslo určující maximální velikost vyrovnávací paměti, která se používá k ukládání zpráv v paměti, v bajtech.<br /><br /> Pokud atribut `transferMode` se rovná `Buffered`, tento atribut by měl být roven hodnotě atributu `maxReceivedMessageSize`.<br /><br /> Pokud atribut `transferMode` se rovná `Streamed`, tento atribut nemůže být větší než hodnota atributu `maxReceivedMessageSize` a měla by být alespoň velikost záhlaví.<br /><br /> Výchozí hodnota je 65536. Další informace najdete v tématu <xref:System.ServiceModel.Configuration.NetNamedPipeBindingElement.MaxBufferSize%2A>.|  
 |`maxConnections`|Celé číslo, které určuje maximální počet odchozích a příchozích připojení, které služba vytvoří nebo přijme. Příchozí a odchozí připojení se počítají na základě zvláštního limitu určeného tímto atributem.<br /><br /> Příchozí připojení přesahující tento limit se zařadí do fronty, dokud nebude k dispozici mezera pod limitem.<br /><br /> Odchozí připojení přesahující limit se zařadí do fronty, dokud nebude k dispozici mezera pod limitem.<br /><br /> Výchozí hodnota je 10.|  
 |`maxReceivedMessageSize`|Celé kladné číslo určující maximální velikost zprávy v bajtech, včetně hlaviček, které lze přijmout na kanálu nakonfigurovaném pomocí této vazby. Odesílateli zprávy překračující tento limit obdrží chybu protokolu SOAP. Příjemce zprávu zruší a vytvoří záznam události v protokolu trasování. Výchozí hodnota je 65536.|  
-|`name`|Řetězec, který obsahuje název konfigurace vazby. Tato hodnota by měla být jedinečná, protože se používá jako identifikace vazby. Počínaje [!INCLUDE[netfx40_short](../../../../../includes/netfx40-short-md.md)]nejsou vazby a chování nutné mít název. Další informace o výchozích konfiguracích a Nameless vazbách a chování najdete v tématu [zjednodušená konfigurace](../../../wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../wcf/samples/simplified-configuration-for-wcf-services.md).|  
+|`name`|Řetězec, který obsahuje název konfigurace vazby. Tato hodnota by měla být jedinečná, protože se používá jako identifikace vazby. Počínaje .NET Framework 4 nejsou vazby a chování nutné mít název. Další informace o výchozích konfiguracích a Nameless vazbách a chování najdete v tématu [zjednodušená konfigurace](../../../wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../wcf/samples/simplified-configuration-for-wcf-services.md).|  
 |`openTimeout`|Hodnota <xref:System.TimeSpan>, která určuje časový interval poskytnutý pro dokončení operace otevření. Tato hodnota by měla být větší nebo rovna <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:01:00.|  
 |`portSharingEnabled`|Logická hodnota, která určuje, zda je pro toto připojení povoleno sdílení portu TCP. Pokud je to `false`, každá vazba používá vlastní výhradní port. Toto nastavení je relevantní pouze pro služby, protože nejsou ovlivněni klienti.|  
 |`receiveTimeout`|Hodnota <xref:System.TimeSpan>, která určuje časový interval poskytnutý pro dokončení operace Receive. Tato hodnota by měla být větší nebo rovna <xref:System.TimeSpan.Zero>. Výchozí hodnota je 00:10:00.|  

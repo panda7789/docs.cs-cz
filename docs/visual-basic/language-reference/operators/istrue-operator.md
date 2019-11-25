@@ -1,5 +1,5 @@
 ---
-title: IsTrue – operátor (Visual Basic)
+title: IsTrue – operátor
 ms.date: 07/20/2015
 f1_keywords:
 - vb.istrue
@@ -7,45 +7,45 @@ helpviewer_keywords:
 - IsTrue operator [Visual Basic]
 - OrElse operator [Visual Basic]
 ms.assetid: b6cec0f2-61b1-4331-a7f0-4d07ee3179d6
-ms.openlocfilehash: 1152f4b512a85ae183f8fc8d476b69685e2926ef
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 4b863eed8406a10b9a44d7139f8659ac5cb758ad
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69966921"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74349513"
 ---
 # <a name="istrue-operator-visual-basic"></a>IsTrue – operátor (Visual Basic)
-Určuje, zda je `True`výraz.  
+Determines whether an expression is `True`.  
   
- Nemůžete `IsTrue` volat explicitně v kódu, ale kompilátor Visual Basic ho může použít k vygenerování kódu z `OrElse` klauzulí. Definujete-li třídu nebo strukturu a poté použijete proměnnou typu v `OrElse` klauzuli, je nutné definovat `IsTrue` v této třídě nebo struktuře.  
+ You cannot call `IsTrue` explicitly in your code, but the Visual Basic compiler can use it to generate code from `OrElse` clauses. If you define a class or structure and then use a variable of that type in an `OrElse` clause, you must define `IsTrue` on that class or structure.  
   
- Kompilátor považuje `IsTrue` operátory a `IsFalse` za *spárované páry*. To znamená, že pokud definujete jeden z nich, musíte také definovat druhý.  
+ The compiler considers the `IsTrue` and `IsFalse` operators as a *matched pair*. This means that if you define one of them, you must also define the other one.  
   
-## <a name="compiler-use-of-istrue"></a>Použití kompilátoru true  
- Pokud jste definovali třídu nebo strukturu, můžete použít proměnnou daného `For`typu v příkazu, `If`, `Else If`nebo `While` nebo v `When` klauzuli. Pokud to uděláte, kompilátor vyžaduje operátor, který převede typ na `Boolean` hodnotu, aby mohl otestovat podmínku. Vyhledá vhodný operátor v následujícím pořadí:  
+## <a name="compiler-use-of-istrue"></a>Compiler Use of IsTrue  
+ When you have defined a class or structure, you can use a variable of that type in a `For`, `If`, `Else If`, or `While` statement, or in a `When` clause. If you do this, the compiler requires an operator that converts your type into a `Boolean` value so it can test a condition. It searches for a suitable operator in the following order:  
   
-1. Rozšiřující operátor převodu z vaší třídy nebo struktury na `Boolean`.  
+1. A widening conversion operator from your class or structure to `Boolean`.  
   
-2. Rozšiřující operátor převodu z vaší třídy nebo struktury na `Boolean?`.  
+2. A widening conversion operator from your class or structure to `Boolean?`.  
   
-3. `IsTrue` Operátor pro třídu nebo strukturu.  
+3. The `IsTrue` operator on your class or structure.  
   
-4. Zužující převod na `Boolean?` , který nezahrnuje převod z `Boolean` na `Boolean?`.  
+4. A narrowing conversion to `Boolean?` that does not involve a conversion from `Boolean` to `Boolean?`.  
   
-5. Zúžený operátor převodu z vaší třídy nebo struktury na `Boolean`.  
+5. A narrowing conversion operator from your class or structure to `Boolean`.  
   
- Pokud jste nedefinovali převod na `Boolean` `IsTrue` operátor nebo, kompilátor signalizuje chybu.  
+ If you have not defined any conversion to `Boolean` or an `IsTrue` operator, the compiler signals an error.  
   
 > [!NOTE]
-> Operátor může být přetížen, což znamená, že třída nebo struktura může předefinovat své chování, pokud má jeho operand typ této třídy nebo struktury. `IsTrue` Pokud váš kód používá tento operátor na takové třídě nebo struktuře, ujistěte se, že rozumíte jeho předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+> The `IsTrue` operator can be *overloaded*, which means that a class or structure can redefine its behavior when its operand has the type of that class or structure. If your code uses this operator on such a class or structure, be sure you understand its redefined behavior. For more information, see [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu definuje obrys struktury, která obsahuje definice pro `IsFalse` operátory a. `IsTrue`  
+ The following code example defines the outline of a structure that includes definitions for the `IsFalse` and `IsTrue` operators.  
   
  [!code-vb[VbVbalrOperators#28](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#28)]  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Operátor IsFalse](../../../visual-basic/language-reference/operators/isfalse-operator.md)
-- [Postupy: Definovat operátor](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)
+- [Postupy: Definice operátoru](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)
 - [Operátor OrElse](../../../visual-basic/language-reference/operators/orelse-operator.md)

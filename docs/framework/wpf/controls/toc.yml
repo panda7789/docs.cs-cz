@@ -394,8 +394,8 @@
       items:
         - name: Styly a šablony
           href: styling-and-templating.md
-        - name: Přizpůsobení vzhledu stávajícího ovládacího prvku vytvořením ControlTemplate
-          href: customizing-the-appearance-of-an-existing-control.md
+        - name: Přizpůsobení existujícího ovládacího prvku pomocí ControlTemplate
+          href: ../../../desktop-wpf/themes/how-to-create-apply-template.md
         - name: 'Postupy: Vyhledávání elementů generovaných objektem ControlTemplate'
           href: how-to-find-controltemplate-generated-elements.md
     - name: Přizpůsobení ovládacího prvku

@@ -7,18 +7,18 @@ helpviewer_keywords:
 - Svcutil.exe
 - clients [WCF], consuming services
 ms.assetid: 1abf3d9f-b420-46f1-b628-df238751f308
-ms.openlocfilehash: 8fd623314c84a677ab5cef07271a48c5fdd581b8
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 1d466f18c730762b6989f95448bd2331c655b317
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321424"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74281612"
 ---
 # <a name="servicemodel-metadata-utility-tool-svcutilexe"></a>Nástroj ServiceModel Metadata Utility (Svcutil.exe)
 
 Nástroj pro vytváření metadat třídy ServiceModel slouží ke generování kódu modelu služby z dokumentů metadat a dokumentů metadat z kódu modelu služby.
 
-## <a name="svcutilexe"></a>SvcUtil. exe
+## <a name="svcutilexe"></a>SvcUtil.exe
 
 Nástroj pro dodávající metadata se dá najít v umístění instalace Windows SDK, konkrétně *%ProgramFiles%\Microsoft SDKs\Windows\v6.0\Bin*.
 
@@ -39,7 +39,7 @@ V následující tabulce najdete přehled různých funkcí poskytovaných tímt
 >
 > Kromě toho přepínače `/r` a `/ct` pro odkazování na typy jsou pro generování kontraktů dat. Tyto přepínače při použití XmlSerializer nefungují.
 
-### <a name="timeout"></a>prodlev
+### <a name="timeout"></a>časový limit
 
 Při načítání metadat má nástroj časový limit pět minut. Tento časový limit se vztahuje pouze na načítání metadat v síti. Nevztahuje se na zpracování těchto metadat.
 
@@ -49,7 +49,7 @@ Nástroj nepodporuje cílení na více platforem. Pokud chcete vygenerovat artef
 
 ### <a name="accessing-wsdl-documents"></a>Přístup k dokumentům WSDL
 
-Když použijete Svcutil k přístupu k dokumentu WSDL, který obsahuje odkaz na službu tokenů zabezpečení (STS), Svcutil provede volání WS-MetadataExchange do služby STS. Služba však může zveřejnit své dokumenty WSDL pomocí protokolu WS-MetadataExchange nebo HTTP GET. Pokud tedy služba STS vykázala pouze dokument WSDL pomocí protokolu HTTP GET, klient napsaný v WinFX selže. U klientů napsaných v [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] se Svcutil pokusí získat WSDL STS pomocí WS-MetadataExchange a HTTP GET.
+Když použijete Svcutil k přístupu k dokumentu WSDL, který obsahuje odkaz na službu tokenů zabezpečení (STS), Svcutil provede volání WS-MetadataExchange do služby STS. Služba však může zveřejnit své dokumenty WSDL pomocí protokolu WS-MetadataExchange nebo HTTP GET. Pokud tedy služba STS vykázala pouze dokument WSDL pomocí protokolu HTTP GET, klient napsaný v WinFX selže. U klientů napsaných v .NET Framework 3,5 se Svcutil pokusí pomocí protokolu WS-MetadataExchange a HTTP GET získat WSDL pro STS.
 
 ## <a name="using-svcutilexe"></a>Použití SvcUtil. exe
 
@@ -59,11 +59,11 @@ V následující tabulce jsou uvedeny některé běžně používané možnosti 
 
 |Možnost|Popis|
 |------------|-----------------|
-|/Directory: \<directory >|Adresář, ve kterém se mají vytvářet soubory<br /><br /> Výchozí: aktuální adresář.<br /><br /> Krátký tvar: `/d`|
+|/Directory:\<Directory >|Adresář, ve kterém se mají vytvářet soubory<br /><br /> Výchozí: aktuální adresář.<br /><br /> Krátký tvar: `/d`|
 |/help|Zobrazí syntaxi příkazu a možnosti nástroje.<br /><br /> Krátký tvar: `/?`|
 |/noLogo|Potlačíní autorského práva a zprávy banneru.|
-|/svcutilConfig: \<configFile >|Určuje vlastní konfigurační soubor, který se použije místo souboru App. config. Tato možnost se dá použít k registraci rozšíření System. serviceModel bez změny konfiguračního souboru nástroje.|
-|/target: \<output typ >|Určuje výstup, který má nástroj vygenerovat.<br /><br /> Platné hodnoty jsou code, metadata nebo xmlSerializer.<br /><br /> Krátký tvar: `/t`|
+|/svcutilConfig:\<configFile>|Určuje vlastní konfigurační soubor, který se použije místo souboru App. config. Tato možnost se dá použít k registraci rozšíření System. serviceModel bez změny konfiguračního souboru nástroje.|
+|/target:\<typ výstupu >|Určuje výstup, který má nástroj vygenerovat.<br /><br /> Platné hodnoty jsou code, metadata nebo xmlSerializer.<br /><br /> Krátký tvar: `/t`|
 
 ### <a name="code-generation"></a>Vytvoření kódu
 
@@ -71,7 +71,7 @@ Svcutil. exe může vygenerovat kód pro kontrakty služeb, klienty a datové ty
 
 Můžete použít nástroj *Svcutil. exe* ke generování kontraktů služeb a dat na základě předdefinovaného dokumentu WSDL. Použijte přepínač/serviceContract a zadejte adresu URL nebo umístění souboru, kde lze stáhnout nebo najít dokument WSDL. Tím se vygeneruje kontrakt služby a data definovaná v dokumentu WSDL, který pak můžete použít k implementaci služby stížnosti. Další informace naleznete v tématu [How to: načítající metadata a implementující vyhovující služby](./feature-details/how-to-retrieve-metadata-and-implement-a-compliant-service.md).
 
-Pro službu s koncovým bodem třída BasicHttpContextBinding vygeneruje *Svcutil. exe* BasicHttpBinding s atributem `allowCookies` nastaveným na `true` místo toho. Soubory cookie jsou používány pro kontext na serveru. Pokud chcete spravovat kontext na klientovi, když služba používá soubory cookie, můžete ručně změnit konfiguraci tak, aby používala kontextovou vazbu.
+V případě služby s koncovým bodem třída BasicHttpContextBinding vygeneruje *Svcutil. exe* BasicHttpBinding s atributem `allowCookies` nastaveným na `true` místo toho. Soubory cookie jsou používány pro kontext na serveru. Pokud chcete spravovat kontext na klientovi, když služba používá soubory cookie, můžete ručně změnit konfiguraci tak, aby používala kontextovou vazbu.
 
 > [!CAUTION]
 > Svcutil. exe vygeneruje klienta na základě souboru WSDL nebo zásad přijatého ze služby. Hlavní název uživatele (UPN) je vygenerován zřetězením uživatelského jména, "\@" a plně kvalifikovaného názvu domény (FQDN). Pro uživatele, kteří jsou zaregistrovaní ve službě Active Directory, není tento formát platný a hlavní název uživatele generovaný nástrojem způsobí selhání při ověřování protokolem Kerberos s chybovou zprávou "pokus o přihlášení se nezdařil". Chcete-li tento problém vyřešit, je třeba ručně opravit soubor klienta generovaný tímto nástrojem.
@@ -81,37 +81,37 @@ Pro službu s koncovým bodem třída BasicHttpContextBinding vygeneruje *Svcuti
 |Argument|Popis|
 |--------------|-----------------|
 |`epr`|Cesta k souboru XML, který obsahuje WS-Addressing EndpointReference pro koncový bod služby, který podporuje WS-Metadata Exchange. Další informace najdete v části stažení metadat.|
-|`metadataDocumentPath`|Cesta k dokumentu metadat (*WSDL* nebo *XSD*), který obsahuje kontrakt pro import do kódu (. WSDL,. xsd,. WSPolicy nebo. wsmex).<br /><br /> Svcutil sleduje import a zahrnuje, když zadáte vzdálenou adresu URL pro metadata. Pokud však chcete zpracovat soubory metadat v místním systému souborů, je nutné zadat všechny soubory v tomto argumentu. Tímto způsobem můžete použít Svcutil v prostředí sestavení, kde nemůžete mít závislosti sítě. Pro tento argument můžete použít zástupné znaky (*. xsd, @no__t -0. WSDL).|
+|`metadataDocumentPath`|Cesta k dokumentu metadat (*WSDL* nebo *XSD*), který obsahuje kontrakt pro import do kódu (. WSDL,. xsd,. WSPolicy nebo. wsmex).<br /><br /> Svcutil sleduje import a zahrnuje, když zadáte vzdálenou adresu URL pro metadata. Pokud však chcete zpracovat soubory metadat v místním systému souborů, je nutné zadat všechny soubory v tomto argumentu. Tímto způsobem můžete použít Svcutil v prostředí sestavení, kde nemůžete mít závislosti sítě. Pro tento argument můžete použít zástupné znaky (*. xsd, \*. WSDL).|
 |`url`|Adresa URL koncového bodu služby, který poskytuje metadata, nebo k dokumentu metadat hostovanému online. Další informace o tom, jak se tyto dokumenty načítají, najdete v části stažení metadat.|
 
 |Možnost|Popis|
 |------------|-----------------|
 |/async|Generuje synchronní i asynchronní signatury metody.<br /><br /> Výchozí: vygenerujte pouze signatury synchronních metod.<br /><br /> Krátký tvar: `/a`|
-|/collectionType: \<type >|Určuje typ kolekce seznamu pro klienta WCF.<br/><br /> Výchozí: typ kolekce je System. Array. <br /><br /> Krátký tvar: `/ct`|
-|/config: \<configFile >|Určuje název souboru pro generovaný konfigurační soubor.<br /><br /> Výchozí: Output. config|
+|/collectionType: typ\<>|Určuje typ kolekce seznamu pro klienta WCF.<br/><br /> Výchozí: typ kolekce je System. Array. <br /><br /> Krátký tvar: `/ct`|
+|/config:\<configFile>|Určuje název souboru pro generovaný konfigurační soubor.<br /><br /> Výchozí: Output. config|
 |/dataContractOnly|Generuje kód pouze pro typy kontraktu dat. Typy kontraktů služby se nevygenerují.<br /><br /> Pro tuto možnost byste měli zadat jenom místní soubory metadat.<br /><br /> Krátký tvar: `/dconly`|
-|/enableDataBinding|Implementuje rozhraní @no__t 0 pro všechny typy kontraktů dat, aby bylo možné datovou vazbu povolit.<br /><br /> Krátký tvar: `/edb`|
-|/excludeType: \<type >|Určuje plně kvalifikovaný název nebo kvalifikovaný název sestavení, který bude vyloučen z odkazovaných typů kontraktů.<br /><br /> Při použití tohoto přepínače spolu s `/r` ze samostatných knihoven DLL je odkazováno na úplný název třídy XSD.<br /><br /> Krátký tvar: `/et`|
+|/enableDataBinding|Implementuje rozhraní <xref:System.ComponentModel.INotifyPropertyChanged> pro všechny typy kontraktů dat, aby bylo možné datovou vazbu povolit.<br /><br /> Krátký tvar: `/edb`|
+|/excludeType: typ\<>|Určuje plně kvalifikovaný název nebo kvalifikovaný název sestavení, který bude vyloučen z odkazovaných typů kontraktů.<br /><br /> Při použití tohoto přepínače spolu s `/r` z oddělených knihoven DLL je odkazováno na úplný název třídy XSD.<br /><br /> Krátký tvar: `/et`|
 |/importXmlTypes|Nakonfiguruje serializátor kontraktu dat pro import typů kontraktů, které nejsou typu data, jako typy IXmlSerializable.|
 |/internal|Vygeneruje třídy, které jsou označeny jako interní. Výchozí: vygenerujte pouze veřejné třídy.<br /><br /> Krátký tvar: `/i`|
-|/Language: \<language >|Určuje programovací jazyk, který se má použít pro generování kódu. Měli byste zadat buď název jazyka zaregistrovaný v souboru Machine. config, nebo plně kvalifikovaný název třídy, která dědí z <xref:System.CodeDom.Compiler.CodeDomProvider>.<br /><br /> Hodnoty: c#, cs, CSharp, VB, VisualBasic, c++, cpp<br /><br /> Výchozí: CSharp<br /><br /> Krátký tvar: `/l`|
+|/Language: > jazyka\<|Určuje programovací jazyk, který se má použít pro generování kódu. Měli byste zadat buď název jazyka zaregistrovaný v souboru Machine. config, nebo plně kvalifikovaný název třídy, která dědí z <xref:System.CodeDom.Compiler.CodeDomProvider>.<br /><br /> Hodnoty: c#, cs, CSharp, VB, VisualBasic, c++, cpp<br /><br /> Výchozí: CSharp<br /><br /> Krátký tvar: `/l`|
 |/mergeConfig|Sloučí vygenerovanou konfiguraci do existujícího souboru namísto přepsání stávajícího souboru.|
 |/messageContract|Generuje typy kontraktů zpráv.<br /><br /> Krátký tvar: `/mc`|
-|/Namespace: \<string, > řetězců|Určuje mapování z oboru názvů targetNamespace schématu WSDL nebo XML na obor názvů CLR. Použití příkazu ' \* ' pro obor názvů targetNamespace mapuje všechny obory názvů targetNamespace bez explicitního mapování na tento obor názvů CLR.<br /><br /> Aby se zajistilo, že název kontraktu zprávy nekoliduje s názvem operace, měli byste buď kvalifikovat odkaz na typ pomocí `::`, nebo se ujistit, že jsou názvy jedinečné.<br /><br /> Výchozí: odvozeno z cílového oboru názvů dokumentu schématu pro kontrakty dat. Výchozí obor názvů se používá pro všechny ostatní generované typy.<br /><br /> Krátký tvar: `/n` **Poznámka:** při generování typů pro použití s objektem XmlSerializer je podporována pouze mapování jednoho oboru názvů. Všechny generované typy budou buď ve výchozím oboru názvů, nebo v oboru názvů určeném hvězdičkou (*).|
+|/Namespace:\<řetězec, > řetězce|Určuje mapování z oboru názvů targetNamespace schématu WSDL nebo XML na obor názvů CLR. Použití příkazu '\*' pro obor názvů targetNamespace mapuje všechny obory názvů targetNamespace bez explicitního mapování na tento obor názvů CLR.<br /><br /> Aby se zajistilo, že název kontraktu zprávy nekoliduje s názvem operace, měli byste buď kvalifikovat odkaz na typ pomocí `::`, nebo se ujistit, že jsou názvy jedinečné.<br /><br /> Výchozí: odvozeno z cílového oboru názvů dokumentu schématu pro kontrakty dat. Výchozí obor názvů se používá pro všechny ostatní generované typy.<br /><br /> Krátký tvar: `/n` **Poznámka:** při generování typů pro použití s objektem XmlSerializer je podporována pouze mapování jednoho oboru názvů. Všechny generované typy budou buď ve výchozím oboru názvů, nebo v oboru názvů určeném hvězdičkou (*).|
 |/noConfig|Negenerovat konfigurační soubory.|
 |/noStdLib|Neodkazujte na standardní knihovny.<br /><br /> Výchozí hodnota: knihovna mscorlib. dll a System. ServiceModel. dll jsou odkazovány.|
-|/out: @no__t – > 0file|Určuje název souboru generovaného kódu.<br /><br /> Výchozí: odvozeno z názvu definice WSDL, název služby WSDL nebo cílový obor názvů jednoho ze schémat.<br /><br /> Krátký tvar: `/o`|
-|/Reference: \<file cesta >|Odkazuje na typy v zadaném sestavení. Při generování klientů pomocí této možnosti zadejte sestavení, která mohou obsahovat typy představující importovaná metadata.<br /><br /> Pomocí tohoto přepínače nelze zadat kontrakty zpráv a typy <xref:System.Xml.Serialization.XmlSerializer>.<br /><br /> Pokud se odkazuje na <xref:System.DateTimeOffset>, místo generování nového typu se použije tento typ. Pokud je aplikace napsaná pomocí [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)], SvcUtil. exe odkazuje automaticky na <xref:System.DateTimeOffset>.<br /><br /> Krátký tvar: `/r`|
+|/out:\<soubor >|Určuje název souboru generovaného kódu.<br /><br /> Výchozí: odvozeno z názvu definice WSDL, název služby WSDL nebo cílový obor názvů jednoho ze schémat.<br /><br /> Krátký tvar: `/o`|
+|/Reference:\<cesta k souboru >|Odkazuje na typy v zadaném sestavení. Při generování klientů pomocí této možnosti zadejte sestavení, která mohou obsahovat typy představující importovaná metadata.<br /><br /> Pomocí tohoto přepínače nelze zadat kontrakty zpráv a typy <xref:System.Xml.Serialization.XmlSerializer>.<br /><br /> Pokud se odkazuje na <xref:System.DateTimeOffset>, místo generování nového typu se použije tento typ. Pokud je aplikace napsaná pomocí .NET Framework 3,5, SvcUtil. exe odkazuje <xref:System.DateTimeOffset> automaticky.<br /><br /> Krátký tvar: `/r`|
 |/serializable|Generuje třídy označené serializovatelným atributem.<br /><br /> Krátký tvar: `/s`|
 |/serviceContract|Vygenerujte pouze kód pro kontrakty služeb. Třída klienta a konfigurace nebudou vygenerovány.<br /><br /> Krátký tvar: `/sc`|
 |/Serializer: auto|Automatický výběr serializátoru. Tato operace se pokusí použít serializátor kontraktu dat a v případě, že dojde k chybě, použije XmlSerializer.<br /><br /> Krátký tvar: `/ser`|
-|/Serializer: DataContractSerializer|Generuje datové typy, které používají serializátor kontraktu dat pro serializaci a deserializaci.<br /><br /> Krátký tvar: `/ser:DataContractSerializer`|
-|/Serializer: XmlSerializer|Generuje datové typy, které používají <xref:System.Xml.Serialization.XmlSerializer> pro serializaci a deserializaci.<br /><br /> Krátký tvar: `/ser:XmlSerializer`|
-|/targetClientVersion|Určete, na kterou verzi .NET Framework aplikace cílí. Platné hodnoty jsou `Version30` a `Version35`. Výchozí hodnota je `Version30`.<br /><br /> Krátký tvar: `/tcv`<br /><br /> `Version30`: pokud generujete kód pro klienty, kteří používají WinFX, použijte `/tcv:Version30`.<br /><br /> `Version35`: pokud generujete kód pro klienty, kteří používají [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)], použijte `/tcv:Version35`. Při použití `/tcv:Version35` s přepínačem `/async` jsou vygenerovány asynchronní metody založené na událostech a zpětném volání nebo delegátem. Kromě toho je povolena podpora pro datové sady s podporou LINQ a <xref:System.DateTimeOffset>.|
+|/serializer:DataContractSerializer|Generuje datové typy, které používají serializátor kontraktu dat pro serializaci a deserializaci.<br /><br /> Krátký tvar: `/ser:DataContractSerializer`|
+|/serializer:XmlSerializer|Generuje datové typy, které používají <xref:System.Xml.Serialization.XmlSerializer> pro serializaci a deserializaci.<br /><br /> Krátký tvar: `/ser:XmlSerializer`|
+|/targetClientVersion|Určete, na kterou verzi .NET Framework aplikace cílí. Platné hodnoty jsou `Version30` a `Version35`. Výchozí hodnota je `Version30`.<br /><br /> Krátký tvar: `/tcv`<br /><br /> `Version30`: použijte `/tcv:Version30`, pokud generujete kód pro klienty, kteří používají WinFX.<br /><br /> `Version35`: použijte `/tcv:Version35`, pokud generujete kód pro klienty, kteří používají .NET Framework 3,5. Při použití `/tcv:Version35` s přepínačem `/async` jsou vygenerovány asynchronní metody založené na událostech a zpětném volání nebo delegátem. Kromě toho je povolena podpora pro datové sady s podporou LINQ a <xref:System.DateTimeOffset>.|
 |/wrapped|Určuje, zda se pro dokumenty se stylem literálu dokumentu s zabalením parametrů používá speciální velikost písmen. Použijte přepínač **/Wrapped** s nástrojem nástroje [Service Model Metadata Tool (Svcutil. exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) a zadejte normální velikost písmen.|
 
 > [!NOTE]
-> Pokud je vazba služby jednou z uživatelsky dodaných vazeb (viz [systémové vazby](system-provided-bindings.md)) a vlastnost <xref:System.ServiceModel.ServiceContractAttribute.ProtectionLevel%2A> je nastavena na hodnotu `None` nebo `Sign`, Svcutil vygeneruje konfigurační soubor pomocí [\<customBinding >](../configure-apps/file-schema/wcf/custombinding.md) namísto očekávaného prvku poskytnutého systémem. Například pokud služba používá prvek `<wsHttpBinding>` s `ProtectionLevel` nastavenou na `Sign`, vygenerovaná konfigurace má `<customBinding>` v části Bindings namísto `<wsHttpBinding>`. Další informace o úrovni ochrany najdete v tématu [Principy úrovně ochrany](understanding-protection-level.md).
+> Pokud je vazba služby jednou z uživatelsky dodaných vazeb (viz [systémové vazby](system-provided-bindings.md)) a vlastnost <xref:System.ServiceModel.ServiceContractAttribute.ProtectionLevel%2A> je nastavena na hodnotu `None` nebo `Sign`, Svcutil vygeneruje konfigurační soubor pomocí elementu [\<CustomBinding >](../configure-apps/file-schema/wcf/custombinding.md) namísto očekávaného prvku poskytnutého systémem. Například pokud služba používá prvek `<wsHttpBinding>` s `ProtectionLevel` nastavenou na `Sign`, vygenerovaná konfigurace `<customBinding>`a v části Bindings namísto `<wsHttpBinding>`. Další informace o úrovni ochrany najdete v tématu [Principy úrovně ochrany](understanding-protection-level.md).
 
 ### <a name="metadata-export"></a>Export metadat
 
@@ -125,10 +125,10 @@ Svcutil. exe může exportovat metadata pro služby, kontrakty a datové typy v 
 
 |Možnost|Popis|
 |------------|-----------------|
-|/serviceName: \<serviceConfigName >|Určuje název konfigurace služby, která se má exportovat. Pokud použijete tuto možnost, musí se jako vstup předat spustitelné sestavení s přidruženým konfiguračním souborem. Svcutil. exe vyhledá všechny přidružené konfigurační soubory pro konfiguraci služby. Pokud konfigurační soubory obsahují jakékoli typy rozšíření, sestavení, která obsahují tyto typy, musí být buď v globální mezipaměti sestavení (GAC), nebo musí být explicitně poskytnuta pomocí možnosti `/reference`.|
-|/Reference: \<file cesta >|Přidá zadané sestavení do sady sestavení používané pro překlad odkazů typu. Pokud exportujete nebo ověřujete službu, která používá rozšíření třetích stran (chování, vazby a BindingElements) zaregistrovaná v konfiguraci, použijte tuto možnost k vyhledání sestavení rozšíření, která nejsou v globální mezipaměti sestavení (GAC).<br /><br /> Krátký tvar: `/r`|
+|/serviceName:\<serviceConfigName>|Určuje název konfigurace služby, která se má exportovat. Pokud použijete tuto možnost, musí se jako vstup předat spustitelné sestavení s přidruženým konfiguračním souborem. Svcutil. exe vyhledá všechny přidružené konfigurační soubory pro konfiguraci služby. Pokud konfigurační soubory obsahují jakékoli typy rozšíření, sestavení, která obsahují tyto typy, musí být buď v globální mezipaměti sestavení (GAC), nebo musí být explicitně poskytnuta pomocí možnosti `/reference`.|
+|/Reference:\<cesta k souboru >|Přidá zadané sestavení do sady sestavení používané pro překlad odkazů typu. Pokud exportujete nebo ověřujete službu, která používá rozšíření třetích stran (chování, vazby a BindingElements) zaregistrovaná v konfiguraci, použijte tuto možnost k vyhledání sestavení rozšíření, která nejsou v globální mezipaměti sestavení (GAC).<br /><br /> Krátký tvar: `/r`|
 |/dataContractOnly|Funguje pouze na typech kontraktů dat. Kontrakty služby se nezpracovávají.<br /><br /> Pro tuto možnost byste měli zadat jenom místní soubory metadat.<br /><br /> Krátký tvar: `/dconly`|
-|/excludeType: \<type >|Určuje plně kvalifikovaný název nebo kvalifikovaný název sestavení typu, který se má vyloučit z exportu. Tuto možnost lze použít při exportu metadat pro službu nebo sadu kontraktů služby pro vyloučení typů z exportu. Tuto možnost nelze použít společně s možností `/dconly`.<br /><br /> Pokud máte jedno sestavení obsahující několik služeb a každá z nich používá samostatné třídy se stejným názvem XSD, měli byste pro tento přepínač zadat název služby místo názvu třídy XSD.<br /><br /> Typy XSD nebo kontraktů dat nejsou podporovány.<br /><br /> Krátký tvar: `/et`|
+|/excludeType: typ\<>|Určuje plně kvalifikovaný název nebo kvalifikovaný název sestavení typu, který se má vyloučit z exportu. Tuto možnost lze použít při exportu metadat pro službu nebo sadu kontraktů služby pro vyloučení typů z exportu. Tuto možnost nelze použít společně s možností `/dconly`.<br /><br /> Pokud máte jedno sestavení obsahující několik služeb a každá z nich používá samostatné třídy se stejným názvem XSD, měli byste pro tento přepínač zadat název služby místo názvu třídy XSD.<br /><br /> Typy XSD nebo kontraktů dat nejsou podporovány.<br /><br /> Krátký tvar: `/et`|
 
 ### <a name="service-validation"></a>Ověření služby
 
@@ -143,10 +143,10 @@ Ověřování lze použít k detekci chyb v implementacích služby bez hostová
 |Možnost|Popis|
 |------------|-----------------|
 |/Validate|Ověří implementaci služby určenou možností `/serviceName`. Pokud použijete tuto možnost, musí se jako vstup předat spustitelné sestavení s přidruženým konfiguračním souborem.<br /><br /> Krátký tvar: `/v`|
-|/serviceName: \<serviceConfigName >|Určuje název konfigurace služby, která se má ověřit. Svcutil. exe vyhledá všechny přidružené konfigurační soubory všech vstupních sestavení pro konfiguraci služby. Pokud konfigurační soubory obsahují jakékoli typy rozšíření, sestavení, která obsahují tyto typy, musí být buď v globální mezipaměti sestavení (GAC), nebo musí být explicitně poskytnuta pomocí možnosti `/reference`.|
-|/Reference: \<file cesta >|Přidá zadané sestavení do sady sestavení používané pro překlad odkazů typu. Pokud exportujete nebo ověřujete službu, která používá rozšíření třetích stran (chování, vazby a BindingElements) zaregistrovaná v konfiguraci, použijte tuto možnost k vyhledání sestavení rozšíření, která nejsou v globální mezipaměti sestavení (GAC).<br /><br /> Krátký tvar: `/r`|
+|/serviceName:\<serviceConfigName>|Určuje název konfigurace služby, která se má ověřit. Svcutil. exe vyhledá všechny přidružené konfigurační soubory všech vstupních sestavení pro konfiguraci služby. Pokud konfigurační soubory obsahují jakékoli typy rozšíření, sestavení, která obsahují tyto typy, musí být buď v globální mezipaměti sestavení (GAC), nebo musí být explicitně poskytnuta pomocí možnosti `/reference`.|
+|/Reference:\<cesta k souboru >|Přidá zadané sestavení do sady sestavení používané pro překlad odkazů typu. Pokud exportujete nebo ověřujete službu, která používá rozšíření třetích stran (chování, vazby a BindingElements) zaregistrovaná v konfiguraci, použijte tuto možnost k vyhledání sestavení rozšíření, která nejsou v globální mezipaměti sestavení (GAC).<br /><br /> Krátký tvar: `/r`|
 |/dataContractOnly|Funguje pouze na typech kontraktů dat. Kontrakty služby se nezpracovávají.<br /><br /> Pro tuto možnost byste měli zadat jenom místní soubory metadat.<br /><br /> Krátký tvar: `/dconly`|
-|/excludeType: \<type >|Určuje plně kvalifikovaný název nebo kvalifikovaný název sestavení typu, který se má vyloučit z ověřování.<br /><br /> Krátký tvar: `/et`|
+|/excludeType: typ\<>|Určuje plně kvalifikovaný název nebo kvalifikovaný název sestavení typu, který se má vyloučit z ověřování.<br /><br /> Krátký tvar: `/et`|
 
 ### <a name="metadata-download"></a>Stažení metadat
 
@@ -160,7 +160,7 @@ Svcutil vyžádá současně následující požadavky metadat pro načtení met
 
 - Požadavek na DISCích (pomocí DiscoveryClientProtocol z ASMX) na zadanou adresu.
 
-Ve výchozím nastavení používá Svcutil. exe vazby definované ve třídě <xref:System.ServiceModel.Description.MetadataExchangeBindings> pro vytváření požadavků MEX. Ke konfiguraci vazby používaného pro WS-Metadata Exchange musíte v konfiguraci, která používá kontrakt IMetadataExchange, definovat koncový bod klienta. To lze definovat buď v konfiguračním souboru Svcutil. exe, nebo v jiném konfiguračním souboru určeném pomocí možnosti `/svcutilConfig`.
+Ve výchozím nastavení používá Svcutil. exe vazby definované ve třídě <xref:System.ServiceModel.Description.MetadataExchangeBindings> k vytváření požadavků MEX. Ke konfiguraci vazby používaného pro WS-Metadata Exchange musíte v konfiguraci, která používá kontrakt IMetadataExchange, definovat koncový bod klienta. To lze definovat buď v konfiguračním souboru Svcutil. exe, nebo v jiném konfiguračním souboru zadaném pomocí možnosti `/svcutilConfig`.
 
 `svcutil.exe /t:metadata  <url>* | <epr>`
 
@@ -171,7 +171,7 @@ Ve výchozím nastavení používá Svcutil. exe vazby definované ve třídě <
 
 ### <a name="xmlserializer-type-generation"></a>Generování typu XmlSerializer
 
-Služby a klientské aplikace, které používají datové typy, které jsou serializovatelný pomocí <xref:System.Xml.Serialization.XmlSerializer> generovat a kompilovat serializaci kódu pro tyto datové typy za běhu, což může vést k pomalému spuštění výkonu.
+Služby a klientské aplikace, které používají datové typy, které jsou serializovatelný pomocí <xref:System.Xml.Serialization.XmlSerializer> generují a kompiluje serializaci kódu pro tyto datové typy za běhu, což může vést k pomalému spuštění výkonu.
 
 > [!NOTE]
 > Předem generovaný kód serializace lze použít pouze v klientských aplikacích, nikoli v službách.
@@ -189,10 +189,10 @@ Svcutil. exe může vygenerovat nezbytný C# Serializační kód z kompilovanýc
 
 |Možnost|Popis|
 |------------|-----------------|
-|/Reference: \<file cesta >|Přidá zadané sestavení do sady sestavení používané pro překlad odkazů typu.<br /><br /> Krátký tvar: `/r`|
-|/excludeType: \<type >|Určuje plně kvalifikovaný název nebo kvalifikovaný název sestavení typu, který se má vyloučit z exportu nebo ověřování.<br /><br /> Krátký tvar: `/et`|
-|/out: @no__t – > 0file|Určuje název souboru pro vygenerovaný kód. Tato možnost je ignorována, pokud je do nástroje předána více sestavení jako vstup.<br /><br /> Výchozí: odvozeno z názvu sestavení.<br /><br /> Krátký tvar: `/o`|
-|/UseSerializerForFaults|Určuje, že <xref:System.Xml.Serialization.XmlSerializer> se má použít pro čtení a zápis chyb namísto výchozí <xref:System.Runtime.Serialization.DataContractSerializer>.|
+|/Reference:\<cesta k souboru >|Přidá zadané sestavení do sady sestavení používané pro překlad odkazů typu.<br /><br /> Krátký tvar: `/r`|
+|/excludeType: typ\<>|Určuje plně kvalifikovaný název nebo kvalifikovaný název sestavení typu, který se má vyloučit z exportu nebo ověřování.<br /><br /> Krátký tvar: `/et`|
+|/out:\<soubor >|Určuje název souboru pro vygenerovaný kód. Tato možnost je ignorována, pokud je do nástroje předána více sestavení jako vstup.<br /><br /> Výchozí: odvozeno z názvu sestavení.<br /><br /> Krátký tvar: `/o`|
+|/UseSerializerForFaults|Určuje, že se má <xref:System.Xml.Serialization.XmlSerializer> použít pro čtení a zápis chyb namísto výchozího <xref:System.Runtime.Serialization.DataContractSerializer>.|
 
 ## <a name="examples"></a>Příklady
 
@@ -236,7 +236,7 @@ Následující příkaz generuje typy serializace pro typy <xref:System.Xml.Seri
 
 Při použití Svcutil ke generování metadat pro službu se může zobrazit následující zpráva:
 
-Chyba: nepovedlo se získat metadata z `http://localhost:8000/somesservice/mex`. při čtení dat XML se překročila maximální kvóta počtu znaků NameTable (16384). NameTable je datová struktura, která se používá k ukládání řetězců zjištěných během zpracování XML – dlouhé dokumenty XML s názvy elementů, které nejsou opakující se, názvy atributů a hodnoty atributů můžou tuto kvótu aktivovat. Tato kvóta se dá zvýšit změnou vlastnosti MaxNameTableCharCount u objektu XmlDictionaryReaderQuotas, který se používá při vytváření čtecího modulu XML.
+Chyba: nelze získat metadata z `http://localhost:8000/somesservice/mex` byla překročena maximální kvóta počtu znaků NameTable (16384) při čtení dat XML. NameTable je datová struktura, která se používá k ukládání řetězců zjištěných během zpracování XML – dlouhé dokumenty XML s názvy elementů, které nejsou opakující se, názvy atributů a hodnoty atributů můžou tuto kvótu aktivovat. Tato kvóta se dá zvýšit změnou vlastnosti MaxNameTableCharCount u objektu XmlDictionaryReaderQuotas, který se používá při vytváření čtecího modulu XML.
 
 Tato chyba může být způsobena službou, která vrací velký soubor WSDL při žádosti o jeho metadata. Problém je, že se překročila kvóta znaků pro nástroj Svcutil. exe. Tato hodnota je nastavená tak, aby bránila útokům DOS (Denial of Service). Tuto kvótu můžete zvýšit zadáním následujícího konfiguračního souboru pro Svcutil.
 

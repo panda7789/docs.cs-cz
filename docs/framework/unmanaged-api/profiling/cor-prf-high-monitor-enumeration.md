@@ -2,17 +2,18 @@
 title: Výčet COR_PRF_HIGH_MONITOR
 ms.date: 04/10/2018
 ms.assetid: 3ba543d8-15e5-4322-b6e7-1ebfc92ed7dd
-ms.openlocfilehash: 03fa33e0e2b4175d9f82bc6021731d58805da258
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: fc0251624738a06d1be7081ebd099e97f7278a15
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123986"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283141"
 ---
 # <a name="cor_prf_high_monitor-enumeration"></a>Výčet COR_PRF_HIGH_MONITOR
+
 [Podporované v .NET Framework 4.5.2 a novějších verzích]  
   
- Poskytuje příznaky kromě těch, které se nacházejí ve výčtu [COR_PRF_MONITOR](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md) , které může Profiler při načítání zadat do metody [ICorProfilerInfo5:: SetEventMask2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md) .  
+Poskytuje příznaky kromě těch, které se nacházejí v [COR_PRF_MONITOR](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md) výčtu, které může Profiler zadat do metody [ICorProfilerInfo5:: SetEventMask2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md) při načítání.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,26 +48,28 @@ typedef enum {
 |`COR_PRF_HIGH_DISABLE_TIERED_COMPILATION`|Pouze .NET Core 3,0 a novější verze: zakáže [vrstvenou kompilaci](../../../core/whats-new/dotnet-core-3-0.md) pro profilery.|
 |`COR_PRF_HIGH_BASIC_GC`|Pouze .NET Core 3,0 a novější verze: poskytuje v porovnání s [`COR_PRF_MONITOR_GC`](cor-prf-monitor-enumeration.md)zjednodušenou možnost profilace GC. Řídí pouze zpětná volání [GarbageCollectionStarted –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionstarted-method.md), [GarbageCollectionFinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionfinished-method.md)a [GetGenerationBounds –](icorprofilerinfo2-getgenerationbounds-method.md) . Na rozdíl od příznaku `COR_PRF_MONITOR_GC` `COR_PRF_HIGH_BASIC_GC` nezakáže souběžné uvolňování paměti.|
 |`COR_PRF_HIGH_MONITOR_GC_MOVED_OBJECTS`|Pouze .NET Core 3,0 a novější verze: povolí zpětná volání [MovedReferences –](icorprofilercallback-movedreferences-method.md) a [MovedReferences2 –](icorprofilercallback4-movedreferences2-method.md) pouze pro komprimaci GC.|
-|`COR_PRF_HIGH_MONITOR_LARGEOBJECT_ALLOCATED`|Pouze .NET Core 3,0 a novější verze: podobně jako [`COR_PRF_MONITOR_OBJECT_ALLOCATED`](cor-prf-monitor-enumeration.md), ale poskytuje informace o přidělování objektů pouze pro haldu large object (LOH).|
+|`COR_PRF_HIGH_MONITOR_LARGEOBJECT_ALLOCATED`|Pouze .NET Core 3,0 a novější verze: podobně jako [`COR_PRF_MONITOR_OBJECT_ALLOCATED`](cor-prf-monitor-enumeration.md), ale poskytuje informace o přidělení objektů pro haldu velkých objektů (LOH).|
 |`COR_PRF_HIGH_REQUIRE_PROFILE_IMAGE`|Představuje všechny příznaky `COR_PRF_HIGH_MONITOR`, které vyžadují image s rozšířeným profilem. Odpovídá příznaku `COR_PRF_REQUIRE_PROFILE_IMAGE` ve výčtu [COR_PRF_MONITOR](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md) .|  
 |`COR_PRF_HIGH_ALLOWABLE_AFTER_ATTACH`|Představuje všechny příznaky `COR_PRF_HIGH_MONITOR`, které lze nastavit po připojení profileru ke spuštěné aplikaci.|  
 |`COR_PRF_HIGH_MONITOR_IMMUTABLE`|Představuje všechny příznaky `COR_PRF_HIGH_MONITOR`, které lze nastavit pouze během inicializace. Když se pokusíte změnit některý z těchto příznaků jinde, výsledkem je `HRESULT` hodnota, která označuje selhání.|  
   
-## <a name="remarks"></a>Poznámky  
- Příznaky `COR_PRF_HIGH_MONITOR` se používají s parametrem `pdwEventsHigh` metod [ICorProfilerInfo5:: GetEventMask2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-geteventmask2-method.md) a [ICorProfilerInfo5:: SetEventMask2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md) .  
+## <a name="remarks"></a>Poznámky
+
+Příznaky `COR_PRF_HIGH_MONITOR` se používají s parametrem `pdwEventsHigh` metod [ICorProfilerInfo5:: GetEventMask2 –](icorprofilerinfo5-geteventmask2-method.md) a [ICorProfilerInfo5:: SetEventMask2 –](icorprofilerinfo5-seteventmask2-method.md) .  
   
 Počínaje .NET Framework 4.6.1 se hodnota `COR_PRF_HIGH_ALLOWABLE_AFTER_ATTACH` změnila z 0 na `COR_PRF_HIGH_IN_MEMORY_SYMBOLS_UPDATED` (0x00000002). Počínaje .NET Framework 4.7.2 se jeho hodnota změnila z `COR_PRF_HIGH_IN_MEMORY_SYMBOLS_UPDATED` na `COR_PRF_HIGH_IN_MEMORY_SYMBOLS_UPDATED | COR_PRF_HIGH_MONITOR_DYNAMIC_FUNCTION_UNLOADS`.   
 
 `COR_PRF_HIGH_MONITOR_IMMUTABLE` má být Bitová maska, která představuje všechny příznaky, které lze nastavit pouze během inicializace. Když se pokusíte změnit některý z těchto příznaků jinde, dojde k selhání `HRESULT`.
 
-## <a name="requirements"></a>Požadavky  
- **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Požadavky
+
+**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Hlavička:** CorProf. idl, CorProf. h  
+**Hlavička:** CorProf. idl, CorProf. h  
   
- **Knihovna:** CorGuids. lib  
+**Knihovna:** CorGuids. lib  
   
- **Verze .NET Framework:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
+**Verze .NET Framework:** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

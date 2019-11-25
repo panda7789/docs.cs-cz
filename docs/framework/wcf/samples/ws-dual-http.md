@@ -2,12 +2,12 @@
 title: WS Dual Http
 ms.date: 03/30/2017
 ms.assetid: 9997eba5-29ec-48db-86f3-fa77b241fb1a
-ms.openlocfilehash: bc8958ab092f97e94a75bc366d576441c1a5bbbd
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 44fdf6f0b27e15c486afa32f67668e9fd6eeac10
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424545"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74138684"
 ---
 # <a name="ws-dual-http"></a>WS Dual Http
 
@@ -88,7 +88,7 @@ Při spuštění ukázky se zobrazí zprávy vracené klientovi do rozhraní zp�
 4. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
 
     > [!IMPORTANT]
-    > Pokud spouštíte klienta v konfiguraci mezi počítači, nezapomeňte nahradit localhost v atributu `address` [\<koncového bodu > \<elementu klienta >](../../configure-apps/file-schema/wcf/endpoint-of-client.md) a `clientBaseAddress` atributu\<[vazby](../../../../docs/framework/misc/binding.md) > prvek prvku [\<wsDualHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md) s názvem příslušného počítače, jak je znázorněno v následujícím příkladu:
+    > Pokud spouštíte klienta v konfiguraci mezi počítači, nezapomeňte nahradit localhost v atributu `address` [\<koncového bodu > \<elementu klienta >](../../configure-apps/file-schema/wcf/endpoint-of-client.md) a `clientBaseAddress` atributu\<[vazby](../../configure-apps/file-schema/wcf/bindings.md) > prvek prvku [\<wsDualHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md) s názvem příslušného počítače, jak je znázorněno v následujícím příkladu:
 
     ```xml
     <client>

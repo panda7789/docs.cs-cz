@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: Najde všechny uzly v oboru názvů (C#).'
+title: Jak najít všechny uzly v oboru názvů (C#)
 ms.date: 07/20/2015
 ms.assetid: 3a38b913-a53e-4d0e-a19d-8782bffd3364
-ms.openlocfilehash: f8a6f33084417e0dd489002eaa5d2de509e30d39
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 408f4207798720428d0dd3821d33fd3edf2f897e
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253786"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141192"
 ---
-# <a name="how-to-find-all-nodes-in-a-namespace-c"></a>Postupy: Najde všechny uzly v oboru názvů (C#).
+# <a name="how-to-find-all-nodes-in-a-namespace-c"></a>Jak najít všechny uzly v oboru názvů (C#)
 Můžete filtrovat podle oboru názvů každého elementu nebo atributu, aby bylo možné najít všechny uzly v daném oboru názvů.  
   
 ## <a name="example"></a>Příklad  
@@ -46,7 +46,7 @@ Nodes in the http://www.adventure-works.com namespace
 ## <a name="example"></a>Příklad  
  Soubor XML, ke kterému má přistup následující dotaz, obsahuje objednávky nákupu ve dvou různých oborech názvů. Dotaz vytvoří nový strom s pouze prvky v jednom z oborů názvů.  
   
- V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Konsolidované nákupní objednávky](./sample-xml-file-consolidated-purchase-orders.md).  
+ Tento příklad používá následující dokument XML: [vzorový soubor XML: konsolidované nákupní objednávky](./sample-xml-file-consolidated-purchase-orders.md).  
   
 ```csharp  
 XDocument cpo = XDocument.Load("ConsolidatedPurchaseOrders.xml");  

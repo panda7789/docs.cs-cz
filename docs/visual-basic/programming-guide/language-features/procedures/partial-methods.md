@@ -1,5 +1,5 @@
 ---
-title: Částečné metody (Visual Basic)
+title: Částečné metody
 ms.date: 07/20/2015
 f1_keywords:
 - vb.PartialMethod
@@ -11,36 +11,36 @@ helpviewer_keywords:
 - methods [Visual Basic], partial methods
 - inserting custom logic into code
 ms.assetid: 74b3368b-b348-44a0-a326-7d7dc646f4e9
-ms.openlocfilehash: 50d7f24fd9f854d36bb2ed48c2e41a996c29dfe8
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 7abf0565a985f1fb44fcf2bb91b9220d57a10f20
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64638888"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74352626"
 ---
 # <a name="partial-methods-visual-basic"></a>Částečné metody (Visual Basic)
-Částečné metody umožňují vývojářům k vložení vlastní logiky do kódu. Kód je obvykle součástí třídy generovaný návrhářem. Částečné metody jsou definovány v dílčí třídě vytvořený generátor kódu a běžně se používají k poskytování oznámení, něco se změnila. Umožňují vývojářům určit vlastní chování v reakci na změnu.  
+Partial methods enable developers to insert custom logic into code. Typically, the code is part of a designer-generated class. Partial methods are defined in a partial class that is created by a code generator, and they are commonly used to provide notification that something has been changed. They enable the developer to specify custom behavior in response to the change.  
   
- Návrhář generátoru kódu definuje podpis metody a jeden nebo více volání metody. Vývojáři jim pak můžou implementace metody, pokud je to vyžadováno k přizpůsobení chování generovaného kódu. Pokud je k dispozici žádná implementace, odeberou se volání metody kompilátorem, což vede k žádné dalším výkonnostním režiím.  
+ The designer of the code generator defines only the method signature and one or more calls to the method. Developers can then provide implementations for the method if they want to customize the behavior of the generated code. When no implementation is provided, calls to the method are removed by the compiler, resulting in no additional performance overhead.  
   
 ## <a name="declaration"></a>Deklarace  
- Generovaný kód označí definicí částečné metody tak, že klíčové slovo `Partial` na začátku řádku podpisu.  
+ The generated code marks the definition of a partial method by placing the keyword `Partial` at the start of the signature line.  
   
 ```vb  
 Partial Private Sub QuantityChanged()  
 End Sub  
 ```  
   
- Definice musí splňovat následující podmínky:  
+ The definition must meet the following conditions:  
   
-- Metoda musí být `Sub`, nikoli `Function`.  
+- The method must be a `Sub`, not a `Function`.  
   
-- Tělo metody musí být prázdná.  
+- The body of the method must be left empty.  
   
-- Modifikátor přístupu musí být `Private`.  
+- The access modifier must be `Private`.  
   
 ## <a name="implementation"></a>Implementace  
- Implementace sestává především z vyplnění textu částečné metody. Implementace je obvykle v samostatné částečné třídy z definice a je vytvořená systémem pro vývojáře, kteří chtějí rozšířit generovaného kódu.  
+ The implementation consists primarily of filling in the body of the partial method. The implementation is typically in a separate partial class from the definition, and is written by a developer who wants to extend the generated code.  
   
 ```vb  
 Private Sub QuantityChanged()  
@@ -48,25 +48,25 @@ Private Sub QuantityChanged()
 End Sub  
 ```  
   
- V předchozím příkladu přesně duplikuje podpisu v deklaraci, ale změny jsou možné. Zejména jiných modifikátory lze přidat, jako například `Overloads` nebo `Overrides`. Pouze jeden `Overrides` smí obsahovat modifikátor. Další informace o modifikátory metodu, najdete v části [příkaz Sub](../../../../visual-basic/language-reference/statements/sub-statement.md).  
+ The previous example duplicates the signature in the declaration exactly, but variations are possible. In particular, other modifiers can be added, such as `Overloads` or `Overrides`. Only one `Overrides` modifier is permitted. For more information about method modifiers, see [Sub Statement](../../../../visual-basic/language-reference/statements/sub-statement.md).  
   
 ## <a name="use"></a>Použití  
- Částečná metoda zavoláte jako jakýkoli jiný zavolal `Sub` postup. Pokud byl implementován metody, jsou vyhodnoceny argumenty a provede se tělo metody. Nezapomeňte však, že implementace částečné metody je volitelné. Pokud metoda není implementována, volání k němu nemá žádný vliv, a není u nich vyhodnoceno výrazy předané jako argumenty metody.  
+ You call a partial method as you would call any other `Sub` procedure. If the method has been implemented, the arguments are evaluated and the body of the method is executed. However, remember that implementing a partial method is optional. If the method is not implemented, a call to it has no effect, and expressions passed as arguments to the method are not evaluated.  
   
 ## <a name="example"></a>Příklad  
- Do souboru s názvem Product.Designer.vb definovat `Product` třídu, která má `Quantity` vlastnost.  
+ In a file named Product.Designer.vb, define a `Product` class that has a `Quantity` property.  
   
  [!code-vb[VbVbalrPartialMeths#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrPartialMeths/VB/Class1.vb#4)]  
   
- Do souboru s názvem Product.vb poskytnout implementaci pro `QuantityChanged`.  
+ In a file named Product.vb, provide an implementation for `QuantityChanged`.  
   
  [!code-vb[VbVbalrPartialMeths#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrPartialMeths/VB/Class1.vb#5)]  
   
- Nakonec do metody Main projektu deklarovat `Product` instance a zadejte počáteční hodnotu pro jeho `Quantity` vlastnost.  
+ Finally, in the Main method of a project, declare a `Product` instance and provide an initial value for its `Quantity` property.  
   
  [!code-vb[VbVbalrPartialMeths#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrPartialMeths/VB/Class1.vb#6)]  
   
- Okno se zprávou by měl vypadat, který se zobrazí tato zpráva:  
+ A message box should appear that displays this message:  
   
  `Quantity was changed to 100`  
   

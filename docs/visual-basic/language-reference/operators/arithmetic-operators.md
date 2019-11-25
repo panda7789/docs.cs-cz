@@ -1,36 +1,36 @@
 ---
-title: Aritmetické operátory (Visual Basic)
+title: Aritmetické operátory
 ms.date: 07/20/2015
 helpviewer_keywords:
 - operators [Visual Basic], arithmetic
 - arithmetic operators [Visual Basic]
 - math operators [Visual Basic]
 ms.assetid: 330178e0-a375-4742-b662-b3080c89fa54
-ms.openlocfilehash: da76f528ea6087fd973bd267c67952ce8687dc86
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 747d5d8882b55f323f82202eac0eba449992be3d
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61608408"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350207"
 ---
 # <a name="arithmetic-operators-visual-basic"></a>Aritmetické operátory (Visual Basic)
-Níže jsou aritmetické operátory definované v jazyce Visual Basic.  
+The following are the arithmetic operators defined in Visual Basic.  
   
- [^ – operátor](../../../visual-basic/language-reference/operators/exponentiation-operator.md)  
+ [Operátor ^](../../../visual-basic/language-reference/operators/exponentiation-operator.md)  
   
- [* – operátor](../../../visual-basic/language-reference/operators/multiplication-operator.md)  
+ [Operátor *](../../../visual-basic/language-reference/operators/multiplication-operator.md)  
   
- [/ – operátor](../../../visual-basic/language-reference/operators/floating-point-division-operator.md)  
+ [Operátor /](../../../visual-basic/language-reference/operators/floating-point-division-operator.md)  
   
  [Operátor \](../../../visual-basic/language-reference/operators/integer-division-operator.md)  
   
  [Operátor Mod](../../../visual-basic/language-reference/operators/mod-operator.md)  
   
- [+ – Operátor](../../../visual-basic/language-reference/operators/addition-operator.md) (jednočlenné a binární)  
+ [+ Operator](../../../visual-basic/language-reference/operators/addition-operator.md) (unary and binary)  
   
- [-– Operátor](../../../visual-basic/language-reference/operators/subtraction-operator.md) (jednočlenné a binární)  
+ [- Operator](../../../visual-basic/language-reference/operators/subtraction-operator.md) (unary and binary)  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
-- [Aritmetické operátory v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
+- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Arithmetic Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)

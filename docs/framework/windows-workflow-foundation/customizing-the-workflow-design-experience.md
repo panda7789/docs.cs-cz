@@ -4,30 +4,30 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - extending [WF], Workflow Designer
 ms.assetid: 98135077-0f5d-4d16-9337-01094e843537
-ms.openlocfilehash: 926edb4478551affa03619f44ee886d5eb591e4d
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 41be55391ae9481f6c2e4feb76443f7fb676b69d
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65637281"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141925"
 ---
 # <a name="customizing-the-workflow-design-experience"></a>Přizpůsobení prostředí pro návrh pracovního postupu
 
-Scénáře pro návrh vlastní aktivity a změna hostování [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] byly výrazně zjednodušené [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)]. Vývoj a nasazení jsou teď jednodušší a flexibilnější. Změny klíče infrastruktury je, že nové návrháře programovací model aktivity je postavená na Windows Presentation Foundation (WPF). To vám dává možnost definovat deklarativně návrháři aktivit a opětovným hostováním [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] v ostatních aplikacích s srovnávací snadné. Při opětovném hostování, editoru vlastních výrazů mohou být vytvořeny pro podporu technologie IntelliSense nebo doméně jednodušší výraz. Integrace s Windows Communication Foundation (WCF) se stal bezproblémové s využitím služeb pracovních postupů. Ke zvýšení návrhu v Návrháři postupu provádění se změněným hostováním prostředí čas můžete použít vlastní návrháři aktivit a položka stromu modelu.
+Scénáře pro návrh vlastní aktivity a pro opětovné hostování [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] byly významně zjednodušeny v .NET Framework 4. Vývoj a nasazení jsou teď jednodušší a pružnější. Změnou Key infrastrukturyu je, že nový programovací model návrháře aktivit je sestavený po Windows Presentation Foundation (WPF). Díky tomu je možné definovat návrháře aktivit deklarativně a znovu hostovat [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] v jiných aplikacích se srovnávacími možnostmi. Při opětovném hostování je možné vytvořit Editor vlastního výrazu pro podporu technologie IntelliSense nebo zjednodušené domény výrazů. Integrace se službou Windows Communication Foundation (WCF) se s využitím služeb pracovních postupů vyhladí. Návrháři vlastních aktivit a stromové položky modelu lze použít ke zlepšení doby návrhu v prostředích pro přehostování návrháře pracovních postupů.
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
  [Použití vlastních návrhářů a šablon aktivity](using-custom-activity-designers-and-templates.md)
 
- Popisuje, jak vytvořit novou vlastní aktivitu návrhářů a šablon.
+ Popisuje, jak vytvořit nové návrháře a šablony vlastní aktivity.
 
  [Změna hostování Návrháře postupu provádění](rehosting-the-workflow-designer.md)
 
- Popisuje, jak znovu hostovat [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] mimo aplikaci Visual Studio a jak zobrazit chyby ověření.
+ Popisuje, jak znovu hostovat [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] mimo sadu Visual Studio a jak zobrazit chyby ověřování.
 
  [Použití editoru vlastních výrazů](using-a-custom-expression-editor.md)
 
- Popisuje, jak implementovat editoru vlastních výrazů pomocí návrháře postupu provádění se změněným hostováním mimo sadu Visual Studio 2010.
+ Popisuje, jak implementovat Editor vlastního výrazu pro použití s Návrháři pracovního postupu, kteří se znovu hostují mimo sadu Visual Studio 2010.
 
 ## <a name="reference"></a>Odkaz
 

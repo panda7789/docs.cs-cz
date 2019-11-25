@@ -1,16 +1,16 @@
 ---
-title: 'Postupy: Dotazování obsahu textových souborů ve složce (LINQ) (C#)'
+title: 'Postupy: vytvoření dotazu na obsah textových souborů ve složce (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: f5b4dce7-1a34-4eb4-9bf1-60d5bdda264c
-ms.openlocfilehash: ad0be3b4206d0aca649987bc3fbbc26102de77c4
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 41be9aadcea3999cb7ea8c01460e72ff99e01765
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69592677"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74140951"
 ---
-# <a name="how-to-query-the-contents-of-text-files-in-a-folder-linq-c"></a>Postupy: Dotazování obsahu textových souborů ve složce (LINQ) (C#)
-Tento příklad ukazuje, jak se dotázat na všechny soubory v zadaném stromovém stromu, otevřít každý soubor a zkontrolovat jeho obsah. Tento typ techniky lze použít k vytvoření indexů nebo zpětných indexů obsahu stromu adresáře. V tomto příkladu je provedeno jednoduché vyhledávání řetězců. Složitější typy porovnávání vzorů však mohou být provedeny s regulárním výrazem. Další informace najdete v tématu [jak: Kombinovat dotazy LINQ s regulárními výrazyC#(](./how-to-combine-linq-queries-with-regular-expressions.md)).  
+# <a name="how-to-query-the-contents-of-text-files-in-a-folder-linq-c"></a>Postupy: vytvoření dotazu na obsah textových souborů ve složce (LINQ) (C#)
+Tento příklad ukazuje, jak se dotázat na všechny soubory v zadaném stromovém stromu, otevřít každý soubor a zkontrolovat jeho obsah. Tento typ techniky lze použít k vytvoření indexů nebo zpětných indexů obsahu stromu adresáře. V tomto příkladu je provedeno jednoduché vyhledávání řetězců. Složitější typy porovnávání vzorů však mohou být provedeny s regulárním výrazem. Další informace najdete v tématu [postup kombinování dotazů LINQ s regulárními výrazyC#()](./how-to-combine-linq-queries-with-regular-expressions.md).  
   
 ## <a name="example"></a>Příklad  
   
@@ -71,7 +71,7 @@ class QueryContents
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
-Vytvořte projekt C# konzolové aplikace se `using` direktivami pro obory názvů System. Linq a System.IO.
+Vytvořte projekt C# konzolové aplikace s direktivami `using` pro obory názvů System. Linq a System.IO.
   
 ## <a name="see-also"></a>Viz také:
 

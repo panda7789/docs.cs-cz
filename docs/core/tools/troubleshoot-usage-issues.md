@@ -3,12 +3,12 @@ title: Řešení potíží s používáním nástrojů .NET Core
 description: Seznamte se s běžnými problémy při používání nástrojů .NET Core a možných řešení.
 author: kdollard
 ms.date: 09/23/2019
-ms.openlocfilehash: fc6c520ab57235c78148a6b77717cbd80a989451
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: df896405a122050acba220923eee58e87e0b75b6
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72318291"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74282503"
 ---
 # <a name="troubleshoot-net-core-tool-usage-issues"></a>Řešení potíží s používáním nástrojů .NET Core
 
@@ -25,7 +25,7 @@ Když se nepovede spustit nástroj .NET Core, pravděpodobně došlo k jednomu z
 
 Pokud se spustitelný soubor nenajde, zobrazí se zpráva podobná následující:
 
-```
+```console
 Could not execute because the specified command or file was not found.
 Possible reasons for this include:
   * You misspelled a built-in dotnet command.
@@ -44,12 +44,12 @@ Název spustitelného souboru určuje způsob, jakým se nástroj vyvolá. Násl
 
     Globální nástroje mohou být nainstalovány ve výchozím adresáři nebo v určitém umístění. Výchozí adresáře jsou:
 
-    | JINÉHO          | Cesta                          |
+    | Operační systém          | Cesta                          |
     |-------------|-------------------------------|
     | Linux/macOS | `$HOME/.dotnet/tools`         |
     | Windows     | `%USERPROFILE%\.dotnet\tools` |
 
-    Pokud se pokoušíte spustit globální nástroj, ověřte, že proměnná prostředí `PATH` na vašem počítači obsahuje cestu, kam jste nainstalovali globální nástroj a že je spustitelný soubor v této cestě.
+    Pokud se pokoušíte spustit globální nástroj, ověřte, že proměnná prostředí `PATH` v počítači obsahuje cestu, kam jste nainstalovali globální nástroj a že je spustitelný soubor v této cestě.
 
     .NET Core CLI se pokusí přidat výchozí umístění do proměnné prostředí PATH při prvním použití. Existuje však několik scénářů, kdy umístění nemusí být přidáno do cesty automaticky, takže budete muset upravit cestu pro konfiguraci v následujících případech:
 
@@ -95,13 +95,13 @@ dotnet --info
 
 Pokud si myslíte, že by měl nástroj podporovat verzi modulu runtime, kterou máte aktuálně nainstalovanou, můžete se obrátit na autora nástroje a zjistit, jestli můžou aktualizovat číslo verze nebo více cílů. Jakmile znovu zkompilujete a znovu publikujete balíček nástrojů do NuGet s aktualizovaným číslem verze, můžete kopii aktualizovat. I když k tomu nedojde, nejrychlejší řešení pro vás je instalace verze modulu runtime, která by fungovala s nástrojem, který se pokoušíte spustit. Pokud si chcete stáhnout specifickou verzi modulu runtime .NET Core, navštivte [stránku ke stažení pro .NET Core](https://dotnet.microsoft.com/download/dotnet-core).
 
-Pokud nainstalujete .NET Core SDK do jiného než výchozího umístění, je nutné nastavit proměnnou prostředí `DOTNET_ROOT` do adresáře, který obsahuje spustitelný soubor `dotnet`.
+Pokud nainstalujete .NET Core SDK do jiného než výchozího umístění, je třeba nastavit proměnnou prostředí `DOTNET_ROOT` na adresář, který obsahuje `dotnet` spustitelný soubor.
 
 ## <a name="net-core-tool-installation-fails"></a>Instalace nástroje .NET Core Tool se nezdařila
 
 Existuje několik důvodů, proč nemusí dojít k selhání instalace globálního nebo místního nástroje .NET Core. Pokud se instalace nástroje nezdařila, zobrazí se zpráva podobná následující:
 
-```
+```console
 Tool '{0}' failed to install. This failure may have been caused by:
 
 * You are attempting to install a preview release and did not use the --version option to specify the version.
@@ -129,7 +129,7 @@ ID balíčků se aktualizují, takže budete muset přejít na nové ID balíčk
 
 ### <a name="preview-releases"></a>Verze Preview
 
-* Pokoušíte se nainstalovat verzi Preview a nepoužíváte k určení verze možnost `--version`.
+* Pokoušíte se nainstalovat verzi Preview a nepoužili jste k určení verze možnost `--version`.
 
 Nástroje .NET Core, které jsou ve verzi Preview, se musí zadat s částí názvu, aby označovaly, že jsou ve verzi Preview. Nemusíte zahrnovat celou verzi Preview. Za předpokladu, že čísla verzí jsou v očekávaném formátu, můžete použít něco podobného jako v následujícím příkladu:
 
@@ -138,7 +138,7 @@ dotnet tool install -g --version 1.1.0-pre <toolName>
 ```
 
 > [!NOTE]
-> Tým .NET Core CLI plánuje přidat přepínač `--preview` v budoucí verzi, aby bylo snazší.
+> Tým .NET Core CLI plánuje přidat přepínač `--preview` v budoucí verzi, aby to zjednodušil.
 
 ### <a name="package-isnt-a-net-core-tool"></a>Balíček není nástroj .NET Core.
 
@@ -152,7 +152,7 @@ Pokud se pokusíte nainstalovat balíček NuGet, který je regulárním balíčk
 
 * Požadovaný informační kanál NuGet není k dispozici, možná kvůli problému s připojením k Internetu.
 
-Instalace nástroje vyžaduje přístup k informačnímu kanálu NuGet, který obsahuje balíček nástroje. Dojde k chybě, pokud informační kanál není k dispozici. Můžete změnit kanály pomocí `nuget.config`, požádat o konkrétní soubor `nuget.config` nebo zadat další kanály s přepínačem `--add-source`. Ve výchozím nastavení vyvolá NuGet chybu pro jakýkoliv informační kanál, který se nemůže připojit. Příznak `--ignore-failed-sources` může přeskočit tyto nedostupné zdroje.
+Instalace nástroje vyžaduje přístup k informačnímu kanálu NuGet, který obsahuje balíček nástroje. Dojde k chybě, pokud informační kanál není k dispozici. Můžete měnit informační kanály pomocí `nuget.config`, požadovat konkrétní `nuget.config` soubor nebo zadat další kanály s přepínačem `--add-source`. Ve výchozím nastavení vyvolá NuGet chybu pro jakýkoliv informační kanál, který se nemůže připojit. Příznak `--ignore-failed-sources` může přeskočit tyto nedostupné zdroje.
 
 ### <a name="package-id-incorrect"></a>ID balíčku je nesprávné.
 

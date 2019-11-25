@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: vytvořeníC++ sjednocení jazyka C pomocí atributů (Visual Basic)'
+title: 'How to: Create a C-C++ Union by Using Attributes'
 ms.date: 07/20/2015
 ms.assetid: 9352a7e4-c0da-4d07-aa14-55ed43736fcb
-ms.openlocfilehash: 6595d6477d9d0838745e19eb2a44d26f6e534c70
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: acb8dc781e2872ae46e5aa058a98b3dd98f3e064
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524270"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74349502"
 ---
-# <a name="how-to-create-a-cc-union-by-using-attributes-visual-basic"></a>Postupy: vytvoření C/C++ sjednocení pomocí atributů (Visual Basic)
+# <a name="how-to-create-a-cc-union-by-using-attributes-visual-basic"></a>How to: Create a C/C++ Union by Using Attributes (Visual Basic)
 
-Pomocí atributů můžete přizpůsobit způsob, jakým jsou struktury rozloženy v paměti. Můžete například vytvořit, co se říká sjednocení v C/C++ pomocí atributů `StructLayout(LayoutKind.Explicit)` a `FieldOffset`.
+By using attributes you can customize how structs are laid out in memory. For example, you can create what is known as a union in C/C++ by using the `StructLayout(LayoutKind.Explicit)` and `FieldOffset` attributes.
 
 ## <a name="example"></a>Příklad
 
-V tomto segmentu kódu se všechna pole `TestUnion` začínají na stejném místě v paměti.
+In this code segment, all of the fields of `TestUnion` start at the same location in memory.
 
 ```vb
 ' Add an Imports statement for System.Runtime.InteropServices.
@@ -39,7 +39,7 @@ End Structure
 
 ## <a name="example"></a>Příklad
 
-Následuje další příklad, kdy se pole spouštějí v různých explicitních nastaveních umístění.
+The following is another example where fields start at different explicitly set locations.
 
 ```vb
 ' Add an Imports statement for System.Runtime.InteropServices.
@@ -67,15 +67,15 @@ Structure TestExplicit
  End Structure
 ```
 
-Dvě celočíselná pole, `i1` a `i2`, sdílejí stejná umístění v paměti jako `lg`. Tento druh řízení nad rozložením struktury je užitečný při volání platformy.
+The two integer fields, `i1` and `i2`, share the same memory locations as `lg`. This sort of control over struct layout is useful when using platform invocation.
 
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Reflection>
 - <xref:System.Attribute>
-- [Průvodce programováním Visual Basic](../../../../visual-basic/programming-guide/index.md)
+- [Visual Basic Programming Guide](../../../../visual-basic/programming-guide/index.md)
 - [Atributy](../../../../standard/attributes/index.md)
-- [Reflexe (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)
-- [Atributy (Visual Basic)](../../../../visual-basic/language-reference/attributes.md)
-- [Vytváření vlastních atributů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)
-- [Přístup k atributům pomocí reflexe (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)
+- [Reflection (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)
+- [Attributes (Visual Basic)](../../../../visual-basic/language-reference/attributes.md)
+- [Creating Custom Attributes (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)
+- [Accessing Attributes by Using Reflection (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)

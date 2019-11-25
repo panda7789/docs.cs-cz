@@ -8,38 +8,36 @@ helpviewer_keywords:
 ms.assetid: e2e1f8c4-e7b4-467d-9a66-13c90861221d
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 283b3b1aa0d56b50b6f9e67b66de3e0b68ae2331
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e17fa07fe2dd19cdcd03bc923940abfef886219c
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61970947"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283125"
 ---
 # <a name="exception-class-and-properties"></a>Třída a vlastnosti výjimky
 
-<xref:System.Exception> Třída je základní třída, ze kterého dědí výjimky. Například <xref:System.InvalidCastException> hierarchie tříd je takto:
+Třída <xref:System.Exception> je základní třídou, ze které dědí výjimky. Například hierarchie třídy <xref:System.InvalidCastException> je následující:
 
-```
-Object
-  Exception
-    SystemException
-       InvalidCastException
-```
+<xref:System.Object>\
+&nbsp;&nbsp;<xref:System.Exception>\
+&nbsp;&nbsp;&nbsp;&nbsp;<xref:System.SystemException>\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<xref:System.InvalidCastException>
 
-<xref:System.Exception> Třída má následující vlastnosti, které usnadňují porozumění výjimku jednodušší.
+Třída <xref:System.Exception> má následující vlastnosti, které usnadňují porozumění výjimce.
 
 | Název vlastnosti | Popis |
 | ------------- | ----------- |
-| <xref:System.Exception.Data> | <xref:System.Collections.IDictionary> Libovolná data, která obsahuje v párech klíč hodnota. |
-| <xref:System.Exception.HelpLink> | Adresa URL (nebo URN) může obsahovat soubor nápovědy, která poskytuje podrobné informace o příčině výjimky. |
-| <xref:System.Exception.InnerException> | Tato vlastnost slouží k vytvoření a zachovat řadu výjimek během zpracování výjimek. Můžete ho vytvořit novou výjimku, která obsahuje dříve zachycené výjimky. Původní výjimku můžete zaznamenat druhou výjimkou v <xref:System.Exception.InnerException> vlastnosti, což umožňuje kód, který zpracovává druhou výjimkou zjistit další informace. Předpokládejme například, že měl odpovídající metodu, která přijímá argument, který je v nesprávném formátu.  Kód se pokusí načíst argument, ale dojde k výjimce. Metoda zachytí výjimku a vyvolá výjimku <xref:System.FormatException>. Pokud chcete zlepšit volajícího schopnost určit důvod, proč je vyvolána výjimka, je někdy žádoucí, aby metoda zachytit výjimku vyvolanou pomocná rutina a poté vyvolají výjimku více naznačuje, že došlo k chybě. Nelze vytvořit nové a lépe vystihuje výjimky, kde lze nastavit odkaz na vnitřní výjimku v původní výjimky. Toto lépe vystihuje výjimky mohou být vyvolány pak volajícímu. Všimněte si, že tuto funkci, můžete vytvořit řadu propojené výjimek, který končí výjimku, která byla vyvolána jako první. |
-| <xref:System.Exception.Message> | Obsahuje podrobné informace o příčině výjimky.
-| <xref:System.Exception.Source> | Získá nebo nastaví název aplikace nebo objekt, který způsobuje chybu. |
-| <xref:System.Exception.StackTrace>| Obsahuje trasování zásobníku, který slouží k určení, kde došlo k chybě. Trasování zásobníku zahrnuje zdrojový soubor název a číslo řádku, pokud informace o ladění je k dispozici. |
+| <xref:System.Exception.Data> | <xref:System.Collections.IDictionary>, který uchovává libovolná data v páru klíč-hodnota. |
+| <xref:System.Exception.HelpLink> | Může uchovávat adresu URL (nebo název URN) souboru s nápovědu, který poskytuje rozsáhlé informace o příčině výjimky. |
+| <xref:System.Exception.InnerException> | Tato vlastnost se dá použít k vytvoření a zachování řady výjimek během zpracování výjimek. Můžete ji použít k vytvoření nové výjimky, která obsahuje dříve zachycené výjimky. Původní výjimku lze zachytit druhou výjimkou ve vlastnosti <xref:System.Exception.InnerException>, což umožňuje, aby kód, který zpracovává druhou výjimku, kontroloval Další informace. Předpokládejme například, že máte metodu, která přijímá argument, který je nesprávně naformátován.  Kód se pokusí přečíst argument, ale je vyvolána výjimka. Metoda zachytí výjimku a vyvolá <xref:System.FormatException>. Aby bylo možné vylepšit schopnost volajícího určit důvod vyvolání výjimky, je někdy žádoucí, aby metoda zachytit výjimku vyvolanou pomocnou rutinou a poté vyvolat výjimku podrobnější informace o chybě, k níž došlo. Je možné vytvořit novou a smysluplnou výjimku, kde odkaz na vnitřní výjimku lze nastavit na původní výjimku. Tato smysluplná výjimka může být vyvolána volajícímu. Všimněte si, že tato funkce umožňuje vytvořit řadu propojených výjimek, které končí výjimkou, která byla vyvolána jako první. |
+| <xref:System.Exception.Message> | Poskytuje podrobnosti o příčině výjimky.
+| <xref:System.Exception.Source> | Získá nebo nastaví název aplikace nebo objektu, který způsobuje chybu. |
+| <xref:System.Exception.StackTrace>| Obsahuje trasování zásobníku, které lze použít k určení, kde došlo k chybě. Trasování zásobníku obsahuje název zdrojového souboru a číslo řádku programu, pokud jsou k dispozici informace o ladění. |
 
-Většina tříd, které dědí <xref:System.Exception> implementovat další členy nebo poskytnutí dalších funkcí; jednoduše dědí z <xref:System.Exception>. Proto nejdůležitější informace o výjimce najdete v hierarchii tříd výjimek, název výjimky a informace obsažené ve výjimce.
+Většina tříd, které dědí z <xref:System.Exception> neimplementuje další členy ani neposkytují další funkce. jednoduše dědí z <xref:System.Exception>. Proto nejdůležitější informace pro výjimku lze nalézt v hierarchii tříd výjimek, název výjimky a informace obsažené ve výjimce.
 
-Doporučujeme, abyste throw a catch pouze objekty, které jsou odvozeny z <xref:System.Exception>, ale může vyvolat libovolný objekt, který je odvozen od <xref:System.Object> třídu jako výjimku. Všimněte si, že nepodporují všechny jazyky vyvolávání a zachycování objekty, které nejsou odvozeny z <xref:System.Exception>.
+Doporučujeme, abyste vyvolali a zachytával pouze objekty, které jsou odvozeny z <xref:System.Exception>, ale můžete vyvolat libovolný objekt, který je odvozen od <xref:System.Object> třídy jako výjimka. Všimněte si, že ne všechny jazyky podporují vyvolávání a zachycování objektů, které nejsou odvozeny od <xref:System.Exception>.
   
 ## <a name="see-also"></a>Viz také:
 

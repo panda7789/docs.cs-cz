@@ -1,5 +1,5 @@
 ---
-title: Omezení parametrů typu – C# Průvodce programováním
+title: Constraints on type parameters - C# Programming Guide
 ms.custom: seodec18
 ms.date: 04/12/2018
 helpviewer_keywords:
@@ -7,111 +7,111 @@ helpviewer_keywords:
 - type constraints [C#]
 - type parameters [C#], constraints
 - unbound type parameter [C#]
-ms.openlocfilehash: 8159f24e92608677cc832448fd2d79a1846ab12a
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: d05307735506db0f0e4abab067334e4f0466ee6a
+ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739220"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74204643"
 ---
-# <a name="constraints-on-type-parameters-c-programming-guide"></a>Omezení parametrů typu (C# Průvodce programováním)
+# <a name="constraints-on-type-parameters-c-programming-guide"></a>Constraints on type parameters (C# Programming Guide)
 
-Omezení informují kompilátor o možnostech, které musí mít argument typu. Bez omezení může být argumentem typu libovolný typ. Kompilátor může předpokládat pouze členy <xref:System.Object?displayProperty=nameWithType>, což je maximální základní třída pro libovolný typ rozhraní .NET. Další informace najdete v tématu [Proč použít omezení](#why-use-constraints). Pokud se klientský kód pokusí vytvořit instanci vaší třídy pomocí typu, který není povolen omezením, výsledkem je chyba při kompilaci. Omezení jsou určena pomocí klíčového slova `where` kontextové. V následující tabulce jsou uvedeny sedm typů omezení:
+Constraints inform the compiler about the capabilities a type argument must have. Without any constraints, the type argument could be any type. The compiler can only assume the members of <xref:System.Object?displayProperty=nameWithType>, which is the ultimate base class for any .NET type. For more information, see [Why use constraints](#why-use-constraints). If client code tries to instantiate your class by using a type that is not allowed by a constraint, the result is a compile-time error. Constraints are specified by using the `where` contextual keyword. The following table lists the seven types of constraints:
 
-|Jedinečn|Popis|
+|Constraint|Popis|
 |----------------|-----------------|
-|`where T : struct`|Argument typu musí být typ hodnoty, která není null. Informace o typech hodnot s možnou hodnotou null naleznete v tématu [hodnoty s možnou hodnotou null](../../language-reference/builtin-types/nullable-value-types.md).|
-|`where T : class`|Argument typu musí být typ odkazu. Toto omezení platí také pro libovolnou třídu, rozhraní, delegáta nebo typ pole.|
-|`where T : notnull`|Argument typu musí být typ, který nemůže mít hodnotu null. Argumentem může být typ odkazu, který neumožňuje hodnotu C# null, v 8,0 nebo novějším, nebo typ hodnoty, která není null. Toto omezení platí také pro libovolnou třídu, rozhraní, delegáta nebo typ pole.|
-|`where T : unmanaged`|Argument typu musí být [nespravovaný typ](../../language-reference/builtin-types/unmanaged-types.md).|
-|`where T : new()`|Argument typu musí mít veřejný konstruktor bez parametrů. Při použití společně s jinými omezeními je nutné zadat omezení `new()` jako poslední.|
-|*název základní třídy `where T :`\<*|Argument typu musí být nebo odvozen ze zadané základní třídy.|
-|*název rozhraní `where T :`\<*|Argument typu musí být nebo implementovat zadané rozhraní. Je možné zadat více omezení rozhraní. Omezení rozhraní může být také obecné.|
-|`where T : U`|Argument typu zadaný pro T musí být nebo odvozen od argumentu zadaného pro U.|
+|`where T : struct`|The type argument must be a non-nullable value type. For information about nullable value types, see [Nullable value types](../../language-reference/builtin-types/nullable-value-types.md). Because all value types have an accessible parameterless constructor, the `struct` constraint implies the `new()` constraint and can't be combined with the `new()` constraint. You also cannot combine the `struct` constraint with the `unmanaged` constraint.|
+|`where T : class`|The type argument must be a reference type. This constraint applies also to any class, interface, delegate, or array type.|
+|`where T : notnull`|The type argument must be a non-nullable type. The argument can be a non-nullable reference type in C# 8.0 or later, or a not nullable value type. This constraint applies also to any class, interface, delegate, or array type.|
+|`where T : unmanaged`|The type argument must be a non-nullable [unmanaged type](../../language-reference/builtin-types/unmanaged-types.md). The `unmanaged` constraint implies the `struct` constraint and can't be combined with either the `struct` or `new()` constraints.|
+|`where T : new()`|The type argument must have a public parameterless constructor. When used together with other constraints, the `new()` constraint must be specified last. The `new()` constraint can't be combined with the `struct` and `unmanaged` constraints.|
+|`where T :` *\<base class name>*|The type argument must be or derive from the specified base class.|
+|`where T :` *\<interface name>*|The type argument must be or implement the specified interface. Multiple interface constraints can be specified. The constraining interface can also be generic.|
+|`where T : U`|The type argument supplied for T must be or derive from the argument supplied for U.|
 
-Některá omezení se vzájemně vylučují. Všechny typy hodnot musí mít přístupný konstruktor bez parametrů. Omezení `struct` implikuje omezení `new()` a omezení `new()` nelze kombinovat s omezením `struct`. Omezení `unmanaged` implikuje omezení `struct`. Omezení `unmanaged` nelze kombinovat s omezením `struct` nebo `new()`.
+## <a name="why-use-constraints"></a>Why use constraints
 
-## <a name="why-use-constraints"></a>Proč použít omezení
-
-Omezením parametru typu zvýšíte počet povolených operací a volání metod do těch, které jsou podporovány typem omezení a všemi typy v její hierarchii dědičnosti. Pokud navrhujete obecné třídy nebo metody, pokud budete provádět jakoukoli operaci u obecných členů nad rámec jednoduchého přiřazení nebo volání jakékoli metody, které <xref:System.Object?displayProperty=nameWithType>nepodporuje, budete muset použít omezení pro parametr typu. Například omezení základní třídy říká kompilátoru, že jako argumenty typu budou použity pouze objekty tohoto typu nebo odvozené z tohoto typu. Jakmile má kompilátor tuto záruku, může dovolit volání metod tohoto typu v obecné třídě. Následující příklad kódu ukazuje funkce, které lze přidat do `GenericList<T>` třídy (v [úvodu k obecným](../../../standard/generics/index.md)) pomocí omezení základní třídy.
+By constraining the type parameter, you increase the number of allowable operations and method calls to those supported by the constraining type and all types in its inheritance hierarchy. When you design generic classes or methods, if you'll be performing any operation on the generic members beyond simple assignment or calling any methods not supported by <xref:System.Object?displayProperty=nameWithType>, you'll have to apply constraints to the type parameter. For example, the base class constraint tells the compiler that only objects of this type or derived from this type will be used as type arguments. Once the compiler has this guarantee, it can allow methods of that type to be called in the generic class. The following code example demonstrates the functionality you can add to the `GenericList<T>` class (in [Introduction to Generics](../../../standard/generics/index.md)) by applying a base class constraint.
 
 [!code-csharp[using the class and struct constraints](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#9)]
 
-Omezení umožňuje, aby obecná třída používala vlastnost `Employee.Name`. Omezení určuje, že všechny položky typu `T` jsou zaručeny buď objekt `Employee` nebo objekt, který dědí z `Employee`.
+The constraint enables the generic class to use the `Employee.Name` property. The constraint specifies that all items of type `T` are guaranteed to be either an `Employee` object or an object that inherits from `Employee`.
 
-U stejného parametru typu lze použít více omezení a samotné omezení mohou být obecné typy, a to takto:
+Multiple constraints can be applied to the same type parameter, and the constraints themselves can be generic types, as follows:
 
 [!code-csharp[using the class and struct constraints](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#10)]
 
-Při použití omezení `where T : class` Vyhněte se operátorům `==` a `!=` na parametru typu, protože tyto operátory budou testovány pouze pro referenční identitu, nikoli pro rovnost hodnot. K tomuto chování dochází, i když jsou tyto operátory přetíženy v typu, který se používá jako argument. Následující kód ilustruje tento bod; výstup je false, i když <xref:System.String> třída přetěžuje operátor `==`.
+When applying the `where T : class` constraint, avoid the `==` and `!=` operators on the type parameter because these operators will test for reference identity only, not for value equality. This behavior occurs even if these operators are overloaded in a type that is used as an argument. The following code illustrates this point; the output is false even though the <xref:System.String> class overloads the `==` operator.
 
 [!code-csharp[using the class and struct constraints](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#11)]
 
-Kompilátor ví pouze, že `T` je odkazový typ v době kompilace a musí používat výchozí operátory, které jsou platné pro všechny typy odkazů. Pokud je nutné testovat rovnost hodnot, doporučuje se použít také omezení `where T : IEquatable<T>` nebo `where T : IComparable<T>` a implementovat rozhraní v jakékoli třídě, která bude použita k vytvoření obecné třídy.
+The compiler only knows that `T` is a reference type at compile time and must use the default operators that are valid for all reference types. If you must test for value equality, the recommended way is to also apply the `where T : IEquatable<T>` or `where T : IComparable<T>` constraint and implement the interface in any class that will be used to construct the generic class.
 
-## <a name="constraining-multiple-parameters"></a>Omezení více parametrů
+## <a name="constraining-multiple-parameters"></a>Constraining multiple parameters
 
-Můžete použít omezení na více parametrů a více omezení na jeden parametr, jak je znázorněno v následujícím příkladu:
+You can apply constraints to multiple parameters, and multiple constraints to a single parameter, as shown in the following example:
 
 [!code-csharp[using the class and struct constraints](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#12)]
 
-## <a name="unbounded-type-parameters"></a>Neohraničené parametry typu
+## <a name="unbounded-type-parameters"></a>Unbounded type parameters
 
- Parametry typu bez omezení, jako například T ve veřejné třídě `SampleClass<T>{}`, se nazývají neohraničené parametry typu. Neohraničené parametry typu mají následující pravidla:
+ Type parameters that have no constraints, such as T in public class `SampleClass<T>{}`, are called unbounded type parameters. Unbounded type parameters have the following rules:
 
-- Operátory `!=` a `==` nelze použít, protože není nijak zaručeno, že konkrétní argument typu bude podporovat tyto operátory.
-- Lze je převést na nebo z `System.Object` nebo explicitně převést na libovolný typ rozhraní.
-- Můžete je porovnat s [hodnotou null](../../language-reference/keywords/null.md). Pokud je nevázaný parametr porovnán s `null`, porovnávání vždy vrátí hodnotu false, pokud je argumentem typu hodnotový typ.
+- The `!=` and `==` operators can't be used because there's no guarantee that the concrete type argument will support these operators.
+- They can be converted to and from `System.Object` or explicitly converted to any interface type.
+- You can compare them to [null](../../language-reference/keywords/null.md). If an unbounded parameter is compared to `null`, the comparison will always return false if the type argument is a value type.
 
-## <a name="type-parameters-as-constraints"></a>Parametry typu jako omezení
+## <a name="type-parameters-as-constraints"></a>Type parameters as constraints
 
-Použití parametru obecného typu jako omezení je užitečné, pokud členská funkce s vlastním parametrem typu musí omezit tento parametr na parametr typu nadřazeného typu, jak je znázorněno v následujícím příkladu:
+The use of a generic type parameter as a constraint is useful when a member function with its own type parameter has to constrain that parameter to the type parameter of the containing type, as shown in the following example:
 
 [!code-csharp[using the class and struct constraints](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#13)]
 
-V předchozím příkladu `T` je omezení typu v kontextu metody `Add` a neohraničený parametr typu v kontextu třídy `List`.
+In the previous example, `T` is a type constraint in the context of the `Add` method, and an unbounded type parameter in the context of the `List` class.
 
-Parametry typu lze také použít jako omezení v definicích obecných tříd. Parametr typu musí být deklarovaný v lomených závorkách spolu s jinými parametry typu:
+Type parameters can also be used as constraints in generic class definitions. The type parameter must be declared within the angle brackets together with any other type parameters:
 
 [!code-csharp[using the class and struct constraints](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#14)]
 
-Užitečnost parametrů typu jako omezení s obecnými třídami je omezená, protože kompilátor nemůže předpokládat nic o parametru typu s tím rozdílem, že je odvozen od `System.Object`. Použijte parametry typu jako omezení pro obecné třídy ve scénářích, ve kterých chcete vynutit vztah dědičnosti mezi dvěma parametry typu.
+The usefulness of type parameters as constraints with generic classes is limited because the compiler can assume nothing about the type parameter except that it derives from `System.Object`. Use type parameters as constraints on generic classes in scenarios in which you want to enforce an inheritance relationship between two type parameters.
 
-## <a name="notnull-constraint"></a>Omezení NotNull
+## <a name="notnull-constraint"></a>NotNull constraint
 
-Počínaje C# 8,0 můžete použít omezení `notnull` k určení, že argument typu musí být typ hodnoty, která není null, nebo odkaz na typ, který nepovoluje hodnotu null. Omezení `notnull` lze použít pouze v kontextu `nullable enable`. Kompilátor vygeneruje upozornění, pokud přidáte omezení `notnull` v oblivious kontextu s možnou hodnotou null. 
+Beginning with C# 8.0, you can use the `notnull` constraint to specify that the type argument must be a non-nullable value type or non-nullable reference type. The `notnull` constraint can only be used in a `nullable enable` context. The compiler generates a warning if you add the `notnull` constraint in a nullable oblivious context. 
 
-Na rozdíl od jiných omezení, pokud argument typu narušuje omezení `notnull`, kompilátor vygeneruje upozornění, když je tento kód zkompilován v kontextu `nullable enable`. Pokud je kód zkompilován v oblivious kontextu s možnou hodnotou null, kompilátor negeneruje žádná upozornění ani chyby.
+Unlike other constraints, when a type argument violates the `notnull` constraint, the compiler generates a warning when that code is compiled in a `nullable enable` context. If the code is compiled in a nullable oblivious context, the compiler doesn't generate any warnings or errors.
 
-## <a name="unmanaged-constraint"></a>Nespravované omezení
+## <a name="unmanaged-constraint"></a>Unmanaged constraint
 
-Počínaje C# 7,3 můžete použít omezení `unmanaged` k určení, že parametr typu musí být [nespravovaný typ](../../language-reference/builtin-types/unmanaged-types.md). Omezení `unmanaged` umožňuje psát opakovaně použitelné rutiny pro práci s typy, které mohou být manipulovány jako bloky paměti, jak je znázorněno v následujícím příkladu:
+Beginning with C# 7.3, you can use the `unmanaged` constraint to specify that the type parameter must be a non-nullable [unmanaged type](../../language-reference/builtin-types/unmanaged-types.md). The `unmanaged` constraint enables you to write reusable routines to work with types that can be manipulated as blocks of memory, as shown in the following example:
 
 [!code-csharp[using the unmanaged constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#15)]
 
-Předchozí metoda musí být zkompilována v kontextu `unsafe`, protože používá operátor `sizeof` u typu, který není známý jako vestavěný typ. Bez omezení `unmanaged` není operátor `sizeof` k dispozici.
+The preceding method must be compiled in an `unsafe` context because it uses the `sizeof` operator on a type not known to be a built-in type. Without the `unmanaged` constraint, the `sizeof` operator is unavailable.
 
-## <a name="delegate-constraints"></a>Omezení delegování
+The `unmanaged` constraint implies the `struct` constraint and can't be combined with it. Because the `struct` constraint implies the `new()` constraint, the `unmanaged` constraint can't be combined with the `new()` constraint as well.
 
-Počínaje C# 7,3 můžete také použít <xref:System.Delegate?displayProperty=nameWithType> nebo <xref:System.MulticastDelegate?displayProperty=nameWithType> jako omezení základní třídy. CLR vždy povoluje toto omezení, ale C# jazyk ho nepovolil. Omezení `System.Delegate` umožňuje napsat kód, který spolupracuje s delegáty způsobem, který je typově bezpečný. Následující kód definuje metodu rozšíření, která kombinuje dva delegáty, pokud jsou stejného typu:
+## <a name="delegate-constraints"></a>Delegate constraints
+
+Also beginning with C# 7.3, you can use <xref:System.Delegate?displayProperty=nameWithType> or <xref:System.MulticastDelegate?displayProperty=nameWithType> as a base class constraint. The CLR always allowed this constraint, but the C# language disallowed it. The `System.Delegate` constraint enables you to write code that works with delegates in a type-safe manner. The following code defines an extension method that combines two delegates provided they're the same type:
 
 [!code-csharp[using the delegate constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#16)]
 
-K kombinování delegátů, kteří mají stejný typ, můžete použít výše uvedenou metodu:
+You can use the above method to combine delegates that are the same type:
 
 [!code-csharp[using the unmanaged constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#17)]
 
-Pokud Odkomentujete poslední řádek, nebude zkompilován. `first` i `test` jsou typy delegátů, ale jedná se o různé typy delegátů.
+If you uncomment the last line, it won't compile. Both `first` and `test` are delegate types, but they're different delegate types.
 
-## <a name="enum-constraints"></a>Omezení výčtu
+## <a name="enum-constraints"></a>Enum constraints
 
-Počínaje C# 7,3 můžete také zadat typ <xref:System.Enum?displayProperty=nameWithType> jako omezení základní třídy. CLR vždy povoluje toto omezení, ale C# jazyk ho nepovolil. Obecné typy pomocí `System.Enum` poskytují programové programování pro ukládání výsledků do mezipaměti pomocí statických metod v `System.Enum`. Následující ukázka vyhledá všechny platné hodnoty pro typ výčtu a potom vytvoří slovník, který tyto hodnoty mapuje na jeho řetězcovou reprezentaci.
+Beginning in C# 7.3, you can also specify the <xref:System.Enum?displayProperty=nameWithType> type as a base class constraint. The CLR always allowed this constraint, but the C# language disallowed it. Generics using `System.Enum` provide type-safe programming to cache results from using the static methods in `System.Enum`. The following sample finds all the valid values for an enum type, and then builds a dictionary that maps those values to its string representation.
 
 [!code-csharp[using the unmanaged constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#18)]
 
-Používané metody využívají reflexi, což má dopad na výkon. Tuto metodu lze zavolat pro sestavení kolekce, která je uložena v mezipaměti a znovu použita, nikoli volání, která vyžadují reflexi.
+The methods used make use of reflection, which has performance implications. You can call this method to build a collection that is cached and reused rather than repeating the calls that require reflection.
 
-Můžete ji použít, jak je znázorněno v následujícím příkladu, pro vytvoření výčtu a sestavení slovníku jeho hodnot a názvů:
+You could use it as shown in the following sample to create an enum and build a dictionary of its values and names:
 
 [!code-csharp[using the unmanaged constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#19)]
 

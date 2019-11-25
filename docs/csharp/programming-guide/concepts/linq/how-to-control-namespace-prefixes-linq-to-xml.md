@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: Předpony oboru názvů ovládacíhoC#prvku () (LINQ to XML)'
+title: Jak řídit předpony oboru názvů (C#) (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: 64de5186-b81a-4ddd-8327-8693df59a01b
-ms.openlocfilehash: 5b836be46001b660547532311b1b507ff234975f
-ms.sourcegitcommit: eb9ff6f364cde6f11322e03800d8f5ce302f3c73
+ms.openlocfilehash: 9f43c0804d8c830fa75f1e1390cb578c5f5d5106
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/01/2019
-ms.locfileid: "68710161"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141377"
 ---
-# <a name="how-to-control-namespace-prefixes-c-linq-to-xml"></a>Postupy: Předpony oboru názvů ovládacíhoC#prvku () (LINQ to XML)
+# <a name="how-to-control-namespace-prefixes-c-linq-to-xml"></a>Jak řídit předpony oboru názvů (C#) (LINQ to XML)
 Toto téma popisuje, jak lze řídit předpony oboru názvů při serializaci stromu XML.  
   
  V mnoha situacích není nutné řídit předpony oboru názvů.  
@@ -18,14 +18,14 @@ Toto téma popisuje, jak lze řídit předpony oboru názvů při serializaci st
   
  Toto je nejběžnější důvod pro řídící předpony oboru názvů.  
   
- Dalším běžným důvodem pro kontrolní předpony oboru názvů je, že chcete, aby uživatelé upravili dokument XML ručně a chcete vytvořit předpony oboru názvů, které jsou vhodné pro uživatele, aby zadali. Můžete například vygenerovat dokument XSD. Konvence pro schémata naznačují, že `xs` použijete `xsd` předponu pro obor názvů schématu nebo.  
+ Dalším běžným důvodem pro kontrolní předpony oboru názvů je, že chcete, aby uživatelé upravili dokument XML ručně a chcete vytvořit předpony oboru názvů, které jsou vhodné pro uživatele, aby zadali. Můžete například vygenerovat dokument XSD. Konvence pro schémata naznačují, že jako předponu pro obor názvů schématu používáte buď `xs`, nebo `xsd`.  
   
- Chcete-li řídit předpony oboru názvů, vložte atributy, které deklaruje obory názvů. Pokud deklarujete obory názvů se specifickými předponami, aplikace [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] se pokusí při serializaci při serializaci vyhovět předponám oboru názvů.  
+ Chcete-li řídit předpony oboru názvů, vložte atributy, které deklaruje obory názvů. Pokud deklarujete obory názvů se specifickými předponami, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] se pokusí při serializaci akceptovat předpony oboru názvů.  
   
- Chcete-li vytvořit atribut, který deklaruje obor názvů s předponou, vytvoříte atribut, kde je <xref:System.Xml.Linq.XNamespace.Xmlns%2A>obor názvů názvu atributu, a název atributu je předpona oboru názvů. Hodnota atributu je identifikátor URI oboru názvů.  
+ Chcete-li vytvořit atribut, který deklaruje obor názvů s předponou, vytvoříte atribut, kde je obor názvů názvu atributu <xref:System.Xml.Linq.XNamespace.Xmlns%2A>a název atributu je předpona oboru názvů. Hodnota atributu je identifikátor URI oboru názvů.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad deklaruje dva obory názvů. Určuje, že `http://www.adventure-works.com` obor názvů má `aw`předponu a že `www.fourthcoffee.com` obor názvů má předponu `fc`.  
+ Tento příklad deklaruje dva obory názvů. Určuje, že obor názvů `http://www.adventure-works.com` má předponu `aw`a že obor názvů `www.fourthcoffee.com` má předponu `fc`.  
   
 ```csharp  
 XNamespace aw = "http://www.adventure-works.com";  

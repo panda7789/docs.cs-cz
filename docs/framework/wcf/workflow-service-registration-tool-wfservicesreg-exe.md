@@ -2,12 +2,12 @@
 title: Nástroj WorkFlow Service Registration (WFServicesReg.exe)
 ms.date: 03/30/2017
 ms.assetid: 9e92c87b-99c5-4e8d-9d53-7944cc2b47d3
-ms.openlocfilehash: bb0989fb8747a5065ce3d7332311cdefba95b80d
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 6b1a0b990b1657e724f527b5beccce0e8a6391a6
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425292"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74281674"
 ---
 # <a name="workflow-service-registration-tool-wfservicesregexe"></a>Nástroj WorkFlow Service Registration (WFServicesReg.exe)
 Nástroj pro registraci služby Workflow Services (WFServicesReg. exe) je samostatný nástroj, který se dá použít k přidání, odebrání nebo opravě elementů konfigurace pro služby programovací model Windows Workflow Foundation (WF).  
@@ -19,7 +19,7 @@ WFServicesReg.exe [-c | -r | -v | -m | -i]
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Tento nástroj najdete na [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] umístění instalace, konkrétně na%windir%\Microsoft.NET\Framework\v3.5 nebo v%windir%\Microsoft.NET\Framework64\v3.5 v 64-bitových počítačích.  
+ Tento nástroj najdete v umístění instalace .NET Framework 3,5, konkrétně na%windir%\Microsoft.NET\Framework\v3.5 nebo na%windir%\Microsoft.NET\Framework64\v3.5 v 64 bitové počítače.  
   
  Následující tabulky popisují možnosti, které se dají použít s nástrojem pro registraci služby pracovních postupů (WFServicesReg. exe).  
   
@@ -34,7 +34,7 @@ WFServicesReg.exe [-c | -r | -v | -m | -i]
 ## <a name="registration"></a>Registrace  
  Nástroj zkontroluje soubor Web. config a zaregistruje následující:  
   
-- [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] referenční sestavení.  
+- Referenční sestavení .NET Framework 3,5.  
   
 - Poskytovatel sestavení pro soubory. xoml.  
   
@@ -70,7 +70,7 @@ WFServicesReg.exe [-c | -r | -v | -m | -i]
 ## <a name="usage-scenarios"></a>Scénáře použití  
   
 ### <a name="installing-iis-after-net-framework-35-is-installed"></a>Instalace služby IIS po instalaci .NET Framework 3,5  
- V [!INCLUDE[ws2003](../../../includes/ws2003-md.md)] počítači je [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] nainstalován před instalací služby IIS. Z důvodu nedostupnosti metabáze služby IIS je instalace [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] úspěšná, aniž byste museli instalovat mapy skriptů. XOML a. Rules.  
+ V [!INCLUDE[ws2003](../../../includes/ws2003-md.md)] počítači se před instalací služby IIS nainstaluje .NET Framework 3,5. Z důvodu nedostupnosti metabáze služby IIS je instalace .NET Framework 3,5 úspěšná, aniž by bylo potřeba instalovat. XOML a. Rules mapy skriptů.  
   
  Po instalaci služby IIS můžete použít nástroj WFServicesReg. exe s přepínačem `/c` k instalaci těchto specifických mapování skriptů.  
   
@@ -85,4 +85,4 @@ WFServicesReg.exe [-c | -r | -v | -m | -i]
  Chcete-li opravit odstraněné obslužné rutiny pro konkrétní web, spusťte příkaz "WFServicesReg. exe/r" pro odebrání obslužných rutin ze všech webů a pak spuštěním příkazu "WFServicesReg. exe/c" vytvořte vhodné obslužné rutiny pro všechny weby.  
   
 ### <a name="configuring-handlers-after-switching-iis-mode"></a>Konfigurace obslužných rutin po přepnutí režimu služby IIS  
- Když je služba IIS v režimu sdílené konfigurace a [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] je nainstalovaná, je metabáze IIS nakonfigurovaná v rámci sdíleného umístění. Pokud přepnete službu IIS do nesdíleného konfiguračního režimu, místní metabáze nebude obsahovat požadované obslužné rutiny. Chcete-li správně nakonfigurovat místní metabázi, můžete buď importovat sdílenou metabázi do místní, nebo spustit příkaz "WFServicesReg. exe/c", který konfiguruje místní metabázi.
+ Když je služba IIS v režimu sdílené konfigurace a je nainstalovaná .NET Framework 3,5, je metabáze IIS nakonfigurovaná v rámci sdíleného umístění. Pokud přepnete službu IIS do nesdíleného konfiguračního režimu, místní metabáze nebude obsahovat požadované obslužné rutiny. Chcete-li správně nakonfigurovat místní metabázi, můžete buď importovat sdílenou metabázi do místní, nebo spustit příkaz "WFServicesReg. exe/c", který konfiguruje místní metabázi.

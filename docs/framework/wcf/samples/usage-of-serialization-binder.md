@@ -2,32 +2,32 @@
 title: Použití vazače serializace
 ms.date: 03/30/2017
 ms.assetid: ab46c087-200c-45bf-9c95-5a6cda6e8b98
-ms.openlocfilehash: 10900950b935b484053fe8e37263f0dfc25eba99
-ms.sourcegitcommit: 127343afce8422bfa944c8b0c4ecc8f79f653255
+ms.openlocfilehash: bfce2a14c8757250c520919c8ff2a4d7048a9d5c
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/25/2019
-ms.locfileid: "67348461"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74138645"
 ---
 # <a name="usage-of-serialization-binder"></a>Použití vazače serializace
-Tento příklad ukazuje způsob použití <xref:System.Runtime.Serialization.SerializationBinder> chcete změnit verzi obecného typu, pokud je serializována.  
+Tento příklad ukazuje, jak použít <xref:System.Runtime.Serialization.SerializationBinder> ke změně verze obecného typu při jeho serializaci.  
   
 ## <a name="demonstrates"></a>Demonstruje  
- <xref:System.Runtime.Serialization.SerializationBinder>, <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>  
+ <xref:System.Runtime.Serialization.SerializationBinder><xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>  
   
-## <a name="discussion"></a>Diskuse  
- Tento příklad ukazuje, jak dvě entity, jsou cílení na různé verze rozhraní .NET Framework mohou komunikovat pomocí binární formátovací modul a vazače serializace.  
+## <a name="discussion"></a>Účely  
+ Tento příklad ukazuje, jak mohou dvě entity, které cílí na různé verze .NET Framework, komunikovat pomocí binárního formátovacího modulu a pořadače serializace.  
   
-Tato ukázka byla vyvinutá pomocí vzdálené komunikace .NET. Skládá se ze serveru cílení [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)], který implementuje kontrakt s obecných typů a různí klienti, jeden cílení rozhraní .NET Framework 2.0 a cílí na jinou [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)].  
+Tato ukázka byla vyvinuta pomocí vzdálené komunikace rozhraní .NET. Skládá se ze serveru, který je cílen .NET Framework 4, který implementuje kontrakt s obecnými typy a dvěma různými klienty, jeden cílí .NET Framework 2,0 a jiný cílí .NET Framework 4.  
   
- Server připojí <xref:System.Runtime.Serialization.SerializationBinder> na binární formátovací modul, abyste mohli změnit verzi typy odpovídajícím způsobem na serializace, takže oba klienti může deserializovat tyto typy správně.  
+ Server připojí <xref:System.Runtime.Serialization.SerializationBinder> k binárnímu formátovacímu modulu, aby bylo možné změnit verzi typů odpovídající serializaci, aby oba klienti mohli tyto typy rekonstruovat správně.  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
-1. Ke spuštění klienta, klikněte pravým tlačítkem na řešení, SBGenericsVTS (6 projektů) a pak vyberte **vlastnosti**.  
+1. Chcete-li spustit klienta, klikněte pravým tlačítkem myši na řešení, SBGenericsVTS (6 projektů) a pak vyberte **vlastnosti**.  
   
-2. V **společné vlastnosti**vyberte **spouštěný projekt**a pak vyberte **více projektů po spuštění**.  
+2. V možnosti **společné vlastnosti**vyberte možnost **projekt po spuštění**a pak vyberte **více projektů po spuštění**.  
   
-3. Vyberte **Server** první, potom **Client20** a potom **Client40**. Vyberte **Start** akce do těchto tří projektů a ponechte zbývající nastavení **žádný**.  
+3. Nejprve vyberte **Server** a pak **Client20** a pak **Client40**. Vyberte akci **Spustit** pro tyto tři projekty a nechejte nastavenou možnost **žádná**.  
   
-4. Klikněte na tlačítko **OK** a potom stiskněte klávesu F5 ke spuštění ukázky.
+4. Klikněte na **OK** a potom stisknutím klávesy F5 spusťte ukázku.
