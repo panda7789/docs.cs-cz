@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: vyhledání všech uzlů v oboru názvů (Visual Basic)'
+title: 'How to: Find All Nodes in a Namespace'
 ms.date: 07/20/2015
 ms.assetid: b735d7da-5727-48a3-ab57-a16378adc32e
-ms.openlocfilehash: 5ccc996aa986c97fdffb3deeea36346da726a588
-ms.sourcegitcommit: d7c298f6c2e3aab0c7498bfafc0a0a94ea1fe23e
+ms.openlocfilehash: f6bc38140bc2ea43393133d78c798469d26671c5
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/10/2019
-ms.locfileid: "72249937"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74352972"
 ---
-# <a name="how-to-find-all-nodes-in-a-namespace-visual-basic"></a><span data-ttu-id="ac4bf-102">Postupy: vyhledání všech uzlů v oboru názvů (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ac4bf-102">How to: Find All Nodes in a Namespace (Visual Basic)</span></span>
-<span data-ttu-id="ac4bf-103">Můžete filtrovat podle oboru názvů každého elementu nebo atributu, aby bylo možné najít všechny uzly v daném oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="ac4bf-103">You can filter on the namespace of each element or attribute to find all nodes in that particular namespace.</span></span>  
+# <a name="how-to-find-all-nodes-in-a-namespace-visual-basic"></a><span data-ttu-id="3dbd9-102">How to: Find All Nodes in a Namespace (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="3dbd9-102">How to: Find All Nodes in a Namespace (Visual Basic)</span></span>
+<span data-ttu-id="3dbd9-103">You can filter on the namespace of each element or attribute to find all nodes in that particular namespace.</span><span class="sxs-lookup"><span data-stu-id="3dbd9-103">You can filter on the namespace of each element or attribute to find all nodes in that particular namespace.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="ac4bf-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="ac4bf-104">Example</span></span>  
- <span data-ttu-id="ac4bf-105">Následující příklad vytvoří strom XML se dvěma obory názvů.</span><span class="sxs-lookup"><span data-stu-id="ac4bf-105">The following example creates an XML tree with two namespaces.</span></span> <span data-ttu-id="ac4bf-106">Pak projde stromovou strukturou a vytiskne názvy všech prvků a atributů v jednom z těchto oborů názvů.</span><span class="sxs-lookup"><span data-stu-id="ac4bf-106">It then iterates through the tree and prints the names of all the elements and attributes in one of those namespaces.</span></span>  
+## <a name="example"></a><span data-ttu-id="3dbd9-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="3dbd9-104">Example</span></span>  
+ <span data-ttu-id="3dbd9-105">The following example creates an XML tree with two namespaces.</span><span class="sxs-lookup"><span data-stu-id="3dbd9-105">The following example creates an XML tree with two namespaces.</span></span> <span data-ttu-id="3dbd9-106">It then iterates through the tree and prints the names of all the elements and attributes in one of those namespaces.</span><span class="sxs-lookup"><span data-stu-id="3dbd9-106">It then iterates through the tree and prints the names of all the elements and attributes in one of those namespaces.</span></span>  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  
@@ -43,7 +43,7 @@ Module Module1
 End Module  
 ```  
   
- <span data-ttu-id="ac4bf-107">Tento kód generuje následující výstup:</span><span class="sxs-lookup"><span data-stu-id="ac4bf-107">This code produces the following output:</span></span>  
+ <span data-ttu-id="3dbd9-107">This code produces the following output:</span><span class="sxs-lookup"><span data-stu-id="3dbd9-107">This code produces the following output:</span></span>  
   
 ```console  
 Nodes in the http://www.adventure-works.com namespace  
@@ -51,10 +51,10 @@ Nodes in the http://www.adventure-works.com namespace
 {http://www.adventure-works.com}GrandChild2  
 ```  
   
-## <a name="example"></a><span data-ttu-id="ac4bf-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="ac4bf-108">Example</span></span>  
- <span data-ttu-id="ac4bf-109">Soubor XML, ke kterému má přistup následující dotaz, obsahuje objednávky nákupu ve dvou různých oborech názvů.</span><span class="sxs-lookup"><span data-stu-id="ac4bf-109">The XML file accessed by the following query contains purchase orders in two different namespaces.</span></span> <span data-ttu-id="ac4bf-110">Dotaz vytvoří nový strom s pouze prvky v jednom z oborů názvů.</span><span class="sxs-lookup"><span data-stu-id="ac4bf-110">The query creates a new tree with just the elements in one of the namespaces.</span></span>  
+## <a name="example"></a><span data-ttu-id="3dbd9-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="3dbd9-108">Example</span></span>  
+ <span data-ttu-id="3dbd9-109">The XML file accessed by the following query contains purchase orders in two different namespaces.</span><span class="sxs-lookup"><span data-stu-id="3dbd9-109">The XML file accessed by the following query contains purchase orders in two different namespaces.</span></span> <span data-ttu-id="3dbd9-110">The query creates a new tree with just the elements in one of the namespaces.</span><span class="sxs-lookup"><span data-stu-id="3dbd9-110">The query creates a new tree with just the elements in one of the namespaces.</span></span>  
   
- <span data-ttu-id="ac4bf-111">Tento příklad používá následující dokument XML: [vzorový soubor XML: konsolidované nákupní objednávky](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-consolidated-purchase-orders.md).</span><span class="sxs-lookup"><span data-stu-id="ac4bf-111">This example uses the following XML document: [Sample XML File: Consolidated Purchase Orders](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-consolidated-purchase-orders.md).</span></span>  
+ <span data-ttu-id="3dbd9-111">This example uses the following XML document: [Sample XML File: Consolidated Purchase Orders](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-consolidated-purchase-orders.md).</span><span class="sxs-lookup"><span data-stu-id="3dbd9-111">This example uses the following XML document: [Sample XML File: Consolidated Purchase Orders](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-consolidated-purchase-orders.md).</span></span>  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  
@@ -73,7 +73,7 @@ Module Module1
 End Module  
 ```  
   
- <span data-ttu-id="ac4bf-112">Tento kód generuje následující výstup:</span><span class="sxs-lookup"><span data-stu-id="ac4bf-112">This code produces the following output:</span></span>  
+ <span data-ttu-id="3dbd9-112">This code produces the following output:</span><span class="sxs-lookup"><span data-stu-id="3dbd9-112">This code produces the following output:</span></span>  
   
 ```xml  
 <Root>  
@@ -109,6 +109,6 @@ End Module
 </Root>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="ac4bf-113">Související témata</span><span class="sxs-lookup"><span data-stu-id="ac4bf-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="3dbd9-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3dbd9-113">See also</span></span>
 
-- [<span data-ttu-id="ac4bf-114">Základní dotazy (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="ac4bf-114">Basic Queries (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+- [<span data-ttu-id="3dbd9-114">Basic Queries (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="3dbd9-114">Basic Queries (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

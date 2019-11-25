@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: Dotazu na duplicitní soubory v adresářovém stromu (LINQ) (Visual Basic)'
+title: 'Postupy: Vytvoření dotazu na duplicitní soubory v adresářovém stromu (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: 387d7c97-95dd-4a50-9761-7e9cf8ae9e6a
-ms.openlocfilehash: 192f279a74cfbbd35e67d8f166a3d35248409459
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 9be0d1e7be70569e1fac0033414400a85071bfec
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65586331"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347708"
 ---
-# <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-visual-basic"></a><span data-ttu-id="83da6-102">Postupy: Dotazu na duplicitní soubory v adresářovém stromu (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="83da6-102">How to: Query for Duplicate Files in a Directory Tree (LINQ) (Visual Basic)</span></span>
-<span data-ttu-id="83da6-103">Někdy může nacházet v více složek soubory, které mají stejný název.</span><span class="sxs-lookup"><span data-stu-id="83da6-103">Sometimes files that have the same name may be located in more than one folder.</span></span> <span data-ttu-id="83da6-104">Například v instalační složce aplikace Visual Studio, mají několik složek souboru readme.htm.</span><span class="sxs-lookup"><span data-stu-id="83da6-104">For example, under the Visual Studio installation folder, several folders have a readme.htm file.</span></span> <span data-ttu-id="83da6-105">Tento příklad ukazuje, jak se dotázat na tyto duplicitní názvy zadané kořenové složce.</span><span class="sxs-lookup"><span data-stu-id="83da6-105">This example shows how to query for such duplicate file names under a specified root folder.</span></span> <span data-ttu-id="83da6-106">Druhý příklad ukazuje, jak provádět dotazy pro soubory, jejichž velikost a také odpovídat času vytvoření.</span><span class="sxs-lookup"><span data-stu-id="83da6-106">The second example shows how to query for files whose size and creation times also match.</span></span>  
+# <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-visual-basic"></a><span data-ttu-id="84a09-102">How to: Query for Duplicate Files in a Directory Tree (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="84a09-102">How to: Query for Duplicate Files in a Directory Tree (LINQ) (Visual Basic)</span></span>
+<span data-ttu-id="84a09-103">Sometimes files that have the same name may be located in more than one folder.</span><span class="sxs-lookup"><span data-stu-id="84a09-103">Sometimes files that have the same name may be located in more than one folder.</span></span> <span data-ttu-id="84a09-104">For example, under the Visual Studio installation folder, several folders have a readme.htm file.</span><span class="sxs-lookup"><span data-stu-id="84a09-104">For example, under the Visual Studio installation folder, several folders have a readme.htm file.</span></span> <span data-ttu-id="84a09-105">This example shows how to query for such duplicate file names under a specified root folder.</span><span class="sxs-lookup"><span data-stu-id="84a09-105">This example shows how to query for such duplicate file names under a specified root folder.</span></span> <span data-ttu-id="84a09-106">The second example shows how to query for files whose size and creation times also match.</span><span class="sxs-lookup"><span data-stu-id="84a09-106">The second example shows how to query for files whose size and creation times also match.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="83da6-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="83da6-107">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="84a09-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="84a09-107">Example</span></span>  
   
 ```vb  
 Module QueryDuplicateFileNames  
@@ -98,12 +98,12 @@ Module QueryDuplicateFileNames
 End Module  
 ```  
   
- <span data-ttu-id="83da6-108">První dotaz pomocí jednoduchého klíče k určení shody to vyhledá soubory, které mají stejný název, ale jehož obsah se může lišit.</span><span class="sxs-lookup"><span data-stu-id="83da6-108">The first query uses a simple key to determine a match; this finds files that have the same name but whose contents might be different.</span></span> <span data-ttu-id="83da6-109">Druhý dotaz používá složený klíč tak, aby odpovídala tři vlastnosti <xref:System.IO.FileInfo> objektu.</span><span class="sxs-lookup"><span data-stu-id="83da6-109">The second query uses a compound key to match against three properties of the <xref:System.IO.FileInfo> object.</span></span> <span data-ttu-id="83da6-110">Tento dotaz je mnohem pravděpodobnější k vyhledání souborů, které mají stejný název a obsah podobné nebo identické.</span><span class="sxs-lookup"><span data-stu-id="83da6-110">This query is much more likely to find files that have the same name and similar or identical content.</span></span>  
+ <span data-ttu-id="84a09-108">The first query uses a simple key to determine a match; this finds files that have the same name but whose contents might be different.</span><span class="sxs-lookup"><span data-stu-id="84a09-108">The first query uses a simple key to determine a match; this finds files that have the same name but whose contents might be different.</span></span> <span data-ttu-id="84a09-109">The second query uses a compound key to match against three properties of the <xref:System.IO.FileInfo> object.</span><span class="sxs-lookup"><span data-stu-id="84a09-109">The second query uses a compound key to match against three properties of the <xref:System.IO.FileInfo> object.</span></span> <span data-ttu-id="84a09-110">This query is much more likely to find files that have the same name and similar or identical content.</span><span class="sxs-lookup"><span data-stu-id="84a09-110">This query is much more likely to find files that have the same name and similar or identical content.</span></span>  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="83da6-111">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="83da6-111">Compiling the Code</span></span>  
-<span data-ttu-id="83da6-112">Vytvoření projektu aplikace konzoly VB.NET, pomocí `Imports` příkaz pro obor názvů System.Linq.</span><span class="sxs-lookup"><span data-stu-id="83da6-112">Create a VB.NET console application project, with an `Imports` statement for the System.Linq namespace.</span></span>
+## <a name="compiling-the-code"></a><span data-ttu-id="84a09-111">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="84a09-111">Compiling the Code</span></span>  
+<span data-ttu-id="84a09-112">Create a VB.NET console application project, with an `Imports` statement for the System.Linq namespace.</span><span class="sxs-lookup"><span data-stu-id="84a09-112">Create a VB.NET console application project, with an `Imports` statement for the System.Linq namespace.</span></span>
   
-## <a name="see-also"></a><span data-ttu-id="83da6-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="83da6-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="84a09-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="84a09-113">See also</span></span>
 
-- [<span data-ttu-id="83da6-114">LINQ to Objects (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="83da6-114">LINQ to Objects (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
-- [<span data-ttu-id="83da6-115">LINQ a souborové adresáře (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="83da6-115">LINQ and File Directories (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [<span data-ttu-id="84a09-114">LINQ to Objects (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="84a09-114">LINQ to Objects (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
+- [<span data-ttu-id="84a09-115">LINQ and File Directories (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="84a09-115">LINQ and File Directories (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
