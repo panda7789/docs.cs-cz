@@ -1,32 +1,32 @@
 ---
-title: 'Postupy: Implementace odlehčené třídy s automaticky implementovanými vlastnostmi – C# Průvodce programováním'
+title: Postup implementace odlehčené třídy s automaticky implementovanými vlastnostmi – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - auto-implemented properties [C#]
 - properties [C#], auto-implemented
 ms.assetid: 1dc5a8ad-a4f7-4f32-8506-3fc6d8c8bfed
-ms.openlocfilehash: 626a44fbaa65f48e0d9fe66d83c44abb07eba379
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: b5bf2e84ffe47cd1eaf17e877a20a700e98339ff
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926762"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73970910"
 ---
-# <a name="how-to-implement-a-lightweight-class-with-auto-implemented-properties-c-programming-guide"></a><span data-ttu-id="87415-102">Postupy: Implementace odlehčené třídy s automaticky implementovanými vlastnostmi (C# Průvodce programováním)</span><span class="sxs-lookup"><span data-stu-id="87415-102">How to: Implement a Lightweight Class with Auto-Implemented Properties (C# Programming Guide)</span></span>
+# <a name="how-to-implement-a-lightweight-class-with-auto-implemented-properties-c-programming-guide"></a><span data-ttu-id="172f7-102">Jak implementovat odlehčenou třídu s automaticky implementovanými vlastnostmi (C# Průvodce programováním)</span><span class="sxs-lookup"><span data-stu-id="172f7-102">How to implement a lightweight class with auto-implemented properties (C# Programming Guide)</span></span>
 
-<span data-ttu-id="87415-103">Tento příklad ukazuje, jak vytvořit neproměnlivou odlehčenou třídu, která slouží pouze k zapouzdření sady automaticky implementovaných vlastností.</span><span class="sxs-lookup"><span data-stu-id="87415-103">This example shows how to create an immutable lightweight class that serves only to encapsulate a set of auto-implemented properties.</span></span> <span data-ttu-id="87415-104">Použijte tento druh konstrukce namísto struktury, pokud je nutné použít sémantiku typu reference.</span><span class="sxs-lookup"><span data-stu-id="87415-104">Use this kind of construct instead of a struct when you must use reference type semantics.</span></span>
+<span data-ttu-id="172f7-103">Tento příklad ukazuje, jak vytvořit neproměnlivou odlehčenou třídu, která slouží pouze k zapouzdření sady automaticky implementovaných vlastností.</span><span class="sxs-lookup"><span data-stu-id="172f7-103">This example shows how to create an immutable lightweight class that serves only to encapsulate a set of auto-implemented properties.</span></span> <span data-ttu-id="172f7-104">Použijte tento druh konstrukce namísto struktury, pokud je nutné použít sémantiku typu reference.</span><span class="sxs-lookup"><span data-stu-id="172f7-104">Use this kind of construct instead of a struct when you must use reference type semantics.</span></span>
 
-<span data-ttu-id="87415-105">Neměnné vlastnosti můžete vytvořit dvěma způsoby:</span><span class="sxs-lookup"><span data-stu-id="87415-105">You can make an immutable property in two ways:</span></span>
+<span data-ttu-id="172f7-105">Neměnné vlastnosti můžete vytvořit dvěma způsoby:</span><span class="sxs-lookup"><span data-stu-id="172f7-105">You can make an immutable property in two ways:</span></span>
 
-- <span data-ttu-id="87415-106">Přístupový objekt [set](../../language-reference/keywords/set.md) můžete deklarovat jako [soukromý](../../language-reference/keywords/private.md).</span><span class="sxs-lookup"><span data-stu-id="87415-106">You can declare the [set](../../language-reference/keywords/set.md) accessor to be [private](../../language-reference/keywords/private.md).</span></span>  <span data-ttu-id="87415-107">Vlastnost je nastavena pouze v rámci typu, ale je neměnná pro příjemce.</span><span class="sxs-lookup"><span data-stu-id="87415-107">The property is only settable within the type, but it is immutable to consumers.</span></span>
+- <span data-ttu-id="172f7-106">Přístupový objekt [set](../../language-reference/keywords/set.md) můžete deklarovat jako [soukromý](../../language-reference/keywords/private.md).</span><span class="sxs-lookup"><span data-stu-id="172f7-106">You can declare the [set](../../language-reference/keywords/set.md) accessor to be [private](../../language-reference/keywords/private.md).</span></span>  <span data-ttu-id="172f7-107">Vlastnost je nastavena pouze v rámci typu, ale je neměnná pro příjemce.</span><span class="sxs-lookup"><span data-stu-id="172f7-107">The property is only settable within the type, but it is immutable to consumers.</span></span>
 
-  <span data-ttu-id="87415-108">Při deklaraci privátního `set` přístupového objektu nemůžete k inicializaci vlastnosti použít inicializátor objektu.</span><span class="sxs-lookup"><span data-stu-id="87415-108">When you declare a private `set` accessor, you cannot use an object initializer to initialize the property.</span></span> <span data-ttu-id="87415-109">Je nutné použít konstruktor nebo metodu Factory.</span><span class="sxs-lookup"><span data-stu-id="87415-109">You must use a constructor or a factory method.</span></span>
-- <span data-ttu-id="87415-110">Můžete deklarovat pouze přistupující objekt [Get](../../language-reference/keywords/get.md) , který způsobí, že vlastnost není proměnlivá všude s výjimkou v konstruktoru typu.</span><span class="sxs-lookup"><span data-stu-id="87415-110">You can declare only the [get](../../language-reference/keywords/get.md) accessor, which makes the property immutable everywhere except in the type’s constructor.</span></span>
+  <span data-ttu-id="172f7-108">Při deklaraci privátního přístupového objektu `set` nelze použít inicializátor objektu pro inicializaci vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="172f7-108">When you declare a private `set` accessor, you cannot use an object initializer to initialize the property.</span></span> <span data-ttu-id="172f7-109">Je nutné použít konstruktor nebo metodu Factory.</span><span class="sxs-lookup"><span data-stu-id="172f7-109">You must use a constructor or a factory method.</span></span>
+- <span data-ttu-id="172f7-110">Můžete deklarovat pouze přistupující objekt [Get](../../language-reference/keywords/get.md) , který způsobí, že vlastnost není proměnlivá všude s výjimkou v konstruktoru typu.</span><span class="sxs-lookup"><span data-stu-id="172f7-110">You can declare only the [get](../../language-reference/keywords/get.md) accessor, which makes the property immutable everywhere except in the type’s constructor.</span></span>
 
-## <a name="example"></a><span data-ttu-id="87415-111">Příklad</span><span class="sxs-lookup"><span data-stu-id="87415-111">Example</span></span>
+## <a name="example"></a><span data-ttu-id="172f7-111">Příklad</span><span class="sxs-lookup"><span data-stu-id="172f7-111">Example</span></span>
 
-<span data-ttu-id="87415-112">Následující příklad ukazuje dva způsoby, jak implementovat neměnitelnou třídu, která má automaticky implementované vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="87415-112">The following example shows two ways to implement an immutable class that has auto-implemented properties.</span></span> <span data-ttu-id="87415-113">Každý způsob deklaruje jednu vlastnost s vlastností Private `set` a jedna z vlastností `get` pouze.</span><span class="sxs-lookup"><span data-stu-id="87415-113">Each way declares one of the properties with a private `set` and one of the properties with a `get` only.</span></span>  <span data-ttu-id="87415-114">První třída používá konstruktor pouze k inicializaci vlastností a druhá třída používá statickou metodu objektu pro vytváření, která volá konstruktor.</span><span class="sxs-lookup"><span data-stu-id="87415-114">The first class uses a constructor only to initialize the properties, and the second class uses a static factory method that calls a constructor.</span></span>
+<span data-ttu-id="172f7-112">Následující příklad ukazuje dva způsoby, jak implementovat neměnitelnou třídu, která má automaticky implementované vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="172f7-112">The following example shows two ways to implement an immutable class that has auto-implemented properties.</span></span> <span data-ttu-id="172f7-113">Každý způsob deklaruje jednu vlastnost s privátní `set` a jednu z vlastností pouze `get`.</span><span class="sxs-lookup"><span data-stu-id="172f7-113">Each way declares one of the properties with a private `set` and one of the properties with a `get` only.</span></span>  <span data-ttu-id="172f7-114">První třída používá konstruktor pouze k inicializaci vlastností a druhá třída používá statickou metodu objektu pro vytváření, která volá konstruktor.</span><span class="sxs-lookup"><span data-stu-id="172f7-114">The first class uses a constructor only to initialize the properties, and the second class uses a static factory method that calls a constructor.</span></span>
 
 ```csharp
 // This class is immutable. After an object is created,
@@ -117,10 +117,10 @@ public class Program
 */
 ```
 
-<span data-ttu-id="87415-115">Kompilátor vytvoří zálohovací pole pro každou automaticky implementovanou vlastnost.</span><span class="sxs-lookup"><span data-stu-id="87415-115">The compiler creates backing fields for each auto-implemented property.</span></span> <span data-ttu-id="87415-116">Pole nejsou k dispozici přímo ze zdrojového kódu.</span><span class="sxs-lookup"><span data-stu-id="87415-116">The fields are not accessible directly from source code.</span></span>
+<span data-ttu-id="172f7-115">Kompilátor vytvoří zálohovací pole pro každou automaticky implementovanou vlastnost.</span><span class="sxs-lookup"><span data-stu-id="172f7-115">The compiler creates backing fields for each auto-implemented property.</span></span> <span data-ttu-id="172f7-116">Pole nejsou k dispozici přímo ze zdrojového kódu.</span><span class="sxs-lookup"><span data-stu-id="172f7-116">The fields are not accessible directly from source code.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="87415-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="87415-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="172f7-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="172f7-117">See also</span></span>
 
-- [<span data-ttu-id="87415-118">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="87415-118">Properties</span></span>](./properties.md)
-- [<span data-ttu-id="87415-119">struct</span><span class="sxs-lookup"><span data-stu-id="87415-119">struct</span></span>](../../language-reference/keywords/struct.md)
-- [<span data-ttu-id="87415-120">Inicializátory objektu a kolekce</span><span class="sxs-lookup"><span data-stu-id="87415-120">Object and Collection Initializers</span></span>](./object-and-collection-initializers.md)
+- [<span data-ttu-id="172f7-118">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="172f7-118">Properties</span></span>](./properties.md)
+- [<span data-ttu-id="172f7-119">struct</span><span class="sxs-lookup"><span data-stu-id="172f7-119">struct</span></span>](../../language-reference/keywords/struct.md)
+- [<span data-ttu-id="172f7-120">Inicializátory objektu a kolekce</span><span class="sxs-lookup"><span data-stu-id="172f7-120">Object and Collection Initializers</span></span>](./object-and-collection-initializers.md)
