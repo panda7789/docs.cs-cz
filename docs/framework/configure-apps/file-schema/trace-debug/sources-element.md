@@ -9,20 +9,20 @@ helpviewer_keywords:
 - trace sources
 - <sources> element
 ms.assetid: c727b2e2-423a-4463-a223-013f40ff16a3
-ms.openlocfilehash: 0ca35d9be5e1eaf36a2c9cae99efc2736ef3403d
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: a903d009f2056e65414c1792494fbbd20e224413
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699212"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088820"
 ---
-# <a name="sources-element"></a>@no__t – element > 0sources
+# <a name="sources-element"></a>> elementu \<zdrojů
 Určuje zdroje trasování, které spouštějí trasovací zprávy.  
-  
-[ **@no__t – 2configuration >** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<system. diagnostics >** ](system-diagnostics-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<sources >**  
-  
+
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<System. diagnostics >** ](system-diagnostics-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<zdrojů >**
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -41,7 +41,7 @@ Určuje zdroje trasování, které spouštějí trasovací zprávy.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[@no__t – 1source >](source-element.md)|Požadovaný element.<br /><br /> Určuje zdroj trasování, který inicializuje trasovací zprávy.|  
+|[zdrojový > \<](source-element.md)|Požadovaný element.<br /><br /> Určuje zdroj trasování, který inicializuje trasovací zprávy.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -54,7 +54,7 @@ Určuje zdroje trasování, které spouštějí trasovací zprávy.
  Tento element lze použít v konfiguračním souboru počítače (Machine. config) a v konfiguračním souboru aplikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje způsob použití prvku `<sources>` pro přidání zdroje trasování `mySource` a nastavení úrovně pro zdrojový přepínač s názvem `sourceSwitch`. Je přidán naslouchací proces trasování konzoly, který zapisuje trasovací informace do konzoly.  
+ Následující příklad ukazuje, jak použít element `<sources>` k přidání `mySource` zdroje trasování a k nastavení úrovně pro zdrojový přepínač s názvem `sourceSwitch`. Je přidán naslouchací proces trasování konzoly, který zapisuje trasovací informace do konzoly.  
   
 ```xml  
 <configuration>  
@@ -88,4 +88,4 @@ Určuje zdroje trasování, které spouštějí trasovací zprávy.
 - <xref:System.Diagnostics.EventLogTraceListener>
 - <xref:System.Diagnostics.XmlWriterTraceListener>
 - [Trasování a ladění schématu nastavení](index.md)
-- [@no__t – 1source >](source-element.md)
+- [zdrojový > \<](source-element.md)

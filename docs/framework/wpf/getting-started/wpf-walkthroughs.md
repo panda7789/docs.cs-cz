@@ -5,12 +5,12 @@ helpviewer_keywords:
 - walkthroughs [WPF]
 - WPF walkthroughs [WPF]
 ms.assetid: c29bde96-0389-4aff-a9fb-cd678f66b7f7
-ms.openlocfilehash: 34cd7e96442a570a3951e6303d2ac90ce5da6239
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: fbd5006611a0a8e0d90b589df7b2cb6a34101457
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920401"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977032"
 ---
 # <a name="wpf-walkthroughs"></a>Návody pro WPF
 Podrobné návody obsahují podrobné pokyny pro běžné scénáře. Díky tomu je dobré začít se zajímat o produkt nebo konkrétní oblast funkcí.
@@ -21,11 +21,11 @@ Podrobné návody obsahují podrobné pokyny pro běžné scénáře. Díky tomu
 
 |Název|Popis|
 |-----------|-----------------|
-|[Návod: Vytvoření jednoduché aplikace WPF pomocí Návrháře WPF](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb546972(v=vs.100))|Ukazuje, jak vytvořit jednoduchou aplikaci WPF pomocí [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].|
+|[Návod: Vytvoření jednoduché aplikace WPF pomocí Návrháře WPF](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb546972(v=vs.100))|Ukazuje, jak vytvořit jednoduchou aplikaci WPF pomocí Návrháře WPF.|
 |[Návod: vytvoření dynamického rozložení](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb514519(v=vs.100))|Ukazuje vytvoření dynamického rozložení pomocí ovládacího prvku panelu <xref:System.Windows.Controls.Grid>.|
 |[Návod: Vytvoření aplikace s možností změny velikosti pomocí Návrháře WPF](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb546954(v=vs.100))|Ukazuje, jak vytvořit rozložení oken, která jsou změnou velikosti uživatele v době běhu.|
-|[Návod: vytvoření datové vazby pomocí Návrháře WPF](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/dd434207(v=vs.100))|Ukazuje, jak použít [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)] k vytvoření datových vazeb, které připojují data k ovládacímu prvku.|
-|[Návod: použití DesignInstance k vytvoření vazby k datům v Návrháři](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/dd490796(v=vs.100))|Ukazuje, jak použít [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)] k vytvoření datových vazeb v době návrhu pro datový kontext, který je přiřazen v době běhu.|
+|[Návod: vytvoření datové vazby pomocí Návrháře WPF](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/dd434207(v=vs.100))|Ukazuje, jak používat návrháře WPF k vytváření datových vazeb, které připojují data k ovládacímu prvku.|
+|[Návod: použití DesignInstance k vytvoření vazby k datům v Návrháři](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/dd490796(v=vs.100))|Ukazuje, jak používat návrháře WPF k vytváření datových vazeb v době návrhu pro datový kontext, který je přiřazen za běhu.|
 
 ## <a name="wpf-walkthroughs"></a>Návody pro WPF
 

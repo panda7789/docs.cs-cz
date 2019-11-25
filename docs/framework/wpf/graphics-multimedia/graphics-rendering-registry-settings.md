@@ -8,36 +8,36 @@ helpviewer_keywords:
 - troubleshooting graphics rendering [WPF]
 - graphics [WPF], rendering
 ms.assetid: f4b41b42-327d-407c-b398-3ed5f505df8b
-ms.openlocfilehash: f2af32315f8f955495c51f2928c2b8eed5350759
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: 0d6eda0aea9ad97063cc5362d83163443de034a6
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70016086"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976948"
 ---
 # <a name="graphics-rendering-registry-settings"></a>Nastavení registru pro vykreslení grafiky
-Toto téma poskytuje přehled nastavení registru pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vykreslování grafiky, která mají vliv [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] na aplikace.  
+Toto téma poskytuje přehled nastavení registru [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vykreslování grafiky, která mají vliv na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace.  
 
 <a name="overview"></a>   
 ## <a name="when-to-use-graphics-rendering-registry-settings"></a>Kdy použít nastavení registru pro vykreslování grafiky  
- Tato nastavení registru jsou k dispozici pro účely řešení potíží, ladění a podpory produktů. Vzhledem k tomu, že změny registru [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ovlivňují všechny aplikace, aplikace by nikdy neměly měnit tyto klíče registru automaticky nebo během instalace.  
+ Tato nastavení registru jsou k dispozici pro účely řešení potíží, ladění a podpory produktů. Vzhledem k tomu, že změny registru ovlivňují všechny aplikace [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], aplikace by nikdy neměly měnit tyto klíče registru automaticky nebo během instalace.  
   
 <a name="xpdmandwddm"></a>   
 ## <a name="what-are-xpdm-and-wddm"></a>Co jsou XPDM a WDDM?  
- Některá nastavení registru pro vykreslování grafiky mají různé výchozí hodnoty v závislosti na tom, jestli vaše grafická karta používá ovladač XPDM nebo WDDM. XPDM je [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)] model ovladače zobrazení a WDDM je model ovladače zobrazení systému Windows. WDDM je k dispozici na [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] počítačích [!INCLUDE[win7](../../../../includes/win7-md.md)]se systémem a. XPDM je k dispozici na [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)]počítačích [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)]se systémy [!INCLUDE[TLA#tla_winnetsvrfam](../../../../includes/tlasharptla-winnetsvrfam-md.md)], a. Další informace o WDDM najdete v tématu [Průvodce návrhem zobrazovacího modelu Windows Vista](https://go.microsoft.com/fwlink/?LinkId=178394).  
+ Některá nastavení registru pro vykreslování grafiky mají různé výchozí hodnoty v závislosti na tom, jestli vaše grafická karta používá ovladač XPDM nebo WDDM. XPDM je model ovladače zobrazení [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)] a WDDM je model ovladače zobrazení systému Windows. WDDM je k dispozici na počítačích se systémem Windows Vista a [!INCLUDE[win7](../../../../includes/win7-md.md)]. XPDM je k dispozici na počítačích se systémem Windows Vista, [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)]a [!INCLUDE[TLA#tla_winnetsvrfam](../../../../includes/tlasharptla-winnetsvrfam-md.md)]. Další informace o WDDM najdete v tématu [Průvodce návrhem zobrazovacího modelu Windows Vista](https://go.microsoft.com/fwlink/?LinkId=178394).  
   
 <a name="registry_settings"></a>   
 ## <a name="registry-settings"></a>Nastavení registru  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]poskytuje čtyři nastavení registru pro řízení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vykreslování:  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje čtyři nastavení registru pro řízení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vykreslování:  
   
-|Nastavení|Popis|  
+|Nastavením|Popis|  
 |-------------|-----------------|  
 |**Zakázat možnost hardwarové akcelerace**|Určuje, jestli má být povolená hardwarová akcelerace.|  
 |**Maximální hodnota pro více vzorků**|Určuje stupeň vícenásobného vzorkování pro antialiasing 3D obsah.|  
 |**Požadované nastavení data ovladače videa**|Určuje, jestli systém zakáže hardwarovou akceleraci pro ovladače vydané před listopadu 2004.|  
-|**Použít možnost rastrového odkazu**|Určuje, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] jestli se má použít rastrový rastrový odkaz.|  
+|**Použít možnost rastrového odkazu**|Určuje, jestli má [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používat rastrový odkaz.|  
   
- K těmto nastavením může mít přístup kterýkoli externí konfigurační nástroj, který ví, jak odkazovat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] na nastavení registru. Tato nastavení se dají vytvářet nebo upravovat taky tak, že se přistupují k hodnotám přímo pomocí Editoru registru Windows.  
+ K těmto nastavením může mít přístup kterýkoli externí konfigurační nástroj, který ví, jak odkazovat na nastavení registru [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Tato nastavení se dají vytvářet nebo upravovat taky tak, že se přistupují k hodnotám přímo pomocí Editoru registru Windows.  
   
 <a name="disablehardwareacceleration"></a>   
 ## <a name="disable-hardware-acceleration-option"></a>Zakázat možnost hardwarové akcelerace  
@@ -57,11 +57,11 @@ Toto téma poskytuje přehled nastavení registru pro [!INCLUDE[TLA2#tla_winclie
 |------------------|----------------|  
 |`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\MaxMultisampleType`|DWORD|  
   
- **Maximální hodnota pro více vzorků** umožňuje upravit maximální množství antialiasing 3D obsahu. Pomocí této úrovně můžete v [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] nástroji zakázat 3D antialiasing nebo [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)]je povolit.  
+ **Maximální hodnota pro více vzorků** umožňuje upravit maximální množství antialiasing 3D obsahu. Pomocí této úrovně můžete v systému Windows Vista zakázat 3D antialiasing nebo je povolit v [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)].  
   
  **Maximální hodnota více vzorků** je hodnota DWORD, která je v rozsahu od 0 do 16. Hodnota 0 určuje, že by měl být zakázán antialiasing obsah s více vzorky a hodnota 16 se pokusí o použití až 16x antialiasing s více ukázkami, pokud je tato grafická karta podporovaná. Mějte na paměti, že nastavení této hodnoty klíče registru na počítačích, které používají ovladače XPDM, způsobí, že aplikace budou používat velké množství dalších video paměti, sníží se výkon trojrozměrného vykreslování a bude mít potenciál k zavedení chyb a stability vykreslování. problém.  
   
- Pokud není tento klíč registru nastavený, výchozí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] hodnota je 0 pro ovladače XPDM a 4 pro ovladače WDDM.  
+ Pokud není tento klíč registru nastavený, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ve výchozím nastavení nastavené na 0 pro ovladače XPDM a 4 pro ovladače WDDM.  
   
 <a name="requiredvideodriverdatesetting"></a>   
 ## <a name="required-video-driver-date-setting"></a>Požadované nastavení data ovladače videa  
@@ -78,9 +78,9 @@ Toto téma poskytuje přehled nastavení registru pro [!INCLUDE[TLA2#tla_winclie
   
 | |  
 |-|  
-|*RRRR* `/` DD MM `/`|  
+|*Rrrr* `/` *mm* `/` *DD*|  
   
- Kde *RRRR* je čtyřmístné číslo roku, *mm* je dvoumístný měsíc a *DD* je dva číslice dne. Pokud je tato hodnota nastavená [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] na hodnotu zrušit, použije se jako požadované datum ovladače videa 2004. listopadu.  
+ Kde *RRRR* je čtyřmístné číslo roku, *mm* je dvoumístný měsíc a *DD* je dva číslice dne. Pokud tato hodnota není nastavená, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] jako požadované datum ovladače videa používá listopadu 2004.  
   
 <a name="usereferencerasterizeroption"></a>   
 ## <a name="use-reference-rasterizer-option"></a>Použít možnost rastrového odkazu  
@@ -89,11 +89,11 @@ Toto téma poskytuje přehled nastavení registru pro [!INCLUDE[TLA2#tla_winclie
 |------------------|----------------|  
 |`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\UseReferenceRasterizer`|DWORD|  
   
- **Možnost použít rastrový odkaz** umožňuje vynutit [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] režim vykreslování simulovaného hardwaru pro ladění: [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] přejde do režimu hardwaru, ale používá nástroj Microsoft Direct3D reference software Rastrováním, d3dref9. dll. místo skutečného hardwarového zařízení.  
+ **Možnost použít rastrový odkaz slouží** k vynucení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] do režimu simulovaného hardwarového vykreslování pro ladění: [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] přejde do režimu hardwaru, ale místo skutečného hardwarového zařízení používá nástroj Microsoft Direct3D reference software d3dref9. dll.  
   
  Rastrový rastr je velmi pomalý, ale obchází ovladač videa, aby nedocházelo k problémům s vykreslováním způsobeným problémy s ovladačem. Z tohoto důvodu můžete použít rastrový odkaz k určení, zda je příčinou problémy vykreslování ovladačem videokarty. Soubor d3dref9. dll musí být v umístění, kde aplikace k němu má přístup, například v libovolném umístění v systémové cestě nebo v místním adresáři aplikace.  
   
- **Možnost použít rastrový odkaz** má hodnotu DWORD. Hodnota 0 značí, že se nepoužívá rastrový rastr. Jakákoli jiná nenulová hodnota vynutí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] použití rastrového rastrového odkazu.  
+ **Možnost použít rastrový odkaz** má hodnotu DWORD. Hodnota 0 značí, že se nepoužívá rastrový rastr. Jakákoli jiná nenulová hodnota vynutí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] použít rastrový odkaz.  
   
 ## <a name="see-also"></a>Viz také:
 

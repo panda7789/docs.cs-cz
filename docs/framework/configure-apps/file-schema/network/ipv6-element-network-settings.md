@@ -8,21 +8,21 @@ helpviewer_keywords:
 - <ipv6> element
 - ipv6 element
 ms.assetid: 10b79aef-327b-4718-a892-e11f55e4d169
-ms.openlocfilehash: bf04b16682c2c1bc677fecbd6dc966090c77e1da
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: c16949171d082bd02abb0a02db83c2e71c2f17df
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71698135"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088135"
 ---
-# <a name="ipv6-element-network-settings"></a>@no__t – element > 0ipv6 (nastavení sítě)
+# <a name="ipv6-element-network-settings"></a>\<element > IPv6 (nastavení sítě)
 Povoluje odpovědi na Internet Protocol verze 6 (IPv6) od zastaralých členů třídy <xref:System.Net.Dns>.  
-  
-[ **@no__t – 2configuration >** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t -4system. NET >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<settings >** ](settings-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<ipv6 >**  
-  
+
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<nastavení >** ](settings-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<ipv6 >**
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -50,7 +50,7 @@ Povoluje odpovědi na Internet Protocol verze 6 (IPv6) od zastaralých členů t
 |[možnost](settings-element-network-settings.md)|Konfiguruje základní možnosti sítě pro obor názvů <xref:System.Net>.|  
   
 ## <a name="remarks"></a>Poznámky  
- Toto nastavení umožňuje podporu protokolu IPv6 pro zastaralé členy třídy <xref:System.Net.Dns>: <xref:System.Net.Dns.BeginGetHostByName%2A>, <xref:System.Net.Dns.BeginResolve%2A>, <xref:System.Net.Dns.EndGetHostByName%2A>, <xref:System.Net.Dns.EndResolve%2A>, <xref:System.Net.Dns.GetHostByAddress%2A>, <xref:System.Net.Dns.GetHostByName%2A> a <xref:System.Net.Dns.Resolve%2A>. Pokud je v operačním systému povolený protokol IPv6, můžou se u ostatních členů oboru názvů <xref:System.Net?displayProperty=nameWithType> vracet IPv6 adresy.  
+ Toto nastavení umožňuje podporu protokolu IPv6 pro zastaralé členy třídy <xref:System.Net.Dns>: <xref:System.Net.Dns.BeginGetHostByName%2A>, <xref:System.Net.Dns.BeginResolve%2A>, <xref:System.Net.Dns.EndGetHostByName%2A>, <xref:System.Net.Dns.EndResolve%2A>, <xref:System.Net.Dns.GetHostByAddress%2A>, <xref:System.Net.Dns.GetHostByName%2A>a <xref:System.Net.Dns.Resolve%2A>. Pokud je v operačním systému povolený protokol IPv6, můžou se u ostatních členů oboru názvů <xref:System.Net?displayProperty=nameWithType> vracet IPv6 adresy.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
  Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  

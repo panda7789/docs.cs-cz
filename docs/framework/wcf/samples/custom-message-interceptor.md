@@ -2,12 +2,12 @@
 title: Vlastní zachycování zpráv
 ms.date: 03/30/2017
 ms.assetid: 73f20972-53f8-475a-8bfe-c133bfa225b0
-ms.openlocfilehash: daa041bf63442dace0d33e1e3207d0857b6b7312
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 61f9bae24f5edb70430f4f3eaa16e42da221a7b4
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928909"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73978301"
 ---
 # <a name="custom-message-interceptor"></a>Vlastní zachycování zpráv
 Tato ukázka demonstruje použití modelu rozšiřitelnosti kanálu. Konkrétně ukazuje, jak implementovat vlastní prvek vazby, který vytváří objekty pro vytváření kanálů a naslouchací procesy kanálu pro zachycení všech příchozích a odchozích zpráv v určitém bodě v zásobníku běhu. Ukázka zahrnuje také klienta a server, který předvádí použití těchto vlastních továrn.  
@@ -22,7 +22,7 @@ Tato ukázka demonstruje použití modelu rozšiřitelnosti kanálu. Konkrétně
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Channels\MessageInterceptor`  
   
@@ -37,14 +37,14 @@ Tato ukázka demonstruje použití modelu rozšiřitelnosti kanálu. Konkrétně
 4. Přidejte část rozšíření elementu vazby, která zpřístupňuje nový prvek vazby na konfigurační systém.  
   
 ## <a name="channel-shapes"></a>Obrazce kanálu  
- Prvním krokem při psaní vlastního vrstveného kanálu je rozhodování o tom, které obrazce jsou pro kanál vyžadovány. Pro náš inspektor zpráv podporujeme jakýkoliv tvar, který vrstva níže podporuje (například v <xref:System.ServiceModel.Channels.IOutputChannel> případě, že vrstva níže může sestavovat a <xref:System.ServiceModel.Channels.IDuplexSessionChannel>a pak také zveřejňuje <xref:System.ServiceModel.Channels.IOutputChannel> a <xref:System.ServiceModel.Channels.IDuplexSessionChannel>).  
+ Prvním krokem při psaní vlastního vrstveného kanálu je rozhodování o tom, které obrazce jsou pro kanál vyžadovány. Pro náš inspektor zpráv podporujeme jakýkoliv tvar, který podporuje vrstva níže (například pokud je možné, že vrstva níže může sestavovat <xref:System.ServiceModel.Channels.IOutputChannel> a <xref:System.ServiceModel.Channels.IDuplexSessionChannel>, a také zveřejňuje <xref:System.ServiceModel.Channels.IOutputChannel> a <xref:System.ServiceModel.Channels.IDuplexSessionChannel>).  
   
 ## <a name="channel-factory-and-listener-factory"></a>Továrna kanálu a továrna naslouchacího procesu  
- Dalším krokem při psaní vlastního vrstveného kanálu je vytvoření implementace <xref:System.ServiceModel.Channels.IChannelFactory> pro klientské kanály <xref:System.ServiceModel.Channels.IChannelListener> a pro kanály služby.  
+ Dalším krokem při psaní vlastního vrstveného kanálu je vytvoření implementace <xref:System.ServiceModel.Channels.IChannelFactory> pro klientské kanály a <xref:System.ServiceModel.Channels.IChannelListener> pro kanály služby.  
   
- Tyto třídy přebírají interní továrnu a naslouchací proces a přesměrují `OnCreateChannel` vše `OnAcceptChannel` , ale volání a do interního továrny a naslouchacího procesu.  
+ Tyto třídy přebírají interní továrnu a naslouchací proces a deleguje všechny kromě `OnCreateChannel` a `OnAcceptChannel` volání interní továrny a naslouchacího procesu.  
   
-```csharp  
+```csharp
 class InterceptingChannelFactory<TChannel> : ChannelFactoryBase<TChannel>  
 { 
     //... 
@@ -57,10 +57,10 @@ class InterceptingChannelListener<TChannel> : ListenerFactoryBase<TChannel>
 ```  
   
 ## <a name="adding-a-binding-element"></a>Přidání elementu vazby  
- Ukázka definuje vlastní prvek vazby: `InterceptingBindingElement`. `InterceptingBindingElement`provede jako vstup a použije to `ChannelMessageInterceptor` k manipulaci se zprávami, které ji procházejí. `ChannelMessageInterceptor` Toto je jediná třída, která musí být veřejná. Továrny, naslouchací proces a kanály můžou být interními implementacemi pro veřejná rozhraní za běhu.  
+ Ukázka definuje vlastní element vazby: `InterceptingBindingElement`. `InterceptingBindingElement` přebírá `ChannelMessageInterceptor` jako vstup a používá tento `ChannelMessageInterceptor` k manipulaci se zprávami, které projde. Toto je jediná třída, která musí být veřejná. Továrny, naslouchací proces a kanály můžou být interními implementacemi pro veřejná rozhraní za běhu.  
   
 ```csharp
-public class InterceptingBindingElement : BindingElement 
+public class InterceptingBindingElement : BindingElement
 {
 }
 ```  
@@ -76,12 +76,12 @@ public abstract class InterceptingElement : BindingElementExtensionElement
 ```  
   
 ## <a name="adding-policy"></a>Přidávání zásad  
- Pro integraci s naším systémem `InterceptingBindingElement` zásad implementuje IPolicyExportExtension k signalizaci, že by se měl zúčastnit generování zásad. Pro podporu importu zásad na vygenerovaného klienta může uživatel zaregistrovat odvozenou třídu třídy `InterceptingBindingElementImporter` a přepsat `CreateMessageInterceptor`(), aby vygenerovala svou třídu `ChannelMessageInterceptor` s povolenými zásadami.  
+ Pro integraci s naším systémem zásad `InterceptingBindingElement` implementuje IPolicyExportExtension k signalizaci, že by se měl zúčastnit generování zásad. Pro podporu importu zásad na vygenerovaného klienta může uživatel zaregistrovat odvozenou třídu `InterceptingBindingElementImporter` a přepsat `CreateMessageInterceptor`() pro vygenerování své třídy `ChannelMessageInterceptor` s povolenými zásadami.  
   
 ## <a name="example-droppable-message-inspector"></a>Příklad: Droppable Message Inspector  
- Zahrnuté v ukázce je příklad implementace `ChannelMessageInspector` , která vyřazuje zprávy.  
+ Součástí ukázky je příklad implementace `ChannelMessageInspector`, která vyřazuje zprávy.  
   
-```csharp  
+```csharp
 class DroppingServerElement : InterceptingElement  
 {  
     protected override ChannelMessageInterceptor CreateMessageInterceptor()  
@@ -120,7 +120,7 @@ class DroppingServerElement : InterceptingElement
 </customBinding>  
 ```  
   
- Klient používá `MessageInterceptor` knihovnu k přidání vlastní hlavičky i k číslování zpráv. Služba na druhé straně používá `MessageInterceptor` knihovnu k vyřazení všech zpráv, které nemají toto speciální hlavičku.  
+ Klient nástroje používá knihovnu `MessageInterceptor` k přidání vlastní hlavičky k sudému číslování zpráv. Služba na druhé straně používá knihovnu `MessageInterceptor` k vyřazení všech zpráv, které nemají toto speciální hlavičku.  
   
  Po spuštění služby a poté klientovi by se měl zobrazit následující výstup klienta.  
   

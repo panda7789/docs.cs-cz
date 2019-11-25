@@ -5,12 +5,12 @@ ms.date: 08/29/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to, title-hack-0625
-ms.openlocfilehash: fc735f28bad91b9714d7e6bf2a9c7c620acacc4d
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 0e0f43225b9bf243c31b3095817bdcbdb3123012
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929337"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976763"
 ---
 # <a name="train-and-evaluate-a-model"></a>Trénování a vyhodnocení modelu
 
@@ -20,7 +20,7 @@ Naučte se sestavovat modely strojového učení, shromažďovat metriky a měř
 
 Cílem modelu strojového učení je identifikovat vzory v rámci školicích dat. Tyto vzory slouží k vytváření předpovědi pomocí nových dat.
 
-Data je možné modelovat podle třídy, jako `HousingData`je.
+Data je možné modelovat podle třídy, jako je `HousingData`.
 
 ```csharp
 public class HousingData
@@ -82,7 +82,7 @@ HousingData[] housingData = new HousingData[]
 };
 ```
 
-[`TrainTestSplit`](xref:Microsoft.ML.DataOperationsCatalog.TrainTestSplit*) Použijte metodu pro rozdělení dat do vlakových a testovacích sad. Výsledkem bude [`TrainTestData`](xref:Microsoft.ML.DataOperationsCatalog.TrainTestData) objekt, který obsahuje dva [`IDataView`](xref:Microsoft.ML.IDataView) členy, jeden pro sadu vlaků a druhý pro sadu testů. Procentuální hodnota rozdělení dat je určena `testFraction` parametrem. Níže uvedený fragment kódu vydrží 20% původních dat pro sadu testů.
+Použijte metodu [`TrainTestSplit`](xref:Microsoft.ML.DataOperationsCatalog.TrainTestSplit*) pro rozdělení dat do vlakových a testovacích sad. Výsledkem bude [`TrainTestData`](xref:Microsoft.ML.DataOperationsCatalog.TrainTestData) objekt, který obsahuje dva členy [`IDataView`](xref:Microsoft.ML.IDataView) , jeden pro sadu vlaků a druhý pro sadu testů. Procentuální hodnota rozdělení dat je určena parametrem `testFraction`. Níže uvedený fragment kódu vydrží 20% původních dat pro sadu testů.
 
 ```csharp
 DataOperationsCatalog.TrainTestData dataSplit = mlContext.Data.TrainTestSplit(data, testFraction: 0.2);
@@ -92,17 +92,17 @@ IDataView testData = dataSplit.TestSet;
 
 ## <a name="prepare-the-data"></a>Příprava dat
 
-Data musí být před školením modelu Machine Learning předem zpracovaná. Další informace o přípravě dat najdete v [článku o postupu pro přípravu dat](prepare-data-ml-net.md) a [`transforms page`](../resources/transforms.md)na.
+Data musí být před školením modelu Machine Learning předem zpracovaná. Další informace o přípravě dat najdete v [článku o postupu pro přípravu dat](prepare-data-ml-net.md) a na [`transforms page`](../resources/transforms.md).
 
 ML.NET algoritmy mají omezení na vstupních typech sloupců. Kromě toho se pro vstupní a výstupní názvy sloupců použijí výchozí hodnoty, pokud nejsou zadány žádné hodnoty.
 
 ### <a name="working-with-expected-column-types"></a>Práce s očekávanými typy sloupců
 
-Algoritmy strojového učení v ML.NET očekávají jako vstup plovoucí vektor známé velikosti. [`VectorType`](xref:Microsoft.ML.Data.VectorTypeAttribute) Použijte atribut pro datový model, pokud jsou všechna data již v číselném formátu a mají být zpracována společně (tj. obrazové body). 
+Algoritmy strojového učení v ML.NET očekávají jako vstup plovoucí vektor známé velikosti. Použijte atribut [`VectorType`](xref:Microsoft.ML.Data.VectorTypeAttribute) pro datový model, pokud jsou všechna data již v číselném formátu a mají být zpracována společně (tj. obrazové body).
 
-Pokud data nejsou všechna číselná a chcete u každého sloupce samostatně použít různé transformace dat, použijte [`Concatenate`](xref:Microsoft.ML.TransformExtensionsCatalog.Concatenate*) metodu po zpracování všech sloupců pro kombinování všech jednotlivých sloupců do jednoho vektoru funkce je výstupem do nového sloupce. 
+Pokud data nejsou všechna číselná a chcete u každého sloupce použít různé transformace dat, použijte metodu [`Concatenate`](xref:Microsoft.ML.TransformExtensionsCatalog.Concatenate*) po zpracování všech sloupců pro zkombinování všech jednotlivých sloupců do jediného vektoru funkce, který je výstupem do nového sloupce.
 
-Následující fragment kódu kombinuje `Size` sloupce a `HistoricalPrices` do jediného vektoru funkce, který je výstupem do nového sloupce s názvem. `Features` Vzhledem k tomu, že je rozdíl v [`NormalizeMinMax`](xref:Microsoft.ML.NormalizationCatalog.NormalizeMinMax*) měřítku, je `Features` u sloupce použita normalizace dat.
+Následující fragment kódu kombinuje `Size` a `HistoricalPrices` sloupce do jednoho vektoru funkce, který je výstupem do nového sloupce s názvem `Features`. Vzhledem k tomu, že existuje rozdíl v měřítku,`NormalizeMinMax`pro `Features` sloupce použít k normalizaci dat [](xref:Microsoft.ML.NormalizationCatalog.NormalizeMinMax*) .
 
 ```csharp
 // Define Data Prep Estimator
@@ -121,9 +121,9 @@ IDataView transformedTrainingData = dataPrepTransformer.Transform(trainData);
 
 ### <a name="working-with-default-column-names"></a>Práce s názvy výchozích sloupců
 
-Algoritmy ML.NET používají výchozí názvy sloupců, pokud nejsou zadané žádné. Všechny školitele mají parametr nazvaný `featureColumnName` pro vstupy algoritmu a tam, kde je to možné, mají také parametr pro očekávanou hodnotu s `labelColumnName`názvem. Ve výchozím nastavení jsou `Features` tyto hodnoty a `Label` v uvedeném pořadí. 
+Algoritmy ML.NET používají výchozí názvy sloupců, pokud nejsou zadané žádné. Všechny školitele mají parametr s názvem `featureColumnName` pro vstupy algoritmu a pokud je to možné, mají také parametr pro očekávanou hodnotu s názvem `labelColumnName`. Ve výchozím nastavení jsou tyto hodnoty `Features` a `Label` v uvedeném pořadí.
 
-Pomocí [`Concatenate`](xref:Microsoft.ML.TransformExtensionsCatalog.Concatenate*) metody během předběžného zpracování pro vytvoření nového sloupce s názvem `Features`není nutné zadávat název sloupce funkce v parametrech algoritmu, protože již existuje v předzpracovaném `IDataView`formátu. Sloupec popisku `CurrentPrice`je, ale `CurrentPrice` [`ColumnName`](xref:Microsoft.ML.Data.ColumnNameAttribute) vzhledem k tomu, že se atribut používá v datovém modelu, ml.NET `Label` přejmenuje sloupec, ve kterém se odstraní nutnost zadat `labelColumnName` parametr do algoritmu strojového učení. Estimator. 
+Pomocí metody [`Concatenate`](xref:Microsoft.ML.TransformExtensionsCatalog.Concatenate*) během předběžného zpracování pro vytvoření nového sloupce s názvem `Features`není nutné zadávat název sloupce funkce v parametrech algoritmu, protože již existuje v předem zpracovaném `IDataView`. Sloupec popisku je `CurrentPrice`, ale vzhledem k tomu, že se v datovém modelu používá atribut [`ColumnName`](xref:Microsoft.ML.Data.ColumnNameAttribute) , ml.NET přejmenuje sloupec `CurrentPrice` na `Label`, který eliminuje nutnost zadat parametr `labelColumnName` pro Estimator algoritmus Machine Learning.
 
 Pokud nechcete používat výchozí názvy sloupců, předejte při definování Estimator algoritmu pro strojové učení, které ukazuje následující fragment kódu, názvy sloupců funkce a popisku jako parametry:
 
@@ -133,7 +133,7 @@ var UserDefinedColumnSdcaEstimator = mlContext.Regression.Trainers.Sdca(labelCol
 
 ## <a name="train-the-machine-learning-model"></a>Výuka modelu Machine Learning
 
-Jakmile jsou data předem zpracovaná, použijte [`Fit`](xref:Microsoft.ML.Trainers.TrainerEstimatorBase`2.Fit*) metodu ke studiu modelu Machine Learning [`StochasticDualCoordinateAscent`](xref:Microsoft.ML.Trainers.SdcaRegressionTrainer) pomocí regresního algoritmu.
+Jakmile jsou data předem zpracovaná, použijte metodu [`Fit`](xref:Microsoft.ML.Trainers.TrainerEstimatorBase`2.Fit*) k výuce modelu Machine learning pomocí [`StochasticDualCoordinateAscent`](xref:Microsoft.ML.Trainers.SdcaRegressionTrainer) regresního algoritmu.
 
 ```csharp
 // Define StochasticDualCoordinateAscent regression algorithm estimator
@@ -145,21 +145,21 @@ var trainedModel = sdcaEstimator.Fit(transformedTrainingData);
 
 ## <a name="extract-model-parameters"></a>Extrahovat parametry modelu
 
-Po vyzkoušení modelu vyextrahujte získanou [`ModelParameters`](xref:Microsoft.ML.Trainers.ModelParametersBase%601) kontrolu a proškolení. [`LinearRegressionModelParameters`](xref:Microsoft.ML.Trainers.LinearRegressionModelParameters) Zadejte bias a zjištěné koeficienty nebo váhy pro vyškolený model. 
+Po výuce modelu vyextrahujte získanou [`ModelParameters`](xref:Microsoft.ML.Trainers.ModelParametersBase%601) pro kontrolu nebo opětovné školení. [`LinearRegressionModelParameters`](xref:Microsoft.ML.Trainers.LinearRegressionModelParameters) poskytuje posun a zjištěné koeficienty nebo váhy vyškolených modelů.
 
 ```csharp
 var trainedModelParameters = trainedModel.Model as LinearRegressionModelParameters;
 ```
 
 > [!NOTE]
-> Další modely mají parametry, které jsou specifické pro jejich úkoly. Například [algoritmus k znamená](xref:Microsoft.ML.Trainers.KMeansTrainer) , že data do clusteru jsou založena na centroids a [`KMeansModelParameters`](xref:Microsoft.ML.Trainers.KMeansModelParameters) obsahuje vlastnost, která ukládá tyto zjištěné centroids. Další informace najdete v [ `Microsoft.ML.Trainers` dokumentaci k rozhraní API](xref:Microsoft.ML.Trainers) a hledejte třídy, které v `ModelParameters` jejich názvu obsahují. 
+> Další modely mají parametry, které jsou specifické pro jejich úkoly. Například [algoritmus k znamená](xref:Microsoft.ML.Trainers.KMeansTrainer) , že data do clusteru jsou založena na centroids a [`KMeansModelParameters`](xref:Microsoft.ML.Trainers.KMeansModelParameters) obsahuje vlastnost, která je uložena se zjištěnými centroids. Další informace najdete v dokumentaci k [rozhraní API`Microsoft.ML.Trainers`](xref:Microsoft.ML.Trainers) a hledejte třídy, které v názvu obsahují `ModelParameters`.
 
 ## <a name="evaluate-model-quality"></a>Vyhodnocení kvality modelu
 
-Chcete-li si vybrat nejlepší model provádění, je nezbytné vyhodnotit jeho výkon na testovacích datech. [`Evaluate`](xref:Microsoft.ML.RegressionCatalog.Evaluate*) Použijte metodu pro měření různých metrik pro vyškolený model.
+Chcete-li si vybrat nejlepší model provádění, je nezbytné vyhodnotit jeho výkon na testovacích datech. Použijte metodu [`Evaluate`](xref:Microsoft.ML.RegressionCatalog.Evaluate*) k měření různých metrik pro vyškolený model.
 
 > [!NOTE]
-> `Evaluate` Metoda vytváří různé metriky v závislosti na tom, který úkol strojového učení byl proveden. Další podrobnosti najdete v [ `Microsoft.ML.Data` dokumentaci k rozhraní API](xref:Microsoft.ML.Data) a hledejte třídy, které v `Metrics` jejich názvu obsahují. 
+> Metoda `Evaluate` vytváří různé metriky v závislosti na tom, který úkol strojového učení byl proveden. Další podrobnosti najdete v [dokumentaci k rozhraní API`Microsoft.ML.Data`](xref:Microsoft.ML.Data) a hledejte třídy, které v názvu obsahují `Metrics`.
 
 ```csharp
 // Measure trained model performance
@@ -174,11 +174,11 @@ RegressionMetrics trainedModelMetrics = mlContext.Regression.Evaluate(testDataPr
 double rSquared = trainedModelMetrics.RSquared;
 ```
 
-V předchozím příkladu kódu:  
+V předchozím příkladu kódu:
 
-1. Testovací sada dat je předem zpracovaná pomocí transformací přípravných dat, které byly dříve definovány. 
+1. Testovací sada dat je předem zpracovaná pomocí transformací přípravných dat, které byly dříve definovány.
 2. K předpovědií testovacích dat se používá školicí model strojového učení.
-3. V metodě jsou hodnoty `CurrentPrice` ve sloupci sady testovacích dat porovnány `Score` se sloupcem nově výstupního předpovědi pro výpočet metriky pro regresní model, přičemž jeden z nich je uložený v `Evaluate` `rSquared` proměnná.
+3. V metodě `Evaluate` jsou hodnoty ve sloupci `CurrentPrice` testovacích dat porovnány se sloupcem `Score` nově výstupního předpovědi pro výpočet metriky pro regresní model, přičemž jedna z nich je v `rSquared` proměnné uložena pomocí R-čtverce.
 
 > [!NOTE]
 > V tomto malém příkladu je R-kvadrát číslo, které není v rozsahu 0-1, protože je omezená velikost dat. Ve scénáři reálného světa byste měli očekávat zobrazení hodnoty mezi 0 a 1.

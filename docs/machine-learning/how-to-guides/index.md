@@ -1,63 +1,51 @@
 ---
-title: Průvodce ML.NET postupy
-description: Zjistěte, jak provádět specifické úkoly, které vám pomůže s vlastní vytvoření řešení AI a Machine Learning integrace do svých aplikací .NET.
+title: ML.NET návody
+description: Naučte se, jak provést konkrétní úkoly, které vám pomůžou při vytváření a Machine Learning integrace do vašich aplikací .NET.
 ms.custom: seodec18
 ms.date: 03/01/2019
-ms.openlocfilehash: c16adf6bf85aec1aef51751c6d4fe8c7f0f3c9f4
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: e2b4ff77c7f76282d70c06b5ef534306fe4e93a6
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645033"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977113"
 ---
-# <a name="net-machine-learning-how-to-guides"></a>Průvodce postupy .NET machine learning 
+# <a name="net-machine-learning-how-to-guides"></a>Průvodce strojovým učením .NET
 
-V části Průvodce ML.NET jak najdete rychlé odpovědi na běžné dotazy. V některých případech může být uvedena články ve více oddílů, aby se daly snadno najít.
+V části Postupy v příručce ML.NET můžete najít rychlé odpovědi na časté otázky. V některých případech mohou být články uvedeny ve více částech, aby bylo možné je snadno najít.
 
-## <a name="load-the-data"></a>Načtení dat
+## <a name="load-data"></a>Načtení dat
 
-* [Načtení dat pomocí mnoho sloupců ze souboru CSV pro machine learning zpracování.](load-data-from-mult-column-csv-ml-net.md)
-
-* [Načtení dat z více souborů pro machine learning zpracování.](load-data-from-multiple-files-ml-net.md)
-
-* [Načíst data z textového souboru pro machine learning zpracování.](load-data-from-text-file-ml-net.md)
+* [Načte data ze souborů a databází SQL.](load-data-ml-net.md)
 
 ### <a name="prepare-the-data"></a>Příprava dat
 
-* [Předběžné zpracování s normalizers používané k zpracování dat trénovací data.](normalizers-preprocess-data-ml-net.md)
+* [Předzpracování školicích dat pomocí normalizování pro použití při zpracování dat.](normalizers-preprocess-data-ml-net.md)
 
-## <a name="train-the-model"></a>Trénování modelu
+## <a name="train-the-model"></a>Výuka modelu
 
-* [Trénování modelu strojového učení s daty, která není v textovém souboru.](load-non-file-training-data-ml-net.md)
+* [Naučte se model strojového učení pomocí křížového ověřování.](train-machine-learning-model-cross-validation-ml-net.md)
 
-* [Trénování modelu strojového učení pomocí křížového ověření.](train-cross-validation-ml-net.md)
+* [Výuka regresního modelu pro předpověď hodnoty pomocí ML.NET.](train-machine-learning-model-ml-net.md)
 
-* [Trénování regresní model k predikci hodnotu pomocí ML.NET.](train-regression-model-ml-net.md)
+### <a name="evaluate-the-model-quality"></a>Vyhodnocení kvality modelu
 
-### <a name="evaluate-the-model-quality"></a>Vyhodnocení kvalita modelu
+* [Vypočítá metriky pro vyhodnocení kvality modelu.](verify-model-quality-ml-net.md)
 
-* [Vypočítejte metriky pro vyhodnocení kvality modelu.](verify-model-quality-ml-net.md)
+### <a name="model-explainability"></a>Světlost modelu
 
-### <a name="model-explainability"></a>Model explainability
+* [Určete důležitost funkcí modelů s důležitou funkcí permutace.](explain-machine-learning-model-permutation-feature-importance-ml-net.md)
 
-* [Určení funkcí důležitost modely s důležitostí funkce permutaci.](determine-global-feature-importance-in-model.md)
-
-* [Pomocí funkcí tvar a zobecněn Additive modely pro model explainability.](use-gams-for-model-explainability.md)
-
-### <a name="feature-engineering"></a>Návrh funkcí
-
-* [Použijte vytváření funkcí k tréninku modelu na data zařazená do kategorií.](train-model-categorical-ml-net.md)
-
-* [U textových dat s ML.NET použijte vytváření funkcí pro cvičení modelu.](train-model-textual-ml-net.md)
+* [Pro vyjasnění modelu použijte generalizované doplňkové modely a funkce tvarů.](use-gams-for-model-explainability.md)
 
 ## <a name="run"></a>Spustit
 
-* [Zkontrolujte hodnoty dočasných dat během zpracování kanálu ML.NET.](inspect-intermediate-data-ml-net.md)
+* [Prozkoumejte hodnoty mezidat během zpracování kanálu ML.NET.](inspect-intermediate-data-ml-net.md)
 
-* [Zprovoznění trénovaný model strojového učení v aplikacích.](consuming-model-ml-net.md)
+* [Načtěte školicí model strojového učení.](save-load-machine-learning-models-ml-net.md)
 
-* [Používejte PredictionFunction předpověď jeden po druhém.](single-predict-model-ml-net.md)
+* [Udělejte předpovědi pomocí trained model.](machine-learning-model-predictions-ml-net.md)
 
-## <a name="probabilistic-infernet"></a>Probabilistic (Infer.NET)
+## <a name="probabilistic-infernet"></a>Pravděpodobnostní (Infer.NET)
 
-* [Vytvoření hry shoda seznamu aplikaci pomocí Infer.NET a pravděpodobnostní programování.](matchup-app-infer-net.md)
+* [Vytvoří seznam herních aplikací v souladu s Infer.NET a pravděpodobnostní programováním.](matchup-app-infer-net.md)

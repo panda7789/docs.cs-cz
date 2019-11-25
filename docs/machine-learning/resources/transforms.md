@@ -4,12 +4,12 @@ description: Prozkoumejte komponenty pro inženýry funkcí podporované v ML.NE
 author: natke
 ms.author: nakersha
 ms.date: 04/02/2019
-ms.openlocfilehash: 25da3cceb3c9090661b34254ed240207aaf3b9d7
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: cb191b1688dce8f703bdabcd220eb39efe68fd48
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929246"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977237"
 ---
 # <a name="data-transformations"></a>Transformace dat
 
@@ -21,9 +21,9 @@ Transformace dat slouží k těmto akcím:
 
 Transformace v této příručce vracejí třídy, které implementují rozhraní [IEstimator](xref:Microsoft.ML.IEstimator%601) . Transformace dat se dají zřetězit dohromady. Každá transformace očekává a vytvoří data specifických typů a formátů, které jsou zadány v referenční dokumentaci s odkazem.
 
-Některé transformace dat vyžadují k výpočtu jejich parametrů školicí data. Například: <xref:Microsoft.ML.NormalizationCatalog.NormalizeMeanVariance%2A> transformátor vypočítá průměr a rozptyl školicích dat `Fit()` během operace a `Transform()` použije tyto parametry v operaci. 
+Některé transformace dat vyžadují k výpočtu jejich parametrů školicí data. Například: <xref:Microsoft.ML.NormalizationCatalog.NormalizeMeanVariance%2A> transformátor vypočítá průměr a rozptyl školicích dat během operace `Fit()` a použije tyto parametry v operaci `Transform()`.
 
-Další transformace dat nevyžadují školicí data. Například: <xref:Microsoft.ML.ImageEstimatorsCatalog.ConvertToGrayscale*> transformace může `Transform()` provést operaci, aniž by během `Fit()` operace viděli žádná data o školení.
+Další transformace dat nevyžadují školicí data. Například: transformace <xref:Microsoft.ML.ImageEstimatorsCatalog.ConvertToGrayscale*> může provést operaci `Transform()`, aniž by během operace `Fit()` viděli žádná školicí data.
 
 ## <a name="column-mapping-and-grouping"></a>Mapování sloupců a seskupení
 
@@ -62,7 +62,7 @@ Další transformace dat nevyžadují školicí data. Například: <xref:Microso
 
 | Transformace | Definice |
 | --- | --- |
-| <xref:Microsoft.ML.TextCatalog.FeaturizeText*> | Transformace textového sloupce na pole typu float normalizovaných ngrams a počtu znaků-gramů | 
+| <xref:Microsoft.ML.TextCatalog.FeaturizeText*> | Transformace textového sloupce na pole typu float normalizovaných ngrams a počtu znaků-gramů |
 | <xref:Microsoft.ML.TextCatalog.TokenizeIntoWords*> | Rozdělení jednoho nebo více textových sloupců na jednotlivá slova |
 | <xref:Microsoft.ML.TextCatalog.TokenizeIntoCharactersAsKeys*> | Rozdělení jednoho nebo více textových sloupců na jednotlivé znaky Floaty přes sadu témat |
 | <xref:Microsoft.ML.TextCatalog.NormalizeText*> | Změnit velikost písmen, odebrat diakritická znaménka, interpunkční znaménka a číslice |
@@ -80,7 +80,7 @@ Další transformace dat nevyžadují školicí data. Například: <xref:Microso
 | Transformace | Definice |
 | --- | --- |
 | <xref:Microsoft.ML.ImageEstimatorsCatalog.ConvertToGrayscale*> | Převést obrázek na stupně šedi |
-| <xref:Microsoft.ML.ImageEstimatorsCatalog.ConvertToImage*> | Převod vektoru pixelů na<xref:Microsoft.ML.Transforms.Image.ImageDataViewType> |
+| <xref:Microsoft.ML.ImageEstimatorsCatalog.ConvertToImage*> | Převod vektoru pixelů na <xref:Microsoft.ML.Transforms.Image.ImageDataViewType> |
 | <xref:Microsoft.ML.ImageEstimatorsCatalog.ExtractPixels*> | Převést pixely ze vstupní image na vektor čísel |
 | <xref:Microsoft.ML.ImageEstimatorsCatalog.LoadImages*> | Načtení imagí ze složky do paměti |
 | <xref:Microsoft.ML.ImageEstimatorsCatalog.ResizeImages*> | Změna velikosti obrázků |

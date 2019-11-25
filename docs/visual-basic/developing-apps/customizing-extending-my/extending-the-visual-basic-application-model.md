@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - Visual Basic Application Model, extending
 ms.assetid: e91d3bed-4c27-40e3-871d-2be17467c72c
-ms.openlocfilehash: 02a964506d976cb10f3f28f83f0655fecc447e59
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 46c18ab540c90c4147514685c2acc824755b435f
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582765"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976866"
 ---
 # <a name="extending-the-visual-basic-application-model"></a>Rozšíření aplikačního modelu jazyka Visual Basic
 
@@ -82,6 +82,7 @@ Pokud je aplikace normální aplikací (aplikace s více instancemi) nebo první
  Konstruktor <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OnStartupNextInstance(Microsoft.VisualBasic.ApplicationServices.StartupNextInstanceEventArgs)> volá vlastnost <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering%2A> a určí, který modul vykreslování textu se má použít pro formuláře aplikace. Ve výchozím nastavení vlastnost <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering%2A> vrací `False`, což značí, že se používá modul vykreslování textu GDI, což je výchozí hodnota v Visual Basic 2005 a novějších verzích. Vlastnost <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UseCompatibleTextRendering%2A> můžete přepsat tak, aby vracela `True`, což znamená, že se používá modul vykreslování textu GDI+, který je ve výchozím nastavení Visual Basic .NET 2002 a Visual Basic .NET 2003.
 
 ## <a name="configuring-the-application"></a>Konfigurace aplikace
+
  Jako součást modelu Visual Basic aplikace poskytuje třída <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> chráněné vlastnosti, které konfigurují aplikaci. Tyto vlastnosti by měly být nastaveny v konstruktoru implementované třídy.
 
  Ve výchozím model Windows Forms projektu vytvoří **Návrhář projektu** kód pro nastavení vlastností s nastavením návrháře. Vlastnosti jsou použity pouze v případě, že je aplikace spouštěna; nastavení se po spuštění aplikace nijak neprojeví.

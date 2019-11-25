@@ -8,21 +8,21 @@ helpviewer_keywords:
 - defaultHttpCachePolicy element
 - <defaultHttpCachePolicy> element
 ms.assetid: 2c1247d0-39b0-4c12-919a-a925ce075c79
-ms.openlocfilehash: f3b029e8b931e976bee85c98dd926e020c5b8743
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: c5029a7d1e53c28d0abb232efdc3e0bd2c9658d4
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71698269"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088421"
 ---
-# <a name="defaulthttpcachepolicy-element-network-settings"></a>@no__t – element > 0defaultHttpCachePolicy (nastavení sítě)
+# <a name="defaulthttpcachepolicy-element-network-settings"></a>\<element > defaultHttpCachePolicy (nastavení sítě)
 Popisuje, zda je ukládání do mezipaměti protokolu HTTP aktivní a popisuje výchozí zásady ukládání do mezipaměti.  
-  
-[ **@no__t – 2configuration >** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t -4system. NET >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<requestCaching >** ](requestcaching-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<defaultHttpCachePolicy >**  
-  
+
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<requestCaching >** ](requestcaching-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<defaultHttpCachePolicy >**
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -56,9 +56,9 @@ Popisuje, zda je ukládání do mezipaměti protokolu HTTP aktivní a popisuje v
 |[requestCaching](requestcaching-element-network-settings.md)|Řídí mechanismus ukládání do mezipaměti pro síťové požadavky.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnota atributu `policyLevel` je buď `BypassCache`, nebo `Default`.  
+ Hodnota atributu `policyLevel` je buď `BypassCache` nebo `Default`.  
   
- Hodnoty pro prvky `maximumAge`, `maximumStale` a `minimumFresh` jsou buď explicitní časový interval s formátem *d*. *HH*:*mm*:*SS* (dny, hodiny, minuty a sekundy), případně konstanty `minValue` nebo `maxValue`.  
+ Hodnoty pro prvky `maximumAge`, `maximumStale`a `minimumFresh` jsou buď explicitním časovým intervalem formátu *d*. *HH*:*mm*:*SS* (dny, hodiny, minuty a sekundy) nebo konstanty `minValue` nebo `maxValue`podle potřeby.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
  Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  

@@ -4,12 +4,12 @@ description: Naučte se zvolit ML.NET algoritmus pro model služby Machine Learn
 author: natke
 ms.topic: overview
 ms.date: 06/05/2019
-ms.openlocfilehash: dfea21908258e6eb0b696de7affe1b03cff5cb3b
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 0721418d8b0b3c9ab645eb9885b0f4951c37762e
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68972089"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976702"
 ---
 # <a name="how-to-choose-an-mlnet-algorithm"></a>Jak zvolit ML.NET algoritmus
 
@@ -19,11 +19,11 @@ Algoritmy fungují na **funkcích**. Funkce jsou číselné hodnoty vypočítan�
 
 ## <a name="trainer--algorithm--task"></a>Trainer = Algorithm + úloha
 
-Algoritmus je matematický, který se spouští k vytvoření **modelu**. Různé algoritmy vytváří modely s různými charakteristikami. 
+Algoritmus je matematický, který se spouští k vytvoření **modelu**. Různé algoritmy vytváří modely s různými charakteristikami.
 
-Pomocí ML.NET je možné použít stejný algoritmus pro různé úlohy. Například stochastického Dual koordinované stoupání lze použít pro binární klasifikaci, více tříd a regresi. Rozdíl je ve způsobu, jakým je výstup algoritmu interpretován tak, aby odpovídal úkolu. 
+Pomocí ML.NET je možné použít stejný algoritmus pro různé úlohy. Například stochastického Dual koordinované stoupání lze použít pro binární klasifikaci, více tříd a regresi. Rozdíl je ve způsobu, jakým je výstup algoritmu interpretován tak, aby odpovídal úkolu.
 
-Pro každou kombinaci algoritmu a úlohy ML.NET poskytuje komponentu, která spustí školicí algoritmus a provede výklad. Tyto komponenty se nazývají školitele. Například <xref:Microsoft.ML.Trainers.SdcaRegressionTrainer> používá algoritmus **StochasticDualCoordinatedAscent** použitý pro **regresní** úlohu.
+Pro každou kombinaci algoritmu a úlohy ML.NET poskytuje komponentu, která spustí školicí algoritmus a provede výklad. Tyto komponenty se nazývají školitele. <xref:Microsoft.ML.Trainers.SdcaRegressionTrainer> například používá algoritmus **StochasticDualCoordinatedAscent** použitý pro **regresní** úlohu.
 
 ## <a name="linear-algorithms"></a>Lineární algoritmy
 
@@ -77,12 +77,12 @@ Posílené rozhodovací stromy jsou množinou malých stromů, kde každý z nic
 
 ## <a name="meta-algorithms"></a>Meta algoritmy
 
-Tyto školitele vytvoří Trainer s více třídami z binárního Trainer. Použijte s <xref:Microsoft.ML.Trainers.AveragedPerceptronTrainer>, <xref:Microsoft.ML.Trainers.LbfgsLogisticRegressionBinaryTrainer>, <xref:Microsoft.ML.Trainers.SymbolicSgdLogisticRegressionBinaryTrainer>,, ,<xref:Microsoft.ML.Trainers.FastTree.FastTreeBinaryTrainer> ,.<xref:Microsoft.ML.Trainers.FastTree.GamBinaryTrainer> <xref:Microsoft.ML.Trainers.LightGbm.LightGbmBinaryTrainer> <xref:Microsoft.ML.Trainers.FastTree.FastForestBinaryTrainer>
+Tyto školitele vytvoří Trainer s více třídami z binárního Trainer. Použijte s <xref:Microsoft.ML.Trainers.AveragedPerceptronTrainer>, <xref:Microsoft.ML.Trainers.LbfgsLogisticRegressionBinaryTrainer>, <xref:Microsoft.ML.Trainers.SymbolicSgdLogisticRegressionBinaryTrainer>, <xref:Microsoft.ML.Trainers.LightGbm.LightGbmBinaryTrainer>, <xref:Microsoft.ML.Trainers.FastTree.FastTreeBinaryTrainer>, <xref:Microsoft.ML.Trainers.FastTree.FastForestBinaryTrainer>, <xref:Microsoft.ML.Trainers.FastTree.GamBinaryTrainer>.
 
 |Algoritmus|Vlastnosti|Školitelé|
 |---------|----------|--------|
-|Jedna oproti všem|Tato třída třídění s více třídami navlakuje jeden binární klasifikátor pro každou třídu, který rozlišuje tuto třídu od všech ostatních tříd. Má omezené škálování podle počtu tříd pro kategorizaci.|[OneVersusAllTrainer\<BinaryClassificationTrainer>](xref:Microsoft.ML.Trainers.OneVersusAllTrainer) |
-|Párový párování|Tento klasifikační klasifikátory navlakují binární klasifikační algoritmus na každou dvojici tříd. Má omezené škálování podle počtu tříd, protože každá kombinace dvou tříd musí být vyškolená.|[PairwiseCouplingTrainer\<BinaryClassificationTrainer>](xref:Microsoft.ML.Trainers.PairwiseCouplingTrainer)|
+|Jedna oproti všem|Tato třída třídění s více třídami navlakuje jeden binární klasifikátor pro každou třídu, který rozlišuje tuto třídu od všech ostatních tříd. Má omezené škálování podle počtu tříd pro kategorizaci.|[OneVersusAllTrainer\<BinaryClassificationTrainer >](xref:Microsoft.ML.Trainers.OneVersusAllTrainer) |
+|Párový párování|Tento klasifikační klasifikátory navlakují binární klasifikační algoritmus na každou dvojici tříd. Má omezené škálování podle počtu tříd, protože každá kombinace dvou tříd musí být vyškolená.|[PairwiseCouplingTrainer\<BinaryClassificationTrainer >](xref:Microsoft.ML.Trainers.PairwiseCouplingTrainer)|
 
 ## <a name="k-means"></a>K-znamená
 

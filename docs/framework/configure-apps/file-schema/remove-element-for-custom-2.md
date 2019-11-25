@@ -9,19 +9,19 @@ helpviewer_keywords:
 ms.assetid: 8d8af7f5-26c9-4db9-bbe4-b2a4e6949568
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: dc1519a794e24e04074dd2a674ecc2c0f3666521
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6cdd5833e14da1ab5185e56dce1190adfee4a2bf
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73118568"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74089029"
 ---
 # <a name="remove-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<odebrat > element pro NameValueSectionHandler a DictionarySectionHandler
 
 Odebere dříve definované nastavení.
 
-[**konfigurační >\<** ](configuration-element.md)   
-&nbsp;&nbsp;[ **\<sectiongroup >** ](custom-element-2.md)   
+[ **\<configuration >** ](configuration-element.md) \
+&nbsp;&nbsp;[ **\<sectiongroup >** ](custom-element-2.md)\
 &nbsp;&nbsp;&nbsp;&nbsp; **\<odebrat >**
 
 ## <a name="syntax"></a>Syntaxe

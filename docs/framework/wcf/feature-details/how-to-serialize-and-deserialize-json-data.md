@@ -2,14 +2,17 @@
 title: 'Postupy: Použití DataContractJsonSerializer'
 ms.date: 03/25/2019
 ms.assetid: 88abc1fb-8196-4ee3-a23b-c6934144d1dd
-ms.openlocfilehash: ad126616e0665c6de3aa7a64969c83b23be9f830
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 354f0c58a83e07ff3180977311adf85ae306dd21
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72395998"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976877"
 ---
-# <a name="how-to-use-datacontractjsonserializer"></a>Postupy: Použití DataContractJsonSerializer
+# <a name="how-to-use-datacontractjsonserializer"></a>Jak používat DataContractJsonSerializer
+
+> [!NOTE]
+> Tento článek se týká <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>. Pro většinu scénářů, které zahrnují serializaci a deserializaci JSON, doporučujeme použít nástroje v [oboru názvů System. text. JSON](../../../standard/serialization/system-text-json-overview.md).
 
 JSON (JavaScript Object Notation) je efektivní formát kódování dat, který umožňuje rychlé výměny malých objemů dat mezi klientskými prohlížeči a webovými službami s podporou AJAX.
 
@@ -17,14 +20,11 @@ Tento článek ukazuje, jak serializovat objekty typu .NET do dat zakódovaných
 
 V normálním případě je serializace a deserializace JSON zpracovávána automaticky Windows Communication Foundation (WCF) při použití typů kontraktů dat v operacích služby, které jsou zpřístupněny přes koncové body s povoleným AJAX. V některých případech ale možná budete potřebovat přímo pracovat s daty JSON.
 
-> [!NOTE]
-> Tento článek se týká <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>. Pro většinu scénářů, které zahrnují serializaci a deserializaci JSON, doporučujeme použít nástroje v [oboru názvů System. text. JSON](../../../standard/serialization/system-text-json-overview.md).
-
 Tento článek je založený na [ukázce DataContractJsonSerializer](../samples/json-serialization.md).
 
 ## <a name="to-define-the-data-contract-for-a-person-type"></a>Definování kontraktu dat pro typ osoby
 
-1. Definujte kontrakt dat pro `Person` tím, že <xref:System.Runtime.Serialization.DataContractAttribute> připojíte k třídě a atributu <xref:System.Runtime.Serialization.DataMemberAttribute> členům, které chcete serializovat. Další informace o kontraktech dat najdete v tématu [Navrhování kontraktů služeb](../designing-service-contracts.md).
+1. Definujte kontrakt dat pro `Person` připojením <xref:System.Runtime.Serialization.DataContractAttribute> ke třídě a <xref:System.Runtime.Serialization.DataMemberAttribute> atributu členům, které chcete serializovat. Další informace o kontraktech dat najdete v tématu [Navrhování kontraktů služeb](../designing-service-contracts.md).
 
     ```csharp
     [DataContract]
@@ -58,7 +58,7 @@ Tento článek je založený na [ukázce DataContractJsonSerializer](../samples/
     var ser = new DataContractJsonSerializer(typeof(Person));
     ```
 
-3. K zápisu dat JSON do datového proudu použijte metodu <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject%2A>.
+3. Použijte metodu <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject%2A> k zápisu dat JSON do datového proudu.
 
     ```csharp
     ser.WriteObject(stream1, p);

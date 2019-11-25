@@ -8,21 +8,21 @@ helpviewer_keywords:
 - <socket> element
 - socket element
 ms.assetid: 366c634c-7d16-478f-aedf-053eda94a1a0
-ms.openlocfilehash: ec2c8388411e24940041dc9dcb7f6a6755e89805
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 0e2b369eccfbc658a790ef61a961315a88361669
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71697577"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74089093"
 ---
-# <a name="socket-element-network-settings"></a>@no__t – element > 0socket (nastavení sítě)
+# <a name="socket-element-network-settings"></a>\<element > soketu (nastavení sítě)
 Určuje, jestli operace soketu používají porty dokončení.  
-  
-[ **@no__t – 2configuration >** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t -4system. NET >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<settings >** ](settings-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<socket >**  
-  
+
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<nastavení >** ](settings-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<soket >**
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -42,7 +42,7 @@ Určuje, jestli operace soketu používají porty dokončení.
 |-------------------|---------------------|  
 |`alwaysUseCompletionPortsForAccept`|Určuje, zda má soket vždy používat porty dokončení pro volání metody Accept. Výchozí hodnota je `false`.|  
 |`alwaysUseCompletionPortsForConnect`|Určuje, zda má soket vždy používat porty dokončení pro volání metody připojení. Výchozí hodnota je `false`.|  
-|`ipProtectionLevel`|Určuje výchozí <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType> pro použití pro soket. Výchozí hodnota závisí na verzi systému Windows.|  
+|`ipProtectionLevel`|Určuje výchozí <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType>, který se má použít pro soket. Výchozí hodnota závisí na verzi systému Windows.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -54,15 +54,15 @@ Určuje, jestli operace soketu používají porty dokončení.
 |[možnost](settings-element-network-settings.md)|Konfiguruje základní možnosti sítě pro obor názvů <xref:System.Net>.|  
   
 ## <a name="remarks"></a>Poznámky  
- Atributy `alwaysUseCompletionPortsForAccept` a `alwaysUseCompletionPortsForConnect` slouží k určení výchozího chování týkající se použití portů dokončení třídami v @no__t -2. Namespace. Pro vysoce výkonné serverové aplikace se doporučují porty pro dokončení.  
+ Atributy `alwaysUseCompletionPortsForAccept` a `alwaysUseCompletionPortsForConnect` slouží k určení výchozího chování týkající se použití portů dokončení třídami v <xref:System.Net.Sockets?displayProperty=nameWithType>. Namespace. Pro vysoce výkonné serverové aplikace se doporučují porty pro dokončení.  
   
- Výchozí hodnota pro atributy `alwaysUseCompletionPortsForAccept` a `alwaysUseCompletionPortsForConnect` je **false**.  
+ Výchozí hodnota atributů `alwaysUseCompletionPortsForAccept` a `alwaysUseCompletionPortsForConnect` je **false**.  
   
- @No__t-0 lze použít k získání aktuální hodnoty atributu `alwaysUseCompletionPortsForAccept` z příslušných konfiguračních souborů. @No__t-0 lze použít k získání aktuální hodnoty atributu `alwaysUseCompletionPortsForConnect` z příslušných konfiguračních souborů.  
+ <xref:System.Net.Configuration.SocketElement.AlwaysUseCompletionPortsForAccept%2A> lze použít k získání aktuální hodnoty atributu `alwaysUseCompletionPortsForAccept` z příslušných konfiguračních souborů. <xref:System.Net.Configuration.SocketElement.AlwaysUseCompletionPortsForConnect%2A> lze použít k získání aktuální hodnoty atributu `alwaysUseCompletionPortsForConnect` z příslušných konfiguračních souborů.  
   
  Atribut `ipProtectionLevel` určuje výchozí <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType>, který se má použít pro soket. Vlastnost <xref:System.Net.Configuration.SocketElement.IPProtectionLevel%2A> umožňuje konfiguraci omezení pro soket IPv6 do zadaného oboru, například adresy se stejnou místní předponou nebo místní předponou webu. Tato možnost umožňuje aplikacím umístit omezení přístupu na sokety IPv6. Taková omezení umožňují aplikacím běžícím v privátní síti LAN jednoduše a robustní zabezpečení proti externím útokům. Tato možnost rozšiřuje nebo zužuje rozsah naslouchajícího soketu a umožňuje tak neomezený přístup k veřejným a soukromým uživatelům, pokud je to vhodné, nebo omezuje přístup jenom na stejnou lokalitu, jak je potřeba.  
   
- Toto nastavení atributu `ipProtectionLevel` má vliv jenom na počáteční příchozí provoz:  
+ Toto nastavení atributu `ipProtectionLevel` ovlivňuje pouze počáteční příchozí provoz:  
   
 - Server TCP naslouchá příchozím připojením na soketu.  
   
@@ -79,7 +79,7 @@ Určuje, jestli operace soketu používají porty dokončení.
 |Neomezený|Úroveň ochrany IP je neomezená. Tuto hodnotu budou používat aplikace navržené pro provoz přes Internet, včetně aplikací využívajících možnosti přecházení IPv6 NAT integrované do Windows (například Teredo). Tyto aplikace můžou obejít brány firewall IPv4, takže aplikace musí být posílené proti útokům na Internet, které jsou směrovány na otevřený port. V systémech Windows Server 2008 R2 a Windows Vista není výchozí hodnota pro úroveň ochrany IP adres na soketu omezená.|  
 |Neurčené|Úroveň ochrany protokolu IP není určena. V systémech Windows 7 a Windows Server 2008 R2 není určena výchozí hodnota pro úroveň ochrany IP adres na soketu.|  
   
- Výchozí hodnota pro atribut `ipProtectionLevel` není **specifikována**.  
+ Výchozí hodnota atributu `ipProtectionLevel` není **specifikována**.  
   
  Vlastnost <xref:System.Net.Configuration.SocketElement.IPProtectionLevel%2A> lze použít k získání aktuální hodnoty atributu `ipProtectionLevel` z příslušných konfiguračních souborů.  
   
@@ -87,7 +87,7 @@ Určuje, jestli operace soketu používají porty dokončení.
  Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak určit, že se mají použít porty dokončení a že výchozí <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType> by mělo být neomezené.  
+ Následující příklad ukazuje, jak určit, zda mají být použity porty dokončení a že výchozí <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType> by měly být neomezené.  
   
 ```xml  
 <configuration>  

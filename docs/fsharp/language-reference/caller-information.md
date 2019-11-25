@@ -1,13 +1,13 @@
 ---
 title: Informace o volajícím
 description: Popisuje způsob použití atributů argumentu informace o volajícím k získání informací o volajícím z metody.
-ms.date: 04/25/2017
-ms.openlocfilehash: e7bbc3830a95bd25cfc2fb369b204d367b775815
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
+ms.date: 11/04/2019
+ms.openlocfilehash: d995b37149277b7c7d1b6217ee484d3c90a7f8b3
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70106583"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976802"
 ---
 # <a name="caller-information"></a>Informace o volajícím
 
@@ -15,7 +15,7 @@ Pomocí atributů Informace o volajícím můžete získat informace o volajíc�
 
 Pro získání těchto informací můžete použít atributy, které jsou použity na volitelné parametry, z nichž každý má výchozí hodnotu. V následující tabulce jsou uvedeny atributy informací o volajícím, které jsou definovány v oboru názvů [System. Runtime. CompilerServices](/dotnet/api/system.runtime.compilerservices) :
 
-|Atribut|Popis|type|
+|Atribut|Popis|Typ|
 |---------|-----------|----|
 |[CallerFilePath](/dotnet/api/system.runtime.compilerservices.callerfilepathattribute)|Úplná cesta zdrojového souboru, který obsahuje volajícího. Toto je cesta k souboru v době kompilace.|`String`
 |[CallerLineNumber](/dotnet/api/system.runtime.compilerservices.callerlinenumberattribute)|Číslo řádku ve zdrojovém souboru, ve kterém je volána metoda.|`Integer`|
@@ -31,7 +31,7 @@ open System.Runtime.CompilerServices
 open System.Runtime.InteropServices
 
 type Tracer() =
-    member __.DoTrace(message: string,
+    member _.DoTrace(message: string,
                       [<CallerMemberName; Optional; DefaultParameterValue("")>] memberName: string,
                       [<CallerFilePath; Optional; DefaultParameterValue("")>] path: string,
                       [<CallerLineNumber; Optional; DefaultParameterValue(0)>] line: int) =
@@ -51,10 +51,10 @@ Volitelné argumenty můžete explicitně zadat, chcete-li řídit nebo skrýt i
 
 ## <a name="member-names"></a>Názvy členů
 
-[`CallerMemberName`](/dotnet/api/system.runtime.compilerservices.callermembernameattribute) Atribut lze použít k zamezení zadání názvu člena `String` jako argumentu volané metody. Pomocí této techniky se vyhnete problému s tím, že Refaktoring přejmenování `String` hodnoty nemění. Tato výhoda se hodí zvláště v těchto úlohách:
+Atribut [`CallerMemberName`](/dotnet/api/system.runtime.compilerservices.callermembernameattribute) lze použít k zamezení zadání názvu člena jako `String` argumentu volané metody. Pomocí této techniky se vyhnete problému s tím, že Refaktoring přejmenování nemění hodnoty `String`. Tato výhoda se hodí zvláště v těchto úlohách:
 
 - Použití trasování a diagnostických rutin.
-- Implementace rozhraní [INotifyPropertyChanged](/dotnet/api/system.componentmodel.inotifypropertychanged) při vázání dat Toto rozhraní umožňuje vlastnosti objektu oznámit vázanému ovládacímu prvku, že došlo ke změně vlastnosti, aby ovládací prvek mohl zobrazit aktualizované informace. [`CallerMemberName`](/dotnet/api/system.runtime.compilerservices.callermembernameattribute) Bez atributu je nutné zadat název vlastnosti jako literál.
+- Implementace rozhraní [INotifyPropertyChanged](/dotnet/api/system.componentmodel.inotifypropertychanged) při vázání dat Toto rozhraní umožňuje vlastnosti objektu oznámit vázanému ovládacímu prvku, že došlo ke změně vlastnosti, aby ovládací prvek mohl zobrazit aktualizované informace. Bez atributu [`CallerMemberName`](/dotnet/api/system.runtime.compilerservices.callermembernameattribute) musíte zadat název vlastnosti jako literál.
 
 Následující graf znázorňuje názvy členů, které jsou vráceny při použití atributu CallerMemberName.
 

@@ -8,21 +8,21 @@ helpviewer_keywords:
 - <proxy> element
 - proxy element
 ms.assetid: 37a548d8-fade-4ac5-82ec-b49b6c6cb22a
-ms.openlocfilehash: 94858f141e7d540454fca9c151c760c37f9ebbb0
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 5f327a2bb4fe316497614f14669907d514c20654
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71697949"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74089196"
 ---
-# <a name="proxy-element-network-settings"></a>@no__t – element > 0proxy (nastavení sítě)
+# <a name="proxy-element-network-settings"></a>\<> elementu proxy serveru (nastavení sítě)
 Definuje proxy server.  
-  
-[ **@no__t – 2configuration >** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t -4system. NET >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<defaultProxy >** ](defaultproxy-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<proxy >**  
-  
+
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<defaultProxy >** ](defaultproxy-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<proxy >**
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -62,13 +62,13 @@ Definuje proxy server.
 ## <a name="remarks"></a>Poznámky  
  Element `proxy` definuje proxy server pro aplikaci. Pokud tento prvek v konfiguračním souboru chybí, .NET Framework použije nastavení proxy serveru v Internet Exploreru.  
   
- Hodnota pro atribut `proxyaddress` by měla být ve správném formátu (Uniform Resource).  
+ Hodnota atributu `proxyaddress` musí být ve správném formátu (Uniform Resource).  
   
- Atribut `scriptLocation` odkazuje na automatické zjišťování skriptů konfigurace proxy serveru. Třída <xref:System.Net.WebProxy> se pokusí najít konfigurační skript (obvykle nazvaný WPAD. dat), pokud je v Internet Exploreru vybraná možnost **použít skript pro automatickou konfiguraci** . Pokud je hodnota `bypassonlocal` nastavená na libovolnou hodnotu, `scriptLocation` se ignoruje.
+ Atribut `scriptLocation` odkazuje na automatické zjišťování skriptů konfigurace proxy serveru. Třída <xref:System.Net.WebProxy> se pokusí najít konfigurační skript (obvykle nazvaný WPAD. dat), pokud je v Internet Exploreru vybraná možnost **použít skript pro automatickou konfiguraci** . Pokud je `bypassonlocal` nastavená na libovolnou hodnotu, `scriptLocation` se ignoruje.
   
- Pro aplikace .NET Framework verze 1,1, které migrují na verzi 2,0, použijte atribut `usesystemdefault`.  
+ Použijte atribut `usesystemdefault` pro aplikace .NET Framework verze 1,1, které migrují na verzi 2,0.  
   
- Pokud atribut `proxyaddress` určuje neplatný výchozí proxy server, je vyvolána výjimka. Vlastnost <xref:System.Exception.InnerException%2A> ve výjimce by měla obsahovat další informace o hlavní příčině chyby.  
+ Pokud atribut `proxyaddress` určuje neplatný výchozí proxy server, je vyvolána výjimka. Vlastnost <xref:System.Exception.InnerException%2A> výjimky by měla obsahovat další informace o hlavní příčině chyby.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
  Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  

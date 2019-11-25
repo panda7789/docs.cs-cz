@@ -7,27 +7,28 @@ f1_keywords:
 helpviewer_keywords:
 - BC32500
 ms.assetid: 6fa34c55-368e-4d7d-b488-07a3fffe045f
-ms.openlocfilehash: d27c326b6a88271ba4abf0144e71027f6671b17e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f7b6e42480075666ce9f7e8fc6966bd4bb6b888a
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62054377"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977319"
 ---
-# <a name="attribute-cannot-be-applied-because-the-format-of-the-guid-number-is-not-correct"></a>"\<atribut >' nelze použít, protože formát čísla GUID '\<číslo >' není správná
-A `COMClassAttribute` bloku atributu Určuje globálně jedinečný identifikátor (GUID), který není v souladu s správný formát pro identifikátor GUID. `COMClassAttribute` identifikátory GUID k jednoznačné identifikaci třídy, rozhraní a vytvoření události.  
+# <a name="attribute-cannot-be-applied-because-the-format-of-the-guid-number-is-not-correct"></a>atribut\<atributu > nelze použít, protože formát identifikátoru GUID\<číslo > není správný.
+
+`COMClassAttribute` blok atributu Určuje globálně jedinečný identifikátor (GUID), který nevyhovuje správnému formátu identifikátoru GUID. `COMClassAttribute` používá identifikátory GUID k jednoznačné identifikaci třídy, rozhraní a události vytvoření.  
   
- Identifikátor GUID se skládá z 16 bajtů, z nichž první osm jsou číselná a posledních osm jsou binární. Je vygenerován pomocí nástroje Microsoft, jako jsou uuidgen.exe a je zaručeně jedinečná v místa a času.  
+ Identifikátor GUID se skládá z 16 bajtů, z nichž první osm jsou číslice a poslední osm jsou binární. Vygeneruje se pomocí nástrojů Microsoftu, jako je Uuidgen. exe, a zaručuje, že budou jedinečné v prostoru a v čase.  
   
  **ID chyby:** BC32500  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Určete správný identifikátor GUID nebo identifikátory GUID, které jsou nezbytné k identifikaci objektu modelu COM.  
+1. Určete správný identifikátor GUID nebo identifikátory GUID, které jsou nezbytné k identifikaci objektu COM.  
   
-2. Ujistěte se, že řetězce GUID uvedené na `COMClassAttribute` bloku atributu se zkopíroval správně.  
+2. Zajistěte, aby byly správně zkopírovány řetězce GUID prezentované do bloku atributu `COMClassAttribute`.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Guid>
-- [Přehled atributy](../../../visual-basic/programming-guide/concepts/attributes/index.md)
+- [Přehled atributů](../../../visual-basic/programming-guide/concepts/attributes/index.md)

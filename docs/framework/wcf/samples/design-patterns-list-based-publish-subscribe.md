@@ -1,15 +1,15 @@
 ---
-title: 'Vzory návrhu: Vzor publikování–odběr založený na seznamu'
+title: 'Vzory návrhu: publikování a odběr založený na seznamu'
 ms.date: 03/30/2017
 ms.assetid: f4257abc-12df-4736-a03b-0731becf0fd4
-ms.openlocfilehash: 3c05e66affad8e517b0b1b5001f726abeae7b100
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: cd7cc6f68362c7a69256f0488e2fa00caffdabc7
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928843"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73978214"
 ---
-# <a name="design-patterns-list-based-publish-subscribe"></a>Vzory návrhu: Vzor publikování–odběr založený na seznamu
+# <a name="design-patterns-list-based-publish-subscribe"></a>Vzory návrhu: publikování a odběr založený na seznamu
 Tato ukázka znázorňuje vzor pro publikování a odběr založený na seznamu, který je implementovaný jako program Windows Communication Foundation (WCF).  
   
 > [!NOTE]
@@ -21,7 +21,7 @@ Tato ukázka znázorňuje vzor pro publikování a odběr založený na seznamu,
   
  V této ukázce klient a zdroj dat jsou programy konzoly (soubory. exe) a služba je knihovna (. dll) hostovaná ve službě Internetová informační služba (IIS). Aktivita klient a zdroj dat se zobrazuje na ploše.  
   
- Služba používá duplexní komunikaci. Kontrakt služby se spáruje `ISampleClientCallback` se smlouvou zpětného volání. `ISampleContract` Služba implementuje operace odběru a zrušení odběru služby, které klienti používají pro připojení k seznamu předplatitelů nebo jejich opuštění. Služba také implementuje `PublishPriceChange` operaci služby, kterou program zdroje dat volá k poskytování služby novým informacím. Klientský program implementuje `PriceChange` operaci služby, kterou služba volá, aby upozornila všechny předplatitele změny ceny.  
+ Služba používá duplexní komunikaci. Kontrakt služby `ISampleContract` se spáruje se smlouvou zpětného volání `ISampleClientCallback`. Služba implementuje operace odběru a zrušení odběru služby, které klienti používají pro připojení k seznamu předplatitelů nebo jejich opuštění. Služba také implementuje operaci `PublishPriceChange` služby, kterou program zdroje dat volá k poskytnutí služby novým informacím. Klientský program implementuje operaci `PriceChange` služby, kterou služba volá, aby upozornila všechny předplatitele změny ceny.  
   
 ```csharp  
 // Create a service contract and define the service operations.  
@@ -48,7 +48,7 @@ public interface ISampleClientContract
   
  Služba používá událost .NET Framework jako mechanismus pro informování všech předplatitelů o nových informacích. Když klient připojí službu voláním odběru, poskytne obslužnou rutinu události. Když klient opustí, zruší odběr své obslužné rutiny události od události. Když zdroj dat volá službu, aby nahlásila změnu ceny, služba událost vyvolá. Tato akce volá každou instanci služby, jednu pro každého klienta, který má předplatné, a způsobí, že se obslužné rutiny událostí spustí. Každá obslužná rutina události do svého klienta předává informace prostřednictvím funkce zpětného volání.  
   
-```csharp  
+```csharp
 public class PriceChangeEventArgs : EventArgs  
     {  
         public string Item;  
@@ -114,15 +114,15 @@ public class PriceChangeEventArgs : EventArgs
   
 1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
 ### <a name="to-run-the-sample-on-the-same-machine"></a>Spuštění ukázky na stejném počítači  
   
 1. Otestujte, zda ke službě můžete přistupovat pomocí prohlížeče zadáním následující adresy: `http://localhost/servicemodelsamples/service.svc`. V odpovědi by se měla zobrazit Stránka s potvrzením.  
   
-2. Spusťte soubor Client. exe z\\\client\bin ze složky specifické pro jazyk. Aktivita klienta se zobrazí v okně konzoly klienta. Spusťte několik klientů.  
+2. Spusťte soubor Client. exe z \client\bin\\ze složky pro konkrétní jazyk. Aktivita klienta se zobrazí v okně konzoly klienta. Spusťte několik klientů.  
   
-3. Spusťte DataSource. exe z \datasource\bin\\ze složky specifické pro jazyk. Aktivita zdroj dat se zobrazí v okně konzoly. Jakmile zdroj dat odešle službě informace, měla by být předána každému klientovi.  
+3. Spusťte DataSource. exe z \datasource\bin\\ze složky pro konkrétní jazyk. Aktivita zdroj dat se zobrazí v okně konzoly. Jakmile zdroj dat odešle službě informace, měla by být předána každému klientovi.  
   
 4. Pokud klient, zdroj dat a programy nemůžou komunikovat, přečtěte si [tipy pro řešení potíží s ukázkami WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
@@ -157,6 +157,6 @@ public class PriceChangeEventArgs : EventArgs
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\DesignPatterns/ListBasedPublishSubscribe`  

@@ -8,21 +8,21 @@ dev_langs:
 ms.assetid: a2758f40-e497-4964-8d8d-1bb68af14dcd
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4a6b80a885f43facf4b3d4dd1dcb56d937d4f8de
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5457eab1f34eb3e7424d508509f5dd6a42ffb51f
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61669157"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976937"
 ---
 # <a name="changing-namespace-declarations-in-an-xml-document"></a>Změna deklarací oboru názvů v dokumentu XML
-**XmlDocument** vystavuje deklarace oboru názvů a **xmlns** atributy jako součást modelu objektu dokumentu. Tyto jsou uložené v **XmlDocument**, takže při ukládání dokumentu, můžete zachovat umístění těchto atributů. Změna těchto atributů nemá žádný vliv na **název**, **NamespaceURI**, a **předpony** vlastnosti ostatní uzly již ve stromové struktuře. Například pokud načítáte následující dokument pak bude `test` element má **NamespaceURI** `123.`  
+**XmlDocument** zpřístupňuje deklarace oboru názvů a atributy **xmlns** jako součást modelu objektu dokumentu. Ty jsou uloženy v dokumentu **XmlDocument**, takže když dokument uložíte, může zachovat umístění těchto atributů. Změna těchto atributů nemá žádný vliv na vlastnosti **Name**, **NamespaceURI**a **prefixu** dalších uzlů, které jsou již ve stromové struktuře. Například pokud načtete následující dokument, `test` element má **NamespaceURI** `123.`  
   
 ```xml  
 <test xmlns="123"/>  
 ```  
   
- Pokud odeberete `xmlns` atribut následujícím způsobem, pak bude `test` element má stále **NamespaceURI** z `123`.  
+ Odeberete-li atribut `xmlns` následujícím způsobem, má `test` prvek stále **NamespaceURI** `123`.  
   
 ```vb  
 doc.documentElement.RemoveAttribute("xmlns")  
@@ -32,17 +32,17 @@ doc.documentElement.RemoveAttribute("xmlns")
 doc.documentElement.RemoveAttribute("xmlns");  
 ```  
   
- Podobně pokud chcete přidat jiný `xmlns` atribut `doc` element následujícím způsobem, pak bude `test` element má stále **NamespaceURI** `123`.  
+ Podobně platí, že pokud přidáte jiný atribut `xmlns` do prvku `doc` následujícím způsobem, `test` element má nadále `123`**NamespaceURI** .  
   
 ```vb  
-doc.documentElement.SetAttribute("xmlns","456");  
+doc.documentElement.SetAttribute("xmlns","456")
 ```  
   
 ```csharp  
 doc.documentElement.SetAttribute("xmlns","456");  
 ```  
   
- Proto se mění `xmlns` atributy se nemají žádný vliv, dokud uložit a znovu načíst **XmlDocument** objektu.  
+ Proto změna atributů `xmlns` nebude mít žádný vliv, dokud neuložíte a znovu načtete objekt **XmlDocument** .  
   
 ## <a name="see-also"></a>Viz také:
 

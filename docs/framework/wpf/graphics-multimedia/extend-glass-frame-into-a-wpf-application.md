@@ -10,19 +10,19 @@ helpviewer_keywords:
 - extending glass frames into applications [WPF]
 - glass frames [WPF], extending into applications
 ms.assetid: 74388a3a-4b69-4a9d-ba1f-e107636bd660
-ms.openlocfilehash: f8d50cb4d0112232f86579542650418a1906bda2
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: ae4d7f23729f5bd39558902a58d33c6c45572d85
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69039833"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977011"
 ---
 # <a name="extend-glass-frame-into-a-wpf-application"></a>Rozšíření skleněného rámečku do aplikace WPF
 
-Toto téma ukazuje, jak roztáhnout [!INCLUDE[TLA#tla_winvista](../../../../includes/tlasharptla-winvista-md.md)] skleněný rámec do klientské oblasti aplikace Windows Presentation Foundation (WPF).
+Toto téma ukazuje, jak roztáhnout skleněný rámec Windows Vista do klientské oblasti aplikace Windows Presentation Foundation (WPF).
 
 > [!NOTE]
-> Tento příklad bude fungovat jenom na [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] počítači, na kterém běží správce oken plochy (DWM) se zapnutou skleněnou sadou. [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)]Edice Home Basic nepodporuje transparentní skleněný efekt. Oblasti, které by obvykle vygenerovaly transparentní skleněný efekt v jiných [!INCLUDE[TLA2#tla_winvista](../../../../includes/tla2sharptla-winvista-md.md)] edicích, jsou vykresleny neprůhledně.
+> Tento příklad bude fungovat pouze v počítači se systémem Windows Vista, na kterém je spuštěná aplikace Správce oken plochy (DWM) se zapnutým skleněným systémem. Edice Home Basic v systému Windows Vista nepodporuje transparentní skleněný efekt. Oblasti, které by se obvykle vygenerovaly s průhledným skleněným efektem v jiných edicích Windows Vista, se vykreslují neprůhledně.
 
 ## <a name="example"></a>Příklad
 
@@ -30,7 +30,7 @@ Následující obrázek znázorňuje skleněný rámec rozšířený na adresní
 
 ![Snímek obrazovky znázorňující skleněný rámec rozšířený na adresní řádek IE7](./media/extend-glass-frame-into-a-wpf-application/internet-explorer-glass-frame-extended-address-bar.png)
 
-Chcete-li zvětšit skleněný rámec [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] v aplikaci, je vyžadován přístup k nespravovanému rozhraní API. Následující příklad kódu provádí vyvolání platformy (PInvoke) pro rozhraní API, které je potřeba k rozšiřování rámce do klientské oblasti. Každé z těchto rozhraní API je deklarováno ve třídě s názvem **NonClientRegionAPI**.
+Pokud chcete roztáhnout skleněný rámec na [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikaci, je potřeba mít přístup k nespravovanému rozhraní API. Následující příklad kódu provádí vyvolání platformy (PInvoke) pro rozhraní API, které je potřeba k rozšiřování rámce do klientské oblasti. Každé z těchto rozhraní API je deklarováno ve třídě s názvem **NonClientRegionAPI**.
 
 ```csharp
 [StructLayout(LayoutKind.Sequential)]
@@ -62,11 +62,11 @@ Public Shared Function DwmExtendFrameIntoClientArea(ByVal hwnd As IntPtr, ByRef 
 End Function
 ```
 
-[DwmExtendFrameIntoClientArea](/windows/desktop/api/dwmapi/nf-dwmapi-dwmextendframeintoclientarea) je funkce DWM, která rozšiřuje rámec do klientské oblasti. Používá dva parametry; popisovač okna a struktura [okrajů](/windows/win32/api/uxtheme/ns-uxtheme-margins) . [](/windows/win32/api/uxtheme/ns-uxtheme-margins) Pomocí okrajů správce oken informujte, kolik dalšího snímku by se mělo rozšířit do klientské oblasti.
+[DwmExtendFrameIntoClientArea](/windows/desktop/api/dwmapi/nf-dwmapi-dwmextendframeintoclientarea) je funkce DWM, která rozšiřuje rámec do klientské oblasti. Používá dva parametry; popisovač okna a struktura [okrajů](/windows/win32/api/uxtheme/ns-uxtheme-margins) . Pomocí [okrajů](/windows/win32/api/uxtheme/ns-uxtheme-margins) správce oken informujte, kolik dalšího snímku by se mělo rozšířit do klientské oblasti.
 
 ## <a name="example"></a>Příklad
 
-Chcete-li použít funkci [DwmExtendFrameIntoClientArea](/windows/desktop/api/dwmapi/nf-dwmapi-dwmextendframeintoclientarea) , je nutné získat popisovač okna. V [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]nástroji lze popisovač okna získat <xref:System.Windows.Interop.HwndSource.Handle%2A> z vlastnosti <xref:System.Windows.Interop.HwndSource>. V následujícím příkladu je rámec rozšířen do oblasti klienta na <xref:System.Windows.FrameworkElement.Loaded> události okna.
+Chcete-li použít funkci [DwmExtendFrameIntoClientArea](/windows/desktop/api/dwmapi/nf-dwmapi-dwmextendframeintoclientarea) , je nutné získat popisovač okna. V [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]lze popisovač okna získat z vlastnosti <xref:System.Windows.Interop.HwndSource.Handle%2A> <xref:System.Windows.Interop.HwndSource>. V následujícím příkladu je rámec rozšířen do oblasti klienta na události <xref:System.Windows.FrameworkElement.Loaded> okna.
 
 ```csharp
 void OnLoaded(object sender, RoutedEventArgs e)
@@ -111,7 +111,7 @@ void OnLoaded(object sender, RoutedEventArgs e)
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje jednoduché okno, ve kterém je rámec rozšířen do klientské oblasti. Rámec je rozšířen za horní ohraničení, které obsahuje dva <xref:System.Windows.Controls.TextBox> objekty.
+Následující příklad ukazuje jednoduché okno, ve kterém je rámec rozšířen do klientské oblasti. Rámec je rozšířen za horní ohraničení, které obsahuje dva objekty <xref:System.Windows.Controls.TextBox>.
 
 ```xaml
 <Window x:Class="SDKSample.Window1"

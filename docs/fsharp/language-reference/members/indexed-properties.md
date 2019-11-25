@@ -1,17 +1,17 @@
 ---
 title: Indexované vlastnosti
 description: Přečtěte si o indexovaných vlastnostech v F#, které umožňují přístup k seřazeným datům typu pole.
-ms.date: 10/17/2018
-ms.openlocfilehash: 379417e31b8e178d8c939e5b23dc144bfb17e562
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.date: 11/04/2019
+ms.openlocfilehash: f6cf3bfa737d2bf458e379594be5884696cee3e1
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68627554"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976600"
 ---
 # <a name="indexed-properties"></a>Indexované vlastnosti
 
-Při definování třídy, která je abstraktní nad seřazenými daty, může být někdy užitečná k poskytnutí indexovaného přístupu k těmto datům bez odhalení základní implementace. To se provádí s `Item` členem.
+Při definování třídy, která je abstraktní nad seřazenými daty, může být někdy užitečná k poskytnutí indexovaného přístupu k těmto datům bez odhalení základní implementace. To se provádí s členem `Item`.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -36,11 +36,11 @@ member self-identifier.Item
 
 ## <a name="remarks"></a>Poznámky
 
-Formuláře předchozí syntaxe ukazují, jak definovat indexované vlastnosti `get` , které mají obojí `set` a i metodu, mají `get` pouze metodu, nebo `set` pouze metodu. Lze také kombinovat jak syntaxi zobrazenou pouze pro příkaz Get, syntaxi zobrazenou pouze pro sadu a vytvořit vlastnost, která má obě metody Get a set. Tato druhá forma umožňuje umístit různé modifikátory a atributy dostupnosti do metod get a set.
+Formuláře předchozí syntaxe ukazují, jak definovat indexované vlastnosti, které mají jak `get`, tak `set` metoda, mají pouze `get` metodu nebo mají pouze `set` metodu. Lze také kombinovat jak syntaxi zobrazenou pouze pro příkaz Get, syntaxi zobrazenou pouze pro sadu a vytvořit vlastnost, která má obě metody Get a set. Tato druhá forma umožňuje umístit různé modifikátory a atributy dostupnosti do metod get a set.
 
-Pomocí názvu `Item`kompilátor zpracovává vlastnost jako výchozí indexovanou vlastnost. *Výchozí indexovaná vlastnost* je vlastnost, ke které můžete přistupovat pomocí syntaxe typu pole v instanci objektu. Například pokud `o` je objekt typu, který definuje tuto vlastnost, je použita syntaxe `o.[index]` pro přístup k vlastnosti.
+Pomocí názvu `Item`kompilátor zpracovává vlastnost jako výchozí indexovanou vlastnost. *Výchozí indexovaná vlastnost* je vlastnost, ke které můžete přistupovat pomocí syntaxe typu pole v instanci objektu. Například pokud `o` je objekt typu, který definuje tuto vlastnost, `o.[index]` syntaxe se používá pro přístup k vlastnosti.
 
-Syntaxe pro přístup k jiné než výchozí indexované vlastnosti je poskytnout název vlastnosti a indexu v závorkách, stejně jako regulární člen. Například pokud `o` je volána `Ordinal`vlastnost, zapíšete `o.Ordinal(index)` pro přístup k ní.
+Syntaxe pro přístup k jiné než výchozí indexované vlastnosti je poskytnout název vlastnosti a indexu v závorkách, stejně jako regulární člen. Například pokud je vlastnost na `o` volána `Ordinal`, zapíšete `o.Ordinal(index)` pro přístup k ní.
 
 Bez ohledu na to, který formulář použijete, byste měli vždy použít formulář curryfikované pro metodu set pro indexovanou vlastnost. Informace o funkcích curryfikované najdete v tématu [Functions](../functions/index.md).
 
@@ -70,7 +70,7 @@ open System.Collections.Generic
 /// Basic implementation of a sparse matrix based on a dictionary
 type SparseMatrix() =
     let table = new Dictionary<(int * int), float>()
-    member __.Item
+    member _.Item
         // Because the key is comprised of two values, 'get' has two index values
         with get(key1, key2) = table.[(key1, key2)]
 

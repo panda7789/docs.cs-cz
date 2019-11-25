@@ -1,13 +1,13 @@
 ---
 title: Referenční dokumentace klíčových slov
 description: Vyhledá odkazy na informace o všech klíčových F# slovech jazyka.
-ms.date: 05/16/2016
-ms.openlocfilehash: 2be6d078653a4595cbdfe97be7aab8e3b3c10ea9
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.date: 11/04/2019
+ms.openlocfilehash: 64bb680a0861f4b8287f887ea67edb6fcf4f88a6
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425086"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976623"
 ---
 # <a name="keyword-reference"></a>Referenční dokumentace klíčových slov
 
@@ -87,7 +87,7 @@ V následující tabulce jsou uvedena F# všechna klíčová slova v abecedním 
 |`when`|[Omezení](./generics/constraints.md)|Používá se pro logické podmínky (v*případě Guard*) u porovnávání vzorů a pro zavedení klauzule omezení pro parametr obecného typu.|
 |`while`|[Smyčky: výraz `while...do`](loops-while-do-expression.md)|Zavádí konstrukci smyček.|
 |`with`|[Výrazy shody](match-expressions.md)<br /><br />[Objektové výrazy](object-expressions.md)<br /><br />[Kopírování a aktualizace výrazů záznamů](copy-and-update-record-expressions.md)<br /><br />[Rozšíření typů](type-extensions.md)<br /><br />[Výjimky: výraz `try...with`](./exception-handling/the-try-with-expression.md)|Používá se společně s klíčovým slovem `match` ve výrazech porovnávání vzorů. Používá se také ve výrazech objektů, kopírování výrazů a příponách typů k zavedení definic členů a k zavedení obslužných rutin výjimek.|
-|`yield`|[Sekvence](sequences.md)|Používá se ve výrazu pořadí k vytvoření hodnoty pro sekvenci.|
+|`yield`|[Seznamy](lists.md), [pole](arrays.md), [posloupnosti](sequences.md)|Používá se ve výrazu list, Array nebo Sequence k vytvoření hodnoty pro sekvenci. Obvykle se dá vynechat, protože je ve většině případů implicitní.|
 |`yield!`|[Výpočetní výrazy](computation-expressions.md)<br /><br />[Asynchronní pracovní postupy](asynchronous-workflows.md)|Používá se ve výrazu výpočtu k připojení výsledku daného výpočetního výrazu ke kolekci výsledků obsahujícího výrazu výpočtu.|
 
 Následující tokeny jsou vyhrazené v F# , protože jsou klíčovými slovy v jazyce OCaml:

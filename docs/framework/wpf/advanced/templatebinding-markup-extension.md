@@ -8,12 +8,12 @@ helpviewer_keywords:
 - XAML [WPF], TemplateBinding markup extension
 - TemplateBinding markup extensions [WPF]
 ms.assetid: 1d25bbfc-dbc2-499d-9f12-419d23d4ac6a
-ms.openlocfilehash: 399e4ac223d2fcb728ece2c92d25a087990992f2
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 6d89978b907c8f124b5162c97de5edc034cf1e95
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458667"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976673"
 ---
 # <a name="templatebinding-markup-extension"></a>TemplateBinding – rozšíření značek
 Propojuje hodnotu vlastnosti v šabloně ovládacího prvku s hodnotou jiné vlastnosti ovládacího prvku bez vizuálního vzhledu.  
@@ -38,7 +38,7 @@ Propojuje hodnotu vlastnosti v šabloně ovládacího prvku s hodnotou jiné vl
 |`sourceProperty`|Další vlastnost závislosti, která existuje pro typ se šablonou, určená jeho <xref:System.Windows.DependencyProperty.Name%2A?displayProperty=nameWithType>.<br /><br /> ani<br /><br /> Název vlastnosti specifikovaný s použitím teček, který je definován jiným typem než cílovým typem bez vizuálního vzhledu. Toto je ve skutečnosti <xref:System.Windows.PropertyPath>. Viz [syntaxe jazyka XAML pro PropertyPath](propertypath-xaml-syntax.md).|  
   
 ## <a name="remarks"></a>Poznámky  
- `TemplateBinding` je optimalizovaná forma [vazby](binding-markup-extension.md) pro scénáře šablon, která je podobná `Binding` vytvořená pomocí `{Binding RelativeSource={RelativeSource TemplatedParent}}`. `TemplateBinding` je vždy jednosměrná vazba, a to i v případě, že vlastnosti použité jako výchozí jsou obousměrné vazby. Obě vlastnosti musejí být vlastnosti závislostí. Aby bylo možné dosáhnout obousměrné vazby k nadřazenému objektu, použijte následující příkaz vazby místo `{Binding RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay, Path=MyDependencyProperty}`. 
+ `TemplateBinding` je optimalizovaná forma [vazby](binding-markup-extension.md) pro scénáře šablon, která je podobná `Binding` vytvořená pomocí `{Binding RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}`. `TemplateBinding` je vždy jednosměrná vazba, a to i v případě, že vlastnosti použité jako výchozí jsou obousměrné vazby. Obě vlastnosti musejí být vlastnosti závislostí. Aby bylo možné dosáhnout obousměrné vazby k nadřazenému objektu, použijte následující příkaz vazby místo `{Binding RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay, Path=MyDependencyProperty}`. 
   
  [RelativeSource](relativesource-markupextension.md) je další rozšíření značek, které se někdy používá ve spojení s nebo místo `TemplateBinding`, aby bylo možné provést relativní vazbu vlastnosti v rámci šablony.  
   

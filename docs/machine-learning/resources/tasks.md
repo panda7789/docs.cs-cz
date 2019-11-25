@@ -4,12 +4,12 @@ description: Prozkoumejte různé úlohy strojového učení a související úl
 ms.custom: seodec18
 ms.date: 04/23/2019
 author: natke
-ms.openlocfilehash: d19593358361c9c8d3657053e766ec4a2c1ec163
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: d0634ce8a0559ab3cdb5bf27fc5406ab02af8df6
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424220"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977245"
 ---
 # <a name="machine-learning-tasks-in-mlnet"></a>Úlohy strojového učení v ML.NET
 
@@ -17,7 +17,7 @@ Při sestavování modelu strojového učení nejdřív musíte definovat, co se
 
 Jakmile se rozhodnete, který úkol pro váš scénář funguje, musíte zvolit nejlepší algoritmus pro vyučování modelu. Dostupné algoritmy jsou uvedené v části pro každý úkol.
 
-## <a name="binary-classification"></a>Binární klasifikace
+## <a name="binary-classification"></a>binární klasifikace
 
 Úkol [strojového učení pod dohledem](glossary.md#supervised-machine-learning) , který se používá k předpovídání dvou tříd (kategorií), do kterých patří instance dat. Vstup klasifikačního algoritmu je sada popisných příkladů, kde je každý popisek celé číslo 0 nebo 1. Výstup binárního klasifikačního algoritmu je klasifikátor, který můžete použít k předpovědi třídy nových neoznačených instancí. Mezi příklady scénářů binární klasifikace patří:
 
@@ -34,15 +34,15 @@ Model binární klasifikace můžete proškolit pomocí těchto algoritmů:
 
 * <xref:Microsoft.ML.Trainers.AveragedPerceptronTrainer>
 * <xref:Microsoft.ML.Trainers.SdcaLogisticRegressionBinaryTrainer>
-* <xref:Microsoft.ML.Trainers.SdcaNonCalibratedBinaryTrainer> 
-* <xref:Microsoft.ML.Trainers.SymbolicSgdLogisticRegressionBinaryTrainer> 
-* <xref:Microsoft.ML.Trainers.LbfgsLogisticRegressionBinaryTrainer> 
-* <xref:Microsoft.ML.Trainers.LightGbm.LightGbmBinaryTrainer> 
-* <xref:Microsoft.ML.Trainers.FastTree.FastTreeBinaryTrainer> 
+* <xref:Microsoft.ML.Trainers.SdcaNonCalibratedBinaryTrainer>
+* <xref:Microsoft.ML.Trainers.SymbolicSgdLogisticRegressionBinaryTrainer>
+* <xref:Microsoft.ML.Trainers.LbfgsLogisticRegressionBinaryTrainer>
+* <xref:Microsoft.ML.Trainers.LightGbm.LightGbmBinaryTrainer>
+* <xref:Microsoft.ML.Trainers.FastTree.FastTreeBinaryTrainer>
 * <xref:Microsoft.ML.Trainers.FastTree.FastForestBinaryTrainer>
-* <xref:Microsoft.ML.Trainers.FastTree.GamBinaryTrainer> 
-* <xref:Microsoft.ML.Trainers.FieldAwareFactorizationMachineTrainer> 
-* <xref:Microsoft.ML.Trainers.PriorTrainer> 
+* <xref:Microsoft.ML.Trainers.FastTree.GamBinaryTrainer>
+* <xref:Microsoft.ML.Trainers.FieldAwareFactorizationMachineTrainer>
+* <xref:Microsoft.ML.Trainers.PriorTrainer>
 * <xref:Microsoft.ML.Trainers.LinearSvmTrainer>
 
 ### <a name="binary-classification-inputs-and-outputs"></a>Binární vstupy a výstupy klasifikace
@@ -59,7 +59,7 @@ Výstup učitelů má následující sloupce:
 | `Score` | <xref:System.Single> | Nezpracované skóre, které bylo vypočítáno modelem|
 | `PredictedLabel` | <xref:System.Boolean> | Předpokládaný popisek, založený na znaménku skóre. Záporné skóre se mapuje na `false` a kladné skóre se mapuje na `true`.|
 
-## <a name="multiclass-classification"></a>Klasifikace s více třídami
+## <a name="multiclass-classification"></a>klasifikace s více třídami
 
 Úkol [strojového učení pod dohledem](glossary.md#supervised-machine-learning) , který se používá k předvídání třídy dat instance. Vstup algoritmu klasifikace je sada příkladů s popisky. Každý popisek normálně začíná jako text. Pak se spustí přes TermTransform, který ho převede na klíč (číselný) typ. Výstup algoritmu klasifikace je klasifikátor, který můžete použít k předpovědi třídy nových neoznačených instancí. Mezi příklady scénářů klasifikace s více třídami patří:
 
@@ -79,10 +79,10 @@ Model klasifikace s více třídami můžete proškolit pomocí následujících
 * <xref:Microsoft.ML.Trainers.LightGbm.LightGbmMulticlassTrainer>
 * <xref:Microsoft.ML.Trainers.SdcaMaximumEntropyMulticlassTrainer>
 * <xref:Microsoft.ML.Trainers.SdcaNonCalibratedMulticlassTrainer>
-* <xref:Microsoft.ML.Trainers.LbfgsMaximumEntropyMulticlassTrainer> 
-* <xref:Microsoft.ML.Trainers.NaiveBayesMulticlassTrainer> 
+* <xref:Microsoft.ML.Trainers.LbfgsMaximumEntropyMulticlassTrainer>
+* <xref:Microsoft.ML.Trainers.NaiveBayesMulticlassTrainer>
 * <xref:Microsoft.ML.Trainers.OneVersusAllTrainer>
-* <xref:Microsoft.ML.Trainers.PairwiseCouplingTrainer> 
+* <xref:Microsoft.ML.Trainers.PairwiseCouplingTrainer>
 
 ### <a name="multiclass-classification-inputs-and-outputs"></a>Vstupy a výstupy s více třídami klasifikace
 
@@ -93,7 +93,7 @@ Tento Trainer má následující výstup:
 
 | Název výstupu | Typ | Popis|
 | -- | -- | -- |
-| `Score` | Vektor <xref:System.Single> | Skóre všech tříd. Vyšší hodnota znamená vyšší pravděpodobnost pro přechod do přidružené třídy. Pokud má i-th největší hodnotu, index předpokládaného popisku by byl i. Všimněte si, že je index založený na nule. |
+| `Score` | vektor <xref:System.Single> | Skóre všech tříd. Vyšší hodnota znamená vyšší pravděpodobnost pro přechod do přidružené třídy. Pokud má i-th největší hodnotu, index předpokládaného popisku by byl i. Všimněte si, že je index založený na nule. |
 | `PredictedLabel` | typ [klíče](xref:Microsoft.ML.Data.KeyDataViewType) | Index předpokládaného popisku. Pokud je jeho hodnota, vlastní popisek bude i-th kategorie v typu vstupního popisku s hodnotou klíče. |
 
 ## <a name="regression"></a>Nevýhody
@@ -112,7 +112,7 @@ Regresní model můžete naučit pomocí těchto algoritmů:
 * <xref:Microsoft.ML.Trainers.LightGbm.LightGbmRegressionTrainer>
 * <xref:Microsoft.ML.Trainers.SdcaRegressionTrainer>
 * <xref:Microsoft.ML.Trainers.OlsTrainer>
-* <xref:Microsoft.ML.Trainers.OnlineGradientDescentTrainer> 
+* <xref:Microsoft.ML.Trainers.OnlineGradientDescentTrainer>
 * <xref:Microsoft.ML.Trainers.FastTree.FastTreeRegressionTrainer>
 * <xref:Microsoft.ML.Trainers.FastTree.FastTreeTweedieTrainer>
 * <xref:Microsoft.ML.Trainers.FastTree.FastForestRegressionTrainer>
@@ -140,7 +140,7 @@ Data sloupce vstupního popisku musí být <xref:System.Single>.
 
 Model clusteringu můžete proškolit pomocí následujícího algoritmu:
 
-* <xref:Microsoft.ML.Trainers.KMeansTrainer> 
+* <xref:Microsoft.ML.Trainers.KMeansTrainer>
 
 ### <a name="clustering-inputs-and-outputs"></a>Vstupy a výstupy clusteringu
 
@@ -193,7 +193,7 @@ Tento Trainer má následující výstup:
 Model hodnocení můžete proškolit s následujícími algoritmy:
 
 * <xref:Microsoft.ML.Trainers.LightGbm.LightGbmRankingTrainer>
-* <xref:Microsoft.ML.Trainers.FastTree.FastTreeRankingTrainer> 
+* <xref:Microsoft.ML.Trainers.FastTree.FastTreeRankingTrainer>
 
 ### <a name="ranking-input-and-outputs"></a>Řazení vstupů a výstupů
 

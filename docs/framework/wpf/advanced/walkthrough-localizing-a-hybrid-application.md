@@ -5,12 +5,12 @@ helpviewer_keywords:
 - localization [WPF interoperability]
 - hybrid applications [WPF interoperability]
 ms.assetid: fbc0c54e-930a-4c13-8e9c-27b83665010a
-ms.openlocfilehash: bef296d5de4735780c839af312b5d4fe7eeeb960
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 281afad0c0de856ca67abc74c65aff0e7afc3e01
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197850"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976506"
 ---
 # <a name="walkthrough-localizing-a-hybrid-application"></a>Návod: Lokalizace hybridní aplikace
 
@@ -56,7 +56,7 @@ Dále přidáte ovládací prvek popisek [!INCLUDE[TLA#tla_winforms](../../../..
 
 ### <a name="to-add-localizable-content"></a>Přidání lokalizovatelné obsahu
 
-1. V **Průzkumník řešení**dvakrát klikněte na **SimpleControl. XAML** a otevřete ho v [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].
+1. V **Průzkumník řešení**poklikejte na **SimpleControl. XAML** a otevře se v Návrháři WPF.
 
 2. Obsah ovládacího prvku <xref:System.Windows.Controls.Button> nastavte pomocí následujícího kódu.
 

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - hybrid applications [WPF interoperability]
 - message loops [WPF]
 ms.assetid: f440c23f-fa5d-4d5a-852f-ba61150e6405
-ms.openlocfilehash: 541d71efa66d14855704797892cac68799215159
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: f3cddcd6cd90e7e43ea6af67725e709673f7650f
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72919760"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73978341"
 ---
 # <a name="troubleshooting-hybrid-applications"></a>Řešení potíží s hybridními aplikacemi
 <a name="introduction"></a>Toto téma uvádí některé běžné problémy, ke kterým může dojít při vytváření hybridních aplikací, které používají technologie [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] i [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)].  
@@ -96,7 +96,7 @@ ms.locfileid: "72919760"
   
 <a name="wpf_designer"></a>   
 ## <a name="wpf-designer"></a>návrhář WPF  
- Obsah WPF můžete navrhovat pomocí [!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)]. V následujících částech jsou uvedeny některé běžné problémy, které mohou nastat při vytváření hybridních aplikací s [!INCLUDE[wpfdesigner_current_short](../../../../includes/wpfdesigner-current-short-md.md)].  
+ Obsah WPF můžete navrhnout pomocí Návrháře WPF pro Visual Studio. V následujících částech jsou uvedeny některé běžné problémy, které mohou nastat při vytváření hybridních aplikací pomocí Návrháře WPF.  
   
 ### <a name="backcolortransparent-is-ignored-at-design-time"></a>BackColorTransparent se v době návrhu ignoruje.  
  Vlastnost <xref:System.Windows.Forms.Integration.ElementHost.BackColorTransparent%2A> nemusí v době návrhu fungovat podle očekávání.  

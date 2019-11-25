@@ -8,21 +8,21 @@ helpviewer_keywords:
 - <webProxyScript> element
 - webProxyScript element
 ms.assetid: a13c26db-6218-4af3-9696-38f24b23bfac
-ms.openlocfilehash: 2abab3de2965c31c11d9acaf7b78f3a668563506
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: dbad888cd0537f63c09840ac1053f924db9ea9bc
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71697454"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74089063"
 ---
-# <a name="webproxyscript-element-network-settings"></a>@no__t – element > 0webProxyScript (nastavení sítě)
+# <a name="webproxyscript-element-network-settings"></a>\<element > webProxyScript (nastavení sítě)
 Konfiguruje charakteristiky skriptu používaného pro zjišťování webových proxy serverů.  
-  
-[ **@no__t – 2configuration >** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t -4system. NET >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<settings >** ](settings-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<webProxyScript >**  
-  
+
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<nastavení >** ](settings-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<webProxyScript >**
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  

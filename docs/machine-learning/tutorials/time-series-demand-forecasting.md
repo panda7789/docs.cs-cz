@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.author: luquinta
 author: luisquintanilla
-ms.openlocfilehash: e913c27c3501c4c553d7d62f948de31abb3d6f49
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 2482709abfadad0505a40f4c37fd58cee4a2634c
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740535"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73978205"
 ---
 # <a name="tutorial-forecast-bike-rental-service-demand-with-time-series-analysis-and-mlnet"></a>Kurz: odhadování poptávky po nájemce kol s využitím analýzy časových řad a ML.NET
 
@@ -37,9 +37,9 @@ Tato ukázka je  **C# Konzolová aplikace .NET Core** , která vypovídá poptá
 
 ## <a name="understand-the-problem"></a>Pochopení problému
 
-Aby bylo možné spustit efektivní operaci, Správa inventáře hraje klíčovou roli. Pokud máte příliš mnoho produktů na skladě, znamená to, že neprodávané produkty jsou v police negenerují žádné výnosy. S příliš malým množstvím produktů vede ke ztrátě prodeje a zákazníkům, kteří si kupují z konkurence. Proto se jedná o konstantní otázku, co je optimální množství inventáře, abyste mohli zůstat na ruce? Analýza časových řad pomáhá poskytnout odpověď na tyto otázky zobrazením historických dat, identifikace vzorů a využitím těchto informací k předpovědi hodnot v budoucnu. 
+Aby bylo možné spustit efektivní operaci, Správa inventáře hraje klíčovou roli. Pokud máte příliš mnoho produktů na skladě, znamená to, že neprodávané produkty jsou v police negenerují žádné výnosy. S příliš malým množstvím produktů vede ke ztrátě prodeje a zákazníkům, kteří si kupují z konkurence. Proto se jedná o konstantní otázku, co je optimální množství inventáře, abyste mohli zůstat na ruce? Analýza časových řad pomáhá poskytnout odpověď na tyto otázky zobrazením historických dat, identifikace vzorů a využitím těchto informací k předpovědi hodnot v budoucnu.
 
-Technika analýzy dat používaných v tomto kurzu je univariate analýza časových řad. Analýza Univariate Time-Series se při určitých intervalech, jako je měsíční prodej, podívá na jedno číselné pozorování v určitém časovém intervalu. 
+Technika analýzy dat používaných v tomto kurzu je univariate analýza časových řad. Analýza Univariate Time-Series se při určitých intervalech, jako je měsíční prodej, podívá na jedno číselné pozorování v určitém časovém intervalu.
 
 Algoritmus použitý v tomto kurzu je [Analýza s jedním spektrem (SSA)](http://ssa.cf.ac.uk/zhigljavsky/pdfs/SSA/SSA_encyclopedia.pdf). SSA funguje tak, že rozdělí časovou řadu do sady základních komponent. Tyto komponenty lze interpretovat jako části signálu, který odpovídá trendům, hluku, sezónnost a mnoha dalším faktorům. Poté jsou tyto komponenty znovu sestaveny a použity k předpovědi hodnot v budoucnu.
 
@@ -62,7 +62,7 @@ Algoritmus použitý v tomto kurzu je [Analýza s jedním spektrem (SSA)](http:/
 > [!NOTE]
 > Data použitá v tomto kurzu pocházejí z [datové sady pro sdílení kol UCI](https://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset). Fanaee-T, hadi a gama, Joao, "označování událostí kombinující detektory kompletu a znalosti na pozadí", pokrok v umělých Intelligencech (2013): PP. 1-15, Springer Berlín Heidelberg, [webový odkaz](https://link.springer.com/article/10.1007%2Fs13748-013-0040-3).
 
-Původní datová sada obsahuje několik sloupců, které odpovídají sezónnost a počasí. Pro zkrácení, protože algoritmus používaný v tomto kurzu vyžaduje jenom hodnoty z jednoho číselného sloupce, původní datová sada byla zúžená, aby zahrnovala jenom tyto sloupce:  
+Původní datová sada obsahuje několik sloupců, které odpovídají sezónnost a počasí. Pro zkrácení, protože algoritmus používaný v tomto kurzu vyžaduje jenom hodnoty z jednoho číselného sloupce, původní datová sada byla zúžená, aby zahrnovala jenom tyto sloupce:
 
 - **dteday**: datum pozorování.
 - **year**: kódovaný rok sledování (0 = 2011, 1 = 2012).
@@ -94,7 +94,7 @@ Následuje ukázka dat:
 
 1. Vytvořte třídu `ModelInput`. Pod `Program` třídy přidejte následující kód.
 
-    [!code-csharp [ModelInputClass](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L120-L127)]    
+    [!code-csharp [ModelInputClass](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L120-L127)]
 
     Třída `ModelInput` obsahuje následující sloupce:
 
@@ -134,7 +134,7 @@ Následuje ukázka dat:
 
     [!code-csharp [DefineSQLQuery](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L25)]
 
-    ML.NET algoritmy očekávají, že data jsou typu [`Single`](xref:System.Single). Z toho vyplývá, že číselné hodnoty pocházející z databáze, které nejsou typu [`Real`](xref:System.Data.SqlDbType), mají hodnotu s plovoucí desetinnou čárkou s jednoduchou přesností, která musí být převedena na [`Real`](xref:System.Data.SqlDbType). 
+    ML.NET algoritmy očekávají, že data jsou typu [`Single`](xref:System.Single). Z toho vyplývá, že číselné hodnoty pocházející z databáze, které nejsou typu [`Real`](xref:System.Data.SqlDbType), mají hodnotu s plovoucí desetinnou čárkou s jednoduchou přesností, která musí být převedena na [`Real`](xref:System.Data.SqlDbType).
 
     Sloupce `Year` a `TotalRental` jsou v databázi typu Integer. Pomocí `CAST` vestavěné funkce jsou obě přetypování do `Real`.
 
@@ -146,7 +146,7 @@ Následuje ukázka dat:
 
     [!code-csharp [LoadData](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L31)]
 
-1. Datová sada obsahuje dva roky s daty. Pro školení se použijí jenom data z prvního roku, druhý rok se porovná s porovnáním skutečných hodnot s prognózou vytvořenou modelem. Filtrujte data pomocí [`FilterRowsByColumn`](xref:Microsoft.ML.DataOperationsCatalog.FilterRowsByColumn*) transformace. 
+1. Datová sada obsahuje dva roky s daty. Pro školení se použijí jenom data z prvního roku, druhý rok se porovná s porovnáním skutečných hodnot s prognózou vytvořenou modelem. Filtrujte data pomocí [`FilterRowsByColumn`](xref:Microsoft.ML.DataOperationsCatalog.FilterRowsByColumn*) transformace.
 
     [!code-csharp [SplitData](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L33-L34)]
 
@@ -158,7 +158,7 @@ Následuje ukázka dat:
 
     [!code-csharp [DefinePipeline](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L36-L45)]
 
-    `forecastingPipeline` přebírá 365 datových bodů za první rok a ukázky nebo rozdělí datovou sadu do 30 dnů (měsíčně) intervalů určených parametrem `seriesLength`. Každá z těchto ukázek je analyzována v týdenním nebo 7 denním intervalu. Při určování toho, jaká hodnota předpovědi je pro další období, se pro vytvoření předpovědi použijí hodnoty z předchozích sedmi dnů. Model je nastaven na předpověď sedmi teček do budoucna, jak je definováno parametrem `horizon`. Vzhledem k tomu, že prognóza je včas odhad, není vždy 100% přesná. Proto je dobré znát rozsah hodnot ve scénářích nejlepšího a nejhoršího případu, jak jsou definovány horní a dolní mezí. V takovém případě je úroveň spolehlivosti pro dolní a horní mez nastavena na 95%. Úroveň spolehlivosti se proto dá zvýšit nebo snížit. Čím vyšší je hodnota, tím širší je rozsah mezi horní a dolní mezí, abyste dosáhli požadované úrovně důvěry. 
+    `forecastingPipeline` přebírá 365 datových bodů za první rok a ukázky nebo rozdělí datovou sadu do 30 dnů (měsíčně) intervalů určených parametrem `seriesLength`. Každá z těchto ukázek je analyzována v týdenním nebo 7 denním intervalu. Při určování toho, jaká hodnota předpovědi je pro další období, se pro vytvoření předpovědi použijí hodnoty z předchozích sedmi dnů. Model je nastaven na předpověď sedmi teček do budoucna, jak je definováno parametrem `horizon`. Vzhledem k tomu, že prognóza je včas odhad, není vždy 100% přesná. Proto je dobré znát rozsah hodnot ve scénářích nejlepšího a nejhoršího případu, jak jsou definovány horní a dolní mezí. V takovém případě je úroveň spolehlivosti pro dolní a horní mez nastavena na 95%. Úroveň spolehlivosti se proto dá zvýšit nebo snížit. Čím vyšší je hodnota, tím širší je rozsah mezi horní a dolní mezí, abyste dosáhli požadované úrovně důvěry.
 
 1. Použijte metodu [`Fit`](xref:Microsoft.ML.Transforms.TimeSeries.SsaForecastingEstimator.Fit*) pro výuku modelu a přizpůsobení dat dříve definovaným `forecastingPipeline`.
 
@@ -173,7 +173,7 @@ Vyhodnoťte, jak dobře se model provádí prognózou dat z následujícího rok
     ```csharp
     static void Evaluate(IDataView testData, ITransformer model, MLContext mlContext)
     {
-        
+
     }
     ```
 
@@ -200,7 +200,7 @@ Vyhodnoťte, jak dobře se model provádí prognózou dat z následujícího rok
     K vyhodnocení výkonu se použijí následující metriky:
 
     - **Střední absolutní chyba**: měří, jak blízkoa předpovědi je skutečná hodnota. Rozsah hodnot je od 0 do nekonečno. Nejblíže k 0, což je lepší kvalita modelu.
-    - **Hlavní střední hodnota: Chyba na čtverci**: shrnuje chybu thhe v modelu. Rozsah hodnot je od 0 do nekonečno. Nejblíže k 0, což je lepší kvalita modelu.
+    - **Hlavní střední hodnota: Chyba na čtverci**: shrnuje chybu v modelu. Rozsah hodnot je od 0 do nekonečno. Nejblíže k 0, což je lepší kvalita modelu.
 
 1. Výstup metrik do konzoly.
 
@@ -278,7 +278,7 @@ Kontrola skutečných a předpokládaných hodnot zobrazuje následující vztah
 
 ![Aktuální porovnání předpovědi vs.](./media/time-series-demand-forecasting/forecast.png)
 
-I když hodnoty prognózy nepředpověď nad přesný počet nájemného, poskytují přesnější rozsah hodnot, který umožňuje operaci optimalizace používání prostředků. 
+I když hodnoty prognózy nepředpověď nad přesný počet nájemného, poskytují přesnější rozsah hodnot, který umožňuje operaci optimalizace používání prostředků.
 
 Blahopřejeme! Teď jste úspěšně vytvořili model strojového učení s časovou řadou k prognózování poptávky po pronájmu kol.
 

@@ -10,22 +10,22 @@ helpviewer_keywords:
 - filters, trace listeners
 - trace listeners, filters
 ms.assetid: 7d4e7faa-2e4e-4379-ac76-f6cd7f2f8fac
-ms.openlocfilehash: 4e92f80e9f6069b5fa70501e13a55d5a6fe95e7a
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: e04ecd773bd6aa7791858711edbd72128dc391ea
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71697328"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088884"
 ---
-# <a name="filter-element-for-add-for-sharedlisteners"></a>> element \<filter pro \<add > pro \<sharedListeners >
+# <a name="filter-element-for-add-for-sharedlisteners"></a>\<filtr > elementu pro \<přidání > pro \<sharedListeners >
 Přidá filtr do naslouchacího procesu v kolekci `sharedListeners`.  
-  
-[ **@no__t – 2configuration >** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<system. diagnostics >** ](system-diagnostics-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<sharedListeners >** ](sharedlisteners-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5[ **\<add >** ](add-element-for-sharedlisteners.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7 **\<filter >**  
-  
+
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<System. diagnostics >** ](system-diagnostics-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<sharedListeners >** ](sharedlisteners-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<přidat >** ](add-element-for-sharedlisteners.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<filtru >**
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -40,7 +40,7 @@ Přidá filtr do naslouchacího procesu v kolekci `sharedListeners`.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|**textový**|Požadovaný atribut.<br /><br /> Určuje typ filtru. Můžete použít pouze úplný název typu (ve formátu vlastnosti <xref:System.Type.FullName%2A?displayProperty=nameWithType>), nebo můžete použít plně kvalifikovaný název typu včetně informací o sestavení (ve formátu <xref:System.Type.AssemblyQualifiedName%2A?displayProperty=nameWithType>). Informace o vytvoření plně kvalifikovaného názvu typu naleznete v tématu [určení plně kvalifikovaných názvů typů](../../../reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
+|**textový**|Požadovaný atribut.<br /><br /> Určuje typ filtru. Můžete použít pouze úplný název typu (ve formátu <xref:System.Type.FullName%2A?displayProperty=nameWithType> vlastnosti), nebo můžete použít plně kvalifikovaný název typu včetně informací o sestavení (ve formátu <xref:System.Type.AssemblyQualifiedName%2A?displayProperty=nameWithType> vlastnosti). Informace o vytvoření plně kvalifikovaného názvu typu naleznete v tématu [určení plně kvalifikovaných názvů typů](../../../reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
 |**initializeData**|Nepovinný atribut.<br /><br /> Řetězec předaný konstruktoru pro určenou třídu.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
@@ -56,12 +56,12 @@ Přidá filtr do naslouchacího procesu v kolekci `sharedListeners`.
 |`add`|Přidá naslouchací proces do kolekce **sharedListeners** .|  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud je naslouchací proces definován v elementu `<add>` elementu `<sharedListeners>`, filtr pro tento naslouchací proces by měl být definován v prvku `<filter>`, který je podřízenou položkou prvku `<add>`.  
+ Pokud je naslouchací proces definován v prvku `<add>` elementu `<sharedListeners>`, filtr pro tento naslouchací proces by měl být definován v `<filter>` elementu, který je podřízeným prvkem `<add>`.  
   
  Tento element lze použít v konfiguračním souboru počítače (Machine. config) a v konfiguračním souboru aplikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje způsob použití prvku `<filter>` pro přidání filtru do naslouchacího procesu trasování `console` v kolekci `sharedListeners`.  
+ Následující příklad ukazuje, jak použít `<filter>` element pro přidání filtru do `console` naslouchacího procesu trasování v kolekci `sharedListeners`.  
   
 ```xml  
 <configuration>  

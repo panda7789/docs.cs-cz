@@ -1,14 +1,14 @@
 ---
 title: Jak používat automatizované rozhraní API pro ML.NET
 description: Rozhraní ML.NET Automated ML API automatizuje proces vytváření modelů a vygeneruje model připravený pro nasazení. Seznamte se s možnostmi, které můžete použít ke konfiguraci automatizovaných úloh strojového učení.
-ms.date: 04/24/2019
+ms.date: 11/7/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: bb1cd66e7341f2ada57d533d8b2dcbb48f08f726
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: c1c18decc48bc1499aa55210becff305cdec4a53
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774555"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977121"
 ---
 # <a name="how-to-use-the-mlnet-automated-machine-learning-api"></a>Jak používat automatizované rozhraní API pro strojové učení ML.NET
 
@@ -32,6 +32,7 @@ using Microsoft.ML.AutoML;
 ```
 
 ## <a name="select-the-machine-learning-task-type"></a>Vyberte typ úlohy Machine Learning.
+
 Než začnete vytvářet experiment, určete druh problému strojového učení, který chcete vyřešit. Automatizované Machine Learning podporuje následující úlohy ML:
 
 * Binární klasifikace
@@ -62,7 +63,7 @@ Vytvořit nastavení experimentu pro stanovený typ úkolu ML:
 
 ## <a name="configure-experiment-settings"></a>Konfigurovat nastavení experimentu
 
-Experimenty jsou vysoce konfigurovatelné. Úplný seznam nastavení konfigurace najdete v [dokumentaci k rozhraní AutoML API](https://docs.microsoft.com/dotnet/api/?view=automl-dotnet) .
+Experimenty jsou vysoce konfigurovatelné. Úplný seznam nastavení konfigurace najdete v [dokumentaci k rozhraní AutoML API](https://docs.microsoft.com/dotnet/api/microsoft.ml.automl?view=ml-dotnet-preview) .
 
 Mezi příklady patří:
 

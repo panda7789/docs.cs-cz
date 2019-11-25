@@ -5,12 +5,12 @@ author: briacht
 ms.date: 09/30/2019
 ms.custom: mvc, title-hack-0516
 ms.topic: tutorial
-ms.openlocfilehash: 2d960a43f7934e262fa0e19abfea0209aa4e9ff0
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 5b4541b527559ee05c9b97d84324e9e70599a014
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425254"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977384"
 ---
 # <a name="tutorial-build-a-movie-recommender-using-matrix-factorizaton-with-mlnet"></a>Kurz: vytvoření doporučení pro film pomocí Matrix factorizaton s ML.NET
 
@@ -48,7 +48,7 @@ Existuje několik způsobů, jak získat přístup k problémům s doporučením
 
 ### <a name="create-a-project"></a>Vytvoření projektu
 
-1. Otevřete Visual Studio 2017. Z řádku nabídek vyberte **soubor** > **Nový** **projekt**  > . V dialogovém okně **Nový projekt** vyberte uzel  **C# vizuálu** následovaný uzlem **.NET Core** . Pak vyberte šablonu projektu **aplikace konzoly (.NET Core)** . Do textového pole **název** zadejte "MovieRecommender" a pak vyberte tlačítko **OK** .
+1. Otevřete Visual Studio 2017. Z řádku nabídek vyberte **soubor** > **Nový** > **projekt** . V dialogovém okně **Nový projekt** vyberte uzel  **C# vizuálu** následovaný uzlem **.NET Core** . Pak vyberte šablonu projektu **aplikace konzoly (.NET Core)** . Do textového pole **název** zadejte "MovieRecommender" a pak vyberte tlačítko **OK** .
 
 2. Vytvořte v projektu adresář s názvem *data* pro uložení datové sady:
 
@@ -102,7 +102,7 @@ Chcete odhadnout hodnocení filmů, takže sloupec hodnocení je `Label`. Dalš�
 | `movieId`      |               |
 | `timestamp`     |               |
 
-K tomu, abyste se rozhodli, které `Features` se používají k předpovídání `Label`. Pomocí metod, jako je třeba [funkce permutace](../how-to-guides/determine-global-feature-importance-in-model.md) , můžete také využít k výběru nejlepší `Features`.
+K tomu, abyste se rozhodli, které `Features` se používají k předpovídání `Label`. Můžete také použít metody, jako je například [funkce permutace důležitost](../how-to-guides/explain-machine-learning-model-permutation-feature-importance-ml-net.md) , k usnadnění výběru nejlepší `Features`.
 
 V takovém případě byste měli omezit `timestamp` sloupec jako `Feature`, protože časové razítko skutečně neovlivňuje způsob, jakým se uživatel podílí na videu, a proto by nemohl přispět k přesnější předpovědi:
 
@@ -320,10 +320,10 @@ Pomocí `PredictionEngine` předpovědět hodnocení přidáním následujícíh
 
 [!code-csharp[PredictionEngine](~/samples/machine-learning/tutorials/MovieRecommendation/Program.cs#PredictionEngine "Create Prediction Engine")]
 
-[PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) je praktické rozhraní API, které umožňuje provádět předpovědi pro jednu instanci dat. [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) není bezpečná pro přístup z více vláken. Je přijatelné pro použití v prostředích s jedním vláknem nebo prototypem. Pro zvýšení výkonu a bezpečnosti vláken v produkčních prostředích použijte službu `PredictionEnginePool`, která vytvoří [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) objektů [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pro použití v celé aplikaci. V této příručce najdete informace o tom, jak [používat `PredictionEnginePool` ve ASP.NET corem webovém rozhraní API](../how-to-guides/serve-model-web-api-ml-net.md#register-predictionenginepool-for-use-in-the-application).
+[PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) je praktické rozhraní API, které umožňuje provádět předpovědi pro jednu instanci dat. [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) není bezpečný pro přístup z více vláken. Je přijatelné pro použití v prostředích s jedním vláknem nebo prototypem. Pro zvýšení výkonu a bezpečnosti vláken v produkčních prostředích použijte službu `PredictionEnginePool`, která vytvoří [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) objektů [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pro použití v celé aplikaci. V této příručce najdete informace o tom, jak [používat `PredictionEnginePool` ve ASP.NET corem webovém rozhraní API](../how-to-guides/serve-model-web-api-ml-net.md#register-predictionenginepool-for-use-in-the-application).
 
 > [!NOTE]
-> rozšíření služby `PredictionEnginePool` je nyní ve verzi Preview.
+> rozšíření služby `PredictionEnginePool` je aktuálně ve verzi Preview.
 
 Vytvořte instanci `MovieRating` nazvanou `testInput` a předejte ji do modulu předpovědi přidáním následujícího jako další řádky kódu v metodě `UseModelForSinglePrediction()`:
 
@@ -373,7 +373,7 @@ Přidejte následující jako další řádek kódu v metodě `Main()` pro volá
 
 ### <a name="use-your-saved-model"></a>Použití uloženého modelu
 
-Po uložení proučeného modelu můžete model využívat v různých prostředích (Další informace najdete v [příručce "Návod"](../how-to-guides/consuming-model-ml-net.md) ), kde se dozvíte, jak zprovoznění model strojového učení v aplikacích.
+Po uložení svého vyučeného modelu můžete model využívat v různých prostředích. Další informace o tom, jak zprovoznění model strojového učení v aplikacích, najdete v tématu [ukládání a načítání](../how-to-guides/save-load-machine-learning-models-ml-net.md) školicích modelů.
 
 ## <a name="results"></a>Výsledky
 
@@ -420,7 +420,7 @@ Existuje několik způsobů, jak můžete zlepšit výkon modelu, abyste mohli z
 
 Přidání dalších školicích dat, která mají dostatek ukázek pro každého uživatele a ID filmu, může pomoci zlepšit kvalitu modelu doporučení.
 
-[Mezi ověřováním](../how-to-guides/train-cross-validation-ml-net.md) je metoda pro vyhodnocování modelů, které náhodně rozdělí data do podmnožiny (místo extrakce testovacích dat z datové sady, jako jste to udělali v tomto kurzu), a jako testovací data převezme některé skupiny jako data výukového programu. Tato metoda vykonává rozdělení výukového testu z hlediska kvality modelu.
+[Mezi ověřováním](../how-to-guides/train-machine-learning-model-cross-validation-ml-net.md) je metoda pro vyhodnocování modelů, které náhodně rozdělí data do podmnožiny (místo extrakce testovacích dat z datové sady, jako jste to udělali v tomto kurzu), a jako testovací data převezme některé skupiny jako data výukového programu. Tato metoda vykonává rozdělení výukového testu z hlediska kvality modelu.
 
 ### <a name="features"></a>Funkce
 
@@ -428,7 +428,7 @@ V tomto kurzu použijete jenom tři `Features` (`user id`, `movie id` a `rating`
 
 I když je to dobrý začátek, možná budete chtít přidat další atributy nebo `Features` (například věk, pohlaví, geografické umístění atd.), pokud jsou zahrnuté v datové sadě. Přidání dalších relevantních `Features` může pomoci zlepšit výkon vašeho modelu doporučení.
 
-Pokud si nejste jistí, které `Features` může být pro úlohu strojového učení nejrelevantnější, můžete také využít výpočet příspěvků funkcí a [důležitost permutací funkcí](../how-to-guides/determine-global-feature-importance-in-model.md), který ml.NET poskytuje k tomu, aby se co nejvíce naučilo.  `Features`.
+Pokud si nejste jistí, které `Features` můžou být pro úlohu strojového učení nejrelevantnější, můžete také využít [důležitou funkci](../how-to-guides/explain-machine-learning-model-permutation-feature-importance-ml-net.md)výpočtu příspěvků funkcí (FCC) a permutace, která ml.NET poskytuje k tomu, co nejvíc nemonitorovaných `Features`.
 
 ### <a name="algorithm-hyperparameters"></a>Parametry algoritmu
 

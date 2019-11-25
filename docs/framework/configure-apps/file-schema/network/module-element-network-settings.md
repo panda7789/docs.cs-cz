@@ -8,21 +8,21 @@ helpviewer_keywords:
 - module element
 - <module> element
 ms.assetid: 10318725-9666-4d65-ab61-b94c64e59f13
-ms.openlocfilehash: 15f4d10a70dc3c6abd32869f5b7b0006a799b4bf
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 78f6418160b80096214c6e37268a5a90498d6d4d
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71698033"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74089243"
 ---
-# <a name="module-element-network-settings"></a>@no__t – element > 0module (nastavení sítě)
+# <a name="module-element-network-settings"></a>Element > modulu \<(nastavení sítě)
 Přidá do aplikace nový modul proxy.  
-  
-[ **@no__t – 2configuration >** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t -4system. NET >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<defaultProxy >** ](defaultproxy-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<module >**  
-  
+
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<defaultProxy >** ](defaultproxy-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<modulu >**
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -38,7 +38,7 @@ Přidá do aplikace nový modul proxy.
   
 |**Atribut**|**Popis**|  
 |-------------------|---------------------|  
-|`type`|Plně kvalifikovaný název typu (uvedený vlastností <xref:System.Type.FullName%2A>) a název sestavení (s vlastností <xref:System.Reflection.Assembly.FullName%2A>), které jsou odděleny čárkou, která implementuje proxy server.|  
+|`type`|Plně kvalifikovaný název typu (uvedený vlastností <xref:System.Type.FullName%2A>) a název sestavení (označeno vlastností <xref:System.Reflection.Assembly.FullName%2A>), které jsou odděleny čárkou, která implementuje proxy server.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -52,7 +52,7 @@ Přidá do aplikace nový modul proxy.
 ## <a name="remarks"></a>Poznámky  
  Element `module` registruje proxy třídy, které implementují rozhraní <xref:System.Net.IWebProxy>. Po registraci proxy třídy je možné použít `module` k vyžádání informací prostřednictvím podporovaného proxy serveru.  
   
- Hodnota pro atribut `type` by měla být název třídy modulu a název odpovídající knihovny DLL (Dynamic Link Library).  
+ Hodnota atributu `type` musí být název třídy modulu a název odpovídající knihovny DLL (Dynamic Link Library).  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
  Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  

@@ -7,21 +7,21 @@ helpviewer_keywords:
 - <listeners> element
 - listeners element
 ms.assetid: 1394c2c3-6304-46db-87c1-8e8b16f5ad5b
-ms.openlocfilehash: 84b67532825372e7f69d86e1ef6060f4263587eb
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 10530cfadf2e182f912c699e50294af4b57f47b5
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699353"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088866"
 ---
-# <a name="listeners-element-for-trace"></a>> element \<listeners pro \<trace >
+# <a name="listeners-element-for-trace"></a>> elementu \<Listeners pro \<trasování >
 Určuje naslouchací proces, který shromažďuje, ukládá a směruje zprávy. Naslouchací procesy směrují výstup trasování do příslušného cíle.  
-  
-[ **@no__t – 2configuration >** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<system. diagnostics >** ](system-diagnostics-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<trace >** ](trace-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<listeners >**  
-  
+
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<System. diagnostics >** ](system-diagnostics-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<trace >** ](trace-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<listeners >**
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -42,9 +42,9 @@ Určuje naslouchací proces, který shromažďuje, ukládá a směruje zprávy. 
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[@no__t – 1add >](add-element-for-listeners-for-trace.md)|Přidá naslouchací proces do kolekce `Listeners`.|  
-|[@no__t – 1clear >](clear-element-for-listeners-for-trace.md)|Vymaže kolekci `Listeners` pro trasování.|  
-|[@no__t – 1remove >](remove-element-for-listeners-for-trace.md)|Odebere naslouchací proces z kolekce `Listeners`.|  
+|[\<přidat >](add-element-for-listeners-for-trace.md)|Přidá naslouchací proces do kolekce `Listeners`.|  
+|[\<vymazat >](clear-element-for-listeners-for-trace.md)|Vymaže kolekci `Listeners` pro trasování.|  
+|[\<odebrat >](remove-element-for-listeners-for-trace.md)|Odebere naslouchací proces z kolekce `Listeners`.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -55,13 +55,13 @@ Určuje naslouchací proces, který shromažďuje, ukládá a směruje zprávy. 
 |`trace`|Obsahuje naslouchací procesy, které shromažďují, ukládají a směrují trasovací zprávy.|  
   
 ## <a name="remarks"></a>Poznámky  
- Třídy <xref:System.Diagnostics.Debug> a <xref:System.Diagnostics.Trace> sdílejí stejnou kolekci **posluchačů** . Pokud přidáte objekt naslouchacího procesu do kolekce v jedné z těchto tříd, použije druhá třída stejný naslouchací proces. Třídy naslouchacího procesu dodávané s .NET Framework jsou odvozeny z třídy <xref:System.Diagnostics.TraceListener>.  
+ Třídy <xref:System.Diagnostics.Debug> a <xref:System.Diagnostics.Trace> sdílejí stejnou kolekci **posluchačů** . Pokud přidáte objekt naslouchacího procesu do kolekce v jedné z těchto tříd, použije druhá třída stejný naslouchací proces. Třídy naslouchacího procesu dodávané s .NET Framework jsou odvozeny z <xref:System.Diagnostics.TraceListener> třídy.  
   
 ## <a name="configuration-file"></a>Konfigurační soubor  
  Tento element lze použít v konfiguračním souboru počítače (Machine. config) a v konfiguračním souboru aplikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak použít prvek **> @no__t 1listeners** k přidání posluchačů `MyListener` a `MyEventListener` do kolekce **posluchačů** . `MyListener` vytvoří soubor s názvem `MyListener.log` a zapíše výstup do souboru. `MyEventListener` vytvoří položku v protokolu událostí.  
+ Následující příklad ukazuje, jak použít > elementu **\<Listeners** k přidání `MyListener` posluchačů a `MyEventListener` do kolekce **posluchačů** . `MyListener` vytvoří soubor s názvem `MyListener.log` a zapíše výstup do souboru. `MyEventListener` vytvoří položku v protokolu událostí.  
   
 ```xml  
 <configuration>  

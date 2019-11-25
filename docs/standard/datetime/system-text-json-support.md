@@ -13,24 +13,24 @@ helpviewer_keywords:
 - JSON Serializer, JSON Reader, JSON Writer
 - Converter, JSON Converter, DateTime Converter
 - ISO, ISO 8601, ISO 8601-1:2019
-ms.openlocfilehash: 000a6b6dc892e65b50ae413ab3cb95d2a73ef0ef
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 04e0e3c613b194ac85241d50d3bc5fd5dc0b6e54
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182574"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977327"
 ---
 # <a name="datetime-and-datetimeoffset-support-in-systemtextjson"></a>Podpora DateTime a DateTimeOffset v System.Text.Json
 
-Knihovna System. text. JSON analyzuje a zapisuje <xref:System.DateTime> <xref:System.DateTimeOffset> a hodnotuje hodnoty podle rozšířeného profilu ISO 8601:-2019.
-[Převaděče](xref:System.Text.Json.Serialization.JsonConverter%601) poskytují vlastní podporu pro serializaci a deserializaci <xref:System.Text.Json.JsonSerializer>pomocí.
-Vlastní podporu je také možné implementovat při použití <xref:System.Text.Json.Utf8JsonReader> a <xref:System.Text.Json.Utf8JsonWriter>.
+Knihovna System. text. JSON analyzuje a zapisuje hodnoty <xref:System.DateTime> a <xref:System.DateTimeOffset> podle rozšířeného profilu ISO 8601:-2019.
+[Převaděče](xref:System.Text.Json.Serialization.JsonConverter%601) poskytují vlastní podporu pro serializaci a deserializaci pomocí <xref:System.Text.Json.JsonSerializer>.
+Vlastní podporu je taky možné implementovat při použití <xref:System.Text.Json.Utf8JsonReader> a <xref:System.Text.Json.Utf8JsonWriter>.
 
 ## <a name="support-for-the-iso-8601-12019-format"></a>Podpora formátu ISO 8601-1:2019
 
-<xref:System.DateTime> Typy <xref:System.Text.Json.JsonSerializer>, <xref:System.Text.Json.Utf8JsonReader>, a<xref:System.Text.Json.Utf8JsonWriter> <xref:System.DateTimeOffset> analyzují a zapisují a zapisují text v závislosti na rozšířeném profilu formátu ISO 8601-1:2019, například 2019-07-26T16 <xref:System.Text.Json.JsonElement> : 59:57-05:00.
+<xref:System.Text.Json.JsonSerializer>, <xref:System.Text.Json.Utf8JsonReader>, <xref:System.Text.Json.Utf8JsonWriter>a <xref:System.Text.Json.JsonElement> typy analyzují a zapisují <xref:System.DateTime> a <xref:System.DateTimeOffset> text reprezentovat podle rozšířeného profilu formátu ISO 8601-1:2019; například 2019-07-26T16:59:57-05:00.
 
-<xref:System.DateTime>a <xref:System.DateTimeOffset> data lze serializovat pomocí <xref:System.Text.Json.JsonSerializer>:
+data <xref:System.DateTime> a <xref:System.DateTimeOffset> je možné serializovat pomocí <xref:System.Text.Json.JsonSerializer>:
 
 [!code-csharp[example-serializing-with-jsonserializer](~/samples/snippets/standard/datetime/json/csharp/serializing-with-jsonserializer/Program.cs)]
 
@@ -38,54 +38,54 @@ Lze je také deserializovat pomocí <xref:System.Text.Json.JsonSerializer>:
 
 [!code-csharp[example-deserializing-with-jsonserializer-valid](~/samples/snippets/standard/datetime/json/csharp/deserializing-with-jsonserializer-valid/Program.cs)]
 
-S výchozími možnostmi <xref:System.DateTime> musí <xref:System.DateTimeOffset> být vstupní a textové reprezentace v souladu s rozšířeným profilem ISO 8601-1:2019.
-Pokus o rekonstrukci reprezentace, která není v souladu s profilem, by způsobil <xref:System.Text.Json.JsonSerializer> <xref:System.Text.Json.JsonException>vyvolání:
+Ve výchozím nastavení musí být vstupní <xref:System.DateTime> a <xref:System.DateTimeOffset> reprezentace textu v souladu s rozšířeným profilem ISO 8601-1:2019.
+Při pokusu o deserializaci reprezentace, která není v souladu s profilem, dojde k vygenerování <xref:System.Text.Json.JsonException><xref:System.Text.Json.JsonSerializer>:
 
 [!code-csharp[example-deserializing-with-jsonserializer-error](~/samples/snippets/standard/datetime/json/csharp/deserializing-with-jsonserializer-error/Program.cs)]
 
-Poskytuje strukturovaný přístup k obsahu datové části JSON, včetně <xref:System.DateTime> a <xref:System.DateTimeOffset> reprezentace. <xref:System.Text.Json.JsonDocument> Níže uvedený příklad ukazuje, jak se při dané kolekci teplot vypočte průměrná teplota v pondělí:
+<xref:System.Text.Json.JsonDocument> poskytuje strukturovaný přístup k obsahu datové části JSON, včetně <xref:System.DateTime> a <xref:System.DateTimeOffset> reprezentace. Níže uvedený příklad ukazuje, jak se při dané kolekci teplot vypočte průměrná teplota v pondělí:
 
 [!code-csharp[example-computing-with-jsondocument-valid](~/samples/snippets/standard/datetime/json/csharp/computing-with-jsondocument-valid/Program.cs)]
 
-Pokud se pokusíte vypočítat průměrnou teplotu pro datovou část s neodpovídajícími <xref:System.DateTime> reprezentacemi, <xref:System.Text.Json.JsonDocument> bude vyvolávat <xref:System.FormatException>:
+Při pokusu o výpočet průměrné teploty pro datovou část s nevyhovujícími <xref:System.DateTime> reprezentující by <xref:System.Text.Json.JsonDocument> vyvolala <xref:System.FormatException>:
 
 [!code-csharp[example-computing-with-jsondocument-error](~/samples/snippets/standard/datetime/json/csharp/computing-with-jsondocument-error/Program.cs)]
 
-Zápisy <xref:System.Text.Json.Utf8JsonWriter> <xref:System.DateTime> a<xref:System.DateTimeOffset> data nižší úrovně:
+<xref:System.Text.Json.Utf8JsonWriter> nižší úrovně zapisuje <xref:System.DateTime> a <xref:System.DateTimeOffset> data:
 
 [!code-csharp[example-writing-with-utf8jsonwriter](~/samples/snippets/standard/datetime/json/csharp/writing-with-utf8jsonwriter/Program.cs)]
 
-<xref:System.Text.Json.Utf8JsonReader>analyzuje <xref:System.DateTimeOffset>adata: <xref:System.DateTime>
+<xref:System.Text.Json.Utf8JsonReader> analyzuje <xref:System.DateTime> a <xref:System.DateTimeOffset> data:
 
 [!code-csharp[example-reading-with-utf8jsonreader-valid](~/samples/snippets/standard/datetime/json/csharp/reading-with-utf8jsonreader-valid/Program.cs)]
 
-Při pokusu o čtení nekompatibilních formátů <xref:System.Text.Json.Utf8JsonReader> se způsobí, že <xref:System.FormatException>vyvolá výjimku:
+Při pokusu o čtení nekompatibilních formátů pomocí <xref:System.Text.Json.Utf8JsonReader> způsobí, že vyvolá <xref:System.FormatException>:
 
 [!code-csharp[example-reading-with-utf8jsonreader-error](~/samples/snippets/standard/datetime/json/csharp/reading-with-utf8jsonreader-error/Program.cs)]
 
-## <a name="custom-support-for-xrefsystemdatetime-and-xrefsystemdatetimeoffset"></a>Vlastní podpora pro <xref:System.DateTime> a<xref:System.DateTimeOffset>
+## <a name="custom-support-for-xrefsystemdatetime-and-xrefsystemdatetimeoffset"></a>Vlastní podpora pro <xref:System.DateTime> a <xref:System.DateTimeOffset>
 
-### <a name="when-using-xrefsystemtextjsonjsonserializer"></a>Při použití<xref:System.Text.Json.JsonSerializer>
+### <a name="when-using-xrefsystemtextjsonjsonserializer"></a>Při použití <xref:System.Text.Json.JsonSerializer>
 
 Pokud chcete, aby serializátor prováděl vlastní analýzu nebo formátování, můžete implementovat [vlastní převaděče](xref:System.Text.Json.Serialization.JsonConverter%601).
 Tady je několik příkladů:
 
-#### <a name="using-datetimeoffsetparse-and-datetimeoffsettostring"></a>Používání `DateTime(Offset).Parse` a`DateTime(Offset).ToString`
+#### <a name="using-datetimeoffsetparse-and-datetimeoffsettostring"></a>Používání `DateTime(Offset).Parse` a `DateTime(Offset).ToString`
 
-Pokud nemůžete určit formáty vstupních <xref:System.DateTime> nebo <xref:System.DateTimeOffset> textových reprezentace `DateTime(Offset).Parse` , můžete použít metodu v logice Read. To vám umožní použít. Rozsáhlá podpora pro analýzu různých <xref:System.DateTime> <xref:System.DateTimeOffset> formátů textu, včetně řetězců jiných než ISO 8601 a formátů ISO 8601, které neodpovídají rozšířenému profilu ISO 8601-1:2019. Tento přístup je výrazně menší než použití nativní implementace serializátoru.
+Pokud nemůžete určit formáty vstupních <xref:System.DateTime> nebo <xref:System.DateTimeOffset> reprezentace textu, můžete použít metodu `DateTime(Offset).Parse` v logice Read. To vám umožní použít. Rozsáhlá podpora pro analýzu různých formátů <xref:System.DateTime> a <xref:System.DateTimeOffset> textu, včetně řetězců jiných než ISO 8601 a formátů ISO 8601, které neodpovídají rozšířenému profilu ISO 8601-1:2019. Tento přístup je výrazně menší než použití nativní implementace serializátoru.
 
-Pro serializaci můžete použít `DateTime(Offset).ToString` metodu ve vaší logice zápisu převaděče. To vám umožní <xref:System.DateTime> zapisovat a <xref:System.DateTimeOffset> hodnoty pomocí libovolného [standardního formátu data a času](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings)a [vlastních formátů data a času](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings).
+Pro serializaci můžete použít metodu `DateTime(Offset).ToString` ve vaší logice zápisu převaděče. To umožňuje psát <xref:System.DateTime> a <xref:System.DateTimeOffset> hodnoty pomocí libovolného [standardního formátu data a času](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings)a [vlastních formátů data a času](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings).
 To je také podstatně méně prováděno, než použití nativní implementace serializátoru.
 
 [!code-csharp[example-showing-datetime-parse](~/samples/snippets/standard/datetime/json/csharp/datetime-converter-examples/example1/Program.cs)]
 
 > [!NOTE]
-> Při implementaci <xref:System.Text.Json.Serialization.JsonConverter%601> `T` , <xref:System.DateTime> parametrbude`typeof(DateTime)`vždy. `typeToConvert`
-Parametr je vhodný pro zpracování polymorfních případů a při použití obecných typů k získání `typeof(T)` v provedených způsobech.
+> Při implementaci <xref:System.Text.Json.Serialization.JsonConverter%601>a `T` je <xref:System.DateTime>, parametr `typeToConvert` bude vždy `typeof(DateTime)`.
+Parametr je vhodný pro zpracování polymorfních případů a při použití obecných typů k získání `typeof(T)` způsobem.
 
-#### <a name="using-xrefsystembufferstextutf8parser-and-xrefsystembufferstextutf8formatter"></a>Používání <xref:System.Buffers.Text.Utf8Parser> a<xref:System.Buffers.Text.Utf8Formatter>
+#### <a name="using-xrefsystembufferstextutf8parser-and-xrefsystembufferstextutf8formatter"></a>Používání <xref:System.Buffers.Text.Utf8Parser> a <xref:System.Buffers.Text.Utf8Formatter>
 
-V logice převaděče můžete použít rychlou metodu analýzy a formátování založenou na kódování UTF-8, <xref:System.DateTime> Pokud <xref:System.DateTimeOffset> jsou vstupní nebo textové reprezentace kompatibilní s jedním z [řetězců formátu data a času standardu](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings)"R", "l", "O" nebo "G", nebo pokud chcete Pište podle jednoho z těchto formátů. To je mnohem rychlejší než použití `DateTime(Offset).Parse` a `DateTime(Offset).ToString`.
+V logice převaděče můžete použít rychlé metody analýzy a formátování založené na kódování UTF-8, pokud vstupní <xref:System.DateTime> nebo <xref:System.DateTimeOffset> textové reprezentace jsou v souladu s jedním z [řetězců formátu data a času standard](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings)"R", "l", "O" nebo "G" nebo chcete zapisovat do jednoho z těchto formátů. To je mnohem rychlejší než použití `DateTime(Offset).Parse` a `DateTime(Offset).ToString`.
 
 Tento příklad ukazuje vlastní převaděč, který serializace a deserializace <xref:System.DateTime> hodnoty podle [standardního formátu "R"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings#the-rfc1123-r-r-format-specifier):
 
@@ -94,26 +94,26 @@ Tento příklad ukazuje vlastní převaděč, který serializace a deserializace
 > [!NOTE]
 > Standardní formát "R" bude vždy 29 znaků dlouhý.
 
-#### <a name="using-datetimeoffsetparse-as-a-fallback-to-the-serializers-native-parsing"></a>Použití `DateTime(Offset).Parse` jako záložní pro nativní analýzu serializátoru
+#### <a name="using-datetimeoffsetparse-as-a-fallback-to-the-serializers-native-parsing"></a>Použití `DateTime(Offset).Parse` jako záložního pro nativní analýzu serializátoru
 
-Pokud obecně očekáváte, že <xref:System.DateTime> váš <xref:System.DateTimeOffset> vstup nebo data budou v souladu s rozšířeným profilem ISO 8601-1:2019, můžete použít logiku nativní analýzy pro serializátor. Můžete také implementovat záložní mechanismus jenom pro případ.
-Tento příklad ukazuje, že po selhání analýzy <xref:System.DateTime> textové reprezentace pomocí <xref:System.Text.Json.Utf8JsonReader.TryGetDateTime(System.DateTime@)>převaděče úspěšně analyzuje data pomocí <xref:System.DateTime.Parse(System.String)>.
+Pokud jste obecně očekávali, že vstupní <xref:System.DateTime> nebo <xref:System.DateTimeOffset> data v souladu s rozšířeným profilem ISO 8601-1:2019, můžete použít logiku nativní analýzy pro serializátor. Můžete také implementovat záložní mechanismus jenom pro případ.
+Tento příklad ukazuje, že po selhání analýzy <xref:System.DateTime> textové reprezentace pomocí <xref:System.Text.Json.Utf8JsonReader.TryGetDateTime(System.DateTime@)>převaděč úspěšně analyzuje data pomocí <xref:System.DateTime.Parse(System.String)>.
 
 [!code-csharp[example-showing-datetime-parse-as-fallback](~/samples/snippets/standard/datetime/json/csharp/datetime-converter-examples/example3/Program.cs)]
 
-### <a name="when-writing-with-xrefsystemtextjsonutf8jsonwriter"></a>Při psaní pomocí<xref:System.Text.Json.Utf8JsonWriter>
+### <a name="when-writing-with-xrefsystemtextjsonutf8jsonwriter"></a>Při psaní pomocí <xref:System.Text.Json.Utf8JsonWriter>
 
-Chcete- <xref:System.DateTime> li napsat vlastní nebo <xref:System.DateTimeOffset> textovou reprezentaci pomocí <xref:System.Text.Json.Utf8JsonWriter>, můžete vlastní reprezentaci `ReadOnlySpan<Char>`naformátovat na <xref:System.String>, `ReadOnlySpan<Byte>`, nebo <xref:System.Text.Json.JsonEncodedText>, a pak ji předat odpovídajícímu [Utf8JsonWriter. WriteStringValue](https://docs.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter.writestringvalue?view=netcore-3.0) nebo [Utf8JsonWriter. WriteString](https://docs.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter.writestring?view=netcore-3.0) metoda.
+Pokud chcete napsat vlastní <xref:System.DateTime> nebo <xref:System.DateTimeOffset> textovou reprezentaci pomocí <xref:System.Text.Json.Utf8JsonWriter>, můžete vlastní reprezentaci naformátovat na <xref:System.String>, `ReadOnlySpan<Byte>`, `ReadOnlySpan<Char>`nebo <xref:System.Text.Json.JsonEncodedText>, a pak ji předat odpovídající metodě [Utf8JsonWriter. WriteStringValue](https://docs.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter.writestringvalue?view=netcore-3.0) nebo [Utf8JsonWriter. WriteString](https://docs.microsoft.com/dotnet/api/system.text.json.utf8jsonwriter.writestring?view=netcore-3.0) .
 
-Následující příklad ukazuje <xref:System.DateTime> ,jak<xref:System.DateTime.ToString(System.String,System.IFormatProvider)>lze vytvořit vlastní formát pomocí, pak napsaný pomocí metody:<xref:System.Text.Json.Utf8JsonWriter.WriteStringValue(System.String)>
+Následující příklad ukazuje, jak lze vytvořit vlastní <xref:System.DateTime> formát pomocí <xref:System.DateTime.ToString(System.String,System.IFormatProvider)>a následně napsaný metodou <xref:System.Text.Json.Utf8JsonWriter.WriteStringValue(System.String)>:
 
 [!code-csharp[example-custom-writing-with-utf8jsonwriter](~/samples/snippets/standard/datetime/json/csharp/custom-writing-with-utf8jsonwriter/Program.cs)]
 
-### <a name="when-reading-with-xrefsystemtextjsonutf8jsonreader"></a>Při čtení pomocí<xref:System.Text.Json.Utf8JsonReader>
+### <a name="when-reading-with-xrefsystemtextjsonutf8jsonreader"></a>Při čtení pomocí <xref:System.Text.Json.Utf8JsonReader>
 
-Pokud si chcete přečíst vlastní <xref:System.DateTime> nebo <xref:System.DateTimeOffset> textovou reprezentaci <xref:System.Text.Json.Utf8JsonReader>pomocí, můžete získat <xref:System.String> hodnotu aktuálního tokenu JSON jako using <xref:System.Text.Json.Utf8JsonReader.GetString>a pak analyzovat hodnotu pomocí vlastní logiky.
+Pokud chcete číst vlastní <xref:System.DateTime> nebo <xref:System.DateTimeOffset> textovou reprezentaci <xref:System.Text.Json.Utf8JsonReader>, můžete získat hodnotu aktuálního tokenu JSON jako <xref:System.String> pomocí <xref:System.Text.Json.Utf8JsonReader.GetString>a pak hodnotu analyzovat pomocí vlastní logiky.
 
-Následující příklad ukazuje, jak lze načíst <xref:System.DateTimeOffset> vlastní textovou reprezentaci pomocí <xref:System.Text.Json.Utf8JsonReader.GetString>a poté analyzovat pomocí <xref:System.DateTimeOffset.ParseExact(System.String,System.String,System.IFormatProvider)>:
+Následující příklad ukazuje, jak lze načíst vlastní <xref:System.DateTimeOffset> textovou reprezentaci pomocí <xref:System.Text.Json.Utf8JsonReader.GetString>a pak analyzovat pomocí <xref:System.DateTimeOffset.ParseExact(System.String,System.String,System.IFormatProvider)>:
 
 [!code-csharp[example-custom-reading-with-utf8jsonreader](~/samples/snippets/standard/datetime/json/csharp/custom-reading-with-utf8jsonreader/Program.cs)]
 
@@ -121,7 +121,7 @@ Následující příklad ukazuje, jak lze načíst <xref:System.DateTimeOffset> 
 
 ### <a name="date-and-time-components"></a>Komponenty data a času
 
-Rozšířený profil ISO 8601-1:2019 implementovaný v <xref:System.Text.Json> nástroji definuje následující komponenty pro reprezentace data a času. Tyto komponenty se používají k definování různých úrovní členitosti při analýze a formátování <xref:System.DateTime> a <xref:System.DateTimeOffset> reprezentace.
+Rozšířený profil ISO 8601-1:2019 implementovaný v <xref:System.Text.Json> definuje následující komponenty pro reprezentace data a času. Tyto komponenty se používají k definování různých úrovní členitosti při analýze a formátování <xref:System.DateTime> a <xref:System.DateTimeOffset> reprezentace.
 
 | Součást       | Formát                      | Popis                                                                     |
 |-----------------|-----------------------------|---------------------------------------------------------------------------------|
@@ -162,10 +162,10 @@ Pro analýzu jsou definovány následující úrovně členitosti:
     3. "yyyy-yyyy '-DD 't": ' mm ': ' ss ' (' + '/'-') HH ': ' mm '
     4. "yyyy-yyyy '-DD 't": ' mm ': ' ss '. ' FFFFFFF (+ '/'-') HH ': mm
 
-Pokud pro sekundy existují desetinné zlomky, musí existovat alespoň jedna číslice. `2019-07-26T00:00:00.` není povoleno.
+Pokud pro sekundy existují desetinné zlomky, musí existovat alespoň jedna číslice. `2019-07-26T00:00:00.` není povolená.
 I když je povolený až 16 zlomkových číslic, analyzují se jenom prvních sedm. Vše nad rámec, který je považován za nulu.
-Například se bude `2019-07-26T00:00:00.1234567890` analyzovat, jako by `2019-07-26T00:00:00.1234567`to bylo.
-Je tak udržování kompatibility s <xref:System.DateTime> implementací, což je omezeno na toto řešení.
+Například `2019-07-26T00:00:00.1234567890` bude analyzován jako `2019-07-26T00:00:00.1234567`.
+To je udržování kompatibility s implementací <xref:System.DateTime>, což je omezené na toto řešení.
 
 Přestupné sekundy nejsou podporovány.
 
@@ -176,27 +176,27 @@ Pro formátování jsou definovány následující úrovně členitosti:
 1. "" Celé datum "t" v částečný čas ""
     1. "yyyy-yyyy '-DD 't": ' mm ': ' ss ' ([specifikátor formátu ("s")](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings#the-sortable-s-format-specifier))
 
-        Používá se k formátování <xref:System.DateTime> bez zlomků sekund a bez informací o posunu.
+        Slouží k formátování <xref:System.DateTime> bez zlomků sekund a bez informací o posunu.
 
     2. "yyyy-yyyy '-DD 't": ' mm ': ' ss '. ' FFFFFFF
 
-        Používá se k formátování <xref:System.DateTime> s zlomky sekund, ale bez informací o posunu.
+        Slouží k formátování <xref:System.DateTime> s zlomky sekund, ale bez informací o posunu.
 
 2. ' Datum a čas '
     1. "yyyy-yyyy '-DD 't": ' mm ': ' ssZ '
 
-        Používá se k formátování <xref:System.DateTime> nebo <xref:System.DateTimeOffset> bez zlomků sekund, ale s posunem UTC.
+        Slouží k formátování <xref:System.DateTime> bez zlomků sekund, ale s posunem UTC.
 
     2. "yyyy-yyyy '-DD 't": ' mm ': ' ss '. ' FFFFFFFZ"
 
-        Používá se k formátování <xref:System.DateTime> nebo <xref:System.DateTimeOffset> se zlomky sekund a s posunem UTC.
+        Slouží k formátování <xref:System.DateTime> se zlomkem sekund a s posunem UTC.
 
     3. "yyyy-yyyy '-DD 't": ' mm ': ' ss ' (' + '/'-') HH ': ' mm '
 
-        Používá se k formátování <xref:System.DateTime> nebo <xref:System.DateTimeOffset> bez zlomků sekund, ale s lokálním posunem.
+        Slouží k formátování <xref:System.DateTime> nebo <xref:System.DateTimeOffset> bez zlomkových sekund, ale s lokálním posunem.
 
     4. "yyyy-yyyy '-DD 't": ' mm ': ' ss '. ' FFFFFFF (+ '/'-') HH ': mm
 
-        Používá se k formátování <xref:System.DateTime> nebo <xref:System.DateTimeOffset> se zlomky sekund a s místním posunem.
+        Slouží k formátování <xref:System.DateTime> nebo <xref:System.DateTimeOffset> se zlomky sekund a s místním posunem.
 
-Je-li k dispozici, je zapsána maximálně 7 zlomkových číslic. Tím se zarovnává s <xref:System.DateTime> implementací, která je omezena na toto řešení.
+Je-li k dispozici, je zapsána maximálně 7 zlomkových číslic. Tím se zarovnává s implementací <xref:System.DateTime>, která je omezena na toto řešení.

@@ -8,20 +8,20 @@ helpviewer_keywords:
 - settings element
 - <settings> element
 ms.assetid: 189ce989-c39b-427d-b004-6b82a668b931
-ms.openlocfilehash: ba08f630dc602c950da309bf29482d85b41af7ef
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: d510c445c585a36005ed415b14188efc4be03984
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71697683"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74089107"
 ---
-# <a name="settings-element-network-settings"></a>@no__t – element > 0settings (nastavení sítě)
+# <a name="settings-element-network-settings"></a>\<nastavení > elementu (nastavení sítě)
 Konfiguruje základní možnosti sítě pro obor názvů <xref:System.Net?displayProperty=nameWithType>.  
-  
-[ **@no__t – 2configuration >** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t -4system. NET >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<settings >**  
-  
+
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**nastavení\<**
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -49,10 +49,10 @@ Konfiguruje základní možnosti sítě pro obor názvů <xref:System.Net?displa
 |[httpListener](httplistener-element-network-settings.md)|Přizpůsobuje parametry používané třídou <xref:System.Net.HttpListener>.|  
 |[httpWebRequest](httpwebrequest-element-network-settings.md)|Přizpůsobuje parametry webového požadavku.|  
 |[protokolů](ipv6-element-network-settings.md)|Povolí podporu Internet Protocol verze 6 (IPv6).|  
-|[@no__t – element > 1performanceCounter (nastavení sítě)](performancecounter-element-network-settings.md)|Povolí čítače výkonu sítě.|  
+|[\<element > performanceCounter (nastavení sítě)](performancecounter-element-network-settings.md)|Povolí čítače výkonu sítě.|  
 |[Třída ServicePointManager](servicepointmanager-element-network-settings.md)|Nakonfiguruje připojení k síťovým prostředkům.|  
 |[zásuvky](socket-element-network-settings.md)|Určuje, jestli operace soketu používají porty dokončení.|  
-|[@no__t – element > 1webProxyScript (nastavení sítě)](webproxyscript-element-network-settings.md)|Konfiguruje charakteristiky skriptu používaného pro zjišťování webových proxy serverů.|  
+|[\<element > webProxyScript (nastavení sítě)](webproxyscript-element-network-settings.md)|Konfiguruje charakteristiky skriptu používaného pro zjišťování webových proxy serverů.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   

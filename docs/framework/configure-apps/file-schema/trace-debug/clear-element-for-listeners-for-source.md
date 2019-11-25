@@ -7,23 +7,23 @@ helpviewer_keywords:
 - <clear> element for <listeners> for <source>
 - clear element for <listeners> for <source>
 ms.assetid: 76796bb2-9c0b-4526-8135-8bf18b16d8d9
-ms.openlocfilehash: 05c20040ef59f4dee6b15bbe0b0369281b532754
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 4567f236397435e89371ca4c80730ff964fddd21
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71697195"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088937"
 ---
-# <a name="clear-element-for-listeners-for-source"></a>> element \<clear pro \<listeners > pro \<source >
+# <a name="clear-element-for-listeners-for-source"></a>\<Clear > element pro \<naslouchací proces > pro \<zdrojového >
 Vymaže kolekci `Listeners` pro zdroj trasování.  
-  
-[ **@no__t – 2configuration >** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **\<system. diagnostics >** ](system-diagnostics-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<sources >** ](sources-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5[ **\<source >** ](source-element.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7[ **&nbsp;0listeners >** ](listeners-element-for-source.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 @ no__t-6 @ no__t-7 @ no__t-8 @ no__t-9 **&nbsp;1clear >**  
-  
+
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<System. diagnostics >** ](system-diagnostics-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<zdrojů >** ](sources-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<zdroj >** ](source-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<Listeners**](listeners-element-for-source.md) >\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<vymazat >**
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -50,13 +50,13 @@ Vymaže kolekci `Listeners` pro zdroj trasování.
 |`listeners`|Určuje naslouchací procesy, které shromažďují, ukládají a směrují zprávy.|  
   
 ## <a name="remarks"></a>Poznámky  
- Element `<clear>` odebere všechny naslouchací procesy z kolekce `Listeners` pro zdroj trasování, včetně <xref:System.Diagnostics.DefaultTraceListener>. Element `<clear>` lze použít před použitím prvku `<add>`, aby bylo jisté, že v kolekci nejsou žádné další aktivní naslouchací procesy.  
+ Element `<clear>` odebere všechny naslouchací procesy z kolekce `Listeners` pro zdroj trasování, včetně <xref:System.Diagnostics.DefaultTraceListener>. Element `<clear>` lze použít před použitím elementu `<add>`, aby bylo jisté, že v kolekci nejsou žádné další aktivní naslouchací procesy.  
   
 ## <a name="configuration-file"></a>Konfigurační soubor  
  Tento element lze použít v konfiguračním souboru počítače (Machine. config) a v konfiguračním souboru aplikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak použít prvek `<clear>` před použitím prvků `<add>` k přidání posluchačů `console` a `textListener` do kolekce `Listeners` pro zdroj trasování `TraceSourceApp`.  
+ Následující příklad ukazuje, jak použít prvek `<clear>` před použitím `<add>` prvky pro přidání `console` posluchačů a `textListener` do kolekce `Listeners` pro `TraceSourceApp`zdroje trasování.  
   
 ```xml  
 <configuration>  

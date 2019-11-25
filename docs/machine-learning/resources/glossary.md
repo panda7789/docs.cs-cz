@@ -4,12 +4,12 @@ description: Glosář důležitých termínů strojového učení, které jsou u
 ms.custom: seodec18
 ms.topic: reference
 ms.date: 07/31/2019
-ms.openlocfilehash: cb5681f1f72776ec9a8cbcfe45519befe02b8caf
-ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+ms.openlocfilehash: bd4f2db701f537d5c87529115a6bd44035432534
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72180176"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977290"
 ---
 # <a name="machine-learning-glossary-of-important-terms"></a>Glosář strojového učení s důležitými podmínkami
 
@@ -23,21 +23,21 @@ V [klasifikaci](#classification)je přesnost počet správně klasifikovaných p
 
 V [binární klasifikaci](#binary-classification)je vyhodnocena metrika, která je hodnotou oblasti pod křivkou, která vykreslí skutečnou kladovou sazbu (na ose y) proti falešně pozitivním sazbám (na ose x). Rozsahy od 0,5 (nejhorší) po 1 (nejlepší). Označuje se také jako oblast pod křivkou ROC, tj. křivka s provozní charakteristikou přijímače. Další informace najdete v článku věnovaném [provozním charakteristikám přijímače](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) na Wikipedii.
 
-## <a name="binary-classification"></a>Binární klasifikace
+## <a name="binary-classification"></a>binární klasifikace
 
 Případ [klasifikace](#classification) , kde [popisek](#label) je pouze jeden ze dvou tříd. Další informace najdete v části [binární klasifikace](tasks.md#binary-classification) v tématu [úlohy strojového učení](tasks.md) .
 
 ## <a name="calibration"></a>Kalibrac
 
-Kalibrace je proces mapování nezpracovaného skóre na členství ve třídě pro binární a více třídové klasifikace. Některé ML.NET školitele mají příponu `NonCalibrated`. Tyto algoritmy vytvoří nezpracované skóre, které pak musí být namapovány na pravděpodobnost třídy. 
+Kalibrace je proces mapování nezpracovaného skóre na členství ve třídě pro binární a více třídové klasifikace. Některé ML.NET školitele mají příponu `NonCalibrated`. Tyto algoritmy vytvoří nezpracované skóre, které pak musí být namapovány na pravděpodobnost třídy.
 
-## <a name="catalog"></a>Katalog 
+## <a name="catalog"></a>Katalog
 
 Katalog je v ML.NET kolekce funkcí rozšíření, které se seskupují podle společného účelu.
 
 Každý úkol strojového učení (binární klasifikace, regrese, řazení atd.) má například katalog dostupných algoritmů strojového učení (školitele). Katalog školitele binární klasifikace je: <xref:Microsoft.ML.BinaryClassificationCatalog.BinaryClassificationTrainers>.
 
-## <a name="classification"></a>Classification
+## <a name="classification"></a>Mazal
 
 Když se data použijí pro předpověď kategorie, je [pod dohledem úlohy strojového učení](#supervised-machine-learning) označována jako klasifikace. [Binární klasifikace](#binary-classification) odkazuje na předpověď pouze dvou kategorií (například klasifikaci obrázku jako obrázku "Cat" nebo "pes"). [Klasifikace s více třídami](#multiclass-classification) odkazuje na předpověď více kategorií (například při klasifikaci obrázku jako obrázku konkrétního druhu pes).
 
@@ -47,7 +47,7 @@ V [regresi](#regression)je vyhodnocena metrika, která indikuje, jak dobře data
 
 ## <a name="data"></a>Data
 
-Data jsou centrálně k libovolné aplikaci strojového učení. V ML.NET data jsou představovány objekty <xref:Microsoft.ML.IDataView>. Objekty zobrazení dat:
+Data jsou centrálně k libovolné aplikaci strojového učení. V ML.NET data jsou reprezentovány <xref:Microsoft.ML.IDataView> objekty. Objekty zobrazení dat:
 
 - jsou tvořeny sloupci a řádky
 - jsou vyhodnoceny jako laxně vytvářená, které načítají data pouze při volání operace.
@@ -57,11 +57,11 @@ Data jsou centrálně k libovolné aplikaci strojového učení. V ML.NET data j
 
 Třída v ML.NET, která implementuje rozhraní <xref:Microsoft.ML.IEstimator%601>.
 
-Estimator je specifikace transformace (transformace přípravy dat i převod výuky modelů strojového učení). Odhady se dají zřetězit dohromady do kanálu transformací. Parametry Estimator nebo odhady kanálu se označují při volání <xref:Microsoft.ML.IEstimator`1.Fit*>. Výsledkem <xref:Microsoft.ML.IEstimator`1.Fit*> je [transformátor](#transformer).
+Estimator je specifikace transformace (transformace přípravy dat i převod výuky modelů strojového učení). Odhady se dají zřetězit dohromady do kanálu transformací. Parametry Estimator nebo odhady kanálu jsou zjištěny při volání <xref:Microsoft.ML.IEstimator`1.Fit*>. Výsledek <xref:Microsoft.ML.IEstimator`1.Fit*> je [transformátor](#transformer).
 
 ## <a name="extension-method"></a>Metoda rozšíření
 
-Metoda .NET, která je součástí třídy, ale je definována mimo třídu. První parametr rozšiřující metody je statický odkaz `this` na třídu, do které patří rozšiřující metoda.
+Metoda .NET, která je součástí třídy, ale je definována mimo třídu. První parametr rozšiřující metody je statický `this` odkaz na třídu, do které patří rozšiřující metoda.
 
 Metody rozšíření jsou v ML.NET používány rozsáhle k vytváření instancí [odhady](#estimator).
 
@@ -69,7 +69,7 @@ Metody rozšíření jsou v ML.NET používány rozsáhle k vytváření instanc
 
 Měřitelná vlastnost neměřeného jevu, obvykle číselná (dvojitá) hodnota. Více funkcí je označováno jako **vektor funkce** a obvykle je uloženo jako `double[]`. Funkce definují důležité charakteristiky pro měřený jev. Další informace najdete v článku [funkce](https://en.wikipedia.org/wiki/Feature_(machine_learning)) na Wikipedii.
 
-## <a name="feature-engineering"></a>Návrh funkcí
+## <a name="feature-engineering"></a>Strojírenství funkcí
 
 Inženýr funkcí je proces, který zahrnuje definování sady [funkcí](#feature) a vývoj softwaru, který vytváří vektory funkcí z dostupných dat pro jev, tj. extrakce funkcí. Další informace najdete v článku věnovaném [inženýrům funkcí](https://en.wikipedia.org/wiki/Feature_engineering) na Wikipedii.
 
@@ -81,7 +81,7 @@ V [klasifikaci](#classification)je metrika vyhodnocení, která vyvažuje [přes
 
 Parametr algoritmu strojového učení. Příklady zahrnují počet stromů, které se naučí v doménové struktuře rozhodnutí nebo velikost kroku v algoritmu prostupného přechodu. Hodnoty *parametrů* jsou nastaveny před školením modelu a řízení procesu hledání parametrů funkce předpovědi, například porovnávacích bodů v rozhodovacím stromu nebo závaží v modelu lineární regrese. Další informace najdete [v článku na](https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)) Wikipedii.
 
-## <a name="label"></a>Štítek
+## <a name="label"></a>Popisek
 
 Prvek, který má být předpovězen modelu Machine Learning. Například druh psa nebo budoucí cena za zásobu.
 
@@ -99,11 +99,11 @@ U různých školitelů se dá nakonfigurovat jiné funkce ztráty.
 
 V [regresi](#regression)vyhodnocuje metrika, která je průměrem všech chyb modelů, kde chyba modelu je vzdálenost mezi předpovězenou hodnotou [popisku](#label) a správnou hodnotou popisku.
 
-## <a name="model"></a>Model
+## <a name="model"></a>Vzorový
 
 Tradičně parametry pro funkci předpovědi. Například váhy v modelu lineární regrese nebo v místech rozdělení v rozhodovacím stromu. V ML.NET model obsahuje všechny informace potřebné pro předpověď [popisku](#label) doménového objektu (například obrázku nebo textu). To znamená, že modely ML.NET zahrnují potřebné kroky featurization a také parametry pro funkci předpovědi.
 
-## <a name="multiclass-classification"></a>Klasifikace s více třídami
+## <a name="multiclass-classification"></a>klasifikace s více třídami
 
 Případ [klasifikace](#classification) , kde [popisek](#label) představuje jednu ze tří nebo více tříd. Další informace najdete v části [klasifikace více tříd](tasks.md#multiclass-classification) v tématu [úlohy strojového učení](tasks.md) .
 
@@ -117,13 +117,13 @@ Normalizace je proces škálování dat s plovoucí desetinnou čárkou na hodno
 
 ## <a name="numerical-feature-vector"></a>Vektor číselné funkce
 
-Vektor [funkce](#feature) skládající se pouze z číselných hodnot. To se podobá `double[]`.
+Vektor [funkce](#feature) skládající se pouze z číselných hodnot. To je podobné jako `double[]`.
 
-## <a name="pipeline"></a>Kanál
+## <a name="pipeline"></a>Kanálu
 
 Všechny operace potřebné k přizpůsobení modelu datové sadě. Kanál se skládá z kroků importu, transformace, featurization a učení dat. Jakmile je kanál vyškolen, změní se na model.
 
-## <a name="precision"></a>Číslic
+## <a name="precision"></a>Přesnost
 
 V [klasifikaci](#classification), přesnost pro třídu je počet položek, které byly správně předpovězeny, jako patřící do této třídy dělené celkovým počtem položek, které byly předpovězeny jako patřící do třídy.
 
@@ -162,7 +162,7 @@ Bodování je proces použití nových dat na školený model strojového učen�
 
 Podtřída strojového učení, ve které požadovaný model předpovídá popisek pro dosud nepřesná data. Mezi příklady patří klasifikace, regrese a strukturovaná předpověď. Další informace najdete v článku věnovaném [učení](https://en.wikipedia.org/wiki/Supervised_learning) na Wikipedii.
 
-## <a name="training"></a>Školení
+## <a name="training"></a>Absolv
 
 Proces identifikace [modelu](#model) pro danou sadu dat školení. Pro lineární model to znamená hledání vah. Ve stromové struktuře zahrnuje identifikaci rozdělení bodů.
 
@@ -170,7 +170,7 @@ Proces identifikace [modelu](#model) pro danou sadu dat školení. Pro lineárn�
 
 Třída ML.NET, která implementuje rozhraní <xref:Microsoft.ML.ITransformer>.
 
-Transformátor transformuje jednu <xref:Microsoft.ML.IDataView> do druhé. Transformátor se vytvoří prostřednictvím školení [Estimator](#estimator)nebo kanálu Estimator. 
+Transformátor transformuje jednu <xref:Microsoft.ML.IDataView> do jiné. Transformátor se vytvoří prostřednictvím školení [Estimator](#estimator)nebo kanálu Estimator.
 
 ## <a name="unsupervised-machine-learning"></a>Strojové učení bez dohledu
 

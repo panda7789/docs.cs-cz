@@ -5,12 +5,12 @@ ms.date: 09/18/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: f764d2147ec56f8dcc38f96d566ac746cf205650
-ms.sourcegitcommit: 9bd1c09128e012b6e34bdcbdf3576379f58f3137
+ms.openlocfilehash: 182350cc5143155133385c6fd77986b271f6db91
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72799136"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977036"
 ---
 # <a name="make-predictions-with-a-trained-model"></a>Vytvoření předpovědi s poučeným modelem
 
@@ -55,7 +55,7 @@ class HousingPrediction
 Bez ohledu na to, jestli se provádí jedna nebo dávková předpověď, je potřeba do aplikace načíst kanál předpovědi. Tento kanál obsahuje transformaci předběžného zpracování dat i vyškolený model. Fragment kódu níže načte kanál předpovědi ze souboru s názvem `model.zip`.
 
 ```csharp
-//Create MLContext 
+//Create MLContext
 MLContext mlContext = new MLContext();
 
 // Load Trained Model

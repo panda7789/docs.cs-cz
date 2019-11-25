@@ -1,24 +1,24 @@
 ---
 title: Opakované trénování modelu
-description: Zjistěte, jak programovém přeučení modelů v ML.NET
+description: Informace o tom, jak přeškolit model v ML.NET
 ms.date: 05/03/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: 1628d0669d8a9e677ff39b5869d3802d89d96410
-ms.sourcegitcommit: bab17fd81bab7886449217356084bf4881d6e7c8
+ms.openlocfilehash: 735782a4a0877a917b6e1885f009aa49d834170f
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/26/2019
-ms.locfileid: "67397703"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976967"
 ---
 # <a name="re-train-a-model"></a>Opakované trénování modelu
 
-Zjistěte, jak přeučování v ML.NET model strojového učení.
+Naučte se přeškolit model strojového učení v ML.NET.
 
-Celém světě a data kolem něj změnit konstantní tempem. Modely proto nutné změnit a aktualizovat také. ML.NET poskytuje funkce pro znovu trénovací modely s využitím zjistili parametry modelu jako výchozí bod k průběžně sestavení na předchozí zkušenosti a nikoli pokaždé, když vytváříte od začátku.  
+Svět a data, která se pohybují, se mění při konstantním tempu. V takovém případě je potřeba, aby se modely změnily a aktualizovaly i. ML.NET poskytuje funkce pro opětovné školení modelů pomocí pořízených parametrů modelu jako výchozího bodu pro průběžné sestavování na předchozí prostředí a nikoli při každém neúplném psaní.
 
-Tyto algoritmy jsou znovu trainable v ML.NET:
+Následující algoritmy jsou znovu vlakové v ML.NET:
 
 - [AveragedPerceptronTrainer](xref:Microsoft.ML.Trainers.AveragedPerceptronTrainer)
 - [FieldAwareFactorizationMachineTrainer](xref:Microsoft.ML.Trainers.FieldAwareFactorizationMachineTrainer)
@@ -31,9 +31,9 @@ Tyto algoritmy jsou znovu trainable v ML.NET:
 - [SgdNonCalibratedTrainer](xref:Microsoft.ML.Trainers.SgdNonCalibratedTrainer)
 - [SymbolicSgdLogisticRegressionBinaryTrainer](xref:Microsoft.ML.Trainers.SymbolicSgdLogisticRegressionBinaryTrainer)
 
-## <a name="load-pre-trained-model"></a>Načíst předem vytrénovaných model
+## <a name="load-pre-trained-model"></a>Načíst předem trained model
 
-Nejdřív načtěte předem natrénovaných modelů do vaší aplikace. Další informace o načítání trénovacích kanálů a modely, najdete v článku související [článek](./consuming-model-ml-net.md).
+Nejdřív načtěte předem vyškolený model do aplikace. Další informace o načítání školicích kanálů a modelů najdete v tématu [uložení a načtení trained model](save-load-machine-learning-models-ml-net.md).
 
 ```csharp
 // Create MLContext
@@ -49,19 +49,19 @@ ITransformer dataPrepPipeline = mlContext.Model.Load("data_preparation_pipeline.
 ITransformer trainedModel = mlContext.Model.Load("ogd_model.zip", out modelSchema);
 ```
 
-## <a name="extract-pre-trained-model-parameters"></a>Extrahovat parametry předem vytrénovaných modelu
+## <a name="extract-pre-trained-model-parameters"></a>Extrakce předučených parametrů modelu
 
-Po načtení modelu extrahovat parametry zjištěná modelu díky přístupu [ `Model` ](xref:Microsoft.ML.Data.PredictionTransformerBase`1.Model*) vlastnost předem natrénovaných modelů. Předem vytrénovaných model se trénuje pomocí trénování modelu lineární regrese [ `OnlineGradientDescentTrainer` ](xref:Microsoft.ML.Trainers.OnlineGradientDescentTrainer) vytváří[ `RegressionPredictionTransformer` ](xref:Microsoft.ML.Data.RegressionPredictionTransformer%601) , který vypíše [ `LinearRegressionModelParameters` ](xref:Microsoft.ML.Trainers.LinearRegressionModelParameters). Tyto parametry modelu lineární regrese obsahovat zjištěná posun a váhy nebo koeficienty modelu. Tyto hodnoty se použije jako výchozí bod pro nové znovu trénovaného modelu.
+Po načtení modelu rozbalte zjištěné parametry modelu tím, že získáte přístup k vlastnosti [`Model`](xref:Microsoft.ML.Data.PredictionTransformerBase`1.Model*) předučeného modelu. Předučený model byl vyškolený pomocí modelu lineární regrese [`OnlineGradientDescentTrainer`](xref:Microsoft.ML.Trainers.OnlineGradientDescentTrainer) , který vytvoří[`RegressionPredictionTransformer`](xref:Microsoft.ML.Data.RegressionPredictionTransformer%601) , které výstup [`LinearRegressionModelParameters`](xref:Microsoft.ML.Trainers.LinearRegressionModelParameters). Tyto parametry modelu lineární regrese obsahují zjištěné odchylky a váhy nebo koeficienty modelu. Tyto hodnoty budou použity jako výchozí bod pro nový znovu vyškolený model.
 
 ```csharp
 // Extract trained model parameters
-LinearRegressionModelParameters originalModelParameters = 
+LinearRegressionModelParameters originalModelParameters =
     ((ISingleFeaturePredictionTransformer<object>)trainedModel).Model as LinearRegressionModelParameters;
 ```
 
-## <a name="re-train-model"></a>Znovu trénování modelu
+## <a name="re-train-model"></a>Opětovné výuka modelu
 
-Proces přetrénování modelu se nijak neliší od u trénování modelu. Jediným rozdílem je, [ `Fit` ](xref:Microsoft.ML.Trainers.OnlineLinearTrainer`2.Fit*) metoda kromě dat taky přijímá jako vstup původní zjistili parametry modelu a použije je jako počáteční bod v procesu znovu školení.  
+Proces pro přeškolení modelu se neliší od školení modelu. Jediným rozdílem je, že metoda [`Fit`](xref:Microsoft.ML.Trainers.OnlineLinearTrainer`2.Fit*) kromě dat také přijímá jako vstup původní naučené parametry modelu a používá je jako výchozí bod v procesu opětovného školení.
 
 ```csharp
 // New Data
@@ -94,21 +94,21 @@ IDataView newData = mlContext.Data.LoadFromEnumerable<HousingData>(housingData);
 IDataView transformedNewData = dataPrepPipeline.Transform(newData);
 
 // Retrain model
-RegressionPredictionTransformer<LinearRegressionModelParameters> retrainedModel = 
+RegressionPredictionTransformer<LinearRegressionModelParameters> retrainedModel =
     mlContext.Regression.Trainers.OnlineGradientDescent()
         .Fit(transformedNewData, originalModelParameters);
 ```
 
-## <a name="compare-model-parameters"></a>Porovnání parametry modelu
+## <a name="compare-model-parameters"></a>Porovnat parametry modelu
 
-Jak poznáte, pokud znovu školení doopravdy stalo? Jedním ze způsobů je porovnat, zda parametry znovu trénovaného modelu se můžou lišit od těch, které původní model. Následující ukázka kódu porovná původní proti váhy znovu trénovaného modelu a vypíše do konzoly.
+Jak zjistíte, jestli se vlastní školení skutečně stalo? Jedním ze způsobů je porovnat, jestli jsou parametry přeučeného modelu jiné než u původního modelu. Následující ukázka kódu porovnává původní váhu podle znovu vyškolených modelů a vypíše je do konzoly.
 
 ```csharp
 // Extract Model Parameters of re-trained model
 LinearRegressionModelParameters retrainedModelParameters = retrainedModel.Model as LinearRegressionModelParameters;
 
 // Inspect Change in Weights
-var weightDiffs = 
+var weightDiffs =
     originalModelParameters.Weights.Zip(
         retrainedModelParameters.Weights, (original, retrained) => original - retrained).ToArray();
 
@@ -119,11 +119,11 @@ for(int i=0;i < weightDiffs.Count();i++)
 }
 ```
 
-Následující tabulka ukazuje, jak může vypadat výstup. 
+Následující tabulka obsahuje informace o tom, jak může vypadat výstup.
 
-|Původní | Retrained | Rozdíl |
+|Původně | Přetrénovat | Rozdíl |
 |---|---|---|
-| 33039.86 | 56293.76 | -23253.9 |
-| 29099.14 | 49586.03 | -20486.89 |
-| 28938.38 | 48609.23 | -19670.85 |
-| 30484.02 | 53745.43 | -23261.41 |
+| 33039,86 | 56293,76 | -23253,9 |
+| 29099,14 | 49586,03 | -20486,89 |
+| 28938,38 | 48609,23 | -19670,85 |
+| 30484,02 | 53745,43 | -23261,41 |

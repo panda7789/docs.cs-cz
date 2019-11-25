@@ -2,12 +2,12 @@
 title: Ukázka informačních kanálů streamování
 ms.date: 03/30/2017
 ms.assetid: 1f1228c0-daaa-45f0-b93e-c4a158113744
-ms.openlocfilehash: 1eb9f2194b2c7e4879cf9e443fea337c73986361
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: ede1dbb4f5c682b8182dda4888a9cbd373b95dd8
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425362"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976377"
 ---
 # <a name="streaming-feeds-sample"></a>Ukázka informačních kanálů streamování
 Tato ukázka předvádí, jak spravovat informační kanály syndikace, které obsahují velký počet položek. Ukázka na serveru ukazuje, jak zpozdit vytvoření jednotlivých objektů <xref:System.ServiceModel.Syndication.SyndicationItem> v rámci informačního kanálu až do chvíle, kdy je položka zapsána do síťového datového proudu.  
@@ -33,7 +33,7 @@ interface IStreamingFeedService
   
  Služba implementuje tuto smlouvu pomocí `ItemGenerator` třídy pro vytvoření potenciálně nekonečného proudu <xref:System.ServiceModel.Syndication.SyndicationItem> instancí pomocí iterátoru, jak je znázorněno v následujícím kódu.  
   
-```csharp  
+```csharp
 class ItemGenerator  
 {  
     public IEnumerable<SyndicationItem> GenerateItems()  
@@ -51,7 +51,7 @@ class ItemGenerator
   
  Když implementace služby vytvoří informační kanál, místo kolekce položek vyrovnávací paměti se použije výstup `ItemGenerator.GenerateItems()`.  
   
-```csharp  
+```csharp
 public Atom10FeedFormatter StreamedFeed()  
 {  
     SyndicationFeed feed = new SyndicationFeed("Streamed feed", "Feed to test streaming", null);  

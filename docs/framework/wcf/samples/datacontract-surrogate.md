@@ -2,12 +2,12 @@
 title: Náhrada kontraktu dat
 ms.date: 03/30/2017
 ms.assetid: b0188f3c-00a9-4cf0-a887-a2284c8fb014
-ms.openlocfilehash: 32ac0b82a637e2fb1a62b81555648942d31c30de
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: f08226d3d871caea2dea3eeaf1cd411557853e45
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928607"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976719"
 ---
 # <a name="datacontract-surrogate"></a>Náhrada kontraktu dat
 Tato ukázka předvádí, jak lze upravit procesy jako serializace, deserializace, Export schématu a import schématu pomocí náhradní třídy kontraktu dat. V této ukázce se dozvíte, jak použít náhradu ve scénáři klienta a serveru, kde jsou data serializována a přenášena mezi klientem a službou Windows Communication Foundation (WCF).  
@@ -17,7 +17,7 @@ Tato ukázka předvádí, jak lze upravit procesy jako serializace, deserializac
   
  Ukázka používá následující kontrakt služby:  
   
-```csharp  
+```csharp
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]  
 [AllowNonSerializableTypes]  
 public interface IPersonnelDataService  
@@ -30,11 +30,11 @@ public interface IPersonnelDataService
 }  
 ```  
   
- Tato `AddEmployee` operace umožňuje uživatelům přidávat data o nových zaměstnancích `GetEmployee` a operace podporuje hledání zaměstnanců na základě názvu.  
+ Operace `AddEmployee` umožňuje uživatelům přidávat data o nových zaměstnancích a operace `GetEmployee` podporuje hledání zaměstnanců na základě jména.  
   
  Tyto operace používají následující datový typ:  
   
-```csharp  
+```csharp
 [DataContract(Namespace = "http://Microsoft.ServiceModel.Samples")]  
 class Employee  
 {  
@@ -49,9 +49,9 @@ class Employee
 }  
 ```  
   
- V typu není možné <xref:System.Runtime.Serialization.DataContractSerializer> serializovat třídu(uvedenávnásledujícímukázkovémkódu),protožetoneníplatnátřídakontraktudat.`Person` `Employee`  
+ V `Employee` typ nemůže být třída `Person` (uvedená v následujícím ukázkovém kódu) serializována <xref:System.Runtime.Serialization.DataContractSerializer>, protože se nejedná o platnou třídu kontraktu dat.  
   
-```csharp  
+```csharp
 public class Person  
 {  
     public string firstName;  
@@ -64,13 +64,13 @@ public class Person
 }  
 ```  
   
- <xref:System.Runtime.Serialization.DataContractAttribute> Atribut lze použít `Person` pro třídu, ale to není vždy možné. Například `Person` třída může být definována v samostatném sestavení, přes které nemáte žádné řízení.  
+ Atribut <xref:System.Runtime.Serialization.DataContractAttribute> lze použít pro třídu `Person`, ale to není vždy možné. Například třída `Person` může být definována v samostatném sestavení, přes které nemáte žádné řízení.  
   
- Vzhledem k tomuto omezení je jednou z možností, `Person` jak serializovat třídu, nahradit ji jinou třídou, která je <xref:System.Runtime.Serialization.DataContractAttribute> označena a zkopírována do nové třídy v nezbytných datech. Cílem je `Person` , aby se třída zobrazila jako kontrakt DataContract <xref:System.Runtime.Serialization.DataContractSerializer>k. Všimněte si, že toto je jeden ze způsobů, jak serializovat třídy kontraktů, které neobsahují data.  
+ Vzhledem k tomuto omezení je jedním ze způsobů, jak serializovat třídu `Person`, nahradit ji jinou třídou, která je označena <xref:System.Runtime.Serialization.DataContractAttribute> a kopírovat data potřebná do nové třídy. Cílem je, aby se třída `Person` jako kontrakt dat <xref:System.Runtime.Serialization.DataContractSerializer>. Všimněte si, že toto je jeden ze způsobů, jak serializovat třídy kontraktů, které neobsahují data.  
   
- Ukázka logicky nahrazuje `Person` třídu jinou třídou s názvem `PersonSurrogated`.  
+ Ukázka logicky nahrazuje třídu `Person` jinou třídou s názvem `PersonSurrogated`.  
   
-```csharp  
+```csharp
 [DataContract(Name="Person", Namespace = "http://Microsoft.ServiceModel.Samples")]  
 public class PersonSurrogated  
 {  
@@ -85,11 +85,11 @@ public class PersonSurrogated
 }  
 ```  
   
- K dosažení této náhrady se používá náhrada za kontrakt dat. Náhrada kontraktu dat je třída, která implementuje <xref:System.Runtime.Serialization.IDataContractSurrogate>. V této ukázce `AllowNonSerializableTypesSurrogate` třída implementuje toto rozhraní.  
+ K dosažení této náhrady se používá náhrada za kontrakt dat. Náhrada kontraktu dat je třída, která implementuje <xref:System.Runtime.Serialization.IDataContractSurrogate>. V této ukázce třída `AllowNonSerializableTypesSurrogate` implementuje toto rozhraní.  
   
- V implementaci rozhraní je prvním úkolem vytvořit mapování typu z `Person` na. `PersonSurrogated` To se používá v době serializace i v době exportu schématu. Toto mapování se dosahuje implementací <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDataContractType%28System.Type%29> metody.  
+ V implementaci rozhraní je prvním úkolem vytvořit mapování typu z `Person` na `PersonSurrogated`. To se používá v době serializace i v době exportu schématu. Toto mapování se dosahuje implementací metody <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDataContractType%28System.Type%29>.  
   
-```csharp  
+```csharp
 public Type GetDataContractType(Type type)  
 {  
     if (typeof(Person).IsAssignableFrom(type))  
@@ -100,9 +100,9 @@ public Type GetDataContractType(Type type)
 }  
 ```  
   
- Metoda mapuje instanci na`PersonSurrogated` instanci během serializace, jak je znázorněno v následujícím ukázkovém kódu. `Person` <xref:System.Runtime.Serialization.IDataContractSurrogate.GetObjectToSerialize%28System.Object%2CSystem.Type%29>  
+ Metoda <xref:System.Runtime.Serialization.IDataContractSurrogate.GetObjectToSerialize%28System.Object%2CSystem.Type%29> mapuje instanci `Person` na instanci `PersonSurrogated` během serializace, jak je znázorněno v následujícím ukázkovém kódu.  
   
-```csharp  
+```csharp
 public object GetObjectToSerialize(object obj, Type targetType)  
 {  
     if (obj is Person)  
@@ -118,9 +118,9 @@ public object GetObjectToSerialize(object obj, Type targetType)
 }  
 ```  
   
- <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDeserializedObject%28System.Object%2CSystem.Type%29> Metoda poskytuje zpětné mapování pro deserializaci, jak je znázorněno v následujícím ukázkovém kódu.  
+ Metoda <xref:System.Runtime.Serialization.IDataContractSurrogate.GetDeserializedObject%28System.Object%2CSystem.Type%29> poskytuje zpětné mapování pro deserializaci, jak je znázorněno v následujícím ukázkovém kódu.  
   
-```csharp  
+```csharp
 public object GetDeserializedObject(object obj,   
 Type targetType)  
 {  
@@ -137,9 +137,9 @@ Type targetType)
 }  
 ```  
   
- Chcete-li `PersonSurrogated` namapovat kontrakt dat na `Person` existující třídu během importu schématu <xref:System.Runtime.Serialization.IDataContractSurrogate.GetReferencedTypeOnImport%28System.String%2CSystem.String%2CSystem.Object%29> , ukázka implementuje metodu, jak je znázorněno v následujícím ukázkovém kódu.  
+ Chcete-li namapovat kontrakt dat `PersonSurrogated` na existující třídu `Person` během importu schématu, ukázka implementuje metodu <xref:System.Runtime.Serialization.IDataContractSurrogate.GetReferencedTypeOnImport%28System.String%2CSystem.String%2CSystem.Object%29>, jak je znázorněno v následujícím ukázkovém kódu.  
   
-```csharp  
+```csharp
 public Type GetReferencedTypeOnImport(string typeName,   
                string typeNamespace, object customData)  
 {  
@@ -156,9 +156,9 @@ typeNamespace.Equals("http://schemas.datacontract.org/2004/07/DCSurrogateSample"
 }  
 ```  
   
- Následující vzorový kód dokončí implementaci <xref:System.Runtime.Serialization.IDataContractSurrogate> rozhraní.  
+ Následující vzorový kód dokončí implementaci rozhraní <xref:System.Runtime.Serialization.IDataContractSurrogate>.  
   
-```csharp  
+```csharp
 public System.CodeDom.CodeTypeDeclaration ProcessImportedType(  
           System.CodeDom.CodeTypeDeclaration typeDeclaration,   
           System.CodeDom.CodeCompileUnit compileUnit)  
@@ -184,13 +184,13 @@ public void GetKnownCustomDataTypes(
 }  
 ```  
   
- V této ukázce je náhrada povolena ve ServiceModel podle atributu s názvem `AllowNonSerializableTypesAttribute`. Vývojáři by museli použít tento atribut u kontraktu služby, jak je `IPersonnelDataService` uvedeno výše v kontraktu služby. Tento atribut implementuje `IContractBehavior` a nastaví náhradní operace v rámci svých `ApplyClientBehavior` metod a `ApplyDispatchBehavior` .  
+ V této ukázce je náhrada povolena ve ServiceModel podle atributu s názvem `AllowNonSerializableTypesAttribute`. Vývojáři by museli tento atribut uplatnit u kontraktu služby, jak je uvedeno výše v kontraktu služby `IPersonnelDataService`. Tento atribut implementuje `IContractBehavior` a nastaví náhradní operace v rámci svých metod `ApplyClientBehavior` a `ApplyDispatchBehavior`.  
   
- Atribut není v tomto případě nezbytný – používá se pro demonstrační účely v této ukázce. Uživatelé můžou alternativu povolit ručním přidáním podobného `IContractBehavior` `IEndpointBehavior` nebo `IOperationBehavior` pomocí kódu nebo pomocí konfigurace.  
+ Atribut není v tomto případě nezbytný – používá se pro demonstrační účely v této ukázce. Uživatelé mohou alternativně povolit náhradu ručním přidáním podobného `IContractBehavior`, `IEndpointBehavior` nebo `IOperationBehavior` pomocí kódu nebo pomocí konfigurace.  
   
- Implementace vyhledá operace, které používají DataContract, kontrolou, jestli `DataContractSerializerOperationBehavior` mají registrovanou. `IContractBehavior` Pokud k tomu dojde, nastaví `DataContractSurrogate` vlastnost v tomto chování. Následující vzorový kód ukazuje, jak je to hotové. Nastavení náhrady při této operaci umožňuje pro serializaci a deserializaci.  
+ Implementace `IContractBehavior` vyhledá operace, které používají DataContract, kontrolou, jestli mají `DataContractSerializerOperationBehavior` zaregistrované. Pokud k tomu dojde, nastaví vlastnost `DataContractSurrogate` v tomto chování. Následující vzorový kód ukazuje, jak je to hotové. Nastavení náhrady při této operaci umožňuje pro serializaci a deserializaci.  
   
-```csharp  
+```csharp
 public void ApplyClientBehavior(ContractDescription description, ServiceEndpoint endpoint, System.ServiceModel.Dispatcher.ClientRuntime proxy)  
 {  
     foreach (OperationDescription opDesc in description.Operations)  
@@ -218,11 +218,11 @@ private static void ApplyDataContractSurrogate(OperationDescription description)
 }  
 ```  
   
- Před generováním metadat je třeba provést další kroky, aby se zavedlo připojení k použití. Jeden z mechanismů, jak to udělat, `IWsdlExportExtension` je poskytnout, což je to, co ukazuje tento příklad. Další možností je změnit `WsdlExporter` přímo.  
+ Před generováním metadat je třeba provést další kroky, aby se zavedlo připojení k použití. Jedním z mechanismů, jak to provést, je poskytnout `IWsdlExportExtension`, což je to, co ukazuje tento příklad. Dalším způsobem je přímá změna `WsdlExporter`.  
   
- Atribut implementuje `IWsdlExportExtension` a`IContractBehavior`. `AllowNonSerializableTypesAttribute` Přípona může být buď `IContractBehavior` nebo `IEndpointBehavior` v tomto případě. Jeho `IWsdlExportExtension.ExportContract` implementace metody umožňuje nahradit ho přidáním `XsdDataContractExporter` do používaného během generování schématu pro kontrakt DataContract. Následující fragment kódu ukazuje, jak to provést.  
+ Atribut `AllowNonSerializableTypesAttribute` implementuje `IWsdlExportExtension` a `IContractBehavior`. V tomto případě může být rozšíření buď `IContractBehavior`, nebo `IEndpointBehavior`. Jeho implementace metody `IWsdlExportExtension.ExportContract` umožňuje nahradit ho přidáním do `XsdDataContractExporter` používaného během generování schématu pro kontrakt DataContract. Následující fragment kódu ukazuje, jak to provést.  
   
-```csharp  
+```csharp
 public void ExportContract(WsdlExporter exporter, WsdlContractConversionContext context)  
 {  
     if (exporter == null)  
@@ -265,6 +265,6 @@ public void ExportContract(WsdlExporter exporter, WsdlContractConversionContext 
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\DataContract`  

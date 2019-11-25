@@ -10,20 +10,20 @@ helpviewer_keywords:
 - <remove> element, webRequestModules
 - <webRequestModules>, remove element
 ms.assetid: dd84d2fe-2f4f-457a-9d3c-441d0d21cc10
-ms.openlocfilehash: f8209ea89ac8cd214389feddee8c475e10bc939a
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: ca3a78a491c61b6e23dab0f96eebceb3157706ae
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71697820"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74089139"
 ---
-# <a name="remove-element-for-webrequestmodules-network-settings"></a>@no__t – element > 0remove pro webRequestModules (nastavení sítě)
+# <a name="remove-element-for-webrequestmodules-network-settings"></a>\<odebrat element > pro webRequestModules (nastavení sítě)
 Odebere z aplikace vlastní modul webové žádosti.  
   
-[ **@no__t – 2configuration >** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t -4system. NET >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3[ **\<webRequestModules >** ](webrequestmodules-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 @ no__t-4 @ no__t-5 **\<remove >**  
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[ **\<webRequestModules >** ](webrequestmodules-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<odebrat >**
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -54,14 +54,14 @@ Odebere z aplikace vlastní modul webové žádosti.
 ## <a name="remarks"></a>Poznámky  
  Element `remove` odebere registrovaný modul webové žádosti pro zadanou předponu identifikátoru URI.  
   
- Hodnota atributu `prefix` by měla být předními znaky platného identifikátoru URI, například "`http`" nebo "`http://www.contoso.com`".  
+ Hodnota atributu `prefix` by měla být úvodními znaky platného identifikátoru URI, například "`http`" nebo "`http://www.contoso.com`".  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
  Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="example"></a>Příklad  
 
-Následující příklad odebere existující modul webové žádosti pro HTTP a pak zaregistruje nový vlastní modul webové žádosti o požadavky HTTP na `www.contoso.com`.
+Následující příklad odebere existující modul webové žádosti pro protokol HTTP a pak zaregistruje nový vlastní modul webové žádosti o požadavky HTTP na `www.contoso.com`.
   
 ```xml  
 <configuration>  

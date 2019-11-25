@@ -8,20 +8,20 @@ helpviewer_keywords:
 - <connectionManagement> element
 - connectionManagement element
 ms.assetid: bedccaab-12a2-4511-8f67-e961f249aec6
-ms.openlocfilehash: d377a77a4a1b4c57e9edd4fbfa364387f1bae479
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: b769dd8d3ed0c617d0d8f908e7ef516615da09a7
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699432"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74088461"
 ---
-# <a name="connectionmanagement-element-network-settings"></a>@no__t – element > 0connectionManagement (nastavení sítě)
+# <a name="connectionmanagement-element-network-settings"></a>\<element > connectionManagement (nastavení sítě)
 Určuje maximální počet připojení k síťovému hostiteli.  
-  
-[ **@no__t – 2configuration >** ](../configuration-element.md)  
-&nbsp; @ no__t-1[ **@no__t -4system. NET >** ](system-net-element-network-settings.md)  
-&nbsp; @ no__t-1 @ no__t-2 @ no__t-3 **\<connectionManagement >**  
-  
+
+[ **\<configuration >** ](../configuration-element.md) \
+&nbsp;&nbsp;[ **\<System. net >** ](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<connectionManagement >**
+
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -56,7 +56,7 @@ Určuje maximální počet připojení k síťovému hostiteli.
  Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine. config).  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu je nakonfiguruje aplikace tak, aby na všech ostatních serverech používala čtyři připojení k serveru `www.contoso.com` a dvě připojení.  
+ Následující příklad nakonfiguruje aplikaci tak, aby používala čtyři připojení k serveru `www.contoso.com` a dvě připojení ke všem ostatním serverům.  
   
 ```xml  
 <configuration>  

@@ -2,12 +2,12 @@
 title: Přístup ke službám WCF pomocí klientské aplikace pro Windows Store
 ms.date: 03/30/2017
 ms.assetid: e2002ef4-5dee-4a54-9d87-03b33d35fc52
-ms.openlocfilehash: 7a50454c5189c48704adfaaed2c90d2638dd677f
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: f5cc18973231f327ee161946a235cb8b8b2ea5a7
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928975"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73978187"
 ---
 # <a name="accessing-wcf-services-with-a-windows-store-client-app"></a>Přístup ke službám WCF pomocí klientské aplikace pro Windows Store
 Systém Windows 8 zavádí nový typ aplikace s názvem aplikace pro Windows Store. Tyto aplikace jsou navržené kolem rozhraní dotykové obrazovky. .NET Framework 4,5 umožňuje aplikacím pro Windows Store volat služby WCF.  
@@ -55,7 +55,7 @@ Systém Windows 8 zavádí nový typ aplikace s názvem aplikace pro Windows Sto
  Podporují se textové i binární kódování. Podporují se všechny režimy přenosu WCF. Další informace najdete v tématu [streamování přenosu zpráv](../../../../docs/framework/wcf/feature-details/streaming-message-transfer.md).  
   
 ### <a name="add-service-reference"></a>Přidání odkazu na službu  
- Chcete-li volat službu WCF z aplikace pro Windows Store, použijte funkci Přidat odkaz na službu sady Visual Studio 2012. V rámci aplikace pro Windows Store si všimnete několika změn ve funkcích Přidat odkaz na službu. První konfigurační soubor není vygenerován. Aplikace pro Windows Store nepoužívají konfigurační soubory, takže je nutné je nakonfigurovat v kódu. Tento konfigurační kód najdete v souboru References.cs generovaném pomocí Přidat odkaz na službu. Tento soubor zobrazíte tak, že v Průzkumníku řešení vyberete možnost Zobrazit všechny soubory. Soubor se nachází pod odkazy na služby a pak odkazuje na uzly. svcmap v rámci projektu. Všechny operace generované pro služby WCF v rámci aplikace pro Windows Store budou asynchronní pomocí asynchronního vzoru založeného na úlohách. Další informace najdete v tématu [asynchronní úlohy – zjednodušení asynchronního programování s úkoly](https://msdn.microsoft.com/magazine/ff959203.aspx).  
+ Chcete-li volat službu WCF z aplikace pro Windows Store, použijte funkci Přidat odkaz na službu sady Visual Studio 2012. V rámci aplikace pro Windows Store si všimnete několika změn ve funkcích Přidat odkaz na službu. První konfigurační soubor není vygenerován. Aplikace pro Windows Store nepoužívají konfigurační soubory, takže je nutné je nakonfigurovat v kódu. Tento konfigurační kód najdete v souboru References.cs generovaném pomocí Přidat odkaz na službu. Tento soubor zobrazíte tak, že v Průzkumníku řešení vyberete možnost Zobrazit všechny soubory. Soubor se nachází pod odkazy na služby a pak odkazuje na uzly. svcmap v rámci projektu. Všechny operace generované pro služby WCF v rámci aplikace pro Windows Store budou asynchronní pomocí asynchronního vzoru založeného na úlohách. Další informace najdete v tématu [asynchronní úlohy – zjednodušení asynchronního programování s úkoly](https://docs.microsoft.com/archive/msdn-magazine/2010/september/async-tasks-simplify-asynchronous-programming-with-tasks).  
   
  Vzhledem k tomu, že konfigurace je nyní vygenerována v kódu, všechny změny provedené v souboru Reference.cs by byly přepsány při každé aktualizaci odkazu na službu. Chcete-li tuto situaci napravit, je konfigurační kód generován v rámci částečné metody, kterou můžete implementovat do klientské proxy třídy. Částečná metoda je deklarována takto:  
   
@@ -101,7 +101,7 @@ public partial class Service1Client : System.ServiceModel.ClientBase<MetroWcfCli
   
 2. DataContractJsonSerializer  
   
-3. XmlSerializer  
+3. Objekt  
   
 > [!WARNING]
 > Implementace XmlDictionaryWriter. Write (DateTime) nyní zapisuje objekt DateTime jako řetězec.  
@@ -126,7 +126,7 @@ V aplikacích pro Windows Store jsou podporovány následující typy přihlašo
   
 3. otisk  
   
-4. mluví  
+4. Mluví  
   
 5. NTLM  
   
@@ -139,7 +139,7 @@ V aplikacích pro Windows Store jsou podporovány následující typy přihlašo
  Aby aplikace pro Windows Store měly přístup k výchozím přihlašovacím údajům systému Windows a odesílají je, musíte tuto funkci povolit v souboru Package. AppManifest. Otevřete tento soubor a vyberte kartu Možnosti a vyberte možnost výchozí pověření systému Windows. To umožňuje aplikaci připojovat se k prostředkům v intranetu, které vyžadují přihlašovací údaje domény.  
   
 > [!IMPORTANT]
-> Aby se aplikace pro Windows Store daly uskutečnit mezi počítači, musíte povolit jinou funkci nazvanou "domácí/pracovní síť". Toto nastavení je také v souboru Package. AppManifest na kartě Možnosti. Zaškrtněte políčko domů/pracovní sítě. Tím zajistíte příchozí a odchozí přístup k sítím důvěryhodných míst uživatele, jako jsou doma a práce. Příchozí kritické porty jsou vždycky blokované. Pro přístup ke službám na internetu musíte povolit taky možnost Internet (klient).  
+> Aby se aplikace pro Windows Store daly uskutečnit mezi počítači, musíte povolit jinou funkci nazvanou "domácí/pracovní síť". Toto nastavení je také v souboru Package. AppManifest na kartě Možnosti. zaškrtněte políčko domů/pracovní sítě. Tím zajistíte příchozí a odchozí přístup k sítím důvěryhodných míst uživatele, jako jsou doma a práce. Příchozí kritické porty jsou vždycky blokované. Pro přístup ke službám na internetu musíte povolit taky možnost Internet (klient).  
   
 ### <a name="misc"></a>Různé  
  Pro aplikace pro Windows Store je podporováno použití následujících tříd:  

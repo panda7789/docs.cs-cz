@@ -14,12 +14,12 @@ helpviewer_keywords:
 - classes [WPF], mapping namespaces to
 - namespaces [WPF]
 ms.assetid: 5c0854e3-7470-435d-9fe2-93eec9d3634e
-ms.openlocfilehash: 8f381a06aa916be378052d00f0d65f37ef910433
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 5cce8ff04dbf163aba95346447f0557da14197da
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740659"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976780"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping-for-wpf-xaml"></a>Obor názvů XAML mapování oboru názvů pro WPF XAML
 Toto téma dále vysvětluje přítomnost a účel dvou mapování oboru názvů XAML, jak se často nacházejí v kořenové značce souboru XAML WPF. Popisuje také, jak vydávat podobná mapování pro použití elementů, které jsou definovány ve vlastním kódu, a/nebo v samostatných sestaveních.  
@@ -112,7 +112,7 @@ End Namespace
 ## <a name="designer-namespaces-and-other-prefixes-from-xaml-templates"></a>Obory názvů návrháře a jiné předpony ze šablon XAML  
  Pokud pracujete s vývojovým prostředím a/nebo návrhovými nástroji pro WPF XAML, můžete si všimnout, že v kódu XAML jsou jiné definované obory názvů nebo předpony XAML.  
   
- [!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)] používá obor názvů návrháře, který je obvykle namapován na předponu `d:`. Novější šablony projektů pro WPF mohou předem mapovat tento obor názvů XAML pro podporu výměny XAML mezi [!INCLUDE[wpfdesigner_current_long](../../../../includes/wpfdesigner-current-long-md.md)] a dalšími návrhovými prostředími. Tento návrh oboru názvů jazyka XAML slouží k perpetuateí stavu návrhu, zatímco v Návrháři roundtripping uživatelské rozhraní založené na jazyce XAML. Používá se také pro funkce, jako je `d:IsDataSource`, které povolují běhové zdroje dat v návrháři.  
+ Návrhář WPF pro Visual Studio používá obor názvů návrháře, který je obvykle mapován na předponu `d:`. Novější šablony projektů pro WPF mohou předem mapovat tento obor názvů XAML pro podporu výměny XAML mezi návrhářem WPF pro Visual Studio a dalšími návrhovými prostředími. Tento návrh oboru názvů jazyka XAML slouží k perpetuateí stavu návrhu, zatímco v Návrháři roundtripping uživatelské rozhraní založené na jazyce XAML. Používá se také pro funkce, jako je `d:IsDataSource`, které povolují běhové zdroje dat v návrháři.  
   
  Další předpona, která se může zobrazit, je `mc:`. `mc:` je pro kompatibilitu značek a využívá vzor kompatibility značek, který není nutně specifický pro XAML. V některých případech se funkce kompatibility značek dají použít k výměně XAML mezi architekturami nebo napříč ostatními hranicemi implementace zálohování, práci mezi kontexty schématu XAML, zajištění kompatibility pro omezené režimy v návrhářích a tak dále. Další informace o konceptech kompatibility značek a o tom, jak se vztahují k platformě WPF, najdete v tématu [Kompatibilita značek (MC:). Jazykové funkce](markup-compatibility-mc-language-features.md).  
   

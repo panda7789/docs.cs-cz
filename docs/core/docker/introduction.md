@@ -3,12 +3,12 @@ title: Úvod do Docker
 description: Tento článek poskytuje úvodní informace a přehled pro Docker v kontextu aplikace .NET Core.
 ms.date: 03/20/2019
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 7f19b12d84543e8ae69c2f8728872bf94ef0536f
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 22c8fa4cda5cfd6564695d3b86072c64f22fa335
+ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73416646"
+ms.lasthandoff: 11/14/2019
+ms.locfileid: "74087392"
 ---
 # <a name="introduction-to-net-and-docker"></a>Úvod k .NET a Dockeru
 
@@ -61,7 +61,7 @@ Nasaďte webové aplikace nebo rozhraní API s využitím kontejnerů Linux v pr
 - [Azure Container Instances](https://azure.microsoft.com/services/container-instances/) \
 Hostujte svůj kontejner v cloudu bez jakýchkoli služeb pro správu vyšší úrovně.
 
- [Azure Batch](https://azure.microsoft.com/services/batch/) \
+- [Azure Batch](https://azure.microsoft.com/services/batch/) \
 Spusťte opakované výpočetní úlohy s využitím kontejnerů.
 
 - \ [Service Fabric Azure](https://azure.microsoft.com/services/service-fabric/)

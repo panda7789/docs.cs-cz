@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 10/08/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: f5010f944dba007e24d3c0e22d4e339f9ed0522a
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: bd6acd83df4d2d5f19d30da847212d60b1576199
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459183"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977357"
 ---
 # <a name="tutorial-predict-prices-using-regression-with-model-builder"></a>Kurz: předpověď cen pomocí regrese pomocí Tvůrce modelů
 
@@ -54,7 +54,7 @@ Seznam požadavků a pokyny k instalaci najdete v [Průvodci instalací modelu m
 
 1. V **Průzkumník řešení**klikněte pravým tlačítkem na soubor *taxi-Fare-Train. csv* a vyberte **vlastnosti**. V části **Upřesnit**změňte hodnotu **Kopírovat do výstupního adresáře** na **Kopírovat, pokud je novější**.
 
-Každý řádek v datové sadě `taxi-fare-train.csv` obsahuje podrobnosti o cestách provedených taxislužby.
+Každý řádek v sadě `taxi-fare-train.csv` dat obsahuje podrobnosti o cestách provedených taxislužby.
 
 1. Otevřete sadu dat **taxi-Fare-Train. csv.**
 
@@ -72,9 +72,9 @@ Každý řádek v datové sadě `taxi-fare-train.csv` obsahuje podrobnosti o ces
 
 ## <a name="choose-a-scenario"></a>Zvolit scénář
 
-Abyste mohli model vyškolit, musíte si vybrat ze seznamu dostupných scénářů strojového učení, které poskytuje tvůrce modelů. V takovém případě je scénář `Price Prediction`.
+Abyste mohli model vyškolit, musíte si vybrat ze seznamu dostupných scénářů strojového učení, které poskytuje tvůrce modelů. V tomto případě je scénář `Price Prediction`.
 
-1. V **Průzkumník řešení**klikněte pravým tlačítkem na projekt *TaxiFarePrediction* a vyberte **Přidat** > **Machine Learning**.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na projekt *TaxiFarePrediction* a vyberte **Přidat** > **Machine Learning**.
 1. V kroku scénář nástroje Tvůrce modelů vyberte možnost scénář *předpovědi cen* .
 
 ## <a name="load-the-data"></a>Načtení dat
@@ -83,8 +83,8 @@ Tvůrce modelů přijímá data ze dvou zdrojů, SQL Server databáze nebo míst
 
 1. V kroku dat nástroje Tvůrce modelů vyberte v rozevíracím seznamu zdroj dat *soubor* .
 1. Vyberte tlačítko vedle textového pole *Vybrat soubor* a pomocí Průzkumníka souborů Procházejte a vyberte soubor *taxi-Fare-test. csv* v *datovém* adresáři.
-1. V rozevíracím seznamu *sloupec pro předpověď (popisek)* vyberte *fare_amount* .
-1. Rozbalte rozevírací seznam *vstupní sloupce (funkce)* a zrušte kontrolu sloupce *trip_time_in_secs* , aby se vyloučil jako funkce během školení.  Přejděte do kroku výuka nástroje Tvůrce modelů.
+1. V rozevíracím seznamu *sloupec pro předpověď (popisek)* vyberte možnost *fare_amount* .
+1. Rozbalte rozevírací seznam *vstupní sloupce (funkce)* a zrušte kontrolu *trip_time_in_secs* sloupce, aby se vyloučil jako funkce během školení.  Přejděte do kroku výuka nástroje Tvůrce modelů.
 
 ## <a name="train-the-model"></a>Výuka modelu
 
@@ -95,7 +95,7 @@ Tvůrce modelů přijímá data ze dvou zdrojů, SQL Server databáze nebo míst
 1. Ponechte výchozí hodnotu tak, aby byla pro *čas do výuky (sekundy)* , pokud nechcete, aby se vlak vydával po delší dobu.
 2. Vyberte *Spustit školení*.
 
-V průběhu procesu školení se data o průběhu zobrazují v části `Progress` kroku výukového programu.
+V průběhu procesu školení se data o průběhu zobrazují v části `Progress` v kroku výuka.
 
 - Stav zobrazuje stav dokončení procesu školení.
 - Nejlepší přesnost zobrazuje přesnost nejlepšího modelu, kterou najde tvůrce modelů, zatím. Vyšší přesnost znamená, že model se v testovacích datech podrobnějším způsobem vypovídat.
@@ -115,7 +115,7 @@ Pokud nejste spokojeni s metrikami přesnosti, můžou vám některé jednoduch�
 V důsledku školicího procesu se vytvoří dva projekty.
 
 - TaxiFarePredictionML. ConsoleApp: Konzolová aplikace .NET Core, která obsahuje kód pro školení modelů a ukázku kódu.
-- TaxiFarePredictionML. model: .NET Standard knihovny tříd obsahující datové modely, které definují schéma vstupních a výstupních dat modelu, uloženou verzi modelu nejlepšího provádění během školení a pomocnou třídu s názvem `ConsumeModel` pro vytvoření předpovědi.
+- TaxiFarePredictionML. model: .NET Standard knihovny tříd obsahující datové modely, které definují schéma vstupních a výstupních dat modelu, uloženou verzi modelu nejlepšího provádění během školení a pomocnou třídu nazvanou `ConsumeModel` k vytvoření předpovědi.
 
 1. V kroku kód nástroje Tvůrce modelů vyberte **Přidat projekty** a přidejte do řešení automaticky generované projekty.
 1. Otevřete soubor *program.cs* v projektu *TaxiFarePrediction* .
@@ -126,7 +126,7 @@ V důsledku školicího procesu se vytvoří dva projekty.
     using TaxiFarePredictionML.Model;
     ```
 
-1. Chcete-li vytvořit předpovědi pro nová data pomocí modelu, vytvořte novou instanci třídy `ModelInput` uvnitř metody `Main` vaší aplikace. Všimněte si, že částka tarifů není součástí vstupu. Důvodem je to, že model vygeneruje předpověď pro něj. 
+1. Chcete-li vytvořit předpovědi pro nová data pomocí modelu, vytvořte novou instanci třídy `ModelInput` v rámci metody `Main` vaší aplikace. Všimněte si, že částka tarifů není součástí vstupu. Důvodem je to, že model vygeneruje předpověď pro něj.
 
     ```csharp
     // Create sample data
@@ -140,7 +140,7 @@ V důsledku školicího procesu se vytvoří dva projekty.
     };
     ```
 
-1. Použijte metodu `Predict` ze třídy `ConsumeModel`. Metoda `Predict` načte školený model, vytvoří pro model [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) a použije ho k předpovědií nových dat. 
+1. Použijte metodu `Predict` z `ConsumeModel` třídy. Metoda `Predict` načte trained model, vytvoří pro model [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) a použije ho k předpovědií nových dat.
 
     ```csharp
     // Make prediction

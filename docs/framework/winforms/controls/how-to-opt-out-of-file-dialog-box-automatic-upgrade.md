@@ -8,19 +8,19 @@ helpviewer_keywords:
 - SaveFileDialog [Windows Forms], opt out of automatic upgrade
 - AutoUpgradeEnabled property
 ms.assetid: 522e482e-cc01-48b1-8d59-9617dc2c4ac1
-ms.openlocfilehash: 0753873ac37f26d6503397290ef4603702737a86
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: bbde260cc7f05226c9b06325b45708e1cde3cf8c
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67170618"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73976886"
 ---
 # <a name="how-to-opt-out-of-file-dialog-box-automatic-upgrade"></a>Postupy: Zamítnutí automatického upgradu dialogového okna souboru
-Když <xref:System.Windows.Forms.OpenFileDialog> a <xref:System.Windows.Forms.SaveFileDialog> třídy se používají v aplikaci, jejich vzhled a chování závisí na verzi aplikace běží na Windows. Když se zobrazí aplikace, která byla vytvořena na rozhraní .NET Framework 2.0 nebo starší na [!INCLUDE[wiprlhext](../../../../includes/wiprlhext-md.md)], <xref:System.Windows.Forms.OpenFileDialog> a <xref:System.Windows.Forms.SaveFileDialog> se automaticky zobrazí se [!INCLUDE[wiprlhext](../../../../includes/wiprlhext-md.md)] vzhled a chování. Spuštění v rozhraní .NET Framework 3.0, můžete zrušit automatický upgrade pro zobrazení <xref:System.Windows.Forms.OpenFileDialog> a <xref:System.Windows.Forms.SaveFileDialog> s [!INCLUDE[winxp](../../../../includes/winxp-md.md)]– styl vzhledu a chování.  
+Pokud jsou v aplikaci použity třídy <xref:System.Windows.Forms.OpenFileDialog> a <xref:System.Windows.Forms.SaveFileDialog>, jejich vzhled a chování závisí na verzi systému Windows, ve které je aplikace spuštěna. Pokud se v systému Windows Vista zobrazí aplikace vytvořená v .NET Framework 2,0 nebo starší, <xref:System.Windows.Forms.OpenFileDialog> a <xref:System.Windows.Forms.SaveFileDialog> se automaticky zobrazí s vzhledem a chováním systému Windows Vista. Počínaje .NET Framework 3,0 se můžete odhlásit z automatického upgradu, aby se zobrazila <xref:System.Windows.Forms.OpenFileDialog> a <xref:System.Windows.Forms.SaveFileDialog> vzhled a chování ve stylu [!INCLUDE[winxp](../../../../includes/winxp-md.md)].  
   
-### <a name="to-opt-out-of-file-dialog-box-automatic-upgrade"></a>Chcete-li vyjádřit výslovný nesouhlas souboru dialogové okno automatického upgradu  
+### <a name="to-opt-out-of-file-dialog-box-automatic-upgrade"></a>Automatický upgrade při odhlášení z dialogového okna souboru  
   
-1. Nastavte <xref:System.Windows.Forms.FileDialog.AutoUpgradeEnabled%2A> vlastnost <xref:System.Windows.Forms.OpenFileDialog> nebo <xref:System.Windows.Forms.SaveFileDialog> k `false` před zobrazení dialogového okna.  
+1. Před zobrazením dialogového okna nastavte vlastnost <xref:System.Windows.Forms.FileDialog.AutoUpgradeEnabled%2A> <xref:System.Windows.Forms.OpenFileDialog> nebo <xref:System.Windows.Forms.SaveFileDialog> na `false`.  
   
 ## <a name="see-also"></a>Viz také:
 

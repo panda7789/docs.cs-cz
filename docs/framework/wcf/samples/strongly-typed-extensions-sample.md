@@ -2,12 +2,12 @@
 title: Ukázky rozšíření silného typování
 ms.date: 03/30/2017
 ms.assetid: 02220f11-1a83-441c-9e5a-85f9a9367572
-ms.openlocfilehash: 5ee2f13df9d3c0841b3e8b62b1633ea4520d3860
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 8dc6bca87989b1ee8e1ee440b0d64e2c196cc28f
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73421513"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73978242"
 ---
 # <a name="strongly-typed-extensions-sample"></a>Ukázky rozšíření silného typování
 Ukázka používá třídu <xref:System.ServiceModel.Syndication.SyndicationFeed> pro účely tohoto příkladu. Vzory znázorněné v této ukázce však lze použít se všemi třídami syndikace, které podporují data rozšíření.  
@@ -90,7 +90,7 @@ public class InReplyToElement : IXmlSerializable
   
  Třída `InReplyToElement` implementuje rozhraní <xref:System.Xml.Serialization.IXmlSerializable>, které umožňuje přímou kontrolu nad tím, jak se instance objektů čtou a zapisují do formátu XML. Metoda `ReadXml` nejprve přečte hodnoty vlastností `Ref`, `HRef`, `Source`a `MediaType` z <xref:System.Xml.XmlReader> předaných do ní. Všechny neznámé atributy jsou uloženy v kolekci <xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A>. Po načtení všech atributů je volána <xref:System.Xml.XmlReader.ReadStartElement> pro posunutí čtenáře k dalšímu prvku. Vzhledem k tomu, že element, který je modelem této třídy, nemá žádné požadované podřízené položky, podřízené prvky se uloží do vyrovnávací paměti `XElement` instancí a ukládají se do kolekce <xref:System.ServiceModel.Syndication.SyndicationFeed.ElementExtensions%2A>, jak je znázorněno v následujícím kódu.  
   
-```csharp  
+```csharp
 public void ReadXml(System.Xml.XmlReader reader)  
 {  
     bool isEmpty = reader.IsEmptyElement;  
@@ -146,7 +146,7 @@ public void ReadXml(System.Xml.XmlReader reader)
   
  V `WriteXml`metoda `InReplyToElement` nejprve vypisuje hodnoty vlastností `Ref`, `HRef`, `Source`a `MediaType` jako atributy XML (`WriteXml` není odpovědná za zápis samotného vnějšího prvku. , jak to dělá volající `WriteXml`). Také zapisuje obsah <xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A> a <xref:System.ServiceModel.Syndication.SyndicationFeed.ElementExtensions%2A> do zapisovače, jak je znázorněno v následujícím kódu.  
   
-```csharp  
+```csharp
 public void WriteXml(System.Xml.XmlWriter writer)  
 {  
     if (this.Ref != null)  
@@ -189,7 +189,7 @@ public void WriteXml(System.Xml.XmlWriter writer)
   
  Třída `ThreadedFeed` dědí z `SyndicationFeed` a Přepisuje `OnCreateItem` pro vrácení `ThreadedItem`. Implementuje také metodu pro přístup ke kolekci `Items` jako `ThreadedItems`, jak je znázorněno v následujícím kódu.  
   
-```csharp  
+```csharp
 public class ThreadedFeed : SyndicationFeed  
 {  
     public ThreadedFeed()  
@@ -213,7 +213,7 @@ public class ThreadedFeed : SyndicationFeed
   
  Třída `ThreadedItem` dědí z `SyndicationItem` a způsobuje `InReplyToElement` jako vlastnost silného typu. To umožňuje pohodlný programový přístup k datům rozšíření `InReplyTo`. Také implementuje `TryParseElement` a `WriteElementExtensions` pro čtení a zápis dat rozšíření, jak je znázorněno v následujícím kódu.  
   
-```csharp  
+```csharp
 public class ThreadedItem : SyndicationItem  
 {  
     private InReplyToElement inReplyTo;  

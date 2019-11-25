@@ -2,12 +2,12 @@
 title: Inspektoři zpráv
 ms.date: 03/30/2017
 ms.assetid: 9bd1f305-ad03-4dd7-971f-fa1014b97c9b
-ms.openlocfilehash: 01553084aa049688cd05fa36e46fb6f67983fb21
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 7b8cc0f8e8aa0544c531566a8fe35f54a3914896
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424141"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977298"
 ---
 # <a name="message-inspectors"></a>Inspektoři zpráv
 Tato ukázka předvádí, jak implementovat a nakonfigurovat kontrolory zpráv klienta a služby.  
@@ -19,7 +19,7 @@ Tato ukázka předvádí, jak implementovat a nakonfigurovat kontrolory zpráv k
 ## <a name="message-inspector"></a>Kontrola zpráv  
  Inspektoři zprávy klienta implementují rozhraní <xref:System.ServiceModel.Dispatcher.IClientMessageInspector> a nástroje pro zprávy služby implementují rozhraní <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector>. Implementace mohou být kombinovány do jedné třídy, aby bylo možné vytvořit kontrolor zprávy, který funguje na obou stranách. Tato ukázka implementuje takový kombinovaný inspektor zpráv. Inspektor se sestaví tak, že se předává do sady schémat, na které se ověřují příchozí a odchozí zprávy, a umožňuje vývojářům určit, jestli se mají ověřit příchozí nebo odchozí zprávy a jestli je kontrolor v režimu odeslání nebo klienta. má vliv na zpracování chyb, jak je popsáno dále v tomto tématu.  
   
-```csharp  
+```csharp
 public class SchemaValidationMessageInspector : IClientMessageInspector, IDispatchMessageInspector  
 {  
     XmlSchemaSet schemaSet;  
@@ -206,7 +206,7 @@ void ValidateMessageBody(ref System.ServiceModel.Channels.Message message, bool 
   
  Následující třída `SchemaValidationBehavior` je chování, které se používá k přidání tohoto ukázkového inspektoru zprávy do modulu runtime klienta nebo odeslání. V obou případech je implementace spíše základní. V <xref:System.ServiceModel.Description.IEndpointBehavior.ApplyClientBehavior%2A> a <xref:System.ServiceModel.Description.IEndpointBehavior.ApplyDispatchBehavior%2A>je kontrolor zprávy vytvořen a přidán do kolekce <xref:System.ServiceModel.Dispatcher.ClientRuntime.MessageInspectors%2A> příslušného modulu runtime.  
   
-```csharp  
+```csharp
 public class SchemaValidationBehavior : IEndpointBehavior  
 {  
     XmlSchemaSet schemaSet;   
@@ -299,7 +299,7 @@ public class SchemaValidationBehavior : IEndpointBehavior
   
  Přepsaná `CreateBehavior` metoda změní konfigurační data na objekt chování, když modul runtime vyhodnotí konfigurační data při sestavení klienta nebo koncového bodu.  
   
-```csharp  
+```csharp
 public class SchemaValidationBehaviorExtensionElement : BehaviorExtensionElement  
 {  
     public SchemaValidationBehaviorExtensionElement()  
