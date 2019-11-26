@@ -8,21 +8,23 @@
       href: breaking-changes.md
     - name: Podle verze
       items:
-        - name: Z verze .NET Framework do verze .NET Core
-          href: framework-core.md
-        - name: Z verze 2.2 do verze 3.0
-          href: 2.2-3.0.md
-        - name: Z verze 3.0 Preview 6 do verze 3.0 Preview 7
-          href: 3.0.6-3.0.7.md
-        - name: Z verze 3.0 Preview 7 do verze 3.0 Preview 8
-          href: 3.0.7-3.0.8.md
+        - name: Z verze 3.0 do verze 3.1
+          href: 3.0-3.1.md
+        - name: Z verze 3.0 Preview 9 do verze 3.0
+          href: 3.0.9-3.0rc1.md
         - name: Z verze 3.0 Preview 8 do verze 3.0 Preview 9
           href: 3.0.8-3.0.9.md
-        - name: Z verze 3.0 Preview 9 do verze 3.0 RC1
-          href: 3.0.9-3.0rc1.md
+        - name: Z verze 3.0 Preview 7 do verze 3.0 Preview 8
+          href: 3.0.7-3.0.8.md
+        - name: Z verze 3.0 Preview 6 do verze 3.0 Preview 7
+          href: 3.0.6-3.0.7.md
+        - name: Z verze 2.2 do verze 3.0
+          href: 2.2-3.0.md
+        - name: Z verze .NET Framework do verze .NET Core
+          href: framework-core.md
     - name: Podle kategorie
       items:
-        - name: ASP.NET Core
+        - name: Jádro ASP.NET
           href: aspnetcore.md
         - name: CoreFx
           href: corefx.md
@@ -32,7 +34,7 @@
           href: /ef/core/what-is-new/ef-core-3.0/breaking-changes
         - name: Globalizace
           href: globalization.md
-        - name: Síťové služby
+        - name: Sítě
           href: networking.md
         - name: Visual Basic
           href: visualbasic.md

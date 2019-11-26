@@ -7,7 +7,7 @@
           items:
             - name: SmiOrderProperty.Item
               href: microsoft.sqlserver.server.smiorderproperty.item.md
-    - name: Systém
+    - name: Systémový
       items:
         - name: Exception – třída
           items:
@@ -19,7 +19,7 @@
           items:
             - name: SqlChars.Stream – vlastnost
               href: system.data.sqltypes.sqlchars.stream.md
-        - name: SqlStreamChars– třída
+        - name: SqlStreamChars – třída
           items:
             - name: SqlStreamChars – konstruktor
               href: system.data.sqltypes.sqlstreamchars.-ctor.md
@@ -43,6 +43,12 @@
               href: system.data.sqltypes.sqlstreamchars.setlength.md
             - name: Write – metoda
               href: system.data.sqltypes.sqlstreamchars.write.md
+    - name: System.IO
+      items:
+        - name: MemoryStream – třída
+          items:
+            - name: InternalGetOriginAndLength – metoda
+              href: system.io.memorystream.internalgetoriginandlength.md
     - name: System.Net
       items:
         - name: Connection – třída
@@ -66,7 +72,7 @@
               href: coreresponsedata_m_responseheaders.md
             - name: m_StatusCode – pole
               href: coreresponsedata_m_statuscode.md
-        - name: Třída HttpWebRequest
+        - name: HttpWebRequest – třída
           items:
             - name: _AutoRedirects – pole
               href: _autoredirects.md
@@ -78,7 +84,9 @@
           items:
             - name: NetworkStream – vlastnost
               href: system.net.pooledstream.networkstream.md
-        - name: Třída ServicePoint
+        - name: RtcState – třída
+          href: system.net.rtcstate.md
+        - name: ServicePoint – třída
           items:
             - name: m_ConnectionGroupList – pole
               href: m_connectiongrouplist.md
@@ -94,9 +102,17 @@
           items:
             - name: SslProtocol – vlastnost
               href: system.net.security.sslstate.sslprotocol.md
+    - name: System.ServiceModel.Channels
+      items:
+        - name: Message – třída
+          items:
+            - name: BodyToString – metoda
+              href: system.servicemodel.channels.message.bodytostring.md
+            - name: WriteStartHeaders – metoda
+              href: system.servicemodel.channels.message.writestartheaders.md
     - name: System.Windows.Diagnostics
       items:
-        - name: Třída VisualDiagnostics
+        - name: VisualDiagnostics – třída
           items:
             - name: s_isDebuggerCheckDisabledForTestPurposes – pole
               href: s-isdebuggercheckdisabledfortestpurposes-field.md
@@ -132,7 +148,7 @@
               href: system.xml.xmlreader.createsqlreader.md
     - name: adodb – názvový prostor
       items:
-        - name: Připojení rozhraní
+        - name: Connection – rozhraní
           href: adodb.connection.md
         - name: EventReason – výčet
           href: adodb.eventreasonenum.md

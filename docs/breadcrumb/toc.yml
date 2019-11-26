@@ -115,12 +115,22 @@
           tocHref: /dotnet/core/
           topicHref: /dotnet/core/index
           items:
-            - name: Nástroje
-              tocHref: /dotnet/core/tools/
-              topicHref: /dotnet/core/tools/index
             - name: Kompatibilita
               tocHref: /dotnet/core/compatibility/
               topicHref: /dotnet/core/compatibility/index
+            - name: Konfigurace běhového prostředí
+              tocHref: /dotnet/core/run-time-config/
+              topicHref: /dotnet/core/run-time-config/index
+            - name: Nástroje
+              tocHref: /dotnet/core/tools/
+              topicHref: /dotnet/core/tools/index
+            - name: Průvodce instalací
+              tocHref: /dotnet/core/install/
+              topicHref: /dotnet/core/install/index
+              items:
+                - name: Správci balíčků pro Linux
+                  tocHref: /dotnet/core/install/
+                  topicHref: /dotnet/core/install/index
         - name: .NET Framework
           tocHref: /dotnet/framework/
           topicHref: /dotnet/framework/index
