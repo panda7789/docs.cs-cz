@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74431817"
 ---
 # <a name="imetadataemitdefinememberref-method"></a>IMetaDataEmit::DefineMemberRef – metoda
-Defines a reference to a member of a module outside the current scope, and gets a token to that reference definition.  
+Definuje odkaz na člena modulu mimo aktuální rozsah a získá token do této referenční definice.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,28 +39,28 @@ HRESULT DefineMemberRef (
   
 ## <a name="parameters"></a>Parametry  
  `tkImport`  
- [in] Token for the target member's class or interface, if the member is not global; if the member is global, the `mdModuleRef` token for that other file.  
+ pro Token pro třídu nebo rozhraní cílového člena, pokud člen není globální; Pokud je člen globální, `mdModuleRef` token pro tento jiný soubor.  
   
  `szName`  
- [in] The name of the target member.  
+ pro Název cílového člena.  
   
  `pvSigBlob`  
- [in] The signature of the target member.  
+ pro Signatura cílového člena.  
   
  `cbSigBlob`  
- [in] The count of bytes in `pvSigBlob`.  
+ pro Počet bajtů v `pvSigBlob`.  
   
  `pmr`  
- [out] The `mdMemberRef` token assigned.  
+ mimo Byl přiřazen token `mdMemberRef`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

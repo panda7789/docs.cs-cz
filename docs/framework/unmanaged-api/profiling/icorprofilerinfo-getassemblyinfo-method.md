@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448158"
 ---
 # <a name="icorprofilerinfogetassemblyinfo-method"></a>ICorProfilerInfo::GetAssemblyInfo – metoda
-Accepts an assembly ID, and returns the assembly's name and the ID of its manifest module.  
+Přijímá ID sestavení a vrací název sestavení a ID jeho modulu manifestu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,36 +40,36 @@ HRESULT GetAssemblyInfo(
   
 ## <a name="parameters"></a>Parametry  
  `assemblyId`  
- [in] The identifier of the assembly.  
+ pro Identifikátor sestavení  
   
  `cchName`  
- [in] The length, in characters, of `szName`.  
+ pro Délka `szName`znaků.  
   
  `pcchName`  
- [out] A pointer to the total character length of the assembly's name.  
+ mimo Ukazatel na celkovou délku znaku v názvu sestavení.  
   
  `szName`  
- [out] A caller-provided wide character buffer. When the function returns, it will contain the assembly's name.  
+ mimo Vyrovnávací paměť pro velký znak poskytnutá volajícímu. Když funkce vrátí, bude obsahovat název sestavení.  
   
  `pAppDomainId`  
- [out] A pointer to the ID of the application domain that contains the assembly.  
+ mimo Ukazatel na ID domény aplikace, která obsahuje sestavení.  
   
  `pModuleId`  
- [out] A pointer to the ID of the assembly's manifest module.  
+ mimo Ukazatel na ID modulu manifestu sestavení.  
   
 ## <a name="remarks"></a>Poznámky  
- After this method returns, you must verify that the `szName` buffer was large enough to contain the full name of the assembly. To do this, compare the value that `pcchName` points to with the value of the `cchName` parameter. If `pcchName` points to a value that is larger than `cchName`, allocate a larger `szName` buffer, update `cchName` with the new, larger size, and call `GetAssemblyInfo` again.  
+ Po návratu této metody je nutné ověřit, zda byla vyrovnávací paměť `szName` dostatečně velká, aby obsahovala úplný název sestavení. To provedete tak, že porovnáte hodnotu, na kterou `pcchName` odkazuje, hodnotou `cchName` parametru. Pokud `pcchName` odkazuje na hodnotu, která je větší než `cchName`, přidělte větší vyrovnávací paměť `szName`, aktualizujte `cchName` novou, větší velikostí a zavolejte `GetAssemblyInfo` znovu.  
   
- Alternatively, you can first call `GetAssemblyInfo` with a zero-length `szName` buffer to obtain the correct buffer size. You can then adjust the buffer size based on the value returned in `pcchName` and call `GetAssemblyInfo` again.  
+ Alternativně můžete pro získání správné velikosti vyrovnávací paměti nejprve volat `GetAssemblyInfo` s nulovou délkou `szName` vyrovnávací paměti. Velikost vyrovnávací paměti pak můžete upravit na základě hodnoty vrácené v `pcchName` a volat `GetAssemblyInfo` znovu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74438432"
 ---
 # <a name="exportnestedtype-method"></a>ExportNestedType – metoda
-Specifies nested types as exportable. The [ExportType Method](exporttype-method.md) can also export nested types, but this method is faster.  
+Určuje vnořené typy jako exportovatelné. [Metoda ExportType](exporttype-method.md) může také exportovat vnořené typy, ale tato metoda je rychlejší.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,34 +41,34 @@ HRESULT ExportNestedType(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID of assembly to export from.  
+ ID sestavení, ze kterého se má exportovat  
   
  `FileToken`  
- File token or Assembly of file that defines the type to be made exportable.  
+ Token souboru nebo sestavení souboru, které definuje typ, který se dá exportovat.  
   
  `TypeToken`  
- Type token of type to be made exportable.  
+ Typ tokenu typu, který se má provést export.  
   
  `ParentType`  
- Token of parent type.  
+ Token nadřazeného typu  
   
  `pszTypename`  
- Fully qualified type name to export.  
+ Plně kvalifikovaný název typu, který se má exportovat  
   
  `dwFlags`  
- `ComType` flags such as `tdPublic` or `tdNested`. This value may be passed to [DefineExportedType Method](../metadata/imetadataassemblyemit-defineexportedtype-method.md).  
+ `ComType` příznaky jako `tdPublic` nebo `tdNested`. Tato hodnota může být předána [metodě DefineExportedType –](../metadata/imetadataassemblyemit-defineexportedtype-method.md).  
   
  `pType`  
- Receives token for exported type.  
+ Přijímá token pro exportovaný typ.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Returns S_OK if the method succeeds.  
+ Vrátí S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Requires alink.h  
+ Vyžaduje ALink. h  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink – rozhraní](ialink-interface.md)
 - [IALink2 – rozhraní](ialink2-interface.md)
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)

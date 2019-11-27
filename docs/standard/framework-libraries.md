@@ -1,6 +1,6 @@
 ---
 title: Knihovny architektury
-description: Learn how libraries provide implementations for many general and app-specific types, algorithms, and utility functionality.
+description: Přečtěte si, jak knihovny poskytují implementace pro mnoho obecných typů, algoritmů a funkcí, které jsou specifické pro aplikaci.
 author: richlander
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
@@ -14,49 +14,49 @@ ms.locfileid: "74447993"
 ---
 # <a name="framework-libraries"></a>Knihovny architektury
 
-.NET has an expansive standard set of class libraries, referred to as either the base class libraries (core set) or framework class libraries (complete set). These libraries provide implementations for many general and app-specific types, algorithms and utility functionality. Both commercial and community libraries build on top of the framework class libraries, providing easy to use off-the-shelf libraries for a wide set of computing tasks.
+Rozhraní .NET má obsáhlém standardní sadu knihoven tříd, označované jako základní knihovny tříd (základní sada) nebo knihovny tříd architektury (kompletní sada). Tyto knihovny poskytují implementace pro mnoho obecných a typů specifických pro aplikace, algoritmy a funkce Utility. Komerční i komunitní knihovny sestavují nad knihovnami tříd rozhraní, což usnadňuje použití knihoven mimo polici pro rozsáhlou sadu výpočetních úloh.
 
-A subset of these libraries are provided with each .NET implementation. Base Class Library (BCL) APIs are expected with any .NET implementation, both because developers will want them and because popular libraries will need them to run. App-specific libraries above the BCL, such as ASP.NET, will not be available on all .NET implementations.
+Podmnožina těchto knihoven je k dispozici v každé implementaci rozhraní .NET. Rozhraní API knihovny základních tříd (BCL) jsou očekávána implementací rozhraní .NET, protože je budou chtít vývojáři, a protože oblíbené knihovny je budou potřebovat ke spuštění. Knihovny specifické pro aplikaci nad BCL, jako je například ASP.NET, nebudou k dispozici pro všechny implementace rozhraní .NET.
 
-## <a name="base-class-libraries"></a>Base Class Libraries
+## <a name="base-class-libraries"></a>Základní knihovny tříd
 
-The BCL provides the most foundational types and utility functionality and are the base of all other .NET class libraries. They aim to provide very general implementations without any bias to any workload. Performance is always an important consideration, since apps might prefer a particular policy, such as low-latency to high-throughput or low-memory to low-CPU usage. These libraries are intended to be high-performance generally, and take a middle-ground approach according to these various performance concerns. For most apps, this approach has been quite successful.
+BCL poskytuje nejvíc základních typů a funkcí nástroje a jsou základem všech ostatních knihoven tříd .NET. Jsou zaměřené na poskytování velmi obecných implementací bez jakéhokoli posunutí na jakékoli zatížení. Výkon je vždy důležitým aspektem, protože aplikace mohou upřednostňovat konkrétní zásady, jako je například nízká latence pro vysokou propustnost nebo nízké množství paměti a nízké využití procesoru. Tyto knihovny mají být vysoce výkonné všeobecně a v souladu s těmito různými aspekty týkajícími se výkonu probírají základní přístup. Pro většinu aplikací byl tento přístup poměrně úspěšný.
 
 ## <a name="primitive-types"></a>Primitivní typy
 
-.NET includes a set of primitive types, which are used (to varying degrees) in all programs. These types contain data, such as numbers, strings, bytes and arbitrary objects. The C# language includes keywords for these types. A sample set of these types is listed below, with the matching C# keywords.
+Rozhraní .NET zahrnuje sadu primitivních typů, které se používají (do různých stupňů) ve všech programech. Tyto typy obsahují data, jako jsou čísla, řetězce, bajty a libovolné objekty. C# Jazyk obsahuje klíčová slova pro tyto typy. Ukázková sada těchto typů je uvedena níže, se shodnými C# klíčovými slovy.
 
-* <xref:System.Object?displayProperty=nameWithType> ([object](../csharp/language-reference/builtin-types/reference-types.md#the-object-type)) - The ultimate base class in the CLR type system. It is the root of the type hierarchy.
-* <xref:System.Int16?displayProperty=nameWithType> ([short](../csharp/language-reference/builtin-types/integral-numeric-types.md)) - A 16-bit signed integer type. The unsigned <xref:System.UInt16> also exists.
-* <xref:System.Int32?displayProperty=nameWithType> ([int](../csharp/language-reference/builtin-types/integral-numeric-types.md)) - A 32-bit signed integer type. The unsigned [UInt32](../csharp/language-reference/builtin-types/integral-numeric-types.md) also exists.
-* <xref:System.Single?displayProperty=nameWithType> ([float](../csharp/language-reference/builtin-types/floating-point-numeric-types.md)) - A 32-bit floating-point type.
-* <xref:System.Decimal?displayProperty=nameWithType> ([decimal](../csharp/language-reference/builtin-types/floating-point-numeric-types.md)) - A 128-bit decimal type.
-* <xref:System.Byte?displayProperty=nameWithType> ([byte](../csharp/language-reference/builtin-types/integral-numeric-types.md)) - An unsigned 8-bit integer that represents a byte of memory.
-* <xref:System.Boolean?displayProperty=nameWithType> ([bool](../csharp/language-reference/keywords/bool.md)) - A boolean type that represents `true` or `false`.
-* <xref:System.Char?displayProperty=nameWithType> ([char](../csharp/language-reference/builtin-types/char.md)) - A 16-bit numeric type that represents a Unicode character.
-* <xref:System.String?displayProperty=nameWithType> ([string](../csharp/language-reference/builtin-types/reference-types.md#the-string-type)) - Represents a series of characters. Different than a `char[]`, but enables indexing into each individual `char` in the `string`.
+* <xref:System.Object?displayProperty=nameWithType> ([Object](../csharp/language-reference/builtin-types/reference-types.md#the-object-type)) – nejvyšší základní třída v systému typů CLR. Je kořen hierarchie typů.
+* <xref:System.Int16?displayProperty=nameWithType> ([krátký](../csharp/language-reference/builtin-types/integral-numeric-types.md)) – 16bajtový typ signed integer. Nepodepsaný <xref:System.UInt16> také existuje.
+* <xref:System.Int32?displayProperty=nameWithType> ([int](../csharp/language-reference/builtin-types/integral-numeric-types.md)) – typ signed integer se znaménkem 32. Neexistuje i typ [UInt32](../csharp/language-reference/builtin-types/integral-numeric-types.md) s nepodepsaným znaménkem.
+* <xref:System.Single?displayProperty=nameWithType> ([float](../csharp/language-reference/builtin-types/floating-point-numeric-types.md)) – 32 typ s plovoucí desetinnou čárkou.
+* <xref:System.Decimal?displayProperty=nameWithType> ([Decimal](../csharp/language-reference/builtin-types/floating-point-numeric-types.md)) – typ desítkového typu 128.
+* <xref:System.Byte?displayProperty=nameWithType> ([Byte](../csharp/language-reference/builtin-types/integral-numeric-types.md)) – 8bitové celé číslo bez znaménka představující bajt paměti.
+* <xref:System.Boolean?displayProperty=nameWithType> ([bool](../csharp/language-reference/keywords/bool.md)) – typ boolean reprezentující `true` nebo `false`.
+* <xref:System.Char?displayProperty=nameWithType> ([char](../csharp/language-reference/builtin-types/char.md)) – 16bitový číselný typ, který představuje znak Unicode.
+* <xref:System.String?displayProperty=nameWithType> ([String](../csharp/language-reference/builtin-types/reference-types.md#the-string-type)) – představuje řadu znaků. Liší se od `char[]`, ale umožňuje indexování do jednotlivých individuálních `char` v `string`.
 
-## <a name="data-structures"></a>Data Structures
+## <a name="data-structures"></a>Datové struktury
 
-.NET includes a set of data structures that are the workhorses of almost any .NET apps. These are mostly collections, but also include other types.
+Rozhraní .NET zahrnuje sadu datových struktur, které představují workhorses téměř všech aplikací .NET. Tyto jsou většinou kolekce, ale také obsahují další typy.
 
-* <xref:System.Array> - Represents an array of strongly types objects that can be accessed by index. Has a fixed size, per its construction.
-* <xref:System.Collections.Generic.List%601> - Represents a strongly typed list of objects that can be accessed by index. Is automatically resized as needed.
-* <xref:System.Collections.Generic.Dictionary%602> - Represents a collection of values that are indexed by a key. Values can be accessed via key. Is automatically resized as needed.
-* <xref:System.Uri> - Provides an object representation of a uniform resource identifier (URI) and easy access to the parts of the URI.
-* <xref:System.DateTime> - Represents an instant in time, typically expressed as a date and time of day.
+* <xref:System.Array> – představuje pole silně typů objektů, ke kterým se dá dostat pomocí indexu. Má pevnou velikost na základě jeho konstrukce.
+* <xref:System.Collections.Generic.List%601> – představuje seznam objektů se silným typem, ke kterým se dá dostat pomocí indexu. Automaticky mění velikost podle potřeby.
+* <xref:System.Collections.Generic.Dictionary%602> – představuje kolekci hodnot, které jsou indexovány klíčem. K hodnotám je možné přistupovat prostřednictvím klíče. Automaticky mění velikost podle potřeby.
+* <xref:System.Uri> – poskytuje reprezentace objektu identifikátoru URI (Uniform Resource) a snadný přístup k částem identifikátoru URI.
+* <xref:System.DateTime> – představuje okamžitý čas, obvykle vyjádřený jako datum a denní dobu.
 
-## <a name="utility-apis"></a>Utility APIs
+## <a name="utility-apis"></a>Rozhraní API nástrojů
 
-.NET includes a set of utility APIs that provide functionality for many important tasks.
+Rozhraní .NET zahrnuje sadu rozhraní API pro nástroj, která poskytují funkce pro mnoho důležitých úloh.
 
-* <xref:System.Net.Http.HttpClient> - An API for sending HTTP requests and receiving HTTP responses from a resource identified by a URI.
-* <xref:System.Xml.Linq.XDocument> - An API for loading, and querying XML documents with LINQ.
-* <xref:System.IO.StreamReader> - An API for reading files. 
-* <xref:System.IO.StreamWriter> - An API for writing files.
+* <xref:System.Net.Http.HttpClient> – rozhraní API pro posílání požadavků HTTP a příjem odpovědí HTTP z prostředku identifikovaného identifikátorem URI.
+* <xref:System.Xml.Linq.XDocument> – rozhraní API pro načítání a dotazování dokumentů XML pomocí LINQ.
+* <xref:System.IO.StreamReader> – rozhraní API pro čtení souborů. 
+* <xref:System.IO.StreamWriter> – rozhraní API pro zápis souborů.
 
-## <a name="app-model-apis"></a>App-Model APIs
+## <a name="app-model-apis"></a>Rozhraní API modelů aplikací
 
-There are many app-models that can be used with .NET, provided by several companies.
+Existuje mnoho modelů aplikací, které je možné používat s .NET, poskytované několika společnostmi.
 
-* [ASP.NET](https://www.asp.net) - Provides a web framework for building Web sites and services. Supported on Windows, Linux and macOS (depends on ASP.NET version).
+* [ASP.NET](https://www.asp.net) – poskytuje webové rozhraní pro tvorbu webů a služeb. Podporováno v systémech Windows, Linux a macOS (závisí na verzi ASP.NET).

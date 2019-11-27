@@ -1,5 +1,5 @@
 ---
-title: 'How to: Build a multifile assembly'
+title: 'Postupy: sestavení vícesouborového sestavení'
 ms.date: 08/20/2019
 helpviewer_keywords:
 - assemblies [.NET Framework], multifile
@@ -24,18 +24,18 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74429569"
 ---
-# <a name="how-to-build-a-multifile-assembly"></a>How to: Build a multifile assembly
+# <a name="how-to-build-a-multifile-assembly"></a>Postupy: sestavení vícesouborového sestavení
 
-This article explains how to create a multifile assembly and provides code that illustrates each step in the procedure.
+Tento článek vysvětluje, jak vytvořit vícesouborové sestavení a poskytuje kód, který ukazuje každý krok v proceduře.
 
 > [!NOTE]
-> The Visual Studio IDE for C# and Visual Basic can only be used to create single-file assemblies. If you want to create multifile assemblies, you must use the command-line compilers or Visual Studio with Visual C++. Multifile assemblies are supported by .NET Framework only.
+> Integrované vývojové prostředí (IDE C# ) sady Visual Studio pro a Visual Basic lze použít pouze k vytváření sestavení s jedním souborem. Chcete-li vytvořit vícesouborové sestavení, je nutné použít kompilátory příkazového řádku nebo aplikaci Visual Studio se sadou Visual C++Studio. Vícesouborové sestavení jsou podporována pouze .NET Framework.
 
-## <a name="create-a-multifile-assembly"></a>Create a multifile assembly
+## <a name="create-a-multifile-assembly"></a>Vytvoření vícesouborového sestavení
 
-1. Compile all files that contain namespaces referenced by other modules in the assembly into code modules. The default extension for code modules is *.netmodule*.
+1. Zkompilujte všechny soubory, které obsahují obory názvů odkazované jinými moduly v sestavení, do modulů kódu. Výchozím rozšířením pro moduly kódu je *. netmodule*.
 
-   For example, let's say the `Stringer` file has a namespace called `myStringer`, which includes a class called `Stringer`. The `Stringer` class contains a method called `StringerMethod` that writes a single line to the console.
+   Řekněme například, že `Stringer` soubor má obor názvů s názvem `myStringer`, který obsahuje třídu s názvem `Stringer`. Třída `Stringer` obsahuje metodu nazvanou `StringerMethod`, která zapisuje jednu čáru do konzoly.
 
    ```cpp
    // Assembly building example in the .NET Framework.
@@ -81,7 +81,7 @@ This article explains how to create a multifile assembly and provides code that 
    End Namespace
    ```
 
-2. Use the following command to compile this code:
+2. Pro zkompilování tohoto kódu použijte následující příkaz:
 
    ```cpp
    cl /clr:pure /LN Stringer.cpp
@@ -95,11 +95,11 @@ This article explains how to create a multifile assembly and provides code that 
    vbc /t:module Stringer.vb
    ```
 
-   Specifying the *module* parameter with the **/t:** compiler option indicates that the file should be compiled as a module rather than as an assembly. The compiler produces a module called *Stringer.netmodule*, which can be added to an assembly.
+   Zadání parametru *Module* s možností kompilátoru **/t:** označuje, že soubor by měl být zkompilován jako modul, nikoli jako sestavení. Kompilátor vytvoří modul s názvem *Stringer. netmodule*, který lze přidat do sestavení.
 
-3. Compile all other modules, using the necessary compiler options to indicate the other modules that are referenced in the code. This step uses the **/addmodule** compiler option.
+3. Zkompilujte všechny ostatní moduly pomocí nezbytných možností kompilátoru k označení dalších modulů, které jsou odkazovány v kódu. Tento krok používá možnost kompilátoru **/addmodule** .
 
-   In the following example, a code module called *Client* has an entry point `Main` method that references a method in the *Stringer.dll* module created in step 1.
+   V následujícím příkladu má modul kódu s názvem *klient* vstupní bod `Main` metodu, která odkazuje na metodu v modulu *Stringer. dll* , který byl vytvořen v kroku 1.
 
    ```cpp
    #using "Stringer.netmodule"
@@ -154,7 +154,7 @@ This article explains how to create a multifile assembly and provides code that 
    End Class
    ```
 
-4. Use the following command to compile this code:
+4. Pro zkompilování tohoto kódu použijte následující příkaz:
 
    ```cpp
    cl /clr:pure /FUStringer.netmodule /LN Client.cpp
@@ -168,12 +168,12 @@ This article explains how to create a multifile assembly and provides code that 
    vbc /addmodule:Stringer.netmodule /t:module Client.vb
    ```
 
-   Specify the **/t:module** option because this module will be added to an assembly in a future step. Specify the **/addmodule** option because the code in *Client* references a namespace created by the code in *Stringer.netmodule*. The compiler produces a module called *Client.netmodule* that contains a reference to another module, *Stringer.netmodule*.
+   Zadejte možnost **/t: Module** , protože tento modul se přidá do sestavení v budoucím kroku. Určete možnost **/addmodule** , protože kód v *klientovi* odkazuje na obor názvů vytvořený kódem v *Stringer. netmodule*. Kompilátor vytvoří modul s názvem *Client. netmodule* , který obsahuje odkaz na jiný modul *Stringer. netmodule*.
 
    > [!NOTE]
-   > The C# and Visual Basic compilers support directly creating multifile assemblies using the following two different syntaxes.
+   > Kompilátory C# a Visual Basic podporují přímé vytváření vícesouborového sestavení pomocí následujících dvou různých syntaxí.
    >
-   > Two compilations create a two-file assembly:
+   > Dvě kompilace vytvoří sestavení se dvěma soubory:
    >
    >   ```cpp
    >   cl /clr:pure /LN Stringer.cpp
@@ -190,7 +190,7 @@ This article explains how to create a multifile assembly and provides code that 
    >   vbc Client.vb /addmodule:Stringer.netmodule
    >   ```
    >
-   > One compilation creates a two-file assembly:
+   > Jedna kompilace vytvoří sestavení se dvěma soubory:
    >
    >   ```cpp
    >   cl /clr:pure /LN Stringer.cpp
@@ -205,25 +205,25 @@ This article explains how to create a multifile assembly and provides code that 
    >   vbc /out:Client.exe Client.vb /out:Stringer.netmodule Stringer.vb
    >   ```
 
-5. Use the [Assembly Linker (Al.exe)](../tools/al-exe-assembly-linker.md) to create the output file that contains the assembly manifest. This file contains reference information for all modules or resources that are part of the assembly.
+5. Použijte [linker sestavení (Al. exe)](../tools/al-exe-assembly-linker.md) k vytvoření výstupního souboru, který obsahuje manifest sestavení. Tento soubor obsahuje referenční informace pro všechny moduly nebo prostředky, které jsou součástí sestavení.
 
     V příkazovém řádku zadejte následující příkaz:
 
-    **al** \<*module name*> \<*module name*> … **/main:** \<*method name*>  **/out:** \<*file name*>  **/target:** \<*assembly file type*>
+    *název modulu* **al** \<> \<*název modulu*>... **/Main:** *název metody*\<>  **/out:** \<*název souboru*>  **/target:** \<*typ souboru sestavení*>
 
-    In this command, the *module name* arguments specify the name of each module to include in the assembly. The **/main:** option specifies the method name that is the assembly's entry point. The **/out:** option specifies the name of the output file, which contains assembly metadata. The **/target:** option specifies that the assembly is a console application executable ( *.exe*) file, a Windows executable ( *.win*) file, or a library ( *.lib*) file.
+    V tomto příkazu argumenty *názvu modulu* určují název každého modulu, který chcete zahrnout do sestavení. Parametr **/Main:** Určuje název metody, která je vstupním bodem sestavení. Možnost **/out:** Určuje název výstupního souboru, který obsahuje metadata sestavení. Možnost **/target:** určuje, že sestavení je spustitelný soubor aplikace konzoly ( *. exe*), spustitelný soubor systému Windows ( *. Win*) nebo soubor knihovny ( *. lib*).
 
-    In the following example, *Al.exe* creates an assembly that is a console application executable called *myAssembly.exe*. The application consists of two modules called *Client.netmodule* and *Stringer.netmodule*, and the executable file called *myAssembly.exe*, which contains only assembly metadata. The entry point of the assembly is the `Main` method in the class `MainClientApp`, which is located in *Client.dll*.
+    V následujícím příkladu *Al. exe* vytvoří sestavení, které je spustitelný soubor aplikace konzoly s názvem *MyAssembly. exe*. Aplikace se skládá ze dvou modulů s názvem *Client. netmodule* a *Stringer. netmodule*a spustitelného souboru s názvem *MyAssembly. exe*, který obsahuje pouze metadata sestavení. Vstupním bodem sestavení je metoda `Main` ve třídě `MainClientApp`, která se nachází v souboru *Client. dll*.
 
     ```cmd
     al Client.netmodule Stringer.netmodule /main:MainClientApp.Main /out:myAssembly.exe /target:exe
     ```
 
-    You can use the [MSIL Disassembler (Ildasm.exe)](../tools/ildasm-exe-il-disassembler.md) to examine the contents of an assembly, or determine whether a file is an assembly or a module.
+    Můžete použít [jazyk MSIL Disassembler (Ildasm. exe)](../tools/ildasm-exe-il-disassembler.md) k prohlédnutí obsahu sestavení nebo určení, zda je soubor sestavením nebo modulem.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Create assemblies](../../standard/assembly/create.md)
-- [How to: View assembly contents](../../standard/assembly/view-contents.md)
-- [How the runtime locates assemblies](../deployment/how-the-runtime-locates-assemblies.md)
-- [Multifile assemblies](multifile-assemblies.md)
+- [Vytváření sestavení](../../standard/assembly/create.md)
+- [Postupy: zobrazení obsahu sestavení](../../standard/assembly/view-contents.md)
+- [Způsob, jakým modul runtime vyhledává sestavení](../deployment/how-the-runtime-locates-assemblies.md)
+- [Vícesouborové sestavení](multifile-assemblies.md)

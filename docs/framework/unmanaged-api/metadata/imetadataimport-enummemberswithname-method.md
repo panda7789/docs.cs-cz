@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74441659"
 ---
 # <a name="imetadataimportenummemberswithname-method"></a>IMetaDataImport::EnumMembersWithName – metoda
-Enumerates MemberDef tokens representing members of the specified type with the specified name.  
+Vytvoří výčet tokenů memberDef či představujících členy zadaného typu se zadaným názvem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,41 +40,41 @@ HRESULT EnumMembersWithName (
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [in, out] A pointer to the enumerator.  
+ [in, out] Ukazatel na enumerátor.  
   
  `cl`  
- [in] A TypeDef token representing the type with members to enumerate.  
+ pro Token TypeDef představující typ s členy pro výčet.  
   
  `szName`  
- [in] The member name that limits the scope of the enumerator.  
+ pro Název členu, který omezuje rozsah čítače.  
   
  `rMembers`  
- [out] The array used to store the MemberDef tokens.  
+ mimo Pole, které se používá k uložení tokenů memberDef či.  
   
  `cMax`  
- [in] The maximum size of the `rMembers` array.  
+ pro Maximální velikost `rMembers` pole  
   
  `pcTokens`  
- [out] The actual number of MemberDef tokens returned in `rMembers`.  
+ mimo Skutečný počet memberDef či tokenů vrácených v `rMembers`.  
   
 ## <a name="remarks"></a>Poznámky  
- This method enumerates fields and methods, but not properties or events. Unlike [IMetaDataImport::EnumMembers](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enummembers-method.md), `EnumMembersWithName` discards all field and member tokens that do not have the specified name.  
+ Tato metoda vytváří výčet polí a metod, ale ne vlastností nebo událostí. Na rozdíl od [IMetaDataImport:: enummembers –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enummembers-method.md)`EnumMembersWithName` zahodí všechny tokeny polí a členů, které nemají zadaný název.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumTypeDefs` returned successfully.|  
-|`S_FALSE`|There are no MemberDef tokens to enumerate. In that case, `pcTokens` is zero.|  
+|`S_OK`|`EnumTypeDefs` byla úspěšně vrácena.|  
+|`S_FALSE`|Nejsou k dispozici žádné tokeny memberDef či pro zobrazení výčtu. V takovém případě je `pcTokens` nula.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

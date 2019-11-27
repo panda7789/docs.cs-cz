@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74427980"
 ---
 # <a name="isymunmanagedwriterdefinesequencepoints-method"></a>ISymUnmanagedWriter::DefineSequencePoints – metoda
-Defines a group of sequence points within the current method. Each starting line and starting column define the start of a statement within a method. Each ending line and ending column define the end of a statement within a method. The arrays should be sorted in increasing order of offsets. The offset is always measured from the start of the method, in bytes.  
+Definuje skupinu bodů sekvence v rámci aktuální metody. Každý počáteční řádek a počáteční sloupec definují začátek příkazu v rámci metody. Každý koncový řádek a koncový sloupec definují konec příkazu v rámci metody. Pole by se měla seřadit ve vzestupném pořadí posunů. Posun je vždy měřen od začátku metody (v bajtech).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,31 +40,31 @@ HRESULT DefineSequencePoints(
   
 ## <a name="parameters"></a>Parametry  
  `document`  
- [in] The document object for which the sequence points are being defined.  
+ pro Objekt dokumentu, pro který jsou definovány body sekvence.  
   
  `spCount`  
- [in] A `ULONG32` that indicates the size of each of the `offsets`, `lines`, `columns`, `endLines`, and `endColumns` buffers.  
+ pro `ULONG32`, která indikuje velikost každé `offsets`, `lines`, `columns`, `endLines`a `endColumns` vyrovnávací paměti.  
   
  `offsets`  
- [in] The offset of the sequence points measured from the beginning of the method.  
+ pro Posun bodů sekvence měřený od začátku metody  
   
  `lines`  
- [in] The starting line numbers of the sequence points.  
+ pro Počáteční čísla řádků bodů sekvence.  
   
  `columns`  
- [in] The starting column numbers of the sequence points.  
+ pro Čísla počátečních sloupců bodů sekvence  
   
  `endLines`  
- [in] The ending line numbers of the sequence points. Tento parametr je volitelný.  
+ pro Koncová čísla řádků bodů sekvence. Tento parametr je volitelný.  
   
  `endColumns`  
- [in] The ending column numbers of the sequence points. Tento parametr je volitelný.  
+ pro Čísla koncových sloupců bodů sekvence. Tento parametr je volitelný.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

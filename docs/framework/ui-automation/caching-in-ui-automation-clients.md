@@ -14,95 +14,95 @@ ms.locfileid: "74433936"
 ---
 # <a name="caching-in-ui-automation-clients"></a>Práce s mezipamětí u klientů automatizace uživatelského rozhraní
 > [!NOTE]
-> This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace. For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
+> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v oboru názvů <xref:System.Windows.Automation>. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API pro Windows Automation: automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
   
- This topic introduces caching of [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] properties and control patterns.  
+ Toto téma zavádí ukládání [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastností a vzorů ovládacích prvků do mezipaměti.  
   
- In [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], caching means pre-fetching of data. The data can then be accessed without further cross-process communication. Caching is typically used by UI Automation client applications to retrieve properties and control patterns in bulk. Information is then retrieved from the cache as needed. The application updates the cache periodically, usually in response to events signifying that something in the [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] has changed.  
+ V [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]ukládání dat do mezipaměti znamená předem načtená data. Data je pak možné použít bez dalšího procesu komunikace mezi procesy. Mezipaměť obvykle používá klientské aplikace automatizace uživatelského rozhraní k hromadnému načítání vlastností a vzorů ovládacích prvků. Informace se pak z mezipaměti načítají podle potřeby. Aplikace pravidelně aktualizuje mezipaměť, obvykle v reakci na události značící, že došlo ke změně nějakého [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)].  
   
- The benefits of caching are most noticeable with Windows Presentation Foundation (WPF) controls and custom controls that have server-side UI Automation providers. There is less benefit when accessing client-side providers such as the default providers for [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] controls.  
+ Výhody ukládání do mezipaměti jsou s největší výpovědí s ovládacími prvky Windows Presentation Foundation (WPF) a vlastními ovládacími prvky, které mají zprostředkovatele automatizace uživatelského rozhraní na straně serveru. Při přístupu k poskytovatelům na straně klienta, jako jsou výchozí zprostředkovatelé pro [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] ovládací prvky, je k dispozici méně výhod.  
   
- Caching occurs when the application activates a <xref:System.Windows.Automation.CacheRequest> and then uses any method or property that returns an <xref:System.Windows.Automation.AutomationElement>; for example, <xref:System.Windows.Automation.AutomationElement.FindFirst%2A>, <xref:System.Windows.Automation.AutomationElement.FindAll%2A>. The methods of the <xref:System.Windows.Automation.TreeWalker> class are an exception; caching is only done if a <xref:System.Windows.Automation.CacheRequest> is specified as a parameter (for example, <xref:System.Windows.Automation.TreeWalker.GetFirstChild%28System.Windows.Automation.AutomationElement%2CSystem.Windows.Automation.CacheRequest%29?displayProperty=nameWithType>.  
+ K ukládání do mezipaměti dojde, když aplikace aktivuje <xref:System.Windows.Automation.CacheRequest> a pak používá jakoukoli metodu nebo vlastnost, která vrací <xref:System.Windows.Automation.AutomationElement>; například <xref:System.Windows.Automation.AutomationElement.FindFirst%2A><xref:System.Windows.Automation.AutomationElement.FindAll%2A>. Metody třídy <xref:System.Windows.Automation.TreeWalker> jsou výjimkou. ukládání do mezipaměti je prováděno pouze v případě, že je jako parametr zadán <xref:System.Windows.Automation.CacheRequest> (například <xref:System.Windows.Automation.TreeWalker.GetFirstChild%28System.Windows.Automation.AutomationElement%2CSystem.Windows.Automation.CacheRequest%29?displayProperty=nameWithType>.  
   
- Caching also occurs when you subscribe to an event while a <xref:System.Windows.Automation.CacheRequest> is active. The <xref:System.Windows.Automation.AutomationElement> passed to your event handler as the source of an event contains the cached properties and patterns specified by the original <xref:System.Windows.Automation.CacheRequest>. Any changes made to the <xref:System.Windows.Automation.CacheRequest> after you subscribe to the event have no effect.  
+ K ukládání do mezipaměti dojde také v případě, že se přihlásíte k odběru události, když je <xref:System.Windows.Automation.CacheRequest> aktivní. <xref:System.Windows.Automation.AutomationElement> předaný obslužné rutině události jako zdroj události obsahuje vlastnosti a vzory v mezipaměti, které jsou určeny původní <xref:System.Windows.Automation.CacheRequest>. Jakékoli změny provedené v <xref:System.Windows.Automation.CacheRequest> po přihlášení k odběru události nebudou nijak ovlivněny.  
   
- The [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] properties and control patterns of an element can be cached.  
+ Vlastnosti [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] a vzory ovládacích prvků prvku mohou být uloženy do mezipaměti.  
   
 <a name="Options_for_Caching"></a>   
-## <a name="options-for-caching"></a>Options for Caching  
- The <xref:System.Windows.Automation.CacheRequest> specifies the following options for caching.  
+## <a name="options-for-caching"></a>Možnosti ukládání do mezipaměti  
+ <xref:System.Windows.Automation.CacheRequest> určuje následující možnosti pro ukládání do mezipaměti.  
   
 <a name="Properties_to_Cache"></a>   
-### <a name="properties-to-cache"></a>Properties to Cache  
- You can specify properties to cache by calling <xref:System.Windows.Automation.CacheRequest.Add%28System.Windows.Automation.AutomationProperty%29> for each property before activating the request.  
+### <a name="properties-to-cache"></a>Vlastnosti do mezipaměti  
+ Můžete zadat vlastnosti pro ukládání do mezipaměti voláním <xref:System.Windows.Automation.CacheRequest.Add%28System.Windows.Automation.AutomationProperty%29> pro každou vlastnost před aktivací žádosti.  
   
 <a name="Control_Patterns_to_Cache"></a>   
-### <a name="control-patterns-to-cache"></a>Control Patterns to Cache  
- You can specify control patterns to cache by calling <xref:System.Windows.Automation.CacheRequest.Add%28System.Windows.Automation.AutomationPattern%29> for each pattern before activating the request. When a pattern is cached, its properties are not automatically cached; you must specify the properties you want cached by using <xref:System.Windows.Automation.CacheRequest.Add%2A?displayProperty=nameWithType>.  
+### <a name="control-patterns-to-cache"></a>Vzory ovládacích prvků pro ukládání do mezipaměti  
+ Můžete zadat vzory ovládacích prvků pro ukládání do mezipaměti voláním <xref:System.Windows.Automation.CacheRequest.Add%28System.Windows.Automation.AutomationPattern%29> pro každý vzor před aktivací žádosti. Když je vzor uložen do mezipaměti, jeho vlastnosti nejsou automaticky uloženy v mezipaměti. je nutné zadat vlastnosti, které chcete uložit do mezipaměti pomocí <xref:System.Windows.Automation.CacheRequest.Add%2A?displayProperty=nameWithType>.  
   
 <a name="Scope_of_the_Caching"></a>   
-### <a name="scope-and-filtering-of-caching"></a>Scope and Filtering of Caching  
- You can specify the elements whose properties and patterns you want to cache by setting the <xref:System.Windows.Automation.CacheRequest.TreeScope%2A?displayProperty=nameWithType> property before activating the request. The scope is relative to the elements that are retrieved while the request is active. For example, if you set only <xref:System.Windows.Automation.TreeScope.Children>, and then retrieve an <xref:System.Windows.Automation.AutomationElement>, the properties and patterns of children of that element are cached, but not those of the element itself. To ensure that caching is done for the retrieved element itself, you must include <xref:System.Windows.Automation.TreeScope.Element> in the <xref:System.Windows.Automation.CacheRequest.TreeScope%2A> property. It is not possible to set the scope to <xref:System.Windows.Automation.TreeScope.Parent> or <xref:System.Windows.Automation.TreeScope.Ancestors>. However, a parent element can be cached when a child element is cached; see Retrieving Cached Children and Parents in this topic.  
+### <a name="scope-and-filtering-of-caching"></a>Rozsah a filtrování ukládání do mezipaměti  
+ Můžete zadat prvky, jejichž vlastnosti a vzory chcete ukládat do mezipaměti nastavením vlastnosti <xref:System.Windows.Automation.CacheRequest.TreeScope%2A?displayProperty=nameWithType> před aktivací žádosti. Obor je relativní vzhledem k prvkům, které jsou načteny v době, kdy je požadavek aktivní. Například pokud nastavíte pouze <xref:System.Windows.Automation.TreeScope.Children>a potom načtete <xref:System.Windows.Automation.AutomationElement>, vlastnosti a vzory podřízených prvků tohoto prvku jsou uloženy v mezipaměti, ale nikoli samotného elementu. Aby bylo zajištěno, že ukládání do mezipaměti je provedeno pro samotný načtený prvek, musíte do vlastnosti <xref:System.Windows.Automation.CacheRequest.TreeScope%2A> zahrnout <xref:System.Windows.Automation.TreeScope.Element>. Není možné nastavit obor na <xref:System.Windows.Automation.TreeScope.Parent> ani <xref:System.Windows.Automation.TreeScope.Ancestors>. Nadřazený element však může být uložen do mezipaměti, pokud je podřízený element uložen v mezipaměti; viz načtení podřízených objektů a rodičů v mezipaměti v tomto tématu.  
   
- The extent of caching is also affected by the <xref:System.Windows.Automation.CacheRequest.TreeFilter%2A?displayProperty=nameWithType> property. By default, caching is performed only for elements that appear in the control view of the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree. However, you can change this property to apply caching to all elements, or only to elements that appear in the content view.  
+ Velikost ukládání do mezipaměti je ovlivněna i vlastností <xref:System.Windows.Automation.CacheRequest.TreeFilter%2A?displayProperty=nameWithType>. Ve výchozím nastavení se ukládání do mezipaměti provádí pouze pro prvky, které se zobrazí v zobrazení ovládacích prvků stromové struktury [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]. Tuto vlastnost však můžete změnit na možnost použít ukládání do mezipaměti pro všechny prvky nebo pouze na prvky, které se zobrazí v zobrazení obsahu.  
   
 <a name="Strength_of_the_Element_References"></a>   
-### <a name="strength-of-the-element-references"></a>Strength of the Element References  
- When you retrieve an <xref:System.Windows.Automation.AutomationElement>, by default you have access to all properties and patterns of that element, including those that were not cached. However, for greater efficiency you can specify that the reference to the element refers to cached data only, by setting the <xref:System.Windows.Automation.CacheRequest.AutomationElementMode%2A> property of the <xref:System.Windows.Automation.CacheRequest> to <xref:System.Windows.Automation.AutomationElementMode.None>. In this case, you do not have access to any non-cached properties and patterns of retrieved elements. This means that you cannot access any properties through <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A> or the `Current` property of <xref:System.Windows.Automation.AutomationElement> or any control pattern; nor can you retrieve a pattern by using <xref:System.Windows.Automation.AutomationElement.GetCurrentPattern%2A> or <xref:System.Windows.Automation.AutomationElement.TryGetCurrentPattern%2A>. On cached patterns, you can call methods that retrieve array properties, such as <xref:System.Windows.Automation.SelectionPattern.SelectionPatternInformation.GetSelection%2A?displayProperty=nameWithType>, but not any that perform actions on the control, such as <xref:System.Windows.Automation.InvokePattern.Invoke%2A?displayProperty=nameWithType>.  
+### <a name="strength-of-the-element-references"></a>Síla odkazů na prvky  
+ Při načítání <xref:System.Windows.Automation.AutomationElement>máte ve výchozím nastavení přístup ke všem vlastnostem a vzorům daného prvku, včetně těch, které nebyly uloženy v mezipaměti. Pro vyšší efektivitu však můžete určit, že odkaz na prvek odkazuje pouze na data uložená v mezipaměti, nastavením vlastnosti <xref:System.Windows.Automation.CacheRequest.AutomationElementMode%2A> <xref:System.Windows.Automation.CacheRequest> na <xref:System.Windows.Automation.AutomationElementMode.None>. V takovém případě nebudete mít přístup k žádným vlastnostem a vzorům načtených prvků, které nejsou uložené v mezipaměti. To znamená, že nebudete mít přístup k žádným vlastnostem prostřednictvím <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A> nebo vlastnosti `Current` <xref:System.Windows.Automation.AutomationElement> nebo žádného vzoru ovládacího prvku. ani vám nelze načíst vzor pomocí <xref:System.Windows.Automation.AutomationElement.GetCurrentPattern%2A> nebo <xref:System.Windows.Automation.AutomationElement.TryGetCurrentPattern%2A>. U vzorů v mezipaměti můžete volat metody, které načítají vlastnosti pole, například <xref:System.Windows.Automation.SelectionPattern.SelectionPatternInformation.GetSelection%2A?displayProperty=nameWithType>, ale ne všechny, které provádějí akce na ovládacím prvku, jako je například <xref:System.Windows.Automation.InvokePattern.Invoke%2A?displayProperty=nameWithType>.  
   
- An example of an application that might not need full references to objects is a screen reader, which would prefetch the <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.Name%2A> and <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.ControlType%2A> properties of elements in a window but would not need the <xref:System.Windows.Automation.AutomationElement> objects themselves.  
+ Příkladem aplikace, která nemusí potřebovat úplné odkazy na objekty, je čtečka obrazovky, která by vyvolala <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.Name%2A> a <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.ControlType%2A> vlastnosti prvků v okně, ale nepotřebují samotné objekty <xref:System.Windows.Automation.AutomationElement>.  
   
 <a name="Activating_the_CacheRequest"></a>   
-## <a name="activating-the-cacherequest"></a>Activating the CacheRequest  
- Caching is performed only when <xref:System.Windows.Automation.AutomationElement> objects are retrieved while a <xref:System.Windows.Automation.CacheRequest> is active for the current thread. There are two ways to activate a <xref:System.Windows.Automation.CacheRequest>.  
+## <a name="activating-the-cacherequest"></a>Aktivace třídu CacheRequest  
+ Ukládání do mezipaměti je provedeno pouze v případě, že <xref:System.Windows.Automation.AutomationElement> objekty jsou načteny v době, kdy je <xref:System.Windows.Automation.CacheRequest> aktivní pro aktuální vlákno. Existují dva způsoby, jak <xref:System.Windows.Automation.CacheRequest>aktivovat.  
   
- The usual way is to call <xref:System.Windows.Automation.CacheRequest.Activate%2A>. This method returns an object that implements <xref:System.IDisposable>. The request remains active as long as the <xref:System.IDisposable> object exists. The easiest way to control the lifetime of the object is to enclose the call within a `using` (C#) or `Using` (Visual Basic) block. This ensures that the request will be popped from the stack even if an exception is raised.  
+ Obvyklým způsobem je volat <xref:System.Windows.Automation.CacheRequest.Activate%2A>. Tato metoda vrátí objekt, který implementuje <xref:System.IDisposable>. Požadavek zůstane aktivní, dokud objekt <xref:System.IDisposable> existuje. Nejjednodušší způsob, jak řídit životnost objektu, je uzavřít volání do bloku `using` (C#) nebo `Using` (Visual Basic). Tím se zajistí, že se požadavek z zásobníku odebere i v případě, že se vyvolá výjimka.  
   
- Another way, which is useful when you wish to nest cache requests, is to call <xref:System.Windows.Automation.CacheRequest.Push%2A>. This puts the request on a stack and activates it. The request remains active until it is removed from the stack by <xref:System.Windows.Automation.CacheRequest.Pop%2A>. The request becomes temporarily inactive if another request is pushed onto the stack; only the top request on the stack is active.  
+ Další způsob, který je užitečný, když chcete vnořit požadavky do mezipaměti, je volat <xref:System.Windows.Automation.CacheRequest.Push%2A>. Tím se požadavek vloží do zásobníku a aktivuje se. Požadavek zůstane aktivní, dokud nebude odebrán ze zásobníku pomocí <xref:System.Windows.Automation.CacheRequest.Pop%2A>. Požadavek se bude dočasně neaktivní, pokud se do zásobníku vloží další požadavek. aktivní je jenom nejvyšší požadavek v zásobníku.  
   
 <a name="Retrieving_Cached_Properties"></a>   
-## <a name="retrieving-cached-properties"></a>Retrieving Cached Properties  
- You can retrieve the cached properties of an element through the following methods and properties.  
+## <a name="retrieving-cached-properties"></a>Načítání vlastností uložených v mezipaměti  
+ Pomocí následujících metod a vlastností lze načíst vlastnosti prvku uložené v mezipaměti.  
   
 - <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A>  
   
 - <xref:System.Windows.Automation.AutomationElement.Cached%2A>  
   
- An exception is raised if the requested property is not in the cache.  
+ Pokud požadovaná vlastnost není v mezipaměti, je vyvolána výjimka.  
   
- <xref:System.Windows.Automation.AutomationElement.Cached%2A>, like <xref:System.Windows.Automation.AutomationElement.Current%2A>, exposes individual properties as members of a structure. However, you do not need to retrieve this structure; you can access the individual properties directly. For example, the <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.Name%2A> property can be obtained from `element.Cached.Name`, where `element` is an <xref:System.Windows.Automation.AutomationElement>.  
+ <xref:System.Windows.Automation.AutomationElement.Cached%2A>, jako je <xref:System.Windows.Automation.AutomationElement.Current%2A>, zpřístupňuje jednotlivé vlastnosti jako členy struktury. Tuto strukturu ale nemusíte načítat. k jednotlivým vlastnostem můžete přistupovat přímo. Například vlastnost <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.Name%2A> lze získat z `element.Cached.Name`, kde `element` je <xref:System.Windows.Automation.AutomationElement>.  
   
 <a name="Retrieving_Cached_Control_Patterns"></a>   
-## <a name="retrieving-cached-control-patterns"></a>Retrieving Cached Control Patterns  
- You can retrieve the cached control patterns of an element through the following methods.  
+## <a name="retrieving-cached-control-patterns"></a>Načítání vzorů ovládacích prvků v mezipaměti  
+ Můžete načíst vzory ovládacích prvků v mezipaměti prvku prostřednictvím následujících metod.  
   
 - <xref:System.Windows.Automation.AutomationElement.GetCachedPattern%2A>  
   
 - <xref:System.Windows.Automation.AutomationElement.TryGetCachedPattern%2A>  
   
- If the pattern is not in the cache, <xref:System.Windows.Automation.AutomationElement.GetCachedPattern%2A> raises an exception, and <xref:System.Windows.Automation.AutomationElement.TryGetCachedPattern%2A> returns `false`.  
+ Pokud vzor není v mezipaměti, <xref:System.Windows.Automation.AutomationElement.GetCachedPattern%2A> vyvolá výjimku a <xref:System.Windows.Automation.AutomationElement.TryGetCachedPattern%2A> vrátí `false`.  
   
- You can retrieve the cached properties of a control pattern by using the `Cached` property of the pattern object. You can also retrieve the current values through the `Current` property, but only if <xref:System.Windows.Automation.AutomationElementMode.None> was not specified when the <xref:System.Windows.Automation.AutomationElement> was retrieved. (<xref:System.Windows.Automation.AutomationElementMode.Full> is the default value, and this permits access to the current values.)  
+ Vlastnosti v mezipaměti vzoru ovládacího prvku lze načíst pomocí vlastnosti `Cached` objektu Pattern. Aktuální hodnoty můžete také načíst prostřednictvím vlastnosti `Current`, ale pouze v případě, že při načtení <xref:System.Windows.Automation.AutomationElement> nebylo zadáno <xref:System.Windows.Automation.AutomationElementMode.None>. (<xref:System.Windows.Automation.AutomationElementMode.Full> je výchozí hodnota, která umožňuje přístup k aktuálním hodnotám.)  
   
 <a name="Retrieving_Cached_Children_and_Parents"></a>   
-## <a name="retrieving-cached-children-and-parents"></a>Retrieving Cached Children and Parents  
- When you retrieve an <xref:System.Windows.Automation.AutomationElement> and request caching for children of that element through the <xref:System.Windows.Automation.CacheRequest.TreeScope%2A> property of the request, it is subsequently possible to get the child elements from the <xref:System.Windows.Automation.AutomationElement.CachedChildren%2A> property of the element you retrieved.  
+## <a name="retrieving-cached-children-and-parents"></a>Načítání podřízených a podřízených objektů v mezipaměti  
+ Když načtete <xref:System.Windows.Automation.AutomationElement> a požádáte o ukládání do mezipaměti pro podřízené prvky tohoto prvku prostřednictvím vlastnosti <xref:System.Windows.Automation.CacheRequest.TreeScope%2A> žádosti, je následně možné získat podřízené prvky z vlastnosti <xref:System.Windows.Automation.AutomationElement.CachedChildren%2A> elementu, který jste načetli.  
   
- If <xref:System.Windows.Automation.TreeScope.Element> was included in the scope of the cache request, the root element of the request is subsequently available from the <xref:System.Windows.Automation.AutomationElement.CachedParent%2A> property of any of the child elements.  
+ Pokud byla <xref:System.Windows.Automation.TreeScope.Element> zahrnutá v oboru žádosti o mezipaměť, kořenový prvek požadavku je následně dostupný z vlastnosti <xref:System.Windows.Automation.AutomationElement.CachedParent%2A> všech podřízených elementů.  
   
 > [!NOTE]
-> You cannot cache parents or ancestors of the root element of the request.  
+> Nemůžete ukládat do mezipaměti nadřazené prvky nebo předchůdce kořenového elementu požadavku.  
   
 <a name="Updating_the_Cache"></a>   
-## <a name="updating-the-cache"></a>Updating the Cache  
- The cache is valid only as long as nothing changes in the [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]. Your application is responsible for updating the cache, typically in response to events.  
+## <a name="updating-the-cache"></a>Aktualizace mezipaměti  
+ Mezipaměť je platná pouze tak dlouho, dokud se nemění žádné změny v [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]. Vaše aplikace zodpovídá za aktualizaci mezipaměti, obvykle v reakci na události.  
   
- If you subscribe to an event while a <xref:System.Windows.Automation.CacheRequest> is active, you obtain an <xref:System.Windows.Automation.AutomationElement> with an updated cache as the source of the event whenever your event-handler delegate is called. You can also update cached information for an element by calling <xref:System.Windows.Automation.AutomationElement.GetUpdatedCache%2A>. You can pass in the original <xref:System.Windows.Automation.CacheRequest> to update all information that was previously cached.  
+ Pokud se přihlásíte k odběru události v době, kdy je <xref:System.Windows.Automation.CacheRequest> aktivní, získáte <xref:System.Windows.Automation.AutomationElement> s aktualizovanou mezipamětí jako zdroj události při volání delegáta události obsluhy události. Informace uložené v mezipaměti pro prvek lze také aktualizovat voláním <xref:System.Windows.Automation.AutomationElement.GetUpdatedCache%2A>. Chcete-li aktualizovat všechny informace, které byly dříve uloženy v mezipaměti, můžete předat původní <xref:System.Windows.Automation.CacheRequest>.  
   
- Updating the cache does not alter the properties of any existing <xref:System.Windows.Automation.AutomationElement> references.  
+ Aktualizace mezipaměti nemění vlastnosti žádné existující <xref:System.Windows.Automation.AutomationElement> odkazy.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Události automatizace uživatelského rozhraní pro klienty](ui-automation-events-for-clients.md)
 - [Použití mezipaměti při automatizaci uživatelského rozhraní](use-caching-in-ui-automation.md)
-- [FetchTimer Sample](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771456(v=vs.90))
+- [Ukázka FetchTimer](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771456(v=vs.90))

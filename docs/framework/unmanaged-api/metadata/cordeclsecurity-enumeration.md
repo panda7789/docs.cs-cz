@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74443742"
 ---
 # <a name="cordeclsecurity-enumeration"></a>CorDeclSecurity – výčet
-Specifies the security actions that can be performed using declarative security.  
+Určuje bezpečnostní akce, které lze provést pomocí deklarativního zabezpečení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -54,38 +54,38 @@ typedef enum CorDeclSecurity {
 } CorDeclSecurity;  
 ```  
   
-## <a name="members"></a>Členové  
+## <a name="members"></a>Members  
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`dclActionMask`|Reserved.|  
-|`dclActionNil`|Reserved.|  
-|`dclRequest`|Reserved.|  
-|`dclDemand`|All callers higher in the call stack are required to have been granted the permission specified by the current permission object.|  
-|`dclAssert`|The calling code can access the resource identified by the current permission object, even if callers higher in the stack have not been granted permission to access the resource|  
-|`dclDeny`|The ability to access the resource specified by the current permission object is denied to callers, even if they have been granted permission to access it.|  
-|`dclPermitOnly`|Only the resources specified by this permission object can be accessed, even if the code has been granted permission to access other resources.|  
-|`dclLinktimeCheck`|The immediate caller is required to have been granted the specified permission for a given period of time.|  
-|`dclInheritanceCheck`|The derived class inheriting another class or overriding a method is required to have been granted the specified permission.|  
-|`dclRequestMinimum`|The caller can request for the minimum permissions required for code to run. This action can only be used within the scope of the assembly.|  
-|`dclRequestOptional`|The caller can request for additional permissions that are optional (not required to run). This request implicitly refuses all other permissions not specifically requested. This action can only be used within the scope of the assembly.|  
-|`dclRequestRefuse`|The caller's request for permissions that might be misused will not be granted. This action can only be used within the scope of the assembly.|  
-|`dclPrejitGrant`|Reserved.|  
-|`dclPrejitDenied`|Reserved.|  
-|`dclNonCasDemand`|Reserved.|  
-|`dclNonCasLinkDemand`|The immediate caller is required to have been granted the specified permission.|  
-|`dclNonCasInheritance`|Reserved.|  
-|`dclLinkDemandChoice`|Reserved.|  
-|`dclInheritanceDemandChoice`|Reserved.|  
-|`dclDemandChoice`|Reserved.|  
-|`dclMaximumValue`|Reserved.|  
+|`dclActionMask`|Rezervovaný.|  
+|`dclActionNil`|Rezervovaný.|  
+|`dclRequest`|Rezervovaný.|  
+|`dclDemand`|Všem volajícím vyšším v zásobníku volání je nutné udělit oprávnění určené aktuálním objektem oprávnění.|  
+|`dclAssert`|Volající kód může přistupovat k prostředku identifikovanému aktuálním objektem oprávnění, a to i v případě, že by volajícím vyšším v zásobníku nebylo uděleno oprávnění pro přístup k prostředku.|  
+|`dclDeny`|Možnost přístupu k prostředku určenému aktuálním objektem oprávnění je odepřena volajícím, i když jim byla udělena oprávnění k přístupu.|  
+|`dclPermitOnly`|Přístup k prostředkům, které jsou určené tímto objektem oprávnění, lze získat i v případě, že byl kódu uděleno oprávnění k přístupu k jiným prostředkům.|  
+|`dclLinktimeCheck`|Okamžitému volajícímu se musí udělit zadané oprávnění pro dané časové období.|  
+|`dclInheritanceCheck`|Odvozená třída, která dědí jinou třídu nebo k přepsání metody, je vyžadována pro udělení zadaného oprávnění.|  
+|`dclRequestMinimum`|Volající může požadovat minimální oprávnění, která jsou požadována ke spuštění kódu. Tuto akci lze použít pouze v rámci oboru sestavení.|  
+|`dclRequestOptional`|Volající může požádat o další oprávnění, která jsou volitelná (nevyžadují se ke spuštění). Tento požadavek implicitně odmítne všechna ostatní oprávnění, která nejsou výslovně požadována. Tuto akci lze použít pouze v rámci oboru sestavení.|  
+|`dclRequestRefuse`|Žádost volajícího o oprávnění, která by mohla být nepoužitá, nebude udělena. Tuto akci lze použít pouze v rámci oboru sestavení.|  
+|`dclPrejitGrant`|Rezervovaný.|  
+|`dclPrejitDenied`|Rezervovaný.|  
+|`dclNonCasDemand`|Rezervovaný.|  
+|`dclNonCasLinkDemand`|K tomuto okamžitému volajícímu se musí udělit zadané oprávnění.|  
+|`dclNonCasInheritance`|Rezervovaný.|  
+|`dclLinkDemandChoice`|Rezervovaný.|  
+|`dclInheritanceDemandChoice`|Rezervovaný.|  
+|`dclDemandChoice`|Rezervovaný.|  
+|`dclMaximumValue`|Rezervovaný.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **Hlavička:** CorHdr. h  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

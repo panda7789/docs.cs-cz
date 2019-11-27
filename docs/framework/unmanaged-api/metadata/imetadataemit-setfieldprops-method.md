@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445463"
 ---
 # <a name="imetadataemitsetfieldprops-method"></a>IMetaDataEmit::SetFieldProps – metoda
-Sets or updates the default value for the field referenced by the specified field token.  
+Nastaví nebo aktualizuje výchozí hodnotu pro pole, na které se odkazuje pomocí zadaného tokenu pole.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,28 +39,28 @@ HRESULT SetFieldProps (
   
 ## <a name="parameters"></a>Parametry  
  `fd`  
- [in] The token for the target field.  
+ pro Token pro cílové pole  
   
  `dwFieldFlags`  
- [in] Field attributes. This is a bitmask of `CorFieldAttr` values.  
+ pro Atributy pole Toto je Bitová maska `CorFieldAttr` hodnot.  
   
  `dwCPlusTypeFlag`  
- [in] The `ELEMENT_TYPE_` *\** for the constant value. This is a `CorElementType` value. If a constant is not being defined, set this value to `ELEMENT_TYPE_END`.  
+ pro *\** `ELEMENT_TYPE_`pro hodnotu konstanty. Toto je `CorElementType` hodnota. Pokud konstanta není definována, nastavte tuto hodnotu na `ELEMENT_TYPE_END`.  
   
  `pValue`  
- [in] The constant value for the field.  
+ pro Hodnota konstanty pro pole  
   
  `cchValue`  
- [in] The size, in Unicode characters, of `pValue`.  
+ pro Velikost `pValue`znaků Unicode.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

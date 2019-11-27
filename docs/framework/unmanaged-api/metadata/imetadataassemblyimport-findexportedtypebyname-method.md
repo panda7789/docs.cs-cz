@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449444"
 ---
 # <a name="imetadataassemblyimportfindexportedtypebyname-method"></a>IMetaDataAssemblyImport::FindExportedTypeByName – metoda
-Gets a pointer to an exported type, given its name and enclosing type.  
+Získá ukazatel na exportovaný typ, který je dán názvem a nadřazeným typem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,25 +37,25 @@ HRESULT FindExportedTypeByName (
   
 ## <a name="parameters"></a>Parametry  
  `szName`  
- [in] The name of the exported type.  
+ pro Název exportovaného typu.  
   
  `mdtExportedType`  
- [in] The metadata token for the enclosing class of the exported type. This value is `mdExportedTypeNil` if the requested exported type is not a nested type.  
+ pro Token metadat pro ohraničující třídu exportovaného typu Tato hodnota je `mdExportedTypeNil`, pokud požadovaný exportovaný typ není vnořený typ.  
   
  `ptkExportedType`  
- [out] A pointer to the `mdExportedType` token that represents the exported type.  
+ mimo Ukazatel na token `mdExportedType`, který představuje exportovaný typ.  
   
 ## <a name="remarks"></a>Poznámky  
- The `FindExportedTypeByName` method uses the standard rules employed by the common language runtime for resolving references.  
+ Metoda `FindExportedTypeByName` používá standardní pravidla zaměstnaná modulem CLR (Common Language Runtime) pro překládání odkazů.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

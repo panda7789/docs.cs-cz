@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436625"
 ---
 # <a name="cornativelinktype-enumeration"></a>CorNativeLinkType – výčet
-Provides values that indicate the type linked in native code.  
+Poskytuje hodnoty, které indikují typ propojený v nativním kódu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,25 +38,25 @@ typedef enum
 } CorNativeLinkType;  
 ```  
   
-## <a name="members"></a>Členové  
+## <a name="members"></a>Members  
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`nltNone`|Indicates that none of the keywords are specified.|  
-|`nltAnsi`|Indicates that an ANSI keyword is specified.|  
-|`nltUnicode`|Indicates that a Unicode keyword is specified|  
-|`nltAuto`|Indicates that an auto keyword is specified.|  
-|`nltOle`|Indicates that an OLE keyword is specified.|  
-|`nltMaxValue`|Not used.|  
+|`nltNone`|Označuje, že není zadáno žádné klíčové slovo.|  
+|`nltAnsi`|Indikuje, že je zadané klíčové slovo ANSI.|  
+|`nltUnicode`|Indikuje, že je zadané klíčové slovo Unicode.|  
+|`nltAuto`|Indikuje, že je zadané klíčové slovo auto.|  
+|`nltOle`|Indikuje, že je zadané klíčové slovo OLE.|  
+|`nltMaxValue`|Nepoužívá se.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

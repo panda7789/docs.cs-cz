@@ -1,7 +1,7 @@
 ---
-title: Built-in types table - C# Reference
+title: Předdefinované typy – C# odkaz na tabulku
 ms.custom: seodec18
-description: Keywords for built-in C# types
+description: Klíčová slova pro předdefinované C# typy
 ms.date: 08/17/2018
 helpviewer_keywords:
 - types [C#], built-in
@@ -14,11 +14,11 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74428541"
 ---
-# <a name="built-in-types-table-c-reference"></a>Built-in types table (C# Reference)
+# <a name="built-in-types-table-c-reference"></a>Tabulka předdefinovaných typů (C# Referenční dokumentace)
 
-The following table shows the keywords for built-in C# types, which are aliases of predefined types in the <xref:System> namespace:
+V následující tabulce jsou uvedena klíčová slova pro předdefinované C# typy, což jsou aliasy předdefinovaných typů v oboru názvů <xref:System>:
 
-|C# type|.NET type|  
+|C#textový|Typ .NET|  
 |--------------|-------------------------|  
 |[bool](bool.md)|<xref:System.Boolean?displayProperty=nameWithType>|  
 |[byte](../builtin-types/integral-numeric-types.md)|<xref:System.Byte?displayProperty=nameWithType>|  
@@ -38,16 +38,16 @@ The following table shows the keywords for built-in C# types, which are aliases 
   
 ## <a name="remarks"></a>Poznámky
 
-All of the types in the table, except `object` and `string`, are referred to as simple types.
+Všechny typy v tabulce, kromě `object` a `string`, se označují jako jednoduché typy.
 
-The .NET types and their C# type keyword aliases are interchangeable. For example, you can declare an integer variable by using either of the following declarations:
+Typy rozhraní .NET a jejich C# aliasy jejich typu jsou zaměnitelné. Můžete například deklarovat celočíselnou proměnnou pomocí kterékoli z následujících deklarací:
 
 ```csharp
 int x = 123;
 System.Int32 y = 123;
 ```
 
-Use the [typeof](../operators/type-testing-and-cast.md#typeof-operator) operator to get the <xref:System.Type?displayProperty=nameWithType> instance that represents the specified type:
+Použijte operátor [typeof](../operators/type-testing-and-cast.md#typeof-operator) k získání <xref:System.Type?displayProperty=nameWithType> instance, která představuje zadaný typ:
 
 ```csharp
 Type stringType = typeof(string);
@@ -63,10 +63,10 @@ Console.WriteLine(doubleType.FullName);
 
 ## <a name="see-also"></a>Viz také:
 
-- [C# Reference](../index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [C#Odkaz](../index.md)
+- [Průvodce programováním v C#](../../programming-guide/index.md)
 - [Klíčová slova jazyka C#](index.md)
-- [Value types](value-types.md)
-- [Reference types](reference-types.md)
-- [Default values table](default-values-table.md)
+- [Typy hodnot](value-types.md)
+- [Typy odkazů](reference-types.md)
+- [Tabulka výchozích hodnot](default-values-table.md)
 - [dynamic](../builtin-types/reference-types.md)

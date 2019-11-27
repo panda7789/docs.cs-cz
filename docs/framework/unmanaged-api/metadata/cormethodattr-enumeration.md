@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450225"
 ---
 # <a name="cormethodattr-enumeration"></a>CorMethodAttr – výčet
-Contains values that describe the features of a method.  
+Obsahuje hodnoty, které popisují funkce metody.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -62,41 +62,41 @@ typedef enum CorMethodAttr {
 } CorMethodAttr;  
 ```  
   
-## <a name="members"></a>Členové  
+## <a name="members"></a>Members  
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`mdMemberAccessMask`|Specifies member access.|  
-|`mdPrivateScope`|Specifies that the member cannot be referenced.|  
-|`mdPrivate`|Specifies that the member is accessible only by the parent type.|  
-|`mdFamANDAssem`|Specifies that the member is accessible by subtypes only in this assembly.|  
-|`mdAssem`|Specifies that the member is accessibly by anyone in the assembly.|  
-|`mdFamily`|Specifies that the member is accessible only by type and subtypes.|  
-|`mdFamORAssem`|Specifies that the member is accessible by derived classes and by other types in its assembly.|  
-|`mdPublic`|Specifies that the member is accessible by all types with access to the scope.|  
-|`mdStatic`|Specifies that the member is defined as part of the type rather than as a member of an instance.|  
-|`mdFinal`|Specifies that the method cannot be overridden.|  
-|`mdVirtual`|Specifies that the method can be overridden.|  
-|`mdHideBySig`|Specifies that the method hides by name and signature, rather than just by name.|  
-|`mdVtableLayoutMask`|Specifies virtual table layout.|  
-|`mdReuseSlot`|Specifies that the slot used for this method in the virtual table be reused. Toto nastavení je výchozí.|  
-|`mdNewSlot`|Specifies that the method always gets a new slot in the virtual table.|  
-|`mdCheckAccessOnOverride`|Specifies that the method can be overridden by the same types to which it is visible.|  
-|`mdAbstract`|Specifies that the method is not implemented.|  
-|`mdSpecialName`|Specifies that the method is special, and that its name describes how.|  
-|`mdPinvokeImpl`|Specifies that the method implementation is forwarded using PInvoke.|  
-|`mdUnmanagedExport`|Specifies that the method is a managed method exported to unmanaged code.|  
-|`mdReservedMask`|Reserved for internal use by the common language runtime.|  
-|`mdRTSpecialName`|Specifies that the common language runtime should check the encoding of the method name.|  
-|`mdHasSecurity`|Specifies that the method has security associated with it.|  
-|`mdRequireSecObject`|Specifies that the method calls another method containing security code.|  
+|`mdMemberAccessMask`|Určuje přístup ke členu.|  
+|`mdPrivateScope`|Určuje, že na člena nelze odkazovat.|  
+|`mdPrivate`|Určuje, že člen je přístupný pouze nadřazenému typu.|  
+|`mdFamANDAssem`|Určuje, že člen je přístupný podtypy pouze v tomto sestavení.|  
+|`mdAssem`|Určuje, že člen je accessibly kýmkoli v sestavení.|  
+|`mdFamily`|Určuje, že člen je přístupný pouze pomocí typu a podtypů.|  
+|`mdFamORAssem`|Určuje, že člen je přístupný odvozenými třídami a jinými typy v jeho sestavení.|  
+|`mdPublic`|Určuje, že je člen přístupný pro všechny typy s přístupem k oboru.|  
+|`mdStatic`|Určuje, že je člen definován jako součást typu, nikoli jako člen instance.|  
+|`mdFinal`|Určuje, že metodu nelze přepsat.|  
+|`mdVirtual`|Určuje, že metoda může být přepsána.|  
+|`mdHideBySig`|Určuje, že metoda bude skryta podle názvu a signatury, nikoli jenom podle názvu.|  
+|`mdVtableLayoutMask`|Určuje rozložení virtuální tabulky.|  
+|`mdReuseSlot`|Určuje, že se má znovu použít slot používaný pro tuto metodu ve virtuální tabulce. Toto nastavení je výchozí.|  
+|`mdNewSlot`|Určuje, že metoda vždy získá novou pozici ve virtuální tabulce.|  
+|`mdCheckAccessOnOverride`|Určuje, že metodu lze přepsat stejnými typy, pro které jsou viditelné.|  
+|`mdAbstract`|Určuje, že metoda není implementována.|  
+|`mdSpecialName`|Určuje, že metoda je zvláštní a že její název popisuje, jak.|  
+|`mdPinvokeImpl`|Určuje, že implementace metody je předána pomocí PInvoke.|  
+|`mdUnmanagedExport`|Určuje, že metoda je spravovaná metoda exportovaná do nespravovaného kódu.|  
+|`mdReservedMask`|Vyhrazeno pro interní použití modulem CLR (Common Language Runtime).|  
+|`mdRTSpecialName`|Určuje, že modul CLR (Common Language Runtime) by měl kontrolovat kódování názvu metody.|  
+|`mdHasSecurity`|Určuje, že k metodě je přidruženo zabezpečení.|  
+|`mdRequireSecObject`|Určuje, že metoda volá jinou metodu obsahující bezpečnostní kód.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **Hlavička:** CorHdr. h  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
