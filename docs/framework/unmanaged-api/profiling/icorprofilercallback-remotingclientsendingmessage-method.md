@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445801"
 ---
 # <a name="icorprofilercallbackremotingclientsendingmessage-method"></a>ICorProfilerCallback::RemotingClientSendingMessage – metoda
-Notifies the profiler that the client is sending a request to the server.  
+Upozorní profileru, že klient posílá požadavek na server.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,27 +35,27 @@ HRESULT RemotingClientSendingMessage(
   
 ## <a name="parameters"></a>Parametry  
  `pCookie`  
- [in] A value that corresponds with the value provided in [ICorProfilerCallback::RemotingServerReceivingMessage](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingserverreceivingmessage-method.md) under these conditions:  
+ pro Hodnota, která odpovídá hodnotě zadané v [ICorProfilerCallback:: remotingserverreceivingmessage –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingserverreceivingmessage-method.md) za těchto podmínek:  
   
-- Remoting GUID cookies are active.  
+- Soubory cookie vzdálené komunikace jsou aktivní.  
   
-- The channel succeeds in transmitting the message.  
+- Kanál se úspěšně přenáší do zprávy.  
   
-- GUID cookies are active on the server-side process.  
+- Soubory cookie GUID jsou v procesu na straně serveru aktivní.  
   
- This allows easy pairing of remoting calls and the creation of a logical call stack.  
+ To umožňuje snadné párování volání vzdálené komunikace a vytváření logických zásobníků volání.  
   
  `fIsAsync`  
- [in] A value that is `true` if the call is asynchronous; otherwise, `false`.  
+ pro Hodnota, která je `true`, pokud je volání asynchronní; v opačném případě `false`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

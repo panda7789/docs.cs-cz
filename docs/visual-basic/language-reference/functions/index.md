@@ -13,17 +13,17 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348080"
 ---
 # <a name="functions-visual-basic"></a>Funkce (Visual Basic)
-The topics in this section contain tables of the Visual Basic run-time member functions.  
+Témata v této části obsahují tabulky Visual Basic členských funkcí run-time.  
   
 > [!NOTE]
-> You can also create functions and call them. For more information, see [Function Statement](../../../visual-basic/language-reference/statements/function-statement.md) and [How to: Create a Procedure that Returns a Value](../../../visual-basic/programming-guide/language-features/procedures/how-to-create-a-procedure-that-returns-a-value.md).  
+> Můžete také vytvořit funkce a volat je. Další informace naleznete v tématu [příkaz funkce](../../../visual-basic/language-reference/statements/function-statement.md) a [Postupy: Vytvoření procedury, která vrátí hodnotu](../../../visual-basic/programming-guide/language-features/procedures/how-to-create-a-procedure-that-returns-a-value.md).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Převodní funkce](../../../visual-basic/language-reference/functions/conversion-functions.md)  
   
  [Matematické funkce](../../../visual-basic/language-reference/functions/math-functions.md)  
   
- [Funkce řetězce](../../../visual-basic/language-reference/functions/string-functions.md)  
+ [Řetězcové funkce](../../../visual-basic/language-reference/functions/string-functions.md)  
   
  [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
   

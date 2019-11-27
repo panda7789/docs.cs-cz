@@ -24,10 +24,10 @@ ms.locfileid: "74449861"
 ---
 # <a name="icorprofilerinfosetilinstrumentedcodemap-method"></a>ICorProfilerInfo::SetILInstrumentedCodeMap – metoda
 
-Sets a code map for the specified function using the specified Microsoft intermediate language (MSIL) map entries.
+Nastaví mapu kódu pro určenou funkci pomocí zadaných položek mapování jazyka MSIL (Microsoft Intermediate Language).
 
 > [!NOTE]
-> In the .NET Framework version 2.0, calling `SetILInstrumentedCodeMap` on a `FunctionID` that represents a generic function in a particular application domain will affect all instances of that function in the application domain.
+> V .NET Framework verze 2,0, volání `SetILInstrumentedCodeMap` na `FunctionID`, která představuje obecnou funkci v konkrétní doméně aplikace, bude mít vliv na všechny instance této funkce v doméně aplikace.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -42,58 +42,58 @@ HRESULT SetILInstrumentedCodeMap(
 ## <a name="parameters"></a>Parametry
 
 `functionId`\
-[in] The ID of the function for which to set the code map.
+pro ID funkce, pro kterou chcete nastavit mapu kódu.
 
 `fStartJit`\
-[in] A Boolean value that indicates whether the call to the `SetILInstrumentedCodeMap` method is the first for a particular `FunctionID`. Set `fStartJit` to `true` in the first call to `SetILInstrumentedCodeMap` for a given `FunctionID`, and to `false` thereafter.
+pro Logická hodnota, která označuje, zda je volání metody `SetILInstrumentedCodeMap` prvním pro konkrétní `FunctionID`. Nastavte `fStartJit` na `true` při prvním volání `SetILInstrumentedCodeMap` pro daný `FunctionID`a na `false` potom.
 
 `cILMapEntries`\
-[in] The number of elements in the `cILMapEntries` array.
+pro Počet prvků v poli `cILMapEntries`.
 
 `rgILMapEntries`\
-[in] An array of COR_IL_MAP structures, each of which specifies an MSIL offset.
+pro Pole struktur COR_IL_MAP, z nichž každý Určuje posun MSIL.
 
 ## <a name="remarks"></a>Poznámky
 
-A profiler often inserts statements within the source code of a method in order to instrument that method (for example, to notify when a given source line is reached). `SetILInstrumentedCodeMap` enables a profiler to map the original MSIL instructions to their new locations. A profiler can use the [ICorProfilerInfo::GetILToNativeMapping](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getiltonativemapping-method.md) method to get the original MSIL offset for a given native offset.
+Profiler často vkládá příkazy v rámci zdrojového kódu metody pro instrumentaci této metody (například pro oznámení, když je dosaženo daného řádku zdroje). `SetILInstrumentedCodeMap` umožňuje profileru mapovat původní instrukce MSIL na jejich nová umístění. Profiler může pomocí metody [ICorProfilerInfo:: GetILToNativeMapping –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getiltonativemapping-method.md) získat původní posun MSIL pro daný nativní posun.
 
-The debugger will assume that each old offset refers to an MSIL offset within the original, unmodified MSIL code, and that each new offset refers to the MSIL offset within the new, instrumented code. The map should be sorted in increasing order. For stepping to work properly, follow these guidelines:
+Ladicí program předpokládá, že každý starý posun odkazuje na posun MSIL v rámci původního, neupraveného kódu MSIL a že každý nový posun odkazuje na posun MSIL v rámci nového, instrumentované kódu. Mapa by se měla seřadit ve vzestupném pořadí. Chcete-li, aby krokování fungovalo správně, postupujte podle těchto pokynů:
 
-- Do not reorder instrumented MSIL code.
+- Neměňte pořadí načítacího kódu MSIL.
 
-- Do not remove the original MSIL code.
+- Neodstraňujte původní kód MSIL.
 
-- Include entries for all the sequence points from the program database (PDB) file in the map. The map does not interpolate missing entries. So, given the following map:
+- Zahrnout položky pro všechny body sekvence ze souboru databáze programu (PDB) na mapě. Mapa neinterpoluje chybějící položky. Proto s ohledem na následující mapu:
 
-  (0 old, 0 new)
+  (0 Old, 0 novinek)
 
-  (5 old, 10 new)
+  (5 Old, 10 nových)
 
-  (9 old, 20 new)
+  (9 Old, 20 novinek)
 
-  - An old offset of 0, 1, 2, 3, or 4 will be mapped to new offset 0.
+  - Starý posun 0, 1, 2, 3 nebo 4 se namapuje na nový posun 0.
 
-  - An old offset of 5, 6, 7, or 8 will be mapped to new offset 10.
+  - Starý posun z 5, 6, 7 nebo 8 se namapuje na nový posun 10.
 
-  - An old offset of 9 or higher will be mapped to new offset 20.
+  - Původní posun 9 nebo vyšší se namapuje na nový posun 20.
 
-  - A new offset of 0, 1, 2, 3, 4, 5, 6, 7, 8, or 9 will be mapped to old offset 0.
+  - Nové odsazení 0, 1, 2, 3, 4, 5, 6, 7, 8 nebo 9 bude namapováno na starý posun 0.
 
-  - A new offset of 10, 11, 12, 13, 14, 15, 16, 17, 18, or 19 will be mapped to old offset 5.
+  - Nové posuny 10, 11, 12, 13, 14, 15, 16, 17, 18 nebo 19 budou namapovány na starý posun 5.
 
-  - A new offset of 20 or higher will be mapped to old offset 9.
+  - Nový posun o hodnotě 20 nebo vyšší bude mapován na starý posun 9.
 
-In the .NET Framework 3.5 and previous versions, you allocate the `rgILMapEntries` array by calling the [CoTaskMemAlloc](/windows/desktop/api/combaseapi/nf-combaseapi-cotaskmemalloc) method. Because the runtime takes ownership of this memory, the profiler should not attempt to free it.
+V .NET Framework 3,5 a předchozích verzích přidělíte `rgILMapEntries` pole voláním metody [CoTaskMemAlloc](/windows/desktop/api/combaseapi/nf-combaseapi-cotaskmemalloc) . Vzhledem k tomu, že modul runtime převezme vlastnictví této paměti, Profiler by se neměl pokoušet o uvolnění.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
 
-**Header:** CorProf.idl, CorProf.h
+**Hlavička:** CorProf. idl, CorProf. h
 
-**Library:** CorGuids.lib
+**Knihovna:** CorGuids. lib
 
-**.NET Framework Versions:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]
+**Verze .NET Framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]
 
 ## <a name="see-also"></a>Viz také:
 

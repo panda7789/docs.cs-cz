@@ -12,16 +12,16 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350671"
 ---
 # <a name="mylog-object"></a>My.Log – objekt
-Provides a property and methods for writing event and exception information to the application's log listeners.  
+Poskytuje vlastnost a metody pro zápis informací o událostech a výjimkách do protokolu naslouchacího procesu aplikace.  
   
 ## <a name="remarks"></a>Poznámky  
- For information about the methods and properties of the `My.Log` object, see <xref:Microsoft.VisualBasic.Logging.AspLog>.  
+ Informace o metodách a vlastnostech objektu `My.Log` naleznete v tématu <xref:Microsoft.VisualBasic.Logging.AspLog>.  
   
- The `My.Log` object is available for ASP.NET applications only. For client applications, use [My.Application.Log Object](../../../visual-basic/language-reference/objects/my-application-log-object.md).  
+ Objekt `My.Log` je k dispozici pouze pro aplikace ASP.NET. Pro klientské aplikace použijte [objekt My. Application. log](../../../visual-basic/language-reference/objects/my-application-log-object.md).  
   
 ## <a name="requirements"></a>Požadavky  
- **Namespace:** <xref:Microsoft.VisualBasic.Logging>  
+ **Obor názvů:** <xref:Microsoft.VisualBasic.Logging>  
   
- **Class:** <xref:Microsoft.VisualBasic.Logging.AspLog>  
+ **Třída:** <xref:Microsoft.VisualBasic.Logging.AspLog>  
   
- **Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)
+ **Sestavení:** Knihovna Visual Basic runtime (v souboru Microsoft. VisualBasic. dll)
