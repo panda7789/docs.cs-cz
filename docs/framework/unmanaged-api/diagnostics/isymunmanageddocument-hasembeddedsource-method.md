@@ -22,23 +22,23 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449107"
 ---
-# <a name="isymunmanageddocumenthasembeddedsource-method"></a><span data-ttu-id="be3d6-102">ISymUnmanagedDocument::HasEmbeddedSource – metoda</span><span class="sxs-lookup"><span data-stu-id="be3d6-102">ISymUnmanagedDocument::HasEmbeddedSource Method</span></span>
-<span data-ttu-id="be3d6-103">Returns `true` if the document has source embedded in the debugging symbols; otherwise, returns `false`.</span><span class="sxs-lookup"><span data-stu-id="be3d6-103">Returns `true` if the document has source embedded in the debugging symbols; otherwise, returns `false`.</span></span>  
+# <a name="isymunmanageddocumenthasembeddedsource-method"></a><span data-ttu-id="36655-102">ISymUnmanagedDocument::HasEmbeddedSource – metoda</span><span class="sxs-lookup"><span data-stu-id="36655-102">ISymUnmanagedDocument::HasEmbeddedSource Method</span></span>
+<span data-ttu-id="36655-103">Vrátí `true`, pokud dokument obsahuje zdrojový vložený v symbolech ladění; v opačném případě vrátí `false`.</span><span class="sxs-lookup"><span data-stu-id="36655-103">Returns `true` if the document has source embedded in the debugging symbols; otherwise, returns `false`.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="be3d6-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="be3d6-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="36655-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="36655-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT HasEmbeddedSource(  
    [out, retval]  BOOL  *pRetVal);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="be3d6-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="be3d6-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="36655-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="36655-105">Parameters</span></span>  
  `pRetVal`  
- <span data-ttu-id="be3d6-106">[out] A pointer to a variable that indicates whether the document has source embedded in the debugging symbols.</span><span class="sxs-lookup"><span data-stu-id="be3d6-106">[out] A pointer to a variable that indicates whether the document has source embedded in the debugging symbols.</span></span>  
+ <span data-ttu-id="36655-106">mimo Ukazatel na proměnnou, která označuje, zda má dokument ve symbolech ladění zdroj vložený.</span><span class="sxs-lookup"><span data-stu-id="36655-106">[out] A pointer to a variable that indicates whether the document has source embedded in the debugging symbols.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="be3d6-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="be3d6-107">Return Value</span></span>  
- <span data-ttu-id="be3d6-108">S_OK if the method succeeds.</span><span class="sxs-lookup"><span data-stu-id="be3d6-108">S_OK if the method succeeds.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="36655-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="36655-107">Return Value</span></span>  
+ <span data-ttu-id="36655-108">S_OK, zda je metoda úspěšná.</span><span class="sxs-lookup"><span data-stu-id="36655-108">S_OK if the method succeeds.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="be3d6-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="be3d6-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="36655-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="36655-109">See also</span></span>
 
-- [<span data-ttu-id="be3d6-110">ISymUnmanagedDocument – rozhraní</span><span class="sxs-lookup"><span data-stu-id="be3d6-110">ISymUnmanagedDocument Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)
+- [<span data-ttu-id="36655-110">ISymUnmanagedDocument – rozhraní</span><span class="sxs-lookup"><span data-stu-id="36655-110">ISymUnmanagedDocument Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)

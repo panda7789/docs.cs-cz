@@ -1,6 +1,6 @@
 ---
-title: Install .NET Core on Ubuntu 18.04 package manager - .NET Core
-description: Use a package manager to install .NET Core SDK and runtime on Ubuntu 18.04.
+title: Instalace .NET Core na Ubuntu 18,04 – správce balíčků – .NET Core
+description: Pomocí Správce balíčků nainstalujte .NET Core SDK a modul runtime v Ubuntu 18,04.
 author: thraka
 ms.author: adegeo
 ms.date: 11/06/2019
@@ -11,32 +11,32 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450861"
 ---
-# <a name="ubuntu-1804-package-manager---install-net-core"></a><span data-ttu-id="b4953-103">Ubuntu 18.04 Package Manager - Install .NET Core</span><span class="sxs-lookup"><span data-stu-id="b4953-103">Ubuntu 18.04 Package Manager - Install .NET Core</span></span>
+# <a name="ubuntu-1804-package-manager---install-net-core"></a><span data-ttu-id="5ecc4-103">Správce balíčků Ubuntu 18,04 – instalace .NET Core</span><span class="sxs-lookup"><span data-stu-id="5ecc4-103">Ubuntu 18.04 Package Manager - Install .NET Core</span></span>
 
 [!INCLUDE [package-manager-switcher](./includes/package-manager-switcher.md)]
 
-<span data-ttu-id="b4953-104">This article describes how to use a package manager to install .NET Core on Ubuntu 18.04.</span><span class="sxs-lookup"><span data-stu-id="b4953-104">This article describes how to use a package manager to install .NET Core on Ubuntu 18.04.</span></span> <span data-ttu-id="b4953-105">If you're installing the runtime, we suggest you install the [ASP.NET Core runtime](#install-the-aspnet-core-runtime), as it includes both .NET Core and ASP.NET Core runtimes.</span><span class="sxs-lookup"><span data-stu-id="b4953-105">If you're installing the runtime, we suggest you install the [ASP.NET Core runtime](#install-the-aspnet-core-runtime), as it includes both .NET Core and ASP.NET Core runtimes.</span></span>
+<span data-ttu-id="5ecc4-104">Tento článek popisuje, jak pomocí Správce balíčků nainstalovat .NET Core na Ubuntu 18,04.</span><span class="sxs-lookup"><span data-stu-id="5ecc4-104">This article describes how to use a package manager to install .NET Core on Ubuntu 18.04.</span></span> <span data-ttu-id="5ecc4-105">Pokud instalujete modul runtime, doporučujeme nainstalovat modul [runtime ASP.NET Core](#install-the-aspnet-core-runtime), protože zahrnuje modul runtime .NET Core i ASP.NET Core.</span><span class="sxs-lookup"><span data-stu-id="5ecc4-105">If you're installing the runtime, we suggest you install the [ASP.NET Core runtime](#install-the-aspnet-core-runtime), as it includes both .NET Core and ASP.NET Core runtimes.</span></span>
 
-## <a name="register-microsoft-key-and-feed"></a><span data-ttu-id="b4953-106">Register Microsoft key and feed</span><span class="sxs-lookup"><span data-stu-id="b4953-106">Register Microsoft key and feed</span></span>
+## <a name="register-microsoft-key-and-feed"></a><span data-ttu-id="5ecc4-106">Registrace klíče a kanálu Microsoft</span><span class="sxs-lookup"><span data-stu-id="5ecc4-106">Register Microsoft key and feed</span></span>
 
-<span data-ttu-id="b4953-107">Before installing .NET, you'll need to:</span><span class="sxs-lookup"><span data-stu-id="b4953-107">Before installing .NET, you'll need to:</span></span>
+<span data-ttu-id="5ecc4-107">Před instalací .NET budete potřebovat:</span><span class="sxs-lookup"><span data-stu-id="5ecc4-107">Before installing .NET, you'll need to:</span></span>
 
-- <span data-ttu-id="b4953-108">Register the Microsoft key</span><span class="sxs-lookup"><span data-stu-id="b4953-108">Register the Microsoft key</span></span>
-- <span data-ttu-id="b4953-109">register the product repository</span><span class="sxs-lookup"><span data-stu-id="b4953-109">register the product repository</span></span>
-- <span data-ttu-id="b4953-110">Install required dependencies</span><span class="sxs-lookup"><span data-stu-id="b4953-110">Install required dependencies</span></span>
+- <span data-ttu-id="5ecc4-108">Registrace klíče Microsoftu</span><span class="sxs-lookup"><span data-stu-id="5ecc4-108">Register the Microsoft key</span></span>
+- <span data-ttu-id="5ecc4-109">registrace úložiště produktu</span><span class="sxs-lookup"><span data-stu-id="5ecc4-109">register the product repository</span></span>
+- <span data-ttu-id="5ecc4-110">Nainstalovat požadované závislosti</span><span class="sxs-lookup"><span data-stu-id="5ecc4-110">Install required dependencies</span></span>
 
-<span data-ttu-id="b4953-111">This only needs to be done once per machine.</span><span class="sxs-lookup"><span data-stu-id="b4953-111">This only needs to be done once per machine.</span></span>
+<span data-ttu-id="5ecc4-111">Tento postup je třeba provést pouze jednou pro každý počítač.</span><span class="sxs-lookup"><span data-stu-id="5ecc4-111">This only needs to be done once per machine.</span></span>
 
-<span data-ttu-id="b4953-112">Open a terminal and run the following commands.</span><span class="sxs-lookup"><span data-stu-id="b4953-112">Open a terminal and run the following commands.</span></span>
+<span data-ttu-id="5ecc4-112">Otevřete terminál a spusťte následující příkazy.</span><span class="sxs-lookup"><span data-stu-id="5ecc4-112">Open a terminal and run the following commands.</span></span>
 
 ```bash
 wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
 ```
 
-## <a name="install-the-net-core-sdk"></a><span data-ttu-id="b4953-113">Install the .NET Core SDK</span><span class="sxs-lookup"><span data-stu-id="b4953-113">Install the .NET Core SDK</span></span>
+## <a name="install-the-net-core-sdk"></a><span data-ttu-id="5ecc4-113">Instalace .NET Core SDK</span><span class="sxs-lookup"><span data-stu-id="5ecc4-113">Install the .NET Core SDK</span></span>
 
-<span data-ttu-id="b4953-114">Update the products available for installation, then install the .NET Core SDK.</span><span class="sxs-lookup"><span data-stu-id="b4953-114">Update the products available for installation, then install the .NET Core SDK.</span></span> <span data-ttu-id="b4953-115">In your terminal, run the following commands.</span><span class="sxs-lookup"><span data-stu-id="b4953-115">In your terminal, run the following commands.</span></span>
+<span data-ttu-id="5ecc4-114">Aktualizujte produkty, které jsou k dispozici pro instalaci, a poté nainstalujte .NET Core SDK.</span><span class="sxs-lookup"><span data-stu-id="5ecc4-114">Update the products available for installation, then install the .NET Core SDK.</span></span> <span data-ttu-id="5ecc4-115">V terminálu spusťte následující příkazy.</span><span class="sxs-lookup"><span data-stu-id="5ecc4-115">In your terminal, run the following commands.</span></span>
 
 ```bash
 sudo add-apt-repository universe
@@ -47,11 +47,11 @@ sudo apt-get install dotnet-sdk-3.0
 ```
 
 > [!IMPORTANT]
-> <span data-ttu-id="b4953-116">If you receive an error message similar to **Unable to locate package dotnet-sdk-3.0**, see the [Troubleshoot the package manager](#troubleshoot-the-package-manager) section.</span><span class="sxs-lookup"><span data-stu-id="b4953-116">If you receive an error message similar to **Unable to locate package dotnet-sdk-3.0**, see the [Troubleshoot the package manager](#troubleshoot-the-package-manager) section.</span></span>
+> <span data-ttu-id="5ecc4-116">Pokud se zobrazí chybová zpráva podobná této chybě **nelze nalézt balíček dotnet-SDK-3,0**, přečtěte si téma [Poradce při potížích s částí správce balíčků](#troubleshoot-the-package-manager) .</span><span class="sxs-lookup"><span data-stu-id="5ecc4-116">If you receive an error message similar to **Unable to locate package dotnet-sdk-3.0**, see the [Troubleshoot the package manager](#troubleshoot-the-package-manager) section.</span></span>
 
-## <a name="install-the-aspnet-core-runtime"></a><span data-ttu-id="b4953-117">Install the ASP.NET Core runtime</span><span class="sxs-lookup"><span data-stu-id="b4953-117">Install the ASP.NET Core runtime</span></span>
+## <a name="install-the-aspnet-core-runtime"></a><span data-ttu-id="5ecc4-117">Instalace modulu runtime ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="5ecc4-117">Install the ASP.NET Core runtime</span></span>
 
-<span data-ttu-id="b4953-118">Update the products available for installation, then install the ASP.NET Core runtime.</span><span class="sxs-lookup"><span data-stu-id="b4953-118">Update the products available for installation, then install the ASP.NET Core runtime.</span></span> <span data-ttu-id="b4953-119">In your terminal, run the following commands.</span><span class="sxs-lookup"><span data-stu-id="b4953-119">In your terminal, run the following commands.</span></span>
+<span data-ttu-id="5ecc4-118">Aktualizujte produkty, které jsou k dispozici pro instalaci, a poté nainstalujte modul runtime ASP.NET Core.</span><span class="sxs-lookup"><span data-stu-id="5ecc4-118">Update the products available for installation, then install the ASP.NET Core runtime.</span></span> <span data-ttu-id="5ecc4-119">V terminálu spusťte následující příkazy.</span><span class="sxs-lookup"><span data-stu-id="5ecc4-119">In your terminal, run the following commands.</span></span>
 
 ```bash
 sudo add-apt-repository universe
@@ -62,11 +62,11 @@ sudo apt-get install aspnetcore-runtime-3.0
 ```
 
 > [!IMPORTANT]
-> <span data-ttu-id="b4953-120">If you receive an error message similar to **Unable to locate package aspnetcore-runtime-3.0**, see the [Troubleshoot the package manager](#troubleshoot-the-package-manager) section.</span><span class="sxs-lookup"><span data-stu-id="b4953-120">If you receive an error message similar to **Unable to locate package aspnetcore-runtime-3.0**, see the [Troubleshoot the package manager](#troubleshoot-the-package-manager) section.</span></span>
+> <span data-ttu-id="5ecc4-120">Pokud se zobrazí chybová zpráva podobná té, že **nejde najít Package aspnetcore-runtime-3,0**, přečtěte si téma [Poradce při potížích s částí správce balíčků](#troubleshoot-the-package-manager) .</span><span class="sxs-lookup"><span data-stu-id="5ecc4-120">If you receive an error message similar to **Unable to locate package aspnetcore-runtime-3.0**, see the [Troubleshoot the package manager](#troubleshoot-the-package-manager) section.</span></span>
 
-## <a name="install-the-net-core-runtime"></a><span data-ttu-id="b4953-121">Install the .NET Core runtime</span><span class="sxs-lookup"><span data-stu-id="b4953-121">Install the .NET Core runtime</span></span>
+## <a name="install-the-net-core-runtime"></a><span data-ttu-id="5ecc4-121">Instalace modulu runtime .NET Core</span><span class="sxs-lookup"><span data-stu-id="5ecc4-121">Install the .NET Core runtime</span></span>
 
-<span data-ttu-id="b4953-122">Update the products available for installation, then install the .NET Core runtime.</span><span class="sxs-lookup"><span data-stu-id="b4953-122">Update the products available for installation, then install the .NET Core runtime.</span></span> <span data-ttu-id="b4953-123">In your terminal, run the following commands.</span><span class="sxs-lookup"><span data-stu-id="b4953-123">In your terminal, run the following commands.</span></span>
+<span data-ttu-id="5ecc4-122">Aktualizujte produkty, které jsou k dispozici pro instalaci, a pak nainstalujte modul runtime .NET Core.</span><span class="sxs-lookup"><span data-stu-id="5ecc4-122">Update the products available for installation, then install the .NET Core runtime.</span></span> <span data-ttu-id="5ecc4-123">V terminálu spusťte následující příkazy.</span><span class="sxs-lookup"><span data-stu-id="5ecc4-123">In your terminal, run the following commands.</span></span>
 
 ```bash
 sudo add-apt-repository universe
@@ -77,15 +77,15 @@ sudo apt-get install dotnet-runtime-3.0
 ```
 
 > [!IMPORTANT]
-> <span data-ttu-id="b4953-124">If you receive an error message similar to **Unable to locate package dotnet-runtime-3.0**, see the [Troubleshoot the package manager](#troubleshoot-the-package-manager) section.</span><span class="sxs-lookup"><span data-stu-id="b4953-124">If you receive an error message similar to **Unable to locate package dotnet-runtime-3.0**, see the [Troubleshoot the package manager](#troubleshoot-the-package-manager) section.</span></span>
+> <span data-ttu-id="5ecc4-124">Pokud se zobrazí chybová zpráva podobná řetězci **nelze nalézt balíček dotnet-runtime-3,0**, přečtěte si téma [Poradce při potížích s částí správce balíčků](#troubleshoot-the-package-manager) .</span><span class="sxs-lookup"><span data-stu-id="5ecc4-124">If you receive an error message similar to **Unable to locate package dotnet-runtime-3.0**, see the [Troubleshoot the package manager](#troubleshoot-the-package-manager) section.</span></span>
 
-## <a name="how-to-install-other-versions"></a><span data-ttu-id="b4953-125">How to install other versions</span><span class="sxs-lookup"><span data-stu-id="b4953-125">How to install other versions</span></span>
+## <a name="how-to-install-other-versions"></a><span data-ttu-id="5ecc4-125">Jak nainstalovat další verze</span><span class="sxs-lookup"><span data-stu-id="5ecc4-125">How to install other versions</span></span>
 
 [!INCLUDE [package-manager-switcher](./includes/package-manager-heading-hack-pkgname.md)]
 
-## <a name="troubleshoot-the-package-manager"></a><span data-ttu-id="b4953-126">Troubleshoot the package manager</span><span class="sxs-lookup"><span data-stu-id="b4953-126">Troubleshoot the package manager</span></span>
+## <a name="troubleshoot-the-package-manager"></a><span data-ttu-id="5ecc4-126">Řešení potíží se správcem balíčků</span><span class="sxs-lookup"><span data-stu-id="5ecc4-126">Troubleshoot the package manager</span></span>
 
-<span data-ttu-id="b4953-127">If you receive an error message similar to **Unable to locate package {the .NET Core package}** , run the following commands.</span><span class="sxs-lookup"><span data-stu-id="b4953-127">If you receive an error message similar to **Unable to locate package {the .NET Core package}**, run the following commands.</span></span>
+<span data-ttu-id="5ecc4-127">Pokud se zobrazí chybová zpráva podobná té, že se **nepovedlo najít balíček {Package .NET Core}** , spusťte následující příkazy.</span><span class="sxs-lookup"><span data-stu-id="5ecc4-127">If you receive an error message similar to **Unable to locate package {the .NET Core package}**, run the following commands.</span></span>
 
 ```bash
 sudo dpkg --purge packages-microsoft-prod && sudo dpkg -i packages-microsoft-prod.deb
@@ -93,7 +93,7 @@ sudo apt-get update
 sudo apt-get install {the .NET Core package}
 ```
 
-<span data-ttu-id="b4953-128">If that doesn't work, you can run a manual install with the following commands.</span><span class="sxs-lookup"><span data-stu-id="b4953-128">If that doesn't work, you can run a manual install with the following commands.</span></span>
+<span data-ttu-id="5ecc4-128">Pokud to nefunguje, můžete spustit ruční instalaci pomocí následujících příkazů.</span><span class="sxs-lookup"><span data-stu-id="5ecc4-128">If that doesn't work, you can run a manual install with the following commands.</span></span>
 
 ```bash
 sudo apt-get install -y gpg

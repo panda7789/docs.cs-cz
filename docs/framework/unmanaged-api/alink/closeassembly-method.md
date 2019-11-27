@@ -22,10 +22,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446576"
 ---
-# <a name="closeassembly-method"></a><span data-ttu-id="33446-102">CloseAssembly – metoda</span><span class="sxs-lookup"><span data-stu-id="33446-102">CloseAssembly Method</span></span>
-<span data-ttu-id="33446-103">Finalizes assembly operations.</span><span class="sxs-lookup"><span data-stu-id="33446-103">Finalizes assembly operations.</span></span> <span data-ttu-id="33446-104">Call this method before beginning a new assembly or unbound module.</span><span class="sxs-lookup"><span data-stu-id="33446-104">Call this method before beginning a new assembly or unbound module.</span></span>  
+# <a name="closeassembly-method"></a><span data-ttu-id="a8a8a-102">CloseAssembly – metoda</span><span class="sxs-lookup"><span data-stu-id="a8a8a-102">CloseAssembly Method</span></span>
+<span data-ttu-id="a8a8a-103">Dokončí operace sestavení.</span><span class="sxs-lookup"><span data-stu-id="a8a8a-103">Finalizes assembly operations.</span></span> <span data-ttu-id="a8a8a-104">Před zahájením nového sestavení nebo nevázaného modulu volejte tuto metodu.</span><span class="sxs-lookup"><span data-stu-id="a8a8a-104">Call this method before beginning a new assembly or unbound module.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="33446-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="33446-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="a8a8a-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a8a8a-105">Syntax</span></span>  
   
 ```cpp  
 HRESULT CloseAssembly(  
@@ -33,18 +33,18 @@ HRESULT CloseAssembly(
 ) PURE;  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="33446-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="33446-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="a8a8a-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="a8a8a-106">Parameters</span></span>  
  `AssemblyID`  
- <span data-ttu-id="33446-107">ID of the assembly.</span><span class="sxs-lookup"><span data-stu-id="33446-107">ID of the assembly.</span></span>  
+ <span data-ttu-id="a8a8a-107">ID sestavení</span><span class="sxs-lookup"><span data-stu-id="a8a8a-107">ID of the assembly.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="33446-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="33446-108">Return Value</span></span>  
- <span data-ttu-id="33446-109">Returns S_OK if the method succeeds.</span><span class="sxs-lookup"><span data-stu-id="33446-109">Returns S_OK if the method succeeds.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="a8a8a-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="a8a8a-108">Return Value</span></span>  
+ <span data-ttu-id="a8a8a-109">Vrátí S_OK, pokud je metoda úspěšná.</span><span class="sxs-lookup"><span data-stu-id="a8a8a-109">Returns S_OK if the method succeeds.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="33446-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="33446-110">Requirements</span></span>  
- <span data-ttu-id="33446-111">Requires alink.h.</span><span class="sxs-lookup"><span data-stu-id="33446-111">Requires alink.h.</span></span>  
+## <a name="requirements"></a><span data-ttu-id="a8a8a-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a8a8a-110">Requirements</span></span>  
+ <span data-ttu-id="a8a8a-111">Vyžaduje ALink. h.</span><span class="sxs-lookup"><span data-stu-id="a8a8a-111">Requires alink.h.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="33446-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="33446-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a8a8a-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a8a8a-112">See also</span></span>
 
-- [<span data-ttu-id="33446-113">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="33446-113">IALink Interface</span></span>](ialink-interface.md)
-- [<span data-ttu-id="33446-114">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="33446-114">IALink2 Interface</span></span>](ialink2-interface.md)
-- [<span data-ttu-id="33446-115">ALink API</span><span class="sxs-lookup"><span data-stu-id="33446-115">ALink API</span></span>](index.md)
+- [<span data-ttu-id="a8a8a-113">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a8a8a-113">IALink Interface</span></span>](ialink-interface.md)
+- [<span data-ttu-id="a8a8a-114">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a8a8a-114">IALink2 Interface</span></span>](ialink2-interface.md)
+- [<span data-ttu-id="a8a8a-115">Rozhraní API ALink</span><span class="sxs-lookup"><span data-stu-id="a8a8a-115">ALink API</span></span>](index.md)

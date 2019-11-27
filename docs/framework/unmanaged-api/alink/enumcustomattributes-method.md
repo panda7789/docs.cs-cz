@@ -22,10 +22,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446469"
 ---
-# <a name="enumcustomattributes-method"></a><span data-ttu-id="83f03-102">EnumCustomAttributes – metoda</span><span class="sxs-lookup"><span data-stu-id="83f03-102">EnumCustomAttributes Method</span></span>
-<span data-ttu-id="83f03-103">Retrieves assembly-level custom attributes.</span><span class="sxs-lookup"><span data-stu-id="83f03-103">Retrieves assembly-level custom attributes.</span></span>  
+# <a name="enumcustomattributes-method"></a><span data-ttu-id="e6aaa-102">EnumCustomAttributes – metoda</span><span class="sxs-lookup"><span data-stu-id="e6aaa-102">EnumCustomAttributes Method</span></span>
+<span data-ttu-id="e6aaa-103">Načte vlastní atributy na úrovni sestavení.</span><span class="sxs-lookup"><span data-stu-id="e6aaa-103">Retrieves assembly-level custom attributes.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="83f03-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="83f03-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="e6aaa-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e6aaa-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT EnumCustomAttributes(  
@@ -37,30 +37,30 @@ HRESULT EnumCustomAttributes(
 ) PURE;  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="83f03-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="83f03-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="e6aaa-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="e6aaa-105">Parameters</span></span>  
  `hEnum`  
- <span data-ttu-id="83f03-106">Handle of enumerator.</span><span class="sxs-lookup"><span data-stu-id="83f03-106">Handle of enumerator.</span></span>  
+ <span data-ttu-id="e6aaa-106">Popisovač čítače.</span><span class="sxs-lookup"><span data-stu-id="e6aaa-106">Handle of enumerator.</span></span>  
   
  `tkType`  
- <span data-ttu-id="83f03-107">Type of attributes to be enumerated.</span><span class="sxs-lookup"><span data-stu-id="83f03-107">Type of attributes to be enumerated.</span></span> <span data-ttu-id="83f03-108">Use `mdTokenNill` for all attributes.</span><span class="sxs-lookup"><span data-stu-id="83f03-108">Use `mdTokenNill` for all attributes.</span></span>  
+ <span data-ttu-id="e6aaa-107">Typ atributů, které mají být vyčísleny.</span><span class="sxs-lookup"><span data-stu-id="e6aaa-107">Type of attributes to be enumerated.</span></span> <span data-ttu-id="e6aaa-108">Pro všechny atributy použijte `mdTokenNill`.</span><span class="sxs-lookup"><span data-stu-id="e6aaa-108">Use `mdTokenNill` for all attributes.</span></span>  
   
  `rCustomValues`  
- <span data-ttu-id="83f03-109">Receives custom attributes tokens.</span><span class="sxs-lookup"><span data-stu-id="83f03-109">Receives custom attributes tokens.</span></span>  
+ <span data-ttu-id="e6aaa-109">Přijímá vlastní tokeny atributů.</span><span class="sxs-lookup"><span data-stu-id="e6aaa-109">Receives custom attributes tokens.</span></span>  
   
  `cMax`  
- <span data-ttu-id="83f03-110">Specifies size of `rCustomValues` array.</span><span class="sxs-lookup"><span data-stu-id="83f03-110">Specifies size of `rCustomValues` array.</span></span>  
+ <span data-ttu-id="e6aaa-110">Určuje velikost `rCustomValues` pole.</span><span class="sxs-lookup"><span data-stu-id="e6aaa-110">Specifies size of `rCustomValues` array.</span></span>  
   
  `pcCustomValues`  
- <span data-ttu-id="83f03-111">Optionally receives count of token values.</span><span class="sxs-lookup"><span data-stu-id="83f03-111">Optionally receives count of token values.</span></span>  
+ <span data-ttu-id="e6aaa-111">Volitelně přijímá počet hodnot tokenu.</span><span class="sxs-lookup"><span data-stu-id="e6aaa-111">Optionally receives count of token values.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="83f03-112">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="83f03-112">Return Value</span></span>  
- <span data-ttu-id="83f03-113">Returns S_OK if the method succeeds.</span><span class="sxs-lookup"><span data-stu-id="83f03-113">Returns S_OK if the method succeeds.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="e6aaa-112">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="e6aaa-112">Return Value</span></span>  
+ <span data-ttu-id="e6aaa-113">Vrátí S_OK, pokud je metoda úspěšná.</span><span class="sxs-lookup"><span data-stu-id="e6aaa-113">Returns S_OK if the method succeeds.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="83f03-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="83f03-114">Requirements</span></span>  
- <span data-ttu-id="83f03-115">Requires alink.h</span><span class="sxs-lookup"><span data-stu-id="83f03-115">Requires alink.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="e6aaa-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e6aaa-114">Requirements</span></span>  
+ <span data-ttu-id="e6aaa-115">Vyžaduje ALink. h</span><span class="sxs-lookup"><span data-stu-id="e6aaa-115">Requires alink.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="83f03-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="83f03-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e6aaa-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e6aaa-116">See also</span></span>
 
-- [<span data-ttu-id="83f03-117">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="83f03-117">IALink Interface</span></span>](ialink-interface.md)
-- [<span data-ttu-id="83f03-118">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="83f03-118">IALink2 Interface</span></span>](ialink2-interface.md)
-- [<span data-ttu-id="83f03-119">ALink API</span><span class="sxs-lookup"><span data-stu-id="83f03-119">ALink API</span></span>](index.md)
+- [<span data-ttu-id="e6aaa-117">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e6aaa-117">IALink Interface</span></span>](ialink-interface.md)
+- [<span data-ttu-id="e6aaa-118">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e6aaa-118">IALink2 Interface</span></span>](ialink2-interface.md)
+- [<span data-ttu-id="e6aaa-119">Rozhraní API ALink</span><span class="sxs-lookup"><span data-stu-id="e6aaa-119">ALink API</span></span>](index.md)
