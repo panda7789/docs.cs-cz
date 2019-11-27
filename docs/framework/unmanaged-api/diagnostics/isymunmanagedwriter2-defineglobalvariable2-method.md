@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74438282"
 ---
 # <a name="isymunmanagedwriter2defineglobalvariable2-method"></a>ISymUnmanagedWriter2::DefineGlobalVariable2 – metoda
-Defines a single global variable.  
+Definuje jednu globální proměnnou.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,31 +40,31 @@ HRESULT DefineGlobalVariable2(
   
 ## <a name="parameters"></a>Parametry  
  `name`  
- [in] The global variable name.  
+ pro Název globální proměnné  
   
  `attributes`  
- [in] The global variable attributes.  
+ pro Atributy globálních proměnných.  
   
  `sigToken`  
- [in] The metadata token of the signature.  
+ pro Token metadat podpisu  
   
  `addrKind`  
- [in] The address type.  
+ pro Typ adresy.  
   
  `addr1`  
- [in] The first address for the parameter specification.  
+ pro První adresa specifikace parametru.  
   
  `addr2`  
- [in] The second address for the parameter specification.  
+ pro Druhá adresa specifikace parametru.  
   
  `addr3`  
- [in] The third address for the parameter specification.  
+ pro Třetí adresa specifikace parametru.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl  
+ **Hlavička:** CorSym. idl  
   
 ## <a name="see-also"></a>Viz také:
 

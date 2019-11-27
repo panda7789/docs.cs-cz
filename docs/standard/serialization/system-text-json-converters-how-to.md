@@ -292,7 +292,7 @@ Konvertor může deserializovat JSON, který byl vytvořen pomocí stejného př
 * převaděč `List<T>`, který přijímá externí data
 * převaděč `Long[]`, který pracuje se seznamem čísel oddělených čárkami 
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
 * [Přehled System. text. JSON](system-text-json-overview.md)
 * [Reference k rozhraní API System. text. JSON](xref:System.Text.Json)
