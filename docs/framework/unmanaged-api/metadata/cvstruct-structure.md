@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436423"
 ---
 # <a name="cvstruct-structure"></a>CVStruct – struktura
-Contains information that is used when installing a module or a composite image.  
+Obsahuje informace, které se používají při instalaci modulu nebo složené image.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,19 +39,19 @@ typedef struct {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|Hlavní|Major version build number.|  
-|Vedlejší|Minor version build number.|  
-|Sub|Sub-build number.|  
-|Sestavení|Build number.|  
+|Závažná|Číslo sestavení hlavní verze.|  
+|Méně závažná|Číslo sestavení dílčí verze|  
+|Sub|Číslo dílčího sestavení|  
+|Sestavení|Číslo buildu.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

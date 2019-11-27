@@ -9,20 +9,20 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350963"
 ---
-# <a name="working-with-xml-namespaces-visual-basic"></a>Working with XML Namespaces (Visual Basic)
-The topics in this section describe how [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] supports namespaces.  
+# <a name="working-with-xml-namespaces-visual-basic"></a>Práce s obory názvů XML (Visual Basic)
+Témata v této části popisují, jak [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] podporují obory názvů.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
 |Téma|Popis|  
 |-----------|-----------------|  
-|[Přehled názvových prostorů (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/namespaces-overview-linq-to-xml.md)|This topic introduces namespaces, the <xref:System.Xml.Linq.XName> class, and the <xref:System.Xml.Linq.XNamespace> class.|  
-|[How to: Create a Document with Namespaces (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-document-with-namespaces.md)|Shows how to create documents with namespaces.|  
-|[How to: Control Namespace Prefixes (Visual Basic) (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/how-to-control-namespace-prefixes-linq-to-xml.md)|Shows how to control namespace prefixes by declaring global namespaces.|  
-|[Scope of Default Namespaces in Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/scope-of-default-namespaces.md)|Demonstrates the appropriate way to write queries for XML in the default namespace.|  
-|[Working with Global Namespaces (Visual Basic) (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/working-with-global-namespaces-linq-to-xml.md)|Explains the semantics of global namespaces in Visual Basic, and reasons for using them.|  
-|[How to: Write Queries on XML in Namespaces (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-write-queries-on-xml-in-namespaces.md)|Demonstrates how to specify XML namespaces in Visual Basic LINQ to XML queries.|  
+|[Přehled názvových prostorů (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/namespaces-overview-linq-to-xml.md)|Toto téma představuje obory názvů, třídu <xref:System.Xml.Linq.XName> a třídu <xref:System.Xml.Linq.XNamespace>.|  
+|[Postupy: vytvoření dokumentu s oborem názvů (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-document-with-namespaces.md)|Ukazuje, jak vytvářet dokumenty s obory názvů.|  
+|[Postupy: řízení předpon oboru názvů (Visual Basic) (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/how-to-control-namespace-prefixes-linq-to-xml.md)|Ukazuje, jak řídit předpony oboru názvů deklarací globálních oborů názvů.|  
+|[Rozsah výchozích oborů názvů v Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/scope-of-default-namespaces.md)|Demonstruje vhodný způsob, jak zapisovat dotazy pro XML ve výchozím oboru názvů.|  
+|[Práce s globálním oborem názvů (Visual Basic) (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/working-with-global-namespaces-linq-to-xml.md)|Vysvětluje sémantiku globálních oborů názvů v Visual Basic a důvody jejich použití.|  
+|[Postupy: zápis dotazů na XML v oborech názvů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-write-queries-on-xml-in-namespaces.md)|Ukazuje, jak zadat obory názvů XML v Visual Basic LINQ to XML dotazech.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Programming Guide (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)
+- [Průvodce programováním (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)

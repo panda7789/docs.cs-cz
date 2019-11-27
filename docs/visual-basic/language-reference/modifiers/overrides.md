@@ -22,37 +22,37 @@ ms.locfileid: "74351387"
 ---
 # <a name="overrides-visual-basic"></a>Overrides (Visual Basic)
 
-Specifies that a property or procedure overrides an identically named property or procedure inherited from a base class.
+Určuje, že vlastnost nebo procedura Přepisuje identicky pojmenovanou vlastnost nebo proceduru zděděnou ze základní třídy.
 
-## <a name="rules"></a>Rules
+## <a name="rules"></a>Pravidla
 
-- **Declaration Context.** You can use `Overrides` only in a property or procedure declaration statement.
+- **Kontext deklarace** `Overrides` lze použít pouze v příkazu deklarace vlastnosti nebo procedury.
 
-- **Combined Modifiers.** You cannot specify `Overrides` together with `Shadows` or `Shared` in the same declaration. Because an overriding element is implicitly overridable, you cannot combine `Overridable` with `Overrides`.
+- **Kombinované modifikátory.** V rámci stejné deklarace nelze zadat `Overrides` společně s `Shadows` nebo `Shared`. Vzhledem k tomu, že přepsání elementu je implicitně přepsatelné, nelze kombinovat `Overridable` s `Overrides`.
 
-- **Matching Signatures.** The signature of this declaration must exactly match the *signature* of the property or procedure that it overrides. This means the parameter lists must have the same number of parameters, in the same order, with the same data types.
+- **Vyhovující signatury.** Signatura této deklarace musí přesně odpovídat *podpisu* vlastnosti nebo procedury, kterou Přepisuje. To znamená, že seznamy parametrů musí mít stejný počet parametrů ve stejném pořadí se stejnými datovými typy.
 
-  In addition to the signature, the overriding declaration must also exactly match the following:
+  Kromě signatury musí překrytá deklarace také přesně odpovídat následujícímu:
 
-  - The access level
+  - Úroveň přístupu
 
-  - The return type, if any
+  - Návratový typ, pokud existuje
 
-- **Generic Signatures.** For a generic procedure, the signature includes the number of type parameters. Therefore, the overriding declaration must match the base class version in that respect as well.
+- **Obecné podpisy** Pro obecný postup signatura obsahuje počet parametrů typu. Proto musí přepsání deklarace odpovídat verzi základní třídy i v tomto ohledu.
 
-- **Additional Matching.** In addition to matching the signature of the base class version, this declaration must also match it in the following respects:
+- **Další shoda.** Kromě shody signatury verze základní třídy musí tato deklarace také odpovídat těmto kritériím v následujících ohledech:
 
-  - Access-level modifier (such as [Public](../../../visual-basic/language-reference/modifiers/public.md))
+  - Modifikátor úrovně přístupu (například [Public](../../../visual-basic/language-reference/modifiers/public.md))
 
-  - Passing mechanism of each parameter ([ByVal](../../../visual-basic/language-reference/modifiers/byval.md) or [ByRef](../../../visual-basic/language-reference/modifiers/byref.md))
+  - Předání mechanismu každého parametru ([ByVal](../../../visual-basic/language-reference/modifiers/byval.md) nebo [ByRef](../../../visual-basic/language-reference/modifiers/byref.md))
 
-  - Constraint lists on each type parameter of a generic procedure
+  - Seznamy omezení pro každý parametr typu Obecné procedury
 
-- **Shadowing and Overriding.** Both shadowing and overriding redefine an inherited element, but there are significant differences between the two approaches. For more information, see [Shadowing in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).
+- **Nastínování a přepisování.** Jak Stínová, tak i přepsání předefinují zděděný element, ale existují významné rozdíly mezi těmito dvěma přístupy. Další informace najdete v tématu [vytváření stínových kopií v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).
 
-If you use `Overrides`, the compiler implicitly adds `Overloads` so that your library APIs work with C# more easily.
+Použijete-li `Overrides`, kompilátor implicitně přidá `Overloads`, aby vaše rozhraní API knihovny fungovala C# snadněji.
 
-The `Overrides` modifier can be used in these contexts:
+V těchto kontextech lze použít modifikátor `Overrides`:
 
 - [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)
 
@@ -66,6 +66,6 @@ The `Overrides` modifier can be used in these contexts:
 - [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)
 - [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md)
 - [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)
-- [Shadowing in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
-- [Generic Types in Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [Stínování v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
+- [Obecné typy v Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
 - [Seznam typů](../../../visual-basic/language-reference/statements/type-list.md)

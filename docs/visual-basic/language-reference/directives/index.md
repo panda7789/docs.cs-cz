@@ -15,19 +15,19 @@ ms.locfileid: "74343806"
 ---
 # <a name="directives-visual-basic"></a>Direktivy (Visual Basic)
 
-The topics in this section document the Visual Basic source code compiler directives.  
+Témata v tomto oddílu dokumentují direktivy kompilátoru Visual Basic zdrojového kódu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
 
- [#Const Directive](../../../visual-basic/language-reference/directives/const-directive.md) -- Define a compiler constant  
+ [#Const direktiva](../../../visual-basic/language-reference/directives/const-directive.md) – definice konstanty kompilátoru  
   
- [#ExternalSource Directive](../../../visual-basic/language-reference/directives/externalsource-directive.md) -- Indicate a mapping between source lines and text external to the source  
+ [#ExternalSource direktiva](../../../visual-basic/language-reference/directives/externalsource-directive.md) – označuje mapování mezi zdrojovými řádky a textem externím ke zdroji.  
   
- [#If...Then...#Else Directives](../../../visual-basic/language-reference/directives/if-then-else-directives.md) -- Compile selected blocks of code  
+ [#If... Then... #Else – direktivy](../../../visual-basic/language-reference/directives/if-then-else-directives.md) – zkompiluje vybrané bloky kódu  
   
- [#Region Directive](../../../visual-basic/language-reference/directives/region-directive.md) -- Collapse and hide sections of code in the Visual Studio editor  
+ [#Region direktiva](../../../visual-basic/language-reference/directives/region-directive.md) – sbalení a skrytí oddílů kódu v editoru sady Visual Studio  
   
- **#Disable, #Enable** -- Disable and enable specific warnings for regions of code.  
+ **#Disable, #Enable** --zakázat a povolit specifická upozornění pro oblasti kódu.  
   
 ```vb  
 #Disable Warning BC42356 ' suppress warning about no awaits in this method  
@@ -37,7 +37,7 @@ The topics in this section document the Visual Basic source code compiler direct
 #Enable Warning BC42356  
 ```  
   
- You can disable and enable a comma-separated list of warning codes too.  
+ Můžete zakázat a povolit čárkami oddělený seznam kódů upozornění.  
   
 ## <a name="related-sections"></a>Související oddíly  
 

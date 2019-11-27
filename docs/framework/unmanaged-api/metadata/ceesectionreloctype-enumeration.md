@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74444154"
 ---
 # <a name="ceesectionreloctype-enumeration"></a>CeeSectionRelocType – výčet
-Provides values to influence the type of `reloc` instruction emitted in a call to [ICeeGen::AddSectionReloc](../../../../docs/framework/unmanaged-api/metadata/iceegen-addsectionreloc-method.md).  
+Poskytuje hodnoty pro ovlivnění typu `reloc` instrukci, která byla vyvolána voláním metody [ICeeGen:: AddSectionReloc –](../../../../docs/framework/unmanaged-api/metadata/iceegen-addsectionreloc-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -52,30 +52,30 @@ typedef enum  {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`srRelocAbsolute`|Generates only a section-relative `reloc`, sending nothing into a .reloc section.|  
-|`srRelocHighLow`|Generates a `reloc` for a pointer-sized location. This is transformed into BASED_HIGHLOW or BASED_DIR64 depending on the platform.|  
-|`srRelocHighAdj`|Generates a `reloc` for the top 16 bits of a 32-bit number, where the bottom 16 bits are included in the next word in the .reloc table.|  
-|`srRelocMapToken`|Generates a token map relocation, sending nothing into a .reloc section.|  
-|`srRelocRelative`|Indicates that the value is a relative address fixup.|  
-|`srRelocFilePos`|Generates only a section-relative `reloc`, sending nothing into a .reloc section. This `reloc` is relative to the file position of the section, not the section's virtual address.|  
-|`srRelocCodeRelative`|Specifies a code-relative address fixup.|  
-|`srRelocIA64Imm64`|Generates a `reloc` for a 64 bit address in an ia64 `movl` instruction.|  
-|`srRelocDir64`|Generates a `reloc` for a 64-bit address.|  
-|`srRelocIA64PcRel25`|Generate a `reloc` for a 25-bit PC-relative address in an ia64 `br.call` instruction.|  
-|`srRelocIA64PcRel64`|Generates a `reloc` for a 64-bit PC-relative address in an ia64 `brl.call` instruction.|  
-|`srRelocAbsoluteTagged`|Generates a 30-bit section-relative `reloc`, used for tagged pointer values.|  
-|`srRelocSentinel`|A sentinel value to help ensure any additions to this enum are reflected to the internal `reloc` name array.|  
-|`srNoBaseReloc`|Specifies not to emit a base `reloc`.|  
-|`srRelocPtr`|A value indicating that the pre-fixup contents of memory are a pointer rather than a section offset.|  
+|`srRelocAbsolute`|Generuje pouze `reloc`relativní k oddílu, který neodesílá nic do oddílu. přemístění.|  
+|`srRelocHighLow`|Vygeneruje `reloc` pro umístění velikosti ukazatele. To se transformuje na BASED_HIGHLOW nebo BASED_DIR64 v závislosti na platformě.|  
+|`srRelocHighAdj`|Vygeneruje `reloc` pro prvních 16 bitů 32ho čísla, kde jsou do následujícího slova v tabulce. přemístění zahrnuty dolní 16 bitů.|  
+|`srRelocMapToken`|Vygeneruje přemístění mapy tokenů a pošle nic do oddílu. přemístění.|  
+|`srRelocRelative`|Označuje, že hodnota je oprava relativní adresy.|  
+|`srRelocFilePos`|Generuje pouze `reloc`relativní k oddílu, který neodesílá nic do oddílu. přemístění. Tato `reloc` je relativní vzhledem k umístění souboru oddílu, nikoli k virtuální adrese oddílu.|  
+|`srRelocCodeRelative`|Určuje opravu adresy relativní ke kódu.|  
+|`srRelocIA64Imm64`|Vygeneruje `reloc` pro bitovou adresu 64 v instrukci ia64 `movl`.|  
+|`srRelocDir64`|Vygeneruje `reloc` pro 64ovou adresu.|  
+|`srRelocIA64PcRel25`|Vygeneruje `reloc` pro 25-bitovou adresu na počítači v instrukci ia64 `br.call`.|  
+|`srRelocIA64PcRel64`|Generuje `reloc` v instrukci ia64 `brl.call`, která je 64 pro POČÍTAČovou adresu.|  
+|`srRelocAbsoluteTagged`|Vygeneruje 64bitovou `reloc`relativní sekce, která se používá pro hodnoty s tagovanými ukazateli.|  
+|`srRelocSentinel`|Hodnota Sentinel, která vám umožní zajistit, aby se všechny dodatky k tomuto výčtu projevily v interním poli názvu `reloc`.|  
+|`srNoBaseReloc`|Určuje, že se nemá generovat základní `reloc`.|  
+|`srRelocPtr`|Hodnota, která označuje, že obsah předběžného opravy paměti je ukazatel, nikoli posun oddílu.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

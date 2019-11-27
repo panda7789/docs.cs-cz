@@ -16,21 +16,21 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350387"
 ---
 # <a name="auto-implemented-properties-visual-basic"></a>Automaticky implementované vlastnosti (Visual Basic)
-*Auto-implemented properties* enable you to quickly specify a property of a class without having to write code to `Get` and `Set` the property. When you write code for an auto-implemented property, the Visual Basic compiler automatically creates a private field to store the property variable in addition to creating the associated `Get` and `Set` procedures.  
+*Automaticky implementované vlastnosti* umožňují rychle zadat vlastnost třídy, aniž byste museli psát kód pro `Get` a `Set` vlastnost. Při psaní kódu pro automaticky implementovanou vlastnost automaticky vytvoří kompilátor Visual Basic privátní pole pro uložení proměnné vlastnosti kromě vytvoření přidružených `Get` a `Set` postupů.  
   
- With auto-implemented properties, a property, including a default value, can be declared in a single line. The following example shows three property declarations.  
+ S automaticky implementovanými vlastnostmi lze vlastnost, včetně výchozí hodnoty, deklarovat na jednom řádku. Následující příklad ukazuje tři deklarace vlastností.  
   
  [!code-vb[VbVbalrAutoImplementedProperties#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrautoimplementedproperties/vb/module1.vb#1)]  
   
- An auto-implemented property is equivalent to a property for which the property value is stored in a private field. The following code example shows an auto-implemented property.  
+ Automaticky implementovaná vlastnost je ekvivalentní vlastnosti, pro kterou je hodnota vlastnosti uložena v soukromém poli. Následující příklad kódu ukazuje automaticky implementovanou vlastnost.  
   
  [!code-vb[VbVbalrAutoImplementedProperties#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrautoimplementedproperties/vb/module1.vb#5)]  
   
- The following code example shows the equivalent code for the previous auto-implemented property example.  
+ Následující příklad kódu ukazuje ekvivalentní kód pro předchozí automaticky implementovaný příklad vlastnosti.  
   
  [!code-vb[VbVbalrAutoImplementedProperties#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrautoimplementedproperties/vb/module1.vb#2)]  
   
- The following code show implementing readonly properties:  
+ Následující kód ukazuje implementaci vlastností ReadOnly:  
   
 ```vb  
 Class Customer  
@@ -44,57 +44,57 @@ Class Customer
 End Class  
 ```  
   
- You can assign to the property with initialization expressions as shown in the example, or you can assign to the properties in the containing type’s constructor.  You can assign to the backing fields of readonly properties at any time.  
+ K vlastnosti můžete přiřadit výrazy inicializace, jak je znázorněno v příkladu, nebo můžete přiřadit vlastnosti v konstruktoru nadřazeného typu.  Můžete kdykoli přiřadit k zálohovaným polím vlastností ReadOnly.  
   
-## <a name="backing-field"></a>Backing Field  
- When you declare an auto-implemented property, Visual Basic automatically creates a hidden private field called the *backing field* to contain the property value. The backing field name is the auto-implemented property name preceded by an underscore (_). For example, if you declare an auto-implemented property named `ID`, the backing field is named `_ID`. If you include a member of your class that is also named `_ID`, you produce a naming conflict and Visual Basic reports a compiler error.  
+## <a name="backing-field"></a>Pole pro zálohování  
+ Pokud deklarujete automaticky implementovanou vlastnost, Visual Basic automaticky vytvoří skryté soukromé pole s názvem *pole zálohování* , které obsahuje hodnotu vlastnosti. Název záložního pole je název automaticky implementované vlastnosti předchází podtržítkem (_). Například pokud deklarujete automaticky implementovanou vlastnost s názvem `ID`, je pole pro zálohování pojmenované `_ID`. Pokud zahrnete člena vaší třídy, který je také pojmenován `_ID`, vytváříte konflikt názvů a Visual Basic ohlásí chybu kompilátoru.  
   
- The backing field also has the following characteristics:  
+ Pole pro zálohování má také následující vlastnosti:  
   
-- The access modifier for the backing field is always `Private`, even when the property itself has a different access level, such as `Public`.  
+- Modifikátor přístupu pro pole pro zálohování je vždycky `Private`, i když má vlastní vlastnost jinou úroveň přístupu, třeba `Public`.  
   
-- If the property is marked as `Shared`, the backing field also is shared.  
+- Je-li vlastnost označena jako `Shared`, je sdíleno také pole zálohování.  
   
-- Attributes specified for the property do not apply to the backing field.  
+- Atributy zadané pro vlastnost se nevztahují na pole pro zálohování.  
   
-- The backing field can be accessed from code within the class and from debugging tools such as the Watch window. However, the backing field does not show in an IntelliSense word completion list.  
+- K poli pro zálohování se dá dostat z kódu v rámci třídy a z ladicích nástrojů, jako je okno Kukátko. Pole zálohování se ale nezobrazí v seznamu dokončování slov IntelliSense.  
   
-## <a name="initializing-an-auto-implemented-property"></a>Initializing an Auto-Implemented Property  
- Any expression that can be used to initialize a field is valid for initializing an auto-implemented property. When you initialize an auto-implemented property, the expression is evaluated and passed to the `Set` procedure for the property. The following code examples show some auto-implemented properties that include initial values.  
+## <a name="initializing-an-auto-implemented-property"></a>Inicializuje se automaticky implementovaná vlastnost.  
+ Libovolný výraz, který lze použít k inicializaci pole, je platný pro inicializaci automaticky implementované vlastnosti. Při inicializaci automaticky implementované vlastnosti se výraz vyhodnotí a předává `Set` proceduře pro vlastnost. Následující příklady kódu ukazují některé automaticky implementované vlastnosti, které obsahují počáteční hodnoty.  
   
  [!code-vb[VbVbalrAutoImplementedProperties#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrautoimplementedproperties/vb/module1.vb#3)]  
   
- You cannot initialize an auto-implemented property that is a member of an `Interface`, or one that is marked `MustOverride`.  
+ Nelze inicializovat automaticky implementovanou vlastnost, která je členem `Interface`, nebo jinou, která je označena `MustOverride`.  
   
- When you declare an auto-implemented property as a member of a `Structure`, you can only initialize the auto-implemented property if it is marked as `Shared`.  
+ Pokud deklarujete automaticky implementovanou vlastnost jako člena `Structure`, lze pouze inicializovat vlastnost automaticky implementované, pokud je označena jako `Shared`.  
   
- When you declare an auto-implemented property as an array, you cannot specify explicit array bounds. However, you can supply a value by using an array initializer, as shown in the following examples.  
+ Pokud deklarujete automaticky implementovanou vlastnost jako pole, nemůžete zadat explicitní meze pole. Můžete však dodat hodnotu pomocí inicializátoru pole, jak je znázorněno v následujících příkladech.  
   
  [!code-vb[VbVbalrAutoImplementedProperties#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrautoimplementedproperties/vb/module1.vb#4)]  
   
-## <a name="property-definitions-that-require-standard-syntax"></a>Property Definitions That Require Standard Syntax  
- Auto-implemented properties are convenient and support many programming scenarios. However, there are situations in which you cannot use an auto-implemented property and must instead use standard, or *expanded*, property syntax.  
+## <a name="property-definitions-that-require-standard-syntax"></a>Definice vlastností, které vyžadují standardní syntaxi  
+ Automaticky implementované vlastnosti jsou pohodlné a podporují řadu programovacích scénářů. Existují však situace, kdy nemůžete použít automaticky implementovanou vlastnost a místo toho je třeba použít standardní nebo *rozbalenou*syntaxi vlastností.  
   
- You have to use expanded property-definition syntax if you want to do any one of the following:  
+ Pokud chcete provést některou z následujících akcí, je nutné použít rozšířenou syntaxi definice vlastností:  
   
-- Add code to the `Get` or `Set` procedure of a property, such as code to validate incoming values in the `Set` procedure. For example, you might want to verify that a string that represents a telephone number contains the required number of numerals before setting the property value.  
+- Přidejte kód do `Get` nebo `Set` postupu vlastnosti, jako je například kód pro ověření příchozích hodnot v `Set` proceduře. Například může být vhodné ověřit, že řetězec představující telefonní číslo obsahuje požadovaný počet číslic před nastavením hodnoty vlastnosti.  
   
-- Specify different accessibility for the `Get` and `Set` procedure. For example, you might want to make the `Set` procedure `Private` and the `Get` procedure `Public`.  
+- Zadejte pro `Get` a `Set` postup jinou přístupnost. Například můžete chtít provést `Set` proceduru `Private` a `Get` procedury `Public`.  
   
-- Create properties that are `WriteOnly`.  
+- Vytvořte vlastnosti, které jsou `WriteOnly`.  
   
-- Use parameterized properties (including `Default` properties). You must declare an expanded property in order to specify a parameter for the property, or to specify additional parameters for the `Set` procedure.  
+- Použijte parametrizované vlastnosti (včetně `Default` vlastností). Chcete-li určit parametr pro vlastnost nebo zadat další parametry pro `Set` proceduru, je nutné deklarovat rozšířenou vlastnost.  
   
-- Place an attribute on the backing field, or change the access level of the backing field.  
+- Umístěte atribut do pole zálohování nebo změňte úroveň přístupu v poli pro zálohování.  
   
-- Provide XML comments for the backing field.  
+- Zadejte komentáře XML pro pole zálohování.  
   
-## <a name="expanding-an-auto-implemented-property"></a>Expanding an Auto-Implemented Property  
- If you have to convert an auto-implemented property to an expanded property that contains a `Get` or `Set` procedure, the Visual Basic Code Editor can automatically generate the `Get` and `Set` procedures and `End Property` statement for the property. The code is generated if you put the cursor on a blank line following the `Property` statement, type a `G` (for `Get`) or an `S` (for `Set`) and press ENTER. The Visual Basic Code Editor automatically generates the `Get` or `Set` procedure for read-only and write-only properties when you press ENTER at the end of a `Property` statement.  
+## <a name="expanding-an-auto-implemented-property"></a>Rozšíření automaticky implementované vlastnosti  
+ Pokud je nutné převést automaticky implementovanou vlastnost na rozšířenou vlastnost obsahující `Get` nebo `Set` postup, Editor kódu Visual Basic může automaticky generovat `Get` a `Set` postupy a příkaz `End Property` pro vlastnost. Kód je vygenerován při vložení kurzoru do prázdného řádku za příkazem `Property`, zadejte `G` (pro `Get`) nebo `S` (pro `Set`) a stiskněte klávesu ENTER. Editor kódu Visual Basic automaticky generuje `Get` nebo `Set` procedury pro vlastnosti jen pro čtení a jen pro zápis, když stisknete klávesu ENTER na konci `Property`ho příkazu.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [How to: Declare and Call a Default Property in Visual Basic](./how-to-declare-and-call-a-default-property.md)
+- [Postupy: deklarace a volání výchozí vlastnosti v Visual Basic](./how-to-declare-and-call-a-default-property.md)
 - [Postupy: Deklarace vlastnosti se smíšenými úrovněmi přístupu](./how-to-declare-a-property-with-mixed-access-levels.md)
 - [Příkaz Property](../../../../visual-basic/language-reference/statements/property-statement.md)
 - [ReadOnly](../../../../visual-basic/language-reference/modifiers/readonly.md)

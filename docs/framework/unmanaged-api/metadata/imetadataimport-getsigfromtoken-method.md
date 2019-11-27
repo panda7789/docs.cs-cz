@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436859"
 ---
 # <a name="imetadataimportgetsigfromtoken-method"></a>IMetaDataImport::GetSigFromToken – metoda
-Gets the binary metadata signature associated with the specified token.  
+Získá binární podpis metadat přidružených k zadanému tokenu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,22 +37,22 @@ HRESULT GetSigFromToken (
   
 ## <a name="parameters"></a>Parametry  
  `mdSig`  
- [in] The token to return the binary metadata signature for.  
+ pro Token, pro který se má vrátit binární podpis metadat.  
   
  `ppvSig`  
- [out] A pointer to the returned metadata signature.  
+ mimo Ukazatel na vrácenou signaturu metadat.  
   
  `pcbSig`  
- [out] The size in bytes of the binary metadata signature.  
+ mimo Velikost v bajtech binárního podpisu metadat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

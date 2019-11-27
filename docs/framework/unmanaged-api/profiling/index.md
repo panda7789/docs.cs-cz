@@ -15,22 +15,22 @@ ms.locfileid: "74447537"
 ---
 # <a name="profiling-unmanaged-api-reference"></a>Profilace (referenční dokumentace nespravovaného rozhraní API)
 
-The profiling API enables a profiler to monitor a program's execution by the common language runtime (CLR).
+Rozhraní API profilování umožňuje profileru monitorovat provádění programu modulem CLR (Common Language Runtime).
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
- [Profiling Overview](../../../../docs/framework/unmanaged-api/profiling/profiling-overview.md) Describes the services and interfaces that the CLR provides to support profiling in the .NET Framework environment.
+ [Přehled profilace](../../../../docs/framework/unmanaged-api/profiling/profiling-overview.md) Popisuje služby a rozhraní, které modul CLR poskytuje pro podporu profilování v prostředí .NET Framework.
 
- [Profiling Interfaces](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md) Describes the unmanaged interfaces that the profiling API uses.
+ [Rozhraní profilace](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md) Popisuje nespravovaná rozhraní, která používá profilování API.
 
- [Setting Up a Profiling Environment](../../../../docs/framework/unmanaged-api/profiling/setting-up-a-profiling-environment.md) Describes the steps you must take to profile a .NET Framework application.
+ [Nastavení prostředí profilace](../../../../docs/framework/unmanaged-api/profiling/setting-up-a-profiling-environment.md) Popisuje kroky, které je třeba provést při profilování aplikace .NET Framework.
 
- [CLR Profilers and Windows Store Apps](../../../../docs/framework/unmanaged-api/profiling/clr-profilers-and-windows-store-apps.md) Discusses how to port diagnostic tools that consume the CLR Profiling API to work successfully with Windows Store apps.
+ [Profilery CLR a aplikace pro Windows Store](../../../../docs/framework/unmanaged-api/profiling/clr-profilers-and-windows-store-apps.md) V této části najdete popis postupu pro diagnostické nástroje, které využívají rozhraní API profilování CLR pro práci s aplikacemi pro Windows Store.
 
- [CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](../../../../docs/framework/unmanaged-api/profiling/corprof-e-unsupported-call-sequence-hresult.md) Documents the conditions under which a method call returns the `CORPROF_E_UNSUPPORTED_CALL_SEQUENCE` HRESULT.
+ [CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](../../../../docs/framework/unmanaged-api/profiling/corprof-e-unsupported-call-sequence-hresult.md) Dokumentuje podmínky, za kterých volání metody vrací `CORPROF_E_UNSUPPORTED_CALL_SEQUENCE` HRESULT.
 
- [Profiling Global Static Functions](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md) Describes the unmanaged global static functions that the profiling API uses.
+ [Profilace globálních statických funkcí](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md) Popisuje nespravované globální statické funkce, které používá profilování API.
 
- [Profiling Enumerations](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md) Describes the unmanaged enumerations that the profiling API uses.
+ [Vytváření profilů výčtů](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md) Popisuje nespravované výčty, které používá profilování API.
 
- [Profiling Structures](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md) Describes the unmanaged structures that the profiling API uses.
+ [Struktury profilování](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md) Popisuje nespravované struktury, které používá profilování API.

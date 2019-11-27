@@ -17,25 +17,25 @@ ms.locfileid: "74353935"
 ---
 # <a name="control-flow-in-visual-basic"></a>Tok řízení v jazyce Visual Basic
 
-Left unregulated, a program proceeds through its statements from beginning to end. Some very simple programs can be written with only this unidirectional flow. However, much of the power and utility of any programming language comes from the ability to change execution order with control statements and loops.
+Ponecháno neřízený program pokračuje prostřednictvím svých příkazů od začátku do konce. Některé velmi jednoduché programy lze zapisovat pouze pomocí tohoto jednosměrného toku. Mnohé z výkonu a nástrojů libovolného programovacího jazyka však přicházejí z možnosti měnit pořadí provádění pomocí řídicích příkazů a smyček.
 
- Control structures allow you to regulate the flow of your program's execution. Using control structures, you can write Visual Basic code that makes decisions or that repeats actions. Other control structures let you guarantee disposal of a resource or run a series of statements on the same object reference.
+ Řídicí struktury umožňují regulovat tok provádění programu. Pomocí řídicích struktur můžete napsat Visual Basic kód, který provádí rozhodnutí nebo který opakuje akce. Jiné řídicí struktury umožňují zaručit odstranění prostředku nebo spustit sérii příkazů na stejném odkazu na objekt.
   
 ## <a name="in-this-section"></a>V tomto oddílu
 
  [Rozhodovací struktury](decision-structures.md)  
- Describes control structures used for branching.
+ Popisuje řídicí struktury používané pro větvení.
 
  [Struktury smyčky](loop-structures.md)  
- Discusses control structures used to repeat processes.
+ Popisuje řídicí struktury používané pro opakování procesů.
 
  [Ostatní řídicí struktury](other-control-structures.md)  
- Describes control structures used for resource disposal and object access.
+ Popisuje řídicí struktury používané pro odstraňování prostředků a přístup k objektům.
 
  [Vnořené řídicí struktury](nested-control-structures.md)  
- Covers control structures inside other control structures.
+ Pokrývá řídicí struktury uvnitř jiných řídicích struktur.
 
 ## <a name="related-sections"></a>Související oddíly
 
  [Souhrn toku řízení](../../../language-reference/keywords/control-flow-summary.md)  
- Provides links to language reference pages on this subject.
+ Obsahuje odkazy na referenční stránky jazyků v tomto předmětu.

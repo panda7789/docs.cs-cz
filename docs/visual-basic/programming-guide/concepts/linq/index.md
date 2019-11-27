@@ -9,30 +9,30 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344417"
 ---
-# <a name="language-integrated-query-linq-visual-basic"></a>Language-Integrated Query (LINQ) (Visual Basic)
-LINQ is a set of features that extends powerful query capabilities to the language syntax of Visual Basic. LINQ introduces standard, easily-learned patterns for querying and updating data, and the technology can be extended to support potentially any kind of data store.  The .NET Framework includes LINQ provider assemblies that enable the use of LINQ with .NET Framework collections, SQL Server databases, ADO.NET Datasets, and XML documents.  
+# <a name="language-integrated-query-linq-visual-basic"></a>LINQ (Language-Integrated Query) (Visual Basic)
+LINQ je sada funkcí, které rozšiřují výkonné možnosti dotazů na jazykovou syntaxi Visual Basic. LINQ zavádí standardní, snadno naučené vzory pro dotazování a aktualizaci dat a tato technologie se dá rozšířit tak, aby podporovala potenciálně libovolný druh úložiště dat.  .NET Framework obsahuje sestavení poskytovatele LINQ, která umožňují použití LINQ s kolekcemi .NET Framework, SQL Server databáze, ADO.NET datové sady a dokumenty XML.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Introduction to LINQ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-linq.md)  
- Provides a general introduction to the kinds of applications that you can write and the kinds of problems that you can solve with LINQ queries.  
+ [Úvod do LINQ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-linq.md)  
+ Poskytuje obecný úvod k typům aplikací, které můžete psát, a typů problémů, které lze vyřešit pomocí dotazů LINQ.  
   
- [Getting Started with LINQ in Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)  
- Describes the basic facts you should know in order to understand the Visual Basic documentation and samples.  
+ [Začínáme pomocí LINQ v Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)  
+ V této části najdete popis základních faktů, které byste měli znát, abyste porozuměli Visual Basic dokumentaci a ukázek.  
   
- [Visual Studio IDE and Tools Support for LINQ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/visual-studio-ide-and-tools-support-for-linq.md)  
- Describes Visual Studio's Object Relational Designer, debugger support for queries, and other IDE features related to LINQ.  
+ [Podpora rozhraní IDE a nástrojů sady Visual Studio pro LINQ (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/visual-studio-ide-and-tools-support-for-linq.md)  
+ Popisuje Návrhář relací objektů sady Visual Studio, podporu ladicího programu pro dotazy a další funkce rozhraní IDE týkající se LINQ.  
   
- [Standard Query Operators Overview (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)  
+ [Přehled standardních operátorů dotazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)  
  Poskytuje úvod do standardních operátorů pro dotazování. Také poskytuje odkazy na témata obsahující informace o jednotlivých typech dotazovacích operací.  
   
  [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)  
- Includes links to topics that explain how to use LINQ to Objects to access in-memory data structures,  
+ Obsahuje odkazy na témata, která vysvětlují, jak používat LINQ to Objects k přístupu k datovým strukturám v paměti.  
   
  [LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md)  
- Includes links to topics that explain how to use LINQ to XML, which provides the in-memory document modification capabilities of the Document Object Model (DOM), and supports LINQ query expressions.  
+ Obsahuje odkazy na témata, která vysvětlují způsob použití LINQ to XML, který poskytuje možnosti úprav dokumentů v paměti model DOM (Document Object Model) (DOM) a podporuje výrazy dotazů LINQ.  
   
  [LINQ to ADO.NET (stránka portálu)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-adonet-portal-page.md)  
- Provides an entry point for documentation about LINQ to DataSet, LINQ to SQL, and LINQ to Entities. LINQ to DataSet enables you to build richer query capabilities into <xref:System.Data.DataSet> by using the same query functionality that is available for other data sources. LINQ to SQL provides a run-time infrastructure for managing relational data as objects. LINQ to Entities enables developers to write queries against the Entity Framework conceptual model by using C#.  
+ Poskytuje vstupní bod pro dokumentaci týkající se LINQ to DataSet, LINQ to SQL a LINQ to Entities. LINQ to DataSet umožňuje sestavovat bohatší možnosti dotazování do <xref:System.Data.DataSet> pomocí stejných funkcí dotazů, které jsou k dispozici pro jiné zdroje dat. LINQ to SQL poskytuje běhovou infrastrukturu pro správu relačních dat jako objektů. LINQ to Entities umožňuje vývojářům psát dotazy pro Entity Framework koncepční model pomocí C#.  
   
  [Povolení zdroje dat pro dotazy LINQ](../../../../visual-basic/programming-guide/concepts/linq/enabling-a-data-source-for-linq-querying.md)  
- Provides an introduction to custom LINQ providers, LINQ expression trees, and other ways to extend LINQ.
+ Poskytuje Úvod k vlastním poskytovatelům LINQ, stromům výrazů LINQ a jiným způsobům rozšiřování LINQ.

@@ -15,13 +15,13 @@ ms.locfileid: "74351894"
 ---
 # <a name="how-to-assign-one-array-to-another-array-visual-basic"></a>Postupy: Přiřazení jednoho pole ke druhému (Visual Basic)
 
-Because arrays are objects, you can use them in assignment statements like other object types. An array variable holds a pointer to the data constituting the array elements and the rank and length information, and an assignment copies only this pointer.
+Vzhledem k tomu, že pole jsou objekty, můžete je použít v příkazech přiřazení jako jiné typy objektů. Proměnná pole obsahuje ukazatel na data tvořící prvky pole a informace o rozměrech a délce a přiřazení kopíruje pouze tento ukazatel.
 
-### <a name="to-assign-one-array-to-another-array"></a>To assign one array to another array
+### <a name="to-assign-one-array-to-another-array"></a>Přiřazení jednoho pole k jinému poli
 
-1. Ensure that the two arrays have the same rank (number of dimensions) and compatible element data types.
+1. Zajistěte, aby obě pole měly stejný rozměr (počet rozměrů) a kompatibilní datové typy prvků.
 
-2. Use a standard assignment statement to assign the source array to the destination array. Do not follow either array name with parentheses.
+2. Použijte standardní příkaz přiřazení pro přiřazení zdrojového pole k cílovému poli. Neprovádějte žádné názvy polí pomocí závorek.
 
     ```vb
     Dim formArray() As System.Windows.Forms.Form
@@ -29,19 +29,19 @@ Because arrays are objects, you can use them in assignment statements like other
     controlArray = formArray
     ```
 
-When you assign one array to another, the following rules apply:
+Když přiřadíte jedno pole k druhému, platí následující pravidla:
 
-- **Equal Ranks.** The rank (number of dimensions) of the destination array must be the same as that of the source array.
+- **Stejné pořadí.** Rozměr (počet rozměrů) cílového pole musí být stejný jako zdroj pole.
 
-  Provided the ranks of the two arrays are equal, the dimensions do not need to be equal. The number of elements in a given dimension can change during assignment.
+  Za předpokladu, že je pořadí dvou polí stejné, dimenze nemusí být stejné. Počet prvků v dané dimenzi se může během přiřazení změnit.
 
-- **Element Types.** Either both arrays must have *reference type* elements or both arrays must have *value type* elements. For more information, see [Value Types and Reference Types](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md).
+- **Typy prvků.** Obě pole musí mít elementy *typu odkazu* , nebo obě pole musí mít elementy *typu hodnoty* . Další informace naleznete v tématu [typy hodnot a typy odkazů](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md).
 
-  - If both arrays have value type elements, the element data types must be exactly the same. The only exception to this is that you can assign an array of `Enum` elements to an array of the base type of that `Enum`.
+  - Pokud mají obě pole elementy typu hodnoty, musí být datové typy elementu přesně stejné. Jedinou výjimkou je, že můžete přiřadit pole `Enum` prvků k poli základního typu, který `Enum`.
 
-  - If both arrays have reference type elements, the source element type must derive from the destination element type. When this is the case, the two arrays have the same inheritance relationship as their elements. This is called *array covariance*.
+  - Pokud mají obě pole elementy typu odkazu, typ zdrojového elementu musí být odvozen od typu cílového elementu. V takovém případě mají dvě pole stejný vztah dědičnosti jako jejich prvky. Tato metoda se nazývá *kovariance pole*.
 
-The compiler reports an error if the above rules are violated, for example if the data types are not compatible or the ranks are unequal. You can add error handling to your code to make sure that the arrays are compatible before attempting an assignment. You can also use the [TryCast Operator](../../../../visual-basic/language-reference/operators/trycast-operator.md) keyword if you want to avoid throwing an exception.
+Kompilátor ohlásí chybu, pokud jsou uvedená pravidla porušena, například pokud nejsou datové typy kompatibilní nebo pořadí nerovnosti. Do kódu můžete přidat zpracování chyb, abyste se ujistili, že jsou pole kompatibilní před pokusem o přiřazení. Klíčové slovo [operátoru TryCast](../../../../visual-basic/language-reference/operators/trycast-operator.md) můžete použít také v případě, že chcete zabránit vyvolání výjimky.
 
 ## <a name="see-also"></a>Viz také:
 

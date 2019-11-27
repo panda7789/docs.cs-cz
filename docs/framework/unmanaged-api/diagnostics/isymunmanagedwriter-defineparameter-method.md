@@ -23,9 +23,9 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74428005"
 ---
 # <a name="isymunmanagedwriterdefineparameter-method"></a>ISymUnmanagedWriter::DefineParameter – metoda
-Defines a single parameter in the current method. The parameter type is taken from the parameter's position (sequence) within the method's signature.  
+Definuje jeden parametr v aktuální metodě. Typ parametru je přijímán z pozice parametru (Sequence) v rámci signatury metody.  
   
- If parameters are defined in the metadata for a given method, you do not have to define them again by using this method. The symbol readers must check the normal metadata for the parameters before checking the symbol store.  
+ Pokud jsou parametry definovány v metadatech pro danou metodu, nemusíte je znovu definovat pomocí této metody. Čtečky symbolů musí před kontrolou úložiště symbolů zkontrolovat běžná metadata pro parametry.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,31 +42,31 @@ HRESULT DefineParameter(
   
 ## <a name="parameters"></a>Parametry  
  `name`  
- [in] The parameter name.  
+ pro Název parametru.  
   
  `attributes`  
- [in] The parameter attributes.  
+ pro Atributy parametru.  
   
  `sequence`  
- [in] The parameter signature.  
+ pro Signatura parametru  
   
  `addrKind`  
- [in] The address type.  
+ pro Typ adresy.  
   
  `addr1`  
- [in] The first address for the parameter specification.  
+ pro První adresa specifikace parametru.  
   
  `addr2`  
- [in] The second address for the parameter specification.  
+ pro Druhá adresa specifikace parametru.  
   
  `addr3`  
- [in] The third address for the parameter specification.  
+ pro Třetí adresa specifikace parametru.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

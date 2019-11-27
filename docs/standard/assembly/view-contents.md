@@ -1,5 +1,5 @@
 ---
-title: 'How to: View assembly contents'
+title: 'Postupy: zobrazení obsahu sestavení'
 ms.date: 08/20/2019
 helpviewer_keywords:
 - assembly manifest, viewing information
@@ -21,21 +21,21 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74347055"
 ---
-# <a name="how-to-view-assembly-contents"></a>How to: View assembly contents
+# <a name="how-to-view-assembly-contents"></a>Postupy: zobrazení obsahu sestavení
 
-You can use the [Ildasm.exe (IL Disassembler)](../../framework/tools/ildasm-exe-il-disassembler.md) to view Microsoft intermediate language (MSIL) information in a file. If the file being examined is an assembly, this information can include the assembly's attributes and references to other modules and assemblies. This information can be helpful in determining whether a file is an assembly or part of an assembly and whether the file has references to other modules or assemblies.
+K zobrazení informací o jazyce MSIL (Microsoft Intermediate Language) v souboru můžete použít nástroj [Ildasm. exe (IL Disassembler)](../../framework/tools/ildasm-exe-il-disassembler.md) . Pokud je testovaný soubor sestavení, mohou tyto informace obsahovat atributy sestavení a odkazy na jiné moduly a sestavení. Tyto informace mohou být užitečné při určování, zda je soubor sestavením nebo součástí sestavení a zda má soubor odkazy na jiné moduly nebo sestavení.
 
-To display the contents of an assembly using *Ildasm.exe*, enter **ildasm \<assembly name>** at a command prompt. For example, the following command disassembles the *Hello.exe* assembly.
+Chcete-li zobrazit obsah sestavení pomocí programu *Ildasm. exe*, zadejte **Ildasm \<název sestavení >** na příkazovém řádku. Například následující příkaz zpětně přeloží sestavení *Hello. exe* .
 
 ```cmd
 ildasm Hello.exe
 ```
 
-To view assembly manifest information, double-click the **Manifest** icon in the MSIL Disassembler window.
+Chcete-li zobrazit informace o manifestu sestavení, dvakrát klikněte na ikonu **manifestu** v okně MSIL Disassembler.
 
 ## <a name="example"></a>Příklad
 
-The following example starts with a basic "Hello World" program. After compiling the program, use *Ildasm.exe* to disassemble the *Hello.exe* assembly and view the assembly manifest.
+Následující příklad začíná základním programem "Hello World". Po zkompilování programu použijte program *Ildasm. exe* pro zpětný překlad sestavení *Hello. exe* a zobrazení manifestu sestavení.
 
 ```cpp
 using namespace System;
@@ -75,7 +75,7 @@ Class MainApp
 End Class
 ```
 
-Running the command *ildasm.exe* on the *Hello.exe* assembly and double-clicking the **Manifest** icon in the MSIL Disassembler window produces the following output:
+Spuštěním příkazu *Ildasm. exe* v sestavení *Hello. exe* a dvojím kliknutím na ikonu **manifestu** v okně MSIL Disassembler se vytvoří následující výstup:
 
 ```output
 // Metadata version: v4.0.30319
@@ -102,27 +102,27 @@ Running the command *ildasm.exe* on the *Hello.exe* assembly and double-clicking
 // Image base: 0x00600000
 ```
 
-The following table describes each directive in the assembly manifest of the *Hello.exe* assembly used in the example:
+Následující tabulka popisuje každou direktivu v manifestu sestavení sestavení *Hello. exe* používaného v příkladu:
 
-|Directive|Popis|
+|– Direktiva|Popis|
 |---------------|-----------------|
-|**.assembly extern \<assembly name>**|Specifies another assembly that contains items referenced by the current module (in this example, `mscorlib`).|
-|**.publickeytoken \<token>**|Specifies the token of the actual key of the referenced assembly.|
-|**.ver \<version number>**|Specifies the version number of the referenced assembly.|
-|**.assembly \<assembly name>**|Specifies the assembly name.|
-|**.hash algorithm \<int32 value>**|Specifies the hash algorithm used.|
-|**.ver \<version number>**|Specifies the version number of the assembly.|
-|**.module \<file name>**|Specifies the name of the modules that make up the assembly. In this example, the assembly consists of only one file.|
-|**.subsystem \<value>**|Specifies the application environment required for the program. In this example, the value 3 indicates that this executable is run from a console.|
-|**.corflags**|Currently a reserved field in the metadata.|
+|**. Assembly název sestavení extern \<>**|Určuje jiné sestavení, které obsahuje položky, na které se odkazuje aktuální modul (v tomto příkladu `mscorlib`).|
+|**\<tokenu. PublicKeyToken >**|Určuje token skutečného klíče odkazovaného sestavení.|
+|**. ver \<číslo verze >**|Určuje číslo verze odkazovaného sestavení.|
+|**název sestavení \<sestavení >**|Určuje název sestavení.|
+|**. hash algoritmus \<hodnotu Int32 >**|Určuje použitý algoritmus hash.|
+|**. ver \<číslo verze >**|Určuje číslo verze sestavení.|
+|**. Module \<název souboru >**|Určuje název modulů, které tvoří sestavení. V tomto příkladu se sestavení skládá pouze z jednoho souboru.|
+|**hodnota \<. subsystému >**|Určuje prostředí aplikace vyžadované pro program. V tomto příkladu hodnota 3 znamená, že se tento spustitelný soubor spustí z konzoly.|
+|**. corflags**|Aktuálně rezervované pole v metadatech.|
 
-An assembly manifest can contain a number of different directives, depending on the contents of the assembly. For an extensive list of the directives in the assembly manifest, see the Ecma documentation, especially "Partition II: Metadata Definition and Semantics" and "Partition III: CIL Instruction Set":
+Manifest sestavení může obsahovat několik různých direktiv v závislosti na obsahu sestavení. Rozsáhlý seznam direktiv v manifestu sestavení naleznete v dokumentaci ECMA, zejména v oddílu oddíl II: definice metadat a sémantika a oddíl III: sada instrukcí CIL:
 
-- [ECMA C# and Common Language Infrastructure standards](/dotnet/standard/components#applicable-standards)
-- [Standard ECMA-335 - Common Language Infrastructure (CLI)](http://www.ecma-international.org/publications/standards/Ecma-335.htm)
+- [ECMA C# a Common Language Infrastructure standardy](/dotnet/standard/components#applicable-standards)
+- [Standard ECMA-335-Common Language Infrastructure (CLI)](http://www.ecma-international.org/publications/standards/Ecma-335.htm)
 
 ## <a name="see-also"></a>Viz také:
 
-- [Application domains and assemblies](../../framework/app-domains/application-domains.md#application-domains-and-assemblies)
-- [Application domains and assemblies how-to topics](../../framework/app-domains/application-domains-and-assemblies-how-to-topics.md)
+- [Aplikační domény a sestavení](../../framework/app-domains/application-domains.md#application-domains-and-assemblies)
+- [Témata s návody k doménám a sestavením aplikací](../../framework/app-domains/application-domains-and-assemblies-how-to-topics.md)
 - [Ildasm.exe (IL Disassembler)](../../framework/tools/ildasm-exe-il-disassembler.md)

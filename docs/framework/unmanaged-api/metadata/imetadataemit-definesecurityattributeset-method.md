@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74428243"
 ---
 # <a name="imetadataemitdefinesecurityattributeset-method"></a>IMetaDataEmit::DefineSecurityAttributeSet – metoda
-Creates a set of security permissions to attach to the object referenced by the specified token.  
+Vytvoří sadu oprávnění zabezpečení pro připojení k objektu, na který odkazuje zadaný token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,25 +38,25 @@ HRESULT DefineSecurityAttributeSet (
   
 ## <a name="parameters"></a>Parametry  
  `tkObj`  
- [in] The token to which the security information is attached.  
+ pro Token, ke kterému jsou připojeny informace o zabezpečení.  
   
  `rSecAttrs`  
- [in] An array of `COR_SECATTR` structures.  
+ pro Pole struktur `COR_SECATTR`.  
   
  `cSecAttrs`  
- [in] The number of elements in `rSecAttrs`.  
+ pro Počet prvků v `rSecAttrs`.  
   
  `pulErrorAttr`  
- [out] If the method fails, specifies the index in `rSecAttrs` of the element that caused the problem.  
+ mimo Pokud se metoda nezdařila, určuje index v `rSecAttrs` prvku, který způsobil problém.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

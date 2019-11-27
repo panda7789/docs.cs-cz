@@ -36,7 +36,7 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
 |-|-|-|  
 |Normální|CommonStates|Výchozí stav.|  
 |Zakázáno|CommonStates|<xref:System.Windows.Controls.DatePicker> je zakázaný.|  
-|Platné|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
+|Platný|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
 |InvalidFocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
 |InvalidUnfocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
   
@@ -61,7 +61,7 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
 |Bez fokusu|FocusStates|Ovládací prvek nemá fokus.|  
 |Vodoznakem|WatermarkStates|Ovládací prvek zobrazí svůj úvodní text.  <xref:System.Windows.Controls.Primitives.DatePickerTextBox> je ve stavu, kdy uživatel nezadal text nebo datum nevybralo.|  
 |Nevodoznak|WatermarkStates|Uživatel zadal text do <xref:System.Windows.Controls.Primitives.DatePickerTextBox> nebo vybral datum v <xref:System.Windows.Controls.DatePicker>.|  
-|Platné|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
+|Platný|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
 |InvalidFocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` a ovládací prvek má fokus.|  
 |InvalidUnfocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` a ovládací prvek nemá fokus.|  
   

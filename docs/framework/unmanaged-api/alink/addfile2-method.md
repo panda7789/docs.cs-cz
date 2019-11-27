@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446674"
 ---
 # <a name="addfile2-method"></a>AddFile2 – metoda
-Adds files to the assembly. Can also be used to create unbound modules.  
+Přidá soubory do sestavení. Lze také použít k vytvoření nevázaných modulů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,28 +39,28 @@ HRESULT AddFile2(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID for the assembly to which the file is added.  
+ ID pro sestavení, ke kterému je soubor přidán.  
   
  `pszFilename`  
- Name of the file to be added.  
+ Název souboru, který se má přidat  
   
  `dwFlags`  
- COM+ `FileDef` flags such as `ffContainsNoMetaData` and `ffWriteable`. `dwFlags` is passed to [DefineFile Method](../metadata/imetadataassemblyemit-definefile-method.md).  
+ COM+ `FileDef` příznaky jako `ffContainsNoMetaData` a `ffWriteable`. `dwFlags` se předává do [metody DefineFile –](../metadata/imetadataassemblyemit-definefile-method.md).  
   
  `pEmitter`  
- Interface to [IMetaDataEmit2 Interface](../metadata/imetadataemit2-interface.md) interface.  
+ Rozhraní k rozhraní [IMetaDataEmit2 Interface](../metadata/imetadataemit2-interface.md) .  
   
  `pFileToken`  
- Receives ID for the file being added.  
+ Získá ID přidávaného souboru.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Returns S_OK if the method succeeds.  
+ Vrátí S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Requires alink.h.  
+ Vyžaduje ALink. h.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink2 – rozhraní](ialink2-interface.md)
 - [IALink – rozhraní](ialink-interface.md)
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)

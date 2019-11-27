@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437777"
 ---
 # <a name="imetadataimportgetclasslayout-method"></a>IMetaDataImport::GetClassLayout – metoda
-Gets layout information for the class referenced by the specified TypeDef token.  
+Získá informace o rozložení pro třídu, na kterou odkazuje zadaný token TypeDef.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,31 +40,31 @@ HRESULT GetClassLayout  (
   
 ## <a name="parameters"></a>Parametry  
  `td`  
- [in] The TypeDef token for the class with the layout to return.  
+ pro Token TypeDef pro třídu s rozložením, které má být vráceno.  
   
  `pdwPackSize`  
- [out] One of the values 1, 2, 4, 8, or 16, representing the pack size of the class.  
+ mimo Jedna z hodnot 1, 2, 4, 8 nebo 16 představující velikost balíčku třídy.  
   
  `rFieldOffset`  
- [out] An array of [COR_FIELD_OFFSET](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md) values.  
+ mimo Pole hodnot [COR_FIELD_OFFSET](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md) .  
   
  `cMax`  
- [in] The maximum size of the `rFieldOffset` array.  
+ pro Maximální velikost `rFieldOffset` pole  
   
  `pcFieldOffset`  
- [out] The number of elements returned in `rFieldOffset`.  
+ mimo Počet elementů vrácených v `rFieldOffset`.  
   
  `pulClassSize`  
- [out] The size in bytes of the class represented by `td`.  
+ mimo Velikost v bajtech třídy reprezentované `td`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

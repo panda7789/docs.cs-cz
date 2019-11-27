@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74426656"
 ---
 # <a name="imetadatatablesgettableinfo-method"></a>IMetaDataTables::GetTableInfo – metoda
-Gets the name, row size, number of rows, number of columns, and key column index of the specified table.  
+Získá název, velikost řádku, počet řádků, počet sloupců a klíčový index sloupce zadané tabulky.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,31 +40,31 @@ HRESULT GetTableInfo (
   
 ## <a name="parameters"></a>Parametry  
  `ixTbl`  
- [in] The identifier of the table whose properties to return.  
+ pro Identifikátor tabulky, jejíž vlastnosti se mají vrátit  
   
  `pcbRow`  
- [out] A pointer to the size, in bytes, of a table row.  
+ mimo Ukazatel na velikost řádku tabulky v bajtech.  
   
  `pcRows`  
- [out] A pointer to the number of rows in the table.  
+ mimo Ukazatel na počet řádků v tabulce.  
   
  `pcCols`  
- [out] A pointer to the number of columns in the table.  
+ mimo Ukazatel na počet sloupců v tabulce.  
   
  `piKey`  
- [out] A pointer to the index of the key column, or -1 if the table has no key column.  
+ mimo Ukazatel na index sloupce klíče nebo hodnotu-1, pokud tabulka neobsahuje žádný klíčový sloupec.  
   
  `ppName`  
- [out] A pointer to a pointer to the table name.  
+ mimo Ukazatel na ukazatel na název tabulky.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

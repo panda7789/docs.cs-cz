@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74447208"
 ---
 # <a name="imetadataassemblyimportgetfileprops-method"></a>IMetaDataAssemblyImport::GetFileProps – metoda
-Gets the properties of the file with the specified metadata signature.  
+Získá vlastnosti souboru se zadaným podpisem metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,34 +41,34 @@ HRESULT GetFileProps (
   
 ## <a name="parameters"></a>Parametry  
  `mdf`  
- [in] The `mdFile` metadata token that represents the file for which to get the properties.  
+ pro Token metadat `mdFile`, který představuje soubor, pro který se mají získat vlastnosti.  
   
  `szName`  
- [out] The simple name of the file.  
+ mimo Jednoduchý název souboru.  
   
  `cchName`  
- [in] The size, in wide chars, of `szName`.  
+ pro Velikost v rámci velkých znaků `szName`.  
   
  `pchName`  
- [out] The number of wide chars actually returned in `szName`.  
+ mimo Počet znaků, které jsou ve skutečnosti vraceny `szName`.  
   
  `ppbHashValue`  
- [out] A pointer to the hash value. This is the hash, using the SHA-1 algorithm, of the file.  
+ mimo Ukazatel na hodnotu hash. Toto je hodnota hash pomocí algoritmu SHA-1 souboru.  
   
  `pcbHashValue`  
- [out] The number of wide chars in the returned hash value.  
+ mimo Počet velkých znaků v vrácené hodnotě hash.  
   
  `pdwFileFlags`  
- [out] A pointer to the flags that describe the metadata applied to a file. The flags value is a combination of one or more [CorFileFlags](../../../../docs/framework/unmanaged-api/metadata/corfileflags-enumeration.md) values.  
+ mimo Ukazatel na příznaky, které popisují metadata použitá pro soubor. Hodnota příznaků je kombinací jedné nebo více hodnot [CorFileFlags –](../../../../docs/framework/unmanaged-api/metadata/corfileflags-enumeration.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforma:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

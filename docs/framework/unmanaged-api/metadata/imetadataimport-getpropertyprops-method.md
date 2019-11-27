@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437056"
 ---
 # <a name="imetadataimportgetpropertyprops-method"></a>IMetaDataImport::GetPropertyProps – metoda
-Gets the metadata for the property represented by the specified token.  
+Získá metadata pro vlastnost představovanou zadaným tokenem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -50,61 +50,61 @@ HRESULT GetPropertyProps (
   
 ## <a name="parameters"></a>Parametry  
  `prop`  
- [in] A token that represents the property to return metadata for.  
+ pro Token, který představuje vlastnost, pro kterou se mají vracet metadata  
   
  `pClass`  
- [out] A pointer to the TypeDef token that represents the type that implements the property.  
+ mimo Ukazatel na token TypeDef, který představuje typ, který implementuje vlastnost.  
   
  `szProperty`  
- [out] A buffer to hold the property name.  
+ mimo Vyrovnávací paměť pro uložení názvu vlastnosti.  
   
  `cchProperty`  
- [in] The size in wide characters of `szProperty`.  
+ pro Velikost v různých znacích `szProperty`.  
   
  `pchProperty`  
- [out] The number of wide characters returned in `szProperty`.  
+ mimo Počet velkých znaků vrácených v `szProperty`.  
   
  `pdwPropFlags`  
- [out] A pointer to any attribute flags applied to the property. This value is a bitmask from the [CorPropertyAttr](../../../../docs/framework/unmanaged-api/metadata/corpropertyattr-enumeration.md) enumeration.  
+ mimo Ukazatel na libovolný příznak atributu aplikovaný na vlastnost. Tato hodnota je Bitová maska z výčtu [CorPropertyAttr –](../../../../docs/framework/unmanaged-api/metadata/corpropertyattr-enumeration.md) .  
   
  `ppvSig`  
- [out] A pointer to the metadata signature of the property.  
+ mimo Ukazatel na podpis metadat vlastnosti.  
   
  `pbSig`  
- [out] The number of bytes returned in `ppvSig`.  
+ mimo Počet bajtů vrácených v `ppvSig`.  
   
  `pdwCPlusTypeFlag`  
- [out] A flag specifying the type of the constant that is the default value of the property. This value is from the CorElementType enumeration.  
+ mimo Příznak určující typ konstanty, která je výchozí hodnotou vlastnosti. Tato hodnota pochází z výčtu CorElementType –.  
   
  `ppDefaultValue`  
- [out] A pointer to the bytes that store the default value for this property.  
+ mimo Ukazatel na bajty, které ukládají výchozí hodnotu pro tuto vlastnost.  
   
  `pcchDefaultValue`  
- [out] The size in wide characters of `ppDefaultValue`, if `pdwCPlusTypeFlag` is ELEMENT_TYPE_STRING; otherwise, this value is not relevant. In that case, the length of `ppDefaultValue` is inferred from the type that is specified by `pdwCPlusTypeFlag`.  
+ mimo Velikost v mnoha znacích `ppDefaultValue`, pokud je `pdwCPlusTypeFlag` ELEMENT_TYPE_STRING; v opačném případě tato hodnota není relevantní. V takovém případě je délka `ppDefaultValue` odvozena od typu určeného `pdwCPlusTypeFlag`.  
   
  `pmdSetter`  
- [out] A pointer to the MethodDef token that represents the set accessor method for the property.  
+ mimo Ukazatel na token MethodDef, který představuje metodu set přístupového objektu pro vlastnost.  
   
  `pmdGetter`  
- [out] A pointer to the MethodDef token that represents the get accessor method for the property.  
+ mimo Ukazatel na token MethodDef, který představuje metodu Get přístup k vlastnosti.  
   
  `rmdOtherMethod`  
- [out] An array of MethodDef tokens that represent other methods associated with the property.  
+ mimo Pole tokenů MethodDef, které představuje jiné metody přidružené k vlastnosti.  
   
  `cMax`  
- [in] The maximum size of the `rmdOtherMethod` array. If you do not provide an array large enough to hold all the methods, they are skipped without warning.  
+ pro Maximální velikost `rmdOtherMethod` pole Pokud nezadáte pole dostatečně velké pro uložení všech metod, budou vynechána bez upozornění.  
   
  `pcOtherMethod`  
- [out] The number of MethodDef tokens returned in `rmdOtherMethod`.  
+ mimo Počet tokenů MethodDef vrácených v `rmdOtherMethod`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

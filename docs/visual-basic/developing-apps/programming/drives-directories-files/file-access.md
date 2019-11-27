@@ -1,5 +1,5 @@
 ---
-title: File Access
+title: Přístup k souborům
 ms.date: 07/20/2015
 helpviewer_keywords:
 - file access
@@ -23,27 +23,27 @@ ms.locfileid: "74348898"
 ---
 # <a name="file-access-with-visual-basic"></a>Přístup k souborům v jazyce Visual Basic
 
-The `My.Computer.FileSystem` object provides tools for working with files and folders. Its properties, methods, and events allow you to create, copy, move, investigate, and delete files and folders. `My.Computer.FileSystem` provides better performance than the legacy functions (`FileOpen`, `FileClose`, `Input`, `InputString`, `LineInput`, etc.) that are provided by Visual Basic for backward compatibility.  
+Objekt `My.Computer.FileSystem` poskytuje nástroje pro práci se soubory a složkami. Jeho vlastnosti, metody a události umožňují vytvořit, kopírovat, přesunout, prozkoumat a odstranit soubory a složky. `My.Computer.FileSystem` poskytuje lepší výkon než starší funkce (`FileOpen`, `FileClose`, `Input`, `InputString`, `LineInput`atd.), které jsou k dispozici Visual Basic z důvodu zpětné kompatibility.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
 
  [Čtení ze souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)  
- Lists topics dealing with using the `My.Computer.FileSystem` object to read from files  
+ Vypisuje témata, která se týkají použití objektu `My.Computer.FileSystem` ke čtení ze souborů.  
   
  [Zápis do souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)  
- Lists topics dealing with using the `My.Computer.FileSystem` object to write to files  
+ Obsahuje témata týkající se použití objektu `My.Computer.FileSystem` k zápisu do souborů.  
   
  [Vytváření, odstraňování a přesouvání souborů a adresářů](../../../../visual-basic/developing-apps/programming/drives-directories-files/creating-deleting-and-moving-files-and-directories.md)  
- Lists topics dealing with using the `My.Computer.FileSystem` object to creating, copying, deleting and moving files and folders.  
+ Obsahuje témata týkající se použití objektu `My.Computer.FileSystem` k vytváření, kopírování, odstraňování a přesouvání souborů a složek.  
   
  [Analýza textových souborů pomocí objektu TextFieldParser](../../../../visual-basic/developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)  
- Discusses how to use the `TextFieldReader` to parse text files such as logs.  
+ Popisuje, jak použít `TextFieldReader` k analýze textových souborů, jako jsou protokoly.  
   
  [Kódování souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/file-encodings.md)  
- Describes file encodings and their use.  
+ Popisuje kódování souborů a jejich použití.  
   
- [Walkthrough: Manipulating Files and Directories in Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)  
- Demonstrates how to create a utility that reports information about files and folders.  
+ [Návod: manipulace se soubory a adresáři v Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)  
+ Ukazuje, jak vytvořit nástroj, který hlásí informace o souborech a složkách.  
   
  [Řešení potíží: Čtení z textových souborů a zápis do nich](../../../../visual-basic/developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)  
- Lists common problems encountered when reading and writing to text files, and suggests remedies for each.
+ Zobrazí seznam běžných problémů zjištěných při čtení a zápisu do textových souborů a navrhuje pro každé z nich nápravná opatření.

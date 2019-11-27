@@ -12,8 +12,8 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352267"
 ---
-# <a name="permission-visual-basic"></a>\<permission> (Visual Basic)
-Specifies a required permission for the member.  
+# <a name="permission-visual-basic"></a>> oprávnění \<(Visual Basic)
+Určuje požadované oprávnění pro člena.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,18 +23,18 @@ Specifies a required permission for the member.
   
 ## <a name="parameters"></a>Parametry  
  `member`  
- Odkaz na člena nebo na pole, které lze volat z prostředí aktuální kompilace. The compiler checks that the given code element exists and translates `member` to the canonical element name in the output XML. Enclose `member` in quotation marks (" ").  
+ Odkaz na člena nebo na pole, které lze volat z prostředí aktuální kompilace. Kompilátor kontroluje, zda daný prvek kódu existuje, a překládá `member` na název kanonického prvku ve výstupním souboru XML. Uzavřete `member` do uvozovek ("").  
   
  `description`  
- A description of the access to the member.  
+ Popis přístupu ke členovi.  
   
 ## <a name="remarks"></a>Poznámky  
- Use the `<permission>` tag to document the access of a member. Use the <xref:System.Security.PermissionSet> class to specify access to a member.  
+ Pomocí značky `<permission>` můžete zdokumentovat přístup člena. K určení přístupu ke členu použijte třídu <xref:System.Security.PermissionSet>.  
   
- Compile with [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) to process documentation comments to a file.  
+ Zkompilujte s [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
   
 ## <a name="example"></a>Příklad  
- This example uses the `<permission>` tag to describe that the <xref:System.Security.Permissions.FileIOPermission> is required by the `ReadFile` method.  
+ V tomto příkladu se používá značka `<permission>` k označení toho, že metoda `ReadFile` vyžaduje <xref:System.Security.Permissions.FileIOPermission>.  
   
  [!code-vb[VbVbcnXmlDocComments#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#7)]  
   

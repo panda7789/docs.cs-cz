@@ -15,16 +15,16 @@ ms.locfileid: "74349228"
 ---
 # <a name="accessing-application-web-services-visual-basic"></a>Přístup k aplikačním webovým službám (Visual Basic)
 
-The `My.WebServices` object provides an instance of each Web service referenced by the current project. Each instance is instantiated on demand. You can access these Web services through the properties of the `My.WebServices` object. The name of the property is the same as the name of the Web service that the property accesses. Any class that inherits from <xref:System.Web.Services.Protocols.SoapHttpClientProtocol> is a Web service.
+Objekt `My.WebServices` poskytuje instanci každé webové služby, na kterou odkazuje aktuální projekt. Každá instance je vytvořena na vyžádání. K těmto webovým službám můžete přistupovat prostřednictvím vlastností objektu `My.WebServices`. Název vlastnosti je stejný jako název webové služby, ke které vlastnost přistupuje. Libovolná třída, která dědí z <xref:System.Web.Services.Protocols.SoapHttpClientProtocol> je webová služba.
 
-## <a name="tasks"></a>Úkoly
+## <a name="tasks"></a>Tasks
 
-The following table lists possible ways to access Web services referenced by an application.
+V následující tabulce jsou uvedeny možné způsoby přístupu k webovým službám, na které odkazuje aplikace.
 
-|Chcete-li|Další informace naleznete v tématu|
+|Pro|Další informace naleznete v tématu|
 |---|---|
-|Call a Web service|[Objekt My.WebServices](../../../visual-basic/language-reference/objects/my-webservices-object.md)|
-|Call a Web service asynchronously and handle an event when it completes|[Postupy: Asynchronní volání webové služby](../../../visual-basic/developing-apps/programming/how-to-call-a-web-service-asynchronously.md)|
+|Volání webové služby|[Objekt My.WebServices](../../../visual-basic/language-reference/objects/my-webservices-object.md)|
+|Asynchronní volání webové služby a zpracování události při jejím dokončení|[Postupy: Asynchronní volání webové služby](../../../visual-basic/developing-apps/programming/how-to-call-a-web-service-asynchronously.md)|
 
 ## <a name="see-also"></a>Viz také:
 

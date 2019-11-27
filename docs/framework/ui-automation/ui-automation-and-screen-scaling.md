@@ -19,30 +19,30 @@ ms.locfileid: "74442477"
 ---
 # <a name="ui-automation-and-screen-scaling"></a>Automatizace uživatelského rozhraní a změna velikosti obrazovky
 > [!NOTE]
-> This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace. For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
+> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v oboru názvů <xref:System.Windows.Automation>. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API pro Windows Automation: automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
   
-Starting with Windows Vista, Windows enables users to change the dots per inch (dpi) setting so that most user interface (UI) elements on the screen appear larger. Although this feature has long been available in Windows, in previous versions the scaling had to be implemented by applications. Starting with Windows Vista, the Desktop Window Manager performs default scaling for all applications that do not handle their own scaling. UI Automation client applications must take this feature into account.  
+Počínaje systémem Windows Vista umožňuje Windows uživatelům změnit nastavení bodů na palec (dpi) tak, aby se většina prvků uživatelského rozhraní (UI) na obrazovce zobrazovala větší. I když je tato funkce ve Windows dlouhodobě dostupná, v předchozích verzích bylo škálování nutné implementovat aplikacemi. Počínaje systémem Windows Vista Správce oken plochy provádí výchozí škálování pro všechny aplikace, které nezpracovávají jejich vlastní škálování. Klientské aplikace automatizace uživatelského rozhraní musí tuto funkci vzít v úvahu.  
   
 <a name="Scaling_in_Windows_Vista"></a>   
-## <a name="scaling-in-windows-vista"></a>Scaling in Windows Vista  
- The default dpi setting is 96, which means that 96 pixels occupy a width or height of one notional inch. The exact measure of an "inch" depends on the size and physical resolution of the monitor. For example, on a monitor 12 inches wide, at a horizontal resolution of 1280 pixels, a horizontal line of 96 pixels extends about 9/10 of an inch.  
+## <a name="scaling-in-windows-vista"></a>Škálování v systému Windows Vista  
+ Výchozí nastavení DPI je 96, což znamená, že 96 pixelů zabírají šířku nebo výšku jednoho fiktivního palce. Přesné měření "palce" závisí na velikosti a fyzickém rozlišení monitoru. Například na monitoru o velikosti 12 palců v horizontálním rozlišení 1280 pixelů je vodorovná čára o velikosti 96 pixelů prodloužena o 9/10 palce.  
   
- Changing the dpi setting is not the same as changing the screen resolution. With dpi scaling, the number of physical pixels on the screen remains the same. However, scaling is applied to the size and location of [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] elements. This scaling can be performed automatically by the Desktop Window Manager (DWM) for the desktop and for applications that do not explicitly ask not to be scaled.  
+ Změna nastavení DPI není stejná jako změna rozlišení obrazovky. Při škálování dpi zůstane počet fyzických pixelů na obrazovce stejný. Škálování se ale aplikuje na velikost a umístění [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]ch prvků. Toto škálování se dá automaticky provádět Správce oken plochy (DWM) pro stolní počítače a pro aplikace, které explicitně nevyžadují jejich škálování.  
   
- In effect, when the user sets the scale factor to 120 dpi, a vertical or horizontal inch on the screen becomes bigger by 25 percent. All dimensions are scaled accordingly. The offset of an application window from the top and left edges of the screen increases by 25 percent. If application scaling is enabled and the application is not dpi-aware, the size of the window increases in the same proportion, along with the offsets and sizes of all [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] elements it contains.  
+ V důsledku toho, když uživatel nastaví faktor škálování na 120 dpi, změní se na obrazovku svislá nebo vodorovná palec o 25 procent. Všechny rozměry jsou odpovídajícím způsobem upraveny. Posun okna aplikace od horního a pravého okraje obrazovky se zvyšuje o 25 procent. Pokud je povoleno škálování aplikace a aplikace nezohledňuje rozlišení DPI, velikost okna se zvětšuje ve stejném poměru, a to spolu s posuny a velikostmi všech [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] prvků, které obsahuje.  
   
 > [!NOTE]
-> By default, the DWM does not perform scaling for non-dpi-aware applications when the user sets the dpi to 120, but does perform it when the dpi is set to a custom value of 144 or higher. However, the user can override the default behavior.  
+> Ve výchozím nastavení DWM neprovádí škálování pro aplikace, které nepodporují rozlišení DPI, když uživatel nastaví DPI na 120, ale provede ho, když je DPI nastaveno na vlastní hodnotu 144 nebo vyšší. Uživatel však může přepsat výchozí chování.  
   
- Screen scaling creates new challenges for applications that are concerned in any way with screen coordinates. The screen now contains two coordinate systems: physical and logical. The physical coordinates of a point are the actual offset in pixels from the top left of the origin. The logical coordinates are the offsets as they would be if the pixels themselves were scaled.  
+ Škálování obrazovky vytvoří nové výzvy pro aplikace, které jsou v jakémkoli případě v souřadnicích obrazovky. Obrazovka teď obsahuje dva systémy souřadnic: fyzické a logické. Fyzické souřadnice bodu jsou skutečný posun v pixelech od levého horního rohu od počátku. Logické souřadnice jsou posuny, protože by se jednalo o škálu pixelů samotných.  
   
- Suppose you design a dialog box with a button at coordinates (100, 48). When this dialog box is displayed at the default 96 dpi, the button is located at physical coordinates of (100, 48). At 120 dpi, it is located at physical coordinates of (125, 60). But the logical coordinates are the same at any dpi setting: (100, 48).  
+ Řekněme, že navrhujete dialogové okno s tlačítkem na souřadnicích (100, 48). Pokud se toto dialogové okno zobrazí na výchozím 96 dpi, tlačítko se nachází na fyzických souřadnicích (100, 48). V 120 dpi se nachází na fyzických souřadnicích (125, 60). Ale logické souřadnice jsou stejné na všech nastaveních dpi: (100, 48).  
   
- Logical coordinates are important, because they make the behavior of the operating system and applications consistent regardless of the dpi setting. For example, <xref:System.Windows.Forms.Cursor.Position%2A?displayProperty=nameWithType> normally returns the logical coordinates. If you move the cursor over an element in a dialog box, the same coordinates are returned regardless of the dpi setting. If you draw a control at (100, 100), it is drawn to those logical coordinates, and will occupy the same relative position at any dpi setting.  
+ Logické souřadnice jsou důležité, protože provádějí chování operačního systému a aplikací konzistentních bez ohledu na nastavení DPI. Například <xref:System.Windows.Forms.Cursor.Position%2A?displayProperty=nameWithType> normálně vrací logické souřadnice. Pokud přesunete kurzor nad prvek v dialogovém okně, budou stejné souřadnice vráceny bez ohledu na nastavení DPI. Pokud nakreslíte ovládací prvek na pozici (100, 100), vykreslí se tyto logické souřadnice a zachová se stejná relativní poloha u libovolného nastavení DPI.  
   
 <a name="Scaling_in_UI_Automation_Clients"></a>   
-## <a name="scaling-in-ui-automation-clients"></a>Scaling in UI Automation Clients  
- The [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] API does not use logical coordinates. The following methods and properties either return physical coordinates or take them as parameters.  
+## <a name="scaling-in-ui-automation-clients"></a>Škálování v klientech automatizace uživatelského rozhraní  
+ Rozhraní [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] API nepoužívá logické souřadnice. Následující metody a vlastnosti buď vracejí fyzické souřadnice, nebo je převezmou jako parametry.  
   
 - <xref:System.Windows.Automation.AutomationElement.GetClickablePoint%2A>  
   
@@ -54,27 +54,27 @@ Starting with Windows Vista, Windows enables users to change the dots per inch (
   
 - <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.BoundingRectangle%2A>  
   
- By default, a UI Automation client application running in a non-96- dpi environment will not be able to obtain correct results from these methods and properties. For example, because the cursor position is in logical coordinates, the client cannot simply pass these coordinates to <xref:System.Windows.Automation.AutomationElement.FromPoint%2A> to obtain the element that is under the cursor. In addition, the application will not be able to correctly place windows outside its client area.  
+ Ve výchozím nastavení nebudou klientské aplikace pro automatizaci uživatelského rozhraní spuštěné v prostředí bez 96 DPI moci získat správné výsledky z těchto metod a vlastností. Například vzhledem k tomu, že pozice kurzoru je v logických souřadnicích, nemůže klient jednoduše předat tyto souřadnice <xref:System.Windows.Automation.AutomationElement.FromPoint%2A> k získání prvku, který je pod kurzorem. Kromě toho aplikace nebude moci správně umístit systém Windows mimo jeho klientskou oblast.  
   
- The solution is in two parts.  
+ Řešení je ve dvou částech.  
   
-1. First, make the client application dpi-aware. To do this, call the [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] function `SetProcessDPIAware` at startup. In managed code, the following declaration makes this function available.  
+1. Nejprve zajistěte, aby klientská aplikace mohla zohledňovat rozlišení DPI. Chcete-li to provést, zavolejte funkci [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] `SetProcessDPIAware` při spuštění. Ve spravovaném kódu je tato funkce k dispozici následující deklarace.  
   
      [!code-csharp[Highlighter#101](../../../samples/snippets/csharp/VS_Snippets_Wpf/Highlighter/CSharp/NativeMethods.cs#101)]
      [!code-vb[Highlighter#101](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/Highlighter/VisualBasic/NativeMethods.vb#101)]  
   
-     This function makes the entire process dpi-aware, meaning that all windows that belong to the process are unscaled. In the [Highlighter Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/Highlighter), for instance, the four windows that make up the highlight rectangle are located at the physical coordinates obtained from UI Automation, not the logical coordinates. If the sample were not dpi-aware, the highlight would be drawn at the logical coordinates on the desktop, which would result in incorrect placement in a non-96- dpi environment.  
+     Tato funkce umožňuje celému procesu zohledňovat rozlišení DPI, což znamená, že všechny systémy Windows, které patří do procesu, jsou bez měřítka. V [ukázce zvýrazňovače](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/Highlighter)například čtyři okna, která tvoří zvýrazněný obdélník, jsou umístěna na fyzických souřadnicích získaných z automatizace uživatelského rozhraní, nikoli v logických souřadnicích. Pokud Ukázka nezohledňuje rozlišení DPI, zvýrazní se zvýraznění na logických souřadnicích na ploše, což by vedlo k nesprávnému umístění v prostředí, které není 96 dpi.  
   
-2. To get cursor coordinates, call the [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] function `GetPhysicalCursorPos`. The following example shows how to declare and use this function.  
+2. Chcete-li získat souřadnice kurzoru, zavolejte `GetPhysicalCursorPos`funkce [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)]. Následující příklad ukazuje, jak deklarovat a používat tuto funkci.  
   
      [!code-csharp[UIAClient_snip#185](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#185)]
      [!code-vb[UIAClient_snip#185](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#185)]  
   
 > [!CAUTION]
-> Do not use <xref:System.Windows.Forms.Cursor.Position%2A?displayProperty=nameWithType>. The behavior of this property outside client windows in a scaled environment is undefined.  
+> Nepoužívejte <xref:System.Windows.Forms.Cursor.Position%2A?displayProperty=nameWithType>. Chování této vlastnosti mimo klientské okna v prostředí s měřítkem není definováno.  
   
- If your application performs direct cross-process communication with non- dpi-aware applications, you may have convert between logical and physical coordinates by using the [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] functions `PhysicalToLogicalPoint` and `LogicalToPhysicalPoint`.  
+ Pokud vaše aplikace provádí přímou komunikaci mezi procesy s aplikacemi, které nepodporují rozlišení DPI, možná jste převedli převod mezi logickými a fyzickými souřadnicemi pomocí funkcí [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] `PhysicalToLogicalPoint` a `LogicalToPhysicalPoint`.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Highlighter Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/Highlighter)
+- [Ukázka zvýrazňovače](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/Highlighter)

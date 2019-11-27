@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74435943"
 ---
 # <a name="imetadataemitsave-method"></a>IMetaDataEmit::Save – metoda
-Saves all metadata in the current scope to the file at the specified address.  
+Uloží všechna metadata v aktuálním oboru do souboru na zadané adrese.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,19 +36,19 @@ HRESULT Save (
   
 ## <a name="parameters"></a>Parametry  
  `wzFile`  
- [in] The name of the file to save to. If this value is null, the in-memory copy will be saved to the last location that was used.  
+ pro Název souboru, do kterého se má uložit. Pokud je tato hodnota null, kopie v paměti bude uložena do posledního používaného umístění.  
   
  `dwSaveFlags`  
- [in] Reserved. Must be zero.  
+ pro Rezervovaný. Musí mít hodnotu nula.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

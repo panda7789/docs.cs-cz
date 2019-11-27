@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448757"
 ---
 # <a name="corvalidatormoduletype-enumeration"></a>CorValidatorModuleType – výčet
-Specifies the type of a module.  
+Určuje typ modulu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,26 +39,26 @@ typedef enum
 } CorValidatorModuleType;  
 ```  
   
-## <a name="members"></a>Členové  
+## <a name="members"></a>Members  
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`ValidatorModuleTypeInvalid`|The module is an invalid type.|  
-|`ValidatorModuleTypeMin`|The minimum value of the `CorValidatorModuleType` enum.|  
-|`ValidatorModuleTypePE`|The module is a portable executable (PE) file.|  
-|`ValidatorModuleTypeObj`|The module is a .obj file.|  
-|`ValidatorModuleTypeEnc`|The module is an edit-and-continue debugger session.|  
-|`ValidatorModuleTypeIncr`|The module is one that has been incrementally built.|  
-|`ValidatorModuleTypeMax`|The maximum value of the `CorValidatorModuleType` enum.|  
+|`ValidatorModuleTypeInvalid`|Modul je neplatného typu.|  
+|`ValidatorModuleTypeMin`|Minimální hodnota výčtu `CorValidatorModuleType`.|  
+|`ValidatorModuleTypePE`|Modul je přenosný spustitelný soubor (PE).|  
+|`ValidatorModuleTypeObj`|Modul je soubor. obj.|  
+|`ValidatorModuleTypeEnc`|Modul je relace ladicího programu pro úpravy a pokračování.|  
+|`ValidatorModuleTypeIncr`|Modul je ten, který se postupně sestavil.|  
+|`ValidatorModuleTypeMax`|Maximální hodnota výčtu `CorValidatorModuleType`.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

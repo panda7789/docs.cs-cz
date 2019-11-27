@@ -22,23 +22,23 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74426109"
 ---
 # <a name="imetadatavalidate-interface"></a>IMetaDataValidate – rozhraní
-Provides methods to validate metadata signatures.  
+Poskytuje metody pro ověření signatur metadat.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[ValidateMetaData – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadatavalidate-validatemetadata-method.md)|Validates the metadata signatures of the objects in the current metadata scope.|  
-|[ValidatorInit – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadatavalidate-validatorinit-method.md)|Sets a flag that specifies the type of the module in the current metadata scope, and registers the specified callback method for validation errors.|  
+|[ValidateMetaData – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadatavalidate-validatemetadata-method.md)|Ověří podpisy metadat objektů v aktuálním oboru metadat.|  
+|[ValidatorInit – metoda](../../../../docs/framework/unmanaged-api/metadata/imetadatavalidate-validatorinit-method.md)|Nastaví příznak, který určuje typ modulu v aktuálním oboru metadat a registruje zadanou metodu zpětného volání pro chyby ověření.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

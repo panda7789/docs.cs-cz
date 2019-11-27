@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74442325"
 ---
 # <a name="imetadatadispenseropenscope-method"></a>IMetaDataDispenser::OpenScope – metoda
-Opens an existing, on-disk file and maps its metadata into memory.  
+Otevře existující soubor na disku a namapuje jeho metadata do paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,36 +38,36 @@ HRESULT OpenScope (
   
 ## <a name="parameters"></a>Parametry  
  `szScope`  
- [in] The name of the file to be opened. The file must contain common language runtime (CLR) metadata.  
+ pro Název souboru, který se má otevřít Soubor musí obsahovat metadata modulu CLR (Common Language Runtime).  
   
  `dwOpenFlags`  
- [in] A value of the [CorOpenFlags](../../../../docs/framework/unmanaged-api/metadata/coropenflags-enumeration.md) enumeration to specify the mode (read, write, and so on) for opening.  
+ pro Hodnota výčtu [CorOpenFlags –](../../../../docs/framework/unmanaged-api/metadata/coropenflags-enumeration.md) , která určuje režim (čtení, zápis a tak dále) pro otevření.  
   
  `riid`  
- [in] The IID of the desired metadata interface to be returned; the caller will use the interface to import (read) or emit (write) metadata.  
+ pro Identifikátor IID požadovaného rozhraní metadat, které má být vráceno; Volající použije rozhraní k importu (čtení) nebo generování (zápisu) metadat.  
   
- The value of `riid` must specify one of the "import" or "emit" interfaces. Valid values are IID_IMetaDataEmit, IID_IMetaDataImport, IID_IMetaDataAssemblyEmit, IID_IMetaDataAssemblyImport, IID_IMetaDataEmit2, or IID_IMetaDataImport2.  
+ Hodnota `riid` musí určovat jedno z rozhraní "Import" nebo "Emit". Platné hodnoty jsou IID_IMetaDataEmit, IID_IMetaDataImport, IID_IMetaDataAssemblyEmit, IID_IMetaDataAssemblyImport, IID_IMetaDataEmit2 nebo IID_IMetaDataImport2.  
   
  `ppIUnk`  
- [out] The pointer to the returned interface.  
+ mimo Ukazatel na vrácené rozhraní.  
   
 ## <a name="remarks"></a>Poznámky  
- The in-memory copy of the metadata can be queried using methods from one of the "import" interfaces, or added to using methods from the one of the "emit" interfaces.  
+ Kopie metadat v paměti se dá dotazovat pomocí metod z jednoho z rozhraní "Import" nebo přidat k použití metod z rozhraní typu "Emit".  
   
- If the target file does not contain CLR metadata, the `OpenScope` method will fail.  
+ Pokud cílový soubor neobsahuje metadata CLR, metoda `OpenScope` se nezdaří.  
   
- In the .NET Framework version 1.0 and version 1.1, if a scope is opened with `dwOpenFlags` set to ofRead, it is eligible for sharing. That is, if subsequent calls to `OpenScope` pass in the name of a file that was previously opened, the existing scope is reused and a new set of data structures is not created. However, problems can arise due to this sharing.  
+ Pokud je v .NET Framework verze 1,0 a verze 1,1, je v případě, že je obor otevřený s `dwOpenFlags` nastaveným na ofRead, nárok na sdílení. To znamená, že pokud následná volání `OpenScope` přejdou na název souboru, který byl dříve otevřen, existující obor je znovu použit a nová sada datových struktur není vytvořena. V důsledku tohoto sdílení ale může dojít k problémům.  
   
- In the .NET Framework version 2.0, scopes opened with `dwOpenFlags` set to ofRead are no longer shared. Use the ofReadOnly value to allow the scope to be shared. When a scope is shared, queries that use "read/write" metadata interfaces will fail.  
+ V .NET Framework verze 2,0 se už nesdílí obory otevřené pomocí `dwOpenFlags` nastavené na ofRead. K povolení sdílení oboru použijte hodnotu ofReadOnly. Při sdílení oboru nebudou dotazy, které používají rozhraní metadat pro čtení a zápis, selžou.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

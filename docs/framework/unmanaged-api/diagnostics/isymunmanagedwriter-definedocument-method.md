@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74428054"
 ---
 # <a name="isymunmanagedwriterdefinedocument-method"></a>ISymUnmanagedWriter::DefineDocument – metoda
-Defines a source document. GUIDs are provided for known languages, vendors, and document types.  
+Definuje zdrojový dokument. Pro známé jazyky, dodavatele a typy dokumentů jsou k dispozici identifikátory GUID.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,25 +38,25 @@ HRESULT DefineDocument(
   
 ## <a name="parameters"></a>Parametry  
  `url`  
- [in] A pointer to a `WCHAR` that defines the uniform resource locator (URL) that identifies the document.  
+ pro Ukazatel na `WCHAR` definující adresu URL (Uniform Resource Locator), která identifikuje dokument.  
   
  `language`  
- [in] A pointer to a GUID that defines the document language.  
+ pro Ukazatel na identifikátor GUID, který definuje jazyk dokumentu.  
   
  `languageVendor`  
- [in] A pointer to a GUID that defines the identity of the vendor for the document language.  
+ pro Ukazatel na identifikátor GUID, který definuje identitu dodavatele pro jazyk dokumentu.  
   
  `documentType`  
- [in] A pointer to a GUID that defines the type of the document.  
+ pro Ukazatel na identifikátor GUID definující typ dokumentu.  
   
  `pRetVal`  
- [out] A pointer to the returned [ISymUnmanagedWriter](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md) interface.  
+ mimo Ukazatel na vrácené rozhraní [ISymUnmanagedWriter](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md) .  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

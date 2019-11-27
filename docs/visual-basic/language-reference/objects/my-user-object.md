@@ -13,15 +13,15 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350639"
 ---
 # <a name="myuser-object"></a>My.User – objekt
-Provides access to information about the current user.  
+Poskytuje přístup k informacím o aktuálním uživateli.  
   
 ## <a name="remarks"></a>Poznámky  
- For information about the methods and properties of the `My.User` object, see <xref:Microsoft.VisualBasic.ApplicationServices.User?displayProperty=nameWithType>.  
+ Informace o metodách a vlastnostech objektu `My.User` naleznete v tématu <xref:Microsoft.VisualBasic.ApplicationServices.User?displayProperty=nameWithType>.  
   
- For more information, see [Accessing User Data](../../../visual-basic/developing-apps/programming/accessing-user-data.md).  
+ Další informace najdete v tématu [přístup k uživatelským datům](../../../visual-basic/developing-apps/programming/accessing-user-data.md).  
   
 ## <a name="requirements"></a>Požadavky  
- **Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)  
+ **Sestavení:** Knihovna Visual Basic runtime (v souboru Microsoft. VisualBasic. dll)  
   
 ## <a name="see-also"></a>Viz také:
 

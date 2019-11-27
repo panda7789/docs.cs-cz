@@ -44,7 +44,7 @@ Název spustitelného souboru určuje způsob, jakým se nástroj vyvolá. Násl
 
     Globální nástroje mohou být nainstalovány ve výchozím adresáři nebo v určitém umístění. Výchozí adresáře jsou:
 
-    | Operační systém          | Cesta                          |
+    | OS          | Cesta                          |
     |-------------|-------------------------------|
     | Linux/macOS | `$HOME/.dotnet/tools`         |
     | Windows     | `%USERPROFILE%\.dotnet\tools` |

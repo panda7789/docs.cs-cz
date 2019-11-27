@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445438"
 ---
 # <a name="imetadatatablesgetblob-method"></a>IMetaDataTables::GetBlob – metoda
-Gets a pointer to the binary large object (BLOB) at the specified column index.  
+Získá ukazatel na binární rozsáhlý objekt (BLOB) v zadaném indexu sloupce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,22 +37,22 @@ HRESULT GetBlob (
   
 ## <a name="parameters"></a>Parametry  
  `ixBlob`  
- [in] The memory address from which to get `ppData`.  
+ pro Adresa paměti, ze které se má získat `ppData`  
   
  `pcbData`  
- [out] A pointer to the size, in bytes, of `ppData`.  
+ mimo Ukazatel na velikost `ppData`v bajtech.  
   
  `ppData`  
- [out] A pointer to a pointer to the binary data retrieved.  
+ mimo Ukazatel na ukazatel na načtená binární data.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74432693"
 ---
 # <a name="imetadataemitapplyeditandcontinue-method"></a>IMetaDataEmit::ApplyEditAndContinue – metoda
-Updates the current assembly scope with the changes made in the specified metadata.  
+Aktualizuje aktuální obor sestavení o změny provedené v zadaných metadatech.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,18 +35,18 @@ HRESULT ApplyEditAndContinue (
   
 ## <a name="parameters"></a>Parametry  
  `pImport`  
- \[in\] Pointer to an [IUnknown](/cpp/atl/iunknown) object that represents the delta metadata from the portable executable (PE) file.
+ \[v\] ukazatel na objekt [IUnknown](/cpp/atl/iunknown) , který představuje rozdílová metadata z přenositelného spustitelného souboru (PE).
   
- The delta metadata is the block of metadata that includes the changes that were made to the copy of the module's actual metadata.  
+ Rozdílová metadata jsou blok metadat, který obsahuje změny provedené v kopii skutečných metadat modulu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

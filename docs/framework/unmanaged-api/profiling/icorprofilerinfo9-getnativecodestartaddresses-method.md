@@ -18,9 +18,9 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74444712"
 ---
-# <a name="icorprofilerinfo9getnativecodestartaddresses-method"></a>ICorProfilerInfo9::GetNativeCodeStartAddresses Method
+# <a name="icorprofilerinfo9getnativecodestartaddresses-method"></a>ICorProfilerInfo9:: GetNativeCodeStartAddresses – metoda
 
-Given a functionId and rejitId, enumerates the native code start address of all jitted versions of this code that currently exist.
+S ohledem na functionId a rejitId vytvoří výčet počáteční adresy kódu pro všechny zpracovaných kompilátorem JIT verze tohoto kódu, který aktuálně existuje.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -35,34 +35,34 @@ HRESULT GetNativeCodeStartAddresses( [in]  FunctionID functionID,
 #### <a name="parameters"></a>Parametry
 
 `functionId` \
-[in] The ID of the function whose native code start addresses should be returned.
+pro Mělo by se vrátit ID funkce, jejíž počáteční adresy nativního kódu by měly být vráceny.
 
 `reJitId` \
-[in] The identity of the JIT-recompiled function.
+pro Identita funkce Rekompilované JIT.
 
 `cCodeStartAddresses` \
-[in] The maximum size of the `codeStartAddresses` array.
+pro Maximální velikost `codeStartAddresses` pole
 
 `pcCodeStartAddresses` \
-[out] The number of available addresses.
+mimo Počet dostupných adres.
 
 `codeStartAddresses` \
-[out] An array of `UINT_PTR`, each one of which is the start address for a native body for the specified function.
+mimo Pole `UINT_PTR`, z nichž každá z nich představuje počáteční adresu pro nativní tělo pro určenou funkci.
 
 ## <a name="remarks"></a>Poznámky
 
-When tiered compilation is enabled, a function may have more than one native code body.
+Pokud je povolená vrstvená kompilace, funkce může mít více než jeden tělo nativního kódu.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platforms:** See [.NET Core supported operating systems](../../../core/install/dependencies.md?tabs=netcore30&pivots=os-windows).
+**Platformy:** Viz [podporované operační systémy .NET Core](../../../core/install/dependencies.md?tabs=netcore30&pivots=os-windows).
 
-**Header:** CorProf.idl, CorProf.h
+**Hlavička:** CorProf. idl, CorProf. h
 
-**Library:** CorGuids.lib
+**Knihovna:** CorGuids. lib
 
-**.NET Versions:** [!INCLUDE[net_core_22](../../../../includes/net-core-22-md.md)]
+**Verze rozhraní .NET:** [!INCLUDE[net_core_22](../../../../includes/net-core-22-md.md)]
 
 ## <a name="see-also"></a>Viz také:
 
-- [ICorProfilerInfo9 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo9-interface.md)
+- [Rozhraní ICorProfilerInfo9](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo9-interface.md)

@@ -9,17 +9,17 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74354212"
 ---
-# <a name="details-of-office-open-xml-wordprocessingml-documents-visual-basic"></a>Details of Office Open XML WordprocessingML Documents (Visual Basic)
-This section provides information about the details of Office Open XML WordprocessingML documents. It shows examples of the document and style parts of an Open XML document.  
+# <a name="details-of-office-open-xml-wordprocessingml-documents-visual-basic"></a>Podrobnosti dokumentů Office Open XML WordprocessingML (Visual Basic)
+V této části najdete informace o podrobnostech dokumentů Office Open XML WordprocessingML. Ukazuje příklady části dokumentu a stylu v otevřeném dokumentu XML.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
 |Téma|Popis|  
 |-----------|-----------------|  
-|[Dokument WordprocessingML se styly](../../../../visual-basic/programming-guide/concepts/linq/wordprocessingml-document-with-styles.md)|Shows the document part of an Office Open XML WordprocessingML document.|  
-|[Část stylu dokumentu WordprocessingML](../../../../visual-basic/programming-guide/concepts/linq/style-part-of-a-wordprocessingml-document.md)|Shows the style part of an Office Open XML WordprocessingML document.|  
-|[Example that Outputs Office Open XML Document Parts (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/example-that-outputs-office-open-xml-document-parts.md)|Provides an example that opens an Office Open XML WordprocessingML document, and outputs the parts to the console.|  
+|[Dokument WordprocessingML se styly](../../../../visual-basic/programming-guide/concepts/linq/wordprocessingml-document-with-styles.md)|Zobrazuje část dokumentu dokumentu Office Open XML WordprocessingML.|  
+|[Část stylu dokumentu WordprocessingML](../../../../visual-basic/programming-guide/concepts/linq/style-part-of-a-wordprocessingml-document.md)|Zobrazuje část stylu dokumentu Office Open XML WordprocessingML.|  
+|[Příklad výstupu dokumentu Office Open XML Parts (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/example-that-outputs-office-open-xml-document-parts.md)|Poskytuje příklad, který otevře dokument Office Open XML WordprocessingML a vypíše části do konzoly.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Tutorial: Manipulating Content in a WordprocessingML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [Kurz: manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)

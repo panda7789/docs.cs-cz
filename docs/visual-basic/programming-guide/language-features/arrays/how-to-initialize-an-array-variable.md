@@ -1,5 +1,5 @@
 ---
-title: 'How to: Initialize an Array Variable'
+title: 'Postupy: Inicializace proměnné pole'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - variables [Visual Basic], initializing
@@ -15,41 +15,41 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351879"
 ---
 # <a name="how-to-initialize-an-array-variable-in-visual-basic"></a>Postupy: Inicializace proměnné pole v jazyce Visual Basic
-You initialize an array variable by including an array literal in a `New` clause and specifying the initial values of the array. You can either specify the type or allow it to be inferred from the values in the array literal. For more information about how the type is inferred, see "Populating an Array with Initial Values" in [Arrays](../../../../visual-basic/programming-guide/language-features/arrays/index.md).  
+Inicializujete proměnnou pole zahrnutím literálu pole do klauzule `New` a určením počátečních hodnot pole. Můžete buď zadat typ, nebo ho nechat odvoditelné z hodnot v literálu pole. Další informace o tom, jak je typ odvozen, naleznete v části "vyplnění pole počátečními hodnotami" v [polích](../../../../visual-basic/programming-guide/language-features/arrays/index.md).  
   
-### <a name="to-initialize-an-array-variable-by-using-an-array-literal"></a>To initialize an array variable by using an array literal  
+### <a name="to-initialize-an-array-variable-by-using-an-array-literal"></a>Inicializace proměnné pole pomocí literálu pole  
   
-- Either in the `New` clause, or when you assign the array value, supply the element values inside braces (`{}`). The following example shows several ways to declare, create, and initialize a variable to contain an array that has elements of type `Char`.  
+- Buď v klauzuli `New`, nebo při přiřazení hodnoty pole, zadejte hodnoty elementu do složených závorek (`{}`). Následující příklad ukazuje několik způsobů, jak deklarovat, vytvořit a inicializovat proměnnou tak, aby obsahovala pole, které obsahuje prvky typu `Char`.  
   
      [!code-vb[VbVbalrArrays#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#16)]  
   
-     After each statement executes, the array that's created has a length of 3, with elements at index 0 through index 2 containing the initial values. If you supply both the upper bound and the values, you must include a value for every element from index 0 through the upper bound.  
+     Po spuštění každého příkazu má pole vytvořené délku 3 s prvky v indexu 0 až index 2 obsahující počáteční hodnoty. Pokud zadáte horní mez a hodnoty, je nutné zahrnout hodnotu pro každý prvek z indexu 0 až po horní mez.  
   
-     Notice that you do not have to specify the index upper bound if you supply element values in an array literal. If no upper bound is specified, the size of the array is inferred based on the number of values in the array literal.  
+     Všimněte si, že není nutné zadat horní mez indexu, pokud zadáváte hodnoty prvků v literálu pole. Pokud není zadána žádná horní mez, je velikost pole odvozena v závislosti na počtu hodnot v literálu pole.  
   
-### <a name="to-initialize-a-multidimensional-array-variable-by-using-array-literals"></a>To initialize a multidimensional array variable by using array literals  
+### <a name="to-initialize-a-multidimensional-array-variable-by-using-array-literals"></a>Inicializace proměnné multidimenzionálního pole pomocí literálů pole  
   
-- Nest values inside braces (`{}`) within braces. Ensure that the nested array literals all infer as arrays of the same type and length. The following code example shows several examples of multidimensional array initialization.  
+- Vnořit hodnoty do složených závorek (`{}`) uvnitř složených závorek. Zajistěte, aby literály vnořeného pole byly odvozeny jako pole stejného typu a délky. Následující příklad kódu ukazuje několik příkladů inicializace multidimenzionálního pole.  
   
      [!code-vb[VbVbalrArrays#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#17)]  
   
-- You can explicitly specify the array bounds, or leave them out and have the compiler infer the array bounds based on the values in the array literal. If you supply both the upper bounds and the values, you must include a value for every element from index 0 through the upper bound in every dimension. The following example shows several ways to declare, create, and initialize a variable to contain a two-dimensional array that has elements of type `Short`  
+- Můžete explicitně zadat hranice pole nebo je nechat vypnout a nechat kompilátor odvodit hranice pole na základě hodnot v literálu pole. Pokud zadáte horní meze i hodnoty, je nutné zahrnout hodnotu pro každý prvek z indexu 0 až po horní mez v každé dimenzi. Následující příklad ukazuje několik způsobů, jak deklarovat, vytvořit a inicializovat proměnnou tak, aby obsahovala dvourozměrné pole, které má prvky typu `Short`  
   
      [!code-vb[VbVbalrArrays#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#18)]  
   
-     After each statement executes, the created array contains six initialized elements that have indexes `(0,0)`, `(0,1)`, `(0,2)`, `(1,0)`, `(1,1)`, and `(1,2)`. Each array location contains the value `10`.  
+     Po spuštění každého příkazu obsahuje vytvořené pole šest inicializovaných prvků, které mají indexy `(0,0)`, `(0,1)`, `(0,2)`, `(1,0)`, `(1,1)`a `(1,2)`. Každé umístění pole obsahuje hodnotu `10`.  
   
-- The following example iterates through a multidimensional array. In a Windows console application that is written in Visual Basic, paste the code inside the `Sub Main()` method. The last comments show the output.  
+- Následující příklad provede iteraci multidimenzionálního pole. V konzolové aplikaci systému Windows, která je napsána v Visual Basic, vložte kód do metody `Sub Main()`. Poslední komentáře ukazují výstup.  
   
      [!code-vb[VbVbalrArrays#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#31)]  
   
-### <a name="to-initialize-a-jagged-array-variable-by-using-array-literals"></a>To initialize a jagged array variable by using array literals  
+### <a name="to-initialize-a-jagged-array-variable-by-using-array-literals"></a>Inicializace proměnné vícenásobného pole pomocí literálů pole  
   
-- Nest object values inside braces (`{}`). Although you can also nest array literals that specify arrays of different lengths, in the case of a jagged array, make sure that the nested array literals are enclosed in parentheses (`()`). The parentheses force the evaluation of the nested array literals, and the resulting arrays are used as the initial values of the jagged array. The following code example shows two examples of jagged array initialization.  
+- Hodnoty vnořených objektů do složených závorek (`{}`). I když lze také vnořit literály pole, které určují pole různých délek, v případě vícenásobného pole se ujistěte, že literály vnořeného pole jsou uzavřeny v závorkách (`()`). Závorky vynutí vyhodnocení literálů vnořeného pole a výsledná pole se používají jako počáteční hodnoty nevícenásobného pole. Následující příklad kódu ukazuje dva příklady inicializace vícenásobného pole.  
   
      [!code-vb[VbVbalrArrays#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#19)]  
   
-- The following example iterates through a jagged array. In a Windows console application that is written in Visual Basic, paste the code inside the `Sub Main()` method.  The last comments in the code show the output.  
+- Následující příklad projde vícenásobné pole. V konzolové aplikaci systému Windows, která je napsána v Visual Basic, vložte kód do metody `Sub Main()`.  Poslední komentáře v kódu ukazují výstup.  
   
      [!code-vb[VbVbalrArrays#32](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrArrays/VB/Class1.vb#32)]  
   

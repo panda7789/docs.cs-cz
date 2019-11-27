@@ -14,9 +14,9 @@ ms.locfileid: "74340395"
 ---
 # <a name="how-to-call-an-extension-method-visual-basic"></a>Postupy: Volání metody rozšíření (Visual Basic)
 
-Extension methods enable you to add methods to an existing class. After an extension method is declared and brought into scope, you can call it like an instance method of the type that it extends. For more information about how to write an extension method, see [How to: Write an Extension Method](./how-to-write-an-extension-method.md).
+Metody rozšíření umožňují přidat metody do existující třídy. Poté, co je metoda rozšíření deklarována a uvedena do rozsahu, lze ji volat jako metodu instance typu, který rozšiřuje. Další informace o tom, jak napsat rozšiřující metodu, naleznete v tématu [How to: Write a Extension](./how-to-write-an-extension-method.md).
 
- The following instructions refer to extension method `PrintAndPunctuate`, which will display the string instance that invokes it, followed by whatever value is sent in for the second parameter, `punc`.
+ Následující pokyny odkazují na metodu rozšíření `PrintAndPunctuate`, která zobrazí instanci řetězce, která ji vyvolá, a za druhým parametrem je odeslána jakákoli hodnota, `punc`.
 
 ```vb
 Imports System.Runtime.CompilerServices
@@ -31,40 +31,40 @@ Module StringExtensions
 End Module
 ```
 
-The method must be in scope when it is called.
+Metoda musí být v oboru, pokud je volána.
 
-### <a name="to-call-an-extension-method"></a>To call an extension method
+### <a name="to-call-an-extension-method"></a>Volání metody rozšíření
 
-1. Declare a variable that has the data type of the first parameter of the extension method. For `PrintAndPunctuate`, you need a <xref:System.String> variable:
+1. Deklarujte proměnnou, která má datový typ prvního parametru metody rozšíření. Pro `PrintAndPunctuate`potřebujete <xref:System.String> proměnnou:
 
     ```vb
     Dim example = "Ready"
     ```
 
-2. That variable will invoke the extension method, and its value is bound to the first parameter, `aString`. The following calling statement will display `Ready?`.
+2. Tato proměnná vyvolá metodu rozšíření a její hodnota je svázána s prvním parametrem `aString`. Následující volání příkazu zobrazí `Ready?`.
 
     ```vb
     example.PrintAndPunctuate("?")
     ```
 
-     Notice that the call to this extension method looks just like a call to any one of the <xref:System.String> instance methods that require one parameter:
+     Všimněte si, že volání této metody rozšíření vypadá stejně jako volání libovolné metody instance <xref:System.String>, která vyžaduje jeden parametr:
 
     ```vb
     example.EndsWith("dy")
     example.IndexOf("R")
     ```
 
-3. Declare another string variable and call the method again to see that it works with any string.
+3. Deklarujte další řetězcovou proměnnou a zavolejte metodu znovu, abyste viděli, že funguje s libovolným řetězcem.
 
     ```vb
     Dim example2 = " or not"
     example2.PrintAndPunctuate("!!!")
     ```
 
-     The result this time is: `or not!!!`.
+     Výsledek tohoto času: `or not!!!`.
 
 ## <a name="example"></a>Příklad
- The following code is a complete example of the creation and use of a simple extension method.
+ Následující kód je kompletní příklad vytváření a použití jednoduché metody rozšíření.
 
 ```vb
 Imports System.Runtime.CompilerServices
@@ -99,4 +99,4 @@ End Module
 
 - [Postupy: Zápis rozšiřující metody](./how-to-write-an-extension-method.md)
 - [Rozšiřující metody](./extension-methods.md)
-- [Scope in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
+- [Obor v Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)

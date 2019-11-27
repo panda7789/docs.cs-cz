@@ -12,22 +12,22 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344123"
 ---
 # <a name="myapplicationlog-object"></a>My.Application.Log – objekt
-Provides a property and methods to write event and exception information to the application's log listeners.  
+Poskytuje vlastnost a metody pro zápis informací o událostech a výjimkách do protokolu naslouchacího procesu aplikace.  
   
 ## <a name="remarks"></a>Poznámky  
- For information about the methods and properties of the `My.Application.Log` object, see <xref:Microsoft.VisualBasic.Logging.Log>.  
+ Informace o metodách a vlastnostech objektu `My.Application.Log` naleznete v tématu <xref:Microsoft.VisualBasic.Logging.Log>.  
   
- For more information, see [Logging Information from the Application](../../../visual-basic/developing-apps/programming/log-info/index.md).  
+ Další informace najdete v tématu [protokolování informací z aplikace](../../../visual-basic/developing-apps/programming/log-info/index.md).  
   
 > [!NOTE]
-> You can also use classes in the .NET Framework to log information from your application. For more information, see [Tracing and Instrumenting Applications](../../../framework/debug-trace-profile/tracing-and-instrumenting-applications.md).  
+> Můžete také použít třídy v .NET Framework k protokolování informací z aplikace. Další informace najdete v tématu [trasování a instrumentace aplikací](../../../framework/debug-trace-profile/tracing-and-instrumenting-applications.md).  
   
 ## <a name="requirements"></a>Požadavky  
- **Namespace:** <xref:Microsoft.VisualBasic.Logging>  
+ **Obor názvů:** <xref:Microsoft.VisualBasic.Logging>  
   
- **Class:** <xref:Microsoft.VisualBasic.Logging.Log>  
+ **Třída:** <xref:Microsoft.VisualBasic.Logging.Log>  
   
- **Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)  
+ **Sestavení:** Knihovna Visual Basic runtime (v souboru Microsoft. VisualBasic. dll)  
   
 ## <a name="see-also"></a>Viz také:
 

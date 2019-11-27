@@ -12,8 +12,8 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74354326"
 ---
-# <a name="code-visual-basic"></a>\<code> (Visual Basic)
-Indicates that the text is multiple lines of code.  
+# <a name="code-visual-basic"></a>> kódu \<(Visual Basic)
+Označuje, že je text více řádky kódu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,15 +23,15 @@ Indicates that the text is multiple lines of code.
   
 ## <a name="parameters"></a>Parametry  
  `content`  
- The text to mark as code.  
+ Text, který se má označit jako kód  
   
 ## <a name="remarks"></a>Poznámky  
- Use the `<code>` tag to indicate multiple lines as code. Use [\<c>](../../../visual-basic/language-reference/xmldoc/c.md) to indicate that text within a description should be marked as code.  
+ Použijte značku `<code>` k označení více řádků jako kódu. Použijte [\<> c](../../../visual-basic/language-reference/xmldoc/c.md) k označení toho, že text v rámci popisu by měl být označený jako kód.  
   
- Compile with [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) to process documentation comments to a file.  
+ Zkompilujte s [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
   
 ## <a name="example"></a>Příklad  
- This example uses the \<code> tag to include example code for using the `ID` field.  
+ V tomto příkladu se používá značka \<Code > k zahrnutí ukázkového kódu pro použití pole `ID`.  
   
  [!code-vb[VbVbcnXmlDocComments#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#2)]  
   

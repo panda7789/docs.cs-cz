@@ -16,7 +16,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350181"
 ---
 # <a name="addhandler-statement"></a>AddHandler – příkaz
-Associates an event with an event handler at run time.  
+Přidruží událost k obslužné rutině události v době běhu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -27,19 +27,19 @@ AddHandler event, AddressOf eventhandler
 ## <a name="parts"></a>Součásti  
 |||
 |---|---|
-|event|The name of the event to handle.|  
-|`eventhandler`|The name of a procedure that handles the event.|
+|událost|Název události, která má být zpracována.|  
+|`eventhandler`|Název procedury, která zpracovává událost.|
 |||
   
 ## <a name="remarks"></a>Poznámky  
- The `AddHandler` and `RemoveHandler` statements allow you to start and stop event handling at any time during program execution.  
+ Příkazy `AddHandler` a `RemoveHandler` umožňují kdykoli spustit a zastavit zpracování událostí během provádění programu.  
   
- The signature of the `eventhandler` procedure must match the signature of the event `event`.  
+ Podpis `eventhandler`ho postupu musí odpovídat podpisu `event`události.  
   
- The `Handles` keyword and the `AddHandler` statement both allow you to specify that particular procedures handle particular events, but there are differences. The `AddHandler` statement connects procedures to events at run time. Use the `Handles` keyword when defining a procedure to specify that it handles a particular event. For more information, see [Handles](../../../visual-basic/language-reference/statements/handles-clause.md).  
+ Klíčové slovo `Handles` a příkaz `AddHandler` umožňují určit, že konkrétní procedury budou zpracovávat konkrétní události, ale existují rozdíly. Příkaz `AddHandler` propojuje procedury s událostmi v době běhu. Při definování procedury použijte klíčové slovo `Handles`, které určuje, že zpracuje konkrétní událost. Další informace najdete v tématu [obslužné rutiny](../../../visual-basic/language-reference/statements/handles-clause.md).  
   
 > [!NOTE]
-> For custom events, the `AddHandler` statement invokes the event's `AddHandler` accessor. For more information on custom events, see [Event Statement](../../../visual-basic/language-reference/statements/event-statement.md).  
+> Pro vlastní události příkaz `AddHandler` vyvolá přistupující objekt `AddHandler` události. Další informace o vlastních událostech naleznete v tématu [příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md).  
   
 ## <a name="example"></a>Příklad  
  [!code-vb[VbVbalrEvents#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#17)]  
@@ -47,6 +47,6 @@ AddHandler event, AddressOf eventhandler
 ## <a name="see-also"></a>Viz také:
 
 - [Příkaz RemoveHandler](../../../visual-basic/language-reference/statements/removehandler-statement.md)
-- [Handles](../../../visual-basic/language-reference/statements/handles-clause.md)
+- [Řeší](../../../visual-basic/language-reference/statements/handles-clause.md)
 - [Příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md)
 - [Události](../../../visual-basic/programming-guide/language-features/events/index.md)

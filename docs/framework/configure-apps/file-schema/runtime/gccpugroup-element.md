@@ -12,13 +12,13 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74430477"
 ---
-# <a name="gccpugroup-element"></a>\<GCCpuGroup> Element
+# <a name="gccpugroup-element"></a>\<element > GCCpuGroup
 
-Specifies whether garbage collection supports multiple CPU groups.
+Určuje, zda uvolňování paměti podporuje více skupin PROCESORů.
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<runtime>** ](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<GCCpuGroup>**
+[**konfigurační >\<** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<GCCpuGroup >**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -35,18 +35,18 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 |Atribut|Popis|
 |---------------|-----------------|
-|`enabled`|Požadovaný atribut.<br /><br /> Specifies whether garbage collection supports multiple CPU groups.|
+|`enabled`|Požadovaný atribut.<br /><br /> Určuje, zda uvolňování paměti podporuje více skupin PROCESORů.|
 
 ## <a name="enabled-attribute"></a>Atribut enabled
 
 |Hodnota|Popis|
 |-----------|-----------------|
-|`false`|Garbage collection does not support multiple CPU groups. Toto nastavení je výchozí.|
-|`true`|Garbage collection supports multiple CPU groups, if server garbage collection is enabled.|
+|`false`|Uvolňování paměti nepodporuje více skupin PROCESORů. Toto nastavení je výchozí.|
+|`true`|Uvolňování paměti podporuje více skupin PROCESORů, pokud je povoleno shromažďování paměti serveru.|
 
 ### <a name="child-elements"></a>Podřízené elementy
 
-Žádné
+Žádné.
 
 ### <a name="parent-elements"></a>Nadřazené elementy
 
@@ -57,14 +57,14 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ## <a name="remarks"></a>Poznámky
 
-When a computer has multiple CPU groups and server garbage collection is enabled (see the [\<gcServer>](gcserver-element.md) element), enabling this element extends garbage collection across all CPU groups and takes all cores into account when creating and balancing heaps.
+Pokud je v počítači více skupin PROCESORů a uvolňování paměti serveru (viz [\<gcServer >](gcserver-element.md) element), povolením tohoto elementu dojde k rozšíření uvolňování paměti napříč všemi skupinami CPU a při vytváření a vyrovnávání hald budou brát v úvahu všechny jádra.
 
 > [!NOTE]
-> This element applies only to garbage collection threads. To enable the runtime to distribute user threads across all CPU groups, you must also enable the [\<Thread_UseAllCpuGroups>](thread-useallcpugroups-element.md) element.
+> Tento prvek se vztahuje pouze na vlákna uvolňování paměti. Chcete-li povolit modulu runtime pro distribuci uživatelských vláken napříč všemi skupinami PROCESORů, je nutné povolit také [\<Thread_UseAllCpuGroups >](thread-useallcpugroups-element.md) elementu.
 
 ## <a name="example"></a>Příklad
 
-The following example shows how to enable garbage collection for multiple CPU groups.
+Následující příklad ukazuje, jak povolit uvolňování paměti pro více skupin PROCESORů.
 
 ```xml
 <configuration>
@@ -79,5 +79,5 @@ The following example shows how to enable garbage collection for multiple CPU gr
 
 - [Schéma nastavení běhového prostředí](index.md)
 - [Schéma konfiguračního souboru](../index.md)
-- [To disable concurrent garbage collection](gcconcurrent-element.md#to-disable-background-garbage-collection)
-- [Workstation and server garbage collection](../../../../standard/garbage-collection/fundamentals.md#workstation-and-server-garbage-collection)
+- [Zakázání souběžného uvolňování paměti](gcconcurrent-element.md#to-disable-background-garbage-collection)
+- [Uvolnění paměti pracovní stanice a serveru](../../../../standard/garbage-collection/fundamentals.md#workstation-and-server-garbage-collection)

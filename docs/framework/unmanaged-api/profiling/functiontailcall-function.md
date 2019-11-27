@@ -22,10 +22,10 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74427343"
 ---
 # <a name="functiontailcall-function"></a>FunctionTailcall – funkce
-Notifies the profiler that the currently executing function is about to perform a tail call to another function.  
+Upozorní profileru, že aktuálně vykonávaná funkce se chystá provést volání funkce tail do jiné funkce.  
   
 > [!NOTE]
-> The `FunctionTailcall` function is deprecated in the .NET Framework version 2.0. It will continue to work, but will incur a performance penalty. Use the [FunctionTailcall2](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md) function instead.  
+> Funkce `FunctionTailcall` je v .NET Framework verze 2,0 zastaralá. Bude i nadále fungovat, ale dojde k snížení výkonu. Místo toho použijte funkci [FunctionTailcall2 –](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,31 +37,31 @@ void __stdcall FunctionTailcall (
   
 ## <a name="parameters"></a>Parametry  
  `funcID`  
- [in] The identifier of the currently executing function that is about to make a tail call.  
+ pro Identifikátor aktuálně vykonávané funkce, která má být volána pro volání funkce tail.  
   
 ## <a name="remarks"></a>Poznámky  
- The target function of the tail call will use the current stack frame, and will return directly to the caller of the function that made the tail call. This means that a [FunctionLeave](../../../../docs/framework/unmanaged-api/profiling/functionleave-function.md) callback will not be issued for a function that is the target of a tail call.  
+ Cílová funkce volání Tail bude používat aktuální rámec zásobníku a vrátí se přímo volajícímu funkce, která provedla volání funkce tail. To znamená, že zpětné volání [FunctionLeave –](../../../../docs/framework/unmanaged-api/profiling/functionleave-function.md) nebude vystaveno pro funkci, která je cílem volání funkce tail.  
   
- The `FunctionTailcall` function is a callback; you must implement it. The implementation must use the `__declspec`(`naked`) storage-class attribute.  
+ Funkce `FunctionTailcall` je zpětné volání; je nutné jej implementovat. Implementace musí používat atribut třídy úložiště `__declspec`(`naked`).  
   
- The execution engine does not save any registers before calling this function.  
+ Spouštěcí modul neuloží žádné Registry před voláním této funkce.  
   
-- On entry, you must save all registers that you use, including those in the floating-point unit (FPU).  
+- Při zadání je nutné uložit všechny používané Registry, včetně těch, které jsou v jednotce s plovoucí desetinnou čárkou (FPU).  
   
-- On exit, you must restore the stack by popping off all the parameters that were pushed by its caller.  
+- Při ukončení je nutné obnovit zásobník odebráním všech parametrů, které byly vloženy volajícím.  
   
- The implementation of `FunctionTailcall` should not block because it will delay garbage collection. The implementation should not attempt a garbage collection because the stack may not be in a garbage collection-friendly state. If a garbage collection is attempted, the runtime will block until `FunctionTailcall` returns.  
+ Implementace `FunctionTailcall` by neměla zablokovat, protože bude odloženo uvolňování paměti. Implementace by se neměla pokoušet o uvolnění paměti, protože zásobník nemůže být ve stavu, který je k pro uvolňování paměti. V případě, že dojde k pokusu o uvolnění paměti, modul runtime zablokuje, dokud se `FunctionTailcall` nevrátí.  
   
- Also, the `FunctionTailcall` function must not call into managed code or in any way cause a managed memory allocation.  
+ Také funkce `FunctionTailcall` nesmí volat do spravovaného kódu nebo jakýmkoli způsobem způsobovat přidělení spravované paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl  
+ **Hlavička:** CorProf. idl  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** 1.1, 1.0  
+ **Verze .NET Framework:** 1,1, 1,0  
   
 ## <a name="see-also"></a>Viz také:
 

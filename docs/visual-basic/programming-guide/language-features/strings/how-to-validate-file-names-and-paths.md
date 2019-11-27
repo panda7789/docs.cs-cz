@@ -1,5 +1,5 @@
 ---
-title: 'How to: Validate File Names and Paths'
+title: 'Postupy: ověření názvů souborů a cest'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - file names [Visual Basic], validating
@@ -15,14 +15,14 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344368"
 ---
 # <a name="how-to-validate-file-names-and-paths-in-visual-basic"></a>Postupy: Ověření názvů a cest souborů v jazyce Visual Basic
-This example returns a `Boolean` value that indicates whether a string represents a file name or path. The validation checks if the name contains characters that are not allowed by the file system.  
+V tomto příkladu se vrátí hodnota `Boolean`, která indikuje, jestli řetězec představuje název souboru nebo cestu. Ověření kontroluje, zda název obsahuje znaky, které nejsou povoleny systémem souborů.  
   
 ## <a name="example"></a>Příklad  
  [!code-vb[VbVbcnRegEx#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnRegEx/VB/Class1.vb#4)]  
   
- This example does not check if the name has incorrectly placed colons, or directories with no name, or if the length of the name exceeds the system-defined maximum length. It also does not check if the application has permission to access the file-system resource with the specified name.  
+ Tento příklad nekontroluje, zda má název nesprávně umístěné dvojtečky nebo adresáře bez názvu, nebo pokud délka názvu překračuje maximální délku definovanou systémem. Nekontroluje také, jestli má aplikace oprávnění pro přístup k prostředku systému souborů se zadaným názvem.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.IO.Path.GetInvalidPathChars%2A>
-- [Validating Strings in Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/validating-strings.md)
+- [Ověřování řetězců v Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/validating-strings.md)

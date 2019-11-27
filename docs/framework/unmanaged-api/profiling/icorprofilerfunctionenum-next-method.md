@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74447785"
 ---
 # <a name="icorprofilerfunctionenumnext-method"></a>ICorProfilerFunctionEnum::Next – metoda
-Gets the specified number of contiguous functions from a sequential collection of functions, starting at the enumerator's current position in the sequence.  
+Získá zadaný počet souvislých funkcí z sekvenční kolekce funkcí počínaje aktuální pozicí čítače výčtu v sekvenci.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,30 +36,30 @@ HRESULT Next([in]  ULONG      celt,
   
 ## <a name="parameters"></a>Parametry  
  `celt`  
- [in] The number of functions to retrieve.  
+ pro Počet funkcí, které mají být načteny.  
   
  `ids`  
- [out] An array of `COR_PRF_FUNCTION` values, each of which represents a retrieved function.  
+ mimo Pole hodnot `COR_PRF_FUNCTION`, z nichž každá představuje načtenou funkci.  
   
  `pceltFetched`  
- [out] A pointer to the number of functions actually returned in the `ids` array.  
+ mimo Ukazatel na počet funkcí skutečně vrácených v poli `ids`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`celt` elements were returned.|  
-|S_FALSE|Fewer than `celt` elements were returned, which indicates that the enumeration is complete.|  
+|S_OK|byly vráceny `celt` prvky.|  
+|S_FALSE|Bylo vráceno méně než `celt` prvků, což naznačuje, že byl výčet dokončen.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

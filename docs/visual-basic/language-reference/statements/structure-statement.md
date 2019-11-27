@@ -21,7 +21,7 @@ ms.locfileid: "74346461"
 ---
 # <a name="structure-statement"></a>Structure – příkaz
 
-Declares the name of a structure and introduces the definition of the variables, properties, events, and procedures that the structure comprises.
+Deklaruje název struktury a zavádí definici proměnných, vlastností, událostí a procedur, které struktura zahrnuje.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -38,76 +38,76 @@ End Structure
 
 |Termín|Definice|
 |---|---|
-|`attributelist`|Volitelné. See [Attribute List](attribute-list.md).|
-|`accessmodifier`|Volitelné. Can be one of the following:<br /><br /> -   [Public](../modifiers/public.md)<br />-   [Protected](../modifiers/protected.md)<br />-   [Friend](../modifiers/friend.md)<br />-   [Private](../modifiers/private.md)<br />- [Protected Friend](../modifiers/protected-friend.md)<br/>- [Private Protected](../modifiers/private-protected.md) <br /><br /> See [Access levels in Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md).|
-|`Shadows`|Volitelné. See [Shadows](../modifiers/shadows.md).|
-|`Partial`|Volitelné. Indicates a partial definition of the structure. See [Partial](../modifiers/partial.md).|
-|`name`|Požadováno. Name of this structure. See [Declared Element Names](../../programming-guide/language-features/declared-elements/declared-element-names.md).|
-|`Of`|Volitelné. Specifies that this is a generic structure.|
-|`typelist`|Required if you use the [Of](of-clause.md) keyword. List of type parameters for this structure. See [Type List](type-list.md).|
-|`Implements`|Volitelné. Indicates that this structure implements the members of one or more interfaces. See [Implements Statement](implements-statement.md).|
-|`interfacenames`|Required if you use the `Implements` statement. The names of the interfaces this structure implements.|
-|`datamemberdeclarations`|Požadováno. Zero or more `Const`, `Dim`, `Enum`, or `Event` statements declaring *data members* of the structure.|
-|`methodmemberdeclarations`|Volitelné. Zero or more declarations of `Function`, `Operator`, `Property`, or `Sub` procedures, which serve as *method members* of the structure.|
-|`End Structure`|Požadováno. Terminates the `Structure` definition.|
+|`attributelist`|Volitelná. Viz [seznam atributů](attribute-list.md).|
+|`accessmodifier`|Volitelná. Může být jedna z následujících akcí:<br /><br /> -   [veřejné](../modifiers/public.md)<br />-   [chráněno](../modifiers/protected.md)<br />-   [přítel](../modifiers/friend.md)<br />-   [privátní](../modifiers/private.md)<br />[přítel chráněný](../modifiers/protected-friend.md) - <br/>- [Private Protected](../modifiers/private-protected.md) <br /><br /> Podívejte [se na úrovně přístupu v Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md).|
+|`Shadows`|Volitelná. Viz [Shadows](../modifiers/shadows.md).|
+|`Partial`|Volitelná. Označuje částečnou definici struktury. Zobrazit [částečné](../modifiers/partial.md).|
+|`name`|Požadováno. Název této struktury Viz [deklarované názvy elementů](../../programming-guide/language-features/declared-elements/declared-element-names.md).|
+|`Of`|Volitelná. Určuje, že se jedná o obecnou strukturu.|
+|`typelist`|Povinné, pokud použijete klíčové slovo [of](of-clause.md) . Seznam parametrů typu pro tuto strukturu Viz [seznam typů](type-list.md).|
+|`Implements`|Volitelná. Označuje, že tato struktura implementuje členy jednoho nebo více rozhraní. Viz [příkaz Implements](implements-statement.md).|
+|`interfacenames`|Vyžaduje se, pokud použijete příkaz `Implements`. Názvy rozhraní, které tato struktura implementuje.|
+|`datamemberdeclarations`|Požadováno. Nula nebo více `Const`, `Dim`, `Enum`nebo `Event` příkazy pro deklaraci *datových členů* struktury.|
+|`methodmemberdeclarations`|Volitelná. Nula nebo více deklarací `Function`, `Operator`, `Property`nebo `Sub` procedur, které slouží jako *Členové metody* struktury.|
+|`End Structure`|Požadováno. Ukončí definici `Structure`.|
 
 ## <a name="remarks"></a>Poznámky
 
-The `Structure` statement defines a composite value type that you can customize. A *structure* is a generalization of the user-defined type (UDT) of previous versions of Visual Basic. For more information, see [Structures](../../programming-guide/language-features/data-types/structures.md).
+Příkaz `Structure` definuje typ složené hodnoty, kterou můžete přizpůsobit. *Struktura* je generalizace uživatelsky definovaného typu (UDT) předchozích verzí Visual Basic. Další informace najdete v tématu [struktury](../../programming-guide/language-features/data-types/structures.md).
 
-Structures support many of the same features as classes. For example, structures can have properties and procedures, they can implement interfaces, and they can have parameterized constructors. However, there are significant differences between structures and classes in areas such as inheritance, declarations, and usage. Also, classes are reference types and structures are value types. For more information, see [Structures and Classes](../../programming-guide/language-features/data-types/structures-and-classes.md).
+Struktury podporují mnoho stejných funkcí jako třídy. Například struktury mohou mít vlastnosti a postupy, mohou implementovat rozhraní a mohou mít parametrizované konstruktory. Existují však významné rozdíly mezi strukturami a třídami v oblastech, jako jsou dědičnost, deklarace a použití. Třídy jsou také typy odkazů a struktury jsou typy hodnot. Další informace naleznete v tématu [struktury a třídy](../../programming-guide/language-features/data-types/structures-and-classes.md).
 
-You can use `Structure` only at namespace or module level. This means the *declaration context* for a structure must be a source file, namespace, class, structure, module, or interface, and cannot be a procedure or block. For more information, see [Declaration Contexts and Default Access Levels](declaration-contexts-and-default-access-levels.md).
+`Structure` můžete použít jenom na úrovni oboru názvů nebo modulu. To znamená, že *kontext deklarace* struktury musí být zdrojový soubor, obor názvů, třída, struktura, modul nebo rozhraní a nemůže být procedura nebo blok. Další informace najdete v tématu [deklarace kontextů a výchozích úrovní přístupu](declaration-contexts-and-default-access-levels.md).
 
-Structures default to [Friend](../modifiers/friend.md) access. You can adjust their access levels with the access modifiers. For more information, see [Access levels in Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md).
+Struktury se ve výchozím nastavení přistupují k [příteli](../modifiers/friend.md) . Můžete upravit jejich úrovně přístupu modifikátory přístupu. Další informace najdete v tématu [úrovně přístupu v Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md).
 
-## <a name="rules"></a>Rules
+## <a name="rules"></a>Pravidla
 
-- **Nesting.** You can define one structure within another. The outer structure is called the *containing structure*, and the inner structure is called a *nested structure*. However, you cannot access a nested structure's members through the containing structure. Instead, you must declare a variable of the nested structure's data type.
+- **Vnoření.** Můžete definovat jednu strukturu v rámci jiné. Vnější struktura se nazývá *obsažená struktura*a vnitřní struktura se nazývá *vnořená struktura*. Nemůžete ale přistupovat k členům vnořené struktury prostřednictvím obsahující struktury. Místo toho je nutné deklarovat proměnnou datového typu vnořené struktury.
 
-- **Member Declaration.** You must declare every member of a structure. A structure member cannot be [Protected](../modifiers/protected.md) or `Protected Friend` because nothing can inherit from a structure. The structure itself, however, can be `Protected` or `Protected Friend`.
+- **Deklarace člena** Musíte deklarovat každého člena struktury. Člen struktury nemůže být [chráněný](../modifiers/protected.md) ani `Protected Friend`, protože nic nemůže dědit ze struktury. Samotnou strukturu však lze `Protected` nebo `Protected Friend`.
   
-     You can declare zero or more nonshared variables or nonshared, noncustom events in a structure. You cannot have only constants, properties, and procedures, even if some of them are nonshared.
+     V rámci struktury můžete deklarovat nula nebo více nesdílených proměnných nebo nesdílených nevlastních událostí. Nemůžete mít jenom konstanty, vlastnosti a postupy, i když některé z nich nejsou sdílené.
 
-- **Initialization.** You cannot initialize the value of any nonshared data member of a structure as part of its declaration. You must either initialize such a data member by means of a parameterized constructor on the structure, or assign a value to the member after you have created an instance of the structure.
+- **Operace.** V rámci deklarace nelze inicializovat hodnotu žádného nesdíleného datového členu struktury. Takový datový člen musíte buď inicializovat pomocí parametrizovaného konstruktoru ve struktuře, nebo přiřadit hodnotu členu po vytvoření instance struktury.
 
-- **Inheritance.** A structure cannot inherit from any type other than <xref:System.ValueType>, from which all structures inherit. In particular, one structure cannot inherit from another.
+- **Dědičnost.** Struktura nemůže dědit z jiného typu než <xref:System.ValueType>, ze kterého všechny struktury dědí. Konkrétně jedna struktura nemůže dědit od druhé.
 
-     You cannot use the [Inherits Statement](inherits-statement.md) in a structure definition, even to specify <xref:System.ValueType>.
+     [Příkaz Inherits](inherits-statement.md) nelze použít v definici struktury, ani pro určení <xref:System.ValueType>.
 
-- **Implementation.** If the structure uses the [Implements Statement](implements-statement.md), you must implement every member defined by every interface you specify in `interfacenames`.
+- **Provádění.** Pokud struktura používá [příkaz Implements](implements-statement.md), je nutné implementovat každého člena definovaného každým rozhraním, které zadáte v `interfacenames`.
 
-- **Default Property.** A structure can specify at most one property as its *default property*, using the [Default](../modifiers/default.md) modifier. For more information, see [Default](../modifiers/default.md).
+- **Výchozí vlastnost.** Struktura může určovat maximálně jednu vlastnost jako *výchozí vlastnost*pomocí [výchozího](../modifiers/default.md) modifikátoru. Další informace najdete v tématu [výchozí](../modifiers/default.md).
 
-## <a name="behavior"></a>Behavior
+## <a name="behavior"></a>Chování
 
-- **Access Level.** Within a structure, you can declare each member with its own access level. All structure members default to [Public](../modifiers/public.md) access. Note that if the structure itself has a more restricted access level, this automatically restricts access to its members, even if you adjust their access levels with the access modifiers.
+- **Úroveň přístupu.** V rámci struktury můžete deklarovat každého člena s vlastní úrovní přístupu. Všechny členy struktury jsou ve výchozím nastavení [veřejným](../modifiers/public.md) přístupem. Všimněte si, že pokud má struktura vlastní více úrovní přístupu, automaticky se tím omezí přístup k jejím členům, i když upravíte jejich úrovně přístupu modifikátory přístupu.
 
-- **Scope.** A structure is in scope throughout its containing namespace, class, structure, or module.
+- **Oboru.** Struktura je v oboru, který obsahuje obor názvů, třídu, strukturu nebo modul.
 
-     The scope of every structure member is the entire structure.
+     Rozsah každého člena struktury je celá struktura.
 
-- **Lifetime.** A structure does not itself have a lifetime. Rather, each instance of that structure has a lifetime independent of all other instances.
+- **Platné.** Struktura sama o sobě nemá život. Místo toho má každá instance struktury životnost nezávisle na všech ostatních instancích.
 
-     The lifetime of an instance begins when it is created by a [New Operator](../operators/new-operator.md) clause. It ends when the lifetime of the variable that holds it ends.
+     Doba životnosti instance začíná, když je vytvořena [novou klauzulí operátoru](../operators/new-operator.md) . Končí v případě, že skončí životnost proměnné, která ho obsahuje.
 
-     You cannot extend the lifetime of a structure instance. An approximation to static structure functionality is provided by a module. For more information, see [Module Statement](module-statement.md).
+     Nemůžete roztáhnout dobu života instance struktury. Modul nabízí sbližování funkcí statické struktury. Další informace naleznete v tématu [příkaz Module](module-statement.md).
 
-     Structure members have lifetimes depending on how and where they are declared. For more information, see "Lifetime" in [Class Statement](class-statement.md).
+     Členové struktury mají životnost v závislosti na tom, jak a kde jsou deklarovány. Další informace naleznete v části "doba života" v [příkazu třídy](class-statement.md).
 
-- **Qualification.** Code outside a structure must qualify a member's name with the name of that structure.
+- **Vydal.** Kód mimo strukturu musí kvalifikovat název člena s názvem této struktury.
 
-     If code inside a nested structure makes an unqualified reference to a programming element, Visual Basic searches for the element first in the nested structure, then in its containing structure, and so on out to the outermost containing element. For more information, see [References to Declared Elements](../../programming-guide/language-features/declared-elements/references-to-declared-elements.md).
+     Pokud kód uvnitř vnořené struktury vytvoří nekvalifikovaný odkaz na prvek programování, Visual Basic vyhledá prvek nejprve ve vnořené struktuře, poté v jeho obsahující struktuře a tak dále k vnějšímu nadřazenému prvku. Další informace naleznete v tématu [odkazy na deklarované elementy](../../programming-guide/language-features/declared-elements/references-to-declared-elements.md).
 
-- **Memory Consumption.** As with all composite data types, you cannot safely calculate the total memory consumption of a structure by adding together the nominal storage allocations of its members. Furthermore, you cannot safely assume that the order of storage in memory is the same as your order of declaration. If you need to control the storage layout of a structure, you can apply the <xref:System.Runtime.InteropServices.StructLayoutAttribute> attribute to the `Structure` statement.
+- **Spotřeba paměti.** Stejně jako u všech složených datových typů nemůžete bezpečně vypočítat celkovou spotřebu paměti struktury tím, že přidáváte dohromady jmenovité přidělení úložiště jeho členů. Navíc nemůžete bezpečně předpokládat, že pořadí úložiště v paměti je stejné jako vaše pořadí deklarace. Pokud potřebujete řídit rozložení úložiště struktury, můžete použít atribut <xref:System.Runtime.InteropServices.StructLayoutAttribute> u příkazu `Structure`.
 
 ## <a name="example"></a>Příklad
 
-The following example uses the `Structure` statement to define a set of related data for an employee. It shows the use of `Public`, `Friend`, and `Private` members to reflect the sensitivity of the data items. It also shows procedure, property, and event members.
+Následující příklad používá příkaz `Structure` k definování sady souvisejících dat pro zaměstnance. Zobrazuje použití `Public`, `Friend`a `Private` členů, aby odrážela citlivost datových položek. Také ukazuje proceduru, vlastnost a členy události.
 
 [!code-vb[VbVbalrStatements#57](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#57)]
 
-For more information on how to use `Structure`s, see [Structure Variable](../../programming-guide/language-features/data-types/structure-variables.md).
+Další informace o použití `Structure`s naleznete v tématu Structure- [Variable](../../programming-guide/language-features/data-types/structure-variables.md).
 
 ## <a name="see-also"></a>Viz také:
 

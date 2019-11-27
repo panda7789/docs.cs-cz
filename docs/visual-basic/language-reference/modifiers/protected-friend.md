@@ -11,16 +11,16 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351312"
 ---
-# <a name="protected-friend-visual-basic"></a>Protected Friend (Visual Basic)
+# <a name="protected-friend-visual-basic"></a>Chráněný přítel (Visual Basic)
 
-The `Protected Friend` keyword combination is a member access modifier. It confers both [Friend](friend.md) access and [Protected](protected.md) access on the declared elements, so they are accessible from anywhere in the same assembly, from their own class, and from derived classes. You can specify `Protected Friend` only on members of classes; you cannot apply `Protected Friend` to members of a structure because structures cannot be inherited.
+Kombinací klíčového slova `Protected Friend` je modifikátor přístupu ke členu. Uděluje přístup [příteli](friend.md) i [chráněným](protected.md) přístupům k deklarovaným prvkům, takže jsou přístupné odkudkoli ve stejném sestavení, z vlastní třídy a z odvozených tříd. Můžete zadat `Protected Friend` pouze pro členy třídy; `Protected Friend` nelze použít u členů struktury, protože struktury nelze dědit.
 
 > [!NOTE]
-> In Visual Studio, selecting F1 help on `protected friend` provides help for either [protected](protected.md) or [friend](friend.md). The IDE picks the single token under the cursor rather than the compound word.
+> V aplikaci Visual Studio vyberte nápovědu F1 v `protected friend` poskytne nápovědu pro buď [chráněný](protected.md) , nebo [Friend](friend.md). Rozhraní IDE vybere jeden token pod kurzorem namísto složeného slova.
 
-## <a name="rules"></a>Rules
+## <a name="rules"></a>Pravidla
 
-**Declaration Context.** You can use `Protected Friend` only at the class level. This means the declaration context for a `Protected` element must be a class, and cannot be a source file, namespace, interface, module, structure, or procedure.
+**Kontext deklarace** `Protected Friend` lze použít pouze na úrovni třídy. To znamená, že kontext deklarace pro prvek `Protected` musí být třída a nemůže se jednat o zdrojový soubor, obor názvů, rozhraní, modul, strukturu nebo proceduru.
 
 ## <a name="see-also"></a>Viz také:
 
@@ -29,7 +29,7 @@ The `Protected Friend` keyword combination is a member access modifier. It confe
 - [Friend](friend.md)
 - [Private](../../../visual-basic/language-reference/modifiers/private.md)
 - [Private Protected](./private-protected.md)
-- [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
+- [Úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
 - [Procedury](../../../visual-basic/programming-guide/language-features/procedures/index.md)
 - [Struktury](../../../visual-basic/programming-guide/language-features/data-types/structures.md)
 - [Objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

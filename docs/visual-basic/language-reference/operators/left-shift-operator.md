@@ -15,8 +15,8 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350985"
 ---
-# <a name="-operator-visual-basic"></a>\<\< Operator (Visual Basic)
-Performs an arithmetic left shift on a bit pattern.  
+# <a name="-operator-visual-basic"></a>Operátor \<\< (Visual Basic)
+Provede aritmetický levý posun na bitový vzorek.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,57 +26,57 @@ result = pattern << amount
   
 ## <a name="parts"></a>Součásti  
  `result`  
- Požadováno. Integral numeric value. The result of shifting the bit pattern. The data type is the same as that of `pattern`.  
+ Požadováno. Integrální číselná hodnota. Výsledek posunu bitového vzoru. Datový typ je stejný jako u `pattern`.  
   
  `pattern`  
- Požadováno. Integral numeric expression. The bit pattern to be shifted. The data type must be an integral type (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, or `ULong`).  
+ Požadováno. Integrální číselný výraz. Bitový vzorek, který se má posunout. Datový typ musí být integrální typ (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`nebo `ULong`).  
   
  `amount`  
- Požadováno. Numeric expression. The number of bits to shift the bit pattern. The data type must be `Integer` or widen to `Integer`.  
+ Požadováno. Číselný výraz. Počet bitů pro posunutí bitového vzoru. Datový typ musí být `Integer` nebo se rozšířit na `Integer`.  
   
 ## <a name="remarks"></a>Poznámky  
- Arithmetic shifts are not circular, which means the bits shifted off one end of the result are not reintroduced at the other end. In an arithmetic left shift, the bits shifted beyond the range of the result data type are discarded, and the bit positions vacated on the right are set to zero.  
+ Aritmetické posuny nejsou cyklické, což znamená, že bity posunuté o jeden konec výsledku nejsou znovu zavedeny na druhém konci. V aritmetickém levém Shift se bity, které přesahují rozsah výsledných dat, zahodí a bitové pozice uvolněné na pravé straně mají nastavenou hodnotu nula.  
   
- To prevent a shift by more bits than the result can hold, Visual Basic masks the value of `amount` with a size mask that corresponds to the data type of `pattern`. The binary AND of these values is used for the shift amount. The size masks are as follows:  
+ Aby se zabránilo posunu více bitů, než je výsledek, Visual Basic maskuje hodnotu `amount` s maskou velikosti, která odpovídá datovému typu `pattern`. Binární soubor a tyto hodnoty se použijí pro velikost Shift. Masky velikosti jsou následující:  
   
-|Data type of `pattern`|Size mask (decimal)|Size mask (hexadecimal)|  
+|Datový typ `pattern`|Velikost – maska (desítková)|Velikost – maska (šestnáctkově)|  
 |----------------------------|---------------------------|-------------------------------|  
-|`SByte`, `Byte`|7|&H00000007|  
-|`Short`, `UShort`|15|&H0000000F|  
-|`Integer`, `UInteger`|31|&H0000001F|  
-|`Long`, `ULong`|63|&H0000003F|  
+|`SByte``Byte`|7|&H00000007|  
+|`Short``UShort`|15|&H0000000F|  
+|`Integer``UInteger`|31|&H0000001F|  
+|`Long``ULong`|63|&H0000003F|  
   
- If `amount` is zero, the value of `result` is identical to the value of `pattern`. If `amount` is negative, it is taken as an unsigned value and masked with the appropriate size mask.  
+ Pokud je `amount` nula, hodnota `result` je shodná s hodnotou `pattern`. Pokud je `amount` záporné, je převedena jako hodnota bez znaménka a s maskou odpovídající velikosti.  
   
- Arithmetic shifts never generate overflow exceptions.  
+ Aritmetické posuny nikdy negenerují výjimky přetečení.  
   
 > [!NOTE]
-> The `<<` operator can be *overloaded*, which means that a class or structure can redefine its behavior when an operand has the type of that class or structure. If your code uses this operator on such a class or structure, be sure that you understand its redefined behavior. For more information, see [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+> Operátor `<<` lze přetížit, což znamená, že třída nebo struktura může předefinovat své *chování, pokud*má operand typ této třídy nebo struktury. Pokud váš kód používá tento operátor na takové třídě nebo struktuře, ujistěte se, že rozumíte jeho předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Příklad  
- The following example uses the `<<` operator to perform arithmetic left shifts on integral values. The result always has the same data type as that of the expression being shifted.  
+ Následující příklad používá operátor `<<` k provádění aritmetických posunů v celočíselných hodnotách. Výsledek má vždycky stejný datový typ jako výraz, který se posouvá.  
   
  [!code-vb[VbVbalrOperators#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#12)]  
   
- The results of the previous example are as follows:  
+ Výsledky předchozího příkladu jsou následující:  
   
-- `result1` is 192 (0000 0000 1100 0000).  
+- `result1` je 192 (0000 0000 1100 0000).  
   
-- `result2` is 3072 (0000 1100 0000 0000).  
+- `result2` je 3072 (0000 1100 0000 0000).  
   
-- `result3` is -32768 (1000 0000 0000 0000).  
+- `result3` je-32768 (1000 0000 0000 0000).  
   
-- `result4` is 384 (0000 0001 1000 0000).  
+- `result4` je 384 (0000 0001 1000 0000).  
   
-- `result5` is 0 (shifted 15 places to the left).  
+- `result5` je 0 (přesune se na 15 míst vlevo).  
   
- The shift amount for `result4` is calculated as 17 AND 15, which equals 1.  
+ Velikost posunutí pro `result4` se počítá jako 17 a 15, což se rovná 1.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Operátory bitového posunu](../../../visual-basic/language-reference/operators/bit-shift-operators.md)
 - [Operátory přiřazení](../../../visual-basic/language-reference/operators/assignment-operators.md)
-- [Operátor <<=](../../../visual-basic/language-reference/operators/left-shift-assignment-operator.md)
-- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [<<= – operátor](../../../visual-basic/language-reference/operators/left-shift-assignment-operator.md)
+- [Priorita operátorů v Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
-- [Arithmetic Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
+- [Aritmetické operátory v Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)

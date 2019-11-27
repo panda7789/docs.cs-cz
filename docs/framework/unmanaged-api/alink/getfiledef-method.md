@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74426048"
 ---
 # <a name="getfiledef-method"></a>GetFileDef – metoda
-Retrieves the actual FileDef token used in metadata (as opposed to the token assigned by ALink).  
+Načte skutečný token FileDef použitý v metadatech (na rozdíl od tokenu přiřazeného pomocí ALink).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,22 +36,22 @@ HRESULT GetFileDef(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID of the assembly.  
+ ID sestavení  
   
  `TargetFile`  
- Token of the added file as retrieved from AddFile Method or AddImport Method.  
+ Token přidaného souboru, který byl načten z metody AddFile nebo metody addimport –  
   
  `pScope`  
- Receives the FileDef token.  
+ Přijímá token FileDef.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Returns S_OK if the method succeeds.  
+ Vrátí S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Requires alink.h  
+ Vyžaduje ALink. h  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink2 – rozhraní](ialink2-interface.md)
 - [IALink – rozhraní](ialink-interface.md)
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)

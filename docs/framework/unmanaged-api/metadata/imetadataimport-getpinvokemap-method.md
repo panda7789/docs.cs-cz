@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437096"
 ---
 # <a name="imetadataimportgetpinvokemap-method"></a>IMetaDataImport::GetPinvokeMap – metoda
-Gets a ModuleRef token to represent the target assembly of a PInvoke call.  
+Získá token Odkaz ModuleRef představující cílové sestavení volání PInvoke.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,31 +40,31 @@ HRESULT GetPinvokeMap (
   
 ## <a name="parameters"></a>Parametry  
  `tk`  
- [in] A FieldDef or MethodDef token to get the PInvoke mapping metadata for.  
+ pro FieldDef nebo MethodDef token pro získání metadat mapování PInvoke pro.  
   
  `pdwMappingFlags`  
- [out] A pointer to flags used for mapping. This value is a bitmask from the [CorPinvokeMap](../../../../docs/framework/unmanaged-api/metadata/corpinvokemap-enumeration.md) enumeration.  
+ mimo Ukazatel na příznaky použité pro mapování. Tato hodnota je Bitová maska z výčtu [CorPinvokeMap –](../../../../docs/framework/unmanaged-api/metadata/corpinvokemap-enumeration.md) .  
   
  `szImportName`  
- [out] The name of the unmanaged target DLL.  
+ mimo Název nespravované cílové knihovny DLL.  
   
  `cchImportName`  
- [in] The size in wide characters of `szImportName`.  
+ pro Velikost v různých znacích `szImportName`.  
   
  `pchImportName`  
- [out] The number of wide characters returned in `szImportName`.  
+ mimo Počet velkých znaků vrácených v `szImportName`.  
   
  `pmrImportDLL`  
- [out] A pointer to a ModuleRef token that represents the unmanaged target object library.  
+ mimo Ukazatel na token Odkaz ModuleRef, který představuje knihovnu nespravovaného cílového objektu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

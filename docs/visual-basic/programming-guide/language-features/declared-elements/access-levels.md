@@ -23,73 +23,73 @@ ms.locfileid: "74348683"
 ---
 # <a name="access-levels-in-visual-basic"></a>Úrovně přístupu v jazyce Visual Basic
 
-The *access level* of a declared element is the extent of the ability to access it, that is, what code has permission to read it or write to it. This is determined not only by how you declare the element itself, but also by the access level of the element's container. Code that cannot access a containing element cannot access any of its contained elements, even those declared as `Public`. For example, a `Public` variable in a `Private` structure can be accessed from inside the class that contains the structure, but not from outside that class.
+*Úroveň přístupu* deklarovaného prvku je rozsah možností přístupu, to znamená, jaký kód má oprávnění ke čtení nebo zápisu do něj. Tato funkce je určena nejen pomocí způsobu, jakým deklarujete samotný prvek, ale také úrovní přístupu kontejneru elementu. Kód, který nemůže přistupovat k nadřazenému prvku, nemůže získat přístup k žádnému z obsažených prvků, i když jsou deklarovány jako `Public`. Například `Public`ová proměnná ve `Private` struktuře je k dispozici v rámci třídy, která obsahuje strukturu, ale nikoli z vnějšku této třídy.
 
 ## <a name="public"></a>Public
 
-The [Public](../../../language-reference/modifiers/public.md) keyword in the declaration statement specifies that the element can be accessed from code anywhere in the same project, from other projects that reference the project, and from any assembly built from the project. The following code shows a sample `Public` declaration:
+Klíčové slovo [Public](../../../language-reference/modifiers/public.md) v příkazu Declaration určuje, že lze k elementu přejít z kódu kdekoli ve stejném projektu, z jiných projektů, které odkazují na projekt a ze všech sestavení sestavených z projektu. Následující kód ukazuje ukázkovou `Public`ovou deklaraci:
 
 ```vb
 Public Class ClassForEverybody
 ```
 
-You can use `Public` only at module, interface, or namespace level. This means you can declare a public element at the level of a source file or namespace, or inside an interface, module, class, or structure, but not in a procedure.
+`Public` lze použít pouze na úrovni modulu, rozhraní nebo oboru názvů. To znamená, že můžete deklarovat veřejný prvek na úrovni zdrojového souboru nebo oboru názvů nebo uvnitř rozhraní, modulu, třídy nebo struktury, ale ne v proceduře.
   
 ## <a name="protected"></a>Chráněno
 
-The [Protected](../../../language-reference/modifiers/protected.md) keyword in the declaration statement specifies that the element can be accessed only from within the same class, or from a class derived from this class. The following code shows a sample `Protected` declaration:
+Klíčové slovo [Protected](../../../language-reference/modifiers/protected.md) v příkazu Declaration určuje, že element lze použít pouze v rámci stejné třídy nebo z třídy odvozené z této třídy. Následující kód ukazuje ukázkovou `Protected`ovou deklaraci:
 
 ```vb
 Protected Class ClassForMyHeirs
 ```
 
-You can use `Protected` only at class level, and only when you declare a member of a class. This means you can declare a protected element in a class, but not at the level of a source file or namespace, or inside an interface, module, structure, or procedure.
+`Protected` lze použít pouze na úrovni třídy a pouze v případě, že deklarujete člena třídy. To znamená, že můžete deklarovat chráněný element ve třídě, ale ne na úrovni zdrojového souboru nebo oboru názvů, nebo uvnitř rozhraní, modulu, struktury nebo procedury.
 
 ## <a name="friend"></a>Friend
 
-The [Friend](../../../language-reference/modifiers/friend.md) keyword in the declaration statement specifies that the element can be accessed from within the same assembly, but not from outside the assembly. The following code shows a sample `Friend` declaration:
+Klíčové slovo [Friend](../../../language-reference/modifiers/friend.md) v příkazu Declaration určuje, že k elementu lze přistupovat ze stejného sestavení, ale nikoli z vnějšku sestavení. Následující kód ukazuje ukázkovou `Friend`ovou deklaraci:
 
 ```vb
 Friend stringForThisProject As String
 ```
 
-You can use `Friend` only at module, interface, or namespace level. This means you can declare a friend element at the level of a source file or namespace, or inside an interface, module, class, or structure, but not in a procedure.
+`Friend` lze použít pouze na úrovni modulu, rozhraní nebo oboru názvů. To znamená, že můžete deklarovat element Friend na úrovni zdrojového souboru nebo oboru názvů, nebo uvnitř rozhraní, modulu, třídy nebo struktury, ale ne v proceduře.
 
 ## <a name="protected-friend"></a>Protected Friend
 
-The [Protected Friend](../../../language-reference/modifiers/protected-friend.md) keyword combination in the declaration statement specifies that the element can be accessed either from derived classes or from within the same assembly, or both. The following code shows a sample `Protected Friend` declaration:
+Kombinace klíčového slova [Protected Friend](../../../language-reference/modifiers/protected-friend.md) v příkazu Declaration určuje, že k elementu lze přivodit z odvozených tříd nebo ze stejného sestavení, nebo obojí. Následující kód ukazuje ukázkovou `Protected Friend`ovou deklaraci:
 
 ```vb
 Protected Friend stringForProjectAndHeirs As String
 ```
 
-You can use `Protected Friend` only at class level, and only when you declare a member of a class. This means you can declare a protected friend element in a class, but not at the level of a source file or namespace, or inside an interface, module, structure, or procedure.
+`Protected Friend` lze použít pouze na úrovni třídy a pouze v případě, že deklarujete člena třídy. To znamená, že můžete deklarovat chráněný element Friend ve třídě, ale ne na úrovni zdrojového souboru nebo oboru názvů, nebo uvnitř rozhraní, modulu, struktury nebo procedury.
 
-## <a name="private"></a>Soukromé
+## <a name="private"></a>Privátní
 
-The [Private](../../../language-reference/modifiers/private.md) keyword in the declaration statement specifies that the element can be accessed only from within the same module, class, or structure. The following code shows a sample `Private` declaration:
+Klíčové slovo [Private](../../../language-reference/modifiers/private.md) v příkazu deklarace určuje, že element lze použít pouze v rámci stejného modulu, třídy nebo struktury. Následující kód ukazuje ukázkovou `Private`ovou deklaraci:
 
 ```vb
 Private _numberForMeOnly As Integer
 ```
 
-You can use `Private` only at module level. This means you can declare a private element inside a module, class, or structure, but not at the level of a source file or namespace, inside an interface, or in a procedure.
+`Private` můžete použít jenom na úrovni modulu. To znamená, že můžete deklarovat privátní prvek uvnitř modulu, třídy nebo struktury, ale ne na úrovni zdrojového souboru nebo oboru názvů uvnitř rozhraní nebo v proceduře.
 
-At the module level, the `Dim` statement without any access level keywords is equivalent to a `Private` declaration. However, you might want to use the `Private` keyword to make your code easier to read and interpret.
+Na úrovni modulu je příkaz `Dim` bez klíčových slov úrovně přístupu ekvivalentní `Private` deklaraci. Můžete však chtít použít klíčové slovo `Private`, aby bylo snazší číst a interpretovat kód.
 
 ## <a name="private-protected"></a>Private Protected
 
-The [Private Protected](../../../language-reference/modifiers/private-protected.md) keyword combination in the declaration statement specifies that the element can be accessed only from within the same class, as well as from derived classes found in the same assembly as the containing class. The `Private Protected` access modifier is supported starting with Visual Basic 15.5.
+Kombinace klíčového slova [Private Protected](../../../language-reference/modifiers/private-protected.md) v příkazu Declaration určuje, že k elementu lze získat pøístup pouze v rámci stejné třídy a také z odvozených tříd, které byly nalezeny ve stejném sestavení jako obsahující třídu. Modifikátor přístupu `Private Protected` je podporován od Visual Basic 15,5.
 
-The following example shows a `Private Protected` declaration:
+Následující příklad ukazuje `Private Protected` deklaraci:
 
 ```vb
 Private Protected internalValue As Integer
 ```
 
-You can declare a `Private Protected` element only inside of a class. You cannot declare it within an interface or structure, nor can you declare it at the level of a source file or namespace, inside an interface or a structure, or in a procedure.
+Element `Private Protected` lze deklarovat pouze uvnitř třídy. Nelze jej deklarovat v rámci rozhraní nebo struktury, ani jej nelze deklarovat na úrovni zdrojového souboru nebo oboru názvů uvnitř rozhraní nebo struktury nebo v proceduře.
 
-The `Private Protected` access modifier is supported by Visual Basic 15.5 and later. To use it, you add the following element to your Visual Basic project ( *\*.vbproj*) file. As long as Visual Basic 15.5 or later is installed on your system, it lets you take advantage of all the language features supported by the latest version of the Visual Basic compiler:
+Modifikátor přístupu `Private Protected` je podporován Visual Basic 15,5 a novějším. Chcete-li jej použít, přidejte následující prvek do souboru Visual Basic projektu ( *\*. vbproj*). Pokud je v systému nainstalovaná Visual Basic 15,5 nebo novější, umožní vám využít všechny jazykové funkce podporované nejnovější verzí Visual Basic kompilátoru:
 
 ```xml
 <PropertyGroup>
@@ -97,7 +97,7 @@ The `Private Protected` access modifier is supported by Visual Basic 15.5 and la
 </PropertyGroup>
 ```
 
-To use the `Private Protected` access modifier, you must add the following element to your Visual Basic project ( *\*.vbproj*) file:
+Chcete-li použít modifikátor přístupu `Private Protected`, je nutné přidat následující prvek do souboru projektu Visual Basic ( *\*. vbproj*):
 
 ```xml
 <PropertyGroup>
@@ -105,20 +105,20 @@ To use the `Private Protected` access modifier, you must add the following eleme
 </PropertyGroup>
 ```
 
-For more information see [setting the Visual Basic language version](../../../language-reference/configure-language-version.md).
+Další informace najdete v tématu [nastavení jazykové verze Visual Basic](../../../language-reference/configure-language-version.md).
 
 ## <a name="access-modifiers"></a>Modifikátory přístupu
 
-The keywords that specify access level are called *access modifiers*. The following table compares the access modifiers:
+Klíčová slova, která určují úroveň přístupu, se nazývají *modifikátory přístupu*. Následující tabulka porovnává modifikátory přístupu:
 
-|Access modifier|Access level granted|Elements you can declare with this access level|Declaration context within which you can use this modifier|
+|Modifikátor přístupu|Úroveň přístupu udělena|Prvky, které můžete deklarovat s touto úrovní přístupu|Kontext deklarace, ve kterém můžete použít tento modifikátor|
 |---------------------|--------------------------|-----------------------------------------------------|----------------------------------------------------------------|
-|`Public`|Unrestricted:<br /><br /> Any code that can see a public element can access it|Rozhraní<br /><br /> Moduly<br /><br /> Třídy<br /><br /> Struktury<br /><br /> Structure members<br /><br /> Procedury<br /><br /> Vlastnosti<br /><br /> Member variables<br /><br /> Konstanty<br /><br /> Výčty<br /><br /> Události<br /><br /> External declarations<br /><br /> Delegáty|Source file<br /><br /> Obor názvů<br /><br /> Rozhraní<br /><br /> Modul<br /><br /> Třída<br /><br /> Struktura|
-|`Protected`|Derivational:<br /><br /> Code in the class that declares a protected element, or a class derived from it, can access the element|Rozhraní<br /><br /> Třídy<br /><br /> Struktury<br /><br /> Procedury<br /><br /> Vlastnosti<br /><br /> Member variables<br /><br /> Konstanty<br /><br /> Výčty<br /><br /> Události<br /><br /> External declarations<br /><br /> Delegáty|Třída|
-|`Friend`|Sestavení:<br /><br /> Code in the assembly that declares a friend element can access it|Rozhraní<br /><br /> Moduly<br /><br /> Třídy<br /><br /> Struktury<br /><br /> Structure members<br /><br /> Procedury<br /><br /> Vlastnosti<br /><br /> Member variables<br /><br /> Konstanty<br /><br /> Výčty<br /><br /> Události<br /><br /> External declarations<br /><br /> Delegáty|Source file<br /><br /> Obor názvů<br /><br /> Rozhraní<br /><br /> Modul<br /><br /> Třída<br /><br /> Struktura|
-|`Protected``Friend`|Union of `Protected` and `Friend`:<br /><br /> Code in the same class or the same assembly as a protected friend element, or within any class derived from the element's class, can access it|Rozhraní<br /><br /> Třídy<br /><br /> Struktury<br /><br /> Procedury<br /><br /> Vlastnosti<br /><br /> Member variables<br /><br /> Konstanty<br /><br /> Výčty<br /><br /> Události<br /><br /> External declarations<br /><br /> Delegáty|Třída|
-|`Private`|Declaration context:<br /><br /> Code in the type that declares a private element, including code within contained types, can access the element|Rozhraní<br /><br /> Třídy<br /><br /> Struktury<br /><br /> Structure members<br /><br /> Procedury<br /><br /> Vlastnosti<br /><br /> Member variables<br /><br /> Konstanty<br /><br /> Výčty<br /><br /> Události<br /><br /> External declarations<br /><br /> Delegáty|Modul<br /><br /> Třída<br /><br /> Struktura|
-|`Private Protected`|Code in the class that declares a private protected element, or code in a derived class found in the same assembly as the bas class.|Rozhraní<br /><br /> Třídy<br /><br /> Struktury<br /><br /> Procedury<br /><br /> Vlastnosti<br /><br /> Member variables<br /><br /> Konstanty<br /><br /> Výčty<br /><br /> Události<br /><br /> External declarations<br /><br /> Delegáty|Třída|
+|`Public`|Neomezený<br /><br /> Jakýkoli kód, který může zobrazit veřejný prvek, má k němu přístup|Rozhraní<br /><br /> Moduly<br /><br /> Třídy<br /><br /> Struktury<br /><br /> Členové struktury<br /><br /> Procedury<br /><br /> Vlastnosti<br /><br /> Proměnné členů<br /><br /> Konstanty<br /><br /> Výčty<br /><br /> Události<br /><br /> Externí deklarace<br /><br /> Delegáti|Zdrojový soubor<br /><br /> Obor názvů<br /><br /> Rozhraní<br /><br /> Modul<br /><br /> Třída<br /><br /> Struktura|
+|`Protected`|Odvození:<br /><br /> Kód ve třídě, která deklaruje chráněný element nebo třídu odvozenou z něj, může přistupovat k elementu.|Rozhraní<br /><br /> Třídy<br /><br /> Struktury<br /><br /> Procedury<br /><br /> Vlastnosti<br /><br /> Proměnné členů<br /><br /> Konstanty<br /><br /> Výčty<br /><br /> Události<br /><br /> Externí deklarace<br /><br /> Delegáti|Třída|
+|`Friend`|Sestavení:<br /><br /> Kód v sestavení, který deklaruje element typu Friend, k němu má přístup|Rozhraní<br /><br /> Moduly<br /><br /> Třídy<br /><br /> Struktury<br /><br /> Členové struktury<br /><br /> Procedury<br /><br /> Vlastnosti<br /><br /> Proměnné členů<br /><br /> Konstanty<br /><br /> Výčty<br /><br /> Události<br /><br /> Externí deklarace<br /><br /> Delegáti|Zdrojový soubor<br /><br /> Obor názvů<br /><br /> Rozhraní<br /><br /> Modul<br /><br /> Třída<br /><br /> Struktura|
+|`Protected``Friend`|Sjednocení `Protected` a `Friend`:<br /><br /> Kód ve stejné třídě nebo stejném sestavení jako chráněný Friend element nebo v rámci libovolné třídy odvozené z třídy elementu může k němu přistupovat.|Rozhraní<br /><br /> Třídy<br /><br /> Struktury<br /><br /> Procedury<br /><br /> Vlastnosti<br /><br /> Proměnné členů<br /><br /> Konstanty<br /><br /> Výčty<br /><br /> Události<br /><br /> Externí deklarace<br /><br /> Delegáti|Třída|
+|`Private`|Kontext deklarace:<br /><br /> Kód v typu, který deklaruje soukromý element, včetně kódu v rámci obsažených typů, má přístup k elementu.|Rozhraní<br /><br /> Třídy<br /><br /> Struktury<br /><br /> Členové struktury<br /><br /> Procedury<br /><br /> Vlastnosti<br /><br /> Proměnné členů<br /><br /> Konstanty<br /><br /> Výčty<br /><br /> Události<br /><br /> Externí deklarace<br /><br /> Delegáti|Modul<br /><br /> Třída<br /><br /> Struktura|
+|`Private Protected`|Kód ve třídě, která deklaruje soukromý chráněný element, nebo kód v odvozené třídě, který byl nalezen ve stejném sestavení jako třída bas.|Rozhraní<br /><br /> Třídy<br /><br /> Struktury<br /><br /> Procedury<br /><br /> Vlastnosti<br /><br /> Proměnné členů<br /><br /> Konstanty<br /><br /> Výčty<br /><br /> Události<br /><br /> Externí deklarace<br /><br /> Delegáti|Třída|
 
 ## <a name="see-also"></a>Viz také:
 
@@ -127,8 +127,8 @@ The keywords that specify access level are called *access modifiers*. The follow
 - [Deklarované názvy elementů](declared-element-names.md)
 - [Odkazy na deklarované elementy](references-to-declared-elements.md)
 - [Deklarované charakteristiky elementů](declared-element-characteristics.md)
-- [Lifetime in Visual Basic](lifetime.md)
-- [Scope in Visual Basic](scope.md)
+- [Doba života v Visual Basic](lifetime.md)
+- [Obor v Visual Basic](scope.md)
 - [Postupy: Řízení dostupnosti proměnné](how-to-control-the-availability-of-a-variable.md)
 - [Proměnné](../variables/index.md)
 - [Deklarace proměnné](../variables/variable-declaration.md)

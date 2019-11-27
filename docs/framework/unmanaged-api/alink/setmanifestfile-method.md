@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445557"
 ---
 # <a name="setmanifestfile-method"></a>SetManifestFile – metoda
-Enables you to specify or reset the manifest file that the linker uses when it creates the assembly.  
+Umožňuje určit nebo obnovit soubor manifestu, který Linker používá při vytváření sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,20 +35,20 @@ HRESULT SetManifestFile(
 ## <a name="parameters"></a>Parametry  
  `pszFile`  
   
- The name of the manifest file whose contents are put into the Win32 resources blob.  
+ Název souboru manifestu, jehož obsah je umístěn do objektu BLOB prostředků Win32.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Returns S_OK if the method succeeds.  
+ Vrátí S_OK, pokud je metoda úspěšná.  
   
 ## <a name="remarks"></a>Poznámky  
- Call this before asking for the Win32ResBlob. The value of the `pszFile` parameter is the name of the manifest file whose contents are read and put in the Win32 resources with ID of RT_MANIFEST. When called by using a parameter of NULL, any previously read manifest is cleared. This enables one to reset the state of the linker to that of initialization time.  
+ Před dotazem na Win32ResBlobu tento hovor zavolejte. Hodnota parametru `pszFile` je název souboru manifestu, jehož obsah je čten a umístěn do prostředků Win32 s ID RT_MANIFEST. Pokud je volána pomocí parametru NULL, všechny dříve přečtené manifesty jsou vymazány. To umožňuje, aby se stav linkeru obnovil na čas inicializace.  
   
 ## <a name="requirements"></a>Požadavky  
- Requires aLink.h  
+ Vyžaduje aLink. h  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink3 – rozhraní](ialink3-interface.md)
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)
 - [IALink – rozhraní](ialink-interface.md)
 - [Al.exe (linker sestavení)](../../tools/al-exe-assembly-linker.md)

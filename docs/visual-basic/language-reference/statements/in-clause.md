@@ -14,10 +14,10 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353581"
 ---
 # <a name="in-clause-visual-basic"></a>In – klauzule (Visual Basic)
-Specifies the group that the loop variable is to traverse in a `For Each` loop, or specifies the collection to query in a `From`, `Join`, or `Group Join` clause.  
+Určuje skupinu, kterou má proměnná smyčky Procházet ve smyčce `For Each`, nebo určuje kolekci, která se má dotazovat v klauzuli `From`, `Join`nebo `Group Join`.  
   
 ## <a name="remarks"></a>Poznámky  
- The `In` keyword can be used in the following contexts:  
+ Klíčové slovo `In` lze použít v následujících kontextech:  
   
  [Příkaz For Each...Next](../../../visual-basic/language-reference/statements/for-each-next-statement.md)  
   

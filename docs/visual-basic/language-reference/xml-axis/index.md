@@ -15,17 +15,17 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352680"
 ---
 # <a name="xml-axis-properties-visual-basic"></a>Vlastnosti osy XML (Visual Basic)
-The topics in this section document the syntax of XML axis properties in Visual Basic. The XML axis properties make it easy to access XML directly in your code.  
+Témata v této části dokumentují syntaxi vlastností osy XML v Visual Basic. Vlastnosti osy XML usnadňují přístup k XML přímo ve vašem kódu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
 |Téma|Popis|  
 |-----------|-----------------|  
-|[Vlastnost osy atributu XML](../../../visual-basic/language-reference/xml-axis/xml-attribute-axis-property.md)|Describes how to access the attributes of an <xref:System.Xml.Linq.XElement> object.|  
-|[Vlastnost osy podřízeného XML](../../../visual-basic/language-reference/xml-axis/xml-child-axis-property.md)|Describes how to access the children of an <xref:System.Xml.Linq.XElement> object.|  
-|[Vlastnost osy nástupce XML](../../../visual-basic/language-reference/xml-axis/xml-descendant-axis-property.md)|Describes how to access the descendants of an <xref:System.Xml.Linq.XElement> object.|  
-|[Vlastnost indexeru rozšíření](../../../visual-basic/language-reference/xml-axis/extension-indexer-property.md)|Describes how to access individual elements in a collection of <xref:System.Xml.Linq.XElement> or <xref:System.Xml.Linq.XAttribute> objects.|  
-|[Vlastnost hodnoty XML](../../../visual-basic/language-reference/xml-axis/xml-value-property.md)|Describes how to access the value of the first element of a collection of <xref:System.Xml.Linq.XElement> or <xref:System.Xml.Linq.XAttribute> objects.|  
+|[Vlastnost osy atributu XML](../../../visual-basic/language-reference/xml-axis/xml-attribute-axis-property.md)|Popisuje, jak získat přístup k atributům objektu <xref:System.Xml.Linq.XElement>.|  
+|[Vlastnost osy podřízeného XML](../../../visual-basic/language-reference/xml-axis/xml-child-axis-property.md)|Popisuje, jak přistupovat k podřízeným objektům objektu <xref:System.Xml.Linq.XElement>.|  
+|[Vlastnost osy nástupce XML](../../../visual-basic/language-reference/xml-axis/xml-descendant-axis-property.md)|Popisuje, jak přistupovat k následníkům objektu <xref:System.Xml.Linq.XElement>.|  
+|[Vlastnost indexeru rozšíření](../../../visual-basic/language-reference/xml-axis/extension-indexer-property.md)|Popisuje, jak přistupovat k jednotlivým prvkům kolekce objektů <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XAttribute>.|  
+|[Vlastnost hodnoty XML](../../../visual-basic/language-reference/xml-axis/xml-value-property.md)|Popisuje, jak přistupovat k hodnotě prvního prvku kolekce <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XAttribute> objektů.|  
   
 ## <a name="see-also"></a>Viz také:
 

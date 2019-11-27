@@ -18,45 +18,45 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352647"
 ---
 # <a name="overload-resolution-visual-basic"></a>Rozlišení přetěžování (Visual Basic)
-When the Visual Basic compiler encounters a call to a procedure that is defined in several overloaded versions, the compiler must decide which of the overloads to call. It does this by performing the following steps:  
+Když kompilátor Visual Basic narazí na volání procedury, která je definována v několika přetížených verzích, kompilátor musí rozhodnout, který z přetížení má zavolat. Provede to provedením následujících kroků:  
   
-1. **Přístupnost** It eliminates any overload with an access level that prevents the calling code from calling it.  
+1. **Přístupnost** Eliminuje jakékoli přetížení s úrovní přístupu, která brání volajícímu kódu v jeho volání.  
   
-2. **Number of Parameters.** It eliminates any overload that defines a different number of parameters than are supplied in the call.  
+2. **Počet parametrů** Eliminuje jakékoli přetížení, které definuje jiný počet parametrů, než je zadáno ve volání.  
   
-3. **Parameter Data Types.** The compiler gives instance methods preference over extension methods. If any instance method is found that requires only widening conversions to match the procedure call, all extension methods are dropped and the compiler continues with only the instance method candidates. If no such instance method is found, it continues with both instance and extension methods.  
+3. **Datové typy parametrů.** Kompilátor poskytuje přednost metodám instance před rozšiřujícími metodami. Pokud je nalezena kterákoli metoda instance, která vyžaduje pouze rozšiřující převody, aby odpovídaly volání procedury, všechny metody rozšíření jsou vynechány a kompilátor pokračuje pouze kandidáty metody instance. Pokud není nalezena žádná taková metoda instance, bude pokračovat s instancí i metodami rozšíření.  
   
-     In this step, it eliminates any overload for which the data types of the calling arguments cannot be converted to the parameter types defined in the overload.  
+     V tomto kroku eliminuje jakékoli přetížení, pro které nelze převést datové typy argumentů volání na typy parametrů definované v přetížení.  
   
-4. **Narrowing Conversions.** It eliminates any overload that requires a narrowing conversion from the calling argument types to the defined parameter types. This is true whether the type checking switch ([Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) is `On` or `Off`.  
+4. **Zužující převody.** Eliminuje jakékoli přetížení, které vyžaduje zúžení převodu typů argumentů volání na definované typy parametrů. To je pravdivé bez ohledu na to, zda je přepínač pro kontrolu typu ([příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) `On` nebo `Off`.  
   
-5. **Least Widening.** The compiler considers the remaining overloads in pairs. For each pair, it compares the data types of the defined parameters. If the types in one of the overloads all widen to the corresponding types in the other, the compiler eliminates the latter. That is, it retains the overload that requires the least amount of widening.  
+5. **Nejméně rozšiřování.** Kompilátor považuje zbývající přetížení ve dvojicích. Pro každou dvojici porovnává datové typy definovaných parametrů. Pokud jsou typy v jednom z přetížení všechny rozšířeny na odpovídající typy v druhé, kompilátor eliminuje druhé. To znamená, že zachovává přetížení, které vyžaduje nejmenší množství rozšiřování.  
   
-6. **Single Candidate.** It continues considering overloads in pairs until only one overload remains, and it resolves the call to that overload. If the compiler cannot reduce the overloads to a single candidate, it generates an error.  
+6. **Jeden kandidát.** Pokračuje v zvažování přetížení ve dvojicích, dokud nezůstane pouze jedno přetížení a překládá volání tohoto přetížení. Pokud kompilátor nemůže snížit přetížení na jednoho kandidáta, vygeneruje chybu.  
   
- The following illustration shows the process that determines which of a set of overloaded versions to call.  
+ Následující obrázek znázorňuje proces, který určuje, který ze sady přetížených verzí je volána.  
   
- ![Flow diagram of overload resolution process](./media/overload-resolution/determine-overloaded-version.gif "Resolving among overloaded versions")    
+ ![Diagram toku procesu rozlišení přetížení](./media/overload-resolution/determine-overloaded-version.gif "Řešení mezi přetíženými verzemi")    
   
- The following example illustrates this overload resolution process.  
+ Následující příklad znázorňuje tento proces řešení přetížení.  
   
  [!code-vb[VbVbcnProcedures#62](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#62)]  
   
  [!code-vb[VbVbcnProcedures#63](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#63)]  
   
- In the first call, the compiler eliminates the first overload because the type of the first argument (`Short`) narrows to the type of the corresponding parameter (`Byte`). It then eliminates the third overload because each argument type in the second overload (`Short` and `Single`) widens to the corresponding type in the third overload (`Integer` and `Single`). The second overload requires less widening, so the compiler uses it for the call.  
+ Při prvním volání kompilátor eliminuje první přetížení, protože typ prvního argumentu (`Short`) se zúží na typ odpovídajícího parametru (`Byte`). Pak eliminuje třetí přetížení, protože každý argument typu v druhém přetížení (`Short` a `Single`) se rozšíří na odpovídající typ třetí přetížení (`Integer` a `Single`). Druhé přetížení vyžaduje méně rozšiřování, takže ho kompilátor použije pro volání.  
   
- In the second call, the compiler cannot eliminate any of the overloads on the basis of narrowing. It eliminates the third overload for the same reason as in the first call, because it can call the second overload with less widening of the argument types. However, the compiler cannot resolve between the first and second overloads. Each has one defined parameter type that widens to the corresponding type in the other (`Byte` to `Short`, but `Single` to `Double`). The compiler therefore generates an overload resolution error.  
+ Ve druhém volání kompilátor nemůže eliminovat žádné přetížení na základě zúžení. Vylučuje třetí přetížení pro stejný důvod jako v prvním volání, protože může zavolat druhé přetížení s menším rozšiřováním typů argumentů. Kompilátor však nemůže vyřešit mezi prvním a druhým přetížením. Každý má jeden definovaný typ parametru, který se rozšíří na odpovídající typ v druhé (`Byte` pro `Short`, ale `Single` na `Double`). Kompilátor proto vygeneruje chybu rozlišení přetížení.  
   
-## <a name="overloaded-optional-and-paramarray-arguments"></a>Overloaded Optional and ParamArray Arguments  
- If two overloads of a procedure have identical signatures except that the last parameter is declared [Optional](../../../../visual-basic/language-reference/modifiers/optional.md) in one and [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) in the other, the compiler resolves a call to that procedure as follows:  
+## <a name="overloaded-optional-and-paramarray-arguments"></a>Přetížené argumenty Optional a ParamArray  
+ Pokud dvě přetížení procedury mají stejné signatury s tím rozdílem, že poslední parametr je deklarován jako [volitelné](../../../../visual-basic/language-reference/modifiers/optional.md) v jednom a [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) v druhé, kompilátor vyřeší volání této procedury následujícím způsobem:  
   
-|If the call supplies the last argument as|The compiler resolves the call to the overload declaring the last argument as|  
+|Pokud volání dodá poslední argument jako|Kompilátor vyřeší volání přetížení, které deklaruje poslední argument jako|  
 |---|---|  
-|No value (argument omitted)|`Optional`|  
-|A single value|`Optional`|  
-|Two or more values in a comma-separated list|`ParamArray`|  
-|An array of any length (including an empty array)|`ParamArray`|  
+|Žádná hodnota (argument byl vynechán)|`Optional`|  
+|Jedna hodnota|`Optional`|  
+|Dvě nebo více hodnot v seznamu odděleném čárkami|`ParamArray`|  
+|Pole libovolné délky (včetně prázdného pole)|`ParamArray`|  
   
 ## <a name="see-also"></a>Viz také:
 

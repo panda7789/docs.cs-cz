@@ -14,7 +14,7 @@ ms.locfileid: "74348798"
 ---
 # <a name="how-to-create-a-file-in-visual-basic"></a>Postupy: Vytvoření souboru v jazyce Visual Basic
 
-This example creates an empty text file at the specified path using the <xref:System.IO.File.Create%2A> method in the <xref:System.IO.File> class.  
+Tento příklad vytvoří prázdný textový soubor v zadané cestě pomocí metody <xref:System.IO.File.Create%2A> ve třídě <xref:System.IO.File>.  
   
 ## <a name="example"></a>Příklad  
 
@@ -22,37 +22,37 @@ This example creates an empty text file at the specified path using the <xref:Sy
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
 
- Use the `file` variable to write to the file.  
+ K zápisu do souboru použijte proměnnou `file`.  
   
 ## <a name="robust-programming"></a>Robustní programování  
 
- If the file already exists, it is replaced.  
+ Pokud soubor již existuje, je nahrazen.  
   
  Následující podmínky mohou způsobit výjimku:  
   
-- The path name is malformed. For example, it contains illegal characters or is only white space (<xref:System.ArgumentException>).  
+- Název cesty je poškozen. Například obsahuje neplatné znaky nebo je pouze mezera (<xref:System.ArgumentException>).  
   
-- The path is read-only (<xref:System.IO.IOException>).  
+- Cesta je určena jen pro čtení (<xref:System.IO.IOException>).  
   
-- The path name is `Nothing` (<xref:System.ArgumentNullException>).  
+- Název cesty je `Nothing` (<xref:System.ArgumentNullException>).  
   
-- The path name is too long (<xref:System.IO.PathTooLongException>).  
+- Název cesty je příliš dlouhý (<xref:System.IO.PathTooLongException>).  
   
-- The path is invalid (<xref:System.IO.DirectoryNotFoundException>).  
+- Cesta je neplatná (<xref:System.IO.DirectoryNotFoundException>).  
   
-- The path is only a colon ":" (<xref:System.NotSupportedException>).  
+- Cesta je pouze dvojtečka ":" (<xref:System.NotSupportedException>).  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
 
- A <xref:System.Security.SecurityException> may be thrown in partial-trust environments.  
+ <xref:System.Security.SecurityException> může být vyvolána v prostředích s částečnou důvěryhodností.  
   
- The call to the <xref:System.IO.File.Create%2A> method requires <xref:System.Security.Permissions.FileIOPermission>.  
+ Volání metody <xref:System.IO.File.Create%2A> vyžaduje <xref:System.Security.Permissions.FileIOPermission>.  
   
- An <xref:System.UnauthorizedAccessException> is thrown if the user does not have permission to create the file.  
+ Pokud uživatel nemá oprávnění k vytvoření souboru, je vyvolána <xref:System.UnauthorizedAccessException>.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.IO>
 - <xref:System.IO.File.Create%2A>
-- [Using Libraries from Partially Trusted Code](../../../../framework/misc/using-libraries-from-partially-trusted-code.md)
-- [Code Access Security Basics](../../../../framework/misc/code-access-security-basics.md)
+- [Používání knihoven z částečně důvěryhodného kódu](../../../../framework/misc/using-libraries-from-partially-trusted-code.md)
+- [Základy zabezpečení přístupu ke kódu](../../../../framework/misc/code-access-security-basics.md)

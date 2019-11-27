@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445235"
 ---
 # <a name="imetadataimport2getpekind-method"></a>IMetaDataImport2::GetPEKind – metoda
-Gets a value identifying the nature of the code in the portable executable (PE) file, typically a DLL or EXE file, that is defined in the current metadata scope.  
+Získává hodnotu identifikující povahu kódu v přenositelném spustitelném souboru (PE), obvykle v souboru DLL nebo EXE, který je definován v aktuálním oboru metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,28 +36,28 @@ HRESULT GetPEKind (
   
 ## <a name="parameters"></a>Parametry  
  `pdwPEKind`  
- [out] A pointer to a value of the [CorPEKind](../../../../docs/framework/unmanaged-api/metadata/corpekind-enumeration.md) enumeration that describes the PE file.  
+ mimo Ukazatel na hodnotu výčtu [CorPEKind –](../../../../docs/framework/unmanaged-api/metadata/corpekind-enumeration.md) , která popisuje soubor PE.  
   
  `pdwMachine`  
- [out] A pointer to a value that identifies the architecture of the machine. See the next section for possible values.  
+ mimo Ukazatel na hodnotu, která identifikuje architekturu počítače. Možné hodnoty najdete v další části.  
   
 ## <a name="remarks"></a>Poznámky  
- The value referenced by the `pdwMachine` parameter can be one of the following.  
+ Hodnota, na kterou se odkazuje parametr `pdwMachine`, může být jedna z následujících.  
   
-|Hodnota|Machine architecture|  
+|Hodnota|Architektura počítače|  
 |-----------|--------------------------|  
 |IMAGE_FILE_MACHINE_I386<br /><br /> 0x014C|x86|  
 |IMAGE_FILE_MACHINE_IA64<br /><br /> 0x0200|Intel IPF|  
 |IMAGE_FILE_MACHINE_AMD64<br /><br /> 0x8664|x64|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450318"
 ---
 # <a name="imetadataemitseteventprops-method"></a>IMetaDataEmit::SetEventProps – metoda
-Sets or updates the specified feature of an event defined by a prior call to [IMetaDataEmit::DefineEvent](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineevent-method.md).  
+Nastaví nebo aktualizuje zadanou funkci události definované předchozím voláním metody [IMetaDataEmit::D efineevent](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineevent-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,34 +41,34 @@ HRESULT SetEventProps (
   
 ## <a name="parameters"></a>Parametry  
  `ev`  
- [in] The event token.  
+ pro Token události  
   
  `dwEventFlags`  
- [in] Event flags. This is a bitmask of `CorEventAttr` values.  
+ pro Příznaky události. Toto je Bitová maska `CorEventAttr` hodnot.  
   
  `tkEventType`  
- [in] The token for the event class. This is either a `mdTypeDef` or a `mdTypeRef` token.  
+ pro Token pro třídu Event Toto je buď `mdTypeDef`, nebo token `mdTypeRef`.  
   
  `mdAddOn`  
- [in] The method used to subscribe to the event, or null.  
+ pro Metoda použitá k přihlášení k odběru události nebo hodnota null.  
   
  `mdRemoveOn`  
- [in] The method used to unsubscribe to the event, or null.  
+ pro Metoda použitá k odhlášení odběru události nebo hodnota null.  
   
  `mdFire`  
- [in] The method used (by a derived class) to raise the event.  
+ pro Použitá metoda (odvozenou třídou) k vyvolání události.  
   
  `rmdOtherMethods[]`  
- [in] An array of tokens for other methods associated with the event. The last element of the array must be `mdMethodDefNil`.  
+ pro Pole tokenů pro jiné metody přidružené k události. Poslední prvek pole musí být `mdMethodDefNil`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

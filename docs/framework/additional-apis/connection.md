@@ -1,5 +1,5 @@
 ---
-title: Connection Class (System.Net)
+title: Connection – třída (System.Net)
 ms.date: 05/01/2017
 ms.technology: dotnet-networking
 topic_type:
@@ -22,7 +22,7 @@ ms.locfileid: "74429358"
 ---
 # <a name="connection-class"></a>Connection – třída
 
-The `Connection` class parses server responses, queue requests, and pipeline requests.
+Třída `Connection` analyzuje odpovědi serveru, požadavky front a požadavky kanálu.
 
 ## <a name="syntax"></a>Syntaxe
   
@@ -31,14 +31,14 @@ internal class Connection : PooledStream
 ```
 
 > [!WARNING]
-> The `Connection` class is internal and is not meant to be used directly in your code.
+> Třída `Connection` je interní a není určena pro použití přímo v kódu.
 > 
-> Microsoft does not support the use of this class in a production application under any circumstance.
+> Společnost Microsoft v žádné situaci nepodporuje použití této třídy v produkční aplikaci.
 
 ## <a name="requirements"></a>Požadavky
 
-**Namespace:** <xref:System.Net>
+**Obor názvů:** <xref:System.Net>
 
-**Assembly:** System (in System.dll)
+**Sestavení:** Systém (v System. dll)
 
-**.NET Framework versions:** Available since 2.0.
+**Verze .NET Framework:** K dispozici od verze 2,0.

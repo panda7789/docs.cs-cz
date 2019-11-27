@@ -12,42 +12,42 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74354184"
 ---
 # <a name="linq-in-visual-basic"></a>LINQ v jazyce Visual Basic
-This section contains overviews, examples, and background information that will help you understand and use Visual Basic and [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)].  
+Tato část obsahuje přehledy, příklady a základní informace, které vám pomůžou pochopit a používat Visual Basic a [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)].  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Introduction to LINQ in Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
- Provides an introduction to [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] providers, operators, query structure, and language features.  
+ [Úvod do jazyka LINQ v Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
+ Obsahuje úvod do [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] poskytovatelé, operátory, struktury dotazů a jazykové funkce.  
   
- [How to: Query a Database](../../../../visual-basic/programming-guide/language-features/linq/how-to-query-a-database-by-using-linq.md)  
- Provides an example of how to connect to a SQL Server database and execute a query by using LINQ.  
+ [Postupy: dotazování databáze](../../../../visual-basic/programming-guide/language-features/linq/how-to-query-a-database-by-using-linq.md)  
+ Poskytuje příklad, jak se připojit k databázi SQL Server a spustit dotaz pomocí LINQ.  
   
- [How to: Call a Stored Procedure](../../../../visual-basic/programming-guide/language-features/linq/how-to-call-a-stored-procedure-by-using-linq.md)  
- Provides an example of how to connect to a SQL Server database and call a stored procedure by using LINQ.  
+ [Postupy: volání uložené procedury](../../../../visual-basic/programming-guide/language-features/linq/how-to-call-a-stored-procedure-by-using-linq.md)  
+ Poskytuje příklad, jak se připojit k databázi SQL Server a volat uloženou proceduru pomocí LINQ.  
   
- [How to: Modify Data in a Database](../../../../visual-basic/programming-guide/language-features/linq/how-to-modify-data-in-a-database-by-using-linq.md)  
- Provides an example of how to connect to a SQL Server database and retrieve and modify data by using LINQ.  
+ [Postupy: Změna dat v databázi](../../../../visual-basic/programming-guide/language-features/linq/how-to-modify-data-in-a-database-by-using-linq.md)  
+ Poskytuje příklad, jak se připojit k databázi SQL Server a jak načíst a upravit data pomocí LINQ.  
   
- [How to: Combine Data with Joins](../../../../visual-basic/programming-guide/language-features/linq/how-to-combine-data-with-linq-by-using-joins.md)  
- Provides examples of how to join data in a manner similar to database joins by using LINQ.  
+ [Postupy: kombinování dat pomocí spojení](../../../../visual-basic/programming-guide/language-features/linq/how-to-combine-data-with-linq-by-using-joins.md)  
+ V této části najdete příklady, jak spojit data způsobem, který se podobá databázovému spojení pomocí LINQ.  
   
- [How to: Sort Query Results](../../../../visual-basic/programming-guide/language-features/linq/how-to-sort-query-results-by-using-linq.md)  
- Provides an example of how to order the results of a query by using LINQ.  
+ [Postupy: řazení výsledků dotazu](../../../../visual-basic/programming-guide/language-features/linq/how-to-sort-query-results-by-using-linq.md)  
+ Poskytuje příklad řazení výsledků dotazu pomocí LINQ.  
   
- [How to: Filter Query Results](../../../../visual-basic/programming-guide/language-features/linq/how-to-filter-query-results-by-using-linq.md)  
- Provides an example of how to include search criteria in a query by using LINQ.  
+ [Postupy: filtrování výsledků dotazu](../../../../visual-basic/programming-guide/language-features/linq/how-to-filter-query-results-by-using-linq.md)  
+ Poskytuje příklad, jak zahrnout kritéria hledání do dotazu pomocí LINQ.  
   
- [How to: Count, Sum, or Average Data](../../../../visual-basic/programming-guide/language-features/linq/how-to-count-sum-or-average-data-by-using-linq.md)  
- Provides examples of how to include aggregate functions to Count, Sum, or Average data returned from a query by using LINQ.  
+ [Postupy: počítání, suma nebo průměr dat](../../../../visual-basic/programming-guide/language-features/linq/how-to-count-sum-or-average-data-by-using-linq.md)  
+ Obsahuje příklady, jak zahrnout agregační funkce pro počítání, součet nebo průměr dat vrácených z dotazu pomocí LINQ.  
   
- [How to: Find the Minimum or Maximum Value in a Query Result](../../../../visual-basic/programming-guide/language-features/linq/how-to-find-the-minimum-or-maximum-value-in-a-query-result.md)  
- Provides examples of how to include aggregate functions to determine the minimum and maximum values of data returned from a query by using LINQ.  
+ [Postupy: hledání minimální nebo maximální hodnoty ve výsledku dotazu](../../../../visual-basic/programming-guide/language-features/linq/how-to-find-the-minimum-or-maximum-value-in-a-query-result.md)  
+ Obsahuje příklady, jak zahrnout agregační funkce pro určení minimální a maximální hodnoty dat vrácených z dotazu pomocí LINQ.  
   
  [Postupy: Vrácení výsledku dotazu LINQ jako specifického typu](../../../../visual-basic/programming-guide/language-features/linq/how-to-return-a-linq-query-result-as-a-specific-type.md)  
- Provides an example of how to return the results of a LINQ query as a specific type instead of as an anonymous type.  
+ Poskytuje příklad, jak vrátit výsledky dotazu LINQ jako konkrétní typ namísto anonymního typu.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ (Language-Integrated Query)](../../../../visual-basic/programming-guide/concepts/linq/index.md)
-- [Overview of LINQ to XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)
+- [LINQ (jazykově integrovaný dotaz)](../../../../visual-basic/programming-guide/concepts/linq/index.md)
+- [Přehled LINQ to XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)
 - [Přehled LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset-overview.md)
 - [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)

@@ -1,5 +1,5 @@
 ---
-title: 'How to: Parse a String'
+title: 'Postupy: Analýza řetězce'
 ms.date: 07/20/2015
 ms.assetid: 896e1b4b-f9bd-4975-8bc1-55b6badce1ac
 ms.openlocfilehash: 31bae00eb3ebf0d8e64fc657693e8c0767c4f5d4
@@ -9,16 +9,16 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344487"
 ---
-# <a name="how-to-parse-a-string-visual-basic"></a>How to: Parse a String (Visual Basic)
-This topic shows how to create an XML tree in C#.  
+# <a name="how-to-parse-a-string-visual-basic"></a>Postupy: Analýza řetězce (Visual Basic)
+Toto téma ukazuje, jak vytvořit strom XML v C#.  
   
 ## <a name="example"></a>Příklad  
- You can parse a string in Visual Basic by using the `XElement.Parse` method. However, it is more efficient to use XML literals, as shown in following code, because XML literals do not suffer from the same performance penalties as parsing XML from a string.  
+ Můžete analyzovat řetězec v Visual Basic pomocí metody `XElement.Parse`. Je však efektivnější používat literály XML, jak je znázorněno v následujícím kódu, protože literály XML netrpí stejnými pokutami výkonu při analýze XML z řetězce.  
   
- By using XML literals, you can just copy and paste your XML into your Visual Basic program.  
+ Pomocí literálů XML můžete zkopírovat a vložit XML do programu Visual Basic.  
   
 > [!NOTE]
-> Parsing text or loading an XML document from a text file is less efficient than functional construction. If you are initializing an XML tree from code, it takes less processor time to use functional construction than to parse text.  
+> Analýza textu nebo načítání dokumentu XML z textového souboru je méně efektivní než konstrukce funkčnosti. Pokud inicializujete strom XML z kódu, zabere méně času procesoru na použití funkční konstrukce než k analýze textu.  
   
 ```vb  
 Dim contacts as XElement = _  
@@ -51,4 +51,4 @@ Dim contacts as XElement = _
   
 ## <a name="see-also"></a>Viz také:
 
-- [Parsing XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+- [Analýza kódu XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)

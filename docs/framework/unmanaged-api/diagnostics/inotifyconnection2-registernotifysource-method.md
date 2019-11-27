@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445471"
 ---
 # <a name="inotifyconnection2registernotifysource-method"></a>INotifyConnection2::RegisterNotifySource – metoda
-Installs a specified notification source.  
+Nainstaluje zadaný zdroj oznámení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +37,16 @@ HRESULT RegisterNotifySource
   
 ## <a name="parameters"></a>Parametry  
  `in_pNotifySource`  
- [in] Specifies the object to be used as the notification source.  
+ pro Určuje objekt, který má být použit jako zdroj oznámení.  
   
  `out_ppNotifySink`  
- [out] Receives the object to be used as the notification sink.  
+ mimo Přijme objekt, který se má použít jako jímka oznámení.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds.  
+ S_OK, zda je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** ProtocolNotify2.idl  
+ **Hlavička:** ProtocolNotify2. idl  
   
 ## <a name="see-also"></a>Viz také:
 

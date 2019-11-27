@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74432326"
 ---
 # <a name="imetadataemitsetpermissionsetprops-method"></a>IMetaDataEmit::SetPermissionSetProps – metoda
-Sets or updates features of the metadata signature of a permission set defined by a prior call to [IMetaDataEmit::DefinePermissionSet](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definepermissionset-method.md).  
+Nastaví nebo aktualizuje funkce signatury metadat sady oprávnění definované předchozím voláním [IMetaDataEmit::D efinepermissionset](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definepermissionset-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,28 +39,28 @@ HRESULT SetPermissionSetProps (
   
 ## <a name="parameters"></a>Parametry  
  `tk`  
- [in] A metadata token that represents the object to be decorated.  
+ pro Token metadat, který představuje objekt, který má být upraven.  
   
  `dwAction`  
- [in] A [CorDeclSecurity](../../../../docs/framework/unmanaged-api/metadata/cordeclsecurity-enumeration.md) value that specifies the type of declarative security to be used.  
+ pro Hodnota [CorDeclSecurity –](../../../../docs/framework/unmanaged-api/metadata/cordeclsecurity-enumeration.md) , která určuje typ deklarativního zabezpečení, který se má použít.  
   
  `pvPermission`  
- [in] The permission BLOB.  
+ pro Objekt BLOB oprávnění  
   
  `cbPermission`  
- [in] The size, in bytes, of `pvPermission`.  
+ pro Velikost `pvPermission`v bajtech.  
   
  `ppm`  
- [out] An `mdPermission` metadata token that represents the updated permissions.  
+ mimo Token metadat `mdPermission`, který představuje aktualizovaná oprávnění.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

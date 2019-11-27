@@ -12,21 +12,21 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350786"
 ---
 # <a name="this-array-is-fixed-or-temporarily-locked-visual-basic"></a>Toto pole nelze upravovat nebo je dočasně uzamčeno (Visual Basic).
-This error has the following possible causes:  
+Tato chyba má následující možné příčiny:  
   
-- Using `ReDim` to change the number of elements of a fixed-size array.  
+- Použití `ReDim` ke změně počtu prvků pole s pevnou velikostí.  
   
-- Redimensioning a module-level dynamic array, in which one element has been passed as an argument to a procedure. If an element is passed, the array is locked to prevent deallocating memory for the reference parameter within the procedure.  
+- Předimenzování dynamického pole na úrovni modulu, ve kterém jeden prvek byl předán jako argument procedury. Pokud je předán element, je pole uzamčeno, aby nedošlo k zrušení přidělení paměti pro parametr reference v rámci procedury.  
   
-- Attempting to assign a value to a `Variant` variable containing an array, but the `Variant` is currently locked.  
+- Došlo k pokusu o přiřazení hodnoty k proměnné `Variant` obsahující pole, ale `Variant` je aktuálně uzamčena.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Make the original array dynamic rather than fixed by declaring it with `ReDim` (if the array is declared within a procedure), or by declaring it without specifying the number of elements (if the array is declared at the module level.  
+1. Zajistěte, aby původní pole bylo dynamické a nikoli pevně deklarováno pomocí `ReDim` (Pokud je pole deklarováno v rámci procedury) nebo prohlášením bez určení počtu prvků (Pokud je pole deklarováno na úrovni modulu.  
   
-2. Determine whether you really need to pass the element, since it is visible within all procedures in the module.  
+2. Určete, zda opravdu potřebujete předat element, protože je viditelný v rámci všech procedur v modulu.  
   
-3. Determine what is locking the `Variant` and remedy it.  
+3. Určete, co zamkne `Variant` a opravte ho.  
   
 ## <a name="see-also"></a>Viz také:
 

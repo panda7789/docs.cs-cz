@@ -1,5 +1,5 @@
 ---
-title: 'How to: Find a Single Descendant Using the Descendants Method'
+title: 'Postupy: vyhledání jednoho následníka pomocí metody Descendants'
 ms.date: 07/20/2015
 ms.assetid: 0c03468c-efc8-4140-98f3-fb67acd9e8e1
 ms.openlocfilehash: 1c1192c85a7244a9a03a2cd55144abcfb02dcbf1
@@ -9,11 +9,11 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352998"
 ---
-# <a name="how-to-find-a-single-descendant-using-the-descendants-method-visual-basic"></a>How to: Find a Single Descendant Using the Descendants Method (Visual Basic)
-You can use the <xref:System.Xml.Linq.XContainer.Descendants%2A> axis method to quickly write code to find a single uniquely named element. This technique is especially useful when you want to find a particular descendant with a specific name. You could write the code to navigate to the desired element, but it is often faster and easier to write the code using the <xref:System.Xml.Linq.XContainer.Descendants%2A> axis.  
+# <a name="how-to-find-a-single-descendant-using-the-descendants-method-visual-basic"></a>Postupy: vyhledání jednoho následníka pomocí metody Descendants (Visual Basic)
+Můžete použít metodu <xref:System.Xml.Linq.XContainer.Descendants%2A> osa k rychlému psaní kódu pro nalezení jediného jednoznačně pojmenovaného elementu. Tato technika je užitečná hlavně v případě, že chcete najít konkrétního následníka s konkrétním názvem. Můžete napsat kód pro přechod na požadovaný prvek, ale je často rychlejší a snazší psát kód pomocí <xref:System.Xml.Linq.XContainer.Descendants%2A> osy.  
   
 ## <a name="example"></a>Příklad  
- This example uses the <xref:System.Linq.Enumerable.First%2A> standard query operator.  
+ V tomto příkladu se používá operátor dotazu <xref:System.Linq.Enumerable.First%2A> Standard.  
   
 ```vb  
 Dim root As XElement = _  
@@ -37,14 +37,14 @@ Dim grandChild3 As String = _
 Console.WriteLine(grandChild3)  
 ```  
   
- This code produces the following output:  
+ Tento kód generuje následující výstup:  
   
 ```console  
 GC3 Value  
 ```  
   
 ## <a name="example"></a>Příklad  
- The following example shows the same query for XML that is in a namespace. For more information, see [Namespaces Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).  
+ Následující příklad ukazuje stejný dotaz pro XML, který je v oboru názvů. Další informace najdete v tématu [obory názvů Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).  
   
 ```vb  
 Imports <xmlns:aw='http://www.adventure-works.com'>  
@@ -74,7 +74,7 @@ Module Module1
 End Module  
 ```  
   
- This code produces the following output:  
+ Tento kód generuje následující výstup:  
   
 ```console  
 GC3 Value  
@@ -82,4 +82,4 @@ GC3 Value
   
 ## <a name="see-also"></a>Viz také:
 
-- [Basic Queries (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+- [Základní dotazy (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

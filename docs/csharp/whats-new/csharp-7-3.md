@@ -1,6 +1,6 @@
 ---
-title: What's new in C# 7.3
-description: An overview of new features in C# 7.3
+title: Co je nového v C# 7,3
+description: Přehled nových funkcí v C# 7,3
 ms.date: 05/16/2018
 ms.openlocfilehash: ba4cea302d91b395e88940d087fcaed306920840
 ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
@@ -9,45 +9,45 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74204557"
 ---
-# <a name="whats-new-in-c-73"></a>What's new in C# 7.3
+# <a name="whats-new-in-c-73"></a>Co je nového v C# 7,3
 
-There are two main themes to the C# 7.3 release. One theme provides features that enable safe code to be as performant as unsafe code. The second theme provides incremental improvements to existing features. In addition, new compiler options were added in this release.
+Verze C# 7,3 obsahuje dva hlavní motivy. Jeden motiv nabízí funkce, které umožňují bezpečný kód jako nezabezpečený kód. Druhý motiv nabízí přírůstková vylepšení existujících funkcí. Kromě toho se v této verzi přidaly nové možnosti kompilátoru.
 
-The following new features support the theme of better performance for safe code:
+Následující nové funkce podporují motiv s lepším výkonem pro bezpečný kód:
 
-- You can access fixed fields without pinning.
-- You can reassign `ref` local variables.
-- You can use initializers on `stackalloc` arrays.
-- You can use `fixed` statements with any type that supports a pattern.
-- You can use additional generic constraints.
+- Můžete získat přístup k pevným polím bez připnutí.
+- Můžete znovu přiřadit `ref` lokální proměnné.
+- Můžete použít inicializátory na `stackalloc` polích.
+- Příkazy `fixed` lze použít s libovolným typem, který podporuje vzor.
+- Můžete použít další obecná omezení.
 
-The following enhancements were made to existing features:
+V existujících funkcích byly provedeny následující vylepšení:
 
-- You can test `==` and `!=` with tuple types.
-- You can use expression variables in more locations.
-- You may attach attributes to the backing field of auto-implemented properties.
-- Method resolution when arguments differ by `in` has been improved.
-- Overload resolution now has fewer ambiguous cases.
+- Můžete testovat `==` a `!=` s typy řazené kolekce členů.
+- Proměnné výrazu můžete použít ve více umístěních.
+- Můžete přiřazovat atributy k poli pro zálohování s automaticky implementovanými vlastnostmi.
+- Řešení metod, když se liší argumenty, `in` bylo vylepšeno.
+- Řešení přetížení teď má méně dvojznačných případů.
 
-The new compiler options are:
+Nové možnosti kompilátoru:
 
-- `-publicsign` to enable Open Source Software (OSS) signing of assemblies.
-- `-pathmap` to provide a mapping for source directories.
+- `-publicsign`, aby se povolilo podepisování softwaru open source (OSS) pro sestavení.
+- `-pathmap` k poskytnutí mapování pro zdrojové adresáře.
 
-The remainder of this article provides details and links to learn more about each of the improvements. You can explore these features in your environment using the `dotnet try` global tool:
+Zbývající část tohoto článku obsahuje podrobnosti a odkazy na Další informace o každé z těchto vylepšení. Tyto funkce můžete ve svém prostředí prozkoumat pomocí globálního nástroje `dotnet try`:
 
-1. Install the [dotnet-try](https://github.com/dotnet/try/blob/master/README.md#setup) global tool.
-1. Clone the [dotnet/try-samples](https://github.com/dotnet/try-samples) repository.
-1. Set the current directory to the *csharp7* subdirectory for the *try-samples* repository.
-1. Run `dotnet try`.
+1. Nainstalujte nástroj [dotnet-try](https://github.com/dotnet/try/blob/master/README.md#setup) Global.
+1. Naklonujte úložiště [dotnet/try-Samples](https://github.com/dotnet/try-samples) .
+1. Nastavte aktuální adresář do podadresáře *csharp7* pro úložiště *Try-Samples* .
+1. Spusťte `dotnet try`.
 
-## <a name="enabling-more-efficient-safe-code"></a>Enabling more efficient safe code
+## <a name="enabling-more-efficient-safe-code"></a>Povolení efektivnějšího bezpečného kódu
 
-You should be able to write C# code safely that performs as well as unsafe code. Safe code avoids classes of errors, such as buffer overruns, stray pointers, and other memory access errors. These new features expand the capabilities of verifiable safe code. Strive to write more of your code using safe constructs. These features make that easier.
+Měli byste být schopni bezpečně C# psát kód, který provádí a také nezabezpečený kód. Bezpečný kód zabraňuje třídám chyb, jako jsou přetečení vyrovnávací paměti, osamocené ukazatele a další chyby přístupu k paměti. Tyto nové funkce rozšiřují možnosti ověřitelného bezpečného kódu. Snažte se zapisovat více kódu pomocí bezpečných konstrukcí. Tyto funkce usnadňují práci.
 
-### <a name="indexing-fixed-fields-does-not-require-pinning"></a>Indexing `fixed` fields does not require pinning
+### <a name="indexing-fixed-fields-does-not-require-pinning"></a>Indexování `fixed` polí nevyžaduje připnutí.
 
-Consider this struct:
+Zvažte tuto strukturu:
 
 ```csharp
 unsafe struct S
@@ -56,7 +56,7 @@ unsafe struct S
 }
 ```
 
-In earlier versions of C#, you needed to pin a variable to access one of the integers that are part of `myFixedField`. Now, the following code compiles without pinning the variable `p` inside a separate `fixed` statement:
+V dřívějších verzích C#nástroje bylo nutné připnout proměnnou pro přístup k jednomu z celých čísel, která jsou součástí `myFixedField`. Nyní následující kód zkompiluje bez připnutí proměnné `p` uvnitř samostatného příkazu `fixed`:
 
 ```csharp
 class C
@@ -70,7 +70,7 @@ class C
 }
 ```
 
-The variable `p` accesses one element in `myFixedField`. You don't need to declare a separate `int*` variable. Note that you still need an `unsafe` context. In earlier versions of C#, you need to declare a second fixed pointer:
+Proměnná `p` přistupuje k jednomu prvku v `myFixedField`. Nemusíte deklarovat samostatnou `int*` proměnnou. Všimněte si, že stále potřebujete kontext `unsafe`. V dřívějších verzích C#nástroje je nutné deklarovat druhý pevný ukazatel:
 
 ```csharp
 class C
@@ -87,29 +87,29 @@ class C
 }
 ```
 
-For more information, see the article on the [`fixed` statement](../language-reference/keywords/fixed-statement.md).
+Další informace najdete v článku o [příkazu`fixed`](../language-reference/keywords/fixed-statement.md).
 
-### <a name="ref-local-variables-may-be-reassigned"></a>`ref` local variables may be reassigned
+### <a name="ref-local-variables-may-be-reassigned"></a>je možné znovu přiřadit `ref` lokální proměnné.
 
-Now, `ref` locals may be reassigned to refer to different instances after being initialized. The following code now compiles:
+Nyní je možné znovu přiřadit `ref` národní prostředí, aby se po inicializaci odkazovaly na různé instance. Nyní se zkompiluje následující kód:
 
 ```csharp
 ref VeryLargeStruct refLocal = ref veryLargeStruct; // initialization
 refLocal = ref anotherVeryLargeStruct; // reassigned, refLocal refers to different storage.
 ```
 
-For more information, see the article on [`ref` returns and `ref` locals](../programming-guide/classes-and-structs/ref-returns.md), and the article on [`foreach`](../language-reference/keywords/foreach-in.md).
+Další informace najdete v článku o [`ref` vrátí a `ref` národní prostředí](../programming-guide/classes-and-structs/ref-returns.md)a článku na [`foreach`](../language-reference/keywords/foreach-in.md).
 
-### <a name="stackalloc-arrays-support-initializers"></a>`stackalloc` arrays support initializers
+### <a name="stackalloc-arrays-support-initializers"></a>`stackalloc` pole podporují Inicializátory.
 
-You've been able to specify the values for elements in an array when you initialize it:
+Při inicializaci je možné zadat hodnoty prvků v poli:
 
 ```csharp
 var arr = new int[3] {1, 2, 3};
 var arr2 = new int[] {1, 2, 3};
 ```
 
-Now, that same syntax can be applied to arrays that are declared with `stackalloc`:
+Nyní lze stejnou syntaxi použít pro pole, která jsou deklarována s `stackalloc`:
 
 ```csharp
 int* pArr = stackalloc int[3] {1, 2, 3};
@@ -117,62 +117,62 @@ int* pArr2 = stackalloc int[] {1, 2, 3};
 Span<int> arr = stackalloc [] {1, 2, 3};
 ```
 
-For more information, see the [`stackalloc` operator](../language-reference/operators/stackalloc.md) article.
+Další informace najdete v článku o [operátoru`stackalloc`](../language-reference/operators/stackalloc.md) .
 
-### <a name="more-types-support-the-fixed-statement"></a>More types support the `fixed` statement
+### <a name="more-types-support-the-fixed-statement"></a>Další typy podporují příkaz `fixed`.
 
-The `fixed` statement supported a limited set of types. Starting with C# 7.3, any type that contains a `GetPinnableReference()` method that returns a `ref T` or `ref readonly T` may be `fixed`. Adding this feature means that `fixed` can be used with <xref:System.Span%601?displayProperty=nameWithType> and related types.
+Příkaz `fixed` podporuje omezené sady typů. Počínaje C# 7,3 se může `fixed`jakýkoli typ, který obsahuje metodu `GetPinnableReference()`, která vrací `ref T` nebo `ref readonly T`. Přidání této funkce znamená, že `fixed` lze použít s <xref:System.Span%601?displayProperty=nameWithType> a souvisejícími typy.
 
-For more information, see the [`fixed` statement](../language-reference/keywords/fixed-statement.md) article in the language reference.
+Další informace naleznete v článku o [příkazu`fixed`](../language-reference/keywords/fixed-statement.md) v tématu Referenční informace k jazyku.
 
-### <a name="enhanced-generic-constraints"></a>Enhanced generic constraints
+### <a name="enhanced-generic-constraints"></a>Rozšířená obecná omezení
 
-You can now specify the type <xref:System.Enum?displayProperty=nameWithType> or <xref:System.Delegate?displayProperty=nameWithType> as base class constraints for a type parameter.
+Nyní můžete zadat typ <xref:System.Enum?displayProperty=nameWithType> nebo <xref:System.Delegate?displayProperty=nameWithType> jako omezení základní třídy pro parametr typu.
 
-You can also use the new `unmanaged` constraint, to specify that a type parameter must be a non-nullable [unmanaged type](../language-reference/builtin-types/unmanaged-types.md).
+Můžete také použít nové omezení `unmanaged`, chcete-li určit, že parametr typu musí být [nespravovaný typ](../language-reference/builtin-types/unmanaged-types.md), který nemůže mít hodnotu null.
 
-For more information, see the articles on [`where` generic constraints](../language-reference/keywords/where-generic-type-constraint.md) and [constraints on type parameters](../programming-guide/generics/constraints-on-type-parameters.md).
+Další informace najdete v článcích o [`where` obecných omezeních](../language-reference/keywords/where-generic-type-constraint.md) a [omezeních parametrů typu](../programming-guide/generics/constraints-on-type-parameters.md).
 
-Adding these constraints to existing types is an [incompatible change](version-update-considerations.md#incompatible-changes). Closed generic types may no longer meet these new constraints.
+Přidání těchto omezení do existujících typů je [nekompatibilní změna](version-update-considerations.md#incompatible-changes). Uzavřené obecné typy již nesmí splňovat tato nová omezení.
 
-## <a name="make-existing-features-better"></a>Make existing features better
+## <a name="make-existing-features-better"></a>Lepší zlepšení stávajících funkcí
 
-The second theme provides improvements to features in the language. These features improve productivity when writing C#.
+Druhý motiv nabízí vylepšení funkcí v jazyce. Tyto funkce zvyšují produktivitu při C#psaní.
 
-### <a name="tuples-support--and-"></a>Tuples support `==` and `!=`
+### <a name="tuples-support--and-"></a>Řazené kolekce členů podporují `==` a `!=`
 
-The C# tuple types now support `==` and `!=`. For more information, see the section covering [equality](../tuples.md#equality-and-tuples) in the article on [tuples](../tuples.md).
+Typy C# řazené kolekce členů teď podporují `==` a `!=`. Další informace najdete v části týkající se [rovnosti](../tuples.md#equality-and-tuples) v článku o [řazených kolekcích členů](../tuples.md).
 
-### <a name="attach-attributes-to-the-backing-fields-for-auto-implemented-properties"></a>Attach attributes to the backing fields for auto-implemented properties
+### <a name="attach-attributes-to-the-backing-fields-for-auto-implemented-properties"></a>Připojení atributů k zálohovaným polím pro automaticky implementované vlastnosti
 
-This syntax is now supported:
+Tato syntaxe je teď podporovaná:
 
 ```csharp
 [field: SomeThingAboutFieldAttribute]
 public int SomeProperty { get; set; }
 ```
 
-The attribute `SomeThingAboutFieldAttribute` is applied to the compiler generated backing field for `SomeProperty`. For more information, see [attributes](../programming-guide/concepts/attributes/index.md) in the C# programming guide.
+Atribut `SomeThingAboutFieldAttribute` je použit pro pole zálohování generované kompilátorem pro `SomeProperty`. Další informace najdete v tématu [atributy](../programming-guide/concepts/attributes/index.md) v průvodci C# programováním.
 
-### <a name="in-method-overload-resolution-tiebreaker"></a>`in` method overload resolution tiebreaker
+### <a name="in-method-overload-resolution-tiebreaker"></a>rozhodujícího prvku rozlišení přetížení metod `in`
 
-When the `in` argument modifier was added, these two methods would cause an ambiguity:
+Při přidání modifikátoru `in`ho argumentu by tyto dvě metody způsobily nejednoznačnost:
 
 ```csharp
 static void M(S arg);
 static void M(in S arg);
 ```
 
-Now, the by value (first in the preceding example) overload is better than the by readonly reference version. To call the version with the readonly reference argument, you must include the `in` modifier when calling the method.
+Nyní je přetížení v hodnotě (první v předchozím příkladu) lepší než referenční verze metody ReadOnly. Chcete-li volat verzi s argumentem odkazu jen pro čtení, je nutné při volání metody použít modifikátor `in`.
 
 > [!NOTE]
-> This was implemented as a bug fix. This no longer is ambiguous even with the language version set to "7.2".
+> Tato chyba byla implementována jako oprava chyby. Tato možnost již není jednoznačná, i když je jazyková verze nastavená na "7,2".
 
-For more information, see the article on the [`in` parameter modifier](../language-reference/keywords/in-parameter-modifier.md).
+Další informace najdete v článku o [modifikátoru parametru`in`](../language-reference/keywords/in-parameter-modifier.md).
 
-### <a name="extend-expression-variables-in-initializers"></a>Extend expression variables in initializers
+### <a name="extend-expression-variables-in-initializers"></a>Rozšiřování proměnných výrazu v inicializátorech
 
-The syntax added in C# 7.0 to allow `out` variable declarations has been extended to include field initializers, property initializers, constructor initializers, and query clauses. It enables code such as the following example:
+Syntaxe přidaná v C# 7,0 pro povolení deklarací proměnných `out` byla rozšířena tak, aby zahrnovala Inicializátory polí, Inicializátory vlastností, Inicializátory konstruktorů a klauzule dotazu. Umožňuje kód, jako je například následující příklad:
 
 ```csharp
 public class B
@@ -194,26 +194,26 @@ public class D : B
 
 ### <a name="improved-overload-candidates"></a>Vylepšení kandidátů přetížení
 
-In every release, the overload resolution rules get updated to address situations where ambiguous method invocations have an "obvious" choice. This release adds three new rules to help the compiler pick the obvious choice:
+V každém vydání se pravidla rozlišení přetížení aktualizují na situace, kdy nejednoznačná vyvolání metod mají "zřejmou" volbu. Tato verze přidává tři nová pravidla, která kompilátoru pomůžou vybrat zjevné možnosti:
 
-1. When a method group contains both instance and static members, the compiler discards the instance members if the method was invoked without an instance receiver or context. The compiler discards the static members if the method was invoked with an instance receiver. When there is no receiver, the compiler includes only static members in a static context, otherwise both static and instance members. When the receiver is ambiguously an instance or type, the compiler includes both. A static context, where an implicit `this` instance receiver cannot be used, includes the body of members where no `this` is defined, such as static members, as well as places where `this` cannot be used, such as field initializers and constructor-initializers.
-1. When a method group contains some generic methods whose type arguments do not satisfy their constraints, these members are removed from the candidate set.
-1. For a method group conversion, candidate methods whose return type doesn't match up with the delegate's return type are removed from the set.
+1. Pokud skupina metod obsahuje instanci i statické členy, kompilátor zruší členy instance, pokud byla metoda vyvolána bez přijímače nebo kontextu instance. Kompilátor zahodí statické členy, pokud byla metoda vyvolána s příjemcem instance. Pokud není k dispozici žádný přijímač, kompilátor zahrnuje pouze statické členy ve statickém kontextu, jinak statických i členů instancí. Pokud je příjemce jednoznačně instance nebo typu, kompilátor zahrnuje obojí. Statický kontext, kde nelze použít příjemce instance implicitního `this`, zahrnuje tělo členů, pokud není definován žádný `this`, například statické členy, a místa, kde `this` nelze použít, jako jsou například Inicializátory polí a Inicializátory konstruktoru.
+1. Pokud skupina metod obsahuje některé obecné metody, jejichž argumenty typu nesplňují jejich omezení, jsou tyto členy ze sady kandidátů odebrány.
+1. Pro převod skupiny metod se ze sady odeberou metody kandidáta, jejichž návratový typ se neshoduje s návratovým typem delegáta.
 
-You'll only notice this change because you'll find fewer compiler errors for ambiguous method overloads when you are sure which method is better.
+Tuto změnu si všimnete pouze v případě, že při zjištění, která metoda je lepší, zjistíte méně chyb kompilátoru pro přetížení dvojznačných metod.
 
-## <a name="new-compiler-options"></a>New compiler options
+## <a name="new-compiler-options"></a>Nové možnosti kompilátoru
 
-New compiler options support new build and DevOps scenarios for C# programs.
+Nové možnosti kompilátoru podporují nové scénáře sestavení a DevOps pro C# programy.
 
-### <a name="public-or-open-source-signing"></a>Public or Open Source signing
+### <a name="public-or-open-source-signing"></a>Veřejné nebo open source podepisování
 
-The `-publicsign` compiler option instructs the compiler to sign the assembly using a public key. The assembly is marked as signed, but the signature is taken from the public key. This option enables you to build signed assemblies from open-source projects using a public key.
+Možnost kompilátoru `-publicsign` instruuje kompilátor, aby podepsal sestavení pomocí veřejného klíče. Sestavení je označeno jako signed, ale signatura je pořízena z veřejného klíče. Tato možnost umožňuje sestavit podepsaná sestavení z open source projektů pomocí veřejného klíče.
 
-For more information, see the [-publicsign compiler option](../language-reference/compiler-options/publicsign-compiler-option.md) article.
+Další informace najdete v článku [možnost kompilátoru-publicsign](../language-reference/compiler-options/publicsign-compiler-option.md) .
 
 ### <a name="pathmap"></a>pathmap
 
-The `-pathmap` compiler option instructs the compiler to replace source paths from the build environment with mapped source paths. The `-pathmap` option controls the source path written by the compiler to PDB files or for the <xref:System.Runtime.CompilerServices.CallerFilePathAttribute>.
+Možnost kompilátoru `-pathmap` instruuje kompilátor, aby nahradil zdrojové cesty z prostředí sestavení s namapovanými zdrojovými cestami. Možnost `-pathmap` řídí zdrojovou cestu zapsanou kompilátorem do souborů PDB nebo pro <xref:System.Runtime.CompilerServices.CallerFilePathAttribute>.
 
-For more information, see the [-pathmap compiler option](../language-reference/compiler-options/pathmap-compiler-option.md) article.
+Další informace najdete v článku [možnost kompilátoru-pathmap](../language-reference/compiler-options/pathmap-compiler-option.md) .

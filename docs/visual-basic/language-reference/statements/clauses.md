@@ -12,22 +12,22 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74354144"
 ---
 # <a name="clauses-visual-basic"></a>Klauzule (Visual Basic)
-The topics in this section document Visual Basic run-time clauses.  
+Témata v tomto oddílu dokumentu Visual Basic klauzulí run-time.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Alias](../../../visual-basic/language-reference/statements/alias-clause.md)  
+ [Zástupný](../../../visual-basic/language-reference/statements/alias-clause.md)  
   
- [As](../../../visual-basic/language-reference/statements/as-clause.md)  
+ [Formátu](../../../visual-basic/language-reference/statements/as-clause.md)  
   
- [Handles](../../../visual-basic/language-reference/statements/handles-clause.md)  
+ [Řeší](../../../visual-basic/language-reference/statements/handles-clause.md)  
   
- [Implements](../../../visual-basic/language-reference/statements/implements-clause.md)  
+ [Implementace](../../../visual-basic/language-reference/statements/implements-clause.md)  
   
- [In](../../../visual-basic/language-reference/statements/in-clause.md)  
+ [Pro](../../../visual-basic/language-reference/statements/in-clause.md)  
   
- [Into](../../../visual-basic/language-reference/statements/into-clause.md)  
+ [Uskladněn](../../../visual-basic/language-reference/statements/into-clause.md)  
   
- [Of](../../../visual-basic/language-reference/statements/of-clause.md)  
+ [Tohoto](../../../visual-basic/language-reference/statements/of-clause.md)  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Referenční příručka jazyka Visual Basic](../../../visual-basic/language-reference/index.md)  

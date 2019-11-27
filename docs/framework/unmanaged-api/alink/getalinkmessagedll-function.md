@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449340"
 ---
 # <a name="getalinkmessagedll-function"></a>GetALinkMessageDll – funkce
-Finds and loads the message DLL. Returns 0 if the message DLL could not be located or loaded. The message DLL should be either in a subdirectory whose name is a language ID, or in the current directory.  
+Vyhledá a načte knihovnu DLL zpráv. Vrátí hodnotu 0, pokud nebyla nalezena nebo načtena knihovna DLL zpráv. Knihovna DLL zpráv by měla být buď v podadresáři, jejíž název je ID jazyka nebo v aktuálním adresáři.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,9 +32,9 @@ HINSTANCE WINAPI GetALinkMessageDll();
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** alink.h  
+ **Záhlaví:** ALink. h  
   
- **Library**: alink.dll  
+ **Knihovna**: ALink. dll  
   
 ## <a name="see-also"></a>Viz také:
 

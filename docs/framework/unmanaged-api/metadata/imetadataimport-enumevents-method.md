@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74440010"
 ---
 # <a name="imetadataimportenumevents-method"></a>IMetaDataImport::EnumEvents – metoda
-Enumerates event definition tokens for the specified TypeDef token.  
+Vytvoří výčet tokenů definice události pro zadaný token TypeDef.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,35 +39,35 @@ HRESULT EnumEvents (
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [in, out] A pointer to the enumerator.  
+ [in, out] Ukazatel na enumerátor.  
   
  `td`  
- [in] The TypeDef token whose event definitions are to be enumerated.  
+ pro Token TypeDef, jehož definice událostí mají být vyčísleny.  
   
  `rEvents`  
- [out] The array of returned events.  
+ mimo Pole vrácených událostí  
   
  `cMax`  
- [in] The maximum size of the `rEvents` array.  
+ pro Maximální velikost `rEvents` pole  
   
  `pcEvents`  
- [out] The actual number of events returned in `rEvents`.  
+ mimo Skutečný počet událostí vrácených v `rEvents`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumEvents` returned successfully.|  
-|`S_FALSE`|There are no events to enumerate. In that case, `pcEvents` is zero.|  
+|`S_OK`|`EnumEvents` byla úspěšně vrácena.|  
+|`S_FALSE`|Nejsou k dispozici žádné události k zobrazení výčtu. V takovém případě je `pcEvents` nula.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

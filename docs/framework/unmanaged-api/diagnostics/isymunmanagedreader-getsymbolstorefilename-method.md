@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74431236"
 ---
 # <a name="isymunmanagedreadergetsymbolstorefilename-method"></a>ISymUnmanagedReader::GetSymbolStoreFileName – metoda
-Provides the on-disk file name of the symbol store.  
+Poskytuje název souboru na disku pro úložiště symbolů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,19 +37,19 @@ HRESULT GetSymbolStoreFileName (
   
 ## <a name="parameters"></a>Parametry  
  `cchName`  
- [in] The size of the `szName` buffer.  
+ pro Velikost vyrovnávací paměti `szName`.  
   
  `pcchName`  
- [out] A pointer to the variable that receives the length of the name returned in `szName`, including the null termination.  
+ mimo Ukazatel na proměnnou, která přijímá délku názvu vráceného v `szName`, včetně ukončení hodnoty null.  
   
  `szName`  
- [out] A pointer to the variable that receives the file name of the symbol store.  
+ mimo Ukazatel na proměnnou, která přijímá název souboru úložiště symbolů.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

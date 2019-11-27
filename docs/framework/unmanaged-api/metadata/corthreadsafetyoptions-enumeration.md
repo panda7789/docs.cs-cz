@@ -23,7 +23,7 @@ ms.locfileid: "74442467"
 ---
 # <a name="corthreadsafetyoptions-enumeration"></a>CorThreadSafetyOptions – výčet
 
-Specifies flags to select options for thread safety.
+Určuje příznaky pro výběr možností pro bezpečnost vlákna.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -39,17 +39,17 @@ typedef enum CorThreadSafetyOptions {
 
 |Člen|Popis|
 |------------|-----------------|
-|`MDThreadSafetyDefault`|Default value. Same as `MDThreadSafetyOff`.|
-|`MDThreadSafetyOff`|Indicates that a reader/writer lock cannot be set.|
-|`MDThreadSafetyOn`|Indicates that a reader/writer lock can be set.|
+|`MDThreadSafetyDefault`|Výchozí hodnota. Stejné jako `MDThreadSafetyOff`.|
+|`MDThreadSafetyOff`|Indikuje, že zámek čtenář/Writer nejde nastavit.|
+|`MDThreadSafetyOn`|Indikuje, že je možné nastavit zámek čtenář/Writer.|
 
 ## <a name="requirements"></a>Požadavky
 
-**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
 
-**Header:** CorHdr.h
+**Hlavička:** CorHdr. h
 
-**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
 
 ## <a name="see-also"></a>Viz také:
 

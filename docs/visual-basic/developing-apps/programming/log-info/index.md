@@ -18,25 +18,25 @@ ms.locfileid: "74353257"
 ---
 # <a name="logging-information-from-the-application-visual-basic"></a>Protokolování informací z aplikace (Visual Basic)
 
-This section contains topics that cover how to log information from your application using the `My.Application.Log` or `My.Log` object, and how to extend the application's logging capabilities.  
+Tato část obsahuje témata, která pokrývají, jak protokolovat informace z vaší aplikace pomocí objektu `My.Application.Log` nebo `My.Log` a jak rozšiřuje možnosti protokolování aplikace.  
   
- The `Log` object provides methods for writing information to the application's log listeners, and the `Log` object's advanced `TraceSource` property provides detailed configuration information. The `Log` object is configured by the application's configuration file.  
+ Objekt `Log` poskytuje metody pro zápis informací do protokolu naslouchacího procesu aplikace a vlastnost pokročilé `TraceSource` objektu `Log` poskytuje podrobné informace o konfiguraci. Objekt `Log` je konfigurován pomocí konfiguračního souboru aplikace.  
   
- The `My.Log` object is available only for ASP.NET applications. For client applications, use `My.Application.Log`. Další informace najdete v tématu <xref:Microsoft.VisualBasic.Logging.Log>.  
+ Objekt `My.Log` je k dispozici pouze pro aplikace ASP.NET. Pro klientské aplikace použijte `My.Application.Log`. Další informace najdete v tématu <xref:Microsoft.VisualBasic.Logging.Log>.  
   
-## <a name="tasks"></a>Úkoly  
+## <a name="tasks"></a>Tasks  
   
-|Chcete-li|Další informace naleznete v tématu|  
+|Pro|Další informace naleznete v tématu|  
 |--------|---------|  
-|Write event information to the application's logs.|[Postupy: Zápis zpráv protokolu](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)|  
-|Write exception information to the application's logs.|[Postupy: Protokolování výjimek](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)|  
-|Write trace information to the application's logs when the application starts and shuts down.|[Postupy: Protokolování zpráv při spuštění nebo ukončení aplikace](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-messages-when-the-application-starts-or-shuts-down.md)|  
-|Configure `My.Application.Log` to write information to a text file.|[Postupy: Zápis informací o události do textového souboru](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-event-information-to-a-text-file.md)|  
-|Configure `My.Application.Log` to write information to an event log.|[Postupy: Zápis do protokolu událostí aplikace](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-to-an-application-event-log.md)|  
-|Change where `My.Application.Log` writes information.|[Návod: Změna místa, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)|  
-|Determine where `My.Application.Log` writes information.|[Návod: Zjištění, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)|  
-|Create a custom log listener for `My.Application.Log`.|[Návod: Vytváření vlastních součástí naslouchajících protokolům](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-creating-custom-log-listeners.md)|  
-|Filter the output of the `My.Application.Log` logs.|[Návod: Filtrování výstupu My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md)|  
+|Zapište informace události do protokolů aplikace.|[Postupy: Zápis zpráv protokolu](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)|  
+|Zapište informace o výjimce do protokolů aplikace.|[Postupy: Protokolování výjimek](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)|  
+|Zapište trasovací informace do protokolů aplikace při spuštění a ukončení aplikace.|[Postupy: Protokolování zpráv při spuštění nebo ukončení aplikace](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-messages-when-the-application-starts-or-shuts-down.md)|  
+|Nakonfigurujte `My.Application.Log` pro zápis informací do textového souboru.|[Postupy: Zápis informací o události do textového souboru](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-event-information-to-a-text-file.md)|  
+|Nakonfigurujte `My.Application.Log` pro zápis informací do protokolu událostí.|[Postupy: Zápis do protokolu událostí aplikace](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-to-an-application-event-log.md)|  
+|Změňte, kde `My.Application.Log` zapisuje informace.|[Návod: Změna místa, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)|  
+|Určete, kde `My.Application.Log` zapisuje informace.|[Návod: Zjištění, kam objekt My.Application.Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)|  
+|Vytvořte vlastní naslouchací proces protokolu pro `My.Application.Log`.|[Návod: Vytváření vlastních součástí naslouchajících protokolům](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-creating-custom-log-listeners.md)|  
+|Filtrujte výstup protokolů `My.Application.Log`.|[Návod: Filtrování výstupu My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md)|  
   
 ## <a name="see-also"></a>Viz také:
 

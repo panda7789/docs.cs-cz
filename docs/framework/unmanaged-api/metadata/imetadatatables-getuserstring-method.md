@@ -24,7 +24,7 @@ ms.locfileid: "74431431"
 ---
 # <a name="imetadatatablesgetuserstring-method"></a>IMetaDataTables::GetUserString – metoda
 
-Gets the hard-coded string at the specified index in the string column in the current scope.
+Získá pevně zakódovaný řetězec na zadaném indexu ve sloupci řetězce v aktuálním oboru.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -39,23 +39,23 @@ HRESULT GetUserString (
 ## <a name="parameters"></a>Parametry
 
 `ixUserString`\
-[in] The index value from which the hard-coded string will be retrieved.
+pro Hodnota indexu, ze které budou načteny pevně zakódovaný řetězec.
 
 `pcbData`\
-[out] A pointer to the size of `ppData`.
+mimo Ukazatel na velikost `ppData`.
 
 `ppData`\
-[out] A pointer to a pointer to the returned string.
+mimo Ukazatel na ukazatel na vrácený řetězec.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
 
-**Header:** Cor.h
+**Hlavička:** Cor. h
 
-**Library:** Used as a resource in MsCorEE.dll
+**Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.
 
-**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
+**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]
 
 ## <a name="see-also"></a>Viz také:
 

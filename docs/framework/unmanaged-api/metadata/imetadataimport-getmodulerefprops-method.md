@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437315"
 ---
 # <a name="imetadataimportgetmodulerefprops-method"></a>IMetaDataImport::GetModuleRefProps – metoda
-Gets the name of the module referenced by the specified metadata token.  
+Získá název modulu, na který odkazuje zadaný token metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,25 +38,25 @@ HRESULT GetModuleRefProps (
   
 ## <a name="parameters"></a>Parametry  
  `mur`  
- [in] The ModuleRef metadata token that references the module to get metadata information for.  
+ pro Token metadat Odkaz ModuleRef, který odkazuje na modul, aby získal informace o metadatech pro.  
   
  `szName`  
- [out] A buffer to hold the module name.  
+ mimo Vyrovnávací paměť pro uložení názvu modulu.  
   
  `cchName`  
- [in] The requested size of `szName` in wide characters.  
+ pro Požadovaná velikost `szName` v rámci velkých znaků.  
   
  `pchName`  
- [out] The returned size of `szName` in wide characters.  
+ mimo Vrácená velikost `szName` v rámci velkých znaků.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

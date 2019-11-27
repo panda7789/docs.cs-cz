@@ -1,5 +1,5 @@
 ---
-title: Fixed Size Buffers - C# Programming Guide
+title: Vyrovnávací paměti pevné velikosti – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 04/20/2018
 helpviewer_keywords:
@@ -15,7 +15,7 @@ ms.locfileid: "74429401"
 ---
 # <a name="fixed-size-buffers-c-programming-guide"></a>Vyrovnávací paměti pevné velikosti (Průvodce programováním v C#)
 
-In C#, you can use the [fixed](../../language-reference/keywords/fixed-statement.md) statement to create a buffer with a fixed size array in a data structure. Fixed size buffers are useful when you write methods that interop with data sources from other languages or platforms. The fixed array can take any attributes or modifiers that are allowed for regular struct members. The only restriction is that the array type must be `bool`, `byte`, `char`, `short`, `int`, `long`, `sbyte`, `ushort`, `uint`, `ulong`, `float`, or `double`.
+V C#nástroji můžete použít příkaz [fixed](../../language-reference/keywords/fixed-statement.md) pro vytvoření vyrovnávací paměti s pevnou velikostí pole v datové struktuře. Vyrovnávací paměti pevné velikosti jsou užitečné, když píšete metody, které podporují spolupráci se zdroji dat z jiných jazyků nebo platforem. Pevné pole může mít libovolné atributy nebo modifikátory, které jsou povoleny pro běžné členy struktury. Jediným omezením je, že typ pole musí být `bool`, `byte`, `char`, `short`, `int`, `long`, `sbyte`, `ushort`, `uint`, `ulong`, `float`nebo `double`.
 
 ```csharp
 private fixed char name[30];
@@ -23,35 +23,35 @@ private fixed char name[30];
 
 ## <a name="remarks"></a>Poznámky
 
-In safe code, a C# struct that contains an array does not contain the array elements. Instead, the struct contains a reference to the elements. You can embed an array of fixed size in a [struct](../../language-reference/keywords/struct.md) when it is used in an [unsafe](../../language-reference/keywords/unsafe.md) code block.
+V bezpečném kódu C# struktura obsahující pole neobsahuje prvky pole. Místo toho struktura obsahuje odkaz na prvky. Pole s pevnou velikostí můžete vložit do [struktury](../../language-reference/keywords/struct.md) , pokud se používá v [nebezpečném](../../language-reference/keywords/unsafe.md) bloku kódu.
 
-The following `struct` is 8 bytes in size. The `pathName` array is a reference:
+Následující `struct` mají velikost 8 bajtů. Pole `pathName` je odkazem:
 
 [!code-csharp[Struct with embedded array](../../../../samples/snippets/csharp/keywords/FixedKeywordExamples.cs#6)]
 
-A `struct` can contain an embedded array in unsafe code. In the following example, the `fixedBuffer` array has a fixed size. You use a `fixed` statement to establish a pointer to the first element. You access the elements of the array through this pointer. The `fixed` statement pins the `fixedBuffer` instance field to a specific location in memory.
+`struct` může obsahovat vložené pole v nebezpečném kódu. V následujícím příkladu má pole `fixedBuffer` pevnou velikost. Pomocí příkazu `fixed` vytvoříte ukazatel na první prvek. K prvkům pole přistupujete prostřednictvím tohoto ukazatele. Příkaz `fixed` připnete pole instance `fixedBuffer` do konkrétního umístění v paměti.
 
 [!code-csharp[Struct with embedded inline array](../../../../samples/snippets/csharp/keywords/FixedKeywordExamples.cs#7)]
 
-The size of the 128 element `char` array is 256 bytes. Fixed size [char](../../language-reference/builtin-types/char.md) buffers always take two bytes per character, regardless of the encoding. This is true even when char buffers are marshaled to API methods or structs with `CharSet = CharSet.Auto` or `CharSet = CharSet.Ansi`. Další informace najdete v tématu <xref:System.Runtime.InteropServices.CharSet>.
+Velikost elementu 128 `char` pole je 256 bajtů. Pevná velikost [znaková](../../language-reference/builtin-types/char.md) vyrovnávací paměť vždy bere dva bajty na znak bez ohledu na kódování. To platí i v případě, že jsou vyrovnávací paměti pro znaky zařazeny do metod nebo struktur rozhraní API pomocí `CharSet = CharSet.Auto` nebo `CharSet = CharSet.Ansi`. Další informace najdete v tématu <xref:System.Runtime.InteropServices.CharSet>.
 
-The  preceding example demonstrates accessing `fixed` fields without pinning, which is available starting with C# 7.3.
+Předchozí příklad ukazuje přístup k polím `fixed` bez připnutí, která je k dispozici od C# 7,3.
 
-Another common fixed-size array is the [bool](../../language-reference/keywords/bool.md) array. The elements in a `bool` array are always one byte in size. `bool` arrays are not appropriate for creating bit arrays or buffers.
+Další společné pole s pevnou velikostí je pole [bool](../../language-reference/keywords/bool.md) . Prvky v poli `bool` mají velikost vždy jeden bajt. `bool` pole nejsou vhodná pro vytváření bitových polí nebo vyrovnávacích pamětí.
 
 > [!NOTE]
-> Except for memory created by using [stackalloc](../../language-reference/operators/stackalloc.md), the C# compiler and the common language runtime (CLR) do not perform any security buffer overrun checks. As with all unsafe code, use caution.
+> S výjimkou paměti vytvořené pomocí [stackalloc](../../language-reference/operators/stackalloc.md) C# kompilátor a modul CLR (Common Language Runtime) neprovádí žádné kontroly přetečení vyrovnávací paměti zabezpečení. Stejně jako u veškerého nebezpečného kódu buďte opatrní.
 
-Unsafe buffers differ from regular arrays in the following ways:
+Nebezpečné vyrovnávací paměti se liší od regulárních polí následujícími způsoby:
 
-- You can only use unsafe buffers in an unsafe context.
-- Unsafe buffers are always vectors, or one-dimensional arrays.
-- The declaration of the array should include a count, such as `char id[8]`. You cannot use `char id[]`.
-- Unsafe buffers can only be instance fields of structs in an unsafe context.
+- V nebezpečném kontextu můžete použít jenom nebezpečné vyrovnávací paměti.
+- Nebezpečné vyrovnávací paměti jsou vždy vektory nebo jednorozměrná pole.
+- Deklarace pole by měla zahrnovat počet, například `char id[8]`. Nemůžete použít `char id[]`.
+- Nebezpečné vyrovnávací paměti mohou být pouze pole instancí struktur v nezabezpečeném kontextu.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](../index.md)
+- [Průvodce programováním v C#](../index.md)
 - [Nebezpečný kód a ukazatele](index.md)
 - [fixed – příkaz](../../language-reference/keywords/fixed-statement.md)
 - [Interoperabilita](../interop/index.md)

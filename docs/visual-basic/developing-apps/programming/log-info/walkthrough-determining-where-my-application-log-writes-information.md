@@ -18,50 +18,50 @@ ms.locfileid: "74353610"
 ---
 # <a name="walkthrough-determining-where-myapplicationlog-writes-information-visual-basic"></a>Návod: Zjištění, kam objekt My.Application.Log zapisuje informace (Visual Basic)
 
-The `My.Application.Log` object can write information to several log listeners. The log listeners are configured by the computer's configuration file and can be overridden by an application's configuration file. This topic describes the default settings and how to determine the settings for your application.
+Objekt `My.Application.Log` může zapisovat informace do několika posluchačů protokolů. Naslouchací procesy protokolu jsou nakonfigurovány pomocí konfiguračního souboru počítače a mohou být přepsány konfiguračním souborem aplikace. Toto téma popisuje výchozí nastavení a způsob určení nastavení aplikace.
 
-For more information about the default output locations, see [Working with Application Logs](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md).
+Další informace o výchozích umístěních výstupu najdete v tématu [práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md).
 
-### <a name="to-determine-the-listeners-for-myapplicationlog"></a>To determine the listeners for My.Application.Log
+### <a name="to-determine-the-listeners-for-myapplicationlog"></a>Určení naslouchacího procesu pro My. Application. log
 
-1. Locate the assembly's configuration file. If you are developing the assembly, you can access the app.config in Visual Studio from the **Solution Explorer**. Otherwise, the configuration file name is the assembly's name appended with ".config", and it is located in the same directory as the assembly.
+1. Vyhledejte konfigurační soubor sestavení. Pokud vyvíjíte sestavení, můžete získat přístup k souboru App. config v aplikaci Visual Studio z **Průzkumník řešení**. V opačném případě je název konfiguračního souboru názvem sestavení připojeným pomocí ". config" a je umístěn ve stejném adresáři jako sestavení.
 
     > [!NOTE]
-    > Not every assembly has a configuration file.
+    > Ne každé sestavení má konfigurační soubor.
 
-    The configuration file is an XML file.
+    Konfigurační soubor je soubor XML.
 
-2. Locate the `<listeners>` section, in the `<source>` section with the `name` attribute "DefaultSource", located in the `<sources>` section. The `<sources>` section is located in the `<system.diagnostics>` section, in the top-level `<configuration>` section.
+2. Vyhledejte část `<listeners>` v části `<source>` s atributem `name` "DefaultSource", který se nachází v části `<sources>`. Část `<sources>` se nachází v části `<system.diagnostics>` v části `<configuration>` nejvyšší úrovně.
 
-    If these sections do not exist, then the computer's configuration file may configure the `My.Application.Log` log listeners. The following steps describe how to determine what the computer configuration file defines:
+    Pokud tyto oddíly neexistují, může konfigurační soubor počítače nakonfigurovat naslouchací procesy protokolu `My.Application.Log`. Následující postup popisuje, jak určit, jaký konfigurační soubor počítače definuje:
 
-    1. Locate the computer's machine.config file. Typically, it is located in the *SystemRoot\Microsoft.NET\Framework\frameworkVersion\CONFIG* directory, where `SystemRoot` is the operating system directory, and `frameworkVersion` is the version of the .NET Framework.
+    1. Vyhledejte soubor Machine. config počítače. Obvykle se nachází v adresáři *SystemRoot\Microsoft.NET\Framework\frameworkVersion\CONFIG* , kde je `SystemRoot` adresářem operačního systému a `frameworkVersion` je verze .NET Framework.
 
-        The settings in machine.config can be overridden by an application's configuration file.
+        Nastavení v souboru Machine. config může přepsat konfigurační soubor aplikace.
 
-        If the optional elements listed below do not exist, you can create them.
+        Pokud volitelné prvky uvedené níže neexistují, můžete je vytvořit.
 
-    2. Locate the `<listeners>` section, in the `<source>` section with the `name` attribute "DefaultSource", in the `<sources>` section, in the `<system.diagnostics>` section, in the top-level `<configuration>` section.
+    2. Vyhledejte část `<listeners>` v části `<source>` s atributem `name` "DefaultSource" v části pro `<sources>` v sekci `<system.diagnostics>` na nejvyšší úrovni.`<configuration>`
 
-        If these sections do not exist, then the `My.Application.Log` has only the default log listeners.
+        Pokud tyto oddíly neexistují, `My.Application.Log` mají pouze výchozí naslouchací procesy protokolu.
 
-3. Locate the <`add>` elements in the <`listeners>` section.
+3. V části <`listeners>` vyhledejte prvky`add>` <.
 
-     These elements add the named log listeners to `My.Application.Log` source.
+     Tyto prvky přidají pojmenované naslouchací procesy protokolu do zdroje `My.Application.Log`.
 
-4. Locate the `<add>` elements with the names of the log listeners in the `<sharedListeners>` section, in the `<system.diagnostics>` section, in the top-level `<configuration>` section.
+4. Vyhledejte prvky `<add>` s názvy naslouchacího procesu protokolu v části `<sharedListeners>` v části `<system.diagnostics>` v části `<configuration>` nejvyšší úrovně.
 
-5. For many types of shared listeners, the listener's initialization data includes a description of where the listener directs the data:
+5. Pro mnoho typů sdílených posluchačů obsahuje inicializační data naslouchacího procesu popis, kde naslouchací proces přesměruje data:
 
-    - A <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener?displayProperty=nameWithType> listener writes to a file log, as described in the introduction.
+    - <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener?displayProperty=nameWithType> naslouchací proces zapisuje do protokolu souborů, jak je popsáno v úvodu.
 
-    - A <xref:System.Diagnostics.EventLogTraceListener?displayProperty=nameWithType> listener writes information to the computer event log specified by the `initializeData` parameter. To view an event log, you can use **Server Explorer** or **Windows Event Viewer**. For more information, see [ETW Events in the .NET Framework](../../../../framework/performance/etw-events.md).
+    - Naslouchací proces <xref:System.Diagnostics.EventLogTraceListener?displayProperty=nameWithType> zapisuje informace do protokolu událostí počítače určeného parametrem `initializeData`. Chcete-li zobrazit protokol událostí, můžete použít **Průzkumník serveru** nebo **Windows Prohlížeč událostí**. Další informace najdete v tématu [události ETW v .NET Framework](../../../../framework/performance/etw-events.md).
 
-    - The <xref:System.Diagnostics.DelimitedListTraceListener?displayProperty=nameWithType> and <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType> listeners write to the file specified in the `initializeData` parameter.
+    - Naslouchací procesy <xref:System.Diagnostics.DelimitedListTraceListener?displayProperty=nameWithType> a <xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType> zapisují do souboru zadaného v parametru `initializeData`.
 
-    - A <xref:System.Diagnostics.ConsoleTraceListener?displayProperty=nameWithType> listener writes to the command-line console.
+    - <xref:System.Diagnostics.ConsoleTraceListener?displayProperty=nameWithType> naslouchací proces zapisuje do konzoly příkazového řádku.
 
-    - For information about where other types of log listeners write information, consult that type's documentation.
+    - Informace o tom, kde jiné typy protokolových posluchačů zapisují informace, najdete v dokumentaci k tomuto typu.
 
 ## <a name="see-also"></a>Viz také:
 

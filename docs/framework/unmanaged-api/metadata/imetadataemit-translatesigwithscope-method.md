@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74440470"
 ---
 # <a name="imetadataemittranslatesigwithscope-method"></a>IMetaDataEmit::TranslateSigWithScope – metoda
-Imports an assembly into the current scope and gets a new metadata signature for the merged scope.  
+Importuje sestavení do aktuálního oboru a získá nový podpis metadat pro sloučený obor.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,46 +45,46 @@ HRESULT TranslateSigWithScope (
   
 ## <a name="parameters"></a>Parametry  
  `pAssemImport`  
- [in] The interface for import assembly (where the signature is defined).  
+ pro Rozhraní pro import sestavení (kde je definován podpis).  
   
  `pbHashValue`  
- [in] The hash blob for the assembly.  
+ pro Objekt BLOB algoritmu hash pro sestavení.  
   
  `cbHashValue`  
- [in] The count of bytes in `pbHashValue`.  
+ pro Počet bajtů v `pbHashValue`.  
   
  `import`  
- [in] The interface for import metadata scope.  
+ pro Rozhraní pro obor metadat pro import.  
   
  `pbSigBlob`  
- [in] The signature to be imported.  
+ pro Podpis, který se má importovat  
   
  `cbSigBlob`  
- [in] The size, in bytes, of `pbSigBlob`.  
+ pro Velikost `pbSigBlob`v bajtech.  
   
  `pAssemEmit`  
- [in] The interface for export assembly.  
+ pro Rozhraní pro export sestavení.  
   
  `emit`  
- [in] The interface for export metadata scope.  
+ pro Rozhraní pro obor metadat pro export.  
   
  `pvTranslatedSig`  
- [out] The buffer to hold the translated signature blob.  
+ mimo Vyrovnávací paměť pro uchování přeloženého objektu BLOB signatury.  
   
  `cbTranslatedSigMax`  
- [in] The capacity, in bytes, of `pvTranslatedSig`.  
+ pro Kapacita `pvTranslatedSig`v bajtech.  
   
  `pcbTranslatedSig`  
- [out] The number of actual bytes in the translated signature.  
+ mimo Počet skutečných bajtů v přeloženém podpisu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

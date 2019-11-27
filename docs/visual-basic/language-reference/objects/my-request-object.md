@@ -15,15 +15,15 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350680"
 ---
 # <a name="myrequest-object"></a>My.Request – objekt
-Gets the <xref:System.Web.HttpRequest> object for the requested page.  
+Získá objekt <xref:System.Web.HttpRequest> pro požadovanou stránku.  
   
 ## <a name="remarks"></a>Poznámky  
- The `My.Request` object contains information about the current HTTP request.  
+ Objekt `My.Request` obsahuje informace o aktuálním požadavku HTTP.  
   
- The `My.Request` object is available only for ASP.NET applications.  
+ Objekt `My.Request` je k dispozici pouze pro aplikace ASP.NET.  
   
 ## <a name="example"></a>Příklad  
- The following example gets the header collection from the `My.Request` object and uses the `My.Response` object to write it to the ASP.NET page.  
+ Následující příklad získá kolekci hlaviček z objektu `My.Request` a pomocí objektu `My.Response` jej zapíše na stránku ASP.NET.  
   
  [!code-aspx-vb[VbVbalrMyWeb#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyWeb/VB/Default.aspx#1)]  
   

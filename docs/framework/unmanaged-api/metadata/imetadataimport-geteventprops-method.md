@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437586"
 ---
 # <a name="imetadataimportgeteventprops-method"></a>IMetaDataImport::GetEventProps – metoda
-Gets metadata information for the event represented by the specified event token, including the declaring type, the add and remove methods for delegates, and any flags and other associated data.  
+Získá informace o metadatech události reprezentované zadaným tokenem události, včetně deklarovaného typu, metod přidání a odebrání delegátů a všech příznaků a dalších přidružených dat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,49 +47,49 @@ HRESULT GetEventProps (
   
 ## <a name="parameters"></a>Parametry  
  `ev`  
- [in] The event metadata token representing the event to get metadata for.  
+ pro Token metadat události představující událost, pro kterou se mají získat metadata  
   
  `pClass`  
- [out] A pointer to the TypeDef token representing the class that declares the event.  
+ mimo Ukazatel na token TypeDef představující třídu, která deklaruje událost.  
   
  `szEvent`  
- [out] The name of the event referenced by `ev`.  
+ mimo Název události, na kterou odkazuje `ev`.  
   
  `pchEvent`  
- [in] The requested length in wide characters of `szEvent`.  
+ pro Požadovaná délka v různých znacích `szEvent`.  
   
  `pdwEventFlags`  
- [out] The returned length in wide characters of `szEvent`.  
+ mimo Vrácená délka v různých znacích `szEvent`.  
   
  `ptkEventType`  
- [out] A pointer to a TypeRef or TypeDef metadata token representing the <xref:System.Delegate> type of the event.  
+ mimo Ukazatel na token metadat TypeRef nebo TypeDef představující <xref:System.Delegate> typ události.  
   
  `pmdAddOn`  
- [out] A pointer to the metadata token representing the method that adds handlers for the event.  
+ mimo Ukazatel na token metadat představující metodu, která přidává obslužné rutiny pro událost.  
   
  `pmdRemoveOn`  
- [out] A pointer to the metadata token representing the method that removes handlers for the event.  
+ mimo Ukazatel na token metadat představující metodu, která odebírá obslužné rutiny pro událost.  
   
  `pmdFire`  
- [out] A pointer to the metadata token representing the method that raises the event.  
+ mimo Ukazatel na token metadat představující metodu, která vyvolává událost.  
   
  `rmdOtherMethod`  
- [out] An array of token pointers to other methods associated with the event.  
+ mimo Pole ukazatelů na tokeny na jiné metody přidružené k události.  
   
  `cMax`  
- [in] The maximum size of the `rmdOtherMethod` array.  
+ pro Maximální velikost `rmdOtherMethod` pole  
   
  `pcOtherMethod`  
- [out] The number of tokens returned in `rmdOtherMethod`.  
+ mimo Počet tokenů vrácených v `rmdOtherMethod`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

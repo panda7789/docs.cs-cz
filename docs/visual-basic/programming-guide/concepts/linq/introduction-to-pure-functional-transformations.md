@@ -9,19 +9,19 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74338817"
 ---
-# <a name="introduction-to-pure-functional-transformations-visual-basic"></a>Introduction to Pure Functional Transformations (Visual Basic)
-This section introduces functional transformations, including the underlying concepts and supporting language constructs. It contrasts the object-oriented and functional transformation approaches to programming, including advice on how to transition to the latter. Although functional transformations can be used in many programming scenarios, XML transformation is used here as a concrete example.  
+# <a name="introduction-to-pure-functional-transformations-visual-basic"></a>Úvod do čistě funkční transformace (Visual Basic)
+V této části se seznámíte s funkcemi, včetně základních konceptů a podpůrných jazykových konstrukcí. Má vliv na objekty orientované a funkční transformace na programování, včetně rad, jak přejít k druhému. I když lze v mnoha programovacích scénářích použít funkční transformace, jako konkrétní příklad se zde používá transformace XML.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
 |Téma|Popis|  
 |-----------|-----------------|  
-|[Concepts and Terminology (Functional Transformation) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/concepts-and-terminology-functional-transformation.md)|Introduces the concepts and terminology of pure functional transformations.|  
-|[Functional Programming vs. Imperative Programming (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-programming-vs-imperative-programming.md)|Compares and contrasts functional programming to more traditional imperative (procedural) programming.|  
-|[Refactoring Into Pure Functions (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)|Introduces pure functions, and shows examples of and pure and impure functions.|  
-|[Applicability of Functional Transformation (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/applicability-of-functional-transformation.md)|Describes typical scenarios for functional transformations.|  
-|[Functional Transformation of XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-transformation-of-xml.md)|Describes functional transformations in the context of transforming XML trees.|  
+|[Koncepty a terminologie (funkce Transformation) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/concepts-and-terminology-functional-transformation.md)|Zavádí koncepty a terminologie čistě funkčních transformací.|  
+|[Funkční programování vs. imperativní programování (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-programming-vs-imperative-programming.md)|Porovná a porovnává funkční programování s více tradičními imperativními (procedurální) programování.|  
+|[Refaktoring na čistě funkce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)|Zavádí čisté funkce a ukazuje příklady a čistě a nečisté funkce.|  
+|[Použitelnost funkční transformace (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/applicability-of-functional-transformation.md)|Popisuje typické scénáře pro funkce transformace.|  
+|[Funkční transformace XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-transformation-of-xml.md)|Popisuje funkční transformace v kontextu transformace stromů XML.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Pure Functional Transformations of XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/pure-functional-transformations-of-xml.md)
+- [Čistě funkční transformace jazyka XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/pure-functional-transformations-of-xml.md)

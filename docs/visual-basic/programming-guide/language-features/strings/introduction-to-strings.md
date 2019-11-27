@@ -12,17 +12,17 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344317"
 ---
 # <a name="introduction-to-strings-in-visual-basic"></a>Představení řetězců v jazyce Visual Basic
-This section describes the basic concepts behind using strings in Visual Basic.  
+Tato část popisuje základní koncepty za použití řetězců v Visual Basic.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Základní informace o řetězcích](../../../../visual-basic/programming-guide/language-features/strings/string-basics.md)  
- Introduces the basic concepts behind using strings and string variables.  
+ Zavádí základní koncepty za použití řetězců a proměnných řetězce.  
   
- [Types of String Manipulation Methods in Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/types-of-string-manipulation-methods.md)  
- Introduces several different ways to analyze and manipulate strings.  
+ [Typy metod manipulace s řetězci v Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/types-of-string-manipulation-methods.md)  
+ Zavádí několik různých způsobů, jak analyzovat a manipulovat s řetězci.  
   
- [How Culture Affects Strings in Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/how-culture-affects-strings.md)  
- Discusses how Visual Basic uses culture information to perform string conversions and comparisons.  
+ [Vliv jazykové verze na řetězce v Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/how-culture-affects-strings.md)  
+ Popisuje, jak Visual Basic používá informace o jazykové verzi k provádění převodů a porovnávání řetězců.  
   
 ## <a name="see-also"></a>Viz také:
 

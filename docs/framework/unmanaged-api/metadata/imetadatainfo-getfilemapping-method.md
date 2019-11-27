@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436171"
 ---
 # <a name="imetadatainfogetfilemapping-method"></a>IMetaDataInfo::GetFileMapping – metoda
-Gets the memory region of the mapped file, and the type of mapping.  
+Získá oblast paměti mapovaného souboru a typ mapování.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,39 +37,39 @@ HRESULT GetFileMapping (
   
 ## <a name="parameters"></a>Parametry  
  `ppvData`  
- [out] A pointer to the start of the mapped file.  
+ mimo Ukazatel na začátek mapovaného souboru.  
   
  `pcbData`  
- [out] The size of the mapped region. If `pdwMappingType` is `fmFlat`, this is the size of the file.  
+ mimo Velikost mapované oblasti Pokud je `pdwMappingType` `fmFlat`, jedná se o velikost souboru.  
   
  `pdwMappingType`  
- [out] A [CorFileMapping](../../../../docs/framework/unmanaged-api/metadata/corfilemapping-enumeration.md) value that indicates the type of mapping. The current implementation of the common language runtime (CLR) always returns `fmFlat`. Other values are reserved for future use. However, you should always verify the returned value, because other values may be enabled in future versions or service releases.  
+ mimo Hodnota [CorFileMapping –](../../../../docs/framework/unmanaged-api/metadata/corfilemapping-enumeration.md) , která určuje typ mapování. Aktuální implementace modulu CLR (Common Language Runtime) vždy vrací `fmFlat`. Jiné hodnoty jsou vyhrazeny pro budoucí použití. Měli byste však vždy ověřit vrácenou hodnotu, protože jiné hodnoty mohou být povoleny v budoucích verzích nebo verzích služeb.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|All outputs are filled.|  
-|`E_INVALIDARG`|NULL was passed as an argument value.|  
-|`COR_E_NOTSUPPORTED`|The CLR implementation cannot provide information about the memory region. This can happen for the following reasons:<br /><br /> -   The metadata scope was opened with the `ofWrite` or `ofCopyMemory` flag.<br />-   The metadata scope was opened without the `ofReadOnly` flag.<br />-   The [IMetaDataDispenser::OpenScopeOnMemory](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-openscopeonmemory-method.md) method was used to open only the metadata portion of the file.<br />-   The file is not a portable executable (PE) file. **Note:**  These conditions depend on the CLR implementation, and are likely to be weakened in future versions of the CLR.|  
+|`S_OK`|Všechny výstupy jsou vyplněny.|  
+|`E_INVALIDARG`|Jako hodnota argumentu byla předána hodnota NULL.|  
+|`COR_E_NOTSUPPORTED`|Implementace CLR nemůže poskytovat informace o oblasti paměti. Tato situace může mít následující důvody:<br /><br /> – Obor metadat byl otevřen pomocí příznaku `ofWrite` nebo `ofCopyMemory`.<br />– Obor metadat byl otevřen bez příznaku `ofReadOnly`.<br />– Metoda [IMetaDataDispenser:: OpenScopeOnMemory –](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-openscopeonmemory-method.md) byla použita k otevření pouze části metadat v souboru.<br />– Soubor není soubor přenositelného spustitelného souboru (PE). **Poznámka:**  Tyto podmínky závisí na implementaci CLR a jsou pravděpodobně oslabeny v budoucích verzích CLR.|  
   
 ## <a name="remarks"></a>Poznámky  
- The memory that `ppvData` points to is valid only as long as the underlying metadata scope is open.  
+ Paměť, na kterou `ppvData` odkazuje, je platná pouze tak dlouho, dokud je otevřený obor metadat.  
   
- In order for this method to work, when you map the metadata of an on-disk file into memory by calling the [IMetaDataDispenser::OpenScope](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-openscope-method.md) method, you must specify the `ofReadOnly` flag and you must not specify the `ofWrite` or `ofCopyMemory` flag.  
+ Aby tato metoda fungovala, Pokud namapujete metadata souboru na disku do paměti voláním metody [IMetaDataDispenser:: OpenScope –](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-openscope-method.md) , je nutné zadat příznak `ofReadOnly` a není nutné zadat `ofWrite` nebo `ofCopyMemory` příznak.  
   
- The choice of file mapping type for each scope is specific to a given implementation of the CLR. It cannot be set by the user. The current implementation of the CLR always returns `fmFlat` in `pdwMappingType`, but this can change in future versions of the CLR or in future service releases of a given version. You should always check the returned value in `pdwMappingType`, because different types will have different layouts and offsets.  
+ Volba typu mapování souborů pro každý obor je specifická pro danou implementaci CLR. Tuto hodnotu nemůže nastavit uživatel. Aktuální implementace CLR vždy vrátí `fmFlat` v `pdwMappingType`, ale to se může v budoucích verzích CLR nebo v budoucích vydáních této verze změnit. Vždy byste měli kontrolovat vrácenou hodnotu v `pdwMappingType`, protože různé typy budou mít různá rozložení a posuny.  
   
- Passing NULL for any of the three parameters is not supported. The method returns `E_INVALIDARG`, and none of the outputs are filled. Ignoring the mapping type or the size of the region can result in abnormal program termination.  
+ Předání hodnoty NULL pro některý ze tří parametrů není podporováno. Metoda vrátí `E_INVALIDARG`a žádný z výstupů není vyplněn. Ignorování typu mapování nebo velikost oblasti může způsobit neobvyklé ukončení programu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74439839"
 ---
 # <a name="icorprofilercallback2garbagecollectionfinished-method"></a>ICorProfilerCallback2::GarbageCollectionFinished – metoda
-Notifies the profiler that garbage collection has completed and all garbage collection callbacks have been issued for it.  
+Upozorní profileru, že uvolňování paměti bylo dokončeno a že pro něj byly vydány všechna zpětná volání uvolňování paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,16 +32,16 @@ HRESULT GarbageCollectionFinished();
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- It is safe for the profiler to inspect objects in their final locations when the `GarbageCollectionFinished` method is called.  
+ Je bezpečné, aby Profiler zkontroloval objekty v jejich finálních umístěních, když je volána metoda `GarbageCollectionFinished`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

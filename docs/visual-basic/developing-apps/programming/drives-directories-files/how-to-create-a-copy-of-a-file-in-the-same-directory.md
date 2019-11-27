@@ -18,51 +18,51 @@ ms.locfileid: "74348825"
 ---
 # <a name="how-to-create-a-copy-of-a-file-in-the-same-directory-in-visual-basic"></a>Postupy: Vytvoření kopie souboru ve stejném adresáři v jazyce Visual Basic
 
-Use the `My.Computer.FileSystem.CopyFile` method to copy files. The parameters allow you to overwrite existing files, rename the file, show the progress of the operation, and allow the user to cancel the operation.  
+K kopírování souborů použijte metodu `My.Computer.FileSystem.CopyFile`. Parametry umožňují přepsat existující soubory, přejmenovat soubor, zobrazit průběh operace a nechat uživatele operaci zrušit.  
   
-### <a name="to-create-a-copy-of-a-file-in-the-same-folder"></a>To create a copy of a file in the same folder  
+### <a name="to-create-a-copy-of-a-file-in-the-same-folder"></a>Vytvoření kopie souboru ve stejné složce  
   
-- Use the `CopyFile` method, supplying the target file and the location. The following example creates a copy of `test.txt` called `test2.txt`.  
+- Použijte metodu `CopyFile`, zadejte cílový soubor a umístění. Následující příklad vytvoří kopii `test.txt` s názvem `test2.txt`.  
   
      [!code-vb[VbVbcnMyFileSystem#51](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#51)]  
   
-### <a name="to-create-a-copy-of-a-file-in-the-same-folder-overwriting-existing-files"></a>To create a copy of a file in the same folder, overwriting existing files  
+### <a name="to-create-a-copy-of-a-file-in-the-same-folder-overwriting-existing-files"></a>Vytvoření kopie souboru ve stejné složce, při které se přepíší stávající soubory  
   
-- Use the `CopyFile` method, supplying the target file and location, and setting `overwrite` to `True`. The following example creates a copy of `test.txt` called `test2.txt` and overwrites any existing files by that name.  
+- Použijte metodu `CopyFile`, zadejte cílový soubor a umístění a nastavte `overwrite` na `True`. Následující příklad vytvoří kopii `test.txt` s názvem `test2.txt` a přepíše všechny existující soubory s tímto názvem.  
   
      [!code-vb[VbVbcnMyFileSystem#52](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#52)]  
   
 ## <a name="robust-programming"></a>Robustní programování  
 
- The following conditions may cause an exception to be thrown:  
+ Následující podmínky mohou způsobit vyvolání výjimky:  
   
-- The path is not valid for one of the following reasons: it is a zero-length string, it contains only white space, it contains invalid characters, or it is a device path (starts with \\\\.\\) (<xref:System.ArgumentException>).  
+- Cesta není platná z některého z následujících důvodů: Jedná se o řetězec o nulové délce, obsahuje pouze prázdné znaky, obsahuje neplatné znaky nebo se jedná o cestu k zařízení (začíná na \\\\.\\) (<xref:System.ArgumentException>).  
   
-- The system could not retrieve the absolute path (<xref:System.ArgumentException>).  
+- Systém nemůže načíst absolutní cestu (<xref:System.ArgumentException>).  
   
-- The path is not valid because it is `Nothing` (<xref:System.ArgumentNullException>).  
+- Cesta není platná, protože je `Nothing` (<xref:System.ArgumentNullException>).  
   
-- The source file is not valid or does not exist (<xref:System.IO.FileNotFoundException>).  
+- Zdrojový soubor není platný nebo neexistuje (<xref:System.IO.FileNotFoundException>).  
   
-- The combined path points to an existing directory (<xref:System.IO.IOException>).  
+- Kombinovaná cesta odkazuje na existující adresář (<xref:System.IO.IOException>).  
   
-- The destination file exists and `overwrite` is set to `False` (<xref:System.IO.IOException>).  
+- Cílový soubor existuje a `overwrite` je nastavená na `False` (<xref:System.IO.IOException>).  
   
-- The user does not have sufficient permissions to access the file (<xref:System.IO.IOException>).  
+- Uživatel nemá dostatečná oprávnění pro přístup k souboru (<xref:System.IO.IOException>).  
   
-- A file in the target folder with the same name is in use (<xref:System.IO.IOException>).  
+- Soubor v cílové složce se stejným názvem se používá (<xref:System.IO.IOException>).  
   
-- A file or folder name in the path contains a colon (:) or is in an invalid format (<xref:System.NotSupportedException>).  
+- Název souboru nebo složky v cestě obsahuje dvojtečku (:) nebo má neplatný formát (<xref:System.NotSupportedException>).  
   
-- `ShowUI` is set to `True`, `onUserCancel` is set to `ThrowException`, and the user has cancelled the operation (<xref:System.OperationCanceledException>).  
+- `ShowUI` je nastavená na `True`, `onUserCancel` je nastavená na `ThrowException`a uživatel operaci zrušil (<xref:System.OperationCanceledException>).  
   
-- `ShowUI` is set to `True`, `onUserCancel` is set to `ThrowException`, and an unspecified I/O error occurs (<xref:System.OperationCanceledException>).  
+- `ShowUI` je nastavená na `True`, `onUserCancel` je nastavená na `ThrowException`a dojde k nespecifikované vstupně-výstupní chybě (<xref:System.OperationCanceledException>).  
   
-- The path exceeds the system-defined maximum length (<xref:System.IO.PathTooLongException>).  
+- Cesta překračuje maximální povolenou délku systému (<xref:System.IO.PathTooLongException>).  
   
-- The user does not have required permission (<xref:System.UnauthorizedAccessException>).  
+- Uživatel nemá požadované oprávnění (<xref:System.UnauthorizedAccessException>).  
   
-- The user lacks necessary permissions to view the path (<xref:System.Security.SecurityException>).  
+- Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).  
   
 ## <a name="see-also"></a>Viz také:
 

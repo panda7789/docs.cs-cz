@@ -18,24 +18,24 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351572"
 ---
 # <a name="default-visual-basic"></a>Výchozí (Visual Basic)
-Identifies a property as the default property of its class, structure, or interface.  
+Identifikuje vlastnost jako výchozí vlastnost své třídy, struktury nebo rozhraní.  
   
 ## <a name="remarks"></a>Poznámky  
- A class, structure, or interface can designate at most one of its properties as the *default property*, provided that property takes at least one parameter. If code makes a reference to a class or structure without specifying a member, Visual Basic resolves that reference to the default property.  
+ Třída, struktura nebo rozhraní mohou jako *výchozí vlastnost*označovat nejvíce jednu z jejích vlastností, za předpokladu, že vlastnost přebírá alespoň jeden parametr. Pokud kód vytvoří odkaz na třídu nebo strukturu bez určení člena, Visual Basic tento odkaz přeloží na výchozí vlastnost.  
   
- Default properties can result in a small reduction in source code-characters, but they can make your code more difficult to read. If the calling code is not familiar with your class or structure, when it makes a reference to the class or structure name it cannot be certain whether that reference accesses the class or structure itself, or a default property. This can lead to compiler errors or subtle run-time logic errors.  
+ Výchozí vlastnosti můžou mít za následek malé snížení počtu znaků zdrojového kódu, ale můžou ztížit čtení kódu. Pokud volající kód není obeznámen s vaší třídou nebo strukturou, při odkazování na název třídy nebo struktury nemůže být jisté, zda tento odkaz přistupuje k třídě nebo struktuře samotné nebo výchozí vlastnosti. To může vést k chybám kompilátoru nebo k drobným chybám logiky run-time.  
   
- You can somewhat reduce the chance of default property errors by always using the [Option Strict Statement](../../../visual-basic/language-reference/statements/option-strict-statement.md) to set compiler type checking to `On`.  
+ Můžete trochu snížit šanci na chyby výchozích vlastností – vždy pomocí [příkazu Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md) nastavit kontrolu typu kompilátoru na `On`.  
   
- If you are planning to use a predefined class or structure in your code, you must determine whether it has a default property, and if so, what its name is.  
+ Pokud plánujete použít předdefinovanou třídu nebo strukturu v kódu, je nutné určit, zda má výchozí vlastnost, a pokud ano, jaký je její název.  
   
- Because of these disadvantages, you should consider not defining default properties. For code readability, you should also consider always referring to all properties explicitly, even default properties.  
+ Z důvodu těchto nevýhody byste měli zvážit, že nedefinujete výchozí vlastnosti. V případě čitelnosti kódu byste měli také zvážit možnost vždy odkazovat na všechny vlastnosti, a to i na výchozí vlastnosti.  
   
- The `Default` modifier can be used in this context:  
+ V tomto kontextu lze použít modifikátor `Default`:  
   
  [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
   
 ## <a name="see-also"></a>Viz také:
 
-- [How to: Declare and Call a Default Property in Visual Basic](../../../visual-basic/programming-guide/language-features/procedures/how-to-declare-and-call-a-default-property.md)
+- [Postupy: deklarace a volání výchozí vlastnosti v Visual Basic](../../../visual-basic/programming-guide/language-features/procedures/how-to-declare-and-call-a-default-property.md)
 - [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74431219"
 ---
 # <a name="imetadataerroronerror-method"></a>IMetaDataError::OnError – metoda
-Provides notification of errors that occur during the metadata merge.  
+Poskytuje oznámení o chybách, ke kterým došlo během sloučení metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,19 +36,19 @@ HRESULT OnError (
   
 ## <a name="parameters"></a>Parametry  
  `hrError`  
- [in] The HRESULT error value returned to the calling method.  
+ pro Hodnota chyby HRESULT vrácená metodě volání.  
   
  `token`  
- [in] The metadata token of the code object that was being merged when the error occurred.  
+ pro Token metadat objektu kódu, který byl sloučen v okamžiku, kdy došlo k chybě.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

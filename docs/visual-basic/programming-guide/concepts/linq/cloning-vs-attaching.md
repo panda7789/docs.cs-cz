@@ -1,5 +1,5 @@
 ---
-title: Cloning vs. Attaching
+title: Klonování vs. připojování
 ms.date: 07/20/2015
 ms.assetid: 3c3bd105-c9d3-49bd-875b-27ab4e8bc7a3
 ms.openlocfilehash: 22e86ee78d5c3fa0a7b80ae559c39f424fc9d61a
@@ -9,11 +9,11 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74345694"
 ---
-# <a name="cloning-vs-attaching-visual-basic"></a>Cloning vs. Attaching (Visual Basic)
-When adding <xref:System.Xml.Linq.XNode> (including <xref:System.Xml.Linq.XElement>) or <xref:System.Xml.Linq.XAttribute> objects to a new tree, if the new content has no parent, the objects are simply attached to the XML tree. If the new content already is parented, and is part of another XML tree, the new content is cloned. The newly cloned content is then attached to the XML tree.  
+# <a name="cloning-vs-attaching-visual-basic"></a>Klonování vs. připojování (Visual Basic)
+Pokud přidáváte <xref:System.Xml.Linq.XNode> (včetně <xref:System.Xml.Linq.XElement>) nebo <xref:System.Xml.Linq.XAttribute> objektů do nového stromu, pokud nový obsah nemá žádný nadřazený objekt, objekty jsou jednoduše připojeny ke stromu XML. Pokud nový obsah již je nadřazený a je součástí jiného stromu XML, bude nový obsah naklonován. Nově Klonovaný obsah je pak připojen ke stromu XML.  
   
 ## <a name="example"></a>Příklad  
- The following code demonstrates the behavior when you add a parented element to a tree, and when you add an element with no parent to a tree.  
+ Následující kód demonstruje chování při přidání nadřazeného elementu do stromu a při přidání elementu bez nadřazeného prvku do stromu.  
   
 ```vb  
 ' Create a tree with a child element.  
@@ -43,7 +43,7 @@ Console.WriteLine("Child2 was {0}", _
     "attached", "cloned"))  
 ```  
   
- This example produces the following output:  
+ Tento příklad vytvoří následující výstup:  
   
 ```console  
 Child1 was cloned  
@@ -52,4 +52,4 @@ Child2 was attached
   
 ## <a name="see-also"></a>Viz také:
 
-- [Creating XML Trees (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)
+- [Vytváření stromů XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)

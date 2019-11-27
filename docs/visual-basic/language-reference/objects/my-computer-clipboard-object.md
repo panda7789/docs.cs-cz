@@ -13,22 +13,22 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344097"
 ---
 # <a name="mycomputerclipboard-object"></a>My.Computer.Clipboard – objekt
-Provides methods for manipulating the Clipboard.  
+Poskytuje metody pro manipulaci se schránkou.  
   
 ## <a name="remarks"></a>Poznámky  
- For information about the methods and properties of the `My.Computer.Clipboard` object, see <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy>.  
+ Informace o metodách a vlastnostech objektu `My.Computer.Clipboard` naleznete v tématu <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy>.  
   
- For more information, see [Storing Data to and Reading from the Clipboard](../../../visual-basic/developing-apps/programming/computer-resources/storing-data-to-and-reading-from-the-clipboard.md).  
+ Další informace najdete v tématu [ukládání a čtení dat ze schránky](../../../visual-basic/developing-apps/programming/computer-resources/storing-data-to-and-reading-from-the-clipboard.md).  
   
 > [!NOTE]
-> You can also use methods of the <xref:System.Windows.Forms.Clipboard?displayProperty=nameWithType> class to manipulate the Clipboard.  
+> K manipulaci se schránkou můžete také použít metody <xref:System.Windows.Forms.Clipboard?displayProperty=nameWithType> třídy.  
   
 ## <a name="requirements"></a>Požadavky  
- **Namespace:** <xref:Microsoft.VisualBasic.MyServices>  
+ **Obor názvů:** <xref:Microsoft.VisualBasic.MyServices>  
   
- **Class:** <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy> (provides access to <xref:System.Windows.Forms.Clipboard>)  
+ **Třída:** <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy> (poskytuje přístup k <xref:System.Windows.Forms.Clipboard>)  
   
- **Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)  
+ **Sestavení:** Knihovna Visual Basic runtime (v souboru Microsoft. VisualBasic. dll)  
   
 ## <a name="see-also"></a>Viz také:
 

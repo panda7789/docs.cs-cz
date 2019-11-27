@@ -44,7 +44,7 @@ Následující části popisují atributy, podřízené prvky a nadřazené prvk
 
 ### <a name="child-elements"></a>Podřízené prvky
 
-Žádné
+Žádné.
 
 ### <a name="parent-elements"></a>Nadřazené prvky
 

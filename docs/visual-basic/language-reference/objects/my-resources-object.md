@@ -16,68 +16,68 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350329"
 ---
 # <a name="myresources-object"></a>My.Resources – objekt
-Provides properties and classes for accessing the application's resources.  
+Poskytuje vlastnosti a třídy pro přístup k prostředkům aplikace.  
   
 ## <a name="remarks"></a>Poznámky  
- The `My.Resources` object provides access to the application's resources and lets you dynamically retrieve resources for your application. For more information, see [Managing Application Resources (.NET)](/visualstudio/ide/managing-application-resources-dotnet).  
+ Objekt `My.Resources` poskytuje přístup k prostředkům aplikace a umožňuje dynamicky načítat prostředky pro vaši aplikaci. Další informace najdete v tématu [Správa prostředků aplikace (.NET)](/visualstudio/ide/managing-application-resources-dotnet).  
   
- The `My.Resources` object exposes only global resources. It does not provide access to resource files associated with forms. You must access the form resources from the form.  
+ Objekt `My.Resources` zpřístupňuje pouze globální prostředky. Neposkytuje přístup k souborům prostředků přidruženým k formulářům. Musíte získat přístup k prostředkům formuláře z formuláře.  
   
- You can access the application's culture-specific resource files from the `My.Resources` object. By default, the `My.Resources` object looks up resources from the resource file that matches the culture in the <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.UICulture%2A> property. However, you can override this behavior and specify a particular culture to use for the resources. For more information, see [Resources in Desktop Apps](../../../framework/resources/index.md).  
+ Soubory prostředků specifické pro jazykovou verzi aplikace můžete přistupovat z objektu `My.Resources`. Ve výchozím nastavení objekt `My.Resources` vyhledá prostředky ze souboru prostředků, který odpovídá jazykové verzi ve vlastnosti <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.UICulture%2A>. Toto chování však můžete přepsat a zadat konkrétní jazykovou verzi, která se má použít pro prostředky. Další informace najdete v tématu [prostředky v aplikacích klasické pracovní plochy](../../../framework/resources/index.md).  
   
 ## <a name="properties"></a>Vlastnosti  
- The properties of the `My.Resources` object provide read-only access to your application's resources. To add or remove resources, use the **Project Designer**. You can access resources added through the **Project Designer** by using `My.Resources.`*resourceName*.  
+ Vlastnosti objektu `My.Resources` poskytují přístup k prostředkům vaší aplikace jen pro čtení. Chcete-li přidat nebo odebrat prostředky, použijte **Návrháře projektu**. K prostředkům přidaným pomocí **Návrháře projektu** můžete přistupovat pomocí `My.Resources.`*resourceName*.  
   
- You can also add or remove resource files by selecting your project in **Solution Explorer** and clicking **Add New Item** or **Add Existing Item** from the **Project** menu. You can access resources added in this manner by using `My.Resources.`*resourceFileName*`.`*resourceName*.  
+ Můžete také přidat nebo odebrat soubory prostředků tak, že vyberete projekt v **Průzkumník řešení** a kliknete na **Přidat novou položku** nebo **Přidat existující položku** z nabídky **projekt** . Přístup k prostředkům přidaným tímto způsobem můžete získat pomocí `My.Resources.`*resourceFileName*`.`*resourceName*.  
   
- Each resource has a name, category, and value, and these resource settings determine how the property to access the resource appears in the `My.Resources` object. For resources added in the **Project Designer**:  
+ Každý prostředek má název, kategorii a hodnotu a tato nastavení prostředků určují, jak se vlastnost pro přístup k prostředku zobrazí v objektu `My.Resources`. Pro prostředky přidané v **Návrháři projektu**:  
   
-- The name determines the name of the property,  
+- Název určuje název vlastnosti,  
   
-- The resource data is the value of the property,  
+- Data prostředku jsou hodnotou vlastnosti,  
   
-- The category determines the type of the property:  
+- Kategorie určuje typ vlastnosti:  
   
-|Kategorie|Property data type|  
+|Kategorie|Datový typ vlastnosti|  
 |---|---|  
 |**Řetězce**|[Řetězec](../../../visual-basic/language-reference/data-types/string-data-type.md)|  
 |**Obrázky**|<xref:System.Drawing.Bitmap>|  
 |**Ikony**|<xref:System.Drawing.Icon>|  
-|**Zvuk**|<xref:System.IO.UnmanagedMemoryStream><br /><br /> The <xref:System.IO.UnmanagedMemoryStream> class derives from the <xref:System.IO.Stream> class, so it can be used with methods that take streams, such as the <xref:Microsoft.VisualBasic.Devices.Audio.Play%2A> method.|  
-|**Soubory**|-   [String](../../../visual-basic/language-reference/data-types/string-data-type.md) for text files.<br />-   <xref:System.Drawing.Bitmap> for image files.<br />-   <xref:System.Drawing.Icon> for icon files.<br />-   <xref:System.IO.UnmanagedMemoryStream> for sound files.|  
-|**Jiné**|Determined by the information in the designer's **Type** column.|  
+|**Zvuk**|<xref:System.IO.UnmanagedMemoryStream><br /><br /> Třída <xref:System.IO.UnmanagedMemoryStream> je odvozena z <xref:System.IO.Stream> třídy, takže ji lze použít s metodami, které přijímají datové proudy, jako je například metoda <xref:Microsoft.VisualBasic.Devices.Audio.Play%2A>.|  
+|**Soubory**|-   [řetězec](../../../visual-basic/language-reference/data-types/string-data-type.md) pro textové soubory.<br />pro soubory imagí -   <xref:System.Drawing.Bitmap>.<br />pro soubory ikon -   <xref:System.Drawing.Icon>.<br />pro zvukové soubory -   <xref:System.IO.UnmanagedMemoryStream>.|  
+|**Jiné**|Určené podle informací ve sloupci **typ** návrháře.|  
   
 ## <a name="classes"></a>Třídy  
- The `My.Resources` object exposes each resource file as a class with shared properties. The class name is the same as the name of the resource file. As described in the previous section, the resources in a resource file are exposed as properties in the class.  
+ Objekt `My.Resources` zpřístupňuje jednotlivé soubory prostředků jako třídu se sdílenými vlastnostmi. Název třídy je stejný jako název souboru prostředků. Jak je popsáno v předchozí části, prostředky v souboru prostředků jsou zveřejněny jako vlastnosti ve třídě.  
   
 ## <a name="example"></a>Příklad  
- This example sets the title of a form to the string resource named `Form1Title` in the application resource file. For the example to work, the application must have a string named `Form1Title` in its resource file.  
+ V tomto příkladu se nastaví název formuláře na prostředek řetězce s názvem `Form1Title` v souboru prostředků aplikace. Aby příklad fungoval, musí mít aplikace řetězec s názvem `Form1Title` ve svém souboru prostředků.  
   
  [!code-vb[VbVbalrMyResources#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyResources/VB/Form1.vb#1)]  
   
 ## <a name="example"></a>Příklad  
- This example sets the icon of the form to the icon named `Form1Icon` that is stored in the application's resource file. For the example to work, the application must have an icon named `Form1Icon` in its resource file.  
+ Tento příklad nastaví ikonu formuláře na ikonu s názvem `Form1Icon`, která je uložena v souboru prostředků aplikace. Aby mohl příklad fungovat, musí mít aplikace ikonu s názvem `Form1Icon` v jeho souboru prostředků.  
   
  [!code-vb[VbVbalrMyResources#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyResources/VB/Form1.vb#2)]  
   
 ## <a name="example"></a>Příklad  
- This example sets the background image of a form to the image resource named `Form1Background`, which is in the application resource file. For this example to work, the application must have an image resource named `Form1Background` in its resource file.  
+ V tomto příkladu se nastaví obrázek pozadí formuláře na prostředek obrázku s názvem `Form1Background`, který se nachází v souboru prostředků aplikace. Aby tento příklad fungoval, musí mít aplikace prostředek image s názvem `Form1Background` v jeho souboru prostředků.  
   
  [!code-vb[VbVbalrMyResources#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyResources/VB/Form1.vb#3)]  
   
 ## <a name="example"></a>Příklad  
- This example plays the sound that is stored as an audio resource named `Form1Greeting` in the application's resource file. For the example to work, the application must have an audio resource named `Form1Greeting` in its resource file. The `My.Computer.Audio.Play` method is available only for Windows Forms applications.  
+ Tento příklad hraje zvuk, který je uložen jako zvukový prostředek s názvem `Form1Greeting` v souboru prostředků aplikace. Aby příklad fungoval, musí mít aplikace zvukového prostředku s názvem `Form1Greeting` v jeho souboru prostředků. Metoda `My.Computer.Audio.Play` je k dispozici pouze pro model Windows Forms aplikace.  
   
  [!code-vb[VbVbalrMyResources#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyResources/VB/Form1.vb#4)]  
   
 ## <a name="example"></a>Příklad  
- This example retrieves the French-culture version of a  string resource of the application. The resource is named `Message`. To change the culture that the `My.Resources` object uses, the example uses <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.ChangeUICulture%2A>.  
+ Tento příklad načte verzi zdrojového řetězce aplikace z francouzské kultury. Prostředek má název `Message`. Chcete-li změnit jazykovou verzi, kterou používá objekt `My.Resources`, používá tento příklad <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.ChangeUICulture%2A>.  
   
- For this example to work, the application must have a string named `Message` in its resource file, and the application should have the French-culture version of that resource file, Resources.fr-FR.resx. If the application does not have the French-culture version of the resource file, the `My.Resource` object retrieves the resource from the default-culture resource file.  
+ Aby tento příklad fungoval, musí mít aplikace řetězec s názvem `Message` ve svém souboru prostředků a aplikace by měla mít verzi francouzské jazykové verze tohoto souboru prostředků Resources.fr-FR. resx. Pokud aplikace nemá verzi francouzské jazykové verze souboru prostředků, objekt `My.Resource` načte prostředek ze souboru prostředků výchozí jazykové verze.  
   
  [!code-vb[VbVbalrMyResources#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyResources/VB/Form1.vb#10)]  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Správa prostředků aplikace (.NET)](/visualstudio/ide/managing-application-resources-dotnet)
-- [Prostředky v desktopových aplikacích](../../../framework/resources/index.md)
+- [Prostředky v aplikacích klasické pracovní plochy](../../../framework/resources/index.md)

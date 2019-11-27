@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74444834"
 ---
 # <a name="icorprofilerinfo4requestrevert-method"></a>ICorProfilerInfo4::RequestRevert – metoda
-Reverts all instances of the specified functions to their original versions.  
+Vrátí všechny výskyty zadaných funkcí do jejich původních verzí.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,50 +37,50 @@ HRESULT RequestRevert (
   
 ## <a name="parameters"></a>Parametry  
  `cFunctions`  
- [in] The number of functions to revert.  
+ pro Počet funkcí, které mají být vráceny.  
   
  `moduleIds`  
- [in] Specifies the `moduleId` portion of the (`module`, `methodDef`) pairs that identify the functions to be reverted.  
+ pro Určuje `moduleId` část párů (`module`, `methodDef`), které identifikují funkce, které mají být vráceny.  
   
  `methodIds`  
- [in] Specifies the `methodId` portion of the (`module`, `methodDef`) pairs that identify the functions to be reverted.  
+ pro Určuje `methodId` část párů (`module`, `methodDef`), které identifikují funkce, které mají být vráceny.  
   
  `status`  
- [out] An array of HRESULTs listed in the "Status HRESULTs" section later in this topic. Each HRESULT indicates the success or failure of trying to revert each function specified in the parallel arrays `moduleIds` and `methodIds`.  
+ mimo Pole HRESULTs uvedené v části stav HRESULTs dále v tomto tématu. Každá hodnota HRESULT indikuje úspěch nebo neúspěch při pokusu o vrácení každé funkce zadané v paralelních polích `moduleIds` a `methodIds`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|An attempt was made to revert all requests; however, the returned status array must be checked to determine which functions were successfully reverted.|  
-|CORPROF_E_CALLBACK4_REQUIRED|The profiler must implement the [ICorProfilerCallback4](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md) interface for this call to be supported.|  
-|CORPROF_E_REJIT_NOT_ENABLED|JIT recompilation has not been enabled. You must enable JIT recompilation during initialization by using the [ICorProfilerInfo::SetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md) method to set the `COR_PRF_ENABLE_REJIT` flag.|  
-|E_INVALIDARG|`cFunctions` is 0, or `moduleIds` or `methodIds` is `NULL`.|  
-|E_OUTOFMEMORY|The CLR was unable to complete the request because it ran out of memory.|  
+|S_OK|Byl proveden pokus o vrácení všech požadavků. aby bylo možné zjistit, které funkce byly úspěšně vráceny, je však nutné zkontrolovat vrácené pole stavu.|  
+|CORPROF_E_CALLBACK4_REQUIRED|Aby bylo toto volání podporováno, Profiler musí implementovat rozhraní [ICorProfilerCallback4](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md) .|  
+|CORPROF_E_REJIT_NOT_ENABLED|Opětovná kompilace JIT není povolená. Je nutné povolit rekompilaci JIT během inicializace pomocí metody [ICorProfilerInfo:: SetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md) pro nastavení příznaku `COR_PRF_ENABLE_REJIT`.|  
+|E_INVALIDARG|`cFunctions` je 0 nebo `moduleIds` nebo `methodIds` `NULL`.|  
+|E_OUTOFMEMORY|Modul CLR nemohl dokončit požadavek, protože nemá dostatek paměti.|  
   
-## <a name="status-hresults"></a>Status HRESULTS  
+## <a name="status-hresults"></a>Stav HRESULTs  
   
-|Status array HRESULT|Popis|  
+|Stavové pole HRESULT|Popis|  
 |--------------------------|-----------------|  
-|S_OK|The corresponding function was successfully reverted.|  
-|E_INVALIDARG|The `moduleID` or `methodDef` parameter is `NULL`.|  
-|CORPROF_E_DATAINCOMPLETE|The module is not fully loaded yet, or it is in the process of being unloaded.|  
-|CORPROF_E_MODULE_IS_DYNAMIC|The specified module was dynamically generated (for example by `Reflection.Emit`). Therefore, it is not supported by this method.|  
-|CORPROF_E_ACTIVE_REJIT_REQUEST_NOT_FOUND|The CLR could not revert the specified function, because a corresponding active recompilation request was not found. Either the recompilation was never requested or the function was already reverted.|  
-|Ostatní|The operating system returned a failure outside the control of the CLR. For example, if a system call to change the access protection of a page of memory fails, the operating system error will be displayed.|  
+|S_OK|Odpovídající funkce byla úspěšně vrácena.|  
+|E_INVALIDARG|Parametr `moduleID` nebo `methodDef` má hodnotu `NULL`.|  
+|CORPROF_E_DATAINCOMPLETE|Modul ještě není úplně načtený, nebo se jedná o proces, který se právě načítá.|  
+|CORPROF_E_MODULE_IS_DYNAMIC|Zadaný modul byl dynamicky generován (například `Reflection.Emit`). Proto není touto metodou podporována.|  
+|CORPROF_E_ACTIVE_REJIT_REQUEST_NOT_FOUND|CLR nemůže vrátit zadanou funkci, protože se nenašla odpovídající aktivní požadavek na opětovnou kompilaci. Buď není požadavek na opětovnou kompilaci, nebo již byla funkce vrácena.|  
+|Další|Operační systém vrátil selhání mimo ovládací prvek CLR. Pokud například systémové volání změny ochrany přístupu stránky paměti selže, zobrazí se Chyba operačního systému.|  
   
 ## <a name="remarks"></a>Poznámky  
- The next time any of the revereted function instances are called, the original versions of the functions will be run. If a function is already running, it will finish executing the version that is running.  
+ Při příštím volání všech instancí funkcí revereted se spustí původní verze funkcí. Pokud už je funkce spuštěná, dokončí se spuštění verze, která je spuštěná.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

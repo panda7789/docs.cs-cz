@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74426214"
 ---
 # <a name="imetadatatables2getmetadatastreaminfo-method"></a>IMetaDataTables2::GetMetaDataStreamInfo – metoda
-Gets the name, size, and contents of the metadata stream at the specified index.  
+Získá název, velikost a obsah datového proudu metadat v zadaném indexu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,25 +38,25 @@ HRESULT GetMetaDataStreamInfo (
   
 ## <a name="parameters"></a>Parametry  
  `ix`  
- [in] The index of the requested metadata stream.  
+ pro Index požadovaného streamu metadat.  
   
  `ppchName`  
- [out] A pointer to the name of the stream.  
+ mimo Ukazatel na název datového proudu.  
   
  `ppv`  
- [out] A pointer to the metadata stream.  
+ mimo Ukazatel na datový proud metadat.  
   
  `pcb`  
- [out] The size, in bytes, of `ppv`.  
+ mimo Velikost `ppv`v bajtech.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

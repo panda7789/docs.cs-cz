@@ -19,28 +19,28 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352626"
 ---
 # <a name="partial-methods-visual-basic"></a>Částečné metody (Visual Basic)
-Partial methods enable developers to insert custom logic into code. Typically, the code is part of a designer-generated class. Partial methods are defined in a partial class that is created by a code generator, and they are commonly used to provide notification that something has been changed. They enable the developer to specify custom behavior in response to the change.  
+Částečné metody umožňují vývojářům vkládat vlastní logiku do kódu. Kód je obvykle součástí třídy generované návrhářem. Částečné metody jsou definovány v částečné třídě, která je vytvořena generátorem kódu, a obvykle slouží k poskytnutí oznámení o tom, že došlo ke změně nějakého typu. Umožňují vývojářům zadat vlastní chování v reakci na změnu.  
   
- The designer of the code generator defines only the method signature and one or more calls to the method. Developers can then provide implementations for the method if they want to customize the behavior of the generated code. When no implementation is provided, calls to the method are removed by the compiler, resulting in no additional performance overhead.  
+ Návrhář generátoru kódu definuje pouze signaturu metody a jedno nebo více volání metody. Vývojáři pak mohou poskytnout implementace pro metodu, pokud chtějí přizpůsobit chování generovaného kódu. Není-li k dispozici žádná implementace, volání metody jsou odebrána kompilátorem, což má za následek žádné další nároky na výkon.  
   
 ## <a name="declaration"></a>Deklarace  
- The generated code marks the definition of a partial method by placing the keyword `Partial` at the start of the signature line.  
+ Vygenerovaný kód označuje definici částečné metody umístěním klíčového slova `Partial` na začátku řádku podpisu.  
   
 ```vb  
 Partial Private Sub QuantityChanged()  
 End Sub  
 ```  
   
- The definition must meet the following conditions:  
+ Definice musí splňovat následující podmínky:  
   
-- The method must be a `Sub`, not a `Function`.  
+- Metoda musí být `Sub`, nikoli `Function`.  
   
-- The body of the method must be left empty.  
+- Tělo metody musí být ponecháno prázdné.  
   
-- The access modifier must be `Private`.  
+- Modifikátor přístupu musí být `Private`.  
   
 ## <a name="implementation"></a>Implementace  
- The implementation consists primarily of filling in the body of the partial method. The implementation is typically in a separate partial class from the definition, and is written by a developer who wants to extend the generated code.  
+ Implementace se skládá hlavně z vyplnění těla částečné metody. Implementace je obvykle v samostatné částečné třídě z definice a je zapsána vývojářem, který chce zvětšit generovaný kód.  
   
 ```vb  
 Private Sub QuantityChanged()  
@@ -48,25 +48,25 @@ Private Sub QuantityChanged()
 End Sub  
 ```  
   
- The previous example duplicates the signature in the declaration exactly, but variations are possible. In particular, other modifiers can be added, such as `Overloads` or `Overrides`. Only one `Overrides` modifier is permitted. For more information about method modifiers, see [Sub Statement](../../../../visual-basic/language-reference/statements/sub-statement.md).  
+ Předchozí příklad duplikuje signaturu v deklaraci přesně, ale je možné variace. Konkrétně lze přidat jiné modifikátory, například `Overloads` nebo `Overrides`. Je povolený jenom jeden modifikátor `Overrides`. Další informace o modifikátorech metod naleznete v tématu [Sub Statement](../../../../visual-basic/language-reference/statements/sub-statement.md).  
   
 ## <a name="use"></a>Použití  
- You call a partial method as you would call any other `Sub` procedure. If the method has been implemented, the arguments are evaluated and the body of the method is executed. However, remember that implementing a partial method is optional. If the method is not implemented, a call to it has no effect, and expressions passed as arguments to the method are not evaluated.  
+ Můžete zavolat částečnou metodu, protože byste volali jakoukoli jinou `Sub` proceduru. Pokud byla metoda implementována, jsou vyhodnoceny argumenty a je provedeno tělo metody. Nezapomeňte však, že implementace částečné metody je volitelná. Pokud není metoda implementována, volání na ni nemá žádný účinek a výrazy předané metodě nejsou vyhodnocovány.  
   
 ## <a name="example"></a>Příklad  
- In a file named Product.Designer.vb, define a `Product` class that has a `Quantity` property.  
+ V souboru s názvem Product. Designer. vb Definujte třídu `Product`, která má vlastnost `Quantity`.  
   
  [!code-vb[VbVbalrPartialMeths#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrPartialMeths/VB/Class1.vb#4)]  
   
- In a file named Product.vb, provide an implementation for `QuantityChanged`.  
+ V souboru s názvem Product. vb Poskytněte implementaci pro `QuantityChanged`.  
   
  [!code-vb[VbVbalrPartialMeths#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrPartialMeths/VB/Class1.vb#5)]  
   
- Finally, in the Main method of a project, declare a `Product` instance and provide an initial value for its `Quantity` property.  
+ Nakonec v hlavní metodě projektu deklarujte instanci `Product` a zadejte počáteční hodnotu pro její vlastnost `Quantity`.  
   
  [!code-vb[VbVbalrPartialMeths#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrPartialMeths/VB/Class1.vb#6)]  
   
- A message box should appear that displays this message:  
+ Zobrazí se okno se zprávou s touto zprávou:  
   
  `Quantity was changed to 100`  
   

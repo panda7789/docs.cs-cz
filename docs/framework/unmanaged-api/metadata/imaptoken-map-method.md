@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74432147"
 ---
 # <a name="imaptokenmap-method"></a>IMapToken::Map – metoda
-Maps a relationship between the assemblies using metadata signatures.  
+Mapuje vztah mezi sestaveními pomocí podpisů metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,22 +36,22 @@ HRESULT Map (
   
 ## <a name="parameters"></a>Parametry  
  `tkImp`  
- [in] The metadata token that represents the imported code object.  
+ pro Token metadat, který reprezentuje objekt importovaného kódu.  
   
  `tkEmit`  
- [in] The metadata token that represents the emitted code object.  
+ pro Token metadat, který reprezentuje objekt emitovaného kódu.  
   
 ## <a name="remarks"></a>Poznámky  
- When the token re-map occurs during a merge, the original token is scoped in the imported (source) metadata scope and the new token is scoped in the emitted (target) metadata scope.  
+ Když dojde ke změně tokenu během sloučení, původní token se zaznamená v importovaném (zdrojovém) oboru metadat a nový token je vymezen v oboru metadat emited (Targeting).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74443050"
 ---
 # <a name="icorprofilerinfo2getthreadstaticaddress-method"></a>ICorProfilerInfo2::GetThreadStaticAddress – metoda
-Gets the address of the specified thread-static field that is in the scope of the specified thread.  
+Získá adresu zadaného pole statického vlákna, které je v rozsahu zadaného vlákna.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,34 +37,34 @@ HRESULT GetThreadStaticAddress(
   
 ## <a name="parameters"></a>Parametry  
  `classId`  
- [in] The ID of the class that contains the requested thread-static field.  
+ pro ID třídy, která obsahuje požadované pole se statickým vláknem.  
   
  `fieldToken`  
- [in] The metadata token for the requested thread-static field.  
+ pro Token metadat pro požadované pole se statickým vláknem  
   
  `threadId`  
- [in] The ID of the thread that is the scope for the requested static field.  
+ pro ID vlákna, které je oborem požadovaného statického pole.  
   
  `ppAddress`  
- [out] A pointer to the address of the static field that is within the specified thread.  
+ mimo Ukazatel na adresu statického pole, které je v zadaném vlákně.  
   
 ## <a name="remarks"></a>Poznámky  
- The `GetThreadStaticAddress` method may return one of the following:  
+ Metoda `GetThreadStaticAddress` může vracet jednu z následujících možností:  
   
-- A CORPROF_E_DATAINCOMPLETE HRESULT if the given static field has not been assigned an address in the specified context.  
+- CORPROF_E_DATAINCOMPLETE HRESULT, pokud danému statickému poli nebyla přiřazena adresa v zadaném kontextu.  
   
-- The addresses of objects that may be in the garbage collection heap. These addresses may become invalid after garbage collection, so after garbage collection profilers should not assume that they are valid.  
+- Adresy objektů, které mohou být v haldě uvolňování paměti. Tyto adresy se můžou po uvolnění paměti stát neplatnými, takže po profilech pro uvolňování paměti by nemělo předpokládat, že jsou platné.  
   
- Before a class’s class constructor is completed, `GetThreadStaticAddress` will return CORPROF_E_DATAINCOMPLETE for all its static fields, although some of the static fields may already be initialized and rooting garbage collection objects.  
+ Před dokončením konstruktoru třídy třídy `GetThreadStaticAddress` vrátí CORPROF_E_DATAINCOMPLETE pro všechna jeho statická pole, i když některá z statických polí již mohou být inicializována a kořenové objekty uvolňování paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

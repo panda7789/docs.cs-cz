@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74433439"
 ---
 # <a name="icorprofilerinfo2getclassidinfo2-method"></a>ICorProfilerInfo2::GetClassIDInfo2 – metoda
-Gets the parent module and metadata token for the open generic definition of the specified class, the `ClassID` of its parent class, and the `ClassID` for each type argument, if present, of the class.  
+Získá nadřazený modul a token metadat pro otevřenou obecnou definici zadané třídy, `ClassID` své nadřazené třídy a `ClassID` pro každý argument typu, pokud je k dispozici pro třídu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,43 +40,43 @@ HRESULT GetClassIDInfo2(
   
 ## <a name="parameters"></a>Parametry  
  `classId`  
- [in] The ID of the class for which information will be retrieved.  
+ pro ID třídy, pro kterou budou načteny informace.  
   
  `pModuleId`  
- [out] Pointer to the ID of the parent module for the open generic definition of the specified class.  
+ mimo Ukazatel na ID nadřazeného modulu pro otevřenou obecnou definici zadané třídy.  
   
  `pTypeDefToken`  
- [out] Pointer to the metadata token for the open generic definition of the specified class.  
+ mimo Ukazatel na token metadat pro otevřenou obecnou definici zadané třídy.  
   
  `pParentClassId`  
- [out] Pointer to the ID of the parent class.  
+ mimo Ukazatel na ID nadřazené třídy.  
   
  `cNumTypeArgs`  
- [in] The size of the `typeArgs` array.  
+ pro Velikost pole `typeArgs`.  
   
  `pcNumTypeArgs`  
- [out] Pointer to the total number of available elements.  
+ mimo Ukazatel na celkový počet dostupných prvků.  
   
  `typeArgs`  
- [out] An array of `ClassID` values, each of which represents the ID of a type argument of the class. When the method returns, `typeArgs` will contain some or all the available `ClassID` values.  
+ mimo Pole hodnot `ClassID`, z nichž každá představuje ID argumentu typu třídy. Když se metoda vrátí, `typeArgs` bude obsahovat některé nebo všechny dostupné `ClassID` hodnoty.  
   
 ## <a name="remarks"></a>Poznámky  
- The `GetClassIDInfo2` method is similar to the [ICorProfilerInfo::GetClassIDInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getclassidinfo-method.md) method, but `GetClassIDInfo2` obtains additional information about a generic type.  
+ Metoda `GetClassIDInfo2` je podobná metodě [ICorProfilerInfo:: GetClassIDInfo –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getclassidinfo-method.md) , ale `GetClassIDInfo2` získá další informace o obecném typu.  
   
- The profiler code can call [ICorProfilerInfo::GetModuleMetaData](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmodulemetadata-method.md) to obtain a [metadata](../../../../docs/framework/unmanaged-api/metadata/index.md) interface for a given module. The metadata token that is returned to the location referenced by `pTypeDefToken` can then be used to access the metadata for the class.  
+ Kód profileru může zavolat [ICorProfilerInfo:: GetModuleMetaData –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmodulemetadata-method.md) a získat rozhraní [metadat](../../../../docs/framework/unmanaged-api/metadata/index.md) pro daný modul. Token metadat, který je vrácen do umístění odkazovaného `pTypeDefToken` lze následně použít pro přístup k metadatům třídy.  
   
- After `GetClassIDInfo2` returns, you must verify that the `typeArgs` buffer was large enough to contain all the `ClassID` values. To do this, compare the value that `pcNumTypeArgs` points to with the value of the `cNumTypeArgs` parameter. If `pcNumTypeArgs` points to a value that is larger than `cNumTypeArgs`, allocate a larger `typeArgs` buffer, update `cNumTypeArgs` with the new, larger size, and call `GetClassIDInfo2` again.  
+ Jakmile `GetClassIDInfo2` vrátí, je nutné ověřit, zda byla vyrovnávací paměť `typeArgs` dostatečně velká, aby obsahovala všechny `ClassID` hodnoty. To provedete tak, že porovnáte hodnotu, na kterou `pcNumTypeArgs` odkazuje, hodnotou `cNumTypeArgs` parametru. Pokud `pcNumTypeArgs` odkazuje na hodnotu, která je větší než `cNumTypeArgs`, přidělte větší vyrovnávací paměť `typeArgs`, aktualizujte `cNumTypeArgs` novou, větší velikostí a zavolejte `GetClassIDInfo2` znovu.  
   
- Alternatively, you can first call `GetClassIDInfo2` with a zero-length `typeArgs` buffer to obtain the correct buffer size. You can then set the `typeArgs` buffer size to the value returned in `pcNumTypeArgs` and call `GetClassIDInfo2` again.  
+ Alternativně můžete pro získání správné velikosti vyrovnávací paměti nejprve volat `GetClassIDInfo2` s nulovou délkou `typeArgs` vyrovnávací paměti. Pak můžete nastavit velikost vyrovnávací paměti `typeArgs` na hodnotu vrácenou v `pcNumTypeArgs` a volat `GetClassIDInfo2` znovu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

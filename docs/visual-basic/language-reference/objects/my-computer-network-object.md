@@ -12,19 +12,19 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74332292"
 ---
 # <a name="mycomputernetwork-object"></a>My.Computer.Network – objekt
-Provides a property, event, and methods for interacting with the network to which the computer is connected.  
+Poskytuje vlastnost, událost a metody pro interakci se sítí, ke které je počítač připojený.  
   
 ## <a name="remarks"></a>Poznámky  
- For information about the methods and properties of the `My.Computer.Network` object, see <xref:Microsoft.VisualBasic.Devices.Network>.  
+ Informace o metodách a vlastnostech objektu `My.Computer.Network` naleznete v tématu <xref:Microsoft.VisualBasic.Devices.Network>.  
   
- For more information, see [Performing Network Operations](../../../visual-basic/developing-apps/programming/computer-resources/performing-network-operations.md).  
+ Další informace najdete v tématu [provádění síťových operací](../../../visual-basic/developing-apps/programming/computer-resources/performing-network-operations.md).  
   
 ## <a name="requirements"></a>Požadavky  
- **Namespace:** <xref:Microsoft.VisualBasic.Devices?displayProperty=nameWithType>  
+ **Obor názvů:** <xref:Microsoft.VisualBasic.Devices?displayProperty=nameWithType>  
   
- **Class:** <xref:Microsoft.VisualBasic.Devices.Network>  
+ **Třída:** <xref:Microsoft.VisualBasic.Devices.Network>  
   
- **Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)  
+ **Sestavení:** Knihovna Visual Basic runtime (v souboru Microsoft. VisualBasic. dll)  
   
 ## <a name="see-also"></a>Viz také:
 

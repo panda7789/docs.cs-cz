@@ -1,5 +1,5 @@
 ---
-title: 'How to: read from comma-delimited text files'
+title: 'Postupy: čtení z textových souborů s hodnotami oddělenými čárkou'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - files [Visual Basic], parsing
@@ -14,47 +14,47 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74335065"
 ---
-# <a name="how-to-read-from-comma-delimited-text-files-in-visual-basic"></a>How to: read from comma-delimited text files in Visual Basic
+# <a name="how-to-read-from-comma-delimited-text-files-in-visual-basic"></a>Postupy: čtení z textových souborů s oddělovači ve formátu čárky v Visual Basic
 
-The `TextFieldParser` object provides a way to easily and efficiently parse structured text files, such as logs. The `TextFieldType` property defines whether it is a delimited file or one with fixed-width fields of text.  
+Objekt `TextFieldParser` poskytuje způsob, jak snadno a efektivně analyzovat strukturované textové soubory, jako jsou protokoly. Vlastnost `TextFieldType` definuje, zda se jedná o soubor s oddělovači nebo který má pole s pevnou šířkou textu.  
   
-### <a name="to-parse-a-comma-delimited-text-file"></a>To parse a comma delimited text file  
+### <a name="to-parse-a-comma-delimited-text-file"></a>Jak analyzovat textový soubor s oddělovači  
   
-1. Create a new `TextFieldParser`. The following code creates the `TextFieldParser` named `MyReader` and opens the file `test.txt`.  
+1. Vytvoří nový `TextFieldParser`. Následující kód vytvoří `TextFieldParser` s názvem `MyReader` a otevře soubor `test.txt`.  
   
      [!code-vb[VbFileIORead#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#15)]  
   
-2. Define the `TextField` type and delimiter. The following code defines the `TextFieldType` property as `Delimited` and the delimiter as ",".  
+2. Zadejte `TextField` typ a oddělovač. Následující kód definuje vlastnost `TextFieldType` jako `Delimited` a oddělovač jako ",".  
   
      [!code-vb[VbFileIORead#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#16)]  
   
-3. Loop through the fields in the file. If any lines are corrupt, report an error and continue parsing. The following code loops through the file, displaying each field in turn and reporting any fields that are formatted incorrectly.  
+3. Projděte pole v souboru. Pokud jsou některé řádky poškozené, nahlaste chybu a pokračujte v analýze. Následující kód prochází souborem, zobrazením jednotlivých polí a vytvářením sestav pro všechna pole, která jsou formátována nesprávně.  
   
      [!code-vb[VbFileIORead#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#17)]  
   
-4. Close the `While` and `Using` blocks with `End While` and `End Using`.  
+4. Zavřete `While` a `Using` bloky pomocí `End While` a `End Using`.  
   
      [!code-vb[VbFileIORead#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#18)]  
   
 ## <a name="example"></a>Příklad  
 
- This example reads from the file `test.txt`.  
+ Tento příklad čte ze souboru `test.txt`.  
   
  [!code-vb[VbFileIORead#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#19)]  
   
-## <a name="robust-programming"></a>Robust programming  
+## <a name="robust-programming"></a>Robustní programování  
 
  Následující podmínky mohou způsobit výjimku:  
   
-- A row cannot be parsed using the specified format (<xref:Microsoft.VisualBasic.FileIO.MalformedLineException>). The exception message specifies the line causing the exception, while the <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine%2A> property is assigned the text contained in the line.  
+- Řádek nelze analyzovat pomocí zadaného formátu (<xref:Microsoft.VisualBasic.FileIO.MalformedLineException>). Zpráva o výjimce Určuje řádek, který způsobil výjimku, zatímco vlastnost <xref:Microsoft.VisualBasic.FileIO.TextFieldParser.ErrorLine%2A> je přiřazena k textu obsaženému na řádku.  
   
-- The specified file does not exist (<xref:System.IO.FileNotFoundException>).  
+- Zadaný soubor neexistuje (<xref:System.IO.FileNotFoundException>).  
   
-- A partial-trust situation in which the user does not have sufficient permissions to access the file. (<xref:System.Security.SecurityException>).  
+- Částečně důvěryhodná situace, kdy uživatel nemá dostatečná oprávnění pro přístup k souboru. (<xref:System.Security.SecurityException>).  
   
-- The path is too long (<xref:System.IO.PathTooLongException>).  
+- Cesta je příliš dlouhá (<xref:System.IO.PathTooLongException>).  
   
-- The user does not have sufficient permissions to access the file (<xref:System.UnauthorizedAccessException>).  
+- Uživatel nemá dostatečná oprávnění pro přístup k souboru (<xref:System.UnauthorizedAccessException>).  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -62,5 +62,5 @@ The `TextFieldParser` object provides a way to easily and efficiently parse stru
 - [Postupy: Čtení z textových souborů s pevnou šířkou](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-fixed-width-text-files.md)
 - [Postupy: Čtení z textových souborů ve více formátech](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md)
 - [Analýza textových souborů pomocí objektu TextFieldParser](../../../../visual-basic/developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)
-- [Walkthrough: Manipulating Files and Directories in Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)
+- [Návod: manipulace se soubory a adresáři v Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)
 - [Řešení potíží: Čtení z textových souborů a zápis do nich](../../../../visual-basic/developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)

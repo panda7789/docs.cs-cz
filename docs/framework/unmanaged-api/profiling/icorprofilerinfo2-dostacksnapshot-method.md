@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74426837"
 ---
 # <a name="icorprofilerinfo2dostacksnapshot-method"></a>ICorProfilerInfo2::DoStackSnapshot – metoda
-Walks the managed frames on the stack for the specified thread, and sends information to the profiler through a callback.  
+Projde spravované snímky v zásobníku pro zadané vlákno a pošle informace do profileru prostřednictvím zpětného volání.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,72 +39,72 @@ HRESULT DoStackSnapshot(
   
 ## <a name="parameters"></a>Parametry  
  `thread`  
- [in] The ID of the target thread.  
+ pro ID cílového vlákna  
   
- Passing null in `thread` yields a snapshot of the current thread. If a `ThreadID` of a different thread is passed, the common language runtime (CLR) suspends that thread, performs the snapshot, and resumes.  
+ Předání hodnoty null v `thread` vypočítá snímek aktuálního vlákna. Pokud je předán `ThreadID` jiného vlákna, modul CLR (Common Language Runtime) pozastaví toto vlákno, provede snímek a obnoví.  
   
  `callback`  
- [in] A pointer to the implementation of the [StackSnapshotCallback](../../../../docs/framework/unmanaged-api/profiling/stacksnapshotcallback-function.md) method, which is called by the CLR to provide the profiler with information on each managed frame and each run of unmanaged frames.  
+ pro Ukazatel na implementaci metody [StackSnapshotCallback –](../../../../docs/framework/unmanaged-api/profiling/stacksnapshotcallback-function.md) , která je volána modulem CLR k poskytnutí informací o každém spravovaném snímku a každém spuštění nespravovaných snímků.  
   
- The `StackSnapshotCallback` method is implemented by the profiler writer.  
+ Metoda `StackSnapshotCallback` je implementována modulem pro zápis profileru.  
   
  `infoFlags`  
- [in] A value of the [COR_PRF_SNAPSHOT_INFO](../../../../docs/framework/unmanaged-api/profiling/cor-prf-snapshot-info-enumeration.md) enumeration, which specifies the amount of data to be passed back for each frame by `StackSnapshotCallback`.  
+ pro Hodnota výčtu [COR_PRF_SNAPSHOT_INFO](../../../../docs/framework/unmanaged-api/profiling/cor-prf-snapshot-info-enumeration.md) , která určuje množství dat, která se mají zpětně předat pro každý rámec `StackSnapshotCallback`.  
   
  `clientData`  
- [in] A pointer to the client data, which is passed straight through to the `StackSnapshotCallback` callback function.  
+ pro Ukazatel na data klienta, která jsou předána přímo do funkce zpětného volání `StackSnapshotCallback`.  
   
  `context`  
- [in] A pointer to a Win32 `CONTEXT` structure, which is used to seed the stack walk. The Win32 `CONTEXT` structure contains values of the CPU registers and represents the state of the CPU at a particular moment in time.  
+ pro Ukazatel na strukturu `CONTEXT` Win32, která se používá k osazení procházení zásobníku. Struktura `CONTEXT` Win32 obsahuje hodnoty registrů CPU a představuje stav procesoru v daném časovém okamžiku.  
   
- The seed helps the CLR determine where to begin the stack walk, if the top of the stack is unmanaged helper code; otherwise, the seed is ignored. A seed must be supplied for an asynchronous walk. If you are doing a synchronous walk, no seed is necessary.  
+ Tato semena pomáhá modulu CLR určit, kde začít procházet zásobníkem, pokud je horní část zásobníku nespravovaným kódem pomocníka; v opačném případě se počáteční hodnoty ignorují. Pro asynchronní procházení je nutné zadat počáteční hodnotu. Pokud provádíte synchronní procházení, není nutné žádné osivo.  
   
- The `context` parameter is valid only if the COR_PRF_SNAPSHOT_CONTEXT flag was passed in the `infoFlags` parameter.  
+ Parametr `context` je platný pouze v případě, že byl předán příznak COR_PRF_SNAPSHOT_CONTEXT v parametru `infoFlags`.  
   
  `contextSize`  
- [in] The size of the `CONTEXT` structure, which is referenced by the `context` parameter.  
+ pro Velikost `CONTEXT` struktury, na kterou se odkazuje parametr `context`  
   
 ## <a name="remarks"></a>Poznámky  
- Passing null for `thread` yields a snapshot of the current thread. Snapshots can be taken of other threads only if the target thread is suspended at the time.  
+ Předání hodnoty null pro `thread` má za důsledek snímek aktuálního vlákna. Snímky lze považovat z jiných vláken pouze v případě, že cílové vlákno je pozastaveno v čase.  
   
- When the profiler wants to walk the stack, it calls `DoStackSnapshot`. Before the CLR returns from that call, it calls your `StackSnapshotCallback` several times, once for each managed frame (or run of unmanaged frames) on the stack. When unmanaged frames are encountered, you must walk them yourself.  
+ Když profiler chce projít zásobníkem, volá `DoStackSnapshot`. Před tím, než se CLR vrátí z tohoto volání, volá vaši `StackSnapshotCallback` několikrát, jednou pro každý spravovaný rámec (nebo spuštění nespravovaných snímků) v zásobníku. V případě, že dojde k nespravovaným snímkům, musíte si je projít sami.  
   
- The order in which the stack is walked is the reverse of how the frames were pushed onto the stack: leaf (last-pushed) frame first, main (first-pushed) frame last.  
+ Pořadí, ve kterém je zásobník vás provedl, je opakem způsobu, jakým byly snímky vloženy do zásobníku: první snímek (naposledy vloženo), hlavní snímek (první snímek), který byl naposledy posunut.  
   
- For more information about how to program the profiler to walk managed stacks, see [Profiler Stack Walking in the .NET Framework 2.0: Basics and Beyond](https://go.microsoft.com/fwlink/?LinkId=73638).  
+ Další informace o tom, jak profiler naprogramovat k procházení spravovaných zásobníků, najdete v tématu prochází [se v zásobníku profileru v .NET Framework 2,0: základy a více](https://go.microsoft.com/fwlink/?LinkId=73638).  
   
- A stack walk can be synchronous or asynchronous, as explained in the following sections.  
+ Procházení zásobníku může být synchronní nebo asynchronní, jak je vysvětleno v následujících částech.  
   
-## <a name="synchronous-stack-walk"></a>Synchronous Stack Walk  
- A synchronous stack walk involves walking the stack of the current thread in response to a callback. It does not require seeding or suspending.  
+## <a name="synchronous-stack-walk"></a>Synchronní procházení zásobníku  
+ Synchronní procházení zásobníku zahrnuje procházení zásobníku aktuálního vlákna v reakci na zpětné volání. Nevyžaduje osazení ani pozastavení.  
   
- You make a synchronous call when, in response to the CLR calling one of your profiler's [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) (or [ICorProfilerCallback2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)) methods, you call `DoStackSnapshot` to walk the stack of the current thread. This is useful when you want to see what the stack looks like at a notification such as [ICorProfilerCallback::ObjectAllocated](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectallocated-method.md). You just call `DoStackSnapshot` from within your `ICorProfilerCallback` method, passing null in the `context` and `thread` parameters.  
+ Provádíte synchronní volání, když v reakci na rozhraní CLR volání jedné z metod [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) (nebo [ICorProfilerCallback2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)) vašeho profileru zavoláte `DoStackSnapshot`, abyste provedli zásobník aktuálního vlákna. To je užitečné v případě, že chcete zjistit, jak má zásobník vypadat v oznámení, jako je například [ICorProfilerCallback:: ObjectAllocated –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectallocated-method.md). Pouze voláte `DoStackSnapshot` v rámci metody `ICorProfilerCallback` a předáte null v parametrech `context` a `thread`.  
   
-## <a name="asynchronous-stack-walk"></a>Asynchronous Stack Walk  
- An asynchronous stack walk entails walking the stack of a different thread, or walking the stack of the current thread, not in response to a callback, but by hijacking the current thread's instruction pointer. An asynchronous walk requires a seed if the top of the stack is unmanaged code that is not part of a platform invoke (PInvoke) or COM call, but helper code in the CLR itself. For example, code that does just-in-time (JIT) compiling or garbage collection is helper code.  
+## <a name="asynchronous-stack-walk"></a>Asynchronní procházení zásobníku  
+ Asynchronní procházení zásobníku má za následek procházení zásobníku různých vláken nebo procházení zásobníku aktuálního vlákna, nikoli v reakci na zpětné volání, ale napadení ukazatele na instrukci aktuálního vlákna. Asynchronní procházení vyžaduje počáteční hodnotu, pokud je horní část zásobníku nespravovaný kód, který není součástí vyvolání platformy (PInvoke) nebo volání rozhraní COM, ale pomocný kód v samotném modulu CLR. Například kód, který provádí kompilaci JIT (just-in-time) nebo uvolňování paměti, je kód pomocníka.  
   
- You obtain a seed by directly suspending the target thread and walking its stack yourself, until you find the topmost managed frame. After the target thread is suspended, get the target thread's current register context. Next, determine whether the register context points to unmanaged code by calling [ICorProfilerInfo::GetFunctionFromIP](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getfunctionfromip-method.md) — if it returns a `FunctionID` equal to zero, the frame is unmanaged code. Now, walk the stack until you reach the first managed frame, and then calculate the seed context based on the register context for that frame.  
+ Můžete získat počáteční hodnotu přímo pozastavením cílového vlákna a procházením jeho zásobníku, dokud nenajdete nejvyšší spravovaný rámec. Po pozastavení cílového vlákna získá aktuální kontext registru cílového vlákna. Dále určete, zda kontext registru odkazuje na nespravovaný kód voláním [ICorProfilerInfo:: GetFunctionFromIP –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getfunctionfromip-method.md) – pokud vrátí `FunctionID` se rovná nule, je rámec nespravovaným kódem. Nyní sejděte do zásobníku, dokud nedosáhnete prvního spravovaného rámce, a pak Vypočtěte počáteční kontext na základě kontextu registru pro tento rámec.  
   
- Call `DoStackSnapshot` with your seed context to begin the asynchronous stack walk. If you do not supply a seed, `DoStackSnapshot` might skip managed frames at the top of the stack and, consequently, will give you an incomplete stack walk. If you do supply a seed, it must point to JIT-compiled or Native Image Generator (Ngen.exe)-generated code; otherwise, `DoStackSnapshot` returns the failure code, CORPROF_E_STACKSNAPSHOT_UNMANAGED_CTX.  
+ Chcete-li zahájit procházení asynchronního zásobníku, zavolejte `DoStackSnapshot` s vaším počátečním kontextem. Pokud nezadáte počáteční hodnotu, `DoStackSnapshot` může přeskočit spravované rámce v horní části zásobníku a v důsledku toho vám poskytne nekompletní procházení zásobníku. Pokud zadáte počáteční hodnotu, musí odkazovat na generátor JIT nebo nativní bitové kopie (Ngen. exe) generovaný kódem; v opačném případě `DoStackSnapshot` vrátí kód chyby CORPROF_E_STACKSNAPSHOT_UNMANAGED_CTX.  
   
- Asynchronous stack walks can easily cause deadlocks or access violations, unless you follow these guidelines:  
+ Asynchronní procházení zásobníku může snadno způsobit zablokování nebo porušení přístupu, pokud nedodržujete tyto pokyny:  
   
-- When you directly suspend threads, remember that only a thread that has never run managed code can suspend another thread.  
+- Při přímém pozastavení vláken mějte na paměti, že pouze vlákno, které nikdy nespouštělo spravovaný kód, může pozastavit jiné vlákno.  
   
-- Always block in your [ICorProfilerCallback::ThreadDestroyed](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-threaddestroyed-method.md) callback until that thread's stack walk is complete.  
+- Vždy zablokovat volání [ICorProfilerCallback:: ThreadDestroyed –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-threaddestroyed-method.md) , dokud není dokončeno procházení zásobníku tohoto vlákna.  
   
-- Do not hold a lock while your profiler calls into a CLR function that can trigger a garbage collection. That is, do not hold a lock if the owning thread might make a call that triggers a garbage collection.  
+- Nedržte zámek, dokud profiler zavolá funkci CLR, která může aktivovat uvolňování paměti. To znamená, že nedržíte zámek, pokud vlastnící vlákno může učinit volání, které vyvolá uvolňování paměti.  
   
- There is also a risk of deadlock if you call `DoStackSnapshot` from a thread that your profiler has created so that you can walk the stack of a separate target thread. The first time the thread you created enters certain `ICorProfilerInfo*` methods (including `DoStackSnapshot`), the CLR will perform per-thread, CLR-specific initialization on that thread. If your profiler has suspended the target thread whose stack you are trying to walk, and if that target thread happened to own a lock necessary for performing this per-thread initialization, a deadlock will occur. To avoid this deadlock, make an initial call into `DoStackSnapshot` from your profiler-created thread to walk a separate target thread, but do not suspend the target thread first. This initial call ensures that the per-thread initialization can complete without deadlock. If `DoStackSnapshot` succeeds and reports at least one frame, after that point, it will be safe for that profiler-created thread to suspend any target thread and call `DoStackSnapshot` to walk the stack of that target thread.  
+ Existuje také riziko zablokování, pokud voláte `DoStackSnapshot` z vlákna, které vytvořil Profiler, abyste mohli procházet zásobník samostatného cílového vlákna. Při prvním zadání vlákna, které jste vytvořili, zadá určité metody `ICorProfilerInfo*` (včetně `DoStackSnapshot`), CLR provede v tomto vláknu inicializaci specifickou pro vlákno, CLR. Pokud váš Profiler pozastavil cílové vlákno, u kterého se pokoušíte Procházet, a v případě, že se u tohoto cílového vlákna stala vlastní zámek potřebný k provedení této inicializace pro vlákno, dojde k zablokování. Chcete-li se tomuto zablokování vyhnout, proveďte počáteční volání do `DoStackSnapshot` z vlákna vytvořeného profilerem za účelem provedení samostatného cílového vlákna, ale nepozastavte nejprve cílové vlákno. Toto počáteční volání zajistí, že inicializace jednotlivých vláken může být dokončena bez zablokování. Pokud `DoStackSnapshot` uspěje a sestavuje alespoň jeden rámec, bude po tomto okamžiku pro toto vlákno vytvořené profilerem bezpečné pozastavit jakékoli cílové vlákno a volat `DoStackSnapshot`, aby provedl zásobník cílového vlákna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

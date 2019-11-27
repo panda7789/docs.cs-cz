@@ -35,7 +35,7 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
 |----------------------|---------------------------|-----------------|  
 |Determinate|CommonStates|<xref:System.Windows.Controls.ProgressBar> sestaví průběh na základě vlastnosti <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A>.|  
 |Neurčitá|CommonStates|<xref:System.Windows.Controls.ProgressBar> sestavuje obecný průběh pomocí opakujícího se vzoru.|  
-|Platné|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
+|Platný|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
 |InvalidFocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
 |InvalidUnfocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
   

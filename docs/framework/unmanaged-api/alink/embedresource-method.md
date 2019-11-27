@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446533"
 ---
 # <a name="embedresource-method"></a>EmbedResource – metoda
-Declares an embedded resource. This method does not actually embed the resource.  
+Deklaruje vložený prostředek. Tato metoda ve skutečnosti nevkládá prostředek.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,28 +39,28 @@ HRESULT EmbedResource(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID of the assembly.  
+ ID sestavení  
   
  `FileToken`  
- File token or assembly ID of file that contains the resource.  
+ Token souboru nebo ID sestavení souboru, který obsahuje prostředek.  
   
  `pszResourceName`  
- Name of the resource.  
+ Název prostředku.  
   
  `dwOffset`  
- Offset of resource from RVA.  
+ Posun prostředku od RVA.  
   
  `dwFlags`  
- Accessibility flags such as `mrPublic` and `mrPrivate`. These flags may be passed to [DefineExportedType Method](../metadata/imetadataassemblyemit-defineexportedtype-method.md).  
+ Příznaky přístupnosti, například `mrPublic` a `mrPrivate` Tyto příznaky mohou být předány [metodě DefineExportedType –](../metadata/imetadataassemblyemit-defineexportedtype-method.md).  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Returns S_OK if the method succeeds.  
+ Vrátí S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Requires alink.h.  
+ Vyžaduje ALink. h.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink – rozhraní](ialink-interface.md)
 - [IALink2 – rozhraní](ialink2-interface.md)
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)

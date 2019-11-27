@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74433210"
 ---
 # <a name="icorprofilerinfo2getfunctionfromtokenandtypeargs-method"></a>ICorProfilerInfo2::GetFunctionFromTokenAndTypeArgs – metoda
-Gets the `FunctionID` of a function by using the specified metadata token, containing class, and `ClassID` values of any type arguments.  
+Získá `FunctionID` funkce pomocí zadaného tokenu metadat, obsahující třídy a hodnot `ClassID` jakýchkoli argumentů typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,38 +39,38 @@ HRESULT GetFunctionFromTokenAndTypeArgs(
   
 ## <a name="parameters"></a>Parametry  
  `moduleID`  
- [in] The ID of the module in which the function resides.  
+ pro ID modulu, ve kterém je funkce umístěna.  
   
  `funcDef`  
- [in] An `mdMethodDef` metadata token that references the function.  
+ pro Token metadat `mdMethodDef`, který odkazuje na funkci.  
   
  `classId`  
- [in] The ID of the function's containing class.  
+ pro ID obsahující třídy funkce  
   
  `cTypeArgs`  
- [in] The number of type parameters for the given function. This value must be zero for non-generic functions.  
+ pro Počet parametrů typu pro danou funkci. Pro neobecné funkce musí být tato hodnota nula.  
   
  `typeArgs`  
- [in] An array of `ClassID` values, each of which is an argument of the function. The value of `typeArgs` can be NULL if `cTypeArgs` is set to zero.  
+ pro Pole hodnot `ClassID`, z nichž každý je argumentem funkce. Hodnota `typeArgs` může mít hodnotu NULL, pokud je `cTypeArgs` nastavena na hodnotu nula.  
   
  `pFunctionID`  
- [out] A pointer to the `FunctionID` of the specified function.  
+ mimo Ukazatel na `FunctionID` zadané funkce.  
   
 ## <a name="remarks"></a>Poznámky  
- Calling the `GetFunctionFromTokenAndTypeArgs` method with an `mdMethodRef` metadata instead of an `mdMethodDef` metadata token can have unpredictable results. Callers should resolve the `mdMethodRef` to an `mdMethodDef` when passing it.  
+ Volání metody `GetFunctionFromTokenAndTypeArgs` s metadaty `mdMethodRef` namísto tokenu metadat `mdMethodDef` může mít nepředvídatelné výsledky. Volající by při předávání měli `mdMethodDef` `mdMethodRef` vyřešit.  
   
- If the function is not already loaded, calling `GetFunctionFromTokenAndTypeArgs` will cause loading to occur, which is a dangerous operation in many contexts. For example, calling this method during loading of modules or types could lead to an infinite loop as the runtime attempts to circularly load things.  
+ Není-li funkce již načtena, volání `GetFunctionFromTokenAndTypeArgs` způsobí nasazování, což je nebezpečná operace v mnoha kontextech. Například volání této metody během načítání modulů nebo typů může vést k nekonečné smyčce, protože modul runtime se pokusí cyklicky načíst věci.  
   
- In general, use of `GetFunctionFromTokenAndTypeArgs` is discouraged. If profilers are interested in events for a particular function, they should store the `ModuleID` and `mdMethodDef` of that function, and use [ICorProfilerInfo2::GetFunctionInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) to check whether a given `FunctionID` is that of the desired function.  
+ Obecně platí, že použití `GetFunctionFromTokenAndTypeArgs` se nedoporučuje. Pokud jsou profilery zajímat události pro konkrétní funkci, měly by uložit `ModuleID` a `mdMethodDef` této funkce a pomocí [ICorProfilerInfo2:: GetFunctionInfo2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) ověřit, zda daný `FunctionID` má požadovanou funkci.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

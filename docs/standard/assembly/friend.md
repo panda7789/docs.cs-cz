@@ -14,18 +14,18 @@ ms.locfileid: "74348166"
 ---
 # <a name="friend-assemblies"></a>Přátelská sestavení
 
-A *friend assembly* is an assembly that can access another assembly's [internal](../../csharp/language-reference/keywords/internal.md) (C#) or [Friend](../../visual-basic/language-reference/modifiers/friend.md) (Visual Basic) types and members. If you identify an assembly as a friend assembly, you no longer have to mark types and members as public in order for them to be accessed by other assemblies. This is especially convenient in the following scenarios:
+*Sestavení typu Friend* je sestavení, které má přístup k [interním](../../csharp/language-reference/keywords/internal.md) typůmC#() nebo [Friend](../../visual-basic/language-reference/modifiers/friend.md) (Visual Basic) jiného sestavení a k těmto členům. Pokud identifikujete sestavení jako sestavení typu Friend, již není nutné označit typy a členy jako veřejné, aby byly přístupné z jiných sestavení. To je zvlášť užitečné v následujících scénářích:
 
-- During unit testing, when test code runs in a separate assembly but requires access to members in the assembly being tested that are marked as `internal` in C# or `Friend` in Visual Basic.
+- Při testování částí, při spuštění testovacího kódu v samostatném sestavení, ale vyžaduje přístup ke členům v testovaném sestavení, které jsou označeny jako C# `internal` v nebo `Friend` v Visual Basic.
 
-- When you are developing a class library and additions to the library are contained in separate assemblies but require access to members in existing assemblies that are marked as `internal` in C# or `Friend` in Visual Basic.
+- Při vývoji knihovny tříd a přidání do knihovny jsou obsaženy v samostatných sestaveních, ale vyžadují přístup ke členům v existujících sestaveních, která jsou označena jako `internal` C# v nebo `Friend` v Visual Basic.
 
 ## <a name="remarks"></a>Poznámky
 
-You can use the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute to identify one or more friend assemblies for a given assembly. The following example uses the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute in *Assembly A* and specifies assembly *AssemblyB* as a friend assembly. This gives assembly *AssemblyB* access to all types and members in *Assembly A* that are marked as `internal` in C# or `Friend` in Visual Basic.
+Můžete použít atribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> k identifikaci jednoho nebo více sestavení typu Friend pro dané sestavení. Následující příklad používá atribut <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> v *sestavení a* a určuje sestavení *AssemblyB* jako sestavení typu Friend. To dává sestavení *AssemblyB* přístup ke všem typům a členům v *sestavení a* , které jsou označeny jako C# `internal` v nebo `Friend` v Visual Basic.
 
 > [!NOTE]
-> When you compile an assembly like *AssemblyB* that will access internal types or internal members of another assembly like *Assembly A*, you must explicitly specify the name of the output file ( *.exe* or *.dll*) by using the **-out** compiler option. This is required because the compiler has not yet generated the name for the assembly it is building at the time it is binding to external references. For more information, see [-out (C#)](../../csharp/language-reference/compiler-options/out-compiler-option.md) or [-out (Visual Basic)](../../visual-basic/reference/command-line-compiler/out.md).
+> Při kompilaci sestavení, jako je *AssemblyB* , který bude přistupovat k interním typům nebo interním členům jiného sestavení, jako je *sestavení A*, je nutné explicitně zadat název výstupního souboru ( *. exe* nebo *. dll*) pomocí možnosti kompilátoru **-out** . To je nutné, protože kompilátor ještě negeneroval název sestavení, který sestaví, v době, kdy je svázán s externími odkazy. Další informace naleznete v tématu [-out (C#)](../../csharp/language-reference/compiler-options/out-compiler-option.md) nebo [-out (Visual Basic)](../../visual-basic/reference/command-line-compiler/out.md).
 
 ```csharp
 using System.Runtime.CompilerServices;
@@ -72,34 +72,34 @@ Public Class ClassWithFriendMethod
 End Class
 ```
 
-Only assemblies that you explicitly specify as friends can access `internal` (C#) or `Friend` (Visual Basic) types and members. For example, if *AssemblyB* is a friend of *Assembly A* and *Assembly C* references *AssemblyB*, *Assembly C* does not have access to `internal` (C#) or `Friend` (Visual Basic) types in *Assembly A*.
+Pouze sestavení, která explicitně zadáte jako přátelé, mají přístupC#k typům a členům `internal` () nebo `Friend` (Visual Basic). Například pokud je *AssemblyB* přítele *sestavení* a a *sestavení c* odkazuje na *AssemblyB*, *sestavení c* nemá přístup k typům `internal` (C#) nebo `Friend` (Visual Basic) v *sestavení a*.
 
-The compiler performs some basic validation of the friend assembly name passed to the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute. If *Assembly A* declares *AssemblyB* as a friend assembly, the validation rules are as follows:
+Kompilátor provádí základní ověření názvu sestavení typu Friend předaného atributu <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>. Pokud *sestavení A* deklaruje *AssemblyB* jako sestavení typu Friend, ověřovací pravidla jsou následující:
 
-- If *Assembly A* is strong named, *AssemblyB* must also be strong named. The friend assembly name that is passed to the attribute must consist of the assembly name and the public key of the strong-name key that is used to sign *AssemblyB*.
+- Pokud je *sestavení A* silně pojmenované, *AssemblyB* musí také mít silný název. Název sestavení typu Friend, který je předán atributu, musí obsahovat název sestavení a veřejný klíč klíče silného názvu, který se používá k podepsání *AssemblyB*.
 
-     The friend assembly name that is passed to the <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> attribute cannot be the strong name of *AssemblyB*. Don't include the assembly version, culture, architecture, or public key token.
+     Název sestavení typu Friend, který je předán atributu <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>, nemůže být silným názvem *AssemblyB*. Nezahrnujte verze sestavení, jazykovou verzi, architekturu nebo token veřejného klíče.
 
-- If *Assembly A* is not strong named, the friend assembly name should consist of only the assembly name. For more information, see [How to: Create unsigned friend assemblies](create-unsigned-friend.md).
+- Pokud *sestavení A* není silného názvu, název sestavení typu Friend by měl obsahovat pouze název sestavení. Další informace naleznete v tématu [Postupy: vytváření nepodepsaných přátelských sestavení](create-unsigned-friend.md).
 
-- If *AssemblyB* is strong named, you must specify the strong-name key for *AssemblyB* by using the project setting or the command-line `/keyfile` compiler option. For more information, see [How to: Create signed friend assemblies](create-signed-friend.md).
+- Pokud je *AssemblyB* silným názvem, je nutné zadat klíč silného názvu pro *AssemblyB* pomocí nastavení projektu nebo možnosti kompilátoru příkazového řádku `/keyfile`. Další informace naleznete v tématu [Postupy: vytvoření podepsaných sestavení typu Friend](create-signed-friend.md).
 
- The <xref:System.Security.Permissions.StrongNameIdentityPermission> class also provides the ability to share types, with the following differences:
+ Třída <xref:System.Security.Permissions.StrongNameIdentityPermission> také poskytuje možnost sdílet typy s následujícími rozdíly:
 
-- <xref:System.Security.Permissions.StrongNameIdentityPermission> applies to an individual type, while a friend assembly applies to the whole assembly.
+- <xref:System.Security.Permissions.StrongNameIdentityPermission> platí pro individuální typ, zatímco sestavení typu Friend se vztahuje na celé sestavení.
 
-- If there are hundreds of types in *Assembly A* that you want to share with *AssemblyB*, you have to add <xref:System.Security.Permissions.StrongNameIdentityPermission> to all of them. If you use a friend assembly, you only need to declare the friend relationship once.
+- Pokud existují stovky typů v *sestavení A* , které chcete sdílet s *AssemblyB*, je nutné přidat <xref:System.Security.Permissions.StrongNameIdentityPermission> do všech těchto. Použijete-li sestavení typu Friend, stačí pouze deklarovat relaci typu Friend.
 
-- If you use <xref:System.Security.Permissions.StrongNameIdentityPermission>, the types you want to share have to be declared as public. If you use a friend assembly, the shared types are declared as `internal` (C#) or `Friend` (Visual Basic).
+- Použijete-li <xref:System.Security.Permissions.StrongNameIdentityPermission>, musí být typy, které chcete sdílet, deklarovány jako veřejné. Použijete-li sestavení typu Friend, sdílené typy jsou deklarovány jako `internal`C#() nebo `Friend` (Visual Basic).
 
-For information about how to access an assembly's `internal` (C#) or `Friend` (Visual Basic) types and methods from a module file (a file with the *.netmodule* extension), see [-moduleassemblyname (C#)](../../csharp/language-reference/compiler-options/moduleassemblyname-compiler-option.md) or [-moduleassemblyname (Visual Basic)](../../visual-basic/reference/command-line-compiler/moduleassemblyname.md).
+Informace o tom, jak získat přístup k typům aC#metodám sestavení `internal` () nebo `Friend` (Visual Basic), ze souboru modulu (soubor s příponou *. netmodule* ), naleznete v tématu [-C#moduleassemblyname – ()](../../csharp/language-reference/compiler-options/moduleassemblyname-compiler-option.md) nebo [-moduleassemblyname – (Visual Basic)](../../visual-basic/reference/command-line-compiler/moduleassemblyname.md).
 
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>
 - <xref:System.Security.Permissions.StrongNameIdentityPermission>
-- [How to: Create unsigned friend assemblies](create-unsigned-friend.md)
-- [How to: Create signed friend assemblies](create-signed-friend.md)
+- [Postupy: vytváření nepodepsaných přátelských sestavení](create-unsigned-friend.md)
+- [Postupy: Vytváření podepsaných přátelských sestavení](create-signed-friend.md)
 - [Sestavení v .NET](index.md)
-- [C# programming guide](../../csharp/programming-guide/index.md)
-- [Programming concepts (Visual Basic)](../../visual-basic/programming-guide/concepts/index.md)
+- [C#Průvodce programováním](../../csharp/programming-guide/index.md)
+- [Koncepty programování (Visual Basic)](../../visual-basic/programming-guide/concepts/index.md)

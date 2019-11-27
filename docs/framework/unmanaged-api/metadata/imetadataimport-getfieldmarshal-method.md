@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437562"
 ---
 # <a name="imetadataimportgetfieldmarshal-method"></a>IMetaDataImport::GetFieldMarshal – metoda
-Gets a pointer to the native, unmanaged type of the field represented by the specified field metadata token.  
+Získá ukazatel na nativní nespravovaný typ pole reprezentovaného tokenem metadat zadaného pole.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,22 +37,22 @@ HRESULT GetFieldMarshal (
   
 ## <a name="parameters"></a>Parametry  
  `tk`  
- [in] The metadata token that represents the field to get interop marshaling information for.  
+ pro Token metadat, který představuje pole pro získání informací o interop marshaling.  
   
  `ppvNativeType`  
- [out] A pointer to the metadata signature of the field's native type.  
+ mimo Ukazatel na signaturu metadat pro nativní typ pole.  
   
  `pcbNativeType`  
- [out] The size in bytes of `ppvNativeType`.  
+ mimo Velikost v bajtech `ppvNativeType`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

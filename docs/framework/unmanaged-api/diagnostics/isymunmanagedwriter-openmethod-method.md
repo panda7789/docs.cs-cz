@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74427915"
 ---
 # <a name="isymunmanagedwriteropenmethod-method"></a>ISymUnmanagedWriter::OpenMethod – metoda
-Opens a method into which symbol information is emitted. The given method becomes the current method for calls to define sequence points, parameters, and lexical scopes. There is an implicit lexical scope around the entire method. Reopening a method that was previously closed erases any previously defined symbols for that method. There can be only one open method at a time.  
+Otevře metodu, do které jsou vygenerovány informace o symbolech. Daná metoda se označuje jako aktuální metoda pro volání pro definování bodů sekvence, parametrů a lexikálních oborů. Existuje implicitní lexikální obor kolem celé metody. Opětovné otevření metody, která byla dříve zavřena, vymaže všechny dříve definované symboly pro danou metodu. V jednu chvíli může existovat jenom jedna metoda Open.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,13 +34,13 @@ HRESULT OpenMethod(
   
 ## <a name="parameters"></a>Parametry  
  `method`  
- [in] The metadata token for the method to be opened.  
+ pro Token metadat pro metodu, která se má otevřít  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

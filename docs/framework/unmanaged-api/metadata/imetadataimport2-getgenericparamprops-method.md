@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74427293"
 ---
 # <a name="imetadataimport2getgenericparamprops-method"></a>IMetaDataImport2::GetGenericParamProps – metoda
-Gets the metadata associated with the generic parameter represented by the specified token.  
+Získá metadata přidružená k obecnému parametru reprezentovanému zadaným tokenem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,37 +42,37 @@ HRESULT GetGenericParamProps (
   
 ## <a name="parameters"></a>Parametry  
  `gp`  
- [in] The token that represents the generic parameter for which to return metadata.  
+ pro Token, který představuje obecný parametr, pro který se mají vracet metadata  
   
  `pulParamSeq`  
- [out] The ordinal position of the `Type` parameter in the parent constructor or method.  
+ mimo Pořadové místo parametru `Type` v nadřazeném konstruktoru nebo metodě.  
   
  `pdwParamFlags`  
- [out] A value of the [CorGenericParamAttr](../../../../docs/framework/unmanaged-api/metadata/corgenericparamattr-enumeration.md) enumeration that describes the `Type` for the generic parameter.  
+ mimo Hodnota výčtu [CorGenericParamAttr –](../../../../docs/framework/unmanaged-api/metadata/corgenericparamattr-enumeration.md) , která popisuje `Type` pro obecný parametr.  
   
  `ptOwner`  
- [out] A TypeDef or MethodDef token that represents the owner of the parameter.  
+ mimo Token TypeDef nebo MethodDef, který představuje vlastníka parametru.  
   
  `reserved`  
- [out] Reserved for future extensibility.  
+ mimo Vyhrazeno pro budoucí rozšíření.  
   
  `wzName`  
- [out] The name of the generic parameter.  
+ mimo Název obecného parametru.  
   
  `cchName`  
- [in] The size of the `wzName` buffer.  
+ pro Velikost vyrovnávací paměti `wzName`.  
   
  `pchName`  
- [out] The returned size of the name, in wide characters.  
+ mimo Vrácená velikost názvu, v rámci velkých znaků.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437991"
 ---
 # <a name="imetadataimportgetfieldprops-method"></a>IMetaDataImport::GetFieldProps – metoda
-Gets metadata associated with the field referenced by the specified FieldDef token.  
+Načte metadata přidružená k poli, na které odkazuje zadaný FieldDef token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,46 +45,46 @@ HRESULT GetFieldProps (
   
 ## <a name="parameters"></a>Parametry  
  `mb`  
- [in] A FieldDef token that represents the field to get associated metadata for.  
+ pro Token FieldDef, který představuje pole, pro které se mají získat přidružená metadata  
   
  `pClass`  
- [out] A pointer to a TypeDef token that represents the type of the class that the field belongs to.  
+ mimo Ukazatel na token TypeDef, který představuje typ třídy, do které pole patří.  
   
  `szField`  
- [out] The name of the field.  
+ mimo Název pole  
   
  `cchField`  
- [in] The size in wide characters of the buffer for *szField*.  
+ pro Velikost vyrovnávací paměti v různých znacích pro *szField*.  
   
  `pchField`  
- [out] The actual size of the returned buffer.  
+ mimo Skutečná velikost vrácené vyrovnávací paměti.  
   
  `pdwAttr`  
- [out] Flags associated with the field's metadata.  
+ mimo Příznaky přidružené k metadatům v poli  
   
  `ppvSigBlob`  
- [in] A pointer to the binary metadata value that describes the field.  
+ pro Ukazatel na hodnotu binárních metadat, která popisuje pole.  
   
  `pcbSigBlob`  
- [out] The size in bytes of `ppvSigBlob`.  
+ mimo Velikost v bajtech `ppvSigBlob`.  
   
  `pdwCPlusTypeFlag`  
- [out] A flag that specifies the value type of the field.  
+ mimo Příznak, který určuje typ hodnoty pole.  
   
  `ppValue`  
- [out] A constant value for the field.  
+ mimo Konstantní hodnota pro pole.  
   
  `pcchValue`  
- [out] The size in chars of `ppValue`, or zero if no string exists.  
+ mimo Velikost ve znakech `ppValue`nebo nula, pokud žádný řetězec neexistuje.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

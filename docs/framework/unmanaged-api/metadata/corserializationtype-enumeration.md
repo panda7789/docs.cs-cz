@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74432869"
 ---
 # <a name="corserializationtype-enumeration"></a>CorSerializationType – výčet
-Specifies how an object is serialized by the common language runtime.  
+Určuje, jak je objekt serializován modulem CLR (Common Language Runtime).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -53,37 +53,37 @@ typedef enum CorSerializationType {
 } CorSerializationType;  
 ```  
   
-## <a name="members"></a>Členové  
+## <a name="members"></a>Members  
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`SERIALIZATION_TYPE_UNDEFINED`|Serialization of the object is undefined.|  
-|`SERIALIZATION_TYPE_BOOLEAN`|Object is serialized as a Boolean type|  
-|`SERIALIZATION_TYPE_CHAR`|Object is serialized as a character type.|  
-|`SERIALIZATION_TYPE_I1`|Object is serialized as a signed 1-byte integer.|  
-|`SERIALIZATION_TYPE_U1`|Object is serialized as an unsigned 1-byte integer.|  
-|`SERIALIZATION_TYPE_I2`|Object is serialized as a signed 2-byte integer.|  
-|`SERIALIZATION_TYPE_U2`|Object is serialized as an unsigned 2-byte integer.|  
-|`SERIALIZATION_TYPE_I4`|Object is serialized as a signed 4-byte integer.|  
-|`SERIALIZATION_TYPE_U4`|Object is serialized as an unsigned 4-byte integer.|  
-|`SERIALIZATION_TYPE_I8`|Object is serialized as a signed 8-byte integer.|  
-|`SERIALIZATION_TYPE_U8`|Object is serialized as an unsigned 8-byte integer.|  
-|`SERIALIZATION_TYPE_R4`|Object is serialized as a 4-byte floating point.|  
-|`SERIALIZATION_TYPE_R8`|Object is serialized as an 8-byte floating point.|  
-|`SERIALIZATION_TYPE_STRING`|Object is serialized as a System.String type.|  
-|`SERIALIZATION_TYPE_SZARRAY`|Object is serialized as a single-dimensional, zero lower-bound array.|  
-|`SERIALIZATION_TYPE_TYPE`|Object is serialized as a generic type.|  
-|`SERIALIZATION_TYPE_TAGGED_OBJECT`|Object is serialized as a tagged object.|  
-|`SERIALIZATION_TYPE_FIELD`|Object is serialized as a field.|  
-|`SERIALIZATION_TYPE_PROPERTY`|Object is serialized as a property.|  
-|`SERIALIZATION_TYPE_ENUM`|Object is serialized as an enumeration.|  
+|`SERIALIZATION_TYPE_UNDEFINED`|Serializace objektu není definována.|  
+|`SERIALIZATION_TYPE_BOOLEAN`|Objekt je serializován jako typ Boolean.|  
+|`SERIALIZATION_TYPE_CHAR`|Objekt je serializován jako typ znaku.|  
+|`SERIALIZATION_TYPE_I1`|Objekt je serializován jako celé číslo se znaménkem na 1 bajt.|  
+|`SERIALIZATION_TYPE_U1`|Objekt je serializován jako celé číslo s nepodepsaným 1 bajtem.|  
+|`SERIALIZATION_TYPE_I2`|Objekt je serializován jako celé číslo se znaménkem na dvou bajtech.|  
+|`SERIALIZATION_TYPE_U2`|Objekt je serializován jako celé číslo bez znaménka 2 bajt.|  
+|`SERIALIZATION_TYPE_I4`|Objekt je serializován jako celé číslo se znaménkem na 4 bajt.|  
+|`SERIALIZATION_TYPE_U4`|Objekt je serializován jako celé číslo bez znaménka 4 bajty.|  
+|`SERIALIZATION_TYPE_I8`|Objekt je serializován jako přihlášené celé číslo se znaménkem na 8 bajtů.|  
+|`SERIALIZATION_TYPE_U8`|Objekt je serializován jako celé číslo bez znaménka na 8 bajtů.|  
+|`SERIALIZATION_TYPE_R4`|Objekt je serializován jako plovoucí desetinná čárka (4 bajt).|  
+|`SERIALIZATION_TYPE_R8`|Objekt je serializován jako plovoucí desetinná čárka (8 bajtů).|  
+|`SERIALIZATION_TYPE_STRING`|Objekt je serializován jako typ System. String.|  
+|`SERIALIZATION_TYPE_SZARRAY`|Objekt je serializován jako jednorozměrné, nulové pole s nižším rozsahem.|  
+|`SERIALIZATION_TYPE_TYPE`|Objekt je serializován jako obecný typ.|  
+|`SERIALIZATION_TYPE_TAGGED_OBJECT`|Objekt je serializován jako objekt s příznakem.|  
+|`SERIALIZATION_TYPE_FIELD`|Objekt je serializován jako pole.|  
+|`SERIALIZATION_TYPE_PROPERTY`|Objekt je serializován jako vlastnost.|  
+|`SERIALIZATION_TYPE_ENUM`|Objekt je serializován jako výčet.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **Hlavička:** CorHdr. h  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446948"
 ---
 # <a name="importfileex-method"></a>ImportFileEx – metoda
-Imports indicated assembly or unbound module.  
+Importuje označené sestavení nebo nevázaný modul.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,34 +40,34 @@ HRESULT ImportFileEx(
   
 ## <a name="parameters"></a>Parametry  
  `pszFilename`  
- Fully qualified name of file from which to import.  
+ Plně kvalifikovaný název souboru, ze kterého se má importovat.  
   
  `pszTargetName`  
- Optional name of target file.  
+ Volitelný název cílového souboru.  
   
  `fSmartImport`  
- If TRUE, ImportTypes is used, otherwise importing must be performed manually.  
+ Při hodnotě TRUE se používá Importtypes –, jinak se import musí provést ručně.  
   
  `dwOpenFlags`  
- Flags to be passed along to [OpenScope Method](../metadata/imetadatadispenser-openscope-method.md).  
+ Příznaky, které mají být předány do [metody OpenScope –](../metadata/imetadatadispenser-openscope-method.md).  
   
  `pImportToken`  
- Receives ID of the file being imported.  
+ Získá ID importovaného souboru.  
   
  `ppAssemblyScope`  
- Receives assembly import scope [IMetaDataAssemblyImport Interface](../metadata/imetadataassemblyimport-interface.md) interface. Is set to NULL if file is not an assembly.  
+ Přijímá import sestavení oboru [rozhraní IMetaDataAssemblyImport](../metadata/imetadataassemblyimport-interface.md) . Je nastaven na hodnotu NULL, pokud soubor není sestavení.  
   
  `pdwCountOfScopes`  
- Receives count of imported files and/or scopes.  
+ Přijímá počet importovaných souborů a rozsahů.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Returns S_OK if the method succeeds.  
+ Vrátí S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Requires alink.h.  
+ Vyžaduje ALink. h.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink2 – rozhraní](ialink2-interface.md)
 - [IALink – rozhraní](ialink-interface.md)
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)

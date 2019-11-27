@@ -9,13 +9,13 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74341360"
 ---
-# <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-visual-basic"></a>How to: Split a File Into Many Files by Using Groups (LINQ) (Visual Basic)
+# <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-visual-basic"></a>Postupy: rozdělení souboru na více souborů pomocí skupin (LINQ) (Visual Basic)
 
-This example shows one way to merge the contents of two files and then create a set of new files that organize the data in a new way.
+Tento příklad ukazuje jeden ze způsobů, jak sloučit obsah dvou souborů a pak vytvořit sadu nových souborů, které data organizují novým způsobem.
 
-### <a name="to-create-the-data-files"></a>To create the data files
+### <a name="to-create-the-data-files"></a>Vytvoření datových souborů
 
-1. Copy these names into a text file that is named names1.txt and save it in your project folder:
+1. Zkopírujte tyto názvy do textového souboru s názvem names1. txt a uložte je do složky projektu:
 
     ```text
     Bankov, Peter
@@ -30,7 +30,7 @@ This example shows one way to merge the contents of two files and then create a 
     Garcia, Debra
     ```
 
-2. Copy these names into a text file that is named names2.txt and save it in your project folder: Note that the two files have some names in common.
+2. Zkopírujte tyto názvy do textového souboru s názvem names2. txt a uložte je do složky projektu: Všimněte si, že dva soubory mají některé běžné názvy.
 
     ```text
     Liu, Jinghao
@@ -114,13 +114,13 @@ End Class
 '    Toyoshima, Tim
 ```
 
-The program writes a separate file for each group in the same folder as the data files.
+Program zapisuje samostatný soubor pro každou skupinu ve stejné složce jako datové soubory.
 
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu
 
-Create a VB.NET console application project, with an `Imports` statement for the System.Linq namespace.
+Vytvořte projekt konzolové aplikace VB.NET s příkazem `Imports` pro obor názvů System. Linq.
 
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ and Strings (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
-- [LINQ and File Directories (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [LINQ a souborové adresáře (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

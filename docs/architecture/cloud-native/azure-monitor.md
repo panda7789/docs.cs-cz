@@ -59,7 +59,7 @@ Tyto grafy pak mohou být vloženy do Azure Portal správně prostřednictvím p
 ![příklad Power BI řídicího panelu](./media/azure-monitor.png)
 **obrázek 7-12**. Příklad Power BI řídicího panelu.
 
-## <a name="alerts"></a>Upozornění
+## <a name="alerts"></a>Výstrahy
 
 V některých případech nejsou data řídicích panelů dostatečná. Pokud nikdo nesleduje řídicí panely, může to být ještě mnoho hodin před adresováním problému nebo dokonce i zjištěným. K tomuto účelu Azure Monitor také nabízí [řešení upozornění](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-overview)na nejvyšší stupeň. Výstrahy se můžou aktivovat v rámci široké škály podmínek, mezi které patří:
 

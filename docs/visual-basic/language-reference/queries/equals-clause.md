@@ -14,10 +14,10 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74335384"
 ---
 # <a name="equals-clause-visual-basic"></a>Equals – klauzule (Visual Basic)
-Compares keys from collections being joined.  
+Porovná klíče z připojených kolekcí.  
   
 ## <a name="remarks"></a>Poznámky  
- The `Equals` keyword is used in the following contexts:  
+ Klíčové slovo `Equals` se používá v následujících kontextech:  
   
  [Klauzule Group Join](../../../visual-basic/language-reference/queries/group-join-clause.md)  
   

@@ -16,45 +16,45 @@ ms.locfileid: "74348833"
 ---
 # <a name="how-to-create-a-copy-of-a-file-in-a-different-directory-in-visual-basic"></a>Postupy: Vytvoření kopie souboru v jiném adresáři v jazyce Visual Basic
 
-The `My.Computer.FileSystem.CopyFile` method allows you to copy files. Its parameters provide the ability to overwrite existing files, rename the file, show the progress of the operation, and allow the user to cancel the operation.  
+Metoda `My.Computer.FileSystem.CopyFile` umožňuje kopírování souborů. Jeho parametry poskytují možnost přepsat stávající soubory, přejmenovat soubor, zobrazit průběh operace a umožnit uživateli zrušit operaci.  
   
-### <a name="to-copy-a-text-file-to-another-folder"></a>To copy a text file to another folder  
+### <a name="to-copy-a-text-file-to-another-folder"></a>Zkopírování textového souboru do jiné složky  
   
-- Use the `CopyFile` method to copy a file, specifying a source file and the target directory. The `overwrite` parameter allows you to specify whether or not to overwrite existing files. The following code examples demonstrate how to use `CopyFile`.  
+- Použijte metodu `CopyFile` ke zkopírování souboru, určení zdrojového souboru a cílového adresáře. Parametr `overwrite` umožňuje určit, jestli se mají přepsat existující soubory. Následující příklady kódu ukazují, jak použít `CopyFile`.  
   
      [!code-vb[VbFileIOMisc#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIOMisc/VB/Class1.vb#24)]  
   
 ## <a name="robust-programming"></a>Robustní programování  
 
- The following conditions may cause an exception to be thrown:  
+ Následující podmínky mohou způsobit vyvolání výjimky:  
   
-- The path is not valid for one of the following reasons: it is a zero-length string, it contains only white space, it contains invalid characters, or it is a device path (starts with \\\\.\\) (<xref:System.ArgumentException>).  
+- Cesta není platná z některého z následujících důvodů: Jedná se o řetězec o nulové délce, obsahuje pouze prázdné znaky, obsahuje neplatné znaky nebo se jedná o cestu k zařízení (začíná na \\\\.\\) (<xref:System.ArgumentException>).  
   
-- The system could not retrieve the absolute path (<xref:System.ArgumentException>).  
+- Systém nemůže načíst absolutní cestu (<xref:System.ArgumentException>).  
   
-- The path is not valid because it is `Nothing` (<xref:System.ArgumentNullException>).  
+- Cesta není platná, protože je `Nothing` (<xref:System.ArgumentNullException>).  
   
-- The source file is not valid or does not exist (<xref:System.IO.FileNotFoundException>).  
+- Zdrojový soubor není platný nebo neexistuje (<xref:System.IO.FileNotFoundException>).  
   
-- The combined path points to an existing directory (<xref:System.IO.IOException>).  
+- Kombinovaná cesta odkazuje na existující adresář (<xref:System.IO.IOException>).  
   
-- The destination file exists and `overwrite` is set to `False` (<xref:System.IO.IOException>).  
+- Cílový soubor existuje a `overwrite` je nastavená na `False` (<xref:System.IO.IOException>).  
   
-- The user does not have sufficient permissions to access the file (<xref:System.IO.IOException>).  
+- Uživatel nemá dostatečná oprávnění pro přístup k souboru (<xref:System.IO.IOException>).  
   
-- A file in the target folder with the same name is in use (<xref:System.IO.IOException>).  
+- Soubor v cílové složce se stejným názvem se používá (<xref:System.IO.IOException>).  
   
-- A file or folder name in the path contains a colon (:) or is in an invalid format (<xref:System.NotSupportedException>).  
+- Název souboru nebo složky v cestě obsahuje dvojtečku (:) nebo má neplatný formát (<xref:System.NotSupportedException>).  
   
-- `ShowUI` is set to `True`, `onUserCancel` is set to `ThrowException`, and the user has cancelled the operation (<xref:System.OperationCanceledException>).  
+- `ShowUI` je nastavená na `True`, `onUserCancel` je nastavená na `ThrowException`a uživatel operaci zrušil (<xref:System.OperationCanceledException>).  
   
-- `ShowUI` is set to `True`, `onUserCancel` is set to `ThrowException`, and an unspecified I/O error occurs (<xref:System.OperationCanceledException>).  
+- `ShowUI` je nastavená na `True`, `onUserCancel` je nastavená na `ThrowException`a dojde k nespecifikované vstupně-výstupní chybě (<xref:System.OperationCanceledException>).  
   
-- The path exceeds the system-defined maximum length (<xref:System.IO.PathTooLongException>).  
+- Cesta překračuje maximální povolenou délku systému (<xref:System.IO.PathTooLongException>).  
   
-- The user does not have required permission (<xref:System.UnauthorizedAccessException>).  
+- Uživatel nemá požadované oprávnění (<xref:System.UnauthorizedAccessException>).  
   
-- The user lacks necessary permissions to view the path (<xref:System.Security.SecurityException>).  
+- Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74428032"
 ---
 # <a name="isymunmanagedwriterdefinefield-method"></a>ISymUnmanagedWriter::DefineField – metoda
-Defines a single variable that is not within a method. This method is used for certain fields in classes, bit fields, and so on.  
+Definuje jednu proměnnou, která není v rámci metody. Tato metoda se používá pro určitá pole ve třídách, bitových polích a tak dále.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,37 +42,37 @@ HRESULT DefineField(
   
 ## <a name="parameters"></a>Parametry  
  `parent`  
- [in] The metadata type or method token.  
+ pro Typ metadat nebo token metody.  
   
  `name`  
- [in] The field name.  
+ pro Název pole  
   
  `attributes`  
- [in] The field attributes.  
+ pro Atributy pole  
   
  `cSig`  
- [in] A `ULONG32` that is the size, in characters, of the buffer required to contain the field signature.  
+ pro `ULONG32`, která má velikost vyrovnávací paměti, která je nutná k omezení podpisu pole, ve znacích.  
   
  `signature`  
- [in] The array of field signatures.  
+ pro Pole podpisů polí.  
   
  `addrKind`  
- [in] The address type.  
+ pro Typ adresy.  
   
  `addr1`  
- [in] The first address for the field specification.  
+ pro První adresa specifikace pole  
   
  `addr2`  
- [in] The second address for the field specification.  
+ pro Druhá adresa specifikace pole  
   
  `addr3`  
- [in] The third address for the field specification.  
+ pro Třetí adresa specifikace pole  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

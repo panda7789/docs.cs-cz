@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74440447"
 ---
 # <a name="imetadataemit2setgenericparamprops-method"></a>IMetaDataEmit2::SetGenericParamProps – metoda
-Sets property values for the generic parameter definition referenced by the specified token.  
+Nastaví hodnoty vlastností pro definici obecného parametru, na kterou odkazuje zadaný token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,28 +39,28 @@ HRESULT SetGenericParamProps (
   
 ## <a name="parameters"></a>Parametry  
  `gp`  
- [in] The token for the generic parameter definition for which to set values.  
+ pro Token pro definici obecného parametru, pro který chcete nastavit hodnoty.  
   
  `dwParamFlags`  
- [in] A value of the [CorGenericParamAttr](../../../../docs/framework/unmanaged-api/metadata/corgenericparamattr-enumeration.md) enumeration that describes the type for the generic parameter.  
+ pro Hodnota výčtu [CorGenericParamAttr –](../../../../docs/framework/unmanaged-api/metadata/corgenericparamattr-enumeration.md) , která popisuje typ obecného parametru.  
   
  `szName`  
- [in] Optional. The name of the parameter for which to set values.  
+ pro Volitelné. Název parametru, pro který chcete nastavit hodnoty.  
   
  `reserved`  
- [in] Reserved for future extensibility.  
+ pro Vyhrazeno pro budoucí rozšíření.  
   
  `rtkConstraints`  
- [in] Optional. A zero-terminated array of type constraints. Array members must be an `mdTypeDef`, `mdTypeRef`, or `mdTypeSpec` metadata token.  
+ pro Volitelné. Pole s nulovým zakončením v poli omezení typu. Členy pole musí být token metadat `mdTypeDef`, `mdTypeRef`nebo `mdTypeSpec`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

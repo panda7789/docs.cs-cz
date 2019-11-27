@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436259"
 ---
 # <a name="imetadataconvertergettypelibfrommetadata-method"></a>IMetaDataConverter::GetTypeLibFromMetaData – metoda
-Gets a pointer to an `ITypeLib` instance that represents the type library that has the specified library and module names.  
+Získá ukazatel na `ITypeLib` instanci, která představuje knihovnu typů, která má zadané názvy knihovny a modulu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,22 +37,22 @@ HRESULT GetTypeLibFromMetaData (
   
 ## <a name="parameters"></a>Parametry  
  `strModule`  
- [in] The name of the type library's module.  
+ pro Název modulu knihovny typů.  
   
  `strTlbName`  
- [in] The name of the type library.  
+ pro Název knihovny typů  
   
  `ppITL`  
- [out] A pointer to a location that receives the address of the `ITypeLib` instance that represents the type library.  
+ mimo Ukazatel na umístění, které přijímá adresu `ITypeLib` instance, která představuje knihovnu typů.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforma:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

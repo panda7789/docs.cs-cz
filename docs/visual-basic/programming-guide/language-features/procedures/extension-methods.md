@@ -1,5 +1,5 @@
 ---
-title: Metody rozšíření
+title: Rozšiřující metody
 ms.date: 07/20/2015
 f1_keywords:
 - vb.ExtensionMethods
@@ -16,35 +16,35 @@ ms.locfileid: "74341179"
 ---
 # <a name="extension-methods-visual-basic"></a>Metody rozšíření (Visual Basic)
 
-Extension methods enable developers to add custom functionality to data types that are already defined without creating a new derived type. Extension methods make it possible to write a method that can be called as if it were an instance method of the existing type.
+Metody rozšíření umožňují vývojářům přidat vlastní funkce k datovým typům, které jsou již definovány bez vytváření nového odvozeného typu. Rozšiřující metody umožňují napsat metodu, která může být volána, jako by šlo o metodu instance existujícího typu.
 
 ## <a name="remarks"></a>Poznámky
 
-An extension method can be only a `Sub` procedure or a `Function` procedure. You cannot define an extension property, field, or event. All extension methods must be marked with the extension attribute `<Extension>` from the <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> namespace and must be defined in a [Module](../../../language-reference/statements/module-statement.md). If an extension method is defined outside a module, the Visual Basic compiler generates error [BC36551](../../../misc/bc36551.md), "Extension methods can be defined only in modules".
+Metoda rozšíření může být pouze `Sub` procedura nebo procedura `Function`. Nelze definovat vlastnost rozšíření, pole nebo událost. Všechny metody rozšíření musí být označené atributem rozšíření `<Extension>` z oboru názvů <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> a musí být definované v [modulu](../../../language-reference/statements/module-statement.md). Pokud je metoda rozšíření definována mimo modul, Visual Basic kompilátor vygeneruje chybu [BC36551](../../../misc/bc36551.md), "metody rozšíření mohou být definovány pouze v modulech".
 
-The first parameter in an extension method definition specifies which data type the method extends. When the method is run, the first parameter is bound to the instance of the data type that invokes the method.
+První parametr v definici metody rozšíření určuje, který typ dat metoda rozšiřuje. Při spuštění metody je první parametr svázán s instancí datového typu, který vyvolá metodu.
 
-The `Extension` attribute can only be applied to a Visual Basic [`Module`](../../../language-reference/statements/module-statement.md), [`Sub`](../../../language-reference/statements/sub-statement.md), or [`Function`](../../../language-reference/statements/function-statement.md). If you apply it to a `Class` or a `Structure`, the Visual Basic compiler generates error [BC36550](../../../language-reference/error-messages/extension-attribute-can-be-applied-only-to-module-sub-or-function-declarations.md), "'Extension' attribute can be applied only to 'Module', 'Sub', or 'Function' declarations".
+Atribut `Extension` lze použít pouze pro Visual Basic [`Module`](../../../language-reference/statements/module-statement.md), [`Sub`](../../../language-reference/statements/sub-statement.md)nebo [`Function`](../../../language-reference/statements/function-statement.md). Pokud ji použijete pro `Class` nebo `Structure`, kompilátor Visual Basic vygeneruje chybu [BC36550](../../../language-reference/error-messages/extension-attribute-can-be-applied-only-to-module-sub-or-function-declarations.md), atribut Extension lze použít pouze pro ' Module ', ' sub ' nebo ' function ' deklarací.
 
 ## <a name="example"></a>Příklad
 
-The following example defines a `Print` extension to the <xref:System.String> data type. The method uses `Console.WriteLine` to display a string. The parameter of the `Print` method, `aString`, establishes that the method extends the <xref:System.String> class.
+Následující příklad definuje rozšíření `Print` pro datový typ <xref:System.String>. Metoda používá `Console.WriteLine` k zobrazení řetězce. Parametr metody `Print`, `aString`, stanoví, že metoda rozšiřuje třídu <xref:System.String>.
 
 [!code-vb[VbVbalrExtensionMethods#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExtensionMethods/VB/StringExtensions.vb#1)]
 
-Notice that the extension method definition is marked with the extension attribute `<Extension()>`. Marking the module in which the method is defined is optional, but each extension method must be marked. <xref:System.Runtime.CompilerServices> must be imported in order to access the extension attribute.
+Všimněte si, že definice rozšiřující metody je označena atributem rozšíření `<Extension()>`. Označení modulu, ve kterém je metoda definovaná, je volitelné, ale každá metoda rozšíření musí být označená. aby bylo možné získat přístup k atributu rozšíření, je třeba importovat <xref:System.Runtime.CompilerServices>.
 
-Extension methods can be declared only within modules. Typically, the module in which an extension method is defined is not the same module as the one in which it is called. Instead, the module that contains the extension method is imported, if it needs to be, to bring it into scope. After the module that contains `Print` is in scope, the method can be called as if it were an ordinary instance method that takes no arguments, such as `ToUpper`:
+Metody rozšíření mohou být deklarovány pouze v rámci modulů. Modul, ve kterém je definována metoda rozšíření, obvykle není stejný modul jako ten, ve kterém je volána. Místo toho je importován modul, který obsahuje metodu rozšíření, pokud je potřeba, aby se přenesl do rozsahu. Po modulu, který obsahuje `Print` v oboru, může být metoda volána, jako by šlo o běžnou metodu instance, která nepřijímá žádné argumenty, jako je například `ToUpper`:
 
 [!code-vb[VbVbalrExtensionMethods#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExtensionMethods/VB/Class1.vb#2)]
 
-The next example, `PrintAndPunctuate`, is also an extension to <xref:System.String>, this time defined with two parameters. The first parameter, `aString`, establishes that the extension method extends <xref:System.String>. The second parameter, `punc`, is intended to be a string of punctuation marks that is passed in as an argument when the method is called. The method displays the string followed by the punctuation marks.
+Další příklad, `PrintAndPunctuate`, je také rozšíření pro <xref:System.String>, tentokrát definováno se dvěma parametry. První parametr `aString`stanoví, že rozšiřující metoda rozšiřuje <xref:System.String>. Druhý parametr, `punc`, má být řetězec interpunkční znaménka, která je předána jako argument při volání metody. Metoda zobrazí řetězec následovaný interpunkční znaménky.
 
 [!code-vb[VbVbalrExtensionMethods#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExtensionMethods/VB/Class2.vb#3)]
 
-The method is called by sending in a string argument for `punc`: `example.PrintAndPunctuate(".")`
+Metoda je volána při odeslání do řetězcového argumentu pro `punc`: `example.PrintAndPunctuate(".")`
 
-The following example shows `Print` and `PrintAndPunctuate` defined and called. <xref:System.Runtime.CompilerServices> is imported in the definition module in order to enable access to the extension attribute.
+Následující příklad ukazuje `Print` a `PrintAndPunctuate` definovány a volány. <xref:System.Runtime.CompilerServices> je importován v modulu definice, aby bylo možné povolit přístup k atributu rozšíření.
 
 ```vb
 Imports System.Runtime.CompilerServices
@@ -63,7 +63,7 @@ Module StringExtensions
 End Module
 ```
 
-Next, the extension methods are brought into scope and called:
+Dále se rozšiřující metody přenesou do rozsahu a nazývají se:
 
 ```vb
 Imports ConsoleApplication2.StringExtensions
@@ -81,94 +81,94 @@ Module Module1
 End Module
 ```
 
-All that is required to be able to run these or similar extension methods is that they be in scope. If the module that contains an extension method is in scope, it is visible in IntelliSense and can be called as if it were an ordinary instance method.
+Vše, co musí být schopné spustit tyto nebo podobné metody rozšíření, je, že jsou v oboru. Pokud je modul obsahující metodu rozšíření v oboru, je viditelný v technologii IntelliSense a může být volána, jako by šlo o běžnou metodu instance.
 
-Notice that when the methods are invoked, no argument is sent in for the first parameter. Parameter `aString` in the previous method definitions is bound to `example`, the instance of `String` that calls them. The compiler will use `example` as the argument sent to the first parameter.
+Všimněte si, že při vyvolání metod není v parametru pro první parametr odeslán žádný argument. Parametr `aString` v předchozích definicích metod je vázán na `example`, instance `String`, která je volá. Kompilátor použije `example` jako argument odeslaný do prvního parametru.
 
-If an extension method is called for an object that is set to `Nothing`, the extension method executes. This does not apply to ordinary instance methods. You can explicitly check for `Nothing` in the extension method.
+Pokud je volána metoda rozšíření pro objekt, který je nastaven na `Nothing`, spustí se metoda rozšíření. To se nevztahuje na běžné metody instance. Můžete explicitně vyhledat `Nothing` v metodě rozšíření.
 
-## <a name="types-that-can-be-extended"></a>Types that can be extended
+## <a name="types-that-can-be-extended"></a>Typy, které lze rozšířit
 
-You can define an extension method on most types that can be represented in a Visual Basic parameter list, including the following:
+Můžete definovat metodu rozšíření pro většinu typů, které mohou být reprezentovány v seznamu parametrů Visual Basic, včetně následujících:
 
-- Classes (reference types)
-- Structures (value types)
+- Třídy (typy odkazů)
+- Struktury (typy hodnot)
 - Rozhraní
-- Delegáty
-- ByRef and ByVal arguments
-- Generic method parameters
+- Delegáti
+- Argumenty ByRef a ByVal
+- Parametry obecné metody
 - Pole
 
-Because the first parameter specifies the data type that the extension method extends, it is required and cannot be optional. For that reason, `Optional` parameters and `ParamArray` parameters cannot be the first parameter in the parameter list.
+Vzhledem k tomu, že první parametr určuje datový typ, který rozšiřující metoda rozšiřuje, je požadován a nemůže být volitelný. Z tohoto důvodu parametry `Optional` parametrů a `ParamArray` parametrů nemohou být prvním parametrem v seznamu parametrů.
 
-Extension methods are not considered in late binding. In the following example, the statement `anObject.PrintMe()` raises a <xref:System.MissingMemberException> exception, the same exception you would see if the second `PrintMe` extension method definition were deleted.
+Metody rozšíření nejsou v pozdní vazbě zvažovány. V následujícím příkladu příkaz `anObject.PrintMe()` vyvolá výjimku <xref:System.MissingMemberException>, stejná výjimka, jakou byste viděli, pokud byla odstraněna druhá definice metody rozšíření `PrintMe`.
 
 [!code-vb[VbVbalrExtensionMethods#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExtensionMethods/VB/Class6.vb#9)]
 
 ## <a name="best-practices"></a>Osvědčené postupy
 
-Extension methods provide a convenient and powerful way to extend an existing type. However, to use them successfully, there are some points to consider. These considerations apply mainly to authors of class libraries, but they might affect any application that uses extension methods.
+Metody rozšíření poskytují pohodlný a účinný způsob, jak rozšířit existující typ. Pokud je však chcete úspěšně použít, je třeba vzít v úvahu několik bodů. Tyto požadavky platí hlavně pro autory knihoven tříd, ale mohou ovlivnit jakoukoli aplikaci, která používá metody rozšíření.
 
-Most generally, extension methods that you add to types that you do not own are more vulnerable than extension methods added to types that you control. A number of things can occur in classes you do not own that can interfere with your extension methods.
+Obecně platí, že metody rozšíření, které přidáte do typů, které nevlastníte, jsou zranitelnější než metody rozšíření přidané do typů, které ovládáte. Ve třídách, které nevlastníte, může dojít k několika akcím, které mohou narušovat vaše metody rozšíření.
 
-- If any accessible instance member exists that has a signature that is compatible with the arguments in the calling statement, with no narrowing conversions required from argument to parameter, the instance method will be used in preference to any extension method. Therefore, if an appropriate instance method is added to a class at some point, an existing extension member that you rely on may become inaccessible.
+- Pokud existuje nějaký přístupný člen instance, který má signaturu kompatibilní s argumenty v příkazu volání, bez zúžení převodů vyžadovaných v argumentu pro parametr, metoda instance bude použita v preference pro jakoukoliv metodu rozšíření. Proto pokud je příslušná metoda instance přidána do třídy v nějakém okamžiku, existující člen rozšíření, ke kterému jste se spoléhali, může být nepřístupný.
 
-- The author of an extension method cannot prevent other programmers from writing conflicting extension methods that may have precedence over the original extension.
+- Autor metody rozšíření nemůže zabránit jiným programátorům v zápisu konfliktních metod rozšíření, které mohou mít přednost před původním rozšířením.
 
-- You can improve robustness by putting extension methods in their own namespace. Consumers of your library can then include a namespace or exclude it, or select among namespaces, separately from the rest of the library.
+- Můžete zvýšit odolnost tím, že umístíte rozšiřující metody do svého vlastního oboru názvů. Příjemci vaší knihovny mohou potom zahrnout obor názvů nebo vyloučit z něj nebo vybrat mezi obory názvů odděleně od ostatních knihoven.
 
-- It may be safer to extend interfaces than it is to extend classes, especially if you do not own the interface or class. A change in an interface affects every class that implements it. Therefore, the author may be less likely to add or change methods in an interface. However, if a class implements two interfaces that have extension methods with the same signature, neither extension method is visible.
+- Může být bezpečnější pro rozšiřování rozhraní, než je rozšiřování tříd, zejména v případě, že nevlastníte rozhraní nebo třídu. Změna rozhraní má vliv na každou třídu, která ji implementuje. Proto může být autor méně pravděpodobný přidat nebo změnit metody v rozhraní. Nicméně pokud třída implementuje dvě rozhraní, která mají metody rozšíření se stejnou signaturou, není žádná metoda rozšíření viditelná.
 
-- Extend the most specific type you can. In a hierarchy of types, if you select a type from which many other types are derived, there are layers of possibilities for the introduction of instance methods or other extension methods that might interfere with yours.
+- Zvětšete konkrétní typ, který můžete. Pokud v hierarchii typů vyberete typ, ze kterého je odvozeno mnoho dalších typů, existují různé úrovně možností pro zavedení instančních metod nebo jiných rozšiřujících metod, které mohou kolidovat s vámi.
 
-## <a name="extension-methods-instance-methods-and-properties"></a>Extension methods, instance methods, and properties
+## <a name="extension-methods-instance-methods-and-properties"></a>Metody rozšíření, metody instance a vlastnosti
 
-When an in-scope instance method has a signature that is compatible with the arguments of a calling statement, the instance method is chosen in preference to any extension method. The instance method has precedence even if the extension method is a better match. In the following example, `ExampleClass` contains an instance method named `ExampleMethod` that has one parameter of type `Integer`. Extension method `ExampleMethod` extends `ExampleClass`, and has one parameter of type `Long`.
+Pokud má metoda instance v rámci oboru signaturu, která je kompatibilní s argumenty volání příkazu, je metoda instance zvolena v předvolbách libovolné metodě rozšíření. Metoda instance má přednost, i když je rozšiřující metoda lepší shoda. V následujícím příkladu `ExampleClass` obsahuje metodu instance s názvem `ExampleMethod`, která má jeden parametr typu `Integer`. Metoda rozšíření `ExampleMethod` rozšiřuje `ExampleClass`a má jeden parametr typu `Long`.
 
 [!code-vb[VbVbalrExtensionMethods#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExtensionMethods/VB/Class4.vb#4)]
 
-The first call to `ExampleMethod` in the following code calls the extension method, because `arg1` is `Long` and is compatible only with the `Long` parameter in the extension method. The second call to `ExampleMethod` has an `Integer` argument, `arg2`, and it calls the instance method.
+První volání `ExampleMethod` v následujícím kódu volá metodu rozšíření, protože `arg1` je `Long` a je kompatibilní pouze s parametrem `Long` v metodě rozšíření. Druhé volání `ExampleMethod` má argument `Integer`, `arg2`a volá metodu instance.
 
 [!code-vb[VbVbalrExtensionMethods#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExtensionMethods/VB/Class4.vb#5)]
 
-Now reverse the data types of the parameters in the two methods:
+Nyní obrátíte datové typy parametrů ze dvou metod:
 
 [!code-vb[VbVbalrExtensionMethods#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExtensionMethods/VB/Class5.vb#6)]
 
-This time the code in `Main` calls the instance method both times. This is because both `arg1` and `arg2` have a widening conversion to `Long`, and the instance method takes precedence over the extension method in both cases.
+Tentokrát kód v `Main` volá metodu instance obě časy. Důvodem je, že `arg1` i `arg2` mají rozšiřující převod na `Long`a metoda instance má v obou případech přednost před metodou rozšíření.
 
 [!code-vb[VbVbalrExtensionMethods#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExtensionMethods/VB/Class5.vb#7)]
 
-Therefore, an extension method cannot replace an existing instance method. However, when an extension method has the same name as an instance method but the signatures do not conflict, both methods can be accessed. For example, if class `ExampleClass` contains a method named `ExampleMethod` that takes no arguments, extension methods with the same name but different signatures are permitted, as shown in the following code.
+Proto metoda rozšíření nemůže nahradit existující metodu instance. Nicméně, pokud má metoda rozšíření stejný název jako metoda instance, ale signatury nekolidují, obě metody jsou k dispozici. Například pokud třída `ExampleClass` obsahuje metodu s názvem `ExampleMethod`, která nepřijímá žádné argumenty, metody rozšíření se stejným názvem, ale různé podpisy jsou povoleny, jak je znázorněno v následujícím kódu.
 
 [!code-vb[VbVbalrExtensionMethods#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExtensionMethods/VB/Module3.vb#8)]
 
-The output from this code is as follows:
+Výstup z tohoto kódu je následující:
 
 ```console
 Extension method
 Instance method
 ```
 
-The situation is simpler with properties: if an extension method has the same name as a property of the class it extends, the extension method is not visible and cannot be accessed.
+Tato situace je jednodušší s vlastnostmi: Pokud má rozšiřující metoda stejný název jako vlastnost třídy, kterou rozšiřuje, není metoda rozšíření viditelná a nelze k ní mít přístup.
 
-## <a name="extension-method-precedence"></a>Extension method precedence
+## <a name="extension-method-precedence"></a>Priorita metody rozšíření
 
-When two extension methods that have identical signatures are in scope and accessible, the one with higher precedence will be invoked. An extension method's precedence is based on the mechanism used to bring the method into scope. The following list shows the precedence hierarchy, from highest to lowest.
+V případě, že dvě metody rozšíření, které mají stejné signatury, jsou v oboru a přístupné, bude vyvolána ta s vyšší prioritou. Priorita metody rozšíření je založena na mechanismu, který je použit k převedení metody do rozsahu. Následující seznam zobrazuje hierarchii priority od nejvyšší po nejnižší.
 
-1. Extension methods defined inside the current module.
+1. Metody rozšíření definované v aktuálním modulu.
 
-2. Extension methods defined inside data types in the current namespace or any one of its parents, with child namespaces having higher precedence than parent namespaces.
+2. Rozšiřující metody definované uvnitř datových typů v aktuálním oboru názvů nebo kterémkoli z jeho nadřazených objektů s podřízenými obory názvů s vyšší prioritou než nadřazené obory názvů.
 
-3. Extension methods defined inside any type imports in the current file.
+3. Rozšiřující metody definované uvnitř libovolných importů typu v aktuálním souboru.
 
-4. Extension methods defined inside any namespace imports in the current file.
+4. Rozšiřující metody definované uvnitř libovolných importů oboru názvů v aktuálním souboru.
 
-5. Extension methods defined inside any project-level type imports.
+5. Rozšiřující metody definované uvnitř všech importů typu na úrovni projektu.
 
-6. Extension methods defined inside any project-level namespace imports.
+6. Rozšiřující metody definované uvnitř libovolných importů oboru názvů na úrovni projektu.
 
-If precedence does not resolve the ambiguity, you can use the fully qualified name to specify the method that you are calling. If the `Print` method in the earlier example is defined in a module named `StringExtensions`, the fully qualified name is `StringExtensions.Print(example)` instead of `example.Print()`.
+Pokud priorita nejednoznačnosti nevyřeší, můžete použít plně kvalifikovaný název k určení volané metody. Je-li metoda `Print` v předchozím příkladu definována v modulu s názvem `StringExtensions`, je plně kvalifikovaný název `StringExtensions.Print(example)` místo `example.Print()`.
 
 ## <a name="see-also"></a>Viz také:
 
@@ -179,5 +179,5 @@ If precedence does not resolve the ambiguity, you can use the fully qualified na
 - [Parametry a argumenty procedury](procedure-parameters-and-arguments.md)
 - [Nepovinné parametry](optional-parameters.md)
 - [Pole parametrů](parameter-arrays.md)
-- [Attributes overview](../../concepts/attributes/index.md)
-- [Scope in Visual Basic](../declared-elements/scope.md)
+- [Přehled atributů](../../concepts/attributes/index.md)
+- [Obor v Visual Basic](../declared-elements/scope.md)

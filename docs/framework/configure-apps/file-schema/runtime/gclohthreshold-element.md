@@ -1,5 +1,5 @@
 ---
-title: GCLOHThreshold element
+title: Element GCLOHThreshold
 ms.date: 11/20/2019
 helpviewer_keywords:
 - GCLOHThreshold element
@@ -11,13 +11,13 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74451218"
 ---
-# <a name="gclohthreshold-element"></a>GCLOHThreshold element
+# <a name="gclohthreshold-element"></a>Element GCLOHThreshold
 
-Specifies the threshold size, in bytes, that causes the garbage collector to put objects on the large object heap (LOH).
+Určuje velikost prahové hodnoty v bajtech, která způsobí, že systém uvolňování paměti vloží objekty do haldy velkých objektů (LOH).
 
-[\<configuration>](../configuration-element.md)\
-&nbsp;&nbsp;[\<runtime>](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;\<GCLOHThreshold>
+[konfigurační >\<](../configuration-element.md)\
+&nbsp;&nbsp;[\<runtime >](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;\<GCLOHThreshold >
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -30,17 +30,17 @@ Specifies the threshold size, in bytes, that causes the garbage collector to put
 
 |Atribut|Popis|
 |---------------|-----------------|
-|`enabled`|Požadovaný atribut.<br /><br />Specifies the threshold size that causes objects to go on the large object heap.|
+|`enabled`|Požadovaný atribut.<br /><br />Určuje velikost prahové hodnoty, která způsobí, že objekty přejdou na haldu velkých objektů.|
 
-### <a name="enabled-attribute"></a>enabled attribute
+### <a name="enabled-attribute"></a>povolený atribut
 
 |Hodnota|Popis|
 |-----------|-----------------|
-|`nnnn`|The threshold size, in bytes, that causes objects to go on the large object heap.|
+|`nnnn`|Velikost prahové hodnoty (v bajtech), která způsobí, že objekty přejdou na haldu velkých objektů.|
 
 ## <a name="child-elements"></a>Podřízené prvky
 
-Žádné
+Žádné.
 
 ## <a name="parent-elements"></a>Nadřazené prvky
 
@@ -51,11 +51,11 @@ Specifies the threshold size, in bytes, that causes the garbage collector to put
 
 ## <a name="remarks"></a>Poznámky
 
-This setting was introduced in .NET Framework 4.8.
+Toto nastavení bylo zavedeno v .NET Framework 4,8.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Run-time settings schema](index.md)
+- [Schéma nastavení běhu](index.md)
 - [Schéma konfiguračního souboru](../index.md)
-- [Fundamentals of garbage collection](../../../../standard/garbage-collection/fundamentals.md)
-- [NET Core run-time config options for GC](../../../../core/run-time-config/garbage-collector.md)
+- [Základní informace o uvolňování paměti](../../../../standard/garbage-collection/fundamentals.md)
+- [Možnosti konfigurace NET Core Runtime pro GC](../../../../core/run-time-config/garbage-collector.md)

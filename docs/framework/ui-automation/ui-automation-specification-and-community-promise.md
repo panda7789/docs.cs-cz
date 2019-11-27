@@ -10,9 +10,9 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74441193"
 ---
 # <a name="ui-automation-specification-and-community-promise"></a>Specifikace automatizace uživatelského rozhraní a příslib komunitě
-UI Automation provides programmatic access to most user interface (UI) elements on the desktop, enabling assistive technology products such as screen readers to provide information about the UI to end users and to manipulate the UI by means other than standard input.  
+Automatizace uživatelského rozhraní poskytuje programový přístup k většině prvků uživatelského rozhraní (UI) na ploše a umožňuje produktům asistenční technologie, jako jsou čtečky obrazovky, poskytovat informace o uživatelském rozhraní pro koncové uživatele a manipulaci s uživatelským rozhraním jiným způsobem než standardním vstupem. .  
   
 ## <a name="see-also"></a>Viz také:
 
-- [UI Automation Specification](https://developer.microsoft.com/windows/accessible-apps)
-- [UI Automation Community Promise](https://developer.microsoft.com/windows/accessible-apps)
+- [Specifikace automatizace uživatelského rozhraní](https://developer.microsoft.com/windows/accessible-apps)
+- [Příslib komunity automatizace uživatelského rozhraní](https://developer.microsoft.com/windows/accessible-apps)

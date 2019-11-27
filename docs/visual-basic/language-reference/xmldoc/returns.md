@@ -12,8 +12,8 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352247"
 ---
-# <a name="returns-visual-basic"></a>\<returns> (Visual Basic)
-Specifies the return value of the property or function.  
+# <a name="returns-visual-basic"></a>\<vrátí > (Visual Basic).
+Určuje návratovou hodnotu vlastnosti nebo funkce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,15 +23,15 @@ Specifies the return value of the property or function.
   
 ## <a name="parameters"></a>Parametry  
  `description`  
- A description of the return value.  
+ Popis návratové hodnoty.  
   
 ## <a name="remarks"></a>Poznámky  
- Use the `<returns>` tag in the comment for a method declaration to describe the return value.  
+ Použijte značku `<returns>` v komentáři pro deklaraci metody k popisu návratové hodnoty.  
   
- Compile with [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) to process documentation comments to a file.  
+ Zkompilujte s [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
   
 ## <a name="example"></a>Příklad  
- This example uses the `<returns>` tag to explain what the `DoesRecordExist` function returns.  
+ V tomto příkladu se používá značka `<returns>` k vysvětlení, co funkce `DoesRecordExist` vrací.  
   
  [!code-vb[VbVbcnXmlDocComments#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#6)]  
   

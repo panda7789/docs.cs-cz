@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450021"
 ---
 # <a name="imetadataimportenumproperties-method"></a>IMetaDataImport::EnumProperties – metoda
-Enumerates PropertyDef tokens representing the properties of the type referenced by the specified TypeDef token.  
+Vytvoří výčet tokenů PropertyDef představujících vlastnosti typu, na který odkazuje zadaný token TypeDef.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,35 +39,35 @@ HRESULT EnumProperties (
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [in, out] A pointer to the enumerator. This must be NULL for the first call of this method.  
+ [in, out] Ukazatel na enumerátor. Pro první volání této metody musí mít hodnotu NULL.  
   
  `td`  
- [in] A TypeDef token representing the type with properties to enumerate.  
+ pro Token TypeDef představující typ s vlastnostmi k zobrazení výčtu.  
   
  `rProperties`  
- [out] The array used to store the PropertyDef tokens.  
+ mimo Pole, které se používá k uložení tokenů PropertyDef.  
   
  `cMax`  
- [in] The maximum size of the `rProperties` array.  
+ pro Maximální velikost `rProperties` pole  
   
  `pcProperties`  
- [out] The number of PropertyDef tokens returned in `rProperties`.  
+ mimo Počet tokenů PropertyDef vrácených v `rProperties`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumProperties` returned successfully.|  
-|`S_FALSE`|There are no tokens to enumerate. In that case, `pcProperties` is zero.|  
+|`S_OK`|`EnumProperties` byla úspěšně vrácena.|  
+|`S_FALSE`|Neexistují žádné tokeny k vytvoření výčtu. V takovém případě je `pcProperties` nula.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

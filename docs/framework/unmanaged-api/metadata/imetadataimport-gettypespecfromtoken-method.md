@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436703"
 ---
 # <a name="imetadataimportgettypespecfromtoken-method"></a>IMetaDataImport::GetTypeSpecFromToken – metoda
-Gets the binary metadata signature of the type specification represented by the specified token.  
+Získá binární podpis metadat specifikace typu reprezentované zadaným tokenem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,25 +37,25 @@ HRESULT GetTypeSpecFromToken (
   
 ## <a name="parameters"></a>Parametry  
  `typespec`  
- [in] The TypeSpec token associated with the requested metadata signature.  
+ pro Token token TypeSpec přidružený k požadované signatuře metadat  
   
  `ppvSig`  
- [out] A pointer to the binary metadata signature.  
+ mimo Ukazatel na binární podpis metadat.  
   
  `pcbSig`  
- [out] The size, in bytes, of the metadata signature.  
+ mimo Velikost podpisu metadat v bajtech.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- An HRESULT that indicates success or failure. Failures can be tested with the FAILED macro.  
+ HRESULT, který indikuje úspěch nebo neúspěch. Selhání lze otestovat pomocí makra, které SELHALo.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

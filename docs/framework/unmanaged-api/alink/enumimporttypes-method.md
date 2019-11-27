@@ -24,7 +24,7 @@ ms.locfileid: "74448731"
 ---
 # <a name="enumimporttypes-method"></a>EnumImportTypes – metoda
 
-Enumerates each type in each scope.
+Vytvoří výčet každého typu v jednotlivých oborech.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -40,27 +40,27 @@ HRESULT EnumImportTypes(
 ## <a name="parameters"></a>Parametry
 
 `hEnum`\
-Handle for enumerator.
+Popisovač pro enumerátor
 
 `dwMax`\
-Maximum number of types to retrieve.
+Maximální počet typů, které se mají načíst
 
 `aTypeDefs`\
-Receives type tokens, not to exceed `dwMax`.
+Přijímá tokeny typu, nepřekročí `dwMax`.
 
 `pdwCount`\
-Receives actual number of type in `aTypeDefs`.
+Přijímá skutečný počet typů v `aTypeDefs`.
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Returns S_OK if the method succeeds.
+Vrátí S_OK, pokud je metoda úspěšná.
 
 ## <a name="requirements"></a>Požadavky
 
-Requires alink.h
+Vyžaduje ALink. h
 
 ## <a name="see-also"></a>Viz také:
 
 - [IALink – rozhraní](ialink-interface.md)
 - [IALink2 – rozhraní](ialink2-interface.md)
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)

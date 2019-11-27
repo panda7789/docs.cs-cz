@@ -1,5 +1,5 @@
 ---
-title: '&amp;= Operator'
+title: '&amp;= – operátor'
 ms.date: 07/20/2015
 f1_keywords:
 - vb.&=
@@ -17,8 +17,8 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350269"
 ---
-# <a name="amp-operator-visual-basic"></a>&amp;= Operator (Visual Basic)
-Concatenates a `String` expression to a `String` variable or property and assigns the result to the variable or property.  
+# <a name="amp-operator-visual-basic"></a>&amp;= – operátor (Visual Basic)
+Zřetězí výraz `String` na `String` proměnnou nebo vlastnost a přiřadí výsledek proměnné nebo vlastnosti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,28 +28,28 @@ variableorproperty &= expression
   
 ## <a name="parts"></a>Součásti  
  `variableorproperty`  
- Požadováno. Any `String` variable or property.  
+ Požadováno. Jakákoli `String` proměnnou nebo vlastnost.  
   
  `expression`  
- Požadováno. Any `String` expression.  
+ Požadováno. Libovolný výraz `String`.  
   
 ## <a name="remarks"></a>Poznámky  
- The element on the left side of the `&=` operator can be a simple scalar variable, a property, or an element of an array. The variable or property cannot be [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md). The `&=` operator concatenates the `String` expression on its right to the `String` variable or property on its left, and assigns the result to the variable or property on its left.  
+ Element na levé straně operátoru `&=` může být jednoduchá skalární proměnná, vlastnost nebo prvek pole. Proměnná nebo vlastnost nemůže být [jen pro čtení](../../../visual-basic/language-reference/modifiers/readonly.md). Operátor `&=` zřetězí výraz `String` na základě jeho práva na `String` proměnnou nebo vlastnost nalevo a přiřadí výsledek proměnné nebo vlastnosti na levé straně.  
   
 ## <a name="overloading"></a>Přetížení  
- The [& Operator](../../../visual-basic/language-reference/operators/concatenation-operator.md) can be *overloaded*, which means that a class or structure can redefine its behavior when an operand has the type of that class or structure. Overloading the `&` operator affects the behavior of the `&=` operator. If your code uses `&=` on a class or structure that overloads `&`, be sure you understand its redefined behavior. For more information, see [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ [Operátor &](../../../visual-basic/language-reference/operators/concatenation-operator.md) lze přetížit, což znamená, že třída nebo struktura může předefinovat své *chování, pokud*má operand typ této třídy nebo struktury. Přetížení operátoru `&` má vliv na chování operátoru `&=`. Pokud váš kód používá `&=` ve třídě nebo struktuře, která přetěžuje `&`, ujistěte se, že rozumíte jeho předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Příklad  
- The following example uses the `&=` operator to concatenate two `String` variables and assign the result to the first variable.  
+ Následující příklad používá operátor `&=` k zřetězení dvou proměnných `String` a přiřazení výsledku první proměnné.  
   
  [!code-vb[VbVbalrOperators#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#3)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Operátor &](../../../visual-basic/language-reference/operators/concatenation-operator.md)
-- [Operátor +=](../../../visual-basic/language-reference/operators/addition-assignment-operator.md)
+- [& – operátor](../../../visual-basic/language-reference/operators/concatenation-operator.md)
+- [+= – operátor](../../../visual-basic/language-reference/operators/addition-assignment-operator.md)
 - [Operátory přiřazení](../../../visual-basic/language-reference/operators/assignment-operators.md)
-- [Operátory řetězení](../../../visual-basic/language-reference/operators/concatenation-operators.md)
-- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Operátory zřetězení](../../../visual-basic/language-reference/operators/concatenation-operators.md)
+- [Priorita operátorů v Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
 - [Příkazy](../../../visual-basic/programming-guide/language-features/statements.md)

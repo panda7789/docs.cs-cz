@@ -20,31 +20,31 @@ ms.locfileid: "74351265"
 ---
 # <a name="shadows-visual-basic"></a>Shadows (Visual Basic)
 
-Specifies that a declared programming element redeclares and hides an identically named element, or set of overloaded elements, in a base class.
+Určuje, že deklarovaný programový prvek znovu deklaruje a skryje identicky pojmenovaný element nebo množinu přetížených prvků v základní třídě.
 
 ## <a name="remarks"></a>Poznámky
 
-The main purpose of shadowing (which is also known as *hiding by name*) is to preserve the definition of your class members. The base class might undergo a change that creates an element with the same name as one you have already defined. If this happens, the `Shadows` modifier forces references through your class to be resolved to the member you defined, instead of to the new base class element.
+Hlavní účel vytváření stínových kopií (který se také označuje jako *skrytí podle názvu*) je zachování definice členů vaší třídy. Základní třída se může podrobit změně, která vytvoří element se stejným názvem jako ten, který jste už definovali. Pokud k tomu dojde, modifikátor `Shadows` vynutí, aby byly odkazy prostřednictvím vaší třídy přeloženy na člen, který jste definovali, místo na nový prvek základní třídy.
 
-Both shadowing and overriding redefine an inherited element, but there are significant differences between the two approaches. For more information, see [Shadowing in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).
+Jak Stínová, tak i přepsání předefinují zděděný element, ale existují významné rozdíly mezi těmito dvěma přístupy. Další informace najdete v tématu [vytváření stínových kopií v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).
 
-## <a name="rules"></a>Rules
+## <a name="rules"></a>Pravidla
 
-- **Declaration Context.** You can use `Shadows` only at class level. This means the declaration context for a `Shadows` element must be a class, and cannot be a source file, namespace, interface, module, structure, or procedure.
+- **Kontext deklarace** `Shadows` lze použít pouze na úrovni třídy. To znamená, že kontext deklarace pro prvek `Shadows` musí být třída a nemůže se jednat o zdrojový soubor, obor názvů, rozhraní, modul, strukturu nebo proceduru.
 
-  You can declare only one shadowing element in a single declaration statement.
+  V jednom příkazu deklarace lze deklarovat pouze jeden element shadowing.
 
-- **Combined Modifiers.** You cannot specify `Shadows` together with `Overloads`, `Overrides`, or `Static` in the same declaration.
+- **Kombinované modifikátory.** V rámci stejné deklarace nelze zadat `Shadows` společně s `Overloads`, `Overrides`nebo `Static`.
 
-- **Element Types.** You can shadow any kind of declared element with any other kind. If you shadow a property or procedure with another property or procedure, the parameters and the return type do not have to match those in the base class property or procedure.
+- **Typy prvků.** Můžete vystínovat jakýkoliv druh deklarovaného prvku s jakýmkoli jiným druhem. Pokud nastínete vlastnost nebo proceduru pomocí jiné vlastnosti nebo procedury, parametry a návratový typ nemusejí odpovídat hodnotám ve vlastnosti nebo proceduře základní třídy.
 
-- **Accessing.** The shadowed element in the base class is normally unavailable from within the derived class that shadows it. However, the following considerations apply.
+- **Přístup k.** Stínovaný element v základní třídě není obvykle k dispozici v odvozené třídě, která ho nastínuje. Platí však následující požadavky.
 
-  - If the shadowing element is not accessible from the code referring to it, the reference is resolved to the shadowed element. For example, if a `Private` element shadows a base class element, code that does not have permission to access the `Private` element accesses the base class element instead.
+  - Pokud není stínový element přístupný z kódu, který se na něj odkazuje, odkaz je přeložen na stínovaný element. Například pokud `Private` element stínování elementu základní třídy, kód, který nemá oprávnění pro přístup k `Private` elementu, přistupuje k elementu základní třídy místo toho.
 
-  - If you shadow an element, you can still access the shadowed element through an object declared with the type of the base class. You can also access it through `MyBase`.
+  - Pokud vytvoříte stín elementu, můžete ke stínovaný element přistupovat i přes objekt deklarovaný s typem základní třídy. K němu taky můžete přistupovat prostřednictvím `MyBase`.
 
-The `Shadows` modifier can be used in these contexts:
+V těchto kontextech lze použít modifikátor `Shadows`:
 
 - [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)
 
@@ -82,4 +82,4 @@ The `Shadows` modifier can be used in these contexts:
 - [Overloads](../../../visual-basic/language-reference/modifiers/overloads.md)
 - [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md)
 - [Overrides](../../../visual-basic/language-reference/modifiers/overrides.md)
-- [Shadowing in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
+- [Stínování v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)

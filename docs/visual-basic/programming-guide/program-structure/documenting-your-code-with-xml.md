@@ -15,29 +15,29 @@ ms.locfileid: "74347445"
 ---
 # <a name="documenting-your-code-with-xml-visual-basic"></a>Dokumentace kódu s XML (Visual Basic)
 
-In Visual Basic, you can document your code using XML
+V Visual Basic můžete svůj kód zdokumentovat pomocí XML
 
 ## <a name="xml-documentation-comments"></a>Dokumentační komentáře XML
 
-Visual Basic provides an easy way to automatically create XML documentation for projects. You can automatically generate an XML skeleton for your types and members, and then provide summaries, descriptive documentation for each parameter, and other remarks. With the appropriate setup, the XML documentation is automatically emitted into an XML file with the same name as your project and the .xml extension. For more information, see [-doc](../../../visual-basic/reference/command-line-compiler/doc.md).
+Visual Basic poskytuje snadný způsob, jak automaticky vytvořit dokumentaci XML pro projekty. Můžete automaticky vygenerovat kostru XML pro vaše typy a členy a pak poskytnout souhrny, popisnou dokumentaci pro každý parametr a další poznámky. S příslušným nastavením se dokumentace XML automaticky generuje do souboru XML se stejným názvem, jaký má váš projekt a příponu. XML. Další informace najdete v [dokumentu-doc](../../../visual-basic/reference/command-line-compiler/doc.md).
 
-The XML file can be consumed or otherwise manipulated as XML. This file is located in the same directory as the output .exe or .dll file of your project.
+Soubor XML lze spotřebovat nebo jinak manipulovat jako XML. Tento soubor je umístěn ve stejném adresáři jako výstupní soubor. exe nebo. dll vašeho projektu.
 
-XML documentation starts with `'''`. The processing of these comments has some restrictions:
+Dokumentace XML začíná `'''`. Zpracování těchto komentářů má určitá omezení:
 
-- The documentation must be well-formed XML. If the XML is not well formed, a warning is generated and the documentation file contains a comment saying that an error was encountered.
+- Dokumentace musí být ve správném formátu XML. Pokud XML není ve správném formátu, je vygenerováno upozornění a soubor dokumentace obsahuje komentář, který říká, že došlo k chybě.
 
-- Developers are free to create their own set of tags. There is a recommended set of tags (see "Related Sections" in this topic). Some of the recommended tags have special meanings:
+- Vývojářům je zdarma vytvořit vlastní sadu značek. Je doporučená sada značek (viz část související části v tomto tématu). Některé z doporučených značek mají zvláštní význam:
 
-  - The \<param> tag is used to describe parameters. If used, the compiler will verify that the parameter exists and that all parameters are described in the documentation. If the verification fails, the compiler issues a warning.
+  - K popisu parametrů se používá značka \<param >. Pokud je použit, kompilátor ověří, zda existuje parametr a zda jsou všechny parametry popsány v dokumentaci. Pokud se ověření nepovede, kompilátor vydá upozornění.
 
-  - The `cref` attribute can be attached to any tag to provide a reference to a code element. The compiler verifies that this code element exists. If the verification fails, the compiler issues a warning. The compiler also respects any `Imports` statements when looking for a type described in the `cref` attribute.
+  - Atribut `cref` lze připojit k libovolné značce k poskytnutí odkazu na prvek kódu. Kompilátor ověřuje, zda tento prvek kódu existuje. Pokud se ověření nepovede, kompilátor vydá upozornění. Kompilátor také respektuje jakékoli `Imports` příkazy při hledání typu popsaného v atributu `cref`.
 
-  - The \<summary> tag is used by IntelliSense in Visual Studio to display additional information about a type or member.
+  - Inteligentní > Značka \<je používána technologií IntelliSense v aplikaci Visual Studio k zobrazení dalších informací o typu nebo členu.
 
 ## <a name="related-sections"></a>Související oddíly
 
-For details on creating an XML file with documentation comments, see the following topics:
+Podrobné informace o vytvoření souboru XML s dokumentačními komentáři naleznete v následujících tématech:
 
 - [-doc](../../../visual-basic/reference/command-line-compiler/doc.md)
 
@@ -51,5 +51,5 @@ For details on creating an XML file with documentation comments, see the followi
 
 ## <a name="see-also"></a>Viz také:
 
-- [Developing Applications with Visual Basic](../../../visual-basic/developing-apps/index.md)
-- [Visual Basic Programming Guide](../../../visual-basic/programming-guide/index.md)
+- [Vývoj aplikací pomocí Visual Basic](../../../visual-basic/developing-apps/index.md)
+- [Průvodce programováním Visual Basic](../../../visual-basic/programming-guide/index.md)

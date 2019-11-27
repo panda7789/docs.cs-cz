@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74435988"
 ---
 # <a name="icorprofilermoduleenumskip-method"></a>ICorProfilerModuleEnum::Skip – metoda
-Advances the enumerator's cursor from its current position so that the specified number of elements are skipped.  
+Posune kurzor čítače výčtu z aktuální pozice tak, aby byl zadaný počet prvků vynechán.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,27 +33,27 @@ HRESULT Skip([in] ULONG celt);
   
 ## <a name="parameters"></a>Parametry  
  `celt`  
- [in] The number of elements to be skipped.  
+ pro Počet prvků, které mají být přeskočeny.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`celt` elements were skipped.|  
-|S_FALSE|Fewer than `celt` elements were skipped, which indicates that there are no more elements.|  
+|S_OK|prvky `celt` byly přeskočeny.|  
+|S_FALSE|Méně než `celt` prvky byly přeskočeny, což znamená, že žádné další prvky nejsou k dispozici.|  
   
 ## <a name="remarks"></a>Poznámky  
- The new position of this enumerator's cursor is (current position) + `celt`.  
+ Nová pozice kurzoru tohoto enumerátoru je (aktuální pozice) + `celt`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

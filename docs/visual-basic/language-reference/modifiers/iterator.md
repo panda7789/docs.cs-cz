@@ -14,41 +14,41 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351527"
 ---
 # <a name="iterator-visual-basic"></a>Iterátor (Visual Basic)
-Specifies that a function or `Get` accessor is an iterator.  
+Určuje, že se jedná o iterátor funkce nebo `Get` přístupového objektu.  
   
 ## <a name="remarks"></a>Poznámky  
- An *iterator* performs a custom iteration over a collection. An iterator uses the [Yield](../../../visual-basic/language-reference/statements/yield-statement.md) statement to return each element in the collection one at a time. When a `Yield` statement is reached, the current location in code is retained. Provádění je restartováno ze zmíněného umístění pokaždé, když je zavolána funkce iterátoru.  
+ *Iterátor* provádí vlastní iteraci přes kolekci. Iterátor používá příkaz [yield](../../../visual-basic/language-reference/statements/yield-statement.md) k vrácení každého prvku v kolekci v jednom okamžiku. Když je dosaženo příkazu `Yield`, je zachováno aktuální umístění v kódu. Provádění je restartováno ze zmíněného umístění pokaždé, když je zavolána funkce iterátoru.  
   
- An iterator can be implemented as a function or as a `Get` accessor of a property definition. The `Iterator` modifier appears in the declaration of the iterator function or `Get` accessor.  
+ Iterátor lze implementovat jako funkci nebo jako přistupující objekt `Get` definice vlastnosti. V deklaraci funkce iterátoru nebo přístupového objektu `Get` se objeví modifikátor `Iterator`.  
   
- You call an iterator from client code by using a [For Each...Next Statement](../../../visual-basic/language-reference/statements/for-each-next-statement.md).  
+ Můžete zavolat iterátor z klientského kódu s použitím [pro každý... Další příkaz](../../../visual-basic/language-reference/statements/for-each-next-statement.md).  
   
- The return type of an iterator function or `Get` accessor can be <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator>, or <xref:System.Collections.Generic.IEnumerator%601>.  
+ Návratový typ funkce iterátoru nebo přístupového objektu `Get` může být <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator>nebo <xref:System.Collections.Generic.IEnumerator%601>.  
   
- An iterator cannot have any `ByRef` parameters.  
+ Iterátor nemůže mít žádné parametry `ByRef`.  
   
- An iterator cannot occur in an event, instance constructor, static constructor, or static destructor.  
+ Iterátor nemůže být v události, konstruktoru instance, statickém konstruktoru nebo statickém destruktoru.  
   
- An iterator can be an anonymous function. For more information, see [Iterators](../../programming-guide/concepts/iterators.md).  
+ Iterátor může být anonymní funkce. Další informace najdete v tématu [iterátory](../../programming-guide/concepts/iterators.md).  
   
-## <a name="usage"></a>Použití  
- The `Iterator` modifier can be used in these contexts:  
+## <a name="usage"></a>Využití  
+ V těchto kontextech lze použít modifikátor `Iterator`:  
   
 - [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
   
 - [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)  
   
 ## <a name="example"></a>Příklad  
- The following example demonstrates an iterator function. The iterator function has a `Yield` statement that is inside a [For…Next](../../../visual-basic/language-reference/statements/for-next-statement.md) loop. Each iteration of the [For Each](../../../visual-basic/language-reference/statements/for-each-next-statement.md) statement body in `Main` creates a call to the `Power` iterator function. Each call to the iterator function proceeds to the next execution of the `Yield` statement, which occurs during the next iteration of the `For…Next` loop.  
+ Následující příklad ukazuje funkci iterátoru. Funkce iterátoru má příkaz `Yield`, který je uvnitř [... Další](../../../visual-basic/language-reference/statements/for-next-statement.md) smyčka Každá iterace [pro každý](../../../visual-basic/language-reference/statements/for-each-next-statement.md) text příkazu v `Main` vytvoří volání funkce `Power` iterátoru. Každé volání funkce iterátoru pokračuje na další provedení příkazu `Yield`, ke kterému dojde během další iterace `For…Next` smyčky.  
   
  [!code-vb[VbVbalrStatements#98](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class2.vb#98)]  
   
 ## <a name="example"></a>Příklad  
- The following example demonstrates a `Get` accessor that is an iterator. The `Iterator` modifier is in the property declaration.  
+ Následující příklad ukazuje přistupující objekt `Get`, který je iterátorem. Modifikátor `Iterator` je v deklaraci vlastnosti.  
   
  [!code-vb[VbVbalrStatements#99](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class2.vb#99)]  
   
- For additional examples, see [Iterators](../../programming-guide/concepts/iterators.md).  
+ Další příklady naleznete v tématu [iterátory](../../programming-guide/concepts/iterators.md).  
   
 ## <a name="see-also"></a>Viz také:
 

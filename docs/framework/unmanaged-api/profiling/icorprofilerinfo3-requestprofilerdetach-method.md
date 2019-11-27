@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449621"
 ---
 # <a name="icorprofilerinfo3requestprofilerdetach-method"></a>ICorProfilerInfo3::RequestProfilerDetach – metoda
-Instructs the runtime to detach the profiler.  
+Instruuje modul runtime o odpojení profileru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,35 +34,35 @@ HRESULT RequestProfilerDetach(
   
 ## <a name="parameters"></a>Parametry  
  `dwExpectedCompletionMilliseconds`  
- [in] The length of time, in milliseconds, the common language runtime (CLR) should wait before checking to see whether it is safe to unload the profiler.  
+ pro Doba (v milisekundách), kterou modul CLR (Common Language Runtime) musí čekat před kontrolou, aby se zobrazilo, zda je bezpečné uvolnit Profiler.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|The detach request is valid, and the detach procedure is now continuing on another thread. When the detach is fully complete, a `ProfilerDetachSucceeded` event is issued.|  
-|E_ CORPROF_E_CALLBACK3_REQUIRED|The profiler failed an [IUnknown::QueryInterface](https://go.microsoft.com/fwlink/?LinkID=144867) attempt for the [ICorProfilerCallback3](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-interface.md) interface, which it must implement to support the detach operation. Detach was not attempted.|  
-|CORPROF_E_IMMUTABLE_FLAGS_SET|Detachment is impossible because the profiler set immutable flags at startup. Detachment was not attempted; the profiler is still fully attached.|  
-|CORPROF_E_IRREVERSIBLE_INSTRUMENTATION_PRESENT|Detachment is impossible because the profiler used instrumented Microsoft intermediate language (MSIL) code, or inserted `enter`/`leave` hooks. Detachment was not attempted; the profiler is still fully attached.<br /><br /> **Note** Instrumented MSIL is code is code that is provided by the profiler using the [SetILFunctionBody](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilfunctionbody-method.md) method.|  
-|CORPROF_E_RUNTIME_UNINITIALIZED|The runtime has not been initialized yet in the managed application. (That is, the runtime has not been fully loaded.) This error code may be returned when detachment is requested inside the profiler callback's [ICorProfilerCallback::Initialize](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md) method.|  
-|CORPROF_E_UNSUPPORTED_CALL_SEQUENCE|`RequestProfilerDetach` was called at an unsupported time. This occurs if the method is called on a managed thread but not from within an [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) method or from within an [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) method that cannot tolerate a garbage collection. For more information, see [CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](../../../../docs/framework/unmanaged-api/profiling/corprof-e-unsupported-call-sequence-hresult.md).|  
+|S_OK|Požadavek na odpojení je platný a Postup odpojení nyní pokračuje v jiném vlákně. Po úplném dokončení odpojení dojde k vystavení `ProfilerDetachSucceeded` události.|  
+|E_ CORPROF_E_CALLBACK3_REQUIRED|Profiler selhal při pokusu [IUnknown:: QueryInterface](https://go.microsoft.com/fwlink/?LinkID=144867) pro rozhraní [ICorProfilerCallback3](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-interface.md) , které musí implementovat pro podporu operace odpojení. Nedošlo k pokusu o odpojení.|  
+|CORPROF_E_IMMUTABLE_FLAGS_SET|Odpojení není možné, protože při spuštění sada profileru nastavila neměnné příznaky. Nedošlo k pokusu o odpojení; Profiler je stále plně připojený.|  
+|CORPROF_E_IRREVERSIBLE_INSTRUMENTATION_PRESENT|Odpojení není možné, protože Profiler použil instrumentované kód jazyka MSIL (Microsoft Intermediate Language) nebo vložený `enter`/`leave` vidlice. Nedošlo k pokusu o odpojení; Profiler je stále plně připojený.<br /><br /> **Poznámka:** Instrumentovaná MSIL je kód, který poskytuje Profiler pomocí metody [SetILFunctionBody –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilfunctionbody-method.md) .|  
+|CORPROF_E_RUNTIME_UNINITIALIZED|Modul runtime ještě není ve spravované aplikaci inicializovaný. (To znamená, že modul runtime nebyl zcela načten.) Tento kód chyby může být vrácen v případě, že je vyžadováno odpojení v rámci metody [ICorProfilerCallback:: Initialize](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md) zpětného volání profileru.|  
+|CORPROF_E_UNSUPPORTED_CALL_SEQUENCE|`RequestProfilerDetach` byla volána v nepodporovaném čase. K tomu dochází, pokud je metoda volána ve spravovaném vlákně, ale ne v rámci metody [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) nebo v rámci metody [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) , která nemůže tolerovat uvolňování paměti. Další informace najdete v tématu [CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](../../../../docs/framework/unmanaged-api/profiling/corprof-e-unsupported-call-sequence-hresult.md).|  
   
 ## <a name="remarks"></a>Poznámky  
- During the detach procedure, the detach thread (the thread created specifically for detaching the profiler) occasionally checks whether all threads have exited the profiler’s code. The profiler should provide an estimate of how long this should take through the `dwExpectedCompletionMilliseconds` parameter. A good value to use is the typical amount of time the profiler spends inside any given `ICorProfilerCallback*` method; this value should not be less than half of the maximum amount of time the profiler expects to spend.  
+ Během procesu odpojení se vlákno odpojení (vlákno vytvořené speciálně pro odpojení profileru) občas kontroluje, jestli všechna vlákna ukončila kód profileru. Profiler by měl poskytnout odhad toho, jak dlouho by měl tento parametr `dwExpectedCompletionMilliseconds` trvat. Dobrá hodnota, která se má použít, je obvyklá doba, kterou Profiler stráví v rámci určité `ICorProfilerCallback*` metody; Tato hodnota by neměla být menší než polovina maximálního množství času, po který profiler očekává útratu.  
   
- The detach thread uses `dwExpectedCompletionMilliseconds` to decide how long to sleep before checking whether profiler callback code has been popped off all stacks. Although the details of the following algorithm may change in future releases of the CLR, it illustrates one way `dwExpectedCompletionMilliseconds` can be used when determining when it is safe to unload the profiler. The detach thread first sleeps for `dwExpectedCompletionMilliseconds` milliseconds. If, after awakening from the sleep, the CLR finds that profiler callback code is still present, the detach thread sleeps again, this time for two times `dwExpectedCompletionMilliseconds` milliseconds. If, after awakening from this second sleep, the detach thread finds that profiler callback code is still present, it sleeps for 10 minutes before checking again. The detach thread continues to recheck every 10 minutes.  
+ Vlákno odpojení používá `dwExpectedCompletionMilliseconds` k rozhodnutí, jak dlouho se má přejít do režimu spánku před kontrolou, zda byl kód zpětného volání profileru vyjmut ze všech zásobníků. I když se podrobnosti o následujícím algoritmu mohou v budoucích vydáních modulu CLR změnit, ukazuje jeden způsob, jak `dwExpectedCompletionMilliseconds` lze použít při určování, kdy je bezpečné uvolnit Profiler. Odpojování vlákna se při prvním režimu spánku `dwExpectedCompletionMilliseconds` milisekund. Pokud po probuzení z režimu spánku modul CLR najde, že kód zpětného volání profileru stále existuje, dojde k opětovnému odpojení vlákna odpojit, tentokrát se dvěma časy `dwExpectedCompletionMilliseconds` milisekund. Pokud po probuzení z tohoto druhého režimu spánku najde odpojené vlákno, že kód zpětného volání profileru je stále přítomen, po dobu 10 minut přejde do režimu spánku. Vlákno odpojení pokračuje v kontrole každých 10 minut.  
   
- If the profiler specifies `dwExpectedCompletionMilliseconds` as 0 (zero), the CLR uses a default value of 5000, which means that it will perform a check after 5 seconds, again after 10 seconds, and then every 10 minutes thereafter.  
+ Pokud profiler určí `dwExpectedCompletionMilliseconds` jako 0 (nula), CLR použije výchozí hodnotu 5000, což znamená, že provede kontrolu za 5 sekund, znovu po 10 sekundách a pak každých 10 minut.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

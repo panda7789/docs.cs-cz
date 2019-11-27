@@ -14,21 +14,21 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74345437"
 ---
 # <a name="visual-basic-programming-guide"></a>Příručka k programování v jazyce Visual Basic
-As with any modern programming language, Visual Basic supports many common programming constructs and language elements. This guide describes all the major elements of programming with Visual Basic.  
+Stejně jako u všech moderních programovacích jazyků Visual Basic podporuje mnoho běžných programovacích konstrukcí a elementů jazyka. Tato příručka popisuje všechny hlavní prvky programování s Visual Basic.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Struktura programu a zásady týkající se kódu](../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)  
- Contains documentation on the basic structure and code conventions of Visual Basic, such as naming conventions, comments in code, and limitations within Visual Basic.  
+ Obsahuje dokumentaci základní struktury a konvence kódu Visual Basic, jako jsou například konvence pojmenování, komentáře v kódu a omezení v rámci Visual Basic.  
   
- [Visual Basic Language Features](../../visual-basic/programming-guide/language-features/index.md)  
- Provides links to topics that introduce and discuss important features of Visual Basic, including LINQ and XML literals.  
+ [Funkce jazyka Visual Basic](../../visual-basic/programming-guide/language-features/index.md)  
+ Obsahuje odkazy na témata, která zavádějí a projednávají důležité funkce Visual Basic, včetně literálů LINQ a XML.  
   
  [Zprostředkovatel komunikace s objekty COM](../../visual-basic/programming-guide/com-interop/index.md)  
- Explains the interoperability issues associated with creating and using component object model (COM) objects with Visual Basic.  
+ Vysvětluje problémy interoperability spojené s vytvářením a používáním objektů modelu COM (Component Object Model) s Visual Basic.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Referenční příručka jazyka Visual Basic](../../visual-basic/language-reference/index.md)  
- Provides reference information about various aspects of Visual Basic programming.  
+ Poskytuje referenční informace o různých aspektech Visual Basic programování.  
   
- [Visual Basic Command-Line Compiler](../../visual-basic/reference/command-line-compiler/index.md)  
- Offers information on using the Visual Basic command-line compiler, the compiler options, and the Keyword Upgrade tool.
+ [Visual Basic Kompilátor příkazového řádku](../../visual-basic/reference/command-line-compiler/index.md)  
+ Nabízí informace o použití kompilátoru příkazového řádku Visual Basic, možností kompilátoru a nástroje pro upgrade klíčových slov.

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74426191"
 ---
 # <a name="icorprofilercallbackjitcompilationstarted-method"></a>ICorProfilerCallback::JITCompilationStarted – metoda
-Notifies the profiler that the just-in-time (JIT) compiler has started to compile a function.  
+Upozorní profileru, že kompilátor JIT (just-in-time) začal kompilovat funkci.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,26 +35,26 @@ HRESULT JITCompilationStarted(
   
 ## <a name="parameters"></a>Parametry  
  `functionId`  
- [in] The ID of the function for which the compilation is starting.  
+ pro ID funkce, pro kterou je kompilace spouštěna.  
   
  `fIsSafeToBlock`  
- [in] A value indicating to the profiler whether blocking will affect the operation of the runtime. The value is `true` if blocking may cause the runtime to wait for the calling thread to return from this callback; otherwise, `false`.  
+ pro Hodnota, která označuje Profiler, zda blokování bude mít vliv na operaci modulu runtime. Hodnota je `true` Pokud blokování může způsobit, že modul runtime počká, než se volající vlákno vrátí z tohoto zpětného volání. v opačném případě `false`.  
   
- Although a value of `true` will not harm the runtime, it can skew the profiling results.  
+ I když hodnota `true` neškodí modul runtime, může to mít za následek zkosení výsledků profilace.  
   
 ## <a name="remarks"></a>Poznámky  
- It is possible to receive more than one pair of `JITCompilationStarted` and [ICorProfilerCallback::JITCompilationFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationfinished-method.md) calls for each function because of the way the runtime handles class constructors. For example, the runtime starts to JIT-compile method A, but the class constructor for class B needs to be run. Therefore, the runtime JIT-compiles the constructor for class B and runs it. While the constructor is running, it makes a call to method A, which causes method A to be JIT-compiled again. In this scenario, the first JIT compilation of method A is halted. However, both attempts to JIT-compile method A are reported with JIT-compilation events. If the profiler is going to replace Microsoft intermediate language (MSIL) code for method A by calling the [ICorProfilerInfo::SetILFunctionBody](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilfunctionbody-method.md) method, it must do so for both `JITCompilationStarted` events, but it may use the same MSIL block for both.  
+ Je možné získat více než jednu dvojici `JITCompilationStarted` a [ICorProfilerCallback:: JITCompilationFinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationfinished-method.md) pro každou funkci z důvodu způsobu, jakým modul runtime zpracovává konstruktory tříd. Například modul runtime začíná metodou kompilace JIT A, ale je nutné spustit konstruktor třídy pro třídu B. Proto modul runtime JIT – zkompiluje konstruktor pro třídu B a spustí jej. I když je konstruktor spuštěn, provede volání metody A, což způsobí, že metoda A bude znovu zkompilována kompilátorem JIT. V tomto scénáři je první kompilace JIT metody A zastavena. Oba pokusy o metodu kompilace JIT A jsou však hlášeny s událostmi kompilace JIT. Pokud profiler bude nahrazovat kód jazyka MSIL (Microsoft Intermediate Language) pro metodu A voláním metody [ICorProfilerInfo:: SetILFunctionBody –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilfunctionbody-method.md) , musí tak učinit pro obě `JITCompilationStarted` události, ale může použít stejný blok MSIL pro oba.  
   
- Profilers must support the sequence of JIT callbacks in cases where two threads are simultaneously making callbacks. For example, thread A calls `JITCompilationStarted`. However, before thread A calls `JITCompilationFinished`, thread B calls [ICorProfilerCallback::ExceptionSearchFunctionEnter](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionsearchfunctionenter-method.md) with the function ID from thread A's `JITCompilationStarted` callback. It might appear that the function ID should not yet be valid because a call to `JITCompilationFinished` had not yet been received by the profiler. However, in a case like this one, the function ID is valid.  
+ Profilery musí podporovat posloupnost zpětných volání JIT v případech, kdy dvě vlákna současně provádí zpětná volání. Například vlákno A volá `JITCompilationStarted`. Nicméně před voláním vlákna A `JITCompilationFinished`vlákno B volá [ICorProfilerCallback:: ExceptionSearchFunctionEnter –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionsearchfunctionenter-method.md) s ID funkce z zpětného volání `JITCompilationStarted` vlákna A. Může se zdát, že ID funkce by ještě nemělo být platné, protože Profiler ještě nepřijal volání `JITCompilationFinished`. V takovém případě je však ID funkce platné.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -16,7 +16,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350273"
 ---
 # <a name="addressof-operator-visual-basic"></a>AddressOf – operátor (Visual Basic)
-Creates a delegate instance that references the specific procedure.  
+Vytvoří instanci delegáta, která odkazuje na konkrétní proceduru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,20 +26,20 @@ AddressOf procedurename
   
 ## <a name="parts"></a>Součásti  
  `procedurename`  
- Požadováno. Specifies the procedure to be referenced by the newly created delegate.  
+ Požadováno. Určuje proceduru, na kterou má nově vytvořený delegát odkazovat.  
   
 ## <a name="remarks"></a>Poznámky  
- The `AddressOf` operator creates a delegate that points to the sub or function specified by `procedurename`. When the specified procedure is an instance method then the delegate refers to both the instance and the method. Then, when the  delegate is invoked the specified method of the specified instance is called.  
+ Operátor `AddressOf` vytvoří delegáta, který odkazuje na sub nebo funkci určenou parametrem `procedurename`. Pokud je zadaná procedura metodou instance, pak delegát odkazuje na instanci i na metodu. Poté, když je vyvolán delegát, je volána zadaná metoda zadané instance.  
   
- The `AddressOf` operator can be used as the operand of a delegate constructor or it can be used in a context in which the type of the delegate can be determined by the compiler.  
+ Operátor `AddressOf` lze použít jako operand konstruktoru delegáta nebo jej lze použít v kontextu, ve kterém lze určit typ delegáta kompilátorem.  
   
 ## <a name="example"></a>Příklad  
- This example uses the `AddressOf` operator to designate a delegate to handle the `Click` event of a button.  
+ V tomto příkladu se používá operátor `AddressOf` k určení delegáta pro zpracování události `Click` tlačítka.  
   
  [!code-vb[VbVbalrDelegates#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDelegates/VB/Class1.vb#8)]  
   
 ## <a name="example"></a>Příklad  
- The following example uses the `AddressOf` operator to designate the startup function for a thread.  
+ Následující příklad používá operátor `AddressOf` k určení spouštěcí funkce pro vlákno.  
   
  [!code-vb[VbVbalrDelegates#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDelegates/VB/Class1.vb#9)]  
   
@@ -48,4 +48,4 @@ AddressOf procedurename
 - [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)
 - [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)
 - [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)
-- [Delegáty](../../../visual-basic/programming-guide/language-features/delegates/index.md)
+- [Delegáti](../../../visual-basic/programming-guide/language-features/delegates/index.md)

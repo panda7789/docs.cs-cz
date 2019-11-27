@@ -12,17 +12,17 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344085"
 ---
 # <a name="mycomputerclock-object"></a>My.Computer.Clock – objekt
-Provides properties for accessing the current local time and Universal Coordinated Time (equivalent to Greenwich Mean Time) from the system clock.  
+Poskytuje vlastnosti pro přístup k aktuálnímu místnímu času a univerzálnímu koordinovanému času (ekvivalentnímu střednímu času) ze systémových hodin.  
   
 ## <a name="remarks"></a>Poznámky  
- For information about the methods and properties of the `My.Computer.Clock` object, see <xref:Microsoft.VisualBasic.Devices.Clock>.  
+ Informace o metodách a vlastnostech objektu `My.Computer.Clock` naleznete v tématu <xref:Microsoft.VisualBasic.Devices.Clock>.  
   
 ## <a name="requirements"></a>Požadavky  
- **Namespace:** <xref:Microsoft.VisualBasic.Devices>  
+ **Obor názvů:** <xref:Microsoft.VisualBasic.Devices>  
   
- **Class:** <xref:Microsoft.VisualBasic.Devices.Clock>  
+ **Třída:** <xref:Microsoft.VisualBasic.Devices.Clock>  
   
- **Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)  
+ **Sestavení:** Knihovna Visual Basic runtime (v souboru Microsoft. VisualBasic. dll)  
   
 ## <a name="see-also"></a>Viz také:
 

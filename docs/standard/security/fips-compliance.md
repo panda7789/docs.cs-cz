@@ -1,6 +1,6 @@
 ---
-title: FIPS compliance - .NET Core
-description: Explains .NET Core Federal Information Processing Standard (FIPS) compliance.
+title: Dodržování standardu FIPS – .NET Core
+description: Vysvětluje dodržování předpisů standardu FIPS (Federal Information Processing Standard) .NET Core.
 ms.date: 11/20/2019
 author: Rick-Anderson
 ms.author: riande
@@ -11,21 +11,21 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74205064"
 ---
-# <a name="net-core-federal-information-processing-standard-fips-compliance"></a>.NET Core Federal Information Processing Standard (FIPS) compliance
+# <a name="net-core-federal-information-processing-standard-fips-compliance"></a>Kompatibilita standardu FIPS (Federal Information Processing Standard) .NET Core
 
-The Federal Information Processing Standard (FIPS) Publication 140-2 is a U.S. government standard that defines minimum security requirements for cryptographic modules in information technology products, as defined in Section 5131 of the Information Technology Management Reform Act of 1996.
+Publikace standardu FIPS (Federal Information Processing Standard) 140-2 je standard pro státní správu USA, který definuje minimální požadavky na zabezpečení pro kryptografické moduly v produktech informačních technologií, jak je definováno v části 5131 těchto informací. Reforma správy technologických aktů 1996.
 
 .NET Core:
 
-* Passes cryptographic primitives calls through to the standard modules the underlying operating system provides.
-* Does **not** enforce the use of FIPS Approved algorithms or key sizes in .NET Core apps.
+* Předá kryptografická primitiva volání ke standardním modulům, které poskytuje základní operační systém.
+* Nevynutil **použití** algoritmů SCHVÁLENÉho standardem FIPS ani velikostí klíčů v aplikacích .NET Core.
 
-The system administrator is responsible for configuring the FIPS compliance for an operating system.
+Správce systému zodpovídá za konfiguraci dodržování standardů FIPS pro operační systém.
 
-If code is written for a FIPS-compliant environment, the developer is responsible for ensuring that non-compliant FIPS algorithms aren't used.
+Pokud je kód napsán pro prostředí kompatibilní se standardem FIPS, vývojář zodpovídá za to, že nepoužívají nekompatibilní algoritmy FIPS.
 
-For more information on FIPS compliance, see the following articles:
+Další informace o dodržování standardu FIPS najdete v následujících článcích:
 
-* [Windows FIPS Compliance](/windows/security/threat-protection/fips-140-validation)
-* [Configuring Windows for FIPS Compliance](/windows/security/threat-protection/security-policy-settings/system-cryptography-use-fips-compliant-algorithms-for-encryption-hashing-and-signing)
-* [10.2. FEDERAL INFORMATION PROCESSING STANDARD (FIPS)](https://access.redhat.com/documentation/red_hat_enterprise_linux/6/html/security_guide/sect-security_guide-federal_standards_and_regulations-federal_information_processing_standard)
+* [Dodržování předpisů FIPS Windows](/windows/security/threat-protection/fips-140-validation)
+* [Konfigurace Windows pro dodržování standardu FIPS](/windows/security/threat-protection/security-policy-settings/system-cryptography-use-fips-compliant-algorithms-for-encryption-hashing-and-signing)
+* [10,2. STANDARD FIPS (FEDERAL INFORMATION PROCESSING STANDARD)](https://access.redhat.com/documentation/red_hat_enterprise_linux/6/html/security_guide/sect-security_guide-federal_standards_and_regulations-federal_information_processing_standard)

@@ -22,35 +22,35 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344520"
 ---
 # <a name="how-to-force-an-argument-to-be-passed-by-value-visual-basic"></a>Postupy: Vynucení předání argumentu podle hodnoty (Visual Basic)
-The procedure declaration determines the passing mechanism. If a parameter is declared [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), Visual Basic expects to pass the corresponding argument by reference. This allows the procedure to change the value of the programming element underlying the argument in the calling code. If you wish to protect the underlying element against such change, you can override the `ByRef` passing mechanism in the procedure call by enclosing the argument name in parentheses. These parentheses are in addition to the parentheses enclosing the argument list in the call.  
+Deklarace procedury určuje mechanismus předávání. Pokud je parametr deklarovaný jako [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), Visual Basic očekává předání odpovídajícího argumentu odkazem. To umožňuje proceduře změnit hodnotu programovacího prvku podkladu argumentu v volajícím kódu. Pokud chcete chránit základní prvek proti takové změně, můžete přepsat `ByRef` mechanismu předání procedury v volání procedury uzavřením názvu argumentu do závorek. Tyto kulaté závorky jsou kromě závorek ohraničujících seznam argumentů ve volání.  
   
- The calling code cannot override a [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) mechanism.  
+ Volající kód nemůže přepsat mechanismus [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) .  
   
-### <a name="to-force-an-argument-to-be-passed-by-value"></a>To force an argument to be passed by value  
+### <a name="to-force-an-argument-to-be-passed-by-value"></a>Vynutit předání argumentu hodnotou  
   
-- If the corresponding parameter is declared `ByVal` in the procedure, you do not need to take any additional steps. Visual Basic already expects to pass the argument by value.  
+- Pokud je odpovídající parametr deklarován `ByVal` v proceduře, není nutné provádět žádné další kroky. Visual Basic již očekává předání argumentu hodnotou.  
   
-- If the corresponding parameter is declared `ByRef` in the procedure, enclose the argument in parentheses in the procedure call.  
+- Pokud je odpovídající parametr deklarován `ByRef` v proceduře, uveďte argument do závorek ve volání procedury.  
   
 ## <a name="example"></a>Příklad  
- The following example overrides a `ByRef` parameter declaration. In the call that forces `ByVal`, note the two levels of parentheses.  
+ Následující příklad přepisuje deklaraci parametru `ByRef`. V volání, které vynucuje `ByVal`, si poznamenejte dvě úrovně závorek.  
   
  [!code-vb[VbVbcnProcedures#39](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#39)]  
   
  [!code-vb[VbVbcnProcedures#40](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#40)]  
   
- When `str` is enclosed in extra parentheses within the argument list, the `setNewString` procedure cannot change its value in the calling code, and `MsgBox` displays "Cannot be replaced if passed ByVal". When `str` is not enclosed in extra parentheses, the procedure can change it, and `MsgBox` displays "This is a new value for the inString argument."  
+ Pokud je `str` uzavřen v závorkách v seznamu argumentů, procedura `setNewString` nemůže změnit její hodnotu v kódu volajícího a `MsgBox` zobrazí "nelze je nahradit, pokud je to předáno". Když `str` není uzavřen v závorkách navíc, procedura ho může změnit a `MsgBox` zobrazí "Toto je nová hodnota pro argument inString."  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- When you pass a variable by reference, you must use the `ByRef` keyword to specify this mechanism.  
+ Pokud předáte proměnnou odkazem, je nutné použít klíčové slovo `ByRef` k určení tohoto mechanismu.  
   
- The default in Visual Basic is to pass arguments by value. However, it is good programming practice to include either the [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) or [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) keyword with every declared parameter. This makes your code easier to read.  
+ Výchozí hodnotou v Visual Basic je předání argumentů podle hodnoty. Nicméně je dobrým programovacím postupem, jak zahrnout klíčové slovo [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) nebo [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) s každým deklarovaným parametrem. To usnadňuje čtení kódu.  
   
 ## <a name="robust-programming"></a>Robustní programování  
- If a procedure declares a parameter [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), the correct execution of the code might depend on being able to change the underlying element in the calling code. If the calling code overrides this calling mechanism by enclosing the argument in parentheses, or if it passes a nonmodifiable argument, the procedure cannot change the underlying element. This might produce unexpected results in the calling code.  
+ Pokud procedura deklaruje parametr [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), správné spuštění kódu může záviset na tom, zda je možné změnit podkladový prvek v kódu volajícího. Pokud volající kód přepíše tento volající mechanismus uzavřením argumentu do závorek nebo pokud předává argument, který není upraviteln, procedura nemůže změnit základní prvek. To může vést k neočekávaným výsledkům při volání kódu.  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- There is always a potential risk in allowing a procedure to change the value underlying an argument in the calling code. Make sure you expect this value to be changed, and be prepared to check it for validity before using it.  
+ V případě, že je možné změnit hodnotu podkladového typu argumentu v volajícím kódu, je vždy potenciálním rizikem. Ujistěte se, že jste očekávali, že tato hodnota se má změnit, a je připravená ji před použitím ověřit.  
   
 ## <a name="see-also"></a>Viz také:
 

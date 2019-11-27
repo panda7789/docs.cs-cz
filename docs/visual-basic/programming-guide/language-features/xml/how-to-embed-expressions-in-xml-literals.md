@@ -13,21 +13,21 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74332930"
 ---
 # <a name="how-to-embed-expressions-in-xml-literals-visual-basic"></a>Postupy: Vložení výrazů do literálů XML (Visual Basic)
-You can combine XML literals with embedded expressions to create an XML document, fragment, or element that contains content created at run time. The following examples demonstrate how to use embedded expressions to populate element content, attributes, and element names at run time.  
+Můžete zkombinovat literály XML s vloženými výrazy a vytvořit dokument XML, fragment nebo prvek, který obsahuje obsah vytvořený v době běhu. Následující příklady ukazují, jak použít vložené výrazy k naplnění obsahu prvku, atributů a názvů elementů za běhu.  
   
- The syntax for an embedded expression is `<%=` `exp` `%>`, which is the same syntax that ASP.NET uses. For more information, see [Embedded Expressions in XML](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md).  
+ Syntaxe vloženého výrazu je `<%=` `exp` `%>`, což je stejná syntaxe, kterou používá ASP.NET. Další informace najdete v tématu [vložené výrazy v XML](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md).  
   
- You can also use the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] APIs to create [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objects. Další informace najdete v tématu <xref:System.Xml.Linq.XElement>.  
+ K vytváření objektů [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] můžete použít taky rozhraní [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] API. Další informace najdete v tématu <xref:System.Xml.Linq.XElement>.  
   
 ## <a name="procedures"></a>Procedury  
   
-#### <a name="to-insert-text-as-element-content"></a>To insert text as element content  
+#### <a name="to-insert-text-as-element-content"></a>Vložení textu jako obsahu elementu  
   
-- The following example shows how to insert the text that is contained in the `contactName` variable between the opening and closing name elements.  
+- Následující příklad ukazuje, jak vložit text, který je obsažen v proměnné `contactName` mezi prvky pro otevření a zavření názvu.  
   
      [!code-vb[VbXMLSamples#39](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples14.vb#39)]  
   
-     This example produces the following output:  
+     Tento příklad vytvoří následující výstup:  
   
     ```xml  
     <contact>  
@@ -35,13 +35,13 @@ You can combine XML literals with embedded expressions to create an XML document
     </contact>  
     ```  
   
-#### <a name="to-insert-text-as-an-attribute-value"></a>To insert text as an attribute value  
+#### <a name="to-insert-text-as-an-attribute-value"></a>Vložení textu jako hodnoty atributu  
   
-- The following example shows how to insert the text that is contained in the `phoneType` variable as the value of the `type` attribute.  
+- Následující příklad ukazuje, jak vložit text, který je obsažen v proměnné `phoneType` jako hodnota atributu `type`.  
   
      [!code-vb[VbXMLSamples#40](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples14.vb#40)]  
   
-     This example produces the following output:  
+     Tento příklad vytvoří následující výstup:  
   
     ```xml  
     <contact>  
@@ -49,15 +49,15 @@ You can combine XML literals with embedded expressions to create an XML document
     </contact>  
     ```  
   
-#### <a name="to-insert-text-for-an-element-name"></a>To insert text for an element name  
+#### <a name="to-insert-text-for-an-element-name"></a>Vložení textu pro název elementu  
   
-- The following example shows how to insert the text that is contained in the `elementName` variable as the name of an element.  
+- Následující příklad ukazuje, jak vložit text, který je obsažen v proměnné `elementName` jako název elementu.  
   
-     When creating elements by using this technique, you must close them with the \</> tag.  
+     Při vytváření prvků pomocí této techniky je nutné je zavřít pomocí značky \</>.  
   
      [!code-vb[VbXMLSamples#41](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples14.vb#41)]  
   
-     This example produces the following output:  
+     Tento příklad vytvoří následující výstup:  
   
     ```xml  
     <contact>  
@@ -69,5 +69,5 @@ You can combine XML literals with embedded expressions to create an XML document
 
 - [Postupy: Vytváření literálů XML](../../../../visual-basic/programming-guide/language-features/xml/how-to-create-xml-literals.md)
 - [Vložené výrazy v XML](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md)
-- [Creating XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [Vytváření XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
 - [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)

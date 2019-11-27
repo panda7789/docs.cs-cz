@@ -61,7 +61,7 @@ Kromě toho potřebujete Visual Studio 2017 verze 15,7 nebo novější s nainsta
 
 Můžete spustit kódování aplikace v jednoduchém rozhraní .NET (obvykle v .NET Core, pokud plánujete používat kontejnery) dokonce ještě před povolením Docker ve vaší aplikaci a nasazením a testováním v Docker. Doporučuje se ale co nejdříve začít pracovat na Docker, protože to bude reálné prostředí a jakékoli problémy, které je možné zjistit co nejdříve. To je doporučováno, protože Visual Studio usnadňuje práci s Docker, který je skoro průhledný, což je nejlepší příklad při ladění aplikací s více kontejnery ze sady Visual Studio.
 
-### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Začínáme s Docker CE for Windows** \
   <https://docs.docker.com/docker-for-windows/>
@@ -116,7 +116,7 @@ V tomto případě je image založená na verzi 2,2 oficiální image ASP.NET Co
 
 V souboru Dockerfile můžete určit další nastavení konfigurace v závislosti na jazyku a rozhraní, které používáte. Například řádek ENTRYPOINT s `["dotnet", "MySingleContainerWebApp.dll"]` instruuje Docker ke spuštění aplikace .NET Core. Pokud k sestavení a spuštění aplikace .NET používáte sadu SDK a .NET Core CLI (dotnet CLI), toto nastavení se liší. Dolním řádkem je, že se řádek ENTRYPOINT a další nastavení liší v závislosti na jazyku a platformě, kterou zvolíte pro vaši aplikaci.
 
-### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Vytváření imagí Docker pro aplikace .NET Core** \
   [https://docs.microsoft.com/dotnet/core/docker/building-net-docker-images](/aspnet/core/host-and-deploy/docker/building-net-docker-images)
@@ -298,7 +298,7 @@ Výsledný soubor je pak:
 
 Můžete vytvořit vlastní základní image Docker od začátku. Tento scénář se nedoporučuje pro někoho, kdo začíná s Docker, ale pokud chcete nastavit konkrétní bity vlastní základní image, můžete to udělat.
 
-### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Vícevrstvé image .NET Core**. \
   <https://github.com/dotnet/announcements/issues/14>
@@ -308,7 +308,7 @@ Můžete vytvořit vlastní základní image Docker od začátku. Tento scéná�
 
 ![Obrázek pro krok 3](./media/docker-app-development-workflow/step-3-create-dockerfile-defined-images.png)
 
-## <a name="step-3-create-your-custom-docker-images-and-embed-your-application-or-service-in-them"></a>Krok 3. Vytvořte vlastní image Docker a vložte do nich svou aplikaci nebo službu.
+## <a name="step-3-create-your-custom-docker-images-and-embed-your-application-or-service-in-them"></a>Krok 3: Vytvořte vlastní image Docker a vložte do nich svou aplikaci nebo službu.
 
 Pro každou službu ve vaší aplikaci je potřeba vytvořit související image. Pokud se vaše aplikace skládá z jediné služby nebo webové aplikace, stačí pouze jeden obrázek.
 
@@ -493,7 +493,7 @@ Důležitým bodem je, jak je znázorněno na obrázku 5-12, v aplikaci Visual S
 
 **Obrázek 5-12**. Spouštění aplikací s více kontejnery v aplikaci Visual Studio 2017
 
-### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Nasazení kontejneru ASP.NET na hostitele vzdáleného docker** \
   <https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker>
@@ -530,7 +530,7 @@ Při spuštění a ladění kontejnerů pomocí sady Visual Studio 2017 můžete
 
 Pokud vyvíjíte pomocí přístupu Editor/CLI, kontejnery ladění jsou obtížnější a vy budete chtít ladit vygenerováním trasování.
 
-### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Ladění aplikací v místním kontejneru docker** \
   [https://docs.microsoft.com/visualstudio/containers/edit-and-refresh](/visualstudio/containers/edit-and-refresh)
@@ -550,7 +550,7 @@ Proces vývoje pro aplikace Docker: 1 – kódování vaší aplikace, 2-zápis 
 
 Kromě toho je nutné provést krok 2 (přidání podpory Docker do vašich projektů) pouze jednou. Proto je pracovní postup podobný obvyklým vývojářským úlohám při použití rozhraní .NET pro jakýkoliv jiný vývoj. Potřebujete zjistit, co se týká pokrývání (proces sestavení obrazu, jaké základní image používáte, nasazení kontejnerů atd.), a někdy budete také muset upravit soubor souboru Dockerfile nebo Docker-Compose. yml, abyste mohli chování přizpůsobit. Ale většina práce je výrazně zjednodušená pomocí sady Visual Studio, což vám umožní mnohem větší produktivitu.
 
-### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 - **Steve Lasker. .NET Docker – vývoj s využitím sady Visual Studio 2017** \
   <https://channel9.msdn.com/Events/Visual-Studio/Visual-Studio-2017-Launch/T111>
@@ -572,9 +572,9 @@ V tomto případě používáme základní bitovou kopii Windows serveru (nastav
 RUN powershell add-windowsfeature web-asp-net45
 ```
 
-### <a name="additional-resources"></a>Další zdroje
+### <a name="additional-resources"></a>Další materiály a zdroje informací
 
-- **aspnet-docker/Dockerfile.** Příklady příkazů PowerShellu, které se mají spustit z fázemi a zahrnutí funkcí Windows. \
+- **ASPNET-Docker/souboru Dockerfile.** Příklady příkazů PowerShellu, které se mají spustit z fázemi a zahrnutí funkcí Windows. \
   <https://github.com/Microsoft/aspnet-docker/blob/master/4.7.1-windowsservercore-ltsc2016/runtime/Dockerfile>
 
 >[!div class="step-by-step"]

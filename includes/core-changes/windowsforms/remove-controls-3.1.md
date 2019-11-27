@@ -6,15 +6,15 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74429230"
 ---
-### <a name="removed-controls"></a>Removed controls
+### <a name="removed-controls"></a>Odebrané ovládací prvky
 
-Starting in .NET Core 3.1, some Windows Forms controls are no longer available.
+Počínaje rozhraním .NET Core 3,1 Některé ovládací prvky model Windows Forms již nejsou k dispozici.
 
-#### <a name="change-description"></a>Change description
+#### <a name="change-description"></a>Změnit popis
 
-Starting with .NET Core 3.1, various Windows Forms controls are no longer available. Replacement controls that have better design and support were introduced in .NET Framework 2.0. The deprecated controls were previously removed from designer toolboxes but were still available to be used.
+Počínaje rozhraním .NET Core 3,1 nejsou k dispozici různé ovládací prvky model Windows Forms. Náhradní ovládací prvky, které mají lepší návrh a podporu, byly zavedeny v .NET Framework 2,0. Zastaralé ovládací prvky byly předtím odebrány z nástrojů návrháře, ale byly stále k dispozici pro použití.
 
-The following types are no longer available:
+Následující typy již nejsou k dispozici:
 
 - <xref:System.Windows.Forms.Menu>
 - <xref:System.Windows.Forms.Menu.MenuItemCollection>
@@ -45,21 +45,21 @@ The following types are no longer available:
 - <xref:System.Windows.Forms.DataGrid.HitTestType>
 - <xref:System.Windows.Forms.Design.IMenuEditorService>
 
-#### <a name="version-introduced"></a>Version introduced
+#### <a name="version-introduced"></a>Představená verze
 
 3.1
 
-#### <a name="recommended-action"></a>Recommended action
+#### <a name="recommended-action"></a>Doporučená akce
 
-Each removed control has a recommended replacement control. Refer to the following table:
+Každý odebraný ovládací prvek má doporučený ovládací prvek pro nahrazení. Podívejte se na následující tabulku:
 
-| Removed control (API) | Recommended replacement | Associated APIs that are removed |
+| Odebraný ovládací prvek (API) | Doporučená náhrada | Přidružená rozhraní API k odebrání |
 |-|-|-|
-| DataGrid | DataGridView | DataGridCell, DataGridRow, DataGridTableCollection, DataGridColumnCollection, DataGridTableStyle, DataGridColumnStyle, DataGridLineStyle, DataGridParentRowsLabel, DataGridParentRowsLabelStyle, DataGridBoolColumn, DataGridTextBox, GridColumnStylesCollection, GridTableStylesCollection, HitTestType |
+| DataGrid | Ovládací prvek DataGridView | DataGridCell, hodnota DataGridRow, DataGridTableCollection, DataGridColumnCollection, styl DataGridTableStyle, styl DataGridColumnStyle, DataGridLineStyle, DataGridParentRowsLabel, DataGridParentRowsLabelStyle, funkce DataGridBoolColumn, DataGridTextBox, Kolekce GridColumnStylesCollection, GridTableStylesCollection, HitTestType |
 | ToolBar | ToolStrip | ToolBarAppearance |
-| ToolBarButton | ToolStripButton | ToolBarButtonClickEventArgs, ToolBarButtonClickEventHandler, ToolBarButtonStyle, ToolBarTextAlign|
+| ToolBarButton | Prvek ToolStripButton | ToolBarButtonClickEventArgs, ToolBarButtonClickEventHandler, ToolBarButtonStyle, ToolBarTextAlign|
 | ContextMenu | ContextMenuStrip | |
-| Nabídka | ToolStripDropDown, ToolstripDropDownMenu | MenuItemCollection |
+| Nabídka | Ovládací prvek ToolStripDropDown, ToolstripDropDownMenu | MenuItemcollection |
 | MainMenu | MenuStrip | |
 | MenuItem | ToolstripMenuItem | |
 

@@ -28,34 +28,34 @@ ms.locfileid: "74344017"
 ---
 # <a name="double-data-type-visual-basic"></a>Double – datový typ (Visual Basic)
 
-Holds signed IEEE 64-bit (8-byte) double-precision floating-point numbers that range in value from -1.79769313486231570E+308 through -4.94065645841246544E-324 for negative values and from 4.94065645841246544E-324 through 1.79769313486231570E+308 for positive values. Double-precision numbers store an approximation of a real number.
+Obsahuje 64 podepsaná čísla s plovoucí desetinnou čárkou (v bajtech) s dvojitou přesností, která jsou v rozsahu od-1.79769313486231570 E + 308 do-4.94065645841246544 E-324 pro záporné hodnoty a od 4.94065645841246544 E-324 do 1.79769313486231570 E + 308 pro kladné hodnoty. Čísla s dvojitou přesností ukládají přibližnou hodnotu reálného čísla.
 
 ## <a name="remarks"></a>Poznámky
 
-The `Double` data type provides the largest and smallest possible magnitudes for a number.
+`Double` datový typ poskytuje nejvyšší a nejmenší možné množství pro číslo.
 
-The default value of `Double` is 0.
+Výchozí hodnota `Double` je 0.
 
 ## <a name="programming-tips"></a>Tipy k programování
 
-- **Precision.** When you work with floating-point numbers, remember that they do not always have a precise representation in memory. This could lead to unexpected results from certain operations, such as value comparison and the `Mod` operator. For more information, see [Troubleshooting Data Types](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md).
+- **Číslic.** Když pracujete s čísly s plovoucí desetinnou čárkou, mějte na paměti, že v paměti vždy nejsou přesné reprezentace. To může vést k neočekávaným výsledkům z určitých operací, jako je například porovnání hodnot a operátor `Mod`. Další informace najdete v tématu [řešení potíží s datovými typy](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md).
 
-- **Trailing Zeros.** The floating-point data types do not have any internal representation of trailing zero characters. For example, they do not distinguish between 4.2000 and 4.2. Consequently, trailing zero characters do not appear when you display or print floating-point values.
+- **Koncové nuly.** Datové typy s plovoucí desetinnou čárkou nemají žádná interní reprezentace koncových nulových znaků. Například nerozlišuje mezi 4,2000 a 4,2. V důsledku toho se při zobrazení nebo tisku hodnot s plovoucí desetinnou čárkou neobjeví koncové nula znaků.
 
-- **Type Characters.** Appending the literal type character `R` to a literal forces it to the `Double` data type. For example, if an integer value is followed by `R`, the value is changed to a `Double`.
+- **Znaky typu.** Připojení znaku typu literálu `R` k literálu vynutí typ dat `Double`. Například pokud je celočíselná hodnota následována `R`, hodnota se změní na `Double`.
 
   ```vb
   ' Visual Basic expands the 4 in the statement Dim dub As Double = 4R to 4.0:
   Dim dub As Double = 4.0R
   ```
 
-  Appending the identifier type character `#` to any identifier forces it to `Double`. In the following example, the variable `num` is typed as a `Double`:
+  Připojení znaku typu identifikátoru `#` k jakémukoli identifikátoru vynutí `Double`. V následujícím příkladu je proměnná `num` zadána jako `Double`:
 
   ```vb
   Dim num# = 3
   ```
 
-- **Framework Type.** The corresponding type in the .NET Framework is the <xref:System.Double?displayProperty=nameWithType> structure.
+- **Typ rozhraní.** Odpovídající typ v .NET Framework je struktura <xref:System.Double?displayProperty=nameWithType>.
 
 ## <a name="see-also"></a>Viz také:
 

@@ -14,60 +14,60 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346154"
 ---
 # <a name="visual-basic-coding-conventions"></a>Visual Basic – konvence kódování
-Microsoft develops samples and documentation that follow the guidelines in this topic. If you follow the same coding conventions, you may gain the following benefits:  
+Společnost Microsoft vyvíjí ukázky a dokumentaci, které se řídí pokyny v tomto tématu. Pokud se řídíte stejnými konvencemi kódování, můžete získat následující výhody:  
   
-- Your code will have a consistent look, so that readers can better focus on content, not layout.  
+- Váš kód bude mít konzistentní vzhled, aby se čtenáři mohli lépe soustředit na obsah, nikoli na rozložení.  
   
-- Readers understand your code more quickly because they can make assumptions based on previous experience.  
+- Čtenáři porozuměli kódu rychleji, protože mohou vytvářet předpoklady na základě předchozích zkušeností.  
   
-- You can copy, change, and maintain the code more easily.  
+- Kód můžete snadněji kopírovat, měnit a udržovat.  
   
-- You help ensure that your code demonstrates "best practices" for Visual Basic.  
+- Pomůžete zajistit, aby váš kód předvádí "osvědčené postupy" pro Visual Basic.  
   
 ## <a name="naming-conventions"></a>Konvence vytváření názvů  
   
-- For information about naming guidelines, see [Naming Guidelines](../../../standard/design-guidelines/naming-guidelines.md) topic.  
+- Informace o pokynech pro pojmenování najdete v tématu [pokyny pro pojmenování](../../../standard/design-guidelines/naming-guidelines.md) .  
   
-- Do not use "My" or "my" as part of a variable name. This practice creates confusion with the `My` objects.  
+- Nepoužívejte "my" nebo "my" jako součást názvu proměnné. Tento postup vytváří nejasnost s objekty `My`.  
   
-- You do not have to change the names of objects in auto-generated code to make them fit the guidelines.  
+- Nemusíte měnit názvy objektů v automaticky generovaném kódu, aby se vešly podle pokynů.  
   
 ## <a name="layout-conventions"></a>Konvence rozložení  
   
-- Insert tabs as spaces, and use smart indenting with four-space indents.  
+- Vložte tabulátory jako mezery a používejte inteligentní odsazení se čtyřmi mezerami.  
   
-- Use **Pretty listing (reformatting) of code** to reformat your code in the code editor. For more information, see [Options, Text Editor, Basic (Visual Basic)](/visualstudio/ide/reference/options-text-editor-basic-visual-basic).  
+- Použijte k přeformátování kódu v editoru kódu formátování (přeformátování **)** . Další informace najdete v tématu [Možnosti, textový editor, Basic (Visual Basic)](/visualstudio/ide/reference/options-text-editor-basic-visual-basic).  
   
-- Use only one statement per line. Don't use the Visual Basic line separator character (:).  
+- Použijte pouze jeden příkaz na řádek. Nepoužívejte znak oddělovače Visual Basic čáry (:).  
   
-- Avoid using the explicit line continuation character "_" in favor of implicit line continuation wherever the language allows it.  
+- Vyhněte se použití znaku explicitního pokračování řádku "_" místo implicitního pokračování řádku, kdykoli to jazyk umožňuje.  
   
-- Use only one declaration per line.  
+- Použijte pouze jednu deklaraci na řádek.  
   
-- If **Pretty listing (reformatting) of code** doesn't format continuation lines automatically, manually indent continuation lines one tab stop. However, always left-align items in a list.  
+- Pokud je **v podstatě výpis (přeformátování) kódu** neformátované řádky pokračování automaticky, odsadí řádky pokračování jednu zarážku tabulátoru. V seznamu ale vždycky zarovnáváme položky vlevo.  
   
     ```vb  
     a As Integer,  
     b As Integer  
     ```  
   
-- Add at least one blank line between method and property definitions.  
+- Mezi definice metod a vlastností přidejte alespoň jeden prázdný řádek.  
   
 ## <a name="commenting-conventions"></a>Konvence při psaní komentářů  
   
-- Put comments on a separate line instead of at the end of a line of code.  
+- Komentáře umístěte na samostatný řádek místo na konci řádku kódu.  
   
-- Start comment text with an uppercase letter, and end comment text with a period.  
+- Začněte text komentáře velkým písmenem a ukončete text komentáře s tečkou.  
   
-- Insert one space between the comment delimiter (') and the comment text.  
+- Vložte jednu mezeru mezi oddělovač komentáře (') a text komentáře.  
   
      [!code-vb[VbVbalrGuidelines#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#2)]  
   
-- Do not surround comments with formatted blocks of asterisks.  
+- Nezadávejte komentáře pomocí formátovaných bloků hvězdiček.  
   
 ## <a name="program-structure"></a>Struktura programu  
   
-- When you use the `Main` method, use the default construct for new console applications, and use `My` for command-line arguments.  
+- Při použití metody `Main` použijte výchozí konstrukci pro nové konzolové aplikace a použijte `My` pro argumenty příkazového řádku.  
   
      [!code-vb[VbVbalrGuidelines#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#3)]  
   
@@ -75,135 +75,135 @@ Microsoft develops samples and documentation that follow the guidelines in this 
   
 ### <a name="string-data-type"></a>Datový typ String  
   
-- Use [string interpolation](https://docs.microsoft.com/dotnet/visual-basic/programming-guide/language-features/strings/interpolated-strings) to concatenate short strings, as shown in the following code.
+- Použijte [interpolaci řetězce](https://docs.microsoft.com/dotnet/visual-basic/programming-guide/language-features/strings/interpolated-strings) k zřetězení krátkých řetězců, jak je znázorněno v následujícím kódu.
   
      ```vb
      MsgBox($"hello{vbCrLf}goodbye")
      ```
   
-- To append strings in loops, use the <xref:System.Text.StringBuilder> object.  
+- Chcete-li připojit řetězce ve smyčce, použijte objekt <xref:System.Text.StringBuilder>.  
   
      [!code-vb[VbVbalrGuidelines#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#5)]  
   
-### <a name="relaxed-delegates-in-event-handlers"></a>Relaxed Delegates in Event Handlers  
- Do not explicitly qualify the arguments (Object and EventArgs) to event handlers. If you are not using the event arguments that are passed to an event (for example, sender as Object, e as EventArgs), use relaxed delegates, and leave out the event arguments in your code:  
+### <a name="relaxed-delegates-in-event-handlers"></a>Odlehčení Delegáti v obslužných rutinách událostí  
+ Explicitně nekvalifikovat argumenty (Object a EventArgs) pro obslužné rutiny událostí. Pokud nepoužíváte argumenty události, které jsou předány události (například odesilatel jako objekt, e jako EventArgs), použijte odlehčené delegáty a vynechte argumenty události v kódu:  
   
  [!code-vb[VbVbalrGuidelines#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#7)]  
   
 ### <a name="unsigned-data-type"></a>Nepodepsaný datový typ  
   
-- Use `Integer` rather than unsigned types, except where they are necessary.  
+- Místo typů bez znaménka použijte `Integer`, s výjimkou případů, kdy jsou nezbytné.  
   
 ### <a name="arrays"></a>Pole  
   
-- Use the short syntax when you initialize arrays on the declaration line. For example, use the following syntax.  
+- Použijte krátkou syntaxi při inicializaci polí na řádku deklarace. Použijte například následující syntaxi.  
   
      [!code-vb[VbVbalrGuidelines#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#8)]  
   
-     Do not use the following syntax.  
+     Nepoužívejte následující syntaxi.  
   
      [!code-vb[VbVbalrGuidelines#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#9)]  
   
-- Put the array designator on the type, not on the variable. For example, use the following syntax:  
+- Uveďte označení pole pro typ, nikoli proměnnou. Použijte například následující syntaxi:  
   
      [!code-vb[VbVbalrGuidelines#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#11)]  
   
-     Do not use the following syntax:  
+     Nepoužívejte následující syntaxi:  
   
      [!code-vb[VbVbalrGuidelines#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#10)]  
   
-- Use the { } syntax when you declare and initialize arrays of basic data types. For example, use the following syntax:  
+- Použijte syntaxi {} při deklaraci a inicializaci polí základních datových typů. Použijte například následující syntaxi:  
   
      [!code-vb[VbVbalrGuidelines#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#12)]  
   
-     Do not use the following syntax:  
+     Nepoužívejte následující syntaxi:  
   
      [!code-vb[VbVbalrGuidelines#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#13)]  
   
-### <a name="use-the-with-keyword"></a>Use the With Keyword  
- When you make a series of calls to one object, consider using the `With` keyword:  
+### <a name="use-the-with-keyword"></a>Použití klíčového slova with  
+ Při vytváření řady volání jednoho objektu zvažte použití klíčového slova `With`:  
   
  [!code-vb[VbVbalrGuidelines#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#15)]  
   
-### <a name="use-the-trycatch-and-using-statements-when-you-use-exception-handling"></a>Use the Try...Catch and Using Statements when you use Exception Handling  
- Do not use `On Error Goto`.  
+### <a name="use-the-trycatch-and-using-statements-when-you-use-exception-handling"></a>Použijte try... Zachytit a použít příkazy při zpracování výjimek  
+ Nepoužívejte `On Error Goto`.  
   
-### <a name="use-the-isnot-keyword"></a>Use the IsNot Keyword  
- Use the `IsNot` keyword instead of `Not...Is Nothing`.  
+### <a name="use-the-isnot-keyword"></a>Použití klíčového slova IsNot  
+ Místo `Not...Is Nothing`použijte klíčové slovo `IsNot`.  
   
-### <a name="new-keyword"></a>New Keyword  
+### <a name="new-keyword"></a>New – klíčové slovo  
   
-- Use short instantiation. For example, use the following syntax:  
+- Používejte krátkodobé vytváření instancí. Použijte například následující syntaxi:  
   
      [!code-vb[VbVbalrGuidelines#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#21)]  
   
-     The preceding line is equivalent to this:  
+     Předchozí řádek je podobný tomuto:  
   
      [!code-vb[VbVbalrGuidelines#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#22)]  
   
-- Use object initializers for new objects instead of the parameterless constructor:  
+- Použít inicializátory objektů pro nové objekty místo konstruktoru bez parametrů:  
   
      [!code-vb[VbVbalrGuidelines#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#23)]  
   
 ### <a name="event-handling"></a>Zpracování událostí  
   
-- Use `Handles` rather than `AddHandler`:  
+- Místo `AddHandler`použít `Handles`:  
   
      [!code-vb[VbVbalrGuidelines#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#24)]  
   
-- Use `AddressOf`, and do not instantiate the delegate explicitly:  
+- Použijte `AddressOf`a nevytvářejte instanci delegáta explicitně:  
   
      [!code-vb[VbVbalrGuidelines#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#25)]  
   
-- When you define an event, use the short syntax, and let the compiler define the delegate:  
+- Při definování události použijte krátkou syntaxi a nechejte kompilátor definovat delegáta:  
   
      [!code-vb[VbVbalrGuidelines#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#26)]  
   
-- Do not verify whether an event is `Nothing` (null) before you call the `RaiseEvent` method. `RaiseEvent` checks for `Nothing` before it raises the event.  
+- Neověřuje, zda je událost `Nothing` (null) před zavoláním metody `RaiseEvent`. `RaiseEvent` vyhledá `Nothing` předtím, než událost vyvolá.  
   
-### <a name="using-shared-members"></a>Using Shared Members  
- Call `Shared` members by using the class name, not from an instance variable.  
+### <a name="using-shared-members"></a>Použití sdílených členů  
+ Volejte `Shared` členy pomocí názvu třídy, nikoli z proměnné instance.  
   
-### <a name="use-xml-literals"></a>Use XML Literals  
- XML literals simplify the most common tasks that you encounter when you work with XML (for example, load, query, and transform). When you develop with XML, follow these guidelines:  
+### <a name="use-xml-literals"></a>Použití literálů XML  
+ Literály XML zjednodušují nejběžnější úlohy, které se vyskytnou při práci s XML (například načtení, dotazování a transformace). Při vývoji s jazykem XML postupujte podle těchto pokynů:  
   
-- Use XML literals to create XML documents and fragments instead of calling XML APIs directly.  
+- Použijte literály XML k vytvoření dokumentů a fragmentů XML namísto přímého volání rozhraní API XML.  
   
-- Import XML namespaces at the file or project level to take advantage of the performance optimizations for XML literals.  
+- Importujte obory názvů XML na úrovni souboru nebo projektu, abyste mohli využívat optimalizace výkonu pro literály XML.  
   
-- Use the XML axis properties to access elements and attributes in an XML document.  
+- Použijte Vlastnosti osy XML pro přístup k prvkům a atributům v dokumentu XML.  
   
-- Use embedded expressions to include values and to create XML from existing values instead of using API calls such as the `Add` method:  
+- Vložené výrazy použijte k zahrnutí hodnot a k vytvoření XML z existujících hodnot namísto použití volání rozhraní API, jako je `Add` metoda:  
   
      [!code-vb[VbVbalrGuidelines#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#27)]  
   
-### <a name="linq-queries"></a>LINQ Queries  
+### <a name="linq-queries"></a>Dotazy LINQ  
   
-- Use meaningful names for query variables:  
+- Pro proměnné dotazů použijte smysluplné názvy:  
   
      [!code-vb[VbVbalrGuidelines#28](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#28)]  
   
-- Provide names for elements in a query to make sure that property names of anonymous types are correctly capitalized using Pascal casing:  
+- Zadejte názvy prvků v dotazu, abyste se ujistili, že názvy vlastností anonymních typů jsou správně velkými písmeny v jazyce Pascal:  
   
      [!code-vb[VbVbalrGuidelines#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#29)]  
   
-- Rename properties when the property names in the result would be ambiguous. For example, if your query returns a customer name and an order ID, rename them instead of leaving them as `Name` and `ID` in the result:  
+- Přejmenujte vlastnosti, pokud by názvy vlastností ve výsledku byly dvojznačné. Například pokud váš dotaz vrátí název zákazníka a ID objednávky, přejmenujte ho místo jejich ponechání jako `Name` a `ID` ve výsledku:  
   
      [!code-vb[VbVbalrGuidelines#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#30)]  
   
-- Use type inference in the declaration of query variables and range variables:  
+- Použijte odvození typu v deklaraci proměnných dotazu a proměnných rozsahu:  
   
      [!code-vb[VbVbalrGuidelines#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#31)]  
   
-- Align query clauses under the `From` statement:  
+- Zarovnat klauzule dotazu pod příkaz `From`:  
   
      [!code-vb[VbVbalrGuidelines#32](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#32)]  
   
-- Use `Where` clauses before other query clauses so that later query clauses operate on the filtered set of data:  
+- Klauzule `Where` použijte před ostatními klauzulemi dotazu tak, aby pozdější klauzule dotazu pracovaly na filtrované sadě dat:  
   
      [!code-vb[VbVbalrGuidelines#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#33)]  
   
-- Use the `Join` clause to explicitly define a join operation instead of using the `Where` clause to implicitly define a join operation:  
+- Použijte klauzuli `Join` k explicitnímu definování operace spojení namísto použití klauzule `Where` k implicitnímu definování operace spojení:  
   
      [!code-vb[VbVbalrGuidelines#34](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#34)]  
   

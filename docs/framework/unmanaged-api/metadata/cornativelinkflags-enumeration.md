@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450186"
 ---
 # <a name="cornativelinkflags-enumeration"></a>CorNativeLinkFlags – výčet
-Provides flag values used by the linker when linking native code.  
+Poskytuje hodnoty příznaků používané linkerem při propojování nativního kódu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,23 +36,23 @@ typedef enum
 } CorNativeLinkFlags;  
 ```  
   
-## <a name="members"></a>Členové  
+## <a name="members"></a>Members  
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`nlfNone`|Indicates no flags.|  
-|`nlfLastError`|Indicates a `setLastError` keyword.|  
-|`nlfNoMangle`|Indicates a `nomangle` keyword.|  
-|`nlfMaxValue`|Not used.|  
+|`nlfNone`|Neindikuje žádné příznaky.|  
+|`nlfLastError`|Označuje klíčové slovo `setLastError`.|  
+|`nlfNoMangle`|Označuje klíčové slovo `nomangle`.|  
+|`nlfMaxValue`|Nepoužívá se.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

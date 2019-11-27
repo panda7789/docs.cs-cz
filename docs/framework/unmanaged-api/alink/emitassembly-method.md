@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446531"
 ---
 # <a name="emitassembly-method"></a>EmitAssembly – metoda
-Creates the assembly. Call this method after all other files are closed except for the assembly file. Do not call this method when producing unbound modules.  
+Vytvoří sestavení. Tuto metodu volejte po zavření všech ostatních souborů s výjimkou souboru sestavení. Nevolejte tuto metodu při vytváření nevázaných modulů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,16 +35,16 @@ HRESULT EmitAssembly(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID of the assembly.  
+ ID sestavení  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Returns S_OK if the method succeeds.  
+ Vrátí S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Requires alink.h  
+ Vyžaduje ALink. h  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink – rozhraní](ialink-interface.md)
 - [IALink2 – rozhraní](ialink2-interface.md)
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)

@@ -1,5 +1,5 @@
 ---
-title: Imports Statement - .NET Namespace and Type
+title: Příkaz Imports – obor názvů a typ .NET
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Imports
@@ -25,7 +25,7 @@ ms.locfileid: "74351071"
 ---
 # <a name="imports-statement-net-namespace-and-type"></a>Imports – příkaz (obor názvů a typ rozhraní .NET)
 
-Enables type names to be referenced without namespace qualification.
+Povoluje odkazování na názvy typů bez kvalifikace oboru názvů.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -39,54 +39,54 @@ Imports [ aliasname = ] namespace.element
 
 |Termín|Definice|
 |---|---|
-|`aliasname`|Volitelné. An *import alias* or name by which code can refer to `namespace` instead of the full qualification string. See [Declared Element Names](../../programming-guide/language-features/declared-elements/declared-element-names.md).|
-|`namespace`|Požadováno. The fully qualified name of the namespace being imported. Can be a string of namespaces nested to any level.|
-|`element`|Volitelné. The name of a programming element declared in the namespace. Can be any container element.|
+|`aliasname`|Volitelná. Alias nebo název *importu* , pomocí kterého může kód odkazovat `namespace` místo úplného řetězce kvalifikace. Viz [deklarované názvy elementů](../../programming-guide/language-features/declared-elements/declared-element-names.md).|
+|`namespace`|Požadováno. Plně kvalifikovaný název oboru názvů, který se má importovat Může to být řetězec oborů názvů vnořený do libovolné úrovně.|
+|`element`|Volitelná. Název programovacího prvku deklarovaného v oboru názvů. Může to být libovolný element kontejneru.|
 
 ## <a name="remarks"></a>Poznámky
 
-The `Imports` statement enables types that are contained in a given namespace to be referenced directly.
+Příkaz `Imports` umožňuje, aby typy, které jsou obsaženy v daném oboru názvů, odkazovaly přímo.
 
-You can supply a single namespace name or a string of nested namespaces. Each nested namespace is separated from the next higher level namespace by a period (`.`), as the following example illustrates:
+Můžete dodat jeden název oboru názvů nebo řetězec pro vnořené obory názvů. Každý vnořený obor názvů je oddělený od dalšího oboru názvů vyšší úrovně o periodě (`.`), jak ukazuje následující příklad:
 
 ```vb
 Imports System.Collections.Generic
 ```
 
-Each source file can contain any number of `Imports` statements. These must follow any option declarations, such as the `Option Strict` statement, and they must precede any programming element declarations, such as `Module` or `Class` statements.
+Každý zdrojový soubor může obsahovat libovolný počet příkazů `Imports`. Ty musí splňovat jakékoli deklarace možností, jako je například příkaz `Option Strict`, a musí předcházet deklaraci všech programovacích prvků, jako jsou například `Module` nebo `Class` příkazy.
 
-You can use `Imports` only at file level. This means the declaration context for importation must be a source file, and cannot be a namespace, class, structure, module, interface, procedure, or block.
+`Imports` můžete použít pouze na úrovni souborů. To znamená, že kontext deklarace pro import musí být zdrojový soubor a nemůže být obor názvů, třída, struktura, modul, rozhraní, procedura nebo blok.
 
-Note that the `Imports` statement does not make elements from other projects and assemblies available to your project. Importing does not take the place of setting a reference. It only removes the need to qualify names that are already available to your project. For more information, see "Importing Containing Elements" in [References to Declared Elements](../../programming-guide/language-features/declared-elements/references-to-declared-elements.md).
+Všimněte si, že příkaz `Imports` nezpřístupňuje prvky z jiných projektů a sestavení, která jsou k dispozici pro váš projekt. Import nebere v úvahu místo nastavení odkazu. Pouze odebere nutnost kvalifikovat názvy, které jsou již k dispozici pro váš projekt. Další informace naleznete v tématu "Import obsahující prvky" v [odkazech na deklarované elementy](../../programming-guide/language-features/declared-elements/references-to-declared-elements.md).
 
 > [!NOTE]
-> You can define implicit `Imports` statements by using the [References Page, Project Designer (Visual Basic)](/visualstudio/ide/reference/references-page-project-designer-visual-basic). For more information, see [How to: Add or Remove Imported Namespaces (Visual Basic)](/visualstudio/ide/how-to-add-or-remove-imported-namespaces-visual-basic).
+> Můžete definovat implicitní příkazy `Imports` pomocí [stránky odkazy, Návrháře projektu (Visual Basic)](/visualstudio/ide/reference/references-page-project-designer-visual-basic). Další informace najdete v tématu [Postup: Přidání nebo odebrání importovaných oborů názvů (Visual Basic)](/visualstudio/ide/how-to-add-or-remove-imported-namespaces-visual-basic).
 
-## <a name="import-aliases"></a>Import Aliases
+## <a name="import-aliases"></a>Importovat aliasy
 
-An *import alias* defines the alias for a namespace or type. Import aliases are useful when you need to use items with the same name that are declared in one or more namespaces. For more information and an example, see "Qualifying an Element Name" in [References to Declared Elements](../../programming-guide/language-features/declared-elements/references-to-declared-elements.md).
+*Alias importu* definuje alias pro obor názvů nebo typ. Importovat aliasy jsou užitečné v případě, že potřebujete použít položky se stejným názvem, které jsou deklarovány v jednom nebo více oborech názvů. Další informace a příklad naleznete v tématu "získání názvu elementu" v [odkazech na deklarované elementy](../../programming-guide/language-features/declared-elements/references-to-declared-elements.md).
 
-You should not declare a member at module level with the same name as `aliasname`. If you do, the Visual Basic compiler uses `aliasname` only for the declared member and no longer recognizes it as an import alias.
+Člena byste neměli deklarovat na úrovni modulu se stejným názvem jako `aliasname`. Pokud tak učiníte, Visual Basic kompilátor používá `aliasname` pouze pro deklarovaný člen a již jej nerozezná jako alias pro import.
 
-Although the syntax used for declaring an import alias is like that used for importing an XML namespace prefix, the results are different. An import alias can be used as an expression in your code, whereas an XML namespace prefix can be used only in XML literals or XML axis properties as the prefix for a qualified element or attribute name.
+I když syntaxe použitá pro deklarování aliasu importu je stejná jako ta, která se používá pro import předpony oboru názvů XML, výsledky se liší. Alias importu lze použít jako výraz v kódu, zatímco předponu oboru názvů XML lze použít pouze v literálech XML nebo ve vlastnostech osy XML jako předponu pro kvalifikovaný element nebo název atributu.
 
 ### <a name="element-names"></a>Názvy elementů
 
-If you supply `element`, it must represent a *container element*, that is, a programming element that can contain other elements. Container elements include classes, structures, modules, interfaces, and enumerations.
+Pokud zadáte `element`, musí reprezentovat *prvek kontejneru*, to znamená, že programovací prvek, který může obsahovat další prvky. Prvky kontejneru zahrnují třídy, struktury, moduly, rozhraní a výčty.
 
-The scope of the elements made available by an `Imports` statement depends on whether you specify `element`. If you specify only `namespace`, all uniquely named members of that namespace, and members of container elements within that namespace, are available without qualification. If you specify both `namespace` and `element`, only the members of that element are available without qualification.
+Rozsah prvků, které byly k dispozici v příkazu `Imports`, závisí na tom, zda zadáte `element`. Zadáte-li pouze `namespace`, jsou k dispozici všechny jedinečně pojmenované členy tohoto oboru názvů a členy prvků kontejneru v rámci tohoto oboru názvů bez kvalifikace. Pokud zadáte jak `namespace`, tak `element`, jsou k dispozici pouze členové tohoto prvku bez kvalifikace.
 
 ## <a name="example"></a>Příklad
 
-The following example returns all the folders in the *C:\\* directory by using the <xref:System.IO.DirectoryInfo> class:
+Následující příklad vrátí všechny složky v adresáři *C:\\* pomocí <xref:System.IO.DirectoryInfo> třídy:
 
-The code has no `Imports` statements at the top of the file. Therefore, the <xref:System.IO.DirectoryInfo>, <xref:System.Text.StringBuilder>, and <xref:Microsoft.VisualBasic.ControlChars.CrLf> references are all fully qualified with the namespaces.
+Kód neobsahuje žádné příkazy `Imports` v horní části souboru. Proto jsou odkazy <xref:System.IO.DirectoryInfo>, <xref:System.Text.StringBuilder>a <xref:Microsoft.VisualBasic.ControlChars.CrLf> plně kvalifikované s obory názvů.
 
 [!code-vb[VbVbalrStatements#152](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class12.vb#152)]
 
 ## <a name="example"></a>Příklad
 
-The following example includes `Imports` statements for the referenced namespaces. Therefore, the types do not have to be fully qualified with the namespaces.
+Následující příklad obsahuje příkazy `Imports` pro odkazované obory názvů. Proto nemusí být typy plně kvalifikované pro obory názvů.
 
 [!code-vb[VbVbalrStatements#153](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class12.vb#153)]
 
@@ -94,7 +94,7 @@ The following example includes `Imports` statements for the referenced namespace
   
 ## <a name="example"></a>Příklad
 
-The following example includes `Imports` statements that create aliases for the referenced namespaces. The types are qualified with the aliases.
+Následující příklad obsahuje příkazy `Imports`, které vytvářejí aliasy pro odkazované obory názvů. Typy jsou kvalifikovány s aliasy.
 
 [!code-vb[VbVbalrStatements#155](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class12.vb#155)]
 
@@ -102,7 +102,7 @@ The following example includes `Imports` statements that create aliases for the 
 
 ## <a name="example"></a>Příklad
 
-The following example includes `Imports` statements that create aliases for the referenced types. Aliases are used to specify the types.
+Následující příklad obsahuje příkazy `Imports`, které vytvářejí aliasy pro odkazované typy. Aliasy slouží k určení typů.
 
 [!code-vb[VbVbalrStatements#157](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class12.vb#157)]
 
@@ -111,7 +111,7 @@ The following example includes `Imports` statements that create aliases for the 
 ## <a name="see-also"></a>Viz také:
 
 - [Příkaz Namespace](namespace-statement.md)
-- [Namespaces in Visual Basic](../../programming-guide/program-structure/namespaces.md)
+- [Obory názvů v Visual Basic](../../programming-guide/program-structure/namespaces.md)
 - [Odkazy a příkaz Imports](../../programming-guide/program-structure/references-and-the-imports-statement.md)
 - [Příkaz Imports (obor názvů XML)](imports-statement-xml-namespace.md)
 - [Odkazy na deklarované elementy](../../programming-guide/language-features/declared-elements/references-to-declared-elements.md)

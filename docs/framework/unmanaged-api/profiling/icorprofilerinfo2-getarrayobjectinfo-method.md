@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436032"
 ---
 # <a name="icorprofilerinfo2getarrayobjectinfo-method"></a>ICorProfilerInfo2::GetArrayObjectInfo – metoda
-Gets detailed information about an array object.  
+Získá podrobné informace o objektu Array.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,31 +38,31 @@ HRESULT GetArrayObjectInfo(
   
 ## <a name="parameters"></a>Parametry  
  `objectId`  
- [in] The ID of a valid array object.  
+ pro ID platného objektu Array.  
   
  `cDimensions`  
- [in] The rank (number of dimensions) of the array.  
+ pro Pořadí (počet rozměrů) pole.  
   
  `pDimensionSizes`  
- [out] An array that contains integers, each representing the size of a dimension of the array.  
+ mimo Pole obsahující celá čísla, která představují velikost rozměru pole.  
   
  `pDimensionLowerBounds`  
- [out] An array that contains integers, each representing the lower bound of a dimension of the array.  
+ mimo Pole obsahující celá čísla, z nichž každá představuje dolní mez dimenze pole.  
   
  `ppData`  
- [out] A pointer to the address of the raw buffer for the array, which is laid out according to the C++ convention.  
+ mimo Ukazatel na adresu nezpracované vyrovnávací paměti pro pole, které je stanoveno podle C++ konvence.  
   
 ## <a name="remarks"></a>Poznámky  
- The `pDimensionSizes` and `pDimensionLowerBounds` are parallel arrays, so the elements located at the same index in each array are characteristics of the same entity.  
+ `pDimensionSizes` a `pDimensionLowerBounds` jsou paralelní pole, takže prvky umístěné na stejném indexu v každém poli jsou charakteristické pro stejnou entitu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

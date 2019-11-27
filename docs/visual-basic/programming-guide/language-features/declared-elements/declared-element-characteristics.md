@@ -21,20 +21,20 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74331630"
 ---
 # <a name="declared-element-characteristics-visual-basic"></a>Deklarované charakteristiky elementu (Visual Basic)
-A *characteristic* of a declared element is an aspect of that element that affects how code can interact with it. Every declared element has one or more of the following characteristics associated with it:  
+*Charakteristika* deklarovaného elementu je aspekt tohoto prvku, který ovlivňuje, jak s ním může pracovat kód. Každý deklarovaný element má k sobě přidruženou jednu nebo více následujících vlastností:  
   
-- *Data type* — the values the element can hold, and how it stores those values. For more information, see [Data Types](../../../../visual-basic/language-reference/data-types/index.md).  
+- *Datový typ* – hodnoty, které element může uchovávat, a způsob, jakým tyto hodnoty uloží. Další informace najdete v tématu [datové typy](../../../../visual-basic/language-reference/data-types/index.md).  
   
-- *Lifetime* — the period of execution time during which the element is available for use. For more information, see [Lifetime in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md).  
+- *Doba života* – doba spuštění, během které je prvek k dispozici pro použití. Další informace najdete v tématu [Doba života v Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md).  
   
-- *Scope* — the set of all code that can refer to the element without qualifying its name. For more information, see [How to: Control the Scope of a Variable](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-scope-of-a-variable.md).  
+- *Scope* – sada všech kódů, které mohou odkazovat na prvek bez kvalifikovaného názvu. Další informace naleznete v tématu [How to: Control a Scope of a proměnná](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-scope-of-a-variable.md).  
   
-- *Access level* — the permission for code to make use of the element. For more information, see [How to: Control the Availability of a Variable](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-availability-of-a-variable.md).  
+- *Úroveň přístupu* – oprávnění pro kód pro použití prvku. Další informace najdete v tématu [Postupy: řízení dostupnosti proměnné](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-availability-of-a-variable.md).  
   
-## <a name="characteristics-of-the-elements"></a>Characteristics of the Elements  
- The following table shows the declared elements and the characteristics that apply to each one.  
+## <a name="characteristics-of-the-elements"></a>Charakteristiky prvků  
+ V následující tabulce jsou uvedeny deklarované prvky a vlastnosti, které platí pro každý z nich.  
   
-|Prvek|Datový typ|Doba platnosti|Scope <sup>1</sup>|Access Level|  
+|Prvek|Typ dat|Životnost|Rozsah <sup>1</sup>|Úroveň přístupu|  
 |-------------|---------------|--------------|------------------------|------------------|  
 |Proměnná|Ano|Ano|Ano|Ano|  
 |Konstanta|Ano|Ne|Ano|Ano|  
@@ -42,24 +42,24 @@ A *characteristic* of a declared element is an aspect of that element that affec
 |Struktura|Ne|Ne|Ano|Ano|  
 |Vlastnost|Ano|Ano|Ano|Ano|  
 |Metoda|Ne|Ano|Ano|Ano|  
-|Procedure (`Sub` or `Function`)|Ne|Ano|Ano|Ano|  
-|Procedure parameter|Ano|Ano|Ano|Ne|  
-|Function return|Ano|Ano|Ano|Ne|  
+|Procedura (`Sub` nebo `Function`)|Ne|Ano|Ano|Ano|  
+|Parametr procedury|Ano|Ano|Ano|Ne|  
+|Vrácení funkce|Ano|Ano|Ano|Ne|  
 |Operátor|Ano|Ne|Ano|Ano|  
 |Rozhraní|Ne|Ne|Ano|Ano|  
 |Třída|Ne|Ne|Ano|Ano|  
 |Událost|Ne|Ne|Ano|Ano|  
 |Delegát|Ne|Ne|Ano|Ano|  
   
- <sup>1</sup> Scope is sometimes referred to as *visibility*.  
+ <sup>1</sup> obor se někdy označuje jako *viditelnost*.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/index.md)
 - [Deklarované názvy elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)
 - [Odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
-- [Lifetime in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)
-- [Scope in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
-- [Access levels in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
+- [Doba života v Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)
+- [Obor v Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
+- [Úrovně přístupu v Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
 - [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
 - [Deklarace proměnné](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)

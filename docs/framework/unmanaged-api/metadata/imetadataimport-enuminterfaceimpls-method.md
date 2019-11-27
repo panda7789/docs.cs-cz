@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449532"
 ---
 # <a name="imetadataimportenuminterfaceimpls-method"></a>IMetaDataImport::EnumInterfaceImpls – metoda
-Enumerates all interfaces implemented by the specified `TypeDef`. 
+Vytvoří výčet všech rozhraní implementovaných specifikovaným `TypeDef`. 
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,39 +39,39 @@ HRESULT EnumInterfaceImpls (
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [in, out] A pointer to the enumerator.  
+ [in, out] Ukazatel na enumerátor.  
   
  `td`  
- [in] The token of the TypeDef whose MethodDef tokens representing interface implementations are to be enumerated.  
+ pro Token TypeDef, jehož tokeny MethodDef představují implementaci rozhraní, mají být vyčísleny.  
   
  `rImpls`  
- [out] The array used to store the MethodDef tokens.  
+ mimo Pole použité k uložení tokenů MethodDef  
   
  `cMax`  
- [in] The maximum size of the `rImpls` array.  
+ pro Maximální velikost `rImpls` pole  
   
  `pcImpls`  
- [out] The actual number of tokens returned in `rImpls`.  
+ mimo Skutečný počet tokenů vrácených v `rImpls`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumInterfaceImpls` returned successfully.|  
-|`S_FALSE`|There are no MethodDef tokens to enumerate. In that case, `pcImpls` is set to zero.|  
+|`S_OK`|`EnumInterfaceImpls` byla úspěšně vrácena.|  
+|`S_FALSE`|Nejsou k dispozici žádné tokeny MethodDef pro zobrazení výčtu. V takovém případě je `pcImpls` nastavena na hodnotu nula.|  
 
 ## <a name="remarks"></a>Poznámky
 
-The enumeration returns a collection of `mdInterfaceImpl` tokens for each interface implemented by the specified `TypeDef`. Interface tokens are returned in the order the interfaces were specified (through `DefineTypeDef` or `SetTypeDefProps`). Properties of the returned `mdInterfaceImpl` tokens can be queried using [GetInterfaceImplProps](imetadataimport-getinterfaceimplprops-method.md).
+Výčet vrátí kolekci `mdInterfaceImpl`ch tokenů pro každé rozhraní implementované určeného `TypeDef`. Tokeny rozhraní jsou vraceny v pořadí, ve kterém byla rozhraní zadána (prostřednictvím `DefineTypeDef` nebo `SetTypeDefProps`). K vlastnostem vrácených tokenů `mdInterfaceImpl` se dá dotázat pomocí [getinterfaceimplprops –](imetadataimport-getinterfaceimplprops-method.md).
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -1,5 +1,5 @@
 ---
-title: 'How to: Combine Data with LINQ by Using Joins'
+title: 'Postupy: kombinování dat pomocí jazyka LINQ pomocí spojení'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - queries [LINQ in Visual Basic], joins
@@ -17,75 +17,75 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74345006"
 ---
 # <a name="how-to-combine-data-with-linq-by-using-joins-visual-basic"></a>Postupy: Kombinace dat s LINQ pomocí spojení (Visual Basic)
-Visual Basic provides the `Join` and `Group Join` query clauses to enable you to combine the contents of multiple collections based on common values between the collections. These values are known as *key* values. Developers familiar with relational database concepts will recognize the `Join` clause as an INNER JOIN and the `Group Join` clause as, effectively, a LEFT OUTER JOIN.  
+Visual Basic poskytuje klauzule dotazu `Join` a `Group Join`, které vám umožní kombinovat obsah více kolekcí na základě běžných hodnot mezi kolekcemi. Tyto hodnoty se označují jako *klíčové* hodnoty. Vývojáři, kteří jsou obeznámeni s koncepty relačních databází, rozpoznávají klauzuli `Join` jako vnitřní spojení a klauzuli `Group Join` jako efektivní a levé vnější spojení.  
   
- The examples in this topic demonstrate a few ways to combine data by using the `Join` and `Group Join` query clauses.  
+ Příklady v tomto tématu ukazují několik způsobů, jak kombinovat data pomocí klauzulí `Join` a `Group Join` dotazů.  
   
-## <a name="create-a-project-and-add-sample-data"></a>Create a Project and Add Sample Data  
+## <a name="create-a-project-and-add-sample-data"></a>Vytvoření projektu a Přidání ukázkových dat  
   
-#### <a name="to-create-a-project-that-contains-sample-data-and-types"></a>To create a project that contains sample data and types  
+#### <a name="to-create-a-project-that-contains-sample-data-and-types"></a>Vytvoření projektu, který obsahuje ukázková data a typy  
   
-1. To run the samples in this topic, open Visual Studio and add a new Visual Basic Console Application project. Double-click the Module1.vb file created by Visual Basic.  
+1. Chcete-li spustit ukázky v tomto tématu, otevřete aplikaci Visual Studio a přidejte nový projekt Visual Basic konzolové aplikace. Dvakrát klikněte na soubor Module1. vb vytvořený pomocí Visual Basic.  
   
-2. The samples in this topic use the `Person` and `Pet` types and data from the following code example. Copy this code into the default `Module1` module created by Visual Basic.  
+2. Ukázky v tomto tématu používají `Person` a `Pet` typy a data z následujícího příkladu kódu. Zkopírujte tento kód do výchozího modulu `Module1` vytvořeného pomocí Visual Basic.  
   
      [!code-vb[VbLINQHowTos#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQHowTos/VB/Module1.vb#1)]  
     [!code-vb[VbLINQHowTos#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQHowTos/VB/Module1.vb#2)]  
   
-## <a name="perform-an-inner-join-by-using-the-join-clause"></a>Perform an Inner Join by Using the Join Clause  
- An INNER JOIN combines data from two collections. Items for which the specified key values match are included. Any items from either collection that do not have a matching item in the other collection are excluded.  
+## <a name="perform-an-inner-join-by-using-the-join-clause"></a>Provedení vnitřního spojení pomocí klauzule JOIN  
+ VNITŘNÍ spojení kombinuje data ze dvou kolekcí. Položky, pro které se shodují zadané hodnoty klíčů, jsou zahrnuty. Všechny položky z obou kolekcí, které nemají odpovídající položku v jiné kolekci, jsou vyloučeny.  
   
- In Visual Basic, LINQ provides two options for performing an INNER JOIN: an implicit join and an explicit join.  
+ V Visual Basic LINQ nabízí dvě možnosti pro provádění vnitřního spojení: implicitní spojení a explicitní spojení.  
   
- An implicit join specifies the collections to be joined in a `From` clause and identifies the matching key fields in a `Where` clause. Visual Basic implicitly joins the two collections based on the specified key fields.  
+ Implicitní spojení Určuje kolekce, které mají být spojeny v klauzuli `From` a v klauzuli `Where` identifikuje klíčová pole, která se shodují. Visual Basic implicitně spojí dvě kolekce na základě zadaných klíčových polí.  
   
- You can specify an explicit join by using the `Join` clause when you want to be specific about which key fields to use in the join. In this case, a `Where` clause can still be used to filter the query results.  
+ Explicitní spojení můžete zadat pomocí klauzule `Join`, pokud chcete mít konkrétní informace o tom, která klíčová pole se mají ve spojení použít. V takovém případě může být k filtrování výsledků dotazu stále používána klauzule `Where`.  
   
-#### <a name="to-perform-an-inner-join-by-using-the-join-clause"></a>To perform an Inner Join by using the Join clause  
+#### <a name="to-perform-an-inner-join-by-using-the-join-clause"></a>Provedení vnitřního spojení pomocí klauzule JOIN  
   
-1. Add the following code to the `Module1` module in your project to see examples of both an implicit and explicit inner join.  
+1. Přidejte následující kód do modulu `Module1` v projektu, aby se zobrazily příklady implicitního i explicitního vnitřního spojení.  
   
      [!code-vb[VbLINQHowTos#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQHowTos/VB/Module1.vb#4)]  
   
-## <a name="perform-a-left-outer-join-by-using-the-group-join-clause"></a>Perform a Left Outer Join by Using the Group Join Clause  
- A LEFT OUTER JOIN includes all the items from the left-side collection of the join and only matching values from the right-side collection of the join. Any items from the right-side collection of the join that do not have a matching item in the left-side collection are excluded from the query result.  
+## <a name="perform-a-left-outer-join-by-using-the-group-join-clause"></a>Provedení levého vnějšího spojení pomocí klauzule Group Join  
+ LEVÉ vnější spojení zahrnuje všechny položky z kolekce na levé straně spojení a jenom vyhovující hodnoty z kolekce na pravé straně spojení. Všechny položky z kolekce na pravé straně spojení, které nemají odpovídající položku v kolekci na levé straně, jsou vyloučeny z výsledku dotazu.  
   
- The `Group Join` clause performs, in effect, a LEFT OUTER JOIN. The difference between what is typically known as a LEFT OUTER JOIN and what the `Group Join` clause returns is that the `Group Join` clause groups results from the right-side collection of the join for each item in the left-side collection. In a relational database, a LEFT OUTER JOIN returns an ungrouped result in which each item in the query result contains matching items from both collections in the join. In this case, the items from the left-side collection of the join are repeated for each matching item from the right-side collection. You will see what this looks like when you complete the next procedure.  
+ Klauzule `Group Join` provádí v podstatě levé vnější spojení. Rozdíl mezi tím, co se obvykle označuje jako levé vnější spojení a co klauzule `Group Join` vrátí, je, že klauzule `Group Join` seskupí výsledky z kolekce JOIN na pravé straně pro každou položku v kolekci na levé straně. V relační databázi vrátí levé vnější spojení neseskupený výsledek, ve kterém každá položka ve výsledku dotazu obsahuje vyhovující položky z obou kolekcí v rámci spojení. V tomto případě se položky z kolekce na levé straně spojení opakují pro každou vyhovující položku z kolekce na pravé straně. Zobrazí se to, co vypadá po dokončení dalšího postupu.  
   
- You can retrieve the results of a `Group Join` query as an ungrouped result by extending your query to return an item for each grouped query result. To accomplish this, you have to ensure that you query on the `DefaultIfEmpty` method of the grouped collection. This ensures that items from the left-side collection of the join are still included in the query result even if they have no matching results from the right-side collection. You can add code to your query to provide a default result value when there is no matching value from the right-side collection of the join.  
+ Výsledky `Group Join`ho dotazu můžete načíst jako neseskupený výsledek rozšířením dotazu tak, aby vracel položku pro každý výsledek seskupeného dotazu. Chcete-li to provést, musíte se ujistit, že je nutné zadat dotaz na metodu `DefaultIfEmpty` seskupené kolekce. Tím zajistíte, že položky z kolekce na levé straně spojení budou zahrnuty do výsledku dotazu i v případě, že nemají odpovídající výsledky z kolekce na pravé straně. Do dotazu můžete přidat kód pro zadání výchozí hodnoty výsledku v případě, že není k dispozici žádná shodná hodnota z kolekce na pravé straně spojení.  
   
-#### <a name="to-perform-a-left-outer-join-by-using-the-group-join-clause"></a>To perform a Left Outer Join by using the Group Join clause  
+#### <a name="to-perform-a-left-outer-join-by-using-the-group-join-clause"></a>Provedení levého vnějšího spojení pomocí klauzule Group Join  
   
-1. Add the following code to the `Module1` module in your project to see examples of both a grouped left outer join and an ungrouped left outer join.  
+1. Přidejte následující kód do modulu `Module1` v projektu, abyste viděli příklady seskupeného levého vnějšího spojení a neseskupené levé vnější spojení.  
   
      [!code-vb[VbLINQHowTos#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQHowTos/VB/Module1.vb#3)]  
   
-## <a name="perform-a-join-by-using-a-composite-key"></a>Perform a Join by Using a Composite Key  
- You can use the `And` keyword in a `Join` or `Group Join` clause to identify multiple key fields to use when matching values from the collections being joined. The `And` keyword specifies that all specified key fields must match for items to be joined.  
+## <a name="perform-a-join-by-using-a-composite-key"></a>Provedení spojení pomocí složeného klíče  
+ Klíčové slovo `And` v klauzuli `Join` nebo `Group Join` můžete použít k identifikaci více klíčových polí, která se mají použít, když se shodují hodnoty z kolekce, které jsou spojeny. Klíčové slovo `And` určuje, že všechna zadaná klíčová pole se musí shodovat s položkami, které mají být spojeny.  
   
-#### <a name="to-perform-a-join-by-using-a-composite-key"></a>To perform a Join by using a composite key  
+#### <a name="to-perform-a-join-by-using-a-composite-key"></a>Provedení spojení pomocí složeného klíče  
   
-1. Add the following code to the `Module1` module in your project to see examples of a join that uses a composite key.  
+1. Přidejte následující kód do modulu `Module1` v projektu, aby se zobrazily příklady spojení, které používá složený klíč.  
   
      [!code-vb[VbLINQHowTos#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQHowTos/VB/Module1.vb#5)]  
   
-## <a name="run-the-code"></a>Run the Code  
+## <a name="run-the-code"></a>Spustit kód  
   
-#### <a name="to-add-code-to-run-the-examples"></a>To add code to run the examples  
+#### <a name="to-add-code-to-run-the-examples"></a>Přidání kódu pro spuštění příkladů  
   
-1. Replace the `Sub Main` in the `Module1` module in your project with the following code to run the examples in this topic.  
+1. Nahraďte `Sub Main` v modulu `Module1` ve vašem projektu následujícím kódem pro spuštění příkladů v tomto tématu.  
   
      [!code-vb[VbLINQHowTos#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQHowTos/VB/Module1.vb#6)]  
   
-2. Press F5 to run the examples.  
+2. Příklady spustíte stisknutím klávesy F5.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
-- [Introduction to LINQ in Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Úvod do jazyka LINQ v Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
 - [Klauzule Join](../../../../visual-basic/language-reference/queries/join-clause.md)
 - [Klauzule Group Join](../../../../visual-basic/language-reference/queries/group-join-clause.md)
 - [Klauzule From](../../../../visual-basic/language-reference/queries/from-clause.md)
 - [Klauzule Where](../../../../visual-basic/language-reference/queries/where-clause.md)
 - [Dotazy](../../../../visual-basic/language-reference/queries/index.md)
-- [Data Transformations with LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/data-transformations-with-linq.md)
+- [Transformace dat pomocí LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/data-transformations-with-linq.md)

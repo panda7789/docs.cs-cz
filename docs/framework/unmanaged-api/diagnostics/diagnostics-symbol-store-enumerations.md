@@ -15,20 +15,20 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448537"
 ---
 # <a name="diagnostics-symbol-store-enumerations"></a>Výčty úložiště symbolů diagnostiky
-This topic describes the unmanaged enumerations that the diagnostics symbol store API uses.  
+Toto téma popisuje nespravované výčty, které používá rozhraní API pro úložiště symbolů diagnostiky.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [CorSymAddrKind – výčet](../../../../docs/framework/unmanaged-api/diagnostics/corsymaddrkind-enumeration.md)  
- Indicates the type of memory address.  
+ Určuje typ adresy paměti.  
   
  [CorSymSearchPolicyAttributes – výčet](../../../../docs/framework/unmanaged-api/diagnostics/corsymsearchpolicyattributes-enumeration.md)  
- Specifies the policy to be used when doing a search for a symbol reader.  
+ Určuje zásadu, která se má použít při hledání čtečky symbolů.  
   
  [CorSymVarFlag – výčet](../../../../docs/framework/unmanaged-api/diagnostics/corsymvarflag-enumeration.md)  
- Indicates whether a variable is compiler-generated.  
+ Označuje, zda je proměnná vygenerována kompilátorem.  
   
  [NOTIFY_FILTER – výčet](../../../../docs/framework/unmanaged-api/diagnostics/notify-filter-enumeration.md)  
- Identifies callbacks for debugger functions.  
+ Označuje zpětná volání pro funkce ladicího programu.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Rozhraní pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)  

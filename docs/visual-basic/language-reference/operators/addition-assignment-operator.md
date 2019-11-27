@@ -18,7 +18,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350298"
 ---
 # <a name="-operator-visual-basic"></a>+= – operátor (Visual Basic)
-Adds the value of a numeric expression to the value of a numeric variable or property and assigns the result to the variable or property. Can also be used to concatenate a `String` expression to a `String` variable or property and assign the result to the variable or property.  
+Přidá hodnotu číselného výrazu do hodnoty číselné proměnné nebo vlastnosti a přiřadí výsledek proměnné nebo vlastnosti. Lze také použít k zřetězení `String`ho výrazu s proměnnou nebo vlastností `String` a přiřazení výsledku proměnné nebo vlastnosti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,41 +28,41 @@ variableorproperty += expression
   
 ## <a name="parts"></a>Součásti  
  `variableorproperty`  
- Požadováno. Any numeric or `String` variable or property.  
+ Požadováno. Jakákoli číselná nebo `String`ová proměnná nebo vlastnost.  
   
  `expression`  
- Požadováno. Any numeric or `String` expression.  
+ Požadováno. Libovolný numerický nebo výraz `String`.  
   
 ## <a name="remarks"></a>Poznámky  
- The element on the left side of the `+=` operator can be a simple scalar variable, a property, or an element of an array. The variable or property cannot be [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md).  
+ Element na levé straně operátoru `+=` může být jednoduchá skalární proměnná, vlastnost nebo prvek pole. Proměnná nebo vlastnost nemůže být [jen pro čtení](../../../visual-basic/language-reference/modifiers/readonly.md).  
   
- The `+=` operator adds the value on its right to the variable or property on its left, and assigns the result to the variable or property on its left. The `+=` operator can also be used to concatenate the `String` expression on its right to the `String` variable or property on its left, and assign the result to the variable or property on its left.  
+ Operátor `+=` přidá hodnotu na základě práva na proměnnou nebo vlastnost vlevo a výsledek přiřadí proměnné nebo vlastnosti nalevo. Operátor `+=` lze také použít k zřetězení výrazu `String` na základě jeho práva na `String` proměnnou nebo vlastnost na levé straně a přiřadit výsledek proměnné nebo vlastnosti na levé straně.  
   
 > [!NOTE]
-> When you use the `+=` operator, you might not be able to determine whether addition or string concatenation will occur. Use the `&=` operator for concatenation to eliminate ambiguity and to provide self-documenting code.  
+> Když použijete operátor `+=`, možná nebudete moci určit, zda dojde k přidání nebo zřetězení řetězců. Použijte operátor `&=` pro zřetězení k eliminaci nejednoznačnosti a k poskytnutí kódu pro osobní dokument.  
   
- This assignment operator implicitly performs widening but not narrowing conversions if the compilation environment enforces strict semantics. For more information on these conversions, see [Widening and Narrowing Conversions](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md). For more information on strict and permissive semantics, see [Option Strict Statement](../../../visual-basic/language-reference/statements/option-strict-statement.md).  
+ Tento operátor přiřazení implicitně provádí rozšiřující, ale ne zužující převody, pokud prostředí kompilace vynutilo striktní sémantiku. Další informace o těchto převodech naleznete v tématu [rozšiřující a zúžené převody](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md). Další informace o striktní a opravňující sémantikě naleznete v tématu [Option Strict Statement](../../../visual-basic/language-reference/statements/option-strict-statement.md).  
   
- If permissive semantics are allowed, the `+=` operator implicitly performs a variety of string and numeric conversions identical to those performed by the `+` operator. For details on these conversions, see [+ Operator](../../../visual-basic/language-reference/operators/addition-operator.md).  
+ Pokud je povolená sémantika povolující, operátor `+=` implicitně provede celou řadu řetězcových a číselných převodů, které jsou stejné jako u operátorů `+`. Podrobnosti o těchto převodech naleznete v tématu [+ Operator](../../../visual-basic/language-reference/operators/addition-operator.md).  
   
 ## <a name="overloading"></a>Přetížení  
- The `+` operator can be *overloaded*, which means that a class or structure can redefine its behavior when an operand has the type of that class or structure. Overloading the `+` operator affects the behavior of the `+=` operator. If your code uses `+=` on a class or structure that overloads `+`, be sure you understand its redefined behavior. For more information, see [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ Operátor `+` lze přetížit, což znamená, že třída nebo struktura může předefinovat své *chování, pokud*má operand typ této třídy nebo struktury. Přetížení operátoru `+` má vliv na chování operátoru `+=`. Pokud váš kód používá `+=` ve třídě nebo struktuře, která přetěžuje `+`, ujistěte se, že rozumíte jeho předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Příklad  
- The following example uses the `+=` operator to combine the value of one variable with another. The first part uses `+=` with numeric variables to add one value to another. The second part uses `+=` with `String` variables to concatenate one value with another. In both cases, the result is assigned to the first variable.  
+ Následující příklad používá operátor `+=` ke kombinování hodnoty jedné proměnné s jinou. První část používá `+=` s numerickými proměnnými k přidání jedné hodnoty do druhé. Druhá část používá `+=` s `String` proměnných k zřetězení jedné hodnoty s jinou. V obou případech je výsledek přiřazen první proměnné.  
   
  [!code-vb[VbVbalrOperators#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#7)]  
   
  [!code-vb[VbVbalrOperators#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#8)]  
   
- The value of `num1` is now 13, and the value of `str1` is now "103".  
+ Hodnota `num1` je nyní 13 a hodnota `str1` je nyní "103".  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Operátor +](../../../visual-basic/language-reference/operators/addition-operator.md)
+- [+ – operátor](../../../visual-basic/language-reference/operators/addition-operator.md)
 - [Operátory přiřazení](../../../visual-basic/language-reference/operators/assignment-operators.md)
 - [Aritmetické operátory](../../../visual-basic/language-reference/operators/arithmetic-operators.md)
-- [Operátory řetězení](../../../visual-basic/language-reference/operators/concatenation-operators.md)
-- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Operátory zřetězení](../../../visual-basic/language-reference/operators/concatenation-operators.md)
+- [Priorita operátorů v Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
 - [Příkazy](../../../visual-basic/programming-guide/language-features/statements.md)

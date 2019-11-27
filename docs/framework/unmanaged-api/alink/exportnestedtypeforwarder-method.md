@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74438411"
 ---
 # <a name="exportnestedtypeforwarder-method"></a>ExportNestedTypeForwarder – metoda
-Adds a type forwarder for a nested type to the type table of the given assembly.  
+Přidá předávaného typu pro vnořený typ do tabulky typů daného sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,34 +40,34 @@ HRESULT ExportNestedTypeForwarder(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID of the assembly to export from.  
+ ID sestavení, ze kterého se má exportovat  
   
  `FileToken`  
- File token or assembly ID of file that defines the type.  
+ Token souboru nebo ID sestavení souboru, který definuje typ.  
   
  `TypeToken`  
- Token for the type.  
+ Token pro typ  
   
  `ParentType`  
- Token of parent type.  
+ Token nadřazeného typu  
   
  `pszTypename`  
- Fully qualified type name to export.  
+ Plně kvalifikovaný název typu, který se má exportovat  
   
  `dwFlags`  
- `ComType` flags such as `tdPublic` or `tdNested`.  
+ `ComType` příznaky jako `tdPublic` nebo `tdNested`.  
   
  `pType`  
- Receives token of export type. This is necessary only for emitting nested types.  
+ Přijímá token pro typ exportu. To je nezbytné jenom pro vygenerování vnořených typů.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Returns S_OK if the method succeeds.  
+ Vrátí S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Requires alink.h  
+ Vyžaduje ALink. h  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink – rozhraní](ialink-interface.md)
 - [IALink2 – rozhraní](ialink2-interface.md)
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)

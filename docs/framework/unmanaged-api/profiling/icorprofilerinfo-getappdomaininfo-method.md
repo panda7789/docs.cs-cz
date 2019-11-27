@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448182"
 ---
 # <a name="icorprofilerinfogetappdomaininfo-method"></a>ICorProfilerInfo::GetAppDomainInfo – metoda
-Accepts an application domain ID. Returns an application domain name and the ID of the process that contains it.  
+Přijímá ID domény aplikace. Vrátí název domény aplikace a ID procesu, který jej obsahuje.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,33 +39,33 @@ HRESULT GetAppDomainInfo(
   
 ## <a name="parameters"></a>Parametry  
  `appDomainId`  
- [in] The ID of the application domain.  
+ pro ID domény aplikace  
   
  `cchName`  
- [in] The length, in characters, of the `szName` return buffer.  
+ pro Délka `szName` návratové vyrovnávací paměti ve znacích.  
   
  `pcchName`  
- [out] A pointer to the total character length of the application domain name.  
+ mimo Ukazatel na celkovou délku znaku názvu domény aplikace.  
   
  `szName`  
- [out] A caller-provided wide character buffer. When the method returns, `szName` will contain the full or partial application domain name.  
+ mimo Vyrovnávací paměť pro velký znak poskytnutá volajícímu. Když se metoda vrátí, `szName` bude obsahovat úplný nebo částečný název domény aplikace.  
   
  `pProcessId`  
- [out] A pointer to the ID of the process that contains the application domain.  
+ mimo Ukazatel na ID procesu, který obsahuje doménu aplikace.  
   
 ## <a name="remarks"></a>Poznámky  
- After this method returns, you must verify that the `szName` buffer was large enough to contain the full name of the application domain. To do this, compare the value that `pcchName` points to with the value of the `cchName` parameter. If `pcchName` points to a value that is larger than `cchName`, allocate a larger `szName` buffer, update `cchName` with the new, larger size, and call `GetAppDomainInfo` again.  
+ Po návratu této metody je nutné ověřit, zda byla vyrovnávací paměť `szName` dostatečně velká, aby obsahovala úplný název domény aplikace. To provedete tak, že porovnáte hodnotu, na kterou `pcchName` odkazuje, hodnotou `cchName` parametru. Pokud `pcchName` odkazuje na hodnotu, která je větší než `cchName`, přidělte větší vyrovnávací paměť `szName`, aktualizujte `cchName` novou, větší velikostí a zavolejte `GetAppDomainInfo` znovu.  
   
- Alternatively, you can first call `GetAppDomainInfo` with a zero-length `szName` buffer to obtain the correct buffer size. You can then set the buffer size to the value returned in `pcchName` and call `GetAppDomainInfo` again.  
+ Alternativně můžete pro získání správné velikosti vyrovnávací paměti nejprve volat `GetAppDomainInfo` s nulovou délkou `szName` vyrovnávací paměti. Pak můžete nastavit velikost vyrovnávací paměti na hodnotu vrácenou v `pcchName` a volat `GetAppDomainInfo` znovu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

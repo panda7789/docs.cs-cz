@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437948"
 ---
 # <a name="imetadataimportfindfield-method"></a>IMetaDataImport::FindField – metoda
-Gets a pointer to the FieldDef token for the field that is enclosed by the specified <xref:System.Type> and that has the specified name and metadata signature.  
+Získá ukazatel na FieldDef token pro pole, které je uzavřeno zadaným <xref:System.Type> a který má zadaný název a signaturu metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,35 +39,35 @@ HRESULT FindField (
   
 ## <a name="parameters"></a>Parametry  
  `td`  
- [in] The TypeDef token for the class or interface that encloses the field to search for. If this value is `mdTokenNil`, the lookup is done for a global variable.  
+ pro Token TypeDef pro třídu nebo rozhraní, které obklopuje pole, které se má vyhledat. Pokud je tato hodnota `mdTokenNil`, je vyhledávání provedeno pro globální proměnnou.  
   
  `szName`  
- [in] The name of the field to search for.  
+ pro Název pole, které se má vyhledat  
   
  `pvSigBlob`  
- [in] A pointer to the binary metadata signature of the field.  
+ pro Ukazatel na binární podpis metadat pole.  
   
  `cbSigBlob`  
- [in] The size in bytes of `pvSigBlob`.  
+ pro Velikost v bajtech `pvSigBlob`.  
   
  `pmb`  
- [out] A pointer to the matching FieldDef token.  
+ mimo Ukazatel na odpovídajícího tokenu FieldDef.  
   
 ## <a name="remarks"></a>Poznámky  
- You specify the field using its enclosing class or interface (`td`), its name (`szName`), and optionally its signature (`pvSigBlob`).  
+ Zadejte pole pomocí své nadřazené třídy nebo rozhraní (`td`), jeho název (`szName`) a volitelně jeho signaturu (`pvSigBlob`).  
   
- The signature passed to `FindField` must have been generated in the current scope, because signatures are bound to a particular scope. A signature can embed a token that identifies the enclosing class or value type. (The token is an index into the local TypeDef table). You cannot build a run-time signature outside the context of the current scope and use that signature as input to `FindField`.  
+ Podpis předaný do `FindField` musí být vygenerován v aktuálním oboru, protože signatury jsou vázány na konkrétní obor. Podpis může vložit token, který identifikuje ohraničující třídu nebo typ hodnoty. (Token je index do místní tabulky TypeDef). Nemůžete sestavit signaturu za běhu mimo kontext aktuálního oboru a použít tento podpis jako vstup pro `FindField`.  
   
- `FindField` finds only fields that were defined directly in the class or interface; it does not find inherited fields.  
+ `FindField` najde pouze pole, která byla definována přímo ve třídě nebo rozhraní; nenalezne zděděná pole.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -1,6 +1,6 @@
 ---
-title: Base class library breaking changes - .NET Core
-description: Lists the breaking changes in .NET CoreFx, the base class library.
+title: Zásadní změny v knihovně základních tříd – .NET Core
+description: Obsahuje seznam nejnovějších změn v rozhraní .NET CoreFx, knihovny základních tříd.
 ms.date: 09/20/2019
 ms.openlocfilehash: 859eb30b8f6fa48350f81ee1822247e72698fead
 ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
@@ -9,15 +9,15 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74429192"
 ---
-# <a name="corefx-breaking-changes"></a>CoreFx breaking changes
+# <a name="corefx-breaking-changes"></a>CoreFx průlomové změny
 
-The following is a list of CoreFx breaking changes by .NET Core version. CoreFx provides the primitives and other general types used by .NET Core.
+Následující seznam uvádí CoreFx zásadní změny ve verzi .NET Core. CoreFx poskytuje primitivní a další obecné typy používané .NET Core.
 
-## <a name="net-core-30-preview-7"></a>.NET Core 3.0 Preview 7
+## <a name="net-core-30-preview-7"></a>.NET Core 3,0 Preview 7
 
 [!INCLUDE[JsonElement API changes](~/includes/core-changes/corefx/jsonelement-api-changes.md)]
 
-## <a name="net-core-30-preview-8"></a>.NET Core 3.0 Preview 8
+## <a name="net-core-30-preview-8"></a>.NET Core 3,0 Preview 8
 
 [!INCLUDE[Change in semantics of (string)null in Utf8JsonWriter](~/includes/core-changes/corefx/change-in-null-in-utf8jsonwriter.md)]
 
@@ -29,7 +29,7 @@ The following is a list of CoreFx breaking changes by .NET Core version. CoreFx 
 
 [!INCLUDE[JsonFactoryConverter.CreateConverter signature changed](~/includes/core-changes/corefx/jsonfactoryconverter-createconverter.md)]
 
-## <a name="net-core-30-preview-9"></a>.NET Core 3.0 Preview 9
+## <a name="net-core-30-preview-9"></a>.NET Core 3,0 Preview 9
 
 [!INCLUDE[Json serializer exception type changed from JsonException to NotSupportedException](~/includes/core-changes/corefx/serializer-throws-notsupportedexception.md)]
 

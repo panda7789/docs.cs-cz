@@ -18,26 +18,26 @@ ms.locfileid: "74333953"
 ---
 # <a name="processing-drives-directories-and-files-visual-basic"></a>Zpracování jednotek, adresářů a souborů (Visual Basic)
 
-You can use Visual Basic to process drives, folders, and files with the `My.Computer.FileSystem` object, which provides better performance and is easier to use than traditional methods such as the `FileOpen` and `Write` functions (although they are still available). The following sections discuss these methods in detail.  
+Visual Basic můžete použít ke zpracování jednotek, složek a souborů s objektem `My.Computer.FileSystem`, který poskytuje lepší výkon a je snazší použít než tradiční metody, jako jsou `FileOpen` a `Write` funkce (i když jsou stále k dispozici). Následující části podrobněji popisují tyto metody.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
 
  [Přístup k souborům v jazyce Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/file-access.md)  
- Discusses how to use the `My.Computer.FileSystem` object to work with files, drives, and folders.  
+ Popisuje, jak používat objekt `My.Computer.FileSystem` pro práci se soubory, jednotkami a složkami.  
   
- [Basics of .NET Framework File I/O and the File System (Visual Basic)](../../../../visual-basic/developing-apps/programming/drives-directories-files/basics-of-net-framework-file-io-and-the-file-system.md)  
- Provides an overview of file I/O concepts in the .NET Framework, including streams, isolated storage, file events, file attributes, and file access.  
+ [Základy .NET Frameworkch vstupně-výstupních operací se soubory a systém souborů (Visual Basic)](../../../../visual-basic/developing-apps/programming/drives-directories-files/basics-of-net-framework-file-io-and-the-file-system.md)  
+ Poskytuje přehled konceptů vstupně-výstupních operací se soubory v .NET Framework, včetně datových proudů, izolovaného úložiště, událostí souborů, atributů souborů a přístupu k souborům.  
   
  [Návod: Práce se soubory pomocí metod rozhraní .NET Framework](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)  
- Demonstrates how to use the .NET Framework to manipulate files and folders.  
+ Ukazuje, jak použít .NET Framework k manipulaci se soubory a složkami.  
   
- [Walkthrough: Manipulating Files and Directories in Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)  
- Demonstrates how to use the `My.Computer.FileSystem` object to manipulate files and folders.  
+ [Návod: manipulace se soubory a adresáři v Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)  
+ Ukazuje, jak použít objekt `My.Computer.FileSystem` k manipulaci se soubory a složkami.  
   
 ## <a name="related-sections"></a>Související oddíly  
 
  [Struktura programu a zásady týkající se kódu](../../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)  
- Provides guidelines for the physical structure and appearance of programs.  
+ Poskytuje pokyny pro fyzickou strukturu a vzhled programů.  
   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>  
- Reference documentation for the `My.Computer.FileSystem` object and its members.
+ Referenční dokumentace pro objekt `My.Computer.FileSystem` a jeho členy.

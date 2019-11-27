@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445119"
 ---
 # <a name="icorprofilercallbackclassloadfinished-method"></a>ICorProfilerCallback::ClassLoadFinished – metoda
-Notifies the profiler that a class has finished loading.  
+Upozorní profileru, že se dokončilo načítání třídy.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,24 +35,24 @@ HRESULT ClassLoadFinished(
   
 ## <a name="parameters"></a>Parametry  
  `classId`  
- [in] Identifies the class that was loaded.  
+ pro Identifikuje třídu, která byla načtena.  
   
  `hrStatus`  
- [in] An HRESULT that indicates whether the class loaded successfully.  
+ pro Hodnota HRESULT, která označuje, zda byla třída úspěšně načtena.  
   
 ## <a name="remarks"></a>Poznámky  
- The value of `classId` is not valid for an information request until the `ClassLoadFinished` method is called.  
+ Hodnota `classId` není platná pro požadavek na informace, dokud není volána metoda `ClassLoadFinished`.  
   
- Some parts of loading the class might continue after the `ClassLoadFinished` callback. A failure HRESULT in `hrStatus` indicates a failure. However, a success HRESULT in `hrStatus` indicates only that the first part of loading the class has succeeded.  
+ Některé části načtení třídy mohou pokračovat po `ClassLoadFinished` zpětného volání. Selhání HRESULT v `hrStatus` označuje selhání. Úspěšnost HRESULT v `hrStatus` však znamená, že první část načtení třídy byla úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

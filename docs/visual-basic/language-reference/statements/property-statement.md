@@ -20,7 +20,7 @@ ms.locfileid: "74346759"
 ---
 # <a name="property-statement"></a>Property – příkaz
 
-Declares the name of a property, and the property procedures used to store and retrieve the value of the property.
+Deklaruje název vlastnosti a procedury vlastnosti používané k ukládání a načítání hodnoty vlastnosti.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -45,15 +45,15 @@ Property name ( [ parameterlist ] ) [ As returntype ] [ Implements implementslis
 
 - `attributelist`
 
-  Volitelné. List of attributes that apply to this property or `Get` or `Set` procedure. See [Attribute List](attribute-list.md).
+  Volitelná. Seznam atributů, které se vztahují na tuto vlastnost nebo `Get` nebo `Set` postup. Viz [seznam atributů](attribute-list.md).
 
 - `Default`
 
-  Volitelné. Specifies that this property is the default property for the class or structure on which it is defined. Default properties must accept parameters and can be set and retrieved without specifying the property name. If you declare the property as `Default`, you cannot use `Private` on the property or on either of its property procedures.
+  Volitelná. Určuje, že tato vlastnost je výchozí vlastností třídy nebo struktury, ve které je definována. Výchozí vlastnosti musí přijímat parametry a lze je nastavit a načíst bez zadání názvu vlastnosti. Pokud vlastnost deklarujete jako `Default`, nemůžete použít `Private` na vlastnost nebo v jednom z jeho procedur vlastností.
 
 - `accessmodifier`
 
-  Optional on the `Property` statement and on at most one of the `Get` and `Set` statements. Can be one of the following:
+  Volitelné v příkazu `Property` a maximálně jeden z příkazů `Get` a `Set`. Může být jedna z následujících akcí:
 
   - [Public](../modifiers/public.md)
 
@@ -67,11 +67,11 @@ Property name ( [ parameterlist ] ) [ As returntype ] [ Implements implementslis
 
   - [Private Protected](../modifiers/private-protected.md)
 
-  See [Access levels in Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md).
+  Podívejte [se na úrovně přístupu v Visual Basic](../../programming-guide/language-features/declared-elements/access-levels.md).
 
 - `propertymodifiers`
 
-  Volitelné. Can be one of the following:
+  Volitelná. Může být jedna z následujících akcí:
 
   - [Overloads](../modifiers/overloads.md)
 
@@ -89,116 +89,116 @@ Property name ( [ parameterlist ] ) [ As returntype ] [ Implements implementslis
 
 - `Shared`
 
-  Volitelné. See [Shared](../modifiers/shared.md).
+  Volitelná. Viz [Shared](../modifiers/shared.md).
 
 - `Shadows`
 
-  Volitelné. See [Shadows](../modifiers/shadows.md).
+  Volitelná. Viz [Shadows](../modifiers/shadows.md).
 
 - `ReadOnly`
 
-  Volitelné. See [ReadOnly](../modifiers/readonly.md).
+  Volitelná. Zobrazit [jen pro čtení](../modifiers/readonly.md).
 
 - `WriteOnly`
 
-  Volitelné. See [WriteOnly](../modifiers/writeonly.md).
+  Volitelná. Viz [WriteOnly](../modifiers/writeonly.md).
 
 - `Iterator`
 
-  Volitelné. See [Iterator](../modifiers/iterator.md).
+  Volitelná. Podívejte se na [iterátor](../modifiers/iterator.md).
 
 - `name`
 
-  Požadováno. Název vlastnosti See [Declared Element Names](../../programming-guide/language-features/declared-elements/declared-element-names.md).
+  Požadováno. Název vlastnosti Viz [deklarované názvy elementů](../../programming-guide/language-features/declared-elements/declared-element-names.md).
 
 - `parameterlist`
 
-  Volitelné. List of local variable names representing the parameters of this property, and possible additional parameters of the `Set` procedure. See [Parameter List](parameter-list.md).
+  Volitelná. Seznam místních názvů proměnných reprezentujících parametry této vlastnosti a možné další parametry `Set`ho postupu. Viz [seznam parametrů](parameter-list.md).
 
 - `returntype`
 
-  Required if `Option Strict` is `On`. Data type of the value returned by this property.
+  Vyžaduje se, pokud `Option Strict` `On`. Datový typ hodnoty vrácené touto vlastností
 
 - `Implements`
 
-  Volitelné. Indicates that this property implements one or more properties, each one defined in an interface implemented by this property's containing class or structure. See [Implements Statement](implements-statement.md).
+  Volitelná. Označuje, že tato vlastnost implementuje jednu nebo více vlastností, každý z nich definovaný v rozhraní implementovaném touto vlastností, která obsahuje třídu nebo strukturu. Viz [příkaz Implements](implements-statement.md).
 
 - `implementslist`
 
-  Required if `Implements` is supplied. List of properties being implemented.
+  Vyžaduje se, pokud je dodána `Implements`. Seznam implementovaných vlastností.
 
   `implementedproperty [ , implementedproperty ... ]`
 
-  Each `implementedproperty` has the following syntax and parts:
+  Každý `implementedproperty` má následující syntaxi a části:
 
   `interface.definedname`
 
-  |Part|Popis|
+  |Částí|Popis|
   |---|---|
-  |`interface`|Požadováno. Name of an interface implemented by this property's containing class or structure.|
-  |`definedname`|Požadováno. Name by which the property is defined in `interface`.|
+  |`interface`|Požadováno. Název rozhraní implementovaného touto vlastností, která obsahuje třídu nebo strukturu.|
+  |`definedname`|Požadováno. Název, podle kterého je vlastnost definovaná v `interface`.|
 
 - `Get`
 
-  Volitelné. Required if the property is marked `ReadOnly`. Starts a `Get` property procedure that is used to return the value of the property.  The `Get` statement is not used with [auto-implemented properties](../../programming-guide/language-features/procedures/auto-implemented-properties.md).
+  Volitelná. Vyžaduje se, pokud je vlastnost označená `ReadOnly`. Spustí proceduru `Get` vlastnost, která se používá k vrácení hodnoty vlastnosti.  Příkaz `Get` se nepoužívá s [automaticky implementovanými vlastnostmi](../../programming-guide/language-features/procedures/auto-implemented-properties.md).
 
 - `statements`
 
-  Volitelné. Block of statements to run within the `Get` or `Set` procedure.
+  Volitelná. Blok příkazů, které se mají spustit v rámci `Get` nebo `Set` postupu.
 
 - `End Get`
 
-  Terminates the `Get` property procedure.
+  Ukončí proceduru vlastnosti `Get`.
 
 - `Set`
 
-  Volitelné. Required if the property is marked `WriteOnly`. Starts a `Set` property procedure that is used to store the value of the property.  The `Set` statement is not used with [auto-implemented properties](../../programming-guide/language-features/procedures/auto-implemented-properties.md).
+  Volitelná. Vyžaduje se, pokud je vlastnost označená `WriteOnly`. Spustí `Set` proceduru vlastnosti, která se používá k uložení hodnoty vlastnosti.  Příkaz `Set` se nepoužívá s [automaticky implementovanými vlastnostmi](../../programming-guide/language-features/procedures/auto-implemented-properties.md).
 
 - `End Set`
 
-  Terminates the `Set` property procedure.
+  Ukončí proceduru vlastnosti `Set`.
 
 - `End Property`
 
-  Terminates the definition of this property.
+  Ukončí definici této vlastnosti.
 
 ## <a name="remarks"></a>Poznámky
 
-The `Property` statement introduces the declaration of a property. A property can have a `Get` procedure (read only), a `Set` procedure (write only), or both (read-write). You can omit the `Get` and `Set` procedure when using an auto-implemented property. For more information, see [Auto-Implemented Properties](../../programming-guide/language-features/procedures/auto-implemented-properties.md).
+Příkaz `Property` zavádí deklaraci vlastnosti. Vlastnost může mít `Get` proceduru (jen pro čtení), `Set` proceduru (jen pro zápis) nebo obou (pro čtení i zápis). Můžete vynechat `Get` a `Set` postup při použití automaticky implementované vlastnosti. Další informace najdete v tématu věnovaném [automaticky implementovaným vlastnostem](../../programming-guide/language-features/procedures/auto-implemented-properties.md).
 
-You can use `Property` only at class level. This means the *declaration context* for a property must be a class, structure, module, or interface, and cannot be a source file, namespace, procedure, or block. For more information, see [Declaration Contexts and Default Access Levels](declaration-contexts-and-default-access-levels.md).
+`Property` lze použít pouze na úrovni třídy. To znamená, že *kontext deklarace* pro vlastnost musí být třída, struktura, modul nebo rozhraní a nemůže se jednat o zdrojový soubor, obor názvů, proceduru nebo blok. Další informace najdete v tématu [deklarace kontextů a výchozích úrovní přístupu](declaration-contexts-and-default-access-levels.md).
 
-By default, properties use public access. You can adjust a property's access level with an access modifier on the `Property` statement, and you can optionally adjust one of its property procedures to a more restrictive access level.
+Ve výchozím nastavení vlastnosti používají veřejný přístup. Úroveň přístupu vlastnosti můžete upravit pomocí modifikátoru přístupu u příkazu `Property` a volitelně můžete upravit jeden z jeho procedur vlastností na více omezující úroveň přístupu.
 
-Visual Basic passes a parameter to the `Set` procedure during property assignments. If you do not supply a parameter for `Set`, the integrated development environment (IDE) uses an implicit parameter named `value`. This parameter holds the value to be assigned to the property. You typically store this value in a private local variable and return it whenever the `Get` procedure is called.
+Visual Basic předá do přiřazení vlastností parametr `Set` proceduře. Pokud nezadáte parametr pro `Set`, integrované vývojové prostředí (IDE) používá implicitní parametr s názvem `value`. Tento parametr obsahuje hodnotu, která má být přiřazena vlastnosti. Tuto hodnotu obvykle ukládáte do privátní místní proměnné a vrátíte ji pokaždé, když je volána procedura `Get`.
 
-## <a name="rules"></a>Rules
+## <a name="rules"></a>Pravidla
 
-- **Mixed Access Levels.** If you are defining a read-write property, you can optionally specify a different access level for either the `Get` or the `Set` procedure, but not both. If you do this, the procedure access level must be more restrictive than the property's access level. For example, if the property is declared `Friend`, you can declare the `Set` procedure `Private`, but not `Public`.
+- **Smíšené úrovně přístupu.** Pokud definujete vlastnost pro čtení i zápis, můžete volitelně zadat jinou úroveň přístupu pro `Get` nebo `Set` postup, ale ne obojí. Pokud to uděláte, musí být úroveň přístupu k této proceduře přísnější než úroveň přístupu vlastnosti. Například pokud je vlastnost deklarována `Friend`, můžete deklarovat `Set` proceduru `Private`, ale ne `Public`.
 
-  If you are defining a `ReadOnly` or `WriteOnly` property, the single property procedure (`Get` or `Set`, respectively) represents all of the property. You cannot declare a different access level for such a procedure, because that would set two access levels for the property.
+  Pokud definujete vlastnost `ReadOnly` nebo `WriteOnly`, bude procedura s jedinou vlastností (`Get` nebo `Set`) představovat všechny vlastnosti. Pro takový postup nemůžete deklarovat jinou úroveň přístupu, protože by se pro vlastnost nastavily dvě úrovně přístupu.
 
-- **Return Type.** The `Property` statement can declare the data type of the value it returns. You can specify any data type or the name of an enumeration, structure, class, or interface.
+- **Návratový typ** Příkaz `Property` může deklarovat datový typ hodnoty, kterou vrátí. Můžete zadat libovolný datový typ nebo název výčtu, struktury, třídy nebo rozhraní.
 
-  If you do not specify `returntype`, the property returns `Object`.
+  Pokud nezadáte `returntype`, vlastnost vrátí `Object`.
 
-- **Implementation.** If this property uses the `Implements` keyword, the containing class or structure must have an `Implements` statement immediately following its `Class` or `Structure` statement. The `Implements` statement must include each interface specified in `implementslist`. However, the name by which an interface defines the `Property` (in `definedname`) does not have to be the same as the name of this property (in `name`).
+- **Provádění.** Pokud tato vlastnost používá klíčové slovo `Implements`, obsahující třídu nebo strukturu musí mít příkaz `Implements` hned za `Class` nebo `Structure` příkaz. Příkaz `Implements` musí zahrnovat každé rozhraní určené v `implementslist`. Název, kterým rozhraní definuje `Property` (v `definedname`) ale nemusí být stejný jako název této vlastnosti (v `name`).
 
-## <a name="behavior"></a>Behavior
+## <a name="behavior"></a>Chování
 
-- **Returning from a Property Procedure.** When the `Get` or `Set` procedure returns to the calling code, execution continues with the statement following the statement that invoked it.
+- **Návrat z procedury vlastnosti.** Když se `Get` nebo `Set` vrátí k volajícímu kódu, provádění pokračuje příkazem po příkazu, který ho vyvolal.
 
-  The `Exit Property` and `Return` statements cause an immediate exit from a property procedure. Any number of `Exit Property` and `Return` statements can appear anywhere in the procedure, and you can mix `Exit Property` and `Return` statements.
+  Příkazy `Exit Property` a `Return` způsobují bezprostřední ukončení procedury vlastnosti. Libovolný počet `Exit Property` a `Return` příkazů se může objevit kdekoli v proceduře a můžete kombinovat `Exit Property` a `Return` příkazy.
 
-- **Return Value.** To return a value from a `Get` procedure, you can either assign the value to the property name or include it in a `Return` statement. The following example assigns the return value to the property name `quoteForTheDay` and then uses the `Exit Property` statement to return.
+- **Návratová hodnota** Chcete-li vrátit hodnotu z `Get` postup, můžete buď přiřadit hodnotu k názvu vlastnosti nebo ji zahrnout do příkazu `Return`. Následující příklad přiřadí návratovou hodnotu k názvu vlastnosti `quoteForTheDay` a poté pomocí příkazu `Exit Property` vrátí.
 
   [!code-vb[VbVbalrStatements#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#27)]
 
   [!code-vb[VbVbalrStatements#28](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#28)]
 
-  If you use `Exit Property` without assigning a value to `name`, the `Get` procedure returns the default value for the property's data type.
+  Použijete-li `Exit Property` bez přiřazení hodnoty k `name`, `Get` procedura vrátí výchozí hodnotu pro datový typ vlastnosti.
 
-  The `Return` statement at the same time assigns the `Get` procedure return value and exits the procedure. The following example shows this.
+  Příkaz `Return` současně přiřadí návratovou hodnotu procedury `Get` a ukončí proceduru. Následující příklad ukazuje toto.
 
   [!code-vb[VbVbalrStatements#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#27)]
 
@@ -206,7 +206,7 @@ Visual Basic passes a parameter to the `Set` procedure during property assignmen
 
 ## <a name="example"></a>Příklad
 
-The following example declares a property in a class.
+Následující příklad deklaruje vlastnost ve třídě.
 
 [!code-vb[VbVbalrStatements#51](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#51)]
 

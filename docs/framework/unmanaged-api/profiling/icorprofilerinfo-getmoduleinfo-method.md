@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74438890"
 ---
 # <a name="icorprofilerinfogetmoduleinfo-method"></a>ICorProfilerInfo::GetModuleInfo – metoda
-Given a module ID, returns the file name of the module and the ID of the module's parent assembly.  
+Po předaném ID modulu vrátí název souboru modulu a ID nadřazeného sestavení modulu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,40 +40,40 @@ HRESULT GetModuleInfo(
   
 ## <a name="parameters"></a>Parametry  
  `moduleId`  
- [in] The ID of the module for which information will be retrieved.  
+ pro ID modulu, pro který budou načteny informace.  
   
  `ppBaseLoadAddress`  
- [out] The base address at which the module is loaded.  
+ mimo Základní adresa, na které je modul načten.  
   
  `cchName`  
- [in] The length, in characters, of the `szName` return buffer.  
+ pro Délka `szName` návratové vyrovnávací paměti ve znacích.  
   
  `pcchName`  
- [out] A pointer to the total character length of the module's file name that is returned.  
+ mimo Ukazatel na celkovou délku znaku v názvu souboru modulu, který je vrácen.  
   
  `szName`  
- [out] A caller-provided wide character buffer. When the method returns, this buffer contains the file name of the module.  
+ mimo Vyrovnávací paměť pro velký znak poskytnutá volajícímu. Když se metoda vrátí, tato vyrovnávací paměť obsahuje název souboru modulu.  
   
  `pAssemblyId`  
- [out] A pointer to the ID of the module's parent assembly.  
+ mimo Ukazatel na ID nadřazeného sestavení modulu.  
   
 ## <a name="remarks"></a>Poznámky  
- For dynamic modules, the `szName` parameter is an empty string, and the base address is 0 (zero).  
+ Pro dynamické moduly je parametr `szName` prázdným řetězcem a základní adresa je 0 (nula).  
   
- Although the `GetModuleInfo` method may be called as soon as the module's ID exists, the ID of the parent assembly will not be available until the profiler receives the [ICorProfilerCallback::ModuleAttachedToAssembly](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleattachedtoassembly-method.md) callback.  
+ I když může být metoda `GetModuleInfo` volána, jakmile existuje ID modulu, ID nadřazeného sestavení nebude k dispozici, dokud Profiler neobdrží zpětné volání [ICorProfilerCallback:: ModuleAttachedToAssembly –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleattachedtoassembly-method.md) .  
   
- When `GetModuleInfo` returns, you must verify that the `szName` buffer was large enough to contain the full file name of the module. To do this, compare the value that `pcchName` points to with the value of the `cchName` parameter. If `pcchName` points to a value that is larger than `cchName`, allocate a larger `szName` buffer, update `cchName` with the new, larger size, and call `GetModuleInfo` again.  
+ Když `GetModuleInfo` vrátí, je nutné ověřit, zda byla vyrovnávací paměť `szName` dostatečně velká, aby obsahovala úplný název souboru modulu. To provedete tak, že porovnáte hodnotu, na kterou `pcchName` odkazuje, hodnotou `cchName` parametru. Pokud `pcchName` odkazuje na hodnotu, která je větší než `cchName`, přidělte větší vyrovnávací paměť `szName`, aktualizujte `cchName` novou, větší velikostí a zavolejte `GetModuleInfo` znovu.  
   
- Alternatively, you can first call `GetModuleInfo` with a zero-length `szName` buffer to obtain the correct buffer size. You can then set the buffer size to the value returned in `pcchName` and call `GetModuleInfo` again.  
+ Alternativně můžete pro získání správné velikosti vyrovnávací paměti nejprve volat `GetModuleInfo` s nulovou délkou `szName` vyrovnávací paměti. Pak můžete nastavit velikost vyrovnávací paměti na hodnotu vrácenou v `pcchName` a volat `GetModuleInfo` znovu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -15,7 +15,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349554"
 ---
 # <a name="gettype-operator-visual-basic"></a>GetType – operátor (Visual Basic)
-Returns a <xref:System.Type> object for the specified type. The <xref:System.Type> object provides information about the type such as its properties, methods, and events.  
+Vrátí objekt <xref:System.Type> pro zadaný typ. Objekt <xref:System.Type> poskytuje informace o typu, jako jsou vlastnosti, metody a události.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -27,38 +27,38 @@ GetType(typename)
   
 |Parametr|Popis|  
 |---|---|  
-|`typename`|The name of the type for which you desire information.|  
+|`typename`|Název typu, pro který si přejete získat informace.|  
   
 ## <a name="remarks"></a>Poznámky  
- The `GetType` operator returns the <xref:System.Type> object for the specified `typename`. You can pass the name of any defined type in `typename`. Ta zahrnují následující:  
+ Operátor `GetType` vrátí objekt <xref:System.Type> pro zadaný `typename`. V `typename`můžete předat název libovolného definovaného typu. Jsou to:  
   
-- Any Visual Basic data type, such as `Boolean` or `Date`.  
+- Libovolný datový typ Visual Basic, například `Boolean` nebo `Date`.  
   
-- Any .NET Framework class, structure, module, or interface, such as <xref:System.ArgumentException?displayProperty=nameWithType> or <xref:System.Double?displayProperty=nameWithType>.  
+- Jakékoli .NET Framework třídy, struktury, modulu nebo rozhraní, jako je například <xref:System.ArgumentException?displayProperty=nameWithType> nebo <xref:System.Double?displayProperty=nameWithType>.  
   
-- Any class, structure, module, or interface defined by your application.  
+- Libovolná třída, struktura, modul nebo rozhraní definované vaší aplikací.  
   
-- Any array defined by your application.  
+- Jakékoli pole definované vaší aplikací.  
   
-- Any delegate defined by your application.  
+- Libovolný delegát definovaný vaší aplikací.  
   
-- Any enumeration defined by Visual Basic, the .NET Framework, or your application.  
+- Jakýkoli výčet definovaný Visual Basic, .NET Framework nebo vaší aplikací.  
   
- If you want to get the type object of an object variable, use the <xref:System.Type.GetType%2A?displayProperty=nameWithType> method.  
+ Chcete-li získat objekt typu proměnné objektu, použijte metodu <xref:System.Type.GetType%2A?displayProperty=nameWithType>.  
   
- The `GetType` operator can be useful in the following circumstances:  
+ Operátor `GetType` může být užitečný v následujících případech:  
   
-- You must access the metadata for a type at run time. The <xref:System.Type> object supplies metadata such as type members and deployment information. You need this, for example, to reflect over an assembly. Další informace najdete v tématu <xref:System.Reflection?displayProperty=nameWithType>.  
+- Je nutné přístup k metadatům pro typ v době běhu. Objekt <xref:System.Type> poskytuje metadata jako členy typu a informace o nasazení. Potřebujete například, aby odrážely sestavení. Další informace najdete v tématu <xref:System.Reflection?displayProperty=nameWithType>.  
   
-- You want to compare two object references to see if they refer to instances of the same type. If they do, `GetType` returns references to the same <xref:System.Type> object.  
+- Chcete porovnat dva odkazy na objekty, abyste viděli, zda odkazují na instance stejného typu. Pokud jsou, `GetType` vrátí odkazy na stejný objekt <xref:System.Type>.  
   
 ## <a name="example"></a>Příklad  
- The following examples show the `GetType` operator in use.  
+ Následující příklady znázorňují operátor `GetType`, který se používá.  
   
  [!code-vb[VbVbalrOperators#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#26)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Priorita operátorů v Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
 - [Operátory a výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)

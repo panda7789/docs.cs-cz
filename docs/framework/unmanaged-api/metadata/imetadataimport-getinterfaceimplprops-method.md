@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437548"
 ---
 # <a name="imetadataimportgetinterfaceimplprops-method"></a>IMetaDataImport::GetInterfaceImplProps – metoda
-Gets a pointer to the metadata tokens for the <xref:System.Type> that implements the specified method, and for the interface that declares that method.
+Získá ukazatel na tokeny metadat pro <xref:System.Type>, které implementují zadanou metodu, a pro rozhraní, které deklaruje tuto metodu.
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,27 +37,27 @@ HRESULT GetInterfaceImplProps (
   
 ## <a name="parameters"></a>Parametry  
  `iiImpl`  
- [in] The metadata token representing the method to return the class and interface tokens for.  
+ pro Token metadat představující metodu pro návrat třídy a tokeny rozhraní pro.  
   
  `pClass`  
- [out] The metadata token representing the class that implements the method.  
+ mimo Token metadat představující třídu, která implementuje metodu.  
   
  `ptkIface`  
- [out] The metadata token representing the interface that defines the implemented method.  
+ mimo Token metadat představující rozhraní, které definuje implementovanou metodu.  
 
 ## <a name="remarks"></a>Poznámky
 
- You obtain the value for `iImpl` by calling the [EnumInterfaceImpls](imetadataimport-enuminterfaceimpls-method.md) method.
+ Hodnotu pro `iImpl` získáte zavoláním metody [enuminterfaceimpls –](imetadataimport-enuminterfaceimpls-method.md) .
  
- For example, suppose that a class has an `mdTypeDef` token value of 0x02000007 and that it implements three interfaces whose types have tokens: 
+ Předpokládejme například, že třída má hodnotu `mdTypeDef` tokenu 0x02000007 a že implementuje tři rozhraní, jejichž typy mají tokeny: 
 
 - 0x02000003 (TypeDef)
 - 0x0100000A (TypeRef)
 - 0x0200001C (TypeDef)
 
-Conceptually, this information is stored into an interface implementation table as:
+V koncepčních případech jsou tyto informace uloženy do tabulky implementace rozhraní jako:
 
-| Row number | Class token | Interface token |
+| Číslo řádku | Token třídy | Token rozhraní |
 |------------|-------------|-----------------|
 | 4          |             |                 |
 | 5          | 02000007    | 02000003        |
@@ -65,21 +65,21 @@ Conceptually, this information is stored into an interface implementation table 
 | 7          |             |                 |
 | 8          | 02000007    | 0200001C        |
 
-Recall, the token is a 4-byte value:
+Odvolání tokenu je hodnota o velikosti 4 bajty:
 
-- The lower 3 bytes hold the row number, or RID.
-- The upper byte holds the token type – 0x09 for `mdtInterfaceImpl`.
+- Dolní 3 bajty obsahují číslo řádku nebo identifikátor RID.
+- Horní bajt obsahuje typ tokenu – 0x09 pro `mdtInterfaceImpl`.
 
-`GetInterfaceImplProps` returns the information held in the row whose token you provide in the `iImpl` argument. 
+`GetInterfaceImplProps` vrátí informace uchovávané v řádku, jehož token zadáte v argumentu `iImpl`. 
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

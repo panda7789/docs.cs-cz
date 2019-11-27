@@ -19,7 +19,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348234"
 ---
 # <a name="orelse-operator-visual-basic"></a>OrElse – operátor (Visual Basic)
-Performs short-circuiting inclusive logical disjunction on two expressions.  
+Provádí krátkodobé rozvodu zahrnující logickou disjunkci dvou výrazů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,49 +29,49 @@ result = expression1 OrElse expression2
   
 ## <a name="parts"></a>Součásti  
  `result`  
- Požadováno. Any `Boolean` expression.  
+ Požadováno. Libovolný výraz `Boolean`.  
   
  `expression1`  
- Požadováno. Any `Boolean` expression.  
+ Požadováno. Libovolný výraz `Boolean`.  
   
  `expression2`  
- Požadováno. Any `Boolean` expression.  
+ Požadováno. Libovolný výraz `Boolean`.  
   
 ## <a name="remarks"></a>Poznámky  
- A logical operation is said to be *short-circuiting* if the compiled code can bypass the evaluation of one expression depending on the result of another expression. If the result of the first expression evaluated determines the final result of the operation, there is no need to evaluate the second expression, because it cannot change the final result. Short-circuiting can improve performance if the bypassed expression is complex, or if it involves procedure calls.  
+ Logická operace je označována jako *krátká* , pokud zkompilovaný kód může obejít vyhodnocení jednoho výrazu v závislosti na výsledku jiného výrazu. Pokud výsledek prvního vyhodnoceného výrazu určí konečný výsledek operace, není nutné vyhodnotit druhý výraz, protože nemůže změnit konečný výsledek. Krátkodobé okruhy mohou zvýšit výkon, pokud je výraz obcházení složitý, nebo pokud zahrnuje volání procedur.  
   
- If either or both expressions evaluate to `True`, `result` is `True`. The following table illustrates how `result` is determined.  
+ Pokud se jeden nebo oba výrazy vyhodnotí jako `True`, `result` je `True`. Následující tabulka ukazuje, jak je určena `result`.  
   
-|If `expression1` is|And `expression2` is|The value of `result` is|  
+|Pokud je `expression1`|A `expression2` je|Hodnota `result` je|  
 |-------------------------|--------------------------|------------------------------|  
-|`True`|(not evaluated)|`True`|  
+|`True`|(nehodnoceno)|`True`|  
 |`False`|`True`|`True`|  
 |`False`|`False`|`False`|  
   
 ## <a name="data-types"></a>Datové typy  
- The `OrElse` operator is defined only for the [Boolean Data Type](../../../visual-basic/language-reference/data-types/boolean-data-type.md). Visual Basic converts each operand as necessary to `Boolean` before evaluating the expression. If you assign the result to a numeric type, Visual Basic converts it from `Boolean` to that type such that `False` becomes `0` and `True` becomes `-1`.
-For more information, see [Boolean Type Conversions](../data-types/boolean-data-type.md#type-conversions).
+ Operátor `OrElse` je definován pouze pro [datový typ Boolean](../../../visual-basic/language-reference/data-types/boolean-data-type.md). Visual Basic každou operand podle potřeby převede, aby `Boolean` před vyhodnocením výrazu. Pokud tento výsledek přiřadíte číselnému typu, Visual Basic ho převede z `Boolean` na tento typ, takže se `False` změní na `0` a `True` se změní na `-1`.
+Další informace naleznete v tématu [převody logických typů](../data-types/boolean-data-type.md#type-conversions).
   
 ## <a name="overloading"></a>Přetížení  
- The [Or Operator](../../../visual-basic/language-reference/operators/or-operator.md) and the [IsTrue Operator](../../../visual-basic/language-reference/operators/istrue-operator.md) can be *overloaded*, which means that a class or structure can redefine their behavior when an operand has the type of that class or structure. Overloading the `Or` and `IsTrue` operators affects the behavior of the `OrElse` operator. If your code uses `OrElse` on a class or structure that overloads `Or` and `IsTrue`, be sure you understand their redefined behavior. For more information, see [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ [Operátor OR](../../../visual-basic/language-reference/operators/or-operator.md) a operátor " [true](../../../visual-basic/language-reference/operators/istrue-operator.md) " mohou být *přetíženy*, což znamená, že třída nebo struktura může předefinovat jejich chování, je-li operand typu této třídy nebo struktury. Přetížení operátorů `Or` a `IsTrue` má vliv na chování operátoru `OrElse`. Pokud váš kód používá `OrElse` ve třídě nebo struktuře, která přetěžuje `Or` a `IsTrue`, ujistěte se, že rozumíte jejich předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Příklad  
- The following example uses the `OrElse` operator to perform logical disjunction on two expressions. The result is a `Boolean` value that represents whether either of the two expressions is true. If the first expression is `True`, the second is not evaluated.  
+ Následující příklad používá operátor `OrElse` k provedení logické disjunkce dvou výrazů. Výsledkem je `Boolean` hodnota, která představuje, zda je jeden z obou výrazů pravdivý. Pokud je první výraz `True`, druhý není vyhodnocen.  
   
  [!code-vb[VbVbalrOperators#37](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#37)]  
   
- The preceding example produces results of `True`, `True`, and `False` respectively. In the calculation of `firstCheck`, the second expression is not evaluated because the first is already `True`. However, the second expression is evaluated in the calculation of `secondCheck`.  
+ Předchozí příklad vytvoří výsledky `True`, `True`a `False`. Při výpočtu `firstCheck`není druhý výraz vyhodnocen, protože první je již `True`. Nicméně druhý výraz je vyhodnocen při výpočtu `secondCheck`.  
   
 ## <a name="example"></a>Příklad  
- The following example shows an `If`...`Then` statement containing two procedure calls. If the first call returns `True`, the second procedure is not called. This could produce unexpected results if the second procedure performs important tasks that should always be performed when this section of the code runs.  
+ Následující příklad ukazuje příkaz `If`...`Then` obsahující dvě volání procedur. Pokud první volání vrátí `True`, druhá procedura není volána. To může vést k neočekávaným výsledkům, pokud druhý postup provádí důležité úkoly, které by měly být vždy provedeny při spuštění této části kódu.  
   
  [!code-vb[VbVbalrOperators#38](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#38)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Logical/Bitwise Operators (Visual Basic)](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)
-- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Logické/bitové operátory (Visual Basic)](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)
+- [Priorita operátorů v Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
 - [Operátor Or](../../../visual-basic/language-reference/operators/or-operator.md)
 - [Operátor IsTrue](../../../visual-basic/language-reference/operators/istrue-operator.md)
-- [Logical and Bitwise Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
+- [Logické a bitové operátory v Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)

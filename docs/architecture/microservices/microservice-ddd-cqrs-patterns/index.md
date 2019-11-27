@@ -27,7 +27,7 @@ V této části najdete nejdřív podrobné informace o zjednodušených vzorech
 
 DDD je velké téma s bohatou sadou prostředků pro učení. Můžete začít s kniha, jako je [návrh založený na doméně](https://domainlanguage.com/ddd/) , pomocí Eric Evans a dalších materiálů od Vaughn Vernon, Jimmy Nilsson, Greg Younga, UDI Dahan, Jimmy Bogard a mnoha dalších expertů na DDD/CQRS. Ale většina z nich se snaží zjistit, jak se v rámci konverzace, tabulování a modelování domén s odborníky v konkrétní obchodní doméně naučíte používat DDD techniky.
 
-#### <a name="additional-resources"></a>Další zdroje
+#### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 ##### <a name="ddd-domain-driven-design"></a>DDD (návrh založený na doméně)
 

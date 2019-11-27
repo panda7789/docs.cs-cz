@@ -14,12 +14,12 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74441815"
 ---
 # <a name="ialink-interface"></a>IALink – rozhraní
-Helps in constructing .NET Framework assemblies. Among other things, the interface contains methods that assist in writing assembly manifests for multi-module assemblies, signing assemblies with strong names, and creating netmodules.  
+Pomáhá při sestavování .NET Framework sestavení. Mimo jiné rozhraní obsahuje metody, které pomáhají při psaní manifestů sestavení pro sestavení s více moduly, podepisování sestavení pomocí silných názvů a vytváření netmodule.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [AddFile Method](addfile-method.md)  
+ [Metoda AddFile](addfile-method.md)  
   
- [AddImport Method](addimport-method.md)  
+ [Metoda addimport –](addimport-method.md)  
   
  [CloseAssembly – metoda](closeassembly-method.md)  
   
@@ -51,7 +51,7 @@ Helps in constructing .NET Framework assemblies. Among other things, the interfa
   
  [GetResolutionScope – metoda](getresolutionscope-method.md)  
   
- [GetScope Method](getscope-method.md)  
+ [GetScope – Metoda](getscope-method.md)  
   
  [GetWin32ResBlob – metoda](getwin32resblob-method.md)  
   
@@ -61,7 +61,7 @@ Helps in constructing .NET Framework assemblies. Among other things, the interfa
   
  [ImportTypes – metoda](importtypes-method.md)  
   
- "Init Method"  
+ "Init – metoda"  
   
  [LinkResource – metoda](linkresource-method.md)  
   
@@ -75,6 +75,6 @@ Helps in constructing .NET Framework assemblies. Among other things, the interfa
   
 ## <a name="see-also"></a>Viz také:
 
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)
 - [IALink2 – rozhraní](ialink2-interface.md)
 - [Al.exe (linker sestavení)](../../tools/al-exe-assembly-linker.md)

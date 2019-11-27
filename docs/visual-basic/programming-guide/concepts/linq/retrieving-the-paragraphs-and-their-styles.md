@@ -9,39 +9,39 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74347515"
 ---
-# <a name="retrieving-the-paragraphs-and-their-styles-visual-basic"></a>Retrieving the Paragraphs and Their Styles (Visual Basic)
-In this example, we write a query that retrieves the paragraph nodes from a WordprocessingML document. It also identifies the style of each paragraph.  
+# <a name="retrieving-the-paragraphs-and-their-styles-visual-basic"></a>Načítání odstavců a jejich stylů (Visual Basic)
+V tomto příkladu zapíšeme dotaz, který načte uzly odstavců z dokumentu WordprocessingML. Určuje také styl každého odstavce.  
   
- This query builds on the query in the previous example, [Finding the Default Paragraph Style (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/finding-the-default-paragraph-style.md), which retrieves the default style from the list of styles. This information is required so that the query can identify the style of paragraphs that do not have a style explicitly set. Paragraph styles are set through the `w:pPr` element; if a paragraph does not contain this element, it is formatted with the default style.  
+ Tento dotaz sestaví na dotazu v předchozím příkladu a hledá [výchozí styl odstavce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/finding-the-default-paragraph-style.md), který načte výchozí styl ze seznamu stylů. Tyto informace jsou požadovány, aby dotaz mohl identifikovat styl odstavců, které nemají explicitně nastaven styl. Odstavcové styly jsou nastaveny pomocí elementu `w:pPr`; Pokud odstavec neobsahuje tento prvek, je naformátován s výchozím stylem.  
   
- This topic explains the significance of some pieces of the query, then shows the query as part of a complete, working example.  
+ Toto téma vysvětluje význam některých částí dotazu a pak zobrazuje dotaz jako součást kompletního a funkčního příkladu.  
   
 ## <a name="example"></a>Příklad  
- The source of the query to retrieve all the paragraphs in a document and their styles is as follows:  
+ Zdroj dotazu pro načtení všech odstavců v dokumentu a jejich stylů je následující:  
   
 ```vb  
 xDoc.Root.<w:body>...<w:p>  
 ```  
   
- This expression is similar to the source of the query in the previous example, [Finding the Default Paragraph Style (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/finding-the-default-paragraph-style.md). The main difference is that it uses the <xref:System.Xml.Linq.XContainer.Descendants%2A> axis instead of the <xref:System.Xml.Linq.XContainer.Elements%2A> axis. The query uses the <xref:System.Xml.Linq.XContainer.Descendants%2A> axis because in documents that have sections, the paragraphs will not be the direct children of the body element; rather, the paragraphs will be two levels down in the hierarchy. By using the <xref:System.Xml.Linq.XContainer.Descendants%2A> axis, the code will work of whether or not the document uses sections.  
+ Tento výraz je podobný zdroji dotazu v předchozím příkladu, kde je [nalezen výchozí styl odstavce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/finding-the-default-paragraph-style.md). Hlavní rozdíl spočívá v tom, že místo <xref:System.Xml.Linq.XContainer.Elements%2A> osy používá osu <xref:System.Xml.Linq.XContainer.Descendants%2A>. Dotaz používá <xref:System.Xml.Linq.XContainer.Descendants%2A> osu, protože v dokumentech, které mají oddíly, nebudou odstavce přímo podřízeny elementu těla; místo toho se v hierarchii budou v těchto odstavcích vycházet dvě úrovně. Pomocí <xref:System.Xml.Linq.XContainer.Descendants%2A> osy bude kód fungovat bez ohledu na to, jestli dokument používá oddíly.  
   
 ## <a name="example"></a>Příklad  
- The query uses a `Let` clause to determine the element that contains the style node. If there is no element, then `styleNode` is set to `Nothing`:  
+ Dotaz používá klauzuli `Let` k určení prvku, který obsahuje uzel Style. Pokud není žádný element, `styleNode` je nastaven na `Nothing`:  
   
 ```vb  
 Let styleNode As XElement = para.<w:pPr>.<w:pStyle>.FirstOrDefault()  
 ```  
   
- The `Let` clause first uses the <xref:System.Xml.Linq.XContainer.Elements%2A> axis to find all elements named `pPr`, then uses the <xref:System.Xml.Linq.Extensions.Elements%2A> extension method to find all child elements named `pStyle`, and finally uses the <xref:System.Linq.Enumerable.FirstOrDefault%2A> standard query operator to convert the collection to a singleton. If the collection is empty, `styleNode` is set to `Nothing`. This is a useful idiom to look for the `pStyle` descendant node. Note that if the `pPr` child node does not exist, the code does nor fail by throwing an exception; instead, `styleNode` is set to `Nothing`, which is the desired behavior of this `Let` clause.  
+ Klauzule `Let` nejprve používá <xref:System.Xml.Linq.XContainer.Elements%2A> osu k vyhledání všech prvků s názvem `pPr`, poté používá metodu rozšíření <xref:System.Xml.Linq.Extensions.Elements%2A> k nalezení všech podřízených elementů s názvem `pStyle`a nakonec používá operátor dotazu <xref:System.Linq.Enumerable.FirstOrDefault%2A> Standard k převedení kolekce na typ singleton. Pokud je kolekce prázdná, `styleNode` je nastavená na `Nothing`. Toto je užitečná idiom k vyhledání podřízeného uzlu `pStyle`. Všimněte si, že pokud `pPr` podřízený uzel neexistuje, kód selže ani selže vyvoláním výjimky; místo toho je `styleNode` nastaveno na `Nothing`, což je požadované chování této klauzule `Let`.  
   
- The query projects a collection of an anonymous type with two members, `StyleName` and `ParagraphNode`.  
+ Dotaz projektuje kolekci anonymního typu se dvěma členy `StyleName` a `ParagraphNode`.  
   
 ## <a name="example"></a>Příklad  
- This example processes a WordprocessingML document, retrieving the paragraph nodes from a WordprocessingML document. It also identifies the style of each paragraph. This example builds on the previous examples in this tutorial. The new query is called out in comments in the code below.  
+ Tento příklad zpracovává dokument WordprocessingML a načítá uzly odstavců z dokumentu WordprocessingML. Určuje také styl každého odstavce. Tento příklad sestaví na předchozích příkladech v tomto kurzu. Nový dotaz se zavolá v komentářích v následujícím kódu.  
   
- You can find instructions for creating the source document for this example in [Creating the Source Office Open XML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
+ Pokyny pro vytvoření zdrojového dokumentu pro tento příklad najdete v [tématu vytvoření zdrojového dokumentu XML pro Office Open (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
   
- This example uses classes found in the WindowsBase assembly. It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.  
+ Tento příklad používá třídy nalezené v sestavení WindowsBase. Používá typy v oboru názvů <xref:System.IO.Packaging?displayProperty=nameWithType>.  
   
 ```vb  
 Imports <xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">  
@@ -111,7 +111,7 @@ Module Module1
 End Module  
 ```  
   
- This example produces the following output when applied to the document described in [Creating the Source Office Open XML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
+ Tento příklad vytvoří následující výstup při použití v dokumentu popsaném v [tématu vytvoření zdrojového dokumentu XML pro Office Open (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
   
 ```console  
 StyleName:Heading1  
@@ -132,8 +132,8 @@ StyleName:Code
 ```  
   
 ## <a name="next-steps"></a>Další kroky  
- In the next topic, [Retrieving the Text of the Paragraphs (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md), you'll create a query to retrieve the text of paragraphs.  
+ V dalším tématu [načtení textu odstavců (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md)vytvoříte dotaz pro načtení textu odstavců.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Tutorial: Manipulating Content in a WordprocessingML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [Kurz: manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)

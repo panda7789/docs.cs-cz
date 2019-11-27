@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74439113"
 ---
 # <a name="icorprofilerinfogetfunctioninfo-method"></a>ICorProfilerInfo::GetFunctionInfo – metoda
-Gets the parent class and metadata token for the specified function.  
+Získá nadřazenou třídu a token metadat pro určenou funkci.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,30 +37,30 @@ HRESULT GetFunctionInfo(
   
 ## <a name="parameters"></a>Parametry  
  `functionId`  
- [in] The ID of the function for which to get the parent class and metadata token.  
+ pro ID funkce, pro kterou se má získat nadřazená třída a token metadat  
   
  `pClassId`  
- [out] A pointer to the parent class of the function.  
+ mimo Ukazatel na nadřazenou třídu funkce.  
   
  `pModuleId`  
- [out] A pointer to the module in which the function's parent class is defined.  
+ mimo Ukazatel na modul, ve kterém je definována nadřazená třída funkce.  
   
  `pToken`  
- [out] A pointer to the metadata token for the function.  
+ mimo Ukazatel na token metadat pro funkci.  
   
 ## <a name="remarks"></a>Poznámky  
- The profiler code can call [ICorProfilerInfo::GetModuleMetaData](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmodulemetadata-method.md) to obtain a metadata interface for a given module. The metadata token that is returned to the location referenced by `pToken` can then be used to access the metadata for the function.  
+ Kód profileru může zavolat [ICorProfilerInfo:: GetModuleMetaData –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmodulemetadata-method.md) a získat rozhraní metadat pro daný modul. Token metadat, který je vrácen do umístění odkazovaného `pToken` lze následně použít pro přístup k metadatům funkce.  
   
- The `ClassID` of a function on a generic class might not be obtainable without more contextual information about the use of the function. In this case, `pClassId` will be 0. Profiler code should use [ICorProfilerInfo2::GetFunctionInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) with a COR_PRF_FRAME_INFO value to provide more context.  
+ `ClassID` funkce na obecné třídě nemusí být získatelné bez dalších kontextových informací o použití funkce. V takovém případě bude `pClassId` 0. Kód profileru by měl používat [ICorProfilerInfo2:: GetFunctionInfo2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) s hodnotou COR_PRF_FRAME_INFO k poskytnutí více kontextu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

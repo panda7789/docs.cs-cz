@@ -1,5 +1,5 @@
 ---
-title: Named argument not found
+title: Pojmenovaný argument nebyl nalezen.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrID448
@@ -11,12 +11,12 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348475"
 ---
-# <a name="named-argument-not-found-visual-basic"></a>Named argument not found (Visual Basic)
-A named argument can not be used in a procedure invocation unless it appears in the procedure definition. You specified a named argument, but the procedure was not defined to accept an argument by that name.  
+# <a name="named-argument-not-found-visual-basic"></a>Pojmenovaný argument nebyl nalezen (Visual Basic)
+Pojmenovaný argument nelze použít ve volání procedury, pokud se neobjeví v definici procedury. Zadali jste pojmenovaný argument, ale procedura nebyla definována tak, aby přijímala argument s tímto názvem.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Check the spelling of the argument name.  
+- Zkontrolujte pravopis názvu argumentu.  
   
 ## <a name="see-also"></a>Viz také:
 

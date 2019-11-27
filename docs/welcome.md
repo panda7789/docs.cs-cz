@@ -31,7 +31,7 @@ Informace o rozhraní .NET najdete v následujících blogových příspěvcích
 
 - [Microsoft Build](https://www.microsoft.com/build)
 - [.NET conf](https://www.dotnetconf.net/)
-- [Microsoft Connect()](https://www.microsoft.com/connectevent)
+- [Microsoft Connect ()](https://www.microsoft.com/connectevent)
 
 Informace o nejnovějších funkcích přidaných do implementací rozhraní .NET a podporovaných jazyků naleznete v následujících článcích:
 

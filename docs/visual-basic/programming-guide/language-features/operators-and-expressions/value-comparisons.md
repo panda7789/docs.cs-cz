@@ -18,29 +18,29 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346289"
 ---
 # <a name="value-comparisons-visual-basic"></a>Porovnání hodnot (Visual Basic)
-Comparison operators can be used to construct expressions that compare the values of numeric variables. These expressions return a `Boolean` value based on whether the comparison is true or false. Examples of such an expression are as follows.  
+Operátory porovnání lze použít k vytvoření výrazů, které porovnávají hodnoty číselných proměnných. Tyto výrazy vracejí hodnotu `Boolean` na základě toho, zda je porovnání true nebo false. Příklady takového výrazu jsou následující.  
   
  `45 > 26`  
   
  `26 > 45`  
   
- The first expression evaluates to `True`, because 45 is greater than 26. The second example evaluates to `False`, because 26 is not greater than 45.  
+ První výraz se vyhodnotí jako `True`, protože 45 je větší než 26. Druhý příklad je vyhodnocen jako `False`, protože 26 není větší než 45.  
   
- You can also compare numeric expressions in this fashion. The expressions you compare can themselves be complex expressions, as in the following example.  
+ Tímto způsobem můžete také porovnat číselné výrazy. Výrazy, které porovnáváte, mohou být složité výrazy, jako v následujícím příkladu.  
   
  `x / 45 * (y +17) >= System.Math.Sqrt(z) / (p - (x * 16))`  
   
- The preceding complex expression includes literals, variables, and function calls. The expressions on both sides of the comparison operator are evaluated, and the resulting values are then compared using the `>=` comparison operator. If the value of the expression on the left side is greater than or equal to the value of the expression on the right, the entire expression evaluates to `True`; otherwise, it evaluates to `False`.  
+ Předchozí složitý výraz zahrnuje literály, proměnné a volání funkcí. Výrazy na obou stranách operátoru porovnání jsou vyhodnoceny a výsledné hodnoty jsou pak porovnány pomocí operátoru porovnání `>=`. Pokud je hodnota výrazu na levé straně větší než nebo rovna hodnotě výrazu na pravé straně, je celý výraz vyhodnocen jako `True`; v opačném případě se vyhodnotí jako `False`.  
   
- Expressions that compare values are most commonly used in `If...Then` constructions, as in the following example.  
+ Výrazy, které porovnávají hodnoty, jsou nejčastěji používány v konstrukcích `If...Then`, jako v následujícím příkladu.  
   
  [!code-vb[VbVbalrOperators#84](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#84)]  
   
- The `=` sign is a comparison operator as well as an assignment operator. When used as a comparison operator, it evaluates whether the value on the left is equal to the value on the right, as shown in the following example.  
+ Znaménko `=` je operátor porovnání a operátor přiřazení. Při použití jako operátor porovnání vyhodnotí, zda je hodnota vlevo rovna hodnotě na pravé straně, jak je znázorněno v následujícím příkladu.  
   
  [!code-vb[VbVbalrOperators#85](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#85)]  
   
- You can also use a comparison expression anywhere a `Boolean` value is needed, such as in an `If`, `While`, `Loop`, or `ElseIf` statement, or when assigning to or passing a value to a `Boolean` variable. In the following example, the value returned by the comparison expression is assigned to a `Boolean` variable.  
+ Výraz porovnání můžete použít také kdekoli, kde je požadována `Boolean` hodnota, například v příkazu `If`, `While`, `Loop`nebo v příkazu `ElseIf`, nebo při přiřazení k hodnotě `Boolean` proměnné nebo jejímu předání. V následujícím příkladu je hodnota vrácená výrazem porovnání přiřazena k proměnné `Boolean`.  
   
  [!code-vb[VbVbalrOperators#86](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#86)]  
   
@@ -48,6 +48,6 @@ Comparison operators can be used to construct expressions that compare the value
 
 - [Logické výrazy](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/boolean-expressions.md)
 - [Operátory a výrazy](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)
-- [Comparison Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
+- [Operátory porovnávání v Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
 - [Postupy: Výpočet numerických hodnot](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/how-to-calculate-numeric-values.md)
-- [Operator Precedence in Visual Basic](../../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Priorita operátorů v Visual Basic](../../../../visual-basic/language-reference/operators/operator-precedence.md)

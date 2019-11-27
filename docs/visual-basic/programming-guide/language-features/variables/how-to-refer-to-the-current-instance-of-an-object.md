@@ -16,20 +16,20 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346883"
 ---
 # <a name="how-to-refer-to-the-current-instance-of-an-object-visual-basic"></a>Postupy: Odkazování na aktuální instanci objektu (Visual Basic)
-The *current instance* of an object is the instance in which the code is currently executing.  
+*Aktuální instance* objektu je instance, ve které je právě spuštěn kód.  
   
- You use the `Me` keyword to refer to the current instance.  
+ Použijte klíčové slovo `Me` pro odkazování na aktuální instanci.  
   
-### <a name="to-refer-to-the-current-instance"></a>To refer to the current instance  
+### <a name="to-refer-to-the-current-instance"></a>Pro odkazování na aktuální instanci  
   
-- Use the `Me` keyword where you would normally use the name of an object variable.  
+- Použijte klíčové slovo `Me`, kde byste normálně použili název proměnné objektu.  
   
     ```vb  
     Me.ForeColor = System.Drawing.Color.Crimson  
     Me.Close()  
     ```  
   
-     Although `Me` behaves like an object variable, you cannot declare it or assign anything to it. `Me` always refers to the current instance.  
+     I když se `Me` chová jako proměnná objektu, nemůžete ji deklarovat nebo k ní přiřadit cokoli. `Me` vždy odkazuje na aktuální instanci.  
   
 ## <a name="see-also"></a>Viz také:
 

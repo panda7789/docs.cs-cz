@@ -13,24 +13,24 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350096"
 ---
 # <a name="elementary-data-types-visual-basic"></a>Základní datové typy (Visual Basic)
-Visual Basic supplies a set of predefined data types, which you can use for many of your programming elements. This section describes these types and how to use them.  
+Visual Basic poskytuje sadu předdefinovaných datových typů, které můžete použít pro mnoho vašich programovacích prvků. Tato část popisuje tyto typy a jejich použití.  
   
 > [!NOTE]
-> Every elementary data type in Visual Basic is supported by a structure or a class that is in the <xref:System> namespace. The compiler uses each data type keyword as an alias for the underlying structure or class. For example, declaring a variable by using the reserved word `Byte` is the same as declaring it by using the fully qualified structure name <xref:System.Byte?displayProperty=nameWithType>.  
+> Každý základní datový typ v Visual Basic je podporován strukturou nebo třídou, která je v oboru názvů <xref:System>. Kompilátor používá každé klíčové slovo datového typu jako alias pro podkladovou strukturu nebo třídu. Například deklarace proměnné pomocí rezervovaného slova `Byte` je stejná jako deklarace pomocí plně kvalifikovaného názvu struktury <xref:System.Byte?displayProperty=nameWithType>.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Číselné datové typy](../../../../visual-basic/programming-guide/language-features/data-types/numeric-data-types.md)  
- Describes the integral and non-integral numeric types.  
+ Popisuje celočíselné a neceločíselné číselné typy.  
   
  [Znakové datové typy](../../../../visual-basic/programming-guide/language-features/data-types/character-data-types.md)  
- Describes the `Char` and `String` types.  
+ Popisuje typy `Char` a `String`.  
   
  [Různé datové typy](../../../../visual-basic/programming-guide/language-features/data-types/miscellaneous-data-types.md)  
- Describes the `Boolean`, `Date`, and `Object` types.  
+ Popisuje typy `Boolean`, `Date`a `Object`.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  
- Introduces the Visual Basic data types and describes how to use them.  
+ Zavádí Visual Basic datových typů a popisuje, jak je používat.  
   
  [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)  
- Provides an overview of the elementary data types supplied by Visual Basic.
+ Poskytuje přehled základních datových typů poskytovaných Visual Basic.

@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449399"
 ---
 # <a name="freewin32resblob-method"></a>FreeWin32ResBlob – metoda
-Releases the Win32 resource blob and associated resources.  
+Uvolňuje objekt BLOB prostředku Win32 a přidružené prostředky.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,16 +34,16 @@ HRESULT FreeWin32ResBlob(
   
 ## <a name="parameters"></a>Parametry  
  `ppResBlob`  
- The resource blob to be released. This method assigns the blob pointer to NULL.  
+ Objekt BLOB prostředku, který se má uvolnit Tato metoda přiřadí ukazatel objektu BLOB k hodnotě NULL.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Returns S_OK if the method succeeds.  
+ Vrátí S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Requires alink.h  
+ Vyžaduje ALink. h  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink – rozhraní](ialink-interface.md)
 - [IALink2 – rozhraní](ialink2-interface.md)
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)

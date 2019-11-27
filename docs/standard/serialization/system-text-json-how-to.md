@@ -23,7 +23,7 @@ Pokyny a vzorový kód používají knihovnu přímo, nikoli prostřednictvím r
 
 Většina vzorových ukázkových kódů v serializaci <xref:System.Text.Json.JsonSerializerOptions.WriteIndented?displayProperty=nameWithType> `true` na "poměrně tištěné" formátu JSON (s odsazením a prázdným znakem pro lidské čitelnost). Při použití v produkčním prostředí byste obvykle přijali výchozí hodnotu `false` pro toto nastavení.
 
-## <a name="namespaces"></a>Jmenné prostory
+## <a name="namespaces"></a>Obory názvů
 
 Obor názvů <xref:System.Text.Json> obsahuje všechny vstupní body a hlavní typy. Obor názvů <xref:System.Text.Json.Serialization> obsahuje atributy a rozhraní API pro pokročilé scénáře a přizpůsobení specifické pro serializaci a deserializaci. Příklady kódu, které jsou uvedené v tomto článku, vyžadují direktivy `using` pro jeden nebo oba tyto obory názvů:
 
@@ -575,10 +575,10 @@ Při deserializaci formátu JSON zobrazeného dříve do tohoto ukázkového typ
 |---------|---------|---------|
 | Datum    | 8/1/2019 12:00:00 DOP. 07:00||
 | TemperatureCelsius| 0 | Neshoda malých a velkých písmen (`temperatureCelsius` ve formátu JSON), takže vlastnost není nastavená. |
-| Souhrn | Provozu ||
+| Souhrn | Horká ||
 | ExtensionData – | temperatureCelsius: 25 |Vzhledem k tomu, že se neshoduje velká a malá písmena, je tato vlastnost JSON extra a ve slovníku se stala dvojicí klíč-hodnota.|
 || DatesAvailable:<br>  8/1/2019 12:00:00 DOP. 07:00<br>8/2/2019 12:00:00 DOP. 07:00 |Vlastnost extra z formátu JSON se stávají dvojicí klíč-hodnota s polem jako objektem hodnoty.|
-| |SummaryWords:<br>Dobré<br>Vítr<br>Humid |Vlastnost extra z formátu JSON se stávají dvojicí klíč-hodnota s polem jako objektem hodnoty.|
+| |SummaryWords:<br>Studená<br>Vítr<br>Humid |Vlastnost extra z formátu JSON se stávají dvojicí klíč-hodnota s polem jako objektem hodnoty.|
 
 Při serializaci cílového objektu se dvojice hodnoty klíče dat rozšíření stanou vlastnostmi JSON stejně, jako kdyby byly ve vstupním formátu JSON:
 
@@ -714,7 +714,7 @@ Zde je ukázka JSON, kterou může předchozí kód přečíst. Výsledná Souhr
 
 [!code-json[](~/samples/snippets/core/system-text-json/csharp/Universities.json)]
 
-## <a name="additional-resources"></a>Další zdroje
+## <a name="additional-resources"></a>Další materiály a zdroje informací
 
 * [Přehled System. text. JSON](system-text-json-overview.md)
 * [Reference k rozhraní API System. text. JSON](xref:System.Text.Json)

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74442151"
 ---
 # <a name="imetadataemitsethandler-method"></a>IMetaDataEmit::SetHandler – metoda
-Sets the method referenced by the specified `IUnknown` pointer as a notification callback for token remaps.  
+Nastaví metodu, na kterou odkazuje zadaný `IUnknown` ukazatel jako zpětné volání oznámení pro přemapování tokenů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,21 +35,21 @@ HRESULT SetHandler (
   
 ## <a name="parameters"></a>Parametry  
  `pUnk`  
- [in] The handler to register.  
+ pro Obslužná rutina, která se má zaregistrovat  
   
 ## <a name="remarks"></a>Poznámky  
- The metadata engine sends notification by using the method that is provided by `SetHandler`, to compilers that do not generate records in an optimized way and that would like to optimize saved records.  
+ Modul metadat odesílá oznámení pomocí metody, která je poskytována `SetHandler`, kompilátorům, které negenerují záznamy optimalizovaným způsobem a které by chtěli optimalizovat uložené záznamy.  
   
- If the callback method is not provided through `SetHandler`, no optimization will be performed on save except where several import scopes have been merged using `IMapToken` on merge for each scope.  
+ Pokud metoda zpětného volání není k dispozici prostřednictvím `SetHandler`, nebude provedena žádná optimalizace s výjimkou případů, kdy byl pro každý obor sloučeno několik importovaných oborů pomocí `IMapToken` při sloučení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

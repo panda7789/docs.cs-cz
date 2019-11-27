@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74442685"
 ---
 # <a name="icorprofilermoduleenumnext-method"></a>ICorProfilerModuleEnum::Next – metoda
-Gets the specified number of contiguous modules from a sequential collection of modules, starting at the enumerator's current position in the sequence.  
+Získá zadaný počet souvislých modulů ze sekvenční kolekce modulů počínaje aktuální pozicí čítače výčtu v sekvenci.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,30 +36,30 @@ HRESULT Next([in]  ULONG      celt,
   
 ## <a name="parameters"></a>Parametry  
  `celt`  
- [in] The number of modules to retrieve.  
+ pro Počet modulů, které se mají načíst.  
   
  `ids`  
- [out] An array of `ModuleID` values, each of which represents a retrieved module.  
+ mimo Pole hodnot `ModuleID`, z nichž každý představuje načtený modul.  
   
  `pceltFetched`  
- [out] A pointer to the number of elements actually returned in the `ids` array.  
+ mimo Ukazatel na počet prvků, které jsou ve skutečnosti vráceny v poli `ids`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`celt` elements were returned.|  
-|S_FALSE|Fewer than `celt` elements were returned, which indicates that the enumeration is complete.|  
+|S_OK|byly vráceny `celt` prvky.|  
+|S_FALSE|Bylo vráceno méně než `celt` prvků, což naznačuje, že byl výčet dokončen.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

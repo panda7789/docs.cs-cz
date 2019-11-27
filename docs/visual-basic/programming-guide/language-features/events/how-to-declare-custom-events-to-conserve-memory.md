@@ -14,16 +14,16 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74345133"
 ---
 # <a name="how-to-declare-custom-events-to-conserve-memory-visual-basic"></a>Postupy: Deklarování vlastních událostí pro konzervaci paměti (Visual Basic)
-There are several circumstances when it is important that an application keep its memory usage low. Custom events allow the application to use memory only for the events that it handles.  
+V některých případech je důležité, aby aplikace zachovala využití paměti nízké. Vlastní události umožňují, aby aplikace používala paměť pouze pro události, které zpracovává.  
   
- By default, when a class declares an event, the compiler allocates memory for a field to store the event information. If a class has many unused events, they needlessly take up memory.  
+ Ve výchozím nastavení, když třída deklaruje událost, kompilátor přiděluje paměť pro pole k uložení informací o události. Pokud má třída mnoho nepoužívaných událostí, zbytečně zabírat paměť.  
   
- Instead of using the default implementation of events that Visual Basic provides, you can use custom events to manage the memory usage more carefully.  
+ Místo použití výchozí implementace událostí, které Visual Basic poskytuje, můžete použít vlastní události a pečlivě spravovat využití paměti.  
   
 ## <a name="example"></a>Příklad  
- In this example, the class uses one instance of the <xref:System.ComponentModel.EventHandlerList> class, stored in the `Events` field, to store information about the events in use. The <xref:System.ComponentModel.EventHandlerList> class is an optimized list class designed to hold delegates.  
+ V tomto příkladu třída používá jednu instanci třídy <xref:System.ComponentModel.EventHandlerList>, uloženou v poli `Events` pro ukládání informací o používaných událostech. Třída <xref:System.ComponentModel.EventHandlerList> je optimalizovaná třída seznamu navržená tak, aby obsahovala delegáty.  
   
- All events in the class use the `Events` field to keep track of what methods are handling each event.  
+ Všechny události ve třídě používají pole `Events` k udržení přehledu o tom, jaké metody zpracovávají jednotlivé události.  
   
  [!code-vb[VbVbalrEvents#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#22)]  
   

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74438602"
 ---
 # <a name="icorprofilerinfosetfunctionrejit-method"></a>ICorProfilerInfo::SetFunctionReJIT – metoda
-Not implemented. Nepoužívejte.  
+Není implementováno. Nepoužívejte.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,13 +33,13 @@ HRESULT SetFunctionReJIT(
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Version:** 1.0  
+ **Verze .NET Framework:** 1,0  
   
 ## <a name="see-also"></a>Viz také:
 

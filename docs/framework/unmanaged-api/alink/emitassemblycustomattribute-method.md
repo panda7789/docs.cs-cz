@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446516"
 ---
 # <a name="emitassemblycustomattribute-method"></a>EmitAssemblyCustomAttribute – metoda
-Call to set assembly-level custom attributes.  
+Volání pro nastavení vlastních atributů na úrovni sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,34 +41,34 @@ HRESULT EmitAssemblyCustomAttribute(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID of the assembly.  
+ ID sestavení  
   
  `FileToken`  
- File that defiles the attribute. Can be NULL if `AssemblyID` does not indicate an unbound netmodule.  
+ Soubor, který tento atribut odfile. Může mít hodnotu NULL, pokud `AssemblyID` neindikuje nevázaný netmodule.  
   
  `tkType`  
- Type of the custom attribute.  
+ Typ vlastního atributu  
   
  `pCustomValue`  
- Custom value data.  
+ Vlastní data hodnoty.  
   
  `cbCustomValue`  
- Length of custom value data.  
+ Délka dat vlastních hodnot  
   
  `bSecurity`  
- TRUE if the custom attribute is related to assembly signing.  
+ TRUE, pokud vlastní atribut souvisí s podepisováním sestavení.  
   
  `bAllowMulti`  
- TRUE if multiple attributes are to be emitted.  
+ TRUE, pokud má být vygenerováno více atributů.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Returns S_OK if the method succeeds.  
+ Vrátí S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Requires alink.h  
+ Vyžaduje ALink. h  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink – rozhraní](ialink-interface.md)
 - [IALink2 – rozhraní](ialink2-interface.md)
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)

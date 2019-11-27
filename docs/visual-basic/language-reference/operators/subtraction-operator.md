@@ -25,7 +25,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348226"
 ---
 # <a name="--operator-visual-basic"></a>- – operátor (Visual Basic)
-Returns the difference between two numeric expressions or the negative value of a numeric expression.  
+Vrátí rozdíl mezi dvěma číselnými výrazy nebo zápornou hodnotu číselného výrazu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,7 +33,7 @@ Returns the difference between two numeric expressions or the negative value of 
 expression1 – expression2
 ```
   
-or
+nebo
 
 ```vb  
 –expression1  
@@ -41,40 +41,40 @@ or
   
 ## <a name="parts"></a>Součásti  
  `expression1`  
- Požadováno. Any numeric expression.  
+ Požadováno. Libovolný číselný výraz.  
   
  `expression2`  
- Required unless the `–` operator is calculating a negative value. Any numeric expression.  
+ Povinné, pokud operátor `–` nevypočítá zápornou hodnotu. Libovolný číselný výraz.  
   
 ## <a name="result"></a>Výsledek  
- The result is the difference between `expression1` and `expression2`, or the negated value of `expression1`.  
+ Výsledkem je rozdíl mezi `expression1` a `expression2`nebo hodnotou negace `expression1`.  
   
- The result data type is a numeric type appropriate for the data types of `expression1` and `expression2`. See the "Integer Arithmetic" tables in [Data Types of Operator Results](../../../visual-basic/language-reference/operators/data-types-of-operator-results.md).  
+ Výsledný datový typ je číselný typ, který je vhodný pro datové typy `expression1` a `expression2`. Podívejte se na tabulky "celočíselné aritmetické" v [datových typech výsledků operátoru](../../../visual-basic/language-reference/operators/data-types-of-operator-results.md).  
   
-## <a name="supported-types"></a>Supported Types  
- All numeric types. This includes the unsigned and floating-point types and `Decimal`.  
+## <a name="supported-types"></a>Podporované typy  
+ Všechny číselné typy. To zahrnuje typy bez znaménka a typy s plovoucí desetinnou čárkou a `Decimal`.  
   
 ## <a name="remarks"></a>Poznámky  
- In the first usage shown in the syntax shown previously, the `–` operator is the *binary* arithmetic subtraction operator for the difference between two numeric expressions.  
+ V prvním použití zobrazeném v syntaxi uvedené dříve je operátor `–` *binární* aritmetický operátor odčítání pro rozdíl mezi dvěma číselnými výrazy.  
   
- In the second usage shown in the syntax shown previously, the `–` operator is the *unary* negation operator for the negative value of an expression. In this sense, the negation consists of reversing the sign of `expression1` so that the result is positive if `expression1` is negative.  
+ Ve druhém použití zobrazeném v syntaxi uvedené dříve je operátor `–` *unární* operátor negace pro zápornou hodnotu výrazu. V tomto smyslu se negace skládá z opačného znaménka `expression1` tak, že výsledek je kladný, pokud `expression1` záporné.  
   
- If either expression evaluates to [Nothing](../../../visual-basic/language-reference/nothing.md), the `–` operator treats it as zero.  
+ Pokud se některý výraz vyhodnotí jako [Nothing](../../../visual-basic/language-reference/nothing.md), operátor `–` považuje za nulu.  
   
 > [!NOTE]
-> The `–` operator can be *overloaded*, which means that a class or structure can redefine its behavior when an operand has the type of that class or structure. If your code uses this operator on such a class or structure, make sure that you understand its redefined behavior. For more information, see [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+> Operátor `–` lze přetížit, což znamená, že třída nebo struktura může předefinovat své *chování, pokud*má operand typ této třídy nebo struktury. Pokud váš kód používá tento operátor v takové třídě nebo struktuře, ujistěte se, že rozumíte jeho předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Příklad  
- The following example uses the `–` operator to calculate and return the difference between two numbers, and then to negate a number.  
+ Následující příklad používá operátor `–` k výpočtu a vrácení rozdílu mezi dvěma čísly a pak pro negaci čísla.  
   
  [!code-vb[VbVbalrOperators#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#10)]  
   
- Following the execution of these statements, `binaryResult` contains 124.45 and `unaryResult` contains –334.90.  
+ Po provedení těchto příkazů `binaryResult` obsahuje 124,45 a `unaryResult` obsahuje – 334,90.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [-= Operator (Visual Basic)](../../../visual-basic/language-reference/operators/subtraction-assignment-operator.md)
+- [-= – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/subtraction-assignment-operator.md)
 - [Aritmetické operátory](../../../visual-basic/language-reference/operators/arithmetic-operators.md)
-- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Priorita operátorů v Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
-- [Arithmetic Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
+- [Aritmetické operátory v Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)

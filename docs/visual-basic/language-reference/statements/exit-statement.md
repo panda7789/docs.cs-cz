@@ -21,7 +21,7 @@ ms.locfileid: "74345942"
 ---
 # <a name="exit-statement-visual-basic"></a>Exit – příkaz (Visual Basic)
 
-Exits a procedure or block and transfers control immediately to the statement following the procedure call or the block definition.
+Ukončí proceduru nebo blok a okamžitě přenese řízení do příkazu za voláním procedury nebo definicí bloku.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -32,56 +32,56 @@ Exit { Do | For | Function | Property | Select | Sub | Try | While }
 ## <a name="statements"></a>Příkazy
 
  `Exit Do`  
- Immediately exits the `Do` loop in which it appears. Execution continues with the statement following the `Loop` statement. `Exit Do` can be used only inside a `Do` loop. When used within nested `Do` loops, `Exit Do` exits the innermost loop and transfers control to the next higher level of nesting.
+ Okamžitě ukončí `Do` smyčku, ve které se zobrazí. Provádění pokračuje s příkazem za příkazem `Loop`. `Exit Do` lze použít pouze uvnitř smyčky `Do`. Při použití ve vnořených cyklech `Do` `Exit Do` ukončí vnitřní smyčku a přenáší řízení na další vyšší úroveň vnoření.
 
  `Exit For`  
- Immediately exits the `For` loop in which it appears. Execution continues with the statement following the `Next` statement. `Exit For` can be used only inside a `For`...`Next` or `For Each`...`Next` loop. When used within nested `For` loops, `Exit For` exits the innermost loop and transfers control to the next higher level of nesting.
+ Okamžitě ukončí `For` smyčku, ve které se zobrazí. Provádění pokračuje s příkazem za příkazem `Next`. `Exit For` lze použít pouze uvnitř `For`...`Next` nebo `For Each`...`Next` smyčka. Při použití ve vnořených cyklech `For` `Exit For` ukončí vnitřní smyčku a přenáší řízení na další vyšší úroveň vnoření.
 
  `Exit Function`  
- Immediately exits the `Function` procedure in which it appears. Execution continues with the statement following the statement that called the `Function` procedure. `Exit Function` can be used only inside a `Function` procedure.
+ Okamžitě ukončí `Function` postup, ve kterém se zobrazí. Provádění pokračuje příkazem po příkazu, který se nazývá `Function` procedura. `Exit Function` lze použít pouze v rámci `Function` procedury.
 
- To specify a return value, you can assign the value to the function name on a line before the `Exit Function` statement. To assign the return value and exit the function in one statement, you can instead use the [Return Statement](return-statement.md).
+ Chcete-li zadat návratovou hodnotu, můžete hodnotu přiřadit názvu funkce na řádku před příkazem `Exit Function`. Chcete-li přiřadit návratovou hodnotu a ukončit funkci v jednom příkazu, můžete místo toho použít [příkaz return](return-statement.md).
 
  `Exit Property`  
- Immediately exits the `Property` procedure in which it appears. Execution continues with the statement that called the `Property` procedure, that is, with the statement requesting or setting the property's value. `Exit Property` can be used only inside a property's `Get` or `Set` procedure.
+ Okamžitě ukončí `Property` postup, ve kterém se zobrazí. Provádění pokračuje s příkazem, který se nazývá `Property` procedura, to znamená s příkazem požadujícím nebo nastavením hodnoty vlastnosti. `Exit Property` lze použít pouze uvnitř vlastnosti `Get` nebo `Set` procedury.
 
- To specify a return value in a `Get` procedure, you can assign the value to the function name on a line before the `Exit Property` statement. To assign the return value and exit the `Get` procedure in one statement, you can instead use the `Return` statement.
+ Chcete-li zadat návratovou hodnotu v `Get` proceduře, lze hodnotu přiřadit názvu funkce na řádku před příkazem `Exit Property`. Chcete-li přiřadit návratovou hodnotu a ukončit `Get` procedura v jednom příkazu, můžete místo toho použít příkaz `Return`.
 
- In a `Set` procedure, the `Exit Property` statement is equivalent to the `Return` statement.
+ V `Set` proceduře je příkaz `Exit Property` ekvivalentní příkazu `Return`.
 
  `Exit Select`  
- Immediately exits the `Select Case` block in which it appears. Execution continues with the statement following the `End Select` statement. `Exit Select` can be used only inside a `Select Case` statement.
+ Okamžitě ukončí `Select Case` blok, ve kterém se zobrazí. Provádění pokračuje s příkazem za příkazem `End Select`. `Exit Select` lze použít pouze uvnitř příkazu `Select Case`.
 
  `Exit Sub`  
- Immediately exits the `Sub` procedure in which it appears. Execution continues with the statement following the statement that called the `Sub` procedure. `Exit Sub` can be used only inside a `Sub` procedure.
+ Okamžitě ukončí `Sub` postup, ve kterém se zobrazí. Provádění pokračuje příkazem po příkazu, který se nazývá `Sub` procedura. `Exit Sub` lze použít pouze v rámci `Sub` procedury.
 
- In a `Sub` procedure, the `Exit Sub` statement is equivalent to the `Return` statement.
+ V `Sub` proceduře je příkaz `Exit Sub` ekvivalentní příkazu `Return`.
 
  `Exit Try`  
- Immediately exits the `Try` or `Catch` block in which it appears. Execution continues with the `Finally` block if there is one, or with the statement following the `End Try` statement otherwise. `Exit Try` can be used only inside a `Try` or `Catch` block, and not inside a `Finally` block.
+ Okamžitě ukončí `Try` nebo `Catch` blok, ve kterém se zobrazí. Provádění pokračuje s blokem `Finally`, pokud existuje, nebo s příkazem, který následuje za příkazem `End Try` jinak. `Exit Try` lze použít pouze uvnitř bloku `Try` nebo `Catch` a nikoli uvnitř `Finally` bloku.
 
  `Exit While`  
- Immediately exits the `While` loop in which it appears. Execution continues with the statement following the `End While` statement. `Exit While` can be used only inside a `While` loop. When used within nested `While` loops, `Exit While` transfers control to the loop that is one nested level above the loop where `Exit While` occurs.
+ Okamžitě ukončí `While` smyčku, ve které se zobrazí. Provádění pokračuje s příkazem za příkazem `End While`. `Exit While` lze použít pouze uvnitř smyčky `While`. Při použití ve vnořených cyklech `While` `Exit While` přenáší řízení na smyčku, která je jednou vnořenou úrovní nad smyčkou, kde `Exit While` nastane.
 
 ## <a name="remarks"></a>Poznámky
 
-Do not confuse `Exit` statements with `End` statements. `Exit` does not define the end of a statement.
+Nepleťte si `Exit` příkazy s příkazy `End`. `Exit` nedefinuje konec příkazu.
 
 ## <a name="example"></a>Příklad
 
-In the following example, the loop condition stops the loop when the `index` variable is greater than 100. The `If` statement in the loop, however, causes the `Exit Do` statement to stop the loop when the index variable is greater than 10.
+V následujícím příkladu podmínka smyčky zastaví smyčku, když je proměnná `index` větší než 100. Příkaz `If` ve smyčce ale způsobí, že příkaz `Exit Do` zastaví smyčku v případě, že je proměnná indexu větší než 10.
 
 [!code-vb[VbVbalrStatements#133](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class10.vb#133)]
 
 ## <a name="example"></a>Příklad
 
-The following example assigns the return value to the function name `myFunction`, and then uses `Exit Function` to return from the function:
+Následující příklad přiřadí návratovou hodnotu k názvu funkce `myFunction`a poté používá `Exit Function` k návratu z funkce:
 
 [!code-vb[VbVbalrStatements#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#23)]
 
 ## <a name="example"></a>Příklad
 
-The following example uses the [Return Statement](return-statement.md) to assign the return value and exit the function:
+Následující příklad používá [příkaz return](return-statement.md) k přiřazení návratové hodnoty a ukončení funkce:
 
 [!code-vb[VbVbalrStatements#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#24)]
 

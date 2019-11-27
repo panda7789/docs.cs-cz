@@ -16,7 +16,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350436"
 ---
 # <a name="let-clause-visual-basic"></a>Let – klauzule (Visual Basic)
-Computes a value and assigns it to a new variable within the query.  
+Vypočítá hodnotu a přiřadí ji k nové proměnné v rámci dotazu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,22 +28,22 @@ Let variable = expression [, ...]
   
 |Termín|Definice|  
 |---|---|  
-|`variable`|Požadováno. An alias that can be used to reference the results of the supplied expression.|  
-|`expression`|Požadováno. An expression that will be evaluated and assigned to the specified variable.|  
+|`variable`|Požadováno. Alias, který lze použít k odkazování na výsledky poskytnutého výrazu.|  
+|`expression`|Požadováno. Výraz, který bude vyhodnocen a přiřazen k zadané proměnné.|  
   
 ## <a name="remarks"></a>Poznámky  
- The `Let` clause enables you to compute values for each query result and reference them by using an alias. The alias can be used in other clauses, such as the `Where` clause. The `Let` clause enables you to create a query statement that is easier to read because you can specify an alias for an expression clause included in the query and substitute the alias each time the expression clause is used.  
+ Klauzule `Let` umožňuje vypočítat hodnoty pro každý výsledek dotazu a odkazovat na ně pomocí aliasu. Alias lze použít v jiných klauzulích, například v klauzuli `Where`. Klauzule `Let` umožňuje vytvořit příkaz dotazu, který je snazší číst, protože můžete zadat alias pro klauzuli Expression, která je součástí dotazu, a nahradit alias pokaždé, když se použije klauzule Expression.  
   
- You can include any number of `variable` and `expression` assignments in the `Let` clause. Separate each assignment with a comma (,).  
+ V klauzuli `Let` můžete zahrnout libovolný počet `variable` a `expression` přiřazení. Jednotlivá přiřazení oddělte čárkou (,).  
   
 ## <a name="example"></a>Příklad  
- The following code example uses the `Let` clause to compute a 10 percent discount on products.  
+ Následující příklad kódu používá klauzuli `Let` k výpočtu 10% slevy na produkty.  
   
  [!code-vb[VbSimpleQuerySamples#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#16)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Introduction to LINQ in Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Úvod do jazyka LINQ v Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
 - [Dotazy](../../../visual-basic/language-reference/queries/index.md)
 - [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)
 - [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)

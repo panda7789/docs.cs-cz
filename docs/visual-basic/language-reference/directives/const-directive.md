@@ -24,7 +24,7 @@ ms.locfileid: "74343848"
 ---
 # <a name="const-directive"></a>#Const – direktiva
 
-Defines conditional compiler constants for Visual Basic.  
+Definuje podmíněné konstanty kompilátoru pro Visual Basic.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,20 +35,20 @@ Defines conditional compiler constants for Visual Basic.
 ## <a name="parts"></a>Součásti  
 
  `constname`  
- Požadováno. Name of the constant being defined.  
+ Požadováno. Název konstanty, která je definována.  
   
  `expression`  
- Požadováno. Literal, other conditional compiler constant, or any combination that includes any or all arithmetic or logical operators except `Is`.  
+ Požadováno. Literál, jiné podmíněné konstanty kompilátoru nebo libovolná kombinace, která obsahuje všechny nebo všechny aritmetické nebo logické operátory s výjimkou `Is`.  
   
 ## <a name="remarks"></a>Poznámky  
 
- Conditional compiler constants are always private to the file in which they appear. You cannot create public compiler constants using the `#Const` directive; you can create them only in the user interface or with the `/define` compiler option.  
+ Podmíněné konstanty kompilátoru jsou vždy soukromé k souboru, ve kterém jsou uvedeny. Pomocí direktivy `#Const` nemůžete vytvářet veřejné konstanty kompilátoru. můžete je vytvořit pouze v uživatelském rozhraní nebo pomocí možnosti kompilátoru `/define`.  
   
- You can use only conditional compiler constants and literals in `expression`. Using a standard constant defined with `Const` causes an error. Conversely, you can use constants defined with the `#Const` keyword only for conditional compilation. Constants can also be undefined, in which case they have a value of `Nothing`.  
+ V `expression`lze použít pouze podmíněné konstanty kompilátoru a literály. Při použití standardní konstanty definované v `Const` dojde k chybě. Naopak můžete použít konstanty definované s klíčovým slovem `#Const` pouze pro podmíněnou kompilaci. Konstanty mohou být také nedefinovány. v takovém případě mají hodnotu `Nothing`.  
   
 ## <a name="example"></a>Příklad  
 
- This example uses the `#Const` directive.  
+ V tomto příkladu se používá direktiva `#Const`.  
   
  [!code-vb[VbVbalrConditionalComp#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrConditionalComp/VB/Class1.vb#3)]  
   

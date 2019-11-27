@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450184"
 ---
 # <a name="imetadataemitdefineuserstring-method"></a>IMetaDataEmit::DefineUserString – metoda
-Gets a metadata token for the specified literal string.  
+Získá token metadat pro zadaný řetězcový literál.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,22 +37,22 @@ HRESULT DefineUserString (
   
 ## <a name="parameters"></a>Parametry  
  `szString`  
- [in] The user string to store.  
+ pro Řetězec uživatele, který se má uložit.  
   
  `cchString`  
- [in] The count of wide characters in `szString`.  
+ pro Počet velkých znaků v `szString`.  
   
  `pstk`  
- [out] The string token assigned.  
+ mimo Byl přiřazen řetězcový token.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -18,7 +18,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350293"
 ---
 # <a name="-operator-visual-basic"></a>+ – operátor (Visual Basic)
-Adds two numbers or returns the positive value of a numeric expression. Can also be used to concatenate two string expressions.  
+Přidá dvě čísla nebo vrátí kladnou hodnotu číselného výrazu. Lze také použít ke zřetězení dvou řetězcových výrazů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,7 +26,7 @@ Adds two numbers or returns the positive value of a numeric expression. Can also
 expression1 + expression2
 ```
   
-or
+nebo
 
 ```vb  
 +expression1  
@@ -36,88 +36,88 @@ or
   
 |Termín|Definice|  
 |---|---|  
-|`expression1`|Požadováno. Any numeric or string expression.|  
-|`expression2`|Required unless the `+` operator is calculating a negative value. Any numeric or string expression.|  
+|`expression1`|Požadováno. Libovolný numerický nebo řetězcový výraz.|  
+|`expression2`|Povinné, pokud operátor `+` nevypočítá zápornou hodnotu. Libovolný numerický nebo řetězcový výraz.|  
   
 ## <a name="result"></a>Výsledek  
- If `expression1` and `expression2` are both numeric, the result is their arithmetic sum.  
+ Pokud jsou `expression1` a `expression2` číselné, výsledkem je aritmetický součet.  
   
- If `expression2` is absent, the `+` operator is the *unary* identity operator for the unchanged value of an expression. In this sense, the operation consists of retaining the sign of `expression1`, so the result is negative if `expression1` is negative.  
+ Pokud `expression2` chybí, operátor `+` je *unárním* operátorem identity pro nezměněnou hodnotu výrazu. V tomto smyslu se operace skládá z zachování `expression1`, takže výsledek je záporný, pokud `expression1` záporné.  
   
- If `expression1` and `expression2` are both strings, the result is the concatenation of their values.  
+ Pokud `expression1` a `expression2` jsou oba řetězce, je výsledkem zřetězení jejich hodnot.  
   
- If `expression1` and `expression2` are of mixed types, the action taken depends on their types, their contents, and the setting of the [Option Strict Statement](../../../visual-basic/language-reference/statements/option-strict-statement.md). For more information, see the tables in "Remarks."  
+ Pokud `expression1` a `expression2` jsou smíšených typů, akce provedena závisí na jejich typech, jejich obsahu a nastavení [příkazu Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md). Další informace najdete v tabulkách v části "poznámky".  
   
-## <a name="supported-types"></a>Supported Types  
- All numeric types, including the unsigned and floating-point types and `Decimal`, and `String`.  
+## <a name="supported-types"></a>Podporované typy  
+ Všechny číselné typy, včetně typů bez znaménka a plovoucí desetinné čárky a `Decimal`a `String`.  
   
 ## <a name="remarks"></a>Poznámky  
- In general, `+` performs arithmetic addition when possible, and concatenates only when both expressions are strings.  
+ Obecně `+` provádí aritmetické přidávání, pokud je to možné, a zřetězení pouze v případě, že oba výrazy jsou řetězce.  
   
- If neither expression is an `Object`, Visual Basic takes the following actions.  
+ Pokud žádný výraz není `Object`, Visual Basic provede následující akce.  
   
-|Data types of expressions|Action by compiler|  
+|Datové typy výrazů|Akce podle kompilátoru|  
 |---|---|  
-|Both expressions are numeric data types (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, `ULong`, `Decimal`, `Single`, or `Double`)|Add. The result data type is a numeric type appropriate for the data types of `expression1` and `expression2`. See the "Integer Arithmetic" tables in [Data Types of Operator Results](../../../visual-basic/language-reference/operators/data-types-of-operator-results.md).|  
-|Both expressions are of type `String`|Concatenate.|  
-|One expression is a numeric data type and the other is a string|If `Option Strict` is `On`, then generate a compiler error.<br /><br /> If `Option Strict` is `Off`, then implicitly convert the `String` to `Double` and add.<br /><br /> If the `String` cannot be converted to `Double`, then throw an <xref:System.InvalidCastException> exception.|  
-|One expression is a numeric data type, and the other is [Nothing](../../../visual-basic/language-reference/nothing.md)|Add, with `Nothing` valued as zero.|  
-|One expression is a string, and the other is `Nothing`|Concatenate, with `Nothing` valued as "".|  
+|Oba výrazy jsou číselné datové typy (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, `ULong`, `Decimal`, `Single`nebo `Double`).|Přidávání. Výsledný datový typ je číselný typ, který je vhodný pro datové typy `expression1` a `expression2`. Podívejte se na tabulky "celočíselné aritmetické" v [datových typech výsledků operátoru](../../../visual-basic/language-reference/operators/data-types-of-operator-results.md).|  
+|Oba výrazy jsou typu `String`|Zřetězit.|  
+|Jeden výraz je číselný datový typ a druhý je řetězec.|Pokud je `Option Strict` `On`, vygenerujte chybu kompilátoru.<br /><br /> Pokud je `Option Strict` `Off`, implicitně převeďte `String` na `Double` a přidat.<br /><br /> Pokud `String` nelze převést na `Double`, vyvolejte výjimku <xref:System.InvalidCastException>.|  
+|Jeden výraz je numerický datový typ a druhý není [nic](../../../visual-basic/language-reference/nothing.md)|Přidejte, s `Nothing` hodnotou nula.|  
+|Jeden výraz je řetězec a druhý je `Nothing`|CONCATENATE s `Nothing` se oceňuje jako "".|  
   
- If one expression is an `Object` expression, Visual Basic takes the following actions.  
+ Pokud je jedním výrazem výraz `Object`, Visual Basic provede následující akce.  
   
-|Data types of expressions|Action by compiler|  
+|Datové typy výrazů|Akce podle kompilátoru|  
 |---|---|  
-|`Object` expression holds a numeric value and the other is a numeric data type|If `Option Strict` is `On`, then generate a compiler error.<br /><br /> If `Option Strict` is `Off`, then add.|  
-|`Object` expression holds a numeric value and the other is of type `String`|If `Option Strict` is `On`, then generate a compiler error.<br /><br /> If `Option Strict` is `Off`, then implicitly convert the `String` to `Double` and add.<br /><br /> If the `String` cannot be converted to `Double`, then throw an <xref:System.InvalidCastException> exception.|  
-|`Object` expression holds a string and the other is a numeric data type|If `Option Strict` is `On`, then generate a compiler error.<br /><br /> If `Option Strict` is `Off`, then implicitly convert the string `Object` to `Double` and add.<br /><br /> If the string `Object` cannot be converted to `Double`, then throw an <xref:System.InvalidCastException> exception.|  
-|`Object` expression holds a string and the other is of type `String`|If `Option Strict` is `On`, then generate a compiler error.<br /><br /> If `Option Strict` is `Off`, then implicitly convert `Object` to `String` and concatenate.|  
+|výraz `Object` má číselnou hodnotu a druhý je numerický datový typ.|Pokud je `Option Strict` `On`, vygenerujte chybu kompilátoru.<br /><br /> Pokud je `Option Strict` `Off`, přidejte.|  
+|výraz `Object` má číselnou hodnotu a druhý je typu `String`|Pokud je `Option Strict` `On`, vygenerujte chybu kompilátoru.<br /><br /> Pokud je `Option Strict` `Off`, implicitně převeďte `String` na `Double` a přidat.<br /><br /> Pokud `String` nelze převést na `Double`, vyvolejte výjimku <xref:System.InvalidCastException>.|  
+|výraz `Object` obsahuje řetězec a druhý je číselný datový typ.|Pokud je `Option Strict` `On`, vygenerujte chybu kompilátoru.<br /><br /> Pokud je `Option Strict` `Off`, pak implicitně převeďte řetězec `Object` na `Double` a přidat.<br /><br /> Pokud `Object` řetězec nelze převést na `Double`, vyvolejte výjimku <xref:System.InvalidCastException>.|  
+|výraz `Object` obsahuje řetězec a druhý je typu `String`|Pokud je `Option Strict` `On`, vygenerujte chybu kompilátoru.<br /><br /> Pokud je `Option Strict` `Off`, implicitně převeďte `Object` na `String` a zřetězit.|  
   
- If both expressions are `Object` expressions, Visual Basic takes the following actions (`Option Strict Off` only).  
+ Pokud jsou oba výrazy `Object` výrazy, Visual Basic provádí následující akce (pouze`Option Strict Off`).  
   
-|Data types of expressions|Action by compiler|  
+|Datové typy výrazů|Akce podle kompilátoru|  
 |---|---|  
-|Both `Object` expressions hold numeric values|Add.|  
-|Both `Object` expressions are of type `String`|Concatenate.|  
-|One `Object` expression holds a numeric value and the other holds a string|Implicitly convert the string `Object` to `Double` and add.<br /><br /> If the string `Object` cannot be converted to a numeric value, then throw an <xref:System.InvalidCastException> exception.|  
+|Oba `Object` výrazy uchovávají číselné hodnoty.|Přidávání.|  
+|Oba `Object` výrazy jsou typu `String`|Zřetězit.|  
+|Jeden `Object` výraz obsahuje číselnou hodnotu a druhý obsahuje řetězec.|Implicitně převeďte řetězec `Object` na `Double` a přidat.<br /><br /> Pokud řetězec `Object` nelze převést na číselnou hodnotu, vyvolejte výjimku <xref:System.InvalidCastException>.|  
   
- If either `Object` expression evaluates to [Nothing](../../../visual-basic/language-reference/nothing.md) or <xref:System.DBNull>, the `+` operator treats it as a `String` with a value of "".  
+ Pokud je výraz `Object` vyhodnocen jako [Nothing](../../../visual-basic/language-reference/nothing.md) nebo <xref:System.DBNull>, operátor `+` ho považuje za `String` s hodnotou "".  
   
 > [!NOTE]
-> When you use the `+` operator, you might not be able to determine whether addition or string concatenation will occur. Use the `&` operator for concatenation to eliminate ambiguity and to provide self-documenting code.  
+> Když použijete operátor `+`, možná nebudete moci určit, zda dojde k přidání nebo zřetězení řetězců. Použijte operátor `&` pro zřetězení k eliminaci nejednoznačnosti a k poskytnutí kódu pro osobní dokument.  
   
 ## <a name="overloading"></a>Přetížení  
- The `+` operator can be *overloaded*, which means that a class or structure can redefine its behavior when an operand has the type of that class or structure. If your code uses this operator on such a class or structure, be sure you understand its redefined behavior. For more information, see [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ Operátor `+` lze přetížit, což znamená, že třída nebo struktura může předefinovat své *chování, pokud*má operand typ této třídy nebo struktury. Pokud váš kód používá tento operátor na takové třídě nebo struktuře, ujistěte se, že rozumíte jeho předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Příklad  
- The following example uses the `+` operator to add numbers. If the operands are both numeric, Visual Basic computes the arithmetic result. The arithmetic result represents the sum of the two operands.  
+ Následující příklad používá operátor `+` pro přidání čísel. Pokud jsou operandy číselné, Visual Basic vypočítá aritmetický výsledek. Aritmetický výsledek představuje součet dvou operandů.  
   
  [!code-vb[VbVbalrOperators#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#6)]  
   
- You can also use the `+` operator to concatenate strings. If the operands are both strings, Visual Basic concatenates them. The concatenation result represents a single string consisting of the contents of the two operands one after the other.  
+ K zřetězení řetězců lze také použít operátor `+`. Pokud jsou operandy řetězcem, Visual Basic je zřetězí. Výsledek zřetězení představuje jeden řetězec skládající se z obsahu dvou operandů jednoho po druhém.  
   
- If the operands are of mixed types, the result depends on the setting of the [Option Strict Statement](../../../visual-basic/language-reference/statements/option-strict-statement.md). The following example illustrates the result when `Option Strict` is `On`.  
+ Pokud jsou operandy smíšeného typu, výsledek závisí na nastavení [příkazu Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md). Následující příklad ilustruje výsledek při `On``Option Strict`.  
   
  [!code-vb[VbVbalrOperators#53](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class3.vb#53)]  
   
  [!code-vb[VbVbalrOperators#50](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class2.vb#50)]  
 [!code-vb[VbVbalrOperators#51](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class2.vb#51)]  
   
- The following example illustrates the result when `Option Strict` is `Off`.  
+ Následující příklad ilustruje výsledek při `Off``Option Strict`.  
   
  [!code-vb[VbVbalrOperators#54](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class2.vb#54)]  
   
  [!code-vb[VbVbalrOperators#50](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class2.vb#50)]  
 [!code-vb[VbVbalrOperators#52](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class2.vb#52)]  
   
- To eliminate ambiguity, you should use the `&` operator instead of `+` for concatenation.  
+ Chcete-li odstranit nejednoznačnost, měli byste použít operátor `&` místo `+` pro zřetězení.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Operátor &](../../../visual-basic/language-reference/operators/concatenation-operator.md)
-- [Operátory řetězení](../../../visual-basic/language-reference/operators/concatenation-operators.md)
+- [& – operátor](../../../visual-basic/language-reference/operators/concatenation-operator.md)
+- [Operátory zřetězení](../../../visual-basic/language-reference/operators/concatenation-operators.md)
 - [Aritmetické operátory](../../../visual-basic/language-reference/operators/arithmetic-operators.md)
 - [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
-- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
-- [Arithmetic Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
+- [Priorita operátorů v Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Aritmetické operátory v Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
 - [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)

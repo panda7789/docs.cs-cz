@@ -12,15 +12,15 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351687"
 ---
 # <a name="registry-summary-visual-basic"></a>Souhrn registru (Visual Basic)
-Visual Studio language keywords and run-time library members are organized by purpose and use.  
+Klíčová slova jazyka sady Visual Studio a členové běhové knihovny jsou uspořádány podle účelu a použití.  
   
- Using the `My` feature provides you with greater productivity and performance in registry operations than these elements. Další informace najdete v tématu <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>.  
+ Použití funkce `My` poskytuje větší produktivitu a výkon v operacích registru než tyto prvky. Další informace najdete v tématu <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>.  
   
-|**Action**|**Language element**|  
+|**Kroky**|**Element Language**|  
 |----------------|--------------------------|  
-|Delete program settings.|<xref:Microsoft.VisualBasic.Interaction.DeleteSetting%2A>|  
-|Read program settings.|<xref:Microsoft.VisualBasic.Interaction.GetSetting%2A>, <xref:Microsoft.VisualBasic.Interaction.GetAllSettings%2A>|  
-|Save program settings.|<xref:Microsoft.VisualBasic.Interaction.SaveSetting%2A>|  
+|Odstraňte nastavení programu.|<xref:Microsoft.VisualBasic.Interaction.DeleteSetting%2A>|  
+|Číst nastavení programu.|<xref:Microsoft.VisualBasic.Interaction.GetSetting%2A><xref:Microsoft.VisualBasic.Interaction.GetAllSettings%2A>|  
+|Uložte nastavení programu.|<xref:Microsoft.VisualBasic.Interaction.SaveSetting%2A>|  
   
 ## <a name="see-also"></a>Viz také:
 

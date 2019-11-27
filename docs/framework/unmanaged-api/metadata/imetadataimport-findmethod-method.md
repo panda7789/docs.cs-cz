@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437893"
 ---
 # <a name="imetadataimportfindmethod-method"></a>IMetaDataImport::FindMethod – metoda
-Gets a pointer to the MethodDef token for the method that is enclosed by the specified <xref:System.Type> and that has the specified name and metadata signature.  
+Získá ukazatel na token MethodDef pro metodu, která je uzavřena zadaným <xref:System.Type> a která má zadaný název a signaturu metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,35 +39,35 @@ HRESULT FindMethod (
   
 ## <a name="parameters"></a>Parametry  
  `td`  
- [in] The `mdTypeDef` token for the type (a class or interface) that encloses the member to search for. If this value is `mdTokenNil`, then the lookup is done for a global function.  
+ pro Token `mdTypeDef` pro typ (třída nebo rozhraní), který je členem pro hledání. Pokud je tato hodnota `mdTokenNil`, je vyhledávání provedeno pro globální funkci.  
   
  `szName`  
- [in] The name of the method to search for.  
+ pro Název metody, která se má vyhledat.  
   
  `pvSigBlob`  
- [in] A pointer to the binary metadata signature of the method.  
+ pro Ukazatel na binární podpis metadat metody.  
   
  `cbSigBlob`  
- [in] The size in bytes of `pvSigBlob`.  
+ pro Velikost v bajtech `pvSigBlob`.  
   
  `pmb`  
- [out] A pointer to the matching MethodDef token.  
+ mimo Ukazatel na shodný token MethodDef.  
   
 ## <a name="remarks"></a>Poznámky  
- You specify the method using its enclosing class or interface (`td`), its name (`szName`), and optionally its signature (`pvSigBlob`). There might be multiple methods with the same name in a class or interface. In that case, pass the method's signature to find the unique match.  
+ Zadejte metodu pomocí své nadřazené třídy nebo rozhraní (`td`), jejího názvu (`szName`) a volitelně její signaturu (`pvSigBlob`). V rámci třídy nebo rozhraní může existovat více metod se stejným názvem. V takovém případě předejte signaturu metody, abyste našli jedinečnou shodu.  
   
- The signature passed to `FindMethod` must have been generated in the current scope, because signatures are bound to a particular scope. A signature can embed a token that identifies the enclosing class or value type. The token is an index into the local TypeDef table. You cannot build a run-time signature outside the context of the current scope and use that signature as input to input to `FindMethod`.  
+ Podpis předaný do `FindMethod` musí být vygenerován v aktuálním oboru, protože signatury jsou vázány na konkrétní obor. Podpis může vložit token, který identifikuje ohraničující třídu nebo typ hodnoty. Token je index do místní tabulky TypeDef. Nemůžete sestavit signaturu za běhu mimo kontext aktuálního oboru a použít tento podpis jako vstup do `FindMethod`.  
   
- `FindMethod` finds only methods that were defined directly in the class or interface; it does not find inherited methods.  
+ `FindMethod` najde pouze metody, které byly definovány přímo ve třídě nebo rozhraní; nenalezne zděděné metody.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

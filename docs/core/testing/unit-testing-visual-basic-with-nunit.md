@@ -1,6 +1,6 @@
 ---
-title: Unit testing Visual Basic in .NET Core with dotnet test and NUnit
-description: Learn unit test concepts in .NET Core through an interactive experience building a sample Visual Basic solution step-by-step using NUnit.
+title: Testování částí Visual Basic v .NET Core pomocí příkazu dotnet test a NUnit
+description: Seznamte se s koncepty testování částí v .NET Core pomocí interaktivního prostředí, které vytváří ukázkové Visual Basic řešení, pomocí NUnit.
 author: rprouse
 ms.date: 10/04/2018
 ms.custom: seodec18
@@ -11,26 +11,26 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74428720"
 ---
-# <a name="unit-testing-visual-basic-net-core-libraries-using-dotnet-test-and-nunit"></a>Unit testing Visual Basic .NET Core libraries using dotnet test and NUnit
+# <a name="unit-testing-visual-basic-net-core-libraries-using-dotnet-test-and-nunit"></a>Testování částí Visual Basic knihoven .NET Core pomocí příkazu dotnet test a NUnit
 
-This tutorial takes you through an interactive experience building a sample solution step-by-step to learn unit testing concepts. If you prefer to follow the tutorial using a pre-built solution, [view or download the sample code](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-vb-nunit/) before you begin. For download instructions, see [Samples and Tutorials](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+Tento kurz vás provede interaktivním vytvořením ukázkového řešení, které vás seznámí s koncepty testování částí. Pokud chcete postupovat podle kurzu s předdefinovaným řešením, zobrazte si [ukázkový kód](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-vb-nunit/) před jeho zahájením nebo si ho stáhněte. Pokyny ke stažení najdete v tématu [ukázky a kurzy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
 [!INCLUDE [testing an ASP.NET Core project from .NET Core](../../../includes/core-testing-note-aspnet.md)]
 
 ## <a name="prerequisites"></a>Požadavky
 
-- [.NET Core 2.1 SDK](https://dotnet.microsoft.com/download) or later versions.
-- A text editor or code editor of your choice.
+- [.NET Core 2,1 SDK](https://dotnet.microsoft.com/download) nebo novější verze.
+- Textový editor nebo Editor kódu dle vašeho výběru.
 
-## <a name="creating-the-source-project"></a>Creating the source project
+## <a name="creating-the-source-project"></a>Vytvoření zdrojového projektu
 
-Open a shell window. Create a directory called *unit-testing-vb-nunit* to hold the solution. Inside this new directory, run the following command to create a new solution file for the class library and the test project:
+Otevřete okno prostředí. Vytvořte adresář s názvem *Unit-Testing-VB-nunit* , který bude obsahovat řešení. V tomto novém adresáři spusťte následující příkaz, který vytvoří nový soubor řešení pro knihovnu tříd a testovací projekt:
 
 ```dotnetcli
 dotnet new sln
 ```
 
-Next, create a *PrimeService* directory. The following outline shows the file structure so far:
+Potom vytvořte adresář *PrimeService* . Následující osnova znázorňuje strukturu souborů tak daleko:
 
 ```console
 /unit-testing-vb-nunit
@@ -38,13 +38,13 @@ Next, create a *PrimeService* directory. The following outline shows the file st
     /PrimeService
 ```
 
-Make *PrimeService* the current directory and run the following command to create the source project:
+Vytvořte *PrimeService* aktuální adresář a spusťte následující příkaz pro vytvoření zdrojového projektu:
 
 ```dotnetcli
 dotnet new classlib -lang VB
 ```
 
-Rename *Class1.VB* to *PrimeService.VB*. You create a failing implementation of the `PrimeService` class:
+Přejmenujte *Class1. vb* na *PrimeService. vb*. Vytvoříte selhání implementace `PrimeService` třídy:
 
 ```vb
 Namespace Prime.Services
@@ -56,15 +56,15 @@ Namespace Prime.Services
 End Namespace
 ```
 
-Change the directory back to the *unit-testing-vb-using-mstest* directory. Run the following command to add the class library project to the solution:
+Změňte adresář zpátky na adresář *testování částí-VB-using-MSTest* . Spuštěním následujícího příkazu přidejte projekt knihovny tříd do řešení:
 
 ```dotnetcli
 dotnet sln add .\PrimeService\PrimeService.vbproj
 ```
 
-## <a name="creating-the-test-project"></a>Creating the test project
+## <a name="creating-the-test-project"></a>Vytváření testovacího projektu
 
-Next, create the *PrimeService.Tests* directory. The following outline shows the directory structure:
+Dále vytvořte adresář *PrimeService. Tests* . Následující osnova znázorňuje adresářovou strukturu:
 
 ```console
 /unit-testing-vb-nunit
@@ -75,25 +75,25 @@ Next, create the *PrimeService.Tests* directory. The following outline shows the
     /PrimeService.Tests
 ```
 
-Make the *PrimeService.Tests* directory the current directory and create a new project using the following command:
+Vytvořte adresář *PrimeService. Tests* pro aktuální adresář a vytvořte nový projekt pomocí následujícího příkazu:
 
 ```dotnetcli
 dotnet new nunit -lang VB
 ```
 
-The [dotnet new](../tools/dotnet-new.md) command creates a test project that uses NUnit as the test library. The generated template configures the test runner in the *PrimeServiceTests.vbproj* file:
+Příkaz [dotnet New](../tools/dotnet-new.md) vytvoří testovací projekt, který jako knihovnu testů používá nunit. Vygenerovaná šablona konfiguruje Test Runner v souboru *PrimeServiceTests. vbproj* :
 
 [!code-xml[Packages](~/samples/core/getting-started/unit-testing-vb-nunit/PrimeService.Tests/PrimeService.Tests.vbproj#Packages)]
 
-The test project requires other packages to create and run unit tests. `dotnet new` in the previous step added NUnit and the NUnit test adapter. Now, add the `PrimeService` class library as another dependency to the project. Use the [`dotnet add reference`](../tools/dotnet-add-reference.md) command:
+Testovací projekt vyžaduje pro vytvoření a spuštění testů jednotek další balíčky. `dotnet new` v předchozím kroku jsme přidali NUnit a adaptér testu NUnit. Nyní přidejte knihovnu tříd `PrimeService` jako jinou závislost do projektu. Použijte příkaz [`dotnet add reference`](../tools/dotnet-add-reference.md) :
 
 ```dotnetcli
 dotnet add reference ../PrimeService/PrimeService.vbproj
 ```
 
-You can see the entire file in the [samples repository](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-vb-nunit/PrimeService.Tests/PrimeService.Tests.vbproj) on GitHub.
+Celý soubor můžete zobrazit v [úložišti ukázek](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-vb-nunit/PrimeService.Tests/PrimeService.Tests.vbproj) na GitHubu.
 
-You have the following final solution layout:
+Máte následující konečné rozložení řešení:
 
 ```console
 /unit-testing-vb-nunit
@@ -106,15 +106,15 @@ You have the following final solution layout:
         PrimeService.Tests.vbproj
 ```
 
-Execute the following command in the *unit-testing-vb-nunit* directory:
+Spusťte následující příkaz v adresáři *Unit-Testing-VB-nunit* :
 
 ```dotnetcli
 dotnet sln add .\PrimeService.Tests\PrimeService.Tests.vbproj
 ```
 
-## <a name="creating-the-first-test"></a>Creating the first test
+## <a name="creating-the-first-test"></a>Vytvoření prvního testu
 
-You write one failing test, make it pass, then repeat the process. In the *PrimeService.Tests* directory, rename the *UnitTest1.vb* file to *PrimeService_IsPrimeShould.VB* and replace its entire contents with the following code:
+Napíšete jeden neúspěšný test, udělejte ho a pak proces opakujte. V adresáři *PrimeService. Tests* přejmenujte soubor *UnitTest1. vb* na *PrimeService_IsPrimeShould. vb* a nahraďte jeho celý obsah následujícím kódem:
 
 ```vb
 Imports NUnit.Framework
@@ -135,9 +135,9 @@ Namespace PrimeService.Tests
 End Namespace
 ```
 
-The `<TestFixture>` attribute indicates a class that contains tests. The `<Test>` attribute denotes a method that is run by the test runner. From the *unit-testing-vb-nunit*, execute [`dotnet test`](../tools/dotnet-test.md) to build the tests and the class library and then run the tests. The NUnit test runner contains the program entry point to run your tests. `dotnet test` starts the test runner using the unit test project you've created.
+Atribut `<TestFixture>` označuje třídu, která obsahuje testy. Atribut `<Test>` označuje metodu, která je spuštěna nástrojem Test Runner. Z rutiny *testování částí-VB-nunit*spusťte [`dotnet test`](../tools/dotnet-test.md) pro sestavení testů a knihovny tříd a poté spusťte testy. NUnit Test Runner obsahuje vstupní bod programu pro spuštění testů. `dotnet test` spustí Test Runner pomocí projektu testování částí, který jste vytvořili.
 
-Your test fails. You haven't created the implementation yet. Make this test pass by writing the simplest code in the `PrimeService` class that works:
+Test se nezdařil. Ještě jste nevytvořili implementaci. Proveďte tento test průchodu tak, že napíšete nejjednodušší kód ve třídě `PrimeService`, která funguje:
 
 ```vb
 Public Function IsPrime(candidate As Integer) As Boolean
@@ -148,22 +148,22 @@ Public Function IsPrime(candidate As Integer) As Boolean
 End Function
 ```
 
-In the *unit-testing-vb-nunit* directory, run `dotnet test` again. The `dotnet test` command runs a build for the `PrimeService` project and then for the `PrimeService.Tests` project. After building both projects, it runs this single test. It passes.
+V adresáři *Unit-Testing-VB-nunit* znovu spusťte `dotnet test`. Příkaz `dotnet test` spustí sestavení pro projekt `PrimeService` a potom pro projekt `PrimeService.Tests`. Po sestavení obou projektů spustí tento jediný test. Předá.
 
-## <a name="adding-more-features"></a>Adding more features
+## <a name="adding-more-features"></a>Přidání dalších funkcí
 
-Now that you've made one test pass, it's time to write more. There are a few other simple cases for prime numbers: 0, -1. You could add those cases as new tests with the `<Test>` attribute, but that quickly becomes tedious. There are other xUnit attributes that enable you to write a suite of similar tests.  A `<TestCase>` attribute represents a suite of tests that execute the same code but have different input arguments. You can use the `<TestCase>` attribute to specify values for those inputs.
+Teď, když jste udělali jeden test Pass, je čas zapsat další. Pro čísla apostrofů existuje několik dalších jednoduchých případů: 0,-1. Tyto případy můžete přidat jako nové testy s atributem `<Test>`, ale to se rychle bude zdlouhavé. Existují další atributy xUnit, které umožňují napsat sadu podobných testů.  Atribut `<TestCase>` představuje sadu testů, které spouštějí stejný kód, ale mají různé vstupní argumenty. Pomocí atributu `<TestCase>` můžete zadat hodnoty pro tyto vstupy.
 
-Instead of creating new tests, apply these two attributes to create a series of tests that test several values less than two, which is the lowest prime number:
+Namísto vytváření nových testů, použijte tyto dva atributy k vytvoření řady testů, které testují několik hodnot menší než dvě, což je nejnižší číslo základny:
 
 [!code-vb[Sample_TestCode](../../../samples/core/getting-started/unit-testing-vb-nunit/PrimeService.Tests/PrimeService_IsPrimeShould.vb?name=Sample_TestCode)]
 
-Run `dotnet test`, and two of these tests fail. To make all of the tests pass, change the `if` clause at the beginning of the `Main` method in the *PrimeServices.cs* file:
+Spusťte `dotnet test`a dva z těchto testů selžou. Chcete-li provést všechny testy Pass, změňte klauzuli `if` na začátku `Main` metody v souboru *PrimeServices.cs* :
 
 ```vb
 if candidate < 2
 ```
 
-Continue to iterate by adding more tests, more theories, and more code in the main library. You have the [finished version of the tests](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-vb-nunit/PrimeService.Tests/PrimeService_IsPrimeShould.vb) and the [complete implementation of the library](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-vb-nunit/PrimeService/PrimeService.vb).
+Pokračujte v iteraci přidáním dalších testů, více teorie a další kód v hlavní knihovně. Máte [hotovou verzi testů](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-vb-nunit/PrimeService.Tests/PrimeService_IsPrimeShould.vb) a [úplnou implementaci knihovny](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-vb-nunit/PrimeService/PrimeService.vb).
 
-You've built a small library and a set of unit tests for that library. You've structured the solution so that adding new packages and tests is part of the normal workflow. You've concentrated most of your time and effort on solving the goals of the application.
+Vytvořili jste malou knihovnu a sadu testů jednotek pro tuto knihovnu. Rozpracovali jste řešení, aby přidávání nových balíčků a testů bylo součástí normálního pracovního postupu. Vyrostli jste většinu času a úsilí při řešení cílů aplikace.

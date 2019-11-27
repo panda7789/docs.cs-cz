@@ -12,8 +12,8 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352288"
 ---
-# <a name="param-visual-basic"></a>\<param> (Visual Basic)
-Defines a parameter name and description.  
+# <a name="param-visual-basic"></a>\<param > (Visual Basic)
+Definuje název a popis parametru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,24 +23,24 @@ Defines a parameter name and description.
   
 ## <a name="parameters"></a>Parametry  
  `name`  
- The name of a method parameter. Enclose the name in double quotation marks (" ").  
+ Název parametru metody. Název uzavřete do uvozovek ("").  
   
  `description`  
- A description for the parameter.  
+ Popis parametru  
   
 ## <a name="remarks"></a>Poznámky  
- The `<param>` tag should be used in the comment for a method declaration to describe one of the parameters for the method.  
+ Značka `<param>` by měla být použita v komentáři pro deklaraci metody pro popis jednoho z parametrů pro metodu.  
   
- The text for the `<param>` tag will appear in the following locations:  
+ Text značky `<param>` se zobrazí v následujících umístěních:  
   
-- Parameter Info of IntelliSense. For more information, see [Using IntelliSense](/visualstudio/ide/using-intellisense).  
+- Informace o parametrech technologie IntelliSense Další informace najdete v tématu [použití technologie IntelliSense](/visualstudio/ide/using-intellisense).  
   
-- Object Browser. For more information, see [Viewing the Structure of Code](/visualstudio/ide/viewing-the-structure-of-code).  
+- Prohlížeč objektů. Další informace naleznete v tématu [zobrazení struktury kódu](/visualstudio/ide/viewing-the-structure-of-code).  
   
- Compile with [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) to process documentation comments to a file.  
+ Zkompilujte s [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
   
 ## <a name="example"></a>Příklad  
- This example uses the `<param>` tag to describe the `id` parameter.  
+ V tomto příkladu se používá značka `<param>` k popisu `id` parametru.  
   
  [!code-vb[VbVbcnXmlDocComments#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#6)]  
   

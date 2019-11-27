@@ -1,5 +1,5 @@
 ---
-title: Ref Return Values
+title: Návratové hodnoty REF
 ms.date: 04/28/2017
 helpviewer_keywords:
 - variables [Visual Basic]
@@ -13,39 +13,39 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352540"
 ---
-# <a name="support-for-reference-return-values-visual-basic"></a>Support for reference return values (Visual Basic)
+# <a name="support-for-reference-return-values-visual-basic"></a>Podpora pro návratové hodnoty odkazů (Visual Basic)
 
-Starting with C# 7.0, the C# language supports *reference return values*. One way to understand reference return values is that they are the opposite of arguments that are passed by reference to a method. When an argument passed by reference is modified, the changes are reflected in value of the variable on the caller. When an method provides a reference return value to a caller, modifications made to the reference return value by the caller are reflected in the called method's data.
+Počínaje C# 7,0 C# jazyk podporuje *návratové hodnoty odkazů*. Jedním ze způsobů, jak pochopit návratové hodnoty, je, že se jedná o opak argumentů, které jsou předány odkazem na metodu. Když je upraven argument předaný odkazem, změny se projeví v hodnotě proměnné volajícího. Když metoda poskytuje odkazovou návratovou hodnotu volajícímu, změny provedené v návratové hodnotě odkazu volajícím se projeví v datech volané metody.
 
-Visual Basic does not allow you to author methods with reference return values, but it does allow you to consume reference return values. In other words, you can call a method with a reference return value and modify that return value, and changes to the reference return value are reflected in the called method's data.
+Visual Basic neumožňuje vytvářet metody s návratovými hodnotami odkazů, ale umožňuje využívat návratové hodnoty odkazů. Jinými slovy, můžete zavolat metodu s návratovou hodnotou odkazu a změnit tuto návratovou hodnotu a změny návratové hodnoty odkazu se projeví v datech volané metody.
 
-## <a name="modifying-the-ref-return-value-directly"></a>Modifying the ref return value directly
+## <a name="modifying-the-ref-return-value-directly"></a>Změna návratové hodnoty REF přímo
 
-For methods that always succeed and have no `ByRef` parameters, you can modify the reference return value directly. You do this by assigning the new value to the expressions that returns the reference return value.
+Pro metody, které vždy úspěšné a nemají žádné parametry `ByRef`, lze návratovou hodnotu odkazu upravit přímo. Provedete to tak, že novou hodnotu přiřadíte výrazům, které vrátí návratovou hodnotu odkazu.
 
-The following C# example defines a `NumericValue.IncrementValue` method that increments an internal value and returns it as a reference return value.
+Následující C# příklad definuje metodu `NumericValue.IncrementValue`, která zvyšuje interní hodnotu a vrátí ji jako návratovou hodnotu odkazu.
 
 [!code-csharp[Ref-Return](../../../../../samples/snippets/visualbasic/programming-guide/language-features/procedures/ref-returns1.cs)]
 
-The reference return value is then modified by the caller in the following Visual Basic example. Note that the line with the `NumericValue.IncrementValue` method call does not assign a value to the method. Instead, it assigns a value to the reference return value returned by the method.
+Návratová hodnota odkazu je pak změněna volajícím v následujícím příkladu Visual Basic. Všimněte si, že řádek s voláním metody `NumericValue.IncrementValue` nepřiřazuje k metodě hodnotu. Místo toho přiřadí hodnotu návratové hodnotě odkazu vrácenou metodou.
 
 [!code-vb[Ref-Return](../../../../../samples/snippets/visualbasic/programming-guide/language-features/procedures/use-ref-returns1.vb)]
 
-## <a name="using-a-helper-method"></a>Using a helper method
+## <a name="using-a-helper-method"></a>Použití pomocné metody
 
-In other cases, modifying the reference return value of a method call directly may not always be desirable. For example, a search method that returns a string may not always find a match. In that case, you want to modify the reference return value only if the search is successful.
+V jiných případech se může stát, že změna návratové hodnoty zpětného volání metody přímo nemusí být vždy žádoucí. Například metoda hledání, která vrací řetězec, nemusí vždy najít shodu. V takovém případě je třeba změnit návratovou hodnotu odkazu pouze v případě, že je hledání úspěšné.
 
-The following C# example illustrates this scenario. It defines a `Sentence` class written in C# includes a `FindNext` method that finds the next word in a sentence that begins with a specified substring. The string is returned as a reference return value, and a `Boolean` variable passed by reference to the method indicates whether the search was successful. The reference return value indicates that the caller can not only read the returned value; he or she can also modify it, and that modification is reflected in the data contained internally in the `Sentence` class.
+Následující C# příklad znázorňuje tento scénář. Definuje `Sentence` třídy napsané v C# zahrnuje metodu `FindNext`, která nalezne další slovo ve větě začínající zadaným podřetězcem. Řetězec je vrácen jako návratová hodnota odkazu a proměnná `Boolean` předaná odkazem na metodu označuje, zda bylo hledání úspěšné. Návratová hodnota odkazu označuje, že volající může číst pouze vrácenou hodnotu. může ho také upravit a tato úprava se projeví v datech, která jsou obsažena interně ve třídě `Sentence`.
 
 [!code-csharp[Ref-Return](../../../../../samples/snippets/visualbasic/getting-started/ref-returns.cs)]
 
-Directly modifying the reference return value in this case is not reliable, since the method call may fail to find a match and return the first word in the sentence. In that case, the caller will inadvertently modify the first word of the sentence. This could be prevented by the caller returning a `null` (or `Nothing` in Visual Basic). But in that case, attempting to modify a string whose value is `Nothing` throws a <xref:System.NullReferenceException>. If could also be prevented by the caller returning <xref:System.String.Empty?displayProperty=nameWithType>, but this requires that the caller define a string variable whose value is <xref:System.String.Empty?displayProperty=nameWithType>. While the caller can modify that string, the modification itself serves no purpose, since the modified string has no relationship to the words in the sentence stored by the `Sentence` class.
+Přímá změna návratové hodnoty reference v tomto případě není spolehlivá, protože volání metody může neúspěšné vyhledání shody a vrácení prvního slova ve větě. V takovém případě volající neúmyslně změní první slovo věty. To může zabránit volajícímu vracející `null` (nebo `Nothing` v Visual Basic). V takovém případě však došlo k pokusu o změnu řetězce, jehož hodnota je `Nothing` vyvolá <xref:System.NullReferenceException>. V případě, že je možné také zabránit volajícímu vracející <xref:System.String.Empty?displayProperty=nameWithType>, ale to vyžaduje, aby volající definoval řetězcovou proměnnou, jejíž hodnota je <xref:System.String.Empty?displayProperty=nameWithType>. I když volající může tento řetězec změnit, samotná změna neslouží k žádnému účelu, protože upravený řetězec nemá žádný vztah ke slovům ve větě uložené třídě `Sentence`.
 
-The best way to handle this scenario is to pass the reference return value by reference to a helper method. The helper method then contains the logic to determine whether the method call succeeded and, if it did, to modify the reference return value. The following example provides a possible implementation.
+Nejlepším způsobem, jak tento scénář zpracovat, je předat návratovou hodnotu odkazu odkazem na pomocnou metodu. Pomocná metoda poté obsahuje logiku pro zjištění, zda bylo volání metody úspěšné a v případě, že byla provedena, pro úpravu návratové hodnoty odkazu. Následující příklad poskytuje možnou implementaci.
 
 [!code-vb[Ref-Return](../../../../../samples/snippets/visualbasic/getting-started/ref-return-helper.vb#1)]
 
 ## <a name="see-also"></a>Viz také:
 
-- [Passing arguments by value and by reference](passing-arguments-by-value-and-by-reference.md)
+- [Předávání argumentů podle hodnoty a odkazu](passing-arguments-by-value-and-by-reference.md)
 - [Procedury v jazyce Visual Basic](index.md)

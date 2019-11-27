@@ -17,17 +17,17 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349407"
 ---
 # <a name="xml-literals-visual-basic"></a>Literály XML (Visual Basic)
-The topics in this section document the syntax of XML literals in Visual Basic. The XML literal syntax enables you to incorporate XML directly in your code.  
+Témata v této části dokumentují syntaxi literálů XML v Visual Basic. Syntaxe literálu XML umožňuje začlenit XML přímo do kódu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
 |Téma|Popis|  
 |-----------|-----------------|  
-|[Literál XML elementu](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)|Describes the syntax for literals that represent <xref:System.Xml.Linq.XElement> objects.|  
-|[Literál dokumentu XML](../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)|Describes the syntax for literals that represent <xref:System.Xml.Linq.XDocument> objects.|  
-|[Literál XML CDATA](../../../visual-basic/language-reference/xml-literals/xml-cdata-literal.md)|Describes the syntax for literals that represent <xref:System.Xml.Linq.XCData> objects.|  
-|[Literál komentáře XML](../../../visual-basic/language-reference/xml-literals/xml-comment-literal.md)|Describes the syntax for literals that represent <xref:System.Xml.Linq.XComment> objects.|  
-|[Literál instrukcí pro zpracování XML](../../../visual-basic/language-reference/xml-literals/xml-processing-instruction-literal.md)|Describes the syntax for literals that represent <xref:System.Xml.Linq.XProcessingInstruction> objects.|  
+|[Literál XML elementu](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)|Popisuje syntaxi pro literály, které reprezentují <xref:System.Xml.Linq.XElement> objekty.|  
+|[Literál dokumentu XML](../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)|Popisuje syntaxi pro literály, které reprezentují <xref:System.Xml.Linq.XDocument> objekty.|  
+|[Literál XML CDATA](../../../visual-basic/language-reference/xml-literals/xml-cdata-literal.md)|Popisuje syntaxi pro literály, které reprezentují <xref:System.Xml.Linq.XCData> objekty.|  
+|[Literál komentáře XML](../../../visual-basic/language-reference/xml-literals/xml-comment-literal.md)|Popisuje syntaxi pro literály, které reprezentují <xref:System.Xml.Linq.XComment> objekty.|  
+|[Literál instrukcí pro zpracování XML](../../../visual-basic/language-reference/xml-literals/xml-processing-instruction-literal.md)|Popisuje syntaxi pro literály, které reprezentují <xref:System.Xml.Linq.XProcessingInstruction> objekty.|  
   
 ## <a name="see-also"></a>Viz také:
 

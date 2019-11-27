@@ -17,41 +17,41 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74347278"
 ---
 # <a name="references-and-the-imports-statement-visual-basic"></a>Odkazy a příkaz Imports (Visual Basic)
-You can make external objects available to your project by choosing the **Add Reference** command on the **Project** menu. References in Visual Basic can point to assemblies, which are like type libraries but contain more information.  
+Můžete zpřístupnit externí objekty projektu výběrem příkazu **Přidat odkaz** v nabídce **projekt** . Odkazy v Visual Basic mohou odkazovat na sestavení, která jsou jako knihovny typů, ale obsahují více informací.  
   
-## <a name="the-imports-statement"></a>The Imports Statement  
- Assemblies include one or more namespaces. When you add a reference to an assembly, you can also add an `Imports` statement to a module that controls the visibility of that assembly's namespaces within the module. The `Imports` statement provides a scoping context that lets you use only the portion of the namespace necessary to supply a unique reference.  
+## <a name="the-imports-statement"></a>Příkaz Imports  
+ Sestavení zahrnují jeden nebo více oborů názvů. Přidáte-li odkaz na sestavení, můžete také přidat příkaz `Imports` do modulu, který řídí viditelnost oborů názvů tohoto sestavení v rámci modulu. Příkaz `Imports` poskytuje obor kontextu, který umožňuje používat pouze část oboru názvů, který je nezbytný k poskytnutí jedinečného odkazu.  
   
- The `Imports` statement has the following syntax:  
+ Příkaz `Imports` má následující syntaxi:  
   
  `Imports [Aliasname =] Namespace`  
   
- `Aliasname` refers to a short name you can use within code to refer to an imported namespace. `Namespace` is a namespace available through either a project reference, through a definition within the project, or through a previous `Imports` statement.  
+ `Aliasname` odkazuje na krátký název, který můžete použít v rámci kódu pro odkazování na importovaný obor názvů. `Namespace` je obor názvů dostupný buď prostřednictvím odkazu na projekt, prostřednictvím definice v rámci projektu, nebo prostřednictvím předchozího příkazu `Imports`.  
   
- A module may contain any number of `Imports` statements. They must appear after any `Option` statements, if present, but before any other code.  
+ Modul může obsahovat libovolný počet příkazů `Imports`. Musí se objevit za jakýmkoli `Option`mi příkazy, pokud jsou přítomny, ale před jakýmkoli jiným kódem.  
   
 > [!NOTE]
-> Do not confuse project references with the `Imports` statement or the `Declare` statement. Project references make external objects, such as objects in assemblies, available to Visual Basic projects. The `Imports` statement is used to simplify access to project references, but does not provide access to these objects. The `Declare` statement is used to declare a reference to an external procedure in a dynamic-link library (DLL).  
+> Nezaměňujte odkazy na projekt pomocí příkazu `Imports` nebo příkazu `Declare`. Odkazy na projekt zpřístupňují externí objekty, například objekty v sestaveních, k dispozici pro Visual Basic projekty. Příkaz `Imports` slouží k zjednodušení přístupu k projektovým odkazům, ale neposkytuje přístup k těmto objektům. Příkaz `Declare` slouží k deklaraci odkazu na externí proceduru v dynamické knihovně (DLL).  
   
-## <a name="using-aliases-with-the-imports-statement"></a>Using Aliases with the Imports Statement  
- The `Imports` statement makes it easier to access methods of classes by eliminating the need to explicitly type the fully qualified names of references. Aliases let you assign a friendlier name to just one part of a namespace. For example, the carriage return/line feed sequence that causes a single piece of text to be displayed on multiple lines is part of the <xref:Microsoft.VisualBasic.ControlChars> module in the <xref:Microsoft.VisualBasic?displayProperty=nameWithType> namespace. To use this constant in a program without an alias, you would need to type the following code:  
+## <a name="using-aliases-with-the-imports-statement"></a>Použití aliasů s příkazem Imports  
+ Příkaz `Imports` usnadňuje přístup k metodám tříd tím, že eliminuje nutnost explicitně zadat plně kvalifikované názvy odkazů. Aliasy umožňují přiřadit název příjemnější pouze jedné části oboru názvů. Například sekvence návratového a řádkového kanálu, která způsobuje, že se na více řádcích zobrazí jedna část textu, je součástí modulu <xref:Microsoft.VisualBasic.ControlChars> v oboru názvů <xref:Microsoft.VisualBasic?displayProperty=nameWithType>. Chcete-li použít tuto konstantu v programu bez aliasu, je třeba zadat následující kód:  
   
  [!code-vb[VbVbalrApplication#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrApplication/VB/Class1.vb#3)]  
   
- `Imports` statements must always be the first lines immediately following any `Option` statements in a module. The following code fragment shows how to import and assign an alias to the <xref:Microsoft.VisualBasic.ControlChars?displayProperty=nameWithType> module:  
+ příkazy `Imports` musí být vždy první řádky hned za všemi příkazy `Option` v modulu. Následující fragment kódu ukazuje, jak importovat a přiřadit alias k modulu <xref:Microsoft.VisualBasic.ControlChars?displayProperty=nameWithType>:  
   
  [!code-vb[VbVbalrApplication#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrApplication/VB/Class1.vb#4)]  
   
- Future references to this namespace can be considerably shorter:  
+ Budoucí odkazy na tento obor názvů můžou být výrazně kratší:  
   
  [!code-vb[VbVbalrApplication#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrApplication/VB/Class1.vb#5)]  
   
- If an `Imports` statement does not include an alias name, elements defined within the imported namespace can be used in the module without qualification. If the alias name is specified, it must be used as a qualifier for names contained within that namespace.  
+ Pokud příkaz `Imports` nezahrnuje název aliasu, prvky definované v rámci importovaného oboru názvů lze v modulu použít bez kvalifikace. Pokud je název aliasu zadán, je nutné jej použít jako kvalifikátor názvů obsažených v daném oboru názvů.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:Microsoft.VisualBasic.ControlChars>
 - <xref:Microsoft.VisualBasic>
-- [Namespaces in Visual Basic](namespaces.md)
+- [Obory názvů v Visual Basic](namespaces.md)
 - [Sestavení v .NET](../../../standard/assembly/index.md)
 - [Příkaz Imports (obor názvů a typ .NET)](../../language-reference/statements/imports-statement-net-namespace-and-type.md)

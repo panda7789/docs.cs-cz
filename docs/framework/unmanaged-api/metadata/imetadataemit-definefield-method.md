@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74432556"
 ---
 # <a name="imetadataemitdefinefield-method"></a>IMetaDataEmit::DefineField – metoda
-Creates a definition for a field with the specified metadata signature, and gets a token to that field definition.  
+Vytvoří definici pro pole se zadaným podpisem metadat a získá token do této definice pole.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,40 +43,40 @@ HRESULT DefineField (
   
 ## <a name="parameters"></a>Parametry  
  `td`  
- [in] The `mdTypeDef` token for the enclosing class or interface.  
+ pro Token `mdTypeDef` nadřazené třídy nebo rozhraní.  
   
  `szName`  
- [in] The field name in Unicode.  
+ pro Název pole v kódování Unicode.  
   
  `dwFieldFlags`  
- [in] The field attributes. This is a bitmask of `CorFieldAttr` values.  
+ pro Atributy pole Toto je Bitová maska `CorFieldAttr` hodnot.  
   
  `pvSigBlob`  
- [in] The field signature as a BLOB.  
+ pro Podpis pole jako objekt BLOB  
   
  `cbSigBlob`  
- [in] The count of bytes in `pvSigBlob`.  
+ pro Počet bajtů v `pvSigBlob`.  
   
  `dwCPlusTypeFlag`  
- [in] The `ELEMENT_TYPE_` *\** for the constant value. This is a `CorElementType` value. If not defining a constant value for the field, use `ELEMENT_TYPE_END`.  
+ pro *\** `ELEMENT_TYPE_`pro hodnotu konstanty. Toto je `CorElementType` hodnota. Pokud nedefinujete konstantní hodnotu pro pole, použijte `ELEMENT_TYPE_END`.  
   
  `pValue`  
- [in] The constant value for the field.  
+ pro Hodnota konstanty pro pole  
   
  `cchValue`  
- [in] The size in (Unicode) characters of `pValue`.  
+ pro Velikost v (Unicode) znaků `pValue`.  
   
  `pmd`  
- [out] The `mdFieldDef` token assigned.  
+ mimo Byl přiřazen token `mdFieldDef`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

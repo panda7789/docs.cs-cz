@@ -23,22 +23,22 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351481"
 ---
 # <a name="mustoverride-visual-basic"></a>MustOverride (Visual Basic)
-Specifies that a property or procedure is not implemented in this class and must be overridden in a derived class before it can be used.  
+Určuje, že vlastnost nebo procedura není v této třídě implementována a musí být přepsána v odvozené třídě předtím, než je možné ji použít.  
   
 ## <a name="remarks"></a>Poznámky  
- You can use `MustOverride` only in a property or procedure declaration statement. The property or procedure that specifies `MustOverride` must be a member of a class, and the class must be marked [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md).  
+ `MustOverride` lze použít pouze v příkazu deklarace vlastnosti nebo procedury. Vlastnost nebo procedura určující `MustOverride` musí být členem třídy a třída musí být označena jako [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md).  
   
-## <a name="rules"></a>Rules  
+## <a name="rules"></a>Pravidla  
   
-- **Incomplete Declaration.** When you specify `MustOverride`, you do not supply any additional lines of code for the property or procedure, not even the `End Function`, `End Property`, or `End Sub` statement.  
+- **Neúplná deklarace** Pokud zadáte `MustOverride`, neposkytnete žádné další řádky kódu pro vlastnost nebo proceduru, ani příkaz `End Function`, `End Property`nebo `End Sub`.  
   
-- **Combined Modifiers.** You cannot specify `MustOverride` together with `NotOverridable`, `Overridable`, or `Shared` in the same declaration.  
+- **Kombinované modifikátory.** V rámci stejné deklarace nelze zadat `MustOverride` společně s `NotOverridable`, `Overridable`nebo `Shared`.  
   
-- **Shadowing and Overriding.** Both shadowing and overriding redefine an inherited element, but there are significant differences between the two approaches. For more information, see [Shadowing in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).  
+- **Nastínování a přepisování.** Jak Stínová, tak i přepsání předefinují zděděný element, ale existují významné rozdíly mezi těmito dvěma přístupy. Další informace najdete v tématu [vytváření stínových kopií v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).  
   
-- **Alternate Terms.** An element that cannot be used except in an override is sometimes called a *pure virtual* element.  
+- **Alternativní výrazy.** Element, který nelze použít s výjimkou v přepsání, se někdy označuje jako *čistě virtuální* prvek.  
   
- The `MustOverride` modifier can be used in these contexts:  
+ V těchto kontextech lze použít modifikátor `MustOverride`:  
   
  [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
   
@@ -53,4 +53,4 @@ Specifies that a property or procedure is not implemented in this class and must
 - [Overrides](../../../visual-basic/language-reference/modifiers/overrides.md)
 - [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md)
 - [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)
-- [Shadowing in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
+- [Stínování v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)

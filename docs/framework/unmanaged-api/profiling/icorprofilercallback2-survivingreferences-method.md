@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74439607"
 ---
 # <a name="icorprofilercallback2survivingreferences-method"></a>ICorProfilerCallback2::SurvivingReferences – metoda
-Reports the layout of objects in the heap as a result of a non-compacting garbage collection.  
+Oznamuje rozložení objektů v haldě v důsledku nekomprimace uvolňování paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,45 +38,45 @@ HRESULT SurvivingReferences(
   
 ## <a name="parameters"></a>Parametry  
  `cSurvivingObjectIDRanges`  
- [in] The number of blocks of contiguous objects that survived as the result of the non-compacting garbage collection. That is, the value of `cSurvivingObjectIDRanges` is the size of the `objectIDRangeStart` and `cObjectIDRangeLength` arrays, which store an `ObjectID` and a length, respectively, for each block of objects.  
+ pro Počet bloků souvislých objektů, které byly zachovány v důsledku nekomprimace uvolňování paměti. To znamená, že hodnota `cSurvivingObjectIDRanges` je velikost polí `objectIDRangeStart` a `cObjectIDRangeLength`, které ukládají `ObjectID` a délku, v uvedeném pořadí pro každý blok objektů.  
   
- The next two arguments of `SurvivingReferences` are parallel arrays. In other words, `objectIDRangeStart` and `cObjectIDRangeLength` concern the same block of contiguous objects.  
+ Další dva argumenty `SurvivingReferences` jsou paralelní pole. Jinými slovy `objectIDRangeStart` a `cObjectIDRangeLength` se týkají stejného bloku souvislých objektů.  
   
  `objectIDRangeStart`  
- [in] An array of `ObjectID` values, each of which is the starting address of a block of contiguous, live objects in memory.  
+ pro Pole hodnot `ObjectID`, z nichž každá je počáteční adresou bloku souvislých objektů, živé objekty v paměti.  
   
  `cObjectIDRangeLength`  
- [in] An array of integers, each of which is the size of a surviving block of contiguous objects in memory.  
+ pro Pole celých čísel, z nichž každá je velikost zbývajícího bloku souvislých objektů v paměti.  
   
- A size is specified for each block that is referenced in the `objectIDRangeStart` array.  
+ Velikost je určena pro každý blok, na který je odkazováno v poli `objectIDRangeStart`.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!IMPORTANT]
-> This method reports sizes as `MAX_ULONG` for objects that are greater than 4 GB on 64-bit platforms. For objects that are larger than 4 GB, use the [ICorProfilerCallback4::SurvivingReferences2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-survivingreferences2-method.md) method instead.  
+> Tato metoda oznamuje velikosti objektů `MAX_ULONG` pro objekty, které jsou větší než 4 GB na 64-bitových platformách. Pro objekty, které jsou větší než 4 GB, použijte místo toho metodu [ICorProfilerCallback4:: SurvivingReferences2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-survivingreferences2-method.md) .  
   
- The elements of the `objectIDRangeStart` and `cObjectIDRangeLength` arrays should be interpreted as follows to determine whether an object survived the garbage collection. Assume that an `ObjectID` value (`ObjectID`) lies within the following range:  
+ Prvky polí `objectIDRangeStart` a `cObjectIDRangeLength` by měly být interpretovány následujícím způsobem, aby bylo možné určit, zda objekt držel uvolňování paměti. Předpokládejme, že hodnota `ObjectID` (`ObjectID`) leží v následujícím rozsahu:  
   
  `ObjectIDRangeStart[i]` <= `ObjectID` < `ObjectIDRangeStart[i]` + `cObjectIDRangeLength[i]`  
   
- For any value of `i` that is in the following range, the object has survived the garbage collection:  
+ Pro libovolnou hodnotu `i`, která je v následujícím rozsahu, objekt předržel uvolňování paměti:  
   
- 0 <= `i` < `cSurvivingObjectIDRanges`  
+ 0 < = `i` < `cSurvivingObjectIDRanges`  
   
- A non-compacting garbage collection reclaims the memory occupied by "dead" objects, but does not compact that freed space. As a result, memory is returned to the heap, but no "live" objects are moved.  
+ Nekomprimace uvolňování paměti znovu uvolňuje paměť obsazenou "nemrtvými" objekty, ale nekomprimuje volné místo. V důsledku toho se do haldy vrátí paměť, ale nebudou přesunuty žádné "živé" objekty.  
   
- The common language runtime (CLR) calls `SurvivingReferences` for non-compacting garbage collections. For compacting garbage collections, [ICorProfilerCallback::MovedReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-movedreferences-method.md) is called instead. A single garbage collection can be compacting for one generation and non-compacting for another. For a garbage collection on any particular generation, the profiler will receive either a `SurvivingReferences` callback or a `MovedReferences` callback, but not both.  
+ Modul common language runtime (CLR) volá `SurvivingReferences` pro nekomprimaci uvolňování paměti. Pro komprimaci uvolňování paměti je místo toho volána metoda [ICorProfilerCallback:: MovedReferences –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-movedreferences-method.md) . Jedno uvolnění paměti může být zkomprimováno pro jednu generaci a nekomprimaci pro jiné. Pro uvolňování paměti v jakékoli konkrétní generaci se Profiler dostane buď zpětné volání `SurvivingReferences`, nebo `MovedReferences` zpětné volání, ale ne obojí.  
   
- Multiple `SurvivingReferences` callbacks might be received during a particular garbage collection, due to limited internal buffering, multiple threads reporting in the case of server garbage collection, and other reasons. In the case of multiple callbacks during a garbage collection, the information is cumulative — all references that are reported in any `SurvivingReferences` callback survive the garbage collection.  
+ V průběhu konkrétního uvolňování paměti může být přijato více `SurvivingReferences`ch zpětného volání, z důvodu omezeného interního ukládání do vyrovnávací paměti, více vláken hlásí v případě uvolňování paměti serveru a z jiných důvodů. V případě více zpětných volání během uvolňování paměti jsou informace kumulativní – všechny odkazy, které jsou hlášeny v jakémkoli `SurvivingReferences` zpětné volání do uvolňování paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

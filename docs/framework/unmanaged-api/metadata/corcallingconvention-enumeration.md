@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74443830"
 ---
 # <a name="corcallingconvention-enumeration"></a>CorCallingConvention – výčet
-Contains values that describe the types of calling conventions that are made in managed code.  
+Obsahuje hodnoty, které popisují typy konvencí volání, které jsou vytvořeny ve spravovaném kódu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -52,26 +52,26 @@ typedef enum CorCallingConvention
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`IMAGE_CEE_CS_CALLCONV_DEFAULT`|Indicates a default calling convention.|  
-|`IMAGE_CEE_CS_CALLCONV_VARARG`|Indicates that the method takes a variable number of parameters.|  
-|`IMAGE_CEE_CS_CALLCONV_FIELD`|Indicates that the call is to a field.|  
-|`IMAGE_CEE_CS_CALLCONV_LOCAL_SIG`|Indicates that the call is to a local method.|  
-|`IMAGE_CEE_CS_CALLCONV_PROPERTY`|Indicates that the call is to a property.|  
-|`IMAGE_CEE_CS_CALLCONV_UNMGD`|Indicates that the call is unmanaged.|  
-|`IMAGE_CEE_CS_CALLCONV_GENERICINST`|Indicates a generic method instantiation.|  
-|`IMAGE_CEE_CS_CALLCONV_NATIVEVARARG`|Indicates a 64-bit PInvoke call to a method that takes a variable number of parameters.|  
-|`IMAGE_CEE_CS_CALLCONV_MAX`|Describes an invalid 4-bit value.|  
-|`IMAGE_CEE_CS_CALLCONV_MASK`|Indicates that the calling convention is described by the bottom four bits.|  
-|`IMAGE_CEE_CS_CALLCONV_HASTHIS`|Indicates that the top bit describes a `this` parameter.|  
-|`IMAGE_CEE_CS_CALLCONV_EXPLICITTHIS`|Indicates that a `this` parameter is explicitly described in the signature.|  
-|`IMAGE_CEE_CS_CALLCONV_GENERIC`|Indicates a generic method signature with an explicit number of type arguments. This precedes an ordinary parameter count.|  
+|`IMAGE_CEE_CS_CALLCONV_DEFAULT`|Označuje výchozí konvenci volání.|  
+|`IMAGE_CEE_CS_CALLCONV_VARARG`|Označuje, že metoda přebírá proměnný počet parametrů.|  
+|`IMAGE_CEE_CS_CALLCONV_FIELD`|Označuje, že volání je na pole.|  
+|`IMAGE_CEE_CS_CALLCONV_LOCAL_SIG`|Označuje, že volání je místní metoda.|  
+|`IMAGE_CEE_CS_CALLCONV_PROPERTY`|Označuje, že volání je na vlastnost.|  
+|`IMAGE_CEE_CS_CALLCONV_UNMGD`|Indikuje, že volání je nespravované.|  
+|`IMAGE_CEE_CS_CALLCONV_GENERICINST`|Označuje instanci generické metody.|  
+|`IMAGE_CEE_CS_CALLCONV_NATIVEVARARG`|Označuje 64 volání PInvoke do metody, která přebírá proměnný počet parametrů.|  
+|`IMAGE_CEE_CS_CALLCONV_MAX`|Popisuje neplatnou hodnotu 4 bitů.|  
+|`IMAGE_CEE_CS_CALLCONV_MASK`|Označuje, že konvence volání je popsána v dolních čtyřech bitech.|  
+|`IMAGE_CEE_CS_CALLCONV_HASTHIS`|Označuje, že horní bit popisuje `this` parametr.|  
+|`IMAGE_CEE_CS_CALLCONV_EXPLICITTHIS`|Označuje, že parametr `this` je explicitně popsán v signatuře.|  
+|`IMAGE_CEE_CS_CALLCONV_GENERIC`|Označuje podpis obecné metody s explicitním počtem argumentů typu. Předchází běžný počet parametrů.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **Hlavička:** CorHdr. h  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

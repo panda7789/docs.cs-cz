@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445550"
 ---
 # <a name="setnonassemblyflags-method"></a>SetNonAssemblyFlags – metoda
-Sets flags that are not assembly-specific.  
+Nastaví příznaky, které nejsou specifické pro sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,16 +34,16 @@ HRESULT SetNonAssemblyFlags(
   
 ## <a name="parameters"></a>Parametry  
  `afFlags`  
- ALink flags.  
+ Příznaky ALink  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Returns S_OK if the method succeeds.  
+ Vrátí S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Requires alink.h  
+ Vyžaduje ALink. h  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink – rozhraní](ialink-interface.md)
 - [IALink2 – rozhraní](ialink2-interface.md)
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)

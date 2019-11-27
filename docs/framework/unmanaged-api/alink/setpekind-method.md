@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445531"
 ---
 # <a name="setpekind-method"></a>SetPEKind – metoda
-Determines the portable executable type, either machine-specific or machine-agnostic.  
+Určuje typ přenositelného spustitelného souboru, který je specifický pro konkrétní počítač nebo Machine-nezávislá.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,26 +37,26 @@ HRESULT SetPEKind(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID of the assembly.  
+ ID sestavení  
   
  `FileToken`  
- Token of file for which the PE type is to be set. Can be NULL if `AssemblyID` does not indicate an unbound netmodule.  
+ Token souboru, pro který má být nastaven typ PE. Může mít hodnotu NULL, pokud `AssemblyID` neindikuje nevázaný netmodule.  
   
  `dwPEKind`  
- The type of PE, as indicated by the [CorPEKind Enumeration](../metadata/corpekind-enumeration.md).  
+ Typ PE, jak je uvedeno ve [výčtu CorPEKind –](../metadata/corpekind-enumeration.md).  
   
  `dwMachine`  
- The target machine architecture, as indicated in the NT header.  
+ Architektura cílového počítače, jak je uvedeno v hlavičce NT.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Returns S_OK if the method succeeds.  
+ Vrátí S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Requires alink.h.  
+ Vyžaduje ALink. h.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [GetPEKind – metoda](../metadata/imetadataimport2-getpekind-method.md)
 - [IALink2 – rozhraní](ialink2-interface.md)
 - [IALink – rozhraní](ialink-interface.md)
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)

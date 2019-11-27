@@ -11,13 +11,13 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351344"
 ---
-# <a name="private-protected-visual-basic"></a>Private Protected (Visual Basic)
+# <a name="private-protected-visual-basic"></a>Soukromé chráněné (Visual Basic)
 
-The `Private Protected` keyword combination is a member access modifier. A `Private Protected` member is accessible by all members in its containing class, as well as by types derived from the containing class, but only if they are found in its containing assembly.
+Kombinací klíčového slova `Private Protected` je modifikátor přístupu ke členu. `Private Protected` člen je přístupný pro všechny členy v příslušné třídě, stejně jako typy odvozené z nadřazené třídy, ale pouze v případě, že jsou nalezeny ve svém obsahujícím sestavení.
 
-You can specify `Private Protected` only on members of classes; you cannot apply `Private Protected` to members of a structure because structures cannot be inherited.
+Můžete zadat `Private Protected` pouze pro členy třídy; `Private Protected` nelze použít u členů struktury, protože struktury nelze dědit.
 
-The `Private Protected` access modifier is supported by Visual Basic 15.5 and later. To use it, you can add the following element to your Visual Basic project (\*.vbproj) file. As long as Visual Basic 15.5 or later is installed on your system, it lets you take advantage of all the language features supported by the latest version of the Visual Basic compiler:
+Modifikátor přístupu `Private Protected` je podporován Visual Basic 15,5 a novějším. Chcete-li jej použít, můžete přidat následující prvek do souboru Visual Basic projektu (\*. vbproj). Pokud je v systému nainstalovaná Visual Basic 15,5 nebo novější, umožní vám využít všechny jazykové funkce podporované nejnovější verzí Visual Basic kompilátoru:
 
 ```xml
 <PropertyGroup>
@@ -25,44 +25,44 @@ The `Private Protected` access modifier is supported by Visual Basic 15.5 and la
 </PropertyGroup>
 ```
 
-For more information see [setting the Visual Basic language version](../../language-reference/configure-language-version.md).
+Další informace najdete v tématu [nastavení jazykové verze Visual Basic](../../language-reference/configure-language-version.md).
 
 > [!NOTE]
-> In Visual Studio, selecting F1 help on `private protected` provides help for either [private](private.md) or [protected](protected.md). The IDE picks the single token under the cursor rather than the compound word.
+> V aplikaci Visual Studio vyberte nápovědu F1 pro `private protected` poskytuje nápovědu pro [privátní](private.md) nebo [chráněné](protected.md). Rozhraní IDE vybere jeden token pod kurzorem namísto složeného slova.
 
-## <a name="rules"></a>Rules
+## <a name="rules"></a>Pravidla
 
-- **Declaration Context.** You can use `Private Protected` only at the class level. This means the declaration context for a `Protected` element must be a class, and cannot be a source file, namespace, interface, module, structure, or procedure.
+- **Kontext deklarace** `Private Protected` lze použít pouze na úrovni třídy. To znamená, že kontext deklarace pro prvek `Protected` musí být třída a nemůže se jednat o zdrojový soubor, obor názvů, rozhraní, modul, strukturu nebo proceduru.
 
-## <a name="behavior"></a>Behavior
+## <a name="behavior"></a>Chování
 
-- **Access Level.** All code in a class can access its elements. Code in any class that derives from a base class and is contained in the same assembly can access all the `Private Protected` elements of the base class. However, code in any class that derives from a base class and is contained in a different assembly can't access the base class `Private Protected` elements.
+- **Úroveň přístupu.** Veškerý kód ve třídě má přístup k jeho prvkům. Kód v jakékoli třídě, která je odvozena od základní třídy a je obsažen ve stejném sestavení, má přístup ke všem prvkům `Private Protected` základní třídy. Nicméně kód v jakékoli třídě, která je odvozena od základní třídy a je obsažen v jiném sestavení, nemůže přistupovat k základní třídě `Private Protected` prvky.
 
-- **Access Modifiers.** The keywords that specify access level are called *access modifiers*. For a comparison of the access modifiers, see [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).
+- **Modifikátory přístupu.** Klíčová slova, která určují úroveň přístupu, se nazývají *modifikátory přístupu*. Porovnání modifikátorů přístupu najdete [v tématu úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).
 
-The `Private Protected` modifier can be used in these contexts:
+V těchto kontextech lze použít modifikátor `Private Protected`:
 
-- [Class Statement](../../../visual-basic/language-reference/statements/class-statement.md) of a nested class
+- [Příkaz třídy](../../../visual-basic/language-reference/statements/class-statement.md) vnořené třídy
 
 - [Příkaz Const](../../../visual-basic/language-reference/statements/const-statement.md)
 
 - [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)
 
-- [Delegate Statement](../../../visual-basic/language-reference/statements/delegate-statement.md) of a delegate nested in a class
+- [Příkaz Delegate](../../../visual-basic/language-reference/statements/delegate-statement.md) pro delegáta vnořený ve třídě
 
 - [Příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md)
 
-- [Enum Statement](../../../visual-basic/language-reference/statements/enum-statement.md) of an enumeration nested in a class
+- [Enum – příkaz](../../../visual-basic/language-reference/statements/enum-statement.md) pro výčet vnořený ve třídě
 
 - [Příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md)
 
 - [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)
 
-- [Interface Statement](../../../visual-basic/language-reference/statements/interface-statement.md) of an interface nested in a class
+- [Příkaz rozhraní](../../../visual-basic/language-reference/statements/interface-statement.md) rozhraní vnořeného ve třídě
 
 - [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)
 
-- [Structure Statement](../../../visual-basic/language-reference/statements/structure-statement.md) of a structure nested in a class
+- [Příkaz struktury](../../../visual-basic/language-reference/statements/structure-statement.md) struktury vnořené ve třídě
 
 - [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)
 
@@ -73,7 +73,7 @@ The `Private Protected` modifier can be used in these contexts:
 - [Friend](friend.md)
 - [Private](../../../visual-basic/language-reference/modifiers/private.md)
 - [Protected Friend](./protected-friend.md)
-- [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
+- [Úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
 - [Procedury](../../../visual-basic/programming-guide/language-features/procedures/index.md)
 - [Struktury](../../../visual-basic/programming-guide/language-features/data-types/structures.md)
 - [Objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

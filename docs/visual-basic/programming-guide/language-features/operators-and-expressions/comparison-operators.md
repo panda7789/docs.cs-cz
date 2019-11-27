@@ -23,76 +23,76 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346070"
 ---
 # <a name="comparison-operators-in-visual-basic"></a>Operátory porovnání v jazyce Visual Basic
-Comparison operators compare two expressions and return a `Boolean` value that represents the relationship of their values. There are operators for comparing numeric values, operators for comparing strings, and operators for comparing objects. All three types of operators are discussed herein.  
+Relační operátory porovnávají dva výrazy a vracejí `Boolean`ou hodnotu, která představuje vztah jejich hodnot. Existují operátory pro porovnávání číselných hodnot, operátory pro porovnávání řetězců a operátory pro porovnávání objektů. Všechny tři typy operátorů jsou popsány zde.  
   
-## <a name="comparing-numeric-values"></a>Comparing Numeric Values  
- Visual Basic compares numeric values using six numeric comparison operators. Each operator takes as operands two expressions that evaluate to numeric values. The following table lists the operators and shows examples of each.  
+## <a name="comparing-numeric-values"></a>Porovnávání číselných hodnot  
+ Visual Basic porovnává číselné hodnoty pomocí šesti číselných relačních operátorů. Každý operátor přebírá jako operandy dva výrazy, které jsou vyhodnoceny na číselné hodnoty. Následující tabulka uvádí operátory a ukazuje příklady jednotlivých.  
   
-|Operátor|Condition tested|Příklady|  
+|Operátor|Podmínka otestována|Příklady|  
 |--------------|----------------------|--------------|  
-|`=` (Equality)|Is the value of the first expression equal to the value of the second?|`23`   `=`   `33    ' False`<br /><br /> `23`   `=`   `23    ' True`<br /><br /> `23`   `=`   `12    ' False`|  
-|`<>` (Inequality)|Is the value of the first expression unequal to the value of the second?|`23`   `<>`   `33    ' True`<br /><br /> `23`   `<>`   `23    ' False`<br /><br /> `23`   `<>`   `12    ' True`|  
-|`<` (Less than)|Is the value of the first expression less than the value of the second?|`23`   `<`   `33    ' True`<br /><br /> `23`   `<`   `23    ' False`<br /><br /> `23`   `<`   `12    ' False`|  
-|`>` (Greater than)|Is the value of the first expression greater than the value of the second?|`23`   `>`   `33    ' False`<br /><br /> `23`   `>`   `23    ' False`<br /><br /> `23`   `>`   `12    ' True`|  
-|`<=` (Less than or equal to)|Is the value of the first expression less than or equal to the value of the second?|`23`   `<=`   `33    ' True`<br /><br /> `23`   `<=`   `23    ' True`<br /><br /> `23`   `<=`   `12    ' False`|  
-|`>=` (Greater than or equal to)|Is the value of the first expression greater than or equal to the value of the second?|`23`   `>=`   `33    ' False`<br /><br /> `23`   `>=`   `23    ' True`<br /><br /> `23`   `>=`   `12    ' True`|  
+|`=` (rovnost)|Je hodnota prvního výrazu rovna hodnotě sekundy?|`23`   `=`   `33    ' False`<br /><br /> `23`   `=`   `23    ' True`<br /><br /> `23`   `=`   `12    ' False`|  
+|`<>` (nerovnost)|Je hodnota prvního výrazu nerovná hodnotě sekundy?|`23`   `<>`   `33    ' True`<br /><br /> `23`   `<>`   `23    ' False`<br /><br /> `23`   `<>`   `12    ' True`|  
+|`<` (méně než)|Je hodnota prvního výrazu menší než hodnota sekundy?|`23`   `<`   `33    ' True`<br /><br /> `23`   `<`   `23    ' False`<br /><br /> `23`   `<`   `12    ' False`|  
+|`>` (je větší než)|Je hodnota prvního výrazu většího než hodnota sekundy?|`23`   `>`   `33    ' False`<br /><br /> `23`   `>`   `23    ' False`<br /><br /> `23`   `>`   `12    ' True`|  
+|`<=` (je menší než nebo rovno)|Je hodnota prvního výrazu menší nebo rovna hodnotě sekundy?|`23`   `<=`   `33    ' True`<br /><br /> `23`   `<=`   `23    ' True`<br /><br /> `23`   `<=`   `12    ' False`|  
+|`>=` (je větší než nebo rovno)|Je hodnota prvního výrazu větší nebo rovna hodnotě sekundy?|`23`   `>=`   `33    ' False`<br /><br /> `23`   `>=`   `23    ' True`<br /><br /> `23`   `>=`   `12    ' True`|  
   
 ## <a name="comparing-strings"></a>Porovnávání řetězců  
- Visual Basic compares strings using the [Like Operator](../../../../visual-basic/language-reference/operators/like-operator.md) as well as the numeric comparison operators. The `Like` operator allows you to specify a pattern. The string is then compared against the pattern, and if it matches, the result is `True`. Otherwise, the result is `False`. The numeric operators allow you to compare `String` values based on their sort order, as the following example shows.  
+ Visual Basic porovnává řetězce pomocí [operátoru LIKE](../../../../visual-basic/language-reference/operators/like-operator.md) a číselných relačních operátorů. Operátor `Like` umožňuje zadat vzor. Řetězec se pak porovná se vzorem a pokud odpovídá, výsledek je `True`. V opačném případě je výsledek `False`. Číselné operátory umožňují porovnat `String` hodnoty podle jejich pořadí řazení, jak ukazuje následující příklad.  
   
  `"73" < "9"`  
   
  `' The result of the preceding comparison is True.`  
   
- The result in the preceding example is `True` because the first character in the first string sorts before the first character in the second string. If the first characters were equal, the comparison would continue to the next character in both strings, and so on. You can also test equality of strings using the equality operator, as the following example shows.  
+ Výsledek v předchozím příkladu je `True`, protože první znak v prvním řetězci seřadí před první znak v druhém řetězci. Pokud byly první znaky stejné, porovnání by pokračovalo na dalším znaku v obou řetězcích, a tak dále. Můžete také otestovat rovnost řetězců pomocí operátoru rovnosti, jak ukazuje následující příklad.  
   
  `"734" = "734"`  
   
  `' The result of the preceding comparison is True.`  
   
- If one string is a prefix of another, such as "aa" and "aaa", the longer string is considered to be greater than the shorter string. Toto dokládá následující příklad.  
+ Pokud je jeden řetězec předponou jiného, například "AA" a "AAA", delší řetězec je považován za větší než kratší řetězec. Toto dokládá následující příklad.  
   
  `"aaa" > "aa"`  
   
  `' The result of the preceding comparison is True.`  
   
- The sort order is based on either a binary comparison or a textual comparison depending on the setting of `Option Compare`. For more information see [Option Compare Statement](../../../../visual-basic/language-reference/statements/option-compare-statement.md).  
+ Pořadí řazení vychází z binárního porovnání nebo z textového porovnání v závislosti na nastavení `Option Compare`. Další informace najdete v tématu [příkaz Option Compare](../../../../visual-basic/language-reference/statements/option-compare-statement.md).  
   
-## <a name="comparing-objects"></a>Comparing Objects  
- Visual Basic compares two object reference variables with the [Is Operator](../../../../visual-basic/language-reference/operators/is-operator.md) and the [IsNot Operator](../../../../visual-basic/language-reference/operators/isnot-operator.md). You can use either of these operators to determine if two reference variables refer to the same object instance. Toto dokládá následující příklad.  
+## <a name="comparing-objects"></a>Porovnávání objektů  
+ Visual Basic porovná dvě proměnné odkazu na objekt s [operátorem is](../../../../visual-basic/language-reference/operators/is-operator.md) a [operátorem IsNot](../../../../visual-basic/language-reference/operators/isnot-operator.md). Můžete použít kterýkoli z těchto operátorů k určení, zda dvě referenční proměnné odkazují na stejnou instanci objektu. Toto dokládá následující příklad.  
   
  [!code-vb[VbVbalrOperators#65](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#65)]  
   
- In the preceding example, `x Is y` evaluates to `True`, because both variables refer to the same instance. Contrast this result with the following example.  
+ V předchozím příkladu `x Is y` vyhodnocuje jako `True`, protože obě proměnné odkazují na stejnou instanci. Porovnejte tento výsledek s následujícím příkladem.  
   
  [!code-vb[VbVbalrOperators#66](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#66)]  
   
- In the preceding example, `x Is y` evaluates to `False`, because although the variables refer to objects of the same type, they refer to different instances of that type.  
+ V předchozím příkladu `x Is y` vyhodnocena jako `False`, protože i když proměnné odkazují na objekty stejného typu, odkazují na různé instance daného typu.  
   
- When you want to test for two objects not pointing to the same instance, the `IsNot` operator lets you avoid a grammatically clumsy combination of `Not` and `Is`. Toto dokládá následující příklad.  
+ Pokud chcete testovat dva objekty, které neukazují na stejnou instanci, operátor `IsNot` umožňuje vyhnout se gramaticky clumsy kombinaci `Not` a `Is`. Toto dokládá následující příklad.  
   
  [!code-vb[VbVbalrOperators#67](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#67)]  
   
- In the preceding example, `If a IsNot b` is equivalent to `If Not a Is b`.  
+ V předchozím příkladu je `If a IsNot b` ekvivalentem `If Not a Is b`.  
   
-### <a name="comparing-object-type"></a>Comparing Object Type  
- You can test whether an object is of a particular type with the `TypeOf`...`Is` expression. The syntax is as follows:  
+### <a name="comparing-object-type"></a>Porovnání typu objektu  
+ Můžete otestovat, zda je objekt určitého typu pomocí výrazu `TypeOf`...`Is`. Syntaxe je následující:  
   
  `TypeOf <objectexpression> Is <typename>`  
   
- When `typename` specifies an interface type, then the `TypeOf`...`Is` expression returns `True` if the object implements the interface type. When `typename` is a class type, then the expression returns `True` if the object is an instance of the specified class or of a class that derives from the specified class. Toto dokládá následující příklad.  
+ Když `typename` určuje typ rozhraní, pak výraz `TypeOf`...`Is` vrátí `True`, pokud objekt implementuje typ rozhraní. Když `typename` je typ třídy, pak výraz vrátí `True`, pokud je objekt instancí zadané třídy nebo třídy, která je odvozena ze zadané třídy. Toto dokládá následující příklad.  
   
  [!code-vb[VbVbalrOperators#68](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#68)]  
   
- In the preceding example, the `TypeOf x Is Control` expression evaluates to `True` because the type of `x` is `Button`, which inherits from `Control`.  
+ V předchozím příkladu je výraz `TypeOf x Is Control` vyhodnocen jako `True`, protože typ `x` je `Button`, který dědí z `Control`.  
   
- For more information, see [TypeOf Operator](../../../../visual-basic/language-reference/operators/typeof-operator.md).  
+ Další informace naleznete v tématu [operátor typeof](../../../../visual-basic/language-reference/operators/typeof-operator.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Porovnání hodnot](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/value-comparisons.md)
 - [Operátory porovnání](../../../../visual-basic/language-reference/operators/comparison-operators.md)
 - [Operátory](../../../../visual-basic/language-reference/operators/index.md)
-- [Arithmetic Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
-- [Concatenation Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md)
-- [Logical and Bitwise Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
+- [Aritmetické operátory v Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
+- [Operátory zřetězení v Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md)
+- [Logické a bitové operátory v Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)

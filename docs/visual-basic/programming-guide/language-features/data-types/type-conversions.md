@@ -18,30 +18,30 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348713"
 ---
 # <a name="type-conversions-in-visual-basic"></a>Převody typů v jazyce Visual Basic
-The process of changing a value from one data type to another type is called *conversion*. Conversions are either *widening* or *narrowing*, depending on the data capacities of the types involved. They are also *implicit* or *explicit*, depending on the syntax in the source code.  
+Proces změny hodnoty z jednoho datového typu na jiný typ se nazývá *Převod*. Převody jsou buď *rozšiřující* nebo *zúžené*, v závislosti na datových přenosech souvisejících typů. Jsou také *implicitní* nebo *explicitní*v závislosti na syntaxi ve zdrojovém kódu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Rozšíření a zúžení převodů](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)  
- Explains conversions classified by whether the destination type can hold the data.  
+ Vysvětluje převody klasifikované podle toho, zda cílový typ může uchovávat data.  
   
  [Implicitní a explicitní převody](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)  
- Discusses conversions classified by whether Visual Basic performs them automatically.  
+ Popisuje převody klasifikované podle toho, zda je Visual Basic provádí automaticky.  
   
  [Převody mezi řetězci a ostatními typy](../../../../visual-basic/programming-guide/language-features/data-types/conversions-between-strings-and-other-types.md)  
- Illustrates converting between strings and numeric, `Boolean`, or date/time values.  
+ Ukazuje převod mezi řetězci a číselnými, `Boolean`mi nebo hodnotami data a času.  
   
- [How to: Convert an Object to Another Type in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/how-to-convert-an-object-to-another-type.md)  
- Shows how to convert an `Object` variable to any other data type.  
+ [Postupy: převod objektu na jiný typ v Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/how-to-convert-an-object-to-another-type.md)  
+ Ukazuje, jak převést `Object` proměnnou na jakýkoli jiný datový typ.  
   
  [Převody polí](../../../../visual-basic/programming-guide/language-features/data-types/array-conversions.md)  
- Steps you through the process of converting between arrays of different data types.  
+ Provede kroky převodu mezi poli různých datových typů.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  
- Introduces the Visual Basic data types and describes how to use them.  
+ Zavádí Visual Basic datových typů a popisuje, jak je používat.  
   
  [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)  
- Lists the elementary data types supplied by Visual Basic.  
+ Uvádí základní datové typy, které poskytuje Visual Basic.  
   
  [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
- Discusses some common problems that can arise when working with data types.
+ Popisuje některé běžné problémy, které mohou nastat při práci s datovými typy.

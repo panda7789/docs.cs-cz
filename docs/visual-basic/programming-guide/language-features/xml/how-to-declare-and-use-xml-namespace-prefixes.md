@@ -13,15 +13,15 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74332950"
 ---
 # <a name="how-to-declare-and-use-xml-namespace-prefixes-visual-basic"></a>Postupy: Deklarace a používání předpon oboru názvů XML (Visual Basic)
-This example shows how to import the XML namespace prefix `ns` and use it in an XML literal and XML axis properties.  
+Tento příklad ukazuje, jak importovat předponu oboru názvů XML `ns` a použít ji ve vlastnostech literálu XML a osy XML.  
   
 ## <a name="example"></a>Příklad  
  [!code-vb[VbXMLSamples#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples3.vb#8)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- This example requires:  
+ Tento příklad vyžaduje:  
   
-- A reference to the <xref:System.Xml.Linq> namespace.  
+- Odkaz na obor názvů <xref:System.Xml.Linq>.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -29,5 +29,5 @@ This example shows how to import the XML namespace prefix `ns` and use it in an 
 - [Příkaz Imports (obor názvů XML)](../../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md)
 - [Vlastnost osy atributu XML](../../../../visual-basic/language-reference/xml-axis/xml-attribute-axis-property.md)
 - [Vlastnost hodnoty XML](../../../../visual-basic/language-reference/xml-axis/xml-value-property.md)
-- [Accessing XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md)
+- [Přístup k XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md)
 - [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)

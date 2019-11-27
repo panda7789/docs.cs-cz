@@ -17,18 +17,18 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74343621"
 ---
 # <a name="how-to-test-whether-two-objects-are-the-same-visual-basic"></a>Postupy: Test, zda jsou dva objekty stejné (Visual Basic).
-If you have two variables that refer to objects, you can use either the `Is` or `IsNot` operator, or both, to determine whether they refer to the same instance.  
+Pokud máte dvě proměnné, které odkazují na objekty, můžete použít operátor `Is` nebo `IsNot` nebo obojí, chcete-li určit, zda odkazují na stejnou instanci.  
   
-### <a name="to-test-whether-two-objects-are-the-same"></a>To test whether two objects are the same  
+### <a name="to-test-whether-two-objects-are-the-same"></a>Testování, zda jsou dva objekty stejné  
   
-- Use the [Is Operator](../../../../visual-basic/language-reference/operators/is-operator.md) or the [IsNot Operator](../../../../visual-basic/language-reference/operators/isnot-operator.md) with the two variables as operands.  
+- Použijte [operátor is](../../../../visual-basic/language-reference/operators/is-operator.md) nebo [operátor IsNot](../../../../visual-basic/language-reference/operators/isnot-operator.md) s těmito dvěma proměnnými jako operandy.  
   
      [!code-vb[VbVbalrOperators#69](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#69)]  
   
- You might want to take a certain action depending on whether two objects refer to the same instance. The preceding example compares control `c` against the active control on form `f`. If there is no active control, or if there is one but it is not the same control instance as `c`, then the `If` statement fails and the procedure returns without further processing.  
+ V závislosti na tom, zda dva objekty odkazují na stejnou instanci, je vhodné provést určitou akci. Předchozí příklad porovná ovládací prvek `c` proti aktivnímu ovládacímu prvku ve formuláři `f`. Pokud neexistuje žádný aktivní ovládací prvek nebo pokud existuje, ale není to stejná instance ovládacího prvku jako `c`, příkaz `If` se nezdařil a procedura se vrátí bez dalšího zpracování.  
   
- Whether you use `Is` or `IsNot` is a matter of personal convenience to you. One might be easier to read than the other in a given expression.  
+ Bez ohledu na to, jestli používáte `Is` nebo `IsNot`, je osobní pohodlí pro vás. Jednu z nich je možné snáze číst než druhá v daném výrazu.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Comparison Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
+- [Operátory porovnávání v Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)

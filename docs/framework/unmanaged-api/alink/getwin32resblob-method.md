@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74430687"
 ---
 # <a name="getwin32resblob-method"></a>GetWin32ResBlob – metoda
-Retrieves Win32 resource blob. Call this method after setting assembly options.  
+Načte objekt BLOB prostředku Win32. Po nastavení možností sestavení volejte tuto metodu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,31 +39,31 @@ HRESULT GetWin32ResBlob(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID of the assembly.  
+ ID sestavení  
   
  `FileToken`  
- File token used to retrieve the filename to be used when constructing the Win32 Version resource  
+ Token souboru, který se používá k načtení názvu souboru, který se má použít při vytváření prostředku verze Win32  
   
  `fDll`  
- TRUE if file is a DLL, false for an EXE.  
+ TRUE, pokud je soubor DLL, false pro EXE.  
   
  `pszIconFile`  
- Optional icon to insert into the resource blob.  
+ Volitelná ikona, která se má vložit do objektu BLOB prostředku  
   
  `ppResBlob`  
- Receives the resource blob.  
+ Přijímá objekt BLOB prostředku.  
   
  `pcbResBlob`  
- Receives the size of the blob.  
+ Přijímá velikost objektu BLOB.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Returns S_OK if the method succeeds.  
+ Vrátí S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Requires alink.h  
+ Vyžaduje ALink. h  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink – rozhraní](ialink-interface.md)
 - [IALink2 – rozhraní](ialink2-interface.md)
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)

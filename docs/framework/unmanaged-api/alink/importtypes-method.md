@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445676"
 ---
 # <a name="importtypes-method"></a>ImportTypes – metoda
-Initiates the importing of types from each scope imported via [ImportFile Method](importfile-method.md).  
+Inicializuje import typů z každého oboru importovaného pomocí [metody importFile –](importfile-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,31 +39,31 @@ HRESULT ImportTypes(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID of the assembly to import to.  
+ ID sestavení, do kterého se má importovat  
   
  `FileToken`  
- ID of the file to import from.  
+ ID souboru, ze kterého se má importovat  
   
  `dwScope`  
- Zero-based scope to import.  
+ Rozsah založený na nule pro import.  
   
  `phEnum`  
- Receives enumerator handle for the types in this scope.  
+ Přijímá popisovač enumerátoru pro typy v tomto oboru.  
   
  `ppImportScope`  
- Optionally receives [IMetaDataImport Interface](../metadata/imetadataimport-interface.md) interface.  
+ Volitelně přijímá rozhraní [rozhraní IMetaDataImport](../metadata/imetadataimport-interface.md) .  
   
  `pdwCountOfTypes`  
- Optionally receives count of types in the indicated scope.  
+ Volitelně přijímá počet typů v označeném rozsahu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Returns S_OK if the method succeeds.  
+ Vrátí S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Requires alink.h  
+ Vyžaduje ALink. h  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink – rozhraní](ialink-interface.md)
 - [IALink2 – rozhraní](ialink2-interface.md)
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)

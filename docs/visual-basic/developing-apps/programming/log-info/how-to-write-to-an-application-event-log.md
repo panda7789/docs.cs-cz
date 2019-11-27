@@ -16,39 +16,39 @@ ms.locfileid: "74352051"
 ---
 # <a name="how-to-write-to-an-application-event-log-visual-basic"></a>Postupy: Zápis do protokolu událostí aplikace (Visual Basic)
 
-You can use the `My.Application.Log` and `My.Log` objects to write information about events that occur in your application. This example shows how to configure an event log listener so `My.Application.Log` writes tracing information to the Application event log.
+Objekty `My.Application.Log` a `My.Log` lze použít k zápisu informací o událostech, ke kterým dojde v aplikaci. Tento příklad ukazuje, jak nakonfigurovat naslouchací proces protokolu událostí tak, `My.Application.Log` zapisuje trasovací informace do protokolu událostí aplikace.
 
-You cannot write to the Security log. In order to write to the System log, you must be a member of the LocalSystem or Administrator account.
+Do protokolu zabezpečení nelze zapisovat. Aby bylo možné zapisovat do systémového protokolu, musíte být členem účtu LocalSystem nebo správce.
 
-To view an event log, you can use **Server Explorer** or **Windows Event Viewer**. For more information, see [ETW Events in the .NET Framework](../../../../framework/performance/etw-events.md).
+Chcete-li zobrazit protokol událostí, můžete použít **Průzkumník serveru** nebo **Windows Prohlížeč událostí**. Další informace najdete v tématu [události ETW v .NET Framework](../../../../framework/performance/etw-events.md).
 
-## <a name="to-add-and-configure-the-event-log-listener"></a>To add and configure the event log listener
+## <a name="to-add-and-configure-the-event-log-listener"></a>Přidání a konfigurace naslouchacího procesu protokolu událostí
 
-1. Right-click app.config in **Solution Explorer** and choose **Open**.
+1. V **Průzkumník řešení** klikněte pravým tlačítkem na soubor App. config a vyberte **otevřít**.
 
-    \- or -
+    \- nebo-
 
-    If there is no app.config file,
+    Pokud soubor App. config neexistuje,
 
-    1. On the **Project** menu, choose **Add New Item**.
+    1. V nabídce **projekt** klikněte na příkaz **Přidat novou položku**.
 
-    2. From the **Add New Item** dialog box, choose **Application Configuration File**.
+    2. V dialogovém okně **Přidat novou položku** vyberte možnost **konfigurační soubor aplikace**.
 
-    3. Click **Add**.
+    3. Klikněte na tlačítko **Přidat**.
 
-2. Locate the `<listeners>` section in the application configuration file.
+2. V konfiguračním souboru aplikace vyhledejte část `<listeners>`.
 
-    You will find the `<listeners>` section in the `<source>` section with the name attribute "DefaultSource", which is nested under the `<system.diagnostics>` section, which is nested under the top-level `<configuration>` section.
+    Část `<listeners>` najdete v části `<source>` s názvem "DefaultSource", který je vnořen do oddílu `<system.diagnostics>`, který je vnořený pod oddílem `<configuration>` nejvyšší úrovně.
 
-3. Add this element to that `<listeners>` section:
+3. Přidejte tento prvek do tohoto `<listeners>` části:
 
     ```xml
     <add name="EventLog"/>
     ```
 
-4. Locate the `<sharedListeners>` section, in the `<system.diagnostics>` section, in the top-level `<configuration>` section.
+4. Vyhledejte část `<sharedListeners>` v části `<system.diagnostics>` v části `<configuration>` nejvyšší úrovně.
 
-5. Add this element to that `<sharedListeners>` section:
+5. Přidejte tento prvek do tohoto `<sharedListeners>` části:
 
     ```xml
     <add name="EventLog"
@@ -56,16 +56,16 @@ To view an event log, you can use **Server Explorer** or **Windows Event Viewer*
          initializeData="APPLICATION_NAME"/>
     ```
 
-    Replace `APPLICATION_NAME` with the name of your application.
+    Nahraďte `APPLICATION_NAME` názvem vaší aplikace.
 
     > [!NOTE]
-    > Typically, an application writes only errors to the event log. For information on filtering log output, see [Walkthrough: Filtering My.Application.Log Output](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md).
+    > Aplikace obvykle zapisuje pouze chyby do protokolu událostí. Informace o filtrování výstupu protokolu naleznete v tématu [Návod: filtrování výstupu my. Application. log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md).
 
-## <a name="to-write-event-information-to-the-event-log"></a>To write event information to the event log
+## <a name="to-write-event-information-to-the-event-log"></a>Zápis informací o události do protokolu událostí
 
-Use the `My.Application.Log.WriteEntry` or `My.Application.Log.WriteException` method to write information to the event log. For more information, see [How to: Write Log Messages](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md) and [How to: Log Exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md).
+Pomocí metody `My.Application.Log.WriteEntry` nebo `My.Application.Log.WriteException` zapište informace do protokolu událostí. Další informace naleznete v tématu [How to: Write log messages](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md) and [to: log Exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md).
 
-After you configure the event log listener for an assembly, it receives all messages that `My.Application.Log` writes from that assembly.
+Po nakonfigurování naslouchacího procesu protokolu událostí pro sestavení obdrží všechny zprávy, které `My.Application.Log` zápisy z tohoto sestavení.
 
 ## <a name="see-also"></a>Viz také:
 

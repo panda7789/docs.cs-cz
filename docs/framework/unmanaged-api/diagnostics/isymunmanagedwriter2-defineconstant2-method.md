@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74438325"
 ---
 # <a name="isymunmanagedwriter2defineconstant2-method"></a>ISymUnmanagedWriter2::DefineConstant2 – metoda
-Defines a name for a constant value.  
+Definuje název pro konstantní hodnotu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,19 +36,19 @@ HRESULT DefineConstant2(
   
 ## <a name="parameters"></a>Parametry  
  `name`  
- [in] The constant name.  
+ pro Název konstanty.  
   
  `value`  
- [in] The value of the constant.  
+ pro Hodnota konstanty.  
   
  `sigToken`  
- [in] The metadata token of the constant.  
+ pro Token metadat konstanty.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

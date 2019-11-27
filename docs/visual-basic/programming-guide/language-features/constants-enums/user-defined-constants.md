@@ -17,43 +17,43 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74354010"
 ---
 # <a name="user-defined-constants-visual-basic"></a>Uživatelem definované konstanty (Visual Basic)
-A constant is a meaningful name that takes the place of a number or string that does not change. Constants store values that, as the name implies, remain constant throughout the execution of an application. You can use constants that are defined by the controls or components you work with, or you can create your own. Constants you create yourself are described as *user-defined*.  
+Konstanta je smysluplný název, který přebírá místo čísla nebo řetězce, který se nemění. Konstanty ukládají hodnoty, které jako název implikují, zůstávají během provádění aplikace konstantní. Můžete použít konstanty, které jsou definovány ovládacími prvky nebo komponentami, se kterými pracujete, nebo můžete vytvořit vlastní. Konstanty, které vytvoříte sami, jsou popsány jako *uživatelsky definované*.  
   
- You declare a constant with the `Const` statement, using the same guidelines you would for creating a variable name. If `Option Strict` is `On`, you must explicitly declare the constant type.  
+ Deklarujete konstantu pomocí příkazu `Const` a použijete stejné pokyny jako pro vytvoření názvu proměnné. Pokud je `Option Strict` `On`, musíte explicitně deklarovat typ konstanty.  
   
-## <a name="const-statement-usage"></a>Const Statement Usage  
- A `Const` statement can represent a mathematical or date/time quantity:  
+## <a name="const-statement-usage"></a>Použití příkazu const  
+ Příkaz `Const` může představovat matematické nebo datum a čas:  
   
  [!code-vb[VbEnumsTask#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#10)]  
   
- It also can define `String` constants:  
+ Může také definovat `String` konstanty:  
   
  [!code-vb[VbEnumsTask#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#13)]  
   
- The expression on the right side of the equal sign ( `=` ) is often a number or literal string, but it also can be an expression that results in a number or string (although that expression cannot contain calls to functions). You can even define constants in terms of previously defined constants:  
+ Výraz na pravé straně znaménka rovná se (`=`) je často číslo nebo literální řetězec, ale může to být výraz, jehož výsledkem je číslo nebo řetězec (i když tento výraz nemůže obsahovat volání funkcí). Můžete dokonce definovat konstanty z podmínek dříve definovaných konstant:  
   
  [!code-vb[VbEnumsTask#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#15)]  
   
-## <a name="scope-of-user-defined-constants"></a>Scope of User-Defined Constants  
- A `Const` statement's scope is the same as that of a variable declared in the same location. You can specify scope in any of the following ways:  
+## <a name="scope-of-user-defined-constants"></a>Rozsah uživatelsky definovaných konstant  
+ Obor příkazu `Const` je stejný jako objekt proměnné deklarované ve stejném umístění. Rozsah můžete zadat některým z následujících způsobů:  
   
-- To create a constant that exists only within a procedure, declare it within that procedure.  
+- Chcete-li vytvořit konstantu, která existuje pouze v rámci procedury, deklarujte ji v rámci tohoto postupu.  
   
-- To create a constant available to all procedures within a class, but not to any code outside that module, declare it in the declarations section of the class.  
+- Chcete-li vytvořit konstantu dostupnou pro všechny postupy v rámci třídy, ale ne pro žádný kód mimo tento modul, deklarujte ho v oddílu deklarace třídy.  
   
-- To create a constant that is available to all members of an assembly, but not to outside clients of the assembly, declare it using the `Friend` keyword in the declarations section of the class.  
+- Chcete-li vytvořit konstantu, která je k dispozici pro všechny členy sestavení, ale ne pro externí klienty sestavení, deklarujte ji pomocí klíčového slova `Friend` v oddílu deklarace třídy.  
   
-- To create a constant available throughout the application, declare it using the `Public` keyword in the declarations section the class.  
+- Chcete-li vytvořit konstantu dostupnou v celé aplikaci, deklarujte ji pomocí klíčového slova `Public` v oddílu deklarace třídy.  
   
- For more information, see [How to: Declare A Constant](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-a-constant.md).  
+ Další informace naleznete v tématu [How to: Declare a konstante](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-a-constant.md).  
   
-### <a name="avoiding-circular-references"></a>Avoiding Circular References  
- Because constants can be defined in terms of other constants, it is possible to inadvertently create a *cycle*, or circular reference, between two or more constants. A cycle occurs when you have two or more public constants, each of which is defined in terms of the other, as in the following example:  
+### <a name="avoiding-circular-references"></a>Zamezení cyklických odkazů  
+ Vzhledem k tomu, že konstanty lze definovat v souvislosti s jinými konstantami, je možné neúmyslně vytvořit *cyklus*nebo cyklický odkaz mezi dvěma nebo více konstantami. K cyklu dochází, když máte dvě nebo více veřejných konstant, z nichž každá je definována z hlediska druhé, jako v následujícím příkladu:  
   
  [!code-vb[VbEnumsTask#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#16)]  
 [!code-vb[VbEnumsTask#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#17)]  
   
- If a cycle occurs, Visual Basic generates a compiler error.  
+ Pokud dojde k cyklu, Visual Basic vygeneruje chybu kompilátoru.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -63,6 +63,6 @@ A constant is a meaningful name that takes the place of a number or string that 
 - [Konstanty a výčty](../../../../visual-basic/language-reference/constants-and-enumerations.md)
 - [Přehled výčtů](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-overview.md)
 - [Přehled konstant](../../../../visual-basic/programming-guide/language-features/constants-enums/constants-overview.md)
-- [How to: Declare an Enumeration](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)
+- [Postupy: deklarace výčtu](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)
 - [Výčty a kvalifikace názvu](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md)
 - [Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)

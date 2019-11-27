@@ -12,21 +12,21 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348257"
 ---
 # <a name="operators-listed-by-functionality-visual-basic"></a>Operátory uvedené podle funkce (Visual Basic)
-See one of the categories listed below, or open this portion of the Help table of contents to see an alphabetical list of Visual Basic operators.  
+Podívejte se na jednu z kategorií uvedených níže nebo otevřete tuto část obsahu nápovědy a zobrazte Abecední seznam Visual Basicch operátorů.  
   
-## <a name="categories-of-operators"></a>Categories of Operators  
+## <a name="categories-of-operators"></a>Kategorie operátorů  
   
 |Operátory|Popis|  
 |---------------|-----------------|  
-|[Aritmetické operátory](../../../visual-basic/language-reference/operators/arithmetic-operators.md)|These operators perform mathematical calculations.|  
-|[Operátory přiřazení](../../../visual-basic/language-reference/operators/assignment-operators.md)|These operators perform assignment operations.|  
-|[Operátory porovnání](../../../visual-basic/language-reference/operators/comparison-operators.md)|These operators perform comparisons.|  
-|[Operátory řetězení](../../../visual-basic/language-reference/operators/concatenation-operators.md)|These operators combine strings.|  
-|[Logical/Bitwise Operators](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)|These operators perform logical operations.|  
-|[Operátory bitového posunu](../../../visual-basic/language-reference/operators/bit-shift-operators.md)|These operators perform arithmetic shifts on bit patterns.|  
-|[Různé operátory](../../../visual-basic/language-reference/operators/miscellaneous-operators.md)|These operators perform miscellaneous operations.|  
+|[Aritmetické operátory](../../../visual-basic/language-reference/operators/arithmetic-operators.md)|Tyto operátory provádějí matematické výpočty.|  
+|[Operátory přiřazení](../../../visual-basic/language-reference/operators/assignment-operators.md)|Tyto operátory provádějí operace přiřazení.|  
+|[Operátory porovnání](../../../visual-basic/language-reference/operators/comparison-operators.md)|Tyto operátory provádějí porovnání.|  
+|[Operátory zřetězení](../../../visual-basic/language-reference/operators/concatenation-operators.md)|Tyto operátory kombinují řetězce.|  
+|[Logické/bitové operátory](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)|Tyto operátory provádějí logické operace.|  
+|[Operátory bitového posunu](../../../visual-basic/language-reference/operators/bit-shift-operators.md)|Tyto operátory provádějí aritmetické posuny bitových vzorů.|  
+|[Různé operátory](../../../visual-basic/language-reference/operators/miscellaneous-operators.md)|Tyto operátory provádějí různé operace.|  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Operátory a výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)
-- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Priorita operátorů v Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)

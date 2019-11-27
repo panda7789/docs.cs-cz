@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74447881"
 ---
 # <a name="imetadataemit2savedeltatostream-method"></a>IMetaDataEmit2::SaveDeltaToStream – metoda
-Saves changes from the current edit-and-continue session to the specified stream.  
+Uloží změny z aktuální relace úprav a pokračování do zadaného datového proudu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,19 +36,19 @@ HRESULT SaveDeltaToStream (
   
 ## <a name="parameters"></a>Parametry  
  `pIStream`  
- [in] An interface pointer to the writable stream to which to save changes.  
+ pro Ukazatel rozhraní na zapisovatelný datový proud, do kterého chcete uložit změny.  
   
  `dwSaveFlags`  
- [in] Reserved. This value must be zero.  
+ pro Rezervovaný. Tato hodnota musí být nula.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

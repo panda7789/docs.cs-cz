@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436745"
 ---
 # <a name="imetadataimportgettypedefprops-method"></a>IMetaDataImport::GetTypeDefProps – metoda
-Returns metadata information for the <xref:System.Type> represented by the specified TypeDef token.  
+Vrátí informace o metadatech pro <xref:System.Type> reprezentované zadaným tokenem TypeDef.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,31 +40,31 @@ HRESULT GetTypeDefProps (
   
 ## <a name="parameters"></a>Parametry  
  `td`  
- [in] The TypeDef token that represents the type to return metadata for.  
+ pro Token TypeDef, který představuje typ, pro který se mají vracet metadata.  
   
  `szTypeDef`  
- [out] A buffer containing the type name.  
+ mimo Vyrovnávací paměť obsahující název typu.  
   
  `cchTypeDef`  
- [in] The size in wide characters of `szTypeDef`.  
+ pro Velikost v různých znacích `szTypeDef`.  
   
  `pchTypeDef`  
- [out] The number of wide characters returned in `szTypeDef`.  
+ mimo Počet velkých znaků vrácených v `szTypeDef`.  
   
  `pdwTypeDefFlags`  
- [out] A pointer to any flags that modify the type definition. This value is a bitmask from the [CorTypeAttr](../../../../docs/framework/unmanaged-api/metadata/cortypeattr-enumeration.md) enumeration.  
+ mimo Ukazatel na libovolný příznak, který upraví definici typu. Tato hodnota je Bitová maska z výčtu [CorTypeAttr –](../../../../docs/framework/unmanaged-api/metadata/cortypeattr-enumeration.md) .  
   
  `ptkExtends`  
- [out] A TypeDef or TypeRef metadata token that represents the base type of the requested type.  
+ mimo Token metadat TypeDef nebo TypeRef, který představuje základní typ požadovaného typu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

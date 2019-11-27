@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74432492"
 ---
 # <a name="imetadataemitsetparamprops-method"></a>IMetaDataEmit::SetParamProps – metoda
-Sets or changes features of a method parameter that was defined by a prior call to [IMetaDataEmit::DefineParam](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineparam-method.md).  
+Nastaví nebo změní funkce parametru metody, které byly definovány předchozím voláním [IMetaDataEmit::D efineparam](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineparam-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,31 +40,31 @@ HRESULT SetParamProps (
   
 ## <a name="parameters"></a>Parametry  
  `pd`  
- [in] The token for the target parameter.  
+ pro Token pro cílový parametr  
   
  `szName`  
- [in] The name of the parameter in Unicode.  
+ pro Název parametru v kódování Unicode.  
   
  `dwParamFlags`  
- [in] The flags for the parameter.  
+ pro Příznaky pro parametr  
   
  `dwCPlusTypeFlag`  
- [in] The ELEMENT_TYPE_* for the constant value.  
+ pro ELEMENT_TYPE_ * pro hodnotu konstanty.  
   
  `pValue`  
- [in] The constant value for the parameter.  
+ pro Hodnota konstanty pro parametr  
   
  `cchValue`  
- [in] The size in (Unicode) characters of `pValue`.  
+ pro Velikost v (Unicode) znaků `pValue`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

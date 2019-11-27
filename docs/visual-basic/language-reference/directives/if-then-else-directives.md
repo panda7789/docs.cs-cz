@@ -27,7 +27,7 @@ ms.locfileid: "74343816"
 ---
 # <a name="ifthenelse-directives"></a>#If...Then...#Else – direktivy
 
-Conditionally compiles selected blocks of Visual Basic code.
+Podmíněně zkompiluje vybrané bloky kódu Visual Basic.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -47,26 +47,26 @@ Conditionally compiles selected blocks of Visual Basic code.
 ## <a name="parts"></a>Součásti
 
 `expression`  
-Required for `#If` and `#ElseIf` statements, optional elsewhere. Any expression, consisting exclusively of one or more conditional compiler constants, literals, and operators, that evaluates to `True` or `False`.
+Vyžaduje se pro příkazy `#If` a `#ElseIf`, které jsou volitelné jinde. Libovolný výraz, který se skládá výhradně z jedné nebo více podmíněných konstant kompilátoru, literálů a operátorů, které jsou vyhodnoceny jako `True` nebo `False`.
 
 `statements`  
-Required for `#If` statement block, optional elsewhere. Visual Basic program lines or compiler directives that are compiled if the associated expression evaluates to `True`.
+Vyžadováno pro blok příkazu `#If`, volitelně jinde. Visual Basic řádky programu nebo direktivy kompilátoru, které jsou kompilovány, pokud je přidružený výraz vyhodnocen jako `True`.
 
 `#End If`  
-Terminates the `#If` statement block.
+Ukončí blok příkazu `#If`.
 
 ## <a name="remarks"></a>Poznámky
 
-On the surface, the behavior of the `#If...Then...#Else` directives appears the same as that of the `If...Then...Else` statements. However, the `#If...Then...#Else` directives evaluate what is compiled by the compiler, whereas the `If...Then...Else` statements evaluate conditions at run time.
+Na povrchu se chování direktiv `#If...Then...#Else` zobrazí stejně jako u příkazů `If...Then...Else`. Direktivy `#If...Then...#Else` však vyhodnotí, co je zkompilováno kompilátorem, zatímco příkazy `If...Then...Else` vyhodnocují podmínky v době běhu.
 
-Conditional compilation is typically used to compile the same program for different platforms. It is also used to prevent debugging code from appearing in an executable file. Code excluded during conditional compilation is completely omitted from the final executable file, so it has no effect on size or performance.
+Podmíněná kompilace se obvykle používá ke kompilaci stejného programu pro různé platformy. Slouží také k tomu, aby se zabránilo zobrazování kódu ladění ve spustitelném souboru. Kód vyloučený během podmíněné kompilace je zcela vynechán z finálního spustitelného souboru, takže nemá žádný vliv na velikost nebo výkon.
 
-Regardless of the outcome of any evaluation, all expressions are evaluated using `Option Compare Binary`. The `Option Compare` statement does not affect expressions in `#If` and `#ElseIf` statements.
+Bez ohledu na výsledek žádného vyhodnocení jsou všechny výrazy vyhodnocovány pomocí `Option Compare Binary`. Příkaz `Option Compare` neovlivňuje výrazy v příkazech `#If` a `#ElseIf`.
 
 > [!NOTE]
-> No single-line form of the `#If`, `#Else`, `#ElseIf`, and `#End If` directives exists. No other code can appear on the same line as any of the directives.
+> Neexistuje žádný jednořádkový tvar `#If`, `#Else`, `#ElseIf`a direktivy `#End If`. Žádný jiný kód se nemůže zobrazit na stejném řádku jako kterákoli ze direktiv.
 
-The statements within a conditional compilation block must be complete logical statements. For example, you cannot conditionally compile only the attributes of a function, but you can conditionally declare the function along with its attributes:
+Příkazy v bloku podmíněné kompilace musí být dokončeny pomocí logických příkazů. Například nemůžete podmíněně kompilovat pouze atributy funkce, ale můžete podmíněně deklarovat funkci spolu s jejími atributy:
 
 ```vb
 #If DEBUG Then
@@ -80,7 +80,7 @@ Public Function SomeFunction() As String
 
 ## <a name="example"></a>Příklad
 
-This example uses the `#If...Then...#Else` construct to determine whether to compile certain statements.
+V tomto příkladu se používá konstrukce `#If...Then...#Else` k určení, zda se mají kompilovat určité příkazy.
 
 [!code-vb[VbVbalrConditionalComp#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrConditionalComp/VB/Class1.vb#1)]
 

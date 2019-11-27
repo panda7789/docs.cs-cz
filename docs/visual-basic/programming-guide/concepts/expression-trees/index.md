@@ -9,31 +9,31 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344703"
 ---
-# <a name="expression-trees-visual-basic"></a>Expression Trees (Visual Basic)
-Expression trees represent code in a tree-like data structure, where each node is an expression, for example, a method call or a binary operation such as `x < y`.  
+# <a name="expression-trees-visual-basic"></a>Stromy výrazů (Visual Basic)
+Stromy výrazů reprezentují kód v datové struktuře podobné stromu, kde každý uzel je výraz, například volání metody nebo binární operace, například `x < y`.  
   
- You can compile and run code represented by expression trees. This enables dynamic modification of executable code, the execution of LINQ queries in various databases, and the creation of dynamic queries. For more information about expression trees in LINQ, see [How to: Use Expression Trees to Build Dynamic Queries (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-use-expression-trees-to-build-dynamic-queries.md).  
+ Můžete zkompilovat a spustit kód reprezentovaný stromy výrazů. To umožňuje dynamickou úpravu spustitelného kódu, spuštění dotazů LINQ v různých databázích a vytváření dynamických dotazů. Další informace o stromech výrazů v LINQ naleznete v tématu [How to: use Expression Trees to Dynamic dotazy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-use-expression-trees-to-build-dynamic-queries.md).  
   
- Expression trees are also used in the dynamic language runtime (DLR) to provide interoperability between dynamic languages and the .NET Framework and to enable compiler writers to emit expression trees instead of Microsoft intermediate language (MSIL). For more information about the DLR, see [Dynamic Language Runtime Overview](../../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md).  
+ Stromy výrazů se používají také v dynamickém jazykovém modulu runtime (DLR) k zajištění interoperability mezi dynamickými jazyky a .NET Framework a umožňují zapisovačům kompilátoru vysílat stromy výrazů namísto jazyka MSIL (Microsoft Intermediate Language). Další informace o DLR najdete v tématu [Přehled dynamického jazykového modulu runtime](../../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md).  
   
- You can have the C# or Visual Basic compiler create an expression tree for you based on an anonymous lambda expression, or you can create expression trees manually by using the <xref:System.Linq.Expressions> namespace.  
+ Můžete mít kompilátor C# nebo Visual Basic vytvořit strom výrazu pro vás na základě anonymního výrazu lambda nebo můžete vytvořit stromy výrazů ručně pomocí <xref:System.Linq.Expressions>ho oboru názvů.  
   
-## <a name="creating-expression-trees-from-lambda-expressions"></a>Creating Expression Trees from Lambda Expressions  
- When a lambda expression is assigned to a variable of type <xref:System.Linq.Expressions.Expression%601>, the compiler emits code to build an expression tree that represents the lambda expression.  
+## <a name="creating-expression-trees-from-lambda-expressions"></a>Vytváření stromů výrazů ze výrazů lambda  
+ Když je výraz lambda přiřazen proměnné typu <xref:System.Linq.Expressions.Expression%601>, kompilátor generuje kód pro sestavení stromu výrazu, který reprezentuje výraz lambda.  
   
- The Visual Basic compiler can generate expression trees only from expression lambdas (or single-line lambdas). It cannot parse statement lambdas (or multi-line lambdas). For more information about lambda expressions in Visual Basic, see [Lambda Expressions](../../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
+ Kompilátor Visual Basic může generovat stromy výrazů pouze z výrazů lambda výrazů (nebo jednoduchých výrazů lambda). Nelze analyzovat výrazy lambda příkazů (nebo víceřádkové výrazy lambda). Další informace o výrazech lambda v Visual Basic naleznete v tématu [lambda Expressions](../../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
   
- The following code examples demonstrate how to have the Visual Basic compiler create an expression tree that represents the lambda expression `Function(num) num < 5`.  
+ Následující příklady kódu ukazují, jak má kompilátor Visual Basic vytvořit strom výrazu, který představuje výraz lambda `Function(num) num < 5`.  
   
 ```vb  
 Dim lambda As Expression(Of Func(Of Integer, Boolean)) =  
     Function(num) num < 5  
 ```  
   
-## <a name="creating-expression-trees-by-using-the-api"></a>Creating Expression Trees by Using the API  
- To create expression trees by using the API, use the <xref:System.Linq.Expressions.Expression> class. This class contains static factory methods that create expression tree nodes of specific types, for example, <xref:System.Linq.Expressions.ParameterExpression>, which represents a variable or parameter, or <xref:System.Linq.Expressions.MethodCallExpression>, which represents a method call. <xref:System.Linq.Expressions.ParameterExpression>, <xref:System.Linq.Expressions.MethodCallExpression>, and the other expression-specific types are also defined in the <xref:System.Linq.Expressions> namespace. These types derive from the abstract type <xref:System.Linq.Expressions.Expression>.  
+## <a name="creating-expression-trees-by-using-the-api"></a>Vytváření stromů výrazů pomocí rozhraní API  
+ Chcete-li vytvořit stromy výrazů pomocí rozhraní API, použijte třídu <xref:System.Linq.Expressions.Expression>. Tato třída obsahuje statické metody továrny, které vytvářejí uzly stromu výrazů specifických typů, například <xref:System.Linq.Expressions.ParameterExpression>, které představují proměnnou nebo parametr nebo <xref:System.Linq.Expressions.MethodCallExpression>, které představují volání metody. <xref:System.Linq.Expressions.ParameterExpression>, <xref:System.Linq.Expressions.MethodCallExpression>a jiné typy specifické pro výraz jsou také definovány v oboru názvů <xref:System.Linq.Expressions>. Tyto typy jsou odvozeny z <xref:System.Linq.Expressions.Expression>abstraktního typu.  
   
- The following code example demonstrates how to create an expression tree that represents the lambda expression `Function(num) num < 5` by using the API.  
+ Následující příklad kódu ukazuje, jak vytvořit strom výrazu, který představuje výraz lambda `Function(num) num < 5` pomocí rozhraní API.  
   
 ```vb  
 ' Import the following namespace to your project: System.Linq.Expressions  
@@ -48,7 +48,7 @@ Dim lambda1 As Expression(Of Func(Of Integer, Boolean)) =
         New ParameterExpression() {numParam})  
 ```  
   
- In .NET Framework 4 or later, the expression trees API also supports assignments and control flow expressions such as loops, conditional blocks, and `try-catch` blocks. By using the API, you can create expression trees that are more complex than those that can be created from lambda expressions by the Visual Basic compiler. The following example demonstrates how to create an expression tree that calculates the factorial of a number.  
+ V .NET Framework 4 nebo novějších rozhraní API stromů výrazů podporuje také přiřazení a výrazy toku řízení, jako jsou smyčky, podmíněné bloky a `try-catch` bloky. Pomocí rozhraní API můžete vytvořit stromy výrazů, které jsou složitější než ty, které lze vytvořit z výrazů lambda kompilátorem Visual Basic. Následující příklad ukazuje, jak vytvořit strom výrazu, který vypočítá faktoriál čísla.  
   
 ```vb  
 ' Creating a parameter expression.  
@@ -85,10 +85,10 @@ Console.WriteLine(factorial)
 ' Prints 120.  
 ```
 
-For more information, see [Generating Dynamic Methods with Expression Trees in Visual Studio 2010](https://devblogs.microsoft.com/csharpfaq/generating-dynamic-methods-with-expression-trees-in-visual-studio-2010/), which also applies to later versions of Visual Studio.
+Další informace naleznete v tématu [generování dynamických metod pomocí stromů výrazů v aplikaci Visual studio 2010](https://devblogs.microsoft.com/csharpfaq/generating-dynamic-methods-with-expression-trees-in-visual-studio-2010/), které platí také pro novější verze sady Visual Studio.
   
-## <a name="parsing-expression-trees"></a>Parsing Expression Trees  
- The following code example demonstrates how the expression tree that represents the lambda expression `Function(num) num < 5` can be decomposed into its parts.  
+## <a name="parsing-expression-trees"></a>Analýza stromů výrazů  
+ Následující příklad kódu ukazuje, jak lze rozložit strom výrazu reprezentující výraz lambda `Function(num) num < 5` na jeho části.  
   
 ```vb  
 ' Import the following namespace to your project: System.Linq.Expressions  
@@ -110,13 +110,13 @@ Console.WriteLine(String.Format("Decomposed expression: {0} => {1} {2} {3}",
 ' Decomposed expression: num => num LessThan 5  
 ```  
   
-## <a name="immutability-of-expression-trees"></a>Immutability of Expression Trees  
- Expression trees should be immutable. This means that if you want to modify an expression tree, you must construct a new expression tree by copying the existing one and replacing nodes in it. You can use an expression tree visitor to traverse the existing expression tree. For more information, see [How to: Modify Expression Trees (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-modify-expression-trees.md).  
+## <a name="immutability-of-expression-trees"></a>Neměnnosti stromů výrazů  
+ Stromy výrazů by měly být neměnné. To znamená, že pokud chcete upravit strom výrazu, je nutné vytvořit nový strom výrazu zkopírováním stávajícího a nahrazením uzlů v něm. K procházení stávajícího stromu výrazů můžete použít návštěvníka stromu výrazu. Další informace najdete v tématu [Postup: Změna stromů výrazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-modify-expression-trees.md).  
   
-## <a name="compiling-expression-trees"></a>Compiling Expression Trees  
- The <xref:System.Linq.Expressions.Expression%601> type provides the <xref:System.Linq.Expressions.Expression%601.Compile%2A> method that compiles the code represented by an expression tree into an executable delegate.  
+## <a name="compiling-expression-trees"></a>Kompilování stromů výrazů  
+ Typ <xref:System.Linq.Expressions.Expression%601> poskytuje metodu <xref:System.Linq.Expressions.Expression%601.Compile%2A>, která zkompiluje kód reprezentovaný stromem výrazu do delegáta spustitelného souboru.  
   
- The following code example demonstrates how to compile an expression tree and run the resulting code.  
+ Následující příklad kódu ukazuje, jak zkompilovat strom výrazu a spustit výsledný kód.  
   
 ```vb  
 ' Creating an expression tree.  
@@ -139,13 +139,13 @@ Console.WriteLine(expr.Compile()(4))
 ' Also prints True.  
 ```  
   
- For more information, see [How to: Execute Expression Trees (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md).  
+ Další informace najdete v tématu [Postup: spuštění stromů výrazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Linq.Expressions>
-- [How to: Execute Expression Trees (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)
-- [How to: Modify Expression Trees (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-modify-expression-trees.md)
+- [Postupy: spouštění stromů výrazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)
+- [Postupy: Změna stromů výrazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-modify-expression-trees.md)
 - [Výrazy lambda](../../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)
 - [Přehled DLR (Dynamic Language Runtime)](../../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md)
-- [Programming Concepts (Visual Basic)](../../../../visual-basic/programming-guide/concepts/index.md)
+- [Koncepty programování (Visual Basic)](../../../../visual-basic/programming-guide/concepts/index.md)

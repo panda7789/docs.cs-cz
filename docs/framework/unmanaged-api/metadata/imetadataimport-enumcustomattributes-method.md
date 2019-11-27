@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74440235"
 ---
 # <a name="imetadataimportenumcustomattributes-method"></a>IMetaDataImport::EnumCustomAttributes – metoda
-Enumerates custom attribute-definition tokens associated with the specified type or member.  
+Vytvoří výčet tokenů definice vlastního atributu přidružených k zadanému typu nebo členu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,38 +40,38 @@ HRESULT EnumCustomAttributes (
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [in, out] A pointer to the returned enumerator.  
+ [in, out] Ukazatel na vrácený enumerátor.  
   
  `tk`  
- [in] A token for the scope of the enumeration, or zero for all custom attributes.  
+ pro Token pro rozsah výčtu nebo nula pro všechny vlastní atributy.  
   
  `tkType`  
- [in] A token for the constructor of the type of the attributes to be enumerated, or `null` for all types.  
+ pro Token pro konstruktor typu atributů, které mají být vyčísleny, nebo `null` pro všechny typy.  
   
  `rCustomAttributes`  
- [out] An array of custom attribute tokens.  
+ mimo Pole tokenů vlastních atributů.  
   
  `cMax`  
- [in] The maximum size of the `rCustomAttributes` array.  
+ pro Maximální velikost `rCustomAttributes` pole  
   
  `pcCustomAttributes`  
- [out, optional] The actual number of token values returned in `rCustomAttributes`.  
+ [out, volitelné] Skutečný počet hodnot tokenu vrácených v `rCustomAttributes`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumCustomAttributes` returned successfully.|  
-|`S_FALSE`|There are no custom attributes to enumerate. In that case, `pcCustomAttributes` is zero.|  
+|`S_OK`|`EnumCustomAttributes` byla úspěšně vrácena.|  
+|`S_FALSE`|Neexistují žádné vlastní atributy k vytvoření výčtu. V takovém případě je `pcCustomAttributes` nula.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

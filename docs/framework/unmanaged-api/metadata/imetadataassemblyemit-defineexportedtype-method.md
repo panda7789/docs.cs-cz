@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74432065"
 ---
 # <a name="imetadataassemblyemitdefineexportedtype-method"></a>IMetaDataAssemblyEmit::DefineExportedType – metoda
-Creates an `ExportedType` structure containing metadata for the specified exported type, and returns the associated metadata token.  
+Vytvoří strukturu `ExportedType` obsahující metadata pro zadaný exportovaný typ a vrátí přidružený token metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,39 +39,39 @@ HRESULT DefineExportedType (
   
 ## <a name="parameters"></a>Parametry  
  `szName`  
- [in] The name of type to be exported. For version 1.1 of the common language runtime, the name of the exported type must exactly match the name given in the `TypeDef` for the type.  
+ pro Název typu, který má být exportován. Pro verzi 1,1 modulu Common Language Runtime musí název exportovaného typu přesně odpovídat názvu uvedenému v `TypeDef` pro daný typ.  
   
  `tkImplementation`  
- [in] A token specifying where the exported type is implemented. The valid values and their associated meanings are:  
+ pro Token určující, kde je implementován exportovaný typ. Platné hodnoty a jejich přidružené významy jsou:  
   
-- `mdFile` The type is implemented in a different file within this assembly.  
+- `mdFile` je typ implementován v jiném souboru v rámci tohoto sestavení.  
   
-- `mdAssemblyRef` The type is implemented in a different assembly.  
+- `mdAssemblyRef` typ je implementován v jiném sestavení.  
   
-- `mdExportedTYpe` The type is nested within some other type.  
+- `mdExportedTYpe` je typ vnořen v jiném typu.  
   
-- `mdFileNil` The type is in the same file as the manifest and is not a nested type.  
+- `mdFileNil` typ je ve stejném souboru jako manifest a není vnořený typ.  
   
  `tkTypeDef`  
- [in] A token to the metadata that specifies the type to be exported. This value is entered in the `TypeDef` table in the file that implements the type and is relevant only if that file is in this assembly.  
+ pro Token metadat, který určuje typ, který má být exportován. Tato hodnota je zadána v tabulce `TypeDef` v souboru, který implementuje typ a je relevantní pouze v případě, že tento soubor je v tomto sestavení.  
   
  `dwExportedTypeFlags`  
- [in] A bitwise combination of [CorTypeAttr](../../../../docs/framework/unmanaged-api/metadata/cortypeattr-enumeration.md) enumeration values that define the property settings for the exported type.  
+ pro Bitová kombinace hodnot výčtu [CorTypeAttr –](../../../../docs/framework/unmanaged-api/metadata/cortypeattr-enumeration.md) , která definuje nastavení vlastností pro exportovaný typ.  
   
  `pmdct`  
- [out] A pointer to the returned metadata token that indicates the exported type.  
+ mimo Ukazatel na vrácený token metadat, který označuje exportovaný typ.  
   
 ## <a name="remarks"></a>Poznámky  
- An `ExportedType` metadata structure must be defined for each type that is exposed by this assembly and that is implemented in a module other than the one containing the manifest.  
+ `ExportedType` struktura metadat musí být definována pro každý typ, který je vystaven tímto sestavením a který je implementován v jiném modulu než ten, který obsahuje manifest.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforma:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

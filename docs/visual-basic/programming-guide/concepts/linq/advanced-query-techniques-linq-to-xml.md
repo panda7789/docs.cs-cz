@@ -9,22 +9,22 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74345787"
 ---
-# <a name="advanced-query-techniques-linq-to-xml-visual-basic"></a>Advanced Query Techniques (LINQ to XML) (Visual Basic)
-This section provides examples of more advanced [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] query techniques.  
+# <a name="advanced-query-techniques-linq-to-xml-visual-basic"></a>Pokročilé techniky dotazů (LINQ to XML) (Visual Basic)
+V této části najdete příklady pokročilejších technik [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazů.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
 |Téma|Popis|  
 |-----------|-----------------|  
-|[How to: Join Two Collections (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-two-collections-linq-to-xml.md)|Shows how to use the `Join` clause to take advantage of relationships in XML data.|  
-|[How to: Create Hierarchy Using Grouping (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-hierarchy-using-grouping.md)|Shows how to group data, and then generate XML based on the grouping.|  
-|[How to: Query LINQ to XML Using XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-linq-to-xml-using-xpath.md)|Shows how to retrieve collections based on XPath queries.|  
-|[How to: Write a LINQ to XML Axis Method (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-write-a-linq-to-xml-axis-method.md)|Shows how to write a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] axis method.|  
-|[How to: List All Nodes in a Tree (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-list-all-nodes-in-a-tree.md)|Presents a utility method that lists all nodes in an XML tree. This is useful for debugging code that modifies an XML tree.|  
-|[How to: Retrieve Paragraphs from an Office Open XML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-retrieve-paragraphs-from-an-office-open-xml-document.md)|Presents code that opens an Office Open XML Document, retrieves the paragraphs in a collection of XElement objects, the text of the paragraphs, and the style of the paragraphs.|  
-|[How to: Modify an Office Open XML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-modify-an-office-open-xml-document.md)|Presents code that opens, modifies, and saves an Office Open XML Document.|  
-|[How to: Populate an XML Tree from the File System (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-populate-an-xml-tree-from-the-file-system.md)|Presents code that creates an XML tree from the file system.|  
+|[Postupy: spojení dvou kolekcí (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-two-collections-linq-to-xml.md)|Ukazuje, jak použít klauzuli `Join` pro využití relací v datech XML.|  
+|[Postupy: vytváření hierarchií pomocí seskupení (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-hierarchy-using-grouping.md)|Ukazuje, jak seskupit data a pak vygenerovat XML na základě seskupení.|  
+|[Postupy: dotazování LINQ to XML pomocí XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-linq-to-xml-using-xpath.md)|Ukazuje, jak načíst kolekce na základě dotazů XPath.|  
+|[Postupy: zápis metody osy LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-write-a-linq-to-xml-axis-method.md)|Ukazuje, jak napsat metodu [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] osy.|  
+|[Postupy: vypsání seznamu všech uzlů ve stromu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-list-all-nodes-in-a-tree.md)|Prezentuje metodu nástroje, která obsahuje seznam všech uzlů ve stromu XML. To je užitečné pro ladění kódu, který upravuje strom XML.|  
+|[Postupy: načtení odstavců z dokumentu Office Open XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-retrieve-paragraphs-from-an-office-open-xml-document.md)|Prezentuje kód, který otevírá dokument Office Open XML, načítá odstavce v kolekci objektů XElement, textu odstavců a stylu odstavců.|  
+|[Postupy: Úprava dokumentu Office Open XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-modify-an-office-open-xml-document.md)|Prezentuje kód, který se otevře, upraví a uloží dokument Office Open XML.|  
+|[Postupy: naplnění stromu XML ze systému souborů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-populate-an-xml-tree-from-the-file-system.md)|Prezentuje kód, který vytvoří strom XML ze systému souborů.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Querying XML Trees (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/querying-xml-trees.md)
+- [Dotazování na stromy XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/querying-xml-trees.md)

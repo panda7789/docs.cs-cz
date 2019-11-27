@@ -16,26 +16,26 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351297"
 ---
 # <a name="public-visual-basic"></a>Public (Visual Basic)
-Specifies that one or more declared programming elements have no access restrictions.  
+Určuje, že nejmíň jeden deklarovaný programový prvek nemá žádná omezení přístupu.  
   
 ## <a name="remarks"></a>Poznámky  
- If you are publishing a component or set of components, such as a class library, you usually want the programming elements to be accessible by any code that interoperates with your assembly. To confer such unlimited access on an element, you can declare it with `Public`.  
+ Pokud publikujete součást nebo sadu komponent, jako je například knihovna tříd, obvykle chcete, aby byly k dispozici programové prvky pro jakýkoliv kód, který spolupracuje s vaším sestavením. Chcete-li udělit takovému neomezenému přístupu u prvku, můžete ho deklarovat pomocí `Public`.  
   
- Public access is the normal level for a programming element when you do not need to limit access to it. Note that the access level of an element declared within an interface, module, class, or structure defaults to `Public` if you do not declare it otherwise.  
+ Veřejný přístup je normální úroveň pro programovací prvek, pokud nepotřebujete omezit přístup k němu. Všimněte si, že úroveň přístupu elementu deklarovaného v rámci rozhraní, modulu, třídy nebo struktury se standardně `Public`, pokud jej nedeklarujete jinak.  
   
-## <a name="rules"></a>Rules  
+## <a name="rules"></a>Pravidla  
   
-- **Declaration Context.** You can use `Public` only at module, interface, or namespace level. This means the declaration context for a `Public` element must be a source file, namespace, interface, module, class, or structure, and cannot be a procedure.  
+- **Kontext deklarace** `Public` lze použít pouze na úrovni modulu, rozhraní nebo oboru názvů. To znamená, že kontext deklarace pro prvek `Public` musí být zdrojový soubor, obor názvů, rozhraní, modul, třída nebo struktura a nemůže být procedura.  
   
-## <a name="behavior"></a>Behavior  
+## <a name="behavior"></a>Chování  
   
-- **Access Level.** All code that can access a module, class, or structure can access its `Public` elements.  
+- **Úroveň přístupu.** Veškerý kód, který má přístup k modulu, třídě nebo struktuře, má přístup k jeho prvkům `Public`.  
   
-- **Default Access.** Local variables inside a procedure default to public access, and you cannot use any access modifiers on them.  
+- **Výchozí přístup** Místní proměnné uvnitř procedury jsou ve výchozím nastavení veřejný přístup a nemůžete použít žádné modifikátory přístupu.  
   
-- **Access Modifiers.** The keywords that specify access level are called *access modifiers*. For a comparison of the access modifiers, see [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+- **Modifikátory přístupu.** Klíčová slova, která určují úroveň přístupu, se nazývají *modifikátory přístupu*. Porovnání modifikátorů přístupu najdete [v tématu úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
- The `Public` modifier can be used in these contexts:  
+ V těchto kontextech lze použít modifikátor `Public`:  
   
  [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)  
   
@@ -72,7 +72,7 @@ Specifies that one or more declared programming elements have no access restrict
 - [Private](../../../visual-basic/language-reference/modifiers/private.md)
 - [Private Protected](private-protected.md)
 - [Protected Friend](protected-friend.md)
-- [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
+- [Úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
 - [Procedury](../../../visual-basic/programming-guide/language-features/procedures/index.md)
 - [Struktury](../../../visual-basic/programming-guide/language-features/data-types/structures.md)
 - [Objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

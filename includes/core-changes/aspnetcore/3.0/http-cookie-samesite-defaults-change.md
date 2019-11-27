@@ -12,7 +12,7 @@ ms.locfileid: "74282532"
 
 #### <a name="version-introduced"></a>Představená verze
 
-3.0
+3,0
 
 #### <a name="old-behavior"></a>Staré chování
 

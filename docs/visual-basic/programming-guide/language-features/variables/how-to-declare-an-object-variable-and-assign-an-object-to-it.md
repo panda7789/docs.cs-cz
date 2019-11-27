@@ -1,5 +1,5 @@
 ---
-title: 'How to: Declare an Object Variable and Assign an Object to It'
+title: 'Postupy: deklarace objektové proměnné a přiřazení objektu k němu'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - object variables [Visual Basic], declaring
@@ -14,18 +14,18 @@ ms.locfileid: "74352906"
 ---
 # <a name="how-to-declare-an-object-variable-and-assign-an-object-to-it-in-visual-basic"></a>Postupy: Deklarace objektové proměnné a přiřazení objektu k proměnné v jazyce Visual Basic
 
-You declare a variable of the [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md) by specifying `As Object` in a [Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md). You assign an object to such a variable by placing the object after the equal sign (`=`) in an assignment statement or initialization clause.
+Proměnnou [datového typu objektu](../../../../visual-basic/language-reference/data-types/object-data-type.md) deklarujete zadáním `As Object` v [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md). Objektu této proměnné přiřadíte umístěním objektu za znaménko rovná se (`=`) v příkazu přiřazení nebo v klauzuli inicializace.
 
 ## <a name="example"></a>Příklad
 
-The following example declares an `Object` variable and assigns the current instance to it.
+Následující příklad deklaruje `Object` proměnnou a přiřadí k ní aktuální instanci.
 
 ```vb
 Dim thisObject As Object
 thisObject = "This is an Object"
 ```
 
-You can combine the declaration and assignment by initializing the variable as part of its declaration. The following example is equivalent to the preceding example.
+Můžete zkombinovat deklaraci a přiřazení inicializací proměnné jako součást její deklarace. Následující příklad je ekvivalentní k předchozímu příkladu.
 
 ```vb
 Dim thisObject As Object= "This is an Object"
@@ -33,13 +33,13 @@ Dim thisObject As Object= "This is an Object"
 
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu
 
-This example requires:
+Tento příklad vyžaduje:
 
-- A reference to the <xref:System> namespace.
+- Odkaz na obor názvů <xref:System>.
 
-- A class, structure, or module in which to put the `Dim` statement.
+- Třída, struktura nebo modul, do kterého se má vložit příkaz `Dim`.
 
-- A procedure in which to put the assignment statement.
+- Postup pro vložení příkazu přiřazení.
 
 ## <a name="see-also"></a>Viz také:
 

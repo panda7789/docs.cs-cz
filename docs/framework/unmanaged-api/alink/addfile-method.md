@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446680"
 ---
 # <a name="addfile-method"></a>AddFile – metoda
-Adds files to the assembly. Can also be used to create unbound modules.  
+Přidá soubory do sestavení. Lze také použít k vytvoření nevázaných modulů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,28 +39,28 @@ HRESULT AddFile(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- Unique ID of the assembly to be augmented.  
+ Jedinečné ID sestavení, které se má rozšířit  
   
  `pszFilename`  
- Fully qualified name of file to be added.  
+ Plně kvalifikovaný název souboru, který se má přidat  
   
  `dwFlags`  
- COM+ FileDef flags such as `ffContainsNoMetaData` and `ffWriteable`. `dwFlags` is passed to [DefineFile Method](../metadata/imetadataassemblyemit-definefile-method.md).  
+ Značky COM+ FileDef, například `ffContainsNoMetaData` a `ffWriteable`. `dwFlags` se předává do [metody DefineFile –](../metadata/imetadataassemblyemit-definefile-method.md).  
   
  `pEmitter`  
- [IMetaDataEmit Interface](../metadata/imetadataemit-interface.md) interface to be used to emit metadata, if necessary.  
+ Rozhraní [rozhraní IMetaDataEmit](../metadata/imetadataemit-interface.md) , které se v případě potřeby používá k vygenerování metadat.  
   
  `pFileToken`  
- Pointer to where the unique ID of the added file will be stored.  
+ Ukazatel na místo, kde bude uloženo jedinečné ID přidaného souboru.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Returns S_OK if the method succeeds.  
+ Vrátí S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Requires alink.h.  
+ Vyžaduje ALink. h.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink – rozhraní](ialink-interface.md)
 - [IALink2 – rozhraní](ialink2-interface.md)
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)

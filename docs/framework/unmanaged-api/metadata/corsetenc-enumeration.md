@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74432770"
 ---
 # <a name="corsetenc-enumeration"></a>CorSetENC – výčet
-Contains values used to influence behavior during the generation of metadata.  
+Obsahuje hodnoty, které slouží k ovlivnění chování během generování metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,25 +42,25 @@ typedef enum CorSetENC {
 } CorSetENC;  
 ```  
   
-## <a name="members"></a>Členové  
+## <a name="members"></a>Members  
   
 |Člen|Popis|  
 |------------|-----------------|  
 |`MDSetENCOn`|Zastaralé.|  
 |`MDSetENCOff`|Zastaralé.|  
-|`MDUpdateENC`|Indicates that whereas metadata can be updated, tokens cannot be moved.|  
-|`MDUpdateFull`|Indicates that tokens can be moved during updates.|  
-|`MDUpdateExtension`|Indicates that updates can consist only of additions. Tokens cannot be moved.|  
-|`MDUpdateIncremental`|Indicates that compilation is incremental.|  
-|`MDUpdateDelta`|Indicates that only changed metadata should be saved.|  
-|`MDUpdateMask`|Includes `MDUpdateENC`, `MDUpdateFull` and `MDUpdateIncremental`.|  
+|`MDUpdateENC`|Označuje, že je možné aktualizovat metadata, a tokeny nelze přesunout.|  
+|`MDUpdateFull`|Označuje, že tokeny lze během aktualizací přesunout.|  
+|`MDUpdateExtension`|Označuje, že aktualizace mohou sestávat pouze z dodatků. Tokeny nejde přesunout.|  
+|`MDUpdateIncremental`|Indikuje, že je kompilace přírůstková.|  
+|`MDUpdateDelta`|Indikuje, že se mají ukládat jenom změněná metadata.|  
+|`MDUpdateMask`|Zahrnuje `MDUpdateENC`, `MDUpdateFull` a `MDUpdateIncremental`.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **Hlavička:** CorHdr. h  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

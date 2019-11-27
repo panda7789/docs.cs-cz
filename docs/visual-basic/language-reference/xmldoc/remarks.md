@@ -12,8 +12,8 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352248"
 ---
-# <a name="remarks-visual-basic"></a>\<remarks> (Visual Basic)
-Specifies a remarks section for the member.  
+# <a name="remarks-visual-basic"></a>\<poznámky > (Visual Basic)
+Určuje oddíl poznámky pro člena.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,17 +23,17 @@ Specifies a remarks section for the member.
   
 ## <a name="parameters"></a>Parametry  
  `description`  
- A description of the member.  
+ Popis člena  
   
 ## <a name="remarks"></a>Poznámky  
- Use the `<remarks>` tag to add information about a type, supplementing the information specified with [\<summary>](../../../visual-basic/language-reference/xmldoc/summary.md).  
+ Pomocí značky `<remarks>` přidáte informace o typu a doplníte informace zadané pomocí [\<summary >](../../../visual-basic/language-reference/xmldoc/summary.md).  
   
- This information appears in the Object Browser. For information about the Object Browser, see [Viewing the Structure of Code](/visualstudio/ide/viewing-the-structure-of-code).  
+ Tyto informace se zobrazí v Prohlížeč objektů. Informace o Prohlížeč objektů naleznete v tématu [zobrazení struktury kódu](/visualstudio/ide/viewing-the-structure-of-code).  
   
- Compile with [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) to process documentation comments to a file.  
+ Zkompilujte s [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
   
 ## <a name="example"></a>Příklad  
- This example uses the `<remarks>` tag to explain what the `UpdateRecord` method does.  
+ V tomto příkladu se používá značka `<remarks>` k vysvětlení toho, co metoda `UpdateRecord` dělá.  
   
  [!code-vb[VbVbcnXmlDocComments#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#6)]  
   

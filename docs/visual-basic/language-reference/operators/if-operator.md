@@ -20,7 +20,7 @@ ms.locfileid: "74331006"
 ---
 # <a name="if-operator-visual-basic"></a>If – operátor (Visual Basic)
 
-Uses short-circuit evaluation to conditionally return one of two values. The `If` operator can be called with three arguments or with two arguments.
+Nástroj používá k podmíněnému vrácení jedné ze dvou hodnot hodnocení krátkodobého okruhu. Operátor `If` lze volat se třemi argumenty nebo dvěma argumenty.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -28,38 +28,38 @@ Uses short-circuit evaluation to conditionally return one of two values. The `If
 If( [argument1,] argument2, argument3 )
 ```
 
-## <a name="if-operator-called-with-three-arguments"></a>If operator called with three arguments
+## <a name="if-operator-called-with-three-arguments"></a>If volal operátor se třemi argumenty
 
-When `If` is called by using three arguments, the first argument must evaluate to a value that can be cast as a `Boolean`. That `Boolean` value will determine which of the other two arguments is evaluated and returned. The following list applies only when the `If` operator is called by using three arguments.
+Když je `If` volána pomocí tří argumentů, první argument musí být vyhodnocen na hodnotu, která může být převedena jako `Boolean`. Tato `Boolean` hodnota určuje, který z dalších dvou argumentů bude vyhodnocen a vrácen. Následující seznam platí pouze v případě, že je operátor `If` volán pomocí tří argumentů.
 
 ### <a name="parts"></a>Součásti
 
 |Termín|Definice|
 |---|---|
-|`argument1`|Požadováno. `Boolean`. Determines which of the other arguments to evaluate and return.|
-|`argument2`|Požadováno. `Object`. Evaluated and returned if `argument1` evaluates to `True`.|
-|`argument3`|Požadováno. `Object`. Evaluated and returned if `argument1` evaluates to `False` or if `argument1` is a [Nullable](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)`Boolean` variable that evaluates to [Nothing](../../../visual-basic/language-reference/nothing.md).|
+|`argument1`|Požadováno. `Boolean`. Určuje, který z dalších argumentů má být vyhodnocen a vrácen.|
+|`argument2`|Požadováno. `Object`. Vyhodnoceno a vráceno, pokud `argument1` vyhodnocuje jako `True`.|
+|`argument3`|Požadováno. `Object`. Vyhodnoceno a vráceno, pokud `argument1` vyhodnocuje jako `False` nebo pokud `argument1` je`Boolean` proměnná s [možnou hodnotou null](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md) , která je vyhodnocena jako [Nothing](../../../visual-basic/language-reference/nothing.md).|
 
-An `If` operator that is called with three arguments works like an `IIf` function except that it uses short-circuit evaluation. An `IIf` function always evaluates all three of its arguments, whereas an `If` operator that has three arguments evaluates only two of them. The first `If` argument is evaluated and the result is cast as a `Boolean` value, `True` or `False`. If the value is `True`, `argument2` is evaluated and its value is returned, but `argument3` is not evaluated. If the value of the `Boolean` expression is `False`, `argument3` is evaluated and its value is returned, but `argument2` is not evaluated. The following examples illustrate the use of `If` when three arguments are used:
+Operátor `If`, který se nazývá se třemi argumenty, funguje jako `IIf` funkce s tím rozdílem, že používá testování pomocí krátkého okruhu. Funkce `IIf` vždy vyhodnocuje všechny tři argumenty, zatímco operátor `If`, který má tři argumenty, vyhodnocuje pouze dva z nich. Vyhodnotí se první argument `If` a výsledek se přetypování jako `Boolean` hodnota, `True` nebo `False`. Pokud je hodnota `True`, vyhodnotí se `argument2` a vrátí se její hodnota, ale `argument3` není vyhodnocena. Pokud je hodnota výrazu `Boolean` `False`, je vyhodnocen `argument3` a jeho hodnota je vrácena, ale `argument2` není vyhodnocena. Následující příklady ilustrují použití `If`, když se používají tři argumenty:
 
 [!code-vb[VbVbalrOperators#100](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class4.vb#100)]
 
-The following example illustrates the value of short-circuit evaluation. The example shows two attempts to divide variable `number` by variable `divisor` except when `divisor` is zero. In that case, a 0 should be returned, and no attempt should be made to perform the division because a run-time error would result. Because the `If` expression uses short-circuit evaluation, it evaluates either the second or the third argument, depending on the value of the first argument. If the first argument is true, the divisor is not zero and it is safe to evaluate the second argument and perform the division. If the first argument is false, only the third argument is evaluated and a 0 is returned. Therefore, when the divisor is 0, no attempt is made to perform the division and no error results. However, because `IIf` does not use short-circuit evaluation, the second argument is evaluated even when the first argument is false. This causes a run-time divide-by-zero error.
+Následující příklad znázorňuje hodnotu vyhodnocování krátkodobého okruhu. Příklad ukazuje dva pokusy o dělení `number` proměnných podle proměnných `divisor` kromě případů, kdy je `divisor` nula. V takovém případě by měl být vrácen 0 a žádný pokus o provedení dělení, protože by došlo k chybě za běhu. Vzhledem k tomu, že výraz `If` používá testování pomocí krátkého okruhu, vyhodnocuje buď druhý, nebo třetí argument v závislosti na hodnotě prvního argumentu. Pokud je první argument true, dělitel není nula a je bezpečné vyhodnotit druhý argument a provést dělení. Pokud je první argument false, je vyhodnocen pouze třetí argument a je vrácena hodnota 0. Proto pokud je dělitel 0, není proveden žádný pokus o provedení dělení a žádné výsledky chyby. Vzhledem k tomu, že `IIf` nepoužívá vyhodnocování krátkých okruhů, je druhý argument vyhodnocen i v případě, že je první argument nepravdivý. Tím dojde k chybě dělení nulou v době běhu.
 
 [!code-vb[VbVbalrOperators#101](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class4.vb#101)]
 
-## <a name="if-operator-called-with-two-arguments"></a>If operator called with two arguments
+## <a name="if-operator-called-with-two-arguments"></a>If volal operátor se dvěma argumenty
 
-The first argument to `If` can be omitted. This enables the operator to be called by using only two arguments. The following list applies only when the `If` operator is called with two arguments.
+První argument pro `If` lze vynechat. To umožňuje operátorovi zavolat pouze pomocí dvou argumentů. Následující seznam platí pouze v případě, že je operátor `If` volán se dvěma argumenty.
 
 ### <a name="parts"></a>Součásti
 
 |Termín|Definice|
 |---|---|
-|`argument2`|Požadováno. `Object`. Must be a reference or nullable type. Evaluated and returned when it evaluates to anything other than `Nothing`.|
-|`argument3`|Požadováno. `Object`. Evaluated and returned if `argument2` evaluates to `Nothing`.|
+|`argument2`|Požadováno. `Object`. Musí se jednat o odkaz nebo typ s možnou hodnotou null. Vyhodnoceno a vráceno, když se vyhodnotí jako cokoli jiného než `Nothing`.|
+|`argument3`|Požadováno. `Object`. Vyhodnoceno a vráceno, pokud `argument2` vyhodnocuje jako `Nothing`.|
 
-When the `Boolean` argument is omitted, the first argument must be a reference or nullable type. If the first argument evaluates to `Nothing`, the value of the second argument is returned. In all other cases, the value of the first argument is returned. The following example illustrates how this evaluation works:
+Při vynechání argumentu `Boolean` musí být prvním argumentem odkaz nebo typ s možnou hodnotou null. Pokud je první argument vyhodnocen jako `Nothing`, je vrácena hodnota druhého argumentu. Ve všech ostatních případech je vrácena hodnota prvního argumentu. Následující příklad ukazuje, jak Toto vyhodnocení funguje:
 
 [!code-vb[VbVbalrOperators#102](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class4.vb#102)]
 
