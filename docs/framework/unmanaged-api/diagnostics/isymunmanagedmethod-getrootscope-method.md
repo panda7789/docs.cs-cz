@@ -22,26 +22,26 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448911"
 ---
-# <a name="isymunmanagedmethodgetrootscope-method"></a><span data-ttu-id="2d282-102">ISymUnmanagedMethod::GetRootScope – metoda</span><span class="sxs-lookup"><span data-stu-id="2d282-102">ISymUnmanagedMethod::GetRootScope Method</span></span>
-<span data-ttu-id="2d282-103">Gets the root lexical scope within this method.</span><span class="sxs-lookup"><span data-stu-id="2d282-103">Gets the root lexical scope within this method.</span></span> <span data-ttu-id="2d282-104">This scope encloses the entire method.</span><span class="sxs-lookup"><span data-stu-id="2d282-104">This scope encloses the entire method.</span></span>  
+# <a name="isymunmanagedmethodgetrootscope-method"></a><span data-ttu-id="c5ac3-102">ISymUnmanagedMethod::GetRootScope – metoda</span><span class="sxs-lookup"><span data-stu-id="c5ac3-102">ISymUnmanagedMethod::GetRootScope Method</span></span>
+<span data-ttu-id="c5ac3-103">Získá kořenový lexikální rozsah v rámci této metody.</span><span class="sxs-lookup"><span data-stu-id="c5ac3-103">Gets the root lexical scope within this method.</span></span> <span data-ttu-id="c5ac3-104">Tento obor uzavírá celou metodu.</span><span class="sxs-lookup"><span data-stu-id="c5ac3-104">This scope encloses the entire method.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="2d282-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2d282-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c5ac3-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c5ac3-105">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetRootScope(  
     [out, retval] ISymUnmanagedScope** pRetVal);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="2d282-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="2d282-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="c5ac3-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="c5ac3-106">Parameters</span></span>  
  `pRetVal`  
- <span data-ttu-id="2d282-107">[out] A pointer that is set to the returned [ISymUnmanagedScope](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md) interface.</span><span class="sxs-lookup"><span data-stu-id="2d282-107">[out] A pointer that is set to the returned [ISymUnmanagedScope](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md) interface.</span></span>  
+ <span data-ttu-id="c5ac3-107">mimo Ukazatel, který je nastaven na vrácené rozhraní [ISymUnmanagedScope](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md) .</span><span class="sxs-lookup"><span data-stu-id="c5ac3-107">[out] A pointer that is set to the returned [ISymUnmanagedScope](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedscope-interface.md) interface.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="2d282-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="2d282-108">Return Value</span></span>  
- <span data-ttu-id="2d282-109">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span><span class="sxs-lookup"><span data-stu-id="2d282-109">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="c5ac3-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="c5ac3-108">Return Value</span></span>  
+ <span data-ttu-id="c5ac3-109">S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="c5ac3-109">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="2d282-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2d282-110">Requirements</span></span>  
- <span data-ttu-id="2d282-111">**Header:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="2d282-111">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c5ac3-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c5ac3-110">Requirements</span></span>  
+ <span data-ttu-id="c5ac3-111">**Hlavička:** CorSym. idl, CorSym. h</span><span class="sxs-lookup"><span data-stu-id="c5ac3-111">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="2d282-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2d282-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c5ac3-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c5ac3-112">See also</span></span>
 
-- [<span data-ttu-id="2d282-113">ISymUnmanagedMethod – rozhraní</span><span class="sxs-lookup"><span data-stu-id="2d282-113">ISymUnmanagedMethod Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)
+- [<span data-ttu-id="c5ac3-113">ISymUnmanagedMethod – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c5ac3-113">ISymUnmanagedMethod Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)
