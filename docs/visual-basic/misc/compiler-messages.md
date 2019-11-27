@@ -1,5 +1,5 @@
 ---
-title: Compiler Messages
+title: Zprávy kompilátoru
 ms.date: 07/20/2015
 helpviewer_keywords:
 - compiler errors
@@ -12,5 +12,5 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353301"
 ---
-# <a name="visual-basic-compiler-messages"></a><span data-ttu-id="60a7c-102">Visual Basic Compiler Messages</span><span class="sxs-lookup"><span data-stu-id="60a7c-102">Visual Basic Compiler Messages</span></span>
-<span data-ttu-id="60a7c-103">This section contains the Visual Basic error messages that occur at compile time.</span><span class="sxs-lookup"><span data-stu-id="60a7c-103">This section contains the Visual Basic error messages that occur at compile time.</span></span>
+# <a name="visual-basic-compiler-messages"></a><span data-ttu-id="ff7a1-102">Zprávy kompilátoru Visual Basic</span><span class="sxs-lookup"><span data-stu-id="ff7a1-102">Visual Basic Compiler Messages</span></span>
+<span data-ttu-id="ff7a1-103">Tato část obsahuje Visual Basic chybové zprávy, ke kterým dochází v době kompilace.</span><span class="sxs-lookup"><span data-stu-id="ff7a1-103">This section contains the Visual Basic error messages that occur at compile time.</span></span>

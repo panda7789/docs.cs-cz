@@ -1,5 +1,5 @@
 ---
-title: Off
+title: Vypnuto
 ms.date: 07/20/2015
 f1_keywords:
 - Off
@@ -14,18 +14,18 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74331937"
 ---
-# <a name="off-visual-basic"></a><span data-ttu-id="6cb99-102">Off (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="6cb99-102">Off (Visual Basic)</span></span>
-<span data-ttu-id="6cb99-103">Turns a compiler option off.</span><span class="sxs-lookup"><span data-stu-id="6cb99-103">Turns a compiler option off.</span></span>  
+# <a name="off-visual-basic"></a><span data-ttu-id="895f4-102">Off (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="895f4-102">Off (Visual Basic)</span></span>
+<span data-ttu-id="895f4-103">Vypne možnost kompilátoru.</span><span class="sxs-lookup"><span data-stu-id="895f4-103">Turns a compiler option off.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="6cb99-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="6cb99-104">Remarks</span></span>  
- <span data-ttu-id="6cb99-105">The `Off` keyword can be used in these contexts:</span><span class="sxs-lookup"><span data-stu-id="6cb99-105">The `Off` keyword can be used in these contexts:</span></span>  
+## <a name="remarks"></a><span data-ttu-id="895f4-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="895f4-104">Remarks</span></span>  
+ <span data-ttu-id="895f4-105">Klíčové slovo `Off` lze použít v těchto kontextech:</span><span class="sxs-lookup"><span data-stu-id="895f4-105">The `Off` keyword can be used in these contexts:</span></span>  
   
- [<span data-ttu-id="6cb99-106">Příkaz Option Explicit</span><span class="sxs-lookup"><span data-stu-id="6cb99-106">Option Explicit Statement</span></span>](../../visual-basic/language-reference/statements/option-explicit-statement.md)  
+ [<span data-ttu-id="895f4-106">Příkaz Option Explicit</span><span class="sxs-lookup"><span data-stu-id="895f4-106">Option Explicit Statement</span></span>](../../visual-basic/language-reference/statements/option-explicit-statement.md)  
   
- [<span data-ttu-id="6cb99-107">Příkaz Option Strict</span><span class="sxs-lookup"><span data-stu-id="6cb99-107">Option Strict Statement</span></span>](../../visual-basic/language-reference/statements/option-strict-statement.md)  
+ [<span data-ttu-id="895f4-107">Příkaz Option Strict</span><span class="sxs-lookup"><span data-stu-id="895f4-107">Option Strict Statement</span></span>](../../visual-basic/language-reference/statements/option-strict-statement.md)  
   
- [<span data-ttu-id="6cb99-108">Příkaz Option Infer</span><span class="sxs-lookup"><span data-stu-id="6cb99-108">Option Infer Statement</span></span>](../../visual-basic/language-reference/statements/option-infer-statement.md)  
+ [<span data-ttu-id="895f4-108">Příkaz Option Infer</span><span class="sxs-lookup"><span data-stu-id="895f4-108">Option Infer Statement</span></span>](../../visual-basic/language-reference/statements/option-infer-statement.md)  
   
-## <a name="see-also"></a><span data-ttu-id="6cb99-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6cb99-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="895f4-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="895f4-109">See also</span></span>
 
-- [<span data-ttu-id="6cb99-110">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="6cb99-110">Keywords</span></span>](../../visual-basic/language-reference/keywords/index.md)
+- [<span data-ttu-id="895f4-110">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="895f4-110">Keywords</span></span>](../../visual-basic/language-reference/keywords/index.md)

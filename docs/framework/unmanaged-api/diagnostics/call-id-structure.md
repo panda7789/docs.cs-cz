@@ -21,10 +21,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448593"
 ---
-# <a name="call_id-structure"></a><span data-ttu-id="866a3-102">CALL_ID – struktura</span><span class="sxs-lookup"><span data-stu-id="866a3-102">CALL_ID Structure</span></span>
-<span data-ttu-id="866a3-103">Provides information to a debugger about a function that is being called.</span><span class="sxs-lookup"><span data-stu-id="866a3-103">Provides information to a debugger about a function that is being called.</span></span> <span data-ttu-id="866a3-104">See the [INotifySink2](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md) interface for more information.</span><span class="sxs-lookup"><span data-stu-id="866a3-104">See the [INotifySink2](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md) interface for more information.</span></span>  
+# <a name="call_id-structure"></a><span data-ttu-id="f9dda-102">CALL_ID – struktura</span><span class="sxs-lookup"><span data-stu-id="f9dda-102">CALL_ID Structure</span></span>
+<span data-ttu-id="f9dda-103">Poskytuje informace ladicímu programu o funkci, která je volána.</span><span class="sxs-lookup"><span data-stu-id="f9dda-103">Provides information to a debugger about a function that is being called.</span></span> <span data-ttu-id="f9dda-104">Další informace najdete v rozhraní [INotifySink2](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md) .</span><span class="sxs-lookup"><span data-stu-id="f9dda-104">See the [INotifySink2](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md) interface for more information.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="866a3-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="866a3-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f9dda-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f9dda-105">Syntax</span></span>  
   
 ```cpp  
 typedef struct tagCALL_ID  
@@ -38,21 +38,21 @@ typedef struct tagCALL_ID
 } CALL_ID;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="866a3-106">Členové</span><span class="sxs-lookup"><span data-stu-id="866a3-106">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="f9dda-106">Členové</span><span class="sxs-lookup"><span data-stu-id="f9dda-106">Members</span></span>  
   
-|<span data-ttu-id="866a3-107">Člen</span><span class="sxs-lookup"><span data-stu-id="866a3-107">Member</span></span>|<span data-ttu-id="866a3-108">Popis</span><span class="sxs-lookup"><span data-stu-id="866a3-108">Description</span></span>|  
+|<span data-ttu-id="f9dda-107">Člen</span><span class="sxs-lookup"><span data-stu-id="f9dda-107">Member</span></span>|<span data-ttu-id="f9dda-108">Popis</span><span class="sxs-lookup"><span data-stu-id="f9dda-108">Description</span></span>|  
 |------------|-----------------|  
-|`szMachine`|<span data-ttu-id="866a3-109">Identifies the machine that is making the call.</span><span class="sxs-lookup"><span data-stu-id="866a3-109">Identifies the machine that is making the call.</span></span>|  
-|`dwPid`|<span data-ttu-id="866a3-110">Identifies the machine processor.</span><span class="sxs-lookup"><span data-stu-id="866a3-110">Identifies the machine processor.</span></span>|  
-|`pUserThread`|<span data-ttu-id="866a3-111">Identifies the thread that is executing the call.</span><span class="sxs-lookup"><span data-stu-id="866a3-111">Identifies the thread that is executing the call.</span></span>|  
-|`addrStackPointer`|<span data-ttu-id="866a3-112">Specifies the address of the call stack.</span><span class="sxs-lookup"><span data-stu-id="866a3-112">Specifies the address of the call stack.</span></span>|  
-|`szEntryPoint`|<span data-ttu-id="866a3-113">Specifies the address of the call.</span><span class="sxs-lookup"><span data-stu-id="866a3-113">Specifies the address of the call.</span></span>|  
-|`szDestinationMachine`|<span data-ttu-id="866a3-114">Identifies the machine that will execute the call.</span><span class="sxs-lookup"><span data-stu-id="866a3-114">Identifies the machine that will execute the call.</span></span>|  
+|`szMachine`|<span data-ttu-id="f9dda-109">Identifikuje počítač, který provádí volání.</span><span class="sxs-lookup"><span data-stu-id="f9dda-109">Identifies the machine that is making the call.</span></span>|  
+|`dwPid`|<span data-ttu-id="f9dda-110">Identifikuje procesor počítače.</span><span class="sxs-lookup"><span data-stu-id="f9dda-110">Identifies the machine processor.</span></span>|  
+|`pUserThread`|<span data-ttu-id="f9dda-111">Identifikuje vlákno, které provádí volání.</span><span class="sxs-lookup"><span data-stu-id="f9dda-111">Identifies the thread that is executing the call.</span></span>|  
+|`addrStackPointer`|<span data-ttu-id="f9dda-112">Určuje adresu zásobníku volání.</span><span class="sxs-lookup"><span data-stu-id="f9dda-112">Specifies the address of the call stack.</span></span>|  
+|`szEntryPoint`|<span data-ttu-id="f9dda-113">Určuje adresu volání.</span><span class="sxs-lookup"><span data-stu-id="f9dda-113">Specifies the address of the call.</span></span>|  
+|`szDestinationMachine`|<span data-ttu-id="f9dda-114">Identifikuje počítač, který spustí volání.</span><span class="sxs-lookup"><span data-stu-id="f9dda-114">Identifies the machine that will execute the call.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="866a3-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="866a3-115">Requirements</span></span>  
- <span data-ttu-id="866a3-116">**Header:** ProtocolNotify2.idl</span><span class="sxs-lookup"><span data-stu-id="866a3-116">**Header:** ProtocolNotify2.idl</span></span>  
+## <a name="requirements"></a><span data-ttu-id="f9dda-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f9dda-115">Requirements</span></span>  
+ <span data-ttu-id="f9dda-116">**Hlavička:** ProtocolNotify2. idl</span><span class="sxs-lookup"><span data-stu-id="f9dda-116">**Header:** ProtocolNotify2.idl</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="866a3-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="866a3-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f9dda-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f9dda-117">See also</span></span>
 
-- [<span data-ttu-id="866a3-118">INotifySink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="866a3-118">INotifySink2 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)
-- [<span data-ttu-id="866a3-119">Struktury pro úložiště symbolů diagnostiky</span><span class="sxs-lookup"><span data-stu-id="866a3-119">Diagnostics Symbol Store Structures</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-structures.md)
+- [<span data-ttu-id="f9dda-118">INotifySink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f9dda-118">INotifySink2 Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md)
+- [<span data-ttu-id="f9dda-119">Struktury pro úložiště symbolů diagnostiky</span><span class="sxs-lookup"><span data-stu-id="f9dda-119">Diagnostics Symbol Store Structures</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-structures.md)

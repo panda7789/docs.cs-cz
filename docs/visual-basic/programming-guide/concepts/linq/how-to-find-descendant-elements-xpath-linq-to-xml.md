@@ -1,5 +1,5 @@
 ---
-title: 'How to: Find Descendant Elements (XPath-LINQ to XML)'
+title: 'Postupy: Vyhledání potomků elementů (XPath-LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: e7e2dc9e-bda9-420d-a5b1-4fabf1cca46b
 ms.openlocfilehash: 080afdb782bd6f1acaf2819814bb97a6e5ad0c77
@@ -9,15 +9,15 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346801"
 ---
-# <a name="how-to-find-descendant-elements-xpath-linq-to-xml-visual-basic"></a><span data-ttu-id="71aca-102">How to: Find Descendant Elements (XPath-LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="71aca-102">How to: Find Descendant Elements (XPath-LINQ to XML) (Visual Basic)</span></span>
-<span data-ttu-id="71aca-103">This topic shows how to get the descendant elements with a particular name.</span><span class="sxs-lookup"><span data-stu-id="71aca-103">This topic shows how to get the descendant elements with a particular name.</span></span>  
+# <a name="how-to-find-descendant-elements-xpath-linq-to-xml-visual-basic"></a><span data-ttu-id="a8db4-102">Postupy: Vyhledání Potomkových elementů (XPath-LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a8db4-102">How to: Find Descendant Elements (XPath-LINQ to XML) (Visual Basic)</span></span>
+<span data-ttu-id="a8db4-103">Toto téma ukazuje, jak získat odvozené prvky s určitým názvem.</span><span class="sxs-lookup"><span data-stu-id="a8db4-103">This topic shows how to get the descendant elements with a particular name.</span></span>  
   
- <span data-ttu-id="71aca-104">The XPath expression is `//Name`.</span><span class="sxs-lookup"><span data-stu-id="71aca-104">The XPath expression is `//Name`.</span></span>  
+ <span data-ttu-id="a8db4-104">Výraz XPath je `//Name`.</span><span class="sxs-lookup"><span data-stu-id="a8db4-104">The XPath expression is `//Name`.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="71aca-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="71aca-105">Example</span></span>  
- <span data-ttu-id="71aca-106">This example finds all descendants named `Name`.</span><span class="sxs-lookup"><span data-stu-id="71aca-106">This example finds all descendants named `Name`.</span></span>  
+## <a name="example"></a><span data-ttu-id="a8db4-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="a8db4-105">Example</span></span>  
+ <span data-ttu-id="a8db4-106">Tento příklad vyhledá všechny následníky s názvem `Name`.</span><span class="sxs-lookup"><span data-stu-id="a8db4-106">This example finds all descendants named `Name`.</span></span>  
   
- <span data-ttu-id="71aca-107">This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="71aca-107">This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="a8db4-107">Tento příklad používá následující dokument XML: [ukázkový soubor XML: více nákupních objednávek (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="a8db4-107">This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span></span>  
   
 ```vb  
       Dim po As XDocument = XDocument.Load("PurchaseOrders.xml")  
@@ -39,7 +39,7 @@ For Each el As XElement In list1
 Next  
 ```  
   
- <span data-ttu-id="71aca-108">This example produces the following output:</span><span class="sxs-lookup"><span data-stu-id="71aca-108">This example produces the following output:</span></span>  
+ <span data-ttu-id="a8db4-108">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="a8db4-108">This example produces the following output:</span></span>  
   
 ```console
 Results are identical  
@@ -51,6 +51,6 @@ Results are identical
 <Name>Jessica Arnold</Name>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="71aca-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="71aca-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a8db4-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a8db4-109">See also</span></span>
 
-- [<span data-ttu-id="71aca-110">LINQ to XML for XPath Users (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="71aca-110">LINQ to XML for XPath Users (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [<span data-ttu-id="a8db4-110">LINQ to XML pro uživatele XPath (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a8db4-110">LINQ to XML for XPath Users (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

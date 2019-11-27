@@ -13,31 +13,31 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74334499"
 ---
-# <a name="how-to-write-text-to-files-with-a-streamwriter-in-visual-basic"></a><span data-ttu-id="54c50-102">Postupy: Zápis textu do souborů pomocí třídy StreamWriter v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="54c50-102">How to: Write Text to Files with a StreamWriter in Visual Basic</span></span>
+# <a name="how-to-write-text-to-files-with-a-streamwriter-in-visual-basic"></a><span data-ttu-id="7966c-102">Postupy: Zápis textu do souborů pomocí třídy StreamWriter v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="7966c-102">How to: Write Text to Files with a StreamWriter in Visual Basic</span></span>
 
-<span data-ttu-id="54c50-103">This example opens a <xref:System.IO.StreamWriter> object with the `My.Computer.FileSystem.OpenTextFileWriter` method and uses it to write a string to a text file with the <xref:System.IO.TextWriter.WriteLine%2A> method of the <xref:System.IO.StreamWriter> class.</span><span class="sxs-lookup"><span data-stu-id="54c50-103">This example opens a <xref:System.IO.StreamWriter> object with the `My.Computer.FileSystem.OpenTextFileWriter` method and uses it to write a string to a text file with the <xref:System.IO.TextWriter.WriteLine%2A> method of the <xref:System.IO.StreamWriter> class.</span></span>  
+<span data-ttu-id="7966c-103">Tento příklad otevře objekt <xref:System.IO.StreamWriter> s metodou `My.Computer.FileSystem.OpenTextFileWriter` a použije ho k zápisu řetězce do textového souboru s metodou <xref:System.IO.TextWriter.WriteLine%2A> třídy <xref:System.IO.StreamWriter>.</span><span class="sxs-lookup"><span data-stu-id="7966c-103">This example opens a <xref:System.IO.StreamWriter> object with the `My.Computer.FileSystem.OpenTextFileWriter` method and uses it to write a string to a text file with the <xref:System.IO.TextWriter.WriteLine%2A> method of the <xref:System.IO.StreamWriter> class.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="54c50-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="54c50-104">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="7966c-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="7966c-104">Example</span></span>  
 
  [!code-vb[VbFileIOWrite#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIOWrite/VB/Class1.vb#5)]  
   
-## <a name="robust-programming"></a><span data-ttu-id="54c50-105">Robustní programování</span><span class="sxs-lookup"><span data-stu-id="54c50-105">Robust Programming</span></span>  
+## <a name="robust-programming"></a><span data-ttu-id="7966c-105">Robustní programování</span><span class="sxs-lookup"><span data-stu-id="7966c-105">Robust Programming</span></span>  
 
- <span data-ttu-id="54c50-106">Následující podmínky mohou způsobit výjimku:</span><span class="sxs-lookup"><span data-stu-id="54c50-106">The following conditions may cause an exception:</span></span>  
+ <span data-ttu-id="7966c-106">Následující podmínky mohou způsobit výjimku:</span><span class="sxs-lookup"><span data-stu-id="7966c-106">The following conditions may cause an exception:</span></span>  
   
-- <span data-ttu-id="54c50-107">The file exists and is read-only (<xref:System.IO.IOException>).</span><span class="sxs-lookup"><span data-stu-id="54c50-107">The file exists and is read-only (<xref:System.IO.IOException>).</span></span>  
+- <span data-ttu-id="7966c-107">Soubor existuje a je určen jen pro čtení (<xref:System.IO.IOException>).</span><span class="sxs-lookup"><span data-stu-id="7966c-107">The file exists and is read-only (<xref:System.IO.IOException>).</span></span>  
   
-- <span data-ttu-id="54c50-108">The disk is full (<xref:System.IO.IOException>).</span><span class="sxs-lookup"><span data-stu-id="54c50-108">The disk is full (<xref:System.IO.IOException>).</span></span>  
+- <span data-ttu-id="7966c-108">Disk je plný (<xref:System.IO.IOException>).</span><span class="sxs-lookup"><span data-stu-id="7966c-108">The disk is full (<xref:System.IO.IOException>).</span></span>  
   
-- <span data-ttu-id="54c50-109">The pathname is too long (<xref:System.IO.PathTooLongException>).</span><span class="sxs-lookup"><span data-stu-id="54c50-109">The pathname is too long (<xref:System.IO.PathTooLongException>).</span></span>  
+- <span data-ttu-id="7966c-109">Cesta je příliš dlouhá (<xref:System.IO.PathTooLongException>).</span><span class="sxs-lookup"><span data-stu-id="7966c-109">The pathname is too long (<xref:System.IO.PathTooLongException>).</span></span>  
   
-## <a name="net-framework-security"></a><span data-ttu-id="54c50-110">Zabezpečení rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="54c50-110">.NET Framework Security</span></span>  
+## <a name="net-framework-security"></a><span data-ttu-id="7966c-110">Zabezpečení rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="7966c-110">.NET Framework Security</span></span>  
 
- <span data-ttu-id="54c50-111">This example creates a new file, if the file does not already exist.</span><span class="sxs-lookup"><span data-stu-id="54c50-111">This example creates a new file, if the file does not already exist.</span></span> <span data-ttu-id="54c50-112">If an application needs to create a file, that application needs `Create` access for the folder.</span><span class="sxs-lookup"><span data-stu-id="54c50-112">If an application needs to create a file, that application needs `Create` access for the folder.</span></span> <span data-ttu-id="54c50-113">If the file already exists, the application needs only `Write` access, a lesser privilege.</span><span class="sxs-lookup"><span data-stu-id="54c50-113">If the file already exists, the application needs only `Write` access, a lesser privilege.</span></span> <span data-ttu-id="54c50-114">Where possible, it is more secure to create the file during deployment, and only grant `Read` access to a single file, rather than `Create` access for a folder.</span><span class="sxs-lookup"><span data-stu-id="54c50-114">Where possible, it is more secure to create the file during deployment, and only grant `Read` access to a single file, rather than `Create` access for a folder.</span></span>  
+ <span data-ttu-id="7966c-111">Tento příklad vytvoří nový soubor, pokud soubor ještě neexistuje.</span><span class="sxs-lookup"><span data-stu-id="7966c-111">This example creates a new file, if the file does not already exist.</span></span> <span data-ttu-id="7966c-112">Pokud aplikace potřebuje vytvořit soubor, musí tato aplikace `Create` přístup ke složce.</span><span class="sxs-lookup"><span data-stu-id="7966c-112">If an application needs to create a file, that application needs `Create` access for the folder.</span></span> <span data-ttu-id="7966c-113">Pokud soubor již existuje, aplikace potřebuje pouze `Write` přístup, což je méně oprávnění.</span><span class="sxs-lookup"><span data-stu-id="7966c-113">If the file already exists, the application needs only `Write` access, a lesser privilege.</span></span> <span data-ttu-id="7966c-114">Pokud je to možné, je bezpečnější vytvořit soubor během nasazení a udělit `Read` přístup pouze k jednomu souboru místo `Create` přístupu pro složku.</span><span class="sxs-lookup"><span data-stu-id="7966c-114">Where possible, it is more secure to create the file during deployment, and only grant `Read` access to a single file, rather than `Create` access for a folder.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="54c50-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="54c50-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7966c-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7966c-115">See also</span></span>
 
 - <xref:System.IO.StreamWriter>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileWriter%2A>
-- [<span data-ttu-id="54c50-116">How to: Read from Text Files</span><span class="sxs-lookup"><span data-stu-id="54c50-116">How to: Read from Text Files</span></span>](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files.md)
-- [<span data-ttu-id="54c50-117">Zápis do souborů</span><span class="sxs-lookup"><span data-stu-id="54c50-117">Writing to Files</span></span>](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)
+- [<span data-ttu-id="7966c-116">Postupy: čtení z textových souborů</span><span class="sxs-lookup"><span data-stu-id="7966c-116">How to: Read from Text Files</span></span>](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files.md)
+- [<span data-ttu-id="7966c-117">Zápis do souborů</span><span class="sxs-lookup"><span data-stu-id="7966c-117">Writing to Files</span></span>](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)

@@ -22,10 +22,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446052"
 ---
-# <a name="isymunmanagedvariablegetname-method"></a><span data-ttu-id="94079-102">ISymUnmanagedVariable::GetName – metoda</span><span class="sxs-lookup"><span data-stu-id="94079-102">ISymUnmanagedVariable::GetName Method</span></span>
-<span data-ttu-id="94079-103">Gets the name of this variable.</span><span class="sxs-lookup"><span data-stu-id="94079-103">Gets the name of this variable.</span></span>  
+# <a name="isymunmanagedvariablegetname-method"></a><span data-ttu-id="6195d-102">ISymUnmanagedVariable::GetName – metoda</span><span class="sxs-lookup"><span data-stu-id="6195d-102">ISymUnmanagedVariable::GetName Method</span></span>
+<span data-ttu-id="6195d-103">Získá název této proměnné.</span><span class="sxs-lookup"><span data-stu-id="6195d-103">Gets the name of this variable.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="94079-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="94079-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="6195d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6195d-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetName(  
@@ -35,22 +35,22 @@ HRESULT GetName(
         length_is(*pcchName)] WCHAR szName[]);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="94079-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="94079-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="6195d-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="6195d-105">Parameters</span></span>  
  `cchName`  
- <span data-ttu-id="94079-106">[in] The length of the buffer that the `pcchName` parameter points to.</span><span class="sxs-lookup"><span data-stu-id="94079-106">[in] The length of the buffer that the `pcchName` parameter points to.</span></span>  
+ <span data-ttu-id="6195d-106">pro Délka vyrovnávací paměti, na kterou parametr `pcchName` odkazuje.</span><span class="sxs-lookup"><span data-stu-id="6195d-106">[in] The length of the buffer that the `pcchName` parameter points to.</span></span>  
   
  `pcchName`  
- <span data-ttu-id="94079-107">[out] A pointer to a `ULONG32` that receives the size, in characters, of the buffer required to contain the name, including the null termination.</span><span class="sxs-lookup"><span data-stu-id="94079-107">[out] A pointer to a `ULONG32` that receives the size, in characters, of the buffer required to contain the name, including the null termination.</span></span>  
+ <span data-ttu-id="6195d-107">mimo Ukazatel na `ULONG32`, který obdrží velikost vyrovnávací paměti, která je nutná k uložení názvu, včetně ukončení hodnoty null.</span><span class="sxs-lookup"><span data-stu-id="6195d-107">[out] A pointer to a `ULONG32` that receives the size, in characters, of the buffer required to contain the name, including the null termination.</span></span>  
   
  `szName`  
- <span data-ttu-id="94079-108">[out] The buffer that stores the name.</span><span class="sxs-lookup"><span data-stu-id="94079-108">[out] The buffer that stores the name.</span></span>  
+ <span data-ttu-id="6195d-108">mimo Vyrovnávací paměť, která ukládá název.</span><span class="sxs-lookup"><span data-stu-id="6195d-108">[out] The buffer that stores the name.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="94079-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="94079-109">Return Value</span></span>  
- <span data-ttu-id="94079-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span><span class="sxs-lookup"><span data-stu-id="94079-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="6195d-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="6195d-109">Return Value</span></span>  
+ <span data-ttu-id="6195d-110">S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="6195d-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="94079-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="94079-111">Requirements</span></span>  
- <span data-ttu-id="94079-112">**Header:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="94079-112">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="6195d-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="6195d-111">Requirements</span></span>  
+ <span data-ttu-id="6195d-112">**Hlavička:** CorSym. idl, CorSym. h</span><span class="sxs-lookup"><span data-stu-id="6195d-112">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="94079-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="94079-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="6195d-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6195d-113">See also</span></span>
 
-- [<span data-ttu-id="94079-114">ISymUnmanagedVariable – rozhraní</span><span class="sxs-lookup"><span data-stu-id="94079-114">ISymUnmanagedVariable Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-interface.md)
+- [<span data-ttu-id="6195d-114">ISymUnmanagedVariable – rozhraní</span><span class="sxs-lookup"><span data-stu-id="6195d-114">ISymUnmanagedVariable Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedvariable-interface.md)

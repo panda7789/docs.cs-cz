@@ -21,33 +21,33 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74428324"
 ---
-# <a name="cor_prf_function-structure"></a><span data-ttu-id="ab90c-102">COR_PRF_FUNCTION – struktura</span><span class="sxs-lookup"><span data-stu-id="ab90c-102">COR_PRF_FUNCTION Structure</span></span>
-<span data-ttu-id="ab90c-103">Provides a unique representation of a function by combining its ID with the ID of its recompiled version.</span><span class="sxs-lookup"><span data-stu-id="ab90c-103">Provides a unique representation of a function by combining its ID with the ID of its recompiled version.</span></span>  
+# <a name="cor_prf_function-structure"></a><span data-ttu-id="b4f7a-102">COR_PRF_FUNCTION – struktura</span><span class="sxs-lookup"><span data-stu-id="b4f7a-102">COR_PRF_FUNCTION Structure</span></span>
+<span data-ttu-id="b4f7a-103">Poskytuje jedinečné reprezentace funkce kombinací jejího ID s ID své znovu zkompilované verze.</span><span class="sxs-lookup"><span data-stu-id="b4f7a-103">Provides a unique representation of a function by combining its ID with the ID of its recompiled version.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="ab90c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ab90c-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b4f7a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b4f7a-104">Syntax</span></span>  
   
 ```cpp  
 typedef struct _COR_PRF_FUNCTION {    FunctionID functionId;    ReJITID    reJitId;} COR_PRF_FUNCTION;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="ab90c-105">Členové</span><span class="sxs-lookup"><span data-stu-id="ab90c-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="b4f7a-105">Členové</span><span class="sxs-lookup"><span data-stu-id="b4f7a-105">Members</span></span>  
   
-|<span data-ttu-id="ab90c-106">Člen</span><span class="sxs-lookup"><span data-stu-id="ab90c-106">Member</span></span>|<span data-ttu-id="ab90c-107">Popis</span><span class="sxs-lookup"><span data-stu-id="ab90c-107">Description</span></span>|  
+|<span data-ttu-id="b4f7a-106">Člen</span><span class="sxs-lookup"><span data-stu-id="b4f7a-106">Member</span></span>|<span data-ttu-id="b4f7a-107">Popis</span><span class="sxs-lookup"><span data-stu-id="b4f7a-107">Description</span></span>|  
 |------------|-----------------|  
-|`functionId`|<span data-ttu-id="ab90c-108">The ID of the function.</span><span class="sxs-lookup"><span data-stu-id="ab90c-108">The ID of the function.</span></span>|  
-|`reJitId`|<span data-ttu-id="ab90c-109">The ID of the recompiled function.</span><span class="sxs-lookup"><span data-stu-id="ab90c-109">The ID of the recompiled function.</span></span> <span data-ttu-id="ab90c-110">A value of 0 (zero) represents the original version of the function.</span><span class="sxs-lookup"><span data-stu-id="ab90c-110">A value of 0 (zero) represents the original version of the function.</span></span>|  
+|`functionId`|<span data-ttu-id="b4f7a-108">ID funkce</span><span class="sxs-lookup"><span data-stu-id="b4f7a-108">The ID of the function.</span></span>|  
+|`reJitId`|<span data-ttu-id="b4f7a-109">ID Rekompilované funkce</span><span class="sxs-lookup"><span data-stu-id="b4f7a-109">The ID of the recompiled function.</span></span> <span data-ttu-id="b4f7a-110">Hodnota 0 (nula) představuje původní verzi funkce.</span><span class="sxs-lookup"><span data-stu-id="b4f7a-110">A value of 0 (zero) represents the original version of the function.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="ab90c-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="ab90c-111">Remarks</span></span>  
+## <a name="remarks"></a><span data-ttu-id="b4f7a-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b4f7a-111">Remarks</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="ab90c-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="ab90c-112">Requirements</span></span>  
- <span data-ttu-id="ab90c-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ab90c-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="b4f7a-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b4f7a-112">Requirements</span></span>  
+ <span data-ttu-id="b4f7a-113">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b4f7a-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="ab90c-114">**Header:** CorProf.idl</span><span class="sxs-lookup"><span data-stu-id="ab90c-114">**Header:** CorProf.idl</span></span>  
+ <span data-ttu-id="b4f7a-114">**Hlavička:** CorProf. idl</span><span class="sxs-lookup"><span data-stu-id="b4f7a-114">**Header:** CorProf.idl</span></span>  
   
- <span data-ttu-id="ab90c-115">**Library:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="ab90c-115">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="b4f7a-115">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="b4f7a-115">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="ab90c-116">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ab90c-116">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
+ <span data-ttu-id="b4f7a-116">**Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b4f7a-116">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ab90c-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ab90c-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b4f7a-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b4f7a-117">See also</span></span>
 
-- [<span data-ttu-id="ab90c-118">Struktury pro profilaci</span><span class="sxs-lookup"><span data-stu-id="ab90c-118">Profiling Structures</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)
+- [<span data-ttu-id="b4f7a-118">Struktury pro profilaci</span><span class="sxs-lookup"><span data-stu-id="b4f7a-118">Profiling Structures</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)

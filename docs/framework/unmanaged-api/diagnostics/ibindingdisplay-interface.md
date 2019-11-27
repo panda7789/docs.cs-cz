@@ -21,25 +21,25 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448469"
 ---
-# <a name="ibindingdisplay-interface"></a><span data-ttu-id="b7d92-102">IBindingDisplay – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b7d92-102">IBindingDisplay Interface</span></span>
-<span data-ttu-id="b7d92-103">Provides methods that display current binding information about the running application.</span><span class="sxs-lookup"><span data-stu-id="b7d92-103">Provides methods that display current binding information about the running application.</span></span>  
+# <a name="ibindingdisplay-interface"></a><span data-ttu-id="cb5ff-102">IBindingDisplay – rozhraní</span><span class="sxs-lookup"><span data-stu-id="cb5ff-102">IBindingDisplay Interface</span></span>
+<span data-ttu-id="cb5ff-103">Poskytuje metody, které zobrazují aktuální informace o vazbě spuštěné aplikace.</span><span class="sxs-lookup"><span data-stu-id="cb5ff-103">Provides methods that display current binding information about the running application.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="b7d92-104">Metody</span><span class="sxs-lookup"><span data-stu-id="b7d92-104">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="cb5ff-104">Metody</span><span class="sxs-lookup"><span data-stu-id="cb5ff-104">Methods</span></span>  
   
-|<span data-ttu-id="b7d92-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="b7d92-105">Method</span></span>|<span data-ttu-id="b7d92-106">Popis</span><span class="sxs-lookup"><span data-stu-id="b7d92-106">Description</span></span>|  
+|<span data-ttu-id="cb5ff-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="cb5ff-105">Method</span></span>|<span data-ttu-id="cb5ff-106">Popis</span><span class="sxs-lookup"><span data-stu-id="cb5ff-106">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="b7d92-107">GetCurrentDisplay – metoda</span><span class="sxs-lookup"><span data-stu-id="b7d92-107">GetCurrentDisplay Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-getcurrentdisplay-method.md)|<span data-ttu-id="b7d92-108">Returns the current binding display information.</span><span class="sxs-lookup"><span data-stu-id="b7d92-108">Returns the current binding display information.</span></span>|  
-|[<span data-ttu-id="b7d92-109">InitializeForProcess – metoda</span><span class="sxs-lookup"><span data-stu-id="b7d92-109">InitializeForProcess Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-initializeforprocess-method.md)|<span data-ttu-id="b7d92-110">Initializes the `IBindingDisplay` object.</span><span class="sxs-lookup"><span data-stu-id="b7d92-110">Initializes the `IBindingDisplay` object.</span></span>|  
+|[<span data-ttu-id="cb5ff-107">GetCurrentDisplay – metoda</span><span class="sxs-lookup"><span data-stu-id="cb5ff-107">GetCurrentDisplay Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-getcurrentdisplay-method.md)|<span data-ttu-id="cb5ff-108">Vrátí aktuální informace o zobrazení vazby.</span><span class="sxs-lookup"><span data-stu-id="cb5ff-108">Returns the current binding display information.</span></span>|  
+|[<span data-ttu-id="cb5ff-109">InitializeForProcess – metoda</span><span class="sxs-lookup"><span data-stu-id="cb5ff-109">InitializeForProcess Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-initializeforprocess-method.md)|<span data-ttu-id="cb5ff-110">Inicializuje objekt `IBindingDisplay`.</span><span class="sxs-lookup"><span data-stu-id="cb5ff-110">Initializes the `IBindingDisplay` object.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="b7d92-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b7d92-111">Requirements</span></span>  
- <span data-ttu-id="b7d92-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b7d92-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="cb5ff-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="cb5ff-111">Requirements</span></span>  
+ <span data-ttu-id="cb5ff-112">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="cb5ff-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="b7d92-113">**Header:** BindingDisplay.h</span><span class="sxs-lookup"><span data-stu-id="b7d92-113">**Header:** BindingDisplay.h</span></span>  
+ <span data-ttu-id="cb5ff-113">**Hlavička:** BindingDisplay. h</span><span class="sxs-lookup"><span data-stu-id="cb5ff-113">**Header:** BindingDisplay.h</span></span>  
   
- <span data-ttu-id="b7d92-114">**Library:** BindingDisplay.idl</span><span class="sxs-lookup"><span data-stu-id="b7d92-114">**Library:** BindingDisplay.idl</span></span>  
+ <span data-ttu-id="cb5ff-114">**Knihovna:** BindingDisplay. idl</span><span class="sxs-lookup"><span data-stu-id="cb5ff-114">**Library:** BindingDisplay.idl</span></span>  
   
- <span data-ttu-id="b7d92-115">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b7d92-115">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="cb5ff-115">**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="cb5ff-115">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b7d92-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b7d92-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="cb5ff-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="cb5ff-116">See also</span></span>
 
-- [<span data-ttu-id="b7d92-117">Rozhraní pro úložiště symbolů diagnostiky</span><span class="sxs-lookup"><span data-stu-id="b7d92-117">Diagnostics Symbol Store Interfaces</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+- [<span data-ttu-id="cb5ff-117">Rozhraní pro úložiště symbolů diagnostiky</span><span class="sxs-lookup"><span data-stu-id="cb5ff-117">Diagnostics Symbol Store Interfaces</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)

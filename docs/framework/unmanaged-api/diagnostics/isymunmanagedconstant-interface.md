@@ -21,20 +21,20 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449255"
 ---
-# <a name="isymunmanagedconstant-interface"></a><span data-ttu-id="4d92c-102">ISymUnmanagedConstant – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4d92c-102">ISymUnmanagedConstant Interface</span></span>
-<span data-ttu-id="4d92c-103">Provides access to unmanaged constants.</span><span class="sxs-lookup"><span data-stu-id="4d92c-103">Provides access to unmanaged constants.</span></span>  
+# <a name="isymunmanagedconstant-interface"></a><span data-ttu-id="94dae-102">ISymUnmanagedConstant – rozhraní</span><span class="sxs-lookup"><span data-stu-id="94dae-102">ISymUnmanagedConstant Interface</span></span>
+<span data-ttu-id="94dae-103">Poskytuje přístup k nespravovaným konstantám.</span><span class="sxs-lookup"><span data-stu-id="94dae-103">Provides access to unmanaged constants.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="4d92c-104">Metody</span><span class="sxs-lookup"><span data-stu-id="4d92c-104">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="94dae-104">Metody</span><span class="sxs-lookup"><span data-stu-id="94dae-104">Methods</span></span>  
   
-|<span data-ttu-id="4d92c-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="4d92c-105">Method</span></span>|<span data-ttu-id="4d92c-106">Popis</span><span class="sxs-lookup"><span data-stu-id="4d92c-106">Description</span></span>|  
+|<span data-ttu-id="94dae-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="94dae-105">Method</span></span>|<span data-ttu-id="94dae-106">Popis</span><span class="sxs-lookup"><span data-stu-id="94dae-106">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="4d92c-107">GetName – metoda</span><span class="sxs-lookup"><span data-stu-id="4d92c-107">GetName Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getname-method.md)|<span data-ttu-id="4d92c-108">Gets the name of the constant.</span><span class="sxs-lookup"><span data-stu-id="4d92c-108">Gets the name of the constant.</span></span>|  
-|[<span data-ttu-id="4d92c-109">GetSignature – metoda</span><span class="sxs-lookup"><span data-stu-id="4d92c-109">GetSignature Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getsignature-method.md)|<span data-ttu-id="4d92c-110">Gets the signature of the constant.</span><span class="sxs-lookup"><span data-stu-id="4d92c-110">Gets the signature of the constant.</span></span>|  
-|[<span data-ttu-id="4d92c-111">GetValue – metoda</span><span class="sxs-lookup"><span data-stu-id="4d92c-111">GetValue Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getvalue-method.md)|<span data-ttu-id="4d92c-112">Gets the value of the constant.</span><span class="sxs-lookup"><span data-stu-id="4d92c-112">Gets the value of the constant.</span></span>|  
+|[<span data-ttu-id="94dae-107">GetName – metoda</span><span class="sxs-lookup"><span data-stu-id="94dae-107">GetName Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getname-method.md)|<span data-ttu-id="94dae-108">Získá název konstanty.</span><span class="sxs-lookup"><span data-stu-id="94dae-108">Gets the name of the constant.</span></span>|  
+|[<span data-ttu-id="94dae-109">GetSignature – metoda</span><span class="sxs-lookup"><span data-stu-id="94dae-109">GetSignature Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getsignature-method.md)|<span data-ttu-id="94dae-110">Získá signaturu konstanty.</span><span class="sxs-lookup"><span data-stu-id="94dae-110">Gets the signature of the constant.</span></span>|  
+|[<span data-ttu-id="94dae-111">GetValue – metoda</span><span class="sxs-lookup"><span data-stu-id="94dae-111">GetValue Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedconstant-getvalue-method.md)|<span data-ttu-id="94dae-112">Získá hodnotu konstanty.</span><span class="sxs-lookup"><span data-stu-id="94dae-112">Gets the value of the constant.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="4d92c-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="4d92c-113">Requirements</span></span>  
- <span data-ttu-id="4d92c-114">**Header:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="4d92c-114">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="94dae-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="94dae-113">Requirements</span></span>  
+ <span data-ttu-id="94dae-114">**Hlavička:** CorSym. idl, CorSym. h</span><span class="sxs-lookup"><span data-stu-id="94dae-114">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="4d92c-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4d92c-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="94dae-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="94dae-115">See also</span></span>
 
-- [<span data-ttu-id="4d92c-116">Rozhraní pro úložiště symbolů diagnostiky</span><span class="sxs-lookup"><span data-stu-id="4d92c-116">Diagnostics Symbol Store Interfaces</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+- [<span data-ttu-id="94dae-116">Rozhraní pro úložiště symbolů diagnostiky</span><span class="sxs-lookup"><span data-stu-id="94dae-116">Diagnostics Symbol Store Interfaces</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)

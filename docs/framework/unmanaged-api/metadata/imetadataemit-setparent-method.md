@@ -22,10 +22,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74432449"
 ---
-# <a name="imetadataemitsetparent-method"></a><span data-ttu-id="a1a47-102">IMetaDataEmit::SetParent – metoda</span><span class="sxs-lookup"><span data-stu-id="a1a47-102">IMetaDataEmit::SetParent Method</span></span>
-<span data-ttu-id="a1a47-103">Establishes that the specified member, as defined by a prior call to [IMetaDataEmit::DefineMemberRef](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definememberref-method.md), is a member of the specified type, as defined by a prior call to [IMetaDataEmit::DefineTypeDef](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md).</span><span class="sxs-lookup"><span data-stu-id="a1a47-103">Establishes that the specified member, as defined by a prior call to [IMetaDataEmit::DefineMemberRef](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definememberref-method.md), is a member of the specified type, as defined by a prior call to [IMetaDataEmit::DefineTypeDef](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md).</span></span>  
+# <a name="imetadataemitsetparent-method"></a><span data-ttu-id="6037c-102">IMetaDataEmit::SetParent – metoda</span><span class="sxs-lookup"><span data-stu-id="6037c-102">IMetaDataEmit::SetParent Method</span></span>
+<span data-ttu-id="6037c-103">Stanoví, že zadaný člen, jak je definován předchozím voláním [IMetaDataEmit::D efinememberref](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definememberref-method.md), je členem zadaného typu, jak je definováno předchozím voláním [IMetaDataEmit::D efinetypedef](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md).</span><span class="sxs-lookup"><span data-stu-id="6037c-103">Establishes that the specified member, as defined by a prior call to [IMetaDataEmit::DefineMemberRef](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definememberref-method.md), is a member of the specified type, as defined by a prior call to [IMetaDataEmit::DefineTypeDef](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md).</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="a1a47-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a1a47-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="6037c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6037c-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT SetParent (   
@@ -34,23 +34,23 @@ HRESULT SetParent (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="a1a47-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="a1a47-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="6037c-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="6037c-105">Parameters</span></span>  
  `mr`  
- <span data-ttu-id="a1a47-106">[in] The `mdMemberRef` token to receive a new parent.</span><span class="sxs-lookup"><span data-stu-id="a1a47-106">[in] The `mdMemberRef` token to receive a new parent.</span></span>  
+ <span data-ttu-id="6037c-106">pro Token `mdMemberRef` pro příjem nového nadřazeného prvku.</span><span class="sxs-lookup"><span data-stu-id="6037c-106">[in] The `mdMemberRef` token to receive a new parent.</span></span>  
   
  `tk`  
- <span data-ttu-id="a1a47-107">[in] The `mdToken` for the new parent.</span><span class="sxs-lookup"><span data-stu-id="a1a47-107">[in] The `mdToken` for the new parent.</span></span>  
+ <span data-ttu-id="6037c-107">pro `mdToken` pro novou nadřazenou položku.</span><span class="sxs-lookup"><span data-stu-id="6037c-107">[in] The `mdToken` for the new parent.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="a1a47-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a1a47-108">Requirements</span></span>  
- <span data-ttu-id="a1a47-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a1a47-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="6037c-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="6037c-108">Requirements</span></span>  
+ <span data-ttu-id="6037c-109">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="6037c-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="a1a47-110">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="a1a47-110">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="6037c-110">**Hlavička:** Cor. h</span><span class="sxs-lookup"><span data-stu-id="6037c-110">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="a1a47-111">**Library:** Used as a resource in MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="a1a47-111">**Library:** Used as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="6037c-111">**Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.</span><span class="sxs-lookup"><span data-stu-id="6037c-111">**Library:** Used as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="a1a47-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a1a47-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="6037c-112">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="6037c-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a1a47-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a1a47-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="6037c-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6037c-113">See also</span></span>
 
-- [<span data-ttu-id="a1a47-114">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a1a47-114">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [<span data-ttu-id="a1a47-115">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a1a47-115">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [<span data-ttu-id="6037c-114">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="6037c-114">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [<span data-ttu-id="6037c-115">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="6037c-115">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

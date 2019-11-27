@@ -21,10 +21,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448574"
 ---
-# <a name="corsymaddrkind-enumeration"></a><span data-ttu-id="9a559-102">CorSymAddrKind – výčet</span><span class="sxs-lookup"><span data-stu-id="9a559-102">CorSymAddrKind Enumeration</span></span>
-<span data-ttu-id="9a559-103">Indicates the type of memory address.</span><span class="sxs-lookup"><span data-stu-id="9a559-103">Indicates the type of memory address.</span></span>  
+# <a name="corsymaddrkind-enumeration"></a><span data-ttu-id="c6148-102">CorSymAddrKind – výčet</span><span class="sxs-lookup"><span data-stu-id="c6148-102">CorSymAddrKind Enumeration</span></span>
+<span data-ttu-id="c6148-103">Určuje typ adresy paměti.</span><span class="sxs-lookup"><span data-stu-id="c6148-103">Indicates the type of memory address.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="9a559-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9a559-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c6148-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c6148-104">Syntax</span></span>  
   
 ```cpp  
 typedef enum CorSymAddrKind  
@@ -42,24 +42,24 @@ typedef enum CorSymAddrKind
 } CorSymAddrKind;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="9a559-105">Členové</span><span class="sxs-lookup"><span data-stu-id="9a559-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="c6148-105">Členové</span><span class="sxs-lookup"><span data-stu-id="c6148-105">Members</span></span>  
   
-|<span data-ttu-id="9a559-106">Člen</span><span class="sxs-lookup"><span data-stu-id="9a559-106">Member</span></span>|<span data-ttu-id="9a559-107">Popis</span><span class="sxs-lookup"><span data-stu-id="9a559-107">Description</span></span>|  
+|<span data-ttu-id="c6148-106">Člen</span><span class="sxs-lookup"><span data-stu-id="c6148-106">Member</span></span>|<span data-ttu-id="c6148-107">Popis</span><span class="sxs-lookup"><span data-stu-id="c6148-107">Description</span></span>|  
 |------------|-----------------|  
-|`ADDR_IL_OFFSET`|<span data-ttu-id="9a559-108">Indicates a Microsoft intermediate language (MSIL) local variable or parameter index.</span><span class="sxs-lookup"><span data-stu-id="9a559-108">Indicates a Microsoft intermediate language (MSIL) local variable or parameter index.</span></span>|  
-|`ADDR_NATIVE_RVA`|<span data-ttu-id="9a559-109">Indicates a relative virtual address into a module.</span><span class="sxs-lookup"><span data-stu-id="9a559-109">Indicates a relative virtual address into a module.</span></span>|  
-|`ADDR_NATIVE_REGISTER`|<span data-ttu-id="9a559-110">Indicates a CPU register.</span><span class="sxs-lookup"><span data-stu-id="9a559-110">Indicates a CPU register.</span></span>|  
-|`ADDR_NATIVE_REGREL`|<span data-ttu-id="9a559-111">Indicates that the first address is a register and the second address is an offset.</span><span class="sxs-lookup"><span data-stu-id="9a559-111">Indicates that the first address is a register and the second address is an offset.</span></span>|  
-|`ADDR_NATIVE_OFFSET`|<span data-ttu-id="9a559-112">Indicates an offset from a base address.</span><span class="sxs-lookup"><span data-stu-id="9a559-112">Indicates an offset from a base address.</span></span>|  
-|`ADDR_NATIVE_REGREG`|<span data-ttu-id="9a559-113">Indicates that the first address is the low portion of a register, and the second address is the high portion.</span><span class="sxs-lookup"><span data-stu-id="9a559-113">Indicates that the first address is the low portion of a register, and the second address is the high portion.</span></span>|  
-|`ADDR_NATIVE_REGSTK`|<span data-ttu-id="9a559-114">Indicates that the first address is the low portion of a register, the second is the high portion, and the third is an offset.</span><span class="sxs-lookup"><span data-stu-id="9a559-114">Indicates that the first address is the low portion of a register, the second is the high portion, and the third is an offset.</span></span>|  
-|`ADDR_NATIVE_STKREG`|<span data-ttu-id="9a559-115">Indicates that the first address is a register, the second is an offset, and the third is the high portion of the register.</span><span class="sxs-lookup"><span data-stu-id="9a559-115">Indicates that the first address is a register, the second is an offset, and the third is the high portion of the register.</span></span>|  
-|`ADDR_BITFIELD`|<span data-ttu-id="9a559-116">Indicates that the first address is the start of a field and the second address is the field length.</span><span class="sxs-lookup"><span data-stu-id="9a559-116">Indicates that the first address is the start of a field and the second address is the field length.</span></span>|  
-|`ADDR_NATIVE_ISECTOFFSET`|<span data-ttu-id="9a559-117">Indicates that the first address is the section and the second address is an offset.</span><span class="sxs-lookup"><span data-stu-id="9a559-117">Indicates that the first address is the section and the second address is an offset.</span></span>|  
+|`ADDR_IL_OFFSET`|<span data-ttu-id="c6148-108">Označuje místní proměnnou nebo index parametru jazyka MSIL (Microsoft Intermediate Language).</span><span class="sxs-lookup"><span data-stu-id="c6148-108">Indicates a Microsoft intermediate language (MSIL) local variable or parameter index.</span></span>|  
+|`ADDR_NATIVE_RVA`|<span data-ttu-id="c6148-109">Označuje relativní virtuální adresu do modulu.</span><span class="sxs-lookup"><span data-stu-id="c6148-109">Indicates a relative virtual address into a module.</span></span>|  
+|`ADDR_NATIVE_REGISTER`|<span data-ttu-id="c6148-110">Označuje registr procesoru.</span><span class="sxs-lookup"><span data-stu-id="c6148-110">Indicates a CPU register.</span></span>|  
+|`ADDR_NATIVE_REGREL`|<span data-ttu-id="c6148-111">Označuje, že první adresa je registr a druhá adresa je posun.</span><span class="sxs-lookup"><span data-stu-id="c6148-111">Indicates that the first address is a register and the second address is an offset.</span></span>|  
+|`ADDR_NATIVE_OFFSET`|<span data-ttu-id="c6148-112">Označuje posun od základní adresy.</span><span class="sxs-lookup"><span data-stu-id="c6148-112">Indicates an offset from a base address.</span></span>|  
+|`ADDR_NATIVE_REGREG`|<span data-ttu-id="c6148-113">Označuje, že první adresa je dolní část registru, a druhá adresa je horní část.</span><span class="sxs-lookup"><span data-stu-id="c6148-113">Indicates that the first address is the low portion of a register, and the second address is the high portion.</span></span>|  
+|`ADDR_NATIVE_REGSTK`|<span data-ttu-id="c6148-114">Označuje, že první adresa je dolní část registru, druhá je horní část a třetí je posun.</span><span class="sxs-lookup"><span data-stu-id="c6148-114">Indicates that the first address is the low portion of a register, the second is the high portion, and the third is an offset.</span></span>|  
+|`ADDR_NATIVE_STKREG`|<span data-ttu-id="c6148-115">Označuje, že první adresa je registr, druhým je posun a třetí je vysoká část registru.</span><span class="sxs-lookup"><span data-stu-id="c6148-115">Indicates that the first address is a register, the second is an offset, and the third is the high portion of the register.</span></span>|  
+|`ADDR_BITFIELD`|<span data-ttu-id="c6148-116">Označuje, že první adresa je začátek pole a druhá adresa je délka pole.</span><span class="sxs-lookup"><span data-stu-id="c6148-116">Indicates that the first address is the start of a field and the second address is the field length.</span></span>|  
+|`ADDR_NATIVE_ISECTOFFSET`|<span data-ttu-id="c6148-117">Označuje, že první adresa je oddíl a druhá adresa je posun.</span><span class="sxs-lookup"><span data-stu-id="c6148-117">Indicates that the first address is the section and the second address is an offset.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="9a559-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9a559-118">Requirements</span></span>  
- <span data-ttu-id="9a559-119">**Header:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="9a559-119">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c6148-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c6148-118">Requirements</span></span>  
+ <span data-ttu-id="c6148-119">**Hlavička:** CorSym. idl, CorSym. h</span><span class="sxs-lookup"><span data-stu-id="c6148-119">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9a559-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9a559-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c6148-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c6148-120">See also</span></span>
 
-- [<span data-ttu-id="9a559-121">Výčty pro úložiště symbolů diagnostiky</span><span class="sxs-lookup"><span data-stu-id="9a559-121">Diagnostics Symbol Store Enumerations</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-enumerations.md)
+- [<span data-ttu-id="c6148-121">Výčty pro úložiště symbolů diagnostiky</span><span class="sxs-lookup"><span data-stu-id="c6148-121">Diagnostics Symbol Store Enumerations</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-enumerations.md)

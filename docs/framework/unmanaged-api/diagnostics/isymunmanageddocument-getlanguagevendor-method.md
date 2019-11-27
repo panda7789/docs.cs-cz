@@ -22,23 +22,23 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449168"
 ---
-# <a name="isymunmanageddocumentgetlanguagevendor-method"></a><span data-ttu-id="a99d8-102">ISymUnmanagedDocument::GetLanguageVendor – metoda</span><span class="sxs-lookup"><span data-stu-id="a99d8-102">ISymUnmanagedDocument::GetLanguageVendor Method</span></span>
-<span data-ttu-id="a99d8-103">Gets the language vendor of this document.</span><span class="sxs-lookup"><span data-stu-id="a99d8-103">Gets the language vendor of this document.</span></span>  
+# <a name="isymunmanageddocumentgetlanguagevendor-method"></a><span data-ttu-id="b1143-102">ISymUnmanagedDocument::GetLanguageVendor – metoda</span><span class="sxs-lookup"><span data-stu-id="b1143-102">ISymUnmanagedDocument::GetLanguageVendor Method</span></span>
+<span data-ttu-id="b1143-103">Získá dodavatele jazyka tohoto dokumentu.</span><span class="sxs-lookup"><span data-stu-id="b1143-103">Gets the language vendor of this document.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="a99d8-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a99d8-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b1143-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b1143-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetLanguageVendor(  
     [out, retval]  GUID*  pRetVal);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="a99d8-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="a99d8-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="b1143-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b1143-105">Parameters</span></span>  
  `pRetVal`  
- <span data-ttu-id="a99d8-106">[out] A pointer to a variable that receives the language vendor.</span><span class="sxs-lookup"><span data-stu-id="a99d8-106">[out] A pointer to a variable that receives the language vendor.</span></span>  
+ <span data-ttu-id="b1143-106">mimo Ukazatel na proměnnou, která přijímá dodavatele jazyka.</span><span class="sxs-lookup"><span data-stu-id="b1143-106">[out] A pointer to a variable that receives the language vendor.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="a99d8-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="a99d8-107">Return Value</span></span>  
- <span data-ttu-id="a99d8-108">S_OK if the method succeeds.</span><span class="sxs-lookup"><span data-stu-id="a99d8-108">S_OK if the method succeeds.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="b1143-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="b1143-107">Return Value</span></span>  
+ <span data-ttu-id="b1143-108">S_OK, zda je metoda úspěšná.</span><span class="sxs-lookup"><span data-stu-id="b1143-108">S_OK if the method succeeds.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a99d8-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a99d8-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b1143-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b1143-109">See also</span></span>
 
-- [<span data-ttu-id="a99d8-110">ISymUnmanagedDocument – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a99d8-110">ISymUnmanagedDocument Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)
+- [<span data-ttu-id="b1143-110">ISymUnmanagedDocument – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b1143-110">ISymUnmanagedDocument Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)

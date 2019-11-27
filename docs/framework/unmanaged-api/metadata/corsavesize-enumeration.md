@@ -21,10 +21,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450097"
 ---
-# <a name="corsavesize-enumeration"></a><span data-ttu-id="7066c-102">CorSaveSize – výčet</span><span class="sxs-lookup"><span data-stu-id="7066c-102">CorSaveSize Enumeration</span></span>
-<span data-ttu-id="7066c-103">Contains values indicating the level of precision required when querying for the size of a save operation.</span><span class="sxs-lookup"><span data-stu-id="7066c-103">Contains values indicating the level of precision required when querying for the size of a save operation.</span></span>  
+# <a name="corsavesize-enumeration"></a><span data-ttu-id="7d438-102">CorSaveSize – výčet</span><span class="sxs-lookup"><span data-stu-id="7d438-102">CorSaveSize Enumeration</span></span>
+<span data-ttu-id="7d438-103">Obsahuje hodnoty určující úroveň přesnosti požadovanou při dotazování na velikost operace uložení.</span><span class="sxs-lookup"><span data-stu-id="7d438-103">Contains values indicating the level of precision required when querying for the size of a save operation.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="7066c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7066c-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="7d438-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7d438-104">Syntax</span></span>  
   
 ```cpp  
 typedef enum CorSaveSize {  
@@ -34,23 +34,23 @@ typedef enum CorSaveSize {
 } CorSaveSize;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="7066c-105">Členové</span><span class="sxs-lookup"><span data-stu-id="7066c-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="7d438-105">Členové</span><span class="sxs-lookup"><span data-stu-id="7d438-105">Members</span></span>  
   
-|<span data-ttu-id="7066c-106">Člen</span><span class="sxs-lookup"><span data-stu-id="7066c-106">Member</span></span>|<span data-ttu-id="7066c-107">Popis</span><span class="sxs-lookup"><span data-stu-id="7066c-107">Description</span></span>|  
+|<span data-ttu-id="7d438-106">Člen</span><span class="sxs-lookup"><span data-stu-id="7d438-106">Member</span></span>|<span data-ttu-id="7d438-107">Popis</span><span class="sxs-lookup"><span data-stu-id="7d438-107">Description</span></span>|  
 |------------|-----------------|  
-|`cssAccurate`|<span data-ttu-id="7066c-108">Specifies that the return value should be exact.</span><span class="sxs-lookup"><span data-stu-id="7066c-108">Specifies that the return value should be exact.</span></span>|  
-|`cssQuick`|<span data-ttu-id="7066c-109">Specifies that the return value should be estimated.</span><span class="sxs-lookup"><span data-stu-id="7066c-109">Specifies that the return value should be estimated.</span></span>|  
-|`cssDiscardTransientCAs`|<span data-ttu-id="7066c-110">Specifies that discardable types should be removed.</span><span class="sxs-lookup"><span data-stu-id="7066c-110">Specifies that discardable types should be removed.</span></span>|  
+|`cssAccurate`|<span data-ttu-id="7d438-108">Určuje, že návratová hodnota by měla být přesně.</span><span class="sxs-lookup"><span data-stu-id="7d438-108">Specifies that the return value should be exact.</span></span>|  
+|`cssQuick`|<span data-ttu-id="7d438-109">Určuje, že návratová hodnota by měla být odhadnuta.</span><span class="sxs-lookup"><span data-stu-id="7d438-109">Specifies that the return value should be estimated.</span></span>|  
+|`cssDiscardTransientCAs`|<span data-ttu-id="7d438-110">Určuje, že by měly být odebrány typy, které by se měly odstranit.</span><span class="sxs-lookup"><span data-stu-id="7d438-110">Specifies that discardable types should be removed.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="7066c-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7066c-111">Requirements</span></span>  
- <span data-ttu-id="7066c-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7066c-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="7d438-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7d438-111">Requirements</span></span>  
+ <span data-ttu-id="7d438-112">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7d438-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="7066c-113">**Header:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="7066c-113">**Header:** CorHdr.h</span></span>  
+ <span data-ttu-id="7d438-113">**Hlavička:** CorHdr. h</span><span class="sxs-lookup"><span data-stu-id="7d438-113">**Header:** CorHdr.h</span></span>  
   
- <span data-ttu-id="7066c-114">**Library:** Used as a resource in MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="7066c-114">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="7d438-114">**Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.</span><span class="sxs-lookup"><span data-stu-id="7d438-114">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="7066c-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="7066c-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="7d438-115">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="7d438-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="7066c-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7066c-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7d438-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7d438-116">See also</span></span>
 
-- [<span data-ttu-id="7066c-117">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="7066c-117">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [<span data-ttu-id="7d438-117">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="7d438-117">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

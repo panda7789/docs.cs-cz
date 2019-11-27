@@ -1,5 +1,5 @@
 ---
-title: 'How to: Calculate Intermediate Values'
+title: 'Postupy: výpočet mezilehlých hodnot'
 ms.date: 07/20/2015
 ms.assetid: 933a97b2-dfe7-4f4d-94ad-e6e20df84abd
 ms.openlocfilehash: 167293a9af94a0991505b6e9edf225e6d3382bee
@@ -9,13 +9,13 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353356"
 ---
-# <a name="how-to-calculate-intermediate-values-visual-basic"></a><span data-ttu-id="7d883-102">How to: Calculate Intermediate Values (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7d883-102">How to: Calculate Intermediate Values (Visual Basic)</span></span>
-<span data-ttu-id="7d883-103">This example shows how to calculate intermediate values that can be used in sorting, filtering, and selecting.</span><span class="sxs-lookup"><span data-stu-id="7d883-103">This example shows how to calculate intermediate values that can be used in sorting, filtering, and selecting.</span></span>  
+# <a name="how-to-calculate-intermediate-values-visual-basic"></a><span data-ttu-id="8e2e1-102">Postupy: výpočet mezilehlých hodnot (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8e2e1-102">How to: Calculate Intermediate Values (Visual Basic)</span></span>
+<span data-ttu-id="8e2e1-103">Tento příklad ukazuje, jak vypočítat mezilehlé hodnoty, které lze použít při řazení, filtrování a výběr.</span><span class="sxs-lookup"><span data-stu-id="8e2e1-103">This example shows how to calculate intermediate values that can be used in sorting, filtering, and selecting.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="7d883-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="7d883-104">Example</span></span>  
- <span data-ttu-id="7d883-105">The following example uses the `Let` clause.</span><span class="sxs-lookup"><span data-stu-id="7d883-105">The following example uses the `Let` clause.</span></span>  
+## <a name="example"></a><span data-ttu-id="8e2e1-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="8e2e1-104">Example</span></span>  
+ <span data-ttu-id="8e2e1-105">Následující příklad používá klauzuli `Let`.</span><span class="sxs-lookup"><span data-stu-id="8e2e1-105">The following example uses the `Let` clause.</span></span>  
   
- <span data-ttu-id="7d883-106">This example uses the following XML document: [Sample XML File: Numerical Data (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="7d883-106">This example uses the following XML document: [Sample XML File: Numerical Data (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="8e2e1-106">Tento příklad používá následující dokument XML: [ukázkový soubor XML: numerická data (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="8e2e1-106">This example uses the following XML document: [Sample XML File: Numerical Data (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).</span></span>  
   
 ```vb  
 Dim root As XElement = XElement.Load("Data.xml")  
@@ -30,7 +30,7 @@ For Each ex As Decimal In extensions
 Next  
 ```  
   
- <span data-ttu-id="7d883-107">This code produces the following output:</span><span class="sxs-lookup"><span data-stu-id="7d883-107">This code produces the following output:</span></span>  
+ <span data-ttu-id="8e2e1-107">Tento kód generuje následující výstup:</span><span class="sxs-lookup"><span data-stu-id="8e2e1-107">This code produces the following output:</span></span>  
   
 ```console  
 55.92  
@@ -40,10 +40,10 @@ Next
 435.00  
 ```  
   
-## <a name="example"></a><span data-ttu-id="7d883-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="7d883-108">Example</span></span>  
- <span data-ttu-id="7d883-109">The following example shows the same query for XML that is in a namespace.</span><span class="sxs-lookup"><span data-stu-id="7d883-109">The following example shows the same query for XML that is in a namespace.</span></span> <span data-ttu-id="7d883-110">For more information, see [Namespaces Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="7d883-110">For more information, see [Namespaces Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).</span></span>  
+## <a name="example"></a><span data-ttu-id="8e2e1-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="8e2e1-108">Example</span></span>  
+ <span data-ttu-id="8e2e1-109">Následující příklad ukazuje stejný dotaz pro XML, který je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="8e2e1-109">The following example shows the same query for XML that is in a namespace.</span></span> <span data-ttu-id="8e2e1-110">Další informace najdete v tématu [obory názvů Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="8e2e1-110">For more information, see [Namespaces Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).</span></span>  
   
- <span data-ttu-id="7d883-111">This example uses the following XML document: [Sample XML File: Numerical Data in a Namespace](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-in-a-namespace.md).</span><span class="sxs-lookup"><span data-stu-id="7d883-111">This example uses the following XML document: [Sample XML File: Numerical Data in a Namespace](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-in-a-namespace.md).</span></span>  
+ <span data-ttu-id="8e2e1-111">Tento příklad používá následující dokument XML: [ukázkový soubor XML: numerická data v oboru názvů](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-in-a-namespace.md).</span><span class="sxs-lookup"><span data-stu-id="8e2e1-111">This example uses the following XML document: [Sample XML File: Numerical Data in a Namespace](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-in-a-namespace.md).</span></span>  
   
 ```vb  
 Imports <xmlns="http://www.adatum.com">  
@@ -64,7 +64,7 @@ Module Module1
 End Module  
 ```  
   
- <span data-ttu-id="7d883-112">This code produces the following output:</span><span class="sxs-lookup"><span data-stu-id="7d883-112">This code produces the following output:</span></span>  
+ <span data-ttu-id="8e2e1-112">Tento kód generuje následující výstup:</span><span class="sxs-lookup"><span data-stu-id="8e2e1-112">This code produces the following output:</span></span>  
   
 ```console  
 55.92  
@@ -74,6 +74,6 @@ End Module
 435.00  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="7d883-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7d883-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8e2e1-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8e2e1-113">See also</span></span>
 
-- [<span data-ttu-id="7d883-114">Basic Queries (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7d883-114">Basic Queries (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+- [<span data-ttu-id="8e2e1-114">Základní dotazy (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8e2e1-114">Basic Queries (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

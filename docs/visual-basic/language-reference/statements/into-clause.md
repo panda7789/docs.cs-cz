@@ -11,18 +11,18 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348040"
 ---
-# <a name="into-clause-visual-basic"></a><span data-ttu-id="a38a2-102">Into – klauzule (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a38a2-102">Into Clause (Visual Basic)</span></span>
-<span data-ttu-id="a38a2-103">Identifies aggregate functions or groupings to apply to a collection.</span><span class="sxs-lookup"><span data-stu-id="a38a2-103">Identifies aggregate functions or groupings to apply to a collection.</span></span>  
+# <a name="into-clause-visual-basic"></a><span data-ttu-id="c67cc-102">Into – klauzule (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c67cc-102">Into Clause (Visual Basic)</span></span>
+<span data-ttu-id="c67cc-103">Identifikuje agregační funkce nebo seskupení pro použití v kolekci.</span><span class="sxs-lookup"><span data-stu-id="c67cc-103">Identifies aggregate functions or groupings to apply to a collection.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="a38a2-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="a38a2-104">Remarks</span></span>  
- <span data-ttu-id="a38a2-105">The `Each` keyword is used in the following contexts:</span><span class="sxs-lookup"><span data-stu-id="a38a2-105">The `Each` keyword is used in the following contexts:</span></span>  
+## <a name="remarks"></a><span data-ttu-id="c67cc-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c67cc-104">Remarks</span></span>  
+ <span data-ttu-id="c67cc-105">Klíčové slovo `Each` se používá v následujících kontextech:</span><span class="sxs-lookup"><span data-stu-id="c67cc-105">The `Each` keyword is used in the following contexts:</span></span>  
   
- [<span data-ttu-id="a38a2-106">Klauzule Aggregate</span><span class="sxs-lookup"><span data-stu-id="a38a2-106">Aggregate Clause</span></span>](../../../visual-basic/language-reference/queries/aggregate-clause.md)  
+ [<span data-ttu-id="c67cc-106">Klauzule Aggregate</span><span class="sxs-lookup"><span data-stu-id="c67cc-106">Aggregate Clause</span></span>](../../../visual-basic/language-reference/queries/aggregate-clause.md)  
   
- [<span data-ttu-id="a38a2-107">Klauzule Group By</span><span class="sxs-lookup"><span data-stu-id="a38a2-107">Group By Clause</span></span>](../../../visual-basic/language-reference/queries/group-by-clause.md)  
+ [<span data-ttu-id="c67cc-107">Klauzule Group By</span><span class="sxs-lookup"><span data-stu-id="c67cc-107">Group By Clause</span></span>](../../../visual-basic/language-reference/queries/group-by-clause.md)  
   
- [<span data-ttu-id="a38a2-108">Klauzule Group Join</span><span class="sxs-lookup"><span data-stu-id="a38a2-108">Group Join Clause</span></span>](../../../visual-basic/language-reference/queries/group-join-clause.md)  
+ [<span data-ttu-id="c67cc-108">Klauzule Group Join</span><span class="sxs-lookup"><span data-stu-id="c67cc-108">Group Join Clause</span></span>](../../../visual-basic/language-reference/queries/group-join-clause.md)  
   
-## <a name="see-also"></a><span data-ttu-id="a38a2-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a38a2-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c67cc-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c67cc-109">See also</span></span>
 
-- [<span data-ttu-id="a38a2-110">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="a38a2-110">Keywords</span></span>](../../../visual-basic/language-reference/keywords/index.md)
+- [<span data-ttu-id="c67cc-110">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="c67cc-110">Keywords</span></span>](../../../visual-basic/language-reference/keywords/index.md)

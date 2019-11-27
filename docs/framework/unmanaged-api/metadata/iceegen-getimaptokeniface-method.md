@@ -22,12 +22,12 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74435015"
 ---
-# <a name="iceegengetimaptokeniface-method"></a><span data-ttu-id="79ecb-102">ICeeGen::GetIMapTokenIface – metoda</span><span class="sxs-lookup"><span data-stu-id="79ecb-102">ICeeGen::GetIMapTokenIface Method</span></span>
-<span data-ttu-id="79ecb-103">Gets the interface referenced by the specified token.</span><span class="sxs-lookup"><span data-stu-id="79ecb-103">Gets the interface referenced by the specified token.</span></span>  
+# <a name="iceegengetimaptokeniface-method"></a><span data-ttu-id="76826-102">ICeeGen::GetIMapTokenIface – metoda</span><span class="sxs-lookup"><span data-stu-id="76826-102">ICeeGen::GetIMapTokenIface Method</span></span>
+<span data-ttu-id="76826-103">Získá rozhraní, na které odkazuje zadaný token.</span><span class="sxs-lookup"><span data-stu-id="76826-103">Gets the interface referenced by the specified token.</span></span>  
   
- <span data-ttu-id="79ecb-104">This method is obsolete and should not be used.</span><span class="sxs-lookup"><span data-stu-id="79ecb-104">This method is obsolete and should not be used.</span></span>  
+ <span data-ttu-id="76826-104">Tato metoda je zastaralá a neměla by se používat.</span><span class="sxs-lookup"><span data-stu-id="76826-104">This method is obsolete and should not be used.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="79ecb-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="79ecb-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="76826-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="76826-105">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetIMapTokenIface (  
@@ -35,19 +35,19 @@ HRESULT GetIMapTokenIface (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="79ecb-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="79ecb-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="76826-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="76826-106">Parameters</span></span>  
  `pIMapToken`  
- <span data-ttu-id="79ecb-107">[in, out] The metadata token for the interface to be returned.</span><span class="sxs-lookup"><span data-stu-id="79ecb-107">[in, out] The metadata token for the interface to be returned.</span></span>  
+ <span data-ttu-id="76826-107">[in, out] Token metadat pro rozhraní, které má být vráceno.</span><span class="sxs-lookup"><span data-stu-id="76826-107">[in, out] The metadata token for the interface to be returned.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="79ecb-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="79ecb-108">Requirements</span></span>  
- <span data-ttu-id="79ecb-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="79ecb-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="76826-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="76826-108">Requirements</span></span>  
+ <span data-ttu-id="76826-109">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="76826-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="79ecb-110">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="79ecb-110">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="76826-110">**Hlavička:** Cor. h</span><span class="sxs-lookup"><span data-stu-id="76826-110">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="79ecb-111">**Library:** Used as a resource in MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="79ecb-111">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="76826-111">**Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.</span><span class="sxs-lookup"><span data-stu-id="76826-111">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="79ecb-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="79ecb-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="76826-112">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="76826-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="79ecb-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="79ecb-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="76826-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="76826-113">See also</span></span>
 
-- [<span data-ttu-id="79ecb-114">ICeeGen – rozhraní</span><span class="sxs-lookup"><span data-stu-id="79ecb-114">ICeeGen Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+- [<span data-ttu-id="76826-114">ICeeGen – rozhraní</span><span class="sxs-lookup"><span data-stu-id="76826-114">ICeeGen Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)

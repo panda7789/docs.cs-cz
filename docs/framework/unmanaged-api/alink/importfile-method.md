@@ -21,10 +21,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446989"
 ---
-# <a name="importfile-method"></a><span data-ttu-id="89bc0-102">ImportFile – metoda</span><span class="sxs-lookup"><span data-stu-id="89bc0-102">ImportFile Method</span></span>
-<span data-ttu-id="89bc0-103">Imports assemblies and unbound modules.</span><span class="sxs-lookup"><span data-stu-id="89bc0-103">Imports assemblies and unbound modules.</span></span>  
+# <a name="importfile-method"></a><span data-ttu-id="b1f23-102">ImportFile – metoda</span><span class="sxs-lookup"><span data-stu-id="b1f23-102">ImportFile Method</span></span>
+<span data-ttu-id="b1f23-103">Importuje sestavení a nevázané moduly.</span><span class="sxs-lookup"><span data-stu-id="b1f23-103">Imports assemblies and unbound modules.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="89bc0-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="89bc0-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b1f23-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b1f23-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT ImportFile(  
@@ -37,33 +37,33 @@ HRESULT ImportFile(
 ) PURE;  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="89bc0-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="89bc0-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="b1f23-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b1f23-105">Parameters</span></span>  
  `pszFilename`  
- <span data-ttu-id="89bc0-106">Fully qualified name of file to be imported.</span><span class="sxs-lookup"><span data-stu-id="89bc0-106">Fully qualified name of file to be imported.</span></span>  
+ <span data-ttu-id="b1f23-106">Plně kvalifikovaný název souboru, který se má importovat</span><span class="sxs-lookup"><span data-stu-id="b1f23-106">Fully qualified name of file to be imported.</span></span>  
   
  `pszTargetName`  
- <span data-ttu-id="89bc0-107">Optional output file name that can be used to rename the file as it is linked into the assembly.</span><span class="sxs-lookup"><span data-stu-id="89bc0-107">Optional output file name that can be used to rename the file as it is linked into the assembly.</span></span>  
+ <span data-ttu-id="b1f23-107">Volitelný název výstupního souboru, který lze použít k přejmenování souboru, protože je propojen do sestavení.</span><span class="sxs-lookup"><span data-stu-id="b1f23-107">Optional output file name that can be used to rename the file as it is linked into the assembly.</span></span>  
   
  `fSmartImport`  
- <span data-ttu-id="89bc0-108">If TRUE, ImportTypes is used, otherwise importing must be performed manually.</span><span class="sxs-lookup"><span data-stu-id="89bc0-108">If TRUE, ImportTypes is used, otherwise importing must be performed manually.</span></span>  
+ <span data-ttu-id="b1f23-108">Při hodnotě TRUE se používá Importtypes –, jinak se import musí provést ručně.</span><span class="sxs-lookup"><span data-stu-id="b1f23-108">If TRUE, ImportTypes is used, otherwise importing must be performed manually.</span></span>  
   
  `pImportToken`  
- <span data-ttu-id="89bc0-109">Pointer to token where a unique file ID will be stored.</span><span class="sxs-lookup"><span data-stu-id="89bc0-109">Pointer to token where a unique file ID will be stored.</span></span> <span data-ttu-id="89bc0-110">The file can be an assembly or a file.</span><span class="sxs-lookup"><span data-stu-id="89bc0-110">The file can be an assembly or a file.</span></span>  
+ <span data-ttu-id="b1f23-109">Ukazatel na token, kde bude uložen jedinečný identifikátor souboru.</span><span class="sxs-lookup"><span data-stu-id="b1f23-109">Pointer to token where a unique file ID will be stored.</span></span> <span data-ttu-id="b1f23-110">Soubor může být sestavením nebo souborem.</span><span class="sxs-lookup"><span data-stu-id="b1f23-110">The file can be an assembly or a file.</span></span>  
   
  `ppAssemblyScope`  
- <span data-ttu-id="89bc0-111">Receives pointer to [IMetaDataAssemblyImport Interface](../metadata/imetadataassemblyimport-interface.md).</span><span class="sxs-lookup"><span data-stu-id="89bc0-111">Receives pointer to [IMetaDataAssemblyImport Interface](../metadata/imetadataassemblyimport-interface.md).</span></span> <span data-ttu-id="89bc0-112">Can be NULL if the file is not an assembly.</span><span class="sxs-lookup"><span data-stu-id="89bc0-112">Can be NULL if the file is not an assembly.</span></span>  
+ <span data-ttu-id="b1f23-111">Přijme ukazatel na [rozhraní IMetaDataAssemblyImport](../metadata/imetadataassemblyimport-interface.md).</span><span class="sxs-lookup"><span data-stu-id="b1f23-111">Receives pointer to [IMetaDataAssemblyImport Interface](../metadata/imetadataassemblyimport-interface.md).</span></span> <span data-ttu-id="b1f23-112">Pokud soubor není sestavením, může mít hodnotu NULL.</span><span class="sxs-lookup"><span data-stu-id="b1f23-112">Can be NULL if the file is not an assembly.</span></span>  
   
  `pdwCountOfScopes`  
- <span data-ttu-id="89bc0-113">Pointer to the count of files and/or scopes that have been imported.</span><span class="sxs-lookup"><span data-stu-id="89bc0-113">Pointer to the count of files and/or scopes that have been imported.</span></span>  
+ <span data-ttu-id="b1f23-113">Ukazatel na počet souborů nebo rozsahů, které byly naimportovány.</span><span class="sxs-lookup"><span data-stu-id="b1f23-113">Pointer to the count of files and/or scopes that have been imported.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="89bc0-114">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="89bc0-114">Return Value</span></span>  
- <span data-ttu-id="89bc0-115">Returns S_OK if the method succeeds.</span><span class="sxs-lookup"><span data-stu-id="89bc0-115">Returns S_OK if the method succeeds.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="b1f23-114">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="b1f23-114">Return Value</span></span>  
+ <span data-ttu-id="b1f23-115">Vrátí S_OK, pokud je metoda úspěšná.</span><span class="sxs-lookup"><span data-stu-id="b1f23-115">Returns S_OK if the method succeeds.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="89bc0-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="89bc0-116">Requirements</span></span>  
- <span data-ttu-id="89bc0-117">Requires alink.h</span><span class="sxs-lookup"><span data-stu-id="89bc0-117">Requires alink.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="b1f23-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b1f23-116">Requirements</span></span>  
+ <span data-ttu-id="b1f23-117">Vyžaduje ALink. h</span><span class="sxs-lookup"><span data-stu-id="b1f23-117">Requires alink.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="89bc0-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="89bc0-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b1f23-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b1f23-118">See also</span></span>
 
-- [<span data-ttu-id="89bc0-119">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="89bc0-119">IALink Interface</span></span>](ialink-interface.md)
-- [<span data-ttu-id="89bc0-120">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="89bc0-120">IALink2 Interface</span></span>](ialink2-interface.md)
-- [<span data-ttu-id="89bc0-121">ALink API</span><span class="sxs-lookup"><span data-stu-id="89bc0-121">ALink API</span></span>](index.md)
+- [<span data-ttu-id="b1f23-119">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b1f23-119">IALink Interface</span></span>](ialink-interface.md)
+- [<span data-ttu-id="b1f23-120">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b1f23-120">IALink2 Interface</span></span>](ialink2-interface.md)
+- [<span data-ttu-id="b1f23-121">Rozhraní API ALink</span><span class="sxs-lookup"><span data-stu-id="b1f23-121">ALink API</span></span>](index.md)

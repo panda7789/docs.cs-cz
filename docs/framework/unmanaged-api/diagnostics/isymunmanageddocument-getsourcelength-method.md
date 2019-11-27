@@ -22,23 +22,23 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449147"
 ---
-# <a name="isymunmanageddocumentgetsourcelength-method"></a><span data-ttu-id="13e76-102">ISymUnmanagedDocument::GetSourceLength – metoda</span><span class="sxs-lookup"><span data-stu-id="13e76-102">ISymUnmanagedDocument::GetSourceLength Method</span></span>
-<span data-ttu-id="13e76-103">Gets the length, in bytes, of the embedded source.</span><span class="sxs-lookup"><span data-stu-id="13e76-103">Gets the length, in bytes, of the embedded source.</span></span>  
+# <a name="isymunmanageddocumentgetsourcelength-method"></a><span data-ttu-id="f177e-102">ISymUnmanagedDocument::GetSourceLength – metoda</span><span class="sxs-lookup"><span data-stu-id="f177e-102">ISymUnmanagedDocument::GetSourceLength Method</span></span>
+<span data-ttu-id="f177e-103">Získá délku vloženého zdroje v bajtech.</span><span class="sxs-lookup"><span data-stu-id="f177e-103">Gets the length, in bytes, of the embedded source.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="13e76-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="13e76-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f177e-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f177e-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetSourceLength(  
     [out, retval]  ULONG32*  pRetVal);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="13e76-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="13e76-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="f177e-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="f177e-105">Parameters</span></span>  
  `pRetVal`  
- <span data-ttu-id="13e76-106">[out] A pointer to a variable that indicates the length, in bytes, of the embedded source.</span><span class="sxs-lookup"><span data-stu-id="13e76-106">[out] A pointer to a variable that indicates the length, in bytes, of the embedded source.</span></span>  
+ <span data-ttu-id="f177e-106">mimo Ukazatel na proměnnou, která určuje délku vloženého zdroje v bajtech.</span><span class="sxs-lookup"><span data-stu-id="f177e-106">[out] A pointer to a variable that indicates the length, in bytes, of the embedded source.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="13e76-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="13e76-107">Return Value</span></span>  
- <span data-ttu-id="13e76-108">S_OK if the method succeeds.</span><span class="sxs-lookup"><span data-stu-id="13e76-108">S_OK if the method succeeds.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="f177e-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="f177e-107">Return Value</span></span>  
+ <span data-ttu-id="f177e-108">S_OK, zda je metoda úspěšná.</span><span class="sxs-lookup"><span data-stu-id="f177e-108">S_OK if the method succeeds.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="13e76-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="13e76-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f177e-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f177e-109">See also</span></span>
 
-- [<span data-ttu-id="13e76-110">ISymUnmanagedDocument – rozhraní</span><span class="sxs-lookup"><span data-stu-id="13e76-110">ISymUnmanagedDocument Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)
+- [<span data-ttu-id="f177e-110">ISymUnmanagedDocument – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f177e-110">ISymUnmanagedDocument Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)

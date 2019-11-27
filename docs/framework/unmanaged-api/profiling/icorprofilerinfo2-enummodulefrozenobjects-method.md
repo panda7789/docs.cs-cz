@@ -22,10 +22,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436047"
 ---
-# <a name="icorprofilerinfo2enummodulefrozenobjects-method"></a><span data-ttu-id="463f3-102">ICorProfilerInfo2::EnumModuleFrozenObjects – metoda</span><span class="sxs-lookup"><span data-stu-id="463f3-102">ICorProfilerInfo2::EnumModuleFrozenObjects Method</span></span>
-<span data-ttu-id="463f3-103">Gets an enumerator that allows iteration over the frozen objects in the specified module.This method is obsolete.</span><span class="sxs-lookup"><span data-stu-id="463f3-103">Gets an enumerator that allows iteration over the frozen objects in the specified module.This method is obsolete.</span></span>  
+# <a name="icorprofilerinfo2enummodulefrozenobjects-method"></a><span data-ttu-id="2cb90-102">ICorProfilerInfo2::EnumModuleFrozenObjects – metoda</span><span class="sxs-lookup"><span data-stu-id="2cb90-102">ICorProfilerInfo2::EnumModuleFrozenObjects Method</span></span>
+<span data-ttu-id="2cb90-103">Získá enumerátor, který umožňuje iteraci přes zmrazené objekty v zadaném modulu. Tato metoda je zastaralá.</span><span class="sxs-lookup"><span data-stu-id="2cb90-103">Gets an enumerator that allows iteration over the frozen objects in the specified module.This method is obsolete.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="463f3-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="463f3-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="2cb90-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2cb90-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT EnumModuleFrozenObjects(  
@@ -33,23 +33,23 @@ HRESULT EnumModuleFrozenObjects(
     [out] ICorProfilerObjectEnum** ppEnum);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="463f3-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="463f3-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="2cb90-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="2cb90-105">Parameters</span></span>  
  `moduleID`  
- <span data-ttu-id="463f3-106">[in] The ID of the module that contains the frozen objects to be enumerated.</span><span class="sxs-lookup"><span data-stu-id="463f3-106">[in] The ID of the module that contains the frozen objects to be enumerated.</span></span>  
+ <span data-ttu-id="2cb90-106">pro ID modulu obsahujícího zmrazené objekty, které mají být vyčísleny</span><span class="sxs-lookup"><span data-stu-id="2cb90-106">[in] The ID of the module that contains the frozen objects to be enumerated.</span></span>  
   
  `ppEnum`  
- <span data-ttu-id="463f3-107">[out] A pointer to the address of an [ICorProfilerObjectEnum](../../../../docs/framework/unmanaged-api/profiling/icorprofilerobjectenum-interface.md) interface, which enumerates the frozen objects.</span><span class="sxs-lookup"><span data-stu-id="463f3-107">[out] A pointer to the address of an [ICorProfilerObjectEnum](../../../../docs/framework/unmanaged-api/profiling/icorprofilerobjectenum-interface.md) interface, which enumerates the frozen objects.</span></span>  
+ <span data-ttu-id="2cb90-107">mimo Ukazatel na adresu rozhraní [ICorProfilerObjectEnum](../../../../docs/framework/unmanaged-api/profiling/icorprofilerobjectenum-interface.md) , které vyčísluje zmrazené objekty.</span><span class="sxs-lookup"><span data-stu-id="2cb90-107">[out] A pointer to the address of an [ICorProfilerObjectEnum](../../../../docs/framework/unmanaged-api/profiling/icorprofilerobjectenum-interface.md) interface, which enumerates the frozen objects.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="463f3-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="463f3-108">Requirements</span></span>  
- <span data-ttu-id="463f3-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="463f3-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="2cb90-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2cb90-108">Requirements</span></span>  
+ <span data-ttu-id="2cb90-109">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2cb90-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="463f3-110">**Header:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="463f3-110">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="2cb90-110">**Hlavička:** CorProf. idl, CorProf. h</span><span class="sxs-lookup"><span data-stu-id="2cb90-110">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="463f3-111">**Library:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="463f3-111">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="2cb90-111">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="2cb90-111">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="463f3-112">**.NET Framework Versions:** 3.5, 3.0 SP1, 3.0, 2.0 SP1, 2.0</span><span class="sxs-lookup"><span data-stu-id="463f3-112">**.NET Framework Versions:** 3.5, 3.0 SP1, 3.0, 2.0 SP1, 2.0</span></span>  
+ <span data-ttu-id="2cb90-112">**Verze .NET Framework:** 3,5, 3,0 SP1, 3,0, 2,0 SP1, 2,0</span><span class="sxs-lookup"><span data-stu-id="2cb90-112">**.NET Framework Versions:** 3.5, 3.0 SP1, 3.0, 2.0 SP1, 2.0</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="463f3-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="463f3-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2cb90-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2cb90-113">See also</span></span>
 
-- [<span data-ttu-id="463f3-114">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="463f3-114">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
-- [<span data-ttu-id="463f3-115">ICorProfilerInfo2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="463f3-115">ICorProfilerInfo2 Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
+- [<span data-ttu-id="2cb90-114">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="2cb90-114">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [<span data-ttu-id="2cb90-115">ICorProfilerInfo2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="2cb90-115">ICorProfilerInfo2 Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)

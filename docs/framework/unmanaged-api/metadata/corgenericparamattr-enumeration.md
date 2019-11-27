@@ -21,10 +21,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450279"
 ---
-# <a name="corgenericparamattr-enumeration"></a><span data-ttu-id="4e478-102">CorGenericParamAttr – výčet</span><span class="sxs-lookup"><span data-stu-id="4e478-102">CorGenericParamAttr Enumeration</span></span>
-<span data-ttu-id="4e478-103">Contains values that describe the <xref:System.Type> parameters for generic types, as used in calls to [IMetaDataEmit2::DefineGenericParam](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-definegenericparam-method.md).</span><span class="sxs-lookup"><span data-stu-id="4e478-103">Contains values that describe the <xref:System.Type> parameters for generic types, as used in calls to [IMetaDataEmit2::DefineGenericParam](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-definegenericparam-method.md).</span></span>  
+# <a name="corgenericparamattr-enumeration"></a><span data-ttu-id="40963-102">CorGenericParamAttr – výčet</span><span class="sxs-lookup"><span data-stu-id="40963-102">CorGenericParamAttr Enumeration</span></span>
+<span data-ttu-id="40963-103">Obsahuje hodnoty, které popisují parametry <xref:System.Type> pro obecné typy, jak se používají v voláních [IMetaDataEmit2::D efinegenericparam](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-definegenericparam-method.md).</span><span class="sxs-lookup"><span data-stu-id="40963-103">Contains values that describe the <xref:System.Type> parameters for generic types, as used in calls to [IMetaDataEmit2::DefineGenericParam](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-definegenericparam-method.md).</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="4e478-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4e478-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="40963-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="40963-104">Syntax</span></span>  
   
 ```cpp  
 typedef enum CorGenericParamAttr {  
@@ -43,27 +43,27 @@ typedef enum CorGenericParamAttr {
 } CorGenericParamAttr;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="4e478-105">Členové</span><span class="sxs-lookup"><span data-stu-id="4e478-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="40963-105">Členové</span><span class="sxs-lookup"><span data-stu-id="40963-105">Members</span></span>  
   
-|<span data-ttu-id="4e478-106">Člen</span><span class="sxs-lookup"><span data-stu-id="4e478-106">Member</span></span>|<span data-ttu-id="4e478-107">Popis</span><span class="sxs-lookup"><span data-stu-id="4e478-107">Description</span></span>|  
+|<span data-ttu-id="40963-106">Člen</span><span class="sxs-lookup"><span data-stu-id="40963-106">Member</span></span>|<span data-ttu-id="40963-107">Popis</span><span class="sxs-lookup"><span data-stu-id="40963-107">Description</span></span>|  
 |------------|-----------------|  
-|`gpVarianceMask`|<span data-ttu-id="4e478-108">Parameter variance applies only to generic parameters for interfaces and delegates.</span><span class="sxs-lookup"><span data-stu-id="4e478-108">Parameter variance applies only to generic parameters for interfaces and delegates.</span></span>|  
-|`gpNonVariant`|<span data-ttu-id="4e478-109">Indicates the absence of variance.</span><span class="sxs-lookup"><span data-stu-id="4e478-109">Indicates the absence of variance.</span></span>|  
-|`gpCovariant`|<span data-ttu-id="4e478-110">Indicates covariance.</span><span class="sxs-lookup"><span data-stu-id="4e478-110">Indicates covariance.</span></span>|  
-|`gpContravariant`|<span data-ttu-id="4e478-111">Indicates contravariance.</span><span class="sxs-lookup"><span data-stu-id="4e478-111">Indicates contravariance.</span></span>|  
-|`gpSpecialConstraintMask`|<span data-ttu-id="4e478-112">Special constraints can apply to any <xref:System.Type> parameter.</span><span class="sxs-lookup"><span data-stu-id="4e478-112">Special constraints can apply to any <xref:System.Type> parameter.</span></span>|  
-|`gpNoSpecialConstraint`|<span data-ttu-id="4e478-113">Indicates that no constraint applies to the <xref:System.Type> parameter.</span><span class="sxs-lookup"><span data-stu-id="4e478-113">Indicates that no constraint applies to the <xref:System.Type> parameter.</span></span>|  
-|`gpReferenceTypeConstraint`|<span data-ttu-id="4e478-114">Indicates that the <xref:System.Type> parameter must be a reference type.</span><span class="sxs-lookup"><span data-stu-id="4e478-114">Indicates that the <xref:System.Type> parameter must be a reference type.</span></span>|  
-|`gpNotNullableValueTypeConstraint`|<span data-ttu-id="4e478-115">Indicates that the <xref:System.Type> parameter must be a value type that cannot be a null value.</span><span class="sxs-lookup"><span data-stu-id="4e478-115">Indicates that the <xref:System.Type> parameter must be a value type that cannot be a null value.</span></span>|  
-|`gpDefaultConstructorConstraint`|<span data-ttu-id="4e478-116">Indicates that the <xref:System.Type> parameter must have a default public constructor that takes no parameters.</span><span class="sxs-lookup"><span data-stu-id="4e478-116">Indicates that the <xref:System.Type> parameter must have a default public constructor that takes no parameters.</span></span>|  
+|`gpVarianceMask`|<span data-ttu-id="40963-108">Variance parametru se vztahuje pouze na Obecné parametry pro rozhraní a delegáty.</span><span class="sxs-lookup"><span data-stu-id="40963-108">Parameter variance applies only to generic parameters for interfaces and delegates.</span></span>|  
+|`gpNonVariant`|<span data-ttu-id="40963-109">Označuje absenci odchylky.</span><span class="sxs-lookup"><span data-stu-id="40963-109">Indicates the absence of variance.</span></span>|  
+|`gpCovariant`|<span data-ttu-id="40963-110">Označuje kovarianci.</span><span class="sxs-lookup"><span data-stu-id="40963-110">Indicates covariance.</span></span>|  
+|`gpContravariant`|<span data-ttu-id="40963-111">Označuje kontravariance.</span><span class="sxs-lookup"><span data-stu-id="40963-111">Indicates contravariance.</span></span>|  
+|`gpSpecialConstraintMask`|<span data-ttu-id="40963-112">Speciální omezení se můžou vztahovat na libovolný <xref:System.Type> parametr.</span><span class="sxs-lookup"><span data-stu-id="40963-112">Special constraints can apply to any <xref:System.Type> parameter.</span></span>|  
+|`gpNoSpecialConstraint`|<span data-ttu-id="40963-113">Indikuje, že se pro parametr <xref:System.Type> neplatí žádné omezení.</span><span class="sxs-lookup"><span data-stu-id="40963-113">Indicates that no constraint applies to the <xref:System.Type> parameter.</span></span>|  
+|`gpReferenceTypeConstraint`|<span data-ttu-id="40963-114">Označuje, že parametr <xref:System.Type> musí být typ odkazu.</span><span class="sxs-lookup"><span data-stu-id="40963-114">Indicates that the <xref:System.Type> parameter must be a reference type.</span></span>|  
+|`gpNotNullableValueTypeConstraint`|<span data-ttu-id="40963-115">Určuje, že parametr <xref:System.Type> musí být hodnotový typ, který nemůže být hodnota null.</span><span class="sxs-lookup"><span data-stu-id="40963-115">Indicates that the <xref:System.Type> parameter must be a value type that cannot be a null value.</span></span>|  
+|`gpDefaultConstructorConstraint`|<span data-ttu-id="40963-116">Určuje, že parametr <xref:System.Type> musí mít výchozí veřejný konstruktor, který nepřijímá žádné parametry.</span><span class="sxs-lookup"><span data-stu-id="40963-116">Indicates that the <xref:System.Type> parameter must have a default public constructor that takes no parameters.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="4e478-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="4e478-117">Requirements</span></span>  
- <span data-ttu-id="4e478-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="4e478-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="40963-117">Požadavky</span><span class="sxs-lookup"><span data-stu-id="40963-117">Requirements</span></span>  
+ <span data-ttu-id="40963-118">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="40963-118">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="4e478-119">**Header:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="4e478-119">**Header:** CorHdr.h</span></span>  
+ <span data-ttu-id="40963-119">**Hlavička:** CorHdr. h</span><span class="sxs-lookup"><span data-stu-id="40963-119">**Header:** CorHdr.h</span></span>  
   
- <span data-ttu-id="4e478-120">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="4e478-120">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="40963-120">**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="40963-120">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="4e478-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4e478-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="40963-121">Viz také:</span><span class="sxs-lookup"><span data-stu-id="40963-121">See also</span></span>
 
-- [<span data-ttu-id="4e478-122">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="4e478-122">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [<span data-ttu-id="40963-122">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="40963-122">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

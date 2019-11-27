@@ -22,10 +22,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449044"
 ---
-# <a name="isymunmanageddocumentwritersetchecksum-method"></a><span data-ttu-id="0f37d-102">ISymUnmanagedDocumentWriter::SetCheckSum – metoda</span><span class="sxs-lookup"><span data-stu-id="0f37d-102">ISymUnmanagedDocumentWriter::SetCheckSum Method</span></span>
-<span data-ttu-id="0f37d-103">Sets checksum information.</span><span class="sxs-lookup"><span data-stu-id="0f37d-103">Sets checksum information.</span></span>  
+# <a name="isymunmanageddocumentwritersetchecksum-method"></a><span data-ttu-id="6cafb-102">ISymUnmanagedDocumentWriter::SetCheckSum – metoda</span><span class="sxs-lookup"><span data-stu-id="6cafb-102">ISymUnmanagedDocumentWriter::SetCheckSum Method</span></span>
+<span data-ttu-id="6cafb-103">Nastaví informace kontrolního součtu.</span><span class="sxs-lookup"><span data-stu-id="6cafb-103">Sets checksum information.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="0f37d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0f37d-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="6cafb-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6cafb-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT SetCheckSum(  
@@ -34,22 +34,22 @@ HRESULT SetCheckSum(
     [in, size_is(checkSumSize)]  BYTE checkSum[]);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="0f37d-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="0f37d-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="6cafb-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="6cafb-105">Parameters</span></span>  
  `algorithmId`  
- <span data-ttu-id="0f37d-106">[in] The GUID that represents the algorithm identifier.</span><span class="sxs-lookup"><span data-stu-id="0f37d-106">[in] The GUID that represents the algorithm identifier.</span></span>  
+ <span data-ttu-id="6cafb-106">pro Identifikátor GUID, který představuje identifikátor algoritmu.</span><span class="sxs-lookup"><span data-stu-id="6cafb-106">[in] The GUID that represents the algorithm identifier.</span></span>  
   
  `checkSumSize`  
- <span data-ttu-id="0f37d-107">[in] A `ULONG32` that indicates the size, in bytes, of the `checkSum` buffer.</span><span class="sxs-lookup"><span data-stu-id="0f37d-107">[in] A `ULONG32` that indicates the size, in bytes, of the `checkSum` buffer.</span></span>  
+ <span data-ttu-id="6cafb-107">pro `ULONG32`, která určuje velikost vyrovnávací paměti `checkSum` v bajtech.</span><span class="sxs-lookup"><span data-stu-id="6cafb-107">[in] A `ULONG32` that indicates the size, in bytes, of the `checkSum` buffer.</span></span>  
   
  `checkSum`  
- <span data-ttu-id="0f37d-108">[in] The buffer that stores the checksum information.</span><span class="sxs-lookup"><span data-stu-id="0f37d-108">[in] The buffer that stores the checksum information.</span></span>  
+ <span data-ttu-id="6cafb-108">pro Vyrovnávací paměť, do které jsou uloženy informace kontrolního součtu.</span><span class="sxs-lookup"><span data-stu-id="6cafb-108">[in] The buffer that stores the checksum information.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="0f37d-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="0f37d-109">Return Value</span></span>  
- <span data-ttu-id="0f37d-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span><span class="sxs-lookup"><span data-stu-id="0f37d-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="6cafb-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="6cafb-109">Return Value</span></span>  
+ <span data-ttu-id="6cafb-110">S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="6cafb-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="0f37d-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="0f37d-111">Requirements</span></span>  
- <span data-ttu-id="0f37d-112">**Header:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="0f37d-112">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="6cafb-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="6cafb-111">Requirements</span></span>  
+ <span data-ttu-id="6cafb-112">**Hlavička:** CorSym. idl, CorSym. h</span><span class="sxs-lookup"><span data-stu-id="6cafb-112">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="0f37d-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0f37d-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="6cafb-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6cafb-113">See also</span></span>
 
-- [<span data-ttu-id="0f37d-114">ISymUnmanagedDocumentWriter – rozhraní</span><span class="sxs-lookup"><span data-stu-id="0f37d-114">ISymUnmanagedDocumentWriter Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocumentwriter-interface.md)
+- [<span data-ttu-id="6cafb-114">ISymUnmanagedDocumentWriter – rozhraní</span><span class="sxs-lookup"><span data-stu-id="6cafb-114">ISymUnmanagedDocumentWriter Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocumentwriter-interface.md)
