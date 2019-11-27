@@ -22,10 +22,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74435925"
 ---
-# <a name="imetadataemitsavetostream-method"></a><span data-ttu-id="ae098-102">IMetaDataEmit::SaveToStream – metoda</span><span class="sxs-lookup"><span data-stu-id="ae098-102">IMetaDataEmit::SaveToStream Method</span></span>
-<span data-ttu-id="ae098-103">Saves all metadata in the current scope to the specified `IStream`.</span><span class="sxs-lookup"><span data-stu-id="ae098-103">Saves all metadata in the current scope to the specified `IStream`.</span></span>  
+# <a name="imetadataemitsavetostream-method"></a><span data-ttu-id="3e620-102">IMetaDataEmit::SaveToStream – metoda</span><span class="sxs-lookup"><span data-stu-id="3e620-102">IMetaDataEmit::SaveToStream Method</span></span>
+<span data-ttu-id="3e620-103">Uloží všechna metadata v aktuálním oboru do určeného `IStream`.</span><span class="sxs-lookup"><span data-stu-id="3e620-103">Saves all metadata in the current scope to the specified `IStream`.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="ae098-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ae098-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="3e620-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3e620-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT SaveToStream (   
@@ -34,23 +34,23 @@ HRESULT SaveToStream (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="ae098-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="ae098-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="3e620-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="3e620-105">Parameters</span></span>  
  `pIStream`  
- <span data-ttu-id="ae098-106">[in] The writable stream to save to.</span><span class="sxs-lookup"><span data-stu-id="ae098-106">[in] The writable stream to save to.</span></span>  
+ <span data-ttu-id="3e620-106">pro Zapisovatelný datový proud, do kterého se mají ukládat.</span><span class="sxs-lookup"><span data-stu-id="3e620-106">[in] The writable stream to save to.</span></span>  
   
  `dwSaveFlags`  
- <span data-ttu-id="ae098-107">[in] Reserved.</span><span class="sxs-lookup"><span data-stu-id="ae098-107">[in] Reserved.</span></span> <span data-ttu-id="ae098-108">Must be zero.</span><span class="sxs-lookup"><span data-stu-id="ae098-108">Must be zero.</span></span>  
+ <span data-ttu-id="3e620-107">pro Rezervovaný.</span><span class="sxs-lookup"><span data-stu-id="3e620-107">[in] Reserved.</span></span> <span data-ttu-id="3e620-108">Musí mít hodnotu nula.</span><span class="sxs-lookup"><span data-stu-id="3e620-108">Must be zero.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="ae098-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="ae098-109">Requirements</span></span>  
- <span data-ttu-id="ae098-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ae098-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="3e620-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="3e620-109">Requirements</span></span>  
+ <span data-ttu-id="3e620-110">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="3e620-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="ae098-111">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="ae098-111">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="3e620-111">**Hlavička:** Cor. h</span><span class="sxs-lookup"><span data-stu-id="3e620-111">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="ae098-112">**Library:** Used as a resource in MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="ae098-112">**Library:** Used as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="3e620-112">**Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.</span><span class="sxs-lookup"><span data-stu-id="3e620-112">**Library:** Used as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="ae098-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ae098-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="3e620-113">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="3e620-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ae098-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ae098-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="3e620-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3e620-114">See also</span></span>
 
-- [<span data-ttu-id="ae098-115">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ae098-115">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [<span data-ttu-id="ae098-116">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ae098-116">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [<span data-ttu-id="3e620-115">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="3e620-115">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [<span data-ttu-id="3e620-116">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="3e620-116">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

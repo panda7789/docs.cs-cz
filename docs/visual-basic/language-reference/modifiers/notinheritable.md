@@ -22,18 +22,18 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351467"
 ---
-# <a name="notinheritable-visual-basic"></a><span data-ttu-id="4a39b-102">NotInheritable (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="4a39b-102">NotInheritable (Visual Basic)</span></span>
-<span data-ttu-id="4a39b-103">Specifies that a class cannot be used as a base class.</span><span class="sxs-lookup"><span data-stu-id="4a39b-103">Specifies that a class cannot be used as a base class.</span></span>  
+# <a name="notinheritable-visual-basic"></a><span data-ttu-id="e3b2a-102">NotInheritable (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="e3b2a-102">NotInheritable (Visual Basic)</span></span>
+<span data-ttu-id="e3b2a-103">Určuje, že třídu nelze použít jako základní třídu.</span><span class="sxs-lookup"><span data-stu-id="e3b2a-103">Specifies that a class cannot be used as a base class.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="4a39b-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="4a39b-104">Remarks</span></span>  
- <span data-ttu-id="4a39b-105">**Alternate Terms**.</span><span class="sxs-lookup"><span data-stu-id="4a39b-105">**Alternate Terms**.</span></span> <span data-ttu-id="4a39b-106">A class that cannot be inherited is sometimes called a *sealed* class.</span><span class="sxs-lookup"><span data-stu-id="4a39b-106">A class that cannot be inherited is sometimes called a *sealed* class.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="e3b2a-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="e3b2a-104">Remarks</span></span>  
+ <span data-ttu-id="e3b2a-105">**Alternativní výrazy**.</span><span class="sxs-lookup"><span data-stu-id="e3b2a-105">**Alternate Terms**.</span></span> <span data-ttu-id="e3b2a-106">Třídu, která nemůže být zděděna, se někdy označuje jako *zapečetěná* třída.</span><span class="sxs-lookup"><span data-stu-id="e3b2a-106">A class that cannot be inherited is sometimes called a *sealed* class.</span></span>  
   
- <span data-ttu-id="4a39b-107">The `NotInheritable` modifier can be used in this context:</span><span class="sxs-lookup"><span data-stu-id="4a39b-107">The `NotInheritable` modifier can be used in this context:</span></span>  
+ <span data-ttu-id="e3b2a-107">V tomto kontextu lze použít modifikátor `NotInheritable`:</span><span class="sxs-lookup"><span data-stu-id="e3b2a-107">The `NotInheritable` modifier can be used in this context:</span></span>  
   
- [<span data-ttu-id="4a39b-108">Příkaz Class</span><span class="sxs-lookup"><span data-stu-id="4a39b-108">Class Statement</span></span>](../../../visual-basic/language-reference/statements/class-statement.md)  
+ [<span data-ttu-id="e3b2a-108">Příkaz Class</span><span class="sxs-lookup"><span data-stu-id="e3b2a-108">Class Statement</span></span>](../../../visual-basic/language-reference/statements/class-statement.md)  
   
-## <a name="see-also"></a><span data-ttu-id="4a39b-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4a39b-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e3b2a-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e3b2a-109">See also</span></span>
 
-- [<span data-ttu-id="4a39b-110">Příkaz Inherits</span><span class="sxs-lookup"><span data-stu-id="4a39b-110">Inherits Statement</span></span>](../../../visual-basic/language-reference/statements/inherits-statement.md)
-- [<span data-ttu-id="4a39b-111">MustInherit</span><span class="sxs-lookup"><span data-stu-id="4a39b-111">MustInherit</span></span>](../../../visual-basic/language-reference/modifiers/mustinherit.md)
-- [<span data-ttu-id="4a39b-112">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="4a39b-112">Keywords</span></span>](../../../visual-basic/language-reference/keywords/index.md)
+- [<span data-ttu-id="e3b2a-110">Příkaz Inherits</span><span class="sxs-lookup"><span data-stu-id="e3b2a-110">Inherits Statement</span></span>](../../../visual-basic/language-reference/statements/inherits-statement.md)
+- [<span data-ttu-id="e3b2a-111">MustInherit</span><span class="sxs-lookup"><span data-stu-id="e3b2a-111">MustInherit</span></span>](../../../visual-basic/language-reference/modifiers/mustinherit.md)
+- [<span data-ttu-id="e3b2a-112">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="e3b2a-112">Keywords</span></span>](../../../visual-basic/language-reference/keywords/index.md)

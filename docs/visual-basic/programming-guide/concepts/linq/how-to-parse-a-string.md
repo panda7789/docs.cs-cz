@@ -1,5 +1,5 @@
 ---
-title: 'How to: Parse a String'
+title: 'Postupy: Analýza řetězce'
 ms.date: 07/20/2015
 ms.assetid: 896e1b4b-f9bd-4975-8bc1-55b6badce1ac
 ms.openlocfilehash: 31bae00eb3ebf0d8e64fc657693e8c0767c4f5d4
@@ -9,16 +9,16 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344487"
 ---
-# <a name="how-to-parse-a-string-visual-basic"></a><span data-ttu-id="7d00e-102">How to: Parse a String (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7d00e-102">How to: Parse a String (Visual Basic)</span></span>
-<span data-ttu-id="7d00e-103">This topic shows how to create an XML tree in C#.</span><span class="sxs-lookup"><span data-stu-id="7d00e-103">This topic shows how to create an XML tree in C#.</span></span>  
+# <a name="how-to-parse-a-string-visual-basic"></a><span data-ttu-id="86f85-102">Postupy: Analýza řetězce (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="86f85-102">How to: Parse a String (Visual Basic)</span></span>
+<span data-ttu-id="86f85-103">Toto téma ukazuje, jak vytvořit strom XML v C#.</span><span class="sxs-lookup"><span data-stu-id="86f85-103">This topic shows how to create an XML tree in C#.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="7d00e-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="7d00e-104">Example</span></span>  
- <span data-ttu-id="7d00e-105">You can parse a string in Visual Basic by using the `XElement.Parse` method.</span><span class="sxs-lookup"><span data-stu-id="7d00e-105">You can parse a string in Visual Basic by using the `XElement.Parse` method.</span></span> <span data-ttu-id="7d00e-106">However, it is more efficient to use XML literals, as shown in following code, because XML literals do not suffer from the same performance penalties as parsing XML from a string.</span><span class="sxs-lookup"><span data-stu-id="7d00e-106">However, it is more efficient to use XML literals, as shown in following code, because XML literals do not suffer from the same performance penalties as parsing XML from a string.</span></span>  
+## <a name="example"></a><span data-ttu-id="86f85-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="86f85-104">Example</span></span>  
+ <span data-ttu-id="86f85-105">Můžete analyzovat řetězec v Visual Basic pomocí metody `XElement.Parse`.</span><span class="sxs-lookup"><span data-stu-id="86f85-105">You can parse a string in Visual Basic by using the `XElement.Parse` method.</span></span> <span data-ttu-id="86f85-106">Je však efektivnější používat literály XML, jak je znázorněno v následujícím kódu, protože literály XML netrpí stejnými pokutami výkonu při analýze XML z řetězce.</span><span class="sxs-lookup"><span data-stu-id="86f85-106">However, it is more efficient to use XML literals, as shown in following code, because XML literals do not suffer from the same performance penalties as parsing XML from a string.</span></span>  
   
- <span data-ttu-id="7d00e-107">By using XML literals, you can just copy and paste your XML into your Visual Basic program.</span><span class="sxs-lookup"><span data-stu-id="7d00e-107">By using XML literals, you can just copy and paste your XML into your Visual Basic program.</span></span>  
+ <span data-ttu-id="86f85-107">Pomocí literálů XML můžete zkopírovat a vložit XML do programu Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="86f85-107">By using XML literals, you can just copy and paste your XML into your Visual Basic program.</span></span>  
   
 > [!NOTE]
-> <span data-ttu-id="7d00e-108">Parsing text or loading an XML document from a text file is less efficient than functional construction.</span><span class="sxs-lookup"><span data-stu-id="7d00e-108">Parsing text or loading an XML document from a text file is less efficient than functional construction.</span></span> <span data-ttu-id="7d00e-109">If you are initializing an XML tree from code, it takes less processor time to use functional construction than to parse text.</span><span class="sxs-lookup"><span data-stu-id="7d00e-109">If you are initializing an XML tree from code, it takes less processor time to use functional construction than to parse text.</span></span>  
+> <span data-ttu-id="86f85-108">Analýza textu nebo načítání dokumentu XML z textového souboru je méně efektivní než konstrukce funkčnosti.</span><span class="sxs-lookup"><span data-stu-id="86f85-108">Parsing text or loading an XML document from a text file is less efficient than functional construction.</span></span> <span data-ttu-id="86f85-109">Pokud inicializujete strom XML z kódu, zabere méně času procesoru na použití funkční konstrukce než k analýze textu.</span><span class="sxs-lookup"><span data-stu-id="86f85-109">If you are initializing an XML tree from code, it takes less processor time to use functional construction than to parse text.</span></span>  
   
 ```vb  
 Dim contacts as XElement = _  
@@ -49,6 +49,6 @@ Dim contacts as XElement = _
     </Contacts>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="7d00e-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7d00e-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="86f85-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="86f85-110">See also</span></span>
 
-- [<span data-ttu-id="7d00e-111">Parsing XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7d00e-111">Parsing XML (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+- [<span data-ttu-id="86f85-111">Analýza kódu XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="86f85-111">Parsing XML (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)

@@ -21,18 +21,18 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449227"
 ---
-# <a name="isymunmanageddispose-interface"></a><span data-ttu-id="bc720-102">ISymUnmanagedDispose – rozhraní</span><span class="sxs-lookup"><span data-stu-id="bc720-102">ISymUnmanagedDispose Interface</span></span>
-<span data-ttu-id="bc720-103">Disposes of unmanaged resources.</span><span class="sxs-lookup"><span data-stu-id="bc720-103">Disposes of unmanaged resources.</span></span>  
+# <a name="isymunmanageddispose-interface"></a><span data-ttu-id="d487d-102">ISymUnmanagedDispose – rozhraní</span><span class="sxs-lookup"><span data-stu-id="d487d-102">ISymUnmanagedDispose Interface</span></span>
+<span data-ttu-id="d487d-103">Likvidace nespravovaných prostředků.</span><span class="sxs-lookup"><span data-stu-id="d487d-103">Disposes of unmanaged resources.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="bc720-104">Metody</span><span class="sxs-lookup"><span data-stu-id="bc720-104">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="d487d-104">Metody</span><span class="sxs-lookup"><span data-stu-id="d487d-104">Methods</span></span>  
   
-|<span data-ttu-id="bc720-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="bc720-105">Method</span></span>|<span data-ttu-id="bc720-106">Popis</span><span class="sxs-lookup"><span data-stu-id="bc720-106">Description</span></span>|  
+|<span data-ttu-id="d487d-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="d487d-105">Method</span></span>|<span data-ttu-id="d487d-106">Popis</span><span class="sxs-lookup"><span data-stu-id="d487d-106">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="bc720-107">Destroy – metoda</span><span class="sxs-lookup"><span data-stu-id="bc720-107">Destroy Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddispose-destroy-method.md)|<span data-ttu-id="bc720-108">Causes the underlying object to release all internal references and return failure on any subsequent method calls.</span><span class="sxs-lookup"><span data-stu-id="bc720-108">Causes the underlying object to release all internal references and return failure on any subsequent method calls.</span></span>|  
+|[<span data-ttu-id="d487d-107">Destroy – metoda</span><span class="sxs-lookup"><span data-stu-id="d487d-107">Destroy Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddispose-destroy-method.md)|<span data-ttu-id="d487d-108">Způsobí, že podkladový objekt uvolní všechny interní odkazy a vrátí chybu pro jakékoli následné volání metody.</span><span class="sxs-lookup"><span data-stu-id="d487d-108">Causes the underlying object to release all internal references and return failure on any subsequent method calls.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="bc720-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="bc720-109">Requirements</span></span>  
- <span data-ttu-id="bc720-110">**Header:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="bc720-110">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="d487d-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="d487d-109">Requirements</span></span>  
+ <span data-ttu-id="d487d-110">**Hlavička:** CorSym. idl, CorSym. h</span><span class="sxs-lookup"><span data-stu-id="d487d-110">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="bc720-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bc720-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d487d-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d487d-111">See also</span></span>
 
-- [<span data-ttu-id="bc720-112">Rozhraní pro úložiště symbolů diagnostiky</span><span class="sxs-lookup"><span data-stu-id="bc720-112">Diagnostics Symbol Store Interfaces</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+- [<span data-ttu-id="d487d-112">Rozhraní pro úložiště symbolů diagnostiky</span><span class="sxs-lookup"><span data-stu-id="d487d-112">Diagnostics Symbol Store Interfaces</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)

@@ -9,10 +9,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74347690"
 ---
-# <a name="how-to-query-for-files-with-a-specified-attribute-or-name-visual-basic"></a><span data-ttu-id="4a76b-102">How to: Query for Files with a Specified Attribute or Name (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="4a76b-102">How to: Query for Files with a Specified Attribute or Name (Visual Basic)</span></span>
-<span data-ttu-id="4a76b-103">This example shows how to find all files that have a specified file name extension (for example ".txt") in a specified directory tree.</span><span class="sxs-lookup"><span data-stu-id="4a76b-103">This example shows how to find all files that have a specified file name extension (for example ".txt") in a specified directory tree.</span></span> <span data-ttu-id="4a76b-104">It also shows how to return either the newest or oldest file in the tree based on the creation time.</span><span class="sxs-lookup"><span data-stu-id="4a76b-104">It also shows how to return either the newest or oldest file in the tree based on the creation time.</span></span>  
+# <a name="how-to-query-for-files-with-a-specified-attribute-or-name-visual-basic"></a><span data-ttu-id="19fd0-102">Postupy: dotazování na soubory se zadaným atributem nebo názvem (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="19fd0-102">How to: Query for Files with a Specified Attribute or Name (Visual Basic)</span></span>
+<span data-ttu-id="19fd0-103">Tento příklad ukazuje, jak najít všechny soubory, které mají zadanou příponu názvu souboru (například ". txt") v zadaném stromu adresářů.</span><span class="sxs-lookup"><span data-stu-id="19fd0-103">This example shows how to find all files that have a specified file name extension (for example ".txt") in a specified directory tree.</span></span> <span data-ttu-id="19fd0-104">Také ukazuje, jak vrátit nejnovější nebo nejstarší soubor ve stromu na základě času vytvoření.</span><span class="sxs-lookup"><span data-stu-id="19fd0-104">It also shows how to return either the newest or oldest file in the tree based on the creation time.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="4a76b-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="4a76b-105">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="19fd0-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="19fd0-105">Example</span></span>  
   
 ```vb  
 Module FindFileByExtension  
@@ -60,10 +60,10 @@ Module FindFileByExtension
 End Module  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="4a76b-106">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="4a76b-106">Compiling the Code</span></span>  
-<span data-ttu-id="4a76b-107">Create a VB.NET console application project, with an `Imports` statement for the System.Linq namespace.</span><span class="sxs-lookup"><span data-stu-id="4a76b-107">Create a VB.NET console application project, with an `Imports` statement for the System.Linq namespace.</span></span>
+## <a name="compiling-the-code"></a><span data-ttu-id="19fd0-106">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="19fd0-106">Compiling the Code</span></span>  
+<span data-ttu-id="19fd0-107">Vytvořte projekt konzolové aplikace VB.NET s příkazem `Imports` pro obor názvů System. Linq.</span><span class="sxs-lookup"><span data-stu-id="19fd0-107">Create a VB.NET console application project, with an `Imports` statement for the System.Linq namespace.</span></span>
   
-## <a name="see-also"></a><span data-ttu-id="4a76b-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4a76b-108">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="19fd0-108">Viz také:</span><span class="sxs-lookup"><span data-stu-id="19fd0-108">See also</span></span>
 
-- [<span data-ttu-id="4a76b-109">LINQ to Objects (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="4a76b-109">LINQ to Objects (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
-- [<span data-ttu-id="4a76b-110">LINQ and File Directories (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="4a76b-110">LINQ and File Directories (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [<span data-ttu-id="19fd0-109">LINQ to Objects (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="19fd0-109">LINQ to Objects (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
+- [<span data-ttu-id="19fd0-110">LINQ a souborové adresáře (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="19fd0-110">LINQ and File Directories (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

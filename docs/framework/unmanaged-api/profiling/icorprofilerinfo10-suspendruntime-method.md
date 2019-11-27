@@ -18,26 +18,26 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74426961"
 ---
-# <a name="icorprofilerinfo10suspendruntime-method"></a><span data-ttu-id="64b81-102">ICorProfilerInfo10::SuspendRuntime Method</span><span class="sxs-lookup"><span data-stu-id="64b81-102">ICorProfilerInfo10::SuspendRuntime Method</span></span>
+# <a name="icorprofilerinfo10suspendruntime-method"></a><span data-ttu-id="bbe54-102">ICorProfilerInfo10:: SuspendRuntime – metoda</span><span class="sxs-lookup"><span data-stu-id="bbe54-102">ICorProfilerInfo10::SuspendRuntime Method</span></span>
 
-<span data-ttu-id="64b81-103">Suspends the runtime without performing a GC.</span><span class="sxs-lookup"><span data-stu-id="64b81-103">Suspends the runtime without performing a GC.</span></span>
+<span data-ttu-id="bbe54-103">Pozastaví modul runtime bez provedení GC.</span><span class="sxs-lookup"><span data-stu-id="bbe54-103">Suspends the runtime without performing a GC.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="64b81-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="64b81-104">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="bbe54-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="bbe54-104">Syntax</span></span>
 
 ```cpp
 HRESULT SuspendRuntime();
 ```
 
-## <a name="requirements"></a><span data-ttu-id="64b81-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="64b81-105">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="bbe54-105">Požadavky</span><span class="sxs-lookup"><span data-stu-id="bbe54-105">Requirements</span></span>
 
-<span data-ttu-id="64b81-106">**Platforms:** See [.NET Core supported operating systems](../../../core/install/dependencies.md?tabs=netcore30&pivots=os-windows).</span><span class="sxs-lookup"><span data-stu-id="64b81-106">**Platforms:** See [.NET Core supported operating systems](../../../core/install/dependencies.md?tabs=netcore30&pivots=os-windows).</span></span>
+<span data-ttu-id="bbe54-106">**Platformy:** Viz [podporované operační systémy .NET Core](../../../core/install/dependencies.md?tabs=netcore30&pivots=os-windows).</span><span class="sxs-lookup"><span data-stu-id="bbe54-106">**Platforms:** See [.NET Core supported operating systems](../../../core/install/dependencies.md?tabs=netcore30&pivots=os-windows).</span></span>
 
-<span data-ttu-id="64b81-107">**Header:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="64b81-107">**Header:** CorProf.idl, CorProf.h</span></span>
+<span data-ttu-id="bbe54-107">**Hlavička:** CorProf. idl, CorProf. h</span><span class="sxs-lookup"><span data-stu-id="bbe54-107">**Header:** CorProf.idl, CorProf.h</span></span>
 
-<span data-ttu-id="64b81-108">**Library:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="64b81-108">**Library:** CorGuids.lib</span></span>
+<span data-ttu-id="bbe54-108">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="bbe54-108">**Library:** CorGuids.lib</span></span>
 
-<span data-ttu-id="64b81-109">**.NET Versions:** [!INCLUDE[net_core_22](../../../../includes/net-core-30-md.md)]</span><span class="sxs-lookup"><span data-stu-id="64b81-109">**.NET Versions:** [!INCLUDE[net_core_22](../../../../includes/net-core-30-md.md)]</span></span>
+<span data-ttu-id="bbe54-109">**Verze rozhraní .NET:** [!INCLUDE[net_core_22](../../../../includes/net-core-30-md.md)]</span><span class="sxs-lookup"><span data-stu-id="bbe54-109">**.NET Versions:** [!INCLUDE[net_core_22](../../../../includes/net-core-30-md.md)]</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="64b81-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="64b81-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="bbe54-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bbe54-110">See also</span></span>
 
-- [<span data-ttu-id="64b81-111">ICorProfilerInfo10 Interface</span><span class="sxs-lookup"><span data-stu-id="64b81-111">ICorProfilerInfo10 Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo10-interface.md)
+- [<span data-ttu-id="bbe54-111">Rozhraní ICorProfilerInfo10</span><span class="sxs-lookup"><span data-stu-id="bbe54-111">ICorProfilerInfo10 Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo10-interface.md)

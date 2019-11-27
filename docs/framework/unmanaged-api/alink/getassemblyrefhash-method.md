@@ -21,10 +21,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74433870"
 ---
-# <a name="getassemblyrefhash-method"></a><span data-ttu-id="3974d-102">GetAssemblyRefHash – metoda</span><span class="sxs-lookup"><span data-stu-id="3974d-102">GetAssemblyRefHash Method</span></span>
-<span data-ttu-id="3974d-103">Retrieves a hash blob for a given assembly.</span><span class="sxs-lookup"><span data-stu-id="3974d-103">Retrieves a hash blob for a given assembly.</span></span>  
+# <a name="getassemblyrefhash-method"></a><span data-ttu-id="a2f05-102">GetAssemblyRefHash – metoda</span><span class="sxs-lookup"><span data-stu-id="a2f05-102">GetAssemblyRefHash Method</span></span>
+<span data-ttu-id="a2f05-103">Načte objekt BLOB algoritmu hash pro dané sestavení.</span><span class="sxs-lookup"><span data-stu-id="a2f05-103">Retrieves a hash blob for a given assembly.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="3974d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3974d-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="a2f05-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a2f05-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetAssemblyRefHash(  
@@ -34,24 +34,24 @@ HRESULT GetAssemblyRefHash(
 ) PURE;  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="3974d-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="3974d-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="a2f05-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="a2f05-105">Parameters</span></span>  
  `FileToken`  
- <span data-ttu-id="3974d-106">ID of assembly to which the hash will refer.</span><span class="sxs-lookup"><span data-stu-id="3974d-106">ID of assembly to which the hash will refer.</span></span>  
+ <span data-ttu-id="a2f05-106">ID sestavení, na které bude odkazovat hodnota hash</span><span class="sxs-lookup"><span data-stu-id="a2f05-106">ID of assembly to which the hash will refer.</span></span>  
   
  `ppvHash`  
- <span data-ttu-id="3974d-107">Receives the resulting hash blob.</span><span class="sxs-lookup"><span data-stu-id="3974d-107">Receives the resulting hash blob.</span></span>  
+ <span data-ttu-id="a2f05-107">Přijímá výsledný objekt BLOB algoritmu hash.</span><span class="sxs-lookup"><span data-stu-id="a2f05-107">Receives the resulting hash blob.</span></span>  
   
  `pcbHash`  
- <span data-ttu-id="3974d-108">Receives size, in bytes, of hash blob.</span><span class="sxs-lookup"><span data-stu-id="3974d-108">Receives size, in bytes, of hash blob.</span></span>  
+ <span data-ttu-id="a2f05-108">Přijímá velikost objektu BLOB hodnoty v bajtech.</span><span class="sxs-lookup"><span data-stu-id="a2f05-108">Receives size, in bytes, of hash blob.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="3974d-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="3974d-109">Return Value</span></span>  
- <span data-ttu-id="3974d-110">Returns S_OK if the method succeeds.</span><span class="sxs-lookup"><span data-stu-id="3974d-110">Returns S_OK if the method succeeds.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="a2f05-109">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="a2f05-109">Return Value</span></span>  
+ <span data-ttu-id="a2f05-110">Vrátí S_OK, pokud je metoda úspěšná.</span><span class="sxs-lookup"><span data-stu-id="a2f05-110">Returns S_OK if the method succeeds.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="3974d-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="3974d-111">Requirements</span></span>  
- <span data-ttu-id="3974d-112">Requires alink.h</span><span class="sxs-lookup"><span data-stu-id="3974d-112">Requires alink.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="a2f05-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a2f05-111">Requirements</span></span>  
+ <span data-ttu-id="a2f05-112">Vyžaduje ALink. h</span><span class="sxs-lookup"><span data-stu-id="a2f05-112">Requires alink.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="3974d-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3974d-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a2f05-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a2f05-113">See also</span></span>
 
-- [<span data-ttu-id="3974d-114">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="3974d-114">IALink Interface</span></span>](ialink-interface.md)
-- [<span data-ttu-id="3974d-115">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="3974d-115">IALink2 Interface</span></span>](ialink2-interface.md)
-- [<span data-ttu-id="3974d-116">ALink API</span><span class="sxs-lookup"><span data-stu-id="3974d-116">ALink API</span></span>](index.md)
+- [<span data-ttu-id="a2f05-114">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a2f05-114">IALink Interface</span></span>](ialink-interface.md)
+- [<span data-ttu-id="a2f05-115">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a2f05-115">IALink2 Interface</span></span>](ialink2-interface.md)
+- [<span data-ttu-id="a2f05-116">Rozhraní API ALink</span><span class="sxs-lookup"><span data-stu-id="a2f05-116">ALink API</span></span>](index.md)

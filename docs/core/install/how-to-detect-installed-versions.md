@@ -1,6 +1,6 @@
 ---
-title: Check installed .NET Core versions on Windows, Linux, and macOS - .NET Core
-description: Learn how to list which versions of .NET Core are installed on your computer. This includes the .NET Core runtime and SDK.
+title: Kontrolovat nainstalované verze .NET Core v systémech Windows, Linux a macOS – .NET Core
+description: Naučte se, jak zobrazit seznam verzí rozhraní .NET Core, které jsou nainstalovány ve vašem počítači. To zahrnuje modul runtime .NET Core a sadu SDK.
 author: thraka
 ms.author: adegeo
 ms.date: 11/01/2019
@@ -13,17 +13,17 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74451092"
 ---
-# <a name="how-to-check-that-net-core-is-already-installed"></a><span data-ttu-id="8ed80-104">How to check that .NET Core is already installed</span><span class="sxs-lookup"><span data-stu-id="8ed80-104">How to check that .NET Core is already installed</span></span>
+# <a name="how-to-check-that-net-core-is-already-installed"></a><span data-ttu-id="6943a-104">Jak ověřit, že je rozhraní .NET Core již nainstalováno</span><span class="sxs-lookup"><span data-stu-id="6943a-104">How to check that .NET Core is already installed</span></span>
 
-<span data-ttu-id="8ed80-105">This article teaches you how to check which versions of the .NET Core runtime and SDK are installed on your computer.</span><span class="sxs-lookup"><span data-stu-id="8ed80-105">This article teaches you how to check which versions of the .NET Core runtime and SDK are installed on your computer.</span></span> <span data-ttu-id="8ed80-106">.NET core may have already been installed if you have an integrated development environment, such as Visual Studio or Visual Studio for Mac.</span><span class="sxs-lookup"><span data-stu-id="8ed80-106">.NET core may have already been installed if you have an integrated development environment, such as Visual Studio or Visual Studio for Mac.</span></span>
+<span data-ttu-id="6943a-105">V tomto článku se dozvíte, jak zjistit, které verze modulu runtime .NET Core a sady SDK jsou nainstalovány ve vašem počítači.</span><span class="sxs-lookup"><span data-stu-id="6943a-105">This article teaches you how to check which versions of the .NET Core runtime and SDK are installed on your computer.</span></span> <span data-ttu-id="6943a-106">Pokud máte integrované vývojové prostředí, jako je například Visual Studio nebo Visual Studio pro Mac, je možné, že rozhraní .NET Core již bylo nainstalováno.</span><span class="sxs-lookup"><span data-stu-id="6943a-106">.NET core may have already been installed if you have an integrated development environment, such as Visual Studio or Visual Studio for Mac.</span></span>
 
-<span data-ttu-id="8ed80-107">Installing an SDK installs the corresponding runtime.</span><span class="sxs-lookup"><span data-stu-id="8ed80-107">Installing an SDK installs the corresponding runtime.</span></span>
+<span data-ttu-id="6943a-107">Instalace sady SDK nainstaluje odpovídající modul runtime.</span><span class="sxs-lookup"><span data-stu-id="6943a-107">Installing an SDK installs the corresponding runtime.</span></span>
 
-<span data-ttu-id="8ed80-108">If any command in this article fails, you don't have the runtime or SDK installed.</span><span class="sxs-lookup"><span data-stu-id="8ed80-108">If any command in this article fails, you don't have the runtime or SDK installed.</span></span> <span data-ttu-id="8ed80-109">For more information, see [Download and install .NET Core](index.md).</span><span class="sxs-lookup"><span data-stu-id="8ed80-109">For more information, see [Download and install .NET Core](index.md).</span></span>
+<span data-ttu-id="6943a-108">Pokud některý z příkazů v tomto článku neproběhne úspěšně, nemáte nainstalovaný modul runtime nebo sadu SDK.</span><span class="sxs-lookup"><span data-stu-id="6943a-108">If any command in this article fails, you don't have the runtime or SDK installed.</span></span> <span data-ttu-id="6943a-109">Další informace najdete v tématu [Stažení a instalace .NET Core](index.md).</span><span class="sxs-lookup"><span data-stu-id="6943a-109">For more information, see [Download and install .NET Core](index.md).</span></span>
 
-## <a name="check-sdk-versions"></a><span data-ttu-id="8ed80-110">Check SDK versions</span><span class="sxs-lookup"><span data-stu-id="8ed80-110">Check SDK versions</span></span>
+## <a name="check-sdk-versions"></a><span data-ttu-id="6943a-110">Kontrolovat verze sady SDK</span><span class="sxs-lookup"><span data-stu-id="6943a-110">Check SDK versions</span></span>
 
-<span data-ttu-id="8ed80-111">You can see which versions of the .NET Core SDK are currently installed with a terminal.</span><span class="sxs-lookup"><span data-stu-id="8ed80-111">You can see which versions of the .NET Core SDK are currently installed with a terminal.</span></span> <span data-ttu-id="8ed80-112">Open a terminal and run the `dotnet --list-sdks` command.</span><span class="sxs-lookup"><span data-stu-id="8ed80-112">Open a terminal and run the `dotnet --list-sdks` command.</span></span>
+<span data-ttu-id="6943a-111">Můžete si prohlédnout, které verze .NET Core SDK jsou aktuálně nainstalovány s terminálem.</span><span class="sxs-lookup"><span data-stu-id="6943a-111">You can see which versions of the .NET Core SDK are currently installed with a terminal.</span></span> <span data-ttu-id="6943a-112">Otevřete terminál a spusťte příkaz `dotnet --list-sdks`.</span><span class="sxs-lookup"><span data-stu-id="6943a-112">Open a terminal and run the `dotnet --list-sdks` command.</span></span>
 
 ::: zone pivot="os-windows"
 
@@ -73,9 +73,9 @@ dotnet --list-sdks
 
 ::: zone-end
 
-## <a name="check-runtime-versions"></a><span data-ttu-id="8ed80-113">Check runtime versions</span><span class="sxs-lookup"><span data-stu-id="8ed80-113">Check runtime versions</span></span>
+## <a name="check-runtime-versions"></a><span data-ttu-id="6943a-113">Kontrolovat verze modulu runtime</span><span class="sxs-lookup"><span data-stu-id="6943a-113">Check runtime versions</span></span>
 
-<span data-ttu-id="8ed80-114">You can see which versions of the .NET Core runtime are currently installed with the `dotnet --list-runtimes` command.</span><span class="sxs-lookup"><span data-stu-id="8ed80-114">You can see which versions of the .NET Core runtime are currently installed with the `dotnet --list-runtimes` command.</span></span>
+<span data-ttu-id="6943a-114">Můžete zjistit, které verze modulu runtime .NET Core jsou aktuálně nainstalovány pomocí příkazu `dotnet --list-runtimes`.</span><span class="sxs-lookup"><span data-stu-id="6943a-114">You can see which versions of the .NET Core runtime are currently installed with the `dotnet --list-runtimes` command.</span></span>
 
 ::: zone pivot="os-windows"
 
@@ -156,11 +156,11 @@ Microsoft.NETCore.App 3.0.0 [/usr/local/share/dotnet/shared/Microsoft.NETCore.Ap
 
 ::: zone-end
 
-## <a name="more-information"></a><span data-ttu-id="8ed80-115">Další informace</span><span class="sxs-lookup"><span data-stu-id="8ed80-115">More information</span></span>
+## <a name="more-information"></a><span data-ttu-id="6943a-115">Další informace</span><span class="sxs-lookup"><span data-stu-id="6943a-115">More information</span></span>
 
-<span data-ttu-id="8ed80-116">You can see both the SDK versions and runtime versions with the command `dotnet --info`.</span><span class="sxs-lookup"><span data-stu-id="8ed80-116">You can see both the SDK versions and runtime versions with the command `dotnet --info`.</span></span> <span data-ttu-id="8ed80-117">You'll also get other environmental related information, such as the operating system version and runtime identifier (RID).</span><span class="sxs-lookup"><span data-stu-id="8ed80-117">You'll also get other environmental related information, such as the operating system version and runtime identifier (RID).</span></span>
+<span data-ttu-id="6943a-116">Pomocí příkazu `dotnet --info`můžete zobrazit verze sady SDK i běhové verze.</span><span class="sxs-lookup"><span data-stu-id="6943a-116">You can see both the SDK versions and runtime versions with the command `dotnet --info`.</span></span> <span data-ttu-id="6943a-117">Získáte i další informace související s prostředím, jako je například verze operačního systému a identifikátor modulu runtime (RID).</span><span class="sxs-lookup"><span data-stu-id="6943a-117">You'll also get other environmental related information, such as the operating system version and runtime identifier (RID).</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="8ed80-118">Další kroky</span><span class="sxs-lookup"><span data-stu-id="8ed80-118">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="6943a-118">Další kroky</span><span class="sxs-lookup"><span data-stu-id="6943a-118">Next steps</span></span>
 
-- <span data-ttu-id="8ed80-119">[Install the .NET Core Runtime](runtime.md).</span><span class="sxs-lookup"><span data-stu-id="8ed80-119">[Install the .NET Core Runtime](runtime.md).</span></span>
-- <span data-ttu-id="8ed80-120">[Install the .NET Core SDK](sdk.md).</span><span class="sxs-lookup"><span data-stu-id="8ed80-120">[Install the .NET Core SDK](sdk.md).</span></span>
+- <span data-ttu-id="6943a-119">[Nainstalujte modul runtime .NET Core](runtime.md).</span><span class="sxs-lookup"><span data-stu-id="6943a-119">[Install the .NET Core Runtime](runtime.md).</span></span>
+- <span data-ttu-id="6943a-120">[Nainstalujte .NET Core SDK](sdk.md).</span><span class="sxs-lookup"><span data-stu-id="6943a-120">[Install the .NET Core SDK](sdk.md).</span></span>

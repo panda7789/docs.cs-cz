@@ -19,25 +19,25 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74347242"
 ---
-# <a name="mycomputerfilesystem-object"></a><span data-ttu-id="93d46-102">My.Computer.FileSystem – objekt</span><span class="sxs-lookup"><span data-stu-id="93d46-102">My.Computer.FileSystem Object</span></span>
-<span data-ttu-id="93d46-103">Provides properties and methods for working with drives, files, and directories.</span><span class="sxs-lookup"><span data-stu-id="93d46-103">Provides properties and methods for working with drives, files, and directories.</span></span>  
+# <a name="mycomputerfilesystem-object"></a><span data-ttu-id="44442-102">My.Computer.FileSystem – objekt</span><span class="sxs-lookup"><span data-stu-id="44442-102">My.Computer.FileSystem Object</span></span>
+<span data-ttu-id="44442-103">Poskytuje vlastnosti a metody pro práci s jednotkami, soubory a adresáři.</span><span class="sxs-lookup"><span data-stu-id="44442-103">Provides properties and methods for working with drives, files, and directories.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="93d46-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="93d46-104">Remarks</span></span>  
- <span data-ttu-id="93d46-105">For information about the methods and properties of the `My.Computer.FileSystem` object, see <xref:Microsoft.VisualBasic.FileIO.FileSystem>.</span><span class="sxs-lookup"><span data-stu-id="93d46-105">For information about the methods and properties of the `My.Computer.FileSystem` object, see <xref:Microsoft.VisualBasic.FileIO.FileSystem>.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="44442-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="44442-104">Remarks</span></span>  
+ <span data-ttu-id="44442-105">Informace o metodách a vlastnostech objektu `My.Computer.FileSystem` naleznete v tématu <xref:Microsoft.VisualBasic.FileIO.FileSystem>.</span><span class="sxs-lookup"><span data-stu-id="44442-105">For information about the methods and properties of the `My.Computer.FileSystem` object, see <xref:Microsoft.VisualBasic.FileIO.FileSystem>.</span></span>  
   
- <span data-ttu-id="93d46-106">For more information, see [File Access with Visual Basic](../../../visual-basic/developing-apps/programming/drives-directories-files/file-access.md).</span><span class="sxs-lookup"><span data-stu-id="93d46-106">For more information, see [File Access with Visual Basic](../../../visual-basic/developing-apps/programming/drives-directories-files/file-access.md).</span></span>  
+ <span data-ttu-id="44442-106">Další informace najdete v tématu [přístup k souborům pomocí Visual Basic](../../../visual-basic/developing-apps/programming/drives-directories-files/file-access.md).</span><span class="sxs-lookup"><span data-stu-id="44442-106">For more information, see [File Access with Visual Basic](../../../visual-basic/developing-apps/programming/drives-directories-files/file-access.md).</span></span>  
   
 > [!NOTE]
-> <span data-ttu-id="93d46-107">You can also use classes in the <xref:System.IO?displayProperty=nameWithType> namespace to work with drives, files, and directories.</span><span class="sxs-lookup"><span data-stu-id="93d46-107">You can also use classes in the <xref:System.IO?displayProperty=nameWithType> namespace to work with drives, files, and directories.</span></span>  
+> <span data-ttu-id="44442-107">Můžete také použít třídy v oboru názvů <xref:System.IO?displayProperty=nameWithType> pro práci s jednotkami, soubory a adresáři.</span><span class="sxs-lookup"><span data-stu-id="44442-107">You can also use classes in the <xref:System.IO?displayProperty=nameWithType> namespace to work with drives, files, and directories.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="93d46-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="93d46-108">Requirements</span></span>  
- <span data-ttu-id="93d46-109">**Namespace:** <xref:Microsoft.VisualBasic.MyServices></span><span class="sxs-lookup"><span data-stu-id="93d46-109">**Namespace:** <xref:Microsoft.VisualBasic.MyServices></span></span>  
+## <a name="requirements"></a><span data-ttu-id="44442-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="44442-108">Requirements</span></span>  
+ <span data-ttu-id="44442-109">**Obor názvů:** <xref:Microsoft.VisualBasic.MyServices></span><span class="sxs-lookup"><span data-stu-id="44442-109">**Namespace:** <xref:Microsoft.VisualBasic.MyServices></span></span>  
   
- <span data-ttu-id="93d46-110">**Class:** <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy> (provides access to <xref:Microsoft.VisualBasic.FileIO.FileSystem>)</span><span class="sxs-lookup"><span data-stu-id="93d46-110">**Class:** <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy> (provides access to <xref:Microsoft.VisualBasic.FileIO.FileSystem>)</span></span>  
+ <span data-ttu-id="44442-110">**Třída:** <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy> (poskytuje přístup k <xref:Microsoft.VisualBasic.FileIO.FileSystem>)</span><span class="sxs-lookup"><span data-stu-id="44442-110">**Class:** <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy> (provides access to <xref:Microsoft.VisualBasic.FileIO.FileSystem>)</span></span>  
   
- <span data-ttu-id="93d46-111">**Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)</span><span class="sxs-lookup"><span data-stu-id="93d46-111">**Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)</span></span>  
+ <span data-ttu-id="44442-111">**Sestavení:** Knihovna Visual Basic runtime (v souboru Microsoft. VisualBasic. dll)</span><span class="sxs-lookup"><span data-stu-id="44442-111">**Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="93d46-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="93d46-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="44442-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="44442-112">See also</span></span>
 
-- [<span data-ttu-id="93d46-113">Objekt My.Computer.FileSystem.SpecialDirectories</span><span class="sxs-lookup"><span data-stu-id="93d46-113">My.Computer.FileSystem.SpecialDirectories Object</span></span>](../../../visual-basic/language-reference/objects/my-computer-filesystem-specialdirectories-object.md)
-- [<span data-ttu-id="93d46-114">Objekt My.Computer</span><span class="sxs-lookup"><span data-stu-id="93d46-114">My.Computer Object</span></span>](../../../visual-basic/language-reference/objects/my-computer-object.md)
+- [<span data-ttu-id="44442-113">Objekt My.Computer.FileSystem.SpecialDirectories</span><span class="sxs-lookup"><span data-stu-id="44442-113">My.Computer.FileSystem.SpecialDirectories Object</span></span>](../../../visual-basic/language-reference/objects/my-computer-filesystem-specialdirectories-object.md)
+- [<span data-ttu-id="44442-114">Objekt My.Computer</span><span class="sxs-lookup"><span data-stu-id="44442-114">My.Computer Object</span></span>](../../../visual-basic/language-reference/objects/my-computer-object.md)

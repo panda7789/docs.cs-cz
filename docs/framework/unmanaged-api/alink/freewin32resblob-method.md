@@ -21,10 +21,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449399"
 ---
-# <a name="freewin32resblob-method"></a><span data-ttu-id="b9f39-102">FreeWin32ResBlob – metoda</span><span class="sxs-lookup"><span data-stu-id="b9f39-102">FreeWin32ResBlob Method</span></span>
-<span data-ttu-id="b9f39-103">Releases the Win32 resource blob and associated resources.</span><span class="sxs-lookup"><span data-stu-id="b9f39-103">Releases the Win32 resource blob and associated resources.</span></span>  
+# <a name="freewin32resblob-method"></a><span data-ttu-id="84d4d-102">FreeWin32ResBlob – metoda</span><span class="sxs-lookup"><span data-stu-id="84d4d-102">FreeWin32ResBlob Method</span></span>
+<span data-ttu-id="84d4d-103">Uvolňuje objekt BLOB prostředku Win32 a přidružené prostředky.</span><span class="sxs-lookup"><span data-stu-id="84d4d-103">Releases the Win32 resource blob and associated resources.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b9f39-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b9f39-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="84d4d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="84d4d-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT FreeWin32ResBlob(  
@@ -32,18 +32,18 @@ HRESULT FreeWin32ResBlob(
 ) PURE;  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="b9f39-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="b9f39-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="84d4d-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="84d4d-105">Parameters</span></span>  
  `ppResBlob`  
- <span data-ttu-id="b9f39-106">The resource blob to be released.</span><span class="sxs-lookup"><span data-stu-id="b9f39-106">The resource blob to be released.</span></span> <span data-ttu-id="b9f39-107">This method assigns the blob pointer to NULL.</span><span class="sxs-lookup"><span data-stu-id="b9f39-107">This method assigns the blob pointer to NULL.</span></span>  
+ <span data-ttu-id="84d4d-106">Objekt BLOB prostředku, který se má uvolnit</span><span class="sxs-lookup"><span data-stu-id="84d4d-106">The resource blob to be released.</span></span> <span data-ttu-id="84d4d-107">Tato metoda přiřadí ukazatel objektu BLOB k hodnotě NULL.</span><span class="sxs-lookup"><span data-stu-id="84d4d-107">This method assigns the blob pointer to NULL.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="b9f39-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="b9f39-108">Return Value</span></span>  
- <span data-ttu-id="b9f39-109">Returns S_OK if the method succeeds.</span><span class="sxs-lookup"><span data-stu-id="b9f39-109">Returns S_OK if the method succeeds.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="84d4d-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="84d4d-108">Return Value</span></span>  
+ <span data-ttu-id="84d4d-109">Vrátí S_OK, pokud je metoda úspěšná.</span><span class="sxs-lookup"><span data-stu-id="84d4d-109">Returns S_OK if the method succeeds.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="b9f39-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b9f39-110">Requirements</span></span>  
- <span data-ttu-id="b9f39-111">Requires alink.h</span><span class="sxs-lookup"><span data-stu-id="b9f39-111">Requires alink.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="84d4d-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="84d4d-110">Requirements</span></span>  
+ <span data-ttu-id="84d4d-111">Vyžaduje ALink. h</span><span class="sxs-lookup"><span data-stu-id="84d4d-111">Requires alink.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b9f39-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b9f39-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="84d4d-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="84d4d-112">See also</span></span>
 
-- [<span data-ttu-id="b9f39-113">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b9f39-113">IALink Interface</span></span>](ialink-interface.md)
-- [<span data-ttu-id="b9f39-114">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b9f39-114">IALink2 Interface</span></span>](ialink2-interface.md)
-- [<span data-ttu-id="b9f39-115">ALink API</span><span class="sxs-lookup"><span data-stu-id="b9f39-115">ALink API</span></span>](index.md)
+- [<span data-ttu-id="84d4d-113">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="84d4d-113">IALink Interface</span></span>](ialink-interface.md)
+- [<span data-ttu-id="84d4d-114">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="84d4d-114">IALink2 Interface</span></span>](ialink2-interface.md)
+- [<span data-ttu-id="84d4d-115">Rozhraní API ALink</span><span class="sxs-lookup"><span data-stu-id="84d4d-115">ALink API</span></span>](index.md)

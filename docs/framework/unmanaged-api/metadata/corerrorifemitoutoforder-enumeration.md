@@ -21,10 +21,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74443583"
 ---
-# <a name="corerrorifemitoutoforder-enumeration"></a><span data-ttu-id="2c5fa-102">CorErrorIfEmitOutOfOrder – výčet</span><span class="sxs-lookup"><span data-stu-id="2c5fa-102">CorErrorIfEmitOutOfOrder Enumeration</span></span>
-<span data-ttu-id="2c5fa-103">Contains flag values that indicate the conditions under which an error message should be generated when metadata is emitted out of order.</span><span class="sxs-lookup"><span data-stu-id="2c5fa-103">Contains flag values that indicate the conditions under which an error message should be generated when metadata is emitted out of order.</span></span>  
+# <a name="corerrorifemitoutoforder-enumeration"></a><span data-ttu-id="14759-102">CorErrorIfEmitOutOfOrder – výčet</span><span class="sxs-lookup"><span data-stu-id="14759-102">CorErrorIfEmitOutOfOrder Enumeration</span></span>
+<span data-ttu-id="14759-103">Obsahuje hodnoty příznaků, které určují podmínky, za kterých by se měla generovat chybová zpráva při vygenerování metadat mimo pořadí.</span><span class="sxs-lookup"><span data-stu-id="14759-103">Contains flag values that indicate the conditions under which an error message should be generated when metadata is emitted out of order.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="2c5fa-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2c5fa-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="14759-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="14759-104">Syntax</span></span>  
   
 ```cpp  
 typedef enum CorErrorIfEmitOutOfOrder {  
@@ -41,26 +41,26 @@ typedef enum CorErrorIfEmitOutOfOrder {
 } CorErrorIfEmitOutOfOrder;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="2c5fa-105">Členové</span><span class="sxs-lookup"><span data-stu-id="2c5fa-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="14759-105">Členové</span><span class="sxs-lookup"><span data-stu-id="14759-105">Members</span></span>  
   
-|<span data-ttu-id="2c5fa-106">Člen</span><span class="sxs-lookup"><span data-stu-id="2c5fa-106">Member</span></span>|<span data-ttu-id="2c5fa-107">Popis</span><span class="sxs-lookup"><span data-stu-id="2c5fa-107">Description</span></span>|  
+|<span data-ttu-id="14759-106">Člen</span><span class="sxs-lookup"><span data-stu-id="14759-106">Member</span></span>|<span data-ttu-id="14759-107">Popis</span><span class="sxs-lookup"><span data-stu-id="14759-107">Description</span></span>|  
 |------------|-----------------|  
-|`MDErrorOutOfOrderDefault`|<span data-ttu-id="2c5fa-108">Indicates the default behavior, which does not generate error messages.</span><span class="sxs-lookup"><span data-stu-id="2c5fa-108">Indicates the default behavior, which does not generate error messages.</span></span>|  
-|`MDErrorOutOfOrderNone`|<span data-ttu-id="2c5fa-109">Indicates that the compiler should not generate error messages.</span><span class="sxs-lookup"><span data-stu-id="2c5fa-109">Indicates that the compiler should not generate error messages.</span></span>|  
-|`MDErrorOutOfOrderAll`|<span data-ttu-id="2c5fa-110">Indicates that the compiler should generate an error message when a field, property, event, method, or parameter is emitted out of order.</span><span class="sxs-lookup"><span data-stu-id="2c5fa-110">Indicates that the compiler should generate an error message when a field, property, event, method, or parameter is emitted out of order.</span></span>|  
-|`MDMethodOutOfOrder`|<span data-ttu-id="2c5fa-111">Indicates that the compiler should generate an error message when a method is emitted out of order.</span><span class="sxs-lookup"><span data-stu-id="2c5fa-111">Indicates that the compiler should generate an error message when a method is emitted out of order.</span></span>|  
-|`MDFieldOutOfOrder`|<span data-ttu-id="2c5fa-112">Indicates that the compiler should generate an error message when a field is emitted out of order.</span><span class="sxs-lookup"><span data-stu-id="2c5fa-112">Indicates that the compiler should generate an error message when a field is emitted out of order.</span></span>|  
-|`MDParamOutOfOrder`|<span data-ttu-id="2c5fa-113">Indicates that the compiler should generate an error message when a parameter is emitted out of order.</span><span class="sxs-lookup"><span data-stu-id="2c5fa-113">Indicates that the compiler should generate an error message when a parameter is emitted out of order.</span></span>|  
-|`MDPropertyOutOfOrder`|<span data-ttu-id="2c5fa-114">Indicates that the compiler should generate an error message when a property is emitted out of order.</span><span class="sxs-lookup"><span data-stu-id="2c5fa-114">Indicates that the compiler should generate an error message when a property is emitted out of order.</span></span>|  
-|`MDEventOutOfOrder`|<span data-ttu-id="2c5fa-115">Indicates that the compiler should generate an error message when an event is emitted out of order.</span><span class="sxs-lookup"><span data-stu-id="2c5fa-115">Indicates that the compiler should generate an error message when an event is emitted out of order.</span></span>|  
+|`MDErrorOutOfOrderDefault`|<span data-ttu-id="14759-108">Označuje výchozí chování, které negeneruje chybové zprávy.</span><span class="sxs-lookup"><span data-stu-id="14759-108">Indicates the default behavior, which does not generate error messages.</span></span>|  
+|`MDErrorOutOfOrderNone`|<span data-ttu-id="14759-109">Označuje, že by kompilátor neměl generovat chybové zprávy.</span><span class="sxs-lookup"><span data-stu-id="14759-109">Indicates that the compiler should not generate error messages.</span></span>|  
+|`MDErrorOutOfOrderAll`|<span data-ttu-id="14759-110">Určuje, že má kompilátor generovat chybovou zprávu, pokud je vygenerováno pole, vlastnost, událost, metoda nebo parametr.</span><span class="sxs-lookup"><span data-stu-id="14759-110">Indicates that the compiler should generate an error message when a field, property, event, method, or parameter is emitted out of order.</span></span>|  
+|`MDMethodOutOfOrder`|<span data-ttu-id="14759-111">Označuje, že by kompilátor měl generovat chybovou zprávu, pokud je vygenerována metoda mimo pořadí.</span><span class="sxs-lookup"><span data-stu-id="14759-111">Indicates that the compiler should generate an error message when a method is emitted out of order.</span></span>|  
+|`MDFieldOutOfOrder`|<span data-ttu-id="14759-112">Označuje, že by kompilátor měl generovat chybovou zprávu, pokud je vygenerováno pole mimo pořadí.</span><span class="sxs-lookup"><span data-stu-id="14759-112">Indicates that the compiler should generate an error message when a field is emitted out of order.</span></span>|  
+|`MDParamOutOfOrder`|<span data-ttu-id="14759-113">Určuje, že má kompilátor vygenerovat chybovou zprávu, pokud je vygenerována chyba v příkazu.</span><span class="sxs-lookup"><span data-stu-id="14759-113">Indicates that the compiler should generate an error message when a parameter is emitted out of order.</span></span>|  
+|`MDPropertyOutOfOrder`|<span data-ttu-id="14759-114">Označuje, že by kompilátor měl generovat chybovou zprávu, pokud je vygenerována vlastnost mimo pořadí.</span><span class="sxs-lookup"><span data-stu-id="14759-114">Indicates that the compiler should generate an error message when a property is emitted out of order.</span></span>|  
+|`MDEventOutOfOrder`|<span data-ttu-id="14759-115">Určuje, že má kompilátor generovat chybovou zprávu, pokud je vyvolána událost mimo pořadí.</span><span class="sxs-lookup"><span data-stu-id="14759-115">Indicates that the compiler should generate an error message when an event is emitted out of order.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="2c5fa-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2c5fa-116">Requirements</span></span>  
- <span data-ttu-id="2c5fa-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2c5fa-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="14759-116">Požadavky</span><span class="sxs-lookup"><span data-stu-id="14759-116">Requirements</span></span>  
+ <span data-ttu-id="14759-117">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="14759-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="2c5fa-118">**Header:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="2c5fa-118">**Header:** CorHdr.h</span></span>  
+ <span data-ttu-id="14759-118">**Hlavička:** CorHdr. h</span><span class="sxs-lookup"><span data-stu-id="14759-118">**Header:** CorHdr.h</span></span>  
   
- <span data-ttu-id="2c5fa-119">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="2c5fa-119">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="14759-119">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="14759-119">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="2c5fa-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2c5fa-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="14759-120">Viz také:</span><span class="sxs-lookup"><span data-stu-id="14759-120">See also</span></span>
 
-- [<span data-ttu-id="2c5fa-121">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="2c5fa-121">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [<span data-ttu-id="14759-121">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="14759-121">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

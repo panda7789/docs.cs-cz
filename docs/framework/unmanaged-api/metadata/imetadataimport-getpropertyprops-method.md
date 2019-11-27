@@ -22,10 +22,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437056"
 ---
-# <a name="imetadataimportgetpropertyprops-method"></a><span data-ttu-id="32257-102">IMetaDataImport::GetPropertyProps – metoda</span><span class="sxs-lookup"><span data-stu-id="32257-102">IMetaDataImport::GetPropertyProps Method</span></span>
-<span data-ttu-id="32257-103">Gets the metadata for the property represented by the specified token.</span><span class="sxs-lookup"><span data-stu-id="32257-103">Gets the metadata for the property represented by the specified token.</span></span>  
+# <a name="imetadataimportgetpropertyprops-method"></a><span data-ttu-id="2ca07-102">IMetaDataImport::GetPropertyProps – metoda</span><span class="sxs-lookup"><span data-stu-id="2ca07-102">IMetaDataImport::GetPropertyProps Method</span></span>
+<span data-ttu-id="2ca07-103">Získá metadata pro vlastnost představovanou zadaným tokenem.</span><span class="sxs-lookup"><span data-stu-id="2ca07-103">Gets the metadata for the property represented by the specified token.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="32257-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="32257-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="2ca07-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2ca07-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetPropertyProps (  
@@ -48,65 +48,65 @@ HRESULT GetPropertyProps (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="32257-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="32257-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="2ca07-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="2ca07-105">Parameters</span></span>  
  `prop`  
- <span data-ttu-id="32257-106">[in] A token that represents the property to return metadata for.</span><span class="sxs-lookup"><span data-stu-id="32257-106">[in] A token that represents the property to return metadata for.</span></span>  
+ <span data-ttu-id="2ca07-106">pro Token, který představuje vlastnost, pro kterou se mají vracet metadata</span><span class="sxs-lookup"><span data-stu-id="2ca07-106">[in] A token that represents the property to return metadata for.</span></span>  
   
  `pClass`  
- <span data-ttu-id="32257-107">[out] A pointer to the TypeDef token that represents the type that implements the property.</span><span class="sxs-lookup"><span data-stu-id="32257-107">[out] A pointer to the TypeDef token that represents the type that implements the property.</span></span>  
+ <span data-ttu-id="2ca07-107">mimo Ukazatel na token TypeDef, který představuje typ, který implementuje vlastnost.</span><span class="sxs-lookup"><span data-stu-id="2ca07-107">[out] A pointer to the TypeDef token that represents the type that implements the property.</span></span>  
   
  `szProperty`  
- <span data-ttu-id="32257-108">[out] A buffer to hold the property name.</span><span class="sxs-lookup"><span data-stu-id="32257-108">[out] A buffer to hold the property name.</span></span>  
+ <span data-ttu-id="2ca07-108">mimo Vyrovnávací paměť pro uložení názvu vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="2ca07-108">[out] A buffer to hold the property name.</span></span>  
   
  `cchProperty`  
- <span data-ttu-id="32257-109">[in] The size in wide characters of `szProperty`.</span><span class="sxs-lookup"><span data-stu-id="32257-109">[in] The size in wide characters of `szProperty`.</span></span>  
+ <span data-ttu-id="2ca07-109">pro Velikost v různých znacích `szProperty`.</span><span class="sxs-lookup"><span data-stu-id="2ca07-109">[in] The size in wide characters of `szProperty`.</span></span>  
   
  `pchProperty`  
- <span data-ttu-id="32257-110">[out] The number of wide characters returned in `szProperty`.</span><span class="sxs-lookup"><span data-stu-id="32257-110">[out] The number of wide characters returned in `szProperty`.</span></span>  
+ <span data-ttu-id="2ca07-110">mimo Počet velkých znaků vrácených v `szProperty`.</span><span class="sxs-lookup"><span data-stu-id="2ca07-110">[out] The number of wide characters returned in `szProperty`.</span></span>  
   
  `pdwPropFlags`  
- <span data-ttu-id="32257-111">[out] A pointer to any attribute flags applied to the property.</span><span class="sxs-lookup"><span data-stu-id="32257-111">[out] A pointer to any attribute flags applied to the property.</span></span> <span data-ttu-id="32257-112">This value is a bitmask from the [CorPropertyAttr](../../../../docs/framework/unmanaged-api/metadata/corpropertyattr-enumeration.md) enumeration.</span><span class="sxs-lookup"><span data-stu-id="32257-112">This value is a bitmask from the [CorPropertyAttr](../../../../docs/framework/unmanaged-api/metadata/corpropertyattr-enumeration.md) enumeration.</span></span>  
+ <span data-ttu-id="2ca07-111">mimo Ukazatel na libovolný příznak atributu aplikovaný na vlastnost.</span><span class="sxs-lookup"><span data-stu-id="2ca07-111">[out] A pointer to any attribute flags applied to the property.</span></span> <span data-ttu-id="2ca07-112">Tato hodnota je Bitová maska z výčtu [CorPropertyAttr –](../../../../docs/framework/unmanaged-api/metadata/corpropertyattr-enumeration.md) .</span><span class="sxs-lookup"><span data-stu-id="2ca07-112">This value is a bitmask from the [CorPropertyAttr](../../../../docs/framework/unmanaged-api/metadata/corpropertyattr-enumeration.md) enumeration.</span></span>  
   
  `ppvSig`  
- <span data-ttu-id="32257-113">[out] A pointer to the metadata signature of the property.</span><span class="sxs-lookup"><span data-stu-id="32257-113">[out] A pointer to the metadata signature of the property.</span></span>  
+ <span data-ttu-id="2ca07-113">mimo Ukazatel na podpis metadat vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="2ca07-113">[out] A pointer to the metadata signature of the property.</span></span>  
   
  `pbSig`  
- <span data-ttu-id="32257-114">[out] The number of bytes returned in `ppvSig`.</span><span class="sxs-lookup"><span data-stu-id="32257-114">[out] The number of bytes returned in `ppvSig`.</span></span>  
+ <span data-ttu-id="2ca07-114">mimo Počet bajtů vrácených v `ppvSig`.</span><span class="sxs-lookup"><span data-stu-id="2ca07-114">[out] The number of bytes returned in `ppvSig`.</span></span>  
   
  `pdwCPlusTypeFlag`  
- <span data-ttu-id="32257-115">[out] A flag specifying the type of the constant that is the default value of the property.</span><span class="sxs-lookup"><span data-stu-id="32257-115">[out] A flag specifying the type of the constant that is the default value of the property.</span></span> <span data-ttu-id="32257-116">This value is from the CorElementType enumeration.</span><span class="sxs-lookup"><span data-stu-id="32257-116">This value is from the CorElementType enumeration.</span></span>  
+ <span data-ttu-id="2ca07-115">mimo Příznak určující typ konstanty, která je výchozí hodnotou vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="2ca07-115">[out] A flag specifying the type of the constant that is the default value of the property.</span></span> <span data-ttu-id="2ca07-116">Tato hodnota pochází z výčtu CorElementType –.</span><span class="sxs-lookup"><span data-stu-id="2ca07-116">This value is from the CorElementType enumeration.</span></span>  
   
  `ppDefaultValue`  
- <span data-ttu-id="32257-117">[out] A pointer to the bytes that store the default value for this property.</span><span class="sxs-lookup"><span data-stu-id="32257-117">[out] A pointer to the bytes that store the default value for this property.</span></span>  
+ <span data-ttu-id="2ca07-117">mimo Ukazatel na bajty, které ukládají výchozí hodnotu pro tuto vlastnost.</span><span class="sxs-lookup"><span data-stu-id="2ca07-117">[out] A pointer to the bytes that store the default value for this property.</span></span>  
   
  `pcchDefaultValue`  
- <span data-ttu-id="32257-118">[out] The size in wide characters of `ppDefaultValue`, if `pdwCPlusTypeFlag` is ELEMENT_TYPE_STRING; otherwise, this value is not relevant.</span><span class="sxs-lookup"><span data-stu-id="32257-118">[out] The size in wide characters of `ppDefaultValue`, if `pdwCPlusTypeFlag` is ELEMENT_TYPE_STRING; otherwise, this value is not relevant.</span></span> <span data-ttu-id="32257-119">In that case, the length of `ppDefaultValue` is inferred from the type that is specified by `pdwCPlusTypeFlag`.</span><span class="sxs-lookup"><span data-stu-id="32257-119">In that case, the length of `ppDefaultValue` is inferred from the type that is specified by `pdwCPlusTypeFlag`.</span></span>  
+ <span data-ttu-id="2ca07-118">mimo Velikost v mnoha znacích `ppDefaultValue`, pokud je `pdwCPlusTypeFlag` ELEMENT_TYPE_STRING; v opačném případě tato hodnota není relevantní.</span><span class="sxs-lookup"><span data-stu-id="2ca07-118">[out] The size in wide characters of `ppDefaultValue`, if `pdwCPlusTypeFlag` is ELEMENT_TYPE_STRING; otherwise, this value is not relevant.</span></span> <span data-ttu-id="2ca07-119">V takovém případě je délka `ppDefaultValue` odvozena od typu určeného `pdwCPlusTypeFlag`.</span><span class="sxs-lookup"><span data-stu-id="2ca07-119">In that case, the length of `ppDefaultValue` is inferred from the type that is specified by `pdwCPlusTypeFlag`.</span></span>  
   
  `pmdSetter`  
- <span data-ttu-id="32257-120">[out] A pointer to the MethodDef token that represents the set accessor method for the property.</span><span class="sxs-lookup"><span data-stu-id="32257-120">[out] A pointer to the MethodDef token that represents the set accessor method for the property.</span></span>  
+ <span data-ttu-id="2ca07-120">mimo Ukazatel na token MethodDef, který představuje metodu set přístupového objektu pro vlastnost.</span><span class="sxs-lookup"><span data-stu-id="2ca07-120">[out] A pointer to the MethodDef token that represents the set accessor method for the property.</span></span>  
   
  `pmdGetter`  
- <span data-ttu-id="32257-121">[out] A pointer to the MethodDef token that represents the get accessor method for the property.</span><span class="sxs-lookup"><span data-stu-id="32257-121">[out] A pointer to the MethodDef token that represents the get accessor method for the property.</span></span>  
+ <span data-ttu-id="2ca07-121">mimo Ukazatel na token MethodDef, který představuje metodu Get přístup k vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="2ca07-121">[out] A pointer to the MethodDef token that represents the get accessor method for the property.</span></span>  
   
  `rmdOtherMethod`  
- <span data-ttu-id="32257-122">[out] An array of MethodDef tokens that represent other methods associated with the property.</span><span class="sxs-lookup"><span data-stu-id="32257-122">[out] An array of MethodDef tokens that represent other methods associated with the property.</span></span>  
+ <span data-ttu-id="2ca07-122">mimo Pole tokenů MethodDef, které představuje jiné metody přidružené k vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="2ca07-122">[out] An array of MethodDef tokens that represent other methods associated with the property.</span></span>  
   
  `cMax`  
- <span data-ttu-id="32257-123">[in] The maximum size of the `rmdOtherMethod` array.</span><span class="sxs-lookup"><span data-stu-id="32257-123">[in] The maximum size of the `rmdOtherMethod` array.</span></span> <span data-ttu-id="32257-124">If you do not provide an array large enough to hold all the methods, they are skipped without warning.</span><span class="sxs-lookup"><span data-stu-id="32257-124">If you do not provide an array large enough to hold all the methods, they are skipped without warning.</span></span>  
+ <span data-ttu-id="2ca07-123">pro Maximální velikost `rmdOtherMethod` pole</span><span class="sxs-lookup"><span data-stu-id="2ca07-123">[in] The maximum size of the `rmdOtherMethod` array.</span></span> <span data-ttu-id="2ca07-124">Pokud nezadáte pole dostatečně velké pro uložení všech metod, budou vynechána bez upozornění.</span><span class="sxs-lookup"><span data-stu-id="2ca07-124">If you do not provide an array large enough to hold all the methods, they are skipped without warning.</span></span>  
   
  `pcOtherMethod`  
- <span data-ttu-id="32257-125">[out] The number of MethodDef tokens returned in `rmdOtherMethod`.</span><span class="sxs-lookup"><span data-stu-id="32257-125">[out] The number of MethodDef tokens returned in `rmdOtherMethod`.</span></span>  
+ <span data-ttu-id="2ca07-125">mimo Počet tokenů MethodDef vrácených v `rmdOtherMethod`.</span><span class="sxs-lookup"><span data-stu-id="2ca07-125">[out] The number of MethodDef tokens returned in `rmdOtherMethod`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="32257-126">Požadavky</span><span class="sxs-lookup"><span data-stu-id="32257-126">Requirements</span></span>  
- <span data-ttu-id="32257-127">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="32257-127">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="2ca07-126">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2ca07-126">Requirements</span></span>  
+ <span data-ttu-id="2ca07-127">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2ca07-127">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="32257-128">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="32257-128">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="2ca07-128">**Hlavička:** Cor. h</span><span class="sxs-lookup"><span data-stu-id="2ca07-128">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="32257-129">**Library:** Included as a resource in MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="32257-129">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="2ca07-129">**Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="2ca07-129">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="32257-130">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="32257-130">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="2ca07-130">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="2ca07-130">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="32257-131">Viz také:</span><span class="sxs-lookup"><span data-stu-id="32257-131">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2ca07-131">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2ca07-131">See also</span></span>
 
-- [<span data-ttu-id="32257-132">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="32257-132">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [<span data-ttu-id="32257-133">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="32257-133">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [<span data-ttu-id="2ca07-132">IMetaDataImport – rozhraní</span><span class="sxs-lookup"><span data-stu-id="2ca07-132">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [<span data-ttu-id="2ca07-133">IMetaDataImport2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="2ca07-133">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

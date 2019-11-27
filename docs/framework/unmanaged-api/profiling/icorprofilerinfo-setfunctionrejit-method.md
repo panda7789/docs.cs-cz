@@ -22,25 +22,25 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74438602"
 ---
-# <a name="icorprofilerinfosetfunctionrejit-method"></a><span data-ttu-id="6c089-102">ICorProfilerInfo::SetFunctionReJIT – metoda</span><span class="sxs-lookup"><span data-stu-id="6c089-102">ICorProfilerInfo::SetFunctionReJIT Method</span></span>
-<span data-ttu-id="6c089-103">Not implemented.</span><span class="sxs-lookup"><span data-stu-id="6c089-103">Not implemented.</span></span> <span data-ttu-id="6c089-104">Nepoužívejte.</span><span class="sxs-lookup"><span data-stu-id="6c089-104">Do not use.</span></span>  
+# <a name="icorprofilerinfosetfunctionrejit-method"></a><span data-ttu-id="c9e7c-102">ICorProfilerInfo::SetFunctionReJIT – metoda</span><span class="sxs-lookup"><span data-stu-id="c9e7c-102">ICorProfilerInfo::SetFunctionReJIT Method</span></span>
+<span data-ttu-id="c9e7c-103">Není implementováno.</span><span class="sxs-lookup"><span data-stu-id="c9e7c-103">Not implemented.</span></span> <span data-ttu-id="c9e7c-104">Nepoužívejte.</span><span class="sxs-lookup"><span data-stu-id="c9e7c-104">Do not use.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="6c089-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6c089-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c9e7c-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c9e7c-105">Syntax</span></span>  
   
 ```cpp  
 HRESULT SetFunctionReJIT(  
     [in] FunctionID functionId);  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="6c089-106">Požadavky</span><span class="sxs-lookup"><span data-stu-id="6c089-106">Requirements</span></span>  
- <span data-ttu-id="6c089-107">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="6c089-107">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c9e7c-106">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c9e7c-106">Requirements</span></span>  
+ <span data-ttu-id="c9e7c-107">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c9e7c-107">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="6c089-108">**Header:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="6c089-108">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="c9e7c-108">**Hlavička:** CorProf. idl, CorProf. h</span><span class="sxs-lookup"><span data-stu-id="c9e7c-108">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="6c089-109">**Library:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="6c089-109">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="c9e7c-109">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="c9e7c-109">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="6c089-110">**.NET Framework Version:** 1.0</span><span class="sxs-lookup"><span data-stu-id="6c089-110">**.NET Framework Version:** 1.0</span></span>  
+ <span data-ttu-id="c9e7c-110">**Verze .NET Framework:** 1,0</span><span class="sxs-lookup"><span data-stu-id="c9e7c-110">**.NET Framework Version:** 1.0</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="6c089-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6c089-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c9e7c-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c9e7c-111">See also</span></span>
 
-- [<span data-ttu-id="6c089-112">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="6c089-112">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [<span data-ttu-id="c9e7c-112">ICorProfilerInfo – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c9e7c-112">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)

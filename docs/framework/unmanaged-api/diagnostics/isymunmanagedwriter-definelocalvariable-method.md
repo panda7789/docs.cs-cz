@@ -22,10 +22,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74428006"
 ---
-# <a name="isymunmanagedwriterdefinelocalvariable-method"></a><span data-ttu-id="08f14-102">ISymUnmanagedWriter::DefineLocalVariable – metoda</span><span class="sxs-lookup"><span data-stu-id="08f14-102">ISymUnmanagedWriter::DefineLocalVariable Method</span></span>
-<span data-ttu-id="08f14-103">Defines a single variable in the current lexical scope.</span><span class="sxs-lookup"><span data-stu-id="08f14-103">Defines a single variable in the current lexical scope.</span></span> <span data-ttu-id="08f14-104">This method can be called multiple times for a variable of the same name that has multiple homes throughout a scope.</span><span class="sxs-lookup"><span data-stu-id="08f14-104">This method can be called multiple times for a variable of the same name that has multiple homes throughout a scope.</span></span> <span data-ttu-id="08f14-105">In this case, however, the values of the `startOffset` and `endOffset` parameters must not overlap.</span><span class="sxs-lookup"><span data-stu-id="08f14-105">In this case, however, the values of the `startOffset` and `endOffset` parameters must not overlap.</span></span>  
+# <a name="isymunmanagedwriterdefinelocalvariable-method"></a><span data-ttu-id="c3f20-102">ISymUnmanagedWriter::DefineLocalVariable – metoda</span><span class="sxs-lookup"><span data-stu-id="c3f20-102">ISymUnmanagedWriter::DefineLocalVariable Method</span></span>
+<span data-ttu-id="c3f20-103">Definuje jednu proměnnou v aktuálním lexikálním oboru.</span><span class="sxs-lookup"><span data-stu-id="c3f20-103">Defines a single variable in the current lexical scope.</span></span> <span data-ttu-id="c3f20-104">Tuto metodu lze volat vícekrát pro proměnnou se stejným názvem, který má více obydlí v celém rozsahu.</span><span class="sxs-lookup"><span data-stu-id="c3f20-104">This method can be called multiple times for a variable of the same name that has multiple homes throughout a scope.</span></span> <span data-ttu-id="c3f20-105">V takovém případě se ale hodnoty parametrů `startOffset` a `endOffset` nesmí překrývat.</span><span class="sxs-lookup"><span data-stu-id="c3f20-105">In this case, however, the values of the `startOffset` and `endOffset` parameters must not overlap.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="08f14-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="08f14-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c3f20-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c3f20-106">Syntax</span></span>  
   
 ```cpp  
 HRESULT DefineLocalVariable(  
@@ -41,45 +41,45 @@ HRESULT DefineLocalVariable(
     [in] ULONG32      endOffset);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="08f14-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="08f14-107">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="c3f20-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="c3f20-107">Parameters</span></span>  
  `name`  
- <span data-ttu-id="08f14-108">[in] A pointer to a `WCHAR` that defines the local variable name.</span><span class="sxs-lookup"><span data-stu-id="08f14-108">[in] A pointer to a `WCHAR` that defines the local variable name.</span></span>  
+ <span data-ttu-id="c3f20-108">pro Ukazatel na `WCHAR`, který definuje název místní proměnné.</span><span class="sxs-lookup"><span data-stu-id="c3f20-108">[in] A pointer to a `WCHAR` that defines the local variable name.</span></span>  
   
  `attributes`  
- <span data-ttu-id="08f14-109">[in] The local variable attributes.</span><span class="sxs-lookup"><span data-stu-id="08f14-109">[in] The local variable attributes.</span></span>  
+ <span data-ttu-id="c3f20-109">pro Atributy místních proměnných.</span><span class="sxs-lookup"><span data-stu-id="c3f20-109">[in] The local variable attributes.</span></span>  
   
  `cSig`  
- <span data-ttu-id="08f14-110">[in] A `ULONG32` that indicates the size, in bytes, of the `signature` buffer.</span><span class="sxs-lookup"><span data-stu-id="08f14-110">[in] A `ULONG32` that indicates the size, in bytes, of the `signature` buffer.</span></span>  
+ <span data-ttu-id="c3f20-110">pro `ULONG32`, která určuje velikost vyrovnávací paměti `signature` v bajtech.</span><span class="sxs-lookup"><span data-stu-id="c3f20-110">[in] A `ULONG32` that indicates the size, in bytes, of the `signature` buffer.</span></span>  
   
  `signature`  
- <span data-ttu-id="08f14-111">[in] The local variable signature.</span><span class="sxs-lookup"><span data-stu-id="08f14-111">[in] The local variable signature.</span></span>  
+ <span data-ttu-id="c3f20-111">pro Lokální podpis proměnné.</span><span class="sxs-lookup"><span data-stu-id="c3f20-111">[in] The local variable signature.</span></span>  
   
  `addrKind`  
- <span data-ttu-id="08f14-112">[in] The address type.</span><span class="sxs-lookup"><span data-stu-id="08f14-112">[in] The address type.</span></span>  
+ <span data-ttu-id="c3f20-112">pro Typ adresy.</span><span class="sxs-lookup"><span data-stu-id="c3f20-112">[in] The address type.</span></span>  
   
  `addr1`  
- <span data-ttu-id="08f14-113">[in] The first address for the parameter specification.</span><span class="sxs-lookup"><span data-stu-id="08f14-113">[in] The first address for the parameter specification.</span></span>  
+ <span data-ttu-id="c3f20-113">pro První adresa specifikace parametru.</span><span class="sxs-lookup"><span data-stu-id="c3f20-113">[in] The first address for the parameter specification.</span></span>  
   
  `addr2`  
- <span data-ttu-id="08f14-114">[in] The second address for the parameter specification.</span><span class="sxs-lookup"><span data-stu-id="08f14-114">[in] The second address for the parameter specification.</span></span>  
+ <span data-ttu-id="c3f20-114">pro Druhá adresa specifikace parametru.</span><span class="sxs-lookup"><span data-stu-id="c3f20-114">[in] The second address for the parameter specification.</span></span>  
   
  `addr3`  
- <span data-ttu-id="08f14-115">[in] The third address for the parameter specification.</span><span class="sxs-lookup"><span data-stu-id="08f14-115">[in] The third address for the parameter specification.</span></span>  
+ <span data-ttu-id="c3f20-115">pro Třetí adresa specifikace parametru.</span><span class="sxs-lookup"><span data-stu-id="c3f20-115">[in] The third address for the parameter specification.</span></span>  
   
  `startOffset`  
- <span data-ttu-id="08f14-116">[in] The start offset for the variable.</span><span class="sxs-lookup"><span data-stu-id="08f14-116">[in] The start offset for the variable.</span></span> <span data-ttu-id="08f14-117">Tento parametr je volitelný.</span><span class="sxs-lookup"><span data-stu-id="08f14-117">This parameter is optional.</span></span> <span data-ttu-id="08f14-118">If it is 0, this parameter is ignored and the variable is defined throughout the entire scope.</span><span class="sxs-lookup"><span data-stu-id="08f14-118">If it is 0, this parameter is ignored and the variable is defined throughout the entire scope.</span></span> <span data-ttu-id="08f14-119">If it is a nonzero value, the variable falls within the offsets of the current scope.</span><span class="sxs-lookup"><span data-stu-id="08f14-119">If it is a nonzero value, the variable falls within the offsets of the current scope.</span></span>  
+ <span data-ttu-id="c3f20-116">pro Počáteční posun pro proměnnou</span><span class="sxs-lookup"><span data-stu-id="c3f20-116">[in] The start offset for the variable.</span></span> <span data-ttu-id="c3f20-117">Tento parametr je volitelný.</span><span class="sxs-lookup"><span data-stu-id="c3f20-117">This parameter is optional.</span></span> <span data-ttu-id="c3f20-118">Pokud je 0, tento parametr je ignorován a proměnná je definována v celém rozsahu.</span><span class="sxs-lookup"><span data-stu-id="c3f20-118">If it is 0, this parameter is ignored and the variable is defined throughout the entire scope.</span></span> <span data-ttu-id="c3f20-119">Pokud je to nenulová hodnota, proměnná spadá do posunu aktuálního oboru.</span><span class="sxs-lookup"><span data-stu-id="c3f20-119">If it is a nonzero value, the variable falls within the offsets of the current scope.</span></span>  
   
  `endOffset`  
- <span data-ttu-id="08f14-120">[in] The end offset for the variable.</span><span class="sxs-lookup"><span data-stu-id="08f14-120">[in] The end offset for the variable.</span></span> <span data-ttu-id="08f14-121">Tento parametr je volitelný.</span><span class="sxs-lookup"><span data-stu-id="08f14-121">This parameter is optional.</span></span> <span data-ttu-id="08f14-122">If it is 0, this parameter is ignored and the variable is defined throughout the entire scope.</span><span class="sxs-lookup"><span data-stu-id="08f14-122">If it is 0, this parameter is ignored and the variable is defined throughout the entire scope.</span></span> <span data-ttu-id="08f14-123">If it is a nonzero value, the variable falls within the offsets of the current scope.</span><span class="sxs-lookup"><span data-stu-id="08f14-123">If it is a nonzero value, the variable falls within the offsets of the current scope.</span></span>  
+ <span data-ttu-id="c3f20-120">pro Koncový posun proměnné</span><span class="sxs-lookup"><span data-stu-id="c3f20-120">[in] The end offset for the variable.</span></span> <span data-ttu-id="c3f20-121">Tento parametr je volitelný.</span><span class="sxs-lookup"><span data-stu-id="c3f20-121">This parameter is optional.</span></span> <span data-ttu-id="c3f20-122">Pokud je 0, tento parametr je ignorován a proměnná je definována v celém rozsahu.</span><span class="sxs-lookup"><span data-stu-id="c3f20-122">If it is 0, this parameter is ignored and the variable is defined throughout the entire scope.</span></span> <span data-ttu-id="c3f20-123">Pokud je to nenulová hodnota, proměnná spadá do posunu aktuálního oboru.</span><span class="sxs-lookup"><span data-stu-id="c3f20-123">If it is a nonzero value, the variable falls within the offsets of the current scope.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="08f14-124">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="08f14-124">Return Value</span></span>  
- <span data-ttu-id="08f14-125">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span><span class="sxs-lookup"><span data-stu-id="08f14-125">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="c3f20-124">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="c3f20-124">Return Value</span></span>  
+ <span data-ttu-id="c3f20-125">S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="c3f20-125">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="08f14-126">Požadavky</span><span class="sxs-lookup"><span data-stu-id="08f14-126">Requirements</span></span>  
- <span data-ttu-id="08f14-127">**Header:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="08f14-127">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c3f20-126">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c3f20-126">Requirements</span></span>  
+ <span data-ttu-id="c3f20-127">**Hlavička:** CorSym. idl, CorSym. h</span><span class="sxs-lookup"><span data-stu-id="c3f20-127">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="08f14-128">Viz také:</span><span class="sxs-lookup"><span data-stu-id="08f14-128">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c3f20-128">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c3f20-128">See also</span></span>
 
-- [<span data-ttu-id="08f14-129">ISymUnmanagedWriter – rozhraní</span><span class="sxs-lookup"><span data-stu-id="08f14-129">ISymUnmanagedWriter Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
-- [<span data-ttu-id="08f14-130">DefineGlobalVariable – metoda</span><span class="sxs-lookup"><span data-stu-id="08f14-130">DefineGlobalVariable Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-defineglobalvariable-method.md)
-- [<span data-ttu-id="08f14-131">DefineLocalVariable2 – metoda</span><span class="sxs-lookup"><span data-stu-id="08f14-131">DefineLocalVariable2 Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter2-definelocalvariable2-method.md)
+- [<span data-ttu-id="c3f20-129">ISymUnmanagedWriter – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c3f20-129">ISymUnmanagedWriter Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+- [<span data-ttu-id="c3f20-130">DefineGlobalVariable – metoda</span><span class="sxs-lookup"><span data-stu-id="c3f20-130">DefineGlobalVariable Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-defineglobalvariable-method.md)
+- [<span data-ttu-id="c3f20-131">DefineLocalVariable2 – metoda</span><span class="sxs-lookup"><span data-stu-id="c3f20-131">DefineLocalVariable2 Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter2-definelocalvariable2-method.md)

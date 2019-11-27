@@ -9,13 +9,13 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74341360"
 ---
-# <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-visual-basic"></a><span data-ttu-id="6dbd3-102">How to: Split a File Into Many Files by Using Groups (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="6dbd3-102">How to: Split a File Into Many Files by Using Groups (LINQ) (Visual Basic)</span></span>
+# <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-visual-basic"></a><span data-ttu-id="02620-102">Postupy: rozdělení souboru na více souborů pomocí skupin (LINQ) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="02620-102">How to: Split a File Into Many Files by Using Groups (LINQ) (Visual Basic)</span></span>
 
-<span data-ttu-id="6dbd3-103">This example shows one way to merge the contents of two files and then create a set of new files that organize the data in a new way.</span><span class="sxs-lookup"><span data-stu-id="6dbd3-103">This example shows one way to merge the contents of two files and then create a set of new files that organize the data in a new way.</span></span>
+<span data-ttu-id="02620-103">Tento příklad ukazuje jeden ze způsobů, jak sloučit obsah dvou souborů a pak vytvořit sadu nových souborů, které data organizují novým způsobem.</span><span class="sxs-lookup"><span data-stu-id="02620-103">This example shows one way to merge the contents of two files and then create a set of new files that organize the data in a new way.</span></span>
 
-### <a name="to-create-the-data-files"></a><span data-ttu-id="6dbd3-104">To create the data files</span><span class="sxs-lookup"><span data-stu-id="6dbd3-104">To create the data files</span></span>
+### <a name="to-create-the-data-files"></a><span data-ttu-id="02620-104">Vytvoření datových souborů</span><span class="sxs-lookup"><span data-stu-id="02620-104">To create the data files</span></span>
 
-1. <span data-ttu-id="6dbd3-105">Copy these names into a text file that is named names1.txt and save it in your project folder:</span><span class="sxs-lookup"><span data-stu-id="6dbd3-105">Copy these names into a text file that is named names1.txt and save it in your project folder:</span></span>
+1. <span data-ttu-id="02620-105">Zkopírujte tyto názvy do textového souboru s názvem names1. txt a uložte je do složky projektu:</span><span class="sxs-lookup"><span data-stu-id="02620-105">Copy these names into a text file that is named names1.txt and save it in your project folder:</span></span>
 
     ```text
     Bankov, Peter
@@ -30,7 +30,7 @@ ms.locfileid: "74341360"
     Garcia, Debra
     ```
 
-2. <span data-ttu-id="6dbd3-106">Copy these names into a text file that is named names2.txt and save it in your project folder: Note that the two files have some names in common.</span><span class="sxs-lookup"><span data-stu-id="6dbd3-106">Copy these names into a text file that is named names2.txt and save it in your project folder: Note that the two files have some names in common.</span></span>
+2. <span data-ttu-id="02620-106">Zkopírujte tyto názvy do textového souboru s názvem names2. txt a uložte je do složky projektu: Všimněte si, že dva soubory mají některé běžné názvy.</span><span class="sxs-lookup"><span data-stu-id="02620-106">Copy these names into a text file that is named names2.txt and save it in your project folder: Note that the two files have some names in common.</span></span>
 
     ```text
     Liu, Jinghao
@@ -45,7 +45,7 @@ ms.locfileid: "74341360"
     El Yassir, Mehdi
     ```
 
-## <a name="example"></a><span data-ttu-id="6dbd3-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="6dbd3-107">Example</span></span>
+## <a name="example"></a><span data-ttu-id="02620-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="02620-107">Example</span></span>
 
 ```vb
 Class SplitWithGroups
@@ -114,13 +114,13 @@ End Class
 '    Toyoshima, Tim
 ```
 
-<span data-ttu-id="6dbd3-108">The program writes a separate file for each group in the same folder as the data files.</span><span class="sxs-lookup"><span data-stu-id="6dbd3-108">The program writes a separate file for each group in the same folder as the data files.</span></span>
+<span data-ttu-id="02620-108">Program zapisuje samostatný soubor pro každou skupinu ve stejné složce jako datové soubory.</span><span class="sxs-lookup"><span data-stu-id="02620-108">The program writes a separate file for each group in the same folder as the data files.</span></span>
 
-## <a name="compiling-the-code"></a><span data-ttu-id="6dbd3-109">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="6dbd3-109">Compiling the Code</span></span>
+## <a name="compiling-the-code"></a><span data-ttu-id="02620-109">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="02620-109">Compiling the Code</span></span>
 
-<span data-ttu-id="6dbd3-110">Create a VB.NET console application project, with an `Imports` statement for the System.Linq namespace.</span><span class="sxs-lookup"><span data-stu-id="6dbd3-110">Create a VB.NET console application project, with an `Imports` statement for the System.Linq namespace.</span></span>
+<span data-ttu-id="02620-110">Vytvořte projekt konzolové aplikace VB.NET s příkazem `Imports` pro obor názvů System. Linq.</span><span class="sxs-lookup"><span data-stu-id="02620-110">Create a VB.NET console application project, with an `Imports` statement for the System.Linq namespace.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="6dbd3-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6dbd3-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="02620-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="02620-111">See also</span></span>
 
-- [<span data-ttu-id="6dbd3-112">LINQ and Strings (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="6dbd3-112">LINQ and Strings (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
-- [<span data-ttu-id="6dbd3-113">LINQ and File Directories (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="6dbd3-113">LINQ and File Directories (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [<span data-ttu-id="02620-112">LINQ a řetězce (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="02620-112">LINQ and Strings (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [<span data-ttu-id="02620-113">LINQ a souborové adresáře (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="02620-113">LINQ and File Directories (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

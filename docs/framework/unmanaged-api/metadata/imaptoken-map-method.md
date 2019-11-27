@@ -22,10 +22,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74432147"
 ---
-# <a name="imaptokenmap-method"></a><span data-ttu-id="da795-102">IMapToken::Map – metoda</span><span class="sxs-lookup"><span data-stu-id="da795-102">IMapToken::Map Method</span></span>
-<span data-ttu-id="da795-103">Maps a relationship between the assemblies using metadata signatures.</span><span class="sxs-lookup"><span data-stu-id="da795-103">Maps a relationship between the assemblies using metadata signatures.</span></span>  
+# <a name="imaptokenmap-method"></a><span data-ttu-id="315bc-102">IMapToken::Map – metoda</span><span class="sxs-lookup"><span data-stu-id="315bc-102">IMapToken::Map Method</span></span>
+<span data-ttu-id="315bc-103">Mapuje vztah mezi sestaveními pomocí podpisů metadat.</span><span class="sxs-lookup"><span data-stu-id="315bc-103">Maps a relationship between the assemblies using metadata signatures.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="da795-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="da795-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="315bc-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="315bc-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT Map (  
@@ -34,25 +34,25 @@ HRESULT Map (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="da795-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="da795-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="315bc-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="315bc-105">Parameters</span></span>  
  `tkImp`  
- <span data-ttu-id="da795-106">[in] The metadata token that represents the imported code object.</span><span class="sxs-lookup"><span data-stu-id="da795-106">[in] The metadata token that represents the imported code object.</span></span>  
+ <span data-ttu-id="315bc-106">pro Token metadat, který reprezentuje objekt importovaného kódu.</span><span class="sxs-lookup"><span data-stu-id="315bc-106">[in] The metadata token that represents the imported code object.</span></span>  
   
  `tkEmit`  
- <span data-ttu-id="da795-107">[in] The metadata token that represents the emitted code object.</span><span class="sxs-lookup"><span data-stu-id="da795-107">[in] The metadata token that represents the emitted code object.</span></span>  
+ <span data-ttu-id="315bc-107">pro Token metadat, který reprezentuje objekt emitovaného kódu.</span><span class="sxs-lookup"><span data-stu-id="315bc-107">[in] The metadata token that represents the emitted code object.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="da795-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="da795-108">Remarks</span></span>  
- <span data-ttu-id="da795-109">When the token re-map occurs during a merge, the original token is scoped in the imported (source) metadata scope and the new token is scoped in the emitted (target) metadata scope.</span><span class="sxs-lookup"><span data-stu-id="da795-109">When the token re-map occurs during a merge, the original token is scoped in the imported (source) metadata scope and the new token is scoped in the emitted (target) metadata scope.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="315bc-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="315bc-108">Remarks</span></span>  
+ <span data-ttu-id="315bc-109">Když dojde ke změně tokenu během sloučení, původní token se zaznamená v importovaném (zdrojovém) oboru metadat a nový token je vymezen v oboru metadat emited (Targeting).</span><span class="sxs-lookup"><span data-stu-id="315bc-109">When the token re-map occurs during a merge, the original token is scoped in the imported (source) metadata scope and the new token is scoped in the emitted (target) metadata scope.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="da795-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="da795-110">Requirements</span></span>  
- <span data-ttu-id="da795-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="da795-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="315bc-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="315bc-110">Requirements</span></span>  
+ <span data-ttu-id="315bc-111">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="315bc-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="da795-112">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="da795-112">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="315bc-112">**Hlavička:** Cor. h</span><span class="sxs-lookup"><span data-stu-id="315bc-112">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="da795-113">**Library:** Used as a resource in MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="da795-113">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="315bc-113">**Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.</span><span class="sxs-lookup"><span data-stu-id="315bc-113">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="da795-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="da795-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="315bc-114">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="315bc-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="da795-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="da795-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="315bc-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="315bc-115">See also</span></span>
 
-- [<span data-ttu-id="da795-116">IMapToken – rozhraní</span><span class="sxs-lookup"><span data-stu-id="da795-116">IMapToken Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imaptoken-interface.md)
+- [<span data-ttu-id="315bc-116">IMapToken – rozhraní</span><span class="sxs-lookup"><span data-stu-id="315bc-116">IMapToken Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imaptoken-interface.md)

@@ -22,10 +22,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450184"
 ---
-# <a name="imetadataemitdefineuserstring-method"></a><span data-ttu-id="54e6d-102">IMetaDataEmit::DefineUserString – metoda</span><span class="sxs-lookup"><span data-stu-id="54e6d-102">IMetaDataEmit::DefineUserString Method</span></span>
-<span data-ttu-id="54e6d-103">Gets a metadata token for the specified literal string.</span><span class="sxs-lookup"><span data-stu-id="54e6d-103">Gets a metadata token for the specified literal string.</span></span>  
+# <a name="imetadataemitdefineuserstring-method"></a><span data-ttu-id="e18f0-102">IMetaDataEmit::DefineUserString – metoda</span><span class="sxs-lookup"><span data-stu-id="e18f0-102">IMetaDataEmit::DefineUserString Method</span></span>
+<span data-ttu-id="e18f0-103">Získá token metadat pro zadaný řetězcový literál.</span><span class="sxs-lookup"><span data-stu-id="e18f0-103">Gets a metadata token for the specified literal string.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="54e6d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="54e6d-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="e18f0-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e18f0-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT DefineUserString (   
@@ -35,26 +35,26 @@ HRESULT DefineUserString (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="54e6d-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="54e6d-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="e18f0-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="e18f0-105">Parameters</span></span>  
  `szString`  
- <span data-ttu-id="54e6d-106">[in] The user string to store.</span><span class="sxs-lookup"><span data-stu-id="54e6d-106">[in] The user string to store.</span></span>  
+ <span data-ttu-id="e18f0-106">pro Řetězec uživatele, který se má uložit.</span><span class="sxs-lookup"><span data-stu-id="e18f0-106">[in] The user string to store.</span></span>  
   
  `cchString`  
- <span data-ttu-id="54e6d-107">[in] The count of wide characters in `szString`.</span><span class="sxs-lookup"><span data-stu-id="54e6d-107">[in] The count of wide characters in `szString`.</span></span>  
+ <span data-ttu-id="e18f0-107">pro Počet velkých znaků v `szString`.</span><span class="sxs-lookup"><span data-stu-id="e18f0-107">[in] The count of wide characters in `szString`.</span></span>  
   
  `pstk`  
- <span data-ttu-id="54e6d-108">[out] The string token assigned.</span><span class="sxs-lookup"><span data-stu-id="54e6d-108">[out] The string token assigned.</span></span>  
+ <span data-ttu-id="e18f0-108">mimo Byl přiřazen řetězcový token.</span><span class="sxs-lookup"><span data-stu-id="e18f0-108">[out] The string token assigned.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="54e6d-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="54e6d-109">Requirements</span></span>  
- <span data-ttu-id="54e6d-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="54e6d-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="e18f0-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="e18f0-109">Requirements</span></span>  
+ <span data-ttu-id="e18f0-110">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e18f0-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="54e6d-111">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="54e6d-111">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="e18f0-111">**Hlavička:** Cor. h</span><span class="sxs-lookup"><span data-stu-id="e18f0-111">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="54e6d-112">**Library:** Used as a resource in MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="54e6d-112">**Library:** Used as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="e18f0-112">**Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.</span><span class="sxs-lookup"><span data-stu-id="e18f0-112">**Library:** Used as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="54e6d-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="54e6d-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="e18f0-113">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e18f0-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="54e6d-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="54e6d-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e18f0-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e18f0-114">See also</span></span>
 
-- [<span data-ttu-id="54e6d-115">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="54e6d-115">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [<span data-ttu-id="54e6d-116">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="54e6d-116">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [<span data-ttu-id="e18f0-115">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e18f0-115">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [<span data-ttu-id="e18f0-116">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="e18f0-116">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

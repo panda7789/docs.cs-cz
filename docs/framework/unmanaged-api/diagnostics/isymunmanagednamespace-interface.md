@@ -21,20 +21,20 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448357"
 ---
-# <a name="isymunmanagednamespace-interface"></a><span data-ttu-id="910b1-102">ISymUnmanagedNamespace – rozhraní</span><span class="sxs-lookup"><span data-stu-id="910b1-102">ISymUnmanagedNamespace Interface</span></span>
-<span data-ttu-id="910b1-103">Represents a namespace.</span><span class="sxs-lookup"><span data-stu-id="910b1-103">Represents a namespace.</span></span>  
+# <a name="isymunmanagednamespace-interface"></a><span data-ttu-id="312a0-102">ISymUnmanagedNamespace – rozhraní</span><span class="sxs-lookup"><span data-stu-id="312a0-102">ISymUnmanagedNamespace Interface</span></span>
+<span data-ttu-id="312a0-103">Představuje obor názvů.</span><span class="sxs-lookup"><span data-stu-id="312a0-103">Represents a namespace.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="910b1-104">Metody</span><span class="sxs-lookup"><span data-stu-id="910b1-104">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="312a0-104">Metody</span><span class="sxs-lookup"><span data-stu-id="312a0-104">Methods</span></span>  
   
-|<span data-ttu-id="910b1-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="910b1-105">Method</span></span>|<span data-ttu-id="910b1-106">Popis</span><span class="sxs-lookup"><span data-stu-id="910b1-106">Description</span></span>|  
+|<span data-ttu-id="312a0-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="312a0-105">Method</span></span>|<span data-ttu-id="312a0-106">Popis</span><span class="sxs-lookup"><span data-stu-id="312a0-106">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="910b1-107">GetName – metoda</span><span class="sxs-lookup"><span data-stu-id="910b1-107">GetName Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-getname-method.md)|<span data-ttu-id="910b1-108">Gets the name of this namespace.</span><span class="sxs-lookup"><span data-stu-id="910b1-108">Gets the name of this namespace.</span></span>|  
-|[<span data-ttu-id="910b1-109">GetNamespaces – metoda</span><span class="sxs-lookup"><span data-stu-id="910b1-109">GetNamespaces Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-getnamespaces-method.md)|<span data-ttu-id="910b1-110">Gets the children of this namespace.</span><span class="sxs-lookup"><span data-stu-id="910b1-110">Gets the children of this namespace.</span></span>|  
-|[<span data-ttu-id="910b1-111">GetVariables – metoda</span><span class="sxs-lookup"><span data-stu-id="910b1-111">GetVariables Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-getvariables-method.md)|<span data-ttu-id="910b1-112">Returns all variables defined at global scope within this namespace.</span><span class="sxs-lookup"><span data-stu-id="910b1-112">Returns all variables defined at global scope within this namespace.</span></span>|  
+|[<span data-ttu-id="312a0-107">GetName – metoda</span><span class="sxs-lookup"><span data-stu-id="312a0-107">GetName Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-getname-method.md)|<span data-ttu-id="312a0-108">Získá název tohoto oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="312a0-108">Gets the name of this namespace.</span></span>|  
+|[<span data-ttu-id="312a0-109">GetNamespaces – metoda</span><span class="sxs-lookup"><span data-stu-id="312a0-109">GetNamespaces Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-getnamespaces-method.md)|<span data-ttu-id="312a0-110">Získá podřízené objekty tohoto oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="312a0-110">Gets the children of this namespace.</span></span>|  
+|[<span data-ttu-id="312a0-111">GetVariables – metoda</span><span class="sxs-lookup"><span data-stu-id="312a0-111">GetVariables Method</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagednamespace-getvariables-method.md)|<span data-ttu-id="312a0-112">Vrátí všechny proměnné definované v globálním oboru v rámci tohoto oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="312a0-112">Returns all variables defined at global scope within this namespace.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="910b1-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="910b1-113">Requirements</span></span>  
- <span data-ttu-id="910b1-114">**Header:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="910b1-114">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="312a0-113">Požadavky</span><span class="sxs-lookup"><span data-stu-id="312a0-113">Requirements</span></span>  
+ <span data-ttu-id="312a0-114">**Hlavička:** CorSym. idl, CorSym. h</span><span class="sxs-lookup"><span data-stu-id="312a0-114">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="910b1-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="910b1-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="312a0-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="312a0-115">See also</span></span>
 
-- [<span data-ttu-id="910b1-116">Rozhraní pro úložiště symbolů diagnostiky</span><span class="sxs-lookup"><span data-stu-id="910b1-116">Diagnostics Symbol Store Interfaces</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)
+- [<span data-ttu-id="312a0-116">Rozhraní pro úložiště symbolů diagnostiky</span><span class="sxs-lookup"><span data-stu-id="312a0-116">Diagnostics Symbol Store Interfaces</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)

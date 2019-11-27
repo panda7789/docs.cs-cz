@@ -11,19 +11,19 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344085"
 ---
-# <a name="mycomputerclock-object"></a><span data-ttu-id="2cf47-102">My.Computer.Clock – objekt</span><span class="sxs-lookup"><span data-stu-id="2cf47-102">My.Computer.Clock Object</span></span>
-<span data-ttu-id="2cf47-103">Provides properties for accessing the current local time and Universal Coordinated Time (equivalent to Greenwich Mean Time) from the system clock.</span><span class="sxs-lookup"><span data-stu-id="2cf47-103">Provides properties for accessing the current local time and Universal Coordinated Time (equivalent to Greenwich Mean Time) from the system clock.</span></span>  
+# <a name="mycomputerclock-object"></a><span data-ttu-id="7e8d3-102">My.Computer.Clock – objekt</span><span class="sxs-lookup"><span data-stu-id="7e8d3-102">My.Computer.Clock Object</span></span>
+<span data-ttu-id="7e8d3-103">Poskytuje vlastnosti pro přístup k aktuálnímu místnímu času a univerzálnímu koordinovanému času (ekvivalentnímu střednímu času) ze systémových hodin.</span><span class="sxs-lookup"><span data-stu-id="7e8d3-103">Provides properties for accessing the current local time and Universal Coordinated Time (equivalent to Greenwich Mean Time) from the system clock.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="2cf47-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="2cf47-104">Remarks</span></span>  
- <span data-ttu-id="2cf47-105">For information about the methods and properties of the `My.Computer.Clock` object, see <xref:Microsoft.VisualBasic.Devices.Clock>.</span><span class="sxs-lookup"><span data-stu-id="2cf47-105">For information about the methods and properties of the `My.Computer.Clock` object, see <xref:Microsoft.VisualBasic.Devices.Clock>.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="7e8d3-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="7e8d3-104">Remarks</span></span>  
+ <span data-ttu-id="7e8d3-105">Informace o metodách a vlastnostech objektu `My.Computer.Clock` naleznete v tématu <xref:Microsoft.VisualBasic.Devices.Clock>.</span><span class="sxs-lookup"><span data-stu-id="7e8d3-105">For information about the methods and properties of the `My.Computer.Clock` object, see <xref:Microsoft.VisualBasic.Devices.Clock>.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="2cf47-106">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2cf47-106">Requirements</span></span>  
- <span data-ttu-id="2cf47-107">**Namespace:** <xref:Microsoft.VisualBasic.Devices></span><span class="sxs-lookup"><span data-stu-id="2cf47-107">**Namespace:** <xref:Microsoft.VisualBasic.Devices></span></span>  
+## <a name="requirements"></a><span data-ttu-id="7e8d3-106">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7e8d3-106">Requirements</span></span>  
+ <span data-ttu-id="7e8d3-107">**Obor názvů:** <xref:Microsoft.VisualBasic.Devices></span><span class="sxs-lookup"><span data-stu-id="7e8d3-107">**Namespace:** <xref:Microsoft.VisualBasic.Devices></span></span>  
   
- <span data-ttu-id="2cf47-108">**Class:** <xref:Microsoft.VisualBasic.Devices.Clock></span><span class="sxs-lookup"><span data-stu-id="2cf47-108">**Class:** <xref:Microsoft.VisualBasic.Devices.Clock></span></span>  
+ <span data-ttu-id="7e8d3-108">**Třída:** <xref:Microsoft.VisualBasic.Devices.Clock></span><span class="sxs-lookup"><span data-stu-id="7e8d3-108">**Class:** <xref:Microsoft.VisualBasic.Devices.Clock></span></span>  
   
- <span data-ttu-id="2cf47-109">**Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)</span><span class="sxs-lookup"><span data-stu-id="2cf47-109">**Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)</span></span>  
+ <span data-ttu-id="7e8d3-109">**Sestavení:** Knihovna Visual Basic runtime (v souboru Microsoft. VisualBasic. dll)</span><span class="sxs-lookup"><span data-stu-id="7e8d3-109">**Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="2cf47-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2cf47-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7e8d3-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7e8d3-110">See also</span></span>
 
-- [<span data-ttu-id="2cf47-111">Objekt My.Computer</span><span class="sxs-lookup"><span data-stu-id="2cf47-111">My.Computer Object</span></span>](../../../visual-basic/language-reference/objects/my-computer-object.md)
+- [<span data-ttu-id="7e8d3-111">Objekt My.Computer</span><span class="sxs-lookup"><span data-stu-id="7e8d3-111">My.Computer Object</span></span>](../../../visual-basic/language-reference/objects/my-computer-object.md)

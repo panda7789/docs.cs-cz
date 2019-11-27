@@ -21,10 +21,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445550"
 ---
-# <a name="setnonassemblyflags-method"></a><span data-ttu-id="02743-102">SetNonAssemblyFlags – metoda</span><span class="sxs-lookup"><span data-stu-id="02743-102">SetNonAssemblyFlags Method</span></span>
-<span data-ttu-id="02743-103">Sets flags that are not assembly-specific.</span><span class="sxs-lookup"><span data-stu-id="02743-103">Sets flags that are not assembly-specific.</span></span>  
+# <a name="setnonassemblyflags-method"></a><span data-ttu-id="828c2-102">SetNonAssemblyFlags – metoda</span><span class="sxs-lookup"><span data-stu-id="828c2-102">SetNonAssemblyFlags Method</span></span>
+<span data-ttu-id="828c2-103">Nastaví příznaky, které nejsou specifické pro sestavení.</span><span class="sxs-lookup"><span data-stu-id="828c2-103">Sets flags that are not assembly-specific.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="02743-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="02743-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="828c2-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="828c2-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT SetNonAssemblyFlags(  
@@ -32,18 +32,18 @@ HRESULT SetNonAssemblyFlags(
 ) PURE;  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="02743-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="02743-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="828c2-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="828c2-105">Parameters</span></span>  
  `afFlags`  
- <span data-ttu-id="02743-106">ALink flags.</span><span class="sxs-lookup"><span data-stu-id="02743-106">ALink flags.</span></span>  
+ <span data-ttu-id="828c2-106">Příznaky ALink</span><span class="sxs-lookup"><span data-stu-id="828c2-106">ALink flags.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="02743-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="02743-107">Return Value</span></span>  
- <span data-ttu-id="02743-108">Returns S_OK if the method succeeds.</span><span class="sxs-lookup"><span data-stu-id="02743-108">Returns S_OK if the method succeeds.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="828c2-107">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="828c2-107">Return Value</span></span>  
+ <span data-ttu-id="828c2-108">Vrátí S_OK, pokud je metoda úspěšná.</span><span class="sxs-lookup"><span data-stu-id="828c2-108">Returns S_OK if the method succeeds.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="02743-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="02743-109">Requirements</span></span>  
- <span data-ttu-id="02743-110">Requires alink.h</span><span class="sxs-lookup"><span data-stu-id="02743-110">Requires alink.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="828c2-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="828c2-109">Requirements</span></span>  
+ <span data-ttu-id="828c2-110">Vyžaduje ALink. h</span><span class="sxs-lookup"><span data-stu-id="828c2-110">Requires alink.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="02743-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="02743-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="828c2-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="828c2-111">See also</span></span>
 
-- [<span data-ttu-id="02743-112">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="02743-112">IALink Interface</span></span>](ialink-interface.md)
-- [<span data-ttu-id="02743-113">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="02743-113">IALink2 Interface</span></span>](ialink2-interface.md)
-- [<span data-ttu-id="02743-114">ALink API</span><span class="sxs-lookup"><span data-stu-id="02743-114">ALink API</span></span>](index.md)
+- [<span data-ttu-id="828c2-112">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="828c2-112">IALink Interface</span></span>](ialink-interface.md)
+- [<span data-ttu-id="828c2-113">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="828c2-113">IALink2 Interface</span></span>](ialink2-interface.md)
+- [<span data-ttu-id="828c2-114">Rozhraní API ALink</span><span class="sxs-lookup"><span data-stu-id="828c2-114">ALink API</span></span>](index.md)
