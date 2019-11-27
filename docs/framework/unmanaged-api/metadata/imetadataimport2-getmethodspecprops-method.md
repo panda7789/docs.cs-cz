@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445250"
 ---
 # <a name="imetadataimport2getmethodspecprops-method"></a>IMetaDataImport2::GetMethodSpecProps – metoda
-Gets the metadata signature of the method referenced by the specified MethodSpec token.  
+Získá podpis metadat metody, na kterou odkazuje zadaný token MethodSpec.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,25 +38,25 @@ HRESULT GetMethodSpecProps (
   
 ## <a name="parameters"></a>Parametry  
  `mi`  
- [in] A MethodSpec token that represents the instantiation of the method.  
+ pro Token MethodSpec, který představuje instanci metody.  
   
  `tkParent`  
- [out] A pointer to the MethodDef or MethodRef token that represents the method definition.  
+ mimo Ukazatel na token MethodDef nebo MethodRef, který představuje definici metody.  
   
  `ppvSigBlob`  
- [out] A pointer to the binary metadata signature of the method.  
+ mimo Ukazatel na binární podpis metadat metody.  
   
  `pcbSigBlob`  
- [out] The size, in bytes, of `ppvSigBlob`.  
+ mimo Velikost `ppvSigBlob`v bajtech.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

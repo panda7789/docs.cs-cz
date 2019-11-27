@@ -7,33 +7,33 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450882"
 ---
 
-The packages added to the package manager feeds are named in a hackable format: `{product}-{type}-{version}`.
+Balíčky přidané do kanálů správce balíčků jsou pojmenovány ve formátu zneužitelných: `{product}-{type}-{version}`.
 
-- **product**\
-The type of .NET product to install. Valid options are:
+- \ **produktu**
+Typ produktu .NET, který se má nainstalovat Platné možnosti jsou:
 
-  - dotnet
+  - DotNet
   - aspnetcore
 
-- **type**\
-Chooses the SDK or the runtime. Valid options are:
+- **zadejte**\
+Zvolí sadu SDK nebo modul runtime. Platné možnosti jsou:
 
   - sdk
   - modul runtime
 
-- **version**\
-The version of the SDK or runtime to install. This article will always give the instructions for the latest supported version. Valid options are any released version, such as:
+- \ **verze**
+Verze sady SDK nebo modulu runtime, která má být nainstalována. V tomto článku se vždycky dostanou pokyny pro nejnovější podporovanou verzi. Platné možnosti jsou všechny vydané verze, například:
 
-  - 3.0
+  - 3,0
   - 2.2
   - 2.1
 
 ### <a name="examples"></a>Příklady
 
-- Install the .NET Core 2.2 SDK: `dotnet-sdk-2.2`
-- Install the ASP.NET Core 3.0 runtime: `aspnetcore-runtime-3.0`
-- Install the .NET Core 2.1 runtime: `dotnet-runtime-2.1`
+- Instalace sady .NET Core 2,2 SDK: `dotnet-sdk-2.2`
+- Instalace modulu runtime ASP.NET Core 3,0: `aspnetcore-runtime-3.0`
+- Instalace modulu runtime .NET Core 2,1: `dotnet-runtime-2.1`
 
-### <a name="troubleshoot"></a>Řešení potíží
+### <a name="troubleshoot"></a>Řešení problémů
 
-If the package combination doesn't work, it's not available. For example, there isn't an ASP.NET Core SDK, the SDK components are included with the .NET Core SDK. The value `aspnetcore-sdk-2.2` is incorrect and should be `dotnet-sdk-2.2`
+Pokud kombinace balíčku nefunguje, není k dispozici. Například sada SDK není ASP.NET Core, součásti sady SDK jsou součástí .NET Core SDK. Hodnota `aspnetcore-sdk-2.2` není správná a měla by být `dotnet-sdk-2.2`

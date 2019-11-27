@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445222"
 ---
 # <a name="imetadataimport2getversionstring-method"></a>IMetaDataImport2::GetVersionString – metoda
-Gets the version number of the runtime that was used to build the assembly.  
+Získá číslo verze modulu runtime, který byl použit k sestavení sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,25 +37,25 @@ HRESULT GetVersionString (
   
 ## <a name="parameters"></a>Parametry  
  `pwzBuf`  
- [out] An array to store the string that specifies the version.  
+ mimo Pole pro uložení řetězce, který určuje verzi.  
   
  `ccBufSize`  
- [in] The size, in wide characters, of the `pwzBuf` array.  
+ pro Velikost pole `pwzBuf` v různých znacích  
   
  `pccBufSize`  
- [out] The number of wide characters, including a null terminator, returned in the `pwzBuf` array.  
+ mimo Počet velkých znaků, včetně ukončovacího znaku null, vrácený v poli `pwzBuf`.  
   
 ## <a name="remarks"></a>Poznámky  
- The `GetVersionString` method gets the built-for version of the current metadata scope. If the scope has never been saved, it will not have a built-for version, and an empty string will be returned.  
+ Metoda `GetVersionString` získá vestavěnou verzi aktuálního oboru metadat. Pokud se obor nikdy neuložil, nebude mít vestavěnou verzi a vrátí se prázdný řetězec.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

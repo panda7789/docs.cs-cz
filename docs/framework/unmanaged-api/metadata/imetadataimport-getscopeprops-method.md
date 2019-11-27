@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436873"
 ---
 # <a name="imetadataimportgetscopeprops-method"></a>IMetaDataImport::GetScopeProps – metoda
-Gets the name and optionally the version identifier of the assembly or module in the current metadata scope.  
+Získá název a volitelně identifikátor verze sestavení nebo modulu v aktuálním oboru metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,28 +38,28 @@ HRESULT GetScopeProps (
   
 ## <a name="parameters"></a>Parametry  
  `szName`  
- [out] A buffer for the assembly or module name.  
+ mimo Vyrovnávací paměť pro název sestavení nebo modulu.  
   
  `cchName`  
- [in] The size in wide characters of `szName`.  
+ pro Velikost v různých znacích `szName`.  
   
  `pchName`  
- [out] The number of wide characters returned in `szName`.  
+ mimo Počet velkých znaků vrácených v `szName`.  
   
  `pmvid`  
- [out, optional] A pointer to a GUID that uniquely identifies the version of the assembly or module.  
+ [out, volitelné] Ukazatel na identifikátor GUID, který jedinečně identifikuje verzi sestavení nebo modulu.  
   
 ## <a name="remarks"></a>Poznámky  
- The [IMetaDataEmit::SetModuleProps](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-setmoduleprops-method.md) method is used to set these properties.  
+ Metoda [IMetaDataEmit:: SetModuleProps –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-setmoduleprops-method.md) slouží k nastavení těchto vlastností.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

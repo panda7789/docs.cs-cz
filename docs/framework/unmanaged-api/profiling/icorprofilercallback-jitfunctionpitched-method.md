@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448427"
 ---
 # <a name="icorprofilercallbackjitfunctionpitched-method"></a>ICorProfilerCallback::JITFunctionPitched – metoda
-Notifies the profiler that a function that has been just-in-time (JIT)-compiled has been removed from memory.  
+Upozorní profileru, že byla z paměti odebrána funkce, která byla zkompilována za běhu (JIT).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,21 +34,21 @@ HRESULT JITFunctionPitched(
   
 ## <a name="parameters"></a>Parametry  
  `functionId`  
- [in] The ID of the function that was removed.  
+ pro ID odebrané funkce  
   
 ## <a name="remarks"></a>Poznámky  
- If the removed function is called, the profiler will receive new JIT-compilation events when the function is recompiled. Currently, the common language runtime (CLR) JIT compiler does not remove functions from memory, so this callback is currently not used and will not be received by the profiler.  
+ Pokud je zavolána funkce odebrané, Profiler obdrží nové události kompilace JIT, když je funkce znovu zkompilována. Kompilátor JIT (Common Language Runtime) v současné době neodebere funkce z paměti, takže toto zpětné volání se v tuto chvíli nepoužívá a profil nebude přijímat.  
   
- The value of `functionId` is not valid until the function is recompiled. When the function is recompiled, the same `functionId` value will be used.  
+ Hodnota `functionId` není platná, dokud nebude funkce znovu zkompilována. Když je funkce znovu zkompilována, bude použita stejná hodnota `functionId`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

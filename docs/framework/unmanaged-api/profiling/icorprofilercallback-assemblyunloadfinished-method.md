@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445147"
 ---
 # <a name="icorprofilercallbackassemblyunloadfinished-method"></a>ICorProfilerCallback::AssemblyUnloadFinished – metoda
-Notifies the profiler that an assembly has been unloaded.  
+Upozorní profileru, že bylo sestavení uvolněno.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,24 +35,24 @@ HRESULT AssemblyUnloadFinished(
   
 ## <a name="parameters"></a>Parametry  
  `assemblyId`  
- [in] Identifies the assembly that is being unloaded.  
+ pro Identifikuje sestavení, které je uvolňováno.  
   
  `hrStatus`  
- [in] An HRESULT that indicates whether the assembly was unloaded successfully.  
+ pro Hodnota HRESULT, která označuje, zda bylo sestavení uvolněno úspěšně.  
   
 ## <a name="remarks"></a>Poznámky  
- The value of `assemblyId` is not valid for an information request after the [ICorProfilerCallback::AssemblyUnloadStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-assemblyunloadstarted-method.md) method returns.  
+ Hodnota `assemblyId` není platná pro požadavek na informace po návratu metody [ICorProfilerCallback:: assemblyunloadstarted –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-assemblyunloadstarted-method.md) .  
   
- Some parts of unloading the assembly might continue after the `AssemblyUnloadFinished` callback. A failure HRESULT in `hrStatus` indicates a failure. However, a success HRESULT in `hrStatus` indicates only that the first part of unloading the assembly has succeeded.  
+ Některé části uvolňování sestavení mohou pokračovat po `AssemblyUnloadFinished` zpětného volání. Selhání HRESULT v `hrStatus` označuje selhání. Úspěšnost HRESULT v `hrStatus` však znamená, že první část uvolňování sestavení byla úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

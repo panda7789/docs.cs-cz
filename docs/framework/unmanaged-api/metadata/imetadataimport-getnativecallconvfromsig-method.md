@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437249"
 ---
 # <a name="imetadataimportgetnativecallconvfromsig-method"></a>IMetaDataImport::GetNativeCallConvFromSig – metoda
-Gets the native calling convention for the method that is represented by the specified signature pointer.  
+Získá nativní konvenci volání pro metodu, která je reprezentovaná zadaným ukazatelem podpisu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,22 +37,22 @@ HRESULT GetNativeCallConvFromSig (
   
 ## <a name="parameters"></a>Parametry  
  `pvSig`  
- [in] A pointer to the metadata signature of the method to return the calling convention for.  
+ pro Ukazatel na signaturu metadat metody, pro kterou chcete vrátit konvenci volání.  
   
  `cbSig`  
- [in] The size in bytes of `pvSig`.  
+ pro Velikost v bajtech `pvSig`.  
   
  `pCallConv`  
- [out] A pointer to the native calling convention.  
+ mimo Ukazatel na nativní konvenci volání.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

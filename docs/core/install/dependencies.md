@@ -1,6 +1,6 @@
 ---
-title: .NET Core SDK and runtime dependencies - .NET Core
-description: Details the operating system and CPU architecture prerequisites to install the .NET Core SDK and runtime on Windows, Linux, and macOS.
+title: Závislosti .NET Core SDK a modulu runtime – .NET Core
+description: Podrobně popisuje operační systém a požadavky na architekturu procesoru pro instalaci .NET Core SDK a modulu runtime v systémech Windows, Linux a macOS.
 author: leecow
 ms.author: leecow
 ms.date: 11/06/2019
@@ -12,11 +12,11 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74451099"
 ---
-# <a name="net-core-dependencies-and-requirements"></a>.NET Core dependencies and requirements
+# <a name="net-core-dependencies-and-requirements"></a>Závislosti a požadavky .NET Core
 
-This article details which operating systems and CPU architecture are supported by .NET Core.
+Tento článek podrobně popisuje, které operační systémy a architektura procesoru jsou podporovány rozhraním .NET Core.
 
-## <a name="supported-operating-systems"></a>Supported operating systems
+## <a name="supported-operating-systems"></a>Podporované operační systémy
 
 ::: zone pivot="os-windows"
 
@@ -25,59 +25,59 @@ This article details which operating systems and CPU architecture are supported 
 
 # <a name="net-core-30tabnetcore30"></a>[.NET Core 3.0](#tab/netcore30)
 
-The following Windows versions are supported with .NET Core 3.0:
+Rozhraní .NET Core 3,0 podporuje následující verze systému Windows:
 
 > [!NOTE]
-> A `+` symbol represents the minimum version.
+> Symbol `+` představuje minimální verzi.
 
-| OS                            | Version                        | Architectures   |
+| OS                            | Version                        | Architektury   |
 | ----------------------------- | ------------------------------ | --------------- |
-| Windows Client                | 7 SP1+, 8.1                    | x64, x86        |
-| Windows 10 Client             | Version 1607+                  | x64, x86        |
-| Windows Server                | 2012 R2+                       | x64, x86        |
-| Nano Server                   | Version 1803+                  | x64, ARM32      |
+| Počítač s klientským operačním systémem Windows                | 7 SP1 +, 8,1                    | x64, x86        |
+| Klient Windows 10             | Verze 1607 +                  | x64, x86        |
+| Windows Server                | 2012 R2 +                       | x64, x86        |
+| Nano Server                   | Verze 1803 +                  | x64, ARM32      |
 
-For more information about .NET Core 3.0 supported operating systems, distributions, and lifecycle policy, see [.NET Core 3.0 Supported OS Versions](https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md).
+Další informace o podporovaných operačních systémech .NET Core 3,0, distribucích a zásadách životního cyklu najdete v článku [podporované verze operačních systémů pro .NET core 3,0](https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md).
 
-# <a name="net-core-22tabnetcore22"></a>[.NET Core 2.2](#tab/netcore22)
+# <a name="net-core-22tabnetcore22"></a>[.NET Core 2,2](#tab/netcore22)
 
-The following Windows versions are supported with .NET Core 2.2:
+Rozhraní .NET Core 2,2 podporuje následující verze systému Windows:
 
 > [!NOTE]
-> A `+` symbol represents the minimum version.
+> Symbol `+` představuje minimální verzi.
 
-| OS                            | Version                        | Architectures   |
+| OS                            | Version                        | Architektury   |
 | ----------------------------- | ------------------------------ | --------------- |
-| Windows Client                | 7 SP1+, 8.1                    | x64, x86        |
-| Windows 10 Client             | Version 1607+                  | x64, x86        |
-| Windows Server                | 2008 R2 SP1+                   | x64, x86        |
-| Nano Server                   | Version 1803+                   | x64, ARM32      |
+| Počítač s klientským operačním systémem Windows                | 7 SP1 +, 8,1                    | x64, x86        |
+| Klient Windows 10             | Verze 1607 +                  | x64, x86        |
+| Windows Server                | 2008 R2 SP1 +                   | x64, x86        |
+| Nano Server                   | Verze 1803 +                   | x64, ARM32      |
 
-For more information about .NET Core 2.2 supported operating systems, distributions, and lifecycle policy, see [.NET Core 2.2 Supported OS Versions](https://github.com/dotnet/core/blob/master/release-notes/2.2/2.2-supported-os.md).
+Další informace o podporovaných operačních systémech .NET Core 2,2, distribucích a zásadách životního cyklu najdete v článku [podporované verze operačních systémů pro .NET core 2,2](https://github.com/dotnet/core/blob/master/release-notes/2.2/2.2-supported-os.md).
 
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
+# <a name="net-core-21tabnetcore21"></a>[.NET Core 2,1](#tab/netcore21)
 
-The following Windows versions are supported with .NET Core 2.1:
+Rozhraní .NET Core 2,1 podporuje následující verze systému Windows:
 
 > [!NOTE]
-> A `+` symbol represents the minimum version.
+> Symbol `+` představuje minimální verzi.
 
-| OS                            | Version                        | Architectures   |
+| OS                            | Version                        | Architektury   |
 | ----------------------------- | ------------------------------ | --------------- |
-| Windows Client                | 7 SP1+, 8.1                    | x64, x86        |
-| Windows 10 Client             | Version 1607+                  | x64, x86        |
-| Windows Server                | 2008 R2 SP1+                   | x64, x86        |
-| Nano Server                   | Version 1803+                  | x64,            |
+| Počítač s klientským operačním systémem Windows                | 7 SP1 +, 8,1                    | x64, x86        |
+| Klient Windows 10             | Verze 1607 +                  | x64, x86        |
+| Windows Server                | 2008 R2 SP1 +                   | x64, x86        |
+| Nano Server                   | Verze 1803 +                  | platformě            |
 
-For more information about .NET Core 2.1 supported operating systems, distributions, and lifecycle policy, see [.NET Core 2.1 Supported OS Versions](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1-supported-os.md).
+Další informace o podporovaných operačních systémech .NET Core 2,1, distribucích a zásadách životního cyklu najdete v článku [podporované verze operačních systémů pro .NET core 2,1](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1-supported-os.md).
 
 ---
 
 <!-- markdownlint-disable MD001 -->
 
-### <a name="windows-7--vista--81--server-2008-r2"></a>Windows 7 / Vista / 8.1 / Server 2008 R2
+### <a name="windows-7--vista--81--server-2008-r2"></a>Windows 7/Vista/8,1/Server 2008 R2
 
-Additional dependencies are required if you're installing the .NET SDK or runtime on the following Windows versions:
+Pokud instalujete sadu .NET SDK nebo modul runtime v následujících verzích systému Windows, jsou vyžadovány další závislosti:
 
 - Windows 7 SP1
 - Windows Vista SP 2
@@ -85,18 +85,18 @@ Additional dependencies are required if you're installing the .NET SDK or runtim
 - Windows Server 2008 R2
 - Windows Server 2012 R2
 
-Install the following:
+Nainstalujte následující:
 
-- [Microsoft Visual C++ 2015 Redistributable Update 3](https://www.microsoft.com/download/details.aspx?id=52685).
+- [Distribuovatelné C++ součásti Microsoft Visual 2015 Update 3](https://www.microsoft.com/download/details.aspx?id=52685)
 - [KB2533623](https://support.microsoft.com/help/2533623/microsoft-security-advisory-insecure-library-loading-could-allow-remot)
 
-The requirements above are also required if you come across one of the following errors:
+Výše uvedené požadavky se vyžadují také v případě, že dojde k jedné z následujících chyb:
 
-> The program can't start because *api-ms-win-crt-runtime-l1-1-0.dll* is missing from your computer. Try reinstalling the program to fix this problem.
+> Program nelze spustit, protože v počítači chybí *rozhraní API-MS-Win-CRT-runtime-L1-1 -0. dll* . Zkuste tento problém vyřešit tak, že znovu nainstalujete program.
 >
-> \- or -
+> \- nebo-
 >
-> The library *hostfxr.dll* was found, but loading it from *C:\\\<path_to_app>\\hostfxr.dll* failed.
+> Knihovna *hostfxr. dll* byla nalezena, ale byla načtena z *C:\\\<path_to_app >\\hostfxr. dll* se nezdařila.
 
 ::: zone-end
 
@@ -104,156 +104,156 @@ The requirements above are also required if you come across one of the following
 
 # <a name="net-core-30tabnetcore30"></a>[.NET Core 3.0](#tab/netcore30)
 
-.NET Core 3.0 treats Linux as a single operating system. There's a single Linux build (per chip architecture) for supported Linux distributions.
+.NET Core 3,0 považuje Linux za jeden operační systém. Pro podporovaná distribuce systému Linux existuje jedno sestavení pro Linux (na architekturu čipu).
 
-.NET Core 3.0 is supported on the following Linux distributions/versions:
+.NET Core 3,0 se podporuje v následujících distribucích a verzích systému Linux:
 
 > [!NOTE]
-> A `+` symbol represents the minimum version.
+> Symbol `+` představuje minimální verzi.
 
-| OS                             | Version               | Architectures    |
+| OS                             | Version               | Architektury    |
 | ------------------------------ | --------------------- | ---------------- |
 | Red Hat Enterprise Linux       | 6, 7, 8               | x64 |
-| CentOS                         | 7+                    | x64 |
-| Oracle Linux                   | 7+                    | x64 |
-| Fedora                         | 29+                   | x64 |
-| Debian                         | 9+                    | x64, ARM32, ARM64 |
-| Ubuntu                         | 16.04+                | x64, ARM32, ARM64 |
-| Linux Mint                     | 18+                   | x64 |
-| openSUSE                       | 15+                   | x64 |
+| CentOS                         | 7 +                    | x64 |
+| Oracle Linux                   | 7 +                    | x64 |
+| Fedora                         | 29 +                   | x64 |
+| Debian                         | 9 +                    | x64, ARM32, ARM64 |
+| Ubuntu                         | 16.04 +                | x64, ARM32, ARM64 |
+| Linux mentolová                     | 18 +                   | x64 |
+| openSUSE                       | 15 +                   | x64 |
 | SUSE Enterprise Linux (SLES)   | 12 SP2+               | x64 |
-| Alpine Linux                   | 3.8+                  | x64, ARM64 |
+| Alpine Linux                   | 3.8 +                  | x64, ARM64 |
 
-For more information about .NET Core 3.0 supported operating systems, distributions, and lifecycle policy, see [.NET Core 3.0 Supported OS Versions](https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md).
+Další informace o podporovaných operačních systémech .NET Core 3,0, distribucích a zásadách životního cyklu najdete v článku [podporované verze operačních systémů pro .NET core 3,0](https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md).
 
-For more information about how to install .NET Core 3.0 on ARM64, see [Installing .NET Core 3.0 on Linux ARM64](https://gist.github.com/richlander/467813274cea8abc624553ee72b28213).
+Další informace o tom, jak nainstalovat .NET Core 3,0 na ARM64, najdete v tématu [instalace .NET core 3,0 na Linux ARM64](https://gist.github.com/richlander/467813274cea8abc624553ee72b28213).
 
-# <a name="net-core-22tabnetcore22"></a>[.NET Core 2.2](#tab/netcore22)
+# <a name="net-core-22tabnetcore22"></a>[.NET Core 2,2](#tab/netcore22)
 
-.NET Core 2.2 treats Linux as a single operating system. There's a single Linux build (per chip architecture) for supported Linux distributions.
+.NET Core 2,2 považuje Linux za jeden operační systém. Pro podporovaná distribuce systému Linux existuje jedno sestavení pro Linux (na architekturu čipu).
 
-.NET Core 2.2 is supported on the following Linux distributions/versions:
+.NET Core 2,2 se podporuje v následujících distribucích a verzích systému Linux:
 
 > [!NOTE]
-> A `+` symbol represents the minimum version.
+> Symbol `+` představuje minimální verzi.
 
-| OS                             |  Version                |  Architectures   |
+| OS                             |  Version                |  Architektury   |
 | ------------------------------ | ----------------------- | ---------------- |
 | Red Hat Enterprise Linux       |  6, 7                   | x64 |
 | CentOS                         |  7                      | x64 |
 | Oracle Linux                   |  7                      | x64 |
 | Fedora                         |  29, 30                 | x64 |
 | Debian                         |  9                      | x64, ARM32 |
-| Ubuntu                         |  16.04, 18.04, 18.10, 19.04    | x64, ARM32 |
-| Linux Mint                     |  17, 18                 | x64 |
-| openSUSE                       |  15+                    | x64 |
+| Ubuntu                         |  16,04, 18,04, 18,10, 19,04    | x64, ARM32 |
+| Linux mentolová                     |  17, 18                 | x64 |
+| openSUSE                       |  15 +                    | x64 |
 | SUSE Enterprise Linux (SLES)   |  12 SP2+                | x64 |
-| Alpine Linux                   |  3.8+                   | x64 |
+| Alpine Linux                   |  3.8 +                   | x64 |
 
-For more information about .NET Core 2.2 supported operating systems, distributions, and lifecycle policy, see [.NET Core 2.2 Supported OS Versions](https://github.com/dotnet/core/blob/master/release-notes/2.2/2.2-supported-os.md).
+Další informace o podporovaných operačních systémech .NET Core 2,2, distribucích a zásadách životního cyklu najdete v článku [podporované verze operačních systémů pro .NET core 2,2](https://github.com/dotnet/core/blob/master/release-notes/2.2/2.2-supported-os.md).
 
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
+# <a name="net-core-21tabnetcore21"></a>[.NET Core 2,1](#tab/netcore21)
 
-.NET Core 2.1 treats Linux as a single operating system. There's a single Linux build (per chip architecture) for supported Linux distributions.
+.NET Core 2,1 považuje Linux za jeden operační systém. Pro podporovaná distribuce systému Linux existuje jedno sestavení pro Linux (na architekturu čipu).
 
-.NET Core 2.1 is supported on the following Linux distributions/versions:
+.NET Core 2,1 se podporuje v následujících distribucích a verzích systému Linux:
 
 > [!NOTE]
-> A `+` symbol represents the minimum version.
+> Symbol `+` představuje minimální verzi.
 
-| OS                             |  Version                |  Architectures   |
+| OS                             |  Version                |  Architektury   |
 | ------------------------------ | ----------------------- | ---------------- |
 | Red Hat Enterprise Linux       |  6, 7, 8                | x64 |
-| CentOS                         |  7+                     | x64 |
-| Oracle Linux                   |  7+                     | x64 |
-| Fedora                         |  29+                    | x64 |
+| CentOS                         |  7 +                     | x64 |
+| Oracle Linux                   |  7 +                     | x64 |
+| Fedora                         |  29 +                    | x64 |
 | Debian                         |  9                      | x64, ARM32 |
-| Ubuntu                         |  16.04, 18.04, 19.04, 19.10    | x64, ARM32 |
-| Linux Mint                     |  17+                    | x64 |
-| openSUSE                       |  15+                    | x64 |
+| Ubuntu                         |  16,04, 18,04, 19,04, 19,10    | x64, ARM32 |
+| Linux mentolová                     |  17 +                    | x64 |
+| openSUSE                       |  15 +                    | x64 |
 | SUSE Enterprise Linux (SLES)   |  12 SP2+                | x64 |
-| Alpine Linux                   |  3.8+                   | x64 |
+| Alpine Linux                   |  3.8 +                   | x64 |
 
-For more information about .NET Core 2.1 supported operating systems, distributions, and lifecycle policy, see [.NET Core 2.1 Supported OS Versions](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1-supported-os.md).
+Další informace o podporovaných operačních systémech .NET Core 2,1, distribucích a zásadách životního cyklu najdete v článku [podporované verze operačních systémů pro .NET core 2,1](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1-supported-os.md).
 
 ---
 
-## <a name="linux-distribution-dependencies"></a>Linux distribution dependencies
+## <a name="linux-distribution-dependencies"></a>Závislosti distribuce systému Linux
 
-Based on your linux distribution, you may need to install additional dependencies.
+Na základě distribuce systému Linux bude pravděpodobně nutné nainstalovat další závislosti.
 
 > [!IMPORTANT]
-> The exact versions and names may vary slightly on your Linux distribution of choice.
+> Přesné verze a názvy se mohou mírně lišit podle vaší možnosti rozšíření pro Linux.
 
 ### <a name="ubuntu"></a>Ubuntu
 
-Ubuntu distributions require the following libraries to be installed:
+Ubuntu distribuce vyžadují, aby byly nainstalované následující knihovny:
 
 - liblttng-ust0
-- libcurl3 (for 14.x and 16.x)
-- libcurl4 (for 18.x)
+- libcurl3 (pro 14. x a 16. x)
+- libcurl4 (pro 18. x)
 - libssl1.0.0
 - libkrb5-3
 - zlib1g
-- libicu52 (for 14.x)
-- libicu55 (for 16.x)
-- libicu57 (for 17.x)
-- libicu60 (for 18.x)
+- libicu52 (pro 14. x)
+- libicu55 (pro 16. x)
+- libicu57 (pro 17. x)
+- libicu60 (pro 18. x)
 
-For .NET Core apps that use the *System.Drawing.Common* assembly, you also need the following dependency:
+Pro aplikace .NET Core, které používají sestavení *System. Drawing. Common* , potřebujete také následující závislost:
 
-- libgdiplus (version 6.0.1 or later)
+- libgdiplus (verze 6.0.1 nebo novější)
 
 > [!WARNING]
-> Most versions of Ubuntu include an earlier version of libgdiplus. You can install a recent version of libgdiplus by adding the Mono repository to your system. Další informace najdete v tématu <https://www.mono-project.com/download/stable/>.
+> Většina verzí Ubuntu zahrnuje starší verzi libgdiplus. Můžete nainstalovat nejnovější verzi libgdiplus přidáním úložiště mono do systému. Další informace najdete v tématu <https://www.mono-project.com/download/stable/>.
 
-### <a name="centos-and-fedora"></a>CentOS and Fedora
+### <a name="centos-and-fedora"></a>CentOS a Fedora
 
-CentOS distributions require the following libraries installed:
+CentOS distribuce vyžadují následující nainstalované knihovny:
 
-- lttng-ust
+- lttng – tým UST
 - libcurl
-- openssl-libs
+- OpenSSL – knihovny
 - krb5-libs
 - libicu
-- zlib
+- ZLIB
 
-Fedora users: If your OpenSSL's version >= 1.1, you'll need to install **compat-openssl10**.
+Fedora uživatelé: Pokud verze vašeho OpenSSLu je > = 1,1, budete muset nainstalovat **kompatibilní s openssl10**.
 
-For .NET Core 2.0, the following dependencies are also required:
+Pro .NET Core 2,0 jsou potřeba taky následující závislosti:
 
 - libunwind
 - libuuid
 
-For more information about the dependencies, see [Self-contained Linux apps](https://github.com/dotnet/core/blob/master/Documentation/self-contained-linux-apps.md).
+Další informace o závislostech najdete v tématu [samostatné aplikace pro Linux](https://github.com/dotnet/core/blob/master/Documentation/self-contained-linux-apps.md).
 
-For .NET Core apps that use the *System.Drawing.Common* assembly, you'll also need the following dependency:
+Pro aplikace .NET Core, které používají sestavení *System. Drawing. Common* , budete také potřebovat následující závislost:
 
-- libgdiplus (version 6.0.1 or later)
+- libgdiplus (verze 6.0.1 nebo novější)
 
 > [!WARNING]
-> Most versions of CentOS and Fedora include an earlier version of libgdiplus. You can install a recent version of libgdiplus by adding the Mono repository to your system. Další informace najdete v tématu <https://www.mono-project.com/download/stable/>.
+> Většina verzí CentOS a Fedora zahrnuje starší verzi libgdiplus. Můžete nainstalovat nejnovější verzi libgdiplus přidáním úložiště mono do systému. Další informace najdete v tématu <https://www.mono-project.com/download/stable/>.
 
 ::: zone-end
 
 ::: zone pivot="os-macos"
 
-.NET Core is supported on the following macOS releases:
+Rozhraní .NET Core je podporované v následujících verzích macOS:
 
 > [!NOTE]
-> A `+` symbol represents the minimum version.
+> Symbol `+` představuje minimální verzi.
 
-| .NET Core Version | macOS                 | Architectures |     |
+| Verze .NET Core | macOS                 | Architektury |     |
 | ----------------- | --------------------- | --------------| --- |
-| 3.0               | High Sierra (10.13+)  | x64 | [More information](https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md) |
-| 2.2               | Sierra (10.12+)       | x64 | [More information](https://github.com/dotnet/core/blob/master/release-notes/2.2/2.2-supported-os.md) |
-| 2.1               | Sierra (10.12+)       | x64 | [More information](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1-supported-os.md) |
+| 3,0               | Velký Sierra (10.13 +)  | x64 | [Další informace](https://github.com/dotnet/core/blob/master/release-notes/3.0/3.0-supported-os.md) |
+| 2.2               | Sierra (10.12 +)       | x64 | [Další informace](https://github.com/dotnet/core/blob/master/release-notes/2.2/2.2-supported-os.md) |
+| 2.1               | Sierra (10.12 +)       | x64 | [Další informace](https://github.com/dotnet/core/blob/master/release-notes/2.1/2.1-supported-os.md) |
 
 ## <a name="libgdiplus"></a>libgdiplus
 
-.NET Core applications that use the *System.Drawing.Common* assembly require libgdiplus to be installed.
+Aplikace .NET Core, které používají *System. Drawing. Common* Assembly, vyžadují, aby bylo možné nainstalovat libgdiplus.
 
-An easy way to obtain libgdiplus is by using the [Homebrew ("brew")](https://brew.sh/) package manager for macOS. After installing *brew*, install libgdiplus by executing the following commands at a Terminal (command) prompt:
+Snadný způsob, jak získat libgdiplus, je použít Správce balíčků [homebrew ("Brew")](https://brew.sh/) pro MacOS. Po instalaci *Brew*nainstalujte libgdiplus spuštěním následujících příkazů na příkazovém řádku terminálu (Command):
 
 ```console
 brew update
@@ -264,5 +264,5 @@ brew install mono-libgdiplus
 
 ## <a name="next-steps"></a>Další kroky
 
-- To develop and run apps, install the [.NET Core SDK](sdk.md) (includes the runtime).
-- To run apps others have created, install the [.NET Core runtime](runtime.md).
+- Pro vývoj a spouštění aplikací nainstalujte [.NET Core SDK](sdk.md) (zahrnuje modul runtime).
+- Pokud chcete spouštět aplikace, které vytvořili jiní uživatelé, nainstalujte [modul runtime .NET Core](runtime.md).

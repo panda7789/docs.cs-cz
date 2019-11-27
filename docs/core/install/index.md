@@ -1,6 +1,6 @@
 ---
-title: Install .NET Core on Windows, Linux, and macOS - .NET Core
-description: Learn where and what to install for .NET Core on Windows, Linux, and macOS versions. Discover the dependencies required to develop, deploy, and run .NET Core apps.
+title: Instalace .NET Core v systému Windows, Linux a macOS – .NET Core
+description: Zjistěte, kde a co nainstalovat pro .NET Core na verzích Windows, Linux a macOS. Objevte závislosti potřebné pro vývoj, nasazování a spouštění aplikací .NET Core.
 author: thraka
 ms.author: adegeo
 ms.date: 11/06/2019
@@ -11,17 +11,17 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74451085"
 ---
-# <a name="download-and-install-net-core"></a>Download and install .NET Core
+# <a name="download-and-install-net-core"></a>Stáhnout a nainstalovat .NET Core
 
-This article provides information on how to download and install .NET Core. There are two parts to .NET Core, the **runtime** which is used to run apps, and the **SDK** which is used to create apps. The SDK includes the runtime.
+Tento článek poskytuje informace o tom, jak stáhnout a nainstalovat .NET Core. K dispozici jsou dvě části rozhraní .NET Core, **modul runtime** , který se používá ke spouštění aplikací, a **sadu SDK** , která se používá k vytváření aplikací. Sada SDK obsahuje modul runtime.
 
-- If you're a user who needs .NET Core to run apps, see [Install the .NET Core Runtime](runtime.md).
+- Pokud jste uživatelem, který potřebuje .NET Core ke spouštění aplikací, přečtěte si téma [Instalace modulu runtime .NET Core](runtime.md).
 
-- If you're a developer who needs .NET Core to create apps, see the [Install the .NET Core SDK](sdk.md).
+- Pokud jste vývojář, který potřebuje .NET Core k vytváření aplikací, přečtěte si článek [instalace .NET Core SDK](sdk.md).
 
 > [!NOTE]
-> The .NET Core SDK includes the runtime.
+> .NET Core SDK obsahuje modul runtime.
 
 ## <a name="dependencies"></a>Závislosti
 
-.NET Core is supported on Windows, Linux, and macOS. For a full list of requirements, see [Supported operating systems](dependencies.md).
+.NET Core je podporované v systémech Windows, Linux a macOS. Úplný seznam požadavků najdete v tématu [podporované operační systémy](dependencies.md).

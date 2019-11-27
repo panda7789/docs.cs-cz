@@ -23,9 +23,9 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74439237"
 ---
 # <a name="icorprofilerinfogetcodeinfo-method"></a>ICorProfilerInfo::GetCodeInfo – metoda
-Gets the extent of native code associated with the specified function ID.  
+Získá rozsah nativního kódu přidruženého k zadanému ID funkce.  
   
- This method is obsolete. Use the [ICorProfilerInfo2::GetCodeInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getcodeinfo2-method.md) method instead.  
+ Tato metoda je zastaralá. Místo toho použijte metodu [ICorProfilerInfo2:: GetCodeInfo2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getcodeinfo2-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,27 +38,27 @@ HRESULT GetCodeInfo(
   
 ## <a name="parameters"></a>Parametry  
  `functionId`  
- [in] The ID of the function with which the native code is associated.  
+ pro ID funkce, ke které je přidružen nativní kód.  
   
  `pStart`  
- [out] A pointer to an array of bytes that compose the native code of the function.  
+ mimo Ukazatel na pole bajtů, které tvoří nativní kód funkce.  
   
  `pcSize`  
- [out] A pointer to an integer that specifies the size, in bytes, of the native code.  
+ mimo Ukazatel na celé číslo, které určuje velikost (v bajtech) nativního kódu.  
   
 ## <a name="remarks"></a>Poznámky  
- To optimize performance, the runtime in the .NET Framework version 2.0 splits the precompiled, native code of a function into multiple regions. Consequently, the `GetCodeInfo` method is obsolete in the .NET Framework 2.0 because it is unable to handle the extent of a function's native code. Profilers should switch to using the more general `ICorProfilerInfo2::GetCodeInfo2` method instead.  
+ Za účelem optimalizace výkonu je modul runtime ve .NET Framework verze 2,0 rozdělen do více oblastí předkompilovaným nativním kódem funkce. V důsledku toho je metoda `GetCodeInfo` v .NET Framework 2,0 zastaralá, protože není schopna zpracovat rozsah nativního kódu funkce. Profilery by se měly místo toho přepnout na použití obecnější metody `ICorProfilerInfo2::GetCodeInfo2`.  
   
- This function uses caller-allocated buffers.  
+ Tato funkce používá vyrovnávací paměti přidělené volajícím.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** 1.0  
+ **Verze .NET Framework:** 1,0  
   
 ## <a name="see-also"></a>Viz také:
 

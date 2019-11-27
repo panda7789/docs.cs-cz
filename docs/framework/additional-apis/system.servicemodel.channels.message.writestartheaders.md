@@ -1,5 +1,5 @@
 ---
-title: Message.WriteStartHeaders Method (System.ServiceModel.Channels)
+title: Message. WriteStartHeaders – metoda (System. ServiceModel. Channels)
 author: mairaw
 ms.author: mairaw
 ms.date: 11/01/2019
@@ -18,9 +18,9 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74451176"
 ---
-# <a name="messagewritestartheaders-method"></a>Message.WriteStartHeaders Method
+# <a name="messagewritestartheaders-method"></a>Message. WriteStartHeaders – metoda
 
-Writes the start header into an XML file by calling the <xref:System.ServiceModel.Channels.Message.OnWriteStartHeaders%2A?displayProperty=nameWithType> method.
+Zapíše počáteční hlavičku do souboru XML voláním metody <xref:System.ServiceModel.Channels.Message.OnWriteStartHeaders%2A?displayProperty=nameWithType>.
 
 ```csharp
 internal void WriteStartHeaders(XmlDictionaryWriter writer)
@@ -29,19 +29,19 @@ internal void WriteStartHeaders(XmlDictionaryWriter writer)
 ## <a name="parameters"></a>Parametry
 
 - `writer` <xref:System.Xml.XmlDictionaryWriter>\
-  The writer that is used to write the start header into an XML file.
+  Zapisovač, který se používá k zápisu počáteční hlavičky do souboru XML.
 
 ## <a name="remarks"></a>Poznámky
 
 > [!WARNING]
-> The `Message.WriteStartHeaders` method is internal and is not meant to be used directly in your code.
+> Metoda `Message.WriteStartHeaders` je interní a není určena pro použití přímo v kódu.
 >
-> Microsoft does not support the use of this method in a production application under any circumstance.
+> Společnost Microsoft v žádné situaci nepodporuje použití této metody v produkční aplikaci.
 
 ## <a name="requirements"></a>Požadavky
 
-**Namespace:** <xref:System.ServiceModel.Channels>
+**Obor názvů:** <xref:System.ServiceModel.Channels>
 
-**Assembly:** System.ServiceModel.dll
+**Sestavení:** System. ServiceModel. dll
 
-**.NET Framework versions:** Available since 3.0.
+**Verze .NET Framework:** K dispozici od verze 3,0.

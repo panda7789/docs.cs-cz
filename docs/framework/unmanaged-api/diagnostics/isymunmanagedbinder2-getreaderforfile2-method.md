@@ -23,9 +23,9 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449328"
 ---
 # <a name="isymunmanagedbinder2getreaderforfile2-method"></a>ISymUnmanagedBinder2::GetReaderForFile2 – metoda
-Given a metadata interface and a file name, returns the correct [ISymUnmanagedReader](isymunmanagedreader-interface.md) interface that will read the debugging symbols associated with the module.  
+Vzhledem k rozhraní metadat a názvu souboru vrátí správné rozhraní [ISymUnmanagedReader](isymunmanagedreader-interface.md) , které přečte symboly ladění spojené s modulem.  
   
- This method provides a more extensive search for the program database (PDB) file than the [ISymUnmanagedBinder::GetReaderForFile](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-getreaderforfile-method.md) method.  
+ Tato metoda poskytuje rozsáhlejší hledání souboru databáze programu (PDB) než metoda [ISymUnmanagedBinder:: GetReaderForFile –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-getreaderforfile-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,28 +40,28 @@ HRESULT GetReaderForFile2(
   
 ## <a name="parameters"></a>Parametry  
  `importer`  
- [in] A pointer to the metadata import interface.  
+ pro Ukazatel na rozhraní pro import metadat.  
   
  `fileName`  
- [in] A pointer to the file name.  
+ pro Ukazatel na název souboru.  
   
  `searchPath`  
- [in] A pointer to the search path.  
+ pro Ukazatel na cestu pro hledání.  
   
  `searchPolicy`  
- [in] A value of the [CorSymSearchPolicyAttributes](../../../../docs/framework/unmanaged-api/diagnostics/corsymsearchpolicyattributes-enumeration.md) enumeration that specifies the policy to be used when doing a search for a symbol reader.  
+ pro Hodnota výčtu [CorSymSearchPolicyAttributes –](../../../../docs/framework/unmanaged-api/diagnostics/corsymsearchpolicyattributes-enumeration.md) , která určuje zásadu, která se má použít při hledání čtečky symbolů.  
   
  `pRetVal`  
- [out] A pointer that is set to the returned [ISymUnmanagedReader](isymunmanagedreader-interface.md) interface.  
+ mimo Ukazatel, který je nastaven na vrácené rozhraní [ISymUnmanagedReader](isymunmanagedreader-interface.md) .  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="remarks"></a>Poznámky  
- This version of the method can search for the PDB file in areas other than right next to the module. The search policy can be controlled by combining [CorSymSearchPolicyAttributes](../../../../docs/framework/unmanaged-api/diagnostics/corsymsearchpolicyattributes-enumeration.md). For example, `AllowReferencePathAccess | AllowSymbolServerAccess` looks for the PDB next to the executable file and on a symbol server, but does not query the registry or use the path in the executable file. If the `searchPath` parameter is provided, those directories will always be searched.  
+ Tato verze metody může vyhledat soubor PDB v jiných oblastech než na pravé straně modulu. Zásady hledání je možné řídit kombinací [CorSymSearchPolicyAttributes –](../../../../docs/framework/unmanaged-api/diagnostics/corsymsearchpolicyattributes-enumeration.md). `AllowReferencePathAccess | AllowSymbolServerAccess` například vyhledá soubor PDB vedle spustitelného souboru a na serveru symbolů, ale nedotazuje se do registru ani nepoužije cestu ve spustitelném souboru. Je-li zadán parametr `searchPath`, budou tyto adresáře vždy prohledány.  
   
 ## <a name="see-also"></a>Viz také:
 

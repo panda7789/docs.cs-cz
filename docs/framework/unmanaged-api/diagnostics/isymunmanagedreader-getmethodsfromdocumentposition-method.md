@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74441807"
 ---
 # <a name="isymunmanagedreadergetmethodsfromdocumentposition-method"></a>ISymUnmanagedReader::GetMethodsFromDocumentPosition – metoda
-Returns an array of methods, each of which contains the breakpoint at the given position in a document.  
+Vrátí pole metod, z nichž každý obsahuje zarážku na dané pozici v dokumentu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,28 +40,28 @@ HRESULT GetMethodsFromDocumentPosition (
   
 ## <a name="parameters"></a>Parametry  
  `document`  
- [in] The specified document.  
+ pro Zadaný dokument.  
   
  `line`  
- [in] The line of the specified document.  
+ pro Řádek zadaného dokumentu.  
   
  `column`  
- [in] The column of the specified document.  
+ pro Sloupec zadaného dokumentu  
   
  `cMethod`  
- [in] The size of the `pRetVal` array.  
+ pro Velikost pole `pRetVal`.  
   
  `pcMethod`  
- [out] A pointer to a variable that receives the number of elements returned in the `pRetVal` array.  
+ mimo Ukazatel na proměnnou, která přijímá počet prvků vrácených v poli `pRetVal`.  
   
  `pRetVal`  
- [out] An array of pointers, each of which points to an [ISymUnmanagedMethod](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md) object that represents a method containing the breakpoint.  
+ mimo Pole ukazatelů, z nichž každý odkazuje na objekt [ISymUnmanagedMethod](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md) , který představuje metodu obsahující zarážku.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450313"
 ---
 # <a name="corfieldattr-enumeration"></a>CorFieldAttr – výčet
-Contains values that describe metadata about a field.  
+Obsahuje hodnoty, které popisují metadata k poli.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -60,32 +60,32 @@ typedef enum CorFieldAttr {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`fdFieldAccessMask`|Specifies accessibility information.|  
-|`fdPrivateScope`|Specifies that the field cannot be referenced.|  
-|`fdPrivate`|Specifies that the field is accessible only by its parent type.|  
-|`fdFamANDAssem`|Specifies that the field is accessible by derived classes in its assembly.|  
-|`fdAssembly`|Specifies that the field is accessible by all types in its assembly.|  
-|`fdFamily`|Specifies that the field is accessible only by its type and derived classes.|  
-|`fdFamORAssem`|Specifies that the field is accessible by derived classes and by all types in its assembly.|  
-|`fdPublic`|Specifies that the field is accessible by all types with visibility of this scope.|  
-|`fdStatic`|Specifies that the field is a member of its type rather than an instance member.|  
-|`fdInitOnly`|Specifies that the field cannot be changed after it is initialized.|  
-|`fdLiteral`|Specifies that the field value is a compile-time constant.|  
-|`fdNotSerialized`|Specifies that the field is not serialized when its type is remoted.|  
-|`fdSpecialName`|Specifies that the field is special, and that its name describes how.|  
-|`fdPinvokeImpl`|Specifies that the field implementation is forwarded through PInvoke.|  
-|`fdReservedMask`|Reserved for internal use by the common language runtime.|  
-|`fdRTSpecialName`|Specifies that the common language runtime metadata internal APIs should check the encoding of the name.|  
-|`fdHasFieldMarshal`|Specifies that the field contains marshaling information.|  
-|`fdHasDefault`|Specifies that the field has a default value.|  
-|`fdHasFieldRVA`|Specifies that the field has a relative virtual address.|  
+|`fdFieldAccessMask`|Určuje informace o usnadnění.|  
+|`fdPrivateScope`|Určuje, že na pole se nedá odkazovat.|  
+|`fdPrivate`|Určuje, že pole je přístupné pouze pomocí jeho nadřazeného typu.|  
+|`fdFamANDAssem`|Určuje, že pole je přístupné odvozenými třídami v jeho sestavení.|  
+|`fdAssembly`|Určuje, že pole je přístupné pro všechny typy v jeho sestavení.|  
+|`fdFamily`|Určuje, že pole je přístupné pouze pomocí jeho typu a odvozených tříd.|  
+|`fdFamORAssem`|Určuje, že pole je přístupné odvozenými třídami a všemi typy v jeho sestavení.|  
+|`fdPublic`|Určuje, že pole je přístupné pro všechny typy s viditelností tohoto oboru.|  
+|`fdStatic`|Určuje, že pole je členem jeho typu, nikoli členem instance.|  
+|`fdInitOnly`|Určuje, že pole nelze po inicializaci změnit.|  
+|`fdLiteral`|Určuje, že hodnota pole je konstanta při kompilaci.|  
+|`fdNotSerialized`|Určuje, že pole není serializováno, pokud je jeho typ vzdáleně vytvořen.|  
+|`fdSpecialName`|Určuje, že pole je zvláštní a že jeho název popisuje, jak.|  
+|`fdPinvokeImpl`|Určuje, že implementace pole je předána pomocí PInvoke.|  
+|`fdReservedMask`|Vyhrazeno pro interní použití modulem CLR (Common Language Runtime).|  
+|`fdRTSpecialName`|Určuje, že vnitřní rozhraní API pro Common Language Runtime metadata by měla kontrolovat kódování názvu.|  
+|`fdHasFieldMarshal`|Určuje, že pole obsahuje informace o zařazování.|  
+|`fdHasDefault`|Určuje, že pole má výchozí hodnotu.|  
+|`fdHasFieldRVA`|Určuje, že pole má relativní virtuální adresu.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **Hlavička:** CorHdr. h  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

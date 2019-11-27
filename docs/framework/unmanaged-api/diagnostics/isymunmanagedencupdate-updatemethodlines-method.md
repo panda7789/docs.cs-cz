@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448992"
 ---
 # <a name="isymunmanagedencupdateupdatemethodlines-method"></a>ISymUnmanagedENCUpdate::UpdateMethodLines – metoda
-Allows updating the line information for a method that has not been recompiled, but whose lines have moved independently. A delta for each statement is allowed.  
+Umožňuje aktualizovat informace o řádku pro metodu, která není znovu zkompilována, ale jejíž řádky byly přesunuty nezávisle. Rozdíl pro každý příkaz je povolen.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,19 +36,19 @@ HRESULT UpdateMethodLines(
   
 ## <a name="parameters"></a>Parametry  
  `mdMethodToken`  
- [in] The metadata of the method token.  
+ pro Metadata tokenu metody.  
   
  `pDeltas`  
- [in] An array of `INT32` values that indicates deltas for each sequence point in the method.  
+ pro Pole hodnot `INT32`, které označují rozdílové hodnoty pro každý bod sekvence v metodě.  
   
  `cDeltas`  
- [in] A `ULONG` containing the size of the `pDeltas` parameter.  
+ pro `ULONG`, který obsahuje velikost `pDeltas` parametru.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -22,10 +22,10 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448560"
 ---
 # <a name="corsymsearchpolicyattributes-enumeration"></a>CorSymSearchPolicyAttributes – výčet
-Specifies the policy to be used when doing a search for a symbol reader. These constants are used by the [ISymUnmanagedBinder2::GetReaderForFile2](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder2-getreaderforfile2-method.md) and [ISymUnmanagedBinder3::GetReaderFromCallback](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder3-getreaderfromcallback-method.md) methods.  
+Určuje zásadu, která se má použít při hledání čtečky symbolů. Tyto konstanty jsou používány metodami [ISymUnmanagedBinder2 –:: GetReaderForFile2 –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder2-getreaderforfile2-method.md) a [Isymunmanagedbinder3 –:: GetReaderFromCallback –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder3-getreaderfromcallback-method.md) .  
   
 > [!IMPORTANT]
-> It is a security risk to open a program database (PDB) file from an untrusted source.  
+> Je bezpečnostním rizikem k otevření souboru programu databáze (PDB) z nedůvěryhodného zdroje.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,13 +43,13 @@ typedef enum CorSymSearchPolicyAttributes
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`AllowRegistryAccess`|Queries the registry for symbol search paths.|  
-|`AllowSymbolServerAccess`|Accesses a symbol server.|  
-|`AllowOriginalPathAccess`|Searches the path specified in the Debug directory.|  
-|`AllowReferencePathAccess`|Searches for the PDB in the place where the .exe file is.|  
+|`AllowRegistryAccess`|Vyhledá v registru cesty pro hledání symbolů.|  
+|`AllowSymbolServerAccess`|Přistupuje k serveru symbolů.|  
+|`AllowOriginalPathAccess`|Vyhledá cestu zadanou v adresáři ladění.|  
+|`AllowReferencePathAccess`|Vyhledá PDB na místě, kde se nachází soubor. exe.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

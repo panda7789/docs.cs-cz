@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74431569"
 ---
 # <a name="imetadataemitdefinepermissionset-method"></a>IMetaDataEmit::DefinePermissionSet – metoda
-Creates a definition for a permission set with the specified metadata signature, and gets a token to that permission set definition.  
+Vytvoří definici sady oprávnění se zadaným podpisem metadat a získá token do této definice sady oprávnění.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,28 +39,28 @@ HRESULT DefinePermissionSet (
   
 ## <a name="parameters"></a>Parametry  
  `tk`  
- [in] The object to be decorated.  
+ pro Objekt, který má být upraven.  
   
  `dwAction`  
- [in] A [CorDeclSecurity](../../../../docs/framework/unmanaged-api/metadata/cordeclsecurity-enumeration.md) value that specifies the type of declarative security to be used.  
+ pro Hodnota [CorDeclSecurity –](../../../../docs/framework/unmanaged-api/metadata/cordeclsecurity-enumeration.md) , která určuje typ deklarativního zabezpečení, který se má použít.  
   
  `pvPermission`  
- [in] The permission BLOB.  
+ pro Objekt BLOB oprávnění  
   
  `cbPermission`  
- [in] The size, in bytes, of `pvPermission`.  
+ pro Velikost `pvPermission`v bajtech.  
   
  `ppm`  
- [out] The returned permission token.  
+ mimo Vrácený token oprávnění  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

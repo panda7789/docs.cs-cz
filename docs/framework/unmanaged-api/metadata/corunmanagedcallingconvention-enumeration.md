@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74442448"
 ---
 # <a name="corunmanagedcallingconvention-enumeration"></a>CorUnmanagedCallingConvention – výčet
-Specifies the calling conventions for unmanaged code.  
+Určuje konvence volání pro nespravovaný kód.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,28 +42,28 @@ typedef enum CorUnmanagedCallingConvention {
 } CorUnmanagedCallingConvention;  
 ```  
   
-## <a name="members"></a>Členové  
+## <a name="members"></a>Members  
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`IMAGE_CEE_UNMANAGED_CALLCONV_C`|The C language calling convention.|  
-|`IMAGE_CEE_UNMANAGED_CALLCONV_STDCALL`|The standard calling convention.|  
-|`IMAGE_CEE_UNMANAGED_CALLCONV_THISCALL`|The "this" calling convention.|  
-|`IMAGE_CEE_UNMANAGED_CALLCONV_FASTCALL`|The "fast" calling convention.|  
-|`IMAGE_CEE_CS_CALLCONV_C`|Not used.|  
-|`IMAGE_CEE_CS_CALLCONV_STDCALL`|Not used.|  
-|`IMAGE_CEE_CS_CALLCONV_THISCALL`|Not used.|  
-|`IMAGE_CEE_CS_CALLCONV_FASTCALL`|Not used.|  
+|`IMAGE_CEE_UNMANAGED_CALLCONV_C`|Konvence volání jazyka C.|  
+|`IMAGE_CEE_UNMANAGED_CALLCONV_STDCALL`|Standardní konvence volání.|  
+|`IMAGE_CEE_UNMANAGED_CALLCONV_THISCALL`|Konvence volání "This".|  
+|`IMAGE_CEE_UNMANAGED_CALLCONV_FASTCALL`|Konvence volání "Fast".|  
+|`IMAGE_CEE_CS_CALLCONV_C`|Nepoužívá se.|  
+|`IMAGE_CEE_CS_CALLCONV_STDCALL`|Nepoužívá se.|  
+|`IMAGE_CEE_CS_CALLCONV_THISCALL`|Nepoužívá se.|  
+|`IMAGE_CEE_CS_CALLCONV_FASTCALL`|Nepoužívá se.|  
   
 ## <a name="remarks"></a>Poznámky  
- The CLR does not support the "fast" calling convention in the .NET Framework version 1.0.  
+ Modul CLR nepodporuje konvenci volání "Fast" v .NET Framework verze 1,0.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **Hlavička:** CorHdr. h  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

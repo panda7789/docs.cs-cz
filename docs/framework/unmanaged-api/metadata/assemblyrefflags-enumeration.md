@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74444220"
 ---
 # <a name="assemblyrefflags-enumeration"></a>AssemblyRefFlags – výčet
-Contains values that describe features of an assembly reference.  
+Obsahuje hodnoty, které popisují funkce odkazu na sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,14 +36,14 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`arfFullOriginator`|Specifies that the assembly reference contains full, unhashed information about the publisher of the assembly.|  
+|`arfFullOriginator`|Určuje, že odkaz na sestavení obsahuje úplné a nehashované informace o vydavateli sestavení.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

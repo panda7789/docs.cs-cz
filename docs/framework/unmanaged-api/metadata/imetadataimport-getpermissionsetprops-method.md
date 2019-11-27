@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437112"
 ---
 # <a name="imetadataimportgetpermissionsetprops-method"></a>IMetaDataImport::GetPermissionSetProps – metoda
-Gets the metadata associated with the <xref:System.Security.PermissionSet?displayProperty=nameWithType> represented by the specified Permission token.  
+Získá metadata přidružená k <xref:System.Security.PermissionSet?displayProperty=nameWithType> reprezentované zadaným tokenem oprávnění.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,25 +38,25 @@ HRESULT GetPermissionSetProps (
   
 ## <a name="parameters"></a>Parametry  
  `pm`  
- [in] The Permission metadata token that represents the permission set to get the metadata properties for.  
+ pro Token metadat oprávnění, který představuje sadu oprávnění k získání vlastností metadat pro.  
   
  `pdwAction`  
- [out] A pointer to the permission set.  
+ mimo Ukazatel na sadu oprávnění.  
   
  `ppvPermission`  
- [out] A pointer to the binary metadata signature of the permission set.  
+ mimo Ukazatel na binární podpis metadat sady oprávnění.  
   
  `pcbPermission`  
- [out] The size in bytes of `ppvPermission`.  
+ mimo Velikost v bajtech `ppvPermission`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

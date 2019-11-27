@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437136"
 ---
 # <a name="imetadataimportgetnestedclassprops-method"></a>IMetaDataImport::GetNestedClassProps – metoda
-Gets the TypeDef token for the parent <xref:System.Type> of the specified nested type.  
+Získá token TypeDef pro nadřazený <xref:System.Type> zadaného vnořeného typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,19 +36,19 @@ HRESULT GetNestedClassProps (
   
 ## <a name="parameters"></a>Parametry  
  `tdNestedClass`  
- [in] A TypeDef token representing the <xref:System.Type> to return the parent class token for.  
+ pro Token TypeDef představující <xref:System.Type>, pro který má být vrácen token nadřazené třídy.  
   
  `ptdEnclosingClass`  
- [out] A pointer to the TypeDef token for the <xref:System.Type> that `tdNestedClass` is nested in.  
+ mimo Ukazatel na token TypeDef pro <xref:System.Type>, ve kterém je `tdNestedClass` vnořený.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446006"
 ---
 # <a name="isymunmanagedvariablegetstartoffset-method"></a>ISymUnmanagedVariable::GetStartOffset – metoda
-Gets the start offset of this variable within its parent. If this is a local variable within a scope, the start offset will fall within the offsets defined for the scope.  
+Získá počáteční posun této proměnné v rámci své nadřazené položky. Pokud se jedná o lokální proměnnou v rámci oboru, počáteční posun bude spadat do posunů definovaných pro daný obor.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,13 +34,13 @@ HRESULT GetStartOffset(
   
 ## <a name="parameters"></a>Parametry  
  `pRetVal`  
- [out] A pointer to a `ULONG32` that receives the start offset.  
+ mimo Ukazatel na `ULONG32`, který obdrží posun od začátku.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

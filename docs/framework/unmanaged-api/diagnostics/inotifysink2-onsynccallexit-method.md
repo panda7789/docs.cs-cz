@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448680"
 ---
 # <a name="inotifysink2onsynccallexit-method"></a>INotifySink2::OnSyncCallExit – metoda
-Gets invoked when exiting a call.  
+Vyvolá se při ukončení volání.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +38,19 @@ HRESULT OnSyncCallExit
   
 ## <a name="parameters"></a>Parametry  
  `in_CallID`  
- [in] ID of the call being exited. See [CALL_ID Structure](../../../../docs/framework/unmanaged-api/diagnostics/call-id-structure.md).  
+ pro ID volání, které se ukončilo. Viz [struktura CALL_ID](../../../../docs/framework/unmanaged-api/diagnostics/call-id-structure.md).  
   
  `out_ppBuffer`  
- [out] Call buffer.  
+ mimo Vyrovnávací paměť volání.  
   
  `out_pBufferSize`  
- [out] Size of the call buffer, in bytes.  
+ mimo Velikost vyrovnávací paměti volání (v bajtech).  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds.  
+ S_OK, zda je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** ProtocolNotify2.idl  
+ **Hlavička:** ProtocolNotify2. idl  
   
 ## <a name="see-also"></a>Viz také:
 

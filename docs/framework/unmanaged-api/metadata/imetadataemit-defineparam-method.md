@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74431698"
 ---
 # <a name="imetadataemitdefineparam-method"></a>IMetaDataEmit::DefineParam – metoda
-Creates a parameter definition with the specified signature for the method referenced by the specified token, and gets a token for that parameter definition.  
+Vytvoří definici parametru se specifikovanou signaturou pro metodu, na kterou se odkazuje pomocí zadaného tokenu, a získá token pro tuto definici parametru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,40 +42,40 @@ HRESULT DefineParam (
   
 ## <a name="parameters"></a>Parametry  
  `md`  
- [in] The token for the method whose parameter is being defined.  
+ pro Token pro metodu, jejíž parametr je právě definován.  
   
  `ulParamSeq`  
- [in] The parameter sequence number.  
+ pro Pořadové číslo parametru.  
   
  `szName`  
- [in] The name of the parameter in Unicode.  
+ pro Název parametru v kódování Unicode.  
   
  `dwParamFlags`  
- [in] Flags for the parameter. This is a bitmask of `CorParamAttr` values.  
+ pro Příznaky pro parametr Toto je Bitová maska `CorParamAttr` hodnot.  
   
  `dwCPlusTypeFlag`  
- [in] `ELEMENT_TYPE_` *\** for the constant value.  
+ [in] `ELEMENT_TYPE_` *\** hodnoty konstanty.  
   
  `pValue`  
- [in] The constant value for the parameter.  
+ pro Hodnota konstanty pro parametr  
   
  `cchValue`  
- [in] The size, in Unicode characters, of `pValue`.  
+ pro Velikost `pValue`znaků Unicode.  
   
  `ppd`  
- [out] The `mdParamDef` token assigned.  
+ mimo Byl přiřazen token `mdParamDef`.  
   
 ## <a name="remarks"></a>Poznámky  
- The sequence values in `ulParamSeq` begin with 1 for parameters. A return value has a sequence number of 0.  
+ Hodnoty sekvence v `ulParamSeq` začínají hodnotou 1 pro parametry. Návratová hodnota má pořadové číslo 0.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

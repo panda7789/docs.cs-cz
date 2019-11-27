@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74430104"
 ---
 # <a name="icorprofilercallback4rejiterror-method"></a>ICorProfilerCallback4::ReJITError – metoda
-Notifies the profiler that the just-in-time (JIT) compiler encountered an error in the recompilation process.  
+Upozorní profileru, že kompilátor JIT (just-in-time) zjistil chybu v procesu opětovné kompilace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,39 +37,39 @@ HRESULT ReJITError(
   
 ## <a name="parameters"></a>Parametry  
  `moduleID`  
- [in] The `ModuleID` in which the failed recompilation attempt was made.  
+ pro `ModuleID`, ve kterém byl proveden pokus o opětovnou kompilaci.  
   
  `methodId`  
- [in] The `MethodDef` of the method on which the failed recompilation attempt was made.  
+ pro `MethodDef` metody, na které se provedl pokus o opětovnou kompilaci.  
   
  `functionId`  
- [in] The function instance that is being recompiled or marked for recompilation. This value may be `NULL` if the failure occurred on a per-method basis instead of a per-instantiation basis (for example, if the profiler specified an invalid metadata token for the method to be recompiled).  
+ pro Instance funkce, která je rekompilována nebo označena pro rekompilaci. Tato hodnota může být `NULL`, pokud k selhání došlo na základě jednotlivých metod (například v případě, že Profiler zadal neplatný token metadat pro metodu, která má být zkompilován).  
   
  `hrStatus`  
- [in] An HRESULT that indicates the nature of the failure. See the Status HRESULTS section for a list of values.  
+ pro HRESULT, který označuje povahu selhání. Seznam hodnot naleznete v části stav HRESULTs.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Return values from this callback are ignored.  
+ Návratové hodnoty z tohoto zpětného volání jsou ignorovány.  
   
-## <a name="status-hresults"></a>Status HRESULTS  
+## <a name="status-hresults"></a>Stav HRESULTs  
   
-|Status array HRESULT|Popis|  
+|Stavové pole HRESULT|Popis|  
 |--------------------------|-----------------|  
-|E_INVALIDARG|The `moduleID` or `methodDef` token is `NULL`.|  
-|CORPROF_E_DATAINCOMPLETE|The module is not fully loaded yet, or it is in the process of being unloaded.|  
-|CORPROF_E_MODULE_IS_DYNAMIC|The specified module was dynamically generated (for example, by `Reflection.Emit`), and is thus not supported by this method.|  
-|CORPROF_E_FUNCTION_IS_COLLECTIBLE|The method is instantiated into a collectible assembly, and is therefore not able to be recompiled. Note that types and functions defined in a non-reflection context (for example, `List<MyCollectibleStruct>`) can be instantiated into a collectible assembly.|  
-|E_OUTOFMEMORY|The CLR ran out of memory while trying to mark the specified method for JIT recompilation.|  
-|Ostatní|The operating system returned a failure outside the control of the CLR. For example, if a system call to change the access protection of a page of memory fails, the operating system error is displayed.|  
+|E_INVALIDARG|Token `moduleID` nebo `methodDef` je `NULL`.|  
+|CORPROF_E_DATAINCOMPLETE|Modul ještě není úplně načtený, nebo se jedná o proces, který se právě načítá.|  
+|CORPROF_E_MODULE_IS_DYNAMIC|Zadaný modul byl dynamicky generován (například `Reflection.Emit`), a proto není touto metodou podporován.|  
+|CORPROF_E_FUNCTION_IS_COLLECTIBLE|Metoda je vytvořena do kolekční sestavení, a proto nemůže být znovu zkompilována. Všimněte si, že typy a funkce definované v kontextu bez reflexe (například `List<MyCollectibleStruct>`) mohou být vytvořeny do sestavení kolekční.|  
+|E_OUTOFMEMORY|Při pokusu o označení zadané metody pro rekompilaci JIT došlo k nedostatku paměti CLR.|  
+|Další|Operační systém vrátil selhání mimo ovládací prvek CLR. Například pokud systémové volání změny ochrany přístupu stránky paměti dojde k chybě, zobrazí se Chyba operačního systému.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

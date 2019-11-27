@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74431869"
 ---
 # <a name="imetadataassemblyemitsetfileprops-method"></a>IMetaDataAssemblyEmit::SetFileProps – metoda
-Modifies the specified `File` metadata structure.  
+Upraví zadanou `File` strukturu metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,28 +38,28 @@ HRESULT SetFileProps (
   
 ## <a name="parameters"></a>Parametry  
  `file`  
- [in] The metadata token that specifies the `File` metadata structure to be modified.  
+ pro Token metadat, který určuje `File` strukturu metadat, která se má upravit.  
   
  `pbHashValue`  
- [in] A pointer to the hash data associated with the file.  
+ pro Ukazatel na data algoritmu hash přidružená k souboru.  
   
  `cbHashValue`  
- [in] The size in bytes of `pbHashValue`.  
+ pro Velikost v bajtech `pbHashValue`.  
   
  `dwFileFlags`  
- [in] A bitwise combination of [CorFileFlags](../../../../docs/framework/unmanaged-api/metadata/corfileflags-enumeration.md) values that specify various attributes of the file.  
+ pro Bitová kombinace hodnot [CorFileFlags –](../../../../docs/framework/unmanaged-api/metadata/corfileflags-enumeration.md) , které určují různé atributy souboru.  
   
 ## <a name="remarks"></a>Poznámky  
- To create a `File` metadata structure, use the [IMetaDataAssemblyEmit::DefineFile](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definefile-method.md) method.  
+ Chcete-li vytvořit `File` struktury metadat, použijte metodu [IMetaDataAssemblyEmit::D efinefile](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definefile-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

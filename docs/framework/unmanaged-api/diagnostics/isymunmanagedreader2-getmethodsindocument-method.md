@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446428"
 ---
 # <a name="isymunmanagedreader2getmethodsindocument-method"></a>ISymUnmanagedReader2::GetMethodsInDocument – metoda
-Gets every method that has line information in the provided document.  
+Načte každou metodu, která obsahuje informace o řádku v zadaném dokumentu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,22 +38,22 @@ HRESULT GetMethodsInDocument(
   
 ## <a name="parameters"></a>Parametry  
  `document`  
- [in] A pointer to the document.  
+ pro Ukazatel na dokument.  
   
  `cMethod`  
- [in] A `ULONG32` that indicates the size of the  `pRetVal` array.  
+ pro `ULONG32`, která určuje velikost `pRetVal` pole.  
   
  `pcMethod`  
- [out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the methods.  
+ mimo Ukazatel na `ULONG32`, který přijímá velikost vyrovnávací paměti, která je nutná k uložení metod.  
   
  `pRetVal`  
- [out] A pointer to the buffer that receives the methods.  
+ mimo Ukazatel na vyrovnávací paměť, která přijímá metody.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 
