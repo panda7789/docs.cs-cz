@@ -1,5 +1,5 @@
 ---
-title: RtcState Class (System.Net)
+title: RtcState – třída (System.Net)
 ms.date: 11/01/2019
 ms.technology: dotnet-networking
 topic_type:
@@ -20,9 +20,9 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74451183"
 ---
-# <a name="rtcstate-class"></a>RtcState Class
+# <a name="rtcstate-class"></a>RtcState – třída
 
-The `RtcState` class represents state data for a real-time communication (RTC) request.
+Třída `RtcState` představuje údaje o stavu pro požadavek na komunikaci v reálném čase (RTC).
 
 ## <a name="syntax"></a>Syntaxe
   
@@ -31,14 +31,14 @@ internal class RtcState
 ```
 
 > [!WARNING]
-> The `RtcState` class is internal and is not meant to be used directly in your code.
+> Třída `RtcState` je interní a není určena pro použití přímo v kódu.
 > 
-> Microsoft does not support the use of this class in a production application under any circumstance.
+> Společnost Microsoft v žádné situaci nepodporuje použití této třídy v produkční aplikaci.
 
 ## <a name="requirements"></a>Požadavky
 
-**Namespace:** <xref:System.Net>
+**Obor názvů:** <xref:System.Net>
 
-**Assembly:** System (in System.dll)
+**Sestavení:** Systém (v System. dll)
 
-**.NET Framework versions:** Available since 4.5.
+**Verze .NET Framework:** K dispozici od verze 4,5.

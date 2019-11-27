@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448342"
 ---
 # <a name="isymunmanagedreadergetdocument-method"></a>ISymUnmanagedReader::GetDocument – metoda
-Finds a document. The document language, vendor, and type are optional.  
+Najde dokument. Jazyk dokumentu, dodavatel a typ jsou volitelné.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,25 +38,25 @@ HRESULT GetDocument (
   
 ## <a name="parameters"></a>Parametry  
  `url`  
- [in] The URL that identifies the document.  
+ pro Adresa URL, která identifikuje dokument.  
   
  `language`  
- [in] The document language. Tento parametr je volitelný.  
+ pro Jazyk dokumentu. Tento parametr je volitelný.  
   
  `languageVendor`  
- [in] The identity of the vendor for the document language. Tento parametr je volitelný.  
+ pro Identita dodavatele pro jazyk dokumentu Tento parametr je volitelný.  
   
  `documentType`  
- [in] The type of the document. Tento parametr je volitelný.  
+ pro Typ dokumentu Tento parametr je volitelný.  
   
  `pRetVal`  
- [out] A pointer to the returned interface.  
+ mimo Ukazatel na vrácené rozhraní.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

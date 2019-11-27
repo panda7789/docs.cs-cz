@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450062"
 ---
 # <a name="imetadataimportenummethodswithname-method"></a>IMetaDataImport::EnumMethodsWithName – metoda
-Enumerates methods that have the specified name and that are defined by the type referenced by the specified TypeDef token.  
+Vytvoří výčet metod, které mají zadaný název a které jsou definovány typem, na který odkazuje zadaný token TypeDef.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,41 +40,41 @@ HRESULT EnumMethodsWithName (
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [in, out] A pointer to the enumerator. This must be NULL for the first call of this method.  
+ [in, out] Ukazatel na enumerátor. Pro první volání této metody musí mít hodnotu NULL.  
   
  `cl`  
- [in] A TypeDef token representing the type whose methods to enumerate.  
+ pro Token TypeDef představující typ, jehož metody se mají vytvořit.  
   
  `szName`  
- [in] The name that limits the scope of the enumeration.  
+ pro Název, který omezuje rozsah výčtu.  
   
  `rMethods`  
- [out] The array used to store the MethodDef tokens.  
+ mimo Pole použité k uložení tokenů MethodDef  
   
  `cMax`  
- [in] The maximum size of the `rMethods` array.  
+ pro Maximální velikost `rMethods` pole  
   
  `pcTokens`  
- [out] The number of MethodDef tokens returned in `rMethods`.  
+ mimo Počet tokenů MethodDef vrácených v `rMethods`.  
   
 ## <a name="remarks"></a>Poznámky  
- This method enumerates fields and methods, but not properties or events. Unlike [IMetaDataImport::EnumMethods](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enummethods-method.md), `EnumMethodsWithName` discards all method tokens that do not have the specified name.  
+ Tato metoda vytváří výčet polí a metod, ale ne vlastností nebo událostí. Na rozdíl od [IMetaDataImport:: enummethods –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enummethods-method.md)`EnumMethodsWithName` zahodí všechny tokeny metod, které nemají zadaný název.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumMethodsWithName` returned successfully.|  
-|`S_FALSE`|There are no tokens to enumerate. In that case, `pcTokens` is zero.|  
+|`S_OK`|`EnumMethodsWithName` byla úspěšně vrácena.|  
+|`S_FALSE`|Neexistují žádné tokeny k vytvoření výčtu. V takovém případě je `pcTokens` nula.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

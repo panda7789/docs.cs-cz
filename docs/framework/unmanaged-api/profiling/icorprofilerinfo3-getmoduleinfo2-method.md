@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449665"
 ---
 # <a name="icorprofilerinfo3getmoduleinfo2-method"></a>ICorProfilerInfo3::GetModuleInfo2 – metoda
-Given a module ID, returns the file name of the module, the ID of the module's parent assembly, and a bitmask that describes the properties of the module.  
+Po předaném ID modulu vrátí název souboru modulu, ID nadřazeného sestavení modulu a bitovou masku, která popisuje vlastnosti modulu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,43 +41,43 @@ HRESULT GetModuleInfo2(
   
 ## <a name="parameters"></a>Parametry  
  `moduleId`  
- [in] The ID of the module for which information will be retrieved.  
+ pro ID modulu, pro který budou načteny informace.  
   
  `ppBaseLoadAddress`  
- [out] The base address at which the module is loaded.  
+ mimo Základní adresa, na které je modul načten.  
   
  `cchName`  
- [in] The length, in characters, of the `szName` return buffer.  
+ pro Délka `szName` návratové vyrovnávací paměti ve znacích.  
   
  `pcchName`  
- [out] A pointer to the total character length of the module's file name that is returned.  
+ mimo Ukazatel na celkovou délku znaku v názvu souboru modulu, který je vrácen.  
   
  `szName`  
- [out] A caller-provided wide character buffer. When the method returns, this buffer contains the file name of the module.  
+ mimo Vyrovnávací paměť pro velký znak poskytnutá volajícímu. Když se metoda vrátí, tato vyrovnávací paměť obsahuje název souboru modulu.  
   
  `pAssemblyId`  
- [out] A pointer to the ID of the module's parent assembly.  
+ mimo Ukazatel na ID nadřazeného sestavení modulu.  
   
  `pdwModuleFlags`  
- [out] A bitmask of values from the [COR_PRF_MODULE_FLAGS](../../../../docs/framework/unmanaged-api/profiling/cor-prf-module-flags-enumeration.md) enumeration that specify the properties of the module.  
+ mimo Bitová maska hodnot z výčtu [COR_PRF_MODULE_FLAGS](../../../../docs/framework/unmanaged-api/profiling/cor-prf-module-flags-enumeration.md) , které určují vlastnosti modulu.  
   
 ## <a name="remarks"></a>Poznámky  
- For dynamic modules, the `szName` parameter is the metadata name of the module, and the base address is 0 (zero). The metadata name is the value in the Name column from the Module table inside metadata. This is also exposed as the <xref:System.Reflection.Module.ScopeName%2A?displayProperty=nameWithType> property to managed code, and as the `szName` parameter of the [IMetaDataImport::GetScopeProps](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getscopeprops-method.md) method to unmanaged metadata client code.  
+ Pro dynamické moduly je parametr `szName` názvem metadat modulu a základní adresa je 0 (nula). Název metadat je hodnota ve sloupci název z tabulky modulů v metadatech. To je také zveřejněné jako vlastnost <xref:System.Reflection.Module.ScopeName%2A?displayProperty=nameWithType> pro spravovaný kód a jako parametr `szName` metody [IMetaDataImport:: GetScopeProps –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-getscopeprops-method.md) na nespravovaný kód klienta metadat.  
   
- Although the `GetModuleInfo2` method may be called as soon as the module's ID exists, the ID of the parent assembly will not be available until the profiler receives the [ICorProfilerCallback::ModuleAttachedToAssembly](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleattachedtoassembly-method.md) callback.  
+ I když může být metoda `GetModuleInfo2` volána, jakmile existuje ID modulu, ID nadřazeného sestavení nebude k dispozici, dokud Profiler neobdrží zpětné volání [ICorProfilerCallback:: ModuleAttachedToAssembly –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleattachedtoassembly-method.md) .  
   
- When `GetModuleInfo2` returns, you must verify that the `szName` buffer was large enough to contain the full file name of the module. To do this, compare the value that `pcchName` points to with the value of the `cchName` parameter. If `pcchName` points to a value that is larger than `cchName`, allocate a larger `szName` buffer, update `cchName` with the new, larger size, and call `GetModuleInfo2` again.  
+ Když `GetModuleInfo2` vrátí, je nutné ověřit, zda byla vyrovnávací paměť `szName` dostatečně velká, aby obsahovala úplný název souboru modulu. To provedete tak, že porovnáte hodnotu, na kterou `pcchName` odkazuje, hodnotou `cchName` parametru. Pokud `pcchName` odkazuje na hodnotu, která je větší než `cchName`, přidělte větší vyrovnávací paměť `szName`, aktualizujte `cchName` novou, větší velikostí a zavolejte `GetModuleInfo2` znovu.  
   
- Alternatively, you can first call `GetModuleInfo2` with a zero-length `szName` buffer to obtain the correct buffer size. You can then set the buffer size to the value returned in `pcchName` and call `GetModuleInfo2` again.  
+ Alternativně můžete pro získání správné velikosti vyrovnávací paměti nejprve volat `GetModuleInfo2` s nulovou délkou `szName` vyrovnávací paměti. Pak můžete nastavit velikost vyrovnávací paměti na hodnotu vrácenou v `pcchName` a volat `GetModuleInfo2` znovu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

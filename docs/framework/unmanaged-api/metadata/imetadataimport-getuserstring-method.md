@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436685"
 ---
 # <a name="imetadataimportgetuserstring-method"></a>IMetaDataImport::GetUserString – metoda
-Gets the literal string represented by the specified metadata token.  
+Získá řetězcový literál reprezentovaný zadaným tokenem metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,25 +38,25 @@ HRESULT GetUserString (
   
 ## <a name="parameters"></a>Parametry  
  `stk`  
- [in] The String token to return the associated string for.  
+ pro Řetězcový token, pro který má být vrácen přidružený řetězec.  
   
  `szString`  
- [out] A copy of the requested string.  
+ mimo Kopie požadovaného řetězce.  
   
  `cchString`  
- [in] The maximum size in wide characters of the requested `szString`.  
+ pro Maximální velikost požadovaných `szString`v různých znacích.  
   
  `pchString`  
- [out] The size in wide characters of the returned `szString`.  
+ mimo Velikost vrácených `szString`v různých znacích.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

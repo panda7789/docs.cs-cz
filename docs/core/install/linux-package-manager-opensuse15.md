@@ -1,6 +1,6 @@
 ---
-title: Install .NET Core on openSUSE 15 - package manager - .NET Core
-description: Use a package manager to install .NET Core SDK and runtime on openSUSE 15.
+title: Instalace .NET Core na openSUSE 15 – správce balíčků – .NET Core
+description: Pomocí Správce balíčků nainstalujte .NET Core SDK a modul runtime v openSUSE 15.
 author: thraka
 ms.author: adegeo
 ms.date: 11/06/2019
@@ -11,23 +11,23 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450987"
 ---
-# <a name="opensuse-15-package-manager---install-net-core"></a>openSUSE 15 Package Manager - Install .NET Core
+# <a name="opensuse-15-package-manager---install-net-core"></a>Správce balíčků openSUSE 15 – instalace .NET Core
 
 [!INCLUDE [package-manager-switcher](./includes/package-manager-switcher.md)]
 
-This article describes how to use a package manager to install .NET Core on openSUSE 15. If you're installing the runtime, we suggest you install the [ASP.NET Core runtime](#install-the-aspnet-core-runtime), as it includes both .NET Core and ASP.NET Core runtimes.
+Tento článek popisuje, jak pomocí Správce balíčků nainstalovat .NET Core na openSUSE 15. Pokud instalujete modul runtime, doporučujeme nainstalovat modul [runtime ASP.NET Core](#install-the-aspnet-core-runtime), protože zahrnuje modul runtime .NET Core i ASP.NET Core.
 
-## <a name="register-microsoft-key-and-feed"></a>Register Microsoft key and feed
+## <a name="register-microsoft-key-and-feed"></a>Registrace klíče a kanálu Microsoft
 
-Before installing .NET, you'll need to:
+Před instalací .NET budete potřebovat:
 
-- Register the Microsoft key
-- register the product repository
-- Install required dependencies
+- Registrace klíče Microsoftu
+- registrace úložiště produktu
+- Nainstalovat požadované závislosti
 
-This only needs to be done once per machine.
+Tento postup je třeba provést pouze jednou pro každý počítač.
 
-Open a terminal and run the following commands.
+Otevřete terminál a spusťte následující příkazy.
 
 ```bash
 sudo zypper install libicu
@@ -37,30 +37,30 @@ sudo mv prod.repo /etc/zypp/repos.d/microsoft-prod.repo
 sudo chown root:root /etc/zypp/repos.d/microsoft-prod.repo
 ```
 
-## <a name="install-the-net-core-sdk"></a>Install the .NET Core SDK
+## <a name="install-the-net-core-sdk"></a>Instalace .NET Core SDK
 
-Update the products available for installation, then install the .NET Core SDK. In your terminal, run the following command.
+Aktualizujte produkty, které jsou k dispozici pro instalaci, a poté nainstalujte .NET Core SDK. V terminálu spusťte následující příkaz.
 
 ```bash
 sudo zypper install dotnet-sdk-3.0
 ```
 
-## <a name="install-the-aspnet-core-runtime"></a>Install the ASP.NET Core runtime
+## <a name="install-the-aspnet-core-runtime"></a>Instalace modulu runtime ASP.NET Core
 
-Update the products available for installation, then install the ASP.NET runtime. In your terminal, run the following command.
+Aktualizujte produkty, které jsou k dispozici pro instalaci, a pak nainstalujte modul runtime ASP.NET. V terminálu spusťte následující příkaz.
 
 ```bash
 sudo zypper install aspnetcore-runtime-3.0
 ```
 
-## <a name="install-the-net-core-runtime"></a>Install the .NET Core runtime
+## <a name="install-the-net-core-runtime"></a>Instalace modulu runtime .NET Core
 
-Update the products available for installation, then install the .NET Core runtime. In your terminal, run the following command.
+Aktualizujte produkty, které jsou k dispozici pro instalaci, a pak nainstalujte modul runtime .NET Core. V terminálu spusťte následující příkaz.
 
 ```bash
 sudo zypper install dotnet-runtime-3.0
 ```
 
-## <a name="how-to-install-other-versions"></a>How to install other versions
+## <a name="how-to-install-other-versions"></a>Jak nainstalovat další verze
 
 [!INCLUDE [package-manager-switcher](./includes/package-manager-heading-hack-pkgname.md)]

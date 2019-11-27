@@ -1,6 +1,6 @@
 ---
-title: Garbage collector config settings
-description: Learn about run-time settings for configuring how the garbage collector manages memory.
+title: Nastavení konfigurace pro kolektor paměti
+description: Přečtěte si o nastaveních modulu runtime pro konfiguraci způsobu, jakým systém uvolňování paměti spravuje paměť.
 ms.date: 11/13/2019
 ms.topic: reference
 ms.openlocfilehash: 220b94e92f61fd44d2ab13291e41b8007a287cc7
@@ -10,216 +10,216 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74428708"
 ---
-# <a name="run-time-configuration-options-for-garbage-collection"></a>Run-time configuration options for garbage collection
+# <a name="run-time-configuration-options-for-garbage-collection"></a>Možnosti konfigurace běhu pro uvolňování paměti
 
-This page contains information about garbage collector (GC) settings that can be changed at run time. If you're trying to achieve peak performance of a running app, consider using these settings. However, the defaults provide optimum performance for most applications in typical situations.
+Tato stránka obsahuje informace o nastavení uvolňování paměti (GC), které lze změnit v době běhu. Pokud se snažíte dosáhnout výkonu nejvyšší úrovně spuštěné aplikace, zvažte použití těchto nastavení. Nicméně výchozí hodnoty poskytují optimální výkon pro většinu aplikací v typických situacích.
 
-Settings are arranged into groups on this page. The settings within each group are commonly used in conjunction with each other to achieve a specific result.
+Nastavení jsou uspořádána do skupin na této stránce. Nastavení v rámci jednotlivých skupin se běžně používají spolu s tím, aby se dosáhlo konkrétního výsledku.
 
 > [!NOTE]
 >
-> - These settings can also be changed dynamically by the app as it's running, so any run-time settings you set may be overridden.
-> - Some settings, such as [latency level](../../standard/garbage-collection/latency.md), are typically set only through the API at design time. Such settings are omitted from this page.
-> - For number values, use decimal notation for settings in the *runtimeconfig.json* file and hexadecimal notation for environment variable settings.
+> - Tato nastavení je možné také dynamicky měnit v aplikaci jako spuštěnou, takže všechna nastavená nastavení běhu mohou být přepsána.
+> - Některá nastavení, jako je [úroveň latence](../../standard/garbage-collection/latency.md), obvykle nastavuje jenom rozhraní API v době návrhu. Tato nastavení jsou vynechána na této stránce.
+> - Pro hodnoty Number použijte Desítkový zápis pro nastavení v souboru *runtimeconfig. JSON* a hexadecimální zápis pro nastavení proměnné prostředí.
 
-## <a name="flavors-of-garbage-collection"></a>Flavors of garbage collection
+## <a name="flavors-of-garbage-collection"></a>Charakter uvolňování paměti
 
-The two main flavors of garbage collection are workstation GC and server GC. For more information about differences between the two, see [Fundamentals of garbage collection](../../standard/garbage-collection/fundamentals.md#workstation-and-server-garbage-collection).
+Mezi tyto dva hlavní typy uvolnění paměti patří pracovní stanice GC a UVOLŇOVÁNí paměti serveru. Další informace o rozdílech mezi těmito dvěma informacemi najdete v tématu [základní informace o uvolňování paměti](../../standard/garbage-collection/fundamentals.md#workstation-and-server-garbage-collection).
 
-The subflavors of garbage collection are background and non-concurrent.
+Podmnožiny uvolňování paměti jsou pozadí a nejsou souběžné.
 
-Use the following settings to select flavors of garbage collection:
+Pro výběr charakteru uvolňování paměti použijte následující nastavení:
 
-### <a name="systemgcservercomplus_gcserver"></a>System.GC.Server/COMPlus_gcServer
+### <a name="systemgcservercomplus_gcserver"></a>System. GC. Server/COMPlus_gcServer
 
-- Configures whether the application uses workstation garbage collection or server garbage collection.
-- Default: Workstation garbage collection (`false`).
+- Nakonfiguruje, jestli aplikace používá uvolňování paměti pracovní stanice nebo uvolňování paměti serveru.
+- Výchozí: shromažďování paměti pracovní stanice (`false`).
 
-| | Setting name | Hodnoty | Version introduced |
+| | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig.json** | `System.GC.Server` | `false` - workstation<br/>`true` - server | .NET Core 1.0 |
-| **Environment variable** | `COMPlus_gcServer` | 0 - workstation<br/>1 - server | .NET Core 1.0 |
-| **app.config for .NET Framework** | [GCServer](../../framework/configure-apps/file-schema/runtime/gcserver-element.md) | `false` - workstation<br/>`true` - server |  |
+| **runtimeconfig. JSON** | `System.GC.Server` | `false` – pracovní stanice<br/>`true` – Server | .NET Core 1,0 |
+| **Proměnná prostředí** | `COMPlus_gcServer` | 0 – pracovní stanice<br/>1 – Server | .NET Core 1,0 |
+| **App. config pro .NET Framework** | [GCServer](../../framework/configure-apps/file-schema/runtime/gcserver-element.md) | `false` – pracovní stanice<br/>`true` – Server |  |
 
-### <a name="systemgcconcurrentcomplus_gcconcurrent"></a>System.GC.Concurrent/COMPlus_gcConcurrent
+### <a name="systemgcconcurrentcomplus_gcconcurrent"></a>System. GC. souběžné/COMPlus_gcConcurrent
 
-- Configures whether background (concurrent) garbage collection is enabled.
-- Default: Enabled (`true`).
-- For more information, see [Background garbage collection](../../standard/garbage-collection/fundamentals.md#background-workstation-garbage-collection) and [Background server garbage collection](../../standard/garbage-collection/fundamentals.md#background-server-garbage-collection).
+- Konfiguruje, zda je povoleno uvolňování paměti na pozadí (souběžně).
+- Výchozí: povoleno (`true`).
+- Další informace najdete v tématu [kolekce uvolnění paměti na pozadí](../../standard/garbage-collection/fundamentals.md#background-workstation-garbage-collection) a [uvolňování paměti serveru na pozadí](../../standard/garbage-collection/fundamentals.md#background-server-garbage-collection).
 
-| | Setting name | Hodnoty | Version introduced |
+| | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig.json** | `System.GC.Concurrent` | `true` - background GC<br/>`false` - non-concurrent GC | .NET Core 1.0 |
-| **Environment variable** | `COMPlus_gcConcurrent` | `true` - background GC<br/>`false` - non-concurrent GC | .NET Core 1.0 |
-| **app.config for .NET Framework** | [gcConcurrent](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) | `true` - background GC<br/>`false` - non-concurrent GC |  |
+| **runtimeconfig. JSON** | `System.GC.Concurrent` | `true` – GC na pozadí<br/>`false` – nesouběžný GC | .NET Core 1,0 |
+| **Proměnná prostředí** | `COMPlus_gcConcurrent` | `true` – GC na pozadí<br/>`false` – nesouběžný GC | .NET Core 1,0 |
+| **App. config pro .NET Framework** | [gcConcurrent](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) | `true` – GC na pozadí<br/>`false` – nesouběžný GC |  |
 
-## <a name="manage-resource-usage"></a>Manage resource usage
+## <a name="manage-resource-usage"></a>Správa využití prostředků
 
-Use the settings described in this section to manage the garbage collector's memory and processor usage.
+Pomocí nastavení popsaných v této části můžete spravovat paměť a využití procesoru systémem uvolňování paměti.
 
-For more information about some of these settings, see the [Middle ground between workstation and server GC](https://devblogs.microsoft.com/dotnet/middle-ground-between-server-and-workstation-gc/) blog entry.
+Další informace o některých těchto nastaveních najdete v tématu [střední deska mezi pracovní stanicí a](https://devblogs.microsoft.com/dotnet/middle-ground-between-server-and-workstation-gc/) položkou blogu GC serveru.
 
-### <a name="systemgcheapcountcomplus_gcheapcount"></a>System.GC.HeapCount/COMPlus_GCHeapCount
+### <a name="systemgcheapcountcomplus_gcheapcount"></a>System. GC. HeapCount/COMPlus_GCHeapCount
 
-- Limits the number of heaps created by the garbage collector.
-- Applies to server garbage collection (GC) only.
-- If GC processor affinity is enabled, which is the default, the heap count setting affinitizes `n` GC heaps/threads to the first `n` processors. (Use the affinitize mask or affinitize ranges settings to specify exactly which processors to affinitize.)
-- If GC processor affinity is disabled, this setting limits the number of GC heaps.
-- For more information, see the [GCHeapCount remarks](../../framework/configure-apps/file-schema/runtime/gcheapcount-element.md#remarks).
+- Omezuje počet hald vytvořených systémem uvolňování paměti.
+- Platí jenom pro uvolňování paměti serveru (GC).
+- Je-li povoleno spřažení procesoru uvolňování paměti, což je výchozí nastavení počet haldy spřáhne `n` haldy GC nebo vlákna na první `n` procesory. (K určení přesně těch procesorů, které mají spřažení, použijte nastavení maska spřažení nebo rozsahy spřažení.)
+- Pokud je spřažení procesoru GC zakázané, toto nastavení omezuje počet hald GC.
+- Další informace najdete v tématu [GCHeapCount – poznámky](../../framework/configure-apps/file-schema/runtime/gcheapcount-element.md#remarks).
 
-| | Setting name | Hodnoty | Version introduced |
+| | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig.json** | `System.GC.HeapCount` | *decimal value* | .NET Core 3.0 |
-| **Environment variable** | `COMPlus_GCHeapCount` | *hexadecimal value* | .NET Core 3.0 |
-| **app.config for .NET Framework** | [GCHeapCount](../../framework/configure-apps/file-schema/runtime/gcheapcount-element.md) | *decimal value* | 4.6.2 |
+| **runtimeconfig. JSON** | `System.GC.HeapCount` | *desetinná hodnota* | .NET Core 3.0 |
+| **Proměnná prostředí** | `COMPlus_GCHeapCount` | *hexadecimální hodnota* | .NET Core 3.0 |
+| **App. config pro .NET Framework** | [GCHeapCount](../../framework/configure-apps/file-schema/runtime/gcheapcount-element.md) | *desetinná hodnota* | 4.6.2 |
 
 > [!TIP]
-> If you're setting the option in *runtimeconfig.json*, specify a decimal value. If you're setting the option as an environment variable, specify a hexadecimal value. For example, to limit the number of heaps to 16, the values would be 16 for the JSON file and 10 for the environment variable.
+> Pokud nastavujete možnost v *runtimeconfig. JSON*, zadejte desítkovou hodnotu. Pokud nastavujete možnost jako proměnnou prostředí, zadejte hexadecimální hodnotu. Například chcete-li omezit počet hald na 16, hodnoty by byly 16 pro soubor JSON a 10 pro proměnnou prostředí.
 
-### <a name="systemgcheapaffinitizemaskcomplus_gcheapaffinitizemask"></a>System.GC.HeapAffinitizeMask/COMPlus_GCHeapAffinitizeMask
+### <a name="systemgcheapaffinitizemaskcomplus_gcheapaffinitizemask"></a>System. GC. HeapAffinitizeMask/COMPlus_GCHeapAffinitizeMask
 
-- Specifies the exact processors that garbage collector threads should use.
-- If processor affinity is disabled by setting `System.GC.NoAffinitize` to `true`, this setting is ignored.
-- Applies to server garbage collection (GC) only.
-- The value is a bit mask that defines the processors that are available to the process. For example, a decimal value of 1023 (or a hexadecimal value of 3FF if you're using the environment variable) is 0011 1111 1111 in binary notation. This specifies that the first 10 processors are to be used. To specify the next 10 processors, that is, processors 10-19, specify a decimal value of 1047552 (or a hexadecimal value of FFC00), which is equivalent to a binary value of 1111 1111 1100 0000 0000.
+- Určuje přesné procesory, které by měly používat vlákna uvolňování paměti.
+- Pokud je spřažení procesorů zakázané nastavením `System.GC.NoAffinitize` na `true`, bude toto nastavení ignorováno.
+- Platí jenom pro uvolňování paměti serveru (GC).
+- Hodnota je Bitová maska definující procesory, které jsou k dispozici pro daný proces. Například desetinná hodnota 1023 (nebo hexadecimální hodnota 3FF, pokud používáte proměnnou prostředí) je 0011 1111 1111 v binárním zápisu. Určuje, že se má používat prvních 10 procesorů. K určení dalších 10 procesorů, tedy procesorů 10-19, zadejte desítkovou hodnotu 1047552 (nebo hexadecimální hodnotu FFC00), která je ekvivalentní binární hodnotě 1111 1111 1100 0000 0000.
 
-| | Setting name | Hodnoty | Version introduced |
+| | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig.json** | `System.GC.HeapAffinitizeMask` | *decimal value* | .NET Core 3.0 |
-| **Environment variable** | `COMPlus_GCHeapAffinitizeMask` | *hexadecimal value* | .NET Core 3.0 |
-| **app.config for .NET Framework** | [GCHeapAffinitizeMask](../../framework/configure-apps/file-schema/runtime/gcheapaffinitizemask-element.md) | *decimal value* | 4.6.2 |
+| **runtimeconfig. JSON** | `System.GC.HeapAffinitizeMask` | *desetinná hodnota* | .NET Core 3.0 |
+| **Proměnná prostředí** | `COMPlus_GCHeapAffinitizeMask` | *hexadecimální hodnota* | .NET Core 3.0 |
+| **App. config pro .NET Framework** | [GCHeapAffinitizeMask](../../framework/configure-apps/file-schema/runtime/gcheapaffinitizemask-element.md) | *desetinná hodnota* | 4.6.2 |
 
-### <a name="systemgcgcheapaffinitizerangescomplus_gcheapaffinitizeranges"></a>System.GC.GCHeapAffinitizeRanges/COMPlus_GCHeapAffinitizeRanges
+### <a name="systemgcgcheapaffinitizerangescomplus_gcheapaffinitizeranges"></a>System. GC. GCHeapAffinitizeRanges/COMPlus_GCHeapAffinitizeRanges
 
-- Specifies the list of processors to use for garbage collector threads.
-- This setting is similar to `System.GC.HeapAffinitizeMask`, except it allows you to specify more than 64 processors.
-- For Windows operating systems, prefix the processor number or range with the corresponding [CPU group](/windows/win32/procthread/processor-groups), for example, "0:1-10,0:12,1:50-52,1:70".
-- If processor affinity is disabled by setting `System.GC.NoAffinitize` to `true`, this setting is ignored.
-- Applies to server garbage collection (GC) only.
-- For more information, see [Making CPU configuration better for GC on machines with > 64 CPUs](https://devblogs.microsoft.com/dotnet/making-cpu-configuration-better-for-gc-on-machines-with-64-cpus/) on Maoni Stephens' blog.
+- Určuje seznam procesorů, které se mají použít pro vlákna uvolňování paměti.
+- Toto nastavení je podobné jako u `System.GC.HeapAffinitizeMask`, s výjimkou případů, kdy je možné zadat více než 64 procesorů.
+- V operačních systémech Windows použijte předponu čísla procesoru nebo rozsahu s odpovídající [skupinou procesorů](/windows/win32/procthread/processor-groups), například 0:1-10, 0:12, 1:50-52, 1:70.
+- Pokud je spřažení procesorů zakázané nastavením `System.GC.NoAffinitize` na `true`, bude toto nastavení ignorováno.
+- Platí jenom pro uvolňování paměti serveru (GC).
+- Další informace najdete v tématu [zlepšení konfigurace procesoru pro GC na počítačích s > 64 procesory](https://devblogs.microsoft.com/dotnet/making-cpu-configuration-better-for-gc-on-machines-with-64-cpus/) na blogu s Maoni Stephens.
 
-| | Setting name | Hodnoty | Version introduced |
+| | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig.json** | `System.GC.GCHeapAffinitizeRanges` | Comma-separated list of processor numbers or ranges of processor numbers.<br/>Unix example: "1-10,12,50-52,70"<br/>Windows example: "0:1-10,0:12,1:50-52,1:70" | .NET Core 3.0 |
-| **Environment variable** | `COMPlus_GCHeapAffinitizeRanges` | Comma-separated list of processor numbers or ranges of processor numbers.<br/>Unix example: "1-10,12,50-52,70"<br/>Windows example: "0:1-10,0:12,1:50-52,1:70" | .NET Core 3.0 |
+| **runtimeconfig. JSON** | `System.GC.GCHeapAffinitizeRanges` | Čárkami oddělený seznam čísel procesorů nebo rozsahů čísel procesorů.<br/>Příklad systému UNIX: "1-10, 12, 50-52, 70"<br/>Příklad Windows: "0:1-10, 0:12, 1:50-52, 1:70" | .NET Core 3.0 |
+| **Proměnná prostředí** | `COMPlus_GCHeapAffinitizeRanges` | Čárkami oddělený seznam čísel procesorů nebo rozsahů čísel procesorů.<br/>Příklad systému UNIX: "1-10, 12, 50-52, 70"<br/>Příklad Windows: "0:1-10, 0:12, 1:50-52, 1:70" | .NET Core 3.0 |
 
 ### <a name="complus_gccpugroup"></a>COMPlus_GCCpuGroup
 
-- Configures whether the garbage collector uses [CPU groups](/windows/win32/procthread/processor-groups) or not.
+- Nakonfiguruje, jestli systém uvolňování paměti používá [skupiny procesorů](/windows/win32/procthread/processor-groups) , nebo ne.
 
-  When a 64-bit Windows computer has multiple CPU groups, that is, there are more than 64 processors, enabling this element extends garbage collection across all CPU groups. The garbage collector uses all cores to create and balance heaps.
+  Pokud má 64 počítač s Windows více skupin PROCESORů, to znamená, že existuje více než 64 procesorů, povolení tohoto elementu rozšiřuje uvolňování paměti napříč všemi skupinami CPU. Systém uvolňování paměti používá všechny jádra k vytváření a vyrovnání hald.
 
-- Applies to server garbage collection (GC) on 64-bit Windows operation systems only.
-- Default: Disabled (0).
-- For more information, see [Making CPU configuration better for GC on machines with > 64 CPUs](https://devblogs.microsoft.com/dotnet/making-cpu-configuration-better-for-gc-on-machines-with-64-cpus/) on Maoni Stephens' blog.
+- Platí pro uvolňování paměti serveru (GC) pouze v 64 operačních systémech Windows.
+- Výchozí: zakázáno (0).
+- Další informace najdete v tématu [zlepšení konfigurace procesoru pro GC na počítačích s > 64 procesory](https://devblogs.microsoft.com/dotnet/making-cpu-configuration-better-for-gc-on-machines-with-64-cpus/) na blogu s Maoni Stephens.
 
-| | Setting name | Hodnoty | Version introduced |
+| | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig.json** | Není k dispozici | Není k dispozici | Není k dispozici |
-| **Environment variable** | `COMPlus_GCCpuGroup` | 0 - disabled<br/>1 - enabled | .NET Core 1.0 |
-| **app.config for .NET Framework** | [GCCpuGroup](../../framework/configure-apps/file-schema/runtime/gccpugroup-element.md) | `false` - disabled<br/>`true` - enabled |  |
+| **runtimeconfig. JSON** | NEUŽÍVÁ SE. | NEUŽÍVÁ SE. | NEUŽÍVÁ SE. |
+| **Proměnná prostředí** | `COMPlus_GCCpuGroup` | 0 – zakázáno<br/>1 – povoleno | .NET Core 1,0 |
+| **App. config pro .NET Framework** | [GCCpuGroup](../../framework/configure-apps/file-schema/runtime/gccpugroup-element.md) | `false` – zakázáno<br/>`true` – povoleno |  |
 
 > [!NOTE]
-> To configure the common language runtime (CLR) to also distribute threads from the thread pool across all CPU groups, enable the [Thread_UseAllCpuGroups element](../../framework/configure-apps/file-schema/runtime/thread-useallcpugroups-element.md) option. For .NET Core apps, you can enable this option by setting the value of the `COMPlus_Thread_UseAllCpuGroups` environment variable to `1`.
+> Chcete-li nakonfigurovat modul CLR (Common Language Runtime) pro distribuci vláken z fondu vláken napříč všemi skupinami PROCESORů, povolte možnost [Thread_UseAllCpuGroups element](../../framework/configure-apps/file-schema/runtime/thread-useallcpugroups-element.md) . U aplikací .NET Core můžete tuto možnost povolit nastavením hodnoty proměnné prostředí `COMPlus_Thread_UseAllCpuGroups` na `1`.
 
-### <a name="systemgcnoaffinitizecomplus_gcnoaffinitize"></a>System.GC.NoAffinitize/COMPlus_GCNoAffinitize
+### <a name="systemgcnoaffinitizecomplus_gcnoaffinitize"></a>System. GC. NoAffinitize/COMPlus_GCNoAffinitize
 
-- Specifies whether to *affinitize* garbage collection threads with processors. To affinitize a GC thread means that it can only run on its specific CPU. A heap is created for each GC thread.
-- Applies to server garbage collection (GC) only.
-- Default: Affinitize garbage collection threads with processors (`false`).
+- Určuje, jestli se mají *spřažení* vlákna uvolňování paměti pomocí procesorů. Aby spřažení vlákno GC, znamená to, že ho lze spustit pouze na jeho specifickém procesoru. Pro každé vlákno GC se vytvoří halda.
+- Platí jenom pro uvolňování paměti serveru (GC).
+- Výchozí: spřažení vlákna uvolňování paměti pomocí procesorů (`false`).
 
-| | Setting name | Hodnoty | Version introduced |
+| | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig.json** | `System.GC.NoAffinitize` | `false` - affinitize<br/>`true` - don't affinitize | .NET Core 3.0 |
-| **Environment variable** | `COMPlus_GCNoAffinitize` | 0 - affinitize<br/>1 - don't affinitize | .NET Core 3.0 |
-| **app.config for .NET Framework** | [GCNoAffinitize](../../framework/configure-apps/file-schema/runtime/gcnoaffinitize-element.md) | `false` - affinitize<br/>`true` - don't affinitize | 4.6.2 |
+| **runtimeconfig. JSON** | `System.GC.NoAffinitize` | `false` – spřažení<br/>`true` – spřažení | .NET Core 3.0 |
+| **Proměnná prostředí** | `COMPlus_GCNoAffinitize` | 0 – spřažení<br/>1 – spřažení | .NET Core 3.0 |
+| **App. config pro .NET Framework** | [GCNoAffinitize](../../framework/configure-apps/file-schema/runtime/gcnoaffinitize-element.md) | `false` – spřažení<br/>`true` – spřažení | 4.6.2 |
 
-### <a name="systemgcheaphardlimitcomplus_gcheaphardlimit"></a>System.GC.HeapHardLimit/COMPlus_GCHeapHardLimit
+### <a name="systemgcheaphardlimitcomplus_gcheaphardlimit"></a>System. GC. HeapHardLimit/COMPlus_GCHeapHardLimit
 
-- Specifies the maximum commit size, in bytes, for the GC heap and GC bookkeeping.
+- Určuje maximální velikost potvrzení (v bajtech) pro haldu uvolňování paměti a účetnictví GC.
 
-| | Setting name | Hodnoty | Version introduced |
+| | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig.json** | `System.GC.HeapHardLimit` | *decimal value* | .NET Core 3.0 |
-| **Environment variable** | `COMPlus_GCHeapHardLimit` | *hexadecimal value* | .NET Core 3.0 |
+| **runtimeconfig. JSON** | `System.GC.HeapHardLimit` | *desetinná hodnota* | .NET Core 3.0 |
+| **Proměnná prostředí** | `COMPlus_GCHeapHardLimit` | *hexadecimální hodnota* | .NET Core 3.0 |
 
 > [!TIP]
-> If you're setting the option in *runtimeconfig.json*, specify a decimal value. If you're setting the option as an environment variable, specify a hexadecimal value. For example, to specify a heap hard limit of 80,000 bytes, the values would be 80000 for the JSON file and 13880 for the environment variable.
+> Pokud nastavujete možnost v *runtimeconfig. JSON*, zadejte desítkovou hodnotu. Pokud nastavujete možnost jako proměnnou prostředí, zadejte hexadecimální hodnotu. Chcete-li například určit pevný limit haldy 80 000 bajtů, hodnoty by byly 80000 pro soubor JSON a 13880 pro proměnnou prostředí.
 
-### <a name="systemgcheaphardlimitpercentcomplus_gcheaphardlimitpercent"></a>System.GC.HeapHardLimitPercent/COMPlus_GCHeapHardLimitPercent
+### <a name="systemgcheaphardlimitpercentcomplus_gcheaphardlimitpercent"></a>System. GC. HeapHardLimitPercent/COMPlus_GCHeapHardLimitPercent
 
-- Specifies the GC heap usage as a percentage of the total memory.
+- Určuje využití haldy GC jako procento z celkové paměti.
 
-| | Setting name | Hodnoty | Version introduced |
+| | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig.json** | `System.GC.HeapHardLimitPercent` | *decimal value* | .NET Core 3.0 |
-| **Environment variable** | `COMPlus_GCHeapHardLimitPercent` | *hexadecimal value* | .NET Core 3.0 |
+| **runtimeconfig. JSON** | `System.GC.HeapHardLimitPercent` | *desetinná hodnota* | .NET Core 3.0 |
+| **Proměnná prostředí** | `COMPlus_GCHeapHardLimitPercent` | *hexadecimální hodnota* | .NET Core 3.0 |
 
 > [!TIP]
-> If you're setting the option in *runtimeconfig.json*, specify a decimal value. If you're setting the option as an environment variable, specify a hexadecimal value. For example, to limit the heap usage to 30%, the values would be 30 for the JSON file and 1E for the environment variable.
+> Pokud nastavujete možnost v *runtimeconfig. JSON*, zadejte desítkovou hodnotu. Pokud nastavujete možnost jako proměnnou prostředí, zadejte hexadecimální hodnotu. Chcete-li například omezit využití haldy na 30%, budou hodnoty 30 pro soubor JSON a hodnota 1E pro proměnnou prostředí.
 
-### <a name="systemgcretainvmcomplus_gcretainvm"></a>System.GC.RetainVM/COMPlus_GCRetainVM
+### <a name="systemgcretainvmcomplus_gcretainvm"></a>System. GC. RetainVM/COMPlus_GCRetainVM
 
-- Configures whether segments that should be deleted are put on a standby list for future use or are released back to the operating system (OS).
-- Default: Release segments back to the operating system (`false`).
+- Určuje, zda jsou segmenty, které mají být odstraněny, umístěny do úsporného seznamu pro pozdější použití nebo jsou vydány zpět do operačního systému (OS).
+- Výchozí: segmenty verze zpět do operačního systému (`false`).
 
-| | Setting name | Hodnoty | Version introduced |
+| | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig.json** | `System.GC.RetainVM` | `false` - release to OS<br/>`true` - put on standby| .NET Core 1.0 |
-| **Environment variable** | `COMPlus_GCRetainVM` | 0 - release to OS<br/>1 - put on standby | .NET Core 1.0 |
+| **runtimeconfig. JSON** | `System.GC.RetainVM` | `false` – vydání na operační systém<br/>`true` – vložit do úsporného režimu| .NET Core 1,0 |
+| **Proměnná prostředí** | `COMPlus_GCRetainVM` | 0 – vydání z verze na operační systém<br/>1 – vložit do úsporného režimu | .NET Core 1,0 |
 
-## <a name="large-pages"></a>Large pages
+## <a name="large-pages"></a>Velké stránky
 
 ### <a name="complus_gclargepages"></a>COMPlus_GCLargePages
 
-- Specifies whether large pages should be used when a heap hard limit is set.
-- Default: Disabled (0).
-- This is an experimental setting.
+- Určuje, zda mají být při nastavení vynuceného limitu haldy použity velké stránky.
+- Výchozí: zakázáno (0).
+- Toto je experimentální nastavení.
 
-| | Setting name | Hodnoty | Version introduced |
+| | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig.json** | Není k dispozici | Není k dispozici | Není k dispozici |
-| **Environment variable** | `COMPlus_GCLargePages` | 0 - disabled<br/>1 - enabled | .NET Core 3.0 |
+| **runtimeconfig. JSON** | NEUŽÍVÁ SE. | NEUŽÍVÁ SE. | NEUŽÍVÁ SE. |
+| **Proměnná prostředí** | `COMPlus_GCLargePages` | 0 – zakázáno<br/>1 – povoleno | .NET Core 3.0 |
 
-## <a name="large-objects"></a>Large objects
+## <a name="large-objects"></a>Velké objekty
 
 ### <a name="complus_gcallowverylargeobjects"></a>COMPlus_gcAllowVeryLargeObjects
 
-- Configures garbage collector support on 64-bit platforms for arrays that are greater than 2 gigabytes (GB) in total size.
-- Default: Enabled (1).
-- This option may become obsolete in a future version of .NET.
+- Konfiguruje podporu uvolňování paměti na 64ech platforem pro pole, která jsou v celkové velikosti větší než 2 gigabajty (GB).
+- Výchozí: povoleno (1).
+- Tato možnost může být zastaralá v budoucí verzi .NET.
 
-| | Setting name | Hodnoty | Version introduced |
+| | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig.json** | Není k dispozici | Není k dispozici | Není k dispozici |
-| **Environment variable** | `COMPlus_gcAllowVeryLargeObjects` | 1 - enabled<br/> 0 - disabled | .NET Core 1.0 |
-| **app.config for .NET Framework** | [gcAllowVeryLargeObjects](../../framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md) | 1 - enabled<br/> 0 - disabled | .NET Framework 4.5 |
+| **runtimeconfig. JSON** | NEUŽÍVÁ SE. | NEUŽÍVÁ SE. | NEUŽÍVÁ SE. |
+| **Proměnná prostředí** | `COMPlus_gcAllowVeryLargeObjects` | 1 – povoleno<br/> 0 – zakázáno | .NET Core 1,0 |
+| **App. config pro .NET Framework** | [gcAllowVeryLargeObjects](../../framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md) | 1 – povoleno<br/> 0 – zakázáno | .NET Framework 4.5 |
 
-## <a name="large-object-heap-threshold"></a>Large object heap threshold
+## <a name="large-object-heap-threshold"></a>Prahová hodnota haldy velkých objektů
 
-### <a name="systemgclohthresholdcomplus_gclohthreshold"></a>System.GC.LOHThreshold/COMPlus_GCLOHThreshold
+### <a name="systemgclohthresholdcomplus_gclohthreshold"></a>System. GC. LOHThreshold/COMPlus_GCLOHThreshold
 
-- Specifies the threshold size, in bytes, that causes objects to go on the large object heap (LOH).
-- The default threshold is 85,000 bytes.
-- The value you specify must be larger than the default threshold.
+- Určuje velikost prahové hodnoty v bajtech, která způsobí, že objekty budou jít na haldu velkých objektů (LOH).
+- Výchozí prahová hodnota je 85 000 bajtů.
+- Hodnota, kterou zadáte, musí být větší než výchozí prahová hodnota.
 
-| | Setting name | Hodnoty | Version introduced |
+| | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig.json** | `System.GC.LOHThreshold` | *decimal value* | .NET Core 1.0 |
-| **Environment variable** | `COMPlus_GCLOHThreshold` | *hexadecimal value* | .NET Core 1.0 |
-| **app.config for .NET Framework** | [GCLOHThreshold](../../framework/configure-apps/file-schema/runtime/gclohthreshold-element.md) | *decimal value* | .NET Framework 4.8 |
+| **runtimeconfig. JSON** | `System.GC.LOHThreshold` | *desetinná hodnota* | .NET Core 1,0 |
+| **Proměnná prostředí** | `COMPlus_GCLOHThreshold` | *hexadecimální hodnota* | .NET Core 1,0 |
+| **App. config pro .NET Framework** | [GCLOHThreshold](../../framework/configure-apps/file-schema/runtime/gclohthreshold-element.md) | *desetinná hodnota* | .NET Framework 4,8 |
 
 > [!TIP]
-> If you're setting the option in *runtimeconfig.json*, specify a decimal value. If you're setting the option as an environment variable, specify a hexadecimal value. For example, to set a threshold size of 120,000 bytes, the values would be 120000 for the JSON file and 1D4C0 for the environment variable.
+> Pokud nastavujete možnost v *runtimeconfig. JSON*, zadejte desítkovou hodnotu. Pokud nastavujete možnost jako proměnnou prostředí, zadejte hexadecimální hodnotu. Chcete-li například nastavit prahovou hodnotu 120 000 bajtů, hodnoty by byly 120000 pro soubor JSON a 1D4C0 pro proměnnou prostředí.
 
-## <a name="standalone-gc"></a>Standalone GC
+## <a name="standalone-gc"></a>Samostatná GC
 
 ### <a name="complus_gcname"></a>COMPlus_GCName
 
-- Specifies a path to the library containing the garbage collector that the runtime intends to load.
-- For more information, see [Standalone GC loader design](https://github.com/dotnet/coreclr/blob/master/Documentation/design-docs/standalone-gc-loading.md).
+- Určuje cestu k knihovně obsahující systém uvolňování paměti, který modul runtime zamýšlí načíst.
+- Další informace najdete v tématu [Návrh zavaděče samostatného modulu GC](https://github.com/dotnet/coreclr/blob/master/Documentation/design-docs/standalone-gc-loading.md).
 
-| | Setting name | Hodnoty | Version introduced |
+| | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
-| **runtimeconfig.json** | Není k dispozici | Není k dispozici | Není k dispozici |
-| **Environment variable** | `COMPlus_GCName` | *string_path* | .NET Core 2.0 |
+| **runtimeconfig. JSON** | NEUŽÍVÁ SE. | NEUŽÍVÁ SE. | NEUŽÍVÁ SE. |
+| **Proměnná prostředí** | `COMPlus_GCName` | *string_path* | .NET Core 2.0 |

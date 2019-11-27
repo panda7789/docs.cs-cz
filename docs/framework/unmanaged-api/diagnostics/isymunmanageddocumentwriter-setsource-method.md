@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449079"
 ---
 # <a name="isymunmanageddocumentwritersetsource-method"></a>ISymUnmanagedDocumentWriter::SetSource – metoda
-Sets embedded source for a document that is being written.  
+Nastaví vložený zdroj pro dokument, který se zapisuje.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,16 +35,16 @@ HRESULT SetSource(
   
 ## <a name="parameters"></a>Parametry  
  `sourceSize`  
- [in] A `ULONG32` that contains the size of the `source` buffer.  
+ pro `ULONG32`, který obsahuje velikost `source` vyrovnávací paměti.  
   
  `source`  
- [in] The buffer that stores the embedded source.  
+ pro Vyrovnávací paměť, která ukládá vložený zdroj.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

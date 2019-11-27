@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74433895"
 ---
 # <a name="isymunmanagednamespacegetnamespaces-method"></a>ISymUnmanagedNamespace::GetNamespaces – metoda
-Gets the children of this namespace.  
+Získá podřízené objekty tohoto oboru názvů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,19 +37,19 @@ HRESULT GetNamespaces(
   
 ## <a name="parameters"></a>Parametry  
  `cNameSpaces`  
- [in] A `ULONG32` that indicates the size of the `namespaces` array.  
+ pro `ULONG32`, která určuje velikost `namespaces` pole.  
   
  `pcNameSpaces`  
- [out] A pointer to a `ULONG32` that receives the size, in characters, of the buffer required to contain the namespaces.  
+ mimo Ukazatel na `ULONG32`, který obdrží velikost vyrovnávací paměti, která je nutná k omezení oboru názvů, ve znacích.  
   
  `namespaces`  
- [out] A pointer to the buffer that contains the namespaces.  
+ mimo Ukazatel na vyrovnávací paměť, která obsahuje obory názvů.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

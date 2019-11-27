@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450255"
 ---
 # <a name="cormanifestresourceflags-enumeration"></a>CorManifestResourceFlags – výčet
-Indicates the visibility of resources encoded in an assembly manifest.  
+Určuje viditelnost prostředků kódovaných v manifestu sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,16 +40,16 @@ typedef enum CorManifestResourceFlags {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`mrVisibilityMask`|Reserved.|  
-|`mrPublic`|The resources are public.|  
-|`mrPrivate`|The resources are private.|  
+|`mrVisibilityMask`|Rezervovaný.|  
+|`mrPublic`|Prostředky jsou veřejné.|  
+|`mrPrivate`|Prostředky jsou soukromé.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **Hlavička:** CorHdr. h  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

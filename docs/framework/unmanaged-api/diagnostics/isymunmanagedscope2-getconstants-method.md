@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446234"
 ---
 # <a name="isymunmanagedscope2getconstants-method"></a>ISymUnmanagedScope2::GetConstants – metoda
-Gets the local constants defined within this scope.  
+Získá místní konstanty definované v rámci tohoto oboru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +38,19 @@ HRESULT GetConstants(
   
 ## <a name="parameters"></a>Parametry  
  `cConstants`  
- [in] The length of the buffer that the `pcConstants` parameter points to.  
+ pro Délka vyrovnávací paměti, na kterou parametr `pcConstants` odkazuje.  
   
  `pcConstants`  
- [out] A pointer to a `ULONG32` that receives the size, in characters, of the buffer required to contain the constants.  
+ mimo Ukazatel na `ULONG32`, který přijímá velikost vyrovnávací paměti, která je nutná k zahrnutí konstant.  
   
  `constants`  
- [out] The buffer that stores the constants.  
+ mimo Vyrovnávací paměť, do které jsou uloženy konstanty.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

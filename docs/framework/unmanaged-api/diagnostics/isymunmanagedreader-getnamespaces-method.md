@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74447730"
 ---
 # <a name="isymunmanagedreadergetnamespaces-method"></a>ISymUnmanagedReader::GetNamespaces – metoda
-Gets the namespaces defined at global scope within this symbol store.  
+Načte obory názvů definované v globálním oboru v rámci tohoto úložiště symbolů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +38,19 @@ HRESULT GetNamespaces (
   
 ## <a name="parameters"></a>Parametry  
  `cNameSpaces`  
- [in] The size of the namespaces array.  
+ pro Velikost pole obory názvů.  
   
  `pcNameSpaces`  
- [out] A pointer to a variable that receives the length of the namespace list.  
+ mimo Ukazatel na proměnnou, která přijímá délku seznamu oborů názvů.  
   
  `namespaces`  
- [out] A pointer to a variable that receives the namespace list.  
+ mimo Ukazatel na proměnnou, která přijímá seznam oborů názvů.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

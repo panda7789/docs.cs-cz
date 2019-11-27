@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446469"
 ---
 # <a name="enumcustomattributes-method"></a>EnumCustomAttributes – metoda
-Retrieves assembly-level custom attributes.  
+Načte vlastní atributy na úrovni sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,28 +39,28 @@ HRESULT EnumCustomAttributes(
   
 ## <a name="parameters"></a>Parametry  
  `hEnum`  
- Handle of enumerator.  
+ Popisovač čítače.  
   
  `tkType`  
- Type of attributes to be enumerated. Use `mdTokenNill` for all attributes.  
+ Typ atributů, které mají být vyčísleny. Pro všechny atributy použijte `mdTokenNill`.  
   
  `rCustomValues`  
- Receives custom attributes tokens.  
+ Přijímá vlastní tokeny atributů.  
   
  `cMax`  
- Specifies size of `rCustomValues` array.  
+ Určuje velikost `rCustomValues` pole.  
   
  `pcCustomValues`  
- Optionally receives count of token values.  
+ Volitelně přijímá počet hodnot tokenu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Returns S_OK if the method succeeds.  
+ Vrátí S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Requires alink.h  
+ Vyžaduje ALink. h  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink – rozhraní](ialink-interface.md)
 - [IALink2 – rozhraní](ialink2-interface.md)
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)

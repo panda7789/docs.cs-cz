@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450082"
 ---
 # <a name="imetadataimportenummethods-method"></a>IMetaDataImport::EnumMethods – metoda
-Enumerates MethodDef tokens representing methods of the specified type.  
+Vytvoří výčet tokenů MethodDef představujících metody zadaného typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,35 +39,35 @@ HRESULT EnumMethods (
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [in, out] A pointer to the enumerator. This must be NULL for the first call of this method.  
+ [in, out] Ukazatel na enumerátor. Pro první volání této metody musí mít hodnotu NULL.  
   
  `cl`  
- [in] A TypeDef token representing the type with the methods to enumerate.  
+ pro Token TypeDef představující typ s metodami k vytvoření výčtu.  
   
  `rMethods`  
- [out] The array to store the MethodDef tokens.  
+ mimo Pole, do kterého se mají ukládat tokeny MethodDef  
   
  `cMax`  
- [in] The maximum size of the MethodDef `rMethods` array.  
+ pro Maximální velikost pole MethodDef `rMethods`.  
   
  `pcTokens`  
- [out] The number of MethodDef tokens returned in `rMethods`.  
+ mimo Počet tokenů MethodDef vrácených v `rMethods`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumMethods` returned successfully.|  
-|`S_FALSE`|There are no MethodDef tokens to enumerate. In that case, `pcTokens` is zero.|  
+|`S_OK`|`EnumMethods` byla úspěšně vrácena.|  
+|`S_FALSE`|Nejsou k dispozici žádné tokeny MethodDef pro zobrazení výčtu. V takovém případě je `pcTokens` nula.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

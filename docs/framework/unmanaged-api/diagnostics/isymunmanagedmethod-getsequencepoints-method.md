@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448873"
 ---
 # <a name="isymunmanagedmethodgetsequencepoints-method"></a>ISymUnmanagedMethod::GetSequencePoints – metoda
-Gets all the sequence points within this method.  
+Načte všechny body sekvence v rámci této metody.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,34 +41,34 @@ HRESULT GetSequencePoints(
   
 ## <a name="parameters"></a>Parametry  
  `cPoints`  
- [in] A `ULONG32` that receives the size of the `offsets`, `documents`, `lines`, `columns`, `endLines`, and `endColumns` arrays.  
+ pro `ULONG32`, která přijímá velikost `offsets`, `documents`, `lines`, `columns`, `endLines`a `endColumns` polí.  
   
  `pcPoints`  
- [out] A pointer to a `ULONG32` that receives the length of the buffer required to contain the sequence points.  
+ mimo Ukazatel na `ULONG32`, který přijímá délku vyrovnávací paměti vyžadované k umístění bodů sekvence.  
   
  `offsets`  
- [in] An array in which to store the Microsoft intermediate language (MSIL) offsets from the beginning of the method for the sequence points.  
+ pro Pole, do kterého se má uložit posun jazyka MSIL (Microsoft Intermediate Language) od začátku metody pro body sekvence.  
   
  `documents`  
- [in] An array in which to store the documents in which the sequence points are located.  
+ pro Pole, do kterého se mají ukládat dokumenty, ve kterých jsou umístěny body sekvence.  
   
  `lines`  
- [in] An array in which to store the lines in the documents at which the sequence points are located.  
+ pro Pole, do kterého se mají ukládat řádky v dokumentech, ve kterých jsou umístěny body sekvence.  
   
  `columns`  
- [in] An array in which to store the columns in the documents at which the sequence points are located.  
+ pro Pole, do kterého se mají ukládat sloupce v dokumentech, ve kterých jsou umístěny body sekvence.  
   
  `endLines`  
- [in] The array of lines in the documents at which the sequence points end.  
+ pro Pole řádků v dokumentech, na kterých končí body sekvence  
   
  `endColumns`  
- [in] The array of columns in the documents at which the sequence points end.  
+ pro Pole sloupců v dokumentech, na kterých končí body sekvence  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

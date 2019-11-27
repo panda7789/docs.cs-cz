@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449512"
 ---
 # <a name="imetadataimportenumfieldswithname-method"></a>IMetaDataImport::EnumFieldsWithName – metoda
-Enumerates FieldDef tokens of the specified type with the specified name.  
+Vytvoří výčet tokenů FieldDef zadaného typu se zadaným názvem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,41 +40,41 @@ HRESULT EnumFieldsWithName (
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [in, out] A pointer to the enumerator.  
+ [in, out] Ukazatel na enumerátor.  
   
  `cl`  
- [in] The token of the type whose fields are to be enumerated.  
+ pro Token typu, jehož pole se mají vyčíslit  
   
  `szName`  
- [in] The field name that limits the scope of the enumeration.  
+ pro Název pole, který omezuje rozsah výčtu.  
   
  `rFields`  
- [out] Array used to store the FieldDef tokens.  
+ mimo Pole, které se používá k uložení tokenů FieldDef.  
   
  `cMax`  
- [in] The maximum size of the `rFields` array.  
+ pro Maximální velikost `rFields` pole  
   
  `pcTokens`  
- [out] The actual number of FieldDef tokens returned in `rFields`.  
+ mimo Skutečný počet FieldDef tokenů vrácených v `rFields`.  
   
 ## <a name="remarks"></a>Poznámky  
- Unlike [IMetaDataImport::EnumFields](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumfields-method.md), `EnumFieldsWithName` discards all field tokens that do not have the specified name.  
+ Na rozdíl od [IMetaDataImport:: enumfields –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumfields-method.md)`EnumFieldsWithName` zahodí všechny tokeny pole, které nemají zadaný název.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumFieldsWithName` returned successfully.|  
-|`S_FALSE`|There are no fields to enumerate. In that case, `pcTokens` is zero.|  
+|`S_OK`|`EnumFieldsWithName` byla úspěšně vrácena.|  
+|`S_FALSE`|Neexistují žádná pole k zobrazení výčtu. V takovém případě je `pcTokens` nula.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

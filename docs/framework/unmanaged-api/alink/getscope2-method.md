@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74447182"
 ---
 # <a name="getscope2-method"></a>GetScope2 – metoda
-Gets an import scope.  
+Načte obor importu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,25 +37,25 @@ HRESULT GetScope2(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID of target assembly.  
+ ID cílového sestavení  
   
  `FileToken`  
- ID of file from which to import.  
+ ID souboru, ze kterého se má importovat  
   
  `dwScope`  
- Zero-based scope to import.  
+ Rozsah založený na nule pro import.  
   
  `ppImportScope`  
- Receives pointer to [IMetaDataImport2 Interface](../metadata/imetadataimport2-interface.md) interface for indicated scope.  
+ Přijme ukazatel na rozhraní [rozhraní IMetaDataImport2](../metadata/imetadataimport2-interface.md) pro zadaný obor.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Returns S_OK if the method succeeds.  
+ Vrátí S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Requires alink.h.  
+ Vyžaduje ALink. h.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink2 – rozhraní](ialink2-interface.md)
 - [IALink – rozhraní](ialink-interface.md)
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74434052"
 ---
 # <a name="imetadatatablesgetcodedtokeninfo-method"></a>IMetaDataTables::GetCodedTokenInfo – metoda
-Gets a pointer to an array of tokens associated with the specified row index.  
+Získá ukazatel na pole tokenů přidružené k zadanému indexu řádků.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,25 +38,25 @@ HRESULT GetCodedTokenInfo (
   
 ## <a name="parameters"></a>Parametry  
  `ixCdTkn`  
- [in] The kind of coded token to return.  
+ pro Druh kódovaného tokenu, který se má vrátit  
   
  `pcTokens`  
- [out] A pointer to the length of `ppTokens`.  
+ mimo Ukazatel na délku `ppTokens`.  
   
  `ppTokens`  
- [out] A pointer to a pointer to an array that contains the list of returned tokens.  
+ mimo Ukazatel na ukazatel na pole, které obsahuje seznam vrácených tokenů.  
   
  `ppName`  
- [out] A pointer to a pointer to the name of the token at `ixCdTkn`.  
+ mimo Ukazatel na ukazatel na název tokenu na `ixCdTkn`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

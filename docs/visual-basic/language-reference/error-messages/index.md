@@ -15,24 +15,24 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353704"
 ---
 # <a name="error-messages-visual-basic"></a>Chybové zprávy (Visual Basic)
-When you write, compile, or run a Visual Basic application, the following types of errors can occur:  
+Když píšete, zkompilujete nebo spustíte Visual Basic aplikaci, může dojít k následujícím typům chyb:  
   
-1. Design-time errors, which occur when you write an application in Visual Studio.  
+1. Chyby v době návrhu, ke kterým dochází při psaní aplikace v aplikaci Visual Studio.  
   
-2. Compile-time errors, which occur when you compile an application in Visual Studio or at a command prompt.  
+2. Chyby při kompilaci, ke kterým dochází při kompilaci aplikace v aplikaci Visual Studio nebo na příkazovém řádku.  
   
-3. Run-time errors, which occur when you run an application in Visual Studio or as a stand-alone executable file.  
+3. Běhové chyby, ke kterým dochází při spuštění aplikace v aplikaci Visual Studio nebo jako samostatného spustitelného souboru.  
   
- For information about how to troubleshoot a specific error, see [Additional Resources for Visual Basic Programmers](../../../visual-basic/getting-started/additional-resources.md).  
+ Informace o tom, jak řešit určitou chybu, najdete v tématu [Další zdroje informací pro Visual Basic programátory](../../../visual-basic/getting-started/additional-resources.md).  
   
-## <a name="run-time-errors"></a>Run Time Errors  
- If a Visual Basic application tries to perform an action that the system can't execute, a run-time error occurs, and Visual Basic throws an `Exception` object. Visual Basic can generate custom errors of any data type, including `Exception` objects, by using the `Throw` statement. An application can identify the error by displaying the error number and message of a caught exception. If an error isn't caught, the application ends.  
+## <a name="run-time-errors"></a>Chyby běhu  
+ Pokud se aplikace Visual Basic pokusí provést akci, kterou systém nemůže spustit, dojde k chybě za běhu a Visual Basic vyvolá objekt `Exception`. Visual Basic může generovat vlastní chyby libovolného datového typu, včetně objektů `Exception`, pomocí příkazu `Throw`. Aplikace může identifikovat chybu zobrazením čísla chyby a zprávy zachycené výjimky. Pokud chyba není zachycena, aplikace skončí.  
   
- The code can trap and examine run-time errors. If you enclose the code that produces the error in a `Try` block, you can catch any thrown error within a matching `Catch` block. For information about how to trap errors at run time and respond to them in your code, see [Try...Catch...Finally Statement](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
+ Kód může zachytit a ověřit běhové chyby. Pokud uzavřete kód, který vytváří chybu v bloku `Try`, můžete zachytit vyvolanou chybu v rámci odpovídajícího bloku `Catch`. Informace o tom, jak zachytit chyby v době běhu a reagovat na ně v kódu, naleznete v tématu [Try... Zachytit... Finally – příkaz](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
   
-## <a name="compile-time-errors"></a>Compile Time Errors  
- If the Visual Basic compiler encounters a problem in the code, a compile-time error occurs. In the Code Editor, you can easily identify which line of code caused the error because a wavy line appears under that line of code. The error message appears if you either point to the wavy underline or open the **Error List**, which also shows other messages.  
+## <a name="compile-time-errors"></a>Chyby při kompilaci  
+ Pokud Visual Basic kompilátor narazí na problém v kódu, dojde k chybě při kompilaci. V editoru kódu můžete snadno určit, který řádek kódu způsobil chybu, protože pod tímto řádkem kódu se zobrazí Vlnová čára. Chybová zpráva se zobrazí, pokud buď ukážete na vlnové podtržení, nebo otevřete **Seznam chyb**, ve kterém se zobrazí také další zprávy.  
   
- If an identifier has a wavy underline and a short underline appears under the rightmost character, you can generate a stub for the class, constructor, method, property, field or enum. For more information, see [Generate From Usage](/visualstudio/ide/visual-csharp-intellisense#generate-from-usage).
+ Pokud je identifikátor podtržen vlnovkou a v rámci pravého znaku se zobrazí krátké podtržení, můžete vygenerovat zástupnou proceduru pro třídu, konstruktor, metodu, vlastnost, pole nebo výčet. Další informace najdete v tématu [generování z využití](/visualstudio/ide/visual-csharp-intellisense#generate-from-usage).
   
- By resolving warnings from the Visual Basic compiler, you might be able to write code that runs faster and has fewer bugs. These warnings identify code that may cause errors when the application is run. For example, the compiler warns you if you try to invoke a member of an unassigned object variable, return from a function without setting the return value, or execute a `Try` block with errors in the logic to catch exceptions. For more information about warnings, including how to turn them on and off, see [Configuring Warnings in Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).
+ Řešením upozornění z Visual Basic kompilátoru může být možné napsat kód, který běží rychleji a obsahuje méně chyb. Tato upozornění identifikují kód, který může způsobit chyby při spuštění aplikace. Například kompilátor vás upozorní, pokud se pokusíte vyvolat člena nepřiřazené proměnné objektu, vracet z funkce bez nastavení návratové hodnoty, nebo spustit `Try` blok s chybami v logice k zachycení výjimek. Další informace o upozorněních, včetně toho, jak je zapnout nebo vypnout, najdete v tématu [Konfigurace upozornění v Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).

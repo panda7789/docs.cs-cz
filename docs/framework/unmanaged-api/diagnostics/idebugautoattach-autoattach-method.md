@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445521"
 ---
 # <a name="idebugautoattachautoattach-method"></a>IDebugAutoAttach::AutoAttach – metoda
-Performs server-invoked debugger auto attach.  
+Provede automatické připojování ladicího programu vyvolaného serverem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,25 +40,25 @@ HRESULT AutoAttach
   
 ## <a name="parameters"></a>Parametry  
  `guidPort`  
- [in] Always set to `GUID_NULL`.  
+ pro Vždy nastavte na `GUID_NULL`.  
   
  `dwPid`  
- [in] Process ID, normally retrieved with the `GetCurrentProcessId` function.  
+ pro ID procesu, obvykle načteno pomocí funkce `GetCurrentProcessId`.  
   
  `dwProgramType`  
- [in] Program type: `AUTOATTACH_PROGRAM_WIN32`, `AUTOATTACH_PROGRAM_COMPLUS`, or `AUTOATTACH_PROGRAM_UNKNOWN`.  
+ pro Typ programu: `AUTOATTACH_PROGRAM_WIN32`, `AUTOATTACH_PROGRAM_COMPLUS`nebo `AUTOATTACH_PROGRAM_UNKNOWN`.  
   
  `dwProgramId`  
- [in] Program ID.  
+ pro ID programu  
   
  `pszSessionId`  
- [in] String passed by the debug verb.  
+ pro Řetězec předaný příkazem ladění  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds.  
+ S_OK, zda je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** DbgAutoAttach.h  
+ **Hlavička:** DbgAutoAttach. h  
   
 ## <a name="see-also"></a>Viz také:
 

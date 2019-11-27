@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74440366"
 ---
 # <a name="imetadataimportcountenum-method"></a>IMetaDataImport::CountEnum – metoda
-Gets the number of elements in the enumeration that was retrieved by the specified enumerator.  
+Získá počet prvků ve výčtu, který byl načten zadaným výčtem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,22 +36,22 @@ HRESULT CountEnum (
   
 ## <a name="parameters"></a>Parametry  
  `hEnum`  
- [in] The handle for the enumerator.  
+ pro Popisovač pro enumerátor.  
   
  `pulCount`  
- [out] The number of elements enumerated.  
+ mimo Počet prvků výčtu.  
   
 ## <a name="remarks"></a>Poznámky  
- The handle specified by `hEnum` is obtained from a previous `Enum`*Name* call (for example, [IMetaDataImport::EnumTypeDefs](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumtypedefs-method.md)).  
+ Popisovač určený `hEnum` je získán z předchozího volání `Enum`*názvu* (například [IMetaDataImport:: enumtypedefs –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumtypedefs-method.md)).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

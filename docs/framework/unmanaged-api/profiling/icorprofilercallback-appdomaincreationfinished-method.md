@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445272"
 ---
 # <a name="icorprofilercallbackappdomaincreationfinished-method"></a>ICorProfilerCallback::AppDomainCreationFinished – metoda
-Notifies the profiler that an application domain has been created.  
+Oznamuje profileru, že byla vytvořena doména aplikace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,24 +35,24 @@ HRESULT AppDomainCreationFinished(
   
 ## <a name="parameters"></a>Parametry  
  `appDomainId`  
- [in] Identifies the domain which has been created.  
+ pro Určuje doménu, která byla vytvořena.  
   
  `hrStatus`  
- [in] An HRESULT that indicates whether creation of the application domain completed successfully.  
+ pro Hodnota HRESULT, která označuje, zda bylo úspěšné vytvoření domény aplikace.  
   
 ## <a name="remarks"></a>Poznámky  
- The application ID is not valid for any information request until the `AppDomainCreationFinished` method is called.  
+ ID aplikace není platné pro žádnou žádost o informace, dokud není volána metoda `AppDomainCreationFinished`.  
   
- Some parts of loading the application domain might continue after the `AppDomainCreationFinished` callback. A failure HRESULT in `hrStatus` indicates a failure. However, a success HRESULT in `hrStatus` indicates only that the first part of creating the application domain has succeeded.  
+ Některé části načtení aplikační domény můžou po zpětném volání `AppDomainCreationFinished` pokračovat. Selhání HRESULT v `hrStatus` označuje selhání. Úspěšnost HRESULT v `hrStatus` však znamená, že první část vytváření domény aplikace byla úspěšně dokončena.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

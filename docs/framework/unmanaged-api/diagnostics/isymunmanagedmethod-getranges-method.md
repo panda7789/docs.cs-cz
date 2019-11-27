@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448936"
 ---
 # <a name="isymunmanagedmethodgetranges-method"></a>ISymUnmanagedMethod::GetRanges – metoda
-Given a position in a document, returns an array of start and end offset pairs that correspond to the ranges of Microsoft intermediate language (MSIL) that the position covers within this method. The array is an array of integers and has the format [start, end, start, end]. The number of range pairs is the length of the array divided by 2.  
+Vzhledem k pozici v dokumentu vrátí pole párů počátečního a koncového posunu, které odpovídají rozsahům v rámci této metody, které odpovídají rozsahům jazyka MSIL (Microsoft Intermediate Language), které umístění pokrývá. Pole je pole celých čísel a má formát [Start, end, Start, end]. Počet párů rozsahů je délka pole děleného 2.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,28 +40,28 @@ HRESULT GetRanges(
   
 ## <a name="parameters"></a>Parametry  
  `document`  
- [in] The document for which the offset is requested.  
+ pro Dokument, pro který je požadován posun.  
   
  `line`  
- [in] The document line corresponding to the ranges.  
+ pro Řádek dokumentu odpovídající rozsahům.  
   
  `column`  
- [in] The document column corresponding to the ranges.  
+ pro Sloupec dokumentu odpovídající rozsahům  
   
  `cRanges`  
- [in] The size of the `ranges` array.  
+ pro Velikost pole `ranges`.  
   
  `pcRanges`  
- [out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the ranges.  
+ mimo Ukazatel na `ULONG32`, který přijímá velikost vyrovnávací paměti vyžadované k omezení rozsahu.  
   
  `ranges`  
- [out] A pointer to the buffer that receives the ranges.  
+ mimo Ukazatel na vyrovnávací paměť, která přijímá rozsahy.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

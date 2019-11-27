@@ -18,16 +18,16 @@ ms.locfileid: "74447257"
 ---
 # <a name="add-content-to-a-text-box-using-ui-automation"></a>Přidání obsahu textového pole s použitím automatizace uživatelského rozhraní
 > [!NOTE]
-> This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace. For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
+> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v oboru názvů <xref:System.Windows.Automation>. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API pro Windows Automation: automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
   
- This topic contains example code that demonstrates how to use [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] to insert text into a single-line text box. An alternate method is provided for multi-line and rich text controls where [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] is not applicable. For comparison purposes, the example also demonstrates how to use Win32 methods to accomplish the same results.  
+ Toto téma obsahuje příklad kódu, který ukazuje, jak použít [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] pro vložení textu do jednořádkového textového pole. K dispozici je alternativní metoda pro víceřádkové a formátované textové ovládací prvky, kde [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] nelze použít. Pro účely porovnání příklad také ukazuje, jak použít metody Win32 k dosažení stejných výsledků.  
   
 ## <a name="example"></a>Příklad  
- The following example steps through a sequence of text controls in a target application. Each text control is tested to see if a <xref:System.Windows.Automation.ValuePattern> object can be obtained from it using the <xref:System.Windows.Automation.AutomationElement.TryGetCurrentPattern%2A> method. If the text control does support <xref:System.Windows.Automation.ValuePattern>, the <xref:System.Windows.Automation.ValuePattern.SetValue%2A> method is used to insert a user-defined string into the text control. Otherwise, the <xref:System.Windows.Forms.SendKeys.SendWait%2A?displayProperty=nameWithType> method is used.  
+ Následující příklad postupuje pomocí sekvence textových ovládacích prvků v cílové aplikaci. Každý ovládací prvek textu je testován, aby bylo možné zjistit, zda lze z něj získat <xref:System.Windows.Automation.ValuePattern> objekt pomocí metody <xref:System.Windows.Automation.AutomationElement.TryGetCurrentPattern%2A>. Pokud ovládací prvek text podporuje <xref:System.Windows.Automation.ValuePattern>, je metoda <xref:System.Windows.Automation.ValuePattern.SetValue%2A> použita k vložení řetězce definovaného uživatelem do ovládacího prvku text. V opačném případě je použita metoda <xref:System.Windows.Forms.SendKeys.SendWait%2A?displayProperty=nameWithType>.  
   
  [!code-csharp[InsertText#InsertText](../../../samples/snippets/csharp/VS_Snippets_Wpf/InsertText/CSharp/Window1.xaml.cs#inserttext)]
  [!code-vb[InsertText#InsertText](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/InsertText/VisualBasic/Window1.xaml.vb#inserttext)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [TextPattern Insert Text Sample](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771478(v=vs.90))
+- [Ukázka vložení textu TextPattern](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771478(v=vs.90))

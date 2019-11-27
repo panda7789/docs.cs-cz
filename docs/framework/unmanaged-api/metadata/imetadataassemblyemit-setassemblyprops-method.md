@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74431946"
 ---
 # <a name="imetadataassemblyemitsetassemblyprops-method"></a>IMetaDataAssemblyEmit::SetAssemblyProps – metoda
-Modifies the specified `Assembly` metadata structure.  
+Upraví zadanou `Assembly` strukturu metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,37 +41,37 @@ HRESULT SetAssemblyProps (
   
 ## <a name="parameters"></a>Parametry  
  `pma`  
- [in] The metadata token that specifies the `Assembly` metadata structure to be modified.  
+ pro Token metadat, který určuje `Assembly` strukturu metadat, která se má upravit.  
   
  `pbPublicKey`  
- [in] A pointer to the public key of the publisher of the assembly.  
+ pro Ukazatel na veřejný klíč vydavatele sestavení.  
   
  `cbPublicKey`  
- [in] The size in bytes of `pbPublicKey`.  
+ pro Velikost v bajtech `pbPublicKey`.  
   
  `ulHashAlgId`  
- [in] The identifier for the hash algorithm used to hash the assembly files.  
+ pro Identifikátor algoritmu hash, který slouží k hashování souborů sestavení.  
   
  `szName`  
- [in] The human-readable text name of the assembly.  
+ pro Textový název sestavení čitelný lidmi  
   
  `pMetaData`  
- [in] A pointer to the ASSEMBLYMETADATA that contains version, platform, and locale information for the assembly.  
+ pro Ukazatel na AssemblyMetadata –, který obsahuje informace o verzi, platformě a národním prostředí pro sestavení.  
   
  `dwAssemblyFlags`  
- [in] A bitwise combination of [AssemblyFlags](../../../../docs/framework/unmanaged-api/metadata/assemblyflags-enumeration.md) values that specify various attributes of the assembly.  
+ pro Bitová kombinace hodnot [AssemblyFlags –](../../../../docs/framework/unmanaged-api/metadata/assemblyflags-enumeration.md) , které určují různé atributy sestavení.  
   
 ## <a name="remarks"></a>Poznámky  
- To create an `Assembly` metadata structure, use the [IMetaDataAssemblyEmit::DefineAssembly](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineassembly-method.md) method.  
+ Chcete-li vytvořit `Assembly` struktury metadat, použijte metodu [IMetaDataAssemblyEmit::D efineassembly](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineassembly-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforma:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

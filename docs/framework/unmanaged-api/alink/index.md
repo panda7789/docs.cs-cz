@@ -14,7 +14,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445660"
 ---
 # <a name="alink-api-unmanaged-api-reference"></a>Rozhraní API ALink (referenční dokumentace nespravovaného rozhraní API)
-Supports creating .NET Framework assemblies and unbound modules.  
+Podporuje vytváření .NET Framework sestavení a nevázaných modulů.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [AssemblyAttributesGoHere](assemblyattributesgohere.md)  
@@ -39,4 +39,4 @@ Supports creating .NET Framework assemblies and unbound modules.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční informace o nespravovaném rozhraní API](../index.md)
+- [Nespravované rozhraní API](../index.md)

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450211"
 ---
 # <a name="imetadataemitdefinetypedef-method"></a>IMetaDataEmit::DefineTypeDef – metoda
-Creates a type definition for a common language runtime type, and gets a metadata token for that type definition.  
+Vytvoří definici typu pro typ modulu CLR (Common Language Runtime) a získá token metadat pro danou definici typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,35 +39,35 @@ HRESULT DefineTypeDef (
   
 ## <a name="parameters"></a>Parametry  
  `szTypeDef`  
- [in] The name of the type in Unicode.  
+ pro Název typu v kódování Unicode.  
   
  `dwTypeDefFlags`  
- [in] `TypeDef` attributes. This is a bitmask of `CoreTypeAttr` values.  
+ [in] `TypeDef` atributy. Toto je Bitová maska `CoreTypeAttr` hodnot.  
   
  `tkExtends`  
- [in] The token of the base class. It must be either an `mdTypeDef` or an `mdTypeRef` token.  
+ pro Token základní třídy. Musí to být buď `mdTypeDef`, nebo token `mdTypeRef`.  
   
  `rtkImplements`  
- [in] An array of tokens specifying the interfaces that this class or interface implements.  
+ pro Pole tokenů určující rozhraní, které tato třída nebo rozhraní implementuje.  
   
  `ptd`  
- [out] The `mdTypeDef` token assigned.  
+ mimo Byl přiřazen token `mdTypeDef`.  
   
 ## <a name="remarks"></a>Poznámky  
- A flag in `dwTypeDefFlags` specifies whether the type being created is a common type system reference type (class or interface) or a common type system value type.  
+ Příznak v `dwTypeDefFlags` určuje, zda typ, který je vytvářen, je typ odkazu na běžný typ systému (třída nebo rozhraní) nebo běžný typ hodnoty systému.  
   
- Depending on the parameters supplied, this method, as a side effect, may also create an `mdInterfaceImpl` record for each interface that is inherited or implemented by this type. However, this method does not return any of these `mdInterfaceImpl` tokens. If a client wants to later add or modify an `mdInterfaceImpl` token, it must use the `IMetaDataImport` interface to enumerate them. If you want to use COM semantics of the `[default]` interface, you should supply the default interface as the first element in `rtkImplements`; a custom attribute set on the class will indicate that the class has a default interface (which is always assumed to be the first `mdInterfaceImpl` token declared for the class).  
+ V závislosti na zadaných parametrech může tato metoda jako vedlejší efekt vytvořit také záznam `mdInterfaceImpl` pro každé rozhraní, které je zděděno nebo implementováno tímto typem. Tato metoda však nevrací žádné z těchto tokenů `mdInterfaceImpl`. Pokud chce klient později přidat nebo změnit `mdInterfaceImpl` tokenu, musí k zobrazení výčtu použít rozhraní `IMetaDataImport`. Pokud chcete použít sémantiku COM `[default]` rozhraní, měli byste zadat výchozí rozhraní jako první prvek v `rtkImplements`; vlastní atribut nastavený u třídy bude označovat, že třída má výchozí rozhraní (což se vždy předpokládá, že se jedná o první `mdInterfaceImpl` token deklarovaný pro třídu).  
   
- Each element of the `rtkImplements` array holds an `mdTypeDef` or `mdTypeRef` token. The last element in the array must be `mdTokenNil`.  
+ Každý prvek `rtkImplements` pole obsahuje token `mdTypeDef` nebo `mdTypeRef`. Poslední prvek v poli musí být `mdTokenNil`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

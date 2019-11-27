@@ -1,5 +1,5 @@
 ---
-title: Dynamic Language Runtime Overview | Microsoft Docs
+title: Přehled dynamického jazykového běhového prostředí | Microsoft Docs
 ms.date: 03/30/2017
 helpviewer_keywords:
 - dynamic language runtime
@@ -16,84 +16,84 @@ ms.locfileid: "74446907"
 ---
 # <a name="dynamic-language-runtime-overview"></a>Přehled DLR (Dynamic Language Runtime)
 
-The *dynamic language runtime* (DLR) is a runtime environment that adds a set of services for dynamic languages to the common language runtime (CLR). The DLR makes it easier to develop dynamic languages to run on the .NET Framework and to add dynamic features to statically typed languages.
+Modul *dynamického jazyka* (DLR) je běhové prostředí, které přidává sadu služeb pro dynamické jazyky do modulu CLR (Common Language Runtime). DLR usnadňuje vývoj dynamických jazyků pro spouštění na .NET Framework a přidání dynamických funkcí do staticky typových jazyků.
 
-Dynamic languages can identify the type of an object at run time, whereas in statically typed languages such as C# and Visual Basic (when you use `Option Explicit On`) you must specify object types at design time. Examples of dynamic languages are Lisp, Smalltalk, JavaScript, PHP, Ruby, Python, ColdFusion, Lua, Cobra, and Groovy.
+Dynamické jazyky mohou identifikovat typ objektu v době běhu, zatímco ve staticky typovaném jazyce, jako je C# a Visual Basic (při použití `Option Explicit On`) je nutné zadat typy objektů v době návrhu. Příklady dynamických jazyků jsou Lispu, Smalltalk, JavaScript, PHP, Ruby, Python, ColdFusion, LUA, Cobra a Groove.
 
-Most dynamic languages provide the following advantages for developers:
+Většina dynamických jazyků poskytuje vývojářům následující výhody:
 
-- The ability to use a rapid feedback loop (REPL, or read-evaluate-print loop). This lets you enter several statements and immediately execute them to see the results.
+- Možnost použít smyčku rychlé zpětné vazby (REPL nebo Read-Evaluate-Print Loop). To umožňuje zadat několik příkazů a okamžitě je spustit, aby se zobrazily výsledky.
 
-- Support for both top-down development and more traditional bottom-up development. For example, when you use a top-down approach, you can call functions that are not yet implemented and then add underlying implementations when you need them.
+- Podpora pro vývoj na nejvyšší úrovni a jednodušší vývoj v dolní části. Například při použití přístupu shora dolů můžete volat funkce, které ještě nejsou implementovány, a pak přidat základní implementace, pokud je potřebujete.
 
-- Easier refactoring and code modifications, because you do not have to change static type declarations throughout the code.
+- Jednodušší refaktoring a změny kódu, protože v celém kódu nemusíte měnit deklarace statických typů.
 
-Dynamic languages make excellent scripting languages. Customers can easily extend applications created by using dynamic languages with new commands and functionality. Dynamic languages are also frequently used for creating Web sites and test harnesses, maintaining server farms, developing various utilities, and performing data transformations.
+Dynamické jazyky vytvářejí Skvělé skriptovací jazyky. Zákazníci můžou snadno rozsazovat aplikace vytvořené pomocí dynamických jazyků s novými příkazy a funkcemi. Dynamické jazyky se také často používají k vytváření webů a testovacích prostředí, údržbě serverových farem, vývoji různých nástrojů a provádění transformací dat.
 
-The purpose of the DLR is to enable a system of dynamic languages to run on the .NET Framework and give them .NET interoperability. The DLR adds dynamic objects to C# and Visual Basic to support dynamic behavior in these languages and enable their interoperation with dynamic languages.
+Účelem DLR je umožnit spuštění systému dynamických jazyků na .NET Framework a zajistit interoperabilitu .NET. DLR přidá dynamické objekty do C# a Visual Basic pro podporu dynamického chování v těchto jazycích a umožňuje jejich vzájemné provozování s dynamickými jazyky.
 
-The DLR also helps you create libraries that support dynamic operations. For example, if you have a library that uses XML or JavaScript Object Notation (JSON) objects, your objects can appear as dynamic objects to languages that use the DLR. This lets library users write syntactically simpler and more natural code for operating with objects and accessing object members.
+DLR také pomáhá vytvářet knihovny, které podporují dynamické operace. Například pokud máte knihovnu, která používá objekty XML nebo JavaScript Object Notation (JSON), vaše objekty se mohou zobrazit jako dynamické objekty pro jazyky, které používají DLR. To umožňuje uživatelům knihovny psát syntakticky jednodušší a více přirozený kód pro práci s objekty a přístup ke členům objektu.
 
-For example, you might use the following code to increment a counter in XML in C#.
+Například můžete použít následující kód k zvýšení čítače v XML v C#.
 
 `Scriptobj.SetProperty("Count", ((int)GetProperty("Count")) + 1);`
 
-By using the DLR, you could use the following code instead for the same operation.
+Pomocí DLR můžete použít následující kód místo stejné operace.
 
 `scriptobj.Count += 1;`
 
-Like the CLR, the DLR is a part of the .NET Framework and is provided with the .NET Framework and Visual Studio installation packages. The open-source version of the DLR is also available for download on the [IronLanguages/dlr](https://github.com/IronLanguages/dlr) repo on GitHub.
+Podobně jako CLR, je DLR součástí .NET Framework a je k dispozici s instalačními balíčky .NET Framework a sady Visual Studio. Open source verze DLR je také k dispozici ke stažení na [IronLanguages/DLR](https://github.com/IronLanguages/dlr) úložiště na GitHubu.
 
 > [!NOTE]
-> The open-source version of the DLR has all the features of the DLR that is included in Visual Studio and the .NET Framework. It also provides additional support for language implementers. For more information, see the documentation on the [IronLanguages/dlr](https://github.com/IronLanguages/dlr) repo on GitHub.
+> Open source verze DLR má všechny funkce DLR, které jsou součástí sady Visual Studio a .NET Framework. Poskytuje taky další podporu pro implementátory jazyků. Další informace najdete v dokumentaci k úložišti [IronLanguages/DLR](https://github.com/IronLanguages/dlr) na GitHubu.
 
-Examples of languages developed by using the DLR include the following:
+Příklady jazyků vyvinutých pomocí DLR zahrnují následující:
 
-- IronPython. Available as open-source software from the [GitHub](https://github.com/IronLanguages/ironpython2) Web site.
+- IronPython. K dispozici jako open source software z webu [GitHubu](https://github.com/IronLanguages/ironpython2) .
 
-- IronRuby. Available as open-source software from the [IronRuby](http://ironruby.net/) website.
+- IronRuby. K dispozici jako open source software z webu [IronRuby](http://ironruby.net/) .
 
-## <a name="primary-dlr-advantages"></a>Primary DLR Advantages
- The DLR provides the following advantages.
+## <a name="primary-dlr-advantages"></a>Primární výhody DLR
+ DLR poskytuje následující výhody.
 
-### <a name="simplifies-porting-dynamic-languages-to-the-net-framework"></a>Simplifies Porting Dynamic Languages to the .NET Framework
- The DLR allows language implementers to avoid creating lexical analyzers, parsers, semantic analyzers, code generators, and other tools that they traditionally had to create themselves. To use the DLR, a language needs to produce *expression trees*, which represent language-level code in a tree-shaped structure, runtime helper routines, and optional dynamic objects that implement the <xref:System.Dynamic.IDynamicMetaObjectProvider> interface. The DLR and the .NET Framework automate a lot of code analysis and code generation tasks. This enables language implementers to concentrate on unique language features.
+### <a name="simplifies-porting-dynamic-languages-to-the-net-framework"></a>Zjednodušuje přenos do .NET Framework dynamické jazyky.
+ DLR umožňuje jazykovým implementátorům vyhnout se vytváření lexikálních analyzátorů, analyzátorů, sémantických analyzátorů, generátorů kódu a dalších nástrojů, které tradičně musely vytvořit sami sebe. Chcete-li použít DLR, musí jazyk vytvořit *stromy výrazů*, které reprezentují kód na úrovni jazyka ve stromové struktuře, rutin pomocníka za běhu a volitelné dynamické objekty, které implementují rozhraní <xref:System.Dynamic.IDynamicMetaObjectProvider>. DLR a .NET Framework automatizují mnoho úloh analýzy kódu a generování kódu. Díky tomu můžou implementátori jazyků soustředit na jedinečné funkce jazyka.
 
-### <a name="enables-dynamic-features-in-statically-typed-languages"></a>Enables Dynamic Features in Statically Typed Languages
- Existing .NET Framework languages such as C# and Visual Basic can create dynamic objects and use them together with statically typed objects. For example, C# and Visual Basic can use dynamic objects for HTML, Document Object Model (DOM), and .NET reflection.
+### <a name="enables-dynamic-features-in-statically-typed-languages"></a>Povolí dynamické funkce ve staticky typovaném jazyce.
+ Existující .NET Framework jazyky, jako C# jsou a Visual Basic, mohou vytvářet dynamické objekty a používat je společně se staticky typovými objekty. Například C# a Visual Basic mohou používat dynamické objekty pro HTML, model DOM (Document Object Model) (DOM) a reflexi rozhraní .NET.
 
-### <a name="provides-future-benefits-of-the-dlr-and-net-framework"></a>Provides Future Benefits of the DLR and .NET Framework
- Languages implemented by using the DLR can benefit from future DLR and .NET Framework improvements. For example, if the .NET Framework releases a new version that has an improved garbage collector or faster assembly loading time, languages implemented by using the DLR immediately get the same benefit. If the DLR adds optimizations such as better compilation, the performance also improves for all languages implemented by using the DLR.
+### <a name="provides-future-benefits-of-the-dlr-and-net-framework"></a>Poskytuje budoucí výhody DLR a .NET Framework
+ Jazyky implementované pomocí DLR můžou těžit z budoucích DLR a vylepšení .NET Framework. Například pokud .NET Framework uvolní novou verzi, která má vylepšený systém uvolňování paměti nebo rychlejší načítání sestavení, jazyky implementované pomocí DLR okamžitě získají stejnou výhodu. Pokud DLR přidá optimalizace, jako je například lepší kompilace, zlepšuje se výkon také pro všechny jazyky implementované pomocí DLR.
 
-### <a name="enables-sharing-of-libraries-and-objects"></a>Enables Sharing of Libraries and Objects
- The objects and libraries implemented in one language can be used by other languages. The DLR also enables interoperation between statically typed and dynamic languages. For example, C# can declare a dynamic object that uses a library that is written in a dynamic language. At the same time, dynamic languages can use libraries from the .NET Framework.
+### <a name="enables-sharing-of-libraries-and-objects"></a>Umožňuje sdílení knihoven a objektů.
+ Objekty a knihovny implementované v jednom jazyce mohou být používány jinými jazyky. DLR také umožňuje vzájemné operace mezi staticky napsanými a dynamickými jazyky. Například C# může deklarovat dynamický objekt, který používá knihovnu, která je napsána v dynamickém jazyce. Ve stejnou dobu mohou dynamické jazyky používat knihovny z .NET Framework.
 
-### <a name="provides-fast-dynamic-dispatch-and-invocation"></a>Provides Fast Dynamic Dispatch and Invocation
- The DLR provides fast execution of dynamic operations by supporting advanced polymorphic caching. The DLR creates rules for binding operations that use objects to the necessary runtime implementations and then caches these rules to avoid resource-exhausting binding computations during successive executions of the same code on the same types of objects.
+### <a name="provides-fast-dynamic-dispatch-and-invocation"></a>Poskytuje rychlé dynamické odeslání a vyvolání.
+ DLR poskytuje rychlé provádění dynamických operací podporou pokročilého polymorfního ukládání do mezipaměti. DLR vytvoří pravidla pro operace vazby, které používají objekty pro nezbytné implementace modulu runtime, a poté uloží tato pravidla do mezipaměti, aby nedocházelo k vyčerpání vazeb prostředků během po sobě jdoucích provádění stejného kódu na stejných typech objektů.
 
-## <a name="dlr-architecture"></a>DLR Architecture
- The following illustration shows the architecture of the dynamic language runtime.
+## <a name="dlr-architecture"></a>Architektura DLR
+ Následující ilustrace znázorňuje architekturu dynamického jazykového modulu runtime.
 
- ![Dynamic Language Runtime Architecture Overview](./media/dlr-archoverview.png "DLR_ArchOverview") DLR architecture
+ ![Přehled architektury dynamického jazykového modulu runtime](./media/dlr-archoverview.png "DLR_ArchOverview") Architektura DLR
 
- The DLR adds a set of services to the CLR for better supporting dynamic languages. These services include the following:
+ DLR přidá sadu služeb pro modul CLR pro lepší podporu dynamických jazyků. Mezi tyto služby patří následující:
 
-- Expression trees. The DLR uses expression trees to represent language semantics. For this purpose, the DLR has extended LINQ expression trees to include control flow, assignment, and other language-modeling nodes. For more information, see [Expression Trees (C#)](../../csharp/programming-guide/concepts/expression-trees/index.md) or [Expression Trees (Visual Basic)](../../visual-basic/programming-guide/concepts/expression-trees/index.md).
+- Stromy výrazů. DLR používá stromy výrazů, které reprezentují sémantiku jazyka. Pro účely tohoto účelu má DLR rozšířené stromy výrazů LINQ, aby zahrnovaly tok řízení, přiřazení a další uzly modelování jazyka. Další informace najdete v tématu [stromy výrazů (C#)](../../csharp/programming-guide/concepts/expression-trees/index.md) nebo [stromy výrazů (Visual Basic)](../../visual-basic/programming-guide/concepts/expression-trees/index.md).
 
-- Call site caching. A *dynamic call site* is a place in the code where you perform an operation like `a + b` or `a.b()` on dynamic objects. The DLR caches the characteristics of `a` and `b` (usually the types of these objects) and information about the operation. If such an operation has been performed previously, the DLR retrieves all the necessary information from the cache for fast dispatch.
+- Volání do mezipaměti webu. *Web s dynamickým voláním* je místo v kódu, kde provádíte operaci, jako je `a + b` nebo `a.b()` na dynamických objektech. DLR ukládá do mezipaměti charakteristiky `a` a `b` (obvykle typy těchto objektů) a informace o operaci. Pokud taková operace byla provedena dříve, DLR načte všechny potřebné informace z mezipaměti pro rychlé odeslání.
 
-- Dynamic object interoperability. The DLR provides a set of classes and interfaces that represent dynamic objects and operations and can be used by language implementers and authors of dynamic libraries. These classes and interfaces include <xref:System.Dynamic.IDynamicMetaObjectProvider>, <xref:System.Dynamic.DynamicMetaObject>, <xref:System.Dynamic.DynamicObject>, and <xref:System.Dynamic.ExpandoObject>.
+- Interoperabilita dynamických objektů. DLR poskytuje sadu tříd a rozhraní, které představují dynamické objekty a operace a mohou být použity v modulech pro implementaci jazyka a autorech dynamických knihoven. Mezi tyto třídy a rozhraní patří <xref:System.Dynamic.IDynamicMetaObjectProvider>, <xref:System.Dynamic.DynamicMetaObject>, <xref:System.Dynamic.DynamicObject>a <xref:System.Dynamic.ExpandoObject>.
 
-The DLR uses binders in call sites to communicate not only with the .NET Framework, but with other infrastructures and services, including Silverlight and COM. Binders encapsulate a language's semantics and specify how to perform operations in a call site by using expression trees. This enables dynamic and statically typed languages that use the DLR to share libraries and gain access to all the technologies that the DLR supports.
+DLR používá služby BIND v lokalitách volání ke komunikaci nejen s .NET Framework, ale s jinými infrastrukturami a službami, včetně Silverlight a COM. Pojiva zapouzdřuje sémantiku jazyka a určují, jak provádět operace v lokalitě volání pomocí stromů výrazů. To umožňuje dynamickým a staticky typovým jazykům, které používají DLR ke sdílení knihoven a získání přístupu ke všem technologiím, které DLR podporuje.
 
-## <a name="dlr-documentation"></a>DLR Documentation
- For more information about how to use the open source version of the DLR to add dynamic behavior to a language, or about how to enable the use of a dynamic language with the .NET Framework, see the documentation on the [IronLanguages/dlr](https://github.com/IronLanguages/dlr/tree/master/Docs) repo on GitHub.
+## <a name="dlr-documentation"></a>Dokumentace k DLR
+ Další informace o tom, jak používat Open Source verzi DLR k přidání dynamického chování do jazyka nebo o tom, jak povolit používání dynamického jazyka s .NET Framework, najdete v dokumentaci k úložišti [IronLanguages/DLR](https://github.com/IronLanguages/dlr/tree/master/Docs) na GitHubu.
 
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Dynamic.ExpandoObject>
 - <xref:System.Dynamic.DynamicObject>
-- [Common Language Runtime](../../standard/clr.md)
-- [Expression Trees (C#)](../../csharp/programming-guide/concepts/expression-trees/index.md)
-- [Expression Trees (Visual Basic)](../../visual-basic/programming-guide/concepts/expression-trees/index.md)
-- [Walkthrough: Creating and Using Dynamic Objects](../../csharp/programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)
+- [Modul CLR (Common Language Runtime)](../../standard/clr.md)
+- [Stromy výrazů (C#)](../../csharp/programming-guide/concepts/expression-trees/index.md)
+- [Stromy výrazů (Visual Basic)](../../visual-basic/programming-guide/concepts/expression-trees/index.md)
+- [Návod: vytváření a používání dynamických objektů](../../csharp/programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)

@@ -1,5 +1,5 @@
 ---
-title: Message.BodyToString Method (System.ServiceModel.Channels)
+title: Message. BodyToString – metoda (System. ServiceModel. Channels)
 author: mairaw
 ms.author: mairaw
 ms.date: 11/01/2019
@@ -18,9 +18,9 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74451204"
 ---
-# <a name="messagebodytostring-method"></a>Message.BodyToString Method
+# <a name="messagebodytostring-method"></a>Message. BodyToString – metoda
 
-Converts the message body into a string by calling the <xref:System.ServiceModel.Channels.Message.OnBodyToString%2A?displayProperty=nameWithType> method.
+Převede tělo zprávy na řetězec voláním metody <xref:System.ServiceModel.Channels.Message.OnBodyToString%2A?displayProperty=nameWithType>.
 
 ```csharp
 internal void BodyToString(XmlDictionaryWriter writer);
@@ -29,19 +29,19 @@ internal void BodyToString(XmlDictionaryWriter writer);
 ## <a name="parameters"></a>Parametry
 
 - `writer` <xref:System.Xml.XmlDictionaryWriter>\
-  The writer that is used to convert the message body to a string.
+  Zapisovač, který slouží k převodu textu zprávy na řetězec.
 
 ## <a name="remarks"></a>Poznámky
 
 > [!WARNING]
-> The `Message.BodyToString` method is internal and is not meant to be used directly in your code.
+> Metoda `Message.BodyToString` je interní a není určena pro použití přímo v kódu.
 >
-> Microsoft does not support the use of this method in a production application under any circumstance.
+> Společnost Microsoft v žádné situaci nepodporuje použití této metody v produkční aplikaci.
 
 ## <a name="requirements"></a>Požadavky
 
-**Namespace:** <xref:System.ServiceModel.Channels>
+**Obor názvů:** <xref:System.ServiceModel.Channels>
 
-**Assembly:** System.ServiceModel.dll
+**Sestavení:** System. ServiceModel. dll
 
-**.NET Framework versions:** Available since 3.0.
+**Verze .NET Framework:** K dispozici od verze 3,0.
