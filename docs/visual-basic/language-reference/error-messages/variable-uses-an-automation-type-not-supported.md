@@ -1,5 +1,5 @@
 ---
-title: Variable uses an Automation type not supported
+title: Proměnná používá typ automatizace, který se nepodporuje.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrID458
@@ -13,15 +13,15 @@ ms.locfileid: "74344831"
 ---
 # <a name="variable-uses-an-automation-type-not-supported-in-visual-basic"></a>Proměnná používá typ automatizace, který není v jazyce Visual Basic podporován.
 
-You tried to use a variable defined in a type library or object library that has a data type not supported by Visual Basic.
+Pokusili jste se použít proměnnou definovanou v knihovně typů nebo knihovně objektů, která má datový typ, který není podporován Visual Basic.
 
 ## <a name="to-correct-this-error"></a>Oprava této chyby
 
-- Use a variable of a type recognized by Visual Basic.
+- Použijte proměnnou typu rozpoznávaného funkcí Visual Basic.
 
      -nebo-
 
-- If you encounter this error while using `FileGet` or `FileGetObject`, make sure the file you are trying to use was written to with `FilePut` or `FilePutObject`.
+- Pokud k této chybě dojde při použití `FileGet` nebo `FileGetObject`, ujistěte se, že se soubor, který se pokoušíte použít, zapsal do `FilePut` nebo `FilePutObject`.
 
 ## <a name="see-also"></a>Viz také:
 

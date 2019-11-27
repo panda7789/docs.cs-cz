@@ -1,5 +1,5 @@
 ---
-title: Referenční dokumentace rozhraní .NET Framework
+title: Referenční informace k rozhraní .NET Framework
 ms.date: 07/20/2015
 helpviewer_keywords:
 - language reference [Visual Basic], .NET Framework
@@ -14,20 +14,20 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352856"
 ---
 # <a name="net-framework-reference-information-visual-basic"></a>Referenční dokumentace rozhraní .NET Framework (Visual Basic)
-This topic provides links to information about how to work with the .NET Framework class library.  
+Toto téma obsahuje odkazy na informace o tom, jak pracovat s knihovnou tříd .NET Framework.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Začínáme](../../framework/get-started/index.md)  
  Poskytuje ucelený přehled o rozhraní .NET Framework a odkazy na další materiály.  
   
  [Přehled knihovny tříd](../../standard/class-library-overview.md)  
- Introduces the classes, interfaces, and value types that help expedite and optimize the development process and provide access to system functionality.  
+ Zavádí třídy, rozhraní a typy hodnot, které vám pomůžou zrychlit a optimalizovat proces vývoje a poskytovat přístup k funkcím systému.  
   
  [Průvodce vývojem](../../framework/development-guide.md)  
- Provides a guide to all key technology areas and tasks for application development, including creating, configuring, debugging, securing, and deploying your application. This topic also provides information about dynamic programming, interoperability, extensibility, memory management, and threading.  
+ Obsahuje průvodce pro všechny klíčové oblasti technologie a úkoly pro vývoj aplikací, včetně vytváření, konfigurace, ladění, zabezpečení a nasazení vaší aplikace. Toto téma také poskytuje informace o dynamickém programování, interoperabilitě, rozšiřitelnosti, správě paměti a dělení.  
   
  [Nástroje](../../framework/tools/index.md)  
- Describes the tools that you can use to develop, configure, and deploy applications by using .NET Framework technologies.  
+ Popisuje nástroje, které můžete použít k vývoji, konfiguraci a nasazení aplikací pomocí technologie .NET Framework.  
   
- [.NET API Browser](../../../api/index.md)  
- Provides syntax, code examples, and related information for each class in the .NET Framework namespaces.
+ [.NET API – prohlížeč](../../../api/index.md)  
+ Poskytuje syntaxi, příklady kódu a související informace pro každou třídu v oborech názvů .NET Framework.

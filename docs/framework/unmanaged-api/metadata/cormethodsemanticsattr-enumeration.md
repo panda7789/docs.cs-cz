@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74442820"
 ---
 # <a name="cormethodsemanticsattr-enumeration"></a>CorMethodSemanticsAttr – výčet
-Contains values that describe the relationship between a method and an associated property or event.  
+Obsahuje hodnoty, které popisují vztah mezi metodou a přidruženou vlastností nebo událostí.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,19 +43,19 @@ typedef enum CorMethodSemanticsAttr {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`msSetter`|Specifies that the method is a `set` accessor for a property.|  
-|`msGetter`|Specifies that the method is a `get` accessor for a property.|  
-|`msOther`|Specifies that the method has a relationship to a property or an event other than those defined here.|  
-|`msAddOn`|Specifies that the method adds handler methods for an event.|  
-|`msRemoveOn`|Specifies that the method removes handler methods for an event.|  
-|`msFire`|Specifies that the method raises an event.|  
+|`msSetter`|Určuje, že metoda je `set` přistupující objekt pro vlastnost.|  
+|`msGetter`|Určuje, že metoda je `get` přistupující objekt pro vlastnost.|  
+|`msOther`|Určuje, že metoda má relaci k vlastnosti nebo jiné události, než je zde definována.|  
+|`msAddOn`|Určuje, že metoda přidá metody obslužné rutiny pro událost.|  
+|`msRemoveOn`|Určuje, že metoda odebere metody obslužné rutiny pro událost.|  
+|`msFire`|Určuje, že metoda vyvolá událost.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **Hlavička:** CorHdr. h  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

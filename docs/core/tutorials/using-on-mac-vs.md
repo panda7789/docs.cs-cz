@@ -1,6 +1,6 @@
 ---
 title: Začínáme s .NET Core v systému macOS pomocí sady Visual Studio pro Mac
-description: This topic walks you through building a simple console application using Visual Studio for Mac and .NET Core.
+description: Toto téma vás provede vytvořením jednoduché konzolové aplikace pomocí Visual Studio pro Mac a .NET Core.
 author: mairaw
 ms.date: 07/11/2019
 ms.custom: seodec18
@@ -13,52 +13,52 @@ ms.locfileid: "74428581"
 ---
 # <a name="get-started-with-net-core-on-macos-using-visual-studio-for-mac"></a>Začínáme s .NET Core v systému macOS pomocí sady Visual Studio pro Mac
 
-Visual Studio for Mac provides a full-featured Integrated Development Environment (IDE) for developing .NET Core applications. This topic walks you through building a simple console application using Visual Studio for Mac and .NET Core.
+Visual Studio pro Mac poskytuje integrované vývojové prostředí (IDE) pro vývoj aplikací .NET Core. Toto téma vás provede vytvořením jednoduché konzolové aplikace pomocí Visual Studio pro Mac a .NET Core.
 
 > [!NOTE]
-> Your feedback is highly valued. There are two ways you can provide feedback to the development team on Visual Studio for Mac:
+> Vaše zpětná vazba je vysoce ohodnocená. Existují dva způsoby, jak můžete poskytnout týmu vývoje zpětnou vazbu v Visual Studio pro Mac:
 >
-> * In Visual Studio for Mac, select **Help** > **Report a Problem** from the menu or **Report a Problem** from the Welcome screen, which will open a window for filing a bug report. Svou zpětnou vazbu sledujte na portálu [komunity vývojářů](https://developercommunity.visualstudio.com/spaces/8/index.html).
-> * To make a suggestion, select **Help** > **Provide a Suggestion** from the menu or **Provide a Suggestion** from the Welcome screen, which will take you to the [Visual Studio for Mac Developer Community webpage](https://developercommunity.visualstudio.com/content/idea/post.html?space=41).
+> * V Visual Studio pro Mac vyberte možnost **Help** > **nahlásit problém** z nabídky nebo **nahlásit problém** z úvodní obrazovky, čímž se otevře okno pro podání zprávy o chybě. Svou zpětnou vazbu sledujte na portálu [komunity vývojářů](https://developercommunity.visualstudio.com/spaces/8/index.html).
+> * Chcete-li vytvořit návrh, vyberte možnost **Help** > **poskytnout návrh** z nabídky nebo **Poskytněte návrh** z úvodní obrazovky, který vás převezme na [webovou stránku komunity pro vývojáře Visual Studio pro Mac](https://developercommunity.visualstudio.com/content/idea/post.html?space=41).
 
 ## <a name="prerequisites"></a>Požadavky
 
-See the [.NET Core dependencies and requirements](../install/dependencies.md?tabs=netcore30&pivots=os-macos) topic.
+Viz téma [závislosti a požadavky rozhraní .NET Core](../install/dependencies.md?tabs=netcore30&pivots=os-macos) .
 
-Check the [.NET Core Support](/visualstudio/mac/net-core-support) article to ensure you're using a supported version of .NET Core.
+Podívejte se na článek o [podpoře .NET Core](/visualstudio/mac/net-core-support) , abyste měli jistotu, že používáte podporovanou verzi .NET Core.
 
 ## <a name="get-started"></a>Začínáme
 
-If you've already installed the prerequisites and Visual Studio for Mac, skip this section and proceed to [Creating a project](#creating-a-project). Follow these steps to install the prerequisites and Visual Studio for Mac:
+Pokud jste již nainstalovali požadované součásti a Visual Studio pro Mac, přeskočte tuto část a pokračujte v [vytváření projektu](#creating-a-project). Pomocí těchto kroků nainstalujete požadované součásti a Visual Studio pro Mac:
 
-Download the [Visual Studio for Mac installer](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link). Run the installer. Read and accept the license agreement. During the install, select the option to install .NET Core. You're provided the opportunity to install Xamarin, a cross-platform mobile app development technology. Installing Xamarin and its related components is optional for .NET Core development. For a walk-through of the Visual Studio for Mac install process, see [Visual Studio for Mac documentation](/visualstudio/mac/). When the install is complete, start the Visual Studio for Mac IDE.
+Stáhněte [instalační program Visual Studio pro Mac](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link). Spusťte instalační program. Přečtěte si a přijměte licenční smlouvu. Během instalace vyberte možnost instalace .NET Core. Máte možnost nainstalovat Xamarin, technologii pro vývoj mobilních aplikací pro různé platformy. Instalace Xamarin a její související součásti je pro vývoj pro .NET Core volitelná. Návod k instalaci Visual Studio pro Mac procesu instalace najdete v [dokumentaci k Visual Studio pro Mac](/visualstudio/mac/). Po dokončení instalace spusťte Visual Studio pro Mac integrované vývojové prostředí (IDE).
 
-## <a name="creating-a-project"></a>Creating a project
+## <a name="creating-a-project"></a>Vytvoření projektu
 
-1. Select **New** on the Start Window.
+1. V okně Start vyberte **Nový** .
 
-   ![New button on the Visual Studio for Mac Start screen](./media/using-on-mac-vs/visual-studio-mac-new-project.png)
+   ![Tlačítko Nový na úvodní obrazovce Visual Studio pro Mac](./media/using-on-mac-vs/visual-studio-mac-new-project.png)
 
-1. In the **New Project** dialog, select **App** under the **.NET Core** node. Select the **Console Application** template followed by **Next**.
+1. V dialogovém okně **Nový projekt** vyberte v uzlu **.NET Core** možnost **aplikace** . Vyberte šablonu **Konzolová aplikace** a potom klikněte na tlačítko **Další**.
 
-   ![New project templates list](./media/using-on-mac-vs/visual-studio-mac-new-dialog.png)
+   ![Seznam nových šablon projektů](./media/using-on-mac-vs/visual-studio-mac-new-dialog.png)
 
-1. If you have more than one version of .NET Core installed, select the target framework for your project.
+1. Pokud máte nainstalovanou více než jednu verzi .NET Core, vyberte cílovou architekturu pro váš projekt.
 
-1. Type "HelloWorld" for the **Project Name**. Select **Create**.
+1. Jako **název projektu**zadejte HelloWorld. Vyberte **vytvořit**.
 
-   ![Configure your new Console Application dialog](./media/using-on-mac-vs/visual-studio-mac-new-options.png)
+   ![Dialogové okno Konfigurovat novou konzolovou aplikaci](./media/using-on-mac-vs/visual-studio-mac-new-options.png)
 
-1. Wait while the project's dependencies are restored. The project has a single C# file, *Program.cs*, containing a `Program` class with a `Main` method. The `Console.WriteLine` statement will output "Hello World!" to the console when the app is run.
+1. Počkejte, než se obnoví závislosti projektu. Projekt obsahuje jeden C# soubor *program.cs*, který obsahuje třídu `Program` s metodou `Main`. Příkaz `Console.WriteLine` zobrazí výstup "Hello World!" do konzoly nástroje při spuštění aplikace.
 
-   ![Main window with the Program.cs file open](./media/using-on-mac-vs/visual-studio-mac-editor.png)
+   ![Hlavní okno s otevřeným souborem Program.cs](./media/using-on-mac-vs/visual-studio-mac-editor.png)
 
-## <a name="run-the-application"></a>Run the application
+## <a name="run-the-application"></a>Spuštění aplikace
 
-Run the app in Debug mode using ⌘ ↵ (command + enter) or in Release mode using ⌥ ⌘ ↵ (option + command + enter).
+Spusťte aplikaci v režimu ladění pomocí ⌘ ↵ (Command + ENTER) nebo v režimu vydaných verzí s použitím ⌥ ⌘ ↵ (Option + Command + ENTER).
 
-![The Application Output pane shows Hello World!](./media/using-on-mac-vs/visual-studio-mac-output.png)
+![Podokno výstup aplikace zobrazuje Hello World!](./media/using-on-mac-vs/visual-studio-mac-output.png)
 
 ## <a name="next-step"></a>Další krok
 
-The [Building a complete .NET Core solution on macOS using Visual Studio for Mac](using-on-mac-vs-full-solution.md) topic shows you how to build a complete .NET Core solution that includes a reusable library and unit testing.
+[Vytvoření kompletního řešení .NET Core v MacOS s využitím Visual Studio pro Mac](using-on-mac-vs-full-solution.md) tématu ukazuje, jak sestavit kompletní řešení .NET Core, které zahrnuje opakovaně použitelnou knihovnu a testování částí.

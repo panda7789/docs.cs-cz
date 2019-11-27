@@ -14,7 +14,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350319"
 ---
 # <a name="textfieldparser-object"></a>TextFieldParser – objekt
-Provides methods and properties for parsing structured text files.  
+Poskytuje metody a vlastnosti pro analýzu strukturovaných textových souborů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,13 +23,13 @@ Public Class TextFieldParser
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- For information about the methods and properties of the `TextFieldParser` object, see <xref:Microsoft.VisualBasic.FileIO.TextFieldParser>.  
+ Informace o metodách a vlastnostech objektu `TextFieldParser` naleznete v tématu <xref:Microsoft.VisualBasic.FileIO.TextFieldParser>.  
   
- For more information, see [Reading from Files](../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md).  
+ Další informace najdete v tématu [čtení ze souborů](../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md).  
   
 ## <a name="requirements"></a>Požadavky  
- **Namespace:** <xref:Microsoft.VisualBasic.FileIO>  
+ **Obor názvů:** <xref:Microsoft.VisualBasic.FileIO>  
   
- **Class:** <xref:Microsoft.VisualBasic.FileIO.TextFieldParser>  
+ **Třída:** <xref:Microsoft.VisualBasic.FileIO.TextFieldParser>  
   
- **Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)
+ **Sestavení:** Knihovna Visual Basic runtime (v souboru Microsoft. VisualBasic. dll)

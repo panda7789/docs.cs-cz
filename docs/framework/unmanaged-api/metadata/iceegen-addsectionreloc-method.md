@@ -23,9 +23,9 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436406"
 ---
 # <a name="iceegenaddsectionreloc-method"></a>ICeeGen::AddSectionReloc – metoda
-Adds a .reloc instruction to the code base.  
+Přidá instrukci. přemístění do základu kódu.  
   
- This method is obsolete and should not be used.  
+ Tato metoda je zastaralá a neměla by se používat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,25 +40,25 @@ HRESULT AddSectionReloc (
   
 ## <a name="parameters"></a>Parametry  
  `section`  
- [in] The section of in-memory code to which to add a .reloc instruction.  
+ pro Část kódu v paměti, do které chcete přidat instrukci. přemístění.  
   
  `offset`  
- [in] The offset of the section.  
+ pro Posun oddílu  
   
  `relativeTo`  
- [in] The section to which `offset` refers.  
+ pro Oddíl, na který `offset` odkazuje.  
   
  `relocType`  
- [in] One of the [CeeSectionRelocType](../../../../docs/framework/unmanaged-api/metadata/ceesectionreloctype-enumeration.md) values, indicating the kind of .reloc instruction to add.  
+ pro Jedna z hodnot [CeeSectionRelocType –](../../../../docs/framework/unmanaged-api/metadata/ceesectionreloctype-enumeration.md) , která určuje druh instrukcí. přemístění, která se má přidat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

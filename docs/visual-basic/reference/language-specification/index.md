@@ -14,13 +14,13 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352868"
 ---
 # <a name="visual-basic-language-specification"></a>Specifikace jazyka Visual Basic
-The Visual Basic Language Specification is the authoritative source for answers to all questions about Visual Basic grammar and syntax. It contains detailed information about the language, including many points not covered in the Visual Basic reference documentation.  
+Specifikace jazyka Visual Basic je autoritativní zdrojem odpovědí na všechny otázky týkající se gramatiky Visual Basic a syntaxe. Obsahuje podrobné informace o jazyce, včetně mnoha bodů, které nejsou popsány v referenční dokumentaci Visual Basic.  
   
- The specification is available on the [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkId=188623).  
+ Specifikace je k dispozici na [webu Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkId=188623).  
   
-This site contains the [VB 11 specification](../../../../_vblang/spec/introduction.md). It's built from the Markdown files contained in [the dotnet/vblang GitHub repository](https://github.com/dotnet/vblang/blob/master/spec/README.md).
+Tato lokalita obsahuje [specifikaci VB 11](../../../../_vblang/spec/introduction.md). Je sestavena ze souborů Markdownu obsažených v [úložišti GitHub/Vblang GitHub](https://github.com/dotnet/vblang/blob/master/spec/README.md).
 
-Issues on the specification should be created in the [dotnet/vblang](https://github.com/dotnet/vblang/issues) repository. Or, if you're interested in fixing any errors you find, you may submit a [Pull Request](https://github.com/dotnet/vblang/pulls) to the same repository.
+V úložišti [dotnet/vblang](https://github.com/dotnet/vblang/issues) by se měly vytvořit problémy se specifikací. Nebo pokud vás zajímá, že se mají opravit všechny zjištěné chyby, můžete odeslat [žádost o](https://github.com/dotnet/vblang/pulls) přijetí změn do stejného úložiště.
 
 ## <a name="see-also"></a>Viz také:
 

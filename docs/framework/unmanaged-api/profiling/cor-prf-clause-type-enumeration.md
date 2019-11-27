@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74428396"
 ---
 # <a name="cor_prf_clause_type-enumeration"></a>COR_PRF_CLAUSE_TYPE – výčet
-Indicates the type of exception clause that the code has just entered or left.  
+Určuje typ klauzule Exception, kterou kód právě zadal, nebo doleva.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,19 +39,19 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`COR_PRF_CLAUSE_NONE`|The exception clause is not valid.|  
-|`COR_PRF_CLAUSE_FILTER`|The exception clause is a filter expression.|  
-|`COR_PRF_CLAUSE_CATCH`|The exception clause is a `catch` statement.|  
-|`COR_PRF_CLAUSE_FINALLY`|The exception clause is a `finally` statement.|  
+|`COR_PRF_CLAUSE_NONE`|Klauzule Exception není platná.|  
+|`COR_PRF_CLAUSE_FILTER`|Klauzule Exception je výraz filtru.|  
+|`COR_PRF_CLAUSE_CATCH`|Klauzule Exception je příkaz `catch`.|  
+|`COR_PRF_CLAUSE_FINALLY`|Klauzule Exception je příkaz `finally`.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -17,7 +17,7 @@ ms.locfileid: "74281778"
 
 Shromážděná data jsou anonymní a publikovaná v rámci [licence Creative](https://creativecommons.org/licenses/by/4.0/)navýšení. 
 
-## <a name="scope"></a>Rozsah
+## <a name="scope"></a>Obor
 
 `dotnet` má dvě funkce: ke spuštění aplikací a k provádění příkazů rozhraní příkazového řádku. Při použití `dotnet` k spuštění aplikace v následujícím formátu *není shromažďována* telemetrie:
 
@@ -95,8 +95,8 @@ Podmnožina příkazů odesílá vybrané možnosti, pokud jsou použity, spolu 
 |-------------------------|------------------------------------------------------------------------------------------------|
 | `--verbosity`           | Všechny příkazy                                                                                   |
 | `--language`            | `dotnet new`                                                                                   |
-| `--configuration`       | `dotnet build`, `dotnet clean`, `dotnet publish`, `dotnet run`, `dotnet test`                  |
-| `--framework`           | `dotnet build`, `dotnet clean`, `dotnet publish`, `dotnet run`, `dotnet test`, `dotnet vstest` |
+| `--configuration`       | `dotnet build`, `dotnet clean`, `dotnet publish`, `dotnet run``dotnet test`                  |
+| `--framework`           | `dotnet build`, `dotnet clean`, `dotnet publish`, `dotnet run`, `dotnet test``dotnet vstest` |
 | `--runtime`             | `dotnet build``dotnet publish`                                                              |
 | `--platform`            | `dotnet vstest`                                                                                |
 | `--logger`              | `dotnet vstest`                                                                                |

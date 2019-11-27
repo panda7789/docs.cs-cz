@@ -14,23 +14,23 @@ ms.locfileid: "74441220"
 ---
 # <a name="ui-automation-support-for-standard-controls"></a>Podpora automatizace uživatelského rozhraní pro standardní ovládací prvky
 > [!NOTE]
-> This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace. For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
+> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v oboru názvů <xref:System.Windows.Automation>. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API pro Windows Automation: automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
   
- This topic contains information about [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] support for standard controls in applications developed for the [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)], [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)], and [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] frameworks.  
+ Toto téma obsahuje informace o podpoře [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] pro standardní ovládací prvky v aplikacích vyvinutých pro [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)], [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)]a [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] architektury.  
   
 <a name="Windows_Presentation_Foundation_Controls"></a>   
-## <a name="windows-presentation-foundation-controls"></a>Windows Presentation Foundation Controls  
- All [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] control elements that provide information or support for user interaction have full native support for [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]. Other elements, such as panels, are not visible to [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].  
+## <a name="windows-presentation-foundation-controls"></a>Ovládací prvky Windows Presentation Foundation  
+ Všechny prvky ovládacího prvku [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)], které poskytují informace nebo podporu pro interakci s uživatelem, mají úplnou nativní podporu pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]. Jiné prvky, například panely, nejsou viditelné [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].  
   
 <a name="Win32_Controls"></a>   
-## <a name="win32-controls"></a>Win32 Controls  
- Most [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] controls are exposed to [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] through client-side providers in UIAutomationClientsideProviders.dll. This assembly is automatically registered for use with UI Automation client applications.  
+## <a name="win32-controls"></a>Ovládací prvky Win32  
+ Většina [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)]ch ovládacích prvků je k dispozici [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] prostřednictvím poskytovatelů na straně klienta v UIAutomationClientsideProviders. dll. Toto sestavení je automaticky registrováno pro použití s klientskými aplikacemi automatizace uživatelského rozhraní.  
   
- Full support is provided only for controls from version 6 of ComCtrl32.dll (available with [!INCLUDE[TLA#tla_winxp](../../../includes/tlasharptla-winxp-md.md)] and later).  
+ Plná podpora je k dispozici pouze pro ovládací prvky z verze 6 souboru ComCtrl32. dll (k dispozici v [!INCLUDE[TLA#tla_winxp](../../../includes/tlasharptla-winxp-md.md)] a novějším).  
   
- The following controls are supported.  
+ Podporovány jsou následující ovládací prvky.  
   
-|Class name|Control Type|  
+|Název třídy|Typ ovládacího prvku|  
 |----------------|------------------|  
 |Tlačítko|Tlačítko|  
 |Tlačítko|RadioButton|  
@@ -44,18 +44,18 @@ ms.locfileid: "74441220"
 |Upravit|Dokument|  
 |Upravit|Upravit|  
 |SysLink|Hypertextový odkaz|  
-|Static|Text|  
-|Static|Image|  
-|SysIPAddress32|Custom|  
-|SysHeader32|Header/HeaderItem|  
+|Statické|Text|  
+|Statické|Obrázek|  
+|SysIPAddress32|Vlastní|  
+|SysHeader32|Záhlaví/HeaderItem|  
 |SysListView32|DataGrid|  
 |SysListView32|Seznam|  
 |ListBox|Seznam|  
-|ListBox|ListItem|  
+|ListBox|Collection|  
 |#32768|Nabídka|  
 |#32768|MenuItem|  
 |msctls_progress32|ProgressBar|  
-|RichEdit|Document. See note.|  
+|RichEdit|dokumentů. Viz poznámka.|  
 |RichEdit20A|Dokument|  
 |RichEdit20W|Dokument|  
 |RichEdit50W|Dokument|  
@@ -63,7 +63,7 @@ ms.locfileid: "74441220"
 |msctls_trackbar32|Posuvník|  
 |msctls_updown32|Číselník|  
 |msctls_statusbar32|StatusBar|  
-|SysTabControl32|Karta|  
+|SysTabControl32|Tabulátor|  
 |SysTabControl32|TabItem|  
 |ToolbarWindow32|ToolBar|  
 |ToolbarWindow32|MenuItem|  
@@ -77,26 +77,26 @@ ms.locfileid: "74441220"
 |SysTreeView32|Strom|  
 |SysTreeView32|TreeItem|  
   
- **Note** The RichEdit control is supported only for versions shipped with Windows Vista (in RichEd20.dll version 3.1 and later, and MsftEdit.dll version 4.1 and later).  
+ **Poznámka:** Ovládací prvek RichEdit je podporován pouze pro verze dodávané se systémem Windows Vista (v knihovny Riched20. dll verze 3,1 a novější a MsftEdit. dll verze 4,1 a novější).  
   
- The following controls are not supported.  
+ Následující ovládací prvky nejsou podporovány.  
   
-|Class name|Control type|  
+|Název třídy|Typ ovládacího prvku|  
 |----------------|------------------|  
-|SysAnimate32|Image|  
+|SysAnimate32|Obrázek|  
 |SysPager|Číselník|  
-|SysDateTimePick32|Custom|  
+|SysDateTimePick32|Vlastní|  
 |SysMonthCal32|Kalendář|  
-|MS_WINNOTE|Tooltip|  
-|VBBubble|Tooltip|  
-|ScrollBar (when used as a standalone control)|Posuvník|  
-|SuperGrid|Custom|  
+|MS_WINNOTE|okna|  
+|VBBubble|okna|  
+|ScrollBar (při použití jako samostatného ovládacího prvku)|Posuvník|  
+|SuperGrid|Vlastní|  
   
 <a name="Windows_Forms_Controls"></a>   
 ## <a name="windows-forms-controls"></a>Ovládací prvky Windows Forms  
- Windows Forms controls are exposed to [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] through client-side providers in UIAutomationClientsideProviders.dll. This assembly is automatically registered for use with UI Automation client applications.  
+ Ovládací prvky model Windows Forms jsou zpřístupněny [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] prostřednictvím poskytovatelů na straně klienta v knihovně UIAutomationClientsideProviders. dll. Toto sestavení je automaticky registrováno pro použití s klientskými aplikacemi automatizace uživatelského rozhraní.  
   
- Typically, Windows Forms controls that are managed wrappers for [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] common controls are supported by [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]. The following controls are supported.  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]podporuje obvykle model Windows Forms ovládací prvky, které jsou spravované obálky pro [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] běžné ovládací prvky. Podporovány jsou následující ovládací prvky.  
   
 |Název třídy|  
 |----------------|  
@@ -109,11 +109,11 @@ ms.locfileid: "74441220"
 |FontDialog|  
 |GroupBox|  
 |HscrollBar|  
-|ImageList|  
+|Obrázků|  
 |Popisek|  
 |ListBox|  
 |ListView|  
-|MainMenu/ContextMenu|  
+|MainMenu/vynabídku|  
 |MonthCalendar|  
 |NotifyIcon|  
 |OpenFileDialog|  
@@ -124,7 +124,7 @@ ms.locfileid: "74441220"
 |RichTextBox|  
 |SaveFileDialog|  
 |ScrollableControl|  
-|SoundPlayer|  
+|Komponentu|  
 |StatusBar|  
 |TabControl/TabPage|  
 |TextBox|  
@@ -134,23 +134,23 @@ ms.locfileid: "74441220"
 |TrackBar|  
 |TreeView|  
 |VscrollBar|  
-|WebBrowser|  
+|Navig|  
   
- The following controls are exposed to [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] only through their support for Microsoft Active Accessibility. Some functionality may not be available.  
+ Následující ovládací prvky jsou k dispozici pro [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] jenom prostřednictvím jejich podpory pro Microsoft Active Accessibility. Některé funkce nemusí být k dispozici.  
   
-|Control Name|  
+|Název ovládacího prvku|  
 |------------------|  
 |BindingSource|  
 |DataGrid|  
-|DataGridView|  
-|DataNavigator|  
+|Ovládací prvek DataGridView|  
+|Datanavigator|  
 |DomainUpDown|  
 |ErrorProvider|  
-|FlowLayoutPanel|  
+|Kontejneru|  
 |Formulář|  
 |LinkLabel|  
-|HelpProvider|  
-|MaskedTextBox|  
+|HelpProvider –|  
+|Ovládacím MaskedTextBox|  
 |MenuStrip/ContextMenuStrip|  
 |NumericUpDown|  
 |Panel|  
@@ -158,13 +158,13 @@ ms.locfileid: "74441220"
 |PrintDocument|  
 |PrintPreview-Control|  
 |PrintPreview-Dialog|  
-|PropertyGrid|  
-|UserControl|  
+|Mřížky|  
+|Type|  
 |ToolStrip|  
 |TableLayoutPanel|  
 |SplitContainer/SplitterPanel|  
-|Splitter|  
-|RaftingContainer|  
+|Rozdělovač|  
+|Ovládacím RaftingContainer|  
 |StatusStrip|  
   
 ## <a name="see-also"></a>Viz také:

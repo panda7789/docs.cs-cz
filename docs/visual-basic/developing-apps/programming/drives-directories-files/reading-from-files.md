@@ -17,55 +17,55 @@ ms.locfileid: "74333826"
 ---
 # <a name="reading-from-files-in-visual-basic"></a>Čtení ze souborů v jazyce Visual Basic
 
-This section explains how to perform tasks that are associated with reading from files.  
+V této části se dozvíte, jak provádět úlohy spojené se čtením ze souborů.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
 
- [How to: Read from Text Files](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files.md)  
- Demonstrates how to read from a text file.  
+ [Postupy: čtení z textových souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files.md)  
+ Ukazuje, jak číst z textového souboru.  
   
  [Postupy: Čtení z textových souborů s oddělovačem čárkou](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-comma-delimited-text-files.md)  
- Demonstrates how to read from a delimited text file.  
+ Ukazuje, jak číst z textového souboru s oddělovači.  
   
  [Postupy: Čtení z textových souborů s pevnou šířkou](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-fixed-width-text-files.md)  
- Demonstrates how to read from a fixed-width text file.  
+ Ukazuje, jak číst z textového souboru s pevnou šířkou.  
   
  [Postupy: Čtení z textových souborů ve více formátech](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md)  
- Demonstrates how to read from a text file with multiple formats.  
+ Ukazuje, jak číst z textového souboru s více formáty.  
   
  [Postupy: Čtení z binárních souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-binary-files.md)  
- Demonstrates how to read from a binary file.  
+ Ukazuje, jak číst z binárního souboru.  
   
  [Postupy: Čtení textu ze souborů pomocí třídy StreamReader](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-text-from-files-with-a-streamreader.md)  
- Demonstrates how to use a <xref:System.IO.StreamReader> to read from a file.  
+ Ukazuje, jak použít <xref:System.IO.StreamReader> ke čtení ze souboru.  
   
 ## <a name="reference"></a>Odkaz  
 
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>  
- Describes the `My.Computer.FileSystem` object and its members.  
+ Popisuje objekt `My.Computer.FileSystem` a jeho členy.  
   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.ReadAllText%2A>  
- Describes the `ReadAllText` method.  
+ Popisuje metodu `ReadAllText`.  
   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.ReadAllBytes%2A>  
- Describes the `ReadAllBytes` method.  
+ Popisuje metodu `ReadAllBytes`.  
   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFieldParser%2A>  
- Describes the `OpenTextFieldParser` method.  
+ Popisuje metodu `OpenTextFieldParser`.  
   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileReader%2A>  
- Describes the `OpenTextFileReader` method.  
+ Popisuje metodu `OpenTextFileReader`.  
   
 ## <a name="related-sections"></a>Související oddíly  
 
  [Ukládání dat do schránky a čtení ze schránky](../../../../visual-basic/developing-apps/programming/computer-resources/storing-data-to-and-reading-from-the-clipboard.md)  
- Explains how to perform tasks that are associated with `My.Computer.Clipboard`, such as reading data from or writing data to the Clipboard.  
+ Vysvětluje, jak provádět úlohy, které jsou spojeny s `My.Computer.Clipboard`, například čtení dat z nebo zápis dat do schránky.  
   
  [Analýza textových souborů pomocí objektu TextFieldParser](../../../../visual-basic/developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)  
- Provides an overview of reading text files with the `TextFieldParser` object.  
+ Poskytuje přehled o čtení textových souborů s objektem `TextFieldParser`.  
   
- [Walkthrough: Manipulating Files and Directories in Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)  
- Demonstrates how to use the `My` feature with files and directories.  
+ [Návod: manipulace se soubory a adresáři v Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)  
+ Ukazuje, jak používat funkci `My` se soubory a adresáři.  
   
  [Návod: Práce se soubory pomocí metod rozhraní .NET Framework](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)  
- Demonstrates how to use .NET Framework methods with files and directories.
+ Ukazuje, jak používat metody .NET Framework se soubory a adresáři.

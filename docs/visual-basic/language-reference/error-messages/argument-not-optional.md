@@ -13,13 +13,13 @@ ms.locfileid: "74353899"
 ---
 # <a name="argument-not-optional-visual-basic"></a>Argument není nepovinný (Visual Basic).
 
-The number and types of arguments must match those expected. Either there is an incorrect number of arguments, or an omitted argument is not optional. An argument can only be omitted from a call to a user-defined procedure if it was declared `Optional` in the procedure definition.  
+Počet a typy argumentů musí odpovídat očekávaným hodnotám. Buď existuje nesprávný počet argumentů, nebo vynechaný argument není povinný. Argument může být vynechán pouze voláním uživatelsky definované procedury, pokud byl deklarován `Optional` v definici procedury.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Supply all necessary arguments.  
+1. Zadejte všechny potřebné argumenty.  
   
-2. Make sure omitted arguments are optional. If they are not, either supply the argument in the call, or declare the parameter `Optional` in the definition.  
+2. Ujistěte se, že vynechané argumenty jsou volitelné. Pokud nejsou, zadejte argument do volání nebo deklarujte parametr `Optional` v definici.  
   
 ## <a name="see-also"></a>Viz také:
 

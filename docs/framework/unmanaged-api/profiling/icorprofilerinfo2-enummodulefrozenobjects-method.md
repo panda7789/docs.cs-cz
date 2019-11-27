@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436047"
 ---
 # <a name="icorprofilerinfo2enummodulefrozenobjects-method"></a>ICorProfilerInfo2::EnumModuleFrozenObjects – metoda
-Gets an enumerator that allows iteration over the frozen objects in the specified module.This method is obsolete.  
+Získá enumerátor, který umožňuje iteraci přes zmrazené objekty v zadaném modulu. Tato metoda je zastaralá.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,19 +35,19 @@ HRESULT EnumModuleFrozenObjects(
   
 ## <a name="parameters"></a>Parametry  
  `moduleID`  
- [in] The ID of the module that contains the frozen objects to be enumerated.  
+ pro ID modulu obsahujícího zmrazené objekty, které mají být vyčísleny  
   
  `ppEnum`  
- [out] A pointer to the address of an [ICorProfilerObjectEnum](../../../../docs/framework/unmanaged-api/profiling/icorprofilerobjectenum-interface.md) interface, which enumerates the frozen objects.  
+ mimo Ukazatel na adresu rozhraní [ICorProfilerObjectEnum](../../../../docs/framework/unmanaged-api/profiling/icorprofilerobjectenum-interface.md) , které vyčísluje zmrazené objekty.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** 3.5, 3.0 SP1, 3.0, 2.0 SP1, 2.0  
+ **Verze .NET Framework:** 3,5, 3,0 SP1, 3,0, 2,0 SP1, 2,0  
   
 ## <a name="see-also"></a>Viz také:
 

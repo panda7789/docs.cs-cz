@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449883"
 ---
 # <a name="icorprofilerinfosetilfunctionbody-method"></a>ICorProfilerInfo::SetILFunctionBody – metoda
-Replaces the body of the specified function in the specified module.  
+Nahradí tělo zadané funkce v zadaném modulu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,29 +36,29 @@ HRESULT SetILFunctionBody(
   
 ## <a name="parameters"></a>Parametry  
  `moduleId`  
- [in] The ID of the module in which the function resides.  
+ pro ID modulu, ve kterém je funkce umístěna.  
   
  `methodid`  
- [in] The token of the function for which to replace the body.  
+ pro Token funkce, pro kterou má být nahrazena tělo  
   
  `pbNewILMethodHeader`  
- [in] The new header for the function.  
+ pro Nové záhlaví funkce  
   
 ## <a name="remarks"></a>Poznámky  
- The `SetILFunctionBody` method replaces the relative virtual address of the function in the metadata so that it points to the new function body, and adjusts any internal data structures as required.  
+ Metoda `SetILFunctionBody` nahradí relativní virtuální adresu funkce v metadatech tak, aby odkazovala na nový text funkce, a podle potřeby upraví všechny interní datové struktury.  
   
- The `SetILFunctionBody` method can be called on only those functions that have never been compiled by a just-in-time (JIT) compiler.  
+ Metodu `SetILFunctionBody` lze volat pouze pro funkce, které nebyly nikdy zkompilovány kompilátorem JIT (just-in-time).  
   
- Use the [ICorProfilerInfo::GetILFunctionBodyAllocator](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getilfunctionbodyallocator-method.md) method to allocate space for the new method to ensure that the buffer is compatible.  
+ Pomocí metody [ICorProfilerInfo:: GetILFunctionBodyAllocator –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getilfunctionbodyallocator-method.md) přidělte místo pro novou metodu, aby byla zajištěna kompatibilita vyrovnávací paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

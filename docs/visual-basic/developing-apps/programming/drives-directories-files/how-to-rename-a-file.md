@@ -14,39 +14,39 @@ ms.locfileid: "74334542"
 ---
 # <a name="how-to-rename-a-file-in-visual-basic"></a>Postupy: Přejmenování souboru v jazyce Visual Basic
 
-Use the `RenameFile` method of the `My.Computer.FileSystem` object to rename a file by supplying the current location, file name, and the new file name. This method cannot be used to move a file; use the `MoveFile` method to move and rename the file.  
+Použijte metodu `RenameFile` objektu `My.Computer.FileSystem` k přejmenování souboru zadáním aktuálního umístění, názvu souboru a nového názvu souboru. Tuto metodu nelze použít k přesunutí souboru. k přesunutí a přejmenování souboru použijte metodu `MoveFile`.  
   
-### <a name="to-rename-a-file"></a>To rename a file  
+### <a name="to-rename-a-file"></a>Přejmenování souboru  
   
-- Use the `My.Computer.FileSystem.RenameFile` method to rename a file. This example renames the file named `Test.txt` to `SecondTest.txt`.  
+- K přejmenování souboru použijte metodu `My.Computer.FileSystem.RenameFile`. Tento příklad přejmenuje soubor s názvem `Test.txt` na `SecondTest.txt`.  
   
      [!code-vb[VbVbcnMyFileSystem#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#9)]  
   
- This code example is also available as an IntelliSense code snippet. In the code snippet picker, the snippet is located in **File system - Processing Drives, Folders, and Files**. For more information, see [Code Snippets](/visualstudio/ide/code-snippets).  
+ Tento příklad kódu je také k dispozici jako fragment kódu technologie IntelliSense. Ve výběru fragmentu kódu je fragment kódu umístěný v **systému souborů, ve kterém se zpracovávají jednotky, složky a soubory**. Další informace naleznete v tématu [fragmenty kódu](/visualstudio/ide/code-snippets).  
   
 ## <a name="robust-programming"></a>Robustní programování  
 
  Následující podmínky mohou způsobit výjimku:  
   
-- The path is not valid for one of the following reasons: it is a zero-length string, it contains only white space, it contains invalid characters, or it is a device path (starts with \\\\.\\) (<xref:System.ArgumentException>).  
+- Cesta není platná z některého z následujících důvodů: Jedná se o řetězec o nulové délce, obsahuje pouze prázdné znaky, obsahuje neplatné znaky nebo se jedná o cestu k zařízení (začíná na \\\\.\\) (<xref:System.ArgumentException>).  
   
-- `newName` contains path information (<xref:System.ArgumentException>).  
+- `newName` obsahuje informace o cestě (<xref:System.ArgumentException>).  
   
-- The path is not valid because it is `Nothing` (<xref:System.ArgumentNullException>).  
+- Cesta není platná, protože je `Nothing` (<xref:System.ArgumentNullException>).  
   
-- `newName` is `Nothing` or an empty string (<xref:System.ArgumentNullException>).  
+- `newName` je `Nothing` nebo prázdný řetězec (<xref:System.ArgumentNullException>).  
   
-- The source file is not valid or does not exist (<xref:System.IO.FileNotFoundException>).  
+- Zdrojový soubor není platný nebo neexistuje (<xref:System.IO.FileNotFoundException>).  
   
-- There is an existing file or directory with the name specified in `newName` (<xref:System.IO.IOException>).  
+- Existuje existující soubor nebo adresář s názvem zadaným v `newName` (<xref:System.IO.IOException>).  
   
-- The path exceeds the system-defined maximum length (<xref:System.IO.PathTooLongException>).  
+- Cesta překračuje maximální povolenou délku systému (<xref:System.IO.PathTooLongException>).  
   
-- A file or directory name in the path contains a colon (:) or is in an invalid format (<xref:System.NotSupportedException>).  
+- Název souboru nebo adresáře v cestě obsahuje dvojtečku (:) nebo má neplatný formát (<xref:System.NotSupportedException>).  
   
-- The user lacks necessary permissions to view the path (<xref:System.Security.SecurityException>).  
+- Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).  
   
-- The user does not have the required permission (<xref:System.UnauthorizedAccessException>).  
+- Uživatel nemá požadované oprávnění (<xref:System.UnauthorizedAccessException>).  
   
 ## <a name="see-also"></a>Viz také:
 

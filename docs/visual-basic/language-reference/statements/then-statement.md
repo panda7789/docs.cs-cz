@@ -12,12 +12,12 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352804"
 ---
 # <a name="then-statement"></a>Then – příkaz
-Introduces a statement block to be compiled or executed if a tested condition is true.  
+Zavádí blok příkazů, který se má zkompilovat nebo provést, pokud je testovaná podmínka pravdivá.  
   
 ## <a name="remarks"></a>Poznámky  
- The `Then` keyword can be used in these contexts:  
+ Klíčové slovo `Then` lze použít v těchto kontextech:  
   
- [#If...Then...#Else Directive](../../../visual-basic/language-reference/directives/if-then-else-directives.md)  
+ [#If... Then... #Else – direktiva](../../../visual-basic/language-reference/directives/if-then-else-directives.md)  
   
  [Příkaz If...Then...Else](../../../visual-basic/language-reference/statements/if-then-else-statement.md)  
   

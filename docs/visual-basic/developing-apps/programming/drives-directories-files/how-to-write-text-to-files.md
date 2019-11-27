@@ -16,21 +16,21 @@ ms.locfileid: "74334464"
 ---
 # <a name="how-to-write-text-to-files-in-visual-basic"></a>Postupy: Zápis textu do souborů v jazyce Visual Basic
 
-The <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A> method can be used to write text to files. If the specified file does not exist, it is created.  
+Metodu <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A> lze použít k zápisu textu do souborů. Pokud zadaný soubor neexistuje, vytvoří se.  
   
 ## <a name="procedure"></a>Postup  
   
-#### <a name="to-write-text-to-a-file"></a>To write text to a file  
+#### <a name="to-write-text-to-a-file"></a>Zápis textu do souboru  
   
-- Use the `WriteAllText` method to write text to a file, specifying the file and text to be written. This example writes the line `"This is new text."` to the file named `test.txt`, appending the text to any existing text in the file.  
+- Použijte metodu `WriteAllText` k zápisu textu do souboru, zadání souboru a textu, který se má zapsat. Tento příklad zapíše řádek `"This is new text."` do souboru s názvem `test.txt`a připojí text k jakémukoli existujícímu textu v souboru.  
   
      [!code-vb[VbFileIOWrite#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIOWrite/VB/Class1.vb#3)]  
   
-#### <a name="to-write-a-series-of-strings-to-a-file"></a>To write a series of strings to a file  
+#### <a name="to-write-a-series-of-strings-to-a-file"></a>Zápis řady řetězců do souboru  
   
-- Loop through the string collection. Use the `WriteAllText` method to write text to a file, specifying the target file and string to be added and setting `append` to `True`.  
+- Smyčka prostřednictvím kolekce řetězců. Použijte metodu `WriteAllText` k zápisu textu do souboru, zadání cílového souboru a řetězce, který chcete přidat, a nastavení `append` na `True`.  
   
-     This example writes the names of the files in the `Documents and Settings` directory to `FileList.txt`, inserting a carriage return between each for better readability.  
+     Tento příklad zapíše názvy souborů v adresáři `Documents and Settings`, aby se `FileList.txt`, takže se do každého z nich vloží znak pro lepší čitelnost.  
   
      [!code-vb[VbFileIOWrite#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIOWrite/VB/Class1.vb#4)]  
   
@@ -38,26 +38,26 @@ The <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A> method can be
 
  Následující podmínky mohou způsobit výjimku:  
   
-- The path is not valid for one of the following reasons: it is a zero-length string, it contains only white space, it contains invalid characters, or it is a device path (starts with \\\\.\\) (<xref:System.ArgumentException>).  
+- Cesta není platná z některého z následujících důvodů: Jedná se o řetězec o nulové délce, obsahuje pouze prázdné znaky, obsahuje neplatné znaky nebo se jedná o cestu k zařízení (začíná na \\\\.\\) (<xref:System.ArgumentException>).  
   
-- The path is not valid because it is `Nothing` (<xref:System.ArgumentNullException>).  
+- Cesta není platná, protože je `Nothing` (<xref:System.ArgumentNullException>).  
   
-- `File` points to a path that does not exist (<xref:System.IO.FileNotFoundException> or <xref:System.IO.DirectoryNotFoundException>).  
+- `File` odkazuje na cestu, která neexistuje (<xref:System.IO.FileNotFoundException> nebo <xref:System.IO.DirectoryNotFoundException>).  
   
-- The file is in use by another process, or an I/O error occurs (<xref:System.IO.IOException>).  
+- Soubor je používán jiným procesem nebo dojde k vstupně-výstupní chybě (<xref:System.IO.IOException>).  
   
-- The path exceeds the system-defined maximum length (<xref:System.IO.PathTooLongException>).  
+- Cesta překračuje maximální povolenou délku systému (<xref:System.IO.PathTooLongException>).  
   
-- A file or directory name in the path contains a colon (:) or is in an invalid format (<xref:System.NotSupportedException>).  
+- Název souboru nebo adresáře v cestě obsahuje dvojtečku (:) nebo má neplatný formát (<xref:System.NotSupportedException>).  
   
-- The user lacks necessary permissions to view the path (<xref:System.Security.SecurityException>).  
+- Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).  
   
-- The disk is full, and the call to `WriteAllText` fails (<xref:System.IO.IOException>).  
+- Disk je plný a volání `WriteAllText` se nezdařilo (<xref:System.IO.IOException>).  
   
- If you are running in a partial-trust context, the code might throw an exception due to insufficient privileges. For more information, see [Code Access Security Basics](../../../../framework/misc/code-access-security-basics.md).  
+ Pokud používáte v kontextu s částečným vztahem důvěryhodnosti, může kód vyvolat výjimku z důvodu nedostatečných oprávnění. Další informace najdete v tématu [Základy zabezpečení přístupu ke kódu](../../../../framework/misc/code-access-security-basics.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A>
-- [How to: Read from Text Files](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files.md)
+- [Postupy: čtení z textových souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files.md)

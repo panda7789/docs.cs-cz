@@ -25,10 +25,10 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353842"
 ---
 # <a name="of-clause-visual-basic"></a>Of – klauzule (Visual Basic)
-Introduces an `Of` clause, which identifies a *type parameter* on a *generic* class, structure, interface, delegate, or procedure. For information on generic types, see [Generic Types in Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md).  
+Zavádí klauzuli `Of`, která identifikuje *parametr typu* pro *obecnou* třídu, strukturu, rozhraní, delegáta nebo proceduru. Informace o obecných typech naleznete v tématu [Obecné typy v Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md).  
   
-## <a name="using-the-of-keyword"></a>Using the Of Keyword  
- The following code example uses the `Of` keyword to define the outline of a class that takes two type parameters. It *constrains* the `keyType` parameter by the <xref:System.IComparable> interface, which means the consuming code must supply a type argument that implements <xref:System.IComparable>. This is necessary so that the `add` procedure can call the <xref:System.IComparable.CompareTo%2A?displayProperty=nameWithType> method. For more information on constraints, see [Type List](../../../visual-basic/language-reference/statements/type-list.md).  
+## <a name="using-the-of-keyword"></a>Použití klíčového slova of  
+ Následující příklad kódu používá klíčové slovo `Of` k definování obrysu třídy, která přijímá dva parametry typu. *Omezuje* parametr `keyType` rozhraním <xref:System.IComparable>, což znamená, že nenáročného kódu musí zadat argument typu, který implementuje <xref:System.IComparable>. To je nezbytné, aby `add` procedura mohla volat metodu <xref:System.IComparable.CompareTo%2A?displayProperty=nameWithType>. Další informace o omezeních najdete v tématu [seznam typů](../../../visual-basic/language-reference/statements/type-list.md).  
   
 ```vb  
 Public Class Dictionary(Of entryType, keyType As IComparable)  
@@ -42,15 +42,15 @@ Public Class Dictionary(Of entryType, keyType As IComparable)
 End Class  
 ```  
   
- If you complete the preceding class definition, you can construct a variety of `dictionary` classes from it. The types you supply to `entryType` and `keyType` determine what type of entry the class holds and what type of key it associates with each entry. Because of the constraint, you must supply to `keyType` a type that implements <xref:System.IComparable>.  
+ Pokud dokončíte definici předchozí třídy, můžete z ní vytvořit různé třídy `dictionary`. Typy, které zadáte pro `entryType` a `keyType` určení, jaký typ položky má třída obsahovat a jaký typ klíče přidruží ke každé položce. Z důvodu omezení musíte zadat, aby `keyType` typ, který implementuje <xref:System.IComparable>.  
   
- The following code example creates an object that holds `String` entries and associates an `Integer` key with each one. `Integer` implements <xref:System.IComparable> and therefore satisfies the constraint on `keyType`.  
+ Následující příklad kódu vytvoří objekt, který obsahuje položky `String` a přidruží k každé z nich `Integer` klíč. `Integer` implementuje <xref:System.IComparable> a proto splňuje omezení na `keyType`.  
   
 ```vb  
 Dim d As New dictionary(Of String, Integer)  
 ```  
   
- The `Of` keyword can be used in these contexts:  
+ Klíčové slovo `Of` lze použít v těchto kontextech:  
   
  [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)  
   
@@ -68,6 +68,6 @@ Dim d As New dictionary(Of String, Integer)
 
 - <xref:System.IComparable>
 - [Seznam typů](../../../visual-basic/language-reference/statements/type-list.md)
-- [Generic Types in Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
-- [In](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md)
-- [Out](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)
+- [Obecné typy v Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [Pro](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md)
+- [Mimo](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)

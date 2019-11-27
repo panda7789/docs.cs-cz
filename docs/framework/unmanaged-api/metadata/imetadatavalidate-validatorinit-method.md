@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74443600"
 ---
 # <a name="imetadatavalidatevalidatorinit-method"></a>IMetaDataValidate::ValidatorInit – metoda
-Sets a flag that specifies the type of the module in the current metadata scope, and registers the specified callback method for validation errors.  
+Nastaví příznak, který určuje typ modulu v aktuálním oboru metadat a registruje zadanou metodu zpětného volání pro chyby ověření.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,19 +36,19 @@ HRESULT ValidatorInit (
   
 ## <a name="parameters"></a>Parametry  
  `dwModule`  
- [in] A value of the [CorValidatorModuleType](../../../../docs/framework/unmanaged-api/metadata/corvalidatormoduletype-enumeration.md) enumeration that specifies the type of the module in the current metadata scope.  
+ pro Hodnota výčtu [CorValidatorModuleType –](../../../../docs/framework/unmanaged-api/metadata/corvalidatormoduletype-enumeration.md) , která určuje typ modulu v aktuálním oboru metadat.  
   
  `pUnk`  
- [in] A pointer to an [IUnknown](/cpp/atl/iunknown) instance that serves as a function callback for validation errors.  
+ pro Ukazatel na instanci [IUnknown](/cpp/atl/iunknown) , který slouží jako zpětné volání funkce pro chyby ověřování.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

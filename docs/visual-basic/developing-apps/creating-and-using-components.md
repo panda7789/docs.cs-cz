@@ -13,59 +13,59 @@ ms.locfileid: "74330300"
 ---
 # <a name="creating-and-using-components-in-visual-basic"></a>Vytváření a používání součástí v jazyce Visual Basic
 
-A *component* is a class that implements the <xref:System.ComponentModel.IComponent?displayProperty=nameWithType> interface or that derives directly or indirectly from a class that implements <xref:System.ComponentModel.IComponent>. A .NET Framework component is an object that is reusable, can interact with other objects, and provides control over external resources and design-time support.  
+*Komponenta* je třída, která implementuje rozhraní <xref:System.ComponentModel.IComponent?displayProperty=nameWithType> nebo která je odvozena přímo nebo nepřímo ze třídy, která implementuje <xref:System.ComponentModel.IComponent>. Komponenta .NET Framework je objekt, který lze opakovaně použít, může komunikovat s ostatními objekty a poskytuje kontrolu nad externími prostředky a podporou v době návrhu.  
   
- An important feature of components is that they are designable, which means that a class that is a component can be used in the Visual Studio Integrated Development Environment. A component can be added to the Toolbox, dragged and dropped onto a form, and manipulated on a design surface. Notice that base design-time support for components is built into the .NET Framework; a component developer does not have to do any additional work to take advantage of the base design-time functionality.  
+ Důležitou funkcí komponent je, že mohou být navržené, což znamená, že třída, která je komponentou, může být použita v integrovaném vývojovém prostředí sady Visual Studio. Komponentu lze přidat do sady nástrojů, přetáhnout ji do formuláře a manipulovat na návrhové ploše. Všimněte si, že základní podpora pro součásti v době návrhu je integrovaná do .NET Framework; Vývojář komponent nemusí provádět žádnou další práci, aby mohl využívat základní funkce pro dobu návrhu.  
   
- A *control* is similar to a component, as both are designable. However, a control provides a user interface, while a component does not. A control must derive from one of the base control classes: <xref:System.Windows.Forms.Control> or <xref:System.Web.UI.Control>.  
+ *Ovládací prvek* je podobný komponentě, protože obě jsou navržené. Ovládací prvek však poskytuje uživatelské rozhraní, zatímco komponenta nikoli. Ovládací prvek musí být odvozen od jedné ze základních tříd ovládacích prvků: <xref:System.Windows.Forms.Control> nebo <xref:System.Web.UI.Control>.  
   
-## <a name="when-to-create-a-component"></a>When to Create a Component  
+## <a name="when-to-create-a-component"></a>Kdy vytvořit komponentu  
 
- If your class will be used on a design surface (such as the Windows Forms or Web Forms Designer) but has no user interface, it should be a component and implement <xref:System.ComponentModel.IComponent>, or derive from a class that directly or indirectly implements <xref:System.ComponentModel.IComponent>.  
+ Pokud bude vaše třída použita na návrhové ploše (například model Windows Forms nebo Návrhář webových formulářů), ale nemá žádné uživatelské rozhraní, měla by být součástí a implementovat <xref:System.ComponentModel.IComponent>, nebo musí být odvozena od třídy, která přímo nebo nepřímo implementuje <xref:System.ComponentModel.IComponent>.  
   
- The <xref:System.ComponentModel.Component> and <xref:System.ComponentModel.MarshalByValueComponent> classes are base implementations of the <xref:System.ComponentModel.IComponent> interface. The main difference between these classes is that the <xref:System.ComponentModel.Component> class is marshaled by reference, while <xref:System.ComponentModel.IComponent> is marshaled by value. The following list provides broad guidelines for implementers.  
+ Třídy <xref:System.ComponentModel.Component> a <xref:System.ComponentModel.MarshalByValueComponent> jsou základními implementacemi rozhraní <xref:System.ComponentModel.IComponent>. Hlavním rozdílem mezi těmito třídami je, že třída <xref:System.ComponentModel.Component> je zařazena odkazem, zatímco <xref:System.ComponentModel.IComponent> je zařazena podle hodnoty. Následující seznam poskytuje široké pokyny pro implementátory.  
   
-- If your component needs to be marshaled by reference, derive from <xref:System.ComponentModel.Component>.  
+- Pokud vaše komponenta musí být zařazená odkazem, odvodit z <xref:System.ComponentModel.Component>.  
   
-- If your component needs to be marshaled by value, derive from <xref:System.ComponentModel.MarshalByValueComponent>.  
+- Pokud vaše komponenta musí být zařazena podle hodnoty, odvodit z <xref:System.ComponentModel.MarshalByValueComponent>.  
   
-- If your component cannot derive from one of the base implementations due to single inheritance, implement <xref:System.ComponentModel.IComponent>.  
+- Pokud vaše komponenta nemůže být odvozena z jedné základní implementace z důvodu jedné dědičnosti, implementujte <xref:System.ComponentModel.IComponent>.  
   
 ## <a name="component-classes"></a>Třídy komponent  
 
- The <xref:System.ComponentModel> namespace provides classes that are used to implement the run-time and design-time behavior of components and controls. This namespace includes the base classes and interfaces for implementing attributes and type converters, binding to data sources, and licensing components.  
+ Obor názvů <xref:System.ComponentModel> poskytuje třídy, které slouží k implementaci chování komponent a ovládacích prvků za běhu a při návrhu. Tento obor názvů zahrnuje základní třídy a rozhraní pro implementaci atributů a převaděčů typů, vázání na zdroje dat a součásti licencování.  
   
- The core component classes are:  
+ Základní třídy komponenty jsou:  
   
-- <xref:System.ComponentModel.Component>. A base implementation for the <xref:System.ComponentModel.IComponent> interface. This class enables object sharing between applications.  
+- <xref:System.ComponentModel.Component>. Základní implementace rozhraní <xref:System.ComponentModel.IComponent>. Tato třída umožňuje sdílení objektů mezi aplikacemi.  
   
-- <xref:System.ComponentModel.MarshalByValueComponent>. A base implementation for the <xref:System.ComponentModel.IComponent> interface.  
+- <xref:System.ComponentModel.MarshalByValueComponent>. Základní implementace rozhraní <xref:System.ComponentModel.IComponent>.  
   
-- <xref:System.ComponentModel.Container>. The base implementation for the <xref:System.ComponentModel.IContainer> interface. This class encapsulates zero or more components.  
+- <xref:System.ComponentModel.Container>. Základní implementace rozhraní <xref:System.ComponentModel.IContainer>. Tato třída zapouzdřuje nula nebo více součástí.  
   
- Some of the classes used for component licensing are:  
+ Mezi třídy používané při licencování komponent patří:  
   
-- <xref:System.ComponentModel.License>. The abstract base class for all licenses. A license is granted to a specific instance of a component.  
+- <xref:System.ComponentModel.License>. Abstraktní základní třída pro všechny licence Licence je udělena konkrétní instanci komponenty.  
   
-- <xref:System.ComponentModel.LicenseManager>. Provides properties and methods to add a license to a component and to manage a <xref:System.ComponentModel.LicenseProvider>.  
+- <xref:System.ComponentModel.LicenseManager>. Poskytuje vlastnosti a metody pro přidání licence k komponentě a ke správě <xref:System.ComponentModel.LicenseProvider>.  
   
-- <xref:System.ComponentModel.LicenseProvider>. The abstract base class for implementing a license provider.  
+- <xref:System.ComponentModel.LicenseProvider>. Abstraktní základní třída pro implementaci poskytovatele licencí.  
   
-- <xref:System.ComponentModel.LicenseProviderAttribute>. Specifies the <xref:System.ComponentModel.LicenseProvider> class to use with a class.  
+- <xref:System.ComponentModel.LicenseProviderAttribute>. Určuje třídu <xref:System.ComponentModel.LicenseProvider>, která se má použít s třídou.  
   
- Classes commonly used for describing and persisting components.  
+ Třídy, které se běžně používají pro popis a trvalé komponenty.  
   
-- <xref:System.ComponentModel.TypeDescriptor>. Provides information about the characteristics for a component, such as its attributes, properties, and events.  
+- <xref:System.ComponentModel.TypeDescriptor>. Poskytuje informace o vlastnostech součásti, jako jsou atributy, vlastnosti a události.  
   
-- <xref:System.ComponentModel.EventDescriptor>. Provides information about an event.  
+- <xref:System.ComponentModel.EventDescriptor>. Poskytuje informace o události.  
   
-- <xref:System.ComponentModel.PropertyDescriptor>. Provides information about a property.  
+- <xref:System.ComponentModel.PropertyDescriptor>. Poskytuje informace o vlastnosti.  
   
 ## <a name="related-sections"></a>Související oddíly  
 
  [Řešení potíží s vytvářením ovládacích prvků a komponent](../../framework/winforms/controls/troubleshooting-control-and-component-authoring.md)  
- Explains how to fix common problems.  
+ Vysvětluje, jak řešit běžné problémy.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [How to: Access Design-Time Support in Windows Forms](../../framework/winforms/controls/developing-windows-forms-controls-at-design-time.md)
+- [Postupy: přístup k podpoře v době návrhu v model Windows Forms](../../framework/winforms/controls/developing-windows-forms-controls-at-design-time.md)

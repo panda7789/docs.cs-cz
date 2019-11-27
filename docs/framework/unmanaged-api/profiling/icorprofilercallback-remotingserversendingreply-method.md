@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74430713"
 ---
 # <a name="icorprofilercallbackremotingserversendingreply-method"></a>ICorProfilerCallback::RemotingServerSendingReply – metoda
-Notifies the profiler that the process has finished processing a remote method invocation request and is about to transmit the reply through a channel.  
+Upozorní profileru, že proces dokončil zpracování žádosti o vyvolání vzdálené metody a chystá se odeslat odpověď prostřednictvím kanálu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,27 +35,27 @@ HRESULT RemotingServerSendingReply(
   
 ## <a name="parameters"></a>Parametry  
  `pCookie`  
- [in] A pointer to a GUID that will correspond with the value provided in [ICorProfilerCallback::RemotingClientReceivingReply](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingclientreceivingreply-method.md) under these conditions:  
+ pro Ukazatel na identifikátor GUID, který bude odpovídat hodnotě zadané v [ICorProfilerCallback:: remotingclientreceivingreply –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingclientreceivingreply-method.md) za těchto podmínek:  
   
-- Remoting GUID cookies are active.  
+- Soubory cookie vzdálené komunikace jsou aktivní.  
   
-- The channel succeeds in transmitting the message.  
+- Kanál se úspěšně přenáší do zprávy.  
   
-- GUID cookies are active on the client-side process.  
+- Soubory cookie identifikátorů GUID jsou aktivní v procesu na straně klienta.  
   
- This allows easy pairing of remoting calls and the creation of a logical call stack.  
+ To umožňuje snadné párování volání vzdálené komunikace a vytváření logických zásobníků volání.  
   
  `fIsAsync`  
- [in] A value that is `true` if the call is asynchronous; otherwise, `false`.  
+ pro Hodnota, která je `true`, pokud je volání asynchronní; v opačném případě `false`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

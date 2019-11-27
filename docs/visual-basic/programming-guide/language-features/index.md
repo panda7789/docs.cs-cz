@@ -1,5 +1,5 @@
 ---
-title: kompatibility značek (mc:)
+title: oboru názvů jazyka XAML (x:)
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Visual Basic code, elements of
@@ -13,74 +13,74 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74345068"
 ---
 # <a name="visual-basic-language-features"></a>Funkce jazyka Visual Basic
-The following topics introduce and discuss the essential components of Visual Basic, an object-oriented programming language. After creating the user interface for your application using forms and controls, you need to write the code that defines the application's behavior. As with any modern programming language, Visual Basic supports a number of common programming constructs and language elements.  
+Následující témata zavádějí a projednávají základní součásti Visual Basic, objektově orientovaného programovacího jazyka. Po vytvoření uživatelského rozhraní pro aplikaci pomocí formulářů a ovládacích prvků musíte napsat kód, který definuje chování aplikace. Stejně jako u všech moderních programovacích jazyků Visual Basic podporuje řadu běžných programovacích konstrukcí a elementů jazyka.  
   
- If you have programmed in other languages, much of the material covered in this section might seem familiar. While most of the constructs are similar to those in other languages, the event-driven nature of Visual Basic introduces some subtle differences.  
+ Pokud jste v programu napracovali v jiných jazycích, může se stát, že se většina materiálu popsaných v této části zdá být obeznámená. I když je většina konstrukcí podobná těm v jiných jazycích, povaha řízená událostmi Visual Basic zavádí některé drobné rozdíly.  
   
- If you are new to programming, the material in this section serves as an introduction to the basic building blocks for writing code. Once you understand the basics, you can create powerful applications using Visual Basic.  
+ Pokud s programováním začínáte, materiál v této části slouží jako úvod do základních stavebních bloků pro psaní kódu. Jakmile porozumíte základům, můžete vytvářet výkonné aplikace pomocí Visual Basic.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Pole](../../../visual-basic/programming-guide/language-features/arrays/index.md)  
- Discusses making your code more compact and powerful by declaring and using arrays, which hold multiple related values.  
+ Popisuje, jak je váš kód kompaktnější a výkonný deklarací a používáním polí, která obsahují více souvisejících hodnot.  
   
  [Inicializátory kolekcí](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)  
- Describes collection initializers, which enable you to create a collection and populate it with an initial set of values.  
+ Popisuje inicializátory kolekce, které umožňují vytvořit kolekci a naplnit je počáteční sadou hodnot.  
   
  [Konstanty a výčty](../../../visual-basic/programming-guide/language-features/constants-enums/index.md)  
- Discusses storing unchanging values for repeated use, including sets of related constant values.  
+ Popisuje ukládání nezměněných hodnot pro opakované použití, včetně sad souvisejících konstantních hodnot.  
   
  [Tok řízení](../../../visual-basic/programming-guide/language-features/control-flow/index.md)  
- Shows how to regulate the flow of your program's execution.  
+ Ukazuje, jak regulovat tok provádění programu.  
   
  [Datové typy](../../../visual-basic/programming-guide/language-features/data-types/index.md)  
- Describes what kinds of data a programming element can hold and how that data is stored.  
+ Popisuje, jaký druh dat může program uchovávat, a jak se tato data ukládají.  
   
  [Deklarované elementy](../../../visual-basic/programming-guide/language-features/declared-elements/index.md)  
- Covers programming elements you can declare, their names and characteristics, and how the compiler resolves references to them.  
+ Pokrývá programovací prvky, které lze deklarovat, jejich názvy a charakteristiky a jak kompilátor překládá odkazy na ně.  
   
- [Delegáty](../../../visual-basic/programming-guide/language-features/delegates/index.md)  
- Provides an introduction to delegates and how they are used in Visual Basic.  
+ [Delegáti](../../../visual-basic/programming-guide/language-features/delegates/index.md)  
+ Poskytuje Úvod k delegátům a způsobu jejich použití v Visual Basic.  
   
- [Statické a dynamické vazby](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)  
- Describes binding, which is performed by the compiler when an object is assigned to an object variable, and the differences between early-bound and late-bound objects.  
+ [Statické a pozdní vazby](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)  
+ Popisuje vazbu, která je provedena kompilátorem v případě, že je objekt přiřazen objektu proměnné a rozdíly mezi objekty s časnou vazbou a objekty s pozdní vazbou.  
   
  [Typy chyb](../../../visual-basic/programming-guide/language-features/error-types.md)  
- Provides an overview of syntax errors, run-time errors, and logic errors.  
+ Poskytuje přehled chyb syntaxe, běhových chyb a logických chyb.  
   
  [Události](../../../visual-basic/programming-guide/language-features/events/index.md)  
- Shows how to declare and use events.  
+ Ukazuje, jak deklarovat a používat události.  
   
  [Rozhraní](../../../visual-basic/programming-guide/language-features/interfaces/index.md)  
- Describes what interfaces are and how you can use them in your applications.  
+ Popisuje, jaká rozhraní jsou a jak je můžete používat ve svých aplikacích.  
   
  [LINQ](../../../visual-basic/programming-guide/language-features/linq/index.md)  
- Provides links to topics that introduce [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] features and programming.  
+ Obsahuje odkazy na témata, která zavádějí [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] funkce a programování.  
   
  [Objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)  
- Provides an overview of objects and classes, how they are used, their relationships to each other, and the properties, methods, and events they expose.  
+ Poskytuje přehled objektů a tříd, způsob jejich použití, jejich vzájemných vztahů a vlastnosti, metody a události, které zveřejňuje.  
   
  [Operátory a výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)  
- Describes the code elements that manipulate value-holding elements, how to use them efficiently, and how to combine them to yield new values.  
+ Popisuje prvky kódu, které pracují s prvky obsahujícími hodnoty, jak je efektivně používat a jak je kombinovat k získání nových hodnot.  
   
  [Procedury](../../../visual-basic/programming-guide/language-features/procedures/index.md)  
- Describes `Sub`, `Function`, `Property`, and `Operator` procedures, as well as advanced topics such as recursive and overloaded procedures.  
+ Popisuje postupy `Sub`, `Function`, `Property`a `Operator` a také Pokročilá témata, například rekurzivní a přetížené procedury.  
   
  [Příkazy](../../../visual-basic/programming-guide/language-features/statements.md)  
- Describes declaration and executable statements.  
+ Popisuje deklaraci a spustitelné příkazy.  
   
  [Řetězce](../../../visual-basic/programming-guide/language-features/strings/index.md)  
- Provides links to topics that describe the basic concepts about using strings in Visual Basic.  
+ Obsahuje odkazy na témata, která popisují základní koncepty používání řetězců v Visual Basic.  
   
  [Proměnné](../../../visual-basic/programming-guide/language-features/variables/index.md)  
- Introduces variables and describes how to use them in Visual Basic.  
+ Zavádí proměnné a popisuje, jak je používat v Visual Basic.  
   
  [XML](../../../visual-basic/programming-guide/language-features/xml/index.md)  
- Provides links to topics that describe how to use XML in Visual Basic.  
+ Obsahuje odkazy na témata, která popisují, jak používat XML v Visual Basic.  
   
 ## <a name="related-sections"></a>Související oddíly
 
  [Kolekce](../../../visual-basic/programming-guide/concepts/collections.md)  
- Describes some of the types of collections that are provided by the .NET Framework. Demonstrates how to use simple collections and collections of key/value pairs.  
+ Popisuje některé typy kolekcí, které jsou k dispozici v .NET Framework. Ukazuje, jak používat jednoduché kolekce a kolekce párů klíč/hodnota.  
   
  [Referenční příručka jazyka Visual Basic](../../../visual-basic/language-reference/index.md)  
- Provides reference information on various aspects of Visual Basic programming.
+ Poskytuje referenční informace o různých aspektech Visual Basic programování.

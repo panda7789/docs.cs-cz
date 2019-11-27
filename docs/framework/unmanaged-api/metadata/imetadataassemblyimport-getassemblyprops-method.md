@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449439"
 ---
 # <a name="imetadataassemblyimportgetassemblyprops-method"></a>IMetaDataAssemblyImport::GetAssemblyProps – metoda
-Gets the set of properties for the assembly with the specified metadata signature.  
+Získá sadu vlastností pro sestavení se zadaným podpisem metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,40 +43,40 @@ HRESULT GetAssemblyProps (
   
 ## <a name="parameters"></a>Parametry  
  `mda`  
- [in]. The `mdAssembly` metadata token that represents the assembly for which to get the properties.  
+ [in]. Token metadat `mdAssembly`, který představuje sestavení, pro které mají být získány vlastnosti.  
   
  `ppbPublicKey`  
- [out] A pointer to the public key or the metadata token.  
+ mimo Ukazatel na veřejný klíč nebo token metadat.  
   
  `pcbPublicKey`  
- [out] The number of bytes in the returned public key.  
+ mimo Počet bajtů ve vráceném veřejném klíči.  
   
  `pulHashAlgId`  
- [out] A pointer to the algorithm used to hash the files in the assembly.  
+ mimo Ukazatel na algoritmus použitý k hashování souborů v sestavení.  
   
  `szName`  
- [out] The simple name of the assembly.  
+ mimo Jednoduchý název sestavení.  
   
  `cchName`  
- [in] The size, in wide chars, of `szName`.  
+ pro Velikost v rámci velkých znaků `szName`.  
   
  `pchName`  
- [out] The number of wide chars actually returned in `szName`.  
+ mimo Počet znaků, které jsou ve skutečnosti vraceny `szName`.  
   
  `pMetaData`  
- [out] A pointer to an ASSEMBLYMETADATA structure that contains the assembly metadata.  
+ mimo Ukazatel na strukturu AssemblyMetadata –, která obsahuje metadata sestavení.  
   
  `pdwAssemblyFlags`  
- [out] Flags that describe the metadata applied to an assembly. This value is a combination of one or more [CorAssemblyFlags](../../../../docs/framework/unmanaged-api/metadata/corassemblyflags-enumeration.md) values.  
+ mimo Příznaky, které popisují metadata použitá pro sestavení. Tato hodnota je kombinací jedné nebo více hodnot [CorAssemblyFlags –](../../../../docs/framework/unmanaged-api/metadata/corassemblyflags-enumeration.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

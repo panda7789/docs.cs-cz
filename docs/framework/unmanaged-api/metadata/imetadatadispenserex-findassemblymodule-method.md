@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74442189"
 ---
 # <a name="imetadatadispenserexfindassemblymodule-method"></a>IMetaDataDispenserEx::FindAssemblyModule – metoda
-Tato metoda není implementována. If called, it returns E_NOTIMPL.  
+Tato metoda není implementována. Při volání Vrátí E_NOTIMPL.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,37 +42,37 @@ HRESULT FindAssemblyModule(
   
 ## <a name="parameters"></a>Parametry  
  `szAppBase`  
- [in] Not used.  
+ pro Nepoužívá se.  
   
  `szPrivateBin`  
- [in] Not used.  
+ pro Nepoužívá se.  
   
  `szGlobalBin`  
- [in] Not used.  
+ pro Nepoužívá se.  
   
  `szAssemblyName`  
- [in] The name of the module.  
+ pro Název modulu.  
   
  `szModuleName`  
- [in] The assembly to be found.  
+ pro Sestavení, které má být nalezeno.  
   
  `szName`  
- [out] The simple name of the assembly.  
+ mimo Jednoduchý název sestavení.  
   
  `cchName`  
- [in] The size, in bytes, of `szName`.  
+ pro Velikost `szName`v bajtech.  
   
  `pcName`  
- [out] The number of characters actually returned in `szName`.  
+ mimo Počet znaků, které jsou ve skutečnosti vráceny v `szName`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforma:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -12,52 +12,52 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344816"
 ---
-# <a name="get-started-with-visual-basic"></a>Get started with Visual Basic
+# <a name="get-started-with-visual-basic"></a>Začínáme s jazykem Visual Basic
 
-This section of the documentation helps you get started with Visual Basic application development.
+Tato část dokumentace vám pomůže začít s vývojem aplikací Visual Basic.
 
-## <a name="get-started-with-visual-basic-and-net-core"></a>Get started with Visual Basic and .NET Core
+## <a name="get-started-with-visual-basic-and-net-core"></a>Začínáme s Visual Basic a .NET Core
 
-[Build a Visual Basic Hello World application with .NET Core in Visual Studio 2017](../../core/tutorials/vb-with-visual-studio.md)
+[Sestavení Hello World aplikace Visual Basic pomocí .NET Core v aplikaci Visual Studio 2017](../../core/tutorials/vb-with-visual-studio.md)
 
 [Vytvoření knihovny tříd pomocí jazyka Visual Basic a platformy .NET Core v sadě Visual Studio 2017](../../core/tutorials/vb-library-with-visual-studio.md)
 
-## <a name="additional-information"></a>Additional information
+## <a name="additional-information"></a>Další informace
 
-- [What's new for Visual Basic](whats-new.md)\
-Lists new features in each of the versions of Visual Basic .NET.
+- [Co je nového pro Visual Basic](whats-new.md)\
+Obsahuje seznam nových funkcí v každé z verzí Visual Basic .NET.
 
-- [Visual Basic Breaking Changes in Visual Studio](breaking-changes-in-visual-studio.md)\
-Lists changes in this release that might prevent an application from compiling or change its run-time behavior.
+- [Visual Basic přerušující změny v aplikaci Visual Studio](breaking-changes-in-visual-studio.md)\
+Obsahuje seznam změn v této verzi, které by mohly bránit aplikaci v kompilaci nebo změně chování za běhu.
 
-- [Additional Resources for Visual Basic Programmers](additional-resources.md)\
+- [Další zdroje informací pro programátory Visual Basic](additional-resources.md)\
 Obsahuje seznam webů a diskusních skupin, na kterých můžete nalézt odpovědi na běžné problémy.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Get Visual Basic](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)  
-Provides download links for Visual Studio versions that include Visual Basic support, including free versions.
+- [Získat Visual Basic](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)  
+Poskytuje odkazy ke stažení pro verze sady Visual Studio, které zahrnují podporu Visual Basic, včetně bezplatných verzí.
 
-- [Object-Oriented Programming](../programming-guide/concepts/object-oriented-programming.md)\
+- [Objektově orientované\ programování](../programming-guide/concepts/object-oriented-programming.md)
 Obsahuje odkazy na stránky, které představují objektově-orientované programování a popisují, jak vytvářet vlastní objekty a jak pomocí objektů zjednodušit psaní kódu.
 
-- [Samples](https://github.com/dotnet/samples/tree/master/snippets/visualbasic)\
-Provides links to sample code in Visual Basic.
+- \ [ukázek](https://github.com/dotnet/samples/tree/master/snippets/visualbasic)
+Obsahuje odkazy na vzorový kód v Visual Basic.
 
-- [Walkthroughs](../../visual-basic/walkthroughs.md)\
-Provides a list of Help pages that demonstrate aspects of the Visual Basic language.
+- \ [návody](../../visual-basic/walkthroughs.md)
+Poskytuje seznam stránek s přehledem, které ukazují aspekty Visual Basicho jazyka.
 
-- [Feedback options for Visual Studio](/visualstudio/ide/feedback-options)\
+- [Možnosti zpětné vazby pro Visual Studio](/visualstudio/ide/feedback-options)\
 Pojednává o tom, jak získat podporu a sdělit názor.
 
-- [Visual Studio](/visualstudio/)\
-Provides links into the Visual Studio documentation.
+- \ sady [Visual Studio](/visualstudio/)
+Obsahuje odkazy na dokumentaci k sadě Visual Studio.
 
 - [C#](../../csharp/index.yml)\
-Provides links into the documentation on application development with Visual C#.
+Obsahuje odkazy na dokumentaci o vývoji aplikací pomocí vizuálu C#.
 
-- [Visual C++](/cpp/)\
+- [Vizuální C++ ](/cpp/)\
 Obsahuje odkazy na dokumentaci jazyka Visual C++.
 
-- [Office and SharePoint Development](/visualstudio/vsto/office-and-sharepoint-development-in-visual-studio)\
-Provides information about using Microsoft Office and Visual Studio as part of a business application.
+- \ pro [vývoj pro Office a SharePoint](/visualstudio/vsto/office-and-sharepoint-development-in-visual-studio)
+Poskytuje informace o použití systém Microsoft Office a sady Visual Studio jako součást obchodní aplikace.

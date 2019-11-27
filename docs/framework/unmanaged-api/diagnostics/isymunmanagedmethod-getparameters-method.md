@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448951"
 ---
 # <a name="isymunmanagedmethodgetparameters-method"></a>ISymUnmanagedMethod::GetParameters – metoda
-Gets the parameters for this method. The parameters are returned in the order in which they are defined within the method's signature.  
+Získá parametry pro tuto metodu. Parametry jsou vráceny v pořadí, ve kterém jsou definovány v rámci signatury metody.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,19 +37,19 @@ HRESULT GetParameters(
   
 ## <a name="parameters"></a>Parametry  
  `cParams`  
- [in] The size of the `params` array.  
+ pro Velikost pole `params`.  
   
  `pcParams`  
- [in] A pointer to a `ULONG32` that receives the size of the buffer that is required to contain the parameters.  
+ pro Ukazatel na `ULONG32`, který přijímá velikost vyrovnávací paměti, která je požadována k uložení parametrů.  
   
  `params`  
- [out] A pointer to the buffer that receives the parameters.  
+ mimo Ukazatel na vyrovnávací paměť, která přijímá parametry.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

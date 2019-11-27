@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449212"
 ---
 # <a name="isymunmanageddocumentfindclosestline-method"></a>ISymUnmanagedDocument::FindClosestLine – metoda
-Returns the closest line that is a sequence point, given a line in this document that may or may not be a sequence point.  
+Vrátí nejbližší řádek, který je sekvenčním bodem, na základě řádku v tomto dokumentu, který může nebo nemusí být bodem sekvence.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,13 +35,13 @@ HRESULT FindClosestLine(
   
 ## <a name="parameters"></a>Parametry  
  `line`  
- [in] A line in this document.  
+ pro Řádek v tomto dokumentu.  
   
  `pRetVal`  
- [out] A pointer to a variable that receives the line.  
+ mimo Ukazatel na proměnnou, která přijímá řádek.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, an error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě kód chyby.  
   
 ## <a name="see-also"></a>Viz také:
 

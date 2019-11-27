@@ -16,9 +16,9 @@ ms.locfileid: "74441454"
 ---
 # <a name="ui-automation-control-patterns"></a>Vzory ovládacích prvků pro automatizaci uživatelského rozhraní
 > [!NOTE]
-> This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace. For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
+> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v oboru názvů <xref:System.Windows.Automation>. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API pro Windows Automation: automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
   
- This section provides detailed information about how to use [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] control patterns.  
+ V této části najdete podrobné informace o používání vzorů ovládacích prvků [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)].  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Implementace vzoru ovládacích prvků ukotvení pro automatizaci uživatelského rozhraní](implementing-the-ui-automation-dock-control-pattern.md)  
@@ -38,4 +38,4 @@ ms.locfileid: "74441454"
  [Implementace vzoru ovládacích prvků transformace pro automatizaci uživatelského rozhraní](implementing-the-ui-automation-transform-control-pattern.md)  
  [Implementace vzoru ovládacích prvků hodnota pro automatizaci uživatelského rozhraní](implementing-the-ui-automation-value-control-pattern.md)  
  [Implementace vzoru ovládacích prvků okno pro automatizaci uživatelského rozhraní](implementing-the-ui-automation-window-control-pattern.md)  
- [Témata s postupy](ui-automation-control-patterns-how-to-topics.md)
+ [Postupy](ui-automation-control-patterns-how-to-topics.md)

@@ -17,35 +17,35 @@ ms.locfileid: "74345563"
 ---
 # <a name="how-to-upload-a-file-in-visual-basic"></a>Postupy: Odeslání souboru v jazyce Visual Basic
 
-The <xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A> method can be used to upload a file and store it to a remote location. If the `ShowUI` parameter is set to `True`, a dialog box is displayed that shows the progress of the upload and allows users to cancel the operation.  
+Metodu <xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A> lze použít k nahrání souboru a jeho uložení do vzdáleného umístění. Pokud je parametr `ShowUI` nastaven na `True`, zobrazí se dialogové okno s informacemi o průběhu nahrávání a umožňuje uživatelům zrušit operaci.  
   
-### <a name="to-upload-a-file"></a>To upload a file  
+### <a name="to-upload-a-file"></a>Nahrání souboru  
   
-- Use the `UploadFile` method to upload a file, specifying the source file's location and the target directory location as a string or URI (Uniform Resource Identifier).This example uploads the file `Order.txt` to `http://www.cohowinery.com/uploads.aspx`.  
+- Použijte metodu `UploadFile` k nahrání souboru, určení umístění zdrojového souboru a umístění cílového adresáře jako řetězce nebo identifikátoru URI (Uniform Resource Identifier). Tento příklad nahraje soubor `Order.txt` k `http://www.cohowinery.com/uploads.aspx`.  
   
      [!code-vb[VbResourceTasks#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#6)]  
   
-### <a name="to-upload-a-file-and-show-the-progress-of-the-operation"></a>To upload a file and show the progress of the operation  
+### <a name="to-upload-a-file-and-show-the-progress-of-the-operation"></a>Nahrání souboru a zobrazení průběhu operace  
   
-- Use the `UploadFile` method to upload a file, specifying the source file's location and the target directory location as a string or URI. This example uploads the file `Order.txt` to `http://www.cohowinery.com/uploads.aspx` without supplying a user name or password, shows the progress of the upload, and has a time-out interval of 500 milliseconds.  
+- Použijte metodu `UploadFile` k nahrání souboru, určení umístění zdrojového souboru a umístění cílového adresáře jako řetězce nebo identifikátoru URI. Tento příklad nahraje soubor `Order.txt` do `http://www.cohowinery.com/uploads.aspx` bez zadání uživatelského jména nebo hesla, zobrazí průběh nahrávání a má časový limit 500 milisekund.  
   
      [!code-vb[VbResourceTasks#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#7)]  
   
-### <a name="to-upload-a-file-supplying-a-user-name-and-password"></a>To upload a file, supplying a user name and password  
+### <a name="to-upload-a-file-supplying-a-user-name-and-password"></a>Pokud chcete nahrát soubor, zadejte uživatelské jméno a heslo.  
   
-- Use the `UploadFile` method to upload a file, specifying the source file's location and the target directory location as a string or URI, and specifying the user name and the password. This example uploads the file `Order.txt` to `http://www.cohowinery.com/uploads.aspx`, supplying the user name `anonymous` and a blank password.  
+- Použijte metodu `UploadFile` k nahrání souboru, určení umístění zdrojového souboru a umístění cílového adresáře jako řetězce nebo identifikátoru URI a zadání uživatelského jména a hesla. Tento příklad nahraje soubor `Order.txt` do `http://www.cohowinery.com/uploads.aspx`a poskytne uživatelské jméno `anonymous` a prázdné heslo.  
   
      [!code-vb[VbResourceTasks#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#8)]  
   
 ## <a name="robust-programming"></a>Robustní programování  
 
- The following conditions may throw an exception:  
+ Následující podmínky mohou vyvolat výjimku:  
   
-- The local file path is not valid (<xref:System.ArgumentException>).  
+- Cesta k místnímu souboru není platná (<xref:System.ArgumentException>).  
   
-- Authentication failed (<xref:System.Security.SecurityException>).  
+- Ověřování se nezdařilo (<xref:System.Security.SecurityException>).  
   
-- The connection timed out (<xref:System.TimeoutException>).  
+- Vypršel časový limit připojení (<xref:System.TimeoutException>).  
   
 ## <a name="see-also"></a>Viz také:
 

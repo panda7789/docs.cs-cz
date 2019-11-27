@@ -14,146 +14,146 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74447861"
 ---
 # <a name="metadata-enumerations"></a>Výčty metadat
-This section describes the unmanaged enumerations that the metadata API uses.  
+Tato část popisuje nespravované výčty, které používá rozhraní API pro metadata.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [AssemblyFlags – výčet](../../../../docs/framework/unmanaged-api/metadata/assemblyflags-enumeration.md)  
- Contains values that describe the run-time features of an assembly.  
+ Obsahuje hodnoty, které popisují funkce za běhu sestavení.  
   
  [AssemblyRefFlags – výčet](../../../../docs/framework/unmanaged-api/metadata/assemblyrefflags-enumeration.md)  
- Contains values that describe the features of an assembly reference.  
+ Obsahuje hodnoty, které popisují funkce odkazu na sestavení.  
   
  [CeeSectionAttr – výčet](../../../../docs/framework/unmanaged-api/metadata/ceesectionattr-enumeration.md)  
- Provides values that specify the attributes of a section for use by the [ICeeGen](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md) interface.  
+ Poskytuje hodnoty, které určují atributy oddílu pro použití rozhraní [ICeeGen](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md) .  
   
  [CeeSectionRelocType – výčet](../../../../docs/framework/unmanaged-api/metadata/ceesectionreloctype-enumeration.md)  
- Provides values to influence the type of `reloc` instruction emitted in a call to the [ICeeGen::AddSectionReloc](../../../../docs/framework/unmanaged-api/metadata/iceegen-addsectionreloc-method.md) method.  
+ Poskytuje hodnoty pro ovlivnění typu `reloc` instrukci, která byla vyvolána voláním metody [ICeeGen:: AddSectionReloc –](../../../../docs/framework/unmanaged-api/metadata/iceegen-addsectionreloc-method.md) .  
   
  [COINITICOR – výčet](../../../../docs/framework/unmanaged-api/metadata/coiniticor-enumeration.md)  
- Specifies constants used by [CoInitializeCor](../../../../docs/framework/unmanaged-api/hosting/coinitializecor-function.md) when initializing the common language runtime.  
+ Určuje konstanty, které používá [CoInitializeCor –](../../../../docs/framework/unmanaged-api/hosting/coinitializecor-function.md) při inicializaci modulu CLR (Common Language Runtime).  
   
  [COINITIEE – výčet](../../../../docs/framework/unmanaged-api/metadata/coinitiee-enumeration.md)  
- Specifies constants used by [CoInitializeEE](../../../../docs/framework/unmanaged-api/hosting/coinitializeee-function.md) when initializing the common language runtime.  
+ Určuje konstanty, které používá [CoInitializeEE –](../../../../docs/framework/unmanaged-api/hosting/coinitializeee-function.md) při inicializaci modulu CLR (Common Language Runtime).  
   
  [CorArgType – výčet](../../../../docs/framework/unmanaged-api/metadata/corargtype-enumeration.md)  
- Contains values that describe the native type of a runtime handle.  
+ Obsahuje hodnoty, které popisují nativní typ popisovače modulu runtime.  
   
  [CorAssemblyFlags – výčet](../../../../docs/framework/unmanaged-api/metadata/corassemblyflags-enumeration.md)  
- Contains values that describe the metadata applied to an assembly compilation.  
+ Obsahuje hodnoty, které popisují metadata použitá pro kompilaci sestavení.  
   
  [CorAttributeTargets – výčet](../../../../docs/framework/unmanaged-api/metadata/corattributetargets-enumeration.md)  
- Specifies the application elements on which it is valid to apply an attribute.  
+ Určuje prvky aplikace, na kterých je platný pro použití atributu.  
   
  [CorCallingConvention – výčet](../../../../docs/framework/unmanaged-api/metadata/corcallingconvention-enumeration.md)  
- Contains values that describe the types of calling conventions that are made in managed code.  
+ Obsahuje hodnoty, které popisují typy konvencí volání, které jsou vytvořeny ve spravovaném kódu.  
   
  [CorCheckDuplicatesFor – výčet](../../../../docs/framework/unmanaged-api/metadata/corcheckduplicatesfor-enumeration.md)  
- Contains values used during checks for duplications.  
+ Obsahuje hodnoty používané při kontrolách duplicit.  
   
  [CorDeclSecurity – výčet](../../../../docs/framework/unmanaged-api/metadata/cordeclsecurity-enumeration.md)  
- Contains values that describe the types of declarative security used by the common language runtime.  
+ Obsahuje hodnoty, které popisují typy deklarativního zabezpečení používané modulem CLR (Common Language Runtime).  
   
- CorElementType  
- Contains values that describe the underlying native type of a common language runtime <xref:System.Type>.  
+ CorElementType –  
+ Obsahuje hodnoty, které popisují základní nativní typ modulu CLR (Common Language Runtime) <xref:System.Type>.  
   
  [CorErrorIfEmitOutOfOrder – výčet](../../../../docs/framework/unmanaged-api/metadata/corerrorifemitoutoforder-enumeration.md)  
- Contains flag values that indicate the conditions under which an error message should be generated when metadata is emitted out of order.  
+ Obsahuje hodnoty příznaků, které určují podmínky, za kterých by se měla generovat chybová zpráva při vygenerování metadat mimo pořadí.  
   
  [CorEventAttr – výčet](../../../../docs/framework/unmanaged-api/metadata/coreventattr-enumeration.md)  
- Contains values that describe the metadata of an event.  
+ Obsahuje hodnoty, které popisují metadata události.  
   
  [CorFieldAttr – výčet](../../../../docs/framework/unmanaged-api/metadata/corfieldattr-enumeration.md)  
- Contains values that describe metadata about a field.  
+ Obsahuje hodnoty, které popisují metadata k poli.  
   
  [CorFileFlags – výčet](../../../../docs/framework/unmanaged-api/metadata/corfileflags-enumeration.md)  
- Contains values that describe the type of file defined in a call to the [IMetaDataAssemblyEmit::DefineFile](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definefile-method.md) method.  
+ Obsahuje hodnoty, které popisují typ souboru definovaného voláním metody [IMetaDataAssemblyEmit::D efinefile](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definefile-method.md) .  
   
  [CorFileMapping – výčet](../../../../docs/framework/unmanaged-api/metadata/corfilemapping-enumeration.md)  
- Contains values that describe the type of file mapping that is returned from a call to the [IMetaDataInfo::GetFileMapping](../../../../docs/framework/unmanaged-api/metadata/imetadatainfo-getfilemapping-method.md) method.  
+ Obsahuje hodnoty, které popisují typ mapování souboru, které je vráceno voláním metody [IMetaDataInfo –:: GetFileMapping –](../../../../docs/framework/unmanaged-api/metadata/imetadatainfo-getfilemapping-method.md) .  
   
  [CorGenericParamAttr – výčet](../../../../docs/framework/unmanaged-api/metadata/corgenericparamattr-enumeration.md)  
- Contains values that describe the <xref:System.Type> parameters for generic types, as used in calls to the [IMetaDataEmit2::DefineGenericParam](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-definegenericparam-method.md) method.  
+ Obsahuje hodnoty, které popisují parametry <xref:System.Type> pro obecné typy, jak se používají v volání metody [IMetaDataEmit2::D efinegenericparam](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-definegenericparam-method.md) .  
   
  [CorImportOptions – výčet](../../../../docs/framework/unmanaged-api/metadata/corimportoptions-enumeration.md)  
- Contains flag values that control the behavior during importation of an assembly outside the current scope.  
+ Obsahuje hodnoty příznaků, které řídí chování při dovozu sestavení mimo aktuální rozsah.  
   
  [CorLinkerOptions – výčet](../../../../docs/framework/unmanaged-api/metadata/corlinkeroptions-enumeration.md)  
- Specifies flags to select options for the metadata linker.  
+ Určuje příznaky pro výběr možností pro linker metadat.  
   
  [CorLocalRefPreservation – výčet](../../../../docs/framework/unmanaged-api/metadata/corlocalrefpreservation-enumeration.md)  
- Contains flag values for the treatment of local references.  
+ Obsahuje hodnoty příznaků pro zpracování místních odkazů.  
   
  [CorManifestResourceFlags – výčet](../../../../docs/framework/unmanaged-api/metadata/cormanifestresourceflags-enumeration.md)  
- Contains values that describe the visibility of resources encoded in an assembly manifest.  
+ Obsahuje hodnoty, které popisují viditelnost prostředků kódovaných v manifestu sestavení.  
   
  [CorMethodAttr – výčet](../../../../docs/framework/unmanaged-api/metadata/cormethodattr-enumeration.md)  
- Contains values that describe metadata about a method.  
+ Obsahuje hodnoty, které popisují metadata o metodě.  
   
  [CorMethodImpl – výčet](../../../../docs/framework/unmanaged-api/metadata/cormethodimpl-enumeration.md)  
- Contains values that describe method implementation features.  
+ Obsahuje hodnoty, které popisují funkce implementace metody.  
   
  [CorMethodSemanticsAttr – výčet](../../../../docs/framework/unmanaged-api/metadata/cormethodsemanticsattr-enumeration.md)  
- Contains values that describe the relationship between a method and an associated property or event.  
+ Obsahuje hodnoty, které popisují vztah mezi metodou a přidruženou vlastností nebo událostí.  
   
  [CorNativeLinkFlags – výčet](../../../../docs/framework/unmanaged-api/metadata/cornativelinkflags-enumeration.md)  
- Provides flag values used by the linker when linking native code.  
+ Poskytuje hodnoty příznaků používané linkerem při propojování nativního kódu.  
   
  [CorNativeLinkType – výčet](../../../../docs/framework/unmanaged-api/metadata/cornativelinktype-enumeration.md)  
- Provides values that indicate the type linked in native code.  
+ Poskytuje hodnoty, které indikují typ propojený v nativním kódu.  
   
  [CorNativeType – výčet](../../../../docs/framework/unmanaged-api/metadata/cornativetype-enumeration.md)  
- Contains values that describe native unmanaged types.  
+ Obsahuje hodnoty, které popisují nativní nespravované typy.  
   
  [CorNotificationForTokenMovement – výčet](../../../../docs/framework/unmanaged-api/metadata/cornotificationfortokenmovement-enumeration.md)  
- Contains flag values that influence notifications upon token movement.  
+ Obsahuje hodnoty příznaku, které mají vliv na oznámení o přesunu tokenu.  
   
  [CorOpenFlags – výčet](../../../../docs/framework/unmanaged-api/metadata/coropenflags-enumeration.md)  
- Contains flag values that control metadata behavior upon opening manifest files.  
+ Obsahuje hodnoty příznaků, které řídí chování metadat při otevírání souborů manifestu.  
   
  [CorParamAttr – výčet](../../../../docs/framework/unmanaged-api/metadata/corparamattr-enumeration.md)  
- Contains values that describe the metadata of a method parameter.  
+ Obsahuje hodnoty, které popisují metadata parametru metody.  
   
  [CorPEKind – výčet](../../../../docs/framework/unmanaged-api/metadata/corpekind-enumeration.md)  
- Contains values that describe a portable executable file, as returned from a call to the [IMetaDataImport2::GetPEKind](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-getpekind-method.md) method.  
+ Obsahuje hodnoty, které popisují přenosný spustitelný soubor, vrácený voláním metody [IMetaDataImport2:: GetPEKind –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-getpekind-method.md) .  
   
  [CorPinvokeMap – výčet](../../../../docs/framework/unmanaged-api/metadata/corpinvokemap-enumeration.md)  
- Contains values that describe features of a PInvoke call.  
+ Obsahuje hodnoty, které popisují funkce volání PInvoke.  
   
  [CorPropertyAttr – výčet](../../../../docs/framework/unmanaged-api/metadata/corpropertyattr-enumeration.md)  
- Contains values that describe the metadata of a property.  
+ Obsahuje hodnoty, které popisují metadata vlastnosti.  
   
  [CorRefToDefCheck – výčet](../../../../docs/framework/unmanaged-api/metadata/correftodefcheck-enumeration.md)  
- Specifies flags to control which referenced items are converted to their definitions in order to optimize the code.  
+ Určuje příznaky pro řízení, které odkazované položky jsou převedeny na jejich definice za účelem optimalizace kódu.  
   
  [CorRegFlags – výčet](../../../../docs/framework/unmanaged-api/metadata/corregflags-enumeration.md)  
- Provides flag values used for registration when installing a module or composite.  
+ Poskytuje hodnoty příznaku používané k registraci při instalaci modulu nebo kompozitního.  
   
  [CorSaveSize – výčet](../../../../docs/framework/unmanaged-api/metadata/corsavesize-enumeration.md)  
- Contains values indicating the level of precision required when querying for the size of a save operation.  
+ Obsahuje hodnoty určující úroveň přesnosti požadovanou při dotazování na velikost operace uložení.  
   
  [CorSerializationType – výčet](../../../../docs/framework/unmanaged-api/metadata/corserializationtype-enumeration.md)  
- Contains values that describe how an object is serialized by the common language runtime. These values generally correspond to CorElementType values.  
+ Obsahuje hodnoty, které popisují, jak je objekt serializován modulem CLR (Common Language Runtime). Tyto hodnoty obecně odpovídají hodnotám CorElementType –.  
   
  [CorSetENC – výčet](../../../../docs/framework/unmanaged-api/metadata/corsetenc-enumeration.md)  
- Contains values used to influence behavior during the generation of metadata.  
+ Obsahuje hodnoty, které slouží k ovlivnění chování během generování metadat.  
   
  [CorThreadSafetyOptions – výčet](../../../../docs/framework/unmanaged-api/metadata/corthreadsafetyoptions-enumeration.md)  
- Specifies flags to select options for thread safety.  
+ Určuje příznaky pro výběr možností pro bezpečnost vlákna.  
   
  [CorTokenType – výčet](../../../../docs/framework/unmanaged-api/metadata/cortokentype-enumeration.md)  
- Contains values that indicate the kind of object that a metadata token references.  
+ Obsahuje hodnoty, které označují druh objektu, na který odkazuje token metadat.  
   
  [CorTypeAttr – výčet](../../../../docs/framework/unmanaged-api/metadata/cortypeattr-enumeration.md)  
- Contains values that indicate type metadata.  
+ Obsahuje hodnoty, které označují metadata typu.  
   
  [CorUnmanagedCallingConvention – výčet](../../../../docs/framework/unmanaged-api/metadata/corunmanagedcallingconvention-enumeration.md)  
- Contains values that describe unmanaged calling conventions.  
+ Obsahuje hodnoty, které popisují konvence nespravovaného volání.  
   
  [CorValidatorModuleType – výčet](../../../../docs/framework/unmanaged-api/metadata/corvalidatormoduletype-enumeration.md)  
- Provides values used by the [IMetaDataValidate](../../../../docs/framework/unmanaged-api/metadata/imetadatavalidate-interface.md) interface to specify the type of the module (PE file vs. .obj file).  
+ Poskytuje hodnoty používané rozhraním [IMetaDataValidate](../../../../docs/framework/unmanaged-api/metadata/imetadatavalidate-interface.md) k určení typu modulu (soubor PE vs. obj).  
   
  [COUNINITIEE – výčet](../../../../docs/framework/unmanaged-api/metadata/couninitiee-enumeration.md)  
- Specifies constants used by [CoUninitializeEE](../../../../docs/framework/unmanaged-api/hosting/couninitializeee-function.md) when initializing the common language runtime.  
+ Určuje konstanty, které používá [CoUninitializeEE –](../../../../docs/framework/unmanaged-api/hosting/couninitializeee-function.md) při inicializaci modulu CLR (Common Language Runtime).  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Rozhraní pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)  

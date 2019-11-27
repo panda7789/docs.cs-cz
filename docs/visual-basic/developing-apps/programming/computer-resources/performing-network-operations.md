@@ -14,32 +14,32 @@ ms.locfileid: "74345543"
 ---
 # <a name="performing-network-operations-visual-basic"></a>Provádění síťových operací (Visual Basic)
 
-The following tables list tasks associated with the `My.Computer.Network` object.  
+V následujících tabulkách jsou uvedeny úkoly spojené s objektem `My.Computer.Network`.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
 
  [Postupy: Nahrání souboru](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-upload-a-file.md)  
- Demonstrates how to upload a file and store it to a remote location using `My.Computer.Network`.  
+ Ukazuje, jak nahrát soubor a uložit ho do vzdáleného umístění pomocí `My.Computer.Network`.  
   
  [Postupy: Stažení souboru](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)  
- Demonstrates how to download a file from a remote location using `My.Computer.Network`.  
+ Ukazuje, jak stáhnout soubor ze vzdáleného umístění pomocí `My.Computer.Network`.  
   
  [Postupy: Kontrola stavu připojení](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-check-connection-status.md)  
- Shows how to determine whether the computer has a working network connection.  
+ Ukazuje, jak zjistit, jestli má počítač fungující síťové připojení.  
   
 ## <a name="reference"></a>Odkaz  
 
  <xref:Microsoft.VisualBasic.Devices.Network>  
- Lists methods, properties, and events for working with the network.  
+ Uvádí metody, vlastnosti a události pro práci se sítí.  
   
  <xref:Microsoft.VisualBasic.Devices.Network.DownloadFile%2A>  
- Describes the `DownloadFile` method.  
+ Popisuje metodu `DownloadFile`.  
   
  <xref:Microsoft.VisualBasic.Devices.Network.Ping%2A>  
- Describes the `Ping` method.  
+ Popisuje metodu `Ping`.  
   
  <xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A>  
- Describes the `UploadFile` method.  
+ Popisuje metodu `UploadFile`.  
   
  <xref:Microsoft.VisualBasic.Devices.Network.IsAvailable>  
- Describes the `IsAvailable` property.
+ Popisuje vlastnost `IsAvailable`.

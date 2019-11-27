@@ -165,13 +165,13 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74447310"
 ---
 # <a name="winmdexpexe-error-messages"></a>Chybové zprávy nástroje Winmdexp.exe
-The build process calls [Winmdexp.exe (Windows Runtime Metadata Export Tool)](winmdexp-exe-windows-runtime-metadata-export-tool.md) when you use the **Windows Runtime Component** template in Visual Studio 2012, so Winmdexp.exe error messages appear in the **Error List**. Winmdexp.exe operates on a module that is compiled with the `/target:winmdobj` option. Because it requires a compiled module as input, its error messages don't appear unless compilation succeeds.  
+Proces sestavení volá [Winmdexp. exe (Nástroj pro export metadat prostředí Windows Runtime)](winmdexp-exe-windows-runtime-metadata-export-tool.md) při použití šablony **prostředí Windows Runtime součásti** v aplikaci Visual Studio 2012, takže se v **Seznam chyb**zobrazí chybové zprávy Winmdexp. exe. Winmdexp. exe pracuje na modulu, který je zkompilován s možností `/target:winmdobj`. Protože vyžaduje zkompilovaný modul jako vstup, jeho chybové zprávy se nezobrazí, pokud kompilace nebude úspěšná.  
   
- The error messages are designed to contain all the information you need to address the error conditions they report. However, some problems require more information than will fit in the message. You can find additional information in [Diagnosing Windows Runtime component error conditions](https://docs.microsoft.com/previous-versions/hh977010(v=vs.110)).  
+ Chybové zprávy jsou navržené tak, aby obsahovaly všechny informace, které potřebujete k vyřešení chybových podmínek, které jsou vykazují. Některé problémy ale vyžadují více informací, než se bude vejít do zprávy. Další informace najdete v [části diagnostikování prostředí Windows runtimech chybových podmínek komponent](https://docs.microsoft.com/previous-versions/hh977010(v=vs.110)).  
   
- If your error is not discussed in that article, and you feel that the message doesn't contain sufficient information to address the issue, please use the feedback link in that article and include the error message. Alternatively, you can file a bug at the [Developer Community website](https://developercommunity.visualstudio.com/). You can also look for more information on the [Microsoft Forums](https://social.msdn.microsoft.com/Forums/).  
+ Pokud vaše chyba není popsána v tomto článku a máte pocit, že zpráva neobsahuje dostatečné informace k vyřešení problému, použijte prosím odkaz na zpětnou vazbu v tomto článku a přidejte chybovou zprávu. Případně můžete vytvořit chybu na [webu komunity vývojářů](https://developercommunity.visualstudio.com/). Můžete se také podívat na Další informace o [fórech Microsoftu](https://social.msdn.microsoft.com/Forums/).  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Winmdexp.exe (Nástroj pro export metadat prostředí Windows Runtime)](winmdexp-exe-windows-runtime-metadata-export-tool.md)
-- [Diagnosing Windows Runtime component error conditions](https://docs.microsoft.com/previous-versions/hh977010(v=vs.110))
+- [Diagnostikování chybových podmínek součásti prostředí Windows Runtime](https://docs.microsoft.com/previous-versions/hh977010(v=vs.110))

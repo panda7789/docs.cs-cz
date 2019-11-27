@@ -22,38 +22,38 @@ ms.lasthandoff: 11/20/2019
 ms.locfileid: "74204744"
 ---
 # <a name="app-resources-for-libraries-that-target-multiple-platforms"></a>Prostředky aplikací pro knihovny cílené na více platforem
-You can use the .NET Framework [Portable Class Library](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md) project type to ensure that resources in your class libraries can be accessed from multiple platforms. This project type is available in Visual Studio 2012 and targets the portable subset of the .NET Framework class library. Using  a Portable Class Library ensures that your library can be accessed from desktop apps, Silverlight apps, Windows Phone apps, and Windows 8.x Store apps.
+Typ projektu .NET Framework [přenosné knihovny tříd](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md) můžete použít k zajištění toho, aby k prostředkům v knihovnách tříd bylo možné přicházet z více platforem. Tento typ projektu je k dispozici v sadě Visual Studio 2012 a cílí na přenosnou podmnožinu knihovny tříd .NET Framework. Použití přenositelné knihovny tříd zajišťuje, aby k vaší knihovně bylo možné přistupovat z aplikací klasické pracovní plochy, aplikací Silverlight, aplikací Windows Phone a aplikací pro Store ve Windows 8. x.
 
 [!INCLUDE[standard](../../../includes/pcl-to-standard.md)]
 
- The Portable Class Library project makes only a very limited subset of the types in the <xref:System.Resources> namespace available to your application, but it does allow you to use the <xref:System.Resources.ResourceManager> class to retrieve resources. However, if you are creating an app by using Visual Studio, you should use the strongly typed wrapper created by Visual Studio instead of using the <xref:System.Resources.ResourceManager> class directly.
+ Přenositelné projekty knihovny tříd zpřístupňují pouze velmi omezené podmnožiny typů v oboru názvů <xref:System.Resources> k dispozici pro vaši aplikaci, ale umožňuje použít třídu <xref:System.Resources.ResourceManager> k načtení prostředků. Pokud však vytváříte aplikaci pomocí sady Visual Studio, měli byste použít obálku se silným typem vytvořenou v aplikaci Visual Studio místo přímého použití třídy <xref:System.Resources.ResourceManager>.
 
- To create a strongly typed wrapper in Visual Studio, set the main resource file's **Access Modifier** in the Visual Studio Resource Designer to **Public**. Tím dojde k vytvoření souboru [resourceFileName].designer.cs nebo [resourceFileName].designer.vb, který obsahuje obálky ResourceManager se silným typem. For more information about using a strongly typed resource wrapper, see the "Generating a Strongly Typed Resource Class" section in the [Resgen.exe (Resource File Generator)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md) topic.
+ Chcete-li vytvořit obálku se silným typem v sadě Visual Studio, nastavte **modifikátor přístupu** hlavního souboru prostředků v Návrháři prostředků sady Visual Studio na **veřejné**. Tím dojde k vytvoření souboru [resourceFileName].designer.cs nebo [resourceFileName].designer.vb, který obsahuje obálky ResourceManager se silným typem. Další informace o použití obálky prostředků se silnými typy najdete v části "generování třídy prostředků se silnými typy" v tématu [Resgen. exe (generátor souboru prostředků)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md) .
 
-## <a name="resource-manager-in-the-portable-class-library"></a>Resource Manager in the Portable Class Library
- In a Portable Class Library project, all access to resources is handled by the <xref:System.Resources.ResourceManager> class. Because types in the <xref:System.Resources> namespace, such as <xref:System.Resources.ResourceReader> and <xref:System.Resources.ResourceSet>, are not accessible from a Portable Class Library project, they cannot be used to access resources.
+## <a name="resource-manager-in-the-portable-class-library"></a>Správce prostředků v přenositelné knihovně tříd
+ V projektu přenositelné knihovny tříd je veškerý přístup k prostředkům zpracováván třídou <xref:System.Resources.ResourceManager>. Vzhledem k tomu, že typy v oboru názvů <xref:System.Resources>, například <xref:System.Resources.ResourceReader> a <xref:System.Resources.ResourceSet>, nejsou přístupné z přenositelného projektu knihovny tříd, nelze je použít pro přístup k prostředkům.
 
- The Portable Class Library project includes the four <xref:System.Resources.ResourceManager> members listed in the following table. These constructors and methods enable you to instantiate a <xref:System.Resources.ResourceManager> object and retrieve string resources.
+ Přenosná knihovna tříd obsahuje čtyři <xref:System.Resources.ResourceManager> členů uvedených v následující tabulce. Tyto konstruktory a metody umožňují vytvořit instanci objektu <xref:System.Resources.ResourceManager> a načíst řetězcové prostředky.
 
-|`ResourceManager` member|Popis|
+|`ResourceManager` člen|Popis|
 |------------------------------|-----------------|
-|<xref:System.Resources.ResourceManager.%23ctor%28System.String%2CSystem.Reflection.Assembly%29>|Creates a <xref:System.Resources.ResourceManager> instance to access the named resource file found in the specified assembly.|
-|<xref:System.Resources.ResourceManager.%23ctor%28System.Type%29>|Creates a <xref:System.Resources.ResourceManager> instance that corresponds to the specified type.|
+|<xref:System.Resources.ResourceManager.%23ctor%28System.String%2CSystem.Reflection.Assembly%29>|Vytvoří instanci <xref:System.Resources.ResourceManager> pro přístup k pojmenovanému souboru prostředků nalezeného v zadaném sestavení.|
+|<xref:System.Resources.ResourceManager.%23ctor%28System.Type%29>|Vytvoří instanci <xref:System.Resources.ResourceManager>, která odpovídá zadanému typu.|
 |<xref:System.Resources.ResourceManager.GetString%28System.String%29>|Načte pojmenovaný prostředek pro aktuální jazykovou verzi.|
 |<xref:System.Resources.ResourceManager.GetString%28System.String%2CSystem.Globalization.CultureInfo%29>|Načte pojmenovaný prostředek, který patří do zadané jazykové verze.|
 
- The exclusion of other <xref:System.Resources.ResourceManager> members from the Portable Class Library means that serialized objects, non-string data, and images cannot be retrieved from a resource file. To use resources from a Portable Class Library, you should store all  object data in string form. For example, you can store numeric values in a resource file by converting them to strings, and you can retrieve them and then convert them back to numbers by using the numeric data type's `Parse` or `TryParse` method. You can convert images or other binary data to a string representation by calling the <xref:System.Convert.ToBase64String%2A?displayProperty=nameWithType> method, and restore them to a byte array by calling the <xref:System.Convert.FromBase64String%2A?displayProperty=nameWithType> method.
+ Vyloučení ostatních <xref:System.Resources.ResourceManager>ch členů z přenositelné knihovny tříd znamená, že v souboru prostředků nelze načíst Serializované objekty, data neřetězcového typu a obrázky. Chcete-li použít prostředky z přenositelné knihovny tříd, měli byste uložit všechna data objektů ve formě řetězce. Můžete například uložit číselné hodnoty do souboru prostředků jejich převodem na řetězce a pak je načíst a pak je převést zpět na čísla pomocí `Parse` nebo `TryParse` číselného datového typu. Můžete převést obrázky nebo jiná binární data na řetězcové vyjádření voláním metody <xref:System.Convert.ToBase64String%2A?displayProperty=nameWithType> a obnovit je do pole bajtů voláním metody <xref:System.Convert.FromBase64String%2A?displayProperty=nameWithType>.
 
-## <a name="the-portable-class-library-and-windows-store-apps"></a>The Portable Class Library and Windows Store Apps
- Portable Class Library projects store resources in .resx files, which are then compiled into .resources files and embedded in the main assembly or in satellite assemblies at compile time. Windows 8.x Store apps, on the other hand, require resources to be stored in .resw files, which are then compiled into a single package resource index (PRI) file. However, despite the incompatible file formats, your Portable Class Library will work in a Windows 8.x Store app.
+## <a name="the-portable-class-library-and-windows-store-apps"></a>Přenosná knihovna tříd a aplikace pro Windows Store
+ Přenositelné knihovny tříd projekty ukládají prostředky v souborech. resx, které jsou poté zkompilovány do souborů. Resources a vloženy do hlavního sestavení nebo do satelitních sestavení v době kompilace. Aplikace Windows 8. x Store na druhé straně vyžadují uložení prostředků do souborů. resw, které se pak zkompiluje do jednoho souboru indexu prostředků balíčku (PRI). Nicméně navzdory nekompatibilním formátům souborů bude vaše Přenosná knihovna tříd fungovat v aplikaci Windows 8. x Store.
 
- To consume your class library from a Windows 8.x Store app, add a reference to it in your Windows Store app project. Visual Studio will transparently extract the resources from your assembly into a .resw file and use it to generate a PRI file from which the Windows Runtime can extract resources. At run time, the Windows Runtime executes the code in your Portable Class Library, but it retrieves your Portable Class Library's resources from the PRI file.
+ Pokud chcete knihovnu tříd využít z aplikace Windows 8. x Store, přidejte na ni odkaz v projektu aplikace pro Windows Store. Visual Studio transparentně extrahuje prostředky ze sestavení do souboru. resw a použije ho k vygenerování souboru PRI, ze kterého může prostředí Windows Runtime extrahovat prostředky. V době běhu prostředí Windows Runtime spustí kód v přenositelné knihovně tříd, ale načte prostředky přenositelné knihovny tříd ze souboru PRI.
 
- If your Portable Class Library project includes localized resources, you use the hub-and-spoke model to deploy them just as you would for a library in a desktop app. To consume your main resource file and any localized resource files in your Windows 8.x Store app, you add a reference to the main assembly. V době kompilace sada Visual Studio extrahuje prostředky z hlavního souboru prostředků a všechny lokalizované soubory prostředků do samostatných souborů .resw. It then compiles the .resw files into a single PRI file that the Windows Runtime accesses at run time.
+ Pokud Váš přenosný projekt knihovny tříd obsahuje lokalizované prostředky, použijte model hvězdicové lokality k jejich nasazení stejně jako knihovnu v desktopové aplikaci. Chcete-li využívat hlavní zdrojový soubor a všechny lokalizované soubory prostředků v aplikaci Windows 8. x Store, přidejte odkaz na hlavní sestavení. V době kompilace sada Visual Studio extrahuje prostředky z hlavního souboru prostředků a všechny lokalizované soubory prostředků do samostatných souborů .resw. Potom zkompiluje soubory. resw do jediného souboru PRI, ke kterému prostředí Windows Runtime přistupuje za běhu.
 
 <a name="NonLoc"></a>
-## <a name="example-non-localized-portable-class-library"></a>Example: Non-Localized Portable Class Library
- The following simple, non-localized Portable Class Library example uses resources to store the names of columns and to determine the number of characters to reserve for tabular data. Příklad používá soubor s názvem LibResources.resx k uložení prostředků řetězců, které jsou uvedeny v následující tabulce.
+## <a name="example-non-localized-portable-class-library"></a>Příklad: nelokalizovaná Přenosná knihovna tříd
+ Následující jednoduchá, nelokalizovaná knihovna tříd – příklad používá zdroje k ukládání názvů sloupců a určení počtu znaků, které se mají rezervovat pro tabulková data. Příklad používá soubor s názvem LibResources.resx k uložení prostředků řetězců, které jsou uvedeny v následující tabulce.
 
 |Název prostředku|Hodnota prostředku|
 |-------------------|--------------------|
@@ -63,26 +63,26 @@ You can use the .NET Framework [Portable Class Library](../../../docs/standard/c
 |HiredLength|12|
 |ID|ID|
 |ID.Length|12|
-|Name|Name|
+|Název|Název|
 |NameLength|25|
-|Název|Databáze zaměstnanců|
+|Titul|Databáze zaměstnanců|
 
- The following code defines a `UILibrary` class that uses the Resource Manager wrapper named `resources` generated by Visual Studio when the **Access Modifier** for the file is changed to **Public**. Třída UILibrary analyzuje data řetězce podle potřeby. . Note that the class is in the `MyCompany.Employees` namespace.
+ Následující kód definuje třídu `UILibrary`, která používá Správce prostředků obálku s názvem `resources` vygenerovanou aplikací Visual Studio, když je **modifikátor přístupu** pro soubor změněn na **veřejné**. Třída UILibrary analyzuje data řetězce podle potřeby. . Všimněte si, že třída je v oboru názvů `MyCompany.Employees`.
 
  [!code-csharp[Conceptual.Resources.Portable#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.portable/cs/uilibrary.cs#1)]
  [!code-vb[Conceptual.Resources.Portable#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.portable/vb/uilibrary.vb#1)]
 
- The following code illustrates how the `UILibrary` class and its resources can be accessed from a console-mode app. It requires a reference to UILibrary.dll to be added to the console app project.
+ Následující kód ilustruje, jak lze ke třídě `UILibrary` a k jejím prostředkům přicházet z aplikace v režimu konzoly. Pro přidání do projektu konzolové aplikace vyžaduje odkaz na UILibrary. dll.
 
  [!code-csharp[Conceptual.Resources.Portable#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.portable/cs/program.cs#2)]
  [!code-vb[Conceptual.Resources.Portable#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.portable/vb/module1.vb#2)]
 
- The following code illustrates how the `UILibrary` class and its resources can be accessed from a Windows 8.x Store app. It requires a reference to UILibrary.dll to be added to the Windows Store app project.
+ Následující kód ilustruje, jak lze ke třídě `UILibrary` a k jejím prostředkům přicházet z aplikace Windows 8. x Store. Pro přidání do projektu aplikace pro Windows Store vyžaduje odkaz na UILibrary. dll.
 
  [!code-csharp[Conceptual.Resources.PortableMetro#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.portablemetro/cs/blankpage.xaml.cs#1)]
 
-## <a name="example-localized-portable-class-library"></a>Example: Localized Portable Class Library
- The following localized Portable Class Library example includes resources for the French (France) and English (United States) cultures. The English (United States) culture is the app's default culture; its resources are shown in the table in the [previous section](../../../docs/standard/cross-platform/app-resources-for-libraries-that-target-multiple-platforms.md#NonLoc). Soubor prostředků pro jazykovou verzi Francouzština (Francie) má název LibResources.fr-FR.resx a obsahuje prostředky řetězců, které jsou uvedeny v následující tabulce. The source code for the `UILibrary` class is the same as that shown in the previous section.
+## <a name="example-localized-portable-class-library"></a>Příklad: lokalizovaná Přenosná knihovna tříd
+ Následující lokalizovaný příklad přenositelné knihovny tříd obsahuje prostředky pro jazykové verze francouzština (Francie) a angličtina (USA). Jazyková verze Angličtina (USA) je výchozí jazykovou verzí aplikace; jeho prostředky jsou uvedeny v tabulce v [předchozí části](../../../docs/standard/cross-platform/app-resources-for-libraries-that-target-multiple-platforms.md#NonLoc). Soubor prostředků pro jazykovou verzi Francouzština (Francie) má název LibResources.fr-FR.resx a obsahuje prostředky řetězců, které jsou uvedeny v následující tabulce. Zdrojový kód pro třídu `UILibrary` je stejný, jak je uvedeno v předchozí části.
 
 |Název prostředku|Hodnota prostředku|
 |-------------------|--------------------|
@@ -91,15 +91,15 @@ You can use the .NET Framework [Portable Class Library](../../../docs/standard/c
 |Nástup|Date embauché|
 |HiredLength|16|
 |ID|ID|
-|Name|Nom|
-|Název|Base de données des employés|
+|Název|Nom|
+|Titul|Base de données des employés|
 
- The following code illustrates how the `UILibrary` class and its resources can be accessed from a console-mode app. It requires a reference to UILibrary.dll to be added to the console app project.
+ Následující kód ilustruje, jak lze ke třídě `UILibrary` a k jejím prostředkům přicházet z aplikace v režimu konzoly. Pro přidání do projektu konzolové aplikace vyžaduje odkaz na UILibrary. dll.
 
  [!code-csharp[Conceptual.Resources.Portable#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.portable/cs/program2.cs#3)]
  [!code-vb[Conceptual.Resources.Portable#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.portable/vb/module2.vb#3)]
 
- The following code illustrates how the `UILibrary` class and its resources can be accessed from a Windows 8.x Store app. It requires a reference to UILibrary.dll to be added to the Windows Store app project. It uses the static `ApplicationLanguages.PrimaryLanguageOverride` property to set the app's preferred language to French.
+ Následující kód ilustruje, jak lze ke třídě `UILibrary` a k jejím prostředkům přicházet z aplikace Windows 8. x Store. Pro přidání do projektu aplikace pro Windows Store vyžaduje odkaz na UILibrary. dll. K nastavení preferovaného jazyka aplikace na francouzštinu používá vlastnost Static `ApplicationLanguages.PrimaryLanguageOverride`.
 
  [!code-csharp[Conceptual.Resources.PortableMetroLoc#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.portablemetroloc/cs/blankpage.xaml.cs#1)]
  [!code-vb[Conceptual.Resources.PortableMetroLoc#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.portablemetroloc/vb/blankpage.xaml.vb#1)]  
@@ -107,5 +107,5 @@ You can use the .NET Framework [Portable Class Library](../../../docs/standard/c
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Resources.ResourceManager>
-- [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)
+- [Prostředky v aplikacích klasické pracovní plochy](../../../docs/framework/resources/index.md)
 - [Zabalení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)

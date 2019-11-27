@@ -15,25 +15,25 @@ ms.locfileid: "74346859"
 ---
 # <a name="troubleshooting-log-listeners-visual-basic"></a>Řešení potíží: Součásti naslouchající protokolům (Visual Basic)
 
-You can use the `My.Application.Log` and `My.Log` objects to log information about events that occur in your application.  
+Pomocí objektů `My.Application.Log` a `My.Log` můžete protokolovat informace o událostech, ke kterým dochází ve vaší aplikaci.  
   
- To determine which log listeners receive those messages, see [Walkthrough: Determining Where My.Application.Log Writes Information](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md).  
+ Chcete-li zjistit, které naslouchací procesy protokolu obdrží tyto zprávy, přečtěte si [Návod: určení, kde my. Application. Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md).  
   
- The `Log` object can use log filtering to limit the amount of information that it logs. If the filters are misconfigured, the logs might contain the wrong information. For more information about filtering, see [Walkthrough: Filtering My.Application.Log Output](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md).  
+ Objekt `Log` může použít filtrování protokolu k omezení množství informací, které protokoluje. Pokud jsou filtry nesprávně nakonfigurované, můžou protokoly obsahovat nesprávné informace. Další informace o filtrování najdete v tématu [Návod: filtrování výstupu my. Application. log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md).  
   
- However, if a log is configured incorrectly, you may need more information about its current configuration. You can get to this information through the log's advanced `TraceSource` property.  
+ Pokud je ale protokol nesprávně nakonfigurovaný, možná budete potřebovat další informace o jeho aktuální konfiguraci. K těmto informacím se můžete dostat prostřednictvím vlastnosti rozšířené `TraceSource` protokolu.  
   
-### <a name="to-determine-the-log-listeners-for-the-log-object-in-code"></a>To determine the log listeners for the Log object in code  
+### <a name="to-determine-the-log-listeners-for-the-log-object-in-code"></a>Určení naslouchacího procesu protokolu pro objekt log v kódu  
   
-1. Import the <xref:System.Diagnostics> namespace at the beginning of the code file. For more information, see [Imports Statement (.NET Namespace and Type)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).  
+1. Importujte <xref:System.Diagnostics> obor názvů na začátek souboru kódu. Další informace naleznete v tématu [příkaz Imports (obor názvů a typ rozhraní .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).  
   
      [!code-vb[VbVbalrMyApplicationLog#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#13)]  
   
-2. Create a function that returns a string consisting of information for each of the log's listeners.  
+2. Vytvořte funkci, která vrátí řetězec skládající se z informací pro každý naslouchací proces protokolu.  
   
      [!code-vb[VbVbalrMyApplicationLog#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#14)]  
   
-3. Pass the collection of the log's trace listeners to the `GetListeners` function, and display the return value.  
+3. Předejte kolekci posluchačů trasování protokolu do funkce `GetListeners` a zobrazte návratovou hodnotu.  
   
      [!code-vb[VbVbalrMyApplicationLog#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#19)]  
   

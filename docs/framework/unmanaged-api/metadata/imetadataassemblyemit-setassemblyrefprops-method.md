@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74440563"
 ---
 # <a name="imetadataassemblyemitsetassemblyrefprops-method"></a>IMetaDataAssemblyEmit::SetAssemblyRefProps – metoda
-Modifies the specified `AssemblyRef` metadata structure.  
+Upraví zadanou `AssemblyRef` strukturu metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,40 +42,40 @@ HRESULT SetAssemblyRefProps (
   
 ## <a name="parameters"></a>Parametry  
  `ar`  
- [in] The metadata token that specifies the `AssemblyRef` metadata structure to be modified.  
+ pro Token metadat, který určuje `AssemblyRef` strukturu metadat, která se má upravit.  
   
  `pbPublicKeyOrToken`  
- [in] The public key of the publisher of the referenced assembly.  
+ pro Veřejný klíč vydavatele odkazovaného sestavení.  
   
  `cbPublicKeyOrToken`  
- [in] The size in bytes of `pbPublicKeyOrToken`.  
+ pro Velikost v bajtech `pbPublicKeyOrToken`.  
   
  `szName`  
- [in] The human-readable text name of the assembly.  
+ pro Textový název sestavení čitelný lidmi  
   
  `pMetaData`  
- [in] A pointer to an ASSEMBLYMETADATA instance that contains the version, platform, and locale information for the assembly.  
+ pro Ukazatel na instanci AssemblyMetadata –, která obsahuje informace o verzi, platformě a národním prostředí pro sestavení.  
   
  `pbHashValue`  
- [in] A pointer to the hash data associated with the assembly.  
+ pro Ukazatel na data algoritmu hash přidružená k sestavení.  
   
  `cbHashValue`  
- [in] The size in bytes of `pbHashValue`.  
+ pro Velikost v bajtech `pbHashValue`.  
   
  `dwAssemblyRefFlags`  
- [in] A bitwise combination of [AssemblyRefFlags](../../../../docs/framework/unmanaged-api/metadata/assemblyrefflags-enumeration.md) values that specify attributes of the referenced assembly.  
+ pro Bitová kombinace hodnot [AssemblyRefFlags –](../../../../docs/framework/unmanaged-api/metadata/assemblyrefflags-enumeration.md) , které určují atributy odkazovaného sestavení.  
   
 ## <a name="remarks"></a>Poznámky  
- To create an `AssemblyRef` metadata structure, use the [IMetaDataAssemblyEmit::DefineAssemblyRef](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineassemblyref-method.md) method.  
+ Chcete-li vytvořit `AssemblyRef` struktury metadat, použijte metodu [IMetaDataAssemblyEmit::D efineassemblyref](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineassemblyref-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

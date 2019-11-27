@@ -1,5 +1,5 @@
 ---
-title: Value types table - C# reference
+title: Typy hodnot – odkaz C# na tabulku
 ms.custom: seodec18
 ms.date: 11/06/2019
 helpviewer_keywords:
@@ -13,31 +13,31 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74428461"
 ---
-# <a name="value-types-table-c-reference"></a>Value types table (C# reference)
+# <a name="value-types-table-c-reference"></a>Tabulka typů hodnot (C# Referenční dokumentace)
 
-The following table shows the C# value types:
+V následující tabulce jsou uvedeny C# typy hodnot:
 
-|Value type|Kategorie|
+|Typ hodnoty|Kategorie|
 |----------------|--------------|
-|[bool](bool.md)|Boolean|
-|`byte`|Unsigned, numeric, [integral](../builtin-types/integral-numeric-types.md)|
-|[char](../builtin-types/char.md)|Unsigned, numeric, [integral](../builtin-types/integral-numeric-types.md)|
-|`decimal`|Numeric, [floating-point](../builtin-types/floating-point-numeric-types.md)|
-|`double`|Numeric, [floating-point](../builtin-types/floating-point-numeric-types.md)|
+|[bool](bool.md)|Logická hodnota|
+|`byte`|Unsigned, Numeric, [integrál](../builtin-types/integral-numeric-types.md)|
+|[char](../builtin-types/char.md)|Unsigned, Numeric, [integrál](../builtin-types/integral-numeric-types.md)|
+|`decimal`|Číselná, [plovoucí desetinná](../builtin-types/floating-point-numeric-types.md) čárka|
+|`double`|Číselná, [plovoucí desetinná](../builtin-types/floating-point-numeric-types.md) čárka|
 |[enum](enum.md)|Výčet|
-|`float`|Numeric, [floating-point](../builtin-types/floating-point-numeric-types.md)|
-|`int`|Signed, numeric, [integral](../builtin-types/integral-numeric-types.md)|
-|`long`|Signed, numeric, [integral](../builtin-types/integral-numeric-types.md)|
-|`sbyte`|Signed, numeric, [integral](../builtin-types/integral-numeric-types.md)|
-|`short`|Signed, numeric, [integral](../builtin-types/integral-numeric-types.md)|
-|[struct](struct.md)|User-defined structure|
-|`uint`|Unsigned, numeric, [integral](../builtin-types/integral-numeric-types.md)|
-|`ulong`|Unsigned, numeric, [integral](../builtin-types/integral-numeric-types.md)|
-|`ushort`|Unsigned, numeric, [integral](../builtin-types/integral-numeric-types.md)|
+|`float`|Číselná, [plovoucí desetinná](../builtin-types/floating-point-numeric-types.md) čárka|
+|`int`|Signed, Numeric, [integrál](../builtin-types/integral-numeric-types.md)|
+|`long`|Signed, Numeric, [integrál](../builtin-types/integral-numeric-types.md)|
+|`sbyte`|Signed, Numeric, [integrál](../builtin-types/integral-numeric-types.md)|
+|`short`|Signed, Numeric, [integrál](../builtin-types/integral-numeric-types.md)|
+|[struct](struct.md)|Uživatelsky definovaná struktura|
+|`uint`|Unsigned, Numeric, [integrál](../builtin-types/integral-numeric-types.md)|
+|`ulong`|Unsigned, Numeric, [integrál](../builtin-types/integral-numeric-types.md)|
+|`ushort`|Unsigned, Numeric, [integrál](../builtin-types/integral-numeric-types.md)|
 
 ## <a name="see-also"></a>Viz také:
 
-- [C# reference](../index.md)
-- [Default values table](default-values-table.md)
-- [Value types](value-types.md)
-- [Formatting numeric results table](formatting-numeric-results-table.md)
+- [C#odkaz](../index.md)
+- [Tabulka výchozích hodnot](default-values-table.md)
+- [Typy hodnot](value-types.md)
+- [Tabulka formátování číselných výsledků](formatting-numeric-results-table.md)

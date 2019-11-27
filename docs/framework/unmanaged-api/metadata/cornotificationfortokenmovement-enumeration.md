@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450155"
 ---
 # <a name="cornotificationfortokenmovement-enumeration"></a>CorNotificationForTokenMovement – výčet
-Specifies the notifications that will be sent to the metadata API client when a token remap occurs.  
+Určuje oznámení, která se odešlou do klienta rozhraní API pro metadata, když dojde k přemapování tokenu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -63,39 +63,39 @@ typedef enum CorNotificationForTokenMovement {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`MDNotifyDefault`|Notify when `mdTypeRef`, `mdMethodDef`, `mdMemberRef`, or `mdFieldDef` tokens move.|  
-|`MDNotifyAll`|Notify when any token moves.|  
-|`MDNotifyNone`|Do not notify when tokens move.|  
-|`MDNotifyMethodDef`|Notify when an `mdMethodDef` token moves.|  
-|`MDNotifyMemberRef`|Notify when an `mdMemberRef` token moves.|  
-|`MDNotifyFieldDef`|Notify when an `mdFieldDef` token moves.|  
-|`MDNotifyTypeRef`|Notify when an `mdTypeRef` token moves.|  
-|`MDNotifyTypeDef`|Notify when an `mdTypeDef` token moves.|  
-|`MDNotifyParamDef`|Notify when an `mdParamDef` token moves.|  
-|`MDNotifyInterfaceImpl`|Notify when an `mdInterfaceImpl` token moves.|  
-|`MDNotifyProperty`|Notify when an `mdProperty` token moves.|  
-|`MDNotifyEvent`|Notify when an `mdEvent` token moves.|  
-|`MDNotifySignature`|Notify when an `mdSignature` token moves.|  
-|`MDNotifyTypeSpec`|Notify when an `mdTypeSpec` token moves.|  
-|`MDNotifyCustomAttribute`|Notify when an `mdCustomAttribute` token moves.|  
-|`MDNotifySecurityValue`|Notify when an `mdSecurityValue` token moves.|  
-|`MDNotifyPermission`|Notify when an `mdPermission` token moves.|  
-|`MDNotifyModuleRef`|Notify when an `mdModuleRef` token moves.|  
-|`MDNotifyNameSpace`|Notify when an `mdNameSpace` token moves.|  
-|`MDNotifyAssemblyRef`|Notify when an `mdAssemblyRef` token moves.|  
-|`MDNotifyFile`|Notify when an `mdFile` token moves.|  
-|`MDNotifyExportedType`|Notify when an `mdExportedType` token moves.|  
-|`MDNotifyResource`|Notify when an `mdManifestResource` token moves.|  
+|`MDNotifyDefault`|Upozorní, když se přesunou `mdTypeRef`, `mdMethodDef`, `mdMemberRef`nebo tokeny `mdFieldDef`.|  
+|`MDNotifyAll`|Upozorní, když se libovolný token přesune.|  
+|`MDNotifyNone`|Neupozorňovat při přesunu tokenů|  
+|`MDNotifyMethodDef`|Upozorní, když se přesune token `mdMethodDef`.|  
+|`MDNotifyMemberRef`|Upozorní, když se přesune token `mdMemberRef`.|  
+|`MDNotifyFieldDef`|Upozorní, když se přesune token `mdFieldDef`.|  
+|`MDNotifyTypeRef`|Upozorní, když se přesune token `mdTypeRef`.|  
+|`MDNotifyTypeDef`|Upozorní, když se přesune token `mdTypeDef`.|  
+|`MDNotifyParamDef`|Upozorní, když se přesune token `mdParamDef`.|  
+|`MDNotifyInterfaceImpl`|Upozorní, když se přesune token `mdInterfaceImpl`.|  
+|`MDNotifyProperty`|Upozorní, když se přesune token `mdProperty`.|  
+|`MDNotifyEvent`|Upozorní, když se přesune token `mdEvent`.|  
+|`MDNotifySignature`|Upozorní, když se přesune token `mdSignature`.|  
+|`MDNotifyTypeSpec`|Upozorní, když se přesune token `mdTypeSpec`.|  
+|`MDNotifyCustomAttribute`|Upozorní, když se přesune token `mdCustomAttribute`.|  
+|`MDNotifySecurityValue`|Upozorní, když se přesune token `mdSecurityValue`.|  
+|`MDNotifyPermission`|Upozorní, když se přesune token `mdPermission`.|  
+|`MDNotifyModuleRef`|Upozorní, když se přesune token `mdModuleRef`.|  
+|`MDNotifyNameSpace`|Upozorní, když se přesune token `mdNameSpace`.|  
+|`MDNotifyAssemblyRef`|Upozorní, když se přesune token `mdAssemblyRef`.|  
+|`MDNotifyFile`|Upozorní, když se přesune token `mdFile`.|  
+|`MDNotifyExportedType`|Upozorní, když se přesune token `mdExportedType`.|  
+|`MDNotifyResource`|Upozorní, když se přesune token `mdManifestResource`.|  
   
 ## <a name="remarks"></a>Poznámky  
- A token may be re-mapped (that is, moved) during a metadata merge.  
+ Token se dá při sloučení metadat znovu namapovat (tj., to je přesunutý).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **Hlavička:** CorHdr. h  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

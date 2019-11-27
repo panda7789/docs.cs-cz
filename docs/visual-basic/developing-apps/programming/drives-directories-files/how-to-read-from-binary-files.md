@@ -16,39 +16,39 @@ ms.locfileid: "74335298"
 ---
 # <a name="how-to-read-from-binary-files-in-visual-basic"></a>Postupy: Čtení z binárních souborů v jazyce Visual Basic
 
-The `My.Computer.FileSystem` object provides the `ReadAllBytes` method for reading from binary files.  
+Objekt `My.Computer.FileSystem` poskytuje metodu `ReadAllBytes` pro čtení z binárních souborů.  
   
-### <a name="to-read-from-a-binary-file"></a>To read from a binary file  
+### <a name="to-read-from-a-binary-file"></a>Čtení z binárního souboru  
   
-- Use the `ReadAllBytes` method, which returns the contents of a file as a byte array. This example reads from the file `C:/Documents and Settings/selfportrait.jpg`.  
+- Použijte metodu `ReadAllBytes`, která vrátí obsah souboru jako bajtové pole. Tento příklad čte ze souboru `C:/Documents and Settings/selfportrait.jpg`.  
   
      [!code-vb[VbVbcnMyFileSystem#78](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#78)]  
   
-- For large binary files, you can use the <xref:System.IO.FileStream.Read%2A> method of the <xref:System.IO.FileStream> object to read from the file only a specified amount at a time. You can then limit how much of the file is loaded into memory for each read operation. The following code example copies a file and allows the caller to specify how much of the file is read into memory per read operation.  
+- U velkých binárních souborů můžete použít metodu <xref:System.IO.FileStream.Read%2A> objektu <xref:System.IO.FileStream> pro čtení ze souboru pouze v zadané velikosti. Pak můžete omezit, kolik souborů je načteno do paměti pro každou operaci čtení. Následující příklad kódu zkopíruje soubor a umožňuje volajícímu určit, jak velká část souboru je načtena do paměti na operaci čtení.  
   
      [!code-vb[VbVbcnMyFileSystem#91](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#91)]  
   
 ## <a name="robust-programming"></a>Robustní programování  
 
- The following conditions may cause an exception to be thrown:  
+ Následující podmínky mohou způsobit vyvolání výjimky:  
   
-- The path is not valid for one of the following reasons: it is a zero-length string, it contains only white space, it contains invalid characters, or it is a device path (<xref:System.ArgumentException>).  
+- Cesta není platná z některého z následujících důvodů: Jedná se o řetězec o nulové délce, obsahuje pouze prázdné znaky, obsahuje neplatné znaky nebo se jedná o cestu k zařízení (<xref:System.ArgumentException>).  
   
-- The path is not valid because it is `Nothing` (<xref:System.ArgumentNullException>).  
+- Cesta není platná, protože je `Nothing` (<xref:System.ArgumentNullException>).  
   
-- The file does not exist (<xref:System.IO.FileNotFoundException>).  
+- Soubor neexistuje (<xref:System.IO.FileNotFoundException>).  
   
-- The file is in use by another process, or an I/O error occurs (<xref:System.IO.IOException>).  
+- Soubor je používán jiným procesem nebo dojde k vstupně-výstupní chybě (<xref:System.IO.IOException>).  
   
-- The path exceeds the system-defined maximum length (<xref:System.IO.PathTooLongException>).  
+- Cesta překračuje maximální povolenou délku systému (<xref:System.IO.PathTooLongException>).  
   
-- A file or directory name in the path contains a colon (:) or is in an invalid format (<xref:System.NotSupportedException>).  
+- Název souboru nebo adresáře v cestě obsahuje dvojtečku (:) nebo má neplatný formát (<xref:System.NotSupportedException>).  
   
-- There is not enough memory to write the string to buffer (<xref:System.OutOfMemoryException>).  
+- K zápisu řetězce do vyrovnávací paměti (<xref:System.OutOfMemoryException>) není dostatek paměti.  
   
-- The user lacks necessary permissions to view the path (<xref:System.Security.SecurityException>).  
+- Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).  
   
- Nečiňte rozhodnutí o obsahu souboru na základě jeho názvu. For example, the file Form1.vb may not be a Visual Basic source file.  
+ Nečiňte rozhodnutí o obsahu souboru na základě jeho názvu. Například soubor Form1. vb nemusí být Visual Basic zdrojový soubor.  
   
  Před použitím dat ve své aplikaci ověřte všechny vstupy. Soubor nemusí mít obsah, jaký očekáváte, a metody pro čtení z tohoto souboru mohou selhat.  
   

@@ -13,85 +13,85 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74345121"
 ---
 # <a name="events-visual-basic"></a>Události (Visual Basic)
-While you might visualize a Visual Studio project as a series of procedures that execute in a sequence, in reality, most programs are event driven—meaning the flow of execution is determined by external occurrences called *events*.  
+I když může být projekt sady Visual Studio vizualizuje jako série procedur, které jsou spouštěny v sekvenci, je ve skutečnosti řízeno událostmi, což znamená, že tok provádění je určen externími výskyty nazývanými *události*.  
   
- An event is a signal that informs an application that something important has occurred. For example, when a user clicks a control on a form, the form can raise a `Click` event and call a procedure that handles the event. Events also allow separate tasks to communicate. Say, for example, that your application performs a sort task separately from the main application. If a user cancels the sort, your application can send a cancel event instructing the sort process to stop.  
+ Událost je signál, který informuje aplikaci, že došlo k nějaké důležitosti. Například když uživatel klikne na ovládací prvek ve formuláři, může formulář vyvolat událost `Click` a volat proceduru, která událost zpracovává. Události také umožňují komunikaci mezi různými úkoly. Řekněme například, že vaše aplikace provádí řazení úkolů odděleně od hlavní aplikace. Pokud uživatel zruší řazení, může aplikace odeslat událost zrušení pokynu k zastavení procesu řazení.  
   
-## <a name="event-terms-and-concepts"></a>Event Terms and Concepts  
- This section describes the terms and concepts used with events in Visual Basic.  
+## <a name="event-terms-and-concepts"></a>Výrazy a koncepty událostí  
+ Tato část popisuje pojmy a koncepty používané s událostmi v Visual Basic.  
   
 ### <a name="declaring-events"></a>Deklarace událostí  
- You declare events within classes, structures, modules, and interfaces using the `Event` keyword, as in the following example:  
+ Události v rámci tříd, struktur, modulů a rozhraní deklarujete pomocí klíčového slova `Event`, jako v následujícím příkladu:  
   
  [!code-vb[VbVbalrEvents#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#24)]  
   
-### <a name="raising-events"></a>Raising Events  
- An event is like a message announcing that something important has occurred. The act of broadcasting the message is called *raising* the event. In Visual Basic, you raise events with the `RaiseEvent` statement, as in the following example:  
+### <a name="raising-events"></a>Vyvolávání událostí  
+ Událost je jako zpráva oznamující, že došlo k nějaké důležitosti. Zpráva o vysílání zprávy se nazývá *vyvolání* události. V Visual Basic události vyvoláte pomocí příkazu `RaiseEvent`, jako v následujícím příkladu:  
   
  [!code-vb[VbVbalrEvents#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#25)]  
   
- Events must be raised within the scope of the class, module, or structure where they are declared. For example, a derived class cannot raise events inherited from a base class.  
+ Události musí být vyvolány v rozsahu třídy, modulu nebo struktury, kde jsou deklarovány. Například odvozená třída nemůže vyvolat události děděné ze základní třídy.  
   
-### <a name="event-senders"></a>Event Senders  
- Any object capable of raising an event is an *event sender*, also known as an *event source*. Forms, controls, and user-defined objects are examples of event senders.  
+### <a name="event-senders"></a>Odesílatelé událostí  
+ Libovolný objekt schopný vyvolání události je *odesílatel události*, označovaný také jako *zdroj události*. Příklady odesílatelů událostí jsou formuláře, ovládací prvky a uživatelem definované objekty.  
   
-### <a name="event-handlers"></a>Obslužné rutiny událostí  
- *Event handlers* are procedures that are called when a corresponding event occurs. You can use any valid subroutine with a matching signature as an event handler. You cannot use a function as an event handler, however, because it cannot return a value to the event source.  
+### <a name="event-handlers"></a>Obslužné rutiny události  
+ *Obslužné rutiny událostí* jsou procedury, které jsou volány při výskytu odpovídající události. Můžete použít jakoukoli platnou podprogram s vyhovující signaturou jako obslužnou rutinu události. Funkci nelze použít jako obslužnou rutinu události, protože ale nemůže vrátit hodnotu do zdroje událostí.  
   
- Visual Basic uses a standard naming convention for event handlers that combines the name of the event sender, an underscore, and the name of the event. For example, the `Click` event of a button named `button1` would be named `Sub button1_Click`.  
+ Visual Basic používá standardní zásady vytváření názvů pro obslužné rutiny událostí, které kombinují jméno odesílatele události, podtržítko a název události. Například událost `Click` tlačítka s názvem `button1` by měla být pojmenována `Sub button1_Click`.  
   
 > [!NOTE]
-> We recommend that you use this naming convention when defining event handlers for your own events, but it is not required; you can use any valid subroutine name.  
+> Doporučujeme používat tyto zásady vytváření názvů při definování obslužných rutin událostí pro vlastní události, ale není to nutné. můžete použít libovolný platný název subrutiny.  
   
-## <a name="associating-events-with-event-handlers"></a>Associating Events with Event Handlers  
- Before an event handler becomes usable, you must first associate it with an event by using either the `Handles` or `AddHandler` statement.  
+## <a name="associating-events-with-event-handlers"></a>Přidružení událostí k obslužným rutinám událostí  
+ Předtím, než bude možné obslužnou rutinu události použít, je nutné ji nejprve přidružit k události pomocí příkazu `Handles` nebo `AddHandler`.  
   
-### <a name="withevents-and-the-handles-clause"></a>WithEvents and the Handles Clause  
- The `WithEvents` statement and `Handles` clause provide a declarative way of specifying event handlers. An event raised by an object declared with the `WithEvents` keyword can be handled by any procedure with a `Handles` statement for that event, as shown in the following example:  
+### <a name="withevents-and-the-handles-clause"></a>WithEvents a klauzule Handles  
+ Příkaz `WithEvents` a klauzule `Handles` poskytují deklarativní způsob určení obslužných rutin událostí. Událost vytvořená objektem deklarovaným s klíčovým slovem `WithEvents` může být zpracována jakýmkoli postupem s příkazem `Handles` pro danou událost, jak je znázorněno v následujícím příkladu:  
   
  [!code-vb[VbVbalrEvents#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#1)]  
   
- The `WithEvents` statement and the `Handles` clause are often the best choice for event handlers because the declarative syntax they use makes event handling easier to code, read and debug. However, be aware of the following limitations on the use of `WithEvents` variables:  
+ Příkaz `WithEvents` a klauzule `Handles` jsou často nejlepší volbou pro obslužné rutiny událostí, protože deklarativní syntaxe, kterou používají, zjednodušuje kód, číst a ladit. Mějte ale na paměti následující omezení pro použití `WithEvents`ch proměnných:  
   
-- You cannot use a `WithEvents` variable as an object variable. That is, you cannot declare it as `Object`—you must specify the class name when you declare the variable.  
+- Nemůžete použít `WithEvents`ovou proměnnou jako proměnnou objektu. To znamená, že jej nelze deklarovat jako `Object`– při deklaraci proměnné je nutné zadat název třídy.  
   
-- Because shared events are not tied to class instances, you cannot use `WithEvents` to declaratively handle shared events. Similarly, you cannot use `WithEvents` or `Handles` to handle events from a `Structure`. In both cases, you can use the `AddHandler` statement to handle those events.  
+- Vzhledem k tomu, že sdílené události nejsou svázány s instancemi třídy, nelze použít `WithEvents` k deklarativnímu zpracování sdílených událostí. Podobně nemůžete použít `WithEvents` ani `Handles` k zpracování událostí z `Structure`. V obou případech můžete použít příkaz `AddHandler` pro zpracování těchto událostí.  
   
-- You cannot create arrays of `WithEvents` variables.  
+- Nemůžete vytvořit pole proměnných `WithEvents`.  
   
- `WithEvents` variables allow a single event handler to handle one or more kind of event, or one or more event handlers to handle the same kind of event.  
+ proměnné `WithEvents` umožňují jedné obslužné rutině události zpracovat jeden nebo více typů události nebo jednu nebo více obslužných rutin událostí pro zpracování stejného typu události.  
   
- Although the `Handles` clause is the standard way of associating an event with an event handler, it is limited to associating events with event handlers at compile time.  
+ I když je klauzule `Handles` standardním způsobem přidružení události k obslužné rutině události, je omezena na přidružení událostí s obslužnými rutinami událostí v době kompilace.  
   
- In some cases, such as with events associated with forms or controls, Visual Basic automatically stubs out an empty event handler and associates it with an event. For example, when you double-click a command button on a form in design mode, Visual Basic creates an empty event handler and a `WithEvents` variable for the command button, as in the following code:  
+ V některých případech, například s událostmi přidruženými k formulářům nebo ovládacím prvkům, Visual Basic automaticky odblokovat prázdnou obslužnou rutinu události a přidruží ji k události. Například když dvakrát kliknete na příkazové tlačítko ve formuláři v režimu návrhu, Visual Basic vytvoří prázdnou obslužnou rutinu události a `WithEvents` proměnnou pro příkazové tlačítko, jako v následujícím kódu:  
   
  [!code-vb[VbVbalrEvents#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#26)]  
   
-### <a name="addhandler-and-removehandler"></a>AddHandler and RemoveHandler  
- The `AddHandler` statement is similar to the `Handles` clause in that both allow you to specify an event handler. However, `AddHandler`, used with `RemoveHandler`, provides greater flexibility than the `Handles` clause, allowing you to dynamically add, remove, and change the event handler associated with an event. If you want to handle shared events or events from a structure, you must use `AddHandler`.  
+### <a name="addhandler-and-removehandler"></a>AddHandler a RemoveHandler  
+ Příkaz `AddHandler` je podobný klauzuli `Handles` v tom, že umožňují zadat obslužnou rutinu události. Nicméně `AddHandler`, který se používá s `RemoveHandler`, poskytuje větší flexibilitu než klauzule `Handles`, což vám umožní dynamicky přidávat, odebírat a měnit obslužné rutiny událostí přidružené k události. Pokud chcete zpracovávat sdílené události nebo události ze struktury, je nutné použít `AddHandler`.  
   
- `AddHandler` takes two arguments: the name of an event from an event sender such as a control, and an expression that evaluates to a delegate. You do not need to explicitly specify the delegate class when using `AddHandler`, since the `AddressOf` statement always returns a reference to the delegate. The following example associates an event handler with an event raised by an object:  
+ `AddHandler` přebírá dva argumenty: název události od odesílatele události, jako je například ovládací prvek, a výraz, který se vyhodnotí jako delegát. Třídu delegáta není nutné explicitně určovat při použití `AddHandler`, protože příkaz `AddressOf` vždy vrací odkaz na delegáta. Následující příklad přidruží obslužnou rutinu události k události vyvolané objektem:  
   
  [!code-vb[VbVbalrEvents#28](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#28)]  
   
- `RemoveHandler`, which disconnects an event from an event handler, uses the same syntax as `AddHandler`. Příklad:  
+ `RemoveHandler`, která odpojuje událost od obslužné rutiny události, používá stejnou syntaxi jako `AddHandler`. Příklad:  
   
  [!code-vb[VbVbalrEvents#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#29)]  
   
- In the following example, an event handler is associated with an event, and the event is raised. The event handler catches the event and displays a message.  
+ V následujícím příkladu je obslužná rutina události přidružena k události a událost je vyvolána. Obslužná rutina události zachytí událost a zobrazí zprávu.  
   
- Then the first event handler is removed and a different event handler is associated with the event. When the event is raised again, a different message is displayed.  
+ Pak je první obslužná rutina události odebrána a k události je přidružena jiná obslužná rutina události. Po opětovném vyvolání události se zobrazí jiná zpráva.  
   
- Finally, the second event handler is removed and the event is raised for a third time. Because there is no longer an event handler associated with the event, no action is taken.  
+ Nakonec se druhá obslužná rutina události odebere a událost se vygeneruje po dobu třetího času. Vzhledem k tomu, že k události již není přidružena obslužná rutina události, není provedena žádná akce.  
   
  [!code-vb[VbVbalrEvents#38](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class2.vb#38)]  
   
-## <a name="handling-events-inherited-from-a-base-class"></a>Handling Events Inherited from a Base Class  
- *Derived classes*—classes that inherit characteristics from a base class—can handle events raised by their base class using the `Handles MyBase` statement.  
+## <a name="handling-events-inherited-from-a-base-class"></a>Zpracování událostí zděděných ze základní třídy  
+ *Odvozené třídy*– třídy, které dědí vlastnosti ze základní třídy, mohou zpracovávat události vyvolané jejich základní třídou pomocí příkazu `Handles MyBase`.  
   
-### <a name="to-handle-events-from-a-base-class"></a>To handle events from a base class  
+### <a name="to-handle-events-from-a-base-class"></a>Zpracování událostí ze základní třídy  
   
-- Declare an event handler in the derived class by adding a `Handles MyBase.`*eventname* statement to the declaration line of your event-handler procedure, where *eventname* is the name of the event in the base class you are handling. Příklad:  
+- Deklarujte obslužnou rutinu události v odvozené třídě přidáním příkazu `Handles MyBase.`*EventName* do řádku deklarace procedury obslužné rutiny události, kde *EventName* je název události v základní třídě, kterou zpracováváte. Příklad:  
   
      [!code-vb[VbVbalrEvents#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#12)]  
   
@@ -99,11 +99,11 @@ While you might visualize a Visual Studio project as a series of procedures that
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Návod: Deklarace a vyvolávání událostí](../../../../visual-basic/programming-guide/language-features/events/walkthrough-declaring-and-raising-events.md)|Provides a step-by-step description of how to declare and raise events for a class.|  
-|[Návod: Zpracování událostí](../../../../visual-basic/programming-guide/language-features/events/walkthrough-handling-events.md)|Demonstrates how to write an event-handler procedure.|  
-|[Postupy: Deklarování vlastních událostí k zabránění blokování](../../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-avoid-blocking.md)|Demonstrates how to define a custom event that allows its event handlers to be called asynchronously.|  
-|[Postupy: Deklarování vlastních událostí pro konzervaci paměti](../../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)|Demonstrates how to define a custom event that uses memory only when the event is handled.|  
-|[Troubleshooting Inherited Event Handlers in Visual Basic](../../../../visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)|Lists common issues that arise with event handlers in inherited components.|  
+|[Návod: Deklarace a vyvolávání událostí](../../../../visual-basic/programming-guide/language-features/events/walkthrough-declaring-and-raising-events.md)|Poskytuje podrobný popis způsobu, jak deklarovat a vyvolat události pro třídu.|  
+|[Návod: Zpracování událostí](../../../../visual-basic/programming-guide/language-features/events/walkthrough-handling-events.md)|Ukazuje, jak napsat proceduru obslužné rutiny události.|  
+|[Postupy: Deklarování vlastních událostí k zabránění blokování](../../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-avoid-blocking.md)|Ukazuje, jak definovat vlastní událost, která umožňuje, aby obslužné rutiny události byly volány asynchronně.|  
+|[Postupy: Deklarování vlastních událostí pro konzervaci paměti](../../../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)|Ukazuje, jak definovat vlastní událost, která používá paměť pouze v případě, že je událost zpracována.|  
+|[Řešení potíží se zděděnými obslužnými rutinami událostí v Visual Basic](../../../../visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)|Uvádí běžné problémy, které vznikají u obslužných rutin událostí ve zděděných součástech.|  
 |[Události](../../../../standard/events/index.md)|Obsahuje přehled modelu události v rozhraní .NET Framework.|  
-|[Vytváření obslužných rutin událostí ve Windows Forms](../../../../framework/winforms/creating-event-handlers-in-windows-forms.md)|Describes how to work with events associated with Windows Forms objects.|  
-|[Delegáty](../../../../visual-basic/programming-guide/language-features/delegates/index.md)|Provides an overview of delegates in Visual Basic.|
+|[Vytváření obslužných rutin událostí ve Windows Forms](../../../../framework/winforms/creating-event-handlers-in-windows-forms.md)|Popisuje, jak pracovat s událostmi přidruženými k objektům model Windows Forms.|  
+|[Delegáti](../../../../visual-basic/programming-guide/language-features/delegates/index.md)|Poskytuje přehled o delegátech v Visual Basic.|

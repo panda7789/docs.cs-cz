@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446558"
 ---
 # <a name="closeenum-method"></a>CloseEnum – metoda
-Closes the indicated enumeration and frees associated resources.  
+Zavře zadaný výčet a uvolní přidružené prostředky.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,16 +35,16 @@ HRESULT CloseEnum(
   
 ## <a name="parameters"></a>Parametry  
  `hEnum`  
- Handle of enumeration to be closed.  
+ Popisovač výčtu, který má být uzavřen.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Returns S_OK if the method succeeds.  
+ Vrátí S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Requires alink.h  
+ Vyžaduje ALink. h  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink – rozhraní](ialink-interface.md)
 - [IALink2 – rozhraní](ialink2-interface.md)
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)

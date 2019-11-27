@@ -22,16 +22,16 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445517"
 ---
 # <a name="idebugautoattach-interface"></a>IDebugAutoAttach – rozhraní
-Defines the interface for server-invoked debugger auto attach.  
+Definuje rozhraní pro automatické připojování ladicího programu spouštěného serverem.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[AutoAttach – metoda](../../../../docs/framework/unmanaged-api/diagnostics/idebugautoattach-autoattach-method.md)|Performs server-invoked debugger auto attach.|  
+|[AutoAttach – metoda](../../../../docs/framework/unmanaged-api/diagnostics/idebugautoattach-autoattach-method.md)|Provede automatické připojování ladicího programu vyvolaného serverem.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** DbgAutoAttach.idl  
+ **Hlavička:** DbgAutoAttach. idl  
   
 ## <a name="see-also"></a>Viz také:
 

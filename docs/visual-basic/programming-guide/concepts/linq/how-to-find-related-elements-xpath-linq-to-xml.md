@@ -1,5 +1,5 @@
 ---
-title: 'How to: Find Related Elements (XPath-LINQ to XML)'
+title: 'Postupy: hledání souvisejících elementů (XPath-LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 6b0ef058-d704-48a5-98cd-33f00d088af9
 ms.openlocfilehash: e250572e7bd73e769e4ab06b7b7ff9e3b3d38c47
@@ -9,19 +9,19 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344650"
 ---
-# <a name="how-to-find-related-elements-xpath-linq-to-xml-visual-basic"></a>How to: Find Related Elements (XPath-LINQ to XML) (Visual Basic)
-This topic shows how to get an element selecting on an attribute that is referred to by the value of another element.  
+# <a name="how-to-find-related-elements-xpath-linq-to-xml-visual-basic"></a>Postupy: hledání souvisejících elementů (XPath-LINQ to XML) (Visual Basic)
+Toto téma ukazuje, jak získat prvek pro výběr atributu, na který odkazuje hodnota jiného prvku.  
   
- The XPath expression is:  
+ Výraz XPath je:  
   
  `.//Customer[@CustomerID=/Root/Orders/Order[12]/CustomerID]`  
   
 ## <a name="example"></a>Příklad  
- This example finds the 12th `Order` element, and then finds the customer for that order.  
+ Tento příklad najde 12 `Order` prvek a potom vyhledá zákazníka pro tuto objednávku.  
   
- Note that indexing into a list in .NET is 'zero' based. Indexing into a collection of nodes in an XPath predicate is 'one' based. This example reflects this difference.  
+ Všimněte si, že indexování do seznamu v rozhraní .NET je založené na nule. Indexování do kolekce uzlů v predikátu XPath je založené na "One". Tento příklad odráží tento rozdíl.  
   
- This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
   
 ```vb  
 Dim co As XDocument = XDocument.Load("CustomersOrders.xml")  
@@ -53,7 +53,7 @@ End If
 Console.WriteLine(customer1)  
 ```  
   
- This example produces the following output:  
+ Tento příklad vytvoří následující výstup:  
   
 ```console
 Results are identical  
@@ -75,4 +75,4 @@ Results are identical
   
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ to XML for XPath Users (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML pro uživatele XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

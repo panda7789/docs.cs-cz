@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74443542"
 ---
 # <a name="imetadataassemblyimportenumfiles-method"></a>IMetaDataAssemblyImport::EnumFiles – metoda
-Enumerates the files referenced in the current assembly manifest.  
+Vytvoří výčet souborů odkazovaných v aktuálním manifestu sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,32 +38,32 @@ HRESULT EnumFiles (
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [in, out] A pointer to the enumerator. This must be a null value for the first call of this method.  
+ [in, out] Ukazatel na enumerátor. Pro první volání této metody musí být hodnota null.  
   
  `rFiles`  
- [out] The array used to store the `mdFile` metadata tokens.  
+ mimo Pole, které se používá k uložení `mdFile` tokenů metadat  
   
  `cMax`  
- [in] The maximum number of `mdFile` tokens that can be placed in `rFiles`.  
+ pro Maximální počet `mdFile` tokenů, které lze umístit do `rFiles`.  
   
  `pcTokens`  
- [out] The number of `mdFile` tokens actually placed in `rFiles`.  
+ mimo Počet tokenů `mdFile` vlastněných v `rFiles`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumFiles` returned successfully.|  
-|`S_FALSE`|There are no tokens to enumerate. In this case, `pcTokens` is set to zero.|  
+|`S_OK`|`EnumFiles` byla úspěšně vrácena.|  
+|`S_FALSE`|Neexistují žádné tokeny k vytvoření výčtu. V takovém případě je `pcTokens` nastavena na hodnotu nula.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

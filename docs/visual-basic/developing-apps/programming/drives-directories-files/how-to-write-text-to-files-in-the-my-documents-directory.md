@@ -16,17 +16,17 @@ ms.locfileid: "74334524"
 ---
 # <a name="how-to-write-text-to-files-in-the-my-documents-directory-in-visual-basic"></a>Postupy: Zápis textu do souborů v adresáři MyDocuments v jazyce Visual Basic
 
-The `My.Computer.FileSystem.SpecialDirectories` object allows you to access special directories, such as the **MyDocuments** directory.  
+Objekt `My.Computer.FileSystem.SpecialDirectories` umožňuje přístup ke speciálním adresářům, jako je například adresář **dokumenty** .  
   
 ## <a name="procedure"></a>Postup  
   
-#### <a name="to-write-new-text-files-in-the-my-documents-directory"></a>To write new text files in the My Documents directory  
+#### <a name="to-write-new-text-files-in-the-my-documents-directory"></a>Zápis nových textových souborů do adresáře My Documents  
   
-1. Use the `My.Computer.FileSystem.SpecialDirectories.MyDocuments` property to supply the path.  
+1. K poskytnutí cesty použijte vlastnost `My.Computer.FileSystem.SpecialDirectories.MyDocuments`.  
   
      [!code-vb[VbFileIOWrite#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIOWrite/VB/Class1.vb#1)]  
   
-2. Use the `WriteAllText` method to write text to the specified file.  
+2. K zápisu textu do zadaného souboru použijte metodu `WriteAllText`.  
   
      [!code-vb[VbVbcnMyFileSystem#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#14)]  
   
@@ -36,17 +36,17 @@ The `My.Computer.FileSystem.SpecialDirectories` object allows you to access spec
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
 
- Replace `test.txt` with the name of the file you want to write to.  
+ Nahraďte `test.txt` názvem souboru, do kterého chcete zapisovat.  
   
 ## <a name="robust-programming"></a>Robustní programování  
 
- This code rethrows all the exceptions that may occur when writing text to the file. You can reduce the likelihood of exceptions by using Windows Forms controls such as the [OpenFileDialog](../../../../framework/winforms/controls/openfiledialog-component-windows-forms.md) and the [SaveFileDialog](../../../../framework/winforms/controls/savefiledialog-component-windows-forms.md) components that limit the user choices to valid file names. Using these controls is not foolproof, however. The file system can change between the time the user selects a file and the time that the code executes. Exception handling is therefore nearly always necessary when with working with files.  
+ Tento kód znovu vyvolá všechny výjimky, které mohou nastat při zápisu textu do souboru. Můžete snížit pravděpodobnost výjimek pomocí model Windows Forms ovládací prvky, jako jsou například [OpenFileDialog](../../../../framework/winforms/controls/openfiledialog-component-windows-forms.md) a komponenty [SaveFileDialog](../../../../framework/winforms/controls/savefiledialog-component-windows-forms.md) , které omezují možnosti uživatele na platné názvy souborů. Použití těchto ovládacích prvků není však foolproof. Systém souborů se může změnit mezi časem, kdy uživatel vybere soubor a čas, kdy se kód spustí. Zpracování výjimek je proto skoro vždy nutné při práci se soubory.  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
 
- If you are running in a partial-trust context, the code might throw an exception due to insufficient privileges. For more information, see [Code Access Security Basics](../../../../framework/misc/code-access-security-basics.md).  
+ Pokud používáte v kontextu s částečným vztahem důvěryhodnosti, může kód vyvolat výjimku z důvodu nedostatečných oprávnění. Další informace najdete v tématu [Základy zabezpečení přístupu ke kódu](../../../../framework/misc/code-access-security-basics.md).  
   
- This example creates a new file. If an application needs to create a file, that application needs Create permission for the folder. Permissions are set using access control lists. If the file already exists, the application needs only Write permission, a lesser privilege. Where possible, it is more secure to create the file during deployment, and only grant Read privileges to a single file, rather than to grant Create privileges for a folder. Also, it is more secure to write data to user folders than to the root folder or the **Program Files** folder. For more information, see [ACL Technology Overview](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms229742(v=vs.100)).  
+ Tento příklad vytvoří nový soubor. Pokud aplikace potřebuje vytvořit soubor, potřebuje tato aplikace oprávnění vytvořit pro tuto složku. Oprávnění se nastavují pomocí seznamů řízení přístupu. Pokud soubor již existuje, aplikace potřebuje pouze oprávnění Write, což je menší oprávnění. Pokud je to možné, je bezpečnější vytvořit soubor během nasazení a udělit pouze oprávnění ke čtení pro jeden soubor místo udělení oprávnění k vytvoření složky. Je také bezpečnější zapsat data do složek uživatele než do kořenové složky nebo do složky **Program Files** . Další informace najdete v tématu [Přehled technologie ACL](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms229742(v=vs.100)).  
   
 ## <a name="see-also"></a>Viz také:
 

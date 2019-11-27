@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445585"
 ---
 # <a name="setassemblyfile2-method"></a>SetAssemblyFile2 – metoda
-Sets the name of and options for a new assembly. Do not call this method when you produce unbound modules.  
+Nastaví název a možnosti pro nové sestavení. Nevolejte tuto metodu, když vytváříte nevázané moduly.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,25 +37,25 @@ HRESULT SetAssemblyFile2(
   
 ## <a name="parameters"></a>Parametry  
  `pszFilename`  
- Name of manifest file.  
+ Název souboru manifestu  
   
  `pEmitter`  
- [IMetaDataEmit2 Interface](../metadata/imetadataemit2-interface.md) interface for this file.  
+ Rozhraní [IMetaDataEmit2 rozhraní](../metadata/imetadataemit2-interface.md) pro tento soubor.  
   
  `afFlags`  
- Options represented by [AssemblyFlags Enumeration](../metadata/assemblyflags-enumeration.md).  
+ Možnosti reprezentované [výčtem AssemblyFlags –](../metadata/assemblyflags-enumeration.md)  
   
  `pAssemblyID`  
- Receives unique ID for the assembly being constructed.  
+ Získá jedinečné ID sestavení, které je sestaveno.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Returns S_OK if the method succeeds.  
+ Vrátí S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Requires alink.h.  
+ Vyžaduje ALink. h.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink2 – rozhraní](ialink2-interface.md)
 - [IALink – rozhraní](ialink-interface.md)
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)

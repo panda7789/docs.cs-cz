@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445192"
 ---
 # <a name="icorprofilercallbackappdomainshutdownstarted-method"></a>ICorProfilerCallback::AppDomainShutdownStarted – metoda
-Notifies the profiler that an application domain is being unloaded from a process.  
+Upozorní profileru, že doména aplikace je uvolněna z procesu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,19 +34,19 @@ HRESULT AppDomainShutdownStarted(
   
 ## <a name="parameters"></a>Parametry  
  `appDomainId`  
- [in] Identifies the domain in which the application's assemblies are stored.  
+ pro Určuje doménu, ve které jsou uložena sestavení aplikace.  
   
 ## <a name="remarks"></a>Poznámky  
- The value of `appDomainId` is not valid for any information request after the `AppDomainShutdownStarted` method returns — this is the profiler's last chance to get information about this application domain.  
+ Hodnota `appDomainId` není platná pro žádnou žádost o informace po návratu metody `AppDomainShutdownStarted` – jedná se o poslední možnost profileru k získání informací o této doméně aplikace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

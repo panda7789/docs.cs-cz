@@ -26,9 +26,9 @@ Pokud nechcete sestavovat aplikace sami, můžete si stáhnout [asynchronní vzo
 
 1. Spusťte Visual Studio.
 
-2. V panelu nabídky zvolte **souboru** > **nový** > **projektu**.
+2. Na panelu nabídek vyberte možnost **soubor** > **Nový** > **projekt**.
 
-     **Nový projekt** zobrazí se dialogové okno.
+     Otevře se dialogové okno **Nový projekt** .
 
 3. V podokně **Nainstalované šablony** zvolte možnost Visual C#a v seznamu typů projektů zvolte možnost **aplikace WPF** .
 

@@ -14,14 +14,14 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445500"
 ---
 # <a name="diagnostics-symbol-store-unmanaged-api-reference"></a>Úložiště symbolů diagnostiky (referenční dokumentace nespravovaného rozhraní API)
-The diagnostics symbol store API enables a compiler to generate symbol information for use by a debugger.  
+Rozhraní API pro úložiště symbolů diagnostiky umožňuje kompilátoru generovat informace o symbolech pro použití v ladicím programu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Rozhraní pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)  
- Describes the unmanaged interfaces that the diagnostics symbol store API uses.  
+ Popisuje nespravovaná rozhraní, která používá rozhraní API pro úložiště symbolů diagnostiky.  
   
  [Výčty pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-enumerations.md)  
- Describes the unmanaged enumerations that the diagnostics symbol store API uses.  
+ Popisuje nespravované výčty, které používá rozhraní API pro úložiště symbolů diagnostiky.  
   
  [Struktury pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-structures.md)  
- Describes the unmanaged structures that the diagnostics symbol store API uses.
+ Popisuje nespravované struktury, které používá rozhraní API pro úložiště symbolů diagnostiky.

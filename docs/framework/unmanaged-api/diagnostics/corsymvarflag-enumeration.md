@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448559"
 ---
 # <a name="corsymvarflag-enumeration"></a>CorSymVarFlag – výčet
-Indicates whether a variable is compiler-generated.  
+Označuje, zda je proměnná vygenerována kompilátorem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,10 +37,10 @@ typedef enum CorSymVarFlag
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`VAR_IS_COMP_GEN`|Indicates that the given variable is compiler-generated.|  
+|`VAR_IS_COMP_GEN`|Označuje, že daná proměnná je vygenerovaná kompilátorem.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

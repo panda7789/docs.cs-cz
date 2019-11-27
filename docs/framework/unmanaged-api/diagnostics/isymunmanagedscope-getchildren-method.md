@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446369"
 ---
 # <a name="isymunmanagedscopegetchildren-method"></a>ISymUnmanagedScope::GetChildren – metoda
-Gets the children of this scope.  
+Získá podřízené objekty tohoto oboru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,19 +37,19 @@ HRESULT GetChildren(
   
 ## <a name="parameters"></a>Parametry  
  `cChildren`  
- [in] A `ULONG32` that indicates the size of the `children` array.  
+ pro `ULONG32`, která určuje velikost `children` pole.  
   
  `pcChildren`  
- [out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the children.  
+ mimo Ukazatel na `ULONG32`, který přijímá velikost vyrovnávací paměti vyžadované k uložení podřízených objektů.  
   
  `children`  
- [out] The returned array of children.  
+ mimo Vrácené pole podřízených objektů.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

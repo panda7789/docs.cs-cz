@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436462"
 ---
 # <a name="cortokentype-enumeration"></a>CorTokenType – výčet
-Indicates the type of a metadata token.  
+Určuje typ tokenu metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -63,42 +63,42 @@ typedef enum CorTokenType {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`mdtModule`|An `mdModule` token.|  
-|`mdtTypeRef`|An `mdTypeRef` token.|  
-|`mdtTypeDef`|An `mdTypeDef` token.|  
-|`mdtFieldDef`|An `mdFieldDef` token.|  
-|`mdtMethodDef`|An `mdMethodDef` token.|  
-|`mdtParamDef`|An `mdParamDef` token.|  
-|`mdtInterfaceImpl`|An `mdInterfaceImpl` token.|  
-|`mdtMemberRef`|An `mdMemberRef` token.|  
-|`mdtCustomAttribute`|An `mdCustomAttribute` token.|  
-|`mdtPermission`|An `mdPermission` token.|  
-|`mdtSignature`|An `mdSignature` token.|  
-|`mdtEvent`|An `mdEvent` token.|  
-|`mdtProperty`|An `mdProperty` token.|  
-|`mdtModuleRef`|An `mdModuleRef` token.|  
-|`mdtTypeSpec`|An `mdTypeSpec` token.|  
-|`mdtAssembly`|An `mdAssembly` token.|  
-|`mdtAssemblyRef`|An `mdAssemblyRef` token.|  
-|`mdtFile`|An `mdFile` token.|  
-|`mdtExportedType`|An `mdExportedType` token.|  
-|`mdtManifestResource`|An `mdManifestResource` token.|  
-|`mdtGenericParam`|An `mdGenericParam` token.|  
-|`mdtMethodSpec`|An `mdMethodSpec` token.|  
-|`mdtGenericParamConstraint`|An `mdGenericParamConstraint` token.|  
-|`mdtString`|An `mdString` token.|  
-|`mdtName`|An `mdName` token.|  
-|`mdtBaseType`|Not used.|  
+|`mdtModule`|Token `mdModule`.|  
+|`mdtTypeRef`|Token `mdTypeRef`.|  
+|`mdtTypeDef`|Token `mdTypeDef`.|  
+|`mdtFieldDef`|Token `mdFieldDef`.|  
+|`mdtMethodDef`|Token `mdMethodDef`.|  
+|`mdtParamDef`|Token `mdParamDef`.|  
+|`mdtInterfaceImpl`|Token `mdInterfaceImpl`.|  
+|`mdtMemberRef`|Token `mdMemberRef`.|  
+|`mdtCustomAttribute`|Token `mdCustomAttribute`.|  
+|`mdtPermission`|Token `mdPermission`.|  
+|`mdtSignature`|Token `mdSignature`.|  
+|`mdtEvent`|Token `mdEvent`.|  
+|`mdtProperty`|Token `mdProperty`.|  
+|`mdtModuleRef`|Token `mdModuleRef`.|  
+|`mdtTypeSpec`|Token `mdTypeSpec`.|  
+|`mdtAssembly`|Token `mdAssembly`.|  
+|`mdtAssemblyRef`|Token `mdAssemblyRef`.|  
+|`mdtFile`|Token `mdFile`.|  
+|`mdtExportedType`|Token `mdExportedType`.|  
+|`mdtManifestResource`|Token `mdManifestResource`.|  
+|`mdtGenericParam`|Token `mdGenericParam`.|  
+|`mdtMethodSpec`|Token `mdMethodSpec`.|  
+|`mdtGenericParamConstraint`|Token `mdGenericParamConstraint`.|  
+|`mdtString`|Token `mdString`.|  
+|`mdtName`|Token `mdName`.|  
+|`mdtBaseType`|Nepoužívá se.|  
   
 ## <a name="remarks"></a>Poznámky  
- Each value is equal to the value of the top byte in the corresponding metadata token.  
+ Každá hodnota se rovná hodnotě horního bajtu v odpovídajícím tokenu metadat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **Hlavička:** CorHdr. h  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

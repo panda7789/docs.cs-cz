@@ -1,5 +1,5 @@
 ---
-title: The remote server machine does not exist or is unavailable
+title: Vzdálený Server počítače neexistuje nebo není k dispozici.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrID462
@@ -11,12 +11,12 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348186"
 ---
-# <a name="the-remote-server-machine-does-not-exist-or-is-unavailable-visual-basic"></a>The remote server machine does not exist or is unavailable (Visual Basic)
-You are trying to connect to a remote server that is unavailable or does not exist. This error may be caused by your network connection being lost.  
+# <a name="the-remote-server-machine-does-not-exist-or-is-unavailable-visual-basic"></a>Vzdálený server neexistuje nebo není k dispozici (Visual Basic)
+Pokoušíte se připojit ke vzdálenému serveru, který není k dispozici nebo neexistuje. Tato chyba může být způsobena ztrátou síťového připojení.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Reconnect to the network and try again.  
+- Znovu se připojte k síti a zkuste to znovu.  
   
 ## <a name="see-also"></a>Viz také:
 

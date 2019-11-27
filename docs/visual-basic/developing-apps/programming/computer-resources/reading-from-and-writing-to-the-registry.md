@@ -15,31 +15,31 @@ ms.locfileid: "74349752"
 ---
 # <a name="reading-from-and-writing-to-the-registry-visual-basic"></a>Čtení z registru a zápis do něj pomocí oboru názvů My (Visual Basic)
 
-This topic describes task and conceptual topics that are associated with the registry.  
+Toto téma popisuje úlohu a koncepční témata, která jsou přidružená k registru.  
   
- When programming in Visual Basic, you can choose to access the registry by means of either the functions provided by Visual Basic or the registry classes of the .NET Framework. The registry hosts information from the operating system as well as information from applications hosted on the machine. Working with the registry may compromise security by allowing inappropriate access to system resources or protected information.  
+ Při programování v Visual Basic můžete zvolit přístup k registru prostřednictvím funkcí poskytovaných Visual Basic nebo tříd registru .NET Framework. Registr hostuje informace z operačního systému a také informace z aplikací hostovaných v počítači. Práce s registrem může ohrozit zabezpečení tím, že umožňuje nevhodný přístup k systémovým prostředkům nebo chráněným informacím.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
 
  [Postupy: Vytvoření klíče registru a nastavení jeho hodnoty](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-create-a-registry-key-and-set-its-value.md)  
- Describes how to use the `CreateSubKey` and `SetValue` methods of the `My.Computer.Registry` object to create a registry key and set its value.  
+ Popisuje, jak použít metody `CreateSubKey` a `SetValue` objektu `My.Computer.Registry` k vytvoření klíče registru a nastavení jeho hodnoty.  
   
  [Postupy: Načtení hodnoty z klíče registru](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-read-a-value-from-a-registry-key.md)  
- Describes how to use the `GetValue` method of the `My.Computer.Registry` object to read a value from a registry key.  
+ Popisuje způsob použití metody `GetValue` objektu `My.Computer.Registry` ke čtení hodnoty z klíče registru.  
   
  [Postupy: Odstranění klíče z registru](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-delete-a-registry-key.md)  
- Describes how to use the `DeleteSubKey` method of the `My.Computer.Registry.CurrentUser` property to delete a registry key.  
+ Popisuje způsob použití metody `DeleteSubKey` vlastnosti `My.Computer.Registry.CurrentUser` k odstranění klíče registru.  
   
  [Čtení z registru a zápis do něj s použitím oboru názvů Microsoft.Win32](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry-using-the-microsoft-win32-namespace.md)  
- Describes how to use the `Registry` and `RegistryKey` classes of the .NET Framework to access the registry.  
+ Popisuje, jak použít třídy `Registry` a `RegistryKey` .NET Framework pro přístup k registru.  
   
  [Zabezpečení a registr](../../../../visual-basic/developing-apps/programming/computer-resources/security-and-the-registry.md)  
- Discusses security issues involving the registry.  
+ Popisuje problémy zabezpečení související s registrem.  
   
 ## <a name="related-sections"></a>Související oddíly  
 
  <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>  
- Lists and explains members of the `My.Computer.Registry` object.  
+ Uvádí a vysvětluje členy objektu `My.Computer.Registry`.  
   
  <xref:Microsoft.Win32.Registry>  
- Presents an overview of the `Registry` class, along with links to individual keys and members.
+ Prezentuje přehled `Registry` třídy společně s odkazy na jednotlivé klíče a členy.

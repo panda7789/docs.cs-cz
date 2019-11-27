@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74432077"
 ---
 # <a name="imetadataassemblyemitdefineassemblyref-method"></a>IMetaDataAssemblyEmit::DefineAssemblyRef – metoda
-Creates an `AssemblyRef` structure containing metadata for the assembly that this assembly references, and returns the associated metadata token.  
+Vytvoří strukturu `AssemblyRef` obsahující metadata pro sestavení, na které odkazuje toto sestavení, a vrátí přidružený token metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,42 +42,42 @@ HRESULT DefineAssemblyRef (
   
 ## <a name="parameters"></a>Parametry  
  `pbPublicKeyOrToken`  
- [in] The public key of the publisher of the referenced assembly. The helper function [StrongNameTokenFromAssembly](../../../../docs/framework/unmanaged-api/strong-naming/strongnametokenfromassembly-function.md) can be used to get the hash of the public key to pass as this parameter.  
+ pro Veřejný klíč vydavatele odkazovaného sestavení. Pomocná funkce [StrongNameTokenFromAssembly –](../../../../docs/framework/unmanaged-api/strong-naming/strongnametokenfromassembly-function.md) se dá použít k získání hodnoty hash veřejného klíče, která se má předat jako tento parametr.  
   
  `cbPublicKeyOrToken`  
- [in] The size in bytes of `pbPublicKeyOrToken`.  
+ pro Velikost v bajtech `pbPublicKeyOrToken`.  
   
  `szName`  
- [in] The human-readable text name of the assembly. This value must not exceed 1024 characters.  
+ pro Textový název sestavení čitelný lidmi Tato hodnota nesmí překročit 1024 znaků.  
   
  `pMetaData`  
- [in] An ASSEMBLYMETADATA instance that contains the version, platform and locale information of the referenced assembly.  
+ pro Instance AssemblyMetadata –, která obsahuje informace o verzi, platformě a národním prostředí odkazovaného sestavení.  
   
  `pbHashValue`  
- [in] The hash data associated with the referenced assembly. Volitelné.  
+ pro Data algoritmu hash přidružená k odkazovanému sestavení Volitelné.  
   
  `cbHashValue`  
- [in] The size in bytes of `pbHashValue`.  
+ pro Velikost v bajtech `pbHashValue`.  
   
  `dwAssemblyRefFlags`  
- [in] A bitwise combination of [CorAssemblyFlags](../../../../docs/framework/unmanaged-api/metadata/corassemblyflags-enumeration.md) values that influence the behavior of the execution engine.  
+ pro Bitová kombinace hodnot [CorAssemblyFlags –](../../../../docs/framework/unmanaged-api/metadata/corassemblyflags-enumeration.md) , která má vliv na chování prováděcího modulu.  
   
  `pmdar`  
- [out] A pointer to the returned `AssemblyRef` metadata token.  
+ mimo Ukazatel na vrácený `AssemblyRef` token metadat.  
   
 ## <a name="remarks"></a>Poznámky  
- One `AssemblyRef` metadata structure must be defined for each assembly that this assembly references.  
+ Pro každé sestavení, na které odkazuje toto sestavení, musí být definována jedna `AssemblyRef` struktura metadat.  
   
- At run time, the details of a referenced assembly are passed to the assembly resolver with an indication that they represent the "as built" information. The assembly resolver then applies policy.  
+ V době běhu jsou podrobnosti odkazovaného sestavení předány do překladače sestavení s označením, že představují informace "sestavené". Překladač sestavení následně aplikuje zásady.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

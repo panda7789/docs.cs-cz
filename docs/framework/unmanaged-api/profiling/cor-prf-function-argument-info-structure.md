@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74447381"
 ---
 # <a name="cor_prf_function_argument_info-structure"></a>COR_PRF_FUNCTION_ARGUMENT_INFO – struktura
-Represents a function's arguments, in left-to-right order.  
+Představuje argumenty funkce v pořadí zleva doprava.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,25 +38,25 @@ typedef struct _COR_PRF_FUNCTION_ARGUMENT_INFO {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`numRanges`|The number of blocks of arguments. That is, this value is the number of [COR_PRF_FUNCTION_ARGUMENT_RANGE](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-argument-range-structure.md) structures in the `ranges` array.|  
-|`totalArgumentSize`|The total size of all arguments. In other words, this value is the sum of the argument lengths.|  
-|`ranges`|An array of `COR_PRF_FUNCTION_ARGUMENT_RANGE` structures, each of which represents one block of function arguments.|  
+|`numRanges`|Počet bloků argumentů. To znamená, že tato hodnota je počet [COR_PRF_FUNCTION_ARGUMENT_RANGE](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-argument-range-structure.md) struktur v poli `ranges`.|  
+|`totalArgumentSize`|Celková velikost všech argumentů. Jinými slovy je tato hodnota součtem délek argumentů.|  
+|`ranges`|Pole struktur `COR_PRF_FUNCTION_ARGUMENT_RANGE`, z nichž každý představuje jeden blok argumentů funkce.|  
   
 ## <a name="remarks"></a>Poznámky  
- A function may have many arguments. Those arguments might not be stored contiguously in memory. You might have a block of three arguments in one place, a block of two arguments in another place, and a final block of one argument in a different place. These arguments are all for the same function; they're just stored in different places.  
+ Funkce může mít mnoho argumentů. Tyto argumenty nemusí být uloženy souvisle v paměti. Můžete mít blok tří argumentů na jednom místě, blok dvou argumentů na jiném místě a konečný blok jednoho argumentu na jiném místě. Tyto argumenty jsou všechny pro stejnou funkci. jsou právě uloženy na různých místech.  
   
- The `COR_PRF_FUNCTION_ARGUMENT_INFO` structure represents all the arguments of a single function. It uses an array to reference all the blocks of function arguments. So, for a single function, you have a single `COR_PRF_FUNCTION_ARGUMENT_INFO` structure, which references multiple `COR_PRF_FUNCTION_ARGUMENT_RANGE` structures, each of which points to one or more function arguments.  
+ Struktura `COR_PRF_FUNCTION_ARGUMENT_INFO` představuje všechny argumenty jediné funkce. Používá pole k odkazování na všechny bloky argumentů funkce. Pro jedinou funkci tedy máte jednu strukturu `COR_PRF_FUNCTION_ARGUMENT_INFO`, která odkazuje na více `COR_PRF_FUNCTION_ARGUMENT_RANGE` struktur, z nichž každý odkazuje na jeden nebo více argumentů funkce.  
   
- Arguments that are stored in registers are spilled into memory to build the structures.  
+ Argumenty, které jsou uloženy v registrech, jsou přerozděleny do paměti pro sestavení struktur.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl  
+ **Hlavička:** CorProf. idl  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -17,21 +17,21 @@ ms.locfileid: "74351943"
 ---
 # <a name="extending-the-dom"></a>Rozšíření modelu DOM
 
-The Microsoft .NET Framework includes a base set of classes that provides an implementation of the XML Document Object Model (DOM). The <xref:System.Xml.XmlNode>, and its derived classes, provides methods and properties that allow you to navigate, query, and modify the content and structure of an XML document.
+Microsoft .NET Framework obsahuje základní sadu tříd, které poskytují implementaci XML model DOM (Document Object Model) (DOM). <xref:System.Xml.XmlNode>a jeho odvozené třídy poskytují metody a vlastnosti, které umožňují procházení, dotazování a úpravu obsahu a struktury dokumentu XML.
 
-When XML content is loaded into memory using the DOM, the nodes created contain information such as node name, node type, and so on. There may be occasions where you require specific node information that the base classes do not provide. For example, you may want to see the line number and position of the node. In this case, you can derive new classes from the existing DOM classes and add additional functionality.
+Když je obsah XML načten do paměti pomocí modelu DOM, vytvořené uzly obsahují informace, jako je název uzlu, typ uzlu a tak dále. Můžou nastat případy, kdy potřebujete konkrétní informace o uzlu, které neposkytují základní třídy. Například může být vhodné zobrazit číslo řádku a umístění uzlu. V takovém případě můžete odvodit nové třídy z existujících tříd modelu DOM a přidat další funkce.
 
-There are two general guidelines when deriving new classes:
+Při odvozování nových tříd jsou k dispozici dva obecné pokyny:
 
-- It is recommended that you never derive from the <xref:System.Xml.XmlNode> class. Instead, it is recommended that you derive classes from the class corresponding to the node type that you are interested in. For example, if you want to return additional information on attribute nodes, you can derive from the <xref:System.Xml.XmlAttribute> class.
+- Doporučuje se nikdy odvozovat od třídy <xref:System.Xml.XmlNode>. Místo toho se doporučuje odvodit třídy z třídy odpovídající typu uzlu, který vás zajímá. Například pokud chcete vrátit další informace o uzlech atributů, můžete odvodit z třídy <xref:System.Xml.XmlAttribute>.
 
-- Except for the node creation methods, it is recommended that when overriding a function, you should always call the base version of the function and then add any additional processing.
+- S výjimkou metod vytváření uzlů doporučujeme, aby při přepsání funkce vždy volali základní verzi funkce a pak přidali jakékoli další zpracování.
 
-## <a name="creating-your-own-node-instances"></a>Creating Your Own Node Instances
+## <a name="creating-your-own-node-instances"></a>Vytváření vlastních instancí uzlů
 
-The <xref:System.Xml.XmlDocument> class contains node creation methods. When an XML file is loaded, these methods are called to create the nodes. You can override these methods so that your node instances are created when a document is loaded. For example, if you have extended the <xref:System.Xml.XmlElement> class, you would inherit the <xref:System.Xml.XmlDocument> class and override the <xref:System.Xml.XmlDocument.CreateElement%2A> method.
+Třída <xref:System.Xml.XmlDocument> obsahuje metody vytváření uzlů. Když je načten soubor XML, jsou volány tyto metody pro vytvoření uzlů. Tyto metody můžete přepsat tak, aby se při načtení dokumentu vytvořily instance uzlů. Například pokud jste rozšířili třídu <xref:System.Xml.XmlElement>, měli byste dědit třídu <xref:System.Xml.XmlDocument> a přepsat metodu <xref:System.Xml.XmlDocument.CreateElement%2A>.
 
-The following example shows how to override the <xref:System.Xml.XmlDocument.CreateElement%2A> method to return your implementation of the <xref:System.Xml.XmlElement> class.
+Následující příklad ukazuje, jak přepsat metodu <xref:System.Xml.XmlDocument.CreateElement%2A> pro vrácení vaší implementace <xref:System.Xml.XmlElement> třídy.
 
 ```vb
 Class LineInfoDocument
@@ -54,11 +54,11 @@ class LineInfoDocument : XmlDocument
 }
 ```
 
-## <a name="extending-a-class"></a>Extending a Class
+## <a name="extending-a-class"></a>Rozšíření třídy
 
-To extend a class, derive your class from one of the existing DOM classes. You can then override any of the virtual methods or properties in the base class, or add your own.
+Chcete-li zvětšit třídu, odvodíte třídu z jedné z existujících tříd modelu DOM. Pak můžete přepsat všechny virtuální metody nebo vlastnosti v základní třídě nebo přidat vlastní.
 
-In the following example, a new class is created, which implements the <xref:System.Xml.XmlElement> class and the <xref:System.Xml.IXmlLineInfo> interface. Additional methods and properties are defined which allows users to gather line information.
+V následujícím příkladu je vytvořena nová třída, která implementuje třídu <xref:System.Xml.XmlElement> a rozhraní <xref:System.Xml.IXmlLineInfo>. Jsou definovány další metody a vlastnosti, které umožňují uživatelům shromažďovat informace o řádcích.
 
 ```vb
 Class LineInfoElement
@@ -124,7 +124,7 @@ class LineInfoElement : XmlElement, IXmlLineInfo {
 
 ### <a name="example"></a>Příklad
 
-The following example counts the number of elements in an XML document:
+Následující příklad spočítá počet prvků v dokumentu XML:
 
 ```vb
 Imports System.Xml
@@ -224,7 +224,7 @@ public class Test {
 
 #### <a name="input"></a>Vstup
 
-book.xml
+Book. XML
 
 ```xml
 <!--sample XML fragment-->
@@ -240,17 +240,17 @@ book.xml
 Number of elements in book.xml: 3
 ```
 
-## <a name="node-event-handler"></a>Node Event Handler
+## <a name="node-event-handler"></a>Obslužná rutina události uzlu
 
-The .NET Framework implementation of the DOM also includes an event system that enables you to receive and handle events when nodes in an XML document change. Using the <xref:System.Xml.XmlNodeChangedEventHandler> and <xref:System.Xml.XmlNodeChangedEventArgs> classes, you can capture `NodeChanged`, `NodeChanging`, `NodeInserted`, `NodeInserting`, `NodeRemoved`, and `NodeRemoving` events.
+.NET Framework implementace modelu DOM také obsahuje systém událostí, který umožňuje přijímat a zpracovávat události při změně uzlů v dokumentu XML. Pomocí tříd <xref:System.Xml.XmlNodeChangedEventHandler> a <xref:System.Xml.XmlNodeChangedEventArgs> můžete zachytit události `NodeChanged`, `NodeChanging`, `NodeInserted`, `NodeInserting`, `NodeRemoved`a `NodeRemoving`.
 
-The event-handling process works exactly the same in derived classes as it would in the original DOM classes.
+Proces zpracování událostí funguje v odvozených třídách úplně stejně, jako by to bylo v původních třídách modelu DOM.
 
-For more information regarding node event handling, see [Events](../../../../docs/standard/events/index.md) and <xref:System.Xml.XmlNodeChangedEventHandler>.
+Další informace o zpracování událostí uzlu naleznete v tématu [události](../../../../docs/standard/events/index.md) a <xref:System.Xml.XmlNodeChangedEventHandler>.
 
-## <a name="default-attributes-and-the-createelement-method"></a>Default Attributes and the CreateElement Method
+## <a name="default-attributes-and-the-createelement-method"></a>Výchozí atributy a metoda CreateElement
 
-If you are overriding the <xref:System.Xml.XmlDocument.CreateElement%2A> method in a derived class, default attributes are not added when you are creating new elements while editing the document. This is only an issue while editing. Because the <xref:System.Xml.XmlDocument.CreateElement%2A> method is responsible for adding default attributes to an <xref:System.Xml.XmlDocument>, you must code this functionality in the <xref:System.Xml.XmlDocument.CreateElement%2A> method. If you are loading an <xref:System.Xml.XmlDocument> that includes default attributes, they will be handled correctly. For more information on default attributes, see [Creating New Attributes for Elements in the DOM](creating-new-attributes-for-elements-in-the-dom.md).
+Pokud přepíšete metodu <xref:System.Xml.XmlDocument.CreateElement%2A> v odvozené třídě, při vytváření nových prvků při úpravách dokumentu nebudou přidány výchozí atributy. Jedná se o problém jenom při úpravách. Vzhledem k tomu, že metoda <xref:System.Xml.XmlDocument.CreateElement%2A> zodpovídá za přidání výchozích atributů do <xref:System.Xml.XmlDocument>, je nutné tuto funkci v metodě <xref:System.Xml.XmlDocument.CreateElement%2A> nakódovat. Pokud načítáte <xref:System.Xml.XmlDocument>, která obsahuje výchozí atributy, bude zpracována správně. Další informace o výchozích atributech naleznete v tématu [vytváření nových atributů pro prvky v modelu DOM](creating-new-attributes-for-elements-in-the-dom.md).
 
 ## <a name="see-also"></a>Viz také:
 

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436008"
 ---
 # <a name="isymunmanagedreadergetmethodversion-method"></a>ISymUnmanagedReader::GetMethodVersion – metoda
-Gets the method version. The method version starts at 1 and is incremented each time the method is recompiled. Recompilation can happen without changes to the method.  
+Získá verzi metody. Verze metody začíná na 1 a při každém překompilování metody se zvýší. Opětovná kompilace může probíhat beze změn v metodě.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,16 +35,16 @@ HRESULT GetMethodVersion (
   
 ## <a name="parameters"></a>Parametry  
  `pMethod`  
- [in] The method for which to get the version.  
+ pro Metoda, pro kterou se má získat verze  
   
  `version`  
- [out] A pointer to a variable that receives the method version.  
+ mimo Ukazatel na proměnnou, která přijímá verzi metody.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

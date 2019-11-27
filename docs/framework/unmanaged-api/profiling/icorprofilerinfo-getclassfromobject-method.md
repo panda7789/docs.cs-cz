@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448145"
 ---
 # <a name="icorprofilerinfogetclassfromobject-method"></a>ICorProfilerInfo::GetClassFromObject – metoda
-Gets the `ClassID` of an object, given its `ObjectID`.  
+Získá `ClassID` objektu s ohledem na jeho `ObjectID`.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,22 +35,22 @@ HRESULT GetClassFromObject(
   
 ## <a name="parameters"></a>Parametry  
  `objectId`  
- [in] The ID of the object for which to get the `ClassID`.  
+ pro ID objektu, pro který se má získat `ClassID`  
   
  `pClassId`  
- [out] A pointer to the returned `ClassID`.  
+ mimo Ukazatel na vrácenou `ClassID`.  
   
 ## <a name="remarks"></a>Poznámky  
- A null `pClassId` indicates that `objectId` has a type that is unloading.  
+ `pClassId` null značí, že `objectId` má typ, který se uvolňuje.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

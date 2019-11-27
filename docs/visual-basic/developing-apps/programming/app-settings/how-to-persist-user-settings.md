@@ -1,5 +1,5 @@
 ---
-title: 'How to: Persist User Settings'
+title: 'Postupy: zachování uživatelských nastavení'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - My.Settings object [Visual Basic], persisting user settings
@@ -15,27 +15,27 @@ ms.locfileid: "74329631"
 ---
 # <a name="how-to-persist-user-settings-in-visual-basic"></a>Postupy: Zachování uživatelského nastavení v jazyce Visual Basic
 
-You can use the `My.Settings.Save` method to persist changes to the user settings.  
+Chcete-li zachovat změny nastavení uživatele, můžete použít metodu `My.Settings.Save`.  
   
- Typically, applications are designed to persist the changes to the user settings when the application shuts down. This is because saving the settings can take, depending on several factors, several seconds.  
+ Aplikace jsou obvykle navržené tak, aby při ukončení aplikace vytrvaly změny nastavení uživatele. Důvodem je to, že ukládání nastavení může trvat v závislosti na několika faktorech, a to několik sekund.  
   
- For more information, see [My.Settings Object](../../../../visual-basic/language-reference/objects/my-settings-object.md).  
+ Další informace najdete v tématu [objekt My. Settings](../../../../visual-basic/language-reference/objects/my-settings-object.md).  
   
 > [!NOTE]
-> Although you can change and save the values of user-scope settings at run time, application-scope settings are read-only and cannot be changed programmatically. You can change application-scope settings when creating the application, through the **Project Designer**, or by editing the application's configuration file. For more information, see [Managing Application Settings (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
+> I když můžete změnit a uložit hodnoty nastavení rozsahu uživatele v době běhu, nastavení rozsahu aplikace jsou jen pro čtení a nelze je změnit programově. Můžete změnit nastavení rozsahu aplikace při vytváření aplikace, pomocí **Návrháře projektu**nebo úpravou konfiguračního souboru aplikace. Další informace najdete v tématu [Správa nastavení aplikace (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
   
 ## <a name="example"></a>Příklad  
 
- This example changes the value of the `LastChanged` user setting and saves that change by calling the `My.Settings.Save` method.  
+ Tento příklad změní hodnotu nastavení `LastChanged` uživatele a uloží tuto změnu voláním metody `My.Settings.Save`.  
   
  [!code-vb[VbVbalrMyResources#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyResources/VB/Form1.vb#5)]  
   
- For this example to work, your application must have a `LastChanged` user setting, of type `Date`. For more information, see [Managing Application Settings (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
+ Aby tento příklad fungoval, musí mít aplikace `LastChanged` uživatelské nastavení typu `Date`. Další informace najdete v tématu [Správa nastavení aplikace (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Objekt My.Settings](../../../../visual-basic/language-reference/objects/my-settings-object.md)
-- [How to: Read Application Settings in Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-read-application-settings.md)
-- [How to: Change User Settings in Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-change-user-settings.md)
-- [How to: Create Property Grids for User Settings in Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-create-property-grids-for-user-settings.md)
+- [Postupy: čtení nastavení aplikace v Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-read-application-settings.md)
+- [Postupy: Změna uživatelského nastavení v Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-change-user-settings.md)
+- [Postupy: vytváření mřížek vlastností pro uživatelská nastavení v Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-create-property-grids-for-user-settings.md)
 - [Správa nastavení aplikace (.NET)](/visualstudio/ide/managing-application-settings-dotnet)

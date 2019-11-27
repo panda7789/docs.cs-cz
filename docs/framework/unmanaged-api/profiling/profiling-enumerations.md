@@ -14,59 +14,59 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74447444"
 ---
 # <a name="profiling-enumerations"></a>Profilace výčtů
-This section describes the unmanaged enumerations that the profiling API uses.  
+Tato část popisuje nespravované výčty, které používá profilování API.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [COR_PRF_CLAUSE_TYPE – výčet](../../../../docs/framework/unmanaged-api/profiling/cor-prf-clause-type-enumeration.md)  
- Indicates the type of exception clause that the code has just entered or left.  
+ Určuje typ klauzule Exception, kterou kód právě zadal, nebo doleva.  
   
  [COR_PRF_CODEGEN_FLAGS – výčet](../../../../docs/framework/unmanaged-api/profiling/cor-prf-codegen-flags-enumeration.md)  
- Defines the code generation flags that can be set with the [ICorProfilerFunctionControl::SetCodegenFlags](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctioncontrol-setcodegenflags-method.md) method.  
+ Definuje příznaky generování kódu, které lze nastavit pomocí metody [ICorProfilerFunctionControl:: SetCodegenFlags –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctioncontrol-setcodegenflags-method.md) .  
   
  [COR_PRF_FINALIZER_FLAGS – výčet](../../../../docs/framework/unmanaged-api/profiling/cor-prf-finalizer-flags-enumeration.md)  
- Describes the finalizer for an object.  
+ Popisuje finalizační metodu objektu.  
   
  [COR_PRF_GC_GENERATION – výčet](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-generation-enumeration.md)  
- Identifies a garbage collection generation.  
+ Identifikuje generování kolekce paměti.  
   
  [COR_PRF_GC_REASON – výčet](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-reason-enumeration.md)  
- Indicates the reason that garbage collection is occurring.  
+ Označuje důvod, proč dochází k uvolňování paměti.  
   
  [COR_PRF_GC_ROOT_FLAGS – výčet](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-root-flags-enumeration.md)  
- Indicates properties of a garbage collector root.  
+ Určuje vlastnosti kořene uvolňování paměti.  
   
  [COR_PRF_GC_ROOT_KIND – výčet](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-root-kind-enumeration.md)  
- Indicates the kind of garbage collector root that is exposed by the [ICorProfilerCallback2::RootReferences2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-rootreferences2-method.md) callback.  
+ Určuje druh kořene uvolňování paměti, který je vystavený zpětnému volání [ICorProfilerCallback2:: RootReferences2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-rootreferences2-method.md) .  
   
  [COR_PRF_HIGH_MONITOR – výčet](../../../../docs/framework/unmanaged-api/profiling/cor-prf-high-monitor-enumeration.md)  
- Provides flags in addition to those found in the [COR_PRF_MONITOR](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md) enumeration that the profiler can specify to the [ICorProfilerInfo5::SetEventMask2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md) method when it is loading.  
+ Poskytuje příznaky kromě těch, které se nacházejí v [COR_PRF_MONITOR](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md) výčtu, které může Profiler zadat do metody [ICorProfilerInfo5:: SetEventMask2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md) při načítání.  
   
  [COR_PRF_JIT_CACHE – výčet](../../../../docs/framework/unmanaged-api/profiling/cor-prf-jit-cache-enumeration.md)  
- Indicates the result of a cached function search.  
+ Označuje výsledek hledání funkce uložené v mezipaměti.  
   
  [COR_PRF_MISC – výčet](../../../../docs/framework/unmanaged-api/profiling/cor-prf-misc-enumeration.md)  
- Contains constant values that specify special identifiers.  
+ Obsahuje konstantní hodnoty, které určují speciální identifikátory.  
   
  [COR_PRF_MODULE_FLAGS – výčet](../../../../docs/framework/unmanaged-api/profiling/cor-prf-module-flags-enumeration.md)  
- Specifies the properties of a module.  
+ Určuje vlastnosti modulu.  
   
  [COR_PRF_MONITOR – výčet](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md)  
- Contains values that are used to specify behavior, capabilities, or events to which the profiler wishes to subscribe.  
+ Obsahuje hodnoty, které slouží k určení chování, schopností nebo událostí, ke kterým se chce Profiler přihlásit k odběru.  
   
  [COR_PRF_RUNTIME_TYPE – výčet](../../../../docs/framework/unmanaged-api/profiling/cor-prf-runtime-type-enumeration.md)  
- Contains values that indicate the version of the common language runtime.  
+ Obsahuje hodnoty, které označují verzi modulu CLR (Common Language Runtime).  
   
  [COR_PRF_SNAPSHOT_INFO – výčet](../../../../docs/framework/unmanaged-api/profiling/cor-prf-snapshot-info-enumeration.md)  
- Specifies how much data to pass back with a stack snapshot in each call to the profiler's `StackSnapshotCallback` function.  
+ Určuje, kolik dat se má zpětně předat snímku zásobníku v každém volání funkce `StackSnapshotCallback` profileru.  
   
  [COR_PRF_STATIC_TYPE – výčet](../../../../docs/framework/unmanaged-api/profiling/cor-prf-static-type-enumeration.md)  
- Indicates whether a field is static and, if so, the static quality that applies to the field.  
+ Označuje, zda je pole statické, a pokud ano, statická kvalita, která se vztahuje na pole.  
   
  [COR_PRF_SUSPEND_REASON – výčet](../../../../docs/framework/unmanaged-api/profiling/cor-prf-suspend-reason-enumeration.md)  
- Indicates the reason that the runtime was suspended.  
+ Označuje důvod, proč byl modul runtime pozastaven.  
   
  [COR_PRF_TRANSITION_REASON – výčet](../../../../docs/framework/unmanaged-api/profiling/cor-prf-transition-reason-enumeration.md)  
- Indicates the reason for a transition from managed to unmanaged code, or vice versa.  
+ Označuje důvod přechodu ze spravovaného do nespravovaného kódu nebo naopak.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Přehled profilace](../../../../docs/framework/unmanaged-api/profiling/profiling-overview.md)  

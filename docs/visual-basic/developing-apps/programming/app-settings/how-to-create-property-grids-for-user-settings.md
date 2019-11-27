@@ -1,5 +1,5 @@
 ---
-title: 'How to: Create Property Grids for User Settings'
+title: 'Postupy: vytváření mřížek vlastností pro uživatelská nastavení'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - My.Settings object [Visual Basic], creating property grids for user settings
@@ -16,45 +16,45 @@ ms.locfileid: "74329615"
 ---
 # <a name="how-to-create-property-grids-for-user-settings-in-visual-basic"></a>Postupy: Vytváření mřížek vlastností pro nastavení uživatele v jazyce Visual Basic
 
-You can create a property grid for user settings by populating a <xref:System.Windows.Forms.PropertyGrid> control with the user setting properties of the `My.Settings` object.  
+Mřížku vlastností pro uživatelské nastavení můžete vytvořit naplněním ovládacího prvku <xref:System.Windows.Forms.PropertyGrid> pomocí vlastností uživatelského nastavení objektu `My.Settings`.  
   
 > [!NOTE]
-> In order for this example to work, your application must have its user settings configured. For more information, see [Managing Application Settings (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
+> Aby tento příklad fungoval, musí mít vaše aplikace nastavené uživatelské nastavení. Další informace najdete v tématu [Správa nastavení aplikace (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
   
- The `My.Settings` object exposes each setting as a property. The property name is the same as the setting name, and the property type is the same as the setting type. The setting's **Scope** determines if the property is read-only; the property for an **Application**-scope setting is read-only, while the property for a **User**-scope setting is read-write. For more information, see [My.Settings Object](../../../../visual-basic/language-reference/objects/my-settings-object.md).  
+ Objekt `My.Settings` zpřístupňuje každé nastavení jako vlastnost. Název vlastnosti je stejný jako název nastavení a typ vlastnosti je stejný jako typ nastavení. **Rozsah** nastavení určuje, zda je vlastnost určena pouze pro čtení; vlastnost pro nastavení rozsahu **aplikace**je jen pro čtení a vlastnost pro nastavení rozsahu **uživatele**je pro čtení i zápis. Další informace najdete v tématu [objekt My. Settings](../../../../visual-basic/language-reference/objects/my-settings-object.md).  
   
 > [!NOTE]
-> You cannot change or save the values of application-scope settings at run time. Application-scope settings can be changed only when creating the application (through the **Project Designer**) or by editing the application's configuration file. For more information, see [Managing Application Settings (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
+> V době běhu nemůžete změnit ani uložit hodnoty nastavení rozsahu aplikace. Nastavení rozsahu aplikace lze změnit pouze při vytváření aplikace (prostřednictvím **Návrháře projektu**) nebo úpravou konfiguračního souboru aplikace. Další informace najdete v tématu [Správa nastavení aplikace (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
   
- This example uses a <xref:System.Windows.Forms.PropertyGrid> control to access the user-setting properties of the `My.Settings` object. By default, the <xref:System.Windows.Forms.PropertyGrid> shows all the properties of the `My.Settings` object. However, the user-setting properties have the <xref:System.Configuration.UserScopedSettingAttribute> attribute. This example sets the <xref:System.Windows.Forms.PropertyGrid.BrowsableAttributes%2A> property of the <xref:System.Windows.Forms.PropertyGrid> to <xref:System.Configuration.UserScopedSettingAttribute> to display only the user-setting properties.  
+ Tento příklad používá ovládací prvek <xref:System.Windows.Forms.PropertyGrid> pro přístup k vlastnostem uživatelského nastavení objektu `My.Settings`. Ve výchozím nastavení <xref:System.Windows.Forms.PropertyGrid> zobrazuje všechny vlastnosti objektu `My.Settings`. Vlastnosti uživatelského nastavení ale mají atribut <xref:System.Configuration.UserScopedSettingAttribute>. V tomto příkladu se nastaví vlastnost <xref:System.Windows.Forms.PropertyGrid.BrowsableAttributes%2A> <xref:System.Windows.Forms.PropertyGrid> na <xref:System.Configuration.UserScopedSettingAttribute>, aby se zobrazily pouze vlastnosti uživatelského nastavení.  
   
-### <a name="to-add-a-user-setting-property-grid"></a>To add a user setting property grid  
+### <a name="to-add-a-user-setting-property-grid"></a>Přidání mřížky vlastností uživatelského nastavení  
   
-1. Add the **PropertyGrid** control from the **Toolbox** to the design surface for your application, assumed here to be `Form1`.  
+1. Přidejte ovládací prvek **PropertyGrid** ze **sady nástrojů** na návrhovou plochu pro vaši aplikaci, která se předpokládá `Form1`.  
   
-     The default name of the property-grid control is `PropertyGrid1`.  
+     Výchozí název ovládacího prvku mřížky vlastnosti je `PropertyGrid1`.  
   
-2. Double-click the design surface for `Form1` to open the code for the form-load event handler.  
+2. Dvojím kliknutím na návrhovou plochu pro `Form1` otevřete kód pro obslužnou rutinu události načtení formuláře.  
   
-3. Set the `My.Settings` object as the selected object for the property grid.  
+3. Nastavte objekt `My.Settings` jako vybraný objekt pro mřížku vlastností.  
   
      [!code-vb[VbVbalrMyResources#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyResources/VB/Form1.vb#11)]  
   
-4. Configure the property grid to show only the user settings.  
+4. Nakonfigurujte mřížku vlastností tak, aby zobrazovala pouze uživatelská nastavení.  
   
      [!code-vb[VbVbalrMyResources#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyResources/VB/Form1.vb#12)]  
   
     > [!NOTE]
-    > To show only the application-scope settings, use the <xref:System.Configuration.ApplicationScopedSettingAttribute> attribute instead of  <xref:System.Configuration.UserScopedSettingAttribute>.  
+    > Chcete-li zobrazit pouze nastavení rozsahu aplikace, použijte atribut <xref:System.Configuration.ApplicationScopedSettingAttribute> místo <xref:System.Configuration.UserScopedSettingAttribute>.  
   
 ## <a name="robust-programming"></a>Robustní programování  
 
- The application saves the user settings when the application shuts down. To save the settings immediately, call the `My.Settings.Save` method. For more information, see [How to: Persist User Settings in Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md).  
+ Aplikace uloží nastavení uživatele, když se aplikace vypíná. Chcete-li nastavení uložit hned, zavolejte metodu `My.Settings.Save`. Další informace najdete v tématu [Postup: zachování uživatelských nastavení v Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Objekt My.Settings](../../../../visual-basic/language-reference/objects/my-settings-object.md)
-- [How to: Read Application Settings in Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-read-application-settings.md)
-- [How to: Change User Settings in Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-change-user-settings.md)
-- [How to: Persist User Settings in Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md)
+- [Postupy: čtení nastavení aplikace v Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-read-application-settings.md)
+- [Postupy: Změna uživatelského nastavení v Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-change-user-settings.md)
+- [Postupy: zachování uživatelských nastavení v Visual Basic](../../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md)
 - [Správa nastavení aplikace (.NET)](/visualstudio/ide/managing-application-settings-dotnet)

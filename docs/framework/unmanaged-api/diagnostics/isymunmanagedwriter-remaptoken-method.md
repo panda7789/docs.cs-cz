@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74427881"
 ---
 # <a name="isymunmanagedwriterremaptoken-method"></a>ISymUnmanagedWriter::RemapToken – metoda
-Notifies the symbol writer that a metadata token has been remapped as the metadata was emitted. If the symbol writer has stored the old token within the symbol store, it must either update the stored token with the new value, or it must save the map for the corresponding symbol reader to remap during the read phase.  
+Upozorní zapisovač symbolů, že token metadat byl přemapován, protože byla vygenerována metadata. Pokud zapisovač symbolů uložil starý token do úložiště symbolů, musí buď aktualizovat uložený token s novou hodnotou, nebo musí uložit mapu pro odpovídající čtečku symbolů k přemapování během fáze čtení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,16 +35,16 @@ HRESULT RemapToken(
   
 ## <a name="parameters"></a>Parametry  
  `oldToken`  
- [in] The metadata token that was remapped.  
+ pro Token metadat, který byl přemapován.  
   
  `newToken`  
- [in] The new metadata token to which `oldToken` was remapped.  
+ pro Nový token metadat, ke kterému byl přemapován `oldToken`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

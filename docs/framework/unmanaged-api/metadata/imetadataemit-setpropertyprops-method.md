@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74440548"
 ---
 # <a name="imetadataemitsetpropertyprops-method"></a>IMetaDataEmit::SetPropertyProps – metoda
-Sets the features stored in metadata for a property defined by a prior call to [DefineProperty Method](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineproperty-method.md).  
+Nastaví funkce uložené v metadatech pro vlastnost definovanou předchozím voláním [metody defineProperty –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineproperty-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,37 +42,37 @@ HRESULT SetPropertyProps (
   
 ## <a name="parameters"></a>Parametry  
  `pr`  
- [in] The token for the property to be changed  
+ pro Token pro vlastnost, která má být změněna  
   
  `dwPropFlags`  
- [in] Property flags.  
+ pro Příznaky vlastností.  
   
  `dwCPlusTypeFlag`  
- [in] The type of the property's default value.  
+ pro Typ výchozí hodnoty vlastnosti  
   
  `pValue`  
- [in] The default value for the property.  
+ pro Výchozí hodnota vlastnosti  
   
  `cchValue`  
- [in] The count of (Unicode) characters in `pValue`.  
+ pro Počet znaků (Unicode) v `pValue`.  
   
  `mdSetter`  
- [in] The method that sets the property value.  
+ pro Metoda, která nastaví hodnotu vlastnosti.  
   
  `mdGetter`  
- [in] The method that gets the property value.  
+ pro Metoda, která získá hodnotu vlastnosti.  
   
  `rmdOtherMethods[]`  
- [in] An array of other methods associated with the property. Terminate this array with an `mdTokenNil` token.  
+ pro Pole dalších metod přidružených k vlastnosti. Toto pole ukončete pomocí tokenu `mdTokenNil`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

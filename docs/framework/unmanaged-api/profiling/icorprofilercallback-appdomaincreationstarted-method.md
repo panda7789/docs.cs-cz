@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445215"
 ---
 # <a name="icorprofilercallbackappdomaincreationstarted-method"></a>ICorProfilerCallback::AppDomainCreationStarted – metoda
-Notifies the profiler that an application domain is being created.  
+Oznamuje profileru, že se vytváří doména aplikace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,19 +34,19 @@ HRESULT AppDomainCreationStarted(
   
 ## <a name="parameters"></a>Parametry  
  `appDomainId`  
- [in] Identifies the domain which is being created.  
+ pro Určuje doménu, která se vytváří.  
   
 ## <a name="remarks"></a>Poznámky  
- The ID is not valid for any information request until the [ICorProfilerCallback::AppDomainCreationFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-appdomaincreationfinished-method.md) method is called.  
+ IDENTIFIKÁTOR není platný pro žádné žádosti o informace, dokud není volána metoda [ICorProfilerCallback:: appdomaincreationfinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-appdomaincreationfinished-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

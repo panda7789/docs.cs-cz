@@ -17,49 +17,49 @@ ms.locfileid: "74352139"
 ---
 # <a name="writing-to-files-in-visual-basic"></a>Zápis do souborů v jazyce Visual Basic
 
-This section explains how to perform tasks that involve writing to files.  
+V této části se dozvíte, jak provádět úlohy, které zahrnují zápis do souborů.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
 
  [Postupy: Zápis textu do souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files.md)  
- Demonstrates how to write to text files.  
+ Ukazuje, jak zapisovat do textových souborů.  
   
  [Postupy: Připojování k textovým souborům](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-append-to-text-files.md)  
- Demonstrates how to append text to a text file.  
+ Ukazuje, jak připojit text k textovému souboru.  
   
  [Postupy: Zápis do binárních souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-to-binary-files.md)  
- Demonstrates how to write to a binary file.  
+ Ukazuje, jak zapisovat do binárního souboru.  
   
  [Postupy: Zápis textu do souborů v adresáři Moje dokumenty](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files-in-the-my-documents-directory.md)  
- Demonstrates how to create and write to a new text file in the **My Documents** directory.  
+ Ukazuje, jak vytvořit a zapsat do nového textového souboru v adresáři **My Documents** .  
   
  [Postupy: Zápis textu do souborů pomocí třídy StreamWriter](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files-with-a-streamwriter.md)  
- Demonstrates how to write to a file with a <xref:System.IO.StreamWriter?displayProperty=nameWithType> object.  
+ Ukazuje, jak zapisovat do souboru s objektem <xref:System.IO.StreamWriter?displayProperty=nameWithType>.  
   
 ## <a name="reference"></a>Odkaz  
 
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>  
- Describes the `My.Computer.FileSystem` object and its methods and properties.  
+ Popisuje objekt `My.Computer.FileSystem` a jeho metody a vlastnosti.  
   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileWriter%2A>  
- Describes the `OpenTextFileWriter` method.  
+ Popisuje metodu `OpenTextFileWriter`.  
   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllBytes%2A>  
- Describes the `WriteAllBytes` method.  
+ Popisuje metodu `WriteAllBytes`.  
   
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A>  
- Describes the `WriteAllText` method.  
+ Popisuje metodu `WriteAllText`.  
   
 ## <a name="related-sections"></a>Související oddíly  
 
  [Čtení ze souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)  
- Explains how to perform tasks that involve reading from files.  
+ Vysvětluje, jak provádět úlohy, které zahrnují čtení ze souborů.  
   
  [Vytváření, odstraňování a přesouvání souborů a adresářů](../../../../visual-basic/developing-apps/programming/drives-directories-files/creating-deleting-and-moving-files-and-directories.md)  
- Explains how to perform tasks that involve creating, deleting, moving, and renaming files and directories.  
+ Vysvětluje, jak provádět úlohy, které zahrnují vytváření, odstraňování, přesouvání a přejmenování souborů a adresářů.  
   
  [Ukládání dat do schránky a čtení ze schránky](../../../../visual-basic/developing-apps/programming/computer-resources/storing-data-to-and-reading-from-the-clipboard.md)  
- Explains how to perform tasks that are associated with `My.Computer.Clipboard`, such as reading data from or writing data to the Clipboard.  
+ Vysvětluje, jak provádět úlohy, které jsou spojeny s `My.Computer.Clipboard`, například čtení dat z nebo zápis dat do schránky.  
   
  [Kódování souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/file-encodings.md)  
- Provides an overview of file encodings.
+ Poskytuje přehled o kódováních souborů.

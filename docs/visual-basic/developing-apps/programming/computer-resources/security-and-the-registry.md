@@ -14,32 +14,32 @@ ms.locfileid: "74345484"
 ---
 # <a name="security-and-the-registry-visual-basic"></a>Zabezpečení a registr (Visual Basic)
 
-This page discusses the security implications of storing data in the registry.  
+Tato stránka popisuje důsledky zabezpečení ukládání dat do registru.  
   
 ## <a name="permissions"></a>Oprávnění  
 
- It is not secure to store secrets, such as passwords, in the registry as plain text, even if the registry key is protected by ACLs (access control lists).  
+ Není bezpečné ukládat tajné klíče, jako jsou hesla, v registru jako prostý text, a to i v případě, že je klíč registru chráněný pomocí seznamů řízení přístupu (ACL).  
   
- Working with the registry may compromise security by allowing inappropriate access to system resources or protected information. To use these properties, you must have read and write permissions from the <xref:System.Security.Permissions.RegistryPermissionAccess> enumeration, which controls access to registry variables. Any code running with full trust (under the default security policy, this is any code installed on the user's local hard disk) has the necessary permissions to access the registry. For more information, see <xref:System.Security.Permissions.RegistryPermission> class.  
+ Práce s registrem může ohrozit zabezpečení tím, že umožňuje nevhodný přístup k systémovým prostředkům nebo chráněným informacím. Chcete-li použít tyto vlastnosti, musíte mít oprávnění ke čtení a zápisu z výčtu <xref:System.Security.Permissions.RegistryPermissionAccess>, který řídí přístup k proměnným registru. Veškerý kód spuštěný s úplným vztahem důvěryhodnosti (pod výchozí zásadou zabezpečení je to jakýkoli kód nainstalovaný na místním pevném disku uživatele) má potřebná oprávnění pro přístup k registru. Další informace naleznete v tématu <xref:System.Security.Permissions.RegistryPermission> Class.  
   
- Registry variables should not be stored in memory locations where code without <xref:System.Security.Permissions.RegistryPermission> can access them. Similarly, when granting permissions, grant the minimum privileges necessary to get the job done.  
+ Proměnné registru by neměly být uloženy v umístěních paměti, kde k nim má přístup kód bez <xref:System.Security.Permissions.RegistryPermission>. Podobně při udělování oprávnění udělte minimální oprávnění potřebná k provedení úlohy.  
   
- Registry permission access values are defined by the <xref:System.Security.Permissions.RegistryPermissionAccess> enumeration. The following table details its members.  
+ Hodnoty přístupu k oprávněním registru jsou definovány výčtem <xref:System.Security.Permissions.RegistryPermissionAccess>. Následující tabulka podrobně popisuje její členy.  
   
-|Hodnota|Access to Registry Variables|  
+|Hodnota|Přístup k proměnným registru|  
 |-----------|----------------------------------|  
-|`AllAccess`|Create, read, and write|  
+|`AllAccess`|Vytváření, čtení a zápis|  
 |`Create`|Create|  
-|`NoAccess`|No access|  
-|`Read`|Číst|  
-|`Write`|Write|  
+|`NoAccess`|Bez přístupu|  
+|`Read`|Pro čtení|  
+|`Write`|Zapisovat|  
   
-## <a name="checking-values-in-registry-keys"></a>Checking Values in Registry Keys  
+## <a name="checking-values-in-registry-keys"></a>Kontrola hodnot v klíčích registru  
 
- When you create a registry value, you need to decide what to do if that value already exists. Another process, perhaps a malicious one, may have already created the value and have access to it. When you put data in the registry value, the data is available to the other process. To prevent this, use the `GetValue` method. It returns `Nothing` if the key does not already exist.  
+ Když vytváříte hodnotu registru, musíte se rozhodnout, co dělat, pokud tato hodnota již existuje. Jiný proces, pravděpodobně škodlivý, již mohl vytvořit hodnotu a mít k ní přístup. Při vložení dat do hodnoty registru jsou data k dispozici pro druhý proces. Chcete-li tomu zabránit, použijte metodu `GetValue`. Vrátí `Nothing`, pokud klíč ještě neexistuje.  
   
 > [!IMPORTANT]
-> When reading the registry from a Web application, the identity of current user depends on the authentication and impersonation implemented in the Web application.  
+> Při čtení registru z webové aplikace závisí identita aktuálního uživatele na ověřování a zosobnění implementovaného ve webové aplikaci.  
   
 ## <a name="see-also"></a>Viz také:
 

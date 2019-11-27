@@ -13,48 +13,48 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348006"
 ---
 # <a name="com-interop-visual-basic"></a>Zprostředkovatel komunikace s objekty COM (Visual Basic)
-The Component Object Model (COM) allows an object to expose its functionality to other components and to host applications. Most of today's software includes COM objects. Although .NET assemblies are the best choice for new applications, you may at times need to employ COM objects. This section covers some of the issues associated with creating and using COM objects with Visual Basic.  
+Component Object Model (COM) umožňuje objektu vystavit svou funkčnost jiným komponentám a hostovat aplikace. Většina dnešního softwaru zahrnuje objekty COM. I když jsou sestavení .NET nejlepší volbou pro nové aplikace, může být někdy nutné použít objekty COM. Tato část popisuje některé problémy spojené s vytvářením a používáním objektů COM pomocí Visual Basic.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Představení zprostředkovatele komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/introduction-to-com-interop.md)  
- Provides an overview of COM interoperability.  
+ Poskytuje přehled interoperability modelu COM.  
   
- [How to: Reference COM Objects from Visual Basic](../../../visual-basic/programming-guide/com-interop/how-to-reference-com-objects.md)  
- Covers how to add references to COM objects that have type libraries.  
+ [Postupy: odkazování objektů COM z Visual Basic](../../../visual-basic/programming-guide/com-interop/how-to-reference-com-objects.md)  
+ Popisuje, jak přidat odkazy na objekty modelu COM, které mají knihovny typů.  
   
  [Postupy: Práce s ovládacími prvky ActiveX](../../../visual-basic/programming-guide/com-interop/how-to-work-with-activex-controls.md)  
- Demonstrates how to use existing ActiveX controls to add features to the Visual Studio Toolbox.  
+ Ukazuje, jak použít existující ovládací prvky ActiveX k přidání funkcí do sady nástrojů sady Visual Studio.  
   
  [Návod: Volání rozhraní API systému Windows](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)  
- Steps you through the process of calling the APIs that are part of the Windows operating system.  
+ Provede vás procesem volání rozhraní API, která jsou součástí operačního systému Windows.  
   
  [Postupy: Volání rozhraní API systému Windows](../../../visual-basic/programming-guide/com-interop/how-to-call-windows-apis.md)  
- Demonstrates how to define and call the `MessageBox` function in User32.dll.  
+ Ukazuje, jak definovat a volat funkci `MessageBox` v souboru User32. dll.  
   
  [Postupy: Volání funkce systému Windows, která přebírá nepřiřazené typy](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)  
- Demonstrates how to call a Windows function that has a parameter of an unsigned type.  
+ Ukazuje, jak zavolat funkci systému Windows, která má parametr typu bez znaménka.  
   
- [Walkthrough: Creating COM Objects with Visual Basic](../../../visual-basic/programming-guide/com-interop/walkthrough-creating-com-objects.md)  
- Steps you through the process of creating COM objects with and without the COM class template.  
+ [Návod: vytváření objektů COM pomocí Visual Basic](../../../visual-basic/programming-guide/com-interop/walkthrough-creating-com-objects.md)  
+ Provede kroky procesu vytváření objektů COM pomocí šablony třídy modelu COM a bez ní.  
   
  [Řešení potíží s interoperabilitou](../../../visual-basic/programming-guide/com-interop/troubleshooting-interoperability.md)  
- Covers some of the problems you may encounter when using COM.  
+ Popisuje některé problémy, se kterými se můžete setkat při používání modelu COM.  
   
  [Interoperabilita modelů COM v aplikacích .NET Framework](../../../visual-basic/programming-guide/com-interop/com-interoperability-in-net-framework-applications.md)  
- Provides an overview of how to use COM objects and .NET Framework objects in the same application.  
+ Poskytuje přehled o použití objektů COM a .NET Framework objektů ve stejné aplikaci.  
   
  [Návod: Implementace dědičnosti pomocí objektů COM](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)  
- Describes using existing COM objects as the basis for new objects.  
+ Popisuje použití existujících objektů COM jako základu pro nové objekty.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Spolupráce s nespravovaným kódem](../../../framework/interop/index.md)  
- Describes interoperability services provided by the common language runtime.  
+ Popisuje služby vzájemné funkční spolupráce poskytované modulem CLR (Common Language Runtime).  
   
  [Vystavení komponent COM pro rozhraní .NET Framework](../../../framework/interop/exposing-com-components.md)  
- Describes the process of calling COM types through COM interop.  
+ Popisuje proces volání typů COM pomocí zprostředkovatele komunikace s objekty COM.  
   
  [Vystavení komponent architektury .NET Framework pro COM](../../../framework/interop/exposing-dotnet-components-to-com.md)  
- Describes the preparation and use of managed types from COM.  
+ Popisuje přípravu a použití spravovaných typů z modelu COM.  
   
  [Použití atributů spolupráce](../../../standard/native-interop/apply-interop-attributes.md)  
- Covers attributes you can use when working with unmanaged code.
+ Zahrnuje atributy, které lze použít při práci s nespravovaným kódem.

@@ -14,20 +14,20 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74443282"
 ---
 # <a name="metadata-unmanaged-api-reference"></a>Metadata (referenční dokumentace nespravovaného rozhraní API)
-The metadata API enables a client, such as a compiler, to generate or access a component's metadata without the types being loaded by the common language runtime (CLR).  
+Rozhraní API metadat umožňuje klientovi, jako je například kompilátor, generovat nebo přistupovat k metadatům komponenty bez typů, které jsou načítány modulem CLR (Common Language Runtime).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Rozhraní pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)  
- Describes the unmanaged interfaces that provide access to the metadata exposed by the .NET Framework types, methods, fields, and so on.  
+ Popisuje nespravovaná rozhraní, která poskytují přístup k metadatům, která jsou zpřístupněna .NET Framework typy, metody, pole a tak dále.  
   
  [Globální statické funkce pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)  
- Describes the unmanaged global static functions that the metadata API uses.  
+ Popisuje nespravované globální statické funkce, které API pro metadata používá.  
   
  [Výčty pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)  
- Describes the unmanaged enumerations that the metadata API uses.  
+ Popisuje nespravované výčty, které používá rozhraní API metadat.  
   
  [Struktury pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)  
- Describes the unmanaged structures that the metadata API uses.  
+ Popisuje nespravované struktury, které používá rozhraní API metadat.  
   
  [Sjednocení pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-unions.md)  
- Describes the unmanaged unions that the metadata API uses.
+ Popisuje nespravované sjednocení, které používá rozhraní API metadat.

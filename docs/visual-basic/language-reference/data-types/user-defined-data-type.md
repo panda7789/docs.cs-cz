@@ -32,41 +32,41 @@ ms.locfileid: "74343870"
 ---
 # <a name="user-defined-data-type"></a>Uživatelský datový typ
 
-Holds data in a format you define. The `Structure` statement defines the format.
+Obsahuje data ve formátu, který definujete. Příkaz `Structure` definuje formát.
 
-Previous versions of Visual Basic support the user-defined type (UDT). The current version expands the UDT to a *structure*. A structure is a concatenation of one or more *members* of various data types. Visual Basic treats a structure as a single unit, although you can also access its members individually.
+Předchozí verze Visual Basic podporují uživatelsky definovaný typ (UDT). Aktuální verze rozbalí UDT do *struktury*. Struktura je zřetězení jednoho nebo více *členů* různých datových typů. Visual Basic zachází se strukturou jako s jednou jednotkou, i když ke svým členům můžete přistupovat také jednotlivě.
 
 ## <a name="remarks"></a>Poznámky
 
-Define and use a structure data type when you need to combine various data types into a single unit, or when none of the elementary data types serve your needs.
+Definujte a použijte datový typ struktura, pokud potřebujete zkombinovat různé datové typy do jedné jednotky nebo když žádný z základních datových typů nevyhovuje vašim potřebám.
 
-The default value of a structure data type consists of the combination of the default values of each of its members.
+Výchozí hodnota datového typu struktury se skládá z kombinace výchozích hodnot každého z jeho členů.
 
-## <a name="declaration-format"></a>Declaration Format
+## <a name="declaration-format"></a>Formát deklarace
 
-A structure declaration starts with the [Structure Statement](../../../visual-basic/language-reference/statements/structure-statement.md) and ends with the `End Structure` statement. The `Structure` statement supplies the name of the structure, which is also the identifier of the data type the structure is defining. Other parts of the code can use this identifier to declare variables, parameters, and function return values to be of this structure's data type.
+Deklarace struktury začíná [příkazem Structure](../../../visual-basic/language-reference/statements/structure-statement.md) a končí příkazem `End Structure`. Příkaz `Structure` poskytuje název struktury, což je také identifikátor datového typu, ve kterém je struktura definovaná. Jiné části kódu mohou použít tento identifikátor k deklarování proměnných, parametrů a návratových hodnot funkce, které mají být typu dat této struktury.
 
-The declarations between the `Structure` and `End Structure` statements define the members of the structure.
+Deklarace mezi příkazy `Structure` a `End Structure` definují členy struktury.
 
-## <a name="member-access-levels"></a>Member Access Levels
+## <a name="member-access-levels"></a>Úrovně přístupu členů
 
-You must declare every member using a [Dim Statement](../../../visual-basic/language-reference/statements/dim-statement.md) or a statement that specifies access level, such as [Public](../../../visual-basic/language-reference/modifiers/public.md), [Friend](../../../visual-basic/language-reference/modifiers/friend.md), or [Private](../../../visual-basic/language-reference/modifiers/private.md). If you use a `Dim` statement, the access level defaults to public.
+Každý člen musíte deklarovat pomocí [příkazu Dim](../../../visual-basic/language-reference/statements/dim-statement.md) nebo příkazu, který určuje úroveň přístupu, jako je například [Public](../../../visual-basic/language-reference/modifiers/public.md), [Friend](../../../visual-basic/language-reference/modifiers/friend.md)nebo [Private](../../../visual-basic/language-reference/modifiers/private.md). Pokud použijete příkaz `Dim`, nastaví se výchozí úroveň přístupu na veřejné.
 
 ## <a name="programming-tips"></a>Tipy k programování
 
-- **Memory Consumption.** As with all composite data types, you cannot safely calculate the total memory consumption of a structure by adding together the nominal storage allocations of its members. Furthermore, you cannot safely assume that the order of storage in memory is the same as your order of declaration. If you need to control the storage layout of a structure, you can apply the <xref:System.Runtime.InteropServices.StructLayoutAttribute> attribute to the `Structure` statement.
+- **Spotřeba paměti.** Stejně jako u všech složených datových typů nemůžete bezpečně vypočítat celkovou spotřebu paměti struktury tím, že přidáváte dohromady jmenovité přidělení úložiště jeho členů. Navíc nemůžete bezpečně předpokládat, že pořadí úložiště v paměti je stejné jako vaše pořadí deklarace. Pokud potřebujete řídit rozložení úložiště struktury, můžete použít atribut <xref:System.Runtime.InteropServices.StructLayoutAttribute> u příkazu `Structure`.
 
-- **Interop Considerations.** If you are interfacing with components not written for the .NET Framework, for example Automation or COM objects, keep in mind that user-defined types in other environments are not compatible with Visual Basic structure types.
+- **Problematika spolupráce.** Pokud procházejíte s komponentami, které nejsou napsané pro .NET Framework, například automatizace nebo objekty COM, pamatujte, že uživatelsky definované typy v jiných prostředích nejsou kompatibilní s typy Visual Basic struktury.
 
-- **Widening.** There is no automatic conversion to or from any structure data type. You can define conversion operators on your structure using the [Operator Statement](../../../visual-basic/language-reference/statements/operator-statement.md), and you can declare each conversion operator to be `Widening` or `Narrowing`.
+- **Rozšiřující.** Neexistuje žádný automatický převod na nebo z žádného datového typu struktury. Operátory převodu můžete definovat ve své struktuře pomocí [příkazu operátoru](../../../visual-basic/language-reference/statements/operator-statement.md)a můžete deklarovat každý operátor převodu, který má být `Widening` nebo `Narrowing`.
 
-- **Type Characters.** Structure data types have no literal type character or identifier type character.
+- **Znaky typu.** Datové typy struktury nemají znak typu literálu ani znak typu identifikátoru.
 
-- **Framework Type.** There is no corresponding type in the .NET Framework. All structures inherit from the .NET Framework class <xref:System.ValueType?displayProperty=nameWithType>, but no individual structure corresponds to <xref:System.ValueType?displayProperty=nameWithType>.
+- **Typ rozhraní.** V .NET Framework neexistuje žádný odpovídající typ. Všechny struktury dědí z třídy .NET Framework <xref:System.ValueType?displayProperty=nameWithType>, ale žádná jednotlivá struktura neodpovídají <xref:System.ValueType?displayProperty=nameWithType>.
 
 ## <a name="example"></a>Příklad
 
-The following paradigm shows the outline of the declaration of a structure.
+Následující paradigma znázorňuje obrys deklarace struktury.
 
 ```vb
 [Public | Protected | Friend | Protected Friend | Private] Structure structname

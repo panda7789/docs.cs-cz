@@ -1,5 +1,5 @@
 ---
-title: 'How to: Chain Axis Method Calls (LINQ to XML)'
+title: 'Postupy: zřetězení volání metod osy (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: e4e22942-39bd-460f-b3c0-9f09e53d3aa9
 ms.openlocfilehash: de6fbec9fa7948c618252415774ff6a2e9289c74
@@ -9,15 +9,15 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346939"
 ---
-# <a name="how-to-chain-axis-method-calls-linq-to-xml-visual-basic"></a>How to: Chain Axis Method Calls (LINQ to XML) (Visual Basic)
-A common pattern that you will use in your code is to call an axis method, then call one of the extension method axes.  
+# <a name="how-to-chain-axis-method-calls-linq-to-xml-visual-basic"></a>Postupy: zřetězení volání metod osy (LINQ to XML) (Visual Basic)
+Běžným vzorem, který použijete v kódu, je zavolat metodu osy a pak zavolat jednu z OS rozšiřujících metod.  
   
- There are two axes with the name of `Elements` that return a collection of elements: the <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> method and the <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> method. You can combine these two axes to find all elements of a specified name at a given depth in the tree.  
+ Existují dvě osy s názvem `Elements`, které vracejí kolekci prvků: metoda <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> a metoda <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType>. Tyto dvě osy můžete kombinovat a vyhledat všechny prvky zadaného názvu v dané hloubce stromu.  
   
 ## <a name="example"></a>Příklad  
- This example uses <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> and <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> to find all `Name` elements in all `Address` elements in all `PurchaseOrder` elements.  
+ V tomto příkladu se používá <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> a <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> k nalezení všech prvků `Name` ve všech elementech `Address` ve všech `PurchaseOrder` prvcích.  
   
- This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: více nákupních objednávek (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
   
 ```vb  
 Dim purchaseOrders As XElement = XElement.Load("PurchaseOrders.xml")  
@@ -29,7 +29,7 @@ For Each e As XElement In names
 Next  
 ```  
   
- This example produces the following output:  
+ Tento příklad vytvoří následující výstup:  
   
 ```xml  
 <Name>Ellen Adams</Name>  
@@ -40,10 +40,10 @@ Next
 <Name>Jessica Arnold</Name>  
 ```  
   
- This works because one of the implementations of the `Elements` axis is as an extension method on <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XContainer>. <xref:System.Xml.Linq.XElement> derives from <xref:System.Xml.Linq.XContainer>, so you can call the <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> method on the results of a call to the <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> method.  
+ Tato funkce funguje, protože jedna z implementací osy `Elements` je jako metoda rozšíření v <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XContainer>. <xref:System.Xml.Linq.XElement> jsou odvozeny z <xref:System.Xml.Linq.XContainer>, takže můžete volat metodu <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> pro výsledky volání metody <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType>.  
   
 ## <a name="example"></a>Příklad  
- Sometimes you want to retrieve all elements at a particular element depth when there might or might not be intervening ancestors. For example, in the following document, you might want to retrieve all the `ConfigParameter` elements that are children of the `Customer` element, but not the `ConfigParameter` that is a child of the `Root` element.  
+ Někdy je vhodné načíst všechny prvky na konkrétní hloubku prvku, pokud může nebo nemusí být zasahovat do nadřazených prvků. Například v následujícím dokumentu můžete chtít načíst všechny `ConfigParameter` prvky, které jsou podřízené prvku `Customer`, ale ne `ConfigParameter`, který je podřízenou položkou `Root` prvku.  
   
 ```xml  
 <Root>  
@@ -67,7 +67,7 @@ Next
 </Root>  
 ```  
   
- To do this, you can use the <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> axis, as follows:  
+ K tomu můžete použít <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> osu, a to následujícím způsobem:  
   
 ```vb  
 Dim root As XElement = XElement.Load("Irregular.xml")  
@@ -78,7 +78,7 @@ For Each cp As XElement In configParameters
 Next  
 ```  
   
- This example produces the following output:  
+ Tento příklad vytvoří následující výstup:  
   
 ```xml  
 <ConfigParameter>FirstConfigParameter</ConfigParameter>  
@@ -86,9 +86,9 @@ Next
 ```  
   
 ## <a name="example"></a>Příklad  
- The following example shows the same technique for XML that is in a namespace. For more information, see [Namespaces Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).  
+ Následující příklad ukazuje stejnou techniku pro XML, která je v oboru názvů. Další informace najdete v tématu [obory názvů Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).  
   
- This example uses the following XML document: [Sample XML File: Multiple Purchase Orders in a Namespace](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-in-a-namespace.md).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: více nákupních objednávek v oboru názvů](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-in-a-namespace.md).  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  
@@ -106,7 +106,7 @@ Module Module1
 End Module  
 ```  
   
- This example produces the following output:  
+ Tento příklad vytvoří následující výstup:  
   
 ```xml  
 <aw:Name xmlns:aw="http://www.adventure-works.com">Ellen Adams</aw:Name>  
@@ -119,4 +119,4 @@ End Module
   
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ to XML Axes (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)
+- [LINQ to XML osy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)

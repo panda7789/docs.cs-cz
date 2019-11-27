@@ -14,18 +14,18 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74441790"
 ---
 # <a name="ialink3-interface"></a>IALink3 – rozhraní
-Provides a single method, `SetManifestFile`, which enables you to specify or reset the manifest file the linker will use when it creates an assembly.  
+Poskytuje jedinou metodu, `SetManifestFile`, která umožňuje určit nebo resetovat soubor manifestu, který bude linker používat při vytváření sestavení.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [SetManifestFile – metoda](setmanifestfile-method.md)  
- Enables you to specify or reset the manifest file that the linker will use when it creates the assembly.  
+ Umožňuje určit nebo obnovit soubor manifestu, který bude linker používat při vytváření sestavení.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [ALink API](index.md)  
- Supports creating .NET Framework assemblies and unbound modules.  
+ [Rozhraní API ALink](index.md)  
+ Podporuje vytváření .NET Framework sestavení a nevázaných modulů.  
   
  [IALink – rozhraní](ialink-interface.md)  
- Helps in constructing .NET Framework assemblies.  
+ Pomáhá při sestavování .NET Framework sestavení.  
   
  [Al.exe (linker sestavení)](../../tools/al-exe-assembly-linker.md)  
- Generates a file that has an assembly manifest from one or more files that are either modules or resource files.
+ Vygeneruje soubor, který má manifest sestavení z jednoho nebo více souborů, které jsou buď moduly, nebo soubory prostředků.

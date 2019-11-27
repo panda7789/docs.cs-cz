@@ -16,24 +16,24 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74447675"
 ---
 # <a name="etw-events-in-the-common-language-runtime"></a>Události Trasování událostí pro Windows v CLR (Common Language Runtime)
-The common language runtime (CLR) provides useful event tracing for Windows (ETW) diagnostic information through a large variety of debugging and profiling events. CLR ETW events leverage the Windows ETW tracing system to augment the existing profiling and debugging support provided by the common language runtime.  
+Modul CLR (Common Language Runtime) poskytuje užitečné funkce trasování událostí pro Windows (ETW) prostřednictvím velkého množství událostí ladění a profilování. Události modulu CLR ETW využívají systém trasování ETW systému Windows k rozšíření stávající podpory profilace a ladění poskytované modulem CLR (Common Language Runtime).  
   
- More information about ETW is available in the [Improve Debugging and Performance Tuning with ETW](https://docs.microsoft.com/archive/msdn-magazine/2007/april/event-tracing-improve-debugging-and-performance-tuning-with-etw) article. Information about Xperf can be found in the entry [Windows Performance Toolkit - Xperf](https://blogs.msdn.microsoft.com/ntdebugging/2008/04/03/windows-performance-toolkit-xperf/) in the NTDebugging blog.  
+ Další informace o ETW jsou k dispozici v článku [vylepšení ladění a optimalizace výkonu pomocí trasování událostí pro Windows](https://docs.microsoft.com/archive/msdn-magazine/2007/april/event-tracing-improve-debugging-and-performance-tuning-with-etw) . Informace o Xperf najdete v položce [Sada Windows Performance Toolkit – Xperf](https://blogs.msdn.microsoft.com/ntdebugging/2008/04/03/windows-performance-toolkit-xperf/) na blogu NTDebugging.  
   
- The .NET Framework 4 or later is required for all the events described in the event topics. The Windows Vista operating system is the minimum supported client, and Windows Server 2008 is the minimum supported server.  
+ Pro všechny události popsané v tématech událostí se vyžaduje .NET Framework 4 nebo novější. Minimální podporovaný klient je operační systém Windows Vista a minimální podporovaný Server je Windows Server 2008.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Řízení přihlašování rozhraní .NET Framework](controlling-logging.md)  
- Describes the tools and commands for capturing and viewing ETW events.  
+ Popisuje nástroje a příkazy pro zachytávání a zobrazení událostí ETW.  
   
  [Poskytovatelé Trasování událostí pro Windows v CLR](clr-etw-providers.md)  
- Provides information about the runtime and rundown providers, and how you can use them for ETW data collection.  
+ Poskytuje informace o modulu runtime a poskytovatelích doběhu a o tom, jak je můžete použít pro shromažďování dat ETW.  
   
  [Klíčová slova a úrovně Trasování událostí pro Windows v CLR](clr-etw-keywords-and-levels.md)  
- Describes the keywords for the Runtime and Rundown providers that enable the filtering of events by category.  
+ Popisuje klíčová slova pro poskytovatele běhového prostředí a doběhu, která umožňují filtrování událostí podle kategorie.  
   
  [Události Trasování událostí pro Windows v CLR](clr-etw-events.md)  
- Provides detailed information about CLR ETW events, their keywords, levels, and event data.  
+ Poskytuje podrobné informace o událostech technologie CLR ETW, jejich klíčových slovech, úrovních a datech událostí.  
   
 ## <a name="see-also"></a>Viz také:
 

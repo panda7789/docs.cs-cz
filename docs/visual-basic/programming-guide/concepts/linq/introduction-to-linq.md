@@ -9,30 +9,30 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74338907"
 ---
-# <a name="introduction-to-linq-visual-basic"></a>Introduction to LINQ (Visual Basic)
-Language-Integrated Query (LINQ) is an innovation introduced in the .NET Framework version 3.5 that bridges the gap between the world of objects and the world of data.  
+# <a name="introduction-to-linq-visual-basic"></a>Úvod do LINQ (Visual Basic)
+LINQ (Language-Integrated Query) je inovace představené ve verzi .NET Framework 3,5, která přemostěníuje mezeru mezi světem objektů a světem dat.  
   
- Traditionally, queries against data are expressed as simple strings without type checking at compile time or IntelliSense support. Furthermore, you have to learn a different query language for each type of data source: SQL databases, XML documents, various Web services, and so on. LINQ makes a *query* a first-class language construct in Visual Basic. You write queries against strongly typed collections of objects by using language keywords and familiar operators.  
+ Tradičně se dotazy na data vyjadřují jako jednoduché řetězce bez kontroly typu v době kompilace nebo v podpoře technologie IntelliSense. Kromě toho se musíte naučit jiný dotazovací jazyk pro každý typ zdroje dat: databáze SQL, dokumenty XML, různé webové služby a tak dále. LINQ vytvoří *dotaz* na konstrukci jazyka první třídy v Visual Basic. Zapisujete dotazy na kolekce objektů se silnými typy pomocí klíčových slov jazyka a známých operátorů.  
   
- You can write LINQ queries in Visual Basic for SQL Server databases, XML documents, ADO.NET Datasets, and any collection of objects that supports <xref:System.Collections.IEnumerable> or the generic <xref:System.Collections.Generic.IEnumerable%601> interface. LINQ support is also provided by third parties for many Web services and other database implementations.  
+ Dotazy LINQ můžete zapsat v Visual Basic pro databáze SQL Server, dokumenty XML, datové sady ADO.NET a všechny kolekce objektů, které podporují <xref:System.Collections.IEnumerable> nebo obecné rozhraní <xref:System.Collections.Generic.IEnumerable%601>. Podporu LINQ poskytují i třetí strany pro mnoho webových služeb a dalších implementací databáze.  
   
- You can use LINQ queries in new projects, or alongside non-LINQ queries in existing projects. The only requirement is that the project target .NET Framework 3.5 or later.  
+ Dotazy LINQ můžete použít v nových projektech nebo společně s dotazy mimo LINQ v existujících projektech. Jediným požadavkem je, že cíl projektu .NET Framework 3,5 nebo novější.  
   
- The following illustration from Visual Studio shows a partially-completed LINQ query against a SQL Server database in both C# and Visual Basic with full type checking and IntelliSense support.  
+ Následující obrázek ze sady Visual Studio ukazuje částečně dokončený dotaz LINQ na SQL Server databázi v Visual Basic C# a s úplnou kontrolou typu a podporou technologie IntelliSense.  
   
- ![Diagram that shows a LINQ query with Intellisense.](./media/introduction-to-linq/linq-query-intellisense.png)  
+ ![Diagram, který zobrazuje dotaz LINQ pomocí technologie IntelliSense.](./media/introduction-to-linq/linq-query-intellisense.png)  
   
 ## <a name="next-steps"></a>Další kroky  
- To learn more details about LINQ, start by becoming familiar with some basic concepts in the Getting Started section [Getting Started with LINQ in Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md), and then read the documentation for the LINQ technology in which you are interested:  
+ Chcete-li získat další informace o LINQ, začněte tím, že se seznámíte s některými základními koncepty v sekci Začínáme [Začínáme pomocí LINQ v Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)a pak si přečtěte dokumentaci pro technologii LINQ, ve které máte zájem:  
   
-- SQL Server databases: [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)  
+- SQL Server databáze: [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)  
   
-- XML documents: [LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md)  
+- Dokumenty XML: [LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md)  
   
-- ADO.NET Datasets: [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)  
+- ADO.NET datové sady: [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)  
   
-- .NET collections, files, strings and so on: [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)  
+- Kolekce .NET, soubory, řetězce a tak dále: [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Language-Integrated Query (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/index.md)
+- [LINQ (Language-Integrated Query) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/index.md)

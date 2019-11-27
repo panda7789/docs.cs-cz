@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449119"
 ---
 # <a name="isymunmanageddocumentgeturl-method"></a>ISymUnmanagedDocument::GetURL – metoda
-Returns the uniform resource locator (URL) for this document.  
+Vrátí adresu URL (Uniform Resource Locator) pro tento dokument.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,16 +36,16 @@ HRESULT GetURL(
   
 ## <a name="parameters"></a>Parametry  
  `cchUrl`  
- [in] The size, in characters, of the `szURL` buffer.  
+ pro Velikost vyrovnávací paměti `szURL` v znacích.  
   
  `pcchUrl`  
- [out] A pointer to a variable that receives the size of the URL, including the null termination.  
+ mimo Ukazatel na proměnnou, která přijímá velikost adresy URL, včetně ukončení hodnoty null.  
   
  `szUrl`  
- [out] The buffer containing the URL.  
+ mimo Vyrovnávací paměť obsahující adresu URL.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, an error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě kód chyby.  
   
 ## <a name="see-also"></a>Viz také:
 

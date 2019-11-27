@@ -13,22 +13,22 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74332013"
 ---
 # <a name="mycomputerports-object"></a>My.Computer.Ports – objekt
-Provides a property and a method for accessing the computer's serial ports.  
+Poskytuje vlastnost a metodu pro přístup k sériovým portům počítače.  
   
 ## <a name="remarks"></a>Poznámky  
- For information about the methods and properties of the `My.Computer.Ports` object, see <xref:Microsoft.VisualBasic.Devices.Ports>.  
+ Informace o metodách a vlastnostech objektu `My.Computer.Ports` naleznete v tématu <xref:Microsoft.VisualBasic.Devices.Ports>.  
   
- For more information, see [Accessing the Computer's Ports](../../../visual-basic/developing-apps/programming/computer-resources/accessing-the-computer-s-ports.md).  
+ Další informace najdete v tématu [přístup k portům počítače](../../../visual-basic/developing-apps/programming/computer-resources/accessing-the-computer-s-ports.md).  
   
 > [!NOTE]
-> You can also use properties and methods of the <xref:System.IO.Ports.SerialPort?displayProperty=nameWithType> class to access the computer's serial ports.  
+> Pro přístup k sériovým portům počítače můžete také použít vlastnosti a metody třídy <xref:System.IO.Ports.SerialPort?displayProperty=nameWithType>.  
   
 ## <a name="requirements"></a>Požadavky  
- **Namespace:** <xref:Microsoft.VisualBasic.Devices>  
+ **Obor názvů:** <xref:Microsoft.VisualBasic.Devices>  
   
- **Class:** <xref:Microsoft.VisualBasic.Devices.Ports>  
+ **Třída:** <xref:Microsoft.VisualBasic.Devices.Ports>  
   
- **Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)  
+ **Sestavení:** Knihovna Visual Basic runtime (v souboru Microsoft. VisualBasic. dll)  
   
 ## <a name="see-also"></a>Viz také:
 

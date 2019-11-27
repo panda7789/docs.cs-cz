@@ -16,29 +16,29 @@ ms.locfileid: "74345590"
 ---
 # <a name="how-to-send-strings-to-serial-ports-in-visual-basic"></a>Postupy: Odesílání řetězců na sériové porty v jazyce Visual Basic
 
-This topic describes how to use `My.Computer.Ports` to send strings to the computer's serial ports in Visual Basic.  
+V tomto tématu se dozvíte, jak pomocí `My.Computer.Ports` odeslat řetězce na sériové porty počítače v Visual Basic.  
   
 ## <a name="example"></a>Příklad  
 
- This example sends a string to the COM1 serial port. You may need to use a different serial port on your computer.  
+ Tento příklad odešle řetězec na sériový port COM1. V počítači možná budete muset použít jiný sériový port.  
   
- Use the `My.Computer.Ports.OpenSerialPort` method to obtain a reference to the port. Další informace najdete v tématu <xref:Microsoft.VisualBasic.Devices.Ports.OpenSerialPort%2A>.  
+ K získání odkazu na port použijte metodu `My.Computer.Ports.OpenSerialPort`. Další informace najdete v tématu <xref:Microsoft.VisualBasic.Devices.Ports.OpenSerialPort%2A>.  
   
- The `Using` block allows the application to close the serial port even if it generates an exception. All code that manipulates the serial port should appear within this block or within a `Try...Catch...Finally` block.  
+ `Using` blok umožňuje aplikaci zavřít sériový port, i když generuje výjimku. Veškerý kód, který zpracovává sériový port, by měl být uveden v rámci tohoto bloku nebo v rámci `Try...Catch...Finally`ho bloku.  
   
- The <xref:System.IO.Ports.SerialPort.WriteLine%2A> method sends the data to the serial port.  
+ Metoda <xref:System.IO.Ports.SerialPort.WriteLine%2A> odesílá data do sériového portu.  
   
  [!code-vb[VbVbalrMyComputer#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#33)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
-- This example assumes the computer is using `COM1`.  
+- Tento příklad předpokládá, že počítač používá `COM1`.  
   
 ## <a name="robust-programming"></a>Robustní programování  
 
- This example assumes the computer is using `COM1`; for more flexibility, the code should allow the user to select the desired serial port from a list of available ports. For more information, see [How to: Show Available Serial Ports](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md).  
+ Tento příklad předpokládá, že počítač používá `COM1`; pro větší flexibilitu by měl kód uživateli dovolit vybrat požadovaný sériový port ze seznamu dostupných portů. Další informace najdete v tématu [Postup: zobrazení dostupných sériových portů](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-show-available-serial-ports.md).  
   
- This example uses a `Using` block to make sure that the application closes the port even if it throws an exception. For more information, see [Using Statement](../../../../visual-basic/language-reference/statements/using-statement.md).  
+ V tomto příkladu se používá blok `Using` k zajištění toho, že aplikace uzavře port, i když vyvolá výjimku. Další informace naleznete v tématu [using – příkaz](../../../../visual-basic/language-reference/statements/using-statement.md).  
   
 ## <a name="see-also"></a>Viz také:
 

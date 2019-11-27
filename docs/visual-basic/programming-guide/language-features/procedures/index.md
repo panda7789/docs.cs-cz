@@ -16,50 +16,50 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74345982"
 ---
 # <a name="procedures-in-visual-basic"></a>Procedury v jazyce Visual Basic
-A *procedure* is a block of Visual Basic statements enclosed by a declaration statement (`Function`, `Sub`, `Operator`, `Get`, `Set`) and a matching `End` declaration. All executable statements in Visual Basic must be within some procedure.  
+*Procedura* je blok Visual Basic příkazů, které jsou uzavřeny příkazem deklarace (`Function`, `Sub`, `Operator`, `Get`, `Set`) a deklarací odpovídajícího `End`. Všechny spustitelné příkazy v Visual Basic musí být v rámci určitého postupu.  
   
-## <a name="calling-a-procedure"></a>Calling a Procedure  
- You invoke a procedure from some other place in the code. This is known as a *procedure call*. When the procedure is finished running, it returns control to the code that invoked it, which is known as the *calling code*. The calling code is a statement, or an expression within a statement, that specifies the procedure by name and transfers control to it.  
+## <a name="calling-a-procedure"></a>Volání procedury  
+ Vyvoláte proceduru z nějakého jiného místa v kódu. Tento postup se označuje jako *volání procedury*. Když je procedura dokončena, vrátí řízení kódu, který jej vyvolal, což je známo jako *volající kód*. Volající kód je příkaz nebo výraz v rámci příkazu, který určuje proceduru podle názvu a přenáší řízení na něj.  
   
-## <a name="returning-from-a-procedure"></a>Returning from a Procedure  
- A procedure returns control to the calling code when it has finished running. To do this, it can use a [Return Statement](../../../../visual-basic/language-reference/statements/return-statement.md), the appropriate [Exit Statement](../../../../visual-basic/language-reference/statements/exit-statement.md) statement for the procedure, or the procedure's [End \<keyword> Statement](../../../../visual-basic/language-reference/statements/end-keyword-statement.md) statement. Control then passes to the calling code following the point of the procedure call.  
+## <a name="returning-from-a-procedure"></a>Vrácení z procedury  
+ Procedura vrátí řízení volajícímu kódu při jeho spuštění. Chcete-li to provést, může použít [příkaz return](../../../../visual-basic/language-reference/statements/return-statement.md), příslušný příkaz [Exit příkazu](../../../../visual-basic/language-reference/statements/exit-statement.md) pro proceduru nebo příkaz [End \<klíčové slovo > příkazu](../../../../visual-basic/language-reference/statements/end-keyword-statement.md) . Řízení poté předává volajícímu kódu za bodem volání procedury.  
   
-- With a `Return` statement, control returns immediately to the calling code. Statements following the `Return` statement do not run. You can have more than one `Return` statement in the same procedure.  
+- Pomocí příkazu `Return` se ovládací prvek vrátí hned k volajícímu kódu. Příkazy, které následují po příkazu `Return`, se nespustí. Stejný postup může mít více než jeden `Return` příkaz.  
   
-- With an `Exit Sub` or `Exit Function` statement, control returns immediately to the calling code. Statements following the `Exit` statement do not run. You can have more than one `Exit` statement in the same procedure, and you can mix `Return` and `Exit` statements in the same procedure.  
+- Pomocí příkazu `Exit Sub` nebo `Exit Function` se ovládací prvek vrátí hned k volajícímu kódu. Příkazy, které následují po příkazu `Exit`, se nespustí. Stejný postup může mít více než jeden `Exit` příkaz a můžete kombinovat `Return` a `Exit` příkazy stejným postupem.  
   
-- If a procedure has no `Return` or `Exit` statements, it concludes with an `End Sub` or `End Function`, `End Get`, or `End Set` statement following the last statement of the procedure body. The `End` statement returns control immediately to the calling code. You can have only one `End` statement in a procedure.  
+- Pokud procedura nemá žádné `Return` ani `Exit` příkazy, dokončí s `End Sub` nebo `End Function`, `End Get`nebo `End Set`m příkazem za posledním příkazem těla procedury. Příkaz `End` vrátí řízení ihned na volající kód. V proceduře může být pouze jeden příkaz `End`.  
   
 ## <a name="parameters-and-arguments"></a>Parametry a argumenty  
- In most cases, a procedure needs to operate on different data each time you call it. You can pass this information to the procedure as part of the procedure call. The procedure defines zero or more *parameters*, each of which represents a value it expects you to pass to it. Corresponding to each parameter in the procedure definition is an *argument* in the procedure call. An argument represents the value you pass to the corresponding parameter in a given procedure call.  
+ Ve většině případů procedura potřebuje pracovat s různými daty pokaždé, když je zavoláte. Tyto informace můžete předat proceduře jako součást volání procedury. Procedura definuje nula nebo více *parametrů*, z nichž každý představuje hodnotu, kterou očekáváte předat. Odpovídající každý parametr v definici procedury je *argumentem* volání procedury. Argument představuje hodnotu, která je předána příslušnému parametru v daném volání procedury.  
   
-## <a name="types-of-procedures"></a>Types of Procedures  
- Visual Basic uses several types of procedures:  
+## <a name="types-of-procedures"></a>Typy procedur  
+ Visual Basic používá několik typů procedur:  
   
-- [Sub Procedures](./sub-procedures.md) perform actions but do not return a value to the calling code.  
+- [Procedury Sub](./sub-procedures.md) provádějí akce, ale nevrací hodnotu volajícímu kódu.  
   
-- Event-handling procedures are `Sub` procedures that execute in response to an event raised by user action or by an occurrence in a program.  
+- Procedury pro zpracování událostí jsou `Sub` postupy, které se spouštějí v reakci na událost vyvolanou akcí uživatele nebo v programu.  
   
-- [Function Procedures](./function-procedures.md) return a value to the calling code. They can perform other actions before returning.
+- [Procedury funkcí](./function-procedures.md) vracejí hodnotu volajícímu kódu. Před vrácením můžou provádět další akce.
 
-    Some functions written in C# return a *reference return value*. Function callers can modify the return value, and this modification is reflected in the state of the called object. Starting with Visual Basic 2017, Visual Basic code can consume reference return values, although it cannot return a value by reference. For more information, see [Reference return values](ref-return-values.md).
+    Některé funkce napsané C# v vrátí *návratovou hodnotu odkazu*. Volající funkce mohou změnit návratovou hodnotu a tato úprava se projeví ve stavu volaného objektu. Počínaje Visual Basic 2017 může Visual Basic kód spotřebovávat návratové hodnoty odkazů, i když nemůže vrátit hodnotu odkazem. Další informace najdete v tématu [referenční návratové hodnoty](ref-return-values.md).
   
-- [Property Procedures](./property-procedures.md) return and assign values of properties on objects or modules.  
+- [Procedury vlastnosti](./property-procedures.md) vracejí a přiřazují hodnoty vlastností pro objekty nebo moduly.  
   
-- [Operator Procedures](./operator-procedures.md) define the behavior of a standard operator when one or both of the operands is a newly-defined class or structure.  
+- [Procedury operátora](./operator-procedures.md) definují chování operátoru Standard, pokud jeden nebo oba operandy jsou nově definovanou třídou nebo strukturou.  
   
-- [Generic Procedures in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md) define one or more *type parameters* in addition to their normal parameters, so the calling code can pass specific data types each time it makes a call.  
+- [Obecné procedury v Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md) definují kromě jejich běžných parametrů jeden nebo více *parametrů typu* , takže volající kód může předat konkrétní datové typy pokaždé, když provede volání.  
   
-## <a name="procedures-and-structured-code"></a>Procedures and Structured Code  
- Every line of executable code in your application must be inside some procedure, such as `Main`, `calculate`, or `Button1_Click`. If you subdivide large procedures into smaller ones, your application is more readable.  
+## <a name="procedures-and-structured-code"></a>Procedury a strukturovaný kód  
+ Každý řádek spustitelného kódu v aplikaci musí být v rámci některé procedury, například `Main`, `calculate`nebo `Button1_Click`. Pokud rozdělíte velké postupy na menší, vaše aplikace je čitelnější.  
   
- Procedures are useful for performing repeated or shared tasks, such as frequently used calculations, text and control manipulation, and database operations. You can call a procedure from many different places in your code, so you can use procedures as building blocks for your application.  
+ Procedury jsou užitečné pro provádění opakovaných nebo sdílených úkolů, jako jsou často používané výpočty, manipulace s textem a ovládacími prvky a databázové operace. Můžete zavolat proceduru z mnoha různých míst v kódu, abyste mohli používat procedury jako stavební bloky pro vaši aplikaci.  
   
- Structuring your code with procedures gives you the following benefits:  
+ Strukturování kódu pomocí postupů vám poskytne následující výhody:  
   
-- Procedures allow you to break your programs into discrete logical units. You can debug separate units more easily than you can debug an entire program without procedures.  
+- Postupy umožňují rozdělit programy do diskrétních logických jednotek. Můžete ladit samostatné jednotky snadněji, než můžete ladit celý program bez postupů.  
   
-- After you develop procedures for use in one program, you can use them in other programs, often with little or no modification. This helps you avoid code duplication.  
+- Po vývoji postupů pro použití v jednom programu je můžete používat v jiných programech, často s malým nebo nezměněným. To pomáhá vyhnout se duplicitám kódu.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -71,5 +71,5 @@ A *procedure* is a block of Visual Basic statements enclosed by a declaration st
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
 - [Rekurzivní procedury](./recursive-procedures.md)
 - [Přetížení procedury](./procedure-overloading.md)
-- [Generic Procedures in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md)
+- [Obecné procedury v Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md)
 - [Objekty a třídy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448891"
 ---
 # <a name="isymunmanagedmethodgetsequencepointcount-method"></a>ISymUnmanagedMethod::GetSequencePointCount – metoda
-Gets the count of sequence points within this method.  
+Získá počet bodů sekvence v rámci této metody.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,13 +34,13 @@ HRESULT GetSequencePointCount(
   
 ## <a name="parameters"></a>Parametry  
  `pRetVal`  
- [out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the sequence points.  
+ mimo Ukazatel na `ULONG32`, který přijímá velikost vyrovnávací paměti vyžadované k umístění bodů sekvence.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445609"
 ---
 # <a name="precloseassembly-method"></a>PreCloseAssembly – metoda
-Closes the assembly file. Call this method after closing all other files, but before closing the assembly file. Do not call this method for unbound modules.  
+Zavře soubor sestavení. Tuto metodu zavolejte po zavření všech ostatních souborů, ale před zavřením souboru sestavení. Nevolejte tuto metodu pro nevázané moduly.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,16 +34,16 @@ HRESULT PreCloseAssembly(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID of the assembly.  
+ ID sestavení  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Returns S_OK if the method succeeds.  
+ Vrátí S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Requires alink.h.  
+ Vyžaduje ALink. h.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink – rozhraní](ialink-interface.md)
 - [IALink2 – rozhraní](ialink2-interface.md)
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74428110"
 ---
 # <a name="isymunmanagedwriterclose-method"></a>ISymUnmanagedWriter::Close – metoda
-Closes the symbol writer after committing the symbols to the symbol store.  
+Po potvrzení symbolů do úložiště symbolů zavře zapisovač symbolů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,13 +32,13 @@ HRESULT Close();
 ```  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="remarks"></a>Poznámky  
- After this call, the symbol writer becomes invalid for further updates. To close the symbol writer without committing the symbols, use the [ISymUnmanagedWriter::Abort](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-abort-method.md) method instead.  
+ Po tomto volání bude zapisovač symbolů pro další aktualizace neplatný. Chcete-li zavřít zapisovač symbolů bez potvrzení symbolů, použijte místo toho metodu [ISymUnmanagedWriter:: Abort](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-abort-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

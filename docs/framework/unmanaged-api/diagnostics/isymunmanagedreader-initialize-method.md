@@ -23,10 +23,10 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74429746"
 ---
 # <a name="isymunmanagedreaderinitialize-method"></a>ISymUnmanagedReader::Initialize – metoda
-Initializes the symbol reader with the metadata importer interface that this reader will be associated with, along with the file name of the module.  
+Inicializuje čtečku symbolů pomocí rozhraní pro import metadat, ke kterému bude tento čtenář přidružen, společně s názvem souboru modulu.  
   
 > [!NOTE]
-> This method can be called only once, and must be called before any other reader methods.  
+> Tuto metodu lze volat pouze jednou a je třeba ji volat před všemi jinými metodami čtenáře.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,25 +40,25 @@ HRESULT Initialize (
   
 ## <a name="parameters"></a>Parametry  
  `importer`  
- [in] The metadata importer interface with which this reader will be associated.  
+ pro Rozhraní pro import metadat, ke kterému se bude tento čtenář přidružit.  
   
  `filename`  
- [in] The file name of the module. You can use the `pIStream` parameter instead.  
+ pro Název souboru modulu. Místo toho můžete použít parametr `pIStream`.  
   
  `searchPath`  
- [in] The path to search. Tento parametr je volitelný.  
+ pro Cesta, která se má vyhledat Tento parametr je volitelný.  
   
  `pIStream`  
- [in] The file stream, used as an alternative to the filename parameter.  
+ pro Datový proud souboru, který se používá jako alternativa k parametru filename.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="remarks"></a>Poznámky  
- You need to specify only one of the `filename` or the `pIStream` parameters, not both. The `searchPath` parameter is optional.  
+ Je potřeba zadat jenom jeden z `filename` nebo parametry `pIStream`, ne oba. Parametr `searchPath` je nepovinný.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

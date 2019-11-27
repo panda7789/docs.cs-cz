@@ -17,76 +17,76 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349957"
 ---
-# <a name="visual-basic-language-reference"></a>Referenční dokumentace jazyka Visual Basic
+# <a name="visual-basic-language-reference"></a>Visual Basic – jazykové referenční informace
 
-This section provides reference information for various aspects of the Visual Basic language.  
+V této části najdete referenční informace pro různé aspekty Visual Basicho jazyka.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
 
  [Typografická pravidla a pravidla vytváření kódu](../../visual-basic/language-reference/typographic-and-code-conventions.md)  
- Summarizes the way that keywords, placeholders, and other elements of the language are formatted in the Visual Basic documentation.  
+ Shrnuje, jak se v dokumentaci Visual Basic naformátují klíčová slova, zástupné symboly a další prvky jazyka.  
   
  [Členové knihovny modulu runtime jazyka Visual Basic](../../visual-basic/language-reference/runtime-library-members.md)  
- Lists the classes and modules of the <xref:Microsoft.VisualBasic?displayProperty=nameWithType> namespace, with links to their member functions, methods, properties, constants, and enumerations.  
+ Uvádí třídy a moduly oboru názvů <xref:Microsoft.VisualBasic?displayProperty=nameWithType> s odkazy na jejich členské funkce, metody, vlastnosti, konstanty a výčty.  
   
  [Klíčová slova](../../visual-basic/language-reference/keywords/index.md)  
- Lists all Visual Basic keywords and provides links to more information.  
+ Zobrazí všechna klíčová slova Visual Basic a poskytuje odkazy na Další informace.  
   
- [Attributes (Visual Basic)](../../visual-basic/language-reference/attributes.md)  
- Documents the attributes available in Visual Basic.  
+ [Atributy (Visual Basic)](../../visual-basic/language-reference/attributes.md)  
+ Dokumentuje atributy, které jsou k dispozici v Visual Basic.  
   
  [Konstanty a výčty](../../visual-basic/language-reference/constants-and-enumerations.md)  
- Documents the constants and enumerations available in Visual Basic.  
+ Dokumentuje konstanty a výčty, které jsou k dispozici v Visual Basic.  
   
  [Datové typy](../../visual-basic/language-reference/data-types/index.md)  
- Documents the data types available in Visual Basic.  
+ Dokumentuje datové typy, které jsou k dispozici v Visual Basic.  
   
  [Direktivy](../../visual-basic/language-reference/directives/index.md)  
- Documents the compiler directives available in Visual Basic.  
+ Dokumentuje direktivy kompilátoru, které jsou k dispozici v Visual Basic.  
   
  [Funkce](../../visual-basic/language-reference/functions/index.md)  
- Documents the run-time functions available in Visual Basic.  
+ Dokumentuje běhové funkce, které jsou k dispozici v Visual Basic.  
   
  [Modifikátory](../../visual-basic/language-reference/modifiers/index.md)  
- Lists the Visual Basic run-time modifiers and provides links to more information.  
+ Zobrazí seznam Visual Basic modifikátory běhu a poskytuje odkazy na Další informace.  
   
  [Moduly](../../visual-basic/language-reference/modules.md)  
- Documents the modules available in Visual Basic and their members.  
+ Dokumentuje moduly, které jsou k dispozici v Visual Basic a jejich členy.  
   
  [Nothing](../../visual-basic/language-reference/nothing.md)  
- Describes the default value of any data type.  
+ Popisuje výchozí hodnotu libovolného datového typu.  
   
  [Objekty](../../visual-basic/language-reference/objects/index.md)  
- Documents the objects available in Visual Basic and their members.  
+ Dokumentuje objekty, které jsou k dispozici v Visual Basic a jejich členy.  
   
  [Operátory](../../visual-basic/language-reference/operators/index.md)  
- Documents the operators available in Visual Basic.  
+ Dokumentuje operátory, které jsou k dispozici v Visual Basic.  
   
  [Vlastnosti](../../visual-basic/language-reference/properties.md)  
- Documents the properties available in Visual Basic.  
+ Dokumentuje vlastnosti, které jsou k dispozici v Visual Basic.  
   
  [Dotazy](../../visual-basic/language-reference/queries/index.md)  
- Provides reference information about using [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] expressions in your code.  
+ Poskytuje referenční informace o použití výrazů [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] ve vašem kódu.  
   
  [Příkazy](../../visual-basic/language-reference/statements/index.md)  
- Documents the declaration and executable statements available in Visual Basic.  
+ Dokumentuje deklaraci a spustitelné příkazy, které jsou k dispozici v Visual Basic.  
   
  [Značky pro komentáře XML](../../visual-basic/language-reference/xmldoc/index.md)  
- Describes the documentation comments for which IntelliSense is provided in the Visual Basic Code Editor.  
+ Popisuje dokumentační komentáře, pro které je technologie IntelliSense k dispozici v editoru kódu Visual Basic.  
   
  [Vlastnosti osy XML](../../visual-basic/language-reference/xml-axis/index.md)  
- Provides links to information about using XML axis properties to access XML directly in your code.  
+ Obsahuje odkazy na informace o použití vlastností osy XML pro přístup k XML přímo v kódu.  
   
  [Literály XML](../../visual-basic/language-reference/xml-literals/index.md)  
- Provides links to information about using XML literals to incorporate XML directly in your code.  
+ Obsahuje odkazy na informace o použití literálů XML pro začlenění XML přímo do kódu.  
   
  [Chybové zprávy](../../visual-basic/language-reference/error-messages/index.md)  
- Provides a listing of Visual Basic compiler and run-time error messages and help on how to handle them.  
+ Obsahuje seznam Visual Basic a chybové zprávy za běhu a pomůžou vám s jejich zpracováním.  
   
 ## <a name="related-sections"></a>Související oddíly  
 
  [Visual Basic](../../visual-basic/index.md)  
- Provides comprehensive help on all areas of the Visual Basic language.  
+ Poskytuje komplexní informace o všech oblastech Visual Basicho jazyka.  
   
- [Visual Basic Command-Line Compiler](../../visual-basic/reference/command-line-compiler/index.md)  
- Describes how to use the command-line compiler as an alternative to compiling programs from within the Visual Studio integrated development environment (IDE).
+ [Visual Basic Kompilátor příkazového řádku](../../visual-basic/reference/command-line-compiler/index.md)  
+ Popisuje, jak použít kompilátor příkazového řádku jako alternativu k kompilování programů z integrovaného vývojového prostředí (IDE) sady Visual Studio.

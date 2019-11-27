@@ -9,20 +9,20 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351049"
 ---
-# <a name="serializing-xml-trees-visual-basic"></a>Serializing XML Trees (Visual Basic)
-Serializing an XML tree means generating XML from the XML tree. You can serialize to a file, to a concrete implementation of the <xref:System.IO.TextWriter> class, or to a concrete implementation of an <xref:System.Xml.XmlWriter>.  
+# <a name="serializing-xml-trees-visual-basic"></a>Serializace stromů XML (Visual Basic)
+Serializace stromu XML znamená generování XML ze stromu XML. Můžete serializovat do souboru, do konkrétní implementace <xref:System.IO.TextWriter> třídy nebo konkrétní implementace <xref:System.Xml.XmlWriter>.  
   
- You can control various aspects of serialization. For example, you can control whether to indent the serialized XML, and whether to write an XML declaration.  
+ Můžete ovládat různé aspekty serializace. Můžete například určit, zda se má odsadit serializovaný kód XML a zda se má zapsat deklarace XML.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
 |Téma|Popis|  
 |-----------|-----------------|  
-|[Zachování prázdných znaků při serializaci](../../../../visual-basic/programming-guide/concepts/linq/preserving-white-space-while-serializing.md)|Describes how to control white space behavior when you serialize XML trees.|  
-|[Serializing with an XML Declaration (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/serializing-with-an-xml-declaration.md)|Describes how to serialize an XML tree that includes an XML declaration.|  
-|[Serializace do tříd File, TextWriter a XmlWriter](../../../../visual-basic/programming-guide/concepts/linq/serializing-to-files-textwriters-and-xmlwriters.md)|Describes how to serialize a document to a <xref:System.IO.File>, a <xref:System.IO.TextWriter>, or an <xref:System.Xml.XmlWriter>.|  
-|[Serializing to an XmlReader (Invoking XSLT) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/serializing-to-an-xmlreader-invoking-xslt.md)|Describes how to create a <xref:System.Xml.XmlReader> that enables another module to read the contents of an XML tree.|  
+|[Zachování prázdných znaků při serializaci](../../../../visual-basic/programming-guide/concepts/linq/preserving-white-space-while-serializing.md)|Popisuje, jak řídit chování prázdného místa při serializaci stromů XML.|  
+|[Serializace s deklarací XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/serializing-with-an-xml-declaration.md)|Popisuje způsob serializace stromu XML, který obsahuje deklaraci XML.|  
+|[Serializace do tříd File, TextWriter a XmlWriter](../../../../visual-basic/programming-guide/concepts/linq/serializing-to-files-textwriters-and-xmlwriters.md)|Popisuje způsob serializace dokumentu do <xref:System.IO.File>, <xref:System.IO.TextWriter>nebo <xref:System.Xml.XmlWriter>.|  
+|[Serializace do objektu XmlReader (vyvolání XSLT) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/serializing-to-an-xmlreader-invoking-xslt.md)|Popisuje, jak vytvořit <xref:System.Xml.XmlReader>, který umožňuje jinému modulu čtení obsahu stromu XML.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Programming Guide (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)
+- [Průvodce programováním (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)

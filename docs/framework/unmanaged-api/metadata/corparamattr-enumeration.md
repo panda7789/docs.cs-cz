@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436489"
 ---
 # <a name="corparamattr-enumeration"></a>CorParamAttr – výčet
-Contains values that describe the metadata of a method parameter.  
+Obsahuje hodnoty, které popisují metadata parametru metody.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,20 +46,20 @@ typedef enum CorParamAttr {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`pdIn`|Specifies that the parameter is passed into the method call.|  
-|`pdOut`|Specifies that the parameter is passed from the method return.|  
-|`pdOptional`|Specifies that the parameter is optional.|  
-|`pdReservedMask`|Reserved for internal use by the common language runtime.|  
-|`pdHasDefault`|Specifies that the parameter has a default value.|  
-|`pdHasFieldMarshal`|Specifies that the parameter has marshaling information.|  
-|`pdUnused`|Unused.|  
+|`pdIn`|Určuje, že se parametr předává do volání metody.|  
+|`pdOut`|Určuje, že se parametr předává z návratové metody.|  
+|`pdOptional`|Určuje, že parametr je nepovinný.|  
+|`pdReservedMask`|Vyhrazeno pro interní použití modulem CLR (Common Language Runtime).|  
+|`pdHasDefault`|Určuje, že parametr má výchozí hodnotu.|  
+|`pdHasFieldMarshal`|Určuje, že má parametr zařazovací informace.|  
+|`pdUnused`|Nepoužívané.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **Hlavička:** CorHdr. h  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

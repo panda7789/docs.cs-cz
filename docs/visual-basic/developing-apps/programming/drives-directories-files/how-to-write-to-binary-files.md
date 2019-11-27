@@ -15,33 +15,33 @@ ms.locfileid: "74334434"
 ---
 # <a name="how-to-write-to-binary-files-in-visual-basic"></a>Postupy: Zápis do binárních souborů v jazyce Visual Basic
 
-The <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllBytes%2A> method writes data to a binary file. If the `append` parameter is `True`, it will append the data to the file; otherwise data in the file is overwritten.
+Metoda <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllBytes%2A> zapisuje data do binárního souboru. Pokud je parametr `append` `True`, připojí data do souboru. v opačném případě jsou data v souboru přepsána.
 
-If the specified path excluding the file name is not valid, a <xref:System.IO.DirectoryNotFoundException> exception will be thrown. If the path is valid but the file does not exist, the file will be created.
+Pokud zadaná cesta s výjimkou názvu souboru není platná, bude vyvolána výjimka <xref:System.IO.DirectoryNotFoundException>. Pokud je cesta platná, ale soubor neexistuje, vytvoří se soubor.
 
-## <a name="to-write-to-a-binary-file"></a>To write to a binary file
+## <a name="to-write-to-a-binary-file"></a>Zápis do binárního souboru
 
-Use the `WriteAllBytes` method, supplying the file path and name and the bytes to be written. This example appends the data array `CustomerData` to the file named `CollectedData.dat`.
+Použijte metodu `WriteAllBytes` a zadejte cestu k souboru a název a počet bajtů, které mají být zapsány. Tento příklad připojí datové pole `CustomerData` k souboru s názvem `CollectedData.dat`.
 
 [!code-vb[VbVbcnMyFileSystem#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#27)]
 
 ## <a name="robust-programming"></a>Robustní programování
 
-The following conditions may create an exception:
+Následující podmínky mohou vytvořit výjimku:
 
-- The path is not valid for one of the following reasons: it is a zero-length string; it contains only white space; or it contains invalid characters. (<xref:System.ArgumentException>).
+- Cesta není platná z některého z následujících důvodů: Jedná se o řetězec o nulové délce; obsahuje pouze prázdné znaky; nebo obsahuje neplatné znaky. (<xref:System.ArgumentException>).
 
-- The path is not valid because it is `Nothing` (<xref:System.ArgumentNullException>).
+- Cesta není platná, protože je `Nothing` (<xref:System.ArgumentNullException>).
 
-- `File` points to a path that does not exist (<xref:System.IO.FileNotFoundException> or <xref:System.IO.DirectoryNotFoundException>).
+- `File` odkazuje na cestu, která neexistuje (<xref:System.IO.FileNotFoundException> nebo <xref:System.IO.DirectoryNotFoundException>).
 
-- The file is in use by another process, or an I/O error occurs (<xref:System.IO.IOException>).
+- Soubor je používán jiným procesem nebo dojde k vstupně-výstupní chybě (<xref:System.IO.IOException>).
 
-- The path exceeds the system-defined maximum length (<xref:System.IO.PathTooLongException>).
+- Cesta překračuje maximální povolenou délku systému (<xref:System.IO.PathTooLongException>).
 
-- A file or directory name in the path contains a colon (:) or is in an invalid format (<xref:System.NotSupportedException>).
+- Název souboru nebo adresáře v cestě obsahuje dvojtečku (:) nebo má neplatný formát (<xref:System.NotSupportedException>).
 
-- The user lacks necessary permissions to view the path (<xref:System.Security.SecurityException>).
+- Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).
 
 ## <a name="see-also"></a>Viz také:
 

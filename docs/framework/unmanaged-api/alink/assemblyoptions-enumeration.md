@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446587"
 ---
 # <a name="assemblyoptions-enumeration"></a>AssemblyOptions – výčet
-Enumerates the assembly options.  
+Vytvoří výčet možností sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -56,31 +56,31 @@ typedef enum _AssemblyOptions {
   
 |Pole|Popis|  
 |-----------|-----------------|  
-|optAssemTitle|String - Represents the assembly title.|  
-|optAssemDescription|String - Contains the assembly description.|  
-|optAssemConfig|String - Contains the assembly configuration.|  
-|optAssemOS|String - Encoded as: "dwOSPlatformId.dwOSMajorVersion.dwOSMinorVersion".|  
+|optAssemTitle|Řetězec – představuje název sestavení.|  
+|optAssemDescription|Řetězec – obsahuje popis sestavení.|  
+|optAssemConfig|Řetězec – obsahuje konfiguraci sestavení.|  
+|optAssemOS|Řetězec kódovaný jako: "dwOSPlatformId. dwOSMajorVersion. dwOSMinorVersion".|  
 |optAssemProcessor|ULONG|  
-|optAssemLocale|String - Contains the assembly locale.|  
-|optAssemVersion|String - Encoded as: "Major.Minor.Build.Revision".|  
-|optAssemCompany|String - Contains the company.|  
-|optAssemProduct|String - Contains the product name.|  
-|optAssemProductVersion|String (also known as InformationalVersion).|  
-|optAssemCopyright|String - Contains the copyright information.|  
-|optAssemTrademark|String - Contains the trademark information.|  
-|optAssemKeyFile|String (file name).|  
-|optAssemKeyName|String (The key name).|  
+|optAssemLocale|Řetězec – obsahuje národní prostředí sestavení.|  
+|optAssemVersion|Řetězec – kódovaný jako: "hlavní_verze. podverze. sestavení. revize".|  
+|optAssemCompany|Řetězec – obsahuje společnost.|  
+|optAssemProduct|Řetězec – obsahuje název produktu.|  
+|optAssemProductVersion|String (označuje se také jako InformationalVersion).|  
+|optAssemCopyright|Řetězec – obsahuje informace o autorských právech.|  
+|optAssemTrademark|Řetězec – obsahuje informace o ochranných známkách.|  
+|optAssemKeyFile|String (název souboru).|  
+|optAssemKeyName|Řetězec (název klíče).|  
 |optAssemAlgID|ULONG|  
 |optAssemFlags|ULONG|  
-|optAssemHalfSign|Bool (Also known as DelaySign).|  
-|optAssemFileVersion|String - Encoded as "Major.Minor.Build.Revision"--same as ProductVersion.|  
-|optAssemSatelliteVer|String - Encoded as "Major.Minor.Build.Revision".|  
-|optLastAssemOption|A counter of the number of elements.|  
+|optAssemHalfSign|Bool (označuje se také jako DelaySign).|  
+|optAssemFileVersion|Řetězec – zakódovaný jako "hlavní_verze. podverze. sestavení. revize" – stejné jako ProductVersion.|  
+|optAssemSatelliteVer|Řetězec – zakódovaný jako "hlavní_verze. podverze. sestavení. revize".|  
+|optLastAssemOption|Čítač počtu prvků.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** alink.h  
+ **Záhlaví:** ALink. h  
   
- **Library**: alink.dll  
+ **Knihovna**: ALink. dll  
   
 ## <a name="see-also"></a>Viz také:
 

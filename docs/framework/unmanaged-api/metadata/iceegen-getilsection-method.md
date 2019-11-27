@@ -23,9 +23,9 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436343"
 ---
 # <a name="iceegengetilsection-method"></a>ICeeGen::GetIlSection – metoda
-Gets the section of the intermediate language code base referenced by the specified handle.  
+Získá část základu kódu zprostředkujícího jazyka, na kterou odkazuje zadaný popisovač.  
   
- This method is obsolete and should not be used.  
+ Tato metoda je zastaralá a neměla by se používat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +37,16 @@ HRESULT GetIlSection (
   
 ## <a name="parameters"></a>Parametry  
  `section`  
- [in] The handle to the section to get.  
+ pro Popisovač k oddílu, který má být získán.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

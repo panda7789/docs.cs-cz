@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437517"
 ---
 # <a name="imetadataimportgetmemberprops-method"></a>IMetaDataImport::GetMemberProps – metoda
-Gets information stored in the metadata for a specified member definition, including the name, binary signature, and relative virtual address, of the <xref:System.Type> member referenced by the specified metadata token. This is a simple helper method: if *mb* is a MethodDef, then **GetMethodProps** is called; if *mb* is a FieldDef, then **GetFieldProps** is called. See these other methods for details. 
+Načte informace uložené v metadatech pro zadanou definici člena, včetně názvu, binárního podpisu a relativní virtuální adresy, <xref:System.Type> člena, na který odkazuje zadaný token metadat. Toto je jednoduchá pomocná metoda: Pokud je v *MB* , je zavolána metoda **getmethodprops –** ; Pokud je *MB* FieldDef, pak se zavolá **getfieldprops –** . Podrobnosti najdete v těchto dalších metodách. 
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,52 +47,52 @@ HRESULT GetMemberProps (
   
 ## <a name="parameters"></a>Parametry  
  `mb`  
- [in] The token that references the member to get the associated metadata for.  
+ pro Token, který odkazuje na člena, aby získal přidružená metadata pro.  
   
  `pClass`  
- [out] A pointer to the metadata token that represents the class of the member.  
+ mimo Ukazatel na token metadat, který představuje třídu člena.  
   
  `szMember`  
- [out] The name of the member.  
+ mimo Název člena.  
   
  `cchMember`  
- [in] The size in wide characters of the `szMember` buffer.  
+ pro Velikost v rámci velkých písmen `szMember` vyrovnávací paměti.  
   
  `pchMember`  
- [out] The size in wide characters of the returned name.  
+ mimo Velikost vráceného názvu v rámci velkých znaků.  
   
  `pdwAttr`  
- [out] Any flag values applied to the member.  
+ mimo Všechny hodnoty příznaků použité u člena.  
   
  `ppvSigBlob`  
- [out] A pointer to the binary metadata signature of the member.  
+ mimo Ukazatel na binární podpis metadat člena.  
   
  `pcbSigBlob`  
- [out] The size in bytes of `ppvSigBlob`.  
+ mimo Velikost v bajtech `ppvSigBlob`.  
   
  `pulCodeRVA`  
- [out] A pointer to the relative virtual address of the member.  
+ mimo Ukazatel na relativní virtuální adresu člena.  
   
  `pdwImplFlags`  
- [out] Any method implementation flags associated with the member.  
+ mimo Jakékoli příznaky implementace metody přidružené ke členu.  
   
  `pdwCPlusTypeFlag`  
- [out] A flag that marks a <xref:System.ValueType>. It is one of the `ELEMENT_TYPE_*` values.
+ mimo Příznak, který označuje <xref:System.ValueType>. Je to jedna z hodnot `ELEMENT_TYPE_*`.
   
  `ppValue`  
- [out] A constant string value returned by this member.  
+ mimo Hodnota konstanty řetězce vrácená tímto členem.  
   
  `pcchValue`  
- [out] The size in characters of `ppValue`, or zero if `ppValue` does not hold a string.  
+ mimo Velikost ve znacích `ppValue`nebo nula, pokud `ppValue` nedrží řetězec.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

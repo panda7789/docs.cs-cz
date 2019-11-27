@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449733"
 ---
 # <a name="icorprofilerinfo3getappdomainscontainingmodule-method"></a>ICorProfilerInfo3::GetAppDomainsContainingModule – metoda
-Gets the identifiers of the application domains in which the given module has been loaded.  
+Získá identifikátory domén aplikace, ve kterých byl daný modul načten.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,28 +38,28 @@ HRESULT GetAppDomainsContainingModule(
   
 ## <a name="parameters"></a>Parametry  
  `moduleId`  
- [in] The ID of the loaded module.  
+ pro ID načteného modulu.  
   
  `cAppDomainIds`  
- [in] The size of the `appDomainIds` array.  
+ pro Velikost pole `appDomainIds`.  
   
  `pcAppDomainIds`  
- [out] A pointer to the total number of returned elements.  
+ mimo Ukazatel na celkový počet vrácených elementů.  
   
  `appDomainIds`  
- [out] An array of application domain ID values.  
+ mimo Pole hodnot ID aplikační domény.  
   
 ## <a name="remarks"></a>Poznámky  
- The method uses caller allocated buffers.  
+ Metoda používá vyrovnávací paměti přidělené volajícímu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

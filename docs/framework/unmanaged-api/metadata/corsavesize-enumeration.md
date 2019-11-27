@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450097"
 ---
 # <a name="corsavesize-enumeration"></a>CorSaveSize – výčet
-Contains values indicating the level of precision required when querying for the size of a save operation.  
+Obsahuje hodnoty určující úroveň přesnosti požadovanou při dotazování na velikost operace uložení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,18 +38,18 @@ typedef enum CorSaveSize {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`cssAccurate`|Specifies that the return value should be exact.|  
-|`cssQuick`|Specifies that the return value should be estimated.|  
-|`cssDiscardTransientCAs`|Specifies that discardable types should be removed.|  
+|`cssAccurate`|Určuje, že návratová hodnota by měla být přesně.|  
+|`cssQuick`|Určuje, že návratová hodnota by měla být odhadnuta.|  
+|`cssDiscardTransientCAs`|Určuje, že by měly být odebrány typy, které by se měly odstranit.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **Hlavička:** CorHdr. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

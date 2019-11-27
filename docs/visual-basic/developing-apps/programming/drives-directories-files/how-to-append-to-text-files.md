@@ -15,13 +15,13 @@ ms.locfileid: "74348874"
 ---
 # <a name="how-to-append-to-text-files-in-visual-basic"></a>Postupy: Připojování k textovým souborům v jazyce Visual Basic
 
-The <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A> method can be used to append to a text file by specifying that the `append` parameter is set to `True`.  
+Metodu <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A> lze použít pro připojení k textovému souboru zadáním, že parametr `append` je nastaven na hodnotu `True`.  
   
-### <a name="to-append-to-a-text-file"></a>To append to a text file  
+### <a name="to-append-to-a-text-file"></a>Připojení k textovému souboru  
   
-- Use the `WriteAllText` method, specifying the target file and string to be appended and setting the `append` parameter to `True`.  
+- Použijte metodu `WriteAllText`, určete cílový soubor a řetězec, který se má připojit, a nastavte parametr `append` na `True`.  
   
-     This example writes the string `"This is a test string."` to the file named `Testfile.txt`.  
+     Tento příklad zapíše řetězec `"This is a test string."` do souboru s názvem `Testfile.txt`.  
   
      [!code-vb[VbFileIOWrite#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIOWrite/VB/Class1.vb#6)]  
   
@@ -29,19 +29,19 @@ The <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A> method can be
 
  Následující podmínky mohou způsobit výjimku:  
   
-- The path is not valid for one of the following reasons: it is a zero-length string, it contains only white space, it contains invalid characters, or it is a device path (starts with \\\\.\\) (<xref:System.ArgumentException>).  
+- Cesta není platná z některého z následujících důvodů: Jedná se o řetězec o nulové délce, obsahuje pouze prázdné znaky, obsahuje neplatné znaky nebo se jedná o cestu k zařízení (začíná na \\\\.\\) (<xref:System.ArgumentException>).  
   
-- The path is not valid because it is `Nothing` (<xref:System.ArgumentNullException>).  
+- Cesta není platná, protože je `Nothing` (<xref:System.ArgumentNullException>).  
   
-- `File` points to a path that does not exist (<xref:System.IO.FileNotFoundException> or <xref:System.IO.DirectoryNotFoundException>).  
+- `File` odkazuje na cestu, která neexistuje (<xref:System.IO.FileNotFoundException> nebo <xref:System.IO.DirectoryNotFoundException>).  
   
-- The file is in use by another process, or an I/O error occurs (<xref:System.IO.IOException>).  
+- Soubor je používán jiným procesem nebo dojde k vstupně-výstupní chybě (<xref:System.IO.IOException>).  
   
-- The path exceeds the system-defined maximum length (<xref:System.IO.PathTooLongException>).  
+- Cesta překračuje maximální povolenou délku systému (<xref:System.IO.PathTooLongException>).  
   
-- A file or directory name in the path contains a colon (:) or is in an invalid format (<xref:System.NotSupportedException>).  
+- Název souboru nebo adresáře v cestě obsahuje dvojtečku (:) nebo má neplatný formát (<xref:System.NotSupportedException>).  
   
-- The user lacks necessary permissions to view the path (<xref:System.Security.SecurityException>).  
+- Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).  
   
 ## <a name="see-also"></a>Viz také:
 

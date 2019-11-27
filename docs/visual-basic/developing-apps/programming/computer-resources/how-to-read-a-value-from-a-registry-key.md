@@ -17,43 +17,43 @@ ms.locfileid: "74345605"
 ---
 # <a name="how-to-read-a-value-from-a-registry-key-in-visual-basic"></a>Postupy: Načtení hodnoty z klíče registru v jazyce Visual Basic
 
-The `GetValue` method of the `My.Computer.Registry` object can be used to read values in the Windows registry.  
+Metodu `GetValue` objektu `My.Computer.Registry` lze použít ke čtení hodnot v registru systému Windows.  
   
- If the key, "Software\MyApp" in the following example, does not exist, an exception is thrown. If the `ValueName`,  "Name" in the following example, does not exist, `Nothing` is returned.  
+ Pokud klíč "Software\MyApp" v následujícím příkladu neexistuje, je vyvolána výjimka. Pokud `ValueName`, "Name" v následujícím příkladu neexistuje, je vrácena `Nothing`.  
   
- The `GetValue` method can also be used to determine whether a given value exists in a specific registry key.  
+ Metodu `GetValue` lze také použít k určení, zda daná hodnota existuje v určitém klíči registru.  
   
- When code reads the registry from a Web application, the current user is determined by the authentication and impersonation that is implemented in the Web application.  
+ Když kód přečte registr z webové aplikace, je aktuální uživatel určen ověřováním a zosobněním, které je implementováno ve webové aplikaci.  
   
-### <a name="to-read-a-value-from-a-registry-key"></a>To read a value from a registry key  
+### <a name="to-read-a-value-from-a-registry-key"></a>Načtení hodnoty z klíče registru  
   
-- Use the `GetValue` method, specifying the path and name) to read a value from registry key. The following example reads the value `Name` from `HKEY_CURRENT_USER\Software\MyApp` and displays it in a message box.  
+- Použijte metodu `GetValue`, zadáním cesty a názvu) načtěte hodnotu z klíče registru. Následující příklad přečte hodnotu `Name` z `HKEY_CURRENT_USER\Software\MyApp` a zobrazí ji v okně se zprávou.  
   
      [!code-vb[VbResourceTasks#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#4)]  
   
- This code example is also available as an IntelliSense code snippet. In the code snippet picker, it is located in **Windows Operating System > Registry**. For more information, see [Code Snippets](/visualstudio/ide/code-snippets).  
+ Tento příklad kódu je také k dispozici jako fragment kódu technologie IntelliSense. Ve výběru fragmentu kódu je umístěn v **operačním systému Windows > registru**. Další informace naleznete v tématu [fragmenty kódu](/visualstudio/ide/code-snippets).  
   
-### <a name="to-determine-whether-a-value-exists-in-a-registry-key"></a>To determine whether a value exists in a registry key  
+### <a name="to-determine-whether-a-value-exists-in-a-registry-key"></a>Určení, jestli v klíči registru existuje hodnota  
   
-- Use the `GetValue` method to retrieve the value. The following code checks whether the value exists and returns a message if it does not.  
+- K načtení hodnoty použijte metodu `GetValue`. Následující kód kontroluje, zda hodnota existuje, a vrátí zprávu, pokud není.  
   
      [!code-vb[VbResourceTasks#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#12)]  
   
 ## <a name="robust-programming"></a>Robustní programování  
 
- The registry holds top-level, or root, keys that are used to store data. For instance, the HKEY_LOCAL_MACHINE root key is used for storing machine-level settings used by all users, while HKEY_CURRENT_USER is used for storing data specific to an individual user.  
+ Registr obsahuje klíče nejvyšší úrovně (neboli kořenové), které se používají k ukládání dat. Například kořenový klíč HKEY_LOCAL_MACHINE slouží k ukládání nastavení na úrovni počítače používaných všemi uživateli, zatímco HKEY_CURRENT_USER se používá k ukládání dat specifických pro jednotlivé uživatele.  
   
  Následující podmínky mohou způsobit výjimku:  
   
-- The name of the key is `Nothing` (<xref:System.ArgumentNullException>).  
+- Název klíče je `Nothing` (<xref:System.ArgumentNullException>).  
   
-- The user does not have permissions to read from registry keys (<xref:System.Security.SecurityException>).  
+- Uživatel nemá oprávnění ke čtení z klíčů registru (<xref:System.Security.SecurityException>).  
   
-- The key name exceeds the 255-character limit (<xref:System.ArgumentException>).  
+- Název klíče překračuje limit 255 znaků (<xref:System.ArgumentException>).  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
 
- To run this process, your assembly requires a privilege level granted by the <xref:System.Security.Permissions.RegistryPermission> class. If you are running in a partial-trust context, the process might throw an exception due to insufficient privileges. Similarly, the user must have the correct ACLs for creating or writing to settings. For example, a local application that has the code access security permission might not have operating system permission. For more information, see [Code Access Security Basics](../../../../framework/misc/code-access-security-basics.md).  
+ Pro spuštění tohoto procesu vaše sestavení vyžaduje úroveň oprávnění udělené třídou <xref:System.Security.Permissions.RegistryPermission>. Pokud používáte v kontextu s částečným vztahem důvěryhodnosti, proces může vyvolat výjimku z důvodu nedostatečných oprávnění. Podobně uživatel musí mít správné seznamy ACL pro vytvoření nebo zápis do nastavení. Například místní aplikace, která má oprávnění zabezpečení přístupu kódu, nemusí mít oprávnění operačního systému. Další informace najdete v tématu [Základy zabezpečení přístupu ke kódu](../../../../framework/misc/code-access-security-basics.md).  
   
 ## <a name="see-also"></a>Viz také:
 

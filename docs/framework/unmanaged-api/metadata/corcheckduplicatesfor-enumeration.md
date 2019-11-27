@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74443785"
 ---
 # <a name="corcheckduplicatesfor-enumeration"></a>CorCheckDuplicatesFor – výčet
-Specifies the metadata tokens that will be checked for duplicates.  
+Určuje tokeny metadat, u kterých budou kontrolovány duplicity.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -68,40 +68,40 @@ typedef enum CorCheckDuplicatesFor {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`MDDupAll`|Check all metadata tokens for duplicates.|  
-|`MDDupENC`|Not used.|  
-|`MDNoDupChecks`|Do not check metadata tokens for duplicates.|  
-|`MDDupTypeDef`|Check for duplicates of `mdTypeDef` tokens.|  
-|`MDDupInterfaceImpl`|Check for duplicates of `mdInterfaceImpl` tokens.|  
-|`MDDupMethodDef`|Check for duplicates of `mdMethodDef` tokens.|  
-|`MDDupTypeRef`|Check for duplicates of `mdTypeRef` tokens.|  
-|`MDDupMemberRef`|Check for duplicates of `mdMemberRef` tokens.|  
-|`MDDupCustomAttribute`|Check for duplicates of `mdCustomAttribute` tokens.|  
-|`MDDupParamDef`|Check for duplicates of `mdParamDef` tokens.|  
-|`MDDupPermission`|Check for duplicates of `mdPermission` tokens.|  
-|`MDDupProperty`|Check for duplicates of `mdProperty` tokens.|  
-|`MDDupEvent`|Check for duplicates of `mdEvent` tokens.|  
-|`MDDupFieldDef`|Check for duplicates of `mdFieldDef` tokens.|  
-|`MDDupSignature`|Check for duplicates of `mdSignature` tokens.|  
-|`MDDupModuleRef`|Check for duplicates of `mdModuleRef` tokens.|  
-|`MDDupTypeSpec`|Check for duplicates of `mdTypeSpec` tokens.|  
-|`MDDupImplMap`|Check for duplicates of `mdImplMap` tokens.|  
-|`MDDupAssemblyRef`|Check for duplicates of `mdAssemblyRef` tokens.|  
-|`MDDupFile`|Check for duplicates of `mdFile` tokens.|  
-|`MDDupExportedType`|Check for duplicates of `mdExportedType` tokens.|  
-|`MDDupManifestResource`|Check for duplicates of `mdManifestResource` tokens.|  
-|`MDDupGenericParam`|Check for duplicates of `mdGenericParam` tokens.|  
-|`MDDupMethodSpec`|Check for duplicates of `mdMethodSpec` tokens.|  
-|`MDDupGenericParamConstraint`|Check for duplicates of `mdGenericParamConstraint` tokens.|  
-|`MDDupAssembly`|Check for duplicates of `mdAssembly` tokens.|  
-|`MDDupDefault`|Check for duplicates of `mdMemberRef`, `mdTypeRef`, `mdSignature`, `mdTypeSpec`, and `mdMethodSpec` tokens.|  
+|`MDDupAll`|Zkontroluje všechny tokeny metadat pro duplicity.|  
+|`MDDupENC`|Nepoužívá se.|  
+|`MDNoDupChecks`|Nekontrolujte tokeny metadat pro duplicity.|  
+|`MDDupTypeDef`|Kontrolovat duplicity tokenů `mdTypeDef`.|  
+|`MDDupInterfaceImpl`|Kontrolovat duplicity tokenů `mdInterfaceImpl`.|  
+|`MDDupMethodDef`|Kontrolovat duplicity tokenů `mdMethodDef`.|  
+|`MDDupTypeRef`|Kontrolovat duplicity tokenů `mdTypeRef`.|  
+|`MDDupMemberRef`|Kontrolovat duplicity tokenů `mdMemberRef`.|  
+|`MDDupCustomAttribute`|Kontrolovat duplicity tokenů `mdCustomAttribute`.|  
+|`MDDupParamDef`|Kontrolovat duplicity tokenů `mdParamDef`.|  
+|`MDDupPermission`|Kontrolovat duplicity tokenů `mdPermission`.|  
+|`MDDupProperty`|Kontrolovat duplicity tokenů `mdProperty`.|  
+|`MDDupEvent`|Kontrolovat duplicity tokenů `mdEvent`.|  
+|`MDDupFieldDef`|Kontrolovat duplicity tokenů `mdFieldDef`.|  
+|`MDDupSignature`|Kontrolovat duplicity tokenů `mdSignature`.|  
+|`MDDupModuleRef`|Kontrolovat duplicity tokenů `mdModuleRef`.|  
+|`MDDupTypeSpec`|Kontrolovat duplicity tokenů `mdTypeSpec`.|  
+|`MDDupImplMap`|Kontrolovat duplicity tokenů `mdImplMap`.|  
+|`MDDupAssemblyRef`|Kontrolovat duplicity tokenů `mdAssemblyRef`.|  
+|`MDDupFile`|Kontrolovat duplicity tokenů `mdFile`.|  
+|`MDDupExportedType`|Kontrolovat duplicity tokenů `mdExportedType`.|  
+|`MDDupManifestResource`|Kontrolovat duplicity tokenů `mdManifestResource`.|  
+|`MDDupGenericParam`|Kontrolovat duplicity tokenů `mdGenericParam`.|  
+|`MDDupMethodSpec`|Kontrolovat duplicity tokenů `mdMethodSpec`.|  
+|`MDDupGenericParamConstraint`|Kontrolovat duplicity tokenů `mdGenericParamConstraint`.|  
+|`MDDupAssembly`|Kontrolovat duplicity tokenů `mdAssembly`.|  
+|`MDDupDefault`|Zkontroluje duplicity `mdMemberRef`, `mdTypeRef`, `mdSignature`, `mdTypeSpec`a `mdMethodSpec`ch tokenů.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **Hlavička:** CorHdr. h  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

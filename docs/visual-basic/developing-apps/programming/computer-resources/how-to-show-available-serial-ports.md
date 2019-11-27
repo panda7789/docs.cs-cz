@@ -16,36 +16,36 @@ ms.locfileid: "74345578"
 ---
 # <a name="how-to-show-available-serial-ports-in-visual-basic"></a>Postupy: Zobrazení dostupných sériových portů v jazyce Visual Basic
 
-This topic describes how to use `My.Computer.Ports` to show the available serial ports of the computer in Visual Basic.  
+Toto téma popisuje, jak použít `My.Computer.Ports` k zobrazení dostupných sériových portů počítače v Visual Basic.  
   
- To allow a user to select which port to use, the names of the serial ports are placed in a <xref:System.Windows.Forms.ListBox> control.  
+ Pokud chcete uživateli dovolit vybrat, který port se má použít, názvy sériových portů se umístí do ovládacího prvku <xref:System.Windows.Forms.ListBox>.  
   
 ## <a name="example"></a>Příklad  
 
- This example loops over all the strings that the `My.Computer.Ports.SerialPortNames` property returns. These strings are the names of the available serial ports on the computer.  
+ Tento příklad projde všemi řetězci, které vrací vlastnost `My.Computer.Ports.SerialPortNames`. Tyto řetězce jsou názvy dostupných sériových portů v počítači.  
   
- Typically, a user selects which serial port the application should use from the list of available ports. In this example, the serial port names are stored in a <xref:System.Windows.Forms.ListBox> control. For more information, see [ListBox Control](../../../../framework/winforms/controls/listbox-control-windows-forms.md).  
+ Obvykle uživatel vybere, který sériový port by měla aplikace používat ze seznamu dostupných portů. V tomto příkladu jsou názvy sériových portů uloženy v ovládacím prvku <xref:System.Windows.Forms.ListBox>. Další informace naleznete v tématu [ovládací prvek ListBox](../../../../framework/winforms/controls/listbox-control-windows-forms.md).  
   
  [!code-vb[VbVbalrMyComputer#45](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#45)]  
   
- This code example is also available as an IntelliSense code snippet. In the code snippet picker, it is located in **Connectivity and Networking**. For more information, see [Code Snippets](/visualstudio/ide/code-snippets).  
+ Tento příklad kódu je také k dispozici jako fragment kódu technologie IntelliSense. Ve výběru fragmentu kódu se nachází v **Možnosti připojení a sítě**. Další informace naleznete v tématu [fragmenty kódu](/visualstudio/ide/code-snippets).  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
 
- This example requires:  
+ Tento příklad vyžaduje:  
   
-- A project reference to System.Windows.Forms.dll.  
+- Odkaz na projekt System. Windows. Forms. dll.  
   
-- Access to the members of the <xref:System.Windows.Forms> namespace. Add an `Imports` statement if you are not fully qualifying member names in your code. For more information, see [Imports Statement (.NET Namespace and Type)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).  
+- Přístup k členům oboru názvů <xref:System.Windows.Forms>. Pokud plně nekvalifikujete názvy členů v kódu, přidejte `Imports` příkaz. Další informace naleznete v tématu [příkaz Imports (obor názvů a typ rozhraní .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).  
   
-- That your form have a <xref:System.Windows.Forms.ListBox> control named `ListBox1`.  
+- Má-li formulář <xref:System.Windows.Forms.ListBox> ovládací prvek s názvem `ListBox1`.  
   
 ## <a name="robust-programming"></a>Robustní programování  
 
- You do not have to use the <xref:System.Windows.Forms.ListBox> control to display the available serial port names. Instead, you can use a <xref:System.Windows.Forms.ComboBox> or other control. If the application does not need a response from the user, you can use a <xref:System.Windows.Forms.TextBox> control to display the information.  
+ K zobrazení dostupných názvů sériového portu není nutné používat ovládací prvek <xref:System.Windows.Forms.ListBox>. Místo toho můžete použít <xref:System.Windows.Forms.ComboBox> nebo jiný ovládací prvek. Pokud aplikace nepotřebuje odpověď od uživatele, můžete k zobrazení informací použít ovládací prvek <xref:System.Windows.Forms.TextBox>.  
   
 > [!NOTE]
-> The port names returned by `My.Computer.Ports.SerialPortNames` may be incorrect when run on Windows 98. To prevent application errors, use exception handling, such as the `Try...Catch...Finally` statement or the `Using` statement, when using the port names to open ports.  
+> Názvy portů vrácené `My.Computer.Ports.SerialPortNames` můžou být při spuštění ve Windows 98 nesprávné. Chcete-li zabránit chybám aplikace, použijte zpracování výjimek, jako je například příkaz `Try...Catch...Finally` nebo příkaz `Using` při použití názvů portů k otevření portů.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -1,5 +1,5 @@
 ---
-title: Přístup k uživatelským datům
+title: Přístup k uživatelským datům
 ms.date: 07/20/2015
 helpviewer_keywords:
 - domain names [Visual Basic], retrieving
@@ -20,17 +20,17 @@ ms.locfileid: "74349206"
 ---
 # <a name="accessing-user-data-visual-basic"></a>Přístup k uživatelským datům (Visual Basic)
 
-This section contains topics dealing with the `My.User` object and tasks that you can accomplish with it.  
+V této části najdete témata týkající se `My.User` objektu a úloh, které s ním můžete provádět.  
   
- The `My.User` object provides access to information about the logged-on user by returning an object that implements the <xref:System.Security.Principal.IPrincipal> interface.  
+ Objekt `My.User` poskytuje přístup k informacím o přihlášeném uživateli vrácením objektu, který implementuje rozhraní <xref:System.Security.Principal.IPrincipal>.  
   
-## <a name="tasks"></a>Úkoly  
+## <a name="tasks"></a>Úlohy  
   
-|Chcete-li|Další informace naleznete v tématu|  
+|Do|Další informace naleznete v tématu|  
 |--------|---------|  
-|Get the user's login name|<xref:Microsoft.VisualBasic.ApplicationServices.User.Name%2A>|  
-|Get the user's domain name, if the application uses Windows authentication|<xref:Microsoft.VisualBasic.ApplicationServices.User.CurrentPrincipal>|  
-|Determine the user's role|<xref:Microsoft.VisualBasic.ApplicationServices.User.IsInRole%2A>|  
+|Získá přihlašovací jméno uživatele.|<xref:Microsoft.VisualBasic.ApplicationServices.User.Name%2A>|  
+|Získat název domény uživatele, pokud aplikace používá ověřování systému Windows|<xref:Microsoft.VisualBasic.ApplicationServices.User.CurrentPrincipal>|  
+|Určení role uživatele|<xref:Microsoft.VisualBasic.ApplicationServices.User.IsInRole%2A>|  
   
 ## <a name="see-also"></a>Viz také:
 

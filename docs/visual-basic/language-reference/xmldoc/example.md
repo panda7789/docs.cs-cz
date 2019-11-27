@@ -12,8 +12,8 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348484"
 ---
-# <a name="example-visual-basic"></a>\<example> (Visual Basic)
-Specifies an example for the member.  
+# <a name="example-visual-basic"></a>\<příklad > (Visual Basic)
+Určuje příklad člena.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,15 +23,15 @@ Specifies an example for the member.
   
 ## <a name="parameters"></a>Parametry  
  `description`  
- A description of the code sample.  
+ Popis ukázky kódu.  
   
 ## <a name="remarks"></a>Poznámky  
- The `<example>` tag lets you specify an example of how to use a method or other library member. This commonly involves using the [\<code>](../../../visual-basic/language-reference/xmldoc/code.md) tag.  
+ Značka `<example>` umožňuje zadat příklad použití metody nebo jiného člena knihovny. To běžně zahrnuje použití značky [> kódu\<](../../../visual-basic/language-reference/xmldoc/code.md) .  
   
- Compile with [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) to process documentation comments to a file.  
+ Zkompilujte s [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
   
 ## <a name="example"></a>Příklad  
- This example uses the `<example>` tag to include an example for using the `ID` field.  
+ V tomto příkladu se používá značka `<example>` k zahrnutí příkladu pro použití pole `ID`.  
   
  [!code-vb[VbVbcnXmlDocComments#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#2)]  
   

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446217"
 ---
 # <a name="isymunmanagedsourceservermodulegetsourceserverdata-method"></a>ISymUnmanagedSourceServerModule::GetSourceServerData – metoda
-Returns the source server data for the module. The caller must free resources by using `CoTaskMemFree`.  
+Vrátí data zdrojového serveru pro modul. Volající musí uvolnit prostředky pomocí `CoTaskMemFree`.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,16 +35,16 @@ HRESULT GetSourceServerData(
   
 ## <a name="parameters"></a>Parametry  
  `pDataByteCount`  
- [out] A pointer to a `ULONG32` that receives the size, in bytes, of the source server data.  
+ mimo Ukazatel na `ULONG32`, který obdrží velikost dat zdrojového serveru v bajtech.  
   
  `ppData`  
- [out] A pointer to the returned `pDataByteCount` value.  
+ mimo Ukazatel na vrácenou hodnotu `pDataByteCount`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

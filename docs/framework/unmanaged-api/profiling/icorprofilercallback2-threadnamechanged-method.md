@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74439567"
 ---
 # <a name="icorprofilercallback2threadnamechanged-method"></a>ICorProfilerCallback2::ThreadNameChanged – metoda
-Notifies the code profiler that the name of a thread has changed.  
+Upozorní profiler kódu, že se změnil název vlákna.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,22 +36,22 @@ HRESULT ThreadNameChanged(
   
 ## <a name="parameters"></a>Parametry  
  `threadId`  
- [in] The ID of the thread.  
+ pro ID vlákna  
   
  `cchName`  
- [in] The length of the new name of the thread.  
+ pro Délka nového názvu vlákna.  
   
  `name`  
- [in] The new name of the thread. The name is not null-terminated.  
+ pro Nový název vlákna. Název není zakončený hodnotou null.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

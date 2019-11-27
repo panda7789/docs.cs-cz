@@ -15,23 +15,23 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350740"
 ---
 # <a name="withevents-visual-basic"></a>WithEvents (Visual Basic)
-Specifies that one or more declared member variables refer to an instance of a class that can raise events.
+Určuje, že nejmíň jedna deklarovaná členská proměnná odkazuje na instanci třídy, která může vyvolat události.
 
 ## <a name="remarks"></a>Poznámky
 
-When a variable is defined using `WithEvents`, you can declaratively specify that a method handles the variable's events using the `Handles` keyword.
+Pokud je proměnná definována pomocí `WithEvents`, lze deklarativně určit, že metoda zpracovává události proměnné pomocí klíčového slova `Handles`.
 
-You can use `WithEvents` only at class or module level. This means the declaration context for a `WithEvents` variable must be a class or module and cannot be a source file, namespace, structure, or procedure.
+`WithEvents` můžete použít pouze na úrovni třídy nebo modulu. To znamená, že kontext deklarace pro proměnnou `WithEvents` musí být třída nebo modul a nemůže se jednat o zdrojový soubor, obor názvů, strukturu nebo proceduru.
 
-You cannot use `WithEvents` on a structure member.
+Nelze použít `WithEvents` pro člena struktury.
 
-You can declare only individual variables—not arrays—with `WithEvents`.
+Můžete deklarovat pouze jednotlivé proměnné – ne pole – s `WithEvents`.
 
-## <a name="rules"></a>Rules
+## <a name="rules"></a>Pravidla
 
-**Element Types.** You must declare `WithEvents` variables to be object variables so that they can accept class instances. However, you cannot declare them as `Object`. You must declare them as the specific class that can raise the events.
+**Typy prvků.** Je nutné deklarovat `WithEvents` proměnné, aby byly proměnné objektu, aby mohly přijímat instance třídy. Nemůžete je však deklarovat jako `Object`. Je nutné je deklarovat jako konkrétní třídu, která může události vyvolat.
 
-The `WithEvents` modifier can be used in this context: [Dim Statement](../../../visual-basic/language-reference/statements/dim-statement.md)
+V tomto kontextu se dá použít modifikátor `WithEvents`: [příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md) .
 
 ## <a name="example"></a>Příklad
 
@@ -41,6 +41,6 @@ Dim WithEvents app As Application
 
 ## <a name="see-also"></a>Viz také:
 
-- [Handles](../../../visual-basic/language-reference/statements/handles-clause.md)
+- [Řeší](../../../visual-basic/language-reference/statements/handles-clause.md)
 - [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)
 - [Události](../../../visual-basic/programming-guide/language-features/events/index.md)

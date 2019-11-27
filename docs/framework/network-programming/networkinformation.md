@@ -12,16 +12,16 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74428228"
 ---
 # <a name="networkinformation"></a>Informace o síti
-The <xref:System.Net.NetworkInformation> namespace enables you to gather information about network events, changes, statistics, and properties. You can also determine whether a remote host is reachable by using the <xref:System.Net.NetworkInformation.Ping?displayProperty=nameWithType> class.  
+Obor názvů <xref:System.Net.NetworkInformation> umožňuje shromažďovat informace o událostech, změnách, statistikách a vlastnostech sítě. Můžete také určit, zda je vzdálený hostitel dosažitelný pomocí třídy <xref:System.Net.NetworkInformation.Ping?displayProperty=nameWithType>.  
   
-## <a name="network-availability-and-events"></a>Network Availability and Events  
- The <xref:System.Net.NetworkInformation.NetworkChange?displayProperty=nameWithType> class enables you to determine whether the network address or availability has changed. To use this class, create an event handler to process the change, and associate it with a <xref:System.Net.NetworkInformation.NetworkAddressChangedEventHandler> or a <xref:System.Net.NetworkInformation.NetworkAvailabilityChangedEventHandler>. For more information, see [How to: Detect Network Availability and Address Changes](how-to-detect-network-availability-and-address-changes.md).  
+## <a name="network-availability-and-events"></a>Dostupnost a události sítě  
+ Třída <xref:System.Net.NetworkInformation.NetworkChange?displayProperty=nameWithType> umožňuje určit, zda se změnila síťová adresa nebo dostupnost. Chcete-li použít tuto třídu, vytvořte obslužnou rutinu události pro zpracování změny a přidružte ji k <xref:System.Net.NetworkInformation.NetworkAddressChangedEventHandler> nebo <xref:System.Net.NetworkInformation.NetworkAvailabilityChangedEventHandler>. Další informace najdete v tématu [Postupy: zjištění dostupnosti sítě a změny adres](how-to-detect-network-availability-and-address-changes.md).  
   
-## <a name="network-statistics-and-properties"></a>Network Statistics and Properties  
- You can gather network statistics and properties on an interface or protocol basis. The <xref:System.Net.NetworkInformation.NetworkInterface>, <xref:System.Net.NetworkInformation.NetworkInterfaceType>, and <xref:System.Net.NetworkInformation.PhysicalAddress> classes give information about a particular network interface, while the <xref:System.Net.NetworkInformation.IPInterfaceProperties>, <xref:System.Net.NetworkInformation.IPGlobalProperties>, <xref:System.Net.NetworkInformation.IPGlobalStatistics>, <xref:System.Net.NetworkInformation.TcpStatistics>, and <xref:System.Net.NetworkInformation.UdpStatistics> classes give information about layer 3 and layer 4 packets. For more information, see [How to: Get Interface and Protocol Information](how-to-get-interface-and-protocol-information.md).  
+## <a name="network-statistics-and-properties"></a>Statistika sítě a vlastnosti  
+ Statistiky sítě a vlastnosti můžete shromažďovat na základě rozhraní nebo protokolu. Třídy <xref:System.Net.NetworkInformation.NetworkInterface>, <xref:System.Net.NetworkInformation.NetworkInterfaceType>a <xref:System.Net.NetworkInformation.PhysicalAddress> poskytují informace o konkrétním síťovém rozhraní, zatímco třídy <xref:System.Net.NetworkInformation.IPInterfaceProperties>, <xref:System.Net.NetworkInformation.IPGlobalProperties>, <xref:System.Net.NetworkInformation.IPGlobalStatistics>, <xref:System.Net.NetworkInformation.TcpStatistics>a <xref:System.Net.NetworkInformation.UdpStatistics> poskytují informace o paketech vrstvy 3 a 4. Další informace najdete v tématu [Postupy: získání informací o rozhraní a protokolu](how-to-get-interface-and-protocol-information.md).  
   
-## <a name="determine-if-a-remote-host-is-reachable"></a>Determine if a Remote Host is Reachable  
- You can use the <xref:System.Net.NetworkInformation.Ping> class to determine whether a Remote Host is up, on the network, and reachable. For more information, see [How to: Ping a Host](how-to-ping-a-host.md).  
+## <a name="determine-if-a-remote-host-is-reachable"></a>Zjistit, jestli je vzdálený hostitel dosažitelný  
+ Třídu <xref:System.Net.NetworkInformation.Ping> můžete použít k určení, zda je vzdálený hostitel v síti a dostupný. Další informace najdete v tématu [How to: příkaz příkazového testu na hostitele](how-to-ping-a-host.md).  
   
 ## <a name="see-also"></a>Viz také:
 

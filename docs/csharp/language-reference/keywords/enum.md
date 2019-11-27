@@ -1,5 +1,5 @@
 ---
-title: enum keyword - C# Reference
+title: Enum – klíčové C# slovo – Reference
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -17,74 +17,74 @@ ms.locfileid: "74428518"
 ---
 # <a name="enum-c-reference"></a>enum (Referenční dokumentace jazyka C#)
 
-The `enum` keyword is used to declare an enumeration, a distinct type that consists of a set of named constants called the enumerator list.
+Klíčové slovo `enum` slouží k deklaraci výčtu, odlišného typu, který se skládá ze sady pojmenovaných konstant nazývaných seznam enumerátorů.
 
-Usually it is best to define an enum directly within a namespace so that all classes in the namespace can access it with equal convenience. However, an enum can also be nested within a class or struct.
+Obvykle je vhodné definovat výčet přímo v rámci oboru názvů tak, aby všechny třídy v oboru názvů měly přístup k tomuto rozhraní s rovností pohodlí. Výčty ale mohou být také vnořené v rámci třídy nebo struktury.
 
-By default, the first enumerator has the value 0, and the value of each successive enumerator is increased by 1. For example, in the following enumeration, `Sat` is `0`, `Sun` is `1`, `Mon` is `2`, and so forth.
+Ve výchozím nastavení má první enumerátor hodnotu 0 a hodnota každého úspěšného enumerátoru se zvýší o 1. Například v následujícím výčtu je `Sat` `0``Sun` `1``Mon` `2`a tak dále.
 
 ```csharp
 enum Day {Sat, Sun, Mon, Tue, Wed, Thu, Fri};
 ```
 
-Enumerators can use initializers to override the default values, as shown in the following example.
+Enumerátory mohou použít inicializátory k přepsání výchozích hodnot, jak je znázorněno v následujícím příkladu.
 
 ```csharp
 enum Day {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};
 ```
 
-In this enumeration, the sequence of elements is forced to start from `1` instead of `0`. However, including a constant that has the value of 0 is recommended. For more information, see [Enumeration Types](../../programming-guide/enumeration-types.md).
+V tomto výčtu je sekvence prvků nucená začít od `1` místo `0`. Nicméně, včetně konstanty, která má hodnotu 0, je doporučeno. Další informace naleznete v tématu [výčtové typy](../../programming-guide/enumeration-types.md).
 
-Every enumeration type has an underlying type, which can be any [integral numeric type](../builtin-types/integral-numeric-types.md). The [char](../builtin-types/char.md) type cannot be an underlying type of an enum. The default underlying type of enumeration elements is [int](../builtin-types/integral-numeric-types.md). To declare an enum of another integral type, such as [byte](../builtin-types/integral-numeric-types.md), use a colon after the identifier followed by the type, as shown in the following example.
+Každý typ výčtu má podkladový typ, který může být libovolný [celočíselný numerický typ](../builtin-types/integral-numeric-types.md). Typ [znaku](../builtin-types/char.md) nemůže být základní typ výčtu. Výchozí podkladový typ prvků výčtu je [int](../builtin-types/integral-numeric-types.md). Chcete-li deklarovat výčet jiného integrálního typu, jako je například [Byte](../builtin-types/integral-numeric-types.md), použijte dvojtečku za identifikátor následovaný typem, jak je znázorněno v následujícím příkladu.
 
 ```csharp
 enum Day : byte {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};
 ```
 
-A variable of an enumeration type can be assigned any value in the range of the underlying type; the values are not limited to the named constants.
+Proměnné typu výčtu lze přiřadit libovolnou hodnotu v rozsahu základního typu; hodnoty nejsou omezeny na pojmenované konstanty.
 
-The default value of an `enum E` is the value produced by the expression `(E)0`.
+Výchozí hodnotou `enum E` je hodnota vytvořená `(E)0`výrazu.
 
 > [!NOTE]
-> An enumerator cannot contain white space in its name.
+> Enumerátor nemůže v názvu obsahovat prázdné znaky.
 
-The underlying type specifies how much storage is allocated for each enumerator. However, an explicit cast is necessary to convert from `enum` type to an integral type. For example, the following statement assigns the enumerator `Sun` to a variable of the type [int](../builtin-types/integral-numeric-types.md) by using a cast to convert from `enum` to `int`.
+Nadřízený typ Určuje, kolik úložiště je přiděleno pro každý enumerátor. Nicméně explicitní přetypování je nezbytné pro převod z `enum` typu na celočíselný typ. Například následující příkaz přiřadí enumerátor `Sun` proměnné typu [int](../builtin-types/integral-numeric-types.md) pomocí přetypování pro převod z `enum` na `int`.
 
 ```csharp
 int x = (int)Day.Sun;
 ```
 
-When you apply <xref:System.FlagsAttribute?displayProperty=nameWithType> to an enumeration that contains elements that can be combined with a bitwise `OR` operation, the attribute affects the behavior of the `enum` when it is used with some tools. You can notice these changes when you use tools such as the <xref:System.Console> class methods and the Expression Evaluator. (See the third example.)
+Když použijete <xref:System.FlagsAttribute?displayProperty=nameWithType> pro výčet, který obsahuje prvky, které mohou být kombinovány s bitovou operací `OR`, atribut má vliv na chování `enum` při použití s některými nástroji. Tyto změny si můžete všimnout, když použijete nástroje, jako jsou metody třídy <xref:System.Console> a vyhodnocovací filtr výrazů. (Viz třetí příklad.)
 
-## <a name="robust-programming"></a>Robust programming
+## <a name="robust-programming"></a>Robustní programování
 
-Just as with any constant, all references to the individual values of an enum are converted to numeric literals at compile time. This can create potential versioning issues as described in [Constants](../../programming-guide/classes-and-structs/constants.md).
+Stejně jako u jakékoli konstanty jsou všechny odkazy na jednotlivé hodnoty výčtu převedeny na číselné literály v době kompilace. To může způsobit problémy se správou verzí, jak je popsáno v [konstantách](../../programming-guide/classes-and-structs/constants.md).
 
-Assigning additional values to new versions of enums, or changing the values of the enum members in a new version, can cause problems for dependent source code. Enum values often are used in [switch](switch.md) statements. If additional elements have been added to the `enum` type, the default section of the switch statement can be selected unexpectedly.
+Přiřazení dalších hodnot novým verzím výčtů nebo změna hodnot členů výčtu v nové verzi může způsobit problémy závislého zdrojového kódu. Hodnoty výčtu jsou často používány v příkazech [Switch](switch.md) . Pokud byly do `enum`ho typu přidány další prvky, lze výchozí oddíl příkazu switch vybrat neočekávaně.
 
-If other developers use your code, you should provide guidelines about how their code should react if new elements are added to any `enum` types.
+Pokud jiný vývojář používá váš kód, měli byste poskytnout pokyny, jak má jejich kód reagovat, pokud jsou nové prvky přidány do libovolného `enum`ho typu.
 
 ## <a name="example"></a>Příklad
 
-In the following example, an enumeration, `Day`, is declared. Two enumerators are explicitly converted to integer and assigned to integer variables.
+V následujícím příkladu je deklarován výčet `Day`. Dva enumerátory jsou explicitně převedeny na celé číslo a přiřazeny celočíselným proměnným.
 
 [!code-csharp[csrefKeywordsTypes#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#10)]
 
 ## <a name="example"></a>Příklad
 
-In the following example, the base-type option is used to declare an `enum` whose members are of type `long`. Notice that even though the underlying type of the enumeration is `long`, the enumeration members still must be explicitly converted to type `long` by using a cast.
+V následujícím příkladu je použita možnost základního typu k deklarování `enum`, jejichž členové jsou typu `long`. Všimněte si, že i když je nadřízený typ výčtu `long`, musí být členy výčtu stále explicitně převedeny na typ `long` pomocí přetypování.
 
 [!code-csharp[csrefKeywordsTypes#11](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#11)]
 
 ## <a name="example"></a>Příklad
 
-The following code example illustrates the use and effect of the <xref:System.FlagsAttribute?displayProperty=nameWithType> attribute on an `enum` declaration.
+Následující příklad kódu ukazuje použití a vliv atributu <xref:System.FlagsAttribute?displayProperty=nameWithType> u deklarace `enum`.
 
 [!code-csharp[csrefKeywordsTypes#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#12)]
 
 ## <a name="comments"></a>Komentáře
 
-If you remove `Flags`, the example displays the following values:
+Pokud `Flags`odeberete, v příkladu se zobrazí následující hodnoty:
 
 `5`
 
@@ -96,9 +96,9 @@ If you remove `Flags`, the example displays the following values:
 
 ## <a name="see-also"></a>Viz také:
 
-- [C# Reference](../index.md)
+- [C#Odkaz](../index.md)
 - [Výčtové typy](../../programming-guide/enumeration-types.md)
 - [Klíčová slova jazyka C#](index.md)
-- [Integral types](../builtin-types/integral-numeric-types.md)
+- [Celočíselné typy](../builtin-types/integral-numeric-types.md)
 - [Tabulka předdefinovaných typů](built-in-types-table.md)
-- [Enum Naming Conventions](../../../standard/design-guidelines/names-of-classes-structs-and-interfaces.md#naming-enumerations)
+- [Zásady vytváření názvů výčtu](../../../standard/design-guidelines/names-of-classes-structs-and-interfaces.md#naming-enumerations)

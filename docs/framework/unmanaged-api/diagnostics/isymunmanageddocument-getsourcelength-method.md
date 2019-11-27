@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449147"
 ---
 # <a name="isymunmanageddocumentgetsourcelength-method"></a>ISymUnmanagedDocument::GetSourceLength – metoda
-Gets the length, in bytes, of the embedded source.  
+Získá délku vloženého zdroje v bajtech.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,10 +34,10 @@ HRESULT GetSourceLength(
   
 ## <a name="parameters"></a>Parametry  
  `pRetVal`  
- [out] A pointer to a variable that indicates the length, in bytes, of the embedded source.  
+ mimo Ukazatel na proměnnou, která určuje délku vloženého zdroje v bajtech.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds.  
+ S_OK, zda je metoda úspěšná.  
   
 ## <a name="see-also"></a>Viz také:
 

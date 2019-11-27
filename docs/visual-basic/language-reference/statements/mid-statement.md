@@ -18,7 +18,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348030"
 ---
 # <a name="mid-statement"></a>Mid – příkaz
-Replaces a specified number of characters in a `String` variable with characters from another string.  
+Nahradí zadaný počet znaků v proměnné `String` znaky z jiného řetězce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,45 +32,45 @@ Mid( _
   
 ## <a name="parts"></a>Součásti  
  `Target`  
- Požadováno. Name of the `String` variable to modify.  
+ Požadováno. Název proměnné `String`, kterou chcete upravit.  
   
  `Start`  
- Požadováno. `Integer` expression. Character position in `Target` where the replacement of text begins. `Start` uses a one-based index.  
+ Požadováno. výraz `Integer` Pozice znaku v `Target`, kde začíná nahrazování textu. `Start` používá index založený na jednom.  
   
  `Length`  
- Volitelné. `Integer` expression. Number of characters to replace. If omitted, all of `String` is used.  
+ Volitelná. výraz `Integer` Počet znaků, které mají být nahrazeny. Je-li tento parametr vynechán, je použita veškerá `String`.  
   
  `StringExpression`  
- Požadováno. `String` expression that replaces part of `Target`.  
+ Požadováno. výraz `String`, který nahrazuje část `Target`.  
   
 ## <a name="exceptions"></a>Výjimky  
   
 |Typ výjimky|Podmínka|  
 |--------------------|---------------|  
-|<xref:System.ArgumentException>|`Start` <= 0 or `Length` < 0.|  
+|<xref:System.ArgumentException>|`Start` < = 0 nebo `Length` < 0.|  
   
 ## <a name="remarks"></a>Poznámky  
- The number of characters replaced is always less than or equal to the number of characters in `Target`.  
+ Počet nahrazených znaků je vždy menší nebo roven počtu znaků v `Target`.  
   
- Visual Basic has a <xref:Microsoft.VisualBasic.Strings.Mid%2A> function and a `Mid` statement. These elements both operate on a specified number of characters in a string, but the `Mid` function returns the characters while the `Mid` statement replaces the characters. Další informace najdete v tématu <xref:Microsoft.VisualBasic.Strings.Mid%2A>.  
+ Visual Basic má funkci <xref:Microsoft.VisualBasic.Strings.Mid%2A> a příkaz `Mid`. Tyto prvky fungují na zadaném počtu znaků v řetězci, ale funkce `Mid` vrátí znaky, zatímco příkaz `Mid` nahrazuje znaky. Další informace najdete v tématu <xref:Microsoft.VisualBasic.Strings.Mid%2A>.  
   
 > [!NOTE]
-> The `MidB` statement of earlier versions of Visual Basic replaces a substring in bytes, rather than characters. Používá se především pro převod řetězců v aplikacích dvoubajtové znakové sady (DBCS). All Visual Basic strings are in Unicode, and `MidB` is no longer supported.  
+> Příkaz `MidB` starších verzí Visual Basic nahrazuje podřetězec v bajtech namísto znaků. Používá se především pro převod řetězců v aplikacích dvoubajtové znakové sady (DBCS). Všechny Visual Basic řetězce jsou v kódování Unicode a `MidB` již nejsou podporovány.  
   
 ## <a name="example"></a>Příklad  
- This example uses the `Mid` statement to replace a specified number of characters in a string variable with characters from another string.  
+ V tomto příkladu se používá příkaz `Mid` k nahrazení zadaného počtu znaků v řetězcové proměnné znaky z jiného řetězce.  
   
  [!code-vb[VbVbalrStrings#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#5)]  
   
 ## <a name="requirements"></a>Požadavky  
- **Namespace:** [Microsoft.VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  
+ **Obor názvů:** [Microsoft. VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  
   
- **Module:** `Strings`  
+ **Modul:** `Strings`  
   
- **Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)  
+ **Sestavení:** Knihovna Visual Basic runtime (v souboru Microsoft. VisualBasic. dll)  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:Microsoft.VisualBasic.Strings.Mid%2A>
 - [Řetězce](../../../visual-basic/programming-guide/language-features/strings/index.md)
-- [Introduction to Strings in Visual Basic](../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)
+- [Seznámení s řetězci v Visual Basic](../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)

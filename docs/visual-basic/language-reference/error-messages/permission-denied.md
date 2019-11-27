@@ -12,15 +12,15 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74347006"
 ---
 # <a name="permission-denied-visual-basic"></a>Oprávnění byla odepřena (Visual Basic).
-An attempt was made to write to a write-protected disk or to access a locked file.  
+Byl proveden pokus o zápis na disk chráněný proti zápisu nebo pro přístup k uzamčenému souboru.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. To open a write-protected file, change the write-protection attribute of the file.  
+1. Chcete-li otevřít soubor chráněný proti zápisu, změňte atribut pro zápis do souboru.  
   
-2. Make sure that another process has not locked the file, and wait to open the file until the other process releases it.  
+2. Ujistěte se, že jiný proces soubor neuzamkl, a počkejte na jeho otevření, dokud ho jiný proces neuvolní.  
   
-3. To access the registry, check that your user permissions include this type of registry access.  
+3. Pokud chcete získat přístup k registru, ověřte, že vaše uživatelská oprávnění zahrnují tento typ přístupu k registru.  
   
 ## <a name="see-also"></a>Viz také:
 

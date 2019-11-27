@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74429754"
 ---
 # <a name="isymunmanagedreadergetvariables-method"></a>ISymUnmanagedReader::GetVariables – metoda
-Returns a non-local variable, given its parent and name.  
+Vrátí nemístní proměnnou, která je dána jejím nadřazeným a názvem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,22 +38,22 @@ HRESULT GetVariables (
   
 ## <a name="parameters"></a>Parametry  
  `parent`  
- [in] The parent of the variable.  
+ pro Nadřazená proměnná proměnné.  
   
  `cVars`  
- [in] The size of the `pVars` array.  
+ pro Velikost pole `pVars`.  
   
  `pcVars`  
- [out] A pointer to the variable that receives the number of variables returned in `pVars`.  
+ mimo Ukazatel na proměnnou, která přijímá počet proměnných vrácených v `pVars`.  
   
  `pVars`  
- [out] A pointer to the variable that receives the variables.  
+ mimo Ukazatel na proměnnou, která přijímá proměnné.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436447"
 ---
 # <a name="cortypeattr-enumeration"></a>CorTypeAttr – výčet
-Contains values that indicate type metadata.  
+Obsahuje hodnoty, které označují metadata typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -77,46 +77,46 @@ typedef enum CorTypeAttr {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`tdVisibilityMask`|Used for type visibility information.|  
-|`tdNotPublic`|Specifies that the type is not in public scope.|  
-|`tdPublic`|Specifies that the type is in public scope.|  
-|`tdNestedPublic`|Specifies that the type is nested with public visibility.|  
-|`tdNestedPrivate`|Specifies that the type is nested with private visibility.|  
-|`tdNestedFamily`|Specifies that the type is nested with family visibility.|  
-|`tdNestedAssembly`|Specifies that the type is nested with assembly visibility.|  
-|`tdNestedFamANDAssem`|Specifies that the type is nested with family and assembly visibility.|  
-|`tdNestedFamORAssem`|Specifies that the type is nested with family or assembly visibility.|  
-|`tdLayoutMask`|Gets layout information for the type.|  
-|`tdAutoLayout`|Specifies that the fields of this type are laid out automatically.|  
-|`tdSequentialLayout`|Specifies that the fields of this type are laid out sequentially.|  
-|`tdExplicitLayout`|Specifies that field layout is supplied explicitly.|  
-|`tdClassSemanticsMask`|Gets semantic information about the type.|  
-|`tdClass`|Specifies that the type is a class.|  
-|`tdInterface`|Specifies that the type is an interface.|  
-|`tdAbstract`|Specifies that the type is abstract.|  
-|`tdSealed`|Specifies that the type cannot be extended.|  
-|`tdSpecialName`|Specifies that the class name is special. Its name describes how.|  
-|`tdImport`|Specifies that the type is imported.|  
-|`tdSerializable`|Specifies that the type is serializable.|  
-|`tdWindowsRuntime`|Specifies that this type is a Windows Runtime type.|  
-|`tdStringFormatMask`|Gets information about how strings are encoded and formatted.|  
-|`tdAnsiClass`|Specifies that this type interprets an LPTSTR as ANSI.|  
-|`tdUnicodeClass`|Specifies that this type interprets an LPTSTR as Unicode.|  
-|`tdAutoClass`|Specifies that this type interprets an LPTSTR automatically.|  
-|`tdCustomFormatClass`|Specifies that the type has a non-standard encoding, as specified by `CustomFormatMask`.|  
-|`tdCustomFormatMask`|Use this mask to get non-standard encoding information for native interop. The meaning of the values of these two bits is unspecified.|  
-|`tdBeforeFieldInit`|Specifies that the type must be initialized before the first attempt to access a static field.|  
-|`tdForwarder`|Specifies that the type is exported, and a type forwarder.|  
-|`tdReservedMask`|This flag and the flags below are used internally by the common language runtime.|  
-|`tdRTSpecialName`|Specifies that the common language runtime should check the name encoding.|  
-|`tdHasSecurity`|Specifies that the type has security associated with it.|  
+|`tdVisibilityMask`|Používá se pro informace o viditelnosti typů.|  
+|`tdNotPublic`|Určuje, že tento typ není ve veřejném oboru.|  
+|`tdPublic`|Určuje, že typ je ve veřejném oboru.|  
+|`tdNestedPublic`|Určuje, že typ je vnořený s veřejnou viditelností.|  
+|`tdNestedPrivate`|Určuje, že typ je vnořený s privátní viditelností.|  
+|`tdNestedFamily`|Určuje, že typ je vnořen s viditelností rodiny.|  
+|`tdNestedAssembly`|Určuje, že typ je vnořen s viditelností sestavení.|  
+|`tdNestedFamANDAssem`|Určuje, že typ je vnořen s viditelností rodiny a sestavování sestavení.|  
+|`tdNestedFamORAssem`|Určuje, že typ je vnořen s viditelností rodin nebo sestavení.|  
+|`tdLayoutMask`|Získá informace o rozložení pro daný typ.|  
+|`tdAutoLayout`|Určuje, že pole tohoto typu jsou automaticky rozložena.|  
+|`tdSequentialLayout`|Určuje, že pole tohoto typu jsou rozložena sekvenčně.|  
+|`tdExplicitLayout`|Určuje, že rozložení pole je zadáno explicitně.|  
+|`tdClassSemanticsMask`|Získá sémantické informace o typu.|  
+|`tdClass`|Určuje, že typ je třída.|  
+|`tdInterface`|Určuje, že typ je rozhraní.|  
+|`tdAbstract`|Určuje, že typ je abstraktní.|  
+|`tdSealed`|Určuje, že typ nelze rozšířit.|  
+|`tdSpecialName`|Určuje, že název třídy je speciální. Jeho název popisuje, jak.|  
+|`tdImport`|Určuje, že se typ importuje.|  
+|`tdSerializable`|Určuje, že typ je serializovatelný.|  
+|`tdWindowsRuntime`|Určuje, že tento typ je prostředí Windows Runtime typ.|  
+|`tdStringFormatMask`|Načte informace o tom, jak jsou řetězce kódované a naformátované.|  
+|`tdAnsiClass`|Určuje, že tento typ interpretuje LPTSTR jako ANSI.|  
+|`tdUnicodeClass`|Určuje, že tento typ interpretuje LPTSTR jako Unicode.|  
+|`tdAutoClass`|Určuje, že tento typ interpretuje LPTSTR automaticky.|  
+|`tdCustomFormatClass`|Určuje, že typ má nestandardní kódování, jak je určeno `CustomFormatMask`.|  
+|`tdCustomFormatMask`|Tuto masku použijte k získání nestandardních informací o kódování pro nativní spolupráci. Význam hodnot těchto dvou bitů není určen.|  
+|`tdBeforeFieldInit`|Určuje, že typ musí být inicializován před prvním pokusem o přístup k statickému poli.|  
+|`tdForwarder`|Určuje, že je typ exportován, a předávání typu.|  
+|`tdReservedMask`|Tento příznak a níže uvedené příznaky se používají interně modulem CLR (Common Language Runtime).|  
+|`tdRTSpecialName`|Určuje, že by měl modul CLR (Common Language Runtime) kontrolovat kódování názvu.|  
+|`tdHasSecurity`|Určuje, že k typu je přidruženo zabezpečení.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **Hlavička:** CorHdr. h  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

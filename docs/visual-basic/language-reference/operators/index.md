@@ -15,23 +15,23 @@ ms.locfileid: "74330993"
 
 ## <a name="in-this-section"></a>V tomto oddílu
 
-- [Operator precedence in Visual Basic](operator-precedence.md)
-- [Operators listed by functionality](operators-listed-by-functionality.md)
-- [Data types of operator results](data-types-of-operator-results.md)
-- [DirectCast operator](directcast-operator.md)
-- [TryCast operator](trycast-operator.md)
-- [NameOf operator](nameof.md)
-- [New operator](new-operator.md)
-- [Null-conditional operators](null-conditional-operators.md)
-- [Arithmetic operators](arithmetic-operators.md)
-- [Assignment operators](assignment-operators.md)
-- [Bit Shift operators](bit-shift-operators.md)
-- [Comparison operators](comparison-operators.md)
-- [Concatenation operators](concatenation-operators.md)
-- [Logical/Bitwise operators](logical-bitwise-operators.md)
-- [Miscellaneous operators](miscellaneous-operators.md)
+- [Priorita operátorů v Visual Basic](operator-precedence.md)
+- [Operátory uvedené podle funkcí](operators-listed-by-functionality.md)
+- [Datové typy výsledků operátoru](data-types-of-operator-results.md)
+- [DirectCast – operátor](directcast-operator.md)
+- [TryCast – operátor](trycast-operator.md)
+- [NameOf – operátor](nameof.md)
+- [New – operátor](new-operator.md)
+- [Podmíněné operátory s hodnotou null](null-conditional-operators.md)
+- [Aritmetické operátory](arithmetic-operators.md)
+- [Operátory přiřazení](assignment-operators.md)
+- [Operátory bitového posunutí](bit-shift-operators.md)
+- [Operátory porovnání](comparison-operators.md)
+- [Operátory zřetězení](concatenation-operators.md)
+- [Logické/bitové operátory](logical-bitwise-operators.md)
+- [Různé operátory](miscellaneous-operators.md)
 
-## <a name="related-sections"></a>Related sections
+## <a name="related-sections"></a>Související oddíly
 
-- [Visual Basic language reference](../index.md)
+- [Reference jazyka Visual Basic](../index.md)
 - [Visual Basic](../../index.md)

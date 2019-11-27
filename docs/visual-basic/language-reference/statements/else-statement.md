@@ -14,16 +14,16 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74343758"
 ---
 # <a name="else-statement-visual-basic"></a>Else – příkaz (Visual Basic)
-Introduces a group of statements to be run or compiled if no other conditional group of statements has been run or compiled.  
+Zavádí skupinu příkazů, které mají být spuštěny nebo zkompilovány, pokud nebyla žádná jiná podmíněná skupina příkazů spuštěna nebo zkompilována.  
   
 ## <a name="remarks"></a>Poznámky  
- The `Else` keyword can be used in these contexts:  
+ Klíčové slovo `Else` lze použít v těchto kontextech:  
   
  [Příkaz If...Then...Else](../../../visual-basic/language-reference/statements/if-then-else-statement.md)  
   
  [Příkaz Select...Case](../../../visual-basic/language-reference/statements/select-case-statement.md)  
   
- [#If...Then...#Else Directive](../../../visual-basic/language-reference/directives/if-then-else-directives.md)  
+ [#If... Then... #Else – direktiva](../../../visual-basic/language-reference/directives/if-then-else-directives.md)  
   
 ## <a name="see-also"></a>Viz také:
 

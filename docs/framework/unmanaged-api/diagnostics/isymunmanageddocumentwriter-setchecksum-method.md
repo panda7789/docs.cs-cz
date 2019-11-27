@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449044"
 ---
 # <a name="isymunmanageddocumentwritersetchecksum-method"></a>ISymUnmanagedDocumentWriter::SetCheckSum – metoda
-Sets checksum information.  
+Nastaví informace kontrolního součtu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,19 +36,19 @@ HRESULT SetCheckSum(
   
 ## <a name="parameters"></a>Parametry  
  `algorithmId`  
- [in] The GUID that represents the algorithm identifier.  
+ pro Identifikátor GUID, který představuje identifikátor algoritmu.  
   
  `checkSumSize`  
- [in] A `ULONG32` that indicates the size, in bytes, of the `checkSum` buffer.  
+ pro `ULONG32`, která určuje velikost vyrovnávací paměti `checkSum` v bajtech.  
   
  `checkSum`  
- [in] The buffer that stores the checksum information.  
+ pro Vyrovnávací paměť, do které jsou uloženy informace kontrolního součtu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

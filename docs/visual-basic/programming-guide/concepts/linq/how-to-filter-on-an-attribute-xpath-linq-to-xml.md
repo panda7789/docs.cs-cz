@@ -1,5 +1,5 @@
 ---
-title: 'How to: Filter on an Attribute (XPath-LINQ to XML)'
+title: 'Postupy: filtrování atributu (XPath-LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: ffefb9d6-45ec-4677-a396-dd9c2b36298f
 ms.openlocfilehash: f8a804fa7937d8d27b38bba7a294f1c760101de8
@@ -9,17 +9,17 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353059"
 ---
-# <a name="how-to-filter-on-an-attribute-xpath-linq-to-xml-visual-basic"></a>How to: Filter on an Attribute (XPath-LINQ to XML) (Visual Basic)
-This topic shows how to get the descendant elements with a specified name, and with an attribute with a specified value.  
+# <a name="how-to-filter-on-an-attribute-xpath-linq-to-xml-visual-basic"></a>Postupy: filtrování atributu (XPath-LINQ to XML) (Visual Basic)
+Toto téma ukazuje, jak získat odvozené prvky se zadaným názvem a s atributem se zadanou hodnotou.  
   
- The XPath expression is:  
+ Výraz XPath je:  
   
  `.//Address[@Type='Shipping']`  
   
 ## <a name="example"></a>Příklad  
- This example finds all descendants elements with the name of `Address`, and with a `Type` attribute with a value of "Shipping".  
+ Tento příklad vyhledá všechny prvky následníků s názvem `Address`a s atributem `Type` s hodnotou "expedice".  
   
- This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: více nákupních objednávek (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
   
 ```vb  
 Dim po As XDocument = XDocument.Load("PurchaseOrders.xml")  
@@ -45,7 +45,7 @@ For Each el As XElement In list1
 Next  
 ```  
   
- This example produces the following output:  
+ Tento příklad vytvoří následující výstup:  
   
 ```console
 Results are identical  
@@ -77,4 +77,4 @@ Results are identical
   
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ to XML for XPath Users (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML pro uživatele XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

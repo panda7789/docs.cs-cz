@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74434439"
 ---
 # <a name="imetadataassemblyemitsetmanifestresourceprops-method"></a>IMetaDataAssemblyEmit::SetManifestResourceProps – metoda
-Modifies the specified `ManifestResource` metadata structure.  
+Upraví zadanou `ManifestResource` strukturu metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,28 +38,28 @@ HRESULT SetManifestResourceProps (
   
 ## <a name="parameters"></a>Parametry  
  `mr`  
- [in] The token that specifies the `ManifestResource` metadata structure to be modified.  
+ pro Token, který určuje `ManifestResource` strukturu metadat k úpravě.  
   
  `tkImplementation`  
- [in] The token, of type `File` or `AssemblyRef`, that maps to the resource provider.  
+ pro Token typu `File` nebo `AssemblyRef`, který se mapuje na poskytovatele prostředků.  
   
  `dwOffset`  
- [in] The offset to the beginning of the resource within the file.  
+ pro Posun na začátek prostředku v rámci souboru.  
   
  `dwResourceFlags`  
- [in] A bitwise combination of flag values that specify the attributes of the resource.  
+ pro Bitová kombinace hodnot příznaků, které určují atributy prostředku.  
   
 ## <a name="remarks"></a>Poznámky  
- To create a `ManifestResource` metadata structure, use the [IMetaDataAssemblyEmit::DefineManifestResource](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definemanifestresource-method.md) method.  
+ Chcete-li vytvořit `ManifestResource` struktury metadat, použijte metodu [IMetaDataAssemblyEmit::D efinemanifestresource](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definemanifestresource-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

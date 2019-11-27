@@ -1,5 +1,5 @@
 ---
-title: 'How to: Work with Dictionaries Using LINQ to XML'
+title: 'Postupy: práce se slovníky pomocí LINQ to XML'
 ms.date: 07/20/2015
 ms.assetid: 6cb3f969-1986-414a-b850-87418712edea
 ms.openlocfilehash: 12327be3c9d32d34866691b156f58fd1e8e40240
@@ -9,11 +9,11 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74332366"
 ---
-# <a name="how-to-work-with-dictionaries-using-linq-to-xml-visual-basic"></a>How to: Work with Dictionaries Using LINQ to XML (Visual Basic)
-It is often convenient to convert varieties of data structures to XML, and XML back to other data structures. This topic shows a specific implementation of this general approach by converting a <xref:System.Collections.Generic.Dictionary%602> to XML and back.  
+# <a name="how-to-work-with-dictionaries-using-linq-to-xml-visual-basic"></a>Postupy: práce se slovníky pomocí LINQ to XML (Visual Basic)
+Je často vhodné převést odrůdy datových struktur do XML a vrátit se do jiných datových struktur. Toto téma ukazuje konkrétní implementaci tohoto obecného přístupu převodem <xref:System.Collections.Generic.Dictionary%602> na XML a zpět.  
   
 ## <a name="example"></a>Příklad  
- This example uses XML literals and a query in an embedded expression. The query projects new <xref:System.Xml.Linq.XElement> objects, which then become the new content for the `Root` <xref:System.Xml.Linq.XElement> object.  
+ Tento příklad používá literály XML a dotaz ve vloženém výrazu. Dotaz projektuje nové objekty <xref:System.Xml.Linq.XElement>, které se pak stanou novým obsahem pro objekt `Root` <xref:System.Xml.Linq.XElement>.  
   
 ```vb  
 Dim dict As Dictionary(Of String, String) = New Dictionary(Of String, String)()  
@@ -29,7 +29,7 @@ Dim root As XElement = _
 Console.WriteLine(root)  
 ```  
   
- This code produces the following output:  
+ Tento kód generuje následující výstup:  
   
 ```xml  
           <Root>  
@@ -41,7 +41,7 @@ Console.WriteLine(root)
 ```  
   
 ## <a name="example"></a>Příklad  
- The following code creates a dictionary from XML.  
+ Následující kód vytvoří slovník z XML.  
   
 ```vb  
 Dim root As XElement = _  
@@ -61,7 +61,7 @@ For Each str As String In dict.Keys
 Next  
 ```  
   
- This code produces the following output:  
+ Tento kód generuje následující výstup:  
   
 ```console  
 Child1:Value1  
@@ -72,4 +72,4 @@ Child4:Value4
   
 ## <a name="see-also"></a>Viz také:
 
-- [Projections and Transformations (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+- [Projekce a transformace (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

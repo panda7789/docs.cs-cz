@@ -37,7 +37,7 @@ typedef enum {
 } COR_PRF_HIGH_MONITOR;  
 ```  
   
-## <a name="members"></a>Členové  
+## <a name="members"></a>Members  
   
 |Člen|Popis|  
 |------------|-----------------|  

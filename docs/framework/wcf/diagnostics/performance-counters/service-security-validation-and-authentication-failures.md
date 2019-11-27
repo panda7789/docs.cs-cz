@@ -10,21 +10,21 @@ ms.lasthandoff: 11/20/2019
 ms.locfileid: "74204584"
 ---
 # <a name="service-security-validation-and-authentication-failures"></a>Služba: Počet chyb ověření zabezpečení
-Counter name: Security Validation and Authentication Failures  
+Název čítače: ověření zabezpečení a selhání ověřování  
   
 ## <a name="description"></a>Popis  
- This counter is incremented whenever a message is rejected due to a security problem not covered by the "Security Calls Not Authorized" counter. Such problems include:  
+ Tento čítač se zvyšuje vždy, když je zpráva odmítnuta z důvodu problému se zabezpečením, na který nepokrývá čítač "počet neautorizovaných volání zabezpečení". Mezi takové problémy patří:  
   
-- Client token cannot be read from the message.  
+- Z zprávy nelze číst token klienta.  
   
-- Client token has failed authentication (for example, bad password).  
+- Token klienta se nezdařil při ověřování (například chybné heslo).  
   
-- Signature verification has failed (for example, the message has been tampered).  
+- Ověření podpisu se nezdařilo (například zpráva byla zfalšována).  
   
-- The message is a duplicate from a previous one, which can happen during a replay attack.  
+- Zpráva je duplicitní z předchozí verze, ke které může dojít během útoku prostřednictvím opakovaného přehrání.  
   
-- A decryption failure has occurred.  
+- Došlo k chybě dešifrování.  
   
-- Some required elements (for example, missing timestamp or encrypted data block) are missing from the message.  
+- Ve zprávě chybí některé povinné prvky (například chybějící časové razítko nebo šifrovaný blok dat).  
   
-- Errors have occurred during TLSNEGO/SPNEGO handshake.
+- Během TLSNEGO/SPNEGO handshake došlo k chybám.

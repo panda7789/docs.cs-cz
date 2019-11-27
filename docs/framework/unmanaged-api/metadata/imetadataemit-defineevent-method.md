@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74432562"
 ---
 # <a name="imetadataemitdefineevent-method"></a>IMetaDataEmit::DefineEvent – metoda
-Creates a definition for an event with the specified metadata signature, and gets a token to that event definition.  
+Vytvoří definici události se zadaným podpisem metadat a získá token této definice události.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,40 +43,40 @@ HRESULT DefineEvent (
   
 ## <a name="parameters"></a>Parametry  
  `td`  
- [in] The token for the target class or interface. This is either a `mdTypeDef` or `mdTypeDefNil` token.  
+ pro Token pro cílovou třídu nebo rozhraní. Jedná se o token `mdTypeDef` nebo `mdTypeDefNil`.  
   
  `szEvent`  
- [in] The name of the event.  
+ pro Název události.  
   
  `dwEventFlags`  
- [in] Event flags.  
+ pro Příznaky události.  
   
  `tkEventType`  
- [in] The token for the event class. This is a `mdTypeDef`, a `mdTypeRef`, or a `mdTokenNil` token.  
+ pro Token pro třídu Event Toto je `mdTypeDef`, `mdTypeRef`nebo token `mdTokenNil`.  
   
  `mdAddOn`  
- [in] The method used to subscribe to the event, or null.  
+ pro Metoda použitá k přihlášení k odběru události nebo hodnota null.  
   
  `mdRemoveOn`  
- [in] The method used to unsubscribe to the event, or null.  
+ pro Metoda použitá k odhlášení odběru události nebo hodnota null.  
   
  `mdFire`  
- [in] The method used (by a derived class) to raise the event.  
+ pro Použitá metoda (odvozenou třídou) k vyvolání události.  
   
  `rmdOtherMethods[]`  
- [in] An array of tokens for other methods associated with the event. The array is terminated with a `mdMethodDefNil` token.  
+ pro Pole tokenů pro jiné metody přidružené k události. Pole je ukončeno pomocí `mdMethodDefNil`ho tokenu.  
   
  `pmdEvent`  
- [out] The metadata token assigned to the event.  
+ mimo Token metadat přiřazený k události  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

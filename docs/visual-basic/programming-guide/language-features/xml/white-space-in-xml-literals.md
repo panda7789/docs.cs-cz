@@ -13,30 +13,30 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74335998"
 ---
 # <a name="white-space-in-xml-literals-visual-basic"></a>Prázdné znaky v literálech XML (Visual Basic)
-The Visual Basic compiler incorporates only the significant white space characters from an XML literal when it creates a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] object. The insignificant white space characters are not incorporated.  
+Kompilátor Visual Basic při vytváření objektu [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] v podnikové síti obsahuje pouze významné znaky mezer z literálu XML. Nevýznamné prázdné znaky nejsou začleněny.  
   
-## <a name="significant-and-insignificant-white-space"></a>Significant and Insignificant White Space  
- White space characters in XML literals are significant in only three areas:  
+## <a name="significant-and-insignificant-white-space"></a>Významné a nevýznamné prázdné znaky  
+ Prázdné znaky v literálech XML jsou významné pouze v třech oblastech:  
   
-- When they are in an attribute value.  
+- Pokud jsou v hodnotě atributu.  
   
-- When they are part of an element's text content and the text also contains other characters.  
+- Pokud jsou součástí textového obsahu elementu a text obsahuje také jiné znaky.  
   
-- When they are in an embedded expression for an element's text content.  
+- Když jsou ve vloženém výrazu pro textový obsah elementu.  
   
- Otherwise, the compiler treats white space characters as insignificant and does not include then in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] object for the literal.  
+ V opačném případě kompilátor zpracovává prázdné znaky jako nevýznamný a nezahrnuje potom do objektu [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] pro literál.  
   
- To include insignificant white space in an XML literal, use an embedded expression that contains a string literal with the white space.  
+ Chcete-li zahrnout do literálu XML nevýznamné prázdné znaky, použijte vložený výraz, který obsahuje řetězcový literál s prázdným znakem.  
   
 > [!NOTE]
-> If the `xml:space` attribute appears in an XML element literal, the Visual Basic compiler includes the attribute in the <xref:System.Xml.Linq.XElement> object, but adding this attribute does not change how the compiler treats white space.  
+> Pokud se atribut `xml:space` nachází v literálu elementu XML, kompilátor Visual Basic obsahuje atribut v objektu <xref:System.Xml.Linq.XElement>, ale přidání tohoto atributu nemění způsob, jakým kompilátor zpracovává prázdné znaky.  
   
 ## <a name="examples"></a>Příklady  
- The following example contains two XML elements, outer and inner. Both elements contain white space in their text content. The white space in the outer element is insignificant because it contains only white space and an XML element. The white space in the inner element is significant because it contains white space and text.  
+ Následující příklad obsahuje dva elementy XML, vnější a vnitřní. Oba elementy obsahují prázdné znaky v textovém obsahu. Prázdné znaky vnějšího prvku jsou nevýznamné, protože obsahují pouze prázdné znaky a XML element. Prázdné znaky v vnitřním prvku jsou významné, protože obsahují prázdné znaky a text.  
   
  [!code-vb[VbXMLSamples#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples13.vb#29)]  
   
- When run, this code displays the following text.  
+ Při spuštění tento kód zobrazí následující text.  
   
 ```xml  
 <outer>  
@@ -48,4 +48,4 @@ The Visual Basic compiler incorporates only the significant white space characte
   
 ## <a name="see-also"></a>Viz také:
 
-- [Creating XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [Vytváření XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)

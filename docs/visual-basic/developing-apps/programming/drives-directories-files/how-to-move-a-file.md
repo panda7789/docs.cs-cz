@@ -13,17 +13,17 @@ ms.locfileid: "74335356"
 ---
 # <a name="how-to-move-a-file-in-visual-basic"></a>Postupy: Přesunutí souboru v jazyce Visual Basic
 
-The `My.Computer.FileSystem.MoveFile` method can be used to move a file to another folder. If the target structure does not exist, it will be created.  
+Metodu `My.Computer.FileSystem.MoveFile` lze použít k přesunutí souboru do jiné složky. Pokud cílová struktura neexistuje, vytvoří se.  
   
-### <a name="to-move-a-file"></a>To move a file  
+### <a name="to-move-a-file"></a>Přesunutí souboru  
   
-- Use the `MoveFile` method to move the file, specifying the file name and location for both the source file and the target file. This example moves the file named `test.txt` from `TestDir1` to `TestDir2`. Note that the target file name is specified even though it is the same as the source file name.  
+- Použijte metodu `MoveFile` k přesunutí souboru, zadáním názvu a umístění souboru pro zdrojový soubor a cílový soubor. Tento příklad přesune soubor s názvem `test.txt` z `TestDir1` na `TestDir2`. Všimněte si, že název cílového souboru je zadán, i když je stejný jako název zdrojového souboru.  
   
      [!code-vb[VbVbcnMyFileSystem#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#24)]  
   
-### <a name="to-move-a-file-and-rename-it"></a>To move a file and rename it  
+### <a name="to-move-a-file-and-rename-it"></a>Přesunutí souboru a jeho přejmenování  
   
-- Use the `MoveFile` method to move the file, specifying the source file name and location, the target location, and the new name at the target location. This example moves the file named `test.txt` from `TestDir1` to `TestDir2` and renames it `nexttest.txt`.  
+- Použijte metodu `MoveFile` pro přesunutí souboru, zadání názvu a umístění zdrojového souboru, cílového umístění a nového názvu v cílovém umístění. Tento příklad přesune soubor s názvem `test.txt` z `TestDir1` na `TestDir2` a přejmenuje ho `nexttest.txt`.  
   
      [!code-vb[VbVbcnMyFileSystem#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#25)]  
   
@@ -31,25 +31,25 @@ The `My.Computer.FileSystem.MoveFile` method can be used to move a file to anoth
 
  Následující podmínky mohou způsobit výjimku:  
   
-- The path is not valid for one of the following reasons: it is a zero-length string, it contains only white space, it contains invalid characters, or it is a device path (starts with \\\\.\\) (<xref:System.ArgumentException>).  
+- Cesta není platná z některého z následujících důvodů: Jedná se o řetězec o nulové délce, obsahuje pouze prázdné znaky, obsahuje neplatné znaky nebo se jedná o cestu k zařízení (začíná na \\\\.\\) (<xref:System.ArgumentException>).  
   
-- The path is not valid because it is `Nothing` (<xref:System.ArgumentNullException>).  
+- Cesta není platná, protože je `Nothing` (<xref:System.ArgumentNullException>).  
   
-- `destinationFileName` is `Nothing` or an empty string (<xref:System.ArgumentNullException>).  
+- `destinationFileName` je `Nothing` nebo prázdný řetězec (<xref:System.ArgumentNullException>).  
   
-- The source file is not valid or does not exist (<xref:System.IO.FileNotFoundException>).  
+- Zdrojový soubor není platný nebo neexistuje (<xref:System.IO.FileNotFoundException>).  
   
-- The combined path points to an existing directory, the destination file exists and `overwrite` is set to `False`, a file in the target directory with the same name is in use, or the user does not have sufficient permissions to access the file (<xref:System.IO.IOException>).  
+- Kombinovaná cesta odkazuje na existující adresář, cílový soubor existuje a `overwrite` je nastavená na `False`, soubor v cílovém adresáři se stejným názvem se používá nebo uživatel nemá dostatečná oprávnění pro přístup k souboru (<xref:System.IO.IOException>).  
   
-- A file or directory name in the path contains a colon (:) or is in an invalid format (<xref:System.NotSupportedException>).  
+- Název souboru nebo adresáře v cestě obsahuje dvojtečku (:) nebo má neplatný formát (<xref:System.NotSupportedException>).  
   
-- `showUI` is set to `True`, `onUserCancel` is set to `ThrowException`, and either the user has cancelled the operation or an unspecified I/O error occurs (<xref:System.OperationCanceledException>).  
+- `showUI` je nastavená na `True`, `onUserCancel` je nastavená na `ThrowException`a uživatel tuto operaci zrušil nebo dojde k nespecifikované vstupně-výstupní chybě (<xref:System.OperationCanceledException>).  
   
-- The path exceeds the system-defined maximum length (<xref:System.IO.PathTooLongException>).  
+- Cesta překračuje maximální povolenou délku systému (<xref:System.IO.PathTooLongException>).  
   
-- The user lacks necessary permissions to view the path (<xref:System.Security.SecurityException>).  
+- Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).  
   
-- The user does not have required permission (<xref:System.UnauthorizedAccessException>).  
+- Uživatel nemá požadované oprávnění (<xref:System.UnauthorizedAccessException>).  
   
 ## <a name="see-also"></a>Viz také:
 

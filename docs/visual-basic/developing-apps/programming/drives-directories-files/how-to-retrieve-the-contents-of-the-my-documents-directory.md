@@ -13,11 +13,11 @@ ms.locfileid: "74334539"
 ---
 # <a name="how-to-retrieve-the-contents-of-the-my-documents-directory-in-visual-basic"></a>Postupy: Načtení obsahu adresáře Moje dokumenty v jazyce Visual Basic
 
-The <xref:Microsoft.VisualBasic.FileIO.SpecialDirectories> object can be used to read from many of the **All Users** directories, such as **My Documents** or **Desktop**.  
+Objekt <xref:Microsoft.VisualBasic.FileIO.SpecialDirectories> lze použít ke čtení z mnoha adresářů **všech uživatelů** , jako jsou **dokumenty** nebo **plocha**.  
   
-### <a name="to-read-from-the-my-documents-folder"></a>To read from the My Documents folder  
+### <a name="to-read-from-the-my-documents-folder"></a>Čtení ze složky Dokumenty  
   
-- Use the `ReadAllText` method to read the text from each file in a specific directory. The following code specifies a directory and file and then uses `ReadAllText` to read them into the string named `patients`.  
+- Pomocí metody `ReadAllText` si můžete přečíst text z každého souboru v konkrétním adresáři. Následující kód určuje adresář a soubor a poté používá `ReadAllText` ke čtení do řetězce s názvem `patients`.  
   
      [!code-vb[VbVbcnMyFileSystem#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#15)]  
   

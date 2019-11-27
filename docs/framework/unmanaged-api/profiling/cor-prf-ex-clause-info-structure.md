@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74428370"
 ---
 # <a name="cor_prf_ex_clause_info-structure"></a>COR_PRF_EX_CLAUSE_INFO – struktura
-Stores information about a specific exception clause instance and its associated frame.  
+Ukládá informace o konkrétní instanci klauzule Exception a jejím přidruženém rámci.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,36 +39,36 @@ typedef struct COR_PRF_EX_CLAUSE_INFO {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`clauseType`|A value of the [COR_PRF_CLAUSE_TYPE](../../../../docs/framework/unmanaged-api/profiling/cor-prf-clause-type-enumeration.md) enumeration that specifies the type of exception clause the code just entered or left.|  
-|`programCounter`|The native entry point of the clause handler — for example, the contents of the X86 EIP register.|  
-|`framePointer`|The pointer to the logical frame for the clause handler — for example, the contents of the X86 EBP register.|  
-|`shadowStackPointer`|The pointer to the shadow stack. This value is the contents of the BSP register and applies only to IA64.|  
+|`clauseType`|Hodnota výčtu [COR_PRF_CLAUSE_TYPE](../../../../docs/framework/unmanaged-api/profiling/cor-prf-clause-type-enumeration.md) , která určuje typ klauzule Exception, který kód právě zadal nebo Left.|  
+|`programCounter`|Nativní vstupní bod obslužné rutiny klauzule – například obsah EIP registru x86.|  
+|`framePointer`|Ukazatel na logický rámec pro obslužnou rutinu klauzule, například obsah EBP registru x86.|  
+|`shadowStackPointer`|Ukazatel na stínový zásobník. Tato hodnota je obsahem registru BSP a vztahuje se pouze na IA64.|  
   
 ## <a name="remarks"></a>Poznámky  
- When an exception notification is received, [ICorProfilerInfo2::GetNotifiedExceptionClauseInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getnotifiedexceptionclauseinfo-method.md) can be used to get the native address and frame information for the exception clause (`catch`/`finally`/filter) that is about to be run or has just been run.  
+ Po přijetí oznámení výjimky lze pomocí [ICorProfilerInfo2:: GetNotifiedExceptionClauseInfo –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getnotifiedexceptionclauseinfo-method.md) získat nativní informace o adrese a snímku pro klauzuli exception (`catch`/`finally`/Filter), která má být spuštěna nebo právě spuštěna.  
   
- Execution of an exception clause involves these callbacks from the common language runtime (CLR):  
+ Provádění klauzule Exception zahrnuje tato zpětná volání z modulu CLR (Common Language Runtime):  
   
-- [ICorProfilerCallback::ExceptionCatcherEnter](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptioncatcherenter-method.md)  
+- [ICorProfilerCallback:: ExceptionCatcherEnter –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptioncatcherenter-method.md)  
   
-- [ICorProfilerCallback::ExceptionUnwindFinallyEnter](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionunwindfinallyenter-method.md)  
+- [ICorProfilerCallback:: ExceptionUnwindFinallyEnter –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionunwindfinallyenter-method.md)  
   
-- [ICorProfilerCallback::ExceptionSearchFilterEnter](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionsearchfilterenter-method.md)  
+- [ICorProfilerCallback:: ExceptionSearchFilterEnter –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionsearchfilterenter-method.md)  
   
-- [ICorProfilerCallback::ExceptionCatcherLeave](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptioncatcherleave-method.md)  
+- [ICorProfilerCallback:: ExceptionCatcherLeave –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptioncatcherleave-method.md)  
   
-- [ICorProfilerCallback::ExceptionUnwindFinallyLeave](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionunwindfinallyleave-method.md)  
+- [ICorProfilerCallback:: ExceptionUnwindFinallyLeave –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionunwindfinallyleave-method.md)  
   
-- [ICorProfilerCallback::ExceptionSearchFilterLeave](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionsearchfilterleave-method.md)  
+- [ICorProfilerCallback:: ExceptionSearchFilterLeave –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionsearchfilterleave-method.md)  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl  
+ **Hlavička:** CorProf. idl  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

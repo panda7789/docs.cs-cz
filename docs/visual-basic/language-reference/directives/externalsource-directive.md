@@ -21,7 +21,7 @@ ms.locfileid: "74343834"
 ---
 # <a name="externalsource-directive"></a>#ExternalSource – direktiva
 
-Indicates a mapping between specific lines of source code and text external to the source.  
+Označuje mapování mezi konkrétními řádky zdrojového kódu a textem externím ke zdroji.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,24 +34,24 @@ Indicates a mapping between specific lines of source code and text external to t
 ## <a name="parts"></a>Součásti  
 
  `StringLiteral`  
- The path to the external source.  
+ Cesta k externímu zdroji  
   
  `IntLiteral`  
- The line number of the first line of the external source.  
+ Číslo řádku prvního řádku externího zdroje.  
   
  `LogicalLine`  
- The line where the error occurs in the external source.  
+ Řádek, kde dojde k chybě v externím zdroji.  
   
  `#End ExternalSource`  
- Terminates the `#ExternalSource` block.  
+ Ukončí blok `#ExternalSource`.  
   
 ## <a name="remarks"></a>Poznámky  
 
- This directive is used only by the compiler and the debugger.  
+ Tuto direktivu používá pouze kompilátor a ladicí program.  
   
- A source file may include external source directives, which indicate a mapping between specific lines of code in the source file and text external to the source, such as an .aspx file. If errors are encountered in the designated source code during compilation, they are identified as coming from the external source.  
+ Zdrojový soubor může obsahovat externí zdrojové direktivy, které označují mapování mezi konkrétními řádky kódu ve zdrojovém souboru a textem externím ke zdroji, jako je například soubor. aspx. Pokud dojde k chybám v určeném zdrojovém kódu během kompilace, jsou identifikovány jako pocházející z externího zdroje.  
   
- External source directives have no effect on compilation and cannot be nested. They are intended for internal use by the application only.  
+ Direktivy externího zdroje nemají žádný vliv na kompilaci a nemohou být vnořené. Jsou určené pouze pro interní použití pouze aplikací.  
   
 ## <a name="see-also"></a>Viz také:
 

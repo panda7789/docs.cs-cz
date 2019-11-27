@@ -15,72 +15,72 @@ ms.locfileid: "74204561"
 ---
 # <a name="shadow-copying-assemblies"></a>Stínové kopírování sestavení
 
-Shadow copying enables assemblies that are used in an application domain to be updated without unloading the application domain. This is particularly useful for applications that must be available continuously, such as ASP.NET sites.
+Stínové kopírování umožňuje aktualizovat sestavení, která se používají v doméně aplikace, bez uvolnění domény aplikace. To je zvlášť užitečné pro aplikace, které musí být k dispozici průběžně, například ASP.NET lokality.
 
 > [!IMPORTANT]
-> Shadow copying is not supported in Windows 8.x Store apps.
+> Stínové kopírování není podporováno v aplikacích pro Windows 8. x Store.
 
-The common language runtime locks an assembly file when the assembly is loaded, so the file cannot be updated until the assembly is unloaded. The only way to unload an assembly from an application domain is by unloading the application domain, so under normal circumstances, an assembly cannot be updated on disk until all the application domains that are using it have been unloaded.
+Modul CLR (Common Language Runtime) zamkne soubor sestavení, když je sestavení načteno, takže soubor nelze aktualizovat, dokud nebude sestavení uvolněno. Jediným způsobem, jak uvolnit sestavení z domény aplikace, je uvolnění domény aplikace, takže za normálních okolností nemůže být sestavení na disku aktualizováno, dokud nebudou všechny domény aplikace, které ji používají, uvolněny.
 
-When an application domain is configured to shadow copy files, assemblies from the application path are copied to another location and loaded from that location. The copy is locked, but the original assembly file is unlocked and can be updated.
+Když je doména aplikace nakonfigurovaná na soubory stínové kopie, sestavení z cesty aplikace se zkopírují do jiného umístění a načtou z tohoto umístění. Kopie je uzamčena, ale původní soubor sestavení je odemčen a lze jej aktualizovat.
 
 > [!IMPORTANT]
-> The only assemblies that can be shadow copied are those stored in the application directory or its subdirectories, specified by the <xref:System.AppDomainSetup.ApplicationBase%2A> and <xref:System.AppDomainSetup.PrivateBinPath%2A> properties when the application domain is configured. Assemblies stored in the global assembly cache are not shadow copied.
+> Pouze sestavení, která lze kopírovat pomocí stínové kopie, jsou uložena v adresáři aplikace nebo v jeho podadresářích, které jsou určeny <xref:System.AppDomainSetup.ApplicationBase%2A> a <xref:System.AppDomainSetup.PrivateBinPath%2A> vlastností při konfiguraci domény aplikace. Sestavení uložená v globální mezipaměti sestavení (GAC) nejsou zkopírována stínem.
 
-This article contains the following sections:
+Tento článek obsahuje následující oddíly:
 
-- [Enabling and Using Shadow Copying](#EnablingAndUsing) describes the basic use and the options that are available for shadow copying.
+- [Povolení a použití stínového kopírování](#EnablingAndUsing) popisuje základní použití a možnosti, které jsou k dispozici pro stínové kopírování.
 
-- [Startup Performance](#StartupPerformance) describes the changes that are made to shadow copying in the .NET Framework 4 to improve startup performance, and how to revert to the behavior of earlier versions.
+- [Výkon při spuštění](#StartupPerformance) popisuje změny stínového kopírování v .NET Framework 4 pro zlepšení výkonu při spuštění a postup obnovení na chování starších verzí.
 
-- [Obsolete Methods](#ObsoleteMethods) describes the changes that were made to the properties and methods that control shadow copying in the .NET Framework 2.0.
+- [Zastaralé metody](#ObsoleteMethods) popisují změny vlastností a metod, které řídí stínové kopírování v .NET Framework 2,0.
 
 <a name="EnablingAndUsing"></a>
 
-## <a name="enabling-and-using-shadow-copying"></a>Enabling and Using Shadow Copying
+## <a name="enabling-and-using-shadow-copying"></a>Povolení a použití stínového kopírování
 
-You can use the properties of the <xref:System.AppDomainSetup> class as follows to configure an application domain for shadow copying:
+Můžete použít vlastnosti třídy <xref:System.AppDomainSetup> následujícím způsobem pro konfiguraci domény aplikace pro stínové kopírování:
 
-- Enable shadow copying by setting the <xref:System.AppDomainSetup.ShadowCopyFiles%2A> property to the string value `"true"`.
+- Povolte stínové kopírování nastavením vlastnosti <xref:System.AppDomainSetup.ShadowCopyFiles%2A> na hodnotu řetězce `"true"`.
 
-  By default, this setting causes all assemblies in the application path to be copied to a download cache before they are loaded. This is the same cache maintained by the common language runtime to store files downloaded from other computers, and the common language runtime automatically deletes the files when they are no longer needed.
+  Ve výchozím nastavení toto nastavení způsobí, že všechna sestavení v cestě aplikace budou zkopírována do mezipaměti pro stahování před jejich načtením. Toto je stejná mezipaměť, kterou udržuje modul CLR (Common Language Runtime) pro ukládání souborů stažených z jiných počítačů, a modul CLR (Common Language Runtime) soubory automaticky odstraní, když už nejsou potřeba.
 
-- Optionally set a custom location for shadow copied files by using the <xref:System.AppDomainSetup.CachePath%2A> property and the <xref:System.AppDomainSetup.ApplicationName%2A> property.
+- Volitelně můžete nastavit vlastní umístění pro stínové zkopírované soubory pomocí vlastnosti <xref:System.AppDomainSetup.CachePath%2A> a vlastnosti <xref:System.AppDomainSetup.ApplicationName%2A>.
 
-  The base path for the location is formed by concatenating the <xref:System.AppDomainSetup.ApplicationName%2A> property to the <xref:System.AppDomainSetup.CachePath%2A> property as a subdirectory. Assemblies are shadow copied to subdirectories of this path, not to the base path itself.
-
-  > [!NOTE]
-  > If the <xref:System.AppDomainSetup.ApplicationName%2A> property is not set, the <xref:System.AppDomainSetup.CachePath%2A> property is ignored and the download cache is used. No exception is thrown.
-
-  If you specify a custom location, you are responsible for cleaning up the directories and copied files when they are no longer needed. They are not deleted automatically.
-
-  There are a few reasons why you might want to set a custom location for shadow copied files. You might want to set a custom location for shadow copied files if your application generates a large number of copies. The download cache is limited by size, not by lifetime, so it is possible that the common language runtime will attempt to delete a file that is still in use. Another reason to set a custom location is when users running your application do not have write access to the directory location the common language runtime uses for the download cache.
-
-- Optionally limit the assemblies that are shadow copied by using the <xref:System.AppDomainSetup.ShadowCopyDirectories%2A> property.
-
-  When you enable shadow copying for an application domain, the default is to copy all assemblies in the application path — that is, in the directories specified by the <xref:System.AppDomainSetup.ApplicationBase%2A> and <xref:System.AppDomainSetup.PrivateBinPath%2A> properties. You can limit the copying to selected directories by creating a string that contains only those directories you want to shadow copy, and assigning the string to the <xref:System.AppDomainSetup.ShadowCopyDirectories%2A> property. Separate the directories with semicolons. The only assemblies that are shadow copied are the ones in the selected directories.
+  Základní cesta pro umístění je vytvořena zřetězením vlastnosti <xref:System.AppDomainSetup.ApplicationName%2A> k vlastnosti <xref:System.AppDomainSetup.CachePath%2A> jako podadresáři. Sestavení jsou stínové zkopírovány do podadresářů této cesty, nikoli do samotné základní cesty.
 
   > [!NOTE]
-  > If you don’t assign a string to the <xref:System.AppDomainSetup.ShadowCopyDirectories%2A> property, or if you set this property to `null`, all assemblies in the directories specified by the <xref:System.AppDomainSetup.ApplicationBase%2A> and <xref:System.AppDomainSetup.PrivateBinPath%2A> properties are shadow copied.
+  > Pokud vlastnost <xref:System.AppDomainSetup.ApplicationName%2A> není nastavena, je vlastnost <xref:System.AppDomainSetup.CachePath%2A> ignorována a je použita mezipaměť pro stahování. Není vyvolána žádná výjimka.
+
+  Pokud zadáte vlastní umístění, zodpovídáte za vyčištění adresářů a kopírovaných souborů, pokud už je nepotřebujete. Neodstraňují se automaticky.
+
+  Existuje několik důvodů, proč možná budete chtít nastavit vlastní umístění pro stínové zkopírované soubory. Pokud vaše aplikace generuje velký počet kopií, je vhodné nastavit vlastní umístění pro stínové zkopírované soubory. Mezipaměť pro stahování je omezená velikostí, ne po dobu života, takže je možné, že se modul CLR (Common Language Runtime) pokusí odstranit soubor, který se pořád používá. Dalším důvodem pro nastavení vlastního umístění je, že uživatelé, kteří spouštějí vaši aplikaci, nemají přístup pro zápis do umístění adresáře, které modul CLR (Common Language Runtime) používá pro mezipaměť pro stahování.
+
+- Volitelně můžete omezit sestavení, která jsou Stínová kopie, pomocí vlastnosti <xref:System.AppDomainSetup.ShadowCopyDirectories%2A>.
+
+  Pokud povolíte stínové kopírování pro doménu aplikace, ve výchozím nastavení je zkopírování všech sestavení v cestě aplikace, tj. v adresářích určených <xref:System.AppDomainSetup.ApplicationBase%2A> a <xref:System.AppDomainSetup.PrivateBinPath%2A>ch vlastností. Kopírování můžete omezit na vybrané adresáře vytvořením řetězce, který obsahuje pouze ty adresáře, které chcete stínovou kopii, a přiřazením řetězce k vlastnosti <xref:System.AppDomainSetup.ShadowCopyDirectories%2A>. Adresáře oddělte středníkem. Pouze sestavení, která jsou stínové kopie, jsou ta ve vybraných adresářích.
+
+  > [!NOTE]
+  > Pokud nepřiřazujete řetězec vlastnosti <xref:System.AppDomainSetup.ShadowCopyDirectories%2A>, nebo pokud nastavíte tuto vlastnost na `null`, všechna sestavení v adresářích určených <xref:System.AppDomainSetup.ApplicationBase%2A> a <xref:System.AppDomainSetup.PrivateBinPath%2A>ch vlastností jsou stínové kopie.
 
   > [!IMPORTANT]
-  > Directory paths must not contain semicolons, because the semicolon is the delimiter character. There is no escape character for semicolons.
+  > Cesty k adresáři nesmí obsahovat středník, protože středník je znak oddělovače. Neexistují žádné řídicí znaky pro středníky.
 
 <a name="StartupPerformance"></a>
 
-## <a name="startup-performance"></a>Startup Performance
+## <a name="startup-performance"></a>Výkon při spuštění
 
-When an application domain that uses shadow copying starts, there is a delay while assemblies in the application directory are copied to the shadow copy directory, or verified if they are already in that location. Before the .NET Framework 4, all assemblies were copied to a temporary directory. Each assembly was opened to verify the assembly name, and the strong name was validated. Each assembly was checked to see whether it had been updated more recently than the copy in the shadow copy directory. If so, it was copied to the shadow copy directory. Finally, the temporary copies were discarded.
+Když se spustí doména aplikace, která používá stínové kopírování, dojde ke zpoždění během kopírování sestavení v adresáři aplikace do adresáře stínové kopie nebo při ověření, jestli už jsou v tomto umístění. Před .NET Framework 4 byla všechna sestavení zkopírována do dočasného adresáře. Každé sestavení bylo otevřeno pro ověření názvu sestavení a silného názvu bylo ověřeno. Každé sestavení bylo zkontrolováno, zda bylo aktualizováno později než kopírování v adresáři stínové kopie. V takovém případě se zkopíroval do adresáře stínové kopie. Nakonec byly dočasné kopie zahozeny.
 
-Beginning with the .NET Framework 4, the default startup behavior is to directly compare the file date and time of each assembly in the application directory with the file date and time of the copy in the shadow copy directory. If the assembly has been updated, it is copied by using the same procedure as in earlier versions of the .NET Framework; otherwise, the copy in the shadow copy directory is loaded.
+Počínaje .NET Framework 4 je výchozí chování při spuštění přímo porovnat datum a čas každého sestavení v adresáři aplikace s datem a časem kopírování v adresáři stínové kopie. Pokud bylo sestavení aktualizováno, je zkopírováno pomocí stejného postupu jako v předchozích verzích .NET Framework; v opačném případě je kopie v adresáři stínové kopie načtena.
 
-The resulting performance improvement is largest for applications in which assemblies do not change frequently and changes usually occur in a small subset of assemblies. If a majority of assemblies in an application change frequently, the new default behavior might cause a performance regression. You can restore the startup behavior of previous versions of the .NET Framework by adding the [\<shadowCopyVerifyByTimestamp> element](../configure-apps/file-schema/runtime/shadowcopyverifybytimestamp-element.md) to the configuration file, with `enabled="false"`.
+Výsledné zlepšení výkonu je největší pro aplikace, ve kterých se sestavení často nemění a změny se většinou vyskytují v malých podmnožině sestavení. Pokud se většina sestavení v aplikaci často mění, může nové výchozí chování způsobit regresi výkonu. Můžete obnovit chování při spuštění předchozích verzí .NET Framework přidáním [prvku\<shadowCopyVerifyByTimestamp >](../configure-apps/file-schema/runtime/shadowcopyverifybytimestamp-element.md) do konfiguračního souboru s `enabled="false"`.
 
 <a name="ObsoleteMethods"></a>
 
-## <a name="obsolete-methods"></a>Obsolete Methods
+## <a name="obsolete-methods"></a>Zastaralé metody
 
-The <xref:System.AppDomain> class has several methods, such as <xref:System.AppDomain.SetShadowCopyFiles%2A> and <xref:System.AppDomain.ClearShadowCopyPath%2A>, that can be used to control shadow copying on an application domain, but these have been marked obsolete in the .NET Framework version 2.0. The recommended way to configure an application domain for shadow copying is to use the properties of the <xref:System.AppDomainSetup> class.
+Třída <xref:System.AppDomain> obsahuje několik metod, například <xref:System.AppDomain.SetShadowCopyFiles%2A> a <xref:System.AppDomain.ClearShadowCopyPath%2A>, které lze použít k řízení stínového kopírování v doméně aplikace, ale ty jsou v .NET Framework verze 2,0 označeny jako zastaralé. Doporučeným způsobem konfigurace aplikační domény pro stínové kopírování je použití vlastností třídy <xref:System.AppDomainSetup>.
 
 ## <a name="see-also"></a>Viz také:
 
@@ -88,4 +88,4 @@ The <xref:System.AppDomain> class has several methods, such as <xref:System.AppD
 - <xref:System.AppDomainSetup.CachePath%2A?displayProperty=nameWithType>
 - <xref:System.AppDomainSetup.ApplicationName%2A?displayProperty=nameWithType>
 - <xref:System.AppDomainSetup.ShadowCopyDirectories%2A?displayProperty=nameWithType>
-- [\<shadowCopyVerifyByTimestamp> Element](../configure-apps/file-schema/runtime/shadowcopyverifybytimestamp-element.md)
+- [\<element > shadowCopyVerifyByTimestamp](../configure-apps/file-schema/runtime/shadowcopyverifybytimestamp-element.md)

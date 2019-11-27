@@ -13,56 +13,56 @@ ms.locfileid: "74348920"
 ---
 # <a name="classes-used-in-net-framework-file-io-and-the-file-system-visual-basic"></a>Třídy používané ve vstupně-výstupních operacích se soubory a v systému souborů v rozhraní .NET Framework (Visual Basic)
 
-The following tables list the classes commonly used for .NET Framework file I/O, categorized into file I/O classes, classes used for creating streams, and classes used to read and write to streams.  
+V následujících tabulkách jsou uvedeny třídy, které se běžně používají pro .NET Framework vstupně-výstupních operací v souborech, třídách používaných k vytváření datových proudů a tříd používaných ke čtení a zápisu do datových proudů.  
   
-For a more comprehensive listing, see [Class Library Overview](../../../../standard/class-library-overview.md).  
+Komplexnější seznam naleznete v tématu [Přehled knihovny tříd](../../../../standard/class-library-overview.md).  
   
-## <a name="basic-io-classes-for-files-drives-and-directories"></a>Basic I/O Classes for Files, Drives, and Directories  
+## <a name="basic-io-classes-for-files-drives-and-directories"></a>Základní třídy I/O pro soubory, jednotky a adresáře  
 
- The following table lists and describes the main classes used for file I/O.  
+ Následující tabulka uvádí a popisuje hlavní třídy používané pro vstupně-výstupní operace se soubory.  
   
 |Třída|Popis|  
 |-----------|-----------------|  
-|<xref:System.IO.Directory?displayProperty=nameWithType>|Provides static methods for creating, moving, and enumerating through directories and subdirectories.|  
-|<xref:System.IO.DirectoryInfo?displayProperty=nameWithType>|Provides instance methods for creating, moving, and enumerating through directories and subdirectories.|  
-|<xref:System.IO.DriveInfo?displayProperty=nameWithType>|Provides instance methods for creating, moving, and enumerating through drives.|  
-|<xref:System.IO.File?displayProperty=nameWithType>|Provides static methods for creating, copying, deleting, moving, and opening files, and aids in the creation of a `FileStream`.|  
-|<xref:System.IO.FileAccess?displayProperty=nameWithType>|Defines constants for read, write, or read/write access to a file.|  
-|<xref:System.IO.FileAttributes?displayProperty=nameWithType>|Provides attributes for files and directories such as `Archive`, `Hidden`, and `ReadOnly`.|  
-|<xref:System.IO.FileInfo?displayProperty=nameWithType>|Provides static methods for creating, copying, deleting, moving, and opening files, and aids in the creation of a `FileStream`.|  
-|<xref:System.IO.FileMode?displayProperty=nameWithType>|Controls how a file is opened. This parameter is specified in many of the constructors for `FileStream` and `IsolatedStorageFileStream`, and for the `Open` methods of <xref:System.IO.File> and <xref:System.IO.FileInfo>.|  
-|<xref:System.IO.FileShare?displayProperty=nameWithType>|Defines constants for controlling the type of access other file streams can have to the same file.|  
-|<xref:System.IO.Path?displayProperty=nameWithType>|Provides methods and properties for processing directory strings.|  
-|<xref:System.Security.Permissions.FileIOPermission?displayProperty=nameWithType>|Controls the access of files and folders by defining <xref:System.Security.Permissions.FileIOPermissionAttribute.Read%2A>, <xref:System.Security.Permissions.FileIOPermissionAttribute.Write%2A>, <xref:System.Security.Permissions.FileIOPermissionAttribute.Append%2A> and <xref:System.Security.Permissions.FileIOPermissionAttribute.PathDiscovery%2A> permissions.|  
+|<xref:System.IO.Directory?displayProperty=nameWithType>|Poskytuje statické metody pro vytváření, přesouvání a vytváření výčtu adresářů a podadresářů.|  
+|<xref:System.IO.DirectoryInfo?displayProperty=nameWithType>|Poskytuje metody instance pro vytváření, přesouvání a vytváření výčtu adresářů a podadresářů.|  
+|<xref:System.IO.DriveInfo?displayProperty=nameWithType>|Poskytuje metody instance pro vytváření, přesouvání a vytváření výčtu jednotek prostřednictvím jednotek.|  
+|<xref:System.IO.File?displayProperty=nameWithType>|Poskytuje statické metody pro vytváření, kopírování, odstraňování, přesouvání a otevírání souborů a pomůcky při vytváření `FileStream`.|  
+|<xref:System.IO.FileAccess?displayProperty=nameWithType>|Definuje konstanty pro přístup pro čtení, zápis nebo čtení a zápis do souboru.|  
+|<xref:System.IO.FileAttributes?displayProperty=nameWithType>|Poskytuje atributy pro soubory a adresáře, například `Archive`, `Hidden`a `ReadOnly`.|  
+|<xref:System.IO.FileInfo?displayProperty=nameWithType>|Poskytuje statické metody pro vytváření, kopírování, odstraňování, přesouvání a otevírání souborů a pomůcky při vytváření `FileStream`.|  
+|<xref:System.IO.FileMode?displayProperty=nameWithType>|Určuje, jak je soubor otevřen. Tento parametr je zadán v mnoha konstruktorech pro `FileStream` a `IsolatedStorageFileStream`a pro metody `Open` <xref:System.IO.File> a <xref:System.IO.FileInfo>.|  
+|<xref:System.IO.FileShare?displayProperty=nameWithType>|Definuje konstanty pro řízení typu přístupu k jiným datovým proudům souborů může být stejný soubor.|  
+|<xref:System.IO.Path?displayProperty=nameWithType>|Poskytuje metody a vlastnosti pro zpracování řetězců adresáře.|  
+|<xref:System.Security.Permissions.FileIOPermission?displayProperty=nameWithType>|Řídí přístup k souborům a složkám definováním <xref:System.Security.Permissions.FileIOPermissionAttribute.Read%2A>, <xref:System.Security.Permissions.FileIOPermissionAttribute.Write%2A>, <xref:System.Security.Permissions.FileIOPermissionAttribute.Append%2A> a <xref:System.Security.Permissions.FileIOPermissionAttribute.PathDiscovery%2A> oprávnění.|  
   
-## <a name="classes-used-to-create-streams"></a>Classes Used to Create Streams  
+## <a name="classes-used-to-create-streams"></a>Třídy používané k vytváření datových proudů  
 
- The following table lists and describes the main classes used to create streams.  
+ Následující tabulka uvádí a popisuje hlavní třídy používané k vytváření datových proudů.  
   
 |Třída|Popis|  
 |-----------|-----------------|  
-|<xref:System.IO.BufferedStream?displayProperty=nameWithType>|Adds a buffering layer to read and write operations on another stream.|  
-|<xref:System.IO.FileStream?displayProperty=nameWithType>|Supports random access to files through its <xref:System.IO.FileStream.Seek%2A> method. <xref:System.IO.FileStream> opens files synchronously by default but also supports asynchronous operation.|  
-|<xref:System.IO.MemoryStream?displayProperty=nameWithType>|Creates a stream whose backing store is memory, rather than a file.|  
-|<xref:System.Net.Sockets.NetworkStream?displayProperty=nameWithType>|Provides the underlying stream of data for network access.|  
-|<xref:System.Security.Cryptography.CryptoStream?displayProperty=nameWithType>|Defines a stream that links data streams to cryptographic transformations.|  
+|<xref:System.IO.BufferedStream?displayProperty=nameWithType>|Přidá vrstvu vyrovnávací paměti pro operace čtení a zápisu v jiném datovém proudu.|  
+|<xref:System.IO.FileStream?displayProperty=nameWithType>|Podporuje náhodný přístup k souborům prostřednictvím své <xref:System.IO.FileStream.Seek%2A> metody. ve výchozím nastavení <xref:System.IO.FileStream> otevře soubory synchronně, ale podporuje také asynchronní operace.|  
+|<xref:System.IO.MemoryStream?displayProperty=nameWithType>|Vytvoří datový proud, jehož záložní úložiště je paměť, nikoli soubor.|  
+|<xref:System.Net.Sockets.NetworkStream?displayProperty=nameWithType>|Poskytuje podkladový datový proud dat pro přístup k síti.|  
+|<xref:System.Security.Cryptography.CryptoStream?displayProperty=nameWithType>|Definuje datový proud, který propojuje datové proudy s kryptografickými transformacemi.|  
   
-## <a name="classes-used-to-read-from-and-write-to-streams"></a>Classes Used to Read from and Write to Streams  
+## <a name="classes-used-to-read-from-and-write-to-streams"></a>Třídy používané pro čtení a zápis do datových proudů  
 
- The following table shows the specific classes used for reading from and writing to files with streams.  
+ V následující tabulce jsou uvedeny konkrétní třídy používané pro čtení a zápis do souborů s datovými proudy.  
   
-|**Class**|**Popis**|  
+|**Deník**|**Popis**|  
 |---------------|---------------------|  
-|<xref:System.IO.BinaryReader?displayProperty=nameWithType>|Reads encoded strings and primitive data types from a <xref:System.IO.FileStream>.|  
-|<xref:System.IO.BinaryWriter?displayProperty=nameWithType>|Writes encoded strings and primitive data types to a <xref:System.IO.FileStream>.|  
-|<xref:System.IO.StreamReader?displayProperty=nameWithType>|Reads characters from a <xref:System.IO.FileStream>, using <xref:System.IO.StreamReader.CurrentEncoding%2A> to convert characters to and from bytes. <xref:System.IO.StreamReader> has a constructor that attempts to ascertain the correct <xref:System.IO.StreamReader.CurrentEncoding%2A> for a given stream, based on the presence of a <xref:System.IO.StreamReader.CurrentEncoding%2A>-specific preamble, such as a byte order mark.|  
-|<xref:System.IO.StreamWriter?displayProperty=nameWithType>|Writes characters to a `FileStream`, using <xref:System.IO.StreamWriter.Encoding%2A> to convert characters to bytes.|  
-|<xref:System.IO.StringReader?displayProperty=nameWithType>|Reads characters from a `String`. Output can be either a stream in any encoding or a `String`.|  
-|<xref:System.IO.StringWriter?displayProperty=nameWithType>|Writes characters to a `String`. Output can be either a stream in any encoding or a `String`.|  
+|<xref:System.IO.BinaryReader?displayProperty=nameWithType>|Čte kódované řetězce a primitivní datové typy z <xref:System.IO.FileStream>.|  
+|<xref:System.IO.BinaryWriter?displayProperty=nameWithType>|Zapisuje kódované řetězce a primitivní datové typy do <xref:System.IO.FileStream>.|  
+|<xref:System.IO.StreamReader?displayProperty=nameWithType>|Přečte znaky z <xref:System.IO.FileStream>pomocí <xref:System.IO.StreamReader.CurrentEncoding%2A> k převodu znaků do a z bajtů. <xref:System.IO.StreamReader> má konstruktor, který se pokouší zjistit správný <xref:System.IO.StreamReader.CurrentEncoding%2A> pro daný datový proud, na základě přítomnosti <xref:System.IO.StreamReader.CurrentEncoding%2A>ho konkrétního preambule, jako je například značka pořadí bajtů.|  
+|<xref:System.IO.StreamWriter?displayProperty=nameWithType>|Zapisuje znaky do `FileStream`pomocí <xref:System.IO.StreamWriter.Encoding%2A> k převodu znaků na bajty.|  
+|<xref:System.IO.StringReader?displayProperty=nameWithType>|Přečte znaky z `String`. Výstup může být buď datový proud v jakémkoli kódování, nebo `String`.|  
+|<xref:System.IO.StringWriter?displayProperty=nameWithType>|Zapisuje znaky do `String`. Výstup může být buď datový proud v jakémkoli kódování, nebo `String`.|  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Skládání streamů](../../../../standard/io/composing-streams.md)
-- [Vstup/výstup souborů a streamů](../../../../standard/io/index.md)
+- [Vstup/výstup souborů a datových proudů](../../../../standard/io/index.md)
 - [Asynchronní vstupně-výstupní operace se soubory](../../../../standard/io/asynchronous-file-i-o.md)
-- [Basics of .NET Framework File I/O and the File System (Visual Basic)](../../../../visual-basic/developing-apps/programming/drives-directories-files/basics-of-net-framework-file-io-and-the-file-system.md)
+- [Základy .NET Frameworkch vstupně-výstupních operací se soubory a systém souborů (Visual Basic)](../../../../visual-basic/developing-apps/programming/drives-directories-files/basics-of-net-framework-file-io-and-the-file-system.md)

@@ -1,6 +1,6 @@
 ---
 title: XML
-description: Learn how to use XML and LINQ to XML features in your Visual Basic code.
+description: Naučte se používat XML a LINQ to XML funkce v kódu Visual Basic.
 ms.date: 10/20/2017
 helpviewer_keywords:
 - LINQ to XML [Visual Basic]
@@ -14,18 +14,18 @@ ms.locfileid: "74330804"
 ---
 # <a name="xml-in-visual-basic"></a>XML v jazyce Visual Basic
 
-Visual Basic provides integrated language support that enables it to interact with [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
+Visual Basic poskytuje integrovanou jazykovou podporu, která umožňuje interakci s [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
 
- The topics in this section introduce using [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] with Visual Basic.  
+ Témata v této části popisují použití [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] s Visual Basic.  
   
 |Téma|Popis|  
 |-----------|-----------------|  
-|[Overview of LINQ to XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)|Describes how Visual Basic supports [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].|  
-|[Creating XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)|Describes how to create XML literal objects by using [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].|  
-|[Manipulating XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)|Describes how to load and parse XML by using Visual Basic.|  
-|[Accessing XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md)|Describes the XML axis properties and [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] methods for accessing XML elements and attributes.|  
+|[Přehled LINQ to XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)|Popisuje, jak Visual Basic podporuje [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].|  
+|[Vytváření XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)|Popisuje, jak vytvořit objekty literálů XML pomocí [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].|  
+|[Manipulace s XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)|Popisuje, jak načíst a analyzovat XML pomocí Visual Basic.|  
+|[Přístup k XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md)|Popisuje vlastnosti osy XML a metody [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] pro přístup k elementům a atributům XML.|  
   
 ## <a name="see-also"></a>Viz také:
 

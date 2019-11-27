@@ -14,13 +14,13 @@ ms.locfileid: "74348771"
 ---
 # <a name="how-to-find-subdirectories-with-a-specific-pattern-in-visual-basic"></a>Postupy: Hledání podadresářů pomocí specifického vzoru v jazyce Visual Basic
 
-The <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetDirectories%2A> method returns a read-only collection of strings representing the path names for the subdirectories in a directory. You can use the `wildCards` parameter to specify a specific pattern. If you would like to include the contents of subdirectories in the search, set the `searchType` parameter to `SearchOption.SearchAllSubDirectories`.
+Metoda <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetDirectories%2A> vrátí kolekci řetězců jen pro čtení, které představují názvy cest pro podadresáře v adresáři. K určení konkrétního vzoru můžete použít parametr `wildCards`. Chcete-li do hledání zahrnout obsah podadresářů, nastavte parametr `searchType` na hodnotu `SearchOption.SearchAllSubDirectories`.
 
-An empty collection is returned if no directories matching the specified pattern are found.
+Pokud se nenajde žádné adresáře vyhovující zadanému vzoru, vrátí se prázdná kolekce.
 
-## <a name="to-find-subdirectories-with-a-specific-pattern"></a>To find subdirectories with a specific pattern
+## <a name="to-find-subdirectories-with-a-specific-pattern"></a>Vyhledání podadresářů s určitým vzorem
 
-Use the `GetDirectories` method, supplying the name and path of the directory you want to search. The following example returns all the directories in the directory structure that contain the word "Logs" in their name, and adds them to `ListBox1`.
+Použijte metodu `GetDirectories`, zadejte název a cestu k adresáři, který chcete vyhledat. Následující příklad vrátí všechny adresáře ve struktuře adresáře, které obsahují slovo "logs" v názvu, a přidá je do `ListBox1`.
 
 [!code-vb[VbVbcnFileAccess#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnFileAccess/VB/Class1.vb#1)]
 
@@ -28,23 +28,23 @@ Use the `GetDirectories` method, supplying the name and path of the directory yo
 
 Následující podmínky mohou způsobit výjimku:
 
-- The path is not valid for one of the following reasons: it is a zero-length string, it contains only white space, it contains invalid characters, or it is a device path (starts with \\\\.\\) (<xref:System.ArgumentException>).
+- Cesta není platná z některého z následujících důvodů: Jedná se o řetězec o nulové délce, obsahuje pouze prázdné znaky, obsahuje neplatné znaky nebo se jedná o cestu k zařízení (začíná na \\\\.\\) (<xref:System.ArgumentException>).
 
-- The path is not valid because it is `Nothing` (<xref:System.ArgumentNullException>).
+- Cesta není platná, protože je `Nothing` (<xref:System.ArgumentNullException>).
 
-- One or more of the specified wildcard characters is `Nothing`, an empty string, or contains only spaces (<xref:System.ArgumentNullException>).
+- Jedna nebo více zadaných zástupných znaků je `Nothing`, prázdný řetězec nebo obsahuje pouze mezery (<xref:System.ArgumentNullException>).
 
-- `directory` does not exist (<xref:System.IO.DirectoryNotFoundException>).
+- `directory` neexistuje (<xref:System.IO.DirectoryNotFoundException>).
 
-- `directory` points to an existing file (<xref:System.IO.IOException>).
+- `directory` odkazuje na existující soubor (<xref:System.IO.IOException>).
 
-- The path exceeds the system-defined maximum length (<xref:System.IO.PathTooLongException>).
+- Cesta překračuje maximální povolenou délku systému (<xref:System.IO.PathTooLongException>).
 
-- A file or folder name in the path contains a colon (:) or is in an invalid format (<xref:System.NotSupportedException>).
+- Název souboru nebo složky v cestě obsahuje dvojtečku (:) nebo má neplatný formát (<xref:System.NotSupportedException>).
 
-- The user lacks necessary permissions to view the path (<xref:System.Security.SecurityException>).
+- Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).
 
-- The user lacks necessary permissions (<xref:System.UnauthorizedAccessException>).
+- Uživatel nemá potřebná oprávnění (<xref:System.UnauthorizedAccessException>).
 
 ## <a name="see-also"></a>Viz také:
 

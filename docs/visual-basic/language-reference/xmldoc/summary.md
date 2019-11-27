@@ -12,8 +12,8 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352204"
 ---
-# <a name="summary-visual-basic"></a>\<summary> (Visual Basic)
-Specifies the summary of the member.  
+# <a name="summary-visual-basic"></a>\<souhrn > (Visual Basic)
+Určuje souhrn člena.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,17 +23,17 @@ Specifies the summary of the member.
   
 ## <a name="parameters"></a>Parametry  
  `description`  
- A summary of the object.  
+ Souhrn objektu.  
   
 ## <a name="remarks"></a>Poznámky  
- Use the `<summary>` tag to describe a type or a type member. Use [\<remarks>](../../../visual-basic/language-reference/xmldoc/remarks.md) to add supplemental information to a type description.  
+ Použijte značku `<summary>` k popisu typu nebo člena typu. Pomocí [\<poznámky >](../../../visual-basic/language-reference/xmldoc/remarks.md) přidat doplňující informace k popisu typu.  
   
- The text for the `<summary>` tag is the only source of information about the type in IntelliSense, and is also displayed in the Object Browser. For information about the Object Browser, see [Viewing the Structure of Code](/visualstudio/ide/viewing-the-structure-of-code).  
+ Text značky `<summary>` je jediným zdrojem informací o typu v technologii IntelliSense a je také zobrazen v Prohlížeč objektů. Informace o Prohlížeč objektů naleznete v tématu [zobrazení struktury kódu](/visualstudio/ide/viewing-the-structure-of-code).  
   
- Compile with [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) to process documentation comments to a file.  
+ Zkompilujte s [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
   
 ## <a name="example"></a>Příklad  
- This example uses the `<summary>` tag to describe the `ResetCounter` method and `Counter` property.  
+ Tento příklad používá značku `<summary>` k popisu metody `ResetCounter` a `Counter` vlastnosti.  
   
  [!code-vb[VbVbcnXmlDocComments#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#1)]  
   

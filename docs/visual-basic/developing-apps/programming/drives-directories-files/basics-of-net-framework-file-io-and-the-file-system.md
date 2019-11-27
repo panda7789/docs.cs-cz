@@ -18,36 +18,36 @@ ms.locfileid: "74348933"
 ---
 # <a name="basics-of-net-framework-file-io-and-the-file-system-visual-basic"></a>Základy vstupně-výstupních operací se soubory a systému souborů v rozhraní .NET Framework (Visual Basic)
 
-Classes in the <xref:System.IO> namespace are used to work with drives, files, and directories.
+Třídy v oboru názvů <xref:System.IO> slouží k práci s jednotkami, soubory a adresáři.
 
-The <xref:System.IO> namespace contains the <xref:System.IO.File> and <xref:System.IO.Directory> classes, which provide the .NET Framework functionality that manipulates files and directories. Because the methods of these objects are static or shared members, you can use them directly without creating an instance of the class first. Associated with these classes are the <xref:System.IO.FileInfo> and <xref:System.IO.DirectoryInfo> classes, which will be familiar to users of the `My` feature. To use these classes, you must fully qualify the names or import the appropriate namespaces by including the `Imports` statement(s) at the beginning of the affected code. For more information, see [Imports Statement (.NET Namespace and Type)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).
+Obor názvů <xref:System.IO> obsahuje třídy <xref:System.IO.File> a <xref:System.IO.Directory>, které poskytují .NET Framework funkce, které pracují se soubory a adresáři. Vzhledem k tomu, že metody těchto objektů jsou statické nebo sdílené členy, můžete je použít přímo bez vytvoření instance třídy jako první. Přidružená k těmto třídám jsou třídy <xref:System.IO.FileInfo> a <xref:System.IO.DirectoryInfo>, které budou znát uživatele funkce `My`. Chcete-li použít tyto třídy, je nutné plně kvalifikovat názvy nebo importovat příslušné obory názvů zahrnutím `Imports`ch příkazů na začátek ovlivněného kódu. Další informace naleznete v tématu [příkaz Imports (obor názvů a typ rozhraní .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).
 
 > [!NOTE]
-> Other topics in this section use the `My.Computer.FileSystem` object instead of `System.IO` classes to work with drives, files, and directories. The `My.Computer.FileSystem` object is intended primarily for use in Visual Basic programs. `System.IO` classes are intended for use by any language that supports the .NET Framework, including Visual Basic.
+> Další témata v této části používají objekt `My.Computer.FileSystem` místo `System.IO` třídy pro práci s jednotkami, soubory a adresáři. Objekt `My.Computer.FileSystem` je určený hlavně pro použití v Visual Basicch programech. `System.IO` třídy jsou určeny pro použití v jakémkoli jazyce, který podporuje .NET Framework, včetně Visual Basic.
 
-## <a name="definition-of-a-stream"></a>Definition of a Stream
+## <a name="definition-of-a-stream"></a>Definice streamu
 
-The .NET Framework uses streams to support reading from and writing to files. You can think of a stream as a one-dimensional set of contiguous data, which has a beginning and an end, and where the cursor indicates the current position in the stream.
+.NET Framework používá datové proudy k podpoře čtení a zápisu do souborů. Datový proud si můžete představit jako jednorozměrná sadu souvislých dat, která má začátek a konec, a kde ukazatel indikuje aktuální pozici v datovém proudu.
 
-![Cursor shows current position in the filestream.](./media/basics-of-net-framework-file-io-and-the-file-system/filestream-cursor-position.gif)
+![Kurzor zobrazuje aktuální pozici v FileStream.](./media/basics-of-net-framework-file-io-and-the-file-system/filestream-cursor-position.gif)
 
-## <a name="stream-operations"></a>Stream Operations
+## <a name="stream-operations"></a>Operace streamování
 
-The data contained in the stream may come from memory, a file, or a TCP/IP socket. Streams have fundamental operations that can be applied to them:
+Data obsažená v datovém proudu můžou pocházet z paměti, souboru nebo zásuvky protokolu TCP/IP. Datové proudy mají základní operace, které mohou být pro ně aplikovány:
 
-- **Reading**. You can read from a stream, transferring data from the stream into a data structure, such as a string or an array of bytes.
+- Probíhá **čtení**. Můžete číst z datového proudu a přenášet data z datového proudu do datové struktury, jako je například řetězec nebo pole bajtů.
 
-- **Writing**. You can write to a stream, transferring data from a data source into the stream.
+- Probíhá **zápis**. Můžete zapisovat do datového proudu a přenést data ze zdroje dat do datového proudu.
 
-- **Seeking**. You can query and modify your position in the stream.
+- **Hledání**. V datovém proudu můžete zadat dotaz a změnu pozice.
 
-For more information, see [Composing Streams](../../../../standard/io/composing-streams.md).
+Další informace najdete v tématu [vytváření datových proudů](../../../../standard/io/composing-streams.md).
 
-## <a name="types-of-streams"></a>Types of Streams
+## <a name="types-of-streams"></a>Typy datových proudů
 
-In the .NET Framework, a stream is represented by the <xref:System.IO.Stream> class, which forms the abstract class for all other streams. You cannot directly create an instance of the <xref:System.IO.Stream> class, but must use one of the classes it implements.
+V .NET Framework je datový proud reprezentován třídou <xref:System.IO.Stream>, která tvoří abstraktní třídu pro všechny ostatní datové proudy. Nelze přímo vytvořit instanci třídy <xref:System.IO.Stream>, ale je nutné použít jednu z tříd, kterou implementuje.
 
-There are many types of streams, but for the purposes of working with file input/output (I/O), the most important types are the <xref:System.IO.FileStream> class, which provides a way to read from and write to files, and the <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> class, which provides a way to create files and directories in isolated storage. Other streams that can be used when working with file I/O include:
+Existuje mnoho typů datových proudů, ale pro účely práce s vstupně-výstupními soubory (I/O) jsou nejdůležitější typy <xref:System.IO.FileStream> třídy, která poskytuje způsob, jak číst a zapisovat do souborů a do <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream> třídy, která poskytuje způsob, jak vytvořit soubory a adresáře v izolovaném úložišti. K dalším datovým proudům, které se dají použít při práci se vstupně-výstupními soubory, patří:
 
 - <xref:System.IO.BufferedStream>
 
@@ -57,58 +57,58 @@ There are many types of streams, but for the purposes of working with file input
 
 - <xref:System.Net.Sockets.NetworkStream>.
 
-The following table lists tasks commonly accomplished with a stream:
+V následující tabulce jsou uvedeny úlohy, které se běžně doplňují s datovým proudem:
 
-|Chcete-li|Další informace naleznete v tématu|
+|Pro|Další informace naleznete v tématu|
 |---|---|
-|Read and write to a data file|[Postupy: Čtení a zápis do nově vytvořeného datového souboru](../../../../standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|
-|Read text from a file|[Postupy: Čtení textu ze souboru](../../../../standard/io/how-to-read-text-from-a-file.md)|
-|Write text to a file|[Postupy: Zápis textu do souboru](../../../../standard/io/how-to-write-text-to-a-file.md)|
-|Read characters from a string|[Postupy: Čtení znaků z řetězce](../../../../standard/io/how-to-read-characters-from-a-string.md)|
-|Write characters to a string|[Postupy: Zápis znaků do řetězce](../../../../standard/io/how-to-write-characters-to-a-string.md)|
-|Encrypt data|[Šifrování dat](../../../../standard/security/encrypting-data.md)|
-|Decrypt data|[Dešifrování dat](../../../../standard/security/decrypting-data.md)|
+|Čtení a zápis do datového souboru|[Postupy: Čtení a zápis do nově vytvořeného datového souboru](../../../../standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|
+|Přečíst text ze souboru|[Postupy: Čtení textu ze souboru](../../../../standard/io/how-to-read-text-from-a-file.md)|
+|Zápis textu do souboru|[Postupy: Zápis textu do souboru](../../../../standard/io/how-to-write-text-to-a-file.md)|
+|Čtení znaků z řetězce|[Postupy: Čtení znaků z řetězce](../../../../standard/io/how-to-read-characters-from-a-string.md)|
+|Zápis znaků do řetězce|[Postupy: Zápis znaků do řetězce](../../../../standard/io/how-to-write-characters-to-a-string.md)|
+|Šifrovat data|[Šifrování dat](../../../../standard/security/encrypting-data.md)|
+|Dešifrovat data|[Dešifrování dat](../../../../standard/security/decrypting-data.md)|
 
-## <a name="file-access-and-attributes"></a>File Access and Attributes
+## <a name="file-access-and-attributes"></a>Přístup k souborům a atributy
 
-You can control how files are created, opened, and shared with the <xref:System.IO.FileAccess>, <xref:System.IO.FileMode>, and <xref:System.IO.FileShare> enumerations, which contain the flags used by the constructors of the <xref:System.IO.FileStream> class. For example, when you open or create a new <xref:System.IO.FileStream>, the <xref:System.IO.FileMode> enumeration allows you to specify whether the file is opened for appending, whether a new file is created if the specified file does not exist, whether the file is overwritten, and so forth.
+Můžete ovládat způsob vytváření, otevírání a sdílení souborů s <xref:System.IO.FileAccess>, <xref:System.IO.FileMode>a <xref:System.IO.FileShare> výčty, které obsahují příznaky používané konstruktory třídy <xref:System.IO.FileStream>. Když například otevřete nebo vytvoříte novou <xref:System.IO.FileStream>, <xref:System.IO.FileMode> výčet vám umožní určit, jestli se má soubor otevřít pro připojení, jestli se vytvoří nový soubor, pokud zadaný soubor neexistuje, jestli je soubor přepsaný, a tak dále.
 
-The <xref:System.IO.FileAttributes> enumeration enables the gathering of file-specific information. The <xref:System.IO.FileAttributes> enumeration returns the file's stored attributes, such as whether it is compressed, encrypted, hidden, read-only, an archive, a directory, a system file, or a temporary file.
+Výčet <xref:System.IO.FileAttributes> umožňuje shromažďování informací specifických pro soubor. Výčet <xref:System.IO.FileAttributes> vrátí uložené atributy souboru, například zda je komprimovaný, zašifrovaný, skrytý, jen pro čtení, archiv, adresář, systémový soubor nebo dočasný soubor.
 
-The following table lists tasks involving file access and file attributes:
+V následující tabulce jsou uvedeny úkoly zahrnující přístup k souborům a atributy souborů:
 
-|Chcete-li|Další informace naleznete v tématu|
+|Pro|Další informace naleznete v tématu|
 |---|---|
-|Open and append text to a log file|[Postupy: Otevření a připojení k souboru protokolu](../../../../standard/io/how-to-open-and-append-to-a-log-file.md)|
-|Determine the attributes of a file|<xref:System.IO.FileAttributes>|
+|Otevření a přidání textu do souboru protokolu|[Postupy: Otevření a připojení k souboru protokolu](../../../../standard/io/how-to-open-and-append-to-a-log-file.md)|
+|Určení atributů souboru|<xref:System.IO.FileAttributes>|
 
-## <a name="file-permissions"></a>File Permissions
+## <a name="file-permissions"></a>Oprávnění souboru
 
-Controlling access to files and directories can be done with the <xref:System.Security.Permissions.FileIOPermission> class. This may be particularly important for developers working with Web Forms, which by default run within the context of a special local user account named ASPNET, which is created as part of the ASP.NET and .NET Framework installations. When such an application requests access to a resource, the ASPNET user account has limited permissions, which may prevent the user from performing actions such as writing to a file from a Web application. Další informace najdete v tématu <xref:System.Security.Permissions.FileIOPermission>.
+Řízení přístupu k souborům a adresářům lze provádět pomocí třídy <xref:System.Security.Permissions.FileIOPermission>. To může být zvláště důležité pro vývojáře, kteří pracují s webovými formuláři, které se ve výchozím nastavení spouštějí v rámci kontextu speciálního místního uživatelského účtu s názvem ASPNET, který je vytvořen jako součást instalace ASP.NET a .NET Framework. Pokud taková aplikace požaduje přístup k prostředku, má uživatelský účet ASPNET omezená oprávnění, což může zabránit uživateli v provádění akcí, jako je například zápis do souboru z webové aplikace. Další informace najdete v tématu <xref:System.Security.Permissions.FileIOPermission>.
 
-## <a name="isolated-file-storage"></a>Isolated File Storage
+## <a name="isolated-file-storage"></a>Izolované File Storage
 
-Isolated storage is an attempt to solve problems created when working with files where the user or code may lack necessary permissions. Isolated storage assigns each user a data compartment, which can hold one or more stores. Stores can be isolated from each other by user and by assembly. Only the user and assembly that created a store have access to it. A store acts as a complete virtual file system—within one store you can create and manipulate directories and files.
+Izolované úložiště je pokus vyřešit problémy vytvořené při práci se soubory, kde uživatel nebo kód nemusí mít potřebná oprávnění. Izolované úložiště přiřadí každému uživateli Datový oddíl, který může obsahovat jeden nebo více obchodů. Obchody mohou být od sebe vzájemně oddělené uživatelem a sestavením. K němu má přístup jenom uživatel a sestavení, které vytvořilo úložiště. Úložiště funguje jako úplný virtuální systém souborů – v rámci jednoho úložiště můžete vytvářet a manipulovat s adresáři a soubory.
 
-The following table lists tasks commonly associated with isolated file storage.
+V následující tabulce jsou uvedeny úlohy běžně přidružené k izolovanému úložišti souborů.
 
-|Chcete-li|Další informace naleznete v tématu|
+|Pro|Další informace naleznete v tématu|
 |---|---|
-|Create an isolated store|[Postupy: Získávání úložišť pro izolované úložiště](../../../../standard/io/how-to-obtain-stores-for-isolated-storage.md)|
-|Enumerate isolated stores|[Postupy: Vytvoření výčtu úložišť pro izolované úložiště](../../../../standard/io/how-to-enumerate-stores-for-isolated-storage.md)|
-|Delete an isolated store|[Postupy: Odstraňování úložišť v izolovaném úložišti](../../../../standard/io/how-to-delete-stores-in-isolated-storage.md)|
-|Create a file or directory in isolated storage|[Postupy: Vytváření souborů a adresářů v izolovaném úložišti](../../../../standard/io/how-to-create-files-and-directories-in-isolated-storage.md)|
-|Find a file in isolated storage|[Postupy: Hledání existujících souborů a adresářů v izolovaném úložišti](../../../../standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md)|
-|Read from or write to a file in isolated storage|[Postupy: Čtení a zápis do souborů v izolovaném úložišti](../../../../standard/io/how-to-read-and-write-to-files-in-isolated-storage.md)|
-|Delete a file or directory in isolated storage|[Postupy: Odstraňování souborů a adresářů v izolovaném úložišti](../../../../standard/io/how-to-delete-files-and-directories-in-isolated-storage.md)|
+|Vytvoření izolovaného úložiště|[Postupy: Získávání úložišť pro izolované úložiště](../../../../standard/io/how-to-obtain-stores-for-isolated-storage.md)|
+|Zobrazení výčtu izolovaných úložišť|[Postupy: Vytvoření výčtu úložišť pro izolované úložiště](../../../../standard/io/how-to-enumerate-stores-for-isolated-storage.md)|
+|Odstranění izolovaného úložiště|[Postupy: Odstraňování úložišť v izolovaném úložišti](../../../../standard/io/how-to-delete-stores-in-isolated-storage.md)|
+|Vytvoření souboru nebo adresáře v izolovaném úložišti|[Postupy: Vytváření souborů a adresářů v izolovaném úložišti](../../../../standard/io/how-to-create-files-and-directories-in-isolated-storage.md)|
+|Najít soubor v izolovaném úložišti|[Postupy: Hledání existujících souborů a adresářů v izolovaném úložišti](../../../../standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md)|
+|Čtení nebo zápis do souboru v izolovaném úložišti|[Postupy: Čtení a zápis do souborů v izolovaném úložišti](../../../../standard/io/how-to-read-and-write-to-files-in-isolated-storage.md)|
+|Odstranění souboru nebo adresáře v izolovaném úložišti|[Postupy: Odstraňování souborů a adresářů v izolovaném úložišti](../../../../standard/io/how-to-delete-files-and-directories-in-isolated-storage.md)|
 
-## <a name="file-events"></a>File Events
+## <a name="file-events"></a>Události souboru
 
-The <xref:System.IO.FileSystemWatcher> component allows you to watch for changes in files and directories on your system or on any computer to which you have network access. For example, if a file is modified, you might want to send a user an alert that the change has taken place. When changes occur, one or more events are raised, stored in a buffer, and handed to the <xref:System.IO.FileSystemWatcher> component for processing.
+Komponenta <xref:System.IO.FileSystemWatcher> umožňuje sledovat změny v souborech a adresářích ve vašem systému nebo na jakémkoli počítači, ke kterému máte přístup k síti. Například pokud je soubor upravený, může být vhodné odeslat uživateli výstrahu, že tato změna proběhla. Když dojde ke změnám, vyvolají se jedna nebo více událostí, uloží se do vyrovnávací paměti a předají se do komponenty <xref:System.IO.FileSystemWatcher> pro zpracování.
 
 ## <a name="see-also"></a>Viz také:
 
 - [Skládání streamů](../../../../standard/io/composing-streams.md)
-- [Vstup/výstup souborů a streamů](../../../../standard/io/index.md)
+- [Vstup/výstup souborů a datových proudů](../../../../standard/io/index.md)
 - [Asynchronní vstupně-výstupní operace se soubory](../../../../standard/io/asynchronous-file-i-o.md)
-- [Classes Used in .NET Framework File I/O and the File System (Visual Basic)](../../../../visual-basic/developing-apps/programming/drives-directories-files/classes-used-in-net-framework-file-io-and-the-file-system.md)
+- [Třídy používané v .NET Framework vstupně-výstupních souborech a systému souborů (Visual Basic)](../../../../visual-basic/developing-apps/programming/drives-directories-files/classes-used-in-net-framework-file-io-and-the-file-system.md)

@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74428324"
 ---
 # <a name="cor_prf_function-structure"></a>COR_PRF_FUNCTION – struktura
-Provides a unique representation of a function by combining its ID with the ID of its recompiled version.  
+Poskytuje jedinečné reprezentace funkce kombinací jejího ID s ID své znovu zkompilované verze.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,19 +34,19 @@ typedef struct _COR_PRF_FUNCTION {    FunctionID functionId;    ReJITID    reJit
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`functionId`|The ID of the function.|  
-|`reJitId`|The ID of the recompiled function. A value of 0 (zero) represents the original version of the function.|  
+|`functionId`|ID funkce|  
+|`reJitId`|ID Rekompilované funkce Hodnota 0 (nula) představuje původní verzi funkce.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl  
+ **Hlavička:** CorProf. idl  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

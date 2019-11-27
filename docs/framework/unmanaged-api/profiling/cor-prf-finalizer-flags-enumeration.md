@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74428344"
 ---
 # <a name="cor_prf_finalizer_flags-enumeration"></a>COR_PRF_FINALIZER_FLAGS – výčet
-Describes the finalizer for an object.  
+Popisuje finalizační metodu objektu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,23 +32,23 @@ typedef enum {
 } COR_PRF_FINALIZER_FLAGS;  
 ```  
   
-## <a name="members"></a>Členové  
+## <a name="members"></a>Members  
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`COR_PRF_FINALIZER_CRITICAL`|The finalizer is critical.|  
+|`COR_PRF_FINALIZER_CRITICAL`|Finalizační metoda je kritická.|  
   
 ## <a name="remarks"></a>Poznámky  
- The `COR_PRF_FINALIZER_FLAGS` enumeration is used by the [ICorProfilerCallback2::FinalizeableObjectQueued](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-finalizeableobjectqueued-method.md) method to describe the finalizer for an object.  
+ Výčet `COR_PRF_FINALIZER_FLAGS` používá metoda [ICorProfilerCallback2:: FinalizeableObjectQueued –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-finalizeableobjectqueued-method.md) k popisu finalizační metody objektu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

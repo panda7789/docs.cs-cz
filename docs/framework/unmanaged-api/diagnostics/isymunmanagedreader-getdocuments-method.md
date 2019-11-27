@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448338"
 ---
 # <a name="isymunmanagedreadergetdocuments-method"></a>ISymUnmanagedReader::GetDocuments – metoda
-Returns an array of all the documents defined in the symbol store.  
+Vrátí pole všech dokumentů definovaných v úložišti symbolů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,19 +37,19 @@ HRESULT GetDocuments (
   
 ## <a name="parameters"></a>Parametry  
  `cDocs`  
- [in] The size of the `pDocs` array.  
+ pro Velikost pole `pDocs`.  
   
  `pcDocs`  
- [out] A pointer to a variable that receives the array length.  
+ mimo Ukazatel na proměnnou, která přijímá délku pole.  
   
  `pDocs`  
- [out] A pointer to a variable that receives the document array.  
+ mimo Ukazatel na proměnnou, která přijímá pole dokumentu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

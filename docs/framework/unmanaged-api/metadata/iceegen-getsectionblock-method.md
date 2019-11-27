@@ -23,9 +23,9 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74434876"
 ---
 # <a name="iceegengetsectionblock-method"></a>ICeeGen::GetSectionBlock – metoda
-Gets a section block of the code base.  
+Získá blok oddílu základu kódu.  
   
- This method is obsolete and should not be used.  
+ Tato metoda je zastaralá a neměla by se používat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,28 +40,28 @@ HRESULT GetSectionBlock (
   
 ## <a name="parameters"></a>Parametry  
  `section`  
- [in] The section from which to retrieve a block of the code base.  
+ pro Oddíl, ze kterého má být načten blok základního kódu.  
   
  `len`  
- [in] The length of the block to be retrieved.  
+ pro Délka bloku, který má být načten.  
   
  `align`  
- [in] The byte, relative to the beginning of the section, with which to align the first byte of the block. This is the position of the block within the section.  
+ pro Bajt relativní ke začátku oddílu, s nímž má být zarovnaný první bajt bloku. Toto je pozice bloku v rámci oddílu.  
   
  `ppBytes`  
- [out] A pointer to a location that receives the address of the retrieved block.  
+ mimo Ukazatel na umístění, které přijímá adresu načteného bloku.  
   
 ## <a name="remarks"></a>Poznámky  
- Call `GetSectionBlock` only if you have special section requirements that are not handled by other methods.  
+ Vyvolejte `GetSectionBlock` pouze v případě, že máte zvláštní požadavky na oddíly, které nejsou zpracovány jinými metodami.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

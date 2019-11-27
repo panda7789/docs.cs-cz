@@ -27,7 +27,7 @@ Tyto pokyny vám pomůžou nainstalovat .NET Frameworké verze, které potřebuj
 
 [.NET Framework 4,8](https://github.com/Microsoft/dotnet/tree/master/releases/net48) lze použít ke spouštění aplikací vytvořených pro .NET Framework 4,0 nebo novější.
 
-## <a name="net-framework-35"></a>.NET Framework 3.5
+## <a name="net-framework-35"></a>.NET Framework 3.5
 
 Postupujte podle pokynů a nainstalujte [.NET Framework 3,5 na Windows 8.1 a 10](dotnet-35-windows-10.md).
 

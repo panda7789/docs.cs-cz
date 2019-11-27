@@ -12,19 +12,19 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74347200"
 ---
 # <a name="mycomputerkeyboard-object"></a>My.Computer.Keyboard – objekt
-Provides properties for accessing the current state of the keyboard, such as what keys are currently pressed, and provides a method to send keystrokes to the active window.  
+Poskytuje vlastnosti pro přístup k aktuálnímu stavu klávesnice, jako jsou aktuálně stisknuté klávesy, a poskytuje metodu pro posílání kláves do aktivního okna.  
   
 ## <a name="remarks"></a>Poznámky  
- For information about the methods and properties of the `My.Computer.Keyword` object, see <xref:Microsoft.VisualBasic.Devices.Keyboard>.  
+ Informace o metodách a vlastnostech objektu `My.Computer.Keyword` naleznete v tématu <xref:Microsoft.VisualBasic.Devices.Keyboard>.  
   
- For more information, see [Accessing the Keyboard](../../../visual-basic/developing-apps/programming/computer-resources/accessing-the-keyboard.md).  
+ Další informace najdete v tématu [přístup k klávesnici](../../../visual-basic/developing-apps/programming/computer-resources/accessing-the-keyboard.md).  
   
 ## <a name="requirements"></a>Požadavky  
- **Namespace:** <xref:Microsoft.VisualBasic.Devices>  
+ **Obor názvů:** <xref:Microsoft.VisualBasic.Devices>  
   
- **Class:** <xref:Microsoft.VisualBasic.Devices.Keyboard>  
+ **Třída:** <xref:Microsoft.VisualBasic.Devices.Keyboard>  
   
- **Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)  
+ **Sestavení:** Knihovna Visual Basic runtime (v souboru Microsoft. VisualBasic. dll)  
   
 ## <a name="see-also"></a>Viz také:
 

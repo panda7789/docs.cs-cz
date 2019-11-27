@@ -1,5 +1,5 @@
 ---
-title: Disk full
+title: Plný disk
 ms.date: 07/20/2015
 f1_keywords:
 - vbrID61
@@ -11,12 +11,12 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351114"
 ---
-# <a name="disk-full-visual-basic"></a>Disk full (Visual Basic)
-There is not enough room on the disk to either complete a `Print`, `Write`, or `FileClose` operation, or to create required files.  
+# <a name="disk-full-visual-basic"></a>Plný disk (Visual Basic)
+Na disku není dostatek místa pro dokončení `Print`, `Write`nebo `FileClose` operace nebo vytvoření požadovaných souborů.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Create more room on the disk by either moving some files to another disk or deleting some files.  
+- Pomocí přesunutí některých souborů na jiný disk nebo odstraněním některých souborů vytvořte na disku více místa.  
   
 ## <a name="see-also"></a>Viz také:
 

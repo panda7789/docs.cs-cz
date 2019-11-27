@@ -1,6 +1,6 @@
 ---
-title: Deploy .NET Core apps with Visual Studio
-description: Learn to deploy a .NET Core app with Visual Studio.
+title: Nasazení aplikací .NET Core pomocí sady Visual Studio
+description: Naučte se nasadit aplikaci .NET Core pomocí sady Visual Studio.
 ms.date: 09/03/2018
 dev_langs:
 - csharp
@@ -13,116 +13,116 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74428893"
 ---
-# <a name="deploy-net-core-apps-with-visual-studio"></a>Deploy .NET Core apps with Visual Studio
+# <a name="deploy-net-core-apps-with-visual-studio"></a>Nasazení aplikací .NET Core pomocí sady Visual Studio
 
-You can deploy a .NET Core application either as a *framework-dependent deployment*, which includes your application binaries but depends on the presence of .NET Core on the target system, or as a *self-contained deployment*, which includes both your application and .NET Core binaries. For an overview of .NET Core application deployment, see [.NET Core Application Deployment](index.md).
+Můžete nasadit aplikaci .NET Core buď jako *nasazení závislé na rozhraní*, které zahrnuje binární soubory aplikace, ale závisí na přítomnosti .NET Core v cílovém systému nebo jako *samostatné nasazení*, které zahrnuje jak vaše aplikace, tak binární soubory .NET Core. Přehled nasazení aplikace .NET Core najdete v tématu [nasazení aplikace .NET Core](index.md).
 
-The following sections show how to use Microsoft Visual Studio to create the following kinds of deployments:
+Následující části ukazují, jak pomocí Microsoft Visual Studio vytvořit následující typy nasazení:
 
-- Framework-dependent deployment
-- Framework-dependent deployment with third-party dependencies
-- Self-contained deployment
-- Self-contained deployment with third-party dependencies
+- Nasazení závisí na architektuře
+- Nasazení závislé na rozhraní se závislostmi třetích stran
+- Samostatná nasazení
+- Samostatné nasazení s závislostmi třetích stran
 
-For information on using Visual Studio to develop .NET Core applications, see [.NET Core dependencies and requirements](../install/dependencies.md?tabs=netcore30&pivots=os-windows).
+Informace o použití sady Visual Studio pro vývoj aplikací .NET Core najdete v tématu [závislosti a požadavky .NET Core](../install/dependencies.md?tabs=netcore30&pivots=os-windows).
 
-## <a name="framework-dependent-deployment"></a>Framework-dependent deployment
+## <a name="framework-dependent-deployment"></a>Nasazení závisí na architektuře
 
-Deploying a framework-dependent deployment with no third-party dependencies simply involves building, testing, and publishing the app. A simple example written in C# illustrates the process.  
+Nasazení závislé na rozhraní bez závislostí třetí strany zahrnuje sestavování, testování a publikování aplikace. Jednoduchý příklad napsaný v C# tomto příkladu znázorňuje proces.  
 
-1. Create the project.
+1. Vytvořte projekt.
 
-   Select **File** > **New** > **Project**. In the **New Project** dialog, expand your language's (C# or Visual Basic) project categories in the **Installed** project types pane, choose **.NET Core**, and then select the **Console App (.NET Core)** template in the center pane. Enter a project name, such as "FDD", in the **Name** text box. Select the **OK** button.
+   Vyberte **soubor** > **Nový** > **projekt**. V dialogovém okně **Nový projekt** rozbalte v podokně **nainstalované** typy projektůC# kategorii projektu (nebo Visual Basic) vašeho jazyka, zvolte možnost **.NET Core**a potom v prostředním podokně vyberte šablonu **Konzolová aplikace (.NET Core)** . Do textového pole **název** zadejte název projektu, například "FDD". Klikněte na tlačítko **OK** .
 
-1. Add the application's source code.
+1. Přidejte zdrojový kód aplikace.
 
-   Open the *Program.cs* or *Program.vb* file in the editor and replace the auto-generated code with the following code. It prompts the user to enter text and displays the individual words entered by the user. It uses the regular expression `\w+` to separate the words in the input text.
-
-   [!code-csharp[deployment#1](~/samples/snippets/core/deploying/cs/deployment-example.cs)]
-   [!code-vb[deployment#1](~/samples/snippets/core/deploying/vb/deployment-example.vb)]
-
-1. Create a Debug build of your app.
-
-   Select **Build** > **Build Solution**. You can also compile and run the Debug build of your application by selecting **Debug** > **Start Debugging**.
-
-1. Deploy your app.
-
-   After you've debugged and tested the program, create the files to be deployed with your app. To publish from Visual Studio, do the following:
-
-      1. Change the solution configuration from **Debug** to **Release** on the toolbar to build a Release (rather than a Debug) version of your app.
-
-      1. Right-click on the project (not the solution) in **Solution Explorer** and select **Publish**.
-
-      1. In the **Publish** tab, select **Publish**. Visual Studio writes the files that comprise your application to the local file system.
-
-      1. The **Publish** tab now shows a single profile, **FolderProfile**. The profile's configuration settings are shown in the **Summary** section of the tab.
-
-   The resulting files are placed in a directory named `Publish` on Windows and `publish` on Unix systems that is in a subdirectory of your project's *.\bin\release\netcoreapp2.1* subdirectory.
-
-Along with your application's files, the publishing process emits a program database (.pdb) file that contains debugging information about your app. The file is useful primarily for debugging exceptions. You can choose not to package it with your application's files. You should, however, save it in the event that you want to debug the Release build of your app.
-
-Deploy the complete set of application files in any way you like. For example, you can package them in a Zip file, use a simple `copy` command, or deploy them with any installation package of your choice. Once installed, users can then execute your application by using the `dotnet` command and providing the application filename, such as `dotnet fdd.dll`.
-
-In addition to the application binaries, your installer should also either bundle the shared framework installer or check for it as a prerequisite as part of the application installation.  Installation of the shared framework requires Administrator/root access since it is machine-wide.
-
-## <a name="framework-dependent-deployment-with-third-party-dependencies"></a>Framework-dependent deployment with third-party dependencies
-
-Deploying a framework-dependent deployment with one or more third-party dependencies requires that any dependencies be available to your project. The following additional steps are required before you can build your app:
-
-1. Use the **NuGet Package Manager** to add a reference to a NuGet package to your project; and if the package is not already available on your system, install it. To open the package manager, select **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution**.
-
-1. Confirm that your third-party dependencies (for example, `Newtonsoft.Json`) are installed on your system and, if they aren't, install them. The **Installed** tab lists NuGet packages installed on your system. If `Newtonsoft.Json` is not listed there, select the **Browse** tab and enter "Newtonsoft.Json" in the search box. Select `Newtonsoft.Json` and, in the right pane, select your project before selecting **Install**.
-
-1. If `Newtonsoft.Json` is already installed on your system, add it to your project by selecting your project in the right pane of the **Manage Packages for Solution** tab.
-
-Note that a framework-dependent deployment with third-party dependencies is only as portable as its third-party dependencies. For example, if a third-party library only supports macOS, the app isn't portable to Windows systems. This happens if the third-party dependency itself depends on native code. A good example of this is [Kestrel server](https://docs.microsoft.com/aspnet/core/fundamentals/servers/kestrel), which requires a native dependency on [libuv](https://github.com/libuv/libuv). When an FDD is created for an application with this kind of third-party dependency, the published output contains a folder for each [Runtime Identifier (RID)](../rid-catalog.md) that the native dependency supports (and that exists in its NuGet package).
-
-## <a name="simpleSelf"></a> Self-contained deployment without third-party dependencies
-
-Deploying a self-contained deployment with no third-party dependencies involves creating the project, modifying the *csproj* file, building, testing, and publishing the app. A simple example written in C# illustrates the process. You begin by creating, coding, and testing your project just as you would a framework-dependent deployment:
-
-1. Create the project.
-
-   Select **File** > **New** > **Project**. In the **New Project** dialog, expand your language's (C# or Visual Basic) project categories in the **Installed** project types pane, choose **.NET Core**, and then select the **Console App (.NET Core)** template in the center pane. Enter a project name, such as "SCD", in the **Name** text box, and select the **OK** button.
-
-1. Add the application's source code.
-
-   Open the *Program.cs* or *Program.vb* file in your editor, and replace the auto-generated code with the following code. It prompts the user to enter text and displays the individual words entered by the user. It uses the regular expression `\w+` to separate the words in the input text.
+   V editoru otevřete soubor *program.cs* nebo *program. vb* a nahraďte automaticky generovaný kód následujícím kódem. Vyzve uživatele, aby zadal text a zobrazil jednotlivá slova zadaná uživatelem. Používá regulární výraz `\w+` k oddělení slov ve vstupním textu.
 
    [!code-csharp[deployment#1](~/samples/snippets/core/deploying/cs/deployment-example.cs)]
    [!code-vb[deployment#1](~/samples/snippets/core/deploying/vb/deployment-example.vb)]
 
-1. Determine whether you want to use globalization invariant mode.
+1. Vytvořte ladicí sestavení vaší aplikace.
 
-   Particularly if your app targets Linux, you can reduce the total size of your deployment by taking advantage of [globalization invariant mode](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/globalization-invariant-mode.md). Globalization invariant mode is useful for applications that are not globally aware and that can use the formatting conventions, casing conventions, and string comparison and sort order of the [invariant culture](xref:System.Globalization.CultureInfo.InvariantCulture).
+   Vyberte **sestavení** **řešení**Build > . Můžete také zkompilovat a **Spustit ladicí sestavení** vaší aplikace, a to tak, že vyberete ladění > **Spustit ladění**.
 
-   To enable invariant mode, right-click on your project (not the solution) in **Solution Explorer**, and select **Edit SCD.csproj** or **Edit SCD.vbproj**. Then add the following highlighted lines to the file:
+1. Nasaďte aplikaci.
+
+   Po ladění a otestování programu vytvořte soubory, které mají být nasazeny s vaší aplikací. Chcete-li publikovat ze sady Visual Studio, postupujte následovně:
+
+      1. Změňte konfiguraci řešení z **Debug** na **release** na panelu nástrojů a sestavte verzi (nikoli ladění) vaší aplikace.
+
+      1. V **Průzkumník řešení** klikněte pravým tlačítkem na projekt (ne řešení) a vyberte **publikovat**.
+
+      1. Na kartě **publikovat** vyberte **publikovat**. Visual Studio zapisuje soubory, které tvoří vaši aplikaci, do místního systému souborů.
+
+      1. Na kartě **publikovat** se teď zobrazí jeden profil, **FolderProfile**. Nastavení konfigurace profilu se zobrazí v části **Souhrn** na kartě.
+
+   Výsledné soubory jsou umístěny v adresáři s názvem `Publish` v systému Windows a `publish` v systémech UNIX, které jsou v podadresáři podadresáře projektu *.\bin\release\netcoreapp2.1* .
+
+Spolu se soubory vaší aplikace proces publikování generuje soubor databáze programu (PDB), který obsahuje informace o ladění vaší aplikace. Soubor je vhodný hlavně pro ladění výjimek. Můžete se rozhodnout, že ho nechcete zabalit do souborů vaší aplikace. Měli byste ji však uložit v případě, že chcete ladit sestavení pro vydání aplikace.
+
+Nasaďte kompletní sadu souborů aplikace jakýmkoli způsobem. Můžete je například zabalit do souboru zip, použít jednoduchý příkaz `copy`, nebo je nasadit s libovolným instalačním balíčkem podle vašeho výběru. Po instalaci pak uživatelé můžou aplikaci spustit pomocí příkazu `dotnet` a zadáním názvu souboru aplikace, jako je například `dotnet fdd.dll`.
+
+Kromě binárních souborů aplikace by měl instalační program také buď seskupit rozhraní Shared Framework Installer, nebo ověřit, že je součástí instalace aplikace.  Instalace sdíleného rozhraní vyžaduje přístup správce nebo root, protože se jedná o počítač v rámci počítače.
+
+## <a name="framework-dependent-deployment-with-third-party-dependencies"></a>Nasazení závislé na rozhraní se závislostmi třetích stran
+
+Nasazení rozhraní závislého na rozhraní s jednou nebo více závislostmi třetí strany vyžaduje, aby byly všechny závislosti k dispozici pro váš projekt. Předtím, než budete moci sestavit aplikaci, jsou vyžadovány tyto další kroky:
+
+1. Pomocí **Správce balíčků NuGet** přidejte do svého projektu odkaz na balíček NuGet; a pokud balíček ještě není ve vašem systému k dispozici, nainstalujte ho. Správce balíčků otevřete tak, že vyberete **nástroje** > **správce balíčků NuGet** > **Spravovat balíčky NuGet pro řešení**.
+
+1. Ověřte, zda jsou v systému nainstalovány závislosti jiných výrobců (například `Newtonsoft.Json`), a pokud nejsou, nainstalujte je. Karta **Installed (instalovat** ) obsahuje seznam balíčků NuGet nainstalovaných ve vašem systému. Pokud zde `Newtonsoft.Json` není uveden, vyberte kartu **Procházet** a do vyhledávacího pole zadejte "Newtonsoft. JSON". Vyberte `Newtonsoft.Json` a v pravém podokně vyberte svůj projekt před výběrem možnosti **nainstalovat**.
+
+1. Pokud je v systému už `Newtonsoft.Json` nainstalovaná, přidejte ho do svého projektu tak, že ho vyberete v pravém podokně na kartě **Spravovat balíčky pro řešení** .
+
+Všimněte si, že nasazení závislé na rozhraní se závislostmi třetích stran je pouze přenosné jako své závislosti třetích stran. Pokud například knihovna třetí strany podporuje jenom macOS, aplikace není přenosná na systémy Windows. K tomu dojde v případě, že závislost třetí strany závisí na nativním kódu. Dobrým příkladem je [Kestrel Server](https://docs.microsoft.com/aspnet/core/fundamentals/servers/kestrel), který vyžaduje nativní závislost na [libuv](https://github.com/libuv/libuv). Pokud je vytvořen FDD pro aplikaci s tímto druhem závislosti třetí strany, publikovaný výstup obsahuje složku pro každý [identifikátor modulu runtime (RID)](../rid-catalog.md) , který nativní závislost podporuje (a který existuje v jeho balíčku NuGet).
+
+## <a name="simpleSelf"></a>Samostatné nasazení bez závislostí třetích stran
+
+Nasazení samostatného nasazení bez závislostí třetích stran zahrnuje vytvoření projektu, úpravu souboru *csproj* , sestavování, testování a publikování aplikace. Jednoduchý příklad napsaný v C# tomto příkladu znázorňuje proces. Začněte tím, že vytvoříte, zakódujete a otestujete projekt stejně jako nasazení závislé na rozhraní:
+
+1. Vytvořte projekt.
+
+   Vyberte **soubor** > **Nový** > **projekt**. V dialogovém okně **Nový projekt** rozbalte v podokně **nainstalované** typy projektůC# kategorii projektu (nebo Visual Basic) vašeho jazyka, zvolte možnost **.NET Core**a potom v prostředním podokně vyberte šablonu **Konzolová aplikace (.NET Core)** . Do textového pole **název** zadejte název projektu, například "SCD", a klikněte na tlačítko **OK** .
+
+1. Přidejte zdrojový kód aplikace.
+
+   V editoru otevřete soubor *program.cs* nebo *program. vb* a nahraďte automaticky generovaný kód následujícím kódem. Vyzve uživatele, aby zadal text a zobrazil jednotlivá slova zadaná uživatelem. Používá regulární výraz `\w+` k oddělení slov ve vstupním textu.
+
+   [!code-csharp[deployment#1](~/samples/snippets/core/deploying/cs/deployment-example.cs)]
+   [!code-vb[deployment#1](~/samples/snippets/core/deploying/vb/deployment-example.vb)]
+
+1. Určete, zda chcete použít invariantní režim globalizace.
+
+   Zejména v případě, že je vaše aplikace cílena na Linux, můžete snížit celkovou velikost svého nasazení využitím [režimu invariantování globalizace](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/globalization-invariant-mode.md). Režim invariantní globalizace je vhodný pro aplikace, které nejsou globálně závislé a které mohou použít konvence formátování, konvence velikosti písmen a pořadí řazení [invariantní jazykové verze](xref:System.Globalization.CultureInfo.InvariantCulture).
+
+   Chcete-li povolit režim invariant, klikněte pravým tlačítkem myši na projekt (ne řešení) v **Průzkumník řešení**a vyberte **Upravit SCD. csproj** nebo **upravte SCD. vbproj**. Pak přidejte do souboru následující zvýrazněné řádky:
 
    [!code-xml[globalization-invariant-mode](~/samples/snippets/core/deploying/xml/invariant.csproj?highlight=6-8)]
 
-1. Create a Debug build of your application.
+1. Vytvořte sestavení pro ladění aplikace.
 
-   Select **Build** > **Build Solution**. You can also compile and run the Debug build of your application by selecting **Debug** > **Start Debugging**. This debugging step lets you identify problems with your application when it's running on your host platform. You still will have to test it on each of your target platforms.
+   Vyberte **sestavení** **řešení**Build > . Můžete také zkompilovat a **Spustit ladicí sestavení** vaší aplikace, a to tak, že vyberete ladění > **Spustit ladění**. Tento krok ladění vám umožní identifikovat problémy s vaší aplikací, když běží na hostitelské platformě. Pořád ho budete muset otestovat na každé cílové platformě.
 
-   If you've enabled globalization invariant mode, be particularly sure to test whether the absence of culture-sensitive data is suitable for your application.
+   Pokud jste povolili režim invariantní globalizace, měli byste se zejména ujistit, zda neexistují data citlivá na jazykovou verzi vhodná pro vaši aplikaci.
 
-Once you've finished debugging, you can publish your self-contained deployment:
+Po dokončení ladění můžete publikovat samostatně zahrnuté nasazení:
 
 <!-- markdownlint-disable MD025 -->
 
-# <a name="visual-studio-156-and-earliertabvs156"></a>[Visual Studio 15.6 and earlier](#tab/vs156)
+# <a name="visual-studio-156-and-earliertabvs156"></a>[Visual Studio 15,6 a starší](#tab/vs156)
 
-After you've debugged and tested the program, create the files to be deployed with your app for each platform that it targets.
+Po ladění a otestování programu vytvořte soubory, které mají být nasazeny s vaší aplikací pro každou platformu, na kterou cílíte.
 
-To publish your app from Visual Studio, do the following:
+Pokud chcete svou aplikaci publikovat ze sady Visual Studio, udělejte toto:
 
-1. Define the platforms that your app will target.
+1. Definujte platformy, na které bude vaše aplikace cílit.
 
-   1. Right-click on your project (not the solution) in **Solution Explorer** and select **Edit SCD.csproj**.
+   1. V **Průzkumník řešení** klikněte pravým tlačítkem na projekt (ne řešení) a vyberte **Upravit SCD. csproj**.
 
-   1. Create a `<RuntimeIdentifiers>` tag in the `<PropertyGroup>` section of your *csproj* file that defines the platforms your app targets, and specify the runtime identifier (RID) of each platform that you target. Note that you also need to add a semicolon to separate the RIDs. See [Runtime IDentifier catalog](../rid-catalog.md) for a list of runtime identifiers.
+   1. Vytvořte značku `<RuntimeIdentifiers>` v oddílu `<PropertyGroup>` souboru *csproj* , který definuje platformy, na které vaše aplikace cílí, a určete identifikátor modulu runtime (RID) pro každou cílovou platformu. Všimněte si, že je také nutné přidat středník pro oddělení identifikátorů RID. Seznam identifikátorů modulu runtime najdete v tématu [katalog identifikátorů modulu runtime](../rid-catalog.md) .
 
-   For example, the following example indicates that the app runs on 64-bit Windows 10 operating systems and the 64-bit OS X Version 10.11 operating system.
+   Například následující příklad označuje, že aplikace běží na 64 operačních systémech Windows 10 a 64 operačním systému OS X verze 10,11.
 
    ```xml
    <PropertyGroup>
@@ -130,41 +130,41 @@ To publish your app from Visual Studio, do the following:
    </PropertyGroup>
    ```
 
-   Note that the `<RuntimeIdentifiers>` element can go into any `<PropertyGroup>` that you have in your *csproj* file. A complete sample *csproj* file appears later in this section.
+   Všimněte si, že `<RuntimeIdentifiers>` element může přejít do jakékoli `<PropertyGroup>`, kterou máte v souboru *csproj* . V této části se zobrazí kompletní vzorový soubor *csproj* .
 
-1. Publish your app.
+1. Publikujte svoji aplikaci.
 
-   After you've debugged and tested the program, create the files to be deployed with your app for each platform that it targets.
+   Po ladění a otestování programu vytvořte soubory, které mají být nasazeny s vaší aplikací pro každou platformu, na kterou cílíte.
 
-   To publish your app from Visual Studio, do the following:
+   Pokud chcete svou aplikaci publikovat ze sady Visual Studio, udělejte toto:
 
-      1. Change the solution configuration from **Debug** to **Release** on the toolbar to build a Release (rather than a Debug) version of your app.
+      1. Změňte konfiguraci řešení z **Debug** na **release** na panelu nástrojů a sestavte verzi (nikoli ladění) vaší aplikace.
 
-      1. Right-click on the project (not the solution) in **Solution Explorer** and select **Publish**.
+      1. V **Průzkumník řešení** klikněte pravým tlačítkem na projekt (ne řešení) a vyberte **publikovat**.
 
-      1. In the **Publish** tab, select **Publish**. Visual Studio writes the files that comprise your application to the local file system.
+      1. Na kartě **publikovat** vyberte **publikovat**. Visual Studio zapisuje soubory, které tvoří vaši aplikaci, do místního systému souborů.
 
-      1. The **Publish** tab now shows a single profile, **FolderProfile**. The profile's configuration settings are shown in the **Summary** section of the tab. **Target Runtime** identifies which runtime has been published, and **Target Location** identifies where the files for the self-contained deployment were written.
+      1. Na kartě **publikovat** se teď zobrazí jeden profil, **FolderProfile**. Nastavení konfigurace profilu se zobrazí v části **Souhrn** na kartě. **cílový modul runtime** určuje, který modul runtime byl publikován a **cílové umístění** identifikuje, kde byly zapsány soubory pro nasazení, které jsou samostatně obsaženy.
 
-      1. Visual Studio by default writes all published files to a single directory. For convenience, it's best to create separate profiles for each target runtime and to place published files in a platform-specific directory. This involves creating a separate publishing profile for each target platform. So now rebuild the application for each platform by doing the following:
+      1. Visual Studio ve výchozím nastavení zapisuje všechny publikované soubory do jednoho adresáře. Pro usnadnění práce je nejlepší vytvořit samostatné profily pro každý cílový modul runtime a umístit publikované soubory do adresáře specifického pro platformu. To zahrnuje vytvoření samostatného profilu publikování pro každou cílovou platformu. Takže teď aplikaci pro každou platformu znovu sestavíte následujícím způsobem:
 
-         1. Select **Create new profile** in the **Publish** dialog.
+         1. V dialogovém okně **publikovat** vyberte **vytvořit nový profil** .
 
-         1. In the **Pick a publish target** dialog, change the **Choose a folder** location to *bin\Release\PublishOutput\win10-x64*. Select **OK**.
+         1. V dialogovém okně **vybrat cíl publikování** změňte umístění **složky** na *bin\Release\PublishOutput\win10-x64*. Vyberte **OK**.
 
-         1. Select the new profile (**FolderProfile1**) in the list of profiles, and make sure that the **Target Runtime** is `win10-x64`. If it isn't, select **Settings**. In the **Profile Settings** dialog, change the **Target Runtime** to `win10-x64` and select **Save**. Otherwise, select **Cancel**.
+         1. V seznamu profilů vyberte nový profil (**FolderProfile1**) a ujistěte se, že je **cílový modul runtime** `win10-x64`. Pokud není, vyberte **Nastavení**. V dialogovém okně **nastavení profilu** změňte **cílový modul runtime** na `win10-x64` a vyberte **Uložit**. V opačném případě vyberte **Zrušit**.
 
-         1. Select **Publish** to publish your app for 64-bit Windows 10 platforms.
+         1. Vyberte **publikovat** a publikujte svou aplikaci pro 64 platformy Windows 10.
 
-         1. Follow the previous steps again to create a profile for the `osx.10.11-x64` platform. The **Target Location** is *bin\Release\PublishOutput\osx.10.11-x64*, and the **Target Runtime** is `osx.10.11-x64`. The name that Visual Studio assigns to this profile is **FolderProfile2**.
+         1. Pomocí předchozích kroků znovu vytvořte profil pro `osx.10.11-x64` platformu. **Cílové umístění** je *Bin\Release\PublishOutput\osx.10.11-x64*a **cílový modul runtime** je `osx.10.11-x64`. Název, který Visual Studio přiřadí k tomuto profilu, je **FolderProfile2**.
 
-      Note that each target location contains the complete set of files (both your app files and all .NET Core files) needed to launch your app.
+      Všimněte si, že každé cílové umístění obsahuje kompletní sadu souborů (jak soubory aplikace, tak všechny soubory .NET Core) potřebné ke spuštění vaší aplikace.
 
-Along with your application's files, the publishing process emits a program database (.pdb) file that contains debugging information about your app. The file is useful primarily for debugging exceptions. You can choose not to package it with your application's files. You should, however, save it in the event that you want to debug the Release build of your app.
+Spolu se soubory vaší aplikace proces publikování generuje soubor databáze programu (PDB), který obsahuje informace o ladění vaší aplikace. Soubor je vhodný hlavně pro ladění výjimek. Můžete se rozhodnout, že ho nechcete zabalit do souborů vaší aplikace. Měli byste ji však uložit v případě, že chcete ladit sestavení pro vydání aplikace.
 
-Deploy the published files in any way you like. For example, you can package them in a Zip file, use a simple `copy` command, or deploy them with any installation package of your choice.
+Nasaďte publikované soubory jakýmkoli způsobem. Můžete je například zabalit do souboru zip, použít jednoduchý příkaz `copy`, nebo je nasadit s libovolným instalačním balíčkem podle vašeho výběru.
 
-The following is the complete *csproj* file for this project.
+Následuje úplný soubor *csproj* pro tento projekt.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -176,59 +176,59 @@ The following is the complete *csproj* file for this project.
 </Project>
 ```
 
-# <a name="visual-studio-157-and-latertabvs157"></a>[Visual Studio 15.7 and later](#tab/vs157)
+# <a name="visual-studio-157-and-latertabvs157"></a>[Visual Studio 15,7 a novější](#tab/vs157)
 
-After you've debugged and tested the program, create the files to be deployed with your app for each platform that it targets. This involves creating a separate profile for each target platform.
+Po ladění a otestování programu vytvořte soubory, které mají být nasazeny s vaší aplikací pro každou platformu, na kterou cílíte. To zahrnuje vytvoření samostatného profilu pro každou cílovou platformu.
 
-For each platform that your application targets, do the following:
+Pro každou platformu, na kterou vaše aplikace cílí, udělejte toto:
 
-1. Create a profile for your target platform.
+1. Vytvořte profil pro cílovou platformu.
 
-   If this is the first profile you've created, right-click on the project (not the solution) in **Solution Explorer** and select **Publish**.
+   Pokud se jedná o první profil, který jste vytvořili, klikněte pravým tlačítkem na projekt (ne řešení) v **Průzkumník řešení** a vyberte **publikovat**.
 
-   If you've already created a profile, right-click on the project to open the **Publish** dialog if it isn't already open. Then select **New Profile**.
+   Pokud jste už profil vytvořili, klikněte pravým tlačítkem na projekt a otevřete dialog **publikovat** , pokud už není otevřený. Pak vyberte **Nový profil**.
 
-   The **Pick a Publish Target** dialog box opens.
+   Otevře se dialogové okno **vybrat cíl publikování** .
   
-1. Select the location where Visual Studio publishes your application.
+1. Vyberte umístění, kde aplikace Visual Studio publikuje vaši aplikaci.
 
-   If you're only publishing to a single platform, you can accept the default value in the **Choose a folder** text box; this publishes the framework dependent deployment of your application to the *\<project-directory>\bin\Release\netcoreapp2.1\publish* directory.
+   Pokud publikujete pouze na jednu platformu, můžete přijmout výchozí hodnotu v textovém poli **Zvolit složku** ; Tím se publikuje nasazení aplikace závislé na rozhraní do adresáře *\<projekt-adresář > \bin\Release\netcoreapp2.1\publish* .
 
-   If you're publishing to more than one platform, append a string that identifies the target platform. For example, if you append the string "linux" to the file path, Visual Studio publishes the framework dependent deployment of your application to the *\<project-directory>\bin\Release\netcoreapp2.1\publish\linux* directory.
+   Pokud publikujete na více než jednu platformu, přidejte řetězec, který identifikuje cílovou platformu. Například pokud připojíte řetězec "Linux" do cesty k souboru, aplikace Visual Studio publikuje nasazení závislého rozhraní aplikace do adresáře *\<projekt-adresář > \bin\Release\netcoreapp2.1\publish\linux* .
 
-1. Create the profile by selecting the drop-down list icon next to the **Publish** button and selecting **Create Profile**. Then select the **Create Profile** button to create the profile.
+1. Vytvořte profil tak, že vyberete ikonu rozevíracího seznamu vedle tlačítka **publikovat** a vyberete **vytvořit profil**. Pak vyberte tlačítko **vytvořit profil** a vytvořte profil.
 
-1. Indicate that you are publishing a self-contained deployment and define a platform that your app will target.
+1. Uveďte, že publikujete samostatné nasazení a definujete platformu, na kterou bude vaše aplikace cílit.
 
-   1. In the **Publish** dialog, select the **Configure** link to open the **Profile Settings** dialog.
+   1. V dialogovém okně **publikovat** vyberte odkaz **Konfigurovat** a otevřete dialogové okno **nastavení profilu** .
 
-   1. Select **Self-contained** in the **Deployment Mode** list box.
+   1. V seznamu **režim nasazení** vyberte možnost **samostatné – obsaženo** .
 
-   1. In the **Target Runtime** list box, select one of the platforms that your application targets.
+   1. V rozevíracím seznamu **cílový modul runtime** vyberte jednu z platforem, na kterou vaše aplikace cílí.
 
-   1. Select **Save** to accept your changes and close the dialog.
+   1. Vyberte **Uložit** a potvrďte provedené změny a zavřete dialogové okno.
 
-1. Name your profile.
+1. Pojmenujte profil.
 
-   1. Select **Actions** > **Rename Profile** to name your profile.
+   1. Vyberte **akce** > **Přejmenovat profil** pro pojmenování profilu.
 
-   2. Assign your profile a name that identifies the target platform, then select **Save*.
+   2. Přiřaďte profilu název, který identifikuje cílovou platformu, a pak vyberte **Uložit*.
 
-Repeat these steps to define any additional target platforms that your application targets.
+Zopakováním těchto kroků definujte všechny další cílové platformy, na které vaše aplikace cílí.
 
-You've configured your profiles and are now ready to publish your app. To do this:
+Nakonfigurovali jste profily a teď jste připraveni publikovat svou aplikaci. Použijte následující postup:
 
-   1. If the **Publish** window isn't currently open, right-click on the project (not the solution) in **Solution Explorer** and select **Publish**.
+   1. Pokud okno **publikovat** není momentálně otevřené, klikněte pravým tlačítkem myši na projekt (ne řešení) v **Průzkumník řešení** a vyberte **publikovat**.
 
-   2. Select the profile that you'd like to publish, then select **Publish**. Do this for each profile to be published.
+   2. Vyberte profil, který chcete publikovat, a pak vyberte **publikovat**. Udělejte to pro každý profil, který se má publikovat.
 
-   Note that each target location (in the case of our example, bin\release\netcoreapp2.1\publish\\*profile-name* contains the complete set of files (both your app files and all .NET Core files) needed to launch your app.
+   Všimněte si, že každé cílové umístění (v případě našeho příkladu bin\release\netcoreapp2.1\publish\\*Profile-název* obsahuje úplnou sadu souborů (jak soubory aplikace, tak všechny soubory .NET Core) potřebné ke spuštění vaší aplikace.
 
-Along with your application's files, the publishing process emits a program database (.pdb) file that contains debugging information about your app. The file is useful primarily for debugging exceptions. You can choose not to package it with your application's files. You should, however, save it in the event that you want to debug the Release build of your app.
+Spolu se soubory vaší aplikace proces publikování generuje soubor databáze programu (PDB), který obsahuje informace o ladění vaší aplikace. Soubor je vhodný hlavně pro ladění výjimek. Můžete se rozhodnout, že ho nechcete zabalit do souborů vaší aplikace. Měli byste ji však uložit v případě, že chcete ladit sestavení pro vydání aplikace.
 
-Deploy the published files in any way you like. For example, you can package them in a Zip file, use a simple `copy` command, or deploy them with any installation package of your choice.
+Nasaďte publikované soubory jakýmkoli způsobem. Můžete je například zabalit do souboru zip, použít jednoduchý příkaz `copy`, nebo je nasadit s libovolným instalačním balíčkem podle vašeho výběru.
 
-The following is the complete *csproj* file for this project.
+Následuje úplný soubor *csproj* pro tento projekt.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -239,7 +239,7 @@ The following is the complete *csproj* file for this project.
 </Project>
 ```
 
-In addition, Visual Studio creates a separate publishing profile (\*.pubxml) for each platform that you target. For example, the file for our linux profile (linux.pubxml) appears as follows:
+Kromě toho Visual Studio vytvoří samostatný profil publikování (\*. pubxml) pro každou cílovou platformu. Například soubor pro náš profil Linux (Linux. pubxml) se zobrazí takto:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -262,19 +262,19 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 
 ---
 
-## <a name="self-contained-deployment-with-third-party-dependencies"></a>Self-contained deployment with third-party dependencies
+## <a name="self-contained-deployment-with-third-party-dependencies"></a>Samostatné nasazení s závislostmi třetích stran
 
-Deploying a self-contained deployment with one or more third-party dependencies involves adding the dependencies. The following additional steps are required before you can build your app:
+Nasazení samostatně uzavřeného nasazení s jednou nebo více závislostmi třetích stran zahrnuje přidání závislostí. Předtím, než budete moci sestavit aplikaci, jsou vyžadovány tyto další kroky:
 
-1. Use the **NuGet Package Manager** to add a reference to a NuGet package to your project; and if the package is not already available on your system, install it. To open the package manager, select **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution**.
+1. Pomocí **Správce balíčků NuGet** přidejte do svého projektu odkaz na balíček NuGet; a pokud balíček ještě není ve vašem systému k dispozici, nainstalujte ho. Správce balíčků otevřete tak, že vyberete **nástroje** > **správce balíčků NuGet** > **Spravovat balíčky NuGet pro řešení**.
 
-1. Confirm that your third-party dependencies (for example, `Newtonsoft.Json`) are installed on your system and, if they aren't, install them. The **Installed** tab lists NuGet packages installed on your system. If `Newtonsoft.Json` is not listed there, select the **Browse** tab and enter "Newtonsoft.Json" in the search box. Select `Newtonsoft.Json` and, in the right pane, select your project before selecting **Install**.
+1. Ověřte, zda jsou v systému nainstalovány závislosti jiných výrobců (například `Newtonsoft.Json`), a pokud nejsou, nainstalujte je. Karta **Installed (instalovat** ) obsahuje seznam balíčků NuGet nainstalovaných ve vašem systému. Pokud zde `Newtonsoft.Json` není uveden, vyberte kartu **Procházet** a do vyhledávacího pole zadejte "Newtonsoft. JSON". Vyberte `Newtonsoft.Json` a v pravém podokně vyberte svůj projekt před výběrem možnosti **nainstalovat**.
 
-1. If `Newtonsoft.Json` is already installed on your system, add it to your project by selecting your project in the right pane of the **Manage Packages for Solution** tab.
+1. Pokud je v systému už `Newtonsoft.Json` nainstalovaná, přidejte ho do svého projektu tak, že ho vyberete v pravém podokně na kartě **Spravovat balíčky pro řešení** .
 
-The following is the complete *csproj* file for this project:
+Následuje kompletní soubor *csproj* pro tento projekt:
 
-# <a name="visual-studio-156-and-earliertabvs156"></a>[Visual Studio 15.6 and earlier](#tab/vs156)
+# <a name="visual-studio-156-and-earliertabvs156"></a>[Visual Studio 15,6 a starší](#tab/vs156)
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -289,7 +289,7 @@ The following is the complete *csproj* file for this project:
 </Project>
 ```
 
-# <a name="visual-studio-157-and-latertabvs157"></a>[Visual Studio 15.7 and later](#tab/vs157)
+# <a name="visual-studio-157-and-latertabvs157"></a>[Visual Studio 15,7 a novější](#tab/vs157)
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -305,11 +305,11 @@ The following is the complete *csproj* file for this project:
 
 ---
 
-When you deploy your application, any third-party dependencies used in your app are also contained with your application files. Third-party libraries aren't required on the system on which the app is running.
+Při nasazení aplikace jsou také součástí souborů aplikace všechny závislosti třetích stran používané ve vaší aplikaci. V systému, ve kterém je aplikace spuštěná, se nevyžadují knihovny třetích stran.
 
-Note that you can only deploy a self-contained deployment with a third-party library to platforms supported by that library. This is similar to having third-party dependencies with native dependencies in your framework-dependent deployment, where the native dependencies won't exist on the target platform unless they were previously installed there.
+Mějte na paměti, že můžete nasadit samostatné nasazení s knihovnou třetích stran do platforem podporovaných v této knihovně. To se podobá tomu, že se závislosti třetích stran s nativními závislostmi v nasazení závislém na rozhraní, kde nativní závislosti neexistují na cílové platformě, pokud se tam dříve nenainstalovaly.
 
 ## <a name="see-also"></a>Viz také:
 
-- [.NET Core Application Deployment](index.md)
-- [.NET Core Runtime IDentifier (RID) catalog](../rid-catalog.md)
+- [Nasazení aplikace .NET Core](index.md)
+- [Katalog identifikátorů runtime .NET Core (RID)](../rid-catalog.md)

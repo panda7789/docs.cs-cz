@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74432122"
 ---
 # <a name="imetadataassemblyemitdefineassembly-method"></a>IMetaDataAssemblyEmit::DefineAssembly – metoda
-Creates an `Assembly` structure containing metadata for the specified assembly and returns the associated metadata token.  
+Vytvoří strukturu `Assembly` obsahující metadata pro zadané sestavení a vrátí přidružený token metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,37 +41,37 @@ HRESULT DefineAssembly (
   
 ## <a name="parameters"></a>Parametry  
  `pbPublicKey`  
- [in] The public key that identifies the publisher of the assembly, or NULL if the assembly is not strongly named.  
+ pro Veřejný klíč, který identifikuje vydavatele sestavení, nebo hodnotu NULL, pokud sestavení není silně pojmenováno.  
   
  `cbPublicKey`  
- [in] The size in bytes of `pbPublicKey`.  
+ pro Velikost v bajtech `pbPublicKey`.  
   
  `uHashAlgId`  
- [in] The identifier of the hashing algorithm to use to encrypt the files in the assembly, or NULL to specify the SHA-1 algorithm.  
+ pro Identifikátor algoritmu hash, který má být použit k zašifrování souborů v sestavení, nebo hodnota NULL pro určení algoritmu SHA-1.  
   
  `szName`  
- [in] The human-readable text name of the assembly. This value must not exceed 1024 characters.  
+ pro Textový název sestavení čitelný lidmi Tato hodnota nesmí překročit 1024 znaků.  
   
  `pMetaData`  
- [in] A pointer to an ASSEMBLYMETADATA instance that contains the version, platform, and locale information for the assembly.  
+ pro Ukazatel na instanci AssemblyMetadata –, která obsahuje informace o verzi, platformě a národním prostředí pro sestavení.  
   
  `dwAssemblyFlags`  
- [in] A combination of [CorAssemblyFlags](../../../../docs/framework/unmanaged-api/metadata/corassemblyflags-enumeration.md) values that describe features of the assembly.  
+ pro Kombinace hodnot [CorAssemblyFlags –](../../../../docs/framework/unmanaged-api/metadata/corassemblyflags-enumeration.md) popisujících funkce sestavení.  
   
  `pmda`  
- [out] A pointer to the metadata token.  
+ mimo Ukazatel na token metadat.  
   
 ## <a name="remarks"></a>Poznámky  
- Only one `Assembly` metadata structure can be defined within a manifest.  
+ V rámci manifestu lze definovat pouze jednu `Assembly` strukturu metadat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

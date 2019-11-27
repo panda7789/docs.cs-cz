@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74440147"
 ---
 # <a name="isymunmanagedreadergetsymattribute-method"></a>ISymUnmanagedReader::GetSymAttribute – metoda
-Gets a custom attribute based upon its name. Unlike metadata custom attributes, these custom attributes are held in the symbol store.  
+Získá vlastní atribut založený na jeho názvu. Na rozdíl od vlastních atributů metadat jsou tyto vlastní atributy uchovávány v úložišti symbolů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,25 +39,25 @@ HRESULT GetSymAttribute (
   
 ## <a name="parameters"></a>Parametry  
  `parent`  
- [in] The metadata token for the object for which the attribute is requested.  
+ pro Token metadat pro objekt, pro který je požadován atribut.  
   
  `name`  
- [in] A pointer to the variable that indicates the attribute to retrieve.  
+ pro Ukazatel na proměnnou, která označuje atribut, který má být načten.  
   
  `cBuffer`  
- [in] The size of the `buffer` array.  
+ pro Velikost pole `buffer`.  
   
  `pcBuffer`  
- [out] A pointer to the variable that receives the length of the attribute data.  
+ mimo Ukazatel na proměnnou, která přijímá délku dat atributu.  
   
  `buffer`  
- [out] A pointer to the variable that receives the attribute data.  
+ mimo Ukazatel na proměnnou, která přijímá data atributu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

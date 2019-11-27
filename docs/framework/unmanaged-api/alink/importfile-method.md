@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446989"
 ---
 # <a name="importfile-method"></a>ImportFile – metoda
-Imports assemblies and unbound modules.  
+Importuje sestavení a nevázané moduly.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,31 +39,31 @@ HRESULT ImportFile(
   
 ## <a name="parameters"></a>Parametry  
  `pszFilename`  
- Fully qualified name of file to be imported.  
+ Plně kvalifikovaný název souboru, který se má importovat  
   
  `pszTargetName`  
- Optional output file name that can be used to rename the file as it is linked into the assembly.  
+ Volitelný název výstupního souboru, který lze použít k přejmenování souboru, protože je propojen do sestavení.  
   
  `fSmartImport`  
- If TRUE, ImportTypes is used, otherwise importing must be performed manually.  
+ Při hodnotě TRUE se používá Importtypes –, jinak se import musí provést ručně.  
   
  `pImportToken`  
- Pointer to token where a unique file ID will be stored. The file can be an assembly or a file.  
+ Ukazatel na token, kde bude uložen jedinečný identifikátor souboru. Soubor může být sestavením nebo souborem.  
   
  `ppAssemblyScope`  
- Receives pointer to [IMetaDataAssemblyImport Interface](../metadata/imetadataassemblyimport-interface.md). Can be NULL if the file is not an assembly.  
+ Přijme ukazatel na [rozhraní IMetaDataAssemblyImport](../metadata/imetadataassemblyimport-interface.md). Pokud soubor není sestavením, může mít hodnotu NULL.  
   
  `pdwCountOfScopes`  
- Pointer to the count of files and/or scopes that have been imported.  
+ Ukazatel na počet souborů nebo rozsahů, které byly naimportovány.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Returns S_OK if the method succeeds.  
+ Vrátí S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Requires alink.h  
+ Vyžaduje ALink. h  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink – rozhraní](ialink-interface.md)
 - [IALink2 – rozhraní](ialink2-interface.md)
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)

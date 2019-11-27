@@ -15,86 +15,86 @@ ms.locfileid: "74353590"
 ---
 # <a name="walkthrough-filtering-myapplicationlog-output-visual-basic"></a>Návod: Filtrování výstupu My.Application.Log (Visual Basic)
 
-This walkthrough demonstrates how to change the default log filtering for the `My.Application.Log` object, to control what information is passed from the `Log` object to the listeners and what information is written by the listeners. You can change the logging behavior even after building the application, because the configuration information is stored in the application's configuration file.
+Tento návod ukazuje, jak změnit výchozí filtrování protokolu pro objekt `My.Application.Log`, aby bylo možné určit, jaké informace jsou předány z objektu `Log` posluchačům a jaké informace jsou zapsány posluchači. Chování protokolování můžete změnit i po sestavení aplikace, protože informace o konfiguraci jsou uložené v konfiguračním souboru aplikace.
 
 ## <a name="getting-started"></a>Začínáme
 
-Each message that `My.Application.Log` writes has an associated severity level, which filtering mechanisms use to control the log output. This sample application uses `My.Application.Log` methods to write several log messages with different severity levels.
+Každé zprávě, která `My.Application.Log` zápisy, má přidruženou úroveň závažnosti, které mechanismy filtrování používají k řízení výstupu protokolu. Tato ukázková aplikace používá metody `My.Application.Log` k zápisu několika zpráv protokolu s různou úrovní závažnosti.
 
-#### <a name="to-build-the-sample-application"></a>To build the sample application
+#### <a name="to-build-the-sample-application"></a>Sestavení ukázkové aplikace
 
-1. Open a new Visual Basic Windows Application project.
+1. Otevřete nový Visual Basic projekt aplikace systému Windows.
 
-2. Add a button named Button1 to Form1.
+2. Přidejte tlačítko s názvem Button1 do formuláře Form1.
 
-3. In the <xref:System.Windows.Forms.Control.Click> event handler for Button1, add the following code:
+3. V obslužné rutině události <xref:System.Windows.Forms.Control.Click> pro Button1 přidejte následující kód:
 
      [!code-vb[VbVbcnMyApplicationLogFiltering#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyApplicationLogFiltering/VB/Form1.vb#1)]
 
-4. Run the application in the debugger.
+4. Spusťte aplikaci v ladicím programu.
 
-5. Press **Button1**.
+5. Stiskněte **Button1**.
 
-     The application writes the following information to the application's debug output and log file.
+     Aplikace zapíše do výstupu ladění a souboru protokolu aplikace následující informace.
 
      `DefaultSource Information: 0 : In Button1_Click`
 
      `DefaultSource Error: 2 : Error in the application.`
 
-6. Close the application.
+6. Zavřete aplikaci.
 
-     For information on how to view the application's debug output window, see [Output Window](/visualstudio/ide/reference/output-window). For information on the location of the application's log file, see [Walkthrough: Determining Where My.Application.Log Writes Information](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md).
+     Informace o tom, jak zobrazit okno výstup ladění aplikace, naleznete v tématu [okno výstup](/visualstudio/ide/reference/output-window). Informace o umístění souboru protokolu aplikace naleznete v tématu [Návod: zjištění, kam aplikace My. Application. Log zapisuje informace](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md).
 
     > [!NOTE]
-    > By default, the application flushes the log-file output when the application closes.
+    > Ve výchozím nastavení aplikace při zavření aplikace vyprázdní výstup souboru protokolu.
 
-     In the example above, the second call to the <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A> method and the call to the <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A> method produces log output, while the first and last calls to the `WriteEntry` method do not. This is because the severity levels of `WriteEntry` and `WriteException` are "Information" and "Error", both of which are allowed by the `My.Application.Log` object's default log filtering. However, events with "Start" and "Stop" severity levels are prevented from producing log output.
+     Ve výše uvedeném příkladu druhé volání metody <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A> a volání metody <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A> vytvoří výstup protokolu, zatímco první a poslední volání metody `WriteEntry`. Důvodem je, že úrovně závažnosti `WriteEntry` a `WriteException` jsou "informace" a "Chyba", které jsou povoleny ve výchozím filtrování protokolu `My.Application.Log` objektu. Nicméně události s úrovněmi závažnosti "Start" a "Stop" znemožňují výstup protokolu z výroby.
 
-## <a name="filtering-for-all-myapplicationlog-listeners"></a>Filtering for All My.Application.Log Listeners
+## <a name="filtering-for-all-myapplicationlog-listeners"></a>Filtrování pro všechny naslouchací procesy my. Application. log
 
-The `My.Application.Log` object uses a <xref:System.Diagnostics.SourceSwitch> named `DefaultSwitch` to control which messages it passes from the `WriteEntry` and `WriteException` methods to the log listeners. You can configure `DefaultSwitch` in the application's configuration file by setting its value to one of the <xref:System.Diagnostics.SourceLevels> enumeration values. By default, its value is "Information".
+Objekt `My.Application.Log` používá <xref:System.Diagnostics.SourceSwitch> pojmenované `DefaultSwitch` k řízení, které zprávy přecházejí z `WriteEntry` a `WriteException` metod do protokolů naslouchacího procesu. V konfiguračním souboru aplikace můžete nakonfigurovat `DefaultSwitch` nastavením jeho hodnoty na jednu z hodnot výčtu <xref:System.Diagnostics.SourceLevels>. Ve výchozím nastavení je jeho hodnota "informace".
 
-This table shows the severity level required for Log to write a message to the listeners, given a particular `DefaultSwitch` setting.
+Tato tabulka zobrazuje úroveň závažnosti, která je vyžadována pro protokol k zápisu zprávy do posluchačů s ohledem na konkrétní `DefaultSwitch` nastavení.
 
-|DefaultSwitch Value|Message severity required for output|
+|Hodnota DefaultSwitch|Závažnost zprávy požadovaná pro výstup|
 |---|---|
 |`Critical`|`Critical`|
-|`Error`|`Critical` or `Error`|
-|`Warning`|`Critical`, `Error`, or `Warning`|
-|`Information`|`Critical`, `Error`, `Warning`, or `Information`|
-|`Verbose`|`Critical`, `Error`, `Warning`, `Information`, or `Verbose`|
-|`ActivityTracing`|`Start`, `Stop`, `Suspend`, `Resume`, or `Transfer`|
-|`All`|All messages are allowed.|
-|`Off`|All messages are blocked.|
+|`Error`|`Critical` nebo `Error`|
+|`Warning`|`Critical`, `Error`nebo `Warning`|
+|`Information`|`Critical`, `Error`, `Warning`nebo `Information`|
+|`Verbose`|`Critical`, `Error`, `Warning`, `Information`nebo `Verbose`|
+|`ActivityTracing`|`Start`, `Stop`, `Suspend`, `Resume`nebo `Transfer`|
+|`All`|Všechny zprávy jsou povoleny.|
+|`Off`|Všechny zprávy jsou zablokované.|
 
 > [!NOTE]
-> The `WriteEntry` and `WriteException` methods each have an overload that does not specify a severity level. The implicit severity level for the `WriteEntry` overload is "Information", and the implicit severity level for the `WriteException` overload is "Error".
+> Metody `WriteEntry` a `WriteException` mají přetížení, které neurčují úroveň závažnosti. Implicitní úroveň závažnosti pro přetížení `WriteEntry` je "informace" a implicitní úroveň závažnosti pro `WriteException` přetížení je "Error".
 
-This table explains the log output shown in the previous example: with the default `DefaultSwitch` setting of "Information", only the second call to the `WriteEntry` method and the call to the `WriteException` method produce log output.
+Tato tabulka vysvětluje výstup protokolu zobrazený v předchozím příkladu: výchozí `DefaultSwitch` nastavení "informace", pouze druhé volání metody `WriteEntry` a volání metody `WriteException` vyprodukuje výstup protokolu.
 
-#### <a name="to-log-only-activity-tracing-events"></a>To log only activity tracing events
+#### <a name="to-log-only-activity-tracing-events"></a>Chcete-li protokolovat pouze události trasování aktivit
 
-1. Right-click app.config in the **Solution Explorer** and select **Open**.
+1. V **Průzkumník řešení** klikněte pravým tlačítkem na soubor App. config a vyberte **otevřít**.
 
      -nebo-
 
-     If there is no app.config file:
+     Pokud neexistuje žádný soubor App. config:
 
-    1. On the **Project** menu, choose **Add New Item**.
+    1. V nabídce **projekt** klikněte na příkaz **Přidat novou položku**.
 
-    2. From the **Add New Item** dialog box, choose **Application Configuration File**.
+    2. V dialogovém okně **Přidat novou položku** vyberte možnost **konfigurační soubor aplikace**.
 
-    3. Click **Add**.
+    3. Klikněte na tlačítko **Přidat**.
 
-2. Locate the `<switches>` section, which is in the `<system.diagnostics>` section, which is in the top-level `<configuration>` section.
+2. Vyhledejte část `<switches>`, která je v části `<system.diagnostics>`, která je v části `<configuration>` nejvyšší úrovně.
 
-3. Find the element that adds `DefaultSwitch` to the collection of switches. It should look similar to this element:
+3. Vyhledejte prvek, který přidá `DefaultSwitch` do kolekce přepínačů. Měl by vypadat podobně jako tento element:
 
      `<add name="DefaultSwitch" value="Information" />`
 
-4. Change the value of the `value` attribute to "ActivityTracing".
+4. Změňte hodnotu atributu `value` na "ActivityTracing".
 
-5. The content of the app.config file should be similar to the following XML:
+5. Obsah souboru App. config by měl vypadat podobně jako následující kód XML:
 
     ```xml
     <?xml version="1.0" encoding="utf-8" ?>
@@ -123,50 +123,50 @@ This table explains the log output shown in the previous example: with the defau
     </configuration>
     ```
 
-6. Run the application in the debugger.
+6. Spusťte aplikaci v ladicím programu.
 
-7. Press **Button1**.
+7. Stiskněte **Button1**.
 
-     The application writes the following information to the application's debug output and log file:
+     Aplikace zapíše do výstupu ladění a souboru protokolu aplikace následující informace:
 
      `DefaultSource Start: 4 : Entering Button1_Click`
 
      `DefaultSource Stop: 5 : Leaving Button1_Click`
 
-8. Close the application.
+8. Zavřete aplikaci.
 
-9. Change the value of the `value` attribute back to "Information".
+9. Změňte hodnotu atributu `value` zpět na "informace".
 
     > [!NOTE]
-    > The `DefaultSwitch` switch setting controls only `My.Application.Log`. It does not change how the .NET Framework <xref:System.Diagnostics.Trace?displayProperty=nameWithType> and <xref:System.Diagnostics.Debug?displayProperty=nameWithType> classes behave.
+    > Ovládací prvky nastavení `DefaultSwitch` přepínač pouze `My.Application.Log`. Nemění způsob, jakým se chovají .NET Framework <xref:System.Diagnostics.Trace?displayProperty=nameWithType> a třídy <xref:System.Diagnostics.Debug?displayProperty=nameWithType>.
 
-## <a name="individual-filtering-for-myapplicationlog-listeners"></a>Individual Filtering For My.Application.Log Listeners
+## <a name="individual-filtering-for-myapplicationlog-listeners"></a>Individuální filtrování pro naslouchací procesy my. Application. log
 
-The previous example shows how to change the filtering for all `My.Application.Log` output. This example demonstrates how to filter an individual log listener. By default, an application has two listeners that write to the application's debug output and the log file.
+Předchozí příklad ukazuje, jak změnit filtrování pro všechny `My.Application.Log` výstup. Tento příklad ukazuje, jak filtrovat jednotlivé naslouchací procesy protokolů. Ve výchozím nastavení má aplikace dva naslouchací procesy, které zapisují do výstupu ladění aplikace a do souboru protokolu.
 
-The configuration file controls the behavior of the log listeners by allowing each one to have a filter, which is similar to a switch for `My.Application.Log`. A log listener will output a message only if the message's severity is allowed by both the log's `DefaultSwitch` and the log listener's filter.
+Konfigurační soubor řídí chování naslouchacího procesu protokolu tím, že každé z nich může mít filtr, který je podobný přepínači pro `My.Application.Log`. Naslouchací proces protokolu vytvoří zprávu pouze v případě, že je závažnost zprávy povolena pomocí `DefaultSwitch` protokolu i filtru naslouchacího procesu protokolu.
 
-This example demonstrates how to configure filtering for a new debug listener and add it to the `Log` object. The default debug listener should be removed from the `Log` object, so it is clear that the debug messages come from the new debug listener.
+Tento příklad ukazuje, jak nakonfigurovat filtrování pro nový naslouchací proces ladění a přidat ho do objektu `Log`. Výchozí naslouchací proces ladění by měl být odebrán z objektu `Log`, takže je zřejmé, že zprávy ladění pocházejí z nového naslouchacího procesu ladění.
 
-#### <a name="to-log-only-activity-tracing-events"></a>To log only activity-tracing events
+#### <a name="to-log-only-activity-tracing-events"></a>Do protokolu pouze události trasování aktivity
 
-1. Right-click app.config in the **Solution Explorer** and choose **Open**.
+1. V **Průzkumník řešení** klikněte pravým tlačítkem na soubor App. config a vyberte **otevřít**.
 
-     \-or-
+     \-nebo-
 
-     If there is no app.config file:
+     Pokud neexistuje žádný soubor App. config:
 
-    1. On the **Project** menu, choose **Add New Item**.
+    1. V nabídce **projekt** klikněte na příkaz **Přidat novou položku**.
 
-    2. From the **Add New Item** dialog box, choose **Application Configuration File**.
+    2. V dialogovém okně **Přidat novou položku** vyberte možnost **konfigurační soubor aplikace**.
 
-    3. Click **Add**.
+    3. Klikněte na tlačítko **Přidat**.
 
-2. Right-click app.config in **Solution Explorer**. Choose **Open**.
+2. Klikněte pravým tlačítkem na soubor App. config v **Průzkumník řešení**. Klikněte na tlačítko **otevřít**.
 
-3. Locate the `<listeners>` section, in the `<source>` section with the `name` attribute "DefaultSource", which is under the `<sources>` section. The `<sources>` section is under the `<system.diagnostics>` section, in the top-level `<configuration>` section.
+3. Vyhledejte část `<listeners>` v části `<source>` s atributem `name` "DefaultSource", který je v části `<sources>`. Část `<sources>` je pod oddílem `<system.diagnostics>` v části `<configuration>` nejvyšší úrovně.
 
-4. Add this element to the `<listeners>` section:
+4. Přidejte tento prvek do oddílu `<listeners>`:
 
     ```xml
     <!-- Remove the default debug listener. -->
@@ -175,9 +175,9 @@ This example demonstrates how to configure filtering for a new debug listener an
     <add name="NewDefault"/>
     ```
 
-5. Locate the `<sharedListeners>` section, in the `<system.diagnostics>` section, in the top-level `<configuration>` section.
+5. Vyhledejte část `<sharedListeners>` v části `<system.diagnostics>` v části `<configuration>` nejvyšší úrovně.
 
-6. Add this element to that `<sharedListeners>` section:
+6. Přidejte tento prvek do tohoto `<sharedListeners>` části:
 
     ```xml
     <add name="NewDefault"
@@ -190,9 +190,9 @@ This example demonstrates how to configure filtering for a new debug listener an
     </add>
     ```
 
-     The <xref:System.Diagnostics.EventTypeFilter> filter takes one of the <xref:System.Diagnostics.SourceLevels> enumeration values as its `initializeData` attribute.
+     Filtr <xref:System.Diagnostics.EventTypeFilter> přebírá jednu z <xref:System.Diagnostics.SourceLevels> hodnot výčtu jako atribut `initializeData`.
 
-7. The content of the app.config file should be similar to the following XML:
+7. Obsah souboru App. config by měl vypadat podobně jako následující kód XML:
 
     ```xml
     <?xml version="1.0" encoding="utf-8" ?>
@@ -233,23 +233,23 @@ This example demonstrates how to configure filtering for a new debug listener an
     </configuration>
     ```
 
-8. Run the application in the debugger.
+8. Spusťte aplikaci v ladicím programu.
 
-9. Press **Button1**.
+9. Stiskněte **Button1**.
 
-     The application writes the following information to the application's log file:
+     Aplikace zapíše do souboru protokolu aplikace následující informace:
 
      `Default Information: 0 : In Button1_Click`
 
      `Default Error: 2 : Error in the application.`
 
-     The application writes less information to the application's debug output because of the more restrictive filtering.
+     Aplikace zapisuje méně informací do výstupu ladění aplikace z důvodu přísnějšího filtrování.
 
      `Default Error   2   Error`
 
-10. Close the application.
+10. Zavřete aplikaci.
 
-For more information about changing log settings after deployment, see [Working with Application Logs](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md).
+Další informace o změně nastavení protokolu po nasazení najdete v tématu [práce s protokoly aplikací](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md).
 
 ## <a name="see-also"></a>Viz také:
 

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74438737"
 ---
 # <a name="icorprofilerinfogettokenandmetadatafromfunction-method"></a>ICorProfilerInfo::GetTokenAndMetadataFromFunction – metoda
-Gets the metadata token and a metadata interface instance that can be used against the token for the specified function.  
+Získá token metadat a instanci rozhraní metadat, kterou lze použít proti tokenu pro zadanou funkci.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,25 +37,25 @@ HRESULT GetTokenAndMetaDataFromFunction(
   
 ## <a name="parameters"></a>Parametry  
  `functionId`  
- [in] The ID of the function for which to get the metadata token and metadata interface.  
+ pro ID funkce, pro kterou se má získat token metadat a rozhraní metadat  
   
  `riid`  
- [in] The reference ID of the metadata interface to get the instance of.  
+ pro Referenční ID rozhraní metadat, pro které se má získat instance  
   
  `ppImport`  
- [out] A pointer to the address of the metadata interface instance that can be used against the token for the specified function.  
+ mimo Ukazatel na adresu instance rozhraní metadat, kterou lze použít proti tokenu pro zadanou funkci.  
   
  `pToken`  
- [out] A pointer to the metadata token for the specified function.  
+ mimo Ukazatel na token metadat pro určenou funkci.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

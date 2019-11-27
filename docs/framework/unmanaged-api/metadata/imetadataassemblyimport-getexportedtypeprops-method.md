@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448219"
 ---
 # <a name="imetadataassemblyimportgetexportedtypeprops-method"></a>IMetaDataAssemblyImport::GetExportedTypeProps – metoda
-Gets the set of properties of the exported type with the specified metadata signature.  
+Získá sadu vlastností exportovaného typu se zadaným podpisem metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,34 +41,34 @@ HRESULT GetExportedTypeProps (
   
 ## <a name="parameters"></a>Parametry  
  `mdct`  
- [in] An `mdExportedType` metadata token that represents the exported type.  
+ pro Token metadat `mdExportedType`, který představuje exportovaný typ.  
   
  `szName`  
- [out] The name of the exported type.  
+ mimo Název exportovaného typu.  
   
  `cchName`  
- [in] The size, in wide characters, of `szName`.  
+ pro Velikost `szName`v různých znacích.  
   
  `pchName`  
- [out] The number of wide characters actually returned in `szName`  
+ mimo Počet skutečně vrácených znaků v `szName`  
   
  `ptkImplementation`  
- [out] An `mdFile`, `mdAssemblyRef`, or `mdExportedType` metadata token that contains or allows access to the properties of the exported type.  
+ mimo Token metadat `mdFile`, `mdAssemblyRef`nebo `mdExportedType`, který obsahuje nebo umožňuje přístup k vlastnostem exportovaného typu.  
   
  `ptkTypeDef`  
- [out] A pointer to an `mdTypeDef` token that represents a type in the file.  
+ mimo Ukazatel na token `mdTypeDef`, který představuje typ v souboru.  
   
  `pdwExportedTypeFlags`  
- [out] A pointer to the flags that describe the metadata applied to the exported type. The flags value can be one or more [CorTypeAttr](../../../../docs/framework/unmanaged-api/metadata/cortypeattr-enumeration.md) values.  
+ mimo Ukazatel na příznaky, které popisují metadata použitá pro exportovaný typ. Hodnota příznaků může být jedna nebo víc hodnot [CorTypeAttr –](../../../../docs/framework/unmanaged-api/metadata/cortypeattr-enumeration.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74439824"
 ---
 # <a name="icorprofilerinfogetmodulemetadata-method"></a>ICorProfilerInfo::GetModuleMetaData – metoda
-Gets a metadata interface instance that maps to the specified module.  
+Získá instanci rozhraní metadat, která se mapuje na určený modul.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,30 +37,30 @@ HRESULT GetModuleMetaData(
   
 ## <a name="parameters"></a>Parametry  
  `moduleId`  
- [in] The ID of the module to which the interface instance will be mapped.  
+ pro ID modulu, ke kterému bude namapována instance rozhraní.  
   
  `dwOpenFlags`  
- [in] A value of the [CorOpenFlags](../../../../docs/framework/unmanaged-api/metadata/coropenflags-enumeration.md) enumeration that specifies the mode for opening manifest files. Only the `ofRead`, `ofWrite` and `ofNoTransform` bits are valid.  
+ pro Hodnota výčtu [CorOpenFlags –](../../../../docs/framework/unmanaged-api/metadata/coropenflags-enumeration.md) , která určuje režim otevírání souborů manifestu. Platné jsou pouze bity `ofRead`, `ofWrite` a `ofNoTransform`.  
   
  `riid`  
- [in] The reference ID (GUID) of the metadata interface whose instance will be retrieved. See [Metadata Interfaces](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md) for a list of the interfaces.  
+ pro Referenční identifikátor (GUID) rozhraní metadat, jehož instance bude načtena. Seznam rozhraní naleznete v tématu [rozhraní metadat](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md) .  
   
  `ppOut`  
- [out] A pointer to the address of the metadata interface instance.  
+ mimo Ukazatel na adresu instance rozhraní metadat.  
   
 ## <a name="remarks"></a>Poznámky  
- You may ask for the metadata to be opened in read/write mode, but this will result in slower metadata execution of the program, because changes made to the metadata cannot be optimized as they were from the compiler.  
+ Můžete požádat, aby se metadata otevírala v režimu pro čtení i zápis, ale výsledkem bude pomalejší spuštění tohoto programu, protože změny v metadatech nejdou optimalizovat, protože byly z kompilátoru.  
   
- Some modules (such as resource modules) have no metadata. In those cases, `GetModuleMetaData` will return an HRESULT value of S_FALSE, and a null in *`ppOut`.  
+ Některé moduly (například moduly prostředků) nemají žádná metadata. V těchto případech `GetModuleMetaData` vrátí hodnotu HRESULT S_FALSE a hodnotu null v hodnotě *`ppOut`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

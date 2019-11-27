@@ -14,17 +14,17 @@ ms.locfileid: "74335340"
 ---
 # <a name="how-to-get-the-collection-of-files-in-a-directory-in-visual-basic"></a>Postupy: Získání kolekce souborů z adresáře v jazyce Visual Basic
 
-The overloads of the <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles%2A?displayProperty=nameWithType> method return a read-only collection of strings representing the names of the files within a directory:  
+Přetížení metody <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles%2A?displayProperty=nameWithType> vrátí kolekci řetězců jen pro čtení, které představují názvy souborů v adresáři:  
   
-- Use the <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles%28System.String%29> overload for a simple file search in a specified directory, without searching subdirectories.  
+- Použijte přetížení <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles%28System.String%29> pro jednoduché hledání souborů v zadaném adresáři bez Prohledávání podadresářů.  
   
-- Use the <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles(System.String,Microsoft.VisualBasic.FileIO.SearchOption,System.String[])> overload to specify additional options for your search. You can use the `wildCards` parameter to specify a search pattern. To include subdirectories in the search, set the `searchType` parameter to <xref:Microsoft.VisualBasic.FileIO.SearchOption.SearchAllSubDirectories?displayProperty=nameWithType>.  
+- K určení dalších možností vyhledávání použijte přetížení <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles(System.String,Microsoft.VisualBasic.FileIO.SearchOption,System.String[])>. K určení vzoru hledání můžete použít parametr `wildCards`. Chcete-li do hledání zahrnout podadresáře, nastavte parametr `searchType` na hodnotu <xref:Microsoft.VisualBasic.FileIO.SearchOption.SearchAllSubDirectories?displayProperty=nameWithType>.  
   
- An empty collection is returned if no files matching the specified pattern are found.  
+ Pokud se nenajde žádné soubory, které odpovídají zadanému vzoru, vrátí se prázdná kolekce.  
   
-### <a name="to-list-files-in-a-directory"></a>To list files in a directory  
+### <a name="to-list-files-in-a-directory"></a>Výpis souborů v adresáři  
   
-- Use one of the <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles%2A?displayProperty=nameWithType> method overloads, supplying the name and path of the directory to search in the `directory` parameter. The following example returns all files in the directory and adds them to `ListBox1`.  
+- Použijte jedno z přetížení metody <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles%2A?displayProperty=nameWithType>, zadejte název a cestu adresáře, ve kterém chcete vyhledat `directory` parametr. Následující příklad vrátí všechny soubory v adresáři a přidá je do `ListBox1`.  
   
      [!code-vb[VbVbcnMyFileSystem#32](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#32)]  
   
@@ -32,21 +32,21 @@ The overloads of the <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles%2A?d
 
  Následující podmínky mohou způsobit výjimku:  
   
-- The path is not valid for one of the following reasons: it is a zero-length string, it contains only white space, it contains invalid characters, or it is a device path (starts with \\\\.\\) (<xref:System.ArgumentException>).  
+- Cesta není platná z některého z následujících důvodů: Jedná se o řetězec o nulové délce, obsahuje pouze prázdné znaky, obsahuje neplatné znaky nebo se jedná o cestu k zařízení (začíná na \\\\.\\) (<xref:System.ArgumentException>).  
   
-- The path is not valid because it is `Nothing` (<xref:System.ArgumentNullException>).  
+- Cesta není platná, protože je `Nothing` (<xref:System.ArgumentNullException>).  
   
-- `directory` does not exist (<xref:System.IO.DirectoryNotFoundException>).  
+- `directory` neexistuje (<xref:System.IO.DirectoryNotFoundException>).  
   
-- `directory` points to an existing file (<xref:System.IO.IOException>).  
+- `directory` odkazuje na existující soubor (<xref:System.IO.IOException>).  
   
-- The path exceeds the system-defined maximum length (<xref:System.IO.PathTooLongException>).  
+- Cesta překračuje maximální povolenou délku systému (<xref:System.IO.PathTooLongException>).  
   
-- A file or directory name in the path contains a colon (:) or is in an invalid format (<xref:System.NotSupportedException>).  
+- Název souboru nebo adresáře v cestě obsahuje dvojtečku (:) nebo má neplatný formát (<xref:System.NotSupportedException>).  
   
-- The user lacks necessary permissions to view the path (<xref:System.Security.SecurityException>).  
+- Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).  
   
-- The user lacks necessary permissions (<xref:System.UnauthorizedAccessException>).  
+- Uživatel nemá potřebná oprávnění (<xref:System.UnauthorizedAccessException>).  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448014"
 ---
 # <a name="icorprofilercallbackfunctionunloadstarted-method"></a>ICorProfilerCallback::FunctionUnloadStarted – metoda
-Notifies the profiler that the runtime has started to unload a function.  
+Upozorní profileru, že modul runtime zahájil uvolnění funkce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,19 +34,19 @@ HRESULT FunctionUnloadStarted(
   
 ## <a name="parameters"></a>Parametry  
  `functionId`  
- [in] The ID of the function that is being unloaded.  
+ pro ID funkce, která je odpojena.  
   
 ## <a name="remarks"></a>Poznámky  
- The value of the `functionId` parameter is no longer valid after this method returns to the caller.  
+ Hodnota parametru `functionId` již není platná poté, co se tato metoda vrátí volajícímu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

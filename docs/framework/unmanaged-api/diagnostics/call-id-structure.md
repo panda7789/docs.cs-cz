@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448593"
 ---
 # <a name="call_id-structure"></a>CALL_ID – struktura
-Provides information to a debugger about a function that is being called. See the [INotifySink2](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md) interface for more information.  
+Poskytuje informace ladicímu programu o funkci, která je volána. Další informace najdete v rozhraní [INotifySink2](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,15 +42,15 @@ typedef struct tagCALL_ID
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`szMachine`|Identifies the machine that is making the call.|  
-|`dwPid`|Identifies the machine processor.|  
-|`pUserThread`|Identifies the thread that is executing the call.|  
-|`addrStackPointer`|Specifies the address of the call stack.|  
-|`szEntryPoint`|Specifies the address of the call.|  
-|`szDestinationMachine`|Identifies the machine that will execute the call.|  
+|`szMachine`|Identifikuje počítač, který provádí volání.|  
+|`dwPid`|Identifikuje procesor počítače.|  
+|`pUserThread`|Identifikuje vlákno, které provádí volání.|  
+|`addrStackPointer`|Určuje adresu zásobníku volání.|  
+|`szEntryPoint`|Určuje adresu volání.|  
+|`szDestinationMachine`|Identifikuje počítač, který spustí volání.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** ProtocolNotify2.idl  
+ **Hlavička:** ProtocolNotify2. idl  
   
 ## <a name="see-also"></a>Viz také:
 

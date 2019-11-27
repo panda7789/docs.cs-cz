@@ -12,15 +12,15 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344297"
 ---
 # <a name="nothing-and-strings-in-visual-basic"></a>Výraz Nothing a řetězce v jazyce Visual Basic
-The Visual Basic runtime and the .NET Framework evaluate `Nothing` differently when it comes to strings.  
+Modul runtime Visual Basic a .NET Framework vyhodnocuje `Nothing` odlišně, když k nim přijdou řetězce.  
   
-## <a name="visual-basic-runtime-and-the-net-framework"></a>Visual Basic Runtime and the .NET Framework  
- Consider the following example:  
+## <a name="visual-basic-runtime-and-the-net-framework"></a>Visual Basic runtime a .NET Framework  
+ Vezměte v úvahu v následujícím příkladu:  
   
  [!code-vb[VbVbalrStrings#47](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#47)]  
   
- The Visual Basic runtime usually evaluates `Nothing` as an empty string (""). The .NET Framework does not, however, and throws an exception whenever an attempt is made to perform a string operation on `Nothing`.  
+ Modul runtime Visual Basic obvykle vyhodnocuje `Nothing` jako prázdný řetězec (""). .NET Framework však a vyvolá výjimku, kdykoli je proveden pokus o provedení operace s řetězcem v `Nothing`.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Introduction to Strings in Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)
+- [Seznámení s řetězci v Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)

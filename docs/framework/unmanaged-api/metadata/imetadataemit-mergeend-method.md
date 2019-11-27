@@ -24,7 +24,7 @@ ms.locfileid: "74448037"
 ---
 # <a name="imetadataemitmergeend-method"></a>IMetaDataEmit::MergeEnd – metoda
 
-Merges into the current scope all the metadata scopes specified by one or more prior calls to [IMetaDataEmit::Merge](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-merge-method.md).
+Sloučí se do aktuálního oboru všech oborů metadat určených jedním nebo více předchozími voláními do [IMetaDataEmit:: Merge](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-merge-method.md).
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -34,43 +34,43 @@ HRESULT MergeEnd ();
 
 ## <a name="parameters"></a>Parametry
 
-This method takes no parameters.
+Tato metoda nepřijímá žádné parametry.
 
 ## <a name="remarks"></a>Poznámky
 
-This routine triggers the actual merge of metadata, of all import scopes specified by preceding calls to `IMetaDataEmit::Merge`, into the current output scope.
+Tato rutina aktivuje aktuální sloučení metadat všech oborů importu určených předchozími voláními `IMetaDataEmit::Merge`do aktuálního oboru výstupu.
 
-The following special conditions apply to the merge:
+Následující zvláštní podmínky platí pro sloučení:
 
-- A module version identifier (MVID) is never imported, because it is unique to the metadata in the import scope.
+- Identifikátor verze modulu (identifikátor MVID) se nikdy neimportuje, protože je jedinečný pro metadata v oboru importu.
 
-- No existing module-wide properties are overwritten.
+- Žádné existující vlastnosti pro modul nejsou přepsány.
 
-  If module properties were already set for the current scope, no module properties are imported. However, if module properties have not been set in the current scope, they are imported only once, when they are first encountered. If those module properties are encountered again, they are duplicates. If the values of all module properties (except MVID) are compared and no duplicates are found, an error is raised.
+  Pokud již byly pro aktuální obor nastaveny vlastnosti modulu, nejsou importovány žádné vlastnosti modulu. Pokud však v aktuálním oboru nejsou nastaveny vlastnosti modulu, budou importovány pouze jednou, když jsou nejprve zjištěny. Pokud se tyto vlastnosti modulu vyskytují znovu, jsou duplicitní. Pokud se porovnají hodnoty všech vlastností modulu (kromě identifikátor MVID) a nenašly se žádné duplicity, vyvolá se chyba.
 
-- For type definitions (`TypeDef`), no duplicates are merged into the current scope. `TypeDef` objects are checked for duplicates against each *fully-qualified object name* + *GUID* + *version number*. If there is a match on either name or GUID, and any of the other two elements is different, an error is raised. Otherwise, if all three items match, `MergeEnd` does a cursory check to ensure the entries are indeed duplicates; if not, an error is raised. This cursory check looks for:
+- V případě definic typů (`TypeDef`) nejsou do aktuálního oboru sloučeny žádné duplicity. `TypeDef` objektů jsou kontrolovány duplicitní hodnoty u každého *plně kvalifikovaného názvu objektu* +  + *číslo verze* *GUID* . Pokud existuje shoda na buď názvu nebo identifikátoru GUID, přičemž kterýkoli z dalších dvou prvků je jiný, vyvolá se chyba. V opačném případě, pokud se všechny tři položky shodují, `MergeEnd` provede kontrolu pomocí kurzoru, aby bylo zajištěno, že položky jsou opravdu duplicitní; v takovém případě je vyvolána chyba. Tato kontrolní pozice vypadá nějak takto:
 
-  - The same member declarations, occurring in the same order. Members that are flagged as `mdPrivateScope` (see the [CorMethodAttr](../../../../docs/framework/unmanaged-api/metadata/cormethodattr-enumeration.md) enumeration) are not included in this check; they are merged specially.
+  - Stejné deklarace členů, ke kterým dochází ve stejném pořadí. Členy, které jsou označeny jako `mdPrivateScope` (viz výčet [CorMethodAttr –](../../../../docs/framework/unmanaged-api/metadata/cormethodattr-enumeration.md) ), nejsou zahrnuty do této kontroly; jsou speciálně sloučeny.
 
-  - The same class layout.
+  - Stejné rozložení třídy.
 
-  This means that a `TypeDef` object must always be fully and consistently defined in every metadata scope in which it is declared; if its member implementations (for a class) are spread across multiple compilation units, the full definition is assumed to be present in every scope and not incremental to each scope. For example, if parameter names are relevant to the contract, they must be emitted the same way into every scope; if they are not relevant, they should not be emitted into metadata.
+  To znamená, že objekt `TypeDef` musí být vždy plně a konzistentně definován v každém oboru metadat, ve kterém je deklarována. Pokud jsou jeho implementace členů (pro třídu) rozloženy mezi více kompilačních jednotek, předpokládá se, že úplná definice je přítomna v každém oboru a nikoli přírůstkově k jednotlivým oborům. Například pokud jsou názvy parametrů pro kontrakt relevantní, musí být vygenerovány stejným způsobem do každého oboru; Pokud nejsou relevantní, neměly by být generovány do metadat.
 
-  The exception is that a `TypeDef` object can have incremental members flagged as `mdPrivateScope`. On encountering these, `MergeEnd` incrementally adds them to the current scope without regard for duplicates. Because the compiler understands the private scope, the compiler must be responsible for enforcing rules.
+  Výjimkou je, že objekt `TypeDef` může mít přírůstkové členy označené jako `mdPrivateScope`. Při jejich zjištění `MergeEnd` přírůstkově přidá do aktuálního oboru bez ohledu na duplicity. Vzhledem k tomu, že kompilátor rozumí privátnímu oboru, musí být kompilátor zodpovědný za vynucování pravidel.
 
-- Relative virtual addresses (RVAs) are not imported or merged; the compiler is expected to re-emit this information.
+- Relativní virtuální adresy (RVA) se neimportují ani nesloučí. očekává se, že kompilátor tyto informace znovu vygeneruje.
 
-- Custom attributes are merged only when the item to which they are attached is merged. For example, custom attributes associated with a class are merged when the class is first encountered. If custom attributes are associated with a `TypeDef` or `MemberDef` that is specific to the compilation unit (such as the time stamp of a member compile), they are not merged and it is up to the compiler to remove or update such metadata.
+- Vlastní atributy jsou sloučeny pouze v případě, že je sloučena položka, ke které jsou připojeny. Například vlastní atributy přidružené ke třídě jsou sloučeny při prvním zjištění třídy. Pokud jsou vlastní atributy přidruženy k `TypeDef` nebo `MemberDef`, které jsou specifické pro kompilační jednotku (například časové razítko členu zkompiluje), nejsou sloučeny a jsou až do kompilátoru pro odebrání nebo aktualizaci takových metadat.
 
 ## <a name="requirements"></a>Požadavky
 
-**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
 
-**Header:** Cor.h
+**Hlavička:** Cor. h
 
-**Library:** Used as a resource in MSCorEE.dll
+**Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.
 
-**.NET Framework Versions:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]
+**Verze .NET Framework:** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]
 
 ## <a name="see-also"></a>Viz také:
 

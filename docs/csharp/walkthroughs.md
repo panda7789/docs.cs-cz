@@ -14,62 +14,62 @@ ms.lasthandoff: 11/20/2019
 ms.locfileid: "74204594"
 ---
 # <a name="c-walkthroughs"></a>Postupy pro C#
-Walkthroughs give step-by-step instructions for common scenarios, which makes them a good place to start learning about the product or a particular feature area.  
+Návody poskytují podrobné pokyny pro běžné scénáře, díky kterým je dobré začít se zajímat o produkt nebo konkrétní oblast funkcí.  
   
- This section contains links to C# programming walkthroughs.  
+ Tato část obsahuje odkazy na C# postupy programování.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
 
- [Accessing the Web by Using Async and Await](./programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)  
- Shows how to create an asynchronous solution by using [async](./language-reference/keywords/async.md) and [await](./language-reference/operators/await.md).  
+ [Přístup k webu pomocí modifikátoru Async a operátoru await](./programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)  
+ Ukazuje, jak vytvořit asynchronní řešení pomocí modifikátoru [Async](./language-reference/keywords/async.md) a [operátoru await](./language-reference/operators/await.md).  
   
- [Creating a Windows Runtime Component in C# or Visual Basic and Calling it from JavaScript](/windows/uwp/winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript)  
- Shows how to create a Windows Runtime type, package it in a Windows Runtime component, and then call the component from a Windows 8.x Store app that's built for Windows by using JavaScript.  
+ [Vytvoření prostředí Windows Runtime komponenty v C# nebo Visual Basic a voláním z JavaScriptu](/windows/uwp/winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript)  
+ Ukazuje, jak vytvořit prostředí Windows Runtime typ, zabalit ho do prostředí Windows Runtime komponenty a pak zavolat komponentu z aplikace Windows 8. x Storu, která je sestavena pro Windows pomocí JavaScriptu.  
   
- [Office Programming (C# and Visual Basic)](./programming-guide/interop/walkthrough-office-programming.md)  
- Shows how to create an Excel workbook and a Word document by using C# and Visual Basic.  
+ [Programování pro OfficeC# (a Visual Basic)](./programming-guide/interop/walkthrough-office-programming.md)  
+ Ukazuje, jak vytvořit excelový sešit a wordový dokument pomocí C# a Visual Basic.  
   
- [Creating and Using Dynamic Objects (C# and Visual Basic)](./programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)  
- Shows how to create a custom object that dynamically exposes the contents of a text file, and how to create a project that uses the `IronPython` library.  
+ [Vytváření a používání dynamických objektů (C# a Visual Basic)](./programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)  
+ Ukazuje, jak vytvořit vlastní objekt, který dynamicky zpřístupňuje obsah textového souboru a jak vytvořit projekt, který používá knihovnu `IronPython`.  
    
- [Authoring a Composite Control with Visual C#](../framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-csharp.md)  
- Demonstrates creating a simple composite control and extending its functionality through inheritance.  
+ [Vytváření složeného ovládacího prvku pomocí vizuáluC#](../framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-csharp.md)  
+ Ukazuje vytvoření jednoduchého složeného ovládacího prvku a rozšíření jeho funkcí prostřednictvím dědičnosti.  
   
- [Creating a Windows Forms Control that Takes Advantage of Visual Studio Design-Time Features](../framework/winforms/controls/creating-a-wf-control-design-time-features.md)  
- Illustrates how to create a custom designer for a custom control.  
+ [Vytvoření ovládacího prvku model Windows Forms, který využívá výhod funkcí nástroje Visual Studio pro dobu návrhu](../framework/winforms/controls/creating-a-wf-control-design-time-features.md)  
+ Ukazuje, jak vytvořit vlastního návrháře vlastního ovládacího prvku.  
   
- [Inheriting from a Windows Forms Control with Visual C#](../framework/winforms/controls/walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)  
- Demonstrates creating a simple inherited button control. This button inherits functionality from the standard Windows Forms button and exposes a custom member.  
+ [Dědění z ovládacího prvku model Windows Forms pomocí vizuáluC#](../framework/winforms/controls/walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)  
+ Ukazuje vytvoření jednoduchého zděděného ovládacího prvku tlačítko. Toto tlačítko dědí funkce z tlačítka standardní model Windows Forms a zpřístupňuje vlastní člen.  
   
- [Debugging Custom Windows Forms Controls at Design Time](../framework/winforms/controls/walkthrough-debugging-custom-windows-forms-controls-at-design-time.md)  
- Describes how to debug the design-time behavior of your custom control.
+ [Ladění vlastních ovládacích prvků model Windows Forms v době návrhu](../framework/winforms/controls/walkthrough-debugging-custom-windows-forms-controls-at-design-time.md)  
+ Popisuje, jak ladit chování vlastního ovládacího prvku v době návrhu.
 
- [Performing Common Tasks Using Smart Tags on Windows Forms Controls](../framework/winforms/controls/performing-common-tasks-using-smart-tags-on-wf-controls.md)  
- Demonstrates some of the commonly performed tasks such as adding or removing a tab on a `TabControl`, docking a control to its parent, and changing the orientation of a `SplitContainer` control.  
+ [Provádění běžných úloh pomocí inteligentních značek v ovládacích prvcích model Windows Forms](../framework/winforms/controls/performing-common-tasks-using-smart-tags-on-wf-controls.md)  
+ Ukazuje některé běžně prováděné úkoly, jako je například přidání nebo odebrání karty v `TabControl`, ukotvení ovládacího prvku pro svůj nadřazený prvek a změna orientace ovládacího prvku `SplitContainer`.  
   
- [Writing Queries in C# (LINQ)](./programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
- Demonstrates the C# language features that are used to write [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query expressions.  
+ [Zápis dotazů v C# (LINQ)](./programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
+ Ukazuje funkce C# jazyka, které se používají k zápisu [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] výrazů dotazů.  
   
- [Manipulating Data (C#) (LINQ to SQL)](../framework/data/adonet/sql/linq/walkthrough-manipulating-data-csharp.md)  
- Describes a [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] scenario for adding, modifying, and deleting data in a database.  
+ [Manipulace s daty (C#) (LINQ to SQL)](../framework/data/adonet/sql/linq/walkthrough-manipulating-data-csharp.md)  
+ Popisuje [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] scénář pro přidávání, úpravu a odstraňování dat v databázi.  
   
- [Simple Object Model and Query (C#) (LINQ to SQL)](../framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-csharp.md)  
- Demonstrates how to create an entity class and a simple query to filter the entity class.  
+ [Jednoduchý objektový model a dotaz (C#) (LINQ to SQL)](../framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-csharp.md)  
+ Ukazuje, jak vytvořit třídu entity a jednoduchý dotaz pro filtrování třídy entity.  
   
- [Using Only Stored Procedures (C#) (LINQ to SQL)](../framework/data/adonet/sql/linq/walkthrough-using-only-stored-procedures-csharp.md)  
- Demonstrates how to use LINQ to SQL to access data by executing only stored procedures.  
+ [Použití pouze uložených procedur (C#) (LINQ to SQL)](../framework/data/adonet/sql/linq/walkthrough-using-only-stored-procedures-csharp.md)  
+ Ukazuje, jak použít LINQ to SQL pro přístup k datům spuštěním pouze uložených procedur.  
   
- [Querying Across Relationships (C#) (LINQ to SQL)](../framework/data/adonet/sql/linq/walkthrough-querying-across-relationships-csharp.md)  
- Demonstrates the use of [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] associations to represent foreign-key relationships in a database.  
+ [Dotazování napříč relacemiC#() (LINQ to SQL)](../framework/data/adonet/sql/linq/walkthrough-querying-across-relationships-csharp.md)  
+ Demonstruje použití přidružení [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] k reprezentaci vztahů cizího klíče v databázi.  
 
- [Writing a Visualizer in C#](/visualstudio/debugger/walkthrough-writing-a-visualizer-in-csharp)  
- Shows how to write a simple visualizer by using C#.  
+ [Zápis Vizualizér doC#](/visualstudio/debugger/walkthrough-writing-a-visualizer-in-csharp)  
+ Ukazuje, jak napsat jednoduchý Vizualizér pomocí C#.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Deployment Samples and Walkthroughs](/visualstudio/deployment/clickonce-deployment-samples-and-walkthroughs)  
- Provides step-by-step examples of common deployment scenarios.  
+ [Ukázky a návody pro nasazení](/visualstudio/deployment/clickonce-deployment-samples-and-walkthroughs)  
+ Poskytuje podrobný příklad běžných scénářů nasazení.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v jazyce C#](./programming-guide/index.md)
+- [Průvodce programováním v C#](./programming-guide/index.md)
 - [Ukázky sady Visual Studio](/visualstudio/ide/visual-studio-ide)

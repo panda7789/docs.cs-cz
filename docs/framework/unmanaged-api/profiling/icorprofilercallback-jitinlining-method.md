@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449902"
 ---
 # <a name="icorprofilercallbackjitinlining-method"></a>ICorProfilerCallback::JITInlining – metoda
-Notifies the profiler that the just-in-time (JIT) compiler is about to insert a function in line with another function.  
+Upozorní profileru, že kompilátor JIT (just-in-time) se chystá Vložit funkci do řádku s jinou funkcí.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,27 +36,27 @@ HRESULT JITInlining(
   
 ## <a name="parameters"></a>Parametry  
  `callerId`  
- [in] The ID of the function into which the `calleeId` function will be inserted.  
+ pro ID funkce, do které bude vložena funkce `calleeId`.  
   
  `calleeId`  
- [in] The ID of the function to be inserted.  
+ pro ID funkce, která má být vložena.  
   
  `pfShouldInline`  
- [out] `true` to allow the insertion to occur; otherwise, `false`.  
+ [out] `true`, pokud chcete, aby bylo vkládání provedeno; v opačném případě `false`.  
   
 ## <a name="remarks"></a>Poznámky  
- The profiler can set `pfShouldInline` to `false` to prevent the `calleeId` function from being inserted into the `callerId` function. Also, the profiler can globally disable inline insertion by using the COR_PRF_DISABLE_INLINING value of the [COR_PRF_MONITOR](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md) enumeration.  
+ Profiler může nastavit `pfShouldInline` `false`, aby se zabránilo vložení funkce `calleeId` do `callerId` funkce. Profiler může také globálně zakázat vložené vložení pomocí COR_PRF_DISABLE_INLINING hodnoty výčtu [COR_PRF_MONITOR](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md) .  
   
- Functions inserted inline do not raise events for entering or leaving. Therefore, the profiler must set `pfShouldInline` to `false` in order to produce an accurate callgraph. Setting `pfShouldInline` to `false` will affect performance, because inline insertion typically increases speed and reduces the number of separate JIT compilation events for the inserted method.  
+ Funkce vložené vložením nevyvolávají události pro vložení nebo ukončení. Proto musí Profiler nastavit `pfShouldInline`, aby `false`, aby vytvořil přesný graf volání. Nastavení `pfShouldInline` `false` bude mít vliv na výkon, protože vložené vložení obvykle zvyšuje rychlost a snižuje počet samostatných událostí kompilace JIT pro vloženou metodu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

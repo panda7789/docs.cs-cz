@@ -36,163 +36,163 @@ ms.locfileid: "74427103"
 ---
 # <a name="profiling-overview"></a>Přehled profilace
 
-A profiler is a tool that monitors the execution of another application. A common language runtime (CLR) profiler is a dynamic link library (DLL) that consists of functions that receive messages from, and send messages to, the CLR by using the profiling API. The profiler DLL is loaded by the CLR at run time.
+Profiler je nástroj, který monitoruje provádění jiné aplikace. Profiler modulu CLR (Common Language Runtime) je dynamická knihovna (DLL), která se skládá z funkcí, které přijímají zprávy a odesílají zprávy do modulu CLR pomocí Profilování rozhraní API. Knihovna DLL profileru je načtena modulem CLR v době běhu.
 
-Traditional profiling tools focus on measuring the execution of the application. That is, they measure the time that is spent in each function or the memory usage of the application over time. The profiling API targets a broader class of diagnostic tools such as code-coverage utilities and even advanced debugging aids. These uses are all diagnostic in nature. The profiling API not only measures but also monitors the execution of an application. For this reason, the profiling API should never be used by the application itself, and the application’s execution should not depend on (or be affected by) the profiler.
+Tradiční nástroje pro profilaci se zaměřují na měření spuštění aplikace. To znamená, že měří čas strávený v každé funkci nebo využití paměti aplikace v čase. Rozhraní API profilování cílí na širší třídu diagnostických nástrojů, jako jsou například nástroje pro pokrytí kódu a dokonce i rozšířené pomůcky pro ladění. Tato použití jsou všechna Diagnostika v podstatě. Rozhraní API profilování nejen měří, ale také sleduje spuštění aplikace. Z tohoto důvodu by rozhraní API profilování nemělo být nikdy používáno aplikací samotné a spuštění aplikace by nemělo záviset na (nebo být ovlivněno) profilerem.
 
-Profiling a CLR application requires more support than profiling conventionally compiled machine code. This is because the CLR introduces concepts such as application domains, garbage collection, managed exception handling, just-in-time (JIT) compilation of code (converting Microsoft intermediate language, or MSIL, code into native machine code), and similar features. Conventional profiling mechanisms cannot identify or provide useful information about these features. The profiling API provides this missing information efficiently, with minimal effect on the performance of the CLR and the profiled application.
+Profilace aplikace CLR vyžaduje větší podporu než sestavení zkompilovaného strojového kódu v konvenci profilace. Důvodem je, že CLR zavádí koncepty, jako například domény aplikace, uvolňování paměti, spravované zpracování výjimek, kompilaci JIT (just-in-time) kódu (převod Microsoft Intermediate Language nebo MSIL, Code do nativního strojového kódu) a podobné funkce. Konvenční mechanismy profilace nemůžou identifikovat nebo poskytnout užitečné informace o těchto funkcích. Rozhraní API profilování poskytuje tyto chybějící informace efektivně s minimálním dopadem na výkon CLR a profilované aplikace.
 
-JIT compilation at run time provides good opportunities for profiling. The profiling API enables a profiler to change the in-memory MSIL code stream for a routine before it is JIT-compiled. In this manner, the profiler can dynamically add instrumentation code to particular routines that need deeper investigation. Although this approach is possible in conventional scenarios, it is much easier to implement for the CLR by using the profiling API.
+Kompilace JIT za běhu nabízí dobré příležitosti pro profilování. Rozhraní API profilování umožňuje profileru změnit datový proud kódu MSIL v paměti pro rutinu předtím, než je kompilace JIT zkompilována. Tímto způsobem může Profiler dynamicky přidat kód instrumentace k určitým rutinám, které potřebují hlubší šetření. I když je tento přístup možný v konvenčních scénářích, je mnohem snazší implementovat CLR pomocí Profilování rozhraní API.
 
-## <a name="the-profiling-api"></a>The Profiling API
+## <a name="the-profiling-api"></a>Rozhraní API profilování
 
-Typically, the profiling API is used to write a *code profiler*, which is a program that monitors the execution of a managed application.
+Rozhraní API profilování se obvykle používá k zápisu *profileru kódu*, což je program, který sleduje spuštění spravované aplikace.
 
-The profiling API is used by a profiler DLL, which is loaded into the same process as the application that is being profiled. The profiler DLL implements a callback interface ([ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) in the .NET Framework version 1.0 and 1.1, [ICorProfilerCallback2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md) in version 2.0 and later). The CLR calls the methods in that interface to notify the profiler of events in the profiled process. The profiler can call back into the runtime by using the methods in the [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) and [ICorProfilerInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md) interfaces to obtain information about the state of the profiled application.
+Rozhraní API profileru používá profil DLL profileru, který se načte do stejného procesu jako aplikace, která se profiluje. Knihovna DLL profileru implementuje rozhraní zpětného volání ([ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) v .NET Framework verze 1,0 a 1,1, [ICorProfilerCallback2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md) ve verzi 2,0 a novější). CLR volá metody v tomto rozhraní, aby upozornil Profiler událostí v profilované procesu. Profiler může volat zpět do modulu runtime pomocí metod v rozhraních [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) a [ICorProfilerInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md) k získání informací o stavu profilované aplikace.
 
 > [!NOTE]
-> Only the data-gathering part of the profiler solution should be running in the same process as the profiled application. All user interface and data analysis should be performed in a separate process.
+> Pouze část shromažďování dat v rámci řešení profileru by měla být spuštěna ve stejném procesu jako profilovaná aplikace. Veškeré uživatelské rozhraní a analýzu dat by se měly provádět v samostatném procesu.
 
-The following illustration shows how the profiler DLL interacts with the application that is being profiled and the CLR.
+Následující obrázek ukazuje, jak knihovna DLL profileru komunikuje s aplikací, která je profilovaná a CLR.
 
-![Screenshot that shows the profiling architecture.](./media/profiling-overview/profiling-architecture.png)
+![Snímek obrazovky, který zobrazuje architekturu profilace.](./media/profiling-overview/profiling-architecture.png)
 
-### <a name="the-notification-interfaces"></a>The Notification Interfaces
+### <a name="the-notification-interfaces"></a>Rozhraní pro oznamování
 
-[ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) and [ICorProfilerCallback2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md) can be considered notification interfaces. These interfaces consist of methods such as [ClassLoadStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classloadstarted-method.md), [ClassLoadFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classloadfinished-method.md), and [JITCompilationStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationstarted-method.md). Each time the CLR loads or unloads a class, compiles a function, and so on, it calls the corresponding method in the profiler's `ICorProfilerCallback` or `ICorProfilerCallback2` interface.
+[ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) a [ICorProfilerCallback2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md) lze považovat za rozhraní oznámení. Tato rozhraní se skládají z metod, jako jsou [ClassLoadStarted –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classloadstarted-method.md), [ClassLoadFinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classloadfinished-method.md)a [JITCompilationStarted –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationstarted-method.md). Pokaždé, když CLR načte nebo uvolní třídu, zkompiluje funkci a tak dále, volá odpovídající metodu v rozhraní `ICorProfilerCallback` nebo `ICorProfilerCallback2` profileru.
 
-For example, a profiler could measure code performance through two notification functions: [FunctionEnter2](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md) and [FunctionLeave2](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md). It just time-stamps each notification, accumulates results, and outputs a list that indicates which functions consumed the most CPU or wall-clock time during the execution of the application.
+Profiler může například měřit výkon kódu prostřednictvím dvou funkcí oznámení: [FunctionEnter2](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md) a [FunctionLeave2 –](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md). Slouží pouze k časovému razítku každého oznámení, nashromáždí výsledky a vytvoří výstup seznamu, který označuje, které funkce při provádění aplikace spotřebují nejvíce času procesoru nebo hodin na zdi.
 
-### <a name="the-information-retrieval-interfaces"></a>The Information Retrieval Interfaces
+### <a name="the-information-retrieval-interfaces"></a>Rozhraní pro načítání informací
 
-The other main interfaces involved in profiling are [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) and [ICorProfilerInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md). The profiler calls these interfaces as required to obtain more information to help its analysis. For example, whenever the CLR calls the [FunctionEnter2](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md) function, it supplies a function identifier. The profiler can get more information about that function by calling the [ICorProfilerInfo2::GetFunctionInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) method to discover the function's parent class, its name, and so on.
+Další hlavní rozhraní zapojená do profilace jsou [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) a [ICorProfilerInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md). Profiler volá tato rozhraní podle potřeby, aby získal další informace, které vám pomůžou s analýzou. Například vždy, když CLR volá funkci [FunctionEnter2](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md) , poskytuje identifikátor funkce. Profiler může získat další informace o této funkci voláním metody [ICorProfilerInfo2:: GetFunctionInfo2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) pro zjištění nadřazené třídy funkce, jejího názvu a tak dále.
 
 ## <a name="supported-features"></a>Podporované funkce
 
-The profiling API provides information about a variety of events and actions that occur in the common language runtime. You can use this information to monitor the inner workings of processes and to analyze the performance of your .NET Framework application.
+Rozhraní API profilování poskytuje informace o nejrůznějších událostech a akcích, ke kterým dochází v modulu CLR (Common Language Runtime). Tyto informace můžete použít k monitorování vnitřních pracovních postupů procesů a k analýze výkonu aplikace .NET Framework.
 
-The profiling API retrieves information about the following actions and events that occur in the CLR:
+Rozhraní API profilování načte informace o následujících akcích a událostech, ke kterým dochází v modulu CLR:
 
-- CLR startup and shutdown events.
+- Události spuštění a vypnutí CLR
 
-- Application domain creation and shutdown events.
+- Události vytvoření a vypnutí domény aplikace.
 
-- Assembly loading and unloading events.
+- Události načítání a uvolňování sestavení
 
-- Module loading and unloading events.
+- Události načítání a uvolňování modulu
 
-- COM vtable creation and destruction events.
+- Vytváření a zničení událostí modelu COM vtable.
 
-- Just-in-time (JIT) compilation and code-pitching events.
+- Kompilace just-in-time (JIT) a události pro rozteč kódu.
 
-- Class loading and unloading events.
+- Události načítání a uvolňování třídy.
 
-- Thread creation and destruction events.
+- Události vytvoření a zničení vlákna.
 
-- Function entry and exit events.
+- Události vstupu a výstupu funkce
 
-- Exceptions.
+- Výjimky.
 
-- Transitions between managed and unmanaged code execution.
+- Přechody mezi spravovaným a nespravovaným kódem.
 
-- Transitions between different runtime contexts.
+- Přechody mezi různými kontexty modulu runtime.
 
-- Information about runtime suspensions.
+- Informace o pozastaveních modulu runtime.
 
-- Information about the runtime memory heap and garbage collection activity.
+- Informace o haldě běhové paměti a aktivitě uvolňování paměti.
 
-The profiling API can be called from any (non-managed) COM-compatible language.
+Rozhraní API profilování se dá volat z libovolného (nespravovaného) jazyka kompatibilního s modelem COM.
 
-The API is efficient with regard to CPU and memory consumption. Profiling does not involve changes to the profiled application that are significant enough to cause misleading results.
+Rozhraní API je efektivní z hlediska využití procesoru a paměti. Profilace nezahrnuje změny profilované aplikace, které jsou dostatečně významné, aby způsobily zavádějící výsledky.
 
-The profiling API is useful to both sampling and non-sampling profilers. A *sampling profiler* inspects the profile at regular clock ticks, say, at 5 milliseconds apart. A *non-sampling profiler* is informed of an event synchronously with the thread that causes the event.
+Rozhraní API profilování je užitečné pro vzorkování i pro nástroje, které nejsou vzorkovací. *Profiler vzorkování* kontroluje profil v pravidelných taktech, například 5 milisekund od sebe. *Profiler bez vzorkování* je informován o události synchronně s vláknem, které způsobuje událost.
 
 ### <a name="unsupported-functionality"></a>Nepodporované funkce
 
-The profiling API does not support the following functionality:
+Rozhraní API profilování nepodporuje následující funkce:
 
-- Unmanaged code, which must be profiled using conventional Win32 methods. However, the CLR profiler includes transition events to determine the boundaries between managed and unmanaged code.
+- Nespravovaný kód, který musí být profilovaná pomocí konvenčních metod Win32. Profiler CLR ale obsahuje přechodné události pro určení hranic mezi spravovaným a nespravovaným kódem.
 
-- Self-modifying applications that modify their own code for purposes such as aspect-oriented programming.
+- Vlastní úprava aplikací, které upravují jejich vlastní kód pro účely, jako je například programování orientované na jednotlivé aspekty.
 
-- Bounds checking, because the profiling API does not provide this information. The CLR provides intrinsic support for bounds checking of all managed code.
+- Kontrola hranic, protože rozhraní API profilování tyto informace neposkytuje. CLR poskytuje vnitřní podporu pro kontrolu hranic veškerého spravovaného kódu.
 
-- Remote profiling, which is not supported for the following reasons:
+- Vzdálené profilování, které se nepodporuje z následujících důvodů:
 
-  - Remote profiling extends execution time. When you use the profiling interfaces, you must minimize execution time so that profiling results will not be unduly affected. This is especially true when execution performance is being monitored. However, remote profiling is not a limitation when the profiling interfaces are used to monitor memory usage or to obtain run-time information about stack frames, objects, and so on.
+  - Vzdálené profilování rozšiřuje dobu provádění. Pokud používáte rozhraní profilování, je nutné minimalizovat dobu spuštění, aby se výsledky profilace neprojevily. To platí zejména při monitorování výkonu provádění. Vzdálené profilování však není omezením, když jsou rozhraní profilování používána k monitorování využití paměti nebo k získání běhových informací o rámcích zásobníku, objektech a tak dále.
 
-  - The CLR code profiler must register one or more callback interfaces with the runtime on the local computer on which the profiled application is running. This limits the ability to create a remote code profiler.
+  - Profiler kódu CLR musí zaregistrovat jedno nebo více rozhraní zpětného volání s modulem runtime v místním počítači, na kterém je spuštěn profilovaná aplikace. Tím se omezí možnost vytvářet Profiler vzdáleného kódu.
 
-- Profiling in production environments with high-availability requirements. The profiling API was created to support development-time diagnostics. It has not undergone the rigorous testing required to support production environments.
+- Profilace v produkčním prostředí s požadavky na vysokou dostupnost. Rozhraní API profilování bylo vytvořeno za účelem podpory diagnostiky při vývoji. Neprošlo přísným testováním vyžadovaným pro podporu produkčních prostředí.
 
-## <a name="notification-threads"></a>Notification Threads
+## <a name="notification-threads"></a>Vlákna oznámení
 
-In most cases, the thread that generates an event also executes notifications. Such notifications (for example, [FunctionEnter](../../../../docs/framework/unmanaged-api/profiling/functionenter-function.md) and [FunctionLeave](../../../../docs/framework/unmanaged-api/profiling/functionleave-function.md)) do not need to supply the explicit `ThreadID`. Also, the profiler might decide to use thread-local storage to store and update its analysis blocks instead of indexing the analysis blocks in global storage, based on the `ThreadID` of the affected thread.
+Ve většině případů vlákno, které generuje událost, také spouští oznámení. Taková oznámení (například [FunctionEnter –](../../../../docs/framework/unmanaged-api/profiling/functionenter-function.md) a [FunctionLeave –](../../../../docs/framework/unmanaged-api/profiling/functionleave-function.md)) nemusejí zadávat explicitní `ThreadID`. Profiler se také může rozhodnout použít místní úložiště vlákna k ukládání a aktualizaci bloků analýz namísto indexování bloků analýzy v globálním úložišti, a to na základě `ThreadID` ovlivněného vlákna.
 
-Note that these callbacks are not serialized. Users must protect their code by creating thread-safe data structures and by locking the profiler code where necessary to prevent parallel access from multiple threads. Therefore, in certain cases you can receive an unusual sequence of callbacks. For example, assume that a managed application is spawning two threads that are executing identical code. In this case, it is possible to receive a [ICorProfilerCallback::JITCompilationStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationstarted-method.md) event for some function from one thread and a `FunctionEnter` callback from the other thread before receiving the [ICorProfilerCallback::JITCompilationFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationfinished-method.md) callback. In this case, the user will receive a `FunctionEnter` callback for a function that may not have been fully just-in-time (JIT) compiled yet.
+Všimněte si, že tato zpětná volání nejsou serializována. Uživatelé musí chránit svůj kód vytvořením datových struktur bezpečných pro přístup z více vláken a uzamknutím kódu profileru, pokud je to nutné, aby se zabránilo paralelnímu přístupu z více vláken Proto v některých případech můžete obdržet neobvyklou posloupnost zpětných volání. Předpokládejme například, že spravovaná aplikace vytváří dvě vlákna, která spouštějí stejný kód. V tomto případě je možné přijmout událost [ICorProfilerCallback:: JITCompilationStarted –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationstarted-method.md) pro určitou funkci z jednoho vlákna a zpětného volání `FunctionEnter` z druhého vlákna před příjmem zpětného volání [ICorProfilerCallback:: JITCompilationFinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationfinished-method.md) . V takovém případě bude uživatel obdržet `FunctionEnter` zpětného volání pro funkci, která pravděpodobně nebyla dosud plně zkompilována za běhu (just-in-time).
 
 ## <a name="security"></a>Zabezpečení
 
-A profiler DLL is an unmanaged DLL that runs as part of the common language runtime execution engine. As a result, the code in the profiler DLL is not subject to the restrictions of managed code access security. The only limitations on the profiler DLL are those imposed by the operating system on the user who is running the profiled application.
+Knihovna DLL profileru je nespravovaná knihovna DLL, která se spouští jako součást modulu pro spuštění společného jazykového modulu runtime. V důsledku toho kód v profileru DLL nepodléhá omezením zabezpečení přístupu spravovaného kódu. Jediným omezením v knihovně DLL profileru jsou ta, která je uložená operačním systémem pro uživatele, který používá profilované aplikace.
 
-Profiler authors should take appropriate precautions to avoid security-related issues. For example, during installation, a profiler DLL should be added to an access control list (ACL) so that a malicious user cannot modify it.
+Autoři profileru by měli přijmout vhodná opatření, aby se předešlo problémům souvisejícím se zabezpečením. Během instalace by se například měl profil DLL profileru přidat do seznamu řízení přístupu (ACL), aby ho uživatel se zlými úmysly nemohl změnit.
 
-## <a name="combining-managed-and-unmanaged-code-in-a-code-profiler"></a>Combining Managed and Unmanaged Code in a Code Profiler
+## <a name="combining-managed-and-unmanaged-code-in-a-code-profiler"></a>Kombinování spravovaného a nespravovaného kódu v profileru kódu
 
-An incorrectly written profiler can cause circular references to itself, resulting in unpredictable behavior.
+Nesprávně napsaný profiler může způsobit cyklické odkazy na sebe sama, což vede k nepředvídatelnému chování.
 
-A review of the CLR profiling API may create the impression that you can write a profiler that contains managed and unmanaged components that call each other through COM interop or indirect calls.
+Kontrola rozhraní API profilování CLR může vytvořit dojem, že můžete napsat Profiler, který obsahuje spravované a nespravované součásti, které jsou vzájemně volány prostřednictvím zprostředkovatele komunikace s objekty COM nebo nepřímými voláními.
 
-Although this is possible from a design perspective, the profiling API does not support managed components. A CLR profiler must be completely unmanaged. Attempts to combine managed and unmanaged code in a CLR profiler may cause access violations, program failure, or deadlocks. The managed components of the profiler will fire events back to their unmanaged components, which would subsequently call the managed components again, resulting in circular references.
+I když je to možné z perspektivy návrhu, rozhraní API profilování nepodporuje spravované součásti. Profiler CLR musí být zcela nespravovaný. Pokusy o kombinování spravovaného a nespravovaného kódu v profileru CLR můžou způsobit narušení přístupu, selhání programu nebo zablokování. Spravované součásti profileru spustí události zpět do jejich nespravovaných komponent, které by následně znovu volaly spravované komponenty, což vede k cyklickým odkazům.
 
-The only location where a CLR profiler can call managed code safely is in the Microsoft intermediate language (MSIL) body of a method. The recommended practice for modifying the MSIL body is to use the  JIT recompilation methods in the [ICorProfilerCallback4](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md) interface.
+Jediné místo, kde Profiler CLR může bezpečně volat spravovaný kód, je v těle metody jazyka MSIL (Microsoft Intermediate Language). Doporučený postup pro úpravu těla jazyka MSIL je použití metod rekompilace JIT v rozhraní [ICorProfilerCallback4](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md) .
 
-It is also possible to use the older instrumentation methods to modify MSIL. Before the just-in-time (JIT) compilation of a function is completed, the profiler can insert managed calls in the MSIL body of a method and then JIT-compile it (see the [ICorProfilerInfo::GetILFunctionBody](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getilfunctionbody-method.md) method). This technique can successfully be used for selective instrumentation of managed code, or to gather statistics and performance data about the JIT.
+Je také možné použít starší metody instrumentace pro úpravu jazyka MSIL. Před dokončením kompilace funkce just-in-time (JIT) může Profiler vložit spravovaná volání do těla jazyka MSIL metody a následně je zkompilovat JIT (viz metoda [ICorProfilerInfo:: GetILFunctionBody –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getilfunctionbody-method.md) ). Tato technika se dá úspěšně použít pro selektivní instrumentaci spravovaného kódu nebo pro shromažďování dat o statistice a výkonu o JIT.
 
-Alternatively, a code profiler can insert native hooks in the MSIL body of every managed function that calls into unmanaged code. This technique can be used for instrumentation and coverage. For example, a code profiler could insert instrumentation hooks after every MSIL block to ensure that the block has been executed. The modification of the MSIL body of a method is a very delicate operation, and there are many factors that should be taken into consideration.
+Případně může Profiler kódu vložit nativní háky v těle jazyka MSIL každé spravované funkce, která volá do nespravovaného kódu. Tato technika se dá použít k instrumentaci a pokrytí. Například Profiler kódu může vložit háky instrumentace po každém bloku MSIL, aby bylo zajištěno, že byl blok proveden. Modifikace těla jazyka MSIL metody je velmi jemná operace a existuje mnoho faktorů, které je třeba vzít v úvahu.
 
-## <a name="profiling-unmanaged-code"></a>Profiling Unmanaged Code
+## <a name="profiling-unmanaged-code"></a>Profilování nespravovaného kódu
 
-The common language runtime (CLR) profiling API provides minimal support for profiling unmanaged code. The following functionality is provided:
+Rozhraní API pro profilaci modulu CLR (Common Language Runtime) poskytuje minimální podporu pro profilování nespravovaného kódu. K dispozici jsou následující funkce:
 
-- Enumeration of stack chains. This feature enables a code profiler to determine the boundary between managed code and unmanaged code.
+- Výčet řetězů zásobníku. Tato funkce umožňuje profileru kódu určit hranici mezi spravovaným kódem a nespravovaným kódem.
 
-- Determination whether a stack chain corresponds to managed code or native code.
+- Určení, zda řetěz zásobníku odpovídá spravovanému kódu nebo nativnímu kódu.
 
-In the .NET Framework versions 1.0 and 1.1, these methods are available through the in-process subset of the CLR debugging API. They are defined in the CorDebug.idl file.
+V .NET Framework verzích 1,0 a 1,1 jsou tyto metody k dispozici prostřednictvím dílčí sady v rámci procesu rozhraní API pro ladění CLR. Jsou definovány v souboru CorDebug. idl.
 
-In the .NET Framework 2.0 and later, you can use the [ICorProfilerInfo2::DoStackSnapshot](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md) method for this functionality.
+V .NET Framework 2,0 a novějších můžete pro tuto funkci použít metodu [ICorProfilerInfo2::D ostacksnapshot](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md) .
 
-## <a name="using-com"></a>Using COM
+## <a name="using-com"></a>Používání modelu COM
 
-Although the profiling interfaces are defined as COM interfaces, the common language runtime (CLR) does not actually initialize COM to use these interfaces. The reason is to avoid having to set the threading model by using the [CoInitialize](/windows/desktop/api/objbase/nf-objbase-coinitialize) function before the managed application has had a chance to specify its desired threading model. Similarly, the profiler itself should not call `CoInitialize`, because it may pick a threading model that is incompatible with the application being profiled and may cause the application to fail.
+I když jsou rozhraní profilace definována jako rozhraní COM, modul CLR (Common Language Runtime) ve skutečnosti neinicializuje model COM pro použití těchto rozhraní. Důvodem je, že nemusíte nastavovat model vláken pomocí funkce [CoInitialize](/windows/desktop/api/objbase/nf-objbase-coinitialize) předtím, než spravovaná aplikace měla možnost určit požadovaný model vláken. Podobně samotný Profiler by neměl volat `CoInitialize`, protože může vybrat model vláken, který je nekompatibilní s aplikací, která je profilovaná a může způsobit selhání aplikace.
 
-## <a name="call-stacks"></a>Call Stacks
+## <a name="call-stacks"></a>Zásobníky volání
 
-The profiling API provides two ways to obtain call stacks: a stack snapshot method, which enables sparse gathering of call stacks, and a shadow stack method, which tracks the call stack at every instant.
+Rozhraní API profilování poskytuje dva způsoby, jak získat zásobníky volání: metodu snímku zásobníku, která umožňuje zhuštěné shromažďování zásobníků volání, a metodu stínového zásobníku, která sleduje zásobník volání při každém okamžitém běhu.
 
-### <a name="stack-snapshot"></a>Stack Snapshot
+### <a name="stack-snapshot"></a>Snímek zásobníku
 
-A stack snapshot is a trace of the stack of a thread at an instant in time. The profiling API supports the tracing of managed functions on the stack, but it leaves the tracing of unmanaged functions to the profiler's own stack walker.
+Snímek zásobníku je trasování zásobníku vlákna v okamžitém čase. Rozhraní API profilování podporuje trasování spravovaných funkcí v zásobníku, ale opustí trasování nespravovaných funkcí do vlastního zásobníku prohlížeč profileru.
 
-For more information about how to program the profiler to walk managed stacks, see the [ICorProfilerInfo2::DoStackSnapshot](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md) method in this documentation set, and [Profiler Stack Walking in the .NET Framework 2.0: Basics and Beyond](https://go.microsoft.com/fwlink/?LinkId=73638).
+Další informace o tom, jak profiler naprogramovat, aby provedl spravované zásobníky, najdete v části [ICorProfilerInfo2::D ostacksnapshot](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md) v této dokumentaci a [v zásobníku profileru v .NET Framework 2,0: základy a mimo ni](https://go.microsoft.com/fwlink/?LinkId=73638).
 
-### <a name="shadow-stack"></a>Shadow Stack
+### <a name="shadow-stack"></a>Stínový zásobník
 
-Using the snapshot method too frequently can quickly create a performance issue. If you want to take stack traces frequently, your profiler should instead build a shadow stack by using the [FunctionEnter2](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md), [FunctionLeave2](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md), [FunctionTailcall2](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md), and [ICorProfilerCallback2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md) exception callbacks. The shadow stack is always current and can quickly be copied to storage whenever a stack snapshot is needed.
+Použití metody Snapshot moc často může rychle vytvořit problém s výkonem. Pokud chcete přebírat trasování zásobníku často, váš Profiler by měl vytvořit stínový zásobník pomocí zpětného volání výjimek [FunctionEnter2](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md), [FunctionLeave2 –](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md), [FunctionTailcall2 –](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md)a [ICorProfilerCallback2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md) . Stínový zásobník je vždycky aktuální a dá se rychle zkopírovat do úložiště, kdykoli je potřeba snímek zásobníku.
 
-A shadow stack may obtain function arguments, return values, and information about generic instantiations. This information is available only through the shadow stack and may be obtained when control is handed to a function. However, this information may not be available later during the run of the function.
+Stínový zásobník může získat argumenty funkce, vracet hodnoty a informace o obecných instancích. Tyto informace jsou k dispozici pouze prostřednictvím stínového zásobníku a lze je získat, pokud je ovládací prvek předán funkci. Tyto informace ale nemusí být k dispozici později během spuštění funkce.
 
-## <a name="callbacks-and-stack-depth"></a>Callbacks and Stack Depth
+## <a name="callbacks-and-stack-depth"></a>Zpětná volání a Hloubka zásobníku
 
-Profiler callbacks may be issued in very stack-constrained circumstances, and a stack overflow in a profiler callback will lead to an immediate process exit. A profiler should make sure to use as little stack as possible in response to callbacks. If the profiler is intended for use against processes that are robust against stack overflow, the profiler itself should also avoid triggering stack overflow.
+Zpětná volání profileru mohou být vydávána v podmínkách s velmi omezenými zásobníky a přetečení zásobníku v rámci zpětného volání profileru vede k okamžitému ukončení procesu. Profiler by měl v reakci na zpětná volání používat co nejmenší zásobník. Pokud je profiler určený pro použití proti procesům, které jsou robustní proti přetečení zásobníku, měl by samotný Profiler také zabránit spuštění přetečení zásobníku.
 
 ## <a name="related-topics"></a>Související témata
 
 |Název|Popis|
 |-----------|-----------------|
-|[Nastavení prostředí profilace](../../../../docs/framework/unmanaged-api/profiling/setting-up-a-profiling-environment.md)|Explains how to initialize a profiler, set event notifications, and profile a Windows Service.|
-|[Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)|Describes the unmanaged interfaces that the profiling API uses.|
-|[Globální statické funkce pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)|Describes the unmanaged global static functions that the profiling API uses.|
-|[Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)|Describes the unmanaged enumerations that the profiling API uses.|
-|[Struktury pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)|Describes the unmanaged structures that the profiling API uses.|
+|[Nastavení prostředí profilace](../../../../docs/framework/unmanaged-api/profiling/setting-up-a-profiling-environment.md)|Vysvětluje, jak inicializovat Profiler, nastavit oznámení událostí a profilovat službu systému Windows.|
+|[Rozhraní pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)|Popisuje nespravovaná rozhraní, která používá profilování API.|
+|[Globální statické funkce pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)|Popisuje nespravované globální statické funkce, které používá profilování API.|
+|[Výčty pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)|Popisuje nespravované výčty, které používá profilování API.|
+|[Struktury pro profilaci](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)|Popisuje nespravované struktury, které používá profilování API.|

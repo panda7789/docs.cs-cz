@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74431938"
 ---
 # <a name="imetadataassemblyemitsetexportedtypeprops-method"></a>IMetaDataAssemblyEmit::SetExportedTypeProps – metoda
-Modifies the specified `ExportedType` metadata structure.  
+Upraví zadanou `ExportedType` strukturu metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,28 +38,28 @@ HRESULT SetExportedTypeProps (
   
 ## <a name="parameters"></a>Parametry  
  `ct`  
- [in] The metadata token that specifies the `ExportedType` metadata structure to be modified.  
+ pro Token metadat, který určuje `ExportedType` strukturu metadat, která se má upravit.  
   
  `tkImplementation`  
- [in] The token, of type `File`, `AssemblyRef`, or `ExportedType`, that specifies how this type is implemented.  
+ pro Token typu `File`, `AssemblyRef`nebo `ExportedType`, který určuje, jak je tento typ implementován.  
   
  `tkTypeDef`  
- [in] The `TypeDef` token referenced in the code file.  
+ pro Token `TypeDef`, na který se odkazuje v souboru kódu.  
   
  `dwExportedTypeFlags`  
- [in] A bitwise combination of values that specify attributes of the type.  
+ pro Bitová kombinace hodnot, které určují atributy typu.  
   
 ## <a name="remarks"></a>Poznámky  
- To create an `ExportedType` metadata structure, use the [IMetaDataAssemblyEmit::DefineExportedType](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineexportedtype-method.md) method.  
+ Chcete-li vytvořit `ExportedType` struktury metadat, použijte metodu [IMetaDataAssemblyEmit::D efineexportedtype](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineexportedtype-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

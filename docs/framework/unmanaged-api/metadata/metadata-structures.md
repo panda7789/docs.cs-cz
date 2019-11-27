@@ -14,23 +14,23 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74444619"
 ---
 # <a name="metadata-structures"></a>Struktury metadat
-This section describes the unmanaged structures that the metadata API uses.  
+Tato část popisuje nespravované struktury, které používá rozhraní API pro metadata.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- ASSEMBLYMETADATA  
- Stores assembly metadata for later use.  
+ AssemblyMetadata –  
+ Ukládá metadata sestavení pro pozdější použití.  
   
  [COR_FIELD_OFFSET – struktura](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md)  
- Stores the offset, within a class, of the specified field.  
+ Ukládá posun v rámci třídy zadaného pole.  
   
  [COR_NATIVE_LINK – struktura](../../../../docs/framework/unmanaged-api/metadata/cor-native-link-structure.md)  
- Contains information that is used to link native code.  
+ Obsahuje informace, které se používají k propojení nativního kódu.  
   
  [CVStruct – struktura](../../../../docs/framework/unmanaged-api/metadata/cvstruct-structure.md)  
- Contains information that is used when installing a module or a composite image.  
+ Obsahuje informace, které se používají při instalaci modulu nebo složené image.  
   
  [OSINFO – struktura](../../../../docs/framework/unmanaged-api/metadata/osinfo-structure.md)  
- Contains information about the operating system.  
+ Obsahuje informace o operačním systému.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Rozhraní pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)  

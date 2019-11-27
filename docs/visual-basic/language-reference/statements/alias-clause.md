@@ -14,14 +14,14 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349151"
 ---
 # <a name="alias-clause-visual-basic"></a>Alias – klauzule (Visual Basic)
-Indicates that an external procedure has another name in its DLL.  
+Označuje, že externí procedura má jiný název ve své knihovně DLL.  
   
 ## <a name="remarks"></a>Poznámky  
- The `Alias` keyword can be used in this context:  
+ Klíčové slovo `Alias` lze použít v tomto kontextu:  
   
  [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
- In the following example, the `Alias` keyword is used to provide the name of the function in advapi32.dll, `GetUserNameA`, that `getUserName` is used in place of in this example. Function `getUserName` is called in sub `getUser`, which displays the name of the current user.  
+ V následujícím příkladu je klíčové slovo `Alias` použito k poskytnutí názvu funkce v souboru advapi32. dll `GetUserNameA`, který `getUserName` je použit místo v tomto příkladu. Funkce `getUserName` je volána v sub `getUser`, která zobrazuje název aktuálního uživatele.  
   
  [!code-vb[VbVbalrStatements#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#15)]  
   

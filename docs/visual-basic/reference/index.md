@@ -13,27 +13,27 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352882"
 ---
 # <a name="reference-visual-basic"></a>Odkaz (Visual Basic)
-This section provides links to reference information about various aspects of Visual Basic programming.  
+Tato část obsahuje odkazy na referenční informace o různých aspektech Visual Basic programování.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Referenční příručka jazyka Visual Basic](../../visual-basic/language-reference/index.md)  
- Provides reference information for various aspects of the Visual Basic language.  
+ Poskytuje referenční informace pro různé aspekty Visual Basicho jazyka.  
   
- [Visual Basic Command-Line Compiler](../../visual-basic/reference/command-line-compiler/index.md)  
- Provides links to information about the command-line compiler, which provides an alternative to compiling programs from the Visual Studio IDE.  
+ [Visual Basic Kompilátor příkazového řádku](../../visual-basic/reference/command-line-compiler/index.md)  
+ Obsahuje odkazy na informace o kompilátoru příkazového řádku, který poskytuje alternativu k kompilování programů z integrovaného vývojového prostředí (IDE) sady Visual Studio.  
   
  [Referenční informace k rozhraní .NET Framework](../../visual-basic/reference/net-framework-reference-information.md)  
- Provides links to information on working with the .NET Framework class library.  
+ Obsahuje odkazy na informace o práci s knihovnou tříd .NET Framework.  
   
  [Specifikace jazyka Visual Basic](../../visual-basic/reference/language-specification/index.md)  
- Provides links to the complete Visual Basic language specification, which contains detailed information on all aspects of the language.  
+ Obsahuje odkazy na kompletní specifikaci jazyka Visual Basic, která obsahuje podrobné informace o všech aspektech jazyka.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Obecné elementy uživatelského rozhraní (Visual Studio)](/visualstudio/ide/reference/general-user-interface-elements-visual-studio)  
- Contains topics for dialog boxes and windows used in Visual Studio.  
+ Obsahuje témata pro dialogová okna a okna použitá v aplikaci Visual Studio.  
   
  [Nástroje XML v sadě Visual Studio](/visualstudio/xml-tools/xml-tools-in-visual-studio)  
- Provides links to topics on various XML tools available in Visual Studio.  
+ Obsahuje odkazy na témata o různých nástrojích XML dostupných v aplikaci Visual Studio.  
   
- [Automation and Extensibility Reference](/visualstudio/extensibility/extensibility-in-visual-studio?view=vs-2015)  
- Provides links to topics covering automation and extensibility in Visual Studio, for both shared and language-specific components.
+ [Reference pro automatizaci a rozšiřitelnost](/visualstudio/extensibility/extensibility-in-visual-studio?view=vs-2015)  
+ Obsahuje odkazy na témata týkající se automatizace a rozšiřitelnosti v aplikaci Visual Studio pro sdílené součásti i součásti pro konkrétní jazyk.

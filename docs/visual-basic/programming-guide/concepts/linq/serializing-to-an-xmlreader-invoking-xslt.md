@@ -9,11 +9,11 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349354"
 ---
-# <a name="serializing-to-an-xmlreader-invoking-xslt-visual-basic"></a>Serializing to an XmlReader (Invoking XSLT) (Visual Basic)
-When you use the <xref:System.Xml?displayProperty=nameWithType> interoperability capabilities of [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], you can use <xref:System.Xml.Linq.XNode.CreateReader%2A> to create an <xref:System.Xml.XmlReader>. The module that reads from this <xref:System.Xml.XmlReader> reads the nodes from the XML tree and processes them accordingly.  
+# <a name="serializing-to-an-xmlreader-invoking-xslt-visual-basic"></a>Serializace do objektu XmlReader (vyvolání XSLT) (Visual Basic)
+Pokud používáte možnosti spolupráce <xref:System.Xml?displayProperty=nameWithType> [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], můžete k vytvoření <xref:System.Xml.XmlReader>použít <xref:System.Xml.Linq.XNode.CreateReader%2A>. Modul, který čte z tohoto <xref:System.Xml.XmlReader> přečte uzly ze stromu XML a zpracuje je odpovídajícím způsobem.  
   
-## <a name="invoking-an-xslt-transformation"></a>Invoking an XSLT Transformation  
- One possible use for this method is when invoking an XSLT transformation. You can create an XML tree, create an <xref:System.Xml.XmlReader> from the XML tree, create a new document, and then create an <xref:System.Xml.XmlWriter> to write into the new document. Then, you can invoke the XSLT transformation, passing in <xref:System.Xml.XmlReader> and <xref:System.Xml.XmlWriter>. After the transformation successfully completes, the new XML tree is populated with the results of the transformation.  
+## <a name="invoking-an-xslt-transformation"></a>Vyvolání transformace XSLT  
+ Jedním z možných způsobů použití této metody je vyvolání transformace XSLT. Můžete vytvořit strom XML, vytvořit <xref:System.Xml.XmlReader> ze stromu XML, vytvořit nový dokument a pak vytvořit <xref:System.Xml.XmlWriter> pro zápis do nového dokumentu. Pak můžete vyvolat transformaci XSLT a předat <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter>. Po úspěšném dokončení transformace se nový strom XML naplní výsledky transformace.  
   
 ```vb  
 Dim xslMarkup As XDocument = _  
@@ -51,7 +51,7 @@ End Using
 Console.WriteLine(newTree)  
 ```  
   
- This example produces the following output:  
+ Tento příklad vytvoří následující výstup:  
   
 ```xml  
 <Root>  
@@ -62,4 +62,4 @@ Console.WriteLine(newTree)
   
 ## <a name="see-also"></a>Viz také:
 
-- [Serializing XML Trees (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/serializing-xml-trees.md)
+- [Serializace stromů XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/serializing-xml-trees.md)

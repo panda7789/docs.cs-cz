@@ -1,5 +1,5 @@
 ---
-title: 'How to: Perform Streaming Transform of Large XML Documents'
+title: 'Postupy: provádění převodu velkých dokumentů XML do streamování'
 ms.date: 07/20/2015
 ms.assetid: 3d954cc9-4b3c-4b47-8132-ff7541cff53b
 ms.openlocfilehash: 58bc76e6f2a269b0baac009f1247d5e94d508cbd
@@ -9,23 +9,23 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344510"
 ---
-# <a name="how-to-perform-streaming-transform-of-large-xml-documents-visual-basic"></a>How to: Perform Streaming Transform of Large XML Documents (Visual Basic)
-Sometimes you have to transform large XML files, and write your application so that the memory footprint of the application is predictable. If you try to populate an XML tree with a very large XML file, your memory usage will be proportional to the size of the file (that is, excessive). Therefore, you should use a streaming technique instead.  
+# <a name="how-to-perform-streaming-transform-of-large-xml-documents-visual-basic"></a>Postupy: provádění transformace streamování velkých dokumentů XML (Visual Basic)
+Někdy je nutné transformovat velké soubory XML a napsat aplikaci tak, aby paměťové nároky aplikace byly předvídatelné. Pokud se pokusíte naplnit strom XML s velmi velkým souborem XML, využití paměti bude úměrné velikosti souboru (to znamená nadměrné). Proto byste měli místo toho použít metodu streamování.  
   
- Streaming techniques are best applied in situations where you need to process the source document only once, and you can process the elements in document order. Certain standard query operators, such as <xref:System.Linq.Enumerable.OrderBy%2A>, iterate their source, collect all of the data, sort it, and then finally yield the first item in the sequence. Note that if you use a query operator that materializes its source before yielding the first item, you will not retain a small memory footprint for your application.  
+ Techniky streamování se nejlépe aplikují v situacích, kdy potřebujete zpracovat zdrojový dokument jenom jednou, a můžete zpracovat elementy v pořadí dokumentů. Některé standardní operátory pro dotazování, jako je například <xref:System.Linq.Enumerable.OrderBy%2A>, iterují jejich zdroj, shromažďují všechna data, řadí je a nakonec vydávají první položku v sekvenci. Všimněte si, že pokud použijete operátor dotazu, který materializuje svůj zdroj před tím, než zadáte první položku, nebudete si u své aplikace uchovávat malý objem paměti.  
   
- Even if you use the technique described in [How to: Stream XML Fragments with Access to Header Information (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md), if you try to assemble an XML tree that contains the transformed document, memory usage will be too great.  
+ I v případě použití techniky popsané v tématu [Postupy: streamování fragmentů XML s přístupem k informacím hlavičky (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md), pokud se pokusíte sestavit strom XML, který obsahuje transformovaný dokument, využití paměti bude příliš Skvělé.  
   
- There are two main approaches. One approach is to use the deferred processing characteristics of <xref:System.Xml.Linq.XStreamingElement>. Another approach is to create an <xref:System.Xml.XmlWriter>, and use the capabilities of [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] to write elements to an <xref:System.Xml.XmlWriter>. This topic demonstrates both approaches.  
+ Existují dva hlavní přístupy. Jednou z možností je použít odložené zpracování vlastností <xref:System.Xml.Linq.XStreamingElement>. Dalším přístupem je vytvoření <xref:System.Xml.XmlWriter>a použití možností [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] k zápisu prvků do <xref:System.Xml.XmlWriter>. Toto téma ukazuje oba přístupy.  
   
 ## <a name="example"></a>Příklad  
- The following example builds on the example in [How to: Stream XML Fragments with Access to Header Information (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md).  
+ Následující příklad sestaví v příkladu v tématu [Postupy: streamování fragmentů XML s přístupem k informacím hlavičky (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md).  
   
- This example uses the deferred execution capabilities of <xref:System.Xml.Linq.XStreamingElement> to stream the output. This example can transform a very large document while maintaining a small memory footprint.  
+ V tomto příkladu se k streamování výstupu používá funkce odloženého spuštění <xref:System.Xml.Linq.XStreamingElement>. Tento příklad může transformovat velmi velký dokument při zachování malých objemů paměti.  
   
- Note that the custom axis (`StreamCustomerItem`) is specifically written so that it expects a document that has `Customer`, `Name`, and `Item` elements, and that those elements will be arranged as in the following Source.xml document. A more robust implementation, however, would be prepared to parse an invalid document.  
+ Všimněte si, že vlastní osa (`StreamCustomerItem`) je specificky zapsána, takže očekává dokument, který obsahuje prvky `Customer`, `Name`a `Item` a že tyto prvky budou uspořádány jako v následujícím dokumentu source. XML. Robustnější implementace by ale mohla být připravená analyzovat neplatný dokument.  
   
- The following is the source document, Source.xml:  
+ Následuje zdrojový dokument source. XML:  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>   
@@ -197,7 +197,7 @@ Public Class StreamCustomerItemEnumerator
 End Class  
 ```  
   
- This code produces the following output:  
+ Tento kód generuje následující výstup:  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -246,15 +246,15 @@ End Class
 ```  
   
 ## <a name="example"></a>Příklad  
- The following example also builds on the example in [How to: Stream XML Fragments with Access to Header Information (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md).  
+ Následující příklad je také sestaven v příkladu v tématu [Postupy: streamování fragmentů XML s přístupem k informacím hlavičky (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md).  
   
- This example uses the capability of [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] to write elements to an <xref:System.Xml.XmlWriter>. This example can transform a very large document while maintaining a small memory footprint.  
+ Tento příklad používá schopnost [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] k zápisu prvků do <xref:System.Xml.XmlWriter>. Tento příklad může transformovat velmi velký dokument při zachování malých objemů paměti.  
   
- Note that the custom axis (`StreamCustomerItem`) is specifically written so that it expects a document that has `Customer`, `Name`, and `Item` elements, and that those elements will be arranged as in the following Source.xml document. A more robust implementation, however, would either validate the source document with an XSD, or would be prepared to parse an invalid document.  
+ Všimněte si, že vlastní osa (`StreamCustomerItem`) je specificky zapsána, takže očekává dokument, který obsahuje prvky `Customer`, `Name`a `Item` a že tyto prvky budou uspořádány jako v následujícím dokumentu source. XML. Robustnější implementace však buď ověří zdrojový dokument s XSD, nebo by bylo připraveno analyzovat neplatný dokument.  
   
- This example uses the same source document, Source.xml, as the previous example in this topic. It also produces exactly the same output.  
+ Tento příklad používá stejný zdrojový dokument, source. XML, jako předchozí příklad v tomto tématu. Vytvoří také přesně stejný výstup.  
   
- Using <xref:System.Xml.Linq.XStreamingElement> for streaming the output XML is preferred over writing to an <xref:System.Xml.XmlWriter>.  
+ Při použití <xref:System.Xml.Linq.XStreamingElement> pro streamování je výstupní soubor XML preferovaný před zápisem do <xref:System.Xml.XmlWriter>.  
   
 ```vb  
 Module Module1  
@@ -392,7 +392,7 @@ Public Class StreamCustomerItemEnumerator
 End Class  
 ```  
   
- This code produces the following output:  
+ Tento kód generuje následující výstup:  
   
 ```xml  
 <Root>  
@@ -441,4 +441,4 @@ End Class
   
 ## <a name="see-also"></a>Viz také:
 
-- [Advanced LINQ to XML Programming (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+- [Rozšířené programování LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

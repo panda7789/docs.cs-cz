@@ -23,10 +23,10 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445025"
 ---
 # <a name="icorprofilercallbackcomclassicvtabledestroyed-method"></a>ICorProfilerCallback::COMClassicVTableDestroyed – metoda
-Notifies the profiler that a COM interop vtable is being destroyed.  
+Upozorní profileru, že je zničena tabulka zprostředkovatele komunikace s objekty COM.  
   
 > [!NOTE]
-> This callback is likely never to occur, because the destruction of vtables occurs very close to shutdown.  
+> Toto zpětné volání se pravděpodobně nikdy nestane, protože zničení tabulek vtable je velmi blízko vypnutí.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,27 +39,27 @@ HRESULT COMClassicVTableDestroyed(
   
 ## <a name="parameters"></a>Parametry  
  `wrappedClassId`  
- [in] The ID of the class for which this vtable was created.  
+ pro ID třídy, pro kterou se vytvořila tabulka vtable  
   
  `implementedIID`  
- [in] The ID of the interface implemented by the class. This value may be NULL if the interface is internal only.  
+ pro IDENTIFIKÁTOR rozhraní implementovaného třídou Tato hodnota může být NULL, pokud je rozhraní pouze interní.  
   
  `pVTable`  
- [in] A pointer to the start of the vtable.  
+ pro Ukazatel na začátek vtable.  
   
 ## <a name="remarks"></a>Poznámky  
- The profiler should not block in its implementation of this method because the stack may not be in a state that allows garbage collection, and therefore preemptive garbage collection cannot be enabled. If the profiler blocks here and garbage collection is attempted, the runtime will block until this callback returns.  
+ Profiler by neměl při implementaci této metody blokovat, protože zásobník pravděpodobně není ve stavu, který umožňuje uvolňování paměti, a proto nelze povolit bezstavové uvolňování paměti. Pokud se tady zablokuje Profiler a dojde k pokusu o uvolnění paměti, modul runtime se zablokuje, dokud toto zpětné volání nevrátí.  
   
- The profiler's implementation of this method should not call into managed code or in any way cause a managed-memory allocation.  
+ Implementace této metody v profileru by se neměla volat do spravovaného kódu nebo jakýmkoli způsobem způsobovat alokaci spravované paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

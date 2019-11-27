@@ -153,7 +153,7 @@ Parametry a příklady dotazů:
 
 - OnThrottlePercentExceeded: `https://contoso:81/Service1?health&OnThrottlePercentExceeded= 70:350,95:500`
 
-  Určuje procento {1 – 100}, které aktivuje odpověď a kód odpovědi HTTP {200 – 599}. V tomto příkladu:
+  Určuje procento {1 – 100}, které aktivuje odpověď a kód odpovědi HTTP {200 – 599}. V tomto příkladu:
 
   - Pokud je procento větší než 95, vrátí se kód odpovědi HTTP 500.
 
@@ -350,7 +350,7 @@ Podpora dekomprese pomocí rozhraní Windows API je ve výchozím nastavení pov
 
 **Další rozhraní API pro shromažďování**
 
-.NET Framework 4.7.2 přidá do <xref:System.Collections.Generic.SortedSet%601> a <xref:System.Collections.Generic.HashSet%601> typů mnoho nových rozhraní API. Mezi ně patří:
+.NET Framework 4.7.2 přidá do <xref:System.Collections.Generic.SortedSet%601> a <xref:System.Collections.Generic.HashSet%601> typů mnoho nových rozhraní API. Zde jsou některé z nich:
 
 - `TryGetValue` metody, které přesahují vzor try použitý v jiných typech kolekcí těchto dvou typů. Metody jsou:
 
@@ -434,7 +434,7 @@ Můžete přidat SameSite pro soubory cookie <xref:System.Web.Security.FormsAuth
 
 <a name="net472" />
 
-#### <a name="networking"></a>Síťové služby
+#### <a name="networking"></a>Sítě
 
 **Implementace vlastností HttpClientHandler**
 
@@ -630,7 +630,7 @@ Změny uvolňování paměti (GC) v .NET Framework 4.7.1 vylepšit celkový výk
 
 <a name="net471"/>
 
-#### <a name="networking"></a>Síťové služby
+#### <a name="networking"></a>Sítě
 
 **Podpora SHA-2 pro Message. HashAlgorithm**
 
@@ -699,7 +699,7 @@ V .NET Framework 4,7 <xref:System.Runtime.Serialization.Json.DataContractJsonSer
 
 <a name="net47" />
 
-#### <a name="networking"></a>Síťové služby
+#### <a name="networking"></a>Sítě
 
 .NET Framework 4,7 přidává následující funkci související se sítí:
 
@@ -741,7 +741,7 @@ Počínaje .NET Framework 4,7 umožňuje WCF nakonfigurovat kromě protokolu SSL
 
 **Vylepšená spolehlivost aplikací WCF a serializace WCF**
 
-WCF zahrnuje řadu změn kódu, které eliminují konflikty časování, což zvyšuje výkon a spolehlivost možností serializace. Mezi ně patří:
+WCF zahrnuje řadu změn kódu, které eliminují konflikty časování, což zvyšuje výkon a spolehlivost možností serializace. Zde jsou některé z nich:
 
 - Lepší podpora pro kombinování asynchronního a synchronního kódu v voláních **Připojení SocketConnection bylo. BeginRead** a **Připojení SocketConnection bylo. Read**.
 - Lepší spolehlivost při přerušení připojení pomocí **SharedConnectionListener** a **DuplexChannelBinder**.
@@ -792,7 +792,7 @@ Rozhraní API pro tisk v WPF ve třídě <xref:System.Printing.PrintQueue?displa
 
 - [Windows Presentation Foundation (WPF)](#WPF462)
 
-- [Windows Workflow Foundation (WF)](#WF462)
+- [Programovací model Windows Workflow Foundation (WF)](#WF462)
 
 - [ClickOnce](#clickonce-1)
 
@@ -841,7 +841,7 @@ End Class
 
 Pak můžete vytvořit soubor prostředků, dataanotace. Localization. fr. resx, jehož klíč je řetězec chybové zprávy a jehož hodnota je lokalizovaná chybová zpráva. Soubor se musí nacházet ve složce `App.LocalResources`. Například následující je klíč a jeho hodnota v lokalizované chybové zprávě jazyka francouzštiny (FR):
 
-| Name                                 | Hodnota                                     |
+| Název                                 | Hodnota                                     |
 | ------------------------------------ | ----------------------------------------- |
 | Hodnocení musí být v rozmezí od 1 do 10. | La doit être tvoří meziplatformní 1 et 10. |
 
@@ -901,7 +901,7 @@ Změny v kategoriích znaků z Unicode 6,0 až Unicode 7,0 najdete na webu Unico
 
 <a name="Crypto462" />
 
-### <a name="cryptography"></a>Kryptografick
+### <a name="cryptography"></a>Kryptografie
 
 **Podpora pro certifikáty x509 obsahující FIPS 186-3 DSA**
 
@@ -1582,9 +1582,9 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
     Je výhodné použít pro přepínače konzistentní formát, protože se jedná o formální kontrakt, který je zpřístupněný knihovnou. Níže jsou uvedené dva zjevné formáty.
 
-    - *Přepínač*. *obor názvů*.*switchName*
+    - *Přepínač*. *obor názvů*. *přepínač*
 
-    - *Přepínač*. *Knihovna*.*switchName*
+    - *Přepínač*. *Knihovna*. *přepínač*
 
   - **Změny asynchronního vzoru založeného na úlohách (klepnutím)**
 
@@ -1910,7 +1910,7 @@ Nové funkce v ASP.NET 4.5.1 najdete v tématu [ASP.NET and Web Tools for Visual
 
 - Lepší výkon při uvolňování paměti na pozadí pro servery. Pokud používáte systém uvolňování paměti serveru v .NET Framework 4,5, automatické uvolňování paměti na pozadí je povoleno. V tématu [základní informace o uvolňování paměti](../../standard/garbage-collection/fundamentals.md) najdete v části uvolňování paměti serveru na pozadí.
 
-- Kompilace JIT (just-in-time), která je volitelně dostupná pro procesory s více jádry ke zlepšení výkonu aplikace. Viz <xref:System.Runtime.ProfileOptimization>.
+- Kompilace JIT (just-in-time), která je volitelně dostupná pro procesory s více jádry ke zlepšení výkonu aplikace. Podívejte se na téma <xref:System.Runtime.ProfileOptimization>.
 
 - Možnost omezit dobu, po kterou se modul regulárních výrazů pokusí přeložit regulární výraz předtím, než vyprší jeho časový limit. Podívejte se na vlastnost <xref:System.Text.RegularExpressions.Regex.MatchTimeout%2A?displayProperty=nameWithType>.
 
@@ -1970,7 +1970,7 @@ Optimalizace na základě spravovaného profilu (nástroj Mpgo. exe) umožňuje 
 
 ### <a name="web"></a>Web
 
-ASP.NET 4,5 a 4.5.1 přidávají vazbu modelu pro webové formuláře, podporu WebSocket, asynchronní obslužné rutiny, vylepšení výkonu a mnoho dalších funkcí. Další informace naleznete v následujících materiálech:
+ASP.NET 4,5 a 4.5.1 přidávají vazbu modelu pro webové formuláře, podporu WebSocket, asynchronní obslužné rutiny, vylepšení výkonu a mnoho dalších funkcí. Další informace naleznete v následujících zdrojích:
 
 - [ASP.NET 4,5 a Visual Studio 2012](https://docs.microsoft.com/previous-versions/aspnet/hh420390(v=vs.110))
 
@@ -2128,6 +2128,6 @@ Přenosná knihovna tříd projektu v aplikaci Visual Studio 2012 (a novějšíc
 
 - [Rozhraní .NET Framework a nesvázaná vydání](../get-started/the-net-framework-and-out-of-band-releases.md)
 - [Co je nového v přístupnosti v .NET Framework](whats-new-in-accessibility.md)
-- [Co je nového v sadě Visual Studio 2017](/visualstudio/ide/whats-new-visual-studio-2017)
+- [Co je nového v aplikaci Visual Studio 2017](/visualstudio/ide/whats-new-visual-studio-2017)
 - [ASP.NET](/aspnet)
 - [Co je nového C++ v aplikaci Visual Studio](/cpp/what-s-new-for-visual-cpp-in-visual-studio)

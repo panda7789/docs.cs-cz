@@ -1,5 +1,5 @@
 ---
-title: 'Troubleshooting: reading from and writing to text files'
+title: 'Řešení potíží: čtení z textových souborů a zápis do nich'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - troubleshooting file I/O
@@ -16,25 +16,25 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74333789"
 ---
-# <a name="troubleshooting-reading-from-and-writing-to-text-files-visual-basic"></a>Troubleshooting: reading from and writing to text files (Visual Basic)
+# <a name="troubleshooting-reading-from-and-writing-to-text-files-visual-basic"></a>Řešení potíží: čtení z textových souborů a zápis do nich (Visual Basic)
 
-This topic discusses common problems encountered when working with text files and suggests an approach to each.  
+Toto téma popisuje běžné problémy zjištěné při práci s textovými soubory a navrhuje přístup k jednotlivým.  
   
-## <a name="common-problems"></a>Common problems  
+## <a name="common-problems"></a>Běžné problémy  
 
- The most common issues encountered when working with text files include security exceptions, file encodings, or invalid paths.  
+ Nejběžnější problémy, ke kterým došlo při práci s textovými soubory, zahrnují výjimky zabezpečení, kódování souborů nebo neplatné cesty.  
   
-### <a name="security-exceptions"></a>Security exceptions  
+### <a name="security-exceptions"></a>Výjimky zabezpečení  
 
- A <xref:System.Security.SecurityException> is thrown when a security error occurs. This is often a result of the user lacking necessary permissions, which may be solved by adding permissions or working with files in isolated storage.  
+ <xref:System.Security.SecurityException> je vyvolána, když dojde k chybě zabezpečení. To často vede k tomu, že uživatel nemá potřebná oprávnění, která se můžou vyřešit přidáváním oprávnění nebo práci se soubory v izolovaném úložišti.  
   
-### <a name="file-encodings"></a>File encodings  
+### <a name="file-encodings"></a>Kódování souborů  
 
- File encodings, also known as character encodings, specify how to represent characters when text processing. Unexpected characters in a text file may result from incorrect encoding. For most files, one encoding may be preferable over another in terms of which language characters it can or cannot handle, although Unicode is usually preferred. For more information, see [File Encodings](../../../../visual-basic/developing-apps/programming/drives-directories-files/file-encodings.md) and <xref:System.Text.Encoding>.  
+ Kódování souborů, označovaná také jako kódování znaků, určují způsob reprezentace znaků při zpracování textu. Neočekávané znaky v textovém souboru mohou být způsobeny nesprávným kódováním. U většiny souborů může být jedno kódování vhodnější než jiné z důvodu toho, které znaky jazyka může nebo nemůže zpracovat, i když je standardu Unicode obvykle upřednostňovaný. Další informace najdete v tématu [kódování souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/file-encodings.md) a <xref:System.Text.Encoding>.  
   
-### <a name="incorrect-paths"></a>Incorrect paths  
+### <a name="incorrect-paths"></a>Nesprávné cesty  
 
- When parsing file paths, particularly relative paths, it is easy to supply the wrong data. Many problems can be corrected by making sure you are supplying the correct path. For more information, see [How to: Parse File Paths](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md).  
+ Při analýze cest k souborům, zejména relativních cest, je snadné zadávat nesprávná data. Mnohé problémy se dají opravit tím, že zadáte správnou cestu. Další informace najdete v tématu [Postup: analýza cest k souborům](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md).  
   
 ## <a name="see-also"></a>Viz také:
 

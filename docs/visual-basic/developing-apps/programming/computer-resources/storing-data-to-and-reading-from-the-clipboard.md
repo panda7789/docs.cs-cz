@@ -1,5 +1,5 @@
 ---
-title: Storing data to and reading from the Clipboard
+title: Ukládání dat do schránky a čtení z ní
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Clipboard, storing data to (My.Computer.Clipboard)
@@ -16,62 +16,62 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349736"
 ---
-# <a name="storing-data-to-and-reading-from-the-clipboard-visual-basic"></a>Storing data to and reading from the Clipboard (Visual Basic)
+# <a name="storing-data-to-and-reading-from-the-clipboard-visual-basic"></a>Ukládání dat do schránky a jejich čtení (Visual Basic)
 
-The Clipboard can be used to store data, such as text and images. Because the Clipboard is shared by all active processes, it can be used to transfer data between them. The `My.Computer.Clipboard` object allows you to easily access the Clipboard and to read from and write to it.  
+Schránku lze použít k ukládání dat, jako je například text a obrázky. Vzhledem k tomu, že schránka sdílí všechny aktivní procesy, lze ji použít k přenosu dat mezi nimi. Objekt `My.Computer.Clipboard` umožňuje snadný přístup ke schránce a čtení z ní a zápis do ní.  
   
-## <a name="reading-from-the-clipboard"></a>Reading from the Clipboard  
+## <a name="reading-from-the-clipboard"></a>Čtení ze schránky  
 
- Use the <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetText%2A> method to read the text in the Clipboard. The following code reads the text and displays it in a message box. There must be text stored on the Clipboard for the example to run correctly.  
+ K přečtení textu ve schránce použijte metodu <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetText%2A>. Následující kód přečte text a zobrazí jej v okně se zprávou. Ve schránce musí být uložený text, aby mohl být příklad správně spuštěn.  
   
  [!code-vb[VbVbcnMyClipboard#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyClipboard/VB/Class1.vb#4)]  
   
- This code example is also available as an IntelliSense code snippet. In the code snippet picker, it is located in **Windows Forms Applications > Clipboard**. For more information, see [Code Snippets](/visualstudio/ide/code-snippets).  
+ Tento příklad kódu je také k dispozici jako fragment kódu technologie IntelliSense. Ve výběru fragmentu kódu se nachází v **model Windows Forms aplikace > schránka**. Další informace naleznete v tématu [fragmenty kódu](/visualstudio/ide/code-snippets).  
   
- Use the <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetImage%2A> method to retrieve an image from the Clipboard. This example checks to see if there is an image on the Clipboard before retrieving it and assigning it to `PictureBox1`.  
+ Pomocí metody <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.GetImage%2A> načtěte obrázek ze schránky. Tento příklad zkontroluje, zda je před načtením do schránky obrázek, a přiřadí ho k `PictureBox1`.  
   
  [!code-vb[VbResourceTasks#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#16)]  
   
- This code example is also available as an IntelliSense code snippet. In the code snippet picker, it is located in **Windows Forms Applications > Clipboard**.For more information, see [Code Snippets](/visualstudio/ide/code-snippets).  
+ Tento příklad kódu je také k dispozici jako fragment kódu technologie IntelliSense. Ve výběru fragmentu kódu se nachází v **model Windows Forms aplikace > schránka**. Další informace naleznete v tématu [fragmenty kódu](/visualstudio/ide/code-snippets).  
   
- Items placed on the Clipboard will persist even after the application is shut down.  
+ Položky umístěné ve schránce zůstanou i po vypnutí aplikace.  
   
-## <a name="determining-the-type-of-file-stored-in-the-clipboard"></a>Determining the type of file stored in the Clipboard  
+## <a name="determining-the-type-of-file-stored-in-the-clipboard"></a>Určení typu souboru uloženého ve schránce  
 
- Data on the Clipboard may take a number of different forms, such as text, an audio file, or an image. In order to determine what sort of file is on the Clipboard, you can use methods such as <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsAudio%2A>, <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsFileDropList%2A>, <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsImage%2A>, and <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsText%2A>. The <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsData%2A> method can be used if you have a custom format that you want to check.  
+ Data ve schránce mohou mít řadu různých forem, jako je například text, zvukový soubor nebo obrázek. Aby bylo možné určit, jakým způsobem je soubor ve schránce, můžete použít metody, jako <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsAudio%2A>, <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsFileDropList%2A>, <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsImage%2A>a <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsText%2A>. Metodu <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.ContainsData%2A> lze použít, pokud máte vlastní formát, který chcete kontrolovat.  
   
- Use the `ContainsImage` function to determine whether the data contained on the Clipboard is an image. The following code checks to see whether the data is an image and reports accordingly.  
+ Pomocí funkce `ContainsImage` určíte, zda jsou data obsažená ve schránce obrázkem. Následující kód zkontroluje, zda se jedná o odpovídající obrázek a sestavy.  
   
  [!code-vb[VbResourceTasks#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#13)]  
   
-## <a name="clearing-the-clipboard"></a>Clearing the Clipboard  
+## <a name="clearing-the-clipboard"></a>Vymazávání schránky  
 
- The <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.Clear%2A> method clears the Clipboard. Because the Clipboard is shared by other processes, clearing it may have an impact on those processes.  
+ Metoda <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.Clear%2A> vymaže schránku. Vzhledem k tomu, že schránka sdílí jiné procesy, její zrušení může mít vliv na tyto procesy.  
   
- The following code shows how to use the `Clear` method.  
+ Následující kód ukazuje, jak použít metodu `Clear`.  
   
  [!code-vb[VbVbcnMyClipboard#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyClipboard/VB/Class1.vb#3)]  
   
-## <a name="writing-to-the-clipboard"></a>Writing to the Clipboard  
+## <a name="writing-to-the-clipboard"></a>Zápis do schránky  
 
- Use the <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetText%2A> method to write text to the Clipboard. The following code writes the string "This is a test string" to the Clipboard.  
+ Použijte metodu <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetText%2A> k zápisu textu do schránky. Následující kód zapíše řetězec "Toto je testovací řetězec" do schránky.  
   
  [!code-vb[VbVbcnMyClipboard#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyClipboard/VB/Class1.vb#1)]  
   
- The `SetText` method can accept a format parameter that contains a type of <xref:System.Windows.Forms.TextDataFormat>. The following code writes the string "This is a test string" to the Clipboard as RTF text.  
+ Metoda `SetText` může přijmout parametr formátu, který obsahuje typ <xref:System.Windows.Forms.TextDataFormat>. Následující kód zapíše řetězec "Toto je testovací řetězec" do schránky jako text RTF.  
   
  [!code-vb[VbVbcnMyClipboard#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyClipboard/VB/Class1.vb#2)]  
   
- Use the <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetData%2A> method to write data to the Clipboard. This example writes the `DataObject` `dataChunk` to the Clipboard in the custom format `specialFormat`.  
+ K zápisu dat do schránky použijte metodu <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetData%2A>. Tento příklad zapíše `DataObject` `dataChunk` do schránky v `specialFormat`vlastního formátu.  
   
  [!code-vb[VbVbcnMyClipboard#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyClipboard/VB/Class1.vb#7)]  
   
- Use the <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetAudio%2A> method to write audio data to the Clipboard. This example creates the byte array `musicReader`, reads the file `cool.wav` into it, and then writes it to the Clipboard.  
+ Pomocí metody <xref:Microsoft.VisualBasic.MyServices.ClipboardProxy.SetAudio%2A> zapište zvuková data do schránky. Tento příklad vytvoří `musicReader`bajtové pole, přečte soubor `cool.wav` a pak ho zapíše do schránky.  
   
  [!code-vb[VbResourceTasks#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#5)]  
   
 > [!IMPORTANT]
-> Because the Clipboard can be accessed by other users, do not use it to store sensitive information, such as passwords or confidential data.  
+> Vzhledem k tomu, že je možné k schránce získat jiní uživatelé, nepoužívejte ji k ukládání citlivých informací, jako jsou hesla nebo důvěrná data.  
   
 ## <a name="see-also"></a>Viz také:
 

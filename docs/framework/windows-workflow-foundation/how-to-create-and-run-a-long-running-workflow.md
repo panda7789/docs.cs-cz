@@ -1,5 +1,5 @@
 ---
-title: How to create and run a long-running workflow
+title: Jak vytvořit a spustit dlouhodobě běžící pracovní postup
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,56 +12,56 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74204880"
 ---
-# <a name="how-to-create-and-run-a-long-running-workflow"></a>How to create and run a long-running workflow
+# <a name="how-to-create-and-run-a-long-running-workflow"></a>Jak vytvořit a spustit dlouhodobě běžící pracovní postup
 
-One of the central features of Windows Workflow Foundation (WF) is the runtime’s ability to persist and unload idle workflows to a database. The steps in [How to: Run a Workflow](how-to-run-a-workflow.md) demonstrated the basics of workflow hosting using a console application. Examples were shown of starting workflows, workflow lifecycle handlers, and resuming bookmarks. In order to demonstrate workflow persistence effectively, a more complex workflow host is required that supports starting and resuming multiple workflow instances. This step in the tutorial demonstrates how to create a Windows form host application that supports starting and resuming multiple workflow instances, workflow persistence, and provides a basis for the advanced features such as tracking and versioning that are demonstrated in subsequent tutorial steps.
-
-> [!NOTE]
-> This tutorial step and the subsequent steps use all three workflow types from [How to: Create a Workflow](how-to-create-a-workflow.md). If you did not complete all three types you can download a completed version of the steps from [Windows Workflow Foundation (WF45) - Getting Started Tutorial](https://go.microsoft.com/fwlink/?LinkID=248976).
+Jednou z ústředních funkcí programovací model Windows Workflow Foundation (WF) je schopnost modulu runtime uchovávat a uvolňovat nečinné pracovní postupy do databáze. Postup, [Jak spustit pracovní postup: spuštění pracovního postupu](how-to-run-a-workflow.md) ukázal základy hostování pracovního postupu pomocí konzolové aplikace. V příkladech se zobrazily počáteční pracovní postupy, obslužné rutiny životního cyklu pracovního postupu a obnovení záložek. Aby bylo možné předvést trvalost pracovního postupu efektivně, je zapotřebí složitější hostitel pracovního postupu, který podporuje spouštění a obnovování více instancí pracovního postupu. Tento krok v tomto kurzu ukazuje, jak vytvořit hostitelskou aplikaci Windows Form, která podporuje spouštění a obnovování více instancí pracovního postupu, trvalý pracovní postup a poskytuje základ pro pokročilé funkce, jako je například sledování a správa verzí, které jsou znázorněné v dalších krocích kurzu.
 
 > [!NOTE]
-> To download a completed version or view a video walkthrough of the tutorial, see [Windows Workflow Foundation (WF45) - Getting Started Tutorial](https://go.microsoft.com/fwlink/?LinkID=248976).
+> Tento krok kurzu a následné kroky používají všechny tři typy pracovních postupů v tématu [Postupy: vytvoření pracovního postupu](how-to-create-a-workflow.md). Pokud jste nedokončili všechny tři typy, můžete si stáhnout dokončenou verzi kroků z [programovací model Windows Workflow Foundation (WF45) – začínáme kurzu](https://go.microsoft.com/fwlink/?LinkID=248976).
 
-## <a name="to-create-the-persistence-database"></a>To create the persistence database
+> [!NOTE]
+> Pokud si chcete stáhnout dokončenou verzi nebo zobrazit návod k videu, přečtěte si [kurz programovací model Windows Workflow Foundation (WF45)-začínáme](https://go.microsoft.com/fwlink/?LinkID=248976).
 
-1. Open SQL Server Management Studio and connect to the local server, for example **.\SQLEXPRESS**. Right-click the **Databases** node on the local server, and select **New Database**. Name the new database **WF45GettingStartedTutorial**, accept all other values, and select **OK**.
+## <a name="to-create-the-persistence-database"></a>Vytvoření databáze trvalosti
+
+1. Otevřete SQL Server Management Studio a připojte se k místnímu serveru, například **.\SQLEXPRESS**. Pravým tlačítkem myši klikněte na uzel **databáze** na místním serveru a vyberte možnost **Nová databáze**. Pojmenujte novou databázi **WF45GettingStartedTutorial**, přijměte všechny ostatní hodnoty a vyberte **OK**.
 
     > [!NOTE]
-    > Ensure that you have **Create Database** permission on the local server before creating the database.
+    > Před vytvořením databáze se ujistěte, že máte na místním serveru oprávnění **vytvořit databázi** .
 
-2. Choose **Open**, **File** from the **File** menu. Browse to the following folder: *C:\Windows\Microsoft.NET\Framework\v4.0.30319\sql\en*
+2. V nabídce **soubor** vyberte **otevřít**, **soubor** . Přejděte do následující složky: *C:\Windows\Microsoft.NET\Framework\v4.0.30319\sql\en*
 
-    Select the following two files and click **Open**.
+    Vyberte následující dva soubory a klikněte na **otevřít**.
 
-    - *SqlWorkflowInstanceStoreLogic.sql*
+    - *SqlWorkflowInstanceStoreLogic. SQL*
 
-    - *SqlWorkflowInstanceStoreSchema.sql*
+    - *SqlWorkflowInstanceStoreSchema. SQL*
 
-3. Choose **SqlWorkflowInstanceStoreSchema.sql** from the **Window** menu. Ensure that **WF45GettingStartedTutorial** is selected in the **Available Databases** drop-down and choose **Execute** from the **Query** menu.
+3. V nabídce **okno** vyberte **SqlWorkflowInstanceStoreSchema. SQL** . V rozevíracím seznamu **dostupné databáze** zkontrolujte, že je vybraná možnost **WF45GettingStartedTutorial** a v nabídce **dotaz** vyberte **Spustit** .
 
-4. Choose **SqlWorkflowInstanceStoreLogic.sql** from the **Window** menu. Ensure that **WF45GettingStartedTutorial** is selected in the **Available Databases** drop-down and choose **Execute** from the **Query** menu.
+4. V nabídce **okno** vyberte **SqlWorkflowInstanceStoreLogic. SQL** . V rozevíracím seznamu **dostupné databáze** zkontrolujte, že je vybraná možnost **WF45GettingStartedTutorial** a v nabídce **dotaz** vyberte **Spustit** .
 
     > [!WARNING]
-    > It is important to perform the previous two steps in the correct order. If the queries are executed out of order, errors occur and the persistence database is not configured correctly.
+    > Je důležité provést předchozí dva kroky ve správném pořadí. Pokud jsou dotazy spouštěny mimo pořadí, dojde k chybám a databáze trvalosti není správně nakonfigurována.
 
-## <a name="to-add-the-reference-to-the-durableinstancing-assemblies"></a>To add the reference to the DurableInstancing assemblies
+## <a name="to-add-the-reference-to-the-durableinstancing-assemblies"></a>Přidání odkazu na DurableInstancing sestavení
 
-1. Right-click **NumberGuessWorkflowHost** in **Solution Explorer** and select **Add Reference**.
+1. V **Průzkumník řešení** klikněte pravým tlačítkem na **NumberGuessWorkflowHost** a vyberte **Přidat odkaz**.
 
-2. Select **Assemblies** from the **Add Reference** list, and type `DurableInstancing` into the **Search Assemblies** box. This filters the assemblies and makes the desired references easier to select.
+2. V seznamu **Přidat odkaz** vyberte **sestavení** a do pole **vyhledávací sestavení** zadejte `DurableInstancing`. To filtruje sestavení a usnadňuje výběr požadovaných odkazů.
 
-3. Check the checkbox beside **System.Activities.DurableInstancing** and **System.Runtime.DurableInstancing** from the **Search Results** list, and click **OK**.
+3. Zaškrtněte políčko vedle položky **System. Activities. DurableInstancing** a **System. Runtime. DurableInstancing** ze seznamu **výsledků hledání** a klikněte na tlačítko **OK**.
 
-## <a name="to-create-the-workflow-host-form"></a>To create the workflow host form
+## <a name="to-create-the-workflow-host-form"></a>Vytvoření formuláře hostitele pracovního postupu
 
 > [!NOTE]
-> The steps in this procedure describe how to add and configure the form manually. If desired, you can download the solution files for the tutorial and add the completed form to the project. To download the tutorial files, see [Windows Workflow Foundation (WF45) - Getting Started Tutorial](https://go.microsoft.com/fwlink/?LinkID=248976). Once the files are downloaded, right-click **NumberGuessWorkflowHost** and choose **Add Reference**. Add a reference to **System.Windows.Forms** and **System.Drawing**. These references are added automatically if you add a new form from the **Add**, **New Item** menu, but must be added manually when importing a form. Once the references are added, right-click **NumberGuessWorkflowHost** in **Solution Explorer** and choose **Add**, **Existing Item**. Browse to the `Form` folder in the project files, select **WorkflowHostForm.cs** (or **WorkflowHostForm.vb**), and click **Add**. If you choose to import the form, then you can skip down to the next section, [To add the properties and helper methods of the form](#to-add-the-properties-and-helper-methods-of-the-form).
+> Kroky v tomto postupu popisují, jak formulář Přidat a nakonfigurovat ručně. V případě potřeby si můžete stáhnout soubory řešení pro kurz a přidat dokončený formulář do projektu. Pokud si chcete stáhnout soubory kurzu, přečtěte si [kurz programovací model Windows Workflow Foundation (WF45)-začínáme](https://go.microsoft.com/fwlink/?LinkID=248976). Po stažení souborů klikněte pravým tlačítkem na **NumberGuessWorkflowHost** a vyberte **Přidat odkaz**. Přidejte odkaz na **System. Windows. Forms** a **System. Drawing**. Tyto odkazy jsou přidány automaticky, pokud přidáte nový formulář z nabídky **Přidat**, **Nová položka** , ale je nutné jej přidat ručně při importu formuláře. Až budou odkazy přidány, klikněte pravým tlačítkem myši na **NumberGuessWorkflowHost** v **Průzkumník řešení** a vyberte **Přidat**, **existující položka**. Přejděte do složky `Form` v souborech projektu, vyberte **WorkflowHostForm.cs** (nebo **WorkflowHostForm. vb**) a klikněte na **Přidat**. Pokud se rozhodnete importovat formulář, můžete přeskočit dolů k další části a [Přidat vlastnosti a pomocné metody formuláře](#to-add-the-properties-and-helper-methods-of-the-form).
 
-1. Right-click **NumberGuessWorkflowHost** in **Solution Explorer** and choose **Add**, **New Item**.
+1. V **Průzkumník řešení** klikněte pravým tlačítkem na **NumberGuessWorkflowHost** a vyberte **Přidat**, **Nová položka**.
 
-2. In the **Installed** templates list, choose **Windows Form**, type `WorkflowHostForm` in the **Name** box, and click **Add**.
+2. V seznamu **nainstalované** šablony vyberte možnost **formulář Windows**, do pole **název** zadejte `WorkflowHostForm` a klikněte na tlačítko **Přidat**.
 
-3. Configure the following properties on the form.
+3. Ve formuláři nakonfigurujte následující vlastnosti.
 
     |Vlastnost|Hodnota|
     |--------------|-----------|
@@ -69,44 +69,44 @@ One of the central features of Windows Workflow Foundation (WF) is the runtime�
     |MaximizeBox|False|
     |Velikost|400, 420|
 
-4. Add the following controls to the form in the order specified and configure the properties as directed.
+4. Do formuláře přidejte následující ovládací prvky v zadaném pořadí a nakonfigurujte vlastnosti jako směrované.
 
-    |Control|Property: Value|
+    |Ovládací prvek|Vlastnost: hodnota|
     |-------------|---------------------|
-    |**Tlačítko**|Name: NewGame<br /><br /> Location: 13, 13<br /><br /> Size: 75, 23<br /><br /> Text: New Game|
-    |**Popisek**|Location: 94, 18<br /><br /> Text: Guess a number from 1 to|
-    |**ComboBox**|Name: NumberRange<br /><br /> DropDownStyle: DropDownList<br /><br /> Items: 10, 100, 1000<br /><br /> Location: 228, 12<br /><br /> Size: 143, 21|
-    |**Popisek**|Location: 13, 43<br /><br /> Text: Workflow type|
-    |**ComboBox**|Name: WorkflowType<br /><br /> DropDownStyle: DropDownList<br /><br /> Items: StateMachineNumberGuessWorkflow, FlowchartNumberGuessWorkflow, SequentialNumberGuessWorkflow<br /><br /> Location: 94, 40<br /><br /> Size: 277, 21|
-    |**Popisek**|Name: WorkflowVersion<br /><br /> Location: 13, 362<br /><br /> Text: Workflow version|
-    |**GroupBox**|Location: 13, 67<br /><br /> Size: 358, 287<br /><br /> Text: Game|
+    |**Tlačítko**|Název: NewGame<br /><br /> Umístění: 13, 13<br /><br /> Velikost: 75, 23<br /><br /> Text: nová hra|
+    |**Popisek**|Umístění: 94, 18<br /><br /> Text: vyodhaduje číslo od 1 do.|
+    |**ComboBox**|Název: NumberRange<br /><br /> DropDownStyle: DropDownList<br /><br /> Položky: 10, 100, 1000<br /><br /> Umístění: 228, 12<br /><br /> Velikost: 143, 21|
+    |**Popisek**|Umístění: 13, 43<br /><br /> Text: typ pracovního postupu|
+    |**ComboBox**|Název: WorkflowType<br /><br /> DropDownStyle: DropDownList<br /><br /> Položky: StateMachineNumberGuessWorkflow, FlowchartNumberGuessWorkflow, SequentialNumberGuessWorkflow<br /><br /> Umístění: 94, 40<br /><br /> Velikost: 277, 21|
+    |**Popisek**|Název: WorkflowVersion<br /><br /> Umístění: 13, 362<br /><br /> Text: verze pracovního postupu|
+    |**GroupBox**|Umístění: 13, 67<br /><br /> Velikost: 358, 287<br /><br /> Text: hra|
 
     > [!NOTE]
-    > When adding the following controls, put them into the GroupBox.
+    > Při přidávání následujících ovládacích prvků Umístěte tyto ovládací prvky do skupinového rámečku.
 
-    |Control|Property: Value|
+    |Ovládací prvek|Vlastnost: hodnota|
     |-------------|---------------------|
-    |**Popisek**|Location: 7, 20<br /><br /> Text: Workflow Instance Id|
-    |**ComboBox**|Name: InstanceId<br /><br /> DropDownStyle: DropDownList<br /><br /> Location: 121, 17<br /><br /> Size: 227, 21|
-    |**Popisek**|Location: 7, 47<br /><br /> Text: Guess|
-    |**TextBox**|Name: Guess<br /><br /> Location: 50, 44<br /><br /> Size: 65, 20|
-    |**Tlačítko**|Name: EnterGuess<br /><br /> Location: 121, 42<br /><br /> Size: 75, 23<br /><br /> Text: Enter Guess|
-    |**Tlačítko**|Name: QuitGame<br /><br /> Location: 274, 42<br /><br /> Size: 75, 23<br /><br /> Text: Quit|
-    |**TextBox**|Name: WorkflowStatus<br /><br /> Location: 10, 73<br /><br /> Multiline: True<br /><br /> ReadOnly: True<br /><br /> ScrollBars: Vertical<br /><br /> Size: 338, 208|
+    |**Popisek**|Umístění: 7, 20<br /><br /> Text: ID instance pracovního postupu|
+    |**ComboBox**|Název: InstanceId<br /><br /> DropDownStyle: DropDownList<br /><br /> Umístění: 121, 17<br /><br /> Velikost: 227, 21|
+    |**Popisek**|Umístění: 7, 47<br /><br /> Text: odhad|
+    |**TextBox**|Název: odhad<br /><br /> Umístění: 50, 44<br /><br /> Velikost: 65, 20|
+    |**Tlačítko**|Název: EnterGuess<br /><br /> Umístění: 121, 42<br /><br /> Velikost: 75, 23<br /><br /> Text: zadejte odhad.|
+    |**Tlačítko**|Název: QuitGame<br /><br /> Umístění: 274, 42<br /><br /> Velikost: 75, 23<br /><br /> Text: konec|
+    |**TextBox**|Název: WorkflowStatus<br /><br /> Umístění: 10, 73<br /><br /> Víceřádkové: pravda<br /><br /> Jen pro čtení: true<br /><br /> Posuvníky: svislé<br /><br /> Velikost: 338, 208|
 
-5. Set the **AcceptButton** property of the form to **EnterGuess**.
+5. Nastavte vlastnost **AcceptButton** formuláře na **EnterGuess**.
 
- The following example illustrates the completed form.
+ Následující příklad znázorňuje dokončený formulář.
 
- ![Screenshot of a Windows Workflow Foundation Workflow Host Form.](./media/how-to-create-and-run-a-long-running-workflow/windows-workflow-foundation-workflowhostform.png)
+ ![Snímek obrazovky programovací model Windows Workflow Foundation formuláře hostitele pracovního postupu.](./media/how-to-create-and-run-a-long-running-workflow/windows-workflow-foundation-workflowhostform.png)
 
-## <a name="to-add-the-properties-and-helper-methods-of-the-form"></a>To add the properties and helper methods of the form
+## <a name="to-add-the-properties-and-helper-methods-of-the-form"></a>Přidání vlastností a pomocných metod formuláře
 
-The steps in this section add properties and helper methods to the form class that configure the UI of the form to support running and resuming number guess workflows.
+Kroky v této části přidávají vlastnosti a pomocné metody do třídy formuláře, která konfiguruje uživatelské rozhraní formuláře tak, aby podporovalo spouštění a obnovování počtu vyčíslení pro odhadované pracovní postupy.
 
-1. Right-click **WorkflowHostForm** in **Solution Explorer** and choose **View Code**.
+1. V **Průzkumník řešení** klikněte pravým tlačítkem na **WorkflowHostForm** a vyberte **Zobrazit kód**.
 
-2. Add the following `using` (or `Imports`) statements at the top of the file with the other `using` (or `Imports`) statements.
+2. Do horní části souboru přidejte následující příkazy `using` (nebo `Imports`) s jinými příkazy `using` (nebo `Imports`).
 
     ```vb
     Imports System.Activities
@@ -124,7 +124,7 @@ The steps in this section add properties and helper methods to the form class th
     using System.Windows.Forms;
     ```
 
-3. Add the following member declarations to the **WorkflowHostForm** class.
+3. Do třídy **WorkflowHostForm** přidejte následující deklarace členů.
 
     ```vb
     Const connectionString = "Server=.\SQLEXPRESS;Initial Catalog=WF45GettingStartedTutorial;Integrated Security=SSPI"
@@ -139,9 +139,9 @@ The steps in this section add properties and helper methods to the form class th
     ```
 
     > [!NOTE]
-    > If your connection string is different, update `connectionString` to refer to your database.
+    > Pokud je váš připojovací řetězec jiný, aktualizujte `connectionString`, aby odkazovaly na vaši databázi.
 
-4. Add a `WorkflowInstanceId` property to the `WorkflowFormHost` class.
+4. Do `WorkflowFormHost` třídy přidejte vlastnost `WorkflowInstanceId`.
 
     ```vb
     Public ReadOnly Property WorkflowInstanceId() As Guid
@@ -165,9 +165,9 @@ The steps in this section add properties and helper methods to the form class th
     }
     ```
 
-    The `InstanceId` combo box displays a list of persisted workflow instance ids, and the `WorkflowInstanceId` property returns the currently selected workflow.
+    V poli se seznamem `InstanceId` se zobrazí seznam trvalých ID instancí pracovního postupu a vlastnost `WorkflowInstanceId` vrací aktuálně vybraný pracovní postup.
 
-5. Add a handler for the form `Load` event. To add the handler, switch to **Design View** for the form, click the **Events** icon at the top of the **Properties** window, and double-click **Load**.
+5. Přidejte obslužnou rutinu pro událost `Load` formuláře. Chcete-li přidat obslužnou rutinu, přepněte do **zobrazení Návrh** formuláře, klikněte na ikonu **události** v horní části okna **vlastnosti** a dvakrát klikněte na položku **načíst**.
 
     ```vb
     Private Sub WorkflowHostForm_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -182,7 +182,7 @@ The steps in this section add properties and helper methods to the form class th
     }
     ```
 
-6. Add the following code to `WorkflowHostForm_Load`.
+6. Přidejte následující kód pro `WorkflowHostForm_Load`.
 
     ```vb
     ' Initialize the store and configure it so that it can be used for
@@ -210,9 +210,9 @@ The steps in this section add properties and helper methods to the form class th
     ListPersistedWorkflows();
     ```
 
-    When the form loads, the `SqlWorkflowInstanceStore` is configured, the range and workflow type combo boxes are set to default values, and the persisted workflow instances are added to the `InstanceId` combo box.
+    Když se formulář načte, `SqlWorkflowInstanceStore` se nakonfigurují, rozsah a typ pracovního postupu se pole se seznamem nastaví na výchozí hodnoty a trvalé instance pracovního postupu se přidají do pole se seznamem `InstanceId`.
 
-7. Add a `SelectedIndexChanged` handler for `InstanceId`. To add the handler, switch to **Design View** for the form, select the `InstanceId` combo box, click the **Events** icon at the top of the **Properties** window, and double-click **SelectedIndexChanged**.
+7. Přidejte obslužnou rutinu `SelectedIndexChanged` pro `InstanceId`. Chcete-li přidat obslužnou rutinu, přepněte do **zobrazení Návrh** formuláře, vyberte pole se seznamem `InstanceId`, klikněte na ikonu **události** v horní části okna **vlastnosti** a dvakrát klikněte na položku **SelectedIndexChanged**.
 
     ```vb
     Private Sub InstanceId_SelectedIndexChanged(sender As Object, e As EventArgs) Handles InstanceId.SelectedIndexChanged
@@ -227,7 +227,7 @@ The steps in this section add properties and helper methods to the form class th
     }
     ```
 
-8. Add the following code to `InstanceId_SelectedIndexChanged`. Whenever the user selects a workflow by using the combo box this handler updates the status window.
+8. Přidejte následující kód pro `InstanceId_SelectedIndexChanged`. Vždy, když uživatel vybere pracovní postup pomocí pole se seznamem, tato obslužná rutina aktualizuje stavové okno.
 
     ```vb
     If InstanceId.SelectedIndex = -1 Then
@@ -277,7 +277,7 @@ The steps in this section add properties and helper methods to the form class th
     }
     ```
 
-9. Add the following `ListPersistedWorkflows` method to the form class.
+9. Do třídy Form přidejte následující metodu `ListPersistedWorkflows`.
 
     ```vb
     Private Sub ListPersistedWorkflows()
@@ -321,9 +321,9 @@ The steps in this section add properties and helper methods to the form class th
     }
     ```
 
-    `ListPersistedWorkflows` queries the instance store for persisted workflow instances, and adds the instance ids to the `cboInstanceId` combo box.
+    `ListPersistedWorkflows` se dotazuje úložiště instancí na trvalé instance pracovního postupu a přidá ID instance do pole se seznamem `cboInstanceId`.
 
-10. Add the following `UpdateStatus` method and corresponding delegate to the form class. This method updates the status window on the form with the status of the currently running workflow.
+10. Do třídy Form přidejte následující metodu `UpdateStatus` a odpovídající delegát. Tato metoda aktualizuje stavové okno ve formuláři se stavem aktuálně spuštěného pracovního postupu.
 
     ```vb
     Private Delegate Sub UpdateStatusDelegate(msg As String)
@@ -370,7 +370,7 @@ The steps in this section add properties and helper methods to the form class th
     }
     ```
 
-11. Add the following `GameOver` method and corresponding delegate to the form class. When a workflow completes, this method updates the form UI by removing the instance id of the completed workflow from the **InstanceId** combo box.
+11. Do třídy Form přidejte následující metodu `GameOver` a odpovídající delegát. Po dokončení pracovního postupu Tato metoda aktualizuje uživatelské rozhraní formuláře odebráním ID instance dokončeného pracovního postupu z pole se seznamem **InstanceId** .
 
     ```vb
     Private Delegate Sub GameOverDelegate()
@@ -402,9 +402,9 @@ The steps in this section add properties and helper methods to the form class th
     }
     ```
 
-## <a name="to-configure-the-instance-store-workflow-lifecycle-handlers-and-extensions"></a>To configure the instance store, workflow lifecycle handlers, and extensions
+## <a name="to-configure-the-instance-store-workflow-lifecycle-handlers-and-extensions"></a>Konfigurace úložiště instancí, obslužných rutin životního cyklu pracovního postupu a rozšíření
 
-1. Add a `ConfigureWorkflowApplication` method to the form class.
+1. Do třídy formuláře přidejte metodu `ConfigureWorkflowApplication`.
 
     ```vb
     Private Sub ConfigureWorkflowApplication(wfApp As WorkflowApplication)
@@ -418,9 +418,9 @@ The steps in this section add properties and helper methods to the form class th
     }
     ```
 
-    This method configures the `WorkflowApplication`, adds the desired extensions, and adds handlers for the workflow lifecycle events.
+    Tato metoda konfiguruje `WorkflowApplication`, přidá požadovaná rozšíření a přidá obslužné rutiny pro události životního cyklu pracovního postupu.
 
-2. In `ConfigureWorkflowApplication`, specify the `SqlWorkflowInstanceStore` for the `WorkflowApplication`.
+2. V `ConfigureWorkflowApplication`zadejte `SqlWorkflowInstanceStore` pro `WorkflowApplication`.
 
     ```vb
     ' Configure the persistence store.
@@ -432,7 +432,7 @@ The steps in this section add properties and helper methods to the form class th
     wfApp.InstanceStore = store;
     ```
 
-3. Next, create a `StringWriter` instance and add it to the `Extensions` collection of the `WorkflowApplication`. When a `StringWriter` is added to the extensions it captures all `WriteLine` activity output. When the workflow becomes idle, the `WriteLine` output can be extracted from the `StringWriter` and displayed on the form.
+3. Dále vytvořte instanci `StringWriter` a přidejte ji do kolekce `Extensions` `WorkflowApplication`. Když se do rozšíření přidá `StringWriter`, zachytí se veškerý výstup aktivity `WriteLine`. Když se pracovní postup přestanou nečinný, může být výstup `WriteLine` z `StringWriter` extrahován a zobrazený ve formuláři.
 
     ```vb
     ' Add a StringWriter to the extensions. This captures the output
@@ -448,7 +448,7 @@ The steps in this section add properties and helper methods to the form class th
     wfApp.Extensions.Add(sw);
     ```
 
-4. Add the following handler for the `Completed` event. When a workflow successfully completes, the number of turns taken to guess the number is displayed to the status window. If the workflow terminates, the exception information that caused the termination is displayed. At the end of the handler the `GameOver` method is called, which removes the completed workflow from the workflow list.
+4. Přidejte následující obslužnou rutinu pro událost `Completed`. Po úspěšném dokončení pracovního postupu se v okně stav zobrazí počet pokusů o odhadované číslo. Pokud se pracovní postup ukončí, zobrazí se informace o výjimce, která způsobila ukončení. Na konci obslužné rutiny je volána metoda `GameOver`, která odebere dokončený pracovní postup ze seznamu pracovního postupu.
 
     ```vb
     wfApp.Completed = _
@@ -485,7 +485,7 @@ The steps in this section add properties and helper methods to the form class th
     };
     ```
 
-5. Add the following `Aborted` and `OnUnhandledException` handlers. The `GameOver` method is not called from the `Aborted` handler because when a workflow instance is aborted, it does not terminate, and it is possible to resume the instance at a later time.
+5. Přidejte následující `Aborted` a `OnUnhandledException` obslužné rutiny. Metoda `GameOver` není volána z obslužné rutiny `Aborted`, protože když je instance pracovního postupu přerušena, nekončí, a je možné instanci obnovit později.
 
     ```vb
     wfApp.Aborted = _
@@ -515,7 +515,7 @@ The steps in this section add properties and helper methods to the form class th
     };
     ```
 
-6. Add the following `PersistableIdle` handler. This handler retrieves the `StringWriter` extension that was added, extracts the output from the `WriteLine` activities, and displays it in the status window.
+6. Přidejte následující obslužnou rutinu `PersistableIdle`. Tato obslužná rutina načte rozšíření `StringWriter`, které bylo přidáno, extrahuje výstup z aktivit `WriteLine` a zobrazí jej v okně stav.
 
     ```vb
     wfApp.PersistableIdle = _
@@ -542,9 +542,9 @@ The steps in this section add properties and helper methods to the form class th
     };
     ```
 
-    The <xref:System.Activities.PersistableIdleAction> enumeration has three values: <xref:System.Activities.PersistableIdleAction.None>, <xref:System.Activities.PersistableIdleAction.Persist>, and <xref:System.Activities.PersistableIdleAction.Unload>. <xref:System.Activities.PersistableIdleAction.Persist> causes the workflow to persist but it does not cause the workflow to unload. <xref:System.Activities.PersistableIdleAction.Unload> causes the workflow to persist and be unloaded.
+    Výčet <xref:System.Activities.PersistableIdleAction> má tři hodnoty: <xref:System.Activities.PersistableIdleAction.None>, <xref:System.Activities.PersistableIdleAction.Persist>a <xref:System.Activities.PersistableIdleAction.Unload>. <xref:System.Activities.PersistableIdleAction.Persist> způsobí, že pracovní postup zůstane zachován, ale nezpůsobí, že se pracovní postup uvolní. <xref:System.Activities.PersistableIdleAction.Unload> způsobí, že se pracovní postup uchová a uvolní.
 
-    The following example is the completed `ConfigureWorkflowApplication` method.
+    Následující příklad je dokončená `ConfigureWorkflowApplication` metoda.
 
     ```vb
     Private Sub ConfigureWorkflowApplication(wfApp As WorkflowApplication)
@@ -647,13 +647,13 @@ The steps in this section add properties and helper methods to the form class th
     }
     ```
 
-## <a name="to-enable-starting-and-resuming-multiple-workflow-types"></a>To enable starting and resuming multiple workflow types
+## <a name="to-enable-starting-and-resuming-multiple-workflow-types"></a>Povolení spouštění a obnovování více typů pracovních postupů
 
-In order to resume a workflow instance, the host has to provide the workflow definition. In this tutorial there are three workflow types, and subsequent tutorial steps introduce multiple versions of these types. `WorkflowIdentity` provides a way for a host application to associate identifying information with a persisted workflow instance. The steps in this section demonstrate how to create a utility class to assist with mapping the workflow identity from a persisted workflow instance to the corresponding workflow definition. For more information about `WorkflowIdentity` and versioning, see [Using WorkflowIdentity and Versioning](using-workflowidentity-and-versioning.md).
+Aby bylo možné obnovit instanci pracovního postupu, musí hostitel zadat definici pracovního postupu. V tomto kurzu existují tři typy pracovních postupů a další kroky kurzu představují více verzí těchto typů. `WorkflowIdentity` poskytuje, aby mohla hostitelská aplikace přidružit identifikační informace k trvalé instanci pracovního postupu. Kroky v této části ukazují, jak vytvořit třídu nástrojů, která vám pomůže s mapováním identity pracovního postupu z trvalé instance pracovního postupu na odpovídající definici pracovního postupu. Další informace o `WorkflowIdentity` a verzích najdete v tématu [použití identita WorkflowIdentity a správy verzí](using-workflowidentity-and-versioning.md).
 
-1. Right-click **NumberGuessWorkflowHost** in **Solution Explorer** and choose **Add**, **Class**. Type `WorkflowVersionMap` into the **Name** box and click **Add**.
+1. V **Průzkumník řešení** klikněte pravým tlačítkem na **NumberGuessWorkflowHost** a vyberte **Přidat**, **Třída**. Do pole **název** zadejte `WorkflowVersionMap` a klikněte na **Přidat**.
 
-2. Add the following `using` or `Imports` statements at the top of the file with the other `using` or `Imports` statements.
+2. Do horní části souboru přidejte následující příkazy `using` nebo `Imports` s ostatními `using` nebo `Imports` příkazy.
 
     ```vb
     Imports System.Activities
@@ -665,7 +665,7 @@ In order to resume a workflow instance, the host has to provide the workflow def
     using NumberGuessWorkflowActivities;
     ```
 
-3. Replace the `WorkflowVersionMap` class declaration with the following declaration.
+3. Nahraďte deklaraci třídy `WorkflowVersionMap` následující deklarací.
 
     ```vb
     Public Module WorkflowVersionMap
@@ -763,11 +763,11 @@ In order to resume a workflow instance, the host has to provide the workflow def
     }
     ```
 
-    `WorkflowVersionMap` contains three workflow identities that map to the three workflow definitions from this tutorial and is used in the following sections when workflows are started and resumed.
+    `WorkflowVersionMap` obsahuje tři identity pracovního postupu, které se mapují na tři definice pracovního postupu z tohoto kurzu a používají se v následujících oddílech při spuštění a obnovení pracovních postupů.
 
-## <a name="to-start-a-new-workflow"></a>To start a new workflow
+## <a name="to-start-a-new-workflow"></a>Spuštění nového pracovního postupu
 
-1. Add a `Click` handler for `NewGame`. To add the handler, switch to **Design View** for the form, and double-click `NewGame`. A `NewGame_Click` handler is added and the view switches to code view for the form. Whenever the user clicks this button a new workflow is started.
+1. Přidejte obslužnou rutinu `Click` pro `NewGame`. Chcete-li přidat obslužnou rutinu, přepněte do **zobrazení Návrh** formuláře a dvakrát klikněte na položku `NewGame`. Je přidána obslužná rutina `NewGame_Click` a zobrazení se přepne do zobrazení kódu pro formulář. Vždy, když uživatel klikne na toto tlačítko, je spuštěn nový pracovní postup.
 
     ```vb
     Private Sub NewGame_Click(sender As Object, e As EventArgs) Handles NewGame.Click
@@ -782,7 +782,7 @@ In order to resume a workflow instance, the host has to provide the workflow def
     }
     ```
 
-2. Add the following code to the click handler. This code creates a dictionary of input arguments for the workflow, keyed by argument name. This dictionary has one entry that contains the range of the randomly generated number retrieved from the range combo box.
+2. Do obslužné rutiny Click přidejte následující kód. Tento kód vytvoří slovník vstupních argumentů pro pracovní postup, který je označen názvem argumentu. Tento slovník má jednu položku, která obsahuje rozsah náhodně generovaného čísla načteného z pole se seznamem rozsah.
 
     ```vb
     Dim inputs As New Dictionary(Of String, Object)()
@@ -794,7 +794,7 @@ In order to resume a workflow instance, the host has to provide the workflow def
     inputs.Add("MaxNumber", Convert.ToInt32(NumberRange.SelectedItem));
     ```
 
-3. Next, add the following code that starts the workflow. The `WorkflowIdentity` and workflow definition corresponding to the type of workflow selected are retrieved using the `WorkflowVersionMap` helper class. Next, a new `WorkflowApplication` instance is created using the workflow definition, `WorkflowIdentity`, and dictionary of input arguments.
+3. Dále přidejte následující kód, který spustí pracovní postup. Definice `WorkflowIdentity` a pracovního postupu odpovídající typu vybraného pracovního postupu se načítají pomocí pomocné třídy `WorkflowVersionMap`. V dalším kroku se vytvoří nová instance `WorkflowApplication` pomocí definice pracovního postupu, `WorkflowIdentity`a slovníku vstupních argumentů.
 
     ```vb
     Dim identity As WorkflowIdentity = Nothing
@@ -836,7 +836,7 @@ In order to resume a workflow instance, the host has to provide the workflow def
     WorkflowApplication wfApp = new WorkflowApplication(wf, inputs, identity);
     ```
 
-4. Next, add the following code which adds the workflow to the workflow list and displays the workflow's version information on the form.
+4. Dále přidejte následující kód, který přidá pracovní postup do seznamu pracovních postupů a zobrazí informace o verzi pracovního postupu ve formuláři.
 
     ```vb
     ' Add the workflow to the list and display the version information.
@@ -854,7 +854,7 @@ In order to resume a workflow instance, the host has to provide the workflow def
     workflowStarting = false;
     ```
 
-5. Call `ConfigureWorkflowApplication` to configure the instance store, extensions, and workflow lifecycle handlers for this `WorkflowApplication` instance.
+5. Zavolejte `ConfigureWorkflowApplication` ke konfiguraci obslužných rutin pro úložiště instancí, rozšíření a životní cyklus pracovního cyklu pro tuto instanci `WorkflowApplication`.
 
     ```vb
     ' Configure the instance store, extensions, and
@@ -868,7 +868,7 @@ In order to resume a workflow instance, the host has to provide the workflow def
     ConfigureWorkflowApplication(wfApp);
     ```
 
-6. Finally, call `Run`.
+6. Nakonec zavolejte `Run`.
 
     ```vb
     ' Start the workflow.
@@ -880,7 +880,7 @@ In order to resume a workflow instance, the host has to provide the workflow def
     wfApp.Run();
     ```
 
-     The following example is the completed `NewGame_Click` handler.
+     Následující příklad je dokončená obslužná rutina `NewGame_Click`.
 
     ```vb
     Private Sub NewGame_Click(sender As Object, e As EventArgs) Handles NewGame.Click
@@ -960,9 +960,9 @@ In order to resume a workflow instance, the host has to provide the workflow def
     }
     ```
 
-## <a name="to-resume-a-workflow"></a>To resume a workflow
+## <a name="to-resume-a-workflow"></a>Obnovení pracovního postupu
 
-1. Add a `Click` handler for `EnterGuess`. To add the handler, switch to **Design View** for the form, and double-click `EnterGuess`. Whenever the user clicks this button a workflow is resumed.
+1. Přidejte obslužnou rutinu `Click` pro `EnterGuess`. Chcete-li přidat obslužnou rutinu, přepněte do **zobrazení Návrh** formuláře a dvakrát klikněte na položku `EnterGuess`. Vždy, když uživatel klikne na toto tlačítko, bude pracovní postup obnoven.
 
     ```vb
     Private Sub EnterGuess_Click(sender As Object, e As EventArgs) Handles EnterGuess.Click
@@ -977,7 +977,7 @@ In order to resume a workflow instance, the host has to provide the workflow def
     }
     ```
 
-2. Add the following code to ensure that a workflow is selected in the workflow list, and that the user's guess is valid.
+2. Přidejte následující kód, abyste se ujistili, že je v seznamu pracovního postupu vybraný pracovní postup a že je odhad uživatele platný.
 
     ```vb
     If WorkflowInstanceId = Guid.Empty Then
@@ -1011,7 +1011,7 @@ In order to resume a workflow instance, the host has to provide the workflow def
     }
     ```
 
-3. Next, retrieve the `WorkflowApplicationInstance` of the persisted workflow instance. A `WorkflowApplicationInstance` represents a persisted workflow instance that has not yet been associated with a workflow definition. The `DefinitionIdentity` of the `WorkflowApplicationInstance` contains the `WorkflowIdentity` of the persisted workflow instance. In this tutorial, the `WorkflowVersionMap` utility class is used to map the `WorkflowIdentity` to the correct workflow definition. Once the workflow definition is retrieved, a `WorkflowApplication` is created, using the correct workflow definition.
+3. Dále načtěte `WorkflowApplicationInstance` trvalé instance pracovního postupu. `WorkflowApplicationInstance` představuje trvalou instanci pracovního postupu, která ještě nebyla přidružena k definici pracovního postupu. `DefinitionIdentity` `WorkflowApplicationInstance` obsahuje `WorkflowIdentity` trvalé instance pracovního postupu. V tomto kurzu se třída `WorkflowVersionMap` Utility používá k mapování `WorkflowIdentity` na správnou definici pracovního postupu. Po načtení definice pracovního postupu se vytvoří `WorkflowApplication` pomocí správné definice pracovního postupu.
 
     ```vb
     Dim instance As WorkflowApplicationInstance = _
@@ -1039,7 +1039,7 @@ In order to resume a workflow instance, the host has to provide the workflow def
     var wfApp = new WorkflowApplication(wf, instance.DefinitionIdentity);
     ```
 
-4. Once the `WorkflowApplication` is created, configure the instance store, workflow lifecycle handlers, and extensions by calling `ConfigureWorkflowApplication`. These steps must be done every time a new `WorkflowApplication` is created, and they must be done before the workflow instance is loaded into the `WorkflowApplication`. After the workflow is loaded, it is resumed with the user's guess.
+4. Po vytvoření `WorkflowApplication` nakonfigurujte úložiště instancí, obslužné rutiny životního cyklu pracovního postupu a rozšíření tím, že zavoláte `ConfigureWorkflowApplication`. Tyto kroky je nutné provést při každém vytvoření nového `WorkflowApplication` a je třeba je provést před načtením instance pracovního postupu do `WorkflowApplication`. Po načtení je pracovní postup obnovený s odhadem uživatele.
 
     ```vb
     ' Configure the extensions and lifecycle handlers.
@@ -1067,7 +1067,7 @@ In order to resume a workflow instance, the host has to provide the workflow def
     wfApp.ResumeBookmark("EnterGuess", guess);
     ```
 
-5. Finally, clear the guess textbox and prepare the form to accept another guess.
+5. Nakonec zrušte zaškrtnutí políčka odhad a připravte formulář, abyste mohli akceptovat další odhad.
 
     ```vb
     ' Clear the Guess textbox.
@@ -1081,7 +1081,7 @@ In order to resume a workflow instance, the host has to provide the workflow def
     Guess.Focus();
     ```
 
-    The following example is the completed `EnterGuess_Click` handler.
+    Následující příklad je dokončená obslužná rutina `EnterGuess_Click`.
 
     ```vb
     Private Sub EnterGuess_Click(sender As Object, e As EventArgs) Handles EnterGuess.Click
@@ -1172,9 +1172,9 @@ In order to resume a workflow instance, the host has to provide the workflow def
     }
     ```
 
-## <a name="to-terminate-a-workflow"></a>To terminate a workflow
+## <a name="to-terminate-a-workflow"></a>Ukončení pracovního postupu
 
-1. Add a `Click` handler for `QuitGame`. To add the handler, switch to **Design View** for the form, and double-click `QuitGame`. Whenever the user clicks this button the currently selected workflow is terminated.
+1. Přidejte obslužnou rutinu `Click` pro `QuitGame`. Chcete-li přidat obslužnou rutinu, přepněte do **zobrazení Návrh** formuláře a dvakrát klikněte na položku `QuitGame`. Vždy, když uživatel klikne na toto tlačítko, je ukončen aktuálně vybraný pracovní postup.
 
     ```vb
     Private Sub QuitGame_Click(sender As Object, e As EventArgs) Handles QuitGame.Click
@@ -1189,7 +1189,7 @@ In order to resume a workflow instance, the host has to provide the workflow def
     }
     ```
 
-2. Add the following code to the `QuitGame_Click` handler. This code first checks to ensure that a workflow is selected in the workflow list. Then it loads the persisted instance into a `WorkflowApplicationInstance`, uses the `DefinitionIdentity` to determine the correct workflow definition, and then initializes the `WorkflowApplication`. Next the extensions and workflow lifecycle handlers are configured with a call to `ConfigureWorkflowApplication`. Once the `WorkflowApplication` is configured, it is loaded, and then `Terminate` is called.
+2. Do obslužné rutiny `QuitGame_Click` přidejte následující kód. Tento kód nejprve kontroluje, zda je v seznamu pracovních postupů vybrán pracovní postup. Poté načte trvalou instanci do `WorkflowApplicationInstance`, používá `DefinitionIdentity` k určení správné definice pracovního postupu a poté inicializuje `WorkflowApplication`. V dalších rozšířeních a obslužných rutinách životního cyklu pracovního postupu se nakonfigurují volání `ConfigureWorkflowApplication`. Po nakonfigurování `WorkflowApplication` je načtena a poté `Terminate` volána.
 
     ```vb
     If WorkflowInstanceId = Guid.Empty Then
@@ -1244,11 +1244,11 @@ In order to resume a workflow instance, the host has to provide the workflow def
     wfApp.Terminate("User resigns.");
     ```
 
-## <a name="to-build-and-run-the-application"></a>To build and run the application
+## <a name="to-build-and-run-the-application"></a>Sestavení a spuštění aplikace
 
-1. Double-click **Program.cs** (or **Module1.vb**) in **Solution Explorer** to display the code.
+1. Dvakrát klikněte na **program.cs** (nebo **Module1. vb**) v **Průzkumník řešení** pro zobrazení kódu.
 
-2. Add the following `using` (or `Imports`) statement at the top of the file with the other `using` (or `Imports`) statements.
+2. Do horní části souboru přidejte následující příkaz `using` (nebo `Imports`) s jinými příkazy `using` (nebo `Imports`).
 
     ```vb
     Imports System.Windows.Forms
@@ -1258,7 +1258,7 @@ In order to resume a workflow instance, the host has to provide the workflow def
     using System.Windows.Forms;
     ```
 
-3. Remove or comment out the existing workflow hosting code from [How to: Run a Workflow](how-to-run-a-workflow.md), and replace it with the following code.
+3. Odeberte nebo Odkomentujte existující kód hostování pracovního postupu z tématu [Postupy: spuštění pracovního postupu](how-to-run-a-workflow.md)a jeho nahrazení následujícím kódem.
 
     ```vb
     Sub Main()
@@ -1275,14 +1275,14 @@ In order to resume a workflow instance, the host has to provide the workflow def
     }
     ```
 
-4. Right-click **NumberGuessWorkflowHost** in **Solution Explorer** and choose **Properties**. In the **Application** tab, specify **Windows Application** for the **Output type**. This step is optional, but if it is not followed the console window is displayed in addition to the form.
+4. V **Průzkumník řešení** klikněte pravým tlačítkem na **NumberGuessWorkflowHost** a vyberte **vlastnosti**. Na kartě **aplikace** zadejte pro **Typ výstupu** **aplikace systému Windows** . Tento krok je nepovinný, ale pokud se nedodržuje, zobrazí se kromě formuláře okno konzoly.
 
-5. Press Ctrl+Shift+B to build the application.
+5. Stisknutím kombinace kláves CTRL + SHIFT + B sestavte aplikaci.
 
-6. Ensure that **NumberGuessWorkflowHost** is set as the startup application, and press Ctrl+F5 to start the application.
+6. Zajistěte, aby byla aplikace **NumberGuessWorkflowHost** nastavená jako spouštěcí aplikace, a stisknutím kláves CTRL + F5 spusťte aplikaci.
 
-7. Select a range for the guessing game and the type of workflow to start, and click **New Game**. Enter a guess in the **Guess** box and click **Go** to submit your guess. Note that the output from the `WriteLine` activities is displayed on the form.
+7. Vyberte rozsah pro odhad hry a typ pracovního postupu, který chcete spustit, a klikněte na **Nová hra**. V poli **odhad** zadejte odhad a kliknutím na tlačítko **Přejít** odešlete svůj odhad. Všimněte si, že výstup aktivit `WriteLine` se zobrazí ve formuláři.
 
-8. Start several workflows using different workflow types and number ranges, enter some guesses, and switch between the workflows by selecting from the **Workflow Instance Id** list.
+8. Spusťte několik pracovních postupů pomocí různých typů pracovních postupů a rozsahů čísel, zadejte několik odhadů a přepněte mezi pracovními postupy výběrem ze seznamu **ID instance pracovního postupu** .
 
-    Note that when you switch to a new workflow, the previous guesses and progress of the workflow are not displayed in the status window. The reason the status is not available is because it is not captured and saved anywhere. In the next step of the tutorial, [How to: Create a Custom Tracking Participant](how-to-create-a-custom-tracking-participant.md), you create a custom tracking participant that saves this information.
+    Všimněte si, že když přepnete na nový pracovní postup, předchozí odhad a průběh pracovního postupu se v okně stav nezobrazí. Důvod, proč stav není k dispozici, je, že není zachycen a ukládán nikde. V dalším kroku tohoto kurzu se [naučíte: vytvořit vlastního účastníka sledování](how-to-create-a-custom-tracking-participant.md)a vytvořit vlastního účastníka sledování, který tyto informace uloží.

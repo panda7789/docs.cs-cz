@@ -10,7 +10,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351545"
 ---
 # <a name="modifiers-visual-basic"></a>Modifikátory (Visual Basic)
-The topics in this section document Visual Basic run-time modifiers.  
+Témata v tomto oddílu dokumentu Visual Basic modifikátory modulu runtime.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [ANSI](../../../visual-basic/language-reference/modifiers/ansi.md)  
@@ -29,13 +29,13 @@ The topics in this section document Visual Basic run-time modifiers.
   
  [Friend](../../../visual-basic/language-reference/modifiers/friend.md)  
   
- [In](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md)  
+ [Pro](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md)  
   
  [Iterator](../../../visual-basic/language-reference/modifiers/iterator.md)  
   
  [Key](../../../visual-basic/language-reference/modifiers/key.md)  
   
- [Module \<keyword>](../../../visual-basic/language-reference/modifiers/module-keyword.md)  
+ [Klíčové slovo \<modulu >](../../../visual-basic/language-reference/modifiers/module-keyword.md)  
   
  [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md)  
   
@@ -49,7 +49,7 @@ The topics in this section document Visual Basic run-time modifiers.
   
  [Optional](../../../visual-basic/language-reference/modifiers/optional.md)  
   
- [Out](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)  
+ [Mimo](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)  
   
  [Overloads](../../../visual-basic/language-reference/modifiers/overloads.md)  
   

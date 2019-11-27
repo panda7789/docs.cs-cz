@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448615"
 ---
 # <a name="isymencunmanagedmethodgetsourceextentindocument-method"></a>ISymENCUnmanagedMethod::GetSourceExtentInDocument – metoda
-Gets the smallest start line and largest end line for the method in a specific document.  
+Získá nejmenší počáteční řádek a největšího koncového řádku pro metodu v konkrétním dokumentu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,19 +36,19 @@ HRESULT GetSourceExtentInDocument(
   
 ## <a name="parameters"></a>Parametry  
  `document`  
- [in] A pointer to the document.  
+ pro Ukazatel na dokument.  
   
  `pstartLine`  
- [out] A pointer to a `ULONG32` that receives the start line.  
+ mimo Ukazatel na `ULONG32`, který obdrží počáteční řádek.  
   
  `pendLine`  
- [out] A pointer to a `ULONG32` that receives the end line.  
+ mimo Ukazatel na `ULONG32`, který obdrží koncovou čáru.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

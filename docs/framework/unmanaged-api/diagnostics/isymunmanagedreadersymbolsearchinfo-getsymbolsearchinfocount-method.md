@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446395"
 ---
 # <a name="isymunmanagedreadersymbolsearchinfogetsymbolsearchinfocount-method"></a>ISymUnmanagedReaderSymbolSearchInfo::GetSymbolSearchInfoCount – metoda
-Gets a count of symbol search information.  
+Získá počet informací o hledání symbolů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,13 +34,13 @@ HRESULT GetSymbolSearchInfoCount(
   
 ## <a name="parameters"></a>Parametry  
  `pcSearchInfo`  
- ]out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the search information.  
+ ] out] ukazatel na `ULONG32`, který obdrží velikost vyrovnávací paměti, která je nutná k uložení vyhledávacích informací.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

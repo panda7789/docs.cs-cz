@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74432636"
 ---
 # <a name="imetadataemitdefinecustomattribute-method"></a>IMetaDataEmit::DefineCustomAttribute – metoda
-Creates a definition for a custom attribute with the specified metadata signature, to be attached to the specified object, and gets a token to that custom attribute definition.  
+Vytvoří definici pro vlastní atribut se zadaným podpisem metadat, který se má připojit k zadanému objektu, a získá token do této definice vlastního atributu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,28 +39,28 @@ HRESULT DefineCustomAttribute (
   
 ## <a name="parameters"></a>Parametry  
  `tkObj`  
- [in] The token for the owner item.  
+ pro Token pro položku vlastníka  
   
  `tkType`  
- [in] The token that identifies the custom attribute.  
+ pro Token, který identifikuje vlastní atribut.  
   
  `pCustomAttribute`  
- [in] A pointer to the custom attribute.  
+ pro Ukazatel na vlastní atribut.  
   
  `cbCustomAttribute`  
- [in] The count of bytes in `pCustomAttribute`.  
+ pro Počet bajtů v `pCustomAttribute`.  
   
  `pcv`  
- [out] The `mdCustomAttribute` token assigned.  
+ mimo Byl přiřazen token `mdCustomAttribute`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

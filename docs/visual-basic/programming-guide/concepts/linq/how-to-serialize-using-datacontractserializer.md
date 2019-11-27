@@ -1,5 +1,5 @@
 ---
-title: 'How to: Serialize Using DataContractSerializer'
+title: 'Postupy: serializace pomocí třídy DataContractSerializer'
 ms.date: 07/20/2015
 ms.assetid: ecaea518-8a0f-4249-b4e5-9b3fb0cdd8ad
 ms.openlocfilehash: 6c4142673cc374fbc6202e5806d1e9016cc81893
@@ -9,11 +9,11 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352376"
 ---
-# <a name="how-to-serialize-using-datacontractserializer-visual-basic"></a>How to: Serialize Using DataContractSerializer (Visual Basic)
-This topic shows an example that serializes and deserializes using <xref:System.Runtime.Serialization.DataContractSerializer>.  
+# <a name="how-to-serialize-using-datacontractserializer-visual-basic"></a>Postupy: serializace pomocí třídy DataContractSerializer (Visual Basic)
+Toto téma ukazuje příklad, který serializace a deserializace používá <xref:System.Runtime.Serialization.DataContractSerializer>.  
   
 ## <a name="example"></a>Příklad  
- The following example creates a number of objects that contain <xref:System.Xml.Linq.XElement> objects. It then serializes them to text files, and then deserializes them from the text files.  
+ Následující příklad vytvoří počet objektů, které obsahují objekty <xref:System.Xml.Linq.XElement>. Pak je rozkonstruuje do textových souborů a poté je deserializace z textových souborů.  
   
 ```vb  
 Imports System  
@@ -72,7 +72,7 @@ Public Class XElementNullContainer
 End Class  
 ```  
   
- This example produces the following output:  
+ Tento příklad vytvoří následující výstup:  
   
 ```console  
 Testing for type: System.Xml.Linq.XElement  
@@ -85,4 +85,4 @@ Testing for type: XElementNullContainer
   
 ## <a name="see-also"></a>Viz také:
 
-- [Serializing Object Graphs that Contain XElement Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/serializing-object-graphs-that-contain-xelement-objects.md)
+- [Serializace grafů objektů, které obsahují objekty XElement (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/serializing-object-graphs-that-contain-xelement-objects.md)

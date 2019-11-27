@@ -16,29 +16,29 @@ ms.locfileid: "74348842"
 ---
 # <a name="how-to-copy-files-with-a-specific-pattern-to-a-directory-in-visual-basic"></a>Postupy: Kopírování souborů vyhovujících určitému vzoru do jiného adresáře v jazyce Visual Basic
 
-The <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.GetFiles%2A> method returns a read-only collection of strings representing the path names for the files. You can use the `wildCards` parameter to specify a specific pattern.  
+Metoda <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.GetFiles%2A> vrátí kolekci řetězců jen pro čtení, které představují názvy cest pro soubory. K určení konkrétního vzoru můžete použít parametr `wildCards`.  
   
- An empty collection is returned if no matching files are found.  
+ Je-li nalezena žádná vyhovující soubory, je vrácena prázdná kolekce.  
   
- You can use the <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyFile%2A> method to copy the files to a directory.  
+ K zkopírování souborů do adresáře lze použít metodu <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyFile%2A>.  
   
-### <a name="to-copy-files-with-a-specific-pattern-to-a-directory"></a>To copy files with a specific pattern to a directory  
+### <a name="to-copy-files-with-a-specific-pattern-to-a-directory"></a>Kopírování souborů s určitým vzorem do adresáře  
   
-1. Use the `GetFiles` method to return the list of files. This example returns all .rtf files in the specified directory.  
+1. K vrácení seznamu souborů použijte metodu `GetFiles`. Tento příklad vrátí všechny soubory. RTF v zadaném adresáři.  
   
      [!code-vb[VbFileIOMisc#36](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIOMisc/VB/Class1.vb#36)]  
   
-2. Use the `CopyFile` method to copy the files. This example copies the files to the directory named `testdirectory`.  
+2. K kopírování souborů použijte metodu `CopyFile`. Tento příklad zkopíruje soubory do adresáře s názvem `testdirectory`.  
   
      [!code-vb[VbVbcnMyFileSystem#88](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#88)]  
   
-3. Close the `For` statement with a `Next` statement.  
+3. Příkaz `For` uzavřete pomocí příkazu `Next`.  
   
      [!code-vb[VbVbcnMyFileSystem#89](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#89)]  
   
 ## <a name="example"></a>Příklad  
 
- The following example, which presents the above snippets in complete form, copies all .rtf files in the specified directory to the directory named `testdirectory`.  
+ Následující příklad, který prezentuje výše uvedené fragmenty kódu v úplné podobě, zkopíruje všechny soubory. RTF v zadaném adresáři do adresáře s názvem `testdirectory`.  
   
  [!code-vb[VbFileIOMisc#37](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIOMisc/VB/Class1.vb#37)]  
   
@@ -46,19 +46,19 @@ The <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.GetFiles%2A> method r
 
  Následující podmínky mohou způsobit výjimku:  
   
-- The path is not valid for one of the following reasons: it is a zero-length string, it contains only white space, it contains invalid characters, or it is a device path (starts with \\\\.\\) (<xref:System.ArgumentException>).  
+- Cesta není platná z některého z následujících důvodů: Jedná se o řetězec o nulové délce, obsahuje pouze prázdné znaky, obsahuje neplatné znaky nebo se jedná o cestu k zařízení (začíná na \\\\.\\) (<xref:System.ArgumentException>).  
   
-- The path is not valid because it is `Nothing` (<xref:System.ArgumentNullException>).  
+- Cesta není platná, protože je `Nothing` (<xref:System.ArgumentNullException>).  
   
-- The directory does not exist (<xref:System.IO.DirectoryNotFoundException>).  
+- Adresář neexistuje (<xref:System.IO.DirectoryNotFoundException>).  
   
-- The directory points to an existing file (<xref:System.IO.IOException>).  
+- Adresář odkazuje na existující soubor (<xref:System.IO.IOException>).  
   
-- The path exceeds the system-defined maximum length (<xref:System.IO.PathTooLongException>).  
+- Cesta překračuje maximální povolenou délku systému (<xref:System.IO.PathTooLongException>).  
   
-- A file or directory name in the path contains a colon (:) or is in an invalid format (<xref:System.NotSupportedException>).  
+- Název souboru nebo adresáře v cestě obsahuje dvojtečku (:) nebo má neplatný formát (<xref:System.NotSupportedException>).  
   
-- The user lacks necessary permissions to view the path (<xref:System.Security.SecurityException>). The user lacks necessary permissions (<xref:System.UnauthorizedAccessException>).  
+- Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>). Uživatel nemá potřebná oprávnění (<xref:System.UnauthorizedAccessException>).  
   
 ## <a name="see-also"></a>Viz také:
 

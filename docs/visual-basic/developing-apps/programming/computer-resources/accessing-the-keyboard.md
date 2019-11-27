@@ -16,21 +16,21 @@ ms.locfileid: "74329543"
 ---
 # <a name="accessing-the-keyboard-visual-basic"></a>Přístup ke klávesnici (Visual Basic)
 
-The `My.Computer.Keyboard` object provides properties for accessing the current state of the keyboard, such as what keys are currently pressed, and provides a method to send keystrokes to the active window.  
+Objekt `My.Computer.Keyboard` poskytuje vlastnosti pro přístup k aktuálnímu stavu klávesnice, jako jsou aktuálně stisknuté klávesy, a poskytuje metodu pro posílání kláves do aktivního okna.  
   
-## <a name="tasks"></a>Úkoly  
+## <a name="tasks"></a>Tasks  
 
- This table lists tasks associated with the `My.Computer.Keyboard` object and points to topics demonstrating how to perform each task.  
+ Tato tabulka obsahuje úlohy spojené s objektem `My.Computer.Keyboard` a odkazuje na témata, která demonstrují, jak provádět jednotlivé úlohy.  
   
-|Chcete-li|Další informace naleznete v tématu|  
+|Pro|Další informace naleznete v tématu|  
 |--------|---------|  
-|Determine whether CAPS LOCK is on|<xref:Microsoft.VisualBasic.Devices.Keyboard.CapsLock%2A>|  
-|Determine whether the SHIFT key is down|<xref:Microsoft.VisualBasic.Devices.Keyboard.ShiftKeyDown%2A>|  
-|Determine whether the ALT key is down|<xref:Microsoft.VisualBasic.Devices.Keyboard.AltKeyDown%2A>|  
-|Determine whether the CTRL key is down|<xref:Microsoft.VisualBasic.Devices.Keyboard.CtrlKeyDown%2A>|  
-|Determine whether NUM LOCK is on|<xref:Microsoft.VisualBasic.Devices.Keyboard.NumLock%2A>|  
-|Determine whether SCROLL LOCK is on|<xref:Microsoft.VisualBasic.Devices.Keyboard.ScrollLock%2A>|  
-|Start an application and send it keystrokes|[How to: Start an Application and Send it Keystrokes (Visual Basic)](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-start-an-application-and-send-it-keystrokes.md)|  
+|Určete, zda je Caps Lock zapnutá.|<xref:Microsoft.VisualBasic.Devices.Keyboard.CapsLock%2A>|  
+|Určí, zda je klávesa SHIFT mimo provoz.|<xref:Microsoft.VisualBasic.Devices.Keyboard.ShiftKeyDown%2A>|  
+|Určení, zda je klávesa ALT mimo provoz|<xref:Microsoft.VisualBasic.Devices.Keyboard.AltKeyDown%2A>|  
+|Určete, zda je klávesa CTRL mimo provoz.|<xref:Microsoft.VisualBasic.Devices.Keyboard.CtrlKeyDown%2A>|  
+|Určení, zda je zapnuto NUM LOCK|<xref:Microsoft.VisualBasic.Devices.Keyboard.NumLock%2A>|  
+|Určení, zda je zapnuto POSUNUTí zámku|<xref:Microsoft.VisualBasic.Devices.Keyboard.ScrollLock%2A>|  
+|Spuštění aplikace a posílání klávesových úhozů|[Postupy: spuštění aplikace a odeslání klávesových úhozů (Visual Basic)](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-start-an-application-and-send-it-keystrokes.md)|  
   
 ## <a name="see-also"></a>Viz také:
 

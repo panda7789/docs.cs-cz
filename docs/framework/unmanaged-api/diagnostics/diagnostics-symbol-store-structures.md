@@ -15,17 +15,17 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448513"
 ---
 # <a name="diagnostics-symbol-store-structures"></a>Struktury úložiště symbolů diagnostiky
-This topic describes the unmanaged structures that the diagnostics symbol store API uses.  
+Toto téma popisuje nespravované struktury, které používá rozhraní API pro úložiště symbolů diagnostiky.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [CALL_ID – struktura](../../../../docs/framework/unmanaged-api/diagnostics/call-id-structure.md)  
- Provides information to a debugger about a function that is being called.  
+ Poskytuje informace ladicímu programu o funkci, která je volána.  
   
  [SYMLINEDELTA – struktura](../../../../docs/framework/unmanaged-api/diagnostics/symlinedelta-structure.md)  
- Provides information to the symbol handler about methods that were moved as a result of edits.  
+ Poskytuje informace obslužné rutině symbolů o metodách, které byly přesunuty v důsledku úprav.  
   
  [USER_THREAD – struktura](../../../../docs/framework/unmanaged-api/diagnostics/user-thread-structure.md)  
- Provides information to a debugger about a thread.  
+ Poskytuje informace ladicímu programu o vlákně.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Rozhraní pro úložiště symbolů diagnostiky](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)  

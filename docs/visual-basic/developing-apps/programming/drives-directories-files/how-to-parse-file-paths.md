@@ -14,25 +14,25 @@ ms.locfileid: "74335353"
 ---
 # <a name="how-to-parse-file-paths-in-visual-basic"></a>Postupy: Analýza cest k souborům v jazyce Visual Basic
 
-The <xref:Microsoft.VisualBasic.FileIO.FileSystem> object offers a number of useful methods when parsing file paths.  
+Objekt <xref:Microsoft.VisualBasic.FileIO.FileSystem> nabízí několik užitečných metod při analýze cest k souborům.  
   
-- The <xref:Microsoft.VisualBasic.FileIO.FileSystem.CombinePath%2A> method takes two paths and returns a properly formatted combined path.  
+- Metoda <xref:Microsoft.VisualBasic.FileIO.FileSystem.CombinePath%2A> přebírá dvě cesty a vrací správně naformátovanou kombinovanou cestu.  
   
-- The <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetParentPath%2A> method returns the absolute path of the parent of the provided path.  
+- Metoda <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetParentPath%2A> vrátí absolutní cestu nadřazeného objektu v zadané cestě.  
   
-- The <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFileInfo%2A> method returns a <xref:System.IO.FileInfo> object that can be queried to determine the file's properties, such as its name and path.  
+- Metoda <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFileInfo%2A> vrátí objekt <xref:System.IO.FileInfo>, ke kterému se dá dotázat, aby se určily vlastnosti souboru, jako je jeho název a cesta.  
   
- Do not make decisions about the contents of the file based on the file name extension. For example, the file Form1.vb may not be a Visual Basic source file.  
+ Neprovádějte rozhodnutí o obsahu souboru na základě přípony názvu souboru. Například soubor Form1. vb nemusí být Visual Basic zdrojový soubor.  
   
-### <a name="to-determine-a-files-name-and-path"></a>To determine a file's name and path  
+### <a name="to-determine-a-files-name-and-path"></a>Určení názvu a cesty k souboru  
   
-- Use the <xref:System.IO.FileInfo.DirectoryName%2A> and <xref:System.IO.FileInfo.Name%2A> properties of the <xref:System.IO.FileInfo> object to determine a file's name and path. This example determines the name and path and displays them.  
+- Pomocí vlastností <xref:System.IO.FileInfo.DirectoryName%2A> a <xref:System.IO.FileInfo.Name%2A> objektu <xref:System.IO.FileInfo> určete název souboru a cestu. Tento příklad určuje název a cestu a zobrazí je.  
   
      [!code-vb[VbVbcnMyFileSystem#54](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#54)]  
   
-### <a name="to-combine-a-files-name-and-directory-to-create-the-full-path"></a>To combine a file's name and directory to create the full path  
+### <a name="to-combine-a-files-name-and-directory-to-create-the-full-path"></a>Kombinování názvu souboru a adresáře pro vytvoření úplné cesty  
   
-- Use the `CombinePath` method, supplying the directory and name. This example takes the strings `folderPath` and `fileName` created in the previous example, combines them, and displays the result.  
+- Použijte metodu `CombinePath` a zadejte adresář a název. Tento příklad přebírá řetězce `folderPath` a `fileName` vytvořené v předchozím příkladu, kombinuje je a zobrazí výsledek.  
   
      [!code-vb[VbVbcnMyFileSystem#55](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#55)]  
   

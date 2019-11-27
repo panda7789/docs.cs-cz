@@ -9,20 +9,20 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346419"
 ---
-# <a name="creating-the-source-office-open-xml-document-visual-basic"></a>Creating the Source Office Open XML Document (Visual Basic)
-This topic shows how to create the Office Open XML WordprocessingML document that the other examples in this tutorial use. If you follow these instructions, your output will match the output provided in each example.  
+# <a name="creating-the-source-office-open-xml-document-visual-basic"></a>Vytvoření zdrojového dokumentu XML pro Office Open Source (Visual Basic)
+V tomto tématu se dozvíte, jak vytvořit dokument Office Open XML WordprocessingML, který se používá v dalších příkladech tohoto kurzu. Pokud budete postupovat podle těchto pokynů, váš výstup bude odpovídat výstupu uvedenému v každém příkladu.  
   
- However, the examples in this tutorial will work with any valid WordprocessingML document.  
+ Příklady v tomto kurzu ale budou fungovat s jakýmkoli platným dokumentem WordprocessingML.  
   
- To create the document that this tutorial uses, you must either have Microsoft Office 2007 or later installed, or you must have Microsoft Office 2003 with the Microsoft Office Compatibility Pack for Word, Excel, and PowerPoint 2007 File Formats.  
+ Pokud chcete vytvořit dokument, který používá tento kurz, musíte mít nainstalovanou systém Microsoft Office 2007 nebo novější, nebo musíte mít systém Microsoft Office 2003 pomocí sady systém Microsoft Office Compatibility Pack pro Word, Excel a PowerPoint 2007 formats.  
   
-## <a name="creating-the-wordprocessingml-document"></a>Creating the WordprocessingML Document  
+## <a name="creating-the-wordprocessingml-document"></a>Vytvoření dokumentu WordprocessingML  
   
-#### <a name="to-create-the-wordprocessingml-document"></a>To create the WordprocessingML document  
+#### <a name="to-create-the-wordprocessingml-document"></a>Vytvoření dokumentu WordprocessingML  
   
-1. Create a new Microsoft Word document.  
+1. Vytvoří nový dokument aplikace Microsoft Word.  
   
-2. Paste the following text into the new document:  
+2. Vložte do nového dokumentu následující text:  
   
     ```text  
     Parsing WordprocessingML with LINQ to XML  
@@ -42,17 +42,17 @@ This topic shows how to create the Office Open XML WordprocessingML document tha
     Hello World  
     ```  
   
-3. Format the first line with the style "Heading 1".  
+3. Naformátuje první řádek stylem "Nadpis 1".  
   
-4. Select the lines that contain the Visual Basic code. The first line starts with the `Imports` keyword. The last line is "End Class". Format the lines with the courier font. Format them with a new style, and name the new style "Code".  
+4. Vyberte řádky, které obsahují kód Visual Basic. První řádek začíná klíčovým slovem `Imports`. Poslední řádek je "End Class". Naformátujte čáry pomocí písma Courier. Naformátujte je pomocí nového stylu a pojmenujte nový styl "Code".  
   
-5. Finally, select the entire line that contains the output, and format it with the `Code` style.  
+5. Nakonec vyberte celý řádek, který obsahuje výstup, a naformátujte ho pomocí stylu `Code`.  
   
-6. Save the document, and name it SampleDoc.docx.  
+6. Uložte dokument a pojmenujte ho SampleDoc. docx.  
   
     > [!NOTE]
-    > If you are using Microsoft Word 2003, select **Word 2007 Document** in the **Save as Type** drop-down list.  
+    > Pokud používáte Microsoft Word 2003, vyberte v rozevíracím seznamu **Uložit jako typ** možnost **dokument Word 2007** .  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Tutorial: Manipulating Content in a WordprocessingML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [Kurz: manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)

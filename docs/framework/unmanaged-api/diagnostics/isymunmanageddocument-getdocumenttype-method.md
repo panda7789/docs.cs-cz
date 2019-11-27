@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449191"
 ---
 # <a name="isymunmanageddocumentgetdocumenttype-method"></a>ISymUnmanagedDocument::GetDocumentType – metoda
-Gets the document type of this document.  
+Získá typ dokumentu tohoto dokumentu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,10 +34,10 @@ HRESULT GetDocumentType(
   
 ## <a name="parameters"></a>Parametry  
  `pRetVal`  
- [out] Pointer to a variable that receives the document type.  
+ mimo Ukazatel na proměnnou, která přijímá typ dokumentu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds.  
+ S_OK, zda je metoda úspěšná.  
   
 ## <a name="see-also"></a>Viz také:
 

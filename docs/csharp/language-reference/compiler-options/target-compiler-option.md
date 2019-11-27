@@ -1,5 +1,5 @@
 ---
-title: -target (C# Compiler Options)
+title: -Target (C# možnosti kompilátoru)
 ms.date: 07/20/2015
 f1_keywords:
 - /target
@@ -16,38 +16,38 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74204517"
 ---
-# <a name="-target-c-compiler-options"></a>-target (C# Compiler Options)
-The **-target** compiler option can be specified in one of four forms:  
+# <a name="-target-c-compiler-options"></a>-Target (C# možnosti kompilátoru)
+Možnost kompilátoru **-target** lze zadat v jednom ze čtyř forem:  
   
  [-target:appcontainerexe](./target-appcontainerexe-compiler-option.md)  
- To create an .exe file for Windows 8.x Store apps.  
+ Pro vytvoření souboru. exe pro aplikace Windows 8. x Store.  
   
  [-target:exe](./target-exe-compiler-option.md)  
- To create an .exe file.  
+ Pro vytvoření souboru. exe.  
   
  [-target:library](./target-library-compiler-option.md)  
- To create a code library.  
+ Chcete-li vytvořit knihovnu kódu.  
   
  [-target:module](./target-module-compiler-option.md)  
- To create a module.  
+ Vytvořit modul.  
   
  [-target:winexe](./target-winexe-compiler-option.md)  
- To create a Windows program.  
+ Pro vytvoření programu systému Windows.  
   
  [-target:winmdobj](./target-winmdobj-compiler-option.md)  
- To create an intermediate .winmdobj file.  
+ Pro vytvoření zprostředkujícího souboru. winmdobj.  
   
- Unless you specify **-target:module**, **-target** causes a .NET Framework assembly manifest to be placed in an output file. For more information, see [Assemblies in .NET](../../../standard/assembly/index.md) and [Common Attributes](../../programming-guide/concepts/attributes/common-attributes.md).  
+ Pokud nezadáte **cíl: modul**, **-target** způsobí umístění manifestu .NET Framework sestavení do výstupního souboru. Další informace naleznete v tématu [sestavení v rozhraní .NET](../../../standard/assembly/index.md) a [běžné atributy](../../programming-guide/concepts/attributes/common-attributes.md).  
   
- The assembly manifest is placed in the first .exe output file in the compilation or in the first DLL, if there is no .exe output file. For example, in the following command line, the manifest will be placed in `1.exe`:  
+ Manifest sestavení je umístěn v prvním výstupním souboru. exe v kompilaci nebo v první knihovně DLL, pokud není k dispozici výstupní soubor. exe. Například v následujícím příkazovém řádku se manifest umístí do `1.exe`:  
   
 ```console  
 csc -out:1.exe t1.cs -out:2.netmodule t2.cs  
 ```  
   
- The compiler creates only one assembly manifest per compilation. Information about all files in a compilation is placed in the assembly manifest. All output files except those created with **-target:module** can contain an assembly manifest. When producing multiple output files at the command line, only one assembly manifest can be created and it must go into the first output file specified on the command line. No matter what the first output file is ( **-target:exe**, **-target:winexe**, **-target:library** or **-target:module**), any other output files produced in the same compilation must be modules ( **-target:module**).  
+ Kompilátor vytvoří pro každou kompilaci pouze jeden manifest sestavení. Informace o všech souborech v kompilaci jsou umístěny v manifestu sestavení. Všechny výstupní soubory kromě těch, které byly vytvořeny pomocí **-target: modul** může obsahovat manifest sestavení. Při vytváření více výstupních souborů na příkazovém řádku lze vytvořit pouze jeden manifest sestavení a musí přejít do prvního výstupního souboru zadaného v příkazovém řádku. Bez ohledu na to, co je první výstupní soubor ( **-target: exe**, **-target: winexe**, **-target: Library** nebo **-target: Module**), všechny ostatní výstupní soubory vytvořené ve stejné kompilaci musí být moduly ( **-target: Module**).  
   
- If you create an assembly, you can indicate that all or part of your code is CLS compliant with the <xref:System.CLSCompliantAttribute> attribute.  
+ Vytvoříte-li sestavení, můžete označit, že veškerý nebo část kódu je kompatibilní se specifikací CLS s atributem <xref:System.CLSCompliantAttribute>.  
   
 ```csharp  
 // target_clscompliant.cs  
@@ -60,10 +60,10 @@ public class TestClass
 }  
 ```  
   
- For more information about setting this compiler option programmatically, see <xref:VSLangProj80.ProjectProperties3.OutputType%2A>.  
+ Další informace o tom, jak nastavit tuto možnost kompilátoru programově, najdete v tématu <xref:VSLangProj80.ProjectProperties3.OutputType%2A>.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Možnosti kompilátoru jazyka C#](./index.md)
 - [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)
-- [-subsystemversion (C# Compiler Options)](./subsystemversion-compiler-option.md)
+- [-subsystemversion (C# možnosti kompilátoru)](./subsystemversion-compiler-option.md)

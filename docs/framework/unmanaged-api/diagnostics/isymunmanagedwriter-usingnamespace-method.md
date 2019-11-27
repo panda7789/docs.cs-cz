@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74427466"
 ---
 # <a name="isymunmanagedwriterusingnamespace-method"></a>ISymUnmanagedWriter::UsingNamespace – metoda
-Specifies that the given fully qualified namespace name is being used within the currently open lexical scope. The namespace will be used within all scopes that inherit from the currently open scope. Closing the current scope will also stop the use of the namespace.  
+Určuje, že zadaný plně kvalifikovaný název oboru názvů se používá v aktuálně otevřeném lexikálním oboru. Obor názvů se použije ve všech oborech, které dědí z aktuálně otevřeného oboru. Zavřením aktuálního oboru dojde také k zastavení použití oboru názvů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,13 +34,13 @@ HRESULT UsingNamespace(
   
 ## <a name="parameters"></a>Parametry  
  `fullName`  
- [in] A pointer to the fully qualified name of the namespace.  
+ pro Ukazatel na plně kvalifikovaný název oboru názvů.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

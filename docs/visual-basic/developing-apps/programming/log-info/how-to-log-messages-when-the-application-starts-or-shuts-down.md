@@ -18,45 +18,45 @@ ms.locfileid: "74352098"
 ---
 # <a name="how-to-log-messages-when-the-application-starts-or-shuts-down-visual-basic"></a>Postupy: Protokolování zpráv při spuštění nebo ukončení aplikace (Visual Basic)
 
-You can use the `My.Application.Log` and `My.Log` objects to log information about events that occur in your application. This example shows how to use the `My.Application.Log.WriteEntry` method with the `Startup` and `Shutdown` events to write tracing information.  
+Pomocí objektů `My.Application.Log` a `My.Log` můžete protokolovat informace o událostech, ke kterým dochází ve vaší aplikaci. Tento příklad ukazuje, jak použít metodu `My.Application.Log.WriteEntry` s událostmi `Startup` a `Shutdown` k zápisu trasovacích informací.  
   
-### <a name="to-access-the-applications-event-handler-code"></a>To access the application's event-handler code  
+### <a name="to-access-the-applications-event-handler-code"></a>Přístup k kódu obslužné rutiny událostí aplikace  
   
-1. Have a project selected in **Solution Explorer**. On the **Project** menu, choose **Properties**.  
+1. Máte projekt vybraný v **Průzkumník řešení**. V nabídce **projekt** klikněte na příkaz **vlastnosti**.  
   
-2. Click the **Application** tab.  
+2. Klikněte na kartu **aplikace** .  
   
-3. Click the **View Application Events** button to open the Code Editor.  
+3. Kliknutím na tlačítko **Zobrazit události aplikace** otevřete Editor kódu.  
   
-     This opens the ApplicationEvents.vb file.  
+     Tím se otevře soubor ApplicationEvents. vb.  
   
-### <a name="to-log-messages-when-the-application-starts"></a>To log messages when the application starts  
+### <a name="to-log-messages-when-the-application-starts"></a>Protokolování zpráv při spuštění aplikace  
   
-1. Have the ApplicationEvents.vb file open in the Code Editor. On the **General** menu, choose **MyApplication Events**.  
+1. Otevřete soubor ApplicationEvents. vb v editoru kódu. V nabídce **Obecné** vyberte **události MyApplication**.  
   
-2. On the **Declarations** menu, choose **Startup**.  
+2. V nabídce **deklarace** vyberte možnost **po spuštění**.  
   
-     The application raises the <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup> event before the main application runs.  
+     Aplikace vyvolá událost <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup> před spuštěním hlavní aplikace.  
   
-3. Add the `My.Application.Log.WriteEntry` method to the `Startup` event handler.  
+3. Přidejte metodu `My.Application.Log.WriteEntry` do obslužné rutiny události `Startup`.  
   
      [!code-vb[VbVbalrMyApplicationLog#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/MyEventsFake.vb#1)]  
   
-### <a name="to-log-messages-when-the-application-shuts-down"></a>To log messages when the application shuts down  
+### <a name="to-log-messages-when-the-application-shuts-down"></a>Protokolování zpráv při ukončení aplikace  
   
-1. Have the ApplicationEvents.vb file open in the Code Editor. On the **General** menu, choose **MyApplication Events**.  
+1. Otevřete soubor ApplicationEvents. vb v editoru kódu. V nabídce **Obecné** vyberte **události MyApplication**.  
   
-2. On the **Declarations** menu, choose **Shutdown**.  
+2. V nabídce **deklarace** vyberte možnost **vypnout**.  
   
-     The application raises the <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown> event after the main application runs, but before it shuts down.  
+     Aplikace vyvolá událost <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown> po spuštění hlavní aplikace, ale před vypnutím.  
   
-3. Add the `My.Application.Log.WriteEntry` method to the `Shutdown` event handler.  
+3. Přidejte metodu `My.Application.Log.WriteEntry` do obslužné rutiny události `Shutdown`.  
   
      [!code-vb[VbVbalrMyApplicationLog#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/MyEventsFake.vb#2)]  
   
 ## <a name="example"></a>Příklad  
 
- You can use the **Project Designer** to access the application events in the Code Editor. For more information, see [Application Page, Project Designer (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic).  
+ **Návrhář projektu** můžete použít pro přístup k událostem aplikace v editoru kódu. Další informace naleznete na [stránce aplikace, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic).  
   
  [!code-vb[VbVbalrMyApplicationLog#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/MyEventsFake.vb#3)]  
   

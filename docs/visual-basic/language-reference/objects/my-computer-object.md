@@ -12,17 +12,17 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74332117"
 ---
 # <a name="mycomputer-object"></a>My.Computer – objekt
-Provides properties for manipulating computer components such as audio, the clock, the keyboard, the file system, and so on.  
+Poskytuje vlastnosti pro manipulaci s součástmi počítače, jako jsou zvuk, hodiny, klávesnice, systém souborů a tak dále.  
   
 ## <a name="remarks"></a>Poznámky  
- For information about the methods and properties of the `My.Computer` object, see <xref:Microsoft.VisualBasic.Devices.Computer>. The base class <xref:Microsoft.VisualBasic.Devices.ServerComputer> provides the members that are available in all projects.  
+ Informace o metodách a vlastnostech objektu `My.Computer` naleznete v tématu <xref:Microsoft.VisualBasic.Devices.Computer>. Základní třída <xref:Microsoft.VisualBasic.Devices.ServerComputer> poskytuje členy, kteří jsou k dispozici ve všech projektech.  
   
 ## <a name="requirements"></a>Požadavky  
- **Namespace:** <xref:Microsoft.VisualBasic.Devices>  
+ **Obor názvů:** <xref:Microsoft.VisualBasic.Devices>  
   
- **Class:** <xref:Microsoft.VisualBasic.Devices.Computer> (the base class <xref:Microsoft.VisualBasic.Devices.ServerComputer> provides the members that are available in all projects).  
+ **Třída:** <xref:Microsoft.VisualBasic.Devices.Computer> (základní třída <xref:Microsoft.VisualBasic.Devices.ServerComputer> poskytuje členy, kteří jsou k dispozici ve všech projektech).  
   
- **Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)  
+ **Sestavení:** Knihovna Visual Basic runtime (v souboru Microsoft. VisualBasic. dll)  
   
 ## <a name="see-also"></a>Viz také:
 

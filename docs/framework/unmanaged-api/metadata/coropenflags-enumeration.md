@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436502"
 ---
 # <a name="coropenflags-enumeration"></a>CorOpenFlags – výčet
-Contains flag values that control metadata behavior upon opening manifest files.  
+Obsahuje hodnoty příznaků, které řídí chování metadat při otevírání souborů manifestu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -50,26 +50,26 @@ typedef enum CorOpenFlags
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`ofRead`|Indicates that the file should be opened for reading only.|  
-|`ofWrite`|Indicates that the file should be opened for writing.<br /><br /> If you are using the `ofWrite` flag when opening a .winmd file, you should also pass the `ofNoTransform` flag.|  
-|`ofReadWriteMask`|A mask for reading and writing.|  
-|`ofCopyMemory`|Indicates that the file should be read into memory. Metadata should maintain its own copy.|  
-|`ofCacheImage`|Zastaralé. This flag is ignored.|  
-|`ofManifestMetadata`|Zastaralé. This flag is ignored.|  
-|`ofReadOnly`|Indicates that the file should be opened for reading, and that a call to `QueryInterface` for an [IMetaDataEmit](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md) cannot be made.|  
-|`ofTakeOwnership`|Indicates that the memory was allocated using a call to [CoTaskMemAlloc](/windows/desktop/api/combaseapi/nf-combaseapi-cotaskmemalloc) and will be freed by the metadata.|  
-|`ofNoTypeLib`|Zastaralé. This flag is ignored.|  
-|`ofNoTransform`|Indicates that automatic transforms of .winmd files should be disabled. In other words, the projection of a Windows Runtime type to a .NET Framework type should be disabled. For more information, see [Windows Runtime and the CLR - Underneath the Hood with .NET and the Windows Runtime](https://docs.microsoft.com/archive/msdn-magazine/2012/windows-8-special-issue/windows-runtime-and-the-clr-underneath-the-hood-with-net-and-the-windows-runtime).|  
-|`ofReserved1`|Reserved for internal use.|  
-|`ofReserved2`|Reserved for internal use.|  
-|`ofReserved`|Reserved for internal use.|  
+|`ofRead`|Označuje, že by měl být soubor otevřen pouze pro čtení.|  
+|`ofWrite`|Označuje, že by měl být soubor otevřen pro zápis.<br /><br /> Pokud při otevírání souboru winmd používáte příznak `ofWrite`, měli byste také předat příznak `ofNoTransform`.|  
+|`ofReadWriteMask`|Maska pro čtení a zápis.|  
+|`ofCopyMemory`|Indikuje, že by měl být soubor čten do paměti. Metadata by měla uchovávat svou vlastní kopii.|  
+|`ofCacheImage`|Zastaralé. Tento příznak se ignoruje.|  
+|`ofManifestMetadata`|Zastaralé. Tento příznak se ignoruje.|  
+|`ofReadOnly`|Označuje, že by měl být soubor otevřen pro čtení a že volání `QueryInterface` pro [IMetaDataEmit](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md) nelze vytvořit.|  
+|`ofTakeOwnership`|Indikuje, že paměť byla přidělena pomocí volání [CoTaskMemAlloc](/windows/desktop/api/combaseapi/nf-combaseapi-cotaskmemalloc) a bude uvolněna metadaty.|  
+|`ofNoTypeLib`|Zastaralé. Tento příznak se ignoruje.|  
+|`ofNoTransform`|Určuje, že automatické transformace souborů. winmd by měly být zakázané. Jinými slovy, je třeba zakázat projekci prostředí Windows Runtime typu pro .NET Framework typ. Další informace naleznete v tématu [prostředí Windows Runtime a CLR – pod digestoří s .NET a prostředí Windows Runtime](https://docs.microsoft.com/archive/msdn-magazine/2012/windows-8-special-issue/windows-runtime-and-the-clr-underneath-the-hood-with-net-and-the-windows-runtime).|  
+|`ofReserved1`|Vyhrazeno pro interní použití.|  
+|`ofReserved2`|Vyhrazeno pro interní použití.|  
+|`ofReserved`|Vyhrazeno pro interní použití.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **Hlavička:** CorHdr. h  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

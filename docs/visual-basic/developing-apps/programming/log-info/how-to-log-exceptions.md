@@ -14,55 +14,55 @@ ms.locfileid: "74352091"
 ---
 # <a name="how-to-log-exceptions-in-visual-basic"></a>Postupy: Protokolování výjimek v jazyce Visual Basic
 
-You can use the `My.Application.Log` and `My.Log` objects to log information about exceptions that occur in your application. These examples show how to use the `My.Application.Log.WriteException` method to log exceptions that you catch explicitly and exceptions that are unhandled.  
+Objekty `My.Application.Log` a `My.Log` můžete použít k protokolování informací o výjimkách, ke kterým dochází ve vaší aplikaci. Tyto příklady ukazují, jak použít metodu `My.Application.Log.WriteException` k protokolování výjimek, které jsou zachyceny explicitně a výjimek, které jsou neošetřené.  
   
- For logging tracing information, use the `My.Application.Log.WriteEntry` method. For more information, see <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A>  
+ Pro informace o trasování protokolu použijte metodu `My.Application.Log.WriteEntry`. Další informace najdete v tématu <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A>  
   
-### <a name="to-log-a-handled-exception"></a>To log a handled exception  
+### <a name="to-log-a-handled-exception"></a>Protokolování ošetřené výjimky  
   
-1. Create the method that will generate the exception information.  
+1. Vytvořte metodu, která bude generovat informace o výjimce.  
   
      [!code-vb[VbVbalrMyApplicationLog#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#9)]  
   
-2. Use a `Try...Catch` block to catch the exception.  
+2. K zachycení výjimky použijte `Try...Catch` blok.  
   
      [!code-vb[VbVbalrMyApplicationLog#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#6)]  
   
-3. Put the code that could generate an exception in the `Try` block.  
+3. Vložte kód, který by mohl vygenerovat výjimku v bloku `Try`.  
   
-     Uncomment the `Dim` and `MsgBox` lines to cause a <xref:System.NullReferenceException> exception.  
+     Odkomentujte `Dim` a `MsgBox` řádky, aby způsobila výjimku <xref:System.NullReferenceException>.  
   
      [!code-vb[VbVbalrMyApplicationLog#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#7)]  
   
-4. In the `Catch` block, use the `My.Application.Log.WriteException` method to write the exception information.  
+4. V bloku `Catch` použijte metodu `My.Application.Log.WriteException` k zápisu informací o výjimce.  
   
      [!code-vb[VbVbalrMyApplicationLog#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#8)]  
   
-     The following example shows the complete code for logging a handled exception.  
+     Následující příklad ukazuje úplný kód pro protokolování ošetřené výjimky.  
   
      [!code-vb[VbVbalrMyApplicationLog#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/Form1.vb#10)]  
   
-### <a name="to-log-an-unhandled-exception"></a>To log an unhandled exception  
+### <a name="to-log-an-unhandled-exception"></a>Postup při protokolování neošetřené výjimky  
   
-1. Have a project selected in **Solution Explorer**. On the **Project** menu, choose **Properties**.  
+1. Máte projekt vybraný v **Průzkumník řešení**. V nabídce **projekt** klikněte na příkaz **vlastnosti**.  
   
-2. Click the **Application** tab.  
+2. Klikněte na kartu **aplikace** .  
   
-3. Click the **View Application Events** button to open the Code Editor.  
+3. Kliknutím na tlačítko **Zobrazit události aplikace** otevřete Editor kódu.  
   
-     This opens the ApplicationEvents.vb file.  
+     Tím se otevře soubor ApplicationEvents. vb.  
   
-4. Have the ApplicationEvents.vb file open in the Code Editor. On the **General** menu, choose **MyApplication Events**.  
+4. Otevřete soubor ApplicationEvents. vb v editoru kódu. V nabídce **Obecné** vyberte **události MyApplication**.  
   
-5. On the **Declarations** menu, choose **UnhandledException**.  
+5. V nabídce **deklarace** vyberte možnost **UnhandledException**.  
   
-     The application raises the <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException> event before the main application runs.  
+     Aplikace vyvolá událost <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException> před spuštěním hlavní aplikace.  
   
-6. Add the `My.Application.Log.WriteException` method to the `UnhandledException` event handler.  
+6. Přidejte metodu `My.Application.Log.WriteException` do obslužné rutiny události `UnhandledException`.  
   
      [!code-vb[VbVbalrMyApplicationLog#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/MyEventsFake.vb#4)]  
   
-     The following example shows the complete code for logging an unhandled exception.  
+     Následující příklad ukazuje úplný kód pro protokolování neošetřené výjimky.  
   
      [!code-vb[VbVbalrMyApplicationLog#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyApplicationLog/VB/MyEventsFake.vb#5)]  
   

@@ -19,23 +19,23 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353987"
 ---
 # <a name="constants-and-enumerations-in-visual-basic"></a>Konstanty a výčty v jazyce Visual Basic
-Constants are a way to use meaningful names in place of a value that does not change. Constants store values that, as the name implies, remain constant throughout the execution of an application. You can use constants to provide meaningful names, instead of numbers, making your code more readable.  
+Konstanty představují způsob, jak použít smysluplné názvy místo hodnoty, která se nemění. Konstanty ukládají hodnoty, které jako název implikují, zůstávají během provádění aplikace konstantní. Můžete použít konstanty k poskytnutí smysluplných názvů namísto čísel, aby byl kód čitelnější.  
   
- Enumerations provide a convenient way to work with sets of related constants, and to associate constant values with names. For example, you can declare an enumeration for a set of integer constants associated with the days of the week, and then use the names of the days rather than their integer values in your code.  
+ Výčty poskytují pohodlný způsob práce se sadami souvisejících konstant a k přidružení konstantních hodnot k názvům. Můžete například deklarovat výčet pro sadu celočíselných konstant přidružených ke dnům v týdnu a potom použít názvy dnů, nikoli jejich celočíselné hodnoty ve vašem kódu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
 |Termín|Definice|  
 |---|---|  
-|[Přehled konstant](../../../../visual-basic/programming-guide/language-features/constants-enums/constants-overview.md)|Topics in this section describe constants and their uses.|  
-|[Přehled výčtů](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-overview.md)|Topics in this section describe enumerations and their uses.|  
+|[Přehled konstant](../../../../visual-basic/programming-guide/language-features/constants-enums/constants-overview.md)|Témata v této části popisují konstanty a jejich použití.|  
+|[Přehled výčtů](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-overview.md)|Témata v této části popisují výčty a jejich použití.|  
   
 ## <a name="related-sections"></a>Související oddíly  
   
 |Termín|Definice|  
 |---|---|  
-|[Příkaz Const](../../../../visual-basic/language-reference/statements/const-statement.md)|Describes the `Const` statement, which is used to declare constants.|  
-|[Příkaz Enum](../../../../visual-basic/language-reference/statements/enum-statement.md)|Describes the `Enum` statement, which is used to create enumerations.|  
-|[Příkaz Option Explicit](../../../../visual-basic/language-reference/statements/option-explicit-statement.md)|Describes the `Option Explicit` statement, which is used at module level to force explicit declaration of all variables in that module.|  
-|[Příkaz Option Infer](../../../../visual-basic/language-reference/statements/option-infer-statement.md)|Describes the `Option Infer` statement, which enables the use of local type inference in declaring variables.|  
-|[Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)|Describes the `Option Strict` statement, which restricts implicit data type conversions to only widening conversions, disallows late binding, and disallows implicit typing that results in an `Object` type.|
+|[Příkaz Const](../../../../visual-basic/language-reference/statements/const-statement.md)|Popisuje příkaz `Const`, který slouží k deklaraci konstant.|  
+|[Příkaz Enum](../../../../visual-basic/language-reference/statements/enum-statement.md)|Popisuje příkaz `Enum`, který se používá k vytváření výčtů.|  
+|[Příkaz Option Explicit](../../../../visual-basic/language-reference/statements/option-explicit-statement.md)|Popisuje příkaz `Option Explicit`, který se používá na úrovni modulu k vynucení explicitní deklarace všech proměnných v tomto modulu.|  
+|[Příkaz Option Infer](../../../../visual-basic/language-reference/statements/option-infer-statement.md)|Popisuje příkaz `Option Infer`, který umožňuje použití odvození místního typu v deklaraci proměnných.|  
+|[Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)|Popisuje příkaz `Option Strict`, který omezuje implicitní převody datových typů pouze na rozšiřování převodů, nepovoluje pozdní vazbu a nepovoluje implicitní psaní, které má za následek `Object` typ.|

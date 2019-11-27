@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446417"
 ---
 # <a name="isymunmanagedreader2getsymattributepreremap-method"></a>ISymUnmanagedReader2::GetSymAttributePreRemap – metoda
-Gets a custom attribute based upon its name. Unlike metadata custom attributes, these attributes are held in the symbol store.  
+Získá vlastní atribut založený na jeho názvu. Na rozdíl od vlastních atributů metadat jsou tyto atributy uchovávány v úložišti symbolů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,25 +39,25 @@ HRESULT GetSymAttributePreRemap(
   
 ## <a name="parameters"></a>Parametry  
  `parent`  
- [in] The metadata token of the parent.  
+ pro Token metadat nadřazeného objektu.  
   
  `name`  
- [in] A pointer to a `WCHAR` that contains the name.  
+ pro Ukazatel na `WCHAR`, který obsahuje název.  
   
  `cBuffer`  
- [in] A `ULONG32` that indicates the size of the `buffer` array.  
+ pro `ULONG32`, která určuje velikost `buffer` pole.  
   
  `pcBuffer`  
- [out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the attribute bytes.  
+ mimo Ukazatel na `ULONG32`, který přijímá velikost vyrovnávací paměti vyžadované k omezení bajtů atributů.  
   
  `buffer`  
- [out] A pointer to the buffer that receives the attribute bytes.  
+ mimo Ukazatel na vyrovnávací paměť, která přijímá bajty atributů.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

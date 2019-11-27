@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448274"
 ---
 # <a name="isymunmanagedreadergetmethod-method"></a>ISymUnmanagedReader::GetMethod – metoda
-Gets a symbol reader method, given a method token.  
+Získá metodu čtečky symbolů s ohledem na token metody.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,16 +35,16 @@ HRESULT GetMethod (
   
 ## <a name="parameters"></a>Parametry  
  `token`  
- [in] The method token.  
+ pro Token metody.  
   
  `pRetVal`  
- [out] A pointer to the returned interface.  
+ mimo Ukazatel na vrácené rozhraní.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

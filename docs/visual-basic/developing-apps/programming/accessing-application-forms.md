@@ -17,17 +17,17 @@ ms.locfileid: "74349243"
 ---
 # <a name="accessing-application-forms-visual-basic"></a>Přístup k formulářům aplikace (Visual Basic)
 
-The `My.Forms` object provides an easy way to access an instance of each Windows Form declared in the application's project. You can also use properties of the `My.Application` object to access the application's splash screen and main form, and get a list of the application's open forms.  
+Objekt `My.Forms` poskytuje snadný způsob, jak získat přístup k instanci každého formuláře Windows deklarovaného v projektu aplikace. Můžete také použít vlastnosti objektu `My.Application` pro přístup k úvodní obrazovce aplikace a k hlavnímu formuláři a získat seznam otevřených formulářů aplikace.  
   
-## <a name="tasks"></a>Úkoly  
+## <a name="tasks"></a>Úlohy  
 
- The following table lists examples showing how to access an application's forms.  
+ V následující tabulce jsou uvedeny příklady, které ukazují, jak přistupovat k formulářům aplikace.  
   
-|Chcete-li|Další informace naleznete v tématu|  
+|Do|Další informace naleznete v tématu|  
 |---|---|  
-|Access one form from another form in an application.|[Objekt My.Forms](../../../visual-basic/language-reference/objects/my-forms-object.md)|  
-|Display the titles of all the application's open forms.|<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OpenForms%2A>|  
-|Update the splash screen with status information as the application starts.|<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.SplashScreen%2A>|  
+|Přístup k jednomu formuláři z jiného formuláře v aplikaci.|[Objekt My.Forms](../../../visual-basic/language-reference/objects/my-forms-object.md)|  
+|Zobrazí názvy všech otevřených formulářů aplikace.|<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OpenForms%2A>|  
+|Aktualizujte úvodní obrazovku o stavové informace při spuštění aplikace.|<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.SplashScreen%2A>|  
   
 ## <a name="see-also"></a>Viz také:
 

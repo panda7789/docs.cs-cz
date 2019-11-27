@@ -9,23 +9,23 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346604"
 ---
-# <a name="pure-functional-transformations-of-xml-visual-basic"></a>Pure Functional Transformations of XML (Visual Basic)
-This section provides a functional transformation tutorial for XML. This includes explanations of the main concepts and language constructs that you must understand to use functional transformations, and examples of using functional transformations to manipulate an XML document. Although this tutorial provides LINQ to XML code examples, all of the underlying concepts also apply to other LINQ technologies.  
+# <a name="pure-functional-transformations-of-xml-visual-basic"></a>Čistě funkční transformace jazyka XML (Visual Basic)
+V této části najdete návod k funkční transformaci XML. To zahrnuje Vysvětlení hlavních konceptů a konstrukcí jazyka, které je nutné pochopit pro použití funkčních transformací, a příklady použití funkcí transformace k manipulaci s dokumentem XML. I když tento kurz poskytuje LINQ to XML příklady kódu, všechny základní koncepty platí i pro jiné technologie LINQ.  
   
- The [Tutorial: Manipulating Content in a WordprocessingML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md) tutorial provides a series of examples, each building on the previous one. These examples demonstrate the pure functional transformational approach to manipulating XML.  
+ [Kurz: manipulace s obsahem v kurzu WordprocessingML dokumentu (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md) poskytuje řadu příkladů, které každá sestaví na předchozí straně. Tyto příklady ukazují čistě funkční transformační přístup k manipulaci s XML.  
   
- This tutorial assumes a working knowledge of Visual Basic. Detailed semantics of the language constructs are not provided in this tutorial, but links are provided to the language documentation as appropriate.  
+ Tento kurz předpokládá praktickou znalost Visual Basic. Podrobné sémantiky jazykových konstrukcí nejsou v tomto kurzu k dispozici, ale odkazy jsou k dispozici v příslušné jazykové dokumentaci.  
   
- A working knowledge of basic computer science concepts and XML, including XML namespaces, is also assumed.  
+ Předpokládá se i praktické znalosti základních konceptů počítačové vědy a XML, včetně oborů názvů XML.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
 |Téma|Popis|  
 |-----------|-----------------|  
-|[Introduction to Pure Functional Transformations (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)|Describes functional transformations and defines the relevant terminology.|  
-|[Tutorial: Deferred Execution (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-deferred-execution.md)|Describes lazy evaluation and deferred execution in detail.|  
-|[Tutorial: Manipulating Content in a WordprocessingML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)|A tutorial that demonstrates a functional transformation.|  
+|[Úvod do čistě funkční transformace (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)|Popisuje funkční transformace a definuje relevantní terminologie.|  
+|[Kurz: odložené provádění (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-deferred-execution.md)|Popisuje opožděné vyhodnocení a odložené provádění podrobněji.|  
+|[Kurz: manipulace s obsahem v dokumentu WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)|Kurz, který demonstruje funkční transformaci.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Querying XML Trees (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/querying-xml-trees.md)
+- [Dotazování na stromy XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/querying-xml-trees.md)

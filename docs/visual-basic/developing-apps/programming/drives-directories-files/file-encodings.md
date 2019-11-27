@@ -16,27 +16,27 @@ ms.locfileid: "74348882"
 ---
 # <a name="file-encodings-visual-basic"></a>Kódování souborů (Visual Basic)
 
-File encodings, also known as character encodings, specify how to represent characters when text processing. One encoding may be preferable over another in terms of which language characters it can or cannot handle, although Unicode is usually preferred.
+Kódování souborů, označovaná také jako kódování znaků, určují způsob reprezentace znaků při zpracování textu. Jedno kódování může být vhodnější než jiné, a to z toho smyslu, které znaky jazyka může nebo nemůže zpracovat, i když je obvykle upřednostňovaný Unicode.
 
-When reading from or writing to files, improperly matching file encodings may result in exceptions or incorrect results.
+Při čtení nebo zapisování do souborů může nesprávně odpovídat kódování souborů způsobit výjimky nebo nesprávné výsledky.
 
-## <a name="types-of-encodings"></a>Types of Encodings
+## <a name="types-of-encodings"></a>Typy kódování
 
-Unicode is the preferred encoding when working with files. Unicode is a worldwide character-encoding standard that uses 16-bit code values to represent all the characters used in modern computing, including technical symbols and special characters used in publishing.
+Unicode je preferované kódování při práci se soubory. Unicode je celosvětový standard kódování znaků, který používá 16bitové hodnoty kódu pro reprezentaci všech znaků používaných v moderních výpočetních prostředích, včetně technických symbolů a speciálních znaků používaných při publikování.
 
-Previous character-encoding standards consisted of traditional character sets, such as the Windows ANSI character set that uses 8-bit code values, or combinations of 8-bit values, to represent the characters used in a specific language or geographical region.
+Předchozí standardy kódování znaků se skládají z tradičních znakových sad, jako je například znaková sada Windows ANSI, která používá 8bitové hodnoty kódu, nebo kombinace 8 bitových hodnot, které reprezentují znaky používané v konkrétním jazyce nebo geografické oblasti.
 
-## <a name="encoding-class"></a>Encoding Class
+## <a name="encoding-class"></a>Encoding – třída
 
-The <xref:System.Text.Encoding> class represents a character encoding. This table lists the type of encodings available and describes each.
+Třída <xref:System.Text.Encoding> představuje kódování znaků. Tato tabulka uvádí typy dostupných kódování a popisuje je.
 
-|Name|Popis|
+|Název|Popis|
 |---|---|
-|<xref:System.Text.ASCIIEncoding>|Represents an ASCII character encoding of Unicode characters.|
-|<xref:System.Text.UnicodeEncoding>|Represents a UTF-16 encoding of Unicode characters.|
-|<xref:System.Text.UTF32Encoding>|Represents a UTF-32 encoding of Unicode characters.|
-|<xref:System.Text.UTF7Encoding>|Represents a UTF-7 encoding of Unicode characters.|
-|<xref:System.Text.UTF8Encoding>|Represents a UTF-8 encoding of Unicode characters.|
+|<xref:System.Text.ASCIIEncoding>|Představuje kódování znaků ASCII znaků Unicode.|
+|<xref:System.Text.UnicodeEncoding>|Představuje kódování UTF-16 znaků Unicode.|
+|<xref:System.Text.UTF32Encoding>|Představuje kódování UTF-32 znaků Unicode.|
+|<xref:System.Text.UTF7Encoding>|Představuje kódování UTF-7 znaků Unicode.|
+|<xref:System.Text.UTF8Encoding>|Představuje kódování UTF-8 znaků Unicode.|
 
 ## <a name="see-also"></a>Viz také:
 

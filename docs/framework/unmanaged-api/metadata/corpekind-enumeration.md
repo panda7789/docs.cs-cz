@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436482"
 ---
 # <a name="corpekind-enumeration"></a>CorPEKind – výčet
-Contains values that describe a portable executable (PE) file, as returned from a call to [IMetaDataImport2::GetPEKind](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-getpekind-method.md).  
+Obsahuje hodnoty, které popisují přenositelný spustitelný soubor (PE), vrácený voláním metody [IMetaDataImport2:: GetPEKind –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-getpekind-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,22 +43,22 @@ typedef enum CorPEKind {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`peNot`|Indicates that this is not a PE file.|  
-|`peILOnly`|Indicates that this PE file contains only managed code.|  
-|`pe32BitRequired`|Indicates that this PE file makes Win32 calls.|  
-|`pe32Plus`|Indicates that this PE file runs on a 64-bit platform.|  
-|`pe32Unmanaged`|Indicates that this PE file is native code.|  
-|pe32BitPreferred|Indicates that this PE file is platform-neutral and prefers to be loaded in a 32-bit environment.|  
+|`peNot`|Označuje, že se nejedná o soubor PE.|  
+|`peILOnly`|Označuje, že tento soubor PE obsahuje pouze spravovaný kód.|  
+|`pe32BitRequired`|Označuje, že tento soubor PE provede volání Win32.|  
+|`pe32Plus`|Označuje, že tento soubor PE běží na 64 platformě.|  
+|`pe32Unmanaged`|Označuje, že tento soubor PE je nativní kód.|  
+|pe32BitPreferred|Označuje, že tento soubor PE je neutrální pro platformu a upřednostňuje, aby se načetla v 32 bitovém prostředí.|  
   
 ## <a name="remarks"></a>Poznámky  
- These values can be used in bitwise combinations.  
+ Tyto hodnoty lze použít v bitových kombinacích.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **Hlavička:** CorHdr. h  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

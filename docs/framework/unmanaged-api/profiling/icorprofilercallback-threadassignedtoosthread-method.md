@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74440023"
 ---
 # <a name="icorprofilercallbackthreadassignedtoosthread-method"></a>ICorProfilerCallback::ThreadAssignedToOSThread – metoda
-Notifies the profiler that a managed thread is being implemented using a particular operating system thread.  
+Upozorní profileru, že spravované vlákno je implementováno pomocí konkrétního vlákna operačního systému.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,22 +35,22 @@ HRESULT ThreadAssignedToOSThread(
   
 ## <a name="parameters"></a>Parametry  
  `managedThreadId`  
- [in] The identifier of the managed thread.  
+ pro Identifikátor spravovaného vlákna.  
   
  `osThreadId`  
- [in] The identifier of the operating system thread.  
+ pro Identifikátor vlákna operačního systému.  
   
 ## <a name="remarks"></a>Poznámky  
- The `ThreadAssignedToOSThread` callback exists so that the profiler can maintain an accurate mapping across fibers of operating system threads to managed threads.  
+ `ThreadAssignedToOSThread` zpětné volání existuje, aby Profiler mohl udržovat přesné mapování mezi vlákny operačních systémů na spravovaná vlákna.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

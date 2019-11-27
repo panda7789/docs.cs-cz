@@ -16,45 +16,45 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351750"
 ---
 # <a name="accessing-xml-in-visual-basic"></a>Přístup ke XML v jazyce Visual Basic
-Visual Basic provides XML axis properties for accessing and navigating [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] structures. These properties use a special syntax to enable you to access elements and attributes by specifying the XML names.  
+Visual Basic poskytuje vlastnosti osy XML pro přístup k [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] strukturám a jejich procházení. Tyto vlastnosti používají speciální syntaxi k umožnění přístupu k prvkům a atributům zadáním názvů XML.  
   
- The following table lists the language features that enable you to access XML elements and attributes in Visual Basic.  
+ V následující tabulce jsou uvedeny funkce jazyka, které vám umožní přístup k elementům a atributům XML v Visual Basic.  
   
 ### <a name="xml-axis-properties"></a>Vlastnosti osy XML  
   
-|Property description|Příklad|Popis|  
+|Popis vlastnosti|Příklad|Popis|  
 |--------------------------|-------------|-----------------|  
-|*child axis*|`contact.<phone>`|Gets all `phone` elements that are child elements of the `contact` element.|  
-|*attribute axis*|`phone.@type`|Gets all `type` attributes of the `phone` element.|  
-|*descendant axis*|`contacts...<name>`|Gets all `name` elements of the `contacts` element, regardless of how deep in the hierarchy they occur.|  
-|*extension indexer*|`contacts...<name>(0)`|Gets the first `name` element from the sequence.|  
-|*value*|`contacts...<name>.Value`|Gets the string representation of the first object in the sequence, or `Nothing` if the sequence is empty.|  
+|*podřízená osa*|`contact.<phone>`|Získá všechny prvky `phone`, které jsou podřízenými prvky elementu `contact`.|  
+|*osa atributu*|`phone.@type`|Získá všechny atributy `type` `phone` elementu.|  
+|*osa následníka*|`contacts...<name>`|Získá všechny `name` prvky `contacts` elementu bez ohledu na to, jak hluboko v hierarchii nastanou.|  
+|*Indexer rozšíření*|`contacts...<name>(0)`|Získá první prvek `name` z sekvence.|  
+|*value*|`contacts...<name>.Value`|Získá řetězcovou reprezentaci prvního objektu v sekvenci nebo `Nothing`, pokud je sekvence prázdná.|  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Postupy: Přístup k následnickým elementům XML](../../../../visual-basic/programming-guide/language-features/xml/how-to-access-xml-descendant-elements.md)  
- Shows how to use a descendant axis property to access all XML elements that have a specified name and that are contained under a specified XML element.  
+ Ukazuje, jak použít vlastnost následníka pro přístup ke všem elementům XML, které mají zadaný název a které jsou obsaženy v zadaném elementu XML.  
   
  [Postupy: Přístup k podřízeným elementům XML](../../../../visual-basic/programming-guide/language-features/xml/how-to-access-xml-child-elements.md)  
- Shows how to use a child axis property to access all XML child elements that have a specified name in an XML element.  
+ Ukazuje, jak použít vlastnost podřízené osy pro přístup ke všem podřízeným elementům XML, které mají zadaný název v elementu XML.  
   
  [Postupy: Přístup k atributům XML](../../../../visual-basic/programming-guide/language-features/xml/how-to-access-xml-attributes.md)  
- Shows how to use an attribute axis property to access all XML attributes that have a specified name in an XML element.  
+ Ukazuje, jak použít vlastnost osy atributu pro přístup ke všem atributům XML, které mají zadaný název v elementu XML.  
   
  [Postupy: Deklarace a používání předpon názvového prostoru XML](../../../../visual-basic/programming-guide/language-features/xml/how-to-declare-and-use-xml-namespace-prefixes.md)  
- Shows how to declare an XML namespace prefix and use it to create and access XML elements.  
+ Ukazuje, jak deklarovat předponu oboru názvů XML a použít ji k vytvoření a přístup k elementům XML.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Vlastnosti osy XML](../../../../visual-basic/language-reference/xml-axis/index.md)  
- Provides links to sections describing the various XML access properties.  
+ Obsahuje odkazy na oddíly popisující různé vlastnosti přístupu XML.  
   
- [Overview of LINQ to XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)  
- Provides an introduction to using [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] in Visual Basic.  
+ [Přehled LINQ to XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)  
+ Představuje úvod k použití [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] v Visual Basic.  
   
- [Creating XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)  
- Provides an introduction to using XML literals in Visual Basic.  
+ [Vytváření XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)  
+ Poskytuje Úvod k použití literálů XML v Visual Basic.  
   
- [Manipulating XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)  
- Provides links to sections about loading and modifying XML in Visual Basic.  
+ [Manipulace s XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)  
+ Obsahuje odkazy na oddíly o načítání a úpravách XML v Visual Basic.  
   
  [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)  
- Provides links to sections describing how to use [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] in Visual Basic.
+ Obsahuje odkazy na části, které popisují, jak používat [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] v Visual Basic.

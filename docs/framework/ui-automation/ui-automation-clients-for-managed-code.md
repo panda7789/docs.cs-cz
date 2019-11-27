@@ -16,9 +16,9 @@ ms.locfileid: "74448806"
 ---
 # <a name="ui-automation-clients-for-managed-code"></a>Klienti automatizace uživatelského rozhraní pro spravovaný kód
 > [!NOTE]
-> This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace. For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
+> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v oboru názvů <xref:System.Windows.Automation>. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API pro Windows Automation: automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
   
- This section contains overviews and how-to topics to help you develop UI Automation clients.  
+ Tato část obsahuje přehledy a postupy, které vám pomohou při vývoji klientů automatizace uživatelského rozhraní.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Automatizace uživatelského rozhraní a změna velikosti obrazovky](ui-automation-and-screen-scaling.md)  
@@ -30,7 +30,7 @@ ms.locfileid: "74448806"
  [Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty](ui-automation-control-patterns-for-clients.md)  
  [Získání elementů automatizace uživatelského rozhraní](obtaining-ui-automation-elements.md)  
  [Potíže s vlákny při automatizaci uživatelského rozhraní](ui-automation-threading-issues.md)  
- [Témata s postupy](ui-automation-clients-for-managed-code-how-to-topics.md)  
+ [Postupy](ui-automation-clients-for-managed-code-how-to-topics.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Automation>

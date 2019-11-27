@@ -1,5 +1,5 @@
 ---
-title: 'How to: Find Descendant Elements (XPath-LINQ to XML)'
+title: 'Postupy: Vyhledání potomků elementů (XPath-LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: e7e2dc9e-bda9-420d-a5b1-4fabf1cca46b
 ms.openlocfilehash: 080afdb782bd6f1acaf2819814bb97a6e5ad0c77
@@ -9,15 +9,15 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346801"
 ---
-# <a name="how-to-find-descendant-elements-xpath-linq-to-xml-visual-basic"></a>How to: Find Descendant Elements (XPath-LINQ to XML) (Visual Basic)
-This topic shows how to get the descendant elements with a particular name.  
+# <a name="how-to-find-descendant-elements-xpath-linq-to-xml-visual-basic"></a>Postupy: Vyhledání Potomkových elementů (XPath-LINQ to XML) (Visual Basic)
+Toto téma ukazuje, jak získat odvozené prvky s určitým názvem.  
   
- The XPath expression is `//Name`.  
+ Výraz XPath je `//Name`.  
   
 ## <a name="example"></a>Příklad  
- This example finds all descendants named `Name`.  
+ Tento příklad vyhledá všechny následníky s názvem `Name`.  
   
- This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: více nákupních objednávek (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
   
 ```vb  
       Dim po As XDocument = XDocument.Load("PurchaseOrders.xml")  
@@ -39,7 +39,7 @@ For Each el As XElement In list1
 Next  
 ```  
   
- This example produces the following output:  
+ Tento příklad vytvoří následující výstup:  
   
 ```console
 Results are identical  
@@ -53,4 +53,4 @@ Results are identical
   
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ to XML for XPath Users (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML pro uživatele XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

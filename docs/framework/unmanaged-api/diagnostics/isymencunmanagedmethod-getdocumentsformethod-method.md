@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448380"
 ---
 # <a name="isymencunmanagedmethodgetdocumentsformethod-method"></a>ISymENCUnmanagedMethod::GetDocumentsForMethod – metoda
-Gets the documents that this method has lines in.  
+Načte dokumenty, ve kterých tato metoda obsahuje řádky.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,19 +36,19 @@ HRESULT GetDocumentsForMethod(
   
 ## <a name="parameters"></a>Parametry  
  `cDocs`  
- [in] The length of the buffer pointed to by `pcDocs`.  
+ pro Délka vyrovnávací paměti, na kterou ukazuje `pcDocs`.  
   
  `pcDocs`  
- [out] A pointer to a `ULONG32` that receives the size, in characters, of the buffer required to contain the documents.  
+ mimo Ukazatel na `ULONG32`, který obdrží velikost vyrovnávací paměti, která je nutná k uložení dokumentů v počtu znaků.  
   
  `documents`  
- [in] The buffer that contains the documents.  
+ pro Vyrovnávací paměť, která obsahuje dokumenty.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, an error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

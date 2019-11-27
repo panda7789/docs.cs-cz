@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446652"
 ---
 # <a name="addimport-method"></a>AddImport – metoda
-Adds imports to the assembly.  
+Přidá importy do sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,25 +38,25 @@ HRESULT AddImport(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- Unique ID of assembly to be augmented.  
+ Jedinečné ID sestavení, které se má rozšířit  
   
  `ImportToken`  
- Unique ID, retrieved from [ImportFile Method](importfile-method.md), of file to be imported.  
+ Jedinečné ID, které bylo načteno z [metody importFile –](importfile-method.md)souboru, který má být importován.  
   
  `dwFlags`  
- COM+ FileDef flags such as `ffContainsNoMetaData` and `ffWriteable`. `dwFlags` is passed to [DefineFile Method](../metadata/imetadataassemblyemit-definefile-method.md).  
+ Značky COM+ FileDef, například `ffContainsNoMetaData` a `ffWriteable`. `dwFlags` se předává do [metody DefineFile –](../metadata/imetadataassemblyemit-definefile-method.md).  
   
  `pFileToken`  
- Pointer to token that receives the ID for the resulting file.  
+ Ukazatel na token, který obdrží ID pro výsledný soubor.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Returns S_OK if the method succeeds.  
+ Vrátí S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Requires alink.h  
+ Vyžaduje ALink. h  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink – rozhraní](ialink-interface.md)
 - [IALink2 – rozhraní](ialink2-interface.md)
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)

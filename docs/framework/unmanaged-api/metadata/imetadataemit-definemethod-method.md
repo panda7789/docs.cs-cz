@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74431815"
 ---
 # <a name="imetadataemitdefinemethod-method"></a>IMetaDataEmit::DefineMethod – metoda
-Creates a definition for a method or global function with the specified signature, and returns a token to that method definition.  
+Vytvoří definici metody nebo globální funkce se zadaným podpisem a vrátí do této definice metody token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,73 +42,73 @@ HRESULT DefineMethod (
   
 ## <a name="parameters"></a>Parametry  
  `td`  
- [in] The `mdTypedef` token of the parent class or parent interface of the method. Set `td` to `mdTokenNil`, if you are defining a global function.  
+ pro Token `mdTypedef` nadřazené třídy nebo nadřazeného rozhraní metody Pokud definujete globální funkci, nastavte `td` na `mdTokenNil`.  
   
  `szName`  
- [in] The member name in Unicode.  
+ pro Název člena v kódování Unicode.  
   
  `dwMethodFlags`  
- [in] A value of the [CorMethodAttr](../../../../docs/framework/unmanaged-api/metadata/cormethodattr-enumeration.md) enumeration that specifies the attributes of the method or global function.  
+ pro Hodnota výčtu [CorMethodAttr –](../../../../docs/framework/unmanaged-api/metadata/cormethodattr-enumeration.md) , která určuje atributy metody nebo globální funkce.  
   
  `pvSigBlob`  
- [in] The method signature. The signature is persisted as supplied. If you need to specify additional information for any parameters, use the [IMetaDataEmit::SetParamProps](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-setparamprops-method.md) method.  
+ pro Signatura metody. Signatura je trvalá jako dodaná. Pokud potřebujete zadat další informace pro všechny parametry, použijte metodu [IMetaDataEmit:: setparamprops –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-setparamprops-method.md) .  
   
  `cbSigBlob`  
- [in] The count of bytes in `pvSigBlob`.  
+ pro Počet bajtů v `pvSigBlob`.  
   
  `ulCodeRVA`  
- [in] The address of the code.  
+ pro Adresa kódu.  
   
  `dwImplFlags`  
- [in] A value of the [CorMethodImpl](../../../../docs/framework/unmanaged-api/metadata/cormethodimpl-enumeration.md) enumeration that specifies the implementation features of the method.  
+ pro Hodnota výčtu [CorMethodImpl –](../../../../docs/framework/unmanaged-api/metadata/cormethodimpl-enumeration.md) , která určuje implementační funkce metody.  
   
  `pmd`  
- [out] The member token.  
+ mimo Token členu.  
   
 ## <a name="remarks"></a>Poznámky  
- The metadata API guarantees to persist methods in the same order as the caller emits them for a given enclosing class or interface, which is specified in the `td` parameter.  
+ Rozhraní API metadat zaručuje uchování metod ve stejném pořadí, ve kterém je volající vygeneruje pro danou ohraničující třídu nebo rozhraní, které jsou zadány v parametru `td`.  
   
- Additional information regarding the use of `DefineMethod` and particular parameter settings is given below.  
+ Další informace týkající se použití `DefineMethod` a konkrétního nastavení parametrů jsou uvedeny níže.  
   
-## <a name="slots-in-the-v-table"></a>Slots in the V-table  
- The runtime uses method definitions to set up v-table slots. In the case where one or more slots need to be skipped, such as to preserve parity with a COM interface layout, a dummy method is defined to take up the slot or slots in the v-table; set the `dwMethodFlags` to the `mdRTSpecialName` value of the [CorMethodAttr](../../../../docs/framework/unmanaged-api/metadata/cormethodattr-enumeration.md) enumeration and specify the name as:  
+## <a name="slots-in-the-v-table"></a>Sloty v tabulce v  
+ Modul runtime používá k nastavení slotů v tabulce definice metod. V případě, kdy je třeba jeden nebo více slotů přeskočit, například pro zachování parity pomocí rozložení rozhraní modelu COM, je definována fiktivní metoda, která zabere slot nebo sloty v tabulce v. Nastavte `dwMethodFlags` na `mdRTSpecialName` hodnotu výčtu [CorMethodAttr –](../../../../docs/framework/unmanaged-api/metadata/cormethodattr-enumeration.md) a zadejte název jako:  
   
  _VtblGap\<*SequenceNumber*>\<\_*CountOfSlots*>
   
- where *SequenceNumber* is the sequence number of the method and *CountOfSlots* is the number of slots to skip in the v-table. If *CountOfSlots* is omitted, 1 is assumed. These dummy methods are not callable from either managed or unmanaged code and any attempt to call them, from either managed or unmanaged code, generates an exception. Their only purpose is to take up space in the v-table that the runtime generates for COM integration.  
+ kde *SequenceNumber* je pořadové číslo metody a *CountOfSlots* je počet slotů, které se mají přeskočit v tabulce v. Pokud je hodnota *CountOfSlots* vynechána, předpokládá se hodnota 1. Tyto fiktivní metody nelze volat z spravovaného nebo nespravovaného kódu a jakékoli pokusy o jejich volání z spravovaného nebo nespravovaného kódu generují výjimku. Jediným účelem je zabírat místo v tabulce, kterou modul runtime generuje pro integraci modelu COM.  
   
-## <a name="duplicate-methods"></a>Duplicate Methods  
- You should not define duplicate methods. That is, you should not call `DefineMethod` with a duplicate set of values in the `td`, `wzName`, and `pvSig` parameters. (These three parameters together uniquely define the method.). However, you can use a duplicate triple provided that, for one of the method definitions, you set the `mdPrivateScope` bit in the `dwMethodFlags` parameter. (The `mdPrivateScope` bit means that the compiler will not emit a reference to this method definition.)  
+## <a name="duplicate-methods"></a>Duplicitní metody  
+ Neměli byste definovat duplicitní metody. To znamená, že byste neměli volat `DefineMethod` s duplicitní sadou hodnot v parametrech `td`, `wzName`a `pvSig`. (Tyto tři parametry společně definují jedinečnou metodu.). Můžete však použít duplicitní trojnásobný předpoklad, že pro jednu z definic metod nastavíte bit `mdPrivateScope` v parametru `dwMethodFlags`. (`mdPrivateScope` bit znamená, že kompilátor negeneruje odkaz na tuto definici metody.)  
   
-## <a name="method-implementation-information"></a>Method Implementation Information  
- Information about the method implementation is often not known at the time the method is declared. Therefore, you do not need to pass values in the `ulCodeRVA` and `dwImplFlags` parameters when calling `DefineMethod`. The values can be supplied later through [IMetaDataEmit::SetMethodImplFlags](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-setmethodimplflags-method.md) or [IMetaDataEmit::SetRVA](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-setrva-method.md), as appropriate.  
+## <a name="method-implementation-information"></a>Informace o implementaci metody  
+ Informace o implementaci metody často nejsou známy v době, kdy je metoda deklarována. Proto není nutné předávat hodnoty do `ulCodeRVA` a `dwImplFlags` parametrů při volání `DefineMethod`. Hodnoty lze zadat později prostřednictvím [IMetaDataEmit:: SetMethodImplFlags –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-setmethodimplflags-method.md) nebo [IMetaDataEmit:: setrva –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-setrva-method.md), podle potřeby.  
   
- In some situations, such as platform invocation (PInvoke) or COM interop scenarios, the method body will not be supplied, and `ulCodeRVA` should be set to zero. In these situations, the method should not be tagged as abstract, because the runtime will locate the implementation.  
+ V některých situacích, například ve scénářích volání platformy (PInvoke) nebo zprostředkovateli komunikace s objekty COM, nebude tělo metody dodáno a `ulCodeRVA` by měl být nastaven na hodnotu nula. V těchto situacích by neměla být metoda označena jako abstraktní, protože modul runtime vyhledá implementaci.  
   
-## <a name="defining-a-method-for-pinvoke"></a>Defining a Method for PInvoke  
- For each unmanaged function to be called through PInvoke, you must define a managed method that represents the target unmanaged function. To define the managed method, use `DefineMethod` with some of the parameters set to certain values, depending on the way in which PInvoke is used:  
+## <a name="defining-a-method-for-pinvoke"></a>Definování metody pro PInvoke  
+ Pro každou nespravovanou funkci, která má být volána prostřednictvím PInvoke, je nutné definovat spravovanou metodu, která představuje cílovou nespravovanou funkci. Pro definování spravované metody použijte `DefineMethod` s některými parametry nastavenými na určité hodnoty, v závislosti na způsobu použití PInvoke:  
   
-- True PInvoke - involves invocation of an external unmanaged method that resides in an unmanaged DLL.  
+- True PInvoke – zahrnuje vyvolání externí nespravované metody, která se nachází v nespravované knihovně DLL.  
   
-- Local PInvoke - involves invocation of a native unmanaged method that is embedded in the current managed module.  
+- Místní PInvoke – zahrnuje vyvolání nativní nespravované metody, která je vložena do aktuálního spravovaného modulu.  
   
- The parameter settings are given in the following table.  
+ Nastavení parametru jsou uvedena v následující tabulce.  
   
-|Parametr|Values for true PInvoke|Values for local PInvoke|  
+|Parametr|Hodnoty pro True PInvoke|Hodnoty pro místní PInvoke|  
 |---------------|-----------------------------|------------------------------|  
-|`dwMethodFlags`||Set `mdStatic`; clear `mdSynchronized` and `mdAbstract`.|  
-|`pvSigBlob`|A valid common language runtime (CLR) method signature with parameters that are valid managed types.|A valid CLR method signature with parameters that are valid managed types.|  
+|`dwMethodFlags`||Nastavit `mdStatic`; zrušte zaškrtnutí `mdSynchronized` a `mdAbstract`.|  
+|`pvSigBlob`|Platný podpis metody modulu CLR (Common Language Runtime) s parametry, které jsou platnými spravovanými typy.|Platná signatura metody CLR s parametry, které jsou platnými spravovanými typy.|  
 |`ulCodeRVA`||0|  
-|`dwImplFlags`|Set `miCil` and `miManaged`.|Set `miNative` and `miUnmanaged`.|  
+|`dwImplFlags`|Nastavte `miCil` a `miManaged`.|Nastavte `miNative` a `miUnmanaged`.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

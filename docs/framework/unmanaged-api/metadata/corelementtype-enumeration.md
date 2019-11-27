@@ -23,7 +23,7 @@ ms.locfileid: "74443626"
 ---
 # <a name="corelementtype-enumeration"></a>CorElementType – výčet
 
-Specifies a common language runtime <xref:System.Type>, a type modifier, or information about a type in a metadata type signature.
+Určuje modul CLR (Common Language Runtime) <xref:System.Type>, modifikátor typu nebo informace o typu v signatuře typu metadat.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -79,72 +79,72 @@ typedef enum CorElementType {
 
 |Člen|Popis|
 |------------|-----------------|
-|`ELEMENT_TYPE_END`|Used internally.|
-|`ELEMENT_TYPE_VOID`|A void type.|
-|`ELEMENT_TYPE_BOOLEAN`|A Boolean type|
-|`ELEMENT_TYPE_CHAR`|A character type.|
-|`ELEMENT_TYPE_I1`|A signed 1-byte integer.|
-|`ELEMENT_TYPE_U1`|An unsigned 1-byte integer.|
-|`ELEMENT_TYPE_I2`|A signed 2-byte integer.|
-|`ELEMENT_TYPE_U2`|An unsigned 2-byte integer.|
-|`ELEMENT_TYPE_I4`|A signed 4-byte integer.|
-|`ELEMENT_TYPE_U4`|An unsigned 4-byte integer.|
-|`ELEMENT_TYPE_I8`|A signed 8-byte integer.|
-|`ELEMENT_TYPE_U8`|An unsigned 8-byte integer.|
-|`ELEMENT_TYPE_R4`|A 4-byte floating point.|
-|`ELEMENT_TYPE_R8`|An 8-byte floating point.|
-|`ELEMENT_TYPE_STRING`|A System.String type.|
-|`ELEMENT_TYPE_PTR`|A pointer type modifier.|
-|`ELEMENT_TYPE_BYREF`|A reference type modifier.|
-|`ELEMENT_TYPE_VALUETYPE`|A value type modifier.|
-|`ELEMENT_TYPE_CLASS`|A class type modifier.|
-|`ELEMENT_TYPE_VAR`|A class variable type modifier.|
-|`ELEMENT_TYPE_ARRAY`|A multi-dimensional array type modifier.|
-|`ELEMENT_TYPE_GENERICINST`|A type modifier for generic types.|
-|`ELEMENT_TYPE_TYPEDBYREF`|A typed reference.|
-|`ELEMENT_TYPE_I`|Size of a native integer.|
-|`ELEMENT_TYPE_U`|Size of an unsigned native integer.|
-|`ELEMENT_TYPE_FNPTR`|A pointer to a function.|
-|`ELEMENT_TYPE_OBJECT`|A System.Object type.|
-|`ELEMENT_TYPE_SZARRAY`|A single-dimensional, zero lower-bound array type modifier.|
-|`ELEMENT_TYPE_MVAR`|A method variable type modifier.|
-|`ELEMENT_TYPE_CMOD_REQD`|A C language required modifier.|
-|`ELEMENT_TYPE_CMOD_OPT`|A C language optional modifier.|
-|`ELEMENT_TYPE_INTERNAL`|Used internally.|
-|`ELEMENT_TYPE_MAX`|An invalid type.|
-|`ELEMENT_TYPE_MODIFIER`|Used internally.|
-|`ELEMENT_TYPE_SENTINEL`|A type modifier that is a sentinel for a list of a variable number of parameters.|
-|`ELEMENT_TYPE_PINNED`|Used internally.|
+|`ELEMENT_TYPE_END`|Používá se interně.|
+|`ELEMENT_TYPE_VOID`|Typ void.|
+|`ELEMENT_TYPE_BOOLEAN`|Typ Boolean|
+|`ELEMENT_TYPE_CHAR`|Typ znaku.|
+|`ELEMENT_TYPE_I1`|Celé číslo se znaménkem na 1 bajt.|
+|`ELEMENT_TYPE_U1`|Celé číslo s nepodepsaným 1 bajtem.|
+|`ELEMENT_TYPE_I2`|Celé číslo se znaménkem na 2 bajt.|
+|`ELEMENT_TYPE_U2`|Celé číslo bez znaménka 2-Byte.|
+|`ELEMENT_TYPE_I4`|Celé číslo se znaménkem o velikosti 4 bajty.|
+|`ELEMENT_TYPE_U4`|Celé číslo se znaménkem a 4 bajty.|
+|`ELEMENT_TYPE_I8`|Celé 8bitové číslo se znaménkem.|
+|`ELEMENT_TYPE_U8`|Celé číslo bez znaménka na 8 bajtů.|
+|`ELEMENT_TYPE_R4`|Desetinná čárka se čtyřmi bajty.|
+|`ELEMENT_TYPE_R8`|Plovoucí desetinná čárka (8 bajtů).|
+|`ELEMENT_TYPE_STRING`|Typ System. String.|
+|`ELEMENT_TYPE_PTR`|Modifikátor typu ukazatele.|
+|`ELEMENT_TYPE_BYREF`|Modifikátor typu odkazu.|
+|`ELEMENT_TYPE_VALUETYPE`|Modifikátor typu hodnoty.|
+|`ELEMENT_TYPE_CLASS`|Modifikátor typu třídy.|
+|`ELEMENT_TYPE_VAR`|Modifikátor typu proměnné třídy.|
+|`ELEMENT_TYPE_ARRAY`|Modifikátor typu multidimenzionálního pole.|
+|`ELEMENT_TYPE_GENERICINST`|Modifikátor typu pro obecné typy.|
+|`ELEMENT_TYPE_TYPEDBYREF`|Zadaný odkaz.|
+|`ELEMENT_TYPE_I`|Velikost nativního celého čísla.|
+|`ELEMENT_TYPE_U`|Velikost nativního celého čísla bez znaménka.|
+|`ELEMENT_TYPE_FNPTR`|Ukazatel na funkci.|
+|`ELEMENT_TYPE_OBJECT`|Typ System. Object.|
+|`ELEMENT_TYPE_SZARRAY`|Jednorozměrné, nulový modifikátor typu pole s nižším rozsahem.|
+|`ELEMENT_TYPE_MVAR`|Modifikátor typu proměnné metody.|
+|`ELEMENT_TYPE_CMOD_REQD`|Modifikátor vyžadovaný jazykem jazyka C.|
+|`ELEMENT_TYPE_CMOD_OPT`|Volitelný modifikátor jazyka C.|
+|`ELEMENT_TYPE_INTERNAL`|Používá se interně.|
+|`ELEMENT_TYPE_MAX`|Neplatný typ.|
+|`ELEMENT_TYPE_MODIFIER`|Používá se interně.|
+|`ELEMENT_TYPE_SENTINEL`|Modifikátor typu, který je Sentinel pro seznam variabilního počtu parametrů.|
+|`ELEMENT_TYPE_PINNED`|Používá se interně.|
 
 ## <a name="remarks"></a>Poznámky
 
-The type modifiers form the basis for representing more complex types. A `CorElementType` type modifier value is applied to the value that immediately follows it in the type signature. The value that follows the `CorElementType` type modifier value can be a `CorElementType` simple type value, a metadata token, or other value, as specified in the following table.
+Modifikátory typu tvoří základ pro reprezentace složitějších typů. Hodnota modifikátoru typu `CorElementType` se aplikuje na hodnotu, která se v signatuře typu hned za ní následuje. Hodnota, která následuje za hodnotou modifikátoru typu `CorElementType`, může být `CorElementType` jednoduchá hodnota typu, token metadat nebo jiná hodnota, jak je uvedeno v následující tabulce.
 
 > [!NOTE]
-> All numbers (*number*, *argument Count*, *metadata token*, *rank*, *count*, and *bound*) are stored as compressed integers. See [Standard ECMA-335 - Common Language Infrastructure (CLI)](https://go.microsoft.com/fwlink/?LinkID=116487) on the ECMA Web site for details.
+> Všechna čísla (*číslo*, *počet argumentů*, *token metadat*, *pořadí*, *počet*a *mez*) jsou ukládána jako komprimovaná celá čísla. Podrobnosti najdete v tématu [Standard ECMA-335-Common Language Infrastructure (CLI)](https://go.microsoft.com/fwlink/?LinkID=116487) na webu ECMA.
 
-|Type modifier|Formát|
+|Modifikátor typu|Formát|
 |-------------------|------------|
-|`ELEMENT_TYPE_PTR`|ELEMENT_TYPE_PTR \<a `CorElementType` value>|
-|`ELEMENT_TYPE_BYREF`|ELEMENT_TYPE_BYREF \<a `CorElementType` value>|
-|`ELEMENT_TYPE_VALUETYPE`|ELEMENT_TYPE_VALUETYPE \<an `mdTypeDef` metadata token>|
-|`ELEMENT_TYPE_CLASS`|ELEMENT_TYPE_CLASS \<an `mdTypeDef` metadata token>|
-|`ELEMENT_TYPE_VAR`|ELEMENT_TYPE_VAR \<number>|
-|`ELEMENT_TYPE_ARRAY`|ELEMENT_TYPE_ARRAY \<a `CorElementType` value> \<rank> \<count1> \<bound1> ... \<countN> \<boundN>|
-|`ELEMENT_TYPE_GENERICINST`|ELEMENT_TYPE_GENERICINST \<an `mdTypeDef` metadata token> \<argument Count> \<arg1> ... \<argN>|
-|`ELEMENT_TYPE_FNPTR`|ELEMENT_TYPE_FNPTR \<complete signature for the function, including calling convention>|
-|`ELEMENT_TYPE_SZARRAY`|ELEMENT_TYPE_SZARRAY \<a `CorElementType` value>|
-|`ELEMENT_TYPE_MVAR`|ELEMENT_TYPE_MVAR \<number>|
-|`ELEMENT_TYPE_CMOD_REQD`|ELEMENT_TYPE_\<a `mdTypeRef` or `mdTypeDef` metadata token>|
-|`ELEMENT_TYPE_CMOD_OPT`|E_T_CMOD_OPT \<a `mdTypeRef` or `mdTypeDef` metadata token>|
+|`ELEMENT_TYPE_PTR`|ELEMENT_TYPE_PTR \<hodnotu `CorElementType` >|
+|`ELEMENT_TYPE_BYREF`|ELEMENT_TYPE_BYREF \<hodnotu `CorElementType` >|
+|`ELEMENT_TYPE_VALUETYPE`|ELEMENT_TYPE_VALUETYPE \<tokenu metadat `mdTypeDef` >|
+|`ELEMENT_TYPE_CLASS`|ELEMENT_TYPE_CLASS \<tokenu metadat `mdTypeDef` >|
+|`ELEMENT_TYPE_VAR`|Číslo \<ELEMENT_TYPE_VAR >|
+|`ELEMENT_TYPE_ARRAY`|ELEMENT_TYPE_ARRAY \<`CorElementType` hodnotě > \<Rank > \<count1 > \<bound1 >... \<countN > \<boundN >|
+|`ELEMENT_TYPE_GENERICINST`|ELEMENT_TYPE_GENERICINST \<tokenu metadat `mdTypeDef` > \<počet argumentů > \<arg1 >... \<argN >|
+|`ELEMENT_TYPE_FNPTR`|ELEMENT_TYPE_FNPTR \<kompletní signaturu funkce, včetně konvence volání >|
+|`ELEMENT_TYPE_SZARRAY`|ELEMENT_TYPE_SZARRAY \<hodnotu `CorElementType` >|
+|`ELEMENT_TYPE_MVAR`|Číslo \<ELEMENT_TYPE_MVAR >|
+|`ELEMENT_TYPE_CMOD_REQD`|ELEMENT_TYPE_\<`mdTypeRef` nebo `mdTypeDef` tokenu metadat >|
+|`ELEMENT_TYPE_CMOD_OPT`|E_T_CMOD_OPT \<`mdTypeRef` nebo `mdTypeDef` tokenu metadat >|
 
 ## <a name="requirements"></a>Požadavky
 
-**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).
+**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).
 
-**Header:** CorHdr.h
+**Hlavička:** CorHdr. h
 
-**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
+**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]
 
 ## <a name="see-also"></a>Viz také:
 

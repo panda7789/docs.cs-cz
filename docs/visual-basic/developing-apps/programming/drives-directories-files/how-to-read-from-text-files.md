@@ -1,5 +1,5 @@
 ---
-title: 'How to: Read From Text Files'
+title: 'Postupy: čtení z textových souborů'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - extended characters [Visual Basic], reading
@@ -17,22 +17,22 @@ ms.locfileid: "74334590"
 ---
 # <a name="how-to-read-from-text-files-in-visual-basic"></a>Postupy: Čtení z textových souborů v jazyce Visual Basic
 
-The <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.ReadAllText%2A> method of the `My.Computer.FileSystem` object allows you to read from a text file. Kódování souboru lze určit, pokud obsah tohoto souboru používá nějaké kódování, například ASCII nebo UTF-8.
+Metoda <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.ReadAllText%2A> objektu `My.Computer.FileSystem` umožňuje čtení z textového souboru. Kódování souboru lze určit, pokud obsah tohoto souboru používá nějaké kódování, například ASCII nebo UTF-8.
 
 Při čtení ze souboru obsahujícího znaky s diakritikou budete muset určit kódování souboru.
 
 > [!NOTE]
-> To read a file a single line of text at a time, use the <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.OpenTextFileReader%2A> method of the `My.Computer.FileSystem` object. The `OpenTextFileReader` method returns a <xref:System.IO.StreamReader> object. You can use the <xref:System.IO.StreamReader.ReadLine%2A> method of the `StreamReader` object to read a file one line at a time. You can test for the end of the file using the <xref:System.IO.StreamReader.EndOfStream%2A> method of the `StreamReader` object.
+> Chcete-li číst soubor v jednom řádku textu, použijte metodu <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.OpenTextFileReader%2A> objektu `My.Computer.FileSystem`. Metoda `OpenTextFileReader` vrátí objekt <xref:System.IO.StreamReader>. Můžete použít metodu <xref:System.IO.StreamReader.ReadLine%2A> objektu `StreamReader` pro čtení souboru po jednom řádku. Můžete otestovat na konec souboru pomocí metody <xref:System.IO.StreamReader.EndOfStream%2A> objektu `StreamReader`.
 
 ## <a name="to-read-from-a-text-file"></a>Čtení z textového souboru
 
-Use the `ReadAllText` method of the `My.Computer.FileSystem` object to read the contents of a text file into a string, supplying the path. Následující příklad načte obsah souboru test.txt do řetězce a pak jej zobrazí v okně se zprávou.
+K načtení obsahu textového souboru do řetězce použijte metodu `ReadAllText` objektu `My.Computer.FileSystem` a zadejte cestu. Následující příklad načte obsah souboru test.txt do řetězce a pak jej zobrazí v okně se zprávou.
 
 [!code-vb[VbFileIORead#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#2)]
 
 ### <a name="to-read-from-a-text-file-that-is-encoded"></a>Čtení z textového souboru s kódováním
 
-Use the `ReadAllText` method of the `My.Computer.FileSystem` object to read the contents of a text file into a string, supplying the path and file encoding type. Následující příklad načte obsah souboru test.txt s kódováním UTF32 do řetězce a pak jej zobrazí v okně se zprávou.
+Pomocí metody `ReadAllText` objektu `My.Computer.FileSystem` si můžete přečíst obsah textového souboru do řetězce a zadat cestu a typ kódování souboru. Následující příklad načte obsah souboru test.txt s kódováním UTF32 do řetězce a pak jej zobrazí v okně se zprávou.
 
 [!code-vb[VbFileIORead#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIORead/VB/Class1.vb#3)]
 
@@ -40,23 +40,23 @@ Use the `ReadAllText` method of the `My.Computer.FileSystem` object to read the 
 
 Následující podmínky mohou způsobit výjimku:
 
-- The path is not valid for one of the following reasons: it is a zero-length string, it contains only white space, it contains invalid characters, or it is a device path (<xref:System.ArgumentException>).
+- Cesta není platná z některého z následujících důvodů: Jedná se o řetězec o nulové délce, obsahuje pouze prázdné znaky, obsahuje neplatné znaky nebo se jedná o cestu k zařízení (<xref:System.ArgumentException>).
 
-- The path is not valid because it is `Nothing` (<xref:System.ArgumentNullException>).
+- Cesta není platná, protože je `Nothing` (<xref:System.ArgumentNullException>).
 
-- The file does not exist (<xref:System.IO.FileNotFoundException>).
+- Soubor neexistuje (<xref:System.IO.FileNotFoundException>).
 
-- The file is in use by another process or an I/O error occurs (<xref:System.IO.IOException>).
+- Soubor je používán jiným procesem nebo dojde k vstupně-výstupní chybě (<xref:System.IO.IOException>).
 
-- The path exceeds the system-defined maximum length (<xref:System.IO.PathTooLongException>).
+- Cesta překračuje maximální povolenou délku systému (<xref:System.IO.PathTooLongException>).
 
-- A file or directory name in the path contains a colon (:) or is in an invalid format (<xref:System.NotSupportedException>).
+- Název souboru nebo adresáře v cestě obsahuje dvojtečku (:) nebo má neplatný formát (<xref:System.NotSupportedException>).
 
-- There is not enough memory to write the string to buffer (<xref:System.OutOfMemoryException>).
+- K zápisu řetězce do vyrovnávací paměti (<xref:System.OutOfMemoryException>) není dostatek paměti.
 
-- The user lacks necessary permissions to view the path (<xref:System.Security.SecurityException>).
+- Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).
 
-Nečiňte rozhodnutí o obsahu souboru na základě jeho názvu. For example, the file Form1.vb may not be a Visual Basic source file.
+Nečiňte rozhodnutí o obsahu souboru na základě jeho názvu. Například soubor Form1. vb nemusí být Visual Basic zdrojový soubor.
 
 Před použitím dat ve své aplikaci ověřte všechny vstupy. Soubor nemusí mít obsah, jaký očekáváte, a metody pro čtení z tohoto souboru mohou selhat.
 
@@ -69,5 +69,5 @@ Před použitím dat ve své aplikaci ověřte všechny vstupy. Soubor nemusí m
 - [Postupy: Čtení z textových souborů s pevnou šířkou](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-fixed-width-text-files.md)
 - [Postupy: Čtení z textových souborů ve více formátech](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md)
 - [Řešení potíží: Čtení z textových souborů a zápis do nich](../../../../visual-basic/developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)
-- [Walkthrough: Manipulating Files and Directories in Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)
+- [Návod: manipulace se soubory a adresáři v Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)
 - [Kódování souborů](../../../../visual-basic/developing-apps/programming/drives-directories-files/file-encodings.md)

@@ -1,5 +1,5 @@
 ---
-title: 'How to: Retrieve a Single Attribute (LINQ to XML)'
+title: 'Postupy: načtení jednoho atributu (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 11b938d7-c011-4048-900e-8b9183c41c94
 ms.openlocfilehash: 02afbc987cf9f55d16bb56912f3eaf45cd8c9a37
@@ -9,13 +9,13 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74347567"
 ---
-# <a name="how-to-retrieve-a-single-attribute-linq-to-xml-visual-basic"></a>How to: Retrieve a Single Attribute (LINQ to XML) (Visual Basic)
-This topic explains how to retrieve a single attribute of an element, given the attribute name. This is useful for writing query expressions where you want to find an element that has a particular attribute.  
+# <a name="how-to-retrieve-a-single-attribute-linq-to-xml-visual-basic"></a>Postupy: načtení jednoho atributu (LINQ to XML) (Visual Basic)
+Toto téma vysvětluje, jak načíst jediný atribut prvku s ohledem na název atributu. To je užitečné pro psaní výrazů dotazů, kde chcete najít element, který má konkrétní atribut.  
   
- The <xref:System.Xml.Linq.XElement.Attribute%2A> method of the <xref:System.Xml.Linq.XElement> class returns the <xref:System.Xml.Linq.XAttribute> with the specified name.  
+ Metoda <xref:System.Xml.Linq.XElement.Attribute%2A> třídy <xref:System.Xml.Linq.XElement> vrací <xref:System.Xml.Linq.XAttribute> se zadaným názvem.  
   
 ## <a name="example"></a>Příklad  
- The following example uses the <xref:System.Xml.Linq.XElement.Attribute%2A> method.  
+ Následující příklad používá metodu <xref:System.Xml.Linq.XElement.Attribute%2A>.  
   
 ```vb  
 Dim cust As XElement = <PhoneNumbers>  
@@ -28,9 +28,9 @@ For Each e As XElement In elList
 Next  
 ```  
   
- This example finds all the descendants in the tree named `Phone`, and then finds the attribute named `type`.  
+ Tento příklad vyhledá všechny následníky ve stromu s názvem `Phone`a poté vyhledá atribut s názvem `type`.  
   
- This code produces the following output:  
+ Tento kód generuje následující výstup:  
   
 ```console  
 home  
@@ -38,7 +38,7 @@ work
 ```  
   
 ## <a name="example"></a>Příklad  
- If you want to retrieve the value of the attribute, you can cast it, just as you do for with <xref:System.Xml.Linq.XElement> objects. Následující příklad ukazuje to.  
+ Pokud chcete načíst hodnotu atributu, můžete jej přetypovat stejným způsobem jako u objektů <xref:System.Xml.Linq.XElement>. Následující příklad ukazuje to.  
   
 ```vb  
 Dim cust As XElement = <PhoneNumbers>  
@@ -53,17 +53,17 @@ For Each el As XElement In elList
 Next  
 ```  
   
- This code produces the following output:  
+ Tento kód generuje následující výstup:  
   
 ```console  
 home  
 work  
 ```  
   
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] provides explicit cast operators for the <xref:System.Xml.Linq.XAttribute> class to `string`, `bool`, `bool?`, `int`, `int?`, `uint`, `uint?`, `long`, `long?`, `ulong`, `ulong?`, `float`, `float?`, `double`, `double?`, `decimal`, `decimal?`, `DateTime`, `DateTime?`, `TimeSpan`, `TimeSpan?`, `GUID`, and `GUID?`.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] poskytuje explicitní operátory přetypování pro třídu <xref:System.Xml.Linq.XAttribute> na `string`, `bool`, `bool?`, `int`, `int?`, `uint`, `uint?`, `long`, `long?`, `ulong`, `ulong?`, `float`, `float?`, `double`, `double?`, `decimal`, `decimal?`, `DateTime`, `DateTime?`, `TimeSpan`, `TimeSpan?`, `GUID``GUID?`  
   
 ## <a name="example"></a>Příklad  
- The following example shows the same code for an attribute that is in a namespace. For more information, see [Namespaces Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).  
+ Následující příklad ukazuje stejný kód pro atribut, který je v oboru názvů. Další informace najdete v tématu [obory názvů Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  
@@ -85,7 +85,7 @@ Module Module1
 End Module  
 ```  
   
- This code produces the following output:  
+ Tento kód generuje následující výstup:  
   
 ```console  
 home  
@@ -94,4 +94,4 @@ work
   
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ to XML Axes (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)
+- [LINQ to XML osy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)

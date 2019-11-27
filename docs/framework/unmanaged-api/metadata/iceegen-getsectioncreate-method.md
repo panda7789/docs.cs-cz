@@ -23,9 +23,9 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448092"
 ---
 # <a name="iceegengetsectioncreate-method"></a>ICeeGen::GetSectionCreate – metoda
-Generates and gets a code section using the specified name and flag values.  
+Vygeneruje a získá oddíl kódu s použitím zadaných hodnot název a příznak.  
   
- This method is obsolete and should not be used.  
+ Tato metoda je zastaralá a neměla by se používat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,25 +39,25 @@ HRESULT GetSectionCreate (
   
 ## <a name="parameters"></a>Parametry  
  `name`  
- [in] A pointer to a string that specifies the name of the section to be created.  
+ pro Ukazatel na řetězec, který určuje název oddílu, který má být vytvořen.  
   
  `flags`  
- [in] Flags that specify options.  
+ pro Příznaky, které určují možnosti.  
   
  `section`  
- [out] A pointer to the newly created code section.  
+ mimo Ukazatel na nově vytvořený oddíl kódu.  
   
 ## <a name="remarks"></a>Poznámky  
- Call `GetSectionCreate` only if you have special section requirements that are not handled by other methods.  
+ Vyvolejte `GetSectionCreate` pouze v případě, že máte zvláštní požadavky na oddíly, které nejsou zpracovány jinými metodami.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -12,11 +12,11 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346983"
 ---
 # <a name="procedure-call-or-argument-is-not-valid-visual-basic"></a>Volání procedury nebo argument není platné (Visual Basic).
-Some part of the call cannot be completed.  
+Část volání nelze dokončit.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Check the permitted ranges for arguments to make sure no arrangement exceeds the permitted values.  
+- Zkontrolujte povolené rozsahy argumentů, abyste se ujistili, že žádné uspořádání nepřekračuje povolené hodnoty.  
   
 ## <a name="see-also"></a>Viz také:
 

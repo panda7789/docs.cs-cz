@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446555"
 ---
 # <a name="createalink-function"></a>CreateALink – funkce
-Creates an instance of the Assembly Linker and sets a pointer to the specified interface.  
+Vytvoří instanci linkeru sestavení a nastaví ukazatel na zadané rozhraní.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,11 +38,11 @@ HRESULT CreateALink (
   
 |Parametr|Popis|  
 |---------------|-----------------|  
-|`riid`|The physical name of one of the Assembly Linker interfaces.|  
-|`ppInterface`|The location that on successful completion contains a pointer to the `riid` interface.|  
+|`riid`|Fyzický název jednoho z rozhraní linkeru sestavení.|  
+|`ppInterface`|Umístění, které po úspěšném dokončení obsahuje ukazatel na rozhraní `riid`.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Library**: alink.dll  
+ **Knihovna**: ALink. dll  
   
 ## <a name="see-also"></a>Viz také:
 

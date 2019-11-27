@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449199"
 ---
 # <a name="isymunmanageddocumentgetchecksum-method"></a>ISymUnmanagedDocument::GetCheckSum – metoda
-Gets the checksum.  
+Získá kontrolní součet.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,16 +36,16 @@ HRESULT GetCheckSum(
   
 ## <a name="parameters"></a>Parametry  
  `cData`  
- [in] The length of the buffer provided by the `data` parameter  
+ pro Délka vyrovnávací paměti poskytnuté parametrem `data`  
   
  `pcData`  
- [out] The size and length of the checksum, in bytes.  
+ mimo Velikost a délka kontrolního součtu (v bajtech).  
   
  `data`  
- [out] The buffer that receives the checksum.  
+ mimo Vyrovnávací paměť, která přijímá kontrolní součet.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, an error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě kód chyby.  
   
 ## <a name="see-also"></a>Viz také:
 

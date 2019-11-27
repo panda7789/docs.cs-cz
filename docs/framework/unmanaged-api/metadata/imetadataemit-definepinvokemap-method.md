@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74431484"
 ---
 # <a name="imetadataemitdefinepinvokemap-method"></a>IMetaDataEmit::DefinePinvokeMap – metoda
-Sets features of the PInvoke signature of the method referenced by the specified token.  
+Nastaví funkce signatury PInvoke metody, na kterou odkazuje zadaný token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,25 +38,25 @@ HRESULT DefinePinvokeMap (
   
 ## <a name="parameters"></a>Parametry  
  `tk`  
- [in] The token for the target method.  
+ pro Token pro cílovou metodu  
   
  `dwMappingFlags`  
- [in] Flags used by PInvoke to do the mapping.  
+ pro Příznaky používané v PInvoke k mapování.  
   
  `szImportName`  
- [in] The name of the target export method in an unmanaged DLL.  
+ pro Název cílové metody exportu v nespravované knihovně DLL.  
   
  `mrImportDLL`  
- [in] The token for the target native DLL.  
+ pro Token pro cílovou nativní knihovnu DLL.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

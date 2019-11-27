@@ -14,7 +14,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74343549"
 ---
 # <a name="-codepage-visual-basic"></a>-codepage (Visual Basic)
-Specifies the code page to use for all source-code files in the compilation.  
+Určuje znakovou stránku, která se má použít pro všechny soubory zdrojového kódu v kompilaci.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,16 +26,16 @@ Specifies the code page to use for all source-code files in the compilation.
   
 |Termín|Definice|  
 |---|---|  
-|`id`|Požadováno. The compiler uses the code page specified by `id` to interpret the encoding of the source files.|  
+|`id`|Požadováno. Kompilátor používá znakovou stránku určenou `id` k interpretaci kódování zdrojových souborů.|  
   
 ## <a name="remarks"></a>Poznámky  
- To compile source code saved with a specific encoding, you can use `-codepage` to specify which code page should be used. The `-codepage` option applies to all source-code files in your compilation. For more information, see [Character Encoding in the .NET Framework](../../../standard/base-types/character-encoding.md).  
+ Chcete-li zkompilovat zdrojový kód uložený pomocí konkrétního kódování, můžete použít `-codepage` k určení, která znaková stránka má být použita. Možnost `-codepage` se vztahuje na všechny soubory zdrojového kódu ve vaší kompilaci. Další informace naleznete v tématu [kódování znaků v .NET Framework](../../../standard/base-types/character-encoding.md).  
   
- The `-codepage` option is not needed if the source-code files were saved using the current ANSI code page, Unicode, or UTF-8 with a signature. Visual Studio saves all source-code files with the current ANSI code page by default, unless the user specifies another encoding in the **Encoding** dialog box. Visual Studio uses the **Encoding** dialog box to open source-code files saved with a different code page.  
+ Možnost `-codepage` není nutná, pokud byly soubory zdrojového kódu uloženy pomocí aktuální znakové stránky ANSI, Unicode nebo UTF-8 s podpisem. Visual Studio uloží všechny soubory zdrojového kódu s aktuální znakovou stránkou ANSI ve výchozím nastavení, pokud uživatel nezadá jiné kódování v dialogovém okně **kódování** . Visual Studio používá dialogové okno **kódování** k otevření souborů zdrojového kódu uložených s jinou znakovou stránkou.  
   
 > [!NOTE]
-> The `-codepage` option is not available from within the Visual Studio development environment; it is available only when compiling from the command line.  
+> Možnost `-codepage` není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)

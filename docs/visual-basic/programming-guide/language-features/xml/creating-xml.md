@@ -14,19 +14,19 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351738"
 ---
 # <a name="creating-xml-in-visual-basic"></a>Vytvoření XML v jazyce Visual Basic
-Visual Basic enables you to use *XML literals* directly in your code. The XML literal syntax represents [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objects, and it is similar to the XML 1.0 syntax. This makes it easier to create XML elements, documents, and fragments programmatically because your code has the same structure as the final XML.  
+Visual Basic umožňuje používat *literály XML* přímo v kódu. Syntaxe literálu XML představuje [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objektů a je podobná syntaxi XML 1,0. To usnadňuje vytváření elementů XML, dokumentů a fragmentů programově, protože váš kód má stejnou strukturu jako finální XML.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
 |Termín|Definice|  
 |---|---|  
-|[Přehled literálů XML](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-overview.md)|Introduction to XML literals and how they relate to [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].|  
-|[Vložené výrazy v XML](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md)|Describes how to use embedded expressions in XML literals.|  
-|[Postupy: Vytváření literálů XML](../../../../visual-basic/programming-guide/language-features/xml/how-to-create-xml-literals.md)|Describes how to create an XML element in code by using an XML literal.|  
-|[Prázdné znaky v literálech XML](../../../../visual-basic/programming-guide/language-features/xml/white-space-in-xml-literals.md)|Describes how Visual Basic treats white space in XML literals.|  
-|[Literály XML a specifikace XML 1.0](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md)|Describes how the XML literal syntax in Visual Basic relates to the XML 1.0 specification.|  
-|[Postupy: Vložení výrazů do literálů XML](../../../../visual-basic/programming-guide/language-features/xml/how-to-embed-expressions-in-xml-literals.md)|Describes how to use embedded expressions in XML literals to create content at run time.|  
-|[Názvy deklarovaných XML elementů a atributů](../../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md)|Describes guidelines for naming XML elements and attributes.|  
+|[Přehled literálů XML](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-overview.md)|Seznámení s literály XML a jejich vztah k [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].|  
+|[Vložené výrazy v XML](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md)|Popisuje, jak použít vložené výrazy v literálech XML.|  
+|[Postupy: Vytváření literálů XML](../../../../visual-basic/programming-guide/language-features/xml/how-to-create-xml-literals.md)|Popisuje, jak vytvořit element XML v kódu pomocí literálu XML.|  
+|[Prázdné znaky v literálech XML](../../../../visual-basic/programming-guide/language-features/xml/white-space-in-xml-literals.md)|Popisuje, jak Visual Basic zachází s prázdným znakem v literálech XML.|  
+|[Literály XML a specifikace XML 1.0](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-and-the-xml-1-0-specification.md)|Popisuje, jak syntaxe literálu XML v Visual Basic souvisí se specifikací XML 1,0.|  
+|[Postupy: Vložení výrazů do literálů XML](../../../../visual-basic/programming-guide/language-features/xml/how-to-embed-expressions-in-xml-literals.md)|Popisuje, jak použít vložené výrazy v literálech XML k vytvoření obsahu v době běhu.|  
+|[Názvy deklarovaných XML elementů a atributů](../../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md)|Popisuje pokyny pro pojmenovávání elementů a atributů XML.|  
   
 ## <a name="see-also"></a>Viz také:
 

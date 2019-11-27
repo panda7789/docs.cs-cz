@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448625"
 ---
 # <a name="cor_prf_gc_generation-enumeration"></a>COR_PRF_GC_GENERATION – výčet
-Identifies a garbage-collection generation.  
+Identifikuje generování kolekce uvolňování paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,26 +39,26 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`COR_PRF_GC_GEN_0`|The object is stored as generation 0.|  
-|`COR_PRF_GC_GEN_1`|The object is stored as generation 1.|  
-|`COR_PRF_GC_GEN_2`|The object is stored as generation 2.|  
-|`COR_PRF_GC_LARGE_OBJECT_HEAP`|The object is stored in the large-object heap.|  
+|`COR_PRF_GC_GEN_0`|Objekt je uložen jako generace 0.|  
+|`COR_PRF_GC_GEN_1`|Objekt je uložen jako generace 1.|  
+|`COR_PRF_GC_GEN_2`|Objekt je uložen jako generace 2.|  
+|`COR_PRF_GC_LARGE_OBJECT_HEAP`|Objekt je uložen v haldě velkých objektů.|  
   
 ## <a name="remarks"></a>Poznámky  
- The garbage collector improves memory management performance by dividing objects into generations based on age. The garbage collector currently uses three generations, numbered 0, 1, and 2, plus a special heap segment that is used for large objects. Objects whose size is larger than a particular value are stored in the large-object heap. Other allocated objects start out belonging to generation 0. All objects that exist after garbage collection occurs in generation 0 are promoted to generation 1. Objects that exist after garbage collection occurs in generation 1 move into generation 2.  
+ Systém uvolňování paměti vylepšuje výkon správy paměti vydělením objektů do generací na základě stáří. Systém uvolňování paměti aktuálně používá tři generace, očíslované 0, 1 a 2, a navíc speciální segment haldy, který se používá pro velké objekty. Objekty, jejichž velikost je větší než konkrétní hodnota, jsou uloženy v haldě velkých objektů. Ostatní přidělené objekty začínají mimo generaci 0. Všechny objekty, které existují po uvolnění paměti, jsou v generaci 0 povýšeny na generaci 1. Objekty, které existují po uvolnění paměti, dojde v 1. generaci do generace 2.  
   
- The use of generations means that the garbage collector has to work with only a subset of the allocated objects at any one time.  
+ Použití generací znamená, že systém uvolňování paměti musí v jednom okamžiku pracovat pouze s podmnožinou přidělených objektů.  
   
- The `COR_PRF_GC_GENERATION` enumeration is used by the [COR_PRF_GC_GENERATION_RANGE](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-generation-range-structure.md) structure.  
+ `COR_PRF_GC_GENERATION` výčet používá struktura [COR_PRF_GC_GENERATION_RANGE](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-generation-range-structure.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

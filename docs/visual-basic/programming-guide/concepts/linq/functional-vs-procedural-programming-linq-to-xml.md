@@ -1,5 +1,5 @@
 ---
-title: Functional vs. Procedural Programming (LINQ to XML)
+title: Funkce vs. procedurální programování (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: ea1015a5-d4c8-4d79-8e1e-ba17a40a4f39
 ms.openlocfilehash: 3d1e3cf01b30454d29836f176afcd39cb2b55b73
@@ -9,37 +9,37 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353414"
 ---
-# <a name="functional-vs-procedural-programming-linq-to-xml-visual-basic"></a>Functional vs. Procedural Programming (LINQ to XML) (Visual Basic)
-There are various types of XML applications:  
+# <a name="functional-vs-procedural-programming-linq-to-xml-visual-basic"></a>Funkce vs. procedurální programování (LINQ to XML) (Visual Basic)
+Existují různé typy aplikací XML:  
   
-- Some applications take source XML documents, and produce new XML documents that are in a different shape than the source documents.  
+- Některé aplikace přijímají zdrojové dokumenty XML a vytvoří nové dokumenty XML, které se nacházejí v jiném tvaru než zdrojové dokumenty.  
   
-- Some applications take source XML documents, and produce result documents in an entirely different form, such as HTML or CSV text files.  
+- Některé aplikace přijímají zdrojové dokumenty XML a vytvářejí výsledné dokumenty v zcela jiném formuláři, například v HTML nebo v textových souborech CSV.  
   
-- Some applications take source XML documents, and insert records into a database.  
+- Některé aplikace přijímají zdrojové dokumenty XML a vkládají záznamy do databáze.  
   
-- Some applications take data from another source, such as a database, and create XML documents from it.  
+- Některé aplikace přebírají data z jiného zdroje, jako je například databáze, a vytvářejí z nich dokumenty XML.  
   
- These are not all of the types of XML applications, but these are a representative set of the types of functionality that an XML programmer has to implement.  
+ Nejedná se o všechny typy aplikací XML, ale jedná se o reprezentativní sadu typů funkcí, které musí programátor XML implementovat.  
   
- With all of these types of applications, there are two contrasting approaches that a developer can take:  
+ U všech těchto typů aplikací existují dva způsoby kontrastu, které může vývojář provést:  
   
-- Functional construction using a declarative approach.  
+- Funkční konstrukce s použitím deklarativního přístupu.  
   
-- In-memory XML tree modification using procedural code.  
+- Úprava stromu XML v paměti pomocí procedurálního kódu.  
   
- LINQ to XML supports both approaches.  
+ LINQ to XML podporuje oba přístupy.  
   
- When using the functional approach, you write transformations that take the source documents and generate completely new result documents with the desired shape.  
+ Při použití funkčního přístupu zapisujete transformace, které přijímají zdrojové dokumenty, a generují zcela nové dokumenty výsledků s požadovaným tvarem.  
   
- When modifying an XML tree in place, you write code that traverses and navigates through nodes in an in-memory XML tree, inserting, deleting, and modifying nodes as necessary.  
+ Při úpravách stromu XML na místě napíšete kód, který přechází do uzlů ve stromu XML v paměti, vkládání, odstraňování a upravování uzlů podle potřeby.  
   
- You can use LINQ to XML with either approach. You use the same classes, and in some cases the same methods. However, the structure and goals of the two approaches are very different. For example, in different situations, one or the other approach will often have better performance, and use more or less memory. In addition, one or the other approach will be easier to write and yield more maintainable code.  
+ LINQ to XML můžete použít buď s přístupem. Použijete stejné třídy, a v některých případech stejné metody. Struktura a cíle těchto dvou přístupů se však velmi liší. Například v různých situacích bude mít jeden nebo druhý přístup často vyšší výkon a bude používat více nebo méně paměti. Kromě toho bude jeden nebo druhý přístup snazší psát a vracet více udržovatelnější kód.  
   
- To see the two approaches contrasted, see [In-Memory XML Tree Modification vs. Functional Construction (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/in-memory-xml-tree-modification-vs-functional-construction.md).  
+ Chcete-li zobrazit tyto dva přístupy, přečtěte si část [Úprava stromu XML v paměti vs. konstrukce funkčnosti (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/in-memory-xml-tree-modification-vs-functional-construction.md).  
   
- For a tutorial on writing functional transformations, see [Pure Functional Transformations of XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/pure-functional-transformations-of-xml.md).  
+ Kurz týkající se psaní funkčních transformací najdete v tématu [čistě funkční transformace XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/pure-functional-transformations-of-xml.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ to XML Programming Overview (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)
+- [Přehled programování LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)

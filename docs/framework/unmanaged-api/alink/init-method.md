@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445637"
 ---
 # <a name="init-method"></a>Init – metoda
-Prepares objects implementing the [IALink Interface](ialink-interface.md) for use.  
+Připraví objekty implementující [rozhraní IALink –](ialink-interface.md) pro použití.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,19 +35,19 @@ HRESULT Init(
   
 ## <a name="parameters"></a>Parametry  
  `pDispenser`  
- [IMetaDataDispenserEx Interface](../metadata/imetadatadispenserex-interface.md) pointer to the metadata dispenser.  
+ Ukazatel [rozhraní IMetaDataDispenserEx](../metadata/imetadatadispenserex-interface.md) na zásobník metadat.  
   
  `pErrorHandler`  
- [IMetaDataError Interface](../metadata/imetadataerror-interface.md) pointer to an optional error handling interface.  
+ Ukazatel [rozhraní IMetaDataError –](../metadata/imetadataerror-interface.md) na volitelné rozhraní pro zpracování chyb.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Returns S_OK if the method succeeds.  
+ Vrátí S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Requires alink.h  
+ Vyžaduje ALink. h  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink – rozhraní](ialink-interface.md)
 - [IALink2 – rozhraní](ialink2-interface.md)
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)

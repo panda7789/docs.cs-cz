@@ -9,13 +9,13 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74347783"
 ---
-# <a name="linq-and-reflection-visual-basic"></a>LINQ and Reflection (Visual Basic)
-The .NET Framework class library reflection APIs can be used to examine the metadata in a .NET assembly and create collections of types, type members, parameters, and so on that are in that assembly. Because these collections support the generic `IEnumerable` interface, they can be queried by using LINQ.  
+# <a name="linq-and-reflection-visual-basic"></a>LINQ a reflexe (Visual Basic)
+Rozhraní API pro reflexi knihovny tříd .NET Framework lze použít k prozkoumávání metadat v sestavení .NET a vytvoření kolekcí typů, členů typu, parametrů a tak dále, které jsou v tomto sestavení. Vzhledem k tomu, že tyto kolekce podporují obecné `IEnumerable` rozhraní, mohou být dotazovány pomocí jazyka LINQ.  
   
- This section contains the following topics:  
+ Tato část obsahuje následující témata:  
   
- [How to: Query An Assembly's Metadata with Reflection (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-an-assembly-s-metadata-with-reflection-linq.md)  
- Shows how to use LINQ with reflection.  
+ [Postupy: vytvoření dotazu na metadata sestavení s reflexí (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-an-assembly-s-metadata-with-reflection-linq.md)  
+ Ukazuje, jak používat LINQ s reflexí.  
   
 ## <a name="see-also"></a>Viz také:
 

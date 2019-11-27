@@ -24,28 +24,28 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351390"
 ---
 # <a name="overridable-visual-basic"></a>Overridable (Visual Basic)
-Specifies that a property or procedure can be overridden by an identically named property or procedure in a derived class.  
+Určuje, že vlastnost nebo procedura může být přepsána identicky pojmenovanou vlastností nebo procedurou v odvozené třídě.  
   
 ## <a name="remarks"></a>Poznámky  
- The `Overridable` modifier allows a property or method in a class to be overridden in a derived class. The [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md) modifier prevents a property or method from being overridden in a derived class.  For more information, see [Inheritance Basics](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md).  
+ Modifikátor `Overridable` umožňuje přepsání vlastnosti nebo metody ve třídě v odvozené třídě. Modifikátor [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md) zabrání v přepsání vlastnosti nebo metody v odvozené třídě.  Další informace najdete v tématu [základy dědičnosti](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md).  
   
- If the `Overridable` or `NotOverridable` modifier is not specified, the default setting depends on whether the property or method overrides a base class property or method. If the property or method overrides a base class property or method, the default setting is `Overridable`; otherwise, it is `NotOverridable`.  
+ Pokud není zadán modifikátor `Overridable` nebo `NotOverridable`, bude výchozí nastavení záviset na tom, zda vlastnost nebo metoda přepisuje vlastnost nebo metodu základní třídy. Pokud vlastnost nebo metoda přepíše vlastnost nebo metodu základní třídy, výchozí nastavení je `Overridable`; v opačném případě je `NotOverridable`.  
   
- You can shadow or override to redefine an inherited element, but there are significant differences between the two approaches. For more information, see [Shadowing in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).  
+ Můžete předefinovat zděděný element stínem nebo přepsáním, ale existují významné rozdíly mezi těmito dvěma přístupy. Další informace najdete v tématu [vytváření stínových kopií v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).  
   
- An element that can be overridden is sometimes referred to as a *virtual* element. If it can be overridden, but does not have to be, it is sometimes also called a *concrete* element.  
+ Element, který lze přepsat, je někdy označován jako *virtuální* prvek. Pokud je možné ji přepsat, ale nemusí být, někdy se také označuje jako *konkrétní* prvek.  
   
- You can use `Overridable` only in a property or procedure declaration statement.  
+ `Overridable` lze použít pouze v příkazu deklarace vlastnosti nebo procedury.  
   
-## <a name="combined-modifiers"></a>Combined Modifiers  
- You cannot specify `Overridable` or `NotOverridable` for a `Private` method.  
+## <a name="combined-modifiers"></a>Kombinované modifikátory  
+ Pro metodu `Private` nelze zadat `Overridable` ani `NotOverridable`.  
   
- You cannot specify `Overridable` together with `MustOverride`, `NotOverridable`, or `Shared` in the same declaration.  
+ V rámci stejné deklarace nelze zadat `Overridable` společně s `MustOverride`, `NotOverridable`nebo `Shared`.  
   
- Because an overriding element is implicitly overridable, you cannot combine `Overridable` with `Overrides`.  
+ Vzhledem k tomu, že přepsání elementu je implicitně přepsatelné, nelze kombinovat `Overridable` s `Overrides`.  
   
-## <a name="usage"></a>Použití  
- The `Overridable` modifier can be used in these contexts:  
+## <a name="usage"></a>Využití  
+ V těchto kontextech lze použít modifikátor `Overridable`:  
   
  [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)  
   
@@ -61,4 +61,4 @@ Specifies that a property or procedure can be overridden by an identically named
 - [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)
 - [Overrides](../../../visual-basic/language-reference/modifiers/overrides.md)
 - [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)
-- [Shadowing in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
+- [Stínování v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)

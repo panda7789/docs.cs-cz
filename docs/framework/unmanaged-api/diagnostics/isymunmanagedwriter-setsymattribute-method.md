@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74427838"
 ---
 # <a name="isymunmanagedwritersetsymattribute-method"></a>ISymUnmanagedWriter::SetSymAttribute – metoda
-Defines a custom attribute based upon its name. These attributes are held in the symbol store, unlike metadata custom attributes.  
+Definuje vlastní atribut založený na jeho názvu. Tyto atributy jsou uloženy v úložišti symbolů na rozdíl od vlastních atributů metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,22 +37,22 @@ HRESULT SetSymAttribute(
   
 ## <a name="parameters"></a>Parametry  
  `parent`  
- [in] The metadata token for which the attribute is being defined.  
+ pro Token metadat, pro který je definován atribut.  
   
  `name`  
- [in] A pointer to a `WCHAR` that contains the attribute name.  
+ pro Ukazatel na `WCHAR`, který obsahuje název atributu.  
   
  `cData`  
- [in] A `ULONG32` that indicates the size of the `data` array.  
+ pro `ULONG32`, která určuje velikost `data` pole.  
   
  `data`  
- [in] The attribute value.  
+ pro Hodnota atributu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

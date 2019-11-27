@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445866"
 ---
 # <a name="icorprofilercallbackobjectsallocatedbyclass-method"></a>ICorProfilerCallback::ObjectsAllocatedByClass – metoda
-Notifies the profiler about the number of instances of each specified class that have been created since the most recent garbage collection.  
+Upozorňuje Profiler o počtu instancí každé zadané třídy, které byly vytvořeny od posledního uvolňování paměti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,29 +36,29 @@ HRESULT ObjectsAllocatedByClass(
   
 ## <a name="parameters"></a>Parametry  
  `cClassCount`  
- [in] The size of the `classIds` and `cObjects` arrays.  
+ pro Velikost polí `classIds` a `cObjects`  
   
  `classIds`  
- [in] An array of class IDs, where each ID specifies a class with one or more instances.  
+ pro Pole identifikátorů třídy, kde každé ID určuje třídu s jednou nebo více instancemi.  
   
  `cObjects`  
- [in] An array of integers, where each integer specifies the number of instances for the corresponding class in the `classIds` array.  
+ pro Pole celých čísel, kde každé celé číslo určuje počet instancí odpovídající třídy v poli `classIds`.  
   
 ## <a name="remarks"></a>Poznámky  
- The `classIds` and `cObjects` arrays are parallel arrays. For example, `classIds[i]` and `cObjects[i]` reference the same class. If no instance of a class has been created since the previous garbage collection, the class is omitted. The `ObjectsAllocatedByClass` callback will not report objects allocated in the large object heap.  
+ Pole `classIds` a `cObjects` jsou paralelní pole. Například `classIds[i]` a `cObjects[i]` odkazují na stejnou třídu. Pokud nebyla od předchozího uvolňování paměti vytvořena žádná instance třídy, je třída vynechána. `ObjectsAllocatedByClass` zpětné volání nebude hlásit objekty přidělené v haldě velkých objektů.  
   
- The numbers reported by `ObjectsAllocatedByClass` are only estimates. For exact counts, use [ICorProfilerCallback::ObjectAllocated](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectallocated-method.md).  
+ Čísla uvedená `ObjectsAllocatedByClass` jsou pouze odhady. Pro přesné počty použijte [ICorProfilerCallback:: ObjectAllocated –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectallocated-method.md).  
   
- The `classIds` array may contain one or more null entries if the corresponding `cObjects` array has types that are unloading.  
+ Pole `classIds` může obsahovat jednu nebo více položek s hodnotou null, pokud odpovídající pole `cObjects` obsahuje typy, které jsou uvolňovány.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

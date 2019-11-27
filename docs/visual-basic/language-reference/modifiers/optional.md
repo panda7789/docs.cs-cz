@@ -1,5 +1,5 @@
 ---
-title: Nepovinné
+title: volitelná,
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Optional
@@ -17,15 +17,15 @@ ms.locfileid: "74351439"
 ---
 # <a name="optional-visual-basic"></a>Nepovinné (Visual Basic)
 
-Specifies that a procedure argument can be omitted when the procedure is called.
+Určuje, že při volání procedury lze argument procedury vynechat.
 
 ## <a name="remarks"></a>Poznámky
 
-For each optional parameter, you must specify a constant expression as the default value of that parameter. If the expression evaluates to [Nothing](../../../visual-basic/language-reference/nothing.md), the default value of the value data type is used as the default value of the parameter.
+Pro každý volitelný parametr je nutné zadat konstantní výraz jako výchozí hodnotu tohoto parametru. Pokud je výraz vyhodnocen jako [Nothing](../../../visual-basic/language-reference/nothing.md), je jako výchozí hodnota parametru použita výchozí hodnota datového typu value.
 
-If the parameter list contains an optional parameter, every parameter that follows it must also be optional.
+Pokud seznam parametrů obsahuje volitelný parametr, všechny parametry, které následují, musí být také volitelné.
 
-The `Optional` modifier can be used in these contexts:
+V těchto kontextech lze použít modifikátor `Optional`:
 
 - [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)
 
@@ -36,14 +36,14 @@ The `Optional` modifier can be used in these contexts:
 - [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)
 
 > [!NOTE]
-> When calling a procedure with or without optional parameters, you can pass arguments by position or by name. For more information, see [Passing Arguments by Position and by Name](../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md).
+> Při volání procedury s nepovinnými parametry nebo bez nich můžete předat argumenty podle umístění nebo podle názvu. Další informace najdete v tématu [předávání argumentů podle pozice a názvu](../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md).
 
 > [!NOTE]
-> You can also define a procedure with optional parameters by using overloading. If you have one optional parameter, you can define two overloaded versions of the procedure, one that accepts the parameter and one that doesn’t. For more information, see [Procedure Overloading](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md).
+> Můžete také definovat proceduru s nepovinnými parametry pomocí přetížení. Pokud máte jeden volitelný parametr, můžete definovat dvě přetížené verze procedury, jednu, která přijímá parametr a druhý. Další informace najdete v tématu [přetížení procedury](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md).
 
 ## <a name="example"></a>Příklad
 
-The following example defines a procedure that has an optional parameter.
+Následující příklad definuje proceduru, která má volitelný parametr.
 
 ```vb
 Public Function FindMatches(ByRef values As List(Of String),
@@ -66,7 +66,7 @@ End Function
 
 ## <a name="example"></a>Příklad
 
-The following example demonstrates how to call a procedure with arguments passed by position and with arguments passed by name. The procedure has two optional parameters.
+Následující příklad ukazuje způsob volání procedury s argumenty předanými pozicí a s argumenty předanými názvem. Procedura má dva volitelné parametry.
 
 [!code-vb[VbVbalrKeywords#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/class8.vb#21)]
 

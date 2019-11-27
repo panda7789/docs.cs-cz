@@ -13,27 +13,27 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344341"
 ---
 # <a name="strings-in-visual-basic"></a>Řetězce v jazyce Visual Basic
-This section describes the basic concepts behind using strings in Visual Basic.  
+Tato část popisuje základní koncepty za použití řetězců v Visual Basic.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Introduction to Strings in Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)  
- Lists topics that describe the basic concepts behind using strings in Visual Basic.  
+ [Seznámení s řetězci v Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)  
+ Obsahuje seznam témat popisujících základní koncepty za použití řetězců v Visual Basic.  
   
- [How to: Create Strings Using a StringBuilder in Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/how-to-create-strings-using-a-stringbuilder.md)  
- Demonstrates how to efficiently create a long string from many smaller strings.  
+ [Postupy: vytváření řetězců pomocí StringBuilder v Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/how-to-create-strings-using-a-stringbuilder.md)  
+ Ukazuje, jak efektivně vytvořit dlouhý řetězec z mnoha menších řetězců.  
   
  [Postupy: Vyhledávání v řetězci](../../../../visual-basic/programming-guide/language-features/strings/how-to-search-within-a-string.md)  
- Demonstrates how to determine the index of the first occurrence of a substring.  
+ Ukazuje, jak určit index prvního výskytu podřetězce.  
   
- [Converting Between Strings and Other Data Types in Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/converting-between-strings-and-other-data-types.md)  
- Lists topics that describe how to convert strings into other data types.  
+ [Převod mezi řetězci a ostatními datovými typy v Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/converting-between-strings-and-other-data-types.md)  
+ Obsahuje témata, které popisují, jak převést řetězce na jiné datové typy.  
   
- [Validating Strings in Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/validating-strings.md)  
- Lists topics that discuss how to validate strings.  
+ [Ověřování řetězců v Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/validating-strings.md)  
+ Obsahuje témata, která projednávají, jak ověřit řetězce.  
   
- [Walkthrough: Encrypting and Decrypting Strings in Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/walkthrough-encrypting-and-decrypting-strings.md)  
- Demonstrates how to encrypt and decrypt strings by using the cryptographic service provider version of the Triple Data Encryption Standard algorithm.  
+ [Návod: šifrování a dešifrování řetězců v Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/walkthrough-encrypting-and-decrypting-strings.md)  
+ Ukazuje, jak šifrovat a dešifrovat řetězce pomocí verze zprostředkovatele kryptografických služeb Triple data standard pro algoritmus Triple Data Encryption.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Language Features](../../../../visual-basic/programming-guide/language-features/index.md)
+- [Funkce jazyka Visual Basic](../../../../visual-basic/programming-guide/language-features/index.md)

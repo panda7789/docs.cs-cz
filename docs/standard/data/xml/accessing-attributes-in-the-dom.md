@@ -17,15 +17,15 @@ ms.locfileid: "74350712"
 ---
 # <a name="accessing-attributes-in-the-dom"></a>Přístup k atributům v modelu DOM
 
-Attributes are properties of the element, not children of the element. This distinction is important because of the methods used to navigate sibling, parent, and child nodes of the XML Document Object Model (DOM). For example, the **PreviousSibling** and **NextSibling** methods are not used to navigate from an element to an attribute or between attributes. Instead, an attribute is a property of an element and is owned by an element, has an **OwnerElement** property and not a **parentNode** property, and has distinct methods of navigation.
+Atributy jsou vlastnosti prvku, nikoli podřízené položky elementu. Toto rozlišení je důležité z důvodu metod, které slouží k navigaci na stejné úrovni, nadřazených a podřízených uzlech model DOM (Document Object Model) XML (DOM). Například metody **PreviousSibling** a **NextSibling** se nepoužívají k přechodu z prvku na atribut nebo mezi atributy. Místo toho je atribut vlastností elementu a je vlastněn prvkem, má vlastnost **OwnerElement** , nikoli vlastnost **ParentNode** a má odlišné metody navigace.
 
-When the current node is an element, use the **HasAttribute** method to see if there are any attributes associated with the element. Once it is known that an element has attributes, there are multiple methods for accessing attributes. To retrieve a single attribute from the element, you can use the **GetAttribute** and **GetAttributeNode** methods of the **XmlElement** or you can obtain all the attributes into a collection. Obtaining the collection is useful if you need to iterate over the collection. If you want all attributes from the element, use the **Attributes** property of the element to retrieve all the attributes into a collection.
+Pokud je aktuální uzel prvkem, použijte metodu **HasAttribute** , abyste viděli, zda jsou k elementu přidruženy žádné atributy. Jakmile je známo, že element má atributy, existuje více metod pro přístup k atributům. Chcete-li načíst jediný atribut z prvku, můžete použít metody **GetAttribute** a **GetAttributeNode** třídy **XmlElement** nebo můžete získat všechny atributy do kolekce. Získání kolekce je užitečné, pokud potřebujete iterovat v kolekci. Pokud chcete všechny atributy z prvku, použijte vlastnost **atributů** elementu pro načtení všech atributů do kolekce.
 
-## <a name="retrieving-all-attributes-into-a-collection"></a>Retrieving All Attributes into a Collection
+## <a name="retrieving-all-attributes-into-a-collection"></a>Načítání všech atributů do kolekce
 
-If you want all the attributes of an element node put into a collection, call the **XmlElement.Attributes** property. This gets the **XmlAttributeCollection** that contains all the attributes of an element. The **XmlAttributeCollection** class inherits from the **XmlNamedNode** map. Therefore, the methods and properties available on the collection include those available on a named node map in addition to methods and properties specific to the **XmlAttributeCollection** class, such as the **ItemOf** property or the **Append** method. Each item in the attribute collection represents an **XmlAttribute** node. To find the number of attributes on an element, get the **XmlAttributeCollection**, and use the **Count** property to see how many **XmlAttribute** nodes are in the collection.
+Chcete-li, aby všechny atributy uzlu elementu byly vloženy do kolekce, zavolejte vlastnost **XmlElement. Attributes** . Tím se získá objekt **XmlAttributeCollection** , který obsahuje všechny atributy elementu. Třída **XmlAttributeCollection** dědí z mapy **XmlNamedNode** . Proto metody a vlastnosti, které jsou k dispozici v kolekci, obsahují kromě metod a vlastností specifických pro třídu **XmlAttributeCollection** , jako je například vlastnost **ItemOf** nebo metoda **Append** , k dispozici na mapě pojmenovaného uzlu. Každá položka v kolekci atributů představuje uzel **XmlAttribute** . Chcete-li najít počet atributů prvku, získat kolekci **XmlAttribute**a použít vlastnost **Count** k zobrazení, kolik uzlů **XmlAttribute** je v kolekci.
 
-The following code example shows how to retrieve an attribute collection and, using the **Count** method for the looping index, iterate over it. The code then shows how to retrieve a single attribute from the collection and display its value.
+Následující příklad kódu ukazuje, jak načíst kolekci atributů a pomocí metody **Count** pro index smyčky, iterovat přes něj. Kód pak ukazuje, jak načíst jediný atribut z kolekce a zobrazit jeho hodnotu.
 
 ```vb
 Imports System.IO
@@ -115,11 +115,11 @@ public class Sample
 }
 ```
 
-This example displays the following output:
+V tomto příkladu se zobrazí následující výstup:
 
 **Output**
 
-Display all the attributes in the collection.
+Zobrazí všechny atributy v kolekci.
 
 ```console
 genre = novel
@@ -129,9 +129,9 @@ Display the attribute information.
 sale item
 ```
 
-The information in an attribute collection can be retrieved by name or index number. The example above shows how to retrieve data by name. The next example shows how to retrieve data by index number.
+Informace v kolekci atributů lze načíst podle názvu nebo čísla indexu. Výše uvedený příklad ukazuje, jak načíst data podle názvu. Další příklad ukazuje, jak načíst data podle čísla indexu.
 
-Because the **XmlAttributeCollection** is a collection and can be iterated over by name or index, this example shows selecting the first attribute out of the collection using a zero-based index and using the following file, **baseuri.xml**, as input.
+Vzhledem k tomu, že objekt **XmlAttributeCollection** je kolekce a lze provést iteraci pomocí názvu nebo indexu, tento příklad ukazuje výběr prvního atributu z kolekce pomocí indexu založeného na nule a použití následujícího souboru **baseUri. XML**jako vstupu.
 
 ### <a name="input"></a>Vstup
 
@@ -190,9 +190,9 @@ public class Sample
 }
 ```
 
-## <a name="retrieving-an-individual-attribute-node"></a>Retrieving an Individual Attribute Node
+## <a name="retrieving-an-individual-attribute-node"></a>Načtení jednotlivého uzlu atributu
 
-To retrieve a single attribute node from an element, the <xref:System.Xml.XmlElement.GetAttributeNode%2A?displayProperty=nameWithType> method is used. It returns an object of type **XmlAttribute**. Once you have an **XmlAttribute**, all the methods and properties available in the <xref:System.Xml.XmlAttribute?displayProperty=nameWithType> class are available on that object, such as finding the **OwnerElement**.
+Chcete-li načíst jeden uzel atributu z prvku, je použita metoda <xref:System.Xml.XmlElement.GetAttributeNode%2A?displayProperty=nameWithType>. Vrátí objekt typu **XmlAttribute**. Po získání **atributu XmlAttribute**jsou všechny metody a vlastnosti, které jsou k dispozici ve třídě <xref:System.Xml.XmlAttribute?displayProperty=nameWithType>, k dispozici pro tento objekt, jako je například hledání **OwnerElement**.
 
 ```vb
 Imports System.IO
@@ -254,7 +254,7 @@ using System.Xml;
 }
 ```
 
-You can also do as shown in the previous example, where a single attribute node is retrieved from the attribute collection. The following code example shows how one line of code can be written to retrieve a single attribute by index number from the root of the XML document tree, also known as the **DocumentElement** property.
+Můžete také provést jak je znázorněno v předchozím příkladu, kde je jeden uzel atributu načten z kolekce atributů. Následující příklad kódu ukazuje, jak lze zapsat jeden řádek kódu pro načtení jednoho atributu pomocí čísla indexu z kořene stromu dokumentu XML, označovaného také jako vlastnost **DocumentElement** .
 
 ```csharp
 XmlAttribute attr = doc.DocumentElement.Attributes[0];

@@ -24,14 +24,14 @@ ms.locfileid: "74353676"
 ---
 # <a name="performing-culture-insensitive-string-operations-in-collections"></a>Provádění řetězcových operací nezávislých na jazykové verzi v kolekcích
 
-There are classes and members in the <xref:System.Collections> namespace that provide culture-sensitive behavior by default. The parameterless constructors for the <xref:System.Collections.CaseInsensitiveComparer> and <xref:System.Collections.CaseInsensitiveHashCodeProvider> classes initialize a new instance using the <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> property. All overloads of the <xref:System.Collections.Specialized.CollectionsUtil.CreateCaseInsensitiveHashtable%2A?displayProperty=nameWithType> method create a new instance of the <xref:System.Collections.Hashtable> class using the `Thread.CurrentCulture` property by default. Overloads of the <xref:System.Collections.ArrayList.Sort%2A?displayProperty=nameWithType> method perform culture-sensitive sorts by default using `Thread.CurrentCulture`. Sorting and lookup in a <xref:System.Collections.SortedList> can be affected by `Thread.CurrentCulture` when strings are used as the keys. Follow the usage recommendations provided in this section to obtain culture-insensitive results from these classes and methods in the `Collections` namespace.
+V oboru názvů <xref:System.Collections> existují třídy a členy, které ve výchozím nastavení poskytují chování zohledňující jazykovou verzi. Konstruktory bez parametrů pro <xref:System.Collections.CaseInsensitiveComparer> a <xref:System.Collections.CaseInsensitiveHashCodeProvider> třídy inicializují novou instanci pomocí vlastnosti <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType>. Všechna přetížení metody <xref:System.Collections.Specialized.CollectionsUtil.CreateCaseInsensitiveHashtable%2A?displayProperty=nameWithType> ve výchozím nastavení vytvoří novou instanci třídy <xref:System.Collections.Hashtable> pomocí vlastnosti `Thread.CurrentCulture`. Přetížení metody <xref:System.Collections.ArrayList.Sort%2A?displayProperty=nameWithType> provádějí řazení zohledňující jazykovou verzi ve výchozím nastavení pomocí `Thread.CurrentCulture`. Řazení a vyhledávání v <xref:System.Collections.SortedList> může být ovlivněno `Thread.CurrentCulture` při použití řetězců jako klíčů. Použijte doporučení k používání uvedená v této části k získání výsledků nezávislých na jazykové verzi z těchto tříd a metod v oboru názvů `Collections`.
 
 > [!NOTE]
-> Passing <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> to a comparison method does perform a culture-insensitive comparison. However, it does not cause a non-linguistic comparison, for example, for file paths, registry keys, and environment variables. Neither does it support security decisions based on the comparison result. For a non-linguistic comparison or support for result-based security decisions, the application should use a comparison method that accepts a <xref:System.StringComparison> value. The application should then pass <xref:System.StringComparison>.
+> Předání <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> k metodě porovnání provádí porovnání nezávislé na jazykové verzi. Nezpůsobuje ale nelingvistické porovnání, například pro cesty k souboru, klíče registru a proměnné prostředí. Ani to nepodporuje rozhodnutí o zabezpečení na základě výsledku porovnání. Pro nelingvistické porovnání nebo podporu pro rozhodování o zabezpečení na základě výsledků by aplikace měla používat metodu porovnání, která přijímá <xref:System.StringComparison>ou hodnotu. Aplikace by pak měla předat <xref:System.StringComparison>.
 
-## <a name="using-the-caseinsensitivecomparer-and-caseinsensitivehashcodeprovider-classes"></a>Using the CaseInsensitiveComparer and CaseInsensitiveHashCodeProvider Classes
+## <a name="using-the-caseinsensitivecomparer-and-caseinsensitivehashcodeprovider-classes"></a>Použití tříd CaseInsensitiveComparer a CaseInsensitiveHashCodeProvider
 
-The parameterless constructors for `CaseInsensitiveHashCodeProvider` and `CaseInsensitiveComparer` initialize a new instance of the class using the `Thread.CurrentCulture`, resulting in culture-sensitive behavior. The following code example demonstrates the constructor for a `Hashtable` that is culture-sensitive because it uses the parameterless constructors for `CaseInsensitiveHashCodeProvider` and `CaseInsensitiveComparer`.
+Konstruktory bez parametrů pro `CaseInsensitiveHashCodeProvider` a `CaseInsensitiveComparer` Inicializuje novou instanci třídy pomocí `Thread.CurrentCulture`, což vede k chování zohledňující jazykovou verzi. Následující příklad kódu ukazuje konstruktor pro `Hashtable`, který je závislý na jazykové verzi, protože používá konstruktory bez parametrů pro `CaseInsensitiveHashCodeProvider` a `CaseInsensitiveComparer`.
 
 ```vb
 internalHashtable = New Hashtable(CaseInsensitiveHashCodeProvider.Default, CaseInsensitiveComparer.Default)
@@ -41,7 +41,7 @@ internalHashtable = New Hashtable(CaseInsensitiveHashCodeProvider.Default, CaseI
 internalHashtable = new Hashtable(CaseInsensitiveHashCodeProvider.Default, CaseInsensitiveComparer.Default);
 ```
 
-If you want to create a culture-insensitive `Hashtable` using the `CaseInsensitiveComparer` and `CaseInsensitiveHashCodeProvider` classes, initialize new instances of these classes using the constructors that accept a `culture` parameter. For the `culture` parameter, specify <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>. The following code example demonstrates the constructor for a culture-insensitive `Hashtable`.
+Pokud chcete vytvořit `Hashtable` nezávisle na jazykové verzi pomocí tříd `CaseInsensitiveComparer` a `CaseInsensitiveHashCodeProvider`, inicializujte nové instance těchto tříd pomocí konstruktorů, které přijímají parametr `culture`. Pro parametr `culture` zadejte <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>. Následující příklad kódu ukazuje konstruktor pro `Hashtable`nezávislá na jazykové verzi.
 
 ```vb
 internalHashtable = New Hashtable(New
@@ -55,9 +55,9 @@ internalHashtable = new Hashtable(new CaseInsensitiveHashCodeProvider
     new CaseInsensitiveComparer(CultureInfo.InvariantCulture));
 ```
 
-## <a name="using-the-collectionsutilcreatecaseinsensitivehashtable-method"></a>Using the CollectionsUtil.CreateCaseInsensitiveHashTable Method
+## <a name="using-the-collectionsutilcreatecaseinsensitivehashtable-method"></a>Použití metody CollectionsUtil. CreateCaseInsensitiveHashTable
 
-The `CollectionsUtil.CreateCaseInsensitiveHashTable` method is a useful shortcut for creating a new instance of the `Hashtable` class that ignores the case of strings. However, all overloads of the `CollectionsUtil.CreateCaseInsensitiveHashTable` method are culture-sensitive because they use the `Thread.CurrentCulture` property. You cannot create a culture-insensitive `Hashtable` using this method. To create a culture-insensitive `Hashtable`, use the `Hashtable` constructor that accepts a `culture` parameter. For the `culture` parameter, specify `CultureInfo.InvariantCulture`. The following code example demonstrates the constructor for a culture-insensitive `Hashtable`.
+Metoda `CollectionsUtil.CreateCaseInsensitiveHashTable` je užitečnou zkratkou pro vytvoření nové instance `Hashtable` třídy, která ignoruje velikost písmen řetězců. Nicméně všechna přetížení metody `CollectionsUtil.CreateCaseInsensitiveHashTable` jsou závislá na jazykové verzi, protože používají vlastnost `Thread.CurrentCulture`. Pomocí této metody nelze vytvořit `Hashtable` nezávislá na jazykové verzi. Chcete-li vytvořit `Hashtable`nezávislá na jazykové verzi, použijte konstruktor `Hashtable`, který přijímá parametr `culture`. Pro parametr `culture` zadejte `CultureInfo.InvariantCulture`. Následující příklad kódu ukazuje konstruktor pro `Hashtable`nezávislá na jazykové verzi.
 
 ```vb
 internalHashtable = New Hashtable(New
@@ -73,9 +73,9 @@ internalHashtable = new Hashtable(new CaseInsensitiveHashCodeProvider
 
 <a name="cpconperformingculture-insensitivestringoperationsincollectionsanchor1"></a>
 
-## <a name="using-the-sortedlist-class"></a>Using the SortedList Class
+## <a name="using-the-sortedlist-class"></a>Použití třídy SortedList
 
-A `SortedList` represents a collection of key-and-value pairs that are sorted by the keys and are accessible by key and by index. When you use a `SortedList` where strings are the keys, the sorting and lookup can be affected by the `Thread.CurrentCulture` property. To obtain culture-insensitive behavior from a `SortedList`, create a `SortedList` using one of the constructors that accepts a `comparer` parameter. The `comparer` parameter specifies the <xref:System.Collections.IComparer> implementation to use when comparing keys. For the parameter, specify a custom comparer class that uses `CultureInfo.InvariantCulture` to compare keys. The following example illustrates a custom culture-insensitive comparer class that you can specify as the `comparer` parameter to a `SortedList` constructor.
+`SortedList` představuje kolekci párů klíč-hodnota, které jsou seřazené podle klíčů a jsou přístupné pomocí klíče a indexu. Když použijete `SortedList`, kde jsou řetězce klíče, řazení a vyhledávání může být ovlivněno vlastností `Thread.CurrentCulture`. Chcete-li získat chování nezávislé na jazykové verzi z `SortedList`, vytvořte `SortedList` pomocí jednoho konstruktoru, který přijímá parametr `comparer`. Parametr `comparer` určuje implementaci <xref:System.Collections.IComparer>, která se má použít při porovnávání klíčů. Pro parametr zadejte vlastní třídu porovnávače, která používá `CultureInfo.InvariantCulture` k porovnání klíčů. Následující příklad ukazuje vlastní třídu pro porovnávání bez rozlišení jazykové verze, kterou lze zadat jako parametr `comparer` do konstruktoru `SortedList`.
 
 ```vb
 Imports System.Collections
@@ -131,11 +131,11 @@ internal class InvariantComparer : IComparer
 }
 ```
 
-In general, if you use a `SortedList` on strings without specifying a custom invariant comparer, a change to `Thread.CurrentCulture` after the list has been populated can invalidate the list.
+Obecně platí, že pokud použijete `SortedList` v řetězcích bez určení vlastní invariantní porovnávání, změna `Thread.CurrentCulture` po naplnění seznamu může seznam neověřit.
 
-## <a name="using-the-arraylistsort-method"></a>Using the ArrayList.Sort Method
+## <a name="using-the-arraylistsort-method"></a>Použití metody ArrayList. Sort
 
-Overloads of the `ArrayList.Sort` method perform culture-sensitive sorts by default using the `Thread.CurrentCulture` property. Results can vary by culture due to different sort orders. To eliminate culture-sensitive behavior, use the overloads of this method that accept an `IComparer` implementation. For the `comparer` parameter, specify a custom invariant comparer class that uses `CultureInfo.InvariantCulture`. An example of a custom invariant comparer class is provided in the [Using the SortedList Class](#cpconperformingculture-insensitivestringoperationsincollectionsanchor1) topic.
+Přetížení metody `ArrayList.Sort` provádějí řazení zohledňující jazykovou verzi ve výchozím nastavení pomocí vlastnosti `Thread.CurrentCulture`. Výsledky se mohou lišit podle jazykové verze z důvodu různých pořadí řazení. Chcete-li eliminovat chování zohledňující jazykovou verzi, použijte přetížení této metody, které přijímají implementaci `IComparer`. Pro parametr `comparer` zadejte vlastní třídu pro invariantní porovnávání, která používá `CultureInfo.InvariantCulture`. Příklad vlastní třídy invariantní porovnávání je k dispozici v tématu [použití třídy SortedList](#cpconperformingculture-insensitivestringoperationsincollectionsanchor1) .
 
 ## <a name="see-also"></a>Viz také:
 

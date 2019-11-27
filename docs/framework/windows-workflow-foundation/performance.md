@@ -21,7 +21,7 @@ ms.locfileid: "74283225"
 
  Windows Communication Foundation (WCF) je jednotný programovací model Microsoftu pro vytváření aplikací orientovaných na služby. Byl nejprve představen jako součást .NET 3,0 společně s WF3 a teď je jednou z klíčových součástí .NET Framework.
 
- Windows Server AppFabric je sada integrovaných technologií, které usnadňují vytváření, škálování a správu webových a složených aplikací, které běží na službě IIS. Poskytuje nástroje pro monitorování a správu služeb a pracovních postupů. Další informace najdete v tématu [Windows Server AppFabric 1,0](https://docs.microsoft.com/previous-versions/appfabric/ff384253(v=azure.10)).
+ Windows Server AppFabric je sada integrovaných technologií, které usnadňují sestavování, škálování a správu webových a kompozitních aplikací, které běží ve službě IIS. Poskytuje nástroje pro monitorování a správu služeb a pracovních postupů. Další informace najdete v tématu [Windows Server AppFabric 1,0](https://docs.microsoft.com/previous-versions/appfabric/ff384253(v=azure.10)).
 
 ## <a name="goals"></a>Cíle
  Cílem tohoto tématu je Ukázat výkonnostní charakteristiky WF4 s daty měřenými pro různé scénáře. Poskytuje také podrobná porovnání mezi WF4 a WF3, a proto zobrazuje Skvělé vylepšení, která byla provedena v této nové revizi. Scénáře a data uvedená v tomto článku kvantifikují základní náklady na různé aspekty WF4 a WF3. Tato data jsou užitečná v seznámení s výkonnostními charakteristikami WF4 a mohou být užitečné při plánování migrace z WF3 na WF4 nebo použití WF4 při vývoji aplikací. Doporučuje se však vzít v potaz závěry z dat uvedených v tomto článku. Výkon aplikace kompozitního pracovního postupu je vysoce závislý na způsobu implementace pracovního postupu a způsobu integrace různých součástí. Jeden musí měřit jednotlivé aplikace, aby bylo možné určit výkonnostní charakteristiky této aplikace.
@@ -353,7 +353,7 @@ public class Workflow1 : Activity
 
 ## <a name="workflow-runtime-services"></a>Běhové služby pracovních postupů
 
-### <a name="persistence"></a>Dočasné
+### <a name="persistence"></a>Trvalost
  WF3 a WF4 se dodávají se zprostředkovatelem trvalosti SQL.  Zprostředkovatel trvalosti SQL WF3 je jednoduchá implementace, která serializace instanci pracovního postupu a ukládá ji do objektu BLOB.  Z tohoto důvodu výkon tohoto zprostředkovatele závisí silně na velikosti instance pracovního postupu.  V WF3 se velikost instance může zvětšit z mnoha důvodů, jak je popsáno výše v tomto dokumentu.  Mnoho zákazníků nepoužívá výchozího poskytovatele trvalosti SQL, protože ukládání serializovaných instancí v databázi neposkytuje žádnou viditelnost stavu pracovního postupu.  Aby bylo možné najít konkrétní pracovní postup bez znalosti ID pracovního postupu, bude nutné, aby bylo možné deserializovat každou trvalou instanci a prohlédnout si obsah.  Mnoho vývojářů preferuje psaní vlastních poskytovatelů trvalosti pro překonání této překážky.
 
  Zprostředkovatel trvalosti WF4 SQL se pokusil vyřešit některé z těchto otázek.  Dočasné tabulky zveřejňují určité informace, jako jsou aktivní záložky a vlastnosti k vlastnost.  Nová funkce korelace na základě obsahu v WF4 nefunguje správně s využitím přístupu WF3 SQL pro trvalost, který v organizaci trvalé instance pracovního postupu způsobil nějakou změnu.  Díky tomu je úloha poskytovatele trvalější a přináší další zátěž v databázi.
