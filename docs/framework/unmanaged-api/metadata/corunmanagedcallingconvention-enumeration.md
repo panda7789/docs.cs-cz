@@ -21,10 +21,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74442448"
 ---
-# <a name="corunmanagedcallingconvention-enumeration"></a><span data-ttu-id="c4ec3-102">CorUnmanagedCallingConvention – výčet</span><span class="sxs-lookup"><span data-stu-id="c4ec3-102">CorUnmanagedCallingConvention Enumeration</span></span>
-<span data-ttu-id="c4ec3-103">Specifies the calling conventions for unmanaged code.</span><span class="sxs-lookup"><span data-stu-id="c4ec3-103">Specifies the calling conventions for unmanaged code.</span></span>  
+# <a name="corunmanagedcallingconvention-enumeration"></a><span data-ttu-id="01c8f-102">CorUnmanagedCallingConvention – výčet</span><span class="sxs-lookup"><span data-stu-id="01c8f-102">CorUnmanagedCallingConvention Enumeration</span></span>
+<span data-ttu-id="01c8f-103">Určuje konvence volání pro nespravovaný kód.</span><span class="sxs-lookup"><span data-stu-id="01c8f-103">Specifies the calling conventions for unmanaged code.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="c4ec3-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c4ec3-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="01c8f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="01c8f-104">Syntax</span></span>  
   
 ```cpp  
 typedef enum CorUnmanagedCallingConvention {  
@@ -42,29 +42,29 @@ typedef enum CorUnmanagedCallingConvention {
 } CorUnmanagedCallingConvention;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="c4ec3-105">Členové</span><span class="sxs-lookup"><span data-stu-id="c4ec3-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="01c8f-105">Members</span><span class="sxs-lookup"><span data-stu-id="01c8f-105">Members</span></span>  
   
-|<span data-ttu-id="c4ec3-106">Člen</span><span class="sxs-lookup"><span data-stu-id="c4ec3-106">Member</span></span>|<span data-ttu-id="c4ec3-107">Popis</span><span class="sxs-lookup"><span data-stu-id="c4ec3-107">Description</span></span>|  
+|<span data-ttu-id="01c8f-106">Člen</span><span class="sxs-lookup"><span data-stu-id="01c8f-106">Member</span></span>|<span data-ttu-id="01c8f-107">Popis</span><span class="sxs-lookup"><span data-stu-id="01c8f-107">Description</span></span>|  
 |------------|-----------------|  
-|`IMAGE_CEE_UNMANAGED_CALLCONV_C`|<span data-ttu-id="c4ec3-108">The C language calling convention.</span><span class="sxs-lookup"><span data-stu-id="c4ec3-108">The C language calling convention.</span></span>|  
-|`IMAGE_CEE_UNMANAGED_CALLCONV_STDCALL`|<span data-ttu-id="c4ec3-109">The standard calling convention.</span><span class="sxs-lookup"><span data-stu-id="c4ec3-109">The standard calling convention.</span></span>|  
-|`IMAGE_CEE_UNMANAGED_CALLCONV_THISCALL`|<span data-ttu-id="c4ec3-110">The "this" calling convention.</span><span class="sxs-lookup"><span data-stu-id="c4ec3-110">The "this" calling convention.</span></span>|  
-|`IMAGE_CEE_UNMANAGED_CALLCONV_FASTCALL`|<span data-ttu-id="c4ec3-111">The "fast" calling convention.</span><span class="sxs-lookup"><span data-stu-id="c4ec3-111">The "fast" calling convention.</span></span>|  
-|`IMAGE_CEE_CS_CALLCONV_C`|<span data-ttu-id="c4ec3-112">Not used.</span><span class="sxs-lookup"><span data-stu-id="c4ec3-112">Not used.</span></span>|  
-|`IMAGE_CEE_CS_CALLCONV_STDCALL`|<span data-ttu-id="c4ec3-113">Not used.</span><span class="sxs-lookup"><span data-stu-id="c4ec3-113">Not used.</span></span>|  
-|`IMAGE_CEE_CS_CALLCONV_THISCALL`|<span data-ttu-id="c4ec3-114">Not used.</span><span class="sxs-lookup"><span data-stu-id="c4ec3-114">Not used.</span></span>|  
-|`IMAGE_CEE_CS_CALLCONV_FASTCALL`|<span data-ttu-id="c4ec3-115">Not used.</span><span class="sxs-lookup"><span data-stu-id="c4ec3-115">Not used.</span></span>|  
+|`IMAGE_CEE_UNMANAGED_CALLCONV_C`|<span data-ttu-id="01c8f-108">Konvence volání jazyka C.</span><span class="sxs-lookup"><span data-stu-id="01c8f-108">The C language calling convention.</span></span>|  
+|`IMAGE_CEE_UNMANAGED_CALLCONV_STDCALL`|<span data-ttu-id="01c8f-109">Standardní konvence volání.</span><span class="sxs-lookup"><span data-stu-id="01c8f-109">The standard calling convention.</span></span>|  
+|`IMAGE_CEE_UNMANAGED_CALLCONV_THISCALL`|<span data-ttu-id="01c8f-110">Konvence volání "This".</span><span class="sxs-lookup"><span data-stu-id="01c8f-110">The "this" calling convention.</span></span>|  
+|`IMAGE_CEE_UNMANAGED_CALLCONV_FASTCALL`|<span data-ttu-id="01c8f-111">Konvence volání "Fast".</span><span class="sxs-lookup"><span data-stu-id="01c8f-111">The "fast" calling convention.</span></span>|  
+|`IMAGE_CEE_CS_CALLCONV_C`|<span data-ttu-id="01c8f-112">Nepoužívá se.</span><span class="sxs-lookup"><span data-stu-id="01c8f-112">Not used.</span></span>|  
+|`IMAGE_CEE_CS_CALLCONV_STDCALL`|<span data-ttu-id="01c8f-113">Nepoužívá se.</span><span class="sxs-lookup"><span data-stu-id="01c8f-113">Not used.</span></span>|  
+|`IMAGE_CEE_CS_CALLCONV_THISCALL`|<span data-ttu-id="01c8f-114">Nepoužívá se.</span><span class="sxs-lookup"><span data-stu-id="01c8f-114">Not used.</span></span>|  
+|`IMAGE_CEE_CS_CALLCONV_FASTCALL`|<span data-ttu-id="01c8f-115">Nepoužívá se.</span><span class="sxs-lookup"><span data-stu-id="01c8f-115">Not used.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="c4ec3-116">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c4ec3-116">Remarks</span></span>  
- <span data-ttu-id="c4ec3-117">The CLR does not support the "fast" calling convention in the .NET Framework version 1.0.</span><span class="sxs-lookup"><span data-stu-id="c4ec3-117">The CLR does not support the "fast" calling convention in the .NET Framework version 1.0.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="01c8f-116">Poznámky</span><span class="sxs-lookup"><span data-stu-id="01c8f-116">Remarks</span></span>  
+ <span data-ttu-id="01c8f-117">Modul CLR nepodporuje konvenci volání "Fast" v .NET Framework verze 1,0.</span><span class="sxs-lookup"><span data-stu-id="01c8f-117">The CLR does not support the "fast" calling convention in the .NET Framework version 1.0.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="c4ec3-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c4ec3-118">Requirements</span></span>  
- <span data-ttu-id="c4ec3-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c4ec3-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="01c8f-118">Požadavky</span><span class="sxs-lookup"><span data-stu-id="01c8f-118">Requirements</span></span>  
+ <span data-ttu-id="01c8f-119">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="01c8f-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="c4ec3-120">**Header:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="c4ec3-120">**Header:** CorHdr.h</span></span>  
+ <span data-ttu-id="01c8f-120">**Hlavička:** CorHdr. h</span><span class="sxs-lookup"><span data-stu-id="01c8f-120">**Header:** CorHdr.h</span></span>  
   
- <span data-ttu-id="c4ec3-121">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c4ec3-121">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="01c8f-121">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="01c8f-121">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c4ec3-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c4ec3-122">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="01c8f-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="01c8f-122">See also</span></span>
 
-- [<span data-ttu-id="c4ec3-123">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="c4ec3-123">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [<span data-ttu-id="01c8f-123">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="01c8f-123">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
