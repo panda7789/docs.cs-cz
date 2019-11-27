@@ -31,7 +31,7 @@ ms.locfileid: "74351195"
 ---
 # <a name="for-eachnext-statement-visual-basic"></a>For Each...Next – příkaz (Visual Basic)
 
-Repeats a group of statements for each element in a collection.
+Opakuje skupinu příkazů pro každý prvek v kolekci.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -49,110 +49,110 @@ Next [ element ]
 
 |Termín|Definice|
 |---|---|
-|`element`|Required in the `For Each` statement. Optional in the `Next` statement. Variable. Used to iterate through the elements of the collection.|
-|`datatype`|Optional if [`Option Infer`](option-infer-statement.md) is on (the default) or `element` is already declared; required if `Option Infer` is off and `element` isn't already declared. The data type of `element`.|
-|`group`|Požadováno. A variable with a type that's a collection type or Object. Refers to the collection over which the `statements` are to be repeated.|
-|`statements`|Volitelné. One or more statements between `For Each` and `Next` that run on each item in `group`.|
-|`Continue For`|Volitelné. Transfers control to the start of the `For Each` loop.|
-|`Exit For`|Volitelné. Transfers control out of the `For Each` loop.|
-|`Next`|Požadováno. Terminates the definition of the `For Each` loop.|
+|`element`|Vyžaduje se v příkazu `For Each`. Volitelné v příkazu `Next`. Variabilní. Slouží k iterování prvků kolekce.|
+|`datatype`|Volitelné, pokud je [`Option Infer`](option-infer-statement.md) zapnutá (výchozí) nebo `element` už je deklarovaná; vyžaduje se, pokud je `Option Infer` vypnuto a `element` ještě není deklarované. Datový typ `element`.|
+|`group`|Požadováno. Proměnná s typem, který je typem kolekce nebo objektem. Odkazuje na kolekci, pro kterou se `statements` opakovat.|
+|`statements`|Volitelná. Jeden nebo více příkazů mezi `For Each` a `Next`, které se spouštějí na každé položce v `group`.|
+|`Continue For`|Volitelná. Přenese řízení na začátek smyčky `For Each`.|
+|`Exit For`|Volitelná. Přenáší řízení ze smyčky `For Each`.|
+|`Next`|Požadováno. Ukončí definici smyčky `For Each`.|
 
-## <a name="simple-example"></a>Simple Example
+## <a name="simple-example"></a>Jednoduchý příklad
 
-Use a `For Each`...`Next` loop when you want to repeat a set of statements for each element of a collection or array.
+Pokud chcete opakovat sadu příkazů pro každý prvek kolekce nebo pole, použijte smyčku `For Each`...`Next`.
 
 > [!TIP]
-> A [For...Next Statement](../../../visual-basic/language-reference/statements/for-next-statement.md) works well when you can associate each iteration of a loop with a control variable and determine that variable's initial and final values. However, when you are dealing with a collection, the concept of initial and final values isn't meaningful, and you don't necessarily know how many elements the collection has. In this kind of case, a `For Each`...`Next` loop is often a better choice.
+> A [pro... Další příkaz](../../../visual-basic/language-reference/statements/for-next-statement.md) funguje dobře, když můžete přidružit každou iteraci smyčky s proměnnou ovládacího prvku a určit počáteční a konečné hodnoty této proměnné. Pokud však pracujete s kolekcí, koncept počátečních a konečných hodnot není smysluplný a Vy nevíte, kolik prvků kolekce má. V tomto typu případu je často lepší volbou `For Each`...`Next` smyčka.
 
-In the following example, the `For Each`…`Next` statement iterates through all the elements of a List collection.
+V následujícím příkladu `For Each`...`Next` příkaz prochází všechny prvky kolekce seznamů.
 
 [!code-vb[VbVbalrStatements#121](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class9.vb#121)]
 
-For more examples, see [Collections](../../../standard/collections/index.md) and [Arrays](../../../visual-basic/programming-guide/language-features/arrays/index.md).
+Další příklady najdete v tématu [kolekce](../../../standard/collections/index.md) a [pole](../../../visual-basic/programming-guide/language-features/arrays/index.md).
 
-## <a name="nested-loops"></a>Nested Loops
+## <a name="nested-loops"></a>Vnořené smyčky
 
-You can nest `For Each` loops by putting one loop within another.
+Smyčky `For Each` můžete vnořovat vložením jedné smyčky do jiné.
 
-The following example demonstrates nested `For Each`…`Next` structures.
+Následující příklad ukazuje vnořené `For Each`...`Next` Struktury.
 
 [!code-vb[VbVbalrStatements#122](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class9.vb#122)]
 
-When you nest loops, each loop must have a unique `element` variable.
+Při vnořování smyček musí mít každá smyčka jedinečnou `element` proměnnou.
 
-You can also nest different kinds of control structures within each other. For more information, see [Nested Control Structures](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md).
+Můžete také vnořit různé druhy řídicích struktur mezi sebou. Další informace najdete v tématu [vnořené řídicí struktury](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md).
 
-## <a name="exit-for-and-continue-for"></a>Exit For and Continue For
+## <a name="exit-for-and-continue-for"></a>Ukončit po a pokračovat pro
 
-The [Exit For](../../../visual-basic/language-reference/statements/exit-statement.md) statement causes execution to exit the `For`…`Next` loop and transfers control to the statement that follows the `Next` statement.
+Příkaz [Exit for](../../../visual-basic/language-reference/statements/exit-statement.md) způsobí, že spuštění ukončí `For`...`Next` Loop a přenáší řízení příkazu, který následuje po příkazu `Next`.
 
-The `Continue For` statement transfers control immediately to the next iteration of the loop. For more information, see [Continue Statement](../../../visual-basic/language-reference/statements/continue-statement.md).
+Příkaz `Continue For` přenáší řízení okamžitě na další iteraci smyčky. Další informace najdete v tématu [příkaz Continue](../../../visual-basic/language-reference/statements/continue-statement.md).
 
-The following example shows how to use the `Continue For` and `Exit For` statements.
+Následující příklad ukazuje, jak použít příkazy `Continue For` a `Exit For`.
 
 [!code-vb[VbVbalrStatements#123](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class9.vb#123)]
 
-You can put any number of `Exit For` statements in a `For Each` loop. When used within nested `For Each` loops, `Exit For` causes execution to exit the innermost loop and transfers control to the next higher level of nesting.
+Do `For Each` smyčky můžete vložit libovolný počet `Exit For` příkazů. Při použití ve vnořených cyklech `For Each` `Exit For` způsobí, že provádění ukončí vnitřní smyčku a přenáší řízení na další vyšší úroveň vnoření.
 
-`Exit For` is often used after an evaluation of some condition, for example, in an `If`...`Then`...`Else` structure. You might want to use `Exit For` for the following conditions:
+`Exit For` se často používá po vyhodnocení nějaké podmínky, například ve struktuře `If`...`Then`...`Else`. Můžete chtít použít `Exit For` pro následující podmínky:
 
-- Continuing to iterate is unnecessary or impossible. This might be caused by an erroneous value or a termination request.
+- Pokračování iterace je zbytečné nebo nemožné. To může být způsobeno chybnou hodnotou nebo žádostí o ukončení.
 
-- An exception is caught in a `Try`...`Catch`...`Finally`. You might use `Exit For` at the end of the `Finally` block.
+- Výjimka je zachycena v `Try`...`Catch`...`Finally`. `Exit For` můžete použít na konci bloku `Finally`.
 
-- There an endless loop, which is a loop that could run a large or even infinite number of times. If you detect such a condition, you can use `Exit For` to escape the loop. For more information, see [Do...Loop Statement](../../../visual-basic/language-reference/statements/do-loop-statement.md).
+- Existuje nekonečné smyčka, což je smyčka, která by mohla běžet velkým nebo dokonce nekonečným počtem výskytů. Pokud tuto podmínku zjistíte, můžete ji použít `Exit For` a řídicí smyčku. Další informace najdete v části [do... Příkaz LOOP](../../../visual-basic/language-reference/statements/do-loop-statement.md)
 
 ## <a name="iterators"></a>Iterátory
 
-You use an *iterator* to perform a custom iteration over a collection. An iterator can be a function or a `Get` accessor. It uses a `Yield` statement to return each element of the collection one at a time.
+Pomocí *iterátoru* můžete provést vlastní iteraci v kolekci. Iterátor může být funkce nebo přistupující objekt `Get`. Používá příkaz `Yield` k vrácení každého prvku kolekce po jednom.
 
-You call an iterator by using a `For Each...Next` statement. Each iteration of the `For Each` loop calls the iterator. When a `Yield` statement is reached in the iterator, the expression in the `Yield` statement is returned, and the current location in code is retained. Execution is restarted from that location the next time that the iterator is called.
+Můžete zavolat iterátor pomocí příkazu `For Each...Next`. Každá iterace `For Each` smyčky volá iterátor. Při dosažení příkazu `Yield` v iterátoru se vrátí výraz v příkazu `Yield` a aktuální umístění v kódu je zachováno. Spuštění je restartováno z tohoto umístění při příštím volání iterátoru.
 
-The following example uses an iterator function. The iterator function has a `Yield` statement that's inside a [For…Next](../../../visual-basic/language-reference/statements/for-next-statement.md) loop. In the `ListEvenNumbers` method, each iteration of the `For Each` statement body creates a call to the iterator function, which proceeds to the next `Yield` statement.
+V následujícím příkladu je použita funkce iterátoru. Funkce iterátoru má příkaz `Yield`, který je uvnitř a [pro... Další](../../../visual-basic/language-reference/statements/for-next-statement.md) smyčka V metodě `ListEvenNumbers` Každá iterace těla příkazu `For Each` vytvoří volání funkce iterátoru, která pokračuje k dalšímu příkazu `Yield`.
 
 [!code-vb[VbVbalrStatements#127](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class9.vb#127)]
 
-For more information, see [Iterators](../../programming-guide/concepts/iterators.md), [Yield Statement](../../../visual-basic/language-reference/statements/yield-statement.md), and [Iterator](../../../visual-basic/language-reference/modifiers/iterator.md).
+Další informace naleznete v tématu [iterátory](../../programming-guide/concepts/iterators.md), [příkazy yield](../../../visual-basic/language-reference/statements/yield-statement.md)a [iterátor](../../../visual-basic/language-reference/modifiers/iterator.md).
 
 ## <a name="technical-implementation"></a>Technická implementace
 
-When a `For Each`…`Next` statement runs, Visual Basic evaluates the collection only one time, before the loop starts. If your statement block changes `element` or `group`, these changes don't affect the iteration of the loop.
+Když `For Each`...`Next` příkaz se spustí, Visual Basic vyhodnocuje kolekci pouze jednou, a to před spuštěním smyčky. Pokud váš příkaz zablokuje změny `element` nebo `group`, tyto změny neovlivňují iteraci smyčky.
 
-When all the elements in the collection have been successively assigned to `element`, the `For Each` loop stops and control passes to the statement following the `Next` statement.
+Po úspěšném přiřazení všech prvků v kolekci `element`se smyčka `For Each` zastaví a řízení projde příkazem, který následuje po příkazu `Next`.
 
-If [Option Infer](option-infer-statement.md) is on (its default setting), the Visual Basic compiler can infer the data type of `element`. If it is off and `element` hasn't been declared outside the loop, you must declare it in the `For Each` statement. To declare the data type of `element` explicitly, use an `As` clause. Unless the data type of element is defined outside the `For Each`...`Next` construct, its scope is the body of the loop. Note that you cannot declare `element` both outside and inside the loop.
+Pokud je nastavená [možnost odvodit](option-infer-statement.md) (výchozí nastavení), kompilátor Visual Basic může odvodit datový typ `element`. Je-li vypnuta a `element` nebyla deklarována vně smyčky, je nutné ji deklarovat v příkazu `For Each`. Chcete-li deklarovat datový typ `element` explicitně, použijte klauzuli `As`. Pokud není datový typ elementu definován mimo `For Each`...`Next` konstrukce, je jeho rozsah hlavním prvkem smyčky. Všimněte si, že nelze deklarovat `element` vně a uvnitř smyčky.
 
-You can optionally specify `element` in the `Next` statement. This improves the readability of your program, especially if you have nested `For Each` loops. You must specify the same variable as the one that appears in the corresponding `For Each` statement.
+Volitelně můžete zadat `element` v příkazu `Next`. To zlepšuje čitelnost vašeho programu, zejména v případě, že máte vnořené `For Each` smyčky. Je nutné zadat stejnou proměnnou jako ta, která se zobrazí v příslušném příkazu `For Each`.
 
-You might want to avoid changing the value of `element` inside a loop. Doing this can make it more difficult to read and debug your code. Changing the value of `group` doesn't affect the collection or its elements, which were determined when the loop was first entered.
+Je možné, že se nebudete muset vyhnout změnám hodnoty `element` uvnitř smyčky. To může ztížit čtení a ladění kódu. Změna hodnoty `group` nemá vliv na kolekci nebo její prvky, které byly určeny při prvním zadání smyčky.
 
-When you're nesting loops, if a `Next` statement of an outer nesting level is encountered before the `Next` of an inner level, the compiler signals an error. However, the compiler can detect this overlapping error only if you specify `element` in every `Next` statement.
+Při vnořování smyček, pokud je před `Next` vnitřní úrovně zjištěn příkaz `Next` úrovně vnějšího vnoření, kompilátor signalizuje chybu. Kompilátor však může tuto chybu překrývají pouze v případě, že zadáte `element` v každém příkazu `Next`.
 
-If your code depends on traversing a collection in a particular order, a `For Each`...`Next` loop isn't the best choice, unless you know the characteristics of the enumerator object the collection exposes. The order of traversal isn't determined by Visual Basic, but by the <xref:System.Collections.IEnumerator.MoveNext%2A> method of the enumerator object. Therefore, you might not be able to predict which element of the collection is the first to be returned in `element`, or which is the next to be returned after a given element. You might achieve more reliable results using a different loop structure, such as `For`...`Next` or `Do`...`Loop`.
+Pokud váš kód závisí na procházení kolekce v určitém pořadí, není nejlepší volbou `For Each`...`Next` smyčka, pokud neznáte charakteristiky objektu Enumerator, které kolekce zpřístupňuje. Pořadí průchodu není určeno Visual Basic, ale metodou <xref:System.Collections.IEnumerator.MoveNext%2A> objektu Enumerator. Proto možná nebude možné předpovědět, který prvek kolekce je první, který má být vrácen v `element`, nebo který je další, který bude vrácen po daném prvku. Můžete dosáhnout spolehlivější výsledků pomocí jiné struktury smyčky, například `For`...`Next` nebo `Do`...`Loop`.
 
-The runtime must be able to convert the elements in `group` to `element`. The [`Option Strict`] statement controls whether both widening and narrowing conversions are allowed (`Option Strict` is off, its default value), or whether only widening conversions are allowed (`Option Strict` is on). For more information, see [Narrowing conversions](#narrowing-conversions).
+Modul runtime musí být schopný převést elementy v `group` na `element`. Příkaz [`Option Strict`] řídí, zda jsou povoleny rozšiřující i zúžené převody (`Option Strict` je vypnutý, její výchozí hodnota), nebo zda jsou povoleny pouze rozšiřující převody (`Option Strict` je zapnuto). Další informace najdete v tématu [zúžení převodů](#narrowing-conversions).
 
-The data type of `group` must be a reference type that refers to a collection or an array that's enumerable. Most commonly this means that `group` refers to an object that implements the <xref:System.Collections.IEnumerable> interface of the `System.Collections` namespace or the <xref:System.Collections.Generic.IEnumerable%601> interface of the `System.Collections.Generic` namespace. `System.Collections.IEnumerable` defines the <xref:System.Collections.IEnumerable.GetEnumerator%2A> method, which returns an enumerator object for the collection. The enumerator object implements the `System.Collections.IEnumerator` interface of the `System.Collections` namespace and exposes the <xref:System.Collections.IEnumerator.Current%2A> property and the <xref:System.Collections.IEnumerator.Reset%2A> and <xref:System.Collections.IEnumerator.MoveNext%2A> methods. Visual Basic uses these to traverse the collection.
+Datový typ `group` musí být odkazový typ, který odkazuje na kolekci nebo pole, které je vyčíslitelné. Nejčastěji to znamená, že `group` odkazuje na objekt, který implementuje rozhraní <xref:System.Collections.IEnumerable> `System.Collections` oboru názvů nebo <xref:System.Collections.Generic.IEnumerable%601> rozhraní oboru názvů `System.Collections.Generic`. `System.Collections.IEnumerable` definuje metodu <xref:System.Collections.IEnumerable.GetEnumerator%2A>, která vrací objekt enumerátoru pro kolekci. Objekt enumerátoru implementuje rozhraní `System.Collections.IEnumerator` `System.Collections` oboru názvů a zpřístupňuje vlastnost <xref:System.Collections.IEnumerator.Current%2A> a metody <xref:System.Collections.IEnumerator.Reset%2A> a <xref:System.Collections.IEnumerator.MoveNext%2A>. Visual Basic je používá k procházení kolekce.
 
-### <a name="narrowing-conversions"></a>Narrowing Conversions
+### <a name="narrowing-conversions"></a>Zužující převody
 
-When `Option Strict` is set to `On`, narrowing conversions ordinarily cause compiler errors. In a `For Each` statement, however, conversions from the elements in `group` to `element` are evaluated and performed at run time, and compiler errors caused by narrowing conversions are suppressed.
+Když je `Option Strict` nastaveno na `On`, zužující převody obvykle způsobují chyby kompilátoru. V příkazu `For Each` jsou však převody z prvků v `group` na `element` vyhodnoceny a provedeny za běhu a chyby kompilátoru způsobené zužujícími převody jsou potlačeny.
 
-In the following example, the assignment of `m` as the initial value for `n` doesn't compile when `Option Strict` is on because the conversion of a `Long` to an `Integer` is a narrowing conversion. In the `For Each` statement, however, no compiler error is reported, even though the assignment to `number` requires the same conversion from `Long` to `Integer`. In the `For Each` statement that contains a large number, a run-time error occurs when <xref:Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger%2A> is applied to the large number.
+V následujícím příkladu je přiřazení `m` jako počáteční hodnota pro `n` zkompilováno, je-li `Option Strict` zapnuto, protože převod `Long` na `Integer` je zužující převod. V příkazu `For Each` však není hlášena žádná chyba kompilátoru, i když přiřazení `number` vyžaduje stejný převod z `Long` na `Integer`. V příkazu `For Each`, který obsahuje velké číslo, dojde k chybě za běhu při použití <xref:Microsoft.VisualBasic.CompilerServices.Conversions.ToInteger%2A> na velké číslo.
 
 [!code-vb[VbVbalrStatements#89](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class3.vb#89)]
 
-### <a name="ienumerator-calls"></a>IEnumerator Calls
+### <a name="ienumerator-calls"></a>Volání IEnumerator
 
-When execution of a `For Each`...`Next` loop starts, Visual Basic verifies that `group` refers to a valid collection object. If not, it throws an exception. Otherwise, it calls the <xref:System.Collections.IEnumerator.MoveNext%2A> method and the <xref:System.Collections.IEnumerator.Current%2A> property of the enumerator object to return the first element. If `MoveNext` indicates that there is no next element, that is, if the collection is empty, the `For Each` loop stops and control passes to the statement following the `Next` statement. Otherwise, Visual Basic sets `element` to the first element and runs the statement block.
+Při spuštění `For Each`...`Next` smyčka spustí Visual Basic ověří, zda `group` odkazuje na platný objekt kolekce. V takovém případě vyvolá výjimku. V opačném případě zavolá metodu <xref:System.Collections.IEnumerator.MoveNext%2A> a vlastnost <xref:System.Collections.IEnumerator.Current%2A> objektu Enumerator pro vrácení prvního prvku. Pokud `MoveNext` označuje, že neexistuje žádný další prvek, to znamená, pokud je kolekce prázdná, cyklus `For Each` se zastaví a řízení projde příkazem, který následuje po příkazu `Next`. V opačném případě Visual Basic nastaví `element` na první prvek a spustí blok příkazu.
 
-Each time Visual Basic encounters the `Next` statement, it returns to the `For Each` statement. Again it calls `MoveNext` and `Current` to return the next element, and again it either runs the block or stops the loop depending on the result. This process continues until `MoveNext` indicates that there is no next element or an `Exit For` statement is encountered.
+Pokaždé, když Visual Basic nalezne příkaz `Next`, vrátí se do příkazu `For Each`. Znovu volá `MoveNext` a `Current`, aby vrátil další prvek, a znovu buď spustí blok, nebo zastaví smyčku v závislosti na výsledku. Tento proces pokračuje, dokud `MoveNext` nezjistí, že není k dispozici žádný další prvek nebo příkaz `Exit For`.
 
-**Modifying the Collection.** The enumerator object returned by <xref:System.Collections.IEnumerable.GetEnumerator%2A> normally doesn't let you change the collection by adding, deleting, replacing, or reordering any elements. If you change the collection after you have initiated a `For Each`...`Next` loop, the enumerator object becomes invalid, and the next attempt to access an element causes an <xref:System.InvalidOperationException> exception.
+**Úprava kolekce.** Objekt enumerátoru vrácený <xref:System.Collections.IEnumerable.GetEnumerator%2A> obvykle neumožňuje změnit kolekci přidáním, odstraněním, nahrazením nebo změnou pořadí všech prvků. Pokud kolekci změníte po spuštění `For Each`...`Next` smyčka, objekt enumerátoru se změní na neplatnou a další pokus o přístup k elementu způsobí výjimku <xref:System.InvalidOperationException>.
 
-However, this blocking of modification isn't determined by Visual Basic, but rather by the implementation of the <xref:System.Collections.IEnumerable> interface. It is possible to implement `IEnumerable` in a way that allows for modification during iteration. If you are considering doing such dynamic modification, make sure that you understand the characteristics of the `IEnumerable` implementation on the collection you are using.
+Toto blokování úprav však není určeno Visual Basic, ale spíše implementací rozhraní <xref:System.Collections.IEnumerable>. Je možné implementovat `IEnumerable` způsobem, který umožňuje úpravu během iterace. Pokud zvažujete takovou dynamickou úpravu, ujistěte se, že rozumíte charakteristikám `IEnumerable` implementace v kolekci, kterou používáte.
 
-**Modifying Collection Elements.** The <xref:System.Collections.IEnumerator.Current%2A> property of the enumerator object is [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md), and it returns a local copy of each collection element. This means that you cannot modify the elements themselves in a `For Each`...`Next` loop. Any modification you make affects only the local copy from `Current` and isn't reflected back into the underlying collection. However, if an element is a reference type, you can modify the members of the instance to which it points. The following example modifies the `BackColor` member of each `thisControl` element. You cannot, however, modify `thisControl` itself.
+**Úpravy prvků kolekce.** Vlastnost <xref:System.Collections.IEnumerator.Current%2A> objektu Enumerator je určena [jen pro čtení](../../../visual-basic/language-reference/modifiers/readonly.md)a vrátí místní kopii každého elementu kolekce. To znamená, že nemůžete změnit samotné prvky ve `For Each`...`Next` smyčka. Všechny změny, které provedete, ovlivní jenom místní kopii z `Current` a nereflektují se zpátky do příslušné kolekce. Nicméně pokud je prvek odkazový typ, můžete upravit členy instance, na kterou odkazuje. Následující příklad upraví `BackColor` člen každého prvku `thisControl`. Nemůžete však změnit `thisControl` sám sebe.
 
 ```vb
 Sub LightBlueBackground(thisForm As System.Windows.Forms.Form)
@@ -162,23 +162,23 @@ Sub LightBlueBackground(thisForm As System.Windows.Forms.Form)
 End Sub
 ```
 
-The previous example can modify the `BackColor` member of each `thisControl` element, although it cannot modify `thisControl` itself.
+Předchozí příklad může změnit `BackColor` člen každého prvku `thisControl`, i když nemůže změnit `thisControl` sám sebe.
 
-**Traversing Arrays.** Because the <xref:System.Array> class implements the <xref:System.Collections.IEnumerable> interface, all arrays expose the <xref:System.Array.GetEnumerator%2A> method. This means that you can iterate through an array with a `For Each`...`Next` loop. However, you can only read the array elements. You cannot change them.
+**Procházení polí.** Vzhledem k tomu, že třída <xref:System.Array> implementuje rozhraní <xref:System.Collections.IEnumerable>, všechna pole zpřístupňují metodu <xref:System.Array.GetEnumerator%2A>. To znamená, že můžete iterovat přes pole pomocí smyčky `For Each`...`Next`. Lze však číst pouze prvky pole. Nemůžete je změnit.
 
 ## <a name="example"></a>Příklad
 
-The following example lists all the folders in the C:\ directory by using the <xref:System.IO.DirectoryInfo> class.
+Následující příklad zobrazí seznam všech složek v C:\. adresáře pomocí třídy <xref:System.IO.DirectoryInfo>.
 
 [!code-vb[VbVbalrStatements#124](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class9.vb#124)]
 
 ## <a name="example"></a>Příklad
 
-The following example illustrates a procedure for sorting a collection. The example sorts instances of a `Car` class that are stored in a <xref:System.Collections.Generic.List%601>. The `Car` class implements the <xref:System.IComparable%601> interface, which requires that the <xref:System.IComparable%601.CompareTo%2A> method be implemented.
+Následující příklad znázorňuje postup pro řazení kolekce. Příklad řadí instance `Car` třídy, které jsou uloženy v <xref:System.Collections.Generic.List%601>. Třída `Car` implementuje rozhraní <xref:System.IComparable%601>, které vyžaduje, aby byla metoda <xref:System.IComparable%601.CompareTo%2A> implementovaná.
 
-Each call to the <xref:System.IComparable%601.CompareTo%2A> method makes a single comparison that's used for sorting. User-written code in the `CompareTo` method returns a value for each comparison of the current object with another object. The value returned is less than zero if the current object is less than the other object, greater than zero if the current object is greater than the other object, and zero if they are equal. This enables you to define in code the criteria for greater than, less than, and equal.
+Každé volání metody <xref:System.IComparable%601.CompareTo%2A> provede jedno porovnání, které se používá k řazení. Uživatelsky psaný kód v metodě `CompareTo` vrátí hodnotu pro každé porovnání aktuálního objektu s jiným objektem. Vrácená hodnota je menší než nula, pokud je aktuální objekt menší než druhý objekt, větší než nula, pokud je aktuální objekt větší než druhý objekt a nula, pokud jsou stejné. To umožňuje definovat v kódu kritéria pro větší než, menší než a rovno.
 
-In the `ListCars` method, the `cars.Sort()` statement sorts the list. This call to the <xref:System.Collections.Generic.List%601.Sort%2A> method of the <xref:System.Collections.Generic.List%601> causes the `CompareTo` method to be called automatically for the `Car` objects in the `List`.
+V metodě `ListCars` seřadí příkaz `cars.Sort()` seznam. Toto volání metody <xref:System.Collections.Generic.List%601.Sort%2A> <xref:System.Collections.Generic.List%601> způsobí, že metoda `CompareTo` bude automaticky volána pro objekty `Car` v `List`.
 
 [!code-vb[VbVbalrStatements#125](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class9.vb#125)]
 

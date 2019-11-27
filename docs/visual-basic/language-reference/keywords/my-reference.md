@@ -13,20 +13,20 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351698"
 ---
 # <a name="my-reference-visual-basic"></a>Můj odkaz (referenční dokumentace jazyka Visual Basic)
-The `My` feature makes programming faster and easier by giving you intuitive access to commonly used methods, properties, and events. This table lists the objects contained in `My`, and the actions that can be performed with each.  
+Funkce `My` přináší programování rychleji a snadněji tím, že vám poskytne intuitivní přístup k často používaným metodám, vlastnostem a událostem. Tato tabulka obsahuje seznam objektů obsažených v `My`a akce, které lze provést s každým.  
   
-|**Action**|**Object**|  
+|**Kroky**|**Předmětů**|  
 |----------------|----------------|  
-|Accessing application information and services.|The `My.Application` object consists of the following classes:<br /><br /> <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase> provides members that are available in all projects.<br /><br /> <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> provides members available in Windows Forms applications.<br /><br /> <xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase> provides members available in console applications.|  
-|Accessing the host computer and its resources, services, and data.|`My.Computer` (<xref:Microsoft.VisualBasic.Devices.Computer>)|  
-|Accessing the forms in the current project.|[Objekt My.Forms](../../../visual-basic/language-reference/objects/my-forms-object.md)|  
-|Accessing the application log.|`My.Application.Log` (<xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.Log%2A>)|  
-|Accessing the current web request.|[Objekt My.Request](../../../visual-basic/language-reference/objects/my-request-object.md)|  
-|Accessing resource elements.|[Objekt My.Resources](../../../visual-basic/language-reference/objects/my-resources-object.md)|  
-|Accessing the current web response.|[Objekt My.Response](../../../visual-basic/language-reference/objects/my-response-object.md)|  
-|Accessing user and application level settings.|[Objekt My.Settings](../../../visual-basic/language-reference/objects/my-settings-object.md)|  
-|Accessing the current user's security context.|`My.User` (<xref:Microsoft.VisualBasic.ApplicationServices.User>)|  
-|Accessing XML Web services referenced by the current project.|[Objekt My.WebServices](../../../visual-basic/language-reference/objects/my-webservices-object.md)|  
+|Přístup k informacím a službám aplikací.|Objekt `My.Application` se skládá z následujících tříd:<br /><br /> <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase> poskytuje členy, kteří jsou k dispozici ve všech projektech.<br /><br /> <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> poskytuje členy, které jsou k dispozici v model Windows Forms aplikacích.<br /><br /> <xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase> poskytuje členy, kteří jsou k dispozici v konzolových aplikacích.|  
+|Přístup k hostitelskému počítači a jeho prostředkům, službám a datům.|`My.Computer` (<xref:Microsoft.VisualBasic.Devices.Computer>)|  
+|Přístup k formulářům v aktuálním projektu.|[Objekt My.Forms](../../../visual-basic/language-reference/objects/my-forms-object.md)|  
+|Přístup k aplikačnímu protokolu|`My.Application.Log` (<xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.Log%2A>)|  
+|Přístup k aktuálnímu webovému požadavku.|[Objekt My.Request](../../../visual-basic/language-reference/objects/my-request-object.md)|  
+|Přístup k elementům prostředku.|[Objekt My.Resources](../../../visual-basic/language-reference/objects/my-resources-object.md)|  
+|Přístup k aktuální webové odezvě.|[Objekt My.Response](../../../visual-basic/language-reference/objects/my-response-object.md)|  
+|Přístup k nastavení úrovně uživatel a aplikace|[Objekt My.Settings](../../../visual-basic/language-reference/objects/my-settings-object.md)|  
+|Přístup k kontextu zabezpečení aktuálního uživatele.|`My.User` (<xref:Microsoft.VisualBasic.ApplicationServices.User>)|  
+|Přístup k webovým službám XML, na které odkazuje aktuální projekt.|[Objekt My.WebServices](../../../visual-basic/language-reference/objects/my-webservices-object.md)|  
   
 ## <a name="see-also"></a>Viz také:
 

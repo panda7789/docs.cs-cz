@@ -13,22 +13,22 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353214"
 ---
 # <a name="how-to-work-with-activex-controls-visual-basic"></a>Postupy: Práce s ovládacími prvky ActiveX (Visual Basic)
-ActiveX controls are COM components or objects you can insert into a Web page or other application to reuse packaged functionality someone else has programmed. You can use ActiveX controls developed for Visual Basic 6.0 and earlier versions to add features to the **Toolbox** of Visual Studio.  
+Ovládací prvky ActiveX jsou komponenty modelu COM nebo objekty, které můžete vložit do webové stránky nebo jiné aplikace, abyste mohli znovu použít zabalené funkce provedené někým jiným. K přidání funkcí do **sady nástrojů** sady Visual Studio můžete použít ovládací prvky ActiveX vyvinuté pro Visual Basic 6,0 a starší verze.  
   
-### <a name="to-add-activex-controls-to-the-toolbox"></a>To add ActiveX controls to the toolbox  
+### <a name="to-add-activex-controls-to-the-toolbox"></a>Přidání ovládacích prvků ActiveX do sady nástrojů  
   
-1. On the **Tools** menu, click **Choose Toolbox Items**.  
+1. V nabídce **nástroje** klikněte na příkaz **zvolit položky sady nástrojů**.  
   
-     The **Choose Toolbox** dialog box appears.  
+     Zobrazí se dialogové okno **zvolit sadu nástrojů** .  
   
-2. Click the **COM Components** tab.  
+2. Klikněte na kartu **komponenty modelu COM** .  
   
-3. Select the check box next to the ActiveX control you want to use, and then click **OK**.  
+3. Zaškrtněte políčko vedle ovládacího prvku ActiveX, který chcete použít, a poté klikněte na tlačítko **OK**.  
   
-     The new control appears with the other tools in the **Toolbox**.  
+     Nový ovládací prvek se zobrazí s dalšími nástroji v sadě **nástrojů**.  
   
     > [!NOTE]
-    > You can use the Aximp utility to manually create an interop assembly for ActiveX controls. For more information, see [Aximp.exe (Windows Forms ActiveX Control Importer)](../../../framework/tools/aximp-exe-windows-forms-activex-control-importer.md).  
+    > Můžete použít Nástroj Aximp k ručnímu vytvoření definičního sestavení pro ovládací prvky ActiveX. Další informace naleznete v tématu [Aximp. exe (model Windows Forms Importér ovládacího prvku ActiveX)](../../../framework/tools/aximp-exe-windows-forms-activex-control-importer.md).  
   
 ## <a name="see-also"></a>Viz také:
 

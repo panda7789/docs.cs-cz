@@ -23,7 +23,7 @@ ms.locfileid: "74352781"
 ---
 # <a name="throw-statement-visual-basic"></a>Throw – příkaz (Visual Basic)
 
-Throws an exception within a procedure.
+Vyvolá výjimku v rámci procedury.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -31,22 +31,22 @@ Throws an exception within a procedure.
 Throw [ expression ]
 ```
 
-## <a name="part"></a>Part
+## <a name="part"></a>Částí
 
 `expression`\
-Provides information about the exception to be thrown. Optional when residing in a `Catch` statement, otherwise required.
+Poskytuje informace o výjimce, která má být vyvolána. Volitelné, pokud je umístěn v příkazu `Catch`, je vyžadováno jinak.
 
 ## <a name="remarks"></a>Poznámky
 
-The `Throw` statement throws an exception that you can handle with structured exception-handling code (`Try`...`Catch`...`Finally`) or unstructured exception-handling code (`On Error GoTo`). You can use the `Throw` statement to trap errors within your code because Visual Basic moves up the call stack until it finds the appropriate exception-handling code.
+Příkaz `Throw` vyvolá výjimku, kterou lze zpracovat pomocí strukturovaného kódu zpracování výjimek (`Try`...`Catch`...`Finally`) nebo nestrukturovaný kód pro zpracování výjimek (`On Error GoTo`). Můžete použít příkaz `Throw` k zachycení chyb v rámci kódu, protože Visual Basic přesune zásobník volání, dokud nenajde příslušný kód pro zpracování výjimek.
 
-A `Throw` statement with no expression can only be used in a `Catch` statement, in which case the statement rethrows the exception currently being handled by the `Catch` statement.
+Příkaz `Throw` bez výrazu lze použít pouze v příkazu `Catch`. v takovém případě příkaz znovu vyvolá výjimku, která je aktuálně zpracována příkazem `Catch`.
 
-The `Throw` statement resets the call stack for the `expression` exception. If `expression` is not provided, the call stack is left unchanged. You can access the call stack for the exception through the <xref:System.Exception.StackTrace%2A> property.
+Příkaz `Throw` obnoví zásobník volání pro výjimku `expression`. Pokud není zadán `expression`, zásobník volání zůstane beze změny. Můžete získat přístup k zásobníku volání pro výjimku prostřednictvím vlastnosti <xref:System.Exception.StackTrace%2A>.
 
 ## <a name="example"></a>Příklad
 
-The following code uses the `Throw` statement to throw an exception:
+Následující kód používá příkaz `Throw` k vyvolání výjimky:
 
 [!code-vb[VbVbalrStatements#84](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#84)]
 

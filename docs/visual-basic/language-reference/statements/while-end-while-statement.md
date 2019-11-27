@@ -17,7 +17,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352754"
 ---
 # <a name="whileend-while-statement-visual-basic"></a>While...End While – příkaz (Visual Basic)
-Runs a series of statements as long as a given condition is `True`.  
+Spustí sérii příkazů, pokud je zadaná podmínka `True`.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,49 +35,49 @@ End While
   
 |Termín|Definice|  
 |---|---|  
-|`condition`|Požadováno. `Boolean` expression. If `condition` is `Nothing`, Visual Basic treats it as `False`.|  
-|`statements`|Volitelné. One or more statements following `While`, which run every time `condition` is `True`.|  
-|`Continue While`|Volitelné. Transfers control to the next iteration of the `While` block.|  
-|`Exit While`|Volitelné. Transfers control out of the `While` block.|  
-|`End While`|Požadováno. Terminates the definition of the `While` block.|  
+|`condition`|Požadováno. výraz `Boolean` Pokud je `condition` `Nothing`, Visual Basic považuje za `False`.|  
+|`statements`|Volitelná. Jeden nebo více příkazů, které následují `While`, které se spustí pokaždé, když `condition` `True`.|  
+|`Continue While`|Volitelná. Přenáší řízení na další iteraci `While` bloku.|  
+|`Exit While`|Volitelná. Přenáší řízení z `While`ho bloku.|  
+|`End While`|Požadováno. Ukončí definici bloku `While`.|  
   
 ## <a name="remarks"></a>Poznámky  
- Use a `While...End While` structure when you want to repeat a set of statements an indefinite number of times, as long as a condition remains `True`. If you want more flexibility with where you test the condition or what result you test it for, you might prefer the [Do...Loop Statement](../../../visual-basic/language-reference/statements/do-loop-statement.md). If you want to repeat the statements a set number of times, the [For...Next Statement](../../../visual-basic/language-reference/statements/for-next-statement.md) is usually a better choice.  
+ `While...End While` strukturu použijte v případě, že chcete opakovat sadu příkazů v neurčitém počtu opakování, pokud podmínka zůstane `True`. Pokud potřebujete větší flexibilitu při testování podmínky nebo k tomu, pro který výsledek testujete, můžete preferovat do.. [. Příkaz LOOP](../../../visual-basic/language-reference/statements/do-loop-statement.md) Pokud chcete příkazy opakovat v nastaveném počtu opakování, [pro... Další příkaz](../../../visual-basic/language-reference/statements/for-next-statement.md) je obvykle lepší volbou.  
   
 > [!NOTE]
-> The `While` keyword is also used in the [Do...Loop Statement](../../../visual-basic/language-reference/statements/do-loop-statement.md), the [Skip While Clause](../../../visual-basic/language-reference/queries/skip-while-clause.md) and the [Take While Clause](../../../visual-basic/language-reference/queries/take-while-clause.md).  
+> Klíčové slovo `While` se také používá v do [... Příkaz LOOP](../../../visual-basic/language-reference/statements/do-loop-statement.md), [klauzule Skip While](../../../visual-basic/language-reference/queries/skip-while-clause.md) a [klauzuli HAVING while](../../../visual-basic/language-reference/queries/take-while-clause.md).  
   
- If `condition` is `True`, all of the `statements` run until the `End While` statement is encountered. Control then returns to the `While` statement, and `condition` is again checked. If `condition` is still `True`, the process is repeated. If it’s `False`, control passes to the statement that follows the `End While` statement.  
+ Pokud je `condition` `True`, všechny `statements` spustit až do chvíle, kdy se nenajde příkaz `End While`. Ovládací prvek se pak vrátí do příkazu `While` a `condition` znovu zaškrtnuto. Pokud je `condition` stále `True`, proces se opakuje. Pokud je `False`, řízení se předá do příkazu, který následuje po příkazu `End While`.  
   
- The `While` statement always checks the condition before it starts the loop. Looping continues while the condition remains `True`. If `condition` is `False` when you first enter the loop, it doesn’t run even once.  
+ Příkaz `While` vždy před spuštěním smyčky vždycky kontroluje podmínku. Opakování pokračuje, dokud podmínka zůstane `True`. Pokud je při prvním zadání smyčky `condition` `False`, nespustí se ani jednou.  
   
- The `condition` usually results from a comparison of two values, but it can be any expression that evaluates to a [Boolean Data Type](../../../visual-basic/language-reference/data-types/boolean-data-type.md) value (`True` or `False`). This expression can include a value of another data type, such as a numeric type, that has been converted to `Boolean`.  
+ `condition` obvykle vede k porovnání dvou hodnot, ale může to být libovolný výraz, který je vyhodnocen jako logická hodnota [datového typu](../../../visual-basic/language-reference/data-types/boolean-data-type.md) (`True` nebo `False`). Tento výraz může obsahovat hodnotu jiného datového typu, jako je například číselný typ, který byl převeden na `Boolean`.  
   
- You can nest `While` loops by placing one loop within another. You can also nest different kinds of control structures within one another. For more information, see [Nested Control Structures](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md).  
+ Smyčky `While` můžete vnořovat vložením jedné smyčky do jiné. Můžete také vnořit různé druhy řídicích struktur mezi sebou. Další informace najdete v tématu [vnořené řídicí struktury](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md).  
   
-## <a name="exit-while"></a>Exit While  
- The [Exit While](../../../visual-basic/language-reference/statements/exit-statement.md) statement can provide another way to exit a `While` loop. `Exit While` immediately transfers control to the statement that follows the `End While` statement.  
+## <a name="exit-while"></a>Ukončit během  
+ Příkaz [Exit while](../../../visual-basic/language-reference/statements/exit-statement.md) může poskytnout jiný způsob, jak ukončit smyčku `While`. `Exit While` okamžitě přenáší řízení na příkaz, který následuje po příkazu `End While`.  
   
- You typically use `Exit While` after some condition is evaluated (for example, in an `If...Then...Else` structure). You might want to exit a loop if you detect a condition that makes it unnecessary or impossible to continue iterating, such as an erroneous value or a termination request. You can use `Exit While` when you test for a condition that could cause an *endless loop*, which is a loop that could run an extremely large or even infinite number of times. You can then use `Exit While` to escape the loop.  
+ Obvykle používáte `Exit While` po vyhodnocení některé podmínky (například ve struktuře `If...Then...Else`). Můžete chtít ukončit smyčku, pokud zjistíte podmínku, která je nepotřebná nebo nemožná, aby pokračovala v iteraci, jako je například chybná hodnota nebo žádost o ukončení. Můžete použít `Exit While` při testování podmínky, která by mohla způsobit *nekonečnou smyčku*, což je smyčka, která by mohla běžet velmi velký nebo dokonce nekonečný počet časů. Potom můžete pomocí `Exit While` řídicí smyčku.  
   
- You can place any number of `Exit While` statements anywhere in the `While` loop.  
+ Libovolný počet `Exit While` příkazů můžete umístit kdekoli v `While` smyčce.  
   
- When used within nested `While` loops, `Exit While` transfers control out of the innermost loop and into the next higher level of nesting.  
+ Při použití ve vnořených cyklech `While` `Exit While` přenáší řízení z nejvnitřnější smyčky a na další vyšší úroveň vnoření.  
   
- The `Continue While` statement immediately transfers control to the next iteration of the loop. For more information, see [Continue Statement](../../../visual-basic/language-reference/statements/continue-statement.md).  
+ Příkaz `Continue While` okamžitě přenáší řízení na další iteraci smyčky. Další informace najdete v tématu [příkaz Continue](../../../visual-basic/language-reference/statements/continue-statement.md).  
   
 ## <a name="example"></a>Příklad  
- In the following example, the statements in the loop continue to run until the `index` variable is greater than 10.  
+ V následujícím příkladu budou příkazy ve smyčce nadále spuštěny, dokud je proměnná `index` větší než 10.  
   
  [!code-vb[VbVbalrStatements#171](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class14.vb#171)]  
   
 ## <a name="example"></a>Příklad  
- The following example illustrates the use of the `Continue While` and `Exit While` statements.  
+ Následující příklad ukazuje použití příkazů `Continue While` a `Exit While`.  
   
  [!code-vb[VbVbalrStatements#172](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class14.vb#172)]  
   
 ## <a name="example"></a>Příklad  
- The following example reads all lines in a text file. The <xref:System.IO.File.OpenText%2A> method opens the file and returns a <xref:System.IO.StreamReader> that reads the characters. In the `While` condition, the <xref:System.IO.StreamReader.Peek%2A> method of the `StreamReader` determines whether the file contains additional characters.  
+ Následující příklad přečte všechny řádky v textovém souboru. Metoda <xref:System.IO.File.OpenText%2A> otevře soubor a vrátí <xref:System.IO.StreamReader>, který přečte znaky. V `While` podmínka určuje <xref:System.IO.StreamReader.Peek%2A> metoda `StreamReader`, zda soubor obsahuje další znaky.  
   
  [!code-vb[VbVbalrStatements#173](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class14.vb#173)]  
   

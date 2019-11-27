@@ -16,7 +16,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353230"
 ---
 # <a name="inherits-statement"></a>Inherits – příkaz
-Causes the current class or interface to inherit the attributes, variables, properties, procedures, and events from another class or set of interfaces.  
+Způsobí, že aktuální třída nebo rozhraní zdědí atributy, proměnné, vlastnosti, procedury a události z jiné třídy nebo sady rozhraní.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,40 +28,40 @@ Inherits basetypenames
   
 |Termín|Definice|  
 |---|---|  
-|`basetypenames`|Požadováno. The name of the class from which this class derives.<br /><br /> -nebo-<br /><br /> The names of the interfaces from which this interface derives. Use commas to separate multiple names.|  
+|`basetypenames`|Požadováno. Název třídy, ze které je tato třída odvozena.<br /><br /> -nebo-<br /><br /> Názvy rozhraní, ze kterých je toto rozhraní odvozeno. K oddělení více názvů použijte čárky.|  
   
 ## <a name="remarks"></a>Poznámky  
- If used, the `Inherits` statement must be the first non-blank, non-comment line in a class or interface definition. It should immediately follow the `Class` or `Interface` statement.  
+ V případě použití musí být příkaz `Inherits` prvním neprázdným řádkem bez komentářů v definici třídy nebo rozhraní. Měla by následovat bezprostředně po příkazu `Class` nebo `Interface`.  
   
- You can use `Inherits` only in a class or interface. This means the declaration context for an inheritance cannot be a source file, namespace, structure, module, procedure, or block.  
+ `Inherits` lze použít pouze ve třídě nebo rozhraní. To znamená, že kontext deklarace pro dědičnost nemůže být zdrojový soubor, obor názvů, struktura, modul, procedura nebo blok.  
   
-## <a name="rules"></a>Rules  
+## <a name="rules"></a>Pravidla  
   
-- **Class Inheritance.** If a class uses the `Inherits` statement, you can specify only one base class.  
+- **Dědičnost tříd.** Pokud třída používá příkaz `Inherits`, můžete zadat pouze jednu základní třídu.  
   
-     A class cannot inherit from a class nested within it.  
+     Třída nemůže dědit z třídy, ve které je vnořená.  
   
-- **Interface Inheritance.** If an interface uses the `Inherits` statement, you can specify one or more base interfaces. You can inherit from two interfaces even if they each define a member with the same name. If you do so, the implementing code must use name qualification to specify which member it is implementing.  
+- **Dědičnost rozhraní.** Pokud rozhraní používá příkaz `Inherits`, můžete zadat jedno nebo více základních rozhraní. Můžete Zdědit ze dvou rozhraní i v případě, že každý definuje člena se stejným názvem. Pokud to uděláte, implementace kódu musí použít kvalifikaci názvu k určení, který člen implementuje.  
   
-     An interface cannot inherit from another interface with a more restrictive access level. For example, a `Public` interface cannot inherit from a `Friend` interface.  
+     Rozhraní nemůže dědit z jiného rozhraní s více omezující úrovní přístupu. Rozhraní `Public` například nemůže dědit z rozhraní `Friend`.  
   
-     An interface cannot inherit from an interface nested within it.  
+     Rozhraní nemůže dědit z rozhraní, které je v něm vnořené.  
   
- An example of class inheritance in the .NET Framework is the <xref:System.ArgumentException> class, which inherits from the <xref:System.SystemException> class. This provides to <xref:System.ArgumentException> all the predefined properties and procedures required by system exceptions, such as the <xref:System.Exception.Message%2A> property and the <xref:System.Exception.ToString%2A> method.  
+ Příkladem dědičnosti třídy v .NET Framework je <xref:System.ArgumentException> třída, která dědí z třídy <xref:System.SystemException>. To umožňuje <xref:System.ArgumentException> všechny předdefinované vlastnosti a procedury vyžadované systémovými výjimkami, jako je například vlastnost <xref:System.Exception.Message%2A> a metoda <xref:System.Exception.ToString%2A>.  
   
- An example of interface inheritance in the .NET Framework is the <xref:System.Collections.ICollection> interface, which inherits from the <xref:System.Collections.IEnumerable> interface. This causes <xref:System.Collections.ICollection> to inherit the definition of the enumerator required to traverse a collection.  
+ Příkladem dědičnosti rozhraní v .NET Framework je rozhraní <xref:System.Collections.ICollection>, které dědí z rozhraní <xref:System.Collections.IEnumerable>. To způsobí, <xref:System.Collections.ICollection> dědění definice výčtu potřebného k procházení kolekce.  
   
 ## <a name="example"></a>Příklad  
- The following example uses the `Inherits` statement to show how a class named `thisClass` can inherit all the members of a base class named `anotherClass`.  
+ Následující příklad používá příkaz `Inherits` k zobrazení, jak třída s názvem `thisClass` může dědit všechny členy základní třídy s názvem `anotherClass`.  
   
  [!code-vb[VbVbalrStatements#37](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#37)]  
   
 ## <a name="example"></a>Příklad  
- The following example shows inheritance of multiple interfaces.  
+ Následující příklad ukazuje dědění více rozhraní.  
   
  [!code-vb[VbVbalrStatements#38](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#38)]  
   
- The interface named `thisInterface` now includes all the definitions in the <xref:System.IComparable>, <xref:System.IDisposable>, and <xref:System.IFormattable> interfaces The inherited members provide respectively for type-specific comparison of two objects, releasing allocated resources, and expressing the value of an object as a `String`. A class that implements `thisInterface` must implement every member of every base interface.  
+ Rozhraní s názvem `thisInterface` nyní zahrnuje všechny definice v rozhraních <xref:System.IComparable>, <xref:System.IDisposable>a <xref:System.IFormattable> zděděné členy v uvedeném pořadí pro porovnání dvou objektů, uvolnění přidělených prostředků a vyjádření hodnoty objektu jako `String`. Třída, která implementuje `thisInterface` musí implementovat všechny členy každého základního rozhraní.  
   
 ## <a name="see-also"></a>Viz také:
 

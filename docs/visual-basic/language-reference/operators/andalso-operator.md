@@ -19,7 +19,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350239"
 ---
 # <a name="andalso-operator-visual-basic"></a>AndAlso – operátor (Visual Basic)
-Performs short-circuiting logical conjunction on two expressions.  
+Provede krátkodobé rozvodu logického spojení na dvou výrazech.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,45 +31,45 @@ result = expression1 AndAlso expression2
   
 |Termín|Definice|  
 |---|---|  
-|`result`|Požadováno. Any `Boolean` expression. The result is the `Boolean` result of comparison of the two expressions.|  
-|`expression1`|Požadováno. Any `Boolean` expression.|  
-|`expression2`|Požadováno. Any `Boolean` expression.|  
+|`result`|Požadováno. Libovolný výraz `Boolean`. Výsledkem je `Boolean` výsledek porovnání dvou výrazů.|  
+|`expression1`|Požadováno. Libovolný výraz `Boolean`.|  
+|`expression2`|Požadováno. Libovolný výraz `Boolean`.|  
   
 ## <a name="remarks"></a>Poznámky  
- A logical operation is said to be *short-circuiting* if the compiled code can bypass the evaluation of one expression depending on the result of another expression. If the result of the first expression evaluated determines the final result of the operation, there is no need to evaluate the second expression, because it cannot change the final result. Short-circuiting can improve performance if the bypassed expression is complex, or if it involves procedure calls.  
+ Logická operace je označována jako *krátká* , pokud zkompilovaný kód může obejít vyhodnocení jednoho výrazu v závislosti na výsledku jiného výrazu. Pokud výsledek prvního vyhodnoceného výrazu určí konečný výsledek operace, není nutné vyhodnotit druhý výraz, protože nemůže změnit konečný výsledek. Krátkodobé okruhy mohou zvýšit výkon, pokud je výraz obcházení složitý, nebo pokud zahrnuje volání procedur.  
   
- If both expressions evaluate to `True`, `result` is `True`. The following table illustrates how `result` is determined.  
+ Pokud jsou oba výrazy vyhodnoceny jako `True`, `result` je `True`. Následující tabulka ukazuje, jak je určena `result`.  
   
-|If `expression1` is|And `expression2` is|The value of `result` is|  
+|Pokud je `expression1`|A `expression2` je|Hodnota `result` je|  
 |---|---|---|  
 |`True`|`True`|`True`|  
 |`True`|`False`|`False`|  
-|`False`|(not evaluated)|`False`|  
+|`False`|(nehodnoceno)|`False`|  
   
 ## <a name="data-types"></a>Datové typy  
- The `AndAlso` operator is defined only for the [Boolean Data Type](../../../visual-basic/language-reference/data-types/boolean-data-type.md). Visual Basic converts each operand as necessary to `Boolean` before evaluating the expression. If you assign the result to a numeric type, Visual Basic converts it from `Boolean` to that type such that `False` becomes `0` and `True` becomes `-1`.
-For more information, see [Boolean Type Conversions](../data-types/boolean-data-type.md#type-conversions).
+ Operátor `AndAlso` je definován pouze pro [datový typ Boolean](../../../visual-basic/language-reference/data-types/boolean-data-type.md). Visual Basic každou operand podle potřeby převede, aby `Boolean` před vyhodnocením výrazu. Pokud tento výsledek přiřadíte číselnému typu, Visual Basic ho převede z `Boolean` na tento typ, takže se `False` změní na `0` a `True` se změní na `-1`.
+Další informace naleznete v tématu [převody logických typů](../data-types/boolean-data-type.md#type-conversions).
   
 ## <a name="overloading"></a>Přetížení  
- The [And Operator](../../../visual-basic/language-reference/operators/and-operator.md) and the [IsFalse Operator](../../../visual-basic/language-reference/operators/isfalse-operator.md) can be *overloaded*, which means that a class or structure can redefine their behavior when an operand has the type of that class or structure. Overloading the `And` and `IsFalse` operators affects the behavior of the `AndAlso` operator. If your code uses `AndAlso` on a class or structure that overloads `And` and `IsFalse`, be sure you understand their redefined behavior. For more information, see [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ [Operátor and](../../../visual-basic/language-reference/operators/and-operator.md) a operátor s hodnotou [false](../../../visual-basic/language-reference/operators/isfalse-operator.md) mohou být *přetíženy*, což znamená, že třída nebo struktura může předefinovat jejich chování, je-li operand typu této třídy nebo struktury. Přetížení operátorů `And` a `IsFalse` má vliv na chování operátoru `AndAlso`. Pokud váš kód používá `AndAlso` ve třídě nebo struktuře, která přetěžuje `And` a `IsFalse`, ujistěte se, že rozumíte jejich předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Příklad  
- The following example uses the `AndAlso` operator to perform a logical conjunction on two expressions. The result is a `Boolean` value that represents whether the entire conjoined expression is true. If the first expression is `False`, the second is not evaluated.  
+ Následující příklad používá operátor `AndAlso` k provedení logického spojení se dvěma výrazy. Výsledkem je `Boolean` hodnota, která představuje, zda je úplný výraz JOIN pravdivý. Pokud je první výraz `False`, druhý není vyhodnocen.  
   
  [!code-vb[VbVbalrOperators#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#24)]  
   
- The preceding example produces results of `True`, `False`, and `False`, respectively. In the calculation of `secondCheck`, the second expression is not evaluated because the first is already `False`. However, the second expression is evaluated in the calculation of `thirdCheck`.  
+ Předchozí příklad vytvoří výsledky `True`, `False`a `False`v uvedeném pořadí. Při výpočtu `secondCheck`není druhý výraz vyhodnocen, protože první je již `False`. Nicméně druhý výraz je vyhodnocen při výpočtu `thirdCheck`.  
   
 ## <a name="example"></a>Příklad  
- The following example shows a `Function` procedure that searches for a given value among the elements of an array. If the array is empty, or if the array length has been exceeded, the `While` statement does not test the array element against the search value.  
+ Následující příklad ukazuje `Function` postup, který vyhledá danou hodnotu mezi prvky pole. Pokud je pole prázdné nebo pokud byla překročena délka pole, příkaz `While` netestuje prvek pole proti hledané hodnotě.  
   
  [!code-vb[VbVbalrOperators#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#25)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Logical/Bitwise Operators (Visual Basic)](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)
-- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Logické/bitové operátory (Visual Basic)](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)
+- [Priorita operátorů v Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
 - [Operátor And](../../../visual-basic/language-reference/operators/and-operator.md)
 - [Operátor IsFalse](../../../visual-basic/language-reference/operators/isfalse-operator.md)
-- [Logical and Bitwise Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
+- [Logické a bitové operátory v Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)

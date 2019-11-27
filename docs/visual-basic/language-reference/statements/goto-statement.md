@@ -21,7 +21,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351088"
 ---
 # <a name="goto-statement"></a>GoTo – příkaz
-Branches unconditionally to a specified line in a procedure.  
+Větve nepodmíněně na určený řádek v proceduře.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,35 +29,35 @@ Branches unconditionally to a specified line in a procedure.
 GoTo line  
 ```  
   
-## <a name="part"></a>Part  
+## <a name="part"></a>Částí  
  `line`  
- Požadováno. Any line label.  
+ Požadováno. Libovolný popisek čáry.  
   
 ## <a name="remarks"></a>Poznámky  
- The `GoTo` statement can branch only to lines in the procedure in which it appears. The line must have a line label that `GoTo` can refer to. For more information, see [How to: Label Statements](../../../visual-basic/programming-guide/program-structure/how-to-label-statements.md).  
+ Příkaz `GoTo` se může větvit jenom na řádky v proceduře, ve které se vyskytuje. Řádek musí mít popisek čáry, na který `GoTo` může odkazovat. Další informace naleznete v tématu [How to: Label Statements](../../../visual-basic/programming-guide/program-structure/how-to-label-statements.md).  
   
 > [!NOTE]
-> `GoTo` statements can make code difficult to read and maintain. Whenever possible, use a control structure instead. For more information, see [Control Flow](../../../visual-basic/programming-guide/language-features/control-flow/index.md).  
+> příkazy `GoTo` mohou ztížit čtení a údržbu kódu. Kdykoli je to možné, použijte místo toho strukturu ovládacího prvku. Další informace najdete v tématu [tok řízení](../../../visual-basic/programming-guide/language-features/control-flow/index.md).  
   
- You cannot use a `GoTo` statement to branch from outside a `For`...`Next`, `For Each`...`Next`, `SyncLock`...`End SyncLock`, `Try`...`Catch`...`Finally`, `With`...`End With`, or `Using`...`End Using` construction to a label inside.  
+ Příkaz `GoTo` nemůžete použít k vytvoření větve mimo `For`...`Next`, `For Each`...`Next`, `SyncLock`...`End SyncLock`, `Try`...`Catch`...`Finally`, `With`...`End With`nebo `Using`...`End Using` konstrukce na návěští uvnitř.  
   
-## <a name="branching-and-try-constructions"></a>Branching and Try Constructions  
- Within a `Try`...`Catch`...`Finally` construction, the following rules apply to branching with the `GoTo` statement.  
+## <a name="branching-and-try-constructions"></a>Větvení a vytváření try  
+ V rámci `Try`...`Catch`...`Finally` konstrukce se následující pravidla vztahují na větvení s příkazem `GoTo`.  
   
-|Block or region|Branching in from outside|Branching out from inside|  
+|Blok nebo oblast|Větvení z vnějšku|Vyskočení z vnitřku|  
 |---------------------|-------------------------------|-------------------------------|  
-|`Try` block|Only from a `Catch` block of the same construction <sup>1</sup>|Only to outside the whole construction|  
-|`Catch` block|Never allowed|Only to outside the whole construction, or to the `Try` block of the same construction <sup>1</sup>|  
-|`Finally` block|Never allowed|Never allowed|  
+|blok `Try`|Pouze z `Catch`ho bloku stejné konstrukce <sup>1</sup>|Jenom mimo celou konstrukci|  
+|blok `Catch`|Nikdy Nepovoleno|Pouze mimo celou konstrukci nebo do `Try`ho bloku stejné konstrukce <sup>1</sup>|  
+|blok `Finally`|Nikdy Nepovoleno|Nikdy Nepovoleno|  
   
- <sup>1</sup> If one `Try`...`Catch`...`Finally` construction is nested within another, a `Catch` block can branch into the `Try` block at its own nesting level, but not into any other `Try` block. A nested `Try`...`Catch`...`Finally` construction must be contained completely in a `Try` or `Catch` block of the construction within which it is nested.  
+ <sup>1</sup> Pokud je jedna `Try`...`Catch`...`Finally` konstrukce vnořená do jiného, `Catch` blok může větvit do bloku `Try` na vlastní úrovni vnoření, ale ne do žádného jiného `Try` bloku. Vnořená `Try`...`Catch`...`Finally` konstrukce musí být zcela obsažena v `Try` nebo `Catch` bloku konstrukce, v rámci které je vnořena.  
   
- The following illustration shows one `Try` construction nested within another. Various branches among the blocks of the two constructions are indicated as valid or invalid.  
+ Následující ilustrace znázorňuje jeden `Try` konstrukce vnořené v rámci jiného. Různé větve mezi bloky dvou konstrukcí jsou označeny jako platné nebo neplatné.  
   
- ![Graphic diagram of branching in Try constructions](./media/goto-statement/try-construction-branching.gif)  
+ ![Grafický diagram větvení v konstrukcích try](./media/goto-statement/try-construction-branching.gif)  
   
 ## <a name="example"></a>Příklad  
- The following example uses the `GoTo` statement to branch to line labels in a procedure.  
+ Následující příklad používá příkaz `GoTo` pro větvení popiskům čáry v proceduře.  
   
  [!code-vb[VbVbalrStatements#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#31)]  
   

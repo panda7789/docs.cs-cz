@@ -13,43 +13,43 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353204"
 ---
 # <a name="introduction-to-com-interop-visual-basic"></a>Představení zprostředkovatele komunikace s objekty COM (Visual Basic)
-The Component Object Model (COM) lets an object expose its functionality to other components and to host applications. While COM objects have been fundamental to Windows programming for many years, applications designed for the common language runtime (CLR) offer many advantages.  
+Model objektu komponenty (COM) umožňuje objektu vystavit svou funkčnost jiným komponentám a hostovat aplikace. I když byly objekty COM zásadní pro programování v systému Windows po celou řadu let, aplikace navržené pro modul CLR (Common Language Runtime) nabízejí mnoho výhod.  
   
- .NET Framework applications will eventually replace those developed with COM. Until then, you may have to use or create COM objects by using Visual Studio. Interoperability with COM, or *COM interop*, enables you to use existing COM objects while transitioning to the .NET Framework at your own pace.  
+ Aplikace .NET Framework nakonec nahradí ta vyvinutá pomocí modelu COM. Do té doby bude pravděpodobně nutné použít nebo vytvořit objekty COM pomocí sady Visual Studio. Interoperabilita s COM nebo *zprostředkovatelem komunikace s objekty*com umožňuje používat existující objekty COM při přechodu na .NET Framework vlastním tempem.  
   
- By using the .NET Framework to create COM components, you can use registration-free COM interop. This lets you control which DLL version is enabled when more than one version is installed on a computer, and lets end users use XCOPY or FTP to copy your application to an appropriate directory on their computer where it can be run. For more information, see [Registration-Free COM Interop](../../../framework/interop/registration-free-com-interop.md).  
+ Pomocí .NET Framework k vytváření komponent modelu COM můžete použít zprostředkovatele komunikace COM bez registrace. To vám umožňuje řídit, která verze knihovny DLL je povolena, pokud je v počítači nainstalována více než jedna verze a umožňuje koncovým uživatelům zkopírovat aplikaci do příslušného adresáře na svém počítači, kde je lze spustit. Další informace najdete v tématu [komunikace s objekty COM bez registrace](../../../framework/interop/registration-free-com-interop.md).  
   
-## <a name="managed-code-and-data"></a>Managed Code and Data  
- Code developed for the .NET Framework is referred to as *managed code*, and contains metadata that is used by the CLR. Data used by .NET Framework applications is called *managed data* because the runtime manages data-related tasks such as allocating and reclaiming memory and performing type checking. By default, Visual Basic .NET uses managed code and data, but you can access the unmanaged code and data of COM objects using interop assemblies (described later on this page).  
+## <a name="managed-code-and-data"></a>Spravovaný kód a data  
+ Kód vyvinutý pro .NET Framework je označován jako *spravovaný kód*a obsahuje metadata, která jsou používána modulem CLR. Data používaná aplikacemi .NET Framework se nazývají *spravovaná data* , protože modul runtime spravuje úlohy související s daty, jako je přidělení a uvolnění paměti a provádění kontroly typu. Ve výchozím nastavení používá Visual Basic .NET spravovaný kód a data, ale můžete získat přístup k nespravovanému kódu a datům objektů COM pomocí definičních sestavení (popsaných dále na této stránce).  
   
 ## <a name="assemblies"></a>Sestavení  
- An assembly is the primary building block of a .NET Framework application. It is a collection of functionality that is built, versioned, and deployed as a single implementation unit containing one or more files. Each assembly contains an assembly manifest.  
+ Sestavení je primární stavební blok aplikace .NET Framework. Je to kolekce funkcí, která je sestavená a nasazená jako jediná jednotka implementace obsahující jeden nebo více souborů. Každé sestavení obsahuje manifest sestavení.  
   
-## <a name="type-libraries-and-assembly-manifests"></a>Type Libraries and Assembly Manifests  
- Type libraries describe characteristics of COM objects, such as member names and data types. Assembly manifests perform the same function for .NET Framework applications. They include information about the following:  
+## <a name="type-libraries-and-assembly-manifests"></a>Knihovny typů a manifesty sestavení  
+ Knihovny typů popisují charakteristiky objektů COM, jako jsou názvy členů a datové typy. Manifesty sestavení provádějí stejnou funkci pro .NET Framework aplikace. Obsahují informace o následujícím:  
   
-- Assembly identity, version, culture, and digital signature.  
+- Identita sestavení, verze, jazyková verze a digitální podpis.  
   
-- Files that make up the assembly implementation.  
+- Soubory, které tvoří implementaci sestavení.  
   
-- Types and resources that make up the assembly. This includes those that are exported from it.  
+- Typy a prostředky, které tvoří sestavení. To zahrnuje ty, které se z něho exportují.  
   
-- Compile-time dependencies on other assemblies.  
+- Závislosti v čase kompilace na jiných sestaveních.  
   
-- Permissions required for the assembly to run correctly.  
+- Oprávnění požadovaná pro správné spuštění sestavení.  
   
- For more information about assemblies and assembly manifests, see [Assemblies in .NET](../../../standard/assembly/index.md).  
+ Další informace o sestaveních a manifestech sestavení naleznete [v tématu sestavení v rozhraní .NET](../../../standard/assembly/index.md).  
   
-### <a name="importing-and-exporting-type-libraries"></a>Importing and Exporting Type Libraries  
- Visual Studio contains a utility, Tlbimp, that lets you import information from a type library into a .NET Framework application. You can generate type libraries from assemblies by using the Tlbexp utility.  
+### <a name="importing-and-exporting-type-libraries"></a>Import a export knihoven typů  
+ Visual Studio obsahuje nástroj Tlbimp, který umožňuje importovat informace z knihovny typů do .NET Framework aplikace. Knihovny typů můžete generovat ze sestavení pomocí nástroje Tlbexp.  
   
- For information about Tlbimp and Tlbexp, see [Tlbimp.exe (Type Library Importer)](../../../framework/tools/tlbimp-exe-type-library-importer.md) and [Tlbexp.exe (Type Library Exporter)](../../../framework/tools/tlbexp-exe-type-library-exporter.md).  
+ Informace o Tlbimp a Tlbexp naleznete v tématu [Tlbimp. exe (import knihovny typů)](../../../framework/tools/tlbimp-exe-type-library-importer.md) a [Tlbexp. exe (typ Exportér knihovny typů)](../../../framework/tools/tlbexp-exe-type-library-exporter.md).  
   
-## <a name="interop-assemblies"></a>Interop Assemblies  
- Interop assemblies are .NET Framework assemblies that bridge between managed and unmanaged code, mapping COM object members to equivalent .NET Framework managed members. Interop assemblies created by Visual Basic .NET handle many of the details of working with COM objects, such as interoperability marshaling.  
+## <a name="interop-assemblies"></a>Definiční sestavení  
+ Sestavení spolupráce jsou .NET Framework sestavení, která přecházejí mezi spravovaným a nespravovaným kódem, mapováním členů objektu COM na ekvivalentní .NET Framework spravovaných členů. Sestavení spolupráce vytvořená Visual Basic .NET zpracovávají mnoho podrobností o práci s objekty COM, jako je zařazování interoperability.  
   
-## <a name="interoperability-marshaling"></a>Interoperability Marshaling  
- All .NET Framework applications share a set of common types that enable interoperability of objects, regardless of the programming language that is used. The parameters and return values of COM objects sometimes use data types that differ from those used in managed code. *Interoperability marshaling* is the process of packaging parameters and return values into equivalent data types as they move to and from COM objects. For more information, see [Interop Marshaling](../../../framework/interop/interop-marshaling.md).  
+## <a name="interoperability-marshaling"></a>Zařazování interoperability  
+ Všechny aplikace .NET Framework sdílejí sadu běžných typů, které umožňují vzájemnou funkční spolupráci objektů bez ohledu na použitý programovací jazyk. Parametry a návratové hodnoty objektů COM někdy používají datové typy, které se liší od těch, které jsou používány ve spravovaném kódu. *Zařazování interoperability* je proces sbalení parametrů a návratové hodnoty do ekvivalentních datových typů při jejich přesunu do objektů COM a z nich. Další informace najdete v tématu [zařazování Interop](../../../framework/interop/interop-marshaling.md).  
   
 ## <a name="see-also"></a>Viz také:
 

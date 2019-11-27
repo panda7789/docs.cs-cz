@@ -18,32 +18,32 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351500"
 ---
 # <a name="mustinherit-visual-basic"></a>MustInherit (Visual Basic)
-Specifies that a class can be used only as a base class and that you cannot create an object directly from it.  
+Určuje, že třídu lze použít pouze jako základní třídu a že přímo z ní nelze vytvořit objekt.  
   
 ## <a name="remarks"></a>Poznámky  
- The purpose of a *base class* (also known as an *abstract class*) is to define functionality that is common to all the classes derived from it. This saves the derived classes from having to redefine the common elements. In some cases, this common functionality is not complete enough to make a usable object, and each derived class defines the missing functionality. In such a case, you want the consuming code to create objects only from the derived classes. You use `MustInherit` on the base class to enforce this.  
+ Účelem *základní třídy* (označované také jako *abstraktní třída*) je definování funkcionality, která je společná pro všechny třídy odvozené od ní. Tím se uloží odvozené třídy, abyste museli předefinovat společné prvky. V některých případech není tato společná funkce dostatečně dokončena, aby provedla použitelný objekt a každá odvozená třída definuje chybějící funkce. V takovém případě chcete, aby kód vytvářel objekty pouze z odvozených tříd. K vykonání je použit `MustInherit` na základní třídě.  
   
- Another use of a `MustInherit` class is to restrict a variable to a set of related classes. You can define a base class and derive all these related classes from it. The base class does not need to provide any functionality common to all the derived classes, but it can serve as a filter for assigning values to variables. If your consuming code declares a variable as the base class, Visual Basic allows you to assign only an object from one of the derived classes to that variable.  
+ Dalším použitím `MustInherit` třídy je omezit proměnnou na sadu souvisejících tříd. Můžete definovat základní třídu a odvodit z ní všechny tyto související třídy. Základní třída nemusí poskytovat žádné funkce společné pro všechny odvozené třídy, ale může sloužit jako filtr pro přiřazení hodnot proměnným. Pokud váš nenáročný kód deklaruje proměnnou jako základní třídu, Visual Basic umožňuje přiřadit pouze objekt z jedné z odvozených tříd do této proměnné.  
   
- The .NET Framework defines several `MustInherit` classes, among them <xref:System.Array>, <xref:System.Enum>, and <xref:System.ValueType>. <xref:System.ValueType> is an example of a base class that restricts a variable. All value types derive from <xref:System.ValueType>. If you declare a variable as <xref:System.ValueType>, you can assign only value types to that variable.  
+ .NET Framework definuje několik tříd `MustInherit`, mezi nimi <xref:System.Array>, <xref:System.Enum>a <xref:System.ValueType>. <xref:System.ValueType> je příklad základní třídy, která omezuje proměnnou. Všechny typy hodnot jsou odvozeny od <xref:System.ValueType>. Pokud deklarujete proměnnou jako <xref:System.ValueType>, můžete této proměnné přiřadit pouze typy hodnot.  
   
-## <a name="rules"></a>Rules  
+## <a name="rules"></a>Pravidla  
   
-- **Declaration Context.** You can use `MustInherit` only in a `Class` statement.  
+- **Kontext deklarace** `MustInherit` lze použít pouze v příkazu `Class`.  
   
-- **Combined Modifiers.** You cannot specify `MustInherit` together with `NotInheritable` in the same declaration.  
+- **Kombinované modifikátory.** Nemůžete zadat `MustInherit` společně s `NotInheritable` ve stejné deklaraci.  
   
 ## <a name="example"></a>Příklad  
- The following example illustrates both forced inheritance and forced overriding. The base class `shape` defines a variable `acrossLine`. The classes `circle` and `square` derive from `shape`. They inherit the definition of `acrossLine`, but they must define the function `area` because that calculation is different for each kind of shape.  
+ Následující příklad znázorňuje vynucenou dědičnost a vynucené přepsání. Základní třída `shape` definuje proměnnou `acrossLine`. Třídy `circle` a `square` jsou odvozeny z `shape`. Dědí definici `acrossLine`, ale musí definovat funkci `area`, protože tento výpočet se liší pro každý druh obrazce.  
   
  [!code-vb[VbVbalrKeywords#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/Class1.vb#2)]  
   
- You can declare `shape1` and `shape2` to be of type `shape`. However, you cannot create an object from `shape` because it lacks the functionality of the function `area` and is marked `MustInherit`.  
+ Můžete deklarovat `shape1` a `shape2` být typu `shape`. Nemůžete však vytvořit objekt z `shape`, protože nemá funkci `area` funkce a je označena `MustInherit`.  
   
- Because they are declared as `shape`, the variables `shape1` and `shape2` are restricted to objects from the derived classes `circle` and `square`. Visual Basic does not allow you to assign any other object to these variables, which gives you a high level of type safety.  
+ Vzhledem k tomu, že jsou deklarovány jako `shape`, proměnné `shape1` a `shape2` jsou omezeny na objekty z odvozených tříd `circle` a `square`. Visual Basic neumožňuje přiřadit žádné další objekty k těmto proměnným, což poskytuje vysokou úroveň bezpečnosti typů.  
   
-## <a name="usage"></a>Použití  
- The `MustInherit` modifier can be used in this context:  
+## <a name="usage"></a>Využití  
+ V tomto kontextu lze použít modifikátor `MustInherit`:  
   
  [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)  
   

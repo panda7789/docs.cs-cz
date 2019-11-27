@@ -24,227 +24,227 @@ ms.locfileid: "74352503"
 ---
 # <a name="statements-in-visual-basic"></a>Příkazy v jazyce Visual Basic
 
-A statement in Visual Basic is a complete instruction. It can contain keywords, operators, variables, constants, and expressions. Each statement belongs to one of the following categories:
+Příkaz v Visual Basic je ucelenou instrukcí. Může obsahovat klíčová slova, operátory, proměnné, konstanty a výrazy. Každý příkaz patří do jedné z následujících kategorií:
 
-- **Declaration Statements**, which name a variable, constant, or procedure, and can also specify a data type.
+- **Příkazy deklarace**, které pojmenují proměnnou, konstantu nebo proceduru a mohou také určovat datový typ.
 
-- **Executable Statements**, which initiate actions. These statements can call a method or function, and they can loop or branch through blocks of code. Executable statements include **Assignment Statements**, which assign a value or expression to a variable or constant.
+- **Spustitelné příkazy**, které iniciují akce. Tyto příkazy mohou volat metodu nebo funkci a mohou cykly nebo větvení prostřednictvím bloků kódu. Spustitelné příkazy zahrnují **příkazy přiřazení**, které přiřazují hodnotu nebo výraz proměnné nebo konstantě.
 
-This topic describes each category. Also, this topic describes how to combine multiple statements on a single line and how to continue a statement over multiple lines.
+V tomto tématu jsou popsány jednotlivé kategorie. Toto téma také popisuje, jak zkombinovat více příkazů na jednom řádku a jak pokračovat v příkazu nad více řádky.
 
-## <a name="declaration-statements"></a>Declaration statements
+## <a name="declaration-statements"></a>Příkazy deklarace
 
-You use declaration statements to name and define procedures, variables, properties, arrays, and constants. When you declare a programming element, you can also define its data type, access level, and scope. For more information, see [Declared Element Characteristics](./declared-elements/declared-element-characteristics.md).
+Příkazy deklarace můžete použít k pojmenování a definování procedur, proměnných, vlastností, polí a konstant. Při deklaraci programovacího prvku můžete také definovat jeho datový typ, úroveň přístupu a rozsah. Další informace naleznete v tématu [deklarované charakteristiky elementu](./declared-elements/declared-element-characteristics.md).
 
-The following example contains three declarations.
+Následující příklad obsahuje tři deklarace.
 
 [!code-vb[VbVbalrStatements#80](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#80)]
 
-The first declaration is the `Sub` statement. Together with its matching `End Sub` statement, it declares a procedure named `applyFormat`. It also specifies that `applyFormat` is `Public`, which means that any code that can refer to it can call it.
+První deklarace je příkaz `Sub`. Spolu s odpovídajícím příkazem `End Sub` deklaruje procedura s názvem `applyFormat`. Určuje také, že `applyFormat` je `Public`, což znamená, že může zavolat libovolný kód, který na něj může odkazovat.
 
-The second declaration is the `Const` statement, which declares the constant `limit`, specifying the `Integer` data type and a value of 33.
+Druhá deklarace je příkaz `Const`, který deklaruje konstantu `limit`a určuje `Integer` datový typ a hodnotu 33.
 
-The third declaration is the `Dim` statement, which declares the variable `thisWidget`. The data type is a specific object, namely an object created from the `Widget` class. You can declare a variable to be of any elementary data type or of any object type that is exposed in the application you are using.
+Třetí deklarace je příkaz `Dim`, který deklaruje proměnnou `thisWidget`. Datový typ je konkrétní objekt, konkrétně objekt vytvořený z třídy `Widget`. Můžete deklarovat proměnnou, která bude mít jakýkoli základní datový typ nebo jakýkoli typ objektu, který je zveřejněn v aplikaci, kterou používáte.
 
-### <a name="initial-values"></a>Initial Values
+### <a name="initial-values"></a>Počáteční hodnoty
 
-When the code containing a declaration statement runs, Visual Basic reserves the memory required for the declared element. If the element holds a value, Visual Basic initializes it to the default value for its data type. For more information, see "Behavior" in [Dim Statement](../../language-reference/statements/dim-statement.md).
+Při spuštění kódu obsahujícího příkaz deklarace Visual Basic vyhrazuje paměť potřebnou pro deklarovaný element. Pokud element obsahuje hodnotu, Visual Basic ji inicializuje na výchozí hodnotu pro svůj datový typ. Další informace naleznete v tématu "Behavior" v [příkazu Dim](../../language-reference/statements/dim-statement.md).
 
-You can assign an initial value to a variable as part of its declaration, as the following example illustrates.
+Můžete přiřadit počáteční hodnotu proměnné jako součást její deklarace, jak ukazuje následující příklad.
 
 [!code-vb[VbVbalrStatements#81](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#81)]
 
-If a variable is an object variable, you can explicitly create an instance of its class when you declare it by using the [New Operator](../../../visual-basic/language-reference/operators/new-operator.md) keyword, as the following example illustrates.
+Pokud je proměnná objektovou proměnnou, můžete explicitně vytvořit instanci své třídy při jejím deklaraci pomocí klíčového slova [New operátor](../../../visual-basic/language-reference/operators/new-operator.md) , jak ukazuje následující příklad.
 
 [!code-vb[VbVbalrStatements#82](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#82)]
 
-Note that the initial value you specify in a declaration statement is not assigned to a variable until execution reaches its declaration statement. Until that time, the variable contains the default value for its data type.
+Všimněte si, že počáteční hodnota, kterou zadáte v příkazu deklarace, není přiřazena proměnné, dokud spuštění nedosáhne příkazu deklarace. Do této doby proměnná obsahuje výchozí hodnotu pro svůj datový typ.
 
-## <a name="executable-statements"></a>Executable statements
+## <a name="executable-statements"></a>Spustitelné příkazy
 
-An executable statement performs an action. It can call a procedure, branch to another place in the code, loop through several statements, or evaluate an expression. An assignment statement is a special case of an executable statement.
+Spustitelný příkaz provede akci. Může zavolat proceduru, větvení na jiné místo v kódu, projít několik příkazů nebo vyhodnotit výraz. Příkaz přiřazení je zvláštní případ spustitelného příkazu.
 
-The following example uses an `If...Then...Else` control structure to run different blocks of code based on the value of a variable. Within each block of code, a `For...Next` loop runs a specified number of times.
+Následující příklad používá strukturu ovládacího prvku `If...Then...Else` ke spouštění různých bloků kódu na základě hodnoty proměnné. V rámci každého bloku kódu spouští cyklus `For...Next` zadaný počet opakování.
 
 [!code-vb[VbVbalrStatements#83](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#83)]
 
-The `If` statement in the preceding example checks the value of the parameter `clockwise`. If the value is `True`, it calls the `spinClockwise` method of `aWidget`. If the value is `False`, it calls the `spinCounterClockwise` method of `aWidget`. The `If...Then...Else` control structure ends with `End If`.
+Příkaz `If` v předchozím příkladu kontroluje hodnotu parametru `clockwise`. Pokud je hodnota `True`, zavolá metodu `spinClockwise` `aWidget`. Pokud je hodnota `False`, zavolá metodu `spinCounterClockwise` `aWidget`. Struktura ovládacího prvku `If...Then...Else` končí `End If`.
 
-The `For...Next` loop within each block calls the appropriate method a number of times equal to the value of the `revolutions` parameter.
+Smyčka `For...Next` v rámci každého bloku volá odpovídající metodu tolikrát, kolikrát se rovná hodnotě parametru `revolutions`.
 
-## <a name="assignment-statements"></a>Assignment statements
+## <a name="assignment-statements"></a>Příkazy přiřazení
 
-Assignment statements carry out assignment operations, which consist of taking the value on the right side of the assignment operator (`=`) and storing it in the element on the left, as in the following example.
+Příkazy přiřazení provádějí operace přiřazení, které se skládají z převzetí hodnoty na pravé straně operátoru přiřazení (`=`) a jejich uložení do elementu vlevo, jako v následujícím příkladu.
 
 [!code-vb[VbVbalrStatements#73](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#73)]
 
-In the preceding example, the assignment statement stores the literal value 42 in the variable `v`.
+V předchozím příkladu příkaz přiřazení ukládá hodnotu literálu 42 v proměnné `v`.
 
-### <a name="eligible-programming-elements"></a>Eligible programming elements
+### <a name="eligible-programming-elements"></a>Oprávněné programovací prvky
 
-The programming element on the left side of the assignment operator must be able to accept and store a value. This means it must be a variable or property that is not [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md), or it must be an array element. In the context of an assignment statement, such an element is sometimes called an *lvalue*, for "left value."
+Programovací element na levé straně operátoru přiřazení musí být schopný přijmout a uložit hodnotu. To znamená, že musí být proměnná nebo vlastnost, která není [jen pro čtení](../../../visual-basic/language-reference/modifiers/readonly.md), nebo musí být prvkem pole. V kontextu příkazu přiřazení se takový prvek někdy označuje jako *l*-hodnota, například "hodnota" Left.
 
-The value on the right side of the assignment operator is generated by an expression, which can consist of any combination of literals, constants, variables, properties, array elements, other expressions, or function calls. Toto dokládá následující příklad.
+Hodnota na pravé straně operátoru přiřazení je vygenerována výrazem, který se může skládat z jakékoli kombinace literálů, konstant, proměnných, vlastností, prvků pole, jiných výrazů nebo volání funkcí. Toto dokládá následující příklad.
 
 [!code-vb[VbVbalrStatements#74](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#74)]
 
-The preceding example adds the value held in variable `y` to the value held in variable `z`, and then adds the value returned by the call to function `findResult`. The total value of this expression is then stored in variable `x`.
+Předchozí příklad přidá hodnotu drženou v proměnné `y` k hodnotě uchovávané v proměnné `z`a poté přidá hodnotu vrácenou voláním funkce `findResult`. Celková hodnota tohoto výrazu je pak uložena v proměnné `x`.
 
-### <a name="data-types-in-assignment-statements"></a>Data types in assignment statements
+### <a name="data-types-in-assignment-statements"></a>Datové typy v příkazech přiřazení
 
-In addition to numeric values, the assignment operator can also assign `String` values, as the following example illustrates.
+Kromě číselných hodnot operátor přiřazení také může přiřadit `String` hodnoty, jak ukazuje následující příklad.
 
 [!code-vb[VbVbalrStatements#75](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#75)]
 
-You can also assign `Boolean` values, using either a `Boolean` literal or a `Boolean` expression, as the following example illustrates.
+Můžete také přiřadit `Boolean` hodnoty pomocí literálu `Boolean` nebo výrazu `Boolean`, jak ukazuje následující příklad.
 
 [!code-vb[VbVbalrStatements#76](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#76)]
 
-Similarly, you can assign appropriate values to programming elements of the `Char`, `Date`, or `Object` data type. You can also assign an object instance to an element declared to be of the class from which that instance is created.
+Podobně můžete přiřadit příslušné hodnoty pro programové prvky `Char`, `Date`nebo `Object` datový typ. Instanci objektu lze také přiřadit elementu, který je deklarován jako třída, ze které je vytvořena instance.
 
-### <a name="compound-assignment-statements"></a>Compound assignment statements
+### <a name="compound-assignment-statements"></a>Složené příkazy přiřazení
 
-*Compound assignment statements* first perform an operation on an expression before assigning it to a programming element. The following example illustrates one of these operators, `+=`, which increments the value of the variable on the left side of the operator by the value of the expression on the right.
+*Složené příkazy přiřazení* nejprve provede operaci na výrazu před přiřazením k programovacímu prvku. Následující příklad ilustruje jeden z těchto operátorů `+=`, který zvyšuje hodnotu proměnné na levé straně operátoru hodnotou výrazu na pravé straně.
 
 [!code-vb[VbVbalrStatements#77](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#77)]
 
-The preceding example adds 1 to the value of `n`, and then stores that new value in `n`. It is a shorthand equivalent of the following statement:
+Předchozí příklad přidá 1 k hodnotě `n`a poté uloží tuto novou hodnotu do `n`. Jedná se o zkrácený ekvivalent následujícího příkazu:
 
 [!code-vb[VbVbalrStatements#78](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#78)]
 
-A variety of compound assignment operations can be performed using operators of this type. For a list of these operators and more information about them, see [Assignment Operators](../../../visual-basic/language-reference/operators/assignment-operators.md).
+Pomocí operátorů tohoto typu lze provádět různé operace složeného přiřazení. Seznam těchto operátorů a další informace o těchto operátorech naleznete v tématu [operátory přiřazení](../../../visual-basic/language-reference/operators/assignment-operators.md).
 
-The concatenation assignment operator (`&=`) is useful for adding a string to the end of already existing strings, as the following example illustrates.
+Operátor přiřazení zřetězení (`&=`) je vhodný pro přidání řetězce na konec již existujících řetězců, jak ukazuje následující příklad.
 
 [!code-vb[VbVbalrStatements#79](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#79)]
 
-### <a name="type-conversions-in-assignment-statements"></a>Type Conversions in Assignment Statements
+### <a name="type-conversions-in-assignment-statements"></a>Převody typů v příkazech přiřazení
 
-The value you assign to a variable, property, or array element must be of a data type appropriate to that destination element. In general, you should try to generate a value of the same data type as that of the destination element. However, some types can be converted to other types during assignment.
+Hodnota, kterou přiřadíte proměnné, vlastnosti nebo prvku pole musí být datového typu, který je vhodný pro daný cílový element. Obecně byste se měli pokusit vygenerovat hodnotu stejného datového typu jako cílový element. Některé typy však lze v průběhu přiřazení převést na jiné typy.
 
-For information on converting between data types, see [Type Conversions in Visual Basic](./data-types/type-conversions.md). In brief, Visual Basic automatically converts a value of a given type to any other type to which it widens. A *widening conversion* is one in that always succeeds at run time and does not lose any data. For example, Visual Basic converts an `Integer` value to `Double` when appropriate, because `Integer` widens to `Double`. For more information, see [Widening and Narrowing Conversions](./data-types/widening-and-narrowing-conversions.md).
+Informace o převodu mezi datovými typy naleznete [v tématu převody typu v Visual Basic](./data-types/type-conversions.md). V krátkém Visual Basic automaticky převede hodnotu daného typu na jiný typ, na který se rozšíří. *Rozšiřující převod* je jeden v, který se vždy zdaří za běhu a neztratí žádná data. Visual Basic například převede hodnotu `Integer` na `Double`, pokud je to vhodné, protože se `Integer` rozšiřuje na `Double`. Další informace najdete v tématu [rozšiřování a zúžení převodů](./data-types/widening-and-narrowing-conversions.md).
 
-*Narrowing conversions* (those that are not widening) carry a risk of failure at run time, or of data loss. You can perform a narrowing conversion explicitly by using a type conversion function, or you can direct the compiler to perform all conversions implicitly by setting `Option Strict Off`. For more information, see [Implicit and Explicit Conversions](./data-types/implicit-and-explicit-conversions.md).
+*Zúžení převodů* (těch, které nejsou rozšiřující) mají riziko selhání za běhu nebo ztrátu dat. Můžete provést zužující převod explicitně pomocí funkce pro převod typu nebo můžete kompilátor přímo nasměrovat tak, aby se všechny převody prováděly nastavením `Option Strict Off`. Další informace naleznete v tématu [implicitní a explicitní převody](./data-types/implicit-and-explicit-conversions.md).
 
-## <a name="putting-multiple-statements-on-one-line"></a>Putting multiple statements on one line
+## <a name="putting-multiple-statements-on-one-line"></a>Vložení více příkazů na jeden řádek
 
-You can have multiple statements on a single line separated by the colon (`:`) character. Toto dokládá následující příklad.
+Na jednom řádku, který je oddělen znakem dvojtečky (`:`), můžete mít více příkazů. Toto dokládá následující příklad.
 
 [!code-vb[VbVbalrStatements#70](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#70)]
 
-Though occasionally convenient, this form of syntax makes your code hard to read and maintain. Thus, it is recommended that you keep one statement to a line.
+V některých případech je to možné, že tato forma syntaxe má těžko čitelný a udržovatelný kód. Proto se doporučuje uchovávat jeden příkaz na řádek.
 
-## <a name="continuing-a-statement-over-multiple-lines"></a>Continuing a statement over multiple lines
+## <a name="continuing-a-statement-over-multiple-lines"></a>Pokračování příkazu nad více řádky
 
-A statement usually fits on one line, but when it is too long, you can continue it onto the next line using a line-continuation sequence, which consists of a space followed by an underscore character (`_`) followed by a carriage return. In the following example, the `MsgBox` executable statement is continued over two lines.
+Příkaz se obvykle vejde na jeden řádek, ale pokud je příliš dlouhý, můžete pokračovat na další řádek pomocí sekvence pokračování řádku, která se skládá z mezery následovaného znakem podtržítka (`_`) následovaným návratem na začátek řádku. V následujícím příkladu `MsgBox` spustitelný příkaz pokračuje více než dvěma řádky.
 
 [!code-vb[VbVbalrStatements#71](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#71)]
 
-### <a name="implicit-line-continuation"></a>Implicit line continuation
+### <a name="implicit-line-continuation"></a>Implicitní pokračování řádku
 
-In many cases, you can continue a statement on the next consecutive line without using the underscore character (`_`). The following syntax elements implicitly continue the statement on the next line of code.
+V mnoha případech můžete pokračovat v příkazu na dalším po sobě jdoucích řádcích bez použití znaku podtržítka (`_`). Následující elementy syntaxe implicitně pokračují v příkazu na dalším řádku kódu.
 
-- After a comma (`,`). Příklad:
+- Za čárkou (`,`). Příklad:
 
    [!code-vb[VbVbalrLineContinuation#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrlinecontinuation/vb/module1.vb#1)]
 
-- After an open parenthesis (`(`) or before a closing parenthesis (`)`). Příklad:
+- Po otevírací závorce (`(`) nebo před pravou závorkou (`)`). Příklad:
 
    [!code-vb[VbVbalrLineContinuation#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrlinecontinuation/vb/module1.vb#2)]
 
-- After an open curly brace (`{`) or before a closing curly brace (`}`). Příklad:
+- Za levou složenou závorku (`{`) nebo před pravou složenou závorkou (`}`). Příklad:
 
     [!code-vb[VbVbalrLineContinuation#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrlinecontinuation/vb/module1.vb#3)]
 
-    For more information, see [Object Initializers: Named and Anonymous Types](./objects-and-classes/object-initializers-named-and-anonymous-types.md) or [Collection Initializers](./collection-initializers/index.md).
+    Další informace naleznete v tématu [Inicializátory objektů: pojmenované a anonymní typy](./objects-and-classes/object-initializers-named-and-anonymous-types.md) nebo [inicializátory kolekce](./collection-initializers/index.md).
 
-- After an open embedded expression (`<%=`) or before the close of an embedded expression (`%>`) within an XML literal. Příklad:
+- Po otevřeném vloženém výrazu (`<%=`) nebo před ukončením vloženého výrazu (`%>`) v rámci literálu XML. Příklad:
 
    [!code-vb[VbVbalrLineContinuation#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrlinecontinuation/vb/module1.vb#4)]
 
-   For more information, see [Embedded Expressions in XML](./xml/embedded-expressions-in-xml.md).
+   Další informace najdete v tématu [vložené výrazy v XML](./xml/embedded-expressions-in-xml.md).
 
-- After the concatenation operator (`&`). Příklad:
+- Po operátoru zřetězení (`&`). Příklad:
 
    [!code-vb[VbVbcnConventions#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/vb/Class1.vb#9)]
 
-   For more information, see [Operators Listed by Functionality](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md).
+   Další informace najdete v tématu [operátory uvedené podle funkcí](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md).
 
-- After assignment operators (`=`, `&=`, `:=`, `+=`, `-=`, `*=`, `/=`, `\=`, `^=`, `<<=`, `>>=`). Příklad:
+- Po přiřazení operátory (`=`, `&=`, `:=`, `+=`, `-=`, `*=`, `/=`, `\=`, `^=`, `<<=`, `>>=`). Příklad:
 
    [!code-vb[VbVbalrLineContinuation#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrlinecontinuation/vb/module1.vb#5)]
 
-   For more information, see [Operators Listed by Functionality](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md).
+   Další informace najdete v tématu [operátory uvedené podle funkcí](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md).
 
-- After binary operators (`+`, `-`, `/`, `*`, `Mod`, `<>`, `<`, `>`, `<=`, `>=`, `^`, `>>`, `<<`, `And`, `AndAlso`, `Or`, `OrElse`, `Like`, `Xor`) within an expression. Příklad:
+- Po binárních operátorech (`+`, `-`, `/`, `*`, `Mod`, `<>`, `<`, `>`, `<=`, `>=`, `^`, `>>`, `<<`) v rámci výrazu.`And``AndAlso``Or``OrElse``Like``Xor` Příklad:
 
    [!code-vb[VbVbalrLineContinuation#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrlinecontinuation/vb/module1.vb#7)]
 
-   For more information, see [Operators Listed by Functionality](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md).
+   Další informace najdete v tématu [operátory uvedené podle funkcí](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md).
 
-- After the `Is` and `IsNot` operators. Příklad:
+- Za operátory `Is` a `IsNot`. Příklad:
 
    [!code-vb[VbVbalrLineContinuation#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrlinecontinuation/vb/module1.vb#8)]
 
-   For more information, see [Operators Listed by Functionality](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md).
+   Další informace najdete v tématu [operátory uvedené podle funkcí](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md).
 
-- After a member qualifier character (`.`) and before the member name. Příklad:
+- Po znaku kvalifikátoru členu (`.`) a před názvem členu. Příklad:
 
    [!code-vb[VbVbalrLineContinuation#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrlinecontinuation/vb/module1.vb#5)]
 
-   However, you must include a line-continuation character (`_`) following a member qualifier character when you are using the `With` statement or supplying values in the initialization list for a type. Consider breaking the line after the assignment operator (for example, `=`) when you are using `With` statements or object initialization lists. Příklad:
+   Při použití příkazu `With` nebo zadání hodnot do inicializačního seznamu pro daný typ je však nutné zahrnout znak pro pokračování řádku (`_`) za znak kvalifikátoru členu. Zvažte rozdělení řádku za operátor přiřazení (například `=`) při použití příkazů `With` nebo seznamů inicializace objektů. Příklad:
 
    [!code-vb[VbVbalrLineContinuation#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrlinecontinuation/vb/module1.vb#14)]
 
-   For more information, see [With...End With Statement](../../../visual-basic/language-reference/statements/with-end-with-statement.md) or [Object Initializers: Named and Anonymous Types](./objects-and-classes/object-initializers-named-and-anonymous-types.md).
+   Další informace najdete v tématu [s... Ukončete příkazy](../../../visual-basic/language-reference/statements/with-end-with-statement.md) nebo [Inicializátory objektů: pojmenované a anonymní typy](./objects-and-classes/object-initializers-named-and-anonymous-types.md).
 
-- After an XML axis property qualifier (`.` or `.@` or `...`). However, you must include a line-continuation character (`_`) when you specify a member qualifier when you are using the `With` keyword. Příklad:
+- Po kvalifikátoru Vlastnosti osy XML (`.` nebo `.@` nebo `...`). Při použití klíčového slova `With` však musíte zahrnout znak pro pokračování řádku (`_`) při zadání kvalifikátoru člena. Příklad:
 
    [!code-vb[VbVbalrLineContinuation#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrlinecontinuation/vb/module1.vb#9)]
 
-   For more information, see [XML Axis Properties](../../../visual-basic/language-reference/xml-axis/index.md).
+   Další informace najdete v tématu [Vlastnosti osy XML](../../../visual-basic/language-reference/xml-axis/index.md).
 
-- After a less-than sign (<) or before a greater-than sign (`>`) when you specify an attribute. Also after a greater-than sign (`>`) when you specify an attribute. However, you must include a line-continuation character (`_`) when you specify assembly-level or module-level attributes. Příklad:
+- Za znaménkem menší než (<) nebo před symbolem větším než (`>`) při určení atributu. I po označení větší než (`>`) při určení atributu. Při zadání atributů na úrovni sestavení nebo modulu je však nutné zahrnout znak pro pokračování řádku (`_`). Příklad:
 
    [!code-vb[VbVbalrLineContinuation#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrlinecontinuation/vb/module1.vb#10)]
 
-   For more information, see [Attributes overview](../../../visual-basic/programming-guide/concepts/attributes/index.md).
+   Další informace najdete v tématu [Přehled atributů](../../../visual-basic/programming-guide/concepts/attributes/index.md).
 
-- Before and after query operators (`Aggregate`, `Distinct`, `From`, `Group By`, `Group Join`, `Join`, `Let`, `Order By`, `Select`, `Skip`, `Skip While`, `Take`, `Take While`, `Where`, `In`, `Into`, `On`, `Ascending`, and `Descending`). You cannot break a line between the keywords of query operators that are made up of multiple keywords (`Order By`, `Group Join`, `Take While`, and `Skip While`). Příklad:
+- Před a po operátorech dotazů (`Aggregate`, `Distinct`, `From`, `Group By`, `Group Join`, `Join`, `Let`, `Order By`, `Select`, `Skip`, `Skip While`, `Take`, `Take While`, `Where`, `In`, `Into`, `On`, `Ascending`a `Descending`). Mezi klíčovými slovy operátorů dotazu, které se skládají z více klíčových slov (`Order By`, `Group Join`, `Take While`a `Skip While`), nelze rozdělit čáru. Příklad:
 
    [!code-vb[VbVbalrLineContinuation#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrlinecontinuation/vb/module1.vb#11)]
 
-   For more information, see [Queries](../../../visual-basic/language-reference/queries/index.md).
+   Další informace najdete v tématu [dotazy](../../../visual-basic/language-reference/queries/index.md).
 
-- After the `In` keyword in a `For Each` statement. Příklad:
+- Za klíčovým slovem `In` v příkazu `For Each`. Příklad:
 
    [!code-vb[VbVbalrLineContinuation#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrlinecontinuation/vb/module1.vb#12)]
 
-   For more information, see [For Each...Next Statement](../../../visual-basic/language-reference/statements/for-each-next-statement.md).
+   Další informace najdete v tématu [for each... Další příkaz](../../../visual-basic/language-reference/statements/for-each-next-statement.md).
 
-- After the `From` keyword in a collection initializer. Příklad:
+- Za klíčovým slovem `From` v inicializátoru kolekce. Příklad:
 
    [!code-vb[VbVbalrLineContinuation#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrlinecontinuation/vb/module1.vb#13)]
 
-   For more information, see [Collection Initializers](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md).
+   Další informace najdete v tématu [inicializátory kolekce](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md).
 
-## <a name="adding-comments"></a>Adding comments
+## <a name="adding-comments"></a>Přidávání komentářů
 
-Source code is not always self-explanatory, even to the programmer who wrote it. To help document their code, therefore, most programmers make liberal use of embedded comments. Comments in code can explain a procedure or a particular instruction to anyone reading or working with it later. Visual Basic ignores comments during compilation, and they do not affect the compiled code.
+Zdrojový kód není vždy samozřejmý ani programátorovi, který ho vytvořil. Aby bylo možné dokumentovat v kódu, proto většina programátorů využívá vložené komentáře. Komentáře v kódu mohou vysvětlit postup nebo konkrétní instrukci pro někoho, kdo nebo s ním pracují později. Visual Basic ignoruje komentáře během kompilace a nemá vliv na zkompilovaný kód.
 
-Comment lines begin with an apostrophe (`'`) or `REM` followed by a space. They can be added anywhere in code, except within a string. To append a comment to a statement, insert an apostrophe or `REM` after the statement, followed by the comment. Comments can also go on their own separate line. The following example demonstrates these possibilities.
+Řádky komentářů začínají apostrofem (`'`) nebo `REM` následovaným mezerou. Lze je přidat kdekoli v kódu, s výjimkou v rámci řetězce. Chcete-li do příkazu připojit komentář, vložte apostrof nebo `REM` za příkazem následovaným komentářem. Komentáře mohou také jít na vlastní samostatný řádek. Následující příklad znázorňuje tyto možnosti.
 
 [!code-vb[VbVbalrStatements#72](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#72)]
 
-## <a name="checking-compilation-errors"></a>Checking compilation errors
+## <a name="checking-compilation-errors"></a>Kontrola chyb kompilace
 
-If, after you type a line of code, the line is displayed with a wavy blue underline (an error message may appear as well), there is a syntax error in the statement. You must find out what is wrong with the statement (by looking in the task list, or hovering over the error with the mouse pointer and reading the error message) and correct it. Until you have fixed all syntax errors in your code, your program will fail to compile correctly.
+Pokud po zadání řádku kódu se řádek zobrazí s modrou vlnovkou (může se zobrazit i chybová zpráva), v příkazu se zobrazí chyba syntaxe. Je třeba zjistit, co je v příkazu chybné, a to tak, že v seznamu úkolů vyhledáte ukazatel myši nebo najedete myší na chybu a napíšete chybovou zprávu) a opravíte ji. Dokud neopravíte všechny chyby syntaxe v kódu, program se nepodaří zkompilovat správně.
 
-## <a name="related-sections"></a>Related sections
+## <a name="related-sections"></a>Související oddíly
 
 |Termín|Definice|
 |---|---|
-|[Operátory přiřazení](../../../visual-basic/language-reference/operators/assignment-operators.md)|Provides links to language reference pages covering assignment operators such as `=`, `*=`, and `&=`.|
-|[Operátory a výrazy](./operators-and-expressions/index.md)|Shows how to combine elements with operators to yield new values.|
-|[Postupy: Přerušení a kombinace příkazů v kódu](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)|Shows how to break a single statement into multiple lines and how to place multiple statements on the same line.|
-|[Postupy: Vytváření popisků příkazů](../../../visual-basic/programming-guide/program-structure/how-to-label-statements.md)|Shows how to label a line of code.|
+|[Operátory přiřazení](../../../visual-basic/language-reference/operators/assignment-operators.md)|Obsahuje odkazy na jazykové referenční stránky, které kryjí operátory přiřazení, jako `=`, `*=`a `&=`.|
+|[Operátory a výrazy](./operators-and-expressions/index.md)|Ukazuje, jak kombinovat prvky s operátory, aby se zadávaly nové hodnoty.|
+|[Postupy: Přerušení a kombinace příkazů v kódu](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)|Ukazuje, jak rozdělit jeden příkaz na více řádků a jak umístit více příkazů na stejný řádek.|
+|[Postupy: Vytváření popisků příkazů](../../../visual-basic/programming-guide/program-structure/how-to-label-statements.md)|Ukazuje, jak označit řádek kódu.|

@@ -9,9 +9,9 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350519"
 ---
-# <a name="using-xslt-to-transform-an-xml-tree-visual-basic"></a>Using XSLT to Transform an XML Tree (Visual Basic)
+# <a name="using-xslt-to-transform-an-xml-tree-visual-basic"></a>Transformace stromu XML pomocí XSLT (Visual Basic)
 
-You can create an XML tree, create an <xref:System.Xml.XmlReader> from the XML tree, create a new document, and create an <xref:System.Xml.XmlWriter> that will write into the new document. Then, you can invoke the XSLT transformation, passing the <xref:System.Xml.XmlReader> and <xref:System.Xml.XmlWriter> to the transformation. After the transformation successfully completes, the new XML tree is populated with the results of the transform.
+Můžete vytvořit strom XML, vytvořit <xref:System.Xml.XmlReader> ze stromu XML, vytvořit nový dokument a vytvořit <xref:System.Xml.XmlWriter>, který bude zapisovat do nového dokumentu. Pak můžete vyvolat transformaci XSLT, předání <xref:System.Xml.XmlReader> a <xref:System.Xml.XmlWriter> transformaci. Po úspěšném dokončení transformace se nový strom XML naplní výsledky transformace.
 
 ## <a name="example"></a>Příklad
 
@@ -52,7 +52,7 @@ End Using
 Console.WriteLine(newTree)
 ```
 
-This example produces the following output:
+Tento příklad vytvoří následující výstup:
 
 ```xml
 <Root>
@@ -65,4 +65,4 @@ This example produces the following output:
 
 - <xref:System.Xml.Linq.XContainer.CreateWriter%2A?displayProperty=nameWithType>
 - <xref:System.Xml.Linq.XNode.CreateReader%2A?displayProperty=nameWithType>
-- [Advanced LINQ to XML Programming (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+- [Rozšířené programování LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

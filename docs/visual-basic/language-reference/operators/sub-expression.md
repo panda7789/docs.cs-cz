@@ -14,7 +14,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350902"
 ---
 # <a name="sub-expression-visual-basic"></a>Sub – výraz (Visual Basic)
-Declares the parameters and code that define a subroutine lambda expression.  
+Deklaruje parametry a kód definující výraz subrutiny lambda.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -30,30 +30,30 @@ End Sub
   
 |Termín|Definice|  
 |---|---|  
-|`parameterlist`|Volitelné. A list of local variable names that represent the parameters of the procedure. The parentheses must be present even when the list is empty. For more information, see [Parameter List](../../../visual-basic/language-reference/statements/parameter-list.md).|  
-|`statement`|Požadováno. A single statement.|  
-|`statements`|Požadováno. A list of statements.|  
+|`parameterlist`|Volitelná. Seznam místních názvů proměnných, které reprezentují parametry procedury. Závorky musí být přítomny i v případě, že je seznam prázdný. Další informace najdete v tématu [seznam parametrů](../../../visual-basic/language-reference/statements/parameter-list.md).|  
+|`statement`|Požadováno. Jediný příkaz.|  
+|`statements`|Požadováno. Seznam příkazů.|  
   
 ## <a name="remarks"></a>Poznámky  
- A *lambda expression* is a subroutine that does not have a name and that executes one or more statements. You can use a lambda expression anywhere that you can use a delegate type, except as an argument to `RemoveHandler`. For more information about delegates, and the use of lambda expressions with delegates, see [Delegate Statement](../../../visual-basic/language-reference/statements/delegate-statement.md) and [Relaxed Delegate Conversion](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md).  
+ *Výraz lambda* je podprogram, který nemá název a který provádí jeden nebo více příkazů. Můžete použít výraz lambda kdekoli, kde můžete použít typ delegáta, s výjimkou argumentu pro `RemoveHandler`. Další informace o delegátech a použití výrazů lambda s delegáty naleznete v tématu [příkaz Delegate](../../../visual-basic/language-reference/statements/delegate-statement.md) a [odlehčený převod delegáta](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md).  
   
 ## <a name="lambda-expression-syntax"></a>Syntaxe výrazu lambda  
- The syntax of a lambda expression resembles that of a standard subroutine. The differences are as follows:  
+ Syntaxe výrazu lambda se podobá standardní podrutině. Rozdíly jsou následující:  
   
-- A lambda expression does not have a name.  
+- Výraz lambda nemá název.  
   
-- A lambda expression cannot have a modifier, such as `Overloads` or `Overrides`.  
+- Výraz lambda nemůže obsahovat modifikátor, například `Overloads` nebo `Overrides`.  
   
-- The body of a single-line lambda expression must be a statement, not an expression. The body can consist of a call to a sub procedure, but not a call to a function procedure.  
+- Tělo výrazu lambda s jedním řádkem musí být příkaz, nikoli výraz. Tělo může být tvořeno voláním procedury Sub, ale nikoli voláním procedury funkce.  
   
-- In a lambda expression, either all parameters must have specified data types or all parameters must be inferred.  
+- Ve výrazu lambda musí mít buď všechny parametry zadané datové typy, nebo musí být všechny parametry odvozeny.  
   
-- Optional and `ParamArray` parameters are not permitted in lambda expressions.  
+- Volitelné a `ParamArray` parametry nejsou ve výrazech lambda povoleny.  
   
-- Generic parameters are not permitted in lambda expressions.  
+- Obecné parametry nejsou ve výrazech lambda povoleny.  
   
 ## <a name="example"></a>Příklad  
- Following is an example of a lambda expression that writes a value to the console. The example shows both the single-line and multiline lambda expression syntax for a subroutine. For more examples, see [Lambda Expressions](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
+ Následuje příklad výrazu lambda, který zapisuje hodnotu do konzoly. V příkladu se zobrazuje jak jednoduchá, tak víceřádková syntaxe výrazu lambda pro podprogram. Další příklady naleznete v tématu [lambda Expressions](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
   
  [!code-vb[VbVbalrLambdas#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#15)]  
   

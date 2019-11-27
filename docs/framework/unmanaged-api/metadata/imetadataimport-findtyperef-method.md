@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437784"
 ---
 # <a name="imetadataimportfindtyperef-method"></a>IMetaDataImport::FindTypeRef – metoda
-Gets a pointer to the TypeRef token for the <xref:System.Type> reference that is in the specified scope and that has the specified name.  
+Získá ukazatel na token TypeRef pro odkaz <xref:System.Type>, který se nachází v zadaném oboru a který má zadaný název.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,22 +37,22 @@ HRESULT FindTypeRef (
   
 ## <a name="parameters"></a>Parametry  
  `tkResolutionScope`  
- [in] A ModuleRef, AssemblyRef, or TypeRef token that specifies the module, assembly, or type, respectively, in which the type reference is defined.  
+ pro Token Odkaz ModuleRef, AssemblyRef nebo TypeRef, který určuje modul, sestavení nebo typ v uvedeném pořadí, v němž je definován odkaz na typ.  
   
  `szName`  
- [in] The name of the type reference to search for.  
+ pro Název odkazu na typ, který chcete vyhledat.  
   
  `ptr`  
- [out] A pointer to the matching TypeRef token.  
+ mimo Ukazatel na shodný token TypeRef.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

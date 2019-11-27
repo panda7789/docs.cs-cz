@@ -16,7 +16,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350203"
 ---
 # <a name="-operator-visual-basic"></a>= – operátor (Visual Basic)
-Assigns a value to a variable or property.  
+Přiřadí hodnotu proměnné nebo vlastnosti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,34 +26,34 @@ variableorproperty = value
   
 ## <a name="parts"></a>Součásti  
  `variableorproperty`  
- Any writable variable or any property.  
+ Jakákoli zapisovatelná proměnná nebo libovolná vlastnost.  
   
  `value`  
- Any literal, constant, or expression.  
+ Libovolný literál, konstanta nebo výraz.  
   
 ## <a name="remarks"></a>Poznámky  
- The element on the left side of the equal sign (`=`) can be a simple scalar variable, a property, or an element of an array. The variable or property cannot be [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md). The `=` operator assigns the value on its right to the variable or property on its left.  
+ Element na levé straně znaménka rovná se (`=`) může být jednoduchá skalární proměnná, vlastnost nebo prvek pole. Proměnná nebo vlastnost nemůže být [jen pro čtení](../../../visual-basic/language-reference/modifiers/readonly.md). Operátor `=` přiřadí hodnotu přímo k proměnné nebo vlastnosti nalevo.  
   
 > [!NOTE]
-> The `=` operator is also used as a comparison operator. For details, see [Comparison Operators](../../../visual-basic/language-reference/operators/comparison-operators.md).  
+> Operátor `=` se používá také jako operátor porovnání. Podrobnosti naleznete v tématu [operátory porovnání](../../../visual-basic/language-reference/operators/comparison-operators.md).  
   
 ## <a name="overloading"></a>Přetížení  
- The `=` operator can be overloaded only as a relational comparison operator, not as an assignment operator. For more information, see [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ Operátor `=` může být přetížen pouze jako relační relační operátor, nikoli jako operátor přiřazení. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Příklad  
- The following example demonstrates the assignment operator. The value on the right is assigned to the variable on the left.  
+ Následující příklad ukazuje operátor přiřazení. Hodnota na pravé straně je přiřazena k proměnné na levé straně.  
   
  [!code-vb[VbVbalrOperators#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#9)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Operátor &=](../../../visual-basic/language-reference/operators/and-assignment-operator.md)
-- [Operátor *=](../../../visual-basic/language-reference/operators/multiplication-assignment-operator.md)
-- [Operátor +=](../../../visual-basic/language-reference/operators/addition-assignment-operator.md)
-- [-= Operator (Visual Basic)](../../../visual-basic/language-reference/operators/subtraction-assignment-operator.md)
-- [/= Operator (Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-assignment-operator.md)
-- [\\= Operator](../../../visual-basic/language-reference/operators/integer-division-assignment-operator.md)
-- [Operátor ^=](../../../visual-basic/language-reference/operators/exponentiation-assignment-operator.md)
+- [&= – operátor](../../../visual-basic/language-reference/operators/and-assignment-operator.md)
+- [*= – operátor](../../../visual-basic/language-reference/operators/multiplication-assignment-operator.md)
+- [+= – operátor](../../../visual-basic/language-reference/operators/addition-assignment-operator.md)
+- [-= – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/subtraction-assignment-operator.md)
+- [/= – Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-assignment-operator.md)
+- [\\= – operátor](../../../visual-basic/language-reference/operators/integer-division-assignment-operator.md)
+- [^= – operátor](../../../visual-basic/language-reference/operators/exponentiation-assignment-operator.md)
 - [Příkazy](../../../visual-basic/programming-guide/language-features/statements.md)
 - [Operátory porovnání](../../../visual-basic/language-reference/operators/comparison-operators.md)
 - [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md)

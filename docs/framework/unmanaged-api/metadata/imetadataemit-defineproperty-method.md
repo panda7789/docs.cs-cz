@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74431520"
 ---
 # <a name="imetadataemitdefineproperty-method"></a>IMetaDataEmit::DefineProperty – metoda
-Creates a property definition for the specified type, with the specified `get` and `set` method accessors, and gets a token to that property definition.  
+Vytvoří definici vlastnosti pro zadaný typ se zadanými přístupovými metodami metody `get` a `set` a získá token této definici vlastnosti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,49 +46,49 @@ HRESULT DefineProperty (
   
 ## <a name="parameters"></a>Parametry  
  `td`  
- [in] The token for class or interface on which the property is being defined.  
+ pro Token třídy nebo rozhraní, na kterém je vlastnost definována.  
   
  `szProperty`  
- [in] The name of the property.  
+ pro Název vlastnosti.  
   
  `dwPropFlags`  
- [in] The property flags.  
+ pro Příznaky vlastností.  
   
  `pvSig`  
- [in] The property signature.  
+ pro Signatura vlastnosti  
   
  `cbSig`  
- [in] The count of bytes in `pvSig`.  
+ pro Počet bajtů v `pvSig`.  
   
  `dwCPlusTypeFlag`  
- [in] The type of the property's default value.  
+ pro Typ výchozí hodnoty vlastnosti  
   
  `pValue`  
- [in] The default value for the property.  
+ pro Výchozí hodnota vlastnosti  
   
  `cchValue`  
- [in] The count of (Unicode) characters in `pValue`.  
+ pro Počet znaků (Unicode) v `pValue`.  
   
  `mdSetter`  
- [in] The method that sets the property value.  
+ pro Metoda, která nastaví hodnotu vlastnosti.  
   
  `mdGetter`  
- [in] The method that gets the property value.  
+ pro Metoda, která získá hodnotu vlastnosti.  
   
  `rmdOtherMethods[]`  
- [in] An array of other methods associated with the property. Terminate the array with an `mdTokenNil`.  
+ pro Pole dalších metod přidružených k vlastnosti. Ukončete pole pomocí `mdTokenNil`.  
   
  `pmdProp`  
- [out] The `mdProperty` token assigned.  
+ mimo Byl přiřazen token `mdProperty`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

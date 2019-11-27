@@ -9,21 +9,21 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353397"
 ---
-# <a name="generation-operations-visual-basic"></a>Generation Operations (Visual Basic)
-Generation refers to creating a new sequence of values.  
+# <a name="generation-operations-visual-basic"></a>Operace generování (Visual Basic)
+Generace odkazuje na vytvoření nové sekvence hodnot.  
   
- The standard query operator methods that perform generation are listed in the following section.  
+ Standardní metody operátoru dotazu, které provádějí generování, jsou uvedeny v následující části.  
   
 ## <a name="methods"></a>Metody  
   
-|Method Name|Popis|Visual Basic Query Expression Syntax|Další informace|  
+|Název metody|Popis|Visual Basic syntaxe výrazu dotazu|Další informace|  
 |-----------------|-----------------|------------------------------------------|----------------------|  
-|DefaultIfEmpty|Replaces an empty collection with a default valued singleton collection.|Nelze použít.|<xref:System.Linq.Enumerable.DefaultIfEmpty%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.DefaultIfEmpty%2A?displayProperty=nameWithType>|  
-|Empty|Returns an empty collection.|Nelze použít.|<xref:System.Linq.Enumerable.Empty%2A?displayProperty=nameWithType>|  
-|Rozsah|Generates a collection that contains a sequence of numbers.|Nelze použít.|<xref:System.Linq.Enumerable.Range%2A?displayProperty=nameWithType>|  
-|Repeat|Generates a collection that contains one repeated value.|Nelze použít.|<xref:System.Linq.Enumerable.Repeat%2A?displayProperty=nameWithType>|  
+|DefaultIfEmpty|Nahradí prázdnou kolekci výchozí oceněnou kolekcí typu singleton.|Není k dispozici.|<xref:System.Linq.Enumerable.DefaultIfEmpty%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.DefaultIfEmpty%2A?displayProperty=nameWithType>|  
+|Prázdné|Vrátí prázdnou kolekci.|Není k dispozici.|<xref:System.Linq.Enumerable.Empty%2A?displayProperty=nameWithType>|  
+|Rozsah|Vygeneruje kolekci, která obsahuje posloupnost čísel.|Není k dispozici.|<xref:System.Linq.Enumerable.Range%2A?displayProperty=nameWithType>|  
+|Repeat|Vygeneruje kolekci, která obsahuje jednu opakovanou hodnotu.|Není k dispozici.|<xref:System.Linq.Enumerable.Repeat%2A?displayProperty=nameWithType>|  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Linq>
-- [Standard Query Operators Overview (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
+- [Přehled standardních operátorů dotazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)

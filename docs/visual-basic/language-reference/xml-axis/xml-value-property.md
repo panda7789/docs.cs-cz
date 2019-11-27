@@ -18,7 +18,7 @@ ms.locfileid: "74349423"
 ---
 # <a name="xml-value-property-visual-basic"></a>Vlastnost hodnoty XML (Visual Basic)
 
-Provides access to the value of the first element of a collection of <xref:System.Xml.Linq.XElement> objects.
+Poskytuje přístup k hodnotě prvního prvku kolekce objektů <xref:System.Xml.Linq.XElement>.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -30,44 +30,44 @@ object.Value
 
 |Termín|Definice|  
 |---|---|  
-|`object`|Požadováno. Collection of <xref:System.Xml.Linq.XElement> objects.|  
+|`object`|Požadováno. Kolekce objektů <xref:System.Xml.Linq.XElement>.|  
 
 ## <a name="return-value"></a>Návratová hodnota
 
- A `String` that contains the value of the first element of the collection, or `Nothing` if the collection is empty.
+ `String`, který obsahuje hodnotu prvního prvku kolekce, nebo `Nothing`, pokud je kolekce prázdná.
 
 ## <a name="remarks"></a>Poznámky
 
- The <xref:System.Xml.Linq.XElement.Value%2A> property makes it easy to access the value of the first element in a collection of <xref:System.Xml.Linq.XElement> objects. This property first checks whether the collection contains at least one object. If the collection is empty, this property returns `Nothing`. Otherwise, this property returns the value of the <xref:System.Xml.Linq.XElement.Value%2A> property of the first element in the collection.
+ Vlastnost <xref:System.Xml.Linq.XElement.Value%2A> usnadňuje přístup k hodnotě prvního prvku v kolekci objektů <xref:System.Xml.Linq.XElement>. Tato vlastnost nejprve ověří, zda kolekce obsahuje alespoň jeden objekt. Pokud je kolekce prázdná, vrátí tato vlastnost `Nothing`. V opačném případě tato vlastnost vrátí hodnotu vlastnosti <xref:System.Xml.Linq.XElement.Value%2A> prvního prvku v kolekci.
 
 > [!NOTE]
-> When you access the value of an XML attribute using the '\@' identifier, the attribute value is returned as a `String` and you do not need to explicitly specify the <xref:System.Xml.Linq.XAttribute.Value%2A> property.
+> Při přístupu k hodnotě atributu XML pomocí identifikátoru '\@' se hodnota atributu vrátí jako `String` a nemusíte explicitně určovat vlastnost <xref:System.Xml.Linq.XAttribute.Value%2A>.
 
- To access other elements in a collection, you can use the XML extension indexer property. For more information, see [Extension Indexer Property](extension-indexer-property.md).
+ Chcete-li získat přístup k dalším prvkům v kolekci, můžete použít vlastnost indexer rozšíření XML. Další informace najdete v tématu [vlastnost indexeru rozšíření](extension-indexer-property.md).
 
 ## <a name="inheritance"></a>Dědičnost
 
- Most users will not have to implement <xref:System.Collections.Generic.IEnumerable%601>, and can therefore ignore this section.
+ Většina uživatelů nebude muset implementovat <xref:System.Collections.Generic.IEnumerable%601>, a proto může tuto část ignorovat.
 
- The <xref:System.Xml.Linq.XElement.Value%2A> property is an extension property for types that implement `IEnumerable(Of XElement)`. The binding of this extension property is like the binding of extension methods: if a type implements one of the interfaces and defines a property that has the name "Value", that property has precedence over the extension property. In other words, this <xref:System.Xml.Linq.XElement.Value%2A> property can be overridden by defining a new property in a class that implements `IEnumerable(Of XElement)`.
+ Vlastnost <xref:System.Xml.Linq.XElement.Value%2A> je vlastnost rozšíření pro typy, které implementují `IEnumerable(Of XElement)`. Vazba této vlastnosti rozšíření se podobá vazbě rozšiřujících metod: Pokud typ implementuje jedno z rozhraní a definuje vlastnost s názvem "value", má tato vlastnost přednost před vlastností Extension. Jinými slovy Tato vlastnost <xref:System.Xml.Linq.XElement.Value%2A> možné přepsat definováním nové vlastnosti ve třídě, která implementuje `IEnumerable(Of XElement)`.
 
 ## <a name="example"></a>Příklad
 
- The following example shows how to use the <xref:System.Xml.Linq.XElement.Value%2A> property to access the first node in a collection of <xref:System.Xml.Linq.XElement> objects. The example uses the child axis property to get the collection of all child nodes named `phone` that are in the `contact` object.
+ Následující příklad ukazuje, jak použít vlastnost <xref:System.Xml.Linq.XElement.Value%2A> pro přístup k prvnímu uzlu v kolekci objektů <xref:System.Xml.Linq.XElement>. V příkladu se používá vlastnost podřízené osy k získání kolekce všech podřízených uzlů s názvem `phone`, které jsou v objektu `contact`.
 
  [!code-vb[VbXMLSamples#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples7.vb#15)]
 
- This code displays the following text:
+ Tento kód zobrazí následující text:
 
  `Phone number: 206-555-0144`
 
 ## <a name="example"></a>Příklad
 
- The following example shows how to get the value of an XML attribute from a collection of <xref:System.Xml.Linq.XAttribute> objects. The example uses the attribute axis property to display the value of the `type` attribute for all of the `phone` elements.
+ Následující příklad ukazuje, jak získat hodnotu atributu XML z kolekce objektů <xref:System.Xml.Linq.XAttribute>. V příkladu se používá vlastnost osa atributu k zobrazení hodnoty atributu `type` pro všechny `phone` prvky.
 
  [!code-vb[VbXMLSamples#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples7.vb#16)]
 
- This code displays the following text:
+ Tento kód zobrazí následující text:
 
  ```console
  home
@@ -80,7 +80,7 @@ object.Value
 - <xref:System.Collections.Generic.IEnumerable%601>
 - [Vlastnosti osy XML](index.md)
 - [Literály XML](../xml-literals/index.md)
-- [Creating XML in Visual Basic](../../programming-guide/language-features/xml/creating-xml.md)
+- [Vytváření XML v Visual Basic](../../programming-guide/language-features/xml/creating-xml.md)
 - [Rozšiřující metody](../../programming-guide/language-features/procedures/extension-methods.md)
 - [Vlastnost indexeru rozšíření](extension-indexer-property.md)
 - [Vlastnost osy podřízeného XML](xml-child-axis-property.md)

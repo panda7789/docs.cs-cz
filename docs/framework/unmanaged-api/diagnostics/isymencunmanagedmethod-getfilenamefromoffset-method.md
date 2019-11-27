@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448651"
 ---
 # <a name="isymencunmanagedmethodgetfilenamefromoffset-method"></a>ISymENCUnmanagedMethod::GetFileNameFromOffset – metoda
-Gets the file name for the line associated with an offset.  
+Získá název souboru pro řádek přidružený k posunu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,22 +38,22 @@ HRESULT GetFileNameFromOffset(
   
 ## <a name="parameters"></a>Parametry  
  `dwOffset`  
- [in] A `ULONG32` that contains the offset.  
+ pro `ULONG32`, který obsahuje posun.  
   
  `cchName`  
- [in] A `ULONG32` that indicates the size of the `szName` buffer.  
+ pro `ULONG32`, která určuje velikost vyrovnávací paměti `szName`.  
   
  `pcchName`  
- [out] A pointer to a `ULONG32` that receives the size, in characters, of the buffer required to contain the file names.  
+ mimo Ukazatel na `ULONG32`, který obdrží velikost vyrovnávací paměti vyžadované k uložení názvů souborů v znacích.  
   
  `szName`  
- [out] The buffer that contains the file names.  
+ mimo Vyrovnávací paměť, která obsahuje názvy souborů.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

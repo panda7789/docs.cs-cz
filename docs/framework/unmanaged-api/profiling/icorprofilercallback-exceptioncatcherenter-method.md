@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445017"
 ---
 # <a name="icorprofilercallbackexceptioncatcherenter-method"></a>ICorProfilerCallback::ExceptionCatcherEnter – metoda
-Notifies the profiler that control is being passed to the appropriate `catch` block.  
+Upozorní profiler, že řízení probíhá předává příslušnému `catch`mu bloku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,26 +35,26 @@ HRESULT ExceptionCatcherEnter(
   
 ## <a name="parameters"></a>Parametry  
  `functionId`  
- [in] The identifier of the function containing the `catch` block.  
+ pro Identifikátor funkce obsahující blok `catch`.  
   
  `objectId`  
- [in] The identifier of the exception being handled.  
+ pro Identifikátor zpracovávané výjimky.  
   
 ## <a name="remarks"></a>Poznámky  
- The `ExceptionCatcherEnter` method is called only if the catch point is in code compiled with the just-in-time (JIT) compiler. An exception that is caught in unmanaged code or in the internal code of the runtime will not call this notification. The `objectId` value is passed again since a garbage collection could have moved the object since the `ExceptionThrown` notification.  
+ Metoda `ExceptionCatcherEnter` je volána pouze v případě, že je bod catch v kódu kompilován s kompilátorem JIT (just-in-time). Výjimka, která je zachycena v nespravovaném kódu nebo v interním kódu modulu runtime, nebude volat toto oznámení. Hodnota `objectId` je znovu předána, protože uvolňování paměti mohlo přesunout objekt od posledního oznámení `ExceptionThrown`.  
   
- The profiler should not block in its implementation of this method because the stack may not be in a state that allows garbage collection, and therefore preemptive garbage collection cannot be enabled. If the profiler blocks here and garbage collection is attempted, the runtime will block until this callback returns.  
+ Profiler by neměl při implementaci této metody blokovat, protože zásobník pravděpodobně není ve stavu, který umožňuje uvolňování paměti, a proto nelze povolit bezstavové uvolňování paměti. Pokud se tady zablokuje Profiler a dojde k pokusu o uvolnění paměti, modul runtime se zablokuje, dokud toto zpětné volání nevrátí.  
   
- The profiler's implementation of this method should not call into managed code or in any way cause a managed-memory allocation.  
+ Implementace této metody v profileru by se neměla volat do spravovaného kódu nebo jakýmkoli způsobem způsobovat alokaci spravované paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

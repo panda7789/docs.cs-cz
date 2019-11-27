@@ -13,8 +13,8 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352346"
 ---
-# <a name="-platform-visual-basic"></a>-platform (Visual Basic)
-Specifies which platform version of common language runtime (CLR) can run the output file.  
+# <a name="-platform-visual-basic"></a>– Platforma (Visual Basic)
+Určuje, která verze platformy modulu CLR (Common Language Runtime) může spustit výstupní soubor.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -22,60 +22,60 @@ Specifies which platform version of common language runtime (CLR) can run the ou
 -platform:{ x86 | x64 | Itanium | arm | anycpu | anycpu32bitpreferred }  
 ```  
   
-## <a name="arguments"></a>Arguments  
+## <a name="arguments"></a>Argumenty  
   
 |Termín|Definice|  
 |---|---|  
-|`x86`|Compiles your assembly to be run by the 32-bit, x86-compatible CLR.|  
-|`x64`|Compiles your assembly to be run by the 64-bit CLR on a computer that supports the AMD64 or EM64T instruction set.|  
-|`Itanium`|Compiles your assembly to be run by the 64-bit CLR on a computer with an Itanium processor.|  
-|`arm`|Compiles your assembly to be run on a computer with an ARM (Advanced RISC Machine) processor.|  
-|`anycpu`|Compiles your assembly to run on any platform. The application will run as a 32-bit application on 32-bit versions of Windows and as a 64-bit application on 64-bit versions of Windows. This flag is the default value.|  
-|`anycpu32bitpreferred`|Compiles your assembly to run on any platform. The application will run as a 32-bit application on both 32-bit and 64-bit versions of Windows. This flag is valid only for executables (.EXE) and requires .NET Framework 4.5.|  
+|`x86`|Zkompiluje sestavení tak, aby bylo spuštěno pomocí 32 CLR kompatibilního s platformou x86.|  
+|`x64`|Zkompiluje sestavení tak, aby bylo spuštěno pomocí 64 CLR na počítači, který podporuje instrukční sady AMD64 nebo EM64T.|  
+|`Itanium`|Zkompiluje sestavení tak, aby bylo spuštěno pomocí 64 CLR v počítači s procesorem Itanium.|  
+|`arm`|Zkompiluje sestavení, které se má spustit na počítači s procesorem ARM (Advanced RISC Machine).|  
+|`anycpu`|Zkompiluje sestavení pro spuštění na libovolné platformě. Aplikace bude spuštěna jako 32ová aplikace v 32 verzích systému Windows a jako aplikace 64 64 v systému Windows v 16bitovém verzích. Tento příznak je výchozí hodnota.|  
+|`anycpu32bitpreferred`|Zkompiluje sestavení pro spuštění na libovolné platformě. Aplikace bude spuštěna jako 32ová aplikace v 32 i v 64 bitových verzí systému Windows. Tento příznak je platný jenom pro spustitelné soubory (. EXE) a vyžaduje .NET Framework 4,5.|  
   
 ## <a name="remarks"></a>Poznámky  
- Use the `-platform` option to specify the type of processor targeted by the output file.  
+ Pomocí možnosti `-platform` určete typ procesoru, který je cílem výstupního souboru.  
   
- In general, .NET Framework assemblies written in Visual Basic will run the same regardless of the platform. However, there are some cases that behave differently on different platforms. These common cases are:  
+ Obecně platí, .NET Framework sestavení zapsaných v Visual Basic budou spuštěna stejně bez ohledu na platformu. Existují však některé případy, které se chovají odlišně na různých platformách. Tyto běžné případy:  
   
-- Structures that contain members that change size depending on the platform, such as any pointer type.  
+- Struktury, které obsahují členy, které mění velikost v závislosti na platformě, jako je například libovolný typ ukazatele.  
   
-- Pointer arithmetic that includes constant sizes.  
+- Aritmetický ukazatel, který obsahuje konstantní velikosti.  
   
-- Incorrect platform invoke or COM declarations that use `Integer` for handles instead of <xref:System.IntPtr>.  
+- Nesprávné vyvolání platformy nebo deklarace COM, které používají `Integer` pro popisovače místo <xref:System.IntPtr>.  
   
-- Casting <xref:System.IntPtr> to `Integer`.  
+- Přetypování <xref:System.IntPtr> do `Integer`.  
   
-- Using platform invoke or COM interop with components that do not exist on all platforms.  
+- Použití volání platformy nebo zprostředkovatele komunikace s objekty COM s komponentami, které neexistují na všech platformách.  
   
- The **-platform** option will mitigate some issues if you know you have made assumptions about the architecture your code will run on. Specifically:  
+ Pokud víte, že jste provedli předpoklady týkající se architektury, na které je váš kód spuštěný, možnost **-platformou** tyto problémy sníží. Určen  
   
-- If you decide to target a 64-bit platform, and the application is run on a 32-bit machine, the error message comes much earlier and is more targeted at the problem than the error that occurs without using this switch.  
+- Pokud se rozhodnete cílit na 64 platformu a aplikace je spuštěná na 32 počítači, chybová zpráva je mnohem starší a cílená na problém je větší než chyba, ke které dojde bez použití tohoto přepínače.  
   
-- If you set the `x86` flag on the option and the application is subsequently run on a 64-bit machine, the application will run in the WOW subsystem instead of running natively.  
+- Pokud u možnosti nastavíte příznak `x86` a aplikace se následně spustí na 64ém počítači, aplikace se spustí v subsystému WOW namísto nativního spuštění.  
   
- On a 64-bit Windows operating system:  
+ V 64 operačním systému Windows:  
   
-- Assemblies compiled with `-platform:x86` will execute on the 32-bit CLR running under WOW64.  
+- Sestavení kompilována s `-platform:x86` budou spouštěna v 32 CLR spuštěném v modulu WOW64.  
   
-- Executables compiled with the `-platform:anycpu` will execute on the 64-bit CLR.  
+- Spustitelné soubory kompilovány s `-platform:anycpu` budou spouštěny v 64 CLR.  
   
-- A DLL compiled with the `-platform:anycpu` will execute on the same CLR as the process into which it loaded.  
+- Knihovna DLL kompilována s `-platform:anycpu` bude spuštěna ve stejném modulu CLR jako proces, do kterého byla načtena.  
   
-- Executables that are compiled with `-platform:anycpu32bitpreferred` will execute on the 32-bit CLR.  
+- Spustitelné soubory, které jsou kompilovány s `-platform:anycpu32bitpreferred`, budou spouštěny v 32 CLR.  
   
- For more information about how to develop an application to run on a 64-bit version of Windows, see [64-bit Applications](../../../framework/64-bit-apps.md).  
+ Další informace o vývoji aplikace pro spuštění v 64 verze systému Windows naleznete v tématu [64-bitové aplikace](../../../framework/64-bit-apps.md).  
   
-### <a name="to-set--platform-in-the-visual-studio-ide"></a>To set -platform in the Visual Studio IDE  
+### <a name="to-set--platform-in-the-visual-studio-ide"></a>Nastavení platformy v integrovaném vývojovém prostředí sady Visual Studio  
   
-1. In **Solution Explorer**, choose the project, open the **Project** menu, and then click **Properties**.  
+1. V **Průzkumník řešení**zvolte projekt, otevřete nabídku **projekt** a klikněte na tlačítko **vlastnosti**.  
   
-2. On the **Compile** tab, select or clear the **Prefer 32-bit** check box, or, in the **Target CPU** list, choose a value.  
+2. Na kartě **kompilovat** zaškrtněte nebo zrušte zaškrtnutí políčka **preferovat 32** , nebo v seznamu **cílový procesor** zvolte hodnotu.  
   
-     For more information, see [Compile Page, Project Designer (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic).  
+     Další informace naleznete v tématu [Kompilovat stránku, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic).  
   
 ## <a name="example"></a>Příklad  
- The following example illustrates how to use the `-platform` compiler option.  
+ Následující příklad ukazuje, jak použít možnost kompilátoru `-platform`.  
   
 ```console
 vbc -platform:x86 myFile.vb  
@@ -83,6 +83,6 @@ vbc -platform:x86 myFile.vb
   
 ## <a name="see-also"></a>Viz také:
 
-- [-target (Visual Basic)](target.md)
-- [Visual Basic Command-Line Compiler](index.md)
+- [-Target (Visual Basic)](target.md)
+- [Visual Basic Kompilátor příkazového řádku](index.md)
 - [Příkazové řádky ukázkové kompilace](sample-compilation-command-lines.md)

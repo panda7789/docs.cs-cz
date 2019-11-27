@@ -13,15 +13,15 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74354032"
 ---
 # <a name="how-to-group-related-constant-values-together-visual-basic"></a>Postupy: Seskupení souvisejících hodnot konstant (Visual Basic)
-An enumeration is the best way to group related constants together. You create an enumeration with the `Enum` statement in the declarations section of a class or a module. For more information, see [How to: Declare an Enumeration](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md).  
+Výčet je nejlepším způsobem, jak seskupovat související konstanty. Vytvoříte výčet pomocí příkazu `Enum` v oddílu deklarace třídy nebo modulu. Další informace naleznete v tématu [How to: Declare a Enumeration](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md).  
   
-### <a name="to-group-related-constant-values"></a>To group related constant values  
+### <a name="to-group-related-constant-values"></a>Seskupení souvisejících konstantních hodnot  
   
-1. Write a declaration that includes a code access level, the `Enum` keyword, and a valid name. This example creates the `Private` enumeration, `temperatureValues`.  
+1. Napište deklaraci, která zahrnuje úroveň přístupu kódu, klíčové slovo `Enum` a platný název. Tento příklad vytvoří výčet `Private` `temperatureValues`.  
   
      [!code-vb[VbEnumsTask#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#21)]  
   
-2. Define the constants in the enumeration. This example creates the `Public` enumeration `temperatureValues` and assigns its values.  
+2. Definujte konstanty ve výčtu. Tento příklad vytvoří `temperatureValues` výčtu `Public` a přiřadí jeho hodnoty.  
   
      [!code-vb[VbEnumsTask#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#1)]  
   

@@ -12,11 +12,11 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350799"
 ---
 # <a name="subscript-out-of-range-visual-basic"></a>Dolní index mimo rozsah (Visual Basic)
-An array subscript is not valid because it falls outside the allowable range. The lowest subscript value for a dimension is always 0, and the highest subscript value is returned by the `GetUpperBound` method for that dimension.  
+Dolní index pole není platný, protože spadá mimo povolený rozsah. Nejnižší hodnota dolního indexu pro dimenzi je vždy 0 a nejvyšší hodnota dolního indexu je vrácena metodou `GetUpperBound` pro tuto dimenzi.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Change the subscript so it falls within the valid range.  
+- Změňte dolní index tak, aby ležel v platném rozsahu.  
   
 ## <a name="see-also"></a>Viz také:
 

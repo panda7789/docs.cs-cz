@@ -15,48 +15,48 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348063"
 ---
 # <a name="math-functions-visual-basic"></a>Matematické funkce (Visual Basic)
-The methods of the <xref:System.Math?displayProperty=nameWithType> class provide trigonometric, logarithmic, and other common mathematical functions.  
+Metody třídy <xref:System.Math?displayProperty=nameWithType> poskytují trigonometrické, logaritmické a další běžné matematické funkce.  
   
 ## <a name="remarks"></a>Poznámky  
- The following table lists methods of the <xref:System.Math?displayProperty=nameWithType> class. You can use these in a Visual Basic program.  
+ Následující tabulka uvádí metody třídy <xref:System.Math?displayProperty=nameWithType>. Můžete je použít v Visual Basic programu.  
   
-|.NET method|Popis|  
+|Metoda .NET|Popis|  
 |---------------------------|-----------------|  
-|<xref:System.Math.Abs%2A>|Returns the absolute value of a number.|  
-|<xref:System.Math.Acos%2A>|Returns the angle whose cosine is the specified number.|  
-|<xref:System.Math.Asin%2A>|Returns the angle whose sine is the specified number.|  
-|<xref:System.Math.Atan%2A>|Returns the angle whose tangent is the specified number.|  
-|<xref:System.Math.Atan2%2A>|Returns the angle whose tangent is the quotient of two specified numbers.|  
-|<xref:System.Math.BigMul%2A>|Returns the full product of two 32-bit numbers.|  
-|<xref:System.Math.Ceiling%2A>|Returns the smallest integral value that's greater than or equal to the specified `Decimal` or `Double`.|  
-|<xref:System.Math.Cos%2A>|Returns the cosine of the specified angle.|  
-|<xref:System.Math.Cosh%2A>|Returns the hyperbolic cosine of the specified angle.|  
-|<xref:System.Math.DivRem%2A>|Returns the quotient of two 32-bit or 64-bit signed integers, and also returns the remainder in an output parameter.|  
-|<xref:System.Math.Exp%2A>|Returns e (the base of natural logarithms) raised to the specified power.|  
-|<xref:System.Math.Floor%2A>|Returns the largest integer that's less than or equal to the specified `Decimal` or `Double` number.|  
-|<xref:System.Math.IEEERemainder%2A>|Returns the remainder that results from the division of a specified number by another specified number.|  
-|<xref:System.Math.Log%2A>|Returns the natural (base e) logarithm of a specified number or the logarithm of a specified number in a specified base.|  
-|<xref:System.Math.Log10%2A>|Returns the base 10 logarithm of a specified number.|  
-|<xref:System.Math.Max%2A>|Returns the larger of two numbers.|  
-|<xref:System.Math.Min%2A>|Returns the smaller of two numbers.|  
-|<xref:System.Math.Pow%2A>|Returns a specified number raised to the specified power.|  
-|<xref:System.Math.Round%2A>|Returns a `Decimal` or `Double` value rounded to the nearest integral value or to a specified number of fractional digits.|  
-|<xref:System.Math.Sign%2A>|Returns an `Integer` value indicating the sign of a number.|  
-|<xref:System.Math.Sin%2A>|Returns the sine of the specified angle.|  
-|<xref:System.Math.Sinh%2A>|Returns the hyperbolic sine of the specified angle.|  
-|<xref:System.Math.Sqrt%2A>|Returns the square root of a specified number.|  
-|<xref:System.Math.Tan%2A>|Returns the tangent of the specified angle.|  
-|<xref:System.Math.Tanh%2A>|Returns the hyperbolic tangent of the specified angle.|  
-|<xref:System.Math.Truncate%2A>|Calculates the integral part of a specified `Decimal` or `Double` number.|  
+|<xref:System.Math.Abs%2A>|Vrátí absolutní hodnotu čísla.|  
+|<xref:System.Math.Acos%2A>|Vrací úhel, jehož kosinus je zadané číslo.|  
+|<xref:System.Math.Asin%2A>|Vrací úhel, jehož sinus je zadané číslo.|  
+|<xref:System.Math.Atan%2A>|Vrací úhel, jehož tangens odpovídá určenému číslu.|  
+|<xref:System.Math.Atan2%2A>|Vrátí úhel, jehož tangens odpovídá podílu dvou zadaných čísel.|  
+|<xref:System.Math.BigMul%2A>|Vrátí úplný součin 2 32 bitů čísel.|  
+|<xref:System.Math.Ceiling%2A>|Vrátí nejmenší celočíselnou hodnotu, která je větší nebo rovna zadanému `Decimal` nebo `Double`.|  
+|<xref:System.Math.Cos%2A>|Vrací kosinus určeného úhlu.|  
+|<xref:System.Math.Cosh%2A>|Vrací hyperbolický kosinus určeného úhlu.|  
+|<xref:System.Math.DivRem%2A>|Vrátí podíl 2 32 nebo 64 celých čísel se znaménkem a vrátí zbytek v parametru Output.|  
+|<xref:System.Math.Exp%2A>|Vrátí hodnotu e (základ přirozeného logaritmu) vyvolanou pro zadanou mocninu.|  
+|<xref:System.Math.Floor%2A>|Vrátí největší celé číslo, které je menší nebo rovno zadanému `Decimal` nebo `Double`mu číslu.|  
+|<xref:System.Math.IEEERemainder%2A>|Vrátí zbytek, který je výsledkem dělení zadaného čísla jiným zadaným číslem.|  
+|<xref:System.Math.Log%2A>|Vrátí přirozený (základ e) logaritmus zadaného čísla nebo logaritmus zadaného čísla v zadaném základu.|  
+|<xref:System.Math.Log10%2A>|Vrátí logaritmus o základu 10 zadaného čísla.|  
+|<xref:System.Math.Max%2A>|Vrátí větší ze dvou čísel.|  
+|<xref:System.Math.Min%2A>|Vrátí menší ze dvou čísel.|  
+|<xref:System.Math.Pow%2A>|Vrátí zadané číslo umocněné na zadané napájení.|  
+|<xref:System.Math.Round%2A>|Vrátí `Decimal` nebo hodnotu `Double` zaokrouhlenou na nejbližší celočíselnou hodnotu nebo na zadaný počet zlomkových číslic.|  
+|<xref:System.Math.Sign%2A>|Vrací hodnotu `Integer` označující znaménko čísla.|  
+|<xref:System.Math.Sin%2A>|Vrací sinus určeného úhlu.|  
+|<xref:System.Math.Sinh%2A>|Vrací hyperbolický sinus určeného úhlu.|  
+|<xref:System.Math.Sqrt%2A>|Vrátí druhou odmocninu určeného čísla.|  
+|<xref:System.Math.Tan%2A>|Vrací tangens určeného úhlu.|  
+|<xref:System.Math.Tanh%2A>|Vrací hyperbolický tangens určeného úhlu.|  
+|<xref:System.Math.Truncate%2A>|Vypočítá integrální část zadaného `Decimal` nebo `Double` číslo.|  
   
- To use these functions without qualification, import the <xref:System.Math?displayProperty=nameWithType> namespace into your project by adding the following code to the top of your source file:  
+ Chcete-li použít tyto funkce bez kvalifikace, importujte <xref:System.Math?displayProperty=nameWithType> obor názvů do projektu přidáním následujícího kódu do horní části zdrojového souboru:  
   
 ```vb
 Imports System.Math  
 ```  
   
 ## <a name="example"></a>Příklad  
- This example uses the <xref:System.Math.Abs%2A> method of the <xref:System.Math> class to compute the absolute value of a number.  
+ Tento příklad používá metodu <xref:System.Math.Abs%2A> třídy <xref:System.Math> k výpočtu absolutní hodnoty čísla.  
   
 ```vb
 ' Returns 50.3.  
@@ -66,7 +66,7 @@ Dim MyNumber2 As Double = Math.Abs(-50.3)
 ```  
   
 ## <a name="example"></a>Příklad  
- This example uses the <xref:System.Math.Atan%2A> method of the <xref:System.Math> class to calculate the value of pi.  
+ Tento příklad používá metodu <xref:System.Math.Atan%2A> třídy <xref:System.Math> k výpočtu hodnoty PI.  
   
 ```vb
 Public Function GetPi() As Double  
@@ -76,7 +76,7 @@ End Function
 ```  
   
 ## <a name="example"></a>Příklad  
- This example uses the <xref:System.Math.Cos%2A> method of the <xref:System.Math> class to return the cosine of an angle.  
+ V tomto příkladu se používá metoda <xref:System.Math.Cos%2A> třídy <xref:System.Math>, která vrátí kosinus úhlu.  
   
 ```vb
 Public Function Sec(ByVal angle As Double) As Double  
@@ -86,7 +86,7 @@ End Function
 ```  
   
 ## <a name="example"></a>Příklad  
- This example uses the <xref:System.Math.Exp%2A> method of the <xref:System.Math> class to return e raised to a power.  
+ V tomto příkladu se používá metoda <xref:System.Math.Exp%2A> třídy <xref:System.Math>, která vrátí hodnotu e umocněnou na mocninu.  
   
 ```vb
 Public Function Sinh(ByVal angle As Double) As Double  
@@ -96,7 +96,7 @@ End Function
 ```  
   
 ## <a name="example"></a>Příklad  
- This example uses the <xref:System.Math.Log%2A> method of the <xref:System.Math> class to return the natural logarithm of a number.  
+ Tento příklad používá metodu <xref:System.Math.Log%2A> třídy <xref:System.Math>, která vrací přirozený logaritmus čísla.  
   
 ```vb
 Public Function Asinh(ByVal value As Double) As Double  
@@ -106,7 +106,7 @@ End Function
 ```  
   
 ## <a name="example"></a>Příklad  
- This example uses the <xref:System.Math.Round%2A> method of the <xref:System.Math> class to round a number to the nearest integer.  
+ Tento příklad používá metodu <xref:System.Math.Round%2A> třídy <xref:System.Math> k zaokrouhlení čísla na nejbližší celé číslo.  
   
 ```vb
 ' Returns 3.  
@@ -114,7 +114,7 @@ Dim MyVar2 As Double = Math.Round(2.8)
 ```  
   
 ## <a name="example"></a>Příklad  
- This example uses the <xref:System.Math.Sign%2A> method of the <xref:System.Math> class to determine the sign of a number.  
+ Tento příklad používá metodu <xref:System.Math.Sign%2A> třídy <xref:System.Math> k určení znaménka čísla.  
   
 ```vb
 ' Returns 1.  
@@ -126,7 +126,7 @@ Dim MySign3 As Integer = Math.Sign(0)
 ```  
   
 ## <a name="example"></a>Příklad  
- This example uses the <xref:System.Math.Sin%2A> method of the <xref:System.Math> class to return the sine of an angle.  
+ Tento příklad používá metodu <xref:System.Math.Sin%2A> třídy <xref:System.Math> k vrácení sinus úhlu.  
   
 ```vb
 Public Function Csc(ByVal angle As Double) As Double  
@@ -136,7 +136,7 @@ End Function
 ```  
   
 ## <a name="example"></a>Příklad  
- This example uses the <xref:System.Math.Sqrt%2A> method of the <xref:System.Math> class to calculate the square root of a number.  
+ Tento příklad používá metodu <xref:System.Math.Sqrt%2A> třídy <xref:System.Math> k výpočtu čtvercového odmocniny čísla.  
   
 ```vb
 ' Returns 2.  
@@ -150,7 +150,7 @@ Dim MySqr4 As Double = Math.Sqrt(-4)
 ```  
   
 ## <a name="example"></a>Příklad  
- This example uses the <xref:System.Math.Tan%2A> method of the <xref:System.Math> class to return the tangent of an angle.  
+ V tomto příkladu se používá metoda <xref:System.Math.Tan%2A> třídy <xref:System.Math>, která vrací tangens úhlu.  
   
 ```vb
 Public Function Ctan(ByVal angle As Double) As Double  
@@ -160,11 +160,11 @@ End Function
 ```  
   
 ## <a name="requirements"></a>Požadavky  
- **Class:** <xref:System.Math>  
+ **Třída:** <xref:System.Math>  
   
- **Namespace:** <xref:System>  
+ **Obor názvů:** <xref:System>  
   
- **Assembly:** mscorlib (in mscorlib.dll)  
+ **Sestavení:** mscorlib (v mscorlib. dll)  
   
 ## <a name="see-also"></a>Viz také:
 

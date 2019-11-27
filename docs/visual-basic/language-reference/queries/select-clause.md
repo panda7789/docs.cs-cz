@@ -16,7 +16,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350412"
 ---
 # <a name="select-clause-visual-basic"></a>Select – klauzule (Visual Basic)
-Defines the result of a query.  
+Definuje výsledek dotazu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,34 +26,34 @@ Select [ var1 = ] fieldName1 [, [ var2 = ] fieldName2 [...] ]
   
 ## <a name="parts"></a>Součásti  
  `var1`  
- Volitelné. An alias that can be used to reference the results of the column expression.  
+ Volitelná. Alias, který lze použít k odkazování na výsledky výrazu sloupce.  
   
  `fieldName1`  
- Požadováno. The name of the field to return in the query result.  
+ Požadováno. Název pole, které se má vrátit do výsledku dotazu.  
   
 ## <a name="remarks"></a>Poznámky  
- You can use the `Select` clause to define the results to return from a query. This enables you to either define the members of a new anonymous type that is created by a query, or to target the members of a named type that is returned by a query. The `Select` clause is not required for a query. If no `Select` clause is specified, the query will return a type based on all members of the range variables identified for the current scope. For more information, see [Anonymous Types](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md). When a query creates a named type, it will return a result of type <xref:System.Collections.Generic.IEnumerable%601> where `T` is the created type.  
+ Klauzuli `Select` můžete použít k definování výsledků, které se mají vrátit z dotazu. To vám umožňuje definovat členy nového anonymního typu, který je vytvořen dotazem, nebo pro cílení členů pojmenovaného typu, který je vrácen dotazem. Klauzule `Select` není pro dotaz vyžadována. Pokud není zadána žádná klauzule `Select`, dotaz vrátí typ založený na všech členech proměnných rozsahu určených pro aktuální obor. Další informace najdete v tématu [anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md). Když dotaz vytvoří pojmenovaný typ, vrátí výsledek typu <xref:System.Collections.Generic.IEnumerable%601>, kde `T` je vytvořený typ.  
   
- The `Select` clause can reference any variables in the current scope. This includes range variables identified in the `From` clause (or `From` clauses). It also includes any new variables created with an alias by the `Aggregate`, `Let`, `Group By`, or `Group Join` clauses, or variables from a previous `Select` clause in the query expression. The `Select` clause can also include static values. For example, the following code example shows a query expression in which the `Select` clause defines the query result as a new anonymous type with four members: `ProductName`, `Price`, `Discount`, and `DiscountedPrice`. The `ProductName` and `Price` member values are taken from the product range variable that is defined in the `From` clause. The `DiscountedPrice` member value is calculated in the `Let` clause. The `Discount` member is a static value.  
+ Klauzule `Select` se může odkazovat na jakékoli proměnné v aktuálním oboru. To zahrnuje proměnné rozsahu identifikované v klauzuli `From` (nebo klauzule `From`). Obsahuje také všechny nové proměnné, které jsou vytvořeny s aliasem pomocí klauzulí `Aggregate`, `Let`, `Group By`nebo `Group Join`, nebo proměnných z předchozí klauzule `Select` ve výrazu dotazu. Klauzule `Select` může také zahrnovat statické hodnoty. Například následující příklad kódu ukazuje výraz dotazu, ve kterém klauzule `Select` definuje výsledek dotazu jako nový anonymní typ se čtyřmi členy: `ProductName`, `Price`, `Discount`a `DiscountedPrice`. Hodnoty členů `ProductName` a `Price` jsou pořízeny z proměnné rozsahu produktu, která je definována v klauzuli `From`. Hodnota člena `DiscountedPrice` je vypočítána v klauzuli `Let`. Člen `Discount` je statická hodnota.  
   
  [!code-vb[VbSimpleQuerySamples#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#27)]  
   
- The `Select` clause introduces a new set of range variables for subsequent query clauses, and previous range variables are no longer in scope. The last `Select` clause in a query expression determines the return value of the query. For example, the following query returns the company name and order ID for every customer order for which the total exceeds 500. The first `Select` clause identifies the range variables for the `Where` clause and the second `Select` clause. The second `Select` clause identifies the values returned by the query as a new anonymous type.  
+ Klauzule `Select` zavádí novou sadu proměnných rozsahu pro následné klauzule dotazu a předchozí proměnné rozsahu již nejsou v oboru. Poslední klauzule `Select` ve výrazu dotazu určuje návratovou hodnotu dotazu. Například následující dotaz vrátí název společnosti a ID objednávky pro každé pořadí zákazníků, pro které součet převyšuje 500. Klauzule First `Select` identifikuje proměnné rozsahu pro klauzuli `Where` a druhou klauzuli `Select`. Druhá klauzule `Select` identifikuje hodnoty vrácené dotazem jako nový anonymní typ.  
   
  [!code-vb[VbSimpleQuerySamples#28](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#28)]  
   
- If the `Select` clause identifies a single item to return, the query expression returns a collection of the type of that single item. If the `Select` clause identifies multiple items to return, the query expression returns a collection of a new anonymous type, based on the selected items. For example, the following two queries return collections of two different types based on the `Select` clause. The first query returns a collection of company names as strings. The second query returns a collection of `Customer` objects populated with the company names and address information.  
+ Pokud klauzule `Select` identifikuje jednu položku, která se má vrátit, výraz dotazu vrátí kolekci typu dané jedné položky. Pokud klauzule `Select` identifikuje více položek, které mají být vráceny, výraz dotazu vrátí kolekci nového anonymního typu na základě vybraných položek. Například následující dva dotazy vrátí kolekce dvou různých typů na základě klauzule `Select`. První dotaz vrátí kolekci názvů společností jako řetězce. Druhý dotaz vrátí kolekci `Customer` objektů vyplněných názvy společnosti a informacemi o adrese.  
   
  [!code-vb[VbSimpleQuerySamples#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#29)]  
   
 ## <a name="example"></a>Příklad  
- The following query expression uses a `From` clause to declare a range variable `cust` for the `customers` collection. The `Select` clause selects the customer name and ID value and populates the `CompanyName` and `CustomerID` columns of the new range variable. The `For Each` statement loops over each returned object and displays the `CompanyName` and `CustomerID` columns for each record.  
+ Následující výraz dotazu používá klauzuli `From` k deklaraci proměnné rozsahu `cust` pro kolekci `customers`. Klauzule `Select` vybírá název a hodnotu ID zákazníka a naplní sloupce `CompanyName` a `CustomerID` nové proměnné rozsahu. Příkaz `For Each` projde každým vráceným objektem a zobrazí `CompanyName` a `CustomerID` sloupců pro každý záznam.  
   
  [!code-vb[VbSimpleQuerySamples#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#30)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Introduction to LINQ in Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Úvod do jazyka LINQ v Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
 - [Dotazy](../../../visual-basic/language-reference/queries/index.md)
 - [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)
 - [Klauzule Where](../../../visual-basic/language-reference/queries/where-clause.md)

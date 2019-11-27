@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74426721"
 ---
 # <a name="imetadataimport2enumgenericparamconstraints-method"></a>IMetaDataImport2::EnumGenericParamConstraints – metoda
-Gets an enumerator for an array of generic parameter constraints associated with the generic parameter represented by the specified token.  
+Získá enumerátor pro pole omezení obecného parametru přidruženého k obecnému parametru reprezentovanému zadaným tokenem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,35 +39,35 @@ HRESULT EnumGenericParamConstraints (
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [in, out] A pointer to the enumerator.  
+ [in, out] Ukazatel na enumerátor.  
   
  `tk`  
- [in]   A token that represents the generic parameter whose constraints are to be enumerated.  
+ pro   Token, který představuje obecný parametr, jehož omezení mají být vyčíslena.  
   
  `rGenericParamConstraints`  
- [out] The array of generic parameter constraints to enumerate.  
+ mimo Pole omezení obecného parametru pro zobrazení výčtu.  
   
  `cMax`  
- [in]   The requested maximum number of tokens to place in `rGenericParamConstraints`.  
+ pro   Požadovaný maximální počet tokenů, které mají být umístěny v `rGenericParamConstraints`.  
   
  `pcGenericParamConstraints`  
- [out] A pointer to the number of tokens placed in `rGenericParamConstraints`.  
+ mimo Ukazatel na počet tokenů umístěných v `rGenericParamConstraints`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumGenericParameterConstraints` returned successfully.|  
-|`S_FALSE`|`phEnum` has no member elements. In this case, `pcGenericParameterConstraints` is set to 0 (zero).|  
+|`S_OK`|`EnumGenericParameterConstraints` byla úspěšně vrácena.|  
+|`S_FALSE`|`phEnum` nemá žádné prvky členů. V tomto případě je `pcGenericParameterConstraints` nastaveno na hodnotu 0 (nula).|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

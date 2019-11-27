@@ -13,13 +13,13 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353778"
 ---
-# <a name="option-keyword-statement"></a>Option \<keyword> Statement
-Introduces a statement that specifies a compiler option that applies to the entire source file.  
+# <a name="option-keyword-statement"></a>Option \<– klíčové slovo > příkaz
+Zavádí příkaz, který určuje možnost kompilátoru, která se vztahuje k celému zdrojovému souboru.  
   
 ## <a name="remarks"></a>Poznámky  
- The compiler options can control whether all variables must be explicitly declared, whether narrowing type conversions must be explicit, or whether strings should be compared as text or as binary quantities.  
+ Možnosti kompilátoru mohou určovat, zda všechny proměnné musí být explicitně deklarovány, zda mají být převody zúžení typu explicitní, nebo zda mají být řetězce porovnány jako text nebo jako binární množství.  
   
- The `Option` keyword can be used in these contexts:  
+ Klíčové slovo `Option` lze použít v těchto kontextech:  
   
  [Příkaz Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md)  
   

@@ -9,25 +9,25 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349113"
 ---
-# <a name="using-async-for-file-access-visual-basic"></a>Using Async for File Access (Visual Basic)
-You can use the Async feature to access files. By using the Async feature, you can call into asynchronous methods without using callbacks or splitting your code across multiple methods or lambda expressions. To make synchronous code asynchronous, you just call an asynchronous method instead of a synchronous method and add a few keywords to the code.  
+# <a name="using-async-for-file-access-visual-basic"></a>Použití Async pro přístup k souborům (Visual Basic)
+K přístupu k souborům můžete použít funkci Async. Pomocí asynchronní funkce můžete zavolat do asynchronních metod bez použití zpětných volání nebo rozdělení kódu napříč více metodami nebo lambda výrazy. Chcete-li synchronní asynchronní kód, stačí zavolat asynchronní metodu namísto synchronní metody a přidat k kódu několik klíčových slov.  
   
- You might consider the following reasons for adding asynchrony to file access calls:  
+ Při přidávání asynchronii do volání přístupu k souborům můžete zvážit následující důvody:  
   
-- Asynchrony makes UI applications more responsive because the UI thread that launches the operation can perform other work. If the UI thread must execute code that takes a long time (for example, more than 50 milliseconds), the UI may freeze until the I/O is complete and the UI thread can again process keyboard and mouse input and other events.  
+- Asynchronii umožňuje aplikacím uživatelského rozhraní lépe reagovat, protože vlákno uživatelského rozhraní, které spouští operaci, může provádět i jinou práci. Pokud vlákno uživatelského rozhraní musí spustit kód, který trvá dlouhou dobu (například více než 50 milisekund), může uživatelské rozhraní zablokovat až do dokončení vstupně-výstupních operací a vlákno uživatelského rozhraní může znovu zpracovat vstupy klávesnice a myši a další události.  
   
-- Asynchrony improves the scalability of ASP.NET and other server-based applications by reducing the need for threads. If the application uses a dedicated thread per response and a thousand requests are being handled simultaneously, a thousand threads are needed. Asynchronous operations often don’t need to use a thread during the wait. They use the existing I/O completion thread briefly at the end.  
+- Asynchronii zlepšuje škálovatelnost ASP.NET a dalších serverových aplikací tím, že snižuje nutnost vláken. Pokud aplikace používá vyhrazené vlákno na reakci a tisíce požadavků jsou zpracovávány současně, je zapotřebí tisíce vláken. Asynchronní operace často nepotřebují použít vlákno během čekání. Na konci se krátce používají existující vlákna dokončení v/v.  
   
-- The latency of a file access operation might be very low under current conditions, but the latency may greatly increase in the future. For example, a file may be moved to a server that's across the world.  
+- Latence operace přístupu k souboru může být v rámci současných podmínek velmi nízká, ale latence může výrazně zvýšit i v budoucnu. Soubor může být například přesunut na server, který je na celém světě.  
   
-- The added overhead of using the Async feature is small.  
+- Přidaná režie použití asynchronní funkce je malá.  
   
-- Asynchronous tasks can easily be run in parallel.  
+- Asynchronní úlohy lze snadno spustit paralelně.  
   
-## <a name="running-the-examples"></a>Running the Examples  
- To run the examples in this topic, you can create a **WPF Application** or a **Windows Forms Application** and then add a **Button**. In the button's `Click` event, add a call to the first method in each example.  
+## <a name="running-the-examples"></a>Spuštění příkladů  
+ Chcete-li spustit příklady v tomto tématu, můžete vytvořit **aplikaci WPF** nebo **aplikaci model Windows Forms** a pak přidat **tlačítko**. V události `Click` tlačítka přidejte do prvního příkladu volání první metody.  
   
- In the following examples, include the following `Imports` statements.  
+ V následujících příkladech zahrňte následující příkazy `Imports`.  
   
 ```vb  
 Imports System  
@@ -38,13 +38,13 @@ Imports System.Text
 Imports System.Threading.Tasks  
 ```  
   
-## <a name="use-of-the-filestream-class"></a>Use of the FileStream Class  
- The examples in this topic use the <xref:System.IO.FileStream> class, which has an option that causes asynchronous I/O to occur at the operating system level. By using this option, you can avoid blocking a ThreadPool thread in many cases. To enable this option, you specify the `useAsync=true` or `options=FileOptions.Asynchronous` argument in the constructor call.  
+## <a name="use-of-the-filestream-class"></a>Použití třídy FileStream  
+ Příklady v tomto tématu používají třídu <xref:System.IO.FileStream>, která má možnost, která způsobí, že asynchronní vstupně-výstupní operace proběhne na úrovni operačního systému. Pomocí této možnosti se můžete vyhnout blokování vlákna fondu vláken v mnoha případech. Tuto možnost povolíte zadáním argumentu `useAsync=true` nebo `options=FileOptions.Asynchronous` ve volání konstruktoru.  
   
- You can’t use this option with <xref:System.IO.StreamReader> and <xref:System.IO.StreamWriter> if you open them directly by specifying a file path. However, you can use this option if you provide them a <xref:System.IO.Stream> that the <xref:System.IO.FileStream> class opened. Note that asynchronous calls are faster in UI apps even if a ThreadPool thread is blocked, because the UI thread isn’t blocked during the wait.  
+ Tuto možnost nelze použít u <xref:System.IO.StreamReader> a <xref:System.IO.StreamWriter>, pokud je otevřete přímo zadáním cesty k souboru. Tuto možnost však můžete použít, pokud jim poskytnete <xref:System.IO.Stream>, že se třída <xref:System.IO.FileStream> otevřela. Všimněte si, že asynchronní volání jsou rychlejší v aplikacích uživatelského rozhraní i v případě, že je vlákno nevláken blokované, protože během čekání není zablokované vlákno uživatelského rozhraní.  
   
-## <a name="writing-text"></a>Writing Text  
- The following example writes text to a file. At each await statement, the method immediately exits. When the file I/O is complete, the method resumes at the statement that follows the await statement. Note that the async modifier is in the definition of methods that use the await statement.  
+## <a name="writing-text"></a>Zápis textu  
+ Následující příklad zapisuje text do souboru. V každém příkazu await se metoda okamžitě ukončí. Po dokončení vstupně-výstupních operací se metoda obnoví v příkazu, který následuje po příkazu await. Všimněte si, že modifikátor Async je v definici metod, které používají příkaz await.  
   
 ```vb  
 Public Async Sub ProcessWrite()  
@@ -66,17 +66,17 @@ Private Async Function WriteTextAsync(filePath As String, text As String) As Tas
 End Function  
 ```  
   
- The original example has the statement `Await sourceStream.WriteAsync(encodedText, 0, encodedText.Length)`, which is a contraction of the following two statements:  
+ Původní příklad obsahuje příkaz `Await sourceStream.WriteAsync(encodedText, 0, encodedText.Length)`, což je kontrakt následujících dvou příkazů:  
   
 ```vb  
 Dim theTask As Task = sourceStream.WriteAsync(encodedText, 0, encodedText.Length)  
 Await theTask  
 ```  
   
- The first statement returns a task and causes file processing to start. The second statement with the await causes the method to immediately exit and return a different task. When the file processing later completes, execution returns to the statement that follows the await. For more information, see  [Control Flow in Async Programs (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md).  
+ První příkaz vrátí úlohu a způsobí, že se zpracování souboru spustí. Druhý příkaz s operátorem await způsobí, že metoda okamžitě ukončí a vrátí jiný úkol. Po dokončení zpracování souboru se spuštění vrátí do příkazu, který následuje za operátorem await. Další informace najdete v tématu [řízení toku v asynchronních programech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md).  
   
-## <a name="reading-text"></a>Reading Text  
- The following example reads text from a file. The text is buffered and, in this case, placed into a <xref:System.Text.StringBuilder>. Unlike in the previous example, the evaluation of the await produces a value. The <xref:System.IO.Stream.ReadAsync%2A> method returns a <xref:System.Threading.Tasks.Task>\<<xref:System.Int32>>, so the evaluation of the await produces an `Int32` value (`numRead`) after the operation completes. For more information, see [Async Return Types (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md).  
+## <a name="reading-text"></a>Čtení textu  
+ Následující příklad přečte text ze souboru. Text je uložen do vyrovnávací paměti a v tomto případě je umístěn do <xref:System.Text.StringBuilder>. Na rozdíl od předchozího příkladu vyhodnocení await vytvoří hodnotu. Metoda <xref:System.IO.Stream.ReadAsync%2A> vrátí <xref:System.Threading.Tasks.Task>\<<xref:System.Int32>>, takže hodnocení Await vytvoří `Int32` hodnotu (`numRead`) po dokončení operace. Další informace naleznete v tématu [Async Return Types (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md).  
   
 ```vb  
 Public Async Sub ProcessRead()  
@@ -117,12 +117,12 @@ Private Async Function ReadTextAsync(filePath As String) As Task(Of String)
 End Function  
 ```  
   
-## <a name="parallel-asynchronous-io"></a>Parallel Asynchronous I/O  
- The following example demonstrates parallel processing by writing 10 text files. For each file, the <xref:System.IO.Stream.WriteAsync%2A> method returns a task that is then added to a list of tasks. The `Await Task.WhenAll(tasks)` statement exits the method and resumes within the method when file processing is complete for all of the tasks.  
+## <a name="parallel-asynchronous-io"></a>Paralelní asynchronní vstupně-výstupní operace  
+ Následující příklad znázorňuje paralelní zpracování zápisem 10 textových souborů. Pro každý soubor metoda <xref:System.IO.Stream.WriteAsync%2A> vrátí úkol, který je poté přidán do seznamu úkolů. Příkaz `Await Task.WhenAll(tasks)` ukončí metodu a pokračuje v rámci metody, když je zpracování souborů dokončeno pro všechny úlohy.  
   
- The example closes all <xref:System.IO.FileStream> instances in a `Finally` block after the tasks are complete. If each `FileStream` was instead created in a `Imports` statement, the `FileStream` might be disposed of before the task was complete.  
+ Tento příklad uzavře všechny instance <xref:System.IO.FileStream> v bloku `Finally` po dokončení úkolů. Pokud byl každý `FileStream` vytvořen v příkazu `Imports`, `FileStream` může být odstraněn před dokončením úkolu.  
   
- Note that any performance boost is almost entirely from the parallel processing and not the asynchronous processing. The advantages of asynchrony are that it doesn’t tie up multiple threads, and that it doesn’t tie up the user interface thread.  
+ Všimněte si, že veškeré zvýšení výkonu je prakticky zcela úplné od paralelního zpracování, nikoli z asynchronního zpracování. Výhody asynchronii jsou, že neodkazují na více vláken a že nevyužívají vlákno uživatelského rozhraní.  
   
 ```vb  
 Public Async Sub ProcessWriteMult()  
@@ -158,10 +158,10 @@ Public Async Sub ProcessWriteMult()
 End Sub  
 ```  
   
- When using the <xref:System.IO.Stream.WriteAsync%2A> and <xref:System.IO.Stream.ReadAsync%2A> methods, you can specify a <xref:System.Threading.CancellationToken>, which you can use to cancel the operation mid-stream. For more information, see [Fine-Tuning Your Async Application (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md) and [Cancellation in Managed Threads](../../../../standard/threading/cancellation-in-managed-threads.md).  
+ Při použití metod <xref:System.IO.Stream.WriteAsync%2A> a <xref:System.IO.Stream.ReadAsync%2A> můžete zadat <xref:System.Threading.CancellationToken>, který můžete použít k zrušení operace střední-Stream. Další informace najdete v tématu [jemné ladění asynchronní aplikace (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md) a [zrušení ve spravovaných vláknech](../../../../standard/threading/cancellation-in-managed-threads.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Asynchronous Programming with Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
-- [Async Return Types (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md)
-- [Control Flow in Async Programs (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md)
+- [Asynchronní programování s modifikátorem Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
+- [Asynchronní návratové typy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md)
+- [Řízení toku v asynchronních programech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md)

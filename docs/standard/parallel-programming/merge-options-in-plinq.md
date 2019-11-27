@@ -16,52 +16,52 @@ ms.lasthandoff: 11/20/2019
 ms.locfileid: "74203990"
 ---
 # <a name="merge-options-in-plinq"></a>Možnosti sloučení v PLINQ
-When a query is executing as parallel, PLINQ partitions the source sequence so that multiple threads can work on different parts concurrently, typically on separate threads. If the results are to be consumed on one thread, for example, in a `foreach` (`For Each` in Visual Basic) loop, then the results from every thread must be merged back into one sequence. The kind of merge that PLINQ performs depends on the operators that are present in the query. For example, operators that impose a new order on the results must buffer all elements from all threads. From the perspective of the consuming thread (which is also that of the application user) a fully buffered query might run for a noticeable period of time before it produces its first result. Other operators, by default, are partially buffered; they yield their results in batches. One operator, <xref:System.Linq.ParallelEnumerable.ForAll%2A> is not buffered by default. It yields all elements from all threads immediately.  
+Když je dotaz spuštěn paralelně, PLINQ rozdělí zdrojové sekvence tak, aby více vláken mohlo pracovat souběžně na různých částech, obvykle v samostatných vláknech. Pokud mají být výsledky spotřebovány v jednom vlákně, například ve smyčce `foreach` (`For Each` in Visual Basic), pak výsledky z každého vlákna musí být sloučeny zpět do jedné sekvence. Typ sloučení, který PLINQ provede, závisí na operátorech, které jsou k dispozici v dotazu. Například operátory, které mají novou objednávku pro výsledky, musí ukládat do vyrovnávací paměti všechny prvky ze všech vláken. Z perspektivy nenáročného vlákna (což je také uživatel aplikace) může být spuštěný dotaz s úplnými vyrovnávacími pamětmi, který je možné určit včas před tím, než vytvoří svůj první výsledek. Jiné operátory jsou ve výchozím nastavení částečně uloženy do vyrovnávací paměti. poskytují své výsledky v dávkách. Jeden operátor <xref:System.Linq.ParallelEnumerable.ForAll%2A> ve výchozím nastavení neukládá do vyrovnávací paměti. Poskytuje všechny prvky ze všech vláken okamžitě.  
   
- By using the <xref:System.Linq.ParallelEnumerable.WithMergeOptions%2A> method, as shown in the following example, you can provide a hint to PLINQ that indicates what kind of merging to perform.  
+ Pomocí metody <xref:System.Linq.ParallelEnumerable.WithMergeOptions%2A>, jak je znázorněno v následujícím příkladu, můžete poskytnout nápovědu pro PLINQ, který označuje, jaký typ sloučení provést.  
   
  [!code-csharp[PLINQ#26](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqsamples.cs#26)]
  [!code-vb[PLINQ#26](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinq2_vb.vb#26)]  
   
- For the complete example, see [How to: Specify Merge Options in PLINQ](../../../docs/standard/parallel-programming/how-to-specify-merge-options-in-plinq.md).  
+ Úplný příklad naleznete v tématu [How to: Zadejte možnosti sloučení v PLINQ](../../../docs/standard/parallel-programming/how-to-specify-merge-options-in-plinq.md).  
   
- If the particular query cannot support the requested option, then the option will just be ignored. In most cases, you do not have to specify a merge option for a PLINQ query. However, in some cases you may find by testing and measurement that a query executes best in a non-default mode. A common use of this option is to force a chunk-merging operator to stream its results in order to provide a more responsive user interface.  
+ Pokud konkrétní dotaz nepodporuje požadovanou možnost, bude možnost pouze ignorována. Ve většině případů není nutné zadávat možnost sloučení pro dotaz PLINQ. V některých případech však můžete zjistit testováním a měřením, že se dotaz vykoná nejlépe v režimu, který není výchozí. Běžnou možností použití této možnosti je vynutit operátor sloučení bloků dat pro streamování výsledků, aby bylo možné zajistit lépe reagující uživatelské rozhraní.  
   
 ## <a name="parallelmergeoptions"></a>ParallelMergeOptions  
- The <xref:System.Linq.ParallelMergeOptions> enumeration includes the following options that specify, for supported query shapes, how the final output of the query is yielded when the results are consumed on one thread:  
+ Výčet <xref:System.Linq.ParallelMergeOptions> obsahuje následující možnosti, které určují, jakým způsobem se mají u podporovaných tvarů dotazů vracet konečný výstup dotazu, když se výsledky spotřebovávají v jednom vlákně:  
   
 - `Not Buffered`  
   
-     The <xref:System.Linq.ParallelMergeOptions.NotBuffered> option causes each processed element to be returned from each thread as soon as it is produced. This behavior is analogous to "streaming" the output. If the <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> operator is present in the query, `NotBuffered` preserves the order of the source elements. Although `NotBuffered` starts yielding results as soon as they're available, the total time to produce all the results might still be longer than using one of the other merge options.  
+     Možnost <xref:System.Linq.ParallelMergeOptions.NotBuffered> způsobí, že každý zpracovávaný prvek bude vrácen z každého vlákna, jakmile je vytvořen. Toto chování je podobné jako výstup "streamování". Pokud se v dotazu nachází operátor <xref:System.Linq.ParallelEnumerable.AsOrdered%2A>, `NotBuffered` zachovává pořadí zdrojových elementů. I když `NotBuffered` začne vracet výsledky, jakmile jsou k dispozici, celková doba pro vyprodukování všech výsledků může být stále delší než použití jedné z dalších možností sloučení.  
   
 - `Auto Buffered`  
   
-     The <xref:System.Linq.ParallelMergeOptions.AutoBuffered> option causes the query to collect elements into a buffer and then periodically yield the buffer contents all at once to the consuming thread. This is analogous to yielding the source data in "chunks" instead of using the "streaming" behavior of `NotBuffered`. `AutoBuffered` may take longer than `NotBuffered` to make the first element available on the consuming thread. The size of the buffer and the exact yielding behavior are not configurable and may vary, depending on various factors that relate to the query.  
+     Možnost <xref:System.Linq.ParallelMergeOptions.AutoBuffered> způsobí, že dotaz shromáždí prvky do vyrovnávací paměti a poté pravidelně vyhodnotí obsah vyrovnávací paměti pro náročné vlákno. To se podobá tomu, že se místo použití `NotBuffered`ho streamování zanášejí zdrojová data v blocích. `AutoBuffered` může trvat déle než `NotBuffered`, aby byl první prvek k dispozici na náročném vlákně. Velikost vyrovnávací paměti a přesné chování při vracení není konfigurovatelné a může se lišit v závislosti na různých faktorech, které se vztahují k dotazu.  
   
 - `FullyBuffered`  
   
-     The <xref:System.Linq.ParallelMergeOptions.FullyBuffered> option causes the output of the whole query to be buffered before any of the elements are yielded. When you use this option, it can take longer before the first element is available on the consuming thread, but the complete results might still be produced faster than by using the other options.  
+     Možnost <xref:System.Linq.ParallelMergeOptions.FullyBuffered> způsobí, že výstup celého dotazu bude uložen do vyrovnávací paměti před tím, než budou získány jakékoli prvky. Použijete-li tuto možnost, může trvat déle, než bude první prvek k dispozici ve vybírající vlákně, ale kompletní výsledky mohou být stále vytvořeny rychleji než pomocí dalších možností.  
   
-## <a name="query-operators-that-support-merge-options"></a>Query Operators that Support Merge Options  
- The following table lists the operators that support all merge option modes, subject to the specified restrictions.  
+## <a name="query-operators-that-support-merge-options"></a>Operátory dotazů, které podporují možnosti sloučení  
+ V následující tabulce jsou uvedeny operátory, které podporují všechny režimy možností sloučení, v souladu se zadanými omezeními.  
   
 |Operátor|Omezení|  
 |--------------|------------------|  
 |<xref:System.Linq.ParallelEnumerable.AsEnumerable%2A>|Žádné|  
 |<xref:System.Linq.ParallelEnumerable.Cast%2A>|Žádné|  
-|<xref:System.Linq.ParallelEnumerable.Concat%2A>|Non-ordered queries that have an Array or List source only.|  
+|<xref:System.Linq.ParallelEnumerable.Concat%2A>|Neseřazené dotazy, které mají pouze zdroj pole nebo seznamu.|  
 |<xref:System.Linq.ParallelEnumerable.DefaultIfEmpty%2A>|Žádné|  
 |<xref:System.Linq.ParallelEnumerable.OfType%2A>|Žádné|  
-|<xref:System.Linq.ParallelEnumerable.Reverse%2A>|Non-ordered queries that have an Array or List source only.|  
+|<xref:System.Linq.ParallelEnumerable.Reverse%2A>|Neseřazené dotazy, které mají pouze zdroj pole nebo seznamu.|  
 |<xref:System.Linq.ParallelEnumerable.Select%2A>|Žádné|  
 |<xref:System.Linq.ParallelEnumerable.SelectMany%2A>|Žádné|  
 |<xref:System.Linq.ParallelEnumerable.Skip%2A>|Žádné|  
 |<xref:System.Linq.ParallelEnumerable.Take%2A>|Žádné|  
 |<xref:System.Linq.ParallelEnumerable.Where%2A>|Žádné|  
   
- All other PLINQ query operators might ignore user-provided merge options. Some query operators, for example, <xref:System.Linq.ParallelEnumerable.Reverse%2A> and <xref:System.Linq.ParallelEnumerable.OrderBy%2A>, cannot yield any elements until all have been produced and reordered. Therefore, when <xref:System.Linq.ParallelMergeOptions> is used in a query that also contains an operator such as <xref:System.Linq.ParallelEnumerable.Reverse%2A>, the merge behavior will not be applied in the query until after that operator has produced its results.  
+ Všechny ostatní operátory dotazů PLINQ mohou ignorovat možnosti sloučení poskytované uživatelem. Některé operátory pro dotazy, například <xref:System.Linq.ParallelEnumerable.Reverse%2A> a <xref:System.Linq.ParallelEnumerable.OrderBy%2A>, nemohou vracet žádné prvky, dokud nebudou všechny vyprodukovány a přeobjednány. Proto pokud je použit <xref:System.Linq.ParallelMergeOptions> v dotazu, který obsahuje také operátor jako <xref:System.Linq.ParallelEnumerable.Reverse%2A>, chování sloučení nebude v dotazu použito, dokud tento operátor nevytvořil své výsledky.  
   
- The ability of some operators to handle merge options depends on the type of the source sequence, and whether the <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> operator was used earlier in the query. <xref:System.Linq.ParallelEnumerable.ForAll%2A> is always <xref:System.Linq.ParallelMergeOptions.NotBuffered> ; it yields its elements immediately. <xref:System.Linq.ParallelEnumerable.OrderBy%2A> is always <xref:System.Linq.ParallelMergeOptions.FullyBuffered>; it must sort the whole list before it yields.  
+ Schopnost některých operátorů zpracovat možnosti sloučení závisí na typu zdrojové sekvence a na tom, zda byl operátor <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> použit dříve v dotazu. <xref:System.Linq.ParallelEnumerable.ForAll%2A> je vždycky <xref:System.Linq.ParallelMergeOptions.NotBuffered>; vrátí jeho prvky hned po jeho výsledku. <xref:System.Linq.ParallelEnumerable.OrderBy%2A> je vždycky <xref:System.Linq.ParallelMergeOptions.FullyBuffered>; před tím, než to bude mít, musí seřadit celý seznam.  
   
 ## <a name="see-also"></a>Viz také:
 

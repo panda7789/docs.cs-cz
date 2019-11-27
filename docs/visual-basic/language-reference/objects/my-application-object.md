@@ -12,23 +12,23 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350727"
 ---
 # <a name="myapplication-object"></a>My.Application – objekt
-Provides properties, methods, and events related to the current application.  
+Poskytuje vlastnosti, metody a události související s aktuální aplikací.  
   
 ## <a name="remarks"></a>Poznámky  
- For information about the methods and properties of the `My.Application` object, see the following resources:  
+ Informace o metodách a vlastnostech objektu `My.Application` naleznete v následujících zdrojích informací:  
   
-- <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase> for members that are available in all projects.  
+- <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase> pro členy, kteří jsou k dispozici ve všech projektech.  
   
-- <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> for members that are available in Windows Forms applications.  
+- <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> pro členy, kteří jsou k dispozici v model Windows Formsch aplikacích.  
   
-- <xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase> for members that are available in console applications.  
+- <xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase> pro členy, kteří jsou k dispozici v konzolových aplikacích.  
   
 ## <a name="requirements"></a>Požadavky  
- **Namespace:** <xref:Microsoft.VisualBasic.ApplicationServices>  
+ **Obor názvů:** <xref:Microsoft.VisualBasic.ApplicationServices>  
   
- **Class:** <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> (the base class <xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase> provides members available in console applications, and its base class <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase> provides the members that are available in all projects)  
+ **Třída:** <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> (základní třída <xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase> poskytuje členy, které jsou k dispozici v konzolových aplikacích, a její základní třída <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase> poskytuje členy, kteří jsou k dispozici ve všech projektech)  
   
- **Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)  
+ **Sestavení:** Knihovna Visual Basic runtime (v souboru Microsoft. VisualBasic. dll)  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449265"
 ---
 # <a name="isymunmanagedconstantgetsignature-method"></a>ISymUnmanagedConstant::GetSignature – metoda
-Gets the signature of the constant.  
+Získá signaturu konstanty.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,19 +37,19 @@ HRESULT GetSignature(
   
 ## <a name="parameters"></a>Parametry  
  `cSig`  
- [in] The length of the buffer that the `pcSig` parameter points to.  
+ pro Délka vyrovnávací paměti, na kterou parametr `pcSig` odkazuje.  
   
  `pcSig`  
- [out] A pointer to a `ULONG32` that receives the size, in characters, of the buffer required to contain the signature.  
+ mimo Ukazatel na `ULONG32`, který obdrží velikost vyrovnávací paměti, která je požadována k podpisu.  
   
  `sig`  
- [out] The buffer that stores the signature.  
+ mimo Vyrovnávací paměť, která ukládá podpis.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

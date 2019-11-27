@@ -9,16 +9,16 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350624"
 ---
-# <a name="serializing-with-an-xml-declaration-visual-basic"></a>Serializing with an XML Declaration (Visual Basic)
-This topic describes how to control whether serialization generates an XML declaration.  
+# <a name="serializing-with-an-xml-declaration-visual-basic"></a>Serializace s deklarací XML (Visual Basic)
+Toto téma popisuje, jak určit, zda serializace generuje deklaraci XML.  
   
-## <a name="xml-declaration-generation"></a>XML Declaration Generation  
- Serializing to a <xref:System.IO.File> or a <xref:System.IO.TextWriter> using the <xref:System.Xml.Linq.XElement.Save%2A?displayProperty=nameWithType> method or the <xref:System.Xml.Linq.XDocument.Save%2A?displayProperty=nameWithType> method generates an XML declaration. When you serialize to an <xref:System.Xml.XmlWriter>, the writer settings (specified in an <xref:System.Xml.XmlWriterSettings> object) determine whether an XML declaration is generated or not.  
+## <a name="xml-declaration-generation"></a>Generování deklarace XML  
+ Serializace do <xref:System.IO.File> nebo <xref:System.IO.TextWriter> pomocí metody <xref:System.Xml.Linq.XElement.Save%2A?displayProperty=nameWithType> nebo metody <xref:System.Xml.Linq.XDocument.Save%2A?displayProperty=nameWithType> generuje deklaraci XML. Při serializaci do <xref:System.Xml.XmlWriter>, nastavení zapisovače (určené v objektu <xref:System.Xml.XmlWriterSettings>) určuje, zda je vygenerována deklarace XML nebo ne.  
   
- If you are serializing to a string using the `ToString` method, the resulting XML will not include an XML declaration.  
+ Pokud provádíte serializaci do řetězce pomocí metody `ToString`, výsledný kód XML nebude obsahovat deklaraci XML.  
   
 ### <a name="serializing-with-an-xml-declaration"></a>Serializace pomocí deklarace XML  
- The following example creates an <xref:System.Xml.Linq.XElement>, saves the document to a file, and then prints the file to the console:  
+ Následující příklad vytvoří <xref:System.Xml.Linq.XElement>, uloží dokument do souboru a potom soubor vytiskne do konzoly:  
   
 ```vb  
 Dim root As XElement = <Root>  
@@ -29,7 +29,7 @@ Dim str As String = File.ReadAllText("Root.xml")
 Console.WriteLine(str)  
 ```  
   
- This example produces the following output:  
+ Tento příklad vytvoří následující výstup:  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -38,8 +38,8 @@ Console.WriteLine(str)
 </Root>  
 ```  
   
-### <a name="serializing-without-an-xml-declaration"></a>Serializing without an XML Declaration  
- The following example shows how to save an <xref:System.Xml.Linq.XElement> to an <xref:System.Xml.XmlWriter>.  
+### <a name="serializing-without-an-xml-declaration"></a>Serializace bez deklarace XML  
+ Následující příklad ukazuje, jak uložit <xref:System.Xml.Linq.XElement> do <xref:System.Xml.XmlWriter>.  
   
 ```vb  
 Dim sb As StringBuilder = New StringBuilder()  
@@ -55,7 +55,7 @@ End Using
 Console.WriteLine(sb.ToString())  
 ```  
   
- This example produces the following output:  
+ Tento příklad vytvoří následující výstup:  
   
 ```xml  
 <Root><Child>child content</Child></Root>  
@@ -63,4 +63,4 @@ Console.WriteLine(sb.ToString())
   
 ## <a name="see-also"></a>Viz také:
 
-- [Serializing XML Trees (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/serializing-xml-trees.md)
+- [Serializace stromů XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/serializing-xml-trees.md)

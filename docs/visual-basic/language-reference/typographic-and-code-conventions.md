@@ -19,39 +19,39 @@ ms.locfileid: "74352703"
 ---
 # <a name="typographic-and-code-conventions-visual-basic"></a>Typografická pravidla a pravidla vytváření kódu (Visual Basic)
 
-Visual Basic documentation uses the following typographic and code conventions.  
+Dokumentace Visual Basic používá následující typografické a kódové konvence.  
   
-## <a name="typographic-conventions"></a>Typographic Conventions  
-  
-|Příklad|Popis|  
-|-------------|-----------------|  
-|`Sub`, `If`, `ChDir`, `Print`, `True`, `Debug`|Language-specific keywords and runtime members have initial uppercase letters and are formatted as shown in this example.|  
-|**SmallProject**, **ButtonCollection**|Words and phrases you are instructed to type are formatted as shown in this example.|  
-|[Příkaz Module](../../visual-basic/language-reference/statements/module-statement.md)|Links you can click to go to another Help page are formatted as shown in this example.|  
-|*object*, *variableName*, `argumentList`|Placeholders for information that you supply are formatted as shown in this example.|  
-|[ Shadows ], [ *expressionList* ]|In syntax, optional items are enclosed in brackets.|  
-|{ `Public` &#124; `Friend` &#124; `Private` }|In syntax, when you must make a choice between two or more items, the items are enclosed in braces and separated by vertical bars.<br /><br /> You must select one, and only one, of the items.|  
-|[ `Protected` &#124; `Friend` ]|In syntax, when you have the option of selecting between two or more items, the items are enclosed in square brackets and separated by vertical bars.<br /><br /> You can select any combination of the items, or no item.|  
-|[{ `ByVal` &#124; `ByRef` }]|In syntax, when you can select no more than one item, but you can also omit the items completely, the items are enclosed in square brackets surrounded by braces and separated by vertical bars.|  
-|*memberName*1, *memberName*2, *memberName*3|Multiple instances of the same placeholder are differentiated by subscripts, as shown in the example.|  
-|*memberName1*<br /><br /> ...<br /><br /> *memberNameN*|In syntax, an ellipsis (...) is used to indicate an indefinite number of items of the kind immediately in front of the ellipsis.<br /><br /> In code, ellipses signify code omitted for the sake of clarity.|  
-|ESC, ENTER|Key names and key sequences on the keyboard appear in all uppercase letters.|  
-|ALT+F1|When plus signs (+) appear between key names, you must hold down one key while pressing the other. For example, ALT+F1 means hold down the ALT key while pressing the F1 key.|  
-  
-## <a name="code-conventions"></a>Code Conventions  
+## <a name="typographic-conventions"></a>Typografické konvence  
   
 |Příklad|Popis|  
 |-------------|-----------------|  
-|`sampleString = "Hello, world!"`|Code samples appear in a fixed-pitch font and are formatted as shown in this example.|  
-|The previous statement sets the value of `sampleString` to "Hello, world!"|Code elements in explanatory text appear in a fixed-pitch font, as shown in this example.|  
-|`' This is a comment.`<br /><br /> `REM This is also a comment.`|Code comments are introduced by an apostrophe (') or the REM keyword.|  
-|`sampleVar = "This is an " _`<br /><br /> `& "example" _`<br /><br /> `& " of how to continue code."`|A space followed by an underscore ( _) at the end of a line indicates that the statement continues on the following line.|  
+|`Sub`, `If`, `ChDir`, `Print`, `True``Debug`|Klíčová slova specifická pro jazyk a členy modulu runtime mají počáteční velká písmena a jsou formátovány, jak je znázorněno v tomto příkladu.|  
+|**SmallProject**, **tlačítkocollection**|Slova a fráze, které jste zadali jako text, jsou formátovány, jak je uvedeno v tomto příkladu.|  
+|[Příkaz Module](../../visual-basic/language-reference/statements/module-statement.md)|Odkazy, které můžete kliknutím přejít na jinou stránku, jsou formátovány, jak je uvedeno v tomto příkladu.|  
+|*objekt*, *Proměnná*, `argumentList`|Zástupné symboly pro informace, které zadáte, jsou formátovány, jak je znázorněno v tomto příkladu.|  
+|[Stíny], [ *expressionlist* ]|V syntaxi jsou volitelné položky uzavřeny v závorkách.|  
+|{`Public` &#124; `Friend` &#124; `Private`}|V syntaxi, pokud je třeba provést volbu mezi dvěma nebo více položkami, jsou položky uzavřeny ve složených závorkách a odděleny svislými panely.<br /><br /> Musíte vybrat jednu a jenom jednu z položek.|  
+|[`Protected` &#124; `Friend`]|Pokud máte v syntaxi možnost výběru dvou nebo více položek, položky jsou uzavřeny do hranatých závorek a odděleny svislými panely.<br /><br /> Můžete vybrat libovolnou kombinaci položek nebo žádnou položku.|  
+|[{`ByVal` &#124; `ByRef`}]|Pokud v syntaxi můžete vybrat maximálně jednu položku, ale můžete také položky vynechat, položky jsou uzavřeny do hranatých závorek, které jsou obklopeny závorkami a odděleny svislými panely.|  
+|*Member*-1, *Member*2, *Member*3|Více instancí stejné zástupné symboly jsou odlišeny pomocí dolních indexů, jak je znázorněno v příkladu.|  
+|*memberName1*<br /><br /> ...<br /><br /> *memberNameN*|V syntaxi se tři tečky (...) používají k označení nekonečného počtu položek typu bezprostředně před třemi tečkami.<br /><br /> V kódu označují tři tečky kód vynechaný v zájmu srozumitelnosti.|  
+|ESC ZADEJTE|Názvy klíčů a posloupnosti kláves na klávesnici se zobrazují velkými písmeny.|  
+|ALT+F1|Pokud se mezi názvy kláves objeví znaménko plus (+), je nutné při stisknutí klávesy One stisknout klávesu One. Například ALT + F1 znamená při stisknutí klávesy F1 stisknutou klávesu ALT.|  
+  
+## <a name="code-conventions"></a>Konvence kódu  
+  
+|Příklad|Popis|  
+|-------------|-----------------|  
+|`sampleString = "Hello, world!"`|Ukázky kódu se zobrazí ve formátu s pevnou roztečí a jsou formátovány, jak je znázorněno v tomto příkladu.|  
+|Předchozí příkaz nastaví hodnotu `sampleString` "Hello, World!"|Prvky kódu v vysvětlujícím textu se zobrazí v neproporcionálním písmu, jak je znázorněno v tomto příkladu.|  
+|`' This is a comment.`<br /><br /> `REM This is also a comment.`|Komentáře kódu jsou představeny apostrofem (') nebo klíčovým slovem REM.|  
+|`sampleVar = "This is an " _`<br /><br /> `& "example" _`<br /><br /> `& " of how to continue code."`|Mezera následovaná podtržítkem (_) na konci řádku označuje, že příkaz pokračuje na následujícím řádku.|  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Referenční příručka jazyka Visual Basic](../../visual-basic/language-reference/index.md)
 - [Klíčová slova](../../visual-basic/language-reference/keywords/index.md)
 - [Členové knihovny modulu runtime jazyka Visual Basic](../../visual-basic/language-reference/runtime-library-members.md)
-- [Visual Basic Naming Conventions](../../visual-basic/programming-guide/program-structure/naming-conventions.md)
+- [Visual Basic konvence pojmenování](../../visual-basic/programming-guide/program-structure/naming-conventions.md)
 - [Postupy: Přerušení a kombinace příkazů v kódu](../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)
 - [Komentáře v kódu](../../visual-basic/programming-guide/program-structure/comments-in-code.md)

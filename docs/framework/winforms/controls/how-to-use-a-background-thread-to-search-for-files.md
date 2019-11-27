@@ -18,23 +18,23 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351956"
 ---
 # <a name="how-to-use-a-background-thread-to-search-for-files"></a>Postupy: Použití vlákna na pozadí k vyhledávání souborů
-The <xref:System.ComponentModel.BackgroundWorker> component replaces and adds functionality to the <xref:System.Threading> namespace; however, the <xref:System.Threading> namespace is retained for both backward compatibility and future use, if you choose. For more information, see [BackgroundWorker Component Overview](backgroundworker-component-overview.md).
+Součást <xref:System.ComponentModel.BackgroundWorker> nahrazuje a přidává funkce do oboru názvů <xref:System.Threading>; <xref:System.Threading> obor názvů se zachovává pro zpětnou kompatibilitu i pro budoucí použití, pokud zvolíte. Další informace najdete v tématu [Přehled komponent BackgroundWorker](backgroundworker-component-overview.md).
 
- Windows Forms uses the single-threaded apartment (STA) model because Windows Forms is based on native Win32 windows that are inherently apartment-threaded. The STA model implies that a window can be created on any thread, but it cannot switch threads once created, and all function calls to it must occur on its creation thread. Outside Windows Forms, classes in the .NET Framework use the free threading model. For information about threading in the .NET Framework, see [Threading](../../../standard/threading/index.md).
+ Model Windows Forms používá model STA (Single-threaded Apartment), protože model Windows Forms je založen na nativních oknech Win32, které jsou ve své podvlákně vícevláknové. Model STA znamená, že okno lze vytvořit v jakémkoli vlákně, ale po vytvoření nemůže přepnout vlákna a všechna volání funkcí musí být provedena ve svém vláknu pro vytvoření. Mimo model Windows Forms třídy v .NET Framework používají bezplatný model vláken. Informace o vláknech v .NET Framework najdete v tématu [dělení na vlákna](../../../standard/threading/index.md).
 
- The STA model requires that any methods on a control that need to be called from outside the control's creation thread must be marshaled to (executed on) the control's creation thread. The base class <xref:System.Windows.Forms.Control> provides several methods (<xref:System.Windows.Forms.Control.Invoke%2A>, <xref:System.Windows.Forms.Control.BeginInvoke%2A>, and <xref:System.Windows.Forms.Control.EndInvoke%2A>) for this purpose. <xref:System.Windows.Forms.Control.Invoke%2A> makes synchronous method calls; <xref:System.Windows.Forms.Control.BeginInvoke%2A> makes asynchronous method calls.
+ Model STA vyžaduje, aby všechny metody ovládacího prvku, který je třeba volat z vnějšku vlákna vytváření ovládacího prvku, musely být zařazeny do vlákna vytváření ovládacího prvku (spuštěno v). Základní třída <xref:System.Windows.Forms.Control> poskytuje pro tento účel několik metod (<xref:System.Windows.Forms.Control.Invoke%2A>, <xref:System.Windows.Forms.Control.BeginInvoke%2A>a <xref:System.Windows.Forms.Control.EndInvoke%2A>). <xref:System.Windows.Forms.Control.Invoke%2A> provádí synchronní volání metod; <xref:System.Windows.Forms.Control.BeginInvoke%2A> provádí volání asynchronní metody.
 
- If you use multithreading in your control for resource-intensive tasks, the user interface can remain responsive while a resource-intensive computation executes on a background thread.
+ Použijete-li multithreading v ovládacím prvku pro úlohy náročné na prostředky, uživatelské rozhraní může zůstat reagovat, zatímco je výpočet náročný na prostředky proveden ve vlákně na pozadí.
 
- The following sample (`DirectorySearcher`) shows a multithreaded Windows Forms control that uses a background thread to recursively search a directory for files matching a specified search string and then populates a list box with the search result. The key concepts illustrated by the sample are as follows:
+ Následující ukázka (`DirectorySearcher`) zobrazuje vícevláknové model Windows Forms ovládací prvek, který používá vlákno na pozadí k rekurzivnímu hledání souborů v adresáři, které odpovídají zadanému řetězci hledání, a poté naplní pole seznamem výsledkem hledání. Základní koncepty znázorněné v ukázce jsou následující:
 
-- `DirectorySearcher` starts a new thread to perform the search. The thread executes the `ThreadProcedure` method that in turn calls the helper `RecurseDirectory` method to do the actual search and to populate the list box. However, populating the list box requires a cross-thread call, as explained in the next two bulleted items.
+- `DirectorySearcher` spustí nové vlákno, které provede hledání. Vlákno spustí metodu `ThreadProcedure`, která zase zavolá pomocnou metodu `RecurseDirectory`, aby prohledala skutečné hledání a naplnila pole seznamu. Naplnění seznamu ale vyžaduje volání mezi vlákny, jak je vysvětleno v dalších dvou odrážekch položek.
 
-- `DirectorySearcher` defines the `AddFiles` method to add files to a list box; however, `RecurseDirectory` cannot directly invoke `AddFiles` because `AddFiles` can execute only in the STA thread that created `DirectorySearcher`.
+- `DirectorySearcher` definuje způsob, jakým `AddFiles` přidat soubory do seznamu. `RecurseDirectory` však nemohou přímo vyvolat `AddFiles`, protože `AddFiles` lze spustit pouze v vlákně STA, které bylo vytvořeno `DirectorySearcher`.
 
-- The only way `RecurseDirectory` can call `AddFiles` is through a cross-thread call — that is, by calling <xref:System.Windows.Forms.Control.Invoke%2A> or <xref:System.Windows.Forms.Control.BeginInvoke%2A> to marshal `AddFiles` to the creation thread of `DirectorySearcher`. `RecurseDirectory` uses <xref:System.Windows.Forms.Control.BeginInvoke%2A> so that the call can be made asynchronously.
+- Jediný způsob, jak `RecurseDirectory` volat `AddFiles`, je prostřednictvím volání mezi vlákny – to znamená, že voláním <xref:System.Windows.Forms.Control.Invoke%2A> nebo <xref:System.Windows.Forms.Control.BeginInvoke%2A> k zařazení `AddFiles` do vlákna vytváření `DirectorySearcher`. `RecurseDirectory` používá <xref:System.Windows.Forms.Control.BeginInvoke%2A>, aby bylo možné volání provádět asynchronně.
 
-- Marshaling a method requires the equivalent of a function pointer or callback. This is accomplished using delegates in the .NET Framework. <xref:System.Windows.Forms.Control.BeginInvoke%2A> takes a delegate as an argument. `DirectorySearcher` therefore defines a delegate (`FileListDelegate`), binds `AddFiles` to an instance of `FileListDelegate` in its constructor, and passes this delegate instance to <xref:System.Windows.Forms.Control.BeginInvoke%2A>. `DirectorySearcher` also defines an event delegate that is marshaled when the search is completed.
+- Zařazování metody vyžaduje ekvivalent ukazatele na funkci nebo zpětného volání. To je provedeno pomocí delegátů v .NET Framework. <xref:System.Windows.Forms.Control.BeginInvoke%2A> přebírá jako argument delegáta. `DirectorySearcher` proto definuje delegáta (`FileListDelegate`), váže `AddFiles` k instanci `FileListDelegate` ve svém konstruktoru a předá tuto instanci delegáta <xref:System.Windows.Forms.Control.BeginInvoke%2A>. `DirectorySearcher` také definuje delegáta události, který je zařazen po dokončení hledání.
 
 ```vb
 Option Strict
@@ -568,8 +568,8 @@ namespace Microsoft.Samples.DirectorySearcher
 }
 ```
 
-## <a name="using-the-multithreaded-control-on-a-form"></a>Using the Multithreaded Control on a Form
- The following example shows how the multithreaded `DirectorySearcher` control can be used on a form.
+## <a name="using-the-multithreaded-control-on-a-form"></a>Použití ovládacího prvku s více vlákny na formuláři
+ Následující příklad ukazuje, jak lze ve formuláři použít ovládací prvek s více vlákny `DirectorySearcher`.
 
 ```vb
 Option Explicit

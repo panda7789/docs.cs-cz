@@ -22,26 +22,26 @@ ms.locfileid: "74352566"
 ---
 # <a name="property-procedures-visual-basic"></a>Procedury vlastnosti (Visual Basic)
 
-A property procedure is a series of Visual Basic statements that manipulate a custom property on a module, class, or structure. Property procedures are also known as *property accessors*.
+Procedura vlastnosti je řada příkazů Visual Basic, které pracují s vlastní vlastností v modulu, třídě nebo struktuře. Procedury vlastnosti jsou také známé jako *přistupující objekty vlastností*.
 
-Visual Basic provides for the following property procedures:
+Visual Basic poskytuje následující procedury vlastností:
 
-- A `Get` procedure returns the value of a property. It is called when you access the property in an expression.
-- A `Set` procedure sets a property to a value, including an object reference. It is called when you assign a value to the property.
+- `Get` procedura vrátí hodnotu vlastnosti. Je volána při přístupu k vlastnosti ve výrazu.
+- Procedura `Set` nastaví vlastnost na hodnotu, včetně odkazu na objekt. Je volána, když přiřadíte hodnotu k vlastnosti.
 
-You usually define property procedures in pairs, using the `Get` and `Set` statements, but you can define either procedure alone if the property is read-only ([Get Statement](../../../../visual-basic/language-reference/statements/get-statement.md)) or write-only ([Set Statement](../../../../visual-basic/language-reference/statements/set-statement.md)).
+Procedury vlastností ve dvojicích obvykle definujete pomocí příkazů `Get` a `Set`, ale můžete definovat buď samostatně, pokud je vlastnost jen pro čtení ([příkaz Get](../../../../visual-basic/language-reference/statements/get-statement.md)) nebo pouze pro zápis ([příkaz set](../../../../visual-basic/language-reference/statements/set-statement.md)).
 
-You can omit the `Get` and `Set` procedure when using an auto-implemented property. For more information, see [Auto-Implemented Properties](./auto-implemented-properties.md).
+Můžete vynechat `Get` a `Set` postup při použití automaticky implementované vlastnosti. Další informace najdete v tématu věnovaném [automaticky implementovaným vlastnostem](./auto-implemented-properties.md).
 
-You can define properties in classes, structures, and modules. Properties are `Public` by default, which means you can call them from anywhere in your application that can access the property's container.
+Můžete definovat vlastnosti v třídách, strukturách a modulech. Ve výchozím nastavení jsou vlastnosti `Public`, což znamená, že je můžete volat odkudkoli v aplikaci, která má přístup k kontejneru vlastnosti.
 
-For a comparison of properties and variables, see [Differences Between Properties and Variables in Visual Basic](differences-between-properties-and-variables.md).
+Porovnání vlastností a proměnných naleznete [v tématu rozdíly mezi vlastnostmi a proměnnými v Visual Basic](differences-between-properties-and-variables.md).
 
-## <a name="declaration-syntax"></a>Declaration syntax
+## <a name="declaration-syntax"></a>Syntaxe deklarace
 
-A property itself is defined by a block of code enclosed within the [Property Statement](../../../../visual-basic/language-reference/statements/property-statement.md) and the `End Property` statement. Inside this block, each property procedure appears as an internal block enclosed within a declaration statement (`Get` or `Set`) and the matching `End` declaration.
+Samotná vlastnost je definována blokem kódu uzavřeným v rámci [příkazu Property](../../../../visual-basic/language-reference/statements/property-statement.md) a příkazu `End Property`. V rámci tohoto bloku se každá procedura Vlastnosti zobrazuje jako vnitřní blok uzavřený v rámci příkazu deklarace (`Get` nebo `Set`) a deklarace `End`.
 
-The syntax for declaring a property and its procedures is as follows:
+Syntaxe pro deklaraci vlastnosti a její postupy je následující:
 
 ```vb
 [Default] [Modifiers] Property PropertyName[(ParameterList)] [As DataType]
@@ -60,62 +60,62 @@ End Property
 [Default] [Modifiers] Property PropertyName [(ParameterList)] [As DataType]
 ```
 
-The `Modifiers` can specify access level and information regarding overloading, overriding, sharing, and shadowing, as well as whether the property is read-only or write-only. The `AccessLevel` on the `Get` or `Set` procedure can be any level that is more restrictive than the access level specified for the property itself. For more information, see [Property Statement](../../../../visual-basic/language-reference/statements/property-statement.md).
+`Modifiers` může určovat úroveň přístupu a informace týkající se přetížení, přepsání, sdílení a stínování a také zda je vlastnost jen pro čtení nebo jen pro zápis. `AccessLevel` v proceduře `Get` nebo `Set` může být libovolná úroveň, která je více omezující než úroveň přístupu zadaná pro samotnou vlastnost. Další informace naleznete v tématu [příkaz Vlastnosti](../../../../visual-basic/language-reference/statements/property-statement.md).
 
-### <a name="data-type"></a>Datový typ
+### <a name="data-type"></a>Typ dat
 
-A property's data type and principal access level are defined in the `Property` statement, not in the property procedures. A property can have only one data type. For example, you cannot define a property to store a `Decimal` value but retrieve a `Double` value.
+Datový typ vlastnosti a úroveň přístupu zabezpečení jsou definovány v příkazu `Property`, nikoli v procedurách vlastnosti. Vlastnost může mít pouze jeden datový typ. Například nelze definovat vlastnost pro uložení `Decimal` hodnoty, ale načtení `Double` hodnoty.
 
-### <a name="access-level"></a>Access Level
+### <a name="access-level"></a>Úroveň přístupu
 
-However, you can define a principal access level for a property and further restrict the access level in one of its property procedures. For example, you can define a `Public` property and then define a `Private Set` procedure. The `Get` procedure remains `Public`. You can change the access level in only one of a property's procedures, and you can only make it more restrictive than the principal access level. For more information, see [How to: Declare a Property with Mixed Access Levels](how-to-declare-a-property-with-mixed-access-levels.md).
+Můžete však definovat hlavní úroveň přístupu pro vlastnost a dále omezit úroveň přístupu v jednom z jeho procedur vlastností. Můžete například definovat vlastnost `Public` a potom definovat `Private Set` proceduru. `Get` postup zůstane `Public`. Úroveň přístupu můžete změnit jenom v jednom z procedur vlastnosti a můžete ji omezit jenom na úroveň přístupu zabezpečení. Další informace najdete v tématu [Postupy: deklarace vlastnosti se smíšenými úrovněmi přístupu](how-to-declare-a-property-with-mixed-access-levels.md).
 
-## <a name="parameter-declaration"></a>Parameter declaration
+## <a name="parameter-declaration"></a>Deklarace parametru
 
-You declare each parameter the same way you do for [Sub Procedures](sub-procedures.md), except that the passing mechanism must be `ByVal`.
+Každý parametr deklarujete stejným způsobem jako u [dílčích procedur](sub-procedures.md), s tím rozdílem, že mechanismus předávání musí být `ByVal`.
 
-The syntax for each parameter in the parameter list is as follows:
+Syntaxe pro každý parametr v seznamu parametrů je následující:
 
 ```vb
 [Optional] ByVal [ParamArray] parametername As datatype
 ```
 
-If the parameter is optional, you must also supply a default value as part of its declaration. The syntax for specifying a default value is as follows:
+Pokud je parametr volitelný, musíte také zadat výchozí hodnotu jako součást její deklarace. Syntaxe pro určení výchozí hodnoty je následující:
 
 ```vb
 Optional ByVal parametername As datatype = defaultvalue
 ```
 
-## <a name="property-value"></a>Property value
+## <a name="property-value"></a>Hodnota vlastnosti
 
-In a `Get` procedure, the return value is supplied to the calling expression as the value of the property.
+V `Get` proceduře je návratovou hodnotou poskytnut výraz volání jako hodnota vlastnosti.
 
-In a `Set` procedure, the new property value is passed to the parameter of the `Set` statement. If you explicitly declare a parameter, you must declare it with the same data type as the property. If you do not declare a parameter, the compiler uses the implicit parameter `Value` to represent the new value to be assigned to the property.
+V `Set` proceduře je nová hodnota vlastnosti předána parametru příkazu `Set`. Pokud explicitně deklarujete parametr, je nutné jej deklarovat se stejným datovým typem jako vlastnost. Pokud parametr nedeklarujete, kompilátor použije implicitní parametr `Value` k reprezentaci nové hodnoty, která má být přiřazena vlastnosti.
 
-## <a name="calling-syntax"></a>Calling syntax
+## <a name="calling-syntax"></a>Syntaxe volání
 
-You invoke a property procedure implicitly by making reference to the property. You use the name of the property the same way you would use the name of a variable, except that you must provide values for all arguments that are not optional, and you must enclose the argument list in parentheses. If no arguments are supplied, you can optionally omit the parentheses.
+Proceduru vlastnosti můžete implicitně vyvolat tak, že vytvoříte odkaz na vlastnost. Název vlastnosti použijete stejným způsobem jako název proměnné, s výjimkou toho, že je nutné zadat hodnoty pro všechny argumenty, které nejsou volitelné, a je třeba uzavřít seznam argumentů v závorkách. Pokud nejsou zadány žádné argumenty, můžete volitelně vynechat závorky.
 
-The syntax for an implicit call to a `Set` procedure is as follows:
+Syntaxe pro implicitní volání procedury `Set` je následující:
 
 ```vb
 propertyname[(argumentlist)] = expression
 ```
 
-The syntax for an implicit call to a `Get` procedure is as follows:
+Syntaxe pro implicitní volání procedury `Get` je následující:
 
 ```vb
 lvalue = propertyname[(argumentlist)]
 Do While (propertyname[(argumentlist)] > expression)
 ```
 
-### <a name="illustration-of-declaration-and-call"></a>Illustration of declaration and call
+### <a name="illustration-of-declaration-and-call"></a>Ilustrace deklarace a volání
 
-The following property stores a full name as two constituent names, the first name and the last name. When the calling code reads `fullName`, the `Get` procedure combines the two constituent names and returns the full name. When the calling code assigns a new full name, the `Set` procedure attempts to break it into two constituent names. If it does not find a space, it stores it all as the first name.
+Následující vlastnost uchovává úplný název jako dva názvy prvků, křestní jméno a příjmení. Když volající kód přečte `fullName`, procedura `Get` kombinuje dva názvy prvků a vrátí úplný název. Když volající kód přiřadí nový úplný název, `Set` postup se pokusí ho rozdělit do dvou názvů prvků. Pokud nenalezne žádné místo, uloží ho jako křestní jméno.
 
 [!code-vb[VbVbcnProcedures#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#8)]
 
-The following example shows typical calls to the property procedures of `fullName`:
+Následující příklad ukazuje typická volání procedur vlastností `fullName`:
 
 [!code-vb[VbVbcnProcedures#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#9)]
 
@@ -125,9 +125,9 @@ The following example shows typical calls to the property procedures of `fullNam
 - [Procedury funkce](function-procedures.md)
 - [Procedury operátoru](operator-procedures.md)
 - [Parametry a argumenty procedury](procedure-parameters-and-arguments.md)
-- [Differences Between Properties and Variables in Visual Basic](differences-between-properties-and-variables.md)
+- [Rozdíly mezi vlastnostmi a proměnnými v Visual Basic](differences-between-properties-and-variables.md)
 - [Postupy: Vytvoření vlastnosti](how-to-create-a-property.md)
 - [Postupy: Volání procedury vlastnosti](how-to-call-a-property-procedure.md)
-- [How to: Declare and Call a Default Property in Visual Basic](how-to-declare-and-call-a-default-property.md)
+- [Postupy: deklarace a volání výchozí vlastnosti v Visual Basic](how-to-declare-and-call-a-default-property.md)
 - [Postupy: Vložení hodnoty do vlastnosti](how-to-put-a-value-in-a-property.md)
 - [Postupy: Získání hodnoty z vlastnosti](how-to-get-a-value-from-a-property.md)

@@ -17,8 +17,8 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351997"
 ---
-# <a name="-operator-visual-basic"></a>>>= Operator (Visual Basic)
-Performs an arithmetic right shift on the value of a variable or property and assigns the result back to the variable or property.  
+# <a name="-operator-visual-basic"></a>> > = – operátor (Visual Basic)
+Provede aritmetický pravý posun na hodnotu proměnné nebo vlastnosti a přiřadí výsledek zpátky proměnné nebo vlastnosti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,31 +28,31 @@ variableorproperty >>= amount
   
 ## <a name="parts"></a>Součásti  
  `variableorproperty`  
- Požadováno. Variable or property of an integral type (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, or `ULong`).  
+ Požadováno. Proměnná nebo vlastnost integrálního typu (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`nebo `ULong`).  
   
  `amount`  
- Požadováno. Numeric expression of a data type that widens to `Integer`.  
+ Požadováno. Číselný výraz datového typu, který se rozšíří na `Integer`.  
   
 ## <a name="remarks"></a>Poznámky  
- The element on the left side of the `>>=` operator can be a simple scalar variable, a property, or an element of an array. The variable or property cannot be [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md).  
+ Element na levé straně operátoru `>>=` může být jednoduchá skalární proměnná, vlastnost nebo prvek pole. Proměnná nebo vlastnost nemůže být [jen pro čtení](../../../visual-basic/language-reference/modifiers/readonly.md).  
   
- The `>>=` operator first performs an arithmetic right shift on the value of the variable or property. The operator then assigns the result of that operation back to the variable or property.  
+ Operátor `>>=` nejprve provede aritmetický pravý posun na hodnotu proměnné nebo vlastnosti. Operátor potom přiřadí výsledek této operace zpátky k proměnné nebo vlastnosti.  
   
- Arithmetic shifts are not circular, which means the bits shifted off one end of the result are not reintroduced at the other end. In an arithmetic right shift, the bits shifted beyond the rightmost bit position are discarded, and the leftmost bit is propagated into the bit positions vacated at the left. This means that if `variableorproperty` has a negative value, the vacated positions are set to one. If `variableorproperty` is positive, or if its data type is an unsigned type, the vacated positions are set to zero.  
+ Aritmetické posuny nejsou cyklické, což znamená, že bity posunuté o jeden konec výsledku nejsou znovu zavedeny na druhém konci. V aritmetickém pravém posunu se bity po pravém horním rohu zahodí a bit umístěný nejvíce vlevo se rozšíří do bitových pozic uvolněné vlevo. To znamená, že pokud má `variableorproperty` zápornou hodnotu, pozice uvolněné jsou nastaveny na jednu. Pokud je `variableorproperty` pozitivní, nebo pokud je jeho datový typ typu bez znaménka, pozice uvolněné jsou nastaveny na hodnotu nula.  
   
 ## <a name="overloading"></a>Přetížení  
- The [>> Operator](../../../visual-basic/language-reference/operators/right-shift-operator.md) can be *overloaded*, which means that a class or structure can redefine its behavior when an operand has the type of that class or structure. Overloading the `>>` operator affects the behavior of the `>>=` operator. If your code uses `>>=` on a class or structure that overloads `>>`, be sure you understand its redefined behavior. For more information, see [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ [Operátor > >](../../../visual-basic/language-reference/operators/right-shift-operator.md) může být *přetížený*, což znamená, že třída nebo struktura může předefinovat své chování, když má operand typ této třídy nebo struktury. Přetížení operátoru `>>` má vliv na chování operátoru `>>=`. Pokud váš kód používá `>>=` ve třídě nebo struktuře, která přetěžuje `>>`, ujistěte se, že rozumíte jeho předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Příklad  
- The following example uses the `>>=` operator to shift the bit pattern of an `Integer` variable right by the specified amount and assign the result to the variable.  
+ Následující příklad používá operátor `>>=` k posunutí bitového vzoru `Integer` proměnné přímo o zadanou hodnotu a přiřazení výsledku proměnné.  
   
  [!code-vb[VbVbalrOperators#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#15)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Operátor >>](../../../visual-basic/language-reference/operators/right-shift-operator.md)
+- [>> – operátor](../../../visual-basic/language-reference/operators/right-shift-operator.md)
 - [Operátory přiřazení](../../../visual-basic/language-reference/operators/assignment-operators.md)
 - [Operátory bitového posunu](../../../visual-basic/language-reference/operators/bit-shift-operators.md)
-- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Priorita operátorů v Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
 - [Příkazy](../../../visual-basic/programming-guide/language-features/statements.md)

@@ -17,7 +17,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349385"
 ---
 # <a name="xml-document-literal-visual-basic"></a>Literál dokumentu XML (Visual Basic)
-A literal representing an <xref:System.Xml.Linq.XDocument> object.  
+Literál představující objekt <xref:System.Xml.Linq.XDocument>.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,26 +32,26 @@ rootElement
   
 |Termín|Definice|  
 |---|---|  
-|`encoding`|Volitelné. Literal text declaring which encoding the document uses.|  
-|`standalone`|Volitelné. Literal text. Must be "yes" or "no".|  
-|`piCommentList`|Volitelné. List of XML processing instructions and XML comments. Takes the following format:<br /><br /> `piComment [` `piComment` `... ]`<br /><br /> Each `piComment` can be one of the following:<br /><br /> -   [XML Processing Instruction Literal](../../../visual-basic/language-reference/xml-literals/xml-processing-instruction-literal.md).<br />-   [XML Comment Literal](../../../visual-basic/language-reference/xml-literals/xml-comment-literal.md).|  
-|`rootElement`|Požadováno. Root element of the document. The format is one of the following:<br /><br /> <ul><li>[XML Element Literal](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md).</li><li>Embedded expression of the form `<%=` `elementExp` `%>`. The `elementExp` returns one of the following:<br /><br /> <ul><li>An <xref:System.Xml.Linq.XElement> object.</li><li>A collection that contains one <xref:System.Xml.Linq.XElement> object and any number of <xref:System.Xml.Linq.XProcessingInstruction> and <xref:System.Xml.Linq.XComment> objects.</li></ul></li></ul><br /> For more information, see [Embedded Expressions in XML](../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md).|  
+|`encoding`|Volitelná. Textový literál, který deklaruje, který kódování dokumentu používá.|  
+|`standalone`|Volitelná. Textový literál Musí být "Ano" nebo "ne".|  
+|`piCommentList`|Volitelná. Seznam instrukcí pro zpracování XML a komentářů XML Má následující formát:<br /><br /> `piComment [` `piComment` `... ]`<br /><br /> Každá `piComment` může být jedna z následujících:<br /><br /> -   [literálu instrukcí pro zpracování XML](../../../visual-basic/language-reference/xml-literals/xml-processing-instruction-literal.md).<br />-   [literálu komentáře XML](../../../visual-basic/language-reference/xml-literals/xml-comment-literal.md).|  
+|`rootElement`|Požadováno. Kořenový element dokumentu Formát je jeden z následujících:<br /><br /> <ul><li>[Literál elementu XML](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md).</li><li>Vložený výraz formuláře `<%=` `elementExp` `%>`. `elementExp` vrátí jednu z následujících možností:<br /><br /> <ul><li>Objekt <xref:System.Xml.Linq.XElement>.</li><li>Kolekce obsahující jeden <xref:System.Xml.Linq.XElement> objekt a libovolný počet objektů <xref:System.Xml.Linq.XProcessingInstruction> a <xref:System.Xml.Linq.XComment>.</li></ul></li></ul><br /> Další informace najdete v tématu [vložené výrazy v XML](../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md).|  
   
 ## <a name="return-value"></a>Návratová hodnota  
- An <xref:System.Xml.Linq.XDocument> object.  
+ Objekt <xref:System.Xml.Linq.XDocument>.  
   
 ## <a name="remarks"></a>Poznámky  
- An XML document literal is identified by the XML declaration at the start of the literal. Although each XML document literal must have exactly one root XML element, it can have any number of XML processing instructions and XML comments.  
+ Literál dokumentu XML je identifikován deklarací XML na začátku literálu. I když každý literál dokumentu XML musí mít přesně jeden kořenový element XML, může mít libovolný počet instrukcí pro zpracování XML a komentáře XML.  
   
- An XML document literal cannot appear in an XML element.  
+ Literál dokumentu XML nemůže být použit v elementu XML.  
   
 > [!NOTE]
-> An XML literal can span multiple lines without using line continuation characters. This enables you to copy content from an XML document and paste it directly into a Visual Basic program.  
+> Literál XML může zahrnovat více řádků bez použití znaků pro pokračování řádku. To vám umožní zkopírovat obsah z dokumentu XML a vložit ho přímo do Visual Basic programu.  
   
- The Visual Basic compiler converts the XML document literal into calls to the <xref:System.Xml.Linq.XDocument.%23ctor%2A> and <xref:System.Xml.Linq.XDeclaration.%23ctor%2A> constructors.  
+ Kompilátor Visual Basic převádí literál dokumentu XML na volání konstruktoru <xref:System.Xml.Linq.XDocument.%23ctor%2A> a <xref:System.Xml.Linq.XDeclaration.%23ctor%2A>.  
   
 ## <a name="example"></a>Příklad  
- The following example creates an XML document that has an XML declaration, a processing instruction, a comment, and an element that contains another element.  
+ Následující příklad vytvoří dokument XML, který má deklaraci XML, instrukci zpracování, komentář a prvek, který obsahuje jiný element.  
   
  [!code-vb[VbXMLSamples#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples13.vb#30)]  
   
@@ -65,5 +65,5 @@ rootElement
 - [Literál komentáře XML](../../../visual-basic/language-reference/xml-literals/xml-comment-literal.md)
 - [Literál XML elementu](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)
 - [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)
-- [Creating XML in Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [Vytváření XML v Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
 - [Vložené výrazy v XML](../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md)

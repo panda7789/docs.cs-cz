@@ -16,23 +16,23 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74347371"
 ---
 # <a name="visual-basic-limitations"></a>Omezení jazyka Visual Basic
-Earlier versions of Visual Basic enforced boundaries in code, such as the length of variable names, the number of variables allowed in modules, and module size. In Visual Basic .NET, these restrictions have been relaxed, giving you greater freedom in writing and arranging your code.  
+Starší verze Visual Basic vynutily hranice v kódu, jako je délka názvů proměnných, počet proměnných povolených v modulech a velikost modulu. V Visual Basic .NET byla tato omezení odlehčena a poskytuje větší volnost v psaní a uspořádávání kódu.  
   
- Physical limits are dependent more on run-time memory than on compile-time considerations. If you use prudent programming practices, and divide large applications into multiple classes and modules, then there is very little chance of encountering an internal Visual Basic limitation.  
+ Fyzické limity jsou více závislé na paměti za běhu než při kompilaci. Pokud použijete obezřetné postupy programování a rozdělíte velké aplikace na více tříd a modulů, je velmi málo pravděpodobné, že zaznamenáte omezení interního Visual Basic.  
   
- The following are some limitations that you might encounter in extreme cases:  
+ Níže jsou uvedena některá omezení, která se mohou vyskytnout v extrémních případech:  
   
-- **Name Length.** There is a maximum number of characters for the name of every declared programming element. This maximum applies to an entire qualification string if the element name is qualified. See [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
+- **Délka názvu.** Existuje maximální počet znaků pro název každého deklarovaného programovacího prvku. Toto maximum platí pro celý řetězec kvalifikace, pokud je název elementu kvalifikován. Viz [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).  
   
-- **Line Length.** There is a maximum of 65535 characters in a physical line of source code. The logical source code line can be longer if you use line continuation characters. See [How to: Break and Combine Statements in Code](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md).  
+- **Délka řádku.** Ve fyzickém řádku zdrojového kódu je maximálně 65535 znaků. Pokud použijete znaky pro pokračování řádku, může být řádek logického zdrojového kódu delší. Viz [How to: break and kombinovat příkazy v kódu](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md).  
   
-- **Array Dimensions.** There is a maximum number of dimensions you can declare for an array. This limits how many indexes you can use to specify an array element. See [Array Dimensions in Visual Basic](../../../visual-basic/programming-guide/language-features/arrays/array-dimensions.md).  
+- **Dimenze pole.** Existuje maximální počet dimenzí, které lze deklarovat pro pole. Tím se omezí počet indexů, které můžete použít k určení prvku pole. Zobrazení [dimenzí pole v Visual Basic](../../../visual-basic/programming-guide/language-features/arrays/array-dimensions.md).  
   
-- **String Length.** There is a maximum number of Unicode characters you can store in a single string. See [String Data Type](../../../visual-basic/language-reference/data-types/string-data-type.md).  
+- **Délka řetězce.** Existuje maximální počet znaků Unicode, které lze uložit v jednom řetězci. Viz [datový typ String](../../../visual-basic/language-reference/data-types/string-data-type.md).  
   
-- **Environment String Length.** There is a maximum of 32768 characters for any environment string used as a command-line argument. This is a limitation on all platforms.  
+- **Délka řetězce prostředí.** Pro libovolný řetězec prostředí použité jako argument příkazového řádku je k dispozici maximálně 32768 znaků. Toto omezení se vztahuje na všechny platformy.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Struktura programu a zásady týkající se kódu](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)
-- [Visual Basic Naming Conventions](../../../visual-basic/programming-guide/program-structure/naming-conventions.md)
+- [Visual Basic konvence pojmenování](../../../visual-basic/programming-guide/program-structure/naming-conventions.md)

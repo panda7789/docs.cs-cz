@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446494"
 ---
 # <a name="emitinternalexportedtypes-method"></a>EmitInternalExportedTypes – metoda
-Emits types added to the assembly. Call this method after known internal types have been added.  
+Vygeneruje typy přidané do sestavení. Tuto metodu volejte po přidání známých vnitřních typů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,16 +35,16 @@ HRESULT EmitInternalExportedTypes(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID of assembly.  
+ ID sestavení  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Returns S_OK if the method succeeds.  
+ Vrátí S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Requires alink.h  
+ Vyžaduje ALink. h  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink2 – rozhraní](ialink2-interface.md)
 - [IALink – rozhraní](ialink-interface.md)
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)

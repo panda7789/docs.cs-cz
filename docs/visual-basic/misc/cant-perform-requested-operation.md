@@ -1,5 +1,5 @@
 ---
-title: Can't perform requested operation
+title: Požadovanou operaci nelze provést.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrID17
@@ -11,12 +11,12 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353326"
 ---
-# <a name="cant-perform-requested-operation-visual-basic"></a>Can't perform requested operation (Visual Basic)
-An operation cannot be carried out because it would invalidate the current state of the project. For example, you may have tried to programmatically modify code that is running.  
+# <a name="cant-perform-requested-operation-visual-basic"></a>Požadovanou operaci nelze provést (Visual Basic)
+Operaci nelze provést, protože by došlo k neplatnosti aktuálního stavu projektu. Například jste se pokusili programově změnit kód, který je spuštěn.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Stop the code execution, make modifications if necessary, and then retry the operation.  
+- Zastavte provádění kódu, v případě potřeby proveďte úpravy a potom operaci opakujte.  
   
 ## <a name="see-also"></a>Viz také:
 

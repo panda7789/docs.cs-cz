@@ -22,13 +22,13 @@ ms.locfileid: "74353853"
 ---
 # <a name="decrypting-data"></a>Dešifrování dat
 
-Decryption is the reverse operation of encryption. For secret-key encryption, you must know both the key and IV that were used to encrypt the data. For public-key encryption, you must know either the public key (if the data was encrypted using the private key) or the private key (if the data was encrypted using the public key).
+Dešifrování je reverzní operace šifrování. U šifrování tajného klíče je nutné znát klíč i IV, které byly použity k zašifrování dat. U šifrování veřejného klíče je nutné znát buď veřejný klíč (Pokud byla data zašifrovaná pomocí privátního klíče), nebo privátní klíč (Pokud byla data zašifrovaná pomocí veřejného klíče).
 
-## <a name="symmetric-decryption"></a>Symmetric Decryption
+## <a name="symmetric-decryption"></a>Symetrické dešifrování
 
-The decryption of data encrypted with symmetric algorithms is similar to the process used to encrypt data with symmetric algorithms. The <xref:System.Security.Cryptography.CryptoStream> class is used with symmetric cryptography classes provided by the .NET Framework to decrypt data read from any managed stream object.
+Dešifrování dat šifrovaných pomocí symetrických algoritmů je podobné procesu použitému k šifrování dat pomocí symetrických algoritmů. Třída <xref:System.Security.Cryptography.CryptoStream> se používá společně se třídami symetrického kryptografie, které poskytuje .NET Framework k dešifrování dat přečtených z libovolného spravovaného objektu streamu.
 
-The following example illustrates how to create a new instance of the <xref:System.Security.Cryptography.RijndaelManaged> class and use it to perform decryption on a <xref:System.Security.Cryptography.CryptoStream> object. This example first creates a new instance of the **RijndaelManaged** class. Next it creates a **CryptoStream** object and initializes it to the value of a managed stream called `myStream`. Next, the **CreateDecryptor** method from the **RijndaelManaged** class is passed the same key and IV that was used for encryption and is then passed to the **CryptoStream** constructor. Finally, the **CryptoStreamMode.Read** enumeration is passed to the **CryptoStream** constructor to specify read access to the stream.
+Následující příklad ukazuje, jak vytvořit novou instanci třídy <xref:System.Security.Cryptography.RijndaelManaged> a použít ji k dešifrování objektu <xref:System.Security.Cryptography.CryptoStream>. Tento příklad nejprve vytvoří novou instanci třídy **RijndaelManaged** . Dále vytvoří objekt **CryptoStream** a inicializuje jej na hodnotu spravovaného datového proudu s názvem `myStream`. Dále metoda **CreateDecryptor** z třídy **RijndaelManaged** předává stejný klíč a IV, který byl použit pro šifrování a je poté předán konstruktoru **CryptoStream** . Nakonec je výčet **CryptoStreamMode. Read** předán konstruktoru **CryptoStream** , který určuje přístup pro čtení ke streamu.
 
 ```vb
 Dim rmCrypto As New RijndaelManaged()
@@ -40,7 +40,7 @@ RijndaelManaged rmCrypto = new RijndaelManaged();
 CryptoStream cryptStream = new CryptoStream(myStream, rmCrypto.CreateDecryptor(Key, IV), CryptoStreamMode.Read);
 ```
 
-The following example shows the entire process of creating a stream, decrypting the stream, reading from the stream, and closing the streams. A <xref:System.Net.Sockets.TcpListener> object is created that initializes a network stream when a connection to the listening object is made. The network stream is then decrypted using the **CryptoStream** class and the **RijndaelManaged** class. This example assumes that the key and IV values have been either successfully transferred or previously agreed upon. It does not show the code needed to encrypt and transfer these values.
+Následující příklad ukazuje celý proces vytvoření datového proudu, dešifrování datového proudu, čtení z datového proudu a zavření datových proudů. Vytvoří se objekt <xref:System.Net.Sockets.TcpListener>, který inicializuje síťový datový proud, když se vytvoří připojení k naslouchajícímu objektu. Síťový datový proud je poté dešifrován pomocí třídy **CryptoStream** a třídy **RijndaelManaged** . Tento příklad předpokládá, že klíč a hodnoty IV byly buď úspěšně přeneseny nebo dříve odsouhlaseny. Nezobrazuje kód potřebný k šifrování a přenos těchto hodnot.
 
 ```vb
 Imports System.IO
@@ -170,15 +170,15 @@ class Class1
 }
 ```
 
-For the previous sample to work, an encrypted connection must be made to the listener. The connection must use the same key, IV, and algorithm used in the listener. If such a connection is made, the message is decrypted and displayed to the console.
+Aby předchozí ukázka fungovala, musí být na naslouchací proces provedeno šifrované připojení. Připojení musí používat stejný klíč, IV a algoritmus, který se používá v naslouchací službě. Pokud je takové připojení vytvořeno, zpráva je dešifrována a zobrazena v konzole nástroje.
 
-## <a name="asymmetric-decryption"></a>Asymmetric Decryption
+## <a name="asymmetric-decryption"></a>Asymetrické dešifrování
 
-Typically, a party (party A) generates both a public and private key and stores the key either in memory or in a cryptographic key container. Party A then sends the public key to another party (party B). Using the public key, party B encrypts data and sends the data back to party A. After receiving the data, party A decrypts it using the private key that corresponds. Decryption will be successful only if party A uses the private key that corresponds to the public key Party B used to encrypt the data.
+Strana (strana A) obvykle generuje veřejný i privátní klíč a ukládá klíč buď do paměti, nebo do kontejneru kryptografických klíčů. Strana A pak pošle veřejný klíč druhé straně (smluvní straně B). Když strana B použije veřejný klíč, zašifruje data a pošle je zpátky do strany A. Po přijetí dat ji strana dešifruje pomocí privátního klíče, který odpovídá. Dešifrování bude úspěšné pouze v případě, že strana A používá privátní klíč, který odpovídá veřejnému klíči B, který se používá k šifrování dat.
 
-For information on how to store an asymmetric key in secure cryptographic key container and how to later retrieve the asymmetric key, see [How to: Store Asymmetric Keys in a Key Container](../../../docs/standard/security/how-to-store-asymmetric-keys-in-a-key-container.md).
+Informace o tom, jak uložit asymetrický klíč do kontejneru zabezpečeného kryptografického klíče a jak později získat asymetrický klíč, najdete v tématu [Postupy: ukládání asymetrických klíčů v kontejneru klíčů](../../../docs/standard/security/how-to-store-asymmetric-keys-in-a-key-container.md).
 
-The following example illustrates the decryption of two arrays of bytes that represent a symmetric key and IV. For information on how to extract the asymmetric public key from the <xref:System.Security.Cryptography.RSACryptoServiceProvider> object in a format that you can easily send to a third party, see [Encrypting Data](../../../docs/standard/security/encrypting-data.md).
+Následující příklad znázorňuje dešifrování dvou polí bajtů, které reprezentují symetrický klíč a IV. Informace o tom, jak extrahovat asymetrický veřejný klíč z objektu <xref:System.Security.Cryptography.RSACryptoServiceProvider> ve formátu, který lze snadno odeslat třetí straně, najdete v tématu [šifrování dat](../../../docs/standard/security/encrypting-data.md).
 
 ```vb
 'Create a new instance of the RSACryptoServiceProvider class.

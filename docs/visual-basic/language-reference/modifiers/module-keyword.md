@@ -1,5 +1,5 @@
 ---
-title: <keyword> – modul
+title: <keyword> modulu
 ms.date: 07/20/2015
 f1_keywords:
 - vb.ModuleAttribute
@@ -15,18 +15,18 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351556"
 ---
-# <a name="module-keyword-visual-basic"></a>Module \<keyword> (Visual Basic)
-Specifies that an attribute at the beginning of a source file applies to the current assembly module.  
+# <a name="module-keyword-visual-basic"></a>Modul \<> klíčového slova (Visual Basic)
+Určuje, že atribut na začátku zdrojového souboru se vztahuje na aktuální modul sestavení.  
   
 ## <a name="remarks"></a>Poznámky  
- Many attributes pertain to an individual programming element, such as a class or property. You apply such an attribute by attaching the attribute block, within angle brackets (`< >`), directly to the declaration statement.  
+ Mnoho atributů se vztahuje k jednotlivému programovacímu prvku, jako je třída nebo vlastnost. Tento atribut použijete připojením bloku atributu v rámci lomených závorek (`< >`) přímo k příkazu Declaration.  
   
- If an attribute pertains not only to the following element but to the current assembly module, you place the attribute block at the beginning of the source file and identify the attribute with the `Module` keyword. If it applies to the entire assembly, you use the [Assembly](../../../visual-basic/language-reference/modifiers/assembly.md) keyword.  
+ Pokud atribut nenáleží pouze k následujícímu elementu, ale k aktuálnímu modulu sestavení, umístěte blok atributů na začátek zdrojového souboru a Identifikujte atribut pomocí klíčového slova `Module`. Pokud platí pro celé sestavení, použijte klíčové slovo [Assembly](../../../visual-basic/language-reference/modifiers/assembly.md) .  
   
- The `Module` modifier is not the same as the [Module Statement](../../../visual-basic/language-reference/statements/module-statement.md).  
+ Modifikátor `Module` není stejný jako [příkaz Module](../../../visual-basic/language-reference/statements/module-statement.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Assembly](../../../visual-basic/language-reference/modifiers/assembly.md)
 - [Příkaz Module](../../../visual-basic/language-reference/statements/module-statement.md)
-- [Attributes overview](../../../visual-basic/programming-guide/concepts/attributes/index.md)
+- [Přehled atributů](../../../visual-basic/programming-guide/concepts/attributes/index.md)

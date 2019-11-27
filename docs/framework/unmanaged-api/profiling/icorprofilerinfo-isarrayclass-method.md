@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74438726"
 ---
 # <a name="icorprofilerinfoisarrayclass-method"></a>ICorProfilerInfo::IsArrayClass – metoda
-Determines whether the specified class is an array class.  
+Určuje, zda je zadaná třída třídou Array.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,28 +37,28 @@ HRESULT IsArrayClass(
   
 ## <a name="parameters"></a>Parametry  
  `classId`  
- [in] The ID of the class to be examined.  
+ pro ID třídy, která se má prozkoumat  
   
  `pBaseElemType`  
- [out] A pointer to a value of the CorElementType enumeration that indicates the type of the array elements.  
+ mimo Ukazatel na hodnotu výčtu CorElementType –, která určuje typ prvků pole.  
   
  `pBaseClassId`  
- [out] A pointer to the class ID of the array elements, when available.  
+ mimo Ukazatel na ID třídy prvků pole, je-li k dispozici.  
   
  `pcRank`  
- [out] A pointer to an integer that indicates the rank (that is, number of dimensions) of the array.  
+ mimo Ukazatel na celé číslo, které určuje pořadí (tj. počet rozměrů) pole.  
   
 ## <a name="remarks"></a>Poznámky  
- If the specified class is an array class, the `IsArrayClass` method returns an S_OK HRESULT and values for any non-null output parameters. Otherwise, it returns S_FALSE.  
+ Pokud je zadaná třída třídou Array, metoda `IsArrayClass` vrátí S_OK HRESULT a hodnoty pro výstupní parametry, které nejsou null. V opačném případě vrátí S_FALSE.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

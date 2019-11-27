@@ -19,19 +19,19 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349986"
 ---
 # <a name="return-values-for-the-cstr-function-visual-basic"></a>Návratové hodnoty pro funkci CStr (Visual Basic)
-The following table describes the return values for `CStr` for different data types of `expression`.  
+Následující tabulka popisuje návratové hodnoty pro `CStr` pro různé datové typy `expression`.  
   
-|If `expression` type is|`CStr` returns|  
+|Pokud je `expression` typ|`CStr` vrátí|  
 |-----------------------------|--------------------|  
-|[Datový typ Boolean](../../../visual-basic/language-reference/data-types/boolean-data-type.md)|A string containing "True" or "False".|  
-|[Datový typ Date](../../../visual-basic/language-reference/data-types/date-data-type.md)|A string containing a `Date` value (date and time) in the short date format of your system.|  
-|[Číselné datové typy](../../../visual-basic/programming-guide/language-features/data-types/numeric-data-types.md)|A string representing the number.|  
+|[Datový typ Boolean](../../../visual-basic/language-reference/data-types/boolean-data-type.md)|Řetězec obsahující "true" nebo "false".|  
+|[Datový typ Date](../../../visual-basic/language-reference/data-types/date-data-type.md)|Řetězec obsahující `Date` hodnotu (datum a čas) v krátkém formátu data systému.|  
+|[Číselné datové typy](../../../visual-basic/programming-guide/language-features/data-types/numeric-data-types.md)|Řetězec představující číslo.|  
   
-## <a name="cstr-and-date"></a>CStr and Date  
- The `Date` type always contains both date and time information. For purposes of type conversion, Visual Basic considers 1/1/0001 (January 1 of the year 1) to be a *neutral value* for the date, and 00:00:00 (midnight) to be a neutral value for the time. `CStr` does not include neutral values in the resulting string. For example, if you convert `#January 1, 0001 9:30:00#` to a string, the result is "9:30:00 AM"; the date information is suppressed. However, the date information is still present in the original `Date` value and can be recovered with functions such as <xref:Microsoft.VisualBasic.DateAndTime.DatePart%2A>.  
+## <a name="cstr-and-date"></a>CStr a datum  
+ Typ `Date` vždy obsahuje informace o datu a čase. Pro účely konverze typu Visual Basic považuje 1/1/0001 (1. ledna of year) za *neutrální hodnotu* pro datum a 00:00:00 (půlnoc) jako neutrální hodnotu pro čas. `CStr` nezahrnuje neutrální hodnoty ve výsledném řetězci. Pokud například převedete `#January 1, 0001 9:30:00#` na řetězec, výsledek je "9:30:00 dop."; informace o datu jsou potlačeny. Informace o datu jsou však stále přítomny v původní `Date` hodnotě a lze je obnovit pomocí funkcí, jako je například <xref:Microsoft.VisualBasic.DateAndTime.DatePart%2A>.  
   
 > [!NOTE]
-> The `CStr` function performs its conversion based on the current culture settings for the application. To get the string representation of a number in a particular culture, use the number's `ToString(IFormatProvider)` method. For example, use <xref:System.Double.ToString%2A?displayProperty=nameWithType> when converting a value of type `Double` to a `String`.  
+> Funkce `CStr` provádí svůj převod na základě aktuálního nastavení jazykové verze aplikace. Chcete-li získat řetězcové vyjádření čísla v konkrétní jazykové verzi, použijte metodu `ToString(IFormatProvider)` číslo. Například použijte <xref:System.Double.ToString%2A?displayProperty=nameWithType> při převodu hodnoty typu `Double` na `String`.  
   
 ## <a name="see-also"></a>Viz také:
 

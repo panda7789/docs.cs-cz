@@ -20,46 +20,46 @@ ms.locfileid: "74350569"
 ---
 # <a name="type-relationships-in-query-operations-visual-basic"></a>Vztahy typů v operacích dotazu (Visual Basic)
 
-Variables used in [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] query operations are strongly typed and must be compatible with each other. Strong typing is used in the data source, in the query itself, and in the query execution. The following illustration identifies terms used to describe a [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query. For more information about the parts of a query, see [Basic Query Operations (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md).
+Proměnné používané v [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] operacích dotazů jsou silného typu a musí být vzájemně kompatibilní. Silné zadání se používá ve zdroji dat, v samotném dotazu a v provádění dotazu. Následující ilustrace identifikuje výrazy používané k popisu [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]ho dotazu. Další informace o částech dotazu najdete v tématu [základní operace dotazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md).
 
-![Screenshot showing a pseudocode query with elements highlighted.](./media/type-relationships-in-query-operations/linq-query-description-terms.png)
+![Snímek obrazovky znázorňující dotaz pseudokódu s zvýrazněnými prvky](./media/type-relationships-in-query-operations/linq-query-description-terms.png)
 
-The type of the range variable in the query must be compatible with the type of the elements in the data source. The type of the query variable must be compatible with the sequence element defined in the `Select` clause. Finally, the type of the sequence elements also must be compatible with the type of the loop control variable that is used in the `For Each` statement that executes the query. This strong typing facilitates identification of type errors at compile time.
+Typ proměnné rozsahu v dotazu musí být kompatibilní s typem prvků ve zdroji dat. Typ proměnné dotazu musí být kompatibilní s elementem Sequence definovaným v klauzuli `Select`. Nakonec musí být typ elementů sekvence také kompatibilní s typem řídicí proměnné smyčky, která je použita v příkazu `For Each`, který spouští dotaz. Toto silné zadání usnadňuje identifikaci chyb typu v době kompilace.
 
-Visual Basic makes strong typing convenient by implementing local type inference, also known as *implicit typing*. That feature is used in the previous example, and you will see it used throughout the [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] samples and documentation. In Visual Basic, local type inference is accomplished simply by using a `Dim` statement without an `As` clause. In the following example, `city` is strongly typed as a string.
+Visual Basic usnadňuje silné psaní implementací místního typu, označovaného také jako *implicitní psaní*. Tato funkce se používá v předchozím příkladu a zobrazí se v ní [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] ukázky a dokumentace. V Visual Basic je odvození místního typu provedeno jednoduše pomocí příkazu `Dim` bez klauzule `As`. V následujícím příkladu je `city` silně typované jako řetězec.
 
 [!code-vb[VbLINQTypeRels#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQTypeRels/VB/Class1.vb#1)]
 
 > [!NOTE]
-> Local type inference works only when `Option Infer` is set to `On`. For more information, see [Option Infer Statement](../../../../visual-basic/language-reference/statements/option-infer-statement.md).
+> Odvození místního typu funguje pouze v případě, že je `Option Infer` nastaveno na `On`. Další informace naleznete v tématu [příkaz Option include](../../../../visual-basic/language-reference/statements/option-infer-statement.md).
 
-However, even if you use local type inference in a query, the same type relationships are present among the variables in the data source, the query variable, and the query execution loop. It is useful to have a basic understanding of these type relationships when you are writing [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] queries, or working with the samples and code examples in the documentation.
+Nicméně i v případě, že použijete místní odvození typu v dotazu, jsou přítomny stejné vztahy typů mezi proměnné ve zdroji dat, proměnnou dotazu a smyčkou provedení dotazu. Při psaní [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazů nebo při práci s ukázkami a příklady kódu v dokumentaci je vhodné mít základní znalosti těchto vztahů s těmito typy.
 
-You may need to specify an explicit type for a range variable that does not match the type returned from the data source. You can specify the type of the range variable by using an `As` clause. However, this results in an error if the conversion is a [narrowing conversion](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md) and `Option Strict` is set to `On`. Therefore, we recommend that you perform the conversion on the values retrieved from the data source. You can convert the values from the data source to the explicit range variable type by using the <xref:System.Linq.Enumerable.Cast%2A> method. You can also cast the values selected in the `Select` clause to an explicit type that is different from the type of the range variable. These points are illustrated in the following code.
+Možná budete muset zadat explicitní typ pro proměnnou rozsahu, která se neshoduje s typem vráceným ze zdroje dat. Typ proměnné rozsahu lze zadat pomocí klauzule `As`. Výsledkem je ale chyba, pokud je převod [zužujícího převodu](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md) a `Option Strict` je nastavené na `On`. Proto doporučujeme, abyste provedli převod na hodnoty načtené ze zdroje dat. Hodnoty z datového zdroje můžete převést na typ proměnné explicitní rozsah pomocí metody <xref:System.Linq.Enumerable.Cast%2A>. Hodnoty vybrané v klauzuli `Select` lze také přetypovat na explicitní typ, který se liší od typu proměnné rozsahu. Tyto body jsou znázorněny v následujícím kódu.
 
 [!code-vb[VbLINQTypeRels#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQTypeRels/VB/Class1.vb#4)]
 
-## <a name="queries-that-return-entire-elements-of-the-source-data"></a>Queries That Return Entire Elements of the Source Data
+## <a name="queries-that-return-entire-elements-of-the-source-data"></a>Dotazy, které vracejí celé prvky zdrojových dat
 
-The following example shows a [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query operation that returns a sequence of elements selected from the source data. The source, `names`, contains an array of strings, and the query output is a sequence containing strings that start with the letter M.
+Následující příklad ukazuje operaci [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu, která vrací sekvenci prvků vybraných ze zdrojových dat. Zdroj, `names`obsahuje pole řetězců a výstup dotazu je sekvence obsahující řetězce, které začínají písmenem M.
 
 [!code-vb[VbLINQTypeRels#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQTypeRels/VB/Class1.vb#2)]
 
-This is equivalent to the following code, but is much shorter and easier to write. Reliance on local type inference in queries is the preferred style in Visual Basic.
+To je ekvivalentní následujícímu kódu, ale je mnohem kratší a snazší psát. Spoléhání na odvození místního typu v dotazech je preferovaným stylem v Visual Basic.
 
 [!code-vb[VbLINQTypeRels#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQTypeRels/VB/Class1.vb#3)]
 
-The following relationships exist in both of the previous code examples, whether the types are determined implicitly or explicitly.
+Následující vztahy existují v obou předchozích příkladech kódu, ať už jsou typy určeny implicitně nebo explicitně.
 
-1. The type of the elements in the data source, `names`, is the type of the range variable, `name`, in the query.
+1. Typ prvků ve zdroji dat, `names`, je typ proměnné rozsahu `name`v dotazu.
 
-2. The type of the object that is selected, `name`, determines the type of the query variable, `mNames`. Here `name` is a string, so the query variable is IEnumerable(Of String) in Visual Basic.
+2. Typ objektu, který je vybrán, `name`, určuje typ proměnné dotazu `mNames`. Zde `name` je řetězec, takže proměnná dotazu je IEnumerable (Of String) v Visual Basic.
 
-3. The query defined in `mNames` is executed in the `For Each` loop. The loop iterates over the result of executing the query. Because `mNames`, when it is executed, will return a sequence of strings, the loop iteration variable, `nm`, also is a string.
+3. Dotaz definovaný v `mNames` je proveden ve `For Each` smyčce. Smyčka prochází výsledek provedení dotazu. Vzhledem k tomu, že při spuštění `mNames`dojde k vrácení posloupnosti řetězců, proměnná iterace smyčky, `nm`, je také řetězec.
 
-## <a name="queries-that-return-one-field-from-selected-elements"></a>Queries That Return One Field from Selected Elements
+## <a name="queries-that-return-one-field-from-selected-elements"></a>Dotazy, které vracejí jedno pole z vybraných elementů
 
-The following example shows a [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] query operation that returns a sequence containing only one part of each element selected from the data source. The query takes a collection of `Customer` objects as its data source and projects only the `Name` property in the result. Because the customer name is a string, the query produces a sequence of strings as output.
+Následující příklad ukazuje operaci [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] dotazu, která vrací sekvenci obsahující pouze jednu část každého prvku vybranou ze zdroje dat. Dotaz převezme kolekci objektů `Customer` jako zdroj dat a projekty ve výsledku vytvoří pouze vlastnost `Name`. Vzhledem k tomu, že název zákazníka je řetězec, dotaz vytvoří sekvenci řetězců jako výstup.
 
 ```vb
 ' Method GetTable returns a table of Customer objects.
@@ -73,15 +73,15 @@ For Each custName In custNames
 Next
 ```
 
-The relationships between variables are like those in the simpler example.
+Vztahy mezi proměnnými jsou podobně jako v jednodušším příkladu.
 
-1. The type of the elements in the data source, `customers`, is the type of the range variable, `cust`, in the query. In this example, that type is `Customer`.
+1. Typ prvků ve zdroji dat, `customers`, je typ proměnné rozsahu `cust`v dotazu. V tomto příkladu je tento typ `Customer`.
 
-2. The `Select` statement returns the `Name` property of each `Customer` object instead of the whole object. Because `Name` is a string, the query variable, `custNames`, will again be IEnumerable(Of String), not of `Customer`.
+2. Příkaz `Select` vrátí vlastnost `Name` každého objektu `Customer` namísto celého objektu. Vzhledem k tomu, že `Name` je řetězec, proměnná dotazu `custNames`, bude znovu typu IEnumerable (Of String), nikoli `Customer`.
 
-3. Because `custNames` represents a sequence of strings, the `For Each` loop's iteration variable, `custName`, must be a string.
+3. Vzhledem k tomu, že `custNames` představuje sekvenci řetězců, iterační proměnná `For Each` smyčky, `custName`, musí být řetězec.
 
-Without local type inference, the previous example would be more cumbersome to write and to understand, as the following example shows.
+Bez odvození místního typu by byl předchozí příklad nenáročný na zápis a pochopení, jak ukazuje následující příklad.
 
 ```vb
 ' Method GetTable returns a table of Customer objects.
@@ -96,9 +96,9 @@ Without local type inference, the previous example would be more cumbersome to w
  Next
 ```
 
-## <a name="queries-that-require-anonymous-types"></a>Queries That Require Anonymous Types
+## <a name="queries-that-require-anonymous-types"></a>Dotazy, které vyžadují anonymní typy
 
-The following example shows a more complex situation. In the previous example, it was inconvenient to specify types for all the variables explicitly. In this example, it is impossible. Instead of selecting entire `Customer` elements from the data source, or a single field from each element, the `Select` clause in this query returns two properties of the original `Customer` object: `Name` and `City`. In response to the `Select` clause, the compiler defines an anonymous type that contains those two properties. The result of executing `nameCityQuery` in the `For Each` loop is a collection of instances of the new anonymous type. Because the anonymous type has no usable name, you cannot specify the type of `nameCityQuery` or `custInfo` explicitly. That is, with an anonymous type, you have no type name to use in place of `String` in `IEnumerable(Of String)`. For more information, see [Anonymous Types](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).
+Následující příklad ukazuje složitější situaci. V předchozím příkladu bylo nepohodlné určit typy pro všechny proměnné explicitně. V tomto příkladu není možné. Místo výběru celých prvků `Customer` ze zdroje dat nebo jednoho pole z každého prvku vrátí klauzule `Select` v tomto dotazu dvě vlastnosti původního objektu `Customer`: `Name` a `City`. V reakci na klauzuli `Select` definuje kompilátor anonymní typ, který obsahuje tyto dvě vlastnosti. Výsledek spuštění `nameCityQuery` ve smyčce `For Each` je kolekce instancí nového anonymního typu. Vzhledem k tomu, že anonymní typ nemá žádný použitelný název, nelze zadat typ `nameCityQuery` ani `custInfo` explicitně. To znamená, že u anonymního typu není název typu, který by se měl použít místo `String` v `IEnumerable(Of String)`. Další informace najdete v tématu [anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).
 
 ```vb
 ' Method GetTable returns a table of Customer objects.
@@ -112,19 +112,19 @@ For Each custInfo In nameCityQuery
 Next
 ```
 
-Although it is not possible to specify types for all the variables in the previous example, the relationships remain the same.
+I když není možné určit typy pro všechny proměnné v předchozím příkladu, relace zůstanou stejné.
 
-1. The type of the elements in the data source is again the type of the range variable in the query. In this example, `cust` is an instance of `Customer`.
+1. Typ prvků ve zdroji dat je znovu typem proměnné rozsahu v dotazu. V tomto příkladu je `cust` instancí `Customer`.
 
-2. Because the `Select` statement produces an anonymous type, the query variable, `nameCityQuery`, must be implicitly typed as an anonymous type. An anonymous type has no usable name, and therefore cannot be specified explicitly.
+2. Vzhledem k tomu, že příkaz `Select` vytváří anonymní typ, musí být proměnná dotazu `nameCityQuery`, implicitně zadána jako anonymní typ. Anonymní typ nemá žádný použitelný název, a proto jej nelze zadat explicitně.
 
-3. The type of the iteration variable in the `For Each` loop is the anonymous type created in step 2. Because the type has no usable name, the type of the loop iteration variable must be determined implicitly.
+3. Typ iterační proměnné ve smyčce `For Each` je anonymní typ vytvořený v kroku 2. Vzhledem k tomu, že typ nemá žádný použitelný název, je nutné určit typ proměnné iterace smyčky implicitně.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Getting Started with LINQ in Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)
+- [Začínáme pomocí LINQ v Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)
 - [Anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)
 - [Odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
-- [Introduction to LINQ in Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Úvod do jazyka LINQ v Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
 - [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
 - [Dotazy](../../../../visual-basic/language-reference/queries/index.md)

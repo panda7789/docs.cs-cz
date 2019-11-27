@@ -17,33 +17,33 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353964"
 ---
 # <a name="decision-structures-visual-basic"></a>Struktury rozhodování (Visual Basic)
-Visual Basic lets you test conditions and perform different operations depending on the results of that test. You can test for a condition being true or false, for various values of an expression, or for various exceptions generated when you execute a series of statements.  
+Visual Basic umožňuje testovat podmínky a provádět různé operace v závislosti na výsledcích tohoto testu. Můžete testovat podmínku true nebo false, pro různé hodnoty výrazu nebo pro různé výjimky vygenerované při spuštění řady příkazů.  
   
- The following illustration shows a decision structure that tests for a condition being true and takes different actions depending on whether it is true or false.  
+ Následující ilustrace znázorňuje rozhodovací strukturu, která testuje podmínku na hodnotu true a provede různé akce v závislosti na tom, zda je hodnota true nebo false.  
   
- ![A flow chart of an If...Then...Else construction.](./media/decision-structures/if-then-else-construction.gif)  
+ ![Vývojový diagram If...Then...Else konstrukce.](./media/decision-structures/if-then-else-construction.gif)  
   
-## <a name="ifthenelse-construction"></a>If...Then...Else Construction  
- `If...Then...Else` constructions let you test for one or more conditions and run one or more statements depending on each condition. You can test conditions and take actions in the following ways:  
+## <a name="ifthenelse-construction"></a>If...Then...Else konstrukce  
+ `If...Then...Else` konstrukce umožňují testovat jednu nebo více podmínek a v závislosti na každé z nich spustit jeden nebo více příkazů. Můžete testovat podmínky a provádět akce následujícími způsoby:  
   
-- Run one or more statements if a condition is `True`  
+- Spustit jeden nebo více příkazů, pokud je podmínka `True`  
   
-- Run one or more statements if a condition is `False`  
+- Spustit jeden nebo více příkazů, pokud je podmínka `False`  
   
-- Run some statements if a condition is `True` and others if it is `False`  
+- Spustit některé příkazy, pokud je podmínka `True` a další, pokud je `False`  
   
-- Test an additional condition if a prior condition is `False`  
+- Test další podmínky, pokud je předchozí podmínka `False`  
   
- The control structure that offers all these possibilities is the [If...Then...Else Statement](../../../../visual-basic/language-reference/statements/if-then-else-statement.md). You can use a single-line version if you have just one test and one statement to run. If you have a more complex set of conditions and actions, you can use the multiple-line version.  
+ Struktura ovládacího prvku, která nabízí všechny tyto možnosti, je [if... Pak... ELSE – příkaz](../../../../visual-basic/language-reference/statements/if-then-else-statement.md). Pokud máte pouze jeden test a jeden příkaz ke spuštění, můžete použít jednořádkových verzí. Pokud máte složitější sadu podmínek a akcí, můžete použít víceřádkovou verzi.  
   
-## <a name="selectcase-construction"></a>Select...Case Construction  
- The `Select...Case` construction lets you evaluate an expression one time and run different sets of statements based on different possible values. For more information, see [Select...Case Statement](../../../../visual-basic/language-reference/statements/select-case-statement.md).  
+## <a name="selectcase-construction"></a>Select...Case konstrukce  
+ Konstrukce `Select...Case` umožňuje vyhodnotit výraz jednou a spouštět různé sady příkazů na základě různých možných hodnot. Další informace najdete v tématu věnovaném [výběru... Příkaz Case](../../../../visual-basic/language-reference/statements/select-case-statement.md).  
   
-## <a name="trycatchfinally-construction"></a>Try...Catch...Finally Construction  
- `Try...Catch...Finally` constructions let you run a set of statements under an environment that retains control if any one of your statements causes an exception. You can take different actions for different exceptions. You can optionally specify a block of code that runs before you exit the whole `Try...Catch...Finally` construction, regardless of what occurs. For more information, see [Try...Catch...Finally Statement](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
+## <a name="trycatchfinally-construction"></a>Try...Catch...Finally konstrukce  
+ `Try...Catch...Finally` konstrukce umožňují spustit sadu příkazů v prostředí, které uchovává řízení, pokud některý z vašich příkazů způsobí výjimku. Můžete provádět různé akce pro různé výjimky. Volitelně můžete zadat blok kódu, který se spustí před ukončením celé `Try...Catch...Finally` konstrukce bez ohledu na to, co se děje. Další informace najdete v tématu [Try... Zachytit... Finally – příkaz](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
   
 > [!NOTE]
-> For many control structures, when you click a keyword, all of the keywords in the structure are highlighted. For instance, when you click `If` in an `If...Then...Else` construction, all instances of `If`, `Then`, `ElseIf`, `Else`, and `End If` in the construction are highlighted. To move to the next or previous highlighted keyword, press CTRL+SHIFT+DOWN ARROW or CTRL+SHIFT+UP ARROW.  
+> U mnoha řídicích struktur se při kliknutí na klíčové slovo zvýrazní všechna klíčová slova ve struktuře. Například když v konstrukci `If...Then...Else` kliknete na `If`, všechny instance `If`, `Then`, `ElseIf`, `Else`a `End If` se zvýrazní. Chcete-li přejít na další nebo předchozí zvýrazněné klíčové slovo, stiskněte klávesy CTRL + SHIFT + šipka dolů nebo CTRL + SHIFT + šipka nahoru.  
   
 ## <a name="see-also"></a>Viz také:
 

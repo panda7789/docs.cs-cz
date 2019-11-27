@@ -9,51 +9,51 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352027"
 ---
-# <a name="linq-to-xml-axes-overview-visual-basic"></a>LINQ to XML Axes Overview (Visual Basic)
-After you have created an XML tree or loaded an XML document into an XML tree, you can query it to find elements and attributes and retrieve their values. You retrieve collections through the *axis methods*, also called *axes*. Some of the axes are methods in the <xref:System.Xml.Linq.XElement> and <xref:System.Xml.Linq.XDocument> classes that return <xref:System.Collections.Generic.IEnumerable%601> collections. Some of the axes are extension methods in the <xref:System.Xml.Linq.Extensions> class. The axes that are implemented as extension methods operate on collections, and return collections.  
+# <a name="linq-to-xml-axes-overview-visual-basic"></a>Přehled OS LINQ to XML (Visual Basic)
+Po vytvoření stromu XML nebo načtení dokumentu XML do stromu XML můžete zadat dotaz na nalezení prvků a atributů a načíst jejich hodnoty. Kolekce se načítají přes *metody osy*, označované také jako *osy*. Některé osy jsou metody v <xref:System.Xml.Linq.XElement> a <xref:System.Xml.Linq.XDocument> třídy, které vracejí <xref:System.Collections.Generic.IEnumerable%601> kolekce. Některé osy jsou rozšiřující metody ve třídě <xref:System.Xml.Linq.Extensions>. Osy, které jsou implementovány jako metody rozšíření, pracují na kolekcích a vracejí kolekce.  
   
- As described in [XElement Class Overview](../../../../visual-basic/programming-guide/concepts/linq/xelement-class-overview.md), an <xref:System.Xml.Linq.XElement> object represents a single element node. The content of an element can be complex (sometimes called structured content), or it can be a simple element. A simple element can be empty or can contain a value. If the node contains structured content, you can use the various axis methods to retrieve enumerations of descendant elements. The most commonly used axis methods are <xref:System.Xml.Linq.XContainer.Elements%2A> and <xref:System.Xml.Linq.XContainer.Descendants%2A>.  
+ Jak je popsáno v [přehledu třídy XElement](../../../../visual-basic/programming-guide/concepts/linq/xelement-class-overview.md), objekt <xref:System.Xml.Linq.XElement> představuje uzel s jedním elementem. Obsah elementu může být komplexní (někdy označovaný jako strukturovaný obsah), nebo může být jednoduchým prvkem. Jednoduchý element může být prázdný nebo může obsahovat hodnotu. Pokud uzel obsahuje strukturovaný obsah, můžete použít různé metody osy k načtení výčtů následníků. Nejběžněji používané metody osy jsou <xref:System.Xml.Linq.XContainer.Elements%2A> a <xref:System.Xml.Linq.XContainer.Descendants%2A>.  
   
- In addition to the axis methods, which return collections, there are two more methods that you will commonly use in [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] queries. The <xref:System.Xml.Linq.XContainer.Element%2A> method returns a single <xref:System.Xml.Linq.XElement>. The <xref:System.Xml.Linq.XElement.Attribute%2A> method returns a single <xref:System.Xml.Linq.XAttribute>.  
+ Kromě metod osy, které vrací kolekce, existují dvě další metody, které se běžně používají v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazů. Metoda <xref:System.Xml.Linq.XContainer.Element%2A> vrací jeden <xref:System.Xml.Linq.XElement>. Metoda <xref:System.Xml.Linq.XElement.Attribute%2A> vrací jeden <xref:System.Xml.Linq.XAttribute>.  
   
- For many purposes, [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] queries provide the most powerful way to examine a tree, extract data from it, and transform it. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] queries operate on objects that implement <xref:System.Collections.Generic.IEnumerable%601>, and the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] axes return <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement> collections, and <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XAttribute> collections. You need these collections to perform your queries.  
+ Pro mnoho účelů [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy poskytují nejúčinnější způsob, jak kontrolovat strom, extrahovat z něj data a transformovat ho. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy fungují na objektech, které implementují <xref:System.Collections.Generic.IEnumerable%601>a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] osy vrací <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement> kolekcí a <xref:System.Collections.Generic.IEnumerable%601> kolekcí <xref:System.Xml.Linq.XAttribute>. Tyto kolekce budete potřebovat k provádění dotazů.  
   
- In addition to the axis methods that retrieve collections of elements and attributes, there are axis methods that allow you to iterate through the tree in great detail. For example, instead of dealing with elements and attributes, you can work with the nodes of the tree. Nodes are a finer level of granularity than elements and attributes. When working with nodes, you can examine XML comments, text nodes, processing instructions, and more. This functionality is important, for example, to someone who is writing a word processor and wants to save documents as XML. However, the majority of XML programmers are primarily concerned with elements, attributes, and their values.  
+ Kromě metod osy, které načítají kolekce prvků a atributů, existují metody osy, které umožňují iterovat ve stromové struktuře Skvělé podrobnosti. Například místo řešení prvků a atributů můžete pracovat s uzly stromu. Uzly jsou jemnějším stupněm členitosti než prvky a atributy. Při práci s uzly můžete prozkoumávat komentáře XML, textové uzly, instrukce pro zpracování a další. Tato funkce je důležitá, například pro někoho, kdo napisuje textový procesor a chce uložit dokumenty jako XML. Většina programátorů XML je však primárně dotčena prvky, atributy a jejich hodnotami.  
   
-## <a name="methods-for-retrieving-a-collection-of-elements"></a>Methods for Retrieving a Collection of Elements  
- The following is a summary of the methods of the <xref:System.Xml.Linq.XElement> class (or its base classes) that you call on an <xref:System.Xml.Linq.XElement> to return a collection of elements.  
-  
-|Metoda|Popis|  
-|------------|-----------------|  
-|<xref:System.Xml.Linq.XNode.Ancestors%2A?displayProperty=nameWithType>|Returns an <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement> of the ancestors of this element. An overload returns an <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement> of the ancestors that have the specified <xref:System.Xml.Linq.XName>.|  
-|<xref:System.Xml.Linq.XContainer.Descendants%2A?displayProperty=nameWithType>|Returns an <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement> of the descendants of this element. An overload returns an <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement> of the descendants that have the specified <xref:System.Xml.Linq.XName>.|  
-|<xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType>|Returns an <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement> of the child elements of this element. An overload returns an <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement> of the child elements that have the specified <xref:System.Xml.Linq.XName>.|  
-|<xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A?displayProperty=nameWithType>|Returns an <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement> of the elements that come after this element. An overload returns an <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement> of the elements after this element that have the specified <xref:System.Xml.Linq.XName>.|  
-|<xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType>|Returns an <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement> of the elements that come before this element. An overload returns an <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement> of the elements before this element that have the specified <xref:System.Xml.Linq.XName>.|  
-|<xref:System.Xml.Linq.XElement.AncestorsAndSelf%2A?displayProperty=nameWithType>|Returns an <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement> of this element and its ancestors. An overload returns an <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement> of the elements that have the specified <xref:System.Xml.Linq.XName>.|  
-|<xref:System.Xml.Linq.XElement.DescendantsAndSelf%2A?displayProperty=nameWithType>|Returns an <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement> of this element and its descendants. An overload returns an <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement> of the elements that have the specified <xref:System.Xml.Linq.XName>.|  
-  
-## <a name="method-for-retrieving-a-single-element"></a>Method for Retrieving a Single Element  
- The following method retrieves a single child from an <xref:System.Xml.Linq.XElement> object.  
+## <a name="methods-for-retrieving-a-collection-of-elements"></a>Metody pro načtení kolekce prvků  
+ Následuje souhrn metod <xref:System.Xml.Linq.XElement> třídy (nebo jejích základních tříd), které zavoláte na <xref:System.Xml.Linq.XElement> pro vrácení kolekce prvků.  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|<xref:System.Xml.Linq.XContainer.Element%2A?displayProperty=nameWithType>|Returns the first child <xref:System.Xml.Linq.XElement> object that has the specified <xref:System.Xml.Linq.XName>.|  
+|<xref:System.Xml.Linq.XNode.Ancestors%2A?displayProperty=nameWithType>|Vrací <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement> nadřazených prvků tohoto prvku. Přetížení vrátí <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement> nadřazených prvků, které mají zadanou <xref:System.Xml.Linq.XName>.|  
+|<xref:System.Xml.Linq.XContainer.Descendants%2A?displayProperty=nameWithType>|Vrací <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement> potomků tohoto prvku. Přetížení vrací <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement> potomků, které mají zadanou <xref:System.Xml.Linq.XName>.|  
+|<xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType>|Vrací <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement> podřízených prvků tohoto prvku. Přetížení vrátí <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement> podřízených prvků, které mají zadanou <xref:System.Xml.Linq.XName>.|  
+|<xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A?displayProperty=nameWithType>|Vrací <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement> prvků, které jsou zadány po tomto elementu. Přetížení vrátí <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement> prvků za tímto prvkem, který má zadanou <xref:System.Xml.Linq.XName>.|  
+|<xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType>|Vrací <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement> prvků, které jsou zadány před tímto prvkem. Přetížení vrátí <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement> prvků před tímto prvkem, který má zadanou <xref:System.Xml.Linq.XName>.|  
+|<xref:System.Xml.Linq.XElement.AncestorsAndSelf%2A?displayProperty=nameWithType>|Vrátí <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement> tohoto prvku a jeho nadřazených prvků. Přetížení vrátí <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement> prvků, které mají zadanou <xref:System.Xml.Linq.XName>.|  
+|<xref:System.Xml.Linq.XElement.DescendantsAndSelf%2A?displayProperty=nameWithType>|Vrací <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement> tohoto prvku a jeho následníků. Přetížení vrátí <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement> prvků, které mají zadanou <xref:System.Xml.Linq.XName>.|  
   
-## <a name="method-for-retrieving-a-collection-of-attributes"></a>Method for Retrieving a Collection of Attributes  
- The following method retrieves attributes from an <xref:System.Xml.Linq.XElement> object.  
+## <a name="method-for-retrieving-a-single-element"></a>Metoda pro načtení jednoho elementu  
+ Následující metoda načte jeden podřízený objekt z objektu <xref:System.Xml.Linq.XElement>.  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|<xref:System.Xml.Linq.XElement.Attributes%2A?displayProperty=nameWithType>|Returns an <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XAttribute> of all of the attributes.|  
+|<xref:System.Xml.Linq.XContainer.Element%2A?displayProperty=nameWithType>|Vrátí první podřízený objekt <xref:System.Xml.Linq.XElement>, který má zadaný <xref:System.Xml.Linq.XName>.|  
   
-## <a name="method-for-retrieving-a-single-attribute"></a>Method for Retrieving a Single Attribute  
- The following method retrieves a single attribute from an <xref:System.Xml.Linq.XElement> object.  
+## <a name="method-for-retrieving-a-collection-of-attributes"></a>Metoda pro načtení kolekce atributů  
+ Následující metoda načte atributy z objektu <xref:System.Xml.Linq.XElement>.  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|<xref:System.Xml.Linq.XElement.Attribute%2A?displayProperty=nameWithType>|Returns the <xref:System.Xml.Linq.XAttribute> that has the specified <xref:System.Xml.Linq.XName>.|  
+|<xref:System.Xml.Linq.XElement.Attributes%2A?displayProperty=nameWithType>|Vrátí <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XAttribute> všech atributů.|  
+  
+## <a name="method-for-retrieving-a-single-attribute"></a>Metoda pro načtení jednoho atributu  
+ Následující metoda načte jeden atribut z objektu <xref:System.Xml.Linq.XElement>.  
+  
+|Metoda|Popis|  
+|------------|-----------------|  
+|<xref:System.Xml.Linq.XElement.Attribute%2A?displayProperty=nameWithType>|Vrátí <xref:System.Xml.Linq.XAttribute>, který má zadanou <xref:System.Xml.Linq.XName>.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ to XML Axes (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)
+- [LINQ to XML osy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)

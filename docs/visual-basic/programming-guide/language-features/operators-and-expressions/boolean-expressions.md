@@ -22,56 +22,56 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350815"
 ---
 # <a name="boolean-expressions-visual-basic"></a>Výrazy logických hodnot (Visual Basic)
-A *Boolean expression* is an expression that evaluates to a value of the [Boolean Data Type](../../../../visual-basic/language-reference/data-types/boolean-data-type.md): `True` or `False`. `Boolean` expressions can take several forms. The simplest is the direct comparison of the value of a `Boolean` variable to a `Boolean` literal, as shown in the following example.  
+*Logický výraz* je výraz, který je vyhodnocen jako hodnota [logického datového typu](../../../../visual-basic/language-reference/data-types/boolean-data-type.md): `True` nebo `False`. výrazy `Boolean` můžou mít několik forem. Nejjednodušší je přímé porovnání hodnoty `Boolean` proměnné k literálu `Boolean`, jak je znázorněno v následujícím příkladu.  
   
  [!code-vb[VbVbalrOperators#87](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#87)]  
   
-## <a name="two-meanings-of-the--operator"></a>Two Meanings of the = Operator  
- Notice that the assignment statement `newCustomer = True` looks the same as the expression in the preceding example, but it performs a different function and is used differently. In the preceding example, the expression `newCustomer = True` represents a Boolean value, and the `=` sign is interpreted as a comparison operator. In a stand-alone statement, the `=` sign is interpreted as an assignment operator and assigns the value on the right to the variable on the left. Toto dokládá následující příklad.  
+## <a name="two-meanings-of-the--operator"></a>Dva významy operátoru =  
+ Všimněte si, že příkaz přiřazení `newCustomer = True` vypadá stejně jako výraz v předchozím příkladu, ale provádí jinou funkci a je použit odlišně. V předchozím příkladu výraz `newCustomer = True` představuje logickou hodnotu a znaménko `=` je interpretováno jako operátor porovnání. V samostatném příkazu je symbol `=` interpretován jako operátor přiřazení a přiřadí hodnotu vpravo k proměnné na levé straně. Toto dokládá následující příklad.  
   
  [!code-vb[VbVbalrOperators#88](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#88)]  
   
- For further information, see [Value Comparisons](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/value-comparisons.md) and [Statements](../../../../visual-basic/language-reference/statements/index.md).  
+ Další informace naleznete v tématu [porovnání hodnot](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/value-comparisons.md) a [příkazy](../../../../visual-basic/language-reference/statements/index.md).  
   
 ## <a name="comparison-operators"></a>Operátory porovnání  
- Comparison operators such as `=`, `<`, `>`, `<>`, `<=`, and `>=` produce Boolean expressions by comparing the expression on the left side of the operator to the expression on the right side of the operator and evaluating the result as `True` or `False`. Toto dokládá následující příklad.  
+ Operátory porovnání, například `=`, `<`, `>`, `<>`, `<=`a `>=` vydávají logické výrazy porovnáním výrazu na levé straně operátoru k výrazu na pravé straně operátoru a vyhodnocení výsledku jako `True` nebo `False`. Toto dokládá následující příklad.  
   
  `42 < 81`  
   
- Because 42 is less than 81, the Boolean expression in the preceding example evaluates to `True`. For more information on this kind of expression, see [Value Comparisons](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/value-comparisons.md).  
+ Vzhledem k tomu, že 42 je menší než 81, logický výraz v předchozím příkladu je vyhodnocen jako `True`. Další informace o tomto typu výrazu naleznete v tématu [porovnání hodnot](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/value-comparisons.md).  
   
-### <a name="comparison-operators-combined-with-logical-operators"></a>Comparison Operators Combined with Logical Operators  
- Comparison expressions can be combined using logical operators to produce more complex Boolean expressions. The following example demonstrates the use of comparison operators in conjunction with a logical operator.  
+### <a name="comparison-operators-combined-with-logical-operators"></a>Operátory porovnání kombinované s logickými operátory  
+ Výrazy porovnání lze kombinovat pomocí logických operátorů k tvorbě složitějších logických výrazů. Následující příklad ukazuje použití relačních operátorů ve spojení s logickým operátorem.  
   
  `x > y And x < 1000`  
   
- In the preceding example, the value of the overall expression depends on the values of the expressions on each side of the `And` operator. If both expressions are `True`, then the overall expression evaluates to `True`. If either expression is `False`, then the entire expression evaluates to `False`.  
+ V předchozím příkladu hodnota celkového výrazu závisí na hodnotách výrazů na každé straně operátoru `And`. Pokud jsou oba výrazy `True`, je celkový výraz vyhodnocen jako `True`. Pokud je některý z těchto výrazů `False`, je celý výraz vyhodnocen jako `False`.  
   
-## <a name="short-circuiting-operators"></a>Short-Circuiting Operators  
- The logical operators `AndAlso` and `OrElse` exhibit behavior known as *short-circuiting*. A short-circuiting operator evaluates the left operand first. If the left operand determines the value of the entire expression, then program execution proceeds without evaluating the right expression. Toto dokládá následující příklad.  
+## <a name="short-circuiting-operators"></a>Operátory krátkodobého okruhu  
+ Logické operátory `AndAlso` a `OrElse` vykazují chování označované jako *krátkodobé okruhy*. Operátor krátkého okruhu nejprve vyhodnocuje levý operand. Pokud levý operand určí hodnotu celého výrazu, pak spuštění programu pokračuje bez vyhodnocení správného výrazu. Toto dokládá následující příklad.  
   
  [!code-vb[VbVbalrOperators#89](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#89)]  
   
- In the preceding example, the operator evaluates the left expression, `45 < 12`. Because the left expression evaluates to `False`, the entire logical expression must evaluate to `False`. Program execution thus skips execution of the code within the `If` block without evaluating the right expression, `testFunction(3)`. This example does not call `testFunction()` because the left expression falsifies the entire expression.  
+ V předchozím příkladu operátor vyhodnocuje levý výraz `45 < 12`. Vzhledem k tomu, že se levý výraz vyhodnocuje jako `False`, musí být celý logický výraz vyhodnocen jako `False`. Provádění programu proto přeskočí provádění kódu v rámci `If` bloku bez vyhodnocení pravého výrazu, `testFunction(3)`. Tento příklad nevolá `testFunction()`, protože levý výraz padělaný celý výraz.  
   
- Similarly, if the left expression in a logical expression using `OrElse` evaluates to `True`, execution proceeds to the next line of code without evaluating the right expression, because the left expression has already validated the entire expression.  
+ Podobně, pokud je levý výraz v logickém výrazu pomocí `OrElse` vyhodnocen jako `True`, provádění pokračuje na další řádek kódu bez vyhodnocení pravého výrazu, protože levý výraz již ověřil celý výraz.  
   
-### <a name="comparison-with-non-short-circuiting-operators"></a>Comparison with Non-Short-Circuiting Operators  
- By contrast, both sides of the logical operator are evaluated when the logical operators `And` and `Or` are used. Toto dokládá následující příklad.  
+### <a name="comparison-with-non-short-circuiting-operators"></a>Porovnání s operátory bez krátkých okruhů  
+ Naopak obě strany logického operátoru jsou vyhodnocovány při použití logických operátorů `And` a `Or`. Toto dokládá následující příklad.  
   
  [!code-vb[VbVbalrOperators#90](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#90)]  
   
- The preceding example calls `testFunction()` even though the left expression evaluates to `False`.  
+ Předchozí příklad volá `testFunction()`, i když se levý výraz vyhodnocuje jako `False`.  
   
-## <a name="parenthetical-expressions"></a>Parenthetical Expressions  
- You can use parentheses to control the order of evaluation of Boolean expressions. Expressions enclosed by parentheses evaluate first. For multiple levels of nesting, precedence is granted to the most deeply nested expressions. Within parentheses, evaluation proceeds according to the rules of operator precedence. For more information, see [Operator Precedence in Visual Basic](../../../../visual-basic/language-reference/operators/operator-precedence.md).  
+## <a name="parenthetical-expressions"></a>Výrazy kulatého závorky  
+ Můžete použít kulaté závorky k řízení pořadí vyhodnocení logických výrazů. Nejprve se vyhodnocují výrazy, které jsou uzavřeny v závorkách. Pro více úrovní vnoření je přednost udělena nejhlouběji vnořeným výrazům. V závorkách hodnocení pokračuje podle pravidel přednosti operátoru. Další informace najdete v tématu [Priorita operátorů v Visual Basic](../../../../visual-basic/language-reference/operators/operator-precedence.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Logical and Bitwise Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
+- [Logické a bitové operátory v Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
 - [Porovnání hodnot](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/value-comparisons.md)
 - [Příkazy](../../../../visual-basic/programming-guide/language-features/statements.md)
 - [Operátory porovnání](../../../../visual-basic/language-reference/operators/comparison-operators.md)
 - [Účinná kombinace operátorů](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/efficient-combination-of-operators.md)
-- [Operator Precedence in Visual Basic](../../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Priorita operátorů v Visual Basic](../../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Datový typ Boolean](../../../../visual-basic/language-reference/data-types/boolean-data-type.md)

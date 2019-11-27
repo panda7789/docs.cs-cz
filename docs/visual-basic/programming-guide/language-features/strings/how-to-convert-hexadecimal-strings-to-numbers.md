@@ -17,22 +17,22 @@ ms.locfileid: "74347175"
 ---
 # <a name="how-to-convert-hexadecimal-strings-to-numbers-visual-basic"></a>Postupy: Převod hexadecimálních řetězců na čísla (Visual Basic)
 
-This example converts a hexadecimal string to an integer using the <xref:System.Convert.ToInt32%2A?displayProperty=nameWithType> method.
+Tento příklad převede šestnáctkový řetězec na celé číslo pomocí metody <xref:System.Convert.ToInt32%2A?displayProperty=nameWithType>.
 
-## <a name="to-convert-a-hexadecimal-string-to-a-number"></a>To convert a hexadecimal string to a number
+## <a name="to-convert-a-hexadecimal-string-to-a-number"></a>Převod šestnáctkového řetězce na číslo
 
-- Use the <xref:System.Convert.ToInt32(System.String,System.Int32)> method to convert the number expressed in base-16 to an integer.
+- Použijte metodu <xref:System.Convert.ToInt32(System.String,System.Int32)> k převedení čísla vyjádřeného v základu-16 na celé číslo.
 
-  The first argument of the <xref:System.Convert.ToInt32(System.String,System.Int32)> method is the string to convert. The second argument describes what base the number is expressed in; hexadecimal is base 16.
+  Prvním argumentem metody <xref:System.Convert.ToInt32(System.String,System.Int32)> je řetězec, který se má převést. Druhý argument popisuje, na jaké bázi se číslo vyjadřuje. šestnáctková je 16.
 
   [!code-vb[VbVbalrStrings#62](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#62)]
 
-- Note that the hexadecimal string has the following restrictions:
+- Všimněte si, že šestnáctkový řetězec má následující omezení:
 
-  - It cannot include the `&h` prefix.
-  - It cannot include the `_` digit separator.
+  - Nemůže obsahovat předponu `&h`.
+  - Nemůže obsahovat `_` oddělovač číslic.
 
-  If the prefix or a digit separator is present, the call to the <xref:System.Convert.ToInt32(System.String,System.Int32)> method throws a <xref:System.FormatException>.
+  Pokud je k dispozici Předpona nebo oddělovač číslic, volání metody <xref:System.Convert.ToInt32(System.String,System.Int32)> vyvolá <xref:System.FormatException>.
 
 ## <a name="see-also"></a>Viz také:
 

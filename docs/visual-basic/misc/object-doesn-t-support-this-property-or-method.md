@@ -11,12 +11,12 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353860"
 ---
-# <a name="object-doesnt-support-this-property-or-method-visual-basic"></a>Object doesn't support this property or method (Visual Basic)
-You specified a method or property that does not exist for this automation object.  
+# <a name="object-doesnt-support-this-property-or-method-visual-basic"></a>Objekt tuto vlastnost nebo metodu nepodporuje (Visual Basic).
+Zadali jste metodu nebo vlastnost, která pro tento objekt automatizace neexistuje.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Read the object's documentation for more information on the object and check the spellings of properties and methods.  
+- Přečtěte si dokumentaci k objektu, kde najdete další informace o objektu a kontrola pravopisu vlastností a metod.  
   
 ## <a name="see-also"></a>Viz také:
 

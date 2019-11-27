@@ -1,5 +1,5 @@
 ---
-title: Object doesn't support current locale setting
+title: Objekt nepodporuje aktuální nastavení národního prostředí.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrID447
@@ -11,12 +11,12 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353897"
 ---
-# <a name="object-doesnt-support-current-locale-setting-visual-basic"></a>Object doesn't support current locale setting (Visual Basic)
-You tried to access an object that does not support the locale setting for the current project.  
+# <a name="object-doesnt-support-current-locale-setting-visual-basic"></a>Objekt nepodporuje aktuální nastavení národního prostředí (Visual Basic).
+Pokusili jste se získat přístup k objektu, který nepodporuje nastavení národního prostředí pro aktuální projekt.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- Check which locale settings the object supports.  
+- Ověřte, která nastavení národního prostředí objekt podporuje.  
   
 ## <a name="see-also"></a>Viz také:
 

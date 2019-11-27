@@ -9,11 +9,11 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353560"
 ---
-# <a name="accessing-attributes-by-using-reflection-visual-basic"></a>Accessing Attributes by Using Reflection (Visual Basic)
+# <a name="accessing-attributes-by-using-reflection-visual-basic"></a>Přístup k atributům pomocí reflexe (Visual Basic)
 
-The fact that you can define custom attributes and place them in your source code would be of little value without some way of retrieving that information and acting on it. By using reflection, you can retrieve the information that was defined with custom attributes. The key method is `GetCustomAttributes`, which returns an array of objects that are the run-time equivalents of the source code attributes. This method has several overloaded versions. Další informace najdete v tématu <xref:System.Attribute>.
+Fakt, že můžete definovat vlastní atributy a umístit je do zdrojového kódu, by měl být malými hodnotami bez jakéhokoli způsobu, jak tyto informace načítat a na ni bude působit. Pomocí reflexe můžete načíst informace, které byly definovány s vlastními atributy. Klíčovou metodou je `GetCustomAttributes`, která vrací pole objektů, které jsou ekvivalenty v době běhu atributů zdrojového kódu. Tato metoda má několik přetížených verzí. Další informace najdete v tématu <xref:System.Attribute>.
 
-An attribute specification such as:
+Specifikace atributu jako:
 
 ```vb
 <Author("P. Ackerman", Version:=1.1)>
@@ -22,18 +22,18 @@ Class SampleClass
 End Class
 ```
 
- is conceptually equivalent to this:
+ je koncepční ekvivalent:
 
 ```vb
 Dim anonymousAuthorObject As Author = New Author("P. Ackerman")
 anonymousAuthorObject.version = 1.1
 ```
 
-However, the code is not executed until `SampleClass` is queried for attributes. Calling `GetCustomAttributes` on `SampleClass` causes an `Author` object to be constructed and initialized as above. If the class has other attributes, other attribute objects are constructed similarly. `GetCustomAttributes` then returns the `Author` object and any other attribute objects in an array. You can then iterate over this array, determine what attributes were applied based on the type of each array element, and extract information from the attribute objects.
+Kód však není proveden, dokud není `SampleClass` dotazování pro atributy. Volání `GetCustomAttributes` v `SampleClass` způsobí, že se objekt `Author` vytvoří a inicializuje jako výše. Pokud má třída jiné atributy, další objekty atributů jsou konstruovány podobně. `GetCustomAttributes` pak vrátí objekt `Author` a všechny objekty atributů v poli. Pak můžete iterovat přes toto pole, určit, jaké atributy byly aplikovány na základě typu každého prvku pole a extrahovat informace z objektů atributů.
 
 ## <a name="example"></a>Příklad
 
-Here is a complete example. A custom attribute is defined, applied to several entities, and retrieved via reflection.
+Tady je kompletní příklad. Vlastní atribut je definován, aplikován na několik entit a načten prostřednictvím reflexe.
 
 ```vb
 ' Multiuse attribute
@@ -105,8 +105,8 @@ End Class
 
 - <xref:System.Reflection>
 - <xref:System.Attribute>
-- [Visual Basic Programming Guide](../../../../visual-basic/programming-guide/index.md)
+- [Průvodce programováním Visual Basic](../../../../visual-basic/programming-guide/index.md)
 - [Načítání informací uložených v atributech](../../../../standard/attributes/retrieving-information-stored-in-attributes.md)
-- [Reflection (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)
-- [Attributes (Visual Basic)](../../../../visual-basic/language-reference/attributes.md)
-- [Creating Custom Attributes (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)
+- [Reflexe (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)
+- [Atributy (Visual Basic)](../../../../visual-basic/language-reference/attributes.md)
+- [Vytváření vlastních atributů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)

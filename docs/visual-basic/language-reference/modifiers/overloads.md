@@ -19,53 +19,53 @@ ms.locfileid: "74351413"
 ---
 # <a name="overloads-visual-basic"></a>Přetížení (Visual Basic)
 
-Specifies that a property or procedure redeclares one or more existing properties or procedures with the same name.
+Určuje, že vlastnost nebo procedura znovu deklaruje jednu nebo více existujících vlastností nebo procedur se stejným názvem.
 
 ## <a name="remarks"></a>Poznámky
 
-*Overloading* is the practice of supplying more than one definition for a given property or procedure name in the same scope. Redeclaring a property or procedure with a different signature is sometimes called *hiding by signature*.
+*Přetížení* je postup poskytnutí více než jedné definice pro danou vlastnost nebo název procedury ve stejném oboru. Redeklarace vlastnosti nebo procedury s jiným podpisem se někdy označuje jako *skrývání pomocí signatury*.
 
-## <a name="rules"></a>Rules
+## <a name="rules"></a>Pravidla
 
-- **Declaration Context.** You can use `Overloads` only in a property or procedure declaration statement.
+- **Kontext deklarace** `Overloads` lze použít pouze v příkazu deklarace vlastnosti nebo procedury.
 
-- **Combined Modifiers.** You cannot specify `Overloads` together with [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md) in the same procedure declaration.
+- **Kombinované modifikátory.** Nemůžete zadat `Overloads` společně se [stíny](../../../visual-basic/language-reference/modifiers/shadows.md) ve stejné deklaraci procedury.
 
-- **Required Differences.** The *signature* in this declaration must be different from the signature of every property or procedure that it overloads. The signature comprises the property or procedure name together with the following:
+- **Požadované rozdíly** *Signatura* v této deklaraci musí být odlišná od signatury každé vlastnosti nebo procedury, kterou přetěžuje. Signatura zahrnuje název vlastnosti nebo procedury spolu s následujícími vlastnostmi:
 
-  - the number of parameters
+  - počet parametrů
 
-  - the order of the parameters
+  - pořadí parametrů
 
-  - the data types of the parameters
+  - datové typy parametrů
 
-  - the number of type parameters (for a generic procedure)
+  - počet parametrů typu (pro obecný postup)
 
-  - the return type (only for a conversion operator procedure)
+  - návratový typ (pouze pro proceduru operátora převodu)
 
-  All overloads must have the same name, but each must differ from all the others in one or more of the preceding respects. This allows the compiler to distinguish which version to use when code calls the property or procedure.
+  Všechna přetížení musí mít stejný název, ale každá se musí lišit od všech ostatních v jednom nebo více předchozích ohledech. To umožňuje kompilátoru odlišit, která verze se má použít, když kód volá vlastnost nebo proceduru.
 
-- **Disallowed Differences.** Changing one or more of the following is not valid for overloading a property or procedure, because they are not part of the signature:
+- **Nepovolené rozdíly.** Změna jednoho nebo více následujících možností není platná pro přetížení vlastnosti nebo procedury, protože nejsou součástí signatury:
 
-  - whether or not it returns a value (for a procedure)
+  - bez ohledu na to, jestli vrátí hodnotu (pro proceduru)
 
-  - the data type of the return value (except for a conversion operator)
+  - Datový typ návratové hodnoty (s výjimkou operátoru převodu)
 
-  - the names of the parameters or type parameters
+  - názvy parametrů nebo parametrů typu
 
-  - the constraints on the type parameters (for a generic procedure)
+  - omezení parametrů typu (pro obecný postup)
 
-  - parameter modifier keywords (such as `ByRef` or `Optional`)
+  - Klíčová slova modifikátoru parametru (například `ByRef` nebo `Optional`)
 
-  - property or procedure modifier keywords (such as `Public` or `Shared`)
+  - Klíčová slova modifikátoru vlastnosti nebo procedury (například `Public` nebo `Shared`)
 
-- **Optional Modifier.** You do not have to use the `Overloads` modifier when you are defining multiple overloaded properties or procedures in the same class. However, if you use `Overloads` in one of the declarations, you must use it in all of them.
+- **Volitelný modifikátor** Nemusíte používat modifikátor `Overloads`, pokud definujete více přetížených vlastností nebo procedur ve stejné třídě. Pokud však použijete `Overloads` v jedné z deklarací, je nutné ji použít ve všech těchto deklaracích.
 
-- **Shadowing and Overloading.** `Overloads` can also be used to shadow an existing member, or set of overloaded members, in a base class. When you use `Overloads` in this way, you declare the property or method with the same name and the same parameter list as the base class member, and you do not supply the `Shadows` keyword.
+- **Nastínování a přetížení.** `Overloads` lze také použít ke stínování existujícího člena nebo sady přetížených členů v základní třídě. Při použití `Overloads` tímto způsobem deklarujete vlastnost nebo metodu se stejným názvem a stejným seznamem parametrů jako člen základní třídy a nezadáte klíčové slovo `Shadows`.
 
-If you use `Overrides`, the compiler implicitly adds `Overloads` so that your library APIs work with C# more easily.
+Použijete-li `Overrides`, kompilátor implicitně přidá `Overloads`, aby vaše rozhraní API knihovny fungovala C# snadněji.
 
-The `Overloads` modifier can be used in these contexts:
+V těchto kontextech lze použít modifikátor `Overloads`:
 
 - [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)
 
@@ -79,6 +79,6 @@ The `Overloads` modifier can be used in these contexts:
 
 - [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)
 - [Přetížení procedury](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)
-- [Generic Types in Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [Obecné typy v Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
 - [Procedury operátoru](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)
 - [Postupy: Definice operátoru převodu](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)

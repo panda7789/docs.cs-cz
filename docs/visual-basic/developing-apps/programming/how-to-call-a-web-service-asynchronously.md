@@ -14,24 +14,24 @@ ms.locfileid: "74352123"
 ---
 # <a name="how-to-call-a-web-service-asynchronously-visual-basic"></a>Postupy: Asynchronní volání webové služby (Visual Basic)
 
-This example attaches a handler to a Web service's asynchronous handler event, so that it can retrieve the result of an asynchronous method call. This example used the DemoTemperatureService Web service at `http://www.xmethods.net`.
+Tento příklad připojí obslužnou rutinu k události asynchronní obslužné rutiny webové služby, aby mohl načíst výsledek volání asynchronní metody. Tento příklad používal webovou službu DemoTemperatureService na `http://www.xmethods.net`.
 
-When you reference a Web service in your project in the Visual Studio Integrated Development Environment (IDE), it is added to the `My.WebServices` object, and the IDE generates a client proxy class to access a specified Web service
+Když odkazujete na webovou službu v projektu v integrovaném vývojovém prostředí (IDE) sady Visual Studio, přidá se do objektu `My.WebServices` a IDE vygeneruje třídu proxy klienta pro přístup k zadané webové službě.
 
-The proxy class allows you to call the Web service methods synchronously, where your application waits for the function to complete. In addition, the proxy creates additional members to help call the method asynchronously. For each Web service function, *NameOfWebServiceFunction*, the proxy creates a *NameOfWebServiceFunction*`Async` subroutine, a *NameOfWebServiceFunction*`Completed` event, and a *NameOfWebServiceFunction*`CompletedEventArgs` class. This example demonstrates how to use the asynchronous members to access the `getTemp` function of the DemoTemperatureService Web service.
+Třída proxy umožňuje volat metody webové služby synchronně, kde vaše aplikace čeká na dokončení funkce. Kromě toho proxy vytvoří další členy, které vám pomůžou vyvolat asynchronní volání metody. Pro každou funkci webové služby *NameOfWebServiceFunction*vytvoří proxy *NameOfWebServiceFunction*`Async` podprogram, událost *NameOfWebServiceFunction*`Completed` a třídu`CompletedEventArgs` *NameOfWebServiceFunction* . Tento příklad ukazuje, jak použít asynchronní členy pro přístup k funkci `getTemp` webové služby DemoTemperatureService.
 
 > [!NOTE]
-> This code does not work in Web applications, because ASP.NET does not support the `My.WebServices` object.
+> Tento kód nefunguje ve webových aplikacích, protože ASP.NET nepodporuje objekt `My.WebServices`.
 
-### <a name="to-call-a-web-service-asynchronously"></a>To call a Web service asynchronously
+### <a name="to-call-a-web-service-asynchronously"></a>Asynchronní volání webové služby
 
-1. Reference the DemoTemperatureService Web service at `http://www.xmethods.net`. The address is
+1. Odkaz na webovou službu DemoTemperatureService na `http://www.xmethods.net`. Adresa je
 
     ```
     http://www.xmethods.net/sd/2001/DemoTemperatureService.wsdl
     ```
 
-2. Add an event handler for the `getTempCompleted` event:
+2. Přidejte obslužnou rutinu události pro událost `getTempCompleted`:
 
     ```vb
     Private Sub getTempCompletedHandler(ByVal sender As Object,
@@ -42,15 +42,15 @@ The proxy class allows you to call the Web service methods synchronously, where 
     ```
 
     > [!NOTE]
-    > You cannot use the `Handles` statement to associate an event handler with the `My.WebServices` object's events.
+    > Příkaz `Handles` nelze použít k přidružení obslužné rutiny události k událostem objektu `My.WebServices`.
 
-3. Add a field to track if the event handler has been added to the `getTempCompleted` event:
+3. Přidejte pole, které se má sledovat, pokud byla obslužná rutina události přidána do události `getTempCompleted`:
 
     ```vb
     Private handlerAttached As Boolean = False
     ```
 
-4. Add a method to add the event handler to the `getTempCompleted` event, if necessary, and to call the `getTempAsync` method:
+4. Přidejte metodu pro přidání obslužné rutiny události do události `getTempCompleted`, pokud je to nutné, a volání `getTempAsync` metody:
 
     ```vb
     Sub CallGetTempAsync(ByVal zipCode As Integer)
@@ -64,7 +64,7 @@ The proxy class allows you to call the Web service methods synchronously, where 
     End Sub
     ```
 
-    To call the `getTemp` Web method asynchronously, call the `CallGetTempAsync` method. When the Web method finishes, its return value is passed to the `getTempCompletedHandler` event handler.
+    Pro asynchronní volání webové metody `getTemp` volejte metodu `CallGetTempAsync`. Po dokončení metody web je jeho návratová hodnota předána obslužné rutině události `getTempCompletedHandler`.
 
 ## <a name="see-also"></a>Viz také:
 

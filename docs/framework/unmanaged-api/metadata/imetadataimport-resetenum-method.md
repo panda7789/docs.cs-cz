@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74426777"
 ---
 # <a name="imetadataimportresetenum-method"></a>IMetaDataImport::ResetEnum – metoda
-Resets the specified enumerator to the specified position.  
+Obnoví zadaný enumerátor na určenou pozici.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,19 +36,19 @@ HRESULT ResetEnum (
   
 ## <a name="parameters"></a>Parametry  
  `hEnum`  
- [in] The enumerator to reset.  
+ pro Enumerátor, který má být resetován.  
   
  `ulPos`  
- [in] The new position at which to place the enumerator.  
+ pro Nová pozice, na kterou chcete umístit enumerátor.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

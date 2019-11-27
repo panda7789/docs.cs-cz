@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74438566"
 ---
 # <a name="exporttype-method"></a>ExportType – metoda
-Specifies that a type is exportable.  
+Určuje, že je možné exportovat typ.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,31 +39,31 @@ HRESULT ExportType(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID of the assembly to export from.  
+ ID sestavení, ze kterého se má exportovat  
   
  `FileToken`  
- File token or assembly ID of file that defines the exportable type.  
+ Token souboru nebo ID sestavení souboru, který definuje exportovatelný typ.  
   
  `TypeToken`  
- Token of type to be made exportable.  
+ Token typu, který se má provést export.  
   
  `pszTypename`  
- Fully qualified type name to be made exportable.  
+ Plně kvalifikovaný název typu, který se dá exportovat.  
   
  `dwFlags`  
- `ComType` flags such as `tdPublic` or `tdNested`. This parameter may be passed to [DefineExportedType Method](../metadata/imetadataassemblyemit-defineexportedtype-method.md).  
+ `ComType` příznaky jako `tdPublic` nebo `tdNested`. Tento parametr může být předán [metodě DefineExportedType –](../metadata/imetadataassemblyemit-defineexportedtype-method.md).  
   
  `pType`  
- Receives token for exported type.  
+ Přijímá token pro exportovaný typ.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Returns S_OK if the method succeeds.  
+ Vrátí S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Requires alink.h  
+ Vyžaduje ALink. h  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink – rozhraní](ialink-interface.md)
 - [IALink2 – rozhraní](ialink2-interface.md)
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)

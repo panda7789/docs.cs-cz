@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74431210"
 ---
 # <a name="imetadatadispenserexgetcorsystemdirectory-method"></a>IMetaDataDispenserEx::GetCORSystemDirectory – metoda
-Gets the directory that holds the current common language runtime (CLR). This method is supported only for use by out-of-process debuggers. If called from another component, it will return E_NOTIMPL.  
+Načte adresář, který obsahuje aktuální modul CLR (Common Language Runtime). Tato metoda je podporována pouze pro použití vnitroprocesové ladicí program. Pokud se volá z jiné součásti, vrátí E_NOTIMPL.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,22 +37,22 @@ HRESULT GetCORSystemDirectory (
   
 ## <a name="parameters"></a>Parametry  
  `szBuffer`  
- [out] The buffer to receive the directory name.  
+ mimo Vyrovnávací paměť pro získání názvu adresáře.  
   
  `cchBuffer`  
- [in] The size, in bytes, of `szBuffer`.  
+ pro Velikost `szBuffer`v bajtech.  
   
  `pchBuffer`  
- [out] The number of bytes actually returned in `szBuffer`.  
+ mimo Počet bajtů, které jsou ve skutečnosti vráceny v `szBuffer`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforma:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

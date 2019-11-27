@@ -12,23 +12,23 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349579"
 ---
 # <a name="sub-or-function-not-defined-visual-basic"></a>Příkaz Sub nebo funkce není definována (Visual Basic)
-A `Sub` or `Function` must be defined in order to be called. Possible causes of this error include:  
+Aby bylo možné volat `Sub`, musí být definován nebo `Function`. Mezi možné příčiny této chyby patří:  
   
-- Misspelling the procedure name.  
+- Název procedury je chybný.  
   
-- Trying to call a procedure from another project without explicitly adding a reference to that project in the **References** dialog box.  
+- Pokus o volání procedury z jiného projektu, aniž by bylo nutné explicitně přidat odkaz na tento projekt v dialogovém okně **odkazy** .  
   
-- Specifying a procedure that is not visible to the calling procedure.  
+- Určení procedury, která není viditelná pro volající proceduru.  
   
-- Declaring a Windows dynamic-link library (DLL) routine or Macintosh code-resource routine that is not in the specified library or code resource.  
+- Deklarace rutiny DLL (Dynamic-Link Library) systému Windows nebo rutiny kódu systému Macintosh, která není v určeném prostředku knihovny nebo kódu.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Make sure that the procedure name is spelled correctly.  
+1. Ujistěte se, že je název procedury zadán správně.  
   
-2. Find the name of the project containing the procedure you want to call in the **References** dialog box. If it does not appear, click the **Browse** button to search for it. Select the check box to the left of the project name, and then click **OK**.  
+2. Vyhledejte název projektu, který obsahuje proceduru, kterou chcete volat, v dialogovém okně **odkazy** . Pokud se nezobrazí, klikněte na tlačítko **Procházet** a vyhledejte ho. Zaškrtněte políčko nalevo od názvu projektu a pak klikněte na tlačítko **OK**.  
   
-3. Check the name of the routine.  
+3. Kontrola názvu rutiny.  
   
 ## <a name="see-also"></a>Viz také:
 

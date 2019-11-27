@@ -18,16 +18,16 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351638"
 ---
 # <a name="assembly-visual-basic"></a>Sestavení (Visual Basic)
-Specifies that an attribute at the beginning of a source file applies to the entire assembly.  
+Určuje, že atribut na začátku zdrojového souboru se vztahuje na celé sestavení.  
   
 ## <a name="remarks"></a>Poznámky  
- Many attributes pertain to an individual programming element, such as a class or property. You apply such an attribute by attaching the attribute block, within angle brackets (`< >`), directly to the declaration statement.  
+ Mnoho atributů se vztahuje k jednotlivému programovacímu prvku, jako je třída nebo vlastnost. Tento atribut použijete připojením bloku atributu v rámci lomených závorek (`< >`) přímo k příkazu Declaration.  
   
- If an attribute pertains not only to the following element but to the entire assembly, you place the attribute block at the beginning of the source file and identify the attribute with the `Assembly` keyword. If it applies to the current assembly module, you use the [Module](../../../visual-basic/language-reference/modifiers/module-keyword.md) keyword.  
+ Pokud atribut nenáleží pouze k následujícímu prvku, ale k celému sestavení, umístěte blok atributů na začátek zdrojového souboru a Identifikujte atribut pomocí klíčového slova `Assembly`. Pokud se vztahuje na aktuální modul sestavení, použijte klíčové slovo [Module](../../../visual-basic/language-reference/modifiers/module-keyword.md) .  
   
- You can also apply an attribute to an assembly in the AssemblyInfo.vb file, in which case you do not have to use an attribute block in your main source-code file.  
+ Můžete také použít atribut pro sestavení v souboru AssemblyInfo. vb, v takovém případě není nutné použít blok atributu v hlavním souboru zdrojového kódu.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Module \<keyword>](../../../visual-basic/language-reference/modifiers/module-keyword.md)
-- [Attributes overview](../../../visual-basic/programming-guide/concepts/attributes/index.md)
+- [Klíčové slovo \<modulu >](../../../visual-basic/language-reference/modifiers/module-keyword.md)
+- [Přehled atributů](../../../visual-basic/programming-guide/concepts/attributes/index.md)

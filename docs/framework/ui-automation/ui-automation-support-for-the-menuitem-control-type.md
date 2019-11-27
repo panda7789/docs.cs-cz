@@ -16,98 +16,98 @@ ms.locfileid: "74446702"
 # <a name="ui-automation-support-for-the-menuitem-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku MenuItem
 
 > [!NOTE]
-> This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace. For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](/windows/win32/winauto/entry-uiauto-win32).
+> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v oboru názvů <xref:System.Windows.Automation>. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API pro Windows Automation: automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).
 
-This topic provides information about [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] support for the MenuItem control type. It describes the control's [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] tree structure and provides the properties and control patterns that are required for the MenuItem control type.
+Toto téma poskytuje informace o podpoře [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] pro typ ovládacího prvku MenuItem. Popisuje stromovou strukturu [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] ovládacího prvku a poskytuje vlastnosti a vzory ovládacích prvků, které jsou požadovány pro typ ovládacího prvku MenuItem.
 
-A menu control allows hierarchal organization of elements associated with commands and event handlers. In a typical Microsoft Windows application, a menu bar contains several menu items (such as **File**, **Edit**, and **Window**), and each menu item displays a menu. A menu contains a collection of menu items (such as **New**, **Open**, and **Close**), which can be expanded to display additional menu items or perform a specific action when clicked. A menu item can be hosted in a menu, menu bar, or tool bar.
+Ovládací prvek nabídky umožňuje hierarchická organizaci prvků spojených s příkazy a obslužnými rutinami událostí. V typické aplikaci Microsoft Windows řádek nabídek obsahuje několik položek nabídky (například **soubor**, **Úpravy**a **okno**) a každá položka nabídky zobrazuje nabídku. Nabídka obsahuje kolekci položek nabídky (například **Nový**, **otevřít**a **Zavřít**), která se dá rozšířit tak, aby se zobrazily další položky nabídky, nebo když se klikne na tlačítko, provede se konkrétní akce. Položka nabídky může být hostována v nabídce, panelu nabídek nebo panelu nástrojů.
 
-The following sections define the required [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree structure, properties, control patterns, and events for the MenuItem control type. The [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] requirements apply to all list controls, whether [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)], or [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)].
+Následující části definují požadovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromovou strukturu, vlastnosti, vzory ovládacích prvků a události pro typ ovládacího prvku MenuItem. Požadavky na [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] platí pro všechny ovládací prvky seznamu bez ohledu na to, zda [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)]nebo [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)].
 
 <a name="Required_UI_Automation_Tree_Structure"></a>
 
-## <a name="required-ui-automation-tree-structure"></a>Required UI Automation Tree Structure
+## <a name="required-ui-automation-tree-structure"></a>Požadovaná stromová struktura automatizace uživatelského rozhraní
 
-The following table depicts the control view and the content view of the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree that pertains to menu item controls and describes what can be contained in each view. For more information on the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree, see [UI Automation Tree Overview](ui-automation-tree-overview.md).
+Následující tabulka znázorňuje zobrazení ovládacího prvku a zobrazení obsahu stromu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], který se vztahuje k ovládacím prvkům položky nabídky a popisuje, co může být obsaženo v každém zobrazení. Další informace o stromové struktuře [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] najdete v tématu [Přehled stromu automatizace uživatelského rozhraní](ui-automation-tree-overview.md).
 
-|Control View|Content View|
+|Zobrazení ovládacích prvků|Zobrazení obsahu|
 |------------------|------------------|
-|MenuItem "Help"<br /><br /> <ul><li>Menu (sub menu of Help menu item)<br /><br /> <ul><li>MenuItem "Help Topics"</li><li>MenuItem "About Notepad"</li></ul></li></ul>|MenuItem "Help"<br /><br /> -   MenuItem "Help Topics"<br />-   MenuItem "About Notepad"|
+|MenuItem – Help<br /><br /> <ul><li>Nabídka (podnabídka položky nabídky Help)<br /><br /> <ul><li>MenuItem – témata nápovědy</li><li>MenuItem "o programu Poznámkový blok"</li></ul></li></ul>|MenuItem – Help<br /><br /> -MenuItem témata nápovědy<br />-MenuItem "o programu Poznámkový blok"|
 
-The control view of the menu item control has the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree structure shown above. Note that the **Help** menu item is included to better illustrate the structure in a typical menu to submenu hierarchy.
+V zobrazení ovládacího prvku položky nabídky je zobrazená stromová struktura [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] výše. Všimněte si, že položka nabídky **help** je zahrnutá k lepší ilustraci struktury v typické nabídce v hierarchii podnabídky.
 
-For the content view, Menu is absent from the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree because it does not convey meaningful information to the end user.
+V případě zobrazení obsahu se ve stromové struktuře [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] nevyskytuje nabídka, protože nedává koncovému uživateli smysluplné informace.
 
 <a name="Required_UI_Automation_Properties"></a>
 
-## <a name="required-ui-automation-properties"></a>Required UI Automation Properties
+## <a name="required-ui-automation-properties"></a>Požadované vlastnosti automatizace uživatelského rozhraní
 
-The following table lists the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] properties whose value or definition is especially relevant to menu item controls. For more information on [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] properties, see [UI Automation Properties for Clients](ui-automation-properties-for-clients.md).
+V následující tabulce jsou uvedeny vlastnosti [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], jejichž hodnota nebo definice je obzvláště relevantní pro ovládací prvky položek nabídky. Další informace o vlastnostech [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] najdete v tématu [Vlastnosti automatizace uživatelského rozhraní pro klienty](ui-automation-properties-for-clients.md).
 
 |Vlastnost|Hodnota|Popis|
 |--------------|-----------|-----------------|
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|See notes.|The value of this property needs to be unique across all controls in an application.|
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|See notes.|The outermost rectangle that contains the whole control.|
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|See notes.|Supported if there is a bounding rectangle. If not every point within the bounding rectangle is clickable, and you perform specialized hit testing, then override and provide a clickable point.|
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|See notes.|If the control can receive keyboard focus, it must support this property.|
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|See notes.|The menu item control is included in the content view of the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree and is self labeled with a name.|
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|`Null`|No label.|
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|MenuItem|This value is the same for all UI frameworks.|
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|"menu item"|Localized string corresponding to the MenuItem control type.|
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|True|The menu item control is never included in the content view of the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree.|
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|True|The menu item control must always be included in the control view of the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree.|
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|Viz poznámky.|Hodnota této vlastnosti musí být jedinečná napříč všemi ovládacími prvky v aplikaci.|
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|Viz poznámky.|Vnější obdélník, který obsahuje celý ovládací prvek.|
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|Viz poznámky.|Podporováno, pokud je ohraničen obdélník. Pokud není k dispozici žádný bod v ohraničujícím obdélníku a provádíte specializované testování přístupů, přepíšete a získáte bod, který je k dispozici.|
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|Viz poznámky.|Pokud ovládací prvek může obdržet fokus klávesnice, musí podporovat tuto vlastnost.|
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|Viz poznámky.|Ovládací prvek položka nabídky je zahrnutý v zobrazení obsahu stromu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] a je označený jako název.|
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|`Null`|Bez popisku|
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|MenuItem|Tato hodnota je stejná pro všechny architektury uživatelského rozhraní.|
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|"položka nabídky"|Lokalizovaný řetězec odpovídající typu ovládacího prvku MenuItem.|
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|True|Ovládací prvek položka nabídky není nikdy zahrnutý v zobrazení obsahu stromu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].|
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|True|Ovládací prvek položky nabídky musí být vždy součástí zobrazení ovládacího prvku stromu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].|
 
 <a name="Required_UI_Automation_Control_Patterns"></a>
 
-## <a name="required-ui-automation-control-patterns"></a>Required UI Automation Control Patterns
+## <a name="required-ui-automation-control-patterns"></a>Požadované vzory ovládacího prvku automatizace uživatelského rozhraní
 
-The following table lists the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] control patterns required to be supported by menu item controls. For more information on control patterns, see [UI Automation Control Patterns Overview](ui-automation-control-patterns-overview.md).
+V následující tabulce jsou uvedeny vzory ovládacích prvků [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], které musí být podporovány ovládacími prvky nabídky. Další informace o vzorech ovládacích prvků naleznete v tématu [Přehled vzorů ovládacích prvků automatizace uživatelského rozhraní](ui-automation-control-patterns-overview.md).
 
-|Control Pattern Property|Podpora|Poznámky|
+|Vlastnost vzoru ovládacího prvku|Podpora|Poznámky|
 |------------------------------|-------------|-----------|
-|<xref:System.Windows.Automation.Provider.IExpandCollapseProvider>|Depends|If the control can be expanded or collapsed, implement <xref:System.Windows.Automation.Provider.IExpandCollapseProvider>.|
-|<xref:System.Windows.Automation.Provider.IInvokeProvider>|Depends|If the control executes a single action or command, implement <xref:System.Windows.Automation.Provider.IInvokeProvider>.|
-|<xref:System.Windows.Automation.Provider.IToggleProvider>|Depends|If the control represents an option that can be turned on or off, implement <xref:System.Windows.Automation.Provider.IToggleProvider>.|
-|<xref:System.Windows.Automation.Provider.ISelectionItemProvider>|Depends|If the control is used to select from a list of options among menu items, implement <xref:System.Windows.Automation.Provider.ISelectionItemProvider>.|
+|<xref:System.Windows.Automation.Provider.IExpandCollapseProvider>|Závislosti|Pokud je možné ovládací prvek rozšířit nebo sbalit, implementujte <xref:System.Windows.Automation.Provider.IExpandCollapseProvider>.|
+|<xref:System.Windows.Automation.Provider.IInvokeProvider>|Závislosti|Pokud ovládací prvek provede jednu akci nebo příkaz, implementujte <xref:System.Windows.Automation.Provider.IInvokeProvider>.|
+|<xref:System.Windows.Automation.Provider.IToggleProvider>|Závislosti|Pokud ovládací prvek představuje možnost, kterou lze zapnout nebo vypnout, implementujte <xref:System.Windows.Automation.Provider.IToggleProvider>.|
+|<xref:System.Windows.Automation.Provider.ISelectionItemProvider>|Závislosti|Pokud ovládací prvek slouží k výběru ze seznamu možností mezi položkami nabídky, implementujte <xref:System.Windows.Automation.Provider.ISelectionItemProvider>.|
 
 <a name="UI_Automation_Events_for_Menu_Item"></a>
 
-## <a name="ui-automation-events-for-menu-item"></a>UI Automation Events for Menu Item
+## <a name="ui-automation-events-for-menu-item"></a>Události automatizace uživatelského rozhraní pro položku nabídky
 
-The following table lists the [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] events associated with the menu item control.
+V následující tabulce jsou uvedeny události [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] přidružené k ovládacímu prvku položky nabídky.
 
 |Událost|Podpora|Vysvětlení|
 |-----------|-------------|-----------------|
-|<xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent>|Depends|Must be raised if control supports Invoke control pattern.|
-|<xref:System.Windows.Automation.TogglePatternIdentifiers.ToggleStateProperty> property-changed event.|Depends|Must be raised if control supports Toggle control pattern.|
-|<xref:System.Windows.Automation.ExpandCollapsePatternIdentifiers.ExpandCollapseStateProperty> property-changed event.|Depends|Must be raised if control supports Expand Collapse control pattern.|
-|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent>|Depends|Žádné|
+|<xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent>|Závislosti|Musí být vyvolána, pokud ovládací prvek podporuje model ovládacího prvku Invoke.|
+|<xref:System.Windows.Automation.TogglePatternIdentifiers.ToggleStateProperty> událost změněné vlastností.|Závislosti|Musí být vyvolána, pokud ovládací prvek podporuje vzor ovládacího prvku přepínací tlačítko.|
+|<xref:System.Windows.Automation.ExpandCollapsePatternIdentifiers.ExpandCollapseStateProperty> událost změněné vlastností.|Závislosti|Musí být vyvolána, pokud ovládací prvek podporuje rozbalení řídicího vzoru pro sbalení.|
+|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent>|Závislosti|Žádné.|
 
 <a name="Required_UI_Automation_Events"></a>
 
-## <a name="required-ui-automation-events"></a>Required UI Automation Events
+## <a name="required-ui-automation-events"></a>Požadované události automatizace uživatelského rozhraní
 
-The following table lists the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] events required to be supported by all menu item controls. For more information on events, see [UI Automation Events Overview](ui-automation-events-overview.md).
+V následující tabulce jsou uvedeny [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] události, které musí být podporovány všemi ovládacími prvky položek nabídky. Další informace o událostech najdete v tématu [Přehled událostí automatizace uživatelského rozhraní](ui-automation-events-overview.md).
 
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Event|Support/Value|Poznámky|
+|Událost [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Podpora/hodnota|Poznámky|
 |---------------------------------------------------------------------------------|--------------------|-----------|
-|<xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent>|Depends|Žádné|
-|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementAddedToSelectionEvent>|Depends|Žádné|
-|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent>|Depends|Žádné|
-|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent>|Depends|Žádné|
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> property-changed event.|Požadováno|Žádné|
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> property-changed event.|Požadováno|Žádné|
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> property-changed event.|Požadováno|Žádné|
-|<xref:System.Windows.Automation.ExpandCollapsePatternIdentifiers.ExpandCollapseStateProperty> property-changed event.|Depends|Žádné|
-|<xref:System.Windows.Automation.TogglePatternIdentifiers.ToggleStateProperty> property-changed event.|Depends|Žádné|
+|<xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent>|Závislosti|Žádné|
+|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementAddedToSelectionEvent>|Závislosti|Žádné|
+|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent>|Závislosti|Žádné|
+|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent>|Závislosti|Žádné|
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> událost změněné vlastností.|Požadováno|Žádné|
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> událost změněné vlastností.|Požadováno|Žádné|
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> událost změněné vlastností.|Požadováno|Žádné|
+|<xref:System.Windows.Automation.ExpandCollapsePatternIdentifiers.ExpandCollapseStateProperty> událost změněné vlastností.|Závislosti|Žádné|
+|<xref:System.Windows.Automation.TogglePatternIdentifiers.ToggleStateProperty> událost změněné vlastností.|Závislosti|Žádné|
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|Požadováno|Žádné|
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|Požadováno|Žádné|
 
 <a name="Legacy_Issues"></a>
 
-## <a name="legacy-issues"></a>Legacy Issues
+## <a name="legacy-issues"></a>Starší problémy
 
-Toggle Pattern will only be supported when the [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] menu item is checked and can be programmatically determined necessary to support Toggle Pattern. Because the [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] menu item does not expose whether it has the ability to be checked, Invoke Pattern will be supported when the menu item is not checked. An exception will be made to always support Invoke Pattern even for menu items that should only support Toggle Pattern. This is so clients do not become confused that an element that was supporting Invoke Pattern (when menu item was unchecked) no longer supports the pattern once it becomes checked.
+Přepínač Pattern bude podporován pouze v případě, že je zaškrtnuta položka nabídky [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] a lze programově určit, aby podporovala přepínací vzorek. Vzhledem k tomu, že položka nabídky [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] nevystavuje, zda má být možnost kontrolována, bude při volání položky nabídky podporována vzor vyvolání. Bude provedena výjimka, která bude vždy podporovat vzor volání, i pro položky nabídky, které by měly podporovat pouze přepínací vzorek. To je proto, že klienti nebudou zaměňováni, že prvek, který podporoval volání metody Invoke (Pokud položka nabídky byla nezaškrtnuta), již není po zaškrtnutí tohoto vzoru nadále podporován.
 
 ## <a name="see-also"></a>Viz také:
 

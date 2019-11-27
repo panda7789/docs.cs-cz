@@ -21,32 +21,32 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350113"
 ---
 # <a name="efficient-use-of-data-types-visual-basic"></a>Účinné používání datových typů (Visual Basic)
-Undeclared variables and variables declared without a data type are assigned the `Object` data type. This makes it easy to write programs quickly, but it can cause them to execute more slowly.
+Nedeklarované proměnné a proměnné deklarované bez datového typu jsou přiřazeny `Object` datový typ. To usnadňuje psaní programů rychleji, ale může způsobit pomalejší spouštění.
 
-## <a name="strong-typing"></a>Strong Typing
- Specifying data types for all your variables is known as *strong typing*. Using strong typing has several advantages:
+## <a name="strong-typing"></a>Silné zadání
+ Zadání datových typů pro všechny proměnné se označuje jako *silné zadání*. Použití silného psaní má několik výhod:
 
-- It enables IntelliSense support for your variables. This allows you to see their properties and other members as you type in the code.
+- Umožňuje podporu technologie IntelliSense pro vaše proměnné. To umožňuje zobrazit jejich vlastnosti a další členy při psaní do kódu.
 
-- It takes advantage of compiler type checking. This catches statements that can fail at run time due to errors such as overflow. It also catches calls to methods on objects that do not support them.
+- Využívá kontrolu typu kompilátoru. Tato zachycení příkazy, které mohou selhat v době běhu z důvodu chyb, jako je například přetečení. Také zachytí volání metod pro objekty, které je nepodporují.
 
-- It results in faster execution of your code.
+- Výsledkem je rychlejší provádění kódu.
 
-## <a name="most-efficient-data-types"></a>Most Efficient Data Types
- For variables that never contain fractions, the integral data types are more efficient than the nonintegral types. In Visual Basic, `Integer` and `UInteger` are the most efficient numeric types.
+## <a name="most-efficient-data-types"></a>Nejúčinnější datové typy
+ Pro proměnné, které nikdy neobsahují zlomky, jsou integrální datové typy efektivnější než Neceločíselné typy. V Visual Basic jsou `Integer` a `UInteger` nejúčinnější číselné typy.
 
- For fractional numbers, `Double` is the most efficient data type, because the processors on current platforms perform floating-point operations in double precision. However, operations with `Double` are not as fast as with the integral types such as `Integer`.
+ Pro zlomková čísla je `Double` nejúčinnější datový typ, protože procesory na současných platformách provádějí operace s plovoucí desetinnou čárkou s dvojitou přesností. Operace s `Double` ale nejsou stejně rychlé jako u integrálních typů, jako je `Integer`.
 
-## <a name="specifying-data-type"></a>Specifying Data Type
- Use the [Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md) to declare a variable of a specific type. You can simultaneously specify its access level by using the [Public](../../../../visual-basic/language-reference/modifiers/public.md), [Protected](../../../../visual-basic/language-reference/modifiers/protected.md), [Friend](../../../../visual-basic/language-reference/modifiers/friend.md), or [Private](../../../../visual-basic/language-reference/modifiers/private.md) keyword, as in the following example.
+## <a name="specifying-data-type"></a>Určení datového typu
+ Použijte [příkaz Dim](../../../../visual-basic/language-reference/statements/dim-statement.md) k deklaraci proměnné konkrétního typu. Úroveň přístupu můžete určit současně pomocí klíčového slova [Public](../../../../visual-basic/language-reference/modifiers/public.md), [Protected](../../../../visual-basic/language-reference/modifiers/protected.md), [Friend](../../../../visual-basic/language-reference/modifiers/friend.md)nebo [Private](../../../../visual-basic/language-reference/modifiers/private.md) , jak je uvedeno v následujícím příkladu.
 
 ```vb
 Private x As Double
 Protected s As String
 ```
 
-## <a name="character-conversion"></a>Character Conversion
- The `AscW` and `ChrW` functions operate in Unicode. You should use them in preference to `Asc` and `Chr`, which must translate into and out of Unicode.
+## <a name="character-conversion"></a>Převod znaků
+ Funkce `AscW` a `ChrW` fungují v kódování Unicode. Je vhodné je použít v předvolbách `Asc` a `Chr`, která se musí překládat do kódování Unicode a z něj.
 
 ## <a name="see-also"></a>Viz také:
 

@@ -34,52 +34,52 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350045"
 ---
 # <a name="how-to-define-a-class-that-can-provide-identical-functionality-on-different-data-types-visual-basic"></a>Postupy: Definice třídy, která poskytne identické funkce pro různé datové typy (Visual Basic).
-You can define a class from which you can create objects that provide identical functionality on different data types. To do this, you specify one or more *type parameters* in the definition. The class can then serve as a template for objects that use various data types. A class defined in this way is called a *generic class*.  
+Můžete definovat třídu, ze které můžete vytvářet objekty, které poskytují stejné funkce pro různé datové typy. Chcete-li to provést, zadejte v definici jeden nebo více *parametrů typu* . Třída pak může sloužit jako šablona pro objekty, které používají různé datové typy. Třída definovaná tímto způsobem se nazývá *Obecná třída*.  
   
- The advantage of defining a generic class is that you define it just once, and your code can use it to create many objects that use a wide variety of data types. This results in better performance than defining the class with the `Object` type.  
+ Výhodou definování obecné třídy je, že ji definujete pouze jednou a váš kód jej může použít k vytvoření mnoha objektů, které používají širokou škálu datových typů. Výsledkem je lepší výkon než definování třídy pomocí typu `Object`.  
   
- In addition to classes, you can also define and use generic structures, interfaces, procedures, and delegates.  
+ Kromě tříd můžete také definovat a používat obecné struktury, rozhraní, procedury a delegáty.  
   
-### <a name="to-define-a-class-with-a-type-parameter"></a>To define a class with a type parameter  
+### <a name="to-define-a-class-with-a-type-parameter"></a>Definování třídy s parametrem typu  
   
-1. Define the class in the normal way.  
+1. Definujte třídu normálním způsobem.  
   
-2. Add `(Of` *typeparameter*`)` immediately after the class name to specify a type parameter.  
+2. Přidejte `(Of` *typeparameter*`)` hned za názvem třídy pro určení parametru typu.  
   
-3. If you have more than one type parameter, make a comma-separated list inside the parentheses. Do not repeat the `Of` keyword.  
+3. Pokud máte více než jeden parametr typu, vytvořte v závorkách seznam oddělený čárkami. Neopakuje klíčové slovo `Of`.  
   
-4. If your code performs operations on a type parameter other than simple assignment, follow that type parameter with an `As` clause to add one or more *constraints*. A constraint guarantees that the type supplied for that type parameter satisfies a requirement such as the following:  
+4. Pokud váš kód provádí operace s parametrem typu, který je jiný než jednoduché přiřazení, použijte tento parametr typu s klauzulí `As` k přidání jednoho nebo více *omezení*. Omezení zaručuje, že typ zadaný pro tento parametr typu splňuje požadavky, jako například následující:  
   
-    - Supports an operation, such as `>`, that your code performs  
+    - Podporuje operaci, jako je například `>`, kterou provádí váš kód.  
   
-    - Supports a member, such as a method, that your code accesses  
+    - Podporuje člena, jako je například metoda, ke které váš kód přistupuje.  
   
-    - Exposes a parameterless constructor  
+    - Zpřístupňuje konstruktor bez parametrů.  
   
-     If you do not specify any constraints, the only operations and members your code can use are those supported by the [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md). For more information, see [Type List](../../../../visual-basic/language-reference/statements/type-list.md).  
+     Pokud nezadáte žádná omezení, mohou být použity pouze operace a členy, které váš kód podporuje, pomocí [datového typu objektu](../../../../visual-basic/language-reference/data-types/object-data-type.md). Další informace najdete v tématu [seznam typů](../../../../visual-basic/language-reference/statements/type-list.md).  
   
-5. Identify every class member that is to be declared with a supplied type, and declare it `As` `typeparameter`. This applies to internal storage, procedure parameters, and return values.  
+5. Identifikujte každého člena třídy, který má být deklarován se zadaným typem, a deklarujte ho `As` `typeparameter`. To platí pro interní úložiště, parametry procedury a návratové hodnoty.  
   
-6. Be sure your code uses only operations and methods that are supported by any data type it can supply to `itemType`.  
+6. Ujistěte se, že váš kód používá pouze operace a metody, které jsou podporovány jakýmkoli datovým typem, který může poskytovat `itemType`.  
   
-     The following example defines a class that manages a very simple list. It holds the list in the internal array `items`, and the using code can declare the data type of the list elements. A parameterized constructor allows the using code to set the upper bound of `items`, and the parameterless constructor sets this to 9 (for a total of 10 items).  
+     Následující příklad definuje třídu, která spravuje velmi jednoduchý seznam. Obsahuje seznam v interním poli `items`a kód using může deklarovat datový typ prvků seznamu. Parametrizovaný konstruktor umožňuje použití kódu k nastavení horní meze `items`a konstruktor bez parametrů tuto hodnotu nastaví na 9 (celkem 10 položek).  
   
      [!code-vb[VbVbalrDataTypes#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#7)]  
   
-     You can declare a class from `simpleList` to hold a list of `Integer` values, another class to hold a list of `String` values, and another to hold `Date` values. Except for the data type of the list members, objects created from all these classes behave identically.  
+     Třídu můžete deklarovat z `simpleList`, aby obsahovala seznam hodnot `Integer`, další třída, která bude obsahovat seznam `String` hodnot a druhý pro uchování `Date` hodnot. S výjimkou datového typu seznamů členů se objekty vytvořené ze všech těchto tříd chovají stejně.  
   
-     The type argument that the using code supplies to `itemType` can be an intrinsic type such as `Boolean` or `Double`, a structure, an enumeration, or any type of class, including one that your application defines.  
+     Argument typu, který používá zadání kódu pro `itemType` může být vnitřní typ, jako je například `Boolean` nebo `Double`, struktura, výčet nebo jakýkoli typ třídy, včetně toho, který vaše aplikace definuje.  
   
-     You can test the class `simpleList` with the following code.  
+     Můžete otestovat `simpleList` třídy pomocí následujícího kódu.  
   
      [!code-vb[VbVbalrDataTypes#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#8)]  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
-- [Generic Types in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [Obecné typy v Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
 - [Jazyková nezávislost a jazykově nezávislé komponenty](../../../../standard/language-independence-and-language-independent-components.md)
-- [Of](../../../../visual-basic/language-reference/statements/of-clause.md)
+- [Tohoto](../../../../visual-basic/language-reference/statements/of-clause.md)
 - [Seznam typů](../../../../visual-basic/language-reference/statements/type-list.md)
 - [Postupy: Použití obecné třídy](../../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)
 - [Datový typ Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)

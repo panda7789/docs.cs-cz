@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74443956"
 ---
 # <a name="cor_native_link-structure"></a>COR_NATIVE_LINK – struktura
-Contains information that is used to link native code.  
+Obsahuje informace, které se používají k propojení nativního kódu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,18 +39,18 @@ typedef struct
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`m_linkType`|The type to be linked in native code. This value is one of the [CorNativeLinkType](../../../../docs/framework/unmanaged-api/metadata/cornativelinktype-enumeration.md) values.|  
-|`m_flags`|Flags used by the linker when linking native code. This value is one of the [CorNativeLinkFlags](../../../../docs/framework/unmanaged-api/metadata/cornativelinkflags-enumeration.md) values.|  
-|`m_entryPoint`|The MemberRef metadata token that represents the entry point. The format is `lib:entrypoint`.|  
+|`m_linkType`|Typ, který se má propojit v nativním kódu. Tato hodnota je jednou z hodnot [CorNativeLinkType –](../../../../docs/framework/unmanaged-api/metadata/cornativelinktype-enumeration.md) .|  
+|`m_flags`|Příznaky používané linkerem při propojování nativního kódu. Tato hodnota je jednou z hodnot [CorNativeLinkFlags –](../../../../docs/framework/unmanaged-api/metadata/cornativelinkflags-enumeration.md) .|  
+|`m_entryPoint`|Token metadat MemberRef, který představuje vstupní bod. Formát je `lib:entrypoint`.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

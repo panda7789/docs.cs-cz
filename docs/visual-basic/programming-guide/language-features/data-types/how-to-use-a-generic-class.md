@@ -29,28 +29,28 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350063"
 ---
 # <a name="how-to-use-a-generic-class-visual-basic"></a>Postupy: Použití obecné třídy (Visual Basic)
-A class that takes *type parameters* is called a *generic class*. If you are using a generic class, you can generate a *constructed class* from it by supplying a *type argument* for each of these parameters. You can then declare a variable of the constructed class type, and you can create an instance of the constructed class and assign it to that variable.  
+Třída, která přijímá *parametry typu* , se nazývá *Obecná třída*. Pokud používáte obecnou třídu, můžete z ní vytvořit *vytvořenou třídu* zadáním *argumentu typu* pro každý z těchto parametrů. Pak můžete deklarovat proměnnou typu konstruované třídy a vytvořit instanci konstruované třídy a přiřadit ji k této proměnné.  
   
- In addition to classes, you can also define and use generic structures, interfaces, procedures, and delegates.  
+ Kromě tříd můžete také definovat a používat obecné struktury, rozhraní, procedury a delegáty.  
   
- The following procedure takes a generic class defined in the .NET Framework and creates an instance from it.  
+ Následující postup převezme obecnou třídu definovanou v .NET Framework a vytvoří z ní instanci.  
   
-### <a name="to-use-a-class-that-takes-a-type-parameter"></a>To use a class that takes a type parameter  
+### <a name="to-use-a-class-that-takes-a-type-parameter"></a>Použití třídy, která přebírá parametr typu  
   
-1. At the beginning of your source file, include an [Imports Statement (.NET Namespace and Type)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) to import the <xref:System.Collections.Generic?displayProperty=nameWithType> namespace. This allows you to refer to the <xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType> class without having to fully qualify it to differentiate it from other queue classes such as <xref:System.Collections.Queue?displayProperty=nameWithType>.  
+1. Na začátku zdrojového souboru zahrňte [příkaz Imports (obor názvů a typ .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) pro import oboru názvů <xref:System.Collections.Generic?displayProperty=nameWithType>. To vám umožňuje odkazovat na třídu <xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType>, aniž by bylo nutné plně kvalifikovat jejich rozlišení od jiných tříd front, jako je například <xref:System.Collections.Queue?displayProperty=nameWithType>.  
   
-2. Create the object in the normal way, but add `(Of type)` immediately after the class name.  
+2. Vytvořte objekt normálním způsobem, ale přidejte `(Of type)` hned za název třídy.  
   
-     The following example uses the same class (<xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType>) to create two queue objects that hold items of different data types. It adds items to the end of each queue and then removes and displays items from the front of each queue.  
+     Následující příklad používá stejnou třídu (<xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType>) k vytvoření dvou objektů fronty, které obsahují položky různých datových typů. Přidá položky na konec každé fronty a pak odebere a zobrazí položky z přední části každé fronty.  
   
      [!code-vb[VbVbalrDataTypes#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#9)]  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
-- [Generic Types in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [Obecné typy v Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
 - [Jazyková nezávislost a jazykově nezávislé komponenty](../../../../standard/language-independence-and-language-independent-components.md)
-- [Of](../../../../visual-basic/language-reference/statements/of-clause.md)
+- [Tohoto](../../../../visual-basic/language-reference/statements/of-clause.md)
 - [Příkaz Imports (obor názvů a typ .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)
 - [Postupy: Definice třídy, která poskytne identické funkce pro různé datové typy](../../../../visual-basic/programming-guide/language-features/data-types/how-to-define-a-class-that-can-provide-identical-functionality.md)
 - [Iterátory](../../../../visual-basic/programming-guide/concepts/iterators.md)

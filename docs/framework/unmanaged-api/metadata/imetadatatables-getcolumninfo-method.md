@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436103"
 ---
 # <a name="imetadatatablesgetcolumninfo-method"></a>IMetaDataTables::GetColumnInfo – metoda
-Gets data about the specified column in the specified table.  
+Načte data o zadaném sloupci v zadané tabulce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,57 +42,57 @@ HRESULT GetColumnInfo (
 =======
 
  `ixTbl`  
- [in] The index of the desired table.  
+ pro Index požadované tabulky  
   
  `ixCol`  
- [in] The index of the desired column.  
+ pro Index požadovaného sloupce  
   
  `poCol`  
- [out] A pointer to the offset of the column in the row.  
+ mimo Ukazatel na posun sloupce v řádku.  
   
  `pcbCol`  
- [out] A pointer to the size, in bytes, of the column.  
+ mimo Ukazatel na velikost sloupce v bajtech.  
   
  `pType`  
- [out] A pointer to the type of the values in the column.  
+ mimo Ukazatel na typ hodnot ve sloupci.  
   
  `ppName`  
- [out] A pointer to a pointer to the column name.  
+ mimo Ukazatel na ukazatel na název sloupce.  
  
 ## <a name="remarks"></a>Poznámky
 
-The returned column type falls within a range of values:
+Vrácený typ sloupce spadá do rozsahu hodnot:
 
-| pType                    | Popis   | Helper function                   |
+| pType                    | Popis   | Pomocná funkce                   |
 |--------------------------|---------------|-----------------------------------|
-| `0`..`iRidMax`<br>(0..63)   | Rid           | **IsRidType**<br>**IsRidOrToken** |
-| `iCodedToken`..`iCodedTokenMax`<br>(64..95) | Coded token | **IsCodedTokenType** <br>**IsRidOrToken** |
+| `0`..`iRidMax`<br>(0.. 63)   | Mezinárodní           | **IsRidType**<br>**IsRidOrToken** |
+| `iCodedToken`..`iCodedTokenMax`<br>(64.. 95) | Kódovaný token | **IsCodedTokenType** <br>**IsRidOrToken** |
 | `iSHORT` (96)            | Int16         | **IsFixedType**                   |
 | `iUSHORT` (97)           | UInt16        | **IsFixedType**                   |
-| `iLONG` (98)             | Int32         | **IsFixedType**                   |
+| `iLONG` (98)             | Datový typ Int32         | **IsFixedType**                   |
 | `iULONG` (99)            | UInt32        | **IsFixedType**                   |
 | `iBYTE` (100)            | Byte          | **IsFixedType**                   |
 | `iSTRING` (101)          | String        | **IsHeapType**                    |
-| `iGUID` (102)            | Guid          | **IsHeapType**                    |
+| `iGUID` (102)            | identifikátor GUID          | **IsHeapType**                    |
 | `iBLOB` (103)            | Blob          | **IsHeapType**                    |
 
-Values that are stored in the *heap* (that is, `IsHeapType == true`) can be read using:
+Hodnoty, které jsou uloženy v *haldě* (to znamená `IsHeapType == true`), lze číst pomocí:
 
-- `iSTRING`: **IMetadataTables.GetString**
-- `iGUID`: **IMetadataTables.GetGUID**
-- `iBLOB`: **IMetadataTables.GetBlob**
+- `iSTRING`: **IMetadataTables. GetString**
+- `iGUID`: **IMetadataTables. GETguid**
+- `iBLOB`: **IMetadataTables. Getblob**
 
 > [!IMPORTANT]
-> To use the constants defined in the table above, include the directive `#define _DEFINE_META_DATA_META_CONSTANTS` provided by the *cor.h* header file.
+> Chcete-li použít konstanty definované v tabulce výše, zahrňte direktivu `#define _DEFINE_META_DATA_META_CONSTANTS` poskytnutou hlavičkovým souborem *cor. h* .
 
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

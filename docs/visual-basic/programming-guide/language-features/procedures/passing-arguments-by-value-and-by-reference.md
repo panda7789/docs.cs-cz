@@ -17,53 +17,53 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352609"
 ---
 # <a name="passing-arguments-by-value-and-by-reference-visual-basic"></a>Předávání argumentů podle hodnoty a odkazu (Visual Basic)
-In Visual Basic, you can pass an argument to a procedure *by value* or *by reference*. This is known as the *passing mechanism*, and it determines whether the procedure can modify the programming element underlying the argument in the calling code. The procedure declaration determines the passing mechanism for each parameter by specifying the [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) or [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) keyword.  
+V Visual Basic můžete předat argument proceduře *podle hodnoty* nebo *odkazu*. Toto je označováno jako *mechanismus předávání*a určuje, zda procedura může upravit programovací element podkladové argumentu v volajícím kódu. Deklarace procedury určuje mechanismus předávání pro každý parametr zadáním klíčového slova [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) nebo [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) .  
   
-## <a name="distinctions"></a>Distinctions  
- When passing an argument to a procedure, be aware of several different distinctions that interact with each other:  
+## <a name="distinctions"></a>Rozdíly  
+ Při předání argumentu proceduře si uvědomte několik různých odlišností, které vzájemně komunikují:  
   
-- Whether the underlying programming element is modifiable or nonmodifiable  
+- Zda je základní prvek programování upravitelný nebo neupravitelný  
   
-- Whether the argument itself is modifiable or nonmodifiable  
+- Určuje, zda je argument sám upravitelný nebo neupravitelný.  
   
-- Whether the argument is being passed by value or by reference  
+- Určuje, zda je argument předáván hodnotou nebo odkazem.  
   
-- Whether the argument data type is a value type or a reference type  
+- Určuje, zda je datovým typem argumentu typ hodnoty nebo typ odkazu.  
   
- For more information, see [Differences Between Modifiable and Nonmodifiable Arguments](./differences-between-modifiable-and-nonmodifiable-arguments.md) and [Differences Between Passing an Argument By Value and By Reference](./differences-between-passing-an-argument-by-value-and-by-reference.md).  
+ Další informace naleznete v tématu [rozdíly mezi upravitelnými a neupravitelnými argumenty](./differences-between-modifiable-and-nonmodifiable-arguments.md) a [rozdíly mezi předáním argumentu podle hodnoty a odkazu](./differences-between-passing-an-argument-by-value-and-by-reference.md).  
   
-## <a name="choice-of-passing-mechanism"></a>Choice of Passing Mechanism  
- You should choose the passing mechanism carefully for each argument.  
+## <a name="choice-of-passing-mechanism"></a>Volba mechanismu předávání  
+ Měli byste zvolit pečlivě mechanismus předávání pro každý argument.  
   
-- **Protection**. In choosing between the two passing mechanisms, the most important criterion is the exposure of calling variables to change. The advantage of passing an argument `ByRef` is that the procedure can return a value to the calling code through that argument. The advantage of passing an argument `ByVal` is that it protects a variable from being changed by the procedure.  
+- **Ochrana**. V rámci volby mezi dvěma mechanismy předávání je nejdůležitějším kritériem riziko volání proměnných, které se mají změnit. Výhodou předání argumentu `ByRef` je, že procedura může vrátit hodnotu volajícímu kódu prostřednictvím tohoto argumentu. Výhodou předání argumentu `ByVal` je, že chrání proměnnou od změny postupem.  
   
-- **Performance**. Although the passing mechanism can affect the performance of your code, the difference is usually insignificant. One exception to this is a value type passed `ByVal`. In this case, Visual Basic copies the entire data contents of the argument. Therefore, for a large value type such as a structure, it can be more efficient to pass it `ByRef`.  
+- **Výkon**. I když mechanismus předávání může ovlivnit výkon kódu, rozdíl je obvykle nevýznamný. Jedinou výjimkou je typ hodnoty předaný `ByVal`. V tomto případě Visual Basic zkopíruje celý obsah tohoto argumentu. Proto pro velký typ hodnoty, jako je například struktura, může být efektivnější předat `ByRef`.  
   
-     For reference types, only the pointer to the data is copied (four bytes on 32-bit platforms, eight bytes on 64-bit platforms). Therefore, you can pass arguments of type `String` or `Object` by value without harming performance.  
+     U typů odkazů se kopíruje jenom ukazatel na data (čtyři bajty na 32-bitových platformách, osm bajtů na 64 64bitových platformách). Proto můžete předat argumenty typu `String` nebo `Object` podle hodnoty, aniž by došlo k poškození výkonu.  
   
-## <a name="determination-of-the-passing-mechanism"></a>Determination of the Passing Mechanism  
- The procedure declaration specifies the passing mechanism for each parameter. The calling code can't override a `ByVal` mechanism.  
+## <a name="determination-of-the-passing-mechanism"></a>Určení mechanismu předávání  
+ Deklarace procedury určuje mechanismus předávání pro každý parametr. Volající kód nemůže přepsat `ByVal` mechanismus.  
   
- If a parameter is declared with `ByRef`, the calling code can force the mechanism to `ByVal` by enclosing the argument name in parentheses in the call. For more information, see [How to: Force an Argument to Be Passed by Value](./how-to-force-an-argument-to-be-passed-by-value.md).  
+ Pokud je parametr deklarovaný pomocí `ByRef`, volající kód může vynutit, aby mechanismus `ByVal` uzavřením názvu argumentu do závorek v volání. Další informace naleznete v tématu [How to: Force a argument by měl být předán hodnotou](./how-to-force-an-argument-to-be-passed-by-value.md).  
   
- The default in Visual Basic is to pass arguments by value.  
+ Výchozí hodnotou v Visual Basic je předání argumentů podle hodnoty.  
   
-## <a name="when-to-pass-an-argument-by-value"></a>When to Pass an Argument by Value  
+## <a name="when-to-pass-an-argument-by-value"></a>Kdy předat argument podle hodnoty  
   
-- If the calling code element underlying the argument is a nonmodifiable element, declare the corresponding parameter [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md). No code can change the value of a nonmodifiable element.  
+- Pokud je element volajícího kódu podkladovým argumentem neupravitelný element, deklarujte odpovídající parametr [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md). Žádný kód nemůže změnit hodnotu neupravitelného prvku.  
   
-- If the underlying element is modifiable, but you do not want the procedure to be able to change its value, declare the parameter `ByVal`. Only the calling code can change the value of a modifiable element passed by value.  
+- Pokud je podkladový element upravitelný, ale nechcete, aby procedura mohla měnit jeho hodnotu, deklarujte parametr `ByVal`. Pouze volající kód může změnit hodnotu upravitelného prvku předaného hodnotou.  
   
-## <a name="when-to-pass-an-argument-by-reference"></a>When to Pass an Argument by Reference  
+## <a name="when-to-pass-an-argument-by-reference"></a>Kdy předat argument odkazem  
   
-- If the procedure has a genuine need to change the underlying element in the calling code, declare the corresponding parameter [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md).  
+- Pokud má procedura originální nutnost změnit základní prvek v volajícím kódu, deklarujte odpovídající parametr [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md).  
   
-- If the correct execution of the code depends on the procedure changing the underlying element in the calling code, declare the parameter `ByRef`. If you pass it by value, or if the calling code overrides the `ByRef` passing mechanism by enclosing the argument in parentheses, the procedure call might produce unexpected results.  
+- Je-li správné spuštění kódu závislé na postupu změny podkladového prvku v kódu volajícího, deklarujte parametr `ByRef`. Pokud ho předáte podle hodnoty nebo pokud volající kód přepíše mechanismus `ByRef` předáním uzavřením argumentu v závorkách, volání procedury může způsobit neočekávané výsledky.  
   
 ## <a name="example"></a>Příklad  
   
 ### <a name="description"></a>Popis  
- The following example illustrates when to pass arguments by value and when to pass them by reference. Procedure `Calculate` has both a `ByVal` and a `ByRef` parameter. Given an interest rate, `rate`, and a sum of money, `debt`, the task of the procedure is to calculate a new value for `debt` that is the result of applying the interest rate to the original value of `debt`. Because `debt` is a `ByRef` parameter, the new total is reflected in the value of the argument in the calling code that corresponds to `debt`. Parameter `rate` is a `ByVal` parameter because `Calculate` should not change its value.  
+ Následující příklad ilustruje, kdy předat argumenty podle hodnoty a kdy je předat odkazem. Procedura `Calculate` má parametr `ByVal` a `ByRef`. Vzhledem k úrokové sazbě, `rate`a součtu peněz `debt`, úlohy postupu je vypočítat novou hodnotu pro `debt`, která je výsledkem použití úrokové sazby na původní hodnotu `debt`. Vzhledem k tomu, že `debt` je `ByRef` parametr, je nový součet vyjádřen v hodnotě argumentu v volajícím kódu, který odpovídá `debt`. Parametr `rate` je `ByVal` parametr, protože `Calculate` by neměl měnit jeho hodnotu.  
   
 ### <a name="code"></a>Kód  
  [!code-vb[VbVbcnProcedures#74](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class2.vb#74)]  

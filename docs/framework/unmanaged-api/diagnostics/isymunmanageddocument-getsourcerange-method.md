@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449135"
 ---
 # <a name="isymunmanageddocumentgetsourcerange-method"></a>ISymUnmanagedDocument::GetSourceRange – metoda
-Returns the specified range of the embedded source into the given buffer. The buffer must be large enough to hold the source.  
+Vrátí zadaný rozsah vloženého zdroje do dané vyrovnávací paměti. Vyrovnávací paměť musí být dostatečně velká pro uložení zdroje.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,28 +41,28 @@ HRESULT GetSourceRange(
   
 ## <a name="parameters"></a>Parametry  
  `startLine`  
- [in] The starting line in the current document.  
+ pro Počáteční řádek v aktuálním dokumentu.  
   
  `startColumn`  
- [in] The starting column in the current document.  
+ pro Počáteční sloupec v aktuálním dokumentu.  
   
  `endLine`  
- [in] The final line in the current document.  
+ pro Poslední řádek v aktuálním dokumentu.  
   
  `endColumn`  
- [in] The final column in the current document.  
+ pro Konečný sloupec v aktuálním dokumentu.  
   
  `cSourceBytes`  
- [in] The size of the source, in bytes.  
+ pro Velikost zdroje (v bajtech).  
   
  `pcSourceBytes`  
- [out] A pointer to a variable that receives the source size.  
+ mimo Ukazatel na proměnnou, která přijímá velikost zdroje.  
   
  `source`  
- [out] The size and length of the specified range of the source document, in bytes.  
+ mimo Velikost a délka zadaného rozsahu zdrojového dokumentu (v bajtech).  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds.  
+ S_OK, zda je metoda úspěšná.  
   
 ## <a name="see-also"></a>Viz také:
 

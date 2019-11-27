@@ -1,5 +1,5 @@
 ---
-title: Features That Support LINQ
+title: Funkce, které podporují LINQ
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Visual Basic, LINQ features
@@ -13,90 +13,90 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353519"
 ---
 # <a name="visual-basic-features-that-support-linq"></a>Funkce Visual Basic podporující LINQ
-The name [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] refers to technology in Visual Basic that supports query syntax and other language constructs directly in the language. With [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], you do not have to learn a new language to query against an external data source. You can query against data in relational databases, XML stores, or objects by using Visual Basic. This integration of query capabilities into the language enables compile-time checking for syntax errors and type safety. This integration also ensures that you already know most of what you have to know to write rich, varied queries in Visual Basic.  
+Název [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] odkazuje na technologii v Visual Basic, která podporuje syntaxi dotazů a jiné jazykové konstrukce přímo v jazyce. Pomocí [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]nemusíte učit nový jazyk, abyste se mohli dotazovat na externí zdroj dat. Pomocí Visual Basic můžete zadávat dotazy na data v relačních databázích, v úložištích XML nebo v objektech. Tato integrace možností dotazů do jazyka umožňuje v době kompilace provádět kontrolu chyb syntaxe a zabezpečení typů. Tato integrace také zajišťuje, že už znáte většinu toho, co potřebujete znát k psaní bohatých a proměnlivých dotazů v Visual Basic.  
   
- The following sections describe the language constructs that support LINQ in enough detail to enable you to get started in reading the introductory documentation, code examples, and sample applications. You can also click the links to find more detailed explanations of how the language features come together to enable language-integrated query. A good place to start is [Walkthrough: Writing Queries in Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/walkthrough-writing-queries.md).  
+ V následujících částech jsou popsány jazykové konstrukce, které podporují LINQ dostatečně podrobně, aby bylo možné začít číst úvodní dokumentaci, příklady kódu a ukázkové aplikace. Můžete také kliknout na odkazy a najít podrobnější vysvětlení způsobu, jakým jsou tyto funkce jazyka spojeny, a umožnit tak dotaz integrovaný do jazyka. Dobrým místem pro začátek je [Návod: zápis dotazů v Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/walkthrough-writing-queries.md).  
   
 ## <a name="query-expressions"></a>Výrazy dotazu  
- Query expressions in Visual Basic can be expressed in a declarative syntax similar to that of SQL or XQuery. At compile time, query syntax is converted into method calls to a LINQ provider's implementation of the standard query operator extension methods. Applications control which standard query operators are in scope by specifying the appropriate namespace with an `Imports` statement. Syntax for a Visual Basic query expression looks like this:  
+ Výrazy dotazů v Visual Basic lze vyjádřit v deklarativní syntaxi podobné řetězci jazyka SQL nebo XQuery. V době kompilace se syntaxe dotazu převádí na volání metody do implementace metod rozšíření standardních operátorů dotazů zprostředkovatele LINQ. Aplikace řídí, které standardní operátory dotazu jsou v oboru, zadáním příslušného oboru názvů pomocí příkazu `Imports`. Syntaxe výrazu dotazu Visual Basic vypadá takto:  
   
  [!code-vb[VbLINQVbFeatures#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#1)]  
   
- For more information, see [Introduction to LINQ in Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md).  
+ Další informace najdete v tématu [Úvod do LINQ v Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md).  
   
-## <a name="implicitly-typed-variables"></a>Implicitly Typed Variables  
- Instead of explicitly specifying a type when you declare and initialize a variable, you can enable the compiler to infer and assign the type. This is referred to as *local type inference*.  
+## <a name="implicitly-typed-variables"></a>Implicitně typované proměnné  
+ Namísto explicitního určení typu při deklaraci a inicializaci proměnné můžete povolit kompilátoru, aby odvodit a přidělil typ. To se označuje jako *odvození místního typu*.  
   
- Variables whose types are inferred are strongly typed, just like variables whose type you specify explicitly. Local type inference works only when you are defining a local variable inside a method body. For more information, see [Option Infer Statement](../../../../visual-basic/language-reference/statements/option-infer-statement.md) and [Local Type Inference](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md).  
+ Proměnné, jejichž typy jsou odvozeny, jsou silně typované, stejně jako proměnné, jejichž typ zadáte explicitně. Odvození místního typu funguje pouze v případě, že definujete místní proměnnou uvnitř těla metody. Další informace naleznete v tématu [možnost odvození příkazu](../../../../visual-basic/language-reference/statements/option-infer-statement.md) a [odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md).  
   
- The following example illustrates local type inference. To use this example, you must set `Option Infer` to `On`.  
+ Následující příklad znázorňuje odvození místního typu. Chcete-li použít tento příklad, musíte nastavit `Option Infer` pro `On`.  
   
  [!code-vb[VbLINQVbFeatures#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#2)]  
   
- Local type inference also makes it possible to create anonymous types, which are described later in this section and are necessary for LINQ queries.  
+ Odvození místního typu také umožňuje vytvořit anonymní typy, které jsou popsány dále v této části a jsou nezbytné pro dotazy LINQ.  
   
- In the following LINQ example, type inference occurs if `Option Infer` is either `On` or `Off`. A compile-time error occurs if `Option Infer` is `Off` and `Option Strict` is `On`.  
+ V následujícím příkladu LINQ dojde k odvození typu, pokud je `Option Infer` buď `On` nebo `Off`. Pokud je `Option Infer` `Off` a `Option Strict` `On`, dojde k chybě při kompilaci.  
   
  [!code-vb[VbLINQVbFeatures#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#3)]  
   
-## <a name="object-initializers"></a>Object Initializers  
- Object initializers are used in query expressions when you have to create an anonymous type to hold the results of a query. They also can be used to initialize objects of named types outside of queries. By using an object initializer, you can initialize an object in a single line without explicitly calling a constructor. Assuming that you have a class named `Customer` that has public `Name` and `Phone` properties, along with other properties, an object initializer can be used in this manner:  
+## <a name="object-initializers"></a>Inicializátory objektů  
+ Inicializátory objektů se používají ve výrazech dotazů, pokud je třeba vytvořit anonymní typ pro uložení výsledků dotazu. Lze je také použít k inicializaci objektů pojmenovaných typů mimo dotazy. Pomocí inicializátoru objektu můžete inicializovat objekt v jednom řádku bez explicitního volání konstruktoru. Za předpokladu, že máte třídu s názvem `Customer`, která má veřejné `Name` a `Phone` vlastnosti spolu s dalšími vlastnostmi, lze použít inicializátor objektu tímto způsobem:  
   
  [!code-vb[VbLINQVbFeatures#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#4)]  
   
- For more information, see [Object Initializers: Named and Anonymous Types](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md).  
+ Další informace naleznete v tématu [Inicializátory objektů: pojmenované a anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md).  
   
 ## <a name="anonymous-types"></a>Anonymní typy  
- Anonymous types provide a convenient way to temporarily group a set of properties into an element that you want to include in a query result. This enables you to choose any combination of available fields in the query, in any order, without defining a named data type for the element.  
+ Anonymní typy poskytují pohodlný způsob, jak dočasně seskupit sadu vlastností do prvku, který chcete zahrnout do výsledku dotazu. Díky tomu můžete zvolit libovolnou kombinaci dostupných polí v dotazu, a to v libovolném pořadí, aniž byste definovali pojmenovaný datový typ pro element.  
   
- An *anonymous type* is constructed dynamically by the compiler. The name of the type is assigned by the compiler, and it might change with each new compilation. Therefore, the name cannot be used directly. Anonymous types are initialized in the following way:  
+ *Anonymní typ* je dynamicky sestaven kompilátorem. Název typu je přiřazen kompilátorem a může se změnit u každé nové kompilace. Proto název nelze použít přímo. Anonymní typy jsou inicializovány následujícím způsobem:  
   
  [!code-vb[VbLINQVbFeatures#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#5)]  
   
- For more information, see [Anonymous Types](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).  
+ Další informace najdete v tématu [anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).  
   
-## <a name="extension-methods"></a>Metody rozšíření  
- Extension methods enable you to add methods to a data type or interface from outside the definition. This feature enables you to, in effect, add new methods to an existing type without actually modifying the type. The standard query operators are themselves a set of extension methods that provide [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query functionality for any type that implements <xref:System.Collections.Generic.IEnumerable%601>. Other extensions to <xref:System.Collections.Generic.IEnumerable%601> include <xref:System.Linq.Enumerable.Count%2A>, <xref:System.Linq.Enumerable.Union%2A>, and <xref:System.Linq.Enumerable.Intersect%2A>.  
+## <a name="extension-methods"></a>Rozšiřující metody  
+ Metody rozšíření umožňují přidat metody do datového typu nebo rozhraní mimo definici. Tato funkce vám umožňuje přidat nové metody do existujícího typu, aniž by bylo nutné upravovat typ. Standardní operátory dotazu jsou vlastní sadou rozšiřujících metod, které poskytují [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] funkce dotazů pro jakýkoli typ, který implementuje <xref:System.Collections.Generic.IEnumerable%601>. Mezi další rozšíření <xref:System.Collections.Generic.IEnumerable%601> patří <xref:System.Linq.Enumerable.Count%2A>, <xref:System.Linq.Enumerable.Union%2A>a <xref:System.Linq.Enumerable.Intersect%2A>.  
   
- The following extension method adds a print method to the <xref:System.String> class.  
+ Následující metoda rozšíření přidá metodu Print do třídy <xref:System.String>.  
   
  [!code-vb[VbLINQVbFeatures#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#6)]  
   
- The method is called like an ordinary instance method of <xref:System.String>:  
+ Metoda je volána jako Obvyklá metoda instance <xref:System.String>:  
   
  [!code-vb[VbLINQVbFeatures#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#7)]  
   
- For more information, see [Extension Methods](../../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md).  
+ Další informace naleznete v tématu [metody rozšíření](../../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md).  
   
 ## <a name="lambda-expressions"></a>Lambda – výrazy  
- A lambda expression is a function without a name that calculates and returns a single value. Unlike named functions, a lambda expression can be defined and executed at the same time. The following example displays 4.  
+ Výraz lambda je funkce bez názvu, který počítá a vrací jedinou hodnotu. Na rozdíl od pojmenovaných funkcí lze definovat a spustit výraz lambda ve stejnou dobu. Následující příklad zobrazí 4.  
   
  [!code-vb[VbLINQVbFeatures#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#8)]  
   
- You can assign the lambda expression definition to a variable name and then use the name to call the function. The following example also displays 4.  
+ Definici výrazu lambda můžete přiřadit názvu proměnné a potom použít název pro volání funkce. V následujícím příkladu se zobrazí také 4.  
   
  [!code-vb[VbLINQVbFeatures#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#12)]  
   
- In [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], lambda expressions underlie many of the standard query operators. The compiler creates lambda expressions to capture the calculations that are defined in fundamental query methods such as `Where`, `Select`, `Order By`, `Take While`, and others.  
+ V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]výrazy lambda jsou základem mnoha standardních operátorů dotazu. Kompilátor vytvoří výrazy lambda pro zachycení výpočtů, které jsou definovány v základních metodách dotazů, například `Where`, `Select`, `Order By`, `Take While`a dalších.  
   
- For example, the following code defines a query that returns all senior students from a list of students.  
+ Například následující kód definuje dotaz, který vrátí všechny vyšší studenty ze seznamu studentů.  
   
  [!code-vb[VbLINQVbFeatures#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#9)]  
   
- The query definition is compiled into code that is similar to the following example, which uses two lambda expressions to specify the arguments for `Where` and `Select`.  
+ Definice dotazu je zkompilována do kódu, který je podobný následujícímu příkladu, který používá dva výrazy lambda k určení argumentů pro `Where` a `Select`.  
   
  [!code-vb[VbLINQVbFeatures#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#10)]  
   
- Either version can be run by using a `For Each` loop:  
+ Kteroukoli verzi je možné spustit pomocí `For Each` smyčka:  
   
  [!code-vb[VbLINQVbFeatures#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#11)]  
   
- For more information, see [Lambda Expressions](../../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
+ Další informace naleznete v tématu [lambda výrazy](../../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Language-Integrated Query (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/index.md)
-- [Getting Started with LINQ in Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)
-- [LINQ and Strings (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [LINQ (Language-Integrated Query) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/index.md)
+- [Začínáme pomocí LINQ v Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)
+- [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
 - [Příkaz Option Infer](../../../../visual-basic/language-reference/statements/option-infer-statement.md)
 - [Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)

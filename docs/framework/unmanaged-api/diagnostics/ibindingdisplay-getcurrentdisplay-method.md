@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448505"
 ---
 # <a name="ibindingdisplaygetcurrentdisplay-method"></a>IBindingDisplay::GetCurrentDisplay – metoda
-Returns the current binding display information.  
+Vrátí aktuální informace o zobrazení vazby.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,21 +35,21 @@ HRESULT GetCurrentDisplay (
   
 ## <a name="parameters"></a>Parametry  
  `display`  
- [out, retval] A pointer to a safearray containing the binding display information.  
+ [out, retval] Ukazatel na pole SAFEARRAY obsahující informace o zobrazení vazby.  
   
 ## <a name="remarks"></a>Poznámky  
- The [IBindingDisplay::InitializeForProcess](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-initializeforprocess-method.md) method must have previously succeeded, and the program must be stopped by a debugger.  
+ Metoda [IBindingDisplay:: InitializeForProcess –](../../../../docs/framework/unmanaged-api/diagnostics/ibindingdisplay-initializeforprocess-method.md) musí být dřív úspěšná a program musí být zastavený pomocí ladicího programu.  
   
- The caller must deallocate the returned `SAFEARRAY` memory by using [SafeArrayDestroy](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-safearraydestroy).  
+ Volající musí navrátit vrácenou `SAFEARRAY` paměť pomocí [SafeArrayDestroy](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-safearraydestroy).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** BindingDisplay.h  
+ **Hlavička:** BindingDisplay. h  
   
- **Library:** BindingDisplay.idl  
+ **Knihovna:** BindingDisplay. idl  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

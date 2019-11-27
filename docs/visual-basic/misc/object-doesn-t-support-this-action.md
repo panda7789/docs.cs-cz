@@ -1,5 +1,5 @@
 ---
-title: Object doesn't support this action
+title: Objekt nepodporuje tuto akci.
 ms.date: 07/20/2015
 f1_keywords:
 - vbrID445
@@ -11,14 +11,14 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353883"
 ---
-# <a name="object-doesnt-support-this-action-visual-basic"></a>Object doesn't support this action (Visual Basic)
-You referenced a method or property that is not supported by this object.  
+# <a name="object-doesnt-support-this-action-visual-basic"></a>Objekt nepodporuje tuto akci (Visual Basic)
+Odkazovali jste na metodu nebo vlastnost, která není podporována tímto objektem.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Read the object's documentation for more information on the object.  
+1. Další informace o objektu naleznete v dokumentaci k objektu.  
   
-2. Ensure that the names of properties and methods are spelled correctly.  
+2. Ujistěte se, že názvy vlastností a metod jsou zadány správně.  
   
 ## <a name="see-also"></a>Viz také:
 

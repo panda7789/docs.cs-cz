@@ -10,16 +10,16 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351214"
 ---
 # <a name="f-p-statements"></a>F-P – příkazy
-The following table contains a listing of Visual Basic language statements.  
+Následující tabulka obsahuje seznam příkazů jazyka Visual Basic.  
   
 |||||  
 |---|---|---|---|  
-|[For Each...Next](../../../visual-basic/language-reference/statements/for-each-next-statement.md)|[For...Next](../../../visual-basic/language-reference/statements/for-next-statement.md)|[Function](../../../visual-basic/language-reference/statements/function-statement.md)|[Get](../../../visual-basic/language-reference/statements/get-statement.md)|  
-|[GoTo](../../../visual-basic/language-reference/statements/goto-statement.md)|[If...Then...Else](../../../visual-basic/language-reference/statements/if-then-else-statement.md)|[Implements](../../../visual-basic/language-reference/statements/implements-statement.md)|[Imports (.NET Namespace and Type)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)|  
-|[Imports (XML Namespace)](../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md)|[Inherits](../../../visual-basic/language-reference/statements/inherits-statement.md)|[Interface](../../../visual-basic/language-reference/statements/interface-statement.md)|[Mid](../../../visual-basic/language-reference/statements/mid-statement.md)|  
-|[Modul](../../../visual-basic/language-reference/statements/module-statement.md)|[Namespace](../../../visual-basic/language-reference/statements/namespace-statement.md)|[On Error](../../../visual-basic/language-reference/statements/on-error-statement.md)|[Operator](../../../visual-basic/language-reference/statements/operator-statement.md)|  
-|[Option \<keyword>](../../../visual-basic/language-reference/statements/option-keyword-statement.md)|[Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md)|[Option Explicit](../../../visual-basic/language-reference/statements/option-explicit-statement.md)|[Option Infer](../../../visual-basic/language-reference/statements/option-infer-statement.md)|  
-|[Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)|[Property](../../../visual-basic/language-reference/statements/property-statement.md)|||  
+|[For each... Generace](../../../visual-basic/language-reference/statements/for-each-next-statement.md)|[Pro... Generace](../../../visual-basic/language-reference/statements/for-next-statement.md)|[Slouží](../../../visual-basic/language-reference/statements/function-statement.md)|[Čtěte](../../../visual-basic/language-reference/statements/get-statement.md)|  
+|[GoTo](../../../visual-basic/language-reference/statements/goto-statement.md)|[Pokud... Pak... Ostatních](../../../visual-basic/language-reference/statements/if-then-else-statement.md)|[Implementace](../../../visual-basic/language-reference/statements/implements-statement.md)|[Importy (obor názvů a typ .NET)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)|  
+|[Importy (obor názvů XML)](../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md)|[Zdědí](../../../visual-basic/language-reference/statements/inherits-statement.md)|[Prostředí](../../../visual-basic/language-reference/statements/interface-statement.md)|[Středně](../../../visual-basic/language-reference/statements/mid-statement.md)|  
+|[Modul](../../../visual-basic/language-reference/statements/module-statement.md)|[Hosting](../../../visual-basic/language-reference/statements/namespace-statement.md)|[Při chybě](../../../visual-basic/language-reference/statements/on-error-statement.md)|[Podnikatel](../../../visual-basic/language-reference/statements/operator-statement.md)|  
+|[Možnost \<klíčového slova >](../../../visual-basic/language-reference/statements/option-keyword-statement.md)|[Možnost Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md)|[Možnost Explicit](../../../visual-basic/language-reference/statements/option-explicit-statement.md)|[Odvoditelné možnosti](../../../visual-basic/language-reference/statements/option-infer-statement.md)|  
+|[Možnost Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)|[Majetek](../../../visual-basic/language-reference/statements/property-statement.md)|||  
   
 ## <a name="see-also"></a>Viz také:
 
