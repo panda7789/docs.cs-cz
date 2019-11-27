@@ -17,7 +17,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344273"
 ---
 # <a name="-help---visual-basic"></a>-help, -? (Visual Basic)
-Displays the compiler options.  
+Zobrazí možnosti kompilátoru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -25,20 +25,20 @@ Displays the compiler options.
 -help  
 ```
 
-or  
+nebo  
 
 ```console
 -?  
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- If you include this option in a compilation, no output file is created and no compilation takes place.  
+ Pokud zahrnete tuto možnost do kompilace, není vytvořen žádný výstupní soubor a nebude provedena žádná kompilace.  
   
 > [!NOTE]
-> The `-help` option is not available from within the Visual Studio development environment; it is available only when compiling from the command line.  
+> Možnost `-help` není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  
   
 ## <a name="example"></a>Příklad  
- The following code displays help from the command line.  
+ Následující kód zobrazí pomocníka z příkazového řádku.  
   
 ```console  
 vbc -help  
@@ -46,5 +46,5 @@ vbc -help
   
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

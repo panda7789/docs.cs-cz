@@ -17,7 +17,7 @@ ms.locfileid: "74347031"
 ---
 # <a name="xml-element-literal-visual-basic"></a>Literál XML elementu (Visual Basic)
 
-A literal that represents an <xref:System.Xml.Linq.XElement> object.
+Literál, který představuje objekt <xref:System.Xml.Linq.XElement>.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -31,101 +31,101 @@ A literal that represents an <xref:System.Xml.Linq.XElement> object.
 
 - `<`
 
-  Požadováno. Opens the starting element tag.
+  Požadováno. Otevře značku počátečního elementu.
 
 - `name`
 
-  Požadováno. Name of the element. The format is one of the following:
+  Požadováno. Název elementu. Formát je jeden z následujících:
 
-  - Literal text for the element name, of the form `[ePrefix:]eName`, where:
+  - Textový literál pro název prvku `[ePrefix:]eName`formuláře, kde:
 
-    |Part|Popis|
+    |Částí|Popis|
     |---|---|
-    |`ePrefix`|Volitelné. XML namespace prefix for the element. Must be a global XML namespace that is defined with an `Imports` statement in the file or at the project level, or a local XML namespace that is defined in this element or a parent element.|
-    |`eName`|Požadováno. Name of the element. The format is one of the following:<br /><br /> - Literal text. See [Names of Declared XML Elements and Attributes](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md).<br />- Embedded expression of the form `<%= eNameExp %>`. The type of `eNameExp` must be `String` or a type that is implicitly convertible to <xref:System.Xml.Linq.XName>.|
+    |`ePrefix`|Volitelná. Předpona oboru názvů XML pro element. Musí být globální obor názvů XML, který je definován pomocí příkazu `Imports` v souboru nebo na úrovni projektu, nebo místní obor názvů XML, který je definován v tomto elementu nebo v nadřazeném elementu.|
+    |`eName`|Požadováno. Název elementu. Formát je jeden z následujících:<br /><br /> -Literal text. Viz [Názvy deklarovaných elementů XML a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md).<br />– Vložený výraz formuláře `<%= eNameExp %>`. Typ `eNameExp` musí být `String` nebo typ, který lze implicitně převést na <xref:System.Xml.Linq.XName>.|
 
-  - Embedded expression of the form `<%= nameExp %>`. The type of `nameExp` must be `String` or a type implicitly convertible to <xref:System.Xml.Linq.XName>. An embedded expression is not allowed in a closing tag of an element.
+  - Vložený výraz formuláře `<%= nameExp %>`. Typ `nameExp` musí být `String` nebo typ implicitně převoditelné na <xref:System.Xml.Linq.XName>. Vložený výraz není povolený v uzavírací značce elementu.
 
 - `attributeList`
 
-  Volitelné. List of attributes declared in the literal.
+  Volitelná. Seznam atributů deklarovaných v literálu
 
   `attribute [ attribute ... ]`
 
-  Each `attribute` has one of the following syntaxes:
+  Každý `attribute` má jednu z následujících syntaxí:
 
-  - Attribute assignment, of the form `[aPrefix:]aName=aValue`, where:
+  - Přiřazení atributu `[aPrefix:]aName=aValue`formuláře, kde:
 
-    |Part|Popis|
+    |Částí|Popis|
     |---|---|
-    |`aPrefix`|Volitelné. XML namespace prefix for the attribute. Must be a global XML namespace that is defined with an `Imports` statement, or a local XML namespace that is defined in this element or a parent element.|
-    |`aName`|Požadováno. Name of the attribute. The format is one of the following:<br /><br /> - Literal text. See [Names of Declared XML Elements and Attributes](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md).<br />- Embedded expression of the form `<%= aNameExp %>`. The type of `aNameExp` must be `String` or a type that is implicitly convertible to <xref:System.Xml.Linq.XName>.|
-    |`aValue`|Volitelné. Value of the attribute. The format is one of the following:<br /><br /> - Literal text, enclosed in quotation marks.<br />- Embedded expression of the form `<%= aValueExp %>`. Any type is allowed.|
+    |`aPrefix`|Volitelná. Předpona oboru názvů XML pro atribut Musí být globální obor názvů XML, který je definován pomocí příkazu `Imports`, nebo místní obor názvů XML, který je definován v tomto elementu nebo v nadřazeném elementu.|
+    |`aName`|Požadováno. Název atributu Formát je jeden z následujících:<br /><br /> -Literal text. Viz [Názvy deklarovaných elementů XML a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md).<br />– Vložený výraz formuláře `<%= aNameExp %>`. Typ `aNameExp` musí být `String` nebo typ, který lze implicitně převést na <xref:System.Xml.Linq.XName>.|
+    |`aValue`|Volitelná. Hodnota atributu Formát je jeden z následujících:<br /><br /> -Literal text uzavřený v uvozovkách.<br />– Vložený výraz formuláře `<%= aValueExp %>`. Je povolen libovolný typ.|
 
-  - Embedded expression of the form `<%= aExp %>`.
+  - Vložený výraz formuláře `<%= aExp %>`.
 
 - `/>`
 
-  Volitelné. Indicates that the element is an empty element, without content.
+  Volitelná. Označuje, že element je prázdný prvek bez obsahu.
 
 - `>`
 
-  Požadováno. Ends the beginning or empty element tag.
+  Požadováno. Ukončí značku začátku nebo prázdného prvku.
 
 - `elementContents`
 
-  Volitelné. Content of the element.
+  Volitelná. Obsah elementu
 
   `content [ content ... ]`
 
-  Each `content` can be one of the following:
+  Každá `content` může být jedna z následujících:
 
-  - Literal text. All the white space in `elementContents` becomes significant if there is any literal text.
+  - Textový literál Všechny prázdné znaky v `elementContents` budou významné, pokud je nějaký textový literál.
 
-  - Embedded expression of the form `<%= contentExp %>`.
+  - Vložený výraz formuláře `<%= contentExp %>`.
 
-  - XML element literal.
+  - Literál elementu XML.
 
-  - XML comment literal. See [XML Comment Literal](../../../visual-basic/language-reference/xml-literals/xml-comment-literal.md).
+  - Literál komentáře XML Viz [literál komentáře XML](../../../visual-basic/language-reference/xml-literals/xml-comment-literal.md).
 
-  - XML processing instruction literal. See [XML Processing Instruction Literal](../../../visual-basic/language-reference/xml-literals/xml-processing-instruction-literal.md).
+  - Literál instrukcí pro zpracování XML Viz [literál instrukcí pro zpracování XML](../../../visual-basic/language-reference/xml-literals/xml-processing-instruction-literal.md).
 
-  - XML CDATA literal. See [XML CDATA Literal](../../../visual-basic/language-reference/xml-literals/xml-cdata-literal.md).
+  - Literál XML CDATA. Viz [literál XML CDATA](../../../visual-basic/language-reference/xml-literals/xml-cdata-literal.md).
 
 - `</[name]>`
 
-  Volitelné. Represents the closing tag for the element. The optional `name` parameter is not allowed when it is the result of an embedded expression.
+  Volitelná. Představuje uzavírací značku elementu. Nepovinný parametr `name` není povolený, pokud se jedná o výsledek vloženého výrazu.
 
 ## <a name="return-value"></a>Návratová hodnota
 
-An <xref:System.Xml.Linq.XElement> object.
+Objekt <xref:System.Xml.Linq.XElement>.
 
 ## <a name="remarks"></a>Poznámky
 
-You can use the XML element literal syntax to create <xref:System.Xml.Linq.XElement> objects in your code.
+Můžete použít syntaxi literálu elementu XML k vytvoření <xref:System.Xml.Linq.XElement> objektů ve vašem kódu.
 
 > [!NOTE]
-> An XML literal can span multiple lines without using line continuation characters. This feature enables you to copy content from an XML document and paste it directly into a Visual Basic program.
+> Literál XML může zahrnovat více řádků bez použití znaků pro pokračování řádku. Tato funkce umožňuje kopírovat obsah z dokumentu XML a vložit ho přímo do Visual Basic programu.
 
-Embedded expressions of the form `<%= exp %>` enable you to add dynamic information to an XML element literal. For more information, see [Embedded Expressions in XML](../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md).
+Vložené výrazy formuláře `<%= exp %>` umožňují přidat dynamické informace do literálu elementu XML. Další informace najdete v tématu [vložené výrazy v XML](../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md).
 
-The Visual Basic compiler converts the XML element literal into calls to the <xref:System.Xml.Linq.XElement.%23ctor%2A> constructor and, if it is required, the <xref:System.Xml.Linq.XAttribute.%23ctor%2A> constructor.
+Kompilátor Visual Basic převádí literál elementu XML na volání konstruktoru <xref:System.Xml.Linq.XElement.%23ctor%2A> a v případě potřeby konstruktor <xref:System.Xml.Linq.XAttribute.%23ctor%2A>.
 
-## <a name="xml-namespaces"></a>XML Namespaces
+## <a name="xml-namespaces"></a>XML – obory názvů
 
-XML namespace prefixes are useful when you have to create XML literals with elements from the same namespace many times in code. You can use global XML namespace prefixes, which you define by using the `Imports` statement, or local prefixes, which you define by using the `xmlns:xmlPrefix="xmlNamespace"` attribute syntax. For more information, see [Imports Statement (XML Namespace)](../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md).
+Předpony oboru názvů XML jsou užitečné v případě, že je nutné vytvořit literály XML s prvky ze stejného oboru názvů, kolikrát je kód. Můžete použít globální předpony oboru názvů XML, které definujete pomocí příkazu `Imports`, nebo místní předpony, které definujete pomocí `xmlns:xmlPrefix="xmlNamespace"` syntaxe atributu. Další informace naleznete v tématu [příkaz Imports (obor názvů XML)](../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md).
 
-In accordance with the scoping rules for XML namespaces, local prefixes take precedence over global prefixes. However, if an XML literal defines an XML namespace, that namespace is not available to expressions that appear in an embedded expression. The embedded expression can access only the global XML namespace.
+V souladu s pravidly oboru názvů XML mají místní předpony přednost před globálními předponami. Pokud však literál XML definuje obor názvů XML, tento obor názvů není k dispozici pro výrazy, které se zobrazí ve vloženém výrazu. Vložený výraz má přístup pouze k globálnímu oboru názvů XML.
 
-The Visual Basic compiler converts each global XML namespace that is used by an XML literal into a one local namespace definition in the generated code. Global XML namespaces that are not used do not appear in the generated code.
+Kompilátor Visual Basic převádí všechny globální obory názvů XML, které jsou používány literály XML, do jedné definice místního oboru názvů v generovaném kódu. Globální obory názvů XML, které se nepoužívají, se ve vygenerovaném kódu nezobrazí.
 
 ## <a name="example"></a>Příklad
 
-The following example shows how to create a simple XML element that has two nested empty elements.
+Následující příklad ukazuje, jak vytvořit jednoduchý element XML, který má dva vnořené prázdné prvky.
 
 [!code-vb[VbXMLSamples#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples9.vb#20)]
 
-The example displays the following text. Notice that the literal preserves the structure of the empty elements.
+V příkladu se zobrazí následující text. Všimněte si, že literál zachovává strukturu prázdných prvků.
 
 ```xml
 <outer>
@@ -136,11 +136,11 @@ The example displays the following text. Notice that the literal preserves the s
 
 ## <a name="example"></a>Příklad
 
-The following example shows how to use embedded expressions to name an element and create attributes.
+Následující příklad ukazuje, jak použít vložené výrazy k pojmenování elementu a vytváření atributů.
 
 [!code-vb[VbXMLSamples#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples9.vb#21)]
 
-This code displays the following text:
+Tento kód zobrazí následující text:
 
 ```xml
 <book isbn="1234" author="My Author" year="1999" title="My Book" />
@@ -148,11 +148,11 @@ This code displays the following text:
 
 ## <a name="example"></a>Příklad
 
-The following example declares `ns` as an XML namespace prefix. It then uses the prefix of the namespace to create an XML literal and displays the element's final form.
+Následující příklad deklaruje `ns` jako předponu oboru názvů XML. Potom používá předponu oboru názvů k vytvoření literálu XML a zobrazí konečný formulář elementu.
 
 [!code-vb[VbXMLSamples#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples10.vb#22)]
 
-This code displays the following text:
+Tento kód zobrazí následující text:
 
 ```xml
 <ns:outer xmlns:ns="http://SomeNamespace">
@@ -163,7 +163,7 @@ This code displays the following text:
 </ns:outer>
 ```
 
-Notice that the compiler converted the prefix of the global XML namespace into a prefix definition for the XML namespace. The \<ns:middle> element redefines the XML namespace prefix for the \<ns:inner1> element. However, the \<ns:inner2> element uses the namespace defined by the `Imports` statement.
+Všimněte si, že kompilátor převedl předponu globálního oboru názvů XML do definice předpony pro obor názvů XML. Element \<NS: Middle > předefinuje předponu oboru názvů XML pro element \<NS: inner1 >. Nicméně element \<NS: inner2 > používá obor názvů definovaný příkazem `Imports`.
 
 ## <a name="see-also"></a>Viz také:
 
@@ -172,6 +172,6 @@ Notice that the compiler converted the prefix of the global XML namespace into a
 - [Literál komentáře XML](../../../visual-basic/language-reference/xml-literals/xml-comment-literal.md)
 - [Literál XML CDATA](../../../visual-basic/language-reference/xml-literals/xml-cdata-literal.md)
 - [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)
-- [Creating XML in Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [Vytváření XML v Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
 - [Vložené výrazy v XML](../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md)
 - [Příkaz Imports (obor názvů XML)](../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md)

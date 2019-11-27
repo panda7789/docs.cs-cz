@@ -15,30 +15,30 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74336556"
 ---
 # <a name="assignment-operators-visual-basic"></a>Operátory přiřazení (Visual Basic)
-The following are the assignment operators defined in Visual Basic.  
+Níže jsou uvedeny operátory přiřazení definované v Visual Basic.  
   
- [Operátor =](../../../visual-basic/language-reference/operators/assignment-operator.md)  
+ [= – operátor](../../../visual-basic/language-reference/operators/assignment-operator.md)  
   
- [Operátor ^=](../../../visual-basic/language-reference/operators/exponentiation-assignment-operator.md)  
+ [^= – operátor](../../../visual-basic/language-reference/operators/exponentiation-assignment-operator.md)  
   
- [Operátor *=](../../../visual-basic/language-reference/operators/multiplication-assignment-operator.md)  
+ [*= – operátor](../../../visual-basic/language-reference/operators/multiplication-assignment-operator.md)  
   
- [Operátor /=](../../../visual-basic/language-reference/operators/floating-point-division-assignment-operator.md)  
+ [/= – operátor](../../../visual-basic/language-reference/operators/floating-point-division-assignment-operator.md)  
   
- [\\= Operator](../../../visual-basic/language-reference/operators/integer-division-assignment-operator.md)  
+ [\\= – operátor](../../../visual-basic/language-reference/operators/integer-division-assignment-operator.md)  
   
- [Operátor +=](../../../visual-basic/language-reference/operators/addition-assignment-operator.md)  
+ [+= – operátor](../../../visual-basic/language-reference/operators/addition-assignment-operator.md)  
   
- [Operátor -=](../../../visual-basic/language-reference/operators/subtraction-assignment-operator.md)  
+ [-= – operátor](../../../visual-basic/language-reference/operators/subtraction-assignment-operator.md)  
   
- [<\<= Operator](../../../visual-basic/language-reference/operators/left-shift-assignment-operator.md)  
+ [<\<= – operátor](../../../visual-basic/language-reference/operators/left-shift-assignment-operator.md)  
   
- [Operátor >>=](../../../visual-basic/language-reference/operators/right-shift-assignment-operator.md)  
+ [>>= – operátor](../../../visual-basic/language-reference/operators/right-shift-assignment-operator.md)  
   
- [Operátor &=](../../../visual-basic/language-reference/operators/and-assignment-operator.md)  
+ [&= – operátor](../../../visual-basic/language-reference/operators/and-assignment-operator.md)  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Priorita operátorů v Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
 - [Příkazy](../../../visual-basic/language-reference/statements/index.md)

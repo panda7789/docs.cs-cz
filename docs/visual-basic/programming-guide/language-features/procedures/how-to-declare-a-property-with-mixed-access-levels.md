@@ -18,21 +18,21 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349687"
 ---
 # <a name="how-to-declare-a-property-with-mixed-access-levels-visual-basic"></a>Postupy: Deklarace vlastnosti se smíšenými úrovněmi přístupu (Visual Basic)
-If you want the `Get` and `Set` procedures on a property to have different access levels, you can use the more permissive level in the `Property` statement and the more restrictive level in either the `Get` or `Set` statement. You use mixed access levels on a property when you want certain parts of the code to be able to get the property's value, and certain other parts of the code to be able to change the value.  
+Pokud chcete, aby `Get` a `Set` postupy u vlastnosti měly různé úrovně přístupu, můžete použít přísnější úroveň v příkazu `Property` a více omezující úroveň v příkazu `Get` nebo `Set`. Smíšené úrovně přístupu lze použít pro vlastnost, pokud chcete, aby určité části kódu byly schopny získat hodnotu vlastnosti, a některé další části kódu budou moci změnit hodnotu.  
   
- For more information on access levels, see [Access levels in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+ Další informace o úrovních přístupu najdete v tématu [úrovně přístupu v Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
-### <a name="to-declare-a-property-with-mixed-access-levels"></a>To declare a property with mixed access levels  
+### <a name="to-declare-a-property-with-mixed-access-levels"></a>Deklarace vlastnosti se smíšenými úrovněmi přístupu  
   
-1. Declare the property in the normal way, and specify the less restrictive access level (such as `Public`) in the `Property` statement.  
+1. Deklarujte vlastnost normálním způsobem a v příkazu `Property` určete úroveň přístupu s méně omezujícími možnostmi (například `Public`).  
   
-2. Declare either the `Get` or the `Set` procedure specifying the more restrictive access level (such as `Friend`).  
+2. Deklarujte buď `Get`, nebo `Set` proceduru, která určuje více omezující úroveň přístupu (například `Friend`).  
   
-3. Do not specify an access level on the other property procedure. It assumes the access level declared in the `Property` statement. You can restrict access on only one of the property procedures.  
+3. Nezadávejte úroveň přístupu pro druhý postup vlastnosti. Předpokládá úroveň přístupu deklarovanou v příkazu `Property`. Přístup můžete omezit pouze na jeden z procedur vlastností.  
   
      [!code-vb[VbVbcnProcedures#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#10)]  
   
-     In the preceding example, the `Get` procedure has the same `Protected` access as the property itself, while the `Set` procedure has `Private` access. A class derived from `employee` can read the `salary` value, but only the `employee` class can set it.  
+     V předchozím příkladu má procedura `Get` stejný `Protected` přístup jako vlastnost, zatímco `Set` procedura má `Private` přístup. Třída odvozená z `employee` může číst hodnotu `salary`, ale může ji nastavit pouze třída `employee`.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -40,9 +40,9 @@ If you want the `Get` and `Set` procedures on a property to have different acces
 - [Procedury vlastnosti](./property-procedures.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
 - [Příkaz Property](../../../../visual-basic/language-reference/statements/property-statement.md)
-- [Differences Between Properties and Variables in Visual Basic](./differences-between-properties-and-variables.md)
+- [Rozdíly mezi vlastnostmi a proměnnými v Visual Basic](./differences-between-properties-and-variables.md)
 - [Postupy: Vytvoření vlastnosti](./how-to-create-a-property.md)
 - [Postupy: Volání procedury vlastnosti](./how-to-call-a-property-procedure.md)
-- [How to: Declare and Call a Default Property in Visual Basic](./how-to-declare-and-call-a-default-property.md)
+- [Postupy: deklarace a volání výchozí vlastnosti v Visual Basic](./how-to-declare-and-call-a-default-property.md)
 - [Postupy: Vložení hodnoty do vlastnosti](./how-to-put-a-value-in-a-property.md)
 - [Postupy: Získání hodnoty z vlastnosti](./how-to-get-a-value-from-a-property.md)

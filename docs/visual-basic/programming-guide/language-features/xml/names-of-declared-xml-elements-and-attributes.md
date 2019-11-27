@@ -16,35 +16,35 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74335988"
 ---
 # <a name="names-of-declared-xml-elements-and-attributes-visual-basic"></a>Názvy deklarovaných XML elementů a atributů (Visual Basic)
-This topic provides Visual Basic guidelines for naming XML elements and attributes in XML literals.  In an XML literal, you can specify a local name or a qualified name. A qualified name consists of an XML namespace prefix, a colon, and a local name. For more information about XML namespace prefixes, see [XML Element Literal](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md).  
+Toto téma poskytuje pokyny pro Visual Basic pro pojmenovávání elementů XML a atributů v literálech XML.  V literálu XML můžete zadat místní název nebo kvalifikovaný název. Úplný název se skládá z předpony oboru názvů XML, dvojtečky a místního názvu. Další informace o předponách oboru názvů XML naleznete v tématu [literál elementu XML](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md).  
   
-## <a name="rules"></a>Rules  
- A local name of an element or attribute in Visual Basic must adhere to the following rules.  
+## <a name="rules"></a>Pravidla  
+ Místní název elementu nebo atributu v Visual Basic musí splňovat následující pravidla.  
   
-- It can begin with a namespace. It must begin with an alphabetical character or an underscore (`_`).  
+- Může začít s oborem názvů. Musí začínat abecedním znakem nebo podtržítkem (`_`).  
   
-- It must contain only alphabetical characters, decimal digits, underscores, periods (.), and hyphens (-).  
+- Musí obsahovat jenom abecední znaky, desítkové číslice, podtržítka, tečky (.) a spojovníky (-).  
   
-- It must not be more than 1,024 characters long.  
+- Nesmí být delší než 1 024 znaků.  
   
-- Colons that appear in names indicate namespace demarcation. Therefore, you can use colons only to specify an XML namespace for a particular name.  
+- Dvojtečky, které se zobrazují v názvech označují vymezení oboru názvů. Proto můžete použít dvojtečky pouze k určení oboru názvů XML pro konkrétní název.  
   
- In addition, you should adhere to the following guideline.  
+ Kromě toho byste měli dodržovat následující pravidla.  
   
-- The XML 1.0 specification reserves all names starting with the string "xml", of any capitalization variation. Therefore, do not use those names for your element and attribute names.  
+- Specifikace XML 1,0 rezervuje všechny názvy začínající řetězcem "XML" a jakékoli variace v malých písmenech. Proto tyto názvy nepoužívejte pro názvy elementů a atributů.  
   
-### <a name="name-length-guidelines"></a>Name Length Guidelines  
- As a practical matter, a name should be as short as possible while still clearly identifying the nature of the element. This improves the readability of your code and reduces line length and source-file size.  
+### <a name="name-length-guidelines"></a>Pokyny pro délku názvu  
+ V důsledku praktického hlediska by měl být název co nejkratší, ale stále jasně identifikuje povahu prvku. To zlepšuje čitelnost kódu a zkracuje délku řádku a velikost zdrojového souboru.  
   
- However, your name should not be so short that it does not adequately describe the element or how your code uses it. This is important for the readability of your code. If somebody else is trying to understand it, or if you yourself are looking at it a long time after you wrote it, appropriate element names can save time.  
+ Nicméně vaše jméno by nemělo být tak krátké, že není dostatečně popisovat element nebo jak ho váš kód používá. To je důležité pro čitelnost kódu. Pokud se někdo jiný snaží ho pochopit, nebo pokud si ho po jeho zapsání sami napíšete, můžete si ušetřit čas vhodnými názvy elementů.  
   
-## <a name="case-sensitivity-in-names"></a>Case Sensitivity in Names  
- XML element names are case sensitive. This means that when the Visual Basic compiler compares two names that differ in alphabetical case only, it interprets them as different names. For example, it interprets `ABC` and `abc` as referring to separate elements.  
+## <a name="case-sensitivity-in-names"></a>Rozlišování velkých a malých písmen v názvech  
+ Názvy elementů XML rozlišují velká a malá písmena. To znamená, že když kompilátor Visual Basic Porovná dva názvy, které se liší pouze v abecedním případě, interpretuje je jako jiné názvy. Například interpretuje `ABC` a `abc` jako odkazování na samostatné prvky.  
   
-## <a name="xml-namespaces"></a>XML Namespaces  
- When creating an XML element literal, you can specify the XML namespace prefix for the element name. For more information, see [XML Element Literal](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md).  
+## <a name="xml-namespaces"></a>XML – obory názvů  
+ Při vytváření literálu elementu XML můžete zadat předponu oboru názvů XML pro název elementu. Další informace naleznete v tématu [literál elementu XML](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Creating XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [Vytváření XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
 - [Literál XML elementu](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)

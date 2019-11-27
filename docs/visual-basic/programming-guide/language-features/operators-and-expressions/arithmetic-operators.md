@@ -21,84 +21,84 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352659"
 ---
 # <a name="arithmetic-operators-in-visual-basic"></a>Aritmetické operátory v jazyce Visual Basic
-Arithmetic operators are used to perform many of the familiar arithmetic operations that involve the calculation of numeric values represented by literals, variables, other expressions, function and property calls, and constants. Also classified with arithmetic operators are the bit-shift operators, which act at the level of the individual bits of the operands and shift their bit patterns to the left or right.  
+Aritmetické operátory slouží k provádění mnoha známých aritmetických operací, které zahrnují výpočet numerických hodnot reprezentovaných literály, proměnnými, ostatními výrazy, volání funkcí a vlastností a konstantami. Klasifikovaný s aritmetickými operátory jsou také operátory bitového posunutí, které působí na úrovni jednotlivých bitů operandů a posunují své bitové vzory doleva nebo doprava.  
   
-## <a name="arithmetic-operations"></a>Arithmetic Operations  
- You can add two values in an expression together with the [+ Operator](../../../../visual-basic/language-reference/operators/addition-operator.md), or subtract one from another with the [- Operator (Visual Basic)](../../../../visual-basic/language-reference/operators/subtraction-operator.md), as the following example demonstrates.  
+## <a name="arithmetic-operations"></a>Aritmetické operace  
+ Do výrazu můžete přidat dvě hodnoty společně s [operátorem +](../../../../visual-basic/language-reference/operators/addition-operator.md)nebo odečíst jeden z druhý s [operátorem--operator (Visual Basic)](../../../../visual-basic/language-reference/operators/subtraction-operator.md), jak ukazuje následující příklad.  
   
  [!code-vb[VbVbalrOperators#57](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#57)]  
   
- Negation also uses the [- Operator (Visual Basic)](../../../../visual-basic/language-reference/operators/subtraction-operator.md), but with only one operand, as the following example demonstrates.  
+ Negace také používá [operátor-(Visual Basic)](../../../../visual-basic/language-reference/operators/subtraction-operator.md), ale pouze jeden operand, jak ukazuje následující příklad.  
   
  [!code-vb[VbVbalrOperators#58](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#58)]  
   
- Multiplication and division use the [* Operator](../../../../visual-basic/language-reference/operators/multiplication-operator.md) and [/ Operator (Visual Basic)](../../../../visual-basic/language-reference/operators/floating-point-division-operator.md), respectively, as the following example demonstrates.  
+ Násobení a dělení používají [operátor *](../../../../visual-basic/language-reference/operators/multiplication-operator.md) a operátor [(Visual Basic)](../../../../visual-basic/language-reference/operators/floating-point-division-operator.md), jak ukazuje následující příklad.  
   
  [!code-vb[VbVbalrOperators#59](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#59)]  
   
- Exponentiation uses the [^ Operator](../../../../visual-basic/language-reference/operators/exponentiation-operator.md), as the following example demonstrates.  
+ Exponent používá [operátor ^](../../../../visual-basic/language-reference/operators/exponentiation-operator.md), jak ukazuje následující příklad.  
   
  [!code-vb[VbVbalrOperators#60](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#60)]  
   
- Integer division is carried out using the [\ Operator (Visual Basic)](../../../../visual-basic/language-reference/operators/integer-division-operator.md). Integer division returns the quotient, that is, the integer that represents the number of times the divisor can divide into the dividend without consideration of any remainder. Both the divisor and the dividend must be integral types (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, and `ULong`) for this operator. All other types must be converted to an integral type first. The following example demonstrates integer division.  
+ Dělení celého čísla je prováděno pomocí [operátoru \ (Visual Basic)](../../../../visual-basic/language-reference/operators/integer-division-operator.md). Celočíselná celočíselná hodnota vrátí podíl, tj. celé číslo, které představuje počet pokusů, které může dělitel rozdělit na dividendy bez zvážení zbytku. Dělitel i dividenda musí být celočíselné typy (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`a `ULong`) pro tento operátor. Všechny ostatní typy musí být nejprve převedeny na celočíselný typ. Následující příklad ukazuje celočíselné dělení.  
   
  [!code-vb[VbVbalrOperators#61](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#61)]  
   
- Modulus arithmetic is performed using the [Mod Operator](../../../../visual-basic/language-reference/operators/mod-operator.md). This operator returns the remainder after dividing the divisor into the dividend an integral number of times. If both divisor and dividend are integral types, the returned value is integral. If divisor and dividend are floating-point types, the returned value is also floating-point. The following example demonstrates this behavior.  
+ Aritmetické moduly jsou prováděny pomocí [operátoru mod](../../../../visual-basic/language-reference/operators/mod-operator.md). Tento operátor vrátí zbytek po dělení dělitele do dividendy integrálního čísla. Pokud jsou dělitel i dividendy integrálních typů, vrácená hodnota je celočíselná. Pokud jsou dělitel a dividendy typy s plovoucí desetinnou čárkou, vrácená hodnota je také plovoucí desetinná čárka. Následující příklad demonstruje toto chování.  
   
  [!code-vb[VbVbalrOperators#62](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#62)]  
   
  [!code-vb[VbVbalrOperators#63](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#63)]  
   
-### <a name="attempted-division-by-zero"></a>Attempted Division by Zero  
- Division by zero has different results depending on the data types involved. In integral divisions (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, `ULong`), the .NET Framework throws a <xref:System.DivideByZeroException> exception. In division operations on the `Decimal` or `Single` data type, the .NET Framework also throws a <xref:System.DivideByZeroException> exception.  
+### <a name="attempted-division-by-zero"></a>Došlo k pokusu o dělení nulou.  
+ Dělení nulou má různé výsledky v závislosti na typech dat, které se týkají. V rámci integrálních divizí (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, `ULong`) vyvolá .NET Framework výjimku <xref:System.DivideByZeroException>. V rámci dělení operací na datový typ `Decimal` nebo `Single` vyvolá .NET Framework také výjimku <xref:System.DivideByZeroException>.  
   
- In floating-point divisions involving the `Double` data type, no exception is thrown, and the result is the class member representing <xref:System.Double.NaN>, <xref:System.Double.PositiveInfinity>, or <xref:System.Double.NegativeInfinity>, depending on the dividend. The following table summarizes the various results of attempting to divide a `Double` value by zero.  
+ V divizích s plovoucí desetinnou čárkou, které zahrnují `Double` datový typ, není vyvolána žádná výjimka a výsledkem je člen třídy, který představuje <xref:System.Double.NaN>, <xref:System.Double.PositiveInfinity>nebo <xref:System.Double.NegativeInfinity>v závislosti na dividendě. Následující tabulka shrnuje různé výsledky pokusu o rozdělení `Double` hodnoty nulou.  
   
-|Dividend data type|Divisor data type|Dividend value|Výsledek|  
+|Datový typ dividendy|Dělitel – datový typ|Hodnota dividendy|Výsledek|  
 |---|---|---|---|  
-|`Double`|`Double`|0|<xref:System.Double.NaN> (not a mathematically defined number)|  
+|`Double`|`Double`|0|<xref:System.Double.NaN> (není matematicky definované číslo)|  
 |`Double`|`Double`|> 0|<xref:System.Double.PositiveInfinity>|  
 |`Double`|`Double`|\< 0|<xref:System.Double.NegativeInfinity>|  
   
- When you catch a <xref:System.DivideByZeroException> exception, you can use its members to help you handle it. For example, the <xref:System.Exception.Message%2A> property holds the message text for the exception. For more information, see [Try...Catch...Finally Statement](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
+ Když zachytíte výjimku <xref:System.DivideByZeroException>, můžete použít její členy, které vám pomohou ji zvládnout. Například vlastnost <xref:System.Exception.Message%2A> obsahuje text zprávy o výjimce. Další informace najdete v tématu [Try... Zachytit... Finally – příkaz](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
   
-## <a name="bit-shift-operations"></a>Bit-Shift Operations  
- A bit-shift operation performs an arithmetic shift on a bit pattern. The pattern is contained in the operand on the left, while the operand on the right specifies the number of positions to shift the pattern. You can shift the pattern to the right with the [>> Operator](../../../../visual-basic/language-reference/operators/right-shift-operator.md) or to the left with the [<< Operator](../../../../visual-basic/language-reference/operators/left-shift-operator.md).  
+## <a name="bit-shift-operations"></a>Operace bitového posunutí  
+ Operace bitového posunu provádí aritmetické posunutí bitového vzorku. Vzor je obsažen v operandu vlevo, zatímco operand na pravé straně Určuje počet pozic pro posunutí vzorku. Vzor můžete posunout vpravo pomocí [operátoru > >](../../../../visual-basic/language-reference/operators/right-shift-operator.md) nebo vlevo pomocí [operátoru < <](../../../../visual-basic/language-reference/operators/left-shift-operator.md).  
   
- The data type of the pattern operand must be `SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, or `ULong`. The data type of the shift amount operand must be `Integer` or must widen to `Integer`.  
+ Datový typ operandu vzoru musí být `SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`nebo `ULong`. Datový typ operandu posunutí hodnoty posunu musí být `Integer` nebo musí být rozšířen na `Integer`.  
   
- Arithmetic shifts are not circular, which means the bits shifted off one end of the result are not reintroduced at the other end. The bit positions vacated by a shift are set as follows:  
+ Aritmetické posuny nejsou cyklické, což znamená, že bity posunuté o jeden konec výsledku nejsou znovu zavedeny na druhém konci. Bitové pozice uvolněné posunutím se nastaví takto:  
   
-- 0 for an arithmetic left shift  
+- 0 pro aritmetický levý posun  
   
-- 0 for an arithmetic right shift of a positive number  
+- 0 pro aritmetický pravý posun kladného čísla  
   
-- 0 for an arithmetic right shift of an unsigned data type (`Byte`, `UShort`, `UInteger`, `ULong`)  
+- 0 pro aritmetický pravý posun typu nepodepsaných dat (`Byte`, `UShort`, `UInteger`, `ULong`)  
   
-- 1 for an arithmetic right shift of a negative number (`SByte`, `Short`, `Integer`, or `Long`)  
+- 1 pro aritmetický pravý posun záporného čísla (`SByte`, `Short`, `Integer`nebo `Long`)  
   
- The following example shifts an `Integer` value both left and right.  
+ Následující příklad posune hodnotu `Integer` vlevo a vpravo.  
   
  [!code-vb[VbVbalrOperators#64](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#64)]  
   
- Arithmetic shifts never generate overflow exceptions.  
+ Aritmetické posuny nikdy negenerují výjimky přetečení.  
   
-## <a name="bitwise-operations"></a>Bitwise Operations  
- In addition to being logical operators, `Not`, `Or`, `And`, and `Xor` also perform bitwise arithmetic when used on numeric values. For more information, see "Bitwise Operations" in [Logical and Bitwise Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md).  
+## <a name="bitwise-operations"></a>Bitové operace  
+ Kromě logických operátorů, `Not`, `Or`, `And`a `Xor`, provádí také při použití na numerických hodnotách bitový aritmetické operace. Další informace naleznete v tématu "bitové operace" v [logických a bitových operátorech v Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md).  
   
-## <a name="type-safety"></a>Type Safety  
- Operands should normally be of the same type. For example, if you are doing addition with an `Integer` variable, you should add it to another `Integer` variable, and you should assign the result to a variable of type `Integer` as well.  
+## <a name="type-safety"></a>Bezpečnost typů  
+ Operandy by měly být obvykle stejného typu. Například pokud přidáváte `Integer` proměnné, měli byste ji přidat do jiné proměnné `Integer` a výsledek by měl být přiřazen také proměnné typu `Integer`.  
   
- One way to ensure good type-safe coding practice is to use the [Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md). If you set `Option Strict On`, Visual Basic automatically performs *type-safe* conversions. For example, if you try to add an `Integer` variable to a `Double` variable and assign the value to a `Double` variable, the operation proceeds normally, because an `Integer` value can be converted to `Double` without loss of data. Type-unsafe conversions, on the other hand, cause a compiler error with `Option Strict On`. For example, if you try to add an `Integer` variable to a `Double` variable and assign the value to an `Integer` variable, a compiler error results, because a `Double` variable cannot be implicitly converted to type `Integer`.  
+ Jedním ze způsobů, jak zajistit dobrý typ bezpečného kódování, je použití [příkazu Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md). Pokud nastavíte `Option Strict On`, Visual Basic automaticky provede převody *typově bezpečného typu* . Například pokud se pokusíte přidat `Integer` proměnnou do proměnné `Double` a přiřadit hodnotu proměnné `Double`, operace pokračuje normálně, protože hodnota `Integer` může být převedena na `Double` bez ztráty dat. Typ – nebezpečná převod na druhé straně způsobí chybu kompilátoru s `Option Strict On`. Například pokud se pokusíte přidat `Integer` proměnnou do proměnné `Double` a přiřadit hodnotu proměnné `Integer`, výsledkem bude chyba kompilátoru, protože proměnnou `Double` nelze implicitně převést na typ `Integer`.  
   
- If you set `Option Strict Off`, however, Visual Basic allows implicit narrowing conversions to take place, although they can result in the unexpected loss of data or precision. For this reason, we recommend that you use `Option Strict On` when writing production code. For more information, see [Widening and Narrowing Conversions](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md).  
+ Pokud ale nastavíte `Option Strict Off`, Visual Basic umožňuje provádět implicitní zužující převody, i když můžou způsobit neočekávanou ztrátu dat nebo přesnost. Z tohoto důvodu doporučujeme použít `Option Strict On` při psaní kódu v produkčním prostředí. Další informace najdete v tématu [rozšiřování a zúžení převodů](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Aritmetické operátory](../../../../visual-basic/language-reference/operators/arithmetic-operators.md)
 - [Operátory bitového posunu](../../../../visual-basic/language-reference/operators/bit-shift-operators.md)
-- [Comparison Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
-- [Concatenation Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md)
-- [Logical and Bitwise Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
+- [Operátory porovnávání v Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
+- [Operátory zřetězení v Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md)
+- [Logické a bitové operátory v Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
 - [Účinná kombinace operátorů](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/efficient-combination-of-operators.md)

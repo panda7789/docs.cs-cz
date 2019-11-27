@@ -19,7 +19,7 @@ ms.locfileid: "74343795"
 ---
 # <a name="region-directive"></a>#Region – direktiva
 
-Collapses and hides sections of code in Visual Basic files.  
+Sbalí a skryje části kódu v souborech Visual Basic.  
   
 ## <a name="syntax"></a>Syntaxe  
 
@@ -32,16 +32,16 @@ Collapses and hides sections of code in Visual Basic files.
   
 |Termín|Definice|  
 |---|---|  
-|`identifier_string`|Požadováno. String that acts as the title of a region when it is collapsed. Regions are collapsed by default.|  
-|`#End Region`|Terminates the `#Region` block.|  
+|`identifier_string`|Požadováno. Řetězec, který slouží jako název oblasti při sbalení. Oblasti jsou ve výchozím nastavení sbaleny.|  
+|`#End Region`|Ukončí blok `#Region`.|  
   
 ## <a name="remarks"></a>Poznámky  
 
- Use the `#Region` directive to specify a block of code to expand or collapse when using the outlining feature of the Visual Studio Code Editor. You can place, or *nest*, regions within other regions to group similar regions together.  
+ Pomocí direktivy `#Region` můžete určit blok kódu, který se má rozbalit nebo sbalit při použití funkce sbalení editoru Visual Studio Code. Můžete umístit nebo *vnořovat*oblasti v rámci jiných oblastí a seskupovat podobné oblasti dohromady.  
   
 ## <a name="example"></a>Příklad  
 
- This example uses the `#Region` directive.  
+ V tomto příkladu se používá direktiva `#Region`.  
   
  [!code-vb[VbVbalrConditionalComp#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrConditionalComp/VB/Class1.vb#4)]  
   

@@ -9,17 +9,17 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353750"
 ---
-# <a name="how-to-modify-expression-trees-visual-basic"></a>How to: Modify Expression Trees (Visual Basic)
+# <a name="how-to-modify-expression-trees-visual-basic"></a>Postupy: Změna stromů výrazů (Visual Basic)
 
-This topic shows you how to modify an expression tree. Expression trees are immutable, which means that they cannot be modified directly. To change an expression tree, you must create a copy of an existing expression tree and when you create the copy, make the required changes. You can use the <xref:System.Linq.Expressions.ExpressionVisitor> class to traverse an existing expression tree and to copy each node that it visits.
+V tomto tématu se dozvíte, jak upravit strom výrazu. Stromy výrazů jsou neměnné, což znamená, že je nelze upravovat přímo. Chcete-li změnit strom výrazu, je nutné vytvořit kopii existujícího stromu výrazů a při vytváření kopie provést požadované změny. Třídu <xref:System.Linq.Expressions.ExpressionVisitor> lze použít k procházení existujícího stromu výrazů a ke kopírování jednotlivých uzlů, které navštíví.
 
-## <a name="to-modify-an-expression-tree"></a>To modify an expression tree
+## <a name="to-modify-an-expression-tree"></a>Úprava stromu výrazu
 
-1. Create a new **Console Application** project.
+1. Vytvořte nový projekt **konzolové aplikace** .
 
-2. Add an `Imports` statement to the file for the `System.Linq.Expressions` namespace.
+2. Přidejte do souboru příkaz `Imports` pro obor názvů `System.Linq.Expressions`.
 
-3. Add the `AndAlsoModifier` class to your project.
+3. Přidejte třídu `AndAlsoModifier` do projektu.
 
     ```vb
     Public Class AndAlsoModifier
@@ -45,11 +45,11 @@ This topic shows you how to modify an expression tree. Expression trees are immu
     End Class
     ```
 
-    This class inherits the <xref:System.Linq.Expressions.ExpressionVisitor> class and is specialized to modify expressions that represent conditional `AND` operations. It changes these operations from a conditional `AND` to a conditional `OR`. To do this, the class overrides the <xref:System.Linq.Expressions.ExpressionVisitor.VisitBinary%2A> method of the base type, because conditional `AND` expressions are represented as binary expressions. In the `VisitBinary` method, if the expression that is passed to it represents a conditional `AND` operation, the code constructs a new expression that contains the conditional `OR` operator instead of the conditional `AND` operator. If the expression that is passed to `VisitBinary` does not represent a conditional `AND` operation, the method defers to the base class implementation. The base class methods construct nodes that are like the expression trees that are passed in, but the nodes have their sub trees replaced with the expression trees that are produced recursively by the visitor.
+    Tato třída dědí třídu <xref:System.Linq.Expressions.ExpressionVisitor> a je specializovaná na úpravu výrazů, které reprezentují podmíněné `AND` operace. Tyto operace mění z podmíněného `AND` na podmíněný `OR`. K tomu třída přepíše metodu <xref:System.Linq.Expressions.ExpressionVisitor.VisitBinary%2A> základního typu, protože podmíněné `AND` výrazy jsou reprezentovány jako binární výrazy. V metodě `VisitBinary`, pokud výraz, který je předán, představuje podmíněnou operaci `AND`, kód vytvoří nový výraz, který obsahuje podmíněný operátor `OR` namísto podmíněného `AND`ho operátoru. Pokud výraz předaný `VisitBinary` nepředstavuje podmíněnou operaci `AND`, metoda se odloží k implementaci základní třídy. Metody základní třídy konstrukce uzly, které jsou jako stromy výrazů, které jsou předány, ale uzly mají své dílčí stromy nahrazené stromy výrazů, které jsou vytvářeny rekurzivně návštěvníkem.
 
-4. Add an `Imports` statement to the file for the `System.Linq.Expressions` namespace.
+4. Přidejte do souboru příkaz `Imports` pro obor názvů `System.Linq.Expressions`.
 
-5. Add code to the `Main` method in the Module1.vb file to create an expression tree and pass it to the method that will modify it.
+5. Přidejte kód do metody `Main` v souboru Module1. vb pro vytvoření stromu výrazu a předejte ho metodě, která ho upraví.
 
     ```vb
     Dim expr As Expression(Of Func(Of String, Boolean)) = _
@@ -67,11 +67,11 @@ This topic shows you how to modify an expression tree. Expression trees are immu
     ' name => ((name.Length > 10) || name.StartsWith("G"))
     ```
 
-    The code creates an expression that contains a conditional `AND` operation. It then creates an instance of the `AndAlsoModifier` class and passes the expression to the `Modify` method of this class. Both the original and the modified expression trees are outputted to show the change.
+    Kód vytvoří výraz, který obsahuje podmíněnou operaci `AND`. Potom vytvoří instanci třídy `AndAlsoModifier` a předá výraz metodě `Modify` této třídy. Původní a upravené stromy výrazů jsou zobrazeny, aby se změna zobrazila.
 
-6. Compile and run the application.
+6. Zkompilujte a spusťte aplikaci.
 
 ## <a name="see-also"></a>Viz také:
 
-- [How to: Execute Expression Trees (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)
-- [Expression Trees (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)
+- [Postupy: spouštění stromů výrazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)
+- [Stromy výrazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)

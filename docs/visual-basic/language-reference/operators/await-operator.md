@@ -16,16 +16,16 @@ ms.locfileid: "74336267"
 ---
 # <a name="await-operator-visual-basic"></a>Await – operátor (Visual Basic)
 
-You apply the `Await` operator to an operand in an asynchronous method or lambda expression to suspend execution of the method until the awaited task completes. The task represents ongoing work.
+Operátor `Await` použijete pro operand v asynchronní metodě nebo výrazu lambda pro pozastavení provádění metody, dokud není dokončen očekávaný úkol. Úkol představuje probíhající práci.
 
-The method in which `Await` is used must have an [Async](../../../visual-basic/language-reference/modifiers/async.md) modifier. Such a method, defined by using the `Async` modifier, and usually containing one or more `Await` expressions, is referred to as an *async method*.
+Metoda, ve které je použit `Await`, musí mít modifikátor [Async](../../../visual-basic/language-reference/modifiers/async.md) . Taková metoda, definovaná pomocí modifikátoru `Async` a obvykle obsahující jeden nebo více `Await` výrazů, je označována jako *asynchronní metoda*.
 
 > [!NOTE]
-> Klíčová slova `Async` a `Await` byla zavedena v sadě Visual Studio 2012. For an introduction to async programming, see [Asynchronous Programming with Async and Await](../../../visual-basic/programming-guide/concepts/async/index.md).
+> Klíčová slova `Async` a `Await` byla zavedena v sadě Visual Studio 2012. Úvod do asynchronního programování naleznete v tématu [asynchronní programování s Async a await](../../../visual-basic/programming-guide/concepts/async/index.md).
 
-Typically, the task to which you apply the `Await` operator is the return value from a call to a method that implements the [Task-Based Asynchronous Pattern](https://go.microsoft.com/fwlink/?LinkId=204847), that is, a <xref:System.Threading.Tasks.Task> or a <xref:System.Threading.Tasks.Task%601>.
+Úkol, pro který použijete operátor `Await`, je obvykle návratovou hodnotou z volání metody, která implementuje [asynchronní vzor založený na úlohách](https://go.microsoft.com/fwlink/?LinkId=204847), to znamená <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601>.
 
-In the following code, the <xref:System.Net.Http.HttpClient> method <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> returns `getContentsTask`, a `Task(Of Byte())`. The task is a promise to produce the actual byte array when the operation is complete. The `Await` operator is applied to `getContentsTask` to suspend execution in `SumPageSizesAsync` until `getContentsTask` is complete. In the meantime, control is returned to the caller of `SumPageSizesAsync`. When `getContentsTask` is finished, the `Await` expression evaluates to a byte array.
+V následujícím kódu metoda <xref:System.Net.Http.HttpClient> <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> vrátí `getContentsTask`, `Task(Of Byte())`. Úkol je příslib, který vytvoří skutečné bajtové pole po dokončení operace. Operátor `Await` se použije pro `getContentsTask` k pozastavení provádění v `SumPageSizesAsync`, dokud `getContentsTask` nedokončí. Mezitím se ovládací prvek vrátí volajícímu `SumPageSizesAsync`. Po dokončení `getContentsTask` se výraz `Await` vyhodnotí jako bajtové pole.
 
 ```vb
 Private Async Function SumPageSizesAsync() As Task
@@ -44,9 +44,9 @@ End Function
 ```
 
 > [!IMPORTANT]
-> For the complete example, see [Walkthrough: Accessing the Web by Using Async and Await](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md). You can download the sample from [Developer Code Samples](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f) on the Microsoft website. The example is in the AsyncWalkthrough_HttpClient project.
+> Úplný příklad najdete v tématu [Návod: přístup k webu pomocí modifikátoru Async a operátoru await](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md). Ukázku si můžete stáhnout z [ukázek kódu pro vývojáře](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f) na webu Microsoftu. Příklad je v projektu AsyncWalkthrough_HttpClient.
 
-If `Await` is applied to the result of a method call that returns a `Task(Of TResult)`, the type of the `Await` expression is TResult. If `Await` is applied to the result of a method call that returns a `Task`, the `Await` expression doesn't return a value. The following example illustrates the difference.
+Pokud je použita `Await` pro výsledek volání metody, která vrací `Task(Of TResult)`, je typ `Await`ho výrazu TResult. Pokud je použita `Await` pro výsledek volání metody, která vrací `Task`, výraz `Await` nevrátí hodnotu. Rozdíl je znázorněn v následujícím příkladu.
 
 ```vb
 ' Await used with a method that returns a Task(Of TResult).
@@ -56,25 +56,25 @@ Dim result As TResult = Await AsyncMethodThatReturnsTaskTResult()
 Await AsyncMethodThatReturnsTask()
 ```
 
-An `Await` expression or statement does not block the thread on which it is executing. Instead, it causes the compiler to sign up the rest of the async method, after the `Await` expression, as a continuation on the awaited task. Control then returns to the caller of the async method. When the task completes, it invokes its continuation, and execution of the async method resumes where it left off.
+Výraz `Await` nebo příkaz neblokuje vlákno, ve kterém se provádí. Místo toho způsobí, že kompilátor zaregistruje zbytek asynchronní metody za výraz `Await` jako pokračování na očekávaném úkolu. Ovládací prvek se pak vrátí volajícímu asynchronní metody. Po dokončení úkolu vyvolá jeho pokračování a spuštění asynchronní metody pokračuje tam, kde skončila.
 
-An `Await` expression can occur only in the body of an immediately enclosing method or lambda expression that is marked by an `Async` modifier. The term *Await* serves as a keyword only in that context. Elsewhere, it is interpreted as an identifier. Within the async method or lambda expression, an `Await` expression cannot occur in a query expression, in the `catch` or `finally` block of a [Try…Catch…Finally](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md) statement, in the loop control variable expression of a `For` or `For Each` loop, or in the body of a [SyncLock](../../../visual-basic/language-reference/statements/synclock-statement.md) statement.
+Výraz `Await` může nastat pouze v těle bezprostředně ohraničující metody nebo lambda výrazu, který je označen modifikátorem `Async`. Termín *await* slouží jako klíčové slovo pouze v tomto kontextu. Jinde je interpretován jako identifikátor. V rámci asynchronní metody nebo výrazu lambda se nemůže výraz `Await` ve výrazu dotazu vyskytovat v bloku `catch` nebo `finally` [Try... Zachytit... Finally](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md) , ve výrazu řídicí proměnné smyčky `For` nebo `For Each` smyčky nebo v těle příkazu [SyncLock](../../../visual-basic/language-reference/statements/synclock-statement.md) .
 
 ## <a name="exceptions"></a>Výjimky
 
-Most async methods return a <xref:System.Threading.Tasks.Task> or <xref:System.Threading.Tasks.Task%601>. The properties of the returned task carry information about its status and history, such as whether the task is complete, whether the async method caused an exception or was canceled, and what the final result is. The `Await` operator accesses those properties.
+Většina asynchronních metod vrací <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601>. Vlastnosti vrácené úlohy obsahují informace o jeho stavu a historii, například o tom, zda je úloha dokončena, zda asynchronní metoda způsobila výjimku nebo byla zrušena a co je konečný výsledek. Operátor `Await` přistupuje k těmto vlastnostem.
 
-If you await a task-returning async method that causes an exception, the  `Await` operator rethrows the exception.
+Pokud očekáváte asynchronní metodu vracející úlohu, která způsobí výjimku, operátor `Await` znovu vyvolá výjimku.
 
-If you await a task-returning async method that is canceled, the `Await` operator rethrows an <xref:System.OperationCanceledException>.
+Očekáváte-li asynchronní metodu vracející úlohu, která je zrušena, operátor `Await` znovu vyvolá <xref:System.OperationCanceledException>.
 
-A single task that is in a faulted state can reflect multiple exceptions.  For example, the task might be the result of a call to <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>. When you await such a task, the await operation rethrows only one of the exceptions. However, you can't predict which of the exceptions is rethrown.
+Jeden úkol, který je v chybovém stavu, může odrážet více výjimek.  Například úloha může být výsledkem volání <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>. Pokud očekáváte takovou úlohu, operace Await znovu vyvolá pouze jednu výjimku. Nemůžete však odhadnout, které výjimky jsou znovu vyvolány.
 
-For examples of error handling in async methods, see [Try...Catch...Finally Statement](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).
+Příklady zpracování chyb v asynchronních metodách naleznete v tématu [Try... Zachytit... Finally – příkaz](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).
 
 ## <a name="example"></a>Příklad
 
-The following Windows Forms example illustrates the use of `Await` in an async method, `WaitAsynchronouslyAsync`. Contrast the behavior of that method with the behavior of `WaitSynchronously`. Without an `Await` operator, `WaitSynchronously` runs synchronously despite the use of the `Async` modifier in its definition and a call to <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> in its body.
+Následující příklad model Windows Forms ukazuje použití `Await` v asynchronní metodě, `WaitAsynchronouslyAsync`. Kontrast s chováním této metody s chováním `WaitSynchronously`. Bez operátoru `Await` `WaitSynchronously` spouští synchronně bez ohledu na použití modifikátoru `Async` v definici a volání <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> v jeho těle.
 
 ```vb
 Private Async Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

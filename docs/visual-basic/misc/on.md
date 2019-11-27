@@ -1,5 +1,5 @@
 ---
-title: On
+title: Zapnuto
 ms.date: 07/20/2015
 f1_keywords:
 - vb.on
@@ -15,12 +15,12 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74331838"
 ---
 # <a name="on-visual-basic"></a>On (Visual Basic)
-Introduces a response to a run-time error or turns a compiler option on.  
+Zavádí odpověď na chybu za běhu nebo zapne možnost kompilátoru.  
   
- In queries, identifies keys for the collections being joined.  
+ V dotazech identifikuje klíče pro připojené kolekce.  
   
 ## <a name="remarks"></a>Poznámky  
- The `On` keyword is used in these contexts:  
+ Klíčové slovo `On` se používá v těchto kontextech:  
   
  [Klauzule Group Join](../../visual-basic/language-reference/queries/group-join-clause.md)  
   

@@ -17,8 +17,8 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74336059"
 ---
-# <a name="amp-operator-visual-basic"></a>&amp; Operator (Visual Basic)
-Generates a string concatenation of two expressions.  
+# <a name="amp-operator-visual-basic"></a>Operátor &amp; (Visual Basic)
+Generuje řetězení řetězců dvou výrazů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,34 +28,34 @@ result = expression1 & expression2
   
 ## <a name="parts"></a>Součásti  
  `result`  
- Požadováno. Any `String` or `Object` variable.  
+ Požadováno. Jakákoli `String` nebo proměnná `Object`.  
   
  `expression1`  
- Požadováno. Any expression with a data type that widens to `String`.  
+ Požadováno. Libovolný výraz s datovým typem, který se rozšíří na `String`.  
   
  `expression2`  
- Požadováno. Any expression with a data type that widens to `String`.  
+ Požadováno. Libovolný výraz s datovým typem, který se rozšíří na `String`.  
   
 ## <a name="remarks"></a>Poznámky  
- If the data type of `expression1` or `expression2` is not `String` but widens to `String`, it is converted to `String`. If either of the data types does not widen to `String`, the compiler generates an error.  
+ Pokud datový typ `expression1` nebo `expression2` není `String`, ale rozšíří na `String`, je převeden na `String`. Pokud se některý z datových typů nerozšíří na `String`, kompilátor vygeneruje chybu.  
   
- The data type of `result` is `String`. If one or both expressions evaluate to [Nothing](../../../visual-basic/language-reference/nothing.md) or have a value of <xref:System.DBNull.Value?displayProperty=nameWithType>, they are treated as a string with a value of "".  
-  
-> [!NOTE]
-> The `&` operator can be *overloaded*, which means that a class or structure can redefine its behavior when an operand has the type of that class or structure. If your code uses this operator on such a class or structure, be sure you understand its redefined behavior. For more information, see [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ Datový typ `result` je `String`. Pokud se jeden nebo oba výrazy vyhodnotí jako [Nothing](../../../visual-basic/language-reference/nothing.md) nebo pokud mají hodnotu <xref:System.DBNull.Value?displayProperty=nameWithType>, považují se za řetězec s hodnotou "".  
   
 > [!NOTE]
-> The ampersand (&) character can also be used to identify variables as type `Long`. For more information, see [Type Characters](../../../visual-basic/programming-guide/language-features/data-types/type-characters.md).  
+> Operátor `&` lze přetížit, což znamená, že třída nebo struktura může předefinovat své *chování, pokud*má operand typ této třídy nebo struktury. Pokud váš kód používá tento operátor na takové třídě nebo struktuře, ujistěte se, že rozumíte jeho předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+  
+> [!NOTE]
+> Znak ampersand (&) lze také použít k identifikaci proměnných jako typ `Long`. Další informace naleznete v tématu [Type Characters](../../../visual-basic/programming-guide/language-features/data-types/type-characters.md).  
   
 ## <a name="example"></a>Příklad  
- This example uses the `&` operator to force string concatenation. The result is a string value representing the concatenation of the two string operands.  
+ V tomto příkladu se používá operátor `&` k vynucení zřetězení řetězců. Výsledkem je řetězcová hodnota představující zřetězení dvou řetězcových operandů.  
   
  [!code-vb[VbVbalrOperators#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#2)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Operátor &=](../../../visual-basic/language-reference/operators/and-assignment-operator.md)
-- [Operátory řetězení](../../../visual-basic/language-reference/operators/concatenation-operators.md)
-- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [&= – operátor](../../../visual-basic/language-reference/operators/and-assignment-operator.md)
+- [Operátory zřetězení](../../../visual-basic/language-reference/operators/concatenation-operators.md)
+- [Priorita operátorů v Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
-- [Concatenation Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md)
+- [Operátory zřetězení v Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md)

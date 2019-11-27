@@ -12,17 +12,17 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74333005"
 ---
 # <a name="how-to-create-xml-literals-visual-basic"></a>Postupy: Vytváření literálů XML (Visual Basic)
-You can create an XML document, fragment, or element directly in code by using an XML literal. The examples in this topic demonstrate how to create an XML element that has three child elements, and how to create an XML document.  
+Můžete vytvořit dokument XML, fragment nebo element přímo v kódu pomocí literálu XML. Příklady v tomto tématu ukazují, jak vytvořit element XML, který má tři podřízené prvky a jak vytvořit dokument XML.  
   
- You can also use the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] APIs to create [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objects. Další informace najdete v tématu <xref:System.Xml.Linq.XElement>.  
+ K vytváření objektů [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] můžete použít taky rozhraní [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] API. Další informace najdete v tématu <xref:System.Xml.Linq.XElement>.  
   
-### <a name="to-create-an-xml-element"></a>To create an XML element  
+### <a name="to-create-an-xml-element"></a>Vytvoření elementu XML  
   
-- Create the XML inline by using the XML literal syntax, which is the same as the actual XML syntax.  
+- Vytvořte XML inline pomocí syntaxe literálu XML, která je stejná jako skutečná syntaxe XML.  
   
      [!code-vb[VbXMLSamples#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples2.vb#5)]  
   
-     Run the code. The output of this code is:  
+     Spusťte kód. Výstup tohoto kódu je:  
   
      `<contact>`  
   
@@ -34,13 +34,13 @@ You can create an XML document, fragment, or element directly in code by using a
   
      `</contact>`  
   
-### <a name="to-create-an-xml-document"></a>To create an XML document  
+### <a name="to-create-an-xml-document"></a>Vytvoření dokumentu XML  
   
-- Create the XML document inline. The following code creates an XML document that has literal syntax, an XML declaration, a processing instruction, a comment, and an element that contains another element.  
+- Vytvořte vložený dokument XML. Následující kód vytvoří dokument XML, který má syntaxi literálu, deklaraci XML, instrukci zpracování, komentář a prvek, který obsahuje jiný element.  
   
      [!code-vb[VbXMLSamples#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples13.vb#30)]  
   
-     Run the code. The output of this code is:  
+     Spusťte kód. Výstup tohoto kódu je:  
   
      `<?xml-stylesheet type="text/xsl" href="show_book.xsl"?>`  
   
@@ -55,6 +55,6 @@ You can create an XML document, fragment, or element directly in code by using a
 ## <a name="see-also"></a>Viz také:
 
 - [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)
-- [Creating XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [Vytváření XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
 - [Literál XML elementu](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)
 - [Literál dokumentu XML](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)

@@ -9,13 +9,13 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74354230"
 ---
-# <a name="deferred-execution-example-visual-basic"></a>Deferred Execution Example (Visual Basic)
+# <a name="deferred-execution-example-visual-basic"></a>Příklad odloženého provedení (Visual Basic)
 
-This topic shows how deferred execution and lazy evaluation affect the execution of your LINQ to XML queries.
+Toto téma ukazuje, jak odložené provádění a opožděné vyhodnocení ovlivní spuštění dotazů LINQ to XML.
 
 ## <a name="example"></a>Příklad
 
-The following example shows the order of execution when using an extension method that uses deferred execution. The example declares an array of three strings. It then iterates through the collection returned by `ConvertCollectionToUpperCase`.
+Následující příklad ukazuje pořadí spouštění při použití metody rozšíření, která používá odložené provádění. Příklad deklaruje pole tří řetězců. Poté provede iteraci kolekcí vrácenou `ConvertCollectionToUpperCase`.
 
 ```vb
 Imports System.Runtime.CompilerServices
@@ -46,7 +46,7 @@ Module Module1
 End Module
 ```
 
-This example produces the following output:
+Tento příklad vytvoří následující výstup:
 
 ```console
 ToUpper: source abc
@@ -57,10 +57,10 @@ ToUpper: source ghi
 Main: str GHI
 ```
 
-Notice that when iterating through the collection returned by `ConvertCollectionToUpperCase`, each item is retrieved from the source string array and converted to uppercase before the next item is retrieved from the source string array.
+Všimněte si, že při iteraci v kolekci vrácené `ConvertCollectionToUpperCase`je každá položka načtena ze zdrojového pole řetězce a převedena na velká písmena před načtením další položky ze zdrojového pole řetězce.
 
-You can see that the entire array of strings is not converted to uppercase before each item in the returned collection is processed in the `foreach` loop in `Main`.
+Můžete vidět, že celé pole řetězců není převedeno na velká písmena před tím, než se každá položka v vrácené kolekci zpracuje v `foreach` smyčce v `Main`.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Tutorial: Deferred Execution (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-deferred-execution.md)
+- [Kurz: odložené provádění (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-deferred-execution.md)

@@ -9,26 +9,26 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74354194"
 ---
-# <a name="element-operations-visual-basic"></a>Element Operations (Visual Basic)
-Element operations return a single, specific element from a sequence.  
+# <a name="element-operations-visual-basic"></a>Operace elementu (Visual Basic)
+Operace elementu vrací jeden konkrétní prvek z sekvence.  
   
- The standard query operator methods that perform element operations are listed in the following section.  
+ Standardní metody operátoru dotazu, které provádějí operace s elementy, jsou uvedeny v následující části.  
   
 ## <a name="methods"></a>Metody  
   
-|Method Name|Popis|Visual Basic Query Expression Syntax|Další informace|  
+|Název metody|Popis|Visual Basic syntaxe výrazu dotazu|Další informace|  
 |-----------------|-----------------|------------------------------------------|----------------------|  
-|ElementAt|Returns the element at a specified index in a collection.|Nelze použít.|<xref:System.Linq.Enumerable.ElementAt%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.ElementAt%2A?displayProperty=nameWithType>|  
-|ElementAtOrDefault|Returns the element at a specified index in a collection or a default value if the index is out of range.|Nelze použít.|<xref:System.Linq.Enumerable.ElementAtOrDefault%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.ElementAtOrDefault%2A?displayProperty=nameWithType>|  
-|First|Returns the first element of a collection, or the first element that satisfies a condition.|Nelze použít.|<xref:System.Linq.Enumerable.First%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.First%2A?displayProperty=nameWithType>|  
-|FirstOrDefault|Returns the first element of a collection, or the first element that satisfies a condition. Returns a default value if no such element exists.|Nelze použít.|<xref:System.Linq.Enumerable.FirstOrDefault%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.FirstOrDefault%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.FirstOrDefault%60%601%28System.Linq.IQueryable%7B%60%600%7D%29?displayProperty=nameWithType>|  
-|Last|Returns the last element of a collection, or the last element that satisfies a condition.|Nelze použít.|<xref:System.Linq.Enumerable.Last%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Last%2A?displayProperty=nameWithType>|  
-|LastOrDefault|Returns the last element of a collection, or the last element that satisfies a condition. Returns a default value if no such element exists.|Nelze použít.|<xref:System.Linq.Enumerable.LastOrDefault%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.LastOrDefault%2A?displayProperty=nameWithType>|  
-|Single|Returns the only element of a collection, or the only element that satisfies a condition.|Nelze použít.|<xref:System.Linq.Enumerable.Single%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Single%2A?displayProperty=nameWithType>|  
-|SingleOrDefault|Returns the only element of a collection, or the only element that satisfies a condition. Returns a default value if no such element exists or the collection does not contain exactly one element.|Nelze použít.|<xref:System.Linq.Enumerable.SingleOrDefault%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.SingleOrDefault%2A?displayProperty=nameWithType>|  
+|ElementAt|Vrátí prvek v zadaném indexu v kolekci.|Není k dispozici.|<xref:System.Linq.Enumerable.ElementAt%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.ElementAt%2A?displayProperty=nameWithType>|  
+|ElementAtOrDefault|Vrátí prvek v zadaném indexu v kolekci nebo výchozí hodnotu, pokud je index mimo rozsah.|Není k dispozici.|<xref:System.Linq.Enumerable.ElementAtOrDefault%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.ElementAtOrDefault%2A?displayProperty=nameWithType>|  
+|První|Vrátí první prvek kolekce nebo první prvek, který splňuje podmínku.|Není k dispozici.|<xref:System.Linq.Enumerable.First%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.First%2A?displayProperty=nameWithType>|  
+|FirstOrDefault|Vrátí první prvek kolekce nebo první prvek, který splňuje podmínku. Vrací výchozí hodnotu, pokud žádný takový prvek neexistuje.|Není k dispozici.|<xref:System.Linq.Enumerable.FirstOrDefault%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.FirstOrDefault%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.FirstOrDefault%60%601%28System.Linq.IQueryable%7B%60%600%7D%29?displayProperty=nameWithType>|  
+|Poslední|Vrátí poslední prvek kolekce nebo poslední prvek, který splňuje podmínku.|Není k dispozici.|<xref:System.Linq.Enumerable.Last%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Last%2A?displayProperty=nameWithType>|  
+|LastOrDefault|Vrátí poslední prvek kolekce nebo poslední prvek, který splňuje podmínku. Vrací výchozí hodnotu, pokud žádný takový prvek neexistuje.|Není k dispozici.|<xref:System.Linq.Enumerable.LastOrDefault%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.LastOrDefault%2A?displayProperty=nameWithType>|  
+|Jednoduché|Vrátí jediný prvek kolekce nebo jediný prvek, který splňuje podmínku.|Není k dispozici.|<xref:System.Linq.Enumerable.Single%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Single%2A?displayProperty=nameWithType>|  
+|SingleOrDefault|Vrátí jediný prvek kolekce nebo jediný prvek, který splňuje podmínku. Vrací výchozí hodnotu, pokud žádný takový prvek neexistuje nebo kolekce neobsahuje právě jeden element.|Není k dispozici.|<xref:System.Linq.Enumerable.SingleOrDefault%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.SingleOrDefault%2A?displayProperty=nameWithType>|  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Linq>
-- [Standard Query Operators Overview (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [How to: Query for the Largest File or Files in a Directory Tree (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-the-largest-file-or-files-in-a-directory-tree.md)
+- [Přehled standardních operátorů dotazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
+- [Postupy: vytvoření dotazu na největší soubor nebo soubory ve stromu adresářů (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-the-largest-file-or-files-in-a-directory-tree.md)

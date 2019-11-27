@@ -9,30 +9,30 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346408"
 ---
-# <a name="deferred-execution-and-lazy-evaluation-in-linq-to-xml-visual-basic"></a>Deferred Execution and Lazy Evaluation in LINQ to XML (Visual Basic)
-Query and axis operations are often implemented to use deferred execution. This topic explains the requirements and advantages of deferred execution, and some implementation considerations.  
+# <a name="deferred-execution-and-lazy-evaluation-in-linq-to-xml-visual-basic"></a>Odložené provádění a opožděné vyhodnocení v LINQ to XML (Visual Basic)
+Operace dotazů a OS se často implementují pro použití odloženého provedení. V tomto tématu najdete vysvětlení požadavků a výhod odloženého provedení a některých důležitých implementací.  
   
 ## <a name="deferred-execution"></a>Odložené provedení  
- Deferred execution means that the evaluation of an expression is delayed until its *realized* value is actually required. Deferred execution can greatly improve performance when you have to manipulate large data collections, especially in programs that contain a series of chained queries or manipulations. In the best case, deferred execution enables only a single iteration through the source collection.  
+ Odložené spuštění znamená, že vyhodnocení výrazu je zpožděno, dokud není skutečně vyžadováno jeho *realizovaná* hodnota. Odložené provádění může významně zlepšit výkon, pokud je třeba manipulovat s velkými datovými kolekcemi, zejména v programech, které obsahují sérii zřetězených dotazů nebo manipulace. V nejlepším případě se odložené spouštění povoluje pouze jedna iterace prostřednictvím zdrojové kolekce.  
   
- The LINQ technologies make extensive use of deferred execution in both the members of core <xref:System.Linq?displayProperty=nameWithType> classes and in the extension methods in the various LINQ namespaces, such as <xref:System.Xml.Linq.Extensions?displayProperty=nameWithType>.  
+ Technologie LINQ využívají odložené vykonání v rámci členů základních tříd <xref:System.Linq?displayProperty=nameWithType> třídy i v rozšiřujících metodách v různých oborech názvů LINQ, jako je například <xref:System.Xml.Linq.Extensions?displayProperty=nameWithType>.  
   
-## <a name="eager-vs-lazy-evaluation"></a>Eager vs. Lazy Evaluation  
- When you write a method that implements deferred execution, you also have to decide whether to implement the method using lazy evaluation or eager evaluation.  
+## <a name="eager-vs-lazy-evaluation"></a>Eager vs. opožděné hodnocení  
+ Když napíšete metodu, která implementuje odložené vykonání, je také nutné rozhodnout, zda implementovat metodu pomocí opožděného vyhodnocení nebo vyhodnocení Eager.  
   
-- In *lazy evaluation*, a single element of the source collection is processed during each call to the iterator. This is the typical way in which iterators are implemented.  
+- V *opožděném vyhodnocení*je během každého volání iterátoru zpracován jediný element zdrojové kolekce. Toto je typický způsob, jakým jsou implementovány iterátory.  
   
-- In *eager evaluation*, the first call to the iterator will result in the entire collection being processed. A temporary copy of the source collection might also be required. For example, the <xref:System.Linq.Enumerable.OrderBy%2A> method has to sort the entire collection before it returns the first element.  
+- Při *vyhodnocování Eager*bude první volání iterátoru mít za následek zpracování celé kolekce. Může být také nutné zadat dočasnou kopii zdrojové kolekce. Například metoda <xref:System.Linq.Enumerable.OrderBy%2A> musí seřadit celou kolekci před tím, než vrátí první prvek.  
   
- Lazy evaluation usually yields better performance because it distributes overhead processing evenly throughout the evaluation of the collection and minimizes the use of temporary data. Of course, for some operations, there is no other option than to materialize intermediate results.  
+ Opožděné hodnocení obvykle poskytuje lepší výkon, protože distribuuje režijní náklady rovnoměrně během hodnocení kolekce a minimalizuje používání dočasných dat. Samozřejmě není pro některé operace žádná jiná možnost než vyhodnotit mezilehlé výsledky.  
   
 ## <a name="next-steps"></a>Další kroky  
- The next topic in this tutorial illustrates deferred execution:  
+ Další téma v tomto kurzu znázorňuje odložené provádění:  
   
-- [Deferred Execution Example (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-example.md)  
+- [Příklad odloženého provedení (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-example.md)  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Tutorial: Deferred Execution (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-deferred-execution.md)
-- [Concepts and Terminology (Functional Transformation) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/concepts-and-terminology-functional-transformation.md)
-- [Aggregation Operations (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/aggregation-operations.md)
+- [Kurz: odložené provádění (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-deferred-execution.md)
+- [Koncepty a terminologie (funkce Transformation) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/concepts-and-terminology-functional-transformation.md)
+- [Agregační operace (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/aggregation-operations.md)

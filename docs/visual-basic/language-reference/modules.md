@@ -13,22 +13,22 @@ ms.locfileid: "74344187"
 ---
 # <a name="modules-visual-basic"></a>Moduly (Visual Basic)
 
-Visual Basic provides several modules that enable you to simplify common tasks in your code, including manipulating strings, performing mathematical calculations, getting system information, performing file and directory operations, and so on. The following table lists the modules provided by Visual Basic.  
+Visual Basic poskytuje několik modulů, které vám umožňují zjednodušit běžné úlohy v kódu, včetně manipulace s řetězci, provádění matematických výpočtů, získávání systémových informací, provádění operací se soubory a adresáři a tak dále. V následující tabulce jsou uvedeny moduly, které poskytuje Visual Basic.  
   
 |||  
 |---|---|  
-|<xref:Microsoft.VisualBasic.Constants>|Contains miscellaneous constants. These constants can be used anywhere in your code.|  
-|<xref:Microsoft.VisualBasic.ControlChars>|Contains constant control characters for printing and displaying text.|  
-|<xref:Microsoft.VisualBasic.Conversion>|Contains members that convert decimal numbers to other bases, numbers to strings, strings to numbers, and one data type to another.|  
-|<xref:Microsoft.VisualBasic.DateAndTime>|Contains members that get the current date or time, perform date calculations, return a date or time, set the date or time, or time the duration of a process.|  
-|<xref:Microsoft.VisualBasic.ErrObject>|Contains information about run-time errors and methods to raise or clear an error.|  
-|<xref:Microsoft.VisualBasic.FileSystem>|Contains members that perform file, directory or folder, and system operations.|  
-|<xref:Microsoft.VisualBasic.Financial>|Contains procedures that are used to perform financial calculations.|  
-|<xref:Microsoft.VisualBasic.Globals>|Contains information about the current scripting engine version.|  
-|<xref:Microsoft.VisualBasic.Information>|Contains the members that return, test for, or verify information such as array size, type names, and so on.|  
-|<xref:Microsoft.VisualBasic.Interaction>|Contains members interact with objects, applications, and systems.|  
-|<xref:Microsoft.VisualBasic.Strings>|Contains members that perform string operations such as reformatting strings, searching a string, getting the length of a string, and so on.|  
-|<xref:Microsoft.VisualBasic.VBMath>|Contains members perform mathematical operations.|  
+|<xref:Microsoft.VisualBasic.Constants>|Obsahuje různé konstanty. Tyto konstanty lze použít kdekoli v kódu.|  
+|<xref:Microsoft.VisualBasic.ControlChars>|Obsahuje konstantní řídicí znaky pro tisk a zobrazování textu.|  
+|<xref:Microsoft.VisualBasic.Conversion>|Obsahuje členy, kteří převádějí desítková čísla na jiné základy, čísla na řetězce, řetězce na čísla a jeden datový typ na jiný.|  
+|<xref:Microsoft.VisualBasic.DateAndTime>|Obsahuje členy, kteří získají aktuální datum nebo čas, provádějí výpočty data, vracejí datum nebo čas, nastaví datum nebo čas nebo čas trvání procesu.|  
+|<xref:Microsoft.VisualBasic.ErrObject>|Obsahuje informace o chybách a metodách běhu k vyvolání nebo zrušení chyby.|  
+|<xref:Microsoft.VisualBasic.FileSystem>|Obsahuje členy, kteří provádějí soubor, adresář nebo složku a systémové operace.|  
+|<xref:Microsoft.VisualBasic.Financial>|Obsahuje postupy, které se používají k provádění finančních výpočtů.|  
+|<xref:Microsoft.VisualBasic.Globals>|Obsahuje informace o aktuální verzi skriptovacího stroje.|  
+|<xref:Microsoft.VisualBasic.Information>|Obsahuje členy, kteří vracejí, testují nebo ověřují informace, jako je například velikost pole, názvy typů a tak dále.|  
+|<xref:Microsoft.VisualBasic.Interaction>|Obsahuje členy, kteří komunikují s objekty, aplikacemi a systémy.|  
+|<xref:Microsoft.VisualBasic.Strings>|Obsahuje členy, které provádějí operace s řetězci, jako je přeformátování řetězců, hledání řetězce, získání délky řetězce a tak dále.|  
+|<xref:Microsoft.VisualBasic.VBMath>|Obsahuje členy, kteří provádějí matematické operace.|  
   
 ## <a name="see-also"></a>Viz také:
 

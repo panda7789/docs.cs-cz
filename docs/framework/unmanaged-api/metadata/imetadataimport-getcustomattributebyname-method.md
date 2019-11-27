@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437683"
 ---
 # <a name="imetadataimportgetcustomattributebyname-method"></a>IMetaDataImport::GetCustomAttributeByName – metoda
-Gets the custom attribute, given its name and owner.  
+Získá vlastní atribut, který je dán jménem a vlastníkem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,28 +38,28 @@ HRESULT GetCustomAttributeByName (
   
 ## <a name="parameters"></a>Parametry  
  `tkObj`  
- [in] A metadata token representing the object that owns the custom attribute.  
+ pro Token metadat představující objekt vlastnící vlastní atribut.  
   
  `szName`  
- [in] The name of the custom attribute.  
+ pro Název vlastního atributu  
   
  `ppData`  
- [out] A pointer to an array of data that is the value of the custom attribute.  
+ mimo Ukazatel na pole dat, které je hodnotou vlastního atributu.  
   
  `pcbData`  
- [out] The size in bytes of the data returned in *`ppData`.  
+ mimo Velikost v bajtech dat vrácených ve formátu *`ppData`.  
   
 ## <a name="remarks"></a>Poznámky  
- It is legal to define multiple custom attributes for the same owner; they may even have the same name. However, `GetCustomAttributeByName` returns only one instance. (`GetCustomAttributeByName` returns the first instance that it encounters.) To find all instances of a custom attribute, call the [IMetaDataImport::EnumCustomAttributes](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumcustomattributes-method.md) method.  
+ Je právní pro stejného vlastníka definovat více vlastních atributů; můžou mít i stejný název. `GetCustomAttributeByName` ale vrátí jenom jednu instanci. (`GetCustomAttributeByName` vrací první instanci, kterou nalezne.) Chcete-li najít všechny instance vlastního atributu, zavolejte metodu [IMetaDataImport:: EnumCustomAttributes –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumcustomattributes-method.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

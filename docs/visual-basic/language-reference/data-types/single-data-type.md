@@ -29,25 +29,25 @@ ms.locfileid: "74343922"
 ---
 # <a name="single-data-type-visual-basic"></a>Single – datový typ (Visual Basic)
 
-Holds signed IEEE 32-bit (4-byte) single-precision floating-point numbers ranging in value from -3.4028235E+38 through -1.401298E-45 for negative values and from 1.401298E-45 through 3.4028235E+38 for positive values. Single-precision numbers store an approximation of a real number.  
+Obsahuje podepsaná čísla IEEE 32 s plovoucí desetinnou čárkou s jednoduchou přesností, která jsou v rozsahu hodnot od-3.4028235 E + 38 do-1.401298 E-45 pro záporné hodnoty a z 1.401298 E-45 až 3.4028235 E + 38 pro kladné hodnoty. Čísla s jednoduchou přesností ukládají aproximaci reálného čísla.  
   
 ## <a name="remarks"></a>Poznámky  
 
- Use the `Single` data type to contain floating-point values that do not require the full data width of `Double`. In some cases the common language runtime might be able to pack your `Single` variables closely together and save memory consumption.  
+ Typ dat `Single` použijte k zahrnutí hodnot s plovoucí desetinnou čárkou, které nevyžadují plnou šířku dat `Double`. V některých případech může modul CLR (Common Language Runtime) umět zabalit `Single` proměnných společně a ušetřit spotřebu paměti.  
   
- The default value of `Single` is 0.  
+ Výchozí hodnota `Single` je 0.  
   
 ## <a name="programming-tips"></a>Tipy k programování  
   
-- **Precision.** When you work with floating-point numbers, keep in mind that they do not always have a precise representation in memory. This could lead to unexpected results from certain operations, such as value comparison and the `Mod` operator. For more information, see [Troubleshooting Data Types](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md).  
+- **Číslic.** Když pracujete s čísly s plovoucí desetinnou čárkou, mějte na paměti, že nemají vždy přesnou reprezentaci v paměti. To může vést k neočekávaným výsledkům z určitých operací, jako je například porovnání hodnot a operátor `Mod`. Další informace najdete v tématu [řešení potíží s datovými typy](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md).  
   
-- **Widening.** The `Single` data type widens to `Double`. This means you can convert `Single` to `Double` without encountering a <xref:System.OverflowException?displayProperty=nameWithType> error.  
+- **Rozšiřující.** `Single` datový typ se rozšíří na `Double`. To znamená, že můžete převést `Single` na `Double` bez výskytu chyby <xref:System.OverflowException?displayProperty=nameWithType>.  
   
-- **Trailing Zeros.** The floating-point data types do not have any internal representation of trailing 0 characters. For example, they do not distinguish between 4.2000 and 4.2. Consequently, trailing 0 characters do not appear when you display or print floating-point values.  
+- **Koncové nuly.** Datové typy s plovoucí desetinnou čárkou nemají žádná interní reprezentace koncových 0 znaků. Například nerozlišuje mezi 4,2000 a 4,2. V důsledku toho se po zobrazení nebo tisku hodnot s plovoucí desetinnou čárkou neobjeví koncové 0 znaky.  
   
-- **Type Characters.** Appending the literal type character `F` to a literal forces it to the `Single` data type. Appending the identifier type character `!` to any identifier forces it to `Single`.  
+- **Znaky typu.** Připojení znaku typu literálu `F` k literálu vynutí typ dat `Single`. Připojení znaku typu identifikátoru `!` k jakémukoli identifikátoru vynutí `Single`.  
   
-- **Framework Type.** The corresponding type in the .NET Framework is the <xref:System.Single?displayProperty=nameWithType> structure.  
+- **Typ rozhraní.** Odpovídající typ v .NET Framework je struktura <xref:System.Single?displayProperty=nameWithType>.  
   
 ## <a name="see-also"></a>Viz také:
 

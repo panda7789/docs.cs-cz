@@ -12,10 +12,10 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349052"
 ---
 # <a name="how-to-create-a-collection-used-by-a-collection-initializer-visual-basic"></a>Postupy: Vytvoření kolekce používané inicializátorem kolekce (Visual Basic)
-When you use a collection initializer to create a collection, the Visual Basic compiler searches for an `Add` method of the collection type for which the parameters for the `Add` method match the types of the values in the collection initializer. This `Add` method is used to populate the collection with the values from the collection initializer.  
+Použijete-li inicializátor kolekce k vytvoření kolekce, Visual Basic kompilátor vyhledá metodu `Add` typu kolekce, pro kterou parametry `Add` metody odpovídají typům hodnot v inicializátoru kolekce. Tato metoda `Add` slouží k naplnění kolekce hodnotami z inicializátoru kolekce.  
   
 ## <a name="example"></a>Příklad  
- The following example shows an `OrderCollection` collection that contains a public `Add` method that a collection initializer can use to add objects of type `Order`. The `Add` method enables you to use the shortened collection initializer syntax.  
+ Následující příklad ukazuje `OrderCollection` kolekci, která obsahuje veřejnou `Add` metodu, kterou může inicializátor kolekce použít k přidání objektů typu `Order`. Metoda `Add` umožňuje použít zkrácenou syntaxi inicializátoru kolekce.  
   
  [!code-vb[VbVbalrCollectionInitializersHowTo2#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializersHowTo2/VB/Module1.vb#4)]  
   

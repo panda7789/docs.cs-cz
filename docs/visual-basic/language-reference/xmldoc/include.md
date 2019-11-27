@@ -12,8 +12,8 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348464"
 ---
-# <a name="include-visual-basic"></a>\<include> (Visual Basic)
-Refers to another file that describes the types and members in your source code.  
+# <a name="include-visual-basic"></a>\<include > (Visual Basic)
+Odkazuje na jiný soubor, který popisuje typy a členy ve zdrojovém kódu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,28 +23,28 @@ Refers to another file that describes the types and members in your source code.
   
 ## <a name="parameters"></a>Parametry  
  `filename`  
- Požadováno. The name of the file containing the documentation. The file name can be qualified with a path. Enclose `filename` in double quotation marks (" ").  
+ Požadováno. Název souboru, který obsahuje dokumentaci. Název souboru může být kvalifikován cestou. Uzavřete `filename` do uvozovek ("").  
   
  `tagpath`  
- Požadováno. The path of the tags in `filename` that leads to the tag `name`. Enclose the path in double quotation marks (" ").  
+ Požadováno. Cesta značek v `filename`, které vedou k `name`značky Uzavřete cestu do uvozovek ("").  
   
  `name`  
- Požadováno. The name specifier in the tag that precedes the comments. `Name` will have an `id`.  
+ Požadováno. Specifikátor názvu ve značce, který předchází komentář. `Name` bude mít `id`.  
   
  `id`  
- Požadováno. The ID for the tag that precedes the comments. Enclose the ID in single quotation marks (' ').  
+ Požadováno. ID značky, která předchází komentář. Uveďte ID v jednoduchých uvozovkách (' ').  
   
 ## <a name="remarks"></a>Poznámky  
- Use the `<include>` tag to refer to comments in another file that describe the types and members in your source code. This is an alternative to placing documentation comments directly in your source code file.  
+ Pomocí značky `<include>` můžete odkazovat na komentáře v jiném souboru, které popisují typy a členy ve zdrojovém kódu. Toto je alternativa k umístění dokumentačních komentářů přímo do souboru zdrojového kódu.  
   
- The `<include>` tag uses the W3C XML Path Language (XPath) Version 1.0 Recommendation. For more information about ways to customize your `<include>` use, see <https://www.w3.org/TR/xpath>.  
+ Značka `<include>` používá doporučení jazyka W3C XML Path (XPath) verze 1,0. Další informace o způsobech přizpůsobení `<include>` použití naleznete v tématu <https://www.w3.org/TR/xpath>.  
   
 ## <a name="example"></a>Příklad  
- This example uses the `<include>` tag to import member documentation comments from a file called `commentFile.xml`.  
+ V tomto příkladu se používá značka `<include>` pro import dokumentačních komentářů členů ze souboru s názvem `commentFile.xml`.  
   
  [!code-vb[VbVbcnXmlDocComments#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#4)]  
   
- The format of the `commentFile.xml` is as follows.  
+ Formát `commentFile.xml` je následující.  
   
 ```xml  
 <Docs>  

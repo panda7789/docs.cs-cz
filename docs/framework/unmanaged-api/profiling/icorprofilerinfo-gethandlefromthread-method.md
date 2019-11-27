@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74439062"
 ---
 # <a name="icorprofilerinfogethandlefromthread-method"></a>ICorProfilerInfo::GetHandleFromThread – metoda
-Maps the ID of a thread to a Win32 thread handle.  
+Mapuje ID vlákna na popisovač vlákna Win32.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,22 +35,22 @@ HRESULT GetHandleFromThread(
   
 ## <a name="parameters"></a>Parametry  
  `threadId`  
- [in] The thread ID to be mapped.  
+ pro ID vlákna, které má být namapováno.  
   
  `phThread`  
- [out] A pointer to a Win32 thread handle.  
+ mimo Ukazatel na popisovač vlákna Win32.  
   
 ## <a name="remarks"></a>Poznámky  
- The profiler must call the Win32 `DuplicateHandle` function on the handle before using it.  
+ Profiler musí před použitím volat funkci Win32 `DuplicateHandle` na popisovači.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

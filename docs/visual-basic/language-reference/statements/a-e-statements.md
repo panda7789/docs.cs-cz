@@ -10,15 +10,15 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350229"
 ---
 # <a name="a-e-statements"></a>A-E – příkazy
-The following table contains a listing of Visual Basic language statements.  
+Následující tabulka obsahuje seznam příkazů jazyka Visual Basic.  
   
 |||||  
 |---|---|---|---|  
-|[AddHandler](addhandler-statement.md)|[Call](call-statement.md)|[Class](class-statement.md)|[Const](const-statement.md)|  
-|[Continue](continue-statement.md)|[Declare](declare-statement.md)|[Delegate](delegate-statement.md)|[Dim](dim-statement.md)|  
-|[Do...Loop](do-loop-statement.md)|[Else](else-statement.md)|[End](end-statement.md)|[End \<keyword>](end-keyword-statement.md)|  
-|[Enum](enum-statement.md)|[Erase](erase-statement.md)|[Error](error-statement.md)|[Event](event-statement.md)|  
-|[Exit](exit-statement.md)||||  
+|[AddHandler](addhandler-statement.md)|[Volání](call-statement.md)|[Deník](class-statement.md)|[MX](const-statement.md)|  
+|[Continue](continue-statement.md)|[Deklaroval](declare-statement.md)|[Dostával](delegate-statement.md)|[Dimenzí](dim-statement.md)|  
+|[Do... Procházet](do-loop-statement.md)|[Ostatních](else-statement.md)|[Účelu](end-statement.md)|[Koncová \<– klíčové slovo >](end-keyword-statement.md)|  
+|[Vytváření](enum-statement.md)|[Ověřování](erase-statement.md)|[Chyba](error-statement.md)|[Event](event-statement.md)|  
+|[Akci](exit-statement.md)||||  
   
 ## <a name="see-also"></a>Viz také:
 

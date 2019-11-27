@@ -12,17 +12,17 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349668"
 ---
 # <a name="object-required-visual-basic"></a>Vyžadován objekt (Visual Basic)
-References to properties and methods often require an explicit object qualifier. This is such a case.  
+Odkazy na vlastnosti a metody často vyžadují explicitní kvalifikátor objektu. Jedná se například o případ.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Check that references to an object property or method have valid object qualifier. Specify an object qualifier if you didn't provide one.  
+1. Ověřte, zda odkazy na vlastnost objektu nebo metodu mají platný kvalifikátor objektu. Zadejte kvalifikátor objektu, pokud jste ho nezadali.  
   
-2. Check the spelling of the object qualifier and make sure the object is visible in the part of the program in which you are referencing it.  
+2. Zkontrolujte pravopis kvalifikátoru objektu a ujistěte se, že je objekt viditelný v části programu, na který odkazujete.  
   
-3. If a path is supplied to a host application's **File Open** command, check that the arguments in it are correct.  
+3. Pokud je zadána cesta k příkazu pro **otevření souboru** hostitelské aplikace, ověřte, zda jsou argumenty v něm správné.  
   
-4. Check the object's documentation and make sure the action is valid.  
+4. Zkontrolujte dokumentaci k objektu a ujistěte se, že je tato akce platná.  
   
 ## <a name="see-also"></a>Viz také:
 

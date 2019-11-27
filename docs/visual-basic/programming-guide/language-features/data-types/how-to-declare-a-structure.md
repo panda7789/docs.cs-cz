@@ -15,28 +15,28 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350001"
 ---
 # <a name="how-to-declare-a-structure-visual-basic"></a>Postupy: Definice struktury (Visual Basic)
-You begin a structure declaration with the [Structure Statement](../../../../visual-basic/language-reference/statements/structure-statement.md), and you end it with the `End Structure` statement. Between these two statements you must declare at least one *element*. The elements can be of any data type, but at least one must be either a nonshared variable or a nonshared, noncustom event.  
+Zahájíte deklaraci struktury pomocí [příkazu struktury](../../../../visual-basic/language-reference/statements/structure-statement.md)a ukončíte ji pomocí příkazu `End Structure`. Mezi těmito dvěma příkazy musíte deklarovat alespoň jeden *prvek*. Prvky mohou být libovolného datového typu, ale nejméně jedna musí být buď nesdílená proměnná, nebo nesdílená, nevlastní událost.  
   
- You cannot initialize any of the structure elements in the structure declaration. When you declare a variable to be of a structure type, you assign values to the elements by accessing them through the variable.  
+ V deklaraci struktury nelze inicializovat žádné prvky struktury. Pokud deklarujete proměnnou, která má být typu struktury, přiřazujete hodnoty k prvkům jejich přístupem přes proměnnou.  
   
- For a discussion of the differences between structures and classes, see [Structures and Classes](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md).  
+ Diskuzi o rozdílech mezi strukturami a třídami naleznete v tématu [struktury a třídy](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md).  
   
- For demonstration purposes, consider a situation where you want to keep track of an employee's name, telephone extension, and salary. A structure allows you to do this in a single variable.  
+ Pro demonstrační účely Zvažte situaci, kdy si přejete sledovat jméno zaměstnance, telefonní linky a mzdu. Struktura vám to umožňuje v rámci jedné proměnné.  
   
-### <a name="to-declare-a-structure"></a>To declare a structure  
+### <a name="to-declare-a-structure"></a>Deklarace struktury  
   
-1. Create the beginning and ending statements for the structure.  
+1. Vytvořte na začátku a konci příkazy pro strukturu.  
   
-     You can specify the access level of a structure using the [Public](../../../../visual-basic/language-reference/modifiers/public.md), [Protected](../../../../visual-basic/language-reference/modifiers/protected.md), [Friend](../../../../visual-basic/language-reference/modifiers/friend.md), or [Private](../../../../visual-basic/language-reference/modifiers/private.md) keyword, or you can let it default to `Public`.  
+     Úroveň přístupu ke struktuře můžete určit pomocí klíčového slova [Public](../../../../visual-basic/language-reference/modifiers/public.md), [Protected](../../../../visual-basic/language-reference/modifiers/protected.md), [Friend](../../../../visual-basic/language-reference/modifiers/friend.md)nebo [Private](../../../../visual-basic/language-reference/modifiers/private.md) , nebo můžete nechat výchozí `Public`.  
   
     ```vb  
     Private Structure employee  
     End Structure  
     ```  
   
-2. Add elements to the body of the structure.  
+2. Přidejte prvky do těla struktury.  
   
-     A structure must have at least one element. You must declare every element and specify an access level for it. If you use the [Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md) without any keywords, the accessibility defaults to `Public`.  
+     Struktura musí mít alespoň jeden element. Musíte deklarovat každý prvek a zadat úroveň přístupu. Použijete-li [příkaz Dim](../../../../visual-basic/language-reference/statements/dim-statement.md) bez klíčových slov, je výchozí nastavení přístupnosti `Public`.  
   
     ```vb  
     Private Structure employee  
@@ -51,9 +51,9 @@ You begin a structure declaration with the [Structure Statement](../../../../vis
     End Structure  
     ```  
   
-     The `salary` field in the preceding example is `Private`, which means it is inaccessible outside the structure, even from the containing class. However, the `giveRaise` procedure is `Public`, so it can be called from outside the structure. Similarly, you can raise the `salaryReviewTime` event from outside the structure.  
+     Pole `salary` v předchozím příkladu je `Private`, což znamená, že je nepřístupný mimo strukturu, dokonce i z nadřazené třídy. Nicméně procedura `giveRaise` je `Public`, takže může být volána mimo strukturu. Podobně můžete vyvolat událost `salaryReviewTime` mimo strukturu.  
   
-     In addition to variables, `Sub` procedures, and events, you can also define constants, `Function` procedures, and properties in a structure. You can designate at most one property as the *default property*, provided it takes at least one argument. You can handle an event with a [Shared](../../../../visual-basic/language-reference/modifiers/shared.md)`Sub` procedure. For more information, see [How to: Declare and Call a Default Property in Visual Basic](../../../../visual-basic/programming-guide/language-features/procedures/how-to-declare-and-call-a-default-property.md).  
+     Kromě proměnných, `Sub` procedur a událostí, můžete také definovat konstanty, `Function` procedury a vlastnosti ve struktuře. Můžete určit maximálně jednu vlastnost jako *výchozí vlastnost*za předpokladu, že převezme aspoň jeden argument. Událost můžete zpracovat pomocí [sdílené](../../../../visual-basic/language-reference/modifiers/shared.md)`Sub` procedury. Další informace naleznete v tématu [Postupy: deklarace a volání výchozí vlastnosti v Visual Basic](../../../../visual-basic/programming-guide/language-features/procedures/how-to-declare-and-call-a-default-property.md).  
   
 ## <a name="see-also"></a>Viz také:
 

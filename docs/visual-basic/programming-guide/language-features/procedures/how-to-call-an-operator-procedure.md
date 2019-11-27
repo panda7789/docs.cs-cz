@@ -19,39 +19,39 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74340248"
 ---
 # <a name="how-to-call-an-operator-procedure-visual-basic"></a>Postupy: Volání procedury operátora (Visual Basic)
-You call an operator procedure by using the operator symbol in an expression. In the case of a conversion operator, you call the [CType Function](../../../../visual-basic/language-reference/functions/ctype-function.md) to convert a value from one data type to another.  
+Proceduru operátoru zavoláte pomocí symbolu operátoru ve výrazu. V případě operátoru převodu zavoláte [funkci CType](../../../../visual-basic/language-reference/functions/ctype-function.md) pro převod hodnoty z jednoho datového typu na jiný.  
   
- You do not call operator procedures explicitly. You just use the operator, or the `CType` function, in an assignment statement or an expression, the same way you ordinarily use an operator. Visual Basic makes the call to the operator procedure.  
+ Explicitně Nevolejte procedury operátora. Stačí použít operátor nebo funkci `CType` v příkazu přiřazení nebo výrazu stejným způsobem, jakým obvykle používáte operátor. Visual Basic provede volání procedury operátoru.  
   
- Defining an operator on a class or structure is also called *overloading* the operator.  
+ Definování operátoru pro třídu nebo strukturu se označuje také jako *přetížení* operátoru.  
   
-### <a name="to-call-an-operator-procedure"></a>To call an operator procedure  
+### <a name="to-call-an-operator-procedure"></a>Volání procedury operátoru  
   
-1. Use the operator symbol in an expression in the ordinary way.  
+1. Používejte symbol operátoru ve výrazu běžným způsobem.  
   
-2. Be sure the data types of the operands are appropriate for the operator, and in the correct order.  
+2. Ujistěte se, že datové typy operandů jsou vhodné pro operátor a ve správném pořadí.  
   
-3. The operator contributes to the value of the expression as expected.  
+3. Operátor přispívá k hodnotě výrazu podle očekávání.  
   
-### <a name="to-call-a-conversion-operator-procedure"></a>To call a conversion operator procedure  
+### <a name="to-call-a-conversion-operator-procedure"></a>Volání procedury operátora převodu  
   
-1. Use `CType` inside an expression.  
+1. Použijte `CType` uvnitř výrazu.  
   
-2. Be sure the data types of the operands are appropriate for the conversion, and in the correct order.  
+2. Ujistěte se, že datové typy operandů jsou vhodné pro převod a ve správném pořadí.  
   
-3. `CType` calls the conversion operator procedure and returns the converted value.  
+3. `CType` volá proceduru operátora převodu a vrátí převedenou hodnotu.  
   
 ## <a name="example"></a>Příklad  
- The following example creates two <xref:System.TimeSpan> structures, adds them together, and stores the result in a third <xref:System.TimeSpan> structure. The <xref:System.TimeSpan> structure defines operator procedures to overload several standard operators.  
+ Následující příklad vytvoří dvě struktury <xref:System.TimeSpan>, přidá je dohromady a uloží výsledek do třetí <xref:System.TimeSpan> struktury. Struktura <xref:System.TimeSpan> definuje procedury operátoru pro přetížení několika standardních operátorů.  
   
  [!code-vb[VbVbcnProcedures#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#29)]  
   
- Because <xref:System.TimeSpan> overloads the standard `+` operator, the previous example calls an operator procedure when it calculates the value of `combinedSpan`.  
+ Vzhledem k tomu, že <xref:System.TimeSpan> přetěžuje standardní operátor `+`, předchozí příklad volá proceduru operátoru při výpočtu hodnoty `combinedSpan`.  
   
- For an example of calling a conversation operator procedure, see [How to: Use a Class that Defines Operators](./how-to-use-a-class-that-defines-operators.md).  
+ Příklad volání procedury operátoru konverzace naleznete v tématu [How to: Use a Class definující operátory](./how-to-use-a-class-that-defines-operators.md).  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Be sure the class or structure you are using defines the operator you want to use.  
+ Ujistěte se, že třída nebo struktura, kterou používáte, definuje operátor, který chcete použít.  
   
 ## <a name="see-also"></a>Viz také:
 

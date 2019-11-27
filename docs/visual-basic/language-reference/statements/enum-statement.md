@@ -20,7 +20,7 @@ ms.locfileid: "74343714"
 ---
 # <a name="enum-statement-visual-basic"></a>Enum – příkaz (Visual Basic)
 
-Declares an enumeration and defines the values of its members.
+Deklaruje výčet a definuje hodnoty jeho členů.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -35,13 +35,13 @@ End Enum
 
 - `attributelist`
 
-  Volitelné. List of attributes that apply to this enumeration. You must enclose the [attribute list](../../../visual-basic/language-reference/statements/attribute-list.md) in angle brackets ("`<`" and "`>`").
+  Volitelná. Seznam atributů, které se vztahují k tomuto výčtu. [Seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md) je nutné uzavřít do lomených závorek ("`<`" a "`>`").
 
-  The <xref:System.FlagsAttribute> attribute indicates that the value of an instance of the enumeration can include multiple enumeration members, and that each member represents a bit field in the enumeration value.
+  Atribut <xref:System.FlagsAttribute> označuje, že hodnota instance výčtu může zahrnovat více členů výčtu a že každý člen představuje bitové pole v hodnotě výčtu.
 
 - `accessmodifier`
 
-  Volitelné. Specifies what code can access this enumeration. Can be one of the following:
+  Volitelná. Určuje, který kód má k tomuto výčtu přístup. Může být jedna z následujících akcí:
 
   - [Public](../../../visual-basic/language-reference/modifiers/public.md)
 
@@ -57,130 +57,130 @@ End Enum
 
 - `Shadows`
 
-  Volitelné. Specifies that this enumeration redeclares and hides an identically named programming element, or set of overloaded elements, in a base class. You can specify [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md) only on the enumeration itself, not on any of its members.
+  Volitelná. Určuje, že tento výčet znovu deklaruje a skryje identicky pojmenovaný prvek programování nebo sadu přetížených prvků v základní třídě. [Stíny](../../../visual-basic/language-reference/modifiers/shadows.md) lze zadat pouze pro samotný výčet, nikoli na žádném z jeho členů.
 
 - `enumerationname`
 
-  Požadováno. Name of the enumeration. For information on valid names, see [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).
+  Požadováno. Název výčtu. Informace o platných názvech naleznete v tématu [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).
 
 - `datatype`
 
-  Volitelné. Data type of the enumeration and all its members.
+  Volitelná. Datový typ výčtu a všech jeho členů.
 
 - `memberlist`
 
-  Požadováno. List of member constants being declared in this statement. Multiple members appear on individual source code lines.
+  Požadováno. Seznam konstant členů, které jsou deklarovány v tomto příkazu. Na jednotlivých řádcích zdrojového kódu se zobrazí více členů.
 
-  Each `member` has the following syntax and parts: `[<attribute list>] member name [ = initializer ]`
+  Každý `member` má následující syntaxi a části: `[<attribute list>] member name [ = initializer ]`
 
-  |Part|Popis|
+  |Částí|Popis|
   |---|---|
-  |`membername`|Požadováno. Name of this member.|
-  |`initializer`|Volitelné. Expression that is evaluated at compile time and assigned to this member.|
+  |`membername`|Požadováno. Název tohoto člena|
+  |`initializer`|Volitelná. Výraz, který se vyhodnocuje v době kompilace a přiřazený k tomuto členovi.|
 
 - `End``Enum`
 
-  Terminates the `Enum` block.
+  Ukončí blok `Enum`.
 
 ## <a name="remarks"></a>Poznámky
 
-If you have a set of unchanging values that are logically related to each other, you can define them together in an enumeration. This provides meaningful names for the enumeration and its members, which are easier to remember than their values. You can then use the enumeration members in many places in your code.
+Máte-li sadu nezměněných hodnot, které jsou logicky vzájemně propojeny, můžete je definovat společně ve výčtu. To poskytuje smysluplné názvy pro výčet a jeho členy, které je snazší pamatovat než jejich hodnoty. Pak můžete použít členy výčtu na mnoha místech v kódu.
 
-The benefits of using enumerations include the following:
+Mezi výhody používání výčtů patří následující:
 
-- Reduces errors caused by transposing or mistyping numbers.
+- Snižuje chyby způsobené přetypováním nebo nesprávným zadáním čísel.
 
-- Makes it easy to change values in the future.
+- V budoucnu usnadňuje změnu hodnot.
 
-- Makes code easier to read, which means it is less likely that errors will be introduced.
+- Usnadňuje čtení kódu, což znamená, že je méně pravděpodobný, že budou zavedeny chyby.
 
-- Ensures forward compatibility. If you use enumerations, your code is less likely to fail if in the future someone changes the values corresponding to the member names.
+- Zajišťuje dopředné kompatibility. Pokud použijete výčty, váš kód je méně pravděpodobný, pokud v budoucnu někdo změní hodnoty odpovídající názvům členů.
 
-An enumeration has a name, an underlying data type, and a set of members. Each member represents a constant.
+Výčet má název, základní datový typ a sadu členů. Každý člen představuje konstantu.
 
-An enumeration declared at class, structure, module, or interface level, outside any procedure, is a *member enumeration*. It is a member of the class, structure, module, or interface that declares it.
+Výčet deklarovaný na úrovni třídy, struktury, modulu nebo rozhraní, mimo jakoukoli proceduru, je *výčet členů*. Je členem třídy, struktury, modulu nebo rozhraní, které je deklaruje.
 
-Member enumerations can be accessed from anywhere within their class, structure, module, or interface. Code outside a class, structure, or module must qualify a member enumeration's name with the name of that class, structure, or module. You can avoid the need to use fully qualified names by adding an [Imports](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) statement to the source file.
+K výčtům členů lze přistupovat odkudkoli v rámci své třídy, struktury, modulu nebo rozhraní. Kód mimo třídu, strukturu nebo modul musí kvalifikovat název výčtu členů s názvem této třídy, struktury nebo modulu. Je možné vyhnout se nutnosti používat plně kvalifikované názvy přidáním příkazu [Imports](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) do zdrojového souboru.
 
-An enumeration declared at namespace level, outside any class, structure, module, or interface, is a member of the namespace in which it appears.
+Výčet deklarovaný na úrovni oboru názvů, mimo jakoukoliv třídu, strukturu, modul nebo rozhraní, je členem oboru názvů, ve kterém se zobrazí.
 
-The *declaration context* for an enumeration must be a source file, namespace, class, structure, module, or interface, and cannot be a procedure. For more information, see [Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).
+*Kontext deklarace* pro výčet musí být zdrojový soubor, obor názvů, třída, struktura, modul nebo rozhraní a nemůže být procedura. Další informace najdete v tématu [deklarace kontextů a výchozích úrovní přístupu](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).
 
-You can apply attributes to an enumeration as a whole, but not to its members individually. An attribute contributes information to the assembly's metadata.
+Můžete použít atributy na výčet jako celek, ale nikoli na jeho členy jednotlivě. Atribut přispívá informace k metadatům sestavení.
 
-## <a name="data-type"></a>Datový typ
+## <a name="data-type"></a>Typ dat
 
-The `Enum` statement can declare the data type of an enumeration. Each member takes the enumeration's data type. You can specify `Byte`, `Integer`, `Long`, `SByte`, `Short`, `UInteger`, `ULong`, or `UShort`.
+Příkaz `Enum` může deklarovat datový typ výčtu. Každý člen získá datový typ výčtu. Můžete zadat `Byte`, `Integer`, `Long`, `SByte`, `Short`, `UInteger`, `ULong`nebo `UShort`.
 
-If you do not specify `datatype` for the enumeration, each member takes the data type of its `initializer`. If you specify both `datatype` and `initializer`, the data type of `initializer` must be convertible to `datatype`. If neither `datatype` nor `initializer` is present, the data type defaults to `Integer`.
+Pokud neurčíte `datatype` pro výčet, každý člen získá datový typ jeho `initializer`. Zadáte-li `datatype` i `initializer`, musí být datový typ `initializer` převoditelné na `datatype`. Pokud není k dispozici žádná `datatype` ani `initializer`, je výchozím nastavením datový typ `Integer`.
 
-## <a name="initializing-members"></a>Initializing Members
+## <a name="initializing-members"></a>Inicializace členů
 
-The `Enum` statement can initialize the contents of selected members in `memberlist`. You use `initializer` to supply an expression to be assigned to the member.
+Příkaz `Enum` může inicializovat obsah vybraných členů v `memberlist`. Pomocí `initializer` můžete zadat výraz, který má být přiřazen členu.
 
-If you do not specify `initializer` for a member, Visual Basic initializes it either to zero (if it is the first `member` in `memberlist`), or to a value greater by one than that of the immediately preceding `member`.
+Pokud neurčíte `initializer` pro člena, Visual Basic inicializuje buď na hodnotu nula (Pokud se jedná o první `member` v `memberlist`), nebo na hodnotu větší od jedné, než je hodnota bezprostředně předcházejícího `member`.
 
-The expression supplied in each `initializer` can be any combination of literals, other constants that are already defined, and enumeration members that are already defined, including a previous member of this enumeration. You can use arithmetic and logical operators to combine such elements.
+Výraz zadaný v každém `initializer` může být libovolná kombinace literálů, dalších konstant, které jsou již definovány, a členů výčtu, kteří jsou již definováni, včetně předchozího člena tohoto výčtu. K kombinování takových prvků lze použít aritmetické a logické operátory.
 
-You cannot use variables or functions in `initializer`. However, you can use conversion keywords such as `CByte` and `CShort`. You can also use `AscW` if you call it with a constant `String` or `Char` argument, since that can be evaluated at compile time.
+V `initializer`nemůžete použít proměnné ani funkce. Můžete však použít klíčová slova převodu, například `CByte` a `CShort`. `AscW` můžete použít také v případě, že ho voláte s konstantním `String` nebo argumentem `Char`, protože lze vyhodnotit v době kompilace.
 
-Enumerations cannot have floating-point values. If a member is assigned a floating-point value and `Option Strict` is set to on, a compiler error occurs. If `Option Strict` is off, the value is automatically converted to the `Enum` type.
+Výčty nemůžou mít hodnoty s plovoucí desetinnou čárkou. Pokud je členovi přiřazena hodnota s plovoucí desetinnou čárkou a `Option Strict` je nastavena na hodnotu on, dojde k chybě kompilátoru. Pokud je `Option Strict` vypnuto, hodnota je automaticky převedena na typ `Enum`.
 
-If the value of a member exceeds the allowable range for the underlying data type, or if you initialize any member to the maximum value allowed by the underlying data type, the compiler reports an error.
+Pokud hodnota členu překročí povolený rozsah pro základní datový typ, nebo Pokud inicializujete libovolného člena na maximální hodnotu povolenou podkladovým datovým typem, kompilátor ohlásí chybu.
 
 ## <a name="modifiers"></a>Modifikátory
 
-Class, structure, module, and interface member enumerations default to public access. You can adjust their access levels with the access modifiers. Namespace member enumerations default to friend access. You can adjust their access levels to public, but not to private or protected. For more information, see [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).
+Výčet členů třídy, struktury, modulu a rozhraní je ve výchozím nastavení veřejným přístupem. Můžete upravit jejich úrovně přístupu modifikátory přístupu. Výčty členů oboru názvů mají ve výchozím nastavení přístup typu Friend. Úrovně přístupu můžete upravit na veřejné, ale ne na privátní nebo chráněné. Další informace najdete v tématu [úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).
 
-All enumeration members have public access, and you cannot use any access modifiers on them. However, if the enumeration itself has a more restricted access level, the specified enumeration access level takes precedence.
+Všichni členové výčtu mají veřejný přístup a nemůžete použít žádné modifikátory přístupu. Nicméně pokud má výčet vlastní úroveň přístupu s vyšší úrovní oprávnění, má zadaná úroveň přístupu ke výčtu přednost.
 
-By default, all enumerations are types and their fields are constants. Therefore the `Shared`, `Static`, and `ReadOnly` keywords cannot be used when declaring an enumeration or its members.
+Ve výchozím nastavení jsou všechny výčty typy a jejich pole jsou konstanty. Proto klíčová slova `Shared`, `Static`a `ReadOnly` nelze použít při deklaraci výčtu nebo jeho členů.
 
-## <a name="assigning-multiple-values"></a>Assigning Multiple Values
+## <a name="assigning-multiple-values"></a>Přiřazení více hodnot
 
-Enumerations typically represent mutually exclusive values. By including the <xref:System.FlagsAttribute> attribute in the `Enum` declaration, you can instead assign multiple values to an instance of the enumeration. The <xref:System.FlagsAttribute> attribute specifies that the enumeration be treated as a bit field, that is, a set of flags. These are called *bitwise* enumerations.
+Výčty typicky znázorňují vzájemně se vylučující hodnoty. Zahrnutím atributu <xref:System.FlagsAttribute> v deklaraci `Enum` můžete místo toho přiřadit více hodnot do instance výčtu. Atribut <xref:System.FlagsAttribute> určuje, že výčet bude zpracován jako bitové pole, tedy sada příznaků. Tyto jsou označovány jako *bitové* výčty.
 
-When you declare an enumeration by using the <xref:System.FlagsAttribute> attribute, we recommend that you use powers of 2, that is, 1, 2, 4, 8, 16, and so on, for the values. We also recommend that "None" be the name of a member whose value is 0. For additional guidelines, see <xref:System.FlagsAttribute> and <xref:System.Enum>.
+Pokud deklarujete výčet pomocí atributu <xref:System.FlagsAttribute>, doporučujeme pro hodnoty použít mocniny 2, to znamená 1, 2, 4, 8, 16 a tak dále. Doporučujeme také, aby "žádný" byl název členu, jehož hodnota je 0. Další pokyny najdete v tématu <xref:System.FlagsAttribute> a <xref:System.Enum>.
 
 ## <a name="example"></a>Příklad
 
-The following example shows how to use the `Enum` statement. Note that the member is referred to as `EggSizeEnum.Medium`, and not as `Medium`.
+Následující příklad ukazuje, jak použít příkaz `Enum`. Všimněte si, že člen je označován jako `EggSizeEnum.Medium`, a ne jako `Medium`.
 
 [!code-vb[VbEnumsTask#41](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class1.vb#41)]
 
 ## <a name="example"></a>Příklad
 
-The method in the following example is outside the `Egg` class. Therefore, `EggSizeEnum` is fully qualified as `Egg.EggSizeEnum`.
+Metoda v následujícím příkladu je mimo třídu `Egg`. Proto je `EggSizeEnum` plně kvalifikovaný jako `Egg.EggSizeEnum`.
 
 [!code-vb[VbEnumsTask#42](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class1.vb#42)]
 
 ## <a name="example"></a>Příklad
 
-The following example uses the `Enum` statement to define a related set of named constant values. In this case, the values are colors you might choose to design data entry forms for a database.
+Následující příklad používá příkaz `Enum` k definování související sady pojmenovaných hodnot konstant. V tomto případě hodnoty jsou barvy, které můžete zvolit pro návrh formulářů pro zadávání dat pro databázi.
 
 [!code-vb[VbEnumsTask#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#30)]
 
 ## <a name="example"></a>Příklad
 
-The following example shows values that include both positive and negative numbers.
+Následující příklad ukazuje hodnoty, které obsahují kladná i záporná čísla.
 
 [!code-vb[VbEnumsTask#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#31)]
 
 ## <a name="example"></a>Příklad
 
-In the following example, an `As` clause is used to specify the `datatype` of an enumeration.
+V následujícím příkladu je použita klauzule `As` k určení `datatype` výčtu.
 
 [!code-vb[VbEnumsTask#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#6)]
 
 ## <a name="example"></a>Příklad
 
-The following example shows how to use a bitwise enumeration. Multiple values can be assigned to an instance of a bitwise enumeration. The `Enum` declaration includes the <xref:System.FlagsAttribute> attribute, which indicates that the enumeration can be treated as a set of flags.
+Následující příklad ukazuje, jak použít bitový výčet. K instanci bitového výčtu lze přiřadit více hodnot. Deklarace `Enum` obsahuje atribut <xref:System.FlagsAttribute>, který označuje, že výčet lze považovat za sadu příznaků.
 
 [!code-vb[VbEnumsTask#61](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class1.vb#61)]
 
 ## <a name="example"></a>Příklad
 
-The following example iterates through an enumeration. It uses the <xref:System.Enum.GetNames%2A> method to retrieve an array of member names from the enumeration, and <xref:System.Enum.GetValues%2A> to retrieve an array of member values.
+Následující příklad prochází výčet. Používá metodu <xref:System.Enum.GetNames%2A> k načtení pole názvů členů z výčtu a <xref:System.Enum.GetValues%2A> k načtení pole hodnot členů.
 
 [!code-vb[VbEnumsTask#51](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class1.vb#51)]
 

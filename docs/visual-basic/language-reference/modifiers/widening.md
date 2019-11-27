@@ -18,20 +18,20 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74347835"
 ---
 # <a name="widening-visual-basic"></a>Rozšíření (Visual Basic)
-Indicates that a conversion operator (`CType`) converts a class or structure to a type that can hold all possible values of the original class or structure.  
+Označuje, že operátor převodu (`CType`) převede třídu nebo strukturu na typ, který může uchovávat všechny možné hodnoty původní třídy nebo struktury.  
   
-## <a name="converting-with-the-widening-keyword"></a>Converting with the Widening Keyword  
- The conversion procedure must specify `Public Shared` in addition to `Widening`.  
+## <a name="converting-with-the-widening-keyword"></a>Převod pomocí klíčového slova rozšiřování  
+ Postup převodu musí kromě `Widening`zadat `Public Shared`.  
   
- Widening conversions always succeed at run time and never incur data loss. Examples are `Single` to `Double`, `Char` to `String`, and a derived type to its base type. This last conversion is widening because the derived type contains all the members of the base type and thus is an instance of the base type.  
+ Rozšiřující převody jsou vždy úspěšné v době běhu a nikdy neúčtují ztrátu dat. Příklady jsou `Single` `Double`, `Char` na `String`a odvozeného typu na jeho základní typ. Tento poslední převod se rozšiřuje, protože odvozený typ obsahuje všechny členy základního typu, a proto je instancí základního typu.  
   
- The consuming code does not have to use `CType` for widening conversions, even if `Option Strict` is `On`.  
+ Nenáročný kód nemusí používat `CType` pro rozšiřující převody, a to i v případě, že `Option Strict` je `On`.  
   
- The `Widening` keyword can be used in this context:  
+ Klíčové slovo `Widening` lze použít v tomto kontextu:  
   
  [Příkaz Operator](../../../visual-basic/language-reference/statements/operator-statement.md)  
   
- For example definitions of widening and narrowing conversion operators, see [How to: Define a Conversion Operator](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md).  
+ Například definice rozšiřujících a zužujících operátorů převodu naleznete v tématu [How to: define a Conversion](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)operator.  
   
 ## <a name="see-also"></a>Viz také:
 

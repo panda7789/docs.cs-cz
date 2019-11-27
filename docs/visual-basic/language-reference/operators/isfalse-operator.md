@@ -15,17 +15,17 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349520"
 ---
 # <a name="isfalse-operator-visual-basic"></a>IsFalse – operátor (Visual Basic)
-Determines whether an expression is `False`.  
+Určuje, zda je výraz `False`.  
   
- You cannot call `IsFalse` explicitly in your code, but the Visual Basic compiler can use it to generate code from `AndAlso` clauses. If you define a class or structure and then use a variable of that type in an `AndAlso` clause, you must define `IsFalse` on that class or structure.  
+ Ve svém kódu nemůžete volat `IsFalse` explicitně, ale kompilátor Visual Basic ho může použít k vygenerování kódu z `AndAlso` klauzulí. Definujete-li třídu nebo strukturu a poté použijete proměnnou typu v klauzuli `AndAlso`, je nutné definovat `IsFalse` v této třídě nebo struktuře.  
   
- The compiler considers the `IsFalse` and `IsTrue` operators as a *matched pair*. This means that if you define one of them, you must also define the other one.  
+ Kompilátor považuje operátory `IsFalse` a `IsTrue` za *spárovaný pár*. To znamená, že pokud definujete jeden z nich, musíte také definovat druhý.  
   
 > [!NOTE]
-> The `IsFalse` operator can be *overloaded*, which means that a class or structure can redefine its behavior when its operand has the type of that class or structure. If your code uses this operator on such a class or structure, be sure you understand its redefined behavior. For more information, see [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+> Operátor `IsFalse` může být *přetížený*, což znamená, že třída nebo struktura může předefinovat své chování, když má jeho operand typ této třídy nebo struktury. Pokud váš kód používá tento operátor na takové třídě nebo struktuře, ujistěte se, že rozumíte jeho předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Příklad  
- The following code example defines the outline of a structure that includes definitions for the `IsFalse` and `IsTrue` operators.  
+ Následující příklad kódu definuje obrys struktury, která obsahuje definice pro operátory `IsFalse` a `IsTrue`.  
   
  [!code-vb[VbVbalrOperators#28](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#28)]  
   

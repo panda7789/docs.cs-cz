@@ -17,49 +17,49 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74333733"
 ---
 # <a name="constant-and-literal-data-types-visual-basic"></a>Datové typy konstanty a literálu (Visual Basic)
-A literal is a value that is expressed as itself rather than as a variable's value or the result of an expression, such as the number 3 or the string "Hello". A constant is a meaningful name that takes the place of a literal and retains this same value throughout the program, as opposed to a variable, whose value may change.  
+Literál je hodnota, která je vyjádřena jako samotná, nikoli jako hodnota proměnné nebo výsledek výrazu, například číslo 3 nebo řetězec "Hello". Konstanta je smysluplný název, který přebírá místo literálu a uchovává stejnou hodnotu v celém programu, na rozdíl od proměnné, jejíž hodnota se může změnit.  
   
- When [Option Infer](../../../../visual-basic/language-reference/statements/option-infer-statement.md) is `Off` and [Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md) is `On`, you must declare all constants explicitly with a data type. In the following example, the data type of `MyByte` is explicitly declared as data type `Byte`:  
+ Je-li [možnost odvozena](../../../../visual-basic/language-reference/statements/option-infer-statement.md) `Off` a [možnost Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md) je `On`, je nutné explicitně deklarovat všechny konstanty s datovým typem. V následujícím příkladu je datový typ `MyByte` explicitně deklarován jako datový typ `Byte`:  
   
  [!code-vb[VbVbalrConstants#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrConstants/VB/Class1.vb#1)]  
   
- When `Option Infer` is `On` or `Option Strict` is `Off`, you can declare a constant without specifying a data type with an `As` clause. The compiler determines the type of the constant from the type of the expression. A numeric integer literal is cast by default to the `Integer` data type. The default data type for floating-point numbers is `Double`, and the keywords `True` and `False` specify a `Boolean` constant.  
+ Pokud je `Option Infer` `On` nebo `Option Strict` `Off`, můžete deklarovat konstantu bez určení datového typu s klauzulí `As`. Kompilátor určuje typ konstanty z typu výrazu. Číselný celočíselný literál je ve výchozím nastavení převeden na datový typ `Integer`. Výchozí datový typ pro čísla s plovoucí desetinnou čárkou je `Double`a klíčová slova `True` a `False` určují `Boolean`ou konstantu.  
   
-## <a name="literals-and-type-coercion"></a>Literals and Type Coercion  
- In some cases, you might want to force a literal to a particular data type; for example, when assigning a particularly large integral literal value to a variable of type `Decimal`. The following example produces an error:  
+## <a name="literals-and-type-coercion"></a>Literály a převod typu  
+ V některých případech můžete chtít vynutit literál na určitý datový typ; například při přiřazování zvláště velké celočíselné literálové hodnoty proměnné typu `Decimal`. Následující příklad vytvoří chybu:  
   
 ```vb  
 Dim myDecimal as Decimal  
 myDecimal = 100000000000000000000   ' This causes a compiler error.  
 ```  
   
- The error results from the representation of the literal. The `Decimal` data type can hold a value this large, but the literal is implicitly represented as a `Long`, which cannot.  
+ Chyba je výsledkem reprezentace literálu. `Decimal` datový typ může obsahovat hodnotu, která je větší, ale literál je implicitně reprezentován jako `Long`, což nemůže.  
   
- You can coerce a literal to a particular data type in two ways: by appending a type character to it, or by placing it within enclosing characters. A type character or enclosing characters must immediately precede and/or follow the literal, with no intervening space or characters of any kind.  
+ Literál můžete převést na konkrétní datový typ dvěma způsoby: připojením znaku typu k tomuto typu nebo jeho umístěním do ohraničujících znaků. Znak typu nebo ohraničující znaky musí bezprostředně předcházet nebo následovat po literálu, bez mezer nebo znaků jakéhokoliv druhu.  
   
- To make the previous example work, you can append the `D` type character to the literal, which causes it to be represented as a `Decimal`:  
+ Chcete-li provést předchozí příklad práce, můžete k literálu připojit `D` typ znaku, který způsobí, že bude reprezentován jako `Decimal`:  
   
  [!code-vb[VbVbalrConstants#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrConstants/VB/Class1.vb#2)]  
   
- The following example demonstrates correct usage of type characters and enclosing characters:  
+ Následující příklad ukazuje správné použití znaků typu a ohraničující znaky:  
   
  [!code-vb[VbVbalrConstants#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrConstants/VB/Class1.vb#3)]  
   
- The following table shows the enclosing characters and type characters available in Visual Basic.  
+ V následující tabulce jsou uvedeny ohraničující znaky a znaky, které jsou k dispozici v Visual Basic.  
   
-|Datový typ|Enclosing character|Appended type character|  
+|Typ dat|Ohraničující znak|Znak připojeného typu|  
 |---|---|---|  
-|`Boolean`|(none)|(none)|  
-|`Byte`|(none)|(none)|  
+|`Boolean`|nTato|nTato|  
+|`Byte`|nTato|nTato|  
 |`Char`|"|C|  
-|`Date`|#|(none)|  
-|`Decimal`|(none)|D or @|  
-|`Double`|(none)|R or #|  
-|`Integer`|(none)|I or %|  
-|`Long`|(none)|L or &|  
-|`Short`|(none)|S|  
-|`Single`|(none)|F or !|  
-|`String`|"|(none)|  
+|`Date`|#|nTato|  
+|`Decimal`|nTato|D nebo @|  
+|`Double`|nTato|R nebo #|  
+|`Integer`|nTato|I nebo%|  
+|`Long`|nTato|L nebo &|  
+|`Short`|nTato|S|  
+|`Single`|nTato|F nebo!|  
+|`String`|"|nTato|  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -69,7 +69,7 @@ myDecimal = 100000000000000000000   ' This causes a compiler error.
 - [Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)
 - [Příkaz Option Explicit](../../../../visual-basic/language-reference/statements/option-explicit-statement.md)
 - [Přehled výčtů](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-overview.md)
-- [How to: Declare an Enumeration](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)
+- [Postupy: deklarace výčtu](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)
 - [Výčty a kvalifikace názvu](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md)
 - [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)
 - [Konstanty a výčty](../../../../visual-basic/language-reference/constants-and-enumerations.md)

@@ -17,16 +17,16 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74341090"
 ---
 # <a name="function-procedures-visual-basic"></a>Procedury funkcí (Visual Basic)
-A `Function` procedure is a series of Visual Basic statements enclosed by the `Function` and `End Function` statements. The `Function` procedure performs a task and then returns control to the calling code. When it returns control, it also returns a value to the calling code.  
+Procedura `Function` je série Visual Basic příkazů, které jsou uzavřeny příkazy `Function` a `End Function`. Procedura `Function` provede úlohu a vrátí řízení volajícímu kódu. Při návratu ovládacího prvku vrátí také hodnotu volajícímu kódu.  
   
- Each time the procedure is called, its statements run, starting with the first executable statement after the `Function` statement and ending with the first `End Function`, `Exit Function`, or `Return` statement encountered.  
+ Pokaždé, když je procedura volána, její příkazy se spustí, počínaje prvním spustitelným příkazem po příkazu `Function` a končící prvním `End Function`, `Exit Function`nebo `Return`m příkazu.  
   
- You can define a `Function` procedure in a module, class, or structure. It is `Public` by default, which means you can call it from anywhere in your application that has access to the module, class, or structure in which you defined it.  
+ Můžete definovat `Function` proceduru v modulu, třídě nebo struktuře. Ve výchozím nastavení je `Public`, což znamená, že ho můžete volat odkudkoli v aplikaci, která má přístup k modulu, třídě nebo struktuře, ve které jste ji definovali.  
   
- A `Function` procedure can take arguments, such as constants, variables, or expressions, which are passed to it by the calling code.  
+ `Function` procedura může přebírat argumenty, jako jsou konstanty, proměnné nebo výrazy, které jsou předány volajícím kódem.  
   
 ## <a name="declaration-syntax"></a>Syntaxe deklarace  
- The syntax for declaring a `Function` procedure is as follows:  
+ Syntaxe pro deklaraci `Function` postup je následující:  
   
 ```vb  
 [Modifiers] Function FunctionName [(ParameterList)] As ReturnType  
@@ -34,12 +34,12 @@ A `Function` procedure is a series of Visual Basic statements enclosed by the `F
 End Function  
 ```  
   
- The *modifiers* can specify access level and information regarding overloading, overriding, sharing, and shadowing. For more information, see [Function Statement](../../../../visual-basic/language-reference/statements/function-statement.md).  
+ *Modifikátory* mohou určovat úroveň přístupu a informace týkající se přetížení, přepsání, sdílení a stínování. Další informace naleznete v tématu [příkaz Function](../../../../visual-basic/language-reference/statements/function-statement.md).  
   
- You declare each parameter the same way you do for [Sub Procedures](./sub-procedures.md).  
+ Každý parametr deklarujete stejným způsobem jako [procedury pro sub](./sub-procedures.md).  
   
-### <a name="data-type"></a>Datový typ  
- Every `Function` procedure has a data type, just as every variable does. This data type is specified by the `As` clause in the `Function` statement, and it determines the data type of the value the function returns to the calling code. The following sample declarations illustrate this.  
+### <a name="data-type"></a>Typ dat  
+ Každý `Function` procedura má datový typ stejně jako každá proměnná. Tento typ dat je určen klauzulí `As` v příkazu `Function` a určuje datový typ hodnoty, kterou funkce vrátí na volající kód. Tento příklad ilustruje následující ukázkové deklarace.  
   
 ```vb  
 Function yesterday() As Date  
@@ -49,12 +49,12 @@ Function findSqrt(ByVal radicand As Single) As Single
 End Function  
 ```  
   
- For more information, see "Parts" in [Function Statement](../../../../visual-basic/language-reference/statements/function-statement.md).  
+ Další informace naleznete v části "části" v [příkazu Function](../../../../visual-basic/language-reference/statements/function-statement.md).  
   
-## <a name="returning-values"></a>Returning Values  
- The value a `Function` procedure sends back to the calling code is called its return value. The procedure returns this value in one of two ways:  
+## <a name="returning-values"></a>Vracení hodnot  
+ Hodnota `Function` procedura odesílá zpět do volajícího kódu se nazývá návratová hodnota. Procedura vrátí tuto hodnotu jedním ze dvou způsobů:  
   
-- It uses the `Return` statement to specify the return value, and returns control immediately to the calling program. Toto dokládá následující příklad.  
+- Používá příkaz `Return` k určení návratové hodnoty a vrátí řízení ihned volajícímu programu. Toto dokládá následující příklad.  
   
 ```vb  
 Function FunctionName [(ParameterList)] As ReturnType  
@@ -64,7 +64,7 @@ Function FunctionName [(ParameterList)] As ReturnType
 End Function  
 ```  
   
-- It assigns a value to its own function name in one or more statements of the procedure. Control does not return to the calling program until an `Exit Function` or `End Function` statement is executed. Toto dokládá následující příklad.  
+- Přiřadí hodnotu vlastnímu názvu funkce v jednom nebo více příkazech procedury. Řízení se nevrátí do volajícího programu, dokud není proveden příkaz `Exit Function` nebo `End Function`. Toto dokládá následující příklad.  
   
 ```vb  
 Function FunctionName [(ParameterList)] As ReturnType  
@@ -74,27 +74,27 @@ Function FunctionName [(ParameterList)] As ReturnType
 End Function  
 ```  
   
- The advantage of assigning the return value to the function name is that control does not return from the procedure until it encounters an `Exit Function` or `End Function` statement. This allows you to assign a preliminary value and adjust it later if necessary.  
+ Výhodou přiřazení návratové hodnoty k názvu funkce je, že se ovládací prvek z procedury nevrátí, dokud nenalezne příkaz `Exit Function` nebo `End Function`. To vám umožní přiřadit předběžnou hodnotu a v případě potřeby ho upravit později.  
   
- For more information about returning values, see [Function Statement](../../../../visual-basic/language-reference/statements/function-statement.md). For information about returning arrays, see [Arrays](../../../../visual-basic/programming-guide/language-features/arrays/index.md).  
+ Další informace o vrácení hodnot naleznete v tématu [příkaz Function](../../../../visual-basic/language-reference/statements/function-statement.md). Informace o vracení polí naleznete v tématu [Arrays](../../../../visual-basic/programming-guide/language-features/arrays/index.md).  
   
-## <a name="calling-syntax"></a>Calling Syntax  
- You invoke a `Function` procedure by including its name and arguments either on the right side of an assignment statement or in an expression. You must provide values for all arguments that are not optional, and you must enclose the argument list in parentheses. If no arguments are supplied, you can optionally omit the parentheses.  
+## <a name="calling-syntax"></a>Syntaxe volání  
+ Vyvoláte `Function` proceduru zahrnutím jejího názvu a argumentů buď na pravé straně příkazu přiřazení, nebo ve výrazu. Je nutné zadat hodnoty pro všechny argumenty, které nejsou volitelné, a je třeba uzavřít seznam argumentů v závorkách. Pokud nejsou zadány žádné argumenty, můžete volitelně vynechat závorky.  
   
- The syntax for a call to a `Function` procedure is as follows:  
+ Syntaxe pro volání `Function` postup je následující:  
   
- *lvalue*  `=`  *functionname* `[(` *argumentlist* `)]`  
+ *l* -hodnota`=`*function* `[(` *ArgumentList* `)]`  
   
- `If ((` *functionname* `[(` *argumentlist* `)] / 3) <=`  *expression* `) Then`  
+ `If ((` *function* `[(` *argumentlist* `)] / 3) <=`*výraz* `) Then`  
   
- When you call a `Function` procedure, you do not have to use its return value. If you do not, all the actions of the function are performed, but the return value is ignored. <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> is often called in this manner.  
+ Při volání `Function`ho postupu není nutné použít jeho návratovou hodnotu. Pokud to neuděláte, jsou provedeny všechny akce funkce, ale návratová hodnota je ignorována. Tento způsob je často volán <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>.  
   
-### <a name="illustration-of-declaration-and-call"></a>Illustration of Declaration and Call  
- The following `Function` procedure calculates the longest side, or hypotenuse, of a right triangle, given the values for the other two sides.  
+### <a name="illustration-of-declaration-and-call"></a>Ilustrace deklarace a volání  
+ Následující `Function` postup vypočítá nejdelší stranu (neboli přepony) pravého trojúhelníku s ohledem na hodnoty ostatních dvou stran.  
   
  [!code-vb[VbVbcnProcedures#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#1)]  
   
- The following example shows a typical call to `hypotenuse`.  
+ Následující příklad ukazuje typické volání `hypotenuse`.  
   
  [!code-vb[VbVbcnProcedures#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#6)]  
   

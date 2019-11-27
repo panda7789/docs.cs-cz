@@ -17,7 +17,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74331299"
 ---
 # <a name="-operator-visual-basic"></a>^= – operátor (Visual Basic)
-Raises the value of a variable or property to the power of an expression and assigns the result back to the variable or property.  
+Vyvolá hodnotu proměnné nebo vlastnosti na mocninu výrazu a přiřadí výsledek zpátky proměnné nebo vlastnosti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -27,33 +27,33 @@ variableorproperty ^= expression
   
 ## <a name="parts"></a>Součásti  
  `variableorproperty`  
- Požadováno. Any numeric variable or property.  
+ Požadováno. Jakákoli číselná proměnná nebo vlastnost.  
   
  `expression`  
- Požadováno. Any numeric expression.  
+ Požadováno. Libovolný číselný výraz.  
   
 ## <a name="remarks"></a>Poznámky  
- The element on the left side of the `^=` operator can be a simple scalar variable, a property, or an element of an array. The variable or property cannot be [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md).  
+ Element na levé straně operátoru `^=` může být jednoduchá skalární proměnná, vlastnost nebo prvek pole. Proměnná nebo vlastnost nemůže být [jen pro čtení](../../../visual-basic/language-reference/modifiers/readonly.md).  
   
- The `^=` operator first raises the value of the variable or property (on the left-hand side of the operator) to the power of the value of the expression (on the right-hand side of the operator). The operator then assigns the result of that operation back to the variable or property.  
+ Operátor `^=` nejprve vyvolá hodnotu proměnné nebo vlastnosti (na levé straně operátoru) na mocninu hodnoty výrazu (na pravé straně operátoru). Operátor potom přiřadí výsledek této operace zpátky k proměnné nebo vlastnosti.  
   
- Visual Basic always performs exponentiation in the [Double Data Type](../../../visual-basic/language-reference/data-types/double-data-type.md). Operands of any different type are converted to `Double`, and the result is always `Double`.  
+ Visual Basic vždy provádí umocnění v [datovém typu Double](../../../visual-basic/language-reference/data-types/double-data-type.md). Operandy jiného typu jsou převedeny na `Double`a výsledek je vždy `Double`.  
   
- The value of `expression` can be fractional, negative, or both.  
+ Hodnota `expression` může být zlomková, záporná nebo obojí.  
   
 ## <a name="overloading"></a>Přetížení  
- The [^ Operator](../../../visual-basic/language-reference/operators/exponentiation-operator.md) can be *overloaded*, which means that a class or structure can redefine its behavior when an operand has the type of that class or structure. Overloading the `^` operator affects the behavior of the `^=` operator. If your code uses `^=` on a class or structure that overloads `^`, be sure you understand its redefined behavior. For more information, see [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ [Operátor ^](../../../visual-basic/language-reference/operators/exponentiation-operator.md) může být *přetížený*, což znamená, že třída nebo struktura může předefinovat své chování, když má operand typ této třídy nebo struktury. Přetížení operátoru `^` má vliv na chování operátoru `^=`. Pokud váš kód používá `^=` ve třídě nebo struktuře, která přetěžuje `^`, ujistěte se, že rozumíte jeho předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Příklad  
- The following example uses the `^=` operator to raise the value of one `Integer` variable to the power of a second variable and assign the result to the first variable.  
+ Následující příklad používá operátor `^=` k vyvolání hodnoty jedné `Integer` proměnné na mocninu druhé proměnné a přiřazení výsledku první proměnné.  
   
  [!code-vb[VbVbalrOperators#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#21)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Operátor ^](../../../visual-basic/language-reference/operators/exponentiation-operator.md)
+- [^ – operátor](../../../visual-basic/language-reference/operators/exponentiation-operator.md)
 - [Operátory přiřazení](../../../visual-basic/language-reference/operators/assignment-operators.md)
 - [Aritmetické operátory](../../../visual-basic/language-reference/operators/arithmetic-operators.md)
-- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Priorita operátorů v Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
 - [Příkazy](../../../visual-basic/programming-guide/language-features/statements.md)

@@ -15,20 +15,20 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74332317"
 ---
 # <a name="how-to-access-xml-descendant-elements-visual-basic"></a>Postupy: Přístup k následnickým elementům XML (Visual Basic)
-This example shows how to use a descendant axis property to access all XML elements that have a specified name and that are contained under an XML element. In particular, it uses the `Value` property to get the value of the first element in the collection that the `name` descendant axis property returns. The `name` descendant axis property gets all elements named `name` that are contained in the `contacts` object. This example also uses the `phone` descendant axis property to access all descendants named `phone` that are contained in the `contacts` object.  
+Tento příklad ukazuje, jak použít vlastnost následníka pro přístup ke všem elementům XML, které mají zadaný název a které jsou obsaženy v elementu XML. Konkrétně používá vlastnost `Value` k získání hodnoty prvního prvku v kolekci, kterou vrací vlastnost osy `name` následníka. Vlastnost osy `name` následníka získá všechny prvky pojmenované `name`, které jsou obsaženy v objektu `contacts`. Tento příklad také používá vlastnost `phone` následníka pro přístup ke všem následníkům s názvem `phone`, které jsou obsaženy v objektu `contacts`.  
   
 ## <a name="example"></a>Příklad  
  [!code-vb[VbXMLSamples#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples13.vb#31)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- This example requires:  
+ Tento příklad vyžaduje:  
   
-- A reference to the <xref:System.Xml.Linq> namespace.  
+- Odkaz na obor názvů <xref:System.Xml.Linq>.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Xml.Linq.XContainer.Descendants%2A?displayProperty=nameWithType>
 - [Vlastnost osy nástupce XML](../../../../visual-basic/language-reference/xml-axis/xml-descendant-axis-property.md)
 - [Vlastnost hodnoty XML](../../../../visual-basic/language-reference/xml-axis/xml-value-property.md)
-- [Accessing XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md)
+- [Přístup k XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md)
 - [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)

@@ -12,13 +12,13 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349177"
 ---
 # <a name="out-of-string-space-visual-basic"></a>Nedostatek místa pro řetězce (Visual Basic)
-With Visual Basic, you can use very large strings. However, the requirements of other programs and the way you work with your strings can still cause this error.  
+Pomocí Visual Basic můžete použít velmi velké řetězce. Nicméně požadavky jiných programů a způsob práce se svými řetězci můžou tuto chybu způsobovat i přesto.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Make sure that an expression requiring temporary string creation during evaluation is not causing the error.  
+1. Ujistěte se, že výraz vyžadující dočasné vytváření řetězců během hodnocení nezpůsobuje chybu.  
   
-2. Remove any unnecessary applications from memory to create more space.  
+2. Pokud chcete vytvořit více místa, odeberte z paměti všechny nepotřebné aplikace.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -39,7 +39,7 @@ V následující tabulce najdete přehled různých funkcí poskytovaných tímt
 >
 > Kromě toho přepínače `/r` a `/ct` pro odkazování na typy jsou pro generování kontraktů dat. Tyto přepínače při použití XmlSerializer nefungují.
 
-### <a name="timeout"></a>časový limit
+### <a name="timeout"></a>Časový limit
 
 Při načítání metadat má nástroj časový limit pět minut. Tento časový limit se vztahuje pouze na načítání metadat v síti. Nevztahuje se na zpracování těchto metadat.
 
@@ -62,7 +62,7 @@ V následující tabulce jsou uvedeny některé běžně používané možnosti 
 |/Directory:\<Directory >|Adresář, ve kterém se mají vytvářet soubory<br /><br /> Výchozí: aktuální adresář.<br /><br /> Krátký tvar: `/d`|
 |/help|Zobrazí syntaxi příkazu a možnosti nástroje.<br /><br /> Krátký tvar: `/?`|
 |/noLogo|Potlačíní autorského práva a zprávy banneru.|
-|/svcutilConfig:\<configFile>|Určuje vlastní konfigurační soubor, který se použije místo souboru App. config. Tato možnost se dá použít k registraci rozšíření System. serviceModel bez změny konfiguračního souboru nástroje.|
+|/svcutilConfig:\<configFile >|Určuje vlastní konfigurační soubor, který se použije místo souboru App. config. Tato možnost se dá použít k registraci rozšíření System. serviceModel bez změny konfiguračního souboru nástroje.|
 |/target:\<typ výstupu >|Určuje výstup, který má nástroj vygenerovat.<br /><br /> Platné hodnoty jsou code, metadata nebo xmlSerializer.<br /><br /> Krátký tvar: `/t`|
 
 ### <a name="code-generation"></a>Vytvoření kódu
@@ -88,7 +88,7 @@ V případě služby s koncovým bodem třída BasicHttpContextBinding vygeneruj
 |------------|-----------------|
 |/async|Generuje synchronní i asynchronní signatury metody.<br /><br /> Výchozí: vygenerujte pouze signatury synchronních metod.<br /><br /> Krátký tvar: `/a`|
 |/collectionType: typ\<>|Určuje typ kolekce seznamu pro klienta WCF.<br/><br /> Výchozí: typ kolekce je System. Array. <br /><br /> Krátký tvar: `/ct`|
-|/config:\<configFile>|Určuje název souboru pro generovaný konfigurační soubor.<br /><br /> Výchozí: Output. config|
+|/config:\<configFile >|Určuje název souboru pro generovaný konfigurační soubor.<br /><br /> Výchozí: Output. config|
 |/dataContractOnly|Generuje kód pouze pro typy kontraktu dat. Typy kontraktů služby se nevygenerují.<br /><br /> Pro tuto možnost byste měli zadat jenom místní soubory metadat.<br /><br /> Krátký tvar: `/dconly`|
 |/enableDataBinding|Implementuje rozhraní <xref:System.ComponentModel.INotifyPropertyChanged> pro všechny typy kontraktů dat, aby bylo možné datovou vazbu povolit.<br /><br /> Krátký tvar: `/edb`|
 |/excludeType: typ\<>|Určuje plně kvalifikovaný název nebo kvalifikovaný název sestavení, který bude vyloučen z odkazovaných typů kontraktů.<br /><br /> Při použití tohoto přepínače spolu s `/r` z oddělených knihoven DLL je odkazováno na úplný název třídy XSD.<br /><br /> Krátký tvar: `/et`|
@@ -125,7 +125,7 @@ Svcutil. exe může exportovat metadata pro služby, kontrakty a datové typy v 
 
 |Možnost|Popis|
 |------------|-----------------|
-|/serviceName:\<serviceConfigName>|Určuje název konfigurace služby, která se má exportovat. Pokud použijete tuto možnost, musí se jako vstup předat spustitelné sestavení s přidruženým konfiguračním souborem. Svcutil. exe vyhledá všechny přidružené konfigurační soubory pro konfiguraci služby. Pokud konfigurační soubory obsahují jakékoli typy rozšíření, sestavení, která obsahují tyto typy, musí být buď v globální mezipaměti sestavení (GAC), nebo musí být explicitně poskytnuta pomocí možnosti `/reference`.|
+|/serviceName:\<serviceConfigName >|Určuje název konfigurace služby, která se má exportovat. Pokud použijete tuto možnost, musí se jako vstup předat spustitelné sestavení s přidruženým konfiguračním souborem. Svcutil. exe vyhledá všechny přidružené konfigurační soubory pro konfiguraci služby. Pokud konfigurační soubory obsahují jakékoli typy rozšíření, sestavení, která obsahují tyto typy, musí být buď v globální mezipaměti sestavení (GAC), nebo musí být explicitně poskytnuta pomocí možnosti `/reference`.|
 |/Reference:\<cesta k souboru >|Přidá zadané sestavení do sady sestavení používané pro překlad odkazů typu. Pokud exportujete nebo ověřujete službu, která používá rozšíření třetích stran (chování, vazby a BindingElements) zaregistrovaná v konfiguraci, použijte tuto možnost k vyhledání sestavení rozšíření, která nejsou v globální mezipaměti sestavení (GAC).<br /><br /> Krátký tvar: `/r`|
 |/dataContractOnly|Funguje pouze na typech kontraktů dat. Kontrakty služby se nezpracovávají.<br /><br /> Pro tuto možnost byste měli zadat jenom místní soubory metadat.<br /><br /> Krátký tvar: `/dconly`|
 |/excludeType: typ\<>|Určuje plně kvalifikovaný název nebo kvalifikovaný název sestavení typu, který se má vyloučit z exportu. Tuto možnost lze použít při exportu metadat pro službu nebo sadu kontraktů služby pro vyloučení typů z exportu. Tuto možnost nelze použít společně s možností `/dconly`.<br /><br /> Pokud máte jedno sestavení obsahující několik služeb a každá z nich používá samostatné třídy se stejným názvem XSD, měli byste pro tento přepínač zadat název služby místo názvu třídy XSD.<br /><br /> Typy XSD nebo kontraktů dat nejsou podporovány.<br /><br /> Krátký tvar: `/et`|
@@ -143,7 +143,7 @@ Ověřování lze použít k detekci chyb v implementacích služby bez hostová
 |Možnost|Popis|
 |------------|-----------------|
 |/Validate|Ověří implementaci služby určenou možností `/serviceName`. Pokud použijete tuto možnost, musí se jako vstup předat spustitelné sestavení s přidruženým konfiguračním souborem.<br /><br /> Krátký tvar: `/v`|
-|/serviceName:\<serviceConfigName>|Určuje název konfigurace služby, která se má ověřit. Svcutil. exe vyhledá všechny přidružené konfigurační soubory všech vstupních sestavení pro konfiguraci služby. Pokud konfigurační soubory obsahují jakékoli typy rozšíření, sestavení, která obsahují tyto typy, musí být buď v globální mezipaměti sestavení (GAC), nebo musí být explicitně poskytnuta pomocí možnosti `/reference`.|
+|/serviceName:\<serviceConfigName >|Určuje název konfigurace služby, která se má ověřit. Svcutil. exe vyhledá všechny přidružené konfigurační soubory všech vstupních sestavení pro konfiguraci služby. Pokud konfigurační soubory obsahují jakékoli typy rozšíření, sestavení, která obsahují tyto typy, musí být buď v globální mezipaměti sestavení (GAC), nebo musí být explicitně poskytnuta pomocí možnosti `/reference`.|
 |/Reference:\<cesta k souboru >|Přidá zadané sestavení do sady sestavení používané pro překlad odkazů typu. Pokud exportujete nebo ověřujete službu, která používá rozšíření třetích stran (chování, vazby a BindingElements) zaregistrovaná v konfiguraci, použijte tuto možnost k vyhledání sestavení rozšíření, která nejsou v globální mezipaměti sestavení (GAC).<br /><br /> Krátký tvar: `/r`|
 |/dataContractOnly|Funguje pouze na typech kontraktů dat. Kontrakty služby se nezpracovávají.<br /><br /> Pro tuto možnost byste měli zadat jenom místní soubory metadat.<br /><br /> Krátký tvar: `/dconly`|
 |/excludeType: typ\<>|Určuje plně kvalifikovaný název nebo kvalifikovaný název sestavení typu, který se má vyloučit z ověřování.<br /><br /> Krátký tvar: `/et`|

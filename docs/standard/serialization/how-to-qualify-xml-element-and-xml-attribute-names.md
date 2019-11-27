@@ -1,5 +1,5 @@
 ---
-title: 'How to: Qualify XML Element and XML Attribute Names'
+title: 'Postupy: zařazování XML elementů a názvů atributů XML'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -16,9 +16,9 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353097"
 ---
-# <a name="how-to-qualify-xml-element-and-xml-attribute-names"></a>How to: Qualify XML Element and XML Attribute Names
+# <a name="how-to-qualify-xml-element-and-xml-attribute-names"></a>Postupy: zařazování XML elementů a názvů atributů XML
 
-XML namespaces contained by instances of the <xref:System.Xml.Serialization.XmlSerializerNamespaces> class must conform to the World Wide Web Consortium (W3C) specification called [Namespaces in XML](https://www.w3.org/TR/REC-xml-names/).
+Obory názvů XML obsažené v instancích třídy <xref:System.Xml.Serialization.XmlSerializerNamespaces> musí odpovídat specifikaci konsorcium World Wide Web (W3C), která se nazývá [obory názvů v XML](https://www.w3.org/TR/REC-xml-names/).
 
 Obory názvů XML poskytuje metodu pro kvalifikované názvy elementů XML a atributy ve formátu XML v dokumentech XML. Úplný název se skládá z předpony a názvu místní, oddělených středníkem. Předpona, která funguje pouze jako zástupný symbol; je mapován na identifikátor URI, který určuje obor názvů. Kombinace oboru názvů univerzálně spravované identifikátoru URI a místní název vytváří název, který je musí být jedinečný.
 
@@ -175,7 +175,7 @@ public class Book
 - <xref:System.Xml.Serialization.XmlSerializer>
 - [Nástroj pro definici schématu XML a serializace XML](the-xml-schema-definition-tool-and-xml-serialization.md)
 - [Představení serializace XML](introducing-xml-serialization.md)
-- [XmlSerializer Class](xref:System.Xml.Serialization.XmlSerializer)
+- [XmlSerializer – Třída](xref:System.Xml.Serialization.XmlSerializer)
 - [Seznam atributů řídících serializaci XML](attributes-that-control-xml-serialization.md)
 - [Postupy: Zadání alternativního názvu elementu pro XML stream](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
 - [Postupy: Serializace objektu](how-to-serialize-an-object.md)

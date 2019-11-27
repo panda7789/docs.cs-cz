@@ -1,5 +1,5 @@
 ---
-title: In-Memory XML Tree Modification vs. Functional Construction (LINQ to XML)
+title: Úprava struktury XML v paměti vs. konstrukce funkčnosti (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: d91c4ebf-6549-43cc-9961-26d4a82f722b
 ms.openlocfilehash: 15c38cdf7ce860b34d8d3e9d59b8f06d80f6edd8
@@ -9,19 +9,19 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344441"
 ---
-# <a name="in-memory-xml-tree-modification-vs-functional-construction-linq-to-xml-visual-basic"></a>In-Memory XML Tree Modification vs. Functional Construction (LINQ to XML) (Visual Basic)
-Modifying an XML tree in place is a traditional approach to changing the shape of an XML document. A typical application loads a document into a data store such as DOM or [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]; uses a programming interface to insert nodes, delete nodes, or change the content of nodes; and then saves the XML to a file or transmits it over a network.  
+# <a name="in-memory-xml-tree-modification-vs-functional-construction-linq-to-xml-visual-basic"></a>Úprava struktury XML v paměti vs. konstrukce funkčnosti (LINQ to XML) (Visual Basic)
+Úprava stromu XML na místě je tradiční přístup ke změně tvaru dokumentu XML. Typická aplikace načte dokument do úložiště dat, jako je DOM nebo [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]; používá programovací rozhraní pro vkládání uzlů, odstraňování uzlů nebo změnu obsahu uzlů. a pak soubor XML uloží do souboru nebo ho přenáší přes síť.  
   
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] enables another approach that is useful in many scenarios *: functional construction*. Functional construction treats modifying data as a problem of transformation, rather than as detailed manipulation of a data store. If you can take a representation of data and transform it efficiently from one form to another, the result is the same as if you took one data store and manipulated it in some way to take another shape. A key to the functional construction approach is to pass the results of queries to <xref:System.Xml.Linq.XDocument> and <xref:System.Xml.Linq.XElement> constructors.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] umožňuje další přístup, který je užitečný v mnoha scénářích *: konstrukce funkcí*. Funkční konstrukce zpracovává změny dat jako problém transformace, nikoli jako podrobnou manipulaci s úložištěm dat. Pokud můžete podniknout data a efektivně je transformovat z jednoho formuláře na jiný, výsledek je stejný jako v případě, že jste si pořídili jedno úložiště dat a manipulujete ho nějakým způsobem, aby byl jiný tvar. Klíč k přístupu k funkcím konstrukce je předat výsledky dotazů do <xref:System.Xml.Linq.XDocument> a <xref:System.Xml.Linq.XElement> konstruktory.  
   
- In many cases you can write the transformational code in a fraction of the time that it would take to manipulate the data store, and that code is more robust and easier to maintain. In these cases, even though the transformational approach can take more processing power, it is a more effective way to modify data. If a developer is familiar with the functional approach, the resulting code in many cases is easier to understand. It is easy to find the code that modifies each part of the tree.  
+ V mnoha případech můžete napsat transformační kód za zlomek času, který by trval při manipulaci s úložištěm dat, a tento kód je robustnější a snazší ho udržovat. V těchto případech i v případě, že transformační přístup může trvat více výpočetní výkon, je efektivnější způsob, jak data upravovat. Pokud je vývojář obeznámen s funkcí přístupu, výsledný kód v mnoha případech je snazší pochopit. Je snadné najít kód, který upraví jednotlivé části stromu.  
   
- The approach where you modify an XML tree in-place is more familiar to many DOM programmers, whereas code written using the functional approach might look unfamiliar to a developer who doesn't yet understand that approach. If you have to only make a small modification to a large XML tree, the approach where you modify a tree in place in many cases will take less CPU time.  
+ Přístup, při kterém upravíte strom XML na místě, je více známý pro mnoho programátorů modelu DOM, zatímco kód napsaný pomocí funkčního přístupu může vypadat neznámým vývojářům, kteří tento přístup ještě neznají. Pokud je třeba udělat pouze malou úpravu velkého stromu XML, přístup, který upravujete stromovou strukturu v mnoha případech, bude trvat méně času procesoru.  
   
- This topic provides an example that is implemented with both approaches.  
+ Toto téma poskytuje příklad, který je implementován pomocí obou přístupů.  
   
-## <a name="transforming-attributes-into-elements"></a>Transforming Attributes into Elements  
- For this example, suppose you want to modify the following simple XML document so that the attributes become elements. This topic first presents the traditional in-place modification approach. It then shows the functional construction approach.  
+## <a name="transforming-attributes-into-elements"></a>Transformace atributů na elementy  
+ V tomto příkladu Předpokládejme, že chcete upravit následující jednoduchý dokument XML, aby se atributy staly elementy. V tomto tématu se nejdřív prezentuje tradiční místní modifikace. Pak zobrazuje přístup k konstrukci funkčnosti.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -30,8 +30,8 @@ Modifying an XML tree in place is a traditional approach to changing the shape o
 </Root>  
 ```  
   
-### <a name="modifying-the-xml-tree"></a>Modifying the XML Tree  
- You can write some procedural code to create elements from the attributes, and then delete the attributes, as follows:  
+### <a name="modifying-the-xml-tree"></a>Úprava stromu XML  
+ Můžete napsat nějaký procedurální kód pro vytvoření prvků z atributů a poté odstranit atributy následujícím způsobem:  
   
 ```vb  
 Dim root As XElement = XElement.Load("Data.xml")  
@@ -42,7 +42,7 @@ root.Attributes().Remove()
 Console.WriteLine(root)  
 ```  
   
- This code produces the following output:  
+ Tento kód generuje následující výstup:  
   
 ```xml  
 <Root>  
@@ -52,8 +52,8 @@ Console.WriteLine(root)
 </Root>  
 ```  
   
-### <a name="functional-construction-approach"></a>Functional Construction Approach  
- By contrast, a functional approach consists of code to form a new tree, picking and choosing elements and attributes from the source tree, and transforming them as appropriate as they are added to the new tree. The functional approach looks like the following:  
+### <a name="functional-construction-approach"></a>Přístup k konstrukci funkčnosti  
+ Naproti tomu funkční přístup se skládá z kódu pro vytvoření nové stromové struktury, výběru a výběru prvků a atributů ze zdrojového stromu a jejich transformaci podle potřeby, jak jsou přidány do nového stromu. Funkční přístup vypadá takto:  
   
 ```vb  
 Dim root As XElement = XElement.Load("Data.xml")  
@@ -66,14 +66,14 @@ Dim newTree As XElement = _
 Console.WriteLine(newTree)  
 ```  
   
- This example outputs the same XML as the first example. However, notice that you can actually see the resulting structure of the new XML in the functional approach. You can see the creation of the `Root` element, the code that pulls the `Child1` element from the source tree, and the code that transforms the attributes from the source tree to elements in the new tree.  
+ Tento příklad vytvoří výstup stejného XML jako první příklad. Všimněte si však, že ve skutečnosti vidíte výslednou strukturu nového XML v rámci funkčního přístupu. Můžete zobrazit vytvoření prvku `Root`, kód, který přebírá `Child1` prvek ze zdrojového stromu a kód, který transformuje atributy ze zdrojového stromu na prvky v novém stromu.  
   
- The functional example in this case is not any shorter than the first example, and it is not really any simpler. However, if you have many changes to make to an XML tree, the non functional approach will become quite complex and somewhat obtuse. In contrast, when using the functional approach, you still just form the desired XML, embedding queries and expressions as appropriate, to pull in the desired content. The functional approach yields code that is easier to maintain.  
+ Funkční příklad v tomto případě není kratší než první příklad a není skutečně jednodušší. Nicméně pokud máte mnoho změn ve stromu XML, nefunkční přístup se stane poměrně složitým a trochu obtuse. Naopak pokud používáte funkční přístup, stále stačí vytvořit požadovaný kód XML, vložit dotazy a výrazy podle potřeby a vyžádat si požadovaný obsah. Funkční přístup poskytuje kód, který je snazší udržovat.  
   
- Notice that in this case the functional approach probably would not perform quite as well as the tree manipulation approach. The main issue is that the functional approach creates more short lived objects. However, the tradeoff is an effective one if using the functional approach allows for greater programmer productivity.  
+ Všimněte si, že v takovém případě funkční přístup pravděpodobně nepracuje úplně stejně jako přístup ke stromové manipulaci. Hlavním problémem je to, že funkční přístup vytváří krátkodobé objekty pro dlouhodobé vyzkoušení. Kompromis je ale platný, pokud použití funkčního přístupu umožňuje větší produktivitu programátorů.  
   
- This is a very simple example, but it serves to show the difference in philosophy between the two approaches. The functional approach yields greater productivity gains for transforming larger XML documents.  
+ Toto je velmi jednoduchý příklad, ale slouží k zobrazení rozdílu v filozofie mezi dvěma přístupy. Funkční přístup poskytuje větší produktivitu při transformaci větších dokumentů XML.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Modifying XML Trees (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
+- [Úprava stromů XML (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)

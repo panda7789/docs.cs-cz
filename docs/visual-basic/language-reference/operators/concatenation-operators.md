@@ -13,15 +13,15 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74331494"
 ---
 # <a name="concatenation-operators-visual-basic"></a>Operátory řetězení (Visual Basic)
-The following are the concatenation operators defined in Visual Basic.  
+Níže jsou uvedeny operátory zřetězení definované v Visual Basic.  
   
- [Operátor &](../../../visual-basic/language-reference/operators/concatenation-operator.md)  
+ [& – operátor](../../../visual-basic/language-reference/operators/concatenation-operator.md)  
   
- [Operátor +](../../../visual-basic/language-reference/operators/addition-operator.md)  
+ [+ – operátor](../../../visual-basic/language-reference/operators/addition-operator.md)  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Text>
 - <xref:System.Text.StringBuilder>
-- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
-- [Concatenation Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md)
+- [Priorita operátorů v Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Operátory zřetězení v Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md)

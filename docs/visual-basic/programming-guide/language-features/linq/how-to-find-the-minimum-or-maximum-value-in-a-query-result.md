@@ -1,5 +1,5 @@
 ---
-title: 'How to: Find the Minimum or Maximum Value in a Query Result by Using LINQ'
+title: 'Postupy: hledání minimální nebo maximální hodnoty ve výsledku dotazu pomocí LINQ'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - max operator [LINQ in Visual Basic]
@@ -22,59 +22,59 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344968"
 ---
 # <a name="how-to-find-the-minimum-or-maximum-value-in-a-query-result-by-using-linq-visual-basic"></a>Postupy: Hledání minimální nebo maximální hodnoty ve výsledku dotazu pomocí LINQ (Visual Basic)
-Language-Integrated Query (LINQ) makes it easy to access database information and execute queries.  
+LINQ (Language-Integrated Query) usnadňuje přístup k informacím o databázi a provádění dotazů.  
   
- The following example shows how to create a new application that performs queries against a SQL Server database. The sample determines the minimum and maximum values for the results by using the `Aggregate` and `Group By` clauses. For more information, see [Aggregate Clause](../../../../visual-basic/language-reference/queries/aggregate-clause.md) and [Group By Clause](../../../../visual-basic/language-reference/queries/group-by-clause.md).  
+ Následující příklad ukazuje, jak vytvořit novou aplikaci, která provádí dotazy na databázi SQL Server. Ukázka určuje minimální a maximální hodnoty pro výsledky pomocí klauzulí `Aggregate` a `Group By`. Další informace naleznete v tématu [klauzule Aggregate](../../../../visual-basic/language-reference/queries/aggregate-clause.md) a [klauzule GROUP by](../../../../visual-basic/language-reference/queries/group-by-clause.md).  
   
- The examples in this topic use the Northwind sample database. If you do not have this database on your development computer, you can download it from the Microsoft Download Center. For instructions, see [Downloading Sample Databases](../../../../framework/data/adonet/sql/linq/downloading-sample-databases.md).  
+ V příkladech v tomto tématu se používá ukázková databáze Northwind. Pokud tuto databázi ve vývojovém počítači nemáte, můžete si ji stáhnout z webu Microsoft Download Center. Pokyny najdete v tématu [stažení ukázkových databází](../../../../framework/data/adonet/sql/linq/downloading-sample-databases.md).  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-### <a name="to-create-a-connection-to-a-database"></a>To create a connection to a database  
+### <a name="to-create-a-connection-to-a-database"></a>Vytvoření připojení k databázi  
   
-1. In Visual Studio, open **Server Explorer**/**Database Explorer** by clicking **Server Explorer**/**Database Explorer** on the **View** menu.  
+1. V aplikaci Visual Studio otevřete **Průzkumník serveru**/**Database explorer** kliknutím na **Průzkumník serveru**/**Průzkumník databáze** v nabídce **zobrazení** .  
   
-2. Right-click **Data Connections** in **Server Explorer**/**Database Explorer** and then click **Add Connection**.  
+2. Klikněte pravým tlačítkem na **datová připojení** v **Průzkumník serveru**/**Průzkumníku databáze** a pak klikněte na **Přidat připojení**.  
   
-3. Specify a valid connection to the Northwind sample database.  
+3. Zadejte platné připojení k ukázkové databázi Northwind.  
   
-### <a name="to-add-a-project-that-contains-a-linq-to-sql-file"></a>To add a project that contains a LINQ to SQL file  
+### <a name="to-add-a-project-that-contains-a-linq-to-sql-file"></a>Přidání projektu, který obsahuje soubor LINQ to SQL  
   
-1. In Visual Studio, on the **File** menu, point to **New** and then click **Project**. Select Visual Basic **Windows Forms Application** as the project type.  
+1. V aplikaci Visual Studio v nabídce **soubor** přejděte na možnost **Nový** a poté klikněte na položku **projekt**. Jako typ projektu vyberte Visual Basic **model Windows Forms aplikace** .  
   
-2. On the **Project** menu, click **Add New Item**. Select the **LINQ to SQL Classes** item template.  
+2. V nabídce **projekt** klikněte na příkaz **Přidat novou položku**. Vyberte šablonu položky **LINQ to SQL třídy** .  
   
-3. Name the file `northwind.dbml`. Click **Add**. The Object Relational Designer (O/R Designer) is opened for the northwind.dbml file.  
+3. Pojmenujte soubor `northwind.dbml`. Klikněte na tlačítko **Přidat**. Pro soubor Northwind. dbml je otevřen Návrhář relací objektů (O/R Designer).  
   
-### <a name="to-add-tables-to-query-to-the-or-designer"></a>To add tables to query to the O/R Designer  
+### <a name="to-add-tables-to-query-to-the-or-designer"></a>Přidání tabulek pro dotaz do návrháře O/R  
   
-1. In **Server Explorer**/**Database Explorer**, expand the connection to the Northwind database. Expand the **Tables** folder.  
+1. V **Průzkumník serveru**/**Průzkumníku databáze**rozbalte připojení k databázi Northwind. Rozbalte složku **tabulky** .  
   
-     If you have closed the O/R Designer, you can reopen it by double-clicking the northwind.dbml file that you added earlier.  
+     Pokud jste návrháře pro/R zavřeli, můžete ho znovu otevřít dvojitým kliknutím na soubor Northwind. dbml, který jste přidali dříve.  
   
-2. Click the Customers table and drag it to the left pane of the designer. Click the Orders table and drag it to the left pane of the designer.  
+2. Klikněte na tabulku Customers (zákazníci) a přetáhněte ji do levého podokna návrháře. Klikněte na tabulku Orders (objednávky) a přetáhněte ji do levého podokna návrháře.  
   
-     The designer creates new `Customer` and `Order` objects for your project. Notice that the designer automatically detects relationships between the tables and creates child properties for related objects. For example, IntelliSense will show that the `Customer` object has an `Orders` property for all orders related to that customer.  
+     Návrhář vytvoří nový objekt `Customer` a objekty `Order` pro váš projekt. Všimněte si, že návrhář automaticky detekuje relace mezi tabulkami a vytváří podřízené vlastnosti pro související objekty. IntelliSense například zobrazí, že objekt `Customer` má vlastnost `Orders` pro všechny objednávky související s tímto zákazníkem.  
   
-3. Save your changes and close the designer.  
+3. Uložte změny a zavřete návrháře.  
   
-4. Save your project.  
+4. Uložte projekt.  
   
-### <a name="to-add-code-to-query-the-database-and-display-the-results"></a>To add code to query the database and display the results  
+### <a name="to-add-code-to-query-the-database-and-display-the-results"></a>Přidání kódu pro dotazování databáze a zobrazení výsledků  
   
-1. From the **Toolbox**, drag a <xref:System.Windows.Forms.DataGridView> control onto the default Windows Form for your project, Form1.  
+1. Z **panelu nástrojů**přetáhněte ovládací prvek <xref:System.Windows.Forms.DataGridView> do výchozího formuláře Windows pro váš projekt, Form1.  
   
-2. Double-click Form1 to add code to the `Load` event of the form.  
+2. Poklikejte na Form1 a přidejte kód do události `Load` formuláře.  
   
-3. When you added tables to the O/R Designer, the designer added a <xref:System.Data.Linq.DataContext> object for your project. This object contains the code that you must have to access those tables, in addition to individual objects and collections for each table. The <xref:System.Data.Linq.DataContext> object for your project is named based on the name of your .dbml file. For this project, the <xref:System.Data.Linq.DataContext> object is named `northwindDataContext`.  
+3. Když jste přidali tabulky do návrháře pro/R, Návrhář přidal objekt <xref:System.Data.Linq.DataContext> pro váš projekt. Tento objekt obsahuje kód, který potřebujete pro přístup k těmto tabulkám, kromě jednotlivých objektů a kolekcí pro každou tabulku. Objekt <xref:System.Data.Linq.DataContext> pro projekt je pojmenován na základě názvu souboru. dbml. Pro tento projekt má objekt <xref:System.Data.Linq.DataContext> název `northwindDataContext`.  
   
-     You can create an instance of the <xref:System.Data.Linq.DataContext> in your code and query the tables specified by the O/R Designer.  
+     Můžete vytvořit instanci <xref:System.Data.Linq.DataContext> ve vašem kódu a dotazovat tabulky určené návrhářem O/R.  
   
-     Add the following code to the `Load` event. This code queries the tables that are exposed as properties of your data context and determines the minimum and maximum values for the results. The sample uses he `Aggregate` clause to query for a single result, and the `Group By` clause to show an average for grouped results.  
+     Do události `Load` přidejte následující kód. Tento kód se dotazuje na tabulky, které jsou přístupné jako vlastnosti kontextu dat, a určuje minimální a maximální hodnoty výsledků. Ukázka používá `Aggregate` klauzuli pro dotaz na jeden výsledek a klauzuli `Group By` pro zobrazení průměru pro seskupené výsledky.  
   
      [!code-vb[VbLINQToSQLHowTos#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQtoSQLHowTos/VB/Form7.vb#14)]  
   
-4. Press F5 to run your project and view the results.  
+4. Stisknutím klávesy F5 spusťte projekt a zobrazte výsledky.  
   
 ## <a name="see-also"></a>Viz také:
 

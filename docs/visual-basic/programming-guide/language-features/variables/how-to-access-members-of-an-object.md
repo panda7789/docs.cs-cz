@@ -14,65 +14,65 @@ ms.locfileid: "74348671"
 ---
 # <a name="how-to-access-members-of-an-object-visual-basic"></a>Postupy: Přístup ke členům v objektu (Visual Basic)
 
-When you have an object variable that refers to an object, you often want to work with the members of that object, such as its methods, properties, fields, and events. For example, once you have created a new <xref:System.Windows.Forms.Form> object, you might want to set its <xref:System.Windows.Forms.Control.Text%2A> property or call its <xref:System.Windows.Forms.Control.Focus%2A> method.
+Máte-li objektovou proměnnou, která odkazuje na objekt, často chcete pracovat s členy tohoto objektu, například jeho metodami, vlastnostmi, poli a událostmi. Například po vytvoření nového objektu <xref:System.Windows.Forms.Form> můžete chtít nastavit jeho vlastnost <xref:System.Windows.Forms.Control.Text%2A> nebo volat jeho metodu <xref:System.Windows.Forms.Control.Focus%2A>.
 
-## <a name="accessing-members"></a>Accessing Members
+## <a name="accessing-members"></a>Přístup ke členům
 
-You access an object's members through the variable that refers to it.
+Přistupujete k členům objektu přes proměnnou, která na ni odkazuje.
 
-#### <a name="to-access-members-of-an-object"></a>To access members of an object
+#### <a name="to-access-members-of-an-object"></a>Přístup ke členům objektu
 
-- Use the member-access operator (`.`) between the object variable name and the member name.
+- Použijte operátor přístupu členů (`.`) mezi názvem proměnné objektu a názvem člena.
 
     ```vb
     currentText = newForm.Text
     ```
 
-    If the member is [Shared](../../../../visual-basic/language-reference/modifiers/shared.md), you do not need a variable to access it.
+    Pokud je člen [sdílen](../../../../visual-basic/language-reference/modifiers/shared.md), nepotřebujete k přístupu k němu proměnnou.
 
-## <a name="accessing-members-of-an-object-of-known-type"></a>Accessing Members of an Object of Known Type
+## <a name="accessing-members-of-an-object-of-known-type"></a>Přístup ke členům objektu známého typu
 
-If you know the type of an object at compile time, you can use *early binding* for a variable that refers to it.
+Pokud znáte typ objektu v době kompilace, můžete použít *počáteční vazbu* pro proměnnou, která na ni odkazuje.
 
-#### <a name="to-access-members-of-an-object-for-which-you-know-the-type-at-compile-time"></a>To access members of an object for which you know the type at compile time
+#### <a name="to-access-members-of-an-object-for-which-you-know-the-type-at-compile-time"></a>Pro přístup ke členům objektu, pro který znáte typ v době kompilace
 
-1. Declare the object variable to be of the type of the object you intend to assign to the variable.
+1. Deklarujte proměnnou objektu pro typ objektu, který chcete přiřadit proměnné.
 
     ```vb
     Dim extraForm As System.Windows.Forms.Form
     ```
 
-    With `Option Strict On`, you can assign only <xref:System.Windows.Forms.Form> objects (or objects of a type derived from <xref:System.Windows.Forms.Form>) to `extraForm`. If you have defined a class or structure with a widening `CType` conversion to <xref:System.Windows.Forms.Form>, you can also assign that class or structure to `extraForm`.
+    Pomocí `Option Strict On`lze `extraForm`přiřadit pouze objekty <xref:System.Windows.Forms.Form> (nebo objekty typu odvozené z <xref:System.Windows.Forms.Form>). Pokud jste definovali třídu nebo strukturu s rozšiřujícím `CType`m převodem na <xref:System.Windows.Forms.Form>, můžete tuto třídu nebo strukturu přiřadit i `extraForm`.
 
-2. Use the member-access operator (`.`) between the object variable name and the member name.
+2. Použijte operátor přístupu členů (`.`) mezi názvem proměnné objektu a názvem člena.
 
     ```vb
     extraForm.Show()
     ```
 
-    You can access all of the methods and properties specific to the <xref:System.Windows.Forms.Form> class, no matter what the `Option Strict` setting is.
+    Ke všem metodám a vlastnostem, které jsou specifické pro třídu <xref:System.Windows.Forms.Form>, můžete přistupovat bez ohledu na to, co nastavení `Option Strict`.
 
-## <a name="accessing-members-of-an-object-of-unknown-type"></a>Accessing Members of an Object of Unknown Type
+## <a name="accessing-members-of-an-object-of-unknown-type"></a>Přístup ke členům objektu neznámého typu
 
-If you do not know the type of an object at compile time, you must use *late binding* for any variable that refers to it.
+Pokud neznáte typ objektu v době kompilace, je nutné použít *pozdní vazbu* pro libovolnou proměnnou, která na ni odkazuje.
 
-#### <a name="to-access-members-of-an-object-for-which-you-do-not-know-the-type-at-compile-time"></a>To access members of an object for which you do not know the type at compile time
+#### <a name="to-access-members-of-an-object-for-which-you-do-not-know-the-type-at-compile-time"></a>Pro přístup ke členům objektu, pro který neznáte typ v době kompilace.
 
-1. Declare the object variable to be of the [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md). (Declaring a variable as `Object` is the same as declaring it as <xref:System.Object?displayProperty=nameWithType>.)
+1. Deklarujte proměnnou objektu pro [datový typ objektu](../../../../visual-basic/language-reference/data-types/object-data-type.md). (Deklarace proměnné jako `Object` je stejná jako deklarace jako <xref:System.Object?displayProperty=nameWithType>.)
 
     ```vb
     Dim someControl As Object
     ```
 
-    With `Option Strict On`, you can access only the members that are defined on the <xref:System.Object> class.
+    V `Option Strict On`máte přístup pouze k členům, které jsou definovány na <xref:System.Object> třídě.
 
-2. Use the member-access operator (`.`) between the object variable name and the member name.
+2. Použijte operátor přístupu členů (`.`) mezi názvem proměnné objektu a názvem člena.
 
     ```vb
     someControl.GetType()
     ```
 
-    To be able to access the members of any object you assign to the object variable, you must set `Option Strict Off`. When you do this, the compiler cannot guarantee that a given member is exposed by the object you assign to the variable. If the object does not expose a member you attempt to access, a <xref:System.MemberAccessException> exception occurs.
+    Aby bylo možné přistupovat ke členům libovolného objektu, který přiřadíte proměnné objektu, je nutné nastavit `Option Strict Off`. Pokud to uděláte, kompilátor nemůže zaručit, že daný člen je zveřejněn objektem, který přiřadíte proměnné. Pokud objekt nezveřejňuje člena, ke kterému se pokoušíte získat přístup, dojde k výjimce <xref:System.MemberAccessException>.
 
 ## <a name="see-also"></a>Viz také:
 

@@ -15,30 +15,30 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348699"
 ---
 # <a name="how-to-call-windows-apis-visual-basic"></a>Postupy: Volání rozhraní API systému Windows (Visual Basic)
-This example defines and calls the `MessageBox` function in user32.dll and then passes a string to it.  
+Tento příklad definuje a zavolá funkci `MessageBox` v souboru User32. dll a poté předá do ní řetězec.  
   
 ## <a name="example"></a>Příklad  
  [!code-vb[VbVbalrInterop#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#1)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- This example requires:  
+ Tento příklad vyžaduje:  
   
-- A reference to the <xref:System> namespace.  
+- Odkaz na obor názvů <xref:System>.  
   
 ## <a name="robust-programming"></a>Robustní programování  
  Následující podmínky mohou způsobit výjimku:  
   
-- The method is not static, is abstract, or has been previously defined. The parent type is an interface, or the length of *name* or *dllName* is zero. (<xref:System.ArgumentException>)  
+- Metoda není statická, je abstraktní nebo dříve definovaná. Nadřazený typ je rozhraní nebo délka *názvu* nebo *Název_souboru_DLL* je nula. (<xref:System.ArgumentException>)  
   
-- The *name* or *dllName* is `Nothing`. (<xref:System.ArgumentNullException>)  
+- *Název* nebo název *Název_souboru_DLL* je `Nothing`. (<xref:System.ArgumentNullException>)  
   
-- The containing type has been previously created using `CreateType`. (<xref:System.InvalidOperationException>)  
+- Nadřazený typ byl dříve vytvořen pomocí `CreateType`. (<xref:System.InvalidOperationException>)  
   
 ## <a name="see-also"></a>Viz také:
 
-- [A Closer Look at Platform Invoke](../../../framework/interop/consuming-unmanaged-dll-functions.md#a-closer-look-at-platform-invoke)
+- [Bližší pohled na vyvolání platformy](../../../framework/interop/consuming-unmanaged-dll-functions.md#a-closer-look-at-platform-invoke)
 - [Příklady vyvolání platformy](../../../framework/interop/platform-invoke-examples.md)
 - [Používání nespravovaných funkcí DLL](../../../framework/interop/consuming-unmanaged-dll-functions.md)
-- [Defining a Method with Reflection Emit](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w63y4d4f(v=vs.100))
+- [Definování metody pomocí generování reflexe](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w63y4d4f(v=vs.100))
 - [Návod: Volání rozhraní API systému Windows](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)
 - [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md)

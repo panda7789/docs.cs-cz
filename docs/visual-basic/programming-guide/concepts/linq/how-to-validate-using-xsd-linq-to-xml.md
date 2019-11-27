@@ -1,5 +1,5 @@
 ---
-title: 'How to: Validate Using XSD (LINQ to XML)'
+title: 'Postupy: ověření pomocí XSD (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: a0fe88d4-4e77-49e7-90de-8953feeccc21
 ms.openlocfilehash: 07a5df7af5512bb3db2dfd48a71e1ef07bbc7446
@@ -9,11 +9,11 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74332386"
 ---
-# <a name="how-to-validate-using-xsd-linq-to-xml-visual-basic"></a>How to: Validate Using XSD (LINQ to XML) (Visual Basic)
-The <xref:System.Xml.Schema> namespace contains extension methods that make it easy to validate an XML tree against an XML Schema Definition Language (XSD) file. For more information, see the <xref:System.Xml.Schema.Extensions.Validate%2A> method documentation.  
+# <a name="how-to-validate-using-xsd-linq-to-xml-visual-basic"></a>Postupy: ověření pomocí XSD (LINQ to XML) (Visual Basic)
+Obor názvů <xref:System.Xml.Schema> obsahuje metody rozšíření, které usnadňují ověřování stromu XML proti souboru XSD (XML Schema Definition Language). Další informace najdete v dokumentaci k metodě <xref:System.Xml.Schema.Extensions.Validate%2A>.  
   
 ## <a name="example"></a>Příklad  
- The following example creates an <xref:System.Xml.Schema.XmlSchemaSet>, then validates two <xref:System.Xml.Linq.XDocument> objects against the schema set. One of the documents is valid, the other is not.  
+ Následující příklad vytvoří <xref:System.Xml.Schema.XmlSchemaSet>a potom ověří dva objekty <xref:System.Xml.Linq.XDocument> proti sadě schémat. Jeden z dokumentů je platný, druhý není.  
   
 ```vb  
 Dim errors As Boolean = False  
@@ -65,7 +65,7 @@ Sub Main()
 End Sub  
 ```  
   
- This example produces the following output:  
+ Tento příklad vytvoří následující výstup:  
   
 ```console  
 Validating doc1  
@@ -77,11 +77,11 @@ doc2 did not validate
 ```  
   
 ## <a name="example"></a>Příklad  
- The following example validates that the XML document from [Sample XML File: Customers and Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md) is valid per the schema from [Sample XSD File: Customers and Orders](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md). It then modifies the source XML document. It changes the `CustomerID` attribute on the first customer. After the change, orders will then refer to a customer that does not exist, so the XML document will no longer validate.  
+ Následující příklad ověřuje, že dokument XML z [ukázkového souboru XML: zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md) jsou platné pro schéma z [ukázkového souboru XSD: zákazníci a objednávky](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md). Pak upraví zdrojový dokument XML. Změní atribut `CustomerID` prvního zákazníka. Po změně budou objednávky odkazovat na zákazníka, který neexistuje, takže dokument XML nebude nadále ověřen.  
   
- This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
   
- This example uses the following XSD schema: [Sample XSD File: Customers and Orders](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md).  
+ V tomto příkladu se používá následující schéma XSD: [ukázkový soubor XSD: zákazníci a objednávky](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md).  
   
 ```vb  
 Dim errors As Boolean = False  
@@ -111,7 +111,7 @@ Sub Main()
 End Sub  
 ```  
   
- This example produces the following output:  
+ Tento příklad vytvoří následující výstup:  
   
 ```console  
 Attempting to validate  
@@ -125,4 +125,4 @@ custOrdDoc did not validate
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Xml.Schema.Extensions.Validate%2A>
-- [Creating XML Trees (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)
+- [Vytváření stromů XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)

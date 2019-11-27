@@ -15,27 +15,27 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348217"
 ---
 # <a name="trycast-operator-visual-basic"></a>TryCast – operátor (Visual Basic)
-Introduces a type conversion operation that does not throw an exception.  
+Zavádí operaci převodu typu, která nevyvolá výjimku.  
   
 ## <a name="remarks"></a>Poznámky  
- If an attempted conversion fails, `CType` and `DirectCast` both throw an <xref:System.InvalidCastException> error. This can adversely affect the performance of your application. `TryCast` returns [Nothing](../../../visual-basic/language-reference/nothing.md), so that instead of having to handle a possible exception, you need only test the returned result against `Nothing`.  
+ Pokud se pokus o převod nezdaří, `CType` a `DirectCast` vyvolá chybu <xref:System.InvalidCastException>. To může mít nepříznivý vliv na výkon aplikace. `TryCast` nevrátí [žádnou](../../../visual-basic/language-reference/nothing.md)hodnotu, takže místo nutnosti zpracovat možnou výjimku budete potřebovat pouze test vráceného výsledku proti `Nothing`.  
   
- You use the `TryCast` keyword the same way you use the [CType Function](../../../visual-basic/language-reference/functions/ctype-function.md) and the [DirectCast Operator](../../../visual-basic/language-reference/operators/directcast-operator.md) keyword. You supply an expression as the first argument and a type to convert it to as the second argument. `TryCast` operates only on reference types, such as classes and interfaces. It requires an inheritance or implementation relationship between the two types. This means that one type must inherit from or implement the other.  
+ Klíčové slovo `TryCast` použijete stejným způsobem jako [funkci CType](../../../visual-basic/language-reference/functions/ctype-function.md) a klíčové slovo [operátoru DirectCast](../../../visual-basic/language-reference/operators/directcast-operator.md) . Výraz zadejte jako první argument a typ, který jej převede jako druhý argument. `TryCast` funguje pouze na odkazových typech, jako jsou třídy a rozhraní. Vyžaduje vztah dědičnosti nebo implementace mezi těmito dvěma typy. To znamená, že jeden typ musí dědit z nebo implementovat druhý.  
   
-## <a name="errors-and-failures"></a>Errors and Failures  
- `TryCast` generates a compiler error if it detects that no inheritance or implementation relationship exists. But the lack of a compiler error does not guarantee a successful conversion. If the desired conversion is narrowing, it could fail at run time. If this happens, `TryCast` returns [Nothing](../../../visual-basic/language-reference/nothing.md).  
+## <a name="errors-and-failures"></a>Chyby a selhání  
+ `TryCast` generuje chybu kompilátoru, pokud zjistí, že neexistuje žádná dědičnost nebo implementace relace. Chybějící Chyba kompilátoru ale nezaručuje úspěšný převod. Pokud je požadovaný převod zúžený, může v době běhu selhat. Pokud k tomu dojde, `TryCast` nevrátí [žádnou](../../../visual-basic/language-reference/nothing.md)hodnotu.  
   
 ## <a name="conversion-keywords"></a>Klíčová slova převodu  
- A comparison of the type conversion keywords is as follows.  
+ Porovnání klíčových slov převodu typů je následující.  
   
-|Keyword|Typy dat|Argument relationship|Run-time failure|  
+|Klíčové slovo|Typy dat|Relace argumentu|Selhání za běhu|  
 |---|---|---|---|  
-|[Funkce CType](../../../visual-basic/language-reference/functions/ctype-function.md)|Any data types|Widening or narrowing conversion must be defined between the two data types|Throws <xref:System.InvalidCastException>|  
-|[Operátor DirectCast](../../../visual-basic/language-reference/operators/directcast-operator.md)|Any data types|One type must inherit from or implement the other type|Throws <xref:System.InvalidCastException>|  
-|`TryCast`|Reference types only|One type must inherit from or implement the other type|Returns [Nothing](../../../visual-basic/language-reference/nothing.md)|  
+|[Funkce CType](../../../visual-basic/language-reference/functions/ctype-function.md)|Všechny typy dat|Mezi dvěma datovými typy musí být definovaný rozšiřující nebo zužující převod.|Vyvolá <xref:System.InvalidCastException>|  
+|[Operátor DirectCast](../../../visual-basic/language-reference/operators/directcast-operator.md)|Všechny typy dat|Jeden typ musí dědit z nebo implementovat jiný typ.|Vyvolá <xref:System.InvalidCastException>|  
+|`TryCast`|Pouze odkazované typy|Jeden typ musí dědit z nebo implementovat jiný typ.|Vrátí hodnotu [Nothing](../../../visual-basic/language-reference/nothing.md) .|  
   
 ## <a name="example"></a>Příklad  
- The following example shows how to use `TryCast`.  
+ Následující příklad ukazuje, jak použít `TryCast`.  
   
  [!code-vb[VbVbalrKeywords#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/Class1.vb#6)]  
   

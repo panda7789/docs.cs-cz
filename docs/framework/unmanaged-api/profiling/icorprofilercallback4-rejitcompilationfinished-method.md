@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74439316"
 ---
 # <a name="icorprofilercallback4rejitcompilationfinished-method"></a>ICorProfilerCallback4::ReJITCompilationFinished – metoda
-Notifies the profiler that the just-in-time (JIT) compiler has finished recompiling a function.  
+Upozorní profileru, že kompilátor JIT (just-in-time) dokončil opětovné kompilování funkce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,27 +36,27 @@ HRESULT ReJITCompilationFinished(
   
 ## <a name="parameters"></a>Parametry  
  `functionId`  
- [in] The ID of the function that was recompiled.  
+ pro ID funkce, která byla znovu zkompilována.  
   
  `rejitId`  
- [in] The identity of the JIT-recompiled function.  
+ pro Identita funkce Rekompilované JIT.  
   
  `hrStatus`  
- [in] A value that indicates whether the JIT recompilation was successful.  
+ pro Hodnota, která označuje, zda byla opětovná kompilace JIT úspěšná.  
   
  `fIsSafeToBlock`  
- [in] `true` to indicate that blocking may cause the runtime to wait for the calling thread to return from this callback; `false` to indicate that blocking will not affect the operation of the runtime.  
+ [in] `true` označuje, že blokování může způsobit, že modul runtime počká, než se volající vlákno vrátí z tohoto zpětného volání. `false` k označení, že blokování nebude mít vliv na operaci modulu runtime.  
   
- A value of `true` does not harm the runtime, but can affect the profiling results.  
+ Hodnota `true` nepoškozuje modul runtime, ale může ovlivnit výsledky profilace.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

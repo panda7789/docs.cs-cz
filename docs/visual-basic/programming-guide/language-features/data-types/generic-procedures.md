@@ -20,18 +20,18 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350086"
 ---
 # <a name="generic-procedures-in-visual-basic"></a>Obecné procedury v jazyce Visual Basic
-A *generic procedure*, also called a *generic method*, is a procedure defined with at least one type parameter. This allows the calling code to tailor the data types to its requirements each time it calls the procedure.  
+*Obecný postup*, označovaný také jako *Obecná metoda*, je procedura definovaná s alespoň jedním parametrem typu. To umožňuje volajícímu kódu přizpůsobit datové typy na požadavky pokaždé, když volá proceduru.  
   
- A procedure is not generic simply by virtue of being defined inside a generic class or a generic structure. To be generic, the procedure must take at least one type parameter, in addition to any normal parameters it might take. A generic class or structure can contain nongeneric procedures, and a nongeneric class, structure, or module can contain generic procedures.  
+ Procedura není obecná pouhým definováním v obecné třídě nebo obecné struktuře. Aby bylo možné obecné, procedura musí kromě všech normálních parametrů, které může trvat, obsahovat alespoň jeden parametr typu. Obecná třída nebo struktura může obsahovat neobecné postupy a neobecnou třídu, strukturu nebo modul může obsahovat obecné procedury.  
   
- A generic procedure can use its type parameters in its normal parameter list, in its return type if it has one, and in its procedure code.  
+ Obecný postup může použít jeho parametry typu v seznamu normálních parametrů, v jeho návratovém typu, pokud má jednu, a v kódu procedury.  
   
 ## <a name="type-inference"></a>Odvození typu  
- You can call a generic procedure without supplying any type arguments at all. If you call it this way, the compiler attempts to determine the appropriate data types to pass to the procedure's type arguments. This is called *type inference*. The following code shows a call in which the compiler infers that it should pass type `String` to the type parameter `t`.  
+ Můžete zavolat obecný postup bez nutnosti zadávat žádné argumenty typu vůbec. Pokud je zavoláte tímto způsobem, kompilátor se pokusí určit vhodné datové typy, které mají být předávány do argumentů typu procedury. Tato metoda se nazývá *odvození typu*. Následující kód ukazuje volání, ve kterém kompilátor odvodí, že by měl předat typ `String` parametru typu `t`.  
   
  [!code-vb[VbVbalrDataTypes#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#15)]  
   
- If the compiler cannot infer the type arguments from the context of your call, it reports an error. One possible cause of such an error is an array rank mismatch. For example, suppose you define a normal parameter as an array of a type parameter. If you call the generic procedure supplying an array of a different rank (number of dimensions), the mismatch causes type inference to fail. The following code shows a call in which a two-dimensional array is passed to a procedure that expects a one-dimensional array.  
+ Pokud kompilátor nemůže odvodit argumenty typu z kontextu volání, ohlásí chybu. Jednou z možných příčin této chyby je neshoda pořadí polí. Předpokládejme například, že definujete normální parametr jako pole parametru typu. Pokud voláte obecný postup poskytnutí pole odlišného pořadí (počet dimenzí), neshoda způsobuje neúspěch typu odvození typu. Následující kód ukazuje volání, ve kterém je dvojrozměrné pole předáno proceduře, který očekává jednorozměrné pole.  
   
 ```vb  
 Public Sub demoSub(Of t)(ByVal arg() As t)
@@ -43,30 +43,30 @@ Public Sub callDemoSub()
 End Sub
 ```
   
- You can invoke type inference only by omitting all the type arguments. If you supply one type argument, you must supply them all.  
+ Odvození typu lze vyvolat pouze vynecháním všech argumentů typu. Pokud zadáte jeden argument typu, je nutné je zadat.  
   
- Type inference is supported only for generic procedures. You cannot invoke type inference on generic classes, structures, interfaces, or delegates.  
+ Odvození typu je podporováno pouze pro obecné procedury. Nemůžete vyvolat odvození typu u obecných tříd, struktur, rozhraní a delegátů.  
   
 ## <a name="example"></a>Příklad  
   
 ### <a name="description"></a>Popis  
- The following example defines a generic `Function` procedure to find a particular element in an array. It defines one type parameter and uses it to construct the two parameters in the parameter list.  
+ Následující příklad definuje obecný `Function` postup pro nalezení konkrétního prvku v poli. Definuje jeden parametr typu a používá ho k sestavení dvou parametrů v seznamu parametrů.  
   
 ### <a name="code"></a>Kód  
  [!code-vb[VbVbalrDataTypes#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#14)]  
   
 ### <a name="comments"></a>Komentáře  
- The preceding example requires the ability to compare `searchValue` against each element of `searchArray`. To guarantee this ability, it constrains the type parameter `T` to implement the <xref:System.IComparable%601> interface. The code uses the <xref:System.IComparable%601.CompareTo%2A> method instead of the `=` operator, because there is no guarantee that a type argument supplied for `T` supports the `=` operator.  
+ Předchozí příklad vyžaduje možnost porovnat `searchValue` s každým prvkem `searchArray`. Chcete-li zaručit tuto schopnost, omezuje parametr typu `T` k implementaci rozhraní <xref:System.IComparable%601>. Kód používá metodu <xref:System.IComparable%601.CompareTo%2A> namísto operátoru `=`, protože není nijak zaručeno, že argumentu typu, který je zadán pro `T`, podporuje operátor `=`.  
   
- You can test the `findElement` procedure with the following code.  
+ `findElement`ovou proceduru můžete otestovat pomocí následujícího kódu.  
   
  [!code-vb[VbVbalrDataTypes#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#13)]  
   
- The preceding calls to `MsgBox` display "0", "1", and "-1" respectively.  
+ Předchozí volání pro `MsgBox` zobrazují "0", "1" a "-1" v uvedeném pořadí.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Generic Types in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [Obecné typy v Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
 - [Postupy: Definice třídy, která poskytne identické funkce pro různé datové typy](../../../../visual-basic/programming-guide/language-features/data-types/how-to-define-a-class-that-can-provide-identical-functionality.md)
 - [Postupy: Použití obecné třídy](../../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)
 - [Procedury](../../../../visual-basic/programming-guide/language-features/procedures/index.md)

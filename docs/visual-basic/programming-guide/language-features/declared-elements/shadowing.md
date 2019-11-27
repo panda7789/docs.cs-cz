@@ -26,38 +26,38 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74345329"
 ---
 # <a name="shadowing-in-visual-basic"></a>Stínění v jazyce Visual Basic
-When two programming elements share the same name, one of them can hide, or *shadow*, the other one. In such a situation, the shadowed element is not available for reference; instead, when your code uses the element name, the Visual Basic compiler resolves it to the shadowing element.  
+Pokud dva programovací prvky mají stejný název, jeden z nich může skrýt nebo *stín*, druhý. V takové situaci není pro referenci k dispozici stínovaný element; místo toho, když kód používá název elementu, kompilátor Visual Basic ho přeloží na stínový element.  
   
 ## <a name="purpose"></a>Účel  
- The main purpose of shadowing is to protect the definition of your class members. The base class might undergo a change that creates an element with the same name as one you have already defined. If this happens, the `Shadows` modifier forces references through your class to be resolved to the member you defined, instead of to the new base class element.  
+ Hlavním účelem stínování je chránit definici členů vaší třídy. Základní třída se může podrobit změně, která vytvoří element se stejným názvem jako ten, který jste už definovali. Pokud k tomu dojde, modifikátor `Shadows` vynutí, aby byly odkazy prostřednictvím vaší třídy přeloženy na člen, který jste definovali, místo na nový prvek základní třídy.  
   
-## <a name="types-of-shadowing"></a>Types of Shadowing  
- An element can shadow another element in two different ways. The shadowing element can be declared inside a subregion of the region containing the shadowed element, in which case the shadowing is accomplished *through scope*. Or a deriving class can redefine a member of a base class, in which case the shadowing is done *through inheritance*.  
+## <a name="types-of-shadowing"></a>Typy stínování  
+ Element může stínovat jiný element dvěma různými způsoby. Stínový element lze deklarovat v dílčí oblasti oblasti obsahující stínový element. v takovém případě je vytváření stínů provedeno *prostřednictvím rozsahu*. Nebo odvozená třída může předefinovat člen základní třídy, v takovém případě se stín provádí *prostřednictvím dědičnosti*.  
   
-### <a name="shadowing-through-scope"></a>Shadowing Through Scope  
- It is possible for programming elements in the same module, class, or structure to have the same name but different scope. When two elements are declared in this manner and the code refers to the name they share, the element with the narrower scope shadows the other element (block scope is the narrowest).  
+### <a name="shadowing-through-scope"></a>Stínování přes rozsah  
+ Je možné, že programovací prvky ve stejném modulu, třídě nebo struktuře mají stejný název, ale jiný obor. Pokud jsou v tomto způsobu deklarovány dva prvky a kód odkazuje na název, který sdílí, element s úzkým rozsahem stínů ostatních prvků (rozsah bloku je nejužší).  
   
- For example, a module can define a `Public` variable named `temp`, and a procedure within the module can declare a local variable also named `temp`. References to `temp` from within the procedure access the local variable, while references to `temp` from outside the procedure access the `Public` variable. In this case, the procedure variable `temp` shadows the module variable `temp`.  
+ Modul může například definovat `Public` proměnnou s názvem `temp`a procedura v rámci modulu může deklarovat místní proměnnou také s názvem `temp`. Odkazy na `temp` v rámci procedury přistupují k místní proměnné, zatímco odkazy na `temp` z vně procedury přistupují k proměnné `Public`. V tomto případě proměnná procedury `temp` Stínová proměnná modulu `temp`.  
   
- The following illustration shows two variables, both named `temp`. The local variable `temp` shadows the member variable `temp` when accessed from within its own procedure `p`. However, the `MyClass` keyword bypasses the shadowing and accesses the member variable.  
+ Následující ilustrace znázorňuje dvě proměnné, s názvem `temp`. Místní proměnná `temp` stínovou proměnnou `temp` při použití z vlastní procedury `p`. Nicméně klíčové slovo `MyClass` obchází stín a přistupuje k členské proměnné.  
   
- ![Graphic that shows shadowing through scope.](./media/shadowing/shadow-scope-diagram.gif)
+ ![Obrázek, který zobrazuje stínování v rozsahu.](./media/shadowing/shadow-scope-diagram.gif)
   
- For an example of shadowing through scope, see [How to: Hide a Variable with the Same Name as Your Variable](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-a-variable-with-the-same-name-as-your-variable.md).  
+ Příklad vytváření stínového rozsahu naleznete v tématu [How to: Hide a proměnná se stejným názvem jako má vaše proměnná](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-a-variable-with-the-same-name-as-your-variable.md).  
   
-### <a name="shadowing-through-inheritance"></a>Shadowing Through Inheritance  
- If a derived class redefines a programming element inherited from a base class, the redefining element shadows the original element. You can shadow any type of declared element, or set of overloaded elements, with any other type. For example, an `Integer` variable can shadow a `Function` procedure. If you shadow a procedure with another procedure, you can use a different parameter list and a different return type.  
+### <a name="shadowing-through-inheritance"></a>Stínování prostřednictvím dědičnosti  
+ Předefinuje-li odvozená třída programový prvek zděděný ze základní třídy, element redefine původní prvek nastínuje. Můžete vytvořit stín libovolného typu deklarovaného prvku nebo sadu přetížených prvků s jakýmkoli jiným typem. Například proměnná `Integer` může nastínovat `Function` postup. Pokud vytvoříte stínovou proceduru pomocí jiného postupu, můžete použít jiný seznam parametrů a jiný návratový typ.  
   
- The following illustration shows a base class `b` and a derived class `d` that inherits from `b`. The base class defines a procedure named `proc`, and the derived class shadows it with another procedure of the same name. The first `Call` statement accesses the shadowing `proc` in the derived class. However, the `MyBase` keyword bypasses the shadowing and accesses the shadowed procedure in the base class.  
+ Následující ilustrace znázorňuje základní třídu `b` a odvozenou třídu `d`, která dědí z `b`. Základní třída definuje proceduru s názvem `proc`a odvozenou třídou ji nastínuje s jiným postupem stejného názvu. První příkaz `Call` přistupuje ke stínovým `proc` v odvozené třídě. Nicméně klíčové slovo `MyBase` obchází stín a přistupuje k stínované proceduře v základní třídě.  
   
- ![Graphic diagram of shadowing through inheritance](./media/shadowing/shadowing-inherit-diagram.gif)  
+ ![Grafický diagram stínování prostřednictvím dědičnosti](./media/shadowing/shadowing-inherit-diagram.gif)  
   
- For an example of shadowing through inheritance, see [How to: Hide a Variable with the Same Name as Your Variable](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-a-variable-with-the-same-name-as-your-variable.md) and [How to: Hide an Inherited Variable](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-an-inherited-variable.md).  
+ Příklad stínování prostřednictvím dědičnosti naleznete v tématu [How to: Hide a proměnná se stejným názvem jako má vaše proměnná](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-a-variable-with-the-same-name-as-your-variable.md) a [Postupy: skrytí zděděné proměnné](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-an-inherited-variable.md).  
   
-#### <a name="shadowing-and-access-level"></a>Shadowing and Access Level  
- The shadowing element is not always accessible from the code using the derived class. For example, it might be declared `Private`. In such a case, shadowing is defeated and the compiler resolves any reference to the same element it would have if there had been no shadowing. This element is the accessible element the fewest derivational steps backward from the shadowing class. If the shadowed element is a procedure, the resolution is to the closest accessible version with the same name, parameter list, and return type.  
+#### <a name="shadowing-and-access-level"></a>Stínová a přístupná úroveň  
+ Element Shadow není vždy přístupný z kódu pomocí odvozené třídy. Může být například deklarován `Private`. V takovém případě je stínový postup připraven a kompilátor překládá všechny odkazy na stejný prvek, který by měl být v případě, že se nevytvořila žádná Stínová kopie. Tento prvek je přístupný prvek nejmenším odvozením kroků zpět od stínové třídy. Pokud je stínovaný element procedurou, je rozlišením nejbližší dostupné verze se stejným názvem, seznamem parametrů a návratovým typem.  
   
- The following example shows an inheritance hierarchy of three classes. Each class defines a `Sub` procedure `display`, and each derived class shadows the `display` procedure in its base class.  
+ Následující příklad ukazuje hierarchii dědičnosti tří tříd. Každá třída definuje proceduru `Sub` `display`a každá odvozená třída Stínuje `display` proceduru v její základní třídě.  
   
 ```vb  
 Public Class firstClass  
@@ -92,23 +92,23 @@ Module callDisplay
 End Module  
 ```  
   
- In the preceding example, the derived class `secondClass` shadows `display` with a `Private` procedure. When module `callDisplay` calls `display` in `secondClass`, the calling code is outside `secondClass` and therefore cannot access the private `display` procedure. Shadowing is defeated, and the compiler resolves the reference to the base class `display` procedure.  
+ V předchozím příkladu odvozená třída `secondClass` stíny `display` pomocí `Private` procedury. Když modul `callDisplay` volá `display` v `secondClass`, je volající kód mimo `secondClass` a proto nemůže získat přístup k privátnímu `display` postupu. Stíning je připraven a kompilátor překládá odkaz na základní třídu `display` proceduře.  
   
- However, the further derived class `thirdClass` declares `display` as `Public`, so the code in `callDisplay` can access it.  
+ Nicméně další odvozená třída `thirdClass` deklaruje `display` jako `Public`, takže kód v `callDisplay` k němu má přístup.  
   
-## <a name="shadowing-and-overriding"></a>Shadowing and Overriding  
- Do not confuse shadowing with overriding. Both are used when a derived class inherits from a base class, and both redefine one declared element with another. But there are significant differences between the two. For a comparison, see [Differences Between Shadowing and Overriding](../../../../visual-basic/programming-guide/language-features/declared-elements/differences-between-shadowing-and-overriding.md).  
+## <a name="shadowing-and-overriding"></a>Stínování a přepsání  
+ Nezaměňujte stíny s přepsáním. Obě jsou použity, když odvozená třída dědí ze základní třídy a obě předefinování jednoho deklarovaného elementu s jiným. Existují však významné rozdíly mezi těmito dvěma. Porovnání najdete v tématu [rozdíly mezi stínováním a přepsáním](../../../../visual-basic/programming-guide/language-features/declared-elements/differences-between-shadowing-and-overriding.md).  
   
-## <a name="shadowing-and-overloading"></a>Shadowing and Overloading  
- If you shadow the same base class element with more than one element in your derived class, the shadowing elements become overloaded versions of that element. For more information, see [Procedure Overloading](../../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md).  
+## <a name="shadowing-and-overloading"></a>Nastínování a přetížení  
+ Pokud vytvoříte stín stejného prvku základní třídy s více než jedním prvkem v odvozené třídě, stínové prvky se stanou přetíženými verzemi tohoto prvku. Další informace najdete v tématu [přetížení procedury](../../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md).  
   
-## <a name="accessing-a-shadowed-element"></a>Accessing a Shadowed Element  
- When you access an element from a derived class, you normally do so through the current instance of that derived class, by qualifying the element name with the `Me` keyword. If your derived class shadows the element in the base class, you can access the base class element by qualifying it with the `MyBase` keyword.  
+## <a name="accessing-a-shadowed-element"></a>Přístup k Stínovanému elementu  
+ Při přístupu k elementu z odvozené třídy to obvykle provedete prostřednictvím aktuální instance této odvozené třídy – kvalifikováním názvu elementu s klíčovým slovem `Me`. Pokud je vaše odvozená třída stínem elementu v základní třídě, můžete přistupovat k elementu základní třídy tím, že ho zařadíte pomocí klíčového slova `MyBase`.  
   
- For an example of accessing a shadowed element, see [How to: Access a Variable Hidden by a Derived Class](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-access-a-variable-hidden-by-a-derived-class.md).  
+ Příklad přístupu ke stínovým elementům naleznete v tématu [How to: Access a Hidden a Derived by odvozené třídy](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-access-a-variable-hidden-by-a-derived-class.md).  
   
-### <a name="declaration-of-the-object-variable"></a>Declaration of the Object Variable  
- How you create the object variable can also affect whether the derived class accesses a shadowing element or the shadowed element. The following example creates two objects from a derived class, but one object is declared as the base class and the other as the derived class.  
+### <a name="declaration-of-the-object-variable"></a>Deklarace objektové proměnné  
+ Způsob, jakým vytvoříte proměnnou objektu, může také ovlivnit, zda odvozená třída přistupuje ke stínovým elementům nebo k stínovanému elementu. Následující příklad vytvoří dva objekty z odvozené třídy, ale jeden objekt je deklarován jako základní třída a druhý jako odvozená třída.  
   
 ```vb  
 Public Class baseCls  
@@ -135,12 +135,12 @@ Public Class useClasses
 End Class  
 ```  
   
- In the preceding example, the variable `basObj` is declared as the base class. Assigning a `dervCls` object to it constitutes a widening conversion and is therefore valid. However, the base class cannot access the shadowing version of the variable `z` in the derived class, so the compiler resolves `basObj.z` to the original base class value.  
+ V předchozím příkladu je proměnná `basObj` deklarována jako základní třída. Přiřazení objektu `dervCls` představuje rozšiřující převod, který je proto platný. Základní třída však nemůže získat přístup k stínové verzi proměnné `z` v odvozené třídě, takže Kompilátor přeloží `basObj.z` na původní hodnotu základní třídy.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
-- [Scope in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
+- [Obor v Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
 - [Rozšíření a zúžení převodů](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
 - [Shadows](../../../../visual-basic/language-reference/modifiers/shadows.md)
 - [Overrides](../../../../visual-basic/language-reference/modifiers/overrides.md)

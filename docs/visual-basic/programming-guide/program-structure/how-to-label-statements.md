@@ -16,22 +16,22 @@ ms.locfileid: "74347384"
 ---
 # <a name="how-to-label-statements-visual-basic"></a>Postupy: Vytváření popisků příkazů (Visual Basic)
 
-Statement blocks are made up of lines of code delimited by colons. Lines of code preceded by an identifying string or integer are said to be *labeled*. Statement labels are used to mark a line of code to identify it for use with statements such as `On Error Goto`.
+Bloky příkazů jsou tvořeny řádky kódu, které jsou odděleny dvojtečkami. Řádky kódu předchází identifikující řetězec nebo celé číslo jsou označeny jako *popisky*. Popisky příkazů slouží k označení řádku kódu k identifikaci pro použití s příkazy, jako je `On Error Goto`.
 
-Labels may be either valid Visual Basic identifiers—such as those that identify programming elements—or integer literals. A label must appear at the beginning of a line of source code and must be followed by a colon, regardless of whether it is followed by a statement on the same line.
+Popisky mohou být platné Visual Basic identifikátory, například ty, které identifikují programovací prvky – nebo celočíselné literály. Popisek se musí objevit na začátku řádku zdrojového kódu a musí následovat dvojtečka bez ohledu na to, jestli je následován příkazem na stejném řádku.
 
-The compiler identifies labels by checking whether the beginning of the line matches any already-defined identifier. If it does not, the compiler assumes it is a label.
+Kompilátor identifikuje popisky tím, že zkontroluje, zda začátek řádku odpovídá jakémukoli již definovanému identifikátoru. Pokud tomu tak není, kompilátor předpokládá, že se jedná o popisek.
 
-Labels have their own declaration space and do not interfere with other identifiers. A label's scope is the body of the method. Label declaration takes precedence in any ambiguous situation.
+Popisky mají vlastní prostor deklarací a neovlivňují jiné identifikátory. Obor popisku je tělo metody. Deklarace popisku má přednost v jakékoli dvojznačné situaci.
 
 > [!NOTE]
-> Labels can be used only on executable statements inside methods.
+> Popisky lze použít pouze pro spustitelné příkazy uvnitř metod.
 
-## <a name="to-label-a-line-of-code"></a>To label a line of code
+## <a name="to-label-a-line-of-code"></a>Popisek řádku kódu
 
-Place an identifier, followed by a colon, at the beginning of the line of source code.
+Umístěte identifikátor následovaný dvojtečkou na začátku řádku zdrojového kódu.
 
-For example, the following lines of code are labeled with `Jump` and `120`, respectively:
+Například následující řádky kódu jsou označeny `Jump` a `120`, v uvedeném pořadí:
 
 [!code-vb[VbVbalrStatements#708](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#708)]
 

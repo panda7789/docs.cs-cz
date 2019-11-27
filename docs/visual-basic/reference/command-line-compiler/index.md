@@ -1,5 +1,5 @@
 ---
-title: Command-line compiler
+title: Kompilátor příkazového řádku
 ms.date: 02/20/2018
 helpviewer_keywords:
 - compilers [Visual Basic], Visual Basic options
@@ -15,24 +15,24 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344233"
 ---
-# <a name="visual-basic-command-line-compiler"></a>Visual Basic command-line compiler
+# <a name="visual-basic-command-line-compiler"></a>Visual Basic Kompilátor příkazového řádku
 
-The Visual Basic command-line compiler provides an alternative to compiling programs from within the Visual Studio integrated development environment (IDE). This section contains descriptions for the Visual Basic compiler options.
+Kompilátor příkazového řádku Visual Basic poskytuje alternativu k kompilování programů z integrovaného vývojového prostředí (IDE) sady Visual Studio. V této části najdete popis možností Visual Basic kompilátoru.
 
 [!INCLUDE[compiler-options](~/includes/compiler-options.md)]
   
 ## <a name="in-this-section"></a>V tomto oddílu
 
 [Sestavení z příkazového řádku](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md)  
-Describes the Visual Basic command-line compiler, which is provided as an alternative to compiling programs from within the Visual Studio IDE.
+Popisuje Visual Basic Kompilátor příkazového řádku, který je k dispozici jako alternativa k kompilování programů z integrovaného vývojového prostředí (IDE) sady Visual Studio.
 
-[Visual Basic Compiler Options Listed Alphabetically](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-alphabetically.md)  
-Lists compiler options in an alphabetical table
+[Visual Basic možnosti kompilátoru seřazené abecedně](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-alphabetically.md)  
+Zobrazí seznam možností kompilátoru v abecední tabulce.
 
-[Visual Basic Compiler Options Listed by Category](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-by-category.md)  
-Presents compiler options in functional groups.
+[Visual Basic možnosti kompilátoru uvedené podle kategorie](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-by-category.md)  
+Prezentuje možnosti kompilátoru ve funkčních skupinách.
   
-## <a name="related-sections"></a>Related sections
+## <a name="related-sections"></a>Související oddíly
 
 [Průvodce jazykem Visual Basic](../../index.md)  
-The starting point for the Visual Basic documentation.
+Výchozí bod pro dokumentaci Visual Basic.

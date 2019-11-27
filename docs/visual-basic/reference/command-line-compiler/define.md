@@ -17,7 +17,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344766"
 ---
 # <a name="-define-visual-basic"></a>-define (Visual Basic)
-Defines conditional compiler constants.  
+Definuje podmíněné konstanty kompilátoru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -25,40 +25,40 @@ Defines conditional compiler constants.
 -define:["]symbol[=value][,symbol[=value]]["]  
 ```
 
-or
+nebo
 
 ```console  
 -d:["]symbol[=value][,symbol[=value]]["]  
 ```  
   
-## <a name="arguments"></a>Arguments  
+## <a name="arguments"></a>Argumenty  
   
 |Termín|Definice|  
 |---|---|  
-|`symbol`|Požadováno. The symbol to define.|  
-|`value`|Volitelné. The value to assign `symbol`. If `value` is a string, it must be surrounded by backslash/quotation-mark sequences (\\") instead of quotation marks. If no value is specified, then it is taken to be True.|  
+|`symbol`|Požadováno. Symbol, který má být definován.|  
+|`value`|Volitelná. Hodnota, kterou chcete přiřadit `symbol`. Pokud `value` je řetězec, musí být ohraničen znakem zpětného lomítka nebo posloupnosti uvozovek (\\") místo uvozovek. Pokud není zadána žádná hodnota, bude provedena hodnota true.|  
   
 ## <a name="remarks"></a>Poznámky  
- The `-define` option has an effect similar to using a `#Const` preprocessor directive in your source file, except that constants defined with `-define` are public and apply to all files in the project.  
+ Možnost `-define` má podobný efekt jako použití direktivy preprocesoru `#Const` ve zdrojovém souboru, s tím rozdílem, že konstanty definované s `-define` jsou veřejné a platí pro všechny soubory v projektu.  
   
- You can use symbols created by this option with the `#If`...`Then`...`#Else` directive to compile source files conditionally.  
+ Symboly vytvořené pomocí této možnosti můžete použít spolu s direktivou `#If`...`Then`...`#Else` ke podmíněnému kompilování zdrojových souborů.  
   
- `-d` is the short form of `-define`.  
+ `-d` je krátká forma `-define`.  
   
- You can define multiple symbols with `-define` by using a comma to separate symbol definitions.  
+ Můžete definovat více symbolů pomocí `-define` čárkou pro oddělení definic symbolů.  
   
-|To set /define in the Visual Studio integrated development environment|  
+|Nastavení/define v integrovaném vývojovém prostředí sady Visual Studio|  
 |---|  
-|1.  Have a project selected in **Solution Explorer**. On the **Project** menu, click **Properties**. <br />2.  Click the **Compile** tab.<br />3.  Click **Advanced**.<br />4.  Modify the value in the **Custom Constants** box.|  
+|1. v **Průzkumník řešení**mít vybraný projekt. V nabídce **projekt** klikněte na příkaz **vlastnosti**. <br />2. klikněte na kartu **kompilovat** .<br />3. klikněte na tlačítko **Upřesnit**.<br />4. upravte hodnotu v poli **vlastní konstanty** .|  
   
 ## <a name="example"></a>Příklad  
- The following code defines and then uses two conditional compiler constants.  
+ Následující kód definuje a poté používá dvě podmíněné konstanty kompilátoru.  
   
  [!code-vb[VbVbalrCompiler#45](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCompiler/VB/Class1.vb#45)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Direktivy #If...Then...#Else](../../../visual-basic/language-reference/directives/if-then-else-directives.md)
 - [Direktiva #Const](../../../visual-basic/language-reference/directives/const-directive.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

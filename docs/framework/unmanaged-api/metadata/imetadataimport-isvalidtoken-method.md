@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74434700"
 ---
 # <a name="imetadataimportisvalidtoken-method"></a>IMetaDataImport::IsValidToken – metoda
-Gets a value indicating whether the specified token holds a valid reference to a code object.  
+Získá hodnotu, která označuje, zda zadaný token drží platný odkaz na objekt kódu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,19 +35,19 @@ BOOL IsValidToken (
   
 ## <a name="parameters"></a>Parametry  
  `tk`  
- [in] The token to check the reference validity for.  
+ pro Token pro kontrolu platnosti odkazu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `true` if `tk` is a valid metadata token within the current scope. Otherwise, `false`.  
+ `true`, pokud je `tk` platným tokenem metadat v aktuálním oboru. V opačném případě `false`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

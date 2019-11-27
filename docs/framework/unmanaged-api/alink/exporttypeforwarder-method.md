@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448704"
 ---
 # <a name="exporttypeforwarder-method"></a>ExportTypeForwarder – metoda
-Adds a type forwarder to the type table of the given assembly.  
+Přidá předávaného typu do tabulky typů daného sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,25 +37,25 @@ HRESULT ExportTypeForwarder(
   
 ## <a name="parameters"></a>Parametry  
  `tkAssemblyRef`  
- Reference to the assembly to which the type forwarder refers.  
+ Odkaz na sestavení, na které odkazuje předávací typ.  
   
  `pszTypename`  
- Fully qualified type name to export.  
+ Plně kvalifikovaný název typu, který se má exportovat  
   
  `dwFlags`  
- `ComType` flags such as `tdPublic` or `tdNested`. This value may be passed to [DefineExportedType Method](../metadata/imetadataassemblyemit-defineexportedtype-method.md).  
+ `ComType` příznaky jako `tdPublic` nebo `tdNested`. Tato hodnota může být předána [metodě DefineExportedType –](../metadata/imetadataassemblyemit-defineexportedtype-method.md).  
   
  `pType`  
- Receives the token of the exported type. This is necessary only for emitting nested types.  
+ Přijímá token exportovaného typu. To je nezbytné jenom pro vygenerování vnořených typů.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Returns S_OK if the method succeeds.  
+ Vrátí S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Requires alink.h  
+ Vyžaduje ALink. h  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink – rozhraní](ialink-interface.md)
 - [IALink2 – rozhraní](ialink2-interface.md)
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)

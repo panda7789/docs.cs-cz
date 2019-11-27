@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74431065"
 ---
 # <a name="isymunmanageddocumentgetchecksumalgorithmid-method"></a>ISymUnmanagedDocument::GetCheckSumAlgorithmId – metoda
-Gets the checksum algorithm identifier, or returns a GUID of all zeros if there is no checksum.  
+Získá identifikátor algoritmu kontrolního součtu nebo vrátí identifikátor GUID všech nul, pokud neexistuje kontrolní součet.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,10 +34,10 @@ HRESULT GetCheckSumAlgorithmId(
   
 ## <a name="parameters"></a>Parametry  
  `pRetVal`  
- [out] A pointer to a variable that receives the checksum algorithm identifier.  
+ mimo Ukazatel na proměnnou, která přijímá identifikátor algoritmu kontrolního součtu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds.  
+ S_OK, zda je metoda úspěšná.  
   
 ## <a name="see-also"></a>Viz také:
 

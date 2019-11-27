@@ -15,32 +15,32 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349513"
 ---
 # <a name="istrue-operator-visual-basic"></a>IsTrue – operátor (Visual Basic)
-Determines whether an expression is `True`.  
+Určuje, zda je výraz `True`.  
   
- You cannot call `IsTrue` explicitly in your code, but the Visual Basic compiler can use it to generate code from `OrElse` clauses. If you define a class or structure and then use a variable of that type in an `OrElse` clause, you must define `IsTrue` on that class or structure.  
+ Ve svém kódu nemůžete volat `IsTrue` explicitně, ale kompilátor Visual Basic ho může použít k vygenerování kódu z `OrElse` klauzulí. Definujete-li třídu nebo strukturu a poté použijete proměnnou typu v klauzuli `OrElse`, je nutné definovat `IsTrue` v této třídě nebo struktuře.  
   
- The compiler considers the `IsTrue` and `IsFalse` operators as a *matched pair*. This means that if you define one of them, you must also define the other one.  
+ Kompilátor považuje operátory `IsTrue` a `IsFalse` za *spárovaný pár*. To znamená, že pokud definujete jeden z nich, musíte také definovat druhý.  
   
-## <a name="compiler-use-of-istrue"></a>Compiler Use of IsTrue  
- When you have defined a class or structure, you can use a variable of that type in a `For`, `If`, `Else If`, or `While` statement, or in a `When` clause. If you do this, the compiler requires an operator that converts your type into a `Boolean` value so it can test a condition. It searches for a suitable operator in the following order:  
+## <a name="compiler-use-of-istrue"></a>Použití kompilátoru true  
+ Pokud jste definovali třídu nebo strukturu, můžete použít proměnnou daného typu v `For`, `If`, `Else If`nebo příkazu `While` nebo v klauzuli `When`. Pokud to uděláte, kompilátor vyžaduje operátor, který převede typ na `Boolean` hodnotu, aby mohl otestovat podmínku. Vyhledá vhodný operátor v následujícím pořadí:  
   
-1. A widening conversion operator from your class or structure to `Boolean`.  
+1. Rozšiřující operátor převodu z vaší třídy nebo struktury na `Boolean`.  
   
-2. A widening conversion operator from your class or structure to `Boolean?`.  
+2. Rozšiřující operátor převodu z vaší třídy nebo struktury na `Boolean?`.  
   
-3. The `IsTrue` operator on your class or structure.  
+3. Operátor `IsTrue` pro třídu nebo strukturu.  
   
-4. A narrowing conversion to `Boolean?` that does not involve a conversion from `Boolean` to `Boolean?`.  
+4. Zužující převod na `Boolean?`, který nezahrnuje převod z `Boolean` na `Boolean?`.  
   
-5. A narrowing conversion operator from your class or structure to `Boolean`.  
+5. Zužující operátor převodu z vaší třídy nebo struktury na `Boolean`.  
   
- If you have not defined any conversion to `Boolean` or an `IsTrue` operator, the compiler signals an error.  
+ Pokud jste nedefinovali převod na `Boolean` nebo operátor `IsTrue`, kompilátor signalizuje chybu.  
   
 > [!NOTE]
-> The `IsTrue` operator can be *overloaded*, which means that a class or structure can redefine its behavior when its operand has the type of that class or structure. If your code uses this operator on such a class or structure, be sure you understand its redefined behavior. For more information, see [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+> Operátor `IsTrue` může být *přetížený*, což znamená, že třída nebo struktura může předefinovat své chování, když má jeho operand typ této třídy nebo struktury. Pokud váš kód používá tento operátor na takové třídě nebo struktuře, ujistěte se, že rozumíte jeho předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Příklad  
- The following code example defines the outline of a structure that includes definitions for the `IsFalse` and `IsTrue` operators.  
+ Následující příklad kódu definuje obrys struktury, která obsahuje definice pro operátory `IsFalse` a `IsTrue`.  
   
  [!code-vb[VbVbalrOperators#28](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#28)]  
   

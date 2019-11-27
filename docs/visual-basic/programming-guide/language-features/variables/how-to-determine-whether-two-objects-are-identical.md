@@ -14,37 +14,37 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348600"
 ---
 # <a name="how-to-determine-whether-two-objects-are-identical-visual-basic"></a>Postupy: Určení, zda dva objekty jsou identické (Visual Basic).
-In Visual Basic, two variable references are considered identical if their pointers are the same, that is, if both variables point to the same class instance in memory. For example, in a Windows Forms application, you might want to make a comparison to determine whether the current instance (`Me`) is the same as a particular instance, such as `Form2`.  
+V Visual Basic jsou dva odkazy na proměnné považovány za identické, pokud jsou ukazatele stejné, to znamená, pokud obě proměnné odkazují na stejnou instanci třídy v paměti. Například v aplikaci model Windows Forms můžete chtít porovnat, abyste zjistili, zda je aktuální instance (`Me`) stejná jako konkrétní instance, jako je například `Form2`.  
   
- Visual Basic provides two operators to compare pointers. The [Is Operator](../../../../visual-basic/language-reference/operators/is-operator.md) returns `True` if the objects are identical, and the [IsNot Operator](../../../../visual-basic/language-reference/operators/isnot-operator.md) returns `True` if they are not.  
+ Visual Basic poskytuje dva operátory pro porovnání ukazatelů. [Operátor is](../../../../visual-basic/language-reference/operators/is-operator.md) vrátí `True`, pokud jsou objekty identické a [operátor IsNot](../../../../visual-basic/language-reference/operators/isnot-operator.md) vrátí `True`, pokud nejsou.  
   
-## <a name="determining-if-two-objects-are-identical"></a>Determining if Two Objects Are Identical  
+## <a name="determining-if-two-objects-are-identical"></a>Určení, zda jsou dva objekty identické  
   
-#### <a name="to-determine-if-two-objects-are-identical"></a>To determine if two objects are identical  
+#### <a name="to-determine-if-two-objects-are-identical"></a>Určení, zda jsou dva objekty identické  
   
-1. Set up a `Boolean` expression to test the two objects.  
+1. Nastavte výraz `Boolean` pro otestování těchto dvou objektů.  
   
-2. In your testing expression, use the `Is` operator with the two objects as operands.  
+2. Ve výrazu testování použijte operátor `Is` se dvěma objekty jako operandy.  
   
-     `Is` returns `True` if the objects point to the same class instance.  
+     `Is` vrátí `True`, pokud objekty odkazují na stejnou instanci třídy.  
   
-## <a name="determining-if-two-objects-are-not-identical"></a>Determining if Two Objects Are Not Identical  
- Sometimes you want to perform an action if the two objects are not identical, and it can be awkward to combine `Not` and `Is`, for example `If Not obj1 Is obj2`. In such a case you can use the `IsNot` operator.  
+## <a name="determining-if-two-objects-are-not-identical"></a>Určení, zda dva objekty nejsou identické  
+ Někdy je vhodné provést akci, pokud tyto dva objekty nejsou identické a může být nevhodné kombinovat `Not` a `Is`, například `If Not obj1 Is obj2`. V takovém případě můžete použít operátor `IsNot`.  
   
-#### <a name="to-determine-if-two-objects-are-not-identical"></a>To determine if two objects are not identical  
+#### <a name="to-determine-if-two-objects-are-not-identical"></a>Určení, zda dva objekty nejsou identické  
   
-1. Set up a `Boolean` expression to test the two objects.  
+1. Nastavte výraz `Boolean` pro otestování těchto dvou objektů.  
   
-2. In your testing expression, use the `IsNot` operator with the two objects as operands.  
+2. Ve výrazu testování použijte operátor `IsNot` se dvěma objekty jako operandy.  
   
-     `IsNot` returns `True` if the objects do not point to the same class instance.  
+     `IsNot` vrátí `True`, pokud objekty neodkazují na stejnou instanci třídy.  
   
 ## <a name="example"></a>Příklad  
- The following example tests pairs of `Object` variables to see if they point to the same class instance.  
+ Následující příklad testuje páry `Object` proměnných, aby bylo možné zjistit, zda odkazují na stejnou instanci třídy.  
   
  [!code-vb[VbVbalrKeywords#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/class7.vb#14)]  
   
- The preceding example displays the following output.  
+ V předchozím příkladu se zobrazí následující výstup.  
   
  `objA different from objB? True`  
   

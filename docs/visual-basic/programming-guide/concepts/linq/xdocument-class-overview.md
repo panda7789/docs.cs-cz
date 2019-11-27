@@ -9,40 +9,40 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349294"
 ---
-# <a name="xdocument-class-overview-visual-basic"></a>XDocument Class Overview (Visual Basic)
-This topic introduces the <xref:System.Xml.Linq.XDocument> class.  
+# <a name="xdocument-class-overview-visual-basic"></a>XDocument – Přehled třídy (Visual Basic)
+Toto téma představuje třídu <xref:System.Xml.Linq.XDocument>.  
   
-## <a name="overview-of-the-xdocument-class"></a>Overview of the XDocument class  
- The <xref:System.Xml.Linq.XDocument> class contains the information necessary for a valid XML document. This includes an XML declaration, processing instructions, and comments.  
+## <a name="overview-of-the-xdocument-class"></a>Přehled třídy XDocument  
+ Třída <xref:System.Xml.Linq.XDocument> obsahuje informace potřebné pro platný dokument XML. To zahrnuje deklarace XML, instrukce pro zpracování a komentáře.  
   
- Note that you only have to create <xref:System.Xml.Linq.XDocument> objects if you require the specific functionality provided by the <xref:System.Xml.Linq.XDocument> class. In many circumstances, you can work directly with <xref:System.Xml.Linq.XElement>. Working directly with <xref:System.Xml.Linq.XElement> is a simpler programming model.  
+ Všimněte si, že je nutné vytvořit <xref:System.Xml.Linq.XDocument> objekty pouze v případě, že požadujete konkrétní funkčnost poskytovanou <xref:System.Xml.Linq.XDocument>ou třídou. V mnoha případech můžete pracovat přímo s <xref:System.Xml.Linq.XElement>. Práce přímo s <xref:System.Xml.Linq.XElement> je jednodušší programovací model.  
   
- <xref:System.Xml.Linq.XDocument> derives from <xref:System.Xml.Linq.XContainer>. Therefore, it can contain child nodes. However, <xref:System.Xml.Linq.XDocument> objects can have only one child <xref:System.Xml.Linq.XElement> node. This reflects the XML standard that there can be only one root element in an XML document.  
+ <xref:System.Xml.Linq.XDocument> jsou odvozeny z <xref:System.Xml.Linq.XContainer>. Proto může obsahovat podřízené uzly. <xref:System.Xml.Linq.XDocument> objektů však může mít pouze jeden podřízený <xref:System.Xml.Linq.XElement> uzel. To odráží standard XML, že v dokumentu XML může být pouze jeden kořenový element.  
   
-## <a name="components-of-xdocument"></a>Components of XDocument  
- An <xref:System.Xml.Linq.XDocument> can contain the following elements:  
+## <a name="components-of-xdocument"></a>Komponenty XDocument  
+ <xref:System.Xml.Linq.XDocument> může obsahovat následující prvky:  
   
-- One <xref:System.Xml.Linq.XDeclaration> object. <xref:System.Xml.Linq.XDeclaration> enables you to specify the pertinent parts of an XML declaration: the XML version, the encoding of the document, and whether the XML document is stand-alone.  
+- Jeden objekt <xref:System.Xml.Linq.XDeclaration>. <xref:System.Xml.Linq.XDeclaration> umožňuje zadat relevantní části deklarace XML: verze XML, kódování dokumentu a zda je dokument XML samostatný.  
   
-- One <xref:System.Xml.Linq.XElement> object. This is the root node of the XML document.  
+- Jeden objekt <xref:System.Xml.Linq.XElement>. Toto je kořenový uzel dokumentu XML.  
   
-- Any number of <xref:System.Xml.Linq.XProcessingInstruction> objects. A processing instruction communicates information to an application that processes the XML.  
+- Libovolný počet objektů <xref:System.Xml.Linq.XProcessingInstruction>. Instrukce pro zpracování sděluje informace aplikaci, která zpracovává XML.  
   
-- Any number of <xref:System.Xml.Linq.XComment> objects. The comments will be siblings to the root element. The <xref:System.Xml.Linq.XComment> object cannot be the first argument in the list, because it is not valid for an XML document to start with a comment.  
+- Libovolný počet objektů <xref:System.Xml.Linq.XComment>. Komentáře budou na stejné úrovni jako kořenový element. Objekt <xref:System.Xml.Linq.XComment> nemůže být prvním argumentem v seznamu, protože není platný pro dokument XML, který by měl začít s komentářem.  
   
-- One <xref:System.Xml.Linq.XDocumentType> for the DTD.  
+- Jedna <xref:System.Xml.Linq.XDocumentType> pro DTD.  
   
- When you serialize an <xref:System.Xml.Linq.XDocument>, even if `XDocument.Declaration` is `null`, the output will have an XML declaration if the writer has `Writer.Settings.OmitXmlDeclaration` set to `false` (the default).  
+ Při serializaci <xref:System.Xml.Linq.XDocument>, a to i v případě, že `XDocument.Declaration` je `null`, výstup bude obsahovat deklarace XML, pokud má zapisovač `Writer.Settings.OmitXmlDeclaration` nastaven na `false` (výchozí).  
   
- By default, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] sets the version to "1.0", and sets the encoding to "utf-8".  
+ Ve výchozím nastavení [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] nastaví verzi na "1,0" a nastaví kódování na UTF-8.  
   
-## <a name="using-xelement-without-xdocument"></a>Using XElement without XDocument  
- As previously mentioned, the <xref:System.Xml.Linq.XElement> class is the main class in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] programming interface. In many cases, your application will not require that you create a document. By using the <xref:System.Xml.Linq.XElement> class, you can create an XML tree, add other XML trees to it, modify the XML tree, and save it.  
+## <a name="using-xelement-without-xdocument"></a>Použití XElement bez XDocument  
+ Jak už jsme uvedli, třída <xref:System.Xml.Linq.XElement> je hlavní třídou v programovacím rozhraní [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. V mnoha případech aplikace nebude vyžadovat vytvoření dokumentu. Pomocí třídy <xref:System.Xml.Linq.XElement> lze vytvořit strom XML, přidat do něj další stromy XML, upravit strom XML a uložit jej.  
   
-## <a name="using-xdocument"></a>Using XDocument  
- To construct an <xref:System.Xml.Linq.XDocument>, use functional construction, just like you do to construct <xref:System.Xml.Linq.XElement> objects.  
+## <a name="using-xdocument"></a>Použití XDocument  
+ Chcete-li vytvořit <xref:System.Xml.Linq.XDocument>, použijte funkční konstrukci stejným způsobem jako při vytváření objektů <xref:System.Xml.Linq.XElement>.  
   
- The following code creates an <xref:System.Xml.Linq.XDocument> object and its associated contained objects.  
+ Následující kód vytvoří objekt <xref:System.Xml.Linq.XDocument> a jeho přidružené objekty v kontejneru.  
   
 ```vb  
 Dim doc As XDocument = <?xml version="1.0" encoding="utf-8"?>  
@@ -62,7 +62,7 @@ Dim doc As XDocument = <?xml version="1.0" encoding="utf-8"?>
 doc.Save("test.xml")  
 ```  
   
- When you examine the file test.xml, you get the following output:  
+ Při kontrole souboru Test. XML získáte následující výstup:  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -83,4 +83,4 @@ doc.Save("test.xml")
   
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ to XML Programming Overview (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)
+- [Přehled programování LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)

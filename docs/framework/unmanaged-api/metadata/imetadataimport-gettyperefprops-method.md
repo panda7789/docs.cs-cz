@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436707"
 ---
 # <a name="imetadataimportgettyperefprops-method"></a>IMetaDataImport::GetTypeRefProps – metoda
-Gets the metadata associated with the <xref:System.Type> referenced by the specified TypeRef token.  
+Získá metadata přidružená k <xref:System.Type>, na kterou odkazuje zadaný token TypeRef.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,28 +39,28 @@ HRESULT GetTypeRefProps (
   
 ## <a name="parameters"></a>Parametry  
  `tr`  
- [in] The TypeRef token that represents the type to return metadata for.  
+ pro Token TypeRef, který představuje typ, pro který se mají vracet metadata  
   
  `ptkResolutionScope`  
- [out] A pointer to the scope in which the reference is made. This value is an AssemblyRef or ModuleRef token.  
+ mimo Ukazatel na obor, ve kterém je odkaz proveden. Tato hodnota je AssemblyRef nebo odkaz ModuleRef token.  
   
  `szName`  
- [out] A buffer containing the type name.  
+ mimo Vyrovnávací paměť obsahující název typu.  
   
  `cchName`  
- [in] The requested size in wide characters of `szName`.  
+ pro Požadovaná velikost v různých znacích `szName`.  
   
  `pchName`  
- [out] The returned size in wide characters of `szName`.  
+ mimo Vrácená velikost v různých znacích `szName`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

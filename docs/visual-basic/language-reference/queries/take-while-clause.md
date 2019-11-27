@@ -16,7 +16,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74347102"
 ---
 # <a name="take-while-clause-visual-basic"></a>Take While – klauzule (Visual Basic)
-Includes elements in a collection as long as a specified condition is `true` and bypasses the remaining elements.  
+Obsahuje prvky v kolekci, pokud je zadaná podmínka `true` a obchází zbývající prvky.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,21 +28,21 @@ Take While expression
   
 |Termín|Definice|  
 |---|---|  
-|`expression`|Požadováno. An expression that represents a condition to test elements for. The expression must return a `Boolean` value or a functional equivalent, such as an `Integer` to be evaluated as a `Boolean`.|  
+|`expression`|Požadováno. Výraz, který představuje podmínku pro testování prvků pro. Výraz musí vracet `Boolean` hodnotu nebo funkční ekvivalent, jako je například `Integer` pro vyhodnocení jako `Boolean`.|  
   
 ## <a name="remarks"></a>Poznámky  
- The `Take While` clause includes elements from the start of a query result until the supplied `expression` returns `false`. After the `expression` returns `false`, the query will bypass all remaining elements. The `expression` is ignored for the remaining results.  
+ Klauzule `Take While` obsahuje prvky z začátek výsledku dotazu, dokud zadaný `expression` nevrátí `false`. Po `expression` vrátí `false`, dotaz vynechá všechny zbývající prvky. `expression` se u zbývajících výsledků ignoruje.  
   
- The `Take While` clause differs from the `Where` clause in that the `Where` clause can be used to include all elements from a query that meet a particular condition. The `Take While` clause includes elements only until the first time that the condition is not satisfied. The `Take While` clause is most useful when you are working with an ordered query result.  
+ Klauzule `Take While` se liší od klauzule `Where` v tom, že klauzuli `Where` lze použít k zahrnutí všech prvků z dotazu, který splňuje určitou podmínku. Klauzule `Take While` obsahuje prvky pouze do doby, než první podmínka není splněna. Klauzule `Take While` je nejužitečnější, když pracujete s výsledkem seřazeného dotazu.  
   
 ## <a name="example"></a>Příklad  
- The following code example uses the `Take While` clause to retrieve results until the first customer without any orders is found.  
+ Následující příklad kódu používá klauzuli `Take While` k načtení výsledků, dokud se nenajde první zákazník bez jakýchkoli objednávek.  
   
  [!code-vb[VbSimpleQuerySamples#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#2)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Introduction to LINQ in Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Úvod do jazyka LINQ v Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
 - [Dotazy](../../../visual-basic/language-reference/queries/index.md)
 - [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)
 - [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)

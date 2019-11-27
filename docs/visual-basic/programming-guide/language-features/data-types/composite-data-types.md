@@ -19,30 +19,30 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346379"
 ---
 # <a name="composite-data-types-visual-basic"></a>Složené datové typy (Visual Basic)
-In addition to the elementary data types Visual Basic supplies, you can also assemble items of different types to create *composite data types* such as structures, arrays, and classes. You can build composite data types from elementary types and from other composite types. For example, you can define an array of structure elements, or a structure with array members.  
+Kromě základních datových typů Visual Basic dodávek můžete také sestavit položky různých typů pro vytváření *složených datových typů* , jako jsou struktury, pole a třídy. Můžete sestavit složené datové typy z základních typů a z jiných složených typů. Například můžete definovat pole prvků struktury nebo strukturu s členy pole.  
   
 ## <a name="data-types"></a>Datové typy  
- A composite type is different from the data type of any of its components. For example, an array of `Integer` elements is not of the `Integer` data type.  
+ Složený typ se liší od datového typu kterékoli z jeho komponent. Například pole `Integer` prvků není datový typ `Integer`.  
   
- An array data type is normally represented using the element type, parentheses, and commas as necessary. For example, a one-dimensional array of `String` elements is represented as `String()`, and a two-dimensional array of `Boolean` elements is represented as `Boolean(,)`.  
+ Datový typ pole je obvykle reprezentován pomocí typu prvku, závorek a čárek podle potřeby. Například jednorozměrné pole `String` prvků je reprezentované jako `String()`a dvourozměrné pole `Boolean` prvků je reprezentované jako `Boolean(,)`.  
   
-## <a name="structure-types"></a>Structure Types  
- There is no single data type comprising all structures. Instead, each definition of a structure represents a unique data type, even if two structures define identical elements in the same order. However, if you create two or more instances of the same structure, Visual Basic considers them to be of the same data type.  
+## <a name="structure-types"></a>Typy struktury  
+ Neexistuje žádný jediný datový typ, který by zahrnoval všechny struktury. Místo toho každá definice struktury představuje jedinečný datový typ, a to i v případě, že dvě struktury definují identické prvky ve stejném pořadí. Pokud však vytvoříte dvě nebo více instancí stejné struktury, Visual Basic považují být za stejný datový typ.  
   
 ## <a name="tuples"></a>N-tice
 
-A tuple is a lightweight structure that contains two or more fields whose types are predefined. Tuples are supported starting with Visual Basic 2017. Tuples are most commonly used to return multiple values from a single method call without having to pass arguments by reference or packaging the returned fields in a more heavy-weight class or structure. See the [Tuples](tuples.md) topic for more information on tuples.
+Řazená kolekce členů je odlehčená struktura, která obsahuje dvě nebo více polí, jejichž typy jsou předdefinované. Řazené kolekce členů jsou podporované od Visual Basic 2017. Řazené kolekce členů se nejčastěji používají pro vracení více hodnot z jednoho volání metody bez nutnosti předávat argumenty odkazem nebo zabalení vrácených polí v rozsáhlejší třídě nebo struktuře. Další informace o řazených kolekcích členů najdete v tématu [řazené kolekce členů](tuples.md) .
 
-## <a name="array-types"></a>Array Types  
- There is no single data type comprising all arrays. The data type of a particular instance of an array is determined by the following:  
+## <a name="array-types"></a>Typy polí  
+ Neexistuje žádný jediný datový typ, který by zahrnoval všechna pole. Datový typ konkrétní instance pole je určen následujícím způsobem:  
   
-- The fact of being an array  
+- Fakt, že se jedná o pole  
   
-- The rank (number of dimensions) of the array  
+- Pořadí (počet rozměrů) pole  
   
-- The element type of the array  
+- Typ prvku pole  
   
- In particular, the length of a given dimension is not part of the instance's data type. Toto dokládá následující příklad.  
+ Konkrétně délka dané dimenze není součástí datového typu instance. Toto dokládá následující příklad.  
   
 ```vb  
 Dim arrayA( ) As Byte = New Byte(12) {}  
@@ -52,22 +52,22 @@ Dim arrayD( , ) As Short
 Dim arrayE( , ) As Short = New Short(4, 10) {}  
 ```  
   
- In the preceding example, array variables `arrayA` and `arrayB` are considered to be of the same data type — `Byte()` — even though they are initialized to different lengths. Variables `arrayB` and `arrayC` are not of the same type because their element types are different. Variables `arrayC` and `arrayD` are not of the same type because their ranks are different. Variables `arrayD` and `arrayE` have the same type — `Short(,)` — because their ranks and element types are the same, even though `arrayD` is not yet initialized.  
+ V předchozím příkladu jsou proměnné pole `arrayA` a `arrayB` považovány za stejný datový typ – `Byte()`, i když jsou inicializovány na jinou délku. Proměnné `arrayB` a `arrayC` nejsou stejného typu, protože jejich typy elementů se liší. Proměnné `arrayC` a `arrayD` nejsou stejného typu, protože se liší jejich pořadí. Proměnné `arrayD` a `arrayE` mají stejný typ – `Short(,)`, protože jejich typy pořadí a elementů jsou stejné, i když `arrayD` ještě není inicializovaný.  
   
- For more information on arrays, see [Arrays](../../../../visual-basic/programming-guide/language-features/arrays/index.md).  
+ Další informace o polích naleznete v tématu [Arrays](../../../../visual-basic/programming-guide/language-features/arrays/index.md).  
   
-## <a name="class-types"></a>Class Types  
- There is no single data type comprising all classes. Although one class can inherit from another class, each is a separate data type. Multiple instances of the same class are of the same data type. If you assign one class instance variable to another, not only do they have the same data type, they point to the same class instance in memory.  
+## <a name="class-types"></a>Typy tříd  
+ Neexistuje žádný jediný datový typ obsahující všechny třídy. I když jedna třída může dědit z jiné třídy, každý z nich je samostatný datový typ. Více instancí stejné třídy je stejného datového typu. Pokud přiřadíte jednu proměnnou instance třídy k druhému, nikoli pouze stejný datový typ, nasměrují na stejnou instanci třídy v paměti.  
   
- For more information on classes, see [Objects and Classes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md).  
+ Další informace o třídách naleznete v tématu [Objects and Classes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md).  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
 - [Základní datové typy](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)
-- [Generic Types in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [Obecné typy v Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
 - [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
-- [Type Conversions in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [Převody typu v Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
 - [Struktury](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)
 - [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
 - [Postupy: Do proměnné umístit více než jednu hodnotu](../../../../visual-basic/programming-guide/language-features/data-types/how-to-hold-more-than-one-value-in-a-variable.md)

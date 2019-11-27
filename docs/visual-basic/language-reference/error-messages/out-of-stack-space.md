@@ -12,21 +12,21 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349186"
 ---
 # <a name="out-of-stack-space-visual-basic"></a>Nedostatek místa v zásobníku (Visual Basic)
-The stack is a working area of memory that grows and shrinks dynamically with the demands of your executing program. Its limits have been exceeded.  
+Zásobník je pracovní oblast paměti, která dynamicky zvětšuje a zmenšuje s požadavky spuštěného programu. Překročila se jejich omezení.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Check that procedures are not nested too deeply.  
+1. Ověřte, že procedury nejsou vnořené příliš hluboko.  
   
-2. Make sure recursive procedures terminate properly.  
+2. Zajistěte, aby rekurzivní procedury byly ukončeny správně.  
   
-3. If local variables require more local variable space than is available, try declaring some variables at the module level. You can also declare all variables in the procedure static by preceding the `Property`, `Sub`, or `Function` keyword with `Static`. Or you can use the `Static` statement to declare individual static variables within procedures.  
+3. Pokud místní proměnné vyžadují více místních proměnných místo, než je k dispozici, zkuste deklarovat některé proměnné na úrovni modulu. Můžete také deklarovat všechny proměnné v proceduře static pomocí předchozího klíčového slova `Property`, `Sub`nebo `Function` s `Static`. Případně můžete použít příkaz `Static` k deklarování jednotlivých statických proměnných v rámci procedur.  
   
-4. Redefine some of your fixed-length strings as variable-length strings, as fixed-length strings use more stack space than variable-length strings. You can also define the string at module level where it requires no stack space.  
+4. Předefinujte některé řetězce s pevnou délkou jako řetězce s proměnlivou délkou, protože řetězce s pevnou délkou používají více místa v zásobníku než řetězce s proměnlivou délkou. Můžete také definovat řetězec na úrovni modulu, kde nevyžaduje žádné místo v zásobníku.  
   
-5. Check the number of nested `DoEvents` function calls, by using the `Calls` dialog box to view which procedures are active on the stack.  
+5. Zkontrolujte počet volání vnořených `DoEvents` funkcí pomocí dialogového okna `Calls` k zobrazení, které postupy jsou v zásobníku aktivní.  
   
-6. Make sure you did not cause an "event cascade" by triggering an event that calls an event procedure already on the stack. An event cascade is similar to an unterminated recursive procedure call, but it is less obvious, since the call is made by Visual Basic rather than an explicit call in the code. Use the `Calls` dialog box to view which procedures are active on the stack.  
+6. Ujistěte se, že jste nezpůsobili "událost Cascade" aktivací události, která volá proceduru události, která je již v zásobníku. Kaskádová událost je podobná neukončenému volání rekurzivní procedury, ale je méně zřejmé, protože volání je provedeno Visual Basic spíše než explicitní volání v kódu. Pomocí dialogového okna `Calls` můžete zobrazit, které postupy jsou v zásobníku aktivní.  
   
 ## <a name="see-also"></a>Viz také:
 

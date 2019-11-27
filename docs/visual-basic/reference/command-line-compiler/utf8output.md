@@ -13,8 +13,8 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350839"
 ---
-# <a name="-utf8output-visual-basic"></a>-utf8output (Visual Basic)
-Displays compiler output using UTF-8 encoding.  
+# <a name="-utf8output-visual-basic"></a>-Utf8Output – (Visual Basic)
+Zobrazí výstup kompilátoru pomocí kódování UTF-8.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -22,18 +22,18 @@ Displays compiler output using UTF-8 encoding.
 -utf8output[+ | -]  
 ```  
   
-## <a name="arguments"></a>Arguments  
+## <a name="arguments"></a>Argumenty  
  `+` &#124; `-`  
- Volitelné. The default for this option is `-utf8output-`, which means compiler output does not use UTF-8 encoding. Specifying `-utf8output` is the same as specifying `-utf8output+`.  
+ Volitelná. Výchozí hodnota pro tuto možnost je `-utf8output-`, což znamená, že výstup kompilátoru nepoužívá kódování UTF-8. Určení `-utf8output` je stejné jako určení `-utf8output+`.  
   
 ## <a name="remarks"></a>Poznámky  
- In some international configurations, compiler output cannot be displayed correctly in the console. In such situations, use `-utf8output` and redirect compiler output to a file.  
+ V některých mezinárodních konfiguracích nelze výstup kompilátoru v konzole zobrazit správně. V takových situacích použijte `-utf8output` a přesměrujte výstup kompilátoru do souboru.  
   
 > [!NOTE]
-> The `-utf8output` option is not available from within the Visual Studio development environment; it is available only when compiling from the command line.  
+> Možnost `-utf8output` není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  
   
 ## <a name="example"></a>Příklad  
- The following code compiles `In.vb` and directs the compiler to display output using UTF-8 encoding.  
+ Následující kód zkompiluje `In.vb` a nasměruje kompilátor, aby zobrazoval výstup pomocí kódování UTF-8.  
   
 ```console  
 vbc -utf8output in.vb  
@@ -41,5 +41,5 @@ vbc -utf8output in.vb
   
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

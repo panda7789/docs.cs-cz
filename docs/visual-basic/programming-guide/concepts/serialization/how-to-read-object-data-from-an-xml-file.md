@@ -9,8 +9,8 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346424"
 ---
-# <a name="how-to-read-object-data-from-an-xml-file-visual-basic"></a>How to: Read Object Data from an XML File (Visual Basic)
-This example reads object data that was previously written to an XML file using the <xref:System.Xml.Serialization.XmlSerializer> class.  
+# <a name="how-to-read-object-data-from-an-xml-file-visual-basic"></a>Postupy: čtení dat objektů ze souboru XML (Visual Basic)
+Tento příklad načte data objektů, která byla dříve zapsána do souboru XML pomocí třídy <xref:System.Xml.Serialization.XmlSerializer>.  
   
 ## <a name="example"></a>Příklad  
   
@@ -30,27 +30,27 @@ End Sub
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Replace the file name "c:\temp\SerializationOverview.xml" with the name of the file containing the serialized data. For more information about serializing data, see [How to: Write Object Data to an XML File (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/how-to-write-object-data-to-an-xml-file.md).  
+ Nahraďte název souboru "c:\temp\SerializationOverview.xml" názvem souboru, který obsahuje Serializovaná data. Další informace o serializaci dat naleznete v tématu [How to: Write Data Object to a XML File (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/how-to-write-object-data-to-an-xml-file.md).  
   
- The class must have a public constructor without parameters.  
+ Třída musí mít veřejný konstruktor bez parametrů.  
   
- Only public properties and fields are deserialized.  
+ Pouze veřejné vlastnosti a pole jsou deserializovány.  
   
 ## <a name="robust-programming"></a>Robustní programování  
  Následující podmínky mohou způsobit výjimku:  
   
-- The class being serialized does not have a public, parameterless constructor.  
+- Serializovaná třída nemá veřejný konstruktor bez parametrů.  
   
-- The data in the file does not represent data from the class to be deserialized.  
+- Data v souboru reprezentují data z třídy, která se má deserializovat.  
   
-- The file does not exist (<xref:System.IO.IOException>).  
+- Soubor neexistuje (<xref:System.IO.IOException>).  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- Always verify inputs, and never deserialize data from an untrusted source. The re-created object runs on a local computer with the permissions of the code that deserialized it. Před použitím dat ve své aplikaci ověřte všechny vstupy.  
+ Vždy ověřte vstupy a nikdy neserializovat data z nedůvěryhodného zdroje. Nově vytvořený objekt je spuštěn v místním počítači s oprávněním kódu, který jej deserializovat. Před použitím dat ve své aplikaci ověřte všechny vstupy.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.IO.StreamWriter>
-- [How to: Write Object Data to an XML File (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/how-to-write-object-data-to-an-xml-file.md)
-- [Serialization (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/index.md)
-- [Visual Basic Programming Guide](../../../../visual-basic/programming-guide/index.md)
+- [Postupy: zápis dat objektů do souboru XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/how-to-write-object-data-to-an-xml-file.md)
+- [Serializace (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/index.md)
+- [Průvodce programováním Visual Basic](../../../../visual-basic/programming-guide/index.md)

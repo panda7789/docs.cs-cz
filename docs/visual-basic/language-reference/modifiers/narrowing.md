@@ -18,16 +18,16 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351479"
 ---
 # <a name="narrowing-visual-basic"></a>Narrowing (Visual Basic)
-Indicates that a conversion operator (`CType`) converts a class or structure to a type that might not be able to hold some of the possible values of the original class or structure.  
+Označuje, že operátor převodu (`CType`) převede třídu nebo strukturu na typ, který nemusí být schopný uchovat některé z možných hodnot původní třídy nebo struktury.  
   
-## <a name="converting-with-the-narrowing-keyword"></a>Converting with the Narrowing Keyword  
- The conversion procedure must specify `Public Shared` in addition to `Narrowing`.  
+## <a name="converting-with-the-narrowing-keyword"></a>Převod s klíčovým slovem zúžení  
+ Postup převodu musí kromě `Narrowing`zadat `Public Shared`.  
   
- Narrowing conversions do not always succeed at run time, and can fail or incur data loss. Examples are `Long` to `Integer`, `String` to `Date`, and a base type to a derived type. This last conversion is narrowing because the base type might not contain all the members of the derived type and thus is not an instance of the derived type.  
+ Zužující převody nejsou vždycky úspěšné v době běhu a můžou selhat nebo může dojít ke ztrátě dat. Příklady jsou `Long` pro `Integer`, `String` na `Date`a základní typ pro odvozený typ. Tento poslední převod je zúžený, protože základní typ nemusí obsahovat všechny členy odvozeného typu, a proto není instancí odvozeného typu.  
   
- If `Option Strict` is `On`, the consuming code must use `CType` for all narrowing conversions.  
+ Pokud je `Option Strict` `On`, musí používat kód `CType` pro všechny zužující převody.  
   
- The `Narrowing` keyword can be used in this context:  
+ Klíčové slovo `Narrowing` lze použít v tomto kontextu:  
   
  [Příkaz Operator](../../../visual-basic/language-reference/statements/operator-statement.md)  
   

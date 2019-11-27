@@ -13,15 +13,15 @@ ms.locfileid: "74344919"
 ---
 # <a name="anonymous-type-definition-visual-basic"></a>Definice autonomního typu (Visual Basic)
 
-In response to the declaration of an instance of an anonymous type, the compiler creates a new class definition that contains the specified properties for the type.
+V reakci na deklaraci instance anonymního typu kompilátor vytvoří novou definici třídy, která obsahuje zadané vlastnosti pro daný typ.
 
-## <a name="compiler-generated-code"></a>Compiler-Generated Code
+## <a name="compiler-generated-code"></a>Kód generovaný kompilátorem
 
-For the following definition of `product`, the compiler creates a new class definition that contains properties `Name`, `Price`, and `OnHand`.
+Pro následující definici `product`kompilátor vytvoří novou definici třídy obsahující vlastnosti `Name`, `Price`a `OnHand`.
 
 [!code-vb[VbVbalrAnonymousTypes#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class2.vb#25)]
 
-The class definition contains property definitions similar to the following. Notice that there is no `Set` method for the key properties. The values of key properties are read-only.
+Definice třídy obsahuje definice vlastností podobné následujícímu. Všimněte si, že pro klíčové vlastnosti není k dispozici žádná `Set` metoda. Hodnoty vlastností klíče jsou jen pro čtení.
 
 ```vb
 Public Class $Anonymous1
@@ -52,36 +52,36 @@ Public Class $Anonymous1
 End Class
 ```
 
-In addition, anonymous type definitions contain a parameterless constructor. Constructors that require parameters are not permitted.
+Kromě toho definice anonymního typu obsahují konstruktor bez parametrů. Konstruktory, které vyžadují parametry, nejsou povoleny.
 
-If an anonymous type declaration contains at least one key property, the type definition overrides three members inherited from <xref:System.Object>: <xref:System.Object.Equals%2A>, <xref:System.Object.GetHashCode%2A>, and <xref:System.Object.ToString%2A>. If no key properties are declared, only <xref:System.Object.ToString%2A> is overridden. The overrides provide the following functionality:
+Pokud deklarace anonymního typu obsahuje alespoň jednu vlastnost klíče, definice typu přepíše tři členy zděděné z <xref:System.Object>: <xref:System.Object.Equals%2A>, <xref:System.Object.GetHashCode%2A>a <xref:System.Object.ToString%2A>. Pokud nejsou deklarovány žádné vlastnosti klíče, bude přepsána pouze <xref:System.Object.ToString%2A>. Přepsání poskytují následující funkce:
 
-- `Equals` returns `True` if two anonymous type instances are the same instance, or if they meet the following conditions:
+- `Equals` vrátí `True`, pokud jsou dvě instance anonymního typu stejné instance, nebo pokud splňují následující podmínky:
 
-  - They have the same number of properties.
+  - Mají stejný počet vlastností.
 
-  - The properties are declared in the same order, with the same names and the same inferred types. Name comparisons are not case-sensitive.
+  - Vlastnosti jsou deklarovány ve stejném pořadí se stejnými názvy a stejnými odvozenými typy. Porovnávání názvů nerozlišuje velká a malá písmena.
 
-  - At least one of the properties is a key property, and the `Key` keyword is applied to the same properties.
+  - Nejméně jedna z vlastností je klíčová vlastnost a klíčové slovo `Key` se používá pro stejné vlastnosti.
 
-  - Comparison of each corresponding pair of key properties returns `True`.
+  - Porovnání všech odpovídajících párů klíčových vlastností vrátí `True`.
 
-    For example, in the following examples, `Equals` returns `True` only for `employee01` and `employee08`. The comment before each line specifies the reason why the new instance does not match `employee01`.
+    Například v následujících příkladech `Equals` vrátí `True` pouze pro `employee01` a `employee08`. Komentář před každým řádkem určuje důvod, proč se nová instance neshoduje s `employee01`.
 
     [!code-vb[VbVbalrAnonymousTypes#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class2.vb#24)]
 
-- `GetHashcode` provides an appropriately unique GetHashCode algorithm. The algorithm uses only the key properties to compute the hash code.
+- `GetHashcode` poskytuje vhodně jedinečný GetHashCode algoritmus. Algoritmus používá pouze vlastnosti klíče k výpočtu kódu hash.
 
-- `ToString` returns a string of concatenated property values, as shown in the following example. Both key and non-key properties are included.
+- `ToString` vrátí řetězec hodnot zřetězených vlastností, jak je znázorněno v následujícím příkladu. Jsou zahrnuty vlastnosti Key i non-Key.
 
   [!code-vb[VbVbalrAnonymousTypes#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrAnonymousTypes/VB/Class2.vb#29)]
 
-Explicitly named properties of an anonymous type cannot conflict with these generated methods. That is, you cannot use `.Equals`, `.GetHashCode`, or `.ToString` to name a property.
+Explicitní pojmenované vlastnosti anonymního typu nejsou v konfliktu s těmito generovanými metodami. To znamená, že nemůžete použít `.Equals`, `.GetHashCode`nebo `.ToString` k pojmenování vlastnosti.
 
-Anonymous type definitions that include at least one key property also implement the <xref:System.IEquatable%601?displayProperty=nameWithType> interface, where `T` is the type of the anonymous type.
+Definice anonymního typu, které obsahují alespoň jednu vlastnost klíče, také implementují rozhraní <xref:System.IEquatable%601?displayProperty=nameWithType>, kde `T` je typ anonymního typu.
 
 > [!NOTE]
-> Anonymous type declarations create the same anonymous type only if they occur in the same assembly, their properties have the same names and the same inferred types, the properties are declared in the same order, and the same properties are marked as key properties.
+> Deklarace anonymního typu vytvoří stejný anonymní typ pouze v případě, že se vyskytují ve stejném sestavení, jejich vlastnosti mají stejné názvy a stejné odvozené typy, vlastnosti jsou deklarovány ve stejném pořadí a stejné vlastnosti jsou označeny jako vlastnosti klíče.
 
 ## <a name="see-also"></a>Viz také:
 

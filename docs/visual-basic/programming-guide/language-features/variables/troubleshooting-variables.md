@@ -13,39 +13,39 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351777"
 ---
 # <a name="troubleshooting-variables-in-visual-basic"></a>Řešení potíží s proměnnými v jazyce Visual Basic
-This page lists some common problems that can occur when working with variables in Visual Basic.  
+Tato stránka obsahuje některé běžné problémy, které mohou nastat při práci s proměnnými v Visual Basic.  
   
-## <a name="unable-to-access-members-of-an-object"></a>Unable to Access Members of an Object  
- If your code attempts to access a property or method on an object, there are two possible error outcomes:  
+## <a name="unable-to-access-members-of-an-object"></a>Nejde získat přístup ke členům objektu.  
+ Pokud se váš kód pokusí o přístup k vlastnosti nebo metodě objektu, existují dva možné výsledky chyby:  
   
-- The compiler can generate an error message if you declare the object variable to be of a specific type and then refer to a member not defined by that type.  
+- Kompilátor může generovat chybovou zprávu, pokud deklarujete proměnnou objektu pro konkrétní typ a potom odkazuje na člen, který není definován tímto typem.  
   
-- A run-time <xref:System.MemberAccessException> occurs when the object assigned to an object variable does not expose the member your code is trying to access. In the case of a variable of [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md), you can also get this exception if the member is not `Public`. This is because late binding allows access only to `Public` members.  
+- <xref:System.MemberAccessException> modulu runtime nastává, když objekt přiřazený proměnné objektu nevystavuje člen, ke kterému se váš kód pokouší získat přístup. V případě proměnné [datového typu objektu](../../../../visual-basic/language-reference/data-types/object-data-type.md)lze tuto výjimku získat také v případě, že člen není `Public`. Důvodem je to, že pozdní vazba povoluje přístup pouze pro `Public` členy.  
   
- When the [Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md) sets type checking `On`, an object variable can access only the methods and properties of the class with which you declare it. Toto dokládá následující příklad.  
+ Pokud [příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md) nastaví kontrolu typu `On`, proměnná objektu může přistupovat pouze k metodám a vlastnostem třídy, se kterou deklarujete. Toto dokládá následující příklad.  
 
  [!code-vb[VbVbalrVariables#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrVariables/VB/Class1.vb#2)]  
   
- In this example, `p` can use only the members of the <xref:System.Object> class itself, which do not include the `Left` property. On the other hand, `q` was declared to be of type <xref:System.Windows.Forms.Label>, so it can use all the methods and properties of the <xref:System.Windows.Forms.Label> class in the <xref:System.Windows.Forms> namespace.  
+ V tomto příkladu může `p` použít pouze členy <xref:System.Object> třídy, které neobsahují vlastnost `Left`. Na druhé straně `q` byla deklarována jako typu <xref:System.Windows.Forms.Label>, takže může použít všechny metody a vlastnosti třídy <xref:System.Windows.Forms.Label> v oboru názvů <xref:System.Windows.Forms>.  
   
-### <a name="correct-approach"></a>Correct Approach  
- To be able to access all the members of an object of a particular class, declare the object variable to be of the type of that class when possible. If you cannot do this, for example if you do not know the object type at compile time, you must set `Option Strict` to `Off` and declare the variable to be of the [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md). This allows objects of any type to be assigned to the variable, and you should take steps to ensure that the currently assigned object is of an acceptable type. You can use the [TypeOf Operator](../../../../visual-basic/language-reference/operators/typeof-operator.md) to make this determination.  
+### <a name="correct-approach"></a>Správný přístup  
+ Aby bylo možné získat přístup ke všem členům objektu určité třídy, deklarujte proměnnou objektu, aby byla typu této třídy, pokud je to možné. Pokud to nemůžete udělat, například pokud neznáte typ objektu v době kompilace, je nutné nastavit `Option Strict` na `Off` a deklarovat proměnnou, která má být [datového typu objektu](../../../../visual-basic/language-reference/data-types/object-data-type.md). To umožňuje, aby byly objekty libovolného typu přiřazeny proměnné a měli byste provést kroky, abyste zajistili, že aktuálně přiřazený objekt je přijatelného typu. K provedení tohoto určení můžete použít [operátor typeof](../../../../visual-basic/language-reference/operators/typeof-operator.md) .  
   
-## <a name="other-components-cannot-access-your-variable"></a>Other Components Cannot Access Your Variable  
- Visual Basic names are *case-insensitive*. If two names differ in alphabetic case only, the compiler interprets them as the same name. For example, it considers `ABC` and `abc` to refer to the same declared element.  
+## <a name="other-components-cannot-access-your-variable"></a>Jiné součásti nemají přístup k proměnné.  
+ V názvech Visual Basic se *nerozlišují malá a velká písmena*. Pokud se dva názvy liší pouze v abecedním případě, kompilátor je interpretuje jako stejný název. Například se považuje za `ABC` a `abc`, aby odkazovaly na stejný deklarovaný element.  
   
- However, the common language runtime (CLR) uses *case-sensitive* binding. Therefore, when you produce an assembly or a DLL and make it available to other assemblies, your names are no longer case-insensitive. For example, if you define a class with an element called `ABC`, and other assemblies make use of your class through the common language runtime, they must refer to the element as `ABC`. If you subsequently recompile your class and change the element's name to `abc`, the other assemblies using your class can no longer access that element. Therefore, when you release an updated version of an assembly, you should not change the alphabetic case of any public elements.  
+ Modul CLR (Common Language Runtime) však používá vazby *s rozlišováním velkých a* malých písmen. Proto při vytváření sestavení nebo knihovny DLL a zpřístupnění pro jiná sestavení, vaše jména nebudou rozlišovat velká a malá písmena. Například pokud definujete třídu s prvkem s názvem `ABC`a další sestavení využívají třídu pomocí modulu CLR (Common Language Runtime), musí odkazovat na prvek jako `ABC`. Pokud následně znovu zkompilujete třídu a změníte název prvku na `abc`, ostatní sestavení, která používají vaši třídu, již nebudou mít přístup k tomuto prvku. Proto při vydání aktualizované verze sestavení byste neměli měnit abecední případ všech veřejných prvků.  
   
- For more information, see [Common Language Runtime](../../../../standard/clr.md).  
+ Další informace najdete v tématu [modul CLR (Common Language Runtime)](../../../../standard/clr.md).  
   
-### <a name="correct-approach"></a>Correct Approach  
- To allow other components to access your variables, treat their names as if they were case-sensitive. When you are testing your class or module, make sure other assemblies are binding to the variables you expect them to. Once you have published a component, do not make any modifications to existing variable names, including changing their cases.  
+### <a name="correct-approach"></a>Správný přístup  
+ Chcete-li jiným komponentám dovolit přístup k proměnným, považovat jejich názvy, jako by se jednalo o velká a malá písmena. Při testování třídy nebo modulu se ujistěte, že jsou jiná sestavení svázána s proměnnými, na které jste očekávali. Po publikování komponenty neprovádějte žádné úpravy existujících názvů proměnných, včetně změny jejich případů.  
   
-## <a name="wrong-variable-being-used"></a>Wrong Variable Being Used  
- When you have more than one variable with the same name, the Visual Basic compiler attempts to resolve each reference to that name. If the variables have different scope, the compiler resolves a reference to the declaration with the narrowest scope. If they have the same scope, the resolution fails and the compiler signals an error. For more information, see [References to Declared Elements](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).  
+## <a name="wrong-variable-being-used"></a>Používá se nesprávná proměnná.  
+ Pokud máte více než jednu proměnnou se stejným názvem, Visual Basic kompilátor se pokusí přeložit každý odkaz na tento název. Pokud proměnné mají jiný obor, kompilátor vyřeší odkaz na deklaraci s nejužším oborem. Pokud mají stejný obor, řešení se nezdařilo a kompilátor signalizuje chybu. Další informace naleznete v tématu [odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).  
   
-### <a name="correct-approach"></a>Correct Approach  
- Avoid using variables with the same name but different scope. If you are using other assemblies or projects, avoid using any names defined in those external components as much as possible. If you have more than one variable with the same name, be sure you qualify every reference to it. For more information, see [References to Declared Elements](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).  
+### <a name="correct-approach"></a>Správný přístup  
+ Vyhněte se použití proměnných se stejným názvem, ale s jiným oborem. Pokud používáte jiná sestavení nebo projekty, nepoužívejte co nejvíce názvů definovaných v těchto externích součástech. Pokud máte více než jednu proměnnou se stejným názvem, ujistěte se, že jste kvalifikováni všechny odkazy na ni. Další informace naleznete v tématu [odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md).  
   
 ## <a name="see-also"></a>Viz také:
 

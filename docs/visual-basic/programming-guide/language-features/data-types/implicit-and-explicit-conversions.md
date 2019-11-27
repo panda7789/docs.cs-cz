@@ -29,7 +29,7 @@ ms.locfileid: "74346359"
 ---
 # <a name="implicit-and-explicit-conversions-visual-basic"></a>Implicitní a explicitní převody (Visual Basic)
 
-An *implicit conversion* does not require any special syntax in the source code. In the following example, Visual Basic implicitly converts the value of `k` to a single-precision floating-point value before assigning it to `q`.
+*Implicitní převod* nevyžaduje ve zdrojovém kódu žádnou speciální syntaxi. V následujícím příkladu Visual Basic implicitně převede hodnotu `k` na hodnotu s plovoucí desetinnou čárkou s jednoduchou přesností, než ji přiřadíte do `q`.
 
 ```vb
 Dim k As Integer
@@ -39,9 +39,9 @@ k = 432
 q = k
 ```
 
-An *explicit conversion* uses a type conversion keyword. Visual Basic provides several such keywords, which coerce an expression in parentheses to the desired data type. These keywords act like functions, but the compiler generates the code inline, so execution is slightly faster than with a function call.
+*Explicitní převod* používá klíčové slovo konverze typu. Visual Basic poskytuje několik takových klíčových slov, která převeďte výraz v závorkách na požadovaný datový typ. Tato klíčová slova slouží jako funkce, ale kompilátor generuje kód vložený, takže provádění je mírně rychlejší než volání funkce.
 
-In the following extension of the preceding example, the `CInt` keyword converts the value of `q` back to an integer before assigning it to `k`.
+V následujícím rozšíření výše uvedeného příkladu převede klíčové slovo `CInt` hodnotu `q` zpět na celé číslo, než ji přiřadíte do `k`.
 
 ```vb
 ' q had been assigned the value 432 from k.
@@ -52,39 +52,39 @@ k = CInt(q)
 
 ## <a name="conversion-keywords"></a>Klíčová slova převodu
 
-The following table shows the available conversion keywords.
+Následující tabulka ukazuje dostupná klíčová slova pro převod.
 
-|Type conversion keyword|Converts an expression to data type|Allowable data types of expression to be converted|
+|Typ – klíčové slovo převodu|Převede výraz na datový typ.|Povolené datové typy výrazu, který se má převést|
 |---|---|---|
-|`CBool`|[Datový typ Boolean](../../../../visual-basic/language-reference/data-types/boolean-data-type.md)|Any numeric type (including `Byte`, `SByte`, and enumerated types), `String`, `Object`|
-|`CByte`|[Datový typ Byte](../../../../visual-basic/language-reference/data-types/byte-data-type.md)|Any numeric type (including `SByte` and enumerated types), `Boolean`, `String`, `Object`|
-|`CChar`|[Datový typ Char](../../../../visual-basic/language-reference/data-types/char-data-type.md)|`String`, `Object`|
-|`CDate`|[Datový typ Date](../../../../visual-basic/language-reference/data-types/date-data-type.md)|`String`, `Object`|
-|`CDbl`|[Datový typ Double](../../../../visual-basic/language-reference/data-types/double-data-type.md)|Any numeric type (including `Byte`, `SByte`, and enumerated types), `Boolean`, `String`, `Object`|
-|`CDec`|[Datový typ Decimal](../../../../visual-basic/language-reference/data-types/decimal-data-type.md)|Any numeric type (including `Byte`, `SByte`, and enumerated types), `Boolean`, `String`, `Object`|
-|`CInt`|[Datový typ Integer](../../../../visual-basic/language-reference/data-types/integer-data-type.md)|Any numeric type (including `Byte`, `SByte`, and enumerated types), `Boolean`, `String`, `Object`|
-|`CLng`|[Datový typ Long](../../../../visual-basic/language-reference/data-types/long-data-type.md)|Any numeric type (including `Byte`, `SByte`, and enumerated types), `Boolean`, `String`, `Object`|
-|`CObj`|[Datový typ Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)|Any type|
-|`CSByte`|[Datový typ SByte](../../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|Any numeric type (including `Byte` and enumerated types), `Boolean`, `String`, `Object`|
-|`CShort`|[Datový typ Short](../../../../visual-basic/language-reference/data-types/short-data-type.md)|Any numeric type (including `Byte`, `SByte`, and enumerated types), `Boolean`, `String`, `Object`|
-|`CSng`|[Datový typ Single](../../../../visual-basic/language-reference/data-types/single-data-type.md)|Any numeric type (including `Byte`, `SByte`, and enumerated types), `Boolean`, `String`, `Object`|
-|`CStr`|[Datový typ String](../../../../visual-basic/language-reference/data-types/string-data-type.md)|Any numeric type (including `Byte`, `SByte`, and enumerated types), `Boolean`, `Char`, `Char` array, `Date`, `Object`|
-|`CType`|Type specified following the comma (`,`)|When converting to an *elementary data type* (including an array of an elementary type), the same types as allowed for the corresponding conversion keyword<br /><br /> When converting to a *composite data type*, the interfaces it implements and the classes from which it inherits<br /><br /> When converting to a class or structure on which you have overloaded `CType`, that class or structure|
-|`CUInt`|[Datový typ UInteger](../../../../visual-basic/language-reference/data-types/uinteger-data-type.md)|Any numeric type (including `Byte`, `SByte`, and enumerated types), `Boolean`, `String`, `Object`|
-|`CULng`|[Datový typ ULong](../../../../visual-basic/language-reference/data-types/ulong-data-type.md)|Any numeric type (including `Byte`, `SByte`, and enumerated types), `Boolean`, `String`, `Object`|
-|`CUShort`|[Datový typ UShort](../../../../visual-basic/language-reference/data-types/ushort-data-type.md)|Any numeric type (including `Byte`, `SByte`, and enumerated types), `Boolean`, `String`, `Object`|
+|`CBool`|[Datový typ Boolean](../../../../visual-basic/language-reference/data-types/boolean-data-type.md)|Jakýkoli číselný typ (včetně `Byte`, `SByte`a výčtových typů) `String``Object`|
+|`CByte`|[Datový typ Byte](../../../../visual-basic/language-reference/data-types/byte-data-type.md)|Jakýkoli číselný typ (včetně `SByte` a výčtových typů), `Boolean`, `String``Object`|
+|`CChar`|[Datový typ Char](../../../../visual-basic/language-reference/data-types/char-data-type.md)|`String``Object`|
+|`CDate`|[Datový typ Date](../../../../visual-basic/language-reference/data-types/date-data-type.md)|`String``Object`|
+|`CDbl`|[Datový typ Double](../../../../visual-basic/language-reference/data-types/double-data-type.md)|Libovolný číselný typ (včetně `Byte`, `SByte`a výčtové typy), `Boolean`, `String``Object`|
+|`CDec`|[Datový typ Decimal](../../../../visual-basic/language-reference/data-types/decimal-data-type.md)|Libovolný číselný typ (včetně `Byte`, `SByte`a výčtové typy), `Boolean`, `String``Object`|
+|`CInt`|[Datový typ Integer](../../../../visual-basic/language-reference/data-types/integer-data-type.md)|Libovolný číselný typ (včetně `Byte`, `SByte`a výčtové typy), `Boolean`, `String``Object`|
+|`CLng`|[Datový typ Long](../../../../visual-basic/language-reference/data-types/long-data-type.md)|Libovolný číselný typ (včetně `Byte`, `SByte`a výčtové typy), `Boolean`, `String``Object`|
+|`CObj`|[Datový typ Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)|Libovolný typ|
+|`CSByte`|[Datový typ SByte](../../../../visual-basic/language-reference/data-types/sbyte-data-type.md)|Jakýkoli číselný typ (včetně `Byte` a výčtových typů), `Boolean`, `String``Object`|
+|`CShort`|[Datový typ Short](../../../../visual-basic/language-reference/data-types/short-data-type.md)|Libovolný číselný typ (včetně `Byte`, `SByte`a výčtové typy), `Boolean`, `String``Object`|
+|`CSng`|[Datový typ Single](../../../../visual-basic/language-reference/data-types/single-data-type.md)|Libovolný číselný typ (včetně `Byte`, `SByte`a výčtové typy), `Boolean`, `String``Object`|
+|`CStr`|[Datový typ String](../../../../visual-basic/language-reference/data-types/string-data-type.md)|Libovolný číselný typ (včetně `Byte`, `SByte`a výčtových typů), `Boolean`, `Char`, `Char` Array, `Date`, `Object`|
+|`CType`|Typ zadaný za čárkou (`,`)|Při převodu na *základní datový typ* (včetně pole základního typu) jsou stejné typy povolené pro odpovídající klíčové slovo převodu.<br /><br /> Při převodu na *složený datový typ*, rozhraní, které implementuje, a třídy, ze kterých dědí<br /><br /> Při převodu na třídu nebo strukturu, na které máte přetížené `CType`, tato třída nebo struktura|
+|`CUInt`|[Datový typ UInteger](../../../../visual-basic/language-reference/data-types/uinteger-data-type.md)|Libovolný číselný typ (včetně `Byte`, `SByte`a výčtové typy), `Boolean`, `String``Object`|
+|`CULng`|[Datový typ ULong](../../../../visual-basic/language-reference/data-types/ulong-data-type.md)|Libovolný číselný typ (včetně `Byte`, `SByte`a výčtové typy), `Boolean`, `String``Object`|
+|`CUShort`|[Datový typ UShort](../../../../visual-basic/language-reference/data-types/ushort-data-type.md)|Libovolný číselný typ (včetně `Byte`, `SByte`a výčtové typy), `Boolean`, `String``Object`|
 
-## <a name="the-ctype-function"></a>The CType Function
+## <a name="the-ctype-function"></a>Funkce CType
 
-The [CType Function](../../../../visual-basic/language-reference/functions/ctype-function.md) operates on two arguments. The first is the expression to be converted, and the second is the destination data type or object class. Note that the first argument must be an expression, not a type.
+[Funkce CType](../../../../visual-basic/language-reference/functions/ctype-function.md) pracuje na dvou argumentech. První je výraz, který má být převeden, a druhý je cílový datový typ nebo třída objektu. Všimněte si, že první argument musí být výraz, nikoli typ.
 
-`CType` is an *inline function*, meaning the compiled code makes the conversion, often without generating a function call. This improves performance.
+`CType` je *vložená funkce*, což znamená, že zkompilovaný kód provádí převod, často bez vyvolání volání funkce. Tím se zlepší výkon.
 
-For a comparison of `CType` with the other type conversion keywords, see [DirectCast Operator](../../../../visual-basic/language-reference/operators/directcast-operator.md) and [TryCast Operator](../../../../visual-basic/language-reference/operators/trycast-operator.md).
+Porovnání `CType` s jinými klíčovými slovy převodu typů naleznete v tématu [operátor DirectCast](../../../../visual-basic/language-reference/operators/directcast-operator.md) a [operátor TryCast](../../../../visual-basic/language-reference/operators/trycast-operator.md).
 
-### <a name="elementary-types"></a>Elementary Types
+### <a name="elementary-types"></a>Základní typy
 
-The following example demonstrates the use of `CType`.
+Následující příklad ukazuje použití `CType`.
 
 ```vb
 k = CType(q, Integer)
@@ -92,9 +92,9 @@ k = CType(q, Integer)
 f = CType(w, Label)
 ```
 
-### <a name="composite-types"></a>Composite Types
+### <a name="composite-types"></a>Složené typy
 
-You can use `CType` to convert values to composite data types as well as to elementary types. You can also use it to coerce an object class to the type of one of its interfaces, as in the following example.
+Můžete použít `CType` pro převod hodnot na složené datové typy i na základní typy. Můžete jej také použít k převeďte třídu objektu na typ jednoho z jeho rozhraní, jak je uvedeno v následujícím příkladu.
 
 ```vb
 ' Assume class cZone implements interface iZone.
@@ -105,9 +105,9 @@ Dim cZ As cZone
 h = CType(cZ, iZone)
 ```
 
-### <a name="array-types"></a>Array Types
+### <a name="array-types"></a>Typy polí
 
-`CType` can also convert array data types, as in the following example.
+`CType` může také převést datové typy pole, jak je uvedeno v následujícím příkladu.
 
 ```vb
 Dim v() As classV
@@ -120,27 +120,27 @@ If TypeOf obArray Is classV()
 End If
 ```
 
-For more information and an example, see [Array Conversions](../../../../visual-basic/programming-guide/language-features/data-types/array-conversions.md).
+Další informace a příklad najdete v tématu [převody polí](../../../../visual-basic/programming-guide/language-features/data-types/array-conversions.md).
 
-### <a name="types-defining-ctype"></a>Types Defining CType
+### <a name="types-defining-ctype"></a>Typy definující CType
 
-You can define `CType` on a class or structure you have defined. This allows you to convert values to and from the type of your class or structure. For more information and an example, see [How to: Define a Conversion Operator](../../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md).
+Můžete definovat `CType` pro třídu nebo strukturu, kterou jste definovali. To umožňuje převést hodnoty do a z typu vaší třídy nebo struktury. Další informace a příklad naleznete v tématu [How to: define a Conversion operátor](../../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md).
 
 > [!NOTE]
-> Values used with a conversion keyword must be valid for the destination data type, or an error occurs. For example, if you attempt to convert a `Long` to an `Integer`, the value of the `Long` must be within the valid range for the `Integer` data type.
+> Hodnoty používané s klíčovým slovem pro převod musí být platné pro cílový datový typ nebo dojde k chybě. Například pokud se pokusíte převést `Long` na `Integer`, hodnota `Long` musí být v platném rozsahu pro `Integer` datový typ.
 
 > [!CAUTION]
-> Specifying `CType` to convert from one class type to another fails at run time if the source type does not derive from the destination type. Such a failure throws an <xref:System.InvalidCastException> exception.
+> Určení `CType` pro převod z jednoho typu třídy na jiný se v době běhu nezdařila, pokud typ zdroje není odvozen z cílového typu. Taková chyba vyvolá výjimku <xref:System.InvalidCastException>.
 
-However, if one of the types is a structure or class you have defined, and if you have defined `CType` on that structure or class, a conversion can succeed if it satisfies the requirements of your `CType`. See [How to: Define a Conversion Operator](../../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md).
+Pokud je však jeden z typů struktura nebo třída, kterou jste definovali, a pokud jste definovali `CType` v této struktuře nebo třídě, převod může být úspěšný, pokud splňuje požadavky vašeho `CType`. Viz [How to: define a Conversion operátor](../../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md).
 
-Performing an explicit conversion is also known as *casting* an expression to a given data type or object class.
+Provádění explicitního převodu je také označováno jako *přetypování* výrazu na daný datový typ nebo třídu objektu.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Type Conversions in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [Převody typu v Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
 - [Převody mezi řetězci a ostatními typy](../../../../visual-basic/programming-guide/language-features/data-types/conversions-between-strings-and-other-types.md)
-- [How to: Convert an Object to Another Type in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/how-to-convert-an-object-to-another-type.md)
+- [Postupy: převod objektu na jiný typ v Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/how-to-convert-an-object-to-another-type.md)
 - [Struktury](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)
 - [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)
 - [Funkce pro převod typů](../../../../visual-basic/language-reference/functions/type-conversion-functions.md)

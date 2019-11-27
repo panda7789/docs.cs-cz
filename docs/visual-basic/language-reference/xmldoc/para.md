@@ -12,8 +12,8 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352304"
 ---
-# <a name="para-visual-basic"></a>\<para> (Visual Basic)
-Specifies that the content is formatted as a paragraph.  
+# <a name="para-visual-basic"></a>> \<param (Visual Basic)
+Určuje, že obsah je formátován jako odstavec.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,15 +23,15 @@ Specifies that the content is formatted as a paragraph.
   
 ## <a name="parameters"></a>Parametry  
  `content`  
- The text of the paragraph.  
+ Text odstavce  
   
 ## <a name="remarks"></a>Poznámky  
- The `<para>` tag is for use inside a tag, such as [\<summary>](../../../visual-basic/language-reference/xmldoc/summary.md), [\<remarks>](../../../visual-basic/language-reference/xmldoc/remarks.md), or [\<returns>](../../../visual-basic/language-reference/xmldoc/returns.md), and lets you add structure to the text.  
+ Značka `<para>` je určena pro použití uvnitř značky, jako je například [\<summary >](../../../visual-basic/language-reference/xmldoc/summary.md), [\<poznámky >](../../../visual-basic/language-reference/xmldoc/remarks.md), nebo [\<vrací >](../../../visual-basic/language-reference/xmldoc/returns.md)a umožňuje přidat do textu strukturu.  
   
- Compile with [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) to process documentation comments to a file.  
+ Zkompilujte s [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
   
 ## <a name="example"></a>Příklad  
- This example uses the `<para>` tag to split the remarks section for the `UpdateRecord` method into two paragraphs.  
+ V tomto příkladu se používá značka `<para>` k rozdělení oddílu poznámky pro metodu `UpdateRecord` na dva odstavce.  
   
  [!code-vb[VbVbcnXmlDocComments#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#6)]  
   

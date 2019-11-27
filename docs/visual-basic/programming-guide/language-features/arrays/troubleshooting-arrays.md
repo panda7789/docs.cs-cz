@@ -17,12 +17,12 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349069"
 ---
 # <a name="troubleshooting-arrays-visual-basic"></a>Řešení potíží s poli (Visual Basic)
-This page lists some common problems that can occur when working with arrays.  
+Tato stránka obsahuje některé běžné problémy, které mohou nastat při práci s poli.  
   
-## <a name="compilation-errors-declaring-and-initializing-an-array"></a>Compilation Errors Declaring and Initializing an Array  
- Compilation errors can arise from misunderstanding of the rules for declaring, creating, and initializing arrays. The most common causes of errors are the following:  
+## <a name="compilation-errors-declaring-and-initializing-an-array"></a>Chyby kompilace, které deklaruje a inicializuje pole  
+ Chyby kompilace mohou nastat při nepochopení pravidel pro deklarování, vytváření a inicializaci polí. Nejběžnější příčiny chyb jsou následující:  
   
-- Supplying a [New Operator](../../../../visual-basic/language-reference/operators/new-operator.md) clause after specifying dimension lengths in the array variable declaration. The following code lines show invalid declarations of this type.  
+- Zadání nové klauzule [operátoru](../../../../visual-basic/language-reference/operators/new-operator.md) po určení délek dimenzí v deklaraci proměnné pole. Následující řádky kódu ukazují neplatné deklarace tohoto typu.  
   
      `Dim INVALIDsingleDimByteArray(2) As Byte = New Byte()`  
   
@@ -30,15 +30,15 @@ This page lists some common problems that can occur when working with arrays.
   
      `Dim INVALIDjaggedByteArray(1)() As Byte = New Byte()()`  
   
-- Specifying dimension lengths for more than the top-level array of a jagged array. The following code line shows an invalid declaration of this type.  
+- Určení délek dimenzí pro více než pole nejvyšší úrovně vícenásobného pole. Následující řádek kódu ukazuje neplatnou deklaraci tohoto typu.  
   
      `Dim INVALIDjaggedByteArray(1)(1) As Byte`  
   
-- Omitting the `New` keyword when specifying the element values. The following code line shows an invalid declaration of this type.  
+- Vynechává se klíčové slovo `New` při zadávání hodnot elementu. Následující řádek kódu ukazuje neplatnou deklaraci tohoto typu.  
   
      `Dim INVALIDoneDimShortArray() As Short = Short() {0, 1, 2, 3}`  
   
-- Supplying a `New` clause without braces (`{}`). The following code lines show invalid declarations of this type.  
+- Poskytnutí klauzule `New` bez složených závorek (`{}`). Následující řádky kódu ukazují neplatné deklarace tohoto typu.  
   
      `Dim INVALIDsingleDimByteArray() As Byte = New Byte()`  
   
@@ -48,16 +48,16 @@ This page lists some common problems that can occur when working with arrays.
   
      `Dim INVALIDtwoDimShortArray(,) As Short = New Short(1, 1)`  
   
-## <a name="accessing-an-array-out-of-bounds"></a>Accessing an Array Out of Bounds  
- The process of initializing an array assigns an upper bound and a lower bound to each dimension. Every access to an element of the array must specify a valid index, or subscript, for every dimension. If any index is below its lower bound or above its upper bound, an <xref:System.IndexOutOfRangeException> exception results. The compiler cannot detect such an error, so an error occurs at run time.  
+## <a name="accessing-an-array-out-of-bounds"></a>Přístup k poli je mimo hranice.  
+ Proces inicializace pole přiřadí horní mez a spodní mez na každou dimenzi. Každý přístup k prvku pole musí pro každou dimenzi určovat platný index nebo dolní index. Pokud je některý index pod jeho dolní mezí nebo nad jeho horní mez, <xref:System.IndexOutOfRangeException> výsledek výjimky. Kompilátor nemůže rozpoznat takovou chybu, takže dojde k chybě v době běhu.  
   
-### <a name="determining-bounds"></a>Determining Bounds  
- If another component passes an array to your code, for example as a procedure argument, you do not know the size of that array or the lengths of its dimensions. You should always determine the upper bound for every dimension of an array before you attempt to access any elements. If the array has been created by some means other than a Visual Basic `New` clause, the lower bound might be something other than 0, and it is safest to determine that lower bound as well.  
+### <a name="determining-bounds"></a>Určení hranic  
+ Pokud jiná komponenta předá pole do kódu, například jako argument procedury, neznáte velikost tohoto pole nebo délky jeho rozměrů. Před pokusem o přístup k libovolným prvkům byste měli vždy určit horní mez pro každý rozměr pole. Pokud bylo pole Vytvořeno jiným způsobem než Visual Basic `New` klauzule, dolní hranice může být jiná než 0 a je nejbezpečnější, aby bylo možné zjistit, zda je i dolní mez.  
   
-### <a name="specifying-the-dimension"></a>Specifying the Dimension  
- When determining the bounds of a multidimensional array, take care how you specify the dimension. The `dimension` parameters of the <xref:System.Array.GetLowerBound%2A> and <xref:System.Array.GetUpperBound%2A> methods are 0-based, while the `Rank` parameters of the Visual Basic <xref:Microsoft.VisualBasic.Information.LBound%2A> and <xref:Microsoft.VisualBasic.Information.UBound%2A> functions are 1-based.  
+### <a name="specifying-the-dimension"></a>Určení dimenze  
+ Při určování hranic multidimenzionálního pole se ujistěte, jak zadáte dimenzi. Parametry `dimension` <xref:System.Array.GetLowerBound%2A> a <xref:System.Array.GetUpperBound%2A> metody jsou založené na 0, zatímco parametry `Rank` Visual Basic <xref:Microsoft.VisualBasic.Information.LBound%2A> a <xref:Microsoft.VisualBasic.Information.UBound%2A>ch funkcí jsou založené na 1.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md)
-- [How to: Initialize an Array Variable in Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)
+- [Postupy: Inicializace proměnné pole v Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)

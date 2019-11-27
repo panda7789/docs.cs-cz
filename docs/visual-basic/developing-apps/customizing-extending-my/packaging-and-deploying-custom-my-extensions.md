@@ -1,5 +1,5 @@
 ---
-title: Packaging and deploying custom My extensions
+title: Balení a nasazení vlastních rozšíření
 ms.date: 08/14/2018
 helpviewer_keywords:
 - My namespace [Visual Basic], customizing
@@ -13,40 +13,40 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74330262"
 ---
-# <a name="package-and-deploy-custom-my-extensions-visual-basic"></a>Package and deploy custom My extensions (Visual Basic)
+# <a name="package-and-deploy-custom-my-extensions-visual-basic"></a>Zabalit a nasadit vlastní moje rozšíření (Visual Basic)
 
-Visual Basic provides an easy way for you to deploy your custom `My` namespace extensions by using Visual Studio templates. If you are creating a project template for which your `My` extensions are an integral part of the new project type, you can just include your custom `My` extension code with the project when you export the template. For more information about exporting project templates, see [How to: Create Project Templates](/visualstudio/ide/how-to-create-project-templates).
+Visual Basic poskytuje snadný způsob, jak nasadit vlastní rozšíření oboru názvů `My` pomocí šablon sady Visual Studio. Pokud vytváříte šablonu projektu, pro kterou jsou rozšíření `My` nedílnou součástí nového typu projektu, můžete při exportu šablony přidat do projektu vlastní kód rozšíření `My`. Další informace o exportu šablon projektů naleznete v tématu [How to: Create Project Templates](/visualstudio/ide/how-to-create-project-templates).
 
-If your custom `My` extension is in a single code file, you can export the file as an item template that users can add to any type of Visual Basic project. You can then customize the item template to enable additional capabilities and behavior for your custom `My` extension in a Visual Basic project. Those capabilities include the following:
+Pokud je vaše vlastní `My` rozšíření v jednom souboru kódu, můžete soubor exportovat jako šablonu položky, kterou mohou uživatelé přidat do libovolného typu Visual Basic projektu. Pak můžete přizpůsobit šablonu položky a povolit tak další možnosti a chování pro vlastní rozšíření `My` v projektu Visual Basic. Mezi tyto možnosti patří následující:
 
-- Allowing users to manage your custom `My` extension from the **My Extensions** page of the Visual Basic Project Designer.
+- Umožnění uživatelům spravovat vlastní rozšíření `My` ze stránky **Moje rozšíření** v návrháři projektu Visual Basic.
 
-- Automatically adding your custom `My` extension when a reference to a specified assembly is added to a project.
+- Automatické přidání vlastního rozšíření `My`, když se do projektu přidá odkaz na zadané sestavení.
 
-- Hiding the `My` extension item template in the **Add Item** dialog box so that it is not included in the list of project items.
+- Skryje šablonu položky rozšíření `My` v dialogovém okně **Přidat položku** tak, že není obsažena v seznamu položek projektu.
 
-This topic discusses how to package a custom `My` extension as a hidden item template that can be managed from the **My Extensions** page of the Visual Basic Project Designer. The custom `My` extension can also be added automatically when a reference to a specified assembly is added to a project.
+Toto téma popisuje, jak zabalit vlastní rozšíření `My` jako skrytou šablonu položky, kterou lze spravovat ze stránky **Moje rozšíření** v návrháři projektu Visual Basic. Vlastní rozšíření `My` lze také přidat automaticky, pokud je do projektu přidán odkaz na zadané sestavení.
 
-## <a name="create-a-my-namespace-extension"></a>Create a My namespace extension
+## <a name="create-a-my-namespace-extension"></a>Vytvoření rozšíření My Namespace
 
-The first step in creating a deployment package for a custom `My` extension is to create the extension as a single code file. For details and guidance about how to create a custom `My` extension, see [Extending the My Namespace in Visual Basic](../../../visual-basic/developing-apps/customizing-extending-my/extending-the-my-namespace.md).
+Prvním krokem při vytváření balíčku pro nasazení pro vlastní rozšíření `My` je vytvořit rozšíření jako jeden soubor kódu. Podrobnosti a pokyny, jak vytvořit vlastní rozšíření `My`, najdete v tématu [rozšíření oboru názvů My v Visual Basic](../../../visual-basic/developing-apps/customizing-extending-my/extending-the-my-namespace.md).
 
-## <a name="export-a-my-namespace-extension-as-an-item-template"></a>Export a My namespace extension as an item template
+## <a name="export-a-my-namespace-extension-as-an-item-template"></a>Exportovat rozšíření My Namespace jako šablonu položky
 
-After you have a code file that includes your `My` namespace extension, you can export the code file as a Visual Studio item template. For instructions on how to export a file as a Visual Studio item template, see [How to: Create Item Templates](/visualstudio/ide/how-to-create-item-templates).
+Až budete mít soubor kódu, který obsahuje `My` rozšíření oboru názvů, můžete soubor kódu exportovat jako šablonu položky sady Visual Studio. Pokyny, jak exportovat soubor jako šablonu položky sady Visual Studio, naleznete v tématu [How to: Create Item Templates](/visualstudio/ide/how-to-create-item-templates).
 
 > [!NOTE]
-> If your `My` namespace extension has a dependency on a particular assembly, you can customize your item template to automatically install your `My` namespace extension when a reference to that assembly is added. As a result, you will want to exclude that assembly reference when you export the code file as a Visual Studio item template.
+> Pokud má rozšíření oboru názvů `My` závislost na konkrétní sestavení, můžete přizpůsobit šablonu položky tak, aby automaticky instalovala rozšíření oboru názvů `My` při přidání odkazu na toto sestavení. V důsledku toho budete chtít vyloučit tento odkaz na sestavení, když exportujete soubor kódu jako šablonu položky sady Visual Studio.
 
-## <a name="customize-the-item-template"></a>Customize the item template
+## <a name="customize-the-item-template"></a>Přizpůsobení šablony položky
 
-You can enable your item template to be managed from the **My Extensions** page of the Visual Basic Project Designer. You can also enable the item template to be added automatically when a reference to a specified assembly is added to a project. To enable these customizations, you will add a new file, called the CustomData file, to your template, and then add a new element to the XML in your .vstemplate file.
+Šablonu položky můžete povolit, aby byla spravována ze stránky **Moje rozšíření** návrháře projektu Visual Basic. Můžete také povolit automatické přidání šablony položky, když je do projektu přidán odkaz na zadané sestavení. Chcete-li povolit tato přizpůsobení, přidejte do šablony nový soubor, označovaný jako soubor CustomData, a poté přidejte nový prvek do XML v souboru. vstemplate.
 
-### <a name="add-the-customdata-file"></a>Add the CustomData file
+### <a name="add-the-customdata-file"></a>Přidat soubor CustomData
 
-The CustomData file is a text file that has a file name extension of .CustomData (the file name can be set to any value meaningful to your template) and that contains XML. The XML in the CustomData file instructs Visual Basic to include your `My` extension when users use the **My Extensions** page of the Visual Basic Project Designer. You can optionally add the <`AssemblyFullName>` attribute to your CustomData file XML. This instructs Visual Basic to automatically install your custom `My` extension when a reference to a particular assembly is added to the project. You can use any text editor or XML editor to create the CustomData file, and then add it to your item template's compressed folder (.zip file).
+Soubor CustomData je textový soubor, který má příponu názvu souboru. CustomData (název souboru může být nastaven na libovolnou hodnotu smysluplnou pro šablonu) a obsahující XML. KÓD XML v souboru CustomData nastaví Visual Basic, aby zahrnoval rozšíření `My`, když uživatelé použijí stránku **Moje rozšíření** návrháře projektu Visual Basic. Volitelně můžete přidat atribut <`AssemblyFullName>` do souboru XML CustomData. Tato pokyny Visual Basic k automatické instalaci vlastního rozšíření `My`, když je do projektu přidán odkaz na konkrétní sestavení. Pomocí libovolného textového editoru nebo editoru XML můžete vytvořit soubor CustomData a pak ho přidat do komprimované složky šablony položky (soubor ZIP).
 
-For example, the following XML shows the contents of a CustomData file that will add the template item to the My Extensions folder of a Visual Basic project when a reference to the Microsoft.VisualBasic.PowerPacks.Vs.dll assembly is added to the project.
+Například následující kód XML ukazuje obsah souboru CustomData, který přidá položku šablony do složky Moje rozšíření v projektu Visual Basic, když se do projektu přidá odkaz na sestavení Microsoft. VisualBasic. PowerPacks. vs. dll.
 
 ```xml
 <VBMyExtensionTemplate
@@ -56,25 +56,25 @@ For example, the following XML shows the contents of a CustomData file that will
 />
 ```
 
-The CustomData file contains a <`VBMyExtensionTemplate>` element that has attributes as listed in the following table.
+Soubor CustomData obsahuje prvek <`VBMyExtensionTemplate>`, který má atributy uvedené v následující tabulce.
 
 |Atribut|Popis|
 |---|---|
-|`ID`|Požadováno. A unique identifier for the extension. If the extension that has this ID has already been added to the project, the user will not be prompted to add it again.|
-|`Version`|Požadováno. A version number for the item template.|
-|`AssemblyFullName`|Volitelné. An assembly name. When a reference to this assembly is added to the project, the user will be prompted to add the `My` extension from this item template.|
+|`ID`|Požadováno. Jedinečný identifikátor pro rozšíření. Pokud rozšíření s tímto ID již bylo do projektu přidáno, uživatel nebude vyzván k jeho přidání.|
+|`Version`|Požadováno. Číslo verze pro šablonu položky|
+|`AssemblyFullName`|Volitelná. Název sestavení. Pokud je do projektu přidán odkaz na toto sestavení, bude uživatel vyzván k přidání rozšíření `My` z této šablony položky.|
 
-### <a name="add-the-customdatasignature-element-to-the-vstemplate-file"></a>Add the \<CustomDataSignature> element to the .vstemplate file
+### <a name="add-the-customdatasignature-element-to-the-vstemplate-file"></a>Přidat prvek \<CustomDataSignature – > do souboru. vstemplate
 
-To identify your Visual Studio item template as a `My` namespace extension, you must also modify the .vstemplate file for your item template. You must add a `<CustomDataSignature>` element to the `<TemplateData>` element. The `<CustomDataSignature>` element must contain the text `Microsoft.VisualBasic.MyExtension`, as shown in the following example.
+Chcete-li identifikovat šablonu položky sady Visual Studio jako `My` rozšíření oboru názvů, je nutné také upravit soubor. vstemplate pro šablonu položky. Do elementu `<TemplateData>` je nutné přidat prvek `<CustomDataSignature>`. Element `<CustomDataSignature>` musí obsahovat text `Microsoft.VisualBasic.MyExtension`, jak je znázorněno v následujícím příkladu.
 
 ```xml
 <CustomDataSignature>Microsoft.VisualBasic.MyExtension</CustomDataSignature>
 ```
 
-You cannot modify files in a compressed folder (.zip file) directly. You must copy the .vstemplate file from the compressed folder, modify it, and then replace the .vstemplate file in the compressed folder with your updated copy.
+Soubory nelze upravovat v komprimované složce (soubor. zip) přímo. Je nutné zkopírovat soubor. vstemplate z komprimované složky, upravit ho a pak nahradit soubor. vstemplate v komprimované složce pomocí aktualizované kopie.
 
-The following example shows the contents of a .vstemplate file that has the `<CustomDataSignature>` element added.
+Následující příklad ukazuje obsah souboru. vstemplate, který má přidané `<CustomDataSignature>` element.
 
 ```xml
 <VSTemplate Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
@@ -97,13 +97,13 @@ The following example shows the contents of a .vstemplate file that has the `<Cu
 </VSTemplate>
 ```
 
-## <a name="install-the-template"></a>Install the template
+## <a name="install-the-template"></a>Instalace šablony
 
-To install the template, you can copy the compressed folder ( *.zip* file) to the Visual Basic item templates folder. By default, user item templates are located in *%USERPROFILE%\Documents\Visual Studio \<Version\>\Templates\ItemTemplates\Visual Basic*. Alternatively, you can publish the template as a Visual Studio Installer ( *.vsi*) file.
+Chcete-li nainstalovat šablonu, můžete zkopírovat komprimovanou složku (soubor *. zip* ) do složky šablony Visual Basic položek. Ve výchozím nastavení se šablony uživatelských položek nacházejí v *%UserProfile%\Documents\Visual studiu \<verze\>\Templates\ItemTemplates\Visual Basic*. Alternativně můžete šablonu publikovat jako soubor Instalační program pro Visual Studio ( *. vsi*).
 
 ## <a name="see-also"></a>Viz také:
 
-- [Extending the My Namespace in Visual Basic](../../../visual-basic/developing-apps/customizing-extending-my/extending-the-my-namespace.md)
+- [Rozšíření oboru názvů My v Visual Basic](../../../visual-basic/developing-apps/customizing-extending-my/extending-the-my-namespace.md)
 - [Rozšíření aplikačního modelu jazyka Visual Basic](../../../visual-basic/developing-apps/customizing-extending-my/extending-the-visual-basic-application-model.md)
 - [Přizpůsobení výběru objektů dostupných v oboru názvů My](../../../visual-basic/developing-apps/customizing-extending-my/customizing-which-objects-are-available-in-my.md)
 - [Stránka Moje rozšíření, Návrhář projektu](/visualstudio/ide/reference/my-extensions-page-project-designer-visual-basic)

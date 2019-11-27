@@ -13,94 +13,94 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349744"
 ---
 # <a name="how-to-create-a-lambda-expression-visual-basic"></a>Postupy: Vytvoření výrazu lambda (Visual Basic)
-A *lambda expression* is a function or subroutine that does not have a name. A lambda expression can be used wherever a delegate type is valid.  
+*Výraz lambda* je funkce nebo podprogram, který nemá název. Výraz lambda lze použít všude, kde je typ delegáta platný.  
   
-### <a name="to-create-a-single-line-lambda-expression-function"></a>To create a single-line lambda expression function  
+### <a name="to-create-a-single-line-lambda-expression-function"></a>Vytvoření jednořádkové funkce výrazu lambda na jednom řádku  
   
-1. In any situation where a delegate type could be used, type the keyword `Function`, as in the following example:  
+1. V jakékoli situaci, kdy se dá použít typ delegáta, zadejte klíčové slovo `Function`, jako v následujícím příkladu:  
   
      `Dim add1 =`   `Function`  
   
-2. In parentheses, directly after `Function`, type the parameters of the function. Notice that you do not specify a name after `Function`.  
+2. V závorkách přímo po `Function`zadejte parametry funkce. Všimněte si, že po `Function`neurčíte název.  
   
      `Dim add1 = Function`   `(num As Integer)`  
   
-3. Following the parameter list, type a single expression as the body of the function. The value that the expression evaluates to is the value returned by the function. You do not use an `As` clause to specify the return type.  
+3. Po seznamu parametrů zadejte jako tělo funkce jeden výraz. Hodnota, na kterou se výraz vyhodnocuje, je hodnota vrácená funkcí. K určení návratového typu nepoužíváte klauzuli `As`.  
   
      [!code-vb[VbVbalrLambdas#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#1)]  
   
-     You call the lambda expression by passing in an integer argument.  
+     Výraz lambda zavoláte předáním celočíselného argumentu.  
   
      [!code-vb[VbVbalrLambdas#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#2)]  
   
-4. Alternatively, the same result is accomplished by the following example:  
+4. Stejný výsledek lze také provést pomocí následujícího příkladu:  
   
      [!code-vb[VbVbalrLambdas#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#3)]  
   
-### <a name="to-create-a-single-line-lambda-expression-subroutine"></a>To create a single-line lambda expression subroutine  
+### <a name="to-create-a-single-line-lambda-expression-subroutine"></a>Vytvoření dílčí rutiny lambda výrazu na jednom řádku  
   
-1. In any situation where a delegate type could be used, type the keyword `Sub`, as shown in the following example.  
+1. V jakékoli situaci, kdy se dá použít typ delegáta, zadejte klíčové slovo `Sub`, jak je znázorněno v následujícím příkladu.  
   
      `Dim add1 =`   `Sub`  
   
-2. In parentheses, directly after `Sub`, type the parameters of the subroutine. Notice that you do not specify a name after `Sub`.  
+2. V závorkách přímo po `Sub`zadejte parametry subrutiny. Všimněte si, že po `Sub`neurčíte název.  
   
      `Dim add1 = Sub`   `(msg As String)`  
   
-3. Following the parameter list, type a single statement as the body of the subroutine.  
+3. Po seznamu parametrů zadejte jeden příkaz jako tělo dílčí rutiny.  
   
      [!code-vb[VbVbalrLambdas#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#17)]  
   
-     You call the lambda expression by passing in a string argument.  
+     Výraz lambda zavoláte předáním argumentu řetězce.  
   
      [!code-vb[VbVbalrLambdas#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#18)]  
   
-### <a name="to-create-a-multiline-lambda-expression-function"></a>To create a multiline lambda expression function  
+### <a name="to-create-a-multiline-lambda-expression-function"></a>Vytvoření víceřádkové funkce výrazu lambda  
   
-1. In any situation where a delegate type could be used, type the keyword `Function`, as shown in the following example.  
+1. V jakékoli situaci, kdy se dá použít typ delegáta, zadejte klíčové slovo `Function`, jak je znázorněno v následujícím příkladu.  
   
      `Dim add1 =`   `Function`  
   
-2. In parentheses, directly after `Function`, type the parameters of the function. Notice that you do not specify a name after `Function`.  
+2. V závorkách přímo po `Function`zadejte parametry funkce. Všimněte si, že po `Function`neurčíte název.  
   
      `Dim add1 = Function`   `(index As Integer)`  
   
-3. Press ENTER. The `End Function` statement is automatically added.  
+3. Stiskněte klávesu ENTER. Příkaz `End Function` je automaticky přidán.  
   
-4. Within the body of the function, add the following code to create an expression and return the value. You do not use an `As` clause to specify the return type.  
+4. V těle funkce přidejte následující kód, který vytvoří výraz a vrátí hodnotu. K určení návratového typu nepoužíváte klauzuli `As`.  
   
      [!code-vb[VbVbalrLambdas#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#19)]  
   
-     You call the lambda expression by passing in an integer argument.  
+     Výraz lambda zavoláte předáním celočíselného argumentu.  
   
      [!code-vb[VbVbalrLambdas#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#20)]  
   
-### <a name="to-create-a-multiline-lambda-expression-subroutine"></a>To create a multiline lambda expression subroutine  
+### <a name="to-create-a-multiline-lambda-expression-subroutine"></a>Vytvoření víceřádkové subrutiny výrazu lambda  
   
-1. In any situation where a delegate type could be used, type the keyword `Sub`, as shown in the following example:  
+1. V jakékoli situaci, kdy se dá použít typ delegáta, zadejte klíčové slovo `Sub`, jak je znázorněno v následujícím příkladu:  
   
      `Dim add1 =`   `Sub`  
   
-2. In parentheses, directly after `Sub`, type the parameters of the subroutine. Notice that you do not specify a name after `Sub`.  
+2. V závorkách přímo po `Sub`zadejte parametry subrutiny. Všimněte si, že po `Sub`neurčíte název.  
   
      `Dim add1 = Sub`  `(msg As String)`  
   
-3. Press ENTER. The `End Sub` statement is automatically added.  
+3. Stiskněte klávesu ENTER. Příkaz `End Sub` je automaticky přidán.  
   
-4. Within the body of the function, add the following code to execute when the subroutine is invoked.  
+4. V těle funkce přidejte následující kód, který se spustí při vyvolání podrutiny.  
   
      [!code-vb[VbVbalrLambdas#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#21)]  
   
-     You call the lambda expression by passing in a string argument.  
+     Výraz lambda zavoláte předáním argumentu řetězce.  
   
      [!code-vb[VbVbalrLambdas#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#22)]  
   
 ## <a name="example"></a>Příklad  
- A common use of lambda expressions is to define a function that can be passed in as the argument for a parameter whose type is `Delegate`. In the following example, the <xref:System.Diagnostics.Process.GetProcesses%2A> method returns an array of the processes running on the local computer. The <xref:System.Linq.Enumerable.Where%2A> method from the <xref:System.Linq.Enumerable> class requires a `Boolean` delegate as its argument. The lambda expression in the example is used for that purpose. It returns `True` for each process that has only one thread, and those are selected in `filteredList`.  
+ Běžné použití výrazů lambda je definovat funkci, která může být předána jako argument pro parametr, jehož typ je `Delegate`. V následujícím příkladu metoda <xref:System.Diagnostics.Process.GetProcesses%2A> vrátí pole procesů spuštěných v místním počítači. Metoda <xref:System.Linq.Enumerable.Where%2A> z <xref:System.Linq.Enumerable> třídy vyžaduje jako argument delegáta `Boolean`. Výraz lambda v příkladu se používá pro tento účel. Vrátí `True` pro každý proces, který má pouze jedno vlákno, a ty jsou vybrány v `filteredList`.  
   
  [!code-vb[VbVbalrLambdas#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class4.vb#10)]  
   
- The previous example is equivalent to the following code, which is written in [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] syntax:  
+ Předchozí příklad je ekvivalentní následujícímu kódu, který je napsán v [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] syntaxe:  
   
  [!code-vb[VbVbalrLambdas#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class5.vb#11)]  
   
@@ -110,7 +110,7 @@ A *lambda expression* is a function or subroutine that does not have a name. A l
 - [Výrazy lambda](./lambda-expressions.md)
 - [Příkaz Function](../../../../visual-basic/language-reference/statements/function-statement.md)
 - [Příkaz Sub](../../../../visual-basic/language-reference/statements/sub-statement.md)
-- [Delegáty](../../../../visual-basic/programming-guide/language-features/delegates/index.md)
-- [How to: Pass Procedures to Another Procedure in Visual Basic](../../../../visual-basic/programming-guide/language-features/delegates/how-to-pass-procedures-to-another-procedure.md)
+- [Delegáti](../../../../visual-basic/programming-guide/language-features/delegates/index.md)
+- [Postupy: Předání procedur jinému postupu v Visual Basic](../../../../visual-basic/programming-guide/language-features/delegates/how-to-pass-procedures-to-another-procedure.md)
 - [Příkaz Delegate](../../../../visual-basic/language-reference/statements/delegate-statement.md)
-- [Introduction to LINQ in Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Úvod do jazyka LINQ v Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)

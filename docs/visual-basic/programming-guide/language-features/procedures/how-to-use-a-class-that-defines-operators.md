@@ -19,25 +19,25 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346041"
 ---
 # <a name="how-to-use-a-class-that-defines-operators-visual-basic"></a>Postupy: Použití třídy, která definuje operátory (Visual Basic).
-If you are using a class or structure that defines its own operators, you can access those operators from Visual Basic.  
+Pokud používáte třídu nebo strukturu, která definuje své vlastní operátory, můžete k těmto operátorům přistupovat z Visual Basic.  
   
- Defining an operator on a class or structure is also called *overloading* the operator.  
+ Definování operátoru pro třídu nebo strukturu se označuje také jako *přetížení* operátoru.  
   
 ## <a name="example"></a>Příklad  
- The following example accesses the SQL structure <xref:System.Data.SqlTypes.SqlString>, which defines the conversion operators ([CType Function](../../../../visual-basic/language-reference/functions/ctype-function.md)) in both directions between a SQL string and a Visual Basic string. Use `CType(`*SQL string expression*, `String)` to convert a SQL string to a Visual Basic string, and `CType(`*Visual Basic string expression*, <xref:System.Data.SqlTypes.SqlString>`)` to convert in the other direction.  
+ Následující příklad přistupuje k struktuře SQL <xref:System.Data.SqlTypes.SqlString>, která definuje operátory převodu ([funkce CType](../../../../visual-basic/language-reference/functions/ctype-function.md)) v obou směrech mezi řetězcem SQL a řetězcem Visual Basic. Použijte `CType(`*řetězcového výrazu SQL*, `String)` pro převod řetězce sql na Visual Basic řetězec a `CType(`*Visual Basic řetězcového výrazu*, <xref:System.Data.SqlTypes.SqlString>`)` pro převod v druhém směru.  
   
  [!code-vb[VbVbcnProcedures#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#30)]  
   
  [!code-vb[VbVbcnProcedures#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#31)]  
   
- The <xref:System.Data.SqlTypes.SqlString> structure defines a conversion operator ([CType Function](../../../../visual-basic/language-reference/functions/ctype-function.md)) from `String` to <xref:System.Data.SqlTypes.SqlString> and another from <xref:System.Data.SqlTypes.SqlString> to `String`. The statement that assigns `title` to `jobTitle` makes use of the first operator, and the <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> function call uses the second.  
+ Struktura <xref:System.Data.SqlTypes.SqlString> definuje operátor převodu ([CType funkce](../../../../visual-basic/language-reference/functions/ctype-function.md)) z `String` na <xref:System.Data.SqlTypes.SqlString> a další od <xref:System.Data.SqlTypes.SqlString> až po `String`. Příkaz, který přiřazuje `title` pro `jobTitle` používá první operátor a volání funkce <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> používá sekundu.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Be sure the class or structure you are using defines the operator you want to use. Do not assume that the class or structure has defined every operator available for overloading. For a list of available operators, see [Operator Statement](../../../../visual-basic/language-reference/statements/operator-statement.md).  
+ Ujistěte se, že třída nebo struktura, kterou používáte, definuje operátor, který chcete použít. Nepředpokládají, že třída nebo struktura definovala každý operátor, který je k dispozici pro přetížení. Seznam dostupných operátorů naleznete v tématu [příkaz operator](../../../../visual-basic/language-reference/statements/operator-statement.md).  
   
- Include the appropriate `Imports` statement for the SQL string at the beginning of your source file (in this case <xref:System.Data.SqlTypes>).  
+ Zahrňte příslušný příkaz `Imports` pro řetězec SQL na začátku zdrojového souboru (v tomto případě <xref:System.Data.SqlTypes>).  
   
- Your project must have references to System.Data and System.XML.  
+ Projekt musí mít odkazy na System. data a System. XML.  
   
 ## <a name="see-also"></a>Viz také:
 

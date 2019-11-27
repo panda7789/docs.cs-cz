@@ -1,5 +1,5 @@
 ---
-title: 'How to: Declare and Call a Default Property'
+title: 'Postupy: deklarace a volání výchozí vlastnosti'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - defaults [Visual Basic], properties
@@ -18,68 +18,68 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349686"
 ---
 # <a name="how-to-declare-and-call-a-default-property-in-visual-basic"></a>Postupy: Deklarace a volání výchozí vlastnosti v jazyce Visual Basic
-A *default property* is a class or structure property that your code can access without specifying it. When calling code names a class or structure but not a property, and the context allows access to a property, Visual Basic resolves the access to that class or structure's default property if one exists.  
+*Výchozí vlastnost* je vlastnost třídy nebo struktury, ke které má váš kód přístup bez zadání. Při volání názvů kódu třída nebo struktura, ale ne vlastnost, a kontext umožňuje přístup k vlastnosti, Visual Basic přeloží přístup k výchozí vlastnosti této třídy nebo struktury, pokud existuje.  
   
- A class or structure can have at most one default property. However, you can overload a default property and have more than one version of it.  
+ Třída nebo struktura může mít nejvýše jednu výchozí vlastnost. Můžete však přetížit výchozí vlastnost a mít více než jednu verzi.  
   
- For more information, see [Default](../../../../visual-basic/language-reference/modifiers/default.md).  
+ Další informace najdete v tématu [výchozí](../../../../visual-basic/language-reference/modifiers/default.md).  
   
-### <a name="to-declare-a-default-property"></a>To declare a default property  
+### <a name="to-declare-a-default-property"></a>Deklarace výchozí vlastnosti  
   
-1. Declare the property in the normal way. Do not specify the `Shared` or `Private` keyword.  
+1. Deklarujte vlastnost normálním způsobem. Nezadávejte klíčové slovo `Shared` ani `Private`.  
   
-2. Include the `Default` keyword in the property declaration.  
+2. Zahrňte klíčové slovo `Default` v deklaraci vlastnosti.  
   
-3. Specify at least one parameter for the property. You cannot define a default property that does not take at least one argument.  
+3. Zadejte alespoň jeden parametr pro vlastnost. Nelze definovat výchozí vlastnost, která nepřijímá alespoň jeden argument.  
   
      [!code-vb[VbVbcnProcedures#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#17)]  
   
-### <a name="to-call-a-default-property"></a>To call a default property  
+### <a name="to-call-a-default-property"></a>Volání výchozí vlastnosti  
   
-1. Declare a variable of the containing class or structure type.  
+1. Deklaruje proměnnou obsahujícího typu třídy nebo struktury.  
   
      [!code-vb[VbVbcnProcedures#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#16)]  
   
-2. Use the variable name alone in an expression where you would normally include the property name.  
+2. Použijte název proměnné samotný ve výrazu, kde byste normálně zahrnuli název vlastnosti.  
   
      [!code-vb[VbVbcnProcedures#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#21)]  
   
-3. Follow the variable name with an argument list in parentheses. A default property must take at least one argument.  
+3. Použijte název proměnné se seznamem argumentů v závorkách. Výchozí vlastnost musí mít alespoň jeden argument.  
   
      [!code-vb[VbVbcnProcedures#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#20)]  
   
-4. To retrieve the default property value, use the variable name, with an argument list, in an expression or following the equal (`=`) sign in an assignment statement.  
+4. Chcete-li načíst výchozí hodnotu vlastnosti, použijte název proměnné se seznamem argumentů ve výrazu nebo za znaménkem EQUAL (`=`) v příkazu přiřazení.  
   
      [!code-vb[VbVbcnProcedures#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#15)]  
   
-5. To set the default property value, use the variable name, with an argument list, on the left side of an assignment statement.  
+5. Chcete-li nastavit výchozí hodnotu vlastnosti, použijte název proměnné s seznamem argumentů na levé straně příkazu přiřazení.  
   
      [!code-vb[VbVbcnProcedures#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#14)]  
   
-6. You can always specify the default property name together with the variable name, just as you would do to access any other property.  
+6. Název výchozí vlastnosti můžete vždy zadat společně s názvem proměnné, stejně jako při přístupu k libovolné jiné vlastnosti.  
   
      [!code-vb[VbVbcnProcedures#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#19)]  
   
 ## <a name="example"></a>Příklad  
- The following example declares a default property on a class.  
+ Následující příklad deklaruje výchozí vlastnost třídy.  
   
  [!code-vb[VbVbcnProcedures#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#12)]  
   
 ## <a name="example"></a>Příklad  
- The following example demonstrates how to call the default property `myProperty` on class `class1`. The three assignment statements store values in `myProperty`, and the <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> call reads the values.  
+ Následující příklad ukazuje, jak volat výchozí vlastnost `myProperty` ve třídě `class1`. Tři příkazy přiřazení ukládají hodnoty do `myProperty`a volání <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> přečte hodnoty.  
   
  [!code-vb[VbVbcnProcedures#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#13)]  
   
- The most common use of a default property is the <xref:Microsoft.VisualBasic.Collection.Item%2A> property on various collection classes.  
+ Nejběžnějším použitím výchozí vlastnosti je vlastnost <xref:Microsoft.VisualBasic.Collection.Item%2A> v různých třídách kolekcí.  
   
 ## <a name="robust-programming"></a>Robustní programování  
- Default properties can result in a small reduction in source code-characters, but they can make your code more difficult to read. If the calling code is not familiar with your class or structure, when it makes a reference to the class or structure name it cannot be certain whether that reference accesses the class or structure itself, or a default property. This can lead to compiler errors or subtle run-time logic errors.  
+ Výchozí vlastnosti můžou mít za následek malé snížení počtu znaků zdrojového kódu, ale můžou ztížit čtení kódu. Pokud volající kód není obeznámen s vaší třídou nebo strukturou, při odkazování na název třídy nebo struktury nemůže být jisté, zda tento odkaz přistupuje k třídě nebo struktuře samotné nebo výchozí vlastnosti. To může vést k chybám kompilátoru nebo k drobným chybám logiky run-time.  
   
- You can somewhat reduce the chance of default property errors by always using the [Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md) to set compiler type checking to `On`.  
+ Můžete trochu snížit šanci na chyby výchozích vlastností – vždy pomocí [příkazu Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md) nastavit kontrolu typu kompilátoru na `On`.  
   
- If you are planning to use a predefined class or structure in your code, you must determine whether it has a default property, and if so, what its name is.  
+ Pokud plánujete použít předdefinovanou třídu nebo strukturu v kódu, je nutné určit, zda má výchozí vlastnost, a pokud ano, jaký je její název.  
   
- Because of these disadvantages, you should consider not defining default properties. For code readability, you should also consider always referring to all properties explicitly, even default properties.  
+ Z důvodu těchto nevýhody byste měli zvážit, že nedefinujete výchozí vlastnosti. V případě čitelnosti kódu byste měli také zvážit možnost vždy odkazovat na všechny vlastnosti, a to i na výchozí vlastnosti.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -87,7 +87,7 @@ A *default property* is a class or structure property that your code can access 
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
 - [Příkaz Property](../../../../visual-basic/language-reference/statements/property-statement.md)
 - [Default](../../../../visual-basic/language-reference/modifiers/default.md)
-- [Differences Between Properties and Variables in Visual Basic](./differences-between-properties-and-variables.md)
+- [Rozdíly mezi vlastnostmi a proměnnými v Visual Basic](./differences-between-properties-and-variables.md)
 - [Postupy: Vytvoření vlastnosti](./how-to-create-a-property.md)
 - [Postupy: Deklarace vlastnosti se smíšenými úrovněmi přístupu](./how-to-declare-a-property-with-mixed-access-levels.md)
 - [Postupy: Volání procedury vlastnosti](./how-to-call-a-property-procedure.md)

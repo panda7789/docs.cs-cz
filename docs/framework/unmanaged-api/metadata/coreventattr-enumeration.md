@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74443555"
 ---
 # <a name="coreventattr-enumeration"></a>CorEventAttr – výčet
-Contains values that describe the metadata of an event.  
+Obsahuje hodnoty, které popisují metadata události.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,16 +41,16 @@ typedef enum CorEventAttr {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`evSpecialName`|Specifies that the event is special, and that its name describes how.|  
-|`evReservedMask`|Reserved for internal use by the common language runtime.|  
-|`evRTSpecialName`|Specifies that the common language runtime should check the encoding of the event name.|  
+|`evSpecialName`|Určuje, že událost je zvláštní a že její název popisuje, jak.|  
+|`evReservedMask`|Vyhrazeno pro interní použití modulem CLR (Common Language Runtime).|  
+|`evRTSpecialName`|Určuje, že modul CLR (Common Language Runtime) by měl kontrolovat kódování názvu události.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **Hlavička:** CorHdr. h  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

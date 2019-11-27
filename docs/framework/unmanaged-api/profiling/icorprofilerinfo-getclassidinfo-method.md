@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74439248"
 ---
 # <a name="icorprofilerinfogetclassidinfo-method"></a>ICorProfilerInfo::GetClassIDInfo – metoda
-Gets the parent module and the metadata token for the specified class.  
+Získá nadřazený modul a token metadat pro určenou třídu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,27 +36,27 @@ HRESULT GetClassIDInfo(
   
 ## <a name="parameters"></a>Parametry  
  `classId`  
- [in] The ID of the class for which to get the information.  
+ pro ID třídy, pro kterou chcete získat informace.  
   
  `pModuleId`  
- [out] A pointer to the ID of the parent module of the class.  
+ mimo Ukazatel na ID nadřazeného modulu třídy.  
   
  `pTypeDefToken`  
- [out] A pointer to the metadata token for the class.  
+ mimo Ukazatel na token metadat pro třídu.  
   
 ## <a name="remarks"></a>Poznámky  
- The profiler code can call [ICorProfilerInfo::GetModuleMetaData](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmodulemetadata-method.md) to obtain a metadata interface for a given module. The metadata token that is returned to the location referenced by `pTypeDefToken` can then be used to access the metadata for the class.  
+ Kód profileru může zavolat [ICorProfilerInfo:: GetModuleMetaData –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmodulemetadata-method.md) a získat rozhraní metadat pro daný modul. Token metadat, který je vrácen do umístění odkazovaného `pTypeDefToken` lze následně použít pro přístup k metadatům třídy.  
   
- To get more information for generic types, use [ICorProfilerInfo2::GetClassIDInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getclassidinfo2-method.md).  
+ Chcete-li získat další informace pro obecné typy, použijte [ICorProfilerInfo2:: GetClassIDInfo2 –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getclassidinfo2-method.md).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

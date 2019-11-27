@@ -16,7 +16,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74333142"
 ---
 # <a name="skip-while-clause-visual-basic"></a>Skip While – klauzule (Visual Basic)
-Bypasses elements in a collection as long as a specified condition is `true` and then returns the remaining elements.  
+Vynechá prvky v kolekci, pokud je zadaná podmínka `true` a vrátí zbývající prvky.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,23 +28,23 @@ Skip While expression
   
 |Termín|Definice|  
 |---|---|  
-|`expression`|Požadováno. An expression that represents a condition to test elements for. The expression must return a `Boolean` value or a functional equivalent, such as an `Integer` to be evaluated as a `Boolean`.|  
+|`expression`|Požadováno. Výraz, který představuje podmínku pro testování prvků pro. Výraz musí vracet `Boolean` hodnotu nebo funkční ekvivalent, jako je například `Integer` pro vyhodnocení jako `Boolean`.|  
   
 ## <a name="remarks"></a>Poznámky  
- The `Skip While` clause bypasses elements from the beginning of a query result until the supplied `expression` returns `false`. After `expression` returns `false`, the query returns all the remaining elements. The `expression` is ignored for the remaining results.  
+ Klauzule `Skip While` obchází prvky od začátku výsledku dotazu, dokud zadaný `expression` nevrátí `false`. Po `expression` vrátí `false`, dotaz vrátí všechny zbývající prvky. `expression` se u zbývajících výsledků ignoruje.  
   
- The `Skip While` clause differs from the `Where` clause in that the `Where` clause can be used to exclude all elements from a query that do not meet a particular condition. The `Skip While` clause excludes elements only until the first time that the condition is not satisfied. The `Skip While` clause is most useful when you are working with an ordered query result.  
+ Klauzule `Skip While` se liší od klauzule `Where` v tom, že klauzuli `Where` lze použít k vyloučení všech prvků z dotazu, který nesplňuje určitou podmínku. Klauzule `Skip While` vyloučí prvky pouze do doby, než první podmínka není splněna. Klauzule `Skip While` je nejužitečnější, když pracujete s výsledkem seřazeného dotazu.  
   
- You can bypass a specific number of results from the beginning of a query result by using the `Skip` clause.  
+ Můžete obejít určitý počet výsledků od začátku výsledku dotazu pomocí klauzule `Skip`.  
   
 ## <a name="example"></a>Příklad  
- The following code example uses the `Skip While` clause to bypass results until the first customer from the United States is found.  
+ Následující příklad kódu používá klauzuli `Skip While` pro obejití výsledků, dokud se nenajde první zákazník z USA.  
   
  [!code-vb[VbSimpleQuerySamples#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#3)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Introduction to LINQ in Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Úvod do jazyka LINQ v Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
 - [Dotazy](../../../visual-basic/language-reference/queries/index.md)
 - [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)
 - [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)

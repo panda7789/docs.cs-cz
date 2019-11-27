@@ -16,17 +16,17 @@ ms.locfileid: "74349269"
 ---
 # <a name="rapid-application-development-with-myresources-and-mysettings-visual-basic"></a>Rychlý vývoj aplikací s použitím objektů My.Resources a My.Settings (Visual Basic)
 
-The `My.Resources` object provides access to the application's resources and allows you to dynamically retrieve resources for your application.  
+Objekt `My.Resources` poskytuje přístup k prostředkům aplikace a umožňuje dynamicky načítat prostředky pro vaši aplikaci.  
   
 ## <a name="retrieving-resources"></a>Načítání prostředků  
 
- A number of resources such as audio files, icons, images, and strings can be retrieved through the `My.Resources` object. For example, you can access the application's culture-specific resource files. The following example sets the icon of the form to the icon named `Form1Icon` stored in the application's resource file.  
+ Množství prostředků, jako jsou zvukové soubory, ikony, obrázky a řetězce, lze načíst prostřednictvím objektu `My.Resources`. Můžete například získat přístup k souborům prostředků specifických pro jazykovou verzi aplikace. Následující příklad nastaví ikonu formuláře na ikonu s názvem `Form1Icon` uloženou v souboru prostředků aplikace.  
   
  [!code-vb[VbVbcnMy#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMy/VB/Class1.vb#7)]  
   
- The `My.Resources` object exposes only global resources. It does not provide access to resource files associated with forms. You must access the form resources from the form.  
+ Objekt `My.Resources` zpřístupňuje pouze globální prostředky. Neposkytuje přístup k souborům prostředků přidruženým k formulářům. Musíte získat přístup k prostředkům formuláře z formuláře.  
   
- Similarly, the `My.Settings` object provides access to the application's settings and allows you to dynamically store and retrieve property settings and other information for your application. For more information, see [My.Resources Object](../../../visual-basic/language-reference/objects/my-resources-object.md) and [My.Settings Object](../../../visual-basic/language-reference/objects/my-settings-object.md).  
+ Podobně objekt `My.Settings` poskytuje přístup k nastavení aplikace a umožňuje dynamicky ukládat a načítat nastavení vlastností a další informace pro vaši aplikaci. Další informace naleznete v tématu [objekt My. Resources](../../../visual-basic/language-reference/objects/my-resources-object.md) a [My. Settings Object](../../../visual-basic/language-reference/objects/my-settings-object.md).  
   
 ## <a name="see-also"></a>Viz také:
 

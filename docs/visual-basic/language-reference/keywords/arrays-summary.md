@@ -12,13 +12,13 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349934"
 ---
 # <a name="arrays-summary-visual-basic"></a>Souhrn polí (Visual Basic)
-Visual Basic language keywords and run-time library members are organized by purpose and use.  
+Visual Basic klíčová slova jazyka a členy běhové knihovny jsou uspořádány podle účelu a použití.  
   
 |Akce|Prvek jazyka|  
 |------------|----------------------|  
 |Ověření pole.|<xref:Microsoft.VisualBasic.Information.IsArray%2A>|  
 |Deklarace a inicializace pole.|[Dim](../../../visual-basic/language-reference/statements/dim-statement.md), [Private](../../../visual-basic/language-reference/modifiers/private.md), [Public](../../../visual-basic/language-reference/modifiers/public.md), [ReDim](../../../visual-basic/language-reference/statements/redim-statement.md)|  
-|Nalezení mezních hodnot pole.|<xref:Microsoft.VisualBasic.Information.LBound%2A>, <xref:Microsoft.VisualBasic.Information.UBound%2A>|  
+|Nalezení mezních hodnot pole.|<xref:Microsoft.VisualBasic.Information.LBound%2A><xref:Microsoft.VisualBasic.Information.UBound%2A>|  
 |Nová inicializace pole|[Erase](../../../visual-basic/language-reference/statements/erase-statement.md), [ReDim](../../../visual-basic/language-reference/statements/redim-statement.md)|  
   
 ## <a name="see-also"></a>Viz také:

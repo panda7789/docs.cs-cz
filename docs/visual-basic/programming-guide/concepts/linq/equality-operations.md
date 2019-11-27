@@ -9,17 +9,17 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346837"
 ---
-# <a name="equality-operations-visual-basic"></a>Equality Operations (Visual Basic)
-Two sequences whose corresponding elements are equal and which have the same number of elements are considered equal.  
+# <a name="equality-operations-visual-basic"></a>Operace rovnosti (Visual Basic)
+Dvě sekvence, jejichž odpovídající prvky jsou stejné a které mají stejný počet prvků, jsou považovány za stejné.  
   
 ## <a name="methods"></a>Metody  
   
-|Method Name|Popis|Visual Basic Query Expression Syntax|Další informace|  
+|Název metody|Popis|Visual Basic syntaxe výrazu dotazu|Další informace|  
 |-----------------|-----------------|------------------------------------------|----------------------|  
-|SequenceEqual|Determines whether two sequences are equal by comparing elements in a pair-wise manner.|Nelze použít.|<xref:System.Linq.Enumerable.SequenceEqual%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.SequenceEqual%2A?displayProperty=nameWithType>|  
+|SequenceEqual|Určuje, zda se dvě sekvence rovnají porovnáváním prvků v rámci párového způsobu.|Není k dispozici.|<xref:System.Linq.Enumerable.SequenceEqual%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.SequenceEqual%2A?displayProperty=nameWithType>|  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Linq>
-- [Standard Query Operators Overview (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [How to: Compare the Contents of Two Folders (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-compare-the-contents-of-two-folders-linq.md)
+- [Přehled standardních operátorů dotazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
+- [Postupy: porovnání obsahu dvou složek (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-compare-the-contents-of-two-folders-linq.md)

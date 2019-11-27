@@ -17,7 +17,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74333041"
 ---
 # <a name="removehandler-statement"></a>RemoveHandler – příkaz
-Removes the association between an event and an event handler.  
+Odebere přidružení mezi událostí a obslužnou rutinou události.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,14 +29,14 @@ RemoveHandler event, AddressOf eventhandler
   
 |Termín|Definice|  
 |---|---|  
-|`event`|The name of the event being handled.|  
-|`eventhandler`|The name of the procedure currently handling the event.|  
+|`event`|Název zpracovávané události.|  
+|`eventhandler`|Název procedury, která tuto událost právě zpracovává.|  
   
 ## <a name="remarks"></a>Poznámky  
- The `AddHandler` and `RemoveHandler` statements allow you to start and stop event handling for a specific event at any time during program execution.  
+ Příkazy `AddHandler` a `RemoveHandler` umožňují kdykoli během provádění programu spouštět a zastavovat zpracování událostí pro konkrétní událost.  
   
 > [!NOTE]
-> For custom events, the `RemoveHandler` statement invokes the event's `RemoveHandler` accessor. For more information on custom events, see [Event Statement](../../../visual-basic/language-reference/statements/event-statement.md).  
+> Pro vlastní události příkaz `RemoveHandler` vyvolá přistupující objekt `RemoveHandler` události. Další informace o vlastních událostech naleznete v tématu [příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md).  
   
 ## <a name="example"></a>Příklad  
  [!code-vb[VbVbalrEvents#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#17)]  
@@ -44,6 +44,6 @@ RemoveHandler event, AddressOf eventhandler
 ## <a name="see-also"></a>Viz také:
 
 - [Příkaz AddHandler](../../../visual-basic/language-reference/statements/addhandler-statement.md)
-- [Handles](../../../visual-basic/language-reference/statements/handles-clause.md)
+- [Řeší](../../../visual-basic/language-reference/statements/handles-clause.md)
 - [Příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md)
 - [Události](../../../visual-basic/programming-guide/language-features/events/index.md)

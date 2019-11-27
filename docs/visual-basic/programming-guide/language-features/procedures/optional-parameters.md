@@ -20,7 +20,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74345968"
 ---
 # <a name="optional-parameters-visual-basic"></a>Volitelné parametry (Visual Basic)
-Můžete určit, že parametr procedury je volitelný, a při volání této procedury se nemusí zadávat žádný argument. *Optional parameters* are indicated by the `Optional` keyword in the procedure definition. Platí následující pravidla:  
+Můžete určit, že parametr procedury je volitelný, a při volání této procedury se nemusí zadávat žádný argument. *Volitelné parametry* jsou v definici procedury označeny klíčovým slovem `Optional`. Platí následující pravidla:  
   
 - Každý volitelný parametr v definici procedury musí mít výchozí hodnotu.  
   
@@ -43,18 +43,18 @@ Sub name(ByVal parameter1 As datatype1, Optional ByVal parameter2 As datatype2 =
 Sub name(argument 1, , , argument 4)  
 ```  
   
- The following example makes several calls to the `MsgBox` function. `MsgBox` has one required parameter and two optional parameters.  
+ Následující příklad provede několik volání funkce `MsgBox`. `MsgBox` má jeden povinný parametr a dva volitelné parametry.  
   
- The first call to `MsgBox` supplies all three arguments in the order that `MsgBox` defines them. Ve druhém volání je zadán pouze povinný argument. Ve třetím a čtvrtém volání je zadán první a třetí argument. Třetí volání tak činí podle pozice a čtvrté volání podle názvu.  
+ První volání `MsgBox` dodá všechny tři argumenty v pořadí, ve kterém je `MsgBox` definuje. Ve druhém volání je zadán pouze povinný argument. Ve třetím a čtvrtém volání je zadán první a třetí argument. Třetí volání tak činí podle pozice a čtvrté volání podle názvu.  
   
  [!code-vb[VbVbcnProcedures#47](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#47)]  
   
 ## <a name="determining-whether-an-optional-argument-is-present"></a>Určení, zda existuje volitelný argument  
- Procedura nedokáže za běhu zjistit, zda byl daný argument vynechán nebo zda volající kód explicitně poskytuje výchozí hodnotu. Pokud to potřebujete rozlišit, můžete jako výchozí nastavit nějakou nepravděpodobnou hodnotu. The following procedure defines the optional parameter `office`, and tests for its default value, `QJZ`, to see if it has been omitted in the call:  
+ Procedura nedokáže za běhu zjistit, zda byl daný argument vynechán nebo zda volající kód explicitně poskytuje výchozí hodnotu. Pokud to potřebujete rozlišit, můžete jako výchozí nastavit nějakou nepravděpodobnou hodnotu. Následující postup definuje volitelný parametr `office`a testuje jeho výchozí hodnotu, `QJZ`, aby bylo možné zjistit, zda bylo vynecháno v volání:  
   
  [!code-vb[VbVbcnProcedures#46](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#46)]  
   
- If the optional parameter is a reference type such as a `String`, you can use `Nothing` as the default value, provided this is not an expected value for the argument.  
+ Pokud je volitelný parametr odkazový typ, jako je například `String`, můžete jako výchozí hodnotu použít `Nothing`, pokud to není očekávaná hodnota argumentu.  
   
 ## <a name="optional-parameters-and-overloading"></a>Volitelné parametry a přetěžování  
  Proceduru s volitelnými parametry lze definovat také pomocí přetěžování. Pokud máte jeden volitelný parametr, můžete definovat dvě přetížené verze procedury – jednu s parametrem a druhou bez parametru. S rostoucím počtem volitelných parametrů se zvyšuje složitost. Výhodou ale je, že máte absolutní jistotu, zda volající program poskytl jednotlivé volitelné argumenty.  

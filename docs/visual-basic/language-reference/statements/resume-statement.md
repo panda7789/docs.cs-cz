@@ -23,9 +23,9 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74333033"
 ---
 # <a name="resume-statement"></a>Resume – příkaz
-Resumes execution after an error-handling routine is finished.  
+Po dokončení rutiny zpracování chyb pokračuje v provádění.  
   
- We suggest that you use structured exception handling in your code whenever possible, rather than using unstructured exception handling and the `On Error` and `Resume` statements. For more information, see [Try...Catch...Finally Statement](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
+ Doporučujeme, abyste ve svém kódu používali strukturované zpracování výjimek, kdykoli je to možné, místo použití nestrukturovaného zpracování výjimek a příkazů `On Error` a `Resume`. Další informace najdete v tématu [Try... Zachytit... Finally – příkaz](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,32 +35,32 @@ Resume [ Next | line ]
   
 ## <a name="parts"></a>Součásti  
  `Resume`  
- Požadováno. If the error occurred in the same procedure as the error handler, execution resumes with the statement that caused the error. If the error occurred in a called procedure, execution resumes at the statement that last called out of the procedure containing the error-handling routine.  
+ Požadováno. Pokud k chybě došlo ve stejné proceduře jako obslužná rutina chyby, spuštění pokračuje s příkazem, který způsobil chybu. Pokud k chybě došlo v volané proceduře, spuštění pokračuje na příkazu, který naposledy volal proceduru, která obsahuje rutinu zpracování chyb.  
   
  `Next`  
- Volitelné. If the error occurred in the same procedure as the error handler, execution resumes with the statement immediately following the statement that caused the error. If the error occurred in a called procedure, execution resumes with the statement immediately following the statement that last called out of the procedure containing the error-handling routine (or `On Error Resume Next` statement).  
+ Volitelná. Pokud k chybě došlo ve stejné proceduře jako obslužná rutina chyby, provádění pokračuje příkazem hned po příkazu, který způsobil chybu. Pokud k chybě došlo v volané proceduře, spuštění pokračuje pomocí příkazu ihned po příkazu, který naposledy vyvolal proceduru, která obsahuje rutinu zpracování chyb (nebo příkaz `On Error Resume Next`).  
   
  `line`  
- Volitelné. Execution resumes at the line specified in the required `line` argument. The `line` argument is a line label or line number and must be in the same procedure as the error handler.  
+ Volitelná. Provádění pokračuje na řádku zadaném v argumentu Required `line`. Argument `line` je popisek řádku nebo číslo řádku a musí být ve stejném postupu jako obslužná rutina chyby.  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!NOTE]
-> We recommend that you use structured exception handling in your code whenever possible, rather than using unstructured exception handling and the `On Error` and `Resume` statements. For more information, see [Try...Catch...Finally Statement](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
+> Doporučujeme používat strukturované zpracování výjimek v kódu, kdykoli je to možné, místo použití nestrukturovaného zpracování výjimek a příkazů `On Error` a `Resume`. Další informace najdete v tématu [Try... Zachytit... Finally – příkaz](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
   
- If you use a `Resume` statement anywhere other than in an error-handling routine, an error occurs.  
+ Použijete-li příkaz `Resume` kdekoli jinde než v rutině zpracování chyb, dojde k chybě.  
   
- The `Resume` statement cannot be used in any procedure that contains a `Try...Catch...Finally` statement.  
+ Příkaz `Resume` nelze použít v jakékoli proceduře, která obsahuje příkaz `Try...Catch...Finally`.  
   
 ## <a name="example"></a>Příklad  
- This example uses the `Resume` statement to end error handling in a procedure and then resume execution with the statement that caused the error. Error number 55 is generated to illustrate use of the `Resume` statement.  
+ V tomto příkladu se pomocí příkazu `Resume` ukončí zpracování chyb v proceduře a pak pokračuje v provádění s příkazem, který chybu způsobil. K ilustraci použití příkazu `Resume` je vygenerována chyba č. 55.  
   
  [!code-vb[VbVbalrErrorHandling#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrErrorHandling/VB/Class1.vb#16)]  
   
 ## <a name="requirements"></a>Požadavky  
- **Namespace:** [Microsoft.VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  
+ **Obor názvů:** [Microsoft. VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  
   
- **Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)  
+ **Sestavení:** Knihovna Visual Basic runtime (v souboru Microsoft. VisualBasic. dll)  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -34,7 +34,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346742"
 ---
 # <a name="redim-statement-visual-basic"></a>ReDim – příkaz (Visual Basic)
-Reallocates storage space for an array variable.  
+Znovu přidělí prostor úložiště pro proměnnou pole.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,59 +46,59 @@ ReDim [ Preserve ] name(boundlist) [ ,  name(boundlist) [, ... ] ]
   
 |Termín|Definice|  
 |----------|----------------|  
-|`Preserve`|Volitelné. Modifier used to preserve the data in the existing array when you change the size of only the last dimension.|  
-|`name`|Požadováno. Name of the array variable. See [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|  
-|`boundlist`|Požadováno. List of bounds of each dimension of the redefined array.|  
+|`Preserve`|Volitelná. Modifikátor používaný k zachování dat v existujícím poli při změně velikosti pouze poslední dimenze.|  
+|`name`|Požadováno. Název proměnné pole Viz [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|  
+|`boundlist`|Požadováno. Seznam hranic jednotlivých dimenzí předefinovaného pole|  
   
 ## <a name="remarks"></a>Poznámky  
- You can use the `ReDim` statement to change the size of one or more dimensions of an array that has already been declared. If you have a large array and you no longer need some of its elements, `ReDim` can free up memory by reducing the array size. On the other hand, if your array needs more elements, `ReDim` can add them.  
+ Pomocí příkazu `ReDim` můžete změnit velikost jedné nebo více dimenzí pole, které již bylo deklarováno. Pokud máte velké pole a již nepotřebujete některé z jeho prvků, `ReDim` může uvolnit paměť zmenšením velikosti pole. Na druhé straně, pokud vaše pole potřebuje více prvků, `ReDim` je může přidat.  
   
- The `ReDim` statement is intended only for arrays. It's not valid on scalars (variables that contain only a single value), collections, or structures. Note that if you declare a variable to be of type `Array`, the `ReDim` statement doesn't have sufficient type information to create the new array.  
+ Příkaz `ReDim` je určen pouze pro pole. Není platná pro skalární hodnoty (proměnné, které obsahují pouze jednu hodnotu), kolekce nebo struktury. Všimněte si, že pokud deklarujete proměnnou, která má být typu `Array`, příkaz `ReDim` neobsahuje dostatečné informace o typu pro vytvoření nového pole.  
   
- You can use `ReDim` only at procedure level. Therefore, the declaration context for the variable must be a procedure; it can't be a source file, a namespace, an interface, a class, a structure, a module, or a block. For more information, see [Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).  
+ `ReDim` můžete použít jenom na úrovni procedury. Proto kontext deklarace pro proměnnou musí být procedura; nemůže to být zdrojový soubor, obor názvů, rozhraní, třída, struktura, modul nebo blok. Další informace najdete v tématu [deklarace kontextů a výchozích úrovní přístupu](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).  
   
-## <a name="rules"></a>Rules  
+## <a name="rules"></a>Pravidla  
   
-- **Multiple Variables.** You can resize several array variables in the same declaration statement and specify the `name` and `boundlist` parts for each variable. Multiple variables are separated by commas.  
+- **Několik proměnných.** Můžete změnit velikost několika proměnných pole v rámci jednoho příkazu deklarace a určit `name` a `boundlist` části pro každou proměnnou. Více proměnných je odděleno čárkami.  
   
-- **Array Bounds.** Each entry in `boundlist` can specify the lower and upper bounds of that dimension. The lower bound is always 0 (zero). The upper bound is the highest possible index value for that dimension, not the length of the dimension (which is the upper bound plus one). The index for each dimension can vary from 0 through its upper bound value.  
+- **Meze pole.** Každá položka v `boundlist` může určit dolní a horní hranici dané dimenze. Dolní mez je vždycky 0 (nula). Horní mez představuje nejvyšší možnou hodnotu indexu pro tuto dimenzi, nikoli délku dimenze (což je horní mez plus jedna). Index pro každou dimenzi se může od nuly lišit hodnotou horní meze.  
   
-     The number of dimensions in `boundlist` must match the original number of dimensions (rank) of the array.  
+     Počet rozměrů v `boundlist` musí odpovídat původnímu počtu rozměrů pole (Rank).  
   
-- **Data Types.** The `ReDim` statement cannot change the data type of an array variable or its elements.  
+- **Datové typy.** Příkaz `ReDim` nemůže změnit datový typ proměnné pole nebo jejích elementů.  
   
-- **Initialization.** The `ReDim` statement cannot provide new initialization values for the array elements.  
+- **Operace.** Příkaz `ReDim` nemůže poskytnout nové inicializační hodnoty pro prvky pole.  
   
-- **Rank.** The `ReDim` statement cannot change the rank (the number of dimensions) of the array.  
+- **Pořadí.** Příkaz `ReDim` nemůže změnit pořadí (počet rozměrů) pole.  
   
-- **Resizing with Preserve.** If you use `Preserve`, you can resize only the last dimension of the array. For every other dimension, you must specify the bound of the existing array.  
+- **Změna velikosti se zachováním zachovat.** Pokud používáte `Preserve`, můžete změnit velikost pouze poslední dimenze pole. Pro všechny ostatní dimenze je nutné zadat hranici existujícího pole.  
   
-     For example, if your array has only one dimension, you can resize that dimension and still preserve all the contents of the array, because you are changing the last and only dimension. However, if your array has two or more dimensions, you can change the size of only the last dimension if you use `Preserve`.  
+     Například pokud má vaše pole pouze jednu dimenzi, můžete změnit velikost této dimenze a zachovat obsah pole, protože měníte poslední a pouze dimenzi. Pokud má ale vaše pole dvě nebo více dimenzí, můžete změnit velikost jenom poslední dimenze, pokud používáte `Preserve`.  
   
-- **Properties.** You can use `ReDim` on a property that holds an array of values.  
+- **Vlastnosti.** Můžete použít `ReDim` u vlastnosti, která obsahuje pole hodnot.  
   
-## <a name="behavior"></a>Behavior  
+## <a name="behavior"></a>Chování  
   
-- **Array Replacement.** `ReDim` releases the existing array and creates a new array with the same rank. The new array replaces the released array in the array variable.  
+- **Nahrazení pole** `ReDim` uvolní existující pole a vytvoří nové pole se stejným pořadím. Nové pole nahradí uvolněné pole v proměnné pole.  
   
-- **Initialization without Preserve.** If you do not specify `Preserve`, `ReDim` initializes the elements of the new array by using the default value for their data type.  
+- **Inicializace bez zachování.** Pokud nezadáte `Preserve`, `ReDim` inicializuje prvky nového pole pomocí výchozí hodnoty pro svůj datový typ.  
   
-- **Initialization with Preserve.** If you specify `Preserve`, Visual Basic copies the elements from the existing array to the new array.  
+- **Inicializace s zachovat.** Pokud zadáte `Preserve`, Visual Basic zkopíruje prvky z existujícího pole do nového pole.  
   
 ## <a name="example"></a>Příklad  
- The following example increases the size of the last dimension of a dynamic array without losing any existing data in the array, and then decreases the size with partial data loss. Finally, it decreases the size back to its original value and reinitializes all the array elements.  
+ Následující příklad zvětší velikost poslední dimenze dynamického pole, aniž by ztratila všechna existující data v poli, a pak zmenší velikost s částečnou ztrátou dat. Nakonec zmenší velikost zpátky na původní hodnotu a znovu inicializuje všechny prvky pole.  
   
  [!code-vb[VbVbalrStatements#52](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#52)]  
   
- The `Dim` statement creates a new array with three dimensions. Each dimension is declared with a bound of 10, so the array index for each dimension can range from 0 through 10. In the following discussion, the three dimensions are referred to as layer, row, and column.  
+ Příkaz `Dim` vytvoří nové pole se třemi dimenzemi. Každá dimenze je deklarována s hranicí 10, takže index pole pro každou dimenzi může být v rozsahu od 0 do 10. V následující diskuzi se tři dimenze označují jako vrstvy, řádky a sloupce.  
   
- The first `ReDim` creates a new array which replaces the existing array in variable `intArray`. `ReDim` copies all the elements from the existing array into the new array. It also adds 10 more columns to the end of every row in every layer and initializes the elements in these new columns to 0 (the default value of `Integer`, which is the element type of the array).  
+ První `ReDim` vytvoří nové pole, které nahradí existující pole v proměnné `intArray`. `ReDim` zkopíruje všechny prvky z existujícího pole do nového pole. Přidává také 10 dalších sloupců na konec každého řádku v každé vrstvě a inicializuje prvky v těchto nových sloupcích na 0 (výchozí hodnota `Integer`, což je typ prvku pole).  
   
- The second `ReDim` creates another new array and copies all the elements that fit. However, five columns are lost from the end of every row in every layer. This is not a problem if you have finished using these columns. Reducing the size of a large array can free up memory that you no longer need.  
+ Druhý `ReDim` vytvoří další nové pole a zkopíruje všechny prvky, které odpovídají. Nicméně pět sloupců se na konci každého řádku v každé vrstvě ztratí. Nejedná se o problém, pokud jste s použitím těchto sloupců dokončili. Zmenšení velikosti velkého pole může uvolnit paměť, kterou už nepotřebujete.  
   
- The third `ReDim` creates another new array and removes another five columns from the end of every row in every layer. This time it does not copy any existing elements. This statement reverts the array to its original size. Because the statement doesn't include the `Preserve` modifier, it sets all array elements to their original default values.  
+ Třetí `ReDim` vytvoří další nové pole a z konce každého řádku v každé vrstvě odebere další pět sloupců. Tentokrát nekopíruje žádné existující prvky. Tento příkaz vrátí pole do původní velikosti. Vzhledem k tomu, že příkaz neobsahuje modifikátor `Preserve`, nastaví všechny prvky pole na původní výchozí hodnoty.  
   
- For additional examples, see [Arrays](../../../visual-basic/programming-guide/language-features/arrays/index.md).  
+ Další příklady naleznete v tématu [Arrays](../../../visual-basic/programming-guide/language-features/arrays/index.md).  
   
 ## <a name="see-also"></a>Viz také:
 

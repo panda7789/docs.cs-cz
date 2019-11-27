@@ -16,7 +16,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349659"
 ---
 # <a name="skip-clause-visual-basic"></a>Skip – klauzule (Visual Basic)
-Bypasses a specified number of elements in a collection and then returns the remaining elements.  
+Obchází zadaný počet prvků v kolekci a vrátí zbývající prvky.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,25 +26,25 @@ Skip count
   
 ## <a name="parts"></a>Součásti  
  `count`  
- Požadováno. A value or an expression that evaluates to the number of elements of the sequence to skip.  
+ Požadováno. Hodnota nebo výraz, který se vyhodnotí na počet prvků sekvence, která se má přeskočit.  
   
 ## <a name="remarks"></a>Poznámky  
- The `Skip` clause causes a query to bypass elements at the beginning of a results list and return the remaining elements. The number of elements to skip is identified by the `count` parameter.  
+ Klauzule `Skip` způsobí, že dotaz obchází prvky na začátku seznamu výsledků a vrátí zbývající prvky. Počet elementů, které mají být přeskočeny, je identifikován parametrem `count`.  
   
- You can use the `Skip` clause with the `Take` clause to return a range of data from any segment of a query. To do this, pass the index of the first element of the range to the `Skip` clause and the size of the range to the `Take` clause.  
+ Klauzuli `Skip` s klauzulí `Take` můžete použít k vrácení rozsahu dat z libovolného segmentu dotazu. Provedete to tak, že předáte index prvního prvku rozsahu na klauzuli `Skip` a velikost rozsahu na klauzuli `Take`.  
   
- When you use the `Skip` clause in a query, you may also need to ensure that the results are returned in an order that will enable the `Skip` clause to bypass the intended results. For more information about ordering query results, see [Order By Clause](../../../visual-basic/language-reference/queries/order-by-clause.md).  
+ Použijete-li v dotazu klauzuli `Skip`, může být také nutné zajistit, aby výsledky byly vráceny v pořadí, které umožní, aby klauzule `Skip` vynechal zamýšlené výsledky. Další informace o řazení výsledků dotazu naleznete v tématu [ORDER by klauzule](../../../visual-basic/language-reference/queries/order-by-clause.md).  
   
- You can use the `SkipWhile` clause to specify that only certain elements are ignored, depending on a supplied condition.  
+ Pomocí klauzule `SkipWhile` můžete určit, že se v závislosti na zadané podmínce mají ignorovat jenom určité prvky.  
   
 ## <a name="example"></a>Příklad  
- The following code example uses the `Skip` clause together with the `Take` clause to return data from a query in pages. The `GetCustomers` function uses the `Skip` clause to bypass the customers in the list until the supplied starting index value, and uses the `Take` clause to return a page of customers starting from that index value.  
+ Následující příklad kódu používá klauzuli `Skip` spolu s klauzulí `Take`, která vrací data z dotazu na stránkách. Funkce `GetCustomers` používá klauzuli `Skip` pro obejít zákazníky v seznamu až do zadané hodnoty počátečního indexu a pomocí klauzule `Take` vracet stránku zákazníků počínaje touto hodnotou indexu.  
   
  [!code-vb[VbSimpleQuerySamples#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#1)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Introduction to LINQ in Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Úvod do jazyka LINQ v Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
 - [Dotazy](../../../visual-basic/language-reference/queries/index.md)
 - [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)
 - [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)

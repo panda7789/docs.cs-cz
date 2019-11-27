@@ -12,171 +12,171 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346702"
 ---
-# <a name="objects-and-classes-in-visual-basic"></a>Objects and classes in Visual Basic
+# <a name="objects-and-classes-in-visual-basic"></a>Objekty a třídy v Visual Basic
 
-An *object* is a combination of code and data that can be treated as a unit. An object can be a piece of an application, like a control or a form. An entire application can also be an object.
+*Objekt* je kombinací kódu a dat, která lze považovat za jednotku. Objekt může být částí aplikace, například ovládacím prvkem nebo formulářem. Celá aplikace může být také objekt.
 
-When you create an application in Visual Basic, you constantly work with objects. You can use objects provided by Visual Basic, such as controls, forms, and data access objects. You can also use objects from other applications within your Visual Basic application. You can even create your own objects and define additional properties and methods for them. Objects act like prefabricated building blocks for programs — they let you write a piece of code once and reuse it over and over.
+Při vytváření aplikace v Visual Basic stále pracujete s objekty. Můžete použít objekty poskytované Visual Basic, jako jsou ovládací prvky, formuláře a objekty pro přístup k datům. Můžete také použít objekty z jiných aplikací v rámci aplikace Visual Basic. Můžete dokonce vytvořit vlastní objekty a definovat další vlastnosti a metody pro ně. Objekty fungují jako Prefabrikované stavební bloky pro programy – umožňují napsat kód jen jednou a opakovaně ho používat.
 
-This topic discusses objects in detail.
+V tomto tématu jsou podrobněji popsány objekty.
 
 ## <a name="objects-and-classes"></a>Objekty a třídy
 
-Each object in Visual Basic is defined by a *class*. A class describes the variables, properties, procedures, and events of an object. Objects are instances of classes; you can create as many objects you need once you have defined a class.
+Každý objekt v Visual Basic je definován *třídou*. Třída popisuje proměnné, vlastnosti, procedury a události objektu. Objekty jsou instance třídy; Po definování třídy můžete vytvořit tolik objektů, kolik potřebujete.
 
-To understand the relationship between an object and its class, think of cookie cutters and cookies. The cookie cutter is the class. It defines the characteristics of each cookie, for example size and shape. The class is used to create objects. The objects are the cookies.
+Pro pochopení vztahu mezi objektem a jeho třídou si můžete představit ořezávání souborů cookie a soubory cookie. Ořezávání souborů cookie je třída. Definuje charakteristiky jednotlivých souborů cookie, například velikost a tvar. Třída se používá k vytvoření objektů. Objekty jsou soubory cookie.
 
-You must create an object before you can access its members.
+Objekt je nutné vytvořit před tím, než budete moci získat přístup k jeho členům.
 
-### <a name="to-create-an-object-from-a-class"></a>To create an object from a class
+### <a name="to-create-an-object-from-a-class"></a>Vytvoření objektu z třídy
 
-1. Determine from which class you want to create an object.
+1. Určete, ze které třídy chcete vytvořit objekt.
 
-2. Write a [Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md) to create a variable to which you can assign a class instance. The variable should be of the type of the desired class.
+2. Zápis [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md) pro vytvoření proměnné, ke které můžete přiřadit instanci třídy. Proměnná by měla být typu požadované třídy.
 
    ```vb
    Dim nextCustomer As customer
    ```
 
-3. Add the [New Operator](../../../../visual-basic/language-reference/operators/new-operator.md) keyword to initialize the variable to a new instance of the class.
+3. Přidejte klíčové slovo [New operator](../../../../visual-basic/language-reference/operators/new-operator.md) pro inicializaci proměnné na novou instanci třídy.
 
    ```vb
    Dim nextCustomer As New customer
    ```
 
-4. You can now access the members of the class through the object variable.
+4. Nyní můžete přistupovat ke členům třídy přes proměnnou objektu.
 
    ```vb
    nextCustomer.accountNumber = lastAccountNumber + 1
    ```
 
 > [!NOTE]
-> Whenever possible, you should declare the variable to be of the class type you intend to assign to it. This is called *early binding*. If you don't know the class type at compile time, you can invoke *late binding* by declaring the variable to be of the [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md). However, late binding can make performance slower and limit access to the run-time object's members. For more information, see [Object Variable Declaration](../../../../visual-basic/programming-guide/language-features/variables/object-variable-declaration.md).
+> Kdykoli je to možné, měli byste deklarovat proměnnou, která má být typu třídy, který chcete přiřadit. Tato metoda se nazývá *časná vazba*. Pokud neznáte typ třídy v době kompilace, můžete vyvolat *pozdní vazbu* tím, že deklarujete proměnnou, která má být [datového typu objektu](../../../../visual-basic/language-reference/data-types/object-data-type.md). Pozdní vazba ale může snížit výkon a omezit přístup k členům objektu run-time. Další informace naleznete v tématu [deklarace objektové proměnné](../../../../visual-basic/programming-guide/language-features/variables/object-variable-declaration.md).
 
-### <a name="multiple-instances"></a>Multiple instances
+### <a name="multiple-instances"></a>Více instancí
 
-Objects newly created from a class are often identical to each other. Once they exist as individual objects, however, their variables and properties can be changed independently of the other instances. For example, if you add three check boxes to a form, each check box object is an instance of the <xref:System.Windows.Forms.CheckBox> class. The individual <xref:System.Windows.Forms.CheckBox> objects share a common set of characteristics and capabilities (properties, variables, procedures, and events) defined by the class. However, each has its own name, can be separately enabled and disabled, and can be placed in a different location on the form.
+Objekty nově vytvořené z třídy jsou často identické. Jakmile však existují jako jednotlivé objekty, jejich proměnné a vlastnosti lze změnit nezávisle na ostatních instancích. Například pokud přidáte tři zaškrtávací políčka do formuláře, každé zaškrtávací políčko objekt je instancí třídy <xref:System.Windows.Forms.CheckBox>. Jednotlivé <xref:System.Windows.Forms.CheckBox> objekty sdílejí společnou sadu vlastností a schopností (vlastnosti, proměnné, procedury a události) definované třídou. Každý má však vlastní název, může být samostatně povolen a zakázán a může být umístěn v jiném umístění ve formuláři.
 
-## <a name="object-members"></a>Object members
+## <a name="object-members"></a>Členy objektu
 
-An object is an element of an application, representing an *instance* of a class. Fields, properties, methods, and events are the building blocks of objects and constitute their *members*.
+Objekt je prvek aplikace, který představuje *instanci* třídy. Pole, vlastnosti, metody a události jsou stavebními bloky objektů a tvoří jejich *členy*.
 
 ### <a name="member-access"></a>Přístup ke členu
 
-You access a member of an object by specifying, in order, the name of the object variable, a period (`.`), and the name of the member. The following example sets the <xref:System.Windows.Forms.Control.Text%2A> property of a <xref:System.Windows.Forms.Label> object.
+Ke členu objektu přistupujete zadáním, v pořadí, názvu proměnné objektu, tečkou (`.`) a názvem člena. Následující příklad nastaví vlastnost <xref:System.Windows.Forms.Control.Text%2A> objektu <xref:System.Windows.Forms.Label>.
 
 ```vb
 warningLabel.Text = "Data not saved"
 ```
 
-#### <a name="intellisense-listing-of-members"></a>IntelliSense listing of members
+#### <a name="intellisense-listing-of-members"></a>Seznam členů IntelliSense
 
-IntelliSense lists members of a class when you invoke its List Members option, for example when you type a period (`.`) as a member-access operator. If you type the period following the name of a variable declared as an instance of that class, IntelliSense lists all the instance members and none of the shared members. If you type the period following the class name itself, IntelliSense lists all the shared members and none of the instance members. For more information, see [Using IntelliSense](/visualstudio/ide/using-intellisense).
+IntelliSense Vypíše členy třídy při vyvolání možnosti seznamu členů, například při zadání tečky (`.`) jako operátoru přístupu členů. Zadáte-li období za názvem proměnné deklarované jako instance této třídy, technologie IntelliSense Vypíše všechny členy instance a žádné sdílené členy. Zadáte-li období za samotný název třídy, IntelliSense zobrazí seznam všech sdílených členů a žádné členy instance. Další informace najdete v tématu [použití technologie IntelliSense](/visualstudio/ide/using-intellisense).
 
-### <a name="fields-and-properties"></a>Fields and properties
+### <a name="fields-and-properties"></a>Pole a vlastnosti
 
-*Fields* and *properties* represent information stored in an object. You retrieve and set their values with assignment statements the same way you retrieve and set local variables in a procedure. The following example retrieves the <xref:System.Windows.Forms.Control.Width%2A> property and sets the <xref:System.Windows.Forms.Control.ForeColor%2A> property of a <xref:System.Windows.Forms.Label> object.
+*Pole* a *vlastnosti* reprezentují informace uložené v objektu. Hodnoty s příkazy přiřazení se načítají a nastavují stejným způsobem jako při načítání a nastavení místních proměnných v proceduře. Následující příklad načte vlastnost <xref:System.Windows.Forms.Control.Width%2A> a nastaví vlastnost <xref:System.Windows.Forms.Control.ForeColor%2A> objektu <xref:System.Windows.Forms.Label>.
 
 ```vb
 Dim warningWidth As Integer = warningLabel.Width
 warningLabel.ForeColor = System.Drawing.Color.Red
 ```
 
-Note that a field is also called a *member variable*.
+Všimněte si, že pole se také nazývá *členská proměnná*.
 
-Use property procedures when:
+Procedury vlastností použijte v těchto případech:
 
-- You need to control when and how a value is set or retrieved.
+- Musíte určit, kdy a jak má být hodnota nastavena nebo načtena.
 
-- The property has a well-defined set of values that need to be validated.
+- Vlastnost má dobře definovanou sadu hodnot, které je třeba ověřit.
 
-- Setting the value causes some perceptible change in the object's state, such as an `IsVisible` property.
+- Nastavením hodnoty dojde k některému znatelnému změně stavu objektu, jako je například vlastnost `IsVisible`.
 
-- Setting the property causes changes to other internal variables or to the values of other properties.
+- Nastavení vlastnosti způsobí změny jiných interních proměnných nebo hodnot jiných vlastností.
 
-- A set of steps must be performed before the property can be set or retrieved.
+- Aby bylo možné nastavit nebo načíst vlastnost, je nutné provést sadu kroků.
 
-Use fields when:
+Pole použijte, když:
 
-- The value is of a self-validating type. For example, an error or automatic data conversion occurs if a value other than `True` or `False` is assigned to a `Boolean` variable.
+- Hodnota je typu ověřování při samostatném ověřování. Například chyba nebo automatický převod dat nastane, pokud je jiná hodnota než `True` nebo `False` přiřazena k proměnné `Boolean`.
 
-- Any value in the range supported by the data type is valid. This is true of many properties of type `Single` or `Double`.
+- Platná je libovolná hodnota rozsahu podporovaná datovým typem. To platí pro mnoho vlastností typu `Single` nebo `Double`.
 
-- The property is a `String` data type, and there is no constraint on the size or value of the string.
+- Vlastnost je `String` datový typ a neexistuje žádné omezení velikosti nebo hodnoty řetězce.
 
-- For more information, see [Property Procedures](../../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md).
+- Další informace naleznete v tématu [procedury vlastností](../../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md).
 
 ### <a name="methods"></a>Metody
 
-A *method* is an action that an object can perform. For example, <xref:System.Windows.Forms.ComboBox.ObjectCollection.Add%2A> is a method of the <xref:System.Windows.Forms.ComboBox> object that adds a new entry to a combo box.
+*Metoda* je akce, kterou může objekt provádět. <xref:System.Windows.Forms.ComboBox.ObjectCollection.Add%2A> je například metoda objektu <xref:System.Windows.Forms.ComboBox>, která přidá novou položku do pole se seznamem.
 
-The following example demonstrates the <xref:System.Windows.Forms.Timer.Start%2A> method of a <xref:System.Windows.Forms.Timer> object.
+Následující příklad ukazuje metodu <xref:System.Windows.Forms.Timer.Start%2A> objektu <xref:System.Windows.Forms.Timer>.
 
 ```vb
 Dim safetyTimer As New System.Windows.Forms.Timer
 safetyTimer.Start()
 ```
 
-Note that a method is simply a *procedure* that is exposed by an object.
+Všimněte si, že metoda je jednoduše *procedurou* , která je vystavena objektem.
 
-For more information, see [Procedures](../../../../visual-basic/programming-guide/language-features/procedures/index.md).
+Další informace najdete v tématu [postupy](../../../../visual-basic/programming-guide/language-features/procedures/index.md).
 
 ### <a name="events"></a>Události
 
-An event is an action recognized by an object, such as clicking the mouse or pressing a key, and for which you can write code to respond. Events can occur as a result of a user action or program code, or they can be caused by the system. Code that signals an event is said to *raise* the event, and code that responds to it is said to *handle* it.
+Událost je akce rozpoznaná objektem, jako je kliknutí myší nebo stisknutí klávesy, a pro kterou můžete napsat kód, který bude reagovat. Události mohou vzniknout v důsledku akce uživatele nebo kódu programu nebo mohou být způsobeny systémem. Kód, který signalizuje událost, se říká k *vyvolání* události a kód, který na něj reaguje, je označován za účelem jeho *zpracování* .
 
-You can also develop your own custom events to be raised by your objects and handled by other objects. For more information, see [Events](../../../../visual-basic/programming-guide/language-features/events/index.md).
+Můžete také vyvíjet vlastní události, které mají být vyvolány objekty a zpracovávány jinými objekty. Další informace najdete v tématu [události](../../../../visual-basic/programming-guide/language-features/events/index.md).
 
-### <a name="instance-members-and-shared-members"></a>Instance members and shared members
+### <a name="instance-members-and-shared-members"></a>Členové instance a sdílené členy
 
-When you create an object from a class, the result is an instance of that class. Members that are not declared with the [Shared](../../../../visual-basic/language-reference/modifiers/shared.md) keyword are *instance members*, which belong strictly to that particular instance. An instance member in one instance is independent of the same member in another instance of the same class. An instance member variable, for example, can have different values in different instances.
+Při vytváření objektu z třídy je výsledkem instance této třídy. Členy, které nejsou deklarovány se [sdíleným](../../../../visual-basic/language-reference/modifiers/shared.md) klíčovým slovem, jsou *členy instance*, které patří výhradně do této konkrétní instance. Člen instance v jedné instanci je nezávislý na stejném členu v jiné instanci stejné třídy. Členská proměnná instance může mít například různé hodnoty v různých instancích.
 
-Members declared with the `Shared` keyword are *shared members*, which belong to the class as a whole and not to any particular instance. A shared member exists only once, no matter how many instances of its class you create, or even if you create no instances. A shared member variable, for example, has only one value, which is available to all code that can access the class.
+Členy deklarované s klíčovým slovem `Shared` jsou *sdílené členy*, které patří do třídy jako celek a nikoli do žádné konkrétní instance. Sdílený člen existuje pouze jednou, bez ohledu na to, kolik instancí své třídy vytvoříte, nebo dokonce i v případě, že nevytvoříte žádné instance. Sdílená členská proměnná, například má pouze jednu hodnotu, která je k dispozici pro veškerý kód, který má přístup ke třídě.
 
-#### <a name="accessing-nonshared-members"></a>Accessing nonshared members
+#### <a name="accessing-nonshared-members"></a>Přístup k nesdíleným členům
 
-##### <a name="to-access-a-nonshared-member-of-an-object"></a>To access a nonshared member of an object
+##### <a name="to-access-a-nonshared-member-of-an-object"></a>Přístup k nesdílenému členu objektu
 
-1. Make sure the object has been created from its class and assigned to an object variable.
+1. Ujistěte se, že objekt byl vytvořen z jeho třídy a přiřazený k proměnné objektu.
 
    ```vb
    Dim secondForm As New System.Windows.Forms.Form
    ```
 
-2. In the statement that accesses the member, follow the object variable name with the *member-access operator* (`.`) and then the member name.
+2. V příkazu, který přistupuje ke členu, postupujte podle názvu proměnné objektu s *operátorem přístupu členů* (`.`) a potom názvem člena.
 
    ```vb
    secondForm.Show()
    ```
 
-#### <a name="accessing-shared-members"></a>Accessing shared members
+#### <a name="accessing-shared-members"></a>Přístup ke sdíleným členům
 
-##### <a name="to-access-a-shared-member-of-an-object"></a>To access a shared member of an object
+##### <a name="to-access-a-shared-member-of-an-object"></a>Přístup ke sdílenému členu objektu
 
-- Follow the class name with the *member-access operator* (`.`) and then the member name. You should always access a `Shared` member of the object directly through the class name.
+- Dodržujte název třídy s *operátorem přístupu členů* (`.`) a potom názvem člena. Vždy byste měli přistupovat k `Shared`mu členu objektu přímo prostřednictvím názvu třídy.
 
    ```vb
    MsgBox("This computer is called " & Environment.MachineName)
    ```
 
-- If you have already created an object from the class, you can alternatively access a `Shared` member through the object's variable.
+- Pokud jste již vytvořili objekt ze třídy, můžete alternativně přistupovat k `Shared`mu členu prostřednictvím proměnné objektu.
 
-### <a name="differences-between-classes-and-modules"></a>Differences between classes and modules
+### <a name="differences-between-classes-and-modules"></a>Rozdíly mezi třídami a moduly
 
-The main difference between classes and modules is that classes can be instantiated as objects while standard modules cannot. Because there is only one copy of a standard module's data, when one part of your program changes a public variable in a standard module, any other part of the program gets the same value if it then reads that variable. In contrast, object data exists separately for each instantiated object. Another difference is that unlike standard modules, classes can implement interfaces.
+Hlavním rozdílem mezi třídami a moduly je, že třídy mohou být vytvořeny jako objekty, zatímco standardní moduly nemůžou. Vzhledem k tomu, že existuje pouze jedna kopie dat standardního modulu, když jedna část programu změní veřejnou proměnnou ve standardním modulu, jakákoli jiná část programu získá stejnou hodnotu, pokud následně přečte tuto proměnnou. Naproti tomu data objektu existují samostatně pro každý objekt s vytvořenou instancí. Dalším rozdílem je, že na rozdíl od standardních modulů můžou třídy implementovat rozhraní.
 
 > [!NOTE]
-> When the `Shared` modifier is applied to a class member, it is associated with the class itself instead of a particular instance of the class. The member is accessed directly by using the class name, the same way module members are accessed.
+> Pokud je modifikátor `Shared` použit pro člena třídy, je přidružen k samotné třídě namísto konkrétní instance třídy. Ke členu se má získat přímý odkaz pomocí názvu třídy, stejně jako k nim přistupovali členové modulu.
 
-Classes and modules also use different scopes for their members. Members defined within a class are scoped within a specific instance of the class and exist only for the lifetime of the object. To access class members from outside a class, you must use fully qualified names in the format of *Object*.*Member*.
+Třídy a moduly používají pro své členy také různé obory. Členy definované v rámci třídy jsou vymezeny v rámci konkrétní instance třídy a existují pouze za dobu života objektu. Chcete-li získat přístup ke členům třídy z vnějšku třídy, je nutné použít plně kvalifikované názvy ve formátu *objektu*. *Člen*.
 
-On the other hand, members declared within a module are publicly accessible by default, and can be accessed by any code that can access the module. This means that variables in a standard module are effectively global variables because they are visible from anywhere in your project, and they exist for the life of the program.
+Na druhé straně členové deklarované v rámci modulu jsou ve výchozím nastavení veřejně přístupné a lze k němu přistupovat jakýmkoli kódem, který má přístup k modulu. To znamená, že proměnné ve standardním modulu jsou efektivní globální proměnné, protože jsou viditelné z libovolného místa v projektu a existují po dobu života programu.
 
-## <a name="reusing-classes-and-objects"></a>Reusing classes and objects
+## <a name="reusing-classes-and-objects"></a>Znovu použití tříd a objektů
 
-Objects let you declare variables and procedures once and then reuse them whenever needed. For example, if you want to add a spelling checker to an application you could define all the variables and support functions to provide spell-checking functionality. If you create your spelling checker as a class, you can then reuse it in other applications by adding a reference to the compiled assembly. Better yet, you may be able to save yourself some work by using a spelling checker class that someone else has already developed.
+Objekty umožňují deklarovat proměnné a procedury jednou a pak je znovu použít, kdykoli je to potřeba. Například pokud chcete přidat kontrolu pravopisu do aplikace, můžete definovat všechny proměnné a funkce podpory, které poskytují funkce kontroly pravopisu. Pokud vytvoříte kontrolu pravopisu jako třídu, můžete ji následně znovu použít v jiných aplikacích přidáním odkazu na zkompilované sestavení. Ještě lepší je, že budete moct Uložit nějakou práci pomocí třídy pro kontrolu pravopisu, kterou už vyvinul někdo jiný.
 
-The .NET Framework provides many examples of components that are available for use. The following example uses the <xref:System.TimeZone> class in the <xref:System> namespace. <xref:System.TimeZone> provides members that allow you to retrieve information about the time zone of the current computer system.
+.NET Framework poskytuje mnoho příkladů součástí, které jsou k dispozici pro použití. Následující příklad používá třídu <xref:System.TimeZone> v oboru názvů <xref:System>. <xref:System.TimeZone> poskytuje členy, které umožňují načíst informace o časovém pásmu aktuálního počítačového systému.
 
 ```vb
 Public Sub examineTimeZone()
@@ -192,37 +192,37 @@ Public Sub examineTimeZone()
 End Sub
 ```
 
-In the preceding example, the first [Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md) declares an object variable of type <xref:System.TimeZone> and assigns to it a <xref:System.TimeZone> object returned by the <xref:System.TimeZone.CurrentTimeZone%2A> property.
+V předchozím příkladu příkaz v prvním [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md) deklaruje proměnnou objektu typu <xref:System.TimeZone> a přiřadí jí objekt <xref:System.TimeZone> vrácený vlastností <xref:System.TimeZone.CurrentTimeZone%2A>.
 
-## <a name="relationships-among-objects"></a>Relationships among objects
+## <a name="relationships-among-objects"></a>Vztahy mezi objekty
 
-Objects can be related to each other in several ways. The principal kinds of relationship are *hierarchical* and *containment*.
+Objekty mohou být vzájemně propojené několika způsoby. Hlavní typy vztahů jsou *hierarchické* a *omezení*.
 
-### <a name="hierarchical-relationship"></a>Hierarchical relationship
+### <a name="hierarchical-relationship"></a>Hierarchický vztah
 
-When classes are derived from more fundamental classes, they are said to have a *hierarchical relationship*. Class hierarchies are useful when describing items that are a subtype of a more general class.
+Pokud třídy jsou odvozeny z více základních tříd, říká se, že mají *hierarchický vztah*. Hierarchie tříd jsou užitečné, pokud popisují položky, které jsou podtypu obecnější třídy.
 
-In the following example, suppose you want to define a special kind of <xref:System.Windows.Forms.Button> that acts like a normal <xref:System.Windows.Forms.Button> but also exposes a method that reverses the foreground and background colors.
+V následujícím příkladu Předpokládejme, že chcete definovat zvláštní druh <xref:System.Windows.Forms.Button>, který funguje jako normální <xref:System.Windows.Forms.Button>, ale také zpřístupňuje metodu, která vrátí barvy popředí a pozadí.
 
-#### <a name="to-define-a-class-is-derived-from-an-already-existing-class"></a>To define a class is derived from an already existing class
+#### <a name="to-define-a-class-is-derived-from-an-already-existing-class"></a>Definování třídy je odvozeno z již existující třídy
 
-1. Use a [Class Statement](../../../../visual-basic/language-reference/statements/class-statement.md) to define a class from which to create the object you need.
+1. Použijte [příkaz třídy](../../../../visual-basic/language-reference/statements/class-statement.md) k definování třídy, ze které chcete vytvořit objekt, který potřebujete.
 
    ```vb
    Public Class reversibleButton
    ```
 
-   Be sure an `End Class` statement follows the last line of code in your class. By default, the integrated development environment (IDE) automatically generates an `End Class` when you enter a `Class` statement.
+   Ujistěte se, že příkaz `End Class` dodržuje poslední řádek kódu ve vaší třídě. Ve výchozím nastavení integrované vývojové prostředí (IDE) automaticky vygeneruje `End Class` při zadání příkazu `Class`.
 
-2. Follow the `Class` statement immediately with an [Inherits Statement](../../../../visual-basic/language-reference/statements/inherits-statement.md). Specify the class from which your new class derives.
+2. Použijte příkaz `Class` okamžitě s [příkazem Inherits](../../../../visual-basic/language-reference/statements/inherits-statement.md). Zadejte třídu, ze které je odvozena nová třída.
 
    ```vb
    Inherits System.Windows.Forms.Button
    ```
 
-   Your new class inherits all the members defined by the base class.
+   Vaše nová třída zdědí všechny členy definované základní třídou.
 
-3. Add the code for the additional members your derived class exposes. For example, you might add a `reverseColors` method, and your derived class might look as follows:
+3. Přidejte kód pro další členy, které vaše odvozená třída zveřejňuje. Například můžete přidat metodu `reverseColors` a vaše odvozená třída může vypadat takto:
 
    ```vb
    Public Class reversibleButton
@@ -235,41 +235,41 @@ In the following example, suppose you want to define a special kind of <xref:Sys
    End Class
    ```
 
-   If you create an object from the `reversibleButton` class, it can access all the members of the <xref:System.Windows.Forms.Button> class, as well as the `reverseColors` method and any other new members you define on `reversibleButton`.
+   Vytvoříte-li objekt z třídy `reversibleButton`, může přistupovat ke všem členům třídy <xref:System.Windows.Forms.Button> a také k metodě `reverseColors` a dalším novým členům, které definujete v `reversibleButton`.
 
-Derived classes inherit members from the class they are based on, allowing you to add complexity as you progress in a class hierarchy. For more information, see [Inheritance Basics](../../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md).
+Odvozené třídy dědí členy ze třídy, na které jsou založeny, což umožňuje v hierarchii tříd přidat složitost během průběhu. Další informace najdete v tématu [základy dědičnosti](../../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md).
 
-### <a name="compiling-the-code"></a>Compiling the code
+### <a name="compiling-the-code"></a>Kompilování kódu
 
-Be sure the compiler can access the class from which you intend to derive your new class. This might mean fully qualifying its name, as in the preceding example, or identifying its namespace in an [Imports Statement (.NET Namespace and Type)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md). If the class is in a different project, you might need to add a reference to that project. For more information, see [Managing references in a project](/visualstudio/ide/managing-references-in-a-project).
+Ujistěte se, že kompilátor má přístup ke třídě, ze které hodláte odvodit novou třídu. To může znamenat, že plně kvalifikované jeho jméno, jako v předchozím příkladu, nebo určení jeho oboru názvů v [příkazu Imports (obor názvů a typ .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md). Pokud je třída v jiném projektu, může být nutné přidat odkaz na tento projekt. Další informace naleznete v tématu [Správa odkazů v projektu](/visualstudio/ide/managing-references-in-a-project).
 
-### <a name="containment-relationship"></a>Containment relationship
+### <a name="containment-relationship"></a>Vztah členství ve skupině
 
-Another way that objects can be related is a *containment relationship*. Container objects logically encapsulate other objects. For example, the <xref:System.OperatingSystem> object logically contains a <xref:System.Version> object, which it returns through its <xref:System.OperatingSystem.Version%2A> property. Note that the container object does not physically contain any other object.
+Jiný způsob, jakým mohou být objekty v relaci, je *vztah zahrnutí*. Objekty kontejneru logicky zapouzdřují jiné objekty. Například objekt <xref:System.OperatingSystem> logicky obsahuje objekt <xref:System.Version>, který se vrátí prostřednictvím jeho vlastnosti <xref:System.OperatingSystem.Version%2A>. Všimněte si, že objekt kontejneru fyzicky neobsahuje žádný jiný objekt.
 
 #### <a name="collections"></a>Kolekce
 
-One particular type of object containment is represented by *collections*. Collections are groups of similar objects that can be enumerated. Visual Basic supports a specific syntax in the [For Each...Next Statement](../../../../visual-basic/language-reference/statements/for-each-next-statement.md) that allows you to iterate through the items of a collection. Additionally, collections often allow you to use an <xref:Microsoft.VisualBasic.Collection.Item%2A> to retrieve elements by their index or by associating them with a unique string. Collections can be easier to use than arrays because they allow you to add or remove items without using indexes. Because of their ease of use, collections are often used to store forms and controls.
+Jeden konkrétní typ zahrnutí objektu je reprezentován *kolekcemi*. Kolekce jsou skupiny podobných objektů, které lze vyčíslit. Visual Basic podporuje specifickou syntaxi [pro každý... Další příkaz](../../../../visual-basic/language-reference/statements/for-each-next-statement.md) , který umožňuje iterovat položky kolekce. Kromě toho kolekce často umožňují použít <xref:Microsoft.VisualBasic.Collection.Item%2A> k načtení prvků podle jejich indexu nebo jejich přidružení k jedinečnému řetězci. Kolekce lze snadněji používat než pole, protože umožňují přidávat nebo odebírat položky bez použití indexů. Z důvodu jejich snadného použití se kolekce často používají k ukládání formulářů a ovládacích prvků.
 
-## <a name="related-topics"></a>Související témata
+## <a name="related-topics"></a>Příbuzná témata
 
-[Walkthrough: Defining Classes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/walkthrough-defining-classes.md)\
-Provides a step-by-step description of how to create a class.
+[Návod: definování tříd](../../../../visual-basic/programming-guide/language-features/objects-and-classes/walkthrough-defining-classes.md)\
+Poskytuje podrobný popis postupu vytvoření třídy.
 
-[Overloaded Properties and Methods](../../../../visual-basic/programming-guide/language-features/objects-and-classes/overloaded-properties-and-methods.md)\
+[Přetížené vlastnosti a metody](../../../../visual-basic/programming-guide/language-features/objects-and-classes/overloaded-properties-and-methods.md)\
 Vlastnosti a metody přetečení
 
-[Inheritance Basics](../../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)\
-Covers inheritance modifiers, overriding methods and properties, MyClass, and MyBase.
+[Základy dědičnosti](../../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)\
+Pokrývá modifikátory dědičnosti, přepsání metod a vlastností, MyClass a MyBase.
 
-[Object Lifetime: How Objects Are Created and Destroyed](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)\
-Discusses creating and disposing of class instances.
+[Doba života objektu: vytváření a zničení objektů](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)\
+Popisuje vytváření a odstraňování instancí třídy.
 
-[Anonymous Types](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)\
-Describes how to create and use anonymous types, which allow you to create objects without writing a class definition for the data type.
+[Anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)\
+V této části najdete popis postupu vytvoření a použití anonymních typů, které umožňují vytvářet objekty bez psaní definice třídy pro datový typ.
 
-[Object Initializers: Named and Anonymous Types](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)\
-Discusses object initializers, which are used to create instances of named and anonymous types by using a single expression.
+[Inicializátory objektů: pojmenované a anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)\
+Popisuje Inicializátory objektů, které se používají k vytváření instancí pojmenovaných a anonymních typů pomocí jednoho výrazu.
 
-[How to: Infer Property Names and Types in Anonymous Type Declarations](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)\
-Explains how to infer property names and types in anonymous type declarations. Provides examples of successful and unsuccessful inference.
+[Postupy: Odvození názvů a typů vlastností v deklaracích anonymního typu](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)\
+Vysvětluje, jak odvodit názvy vlastností a typy v deklaracích anonymního typu. Poskytuje příklady úspěšného a neúspěšného odvození.

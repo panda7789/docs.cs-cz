@@ -1,5 +1,5 @@
 ---
-title: How to query the contents of files in a folder (LINQ)
+title: Postup dotazování na obsah souborů ve složce (LINQ)
 ms.date: 07/20/2015
 ms.assetid: edacbcd3-f3e4-4429-a8be-28a58dc0dd70
 ms.openlocfilehash: 02ffa398c495ca5af77685d62299c59cfc3b9d9c
@@ -9,9 +9,9 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74347617"
 ---
-# <a name="how-to-query-the-contents-of-files-in-a-folder-linq-visual-basic"></a>How to query the contents of files in a folder (LINQ) (Visual Basic)
+# <a name="how-to-query-the-contents-of-files-in-a-folder-linq-visual-basic"></a>Postup dotazování na obsah souborů ve složce (LINQ) (Visual Basic)
 
-This example shows how to query over all the files in a specified directory tree, open each file, and inspect its contents. This type of technique could be used to create indexes or reverse indexes of the contents of a directory tree. A simple string search is performed in this example. However, more complex types of pattern matching can be performed with a regular expression. For more information, see [How to: Combine LINQ Queries with Regular Expressions (Visual Basic)](how-to-combine-linq-queries-with-regular-expressions.md).  
+Tento příklad ukazuje, jak se dotázat na všechny soubory v zadaném stromovém stromu, otevřít každý soubor a zkontrolovat jeho obsah. Tento typ techniky lze použít k vytvoření indexů nebo zpětných indexů obsahu stromu adresáře. V tomto příkladu je provedeno jednoduché vyhledávání řetězců. Složitější typy porovnávání vzorů však mohou být provedeny s regulárním výrazem. Další informace naleznete v tématu [How to: kombinovat dotazy LINQ s regulárními výrazy (Visual Basic)](how-to-combine-linq-queries-with-regular-expressions.md).  
   
 ## <a name="example"></a>Příklad  
   
@@ -73,11 +73,11 @@ Module Module1
 End Module
 ```
 
-## <a name="compiling-the-code"></a>Compiling the code
+## <a name="compiling-the-code"></a>Kompilování kódu
 
-Create a VB.NET console application project, copy and paste the code sample, and adjust the Startup object value in the project properties.
+Vytvořte projekt konzolové aplikace VB.NET, zkopírujte a vložte ukázku kódu a upravte hodnotu spouštěcího objektu ve vlastnostech projektu.
 
 ## <a name="see-also"></a>Viz také:
 
 - [LINQ to Objects (Visual Basic)](linq-to-objects.md)
-- [LINQ and File Directories (Visual Basic)](linq-and-file-directories.md)
+- [LINQ a souborové adresáře (Visual Basic)](linq-and-file-directories.md)

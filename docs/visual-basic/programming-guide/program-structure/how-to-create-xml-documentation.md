@@ -14,28 +14,28 @@ ms.locfileid: "74347419"
 ---
 # <a name="how-to-create-xml-documentation-in-visual-basic"></a>Postupy: Vytvoření dokumentace XML v jazyce Visual Basic
 
-This example shows how to add XML documentation comments to your code.
+Tento příklad ukazuje, jak přidat dokumentační komentáře XML do kódu.
 
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]
 
-## <a name="to-create-xml-documentation-for-a-type-or-member"></a>To create XML documentation for a type or member
+## <a name="to-create-xml-documentation-for-a-type-or-member"></a>Vytvoření dokumentace XML pro typ nebo člen
 
-1. In the **Code Editor**, position your cursor on the line above the type or member for which you want to create documentation.
+1. V **editoru kódu**umístěte kurzor na řádek nad typ nebo člen, pro který chcete vytvořit dokumentaci.
 
-2. Type `'''` (three single-quotation marks).
+2. Zadejte `'''` (tři jednoduché uvozovky).
 
-    An XML skeleton for the type or member is added in the **Code Editor**.
+    V **editoru kódu**se přidá kostra XML pro daný typ nebo člen.
 
-3. Add descriptive information between the appropriate tags.
+3. Přidejte popisné informace mezi příslušné značky.
 
     > [!NOTE]
-    > If you add additional lines within the XML documentation block, each line must begin with `'''`.
+    > Pokud přidáte další řádky do bloku dokumentace XML, musí každý řádek začínat `'''`.
 
-4. Add additional code that uses the type or member with the new XML documentation comments.
+4. Přidejte další kód, který používá typ nebo člen s novými dokumentačními komentáři XML.
 
-    IntelliSense displays the text from the \<summary> tag for the type or member.
+    IntelliSense zobrazí text z > Značka \<souhrnu pro daný typ nebo člen.
 
-5. Compile the code to generate an XML file containing the documentation comments. For more information, see [-doc](../../../visual-basic/reference/command-line-compiler/doc.md).
+5. Zkompilujte kód pro vygenerování souboru XML obsahujícího dokumentační komentáře. Další informace najdete v [dokumentu-doc](../../../visual-basic/reference/command-line-compiler/doc.md).
 
 ## <a name="see-also"></a>Viz také:
 

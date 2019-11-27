@@ -31,35 +31,35 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74347474"
 ---
 # <a name="how-to-declare-a-constant-visual-basic"></a>Postupy: Deklarace konstanty (Visual Basic)
-You use the `Const` statement to declare a constant and set its value. By declaring a constant, you assign a meaningful name to a value. Once a constant is declared, it cannot be modified or assigned a new value.  
+Pomocí příkazu `Const` deklarujete konstantu a nastavíte její hodnotu. Deklarováním konstanty přiřadíte smysluplný název k hodnotě. Jakmile je konstanta deklarována, nelze ji změnit ani jí přiřadit novou hodnotu.  
   
- You declare a constant within a procedure or in the declarations section of a module, class, or structure. Class or structure-level constants are `Private` by default, but may also be declared as `Public`, `Friend`, `Protected`, or `Protected Friend` for the appropriate level of code access.  
+ Deklarujete konstantu v rámci procedury nebo v oddílu deklarace modulu, třídy nebo struktury. Konstanty na úrovni třídy nebo struktury jsou ve výchozím nastavení `Private`, ale mohou být také deklarovány jako `Public`, `Friend`, `Protected`nebo `Protected Friend` pro příslušnou úroveň přístupu kódu.  
   
- The constant must have a valid symbolic name (the rules are the same as those for creating variable names) and an expression composed of numeric or string constants and operators (but no function calls).  
+ Konstanta musí mít platný symbolický název (pravidla jsou stejná jako pro vytváření názvů proměnných) a výraz tvořený číselnými nebo řetězcovými konstantami a operátory (ale žádné volání funkcí).  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-### <a name="to-declare-a-constant"></a>To declare a constant  
+### <a name="to-declare-a-constant"></a>Deklarace konstanty  
   
-- Write a declaration that includes an access specifier, the `Const` keyword, and an expression, as in the following examples:  
+- Napište deklaraci, která zahrnuje specifikátor přístupu, klíčové slovo `Const` a výraz, jako v následujících příkladech:  
   
      [!code-vb[VbEnumsTask#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#8)]  
   
-     When [Option Infer](../../../../visual-basic/language-reference/statements/option-infer-statement.md) is `Off` and [Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md) is `On`, you must declare a constant explicitly by specifying a data type (`Boolean`, `Byte`, `Char`, `DateTime`, `Decimal`, `Double`, `Integer`, `Long`, `Short`, `Single`, or `String`).  
+     Je-li [možnost odvozena](../../../../visual-basic/language-reference/statements/option-infer-statement.md) od `Off` a [možnost Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md) je `On`, je nutné explicitně deklarovat konstantu zadáním datového typu (`Boolean`, `Byte`, `Char`, `DateTime`, `Decimal`, `Double`, `Integer`, `Long`, `Short`, `Single`nebo `String`).  
   
-     When `Option Infer` is `On` or `Option Strict` is `Off`, you can declare a constant without specifying a data type with an `As` clause. The compiler determines the type of the constant from the type of the expression. For more information, see [Constant and Literal Data Types](constant-and-literal-data-types.md).  
+     Pokud je `Option Infer` `On` nebo `Option Strict` `Off`, můžete deklarovat konstantu bez určení datového typu s klauzulí `As`. Kompilátor určuje typ konstanty z typu výrazu. Další informace naleznete v tématu [datové typy konstanty a literálu](constant-and-literal-data-types.md).  
   
-### <a name="to-declare-a-constant-that-has-an-explicitly-stated-data-type"></a>To declare a constant that has an explicitly stated data type  
+### <a name="to-declare-a-constant-that-has-an-explicitly-stated-data-type"></a>Deklarace konstanty, která má explicitně uvedený datový typ  
   
-- Write a declaration that includes the `As` keyword and an explicit data type, as in the following examples:  
+- Napište deklaraci, která zahrnuje klíčové slovo `As` a explicitní datový typ, jako v následujících příkladech:  
   
      [!code-vb[VbEnumsTask#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#9)]  
   
-     You can declare multiple constants on a single line, although your code is more readable if you declare only a single constant per line. If you declare multiple constants on a single line, they must all have the same access level (`Public`, `Private`, `Friend`, `Protected`, or `Protected Friend`).  
+     Můžete deklarovat více konstant na jednom řádku, i když je váš kód čitelnější, pokud deklarujete pouze jednu konstantu na řádek. Pokud deklarujete více konstant na jednom řádku, musí mít všechny stejnou úroveň přístupu (`Public`, `Private`, `Friend`, `Protected`nebo `Protected Friend`).  
   
-### <a name="to-declare-multiple-constants-on-a-single-line"></a>To declare multiple constants on a single line  
+### <a name="to-declare-multiple-constants-on-a-single-line"></a>Deklarace více konstant na jednom řádku  
   
-- Separate the declarations with a comma and a space, as in the following example:  
+- Deklarace se oddělují čárkou a mezerou, jako v následujícím příkladu:  
   
     ```vb  
     Public Const Four As Integer = 4, Five As Integer = 5, Six As Integer = 44  
@@ -84,7 +84,7 @@ You use the `Const` statement to declare a constant and set its value. By declar
 
 - [Přehled výčtů](enumerations-overview.md)
 - [Přehled konstant](constants-overview.md)
-- [How to: Declare an Enumeration](how-to-declare-enumerations.md)
+- [Postupy: deklarace výčtu](how-to-declare-enumerations.md)
 - [Výčty a kvalifikace názvu](enumerations-and-name-qualification.md)
 - [Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)
 - [Konstanty a výčty](../../../../visual-basic/language-reference/constants-and-enumerations.md)

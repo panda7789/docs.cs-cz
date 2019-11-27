@@ -1,5 +1,5 @@
 ---
-title: Parsing text files with the TextFieldParser object
+title: Analýza textových souborů pomocí objektu TextFieldParser
 ms.date: 07/20/2015
 helpviewer_keywords:
 - TextFieldParser object, using
@@ -13,27 +13,27 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74333849"
 ---
-# <a name="parsing-text-files-with-the-textfieldparser-object-visual-basic"></a>Parsing text files with the TextFieldParser object (Visual Basic)
+# <a name="parsing-text-files-with-the-textfieldparser-object-visual-basic"></a>Analýza textových souborů pomocí objektu TextFieldParser (Visual Basic)
 
-The `TextFieldParser` object allows you to parse and process very large file that are structured as delimited-width columns of text, such as log files or legacy database information. Parsing a text file with `TextFieldParser` is similar to iterating over a text file, while the parse method to extract fields of text is similar to string manipulation methods used to tokenize delimited strings.  
+Objekt `TextFieldParser` umožňuje analyzovat a zpracovávat velmi velký soubor, který je strukturovaný jako sloupec textu s oddělovači, jako jsou například soubory protokolu nebo starší informace o databázi. Analýza textového souboru pomocí `TextFieldParser` je podobná iteraci přes textový soubor, zatímco metoda Parse pro extrakci polí textu je podobná metodám manipulace s řetězci, které slouží k tokenizovat řetězců s oddělovači.  
   
-## <a name="parsing-different-types-of-text-files"></a>Parsing different types of text files  
+## <a name="parsing-different-types-of-text-files"></a>Analýza různých typů textových souborů  
 
- Text files may have fields of various width, delimited by a character such as a comma or a tab space. Define `TextFieldType` and the delimiter, as in the following example, which uses the `SetDelimiters` method to define a tab-delimited text file:  
+ Textové soubory mohou obsahovat pole s různou šířkou, oddělené znakem, jako je čárka nebo mezera tabulátoru. Definujte `TextFieldType` a oddělovač, jak je znázorněno v následujícím příkladu, který používá metodu `SetDelimiters` k definování textového souboru s oddělovači tabulátoru:  
   
  [!code-vb[VbVbalrTextFieldParser#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTextFieldParser/VB/Class1.vb#21)]  
   
- Other text files may have field widths that are fixed. In such cases, you need to define the `TextFieldType` as `FixedWidth` and define the widths of each field, as in the following example. This example uses the `SetFieldWidths` method to define the columns of text: the first column is 5 characters wide, the second is 10, the third is 11, and the fourth is of variable width.  
+ Jiné textové soubory mohou mít pevné šířky polí. V takových případech je nutné definovat `TextFieldType` jako `FixedWidth` a definovat šířky jednotlivých polí, jako v následujícím příkladu. V tomto příkladu se používá metoda `SetFieldWidths` k definování sloupců textu: první sloupec má šířku 5 znaků, druhá je 10, třetí je 11 a čtvrtá je proměnná Width.  
   
  [!code-vb[VbVbalrTextFieldParser#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTextFieldParser/VB/Class1.vb#22)]  
   
- Once the format is defined, you can loop through the file, using the `ReadFields` method to process each line in turn.  
+ Po definování formátu můžete projít soubor pomocí metody `ReadFields` pro zpracování každého řádku.  
   
- If a field does not match the specified format, a <xref:Microsoft.VisualBasic.FileIO.MalformedLineException> exception is thrown. When such exceptions are thrown, the `ErrorLine` and `ErrorLineNumber` properties hold the text causing the exception and the line number of that text.  
+ Pokud se pole neshoduje se zadaným formátem, je vyvolána výjimka <xref:Microsoft.VisualBasic.FileIO.MalformedLineException>. Pokud jsou takové výjimky vyvolány, vlastnosti `ErrorLine` a `ErrorLineNumber` uchovávají text, který způsobil výjimku, a číslo řádku tohoto textu.  
   
-## <a name="parsing-files-with-multiple-formats"></a>Parsing files with multiple formats  
+## <a name="parsing-files-with-multiple-formats"></a>Analýza souborů s více formáty  
 
- The `PeekChars` method of the `TextFieldParser` object can be used to check each field before reading it, allowing you to define multiple formats for the fields and react accordingly. For more information, see [How to: Read From Text Files with Multiple Formats](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md).  
+ Metodu `PeekChars` objektu `TextFieldParser` lze použít ke kontrole každého pole před jeho čtením, což vám umožní definovat více formátů pro pole a odpovídajícím způsobem reagovat. Další informace najdete v tématu [Postupy: čtení z textových souborů s více formáty](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md).  
   
 ## <a name="see-also"></a>Viz také:
 

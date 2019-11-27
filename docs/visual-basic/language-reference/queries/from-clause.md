@@ -18,7 +18,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74343782"
 ---
 # <a name="from-clause-visual-basic"></a>From – klauzule (Visual Basic)
-Specifies one or more range variables and a collection to query.  
+Určuje jednu nebo více proměnných rozsahu a kolekci pro dotaz.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,48 +31,48 @@ From element [ As type ] In collection [ _ ]
   
 |Termín|Definice|  
 |---|---|  
-|`element`|Požadováno. A *range variable* used to iterate through the elements of the collection. A range variable is used to refer to each member of the `collection` as the query iterates through the `collection`. Must be an enumerable type.|  
-|`type`|Volitelné. The type of `element`. If no `type` is specified, the type of `element` is inferred from `collection`.|  
-|`collection`|Požadováno. Refers to the collection to be queried. Must be an enumerable type.|  
+|`element`|Požadováno. *Proměnná rozsahu* používaná k iterování prostřednictvím prvků kolekce. Proměnná rozsahu se používá pro odkazování na každého člena `collection`, protože dotaz prochází `collection`. Musí se jednat o vyčíslitelného typu.|  
+|`type`|Volitelná. Typ připojení `element`. Pokud není zadán žádný `type`, typ `element` je odvozen z `collection`.|  
+|`collection`|Požadováno. Odkazuje na kolekci, do které se má dotazovat. Musí se jednat o vyčíslitelného typu.|  
   
 ## <a name="remarks"></a>Poznámky  
- The `From` clause is used to identify the source data for a query and the variables that are used to refer to an element from the source collection. These variables are called *range variables*. The `From` clause is required for a query, except when the `Aggregate` clause is used to identify a query that returns only aggregated results. For more information, see [Aggregate Clause](../../../visual-basic/language-reference/queries/aggregate-clause.md).  
+ Klauzule `From` slouží k identifikaci zdrojových dat pro dotaz a proměnné, které se používají k odkazování na prvek ze zdrojové kolekce. Tyto proměnné se nazývají *proměnné rozsahu*. Klauzule `From` je vyžadována pro dotaz s výjimkou případů, kdy je použita klauzule `Aggregate` k identifikaci dotazu, který vrací pouze agregované výsledky. Další informace naleznete v tématu [klauzule Aggregate](../../../visual-basic/language-reference/queries/aggregate-clause.md).  
   
- You can specify multiple `From` clauses in a query to identify multiple collections to be joined. When multiple collections are specified, they are iterated over independently, or you can join them if they are related. You can join collections implicitly by using the `Select` clause, or explicitly by using the `Join` or `Group Join` clauses. As an alternative, you can specify multiple range variables and collections in a single `From` clause, with each related range variable and collection separated from the others by a comma. The following code example shows both syntax options for the `From` clause.  
+ V dotazu můžete zadat více klauzulí `From` pro identifikaci více kolekcí, které mají být spojeny. Pokud je zadáno více kolekcí, jsou iterované na nezávisle, nebo se k nim můžete připojit, pokud jsou v relaci. Kolekce můžete spojit implicitně pomocí klauzule `Select`, nebo explicitně pomocí klauzule `Join` nebo `Group Join`. Alternativně můžete zadat více proměnných rozsahu a kolekcí v rámci jedné klauzule `From`, přičemž každou související proměnnou rozsahu a kolekci od sebe budou oddělené čárkou. Následující příklad kódu ukazuje obě možnosti syntaxe pro klauzuli `From`.  
   
  [!code-vb[VbSimpleQuerySamples#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#21)]  
   
- The `From` clause defines the scope of a query, which is similar to the scope of a `For` loop. Therefore, each `element` range variable in the scope of a query must have a unique name. Because you can specify multiple `From` clauses for a query, subsequent `From` clauses can refer to range variables in the `From` clause, or they can refer to range variables in a previous `From` clause. For example, the following example shows a nested `From` clause where the collection in the second clause is based on a property of the range variable in the first clause.  
+ Klauzule `From` definuje rozsah dotazu, který je podobný rozsahu `For` smyčky. Proto musí každá proměnná rozsahu `element` v oboru dotazu mít jedinečný název. Vzhledem k tomu, že lze zadat více klauzulí `From` pro dotaz, následné `From` klauzule mohou odkazovat na proměnné rozsahu v klauzuli `From` nebo mohou odkazovat na proměnné rozsahu v předchozí klauzuli `From`. Například následující příklad ukazuje vnořenou klauzuli `From`, kde kolekce v druhé klauzuli je založena na vlastnosti proměnné rozsahu v první klauzuli.  
   
  [!code-vb[VbSimpleQuerySamples#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#22)]  
   
- Each `From` clause can be followed by any combination of additional query clauses to refine the query. You can refine the query in the following ways:  
+ U každé klauzule `From` může následovat jakákoli kombinace dalších klauzulí dotazu pro upřesnění dotazu. Dotaz můžete upřesnit následujícími způsoby:  
   
-- Combine multiple collections implicitly by using the `From` and `Select` clauses, or explicitly by using the `Join` or `Group Join` clauses.  
+- Použijte implicitně kombinaci více kolekcí pomocí klauzulí `From` a `Select` nebo explicitně pomocí klauzule `Join` nebo `Group Join`.  
   
-- Use the `Where` clause to filter the query result.  
+- K filtrování výsledků dotazu použijte klauzuli `Where`.  
   
-- Sort the result by using the `Order By` clause.  
+- Seřaďte výsledek pomocí klauzule `Order By`.  
   
-- Group similar results together by using the `Group By` clause.  
+- Seskupte podobné výsledky společně pomocí klauzule `Group By`.  
   
-- Use the `Aggregate` clause to identify aggregate functions to evaluate for the whole query result.  
+- Použijte klauzuli `Aggregate` k identifikaci agregačních funkcí pro vyhodnocení celého výsledku dotazu.  
   
-- Use the `Let` clause to introduce an iteration variable whose value is determined by an expression instead of a collection.  
+- Použijte klauzuli `Let` k představení proměnné iterace, jejíž hodnota je určena výrazem namísto kolekce.  
   
-- Use the `Distinct` clause to ignore duplicate query results.  
+- K ignorování duplicitních výsledků dotazu použijte klauzuli `Distinct`.  
   
-- Identify parts of the result to return by using the `Skip`, `Take`, `Skip While`, and `Take While` clauses.  
+- Identifikujte části výsledku, které se mají vrátit, pomocí klauzulí `Skip`, `Take`, `Skip While`a `Take While`.  
   
 ## <a name="example"></a>Příklad  
- The following query expression uses a `From` clause to declare a range variable `cust` for each `Customer` object in the `customers` collection. The `Where` clause uses the range variable to restrict the output to customers from the specified region. The `For Each` loop displays the company name for each customer in the query result.  
+ Následující výraz dotazu používá klauzuli `From` k deklaraci proměnné rozsahu `cust` pro každý objekt `Customer` v kolekci `customers`. Klauzule `Where` používá proměnnou rozsahu k omezení výstupu na zákazníky ze zadané oblasti. Smyčka `For Each` zobrazuje název společnosti pro každého zákazníka ve výsledku dotazu.  
   
  [!code-vb[VbSimpleQuerySamples#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#23)]  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Dotazy](../../../visual-basic/language-reference/queries/index.md)
-- [Introduction to LINQ in Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Úvod do jazyka LINQ v Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
 - [Příkaz For Each...Next](../../../visual-basic/language-reference/statements/for-each-next-statement.md)
 - [Příkaz For...Next](../../../visual-basic/language-reference/statements/for-next-statement.md)
 - [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)

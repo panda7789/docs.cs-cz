@@ -12,8 +12,8 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348514"
 ---
-# <a name="c-visual-basic"></a>\<c> (Visual Basic)
-Indicates that text within a description is code.  
+# <a name="c-visual-basic"></a>\<c > (Visual Basic)
+Označuje, že text v rámci popisu je kód.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -25,15 +25,15 @@ Indicates that text within a description is code.
   
 |Parametr|Popis|  
 |---|---|  
-|`text`|The text you would like to indicate as code.|  
+|`text`|Text, který chcete označit jako kód.|  
   
 ## <a name="remarks"></a>Poznámky  
- The `<c>` tag gives you a way to indicate that text within a description should be marked as code. Use [\<code>](../../../visual-basic/language-reference/xmldoc/code.md) to indicate multiple lines as code.  
+ Značka `<c>` poskytuje způsob, jak označit, že text v rámci popisu by měl být označen jako kód. Použijte [\<> kódu](../../../visual-basic/language-reference/xmldoc/code.md) k označení více řádků jako kódu.  
   
- Compile with [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) to process documentation comments to a file.  
+ Zkompilujte s [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) a zpracujte komentáře k dokumentaci do souboru.  
   
 ## <a name="example"></a>Příklad  
- This example uses the `<c>` tag in the summary section to indicate that `Counter` is code.  
+ Tento příklad používá značku `<c>` v části Summary k označení toho, že `Counter` je kód.  
   
  [!code-vb[VbVbcnXmlDocComments#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#1)]  
   

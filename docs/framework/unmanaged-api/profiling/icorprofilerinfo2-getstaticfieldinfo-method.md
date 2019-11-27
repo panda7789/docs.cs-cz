@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74432985"
 ---
 # <a name="icorprofilerinfo2getstaticfieldinfo-method"></a>ICorProfilerInfo2::GetStaticFieldInfo – metoda
-Gets a value that indicates the kind of static that applies to the specified field.  
+Získá hodnotu, která označuje druh statického typu, který se vztahuje k určenému poli.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,27 +36,27 @@ HRESULT GetStaticFieldInfo (
   
 ## <a name="parameters"></a>Parametry  
  `classId`  
- [in] The ID of the class in which the static field is defined.  
+ pro ID třídy, ve které je definováno statické pole.  
   
  `fieldToken`  
- [in] The metadata token for the static field.  
+ pro Token metadat pro statické pole  
   
  `pFieldInfo`  
- [out] A pointer to a value of the [COR_PRF_STATIC_TYPE](../../../../docs/framework/unmanaged-api/profiling/cor-prf-static-type-enumeration.md) enumeration that indicates whether the specified field is static, and if so, the kind of static that applies to the field.  
+ mimo Ukazatel na hodnotu výčtu [COR_PRF_STATIC_TYPE](../../../../docs/framework/unmanaged-api/profiling/cor-prf-static-type-enumeration.md) , která označuje, zda je zadané pole statické, a pokud ano, druh statického, který se vztahuje k poli.  
   
 ## <a name="remarks"></a>Poznámky  
- This information can be used to determine which function to call to get the address of the static field.  
+ Tyto informace lze použít k určení, která funkce má být volána, aby získala adresu statického pole.  
   
- The profiler code should still check the metadata for a static field to ensure that it actually has an address. Static literals (that is, constants) exist only in the metadata and do not have an address.  
+ Kód profileru by měl stále kontrolovat metadata pro statické pole, aby se zajistilo, že má ve skutečnosti adresu. Statické literály (tj. konstanty) existují pouze v metadatech a nemají adresu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

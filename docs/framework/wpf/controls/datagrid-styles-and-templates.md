@@ -39,7 +39,7 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
 |Zakázáno|CommonStates|Ovládací prvek je zakázán.|  
 |InvalidFocused|ValidationStates|Ovládací prvek není platný a má fokus.|  
 |InvalidUnfocused|ValidationStates|Ovládací prvek není platný a nemá fokus.|  
-|Platné|ValidationStates|Ovládací prvek je platný.|  
+|Platný|ValidationStates|Ovládací prvek je platný.|  
   
 ## <a name="datagridcell-parts"></a>DataGridCell části  
  Element <xref:System.Windows.Controls.DataGridCell> neobsahuje žádné pojmenované části.  
@@ -57,11 +57,11 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
 |Platné|CurrentStates|Buňka není aktuální buňkou.|  
 |Displej|InteractionStates|Buňka je v režimu zobrazení.|  
 |Úpravy|InteractionStates|Buňka je v režimu úprav.|  
-|Vybráno|SelectionStates|Buňka je vybrána.|  
+|Vybrané|SelectionStates|Buňka je vybrána.|  
 |Nevybrané|SelectionStates|Buňka není vybrána.|  
 |InvalidFocused|ValidationStates|Buňka není platná a má fokus.|  
 |InvalidUnfocused|ValidationStates|Buňka není platná a nemá fokus.|  
-|Platné|ValidationStates|Buňka je platná.|  
+|Platný|ValidationStates|Buňka je platná.|  
   
 ## <a name="datagridrow-parts"></a>Hodnota DataGridRow části  
  Element <xref:System.Windows.Controls.DataGridRow> neobsahuje žádné pojmenované části.  
@@ -84,7 +84,7 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
 |Unfocused_Selected|CommonStates|Řádek je vybrán a nemá fokus.|  
 |InvalidFocused|ValidationStates|Ovládací prvek není platný a má fokus.|  
 |InvalidUnfocused|ValidationStates|Ovládací prvek není platný a nemá fokus.|  
-|Platné|ValidationStates|Ovládací prvek je platný.|  
+|Platný|ValidationStates|Ovládací prvek je platný.|  
   
 ## <a name="datagridrowheader-parts"></a>DataGridRowHeader části  
  V následující tabulce jsou uvedeny pojmenované části prvku <xref:System.Windows.Controls.Primitives.DataGridRowHeader>.  
@@ -117,7 +117,7 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
 |Unfocused_Selected|CommonStates|Řádek je vybrán a nemá fokus.|  
 |InvalidFocused|ValidationStates|Ovládací prvek není platný a má fokus.|  
 |InvalidUnfocused|ValidationStates|Ovládací prvek není platný a nemá fokus.|  
-|Platné|ValidationStates|Ovládací prvek je platný.|  
+|Platný|ValidationStates|Ovládací prvek je platný.|  
   
 ## <a name="datagridcolumnheaderspresenter-parts"></a>DataGridColumnHeadersPresenter části  
  V následující tabulce jsou uvedeny pojmenované části prvku <xref:System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter>.  
@@ -133,7 +133,7 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
 |-|-|-|  
 |InvalidFocused|ValidationStates|Buňka není platná a má fokus.|  
 |InvalidUnfocused|ValidationStates|Buňka není platná a nemá fokus.|  
-|Platné|ValidationStates|Buňka je platná.|  
+|Platný|ValidationStates|Buňka je platná.|  
   
 ## <a name="datagridcolumnheader-parts"></a>DataGridColumnHeader části  
  V následující tabulce jsou uvedeny pojmenované části prvku <xref:System.Windows.Controls.Primitives.DataGridColumnHeader>.  
@@ -156,7 +156,7 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
 |Seřazená|SortStates|Sloupec není seřazen.|  
 |InvalidFocused|ValidationStates|Ovládací prvek není platný a má fokus.|  
 |InvalidUnfocused|ValidationStates|Ovládací prvek není platný a nemá fokus.|  
-|Platné|ValidationStates|Ovládací prvek je platný.|  
+|Platný|ValidationStates|Ovládací prvek je platný.|  
   
 ## <a name="datagrid-controltemplate-example"></a>Příklad ControlTemplate ovládacího prvku DataGrid  
  Následující příklad ukazuje, jak definovat <xref:System.Windows.Controls.ControlTemplate> pro ovládací prvek <xref:System.Windows.Controls.DataGrid> a jeho přidružené typy.  

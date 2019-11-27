@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74428021"
 ---
 # <a name="isymunmanagedwriterdefineglobalvariable-method"></a>ISymUnmanagedWriter::DefineGlobalVariable – metoda
-Defines a single global variable.  
+Definuje jednu globální proměnnou.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,34 +41,34 @@ HRESULT DefineGlobalVariable(
   
 ## <a name="parameters"></a>Parametry  
  `name`  
- [in] A pointer to a `WCHAR` that defines the global variable name.  
+ pro Ukazatel na `WCHAR`, který definuje název globální proměnné.  
   
  `attributes`  
- [in] The global variable attributes.  
+ pro Atributy globálních proměnných.  
   
  `cSig`  
- [in] A `ULONG32` that indicates the size, in characters, of the `signature` buffer.  
+ pro `ULONG32`, která určuje velikost vyrovnávací paměti `signature` ve znacích.  
   
  `signature`  
- [in] The global variable signature.  
+ pro Globální proměnná signatura  
   
  `addrKind`  
- [in] The address type.  
+ pro Typ adresy.  
   
  `addr1`  
- [in] The first address for the parameter specification.  
+ pro První adresa specifikace parametru.  
   
  `addr2`  
- [in] The second address for the parameter specification.  
+ pro Druhá adresa specifikace parametru.  
   
  `addr3`  
- [in] The third address for the parameter specification.  
+ pro Třetí adresa specifikace parametru.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

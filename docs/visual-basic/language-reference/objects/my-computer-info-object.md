@@ -12,17 +12,17 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74347214"
 ---
 # <a name="mycomputerinfo-object"></a>My.Computer.Info – objekt
-Provides properties for getting information about the computer's memory, loaded assemblies, name, and operating system.  
+Poskytuje vlastnosti pro získání informací o paměti počítače, načtených sestavení, názvu a operačním systému.  
   
 ## <a name="remarks"></a>Poznámky  
- For information about the properties of the `My.Computer.Info` object, see <xref:Microsoft.VisualBasic.Devices.ComputerInfo>.  
+ Informace o vlastnostech objektu `My.Computer.Info` naleznete v tématu <xref:Microsoft.VisualBasic.Devices.ComputerInfo>.  
   
 ## <a name="requirements"></a>Požadavky  
- **Namespace:** <xref:Microsoft.VisualBasic.Devices>  
+ **Obor názvů:** <xref:Microsoft.VisualBasic.Devices>  
   
- **Class:** <xref:Microsoft.VisualBasic.Devices.ComputerInfo>  
+ **Třída:** <xref:Microsoft.VisualBasic.Devices.ComputerInfo>  
   
- **Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)  
+ **Sestavení:** Knihovna Visual Basic runtime (v souboru Microsoft. VisualBasic. dll)  
   
 ## <a name="see-also"></a>Viz také:
 

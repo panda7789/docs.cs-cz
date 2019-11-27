@@ -20,53 +20,53 @@ ms.locfileid: "74345525"
 ---
 # <a name="playing-sounds-visual-basic"></a>Přehrávání zvuků (Visual Basic)
 
-The `My.Computer.Audio` object provides methods for playing sounds.  
+Objekt `My.Computer.Audio` poskytuje metody pro přehrávání zvuků.  
   
 ## <a name="playing-sounds"></a>Přehrávání zvuků  
 
- Background playing lets the application execute other code while the sound plays. The `My.Computer.Audio.Play` method allows the application to play only one background sound at a time; when the application plays a new background sound, it stops playing the previous background sound. You can also play a sound and wait for it to complete.  
+ Přehrávání na pozadí umožňuje aplikaci při přehrávání zvuku provést jiný kód. Metoda `My.Computer.Audio.Play` umožňuje, aby aplikace současně hrála pouze jeden zvuk na pozadí. Když aplikace přehraje nový zvuk na pozadí, zastaví se přehrávání předchozího zvuku na pozadí. Můžete také přehrát zvuk a počkat na jeho dokončení.  
   
- In the following example, the `My.Computer.Audio.Play` method plays a sound. When `AudioPlayMode.WaitToComplete` is specified, `My.Computer.Audio.Play` waits until the sound completes before calling code continues. When using this example, you should ensure that the file name refers to a .wav sound file that is on your computer  
+ V následujícím příkladu metoda `My.Computer.Audio.Play` přehrává zvuk. Pokud je zadána `AudioPlayMode.WaitToComplete`, `My.Computer.Audio.Play` počká, dokud se zvuk nedokončí, než pokračuje v volání kódu. Při použití tohoto příkladu byste měli zkontrolovat, že název souboru odkazuje na zvukový soubor. wav, který je ve vašem počítači.  
   
  [!code-vb[VbVbalrMyComputer#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#15)]  
   
- In the following example, the `My.Computer.Audio.Play` method plays a sound. When using this example, you should ensure that the application resources include a .wav sound file that is named Waterfall.  
+ V následujícím příkladu metoda `My.Computer.Audio.Play` přehrává zvuk. Při použití tohoto příkladu byste měli zajistit, aby prostředky aplikace zahrnovaly zvukový soubor. wav s názvem vodopád.  
   
  [!code-vb[VbVbalrMyComputer#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#16)]  
   
-## <a name="playing-looping-sounds"></a>Playing Looping Sounds  
+## <a name="playing-looping-sounds"></a>Přehrávání zvukových smyček  
 
- In the following example, the `My.Computer.Audio.Play` method plays the specified sound in the background when `PlayMode.BackgroundLoop` is specified. When using this example, you should ensure that the file name refers to a .wav sound file that is on your computer.  
+ V následujícím příkladu metoda `My.Computer.Audio.Play` při určení `PlayMode.BackgroundLoop` přehrává zadaný zvuk na pozadí. Při použití tohoto příkladu byste měli zkontrolovat, že název souboru odkazuje na zvukový soubor. wav, který je ve vašem počítači.  
   
  [!code-vb[VbVbalrMyComputer#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#11)]  
   
- In the following example, the `My.Computer.Audio.Play` method plays the specified sound in the background when `PlayMode.BackgroundLoop` is specified. When using this example, you should ensure that the application resources include a .wav sound file that is named Waterfall.  
+ V následujícím příkladu metoda `My.Computer.Audio.Play` při určení `PlayMode.BackgroundLoop` přehrává zadaný zvuk na pozadí. Při použití tohoto příkladu byste měli zajistit, aby prostředky aplikace zahrnovaly zvukový soubor. wav s názvem vodopád.  
   
  [!code-vb[VbVbalrMyComputer#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#12)]  
   
- The preceding code example is also available as an IntelliSense code snippet. In the code snippet picker, it is located in **Windows Forms Applications > Sound**. For more information, see [Code Snippets](/visualstudio/ide/code-snippets).  
+ Předchozí příklad kódu je také k dispozici jako fragment kódu technologie IntelliSense. Ve výběru fragmentu kódu se nachází v **model Windows Forms aplikace > zvuku**. Další informace naleznete v tématu [fragmenty kódu](/visualstudio/ide/code-snippets).  
   
- In general, when an application plays a looping sound, it should eventually stop the sound.  
+ Obecně platí, že když aplikace přehraje zvuk ve smyčce, měl by nakonec zastavit zvuk.  
   
-## <a name="stopping-the-playing-of-sounds-in-the-background"></a>Stopping the Playing of Sounds in the Background  
+## <a name="stopping-the-playing-of-sounds-in-the-background"></a>Zastavování přehrávání zvuků na pozadí  
 
- Use the `My.Computer.Audio.Stop` method to stop the application's currently playing background or looping sound.  
+ Pomocí metody `My.Computer.Audio.Stop` zastavte aktuálně přehrávání zvuku na pozadí nebo ve smyčce.  
   
- In general, when an application plays a looping sound, it should stop the sound at some point.  
+ Obecně platí, že když aplikace přehraje zvuk ve smyčce, měl by zastavit zvuk v nějakém okamžiku.  
   
- The following example stops a sound that is playing in the background.  
+ Následující příklad zastaví zvuk, který se přehrává na pozadí.  
   
  [!code-vb[VbVbalrMyComputer#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#18)]  
   
- The preceding code example is also available as an IntelliSense code snippet. In the code snippet picker, it is located in **Windows Forms Applications > Sound**. For more information, see [Code Snippets](/visualstudio/ide/code-snippets).  
+ Předchozí příklad kódu je také k dispozici jako fragment kódu technologie IntelliSense. Ve výběru fragmentu kódu se nachází v **model Windows Forms aplikace > zvuku**. Další informace naleznete v tématu [fragmenty kódu](/visualstudio/ide/code-snippets).  
   
-## <a name="playing-system-sounds"></a>Playing System Sounds  
+## <a name="playing-system-sounds"></a>Přehrávání systémových zvuků  
 
- Use the `My.Computer.Audio.PlaySystemSound` method to play the specified system sound.  
+ K přehrání zadaného systémového zvuku použijte metodu `My.Computer.Audio.PlaySystemSound`.  
   
- The `My.Computer.Audio.PlaySystemSound` method takes as a parameter one of the shared members from the <xref:System.Media.SystemSound> class. The system sound <xref:System.Media.SystemSounds.Asterisk%2A> generally denotes errors.  
+ Metoda `My.Computer.Audio.PlaySystemSound` přebírá jako parametr jeden ze sdílených členů z třídy <xref:System.Media.SystemSound>. Systémový zvukový <xref:System.Media.SystemSounds.Asterisk%2A> obecně označuje chyby.  
   
- The following example uses the `My.Computer.Audio.PlaySystemSound` method to play a system sound.  
+ Následující příklad používá metodu `My.Computer.Audio.PlaySystemSound` k přehrání systémového zvuku.  
   
  [!code-vb[VbVbalrMyComputer#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class1.vb#17)]  
   

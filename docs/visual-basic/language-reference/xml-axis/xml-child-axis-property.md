@@ -18,7 +18,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349453"
 ---
 # <a name="xml-child-axis-property-visual-basic"></a>Vlastnost osy podřízeného souboru XML (Visual Basic)
-Provides access to the children of one of the following: an <xref:System.Xml.Linq.XElement> object, an <xref:System.Xml.Linq.XDocument> object, a collection of <xref:System.Xml.Linq.XElement> objects, or a collection of <xref:System.Xml.Linq.XDocument> objects.  
+Poskytuje přístup k podřízeným položkám jedné z následujících: objekt <xref:System.Xml.Linq.XElement>, objekt <xref:System.Xml.Linq.XDocument>, kolekci objektů <xref:System.Xml.Linq.XElement> nebo kolekce objektů <xref:System.Xml.Linq.XDocument>.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -30,46 +30,46 @@ object.<child>
   
 |Termín|Definice|  
 |---|---|  
-|`object`|Požadováno. An <xref:System.Xml.Linq.XElement> object, an <xref:System.Xml.Linq.XDocument> object, a collection of <xref:System.Xml.Linq.XElement> objects, or a collection of <xref:System.Xml.Linq.XDocument> objects.|  
-|.<|Požadováno. Denotes the start of a child axis property.|  
-|`child`|Požadováno. Name of the child nodes to access, of the form [`prefix:]name`.<br /><br /> -   `Prefix` - Optional. XML namespace prefix for the child node. Must be a global XML namespace defined with an `Imports` statement.<br />-   `Name` - Required. Local child node name. See [Names of Declared XML Elements and Attributes](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md).|  
-|>|Požadováno. Denotes the end of a child axis property.|  
+|`object`|Požadováno. Objekt <xref:System.Xml.Linq.XElement>, objekt <xref:System.Xml.Linq.XDocument>, kolekce objektů <xref:System.Xml.Linq.XElement> nebo kolekce objektů <xref:System.Xml.Linq.XDocument>.|  
+|.<|Požadováno. Označuje začátek podřízené vlastnosti osy.|  
+|`child`|Požadováno. Název podřízených uzlů, pro které má být přístup, z formuláře [`prefix:]name`.<br /><br /> -   `Prefix` – volitelné. Předpona oboru názvů XML pro podřízený uzel. Musí být globální obor názvů XML definovaný pomocí příkazu `Imports`.<br />`Name` -   – povinné. Název místního podřízeného uzlu. Viz [Názvy deklarovaných elementů XML a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md).|  
+|>|Požadováno. Označuje konec podřízené vlastnosti osy.|  
   
 ## <a name="return-value"></a>Návratová hodnota  
- A collection of <xref:System.Xml.Linq.XElement> objects.  
+ Kolekce objektů <xref:System.Xml.Linq.XElement>.  
   
 ## <a name="remarks"></a>Poznámky  
- You can use an XML child axis property to access child nodes by name from an <xref:System.Xml.Linq.XElement> or <xref:System.Xml.Linq.XDocument> object, or from a collection of <xref:System.Xml.Linq.XElement> or <xref:System.Xml.Linq.XDocument> objects. Use the XML `Value` property to access the value of the first child node in the returned collection. For more information, see [XML Value Property](../../../visual-basic/language-reference/xml-axis/xml-value-property.md).  
+ Vlastnost podřízené osy XML můžete použít pro přístup k podřízeným uzlům podle názvu z objektu <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument> nebo z kolekce objektů <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument>. Pro přístup k hodnotě prvního podřízeného uzlu ve vrácené kolekci použijte vlastnost `Value` XML. Další informace najdete v tématu [vlastnost hodnoty XML](../../../visual-basic/language-reference/xml-axis/xml-value-property.md).  
   
- The Visual Basic compiler converts child axis properties to calls to the <xref:System.Xml.Linq.XContainer.Elements%2A> method.  
+ Kompilátor Visual Basic převede vlastnosti podřízené osy na volání metody <xref:System.Xml.Linq.XContainer.Elements%2A>.  
   
-## <a name="xml-namespaces"></a>XML Namespaces  
- The name in a child axis property can use only XML namespace prefixes declared globally with the `Imports` statement. It cannot use XML namespace prefixes declared locally within XML element literals. For more information, see [Imports Statement (XML Namespace)](../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md).  
+## <a name="xml-namespaces"></a>XML – obory názvů  
+ Název v podřízené vlastnosti osy může používat pouze předpony oboru názvů XML deklarované globálně s příkazem `Imports`. Nemůže použít předpony oboru názvů XML deklarované místně v rámci literálů elementů XML. Další informace naleznete v tématu [příkaz Imports (obor názvů XML)](../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md).  
   
 ## <a name="example"></a>Příklad  
- The following example shows how to access the child nodes named `phone` from the `contact` object.  
+ Následující příklad ukazuje, jak přistupovat k podřízeným uzlům s názvem `phone` z objektu `contact`.  
   
  [!code-vb[VbXMLSamples#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples7.vb#17)]  
   
- This code displays the following text:  
+ Tento kód zobrazí následující text:  
   
  `Home Phone = 206-555-0144`  
   
 ## <a name="example"></a>Příklad  
- The following example shows how to access the child nodes named `phone` from the collection returned by the `contact` child axis property of the `contacts` object.  
+ Následující příklad ukazuje, jak získat přístup k podřízeným uzlům s názvem `phone` z kolekce vrácené vlastností `contact` podřízená osa objektu `contacts`.  
   
  [!code-vb[VbXMLSamples#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples7.vb#18)]  
   
- This code displays the following text:  
+ Tento kód zobrazí následující text:  
   
  `Home Phone = 206-555-0144`  
   
 ## <a name="example"></a>Příklad  
- The following example declares `ns` as an XML namespace prefix. It then uses the prefix of the namespace to create an XML literal and access the first child node with the qualified name `ns:name`.  
+ Následující příklad deklaruje `ns` jako předponu oboru názvů XML. Poté pomocí předpony oboru názvů vytvoří literál XML a přístup k prvnímu podřízenému uzlu s kvalifikovaným názvem `ns:name`.  
   
  [!code-vb[VbXMLSamples#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples8.vb#19)]  
   
- This code displays the following text:  
+ Tento kód zobrazí následující text:  
   
  `Patrick Hines`  
   
@@ -78,5 +78,5 @@ object.<child>
 - <xref:System.Xml.Linq.XElement>
 - [Vlastnosti osy XML](../../../visual-basic/language-reference/xml-axis/index.md)
 - [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)
-- [Creating XML in Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [Vytváření XML v Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
 - [Názvy deklarovaných XML elementů a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md)

@@ -38,19 +38,19 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74336088"
 ---
 # <a name="comparison-operators-visual-basic"></a>Operátory porovnání (Visual Basic)
-The following are the comparison operators defined in Visual Basic.
+Níže jsou uvedeny operátory porovnání definované v Visual Basic.
 
- `<` operator
+ operátor `<`
 
- `<=` operator
+ operátor `<=`
 
- `>` operator
+ operátor `>`
 
- `>=` operator
+ operátor `>=`
 
- `=` operator
+ operátor `=`
 
- `<>` operator
+ operátor `<>`
 
  [Operátor Is](../../../visual-basic/language-reference/operators/is-operator.md)
 
@@ -58,7 +58,7 @@ The following are the comparison operators defined in Visual Basic.
 
  [Operátor Like](../../../visual-basic/language-reference/operators/like-operator.md)
 
- These operators compare two expressions to determine whether or not they are equal, and if not, how they differ. `Is`, `IsNot`, and `Like` are discussed in detail on separate Help pages. The relational comparison operators are discussed in detail on this page.
+ Tyto operátory porovnávají dva výrazy a určí, zda jsou nebo nejsou rovny, a pokud ne, jak se liší. `Is`, `IsNot`a `Like` jsou podrobněji popsány na samostatných stránkách s usnadněním. Relační operátory porovnání jsou podrobněji popsány na této stránce.
 
 ## <a name="syntax"></a>Syntaxe
   
@@ -70,91 +70,91 @@ result = string Like pattern
   
 ## <a name="parts"></a>Součásti
  `result`  
- Požadováno. A `Boolean` value representing the result of the comparison.
+ Požadováno. Hodnota `Boolean` představující výsledek porovnání.
 
- `expression1`, `expression2`  
- Požadováno. Any expression.
+ `expression1``expression2`  
+ Požadováno. Libovolný výraz.
 
  `comparisonoperator`  
- Požadováno. Any relational comparison operator.
+ Požadováno. Jakýkoli relační operátor porovnání.
 
- `object1`, `object2`  
- Požadováno. Any reference object names.
+ `object1``object2`  
+ Požadováno. Názvy referenčních objektů.
 
  `string`  
- Požadováno. Any `String` expression.
+ Požadováno. Libovolný výraz `String`.
 
  `pattern`  
- Požadováno. Any `String` expression or range of characters.
+ Požadováno. Libovolný výraz `String` nebo rozsah znaků.
 
 ## <a name="remarks"></a>Poznámky
- The following table contains a list of the relational comparison operators and the conditions that determine whether `result` is `True` or `False`.
+ Následující tabulka obsahuje seznam relačních operátorů porovnání a podmínky, které určují, zda je `result` `True` nebo `False`.
 
 |Operátor|`True` if|`False` if|
 |--------------|---------------|----------------|
-|`<` (Less than)|`expression1` < `expression2`|`expression1` >= `expression2`|
-|`<=` (Less than or equal to)|`expression1` <= `expression2`|`expression1` > `expression2`|
-|`>` (Greater than)|`expression1` > `expression2`|`expression1` <= `expression2`|
-|`>=` (Greater than or equal to)|`expression1` >= `expression2`|`expression1` < `expression2`|
-|`=` (Equal to)|`expression1` = `expression2`|`expression1` <> `expression2`|
-|`<>` (Not equal to)|`expression1` <> `expression2`|`expression1` = `expression2`|
+|`<` (méně než)|`expression1` < `expression2`|`expression1` >= `expression2`|
+|`<=` (je menší než nebo rovno)|`expression1` <= `expression2`|`expression1` > `expression2`|
+|`>` (je větší než)|`expression1` > `expression2`|`expression1` <= `expression2`|
+|`>=` (je větší než nebo rovno)|`expression1` >= `expression2`|`expression1` < `expression2`|
+|`=` (je rovno)|`expression1` = `expression2`|`expression1` <> `expression2`|
+|`<>` (není rovno)|`expression1` <> `expression2`|`expression1` = `expression2`|
 
 > [!NOTE]
-> The [= Operator](../../../visual-basic/language-reference/operators/assignment-operator.md) is also used as an assignment operator.
+> [Operátor =](../../../visual-basic/language-reference/operators/assignment-operator.md) se používá také jako operátor přiřazení.
 
- The `Is` operator, the `IsNot` operator, and the `Like` operator have specific comparison functionalities that differ from the operators in the preceding table.
+ Operátor `Is`, operátor `IsNot` a operátor `Like` mají konkrétní funkce porovnání, které se liší od operátorů v předchozí tabulce.
 
-## <a name="comparing-numbers"></a>Comparing Numbers
- When you compare an expression of type `Single` to one of type `Double`, the `Single` expression is converted to `Double`. This behavior is opposite to the behavior found in Visual Basic 6.
+## <a name="comparing-numbers"></a>Porovnávání čísel
+ Když porovnáte výraz typu `Single` k jednomu typu `Double`, je výraz `Single` převeden na `Double`. Toto chování je opakem chování zjištěného v Visual Basic 6.
 
- Similarly, when you compare an expression of type `Decimal` to an expression of type `Single` or `Double`, the `Decimal` expression is converted to `Single` or `Double`. For `Decimal` expressions, any fractional value less than 1E-28 might be lost. Such fractional value loss may cause two values to compare as equal when they are not. For this reason, you should take care when using equality (`=`) to compare two floating-point variables. It is safer to test whether the absolute value of the difference between the two numbers is less than a small acceptable tolerance.
+ Podobně když porovnáte výraz typu `Decimal` k výrazu typu `Single` nebo `Double`, je výraz `Decimal` převeden na `Single` nebo `Double`. Pro `Decimal` výrazy může dojít ke ztrátě všech zlomkových hodnot menší než 1E – 28. Tato ztráta zlomkové hodnoty může způsobit porovnání dvou hodnot, které jsou stejné, pokud nejsou. Z tohoto důvodu byste měli být opatrní při použití rovnosti (`=`) k porovnání dvou proměnných s plovoucí desetinnou čárkou. Je bezpečnější testovat, zda absolutní hodnota rozdílu mezi dvěma čísly je menší než malá přijatelná tolerance.
 
-### <a name="floating-point-imprecision"></a>Floating-point Imprecision
- When you work with floating-point numbers, keep in mind that they do not always have a precise representation in memory. This could lead to unexpected results from certain operations, such as value comparison and the [Mod Operator](../../../visual-basic/language-reference/operators/mod-operator.md). For more information, see [Troubleshooting Data Types](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md).
+### <a name="floating-point-imprecision"></a>Nepřesnost plovoucí desetinné čárky
+ Když pracujete s čísly s plovoucí desetinnou čárkou, mějte na paměti, že nemají vždy přesnou reprezentaci v paměti. To může vést k neočekávaným výsledkům z určitých operací, jako je porovnání hodnot a [operátor mod](../../../visual-basic/language-reference/operators/mod-operator.md). Další informace najdete v tématu [řešení potíží s datovými typy](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md).
 
 ## <a name="comparing-strings"></a>Porovnávání řetězců
- When you compare strings, the string expressions are evaluated based on their alphabetical sort order, which depends on the `Option Compare` setting.
+ Při porovnávání řetězců jsou řetězcové výrazy vyhodnocovány na základě pořadí řazení podle abecedy, které závisí na nastavení `Option Compare`.
 
- `Option Compare Binary` bases string comparisons on a sort order derived from the internal binary representations of the characters. The sort order is determined by the code page. The following example shows a typical binary sort order.
+ `Option Compare Binary` porovnávání řetězců základů v pořadí řazení odvozeném z interní binární reprezentace znaků. Pořadí řazení je určeno znakovou stránkou. Následující příklad ukazuje typické binární pořadí řazení.
 
  `A < B < E < Z < a < b < e < z < À < Ê < Ø < à < ê < ø`
 
- `Option Compare Text` bases string comparisons on a case-insensitive, textual sort order determined by your application's locale. When you set `Option Compare Text` and sort the characters in the preceding example, the following text sort order applies:
+ `Option Compare Text` porovnávání řetězců nerozlišuje malá a velká písmena, textové pořadí řazení určené národním prostředím vaší aplikace. Když nastavíte `Option Compare Text` a seřadíte znaky v předchozím příkladu, použije se následující řazení textu:
 
  `(A=a) < (À= à) < (B=b) < (E=e) < (Ê= ê) < (Ø = ø) < (Z=z)`
 
-### <a name="locale-dependence"></a>Locale Dependence
- When you set `Option Compare Text`, the result of a string comparison can depend on the locale in which the application is running. Two characters might compare as equal in one locale but not in another. If you are using a string comparison to make important decisions, such as whether to accept an attempt to log on, you should be alert to locale sensitivity. Consider either setting `Option Compare Binary` or calling the <xref:Microsoft.VisualBasic.Strings.StrComp%2A>, which takes the locale into account.
+### <a name="locale-dependence"></a>Závislost národního prostředí
+ Při nastavení `Option Compare Text`může výsledek porovnání řetězců záviset na národním prostředí, ve kterém je aplikace spuštěná. Dva znaky se můžou porovnat stejně jako v jednom národním prostředí, ale ne v jiném. Pokud používáte porovnání řetězců k rozhodování o důležitých rozhodnutích, například o tom, jestli se má přijmout pokus o přihlášení, měli byste být upozorňováni na citlivost národního prostředí. Zvažte buď nastavení `Option Compare Binary` nebo volání <xref:Microsoft.VisualBasic.Strings.StrComp%2A>, která převezme národní prostředí v úvahu.
 
-## <a name="typeless-programming-with-relational-comparison-operators"></a>Typeless Programming with Relational Comparison Operators
- The use of relational comparison operators with `Object` expressions is not allowed under `Option Strict On`. When `Option Strict` is `Off`, and either `expression1` or `expression2` is an `Object` expression, the run-time types determine how they are compared. The following table shows how the expressions are compared and the result from the comparison, depending on the runtime type of the operands.
+## <a name="typeless-programming-with-relational-comparison-operators"></a>Programování bez beztypových relačních operátorů porovnání
+ Použití relačních operátorů porovnání s `Object` výrazy není povoleno v `Option Strict On`. Pokud je `Option Strict` `Off`a `expression1` nebo `expression2` je výraz `Object`, určují typy za běhu jejich porovnání. Následující tabulka ukazuje, jak jsou porovnány výrazy a výsledek porovnání v závislosti na typu modulu runtime operandů.
 
-|If operands are|Comparison is|
+|Pokud jsou operandy|Porovnání je|
 |---------------------|-------------------|
-|Both `String`|Sort comparison based on string sorting characteristics.|
-|Both numeric|Objects converted to `Double`, numeric comparison.|
-|One numeric and one `String`|The `String` is converted to a `Double` and numeric comparison is performed. If the `String` cannot be converted to `Double`, an <xref:System.InvalidCastException> is thrown.|
-|Either or both are reference types other than `String`|An <xref:System.InvalidCastException> is thrown.|
+|Jak `String`|Porovnání řazení založené na charakteristikách řazení řetězců.|
+|Oba číslice|Objekty převedené na `Double`, číselné porovnání.|
+|Jedna číselná a jedna `String`|`String` je převedena na `Double` a číselné porovnání je provedeno. Pokud `String` nelze převést na `Double`, je vyvolána <xref:System.InvalidCastException>.|
+|Oba typy odkazují na jiné než `String`.|Je vyvolána <xref:System.InvalidCastException>.|
 
- Numeric comparisons treat `Nothing` as 0. String comparisons treat `Nothing` as `""` (an empty string).
+ Číselná porovnání považovat `Nothing` za 0. Porovnávání řetězců považuje `Nothing` jako `""` (prázdný řetězec).
 
 ## <a name="overloading"></a>Přetížení
- The relational comparison operators (`<`. `<=`, `>`, `>=`, `=`, `<>`) can be *overloaded*, which means that a class or structure can redefine their behavior when an operand has the type of that class or structure. If your code uses any of these operators on such a class or structure, be sure you understand the redefined behavior. For more information, see [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).
+ Relační operátory porovnání (`<`. `<=`, `>`, `>=`, `=`, `<>`) mohou být *přetíženy*, což znamená, že třída nebo struktura může předefinovat své chování, pokud má operand typ této třídy nebo struktury. Pokud váš kód používá některý z těchto operátorů v takové třídě nebo struktuře, ujistěte se, že rozumíte předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).
 
- Notice that the [= Operator](../../../visual-basic/language-reference/operators/assignment-operator.md) can be overloaded only as a relational comparison operator, not as an assignment operator.
+ Všimněte si, že [operátor =](../../../visual-basic/language-reference/operators/assignment-operator.md) může být přetížen pouze jako relační operátor porovnání, nikoli jako operátor přiřazení.
 
 ## <a name="example"></a>Příklad
- The following example shows various uses of relational comparison operators, which you use to compare expressions. Relational comparison operators return a `Boolean` result that represents whether or not the stated expression evaluates to `True`. When you apply the `>` and `<` operators to strings, the comparison is made using the normal alphabetical sorting order of the strings. This order can be dependent on your locale setting. Whether the sort is case-sensitive or not depends on the [Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md) setting.
+ Následující příklad ukazuje různé způsoby použití relačních relačních operátorů, které slouží k porovnání výrazů. Relační operátory porovnání vracejí `Boolean` výsledek, který představuje, zda je nebo není stanovený výraz vyhodnocen jako `True`. Když použijete operátory `>` a `<` na řetězce, bude porovnání provedeno pomocí normálního pořadí řazení řetězců v abecedním pořadí. Tato objednávka může být závislá na nastavení národního prostředí. Bez ohledu na to, zda řazení rozlišuje velká a malá písmena, závisí na nastavení [Možnosti porovnat](../../../visual-basic/language-reference/statements/option-compare-statement.md) .
 
  [!code-vb[VbVbalrOperators#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#1)]
 
- In the preceding example, the first comparison returns `False` and the remaining comparisons return `True`.
+ V předchozím příkladu vrátí první porovnávání `False` a zbývající porovnávání vrátí `True`.
 
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.InvalidCastException>
-- [Operátor =](../../../visual-basic/language-reference/operators/assignment-operator.md)
-- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [= – operátor](../../../visual-basic/language-reference/operators/assignment-operator.md)
+- [Priorita operátorů v Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
 - [Řešení potíží s datovými typy](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
-- [Comparison Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
+- [Operátory porovnávání v Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)

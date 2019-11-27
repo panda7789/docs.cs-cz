@@ -16,26 +16,26 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74347347"
 ---
 # <a name="main-procedure-in-visual-basic"></a>Hlavní procedura v jazyce Visual Basic
-Every Visual Basic application must contain a procedure called `Main`. This procedure serves as the starting point and overall control for your application. The .NET Framework calls your `Main` procedure when it has loaded your application and is ready to pass control to it. Unless you are creating a Windows Forms application, you must write the `Main` procedure for applications that run on their own.
+Každá aplikace Visual Basic musí obsahovat proceduru nazvanou `Main`. Tato procedura slouží jako výchozí bod a celkový ovládací prvek pro vaši aplikaci. .NET Framework volá váš `Main` postup, když načte vaši aplikaci a je připravena k předání řízení. Pokud nevytváříte aplikaci model Windows Forms, je nutné napsat `Main` postup pro aplikace, které se spouštějí sami.
 
- `Main` contains the code that runs first. In `Main`, you can determine which form is to be loaded first when the program starts, find out if a copy of your application is already running on the system, establish a set of variables for your application, or open a database that the application requires.
+ `Main` obsahuje kód, který se spouští jako první. V `Main`můžete určit, který formulář se má načíst jako první, když se program spustí, zjistit, jestli je už kopie vaší aplikace spuštěná v systému, vytvořit sadu proměnných pro vaši aplikaci nebo otevřít databázi, kterou aplikace vyžaduje.
 
-## <a name="requirements-for-the-main-procedure"></a>Requirements for the Main Procedure
- A file that runs on its own (usually with extension .exe) must contain a `Main` procedure. A library (for example with extension .dll) does not run on its own and does not require a `Main` procedure. The requirements for the different types of projects you can create are as follows:
+## <a name="requirements-for-the-main-procedure"></a>Požadavky na hlavní postup
+ Soubor, který se spouští sám (obvykle s příponou. exe), musí obsahovat `Main` postup. Knihovnu (například s příponou. dll) neběží sama na sobě a nevyžaduje `Main` postup. Požadavky pro různé typy projektů, které můžete vytvořit, jsou následující:
 
-- Console applications run on their own, and you must supply at least one `Main` procedure.
+- Konzolové aplikace běží samy na sobě a Vy musíte dodat aspoň jeden `Main` postup.
 
-- Windows Forms applications run on their own. However, the Visual Basic compiler automatically generates a `Main` procedure in such an application, and you do not need to write one.
+- Model Windows Forms aplikace se spouštějí sami. Kompilátor Visual Basic však v takové aplikaci automaticky vygeneruje `Main` proceduru a není nutné ji psát.
 
-- Class libraries do not require a `Main` procedure. These include Windows Control Libraries and Web Control Libraries. Web applications are deployed as class libraries.
+- Knihovny tříd nevyžadují `Main` proceduru. Mezi ně patří knihovny ovládacích prvků systému Windows a knihovny webového ovládacího prvku. Webové aplikace jsou nasazeny jako knihovny tříd.
 
-## <a name="declaring-the-main-procedure"></a>Declaring the Main Procedure
- There are four ways to declare the `Main` procedure. It can take arguments or not, and it can return a value or not.
+## <a name="declaring-the-main-procedure"></a>Deklarace hlavní procedury
+ Existují čtyři způsoby, jak deklarovat `Main` proceduru. Může přijmout argumenty nebo ne a může vrátit hodnotu nebo ne.
 
 > [!NOTE]
-> If you declare `Main` in a class, you must use the `Shared` keyword. In a module, `Main` does not need to be `Shared`.
+> Pokud deklarujete `Main` ve třídě, je nutné použít klíčové slovo `Shared`. V modulu není `Main` nutné `Shared`.
 
-- The simplest way is to declare a `Sub` procedure that does not take arguments or return a value.
+- Nejjednodušší způsob je deklarovat `Sub` proceduru, která nepřijímá argumenty nebo vrací hodnotu.
 
     ```vb
     Module mainModule
@@ -47,7 +47,7 @@ Every Visual Basic application must contain a procedure called `Main`. This proc
     End Module
     ```
 
-- `Main` can also return an `Integer` value, which the operating system uses as the exit code for your program. Other programs can test this code by examining the Windows ERRORLEVEL value. To return an exit code, you must declare `Main` as a `Function` procedure instead of a `Sub` procedure.
+- `Main` může také vracet `Integer` hodnotu, kterou operační systém používá jako ukončovací kód pro váš program. Další programy můžou tento kód otestovat prozkoumáním hodnoty ERRORLEVEL systému Windows. Chcete-li vrátit ukončovací kód, je nutné deklarovat `Main` jako `Function` procedura namísto `Sub` procedury.
 
     ```vb
     Module mainModule
@@ -64,7 +64,7 @@ Every Visual Basic application must contain a procedure called `Main`. This proc
     End Module
     ```
 
-- `Main` can also take a `String` array as an argument. Each string in the array contains one of the command-line arguments used to invoke your program. You can take different actions depending on their values.
+- `Main` může také přebírat pole `String` jako argument. Každý řetězec v poli obsahuje jeden z argumentů příkazového řádku, který se používá k vyvolání programu. V závislosti na jejich hodnotách můžete provádět různé akce.
 
     ```vb
     Module mainModule
@@ -88,7 +88,7 @@ Every Visual Basic application must contain a procedure called `Main`. This proc
     End Module
     ```
 
-- You can declare `Main` to examine the command-line arguments but not return an exit code, as follows.
+- Můžete deklarovat `Main` pro prohlédnutí argumentů příkazového řádku, ale nevrátí ukončovací kód, a to následujícím způsobem.
 
     ```vb
     Module mainModule
@@ -113,7 +113,7 @@ Every Visual Basic application must contain a procedure called `Main`. This proc
 - <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>
 - <xref:System.Array.Length%2A>
 - <xref:Microsoft.VisualBasic.Information.UBound%2A>
-- [Structure of a Visual Basic Program](../../../visual-basic/programming-guide/program-structure/structure-of-a-visual-basic-program.md)
+- [Struktura Visual Basic programu](../../../visual-basic/programming-guide/program-structure/structure-of-a-visual-basic-program.md)
 - [-main](../../../visual-basic/reference/command-line-compiler/main.md)
 - [Shared](../../../visual-basic/language-reference/modifiers/shared.md)
 - [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)

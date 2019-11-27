@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74444297"
 ---
 # <a name="assemblyflags-enumeration"></a>AssemblyFlags – výčet
-Contains values that describe run-time features of an assembly.  
+Obsahuje hodnoty, které popisují funkce běhu sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,23 +40,23 @@ typedef enum {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`afImplicitExportedTypes`|Specifies that exported type definitions are implicit within the files that comprise the assembly. In the .NET Framework versions 1.0 and 1.1, this value is always assumed to be set.|  
-|`afImplicitResources`|Specifies that resource definitions are implicit within the files that comprise the assembly. In the .NET Framework 1.0 and 1.1, this value is always assumed to be set.|  
-|`afNonSideBySideAppDomain`|Specifies that the assembly cannot execute with other versions if they are running in the same application domain.|  
-|`afNonSideBySideProcess`|Specifies that the assembly cannot execute with other versions if they are running in the same process.|  
-|`afNonSideBySideMachine`|Specifies that the assembly cannot execute with other versions if they are running on the same computer.|  
+|`afImplicitExportedTypes`|Určuje, že exportované definice typu jsou implicitní v rámci souborů, které tvoří sestavení. V .NET Framework verzích 1,0 a 1,1 je tato hodnota vždycky nastavená.|  
+|`afImplicitResources`|Určuje, že definice prostředků jsou implicitní v rámci souborů, které tvoří sestavení. V .NET Framework 1,0 a 1,1 je tato hodnota vždy nastavena jako nastavená.|  
+|`afNonSideBySideAppDomain`|Určuje, že sestavení nemůže být spuštěno s jinými verzemi, pokud jsou spuštěny ve stejné doméně aplikace.|  
+|`afNonSideBySideProcess`|Určuje, že sestavení nemůže být spuštěno s jinými verzemi, pokud jsou spuštěny ve stejném procesu.|  
+|`afNonSideBySideMachine`|Určuje, že sestavení nemůže být spuštěno s jinými verzemi, pokud jsou spuštěny ve stejném počítači.|  
   
 ## <a name="remarks"></a>Poznámky  
- The values between 0x0010 and 0x0070, inclusive, are used to describe side-by-side compatibility features of the referenced assembly. If none of these values are set, the assembly is assumed to be side-by-side compatible.  
+ Hodnoty mezi 0x0010 a 0x0070, včetně, se používají k popisu souběžných funkcí kompatibility odkazovaného sestavení. Pokud žádná z těchto hodnot není nastavena, předpokládá se, že sestavení je souběžně kompatibilní.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** MsCorEE.h  
+ **Hlavička:** MsCorEE. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

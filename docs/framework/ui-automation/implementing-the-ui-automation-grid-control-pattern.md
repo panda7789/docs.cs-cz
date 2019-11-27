@@ -15,53 +15,53 @@ ms.locfileid: "74435370"
 ---
 # <a name="implementing-the-ui-automation-grid-control-pattern"></a>Implementace vzoru ovládacích prvků mřížka pro automatizaci uživatelského rozhraní
 > [!NOTE]
-> This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace. For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
+> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v oboru názvů <xref:System.Windows.Automation>. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API pro Windows Automation: automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
   
- This topic introduces guidelines and conventions for implementing <xref:System.Windows.Automation.Provider.IGridProvider>, including information about properties, methods, and events. Links to additional references are listed at the end of the overview.  
+ Toto téma obsahuje pokyny a konvence pro implementaci <xref:System.Windows.Automation.Provider.IGridProvider>, včetně informací o vlastnostech, metodách a událostech. Odkazy na další odkazy jsou uvedeny na konci přehledu.  
   
- The <xref:System.Windows.Automation.GridPattern> control pattern is used to support controls that act as containers for a collection of child elements. The children of this element must implement <xref:System.Windows.Automation.Provider.IGridItemProvider> and be organized in a two-dimensional logical coordinate system that can be traversed by row and column. For examples of controls that implement this control pattern, see [Control Pattern Mapping for UI Automation Clients](control-pattern-mapping-for-ui-automation-clients.md).  
+ Vzor ovládacího prvku <xref:System.Windows.Automation.GridPattern> slouží k podpoře ovládacích prvků, které fungují jako kontejnery pro kolekci podřízených prvků. Podřízené objekty tohoto elementu musí implementovat <xref:System.Windows.Automation.Provider.IGridItemProvider> a být uspořádány do dvojrozměrného systému logických souřadnic, který lze procházet podle řádků a sloupců. Příklady ovládacích prvků, které implementují tento vzor ovládacích prvků, naleznete v tématu [mapování vzoru ovládacího prvku pro klienty automatizace uživatelského rozhraní](control-pattern-mapping-for-ui-automation-clients.md).  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
-## <a name="implementation-guidelines-and-conventions"></a>Implementation Guidelines and Conventions  
- When implementing the Grid control pattern, note the following guidelines and conventions:  
+## <a name="implementation-guidelines-and-conventions"></a>Pokyny a konvence implementace  
+ Při implementaci vzorového ovládacího prvku mřížky si všimněte následujících pokynů a konvencí:  
   
-- Grid coordinates are zero-based with the upper left (or upper right cell depending on locale) having coordinates (0, 0).  
+- Souřadnice mřížky jsou založené na nule s horní levou (nebo pravou horní buňkou v závislosti na národním prostředí), která má souřadnice (0, 0).  
   
-- If a cell is empty, a UI Automation element must still be returned in order to support the <xref:System.Windows.Automation.Provider.IGridItemProvider.ContainingGrid%2A> property for that cell. This is possible when the layout of child elements in the grid is similar to a ragged array (see example below).  
+- Je-li buňka prázdná, musí být objekt automatizace uživatelského rozhraní nadále vrácen, aby podporoval vlastnost <xref:System.Windows.Automation.Provider.IGridItemProvider.ContainingGrid%2A> pro tuto buňku. To je možné v případě, že rozložení podřízených prvků v mřížce je podobné nezarovnanému poli (viz příklad níže).  
   
- ![Windows Explorer view showing ragged layout.](./media/uia-gridpattern-ragged-array.PNG "UIA_GridPattern_Ragged_Array")  
-Example of a Grid Control with Empty Coordinates  
+ ![Zobrazení Průzkumníka Windows zobrazující nerovnoměrné rozložení](./media/uia-gridpattern-ragged-array.PNG "UIA_GridPattern_Ragged_Array")  
+Příklad ovládacího prvku mřížky s prázdnými souřadnicemi  
   
-- A grid with a single item is still required to implement <xref:System.Windows.Automation.Provider.IGridProvider> if it is logically considered to be a grid. The number of child items in the grid is immaterial.  
+- K implementaci <xref:System.Windows.Automation.Provider.IGridProvider>, je-li logicky považována za mřížku, se stále vyžaduje mřížka s jednou položkou. Počet podřízených položek v mřížce je nemateriálný.  
   
-- Hidden rows and columns, depending on the provider implementation, may be loaded in the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree and therefore will be reflected in the <xref:System.Windows.Automation.GridPattern.GridPatternInformation.RowCount%2A> and <xref:System.Windows.Automation.GridPattern.GridPatternInformation.ColumnCount%2A> properties. If the hidden rows and columns have not yet been loaded, they should not be counted.  
+- Skryté řádky a sloupce, v závislosti na implementaci poskytovatele, mohou být načteny do stromu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] a proto se projeví ve vlastnostech <xref:System.Windows.Automation.GridPattern.GridPatternInformation.RowCount%2A> a <xref:System.Windows.Automation.GridPattern.GridPatternInformation.ColumnCount%2A>. Pokud skryté řádky a sloupce ještě nebyly načteny, neměly by se počítat.  
   
-- <xref:System.Windows.Automation.Provider.IGridProvider> does not enable active manipulation of a grid; <xref:System.Windows.Automation.Provider.ITransformProvider> must be implemented to enable this functionality.  
+- <xref:System.Windows.Automation.Provider.IGridProvider> nepovoluje aktivní manipulaci s mřížkou. aby bylo možné tuto funkci povolit, musí být implementována <xref:System.Windows.Automation.Provider.ITransformProvider>.  
   
-- Use a <xref:System.Windows.Automation.StructureChangedEventHandler> to listen for structural or layout changes to the grid such as cells that have been added, removed, or merged.  
+- Použijte <xref:System.Windows.Automation.StructureChangedEventHandler> k naslouchání strukturálním nebo rozmístění změn v mřížce, například buněk, které byly přidány, odebrány nebo sloučeny.  
   
-- Use a <xref:System.Windows.Automation.AutomationFocusChangedEventHandler> to track traversal through the items or cells of a grid.  
+- Pomocí <xref:System.Windows.Automation.AutomationFocusChangedEventHandler> můžete sledovat procházení položek nebo buněk v mřížce.  
   
 <a name="Required_Members_for_IGridProvider"></a>   
-## <a name="required-members-for-igridprovider"></a>Required Members for IGridProvider  
- The following properties and methods are required for implementing the IGridProvider interface.  
+## <a name="required-members-for-igridprovider"></a>Vyžadovaná členové pro IGridProvider  
+ Pro implementaci rozhraní IGridProvider jsou vyžadovány následující vlastnosti a metody.  
   
-|Required members|Typ|Poznámky|  
+|Vyžadovaná členové|Typ|Poznámky|  
 |----------------------|----------|-----------|  
 |<xref:System.Windows.Automation.Provider.IGridProvider.RowCount%2A>|Vlastnost|Žádné|  
 |<xref:System.Windows.Automation.Provider.IGridProvider.ColumnCount%2A>|Vlastnost|Žádné|  
 |<xref:System.Windows.Automation.Provider.IGridProvider.GetItem%2A>|Metoda|Žádné|  
   
- This control pattern has no associated events.  
+ Tento vzor ovládacího prvku nemá žádné přidružené události.  
   
 <a name="Exceptions"></a>   
 ## <a name="exceptions"></a>Výjimky  
- Providers must throw the following exceptions.  
+ Zprostředkovatelé musí vyvolat následující výjimky.  
   
 |Typ výjimky|Podmínka|  
 |--------------------|---------------|  
-|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IGridProvider.GetItem%2A><br /><br /> -   If the requested row coordinate is larger than the <xref:System.Windows.Automation.Provider.IGridProvider.RowCount%2A> or the column coordinate is larger than the <xref:System.Windows.Automation.Provider.IGridProvider.ColumnCount%2A>.|  
-|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IGridProvider.GetItem%2A><br /><br /> -   If either of the requested row or column coordinates is less than zero.|  
+|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IGridProvider.GetItem%2A><br /><br /> – Pokud je požadovaná souřadnice řádku větší než <xref:System.Windows.Automation.Provider.IGridProvider.RowCount%2A>, nebo je souřadnice sloupce větší než <xref:System.Windows.Automation.Provider.IGridProvider.ColumnCount%2A>.|  
+|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IGridProvider.GetItem%2A><br /><br /> – Pokud je jedna z požadovaných souřadnic řádku nebo sloupce menší než nula.|  
   
 ## <a name="see-also"></a>Viz také:
 

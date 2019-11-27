@@ -18,23 +18,23 @@ ms.locfileid: "74329583"
 ---
 # <a name="performing-tasks-with-myapplication-mycomputer-and-myuser-visual-basic"></a>Provádění úloh s objekty My.Application, My.Computer a My.User (Visual Basic)
 
-The three central `My` objects that provide access to information and commonly used functionality are `My.Application` (<xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>), `My.Computer` (<xref:Microsoft.VisualBasic.Devices.Computer>), and `My.User` (<xref:Microsoft.VisualBasic.ApplicationServices.User>). You can use these objects to access information that is related to the current application, the computer that the application is installed on, or the current user of the application, respectively.  
+Tři objekty centrálního `My`, které poskytují přístup k informacím a běžně používaným funkcím, jsou `My.Application` (<xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>), `My.Computer` (<xref:Microsoft.VisualBasic.Devices.Computer>) a `My.User` (<xref:Microsoft.VisualBasic.ApplicationServices.User>). Tyto objekty lze použít pro přístup k informacím, které se vztahují k aktuální aplikaci, počítači, na kterém je aplikace nainstalovaná, nebo aktuálnímu uživateli aplikace, v uvedeném pořadí.  
   
-## <a name="myapplication-mycomputer-and-myuser"></a>My.Application, My.Computer, and My.User  
+## <a name="myapplication-mycomputer-and-myuser"></a>My. Application, my. Computer a my. User  
 
- The following examples demonstrate how information can be retrieved using `My`.  
+ Následující příklady ukazují, jak lze informace načíst pomocí `My`.  
   
  [!code-vb[VbVbcnMy#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMy/VB/Class1.vb#1)]  
   
  [!code-vb[VbVbcnMy#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMy/VB/Class1.vb#2)]  
   
- In addition to retrieving information, the members exposed through these three objects also allow you to execute methods related to that object. For instance, you can access a variety of methods to manipulate files or update the registry through `My.Computer`.  
+ Kromě načítání informací umožňují členové vystavené prostřednictvím těchto tří objektů také spouštět metody související s tímto objektem. Můžete například získat přístup k nejrůznějším metodám pro manipulaci se soubory nebo aktualizovat registr prostřednictvím `My.Computer`.  
   
- File I/O is significantly easier and faster with `My`, which includes a variety of methods and properties for manipulating files, directories, and drives. The <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> object allows you to read from large structured files that have delimited or fixed-width fields. This example opens the `TextFieldParser` `reader` and uses it to read from `C:\TestFolder1\test1.txt`.  
+ I/O soubor je u `My`mnohem jednodušší a rychlejší, což zahrnuje různé metody a vlastnosti pro manipulaci se soubory, adresáři a jednotkami. Objekt <xref:Microsoft.VisualBasic.FileIO.TextFieldParser> umožňuje čtení z velkých strukturovaných souborů, které mají pole s oddělovači nebo s pevnou šířkou. Tento příklad otevře `TextFieldParser` `reader` a použije ho ke čtení z `C:\TestFolder1\test1.txt`.  
   
  [!code-vb[VbVbalrTextFieldParser#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTextFieldParser/VB/Class1.vb#23)]  
   
- `My.Application` allows you to change the culture for your application. The following example demonstrates how this method can be called.  
+ `My.Application` umožňuje změnit jazykovou verzi vaší aplikace. Následující příklad ukazuje, jak lze tuto metodu volat.  
   
  [!code-vb[VbVbcnMy#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMy/VB/Class1.vb#3)]  
   

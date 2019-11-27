@@ -1,5 +1,5 @@
 ---
-title: 'How to: Call an Event Handler'
+title: 'Postupy: volání obslužné rutiny události'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Visual Basic code, procedures
@@ -17,41 +17,41 @@ ms.locfileid: "74340418"
 ---
 # <a name="how-to-call-an-event-handler-in-visual-basic"></a>Postupy: Volání obslužné rutiny události (Visual Basic)
 
-An *event* is an action or occurrence — such as a mouse click or a credit limit exceeded — that is recognized by some program component, and for which you can write code to respond. An *event handler* is the code you write to respond to an event.
+*Událost* je akce nebo výskyt – například kliknutí myší nebo překročení limitu úvěru, který je rozpoznáván některými součástmi programu a pro které můžete napsat kód, který bude reagovat. *Obslužná rutina události* je kód, který zapisujete pro reakci na událost.
 
- An event handler in Visual Basic is a `Sub` procedure. However, you do not normally call it the same way as other `Sub` procedures. Instead, you identify the procedure as a handler for the event. You can do this either with a [Handles](../../../language-reference/statements/handles-clause.md) clause and a [WithEvents](../../../language-reference/modifiers/withevents.md) variable, or with an [AddHandler Statement](../../../language-reference/statements/addhandler-statement.md). Using a `Handles` clause is the default way to declare an event handler in Visual Basic. This is the way the event handlers are written by the designers when you program in the integrated development environment (IDE). The `AddHandler` statement is suitable for raising events dynamically at run time.
+ Obslužná rutina události v Visual Basic je `Sub` postup. Nebudete je ale normálně volat stejným způsobem jako jiné `Sub` postupy. Místo toho identifikujete proceduru jako obslužnou rutinu pro událost. To lze provést buď s klauzulí [Handles](../../../language-reference/statements/handles-clause.md) , a s proměnnou [WithEvents](../../../language-reference/modifiers/withevents.md) nebo s [příkazem AddHandler](../../../language-reference/statements/addhandler-statement.md). Použití klauzule `Handles` je výchozí způsob, jak deklarovat obslužnou rutinu události v Visual Basic. Toto je způsob, jakým jsou obslužné rutiny události zapisovány návrháři při programování v integrovaném vývojovém prostředí (IDE). Příkaz `AddHandler` je vhodný pro dynamické vyvolání událostí v době běhu.
 
- When the event occurs, Visual Basic automatically calls the event handler procedure. Any code that has access to the event can cause it to occur by executing a [RaiseEvent Statement](../../../language-reference/statements/raiseevent-statement.md).
+ Když dojde k události, Visual Basic automaticky volá proceduru obslužné rutiny události. Jakýkoli kód, který má přístup k události, může způsobit, že dojde k provedení [příkazu RaiseEvent](../../../language-reference/statements/raiseevent-statement.md).
 
- You can associate more than one event handler with the same event. In some cases you can dissociate a handler from an event. For more information, see [Events](../events/index.md).
+ Ke stejné události můžete přidružit více než jednu obslužnou rutinu události. V některých případech můžete zrušit přidružení obslužné rutiny od události. Další informace najdete v tématu [události](../events/index.md).
 
-### <a name="to-call-an-event-handler-using-handles-and-withevents"></a>To call an event handler using Handles and WithEvents
+### <a name="to-call-an-event-handler-using-handles-and-withevents"></a>Volání obslužné rutiny události pomocí obslužných rutin a WithEvents
 
-1. Make sure the event is declared with an [Event Statement](../../../language-reference/statements/event-statement.md).
+1. Ujistěte se, že je událost deklarovaná pomocí [příkazu Event](../../../language-reference/statements/event-statement.md).
 
-2. Declare an object variable at module or class level, using the [WithEvents](../../../language-reference/modifiers/withevents.md) keyword. The `As` clause for this variable must specify the class that raises the event.
+2. Deklarujte proměnnou objektu na úrovni modulu nebo třídy pomocí klíčového slova [WithEvents](../../../language-reference/modifiers/withevents.md) . Klauzule `As` pro tuto proměnnou musí určovat třídu, která vyvolá událost.
 
-3. In the declaration of the event-handling `Sub` procedure, add a [Handles](../../../language-reference/statements/handles-clause.md) clause that specifies the `WithEvents` variable and the event name.
+3. V deklaraci procedury `Sub` zpracování událostí přidejte klauzuli [Handles](../../../language-reference/statements/handles-clause.md) , která určuje `WithEvents` proměnnou a název události.
 
-4. When the event occurs, Visual Basic automatically calls the `Sub` procedure. Your code can use a `RaiseEvent` statement to make the event occur.
+4. Když dojde k události, Visual Basic automaticky volá proceduru `Sub`. Váš kód může použít příkaz `RaiseEvent` k tomu, aby došlo k události.
 
-     The following example defines an event and a `WithEvents` variable that refers to the class that raises the event. The event-handling `Sub` procedure uses a `Handles` clause to specify the class and event it handles.
+     Následující příklad definuje událost a `WithEvents` proměnnou, která odkazuje na třídu, která vyvolává událost. Procedura `Sub` zpracování událostí používá klauzuli `Handles` k určení třídy a události, kterou zpracovává.
 
      [!code-vb[VbVbcnProcedures#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#4)]
 
-### <a name="to-call-an-event-handler-using-addhandler"></a>To call an event handler using AddHandler
+### <a name="to-call-an-event-handler-using-addhandler"></a>Volání obslužné rutiny události pomocí AddHandler
 
-1. Make sure the event is declared with an `Event` statement.
+1. Ujistěte se, že je událost deklarovaná pomocí příkazu `Event`.
 
-2. Execute an [AddHandler Statement](../../../language-reference/statements/addhandler-statement.md) to dynamically connect the event-handling `Sub` procedure with the event.
+2. Spusťte [příkaz AddHandler](../../../language-reference/statements/addhandler-statement.md) , který dynamicky připojí proceduru zpracování události `Sub` s událostí.
 
-3. When the event occurs, Visual Basic automatically calls the `Sub` procedure. Your code can use a `RaiseEvent` statement to make the event occur.
+3. Když dojde k události, Visual Basic automaticky volá proceduru `Sub`. Váš kód může použít příkaz `RaiseEvent` k tomu, aby došlo k události.
 
-     The following example defines a `Sub` procedure to handle the <xref:System.Windows.Forms.Form.Closing> event of a form. It then uses the [AddHandler Statement](../../../language-reference/statements/addhandler-statement.md) to associate the `catchClose` procedure as an event handler for <xref:System.Windows.Forms.Form.Closing>.
+     Následující příklad definuje `Sub` postup pro zpracování události <xref:System.Windows.Forms.Form.Closing> formuláře. Pak použije [příkaz AddHandler](../../../language-reference/statements/addhandler-statement.md) k přidružení `catchClose` procedury jako obslužné rutiny události pro <xref:System.Windows.Forms.Form.Closing>.
 
      [!code-vb[VbVbcnProcedures#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#5)]
 
-     You can dissociate an event handler from an event by executing the [RemoveHandler Statement](../../../language-reference/statements/removehandler-statement.md).
+     Můžete zrušit přidružení obslužné rutiny události z události spuštěním [příkazu removeHandler](../../../language-reference/statements/removehandler-statement.md).
 
 ## <a name="see-also"></a>Viz také:
 

@@ -13,53 +13,53 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74347463"
 ---
 # <a name="conditional-compilation-in-visual-basic"></a>Podmíněná kompilace v jazyce Visual Basic
-In *conditional compilation*, particular blocks of code in a program are compiled selectively while others are ignored.  
+V *podmíněné kompilaci*jsou konkrétní bloky kódu v programu kompilovány selektivně, zatímco ostatní jsou ignorovány.  
   
- For example, you may want to write debugging statements that compare the speed of different approaches to the same programming task, or you may want to localize an application for multiple languages. Conditional compilation statements are designed to run during compile time, not at run time.  
+ Například můžete chtít napsat příkazy ladění, které porovnávají rychlost různých přístupů ke stejnému programovacímu úkolu, nebo můžete chtít lokalizovat aplikaci pro více jazyků. Příkazy podmíněné kompilace jsou navrženy tak, aby běžely v době kompilace, nikoli v době běhu.  
   
- You denote blocks of code to be conditionally compiled with the `#If...Then...#Else` directive. For example, to create French- and German-language versions of the same application from the same source code, you embed platform-specific code segments in `#If...Then` statements using the predefined constants `FrenchVersion` and `GermanVersion`. The following example demonstrates how:  
+ Všimněte si, že bloky kódu budou podmíněně kompilovány pomocí direktivy `#If...Then...#Else`. Chcete-li například vytvořit francouzsky a německé verze stejné aplikace ze stejného zdrojového kódu, vložte segmenty kódu specifické pro platformu v příkazu `#If...Then` pomocí předdefinovaných konstant `FrenchVersion` a `GermanVersion`. Následující příklad ukazuje, jak:  
   
  [!code-vb[VbVbalrConditionalComp#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrConditionalComp/VB/Class1.vb#5)]  
   
- If you set the value of the `FrenchVersion` conditional compilation constant to `True` at compile time, the conditional code for the French version is compiled. If you set the value of the `GermanVersion` constant to `True`, the compiler uses the German version. If neither is set to `True`, the code in the last `Else` block runs.  
+ Pokud nastavíte hodnotu `FrenchVersion` konstanty podmíněné kompilace na `True` v době kompilace, bude zkompilován podmíněný kód pro francouzskou verzi. Pokud nastavíte hodnotu `GermanVersion` konstanty na `True`, kompilátor použije německou verzi. Pokud není ani nastaveno na `True`, kód v posledním bloku `Else` spuštěn.  
   
 > [!NOTE]
-> Autocompletion will not function when editing code and using conditional compilation directives if the code is not part of the current branch.  
+> Automatického dokončování nebude fungovat při úpravách kódu a použití direktiv podmíněné kompilace, pokud kód není součástí aktuální větve.  
   
-## <a name="declaring-conditional-compilation-constants"></a>Declaring Conditional Compilation Constants  
- You can set conditional compilation constants in one of three ways:  
+## <a name="declaring-conditional-compilation-constants"></a>Deklarace konstant podmíněné kompilace  
+ Můžete nastavit konstanty podmíněné kompilace jedním ze tří způsobů:  
   
-- In the **Project Designer**  
+- V **Návrháři projektu**  
   
-- At the command line when using the command-line compiler  
+- Při použití kompilátoru příkazového řádku na příkazovém řádku  
   
-- In your code  
+- Ve vašem kódu  
   
- Conditional compilation constants have a special scope and cannot be accessed from standard code. The scope of a conditional compilation constant is dependent on the way it is set. The following table lists the scope of constants declared using each of the three ways mentioned above.  
+ Konstanty podmíněné kompilace mají speciální rozsah a nelze k němu přicházet ze standardního kódu. Rozsah podmíněné kompilační konstanty závisí na způsobu, jakým je nastaven. V následující tabulce je uveden rozsah konstant deklarovaných pomocí každého ze tří způsobů uvedených výše.  
   
-|How constant is set|Scope of constant|  
+|Jak je nastavená konstanta|Rozsah konstanty|  
 |---|---|  
-|**Project Designer**|Public to all files in the project|  
-|Příkazový řádek|Public to all files passed to the command-line compiler|  
-|`#Const` statement in code|Private to the file in which it is declared|  
+|**Návrhář projektu**|Veřejné pro všechny soubory v projektu|  
+|Příkazový řádek|Veřejné ke všem souborům předaným kompilátoru příkazového řádku|  
+|`#Const` – příkaz v kódu|Soukromá k souboru, ve kterém je deklarovaný|  
   
-|To set constants in the Project Designer|  
+|Nastavení konstant v Návrháři projektu|  
 |---|  
-|-   Before creating your executable file, set constants in the **Project Designer** by following the steps provided in [Managing Project and Solution Properties](/visualstudio/ide/managing-project-and-solution-properties).|  
+|– Před vytvořením spustitelného souboru nastavte konstanty v **Návrháři projektu** podle kroků uvedených v části [Správa vlastností projektu a řešení](/visualstudio/ide/managing-project-and-solution-properties).|  
   
-|To set constants at the command line|  
+|Nastavení konstant na příkazovém řádku|  
 |---|  
-|-   Use the **-d** switch to enter conditional compilation constants, as in the following example:<br />     `vbc MyProj.vb /d:conFrenchVersion=–1:conANSI=0`<br />     No space is required between the **-d** switch and the first constant. For more information, see [-define (Visual Basic)](../../../visual-basic/reference/command-line-compiler/define.md).<br />     Command-line declarations override declarations entered in the **Project Designer**, but do not erase them. Arguments set in **Project Designer** remain in effect for subsequent compilations.<br />     When writing constants in the code itself, there are no strict rules as to their placement, since their scope is the entire module in which they are declared.|  
+|– Použijte přepínač **-d** k zadání konstant podmíněné kompilace, jako v následujícím příkladu:<br />     `vbc MyProj.vb /d:conFrenchVersion=–1:conANSI=0`<br />     Mezi přepínačem **-d** a první konstantou není nutné žádné místo. Další informace naleznete v tématu [-define (Visual Basic)](../../../visual-basic/reference/command-line-compiler/define.md).<br />     Deklarace příkazového řádku, které jsou popsány v **Návrháři projektu**, však nejsou smazány. Argumenty nastavené v **Návrháři projektu** zůstávají platné pro následné kompilace.<br />     Při psaní konstant v samotném kódu nejsou k dispozici žádná striktní pravidla pro jejich umístění, protože jejich rozsah je celý modul, ve kterém jsou deklarovány.|  
   
-|To set constants in your code|  
+|Nastavení konstant v kódu|  
 |---|  
-|-   Place the constants in the declaration block of the module in which they are used. This helps keep your code organized and easier to read.|  
+|-Vložte konstanty do bloku deklarací modulu, ve kterém jsou použity. To pomáhá zajistit, aby byl kód uspořádán a čitelnější.|  
   
 ## <a name="related-topics"></a>Související témata  
   
 |Název|Popis|  
 |---|---|  
-|[Struktura programu a zásady týkající se kódu](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)|Provides suggestions for making your code easy to read and maintain.|  
+|[Struktura programu a zásady týkající se kódu](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)|Poskytuje návrhy, jak snadno číst a udržovat váš kód.|  
   
 ## <a name="reference"></a>Odkaz  
  [Direktiva #Const](../../../visual-basic/language-reference/directives/const-directive.md)  

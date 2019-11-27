@@ -9,26 +9,26 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353483"
 ---
-# <a name="filtering-data-visual-basic"></a>Filtering Data (Visual Basic)
+# <a name="filtering-data-visual-basic"></a>Filtrování dat (Visual Basic)
 
-Filtering refers to the operation of restricting the result set to contain only those elements that satisfy a specified condition. It is also known as selection.
+Filtrování odkazuje na operaci omezení sady výsledků tak, aby obsahovala pouze prvky, které odpovídají zadané podmínce. Označuje se také jako výběr.
 
-The following illustration shows the results of filtering a sequence of characters. The predicate for the filtering operation specifies that the character must be 'A'.
+Následující ilustrace znázorňuje výsledky filtrování posloupnosti znaků. Predikát pro operaci filtrování určuje, že znak musí být "A".
 
-![Diagram that shows a LINQ filtering operation](./media/filtering-data/linq-filter-operation.png)
+![Diagram, který znázorňuje operaci filtrování LINQ](./media/filtering-data/linq-filter-operation.png)
 
-The standard query operator methods that perform selection are listed in the following section.
+Standardní metody operátoru dotazu, které provádějí výběr, jsou uvedeny v následující části.
 
 ## <a name="methods"></a>Metody
 
-|Method Name|Popis|Visual Basic Query Expression Syntax|Další informace|
+|Název metody|Popis|Visual Basic syntaxe výrazu dotazu|Další informace|
 |-----------------|-----------------|------------------------------------------|----------------------|
-|OfType|Selects values, depending on their ability to be cast to a specified type.|Nelze použít.|<xref:System.Linq.Enumerable.OfType%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.OfType%2A?displayProperty=nameWithType>|
-|Where|Selects values that are based on a predicate function.|`Where`|<xref:System.Linq.Enumerable.Where%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Where%2A?displayProperty=nameWithType>|
+|Only|Vybere hodnoty v závislosti na jejich schopnosti je přetypovat na zadaný typ.|Není k dispozici.|<xref:System.Linq.Enumerable.OfType%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.OfType%2A?displayProperty=nameWithType>|
+|Where|Vybere hodnoty, které jsou založeny na funkci predikátu.|`Where`|<xref:System.Linq.Enumerable.Where%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Where%2A?displayProperty=nameWithType>|
 
-## <a name="query-expression-syntax-example"></a>Query Expression Syntax Example
+## <a name="query-expression-syntax-example"></a>Příklad syntaxe výrazu dotazu
 
-The following example uses the `Where` to filter from an array those strings that have a specific length.
+Následující příklad používá `Where` k filtrování z pole, která mají určitou délku.
 
 ```vb
 Dim words() As String = {"the", "quick", "brown", "fox", "jumps"}
@@ -54,9 +54,9 @@ MsgBox(sb.ToString())
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Linq>
-- [Standard Query Operators Overview (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
+- [Přehled standardních operátorů dotazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [Klauzule Where](../../../../visual-basic/language-reference/queries/where-clause.md)
-- [How to: Filter Query Results](../../../../visual-basic/programming-guide/language-features/linq/how-to-filter-query-results-by-using-linq.md)
-- [How to: Query An Assembly's Metadata with Reflection (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-an-assembly-s-metadata-with-reflection-linq.md)
-- [How to: Query for Files with a Specified Attribute or Name (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-files-with-a-specified-attribute-or-name.md)
-- [How to: Sort or Filter Text Data by Any Word or Field (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)
+- [Postupy: filtrování výsledků dotazu](../../../../visual-basic/programming-guide/language-features/linq/how-to-filter-query-results-by-using-linq.md)
+- [Postupy: vytvoření dotazu na metadata sestavení s reflexí (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-an-assembly-s-metadata-with-reflection-linq.md)
+- [Postupy: dotazování na soubory se zadaným atributem nebo názvem (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-files-with-a-specified-attribute-or-name.md)
+- [Postupy: řazení nebo filtrování textových dat podle libovolného slova nebo pole (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)

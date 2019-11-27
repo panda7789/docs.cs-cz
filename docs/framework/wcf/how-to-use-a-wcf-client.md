@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Use a Windows Communication Foundation client'
+title: 'Kurz: použití klienta Windows Communication Foundation'
 ms.date: 03/19/2019
 helpviewer_keywords:
 - WCF clients [WCF], using
@@ -14,27 +14,27 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346773"
 ---
-# <a name="tutorial-use-a-windows-communication-foundation-client"></a>Tutorial: Use a Windows Communication Foundation client
+# <a name="tutorial-use-a-windows-communication-foundation-client"></a>Kurz: použití klienta Windows Communication Foundation
 
-This tutorial describes the last of five tasks required to create a basic Windows Communication Foundation (WCF) application. For an overview of the tutorials, see [Tutorial: Get started with Windows Communication Foundation applications](getting-started-tutorial.md).
+Tento kurz popisuje posledních pět úloh potřebných k vytvoření aplikace Basic Windows Communication Foundation (WCF). Přehled kurzů najdete v tématu [kurz: Začínáme s Windows Communication Foundation aplikacemi](getting-started-tutorial.md).
 
-After you've created and configured a Windows Communication Foundation (WCF) proxy, you create a client instance and compile the client application. You then use it to communicate with the WCF service. 
+Poté, co vytvoříte a nakonfigurujete proxy server Windows Communication Foundation (WCF), vytvoříte instanci klienta a zkompilujete klientskou aplikaci. Pak ho použijete ke komunikaci se službou WCF. 
 
 V tomto kurzu se naučíte:
 > [!div class="checklist"]
 >
-> - Add code to use the WCF client.
-> - Test the WCF client.
+> - Přidejte kód pro použití klienta WCF.
+> - Otestujte klienta WCF.
 
-## <a name="add-code-to-use-the-wcf-client"></a>Add code to use the WCF client
+## <a name="add-code-to-use-the-wcf-client"></a>Přidání kódu pro použití klienta WCF
 
-The client code does the following steps:
+Klientský kód provede následující kroky:
 
-- Instantiates the WCF client.
-- Calls the service operations from the generated proxy.
-- Closes the client after the operation call is completed.
+- Vytvoří instanci klienta WCF.
+- Zavolá operace služby z vygenerovaného proxy serveru.
+- Ukončí klienta po dokončení volání operace.
 
-Open the **Program.cs** or **Module1.vb** file from the **GettingStartedClient** project and replace its code with the following code:
+Otevřete soubor **program.cs** nebo **Module1. vb** z projektu **GettingStartedClient** a nahraďte jeho kód následujícím kódem:
 
 ```csharp
 using System;
@@ -134,27 +134,27 @@ Module Module1
 End Module
 ```
 
-Notice the `using` (for Visual C#) or `Imports` (for Visual Basic) statement that imports `GettingStartedClient.ServiceReference1`. This statement imports the code that Visual Studio generated with the **Add Service Reference** function. The code instantiates the WCF proxy and calls each of the service operations that the calculator service exposes. It then closes the proxy and ends the program.
+Všimněte si `using` příkazu (for C#Visual) nebo `Imports` (pro Visual Basic), který importuje `GettingStartedClient.ServiceReference1`. Tento příkaz importuje kód, který aplikace Visual Studio vygenerovala pomocí funkce **Přidat odkaz na službu** . Kód vytvoří instanci proxy serveru WCF a zavolá každou operaci služby, kterou služba kalkulačky zpřístupňuje. Pak zavře proxy a ukončí program.
 
-## <a name="test-the-wcf-client"></a>Test the WCF client
+## <a name="test-the-wcf-client"></a>Testování klienta WCF
 
-### <a name="test-the-application-from-visual-studio"></a>Test the application from Visual Studio
+### <a name="test-the-application-from-visual-studio"></a>Testování aplikace ze sady Visual Studio
 
-1. Save and build the solution.
+1. Uložte a sestavte řešení.
 
-2. Select the **GettingStartedLib** folder, and then select **Set as Startup Project** from the shortcut menu.
+2. Vyberte složku **GettingStartedLib** a pak v místní nabídce vyberte **nastavit jako spouštěný projekt** .
 
-3. From **Startup Projects**, select **GettingStartedLib** from the drop-down list, then select **Run** or press **F5**.
+3. Z nabídky **projekty po spuštění**vyberte v rozevíracím seznamu položku **GettingStartedLib** a pak vyberte **Spustit** nebo stiskněte klávesu **F5**.
 
-### <a name="test-the-application-from-a-command-prompt"></a>Test the application from a command prompt
+### <a name="test-the-application-from-a-command-prompt"></a>Otestování aplikace z příkazového řádku
 
-1. Open a command prompt as an administrator, and then navigate to your Visual Studio solution directory. 
+1. Otevřete příkazový řádek jako správce a pak přejděte do adresáře řešení Visual Studio. 
 
-2. To start the service: Enter *GettingStartedHost\bin\Debug\GettingStartedHost.exe*.
+2. Spuštění služby: zadejte *GettingStartedHost\bin\Debug\GettingStartedHost.exe*.
 
-3. To start the client: Open another command prompt, navigate to your Visual Studio solution directory, then enter *GettingStartedClient\bin\Debug\GettingStartedClient.exe*.
+3. Spuštění klienta: otevřete další příkazový řádek, přejděte do adresáře řešení Visual Studio a pak zadejte *GettingStartedClient\bin\Debug\GettingStartedClient.exe*.
 
-   *GettingStartedHost.exe* produces the following output:
+   *GettingStartedHost. exe* vytvoří následující výstup:
 
    ```text
    The service is ready.
@@ -170,7 +170,7 @@ Notice the `using` (for Visual C#) or `Imports` (for Visual Basic) statement tha
    Return: 3.14285714285714
    ```
 
-   *GettingStartedClient.exe* produces the following output:
+   *GettingStartedClient. exe* vytvoří následující výstup:
 
    ```text
    Add(100,15.99) = 115.99
@@ -183,15 +183,15 @@ Notice the `using` (for Visual C#) or `Imports` (for Visual Basic) statement tha
 
 ## <a name="next-steps"></a>Další kroky
 
-You've now completed all the tasks in the WCF get started tutorial. In this tutorial, you learned how to:
+Nyní jste dokončili všechny úkoly v kurzu Začínáme WCF. V tomto kurzu jste se naučili:
 
 V tomto kurzu se naučíte:
 > [!div class="checklist"]
 >
-> - Add code to use the WCF client.
-> - Test the WCF client.
+> - Přidejte kód pro použití klienta WCF.
+> - Otestujte klienta WCF.
 
-If you have problems or errors in any of the steps, follow the steps in the troubleshooting article to fix them.
+Pokud máte v některém z kroků problémy nebo chyby, opravte je podle kroků v článku věnovaném řešení potíží.
 
 > [!div class="nextstepaction"]
-> [Troubleshoot the Get started with WCF tutorials](troubleshooting-the-getting-started-tutorial.md)
+> [Řešení potíží s kurzy Začínáme s WCF](troubleshooting-the-getting-started-tutorial.md)

@@ -1,5 +1,5 @@
 ---
-title: 'How to: Modify an Office Open XML Document'
+title: 'Postupy: Změna dokumentu Office Open XML'
 ms.date: 07/20/2015
 ms.assetid: 1cefd7f5-8e39-44c4-869c-f8021538a777
 ms.openlocfilehash: 623376a68ee2f032fb53d51b61c4c5881b0b9e18
@@ -9,15 +9,15 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74336016"
 ---
-# <a name="how-to-modify-an-office-open-xml-document-visual-basic"></a>How to: Modify an Office Open XML Document (Visual Basic)
-This topic presents an example that opens an Office Open XML document, modifies it, and saves it.  
+# <a name="how-to-modify-an-office-open-xml-document-visual-basic"></a>Postupy: Úprava dokumentu Office Open XML (Visual Basic)
+Toto téma představuje příklad, který otevře dokument Office Open XML, upraví ho a uloží ho.  
   
- For more information on Office Open XML, see [Eric White's Blog](http://www.ericwhite.com).  
+ Další informace o Office Open XML najdete v tématu [Eric White blog](http://www.ericwhite.com).  
   
 ## <a name="example"></a>Příklad  
- This example finds the first paragraph element in the document. It retrieves the text from the paragraph, and then deletes all text runs in the paragraph. It creates a new text run that consists of the first paragraph text that has been converted to upper case. It then serializes the changed XML into the Open XML package and closes it.  
+ Tento příklad vyhledá první element odstavce v dokumentu. Načte text z odstavce a pak odstraní veškerý text, který je v odstavci spuštěn. Vytvoří nový běh textu, který se skládá z textu prvního odstavce, který byl převeden na velká písmena. Poté rozbalí změněné XML do otevřeného balíčku XML a zavře ho.  
   
- This example uses classes found in the WindowsBase assembly. It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.  
+ Tento příklad používá třídy nalezené v sestavení WindowsBase. Používá typy v oboru názvů <xref:System.IO.Packaging?displayProperty=nameWithType>.  
   
 ```vb  
 Imports <xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">  
@@ -135,9 +135,9 @@ Module Module1
 End Module  
 ```  
   
- If you open `SampleDoc.docx` after running this program, you can see that this program converted the first paragraph in the document to upper case.  
+ Pokud po spuštění tohoto programu otevřete `SampleDoc.docx`, vidíte, že tento program převedl první odstavec v dokumentu na velká písmena.  
   
- When run with the sample Open XML document described in [Creating the Source Office Open XML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md), this example produces the following output:  
+ Když spustíte s ukázkovým dokumentem Open XML popsaným v [tématu vytvoření zdrojového dokumentu XML pro Office (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md), tento příklad vytvoří následující výstup:  
   
 ```console  
 New first paragraph: >PARSING WORDPROCESSINGML WITH LINQ TO XML<  
@@ -145,4 +145,4 @@ New first paragraph: >PARSING WORDPROCESSINGML WITH LINQ TO XML<
   
 ## <a name="see-also"></a>Viz také:
 
-- [Advanced Query Techniques (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+- [Pokročilé techniky dotazů (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

@@ -9,13 +9,13 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74347711"
 ---
-# <a name="how-to-query-for-characters-in-a-string-linq-visual-basic"></a>How to: Query for Characters in a String (LINQ) (Visual Basic)
+# <a name="how-to-query-for-characters-in-a-string-linq-visual-basic"></a>Postupy: dotaz na znaky v řetězci (LINQ) (Visual Basic)
 
-Because the <xref:System.String> class implements the generic <xref:System.Collections.Generic.IEnumerable%601> interface, any string can be queried as a sequence of characters. However, this is not a common use of LINQ. For complex pattern matching operations, use the <xref:System.Text.RegularExpressions.Regex> class.
+Vzhledem k tomu, že třída <xref:System.String> implementuje obecné rozhraní <xref:System.Collections.Generic.IEnumerable%601>, může být libovolný řetězec dotazován jako posloupnost znaků. Nejedná se však o běžné použití LINQ. Pro komplexní operace porovnávání vzorů použijte třídu <xref:System.Text.RegularExpressions.Regex>.
 
 ## <a name="example"></a>Příklad
 
-The following example queries a string to determine the number of numeric digits it contains. Note that the query is "reused" after it is executed the first time. This is possible because the query itself does not store any actual results.
+Následující příklad vyhledá řetězec, který určí počet číslic, které obsahuje. Všimněte si, že po prvním spuštění dotazu je dotaz znovu použit. To je možné, protože samotný dotaz neukládá žádné skutečné výsledky.
 
 ```vb
 Class QueryAString
@@ -58,9 +58,9 @@ End Class
 
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu
 
-Create a VB.NET console application project, with an `Imports` statement for the System.Linq namespace.
+Vytvořte projekt konzolové aplikace VB.NET s příkazem `Imports` pro obor názvů System. Linq.
 
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ and Strings (Visual Basic)](linq-and-strings.md)
-- [How to combine LINQ queries with regular expressions (Visual Basic)](how-to-combine-linq-queries-with-regular-expressions.md)
+- [LINQ a řetězce (Visual Basic)](linq-and-strings.md)
+- [Jak kombinovat dotazy LINQ s regulárními výrazy (Visual Basic)](how-to-combine-linq-queries-with-regular-expressions.md)

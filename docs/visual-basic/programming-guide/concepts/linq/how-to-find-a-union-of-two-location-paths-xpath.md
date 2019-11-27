@@ -1,5 +1,5 @@
 ---
-title: 'How to: Find a Union of Two Location Paths (XPath-LINQ to XML)'
+title: 'Postupy: Vyhledání sjednocení dvou cest umístění (XPath-LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: c82c09b4-cb0a-47ec-8cc3-a124144c2788
 ms.openlocfilehash: db9ba3f66bfa8643738203ec05a106bab4193fda
@@ -9,19 +9,19 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352988"
 ---
-# <a name="how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml-visual-basic"></a>How to: Find a Union of Two Location Paths (XPath-LINQ to XML) (Visual Basic)
-XPath allows you to find the union of the results of two XPath location paths.  
+# <a name="how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml-visual-basic"></a>Postupy: Vyhledání sjednocení dvou cest umístění (XPath-LINQ to XML) (Visual Basic)
+XPath umožňuje najít sjednocení výsledků dvou cest umístění XPath.  
   
- The XPath expression is:  
+ Výraz XPath je:  
   
  `//Category|//Price`  
   
- You can achieve the same results by using the <xref:System.Linq.Enumerable.Concat%2A> standard query operator.  
+ Stejné výsledky můžete dosáhnout pomocí operátoru dotazu <xref:System.Linq.Enumerable.Concat%2A> Standard.  
   
 ## <a name="example"></a>Příklad  
- This example finds all of the `Category` elements and all of the `Price` elements, and concatenates them into a single collection. Note that the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] query calls <xref:System.Xml.Linq.Extensions.InDocumentOrder%2A> to order the results. The results of the XPath expression evaluation are also in document order.  
+ V tomto příkladu jsou vyhledány všechny prvky `Category` a všechny `Price` prvky a zřetězeny do jedné kolekce. Všimněte si, že dotaz [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] volá <xref:System.Xml.Linq.Extensions.InDocumentOrder%2A> k seřazení výsledků. Výsledky vyhodnocení výrazu XPath jsou také v pořadí dokumentů.  
   
- This example uses the following XML document: [Sample XML File: Numerical Data (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: numerická data (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).  
   
 ```vb  
 Dim data As XDocument = XDocument.Load("Data.xml")  
@@ -45,7 +45,7 @@ For Each el As XElement In list1
 Next  
 ```  
   
- This example produces the following output:  
+ Tento příklad vytvoří následující výstup:  
   
 ```console
 Results are identical  
@@ -67,4 +67,4 @@ Results are identical
   
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ to XML for XPath Users (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML pro uživatele XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

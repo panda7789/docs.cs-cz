@@ -25,7 +25,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74347121"
 ---
 # <a name="-operator-visual-basic"></a>\ – operátor (Visual Basic)
-Divides two numbers and returns an integer result.  
+Vydělí dvě čísla a vrátí celočíselný výsledek.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,45 +35,45 @@ expression1 \ expression2
   
 ## <a name="parts"></a>Součásti  
  `expression1`  
- Požadováno. Any numeric expression.  
+ Požadováno. Libovolný číselný výraz.  
   
  `expression2`  
- Požadováno. Any numeric expression.  
+ Požadováno. Libovolný číselný výraz.  
   
-## <a name="supported-types"></a>Supported Types  
- All numeric types, including the unsigned and floating-point types and `Decimal`.  
+## <a name="supported-types"></a>Podporované typy  
+ Všechny číselné typy, včetně nepodepsaných typů a typů s plovoucí desetinnou čárkou a `Decimal`.  
   
 ## <a name="result"></a>Výsledek  
- The result is the integer quotient of `expression1` divided by `expression2`, which discards any remainder and retains only the integer portion. This is known as *truncation*.  
+ Výsledkem je celočíselná hodnota `expression1` dělená `expression2`, která zahodí všechny zbývající a uchová pouze celočíselnou část. Toto se říká *zkrácení*.  
   
- The result data type is a numeric type appropriate for the data types of `expression1` and `expression2`. See the "Integer Arithmetic" tables in [Data Types of Operator Results](../../../visual-basic/language-reference/operators/data-types-of-operator-results.md).  
+ Výsledný datový typ je číselný typ, který je vhodný pro datové typy `expression1` a `expression2`. Podívejte se na tabulky "celočíselné aritmetické" v [datových typech výsledků operátoru](../../../visual-basic/language-reference/operators/data-types-of-operator-results.md).  
   
- The [/ Operator (Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-operator.md) returns the full quotient, which retains the remainder in the fractional portion.  
+ [Operátor/(Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-operator.md) vrátí úplný podíl, který zachová zbytek ve zlomkové části.  
   
 ## <a name="remarks"></a>Poznámky  
- Before performing the division, Visual Basic attempts to convert any floating-point numeric expression to `Long`. If `Option Strict` is `On`, a compiler error occurs. If `Option Strict` is `Off`, an <xref:System.OverflowException> is possible if the value is outside the range of the [Long Data Type](../../../visual-basic/language-reference/data-types/long-data-type.md). The conversion to `Long` is also subject to *banker's rounding*. For more information, see "Fractional Parts" in [Type Conversion Functions](../../../visual-basic/language-reference/functions/type-conversion-functions.md).  
+ Před provedením dělení Visual Basic pokusí převést libovolný číselný výraz s plovoucí desetinnou čárkou na `Long`. Pokud je `Option Strict` `On`, dojde k chybě kompilátoru. Pokud je `Option Strict` `Off`, <xref:System.OverflowException> je možné, pokud je hodnota mimo rozsah [dlouhého datového typu](../../../visual-basic/language-reference/data-types/long-data-type.md). Převod na `Long` je také předmětem *zaokrouhlování bank*. Další informace naleznete v části "zlomkové části" v tématu [funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md).  
   
- If `expression1` or `expression2` evaluates to [Nothing](../../../visual-basic/language-reference/nothing.md), it is treated as zero.  
+ Pokud se `expression1` nebo `expression2` vyhodnotí jako [Nothing](../../../visual-basic/language-reference/nothing.md), bude se jednat o nulu.  
   
-## <a name="attempted-division-by-zero"></a>Attempted Division by Zero  
- If `expression2` evaluates to zero, the `\` operator throws a <xref:System.DivideByZeroException> exception. This is true for all numeric data types of the operands.  
+## <a name="attempted-division-by-zero"></a>Došlo k pokusu o dělení nulou.  
+ Pokud `expression2` vyhodnotí jako nula, operátor `\` vyvolá výjimku <xref:System.DivideByZeroException>. To platí pro všechny číselné datové typy operandů.  
   
 > [!NOTE]
-> The `\` operator can be *overloaded*, which means that a class or structure can redefine its behavior when an operand has the type of that class or structure. If your code uses this operator on such a class or structure, be sure you understand its redefined behavior. For more information, see [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+> Operátor `\` lze přetížit, což znamená, že třída nebo struktura může předefinovat své *chování, pokud*má operand typ této třídy nebo struktury. Pokud váš kód používá tento operátor na takové třídě nebo struktuře, ujistěte se, že rozumíte jeho předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Příklad  
- The following example uses the `\` operator to perform integer division. The result is an integer that represents the integer quotient of the two operands, with the remainder discarded.  
+ Následující příklad používá operátor `\` k provedení dělení celého čísla. Výsledkem je celé číslo, které představuje celočíselný podíl dvou operandů a zbytek byl zahozen.  
   
  [!code-vb[VbVbalrOperators#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#18)]  
   
- The expressions in the preceding example return values of 2, 3, 33, and -22, respectively.  
+ Výrazy v předchozím příkladu vrací hodnoty 2, 3, 33 a-22 v uvedeném pořadí.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [\\= Operator](../../../visual-basic/language-reference/operators/integer-division-assignment-operator.md)
-- [/ Operator (Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-operator.md)
+- [\\= – operátor](../../../visual-basic/language-reference/operators/integer-division-assignment-operator.md)
+- [/– Operátor (Visual Basic)](../../../visual-basic/language-reference/operators/floating-point-division-operator.md)
 - [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)
 - [Aritmetické operátory](../../../visual-basic/language-reference/operators/arithmetic-operators.md)
-- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Priorita operátorů v Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
-- [Arithmetic Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
+- [Aritmetické operátory v Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)

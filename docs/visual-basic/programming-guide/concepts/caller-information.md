@@ -9,19 +9,19 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349478"
 ---
-# <a name="caller-information-visual-basic"></a>Caller Information (Visual Basic)
+# <a name="caller-information-visual-basic"></a>Informace o volajícím (Visual Basic)
 Pomocí atributů Informace o volajícím můžete získat informace o volajícím metody. Můžete získat cestu k souboru zdrojového kódu, číslo řádku ve zdrojovém kódu a název členu volajícího. Tyto informace jsou užitečné pro trasování, ladění a vytváření diagnostických nástrojů.  
   
- Pro získání těchto informací můžete použít atributy, které jsou použity na volitelné parametry, z nichž každý má výchozí hodnotu. The following table lists the Caller Info attributes that are defined in the <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> namespace:  
+ Pro získání těchto informací můžete použít atributy, které jsou použity na volitelné parametry, z nichž každý má výchozí hodnotu. V následující tabulce jsou uvedeny atributy informací o volajícím, které jsou definovány v oboru názvů <xref:System.Runtime.CompilerServices?displayProperty=nameWithType>:  
   
 |Atribut|Popis|Typ|  
 |---|---|---|  
 |<xref:System.Runtime.CompilerServices.CallerFilePathAttribute>|Úplná cesta zdrojového souboru, který obsahuje volajícího. Toto je cesta k souboru v době kompilace.|`String`|  
 |<xref:System.Runtime.CompilerServices.CallerLineNumberAttribute>|Číslo řádku ve zdrojovém souboru, ve kterém je volána metoda.|`Integer`|  
-|<xref:System.Runtime.CompilerServices.CallerMemberNameAttribute>|Název metody nebo vlastnosti volajícího. See [Member Names](#MEMBERNAMES) later in this topic.|`String`|  
+|<xref:System.Runtime.CompilerServices.CallerMemberNameAttribute>|Název metody nebo vlastnosti volajícího. Viz [názvy členů](#MEMBERNAMES) dále v tomto tématu.|`String`|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje způsob použití atributů Informace o volajícím. On each call to the `TraceMessage` method, the caller information is substituted as arguments to the optional parameters.  
+ Následující příklad ukazuje způsob použití atributů Informace o volajícím. Při každém volání metody `TraceMessage` jsou informace o volajícím nahrazeny jako argumenty nepovinných parametrů.  
   
 ```vb  
 Private Sub DoProcessing()  
@@ -51,18 +51,18 @@ End Sub
   
  Atributy Informace o volajícím neučiní parametr volitelným. Místo toho mají vliv na výchozí hodnotu, která je předána, pokud je argument vynechán.  
   
- Hodnoty atributů Informace o volajícím jsou emitovány jako literály do jazyka Intermediate Language (IL) v době kompilace. Unlike the results of the <xref:System.Exception.StackTrace%2A> property for exceptions, the results aren't affected by obfuscation.  
+ Hodnoty atributů Informace o volajícím jsou emitovány jako literály do jazyka Intermediate Language (IL) v době kompilace. Na rozdíl od výsledků vlastnosti <xref:System.Exception.StackTrace%2A> pro výjimky nejsou výsledky ovlivněny zmatením.  
   
  Volitelné argumenty můžete explicitně zadat, chcete-li řídit nebo skrýt informace o volajícím.  
   
-### <a name="MEMBERNAMES"></a> Member Names  
- You can use the `CallerMemberName` attribute to avoid specifying the member name as a `String` argument to the called method. By using this technique, you avoid the problem that **Rename Refactoring** doesn't change the `String` values. Tato výhoda se hodí zvláště v těchto úlohách:  
+### <a name="MEMBERNAMES"></a>Názvy členů  
+ Atribut `CallerMemberName` lze použít k zamezení zadání názvu člena jako `String` argumentu volané metody. Pomocí této techniky se vyhnete problému s tím, že **Refaktoring přejmenování** nemění hodnoty `String`. Tato výhoda se hodí zvláště v těchto úlohách:  
   
 - Použití trasování a diagnostických rutin.  
   
-- Implementing the <xref:System.ComponentModel.INotifyPropertyChanged> interface when binding data. Toto rozhraní umožňuje vlastnosti objektu oznámit vázanému ovládacímu prvku, že došlo ke změně vlastnosti, aby ovládací prvek mohl zobrazit aktualizované informace. Without the `CallerMemberName` attribute, you must specify the property name as a literal.  
+- Implementace rozhraní <xref:System.ComponentModel.INotifyPropertyChanged> při vázání dat Toto rozhraní umožňuje vlastnosti objektu oznámit vázanému ovládacímu prvku, že došlo ke změně vlastnosti, aby ovládací prvek mohl zobrazit aktualizované informace. Bez atributu `CallerMemberName` musíte zadat název vlastnosti jako literál.  
   
- The following chart shows the member names that are returned when you use the `CallerMemberName` attribute.  
+ Následující graf znázorňuje názvy členů, které jsou vráceny při použití atributu `CallerMemberName`.  
   
 |K volání dochází v rámci|Výsledek názvu členu|  
 |-------------------------|------------------------|  
@@ -76,7 +76,7 @@ End Sub
   
 ## <a name="see-also"></a>Viz také:
 
-- [Attributes (Visual Basic)](../../../visual-basic/language-reference/attributes.md)
-- [Common Attributes (Visual Basic)](../../../visual-basic/programming-guide/concepts/attributes/common-attributes.md)
+- [Atributy (Visual Basic)](../../../visual-basic/language-reference/attributes.md)
+- [Společné atributy (Visual Basic)](../../../visual-basic/programming-guide/concepts/attributes/common-attributes.md)
 - [Nepovinné parametry](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)
-- [Programming Concepts (Visual Basic)](../../../visual-basic/programming-guide/concepts/index.md)
+- [Koncepty programování (Visual Basic)](../../../visual-basic/programming-guide/concepts/index.md)

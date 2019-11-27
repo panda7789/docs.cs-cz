@@ -15,20 +15,20 @@ ms.locfileid: "74347399"
 ---
 # <a name="how-to-collapse-and-hide-sections-of-code-visual-basic"></a>Postupy: Sbalení a skrytí sekcí kódu (Visual Basic)
 
-The `#Region` directive enables you to collapse and hide sections of code in Visual Basic files. The `#Region` directive lets you specify a block of code that you can expand or collapse when using the Visual Studio code editor. The ability to hide code selectively makes your files more manageable and easier to read. For more information, see [Outlining](/visualstudio/ide/outlining).
+Direktiva `#Region` umožňuje sbalit a skrýt části kódu v souborech Visual Basic. Direktiva `#Region` umožňuje zadat blok kódu, který lze rozbalit nebo sbalit při použití editoru kódu sady Visual Studio. Možnost selektivně skrývat kód usnadňuje správu a snazší čtení souborů. Další informace najdete v tématu [popisujícím sbalení](/visualstudio/ide/outlining).
 
-`#Region` directives support code block semantics such as `#If...#End If`. This means they cannot begin in one block and end in another; the start and end must be in the same block. `#Region` directives are not supported within functions.
+direktivy `#Region` podporují sémantiku bloků kódu, jako je například `#If...#End If`. To znamená, že nemohou začít v jednom bloku a končit jiným. počátek a konec musí být ve stejném bloku. direktivy `#Region` nejsou v rámci funkcí podporovány.
 
-## <a name="to-collapse-and-hide-a-section-of-code"></a>To collapse and hide a section of code
+## <a name="to-collapse-and-hide-a-section-of-code"></a>Sbalení a skrytí oddílu kódu
 
-Place the section of code between the `#Region` and `#End Region` statements, as in the following example:
+Umístěte část kódu mezi příkazy `#Region` a `#End Region`, jako v následujícím příkladu:
 
 [!code-vb[VbVbalrConditionalComp#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrConditionalComp/VB/Class1.vb#6)]
 
-The `#Region` block can be used multiple times in a code file; thus, users can define their own blocks of procedures and classes that can, in turn, be collapsed. `#Region` blocks can also be nested within other `#Region` blocks.
+Blok `#Region` lze použít několikrát v souboru kódu; Uživatelé tak mohou definovat vlastní bloky procedur a tříd, které mohou být následně sbaleny. bloky `#Region` lze také vnořit do jiných `#Region` bloků.
 
 > [!NOTE]
-> Hiding code does not prevent it from being compiled and does not affect `#If...#End If` statements.
+> Skrývání kódu nebrání jeho kompilování a nemá vliv na `#If...#End If` příkazy.
 
 ## <a name="see-also"></a>Viz také:
 

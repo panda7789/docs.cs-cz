@@ -1,5 +1,5 @@
 ---
-title: For loop not initialized
+title: Smyčka for nebyla inicializována
 ms.date: 07/20/2015
 f1_keywords:
 - vbrID92
@@ -11,12 +11,12 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348445"
 ---
-# <a name="for-loop-not-initialized-visual-basic"></a>For loop not initialized (Visual Basic)
-You jumped into the middle of a `For...Next` loop.  
+# <a name="for-loop-not-initialized-visual-basic"></a>Smyčka for nebyla inicializována (Visual Basic)
+Přešli jste do středu `For...Next` smyčky.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Remove the jump into the loop.  
+1. Odebere skok do smyčky.  
   
 ## <a name="see-also"></a>Viz také:
 

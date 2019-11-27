@@ -16,51 +16,51 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74340558"
 ---
 # <a name="how-to-call-a-property-procedure-visual-basic"></a>Postupy: Volání procedury vlastnosti (Visual Basic)
-You call a property procedure by storing a value in the property or retrieving its value. You access a property the same way you access a variable.  
+Proceduru vlastnosti zavoláte uložením hodnoty do vlastnosti nebo načtením její hodnoty. K vlastnosti přistupujete stejným způsobem jako při přístupu k proměnné.  
   
- The property's `Set` procedure stores a value, and its `Get` procedure retrieves the value. However, you do not explicitly call these procedures by name. You use the property in an assignment statement or an expression, just as you would store or retrieve the value of a variable. Visual Basic makes the calls to the property's procedures.  
+ Procedura `Set` vlastnosti ukládá hodnotu a její `Get` procedura načítá hodnotu. Nevolejte ale explicitně tyto procedury podle názvu. Vlastnost použijete v příkazu přiřazení nebo výrazu stejně, jako byste ukládali nebo načetli hodnotu proměnné. Visual Basic provede volání procedur vlastností.  
   
-### <a name="to-call-a-propertys-get-procedure"></a>To call a property's Get procedure  
+### <a name="to-call-a-propertys-get-procedure"></a>Volání procedury Get vlastnosti  
   
-1. Use the property name in an expression the same way you would use a variable name. You can use a property anywhere you can use a variable or a constant.  
+1. Použijte název vlastnosti ve výrazu stejným způsobem, jako byste použili název proměnné. Vlastnost můžete použít všude, kde můžete použít proměnnou nebo konstantu.  
   
      -nebo-  
   
-     Use the property name following the equal (`=`) sign in an assignment statement.  
+     Použijte název vlastnosti za znaménkem rovnosti (`=`) v příkazu přiřazení.  
   
-     The following example reads the value of the <xref:Microsoft.VisualBasic.DateAndTime.Now%2A> property, implicitly calling its `Get` procedure.  
+     Následující příklad přečte hodnotu vlastnosti <xref:Microsoft.VisualBasic.DateAndTime.Now%2A> implicitně volá její `Get` proceduru.  
   
      [!code-vb[VbVbalrDateProperties#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDateProperties/VB/Module1.vb#4)]  
   
-2. If the property takes arguments, follow the property name with parentheses to enclose the argument list. If there are no arguments, you can optionally omit the parentheses.  
+2. Pokud vlastnost přebírá argumenty, uveďte seznam argumentů tak, že postupujete podle názvu vlastnosti s závorkami. Pokud neexistují žádné argumenty, můžete volitelně vynechat závorky.  
   
-3. Place the arguments in the argument list within the parentheses, separated by commas. Be sure you supply the arguments in the same order that the property defines the corresponding parameters.  
+3. Argumenty umístěte do seznamu argumentů v závorkách a oddělte je čárkami. Ujistěte se, že jste zadali argumenty ve stejném pořadí, v jakém vlastnost definuje odpovídající parametry.  
   
- The value of the property participates in the expression just as a variable or constant would, or it is stored in the variable or property on the left side of the assignment statement.  
+ Hodnota vlastnosti se účastní ve výrazu stejně jako proměnná nebo konstanta nebo je uložena v proměnné nebo vlastnosti na levé straně příkazu přiřazení.  
   
-### <a name="to-call-a-propertys-set-procedure"></a>To call a property's Set procedure  
+### <a name="to-call-a-propertys-set-procedure"></a>Volání procedury set vlastnosti  
   
-1. Use the property name on the left side of an assignment statement.  
+1. Použijte název vlastnosti na levé straně příkazu přiřazení.  
   
-     The following example sets the value of the <xref:Microsoft.VisualBasic.DateAndTime.TimeOfDay%2A> property, implicitly calling the `Set` procedure.  
+     Následující příklad nastaví hodnotu vlastnosti <xref:Microsoft.VisualBasic.DateAndTime.TimeOfDay%2A> implicitně volá proceduru `Set`.  
   
      [!code-vb[VbVbcnProcedures#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#11)]  
   
-2. If the property takes arguments, follow the property name with parentheses to enclose the argument list. If there are no arguments, you can optionally omit the parentheses.  
+2. Pokud vlastnost přebírá argumenty, uveďte seznam argumentů tak, že postupujete podle názvu vlastnosti s závorkami. Pokud neexistují žádné argumenty, můžete volitelně vynechat závorky.  
   
-3. Place the arguments in the argument list within the parentheses, separated by commas. Be sure you supply the arguments in the same order that the property defines the corresponding parameters.  
+3. Argumenty umístěte do seznamu argumentů v závorkách a oddělte je čárkami. Ujistěte se, že jste zadali argumenty ve stejném pořadí, v jakém vlastnost definuje odpovídající parametry.  
   
- The value generated on the right side of the assignment statement is stored in the property.  
+ Hodnota vygenerovaná na pravé straně příkazu přiřazení je uložena ve vlastnosti.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Procedury vlastnosti](./property-procedures.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
 - [Příkaz Property](../../../../visual-basic/language-reference/statements/property-statement.md)
-- [Differences Between Properties and Variables in Visual Basic](./differences-between-properties-and-variables.md)
+- [Rozdíly mezi vlastnostmi a proměnnými v Visual Basic](./differences-between-properties-and-variables.md)
 - [Postupy: Vytvoření vlastnosti](./how-to-create-a-property.md)
 - [Postupy: Deklarace vlastnosti se smíšenými úrovněmi přístupu](./how-to-declare-a-property-with-mixed-access-levels.md)
-- [How to: Declare and Call a Default Property in Visual Basic](./how-to-declare-and-call-a-default-property.md)
+- [Postupy: deklarace a volání výchozí vlastnosti v Visual Basic](./how-to-declare-and-call-a-default-property.md)
 - [Postupy: Vložení hodnoty do vlastnosti](./how-to-put-a-value-in-a-property.md)
 - [Postupy: Získání hodnoty z vlastnosti](./how-to-get-a-value-from-a-property.md)
 - [Příkaz Get](../../../../visual-basic/language-reference/statements/get-statement.md)

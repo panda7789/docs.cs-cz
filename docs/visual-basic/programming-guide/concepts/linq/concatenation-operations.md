@@ -9,23 +9,23 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74345681"
 ---
-# <a name="concatenation-operations-visual-basic"></a>Concatenation Operations (Visual Basic)
-Concatenation refers to the operation of appending one sequence to another.  
+# <a name="concatenation-operations-visual-basic"></a>Operace zřetězení (Visual Basic)
+Zřetězení odkazuje na operaci připojení jedné sekvence k druhému.  
   
- The following illustration depicts a concatenation operation on two sequences of characters.  
+ Následující ilustrace znázorňuje operaci zřetězení na dvou sekvencích znaků.  
   
- ![Graphic showing concatenation of two sequences.](./media/concatenation-operations/concatenation-two-sequences.png)  
+ ![Obrázek znázorňující zřetězení dvou sekvencí.](./media/concatenation-operations/concatenation-two-sequences.png)  
   
- The standard query operator methods that perform concatenation are listed in the following section.  
+ Standardní metody operátoru dotazu, které provádějí zřetězení, jsou uvedeny v následující části.  
   
 ## <a name="methods"></a>Metody  
   
-|Method Name|Popis|Visual Basic Query Expression Syntax|Další informace|  
+|Název metody|Popis|Visual Basic syntaxe výrazu dotazu|Další informace|  
 |-----------------|-----------------|------------------------------------------|----------------------|  
-|Concat|Concatenates two sequences to form one sequence.|Nelze použít.|<xref:System.Linq.Enumerable.Concat%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Concat%2A?displayProperty=nameWithType>|  
+|Spojuje|Zřetězí dvě sekvence, aby tvořily jednu sekvenci.|Není k dispozici.|<xref:System.Linq.Enumerable.Concat%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Concat%2A?displayProperty=nameWithType>|  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Linq>
-- [Standard Query Operators Overview (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [How to: Combine and Compare String Collections (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-combine-and-compare-string-collections-linq.md)
+- [Přehled standardních operátorů dotazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
+- [Postupy: kombinování a porovnávání kolekcí řetězců (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-combine-and-compare-string-collections-linq.md)

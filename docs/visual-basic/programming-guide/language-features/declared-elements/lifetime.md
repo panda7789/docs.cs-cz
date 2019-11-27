@@ -1,5 +1,5 @@
 ---
-title: Doba platnosti
+title: Životnost
 ms.date: 07/20/2015
 helpviewer_keywords:
 - static variables [Visual Basic], lifetime
@@ -18,58 +18,58 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74345316"
 ---
 # <a name="lifetime-in-visual-basic"></a>Doba platnosti v jazyce Visual Basic
-The *lifetime* of a declared element is the period of time during which it is available for use. Variables are the only elements that have lifetime. For this purpose, the compiler treats procedure parameters and function returns as special cases of variables. The lifetime of a variable represents the period of time during which it can hold a value. Its value can change over its lifetime, but it always holds some value.  
+*Životnost* deklarovaného prvku je doba, během které je možné ho použít. Proměnné jsou jedinými prvky, které mají dobu života. Pro účely tohoto účelu Kompilátor považuje parametry procedury a vrátí funkce jako zvláštní případy proměnných. Životnost proměnné představuje časové období, během kterého může uchovávat hodnotu. Jeho hodnota se může změnit během své životnosti, ale vždycky uchovává nějakou hodnotu.  
   
-## <a name="different-lifetimes"></a>Different Lifetimes  
- A *member variable* (declared at module level, outside any procedure) typically has the same lifetime as the element in which it is declared. A nonshared variable declared in a class or structure exists as a separate copy for each instance of the class or structure in which it is declared. Each such variable has the same lifetime as its instance. However, a `Shared` variable has only a single lifetime, which lasts for the entire time your application is running.  
+## <a name="different-lifetimes"></a>Různé životnosti  
+ *Členská proměnná* (deklarovaná na úrovni modulu, mimo jakoukoliv proceduru) má obvykle stejnou životnost jako element, ve kterém je deklarována. Nesdílená Proměnná deklarovaná ve třídě nebo struktuře existuje jako samostatná kopie pro každou instanci třídy nebo struktury, ve které je deklarována. Každá taková proměnná má stejnou životnost jako její instance. Proměnná `Shared` však má pouze jednu dobu života, která trvá po celou dobu běhu aplikace.  
   
- A *local variable* (declared inside a procedure) exists only while the procedure in which it is declared is running. This applies also to that procedure's parameters and to any function return. However, if that procedure calls other procedures, the local variables retain their values while the called procedures are running.  
+ *Lokální proměnná* (deklarovaná uvnitř procedury) existuje pouze v případě, že je spuštěna procedura, ve které je deklarována. To platí také pro parametry této procedury a pro všechny vrácené funkce. Nicméně pokud tento postup volá jiné postupy, místní proměnné uchovávají jejich hodnoty, i když jsou spuštěny volané procedury.  
   
-## <a name="beginning-of-lifetime"></a>Beginning of Lifetime  
- A local variable's lifetime begins when control enters the procedure in which it is declared. Every local variable is initialized to the default value for its data type as soon as the procedure begins running. When the procedure encounters a `Dim` statement that specifies initial values, it sets those variables to those values, even if your code had already assigned other values to them.  
+## <a name="beginning-of-lifetime"></a>Začátek platnosti  
+ Doba života místní proměnné začíná, když ovládací prvek zadá proceduru, ve které je deklarována. Každá místní proměnná je inicializována na výchozí hodnotu pro svůj datový typ, jakmile se procedura začne spouštět. Když procedura narazí na příkaz `Dim`, který určuje počáteční hodnoty, nastaví tyto proměnné na tyto hodnoty, a to i v případě, že k nim kód již přiřadil jiné hodnoty.  
   
- Each member of a structure variable is initialized as if it were a separate variable. Similarly, each element of an array variable is initialized individually.  
+ Každý člen proměnné struktury je inicializován, jako by šlo o samostatnou proměnnou. Podobně každý element proměnné pole se inicializuje samostatně.  
   
- Variables declared within a block inside a procedure (such as a `For` loop) are initialized on entry to the procedure. These initializations take effect whether or not your code ever executes the block.  
+ Proměnné deklarované v rámci bloku uvnitř procedury (například smyčka `For`) jsou inicializovány při vstupu do procedury. Tyto inicializace se projeví bez ohledu na to, jestli váš kód někdy spustí blok.  
   
-## <a name="end-of-lifetime"></a>End of Lifetime  
- When a procedure terminates, the values of its local variables are not preserved, and Visual Basic reclaims their memory. The next time you call the procedure, all its local variables are created afresh and reinitialized.  
+## <a name="end-of-lifetime"></a>Konec platnosti  
+ Když se procedura ukončí, hodnoty jejich místních proměnných se nezachovají a Visual Basic znovu vytvoří nárok na jejich paměť. Při příštím volání procedury budou všechny místní proměnné vytvořeny afresh a znovu inicializovány.  
   
- When an instance of a class or structure terminates, its nonshared variables lose their memory and their values. Each new instance of the class or structure creates and reinitializes its nonshared variables. However, `Shared` variables are preserved until your application stops running.  
+ Po ukončení instance třídy nebo struktury ztratí jejich nesdílené proměnné svou paměť a jejich hodnoty. Každá nová instance třídy nebo struktury vytvoří a znovu inicializuje své nesdílené proměnné. Nicméně proměnné `Shared` jsou zachovány, dokud vaše aplikace nepřestane běžet.  
   
-## <a name="extension-of-lifetime"></a>Extension of Lifetime  
- If you declare a local variable with the `Static` keyword, its lifetime is longer than the execution time of its procedure. The following table shows how the procedure declaration determines how long a `Static` variable exists.  
+## <a name="extension-of-lifetime"></a>Rozšíření doby života  
+ Pokud deklarujete místní proměnnou s klíčovým slovem `Static`, jeho životnost je delší než doba provádění jeho procedury. Následující tabulka ukazuje, jakým způsobem deklarace procedury určuje, jak dlouho existuje `Static` proměnná.  
   
-|Procedure location and sharing|Static variable lifetime begins|Static variable lifetime ends|  
+|Umístění procedury a sdílení|Začíná životnost statických proměnných.|Ukončení životnosti statických proměnných|  
 |------------------------------------|-------------------------------------|-----------------------------------|  
-|In a module (shared by default)|The first time the procedure is called|When your application stops running|  
-|In a class, `Shared` (procedure is not an instance member)|The first time the procedure is called either on a specific instance or on the class or structure name itself|When your application stops running|  
-|In an instance of a class, not `Shared` (procedure is an instance member)|The first time the procedure is called on the specific instance|When the instance is released for garbage collection (GC)|  
+|V modulu (ve výchozím nastavení Shared)|Při prvním volání procedury|Když vaše aplikace přestane běžet|  
+|Ve třídě `Shared` (procedura není členem instance)|Při prvním volání procedury buď na konkrétní instanci, nebo v samotném názvu třídy nebo struktury|Když vaše aplikace přestane běžet|  
+|V instanci třídy není `Shared` (procedura je člen instance).|Při prvním volání procedury na konkrétní instanci|Při uvolnění instance pro uvolňování paměti (GC)|  
   
-## <a name="static-variables-of-the-same-name"></a>Static Variables of the Same Name  
- You can declare static variables with the same name in more than one procedure. If you do this, the Visual Basic compiler considers each such variable to be a separate element. The initialization of one of these variables does not affect the values of the others. The same applies if you define a procedure with a set of overloads and declare a static variable with the same name in each overload.  
+## <a name="static-variables-of-the-same-name"></a>Statické proměnné se stejným názvem  
+ Statické proměnné můžete deklarovat se stejným názvem ve více než jednom postupu. Pokud to uděláte, kompilátor Visual Basic považuje každou takovou proměnnou za samostatný prvek. Inicializace jedné z těchto proměnných nemá vliv na hodnoty ostatních. Totéž platí, pokud definujete proceduru se sadou přetížení a deklarujete statickou proměnnou se stejným názvem v každém přetížení.  
   
-## <a name="containing-elements-for-static-variables"></a>Containing Elements for Static Variables  
- You can declare a static local variable within a class, that is, inside a procedure in that class. However, you cannot declare a static local variable within a structure, either as a structure member or as a local variable of a procedure within that structure.  
+## <a name="containing-elements-for-static-variables"></a>Obsahující elementy pro statické proměnné  
+ Můžete deklarovat statickou místní proměnnou v rámci třídy, to je uvnitř procedury v této třídě. Nemůžete však deklarovat statickou místní proměnnou v rámci struktury, buď jako člen struktury, nebo jako místní proměnnou procedury v rámci této struktury.  
   
 ## <a name="example"></a>Příklad  
   
 ### <a name="description"></a>Popis  
- The following example declares a variable with the [Static](../../../../visual-basic/language-reference/modifiers/static.md) keyword. (Note that you do not need the `Dim` keyword when the [Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md) uses a modifier such as `Static`.)  
+ Následující příklad deklaruje proměnnou s klíčovým slovem [static](../../../../visual-basic/language-reference/modifiers/static.md) . (Všimněte si, že klíčové slovo `Dim` nepotřebujete, pokud [příkaz Dim](../../../../visual-basic/language-reference/statements/dim-statement.md) používá modifikátor, jako je například `Static`.)  
   
 ### <a name="code"></a>Kód  
  [!code-vb[VbVbalrKeywords#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/class7.vb#13)]  
   
 ### <a name="comments"></a>Komentáře  
- In the preceding example, the variable `applesSold` continues to exist after the procedure `runningTotal` returns to the calling code. The next time `runningTotal` is called, `applesSold` retains its previously calculated value.  
+ V předchozím příkladu proměnná `applesSold` nadále existuje poté, co procedura `runningTotal` vrátí na volající kód. Při příštím `runningTotal` je zavolána `applesSold` zachová dříve vypočítanou hodnotu.  
   
- If `applesSold` had been declared without using `Static`, the previous accumulated values would not be preserved across calls to `runningTotal`. The next time `runningTotal` was called, `applesSold` would have been recreated and initialized to 0, and `runningTotal` would have simply returned the same value with which it was called.  
+ Pokud byla `applesSold` deklarována bez použití `Static`, předchozí akumulované hodnoty nebudou zachovány v rámci volání `runningTotal`. Při příštím `runningTotal`, `applesSold` by byl znovu vytvořen a inicializován na hodnotu 0 a `runningTotal` by měla jednoduše vracet stejnou hodnotu, se kterou byla volána.  
   
 ### <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- You can initialize the value of a static local variable as part of its declaration. If you declare an array to be `Static`, you can initialize its rank (number of dimensions), the length of each dimension, and the values of the individual elements.  
+ Hodnotu statické lokální proměnné můžete inicializovat jako součást její deklarace. Pokud deklarujete pole, které má být `Static`, můžete inicializovat jeho pořadí (počet rozměrů), délku jednotlivých dimenzí a hodnoty jednotlivých prvků.  
   
 ### <a name="security"></a>Zabezpečení  
- In the preceding example, you can produce the same lifetime by declaring `applesSold` at module level. If you changed the scope of a variable this way, however, the procedure would no longer have exclusive access to it. Because other procedures could access `applesSold` and change its value, the running total could be unreliable and the code could be more difficult to maintain.  
+ V předchozím příkladu můžete vytvořením stejné životnosti tím, že deklarujete `applesSold` na úrovni modulu. Pokud jste změnili rozsah proměnné tímto způsobem, ale k tomuto postupu již nebude mít výhradní přístup. Vzhledem k tomu, že jiné postupy mohly získat přístup k `applesSold` a změně její hodnoty, může být průběžný součet nespolehlivý a může být obtížné zachovat kód.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -77,8 +77,8 @@ The *lifetime* of a declared element is the period of time during which it is av
 - [Nothing](../../../../visual-basic/language-reference/nothing.md)
 - [Deklarované názvy elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)
 - [Odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
-- [Scope in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
-- [Access levels in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
+- [Obor v Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
+- [Úrovně přístupu v Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
 - [Proměnné](../../../../visual-basic/programming-guide/language-features/variables/index.md)
 - [Deklarace proměnné](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
 - [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)

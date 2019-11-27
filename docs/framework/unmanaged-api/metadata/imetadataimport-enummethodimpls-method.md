@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74427487"
 ---
 # <a name="imetadataimportenummethodimpls-method"></a>IMetaDataImport::EnumMethodImpls – metoda
-Enumerates MethodBody and MethodDeclaration tokens representing methods of the specified type.  
+Vytvoří výčet tokenů MethodBody a MethodDeclaration představujících metody zadaného typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,38 +40,38 @@ HRESULT EnumMethodImpls (
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [in, out] A pointer to the enumerator. This must be NULL for the first call of this method.  
+ [in, out] Ukazatel na enumerátor. Pro první volání této metody musí mít hodnotu NULL.  
   
  `td`  
- [in] A TypeDef token for the type whose method implementations to enumerate.  
+ pro Token TypeDef pro typ, jehož implementace metody se má vypsat.  
   
  `rMethodBody`  
- [out] The array to store the MethodBody tokens.  
+ mimo Pole, do kterého se mají ukládat tokeny MethodBody  
   
  `rMethodDecl`  
- [out] The array to store the MethodDeclaration tokens.  
+ mimo Pole, do kterého se mají ukládat tokeny MethodDeclaration  
   
  `cMax`  
- [in] The maximum size of the `rMethodBody` and `rMethodDecl` arrays.  
+ pro Maximální velikost `rMethodBody` a `rMethodDecl` polí.  
   
  `pcTokens`  
- [in] The actual number of methods returned in `rMethodBody` and `rMethodDecl`.  
+ pro Skutečný počet metod vrácených v `rMethodBody` a `rMethodDecl`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumMethodImpls` returned successfully.|  
-|`S_FALSE`|There are no method tokens to enumerate. In that case, `pcTokens` is zero.|  
+|`S_OK`|`EnumMethodImpls` byla úspěšně vrácena.|  
+|`S_FALSE`|Nejsou k dispozici žádné tokeny metod pro zobrazení výčtu. V takovém případě je `pcTokens` nula.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

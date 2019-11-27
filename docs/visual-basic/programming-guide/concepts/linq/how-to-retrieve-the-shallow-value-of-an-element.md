@@ -1,5 +1,5 @@
 ---
-title: 'How to: Retrieve the Shallow Value of an Element'
+title: 'Postupy: načtení omezené hodnoty elementu'
 ms.date: 07/20/2015
 ms.assetid: 730a6670-fb8c-41fc-8a1b-eb97a837e432
 ms.openlocfilehash: 7449d6d1230313aef6005284270370bb9d243a3f
@@ -9,17 +9,17 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346915"
 ---
-# <a name="how-to-retrieve-the-shallow-value-of-an-element-visual-basic"></a>How to: Retrieve the Shallow Value of an Element (Visual Basic)
+# <a name="how-to-retrieve-the-shallow-value-of-an-element-visual-basic"></a>Postupy: načtení omezené hodnoty elementu (Visual Basic)
 
-This topic shows how to get the shallow value of an element. The shallow value is the value of the specific element only, as opposed to the deep value, which includes the values of all descendent elements concatenated into a single string.
+Toto téma ukazuje, jak získat omezené hodnoty elementu. Nedávná hodnota je hodnota pouze konkrétního prvku, na rozdíl od hloubkové hodnoty, která zahrnuje hodnoty všech podřízených prvků zřetězených do jednoho řetězce.
 
-When you retrieve an element value by using either casting or the <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> property, you retrieve the deep value. To retrieve the shallow value, you can use the `ShallowValue` extension method, as shown in the following example. Retrieving the shallow value is useful when you want to select elements based on their content.
+Při načítání hodnoty prvku pomocí přetypování nebo vlastnosti <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> načtete hloubkovou hodnotu. K načtení omezené hodnoty můžete použít metodu rozšíření `ShallowValue`, jak je znázorněno v následujícím příkladu. Načtení omezené hodnoty je užitečné, pokud chcete vybrat prvky na základě jejich obsahu.
 
-The following example declares an extension method that retrieves the shallow value of an element. It then uses the extension method in a query to list all elements that contain a calculated value.
+V následujícím příkladu je deklarována metoda rozšíření, která načte s nejomezeným hodnotou elementu. Potom používá metodu rozšíření v dotazu k vypsání všech prvků, které obsahují počítanou hodnotu.
 
 ## <a name="example"></a>Příklad
 
-The following text file, Report.xml, is the source for this example.
+Následující textový soubor, Report. XML, je zdrojem tohoto příkladu.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -67,7 +67,7 @@ Module Module1
 End Module
 ```
 
-This example produces the following output:
+Tento příklad vytvoří následující výstup:
 
 ```console
 Column  Name="CustomerId"   =Customer.CustomerId.Heading
@@ -78,4 +78,4 @@ Column  Name="Name"         =Customer.Name
 
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ to XML Axes (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)
+- [LINQ to XML osy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)

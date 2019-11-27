@@ -14,16 +14,16 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74345137"
 ---
 # <a name="how-to-declare-custom-events-to-avoid-blocking-visual-basic"></a>Postupy: Deklarování vlastních událostí k zabránění blokování (Visual Basic)
-There are several circumstances when it is important that one event handler not block subsequent event handlers. Custom events allow the event to call its event handlers asynchronously.  
+Je-li důležité, aby jedna obslužná rutina události neblokovala následné obslužné rutiny událostí, existuje několik okolností. Vlastní události umožňují, aby událost volala své obslužné rutiny událostí asynchronně.  
   
- By default, the backing-store field for an event declaration is a multicast delegate that serially combines all the event handlers. This means that if one handler takes a long time to complete, it blocks the other handlers until it completes. (Well-behaved event handlers should never perform lengthy or potentially blocking operations.)  
+ Ve výchozím nastavení je zálohovacím polem pro deklaraci události delegát vícesměrového vysílání, který pomocí sériového kombinování všech obslužných rutin událostí. To znamená, že pokud dokončení jedné obslužné rutiny trvá dlouhou dobu, blokuje ostatní obslužné rutiny až do dokončení. (Správně fungující obslužné rutiny událostí by nikdy neměly provádět zdlouhavé nebo potenciálně blokující operace.)  
   
- Instead of using the default implementation of events that Visual Basic provides, you can use a custom event to execute the event handlers asynchronously.  
+ Namísto použití výchozí implementace událostí, které Visual Basic poskytuje, můžete použít vlastní událost k asynchronnímu spuštění obslužných rutin událostí.  
   
 ## <a name="example"></a>Příklad  
- In this example, the `AddHandler` accessor adds the delegate for each handler of the `Click` event to an <xref:System.Collections.ArrayList> stored in the `EventHandlerList` field.  
+ V tomto příkladu přistupující objekt `AddHandler` přidá delegáta pro každou obslužnou rutinu události `Click` na <xref:System.Collections.ArrayList> uloženou v poli `EventHandlerList`.  
   
- When code raises the `Click` event, the `RaiseEvent` accessor invokes all the event handler delegates asynchronously using the <xref:System.Web.Services.Protocols.LogicalMethodInfo.BeginInvoke%2A> method. That method invokes each handler on a worker thread and returns immediately, so handlers cannot block one another.  
+ Když kód vyvolá událost `Click`, přistupující objekt `RaiseEvent` vyvolá veškerou delegáta obslužné rutiny události asynchronně pomocí metody <xref:System.Web.Services.Protocols.LogicalMethodInfo.BeginInvoke%2A>. Tato metoda vyvolá každou obslužnou rutinu v pracovním vlákně a vrátí ji okamžitě, takže obslužné rutiny nemohou jiné blokovat.  
   
  [!code-vb[VbVbalrEvents#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#27)]  
   

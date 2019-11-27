@@ -1,5 +1,5 @@
 ---
-title: 'How to: Find a List of Child Elements (XPath-LINQ to XML)'
+title: 'Postupy: vyhledání seznamu podřízených elementů (XPath-LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 2868abfd-9f7b-412a-9cb5-f643f0fed146
 ms.openlocfilehash: 899252e7aacdec00ad75611ee4d149a53e71f95e
@@ -9,15 +9,15 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353012"
 ---
-# <a name="how-to-find-a-list-of-child-elements-xpath-linq-to-xml-visual-basic"></a>How to: Find a List of Child Elements (XPath-LINQ to XML) (Visual Basic)
-This topic compares the XPath child elements axis to the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] <xref:System.Xml.Linq.XContainer.Elements%2A> axis.  
+# <a name="how-to-find-a-list-of-child-elements-xpath-linq-to-xml-visual-basic"></a>Postupy: vyhledání seznamu podřízených elementů (XPath-LINQ to XML) (Visual Basic)
+Toto téma porovnává osu podřízených elementů XPath s [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] <xref:System.Xml.Linq.XContainer.Elements%2A> osu.  
   
- The XPath expression is: `./*`  
+ Výraz XPath je: `./*`  
   
 ## <a name="example"></a>Příklad  
- This example finds all of the child elements of the `Address` element.  
+ Tento příklad vyhledá všechny podřízené elementy prvku `Address`.  
   
- This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: více nákupních objednávek (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
   
 ```vb  
 Dim cpo As XDocument = XDocument.Load("PurchaseOrders.xml")  
@@ -40,7 +40,7 @@ For Each el As XElement In list1
 Next  
 ```  
   
- This example produces the following output:  
+ Tento příklad vytvoří následující výstup:  
   
 ```console
 Results are identical  
@@ -54,4 +54,4 @@ Results are identical
   
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ to XML for XPath Users (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML pro uživatele XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

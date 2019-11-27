@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74427875"
 ---
 # <a name="isymunmanagedwritersetmethodsourcerange-method"></a>ISymUnmanagedWriter::SetMethodSourceRange – metoda
-Specifies the true start and end of a method within a source file. Use this method to specify the extent of a method independently of the sequence points that exist within the method.  
+Určuje skutečný začátek a konec metody ve zdrojovém souboru. Tuto metodu použijte, chcete-li určit rozsah metody nezávisle na sekvenčních bodech, které existují v rámci metody.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,28 +39,28 @@ HRESULT SetMethodSourceRange(
   
 ## <a name="parameters"></a>Parametry  
  `startDoc`  
- [in] A pointer to the document containing the starting position.  
+ pro Ukazatel na dokument obsahující počáteční pozici.  
   
  `startLine`  
- [in] The starting line number.  
+ pro Číslo počátečního řádku  
   
  `startColumn`  
- [in] The starting column.  
+ pro Počáteční sloupec  
   
  `endDoc`  
- [in] A pointer to the document containing the ending position.  
+ pro Ukazatel na dokument, který obsahuje koncovou pozici.  
   
  `endLine`  
- [in] The ending line number.  
+ pro Koncové číslo řádku  
   
  `endColumn`  
- [in] The ending column number.  
+ pro Číslo koncového sloupce  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

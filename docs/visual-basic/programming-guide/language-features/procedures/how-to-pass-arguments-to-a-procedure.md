@@ -19,31 +19,31 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344848"
 ---
 # <a name="how-to-pass-arguments-to-a-procedure-visual-basic"></a>Postupy: Předání argumentů proceduře (Visual Basic)
-When you call a procedure, you follow the procedure name with an argument list in parentheses. You supply an argument corresponding to every required parameter the procedure defines, and you can optionally supply arguments to the `Optional` parameters. If you do not supply an `Optional` parameter in the call, you must include a comma to mark its place in the argument list if you are supplying any subsequent arguments.  
+Při volání procedury se v závorkách použije název procedury se seznamem argumentů. Zadejte argument odpovídající každému požadovanému parametru, který procedura definuje, a volitelně můžete zadat argumenty `Optional`m parametrům. Pokud nezadáte parametr `Optional` ve volání, je nutné zahrnout čárku k označení místa v seznamu argumentů, pokud zadáváte další argumenty.  
   
- If you intend to pass an argument of a data type different from that of its corresponding parameter, such as `Byte` to `String`, you can set the type-checking switch ([Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) to `Off`. If `Option Strict` is `On`, you must use either widening conversions or explicit conversion keywords. For more information, see [Widening and Narrowing Conversions](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md) and [Type Conversion Functions](../../../../visual-basic/language-reference/functions/type-conversion-functions.md).  
+ Pokud máte v úmyslu předat argument datového typu, který se liší od odpovídajícího parametru, například `Byte` pro `String`, můžete nastavit přepínač pro kontrolu typu ([Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) na `Off`. Pokud je `Option Strict` `On`, musíte použít buď rozšiřující převody, nebo explicitní klíčová slova pro převod. Další informace najdete v tématu [rozšiřování a zúžení převodů](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md) a [funkcí pro převod typů](../../../../visual-basic/language-reference/functions/type-conversion-functions.md).  
   
- For more information, see [Procedure Parameters and Arguments](./procedure-parameters-and-arguments.md).  
+ Další informace najdete v tématu [parametry a argumenty procedury](./procedure-parameters-and-arguments.md).  
   
-### <a name="to-pass-one-or-more-arguments-to-a-procedure"></a>To pass one or more arguments to a procedure  
+### <a name="to-pass-one-or-more-arguments-to-a-procedure"></a>Předání jednoho nebo více argumentů proceduře  
   
-1. In the calling statement, follow the procedure name with parentheses.  
+1. V příkazu call použijte název procedury s závorkami.  
   
-2. Inside the parentheses, put an argument list. Include an argument for each required parameter the procedure defines, and separate the arguments with commas.  
+2. Uvnitř závorek vložte seznam argumentů. Zahrňte argument pro každý povinný parametr, který procedura definuje, a oddělte argumenty čárkami.  
   
-3. Make sure each argument is a valid expression that evaluates to a data type convertible to the type the procedure defines for the corresponding parameter.  
+3. Ujistěte se, že každý argument je platný výraz, který je vyhodnocen jako datový typ převoditelný na typ, který definuje procedura pro odpovídající parametr.  
   
-4. If a parameter is defined as [Optional](../../../../visual-basic/language-reference/modifiers/optional.md), you can either include it in the argument list or omit it. If you omit it, the procedure uses the default value defined for that parameter.  
+4. Pokud je parametr definovaný jako [volitelný](../../../../visual-basic/language-reference/modifiers/optional.md), můžete ho buď zahrnout do seznamu argumentů, nebo ho vynechat. Pokud ji vynecháte, procedura použije výchozí hodnotu definovanou pro tento parametr.  
   
-5. If you omit an argument for an `Optional` parameter and there is another parameter after it in the parameter list, you can mark the place of the omitted argument by an extra comma in the argument list.  
+5. Vynecháte-li argument pro parametr `Optional` a za ním v seznamu parametrů je uveden jiný parametr, můžete místo vynechaného argumentu označit čárkou v seznamu argumentů znak nadbytečné čárky.  
   
-     The following example calls the Visual Basic <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> function.  
+     Následující příklad volá funkci Visual Basic <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>.  
   
      [!code-vb[VbVbcnProcedures#34](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#34)]  
   
-     The preceding example supplies the required first argument, which is the message string to be displayed. It omits an argument for the optional second parameter, which specifies the buttons to be displayed on the message box. Because the call does not supply a value, `MsgBox` uses the default value, `MsgBoxStyle.OKOnly`, which displays only an **OK** button.  
+     Předchozí příklad dodá požadovaný první argument, což je řetězec zprávy, který má být zobrazen. Vynechá argument pro nepovinný druhý parametr, který určuje tlačítka, která se mají zobrazit v okně se zprávou. Protože volání neposkytuje hodnotu, `MsgBox` používá výchozí hodnotu `MsgBoxStyle.OKOnly`, která zobrazuje pouze tlačítko **OK** .  
   
-     The second comma in the argument list marks the place of the omitted second argument, and the last string is passed to the optional third parameter of `MsgBox`, which is the text to be displayed in the title bar.  
+     Druhá čárka v seznamu argumentů označuje místo vynechaného druhého argumentu a poslední řetězec je předán volitelnému třetímu parametru `MsgBox`, což je text, který se má zobrazit v záhlaví.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -56,4 +56,4 @@ When you call a procedure, you follow the procedure name with an argument list i
 - [Rekurzivní procedury](./recursive-procedures.md)
 - [Přetížení procedury](./procedure-overloading.md)
 - [Objekty a třídy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
-- [Object-Oriented Programming (Visual Basic)](../../concepts/object-oriented-programming.md)
+- [Objektově orientované programování (Visual Basic)](../../concepts/object-oriented-programming.md)

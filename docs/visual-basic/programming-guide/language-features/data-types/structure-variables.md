@@ -16,7 +16,7 @@ ms.locfileid: "74346297"
 ---
 # <a name="structure-variables-visual-basic"></a>Proměnné struktury (Visual Basic)
 
-Once you have created a structure, you can declare procedure-level and module-level variables as that type. For example, you can create a structure that records information about a computer system. Následující příklad ukazuje to.
+Po vytvoření struktury můžete jako typ deklarovat proměnné na úrovni procedury a modulu. Můžete například vytvořit strukturu, která zaznamenává informace o počítačovém systému. Následující příklad ukazuje to.
 
 ```vb
 Public Structure systemInfo
@@ -26,18 +26,18 @@ Public Structure systemInfo
 End Structure
 ```
 
-You can now declare variables of that type. The following declaration illustrates this.
+Nyní můžete deklarovat proměnné tohoto typu. Následující deklarace tento příklad ilustruje.
 
 ```vb
 Dim mySystem, yourSystem As systemInfo
 ```
 
 > [!NOTE]
-> In classes and modules, structures declared using the [Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md) default to public access. If you intend a structure to be private, make sure you declare it using the [Private](../../../../visual-basic/language-reference/modifiers/private.md) keyword.
+> Ve třídách a modulech jsou struktury deklarované pomocí [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md) výchozí pro veřejný přístup. Pokud máte v úmyslu strukturu jako soukromou, ujistěte se, že ji deklarujete pomocí klíčového slova [Private](../../../../visual-basic/language-reference/modifiers/private.md) .
 
-## <a name="access-to-structure-values"></a>Access to Structure Values
+## <a name="access-to-structure-values"></a>Přístup k hodnotám struktury
 
-To assign and retrieve values from the elements of a structure variable, you use the same syntax as you use to set and get properties on an object. You place the member access operator (`.`) between the structure variable name and the element name. The following example accesses elements of the variables previously declared as type `systemInfo`.
+Chcete-li přiřadit a načíst hodnoty z prvků proměnné struktury, použijte stejnou syntaxi, jako je použit k nastavení a získání vlastností objektu. Můžete umístit operátor přístupu členů (`.`) mezi název proměnné struktury a název elementu. Následující příklad přistupuje k prvkům proměnných dříve deklarovaným jako typ `systemInfo`.
 
 ```vb
 mySystem.cPU = "486"
@@ -45,15 +45,15 @@ Dim tooOld As Boolean
 If yourSystem.purchaseDate < #1/1/1992# Then tooOld = True
 ```
 
-## <a name="assigning-structure-variables"></a>Assigning Structure Variables
+## <a name="assigning-structure-variables"></a>Přiřazení proměnných struktury
 
-You can also assign one variable to another if both are of the same structure type. This copies all the elements of one structure to the corresponding elements in the other. The following declaration illustrates this.
+Můžete také přiřadit jednu proměnnou k druhé, pokud jsou obě stejné typu struktury. Tím se zkopírují všechny prvky jedné struktury do odpovídajících prvků v druhé. Následující deklarace tento příklad ilustruje.
 
 ```vb
 yourSystem = mySystem
 ```
 
-If a structure element is a reference type, such as a `String`, `Object`, or array, the pointer to the data is copied. In the previous example, if `systemInfo` had included an object variable, then the preceding example would have copied the pointer from `mySystem` to `yourSystem`, and a change to the object's data through one structure would be in effect when accessed through the other structure.
+Pokud prvek struktury je odkazový typ, například `String`, `Object`nebo pole, je zkopírován ukazatel na data. V předchozím příkladu, pokud `systemInfo` obsahovalo proměnnou objektu, pak předchozí příklad zkopíroval ukazatel z `mySystem` na `yourSystem`a změna dat objektu prostřednictvím jedné struktury bude platit při otevření prostřednictvím jiné struktury.
 
 ## <a name="see-also"></a>Viz také:
 

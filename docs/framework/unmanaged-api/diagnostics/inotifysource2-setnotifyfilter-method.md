@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74435953"
 ---
 # <a name="inotifysource2setnotifyfilter-method"></a>INotifySource2::SetNotifyFilter – metoda
-Assigns a notification filter for use with this source.  
+Přiřadí filtr oznámení pro použití s tímto zdrojem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +37,16 @@ HRESULT SetNotifyFilter
   
 ## <a name="parameters"></a>Parametry  
  `in_NotifyFilter`  
- [in] A bitwise combination of the [NOTIFY_FILTER](../../../../docs/framework/unmanaged-api/diagnostics/notify-filter-enumeration.md) enumeration values that identify callbacks for the debugger API.  
+ pro Bitová kombinace hodnot výčtu [NOTIFY_FILTER](../../../../docs/framework/unmanaged-api/diagnostics/notify-filter-enumeration.md) , které identifikují zpětná volání pro rozhraní API ladicího programu.  
   
  `in_pUserThreadFilter`  
- [in] A pointer to a [USER_THREAD](../../../../docs/framework/unmanaged-api/diagnostics/user-thread-structure.md) structure that identifies threads for the debugger API.  
+ pro Ukazatel na strukturu [USER_THREAD](../../../../docs/framework/unmanaged-api/diagnostics/user-thread-structure.md) , která identifikuje vlákna pro rozhraní API ladicího programu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds.  
+ S_OK, zda je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** ProtocolNotify2.idl  
+ **Hlavička:** ProtocolNotify2. idl  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -16,26 +16,26 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74341380"
 ---
 # <a name="differences-between-modifiable-and-nonmodifiable-arguments-visual-basic"></a>Rozdíly mezi upravitelnými a neupravitelnými argumenty (Visual Basic)
-When you call a procedure, you typically pass one or more arguments to it. Each argument corresponds to an underlying programming element. Both the underlying elements and the arguments themselves can be either modifiable or nonmodifiable.  
+Při volání procedury obvykle předáte jeden nebo více argumentů. Každý argument odpovídá základnímu programovacímu prvku. Základní prvky i samotné argumenty mohou být buď upravitelné, nebo neupravitelné.  
   
-## <a name="modifiable-and-nonmodifiable-elements"></a>Modifiable and Nonmodifiable Elements  
- A programming element can be either a *modifiable element*, which can have its value changed, or a *nonmodifiable element*, which has a fixed value once it has been created.  
+## <a name="modifiable-and-nonmodifiable-elements"></a>Upravitelné a neupravitelné elementy  
+ Programovací element může být buď *upravitelný prvek*, který může mít změněnou hodnotu, nebo *neupravitelný prvek*, který má pevnou hodnotu po vytvoření.  
   
- The following table lists modifiable and nonmodifiable programming elements.  
+ V následující tabulce je uveden seznam upravitelných a neupravitelných programovacích prvků.  
   
-|Modifiable elements|Nonmodifiable elements|  
+|Upravitelné elementy|Neupravitelné elementy|  
 |-------------------------|----------------------------|  
-|Local variables (declared inside procedures), including object variables, except for read-only|Read-only variables, fields, and properties|  
-|Fields (member variables of modules, classes, and structures), except for read-only|Constants and literals|  
-|Properties, except for read-only|Enumeration members|  
-|Array elements|Expressions (even if their elements are modifiable)|  
+|Lokální proměnné (deklarované uvnitř procedur), včetně proměnných objektů, s výjimkou pouze pro čtení|Proměnné, pole a vlastnosti jen pro čtení|  
+|Pole (členské proměnné modulů, tříd a struktur), s výjimkou jen pro čtení|Konstanty a literály|  
+|Vlastnosti, s výjimkou pouze pro čtení|Členové výčtu|  
+|Prvky pole|Výrazy (i když jejich prvky lze upravovat)|  
   
-## <a name="modifiable-and-nonmodifiable-arguments"></a>Modifiable and Nonmodifiable Arguments  
- A *modifiable argument* is one with a modifiable underlying element. The calling code can store a new value at any time, and if you pass the argument [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), the code in the procedure can also modify the underlying element in the calling code.  
+## <a name="modifiable-and-nonmodifiable-arguments"></a>Upravitelné a neupravitelné argumenty  
+ *Upravitelný argument* je jeden s upravitelným podkladovým elementem. Volající kód může uložit novou hodnotu kdykoli, a Pokud předáte argument [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), kód v proceduře může také upravit podkladový prvek v kódu volajícího.  
   
- A *nonmodifiable argument* either has a nonmodifiable underlying element or is passed [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md). The procedure cannot modify the underlying element in the calling code, even if it is a modifiable element. If it is a nonmodifiable element, the calling code itself cannot modify it.  
+ *Neupravitelný argument* má buď neupravitelný základní prvek, nebo je předán jako [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md). Procedura nemůže změnit podkladový prvek v kódu volání, i když se jedná o upravitelný prvek. Pokud se jedná o neupravitelný prvek, samotný volající kód ho nemůže změnit.  
   
- The called procedure might modify its local copy of a nonmodifiable argument, but that modification does not affect the underlying element in the calling code.  
+ Volaná procedura může změnit svou místní kopii neupravitelného argumentu, ale tato změna nemá vliv na základní prvek v kódu volajícího.  
   
 ## <a name="see-also"></a>Viz také:
 

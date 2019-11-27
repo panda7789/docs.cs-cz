@@ -11,76 +11,76 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74343517"
 ---
-# <a name="visual-basic-compiler-options-listed-alphabetically"></a>Visual Basic compiler options listed alphabetically
-The Visual Basic command-line compiler is provided as an alternative to compiling programs from the Visual Studio integrated development environment (IDE). The following is a list of the Visual Basic command-line compiler options sorted alphabetically.  
+# <a name="visual-basic-compiler-options-listed-alphabetically"></a>Visual Basic možnosti kompilátoru seřazené abecedně
+Visual Basic Kompilátor příkazového řádku je k dispozici jako alternativa k kompilování programů z integrovaného vývojového prostředí (IDE) sady Visual Studio. Následující seznam uvádí možnosti kompilátoru Visual Basic příkazového řádku seřazené abecedně.  
 
 [!INCLUDE[compiler-options](~/includes/compiler-options.md)]
   
 |Možnost|Účel|  
 |------------|-------------|  
-|[@ (určení souboru odezvy)](../../../visual-basic/reference/command-line-compiler/specify-response-file.md)|Specifies a response file.|  
-|[-?](../../../visual-basic/reference/command-line-compiler/help.md)|Displays compiler options. This command is the same as specifying the `-help` option. No compilation occurs.|  
-|`-additionalfile`|Names additional files that don't directly affect code generation but may be used by analyzers for producing errors or warnings.|  
-|[-addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md)|Causes the compiler to make all type information from the specified file(s) available to the project you are currently compiling.|  
-|`-analyzer`|Run the analyzers from this assembly (Short form: -a)|  
-|[-baseaddress](../../../visual-basic/reference/command-line-compiler/baseaddress.md)|Specifies the base address of a DLL.|  
-|[-bugreport](../../../visual-basic/reference/command-line-compiler/bugreport.md)|Creates a file that contains information that makes it easy to report a bug.|  
-|`-checksumalgorithm:<alg>`|Specify the algorithm for calculating the source file checksum stored in PDB.  Supported values are: SHA1 (default) or SHA256. <br>Due to collision problems with SHA1, Microsoft recommends SHA256 or better.|  
-|[-codepage](../../../visual-basic/reference/command-line-compiler/codepage.md)|Specifies the code page to use for all source code files in the compilation.|  
-|[-debug](../../../visual-basic/reference/command-line-compiler/debug.md)|Produces debugging information.|  
-|[-define](../../../visual-basic/reference/command-line-compiler/define.md)|Defines symbols for conditional compilation.|  
+|[@ (určení souboru odezvy)](../../../visual-basic/reference/command-line-compiler/specify-response-file.md)|Určuje soubor odpovědí.|  
+|[-?](../../../visual-basic/reference/command-line-compiler/help.md)|Zobrazí možnosti kompilátoru. Tento příkaz je stejný jako možnost zadání `-help`. Nedochází k žádné kompilaci.|  
+|`-additionalfile`|Názvy dalších souborů, které přímo neovlivňují generování kódu, ale mohou být využívány analyzátory pro vytváření chyb nebo upozornění.|  
+|[-addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md)|Způsobí, že kompilátor zpřístupní všechny informace o typech ze zadaných souborů pro projekt, který právě kompilujete.|  
+|`-analyzer`|Spustit analyzátory z tohoto sestavení (krátký tvar:-a)|  
+|[-baseaddress](../../../visual-basic/reference/command-line-compiler/baseaddress.md)|Určuje základní adresu knihovny DLL.|  
+|[-bugreport](../../../visual-basic/reference/command-line-compiler/bugreport.md)|Vytvoří soubor, který obsahuje informace, které usnadňují hlášení chyby.|  
+|`-checksumalgorithm:<alg>`|Zadejte algoritmus pro výpočet kontrolního součtu zdrojového souboru uloženého v souboru PDB.  Podporované hodnoty jsou: SHA1 (výchozí) nebo SHA256. <br>Microsoft doporučuje SHA256 nebo lepší kvůli kolizi problémů se SHA1.|  
+|[-codepage](../../../visual-basic/reference/command-line-compiler/codepage.md)|Určuje znakovou stránku, která se má použít pro všechny soubory zdrojového kódu v kompilaci.|  
+|[-debug](../../../visual-basic/reference/command-line-compiler/debug.md)|Vytvoří ladicí informace.|  
+|[-define](../../../visual-basic/reference/command-line-compiler/define.md)|Definuje symboly pro podmíněnou kompilaci.|  
 |[-delaysign](../../../visual-basic/reference/command-line-compiler/delaysign.md)|Určuje, zda bude sestavení zcela nebo částečně podepsáno.|  
-|[-deterministic](../../../visual-basic/reference/command-line-compiler/deterministic.md)|Causes the compiler to output an assembly whose binary content is identical across compilations if inputs are identical.|
-|[-doc](../../../visual-basic/reference/command-line-compiler/doc.md)|Processes documentation comments to an XML file.|  
-|[-errorreport](../../../visual-basic/reference/command-line-compiler/errorreport.md)|Specifies how the Visual Basic compiler should report internal compiler errors.|  
-|[-filealign](../../../visual-basic/reference/command-line-compiler/filealign.md)|Specifies where to align the sections of the output file.|  
-|[-help](../../../visual-basic/reference/command-line-compiler/help.md)|Displays compiler options. This command is the same as specifying the `-?` option. No compilation occurs.|  
-|[-highentropyva](../../../visual-basic/reference/command-line-compiler/highentropyva.md)|Indicates whether a particular executable supports high entropy Address Space Layout Randomization (ASLR).|  
-|[-imports](../../../visual-basic/reference/command-line-compiler/imports.md)|Imports a namespace from a specified assembly.|  
-|[-keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md)|Specifies a key container name for a key pair to give an assembly a strong name.|  
-|[-keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md)|Specifies a file that contains a key or key pair to give an assembly a strong name.|  
-|[-langversion](../../../visual-basic/reference/command-line-compiler/langversion.md)|Specify language version: 9&#124;9.0&#124;10&#124;10.0&#124;11&#124;11.0.|  
-|[-libpath](../../../visual-basic/reference/command-line-compiler/libpath.md)|Specifies the location of assemblies referenced by the [-reference](../../../visual-basic/reference/command-line-compiler/reference.md) option.|  
-|[-linkresource](../../../visual-basic/reference/command-line-compiler/linkresource.md)|Creates a link to a managed resource.|  
-|[-main](../../../visual-basic/reference/command-line-compiler/main.md)|Specifies the class that contains the `Sub Main` procedure to use at startup.|  
-|[-moduleassemblyname](../../../visual-basic/reference/command-line-compiler/moduleassemblyname.md)|Specifies the name of the assembly that a module will be a part of.|  
-|`-modulename:<string>`|Specify the name of the source module|  
-|[-netcf](../../../visual-basic/reference/command-line-compiler/netcf.md)|Sets the compiler to target the .NET Compact Framework.|  
-|[-noconfig](../../../visual-basic/reference/command-line-compiler/noconfig.md)|Do not compile with Vbc.rsp.|  
-|[-nologo](../../../visual-basic/reference/command-line-compiler/nologo.md)|Suppresses compiler banner information.|  
-|[-nostdlib](../../../visual-basic/reference/command-line-compiler/nostdlib.md)|Causes the compiler not to reference the standard libraries.|  
-|[-nowarn](../../../visual-basic/reference/command-line-compiler/nowarn.md)|Suppresses the compiler's ability to generate warnings.|  
-|[-nowin32manifest](../../../visual-basic/reference/command-line-compiler/nowin32manifest.md)|Instructs the compiler not to embed any application manifest into the executable file.|  
-|[-optimize](../../../visual-basic/reference/command-line-compiler/optimize.md)|Enables/disables code optimization.|  
-|[-optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md)|Specifies whether string comparisons should be binary or use locale-specific text semantics.|  
-|[-optionexplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)|Enforces explicit declaration of variables.|  
-|[-optioninfer](../../../visual-basic/reference/command-line-compiler/optioninfer.md)|Enables the use of local type inference in variable declarations.|  
-|[-optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)|Enforces strict language semantics.|  
-|[-out](../../../visual-basic/reference/command-line-compiler/out.md)|Specifies an output file.|  
-|`-parallel[+&#124;-]`|Specifies whether to use concurrent build (+).|  
-|[-platform](../../../visual-basic/reference/command-line-compiler/platform.md)|Specifies the processor platform the compiler targets for the output file.|  
-|`-preferreduilang`|Specify the preferred output language name.|  
-|[-quiet](../../../visual-basic/reference/command-line-compiler/quiet.md)|Prevents the compiler from displaying code for syntax-related errors and warnings.|  
-|[-recurse](../../../visual-basic/reference/command-line-compiler/recurse.md)|Searches subdirectories for source files to compile.|  
-|[-reference](../../../visual-basic/reference/command-line-compiler/reference.md)|Imports metadata from an assembly.|  
-|[-refonly](refonly-compiler-option.md)|Outputs only a reference assembly.|
-|[-refout](refout-compiler-option.md)|Specifies the output path of a reference assembly.|
-|[-removeintchecks](../../../visual-basic/reference/command-line-compiler/removeintchecks.md)|Disables integer overflow checking.|  
-|[-resource](../../../visual-basic/reference/command-line-compiler/resource.md)|Embeds a managed resource in an assembly.|  
-|[-rootnamespace](../../../visual-basic/reference/command-line-compiler/rootnamespace.md)|Specifies a namespace for all type declarations.|  
-|`-ruleset:<file>`|Specify a ruleset file that disables specific diagnostics.|  
-|[-sdkpath](../../../visual-basic/reference/command-line-compiler/sdkpath.md)|Specifies the location of Mscorlib.dll and Microsoft.VisualBasic.dll.|  
-|[-subsystemversion](../../../visual-basic/reference/command-line-compiler/subsystemversion.md)|Specifies the minimum version of the subsystem that the generated executable file can use.|  
-|[-target](../../../visual-basic/reference/command-line-compiler/target.md)|Specifies the format of the output file.|  
-|[-utf8output](../../../visual-basic/reference/command-line-compiler/utf8output.md)|Displays compiler output using UTF-8 encoding.|  
-|[-vbruntime](../../../visual-basic/reference/command-line-compiler/vbruntime.md)|Specifies that the compiler should compile without a reference to the Visual Basic Runtime Library, or with a reference to a specific runtime library.|  
-|[-verbose](../../../visual-basic/reference/command-line-compiler/verbose.md)|Outputs extra information during compilation.|  
-|[-warnaserror](../../../visual-basic/reference/command-line-compiler/warnaserror.md)|Promotes warnings to errors.|  
-|[-win32icon](../../../visual-basic/reference/command-line-compiler/win32icon.md)|Inserts an .ico file into the output file.|  
-|[-win32manifest](../../../visual-basic/reference/command-line-compiler/win32manifest.md)|Identifies a user-defined Win32 application manifest file to be embedded into a project's portable executable (PE) file.|  
-|[-win32resource](../../../visual-basic/reference/command-line-compiler/win32resource.md)|Inserts a Win32 resource into the output file.|  
+|[-deterministic](../../../visual-basic/reference/command-line-compiler/deterministic.md)|Způsobí, že kompilátor výstupuje sestavení, jehož binární obsah je identický v rámci kompilací, pokud jsou vstupy identické.|
+|[-doc](../../../visual-basic/reference/command-line-compiler/doc.md)|Zpracuje komentáře dokumentace do souboru XML.|  
+|[-errorreport](../../../visual-basic/reference/command-line-compiler/errorreport.md)|Určuje, jak by měl kompilátor Visual Basic hlásit vnitřní chyby kompilátoru.|  
+|[-filealign](../../../visual-basic/reference/command-line-compiler/filealign.md)|Určuje, kam se mají zarovnat oddíly výstupního souboru.|  
+|[-Help](../../../visual-basic/reference/command-line-compiler/help.md)|Zobrazí možnosti kompilátoru. Tento příkaz je stejný jako možnost zadání `-?`. Nedochází k žádné kompilaci.|  
+|[-highentropyva](../../../visual-basic/reference/command-line-compiler/highentropyva.md)|Určuje, zda určitý spustitelný soubor podporuje náhodné vygenerování rozložení adresního prostoru entropie (ASLR).|  
+|[-imports](../../../visual-basic/reference/command-line-compiler/imports.md)|Importuje obor názvů ze zadaného sestavení.|  
+|[-keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md)|Určuje název kontejneru klíče pro dvojici klíčů, který poskytne sestavení silného názvu.|  
+|[-keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md)|Určuje soubor, který obsahuje klíč nebo dvojici klíčů, aby sestavení mělo silný název.|  
+|[-langversion](../../../visual-basic/reference/command-line-compiler/langversion.md)|Zadejte jazykovou verzi:&#124;9&#124;9,0&#124;10&#124;10,0&#124;11 11,0.|  
+|[-libpath](../../../visual-basic/reference/command-line-compiler/libpath.md)|Určuje umístění sestavení, na která odkazuje možnost [-reference](../../../visual-basic/reference/command-line-compiler/reference.md) .|  
+|[-linkresource](../../../visual-basic/reference/command-line-compiler/linkresource.md)|Vytvoří odkaz na spravovaný prostředek.|  
+|[-main](../../../visual-basic/reference/command-line-compiler/main.md)|Určuje třídu, která obsahuje `Sub Main` postup, který se má použít při spuštění.|  
+|[-moduleassemblyname](../../../visual-basic/reference/command-line-compiler/moduleassemblyname.md)|Určuje název sestavení, jehož součástí bude modul.|  
+|`-modulename:<string>`|Zadejte název zdrojového modulu.|  
+|[-netcf](../../../visual-basic/reference/command-line-compiler/netcf.md)|Nastaví kompilátor pro cílení na prostředí .NET Compact Framework.|  
+|[-noconfig](../../../visual-basic/reference/command-line-compiler/noconfig.md)|Nekompilovat pomocí vbc. rsp.|  
+|[-nologo](../../../visual-basic/reference/command-line-compiler/nologo.md)|Potlačí informace banneru kompilátoru.|  
+|[-nostdlib](../../../visual-basic/reference/command-line-compiler/nostdlib.md)|Způsobí, že kompilátor neodkazuje na standardní knihovny.|  
+|[-nowarn](../../../visual-basic/reference/command-line-compiler/nowarn.md)|Potlačí schopnost kompilátoru generovat upozornění.|  
+|[-nowin32manifest](../../../visual-basic/reference/command-line-compiler/nowin32manifest.md)|Instruuje kompilátor, aby nevložil žádný manifest aplikace do spustitelného souboru.|  
+|[-optimize](../../../visual-basic/reference/command-line-compiler/optimize.md)|Povolí nebo zakáže optimalizaci kódu.|  
+|[-optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md)|Určuje, zda mají být porovnávání řetězců binární, nebo použijte sémantiku textu specifickou pro národní prostředí.|  
+|[-optionexplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)|Vynutil explicitní deklaraci proměnných.|  
+|[-optioninfer](../../../visual-basic/reference/command-line-compiler/optioninfer.md)|Povoluje použití odvození místního typu v deklaracích proměnných.|  
+|[-optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)|Vynutil striktní sémantiku jazyka.|  
+|[-out](../../../visual-basic/reference/command-line-compiler/out.md)|Určuje výstupní soubor.|  
+|`-parallel[+&#124;-]`|Určuje, jestli se má použít souběžné sestavení (+).|  
+|[-platform](../../../visual-basic/reference/command-line-compiler/platform.md)|Určuje platformu procesoru, kterou kompilátor cílí na výstupní soubor.|  
+|`-preferreduilang`|Zadejte název upřednostňovaného výstupního jazyka.|  
+|[-quiet](../../../visual-basic/reference/command-line-compiler/quiet.md)|Zabraňuje kompilátoru v zobrazení kódu pro chyby a upozornění související se syntaxí.|  
+|[-recurse](../../../visual-basic/reference/command-line-compiler/recurse.md)|Vyhledá v podadresářích zdrojové soubory, které se mají kompilovat.|  
+|[-reference](../../../visual-basic/reference/command-line-compiler/reference.md)|Importuje metadata ze sestavení.|  
+|[-refonly](refonly-compiler-option.md)|Výstupuje pouze referenční sestavení.|
+|[-refout](refout-compiler-option.md)|Určuje výstupní cestu pro referenční sestavení.|
+|[-removeintchecks](../../../visual-basic/reference/command-line-compiler/removeintchecks.md)|Zakáže kontrolu přetečení celých čísel.|  
+|[-resource](../../../visual-basic/reference/command-line-compiler/resource.md)|Vloží spravovaný prostředek do sestavení.|  
+|[-rootnamespace](../../../visual-basic/reference/command-line-compiler/rootnamespace.md)|Určuje obor názvů pro všechny deklarace typů.|  
+|`-ruleset:<file>`|Zadejte soubor RuleSet, který zakáže konkrétní diagnostiku.|  
+|[-sdkpath](../../../visual-basic/reference/command-line-compiler/sdkpath.md)|Určuje umístění knihovny mscorlib. dll a Microsoft. VisualBasic. dll.|  
+|[-subsystemversion](../../../visual-basic/reference/command-line-compiler/subsystemversion.md)|Určuje minimální verzi subsystému, kterou může vygenerovaný spustitelný soubor použít.|  
+|[-target](../../../visual-basic/reference/command-line-compiler/target.md)|Určuje formát výstupního souboru.|  
+|[-utf8output](../../../visual-basic/reference/command-line-compiler/utf8output.md)|Zobrazí výstup kompilátoru pomocí kódování UTF-8.|  
+|[-vbruntime](../../../visual-basic/reference/command-line-compiler/vbruntime.md)|Určuje, že má kompilátor kompilovat bez odkazu na knihovnu modulu runtime Visual Basic, nebo s odkazem na konkrétní běhovou knihovnu.|  
+|[-verbose](../../../visual-basic/reference/command-line-compiler/verbose.md)|Vytvoří výstup dalších informací během kompilace.|  
+|[-warnaserror](../../../visual-basic/reference/command-line-compiler/warnaserror.md)|Propaguje upozornění na chyby.|  
+|[-win32icon](../../../visual-basic/reference/command-line-compiler/win32icon.md)|Vloží soubor. ico do výstupního souboru.|  
+|[-win32manifest](../../../visual-basic/reference/command-line-compiler/win32manifest.md)|Identifikuje uživatelsky definovaný soubor manifestu aplikace Win32, který bude vložen do přenositelného spustitelného souboru (PE) projektu.|  
+|[-win32resource](../../../visual-basic/reference/command-line-compiler/win32resource.md)|Vloží prostředek Win32 do výstupního souboru.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Compiler Options Listed by Category](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-by-category.md)
+- [Visual Basic možnosti kompilátoru uvedené podle kategorie](../../../visual-basic/reference/command-line-compiler/compiler-options-listed-by-category.md)
 - [Správa vlastností projektu a řešení](/visualstudio/ide/managing-project-and-solution-properties)

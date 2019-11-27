@@ -19,7 +19,7 @@ ms.locfileid: "74349450"
 ---
 # <a name="xml-descendant-axis-property-visual-basic"></a>Vlastnost osy nástupce XML (Visual Basic)
 
-Provides access to the descendants of the following: an <xref:System.Xml.Linq.XElement> object, an <xref:System.Xml.Linq.XDocument> object, a collection of <xref:System.Xml.Linq.XElement> objects, or a collection of <xref:System.Xml.Linq.XDocument> objects.
+Poskytuje přístup k následníkům následujících: objekt <xref:System.Xml.Linq.XElement>, objekt <xref:System.Xml.Linq.XDocument>, kolekci objektů <xref:System.Xml.Linq.XElement> nebo kolekci objektů <xref:System.Xml.Linq.XDocument>.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -29,40 +29,40 @@ object...<descendant>
 
 ## <a name="parts"></a>Součásti
 
-`object` Required. An <xref:System.Xml.Linq.XElement> object, an <xref:System.Xml.Linq.XDocument> object, a collection of <xref:System.Xml.Linq.XElement> objects, or a collection of <xref:System.Xml.Linq.XDocument> objects.
+`object` nutné. Objekt <xref:System.Xml.Linq.XElement>, objekt <xref:System.Xml.Linq.XDocument>, kolekce objektů <xref:System.Xml.Linq.XElement> nebo kolekce objektů <xref:System.Xml.Linq.XDocument>.
 
-`...<` Required. Denotes the start of a descendant axis property.
+`...<` nutné. Označuje začátek vlastnosti následníka.
 
-`descendant` Required. Name of the descendant nodes to access, of the form [`prefix:]name`.
+`descendant` nutné. Název potomkních uzlů, na které má být přístup, z formuláře [`prefix:]name`.
 
-|Part|Popis|
+|Částí|Popis|
 |----------|-----------------|
-|`prefix`|Volitelné. XML namespace prefix for the descendant node. Must be a global XML namespace that is defined by using an `Imports` statement.|
-|`name`|Požadováno. Local name of the descendant node. See [Names of Declared XML Elements and Attributes](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md).|
+|`prefix`|Volitelná. Předpona oboru názvů XML pro podřízený uzel Musí se jednat o globální obor názvů XML, který je definován pomocí příkazu `Imports`.|
+|`name`|Požadováno. Místní název odvozeného uzlu. Viz [Názvy deklarovaných elementů XML a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md).|
 
-`>` Required. Denotes the end of a descendant axis property.
+`>` nutné. Označuje konec vlastnosti odvozené osy.
 
 ## <a name="return-value"></a>Návratová hodnota
 
-A collection of <xref:System.Xml.Linq.XElement> objects.
+Kolekce objektů <xref:System.Xml.Linq.XElement>.
 
 ## <a name="remarks"></a>Poznámky
 
-You can use an XML descendant axis property to access descendant nodes by name from an <xref:System.Xml.Linq.XElement> or <xref:System.Xml.Linq.XDocument> object, or from a collection of <xref:System.Xml.Linq.XElement> or <xref:System.Xml.Linq.XDocument> objects. Use the XML `Value` property to access the value of the first descendant node in the returned collection. For more information, see [XML Value Property](../../../visual-basic/language-reference/xml-axis/xml-value-property.md).
+Vlastnost osy následníka XML můžete použít pro přístup k potomkovým uzlům podle názvu z <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument> objektu nebo z kolekce objektů <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument>. Pro přístup k hodnotě prvního podřízeného uzlu ve vrácené kolekci použijte vlastnost `Value` XML. Další informace najdete v tématu [vlastnost hodnoty XML](../../../visual-basic/language-reference/xml-axis/xml-value-property.md).
 
-The Visual Basic compiler converts descendant axis properties into calls to the <xref:System.Xml.Linq.XContainer.Descendants%2A> method.
+Kompilátor Visual Basic převádí vlastnosti následníka na volání metody <xref:System.Xml.Linq.XContainer.Descendants%2A>.
 
-## <a name="xml-namespaces"></a>XML Namespaces
+## <a name="xml-namespaces"></a>XML – obory názvů
 
-The name in a descendant axis property can use only XML namespaces declared globally with the `Imports` statement. It cannot use XML namespaces declared locally within XML element literals. For more information, see [Imports Statement (XML Namespace)](../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md).
+Název v Vlastnosti osy následníka může používat pouze obory názvů XML deklarované globálně pomocí příkazu `Imports`. Nemůže používat obory názvů XML deklarované místně v rámci literálů elementů XML. Další informace naleznete v tématu [příkaz Imports (obor názvů XML)](../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md).
 
 ## <a name="example"></a>Příklad
 
-The following example shows how to access the value of the first descendant node named `name` and the values of all descendant nodes named `phone` from the `contacts` object.
+Následující příklad ukazuje, jak přistupovat k hodnotě prvního odvozeného uzlu s názvem `name` a hodnot všech potomkových uzlů s názvem `phone` z objektu `contacts`.
 
 [!code-vb[VbXMLSamples#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples11.vb#25)]
 
-This code displays the following text:
+Tento kód zobrazí následující text:
 
 `Name: Patrick Hines`
 
@@ -70,11 +70,11 @@ This code displays the following text:
 
 ## <a name="example"></a>Příklad
 
-The following example declares `ns` as an XML namespace prefix. It then uses the prefix of the namespace to create an XML literal and access the value of the first child node with the qualified name `ns:name`.
+Následující příklad deklaruje `ns` jako předponu oboru názvů XML. Poté pomocí předpony oboru názvů vytvoří literál XML a přistupuje k hodnotě prvního podřízeného uzlu s kvalifikovaným názvem `ns:name`.
 
 [!code-vb[VbXMLSamples#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples12.vb#26)]
 
-This code displays the following text:
+Tento kód zobrazí následující text:
 
 `Name: Patrick Hines`
 
@@ -83,5 +83,5 @@ This code displays the following text:
 - <xref:System.Xml.Linq.XElement>
 - [Vlastnosti osy XML](../../../visual-basic/language-reference/xml-axis/index.md)
 - [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)
-- [Creating XML in Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [Vytváření XML v Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
 - [Názvy deklarovaných XML elementů a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md)

@@ -17,19 +17,19 @@ ms.locfileid: "74346820"
 ---
 # <a name="how-to-speed-up-access-to-an-object-with-a-long-qualification-path-visual-basic"></a>Postupy: Urychlení přístupu k objektu pomocí cesty s dlouhou kvalifikací (Visual Basic)
 
-If you frequently access an object that requires a qualification path of several methods and properties, you can speed up your code by not repeating the qualification path.
+Pokud často přistupujete k objektu, který vyžaduje cestu kvalifikace několika metod a vlastností, můžete kód urychlit tak, že neopakujete cestu kvalifikace.
 
-There are two ways you can avoid repeating the qualification path. You can assign the object to a variable, or you can use it in a `With`...`End With` block.
+Existují dva způsoby, jak se vyhnout opakování cesty kvalifikace. Objekt můžete přiřadit proměnné nebo ho můžete použít v bloku `With`...`End With`.
 
-### <a name="to-speed-up-access-to-a-heavily-qualified-object-by-assigning-it-to-a-variable"></a>To speed up access to a heavily qualified object by assigning it to a variable
+### <a name="to-speed-up-access-to-a-heavily-qualified-object-by-assigning-it-to-a-variable"></a>Urychlení přístupu k silně kvalifikovanému objektu přiřazením k proměnné
 
-1. Declare a variable of the type of the object that you are accessing frequently. Specify the qualification path in the initialization part of the declaration.
+1. Deklarujte proměnnou typu objektu, ke kterému se často přistupuje. Zadejte cestu kvalifikace v části inicializace deklarace.
 
     ```vb
     Dim ctrlActv As Control = someForm.ActiveForm.ActiveControl
     ```
 
-2. Use the variable to access the object's members.
+2. Pro přístup ke členům objektu použijte proměnnou.
 
     ```vb
     ctrlActv.Text = "Test"
@@ -37,15 +37,15 @@ There are two ways you can avoid repeating the qualification path. You can assig
     ctrlActv.Show()
     ```
 
-### <a name="to-speed-up-access-to-a-heavily-qualified-object-by-using-a-withend-with-block"></a>To speed up access to a heavily qualified object by using a With...End With block
+### <a name="to-speed-up-access-to-a-heavily-qualified-object-by-using-a-withend-with-block"></a>Chcete-li zrychlit přístup k silně kvalifikovanému objektu pomocí s... Ukončit s blokem
 
-1. Put the qualification path in a `With` statement.
+1. Cestu kvalifikace vložte do příkazu `With`.
 
     ```vb
     With someForm.ActiveForm.ActiveControl
     ```
 
-2. Access the object's members inside the `With` block, before the `End With` statement.
+2. Před příkazem `End With` přejděte do členů objektu v rámci bloku `With`.
 
     ```vb
         .Text = "Test"

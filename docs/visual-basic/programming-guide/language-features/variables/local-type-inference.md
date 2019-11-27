@@ -21,66 +21,66 @@ ms.locfileid: "74351838"
 ---
 # <a name="local-type-inference-visual-basic"></a>Odvození místního typu (Visual Basic)
 
-The Visual Basic compiler uses *type inference* to determine the data types of local variables declared without an `As` clause. The compiler infers the type of the variable from the type of the initialization expression. This enables you to declare variables without explicitly stating a type, as shown in the following example. As a result of the declarations, both `num1` and `num2` are strongly typed as integers.
+Kompilátor Visual Basic používá *odvození typu* k určení datových typů místních proměnných deklarovaných bez klauzule `As`. Kompilátor odvodí typ proměnné z typu inicializačního výrazu. To umožňuje deklarovat proměnné bez explicitního oznámení typu, jak je znázorněno v následujícím příkladu. V důsledku deklarací jsou jako celé číslo `num1` i `num2` silného typu.
 
 [!code-vb[VbVbalrTypeInference#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTypeInference/VB/Class1.vb#1)]
 
 > [!NOTE]
-> If you do not want `num2` in the previous example to be typed as an `Integer`, you can specify another type by using a declaration like `Dim num3 As Object = 3` or `Dim num4 As Double = 3`.
+> Pokud nechcete, aby `num2` v předchozím příkladu jako `Integer`, můžete zadat jiný typ pomocí deklarace, jako je `Dim num3 As Object = 3` nebo `Dim num4 As Double = 3`.
 
 > [!NOTE]
-> Type inference can be used only for non-static local variables; it cannot be used to determine the type of class fields, properties, or functions.
+> Odvození typu lze použít pouze pro nestatické lokální proměnné; nelze ji použít k určení typu polí třídy, vlastností nebo funkcí.
 
-Local type inference applies at procedure level. It cannot be used to declare variables at module level (within a class, structure, module, or interface but not within a procedure or block). If `num2` in the previous example were a field of a class instead of a local variable in a procedure, the declaration would cause an error with `Option Strict` on, and would classify `num2` as an `Object` with `Option Strict` off. Similarly, local type inference does not apply to procedure level variables declared as `Static`.
+Odvození místního typu se vztahuje na úrovni procedury. Nedá se použít k deklaraci proměnných na úrovni modulu (v rámci třídy, struktury, modulu nebo rozhraní, ale ne v rámci procedury nebo bloku). Pokud `num2` v předchozím příkladu byly polem třídy namísto lokální proměnné v proceduře, by deklarace způsobila chybu s `Option Strict` na a mohla klasifikovat `num2` jako `Object` s `Option Strict` vypnuto. Podobně odvození místního typu se nevztahuje na proměnné na úrovni procedury deklarované jako `Static`.
 
-## <a name="type-inference-vs-late-binding"></a>Type Inference vs. Late Binding
+## <a name="type-inference-vs-late-binding"></a>Odvození typu a pozdní vazba
 
-Code that uses type inference resembles code that relies on late binding. However, type inference strongly types the variable instead of leaving it as `Object`. The compiler uses a variable's initializer to determine the variable's type at compile time to produce early-bound code. In the previous example, `num2`, like `num1`, is typed as an `Integer`.
+Kód, který používá odvození typu, se podobá kódu, který závisí na pozdní vazbě. Nicméně odvození typu je místo toho, aby byla proměnná ponechána jako `Object`. Kompilátor používá inicializátor proměnné k určení typu proměnné v době kompilace pro vytvoření kódu na začátku vazby. V předchozím příkladu je `num2`jako `num1`typu `Integer`.
 
-The behavior of early-bound variables differs from that of late-bound variables, for which the type is known only at run time. Knowing the type early enables the compiler to identify problems before execution, allocate memory precisely, and perform other optimizations. Early binding also enables the Visual Basic integrated development environment (IDE) to provide IntelliSense Help about the members of an object. Early binding is also preferred for performance. This is because all data stored in a late-bound variable must be wrapped as type `Object`, and accessing members of the type at run time makes the program slower.
+Chování proměnných s časnou vazbou se liší od proměnné s pozdní vazbou, pro které je typ znám pouze v době běhu. Znalost typu předčasné umožňuje kompilátoru identifikovat problémy před provedením, přidělit paměť přesně a provádět další optimalizace. Časná vazba také umožňuje Visual Basic integrované vývojové prostředí (IDE), které poskytuje nápovědu IntelliSense o členech objektu. Pro výkon je upřednostňována i počáteční vazba. Důvodem je, že všechna data uložená v proměnné s pozdní vazbou musí být zabalena jako typ `Object`a přístup k členům typu za běhu program zpomalí.
 
 ## <a name="examples"></a>Příklady
 
-Type inference occurs when a local variable is declared without an `As` clause and initialized. The compiler uses the type of the assigned initial value as the type of the variable. For example, each of the following lines of code declares a variable of type `String`.
+Odvození typu nastane, pokud je místní proměnná deklarována bez klauzule `As` a inicializovaná. Kompilátor používá typ přiřazené počáteční hodnoty jako typ proměnné. Například každý z následujících řádků kódu deklaruje proměnnou typu `String`.
 
 [!code-vb[VbVbalrTypeInference#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTypeInference/VB/Class1.vb#2)]
 
-The following code demonstrates two equivalent ways to create an array of integers.
+Následující kód ukazuje dva ekvivalentní způsoby, jak vytvořit pole celých čísel.
 
 [!code-vb[VbVbalrTypeInference#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTypeInference/VB/Class1.vb#3)]
 
-It is convenient to use type inference to determine the type of a loop control variable. In the following code, the compiler infers that `number` is an `Integer` because `someNumbers2` from the previous example is an array of integers.
+Je vhodné použít odvození typu k určení typu řídicí proměnné smyčky. V následujícím kódu kompilátor odvodí, že `number` je `Integer`, protože `someNumbers2` z předchozího příkladu je pole celých čísel.
 
 [!code-vb[VbVbalrTypeInference#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTypeInference/VB/Class1.vb#4)]
 
-Local type inference can be used in `Using` statements to establish the type of the resource name, as the following example demonstrates.
+Odvození místního typu lze použít v příkazech `Using` pro vytvoření typu názvu prostředku, jak ukazuje následující příklad.
 
 [!code-vb[VbVbalrTypeInference#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTypeInference/VB/Class1.vb#7)]
 
-The type of a variable can also be inferred from the return values of functions, as the following example demonstrates. Both `pList1` and `pList2` are arrays of processes because `Process.GetProcesses` returns an array of processes.
+Typ proměnné lze také odvodit z vrácených hodnot funkcí, jak ukazuje následující příklad. `pList1` i `pList2` jsou pole procesů, protože `Process.GetProcesses` vrací pole procesů.
 
 [!code-vb[VbVbalrTypeInference#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTypeInference/VB/Class1.vb#5)]
 
-## <a name="option-infer"></a>Option Infer
+## <a name="option-infer"></a>Odvoditelné možnosti
 
-`Option Infer` enables you specify whether local type inference is allowed in a particular file. To enable or to block the option, type one of the following statements at the start of the file.
+`Option Infer` umožňuje určit, zda je místní odvozený typ povolen v určitém souboru. Chcete-li povolit nebo zablokovat možnost, zadejte na začátku souboru jeden z následujících příkazů.
 
 `Option Infer On`
 
 `Option Infer Off`
 
-If you do not specify a value for `Option Infer` in your code, the compiler default is `Option Infer On`.
+Pokud nezadáte hodnotu pro `Option Infer` v kódu, výchozí hodnota kompilátoru je `Option Infer On`.
 
-If the value set for `Option Infer` in a file conflicts with the value set in the IDE or on the command line, the value in the file has precedence.
+Pokud je hodnota nastavená pro `Option Infer` v souboru v konfliktu s hodnotou nastavenou v integrovaném vývojovém prostředí (IDE) nebo na příkazovém řádku, má hodnota v souboru přednost.
 
-For more information, see [Option Infer Statement](../../../../visual-basic/language-reference/statements/option-infer-statement.md) and [Compile Page, Project Designer (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic).
+Další informace naleznete v tématu [možnost odvození příkazu](../../../../visual-basic/language-reference/statements/option-infer-statement.md) a [Stránka kompilace, návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic).
 
 ## <a name="see-also"></a>Viz také:
 
 - [Anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)
-- [Statické a dynamické vazby](../../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)
+- [Statické a pozdní vazby](../../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)
 - [Příkaz For Each...Next](../../../../visual-basic/language-reference/statements/for-each-next-statement.md)
 - [Příkaz For...Next](../../../../visual-basic/language-reference/statements/for-next-statement.md)
 - [Příkaz Option Infer](../../../../visual-basic/language-reference/statements/option-infer-statement.md)
 - [-optioninfer](../../../../visual-basic/reference/command-line-compiler/optioninfer.md)
-- [Introduction to LINQ in Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Úvod do jazyka LINQ v Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)

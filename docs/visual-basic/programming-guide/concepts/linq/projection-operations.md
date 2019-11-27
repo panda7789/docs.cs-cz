@@ -9,24 +9,24 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346619"
 ---
-# <a name="projection-operations-visual-basic"></a>Projection Operations (Visual Basic)
+# <a name="projection-operations-visual-basic"></a>Operace projekce (Visual Basic)
 
-Projection refers to the operation of transforming an object into a new form that often consists only of those properties that will be subsequently used. By using projection, you can construct a new type that is built from each object. You can project a property and perform a mathematical function on it. You can also project the original object without changing it.
+Projekce odkazuje na operaci transformace objektu do nového formuláře, který se často skládá pouze z těchto vlastností, které budou následně použity. Pomocí projekce můžete vytvořit nový typ, který je sestaven z každého objektu. Můžete promítnout vlastnost a na ní provést matematickou funkci. Původní objekt můžete také promítnout beze změny.
 
-The standard query operator methods that perform projection are listed in the following section.
+Standardní metody operátoru dotazu, které provádějí projekci, jsou uvedeny v následující části.
 
 ## <a name="methods"></a>Metody
 
-|Method Name|Popis|Visual Basic Query Expression Syntax|Další informace|
+|Název metody|Popis|Visual Basic syntaxe výrazu dotazu|Další informace|
 |-----------------|-----------------|------------------------------------------|----------------------|
-|Vyberte|Projects values that are based on a transform function.|`Select`|<xref:System.Linq.Enumerable.Select%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Select%2A?displayProperty=nameWithType>|
-|SelectMany|Projects sequences of values that are based on a transform function and then flattens them into one sequence.|Use multiple `From` clauses|<xref:System.Linq.Enumerable.SelectMany%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.SelectMany%2A?displayProperty=nameWithType>|
+|Vybrat|Projekty hodnoty, které jsou založeny na transformační funkci.|`Select`|<xref:System.Linq.Enumerable.Select%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Select%2A?displayProperty=nameWithType>|
+|Operátor SelectMany|Projektuje sekvence hodnot, které jsou založeny na transformační funkci a poté jsou shrnuty do jedné sekvence.|Použít více klauzulí `From`|<xref:System.Linq.Enumerable.SelectMany%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.SelectMany%2A?displayProperty=nameWithType>|
 
-## <a name="query-expression-syntax-examples"></a>Query Expression Syntax Examples
+## <a name="query-expression-syntax-examples"></a>Příklady syntaxe výrazů dotazů
 
-### <a name="select"></a>Vyberte
+### <a name="select"></a>Vybrat
 
-The following example uses the `Select` clause to project the first letter from each string in a list of strings.
+V následujícím příkladu je použita klauzule `Select` pro projekt prvního písmene z každého řetězce v seznamu řetězců.
 
 ```vb
 Dim words = New List(Of String) From {"an", "apple", "a", "day"}
@@ -50,9 +50,9 @@ MsgBox(sb.ToString())
 ' d
 ```
 
-### <a name="selectmany"></a>SelectMany
+### <a name="selectmany"></a>Operátor SelectMany
 
-The following example uses multiple `From` clauses to project each word from each string in a list of strings.
+Následující příklad používá více klauzulí `From` pro každé slovo z každého řetězce v seznamu řetězců.
 
 ```vb
 Dim phrases = New List(Of String) From {"an apple a day", "the quick brown fox"}
@@ -81,23 +81,23 @@ MsgBox(sb.ToString())
 ' fox
 ```
 
-## <a name="select-versus-selectmany"></a>Select versus SelectMany
+## <a name="select-versus-selectmany"></a>Vybrat versus operátor SelectMany
 
-The work of both `Select()` and `SelectMany()` is to produce a result value (or values) from source values. `Select()` produces one result value for every source value. The overall result is therefore a collection that has the same number of elements as the source collection. In contrast, `SelectMany()` produces a single overall result that contains concatenated sub-collections from each source value. The transform function that is passed as an argument to `SelectMany()` must return an enumerable sequence of values for each source value. These enumerable sequences are then concatenated by `SelectMany()` to create one large sequence.
+Jak `Select()`, tak `SelectMany()` je vytvořit výslednou hodnotu (nebo hodnoty) ze zdrojových hodnot. `Select()` vytvoří jednu hodnotu výsledku pro každou zdrojovou hodnotu. Celkový výsledek je tedy kolekce, která má stejný počet prvků jako zdrojová kolekce. Naproti tomu `SelectMany()` vytváří jeden celkový výsledek, který obsahuje zřetězené dílčí kolekce z každé zdrojové hodnoty. Funkce transformace, která je předána jako argument pro `SelectMany()` musí vracet vyčíslitelné sekvence hodnot pro každou zdrojovou hodnotu. Tyto vyčíslitelné sekvence jsou poté zřetězeny `SelectMany()`, aby vytvořily jednu velkou sekvenci.
 
-The following two illustrations show the conceptual difference between the actions of these two methods. In each case, assume that the selector (transform) function selects the array of flowers from each source value.
+Následující dva ilustrace znázorňují koncepční rozdíl mezi akcemi těchto dvou metod. V každém případě Předpokládejme, že funkce Selector (transformace) vybere pole květů z každé zdrojové hodnoty.
 
-This illustration depicts how `Select()` returns a collection that has the same number of elements as the source collection.
+Tento obrázek znázorňuje, jak `Select()` vrátí kolekci, která má stejný počet prvků jako zdrojová kolekce.
 
-![Graphic that shows the action of Select&#40;&#41;](./media/projection-operations/select-action-graphic.png)
+![Obrázek, který zobrazuje akci výběru&#40;&#41;](./media/projection-operations/select-action-graphic.png)
 
-This illustration depicts how `SelectMany()` concatenates the intermediate sequence of arrays into one final result value that contains each value from each intermediate array.
+Tento obrázek znázorňuje, jak `SelectMany()` zřetězí mezilehlé pořadí polí do jedné konečné výsledné hodnoty, která obsahuje všechny hodnoty z každého mezilehlého pole.
 
-![Graphic showing the action of SelectMany&#40;&#41;.](./media/projection-operations/select-many-action-graphic.png )
+![Obrázek znázorňující akci operátor SelectMany&#40;&#41;](./media/projection-operations/select-many-action-graphic.png )
 
 ### <a name="code-example"></a>Příklad kódu
 
-The following example compares the behavior of `Select()` and `SelectMany()`. The code creates a "bouquet" of flowers by taking the first two items from each list of flower names in the source collection. In this example, the "single value" that the transform function <xref:System.Linq.Enumerable.Select%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%29> uses is itself a collection of values. This requires the extra `For Each` loop in order to enumerate each string in each sub-sequence.
+Následující příklad porovnává chování `Select()` a `SelectMany()`. Kód vytvoří "kytici" květů z každého seznamu názvů květin ve zdrojové kolekci. V tomto příkladu "jednoduchá hodnota", kterou funkce transformace <xref:System.Linq.Enumerable.Select%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%29> používá, je sám kolekcí hodnot. K tomu je potřeba smyčka extra `For Each`, aby bylo možné vytvořit výčet každého řetězce v každé dílčí sekvenci.
 
 ```vb
 Class Bouquet
@@ -178,9 +178,9 @@ End Sub
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.Linq>
-- [Standard Query Operators Overview (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
+- [Přehled standardních operátorů dotazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [Klauzule Select](../../../../visual-basic/language-reference/queries/select-clause.md)
-- [How to: Combine Data with Joins](../../../../visual-basic/programming-guide/language-features/linq/how-to-combine-data-with-linq-by-using-joins.md)
-- [How to: Populate Object Collections from Multiple Sources (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-populate-object-collections-from-multiple-sources-linq.md)
+- [Postupy: kombinování dat pomocí spojení](../../../../visual-basic/programming-guide/language-features/linq/how-to-combine-data-with-linq-by-using-joins.md)
+- [Postupy: naplnění kolekcí objektů z více zdrojů (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-populate-object-collections-from-multiple-sources-linq.md)
 - [Postupy: Vrácení výsledku dotazu LINQ jako specifického typu](../../../../visual-basic/programming-guide/language-features/linq/how-to-return-a-linq-query-result-as-a-specific-type.md)
-- [How to: Split a File Into Many Files by Using Groups (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-split-a-file-into-many-files-by-using-groups-linq.md)
+- [Postupy: rozdělení souboru na více souborů pomocí skupin (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-split-a-file-into-many-files-by-using-groups-linq.md)

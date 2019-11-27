@@ -14,11 +14,11 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74430672"
 ---
 # <a name="metadata-unions"></a>Spojení metadat
-This section describes the unmanaged unions that the metadata API uses.  
+Tato část popisuje nespravované sjednocení, které používá rozhraní API pro metadata.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [CeeSectionRelocExtra – sjednocení](../../../../docs/framework/unmanaged-api/metadata/ceesectionrelocextra-union.md)  
- Represents an address offset that is used by the [ICeeGen](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md) interface to relocate a section  
+ Představuje posun adresy, který je používán rozhraním [ICeeGen](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md) k přemístění oddílu.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Rozhraní pro metadata](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)  

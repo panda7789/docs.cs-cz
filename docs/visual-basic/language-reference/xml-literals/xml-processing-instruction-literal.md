@@ -16,7 +16,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74347036"
 ---
 # <a name="xml-processing-instruction-literal-visual-basic"></a>Literál instrukcí pro zpracování XML (Visual Basic)
-A literal representing an <xref:System.Xml.Linq.XProcessingInstruction> object.  
+Literál představující objekt <xref:System.Xml.Linq.XProcessingInstruction>.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,37 +26,37 @@ A literal representing an <xref:System.Xml.Linq.XProcessingInstruction> object.
   
 ## <a name="parts"></a>Součásti  
  `<?`  
- Požadováno. Denotes the start of the XML processing instruction literal.  
+ Požadováno. Označuje začátek literálu instrukcí pro zpracování XML.  
   
  `piName`  
- Požadováno. Name indicating which application the processing instruction targets. Cannot begin with "xml" or "XML".  
+ Požadováno. Název, který určuje, která aplikace cílí na zpracování instrukcí. Nelze začínat řetězcem "XML" nebo "XML".  
   
  `piData`  
- Volitelné. String indicating how the application targeted by `piName` should process the XML document.  
+ Volitelná. Řetězec, který označuje, jak aplikace, na kterou cílí `piName`, by měla zpracovat dokument XML.  
   
  `?>`  
- Požadováno. Denotes the end of the processing instruction.  
+ Požadováno. Označuje konec instrukce pro zpracování.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- An <xref:System.Xml.Linq.XProcessingInstruction> object.  
+ Objekt <xref:System.Xml.Linq.XProcessingInstruction>.  
   
 ## <a name="remarks"></a>Poznámky  
- XML processing instruction literals indicate how applications should process an XML document. When an application loads an XML document, the application can check the XML processing instructions to determine how to process the document. The application interprets the meaning of `piName` and `piData`.  
+ Literály instrukcí pro zpracování XML označují, jak by měly aplikace zpracovat dokument XML. Když aplikace načte dokument XML, aplikace může ověřit instrukce pro zpracování XML a určit, jak se má dokument zpracovat. Aplikace interpretuje význam `piName` a `piData`.  
   
- The XML document literal uses syntax that is similar to that of the XML processing instruction. For more information, see [XML Document Literal](../../../visual-basic/language-reference/xml-literals/xml-document-literal.md).  
-  
-> [!NOTE]
-> The `piName` element cannot begin with the strings "xml" or "XML", because the XML 1.0 specification reserves those identifiers.  
-  
- You can assign an XML processing instruction literal to a variable or include it in an XML document literal.  
+ Literál dokumentu XML používá syntaxi, která je podobná jako instrukce pro zpracování XML. Další informace naleznete v tématu [literál dokumentu XML](../../../visual-basic/language-reference/xml-literals/xml-document-literal.md).  
   
 > [!NOTE]
-> An XML literal can span multiple lines without needing line continuation characters. This enables you to copy content from an XML document and paste it directly into a Visual Basic program.  
+> Element `piName` nemůže začínat řetězcem "XML" nebo "XML", protože specifikace XML 1,0 si tyto identifikátory vyhrazuje.  
   
- The Visual Basic compiler converts the XML processing instruction literal to a call to the <xref:System.Xml.Linq.XProcessingInstruction.%23ctor%2A> constructor.  
+ Literál instrukcí pro zpracování XML můžete přiřadit proměnné nebo ji zahrnout do literálu dokumentu XML.  
+  
+> [!NOTE]
+> Literál XML může zahrnovat více řádků bez nutnosti znaků pro pokračování řádku. To vám umožní zkopírovat obsah z dokumentu XML a vložit ho přímo do Visual Basic programu.  
+  
+ Kompilátor Visual Basic převádí literál instrukcí pro zpracování XML na volání konstruktoru <xref:System.Xml.Linq.XProcessingInstruction.%23ctor%2A>.  
   
 ## <a name="example"></a>Příklad  
- The following example creates a processing instruction identifying a style-sheet for an XML document.  
+ Následující příklad vytvoří instrukci pro zpracování identifikující šablonu stylů dokumentu XML.  
   
  [!code-vb[VbXMLSamples#28](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples13.vb#28)]  
   
@@ -65,4 +65,4 @@ A literal representing an <xref:System.Xml.Linq.XProcessingInstruction> object.
 - <xref:System.Xml.Linq.XProcessingInstruction>
 - [Literál dokumentu XML](../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)
 - [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)
-- [Creating XML in Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [Vytváření XML v Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)

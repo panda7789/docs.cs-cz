@@ -23,9 +23,9 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436379"
 ---
 # <a name="iceegenemitstring-method"></a>ICeeGen::EmitString – metoda
-Emits the specified string into the code base.  
+Vygeneruje zadaný řetězec do základu kódu.  
   
- This method is obsolete and should not be used.  
+ Tato metoda je zastaralá a neměla by se používat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +38,19 @@ HRESULT EmitString (
   
 ## <a name="parameters"></a>Parametry  
  `lpString`  
- [in] The string to emit.  
+ pro Řetězec, který se má vygenerovat  
   
  `RVA`  
- [out] The relative virtual address of the emitted string.  
+ mimo Relativní virtuální adresa emitovaného řetězce.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

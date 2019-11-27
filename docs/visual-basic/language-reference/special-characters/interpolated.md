@@ -8,17 +8,17 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349589"
 ---
-# <a name="-visual-basic-reference"></a>$ (Visual Basic Reference)
+# <a name="-visual-basic-reference"></a>$ (Odkaz Visual Basic)
 
-Identifies a string literal as an [interpolated string](../../programming-guide/language-features/strings/interpolated-strings.md). An interpolated string is a template-like string that contains literal text along with *interpolated expressions*. When the interpolated string is resolved, for example in an assignment statement or a method call, its interpolated expressions are replaced by their string representations in the result string. Interpolated strings are replacements for the [composite format strings](../../../standard/base-types/composite-formatting.md) supported by the .NET Framework.
+Identifikuje řetězcový literál jako [interpolovaná řetězec](../../programming-guide/language-features/strings/interpolated-strings.md). Interpolovaná řetězcová událost je řetězec podobný řetězci, který obsahuje doslovný text spolu s *interpolované výrazy*. Při řešení interpolované řetězce, například v příkazu přiřazení nebo volání metody, jsou jeho interpolované výrazy nahrazeny řetězcovými reprezentacemi ve výsledném řetězci. Interpolované řetězce jsou nahrazením pro [složené formátovací řetězce](../../../standard/base-types/composite-formatting.md) , které jsou podporovány .NET Framework.
 
-The following example uses the `$` character to define an interpolated string.
+Následující příklad používá znak `$` k definování interpolované řetězcové řetězce.
 
 [!CODE-vb[interpolated-string-symbol](../../../../samples/snippets/visualbasic/language-reference/special-characters/dollar-sign1.vb)]
 
-For more information on interpolated strings, see the [Interpolated Strings](../../programming-guide/language-features/strings/interpolated-strings.md) topic.
+Další informace o interpolované řetězení naleznete v tématu [interpolované řetězce](../../programming-guide/language-features/strings/interpolated-strings.md) .
 
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Reference](../index.md)
-- [Visual Basic Special Characters](index.md)
+- [Odkaz na Visual Basic](../index.md)
+- [Visual Basic speciálních znaků](index.md)

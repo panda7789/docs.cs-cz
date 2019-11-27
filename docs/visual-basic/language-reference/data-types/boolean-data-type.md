@@ -21,33 +21,33 @@ ms.locfileid: "74347851"
 ---
 # <a name="boolean-data-type-visual-basic"></a>Boolean – datový typ (Visual Basic)
 
-Holds values that can be only `True` or `False`. The keywords `True` and `False` correspond to the two states of `Boolean` variables.  
+Obsahuje hodnoty, které mohou být pouze `True` nebo `False`. Klíčová slova `True` a `False` odpovídají dvěma stavům `Boolean` proměnných.  
   
 ## <a name="remarks"></a>Poznámky  
 
- Use the [Boolean Data Type (Visual Basic)](../../../visual-basic/language-reference/data-types/boolean-data-type.md) to contain two-state values such as true/false, yes/no, or on/off.  
+ Použijte [datový typ Boolean (Visual Basic)](../../../visual-basic/language-reference/data-types/boolean-data-type.md) k tomu, aby obsahovala hodnoty se dvěma stavy, jako je true/false, ano/ne nebo zapnuto/vypnuto.  
   
- The default value of `Boolean` is `False`.  
+ Výchozí hodnota `Boolean` je `False`.  
   
- `Boolean` values are not stored as numbers, and the stored values are not intended to be equivalent to numbers. You should never write code that relies on equivalent numeric values for `True` and `False`. Whenever possible, you should restrict usage of `Boolean` variables to the logical values for which they are designed.  
+ hodnoty `Boolean` nejsou uloženy jako čísla a uložené hodnoty nejsou určeny pro ekvivalent čísel. Nikdy byste neměli psát kód, který spoléhá na ekvivalentní číselné hodnoty pro `True` a `False`. Kdykoli je to možné, měli byste omezit využití `Boolean` proměnných na logické hodnoty, pro které jsou navrženy.  
   
 ## <a name="type-conversions"></a>Převody typu  
 
- When Visual Basic converts numeric data type values to `Boolean`, 0 becomes `False` and all other values become `True`. When Visual Basic converts `Boolean` values to numeric types, `False` becomes 0 and `True` becomes -1.  
+ Když Visual Basic převede hodnoty číselného datového typu na `Boolean`, 0 se změní na `False` a všechny ostatní hodnoty se budou `True`. Když Visual Basic převede `Boolean` hodnoty na číselné typy, `False` bude 0 a `True` se změní na hodnotu-1.  
   
- When you convert between `Boolean` values and numeric data types, keep in mind that the .NET Framework conversion methods do not always produce the same results as the Visual Basic conversion keywords. This is because the Visual Basic conversion retains behavior compatible with previous versions. For more information, see "Boolean Type Does Not Convert to Numeric Type Accurately" in [Troubleshooting Data Types](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md).  
+ Pokud převedete mezi `Boolean` hodnoty a číselné datové typy, pamatujte, že metody převodu .NET Framework nikdy nepřinesou stejné výsledky jako klíčová slova převodu Visual Basic. Důvodem je to, že převod Visual Basic zachovává chování kompatibilní s předchozími verzemi. Další informace naleznete v tématu "logický typ nepřeváděný na číselný typ přesně" v článku [řešení potíží s datovými typy](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md).  
   
 ## <a name="programming-tips"></a>Tipy k programování  
   
-- **Negative Numbers.** `Boolean` is not a numeric type and cannot represent a negative value. In any case, you should not use `Boolean` to hold numeric values.  
+- **Záporná čísla.** `Boolean` není numerický typ a nemůže představovat zápornou hodnotu. V žádném případě byste neměli používat `Boolean` k ukládání číselných hodnot.  
   
-- **Type Characters.** `Boolean` has no literal type character or identifier type character.  
+- **Znaky typu.** `Boolean` nemá žádný znak typu literálu ani znak typu identifikátoru.  
   
-- **Framework Type.** The corresponding type in the .NET Framework is the <xref:System.Boolean?displayProperty=nameWithType> structure.  
+- **Typ rozhraní.** Odpovídající typ v .NET Framework je struktura <xref:System.Boolean?displayProperty=nameWithType>.  
   
 ## <a name="example"></a>Příklad  
 
- In the following example, `runningVB` is a `Boolean` variable, which stores a simple yes/no setting.  
+ V následujícím příkladu je `runningVB` proměnná `Boolean`, která ukládá jednoduché nastavení ano/ne.  
   
 ```vb  
 Dim runningVB As Boolean  

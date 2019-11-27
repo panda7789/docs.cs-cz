@@ -10,22 +10,22 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74331692"
 ---
 # <a name="linq-to-xml-visual-basic"></a>LINQ to XML (Visual Basic)
-LINQ to XML provides an in-memory XML programming interface that leverages the .NET Language-Integrated Query (LINQ) Framework. LINQ to XML uses the latest .NET Framework language capabilities and is comparable to an updated, redesigned Document Object Model (DOM) XML programming interface.  
+LINQ to XML poskytuje rozhraní pro programování XML v paměti, které využívá architekturu LINQ (Integrated Query) jazyka .NET. LINQ to XML používá nejnovější možnosti jazyka .NET Framework a je porovnatelný z aktualizovaného a přepracováného programovacího rozhraní XML model DOM (Document Object Model) (DOM).  
   
- The LINQ family of technologies provides a consistent query experience for objects (LINQ to Objects), relational databases (LINQ to SQL), and XML (LINQ to XML).  
+ Rodina technologie LINQ nabízí konzistentní možnosti dotazování pro objekty (LINQ to Objects), relační databáze (LINQ to SQL) a XML (LINQ to XML).  
   
 ## <a name="in-this-section"></a>V této části  
  [Začínáme (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/getting-started-linq-to-xml.md)  
- Provides introductory information about LINQ to XML, including a conceptual overview and an overview of the <xref:System.Xml.Linq?displayProperty=nameWithType> classes.  
+ Poskytuje úvodní informace o LINQ to XML, včetně koncepčního přehledu a přehledu <xref:System.Xml.Linq?displayProperty=nameWithType> tříd.  
   
- [Programming Guide (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)  
- Provides conceptual and how-to information about programming with LINQ to XML.  
+ [Průvodce programováním (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)  
+ Obsahuje koncepční a podrobné informace o programování s LINQ to XML.  
   
  [Referenční informace (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/reference-linq-to-xml.md)  
- Provides pointers to the LINQ to XML managed reference documentation.  
+ Poskytuje odkazy na LINQ to XML spravovanou referenční dokumentaci.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Overview of LINQ to XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)
+- [Přehled LINQ to XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)
 - [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)
-- [Language-Integrated Query (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/index.md)
+- [LINQ (Language-Integrated Query) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/index.md)

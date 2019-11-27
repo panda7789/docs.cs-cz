@@ -9,20 +9,20 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348402"
 ---
-# <a name="how-to-compare-the-contents-of-two-folders-linq-visual-basic"></a>How to: Compare the Contents of Two Folders (LINQ) (Visual Basic)
+# <a name="how-to-compare-the-contents-of-two-folders-linq-visual-basic"></a>Postupy: porovnání obsahu dvou složek (LINQ) (Visual Basic)
 
-This example demonstrates three ways to compare two file listings:
+Tento příklad ukazuje tři způsoby, jak porovnat dva seznamy souborů:
 
-- By querying for a Boolean value that specifies whether the two file lists are identical.
+- Dotazování na logickou hodnotu, která určuje, zda jsou dva seznamy souborů identické.
 
-- By querying for the intersection to retrieve the files that are in both folders.
+- Dotazem pro průnik pro načtení souborů, které jsou v obou složkách.
 
-- By querying for the set difference to retrieve the files that are in one folder but not the other.
+- Pomocí dotazu na nastavený rozdíl, který načte soubory, které jsou v jedné složce, ale ne na druhé.
 
     > [!NOTE]
-    > The techniques shown here can be adapted to compare sequences of objects of any type.
+    > Zde uvedené techniky lze přizpůsobit pro porovnání sekvencí objektů libovolného typu.
 
-The `FileComparer` class shown here demonstrates how to use a custom comparer class together with the Standard Query Operators. The class is not intended for use in real-world scenarios. It just uses the name and length in bytes of each file to determine whether the contents of each folder are identical or not. In a real-world scenario, you should modify this comparer to perform a more rigorous equality check.
+Třída `FileComparer` zobrazená zde ukazuje, jak použít vlastní třídu porovnávače společně se standardními operátory dotazu. Třída není určena pro použití ve scénářích reálného světa. Používá pouze název a délku v bajtech jednotlivých souborů, aby bylo možné určit, zda obsah každé složky je identický nebo nikoli. Ve scénáři reálného světa byste tuto porovnávací metodu měli upravit, aby prováděla přísnější kontrolu rovnosti.
 
 ## <a name="example"></a>Příklad
 
@@ -116,9 +116,9 @@ End Module
 
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu
 
-Create a VB.NET console application project, with an `Imports` statement for the System.Linq namespace.
+Vytvořte projekt konzolové aplikace VB.NET s příkazem `Imports` pro obor názvů System. Linq.
 
 ## <a name="see-also"></a>Viz také:
 
 - [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
-- [LINQ and File Directories (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [LINQ a souborové adresáře (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445063"
 ---
 # <a name="icorprofilercallbackclassunloadstarted-method"></a>ICorProfilerCallback::ClassUnloadStarted – metoda
-Notifies the profiler that a class is being unloaded.  
+Upozorní profileru, že je uvolněna třída.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,19 +34,19 @@ HRESULT ClassUnloadStarted(
   
 ## <a name="parameters"></a>Parametry  
  `classId`  
- [in] Identifies the class that is being unloaded.  
+ pro Identifikuje třídu, která je uvolněna.  
   
 ## <a name="remarks"></a>Poznámky  
- The value of `classId` is not valid for an information request after the `ClassUnloadStarted` method returns — this is the profiler's last chance to obtain information about this class.  
+ Hodnota `classId` není platná pro požadavek na informace po návratu metody `ClassUnloadStarted` – jedná se o poslední možnost profileru k získání informací o této třídě.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

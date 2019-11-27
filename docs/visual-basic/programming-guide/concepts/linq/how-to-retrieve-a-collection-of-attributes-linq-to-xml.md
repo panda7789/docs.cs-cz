@@ -1,5 +1,5 @@
 ---
-title: 'How to: Retrieve a Collection of Attributes (LINQ to XML)'
+title: 'Postupy: načtení kolekce atributů (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: a07e9645-b45b-403b-b698-f652f904c7d2
 ms.openlocfilehash: ff260660057c3b75f4cc92c37c67fca0a0b7f192
@@ -9,11 +9,11 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74347578"
 ---
-# <a name="how-to-retrieve-a-collection-of-attributes-linq-to-xml-visual-basic"></a>How to: Retrieve a Collection of Attributes (LINQ to XML) (Visual Basic)
-This topic introduces the <xref:System.Xml.Linq.XElement.Attributes%2A> method. This method retrieves the attributes of an element.  
+# <a name="how-to-retrieve-a-collection-of-attributes-linq-to-xml-visual-basic"></a>Postupy: načtení kolekce atributů (LINQ to XML) (Visual Basic)
+Toto téma představuje metodu <xref:System.Xml.Linq.XElement.Attributes%2A>. Tato metoda načte atributy elementu.  
   
 ## <a name="example"></a>Příklad  
- The following example shows how to iterate through the collection of attributes of an element.  
+ Následující příklad ukazuje, jak iterovat kolekcí atributů elementu.  
   
 ```vb  
 Dim val = _  
@@ -26,7 +26,7 @@ For Each att As XAttribute In listOfAttributes
 Next  
 ```  
   
- This code produces the following output:  
+ Tento kód generuje následující výstup:  
   
 ```console  
 ID="1243"  
@@ -36,4 +36,4 @@ ConvertableTo="double"
   
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ to XML Axes (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)
+- [LINQ to XML osy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)

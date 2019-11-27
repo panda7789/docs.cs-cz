@@ -14,11 +14,11 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351137"
 ---
 # <a name="how-to-determine-the-string-associated-with-an-enumeration-value-visual-basic"></a>Postupy: Určení řetězce spojeného s hodnotou výčtu (Visual Basic)
-The <xref:System.Enum.GetValues%2A> and <xref:System.Enum.GetNames%2A> methods allow you to determine the strings and values associated with enumeration members.  
+Metody <xref:System.Enum.GetValues%2A> a <xref:System.Enum.GetNames%2A> umožňují určit řetězce a hodnoty přidružené ke členům výčtu.  
   
-### <a name="to-determine-the-string-associated-with-an-enumeration"></a>To determine the string associated with an enumeration  
+### <a name="to-determine-the-string-associated-with-an-enumeration"></a>Určení řetězce přidruženého k výčtu  
   
-- Use the <xref:System.Enum.GetNames%2A> method to retrieve the strings associated with the enumeration members. This example declares an enumeration, `flavorEnum`, then uses the <xref:System.Enum.GetNames%2A> method to display the strings associated with each member.  
+- Použijte metodu <xref:System.Enum.GetNames%2A> k načtení řetězců přidružených ke členům výčtu. Tento příklad deklaruje výčet `flavorEnum`a poté používá metodu <xref:System.Enum.GetNames%2A> k zobrazení řetězců přidružených k jednotlivým členům.  
   
      [!code-vb[VbEnumsTask#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#2)]  
   
@@ -27,9 +27,9 @@ The <xref:System.Enum.GetValues%2A> and <xref:System.Enum.GetNames%2A> methods a
 - <xref:System.Enum.GetValues%2A>
 - <xref:System.Enum.GetNames%2A>
 - <xref:System.Enum>
-- [How to: Declare an Enumeration](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)
+- [Postupy: deklarace výčtu](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)
 - [Postupy: Odkazování na člena výčtu](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-refer-to-an-enumeration-member.md)
 - [Výčty a kvalifikace názvu](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md)
-- [How to: Iterate Through An Enumeration in Visual Basic](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-iterate-through-an-enumeration.md)
+- [Postupy: iterace prostřednictvím výčtu v Visual Basic](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-iterate-through-an-enumeration.md)
 - [Kdy použít výčet](../../../../visual-basic/programming-guide/language-features/constants-enums/when-to-use-an-enumeration.md)
 - [Příkaz Enum](../../../../visual-basic/language-reference/statements/enum-statement.md)

@@ -1,5 +1,5 @@
 ---
-title: 'How to: Find Attributes of Siblings with a Specific Name (XPath-LINQ to XML)'
+title: 'Postupy: hledání atributů na stejné úrovni s konkrétním názvem (XPath-LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 83b3ddca-830a-4b71-9756-9e4bdf907302
 ms.openlocfilehash: ea4492dbbe9dc8e32c675e1a938cda0d10321b7a
@@ -9,17 +9,17 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74343679"
 ---
-# <a name="how-to-find-attributes-of-siblings-with-a-specific-name-xpath-linq-to-xml-visual-basic"></a>How to: Find Attributes of Siblings with a Specific Name (XPath-LINQ to XML) (Visual Basic)
-This topic shows how to find all attributes of the siblings of the context node. Only attributes with a specific name are returned in the collection.  
+# <a name="how-to-find-attributes-of-siblings-with-a-specific-name-xpath-linq-to-xml-visual-basic"></a>Postupy: hledání atributů na stejné úrovni s konkrétním názvem (XPath-LINQ to XML) (Visual Basic)
+Toto téma ukazuje, jak najít všechny atributy na stejné úrovni kontextu uzlu. V kolekci jsou vráceny pouze atributy s určitým názvem.  
   
- The XPath expression is:  
+ Výraz XPath je:  
   
  `../Book/@id`  
   
 ## <a name="example"></a>Příklad  
- This example first finds a `Book` element, and then finds all sibling elements named `Book`, and then finds all attributes named `id`. The result is a collection of attributes.  
+ Tento příklad nejprve vyhledá prvek `Book` a poté vyhledá všechny prvky na stejné úrovni s názvem `Book`a pak najde všechny atributy s názvem `id`. Výsledkem je kolekce atributů.  
   
- This example uses the following XML document: [Sample XML File: Books (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: Books (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).  
   
 ```vb  
 Dim books as XDocument = XDocument.Load("Books.xml")  
@@ -46,7 +46,7 @@ For Each el As XAttribute In list1
 Next  
 ```  
   
- This example produces the following output:  
+ Tento příklad vytvoří následující výstup:  
   
 ```console  
 Results are identical  
@@ -56,4 +56,4 @@ id="bk102"
   
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ to XML for XPath Users (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML pro uživatele XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

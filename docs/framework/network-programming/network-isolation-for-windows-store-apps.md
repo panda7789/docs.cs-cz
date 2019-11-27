@@ -10,26 +10,26 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74447416"
 ---
 # <a name="network-isolation-for-windows-store-apps"></a>Izolace sítě pro aplikace z obchodu Microsoft Store
-Classes in the <xref:System.Net>,  <xref:System.Net.Http>, and <xref:System.Net.Http.Headers> namespaces can be used to develop Windows Store  apps  or desktop apps. When used in a Windows Store app, classes in these namespaces are affected by network isolation, part of the application security model used by the [!INCLUDE[win8](../../../includes/win8-md.md)]. The appropriate network capabilities must be enabled in the app manifest for a Windows Store app for the system to allow network access.  
+Třídy v oborech názvů <xref:System.Net>, <xref:System.Net.Http>a <xref:System.Net.Http.Headers> lze použít k vývoji aplikací pro Windows Store nebo aplikací klasické pracovní plochy. Při použití v aplikaci pro Windows Store jsou třídy v těchto oborech názvů ovlivněny izolací sítě, což je součást modelu zabezpečení aplikace, kterou používá [!INCLUDE[win8](../../../includes/win8-md.md)]. V manifestu aplikace musí být povoleny vhodné síťové funkce pro aplikaci pro Windows Store, aby mohl systém povolit přístup k síti.  
   
-## <a name="checklist-for-network-isolation"></a>Checklist for Network Isolation  
- Use this checklist to be sure that network isolation is configured for your Windows Store app.  
+## <a name="checklist-for-network-isolation"></a>Kontrolní seznam pro izolaci sítě  
+ Pomocí tohoto kontrolního seznamu se ujistěte, že je pro vaši aplikaci pro Windows Store nakonfigurovaná izolace sítě.  
   
-1. Determine the direction of network access requests needed by the app. This can be either outbound client-initiated requests or inbound unsolicited requests or it could be a combination of both of these network request types.  
+1. Určete směr požadavků na přístup k síti, které aplikace potřebuje. Může to být buď odchozí požadavky iniciované klientem, nebo příchozí nevyžádaný požadavek, nebo může být kombinací obou těchto typů síťových požadavků.  
   
-2. Determine the type of network resources that the app will communicate with. An app may need to communicate with trusted resources on a Home or Work network. An app might need to communicate with resources on the Internet. An app might need access to both types of network resources.  
+2. Určete typ síťových prostředků, se kterými bude aplikace komunikovat. Aplikace může vyžadovat komunikaci s důvěryhodnými prostředky v domácí nebo pracovní síti. Aplikace může vyžadovat komunikaci s prostředky na internetu. Aplikace může potřebovat přístup k oběma typům síťových prostředků.  
   
-3. Configure the minimum-required networking isolation capabilities in the app manifest.  
+3. Nakonfigurujte možnosti izolace sítě, které jsou v manifestu aplikace minimální a požadované.  
   
-4. Deploy and run your app to test it using the network isolation tools provided for troubleshooting.  
+4. Nasaďte a spusťte aplikaci pro testování pomocí nástrojů pro izolaci sítě, které jsou k dispozici pro řešení potíží.  
   
- For more detailed information on how to configure network capabilities and isolation tools used for troubleshooting network isolation, see [How to configure network isolation capabilities](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10)) in the Windows 8.x Store developer documentation.
+ Podrobnější informace o tom, jak nakonfigurovat možnosti sítě a nástroje pro izolaci používané pro řešení potíží s izolací sítě, najdete v tématu [Konfigurace možností izolace sítě](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10)) v dokumentaci pro vývojáře Windows 8. x Store.
   
 ## <a name="see-also"></a>Viz také:
 
-- [Connecting to a web service](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10))
-- [Guidelines and checklist for network isolation](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10))
-- [Quickstart: Connecting using HttpClient](https://docs.microsoft.com/previous-versions/windows/apps/hh781239(v=win.10))
-- [How to use HttpClient handlers](https://docs.microsoft.com/previous-versions/windows/apps/hh781241(v=win.10))
-- [How to secure HttpClient connections](https://docs.microsoft.com/previous-versions/windows/apps/hh781240(v=win.10))
-- [HttpClient Sample](https://code.msdn.microsoft.com/windowsapps/HttpClient-sample-55700664)
+- [Připojení k webové službě](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10))
+- [Pokyny a kontrolní seznam pro izolaci sítě](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10))
+- [Rychlý Start: připojení pomocí HttpClient](https://docs.microsoft.com/previous-versions/windows/apps/hh781239(v=win.10))
+- [Jak používat obslužné rutiny HttpClient](https://docs.microsoft.com/previous-versions/windows/apps/hh781241(v=win.10))
+- [Jak zabezpečit připojení HttpClient](https://docs.microsoft.com/previous-versions/windows/apps/hh781240(v=win.10))
+- [Ukázka HttpClient](https://code.msdn.microsoft.com/windowsapps/HttpClient-sample-55700664)

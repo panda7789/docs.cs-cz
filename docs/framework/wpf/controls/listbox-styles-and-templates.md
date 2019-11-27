@@ -29,7 +29,7 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
   
 |Název VisualState|Název VisualStateGroup|Popis|  
 |-|-|-|  
-|Platné|ValidationStates|Ovládací prvek je platný.|  
+|Platný|ValidationStates|Ovládací prvek je platný.|  
 |InvalidFocused|ValidationStates|Ovládací prvek není platný a má fokus.|  
 |InvalidUnfocused|ValidationStates|Ovládací prvek není platný a nemá fokus.|  
   
@@ -47,9 +47,9 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
 |Zaměřil|FocusStates|Položka má fokus.|  
 |Bez fokusu|FocusStates|Položka nemá fokus.|  
 |Nevybrané|SelectionStates|Položka není vybrána.|  
-|Vybráno|SelectionStates|Položka je currentlyplate vybraná.|  
+|Vybrané|SelectionStates|Položka je currentlyplate vybraná.|  
 |SelectedUnfocused|SelectionStates|Položka je vybrána, ale nemá fokus.|  
-|Platné|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
+|Platný|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
 |InvalidFocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
 |InvalidUnfocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
   

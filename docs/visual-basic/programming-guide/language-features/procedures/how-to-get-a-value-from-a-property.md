@@ -16,27 +16,27 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74339827"
 ---
 # <a name="how-to-get-a-value-from-a-property-visual-basic"></a>Postupy: Získání hodnoty z vlastnosti (Visual Basic)
-You retrieve a property's value by including the property name in an expression.  
+Hodnotu vlastnosti načtete tak, že zahrnete název vlastnosti do výrazu.  
   
- The property's `Get` procedure retrieves the value, but you do not explicitly call it by name. You use the property just as you would use a variable. Visual Basic makes the calls to the property's procedures.  
+ Procedura `Get` vlastnosti načte hodnotu, ale explicitně ji nevoláte podle názvu. Vlastnost použijete stejně, jako byste použili proměnnou. Visual Basic provede volání procedur vlastností.  
   
-### <a name="to-retrieve-a-value-from-a-property"></a>To retrieve a value from a property  
+### <a name="to-retrieve-a-value-from-a-property"></a>Načtení hodnoty z vlastnosti  
   
-1. Use the property name in an expression the same way you would use a variable name. You can use a property anywhere you can use a variable or a constant.  
+1. Použijte název vlastnosti ve výrazu stejným způsobem, jako byste použili název proměnné. Vlastnost můžete použít všude, kde můžete použít proměnnou nebo konstantu.  
   
      -nebo-  
   
-     Use the property name following the equal (`=`) sign in an assignment statement.  
+     Použijte název vlastnosti za znaménkem rovnosti (`=`) v příkazu přiřazení.  
   
-     The following example reads the value of the Visual Basic `Now` property, implicitly calling its `Get` procedure.  
+     Následující příklad přečte hodnotu vlastnosti Visual Basic `Now`, implicitně volá `Get` proceduru.  
   
      [!code-vb[VbVbalrDateProperties#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDateProperties/VB/Module1.vb#4)]  
   
-2. If the property takes arguments, follow the property name with parentheses to enclose the argument list. If there are no arguments, you can optionally omit the parentheses.  
+2. Pokud vlastnost přebírá argumenty, uveďte seznam argumentů tak, že postupujete podle názvu vlastnosti s závorkami. Pokud neexistují žádné argumenty, můžete volitelně vynechat závorky.  
   
-3. Place the arguments in the argument list within the parentheses, separated by commas. Be sure you supply the arguments in the same order that the property defines the corresponding parameters.  
+3. Argumenty umístěte do seznamu argumentů v závorkách a oddělte je čárkami. Ujistěte se, že jste zadali argumenty ve stejném pořadí, v jakém vlastnost definuje odpovídající parametry.  
   
- The value of the property participates in the expression just as a variable or constant would, or it is stored in the variable or property on the left side of the assignment statement.  
+ Hodnota vlastnosti se účastní ve výrazu stejně jako proměnná nebo konstanta nebo je uložena v proměnné nebo vlastnosti na levé straně příkazu přiřazení.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -44,9 +44,9 @@ You retrieve a property's value by including the property name in an expression.
 - [Procedury vlastnosti](./property-procedures.md)
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
 - [Příkaz Property](../../../../visual-basic/language-reference/statements/property-statement.md)
-- [Differences Between Properties and Variables in Visual Basic](./differences-between-properties-and-variables.md)
+- [Rozdíly mezi vlastnostmi a proměnnými v Visual Basic](./differences-between-properties-and-variables.md)
 - [Postupy: Vytvoření vlastnosti](./how-to-create-a-property.md)
 - [Postupy: Deklarace vlastnosti se smíšenými úrovněmi přístupu](./how-to-declare-a-property-with-mixed-access-levels.md)
 - [Postupy: Volání procedury vlastnosti](./how-to-call-a-property-procedure.md)
-- [How to: Declare and Call a Default Property in Visual Basic](./how-to-declare-and-call-a-default-property.md)
+- [Postupy: deklarace a volání výchozí vlastnosti v Visual Basic](./how-to-declare-and-call-a-default-property.md)
 - [Postupy: Vložení hodnoty do vlastnosti](./how-to-put-a-value-in-a-property.md)

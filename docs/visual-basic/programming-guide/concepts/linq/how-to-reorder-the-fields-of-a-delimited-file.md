@@ -9,15 +9,15 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74347606"
 ---
-# <a name="how-to-reorder-the-fields-of-a-delimited-file-linq-visual-basic"></a>How to: Reorder the Fields of a Delimited File (LINQ) (Visual Basic)
+# <a name="how-to-reorder-the-fields-of-a-delimited-file-linq-visual-basic"></a>Postupy: Změna pořadí polí souboru s oddělovači (LINQ) (Visual Basic)
 
-A comma-separated value (CSV) file is a text file that is often used to store spreadsheet data or other tabular data that is represented by rows and columns. By using the <xref:System.String.Split%2A> method to separate the fields, it is very easy to query and manipulate CSV files by using LINQ. In fact, the same technique can be used to reorder the parts of any structured line of text; it is not limited to CSV files.
+Textový soubor s oddělovači (CSV) je textový soubor, který se často používá k ukládání dat tabulky nebo jiných tabulkových dat, která jsou reprezentovaná řádky a sloupci. Pomocí metody <xref:System.String.Split%2A> k oddělení polí je velmi snadné dotazování a manipulace se soubory CSV pomocí LINQ. Ve skutečnosti lze stejnou techniku použít k přeřazení částí libovolného strukturovaného řádku textu; Nejedná se pouze o soubory CSV.
 
-In the following example, assume that the three columns represent students' "last name," "first name", and "ID." The fields are in alphabetical order based on the students' last names. The query produces a new sequence in which the ID column appears first, followed by a second column that combines the student's first name and last name. The lines are reordered according to the ID field. The results are saved into a new file and the original data is not modified.
+V následujícím příkladu Předpokládejme, že tři sloupce zastupují studenty "" příjmení "," křestní jméno "a" ID ". Pole jsou v abecedním pořadí podle příjmení studentů. Dotaz vytvoří nové pořadí, ve kterém se nejprve zobrazí sloupec ID následovaný druhým sloupcem, který kombinuje křestní jméno a příjmení studenta. Řádky se přesměrují podle pole ID. Výsledky se uloží do nového souboru a původní data se nezmění.
 
-### <a name="to-create-the-data-file"></a>To create the data file
+### <a name="to-create-the-data-file"></a>Vytvoření datového souboru
 
-1. Copy the following lines into a plain text file that is named spreadsheet1.csv. Save the file in your project folder.
+1. Zkopírujte následující řádky do souboru prostého textu s názvem Spreadsheet1. csv. Uložte soubor do složky projektu.
 
     ```csv
     Adams,Terry,120
@@ -77,6 +77,6 @@ End Class
 
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ and Strings (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
-- [LINQ and File Directories (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [LINQ a souborové adresáře (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
 - [Postupy: Generování XML ze souborů CSV](../../../../visual-basic/programming-guide/concepts/linq/how-to-generate-xml-from-csv-files.md)

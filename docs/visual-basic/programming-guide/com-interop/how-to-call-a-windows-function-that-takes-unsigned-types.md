@@ -23,19 +23,19 @@ ms.locfileid: "74348736"
 ---
 # <a name="how-to-call-a-windows-function-that-takes-unsigned-types-visual-basic"></a>Postupy: Volání funkce systému Windows, která přebírá nepřiřazené typy (Visual Basic).
 
-If you are consuming a class, module, or structure that has members of unsigned integer types, you can access these members with Visual Basic.
+Pokud pracujete se třídou, modulem nebo strukturou, která má členy unsigned integerch typů, můžete k těmto členům přistupovat pomocí Visual Basic.
 
-## <a name="to-call-a-windows-function-that-takes-an-unsigned-type"></a>To call a Windows function that takes an unsigned type
+## <a name="to-call-a-windows-function-that-takes-an-unsigned-type"></a>Volání funkce systému Windows, která přebírá typ bez znaménka
 
-1. Use a [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md) to tell Visual Basic which library holds the function, what its name is in that library, what its calling sequence is, and how to convert strings when calling it.
+1. Použijte [příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md) k oznámení Visual Basic, která knihovna obsahuje funkci, co je jeho název v této knihovně, co je jeho volající sekvence a jak převést řetězce při volání.
 
-2. In the `Declare` statement, use `UInteger`, `ULong`, `UShort`, or `Byte` as appropriate for each parameter with an unsigned type.
+2. V příkazu `Declare` použijte `UInteger`, `ULong`, `UShort`nebo `Byte` jako vhodný pro každý parametr s typem bez znaménka.
 
-3. Consult the documentation for the Windows function you are calling to find the names and values of the constants it uses. Many of these are defined in the WinUser.h file.
+3. V dokumentaci pro funkci Windows, kterou voláte, vyhledejte názvy a hodnoty konstant, které používá. Mnohé z těchto jsou definovány v souboru WinUser. h.
 
-4. Declare the necessary constants in your code. Many Windows constants are 32-bit unsigned values, and you should declare these `As UInteger`.
+4. Deklaruje nezbytné konstanty ve vašem kódu. Mnoho konstant systému Windows je 32 nepodepsaných hodnot, které byste měli deklarovat `As UInteger`.
 
-5. Call the function in the normal way. The following example calls the Windows function `MessageBox`, which takes an unsigned integer argument.
+5. Volejte funkci normálním způsobem. Následující příklad volá funkci Windows `MessageBox`, která přijímá argument unsigned integer.
 
     ```vb
     Public Class windowsMessage
@@ -60,7 +60,7 @@ If you are consuming a class, module, or structure that has members of unsigned 
     End Class
     ```
 
-     You can test the function `messageThroughWindows` with the following code.
+     Funkci můžete testovat `messageThroughWindows` s následujícím kódem.
 
     ```vb
     Public Sub consumeWindowsMessage()
@@ -70,13 +70,13 @@ If you are consuming a class, module, or structure that has members of unsigned 
     ```
 
     > [!CAUTION]
-    > The `UInteger`, `ULong`, `UShort`, and `SByte` data types are not part of the [Language Independence and Language-Independent Components](../../../standard/language-independence-and-language-independent-components.md) (CLS), so CLS-compliant code cannot consume a component that uses them.
+    > Datové typy `UInteger`, `ULong`, `UShort`a `SByte` nejsou součástí [nezávislosti jazyka a jazykově nezávislé komponenty](../../../standard/language-independence-and-language-independent-components.md) (CLS), takže kód kompatibilní se specifikací CLS nemůže spotřebovat komponentu, která je používá.
 
     > [!IMPORTANT]
-    > Making a call to unmanaged code, such as the Windows application programming interface (API), exposes your code to potential security risks.
+    > Volání nespravovaného kódu, jako je rozhraní API (Application Programming Interface) systému Windows, zpřístupňuje váš kód potenciálním bezpečnostním rizikům.
 
     > [!IMPORTANT]
-    > Calling the Windows API requires unmanaged code permission, which might affect its execution in partial-trust situations. For more information, see <xref:System.Security.Permissions.SecurityPermission> and [Code Access Permissions](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h846e9b3(v=vs.100)).
+    > Volání rozhraní API systému Windows vyžaduje oprávnění nespravovaného kódu, které může ovlivnit jeho spuštění v situacích s částečnou důvěryhodností. Další informace najdete v tématu <xref:System.Security.Permissions.SecurityPermission> a [přístupová oprávnění kódu](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h846e9b3(v=vs.100)).
 
 ## <a name="see-also"></a>Viz také:
 

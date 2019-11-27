@@ -14,13 +14,13 @@ ms.locfileid: "74348803"
 ---
 # <a name="how-to-create-a-directory-in-visual-basic"></a>Postupy: Vytvoření adresáře v jazyce Visual Basic
 
-Use the `CreateDirectory` method of the `My.Computer.FileSystem` object to create directories.  
+K vytvoření adresáře použijte metodu `CreateDirectory` objektu `My.Computer.FileSystem`.  
   
- If the directory already exists, no exception is thrown.  
+ Pokud adresář již existuje, není vyvolána žádná výjimka.  
   
-### <a name="to-create-a-directory"></a>To create a directory  
+### <a name="to-create-a-directory"></a>Vytvoření adresáře  
   
-- Use the `CreateDirectory` method by specifying the full path of the location where the directory should be created. This example creates the directory `NewDirectory` in `C:\Documents and Settings\All Users\Documents`.  
+- Použijte metodu `CreateDirectory` zadáním úplné cesty k umístění, kde má být adresář vytvořen. Tento příklad vytvoří adresář `NewDirectory` v `C:\Documents and Settings\All Users\Documents`.  
   
      [!code-vb[VbVbcnMyFileSystem#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/Class1.vb#2)]  
   
@@ -28,19 +28,19 @@ Use the `CreateDirectory` method of the `My.Computer.FileSystem` object to creat
 
  Následující podmínky mohou způsobit výjimku:  
   
-- The directory name is malformed. For example, it contains illegal characters or is only white space (<xref:System.ArgumentException>).  
+- Název adresáře je poškozený. Například obsahuje neplatné znaky nebo je pouze mezera (<xref:System.ArgumentException>).  
   
-- The parent directory of the directory to be created is read-only (<xref:System.IO.IOException>).  
+- Nadřazený adresář adresáře, který se má vytvořit, je jen pro čtení (<xref:System.IO.IOException>).  
   
-- The directory name is `Nothing` (<xref:System.ArgumentNullException>).  
+- Název adresáře je `Nothing` (<xref:System.ArgumentNullException>).  
   
-- The directory name is too long (<xref:System.IO.PathTooLongException>).  
+- Název adresáře je příliš dlouhý (<xref:System.IO.PathTooLongException>).  
   
-- The directory name is a colon ":" (<xref:System.NotSupportedException>).  
+- Název adresáře je dvojtečka ":" (<xref:System.NotSupportedException>).  
   
-- The user does not have permission to create the directory (<xref:System.UnauthorizedAccessException>).  
+- Uživatel nemá oprávnění k vytvoření adresáře (<xref:System.UnauthorizedAccessException>).  
   
-- The user lacks permissions in a partial-trust situation (<xref:System.Security.SecurityException>).  
+- Uživatel nemá oprávnění v situaci s částečnou důvěryhodností (<xref:System.Security.SecurityException>).  
   
 ## <a name="see-also"></a>Viz také:
 

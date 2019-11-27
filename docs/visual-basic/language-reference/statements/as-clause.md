@@ -16,10 +16,10 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350172"
 ---
 # <a name="as-clause-visual-basic"></a>As – klauzule (Visual Basic)
-Introduces an `As` clause, which identifies a data type in a declaration statement or a constraint list on a generic type parameter.  
+Zavádí klauzuli `As`, která identifikuje datový typ v příkazu deklarace nebo seznamu omezení v parametru obecného typu.  
   
 ## <a name="remarks"></a>Poznámky  
- The `As` keyword can be used in these contexts:  
+ Klíčové slovo `As` lze použít v těchto kontextech:  
   
  [Klauzule Aggregate](../../../visual-basic/language-reference/queries/aggregate-clause.md)  
   
@@ -37,9 +37,9 @@ Introduces an `As` clause, which identifies a data type in a declaration stateme
   
  [Příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md)  
   
- [For...Next Statements](../../../visual-basic/language-reference/statements/for-next-statement.md)  
+ [Pro... Další příkazy](../../../visual-basic/language-reference/statements/for-next-statement.md)  
   
- [For Each...Next Statements](../../../visual-basic/language-reference/statements/for-each-next-statement.md)  
+ [For each... Další příkazy](../../../visual-basic/language-reference/statements/for-each-next-statement.md)  
   
  [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)  
   
@@ -57,7 +57,7 @@ Introduces an `As` clause, which identifies a data type in a declaration stateme
   
  [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
- [Try...Catch...Finally Statements](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)  
+ [Zkusit... Zachytit... Finally – příkazy](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -65,5 +65,5 @@ Introduces an `As` clause, which identifies a data type in a declaration stateme
 - [Datové typy](../../../visual-basic/programming-guide/language-features/data-types/index.md)
 - [Deklarace proměnné](../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
 - [Seznam typů](../../../visual-basic/language-reference/statements/type-list.md)
-- [Generic Types in Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [Obecné typy v Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
 - [Klíčová slova](../../../visual-basic/language-reference/keywords/index.md)

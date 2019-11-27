@@ -11,17 +11,17 @@ ms.locfileid: "74345254"
 ---
 # <a name="how-to-invoke-a-delegate-method-visual-basic"></a>Postupy: Volání metody delegáta (Visual Basic)
 
-This example shows how to associate a method with a delegate and then invoke that method through the delegate.
+Tento příklad ukazuje, jak přidružit metodu k delegátovi a následně tuto metodu vyvolat prostřednictvím delegáta.
 
-### <a name="create-the-delegate-and-matching-procedures"></a>Create the delegate and matching procedures
+### <a name="create-the-delegate-and-matching-procedures"></a>Vytvořit delegáta a postupy pro porovnání
 
-1. Create a delegate named `MySubDelegate`.
+1. Vytvořte delegáta s názvem `MySubDelegate`.
 
     ```vb
     Delegate Sub MySubDelegate(ByVal x As Integer)
     ```
 
-2. Declare a class that contains a method with the same signature as the delegate.
+2. Deklarujte třídu, která obsahuje metodu se stejnou signaturou jako delegát.
 
     ```vb
     Class class1
@@ -31,7 +31,7 @@ This example shows how to associate a method with a delegate and then invoke tha
     End Class
     ```
 
-3. Define a method that creates an instance of the delegate and invokes the method associated with the delegate by calling the built-in `Invoke` method.
+3. Definujte metodu, která vytvoří instanci delegáta a vyvolá metodu přidruženou k delegátovi voláním předdefinované `Invoke` metody.
 
     ```vb
     Protected Sub DelegateTest()
@@ -46,6 +46,6 @@ This example shows how to associate a method with a delegate and then invoke tha
 ## <a name="see-also"></a>Viz také:
 
 - [Příkaz Delegate](../../../../visual-basic/language-reference/statements/delegate-statement.md)
-- [Delegáty](../../../../visual-basic/programming-guide/language-features/delegates/index.md)
+- [Delegáti](../../../../visual-basic/programming-guide/language-features/delegates/index.md)
 - [Události](../../../../visual-basic/programming-guide/language-features/events/index.md)
 - [Vícevláknové aplikace](../../../../standard/threading/using-threads-and-threading.md)

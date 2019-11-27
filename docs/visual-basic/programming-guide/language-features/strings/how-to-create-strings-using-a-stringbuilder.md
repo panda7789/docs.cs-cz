@@ -1,5 +1,5 @@
 ---
-title: 'How to: create strings using a StringBuilder'
+title: 'Postupy: vytváření řetězců pomocí StringBuilder'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - StringBuilder class
@@ -12,20 +12,20 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344371"
 ---
-# <a name="how-to-create-strings-using-a-stringbuilder-in-visual-basic"></a>How to: create strings using a StringBuilder in Visual Basic
+# <a name="how-to-create-strings-using-a-stringbuilder-in-visual-basic"></a>Postupy: vytváření řetězců pomocí StringBuilder v Visual Basic
 
-This example constructs a long string from many smaller strings using the <xref:System.Text.StringBuilder> class. The <xref:System.Text.StringBuilder> class is more efficient than the `&=` operator for concatenating many strings.
+Tento příklad vytvoří dlouhý řetězec z mnoha menších řetězců pomocí třídy <xref:System.Text.StringBuilder>. Třída <xref:System.Text.StringBuilder> je efektivnější než `&=` operátor pro zřetězení řady řetězců.
 
 ## <a name="example"></a>Příklad
 
-The following example creates an instance of the <xref:System.Text.StringBuilder> class, appends 1,000 strings to that instance, and then returns its string representation:
+Následující příklad vytvoří instanci třídy <xref:System.Text.StringBuilder>, připojí k této instanci řetězce 1 000 a potom vrátí jeho řetězcovou reprezentaci:
 
  [!code-vb[VbVbalrStrings#70](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#70)]
 
 ## <a name="see-also"></a>Viz také:
 
 - [Používání třídy StringBuilder](../../../../standard/base-types/stringbuilder.md)
-- [Operátor &=](../../../language-reference/operators/and-assignment-operator.md)
+- [&= – operátor](../../../language-reference/operators/and-assignment-operator.md)
 - [Řetězce](index.md)
 - [Vytváření nových řetězců](../../../../standard/base-types/creating-new.md)
 - [Práce s řetězci](../../../../standard/base-types/manipulating-strings.md)

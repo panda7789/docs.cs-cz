@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74427906"
 ---
 # <a name="isymunmanagedwriteropennamespace-method"></a>ISymUnmanagedWriter::OpenNamespace – metoda
-Opens a new namespace. Call this method before defining methods or variables that occupy a namespace. Namespaces can be nested.  
+Otevře nový obor názvů. Před definováním metod nebo proměnných, které zabírají obor názvů, zavolejte tuto metodu. Obory názvů můžou být vnořené.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,13 +34,13 @@ HRESULT OpenNamespace(
   
 ## <a name="parameters"></a>Parametry  
  `name`  
- [in] A pointer to the name of the new namespace.  
+ pro Ukazatel na název nového oboru názvů.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

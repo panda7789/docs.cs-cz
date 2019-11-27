@@ -16,17 +16,17 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74340199"
 ---
 # <a name="how-to-call-an-overloaded-procedure-visual-basic"></a>Postupy: Volání přetížené procedury (Visual Basic)
-The advantage of overloading a procedure is in the flexibility of the call. The calling code can obtain the information it needs to pass to the procedure and then call a single procedure name, no matter what arguments it is passing.  
+Výhodou přetížení procedury je flexibilita volání. Volající kód může získat informace, které potřebuje předat proceduře, a pak zavolat jeden název procedury bez ohledu na to, co argumenty předává.  
   
-### <a name="to-call-a-procedure-that-has-more-than-one-version-defined"></a>To call a procedure that has more than one version defined  
+### <a name="to-call-a-procedure-that-has-more-than-one-version-defined"></a>Volání procedury, která má definováno více než jednu verzi  
   
-1. In the calling code, determine which data to pass to the procedure.  
+1. V kódu volání určete, která data mají být předána do postupu.  
   
-2. Write the procedure call in the normal way, presenting the data in the argument list. Be sure the arguments match the parameter list in one of the versions defined for the procedure.  
+2. Zapište volání procedury normálním způsobem a prezentujte data v seznamu argumentů. Ujistěte se, že argumenty odpovídají seznamu parametrů v jedné z verzí definovaných pro proceduru.  
   
-3. You do not have to determine which version of the procedure to call. Visual Basic passes control to the version matching your argument list.  
+3. Nemusíte určit, která verze procedury má být volána. Visual Basic předá řízení verzi, která odpovídá vašemu seznamu argumentů.  
   
-     The following example calls the `post` procedure declared in [How to: Define Multiple Versions of a Procedure](./how-to-define-multiple-versions-of-a-procedure.md). It obtains the customer identification, determines whether it is a `String` or an `Integer`, and then in either case calls the same procedure.  
+     Následující příklad volá `post` proceduru deklarovanou v tématu [Postupy: definování více verzí procedury](./how-to-define-multiple-versions-of-a-procedure.md). Získá identifikaci zákazníka, určí, zda se jedná o `String` nebo `Integer`a potom v obou případech volá stejný postup.  
   
      [!code-vb[VbVbcnProcedures#56](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#56)]  
   

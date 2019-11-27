@@ -16,52 +16,52 @@ ms.locfileid: "74351425"
 ---
 # <a name="out-generic-modifier-visual-basic"></a>Out (generický modifikátor) (Visual Basic)
 
-For generic type parameters, the `Out` keyword specifies that the type is covariant.
+Pro parametry obecného typu Určuje klíčové slovo `Out`, že typ je kovariantní.
 
 ## <a name="remarks"></a>Poznámky
 
-Covariance enables you to use a more derived type than that specified by the generic parameter. This allows for implicit conversion of classes that implement variant interfaces and implicit conversion of delegate types.
+Kovariance umožňuje použít více odvozený typ, než který je určen obecným parametrem. To umožňuje implicitní převod tříd, které implementují rozhraní variant a implicitní převod typů delegátů.
 
-For more information, see [Covariance and Contravariance](../../programming-guide/concepts/covariance-contravariance/index.md).
+Další informace najdete v tématu [kovariance a kontravariance](../../programming-guide/concepts/covariance-contravariance/index.md).
 
-## <a name="rules"></a>Rules
+## <a name="rules"></a>Pravidla
 
-You can use the `Out` keyword in generic interfaces and delegates.
+Klíčové slovo `Out` lze použít v obecných rozhraních a delegátech.
 
-In a generic interface, a type parameter can be declared covariant if it satisfies the following conditions:
+V obecném rozhraní může být parametr typu deklarován kovariantou, pokud splňuje následující podmínky:
 
-- The type parameter is used only as a return type of interface methods and not used as a type of method arguments.
+- Parametr typu se používá jenom jako návratový typ metod rozhraní a nepoužívá se jako typ argumentů metody.
 
     > [!NOTE]
-    > There is one exception to this rule. If in a covariant interface you have a contravariant generic delegate as a method parameter, you can use the covariant type as a generic type parameter for this delegate. For more information about covariant and contravariant generic delegates, see [Variance in Delegates](../../programming-guide/concepts/covariance-contravariance/variance-in-delegates.md) and [Using Variance for Func and Action Generic Delegates](../../programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).
+    > Toto pravidlo obsahuje jednu výjimku. Pokud v kovariantovém rozhraní máte kontravariantního obecného delegáta jako parametr metody, můžete použít kovariantní typ jako parametr obecného typu pro tohoto delegáta. Další informace o kovariantních a kontravariantních obecných delegátech naleznete v tématu [Variance v delegátech](../../programming-guide/concepts/covariance-contravariance/variance-in-delegates.md) a [použití variance pro obecné delegáty Func a Action](../../programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).
 
-- The type parameter is not used as a generic constraint for the interface methods.
+- Parametr typu se nepoužívá jako obecné omezení pro metody rozhraní.
 
-In a generic delegate, a type parameter can be declared covariant if it is used only as a method return type and not used for method arguments.
+V obecném delegátu může být parametr typu deklarován kovariantou, pokud je použit pouze jako návratový typ metody a nepoužívá se pro argumenty metody.
 
-Covariance and contravariance are supported for reference types, but they are not supported for value types.
+Kovariance a kontravariance jsou podporovány pro typy odkazů, ale nejsou podporovány pro typy hodnot.
 
-In Visual Basic, you cannot declare events in covariant interfaces without specifying the delegate type. Also, covariant interfaces cannot have nested classes, enums, or structures, but they can have nested interfaces.
+V Visual Basic nemůžete deklarovat události v kovariantních rozhraních bez určení typu delegáta. I kovariantní rozhraní nemohou mít vnořené třídy, výčty ani struktury, ale mohou mít vnořená rozhraní.
 
-## <a name="behavior"></a>Behavior
+## <a name="behavior"></a>Chování
 
-An interface that has a covariant type parameter enables its methods to return more derived types than those specified by the type parameter. For example, because in .NET Framework 4, in <xref:System.Collections.Generic.IEnumerable%601>, type T is covariant, you can assign an object of the `IEnumerable(Of String)` type to an object of the `IEnumerable(Of Object)` type without using any special conversion methods.
+Rozhraní, které má parametr kovariantního typu, umožňuje jeho metodám vracet více odvozených typů než hodnoty určené parametrem typu. Například vzhledem k tomu, že v .NET Framework 4 v <xref:System.Collections.Generic.IEnumerable%601>typ T je kovariantní, můžete přiřadit objekt `IEnumerable(Of String)`ho typu k objektu `IEnumerable(Of Object)` typu bez použití jakýchkoli speciálních metod převodu.
 
-A covariant delegate can be assigned another delegate of the same type, but with a more derived generic type parameter.
+Spoluvariantnímu delegátu se dá přiřadit jiný delegát stejného typu, ale s více odvozeným parametrem obecného typu.
 
 ## <a name="example"></a>Příklad
 
-The following example shows how to declare, extend, and implement a covariant generic interface. It also shows how to use implicit conversion for classes that implement a covariant interface.
+Následující příklad ukazuje, jak deklarovat, rozšiřuje a implementovat kovariantní obecné rozhraní. Také ukazuje, jak použít implicitní převod pro třídy, které implementují kovariantní rozhraní.
 
 [!code-vb[vbVarianceKeywords#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvariancekeywords/vb/module1.vb#3)]
 
 ## <a name="example"></a>Příklad
 
-The following example shows how to declare, instantiate, and invoke a covariant generic delegate. It also shows how you can use implicit conversion for delegate types.
+Následující příklad ukazuje, jak deklarovat, vytvářet instance a vyvolat kovariantní obecný delegát. Také ukazuje, jak lze použít implicitní převod pro typy delegátů.
 
 [!code-vb[vbVarianceKeywords#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvariancekeywords/vb/module1.vb#4)]
 
 ## <a name="see-also"></a>Viz také:
 
 - [Odchylky obecných rozhraní](../../programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)
-- [In](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md)
+- [Pro](../../../visual-basic/language-reference/modifiers/in-generic-modifier.md)

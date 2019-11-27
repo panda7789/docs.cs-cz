@@ -1,5 +1,5 @@
 ---
-title: 'How to: Stream XML Fragments from an XmlReader'
+title: 'Postupy: streamování fragmentů XML ze třídy XmlReader'
 ms.date: 07/20/2015
 ms.assetid: f67ce598-4a12-4dcb-9a07-24deca02a111
 ms.openlocfilehash: abefc8c6e75ae41c47135a2e89cdb3be6a8e5cd6
@@ -9,21 +9,21 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346228"
 ---
-# <a name="how-to-stream-xml-fragments-from-an-xmlreader-visual-basic"></a>How to: Stream XML Fragments from an XmlReader (Visual Basic)
-When you have to process large XML files, it might not be feasible to load the whole XML tree into memory. This topic shows how to stream fragments using an <xref:System.Xml.XmlReader>.  
+# <a name="how-to-stream-xml-fragments-from-an-xmlreader-visual-basic"></a>Postupy: streamování fragmentů XML ze třídy XmlReader (Visual Basic)
+V případě potřeby zpracování velkých souborů XML nemusí být možné načíst celý strom XML do paměti. Toto téma ukazuje, jak streamovat fragmenty pomocí <xref:System.Xml.XmlReader>.  
   
- One of the most effective ways to use an <xref:System.Xml.XmlReader> to read <xref:System.Xml.Linq.XElement> objects is to write your own custom axis method. An axis method typically returns a collection such as <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement>, as shown in the example in this topic. In the custom axis method, after you create the XML fragment by calling the <xref:System.Xml.Linq.XNode.ReadFrom%2A> method, return the collection using `yield return`. This provides deferred execution semantics to your custom axis method.  
+ Jedním z nejúčinnějších způsobů, jak použít <xref:System.Xml.XmlReader> ke čtení objektů <xref:System.Xml.Linq.XElement>, je napsat vlastní metodu vlastní osy. Metoda Axis obvykle vrací kolekci, například <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement>, jak je znázorněno v příkladu v tomto tématu. V metodě vlastní osy po vytvoření fragmentu XML voláním metody <xref:System.Xml.Linq.XNode.ReadFrom%2A> vraťte kolekci pomocí `yield return`. To poskytuje sémantiku pro odložené provádění vlastní metody osy.  
   
- When you create an XML tree from an <xref:System.Xml.XmlReader> object, the <xref:System.Xml.XmlReader> must be positioned on an element. The <xref:System.Xml.Linq.XNode.ReadFrom%2A> method does not return until it has read the close tag of the element.  
+ Při vytváření stromu XML z objektu <xref:System.Xml.XmlReader> musí být <xref:System.Xml.XmlReader> umístěn na elementu. Metoda <xref:System.Xml.Linq.XNode.ReadFrom%2A> nevrátí, dokud nepřečetla uzavírací značku elementu.  
   
- If you want to create a partial tree, you can instantiate an <xref:System.Xml.XmlReader>, position the reader on the node that you want to convert to an <xref:System.Xml.Linq.XElement> tree, and then create the <xref:System.Xml.Linq.XElement> object.  
+ Chcete-li vytvořit částečný strom, můžete vytvořit instanci <xref:System.Xml.XmlReader>, umístit čtecí modul na uzel, který chcete převést na <xref:System.Xml.Linq.XElement> stromu, a poté vytvořit objekt <xref:System.Xml.Linq.XElement>.  
   
- The topic [How to: Stream XML Fragments with Access to Header Information (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md) contains information and an example on how to stream a more complex document.  
+ Téma [Postupy: streamování fragmentů XML s přístupem k informacím hlavičky (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md) obsahuje informace a příklad, jak streamovat složitější dokument.  
   
- The topic [How to: Perform Streaming Transform of Large XML Documents (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-perform-streaming-transform-of-large-xml-documents.md) contains an example of using LINQ to XML to transform extremely large XML documents while maintaining a small memory footprint.  
+ Téma [Postupy: provedení transformace streamování velkých dokumentů XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-perform-streaming-transform-of-large-xml-documents.md) obsahuje příklad použití LINQ to XML k transformaci extrémně velkých dokumentů XML při zachování malých nároků na paměť.  
   
 ## <a name="example"></a>Příklad  
- This example creates a custom axis method. You can query it by using a [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query. The custom axis method, `StreamRootChildDoc`, is a method that is designed specifically to read a document that has a repeating `Child` element.  
+ Tento příklad vytvoří vlastní metodu osy. Můžete se k němu dotázat pomocí [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu. Vlastní metoda osy, `StreamRootChildDoc`, je metoda, která je určena specificky pro čtení dokumentu, který má opakující se `Child` element.  
   
 ```vb  
 Module Module1  
@@ -136,16 +136,16 @@ Public Class StreamChildEnumerator
 End Class  
 ```  
   
- This example produces the following output:  
+ Tento příklad vytvoří následující výstup:  
   
 ```console  
 bbb  
 ccc  
 ```  
   
- In this example, the source document is very small. However, even if there were millions of `Child` elements, this example would still have a small memory footprint.  
+ V tomto příkladu je zdrojový dokument velmi malý. Nicméně i v případě, že existovaly miliony `Child` prvků, bude mít tento příklad pořád malou paměť.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Walkthrough: Implementing IEnumerable(Of T) in Visual Basic](../../../../visual-basic/programming-guide/language-features/control-flow/walkthrough-implementing-ienumerable-of-t.md)
-- [Parsing XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+- [Návod: implementace IEnumerable (Of T) v Visual Basic](../../../../visual-basic/programming-guide/language-features/control-flow/walkthrough-implementing-ienumerable-of-t.md)
+- [Analýza kódu XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)

@@ -16,7 +16,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349437"
 ---
 # <a name="xml-cdata-literal-visual-basic"></a>Literál XML CDATA (Visual Basic)
-A literal representing an <xref:System.Xml.Linq.XCData> object.  
+Literál představující objekt <xref:System.Xml.Linq.XCData>.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,33 +26,33 @@ A literal representing an <xref:System.Xml.Linq.XCData> object.
   
 ## <a name="parts"></a>Součásti  
  `<![CDATA[`  
- Požadováno. Denotes the start of the XML CDATA section.  
+ Požadováno. Označuje začátek oddílu CDATA XML.  
   
  `content`  
- Požadováno. Text content to appear in the XML CDATA section.  
+ Požadováno. Textový obsah, který se má zobrazit v oddílu CDATA XML  
   
  `]]>`  
- Požadováno. Denotes the end of the section.  
+ Požadováno. Označuje konec oddílu.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- An <xref:System.Xml.Linq.XCData> object.  
+ Objekt <xref:System.Xml.Linq.XCData>.  
   
 ## <a name="remarks"></a>Poznámky  
- XML CDATA sections contain raw text that should be included, but not parsed, with the XML that contains it. A XML CDATA section can contain any text. This includes reserved XML characters. The XML CDATA section ends with the sequence "]]>". This implies the following points:  
+ Oddíly XML CDATA obsahují nezpracovaný text, který by měl být zahrnut, ale ne analyzován, s XML, který jej obsahuje. Oddíl CDATA XML může obsahovat libovolný text. To zahrnuje vyhrazené znaky XML. Oddíl CDATA XML končí sekvencí "]] >". To zahrnuje následující body:  
   
-- You cannot use an embedded expression in an XML CDATA literal because the embedded expression delimiters are valid XML CDATA content.  
+- V literálu CDATA XML nelze použít vložený výraz, protože oddělovače vložených výrazů jsou platným obsahem CDATA XML.  
   
-- XML CDATA sections cannot be nested, because `content` cannot contain the value "]]>".  
+- Oddíly XML CDATA nemohou být vnořené, protože `content` nesmí obsahovat hodnotu "]] >".  
   
- You can assign an XML CDATA literal to a variable, or include it in an XML element literal.  
+ Můžete přiřadit literál CDATA XML proměnné nebo jej zahrnout do literálu elementu XML.  
   
 > [!NOTE]
-> An XML literal can span multiple lines but does not use line continuation characters. This enables you to copy content from an XML document and paste it directly into a Visual Basic program.  
+> Literál XML může zahrnovat více řádků, ale nepoužívá znaky pro pokračování řádku. To vám umožní zkopírovat obsah z dokumentu XML a vložit ho přímo do Visual Basic programu.  
   
- The Visual Basic compiler converts the XML CDATA literal to a call to the <xref:System.Xml.Linq.XCData.%23ctor%2A> constructor.  
+ Kompilátor Visual Basic převádí literál XML CDATA na volání konstruktoru <xref:System.Xml.Linq.XCData.%23ctor%2A>.  
   
 ## <a name="example"></a>Příklad  
- The following example creates a CDATA section that contains the text "Can contain literal \<XML> tags".  
+ Následující příklad vytvoří oddíl CDATA, který obsahuje text "může obsahovat literál \<> značky XML.  
   
  [!code-vb[VbXMLSamples#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples11.vb#23)]  
   
@@ -61,4 +61,4 @@ A literal representing an <xref:System.Xml.Linq.XCData> object.
 - <xref:System.Xml.Linq.XCData>
 - [Literál XML elementu](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)
 - [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)
-- [Creating XML in Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [Vytváření XML v Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)

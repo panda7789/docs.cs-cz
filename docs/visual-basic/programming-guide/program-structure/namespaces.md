@@ -1,5 +1,5 @@
 ---
-title: Jmenné prostory
+title: Obory názvů
 ms.date: 07/20/2015
 f1_keywords:
 - vb.global
@@ -24,49 +24,49 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74347333"
 ---
 # <a name="namespaces-in-visual-basic"></a>Obory názvů v jazyce Visual Basic
-Namespaces organize the objects defined in an assembly. Assemblies can contain multiple namespaces, which can in turn contain other namespaces. Namespaces prevent ambiguity and simplify references when using large groups of objects such as class libraries.  
+Obory názvů organizují objekty definované v sestavení. Sestavení mohou obsahovat více oborů názvů, které mohou zase obsahovat jiné obory názvů. Obory názvů zabraňují nejednoznačnosti a zjednodušují odkazy při použití velkých skupin objektů, jako jsou knihovny tříd.  
   
- For example, the .NET Framework defines the <xref:System.Windows.Forms.ListBox> class in the <xref:System.Windows.Forms?displayProperty=nameWithType> namespace. The following code fragment shows how to declare a variable using the fully qualified name for this class:  
+ Například .NET Framework definuje třídu <xref:System.Windows.Forms.ListBox> v oboru názvů <xref:System.Windows.Forms?displayProperty=nameWithType>. Následující fragment kódu ukazuje, jak deklarovat proměnnou pomocí plně kvalifikovaného názvu pro tuto třídu:  
   
  [!code-vb[VbVbalrApplication#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrApplication/VB/Class1.vb#6)]  
   
-## <a name="avoiding-name-collisions"></a>Avoiding Name Collisions  
- .NET Framework namespaces address a problem sometimes called *namespace pollution*, in which the developer of a class library is hampered by the use of similar names in another library. These conflicts with existing components are sometimes called *name collisions*.  
+## <a name="avoiding-name-collisions"></a>Zamezení kolizí názvů  
+ .NET Framework obory názvů řeší problém, který se někdy nazývá *znečišťování oboru názvů*, ve kterém je vývojář knihovny tříd zabráněno použitím podobných názvů v jiné knihovně. Konflikty se stávajícími součástmi jsou někdy označovány jako *kolize názvů*.  
   
- For example, if you create a new class named `ListBox`, you can use it inside your project without qualification. However, if you want to use the .NET Framework <xref:System.Windows.Forms.ListBox> class in the same project, you must use a fully qualified reference to make the reference unique. If the reference is not unique, Visual Basic produces an error stating that the name is ambiguous. The following code example demonstrates how to declare these objects:  
+ Například pokud vytvoříte novou třídu s názvem `ListBox`, můžete ji použít uvnitř projektu bez kvalifikace. Pokud však chcete použít třídu .NET Framework <xref:System.Windows.Forms.ListBox> ve stejném projektu, je nutné použít plně kvalifikovaný odkaz, který odkaz nastaví jako jedinečný. Pokud odkaz není jedinečný, Visual Basic vytvoří chybu oznamující, že název je nejednoznačný. Následující příklad kódu ukazuje, jak deklarovat tyto objekty:  
   
  [!code-vb[VbVbalrApplication#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrApplication/VB/Class1.vb#7)]  
   
- The following illustration shows two namespace hierarchies, both containing an object named `ListBox`:  
+ Následující ilustrace znázorňuje dvě hierarchie oboru názvů, které obsahují objekt s názvem `ListBox`:  
   
- ![Screenshot that shows two namespace hierarchies.](./media/namespaces/visual-basic-namespace-hierarchy.gif)  
+ ![Snímek obrazovky, který ukazuje dvě hierarchie oboru názvů.](./media/namespaces/visual-basic-namespace-hierarchy.gif)  
   
- By default, every executable file you create with Visual Basic contains a namespace with the same name as your project. For example, if you define an object within a project named `ListBoxProject`, the executable file ListBoxProject.exe contains a namespace called `ListBoxProject`.  
+ Ve výchozím nastavení každý spustitelný soubor, který vytvoříte pomocí Visual Basic, obsahuje obor názvů se stejným názvem jako váš projekt. Například pokud definujete objekt v rámci projektu s názvem `ListBoxProject`, spustitelný soubor ListBoxProject. exe obsahuje obor názvů nazvaný `ListBoxProject`.  
   
- Multiple assemblies can use the same namespace. Visual Basic treats them as a single set of names. For example, you can define classes for a namespace called `SomeNameSpace` in an assembly named `Assemb1`, and define additional classes for the same namespace from an assembly named `Assemb2`.  
+ Více sestavení může používat stejný obor názvů. Visual Basic je považuje za jednu sadu názvů. Můžete například definovat třídy pro obor názvů s názvem `SomeNameSpace` v sestavení s názvem `Assemb1`a definovat další třídy pro stejný obor názvů ze sestavení s názvem `Assemb2`.  
   
-## <a name="fully-qualified-names"></a>Fully Qualified Names  
- Fully qualified names are object references that are prefixed with the name of the namespace in which the object is defined. You can use objects defined in other projects if you create a reference to the class (by choosing **Add Reference** from the **Project** menu) and then use the fully qualified name for the object in your code. The following code fragment shows how to use the fully qualified name for an object from another project's namespace:  
+## <a name="fully-qualified-names"></a>Plně kvalifikované názvy  
+ Plně kvalifikované názvy jsou odkazy na objekty, které jsou s předponou názvu oboru názvů, ve kterém je objekt definován. Můžete použít objekty definované v jiných projektech, pokud vytvoříte odkaz na třídu (kliknutím na **Přidat odkaz** z nabídky **projekt** ) a potom použijete plně kvalifikovaný název objektu v kódu. Následující fragment kódu ukazuje, jak použít plně kvalifikovaný název objektu z jiného oboru názvů projektu:  
   
  [!code-vb[VbVbalrApplication#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrApplication/VB/Class1.vb#8)]  
   
- Fully qualified names prevent naming conflicts because they make it possible for the compiler to determine which object is being used. However, the names themselves can get long and cumbersome. To get around this, you can use the `Imports` statement to define an *alias*—an abbreviated name you can use in place of a fully qualified name. For example, the following code example creates aliases for two fully qualified names, and uses these aliases to define two objects.  
+ Plně kvalifikované názvy zabraňují konfliktům názvů, protože umožňují kompilátoru určit, který objekt se používá. Vlastní jména ale můžou být dlouhá a nenáročný. Chcete-li se tomuto problému vyhnout, můžete použít příkaz `Imports` k definování *aliasu*– zkrácený název, který můžete použít místo plně kvalifikovaného názvu. Například následující příklad kódu vytvoří aliasy pro dva plně kvalifikované názvy a použije tyto aliasy k definování dvou objektů.  
   
  [!code-vb[VbVbalrApplication#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrApplication/VB/Class1.vb#9)]  
   
  [!code-vb[VbVbalrApplication#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrApplication/VB/Class1.vb#10)]  
   
- If you use the `Imports` statement without an alias, you can use all the names in that namespace without qualification, provided they are unique to the project. If your project contains `Imports` statements for namespaces that contain items with the same name, you must fully qualify that name when you use it. Suppose, for example, your project contained the following two `Imports` statements:  
+ Použijete-li příkaz `Imports` bez aliasu, můžete použít všechny názvy v tomto oboru názvů bez kvalifikace, pokud jsou pro projekt jedinečné. Pokud váš projekt obsahuje `Imports` příkazy pro obory názvů, které obsahují položky se stejným názvem, je nutné plně kvalifikovat tento název při použití. Předpokládejme například, že váš projekt obsahuje následující dva `Imports` příkazy:  
   
  [!code-vb[VbVbalrApplication#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrApplication/VB/Class1.vb#11)]  
   
- If you attempt to use `Class1` without fully qualifying it, Visual Basic produces an error stating that the name `Class1` is ambiguous.  
+ Pokud se pokusíte použít `Class1` bez úplného zařazení, Visual Basic vytvoří chybu s oznámením, že název `Class1` je dvojznačný.  
   
-## <a name="namespace-level-statements"></a>Namespace Level Statements  
- Within a namespace, you can define items such as modules, interfaces, classes, delegates, enumerations, structures, and other namespaces. You cannot define items such as properties, procedures, variables and events at the namespace level. These items must be declared within containers such as modules, structures, or classes.  
+## <a name="namespace-level-statements"></a>Příkazy na úrovni oboru názvů  
+ V rámci oboru názvů můžete definovat položky, jako jsou moduly, rozhraní, třídy, delegáty, výčty, struktury a jiné obory názvů. Na úrovni oboru názvů nelze definovat položky, jako jsou vlastnosti, procedury, proměnné a události. Tyto položky musí být deklarovány v rámci kontejnerů, jako jsou moduly, struktury nebo třídy.  
   
-## <a name="global-keyword-in-fully-qualified-names"></a>Global Keyword in Fully Qualified Names  
- If you have defined a nested hierarchy of namespaces, code inside that hierarchy might be blocked from accessing the <xref:System?displayProperty=nameWithType> namespace of the .NET Framework. The following example illustrates a hierarchy in which the `SpecialSpace.System` namespace blocks access to <xref:System?displayProperty=nameWithType>.  
+## <a name="global-keyword-in-fully-qualified-names"></a>Klíčové slovo Global v plně kvalifikovaném názvu  
+ Pokud jste definovali vnořenou hierarchii oborů názvů, kód uvnitř této hierarchie může být zablokován pro přístup k oboru názvů <xref:System?displayProperty=nameWithType> .NET Framework. Následující příklad znázorňuje hierarchii, ve které `SpecialSpace.System` obor názvů blokuje přístup k <xref:System?displayProperty=nameWithType>.  
   
 ```vb  
 Namespace SpecialSpace  
@@ -81,7 +81,7 @@ Namespace SpecialSpace
 End Namespace  
 ```  
   
- As a result, the Visual Basic compiler cannot successfully resolve the reference to <xref:System.Int32?displayProperty=nameWithType>, because `SpecialSpace.System` does not define `Int32`. You can use the `Global` keyword to start the qualification chain at the outermost level of the .NET Framework class library. This allows you to specify the <xref:System?displayProperty=nameWithType> namespace or any other namespace in the class library. Toto dokládá následující příklad.  
+ V důsledku toho kompilátor Visual Basic nemůže úspěšně přeložit odkaz na <xref:System.Int32?displayProperty=nameWithType>, protože `SpecialSpace.System` nedefinuje `Int32`. Pomocí klíčového slova `Global` můžete spustit řetěz kvalifikace na krajní úrovni .NET Framework knihovny tříd. To umožňuje zadat obor názvů <xref:System?displayProperty=nameWithType> nebo jakýkoli jiný obor názvů v knihovně tříd. Toto dokládá následující příklad.  
   
 ```vb  
 Namespace SpecialSpace  
@@ -96,26 +96,26 @@ Namespace SpecialSpace
 End Namespace  
 ```  
   
- You can use `Global` to access other root-level namespaces, such as <xref:Microsoft.VisualBasic?displayProperty=nameWithType>, and any namespace associated with your project.  
+ `Global` můžete použít pro přístup k dalším oborům názvů na kořenové úrovni, jako je například <xref:Microsoft.VisualBasic?displayProperty=nameWithType>, a jakémukoli oboru názvů přidruženému k vašemu projektu.  
   
-## <a name="global-keyword-in-namespace-statements"></a>Global Keyword in Namespace Statements  
- You can also use the `Global` keyword in a [Namespace Statement](../../../visual-basic/language-reference/statements/namespace-statement.md). This lets you define a namespace out of the root namespace of your project.  
+## <a name="global-keyword-in-namespace-statements"></a>Klíčové slovo Global v příkazech Namespace  
+ Můžete také použít klíčové slovo `Global` v [příkazu Namespace](../../../visual-basic/language-reference/statements/namespace-statement.md). To umožňuje definovat obor názvů mimo kořenový obor názvů vašeho projektu.  
   
- All namespaces in your project are based on the root namespace for the project.  Visual Studio assigns your project name as the default root namespace for all code in your project. For example, if your project is named `ConsoleApplication1`, its programming elements belong to namespace `ConsoleApplication1`. If you declare `Namespace Magnetosphere`, references to `Magnetosphere` in the project will access `ConsoleApplication1.Magnetosphere`.  
+ Všechny obory názvů v projektu jsou založené na kořenovém oboru názvů projektu.  Visual Studio přiřadí název vašeho projektu jako výchozí kořenový obor názvů pro veškerý kód v projektu. Například pokud je projekt pojmenován `ConsoleApplication1`, jeho programovací prvky patří do oboru názvů `ConsoleApplication1`. Pokud deklarujete `Namespace Magnetosphere`, odkazy na `Magnetosphere` v projektu budou přistupovat `ConsoleApplication1.Magnetosphere`.  
   
- The following examples use the `Global` keyword to declare a namespace out of the root namespace for the project.  
+ Následující příklady používají klíčové slovo `Global` k deklaraci oboru názvů mimo kořenový obor názvů pro projekt.  
   
  [!code-vb[VbVbalrApplication#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrApplication/VB/module1.vb#22)]  
   
- In a namespace declaration, `Global` cannot be nested in another namespace.  
+ V deklaraci oboru názvů nelze `Global` vnořovat do jiného oboru názvů.  
   
- You can use the [Application Page, Project Designer (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic) to view and modify the **Root Namespace** of the project.  For new projects, the **Root Namespace** defaults to the project name. To cause `Global` to be the top-level namespace, you can clear the **Root Namespace** entry so that the box is empty. Clearing **Root Namespace** removes the need for the `Global` keyword in namespace declarations.  
+ Můžete použít [stránku aplikace, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic) k zobrazení a úpravě **kořenového oboru názvů** projektu.  Pro nové projekty je výchozím **kořenovým oborem názvů** název projektu. Chcete-li `Global` být oborem názvů nejvyšší úrovně, můžete vymazat položku **kořenového oboru názvů** tak, aby bylo pole prázdné. Vymazání **kořenového oboru názvů** odebere potřebu klíčového slova `Global` v deklaracích oboru názvů.  
   
- If a `Namespace` statement declares a name that is also a namespace in the .NET Framework, the .NET Framework namespace becomes unavailable if the `Global` keyword is not used in a fully qualified name. To enable access to that .NET Framework namespace without using the `Global` keyword, you can include the `Global` keyword in the `Namespace` statement.  
+ Pokud příkaz `Namespace` deklaruje název, který je také obor názvů v .NET Framework, .NET Framework obor názvů bude k dispozici, pokud klíčové slovo `Global` není použito v plně kvalifikovaném názvu. Chcete-li povolit přístup k tomuto oboru názvů .NET Framework bez použití klíčového slova `Global`, můžete do příkazu `Namespace` zahrnout klíčové slovo `Global`.  
   
- The following example has the `Global` keyword in the `System.Text` namespace declaration.  
+ V následujícím příkladu je klíčové slovo `Global` v deklaraci oboru názvů `System.Text`.  
   
- If the `Global` keyword was not present in the namespace declaration, <xref:System.Text.StringBuilder> could not be accessed without specifying `Global.System.Text.StringBuilder`. For a project named `ConsoleApplication1`, references to `System.Text` would access `ConsoleApplication1.System.Text` if the `Global` keyword was not used.  
+ Pokud klíčové slovo `Global` nebylo v deklaraci oboru názvů přítomno, <xref:System.Text.StringBuilder> nelze přistupovat bez zadání `Global.System.Text.StringBuilder`. V případě projektu s názvem `ConsoleApplication1`má odkaz na `System.Text` přístup `ConsoleApplication1.System.Text`, pokud nebylo použito klíčové slovo `Global`.  
   
  [!code-vb[VbVbalrApplication#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrApplication/VB/module1.vb#21)]  
   

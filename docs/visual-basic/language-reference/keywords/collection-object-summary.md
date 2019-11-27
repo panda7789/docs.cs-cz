@@ -12,15 +12,15 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349931"
 ---
 # <a name="collection-object-summary-visual-basic"></a>Souhrn objektů kolekce (Visual Basic)
-Visual Basic language keywords and run-time library members are organized by purpose and use.  
+Visual Basic klíčová slova jazyka a členy běhové knihovny jsou uspořádány podle účelu a použití.  
   
 |Akce|Prvek jazyka|  
 |------------|----------------------|  
-|Create a `Collection` object.|<xref:Microsoft.VisualBasic.Collection>|  
-|Add an item to a collection.|<xref:Microsoft.VisualBasic.Collection.Add*>|  
-|Remove an object from a collection.|<xref:Microsoft.VisualBasic.Collection.Remove*>|  
-|Reference an item in a collection.|<xref:Microsoft.VisualBasic.Collection.Item*>|  
-|Return a reference to an <xref:System.Collections.IEnumerator> interface.|<xref:Microsoft.VisualBasic.Collection.System%23Collections%23IEnumerable%23GetEnumerator%2A>|  
+|Vytvořte objekt `Collection`.|<xref:Microsoft.VisualBasic.Collection>|  
+|Přidejte položku do kolekce.|<xref:Microsoft.VisualBasic.Collection.Add*>|  
+|Odebere objekt z kolekce.|<xref:Microsoft.VisualBasic.Collection.Remove*>|  
+|Odkaz na položku v kolekci|<xref:Microsoft.VisualBasic.Collection.Item*>|  
+|Vrátí odkaz na <xref:System.Collections.IEnumerator> rozhraní.|<xref:Microsoft.VisualBasic.Collection.System%23Collections%23IEnumerable%23GetEnumerator%2A>|  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74444649"
 ---
 # <a name="imetadataemit2definegenericparam-method"></a>IMetaDataEmit2::DefineGenericParam – metoda
-Creates a definition for a generic type parameter, and gets a token to that generic type parameter.  
+Vytvoří definici pro parametr obecného typu a získá token k tomuto parametru obecného typu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,34 +41,34 @@ HRESULT DefineGenericParam (
   
 ## <a name="parameters"></a>Parametry  
  `tk`  
- [in] An `mdTypeDef` or `mdMethodDef` token that represents the method or constructor for which to define a generic parameter.  
+ pro Token `mdTypeDef` nebo `mdMethodDef`, který představuje metodu nebo konstruktor, pro který chcete definovat obecný parametr.  
   
  `ulParamSeq`  
- [in] The index of the generic parameter.  
+ pro Index obecného parametru  
   
  `dwParamFlags`  
- [in] A value of the [CorGenericParamAttr](../../../../docs/framework/unmanaged-api/metadata/corgenericparamattr-enumeration.md) enumeration that describes the type for the generic parameter.  
+ pro Hodnota výčtu [CorGenericParamAttr –](../../../../docs/framework/unmanaged-api/metadata/corgenericparamattr-enumeration.md) , která popisuje typ obecného parametru.  
   
  `szname`  
- [in] The name of the parameter.  
+ pro Název parametru  
   
  `reserved`  
- [in] This parameter is reserved for future extensibility.  
+ pro Tento parametr je vyhrazen pro budoucí rozšíření.  
   
  `rtkConstraints`  
- [in] A zero-terminated array of type constraints. Array members must be an `mdTypeDef`, `mdTypeRef`, or `mdTypeSpec` metadata token.  
+ pro Pole s nulovým zakončením v poli omezení typu. Členy pole musí být token metadat `mdTypeDef`, `mdTypeRef`nebo `mdTypeSpec`.  
   
  `pgp`  
- [out] A token that represents the generic parameter.  
+ mimo Token, který představuje obecný parametr.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

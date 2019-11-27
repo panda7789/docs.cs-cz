@@ -17,41 +17,41 @@ ms.locfileid: "74344912"
 ---
 # <a name="how-to-create-a-procedure-visual-basic"></a>Postupy: Vytvoření procedury (Visual Basic)
 
-You enclose a procedure between a starting declaration statement (`Sub` or `Function`) and an ending declaration statement (`End Sub` or `End Function`). All the procedure's code lies between these statements.
+Můžete uzavřít postup mezi příkazem počáteční deklarace (`Sub` nebo `Function`) a koncovým příkazem deklarace (`End Sub` nebo `End Function`). Mezi těmito příkazy leží celý kód procedury.
 
- A procedure cannot contain another procedure, so its starting and ending statements must be outside any other procedure.
+ Procedura nemůže obsahovat jinou proceduru, takže její počáteční a koncové příkazy musí být mimo jiné procedury.
 
- If you have code that performs the same task in different places, you can write the task once as a procedure and then call it from different places in your code.
+ Pokud máte kód, který provádí stejnou úlohu na různých místech, můžete napsat úlohu jednou jako proceduru a potom ji volat z různých míst v kódu.
 
-### <a name="to-create-a-procedure-that-does-not-return-a-value"></a>To create a procedure that does not return a value
+### <a name="to-create-a-procedure-that-does-not-return-a-value"></a>Vytvoření procedury, která nevrací hodnotu
 
-1. Outside any other procedure, use a `Sub` statement, followed by an `End Sub` statement.
+1. Mimo jakýkoli jiný postup použijte příkaz `Sub` následovaný příkazem `End Sub`.
 
-2. In the `Sub` statement, follow the `Sub` keyword with the name of the procedure, then the parameter list in parentheses.
+2. V příkazu `Sub` použijte klíčové slovo `Sub` s názvem procedury a pak seznam parametrů v závorkách.
 
-3. Place the procedure's code statements between the `Sub` and `End Sub` statements.
+3. Umístěte příkazy kódu procedury mezi příkazy `Sub` a `End Sub`.
 
-### <a name="to-create-a-procedure-that-returns-a-value"></a>To create a procedure that returns a value
+### <a name="to-create-a-procedure-that-returns-a-value"></a>Vytvoření procedury, která vrátí hodnotu
 
-1. Outside any other procedure, use a `Function` statement, followed by an `End Function` statement.
+1. Mimo jakýkoli jiný postup použijte příkaz `Function` následovaný příkazem `End Function`.
 
-2. In the `Function` statement, follow the `Function` keyword with the name of the procedure, then the parameter list in parentheses, and then an `As` clause specifying the data type of the return value.
+2. V příkazu `Function` postupujte podle klíčového slova `Function` s názvem procedury, potom seznamem parametrů v závorkách a potom klauzule `As` určující datový typ vrácené hodnoty.
 
-3. Place the procedure's code statements between the `Function` and `End Function` statements.
+3. Umístěte příkazy kódu procedury mezi příkazy `Function` a `End Function`.
 
-4. Use a `Return` statement to return the value to the calling code.
+4. Použijte příkaz `Return` pro návrat hodnoty do kódu volajícího.
 
-### <a name="to-connect-your-new-procedure-with-the-old-repetitive-blocks-of-code"></a>To connect your new procedure with the old, repetitive blocks of code
+### <a name="to-connect-your-new-procedure-with-the-old-repetitive-blocks-of-code"></a>Připojení nové procedury se starými, opakujícími se bloky kódu
 
-1. Make sure you define the new procedure in a place where the old code has access to it.
+1. Ujistěte se, že jste definovali nový postup na místě, kde k němu má starý kód.
 
-2. In your old, repetitive code block, replace the statements that perform the repetitive task with a single statement that calls the `Sub` or `Function` procedure.
+2. V původním, opakovaném bloku kódu nahraďte příkazy, které provádějí opakující se úkol, jediným příkazem, který volá `Sub` nebo `Function` procedura.
 
-3. If your procedure is a `Function` that returns a value, ensure that your calling statement performs an action with the returned value, such as storing it in a variable, or else the value will be lost.
+3. Pokud je procedura `Function`, která vrací hodnotu, zajistěte, aby váš volající příkaz prováděl akci s vrácenou hodnotou, jako je například uložení v proměnné, nebo jinak hodnota bude ztracena.
 
 ## <a name="example"></a>Příklad
 
- The following `Function` procedure calculates the longest side, or hypotenuse, of a right triangle, given the values for the other two sides:
+ Následující `Function` postup vypočítá nejdelší stranu (neboli přepony) pravého trojúhelníku s ohledem na hodnoty ostatních dvou stran:
 
  [!code-vb[VbVbcnProcedures#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#1)]
 
@@ -66,4 +66,4 @@ You enclose a procedure between a starting declaration statement (`Sub` or `Func
 - [Rekurzivní procedury](recursive-procedures.md)
 - [Přetížení procedury](procedure-overloading.md)
 - [Objekty a třídy](../objects-and-classes/index.md)
-- [Object-Oriented Programming (Visual Basic)](../../concepts/object-oriented-programming.md)
+- [Objektově orientované programování (Visual Basic)](../../concepts/object-oriented-programming.md)

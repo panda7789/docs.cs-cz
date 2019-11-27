@@ -19,23 +19,23 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74341378"
 ---
 # <a name="differences-between-parameters-and-arguments-visual-basic"></a>Rozdíly mezi parametry a argumenty (Visual Basic)
-In most cases, a procedure must have some information about the circumstances in which it has been called. A procedure that performs repeated or shared tasks uses different information for each call. This information consists of variables, constants, and expressions that you pass to the procedure when you call it.  
+Ve většině případů musí mít procedura nějaké informace o okolnostech, ve kterých byla volána. Postup, který provádí opakované nebo sdílené úkoly, používá pro každé volání jiné informace. Tyto informace se skládají z proměnných, konstant a výrazů, které procedury předáte při volání.  
   
- To communicate this information to the procedure, the procedure defines a *parameter*, and the calling code passes an *argument* to that parameter. You can think of the parameter as a parking space and the argument as an automobile. Just as different automobiles can park in a parking space at different times, the calling code can pass a different argument to the same parameter every time that it calls the procedure.  
+ Chcete-li sdělit tyto informace proceduře, procedura definuje *parametr*a volající kód předá *argument* tomuto parametru. Parametr si můžete představit jako místo pro parkování a argument jako automobil. Stejně jako různé Automobiles mohou být v parkovacím prostoru v různých časech, volající kód může předat jiný argument stejnému parametru pokaždé, když volá proceduru.  
   
 ## <a name="parameters"></a>Parametry  
- A *parameter* represents a value that the procedure expects you to pass when you call it. The procedure's declaration defines its parameters.  
+ *Parametr* představuje hodnotu, kterou procedura očekává, že bude při volání předána. Deklarace procedury definuje její parametry.  
   
- When you define a `Function` or `Sub` procedure, you specify a *parameter list* in parentheses immediately following the procedure name. For each parameter, you specify a name, a data type, and a passing mechanism ([ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) or [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)). You can also indicate that a parameter is optional. This means that the calling code does not have to pass a value for it.  
+ Při definování `Function` nebo `Sub` postupu zadáte *seznam parametrů* v závorkách hned za názvem procedury. Pro každý parametr určíte název, datový typ a mechanismus předávání ([ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) nebo [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md)). Můžete také indikovat, že parametr je nepovinný. To znamená, že volající kód nemusí pro něj předat hodnotu.  
   
- The name of each parameter serves as a *local variable* in the procedure. You use the parameter name the same way you use any other variable.  
+ Název každého parametru slouží jako *místní proměnná* v proceduře. Název parametru použijete stejným způsobem jako jakoukoli jinou proměnnou.  
   
-## <a name="arguments"></a>Arguments  
- An *argument* represents the value that you pass to a procedure parameter when you call the procedure. The calling code supplies the arguments when it calls the procedure.  
+## <a name="arguments"></a>Argumenty  
+ *Argument* představuje hodnotu, která je předána parametru procedury při volání procedury. Volající kód dodává argumenty při volání procedury.  
   
- When you call a `Function` or `Sub` procedure, you include an *argument list* in parentheses immediately following the procedure name. Each argument corresponds to the parameter in the same position in the list.  
+ Když zavoláte `Function` nebo `Sub` proceduru, zahrnete do závorek *seznam argumentů* hned za názvem procedury. Každý argument odpovídá parametru ve stejné pozici v seznamu.  
   
- In contrast to parameter definition, arguments do not have names. Each argument is an expression, which can contain zero or more variables, constants, and literals. The data type of the evaluated expression should typically match the data type defined for the corresponding parameter, and in any case it must be convertible to the parameter type.  
+ Na rozdíl od definice parametru argumenty nemají názvy. Každý argument je výraz, který může obsahovat nula nebo více proměnných, konstant a literálů. Datový typ vyhodnoceného výrazu by měl obvykle odpovídat datovému typu definovanému pro příslušný parametr a v každém případě musí být převoditelné na typ parametru.  
   
 ## <a name="see-also"></a>Viz také:
 

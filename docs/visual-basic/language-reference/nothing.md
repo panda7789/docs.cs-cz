@@ -15,48 +15,48 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344165"
 ---
-# <a name="nothing-keyword-visual-basic"></a>Nothing keyword (Visual Basic)
+# <a name="nothing-keyword-visual-basic"></a>Nothing – klíčové slovo (Visual Basic)
 
-Represents the default value of any data type. For reference types, the default value is the `null` reference. For value types, the default value depends on whether the value type is nullable.
+Představuje výchozí hodnotu libovolného datového typu. Pro typy odkazů je výchozí hodnotou odkaz `null`. U hodnotových typů závisí výchozí hodnota na tom, zda je typ hodnoty null.
 
 > [!NOTE]
-> For non-nullable value types, `Nothing` in Visual Basic differs from `null` in C#. In Visual Basic, if you set a variable of a non-nullable value type to `Nothing`, the variable is set to the default value for its declared type. In C#, if you assign a variable of a non-nullable value type to `null`, a compile-time error occurs.
+> U typů hodnot bez hodnoty null se `Nothing` v Visual Basic liší od `null` v C#. Pokud v Visual Basic nastavíte proměnnou typu hodnoty, která není null, na `Nothing`, proměnná je nastavena na výchozí hodnotu pro deklarovaný typ. Pokud C#v nástroji přiřadíte proměnnou typu hodnoty, která není null, k `null`, dojde k chybě při kompilaci.
 
 ## <a name="remarks"></a>Poznámky
 
-`Nothing` represents the default value of a data type. The default value depends on whether the variable is of a value type or of a reference type.
+`Nothing` představuje výchozí hodnotu datového typu. Výchozí hodnota závisí na tom, zda je proměnná typ hodnoty nebo typ odkazu.
 
-A variable of a *value type* directly contains its value. Value types include all numeric data types, `Boolean`, `Char`, `Date`, all structures, and all enumerations. A variable of a *reference type* stores a reference to an instance of the object in memory. Reference types include classes, arrays, delegates, and strings. For more information, see [Value Types and Reference Types](../programming-guide/language-features/data-types/value-types-and-reference-types.md).
+Proměnná *typu hodnoty* přímo obsahuje její hodnotu. Typy hodnot zahrnují všechny číselné datové typy, `Boolean`, `Char`, `Date`, všechny struktury a všechny výčty. Proměnná *typu odkazu* ukládá odkaz na instanci objektu v paměti. Typy odkazů zahrnují třídy, pole, delegáty a řetězce. Další informace naleznete v tématu [typy hodnot a typy odkazů](../programming-guide/language-features/data-types/value-types-and-reference-types.md).
 
-If a variable is of a value type, the behavior of `Nothing` depends on whether the variable is of a nullable data type. To represent a nullable value type, add a `?` modifier to the type name. Assigning `Nothing` to a nullable variable sets the value to `null`. For more information and examples, see [Nullable Value Types](../programming-guide/language-features/data-types/nullable-value-types.md).
+Pokud je proměnná typu hodnoty, chování `Nothing` závisí na tom, zda je proměnná datovým typem s možnou hodnotou null. Pro reprezentaci typu hodnoty s možnou hodnotou null přidejte modifikátor `?` k názvu typu. Přiřazení `Nothing` k proměnné s možnou hodnotou null nastaví hodnotu na `null`. Další informace a příklady naleznete v tématu [typy hodnot s možnou hodnotou null](../programming-guide/language-features/data-types/nullable-value-types.md).
 
-If a variable is of a value type that is not nullable, assigning `Nothing` to it sets it to the default value for its declared type. If that type contains variable members, they are all set to their default values. The following example illustrates this for scalar types.
+Pokud je proměnná typu hodnoty, která nemůže mít hodnotu null, přiřazením `Nothing` ji nastaví na výchozí hodnotu pro deklarovaný typ. Pokud tento typ obsahuje členy proměnné, všechny jsou nastaveny na výchozí hodnoty. Následující příklad ukazuje tento pro skalární typy.
 
 [!code-vb[VbVbalrKeywords#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/Class2.vb#7)]
 
-If a variable is of a reference type, assigning `Nothing` to the variable sets it to a `null` reference of the variable's type. A variable that is set to a `null` reference is not associated with any object. The following example demonstrates this:
+Pokud je proměnná typu odkazu, přiřazení `Nothing` k proměnné nastaví na `null` odkaz typu proměnné. Proměnná, která je nastavena na odkaz `null`, není přidružena k žádnému objektu. Následující příklad ukazuje toto:
 
 [!code-vb[VbVbalrKeywords#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/class3.vb#8)]
 
-When checking whether a reference (or nullable value type) variable is `null`, do not use `= Nothing` or `<> Nothing`. Always use `Is Nothing` or `IsNot Nothing`.
+Při kontrole, zda je proměnná odkaz (nebo typ hodnoty s možnou hodnotou null) `null`, nepoužívejte `= Nothing` ani `<> Nothing`. Vždy používejte `Is Nothing` nebo `IsNot Nothing`.
 
-For strings in Visual Basic, the empty string equals `Nothing`. Therefore, `"" = Nothing` is true.
+Pro řetězce v Visual Basic se prázdný řetězec rovná `Nothing`. Proto `"" = Nothing` má hodnotu true.
 
-The following example shows comparisons that use the `Is` and `IsNot` operators:
+Následující příklad ukazuje porovnání, které používají operátory `Is` a `IsNot`:
 
 [!code-vb[VbVbalrKeywords#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/Class4.vb#9)]
 
-If you declare a variable without using an `As` clause and set it to `Nothing`, the variable has a type of `Object`. An example of this is `Dim something = Nothing`. A compile-time error occurs in this case when `Option Strict` is on and `Option Infer` is off.
+Pokud deklarujete proměnnou bez použití klauzule `As` a nastavíte ji na `Nothing`, proměnná má typ `Object`. Příkladem je `Dim something = Nothing`. V takovém případě dojde k chybě při kompilaci, pokud je `Option Strict` zapnutá a `Option Infer` je vypnutá.
 
-When you assign `Nothing` to an object variable, it no longer refers to any object instance. If the variable had previously referred to an instance, setting it to `Nothing` does not terminate the instance itself. The instance is terminated, and the memory and system resources associated with it are released, only after the garbage collector (GC) detects that there are no active references remaining.
+Když přiřadíte `Nothing` proměnné objektu, již neodkazuje na žádnou instanci objektu. Pokud proměnná dříve odkazovala na instanci, její nastavení na `Nothing` neukončí samotnou instanci. Instance se ukončí a uvolní se paměťové a systémové prostředky, které jsou k ní přidružené, a to až po zjištění uvolňování paměti (GC), že nezbývá žádný aktivní odkaz.
 
-`Nothing` differs from the <xref:System.DBNull> object, which represents an uninitialized variant or a nonexistent database column.
+`Nothing` se liší od objektu <xref:System.DBNull>, který představuje Neinicializovaný typ variant nebo neexistující sloupec databáze.
 
 ## <a name="see-also"></a>Viz také:
 
 - [Příkaz Dim](./statements/dim-statement.md)
 - [Doba života objektu: Vytváření a zničení objektů](../programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)
-- [Lifetime in Visual Basic](../programming-guide/language-features/declared-elements/lifetime.md)
+- [Doba života v Visual Basic](../programming-guide/language-features/declared-elements/lifetime.md)
 - [Operátor Is](./operators/is-operator.md)
 - [Operátor IsNot](./operators/isnot-operator.md)
 - [Typy hodnot s povolenou hodnotou Null](../programming-guide/language-features/data-types/nullable-value-types.md)

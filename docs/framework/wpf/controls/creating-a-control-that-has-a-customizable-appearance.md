@@ -38,7 +38,7 @@ Vlastní ovládací prvek NumericUpDown
 
 Toto téma obsahuje následující oddíly:
 
-- [Požadavky](#prerequisites)
+- [Požadovaný](#prerequisites)
 
 - [Model částí a stavů](#parts_and_states_model)
 

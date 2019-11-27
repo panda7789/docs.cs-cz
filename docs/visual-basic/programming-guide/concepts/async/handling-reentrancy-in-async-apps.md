@@ -9,21 +9,21 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74354269"
 ---
-# <a name="handling-reentrancy-in-async-apps-visual-basic"></a>Handling Reentrancy in Async Apps (Visual Basic)
+# <a name="handling-reentrancy-in-async-apps-visual-basic"></a>Zpracování Vícenásobný přístup v asynchronních aplikacích (Visual Basic)
 
-When you include asynchronous code in your app, you should consider and possibly prevent reentrancy, which refers to reentering an asynchronous operation before it has completed. If you don't identify and handle possibilities for reentrancy, it can cause unexpected results.
-
-> [!NOTE]
-> To run the example, you must have Visual Studio 2012 or newer and the .NET Framework 4.5 or newer installed on your computer.
+Při zahrnutí asynchronního kódu do aplikace byste měli zvážit a případně zabránit Vícenásobný přístup, která označuje, že se má znovu zadat asynchronní operace předtím, než se dokončí. Pokud neidentifikujete a nezpracováváte možnosti pro Vícenásobný přístup, může dojít k neočekávaným výsledkům.
 
 > [!NOTE]
-> Transport Layer Security (TLS) version 1.2 is now the minimum version to use in your app development. If your app targets a .NET framework version earlier than 4.7, please refer to the following article for [Transport Layer Security (TLS) best practices with the .NET Framework](../../../../framework/network-programming/tls.md) 
+> Chcete-li spustit příklad, musíte mít v počítači nainstalován systém Visual Studio 2012 nebo novější a .NET Framework 4,5 nebo novější.
 
-## <a name="BKMK_RecognizingReentrancy"></a> Recognizing Reentrancy
+> [!NOTE]
+> Protokol TLS (Transport Layer Security) verze 1,2 je teď minimální verzí, která se má použít při vývoji aplikací. Pokud se vaše aplikace zaměřuje na verzi rozhraní .NET Framework starší než 4,7, přečtěte si následující článek [s doporučenými postupy TLS (Transport Layer Security) s .NET Framework](../../../../framework/network-programming/tls.md) 
 
-In the example in this topic, users choose a **Start** button to initiate an asynchronous app that downloads a series of websites and calculates the total number of bytes that are downloaded. A synchronous version of the example would respond the same way regardless of how many times a user chooses the button because, after the first time, the UI thread ignores those events until the app finishes running. In an asynchronous app, however, the UI thread continues to respond, and you might reenter the asynchronous operation before it has completed.
+## <a name="BKMK_RecognizingReentrancy"></a>Rozpoznávání Vícenásobný přístup
 
-The following example shows the expected output if the user chooses the **Start** button only once. A list of the downloaded websites appears with the size, in bytes, of each site. The total number of bytes appears at the end.
+V příkladu v tomto tématu uživatelé zvolí tlačítko **Spustit** pro zahájení asynchronní aplikace, která stáhne řadu webů a vypočítá celkový počet stažených bajtů. Synchronní verze příkladu by reagovala stejným způsobem bez ohledu na to, kolikrát uživatel vybere tlačítko, protože po prvním spuštění vlákno UI tyto události ignoruje, dokud se aplikace nedokončí. V asynchronní aplikaci ale vlákno uživatelského rozhraní nadále reaguje a před dokončením můžete znovu zadat asynchronní operaci.
+
+Následující příklad ukazuje očekávaný výstup, pokud uživatel klikne na tlačítko **Start** pouze jednou. Seznam stažených webů se zobrazí v bajtech v bajtech každé lokality. Celkový počet bajtů se zobrazí na konci.
 
 ```console
 1. msdn.microsoft.com/library/hh191443.aspx                83732
@@ -38,7 +38,7 @@ The following example shows the expected output if the user chooses the **Start*
 TOTAL bytes returned:  890591
 ```
 
-However, if the user chooses the button more than once, the event handler is invoked repeatedly, and the download process is reentered each time. As a result, several asynchronous operations are running at the same time, the output interleaves the results, and the total number of bytes is confusing.
+Pokud však uživatel zvolí tlačítko více než jednou, obslužná rutina události je vyvolána opakovaně a proces stahování je znovu zadán pokaždé. Výsledkem je, že několik asynchronních operací je současně spuštěno, výstup vynechává výsledky a celkový počet bajtů je matoucí.
 
 ```console
 1. msdn.microsoft.com/library/hh191443.aspx                83732
@@ -75,29 +75,29 @@ TOTAL bytes returned:  890591
 TOTAL bytes returned:  890591
 ```
 
-You can review the code that produces this output by scrolling to the end of this topic. You can experiment with the code by downloading the solution to your local computer and then running the WebsiteDownload project or by using the code at the end of this topic to create your own project For more information and instructions, see [Reviewing and Running the Example App](#BKMD_SettingUpTheExample).
+Můžete zkontrolovat kód, který vytváří tento výstup posouváním na konec tohoto tématu. Můžete experimentovat s kódem stažením řešení do místního počítače a následným spuštěním projektu WebsiteDownload nebo pomocí kódu na konci tohoto tématu Vytvoření vlastního projektu pro další informace a pokyny najdete v tématu [Kontrola a spuštění ukázkové aplikace](#BKMD_SettingUpTheExample).
 
-## <a name="BKMK_HandlingReentrancy"></a> Handling Reentrancy
+## <a name="BKMK_HandlingReentrancy"></a>Zpracování Vícenásobný přístup
 
-You can handle reentrancy in a variety of ways, depending on what you want your app to do. This topic presents the following examples:
+V závislosti na tom, co má vaše aplikace dělat, můžete Vícenásobný přístup zpracovávat různými způsoby. Toto téma nabízí následující příklady:
 
-- [Disable the Start Button](#BKMK_DisableTheStartButton)
+- [Zakázání tlačítka Start](#BKMK_DisableTheStartButton)
 
-  Disable the **Start** button while the operation is running so that the user can't interrupt it.
+  Zakáže tlačítko **Start** , když je operace spuštěná, aby ji uživatel nemohl přerušit.
 
-- [Cancel and Restart the Operation](#BKMK_CancelAndRestart)
+- [Zrušení a restartování operace](#BKMK_CancelAndRestart)
 
-  Cancel any operation that is still running when the user chooses the **Start** button again, and then let the most recently requested operation continue.
+  Zrušte všechny operace, které pořád běží, když uživatel znovu zvolí tlačítko **Start** , a pak nechte poslední vyžadovanou operaci pokračovat.
 
-- [Run Multiple Operations and Queue the Output](#BKMK_RunMultipleOperations)
+- [Spuštění více operací a zařazení výstupu do fronty](#BKMK_RunMultipleOperations)
 
-  Allow all requested operations to run asynchronously, but coordinate the display of output so that the results from each operation appear together and in order.
+  Povolí asynchronní spouštění všech požadovaných operací, ale koordinuje zobrazení výstupu, aby se výsledky jednotlivých operací zobrazovaly společně a v daném pořadí.
 
-### <a name="BKMK_DisableTheStartButton"></a> Disable the Start Button
+### <a name="BKMK_DisableTheStartButton"></a>Zakázání tlačítka Start
 
-You can block the **Start** button while an operation is running by disabling the button at the top of the `StartButton_Click` event handler. You can then reenable the button from within a  `Finally` block when the operation finishes so that users can run the app again.
+Tlačítko **Start** lze zablokovat, když je operace spuštěna, zakázáním tlačítka v horní části obslužné rutiny události `StartButton_Click`. Pak můžete znovu povolit tlačítko v rámci `Finally` bloku po dokončení operace, aby uživatelé mohli aplikaci znovu spustit.
 
-The following code shows these changes, which are marked with asterisks. You can add the changes to the code at the end of this topic, or you can download the finished app from [Async Samples: Reentrancy in .NET Desktop Apps](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06). The project name is DisableStartButton.
+Následující kód zobrazuje tyto změny, které jsou označeny hvězdičkami. Změny můžete přidat do kódu na konci tohoto tématu nebo si můžete stáhnout dokončenou aplikaci z [asynchronních ukázek: Vícenásobný přístup v aplikacích .NET Desktop](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06). Název projektu je DisableStartButton.
 
 ```vb
 Private Async Sub StartButton_Click(sender As Object, e As RoutedEventArgs)
@@ -120,17 +120,17 @@ Private Async Sub StartButton_Click(sender As Object, e As RoutedEventArgs)
 End Sub
 ```
 
-As a result of the changes, the button doesn't respond while `AccessTheWebAsync` is downloading the websites, so the process can’t be reentered.
+V důsledku změn tlačítko nereaguje, když `AccessTheWebAsync` stahuje weby, takže se tento proces nedá znovu zadat.
 
-### <a name="BKMK_CancelAndRestart"></a> Cancel and Restart the Operation
+### <a name="BKMK_CancelAndRestart"></a>Zrušení a restartování operace
 
-Instead of disabling the **Start** button, you can keep the button active but, if the user chooses that button again, cancel the operation that's already running and let the most recently started operation continue.
+Místo zakázání tlačítka **Start** můžete ponechat tlačítko aktivní, ale pokud uživatel toto tlačítko zvolí znovu, zrušte operaci, která už je spuštěná, a nechejte operaci naposledy spuštěnou.
 
-For more information about cancellation, see [Fine-Tuning Your Async Application (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md).
+Další informace o zrušení najdete v tématu [jemné vyladění aplikace Async (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md).
 
-To set up this scenario, make the following changes to the basic code that is provided in [Reviewing and Running the Example App](#BKMD_SettingUpTheExample). You also can download the finished app from [Async Samples: Reentrancy in .NET Desktop Apps](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06). The name of this project is CancelAndRestart.
+Chcete-li nastavit tento scénář, proveďte následující změny základního kódu, který je k dispozici v [části Kontrola a spuštění ukázkové aplikace](#BKMD_SettingUpTheExample). Dokončenou aplikaci si také můžete stáhnout z části [Async Samples: Vícenásobný přístup v desktopových aplikacích .NET](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06). Název tohoto projektu je CancelAndRestart.
 
-1. Declare a <xref:System.Threading.CancellationTokenSource> variable, `cts`, that’s in scope for all methods.
+1. Deklarujte <xref:System.Threading.CancellationTokenSource> proměnnou `cts`, která je v oboru pro všechny metody.
 
     ```vb
     Class MainWindow // Or Class MainPage
@@ -139,7 +139,7 @@ To set up this scenario, make the following changes to the basic code that is pr
         Dim cts As CancellationTokenSource
     ```
 
-2. In `StartButton_Click`, determine whether an operation is already underway. If the value of `cts` is `Nothing`, no operation is already active. If the value isn't `Nothing`, the operation that is already running is canceled.
+2. V `StartButton_Click`určete, zda již operace probíhá. Pokud je hodnota `cts` `Nothing`, již není žádná operace aktivní. Pokud hodnota není `Nothing`, operace, která je již spuštěna, je zrušena.
 
     ```vb
     ' *** If a download process is already underway, cancel it.
@@ -148,7 +148,7 @@ To set up this scenario, make the following changes to the basic code that is pr
     End If
     ```
 
-3. Set `cts` to a different value that represents the current process.
+3. Nastavte `cts` na jinou hodnotu, která představuje aktuální proces.
 
     ```vb
     ' *** Now set cts to cancel the current process if the button is chosen again.
@@ -156,7 +156,7 @@ To set up this scenario, make the following changes to the basic code that is pr
     cts = newCTS
     ```
 
-4. At the end of `StartButton_Click`, the current process is complete, so set the value of `cts` back to `Nothing`.
+4. Na konci `StartButton_Click`je aktuální proces dokončený, takže nastavte hodnotu `cts` zpět na `Nothing`.
 
     ```vb
     ' *** When the process completes, signal that another process can proceed.
@@ -165,7 +165,7 @@ To set up this scenario, make the following changes to the basic code that is pr
     End If
     ```
 
-The following code shows all the changes in `StartButton_Click`. The additions are marked with asterisks.
+Následující kód ukazuje všechny změny v `StartButton_Click`. Přidané položky jsou označeny hvězdičkami.
 
 ```vb
 Private Async Sub StartButton_Click(sender As Object, e As RoutedEventArgs)
@@ -200,15 +200,15 @@ Private Async Sub StartButton_Click(sender As Object, e As RoutedEventArgs)
 End Sub
 ```
 
-In `AccessTheWebAsync`, make the following changes.
+V `AccessTheWebAsync`proveďte následující změny.
 
-- Add a parameter to accept the cancellation token from `StartButton_Click`.
+- Přidejte parametr pro přijetí tokenu zrušení z `StartButton_Click`.
 
-- Use the <xref:System.Net.Http.HttpClient.GetAsync%2A> method to download the websites because `GetAsync` accepts a <xref:System.Threading.CancellationToken> argument.
+- Použijte metodu <xref:System.Net.Http.HttpClient.GetAsync%2A> ke stažení webů, protože `GetAsync` přijímá argument <xref:System.Threading.CancellationToken>.
 
-- Before calling `DisplayResults` to display the results for each downloaded website, check `ct` to verify that the current operation hasn’t been canceled.
+- Před voláním `DisplayResults` pro zobrazení výsledků každého staženého webu zkontrolujte `ct` a ověřte, zda aktuální operace nebyla zrušena.
 
- The following code shows these changes, which are marked with asterisks.
+ Následující kód zobrazuje tyto změny, které jsou označeny hvězdičkami.
 
 ```vb
 ' *** Provide a parameter for the CancellationToken from StartButton_Click.
@@ -248,7 +248,7 @@ Private Async Function AccessTheWebAsync(ct As CancellationToken) As Task
 End Function
 ```
 
-If you choose the **Start** button several times while this app is running, it should produce results that resemble the following output:
+Pokud při spuštění této aplikace několikrát kliknete na tlačítko **Start** , mělo by se jednat o výsledky, které se podobají následujícímu výstupu:
 
 ```console
 1. msdn.microsoft.com/library/hh191443.aspx                83732
@@ -276,17 +276,17 @@ Download canceled.
 TOTAL bytes returned:  890591
 ```
 
-To eliminate the partial lists, uncomment the first line of code in `StartButton_Click` to clear the text box each time the user restarts the operation.
+Chcete-li odstranit částečné seznamy, odkomentujte první řádek kódu v `StartButton_Click` k vymazání textového pole pokaždé, když uživatel operaci restartuje.
 
-### <a name="BKMK_RunMultipleOperations"></a> Run Multiple Operations and Queue the Output
+### <a name="BKMK_RunMultipleOperations"></a>Spuštění více operací a zařazení výstupu do fronty
 
-This third example is the most complicated in that the app starts another asynchronous operation each time that the user chooses the **Start** button, and all the operations run to completion. All the requested operations download websites from the list asynchronously, but the output from the operations is presented sequentially. That is, the actual downloading activity is interleaved, as the output in [Recognizing Reentrancy](#BKMK_RecognizingReentrancy) shows, but the list of results for each group is presented separately.
+Tento třetí příklad je nejsložitější v tom, že aplikace spouští další asynchronní operace pokaždé, když uživatel zvolí tlačítko **Start** , a všechny operace, které se spouštějí k dokončení. Všechny požadované operace stahují weby ze seznamu asynchronně, ale výstup z operací je prezentován sekvenčně. To znamená, že se aktuální aktivita stahování prochází, protože se zobrazuje výstup v [rozpoznávání Vícenásobný přístup](#BKMK_RecognizingReentrancy) , ale seznam výsledků pro každou skupinu se zobrazí samostatně.
 
-The operations share a global <xref:System.Threading.Tasks.Task>, `pendingWork`, which serves as a gatekeeper for the display process.
+Operace sdílí globální <xref:System.Threading.Tasks.Task>, `pendingWork`, která slouží jako server gatekeeper pro proces zobrazení.
 
-You can run this example by pasting the changes into the code in [Building the App](#BKMK_BuildingTheApp), or you can follow the instructions in [Downloading the App](#BKMK_DownloadingTheApp) to download the sample and then run the QueueResults project.
+Tento příklad můžete spustit vložením změn do kódu v [sestavování aplikace](#BKMK_BuildingTheApp)nebo můžete postupovat podle pokynů v tématu Stažení [aplikace](#BKMK_DownloadingTheApp) ke stažení ukázky a spuštění projektu QueueResults.
 
-The following output shows the result if the user chooses the **Start** button only once. The letter label, A, indicates that the result is from the first time the **Start** button is chosen. The numbers show the order of the URLs in the list of download targets.
+Následující výstup ukazuje výsledek, pokud uživatel zvolí tlačítko **Start** pouze jednou. Označení písmenem (a) označuje, že výsledek je od první zvolené tlačítko **Start** . Čísla zobrazují pořadí adres URL v seznamu cílů stahování.
 
 ```console
 #Starting group A.
@@ -306,7 +306,7 @@ TOTAL bytes returned:  918876
 #Group A is complete.
 ```
 
-If the user chooses the **Start** button three times, the app produces output that resembles the following lines. The information lines that start with a pound sign (#) trace the progress of the application.
+Pokud uživatel třikrát zvolí tlačítko **Start** , aplikace vytvoří výstup podobný následujícímu řádku. Informační řádky, které začínají znakem křížku (#) sledují průběh aplikace.
 
 ```console
 #Starting group A.
@@ -362,13 +362,13 @@ TOTAL bytes returned:  920526
 #Group C is complete.
 ```
 
-Groups B and C start before group A has finished, but the output for the each group appears separately. All the output for group A appears first, followed by all the output for group B, and then all the output for group C. The app always displays the groups in order and, for each group, always displays the information about the individual websites in the order that the URLs appear in the list of URLs.
+Skupiny B a C se spustí před dokončením skupiny A, ale výstup pro každou skupinu se zobrazí samostatně. Nejprve se zobrazí celý výstup pro skupinu A následovaný celým výstupem pro skupinu B a pak všechny výstupy pro skupinu C. Aplikace vždy zobrazuje skupiny v pořadí a pro každou skupinu vždy zobrazuje informace o jednotlivých webech v pořadí, v jakém se adresy URL zobrazují v seznamu adres URL.
 
-However, you can't predict the order in which the downloads actually happen. After multiple groups have been started, the download tasks that they generate are all active. You can't assume that A-1 will be downloaded before B-1, and you can't assume that A-1 will be downloaded before A-2.
+Nemůžete ale předpovědět pořadí, ve kterém ke stažení skutečně dojde. Po spuštění více skupin jsou všechny úlohy stahování, které generují, všechny aktivní. Nemůžete předpokládat, že A-1 se stáhne před B-1 a nemůžete předpokládat, že A-1 se stáhne před A-2.
 
 #### <a name="global-definitions"></a>Globální definice
 
-The sample code contains the following two global declarations that are visible from all methods.
+Vzorový kód obsahuje následující dvě globální deklarace, které jsou viditelné ze všech metod.
 
 ```vb
 Class MainWindow    ' Class MainPage in Windows Store app.
@@ -378,11 +378,11 @@ Class MainWindow    ' Class MainPage in Windows Store app.
     Private group As Char = ChrW(AscW("A") - 1)
 ```
 
-The `Task` variable, `pendingWork`, oversees the display process and prevents any group from interrupting another group's display operation. The character variable, `group`, labels the output from different groups to verify that results appear in the expected order.
+Proměnná `Task`, `pendingWork`, dohlíží na proces zobrazení a zabraňuje všem skupinám v přerušení operace zobrazení jiné skupiny. Proměnná znaku `group`, označí výstup z různých skupin a ověří tak, že se výsledky zobrazí v očekávaném pořadí.
 
 #### <a name="the-click-event-handler"></a>Obslužná rutina události kliknutí
 
-The event handler, `StartButton_Click`, increments the group letter each time the user chooses the **Start** button. Then the handler calls `AccessTheWebAsync` to run the downloading operation.
+Obslužná rutina události `StartButton_Click`zvyšuje písmeno skupiny pokaždé, když uživatel klikne na tlačítko **Start** . Obslužná rutina pak zavolá `AccessTheWebAsync` ke spuštění operace stahování.
 
 ```vb
 Private Async Sub StartButton_Click(sender As Object, e As RoutedEventArgs)
@@ -408,11 +408,11 @@ End Sub
 
 #### <a name="the-accessthewebasync-method"></a>Metoda AccessTheWebAsync
 
-This example splits `AccessTheWebAsync` into two methods. The first method, `AccessTheWebAsync`, starts all the download tasks for a group and sets up `pendingWork` to control the display process. The method uses a Language Integrated Query (LINQ query) and <xref:System.Linq.Enumerable.ToArray%2A> to start all the download tasks at the same time.
+Tento příklad rozdělí `AccessTheWebAsync` do dvou metod. První metoda, `AccessTheWebAsync`, spustí všechny úlohy stažení pro skupinu a nastaví `pendingWork` pro řízení procesu zobrazení. Metoda používá dotaz integrovaný v jazyce (dotaz LINQ) a <xref:System.Linq.Enumerable.ToArray%2A> ke spuštění všech úloh stažení současně.
 
-`AccessTheWebAsync` then calls `FinishOneGroupAsync` to await the completion of each download and display its length.
+`AccessTheWebAsync` pak zavolá `FinishOneGroupAsync`, aby čekal na dokončení jednotlivých stažení a zobrazila jeho délku.
 
-`FinishOneGroupAsync` returns a task that's assigned to `pendingWork` in `AccessTheWebAsync`. That value prevents interruption by another operation before the task is complete.
+`FinishOneGroupAsync` vrátí úkol, který je přiřazen `pendingWork` v `AccessTheWebAsync`. Tato hodnota brání přerušení jinou operací před dokončením úkolu.
 
 ```vb
 Private Async Function AccessTheWebAsync(grp As Char) As Task(Of Char)
@@ -443,9 +443,9 @@ End Function
 
 #### <a name="the-finishonegroupasync-method"></a>Metoda FinishOneGroupAsync
 
-This method cycles through the download tasks in a group, awaiting each one, displaying the length of the downloaded website, and adding the length to the total.
+Tato metoda cyklicky projde úlohy stahování ve skupině, které čekají na každé z nich, zobrazuje délku staženého webu a přidává délku k celkovému součtu.
 
-The first statement in `FinishOneGroupAsync` uses `pendingWork` to make sure that entering the method doesn't interfere with an operation that is already in the display process or that's already waiting. If such an operation is in progress, the entering operation must wait its turn.
+První příkaz v `FinishOneGroupAsync` používá `pendingWork`, aby se zajistilo, že vstup do metody nekoliduje s operací, která je již v procesu zobrazení, nebo už čeká. Pokud taková operace probíhá, musí operace zadání počkat na její zapnutí.
 
 ```vb
 Private Async Function FinishOneGroupAsync(urls As List(Of String), contentTasks As Task(Of Byte())(), grp As Char) As Task
@@ -472,15 +472,15 @@ Private Async Function FinishOneGroupAsync(urls As List(Of String), contentTasks
 End Function
 ```
 
-You can run this example by pasting the changes into the code in [Building the App](#BKMK_BuildingTheApp), or you can follow the instructions in [Downloading the App](#BKMK_DownloadingTheApp) to download the sample, and then run the QueueResults project.
+Tento příklad můžete spustit vložením změn do kódu v [sestavování aplikace](#BKMK_BuildingTheApp)nebo můžete postupovat podle pokynů v tématu Stažení [aplikace](#BKMK_DownloadingTheApp) pro stažení ukázky a následného spuštění projektu QueueResults.
 
 #### <a name="points-of-interest"></a>Body zájmu
 
-The information lines that start with a pound sign (#) in the output clarify how this example works.
+Informační řádky, které začínají znakem křížku (#) ve výstupu objasňují, jak tento příklad funguje.
 
-The output shows the following patterns.
+Výstup ukazuje následující vzory.
 
-- A group can be started while a previous group is displaying its output, but the display of the previous group's output isn't interrupted.
+- Skupinu lze spustit, když se v předchozí skupině zobrazuje výstup, ale zobrazení výstupu předchozí skupiny není přerušeno.
 
   ```console
   #Starting group A.
@@ -516,63 +516,63 @@ The output shows the following patterns.
   TOTAL bytes returned:  915908
   ```
 
-- The `pendingWork` task is `Nothing` at the start of `FinishOneGroupAsync` only for group A, which started first. Group A hasn’t yet completed an await expression when it reaches `FinishOneGroupAsync`. Therefore, control hasn't returned to `AccessTheWebAsync`, and the first assignment to `pendingWork` hasn't occurred.
+- Úkol `pendingWork` je `Nothing` na začátku `FinishOneGroupAsync` pouze pro skupinu A, která začala jako první. Skupina A ještě nedokončila výraz await, když dosáhne `FinishOneGroupAsync`. Proto ovládací prvek nebyl vrácen do `AccessTheWebAsync`a první přiřazení, které `pendingWork`, neproběhlo.
 
-- The following two lines always appear together in the output. The code is never interrupted between starting a group's operation in `StartButton_Click` and assigning a task for the group to `pendingWork`.
+- Ve výstupu se vždy zobrazí následující dva řádky společně. Kód se nikdy nepřerušil mezi zahájením operace skupiny v `StartButton_Click` a přiřazením úkolu, který `pendingWork`skupina.
 
   ```console
   #Starting group B.
   #Task assigned for group B. Download tasks are active.
   ```
 
-  After a group enters `StartButton_Click`, the operation doesn't complete an await expression until the operation enters `FinishOneGroupAsync`. Therefore, no other operation can gain control during that segment of code.
+  Až skupina vstoupí `StartButton_Click`, operace nekončí výraz await, dokud operace nevstoupí do `FinishOneGroupAsync`. Proto žádná jiná operace nemůže získat řízení během tohoto segmentu kódu.
 
-## <a name="BKMD_SettingUpTheExample"></a> Reviewing and Running the Example App
+## <a name="BKMD_SettingUpTheExample"></a>Kontrola a spuštění ukázkové aplikace
 
-To better understand the example app, you can download it, build it yourself, or review the code at the end of this topic without implementing the app.
+Abyste lépe pochopili ukázkovou aplikaci, můžete si ji stáhnout, sestavit sami nebo si projít kód na konci tohoto tématu bez implementace aplikace.
 
 > [!NOTE]
-> To run the example as a Windows Presentation Foundation (WPF) desktop app, you must have Visual Studio 2012 or newer and the .NET Framework 4.5 or newer installed on your computer.
+> Chcete-li spustit příklad jako desktopovou aplikaci Windows Presentation Foundation (WPF), musíte mít v počítači nainstalován systém Visual Studio 2012 nebo novější a .NET Framework 4,5 nebo novější.
 
-### <a name="BKMK_DownloadingTheApp"></a> Downloading the App
+### <a name="BKMK_DownloadingTheApp"></a>Stahování aplikace
 
-1. Download the compressed file from [Async Samples: Reentrancy in .NET Desktop Apps](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06).
+1. Stáhněte si komprimovaný soubor z [Async Samples: Vícenásobný přístup v desktopových aplikacích .NET](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06).
 
-2. Decompress the file that you downloaded, and then start Visual Studio.
+2. Dekomprimovat soubor, který jste stáhli, a potom spusťte Visual Studio.
 
-3. On the menu bar, choose **File**, **Open**, **Project/Solution**.
+3. Na panelu nabídek vyberte možnosti **soubor**, **otevřít**, **projekt/řešení**.
 
-4. Navigate to the folder that holds the decompressed sample code, and then open the solution (.sln) file.
+4. Přejděte do složky, která obsahuje dekomprimovaný ukázkový kód, a poté otevřete soubor řešení (. sln).
 
-5. In **Solution Explorer**, open the shortcut menu for the project that you want to run, and then choose **Set as StartUpProject**.
+5. V **Průzkumník řešení**otevřete místní nabídku pro projekt, který chcete spustit, a pak zvolte **nastavit jako StartUpProject**.
 
-6. Choose the CTRL+F5 keys to build and run the project.
+6. Kliknutím na klávesy CTRL + F5 Sestavte a spusťte projekt.
 
-### <a name="BKMK_BuildingTheApp"></a> Building the App
+### <a name="BKMK_BuildingTheApp"></a>Sestavování aplikace
 
-The following section provides the code to build the example as a WPF app.
+Následující část poskytuje kód pro sestavení příkladu jako aplikace WPF.
 
 ##### <a name="to-build-a-wpf-app"></a>Vytvoření aplikace WPF
 
-1. Start Visual Studio.
+1. Spusťte Visual Studio.
 
-2. On the menu bar, choose **File**, **New**, **Project**.
+2. Na panelu nabídek vyberte položku **soubor**, **Nový**, **projekt**.
 
-     The **New Project** dialog box opens.
+     Otevře se dialogové okno **Nový projekt** .
 
-3. In the **Installed Templates** pane, expand **Visual Basic**, and then expand **Windows**.
+3. V podokně **Nainstalované šablony** rozbalte **Visual Basic**a potom rozbalte **okna**.
 
-4. In the list of project types, choose **WPF Application**.
+4. V seznamu typů projektů vyberte možnost **aplikace WPF**.
 
-5. Name the project `WebsiteDownloadWPF`, choose .NET Framework version of 4.6 or higher and then click the **OK** button.
+5. Pojmenujte projekt `WebsiteDownloadWPF`, zvolte .NET Framework verze 4,6 nebo vyšší a pak klikněte na tlačítko **OK** .
 
-     The new project appears in **Solution Explorer**.
+     Nový projekt se zobrazí v **Průzkumník řešení**.
 
-6. In the Visual Studio Code Editor, choose the **MainWindow.xaml** tab.
+6. V editoru Visual Studio Code klikněte na kartu **MainWindow. XAML** .
 
-     If the tab isn’t visible, open the shortcut menu for MainWindow.xaml in **Solution Explorer**, and then choose **View Code**.
+     Pokud karta není viditelná, otevřete místní nabídku pro MainWindow. XAML v **Průzkumník řešení**a pak zvolte **Zobrazit kód**.
 
-7. In the **XAML** view of MainWindow.xaml, replace the code with the following code.
+7. V zobrazení **XAML** souboru MainWindow. xaml nahraďte kód následujícím kódem.
 
     ```xaml
     <Window x:Class="MainWindow"
@@ -590,15 +590,15 @@ The following section provides the code to build the example as a WPF app.
     </Window>
     ```
 
-     A simple window that contains a text box and a button appears in the **Design** view of MainWindow.xaml.
+     Jednoduché okno obsahující textové pole a tlačítko se zobrazí v zobrazení **Návrh** souboru MainWindow. XAML.
 
-8. In **Solution Explorer**, right-click on **References** and select **Add Reference**.
+8. V **Průzkumník řešení**klikněte pravým tlačítkem na **odkazy** a vyberte **Přidat odkaz**.
 
-     Add a reference for <xref:System.Net.Http>, if it is not selected already.
+     Přidejte odkaz pro <xref:System.Net.Http>, pokud již není vybrán.
 
-9. In **Solution Explorer**, open the shortcut menu for MainWindow.xaml.vb, and then choose **View Code**.
+9. V **Průzkumník řešení**otevřete místní nabídku pro MainWindow. XAML. vb a pak zvolte **Zobrazit kód**.
 
-10. In MainWindow.xaml.vb , replace the code with the following code.
+10. V souboru MainWindow. XAML. vb nahraďte kód následujícím kódem.
 
     ```vb
     ' Add the following Imports statements, and add a reference for System.Net.Http.
@@ -678,11 +678,11 @@ The following section provides the code to build the example as a WPF app.
     End Class
     ```
 
-11. Choose the CTRL+F5 keys to run the program, and then choose the **Start** button several times.
+11. Stiskněte klávesy CTRL + F5 ke spuštění programu a pak několikrát zvolte tlačítko **Start** .
 
-12. Make the changes from [Disable the Start Button](#BKMK_DisableTheStartButton), [Cancel and Restart the Operation](#BKMK_CancelAndRestart), or [Run Multiple Operations and Queue the Output](#BKMK_RunMultipleOperations) to handle the reentrancy.
+12. Proveďte změny z [zakázání tlačítka Start](#BKMK_DisableTheStartButton), [zrušte a restartujte operaci](#BKMK_CancelAndRestart)nebo [Spusťte více operací a](#BKMK_RunMultipleOperations) zaznamenejte výstup pro zpracování Vícenásobný přístup.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Walkthrough: Accessing the Web by Using Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
-- [Asynchronous Programming with Async and Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
+- [Návod: přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
+- [Asynchronní programování s modifikátorem Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)

@@ -22,7 +22,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346172"
 ---
 # <a name="comments-in-code-visual-basic"></a>Komentáře v kódu (Visual Basic)
-As you read the code examples, you often encounter the comment symbol (`'`). This symbol tells the Visual Basic compiler to ignore the text following it, or the *comment*. Komentáře jsou stručné vysvětlivky doplněné do kódu kvůli lepší orientaci těch, kteří si ho prohlížejí.  
+Při čtení příkladů kódu často narazíte na symbol komentáře (`'`). Tento symbol instruuje kompilátor Visual Basic, že má ignorovat text, který následuje, nebo *Komentář*. Komentáře jsou stručné vysvětlivky doplněné do kódu kvůli lepší orientaci těch, kteří si ho prohlížejí.  
   
  Při programování je dobrým zvykem začínat všechny procedury stručným komentářem, který popisuje funkční charakteristiky procedury (co dělá). Budete z toho mít prospěch jak vy, tak všichni ostatní, kteří tento kód prověřují. Podrobnosti implementace (jak to procedura dělá) byste měli oddělit od komentářů, které popisují funkční charakteristiky. Pokud do popisu zahrnete podrobnosti implementace, při úpravě funkce je nezapomeňte aktualizovat.  
   
@@ -35,7 +35,7 @@ As you read the code examples, you often encounter the comment symbol (`'`). Thi
  [!code-vb[VbVbcnConventions#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#17)]  
   
 ## <a name="commenting-guidelines"></a>Pokyny ke komentování  
- Následující tabulka obsahuje obecné pokyny k tomu, jaké typy komentářů mohou být před kódem. These are suggestions; Visual Basic does not enforce rules for adding comments. Napište všechno, co má význam pro vás i pro kohokoli jiného, kdo si váš kód bude prohlížet.  
+ Následující tabulka obsahuje obecné pokyny k tomu, jaké typy komentářů mohou být před kódem. Jedná se o návrhy; Visual Basic nevynutila pravidla pro přidávání komentářů. Napište všechno, co má význam pro vás i pro kohokoli jiného, kdo si váš kód bude prohlížet.  
   
 |||  
 |---|---|  
@@ -54,14 +54,14 @@ As you read the code examples, you often encounter the comment symbol (`'`). Thi
   
 - Komentáře nemohou následovat za posloupností pokračování řádku na stejném řádku.  
   
- You can add or remove comment symbols for a block of code by selecting one or more lines of code and choosing the **Comment** (![The Visual Basic Comment button in Visual Studio.](./media/comments-in-code/visual-basic-comment-button.gif)) and **Uncomment** (![The Visual Basic Uncomment button in Visual Studio.](./media/comments-in-code/visual-basic-uncomment-button.gif)) buttons on the **Edit** toolbar.  
+ Chcete-li přidat nebo odebrat symboly komentářů pro blok kódu, vyberte jeden nebo více řádků kódu a zvolte **Komentář** (![tlačítko Visual Basic komentář v sadě Visual studio.](./media/comments-in-code/visual-basic-comment-button.gif)) a **zrušte komentář** (![tlačítko Visual Basic odkomentovat v sadě Visual Studio.](./media/comments-in-code/visual-basic-uncomment-button.gif)) na panelu nástrojů **Úpravy** .  
   
 > [!NOTE]
-> You can also add comments to your code by preceding the text with the `REM` keyword. However, the `'` symbol and the **Comment**/**Uncomment** buttons are easier to use and require less space and memory.  
+> Komentáře můžete do kódu přidat také tak, že před text vložíte klíčové slovo `REM`. Nicméně symbol `'` a tlačítka **komentář**/zrušit **Komentář** se snadněji používají a vyžadují méně místa a paměti.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Basic Instincts - Documenting Your Code With XML Comments](https://docs.microsoft.com/archive/msdn-magazine/2009/may/documenting-your-code-with-xml-comments)
+- [Základní instinkty – dokumentování kódu pomocí komentářů XML](https://docs.microsoft.com/archive/msdn-magazine/2009/may/documenting-your-code-with-xml-comments)
 - [Postupy: Vytvoření dokumentace XML](../../../visual-basic/programming-guide/program-structure/how-to-create-xml-documentation.md)
 - [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)
 - [Struktura programu a zásady týkající se kódu](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)

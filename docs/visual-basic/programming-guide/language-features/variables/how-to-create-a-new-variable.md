@@ -14,43 +14,43 @@ ms.locfileid: "74353635"
 ---
 # <a name="how-to-create-a-new-variable-visual-basic"></a>Postupy: Vytvoření nové proměnné (Visual Basic)
 
-You create a variable with a [Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md).
+Vytvoříte proměnnou pomocí [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md).
 
-### <a name="to-create-a-new-variable"></a>To create a new variable
+### <a name="to-create-a-new-variable"></a>Vytvoření nové proměnné
 
-1. Declare the variable in a `Dim` statement.
+1. Deklarujte proměnnou v příkazu `Dim`.
 
     ```vb
     Dim newCustomer
     ```
 
-2. Include specifications for the variable's characteristics, such as [Private](../../../../visual-basic/language-reference/modifiers/private.md), [Static](../../../../visual-basic/language-reference/modifiers/static.md), [Shadows](../../../../visual-basic/language-reference/modifiers/shadows.md), or [WithEvents](../../../../visual-basic/language-reference/modifiers/withevents.md). For more information, see [Declared Element Characteristics](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md).
+2. Zahrňte specifikace charakteristik proměnných, jako jsou [Private](../../../../visual-basic/language-reference/modifiers/private.md), [static](../../../../visual-basic/language-reference/modifiers/static.md), [Shadows](../../../../visual-basic/language-reference/modifiers/shadows.md)nebo [WithEvents](../../../../visual-basic/language-reference/modifiers/withevents.md). Další informace naleznete v tématu [deklarované charakteristiky elementu](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-characteristics.md).
 
     ```vb
     Public Static newCustomer
     ```
 
-    You do not need the `Dim` keyword if you use other keywords in the declaration.
+    Klíčové slovo `Dim` nepotřebujete, pokud v deklaraci použijete jiná klíčová slova.
 
-3. Follow the specifications with the variable's name, which must follow Visual Basic rules and conventions. For more information, see [Declared Element Names](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).
+3. Postupujte podle specifikace s názvem proměnné, který musí dodržovat pravidla Visual Basic a konvence. Další informace naleznete v tématu [deklarované názvy elementů](../../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).
 
     ```vb
     Public Static newCustomer
     ```
 
-4. Follow the name with the [As](../../../../visual-basic/language-reference/statements/as-clause.md) clause to specify the variable's data type.
+4. Podle názvu s klauzulí [as](../../../../visual-basic/language-reference/statements/as-clause.md) určete datový typ proměnné.
 
     ```vb
     Public Static newCustomer As Customer
     ```
 
-    If you do not specify the data type, it uses the default: `Object`.
+    Pokud datový typ nezadáte, použije se výchozí: `Object`.
 
-5. Follow the `As` clause with an equal sign (`=`) and follow the equal sign with the variable's initial value.
+5. Použijte klauzuli `As` se symbolem rovná se (`=`) a použijte symbol rovná se s počáteční hodnotou proměnné.
 
-    Visual Basic assigns the specified value to the variable every time it runs the `Dim` statement. If you do not specify an initial value, Visual Basic assigns the default initial value for the variable's data type when it first enters the code that contains the `Dim` statement.
+    Visual Basic přiřadí zadanou hodnotu k proměnné pokaždé, když spustí příkaz `Dim`. Pokud nezadáte počáteční hodnotu, Visual Basic přiřadí výchozí počáteční hodnotu pro datový typ proměnné při prvním zadání kódu, který obsahuje příkaz `Dim`.
 
-    If the variable is a reference type, you can create an instance of its class by including the [New Operator](../../../../visual-basic/language-reference/operators/new-operator.md) keyword in the `As` clause. If you do not use `New`, the initial value of the variable is [Nothing](../../../../visual-basic/language-reference/nothing.md).
+    Pokud je proměnná typem odkazu, můžete vytvořit instanci své třídy zahrnutím klíčového slova [New operátor](../../../../visual-basic/language-reference/operators/new-operator.md) do klauzule `As`. Pokud nepoužíváte `New`, počáteční hodnota proměnné není [Nothing](../../../../visual-basic/language-reference/nothing.md).
 
     ```vb
     Public Static newCustomer As New Customer

@@ -13,20 +13,20 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344146"
 ---
 # <a name="myapplicationinfo-object"></a>My.Application.Info – objekt
-Provides properties for getting the information about the application, such as the version number, description, loaded assemblies, and so on.  
+Poskytuje vlastnosti pro získání informací o aplikaci, jako je číslo verze, popis, načtená sestavení a tak dále.  
   
 ## <a name="remarks"></a>Poznámky  
- For information about the methods and properties of the `My.Application.Info` object, see <xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo>.  
+ Informace o metodách a vlastnostech objektu `My.Application.Info` naleznete v tématu <xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo>.  
   
 > [!NOTE]
-> You can use properties of the <xref:System.Diagnostics.FileVersionInfo?displayProperty=nameWithType> class to obtain information about a file on disk.  
+> Pomocí vlastností třídy <xref:System.Diagnostics.FileVersionInfo?displayProperty=nameWithType> lze získat informace o souboru na disku.  
   
 ## <a name="requirements"></a>Požadavky  
- **Namespace:** <xref:Microsoft.VisualBasic.ApplicationServices>  
+ **Obor názvů:** <xref:Microsoft.VisualBasic.ApplicationServices>  
   
- **Class:** <xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo>  
+ **Třída:** <xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo>  
   
- **Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)  
+ **Sestavení:** Knihovna Visual Basic runtime (v souboru Microsoft. VisualBasic. dll)  
   
 ## <a name="see-also"></a>Viz také:
 

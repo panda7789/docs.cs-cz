@@ -16,41 +16,41 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344887"
 ---
 # <a name="how-to-define-a-parameter-for-a-procedure-visual-basic"></a>Postupy: Definování parametru pro proceduru (Visual Basic)
-A *parameter* allows the calling code to pass a value to the procedure when it calls it. You declare each parameter for a procedure the same way you declare a variable, specifying its name and data type. You also specify the passing mechanism, and whether the parameter is optional.  
+*Parametr* umožňuje volajícímu kódu předat hodnotu proceduře při jeho volání. Každý parametr pro proceduru deklarujete stejným způsobem jako proměnnou, a to zadáním jejího názvu a datového typu. Zadáte také mechanismus předávání a zda je parametr volitelný.  
   
- For more information, see [Procedure Parameters and Arguments](./procedure-parameters-and-arguments.md).  
+ Další informace najdete v tématu [parametry a argumenty procedury](./procedure-parameters-and-arguments.md).  
   
-### <a name="to-define-a-procedure-parameter"></a>To define a procedure parameter  
+### <a name="to-define-a-procedure-parameter"></a>Definování parametru procedury  
   
-1. In the procedure declaration, add the parameter name to the procedure's parameter list, separating it from other parameters by commas.  
+1. V deklaraci procedury přidejte název parametru do seznamu parametrů procedury a oddělte jej od ostatních parametrů čárkami.  
   
-2. Decide the data type of the parameter.  
+2. Určete datový typ parametru.  
   
-3. Follow the parameter name with an `As` clause to specify the data type.  
+3. Použijte název parametru s klauzulí `As` a určete datový typ.  
   
-4. Decide the passing mechanism you want for the parameter. Normally you pass a parameter by value, unless you want the procedure to be able to change its value in the calling code.  
+4. Určete mechanismus předávání, který chcete pro parametr. Obvykle předáte parametr podle hodnoty, pokud nechcete, aby procedura mohla měnit jeho hodnotu v volajícím kódu.  
   
-5. Precede the parameter name with [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) or [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) to specify the passing mechanism. For more information, see [Differences Between Passing an Argument By Value and By Reference](./differences-between-passing-an-argument-by-value-and-by-reference.md).  
+5. Před názvem parametru s klíčovým slovem [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) nebo [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) zadejte mechanismus předávání. Další informace naleznete v tématu [rozdíly mezi předáním argumentu podle hodnoty a podle reference](./differences-between-passing-an-argument-by-value-and-by-reference.md).  
   
-6. If the parameter is optional, precede the passing mechanism with [Optional](../../../../visual-basic/language-reference/modifiers/optional.md) and follow the parameter data type with an equal sign (`=`) and a default value.  
+6. Pokud je parametr nepovinný, předchází mechanismus předání s [volitelným](../../../../visual-basic/language-reference/modifiers/optional.md) a následuje datový typ parametru se symbolem rovná se (`=`) a výchozí hodnotou.  
   
-     The following example defines the outline of a `Sub` procedure with three parameters. The first two are required and the third is optional. The parameter declarations are separated in the parameter list by commas.  
+     Následující příklad definuje osnovu `Sub` proceduře se třemi parametry. První dvě jsou povinná a třetí je volitelná. Deklarace parametrů jsou v seznamu parametrů odděleny čárkami.  
   
      [!code-vb[VbVbcnProcedures#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#33)]  
   
-     The first parameter accepts a `customer` object, and `updateCustomer` can directly update the variable passed to `c` because the argument is passed [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md). The procedure cannot change the values of the last two arguments because they are passed [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md).  
+     První parametr přijímá objekt `customer` a `updateCustomer` může přímo aktualizovat proměnnou předanou `c`, protože argument je předán jako typ [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md). Procedura nemůže změnit hodnoty posledních dvou argumentů, protože jsou předány metodě [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md).  
   
-     If the calling code does not supply a value for the `level` parameter, Visual Basic sets it to the default value of 0.  
+     Pokud volající kód neposkytuje hodnotu parametru `level`, Visual Basic jej nastaví na výchozí hodnotu 0.  
   
-     If the type checking switch ([Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) is `Off`, the `As` clause is optional when you define a parameter. However, if any one parameter uses an `As` clause, all of them must use it. If the type checking switch is `On`, the `As` clause is required for every parameter definition.  
+     Pokud je přepínač pro kontrolu typu ([příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) `Off`, klauzule `As` je při definování parametru volitelná. Nicméně, pokud některý z parametrů používá klauzuli `As`, všechny je musí použít. Pokud je přepínač pro kontrolu typu `On`, je klauzule `As` požadována pro každou definici parametru.  
   
-     Specifying data types for all your programming elements is known as *strong typing*. When you set `Option Strict On`, Visual Basic enforces strong typing. This is strongly recommended, for the following reasons:  
+     Zadání datových typů pro všechny vaše programovací prvky se nazývá *silného psaní*. Když nastavíte `Option Strict On`, Visual Basic vynutilo silné psaní. Tento postup se doporučuje z následujících důvodů:  
   
-    - It enables IntelliSense support for your variables and parameters. This allows you to see their properties and other members as you type in your code.  
+    - Umožňuje podporu technologie IntelliSense pro vaše proměnné a parametry. To vám umožní zobrazit jejich vlastnosti a další členy při psaní do kódu.  
   
-    - It allows the compiler to perform type checking. This helps catch statements that can fail at run time due to errors such as overflow. It also catches calls to methods on objects that do not support them.  
+    - Umožňuje kompilátoru provést kontrolu typu. To pomáhá zachytit příkazy, které mohou selhat za běhu z důvodu chyb, jako je například přetečení. Také zachytí volání metod pro objekty, které je nepodporují.  
   
-    - It results in faster execution of your code. One reason for this is that if you do not specify a data type for a programming element, the Visual Basic compiler assigns it the `Object` type. Your compiled code might have to convert back and forth between `Object` and other data types, which reduces performance.  
+    - Výsledkem je rychlejší provádění kódu. Jedním z důvodů je, že pokud neurčíte datový typ pro programovací prvek, Visual Basic kompilátor přiřadí typ `Object`. Zkompilovaný kód může být nutné převést mezi `Object` a jinými datovými typy, což snižuje výkon.  
   
 ## <a name="see-also"></a>Viz také:
 
@@ -62,4 +62,4 @@ A *parameter* allows the calling code to pass a value to the procedure when it c
 - [Rekurzivní procedury](./recursive-procedures.md)
 - [Přetížení procedury](./procedure-overloading.md)
 - [Objekty a třídy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
-- [Object-Oriented Programming (Visual Basic)](../../concepts/object-oriented-programming.md)
+- [Objektově orientované programování (Visual Basic)](../../concepts/object-oriented-programming.md)

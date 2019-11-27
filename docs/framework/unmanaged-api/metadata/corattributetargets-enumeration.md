@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74443879"
 ---
 # <a name="corattributetargets-enumeration"></a>CorAttributeTargets – výčet
-Specifies the application elements on which it is valid to apply an attribute.  
+Určuje prvky aplikace, na kterých je platný pro použití atributu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -62,34 +62,34 @@ typedef enum CorAttributeTargets
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`catAssembly`|Attribute can be applied to an assembly.|  
-|`catModule`|Attribute can be applied to a portable executable (.dll or .exe) module.|  
-|`catClass`|Attribute can be applied to a class.|  
-|`catStruct`|Attribute can be applied to a structure; that is, a value type.|  
-|`catEnum`|Attribute can be applied to an enumeration.|  
-|`catConstructor`|Attribute can be applied to a constructor.|  
-|`catMethod`|Attribute can be applied to a method.|  
-|`catProperty`|Attribute can be applied to a property.|  
-|`catField`|Attribute can be applied to a field.|  
-|`catEvent`|Attribute can be applied to an event.|  
-|`catInterface`|Attribute can be applied to an interface.|  
-|`catParameter`|Attribute can be applied to a parameter.|  
-|`catDelegate`|Attribute can be applied to a delegate.|  
-|`catGenericParameter`|Attribute can be applied to a generic parameter.|  
-|`catAll`|Attribute can be applied to any application element.|  
-|`catClassMembers`|Attribute can be applied to a member of a class.|  
+|`catAssembly`|Atribut lze použít pro sestavení.|  
+|`catModule`|Atribut lze použít pro přenos přenositelného spustitelného souboru (. dll nebo. exe).|  
+|`catClass`|Atribut lze použít pro třídu.|  
+|`catStruct`|Atribut lze použít pro strukturu; To znamená typ hodnoty.|  
+|`catEnum`|Atribut lze použít pro výčet.|  
+|`catConstructor`|Atribut lze použít pro konstruktor.|  
+|`catMethod`|Atribut lze použít pro metodu.|  
+|`catProperty`|Atribut lze použít pro vlastnost.|  
+|`catField`|Atribut lze použít pro pole.|  
+|`catEvent`|Atribut lze použít pro událost.|  
+|`catInterface`|Atribut lze použít na rozhraní.|  
+|`catParameter`|Atribut lze použít pro parametr.|  
+|`catDelegate`|Atribut lze použít pro delegáta.|  
+|`catGenericParameter`|Atribut lze použít pro obecný parametr.|  
+|`catAll`|Atribut lze použít pro libovolný element aplikace.|  
+|`catClassMembers`|Atribut lze použít pro člena třídy.|  
   
 ## <a name="remarks"></a>Poznámky  
- The `CorAttributeTargets` enumeration values can be combined with a bitwise OR operation to get the preferred combination.  
+ Hodnoty výčtu `CorAttributeTargets` lze kombinovat s bitovým nebo operací, aby bylo možné získat upřednostňovanou kombinaci.  
   
- The `CorAttributeTargets` parallels the managed <xref:System.AttributeTargets?displayProperty=nameWithType> enumeration.  
+ `CorAttributeTargets` souběžně spravovaného výčtu <xref:System.AttributeTargets?displayProperty=nameWithType>.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **Hlavička:** CorHdr. h  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

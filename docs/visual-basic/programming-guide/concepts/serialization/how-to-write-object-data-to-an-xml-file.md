@@ -9,8 +9,8 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74345458"
 ---
-# <a name="how-to-write-object-data-to-an-xml-file-visual-basic"></a>How to: Write Object Data to an XML File (Visual Basic)
-This example writes the object from a class to an XML file using the <xref:System.Xml.Serialization.XmlSerializer> class.  
+# <a name="how-to-write-object-data-to-an-xml-file-visual-basic"></a>Postupy: zápis dat objektů do souboru XML (Visual Basic)
+Tento příklad zapíše objekt z třídy do souboru XML pomocí třídy <xref:System.Xml.Serialization.XmlSerializer>.  
   
 ## <a name="example"></a>Příklad  
   
@@ -38,24 +38,24 @@ End Module
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- The class must have a public constructor without parameters.  
+ Třída musí mít veřejný konstruktor bez parametrů.  
   
 ## <a name="robust-programming"></a>Robustní programování  
  Následující podmínky mohou způsobit výjimku:  
   
-- The class being serialized does not have a public, parameterless constructor.  
+- Serializovaná třída nemá veřejný konstruktor bez parametrů.  
   
-- The file exists and is read-only (<xref:System.IO.IOException>).  
+- Soubor existuje a je určen jen pro čtení (<xref:System.IO.IOException>).  
   
-- The path is too long (<xref:System.IO.PathTooLongException>).  
+- Cesta je příliš dlouhá (<xref:System.IO.PathTooLongException>).  
   
-- The disk is full (<xref:System.IO.IOException>).  
+- Disk je plný (<xref:System.IO.IOException>).  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- This example creates a new file, if the file does not already exist. If an application needs to create a file, that application needs `Create` access for the folder. If the file already exists, the application needs only `Write` access, a lesser privilege. Where possible, it is more secure to create the file during deployment, and only grant `Read` access to a single file, rather than `Create` access for a folder.  
+ Tento příklad vytvoří nový soubor, pokud soubor ještě neexistuje. Pokud aplikace potřebuje vytvořit soubor, musí tato aplikace `Create` přístup ke složce. Pokud soubor již existuje, aplikace potřebuje pouze `Write` přístup, což je méně oprávnění. Pokud je to možné, je bezpečnější vytvořit soubor během nasazení a udělit `Read` přístup pouze k jednomu souboru místo `Create` přístupu pro složku.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.IO.StreamWriter>
-- [How to: Read Object Data from an XML File (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/how-to-read-object-data-from-an-xml-file.md)
-- [Serialization (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/index.md)
+- [Postupy: čtení dat objektů ze souboru XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/how-to-read-object-data-from-an-xml-file.md)
+- [Serializace (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/index.md)

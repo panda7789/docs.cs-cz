@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436314"
 ---
 # <a name="imetadataassemblyimportgetmanifestresourceprops-method"></a>IMetaDataAssemblyImport::GetManifestResourceProps – metoda
-Gets the set of properties of the manifest resource with the specified metadata signature.  
+Získá sadu vlastností prostředku manifestu se zadaným podpisem metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,34 +41,34 @@ HRESULT GetManifestResourceProps (
   
 ## <a name="parameters"></a>Parametry  
  `mdmr`  
- [in] An `mdManifestResource` token that represents the resource for which to get the properties.  
+ pro Token `mdManifestResource`, který představuje prostředek, pro který chcete získat vlastnosti.  
   
  `szName`  
- [out] The name of the resource.  
+ mimo Název prostředku.  
   
  `cchName`  
- [in] The size, in wide chars, of `szName`.  
+ pro Velikost v rámci velkých znaků `szName`.  
   
  `pchName`  
- [out] A pointer to the number of wide chars actually returned in `szName`.  
+ mimo Ukazatel na počet velkých znaků, který je ve skutečnosti vrácen v `szName`.  
   
  `ptkImplementation`  
- [out] A pointer to an `mdFile` token or an `mdAssemblyRef` token that represents the file or assembly, respectively, that contains the resource.  
+ mimo Ukazatel na token `mdFile` nebo token `mdAssemblyRef`, který představuje soubor nebo sestavení, v uvedeném pořadí, které obsahuje prostředek.  
   
  `pdwOffset`  
- [out] A pointer to a value that specifies the offset to the beginning of the resource within the file.  
+ mimo Ukazatel na hodnotu, která určuje posun na začátek prostředku v rámci souboru.  
   
  `pdwResourceFlags`  
- [out] A pointer to flags that describe the metadata applied to a resource. The flags value is a combination of one or more [CorManifestResourceFlags](../../../../docs/framework/unmanaged-api/metadata/cormanifestresourceflags-enumeration.md) values.  
+ mimo Ukazatel na příznaky, které popisují metadata použitá u prostředku. Hodnota příznaků je kombinací jedné nebo více hodnot [CorManifestResourceFlags –](../../../../docs/framework/unmanaged-api/metadata/cormanifestresourceflags-enumeration.md) .  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

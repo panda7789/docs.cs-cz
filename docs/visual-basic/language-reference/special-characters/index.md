@@ -8,12 +8,12 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349607"
 ---
-# <a name="special-characters-visual-basic-reference"></a>Special Characters (Visual Basic Reference)
+# <a name="special-characters-visual-basic-reference"></a>Speciální znaky (Visual Basic Reference)
 
-Special characters are predefined, contextual characters that modifies the program element to which they are prepended. Visual Basic supports the following special character:
+Speciální znaky jsou předdefinované, kontextové znaky, které upravují prvek programu, ke kterému jsou předdefinovány. Visual Basic podporuje následující speciální znak:
 
-- [$](interpolated.md), the interpolated string character.
+- [$](interpolated.md), interpolovaná řetězcová znak.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Reference](../../../visual-basic/language-reference/index.md)
+- [Odkaz na Visual Basic](../../../visual-basic/language-reference/index.md)

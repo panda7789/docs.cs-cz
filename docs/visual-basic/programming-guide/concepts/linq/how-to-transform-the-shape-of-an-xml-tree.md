@@ -1,5 +1,5 @@
 ---
-title: 'How to: Transform the Shape of an XML Tree'
+title: 'Postupy: transformace tvaru stromu XML'
 ms.date: 07/20/2015
 ms.assetid: 84b60854-48b2-452c-87f2-77d53e1d653a
 ms.openlocfilehash: 67ffd5f50572c0deba75c664ffd0e12ecfabf730
@@ -9,21 +9,21 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74332421"
 ---
-# <a name="how-to-transform-the-shape-of-an-xml-tree-visual-basic"></a>How to: Transform the Shape of an XML Tree (Visual Basic)
-The *shape* of an XML document refers to its element names, attribute names, and the characteristics of its hierarchy.  
+# <a name="how-to-transform-the-shape-of-an-xml-tree-visual-basic"></a>Postupy: transformace obrazce stromu XML (Visual Basic)
+*Tvar* dokumentu XML odkazuje na jeho názvy elementů, názvy atributů a charakteristiky jeho hierarchie.  
   
- Sometimes you will have to change the shape of an XML document. For example, you might have to send an existing XML document to another system that requires different element and attribute names. You could go through the document, deleting and renaming elements as required, but using functional construction results in more readable and maintainable code. For more information about functional construction, see [Functional Construction (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-construction-linq-to-xml.md).  
+ Někdy budete muset změnit tvar dokumentu XML. Například může být nutné odeslat existující dokument XML do jiného systému, který vyžaduje různé názvy elementů a atributů. Můžete procházet dokumentem, odstraňovat a předávat prvky podle potřeby, ale použití funkční konstrukce má za následek čitelnější a udržovatelný kód. Další informace o konstrukci funkčnosti najdete v tématu [funkční konstrukce (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-construction-linq-to-xml.md).  
   
- The first example changes the organization of the XML document. It moves complex elements from one location in the tree to another.  
+ První příklad změní organizaci dokumentu XML. Přesouvá komplexní prvky z jednoho umístění ve stromové struktuře do jiného.  
   
- The second example in this topic creates an XML document with a different shape than the source document. It changes the casing of the element names, renames some elements, and leaves some elements from the source tree out of the transformed tree.  
+ Druhý příklad v tomto tématu vytvoří dokument XML s jiným tvarem, než zdrojový dokument. Změní velká a malá písmena názvů prvků, přejmenuje některé prvky a ponechá některé prvky ze zdrojového stromu z transformované stromové struktury.  
   
 ## <a name="example"></a>Příklad  
- The following code changes the shape of an XML file using embedded query expressions.  
+ Následující kód změní tvar souboru XML pomocí vložených výrazů dotazů.  
   
- The source XML document in this example contains a `Customers` element under the `Root` element that contains all customers. It also contains an `Orders` element under the `Root` element that contains all orders. This example creates a new XML tree in which the orders for each customer are contained in an `Orders` element within the `Customer` element. The original document also contains a `CustomerID` element in the `Order` element; this element will be removed from the re-shaped document.  
+ Zdrojový dokument XML v tomto příkladu obsahuje element `Customers` pod prvkem `Root`, který obsahuje všechny zákazníky. Obsahuje také prvek `Orders` pod prvkem `Root`, který obsahuje všechny objednávky. Tento příklad vytvoří nový strom XML, ve kterém jsou objednávky pro každého zákazníka obsaženy v prvku `Orders` v rámci `Customer` elementu. Původní dokument obsahuje také prvek `CustomerID` v prvku `Order`; Tento prvek bude odebrán z dokumentu opětovného tvaru.  
   
- This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
   
 ```vb  
 Dim co As XElement = XElement.Load("CustomersOrders.xml")  
@@ -53,7 +53,7 @@ Dim newCustOrd = _
 Console.WriteLine(newCustOrd)  
 ```  
   
- This code produces the following output:  
+ Tento kód generuje následující výstup:  
   
 ```xml  
         <Root>  
@@ -90,11 +90,11 @@ Console.WriteLine(newCustOrd)
 ```  
   
 ## <a name="example"></a>Příklad  
- This example renames some elements and converts some attributes to elements.  
+ Tento příklad přejmenuje některé prvky a převede některé atributy na prvky.  
   
- The code calls `ConvertAddress`, which returns a list of <xref:System.Xml.Linq.XElement> objects. The argument to the method is a query that determines the `Address` complex element where the `Type` attribute has a value of `"Shipping"`.  
+ Kód volá `ConvertAddress`, která vrací seznam objektů <xref:System.Xml.Linq.XElement>. Argumentem metody je dotaz, který určuje `Address` složitý prvek, kde `Type` atribut má hodnotu `"Shipping"`.  
   
- This example uses the following XML document: [Sample XML File: Typical Purchase Order (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml.md).  
+ Tento příklad používá následující dokument XML: [vzorový soubor XML: typická nákupní objednávka (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml.md).  
   
 ```vb  
 Function ConvertAddress(ByVal add As XElement) As IEnumerable(Of XElement)  
@@ -127,7 +127,7 @@ Sub Main()
 End Sub  
 ```  
   
- This code produces the following output:  
+ Tento kód generuje následující výstup:  
   
 ```xml  
 <PO>  
@@ -144,4 +144,4 @@ End Sub
   
 ## <a name="see-also"></a>Viz také:
 
-- [Projections and Transformations (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+- [Projekce a transformace (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

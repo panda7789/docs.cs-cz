@@ -14,42 +14,42 @@ ms.locfileid: "74346892"
 ---
 # <a name="how-to-move-data-into-and-out-of-a-variable-visual-basic"></a>Postupy: Přesun dat do proměnné a z proměnné (Visual Basic)
 
-You store a value in a variable by putting the variable name on the left side of an assignment statement.
+Hodnotu v proměnné uložíte tak, že na levou stranu příkazu přiřazení umístíte název proměnné.
 
-## <a name="putting-data-in-a-variable"></a>Putting Data in a Variable
+## <a name="putting-data-in-a-variable"></a>Vložení dat do proměnné
 
-#### <a name="to-store-a-value-in-a-variable"></a>To store a value in a variable
+#### <a name="to-store-a-value-in-a-variable"></a>Uložení hodnoty do proměnné
 
-- Use the variable name on the left side of an assignment statement.
+- Použijte název proměnné na levé straně příkazu přiřazení.
 
-    The following example sets the value of the variable `alpha`.
+    Následující příklad nastaví hodnotu proměnné `alpha`.
 
     ```vb
     alpha = (beta * 6.27) / (gamma + 2.1)
     ```
 
-    The value generated on the right side of the assignment statement is stored in the variable.
+    Hodnota generovaná na pravé straně příkazu přiřazení je uložena v proměnné.
 
-## <a name="getting-data-from-a-variable"></a>Getting Data from a Variable
+## <a name="getting-data-from-a-variable"></a>Získávání dat z proměnné
 
-You retrieve a variable's value by including the variable name in an expression.
+Načtěte hodnotu proměnné zahrnutím názvu proměnné do výrazu.
 
-#### <a name="to-retrieve-a-value-from-a-variable"></a>To retrieve a value from a variable
+#### <a name="to-retrieve-a-value-from-a-variable"></a>Načtení hodnoty z proměnné
 
-- Use the variable name in an expression. You can use a variable anywhere you can use a constant or a literal, except in an expression that defines the value of a constant.
+- Použijte název proměnné ve výrazu. Proměnnou můžete použít všude, kde můžete použít konstantu nebo literál, s výjimkou výrazu, který definuje hodnotu konstanty.
 
-  \-or-
+  \-nebo-
 
-- Use the variable name following the equal (`=`) sign in an assignment statement.
+- Použijte název proměnné za znaménkem EQUAL (`=`) v příkazu přiřazení.
 
-  The following example reads the value of the variable `startValue` and then uses the value of the variable `counter` in an expression.
+  Následující příklad přečte hodnotu proměnné `startValue` a poté používá hodnotu proměnné `counter` ve výrazu.
 
   ```vb
   counter = startValue
   cellValue = (counter + 5) ^ 2
   ```
 
-  The value of the variable participates in the expression just as a constant would, and then it is stored in the variable or property on the left side of the assignment statement.
+  Hodnota proměnné se účastní ve výrazu stejně jako konstanta a pak je uložena v proměnné nebo vlastnosti na levé straně příkazu přiřazení.
 
 ## <a name="see-also"></a>Viz také:
 

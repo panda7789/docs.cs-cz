@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74438009"
 ---
 # <a name="symlinedelta-structure"></a>SYMLINEDELTA – struktura
-Provides information to the symbol handler about methods that were moved as a result of edits.  
+Poskytuje informace obslužné rutině symbolů o metodách, které byly přesunuty v důsledku úprav.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,11 +38,11 @@ typedef struct _SYMLINEDELTA
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`mdMethod`|The method's metadata token.|  
-|`delta`|The number of lines the method was moved.|  
+|`mdMethod`|Token metadat metody.|  
+|`delta`|Počet řádků, které byla metoda přesunuta.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl  
+ **Hlavička:** CorSym. idl  
   
 ## <a name="see-also"></a>Viz také:
 

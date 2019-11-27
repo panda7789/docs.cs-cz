@@ -48,16 +48,16 @@ HRESULT SetILFunctionBody(
 |S_OK|Nahrazení proběhlo úspěšně.|  
   
 ## <a name="remarks"></a>Poznámky  
- Unlike the [ICorProfilerInfo::SetILFunctionBody](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilfunctionbody-method.md) method, the `SetILFunctionBody` method manages the memory required for the new CIL body. This means that the CIL body provided by the profiler does not have to be allocated by using the [IMethodMalloc](../../../../docs/framework/unmanaged-api/profiling/imethodmalloc-interface.md) interface or allocated within a particular range. Může být přiděleno na kterékoli haldě. The profiler can free the memory used for its CIL body after `SetILFunctionBody` returns.  
+ Na rozdíl od metody [ICorProfilerInfo:: SetILFunctionBody –](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilfunctionbody-method.md) spravuje metoda `SetILFunctionBody` paměť potřebnou pro nový tělo CIL. To znamená, že tělo CIL poskytnuté profilerem nemusí být přiděleno pomocí rozhraní [IMethodMalloc](../../../../docs/framework/unmanaged-api/profiling/imethodmalloc-interface.md) nebo přiděleno v určitém rozsahu. Může být přiděleno na kterékoli haldě. Profiler může uvolnit paměť, která se používá pro tělo CIL po `SetILFunctionBody` vrátí.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

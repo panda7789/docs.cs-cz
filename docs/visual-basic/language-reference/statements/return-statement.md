@@ -17,7 +17,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74333018"
 ---
 # <a name="return-statement-visual-basic"></a>Return – příkaz (Visual Basic)
-Returns control to the code that called a `Function`, `Sub`, `Get`, `Set`, or `Operator` procedure.  
+Vrátí řízení kódu, který se nazývá `Function`, `Sub`, `Get`, `Set`nebo `Operator` procedury.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -27,22 +27,22 @@ Return
 Return expression  
 ```  
   
-## <a name="part"></a>Part  
+## <a name="part"></a>Částí  
  `expression`  
- Required in a `Function`, `Get`, or `Operator` procedure. Expression that represents the value to be returned to the calling code.  
+ Vyžaduje se v `Function`, `Get`nebo `Operator` postupu. Výraz, který představuje hodnotu, která má být vrácena volajícímu kódu.  
   
 ## <a name="remarks"></a>Poznámky  
- In a `Sub` or `Set` procedure, the `Return` statement is equivalent to an `Exit Sub` or `Exit Property` statement, and `expression` must not be supplied.  
+ V proceduře `Sub` nebo `Set` je příkaz `Return` ekvivalentem `Exit Sub` nebo příkazu `Exit Property` a `expression` nesmí být dodán.  
   
- In a `Function`, `Get`, or `Operator` procedure, the `Return` statement must include `expression`, and `expression` must evaluate to a data type that is convertible to the return type of the procedure. In a `Function` or `Get` procedure, you also have the alternative of assigning an expression to the procedure name to serve as the return value, and then executing an `Exit Function` or `Exit Property` statement. In an `Operator` procedure, you must use `Return expression`.  
+ V `Function`, `Get`nebo `Operator`, musí příkaz `Return` zahrnovat `expression`a `expression` musí vyhodnotit na datový typ, který lze převést na návratový typ procedury. V proceduře `Function` nebo `Get` máte také alternativu k názvu procedury, která bude sloužit jako návratová hodnota, a následným spuštěním příkazu `Exit Function` nebo `Exit Property`. V `Operator` proceduře je nutné použít `Return expression`.  
   
- You can include as many `Return` statements as appropriate in the same procedure.  
+ Stejným postupem můžete zahrnout tolik `Return` příkazů.  
   
 > [!NOTE]
-> The code in a `Finally` block runs after a `Return` statement in a `Try` or `Catch` block is encountered, but before that `Return` statement executes. A `Return` statement cannot be included in a `Finally` block.  
+> Kód v `Finally`ovém bloku se spustí po zjištění `Return` v `Try` nebo `Catch` bloku, ale před tím, než se spustí příkaz `Return`. Příkaz `Return` nelze zahrnout do bloku `Finally`.  
   
 ## <a name="example"></a>Příklad  
- The following example uses the `Return` statement several times to return to the calling code when the procedure does not have to do anything else.  
+ Následující příklad používá příkaz `Return` několikrát pro návrat k volajícímu kódu, když procedura nemusí dělat něco jiného.  
   
  [!code-vb[VbVbalrStatements#53](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#53)]  
   

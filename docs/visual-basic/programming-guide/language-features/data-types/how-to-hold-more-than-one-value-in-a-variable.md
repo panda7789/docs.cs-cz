@@ -20,27 +20,27 @@ ms.locfileid: "74350019"
 ---
 # <a name="how-to-hold-more-than-one-value-in-a-variable-visual-basic"></a>Postupy: Do proměnné umístit více než jednu hodnotu (Visual Basic)
 
-A variable holds more than one value if you declare it to be of a *composite data type*.
+Proměnná obsahuje více než jednu hodnotu, pokud deklarujete jako *složený datový typ*.
 
-[Composite Data Types](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md) include structures, arrays, and classes. A variable of a composite data type can hold a combination of elementary data types and other composite types. Structures and classes can hold code as well as data.
+[Složené datové typy](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md) zahrnují struktury, pole a třídy. Proměnná složeného datového typu může obsahovat kombinaci základních datových typů a dalších složených typů. Struktury a třídy mohou uchovávat kód i data.
 
-## <a name="to-hold-more-than-one-value-in-a-variable"></a>To hold more than one value in a variable
+## <a name="to-hold-more-than-one-value-in-a-variable"></a>Uložení více než jedné hodnoty v proměnné
 
-1. Determine what composite data type you want to use for your variable.
+1. Určete, jaký typ složeného dat chcete pro proměnnou použít.
 
-2. If the composite data type is not already defined, define it so that your variable can use it.
+2. Pokud se složený datový typ ještě nedefinuje, definujte ho, aby ho vaše proměnná mohla použít.
 
-    - Define a structure with a [Structure Statement](../../../../visual-basic/language-reference/statements/structure-statement.md).
+    - Definujte strukturu pomocí [příkazu struktury](../../../../visual-basic/language-reference/statements/structure-statement.md).
 
-    - Define an array with a [Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md).
+    - Definujte pole pomocí [příkazu Dim](../../../../visual-basic/language-reference/statements/dim-statement.md).
 
-    - Define a class with a [Class Statement](../../../../visual-basic/language-reference/statements/class-statement.md).
+    - Definujte třídu pomocí [příkazu třídy](../../../../visual-basic/language-reference/statements/class-statement.md).
 
-3. Declare your variable with a `Dim` statement.
+3. Deklarujte proměnnou pomocí příkazu `Dim`.
 
-4. Follow the variable name with an `As` clause.
+4. Použijte název proměnné s klauzulí `As`.
 
-5. Follow the `As` keyword with the name of the appropriate composite data type.
+5. Použijte klíčové slovo `As` s názvem vhodného složeného datového typu.
 
 ## <a name="see-also"></a>Viz také:
 

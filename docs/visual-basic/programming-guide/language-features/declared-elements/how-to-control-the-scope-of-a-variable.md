@@ -20,45 +20,45 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74345380"
 ---
 # <a name="how-to-control-the-scope-of-a-variable-visual-basic"></a>Postupy: Řízení rozsahu proměnné (Visual Basic)
-Normally, a variable is in *scope*, or visible for reference, throughout the region in which you declare it. In some cases, the variable's *access level* can influence its scope.  
+V normálním případě je proměnná v *oboru*, nebo viditelná pro referenci, v celé oblasti, ve které ji deklarujete. V některých případech může mít *úroveň přístupu* proměnné vliv na svůj rozsah.  
   
- For more information, see [Scope in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md).  
+ Další informace najdete v tématu věnovaném [oboru v Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md).  
   
-## <a name="scope-at-block-or-procedure-level"></a>Scope at Block or Procedure Level  
+## <a name="scope-at-block-or-procedure-level"></a>Rozsah na úrovni bloku nebo procedury  
   
-#### <a name="to-make-a-variable-visible-only-within-a-block"></a>To make a variable visible only within a block  
+#### <a name="to-make-a-variable-visible-only-within-a-block"></a>Chcete-li proměnnou zobrazit pouze v rámci bloku  
   
-- Place the [Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md) for the variable between the initiating and terminating declaration statements of that block, for example between the `For` and `Next` statements of a `For` loop.  
+- Umístěte [příkaz Dim](../../../../visual-basic/language-reference/statements/dim-statement.md) pro proměnnou mezi příkazy inicializace a ukončující deklarace tohoto bloku, například mezi příkazy `For` a `Next` `For` smyčky.  
   
-     You can refer to the variable only from within the block.  
+     Na proměnnou můžete odkazovat pouze v rámci bloku.  
   
-#### <a name="to-make-a-variable-visible-only-within-a-procedure"></a>To make a variable visible only within a procedure  
+#### <a name="to-make-a-variable-visible-only-within-a-procedure"></a>Chcete-li proměnnou zobrazit pouze v rámci procedury  
   
-- Place the `Dim` statement for the variable inside the procedure but outside any block (such as a `With`...`End With` block).  
+- Umístěte příkaz `Dim` pro proměnnou uvnitř procedury, ale mimo libovolný blok (například `With`...`End With` blok).  
   
-     You can refer to the variable only from within the procedure, including inside any block contained in the procedure.  
+     Na proměnnou můžete odkazovat pouze v rámci procedury, včetně uvnitř libovolného bloku, který je obsažen v proceduře.  
   
-## <a name="scope-at-module-or-namespace-level"></a>Scope at Module or Namespace Level  
- For convenience, the single term *module level* applies equally to modules, classes, and structures. The access level of a module level variable determines its scope. The namespace that contains the module, class, or structure also influences the scope.  
+## <a name="scope-at-module-or-namespace-level"></a>Rozsah na úrovni modulu nebo oboru názvů  
+ Pro usnadnění práce se *úroveň modulu* s jedním termínem aplikuje rovnoměrně na moduly, třídy a struktury. Úroveň přístupu proměnné na úrovni modulu určuje její obor. Obor názvů, který obsahuje modul, třídu nebo strukturu, má vliv také na obor.  
   
-#### <a name="to-make-a-variable-visible-throughout-a-module-class-or-structure"></a>To make a variable visible throughout a module, class, or structure  
+#### <a name="to-make-a-variable-visible-throughout-a-module-class-or-structure"></a>Chcete-li zviditelnit proměnnou v rámci modulu, třídy nebo struktury  
   
-1. Place the `Dim` statement for the variable inside the module, class, or structure, but outside any procedure.  
+1. Umístěte příkaz `Dim` pro proměnnou uvnitř modulu, třídy nebo struktury, ale vně jakékoli procedury.  
   
-2. Include the [Private](../../../../visual-basic/language-reference/modifiers/private.md) keyword in the `Dim` statement.  
+2. Do příkazu `Dim` zahrňte klíčové slovo [Private](../../../../visual-basic/language-reference/modifiers/private.md) .  
   
-3. You can refer to the variable from anywhere within the module, class, or structure, but not from outside it.  
+3. Na proměnnou můžete odkazovat odkudkoli v rámci modulu, třídy nebo struktury, ale ne z vnějšku.  
   
-#### <a name="to-make-a-variable-visible-throughout-a-namespace"></a>To make a variable visible throughout a namespace  
+#### <a name="to-make-a-variable-visible-throughout-a-namespace"></a>Chcete-li nastavit proměnnou v rámci oboru názvů jako viditelné  
   
-1. Place the `Dim` statement for the variable inside the module, class, or structure, but outside any procedure.  
+1. Umístěte příkaz `Dim` pro proměnnou uvnitř modulu, třídy nebo struktury, ale vně jakékoli procedury.  
   
-2. Include the [Friend](../../../../visual-basic/language-reference/modifiers/friend.md) or [Public](../../../../visual-basic/language-reference/modifiers/public.md) keyword in the `Dim` statement.  
+2. Do příkazu `Dim` zahrňte klíčové slovo [Friend](../../../../visual-basic/language-reference/modifiers/friend.md) nebo [Public](../../../../visual-basic/language-reference/modifiers/public.md) .  
   
-3. You can refer to the variable from anywhere within the namespace containing the module, class, or structure.  
+3. Na proměnnou můžete odkazovat odkudkoli v rámci oboru názvů obsahujícího modul, třídu nebo strukturu.  
   
 ## <a name="example"></a>Příklad  
- The following example declares a variable at module level and limits its visibility to code within the module.  
+ Následující příklad deklaruje proměnnou na úrovni modulu a omezí její viditelnost na kód v rámci modulu.  
   
 ```vb  
 Module demonstrateScope  
@@ -72,25 +72,25 @@ Module demonstrateScope
 End Module  
 ```  
   
- In the preceding example, all the procedures defined in module `demonstrateScope` can refer to the `String` variable `strMsg`. When the `usePrivateVariable` procedure is called, it displays the contents of the string variable `strMsg` in a dialog box.  
+ V předchozím příkladu můžou všechny procedury definované v modulu `demonstrateScope` odkazovat na `String` proměnnou `strMsg`. Když je volána procedura `usePrivateVariable`, zobrazí obsah řetězcové proměnné `strMsg` v dialogovém okně.  
   
- With the following alteration to the preceding example, the string variable `strMsg` can be referred to by code anywhere in the namespace of its declaration.  
+ S následující změnou v předchozím příkladu lze řetězcové proměnné `strMsg` odkazovat pomocí kódu kdekoli v oboru názvů své deklarace.  
   
 ```vb  
 Public strMsg As String  
 ```  
   
 ## <a name="robust-programming"></a>Robustní programování  
- The narrower the scope of a variable, the fewer opportunities you have for accidentally referring to it in place of another variable with the same name. You can also minimize problems of reference matching.  
+ Čím užší je rozsah proměnné, tím menší je počet příležitostí, které se na ni neodkazují na místo jiné proměnné se stejným názvem. Můžete také minimalizovat problémy s porovnáním odkazů.  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- The narrower the scope of a variable, the smaller the chances that malicious code can make improper use of it.  
+ Zúžení rozsahu proměnné, menší pravděpodobnost, že škodlivý kód může nevhodným způsobem používat.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Scope in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
-- [Lifetime in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)
-- [Access levels in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
+- [Obor v Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
+- [Doba života v Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)
+- [Úrovně přístupu v Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
 - [Proměnné](../../../../visual-basic/programming-guide/language-features/variables/index.md)
 - [Deklarace proměnné](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
 - [Příkaz Dim](../../../../visual-basic/language-reference/statements/dim-statement.md)

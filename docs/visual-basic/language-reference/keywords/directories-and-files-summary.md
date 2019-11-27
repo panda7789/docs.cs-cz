@@ -14,24 +14,24 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349840"
 ---
 # <a name="directories-and-files-summary-visual-basic"></a>Souhrn adresářů a souborů (Visual Basic)
-Visual Basic language keywords and run-time library members are organized by purpose and use.  
+Visual Basic klíčová slova jazyka a členy běhové knihovny jsou uspořádány podle účelu a použití.  
   
- Using the `My` feature gives you greater productivity and performance in file I/O operations than using these members. Další informace najdete v tématu <xref:Microsoft.VisualBasic.FileIO.FileSystem>.  
+ Použití funkce `My` poskytuje vyšší produktivitu a výkon v vstupně-výstupních operacích se soubory než jejich použití. Další informace najdete v tématu <xref:Microsoft.VisualBasic.FileIO.FileSystem>.  
   
-|**Action**|**Language element**|  
+|**Kroky**|**Element Language**|  
 |----------------|--------------------------|  
-|Change a directory or folder.|<xref:Microsoft.VisualBasic.FileSystem.ChDir%2A>|  
-|Change the drive.|<xref:Microsoft.VisualBasic.FileSystem.ChDrive%2A>|  
-|Copy a file.|<xref:Microsoft.VisualBasic.FileSystem.FileCopy%2A>|  
-|Make a directory or folder.|<xref:Microsoft.VisualBasic.FileSystem.MkDir%2A>|  
-|Remove a directory or folder.|<xref:Microsoft.VisualBasic.FileSystem.RmDir%2A>|  
-|Rename a file, directory, or folder.|<xref:Microsoft.VisualBasic.FileSystem.Rename%2A>|  
-|Return the current path.|<xref:Microsoft.VisualBasic.FileSystem.CurDir%2A>|  
-|Return a file's date/time stamp.|<xref:Microsoft.VisualBasic.FileSystem.FileDateTime%2A>|  
-|Return file, directory, or label attributes.|<xref:Microsoft.VisualBasic.FileSystem.GetAttr%2A>|  
-|Return a file's length.|<xref:Microsoft.VisualBasic.FileSystem.FileLen%2A>|  
-|Return a file's name or volume label.|<xref:Microsoft.VisualBasic.FileSystem.Dir%2A>|  
-|Set attribute information for a file.|<xref:Microsoft.VisualBasic.FileSystem.SetAttr%2A>|  
+|Změna adresáře nebo složky|<xref:Microsoft.VisualBasic.FileSystem.ChDir%2A>|  
+|Změňte jednotku.|<xref:Microsoft.VisualBasic.FileSystem.ChDrive%2A>|  
+|Kopírovat soubor.|<xref:Microsoft.VisualBasic.FileSystem.FileCopy%2A>|  
+|Vytvořte adresář nebo složku.|<xref:Microsoft.VisualBasic.FileSystem.MkDir%2A>|  
+|Odeberte adresář nebo složku.|<xref:Microsoft.VisualBasic.FileSystem.RmDir%2A>|  
+|Přejmenování souboru, adresáře nebo složky.|<xref:Microsoft.VisualBasic.FileSystem.Rename%2A>|  
+|Vrátí aktuální cestu.|<xref:Microsoft.VisualBasic.FileSystem.CurDir%2A>|  
+|Vrátí datum a časové razítko souboru.|<xref:Microsoft.VisualBasic.FileSystem.FileDateTime%2A>|  
+|Atributy vráceného souboru, adresáře nebo popisku.|<xref:Microsoft.VisualBasic.FileSystem.GetAttr%2A>|  
+|Vrátí délku souboru.|<xref:Microsoft.VisualBasic.FileSystem.FileLen%2A>|  
+|Vrátí název souboru nebo popisek svazku.|<xref:Microsoft.VisualBasic.FileSystem.Dir%2A>|  
+|Nastavte informace o atributu souboru.|<xref:Microsoft.VisualBasic.FileSystem.SetAttr%2A>|  
   
 ## <a name="see-also"></a>Viz také:
 

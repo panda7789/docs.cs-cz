@@ -16,28 +16,28 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74341233"
 ---
 # <a name="differences-between-passing-an-argument-by-value-and-by-reference-visual-basic"></a>Rozdíly mezi předáním argumentu podle hodnoty a podle reference (Visual Basic)
-When you pass one or more arguments to a procedure, each argument corresponds to an underlying programming element in the calling code. You can pass either the value of this underlying element, or a reference to it. This is known as the *passing mechanism*.  
+Pokud předáte jeden nebo více argumentů procedury, každý argument odpovídá základnímu programovacímu prvku v kódu volajícího. Můžete předat buď hodnotu tohoto podkladového prvku, nebo odkaz na něj. Tato metoda se označuje jako *mechanismus předávání*.  
   
-## <a name="passing-by-value"></a>Passing by Value  
- You pass an argument *by value* by specifying the [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) keyword for the corresponding parameter in the procedure definition. When you use this passing mechanism, Visual Basic copies the value of the underlying programming element into a local variable in the procedure. The procedure code does not have any access to the underlying element in the calling code.  
+## <a name="passing-by-value"></a>Předávání hodnotou  
+ Argument můžete předat *hodnotou* zadáním klíčového slova [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) pro odpovídající parametr v definici procedury. Při použití tohoto mechanismu předávání Visual Basic kopíruje hodnotu základního programovacího prvku do místní proměnné v proceduře. Kód procedury nemá žádný přístup k podkladovému prvku v kódu volajícího.  
   
-## <a name="passing-by-reference"></a>Passing by Reference  
- You pass an argument *by reference* by specifying the [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) keyword for the corresponding parameter in the procedure definition. When you use this passing mechanism, Visual Basic gives the procedure a direct reference to the underlying programming element in the calling code.  
+## <a name="passing-by-reference"></a>Předávání odkazem  
+ Argument předáte *odkazem* zadáním klíčového slova [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) pro odpovídající parametr v definici procedury. Při použití tohoto mechanismu předávání Visual Basic poskytuje proceduru přímý odkaz na základní programovací prvek v kódu volajícího.  
   
-## <a name="passing-mechanism-and-element-type"></a>Passing Mechanism and Element Type  
- The choice of passing mechanism is not the same as the classification of the underlying element type. Passing by value or by reference refers to what Visual Basic supplies to the procedure code. A value type or reference type refers to how a programming element is stored in memory.  
+## <a name="passing-mechanism-and-element-type"></a>Předání mechanismu a typu elementu  
+ Výběr mechanismu předávání není stejný jako klasifikace základního typu elementu. Předání hodnotou nebo odkazem odkazuje na to, co Visual Basic poskytování kódu procedury. Typ hodnoty nebo odkazový typ odkazuje na způsob ukládání programovacího prvku v paměti.  
   
- However, the passing mechanism and element type are interrelated. The value of a reference type is a pointer to the data elsewhere in memory. This means that when you pass a reference type by value, the procedure code has a pointer to the underlying element's data, even though it cannot access the underlying element itself. For example, if the element is an array variable, the procedure code does not have access to the variable itself, but it can access the array members.  
+ Mechanismus předání a typ elementu však jsou vzájemně propojené. Hodnota typu odkazu je ukazatel na data jinde v paměti. To znamená, že když předáte typ odkazu podle hodnoty, kód procedury má ukazatel na data základního elementu, i když nemá přístup k základnímu elementu samotnému. Například pokud je prvek proměnnou pole, kód procedury nemá přístup k proměnné samotné, ale má přístup k členům pole.  
   
-## <a name="ability-to-modify"></a>Ability to Modify  
- When you pass a nonmodifiable element as an argument, the procedure can never modify it in the calling code, whether it is passed `ByVal` or `ByRef`.  
+## <a name="ability-to-modify"></a>Možnost úpravy  
+ Pokud předáte neupravitelný prvek jako argument, procedura jej nikdy nemůže změnit v volajícím kódu, zda je předána `ByVal` nebo `ByRef`.  
   
- For a modifiable element, the following table summarizes the interaction between the element type and the passing mechanism.  
+ V případě upravitelného prvku shrnuje následující tabulka interakci mezi typem prvku a mechanismem předávání.  
   
-|Element type|Passed `ByVal`|Passed `ByRef`|  
+|Typ elementu|Úspěšně dokončeno `ByVal`|Úspěšně dokončeno `ByRef`|  
 |------------------|--------------------|--------------------|  
-|Value type (contains only a value)|The procedure cannot change the variable or any of its members.|The procedure can change the variable and its members.|  
-|Reference type (contains a pointer to a class or structure instance)|The procedure cannot change the variable but can change members of the instance to which it points.|The procedure can change the variable and members of the instance to which it points.|  
+|Typ hodnoty (obsahuje pouze hodnotu)|Procedura nemůže změnit proměnnou ani žádný z jejích členů.|Procedura může změnit proměnnou a její členy.|  
+|Odkazový typ (obsahuje ukazatel na instanci třídy nebo struktury)|Procedura nemůže změnit proměnnou, ale může změnit členy instance, na kterou odkazuje.|Procedura může změnit proměnnou a členy instance, na kterou odkazuje.|  
   
 ## <a name="see-also"></a>Viz také:
 

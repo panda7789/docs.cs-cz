@@ -15,20 +15,20 @@ ms.locfileid: "74348633"
 ---
 # <a name="how-to-determine-whether-two-objects-are-related-visual-basic"></a>Postupy: Určení, zda dva objekty souvisejí (Visual Basic)
 
-You can compare two objects to determine the relationship, if any, between the classes from which they are created. The <xref:System.Type.IsInstanceOfType%2A> method of the <xref:System.Type?displayProperty=nameWithType> class returns `True` if the specified class inherits from the current class, or if the current type is an interface supported by the specified class.
+Můžete porovnat dva objekty a určit vztah, pokud existuje, mezi třídami, ze kterých jsou vytvořeny. Metoda <xref:System.Type.IsInstanceOfType%2A> třídy <xref:System.Type?displayProperty=nameWithType> vrátí `True`, pokud zadaná třída dědí z aktuální třídy, nebo pokud aktuální typ je rozhraní podporované zadanou třídou.
 
-### <a name="to-determine-if-one-object-inherits-from-another-objects-class-or-interface"></a>To determine if one object inherits from another object's class or interface
+### <a name="to-determine-if-one-object-inherits-from-another-objects-class-or-interface"></a>Určení, zda jeden objekt dědí z jiného objektu nebo třídy nebo rozhraní
 
-1. On the object you think might be of the base type, invoke the <xref:System.Object.GetType%2A> method.
+1. U objektu, který si myslíte, může být základní typ, vyvolat metodu <xref:System.Object.GetType%2A>.
 
-2. On the <xref:System.Type?displayProperty=nameWithType> object returned by <xref:System.Object.GetType%2A>, invoke the <xref:System.Type.IsInstanceOfType%2A> method.
+2. U objektu <xref:System.Type?displayProperty=nameWithType> vráceného <xref:System.Object.GetType%2A>volejte metodu <xref:System.Type.IsInstanceOfType%2A>.
 
-3. In the argument list for <xref:System.Type.IsInstanceOfType%2A>, specify the object you think might be of the derived type.
+3. V seznamu argumentů pro <xref:System.Type.IsInstanceOfType%2A>určete objekt, který si myslíte, může být odvozený typ.
 
-    <xref:System.Type.IsInstanceOfType%2A> returns `True` if its argument type inherits from the <xref:System.Type?displayProperty=nameWithType> object type.
+    <xref:System.Type.IsInstanceOfType%2A> vrátí `True`, pokud jeho typ argumentu dědí z typu objektu <xref:System.Type?displayProperty=nameWithType>.
 
 ## <a name="example"></a>Příklad
- The following example determines whether one object represents a class derived from another object's class.
+ Následující příklad určuje, zda jeden objekt představuje třídu odvozenou z jiného objektu třídy.
 
 ```vb
 Public Class baseClass
@@ -46,7 +46,7 @@ Public Class testTheseClasses
 End Class
 ```
 
-Note the unexpected placement of the two object variables in the call to <xref:System.Type.IsInstanceOfType%2A>. The supposed base type is used to generate the <xref:System.Type?displayProperty=nameWithType> class, and the supposed derived type is passed as an argument to the <xref:System.Type.IsInstanceOfType%2A> method.
+Všimněte si neočekávaného umístění dvou objektových proměnných při volání <xref:System.Type.IsInstanceOfType%2A>. Předpokládaný základní typ se používá ke generování <xref:System.Type?displayProperty=nameWithType> třídy a předpokládaný odvozený typ je předán jako argument metodě <xref:System.Type.IsInstanceOfType%2A>.
 
 ## <a name="see-also"></a>Viz také:
 

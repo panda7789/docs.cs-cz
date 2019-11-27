@@ -19,56 +19,56 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352524"
 ---
 # <a name="sub-procedures-visual-basic"></a>Sub – procedury (Visual Basic)
-A `Sub` procedure is a series of Visual Basic statements enclosed by the `Sub` and `End Sub` statements. The `Sub` procedure performs a task and then returns control to the calling code, but it does not return a value to the calling code.  
+Procedura `Sub` je série Visual Basic příkazů, které jsou uzavřeny příkazy `Sub` a `End Sub`. Procedura `Sub` provede úlohu a vrátí řízení volajícímu kódu, ale nevrátí hodnotu volajícímu kódu.  
   
- Each time the procedure is called, its statements are executed, starting with the first executable statement after the `Sub` statement and ending with the first `End Sub`, `Exit Sub`, or `Return` statement encountered.  
+ Pokaždé, když je procedura volána, její příkazy jsou spouštěny, počínaje prvním spustitelným příkazem po příkazu `Sub` a končící prvním `End Sub`, `Exit Sub`nebo `Return`m příkazem.  
   
- You can define a `Sub` procedure in modules, classes, and structures. By default, it is `Public`, which means you can call it from anywhere in your application that has access to the module, class, or structure in which you defined it. The term, *method*, describes a `Sub` or `Function` procedure that is accessed from outside its defining module, class, or structure. For more information, see [Procedures](./index.md).  
+ Můžete definovat `Sub` proceduru v modulech, třídách a strukturách. Ve výchozím nastavení je `Public`, což znamená, že ho můžete volat odkudkoli v aplikaci, která má přístup k modulu, třídě nebo struktuře, ve které jste ji definovali. Termín, *Metoda*, popisuje `Sub` nebo `Function` postup, který je k dispozici mimo jeho definující modul, třídu nebo strukturu. Další informace najdete v tématu [postupy](./index.md).  
   
- A `Sub` procedure can take arguments, such as constants, variables, or expressions, which are passed to it by the calling code.  
+ `Sub` procedura může přebírat argumenty, jako jsou konstanty, proměnné nebo výrazy, které jsou předány volajícím kódem.  
   
 ## <a name="declaration-syntax"></a>Syntaxe deklarace  
- The syntax for declaring a `Sub` procedure is as follows:  
+ Syntaxe pro deklaraci `Sub` postup je následující:  
   
- `[` *modifiers* `] Sub`  *subname* `[(` *parameterlist* `)]`  
+ *modifikátory* *`[` `] Sub``[(`* *parameterlist* `)]`  
   
  `' Statements of the Sub procedure.`  
   
  `End Sub`  
   
- The `modifiers` can specify access level and information about overloading, overriding, sharing, and shadowing. For more information, see [Sub Statement](../../../../visual-basic/language-reference/statements/sub-statement.md).  
+ `modifiers` může určovat úroveň přístupu a informace o přetížení, přepsání, sdílení a stínování. Další informace naleznete v tématu [Sub Statement](../../../../visual-basic/language-reference/statements/sub-statement.md).  
   
-## <a name="parameter-declaration"></a>Parameter Declaration  
- You declare each procedure parameter similarly to how you declare a variable, specifying the parameter name and data type. You can also specify the passing mechanism, and whether the parameter is optional or a parameter array.  
+## <a name="parameter-declaration"></a>Deklarace parametru  
+ Každý parametr procedury deklarujete podobně, jak deklarujete proměnnou, zadáním názvu parametru a datového typu. Můžete také zadat mechanismus předávání a to, zda je parametr volitelný, nebo pole parametrů.  
   
- The syntax for each parameter in the parameter list is as follows:  
+ Syntaxe pro každý parametr v seznamu parametrů je následující:  
   
- `[Optional] [ByVal | ByRef] [ParamArray]`  *parametername*  `As`  *datatype*  
+ *datový typ*`As``[Optional] [ByVal | ByRef] [ParamArray]`*ParameterName*  
   
- If the parameter is optional, you must also supply a default value as part of its declaration. The syntax for specifying a default value is as follows:  
+ Pokud je parametr volitelný, musíte také zadat výchozí hodnotu jako součást její deklarace. Syntaxe pro určení výchozí hodnoty je následující:  
   
- `Optional [ByVal | ByRef]`  *parametername*  `As`  *datatype*  `=`  *defaultvalue*  
+ `Optional [ByVal | ByRef]`*parametername*`As`*DataType*`=`*DefaultValue*  
   
-### <a name="parameters-as-local-variables"></a>Parameters as Local Variables  
- When control passes to the procedure, each parameter is treated as a local variable. This means that its lifetime is the same as that of the procedure, and its scope is the whole procedure.  
+### <a name="parameters-as-local-variables"></a>Parametry jako lokální proměnné  
+ Při předání řízení proceduře je každý parametr považován za místní proměnnou. To znamená, že jeho životnost je stejná jako procedura a jeho rozsah je celý postup.  
   
-## <a name="calling-syntax"></a>Calling Syntax  
- You invoke a `Sub` procedure explicitly with a stand-alone calling statement. You cannot call it by using its name in an expression. You must provide values for all arguments that are not optional, and you must enclose the argument list in parentheses. If no arguments are supplied, you can optionally omit the parentheses. The use of the `Call` keyword is optional but not recommended.  
+## <a name="calling-syntax"></a>Syntaxe volání  
+ Vyvoláte `Sub` proceduru explicitně pomocí příkazu samostatného volání. Nemůžete ji volat pomocí jejího názvu ve výrazu. Je nutné zadat hodnoty pro všechny argumenty, které nejsou volitelné, a je třeba uzavřít seznam argumentů v závorkách. Pokud nejsou zadány žádné argumenty, můžete volitelně vynechat závorky. Použití klíčového slova `Call` je volitelné, ale nedoporučuje se.  
   
- The syntax for a call to a `Sub` procedure is as follows:  
+ Syntaxe pro volání `Sub` postup je následující:  
   
- `[Call]`  *subname* `[(` *argumentlist* `)]`  
+ `[Call]` *`[(`* *ArgumentList* `)]`  
   
- You can call a `Sub` method from outside the class that defines it. First, you have to use the `New` keyword to create an instance of the class, or call a method that returns an instance of the class. For more information, see [New Operator](../../../../visual-basic/language-reference/operators/new-operator.md). Then, you can use the following syntax to call the `Sub` method on the instance object:  
+ Metodu `Sub` můžete volat vně třídy, která ji definuje. Nejdříve je nutné použít klíčové slovo `New` pro vytvoření instance třídy nebo volání metody, která vrací instanci třídy. Další informace najdete v tématu [New operator](../../../../visual-basic/language-reference/operators/new-operator.md). Pak můžete použít následující syntaxi pro volání metody `Sub` objektu instance:  
   
- *Object*.*methodname*`[(`*argumentlist*`)]`  
+ *Objekt*. *methodname*`[(`*ArgumentList*`)]`  
   
-### <a name="illustration-of-declaration-and-call"></a>Illustration of Declaration and Call  
- The following `Sub` procedure tells the computer operator which task the application is about to perform, and also displays a time stamp. Instead of duplicating this code at the start of every task, the application just calls `tellOperator` from various locations. Each call passes a string in the `task` argument that identifies the task being started.  
+### <a name="illustration-of-declaration-and-call"></a>Ilustrace deklarace a volání  
+ Následující postup `Sub` informuje operátora počítače, který úkol aplikace provede, a také zobrazí časové razítko. Namísto duplikování tohoto kódu na začátku každé úlohy aplikace volá pouze `tellOperator` z různých umístění. Každé volání předá řetězec v argumentu `task`, který identifikuje spuštěnou úlohu.  
   
  [!code-vb[VbVbcnProcedures#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#2)]  
   
- The following example shows a typical call to `tellOperator`.  
+ Následující příklad ukazuje typické volání `tellOperator`.  
   
  [!code-vb[VbVbcnProcedures#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#3)]  
   
@@ -81,4 +81,4 @@ A `Sub` procedure is a series of Visual Basic statements enclosed by the `Sub` a
 - [Parametry a argumenty procedury](./procedure-parameters-and-arguments.md)
 - [Příkaz Sub](../../../../visual-basic/language-reference/statements/sub-statement.md)
 - [Postupy: Volání procedury, která nevrací hodnotu](./how-to-call-a-procedure-that-does-not-return-a-value.md)
-- [How to: Call an Event Handler in Visual Basic](./how-to-call-an-event-handler.md)
+- [Postupy: volání obslužné rutiny události v Visual Basic](./how-to-call-an-event-handler.md)

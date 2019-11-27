@@ -12,24 +12,24 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346186"
 ---
 # <a name="xml-literals-and-the-xml-10-specification-visual-basic"></a>Literály XML a specifikace XML 1.0 (Visual Basic)
-The XML literal syntax in Visual Basic supports most of the Extensible Markup Language (XML) 1.0 specification. For details about the XML 1.0 specification, see [Extensible Markup Language (XML) 1.0](https://www.w3.org/TR/xml) on the W3C Web site.  
+Syntaxe literálu XML v Visual Basic podporuje většinu specifikace jazyk XML (eXtensible Markup Language) (XML) 1,0. Podrobnosti o specifikaci XML 1,0 naleznete v tématu [jazyk XML (Extensible Markup Language) (XML) 1,0](https://www.w3.org/TR/xml) na webu W3C.  
   
-## <a name="what-visual-basic-does-not-support"></a>What Visual Basic Does Not Support  
+## <a name="what-visual-basic-does-not-support"></a>Co Visual Basic nepodporuje  
   
-- An XML literal cannot contain a document type definition (DTD).  
+- Literál XML nemůže obsahovat definici typu dokumentu (DTD).  
   
-- An XML document literal must start with an XML document declaration.  
+- Literál dokumentu XML musí začínat deklarací dokumentu XML.  
   
-- An XML literal cannot contain more than 65,535 characters on one line.  
+- Literál XML nemůže obsahovat více než 65 535 znaků na jednom řádku.  
   
-- XML namespace prefixes, element names, and attribute names cannot contain more than 1,024 characters.  
+- Předpony oboru názvů XML, názvy elementů a názvy atributů nesmí obsahovat více než 1 024 znaků.  
   
-## <a name="extra-features-that-visual-basic-supports"></a>Extra Features That Visual Basic Supports  
+## <a name="extra-features-that-visual-basic-supports"></a>Další funkce, které Visual Basic podporuje  
   
-- The embedded expression syntax allowed in document and element literals is not valid XML.  
+- Syntaxe vloženého výrazu povolená v dokumentu a literálech elementu není platný kód XML.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Creating XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [Vytváření XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
 - [Literál dokumentu XML](../../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)
 - [Literál XML elementu](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)

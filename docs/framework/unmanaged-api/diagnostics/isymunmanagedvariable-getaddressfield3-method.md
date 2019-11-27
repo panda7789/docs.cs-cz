@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446105"
 ---
 # <a name="isymunmanagedvariablegetaddressfield3-method"></a>ISymUnmanagedVariable::GetAddressField3 – metoda
-Gets the third address field for this variable. Its meaning depends on the kind of address.  
+Získá třetí pole adresy pro tuto proměnnou. Jeho význam závisí na typu adresy.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,13 +34,13 @@ HRESULT GetAddressField3(
   
 ## <a name="parameters"></a>Parametry  
  `pRetVal`  
- [out] A pointer to a `ULONG32` that receives the third address field.  
+ mimo Ukazatel na `ULONG32`, který obdrží třetí pole adresy.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -19,36 +19,36 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349115"
 ---
 # <a name="shared-visual-basic"></a>Shared (Visual Basic)
-Specifies that one or more declared programming elements are associated with a class or structure at large, and not with a specific instance of the class or structure.  
+Určuje, že nejmíň jeden deklarovaný programový prvek je spojen s třídou nebo strukturou ve velkém, a nikoli s konkrétní instancí třídy nebo struktury.  
   
 ## <a name="remarks"></a>Poznámky  
   
-## <a name="when-to-use-shared"></a>When to Use Shared  
- Sharing a member of a class or structure makes it available to every instance, rather than *nonshared*, where each instance keeps its own copy. This is useful, for example, if the value of a variable applies to the entire application. If you declare that variable to be `Shared`, then all instances access the same storage location, and if one instance changes the variable's value, all instances access the updated value.  
+## <a name="when-to-use-shared"></a>Kdy použít Shared  
+ Sdílení člena třídy nebo struktury zpřístupňuje každou instanci, nikoli *nesdílenou*, kde každá instance udržuje svou vlastní kopii. To je užitečné, například pokud se hodnota proměnné vztahuje na celou aplikaci. Pokud deklarujete tuto proměnnou, která má být `Shared`, pak všechny instance budou přistupovat ke stejnému umístění úložiště a pokud jedna instance změní hodnotu proměnné, všechny instance budou přistupovat k aktualizované hodnotě.  
   
- Sharing does not alter the access level of a member. For example, a class member can be shared and private (accessible only from within the class), or nonshared and public. For more information, see [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+ Sdílení nemění úroveň přístupu člena. Člen třídy může být například sdílen a privátní (přístupný pouze v rámci třídy) nebo nesdílené a veřejné. Další informace najdete v tématu [úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
-## <a name="rules"></a>Rules  
+## <a name="rules"></a>Pravidla  
   
-- **Declaration Context.** You can use `Shared` only at module level. This means the declaration context for a `Shared` element must be a class or structure, and cannot be a source file, namespace, or procedure.  
+- **Kontext deklarace** `Shared` můžete použít jenom na úrovni modulu. To znamená, že kontext deklarace pro prvek `Shared` musí být třída nebo struktura a nemůže se jednat o zdrojový soubor, obor názvů nebo proceduru.  
   
-- **Combined Modifiers.** You cannot specify `Shared` together with [Overrides](../../../visual-basic/language-reference/modifiers/overrides.md), [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md), [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md), [MustOverride](../../../visual-basic/language-reference/modifiers/mustoverride.md), or [Static](../../../visual-basic/language-reference/modifiers/static.md) in the same declaration.  
+- **Kombinované modifikátory.** V rámci stejné deklarace nelze zadat `Shared` spolu s [přepsáními](../../../visual-basic/language-reference/modifiers/overrides.md), [overridable](../../../visual-basic/language-reference/modifiers/overridable.md), [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md), [MustOverride](../../../visual-basic/language-reference/modifiers/mustoverride.md)nebo [static](../../../visual-basic/language-reference/modifiers/static.md) .  
   
-- **Accessing.** You access a shared element by qualifying it with its class or structure name, not with the variable name of a specific instance of its class or structure. You do not even have to create an instance of a class or structure to access its shared members.  
+- **Přístup k.** Ke sdílenému elementu přistupujete tak, že ho zařadíte s názvem jeho třídy nebo struktury, nikoli s názvem proměnné konkrétní instance své třídy nebo struktury. Pro přístup ke sdíleným členům nemusíte ani vytvářet instanci třídy nebo struktury.  
   
-     The following example calls the shared procedure <xref:System.Double.IsNaN%2A> exposed by the <xref:System.Double> structure.  
+     Následující příklad volá sdílenou proceduru <xref:System.Double.IsNaN%2A> vystavenou strukturou <xref:System.Double>.  
   
      `If Double.IsNaN(result) Then MsgBox("Result is mathematically undefined.")`  
   
-- **Implicit Sharing.** You cannot use the `Shared` modifier in a [Const Statement](../../../visual-basic/language-reference/statements/const-statement.md), but constants are implicitly shared. Similarly, you cannot declare a member of a module or an interface to be `Shared`, but they are implicitly shared.  
+- **Implicitní sdílení.** V [příkazu const](../../../visual-basic/language-reference/statements/const-statement.md)nelze použít modifikátor `Shared`, ale konstanty jsou implicitně sdíleny. Podobně nemůžete deklarovat člena modulu nebo rozhraní, které se má `Shared`, ale budou implicitně sdíleny.  
   
-## <a name="behavior"></a>Behavior  
+## <a name="behavior"></a>Chování  
   
-- **Storage.** A shared variable or event is stored in memory only once, no matter how many or few instances you create of its class or structure. Similarly, a shared procedure or property holds only one set of local variables.  
+- **Pamì.** Sdílená proměnná nebo událost je uložena v paměti pouze jednou, bez ohledu na to, kolik instancí tvoří svou třídu nebo strukturu. Podobně sdílená procedura nebo vlastnost obsahuje pouze jednu sadu místních proměnných.  
   
-- **Accessing through an Instance Variable.** It is possible to access a shared element by qualifying it with the name of a variable that contains a specific instance of its class or structure. Although this usually works as expected, the compiler generates a warning message and makes the access through the class or structure name instead of the variable.  
+- **Přístup prostřednictvím proměnné instance.** Je možné přistupovat ke sdílenému prvku tím, že je kvalifikován s názvem proměnné, která obsahuje konkrétní instanci své třídy nebo struktury. I když to obvykle funguje podle očekávání, kompilátor vygeneruje zprávu upozornění a provede přístup prostřednictvím třídy nebo názvu struktury namísto proměnné.  
   
-- **Accessing through an Instance Expression.** If you access a shared element through an expression that returns an instance of its class or structure, the compiler makes the access through the class or structure name instead of evaluating the expression. This produces unexpected results if you intended the expression to perform other actions as well as returning the instance. Toto dokládá následující příklad.  
+- **Přístup prostřednictvím výrazu instance.** Pokud přistupujete ke sdílenému prvku prostřednictvím výrazu, který vrací instanci své třídy nebo struktury, kompilátor provede přístup prostřednictvím třídy nebo názvu struktury namísto vyhodnocení výrazu. Výsledkem je neočekávané výsledky, pokud jste určili výraz k provádění dalších akcí a také k vrácení instance. Toto dokládá následující příklad.  
   
     ```vb
     Sub main()  
@@ -76,9 +76,9 @@ Specifies that one or more declared programming elements are associated with a c
     End Class  
     ```  
   
-     In the preceding example, the compiler generates a warning message both times the code accesses the shared variable `total` through an instance. In each case it makes the access directly through the class `shareTotal` and does not make use of any instance. In the case of the intended call to the procedure `returnClass`, this means it does not even generate a call to `returnClass`, so the additional action of displaying "Function returnClass() called" is not performed.  
+     V předchozím příkladu kompilátor vygeneruje zprávu upozornění, kolikrát kód přistupuje ke sdílené proměnné `total` prostřednictvím instance. V každém případě přistupuje přímo přes třídu `shareTotal` a nevyužívá žádné instance. V případě zamýšleného volání procedury `returnClass`to znamená, že ani nevygeneruje volání `returnClass`, takže se neprovádí další akce zobrazení "Function returnClass () s názvem".  
   
- The `Shared` modifier can be used in these contexts:  
+ V těchto kontextech lze použít modifikátor `Shared`:  
   
  [Příkaz Dim](../../../visual-basic/language-reference/statements/dim-statement.md)  
   
@@ -96,7 +96,7 @@ Specifies that one or more declared programming elements are associated with a c
 
 - [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)
 - [Static](../../../visual-basic/language-reference/modifiers/static.md)
-- [Lifetime in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)
+- [Doba života v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)
 - [Procedury](../../../visual-basic/programming-guide/language-features/procedures/index.md)
 - [Struktury](../../../visual-basic/programming-guide/language-features/data-types/structures.md)
 - [Objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)

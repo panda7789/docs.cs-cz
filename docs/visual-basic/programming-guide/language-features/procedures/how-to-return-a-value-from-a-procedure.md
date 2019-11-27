@@ -14,35 +14,35 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346029"
 ---
 # <a name="how-to-return-a-value-from-a-procedure-visual-basic"></a>Postupy: Vrácení hodnoty z procedury (Visual Basic)
-A `Function` procedure returns a value to the calling code either by executing a `Return` statement or by encountering an `Exit Function` or `End Function` statement.  
+Procedura `Function` vrátí hodnotu volajícímu kódu buď spuštěním příkazu `Return` nebo navoláním příkazu `Exit Function` nebo `End Function`.  
   
-### <a name="to-return-a-value-using-the-return-statement"></a>To return a value using the Return statement  
+### <a name="to-return-a-value-using-the-return-statement"></a>Vrácení hodnoty pomocí příkazu return  
   
-1. Put a `Return` statement at the point where the procedure's task is completed.  
+1. Vložte příkaz `Return` v místě, kde je úkol procedury dokončen.  
   
-2. Follow the `Return` keyword with an expression that yields the value you want to return to the calling code.  
+2. Použijte klíčové slovo `Return` s výrazem, který vrací hodnotu, kterou chcete vrátit na volající kód.  
   
-3. You can have more than one `Return` statement in the same procedure.  
+3. Stejný postup může mít více než jeden `Return` příkaz.  
   
-     The following `Function` procedure calculates the longest side, or hypotenuse, of a right triangle, and returns it to the calling code.  
+     Následující `Function` postup vypočítá nejdelší stranu (nebo přepony) pravého trojúhelníku a vrátí ji do volajícího kódu.  
   
      [!code-vb[VbVbcnProcedures#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#1)]  
   
-     The following example shows a typical call to `hypotenuse`, which stores the returned value.  
+     Následující příklad ukazuje typické volání `hypotenuse`, které ukládá vrácenou hodnotu.  
   
      [!code-vb[VbVbcnProcedures#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#6)]  
   
-### <a name="to-return-a-value-using-exit-function-or-end-function"></a>To return a value using Exit Function or End Function  
+### <a name="to-return-a-value-using-exit-function-or-end-function"></a>Vrácení hodnoty pomocí funkce Exit nebo funkce end  
   
-1. In at least one place in the `Function` procedure, assign a value to the procedure's name.  
+1. Alespoň na jednom místě v `Function` proceduře přiřaďte hodnotu k názvu procedury.  
   
-2. When you execute an `Exit Function` or `End Function` statement, Visual Basic returns the value most recently assigned to the procedure's name.  
+2. Když spustíte příkaz `Exit Function` nebo `End Function`, Visual Basic vrátí hodnotu, která byla naposledy přiřazena k názvu procedury.  
   
-3. You can have more than one `Exit Function` statement in the same procedure, and you can mix `Return` and `Exit Function` statements in the same procedure.  
+3. Stejný postup může mít více než jeden `Exit Function` příkaz a můžete kombinovat `Return` a `Exit Function` příkazy stejným postupem.  
   
-4. You can have only one `End Function` statement in a `Function` procedure.  
+4. V postupu `Function` může být pouze jeden příkaz `End Function`.  
   
-     For more information and an example, see "Return Value" in [Function Statement](../../../../visual-basic/language-reference/statements/function-statement.md).  
+     Další informace a příklad naleznete v části "návratová hodnota" v [příkazu Function](../../../../visual-basic/language-reference/statements/function-statement.md).  
   
 ## <a name="see-also"></a>Viz také:
 

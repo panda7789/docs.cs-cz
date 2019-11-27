@@ -17,18 +17,18 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344890"
 ---
 # <a name="how-to-define-a-conversion-operator-visual-basic"></a>Postupy: Definice operátora převodu (Visual Basic)
-If you have defined a class or structure, you can define a type conversion operator between the type of your class or structure and another data type (such as `Integer`, `Double`, or `String`).  
+Pokud jste definovali třídu nebo strukturu, můžete definovat operátor konverze typu mezi typem vaší třídy nebo struktury a jiným datovým typem (například `Integer`, `Double`nebo `String`).  
   
- Define the type conversion as a [CType Function](../../../../visual-basic/language-reference/functions/ctype-function.md) procedure within the class or structure. All conversion procedures must be `Public Shared`, and each one must specify either [Widening](../../../../visual-basic/language-reference/modifiers/widening.md) or [Narrowing](../../../../visual-basic/language-reference/modifiers/narrowing.md).  
+ Definujte převod typu jako proceduru [funkce CType](../../../../visual-basic/language-reference/functions/ctype-function.md) v rámci třídy nebo struktury. Všechny postupy převodu musí být `Public Shared`a každá z nich musí určovat buď [rozšiřování](../../../../visual-basic/language-reference/modifiers/widening.md) , nebo [zúžení](../../../../visual-basic/language-reference/modifiers/narrowing.md).  
   
- Defining an operator on a class or structure is also called *overloading* the operator.  
+ Definování operátoru pro třídu nebo strukturu se označuje také jako *přetížení* operátoru.  
   
 ## <a name="example"></a>Příklad  
- The following example defines conversion operators between a structure called `digit` and a `Byte`.  
+ Následující příklad definuje operátory převodu mezi strukturou nazvanou `digit` a `Byte`.  
   
  [!code-vb[VbVbcnProcedures#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#27)]  
   
- You can test the structure `digit` with the following code.  
+ Strukturu `digit` lze otestovat pomocí následujícího kódu.  
   
  [!code-vb[VbVbcnProcedures#28](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#28)]  
   

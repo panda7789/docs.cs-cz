@@ -9,17 +9,17 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74343648"
 ---
-# <a name="scope-of-default-namespaces-in-visual-basic"></a>Scope of Default Namespaces in Visual Basic
-Default namespaces as represented in the XML tree are not in scope for queries. If you have XML that is in a default namespace, you still must declare an <xref:System.Xml.Linq.XNamespace> variable, and combine it with the local name to make a qualified name to be used in the query.  
+# <a name="scope-of-default-namespaces-in-visual-basic"></a>Rozsah výchozích oborů názvů v Visual Basic
+Výchozí obory názvů jako reprezentované ve stromu XML nejsou v oboru pro dotazy. Pokud máte XML, které je ve výchozím oboru názvů, je stále nutné deklarovat <xref:System.Xml.Linq.XNamespace> proměnnou a zkombinovat ji s místním názvem, aby byl v dotazu použit kvalifikovaný název.  
   
- One of the most common problems when querying XML trees is that if the XML tree has a default namespace, the developer sometimes writes the query as though the XML were not in a namespace.  
+ Jedním z nejběžnějších problémů při dotazování na stromy XML je, že pokud má strom XML výchozí obor názvů, vývojář někdy zapíše dotaz, jako by kód XML nebyl v oboru názvů.  
   
- The first set of examples in this topic shows a typical way that XML in a default namespace is loaded, but is queried improperly.  
+ První sada příkladů v tomto tématu ukazuje typický způsob, jakým je načten XML ve výchozím oboru názvů, ale dotaz je nesprávně zadán.  
   
- The second set of examples show the necessary corrections so that you can query XML in a namespace.  
+ Druhá sada příkladů ukazuje nezbytné opravy, aby bylo možné dotazovat XML v oboru názvů.  
   
 ## <a name="example"></a>Příklad  
- This example shows the creation of XML in a namespace, and a query that returns an empty result set.  
+ Tento příklad ukazuje vytvoření XML v oboru názvů a dotaz, který vrací prázdnou sadu výsledků dotazu.  
   
 ### <a name="code"></a>Kód  
   
@@ -48,7 +48,7 @@ End Module
 ```  
   
 ### <a name="comments"></a>Komentáře  
- This example produces the following result:  
+ Tento příklad vytvoří následující výsledek:  
   
 ```console  
 Result set follows:  
@@ -56,9 +56,9 @@ End of result set
 ```  
   
 ## <a name="example"></a>Příklad  
- This example shows the creation of XML in a namespace, and a query that is coded properly.  
+ Tento příklad ukazuje vytvoření XML v oboru názvů a dotaz, který je správně kódován.  
   
- In contrast to the incorrectly coded example above, the correct approach when using Visual Basic is to declare and initialize a global default namespace. This places all XML properties in the default namespace. No other modifications are required to the example to make it work properly.  
+ Na rozdíl od nesprávně uvedeného kódovaného příkladu je správný přístup při použití Visual Basic deklarovat a inicializovat globální výchozí obor názvů. Tím se umístí všechny vlastnosti XML ve výchozím oboru názvů. V příkladu nejsou k dispozici žádné další úpravy, aby mohla správně fungovat.  
   
 ### <a name="code"></a>Kód  
   
@@ -89,7 +89,7 @@ End Module
 ```  
   
 ### <a name="comments"></a>Komentáře  
- This example produces the following result:  
+ Tento příklad vytvoří následující výsledek:  
   
 ```console  
 Result set follows:  
@@ -101,4 +101,4 @@ End of result set
   
 ## <a name="see-also"></a>Viz také:
 
-- [Namespaces Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md)
+- [Přehled oborů názvů (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md)

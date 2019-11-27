@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74439517"
 ---
 # <a name="icorprofilercallback3initializeforattach-method"></a>ICorProfilerCallback3::InitializeForAttach – metoda
-Called by the common language runtime (CLR) to give the profiler an opportunity to initialize its state after an attach operation.  
+Volá se modulem CLR (Common Language Runtime), aby Profiler mohl po operaci připojení inicializovat svůj stav.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,25 +36,25 @@ HRESULT InitializeForAttach(
   
 ## <a name="parameters"></a>Parametry  
  `pCorProfilerInfoUnk`  
- [in] An interface pointer for the `ICorProfilerInfo*` interface.  
+ pro Ukazatel rozhraní pro rozhraní `ICorProfilerInfo*`.  
   
  `pvClientData`  
- [in] A pointer to the data passed to the [IClrProfiling::AttachProfiler](../../../../docs/framework/unmanaged-api/profiling/iclrprofiling-attachprofiler-method.md) method in its `pvClientData` parameter. If this parameter is null, `cbClientData` will be 0 (zero). The CLR frees this memory when it returns from `InitializeForAttach`.  
+ pro Ukazatel na data předaná metodě [IClrProfiling:: AttachProfiler –](../../../../docs/framework/unmanaged-api/profiling/iclrprofiling-attachprofiler-method.md) ve svém parametru `pvClientData`. Pokud má tento parametr hodnotu null, `cbClientData` bude 0 (nula). Modul CLR uvolní tuto paměť při návratu z `InitializeForAttach`.  
   
  `cbClientData`  
- [in] The size, in bytes, of the data that `pvClientData` points to.  
+ pro Velikost dat, která `pvClientData` odkazuje, v bajtech.  
   
 ## <a name="remarks"></a>Poznámky  
- The CLR calls `InitializeForAttach` to give the profiler an opportunity to request callbacks.  
+ Modul CLR volá `InitializeForAttach`, aby Profiler mohl podat možnost požádat o zpětná volání.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

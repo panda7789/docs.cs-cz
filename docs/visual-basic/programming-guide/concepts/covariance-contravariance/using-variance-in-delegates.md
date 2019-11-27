@@ -9,15 +9,15 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349033"
 ---
-# <a name="using-variance-in-delegates-visual-basic"></a>Using Variance in Delegates (Visual Basic)
+# <a name="using-variance-in-delegates-visual-basic"></a>Použití variance v delegátech (Visual Basic)
 
-When you assign a method to a delegate, *covariance* and *contravariance* provide flexibility for matching a delegate type with a method signature. Covariance permits a method to have return type that is more derived than that defined in the delegate. Contravariance permits a method that has parameter types that are less derived than those in the delegate type.
+Když přiřadíte metodu delegátovi, *kovariance* a *kontravariance* poskytují flexibilitu pro porovnání typu delegáta s podpisem metody. Kovariance povoluje, aby metoda měla návratový typ, který je více odvozen od definice v delegátu. Kontravariance povoluje metodu, která má typy parametrů, které jsou méně odvozené než hodnoty v typu delegáta.
 
-## <a name="example-1-covariance"></a>Example 1: Covariance
+## <a name="example-1-covariance"></a>Příklad 1: kovariance
 
 ### <a name="description"></a>Popis
 
-This example demonstrates how delegates can be used with methods that have return types that are derived from the return type in the delegate signature. The data type returned by `DogsHandler` is of type `Dogs`, which derives from the `Mammals` type that is defined in the delegate.
+Tento příklad ukazuje, jak lze delegáty použít s metodami, které mají návratové typy odvozené od návratového typu v signatuře delegáta. Datový typ vrácený `DogsHandler` je typu `Dogs`, který je odvozen z typu `Mammals`, který je definován v delegátu.
 
 ### <a name="code"></a>Kód
 
@@ -44,25 +44,25 @@ Class Test
 End Class
 ```
 
-## <a name="example-2-contravariance"></a>Example 2: Contravariance
+## <a name="example-2-contravariance"></a>Příklad 2: kontravariance
 
 ### <a name="description"></a>Popis
 
-This example demonstrates how delegates can be used with methods that have parameters whose types are base types of the delegate signature parameter type. With contravariance, you can use one event handler instead of separate handlers. The following example makes use of two delegates:
+Tento příklad ukazuje, jak lze použít delegáty s metodami, které mají parametry, jejichž typy jsou základní typy parametrů signatury delegátů. S kontravariance můžete použít jednu obslužnou rutinu události místo samostatných obslužných rutin. Následující příklad využívá dva delegáty:
 
-- A <xref:System.Windows.Forms.KeyEventHandler> delegate that defines the signature of the [Button.KeyDown](xref:System.Windows.Forms.Control.KeyDown) event. Its signature is:
+- Delegát <xref:System.Windows.Forms.KeyEventHandler>, který definuje signaturu události [Button. KeyDown](xref:System.Windows.Forms.Control.KeyDown) . Jeho signatura je:
 
    ```vb
    Public Delegate Sub KeyEventHandler(sender As Object, e As KeyEventArgs)
    ```
 
-- A <xref:System.Windows.Forms.MouseEventHandler> delegate that defines the signature of the [Button.MouseClick](xref:System.Windows.Forms.Control.MouseDown) event. Its signature is:
+- Delegát <xref:System.Windows.Forms.MouseEventHandler>, který definuje podpis události [Button. MouseClick](xref:System.Windows.Forms.Control.MouseDown) . Jeho signatura je:
 
    ```vb
    Public Delegate Sub MouseEventHandler(sender As Object, e As MouseEventArgs)
    ```
 
-The example defines an event handler with an <xref:System.EventArgs> parameter and uses it to handle both the `Button.KeyDown` and `Button.MouseClick` events. It can do this because <xref:System.EventArgs> is a base type of both <xref:System.Windows.Forms.KeyEventArgs>  and <xref:System.Windows.Forms.MouseEventArgs>.
+V příkladu je definována obslužná rutina události s parametrem <xref:System.EventArgs> a používá ji pro zpracování událostí `Button.KeyDown` a `Button.MouseClick`. To může být způsobeno tím, že <xref:System.EventArgs> je základní typ <xref:System.Windows.Forms.KeyEventArgs> a <xref:System.Windows.Forms.MouseEventArgs>.
 
 ### <a name="code"></a>Kód
 
@@ -88,5 +88,5 @@ End Sub
 
 ## <a name="see-also"></a>Viz také:
 
-- [Variance in Delegates (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)
-- [Using Variance for Func and Action Generic Delegates (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)
+- [Variance v delegátech (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)
+- [Použití odchylky pro obecné delegáty Func a Action (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)

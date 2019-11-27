@@ -14,32 +14,32 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344081"
 ---
-# <a name="byte-data-type-visual-basic"></a>Byte data type (Visual Basic)
+# <a name="byte-data-type-visual-basic"></a>Byte – datový typ (Visual Basic)
 
-Holds unsigned 8-bit (1-byte) integers that range in value from 0 through 255.
+Obsahuje nepodepsaná 8bitové (1 bajt) celá čísla, která mají rozsah hodnot od 0 do 255.
 
 ## <a name="remarks"></a>Poznámky
 
-Use the `Byte` data type to contain binary data.  
+Datový typ `Byte` použijte k zahrnutí binárních dat.  
   
-The default value of `Byte` is 0.
+Výchozí hodnota `Byte` je 0.
 
-## <a name="literal-assignments"></a>Literal assignments
+## <a name="literal-assignments"></a>Přiřazení literálů
 
-You can declare and initialize a `Byte` variable by assigning it a decimal literal, a hexadecimal literal, an octal literal, or (starting with Visual Basic 2017) a binary literal. If the integral literal is outside the range of a `Byte` (that is, if it is less than <xref:System.Byte.MinValue?displayProperty=nameWithType> or greater than <xref:System.Byte.MaxValue?displayProperty=nameWithType>), a compilation error occurs.
+Můžete deklarovat a inicializovat `Byte` proměnnou přiřazením desítkového literálu, šestnáctkového literálu, osmičkového literálu nebo (počínaje Visual Basic 2017) binárního literálu. Pokud je celočíselný literál mimo rozsah `Byte` (to znamená, pokud je menší než <xref:System.Byte.MinValue?displayProperty=nameWithType> nebo větší než <xref:System.Byte.MaxValue?displayProperty=nameWithType>), dojde k chybě kompilace.
 
-In the following example, integers equal to 201 that are represented as decimal, hexadecimal, and binary literals are implicitly converted from [Integer](integer-data-type.md) to `byte` values.
+V následujícím příkladu jsou celá čísla rovnající se 201, která jsou reprezentována jako Desítková, šestnáctková a binární literála, implicitně převedena z [celého čísla](integer-data-type.md) na `byte` hodnoty.
 
 [!code-vb[Byte](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#Byte)]
 
 > [!NOTE]
-> You use the prefix `&h` or `&H` to denote a hexadecimal literal, the prefix `&b` or `&B` to denote a binary literal, and the prefix `&o` or `&O` to denote an octal literal. Decimal literals have no prefix.
+> Použijete předponu `&h` nebo `&H` k označení šestnáctkového literálu, předponu `&b` nebo `&B` k označení binárního literálu a prefixu `&o` nebo `&O` k označení osmičkového literálu. Desítkové literály nemají žádnou předponu.
 
-Starting with Visual Basic 2017, you can also use the underscore character, `_`, as a digit separator to enhance readability, as the following example shows.
+Počínaje Visual Basic 2017 můžete použít také znak podtržítka, `_`jako oddělovač číslic ke zvýšení čitelnosti, jak ukazuje následující příklad.
 
 [!code-vb[Byte](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#ByteS)]  
 
-Starting with Visual Basic 15.5, you can also use the underscore character (`_`) as a leading separator between the prefix and the hexadecimal, binary, or octal digits. Příklad:
+Počínaje Visual Basic 15,5 můžete také použít znak podtržítka (`_`) jako úvodní oddělovač mezi předponou a šestnáctkovou, binární nebo osmičkovou číslicí. Příklad:
 
 ```vb
 Dim number As Byte = &H_6A
@@ -49,19 +49,19 @@ Dim number As Byte = &H_6A
 
 ## <a name="programming-tips"></a>Tipy k programování
 
-- **Negative Numbers.** Because `Byte` is an unsigned type, it cannot represent a negative number. If you use the unary minus (`-`) operator on an expression that evaluates to type `Byte`, Visual Basic converts the expression to `Short` first.
+- **Záporná čísla.** Vzhledem k tomu, že `Byte` je typ bez znaménka, nemůže představovat záporné číslo. Použijete-li unární operátor mínus (`-`) u výrazu, který je vyhodnocen jako typ `Byte`, Visual Basic výraz převede na `Short` jako první.
   
-- **Format Conversions.** When Visual Basic reads or writes files, or when it calls DLLs, methods, and properties, it can automatically convert between data formats. Binary data stored in `Byte` variables and arrays is preserved during such format conversions. You should not use a `String` variable for binary data, because its contents can be corrupted during conversion between ANSI and Unicode formats.
+- **Převody formátu.** Když Visual Basic čte nebo zapisuje soubory nebo když volá knihovny DLL, metody a vlastnosti, může automaticky převádět mezi formáty dat. Binární data uložená v proměnných `Byte` a pole jsou během těchto převodů formátu zachovaná. Pro binární data byste neměli používat `String` proměnnou, protože její obsah může být během konverze mezi formáty ANSI a Unicode poškozen.
 
-- **Widening.** The `Byte` data type widens to `Short`, `UShort`, `Integer`, `UInteger`, `Long`, `ULong`, `Decimal`, `Single`, or `Double`. This means you can convert `Byte` to any of these types without encountering a <xref:System.OverflowException?displayProperty=nameWithType> error.
+- **Rozšiřující.** `Byte` datový typ rozšiřuje na `Short`, `UShort`, `Integer`, `UInteger`, `Long`, `ULong`, `Decimal`, `Single`nebo `Double`. To znamená, že můžete převést `Byte` na některý z těchto typů, aniž by došlo k chybě <xref:System.OverflowException?displayProperty=nameWithType>.
   
-- **Type Characters.** `Byte` has no literal type character or identifier type character.
+- **Znaky typu.** `Byte` nemá žádný znak typu literálu ani znak typu identifikátoru.
 
-- **Framework Type.** The corresponding type in the .NET Framework is the <xref:System.Byte?displayProperty=nameWithType> structure.
+- **Typ rozhraní.** Odpovídající typ v .NET Framework je struktura <xref:System.Byte?displayProperty=nameWithType>.
 
 ## <a name="example"></a>Příklad
 
- In the following example, `b` is a `Byte` variable. The statements demonstrate the range of the variable and the application of bit-shift operators to it.
+ V následujícím příkladu je `b` proměnná `Byte`. Příkazy ukazují rozsah proměnné a aplikaci operátorů bitových posunutí na ni.
 
  [!code-vb[VbVbalrDataTypes#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#16)]  
 

@@ -20,21 +20,21 @@ ms.locfileid: "74345352"
 ---
 # <a name="how-to-hide-an-inherited-variable-visual-basic"></a>Postupy: Skrytí zděděné proměnné (Visual Basic)
 
-A derived class inherits all the definitions of its base class. If you want to define a variable using the same name as an element of the base class, you can hide, or *shadow*, that base class element when you define your variable in the derived class. If you do this, code in the derived class accesses your variable unless it explicitly bypasses the shadowing mechanism.
+Odvozená třída dědí všechny definice své základní třídy. Pokud chcete definovat proměnnou pomocí stejného názvu jako element základní třídy, můžete skrýt nebo vytvořit *stín*, který prvek základní třídy při definování proměnné v odvozené třídě. Pokud to uděláte, kód v odvozené třídě přistupuje k proměnné, pokud explicitně neobejde mechanismus stínování.
 
-Another reason you might want to hide an inherited variable is to protect against base class revision. The base class might undergo a change that alters the element you are inheriting. If this happens, the `Shadows` modifier forces references from the derived class to be resolved to your variable, instead of to the base class element.
+Dalším důvodem, proč je vhodné skrýt zděděnou proměnnou, je chránit před revizí základní třídy. Základní třída může podléhat změně, která mění prvek, který je děděn. Pokud k tomu dojde, modifikátor `Shadows` vynutí, aby byly odkazy z odvozené třídy přeloženy na vaši proměnnou namísto elementu základní třídy.
 
-## <a name="to-hide-an-inherited-variable"></a>To hide an inherited variable
+## <a name="to-hide-an-inherited-variable"></a>Skrytí zděděné proměnné
 
-1. Be sure the variable you want to hide is declared at class level (outside any procedure). Otherwise, you do not need to hide it.
+1. Ujistěte se, že proměnná, kterou chcete skrýt, je deklarována na úrovni třídy (mimo jakoukoliv proceduru). V opačném případě ji nemusíte skrývat.
   
-2. Inside your derived class, write a [Dim Statement](../../../language-reference/statements/dim-statement.md) declaring your variable. Use the same name as that of the inherited variable.
+2. V rámci odvozené třídy napište [příkaz Dim](../../../language-reference/statements/dim-statement.md) , který deklaruje vaši proměnnou. Použijte stejný název jako u zděděné proměnné.
 
-3. Include the [Shadows](../../../language-reference/modifiers/shadows.md) keyword in the declaration.
+3. Do deklarace zahrňte klíčové slovo [Shadows](../../../language-reference/modifiers/shadows.md) .
 
-     When code in the derived class refers to the variable name, the compiler resolves the reference to your variable.
+     Pokud kód v odvozené třídě odkazuje na název proměnné, kompilátor vyřeší odkaz na vaši proměnnou.
 
-     The following example illustrates shadowing of an inherited variable:
+     Následující příklad znázorňuje stíny zděděné proměnné:
   
     ```vb  
     Public Class ShadowBaseClass  
@@ -50,16 +50,16 @@ Another reason you might want to hide an inherited variable is to protect agains
     End Class  
     ```  
   
-     The preceding example declares the variable `shadowString` in the base class and shadows it in the derived class. The procedure `ShowStrings` in the derived class displays the shadowing version of the string when the name `shadowString` is not qualified. It then displays the shadowed version when `shadowString` is qualified with the `MyBase` keyword.  
+     Předchozí příklad deklaruje proměnnou `shadowString` v základní třídě a nastínuje ji v odvozené třídě. Procedura `ShowStrings` v odvozené třídě zobrazuje stínovou verzi řetězce, když název `shadowString` není kvalifikován. Když je `shadowString` kvalifikován pomocí klíčového slova `MyBase`, zobrazí se stínovaná verze.  
   
-## <a name="robust-programming"></a>Robust programming
+## <a name="robust-programming"></a>Robustní programování
 
-Shadowing introduces more than one version of a variable with the same name. When a code statement refers to the variable name, the version to which the compiler resolves the reference depends on factors such as the location of the code statement and the presence of a qualifying string. This can increase the risk of referring to an unintended version of a shadowed variable. You can lower that risk by fully qualifying all references to a shadowed variable.
+Stíning zavádí více než jednu verzi proměnné se stejným názvem. Pokud příkaz kódu odkazuje na název proměnné, verze, na kterou kompilátor vyřeší odkaz, závisí na faktorech, jako je například umístění příkazu kódu a přítomnost opravňujícího řetězce. To může zvýšit riziko odkazování na neúmyslnou verzi stínové proměnné. Toto riziko můžete snížit tím, že plně zadáte všechny odkazy na stínovou proměnnou.
 
 ## <a name="see-also"></a>Viz také:
 
 - [Odkazy na deklarované elementy](references-to-declared-elements.md)
-- [Shadowing in Visual Basic](shadowing.md)
+- [Stínování v Visual Basic](shadowing.md)
 - [Rozdíly mezi stínováním a přepsáním](differences-between-shadowing-and-overriding.md)
 - [Postupy: Skrytí proměnné se stejným názvem jako má vaše proměnná](how-to-hide-a-variable-with-the-same-name-as-your-variable.md)
 - [Postupy: Přístup k proměnné skryté odvozenou třídou](how-to-access-a-variable-hidden-by-a-derived-class.md)

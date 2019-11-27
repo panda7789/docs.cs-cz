@@ -1,5 +1,5 @@
 ---
-title: Overloaded properties and methods
+title: Přetížené vlastnosti a metody
 ms.date: 07/20/2015
 helpviewer_keywords:
 - properties [Visual Basic], overloading
@@ -19,70 +19,70 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346092"
 ---
-# <a name="overloaded-properties-and-methods-visual-basic"></a>Overloaded properties and methods (Visual Basic)
+# <a name="overloaded-properties-and-methods-visual-basic"></a>Přetížené vlastnosti a metody (Visual Basic)
 
-Overloading is the creation of more than one procedure, instance constructor, or property in a class with the same name but different argument types.
+Přetížení je vytvoření více než jedné procedury, konstruktoru instance nebo vlastnosti ve třídě se stejným názvem, ale s různými typy argumentů.
 
-## <a name="overloading-usage"></a>Overloading usage
+## <a name="overloading-usage"></a>Přetížení využití
 
-Overloading is especially useful when your object model dictates that you employ identical names for procedures that operate on different data types. For example, a class that can display several different data types could have `Display` procedures that look like this:
+Přetížení je obzvláště užitečné, když objektový model určuje, že pro procedury, které pracují s různými datovými typy, využíváte stejné názvy. Například třída, která může zobrazit několik různých datových typů, by mohla mít `Display` postupy, které vypadají takto:
 
 [!code-vb[VbVbalrOOP#64](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#64)]
 
-Without overloading, you would need to create distinct names for each procedure, even though they do the same thing, as shown next:
+Bez přetížení byste museli pro každý postup vytvořit rozdílné názvy, a to i v případě, že mají stejnou věc, jak je uvedeno dále:
 
 [!code-vb[VbVbalrOOP#65](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#65)]
 
-Overloading makes it easier to use properties or methods because it provides a choice of data types that can be used. For example, the overloaded `Display` method discussed previously can be called with any of the following lines of code:
+Přetížení usnadňuje používání vlastností nebo metod, protože poskytuje možnost volby datových typů, které lze použít. Například přetížená výše popsaná `Display` metoda může být volána s libovolným z následujících řádků kódu:
 
 [!code-vb[VbVbalrOOP#66](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#66)]
 
-At run time, Visual Basic calls the correct procedure based on the data types of the parameters you specify.
+V době běhu Visual Basic volá správný postup na základě datových typů zadaných parametrů.
 
-## <a name="overloading-rules"></a>Overloading rules
+## <a name="overloading-rules"></a>Pravidla přetížení
 
- You create an overloaded member for a class by adding two or more properties or methods with the same name. Except for overloaded derived members, each overloaded member must have different parameter lists, and the following items cannot be used as a differentiating feature when overloading a property or procedure:
+ Můžete vytvořit přetíženého člena pro třídu přidáním dvou nebo více vlastností nebo metod se stejným názvem. S výjimkou přetížených členů musí mít každý přetížený člen jiný seznam parametrů a následující položky nelze použít jako rozdílové funkce při přetížení vlastnosti nebo procedury:
 
-- Modifiers, such as `ByVal` or `ByRef`, that apply to a member, or parameters of the member.
+- Modifikátory, například `ByVal` nebo `ByRef`, které se vztahují na člen nebo parametry člena.
 
-- Names of parameters
+- Názvy parametrů
 
-- Return types of procedures
+- Návratové typy procedur
 
-The `Overloads` keyword is optional when overloading, but if any overloaded member uses the `Overloads` keyword, then all other overloaded members with the same name must also specify this keyword.
+Klíčové slovo `Overloads` je při přetížení volitelné, ale pokud nějaký přetížený člen používá klíčové slovo `Overloads`, pak všechny ostatní přetížené členy, které mají stejný název, musí také zadat toto klíčové slovo.
 
-Derived classes can overload inherited members with members that have identical parameters and parameter types, a process known as *shadowing by name and signature*. If the `Overloads` keyword is used when shadowing by name and signature, the derived class's implementation of the member will be used instead of the implementation in the base class, and all other overloads for that member will be available to instances of the derived class.
+Odvozené třídy mohou přetížit zděděné členy se členy, kteří mají stejné parametry a typy parametrů, což je proces známý jako *stínování podle názvu a podpisu*. Pokud je klíčové slovo `Overloads` použito při stínování podle názvu a signatury, použije se místo implementace v základní třídě implementace člena odvozené třídy a všechna ostatní přetížení tohoto člena budou k dispozici pro instance odvozené třídy.
 
-If the `Overloads` keyword is omitted when overloading an inherited member with a member that has identical parameters and parameter types, then the overloading is called *shadowing by name*. Shadowing by name replaces the inherited implementation of a member, and it makes all other overloads unavailable to instances of the derived class and its decedents.
+Pokud je klíčové slovo `Overloads` vynecháno při přetížení zděděného člena se členem, který má stejné parametry a typy parametrů, pak přetížení se nazývá *stíning podle názvu*. Stínová kopie podle názvu nahradí zděděnou implementaci člena a zpřístupňuje všechna ostatní přetížení instancím odvozené třídy a její decedents.
 
-The `Overloads` and `Shadows` modifiers cannot both be used with the same property or method.
+Modifikátory `Overloads` a `Shadows` nelze současně použít se stejnou vlastností nebo metodou.
 
 ### <a name="example"></a>Příklad
 
-The following example creates overloaded methods that accept either a `String` or `Decimal` representation of a dollar amount and return a string containing the sales tax.
+Následující příklad vytvoří přetížené metody, které přijímají buď `String`, nebo `Decimal` reprezentaci částky dolaru a vrátí řetězec obsahující DPH.
 
-#### <a name="to-use-this-example-to-create-an-overloaded-method"></a>To use this example to create an overloaded method
+#### <a name="to-use-this-example-to-create-an-overloaded-method"></a>Chcete-li použít tento příklad k vytvoření přetížené metody
 
-1. Open a new project and add a class named `TaxClass`.
+1. Otevřete nový projekt a přidejte třídu s názvem `TaxClass`.
 
-2. Add the following code to the `TaxClass` class.
+2. Do třídy `TaxClass` přidejte následující kód.
 
     [!code-vb[VbVbalrOOP#67](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#67)]
 
-3. Add the following procedure to your form.
+3. Do formuláře přidejte následující proceduru.
 
     [!code-vb[VbVbalrOOP#68](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#68)]
 
-4. Add a button to your form and call the `ShowTax` procedure from the `Button1_Click` event of the button.
+4. Přidejte do formuláře tlačítko a zavolejte `ShowTax`ovou proceduru z události `Button1_Click` tlačítka.
 
-5. Run the project and click the button on the form to test the overloaded `ShowTax` procedure.
+5. Spusťte projekt a klikněte na tlačítko na formuláři pro otestování přetížené `ShowTax` postupu.
 
-At run time, the compiler chooses the appropriate overloaded function that matches the parameters being used. When you click the button, the overloaded method is called first with a `Price` parameter that is a string and the message, "Price is a String. Tax is $5.12" is displayed. `TaxAmount` is called with a `Decimal` value the second time and the message, "Price is a Decimal. Tax is $5.12" is displayed.
+V době běhu kompilátor zvolí vhodnou přetíženou funkci, která odpovídá použitým parametrům. Po kliknutí na tlačítko je přetížená metoda nejprve volána s parametrem `Price`, který je řetězec a zpráva, "Price je řetězec. Zobrazí se daň $5,12. `TaxAmount` se volá s hodnotou `Decimal` podruhé a zprávou "cena je Desítková. Zobrazí se daň $5,12.
 
 ## <a name="see-also"></a>Viz také:
 
 - [Objekty a třídy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
-- [Shadowing in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
+- [Stínování v Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
 - [Příkaz Sub](../../../../visual-basic/language-reference/statements/sub-statement.md)
 - [Základní informace o dědičnosti](../../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)
 - [Shadows](../../../../visual-basic/language-reference/modifiers/shadows.md)

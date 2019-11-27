@@ -9,13 +9,13 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344555"
 ---
-# <a name="how-to-join-content-from-dissimilar-files-linq-visual-basic"></a>How to: Join Content from Dissimilar Files (LINQ) (Visual Basic)
+# <a name="how-to-join-content-from-dissimilar-files-linq-visual-basic"></a>Postupy: spojení obsahu z nepodobných souborů (LINQ) (Visual Basic)
 
-This example shows how to join data from two comma-delimited files that share a common value that is used as a matching key. This technique can be useful if you have to combine data from two spreadsheets, or from a spreadsheet and from a file that has another format, into a new file. You can modify the example to work with any kind of structured text.
+Tento příklad ukazuje, jak spojit data ze dvou souborů oddělených čárkami, které sdílejí společnou hodnotu, která se používá jako odpovídající klíč. Tato technika může být užitečná, pokud potřebujete kombinovat data ze dvou tabulek nebo z tabulky a ze souboru, který má jiný formát, do nového souboru. Můžete upravit příklad pro práci s libovolným druhem strukturovaného textu.
 
-## <a name="to-create-the-data-files"></a>To create the data files
+## <a name="to-create-the-data-files"></a>Vytvoření datových souborů
 
-1. Copy the following lines into a file that is named scores.csv and save it to your project folder. The file represents spreadsheet data. Column 1 is the student's ID, and columns 2 through 5 are test scores.
+1. Zkopírujte následující řádky do souboru s názvem skóre. csv a uložte ho do složky vašeho projektu. Soubor představuje data v tabulce. Sloupec 1 je ID studenta a sloupce 2 až 5 jsou skóre testů.
 
     ```csv
     111, 97, 92, 81, 60
@@ -32,7 +32,7 @@ This example shows how to join data from two comma-delimited files that share a 
     122, 94, 92, 91, 91
     ```
 
-2. Copy the following lines into a file that is named names.csv and save it to your project folder. The file represents a spreadsheet that contains the student's last name, first name, and student ID.
+2. Zkopírujte následující řádky do souboru s názvem Names. csv a uložte ho do složky projektu. Tento soubor představuje tabulku, která obsahuje příjmení, jméno a ID studenta.
 
     ```csv
     Omelchenko,Svetlana,111
@@ -122,5 +122,5 @@ End Class
 
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ and Strings (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
-- [LINQ and File Directories (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [LINQ a souborové adresáře (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

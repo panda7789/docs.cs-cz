@@ -16,13 +16,13 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346123"
 ---
 # <a name="structures-and-other-programming-elements-visual-basic"></a>Struktury a ostatní programovací elementy (Visual Basic)
-You can use structures in conjunction with arrays, objects, and procedures, as well as with each other. The interactions use the same syntax as these elements use individually.  
+Struktury můžete používat ve spojení s poli, objekty a procedurami a také mezi sebou. Interakce používají stejnou syntaxi, protože tyto prvky používají samostatně.  
   
 > [!NOTE]
-> You cannot initialize any of the structure elements in the structure declaration. You can assign values only to elements of a variable that has been declared to be of a structure type.  
+> V deklaraci struktury nelze inicializovat žádné prvky struktury. Hodnoty lze přiřadit pouze k prvkům proměnné, které byly deklarovány jako typ struktury.  
   
-## <a name="structures-and-arrays"></a>Structures and Arrays  
- A structure can contain an array as one or more of its elements. Toto dokládá následující příklad.  
+## <a name="structures-and-arrays"></a>Struktury a pole  
+ Struktura může obsahovat pole jako jeden nebo více jeho prvků. Toto dokládá následující příklad.  
   
 ```vb  
 Public Structure systemInfo  
@@ -33,7 +33,7 @@ Public Structure systemInfo
 End Structure   
 ```  
   
- You access the values of an array within a structure the same way you access a property on an object. Toto dokládá následující příklad.  
+ Přístup k hodnotám pole v rámci struktury je stejný způsob, jakým přistupujete k vlastnosti objektu. Toto dokládá následující příklad.  
   
 ```vb  
 Dim mySystem As systemInfo  
@@ -41,13 +41,13 @@ ReDim mySystem.diskDrives(3)
 mySystem.diskDrives(0) = "1.44 MB"  
 ```  
   
- You can also declare an array of structures. Toto dokládá následující příklad.  
+ Můžete také deklarovat pole struktur. Toto dokládá následující příklad.  
   
 ```vb  
 Dim allSystems(100) As systemInfo  
 ```  
   
- You follow the same rules to access the components of this data architecture. Toto dokládá následující příklad.  
+ Pro přístup k součástem této architektury dat se řiďte stejná pravidla. Toto dokládá následující příklad.  
   
 ```vb  
 ReDim allSystems(5).diskDrives(3)  
@@ -55,8 +55,8 @@ allSystems(5).CPU = "386SX"
 allSystems(5).diskDrives(2) = "100M SCSI"  
 ```  
   
-## <a name="structures-and-objects"></a>Structures and Objects  
- A structure can contain an object as one or more of its elements. Toto dokládá následující příklad.  
+## <a name="structures-and-objects"></a>Struktury a objekty  
+ Struktura může obsahovat objekt jako jeden nebo více jeho prvků. Toto dokládá následující příklad.  
   
 ```vb  
 Protected Structure userInput  
@@ -66,10 +66,10 @@ Protected Structure userInput
 End Structure  
 ```  
   
- You should use a specific object class in such a declaration, rather than `Object`.  
+ Místo `Object`byste měli v takové deklaraci použít konkrétní třídu objektu.  
   
-## <a name="structures-and-procedures"></a>Structures and Procedures  
- You can pass a structure as a procedure argument. Toto dokládá následující příklad.  
+## <a name="structures-and-procedures"></a>Struktury a postupy  
+ Strukturu můžete předat jako argument procedury. Toto dokládá následující příklad.  
   
 ```vb  
 Public currentCPUName As String = "700MHz Pentium compatible"  
@@ -81,9 +81,9 @@ Public Sub fillSystem(ByRef someSystem As systemInfo)
 End Sub  
 ```  
   
- The preceding example passes the structure *by reference*, which allows the procedure to modify its elements so that the changes take effect in the calling code. If you want to protect a structure against such modification, pass it by value.  
+ Předchozí příklad předá strukturu *odkazem*, což umožňuje, aby procedura změnila své prvky tak, aby se změny projevily v volajícím kódu. Pokud chcete chránit strukturu pro takovou úpravu, předejte ji podle hodnoty.  
   
- You can also return a structure from a `Function` procedure. Toto dokládá následující příklad.  
+ Můžete také vrátit strukturu z `Function`ho postupu. Toto dokládá následující příklad.  
   
 ```vb  
 Dim allSystems(100) As systemInfo  
@@ -96,8 +96,8 @@ Function findByDate(ByVal searchDate As Date) As systemInfo
 End Function  
 ```  
   
-## <a name="structures-within-structures"></a>Structures Within Structures  
- Structures can contain other structures. Toto dokládá následující příklad.  
+## <a name="structures-within-structures"></a>Struktury ve strukturách  
+ Struktury mohou obsahovat jiné struktury. Toto dokládá následující příklad.  
   
 ```vb  
 Public Structure driveInfo  
@@ -118,9 +118,9 @@ ReDim allSystems(1).diskDrives(3)
 allSystems(1).diskDrives(0).type = "Floppy"  
 ```  
   
- You can also use this technique to encapsulate a structure defined in one module within a structure defined in a different module.  
+ Tento postup můžete použít také k zapouzdření struktury definované v jednom modulu v rámci struktury definované v jiném modulu.  
   
- Structures can contain other structures to an arbitrary depth.  
+ Struktury mohou obsahovat jiné struktury s libovolnou hloubkou.  
   
 ## <a name="see-also"></a>Viz také:
 

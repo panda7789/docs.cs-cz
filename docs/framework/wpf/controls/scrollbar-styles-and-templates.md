@@ -34,7 +34,7 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
 |Normální|CommonStates|Výchozí stav.|  
 |MouseOver|CommonStates|Ukazatel myši je umístěn nad ovládacím prvkem.|  
 |Zakázáno|CommonStates|Ovládací prvek je zakázán.|  
-|Platné|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
+|Platný|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
 |InvalidFocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` a ovládací prvek má fokus.|  
 |InvalidUnfocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` a ovládací prvek nemá fokus.|  
   

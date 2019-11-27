@@ -30,32 +30,32 @@ ms.locfileid: "74347425"
 ---
 # <a name="how-to-break-and-combine-statements-in-code-visual-basic"></a>Postupy: Přerušení a kombinace příkazů v kódu (Visual Basic)
 
-When writing your code, you might at times create lengthy statements that necessitate horizontal scrolling in the Code Editor. Although this doesn't affect the way your code runs, it makes it difficult for you or anyone else to read the code as it appears on the monitor. In such cases, you should consider breaking the single long statement into several lines.
+Při psaní kódu můžete občas vytvořit zdlouhavé příkazy, které vyžadují horizontální posouvání v editoru kódu. I když to nemá vliv na způsob, jakým se váš kód spouští, ztěžuje vám nebo někomu jinému čtení kódu, jak se zobrazuje na monitoru. V takových případech byste měli zvážit rozdělení jednoho dlouhého příkazu na několik řádků.
 
-## <a name="to-break-a-single-statement-into-multiple-lines"></a>To break a single statement into multiple lines
+## <a name="to-break-a-single-statement-into-multiple-lines"></a>Přerušení jednoho příkazu na více řádků
 
-Use the line-continuation character, which is an underscore (`_`), at the point at which you want the line to break. The underscore must be immediately preceded by a space and immediately followed by a line terminator (carriage return) or (starting with version 16.0) a comment followed by a carriage return.
+Použijte znak pro pokračování řádku, který je podtržítkem (`_`), v místě, kde má být řádek přerušen. Podtržítko musí bezprostředně předcházet mezerou a ihned po něm následovat ukončovací znak (návrat vozíku) nebo (počínaje verzí 16,0) komentář následovaný návratem na začátek řádku.
 
   > [!NOTE]
-  > In some cases, if you omit the line-continuation character, the Visual Basic compiler will implicitly continue the statement on the next line of code. For a list of syntax elements for which you can omit the line-continuation character, see "Implicit Line Continuation" in [Statements](../../../visual-basic/programming-guide/language-features/statements.md).
+  > V některých případech, Pokud vynecháte znak pro pokračování řádku, kompilátor Visual Basic implicitně pokračuje v příkazu na dalším řádku kódu. Seznam elementů syntaxe, pro které můžete vynechat znak pro pokračování řádku, naleznete v tématu "implicitní pokračování řádku" v [prohlášeních](../../../visual-basic/programming-guide/language-features/statements.md).
 
-  In the following example, the statement is broken into four lines with line-continuation characters terminating all but the last line.
+  V následujícím příkladu je příkaz rozdělen na čtyři řádky se znaky pro pokračování řádku, které končí všechny kromě posledního řádku.
 
   [!code-vb[VbVbcnConventions#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#20)]
 
-  Using this sequence makes your code easier to read, both online and when printed.
+  Použití této sekvence usnadňuje čtení kódu, jak online, tak i po vytištění.
 
-  The line-continuation character must be the last character on a line. You can't follow it with anything else on the same line.
+  Znak pro pokračování řádku musí být poslední znak na řádku. Na stejném řádku nemůžete postupovat s jakýmkoli jiným.
 
-  Some limitations exist as to where you can use the line-continuation character; for example, you can't use it in the middle of an argument name. You can break an argument list with the line-continuation character, but the individual names of the arguments must remain intact.
+  Některá omezení existují, jako na to, kde můžete použít znak pro pokračování řádku; Nemůžete ho například použít uprostřed názvu argumentu. Seznam argumentů lze přerušit pomocí znaku pro pokračování řádku, ale jednotlivé názvy argumentů musí zůstat beze změny.
 
-  You can't continue a comment by using a line-continuation character. The compiler doesn't examine the characters in a comment for special meaning. For a multiple-line comment, repeat the comment symbol (`'`) on each line.
+  Komentář nelze pokračovat pomocí znaku pro pokračování řádku. Kompilátor neověřuje znaky v komentáři pro zvláštní význam. U víceřádkového komentáře opakujte symbol komentáře (`'`) na každém řádku.
 
- Although placing each statement on a separate line is the recommended method, Visual Basic also allows you to place multiple statements on the same line.
+ I když je umístění každého příkazu na samostatném řádku doporučený způsob, Visual Basic také umožňuje umístit více příkazů na stejný řádek.
 
-## <a name="to-place-multiple-statements-on-the-same-line"></a>To place multiple statements on the same line
+## <a name="to-place-multiple-statements-on-the-same-line"></a>Postup umístění více příkazů na stejný řádek
 
-Separate the statements with a colon (`:`), as in the following example:
+Příkazy oddělte dvojtečkou (`:`), jako v následujícím příkladu:
 
   [!code-vb[VbVbcnConventions#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#10)]
 

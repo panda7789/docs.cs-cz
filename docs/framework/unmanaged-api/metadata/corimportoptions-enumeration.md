@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74442844"
 ---
 # <a name="corimportoptions-enumeration"></a>CorImportOptions – výčet
-Contains flag values that control the behavior during importation of an assembly outside the current scope.  
+Obsahuje hodnoty příznaků, které řídí chování při dovozu sestavení mimo aktuální rozsah.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,22 +46,22 @@ typedef enum CorImportOptions {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`MDImportOptionDefault`|Indicates the default behavior, which is to skip deleted records.|  
-|`MDImportOptionAll`|Indicates that all metadata should be enumerated.|  
-|`MDImportOptionAllTypeDefs`|Indicates that all TypeDefs, including deleted ones, should be enumerated.|  
-|`MDImportOptionAllMethodDefs`|Indicates that all MethodDefs, including deleted ones, should be enumerated.|  
-|`MDImportOptionAllFieldDefs`|Indicates that all FieldDefs, including deleted ones, should be enumerated.|  
-|`MDImportOptionAllProperties`|Indicates that all PropertyDefs, including deleted ones, should be enumerated.|  
-|`MDImportOptionAllEvents`|Indicates that all EventDefs, including deleted ones, should be enumerated.|  
-|`MDImportOptionAllCustomAttributes`|Indicates that all custom attributes, including deleted ones, should be enumerated.|  
-|`MDImportOptionAllExportedTypes`|Indicates that all exported types, including deleted ones, should be enumerated.|  
+|`MDImportOptionDefault`|Označuje výchozí chování, které má přeskočit odstraněné záznamy.|  
+|`MDImportOptionAll`|Označuje, že by měla být vytvořena výčet všech metadat.|  
+|`MDImportOptionAllTypeDefs`|Označuje, že by měly být vyčísleny všechny definice typedef, včetně odstraněných.|  
+|`MDImportOptionAllMethodDefs`|Označuje, že by měly být vyčísleny všechny MethodDefs, včetně odstraněných.|  
+|`MDImportOptionAllFieldDefs`|Označuje, že by měly být vyčísleny všechny FieldDefs, včetně odstraněných.|  
+|`MDImportOptionAllProperties`|Označuje, že by měly být vyčísleny všechny PropertyDefs, včetně odstraněných.|  
+|`MDImportOptionAllEvents`|Označuje, že by měly být vyčísleny všechny EventDefs, včetně odstraněných.|  
+|`MDImportOptionAllCustomAttributes`|Označuje, že by měly být vyčísleny všechny vlastní atributy včetně odstraněných.|  
+|`MDImportOptionAllExportedTypes`|Označuje, že by se měly vytvořit výčty všech exportovaných typů, včetně odstraněných.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **Hlavička:** CorHdr. h  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

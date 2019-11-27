@@ -32,7 +32,7 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
   
 |Název VisualState|Název VisualStateGroup|Popis|  
 |----------------------|---------------------------|-----------------|  
-|Platné|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
+|Platný|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
 |InvalidFocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
 |InvalidUnfocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
   
@@ -57,10 +57,10 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
 |-|-|-|  
 |Normální stav|CommonStates|Výchozí stav.|  
 |Zakázaný stav|CommonStates|Stav kalendáře, pokud je vlastnost <xref:System.Windows.UIElement.IsEnabled%2A> `false`.|  
-|Platné|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
+|Platný|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
 |InvalidFocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
 |InvalidUnfocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
-|Platné|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
+|Platný|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
 |InvalidFocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
 |InvalidUnfocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
   
@@ -76,19 +76,19 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
 |Zakázáno|CommonStates|<xref:System.Windows.Controls.Primitives.CalendarDayButton> je zakázaný.|  
 |MouseOver|CommonStates|Ukazatel myši je umístěn na <xref:System.Windows.Controls.Primitives.CalendarDayButton>.|  
 |Stisknutí|CommonStates|Stiskne se <xref:System.Windows.Controls.Primitives.CalendarDayButton>.|  
-|Vybráno|SelectionStates|Je vybráno tlačítko.|  
+|Vybrané|SelectionStates|Je vybráno tlačítko.|  
 |Nevybrané|SelectionStates|Tlačítko není vybráno.|  
 |CalendarButtonFocused|CalendarButtonFocusStates|Tlačítko má fokus.|  
 |CalendarButtonUnfocused|CalendarButtonFocusStates|Tlačítko nemá fokus.|  
 |Zaměřil|FocusStates|Tlačítko má fokus.|  
 |Bez fokusu|FocusStates|Tlačítko nemá fokus.|  
 |Aktivní|ActiveStates|Tlačítko je aktivní.|  
-|Termín|ActiveStates|Tlačítko je neaktivní.|  
+|Neaktivní|ActiveStates|Tlačítko je neaktivní.|  
 |RegularDay|DayStates|Tlačítko nepředstavuje <xref:System.DateTime.Today%2A?displayProperty=nameWithType>.|  
-|Si|DayStates|Tlačítko představuje <xref:System.DateTime.Today%2A?displayProperty=nameWithType>.|  
+|Dnes|DayStates|Tlačítko představuje <xref:System.DateTime.Today%2A?displayProperty=nameWithType>.|  
 |NormalDay|BlackoutDayStates|Tlačítko představuje den, který lze vybrat.|  
 |BlackoutDay|BlackoutDayStates|Tlačítko představuje den, který nelze vybrat.|  
-|Platné|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
+|Platný|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
 |InvalidFocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
 |InvalidUnfocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
   
@@ -104,15 +104,15 @@ Toto téma popisuje styly a šablony pro ovládací prvek <xref:System.Windows.C
 |Zakázáno|CommonStates|<xref:System.Windows.Controls.Primitives.CalendarButton> je zakázaný.|  
 |MouseOver|CommonStates|Ukazatel myši je umístěn na <xref:System.Windows.Controls.Primitives.CalendarButton>.|  
 |Stisknutí|CommonStates|Stiskne se <xref:System.Windows.Controls.Primitives.CalendarButton>.|  
-|Vybráno|SelectionStates|Je vybráno tlačítko.|  
+|Vybrané|SelectionStates|Je vybráno tlačítko.|  
 |Nevybrané|SelectionStates|Tlačítko není vybráno.|  
 |CalendarButtonFocused|CalendarButtonFocusStates|Tlačítko má fokus.|  
 |CalendarButtonUnfocused|CalendarButtonFocusStates|Tlačítko nemá fokus.|  
 |Zaměřil|FocusStates|Tlačítko má fokus.|  
 |Bez fokusu|FocusStates|Tlačítko nemá fokus.|  
 |Aktivní|ActiveStates|Tlačítko je aktivní.|  
-|Termín|ActiveStates|Tlačítko je neaktivní.|  
-|Platné|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
+|Neaktivní|ActiveStates|Tlačítko je neaktivní.|  
+|Platný|ValidationStates|Ovládací prvek používá třídu <xref:System.Windows.Controls.Validation> a vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `false`.|  
 |InvalidFocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
 |InvalidUnfocused|ValidationStates|Vlastnost <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> připojena je `true` má ovládací prvek fokus.|  
   

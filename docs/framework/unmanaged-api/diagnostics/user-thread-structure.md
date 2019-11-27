@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437965"
 ---
 # <a name="user_thread-structure"></a>USER_THREAD – struktura
-Provides information to a debugger about a thread. For more information, see the [INotifySource2::SetNotifyFilter](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-setnotifyfilter-method.md) method.  
+Poskytuje informace ladicímu programu o vlákně. Další informace naleznete v tématu metoda [INotifySource2 –:: setnotifyfilter –](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-setnotifyfilter-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,12 +39,12 @@ typedef struct tagUSER_THREAD
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`pSidBuffer`|Address of thread buffer.|  
-|`dwSidLen`|Length of thread buffer, in bytes.|  
-|`dwTid`|Thread ID.|  
+|`pSidBuffer`|Adresa vyrovnávací paměti vlákna.|  
+|`dwSidLen`|Délka vyrovnávací paměti vlákna (v bajtech).|  
+|`dwTid`|ID vlákna.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** ProtocolNotify2.idl  
+ **Hlavička:** ProtocolNotify2. idl  
   
 ## <a name="see-also"></a>Viz také:
 

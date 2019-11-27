@@ -18,7 +18,7 @@ ms.locfileid: "74353678"
 ---
 # <a name="concatenation-operators-in-visual-basic"></a>Operátory řetězení v jazyce Visual Basic
 
-Concatenation operators join multiple strings into a single string. There are two concatenation operators, `+` and `&`. Both carry out the basic concatenation operation, as the following example shows.
+Operátory zřetězení spojí více řetězců do jednoho řetězce. Existují dva operátory zřetězení, `+` a `&`. Obojí provede základní operaci zřetězení, jak ukazuje následující příklad.
 
 ```vb
 Dim x As String = "Mic" & "ro" & "soft"
@@ -26,24 +26,24 @@ Dim y As String = "Mic" + "ro" + "soft"
 ' The preceding statements set both x and y to "Microsoft".
 ```
 
-These operators can also concatenate `String` variables, as the following example shows.
+Tyto operátory mohou také zřetězit `String` proměnné, jak ukazuje následující příklad.
 
 [!code-vb[VbVbalrOperators#76](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#76)]
 
-## <a name="differences-between-the-two-concatenation-operators"></a>Differences Between the Two Concatenation Operators
+## <a name="differences-between-the-two-concatenation-operators"></a>Rozdíly mezi dvěma operátory zřetězení
 
-The [+ Operator](../../../../visual-basic/language-reference/operators/addition-operator.md) has the primary purpose of adding two numbers. However, it can also concatenate numeric operands with string operands. The `+` operator has a complex set of rules that determine whether to add, concatenate, signal a compiler error, or throw a run-time <xref:System.InvalidCastException> exception.
+[Operátor +](../../../../visual-basic/language-reference/operators/addition-operator.md) má primární účel přidání dvou čísel. Může však také zřetězit číselné operandy pomocí řetězcových operandů. Operátor `+` má komplexní sadu pravidel, která určuje, zda se má přidat, zřetězit, signalizovat chybu kompilátoru nebo vyvolat výjimku za běhu <xref:System.InvalidCastException>.
 
-The [& Operator](../../../../visual-basic/language-reference/operators/concatenation-operator.md) is defined only for `String` operands, and it always widens its operands to `String`, regardless of the setting of `Option Strict`. The `&` operator is recommended for string concatenation because it is defined exclusively for strings and reduces your chances of generating an unintended conversion.
+[Operátor &](../../../../visual-basic/language-reference/operators/concatenation-operator.md) je definován pouze pro `String` operandy a vždy rozšiřuje jeho operandy na `String`, bez ohledu na nastavení `Option Strict`. Operátor `&` je doporučen pro zřetězení řetězců, protože je definován výhradně pro řetězce a snižuje pravděpodobnost vygenerování nezamýšlené konverze.
 
-## <a name="performance-string-and-stringbuilder"></a>Performance: String and StringBuilder
+## <a name="performance-string-and-stringbuilder"></a>Výkon: String a StringBuilder
 
-If you do a significant number of manipulations on a string, such as concatenations, deletions, and replacements, your performance might profit from the <xref:System.Text.StringBuilder> class in the <xref:System.Text> namespace. It takes an extra instruction to create and initialize a <xref:System.Text.StringBuilder> object, and another instruction to convert its final value to a `String`, but you might recover this time because <xref:System.Text.StringBuilder> can perform faster.
+Pokud provedete velký počet manipulace s řetězcem, jako jsou zřetězení, odstranění a náhrady, váš výkon může být ziskem z <xref:System.Text.StringBuilder> třídy v oboru názvů <xref:System.Text>. Vytvoření a inicializace objektu <xref:System.Text.StringBuilder> a další instrukce pro převod konečné hodnoty na `String`, ale můžete tento čas obnovit, protože <xref:System.Text.StringBuilder> může provádět rychleji.
 
 ## <a name="see-also"></a>Viz také:
 
 - [Příkaz Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md)
-- [Types of String Manipulation Methods in Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/types-of-string-manipulation-methods.md)
-- [Arithmetic Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
-- [Comparison Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
-- [Logical and Bitwise Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
+- [Typy metod manipulace s řetězci v Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/types-of-string-manipulation-methods.md)
+- [Aritmetické operátory v Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
+- [Operátory porovnávání v Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
+- [Logické a bitové operátory v Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)

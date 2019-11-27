@@ -12,15 +12,15 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346660"
 ---
 # <a name="type-mismatch-visual-basic"></a>Neshoda typu (Visual Basic)
-You attempted to convert a value to another type in a way that is not valid.  
+Pokusili jste se převést hodnotu na jiný typ způsobem, který není platný.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-1. Check the assignment to make sure it is valid.  
+1. Zkontrolujte přiřazení a ujistěte se, že je platný.  
   
-2. Make sure you did not pass an object to a procedure that expects a single property or value.  
+2. Ujistěte se, že jste nepředali objekt proceduře, který očekává jedinou vlastnost nebo hodnotu.  
   
-3. Make sure you did not use a module or project name where an expression was expected.  
+3. Ujistěte se, že jste nepoužívali název modulu nebo projektu, kde byl očekáván výraz.  
   
 ## <a name="see-also"></a>Viz také:
 

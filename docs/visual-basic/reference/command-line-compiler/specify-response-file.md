@@ -13,7 +13,7 @@ ms.locfileid: "74348554"
 ---
 # <a name="-specify-response-file-visual-basic"></a>@ (Určení souboru odezvy) (Visual Basic)
 
-Specifies a file that contains compiler options and source-code files to compile.
+Určuje soubor, který obsahuje možnosti kompilátoru a soubory zdrojového kódu ke kompilaci.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -21,33 +21,33 @@ Specifies a file that contains compiler options and source-code files to compile
 @response_file
 ```
 
-## <a name="arguments"></a>Arguments
+## <a name="arguments"></a>Argumenty
 
 `response_file`  
-Požadováno. A file that lists compiler options or source-code files to compile. Enclose the file name in quotation marks (" ") if it contains a space.
+Požadováno. Soubor se seznamem možností kompilátoru nebo souborů zdrojového kódu, které mají být zkompilovány. Uzavřete název souboru do uvozovek (""), pokud obsahuje mezeru.
 
 ## <a name="remarks"></a>Poznámky
 
-The compiler processes the compiler options and source-code files specified in a response file as if they had been specified on the command line.
+Kompilátor zpracovává možnosti kompilátoru a soubory zdrojového kódu zadané v souboru odpovědí, jako kdyby byly zadány v příkazovém řádku.
 
-To specify more than one response file in a compilation, specify multiple response-file options, such as the following.
+Chcete-li v kompilaci zadat více než jeden soubor odpovědí, zadejte více možností souboru odpovědi, například následující.
 
 ```console
 @file1.rsp @file2.rsp
 ```
 
-In a response file, multiple compiler options and source-code files can appear on one line. A single compiler-option specification must appear on one line (cannot span multiple lines). Response files can have comments that begin with the `#` symbol.
+V souboru odpovědí se může na jednom řádku objevit více možností kompilátoru a souborů zdrojového kódu. Jedna specifikace možnosti kompilátoru se musí vyskytovat na jednom řádku (nemůže zabírat více řádků). Soubory odpovědí mohou obsahovat komentáře, které začínají symbolem `#`.
 
-You can combine options specified on the command line with options specified in one or more response files. The compiler processes the command options as it encounters them. Therefore, command-line arguments can override previously listed options in response files. Conversely, options in a response file override options listed previously on the command line or in other response files.
+Můžete kombinovat možnosti zadané v příkazovém řádku s možnostmi určenými v jednom nebo více souborech odpovědí. Kompilátor zpracuje možnosti příkazu, jak je nalezne. Proto argumenty příkazového řádku mohou přepsat dříve uvedené možnosti v souborech odpovědí. Naopak možnosti v parametrech přepsání souboru odpovědí uvedených dříve na příkazovém řádku nebo v jiných souborech odpovědí.
 
-Visual Basic provides the Vbc.rsp file, which is located in the same directory as the Vbc.exe file. The Vbc.rsp file is included by default unless the `-noconfig` option is used. For more information, see [-noconfig](../../../visual-basic/reference/command-line-compiler/noconfig.md).
+Visual Basic poskytuje soubor Vbc. rsp, který je umístěn ve stejném adresáři jako soubor Vbc. exe. Pokud není použita možnost `-noconfig`, je soubor Vbc. rsp součástí výchozího nastavení. Další informace najdete v tématu [-config](../../../visual-basic/reference/command-line-compiler/noconfig.md).
 
 > [!NOTE]
-> The `@` option is not available from within the Visual Studio development environment; it is available only when compiling from the command line.
+> Možnost `@` není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.
 
 ## <a name="example"></a>Příklad
 
-The following lines are from a sample response file.
+Následující řádky jsou z ukázkového souboru odezvy.
 
 ```console
 # build the first output file
@@ -59,7 +59,7 @@ source2.vb
 
 ## <a name="example"></a>Příklad
 
-The following example demonstrates how to use the `@` option with the response file named `File1.rsp`.
+Následující příklad ukazuje, jak použít možnost `@` se souborem odpovědí s názvem `File1.rsp`.
 
 ```console
 vbc @file1.rsp
@@ -67,6 +67,6 @@ vbc @file1.rsp
 
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
 - [-noconfig](../../../visual-basic/reference/command-line-compiler/noconfig.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

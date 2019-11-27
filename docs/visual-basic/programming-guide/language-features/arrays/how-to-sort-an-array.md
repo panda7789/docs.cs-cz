@@ -1,5 +1,5 @@
 ---
-title: 'How to: Sort An Array'
+title: 'Postupy: řazení pole'
 ms.date: 07/20/2015
 f1_keywords:
 - Array.Sort
@@ -14,13 +14,13 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351857"
 ---
-# <a name="how-to-sort-an-array-in-visual-basic"></a>How to: sort an array in Visual Basic
+# <a name="how-to-sort-an-array-in-visual-basic"></a>Postupy: řazení pole v Visual Basic
 
-This article shows an example of how to sort an array of strings in Visual Basic.
+Tento článek ukazuje příklad řazení pole řetězců v Visual Basic.
 
 ## <a name="example"></a>Příklad
 
-This example declares an array of `String` objects named `zooAnimals`, populates it, and then sorts it alphabetically:
+Tento příklad deklaruje pole objektů `String` s názvem `zooAnimals`, naplní ho a pak ho seřadí podle abecedy:
   
 ```vb
 Private Sub SortAnimals()
@@ -32,13 +32,13 @@ Private Sub SortAnimals()
 End Sub
 ```
 
-## <a name="robust-programming"></a>Robust programming
+## <a name="robust-programming"></a>Robustní programování
 
 Následující podmínky mohou způsobit výjimku:
 
-- Array is empty (<xref:System.ArgumentNullException> class).
-- Array is multidimensional (<xref:System.RankException> class).
-- One or more elements of the array don't implement the <xref:System.IComparable> interface (<xref:System.InvalidOperationException> class).
+- Pole je prázdné (<xref:System.ArgumentNullException> třídy).
+- Pole je vícerozměrné (<xref:System.RankException> třídy).
+- Jeden nebo více prvků pole neimplementuje rozhraní <xref:System.IComparable> (<xref:System.InvalidOperationException> třídy).
 
 ## <a name="see-also"></a>Viz také:
 

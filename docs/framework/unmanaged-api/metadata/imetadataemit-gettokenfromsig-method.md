@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74434312"
 ---
 # <a name="imetadataemitgettokenfromsig-method"></a>IMetaDataEmit::GetTokenFromSig – metoda
-Gets a token for the specified metadata signature.  
+Získá token pro zadaný podpis metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,22 +37,22 @@ HRESULT GetTokenFromSig (
   
 ## <a name="parameters"></a>Parametry  
  `pvSig`  
- [in] The signature to be persisted and stored.  
+ pro Signatura, která se má zachovat a uložit.  
   
  `cbSig`  
- [in] The count of bytes in `pvSig`.  
+ pro Počet bajtů v `pvSig`.  
   
  `pmsig`  
- [out] The `mdSignature` token assigned.  
+ mimo Byl přiřazen token `mdSignature`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

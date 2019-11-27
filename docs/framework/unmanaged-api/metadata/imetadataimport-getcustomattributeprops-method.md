@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437645"
 ---
 # <a name="imetadataimportgetcustomattributeprops-method"></a>IMetaDataImport::GetCustomAttributeProps – metoda
-Gets the value of the custom attribute, given its metadata token.  
+Získá hodnotu vlastního atributu s ohledem na jeho token metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,31 +39,31 @@ HRESULT GetCustomAttributeProps (
   
 ## <a name="parameters"></a>Parametry  
  `cv`  
- [in] A metadata token that represents the custom attribute to be retrieved.  
+ pro Token metadat, který představuje vlastní atribut, který má být načten.  
   
  `ptkObj`  
- [out, optional] A metadata token representing the object that the custom attribute modifies. This value can be any type of metadata token except `mdCustomAttribute`.  
+ [out, volitelné] Token metadat představující objekt, který upravuje vlastní atribut. Tato hodnota může být jakýkoli typ tokenu metadat s výjimkou `mdCustomAttribute`.  
   
  `ptkType`  
- [out, optional] An `mdMethodDef` or `mdMemberRef` metadata token representing the <xref:System.Type> of the returned custom attribute.  
+ [out, volitelné] Token metadat `mdMethodDef` nebo `mdMemberRef` reprezentující <xref:System.Type> vráceného vlastního atributu.  
   
  `ppBlob`  
- [out, optional] A pointer to an array of data that is the value of the custom attribute.  
+ [out, volitelné] Ukazatel na pole dat, které je hodnotou vlastního atributu.  
   
  `pcbSize`  
- [out, optional] The size in bytes of the data returned in *`ppBlob`.  
+ [out, volitelné] Velikost v bajtech dat vrácených ve formátu *`ppBlob`.  
   
 ## <a name="remarks"></a>Poznámky  
- A custom attribute is stored as an array of data, the format which is understood by the metadata engine.  
+ Vlastní atribut je uložen jako pole dat, formátu srozumitelného modulem metadat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -30,10 +30,10 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350936"
 ---
 # <a name="like-operator-visual-basic"></a>Like – operátor (Visual Basic)
-Compares a string against a pattern.  
+Porovná řetězec se vzorem.  
 
 > [!IMPORTANT]
-> The `Like` operator is currently not supported in .NET Core and .NET Standard projects.
+> Operátor `Like` v současnosti není v projektech .NET Core a .NET Standard podporován.
 
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,65 +43,65 @@ result = string Like pattern
   
 ## <a name="parts"></a>Součásti  
  `result`  
- Požadováno. Any `Boolean` variable. The result is a `Boolean` value indicating whether or not the `string` satisfies the `pattern`.  
+ Požadováno. Jakákoli `Boolean`ová proměnná. Výsledkem je `Boolean` hodnota označující, zda `string` splňuje `pattern`.  
   
  `string`  
- Požadováno. Any `String` expression.  
+ Požadováno. Libovolný výraz `String`.  
   
  `pattern`  
- Požadováno. Any `String` expression conforming to the pattern-matching conventions described in "Remarks."  
+ Požadováno. Libovolný výraz `String`, který odpovídá konvencím porovnávání vzorů popsaných v části "poznámky".  
   
 ## <a name="remarks"></a>Poznámky  
- If the value in `string` satisfies the pattern contained in `pattern`, `result` is `True`. If the string does not satisfy the pattern, `result` is `False`. If both `string` and `pattern` are empty strings, the result is `True`.  
+ Pokud hodnota v `string` splňuje vzor obsažený v `pattern`, `result` je `True`. Pokud řetězec nevyhovuje vzoru, `result` je `False`. Pokud jsou `string` i `pattern` prázdné řetězce, výsledek je `True`.  
   
-## <a name="comparison-method"></a>Comparison Method  
- The behavior of the `Like` operator depends on the [Option Compare Statement](../../../visual-basic/language-reference/statements/option-compare-statement.md). The default string comparison method for each source file is `Option Compare Binary`.  
+## <a name="comparison-method"></a>Metoda porovnání  
+ Chování operátoru `Like` závisí na [příkazu Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md). Výchozí metoda porovnání řetězců pro každý zdrojový soubor je `Option Compare Binary`.  
   
-## <a name="pattern-options"></a>Pattern Options  
- Built-in pattern matching provides a versatile tool for string comparisons. The pattern-matching features allow you to match each character in `string` against a specific character, a wildcard character, a character list, or a character range. The following table shows the characters allowed in `pattern` and what they match.  
+## <a name="pattern-options"></a>Možnosti vzorku  
+ Předdefinované porovnávání vzorů poskytuje univerzální nástroj pro porovnávání řetězců. Funkce porovnávání se vzorci vám umožní porovnávat jednotlivé znaky v `string` proti určitému znaku, zástupnému znaku, seznamu znaků nebo rozsahu znaků. V následující tabulce jsou uvedeny znaky povolené v `pattern` a co se shodují.  
   
-|Characters in `pattern`|Matches in `string`|  
+|Znaky v `pattern`|Shody v `string`|  
 |-----------------------------|-------------------------|  
-|`?`|Any single character|  
-|`*`|Zero or more characters|  
-|`#`|Any single digit (0–9)|  
-|`[charlist]`|Any single character in `charlist`|  
-|`[!charlist]`|Any single character not in `charlist`|  
+|`?`|Libovolný jeden znak|  
+|`*`|Nula nebo více znaků|  
+|`#`|Jakákoli jedna číslice (0 – 9)|  
+|`[charlist]`|Libovolný jeden znak v `charlist`|  
+|`[!charlist]`|Libovolný jeden znak, který není v `charlist`|  
   
-## <a name="character-lists"></a>Character Lists  
- A group of one or more characters (`charlist`) enclosed in brackets (`[ ]`) can be used to match any single character in `string` and can include almost any character code, including digits.  
+## <a name="character-lists"></a>Seznamy znaků  
+ Skupina jednoho nebo více znaků (`charlist`) uzavřená v závorkách (`[ ]`) se dá použít k vyhledání libovolného jednoho znaku v `string` a může obsahovat skoro jakýkoli kód znaku, včetně číslic.  
   
- An exclamation point (`!`) at the beginning of `charlist` means that a match is made if any character except the characters in `charlist` is found in `string`. When used outside brackets, the exclamation point matches itself.  
+ Vykřičník (`!`) na začátku `charlist` znamená, že je provedena shoda, pokud se v `string`nachází libovolný znak kromě znaků v `charlist`. Při použití mimo hranaté závorky se vykřičník shoduje.  
   
 ## <a name="special-characters"></a>Speciální znaky  
- To match the special characters left bracket (`[`), question mark (`?`), number sign (`#`), and asterisk (`*`), enclose them in brackets. The right bracket (`]`) cannot be used within a group to match itself, but it can be used outside a group as an individual character.  
+ Aby se shodovaly se speciálními znaky, levou hranatou závorku (`[`), otazníkem (`?`), číslem znaménkem (`#`) a hvězdičkou (`*`), vložte je do hranatých závorek. Pravou hranatou závorku (`]`) nelze použít v rámci skupiny, aby se shodovala se sebou, ale lze ji použít mimo skupinu jako jednotlivý znak.  
   
- The character sequence `[]` is considered a zero-length string (`""`). However, it cannot be part of a character list enclosed in brackets. If you want to check whether a position in `string` contains one of a group of characters or no character at all, you can use `Like` twice. For an example, see [How to: Match a String against a Pattern](../../../visual-basic/programming-guide/language-features/operators-and-expressions/how-to-match-a-string-against-a-pattern.md).  
+ Sekvence znaků `[]` je považována za řetězec s nulovou délkou (`""`). Nemůže však být součástí seznamu znaků uzavřený v závorkách. Chcete-li ověřit, zda pozice v `string` obsahuje jednu ze skupin znaků nebo vůbec žádný znak, můžete `Like` dvakrát použít. Příklad naleznete v tématu [How to: Match String to a vzor](../../../visual-basic/programming-guide/language-features/operators-and-expressions/how-to-match-a-string-against-a-pattern.md).  
   
-## <a name="character-ranges"></a>Character Ranges  
- By using a hyphen (`–`) to separate the lower and upper bounds of the range, `charlist` can specify a range of characters. For example, `[A–Z]` results in a match if the corresponding character position in `string` contains any character within the range `A`–`Z`, and `[!H–L]` results in a match if the corresponding character position contains any character outside the range `H`–`L`.  
+## <a name="character-ranges"></a>Rozsahy znaků  
+ Použitím spojovníku (`–`) k oddělení dolních a horních mezí rozsahu lze `charlist` zadat rozsah znaků. Například `[A–Z]` má za následek porovnávání, pokud odpovídající pozice znaku v `string` obsahuje libovolný znak v rozsahu `A`–`Z`a `[!H–L]` výsledek shody, pokud odpovídající pozice znaku obsahuje libovolný znak mimo rozsah `H`–`L`.  
   
- When you specify a range of characters, they must appear in ascending sort order, that is, from lowest to highest. Thus, `[A–Z]` is a valid pattern, but `[Z–A]` is not.  
+ Když zadáte rozsah znaků, musí být ve vzestupném pořadí řazení, tj. od nejnižší po nejvyšší. Proto je `[A–Z]` platný vzor, ale `[Z–A]` není.  
   
-### <a name="multiple-character-ranges"></a>Multiple Character Ranges  
- To specify multiple ranges for the same character position, put them within the same brackets without delimiters. For example, `[A–CX–Z]` results in a match if the corresponding character position in `string` contains any character within either the range `A`–`C` or the range `X`–`Z`.  
+### <a name="multiple-character-ranges"></a>Více rozsahů znaků  
+ Chcete-li zadat více rozsahů pro stejné umístění znaků, vložte je do stejné hranaté závorky bez oddělovačů. Například `[A–CX–Z]` má za následek porovnávání, pokud odpovídající pozice znaku v `string` obsahuje libovolný znak v rámci rozsahu `A`–`C` nebo rozsahu `X`–`Z`.  
   
-### <a name="usage-of-the-hyphen"></a>Usage of the Hyphen  
- A hyphen (`–`) can appear either at the beginning (after an exclamation point, if any) or at the end of `charlist` to match itself. In any other location, the hyphen identifies a range of characters delimited by the characters on either side of the hyphen.  
+### <a name="usage-of-the-hyphen"></a>Použití pomlčky  
+ Spojovník (`–`) se může objevit buď na začátku (za vykřičníkem), nebo na konci `charlist`, aby se shodovaly. V jakémkoli jiném umístění pomlčka identifikuje rozsah znaků oddělených znaky na obou stranách pomlčky.  
   
-## <a name="collating-sequence"></a>Collating Sequence  
- The meaning of a specified range depends on the character ordering at run time, as determined by `Option Compare` and the locale setting of the system the code is running on. With `Option Compare Binary`, the range `[A–E]` matches `A`, `B`, `C`, `D`, and `E`. With `Option Compare Text`, `[A–E]` matches `A`, `a`, `À`, `à`, `B`, `b`, `C`, `c`, `D`, `d`, `E`, and `e`. The range does not match `Ê` or `ê` because accented characters collate after unaccented characters in the sort order.  
+## <a name="collating-sequence"></a>Sekvence řazení  
+ Význam zadaného rozsahu závisí na řazení znaků v době běhu, jak je určeno `Option Compare` a nastavení národního prostředí systému, na kterém je spuštěn kód. U `Option Compare Binary`rozsah `[A–E]` odpovídá `A`, `B`, `C`, `D`a `E`. U `Option Compare Text``[A–E]` odpovídá `A`, `a`, `À`, `à`, `B`, `b`, `C`, `c`, `D`, `d`, `E`a `e`. Rozsah se neshoduje s `Ê` ani `ê`, protože zvýrazněné znaky se v pořadí řazení vyhodnotí za znaky s diakritikou.  
   
-## <a name="digraph-characters"></a>Digraph Characters  
- In some languages, there are alphabetic characters that represent two separate characters. For example, several languages use the character `æ` to represent the characters `a` and `e` when they appear together. The `Like` operator recognizes that the single digraph character and the two individual characters are equivalent.  
+## <a name="digraph-characters"></a>Znaky grafu  
+ V některých jazycích existují abecední znaky, které představují dva samostatné znaky. Například několik jazyků používá znak `æ` pro reprezentaci znaků `a` a `e`, když se zobrazí společně. Operátor `Like` rozpozná, že jediný znak v grafu a dva jednotlivé znaky jsou ekvivalentní.  
   
- When a language that uses a digraph character is specified in the system locale settings, an occurrence of the single digraph character in either `pattern` or `string` matches the equivalent two-character sequence in the other string. Similarly, a digraph character in `pattern` enclosed in brackets (by itself, in a list, or in a range) matches the equivalent two-character sequence in `string`.  
+ Pokud je v nastavení národního prostředí systému určen jazyk, který používá znak rozgrafu, je výskyt jednoduchého znaku grafu v `pattern` nebo `string` odpovídat ekvivalentní sekvenci dvou znaků v druhém řetězci. Podobně znak grafu v `pattern` uzavřený v závorkách (sám o sobě, v seznamu nebo v rozsahu) odpovídá ekvivalentní posloupnosti dvou znaků v `string`.  
   
 ## <a name="overloading"></a>Přetížení  
- The `Like` operator can be *overloaded*, which means that a class or structure can redefine its behavior when an operand has the type of that class or structure. If your code uses this operator on such a class or structure, be sure you understand its redefined behavior. For more information, see [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ Operátor `Like` lze přetížit, což znamená, že třída nebo struktura může předefinovat své *chování, pokud*má operand typ této třídy nebo struktury. Pokud váš kód používá tento operátor na takové třídě nebo struktuře, ujistěte se, že rozumíte jeho předefinovanému chování. Další informace naleznete v tématu [procedury operátorů](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Příklad  
- This example uses the `Like` operator to compare strings to various patterns. The results go into a `Boolean` variable indicating whether each string satisfies the pattern.  
+ V tomto příkladu se používá operátor `Like` k porovnání řetězců s různými vzory. Výsledky přejdou do `Boolean` proměnné, která určuje, jestli každý řetězec splňuje vzor.  
   
  [!code-vb[VbVbalrOperators#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#30)]  
   
@@ -110,7 +110,7 @@ result = string Like pattern
 - <xref:Microsoft.VisualBasic.Strings.InStr%2A>
 - <xref:Microsoft.VisualBasic.Strings.StrComp%2A>
 - [Operátory porovnání](../../../visual-basic/language-reference/operators/comparison-operators.md)
-- [Operator Precedence in Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
+- [Priorita operátorů v Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
 - [Příkaz Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md)
 - [Operátory a výrazy](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)

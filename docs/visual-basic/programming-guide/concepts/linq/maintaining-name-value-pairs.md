@@ -9,32 +9,32 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74331668"
 ---
-# <a name="maintaining-namevalue-pairs-visual-basic"></a>Maintaining Name/Value Pairs (Visual Basic)
-Many applications have to maintain information that is best kept as name/value pairs. This information might be configuration information or global settings. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] contains some methods that make it easy to keep a set of name/value pairs. You can either keep the information as attributes or as a set of child elements.  
+# <a name="maintaining-namevalue-pairs-visual-basic"></a>Udržování párů název/hodnota (Visual Basic)
+Mnoho aplikací musí uchovávat informace, které jsou nejvhodnější pro páry název/hodnota. Tyto informace můžou být konfigurační informace nebo globální nastavení. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] obsahuje některé metody, které usnadňují zachování sady párů název/hodnota. Tyto informace můžete zachovat jako atributy nebo jako sadu podřízených prvků.  
   
- One difference between keeping the information as attributes or as child elements is that attributes have the constraint that there can be only one attribute with a particular name for an element. This limitation does not apply to child elements.  
+ Jeden rozdíl mezi uchováváním informací jako atributů nebo jako podřízených elementů je, že atributy mají omezení, že může existovat pouze jeden atribut s určitým názvem pro element. Toto omezení se nevztahuje na podřízené prvky.  
   
-## <a name="setattributevalue-and-setelementvalue"></a>SetAttributeValue and SetElementValue  
- The two methods that facilitate keeping name/value pairs are <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> and <xref:System.Xml.Linq.XElement.SetElementValue%2A>. These two methods have similar semantics.  
+## <a name="setattributevalue-and-setelementvalue"></a>SetAttributeValue a SetElementValue  
+ Tyto dvě metody, které pomáhají zachovat páry název/hodnota, jsou <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> a <xref:System.Xml.Linq.XElement.SetElementValue%2A>. Tyto dvě metody mají podobnou sémantiku.  
   
- <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> can add, modify, or remove attributes of an element.  
+ <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> může přidat, upravit nebo odebrat atributy prvku.  
   
-- If you call <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> with a name of an attribute that does not exist, the method creates a new attribute and adds it to the specified element.  
+- Pokud zavoláte <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> s názvem atributu, který neexistuje, metoda vytvoří nový atribut a přidá jej do zadaného elementu.  
   
-- If you call <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> with a name of an existing attribute and with some specified content, the contents of the attribute are replaced with the specified content.  
+- Pokud zavoláte <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> s názvem existujícího atributu a s určitým zadaným obsahem, obsah atributu se nahradí zadaným obsahem.  
   
-- If you call <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> with a name of an existing attribute, and specify null for the content, the attribute is removed from its parent.  
+- Pokud zavoláte <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> s názvem existujícího atributu a pro obsah zadáte hodnotu null, atribut se odebere z nadřazeného objektu.  
   
- <xref:System.Xml.Linq.XElement.SetElementValue%2A> can add, modify, or remove child elements of an element.  
+ <xref:System.Xml.Linq.XElement.SetElementValue%2A> může přidat, upravit nebo odebrat podřízené prvky elementu.  
   
-- If you call <xref:System.Xml.Linq.XElement.SetElementValue%2A> with a name of a child element that does not exist, the method creates a new element and adds it to the specified element.  
+- Pokud zavoláte <xref:System.Xml.Linq.XElement.SetElementValue%2A> s názvem podřízeného prvku, který neexistuje, metoda vytvoří nový prvek a přidá jej do zadaného elementu.  
   
-- If you call <xref:System.Xml.Linq.XElement.SetElementValue%2A> with a name of an existing element and with some specified content, the contents of the element are replaced with the specified content.  
+- Pokud zavoláte <xref:System.Xml.Linq.XElement.SetElementValue%2A> s názvem existujícího prvku a s určitým zadaným obsahem, obsah elementu se nahradí zadaným obsahem.  
   
-- If you call <xref:System.Xml.Linq.XElement.SetElementValue%2A> with a name of an existing element, and specify null for the content, the element is removed from its parent.  
+- Pokud zavoláte <xref:System.Xml.Linq.XElement.SetElementValue%2A> s názvem existujícího prvku a pro obsah zadáte hodnotu null, prvek je odebrán z nadřazeného objektu.  
   
 ## <a name="example"></a>Příklad  
- The following example creates an element with no attributes. It then uses the <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> method to create and maintain a list of name/value pairs.  
+ Následující příklad vytvoří prvek bez atributů. Pak pomocí metody <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> vytvoří a udržuje seznam párů název/hodnota.  
   
 ```vb  
 ' Create an element with no content.  
@@ -57,7 +57,7 @@ root.SetAttributeValue("DefaultColor", Nothing)
 Console.WriteLine(root)  
 ```  
   
- This example produces the following output:  
+ Tento příklad vytvoří následující výstup:  
   
 ```xml  
 <Root Top="22" Left="20" Bottom="122" Right="300" DefaultColor="Color.Red" />  
@@ -66,7 +66,7 @@ Console.WriteLine(root)
 ```  
   
 ## <a name="example"></a>Příklad  
- The following example creates an element with no child elements. It then uses the <xref:System.Xml.Linq.XElement.SetElementValue%2A> method to create and maintain a list of name/value pairs.  
+ Následující příklad vytvoří prvek bez podřízených elementů. Pak pomocí metody <xref:System.Xml.Linq.XElement.SetElementValue%2A> vytvoří a udržuje seznam párů název/hodnota.  
   
 ```vb  
 ' Create an element with no content.  
@@ -91,7 +91,7 @@ root.SetElementValue("DefaultColor", Nothing)
 Console.WriteLine(root)  
 ```  
   
- This example produces the following output:  
+ Tento příklad vytvoří následující výstup:  
   
 ```xml  
 <Root>  
@@ -122,4 +122,4 @@ Console.WriteLine(root)
 
 - <xref:System.Xml.Linq.XElement.SetAttributeValue%2A>
 - <xref:System.Xml.Linq.XElement.SetElementValue%2A>
-- [Modifying XML Trees (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
+- [Úprava stromů XML (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)

@@ -25,20 +25,20 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74345875"
 ---
 # <a name="implements-clause-visual-basic"></a>Implements – klauzule (Visual Basic)
-Indicates that a class or structure member is providing the implementation for a member defined in an interface.  
+Indikuje, že člen třídy nebo struktury poskytuje implementaci pro člena definovaného v rozhraní.  
   
 ## <a name="remarks"></a>Poznámky  
-The `Implements` keyword is not the same as the [Implements Statement](../../../visual-basic/language-reference/statements/implements-statement.md). You use the `Implements` statement to specify that a class or structure implements one or more interfaces, and then for each member you use the `Implements` keyword to specify which interface and which member it implements.
+Klíčové slovo `Implements` není stejné jako [příkaz Implements](../../../visual-basic/language-reference/statements/implements-statement.md). Pomocí příkazu `Implements` určíte, že třída nebo struktura implementuje jedno nebo více rozhraní, a poté pro každého člena, který použijete klíčové slovo `Implements` k určení, které rozhraní a který člen implementuje.
 
-If a class or structure implements an interface, it must include the `Implements` statement immediately after the [Class Statement](../../../visual-basic/language-reference/statements/class-statement.md) or [Structure Statement](../../../visual-basic/language-reference/statements/structure-statement.md), and it must implement all the members defined by the interface.
+Pokud třída nebo struktura implementuje rozhraní, musí obsahovat příkaz `Implements` ihned po [příkazu třídy](../../../visual-basic/language-reference/statements/class-statement.md) nebo [příkazu struktury](../../../visual-basic/language-reference/statements/structure-statement.md)a musí implementovat všechny členy definované rozhraním.
 
-## <a name="reimplementation"></a>Reimplementation  
-In a derived class, you can reimplement an interface member that the base class has already implemented. This is different from overriding the base class member in the following respects:
+## <a name="reimplementation"></a>Implementaci  
+V odvozené třídě můžete znovu implementovat člena rozhraní, který je základní třídou již implementován. To se liší od přepsání člena základní třídy v následujících ohledech:
 
-- The base class member does not need to be [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md) to be reimplemented.
-- You can reimplement the member with a different name.
+- Člen základní třídy není nutné [přepsat](../../../visual-basic/language-reference/modifiers/overridable.md) , aby jej bylo možné znovu implementovat.
+- Člena můžete znovu implementovat s jiným názvem.
 
-The `Implements` keyword can be used in the following contexts:
+Klíčové slovo `Implements` lze použít v následujících kontextech:
 
 - [Příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md)
 - [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)

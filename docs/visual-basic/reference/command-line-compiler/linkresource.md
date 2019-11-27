@@ -16,8 +16,8 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74335483"
 ---
-# <a name="-linkresource-visual-basic"></a>-linkresource (Visual Basic)
-Creates a link to a managed resource.  
+# <a name="-linkresource-visual-basic"></a>-linkresource – (Visual Basic)
+Vytvoří odkaz na spravovaný prostředek.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -25,35 +25,35 @@ Creates a link to a managed resource.
 -linkresource:filename[,identifier[,public|private]]  
 ```
 
-or  
+nebo  
 
 ```console
 -linkres:filename[,identifier[,public|private]]  
 ```  
   
-## <a name="arguments"></a>Arguments  
+## <a name="arguments"></a>Argumenty  
  `filename`  
- Požadováno. The resource file to link to the assembly. If the file name contains a space, enclose the name in quotation marks (" ").  
+ Požadováno. Soubor prostředků, který má být propojen se sestavením. Pokud název souboru obsahuje mezeru, uzavřete název do uvozovek ("").  
   
  `identifier`  
- Volitelné. The logical name for the resource. The name that is used to load the resource. The default is the name of the file. Optionally, you can specify whether the file is public or private in the assembly manifest, for example: `-linkres:filename.res,myname.res,public`. By default, `filename` is public in the assembly.  
+ Volitelná. Logický název prostředku. Název, který se použije k načtení prostředku. Výchozí hodnota je název souboru. Volitelně můžete určit, zda je soubor v manifestu sestavení veřejný nebo soukromý, například: `-linkres:filename.res,myname.res,public`. Ve výchozím nastavení je `filename` veřejné v sestavení.  
   
 ## <a name="remarks"></a>Poznámky  
- The `-linkresource` option does not embed the resource file in the output file; use the `-resource` option to do this.  
+ Možnost `-linkresource` nevloží soubor prostředků do výstupního souboru; k tomu slouží možnost `-resource`.  
   
- The `-linkresource` option requires one of the `-target` options other than `-target:module`.  
+ Možnost `-linkresource` vyžaduje jednu z `-target` jiných možností než `-target:module`.  
   
- If `filename` is a .NET Framework resource file created, for example, by the [Resgen.exe (Resource File Generator)](../../../framework/tools/resgen-exe-resource-file-generator.md) or in the development environment, it can be accessed with members in the <xref:System.Resources> namespace. (For more information, see <xref:System.Resources.ResourceManager>.) To access all other resources at run time, use the methods that begin with `GetManifestResource` in the <xref:System.Reflection.Assembly> class.  
+ Pokud `filename` je soubor prostředků .NET Framework vytvořený například pomocí nástroje [Resgen. exe (generátor zdrojového souboru)](../../../framework/tools/resgen-exe-resource-file-generator.md) nebo ve vývojovém prostředí, lze k němu přistupovat pomocí členů v oboru názvů <xref:System.Resources>. (Další informace najdete v tématu <xref:System.Resources.ResourceManager>.) Pro přístup ke všem dalším prostředkům v době běhu použijte metody, které začínají na `GetManifestResource` ve třídě <xref:System.Reflection.Assembly>.  
   
- The file name can be any file format. For example, you may want to make a native DLL part of the assembly, so that it can be installed into the global assembly cache and accessed from managed code in the assembly.  
+ Název souboru může být libovolný formát souboru. Například můžete chtít vytvořit nativní knihovnu DLL součásti sestavení, aby mohla být nainstalována do globální mezipaměti sestavení (GAC) a zpřístupněna ze spravovaného kódu v sestavení.  
   
- The short form of `-linkresource` is `-linkres`.  
+ Krátká forma `-linkresource` je `-linkres`.  
   
 > [!NOTE]
-> The `-linkresource` option is not available from the Visual Studio development environment; it is available only when you compile from the command line.  
+> Možnost `-linkresource` není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.  
   
 ## <a name="example"></a>Příklad  
- The following code compiles `in.vb` and links to resource file `rf.resource`.  
+ Následující kód zkompiluje `in.vb` a vytvoří odkazy na soubor prostředků `rf.resource`.  
   
 ```console  
 vbc -linkresource:rf.resource in.vb  
@@ -61,7 +61,7 @@ vbc -linkresource:rf.resource in.vb
   
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Command-Line Compiler](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)
-- [-resource (Visual Basic)](../../../visual-basic/reference/command-line-compiler/resource.md)
+- [Visual Basic Kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)
+- [-Target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)
+- [-Resource (Visual Basic)](../../../visual-basic/reference/command-line-compiler/resource.md)
 - [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

@@ -9,24 +9,24 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346567"
 ---
-# <a name="querying-xml-trees-visual-basic"></a>Querying XML Trees (Visual Basic)
-This section provides examples of [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] queries.  
+# <a name="querying-xml-trees-visual-basic"></a>Dotazování na stromy XML (Visual Basic)
+V této části najdete příklady dotazů [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
   
- For more information about writing [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] queries, see [Getting Started with LINQ in Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md).  
+ Další informace o psaní [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazů naleznete v tématu [Začínáme with LINQ in Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md).  
   
- After you have instantiated an XML tree, writing queries is the most effective way to extract data from the tree. Also, querying combined with functional construction enables you to generate a new XML document that has a different shape from the original document.  
+ Po vytvoření instance stromu XML je zápis dotazů nejúčinnějším způsobem, jak extrahovat data ze stromu. Dotazování v kombinaci se strukturou funkční konstrukce vám také umožňuje vygenerovat nový dokument XML, který má jiný tvar z původního dokumentu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
 |Téma|Popis|  
 |-----------|-----------------|  
-|[Basic Queries (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)|Provides common examples of querying XML trees.|  
-|[Projections and Transformations (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)|Provides common examples of projecting from and transforming XML trees.|  
-|[Advanced Query Techniques (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)|Provides query techniques that are useful in more advanced scenarios.|  
-|[LINQ to XML for XPath Users (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)|Presents a number of XPath expressions and their [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] equivalents.|  
-|[Pure Functional Transformations of XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/pure-functional-transformations-of-xml.md)|Presents a small tutorial on writing queries in the style of functional programming.|  
+|[Základní dotazy (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)|Poskytuje běžné příklady pro dotazování stromů XML.|  
+|[Projekce a transformace (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)|Poskytuje běžné příklady pro projekci a transformaci stromů XML.|  
+|[Pokročilé techniky dotazů (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)|Poskytuje techniky dotazů, které jsou užitečné v pokročilejších scénářích.|  
+|[LINQ to XML pro uživatele XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)|Prezentuje počet výrazů XPath a jejich ekvivalenty [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].|  
+|[Čistě funkční transformace jazyka XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/pure-functional-transformations-of-xml.md)|Prezentuje malý kurz zápisu dotazů ve stylu funkčního programování.|  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Programming Guide (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)
-- [Getting Started with LINQ in Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)
+- [Průvodce programováním (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)
+- [Začínáme pomocí LINQ v Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)

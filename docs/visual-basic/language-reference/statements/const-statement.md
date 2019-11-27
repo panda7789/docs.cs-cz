@@ -15,7 +15,7 @@ ms.locfileid: "74354125"
 ---
 # <a name="const-statement-visual-basic"></a>Const – příkaz (Visual Basic)
 
-Declares and defines one or more constants.
+Deklaruje a definuje jednu nebo více konstant.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -27,82 +27,82 @@ Const constantlist
 ## <a name="parts"></a>Součásti
 
 `attributelist`  
-Volitelné. List of attributes that apply to all the constants declared in this statement. See [Attribute List](../../../visual-basic/language-reference/statements/attribute-list.md) in angle brackets ("`<`" and "`>`").
+Volitelná. Seznam atributů, které se vztahují na všechny konstanty deklarované v tomto příkazu. Viz [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md) v lomených závorkách ("`<`" a "`>`").
 
 `accessmodifier`  
-Volitelné. Use this to specify what code can access these constants. Can be [Public](../../../visual-basic/language-reference/modifiers/public.md), [Protected](../../../visual-basic/language-reference/modifiers/protected.md), [Friend](../../../visual-basic/language-reference/modifiers/friend.md), [Protected Friend](../modifiers/protected-friend.md), [Private](../../../visual-basic/language-reference/modifiers/private.md), or [Private Protected](../../language-reference/modifiers/private-protected.md).
+Volitelná. Toto použijte k určení, ke kterému kódu má přístup k těmto konstantám. Může být [Veřejná](../../../visual-basic/language-reference/modifiers/public.md), [chráněná](../../../visual-basic/language-reference/modifiers/protected.md), [Friend](../../../visual-basic/language-reference/modifiers/friend.md), [Protected Friend](../modifiers/protected-friend.md), [Private](../../../visual-basic/language-reference/modifiers/private.md)nebo [Private Protected](../../language-reference/modifiers/private-protected.md).
 
 `Shadows`  
-Volitelné. Use this to redeclare and hide a programming element in a base class. See [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md).
+Volitelná. Použijte k předeklaraci a skrytí programovacího prvku v základní třídě. Viz [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md).
 
 `constantlist`  
-Požadováno. List of constants being declared in this statement.
+Požadováno. Seznam konstant, které jsou deklarovány v tomto příkazu.
 
 `constant` `[ ,` `constant` `... ]`
 
-Each `constant` has the following syntax and parts:
+Každý `constant` má následující syntaxi a části:
 
 `constantname` `[ As` `datatype` `] =` `initializer`
 
-|Part|Popis|
+|Částí|Popis|
 |----------|-----------------|
-|`constantname`|Požadováno. Name of the constant. See [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|
-|`datatype`|Required if `Option Strict` is `On`. Data type of the constant.|
-|`initializer`|Požadováno. Expression that is evaluated at compile time and assigned to the constant.|
+|`constantname`|Požadováno. Název konstanty. Viz [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|
+|`datatype`|Vyžaduje se, pokud `Option Strict` `On`. Datový typ konstanty.|
+|`initializer`|Požadováno. Výraz vyhodnocený v době kompilace a přiřazený konstantě|
 
 ## <a name="remarks"></a>Poznámky
 
-If you have a value that never changes in your application, you can define a named constant and use it in place of a literal value. A name is easier to remember than a value. You can define the constant just once and use it in many places in your code. If in a later version you need to redefine the value, the `Const` statement is the only place you need to make a change.
+Pokud máte hodnotu, která se ve vaší aplikaci nikdy nemění, můžete definovat pojmenovanou konstantu a použít ji místo hodnoty literálu. Název je snazší pamatovat než hodnota. Konstantu můžete definovat pouze jednou a použít ji na mnoha místech kódu. Pokud v novější verzi potřebujete předefinovat hodnotu, je příkaz `Const` jediným místem, které potřebujete k provedení změny.
 
-You can use `Const` only at module or procedure level. This means the *declaration context* for a variable must be a class, structure, module, procedure, or block, and cannot be a source file, namespace, or interface. For more information, see [Declaration Contexts and Default Access Levels](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).
+`Const` lze použít pouze v modulu nebo v úrovni procedury. To znamená, že *kontext deklarace* proměnné musí být třída, struktura, modul, procedura nebo blok a nemůže se jednat o zdrojový soubor, obor názvů nebo rozhraní. Další informace najdete v tématu [deklarace kontextů a výchozích úrovní přístupu](../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md).
 
-Local constants (inside a procedure) default to public access, and you cannot use any access modifiers on them. Class and module member constants (outside any procedure) default to private access, and structure member constants default to public access. You can adjust their access levels with the access modifiers.
+Místní konstanty (uvnitř procedury) jako výchozí pro veřejný přístup a nemůžete použít žádné modifikátory přístupu. Konstanty členů třídy a modulu (mimo jakákoli procedura) výchozí pro privátní přístup a členské konstanty struktury jsou standardně přístupné pro veřejný přístup. Můžete upravit jejich úrovně přístupu modifikátory přístupu.
 
-## <a name="rules"></a>Rules
+## <a name="rules"></a>Pravidla
 
-- **Declaration Context.** A constant declared at module level, outside any procedure, is a *member constant*; it is a member of the class, structure, or module that declares it.
+- **Kontext deklarace** Konstanta deklarovaná na úrovni modulu, mimo jakoukoli proceduru, je *členská konstanta*; je členem třídy, struktury nebo modulu, který je deklaruje.
 
-  A constant declared at procedure level is a *local constant*; it is local to the procedure or block that declares it.
+  Konstanta deklarovaná na úrovni procedury je *místní konstanta*; je místní pro proceduru nebo blok, který je deklaruje.
 
-- **Attributes.** You can apply attributes only to member constants, not to local constants. An attribute contributes information to the assembly's metadata, which is not meaningful for temporary storage such as local constants.
+- **Atribut.** Atributy lze použít pouze pro členské konstanty, nikoli pro místní konstanty. Atribut přispívá k metadatům sestavení, která nejsou smysluplná pro dočasné úložiště, jako jsou například místní konstanty.
 
-- **Modifiers.** By default, all constants are `Shared`, `Static`, and `ReadOnly`. You cannot use any of these keywords when declaring a constant.
+- **Modifikátory.** Ve výchozím nastavení jsou všechny konstanty `Shared`, `Static`a `ReadOnly`. Při deklaraci konstanty nemůžete použít žádná z těchto klíčových slov.
 
-  At procedure level, you cannot use `Shadows` or any access modifiers to declare local constants.
+  Na úrovni procedury nemůžete použít `Shadows` ani žádné modifikátory přístupu k deklaraci místních konstant.
 
-- **Multiple Constants.** You can declare several constants in the same declaration statement, specifying the `constantname` part for each one. Multiple constants are separated by commas.
+- **Několik konstant.** Můžete deklarovat několik konstant v rámci jednoho příkazu deklarace a určit tak `constantname` část pro každé z nich. Vícenásobné konstanty jsou odděleny čárkami.
 
-## <a name="data-type-rules"></a>Data Type Rules
+## <a name="data-type-rules"></a>Pravidla datového typu
 
-- **Data Types.** The `Const` statement can declare the data type of a variable. You can specify any data type or the name of an enumeration.
+- **Datové typy.** Příkaz `Const` může deklarovat datový typ proměnné. Můžete zadat libovolný datový typ nebo název výčtu.
 
-- **Default Type.** If you do not specify `datatype`, the constant takes the data type of `initializer`. If you specify both `datatype` and `initializer`, the data type of `initializer` must be convertible to `datatype`. If neither `datatype` nor `initializer` is present, the data type defaults to `Object`.
+- **Výchozí typ** Pokud nezadáte `datatype`, konstanta převezme datový typ `initializer`. Zadáte-li `datatype` i `initializer`, musí být datový typ `initializer` převoditelné na `datatype`. Pokud není k dispozici žádná `datatype` ani `initializer`, je výchozím nastavením datový typ `Object`.
 
-- **Different Types.** You can specify different data types for different constants by using a separate `As` clause for each variable you declare. However, you cannot declare several constants to be of the same type by using a common `As` clause.
+- **Různé typy.** Pro každou proměnnou, kterou deklarujete, můžete určit různé typy dat pro různé konstanty pomocí samostatné klauzule `As`. Některé konstanty však nelze deklarovat jako stejný typ pomocí běžné klauzule `As`.
 
-- **Initialization.** You must initialize the value of every constant in `constantlist`. You use `initializer` to supply an expression to be assigned to the constant. The expression can be any combination of literals, other constants that are already defined, and enumeration members that are already defined. You can use arithmetic and logical operators to combine such elements.
+- **Operace.** Je nutné inicializovat hodnotu každé konstanty v `constantlist`. Pomocí `initializer` můžete zadat výraz, který se má přiřadit konstantě. Výraz může být libovolná kombinace literálů, dalších konstant, které jsou již definovány, a členů výčtu, které jsou již definovány. K kombinování takových prvků lze použít aritmetické a logické operátory.
 
-  You cannot use variables or functions in `initializer`. However, you can use conversion keywords such as `CByte` and `CShort`. You can also use `AscW` if you call it with a constant `String` or `Char` argument, since that can be evaluated at compile time.
+  V `initializer`nemůžete použít proměnné ani funkce. Můžete však použít klíčová slova převodu, například `CByte` a `CShort`. `AscW` můžete použít také v případě, že ho voláte s konstantním `String` nebo argumentem `Char`, protože lze vyhodnotit v době kompilace.
 
-## <a name="behavior"></a>Behavior
+## <a name="behavior"></a>Chování
 
-- **Scope.** Local constants are accessible only from within their procedure or block. Member constants are accessible from anywhere within their class, structure, or module.
+- **Oboru.** Místní konstanty jsou přístupné pouze v rámci jejich procedury nebo bloku. Konstanty členů jsou přístupné odkudkoli v rámci své třídy, struktury nebo modulu.
 
-- **Qualification.** Code outside a class, structure, or module must qualify a member constant's name with the name of that class, structure, or module. Code outside a procedure or block cannot refer to any local constants within that procedure or block.
+- **Vydal.** Kód mimo třídu, strukturu nebo modul musí kvalifikovat název členské konstanty s názvem této třídy, struktury nebo modulu. Kód mimo proceduru nebo blok nemůže odkazovat na žádné místní konstanty v rámci tohoto postupu nebo bloku.
 
 ## <a name="example"></a>Příklad
 
-The following example uses the `Const` statement to declare constants for use in place of literal values.
+Následující příklad používá příkaz `Const` k deklaraci konstant pro použití namísto hodnot literálu.
 
 [!code-vb[VbVbalrStatements#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#13)]
 
 ## <a name="example"></a>Příklad
 
-If you define a constant with data type `Object`, the Visual Basic compiler gives it the type of `initializer`, instead of `Object`. In the following example, the constant `naturalLogBase` has the run-time type `Decimal`.
+Definujete-li konstantu s datovým typem `Object`, kompilátor Visual Basic mu přiřadí typ `initializer`namísto `Object`. V následujícím příkladu má konstanta `naturalLogBase` typ běhu `Decimal`.
 
 [!code-vb[VbVbalrStatements#87](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#87)]
 
-The preceding example uses the <xref:System.Type.ToString%2A> method on the <xref:System.Type> object returned by the [GetType Operator](../../../visual-basic/language-reference/operators/gettype-operator.md), because <xref:System.Type> cannot be converted to `String` using `CStr`.
+Předchozí příklad používá metodu <xref:System.Type.ToString%2A> u objektu <xref:System.Type> vráceného [operátorem GetType](../../../visual-basic/language-reference/operators/gettype-operator.md), protože <xref:System.Type> nelze převést na `String` pomocí `CStr`.
 
 ## <a name="see-also"></a>Viz také:
 

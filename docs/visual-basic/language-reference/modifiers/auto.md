@@ -1,5 +1,5 @@
 ---
-title: Auto
+title: Autom.
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Auto
@@ -17,21 +17,21 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351620"
 ---
 # <a name="auto-visual-basic"></a>Auto (Visual Basic)
-Specifies that Visual Basic should marshal strings according to .NET Framework rules based on the external name of the external procedure being declared.  
+Určuje, že by Visual Basic měla zařazovat řetězce podle .NET Framework pravidla na základě vnějšího názvu deklarované externí procedury.  
   
- When you call a procedure defined outside your project, the Visual Basic compiler does not have access to the information it must have to call the procedure correctly. This information includes where the procedure is located, how it is identified, its calling sequence and return type, and the string character set it uses. The [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md) creates a reference to an external procedure and supplies this necessary information.  
+ Při volání procedury definované mimo projekt, kompilátor Visual Basic nemá přístup k informacím, které musí splňovat správné volání procedury. Tyto informace zahrnují, kde se nachází postup, jak se identifikuje, jeho volající sekvence a návratový typ a znaková sada, kterou používá. [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md) vytvoří odkaz na externí proceduru a poskytne tyto nezbytné informace.  
   
- The `charsetmodifier` part in the `Declare` statement supplies the character set information for marshaling strings during a call to the external procedure. It also affects how Visual Basic searches the external file for the external procedure name. The `Auto` modifier specifies that Visual Basic should marshal strings according to .NET Framework rules, and that it should determine the base character set of the run-time platform and possibly modify the external procedure name if the initial search fails. For more information, see "Character Sets" in [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md).  
+ Část `charsetmodifier` v příkazu `Declare` poskytuje znakovou sadu informace pro zařazování řetězců během volání do externí procedury. Ovlivňuje také způsob, jakým Visual Basic hledá Externí soubor pro název externí procedury. Modifikátor `Auto` určuje, že Visual Basic by měl zařazovat řetězce podle pravidel .NET Framework a že by měl určit základní znakovou sadu běhové platformy a případně upravit název externí procedury, pokud se nepovede počáteční vyhledávání. Další informace naleznete v tématu "znakové sady" v [příkazu Declare](../../../visual-basic/language-reference/statements/declare-statement.md).  
   
- If no character set modifier is specified, `Ansi` is the default.  
+ Pokud není zadán žádný modifikátor znakové sady, je `Ansi` výchozí hodnota.  
   
 ## <a name="remarks"></a>Poznámky  
- The `Auto` modifier can be used in this context:  
+ V tomto kontextu lze použít modifikátor `Auto`:  
   
  [Příkaz Declare](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
 ## <a name="smart-device-developer-notes"></a>Poznámky pro vývojáře inteligentního zařízení  
- This keyword is not supported.  
+ Toto klíčové slovo není podporováno.  
   
 ## <a name="see-also"></a>Viz také:
 

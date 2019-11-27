@@ -26,65 +26,65 @@ ms.locfileid: "74352590"
 ---
 # <a name="procedure-overloading-visual-basic"></a>Procedura přetížení (Visual Basic)
 
-*Overloading* a procedure means defining it in multiple versions, using the same name but different parameter lists. The purpose of overloading is to define several closely related versions of a procedure without having to differentiate them by name. You do this by varying the parameter list.
+*Přetížení* procedury znamená, že ji definují v několika verzích se stejným názvem, ale s různými seznamy parametrů. Účelem přetížení je definovat několik úzce souvisejících verzí procedury bez nutnosti jejich rozlišení podle názvu. Provedete to tak, že změníte seznam parametrů.
 
-## <a name="overloading-rules"></a>Overloading Rules
+## <a name="overloading-rules"></a>Pravidla přetížení
 
-When you overload a procedure, the following rules apply:
+Při přetížení procedury platí následující pravidla:
 
-- **Same Name**. Each overloaded version must use the same procedure name.
+- **Stejný název**. Každá přetížená verze musí používat stejný název procedury.
 
-- **Different Signature**. Each overloaded version must differ from all other overloaded versions in at least one of the following respects:
+- **Jiný podpis**. Každá přetížená verze se musí lišit od všech ostatních přetížených verzí alespoň v jednom z následujících hledisek:
 
-  - Number of parameters
+  - Počet parametrů
 
-  - Order of the parameters
+  - Pořadí parametrů
 
-  - Data types of the parameters
+  - Datové typy parametrů
 
-  - Number of type parameters (for a generic procedure)
+  - Počet parametrů typu (pro obecný postup)
 
-  - Return type (only for a conversion operator)
+  - Návratový typ (jenom pro operátor převodu)
 
-  Together with the procedure name, the preceding items are collectively called the *signature* of the procedure. When you call an overloaded procedure, the compiler uses the signature to check that the call correctly matches the definition.
+  Spolu s názvem procedury jsou předchozí položky souhrnně označovány jako *podpis* procedury. Při volání přetížené procedury kompilátor používá signaturu k ověření, že volání správně odpovídá definici.
 
-- **Items Not Part of Signature**. You cannot overload a procedure without varying the signature. In particular, you cannot overload a procedure by varying only one or more of the following items:
+- **Položky, které nejsou součástí podpisu**. Nemůžete přetížit proceduru bez proměnlivého podpisu. Konkrétně nemůžete přetížit proceduru změnou pouze jedné nebo více z následujících položek:
 
-  - Procedure modifier keywords, such as `Public`, `Shared`, and `Static`
+  - Klíčová slova modifikátoru procedury, například `Public`, `Shared`a `Static`
 
-  - Parameter or type parameter names
+  - Parametry nebo názvy parametrů typu
 
-  - Type parameter constraints (for a generic procedure)
+  - Omezení parametru typu (pro obecný postup)
 
-  - Parameter modifier keywords, such as `ByRef` and `Optional`
+  - Klíčová slova modifikátoru parametru, například `ByRef` a `Optional`
 
-  - Whether it returns a value
+  - Bez ohledu na to, zda vrací hodnotu
 
-  - The data type of the return value (except for a conversion operator)
+  - Datový typ návratové hodnoty (s výjimkou operátoru převodu)
 
-  The items in the preceding list are not part of the signature. Although you cannot use them to differentiate between overloaded versions, you can vary them among overloaded versions that are properly differentiated by their signatures.
+  Položky v předchozím seznamu nejsou součástí signatury. I když je nemůžete použít k rozlišení mezi přetíženými verzemi, můžete je měnit mezi přetíženými verzemi, které jsou správně odlišeny svými podpisy.
 
-- **Late-Bound Arguments**. If you intend to pass a late bound object variable to an overloaded version, you must declare the appropriate parameter as <xref:System.Object>.
+- **Argumenty s pozdní vazbou**. Pokud máte v úmyslu předat proměnnou s pozdní vazbou objektu do přetížené verze, je nutné deklarovat příslušný parametr jako <xref:System.Object>.
 
-## <a name="multiple-versions-of-a-procedure"></a>Multiple Versions of a Procedure
+## <a name="multiple-versions-of-a-procedure"></a>Více verzí procedury
 
-Suppose you are writing a `Sub` procedure to post a transaction against a customer's balance, and you want to be able to refer to the customer either by name or by account number. To accommodate this, you can define two different `Sub` procedures, as in the following example:
+Předpokládejme, že píšete `Sub` postup pro publikování transakce proti zůstatku zákazníka a chcete být schopni odkazovat na zákazníka buď podle jména, nebo podle čísla účtu. Chcete-li to přizpůsobit, můžete definovat dva různé `Sub` postupy, jako v následujícím příkladu:
 
 [!code-vb[VbVbcnProcedures#73](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#73)]
 
-### <a name="overloaded-versions"></a>Overloaded Versions
+### <a name="overloaded-versions"></a>Přetížené verze
 
-An alternative is to overload a single procedure name. You can use the [Overloads](../../../../visual-basic/language-reference/modifiers/overloads.md) keyword to define a version of the procedure for each parameter list, as follows:
+Alternativou je přetížení jednoho názvu procedury. Pomocí klíčového slova [přetížení](../../../../visual-basic/language-reference/modifiers/overloads.md) můžete definovat verzi procedury pro každý seznam parametrů následujícím způsobem:
 
 [!code-vb[VbVbcnProcedures#72](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#72)]
 
-#### <a name="additional-overloads"></a>Additional Overloads
+#### <a name="additional-overloads"></a>Další přetížení
 
-If you also wanted to accept a transaction amount in either `Decimal` or `Single`, you could further overload `post` to allow for this variation. If you did this to each of the overloads in the preceding example, you would have four `Sub` procedures, all with the same name but with four different signatures.
+Pokud jste také chtěli přijmout částku transakce buď v `Decimal` nebo `Single`, můžete další přetížení `post`, abyste tuto variaci povolili. Pokud jste to nastavili pro každé přetížení v předchozím příkladu, měli byste mít čtyři `Sub` postupy, všechny se stejným názvem, ale se čtyřmi různými podpisy.
 
-## <a name="advantages-of-overloading"></a>Advantages of Overloading
+## <a name="advantages-of-overloading"></a>Výhody přetížení
 
-The advantage of overloading a procedure is in the flexibility of the call. To use the `post` procedure declared in the preceding example, the calling code can obtain the customer identification as either a `String` or an `Integer`, and then call the same procedure in either case. The following example illustrates this:
+Výhodou přetížení procedury je flexibilita volání. Chcete-li použít `post` procedury deklarované v předchozím příkladu, volající kód může získat identifikaci zákazníka buď jako `String` nebo `Integer`, a pak volat stejný postup v obou případech. Následující příklad znázorňuje toto:
 
 [!code-vb[VbVbcnProcedures#56](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#56)]
 
@@ -100,4 +100,4 @@ The advantage of overloading a procedure is in the flexibility of the call. To u
 - [Aspekty přetížení procedur](./considerations-in-overloading-procedures.md)
 - [Řešení přetížení](./overload-resolution.md)
 - [Overloads](../../../../visual-basic/language-reference/modifiers/overloads.md)
-- [Generic Types in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [Obecné typy v Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)

@@ -17,7 +17,7 @@ ms.locfileid: "74350164"
 ---
 # <a name="call-statement-visual-basic"></a>Call – příkaz (Visual Basic)
 
-Transfers control to a `Function`, `Sub`, or dynamic-link library (DLL) procedure.  
+Přenáší řízení do procedury `Function`, `Sub`nebo dynamické knihovny (DLL).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,21 +29,21 @@ Transfers control to a `Function`, `Sub`, or dynamic-link library (DLL) procedur
 
 |||
 |---|---|
-|`procedureName`|Požadováno. Name of the procedure to call.|
-|`argumentList`|Volitelné. List of variables or expressions representing arguments that are passed to the procedure when it is called. Multiple arguments are separated by commas. If you include `argumentList`, you must enclose it in parentheses.|
+|`procedureName`|Požadováno. Název procedury, kterou chcete volat.|
+|`argumentList`|Volitelná. Seznam proměnných nebo výrazů představujících argumenty, které jsou předány proceduře při volání. Více argumentů je odděleno čárkami. Pokud zahrnete `argumentList`, musíte ho uzavřít do závorek.|
 |||
   
 ## <a name="remarks"></a>Poznámky
 
- You can use the `Call` keyword when you call a procedure. For most procedure calls, you aren’t required to use this  keyword.
+ Klíčové slovo `Call` lze použít při volání procedury. U většiny volání procedur nemusíte používat toto klíčové slovo.
 
- You typically use the `Call` keyword when the called expression doesn’t start with an identifier. Use of the `Call` keyword for other uses isn't recommended.
+ Klíčové slovo `Call` obvykle používáte, pokud se pojmenovaný výraz nespustí s identifikátorem. Použití klíčového slova `Call` pro jiné použití se nedoporučuje.
 
- If the procedure returns a value, the `Call` statement discards it.
+ Pokud procedura vrátí hodnotu, příkaz `Call` ji zahodí.
 
 ## <a name="example"></a>Příklad
 
- The following code shows two examples where the `Call` keyword is necessary to call a procedure. In both examples, the called expression doesn't start with an identifier.
+ Následující kód ukazuje dva příklady, kde klíčové slovo `Call` je nezbytné pro volání procedury. V obou příkladech se u volaného výrazu nezahájí identifikátor.
 
  [!code-vb[VbVbalrStatements#97](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#97)]  
   

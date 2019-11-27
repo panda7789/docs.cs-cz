@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449535"
 ---
 # <a name="imetadataimportenumfields-method"></a>IMetaDataImport::EnumFields – metoda
-Enumerates FieldDef tokens for the type referenced by the specified TypeDef token.  
+Vytvoří výčet tokenů FieldDef pro typ, na který odkazuje zadaný token TypeDef.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,35 +39,35 @@ HRESULT EnumFields (
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [in, out] A pointer to the enumerator.  
+ [in, out] Ukazatel na enumerátor.  
   
  `cl`  
- [in] The TypeDef token of the class whose fields are to be enumerated.  
+ pro Token TypeDef třídy, jejíž pole mají být vyčísleny.  
   
  `rFields`  
- [out] The list of FieldDef tokens.  
+ mimo Seznam tokenů FieldDef.  
   
  `cMax`  
- [in] The maximum size of the `rFields` array.  
+ pro Maximální velikost `rFields` pole  
   
  `pcTokens`  
- [out] The actual number of FieldDef tokens returned in `rFields`.  
+ mimo Skutečný počet FieldDef tokenů vrácených v `rFields`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumFields` returned successfully.|  
-|`S_FALSE`|There are no fields to enumerate. In that case, `pcTokens` is zero.|  
+|`S_OK`|`EnumFields` byla úspěšně vrácena.|  
+|`S_FALSE`|Neexistují žádná pole k zobrazení výčtu. V takovém případě je `pcTokens` nula.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

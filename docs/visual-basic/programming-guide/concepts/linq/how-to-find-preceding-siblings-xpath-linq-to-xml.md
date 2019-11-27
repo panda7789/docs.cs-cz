@@ -1,5 +1,5 @@
 ---
-title: 'How to: Find Preceding Siblings (XPath-LINQ to XML)'
+title: 'Postupy: Vyhledání předcházejících položek na stejné úrovni (XPath-LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 59055718-d0a7-4db3-8901-18dd33587703
 ms.openlocfilehash: be6c546465f659eb633017e47434c86b9f036bf2
@@ -9,19 +9,19 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344682"
 ---
-# <a name="how-to-find-preceding-siblings-xpath-linq-to-xml-visual-basic"></a>How to: Find Preceding Siblings (XPath-LINQ to XML) (Visual Basic)
-This topic compares the XPath `preceding-sibling` axis to the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] child <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType> axis.  
+# <a name="how-to-find-preceding-siblings-xpath-linq-to-xml-visual-basic"></a>Postupy: Vyhledání předcházejících položek na stejné úrovni (XPath-LINQ to XML) (Visual Basic)
+Toto téma porovnává osu XPath `preceding-sibling` osy na [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] podřízenou <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType> ose.  
   
- The XPath expression is:  
+ Výraz XPath je:  
   
  `preceding-sibling::*`  
   
- Note that the results of both <xref:System.Xml.XPath.Extensions.XPathSelectElements%2A> and <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType> are in document order.  
+ Všimněte si, že výsledky obou <xref:System.Xml.XPath.Extensions.XPathSelectElements%2A> i <xref:System.Xml.Linq.XNode.ElementsBeforeSelf%2A?displayProperty=nameWithType> jsou v pořadí dokumentů.  
   
 ## <a name="example"></a>Příklad  
- The following example finds the `FullAddress` element, and then retrieves the previous elements using the `preceding-sibling` axis.  
+ Následující příklad najde prvek `FullAddress` a potom načte předchozí prvky pomocí osy `preceding-sibling`.  
   
- This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
+ Tento příklad používá následující dokument XML: [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).  
   
 ```vb  
 Dim co As XElement = XElement.Load("CustomersOrders.xml")  
@@ -45,7 +45,7 @@ For Each el As XElement In list2
 Next  
 ```  
   
- This example produces the following output:  
+ Tento příklad vytvoří následující výstup:  
   
 ```console
 Results are identical  
@@ -57,4 +57,4 @@ Results are identical
   
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ to XML for XPath Users (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML pro uživatele XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

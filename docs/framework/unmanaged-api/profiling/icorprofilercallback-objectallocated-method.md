@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445848"
 ---
 # <a name="icorprofilercallbackobjectallocated-method"></a>ICorProfilerCallback::ObjectAllocated – metoda
-Notifies the profiler that memory within the heap has been allocated for an object.  
+Upozorní profileru, že paměť v haldě byla přidělena pro objekt.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,22 +35,22 @@ HRESULT ObjectAllocated(
   
 ## <a name="parameters"></a>Parametry  
  `objectId`  
- [in] The ID of the object for which memory was allocated.  
+ pro ID objektu, pro který byla přidělena paměť  
   
  `classId`  
- [in] The ID of the class of which the object is an instance.  
+ pro ID třídy, jejíž objekt je instancí.  
   
 ## <a name="remarks"></a>Poznámky  
- The `ObjectedAllocated` method is not called for allocations from either the stack or unmanaged memory. The `classId` parameter can refer to a class in managed code that has not been loaded yet. The profiler will receive a class load callback for that class immediately after the `ObjectAllocated` callback.  
+ Metoda `ObjectedAllocated` není volána pro přidělení z zásobníku nebo nespravované paměti. Parametr `classId` může odkazovat na třídu ve spravovaném kódu, která ještě nebyla načtena. Profiler obdrží zpětné volání třídy pro tuto třídu hned po zpětném volání `ObjectAllocated`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

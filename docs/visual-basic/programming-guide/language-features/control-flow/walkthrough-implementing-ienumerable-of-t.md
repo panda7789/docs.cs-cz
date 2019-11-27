@@ -1,5 +1,5 @@
 ---
-title: Implementing IEnumerable
+title: Implementace rozhraní IEnumerable
 ms.date: 07/31/2018
 helpviewer_keywords:
 - control flow [Visual Basic]
@@ -15,87 +15,87 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74333689"
 ---
 # <a name="walkthrough-implementing-ienumerableof-t-in-visual-basic"></a>Návod: Implementace IEnumerable(Of T) v jazyce Visual Basic
-The <xref:System.Collections.Generic.IEnumerable%601> interface is implemented by classes that can return a sequence of values one item at a time. The advantage of returning data one item at a time is that you do not have to load the complete set of data into memory to work with it. You only have to use sufficient memory to load a single item from the data. Classes that implement the `IEnumerable(T)` interface can be used with `For Each` loops or LINQ queries.  
+Rozhraní <xref:System.Collections.Generic.IEnumerable%601> je implementováno třídami, které mohou vracet sekvenci hodnot po jednotlivých položkách najednou. Výhodou vrácení dat jedné položky v čase je, že není nutné načíst úplnou sadu dat do paměti, abyste s ní mohli pracovat. K načtení jedné položky z dat stačí použít dostatek paměti. Třídy, které implementují rozhraní `IEnumerable(T)`, lze použít s `For Each` cykly nebo dotazy LINQ.  
   
- For example, consider an application that must read a large text file and return each line from the file that matches particular search criteria. The application uses a LINQ query to return lines from the file that match the specified criteria. To query the contents of the file by using a LINQ query, the application could load the contents of the file into an array or a collection. However, loading the whole file into an array or collection would consume far more memory than is required. The LINQ query could instead query the file contents by using an enumerable class, returning only values that match the search criteria. Queries that return only a few matching values would consume far less memory.  
+ Představte si například aplikaci, která musí číst velký textový soubor a vrátí každý řádek ze souboru, který odpovídá konkrétním kritériím hledání. Aplikace používá dotaz LINQ k vrácení řádků ze souboru, které odpovídají zadaným kritériím. K dotazování obsahu souboru pomocí dotazu LINQ může aplikace načíst obsah souboru do pole nebo kolekce. Načtení celého souboru do pole nebo kolekce by však využívalo mnohem více paměti, než je vyžadováno. Dotaz LINQ může místo toho zadat dotaz na obsah souboru pomocí vyčíslitelné třídy a vracet pouze hodnoty, které odpovídají kritériím vyhledávání. Dotazy, které vracejí pouze pár hodnot, by využívaly mnohem méně paměti.  
   
- You can create a class that implements the <xref:System.Collections.Generic.IEnumerable%601> interface to expose source data as enumerable data. Your class that implements the `IEnumerable(T)` interface will require another class that implements the <xref:System.Collections.Generic.IEnumerator%601> interface to iterate through the source data. These two classes enable you to return items of data sequentially as a specific type.  
+ Můžete vytvořit třídu, která implementuje rozhraní <xref:System.Collections.Generic.IEnumerable%601> k vystavení zdrojových dat jako vyčíslitelného data. Vaše třída, která implementuje rozhraní `IEnumerable(T)`, bude vyžadovat další třídu, která implementuje rozhraní <xref:System.Collections.Generic.IEnumerator%601> pro iteraci skrze zdrojová data. Tyto dvě třídy umožňují vracet položky dat sekvenčně jako konkrétní typ.  
   
- In this walkthrough, you will create a class that implements the `IEnumerable(Of String)` interface and a class that implements the `IEnumerator(Of String)` interface to read a text file one line at a time.  
+ V tomto návodu vytvoříte třídu, která implementuje rozhraní `IEnumerable(Of String)` a třídu, která implementuje rozhraní `IEnumerator(Of String)` pro čtení textového souboru v jednom řádku.  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-## <a name="creating-the-enumerable-class"></a>Creating the Enumerable Class  
+## <a name="creating-the-enumerable-class"></a>Vytváření vyčíslitelné třídy  
   
-**Create the enumerable class project**
+**Vytvoření vyčíslitelného projektu třídy**
 
-1. In Visual Basic, on the **File** menu, point to **New** and then click **Project**.
+1. V Visual Basic v nabídce **soubor** přejděte na příkaz **Nový** a potom klikněte na **projekt**.
 
-1. In the **New Project** dialog box, in the **Project Types** pane, make sure that **Windows** is selected. Select **Class Library** in the **Templates** pane. In the **Name** box, type `StreamReaderEnumerable`, and then click **OK**. The new project is displayed.
+1. V dialogovém okně **Nový projekt** v podokně **typy projektů** se ujistěte, že je vybrána možnost **Windows** . V podokně **šablony** vyberte **Knihovna tříd** . Do pole **název** zadejte `StreamReaderEnumerable`a pak klikněte na **OK**. Zobrazí se nový projekt.
 
-1. In **Solution Explorer**, right-click the Class1.vb file and click **Rename**. Rename the file to `StreamReaderEnumerable.vb` and press ENTER. Renaming the file will also rename the class to `StreamReaderEnumerable`. This class will implement the `IEnumerable(Of String)` interface.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem na soubor Class1. vb a klikněte na **Přejmenovat**. Přejmenujte soubor na `StreamReaderEnumerable.vb` a stiskněte klávesu ENTER. Přejmenováním souboru dojde také k přejmenování třídy na `StreamReaderEnumerable`. Tato třída bude implementovat rozhraní `IEnumerable(Of String)`.
 
-1. Right-click the StreamReaderEnumerable project, point to **Add**, and then click **New Item**. Select the **Class** template. In the **Name** box, type `StreamReaderEnumerator.vb` and click **OK**.
+1. Klikněte pravým tlačítkem na projekt StreamReaderEnumerable, přejděte na **Přidat**a klikněte na **Nová položka**. Vyberte šablonu **třídy** . Do pole **název** zadejte `StreamReaderEnumerator.vb` a klikněte na **OK**.
 
- The first class in this project is the enumerable class and will implement the `IEnumerable(Of String)` interface. This generic interface implements the <xref:System.Collections.IEnumerable> interface and guarantees that consumers of this class can access values typed as `String`.  
+ První třída v tomto projektu je vyčíslitelné třída a implementuje rozhraní `IEnumerable(Of String)`. Toto obecné rozhraní implementuje rozhraní <xref:System.Collections.IEnumerable> a zaručuje, že příjemci této třídy mohou přistupovat k hodnotám, které jsou zadány jako `String`.  
   
-**Add the code to implement IEnumerable**
+**Přidejte kód pro implementaci rozhraní IEnumerable**
 
-1. Open the StreamReaderEnumerable.vb file.
+1. Otevřete soubor StreamReaderEnumerable. vb.
 
-2. On the line after `Public Class StreamReaderEnumerable`, type the following and press ENTER.
+2. Na řádku po `Public Class StreamReaderEnumerable`zadejte následující příkaz a stiskněte klávesu ENTER.
 
      [!code-vb[VbVbalrIteratorWalkthrough#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIteratorWalkthrough/VB/StreamReaderIterator.vb#1)]
 
-   Visual Basic automatically populates the class with the members that are required by the `IEnumerable(Of String)` interface.
+   Visual Basic automaticky naplní třídu členy, které jsou vyžadovány rozhraním `IEnumerable(Of String)`.
   
-3. This enumerable class will read lines from a text file one line at a time. Add the following code to the class to expose a public constructor that takes a file path as an input parameter.
+3. Tato Výčtová třída načte řádky z textového souboru po jednom řádku. Přidejte následující kód do třídy k vystavení veřejného konstruktoru, který jako vstupní parametr převezme cestu k souboru.
 
      [!code-vb[VbVbalrIteratorWalkthrough#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIteratorWalkthrough/VB/StreamReaderIterator.vb#2)]
 
-4. Your implementation of the <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> method of the `IEnumerable(Of String)` interface will return a new instance of the `StreamReaderEnumerator` class. The implementation of the `GetEnumerator` method of the `IEnumerable` interface can be made `Private`, because you have to expose only members of the `IEnumerable(Of String)` interface. Replace the code that Visual Basic generated for the `GetEnumerator` methods with the following code.
+4. Vaše implementace metody <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> rozhraní `IEnumerable(Of String)` vrátí novou instanci třídy `StreamReaderEnumerator`. Implementaci metody `GetEnumerator` rozhraní `IEnumerable` lze vytvořit `Private`, protože je nutné vystavit pouze členy `IEnumerable(Of String)` rozhraní. Nahraďte kód, který Visual Basic generovaný pro `GetEnumerator` metody, pomocí následujícího kódu.
 
      [!code-vb[VbVbalrIteratorWalkthrough#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIteratorWalkthrough/VB/StreamReaderIterator.vb#3)]  
   
-**Add the code to implement IEnumerator**
+**Přidání kódu pro implementaci rozhraní IEnumerator**
 
-1. Open the StreamReaderEnumerator.vb file.
+1. Otevřete soubor StreamReaderEnumerator. vb.
 
-2. On the line after `Public Class StreamReaderEnumerator`, type the following and press ENTER.
+2. Na řádku po `Public Class StreamReaderEnumerator`zadejte následující příkaz a stiskněte klávesu ENTER.
 
      [!code-vb[VbVbalrIteratorWalkthrough#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIteratorWalkthrough/VB/StreamReaderIterator.vb#4)]
 
-   Visual Basic automatically populates the class with the members that are required by the `IEnumerator(Of String)` interface.
+   Visual Basic automaticky naplní třídu členy, které jsou vyžadovány rozhraním `IEnumerator(Of String)`.
 
-3. The enumerator class opens the text file and performs the file I/O to read the lines from the file. Add the following code to the class to expose a public constructor that takes a file path as an input parameter and open the text file for reading.
+3. Třída enumerator otevře textový soubor a provede vstupně-výstupní operace souboru pro čtení řádků ze souboru. Přidejte následující kód do třídy k vystavení veřejného konstruktoru, který jako vstupní parametr převezme cestu k souboru, a otevřete textový soubor pro čtení.
 
      [!code-vb[VbVbalrIteratorWalkthrough#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIteratorWalkthrough/VB/StreamReaderIterator.vb#5)]
 
-4. The `Current` properties for both the `IEnumerator(Of String)` and `IEnumerator` interfaces return the current item from the text file as a `String`. The implementation of the `Current` property of the `IEnumerator` interface can be made `Private`, because you have to expose only members of the `IEnumerator(Of String)` interface. Replace the code that Visual Basic generated for the `Current` properties with the following code.
+4. Vlastnosti `Current` pro rozhraní `IEnumerator(Of String)` a `IEnumerator` vrátí aktuální položku z textového souboru jako `String`. Implementaci vlastnosti `Current` rozhraní `IEnumerator` lze vytvořit `Private`, protože je nutné vystavit pouze členy `IEnumerator(Of String)` rozhraní. Nahraďte kód, který Visual Basic generovaný pro `Current` vlastností, pomocí následujícího kódu.
 
      [!code-vb[VbVbalrIteratorWalkthrough#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIteratorWalkthrough/VB/StreamReaderIterator.vb#6)]
 
-5. The `MoveNext` method of the `IEnumerator` interface navigates to the next item in the text file and updates the value that is returned by the `Current` property. If there are no more items to read, the `MoveNext` method returns `False`; otherwise the `MoveNext` method returns `True`. Add the following code to the `MoveNext` method.
+5. Metoda `MoveNext` rozhraní `IEnumerator` naviguje na další položku v textovém souboru a aktualizuje hodnotu vrácenou vlastností `Current`. Pokud nejsou k dispozici žádné další položky ke čtení, metoda `MoveNext` vrátí `False`; v opačném případě metoda `MoveNext` vrátí `True`. Do metody `MoveNext` přidejte následující kód.
 
      [!code-vb[VbVbalrIteratorWalkthrough#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIteratorWalkthrough/VB/StreamReaderIterator.vb#7)]
 
-6. The `Reset` method of the `IEnumerator` interface directs the iterator to point to the start of the text file and clears the current item value. Add the following code to the `Reset` method.
+6. Metoda `Reset` rozhraní `IEnumerator` přesměruje iterátor, aby odkazoval na začátek textového souboru a vymaže hodnotu aktuální položky. Do metody `Reset` přidejte následující kód.
 
      [!code-vb[VbVbalrIteratorWalkthrough#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIteratorWalkthrough/VB/StreamReaderIterator.vb#8)]
 
-7. The `Dispose` method of the `IEnumerator` interface guarantees that all unmanaged resources are released before the iterator is destroyed. The file handle that is used by the `StreamReader` object is an unmanaged resource and must be closed before the iterator instance is destroyed. Replace the code that Visual Basic generated for the `Dispose` method with the following code.
+7. Metoda `Dispose` rozhraní `IEnumerator` garantuje, že všechny nespravované prostředky byly vydány před zničením iterátoru. Popisovač souboru, který je používán objektem `StreamReader`, je nespravovaný prostředek a je třeba jej zavřít před zničením instance iterátoru. Nahraďte kód, který Visual Basic generovaný pro metodu `Dispose`, pomocí následujícího kódu.
 
      [!code-vb[VbVbalrIteratorWalkthrough#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIteratorWalkthrough/VB/StreamReaderIterator.vb#9)] 
   
-## <a name="using-the-sample-iterator"></a>Using the Sample Iterator
+## <a name="using-the-sample-iterator"></a>Použití ukázkového iterátoru
 
- You can use an enumerable class in your code together with control structures that require an object that implements `IEnumerable`, such as a `For Next` loop or a LINQ query. The following example shows the `StreamReaderEnumerable` in a LINQ query.  
+ Můžete použít vyčíslitelné třídy v kódu společně s řídicími strukturami, které vyžadují objekt, který implementuje `IEnumerable`, jako je například smyčka `For Next` nebo dotaz LINQ. Následující příklad ukazuje `StreamReaderEnumerable` v dotazu LINQ.  
   
  [!code-vb[VbVbalrIteratorWalkthrough#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIteratorWalkthrough/VB/Module1.vb#10)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Introduction to LINQ in Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Úvod do jazyka LINQ v Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
 - [Tok řízení](../../../../visual-basic/programming-guide/language-features/control-flow/index.md)
 - [Struktury smyčky](../../../../visual-basic/programming-guide/language-features/control-flow/loop-structures.md)
 - [Příkaz For Each...Next](../../../../visual-basic/language-reference/statements/for-each-next-statement.md)

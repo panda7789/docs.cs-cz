@@ -18,7 +18,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349557"
 ---
 # <a name="set-statement-visual-basic"></a>Set – příkaz (Visual Basic)
-Declares a `Set` property procedure used to assign a value to a property.  
+Deklaruje proceduru vlastnosti `Set`, která slouží k přiřazení hodnoty k vlastnosti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -30,10 +30,10 @@ End Set
   
 ## <a name="parts"></a>Součásti  
  `attributelist`  
- Volitelné. See [Attribute List](../../../visual-basic/language-reference/statements/attribute-list.md).  
+ Volitelná. Viz [seznam atributů](../../../visual-basic/language-reference/statements/attribute-list.md).  
   
  `accessmodifier`  
- Optional on at most one of the `Get` and `Set` statements in this property. Can be one of the following:  
+ Volitelné na maximálně jeden z příkazů `Get` a `Set` v této vlastnosti. Může být jedna z následujících akcí:  
   
 - [Protected](../../../visual-basic/language-reference/modifiers/protected.md)  
   
@@ -43,47 +43,47 @@ End Set
   
 - `Protected Friend`  
   
- See [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+ Podívejte [se na úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
  `value`  
- Požadováno. Parameter containing the new value for the property.  
+ Požadováno. Parametr, který obsahuje novou hodnotu pro vlastnost.  
   
  `datatype`  
- Required if `Option Strict` is `On`. Data type of the `value` parameter. The data type specified must be the same as the data type of the property where this `Set` statement is declared.  
+ Vyžaduje se, pokud `Option Strict` `On`. Datový typ parametru `value`. Zadaný datový typ musí být stejný jako datový typ vlastnosti, kde je tento příkaz `Set` deklarovaný.  
   
  `statements`  
- Volitelné. One or more statements that run when the `Set` property procedure is called.  
+ Volitelná. Jeden nebo více příkazů, které se spouštějí při volání procedury vlastnosti `Set`.  
   
  `End Set`  
- Požadováno. Terminates the definition of the `Set` property procedure.  
+ Požadováno. Ukončí definici procedury vlastnosti `Set`.  
   
 ## <a name="remarks"></a>Poznámky  
- Every property must have a `Set` property procedure unless the property is marked `ReadOnly`. The `Set` procedure is used to set the value of the property.  
+ Každá vlastnost musí mít proceduru `Set` vlastnost, pokud vlastnost není označena `ReadOnly`. Procedura `Set` slouží k nastavení hodnoty vlastnosti.  
   
- Visual Basic automatically calls a property's `Set` procedure when an assignment statement provides a value to be stored in the property.  
+ Visual Basic automaticky volá proceduru `Set`, pokud příkaz přiřazení poskytuje hodnotu, která má být uložena ve vlastnosti.  
   
- Visual Basic passes a parameter to the `Set` procedure during property assignments. If you do not supply a parameter for `Set`, the integrated development environment (IDE) uses an implicit parameter named `value`. The parameter holds the value to be assigned to the property. You typically store this value in a private local variable and return it whenever the `Get` procedure is called.  
+ Visual Basic předá do přiřazení vlastností parametr `Set` proceduře. Pokud nezadáte parametr pro `Set`, integrované vývojové prostředí (IDE) používá implicitní parametr s názvem `value`. Parametr obsahuje hodnotu, která má být přiřazena vlastnosti. Tuto hodnotu obvykle ukládáte do privátní místní proměnné a vrátíte ji pokaždé, když je volána procedura `Get`.  
   
- The body of the property declaration can contain only the property's `Get` and `Set` procedures between the [Property Statement](../../../visual-basic/language-reference/statements/property-statement.md) and the `End Property` statement. It cannot store anything other than those procedures. In particular, it cannot store the property's current value. You must store this value outside the property, because if you store it inside either of the property procedures, the other property procedure cannot access it. The usual approach is to store the value in a [Private](../../../visual-basic/language-reference/modifiers/private.md) variable declared at the same level as the property. You must define a `Set` procedure inside the property to which it applies.  
+ Tělo deklarace vlastnosti může obsahovat pouze `Get` vlastnosti a procedury `Set` mezi [příkazem Property](../../../visual-basic/language-reference/statements/property-statement.md) a příkazem `End Property`. Nemůže uložit cokoli jiného než tyto postupy. Konkrétně nemůže uložit aktuální hodnotu vlastnosti. Tuto hodnotu je nutné uložit mimo vlastnost, protože pokud ji uložíte uvnitř některého z procedur vlastnosti, druhá procedura vlastnosti k ní nemá přístup. Obvyklým přístupem je uložení hodnoty do [soukromé](../../../visual-basic/language-reference/modifiers/private.md) proměnné deklarované na stejné úrovni jako vlastnost. Musíte definovat `Set` proceduru uvnitř vlastnosti, na kterou se vztahuje.  
   
- The `Set` procedure defaults to the access level of its containing property unless you use `accessmodifier` in the `Set` statement.  
+ Pokud nepoužijete `accessmodifier` v příkazu `Set`, bude výchozí hodnota `Set` nastavena na úroveň přístupu jeho obsahující vlastnosti.  
   
-## <a name="rules"></a>Rules  
+## <a name="rules"></a>Pravidla  
   
-- **Mixed Access Levels.** If you are defining a read-write property, you can optionally specify a different access level for either the `Get` or the `Set` procedure, but not both. If you do this, the procedure access level must be more restrictive than the property's access level. For example, if the property is declared `Friend`, you can declare the `Set` procedure `Private`, but not `Public`.  
+- **Smíšené úrovně přístupu.** Pokud definujete vlastnost pro čtení i zápis, můžete volitelně zadat jinou úroveň přístupu pro `Get` nebo `Set` postup, ale ne obojí. Pokud to uděláte, musí být úroveň přístupu k této proceduře přísnější než úroveň přístupu vlastnosti. Například pokud je vlastnost deklarována `Friend`, můžete deklarovat `Set` proceduru `Private`, ale ne `Public`.  
   
-     If you are defining a `WriteOnly` property, the `Set` procedure represents the entire property. You cannot declare a different access level for `Set`, because that would set two access levels for the property.  
+     Pokud definujete vlastnost `WriteOnly`, bude procedura `Set` představovat celou vlastnost. Pro `Set`nemůžete deklarovat jinou úroveň přístupu, protože by se pro vlastnost nastavily dvě úrovně přístupu.  
   
-## <a name="behavior"></a>Behavior  
+## <a name="behavior"></a>Chování  
   
-- **Returning from a Property Procedure.** When the `Set` procedure returns to the calling code, execution continues following the statement that provided the value to be stored.  
+- **Návrat z procedury vlastnosti.** Když se `Set` procedura vrátí k volajícímu kódu, provádění pokračuje po příkazu, který poskytl hodnotu, která má být uložena.  
   
-     `Set` property procedures can return using either the [Return Statement](../../../visual-basic/language-reference/statements/return-statement.md) or the [Exit Statement](../../../visual-basic/language-reference/statements/exit-statement.md).  
+     procedury vlastnosti `Set` mohou vracet buď pomocí [příkazu return](../../../visual-basic/language-reference/statements/return-statement.md) , nebo [příkazu exit](../../../visual-basic/language-reference/statements/exit-statement.md).  
   
-     The `Exit Property` and `Return` statements cause an immediate exit from a property procedure. Any number of `Exit Property` and `Return` statements can appear anywhere in the procedure, and you can mix `Exit Property` and `Return` statements.  
+     Příkazy `Exit Property` a `Return` způsobují bezprostřední ukončení procedury vlastnosti. Libovolný počet `Exit Property` a `Return` příkazů se může objevit kdekoli v proceduře a můžete kombinovat `Exit Property` a `Return` příkazy.  
   
 ## <a name="example"></a>Příklad  
- The following example uses the `Set` statement to set the value of a property.  
+ Následující příklad používá příkaz `Set` k nastavení hodnoty vlastnosti.  
   
  [!code-vb[VbVbalrStatements#55](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#55)]  
   

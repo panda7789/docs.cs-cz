@@ -23,32 +23,32 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74343940"
 ---
-# <a name="short-data-type-visual-basic"></a>Short data type (Visual Basic)
+# <a name="short-data-type-visual-basic"></a>Short – datový typ (Visual Basic)
 
-Holds signed 16-bit (2-byte) integers that range in value from -32,768 through 32,767.  
+Obsahuje 16bitová celá čísla se znaménkem (2 bajty), která mají rozsah hodnot od-32 768 do 32 767.  
   
 ## <a name="remarks"></a>Poznámky  
 
- Use the `Short` data type to contain integer values that do not require the full data width of `Integer`. In some cases, the common language runtime can pack your `Short` variables closely together and save memory consumption.  
+ Typ dat `Short` použijte k omezení celočíselných hodnot, které nevyžadují plnou šířku dat `Integer`. V některých případech může modul CLR (Common Language Runtime) sbalit vaše `Short` proměnné společně a ušetřit spotřebu paměti.  
   
- The default value of `Short` is 0.  
+ Výchozí hodnota `Short` je 0.  
   
-## <a name="literal-assignments"></a>Literal assignments
+## <a name="literal-assignments"></a>Přiřazení literálů
 
-You can declare and initialize a `Short` variable by assigning it a decimal literal, a hexadecimal literal, an octal literal, or (starting with Visual Basic 2017) a binary literal. If the integer literal is outside the range of `Short` (that is, if it is less than <xref:System.Int16.MinValue?displayProperty=nameWithType> or greater than <xref:System.Int16.MaxValue?displayProperty=nameWithType>, a compilation error occurs.
+Můžete deklarovat a inicializovat `Short` proměnnou přiřazením desítkového literálu, šestnáctkového literálu, osmičkového literálu nebo (počínaje Visual Basic 2017) binárního literálu. Pokud je celočíselný literál mimo rozsah `Short` (to znamená, pokud je menší než <xref:System.Int16.MinValue?displayProperty=nameWithType> nebo větší než <xref:System.Int16.MaxValue?displayProperty=nameWithType>, dojde k chybě kompilace.
 
-In the following example, integers equal to 1,034 that are represented as decimal, hexadecimal, and binary literals are implicitly converted from [Integer](integer-data-type.md) to `Short` values.
+V následujícím příkladu jsou celá čísla rovnající se 1 034, která jsou reprezentována jako Desítková, šestnáctková a binární literála, implicitně převedena z [celého čísla](integer-data-type.md) na `Short` hodnoty.
 
 [!code-vb[Short](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#Short)]
 
 > [!NOTE]
-> You use the prefix `&h` or `&H` to denote a hexadecimal literal, the prefix `&b` or `&B` to denote a binary literal, and the prefix `&o` or `&O` to denote an octal literal. Decimal literals have no prefix.
+> Použijete předponu `&h` nebo `&H` k označení šestnáctkového literálu, předponu `&b` nebo `&B` k označení binárního literálu a prefixu `&o` nebo `&O` k označení osmičkového literálu. Desítkové literály nemají žádnou předponu.
 
-Starting with Visual Basic 2017, you can also use the underscore character, `_`, as a digit separator to enhance readability, as the following example shows.
+Počínaje Visual Basic 2017 můžete použít také znak podtržítka, `_`jako oddělovač číslic ke zvýšení čitelnosti, jak ukazuje následující příklad.
 
 [!code-vb[Short](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#ShortS)]
 
-Starting with Visual Basic 15.5, you can also use the underscore character (`_`) as a leading separator between the prefix and the hexadecimal, binary, or octal digits. Příklad:
+Počínaje Visual Basic 15,5 můžete také použít znak podtržítka (`_`) jako úvodní oddělovač mezi předponou a šestnáctkovou, binární nebo osmičkovou číslicí. Příklad:
 
 ```vb
 Dim number As Short = &H_3264
@@ -56,7 +56,7 @@ Dim number As Short = &H_3264
 
 [!INCLUDE [supporting-underscores](../../../../includes/vb-separator-langversion.md)]
 
-Numeric literals can also include the `S` [type character](../../programming-guide/language-features/data-types/type-characters.md) to denote the `Short` data type, as the following example shows.
+Číselné literály mohou také zahrnovat [znak typu](../../programming-guide/language-features/data-types/type-characters.md) `S`, který označuje datový typ `Short`, jak ukazuje následující příklad.
 
 ```vb
 Dim number = &H_3264S
@@ -64,11 +64,11 @@ Dim number = &H_3264S
 
 ## <a name="programming-tips"></a>Tipy k programování
 
-- **Widening.** The `Short` data type widens to `Integer`, `Long`, `Decimal`, `Single`, or `Double`. This means you can convert `Short` to any one of these types without encountering a <xref:System.OverflowException?displayProperty=nameWithType> error.  
+- **Rozšiřující.** `Short` datový typ rozšiřuje na `Integer`, `Long`, `Decimal`, `Single`nebo `Double`. To znamená, že můžete převést `Short` na některý z těchto typů, aniž by došlo k chybě <xref:System.OverflowException?displayProperty=nameWithType>.  
   
-- **Type Characters.** Appending the literal type character `S` to a literal forces it to the `Short` data type. `Short` has no identifier type character.  
+- **Znaky typu.** Připojení znaku typu literálu `S` k literálu vynutí typ dat `Short`. `Short` nemá žádný znak typu identifikátoru.  
   
-- **Framework Type.** The corresponding type in the .NET Framework is the <xref:System.Int16?displayProperty=nameWithType> structure.  
+- **Typ rozhraní.** Odpovídající typ v .NET Framework je struktura <xref:System.Int16?displayProperty=nameWithType>.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -1,5 +1,5 @@
 ---
-title: 'How to: Load XML from a File'
+title: 'Postupy: načtení XML ze souboru'
 ms.date: 07/20/2015
 ms.assetid: e2d337ad-8ac8-4671-b694-30e5ca1413b7
 ms.openlocfilehash: 72a5adb8c7165f8113584f27bea64efde4ec58fb
@@ -9,22 +9,22 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74336114"
 ---
-# <a name="how-to-load-xml-from-a-file-visual-basic"></a>How to: Load XML from a File (Visual Basic)
+# <a name="how-to-load-xml-from-a-file-visual-basic"></a>Postupy: načtení XML ze souboru (Visual Basic)
 
-This topic shows how to load XML from a URI by using the <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType> method.
+Toto téma ukazuje, jak načíst XML z identifikátoru URI pomocí metody <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>.
 
 ## <a name="example"></a>Příklad
 
-The following example shows how to load an XML document from a file. The following example loads books.xml and outputs the XML tree to the console.
+Následující příklad ukazuje, jak načíst dokument XML ze souboru. Následující příklad načte soubor Books. XML a vytvoří výstup stromu XML do konzoly.
 
-This example uses the following XML document: [Sample XML File: Books (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).
+Tento příklad používá následující dokument XML: [ukázkový soubor XML: Books (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).
 
 ```vb
 Dim booksFromFile As XElement = XElement.Load("books.xml")
 Console.WriteLine(booksFromFile)
 ```
 
-This code produces the following output:
+Tento kód generuje následující výstup:
 
 ```xml
 <Catalog>
@@ -52,4 +52,4 @@ This code produces the following output:
 
 ## <a name="see-also"></a>Viz také:
 
-- [Parsing XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+- [Analýza kódu XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)

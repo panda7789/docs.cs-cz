@@ -15,16 +15,16 @@ ms.locfileid: "74348761"
 ---
 # <a name="how-to-find-files-with-a-specific-pattern-in-visual-basic"></a>Postupy: Hledání souborů pomocí specifického vzoru v jazyce Visual Basic
 
-The <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.GetFiles%2A> method returns a read-only collection of strings representing the path names for the files. You can use the `wildCards` parameter to specify a specific pattern. If you would like to include subdirectories in the search, set the `searchType` parameter to `SearchOption.SearchAllSubDirectories`.  
+Metoda <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.GetFiles%2A> vrátí kolekci řetězců jen pro čtení, které představují názvy cest pro soubory. K určení konkrétního vzoru můžete použít parametr `wildCards`. Chcete-li do hledání zahrnout podadresáře, nastavte parametr `searchType` na hodnotu `SearchOption.SearchAllSubDirectories`.  
   
- An empty collection is returned if no files matching the specified pattern are found.  
+ Pokud se nenajde žádné soubory, které odpovídají zadanému vzoru, vrátí se prázdná kolekce.  
   
 > [!NOTE]
-> For information about returning a file list by using the `DirectoryInfo` class of the `System.IO` namespace, see <xref:System.IO.DirectoryInfo.GetFiles%2A>.  
+> Informace o vrácení seznamu souborů pomocí třídy `DirectoryInfo` `System.IO` oboru názvů naleznete v tématu <xref:System.IO.DirectoryInfo.GetFiles%2A>.  
   
-### <a name="to-find-files-with-a-specified-pattern"></a>To find files with a specified pattern  
+### <a name="to-find-files-with-a-specified-pattern"></a>Vyhledání souborů se zadaným vzorem  
   
-- Use the `GetFiles` method, supplying the name and path of the directory you want to search and specifying the pattern. The following example returns all files with the extension `.dll` in the directory and adds them to `ListBox1`.  
+- Použijte metodu `GetFiles`, zadejte název a cestu k adresáři, který chcete vyhledat, a určete jeho vzor. Následující příklad vrátí všechny soubory s příponou `.dll` v adresáři a přidá je do `ListBox1`.  
   
      [!code-vb[VbFileIOMisc#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbFileIOMisc/VB/Class1.vb#4)]  
   
@@ -32,21 +32,21 @@ The <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy.GetFiles%2A> method r
 
  Následující podmínky mohou způsobit výjimku:  
   
-- The path is not valid for one of the following reasons: it is a zero-length string, it contains only white space, it contains invalid characters, or it is a device path (starts with \\\\.\\) (<xref:System.ArgumentException>).  
+- Cesta není platná z některého z následujících důvodů: Jedná se o řetězec o nulové délce, obsahuje pouze prázdné znaky, obsahuje neplatné znaky nebo se jedná o cestu k zařízení (začíná na \\\\.\\) (<xref:System.ArgumentException>).  
   
-- The path is not valid because it is `Nothing` (<xref:System.ArgumentNullException>).  
+- Cesta není platná, protože je `Nothing` (<xref:System.ArgumentNullException>).  
   
-- `directory` does not exist (<xref:System.IO.DirectoryNotFoundException>).  
+- `directory` neexistuje (<xref:System.IO.DirectoryNotFoundException>).  
   
-- `directory` points to an existing file (<xref:System.IO.IOException>).  
+- `directory` odkazuje na existující soubor (<xref:System.IO.IOException>).  
   
-- The path exceeds the system-defined maximum length (<xref:System.IO.PathTooLongException>).  
+- Cesta překračuje maximální povolenou délku systému (<xref:System.IO.PathTooLongException>).  
   
-- A file or folder name in the path contains a colon (:) or is in an invalid format (<xref:System.NotSupportedException>).  
+- Název souboru nebo složky v cestě obsahuje dvojtečku (:) nebo má neplatný formát (<xref:System.NotSupportedException>).  
   
-- The user lacks necessary permissions to view the path (<xref:System.Security.SecurityException>).  
+- Uživatel nemá potřebná oprávnění k zobrazení cesty (<xref:System.Security.SecurityException>).  
   
-- The user lacks necessary permissions (<xref:System.UnauthorizedAccessException>).  
+- Uživatel nemá potřebná oprávnění (<xref:System.UnauthorizedAccessException>).  
   
 ## <a name="see-also"></a>Viz také:
 

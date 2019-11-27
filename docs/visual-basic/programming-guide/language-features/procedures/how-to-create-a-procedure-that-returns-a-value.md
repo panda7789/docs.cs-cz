@@ -14,25 +14,25 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349725"
 ---
 # <a name="how-to-create-a-procedure-that-returns-a-value-visual-basic"></a>Postupy: Vytvoření procedury, která vrátí hodnotu (Visual Basic).
-You use a `Function` procedure to return a value to the calling code.  
+K vrácení hodnoty na volající kód použijte `Function` proceduru.  
   
-### <a name="to-create-a-procedure-that-returns-a-value"></a>To create a procedure that returns a value  
+### <a name="to-create-a-procedure-that-returns-a-value"></a>Vytvoření procedury, která vrátí hodnotu  
   
-1. Outside any other procedure, use a `Function` statement, followed by an `End Function` statement.  
+1. Mimo jakýkoli jiný postup použijte příkaz `Function` následovaný příkazem `End Function`.  
   
-2. In the `Function` statement, follow the `Function` keyword with the name of the procedure, and then the parameter list in parentheses.  
+2. V příkazu `Function` použijte klíčové slovo `Function` s názvem procedury a pak seznam parametrů v závorkách.  
   
-3. Follow the parentheses with an `As` clause to specify the data type of the returned value.  
+3. Pomocí závorek s klauzulí `As` určete datový typ vrácené hodnoty.  
   
-4. Place the procedure's code statements between the `Function` and `End Function` statements.  
+4. Umístěte příkazy kódu procedury mezi příkazy `Function` a `End Function`.  
   
-5. Use a `Return` statement to return the value to the calling code.  
+5. Použijte příkaz `Return` pro návrat hodnoty do kódu volajícího.  
   
-     The following `Function` procedure calculates the longest side, or hypotenuse, of a right triangle, given the values for the other two sides.  
+     Následující `Function` postup vypočítá nejdelší stranu (neboli přepony) pravého trojúhelníku s ohledem na hodnoty ostatních dvou stran.  
   
      [!code-vb[VbVbcnProcedures#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#1)]  
   
-     The following example shows a typical call to `hypotenuse`.  
+     Následující příklad ukazuje typické volání `hypotenuse`.  
   
      [!code-vb[VbVbcnProcedures#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#6)]  
   

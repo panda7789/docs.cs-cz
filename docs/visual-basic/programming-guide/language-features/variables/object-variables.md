@@ -16,17 +16,17 @@ ms.locfileid: "74351786"
 ---
 # <a name="object-variables-in-visual-basic"></a>Proměnné objektu v jazyce Visual Basic
 
-In addition to storing values directly, a variable can refer to an object. You assign an object to a variable for the same reasons you assign any value to a variable:
+Kromě přímého ukládání hodnot proměnná může odkazovat na objekt. K proměnné přiřadíte objekt ze stejných důvodů, jako je přiřazení libovolné hodnoty k proměnné:
 
-- A variable name is often shorter and easier to remember than the full path of methods and properties necessary to access the object itself.
+- Název proměnné je často kratší a snazší si pamatovat než úplnou cestu metod a vlastností potřebných pro přístup k objektu samotnému.
 
-- Using a variable that refers to an object is more efficient than repeatedly accessing the object itself through the necessary methods or properties.
+- Použití proměnné, která odkazuje na objekt, je efektivnější než opakované přístup k objektu prostřednictvím nezbytných metod nebo vlastností.
 
-- You can change a variable to refer to other objects while your code is running.
+- Můžete změnit proměnnou tak, aby odkazovala na jiné objekty v době, kdy váš kód běží.
 
-## <a name="making-code-shorter"></a>Making Code Shorter
+## <a name="making-code-shorter"></a>Kratší vytváření kódu
 
-You can use object variables to shorten the code you have to type. The following example uses the full path of methods and properties to access a <xref:System.Windows.Forms.Control> object.
+Můžete použít proměnné objektu pro zkrácení kódu, který je třeba zadat. Následující příklad používá úplnou cestu metod a vlastností pro přístup k objektu <xref:System.Windows.Forms.Control>.
 
 ```vb
 ' Assume Me is a valid Form, or replace Me with a valid Form.
@@ -35,7 +35,7 @@ Me.ActiveForm.ActiveControl.Location = New Point(100, 100)
 Me.ActiveForm.ActiveControl.Show()
 ```
 
-You can shorten this code, and speed up execution, if you use an object variable for the control. You should declare the object variable with the specific class that you intend to assign to it (`Control` in this case). Once you assign an object to the variable, you can treat it exactly the same as you treat the object to which it refers. You can set or retrieve the properties of the object or use any of its methods. The following example uses an object variable to simplify the code in the preceding example.
+Pokud použijete proměnnou objektu pro ovládací prvek, můžete tento kód zkrátit a zrychlit spouštění. Měli byste deklarovat objektovou proměnnou se specifickou třídou, kterou máte v úmyslu přiřadit (`Control` v tomto případě). Jakmile přiřadíte objekt proměnné, můžete s ní pracovat stejně, jako při zpracování objektu, na který odkazuje. Můžete nastavit nebo načíst vlastnosti objektu nebo použít kteroukoli z jeho metod. Následující příklad používá proměnnou objektu pro zjednodušení kódu v předchozím příkladu.
 
 ```vb
 Dim ctrlActv As System.Windows.Forms.Control = Me.ActiveForm.ActiveControl

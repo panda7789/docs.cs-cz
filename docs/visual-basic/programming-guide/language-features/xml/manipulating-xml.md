@@ -14,36 +14,36 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74330444"
 ---
 # <a name="manipulating-xml-in-visual-basic"></a>Zacházení s XML v jazyce Visual Basic
-You can use *XML literals* to load XML from an external source such as a string, file, or stream. You can then use [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] to manipulate the XML and use [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] to query the XML.  
+Můžete použít *literály XML* k načtení XML z externího zdroje, jako je například řetězec, soubor nebo datový proud. Pak můžete použít [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] k manipulaci s XML a použít [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] k dotazování XML.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Postupy: Načtení XML ze souboru, řetězce nebo streamu](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md)  
- Demonstrates how to load XML into an <xref:System.Xml.Linq.XDocument> or <xref:System.Xml.Linq.XElement> object from a text file, string, or stream.  
+ Ukazuje, jak načíst XML do objektu <xref:System.Xml.Linq.XDocument> nebo <xref:System.Xml.Linq.XElement> z textového souboru, řetězce nebo datového proudu.  
   
  [Postupy: Transformace XML pomocí jazyka LINQ](../../../../visual-basic/programming-guide/language-features/xml/how-to-transform-xml-by-using-linq.md)  
- Demonstrates how to transform the contents of an <xref:System.Xml.Linq.XDocument> object into a new XML document.  
+ Ukazuje, jak transformovat obsah objektu <xref:System.Xml.Linq.XDocument> do nového dokumentu XML.  
   
  [Postupy: Změna literálů XML](../../../../visual-basic/programming-guide/language-features/xml/how-to-modify-xml-literals.md)  
- Demonstrates how to modify the elements, attributes, and values in an XML literal.  
+ Ukazuje, jak upravit prvky, atributy a hodnoty v literálu XML.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Vlastnosti osy XML](../../../../visual-basic/language-reference/xml-axis/index.md)  
- Provides links to sections that describe the various XML access properties.  
+ Obsahuje odkazy na oddíly, které popisují různé vlastnosti přístupu XML.  
   
- [Overview of LINQ to XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)  
- Provides an introduction to using [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] in Visual Basic.  
+ [Přehled LINQ to XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)  
+ Představuje úvod k použití [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] v Visual Basic.  
   
- [Creating XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)  
- Provides an introduction to using XML literals in Visual Basic.  
+ [Vytváření XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)  
+ Poskytuje Úvod k použití literálů XML v Visual Basic.  
   
- [Accessing XML in Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md)  
- Demonstrates how to access parts of an XML element or document in Visual Basic.  
+ [Přístup k XML v Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md)  
+ Ukazuje, jak přistupovat k částem elementu XML nebo dokumentu v Visual Basic.  
   
  [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)  
- Provides links to sections that describe how to use [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] in Visual Basic.  
+ Obsahuje odkazy na oddíly, které popisují použití [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] v Visual Basic.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)
 - [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
-- [Introduction to LINQ in Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Úvod do jazyka LINQ v Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)

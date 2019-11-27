@@ -1,5 +1,5 @@
 ---
-title: Miscellaneous operators
+title: Různé operátory
 ms.date: 10/18/2018
 helpviewer_keywords:
 - operators [Visual Basic]
@@ -12,25 +12,25 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344070"
 ---
-# <a name="miscellaneous-operators-visual-basic"></a>Miscellaneous operators (Visual Basic)
-The following are miscellaneous operators defined in Visual Basic.  
+# <a name="miscellaneous-operators-visual-basic"></a>Různé operátory (Visual Basic)
+Níže jsou uvedeny různé operátory definované v Visual Basic.  
   
-[?. null-conditional operator](null-conditional-operators.md)
+[?. podmíněný operátor s hodnotou null](null-conditional-operators.md)
 
-[?() null-conditional operator](null-conditional-operators.md)
+[? () podmíněný operátor s hodnotou null](null-conditional-operators.md)
 
- [AddressOf operator](../../../visual-basic/language-reference/operators/addressof-operator.md)  
+ [AddressOf – operátor](../../../visual-basic/language-reference/operators/addressof-operator.md)  
   
- [Await operator](../../../visual-basic/language-reference/operators/await-operator.md)  
+ [Await – operátor](../../../visual-basic/language-reference/operators/await-operator.md)  
   
- [GetType operator](../../../visual-basic/language-reference/operators/gettype-operator.md)  
+ [GetType – operátor](../../../visual-basic/language-reference/operators/gettype-operator.md)  
   
- [Function expression](../../../visual-basic/language-reference/operators/function-expression.md)  
+ [Výraz funkce](../../../visual-basic/language-reference/operators/function-expression.md)  
 
- [If operator](../../../visual-basic/language-reference/operators/if-operator.md)  
+ [If – operátor](../../../visual-basic/language-reference/operators/if-operator.md)  
   
- [TypeOf operator](../../../visual-basic/language-reference/operators/typeof-operator.md)  
+ [TypeOf – operátor](../../../visual-basic/language-reference/operators/typeof-operator.md)  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Operators listed by functionality](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
+- [Operátory uvedené podle funkcí](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)

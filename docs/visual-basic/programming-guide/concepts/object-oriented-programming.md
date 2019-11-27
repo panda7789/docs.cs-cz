@@ -1,5 +1,5 @@
 ---
-title: Object-oriented programming
+title: Objektově orientované programování
 ms.date: 07/20/2015
 ms.assetid: 49794de4-64c3-473c-b8ed-fe98835df69c
 ms.openlocfilehash: 3739919273f4cdd285d519c414c542f1a82a16d2
@@ -9,70 +9,70 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348160"
 ---
-# <a name="object-oriented-programming-visual-basic"></a>Object-oriented programming (Visual Basic)
+# <a name="object-oriented-programming-visual-basic"></a>Objektově orientované programování (Visual Basic)
 
-Visual Basic provides full support for object-oriented programming including encapsulation, inheritance, and polymorphism.
+Visual Basic poskytuje úplnou podporu pro objektově orientované programování včetně zapouzdření, dědičnosti a polymorfismu.
 
- *Encapsulation* means that a group of related properties, methods, and other members are treated as a single unit or object.
+ *Zapouzdření* znamená, že skupina souvisejících vlastností, metod a dalších členů je považována za jednu jednotku nebo objekt.
 
- *Inheritance* describes the ability to create new classes based on an existing class.
+ *Dědičnost* popisuje možnost vytvářet nové třídy na základě existující třídy.
 
- *Polymorphism* means that you can have multiple classes that can be used interchangeably, even though each class implements the same properties or methods in different ways.
+ *Polymorfismus* znamená, že můžete mít více tříd, které lze použít zaměnitelné, i když každá třída implementuje stejné vlastnosti nebo metody různými způsoby.
 
- This section describes the following concepts:
+ Tato část popisuje následující koncepty:
 
 - [Třídy a objekty](#classes-and-objects)
-  - [Class members](#class-members)
-    - [Properties and fields](#properties-and-fields)
+  - [Členové třídy](#class-members)
+    - [Vlastnosti a pole](#properties-and-fields)
     - [Metody](#methods)
     - [Konstruktory](#constructors)
     - [Destruktory](#destructors)
     - [Události](#events)
-    - [Nested classes](#nested-classes)
-  - [Access modifiers and access levels](#access-modifiers-and-access-levels)
-    - [Instantiating classes](#instantiating-classes)
-    - [Shared classes and members](#shared-classes-and-members)
-    - [Anonymous types](#anonymous-types)
+    - [Vnořené třídy](#nested-classes)
+  - [Modifikátory přístupu a úrovně přístupu](#access-modifiers-and-access-levels)
+    - [Vytváření instancí tříd](#instantiating-classes)
+    - [Sdílené třídy a členové](#shared-classes-and-members)
+    - [Anonymní typy](#anonymous-types)
 - [Dědičnost](#inheritance)
-  - [Overriding members](#overriding-members)
+  - [Přepisování členů](#overriding-members)
 - [Rozhraní](#interfaces)
 - [Obecné typy](#generics)
-- [Delegáty](#delegates)
+- [Delegáti](#delegates)
 
 ## <a name="classes-and-objects"></a>Třídy a objekty
 
-The terms *class* and *object* are sometimes used interchangeably, but in fact, classes describe the *type* of objects, while objects are usable *instances* of classes. So, the act of creating an object is called *instantiation*. Using the blueprint analogy, a class is a blueprint, and an object is a building made from that blueprint.
+*Třída* terms a *Object* se někdy používají zaměnitelné, ale ve skutečnosti třídy popisují *typ* objektů, zatímco objekty jsou použitelné *instance* tříd. To znamená, že vytvoření objektu se nazývá vytváření *instancí*. Pomocí analogie podrobného plánu je třída plán a objekt je sestaven z tohoto podrobného plánu.
 
-To define a class:
+Definování třídy:
 
 ```vb
 Class SampleClass
 End Class
 ```
 
-Visual Basic also provides a light version of classes called *structures* that are useful when you need to create large array of objects and do not want to consume too much memory for that.
+Visual Basic také poskytuje světlou verzi tříd nazvaných *struktury* , které jsou užitečné v případě, že potřebujete vytvořit velké pole objektů a nechcete pro ně spotřebovat příliš mnoho paměti.
 
-To define a structure:
+Definování struktury:
 
 ```vb
 Structure SampleStructure
 End Structure
 ```
 
-Další informace naleznete v tématu:
+Další informace naleznete v tématu:
 
 - [Příkaz Class](../../../visual-basic/language-reference/statements/class-statement.md)
 - [Příkaz Structure](../../../visual-basic/language-reference/statements/structure-statement.md)
 
-### <a name="class-members"></a>Class members
+### <a name="class-members"></a>Členové třídy
 
-Each class can have different *class members* that include properties that describe class data, methods that define class behavior, and events that provide communication between different classes and objects.
+Každá třída může mít různé *členy třídy* , které obsahují vlastnosti, které popisují data třídy, metody, které definují chování třídy, a události, které poskytují komunikaci mezi různými třídami a objekty.
 
-#### <a name="properties-and-fields"></a>Properties and fields
+#### <a name="properties-and-fields"></a>Vlastnosti a pole
 
-Fields and properties represent information that an object contains. Fields are like variables because they can be read or set directly.
+Pole a vlastnosti reprezentují informace, které objekt obsahuje. Pole jsou jako proměnné, protože je lze číst nebo nastavit přímo.
 
-To define a field:
+Definování pole:
 
 ```vb
 Class SampleClass
@@ -80,11 +80,11 @@ Class SampleClass
 End Class
 ```
 
-Properties have get and set procedures, which provide more control on how values are set or returned.
+Vlastnosti mají procedury Get a set, které poskytují větší kontrolu nad tím, jak jsou hodnoty nastaveny nebo vraceny.
 
-Visual Basic allows you either to create a private field for storing the property value or use so-called auto-implemented properties that create this field automatically behind the scenes and provide the basic logic for the property procedures.
+Visual Basic umožňuje vytvořit soukromé pole pro uložení hodnoty vlastnosti, nebo použít automaticky implementované vlastnosti, které automaticky vytvoří toto pole na pozadí a poskytnou základní logiku pro procedury vlastností.
 
-To define an auto-implemented property:
+Definování automaticky implementované vlastnosti:
 
 ```vb
 Class SampleClass
@@ -92,7 +92,7 @@ Class SampleClass
 End Class
 ```
 
-If you need to perform some additional operations for reading and writing the property value, define a field for storing the property value and provide the basic logic for storing and retrieving it:
+Pokud potřebujete provést některé další operace pro čtení a zápis hodnoty vlastnosti, definujte pole pro uložení hodnoty vlastnosti a poskytněte základní logiku pro uložení a načtení:
 
 ```vb
 Class SampleClass
@@ -110,9 +110,9 @@ Class SampleClass
 End Class
 ```
 
-Most properties have methods or procedures to both set and get the property value. However, you can create read-only or write-only properties to restrict them from being modified or read. In Visual Basic you can use `ReadOnly` and `WriteOnly` keywords. However, auto-implemented properties cannot be read-only or write-only.
+Většina vlastností má metody nebo postupy pro nastavení a získání hodnoty vlastnosti. Můžete však vytvořit vlastnosti jen pro čtení nebo jen pro zápis a omezit tak jejich úpravu nebo čtení. V Visual Basic můžete použít klíčová slova `ReadOnly` a `WriteOnly`. Automaticky implementované vlastnosti ale nemůžou být jen pro čtení nebo jen pro zápis.
 
-Další informace naleznete v tématu:
+Další informace naleznete v tématu:
 
 - [Příkaz Property](../../../visual-basic/language-reference/statements/property-statement.md)
 - [Příkaz Get](../../../visual-basic/language-reference/statements/get-statement.md)
@@ -122,12 +122,12 @@ Další informace naleznete v tématu:
 
 #### <a name="methods"></a>Metody
 
- A *method* is an action that an object can perform.
+ *Metoda* je akce, kterou může objekt provádět.
 
 > [!NOTE]
-> In Visual Basic, there are two ways to create a method: the `Sub` statement is used if the method does not return a value; the `Function` statement is used if a method returns a value.
+> V Visual Basic existují dva způsoby, jak vytvořit metodu: příkaz `Sub` se používá, pokud metoda nevrací hodnotu. příkaz `Function` se používá, pokud metoda vrátí hodnotu.
 
-To define a method of a class:
+Chcete-li definovat metodu třídy:
 
 ```vb
 Class SampleClass
@@ -137,9 +137,9 @@ Class SampleClass
 End Class
 ```
 
-A class can have several implementations, or *overloads*, of the same method that differ in the number of parameters or parameter types.
+Třída může mít několik implementací nebo *přetížení*stejné metody, která se liší v počtu parametrů nebo typů parametrů.
 
-To overload a method:
+Přetížení metody:
 
 ```vb
 Overloads Sub Display(ByVal theChar As Char)
@@ -150,9 +150,9 @@ Overloads Sub Display(ByVal theInteger As Integer)
 End Sub
 ```
 
-In most cases you declare a method within a class definition. However, Visual Basic also supports *extension methods* that allow you to add methods to an existing class outside the actual definition of the class.
+Ve většině případů deklarujete metodu v rámci definice třídy. Nicméně Visual Basic také podporuje *rozšiřující metody* , které umožňují přidat metody do existující třídy mimo skutečnou definici třídy.
 
-Další informace naleznete v tématu:
+Další informace naleznete v tématu:
 
 - [Příkaz Function](../../../visual-basic/language-reference/statements/function-statement.md)
 - [Příkaz Sub](../../../visual-basic/language-reference/statements/sub-statement.md)
@@ -161,9 +161,9 @@ Další informace naleznete v tématu:
 
 #### <a name="constructors"></a>Konstruktory
 
-Constructors are class methods that are executed automatically when an object of a given type is created. Constructors usually initialize the data members of the new object. A constructor can run only once when a class is created. Furthermore, the code in the constructor always runs before any other code in a class. However, you can create multiple constructor overloads in the same way as for any other method.
+Konstruktory jsou metody třídy, které jsou spouštěny automaticky, když je vytvořen objekt daného typu. Konstruktory obvykle inicializují datové členy nového objektu. Konstruktor lze spustit pouze jednou při vytvoření třídy. Kromě toho kód v konstruktoru se vždy spouští před jakýmkoli jiným kódem ve třídě. Můžete však vytvořit více přetížení konstruktoru stejným způsobem jako u jakékoli jiné metody.
 
-To define a constructor for a class:
+Chcete-li definovat konstruktor pro třídu:
 
 ```vb
 Class SampleClass
@@ -173,29 +173,29 @@ Class SampleClass
 End Class
 ```
 
-For more information, see: [Object Lifetime: How Objects Are Created and Destroyed](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md).
+Další informace najdete v tématu: [Doba života objektu: vytváření a zničení objektů](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md).
 
 #### <a name="destructors"></a>Destruktory
 
-Destructors are used to destruct instances of classes. In the .NET Framework, the garbage collector automatically manages the allocation and release of memory for the managed objects in your application. However, you may still need destructors to clean up any unmanaged resources that your application creates. There can be only one destructor for a class.
+Destruktory se používají k destrukci instancí tříd. V .NET Framework systém uvolňování paměti automaticky spravuje přidělování a uvolňování paměti pro spravované objekty ve vaší aplikaci. Nicméně stále budete potřebovat destruktory k vyčištění všech nespravovaných prostředků, které vaše aplikace vytvoří. Pro třídu může existovat pouze jeden destruktor.
 
-For more information about destructors and garbage collection in the .NET Framework, see [Garbage Collection](../../../standard/garbage-collection/index.md).
+Další informace o destruktorech a uvolňování paměti v .NET Framework naleznete v tématu [uvolňování paměti](../../../standard/garbage-collection/index.md).
 
 #### <a name="events"></a>Události
 
-Events enable a class or object to notify other classes or objects when something of interest occurs. The class that sends (or raises) the event is called the *publisher* and the classes that receive (or handle) the event are called *subscribers*. For more information about events, how they are raised and handled, see [Events](../../../standard/events/index.md).
+Události umožňují třídě nebo objektu upozornit jiné třídy nebo objekty, když dojde k nějakému zájmu. Třída, která odesílá (nebo vyvolává) událost, se nazývá *Vydavatel* a třídy, které přijmou (nebo zpracovávají) událost se nazývají *předplatitelé*. Další informace o událostech, jak jsou vyvolány a zpracovávány, naleznete v tématu [events](../../../standard/events/index.md).
 
-- To declare events, use the [Event Statement](../../../visual-basic/language-reference/statements/event-statement.md).
+- Chcete-li deklarovat události, použijte [příkaz Event](../../../visual-basic/language-reference/statements/event-statement.md).
 
-- To raise events, use the [RaiseEvent Statement](../../../visual-basic/language-reference/statements/raiseevent-statement.md).
+- Chcete-li vyvolat události, použijte [příkaz RaiseEvent](../../../visual-basic/language-reference/statements/raiseevent-statement.md).
 
-- To specify event handlers using a declarative way, use the [WithEvents](../../../visual-basic/language-reference/modifiers/withevents.md) statement and the [Handles](../../../visual-basic/language-reference/statements/handles-clause.md) clause.
+- Chcete-li určit obslužné rutiny událostí pomocí deklarativního způsobu, použijte příkaz [WithEvents](../../../visual-basic/language-reference/modifiers/withevents.md) a klauzuli [Handles](../../../visual-basic/language-reference/statements/handles-clause.md) .
 
-- To be able to dynamically add, remove, and change the event handler associated with an event, use the [AddHandler Statement](../../../visual-basic/language-reference/statements/addhandler-statement.md) and [RemoveHandler Statement](../../../visual-basic/language-reference/statements/removehandler-statement.md) together with the [AddressOf Operator](../../../visual-basic/language-reference/operators/addressof-operator.md).
+- Aby bylo možné dynamicky přidávat, odebírat a měnit obslužné rutiny události přidružené k události, použijte příkaz [addHandler](../../../visual-basic/language-reference/statements/addhandler-statement.md) a [příkaz removeHandler](../../../visual-basic/language-reference/statements/removehandler-statement.md) spolu s [operátorem AddressOf](../../../visual-basic/language-reference/operators/addressof-operator.md).
 
-#### <a name="nested-classes"></a>Nested classes
+#### <a name="nested-classes"></a>Vnořené třídy
 
-A class defined within another class is called *nested*. By default, the nested class is private.
+Třída definovaná v rámci jiné třídy se nazývá *vnořená*. Ve výchozím nastavení je vnořená třída soukromá.
 
 ```vb
 Class Container
@@ -205,37 +205,37 @@ Class Container
 End Class
 ```
 
-To create an instance of the nested class, use the name of the container class followed by the dot and then followed by the name of the nested class:
+Chcete-li vytvořit instanci vnořené třídy, použijte název třídy kontejneru následovaný tečkou a následně následovaný názvem vnořené třídy:
 
 ```vb
 Dim nestedInstance As Container.Nested = New Container.Nested()
 ```
 
-### <a name="access-modifiers-and-access-levels"></a>Access modifiers and access levels
+### <a name="access-modifiers-and-access-levels"></a>Modifikátory přístupu a úrovně přístupu
 
-All classes and class members can specify what access level they provide to other classes by using *access modifiers*.
+Všechny třídy a členy třídy mohou určit, jakou úroveň přístupu poskytují jiné třídě, pomocí *modifikátorů přístupu*.
 
-The following access modifiers are available:
+K dispozici jsou následující modifikátory přístupu:
 
-|Visual Basic Modifier|Definice|
+|Modifikátor Visual Basic|Definice|
 |---------------------------|----------------|
-|[Public](../../../visual-basic/language-reference/modifiers/public.md)|The type or member can be accessed by any other code in the same assembly or another assembly that references it.|
-|[Private](../../../visual-basic/language-reference/modifiers/private.md)|The type or member can only be accessed by code in the same class.|
-|[Protected](../../../visual-basic/language-reference/modifiers/protected.md)|The type or member can only be accessed by code in the same class or in a derived class.|
-|[Friend](../../../visual-basic/language-reference/modifiers/friend.md)|The type or member can be accessed by any code in the same assembly, but not from another assembly.|
-|`Protected Friend`|The type or member can be accessed by any code in the same assembly, or by any derived class in another assembly.|
+|[Public](../../../visual-basic/language-reference/modifiers/public.md)|Na daný typ nebo člen je možné přistupovat jakýkoli jiný kód ve stejném sestavení nebo jiném sestavení, které na něj odkazuje.|
+|[Private](../../../visual-basic/language-reference/modifiers/private.md)|Typ nebo člen je k dispozici pouze pomocí kódu ve stejné třídě.|
+|[Protected](../../../visual-basic/language-reference/modifiers/protected.md)|Typ nebo člen je k dispozici pouze pomocí kódu ve stejné třídě nebo v odvozené třídě.|
+|[Friend](../../../visual-basic/language-reference/modifiers/friend.md)|K typu nebo členu může být přistup libovolným kódem ve stejném sestavení, ale nikoli z jiného sestavení.|
+|`Protected Friend`|K typu nebo členu může být přistup libovolným kódem ve stejném sestavení nebo libovolnou odvozenou třídou v jiném sestavení.|
 
-For more information, see [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).
+Další informace najdete v tématu [úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).
 
-### <a name="instantiating-classes"></a>Instantiating classes
+### <a name="instantiating-classes"></a>Vytváření instancí tříd
 
-To create an object, you need to instantiate a class, or create a class instance.
+Chcete-li vytvořit objekt, je nutné vytvořit instanci třídy nebo vytvořit instanci třídy.
 
 ```vb
 Dim sampleObject as New SampleClass()
 ```
 
-After instantiating a class, you can assign values to the instance's properties and fields and invoke class methods.
+Po vytvoření instance třídy můžete přiřadit hodnoty vlastnostem a polím instance a vyvolat metody třídy.
 
 ```vb
 ' Set a property value.
@@ -244,23 +244,23 @@ sampleObject.SampleProperty = "Sample String"
 sampleObject.SampleMethod()
 ```
 
-To assign values to properties during the class instantiation process, use object initializers:
+Chcete-li přiřadit hodnoty vlastnostem během procesu vytváření instancí třídy, použijte Inicializátory objektů:
 
 ```vb
 Dim sampleObject = New SampleClass With
     {.FirstProperty = "A", .SecondProperty = "B"}
 ```
 
-Další informace naleznete v tématu:
+Další informace naleznete v tématu:
 
 - [Operátor New](../../../visual-basic/language-reference/operators/new-operator.md)
 - [Inicializátory objektů: pojmenované a anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)
 
-### <a name="shared-classes-and-members"></a>Shared classes and members
+### <a name="shared-classes-and-members"></a>Sdílené třídy a členové
 
- A shared member of the class is a property, procedure, or field that is shared by all instances of a class.
+ Sdílený člen třídy je vlastnost, procedura nebo pole, které jsou sdíleny všemi instancemi třídy.
 
- To define a shared member:
+ Definování sdíleného člena:
 
 ```vb
 Class SampleClass
@@ -268,24 +268,24 @@ Class SampleClass
 End Class
 ```
 
- To access the shared member, use the name of the class without creating an object of this class:
+ Chcete-li získat přístup ke sdílenému členu, použijte název třídy bez vytvoření objektu této třídy:
 
 ```vb
 MsgBox(SampleClass.SampleString)
 ```
 
- Shared modules in Visual Basic have shared members only and cannot be instantiated. Shared members also cannot access non-shared properties, fields or methods
+ Sdílené moduly v Visual Basic mají pouze sdílené členy a nelze je vytvořit z instance. Sdílené členy nemají také přístup k nesdíleným vlastnostem, polím nebo metodám.
 
- Další informace naleznete v tématu:
+ Další informace naleznete v tématu:
 
 - [Shared](../../../visual-basic/language-reference/modifiers/shared.md)
 - [Příkaz Module](../../../visual-basic/language-reference/statements/module-statement.md)
 
-### <a name="anonymous-types"></a>Anonymous types
+### <a name="anonymous-types"></a>Anonymní typy
 
-Anonymous types enable you to create objects without writing a class definition for the data type. Instead, the compiler generates a class for you. The class has no usable name and contains the properties you specify in declaring the object.
+Anonymní typy umožňují vytvářet objekty bez psaní definice třídy pro datový typ. Místo toho kompilátor vygeneruje třídu za vás. Třída nemá žádný použitelný název a obsahuje vlastnosti, které zadáte v deklaraci objektu.
 
-To create an instance of an anonymous type:
+Vytvoření instance anonymního typu:
 
 ```vb
 ' sampleObject is an instance of a simple anonymous type.
@@ -293,16 +293,16 @@ Dim sampleObject =
     New With {Key .FirstProperty = "A", .SecondProperty = "B"}
 ```
 
-For more information, see: [Anonymous Types](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).
+Další informace najdete v tématech: [anonymní typy](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).
 
 ## <a name="inheritance"></a>Dědičnost
 
-Inheritance enables you to create a new class that reuses, extends, and modifies the behavior that is defined in another class. The class whose members are inherited is called the *base class*, and the class that inherits those members is called the *derived class*. However, all classes in Visual Basic implicitly inherit from the <xref:System.Object> class that supports .NET class hierarchy and provides low-level services to all classes.
+Dědičnost umožňuje vytvořit novou třídu, která znovu používá, rozšiřuje a upravuje chování, které je definováno v jiné třídě. Třída, jejíž členové jsou zděděni, se nazývají *základní třídu*a třída, která dědí tyto členy, se nazývá *odvozená třída*. Nicméně všechny třídy v Visual Basic implicitně dědí z třídy <xref:System.Object>, která podporuje hierarchii tříd .NET a poskytuje služby nižší úrovně pro všechny třídy.
 
 > [!NOTE]
-> Visual Basic doesn't support multiple inheritance. That is, you can specify only one base class for a derived class.
+> Visual Basic nepodporuje vícenásobnou dědičnost. To znamená, že můžete zadat pouze jednu základní třídu pro odvozenou třídu.
 
-To inherit from a base class:
+Chcete-li dědit ze základní třídy:
 
 ```vb
 Class DerivedClass
@@ -310,47 +310,47 @@ Class DerivedClass
 End Class
 ```
 
-By default all classes can be inherited. However, you can specify whether a class must not be used as a base class, or create a class that can be used as a base class only.
+Ve výchozím nastavení mohou být děděny všechny třídy. Můžete však určit, zda třída nesmí být použita jako základní třída, nebo vytvořit třídu, která může být použita pouze jako základní třída.
 
-To specify that a class cannot be used as a base class:
+Chcete-li určit, že třídu nelze použít jako základní třídu:
 
 ```vb
 NotInheritable Class SampleClass
 End Class
 ```
 
-To specify that a class can be used as a base class only and cannot be instantiated:
+Chcete-li určit, že třída může být použita pouze jako základní třída a nemůže být vytvořena instance:
 
 ```vb
 MustInherit Class BaseClass
 End Class
 ```
 
-Další informace naleznete v tématu:
+Další informace naleznete v tématu:
 
 - [Příkaz Inherits](../../../visual-basic/language-reference/statements/inherits-statement.md)
 - [NotInheritable](../../../visual-basic/language-reference/modifiers/notinheritable.md)
 - [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md)
 
-### <a name="overriding-members"></a>Overriding members
+### <a name="overriding-members"></a>Přepisování členů
 
-By default, a derived class inherits all members from its base class. If you want to change the behavior of the inherited member, you need to override it. That is, you can define a new implementation of the method, property or event in the derived class.
+Ve výchozím nastavení zdědí odvozená třída všechny členy ze své základní třídy. Pokud chcete změnit chování zděděného člena, je nutné ho přepsat. To znamená, že můžete definovat novou implementaci metody, vlastnosti nebo události v odvozené třídě.
 
-The following modifiers are used to control how properties and methods are overridden:
+Následující modifikátory slouží k řízení způsobu přepsání vlastností a metod:
 
-|Visual Basic Modifier|Definice|
+|Modifikátor Visual Basic|Definice|
 |---------------------------|----------------|
-|[Overridable](../../../visual-basic/language-reference/modifiers/overridable.md)|Allows a class member to be overridden in a derived class.|
-|[Overrides](../../../visual-basic/language-reference/modifiers/overrides.md)|Overrides a virtual (overridable) member defined in the base class.|
-|[NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)|Prevents a member from being overridden in an inheriting class.|
-|[MustOverride](../../../visual-basic/language-reference/modifiers/mustoverride.md)|Requires that a class member to be overridden in the derived class.|
-|[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)|Hides a member inherited from a base class|
+|[Overridable](../../../visual-basic/language-reference/modifiers/overridable.md)|Umožňuje přepsat člena třídy v odvozené třídě.|
+|[Overrides](../../../visual-basic/language-reference/modifiers/overrides.md)|Přepíše virtuální (overridabled) člen definovaný v základní třídě.|
+|[NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)|Zabraňuje přepsání člena v dědičné třídě.|
+|[MustOverride](../../../visual-basic/language-reference/modifiers/mustoverride.md)|Vyžaduje, aby byl člen třídy přepsán v odvozené třídě.|
+|[Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)|Skryje člena zděděného ze základní třídy.|
 
 ## <a name="interfaces"></a>Rozhraní
 
-Interfaces, like classes, define a set of properties, methods, and events. But unlike classes, interfaces do not provide implementation. They are implemented by classes, and defined as separate entities from classes. An interface represents a contract, in that a class that implements an interface must implement every aspect of that interface exactly as it is defined.
+Rozhraní, jako jsou třídy, definují sadu vlastností, metod a událostí. Ale na rozdíl od tříd rozhraní neposkytuje implementaci. Jsou implementovány pomocí tříd a definovány jako samostatné entity ze tříd. Rozhraní představuje kontrakt, v tom smyslu, že třída, která implementuje rozhraní, musí implementovat všechny aspekty tohoto rozhraní přesně tak, jak je definováno.
 
-To define an interface:
+Definování rozhraní:
 
 ```vb
 Public Interface ISampleInterface
@@ -358,7 +358,7 @@ Public Interface ISampleInterface
 End Interface
 ```
 
-To implement an interface in a class:
+Implementace rozhraní ve třídě:
 
 ```vb
 Class SampleClass
@@ -369,7 +369,7 @@ Class SampleClass
 End Class
 ```
 
-Další informace naleznete v tématu:
+Další informace naleznete v tématu:
 
 - [Rozhraní](../../../visual-basic/programming-guide/language-features/interfaces/index.md)
 - [Příkaz Interface](../../../visual-basic/language-reference/statements/interface-statement.md)
@@ -377,9 +377,9 @@ Další informace naleznete v tématu:
 
 ## <a name="generics"></a>Obecné typy
 
-Classes, structures, interfaces and methods in .NET can include *type parameters* that define types of objects that they can store or use. The most common example of generics is a collection, where you can specify the type of objects to be stored in a collection.
+Třídy, struktury, rozhraní a metody v rozhraní .NET mohou zahrnovat *parametry typu* , které definují typy objektů, které mohou ukládat nebo používat. Nejběžnějším příkladem obecných typů je kolekce, kde můžete určit typ objektů, které mají být uloženy v kolekci.
 
-To define a generic class:
+Definování obecné třídy:
 
 ```vb
 Class SampleGeneric(Of T)
@@ -387,32 +387,32 @@ Class SampleGeneric(Of T)
 End Class
 ```
 
-To create an instance of a generic class:
+Vytvoření instance obecné třídy:
 
 ```vb
 Dim sampleObject As New SampleGeneric(Of String)
 sampleObject.Field = "Sample string"
 ```
 
-Další informace naleznete v tématu:
+Další informace naleznete v tématu:
 
 - [Obecné typy](../../../standard/generics/index.md)
-- [Generic Types in Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [Obecné typy v Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
 
-## <a name="delegates"></a>Delegáty
+## <a name="delegates"></a>Delegáti
 
- A *delegate* is a type that defines a method signature, and can provide a reference to any method with a compatible signature. You can invoke (or call) the method through the delegate. Delegáty se používají pro předávání metod jako argumentů jiným metodám.
+ *Delegát* je typ, který definuje signaturu metody a může poskytnout odkaz na libovolnou metodu s kompatibilní signaturou. Metodu můžete vyvolat (nebo volat) prostřednictvím delegáta. Delegáty se používají pro předávání metod jako argumentů jiným metodám.
 
 > [!NOTE]
-> Ovladače událostí nejsou nic jiného než metody, které jsou vyvolány prostřednictvím delegátů. For more information about using delegates in event handling, see [Events](../../../standard/events/index.md).
+> Ovladače událostí nejsou nic jiného než metody, které jsou vyvolány prostřednictvím delegátů. Další informace o použití delegátů při zpracování událostí najdete v tématu [události](../../../standard/events/index.md).
 
-To create a delegate:
+Postup vytvoření delegáta:
 
 ```vb
 Delegate Sub SampleDelegate(ByVal str As String)
 ```
 
-To create a reference to a method that matches the signature specified by the delegate:
+Chcete-li vytvořit odkaz na metodu, která odpovídá podpisu určenému delegátem:
 
 ```vb
 Class SampleClass
@@ -428,12 +428,12 @@ Class SampleClass
 End Class
 ```
 
-Další informace naleznete v tématu:
+Další informace naleznete v tématu:
 
-- [Delegáty](../../../visual-basic/programming-guide/language-features/delegates/index.md)
+- [Delegáti](../../../visual-basic/programming-guide/language-features/delegates/index.md)
 - [Příkaz Delegate](../../../visual-basic/language-reference/statements/delegate-statement.md)
 - [Operátor AddressOf](../../../visual-basic/language-reference/operators/addressof-operator.md)
 
 ## <a name="see-also"></a>Viz také:
 
-- [Visual Basic Programming Guide](../../../visual-basic/programming-guide/index.md)
+- [Průvodce programováním Visual Basic](../../../visual-basic/programming-guide/index.md)

@@ -1,5 +1,5 @@
 ---
-title: Runtime Library Members
+title: Členové běhové knihovny
 ms.date: 07/20/2015
 f1_keywords:
 - VisualBasic
@@ -18,16 +18,16 @@ ms.locfileid: "74349621"
 ---
 # <a name="visual-basic-runtime-library-members"></a>Členové knihovny prostředí Runtime jazyka Visual Basic
 
-The `Microsoft.VisualBasic` namespace contains the classes, modules, constants, and enumerations that constitute the Visual Basic runtime library. These library members provide procedures, properties, and constant values you can use in your code. Each module and class represents a particular category of functionality.  
+Obor názvů `Microsoft.VisualBasic` obsahuje třídy, moduly, konstanty a výčty, které tvoří knihovnu modulu runtime Visual Basic. Tyto členy knihovny poskytují procedury, vlastnosti a konstantní hodnoty, které můžete použít ve svém kódu. Každý modul a třída představuje konkrétní kategorii funkcí.  
   
-## <a name="microsoftvisualbasiccollection-class"></a>Microsoft.VisualBasic.Collection Class  
+## <a name="microsoftvisualbasiccollection-class"></a>Microsoft. VisualBasic. Collection – Třída  
   
 |||||  
 |---|---|---|---|  
 |<xref:Microsoft.VisualBasic.Collection.Add%2A>|<xref:Microsoft.VisualBasic.Collection.Clear%2A>|<xref:Microsoft.VisualBasic.Collection.Contains%2A>|<xref:Microsoft.VisualBasic.Collection.Count%2A>|  
 |<xref:Microsoft.VisualBasic.Collection.GetEnumerator%2A>|<xref:Microsoft.VisualBasic.Collection.Item%2A>|<xref:Microsoft.VisualBasic.Collection.Remove%2A>||  
   
-## <a name="microsoftvisualbasiccomclassattribute-class"></a>Microsoft.VisualBasic.ComClassAttribute Class  
+## <a name="microsoftvisualbasiccomclassattribute-class"></a>Microsoft. VisualBasic. ComClassAttribute – třída  
   
 |||||  
 |---|---|---|---|  
@@ -41,7 +41,7 @@ The `Microsoft.VisualBasic` namespace contains the classes, modules, constants, 
 |<xref:Microsoft.VisualBasic.ControlChars.Lf>|<xref:Microsoft.VisualBasic.ControlChars.NewLine>|<xref:Microsoft.VisualBasic.ControlChars.NullChar>|<xref:Microsoft.VisualBasic.ControlChars.Quote>|  
 |<xref:Microsoft.VisualBasic.ControlChars.Tab>|<xref:Microsoft.VisualBasic.ControlChars.VerticalTab>|||  
   
-## <a name="microsoftvisualbasicconstants-class"></a>Microsoft.VisualBasic.Constants Class  
+## <a name="microsoftvisualbasicconstants-class"></a>Třída Microsoft. VisualBasic. konstanty  
   
 |||||  
 |---|---|---|---|  
@@ -72,7 +72,7 @@ The `Microsoft.VisualBasic` namespace contains the classes, modules, constants, 
 |<xref:Microsoft.VisualBasic.Constants.vbVolume>|<xref:Microsoft.VisualBasic.Constants.vbWednesday>|<xref:Microsoft.VisualBasic.Constants.vbWide>|<xref:Microsoft.VisualBasic.Constants.vbYes>|  
 |<xref:Microsoft.VisualBasic.Constants.vbYesNo>|<xref:Microsoft.VisualBasic.Constants.vbYesNoCancel>|||  
   
-## <a name="microsoftvisualbasicconversion-module"></a>Microsoft.VisualBasic.Conversion Module  
+## <a name="microsoftvisualbasicconversion-module"></a>Microsoft. VisualBasic. Conversion – modul  
   
 |||||  
 |---|---|---|---|  
@@ -98,7 +98,7 @@ The `Microsoft.VisualBasic` namespace contains the classes, modules, constants, 
 |<xref:Microsoft.VisualBasic.ErrObject.HelpContext%2A>|<xref:Microsoft.VisualBasic.ErrObject.HelpFile%2A>|<xref:Microsoft.VisualBasic.ErrObject.LastDllError%2A>|<xref:Microsoft.VisualBasic.ErrObject.Number%2A>|  
 |<xref:Microsoft.VisualBasic.ErrObject.Raise%2A>|<xref:Microsoft.VisualBasic.ErrObject.Raise%2A>|||  
   
-## <a name="microsoftvisualbasicfilesystem-module"></a>Microsoft.VisualBasic.FileSystem Module  
+## <a name="microsoftvisualbasicfilesystem-module"></a>Microsoft. VisualBasic. FileSystem – modul  
   
 |||||  
 |---|---|---|---|  
@@ -113,7 +113,7 @@ The `Microsoft.VisualBasic` namespace contains the classes, modules, constants, 
 |<xref:Microsoft.VisualBasic.FileSystem.SetAttr%2A>|<xref:Microsoft.VisualBasic.FileSystem.SPC%2A>|<xref:Microsoft.VisualBasic.FileSystem.TAB%2A>|<xref:Microsoft.VisualBasic.FileSystem.Unlock%2A>|  
 |<xref:Microsoft.VisualBasic.FileSystem.Write%2A>|<xref:Microsoft.VisualBasic.FileSystem.WriteLine%2A>|||  
   
-## <a name="microsoftvisualbasicfinancial-module"></a>Microsoft.VisualBasic.Financial Module  
+## <a name="microsoftvisualbasicfinancial-module"></a>Microsoft. VisualBasic. Financial – modul  
   
 |||||  
 |---|---|---|---|  
@@ -134,7 +134,7 @@ The `Microsoft.VisualBasic` namespace contains the classes, modules, constants, 
 |---|---|---|---|  
 |<xref:Microsoft.VisualBasic.HideModuleNameAttribute>||||  
   
-## <a name="microsoftvisualbasicinformation-module"></a>Microsoft.VisualBasic.Information Module  
+## <a name="microsoftvisualbasicinformation-module"></a>Microsoft. VisualBasic. Information – modul  
   
 |||||  
 |---|---|---|---|  
@@ -144,7 +144,7 @@ The `Microsoft.VisualBasic` namespace contains the classes, modules, constants, 
 |<xref:Microsoft.VisualBasic.Information.SystemTypeName%2A>|<xref:Microsoft.VisualBasic.Information.TypeName%2A>|<xref:Microsoft.VisualBasic.Information.UBound%2A>|<xref:Microsoft.VisualBasic.Information.VarType%2A>|  
 |<xref:Microsoft.VisualBasic.Information.VbTypeName%2A>||||  
   
-## <a name="microsoftvisualbasicinteraction-module"></a>Microsoft.VisualBasic.Interaction Module  
+## <a name="microsoftvisualbasicinteraction-module"></a>Microsoft. VisualBasic. interakcí – modul  
   
 |||||  
 |---|---|---|---|  
@@ -160,7 +160,7 @@ The `Microsoft.VisualBasic` namespace contains the classes, modules, constants, 
 |---|---|---|---|  
 |<xref:Microsoft.VisualBasic.MyGroupCollectionAttribute.CreateMethod%2A>|<xref:Microsoft.VisualBasic.MyGroupCollectionAttribute.DefaultInstanceAlias%2A>|<xref:Microsoft.VisualBasic.MyGroupCollectionAttribute.DisposeMethod%2A>|<xref:Microsoft.VisualBasic.MyGroupCollectionAttribute.MyGroupName%2A>|  
   
-## <a name="microsoftvisualbasicstrings-module"></a>Microsoft.VisualBasic.Strings Module  
+## <a name="microsoftvisualbasicstrings-module"></a>Microsoft. VisualBasic. Strings – modul  
   
 |||||  
 |---|---|---|---|  
@@ -173,27 +173,27 @@ The `Microsoft.VisualBasic` namespace contains the classes, modules, constants, 
 |<xref:Microsoft.VisualBasic.Strings.Space%2A>|<xref:Microsoft.VisualBasic.Strings.Split%2A>|<xref:Microsoft.VisualBasic.Strings.StrComp%2A>|<xref:Microsoft.VisualBasic.Strings.StrConv%2A>|  
 |<xref:Microsoft.VisualBasic.Strings.StrDup%2A>|<xref:Microsoft.VisualBasic.Strings.StrReverse%2A>|<xref:Microsoft.VisualBasic.Strings.Trim%2A>|<xref:Microsoft.VisualBasic.Strings.UCase%2A>|  
   
-## <a name="microsoftvisualbasicvbfixedarrayattribute-class"></a>Microsoft.VisualBasic.VBFixedArrayAttribute Class  
+## <a name="microsoftvisualbasicvbfixedarrayattribute-class"></a>Microsoft. VisualBasic. VBFixedArrayAttribute – Třída  
   
 |||||  
 |---|---|---|---|  
 |<xref:Microsoft.VisualBasic.VBFixedArrayAttribute.Bounds%2A>|<xref:Microsoft.VisualBasic.VBFixedArrayAttribute.Length%2A>|||  
   
-## <a name="microsoftvisualbasicvbfixedstringattribute-class"></a>Microsoft.VisualBasic.VBFixedStringAttribute Class  
+## <a name="microsoftvisualbasicvbfixedstringattribute-class"></a>Microsoft. VisualBasic. VBFixedStringAttribute – Třída  
   
 |||||  
 |---|---|---|---|  
 |<xref:Microsoft.VisualBasic.VBFixedStringAttribute.Length%2A>||||  
   
-## <a name="microsoftvisualbasicvbmath-module"></a>Microsoft.VisualBasic.VbMath Module  
+## <a name="microsoftvisualbasicvbmath-module"></a>Microsoft. VisualBasic. VbMath – modul  
   
 |||||  
 |---|---|---|---|  
 |<xref:Microsoft.VisualBasic.VBMath.Randomize%2A>|<xref:Microsoft.VisualBasic.VBMath.Rnd%2A>|||  
   
-## <a name="microsoftvisualbasic-constants-and-enumerations"></a>Microsoft.VisualBasic Constants and Enumerations  
+## <a name="microsoftvisualbasic-constants-and-enumerations"></a>Konstanty a výčty Microsoft. VisualBasic  
 
- The `Microsoft.VisualBasic` namespace provides constants and enumerations as part of the Visual Basic run-time library. You can use these constant values in your code. Each enumeration represents a particular category of functionality. For more information, see [Constants and Enumerations](../../visual-basic/language-reference/constants-and-enumerations.md).  
+ Obor názvů `Microsoft.VisualBasic` poskytuje konstanty a výčty jako součást knihovny run-time Visual Basic. Tyto konstantní hodnoty můžete použít ve svém kódu. Každý výčet představuje konkrétní kategorii funkcí. Další informace naleznete v tématu [konstanty a výčty](../../visual-basic/language-reference/constants-and-enumerations.md).  
   
 ## <a name="see-also"></a>Viz také:
 

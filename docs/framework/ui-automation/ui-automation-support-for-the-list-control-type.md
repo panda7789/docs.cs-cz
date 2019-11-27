@@ -15,92 +15,92 @@ ms.locfileid: "74446729"
 ---
 # <a name="ui-automation-support-for-the-list-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku seznam
 > [!NOTE]
-> This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace. For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
+> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v oboru názvů <xref:System.Windows.Automation>. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API pro Windows Automation: automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
   
- This topic provides information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] support for the List control type. In [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], a control type is a set of conditions that a control must meet in order to use the <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty> property. The conditions include specific guidelines for [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree structure, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] property values and control patterns.  
+ Toto téma poskytuje informace o podpoře [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] pro typ ovládacího prvku seznam. V [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]je typ ovládacího prvku sada podmínek, které musí ovládací prvek splňovat, aby bylo možné použít vlastnost <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty>. Podmínky zahrnují konkrétní pokyny pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromovou strukturu, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] hodnoty vlastností a vzory ovládacích prvků.  
   
- The List control type provides a way to organize a flat group or groups of items and allows a user to select one or more of those items. The List control type has a loose restriction on what types of child elements it may contain. This enables UI Automation providers to support a well-known element for selection containers.  
+ Typ ovládacího prvku seznam poskytuje způsob, jak uspořádat plochou skupinu nebo skupiny položek a umožní uživateli vybrat jednu nebo více těchto položek. Typ ovládacího prvku seznam má volné omezení pro typy podřízených elementů, které může obsahovat. To umožňuje zprostředkovatelům automatizace uživatelského rozhraní podporovat známý element pro kontejnery výběru.  
   
- The [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] requirements in the following sections apply to all controls that implement the List control type, whether [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)], or [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]. List container controls are an example of controls that implement the List control type.  
+ Požadavky na [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] v následujících částech se vztahují na všechny ovládací prvky, které implementují typ ovládacího prvku seznam, ať už [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)]nebo [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]. Seznam ovládacích prvků kontejneru je příkladem ovládacích prvků, které implementují typ ovládacího prvku seznam.  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>   
-## <a name="required-ui-automation-tree-structure"></a>Required UI Automation Tree Structure  
- The following table depicts the two views of the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree that pertain to list controls and describes what can be contained in each view. The control view contains only elements that are controls, and the content view removes redundant information from the tree. For example, a text control used to label a combo box will be exposed as the `ComboBox NameProperty`. Because the text control is already exposed in this manner through the control view it is unnecessary to have it exposed twice; therefore it is removed from the content view. For more information on the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree, see [UI Automation Tree Overview](ui-automation-tree-overview.md).  
+## <a name="required-ui-automation-tree-structure"></a>Požadovaná stromová struktura automatizace uživatelského rozhraní  
+ Následující tabulka znázorňuje dvě zobrazení stromu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], která se vztahují k ovládacím prvkům seznamu, a popisuje, co může být v každém zobrazení obsaženo. Zobrazení ovládacího prvku obsahuje pouze prvky, které jsou ovládacími prvky, a zobrazení obsahu odebere nadbytečné informace ze stromu. Například textový ovládací prvek, který se používá k označení pole se seznamem, bude vystaven jako `ComboBox NameProperty`. Vzhledem k tomu, že ovládací prvek text je již vystaven tímto způsobem prostřednictvím zobrazení ovládacího prvku, není nutné jej vystavit dvakrát; Proto je odebrán ze zobrazení obsahu. Další informace o stromové struktuře [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] najdete v tématu [Přehled stromu automatizace uživatelského rozhraní](ui-automation-tree-overview.md).  
   
-|Control View|Content View|  
+|Zobrazení ovládacích prvků|Zobrazení obsahu|  
 |------------------|------------------|  
-|Contains the elements that correspond to controls.|Removes redundant information from the tree so that assistive technologies work with the smallest set of meaningful information to the end user.|  
-|Seznam<br /><br /> -   DataItem (0 or more)<br />-   ListItem (0 or more)<br />-   Group (0 or more)<br />-   ScrollBar (0, 1 or 2)|Seznam<br /><br /> -   DataItem (0 or more)<br />-   ListItem (0 or more)<br />-   Group (0 or more)|  
+|Obsahuje prvky, které odpovídají ovládacím prvkům.|Odstraní redundantní informace ze stromu, takže technologie pro usnadnění práce s nejmenší sadou smysluplných informací pro koncového uživatele.|  
+|Seznam<br /><br /> -DataItem (0 nebo více)<br />-ListItem (0 nebo více)<br />-Group (0 nebo více)<br />-ScrollBar (0, 1 nebo 2)|Seznam<br /><br /> -DataItem (0 nebo více)<br />-ListItem (0 nebo více)<br />-Group (0 nebo více)|  
   
- The control view for a control that implements the List control type (such as a list control) consists of:  
+ Zobrazení ovládacího prvku pro ovládací prvek, který implementuje typ ovládacího prvku seznam (například ovládací prvek seznam), se skládá z těchto prvků:  
   
-- Zero or more items within the list control (items can be based on the List Item or Data Item control types).
+- Nula nebo více položek v rámci ovládacího prvku seznam (položky mohou být založené na typu položky seznamu nebo ovládacího prvku položky dat).
   
-- Zero or more group controls within a list control.
+- Nula nebo více ovládacích prvků skupiny v rámci ovládacího prvku seznam.
   
-- Zero, one, or two scroll bar controls.
+- Nula, jeden nebo dva ovládací prvky posuvníku.
   
-The content view of a control that implements the List control type (such as a list control) consists of:  
+Zobrazení obsahu ovládacího prvku, který implementuje typ ovládacího prvku seznam (například ovládací prvek seznam), se skládá z těchto prvků:  
   
-- Zero or more items within the list control (items can be based on the List Item or Data Item control types).
+- Nula nebo více položek v rámci ovládacího prvku seznam (položky mohou být založené na typu položky seznamu nebo ovládacího prvku položky dat).
   
-- Zero or more groups within the list control.
+- V rámci ovládacího prvku seznamu není nula nebo více skupin.
 
-A list control must not have items that have a hierarchical relationship other than being grouped together. If the items have children in the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree, then the list container should be based on the Tree control type.  
+Ovládací prvek seznamu nesmí obsahovat položky, které mají hierarchickou relaci jinou než dohromady seskupené. Pokud má položka podřízené položky ve stromové struktuře [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], měl by být kontejner seznamu založen na typu ovládacího prvku strom.  
   
- The selectable items within the list control will be available from the descendants in the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree of the list control. All items within the list control must belong to the same selection group. The selectable items in the list should be exposed as ListItem (instead of DataItem) control types.  
+ Položky, které lze vybrat v rámci ovládacího prvku seznam, budou k dispozici od následníků ve stromové struktuře [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ovládacího prvku seznam. Všechny položky v rámci ovládacího prvku seznam musí patřit do stejné skupiny výběru. Položky, které lze vybrat v seznamu, by měly být zveřejněny jako ListItem (namísto DataItem) typů ovládacích prvků.  
   
 <a name="Required_UI_Automation_Properties"></a>   
-## <a name="required-ui-automation-properties"></a>Required UI Automation Properties  
- The following table lists the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] properties whose value or definition is especially relevant to list controls. For more information on [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] properties, see [UI Automation Properties for Clients](ui-automation-properties-for-clients.md).  
+## <a name="required-ui-automation-properties"></a>Požadované vlastnosti automatizace uživatelského rozhraní  
+ V následující tabulce jsou uvedeny vlastnosti [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], jejichž hodnota nebo definice je obzvláště relevantní pro ovládací prvky seznamu. Další informace o vlastnostech [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] najdete v tématu [Vlastnosti automatizace uživatelského rozhraní pro klienty](ui-automation-properties-for-clients.md).  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Property|Hodnota|Poznámky|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] – vlastnost|Hodnota|Poznámky|  
 |------------------------------------------------------------------------------------|-----------|-----------|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|See notes.|The value of this property needs to be unique across all controls in an application.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|See notes.|The outermost rectangle that contains the whole control.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|See notes.|If the list control has a clickable point (a point that can be clicked to cause the list to take focus), then that point must be exposed through this property.<br /><br /> If the value of the `IsOffScreen` property is true, then the <xref:System.Windows.Automation.NoClickablePointException> will be raised.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|See notes.|If the control can receive keyboard focus, it must support this property.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|See notes.|The value of a list control's Name property should convey the category of options that the user is being asked to select from. This property typically gets its name from a static text label. If there is not a static text label the application developer must expose a value for the Name property.<br /><br /> The only time this property is not required for list controls is if the control is used within the subtree of another control.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|See notes.|If there is a static text label then this property must expose a reference to that control.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|Seznam|This value is the same for all UI frameworks.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|"list"|Localized string corresponding to the List control type.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|True|The list control is always included in the content view of the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|True|The list control is always included in the control view of the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tree.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|True|If the container can accept keyboard input then this property value should be true.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.HelpTextProperty>|See notes.|The Help text for list controls should explain why the user is being asked to make a choice from a list of options. For example, "Selection an item from this list will set the display resolution for your monitor."|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|Viz poznámky.|Hodnota této vlastnosti musí být jedinečná napříč všemi ovládacími prvky v aplikaci.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|Viz poznámky.|Vnější obdélník, který obsahuje celý ovládací prvek.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|Viz poznámky.|Pokud má ovládací prvek seznam možnost výběru (bod, na který se dá kliknout, aby se zavedl fokus seznamu), musí být tento bod vystavený prostřednictvím této vlastnosti.<br /><br /> Je-li hodnota vlastnosti `IsOffScreen` pravdivá, bude vyvolána <xref:System.Windows.Automation.NoClickablePointException>.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|Viz poznámky.|Pokud ovládací prvek může obdržet fokus klávesnice, musí podporovat tuto vlastnost.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|Viz poznámky.|Hodnota vlastnosti název ovládacího prvku seznam by měla předávat kategorii možností, ze kterých je uživatel požádán o výběr. Tato vlastnost obvykle získá svůj název ze statického textového popisku. Pokud není k dispozici žádný statický textový popisek, vývojář aplikace musí vystavit hodnotu vlastnosti Name.<br /><br /> Pouze v případě, že tato vlastnost není vyžadována pro ovládací prvky seznamu, je v případě, že je ovládací prvek použit v rámci podstromu jiného ovládacího prvku.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|Viz poznámky.|Pokud je popisek statický text, musí tato vlastnost vystavit odkaz na tento ovládací prvek.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|Seznam|Tato hodnota je stejná pro všechny architektury uživatelského rozhraní.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|seznamu|Lokalizovaný řetězec odpovídající typu ovládacího prvku seznam.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|True|V zobrazení obsahu stromu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] je vždy zahrnut ovládací prvek seznam.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|True|Ovládací prvek seznam je vždy součástí zobrazení ovládacího prvku stromu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|True|Pokud kontejner může přijmout vstup z klávesnice, hodnota této vlastnosti by měla být true.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.HelpTextProperty>|Viz poznámky.|Text helpu pro ovládací prvky seznam by měl vysvětlit, proč se uživateli požaduje, aby si vyžádal volbu ze seznamu možností. Například "výběr položky z tohoto seznamu nastaví rozlišení zobrazení pro monitor."|  
   
 <a name="Required_UI_Automation_Control_Patterns"></a>   
-## <a name="required-ui-automation-control-patterns-and-properties"></a>Required UI Automation Control Patterns and Properties  
- The following table lists the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] control patterns required to be supported by list controls. For more information on control patterns, see [UI Automation Control Patterns Overview](ui-automation-control-patterns-overview.md).  
+## <a name="required-ui-automation-control-patterns-and-properties"></a>Požadované vzory a vlastnosti ovládacího prvku automatizace uživatelského rozhraní  
+ V následující tabulce jsou uvedeny vzory ovládacích prvků [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], které musí být podporovány ovládacími prvky seznamu. Další informace o vzorech ovládacích prvků naleznete v tématu [Přehled vzorů ovládacích prvků automatizace uživatelského rozhraní](ui-automation-control-patterns-overview.md).  
   
-|Control Pattern/Pattern Property|Support/Value|Poznámky|  
+|Řídicí vzorek/vlastnost vzoru|Podpora/hodnota|Poznámky|  
 |---------------------------------------|--------------------|-----------|  
-|<xref:System.Windows.Automation.Provider.ISelectionProvider>|Požadováno|All controls that support the List control type must implement `ISelectionProvider` when a selection state is maintained between the items contained in the control. If the items within the container are not selectable, the Group control type must be used.|  
-|<xref:System.Windows.Automation.Provider.ISelectionProvider.IsSelectionRequired%2A>|Depends|List controls do not always require that an item be selected.|  
-|<xref:System.Windows.Automation.Provider.ISelectionProvider.CanSelectMultiple%2A>|Depends|List controls can be single or multiple-selection containers.|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider>|Depends|Implement this control pattern if items in the container are scrollable.|  
-|<xref:System.Windows.Automation.Provider.IGridProvider>|Depends|Implement this pattern when grid navigation needs to be available on an item by item basis.|  
-|<xref:System.Windows.Automation.Provider.IMultipleViewProvider>|Depends|Implement this control pattern if the control can support multiple views of the items in the container.|  
-|<xref:System.Windows.Automation.Provider.ITableProvider>|Never|`ITableProvider` is never supported for the List control type. If the control should support this control pattern, then the control should be based on the Data Grid control type.|  
+|<xref:System.Windows.Automation.Provider.ISelectionProvider>|Požadováno|Všechny ovládací prvky, které podporují typ ovládacího prvku seznam, musí implementovat `ISelectionProvider`, když je stav výběru udržován mezi položkami obsaženými v ovládacím prvku. Pokud položky v kontejneru nelze vybrat, je nutné použít typ ovládacího prvku skupina.|  
+|<xref:System.Windows.Automation.Provider.ISelectionProvider.IsSelectionRequired%2A>|Závislosti|Ovládací prvky seznamu nevyžadují vždy výběr položky.|  
+|<xref:System.Windows.Automation.Provider.ISelectionProvider.CanSelectMultiple%2A>|Závislosti|Ovládací prvky seznamu mohou být kontejnery s jedním nebo více výběry.|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider>|Závislosti|Implementujte tento vzor ovládacích prvků, pokud se položky v kontejneru mají Procházet.|  
+|<xref:System.Windows.Automation.Provider.IGridProvider>|Závislosti|Tento model implementujte v případě, že je k dispozici navigace mřížky pro položku podle položky.|  
+|<xref:System.Windows.Automation.Provider.IMultipleViewProvider>|Závislosti|Implementujte tento model ovládacího prvku, pokud ovládací prvek může podporovat více zobrazení položek v kontejneru.|  
+|<xref:System.Windows.Automation.Provider.ITableProvider>|Nikdy|`ITableProvider` není pro typ ovládacího prvku seznam nikdy podporován. Pokud ovládací prvek by měl podporovat tento model ovládacího prvku, ovládací prvek by měl být založen na typu ovládacího prvku datová mřížka.|  
   
 <a name="Required_UI_Automation_Events"></a>   
-## <a name="required-ui-automation-events"></a>Required UI Automation Events  
- The following table lists the [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] events required to be supported by all list controls. For more information on events, see [UI Automation Events Overview](ui-automation-events-overview.md).  
+## <a name="required-ui-automation-events"></a>Požadované události automatizace uživatelského rozhraní  
+ V následující tabulce jsou uvedeny [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] události, které musí být podporovány všemi ovládacími prvky seznamu. Další informace o událostech najdete v tématu [Přehled událostí automatizace uživatelského rozhraní](ui-automation-events-overview.md).  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Event|Support/Value|Poznámky|  
+|Událost [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Podpora/hodnota|Poznámky|  
 |---------------------------------------------------------------------------------|--------------------|-----------|  
-|<xref:System.Windows.Automation.SelectionPatternIdentifiers.InvalidatedEvent>|Depends|Žádné|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.LayoutInvalidatedEvent>|Depends|Žádné|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> property-changed event.|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> property-changed event.|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> property-changed event.|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.MultipleViewPatternIdentifiers.CurrentViewProperty> property-changed event.|Depends|Žádné|  
-|<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontallyScrollableProperty> property-changed event.|Depends|Žádné|  
-|<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalScrollPercentProperty> property-changed event.|Depends|Žádné|  
-|<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalViewSizeProperty> property-changed event.|Depends|Žádné|  
-|<xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalScrollPercentProperty> property-changed event.|Depends|Žádné|  
-|<xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticallyScrollableProperty> property-changed event.|Depends|Žádné|  
-|<xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalViewSizeProperty> property-changed event.|Depends|Žádné|  
+|<xref:System.Windows.Automation.SelectionPatternIdentifiers.InvalidatedEvent>|Závislosti|Žádné|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.LayoutInvalidatedEvent>|Závislosti|Žádné|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> událost změněné vlastností.|Požadováno|Žádné|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> událost změněné vlastností.|Požadováno|Žádné|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> událost změněné vlastností.|Požadováno|Žádné|  
+|<xref:System.Windows.Automation.MultipleViewPatternIdentifiers.CurrentViewProperty> událost změněné vlastností.|Závislosti|Žádné|  
+|<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontallyScrollableProperty> událost změněné vlastností.|Závislosti|Žádné|  
+|<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalScrollPercentProperty> událost změněné vlastností.|Závislosti|Žádné|  
+|<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalViewSizeProperty> událost změněné vlastností.|Závislosti|Žádné|  
+|<xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalScrollPercentProperty> událost změněné vlastností.|Závislosti|Žádné|  
+|<xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticallyScrollableProperty> událost změněné vlastností.|Závislosti|Žádné|  
+|<xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalViewSizeProperty> událost změněné vlastností.|Závislosti|Žádné|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|Požadováno|Žádné|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|Požadováno|Žádné|  
   

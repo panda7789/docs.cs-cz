@@ -19,7 +19,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346844"
 ---
 # <a name="group-join-clause-visual-basic"></a>Group Join – klauzule (Visual Basic)
-Combines two collections into a single hierarchical collection. The join operation is based on matching keys.  
+Kombinuje dvě kolekce do jedné hierarchické kolekce. Operace JOIN je založena na spárovaných klíčích.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,31 +33,31 @@ Group Join element [As type] In collection _
   
 |Termín|Definice|  
 |---|---|  
-|`element`|Požadováno. The control variable for the collection being joined.|  
-|`type`|Volitelné. The type of `element`. If no `type` is specified, the type of `element` is inferred from `collection`.|  
-|`collection`|Požadováno. The collection to combine with the collection that is on the left side of the `Group Join` operator. A `Group Join` clause can be nested in a `Join` clause or in another `Group Join` clause.|  
-|`key1` `Equals` `key2`|Požadováno. Identifies keys for the collections being joined. You must use the `Equals` operator to compare keys from the collections being joined. You can combine join conditions by using the `And` operator to identify multiple keys. The `key1` parameter must be from the collection on the left side of the `Join` operator. The `key2` parameter must be from the collection on the right side of the `Join` operator.<br /><br /> The keys used in the join condition can be expressions that include more than one item from the collection. However, each key expression can contain only items from its respective collection.|  
-|`expressionList`|Požadováno. One or more expressions that identify how the groups of elements from the collection are aggregated. To identify a member name for the grouped results, use the `Group` keyword (`<alias> = Group`). You can also include aggregate functions to apply to the group.|  
+|`element`|Požadováno. Řídicí proměnná pro kolekci, která je připojena.|  
+|`type`|Volitelná. Typ připojení `element`. Pokud není zadán žádný `type`, typ `element` je odvozen z `collection`.|  
+|`collection`|Požadováno. Kolekce, která se má zkombinovat s kolekcí, která je na levé straně operátoru `Group Join` Klauzule `Group Join` může být vnořena do klauzule `Join` nebo do jiné klauzule `Group Join`.|  
+|`key1` `Equals` `key2`|Požadováno. Identifikuje klíče pro připojené kolekce. K porovnání klíčů z kolekce, které jsou spojeny, je nutné použít operátor `Equals`. Podmínky spojení můžete kombinovat pomocí operátoru `And` k identifikaci více klíčů. Parametr `key1` musí být z kolekce na levé straně operátoru `Join`. Parametr `key2` musí být z kolekce na pravé straně operátoru `Join`.<br /><br /> Klíče používané v podmínce spojení mohou být výrazy, které obsahují více než jednu položku z kolekce. Každý klíčový výraz však může obsahovat pouze položky z příslušné kolekce.|  
+|`expressionList`|Požadováno. Jeden nebo více výrazů, které určují, jak jsou agregovány skupiny prvků z kolekce. Chcete-li identifikovat název člena pro seskupené výsledky, použijte klíčové slovo `Group` (`<alias> = Group`). Můžete také zahrnout agregační funkce, které se mají použít pro skupinu.|  
   
 ## <a name="remarks"></a>Poznámky  
- The `Group Join` clause combines two collections based on matching key values from the collections being joined. The resulting collection can contain a member that references a collection of elements from the second collection that match the key value from the first collection. You can also specify aggregate functions to apply to the grouped elements from the second collection. For information about aggregate functions, see [Aggregate Clause](../../../visual-basic/language-reference/queries/aggregate-clause.md).  
+ Klauzule `Group Join` kombinuje dvě kolekce založené na porovnání hodnot klíčů od připojených kolekcí. Výsledná kolekce může obsahovat člena, který odkazuje na kolekci prvků z druhé kolekce, která odpovídá hodnotě klíče z první kolekce. Můžete také zadat agregační funkce, které mají být použity pro seskupené prvky z druhé kolekce. Informace o agregačních funkcích naleznete v tématu [klauzule Aggregate](../../../visual-basic/language-reference/queries/aggregate-clause.md).  
   
- Consider, for example, a collection of managers and a collection of employees. Elements from both collections have a ManagerID property that identifies the employees that report to a particular manager. The results from a join operation would contain a result for each manager and employee with a matching ManagerID value. The results from a `Group Join` operation would contain the complete list of managers. Each manager result would have a member that referenced the list of employees that were a match for the specific manager.  
+ Vezměte v úvahu například kolekci manažerů a kolekci zaměstnanců. Prvky z obou kolekcí mají vlastnost ManagerID, která identifikuje zaměstnance, kteří nahlásí konkrétnímu manažerovi. Výsledky operace join by obsahovaly výsledek pro každého manažera a zaměstnance s vyhovující hodnotou ManagerID. Výsledky operace `Group Join` by obsahovaly úplný seznam manažerů. Každý výsledek správce by měl člena, který odkazoval na seznam zaměstnanců, kteří byli shodou pro konkrétního manažera.  
   
- The collection resulting from a `Group Join` operation can contain any combination of values from the collection identified in the `From` clause and the expressions identified in the `Into` clause of the `Group Join` clause. For more information about valid expressions for the `Into` clause, see [Aggregate Clause](../../../visual-basic/language-reference/queries/aggregate-clause.md).  
+ Kolekce, která je výsledkem operace `Group Join` může obsahovat libovolnou kombinaci hodnot z kolekce identifikované v klauzuli `From` a výrazy identifikované v klauzuli `Into` klauzule `Group Join`. Další informace o platných výrazech pro klauzuli `Into` naleznete v tématu [klauzule Aggregate](../../../visual-basic/language-reference/queries/aggregate-clause.md).  
   
- A `Group Join` operation will return all results from the collection identified on the left side of the `Group Join` operator. This is true even if there are no matches in the collection being joined. This is like a `LEFT OUTER JOIN` in SQL.  
+ Operace `Group Join` vrátí všechny výsledky z kolekce identifikované na levé straně operátoru `Group Join`. To platí i v případě, že se v kolekci nevztahují žádné shody. Jedná se například o `LEFT OUTER JOIN` v SQL.  
   
- You can use the `Join` clause to combine collections into a single collection. This is equivalent to an `INNER JOIN` in SQL.  
+ Klauzuli `Join` lze použít ke kombinování kolekcí do jedné kolekce. Jedná se o ekvivalent `INNER JOIN` v SQL.  
   
 ## <a name="example"></a>Příklad  
- The following code example joins two collections by using the `Group Join` clause.  
+ Následující příklad kódu spojuje dvě kolekce pomocí klauzule `Group Join`.  
   
  [!code-vb[VbSimpleQuerySamples#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#14)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Introduction to LINQ in Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Úvod do jazyka LINQ v Visual Basic](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
 - [Dotazy](../../../visual-basic/language-reference/queries/index.md)
 - [Klauzule Select](../../../visual-basic/language-reference/queries/select-clause.md)
 - [Klauzule From](../../../visual-basic/language-reference/queries/from-clause.md)

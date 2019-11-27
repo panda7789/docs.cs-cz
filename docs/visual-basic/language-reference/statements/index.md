@@ -12,7 +12,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353562"
 ---
 # <a name="statements-visual-basic"></a>Příkazy (Visual Basic)
-The topics in this section contain tables of the Visual Basic declaration and executable statements, and of important lists that apply to many statements.  
+Témata v této části obsahují tabulky Visual Basic deklarace a spustitelné příkazy a důležité seznamy, které se vztahují na mnoho příkazů.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Příkazy A-E](../../../visual-basic/language-reference/statements/a-e-statements.md)  

@@ -24,59 +24,59 @@ ms.locfileid: "74344029"
 ---
 # <a name="date-data-type-visual-basic"></a>Date – datový typ (Visual Basic)
 
-Holds IEEE 64-bit (8-byte) values that represent dates ranging from January 1 of the year 0001 through December 31 of the year 9999, and times from 12:00:00 AM (midnight) through 11:59:59.9999999 PM. Each increment represents 100 nanoseconds of elapsed time since the beginning of January 1 of the year 1 in the Gregorian calendar. The maximum value represents 100 nanoseconds before the beginning of January 1 of the year 10000.
+Obsahuje hodnoty IEEE 64 (8 bajtů), které reprezentují data od 1. ledna do 31. prosince 9999 a časy od 12:00:00 (půlnoc) do 11:59:59.9999999 ODP. Každý přírůstek představuje 100 nanosekund, uplynulý čas od začátku 1. ledna v roce 1 v gregoriánském kalendáři. Maximální hodnota představuje 100 nanosekund před začátkem 1. ledna v roce 10000.
 
 ## <a name="remarks"></a>Poznámky
 
-Use the `Date` data type to contain date values, time values, or date and time values.
+Datový typ `Date` použijte k omezení hodnot data, času nebo hodnoty data a času.
 
-The default value of `Date` is 0:00:00 (midnight) on January 1, 0001.
+Výchozí hodnota `Date` je 0:00:00 (půlnoc) 1. ledna 0001.
 
-You can get the current date and time from the <xref:Microsoft.VisualBasic.DateAndTime> class.
+Aktuální datum a čas můžete získat z <xref:Microsoft.VisualBasic.DateAndTime> třídy.
 
-## <a name="format-requirements"></a>Format Requirements
+## <a name="format-requirements"></a>Požadavky na formát
 
-You must enclose a `Date` literal within number signs (`# #`). You must specify the date value in the format M/d/yyyy, for example `#5/31/1993#`, or yyyy-MM-dd, for example `#1993-5-31#`. You can use slashes when specifying the year first.  This requirement is independent of your locale and your computer's date and time format settings.
+V symbolech čísla (`# #`) je nutné uzavřít `Date` literál. Je třeba zadat hodnotu data ve formátu M/d/rrrr, například `#5/31/1993#`nebo RRRR-MM-DD, například `#1993-5-31#`. Při prvním zadání roku můžete použít lomítka.  Tento požadavek nezávisí na vašem národním prostředí a na nastavení formátu data a času vašeho počítače.
 
-The reason for this restriction is that the meaning of your code should never change depending on the locale in which your application is running. Suppose you hard-code a `Date` literal of `#3/4/1998#` and intend it to mean March 4, 1998. In a locale that uses mm/dd/yyyy, 3/4/1998 compiles as you intend. But suppose you deploy your application in many countries/regions. In a locale that uses dd/mm/yyyy, your hard-coded literal would compile to April 3, 1998. In a locale that uses yyyy/mm/dd, the literal would be invalid (April 1998, 0003) and cause a compiler error.
+Důvodem tohoto omezení je, že význam vašeho kódu by se nikdy neměl měnit v závislosti na národním prostředí, ve kterém je vaše aplikace spuštěná. Předpokládejme, že máte pevně zavedený `Date` literál `#3/4/1998#` a máte na mysli 4. března 1998. V národním prostředí, které používá mm/dd/rrrr, se 3/4/1998 zkompiluje jako zamýšlená. Ale Předpokládejme, že nasadíte aplikaci v mnoha zemích nebo oblastech. V národním prostředí, které používá dd/mm/rrrr, je pevně zakódovaný literál zkompilován do 3. dubna 1998. V národním prostředí, které používá rrrr/mm/dd, bude literál neplatný (duben 1998, 0003) a způsobit chybu kompilátoru.
 
-## <a name="workarounds"></a>Workarounds
+## <a name="workarounds"></a>Alternativní řešení
 
-To convert a `Date` literal to the format of your locale, or to a custom format, supply the literal to the <xref:Microsoft.VisualBasic.Strings.Format%2A> function, specifying either a predefined or user-defined date format. Následující příklad ukazuje to.
+Chcete-li převést `Date` literálu na formát národního prostředí nebo na vlastní formát, zadejte literál do funkce <xref:Microsoft.VisualBasic.Strings.Format%2A> a zadejte buď předdefinovaný nebo uživatelsky definovaný formát data. Následující příklad ukazuje to.
 
 ```vb
 MsgBox("The formatted date is " & Format(#5/31/1993#, "dddd, d MMM yyyy"))
 ```
 
-Alternatively, you can use one of the overloaded constructors of the <xref:System.DateTime> structure to assemble a date and time value. The following example creates a value to represent May 31, 1993 at 12:14 in the afternoon.
+Alternativně můžete použít jeden z přetížených konstruktorů struktury <xref:System.DateTime> k sestavení hodnoty data a času. Následující příklad vytvoří hodnotu, která představuje 31. května 1993 v 12:14 za odpoledne.
 
 ```vb
 Dim dateInMay As New System.DateTime(1993, 5, 31, 12, 14, 0)
 ```
 
-## <a name="hour-format"></a>Hour Format
+## <a name="hour-format"></a>Formát hodiny
 
-You can specify the time value in either 12-hour or 24-hour format, for example `#1:15:30 PM#` or `#13:15:30#`. However, if you do not specify either the minutes or the seconds, you must specify AM or PM.
+Hodnotu času můžete zadat buď do 12 hodin, nebo ve 24hodinovém formátu, například `#1:15:30 PM#` nebo `#13:15:30#`. Pokud však nezadáte buď minuty, nebo sekundy, je nutné zadat dop nebo PM.
 
-## <a name="date-and-time-defaults"></a>Date and Time Defaults
+## <a name="date-and-time-defaults"></a>Výchozí hodnoty data a času
 
-If you do not include a date in a date/time literal, Visual Basic sets the date part of the value to January 1, 0001. If you do not include a time in a date/time literal, Visual Basic sets the time part of the value to the start of the day, that is, midnight (0:00:00).
+Pokud nezahrnete datum do literálu data a času, Visual Basic nastaví část hodnoty data na 1. ledna 0001. Pokud nezahrnete čas do literálu data a času, Visual Basic nastaví časovou část hodnoty na začátek dne, tj. půlnoc (0:00:00).
 
 ## <a name="type-conversions"></a>Převody typu
 
-If you convert a `Date` value to the `String` type, Visual Basic renders the date according to the short date format specified by the run-time locale, and it renders the time according to the time format (either 12-hour or 24-hour) specified by the run-time locale.
+Převedete-li `Date` hodnotu na typ `String`, Visual Basic vykreslí datum podle formátu krátkého data určeného národním prostředím runtime a vykreslí čas podle formátu času (12 hodin nebo 24 hodin) určeného národním prostředím runtime.
 
 ## <a name="programming-tips"></a>Tipy k programování
 
-- **Interop Considerations.** If you are interfacing with components not written for the .NET Framework, for example Automation or COM objects, keep in mind that date/time types in other environments are not compatible with the Visual Basic `Date` type. If you are passing a date/time argument to such a component, declare it as `Double` instead of `Date` in your new Visual Basic code, and use the conversion methods <xref:System.DateTime.FromOADate%2A?displayProperty=nameWithType> and <xref:System.DateTime.ToOADate%2A?displayProperty=nameWithType>.
+- **Problematika spolupráce.** Pokud procházejíte s komponentami, které nejsou napsané pro .NET Framework, například automatizace nebo objekty COM, pamatujte na to, že typy data a času v jiných prostředích nejsou kompatibilní s typem `Date` Visual Basic. Pokud předáváte argument typu datum/čas do takové součásti, deklarujte ji jako `Double` místo `Date` v novém kódu Visual Basic a použijte metody převodu <xref:System.DateTime.FromOADate%2A?displayProperty=nameWithType> a <xref:System.DateTime.ToOADate%2A?displayProperty=nameWithType>.
 
-- **Type Characters.** `Date` has no literal type character or identifier type character. However, the compiler treats literals enclosed within number signs (`# #`) as `Date`.
+- **Znaky typu.** `Date` nemá žádný znak typu literálu ani znak typu identifikátoru. Nicméně Kompilátor považuje literály uzavřené v symbolech čísla (`# #`) jako `Date`.
 
-- **Framework Type.** The corresponding type in the .NET Framework is the <xref:System.DateTime?displayProperty=nameWithType> structure.
+- **Typ rozhraní.** Odpovídající typ v .NET Framework je struktura <xref:System.DateTime?displayProperty=nameWithType>.
 
 ## <a name="example"></a>Příklad
 
-A variable or constant of the `Date` data type holds both the date and the time. Toto dokládá následující příklad.
+Proměnná nebo konstanta datového typu `Date` obsahuje data i čas. Toto dokládá následující příklad.
 
 ```vb
 Dim someDateAndTime As Date = #8/13/2002 12:14 PM#

@@ -1,5 +1,5 @@
 ---
-title: 'How to: Find Sibling Nodes (XPath-LINQ to XML)'
+title: 'Postupy: Vyhledání uzlů na stejné úrovni (XPath-LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 73082738-2113-4438-8545-98d5df0927cb
 ms.openlocfilehash: 52151c939bbf67df37a9535b1081ff902d357123
@@ -9,19 +9,19 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344632"
 ---
-# <a name="how-to-find-sibling-nodes-xpath-linq-to-xml-visual-basic"></a>How to: Find Sibling Nodes (XPath-LINQ to XML) (Visual Basic)
+# <a name="how-to-find-sibling-nodes-xpath-linq-to-xml-visual-basic"></a>Postupy: Vyhledání uzlů na stejné úrovni (XPath-LINQ to XML) (Visual Basic)
 
-You might want to find all siblings of a node that have a specific name. The resulting collection might include the context node if the context node also has the specific name.
+Možná budete chtít najít všechny uzly na stejné úrovni, které mají konkrétní název. Výsledná kolekce může zahrnovat kontextový uzel, pokud má uzel kontextu také konkrétní název.
 
-The XPath expression is:
+Výraz XPath je:
 
 `../Book`
 
 ## <a name="example"></a>Příklad
 
-This example first finds a `Book` element, and then finds all sibling elements named `Book`. The resulting collection includes the context node.
+Tento příklad nejprve vyhledá prvek `Book` a poté vyhledá všechny prvky na stejné úrovni s názvem `Book`. Výsledná kolekce obsahuje kontextový uzel.
 
-This example uses the following XML document: [Sample XML File: Books (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).
+Tento příklad používá následující dokument XML: [ukázkový soubor XML: Books (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).
 
 ```vb
 Dim books As XDocument = XDocument.Load("Books.xml")
@@ -44,7 +44,7 @@ For Each el As XElement In list1
 Next
 ```
 
-This example produces the following output:
+Tento příklad vytvoří následující výstup:
 
 ```console
 Results are identical
@@ -71,4 +71,4 @@ Results are identical
 
 ## <a name="see-also"></a>Viz také:
 
-- [LINQ to XML for XPath Users (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML pro uživatele XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

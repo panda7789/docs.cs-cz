@@ -1,5 +1,5 @@
 ---
-title: 'How to: Write a Query that Finds Elements Based on Context'
+title: 'Postupy: zápis dotazu, který vyhledává elementy na základě kontextu'
 ms.date: 07/20/2015
 ms.assetid: 0b085290-ddc1-4126-aaa0-e4c95a3d9a09
 ms.openlocfilehash: d25c6d47eee2ae092c84c3db3c08c3e21e7d98d6
@@ -9,13 +9,13 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346206"
 ---
-# <a name="how-to-write-a-query-that-finds-elements-based-on-context-visual-basic"></a>How to: Write a Query that Finds Elements Based on Context (Visual Basic)
-Sometimes you might have to write a query that selects elements based on their context. You might want to filter based on preceding or following sibling elements. You might want to filter based on child or ancestor elements.  
+# <a name="how-to-write-a-query-that-finds-elements-based-on-context-visual-basic"></a>Postupy: zápis dotazu, který vyhledává elementy na základě kontextu (Visual Basic)
+Někdy může být nutné napsat dotaz, který vybere prvky na základě jejich kontextu. Je možné, že budete chtít filtrovat na základě předchozích nebo následujících prvků na stejné úrovni. Je možné, že budete chtít filtrovat na základě podřízených nebo nadřazených prvků.  
   
- You can do this by writing a query and using the results of the query in the `where` clause. If you have to first test against null, and then test the value, it is more convenient to do the query in a `let` clause, and then use the results in the `where` clause.  
+ To můžete provést tak, že zapíšete dotaz a použijete výsledky dotazu v klauzuli `where`. Pokud je nutné nejprve otestovat proti hodnotě null a potom otestovat hodnotu, je vhodnější provést dotaz v klauzuli `let` a potom použít výsledky v klauzuli `where`.  
   
 ## <a name="example"></a>Příklad  
- The following example selects all `p` elements that are immediately followed by a `ul` element.  
+ Následující příklad vybere všechny `p` prvky, které bezprostředně následuje `ul` element.  
   
 ```vb  
 Dim doc As XElement = _  
@@ -49,7 +49,7 @@ For Each e As XElement In items
 Next  
 ```  
   
- This code produces the following output:  
+ Tento kód generuje následující výstup:  
   
 ```console  
 id = 1  
@@ -58,7 +58,7 @@ id = 6
 ```  
   
 ## <a name="example"></a>Příklad  
- The following example shows the same query for XML that is in a namespace. For more information, see [Namespaces Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).  
+ Následující příklad ukazuje stejný dotaz pro XML, který je v oboru názvů. Další informace najdete v tématu [obory názvů Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).  
   
 ```vb  
 Imports <xmlns='http://www.adatum.com'>  
@@ -98,7 +98,7 @@ Module Module1
 End Module  
 ```  
   
- This code produces the following output:  
+ Tento kód generuje následující výstup:  
   
 ```console  
 id = 1  
@@ -112,4 +112,4 @@ id = 6
 - <xref:System.Xml.Linq.XContainer.Descendants%2A>
 - <xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A>
 - <xref:System.Linq.Enumerable.FirstOrDefault%2A>
-- [Basic Queries (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+- [Základní dotazy (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

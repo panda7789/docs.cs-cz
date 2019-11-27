@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437122"
 ---
 # <a name="imetadataimportgetparamprops-method"></a>IMetaDataImport::GetParamProps – metoda
-Gets metadata values for the parameter referenced by the specified ParamDef token.  
+Načte hodnoty metadat pro parametr, na který odkazuje zadaný ParamDef token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,47 +44,47 @@ HRESULT GetParamProps (
   
 ## <a name="parameters"></a>Parametry  
  `tk`  
- [in] A ParamDef token that represents the parameter to return metadata for.  
+ pro Token ParamDef, který představuje parametr pro vrácení metadat.  
   
  `pmd`  
- [out] A pointer to a MethodDef token representing the method that takes the parameter.  
+ mimo Ukazatel na token MethodDef představující metodu, která přijímá parametr.  
   
  `pulSequence`  
- [out] The ordinal position of the parameter in the method argument list.  
+ mimo Pořadové místo parametru v seznamu argumentů metody.  
   
  `szName`  
- [out] A buffer to hold the name of the parameter.  
+ mimo Vyrovnávací paměť pro uložení názvu parametru.  
   
  `cchName`  
- [in] The requested size in wide characters of `szName`.  
+ pro Požadovaná velikost v různých znacích `szName`.  
   
  `pchName`  
- [out] The returned size in wide characters of `szName`.  
+ mimo Vrácená velikost v různých znacích `szName`.  
   
  `pdwAttr`  
- [out] A pointer to any attribute flags associated with the parameter. This is a bitmask of `CorParamAttr` values.  
+ mimo Ukazatel na libovolný příznak atributu přidružený k parametru. Toto je Bitová maska `CorParamAttr` hodnot.  
   
  `pdwCPlusTypeFlag`  
- [out] A pointer to a flag specifying that the parameter is a <xref:System.ValueType>.  
+ mimo Ukazatel na příznak určující, že parametr je <xref:System.ValueType>.  
   
  `ppValue`  
- [out] A pointer to a constant string returned by the parameter.  
+ mimo Ukazatel na konstantní řetězec vrácený parametrem.  
   
  `pcchValue`  
- [out] The size of `ppValue` in wide characters, or zero if `ppValue` does not hold a string.  
+ mimo Velikost `ppValue` v rámci velkých znaků nebo nula, pokud `ppValue` nedrží řetězec.  
   
 ## <a name="remarks"></a>Poznámky
 
-The sequence values in `pulSequence` begin with 1 for parameters. A return value has a sequence number of 0.
+Hodnoty sekvence v `pulSequence` začínají hodnotou 1 pro parametry. Návratová hodnota má pořadové číslo 0.
 
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

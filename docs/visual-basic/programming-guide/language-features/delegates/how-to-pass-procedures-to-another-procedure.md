@@ -1,5 +1,5 @@
 ---
-title: 'How to: Pass Procedures to Another Procedure'
+title: 'Postupy: Předání procedur jiným postupům'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - AddressOf operator [Visual Basic]
@@ -13,41 +13,41 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74345251"
 ---
 # <a name="how-to-pass-procedures-to-another-procedure-in-visual-basic"></a>Postupy: Předání procedur jiné proceduře v jazyce Visual Basic
-This example shows how to use delegates to pass a procedure to another procedure.  
+Tento příklad ukazuje, jak použít delegáty k předání procedury jinému postupu.  
   
- A delegate is a type that you can use like any other type in Visual Basic. The `AddressOf` operator returns a delegate object when applied to a procedure name.  
+ Delegát je typ, který můžete použít jako jakýkoli jiný typ v Visual Basic. Operátor `AddressOf` vrací objekt delegáta při použití na název procedury.  
   
- This example has a procedure with a delegate parameter that can take a reference to another procedure, obtained with the `AddressOf` operator.  
+ Tento příklad má proceduru s parametrem delegáta, který může odkazovat na jiný postup získaný pomocí operátoru `AddressOf`.  
   
-### <a name="create-the-delegate-and-matching-procedures"></a>Create the delegate and matching procedures  
+### <a name="create-the-delegate-and-matching-procedures"></a>Vytvořit delegáta a postupy pro porovnání  
   
-1. Create a delegate named `MathOperator`.  
+1. Vytvořte delegáta s názvem `MathOperator`.  
   
      [!code-vb[VbVbalrDelegates#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDelegates/VB/Class1.vb#1)]  
   
-2. Create a procedure named `AddNumbers` with parameters and return value that match those of `MathOperator`, so that the signatures match.  
+2. Vytvořte proceduru s názvem `AddNumbers` s parametry a návratovou hodnotou, která odpovídá hodnotám `MathOperator`, aby se podpisy shodovaly.  
   
      [!code-vb[VbVbalrDelegates#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDelegates/VB/Class1.vb#2)]  
   
-3. Create a procedure named `SubtractNumbers` with a signature that matches `MathOperator`.  
+3. Vytvořte proceduru s názvem `SubtractNumbers` s podpisem, který odpovídá `MathOperator`.  
   
      [!code-vb[VbVbalrDelegates#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDelegates/VB/Class1.vb#3)]  
   
-4. Create a procedure named `DelegateTest` that takes a delegate as a parameter.  
+4. Vytvořte proceduru s názvem `DelegateTest`, která přebírá delegáta jako parametr.  
   
-     This procedure can accept a reference to `AddNumbers` or `SubtractNumbers`, because their signatures match the `MathOperator` signature.  
+     Tento postup může přijmout odkaz na `AddNumbers` nebo `SubtractNumbers`, protože jejich signatury odpovídají signatuře `MathOperator`.  
   
      [!code-vb[VbVbalrDelegates#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDelegates/VB/Class1.vb#4)]  
   
-5. Create a procedure named `Test` that calls `DelegateTest` once with the delegate for `AddNumbers` as a parameter, and again with the delegate for `SubtractNumbers` as a parameter.  
+5. Vytvořte proceduru s názvem `Test`, která volá `DelegateTest` jednou s delegátem pro `AddNumbers` jako parametr a znovu s delegátem pro `SubtractNumbers` jako parametr.  
   
      [!code-vb[VbVbalrDelegates#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDelegates/VB/Class1.vb#5)]  
   
-     When `Test` is called, it first displays the result of `AddNumbers` acting on `5` and `3`, which is 8. Then the result of `SubtractNumbers` acting on `9` and `3` is displayed, which is 6.  
+     Při volání `Test` se nejprve zobrazí výsledek `AddNumbers` působícího na `5` a `3`, což je 8. Pak se zobrazí výsledek `SubtractNumbers` jednající `9` a `3`, což je 6.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Delegáty](../../../../visual-basic/programming-guide/language-features/delegates/index.md)
+- [Delegáti](../../../../visual-basic/programming-guide/language-features/delegates/index.md)
 - [Operátor AddressOf](../../../../visual-basic/language-reference/operators/addressof-operator.md)
 - [Příkaz Delegate](../../../../visual-basic/language-reference/statements/delegate-statement.md)
 - [Postupy: Volání metody delegáta](../../../../visual-basic/programming-guide/language-features/delegates/how-to-invoke-a-delegate-method.md)

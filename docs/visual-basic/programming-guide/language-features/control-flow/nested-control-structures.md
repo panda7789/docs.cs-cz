@@ -18,12 +18,12 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348141"
 ---
 # <a name="nested-control-structures-visual-basic"></a>Vnořené řídicí struktury (Visual Basic)
-You can place control statements inside other control statements, for example an `If...Then...Else` block within a `For...Next` loop. A control statement placed inside another control statement is said to be *nested*.  
+Řídicí příkazy lze umístit do jiných řídicích příkazů, například `If...Then...Else` bloku v rámci smyčky `For...Next`. Řídicí příkaz umístěný uvnitř jiného kontrolního příkazu je označován jako *vnořený*.  
   
-## <a name="nesting-levels"></a>Nesting Levels  
- Control structures in Visual Basic can be nested to as many levels as you want. It is common practice to make nested structures more readable by indenting the body of each one. The integrated development environment (IDE) editor automatically does this.  
+## <a name="nesting-levels"></a>Vnořování úrovní  
+ Řídicí struktury v Visual Basic můžou být vnořené do tolika úrovní, kolik chcete. Je běžné, že vnořené struktury budou čitelnější, když odsadíte tělo každé z nich. To dělá Editor integrovaného vývojového prostředí (IDE) automaticky.  
   
- In the following example, the procedure `sumRows` adds together the positive elements of each row of the matrix.  
+ V následujícím příkladu procedura `sumRows` přidá společně pozitivní prvky každého řádku matice.  
   
 ```vb
 Public Sub sumRows(ByVal a(,) As Double, ByRef r() As Double)  
@@ -39,15 +39,15 @@ Public Sub sumRows(ByVal a(,) As Double, ByRef r() As Double)
 End Sub  
 ```  
   
- In the preceding example, the first `Next` statement closes the inner `For` loop and the last `Next` statement closes the outer `For` loop.  
+ V předchozím příkladu první příkaz `Next` zavře vnitřní `For` smyčku a poslední příkaz `Next` ukončí vnější `For` smyčka.  
   
- Likewise, in nested `If` statements, the `End If` statements automatically apply to the nearest prior `If` statement. Nested `Do` loops work in a similar fashion, with the innermost `Loop` statement matching the innermost `Do` statement.  
+ Stejně tak v příkazech vnořených `If` se příkazy `End If` automaticky použijí na nejbližší předchozí příkaz `If`. Vnořené `Do` smyčky fungují podobným způsobem, přičemž vnitřní `Loop` příkaz odpovídá nejvnitřnějšímu příkazu `Do`.  
   
 > [!NOTE]
-> For many control structures, when you click a keyword, all of the keywords in the structure are highlighted. For instance, when you click `If` in an `If...Then...Else` construction, all instances of `If`, `Then`, `ElseIf`, `Else`, and `End If` in the construction are highlighted. To move to the next or previous highlighted keyword, press CTRL+SHIFT+DOWN ARROW or CTRL+SHIFT+UP ARROW.  
+> U mnoha řídicích struktur se při kliknutí na klíčové slovo zvýrazní všechna klíčová slova ve struktuře. Například když v konstrukci `If...Then...Else` kliknete na `If`, všechny instance `If`, `Then`, `ElseIf`, `Else`a `End If` se zvýrazní. Chcete-li přejít na další nebo předchozí zvýrazněné klíčové slovo, stiskněte klávesy CTRL + SHIFT + šipka dolů nebo CTRL + SHIFT + šipka nahoru.  
   
-## <a name="nesting-different-kinds-of-control-structures"></a>Nesting Different Kinds of Control Structures  
- You can nest one kind of control structure within another kind. The following example uses a `With` block inside a `For Each` loop and nested `If` blocks inside the `With` block.  
+## <a name="nesting-different-kinds-of-control-structures"></a>Vnořování různých druhů řídicích struktur  
+ Jeden druh struktury ovládacího prvku můžete vnořit do jiného typu. Následující příklad používá blok `With` uvnitř smyčky `For Each` a vnořené `If` bloky uvnitř bloku `With`.  
   
 ```vb
 For Each ctl As System.Windows.Forms.Control In Me.Controls  
@@ -64,12 +64,12 @@ For Each ctl As System.Windows.Forms.Control In Me.Controls
 Next ctl  
 ```  
   
-## <a name="overlapping-control-structures"></a>Overlapping Control Structures  
- You cannot overlap control structures. This means that any nested structure must be completely contained within the next innermost structure. For example, the following arrangement is invalid because the `For` loop terminates before the inner `With` block terminates.  
+## <a name="overlapping-control-structures"></a>Překrývající se řídicí struktury  
+ Nemůžete překrývat řídicí struktury. To znamená, že všechny vnořené struktury musí být zcela obsaženy v další nejvnitřnější struktuře. Například následující uspořádání je neplatné, protože cyklus `For` končí před ukončením vnitřního `With` bloku.  
   
- ![Diagram that shows an example of invalid nesting.](./media/nested-control-structures/example-invalid-nesting.gif) 
+ ![Diagram, který zobrazuje příklad neplatného vnoření.](./media/nested-control-structures/example-invalid-nesting.gif) 
   
- The Visual Basic compiler detects such overlapping control structures and signals a compile-time error.  
+ Kompilátor Visual Basic detekuje takové překrývající se řídicí struktury a signalizuje chybu při kompilaci.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -22,12 +22,12 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344860"
 ---
 # <a name="how-to-protect-a-procedure-argument-against-value-changes-visual-basic"></a>Postupy: Ochrana argumentu procedury proti změnám hodnoty (Visual Basic)
-If a procedure declares a parameter as [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), Visual Basic gives the procedure code a direct reference to the programming element underlying the argument in the calling code. This permits the procedure to change the value underlying the argument in the calling code. In some cases the calling code might want to protect against such a change.  
+Pokud procedura deklaruje parametr jako typ [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), Visual Basic poskytne kód procedury přímý odkaz na programovací element podkladové argumentu v volajícím kódu. To umožňuje proceduře změnit hodnotu podkladové hodnoty argumentu ve volajícím kódu. V některých případech by volající kód mohl chtít chránit proti takové změně.  
   
- You can always protect an argument from change by declaring the corresponding parameter [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) in the procedure. If you want to be able to change a given argument in some cases but not others, you can declare it `ByRef` and let the calling code determine the passing mechanism in each call. It does this by enclosing the corresponding argument in parentheses to pass it by value, or not enclosing it in parentheses to pass it by reference. For more information, see [How to: Force an Argument to Be Passed by Value](./how-to-force-an-argument-to-be-passed-by-value.md).  
+ Můžete vždy chránit argument ze změny tím, že deklarujete odpovídající parametr [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) v proceduře. Pokud chcete mít možnost změnit daný argument v některých případech, ale ne na jiné, můžete ho deklarovat `ByRef` a nechat volající kód určit mechanismus předávání v každém volání. To dělá tak, že uzavře odpovídající argument v závorkách, aby je předávala podle hodnoty, nebo nesmí být uzavřen v závorkách, aby bylo možné ho předat odkazem. Další informace naleznete v tématu [How to: Force a argument by měl být předán hodnotou](./how-to-force-an-argument-to-be-passed-by-value.md).  
   
 ## <a name="example"></a>Příklad  
- The following example shows two procedures that take an array variable and operate on its elements. The `increase` procedure simply adds one to each element. The `replace` procedure assigns a new array to the parameter `a()` and then adds one to each element. However, the reassignment does not affect the underlying array variable in the calling code.  
+ Následující příklad ukazuje dva postupy, které přebírají proměnnou pole a pracují s jejími prvky. Postup `increase` jednoduše přidá jeden do každého prvku. `replace` procedura přiřadí parametr novému poli `a()` a poté přidá jeden do každého prvku. Opětovné přiřazení však nemá vliv na podkladovou proměnnou pole v kódu volajícího.  
   
  [!code-vb[VbVbcnProcedures#35](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#35)]  
   
@@ -35,12 +35,12 @@ If a procedure declares a parameter as [ByRef](../../../../visual-basic/language
   
  [!code-vb[VbVbcnProcedures#37](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#37)]  
   
- The first `MsgBox` call displays "After increase(n): 11, 21, 31, 41". Because the array `n` is a reference type, `increase` can change its members, even though the passing mechanism is `ByVal`.  
+ První `MsgBox` volání zobrazí "po zvýšení (n): 11, 21, 31, 41". Protože `n` pole je odkazový typ, `increase` mohou změnit jeho členy, i když je mechanismus předávání `ByVal`.  
   
- The second `MsgBox` call displays "After replace(n): 11, 21, 31, 41". Because `n` is passed `ByVal`, `replace` cannot modify the variable `n` in the calling code by assigning a new array to it. When `replace` creates the new array instance `k` and assigns it to the local variable `a`, it loses the reference to `n` passed in by the calling code. When it changes the members of `a`, only the local array `k` is affected. Therefore, `replace` does not increment the values of array `n` in the calling code.  
+ Druhý `MsgBox` volání zobrazí "po nahrazení (n): 11, 21, 31, 41". Vzhledem k tomu, že `n` je předán `ByVal`, `replace` nemůže změnit proměnnou `n` ve volání kódu přiřazením nového pole k tomuto poli. Když `replace` vytvoří novou instanci pole `k` a přiřadí ji k lokální proměnné `a`, ztratí odkaz na `n` předaný volajícím kódem. Když změní členy `a`, bude ovlivněn pouze místní pole `k`. Proto `replace` nezvyšuje hodnoty `n` pole v volajícím kódu.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- The default in Visual Basic is to pass arguments by value. However, it is good programming practice to include either the [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) or [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) keyword with every declared parameter. This makes your code easier to read.  
+ Výchozí hodnotou v Visual Basic je předání argumentů podle hodnoty. Nicméně je dobrým programovacím postupem, jak zahrnout klíčové slovo [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) nebo [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) s každým deklarovaným parametrem. To usnadňuje čtení kódu.  
   
 ## <a name="see-also"></a>Viz také:
 

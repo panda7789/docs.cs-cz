@@ -22,10 +22,10 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74440583"
 ---
 # <a name="functionleave-function"></a>FunctionLeave – funkce
-Notifies the profiler that a function is about to return to the caller.  
+Upozorní profileru, že se chystá návrat funkce k volajícímu.  
   
 > [!NOTE]
-> The `FunctionLeave` function is deprecated in the .NET Framework 2.0. It will continue to work, but will incur a performance penalty. Use the [FunctionLeave2](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md) function instead.  
+> Funkce `FunctionLeave` je v .NET Framework 2,0 zastaralá. Bude i nadále fungovat, ale dojde k snížení výkonu. Místo toho použijte funkci [FunctionLeave2 –](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,29 +37,29 @@ void __stdcall FunctionLeave (
   
 ## <a name="parameters"></a>Parametry  
  `funcID`  
- [in] The identifier of the function that is returning.  
+ pro Identifikátor funkce, která vrací.  
   
 ## <a name="remarks"></a>Poznámky  
- The `FunctionLeave` function is a callback; you must implement it. The implementation must use the `__declspec`(`naked`) storage-class attribute.  
+ Funkce `FunctionLeave` je zpětné volání; je nutné jej implementovat. Implementace musí používat atribut třídy úložiště `__declspec`(`naked`).  
   
- The execution engine does not save any registers before calling this function.  
+ Spouštěcí modul neuloží žádné Registry před voláním této funkce.  
   
-- On entry, you must save all registers that you use, including those in the floating-point unit (FPU).  
+- Při zadání je nutné uložit všechny používané Registry, včetně těch, které jsou v jednotce s plovoucí desetinnou čárkou (FPU).  
   
-- On exit, you must restore the stack by popping off all the parameters that were pushed by its caller.  
+- Při ukončení je nutné obnovit zásobník odebráním všech parametrů, které byly vloženy volajícím.  
   
- The implementation of `FunctionLeave` should not block because it will delay garbage collection. The implementation should not attempt a garbage collection because the stack may not be in a garbage collection-friendly state. If a garbage collection is attempted, the runtime will block until `FunctionLeave` returns.  
+ Implementace `FunctionLeave` by neměla zablokovat, protože bude odloženo uvolňování paměti. Implementace by se neměla pokoušet o uvolnění paměti, protože zásobník nemůže být ve stavu, který je k pro uvolňování paměti. V případě, že dojde k pokusu o uvolnění paměti, modul runtime zablokuje, dokud se `FunctionLeave` nevrátí.  
   
- Also, the `FunctionLeave` function must not call into managed code or in any way cause a managed memory allocation.  
+ Také funkce `FunctionLeave` nesmí volat do spravovaného kódu nebo jakýmkoli způsobem způsobovat přidělení spravované paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl  
+ **Hlavička:** CorProf. idl  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** 1.1, 1.0  
+ **Verze .NET Framework:** 1,1, 1,0  
   
 ## <a name="see-also"></a>Viz také:
 

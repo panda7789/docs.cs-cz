@@ -13,19 +13,19 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344344"
 ---
 # <a name="how-to-validate-strings-that-represent-dates-or-times-visual-basic"></a>Postupy: Ověření řetězců, které představují data nebo časy (Visual Basic).
-The following code example sets a `Boolean` value that indicates whether a string represents a valid date or time.  
+Následující příklad kódu nastaví `Boolean` hodnotu, která označuje, zda řetězec představuje platné datum nebo čas.  
   
 ## <a name="example"></a>Příklad  
  [!code-vb[VbVbcnRegEx#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnRegEx/VB/Class1.vb#2)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Replace `("01/01/03")` and `"9:30 PM"` with the date and time you want to validate. You can replace the string with another hard-coded string, with a `String` variable, or with a method that returns a string, such as `InputBox`.  
+ Nahraďte `("01/01/03")` a `"9:30 PM"` datem a časem, který chcete ověřit. Řetězec lze nahradit jiným pevně zakódovaným řetězcem s `String` proměnnou nebo metodou, která vrací řetězec, například `InputBox`.  
   
 ## <a name="robust-programming"></a>Robustní programování  
- Use this method to validate the string before trying to convert the `String` to a `DateTime` variable. By checking the date or time first, you can avoid generating an exception at run time.  
+ Tuto metodu použijte, chcete-li před pokusem o převedení `String` na `DateTime` proměnnou ověřit řetězec. Kontrolou prvního data nebo času se můžete vyhnout generování výjimky v době běhu.  
   
 ## <a name="see-also"></a>Viz také:
 
 - <xref:Microsoft.VisualBasic.Information.IsDate%2A>
 - <xref:Microsoft.VisualBasic.Interaction.InputBox%2A>
-- [Validating Strings in Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/validating-strings.md)
+- [Ověřování řetězců v Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/validating-strings.md)

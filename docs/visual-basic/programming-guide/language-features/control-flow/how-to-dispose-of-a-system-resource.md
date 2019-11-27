@@ -18,15 +18,15 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353948"
 ---
 # <a name="how-to-dispose-of-a-system-resource-visual-basic"></a>Postupy: Odstranění systémového prostředku (Visual Basic)
-You can use a `Using` block to guarantee that the system disposes of a resource when your code exits the block. This is useful if you are using a system resource that consumes a large amount of memory, or that other components also want to use.  
+Můžete použít `Using` blok k zajištění toho, aby systém odstranil prostředek, když váš kód ukončuje blok. To je užitečné v případě, že používáte systémový prostředek, který spotřebovává velké množství paměti, nebo že jiné komponenty mají být také používány.  
   
-### <a name="to-dispose-of-a-database-connection-when-your-code-is-finished-with-it"></a>To dispose of a database connection when your code is finished with it  
+### <a name="to-dispose-of-a-database-connection-when-your-code-is-finished-with-it"></a>Vyřazení databázového připojení, když je kód dokončen  
   
-1. Make sure you include the appropriate [Imports Statement (.NET Namespace and Type)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) for the database connection at the beginning of your source file (in this case, <xref:System.Data.SqlClient>).  
+1. Ujistěte se, že jste zahrnuli příslušný [příkaz Imports (obor názvů a typ .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) pro připojení k databázi na začátku zdrojového souboru (v tomto případě <xref:System.Data.SqlClient>).  
   
-2. Create a `Using` block with the `Using` and `End Using` statements. Inside the block, put the code that deals with the database connection.  
+2. Vytvořte `Using` blok s příkazy `Using` a `End Using`. Uvnitř bloku vložte kód, který se zabývá připojením k databázi.  
   
-3. Declare the connection and create an instance of it as part of the `Using` statement.  
+3. Deklarujte připojení a vytvořte jeho instanci jako součást příkazu `Using`.  
   
     ```vb  
     ' Insert the following line at the beginning of your source file.  
@@ -38,11 +38,11 @@ You can use a `Using` block to guarantee that the system disposes of a resource 
     End Sub  
     ```  
   
-     The system disposes of the resource no matter how you exit the block, including the case of an unhandled exception.  
+     Systém uvolní prostředek bez ohledu na to, jakým způsobem ukončujete blok, včetně případu neošetřené výjimky.  
   
-     Note that you cannot access `sqc` from outside the `Using` block, because its scope is limited to the block.  
+     Všimněte si, že nemůžete získat přístup k `sqc` mimo blok `Using`, protože jeho rozsah je omezen na blok.  
   
-     You can use this same technique on a system resource such as a file handle or a COM wrapper. You use a `Using` block when you want to be sure to leave the resource available for other components after you have exited the `Using` block.  
+     Stejnou techniku můžete použít pro systémový prostředek, jako je například popisovač souboru nebo Obálka COM. `Using` blok použijete, pokud chcete mít jistotu, že je prostředek k dispozici pro jiné součásti po ukončení bloku `Using`.  
   
 ## <a name="see-also"></a>Viz také:
 
