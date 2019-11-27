@@ -21,10 +21,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450109"
 ---
-# <a name="corregflags-enumeration"></a><span data-ttu-id="2d13d-102">CorRegFlags – výčet</span><span class="sxs-lookup"><span data-stu-id="2d13d-102">CorRegFlags Enumeration</span></span>
-<span data-ttu-id="2d13d-103">Provides flag values used for registration when installing a module or composite image.</span><span class="sxs-lookup"><span data-stu-id="2d13d-103">Provides flag values used for registration when installing a module or composite image.</span></span>  
+# <a name="corregflags-enumeration"></a><span data-ttu-id="7dcc0-102">CorRegFlags – výčet</span><span class="sxs-lookup"><span data-stu-id="7dcc0-102">CorRegFlags Enumeration</span></span>
+<span data-ttu-id="7dcc0-103">Poskytuje hodnoty příznaku používané k registraci při instalaci modulu nebo složené image.</span><span class="sxs-lookup"><span data-stu-id="7dcc0-103">Provides flag values used for registration when installing a module or composite image.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="2d13d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2d13d-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="7dcc0-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7dcc0-104">Syntax</span></span>  
   
 ```cpp  
 typedef enum   
@@ -35,23 +35,23 @@ typedef enum
 } CorRegFlags;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="2d13d-105">Členové</span><span class="sxs-lookup"><span data-stu-id="2d13d-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="7dcc0-105">Členové</span><span class="sxs-lookup"><span data-stu-id="7dcc0-105">Members</span></span>  
   
-|<span data-ttu-id="2d13d-106">Člen</span><span class="sxs-lookup"><span data-stu-id="2d13d-106">Member</span></span>|<span data-ttu-id="2d13d-107">Popis</span><span class="sxs-lookup"><span data-stu-id="2d13d-107">Description</span></span>|  
+|<span data-ttu-id="7dcc0-106">Člen</span><span class="sxs-lookup"><span data-stu-id="7dcc0-106">Member</span></span>|<span data-ttu-id="7dcc0-107">Popis</span><span class="sxs-lookup"><span data-stu-id="7dcc0-107">Description</span></span>|  
 |------------|-----------------|  
-|`regNoCopy`|<span data-ttu-id="2d13d-108">Specifies that files should not be copied into the destination.</span><span class="sxs-lookup"><span data-stu-id="2d13d-108">Specifies that files should not be copied into the destination.</span></span>|  
-|`regConfig`|<span data-ttu-id="2d13d-109">Specifies that the module or composite is a configuration.</span><span class="sxs-lookup"><span data-stu-id="2d13d-109">Specifies that the module or composite is a configuration.</span></span>|  
-|`regHasRefs`|<span data-ttu-id="2d13d-110">Specifies that the module or composite has class references.</span><span class="sxs-lookup"><span data-stu-id="2d13d-110">Specifies that the module or composite has class references.</span></span>|  
+|`regNoCopy`|<span data-ttu-id="7dcc0-108">Určuje, že soubory by neměly být kopírovány do cílového umístění.</span><span class="sxs-lookup"><span data-stu-id="7dcc0-108">Specifies that files should not be copied into the destination.</span></span>|  
+|`regConfig`|<span data-ttu-id="7dcc0-109">Určuje, že modul nebo kompozitní je konfigurace.</span><span class="sxs-lookup"><span data-stu-id="7dcc0-109">Specifies that the module or composite is a configuration.</span></span>|  
+|`regHasRefs`|<span data-ttu-id="7dcc0-110">Určuje, že modul nebo složený z odkazů na třídy.</span><span class="sxs-lookup"><span data-stu-id="7dcc0-110">Specifies that the module or composite has class references.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="2d13d-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2d13d-111">Requirements</span></span>  
- <span data-ttu-id="2d13d-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2d13d-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="7dcc0-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7dcc0-111">Requirements</span></span>  
+ <span data-ttu-id="7dcc0-112">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7dcc0-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="2d13d-113">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="2d13d-113">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="7dcc0-113">**Hlavička:** Cor. h</span><span class="sxs-lookup"><span data-stu-id="7dcc0-113">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="2d13d-114">**Library:** Included as a resource in MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="2d13d-114">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="7dcc0-114">**Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="7dcc0-114">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="2d13d-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="2d13d-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="7dcc0-115">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="7dcc0-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="2d13d-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2d13d-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7dcc0-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7dcc0-116">See also</span></span>
 
-- [<span data-ttu-id="2d13d-117">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="2d13d-117">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [<span data-ttu-id="7dcc0-117">Výčty pro metadata</span><span class="sxs-lookup"><span data-stu-id="7dcc0-117">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
