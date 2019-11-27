@@ -22,10 +22,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448651"
 ---
-# <a name="isymencunmanagedmethodgetfilenamefromoffset-method"></a><span data-ttu-id="315bf-102">ISymENCUnmanagedMethod::GetFileNameFromOffset – metoda</span><span class="sxs-lookup"><span data-stu-id="315bf-102">ISymENCUnmanagedMethod::GetFileNameFromOffset Method</span></span>
-<span data-ttu-id="315bf-103">Gets the file name for the line associated with an offset.</span><span class="sxs-lookup"><span data-stu-id="315bf-103">Gets the file name for the line associated with an offset.</span></span>  
+# <a name="isymencunmanagedmethodgetfilenamefromoffset-method"></a><span data-ttu-id="ce529-102">ISymENCUnmanagedMethod::GetFileNameFromOffset – metoda</span><span class="sxs-lookup"><span data-stu-id="ce529-102">ISymENCUnmanagedMethod::GetFileNameFromOffset Method</span></span>
+<span data-ttu-id="ce529-103">Získá název souboru pro řádek přidružený k posunu.</span><span class="sxs-lookup"><span data-stu-id="ce529-103">Gets the file name for the line associated with an offset.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="315bf-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="315bf-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="ce529-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ce529-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetFileNameFromOffset(  
@@ -36,25 +36,25 @@ HRESULT GetFileNameFromOffset(
        length_is(*pcchName)] WCHAR szName[]);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="315bf-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="315bf-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="ce529-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="ce529-105">Parameters</span></span>  
  `dwOffset`  
- <span data-ttu-id="315bf-106">[in] A `ULONG32` that contains the offset.</span><span class="sxs-lookup"><span data-stu-id="315bf-106">[in] A `ULONG32` that contains the offset.</span></span>  
+ <span data-ttu-id="ce529-106">pro `ULONG32`, který obsahuje posun.</span><span class="sxs-lookup"><span data-stu-id="ce529-106">[in] A `ULONG32` that contains the offset.</span></span>  
   
  `cchName`  
- <span data-ttu-id="315bf-107">[in] A `ULONG32` that indicates the size of the `szName` buffer.</span><span class="sxs-lookup"><span data-stu-id="315bf-107">[in] A `ULONG32` that indicates the size of the `szName` buffer.</span></span>  
+ <span data-ttu-id="ce529-107">pro `ULONG32`, která určuje velikost vyrovnávací paměti `szName`.</span><span class="sxs-lookup"><span data-stu-id="ce529-107">[in] A `ULONG32` that indicates the size of the `szName` buffer.</span></span>  
   
  `pcchName`  
- <span data-ttu-id="315bf-108">[out] A pointer to a `ULONG32` that receives the size, in characters, of the buffer required to contain the file names.</span><span class="sxs-lookup"><span data-stu-id="315bf-108">[out] A pointer to a `ULONG32` that receives the size, in characters, of the buffer required to contain the file names.</span></span>  
+ <span data-ttu-id="ce529-108">mimo Ukazatel na `ULONG32`, který obdrží velikost vyrovnávací paměti vyžadované k uložení názvů souborů v znacích.</span><span class="sxs-lookup"><span data-stu-id="ce529-108">[out] A pointer to a `ULONG32` that receives the size, in characters, of the buffer required to contain the file names.</span></span>  
   
  `szName`  
- <span data-ttu-id="315bf-109">[out] The buffer that contains the file names.</span><span class="sxs-lookup"><span data-stu-id="315bf-109">[out] The buffer that contains the file names.</span></span>  
+ <span data-ttu-id="ce529-109">mimo Vyrovnávací paměť, která obsahuje názvy souborů.</span><span class="sxs-lookup"><span data-stu-id="ce529-109">[out] The buffer that contains the file names.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="315bf-110">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="315bf-110">Return Value</span></span>  
- <span data-ttu-id="315bf-111">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span><span class="sxs-lookup"><span data-stu-id="315bf-111">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="ce529-110">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="ce529-110">Return Value</span></span>  
+ <span data-ttu-id="ce529-111">S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="ce529-111">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="315bf-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="315bf-112">Requirements</span></span>  
- <span data-ttu-id="315bf-113">**Header:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="315bf-113">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="ce529-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="ce529-112">Requirements</span></span>  
+ <span data-ttu-id="ce529-113">**Hlavička:** CorSym. idl, CorSym. h</span><span class="sxs-lookup"><span data-stu-id="ce529-113">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="315bf-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="315bf-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ce529-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="ce529-114">See also</span></span>
 
-- [<span data-ttu-id="315bf-115">ISymENCUnmanagedMethod – rozhraní</span><span class="sxs-lookup"><span data-stu-id="315bf-115">ISymENCUnmanagedMethod Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymencunmanagedmethod-interface.md)
+- [<span data-ttu-id="ce529-115">ISymENCUnmanagedMethod – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ce529-115">ISymENCUnmanagedMethod Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymencunmanagedmethod-interface.md)

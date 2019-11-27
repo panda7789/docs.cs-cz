@@ -11,14 +11,14 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350799"
 ---
-# <a name="subscript-out-of-range-visual-basic"></a><span data-ttu-id="53022-102">Dolní index mimo rozsah (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="53022-102">Subscript out of range (Visual Basic)</span></span>
-<span data-ttu-id="53022-103">An array subscript is not valid because it falls outside the allowable range.</span><span class="sxs-lookup"><span data-stu-id="53022-103">An array subscript is not valid because it falls outside the allowable range.</span></span> <span data-ttu-id="53022-104">The lowest subscript value for a dimension is always 0, and the highest subscript value is returned by the `GetUpperBound` method for that dimension.</span><span class="sxs-lookup"><span data-stu-id="53022-104">The lowest subscript value for a dimension is always 0, and the highest subscript value is returned by the `GetUpperBound` method for that dimension.</span></span>  
+# <a name="subscript-out-of-range-visual-basic"></a><span data-ttu-id="b992b-102">Dolní index mimo rozsah (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b992b-102">Subscript out of range (Visual Basic)</span></span>
+<span data-ttu-id="b992b-103">Dolní index pole není platný, protože spadá mimo povolený rozsah.</span><span class="sxs-lookup"><span data-stu-id="b992b-103">An array subscript is not valid because it falls outside the allowable range.</span></span> <span data-ttu-id="b992b-104">Nejnižší hodnota dolního indexu pro dimenzi je vždy 0 a nejvyšší hodnota dolního indexu je vrácena metodou `GetUpperBound` pro tuto dimenzi.</span><span class="sxs-lookup"><span data-stu-id="b992b-104">The lowest subscript value for a dimension is always 0, and the highest subscript value is returned by the `GetUpperBound` method for that dimension.</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="53022-105">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="53022-105">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="b992b-105">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="b992b-105">To correct this error</span></span>  
   
-- <span data-ttu-id="53022-106">Change the subscript so it falls within the valid range.</span><span class="sxs-lookup"><span data-stu-id="53022-106">Change the subscript so it falls within the valid range.</span></span>  
+- <span data-ttu-id="b992b-106">Změňte dolní index tak, aby ležel v platném rozsahu.</span><span class="sxs-lookup"><span data-stu-id="b992b-106">Change the subscript so it falls within the valid range.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="53022-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="53022-107">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b992b-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b992b-107">See also</span></span>
 
 - <xref:System.Array.GetUpperBound%2A?displayProperty=nameWithType>
-- [<span data-ttu-id="53022-108">Pole</span><span class="sxs-lookup"><span data-stu-id="53022-108">Arrays</span></span>](../../../visual-basic/programming-guide/language-features/arrays/index.md)
+- [<span data-ttu-id="b992b-108">Pole</span><span class="sxs-lookup"><span data-stu-id="b992b-108">Arrays</span></span>](../../../visual-basic/programming-guide/language-features/arrays/index.md)

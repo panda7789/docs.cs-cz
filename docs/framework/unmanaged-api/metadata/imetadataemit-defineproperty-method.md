@@ -22,10 +22,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74431520"
 ---
-# <a name="imetadataemitdefineproperty-method"></a><span data-ttu-id="4d85c-102">IMetaDataEmit::DefineProperty – metoda</span><span class="sxs-lookup"><span data-stu-id="4d85c-102">IMetaDataEmit::DefineProperty Method</span></span>
-<span data-ttu-id="4d85c-103">Creates a property definition for the specified type, with the specified `get` and `set` method accessors, and gets a token to that property definition.</span><span class="sxs-lookup"><span data-stu-id="4d85c-103">Creates a property definition for the specified type, with the specified `get` and `set` method accessors, and gets a token to that property definition.</span></span>  
+# <a name="imetadataemitdefineproperty-method"></a><span data-ttu-id="53b20-102">IMetaDataEmit::DefineProperty – metoda</span><span class="sxs-lookup"><span data-stu-id="53b20-102">IMetaDataEmit::DefineProperty Method</span></span>
+<span data-ttu-id="53b20-103">Vytvoří definici vlastnosti pro zadaný typ se zadanými přístupovými metodami metody `get` a `set` a získá token této definici vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="53b20-103">Creates a property definition for the specified type, with the specified `get` and `set` method accessors, and gets a token to that property definition.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="4d85c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4d85c-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="53b20-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="53b20-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT DefineProperty (   
@@ -44,53 +44,53 @@ HRESULT DefineProperty (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="4d85c-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="4d85c-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="53b20-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="53b20-105">Parameters</span></span>  
  `td`  
- <span data-ttu-id="4d85c-106">[in] The token for class or interface on which the property is being defined.</span><span class="sxs-lookup"><span data-stu-id="4d85c-106">[in] The token for class or interface on which the property is being defined.</span></span>  
+ <span data-ttu-id="53b20-106">pro Token třídy nebo rozhraní, na kterém je vlastnost definována.</span><span class="sxs-lookup"><span data-stu-id="53b20-106">[in] The token for class or interface on which the property is being defined.</span></span>  
   
  `szProperty`  
- <span data-ttu-id="4d85c-107">[in] The name of the property.</span><span class="sxs-lookup"><span data-stu-id="4d85c-107">[in] The name of the property.</span></span>  
+ <span data-ttu-id="53b20-107">pro Název vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="53b20-107">[in] The name of the property.</span></span>  
   
  `dwPropFlags`  
- <span data-ttu-id="4d85c-108">[in] The property flags.</span><span class="sxs-lookup"><span data-stu-id="4d85c-108">[in] The property flags.</span></span>  
+ <span data-ttu-id="53b20-108">pro Příznaky vlastností.</span><span class="sxs-lookup"><span data-stu-id="53b20-108">[in] The property flags.</span></span>  
   
  `pvSig`  
- <span data-ttu-id="4d85c-109">[in] The property signature.</span><span class="sxs-lookup"><span data-stu-id="4d85c-109">[in] The property signature.</span></span>  
+ <span data-ttu-id="53b20-109">pro Signatura vlastnosti</span><span class="sxs-lookup"><span data-stu-id="53b20-109">[in] The property signature.</span></span>  
   
  `cbSig`  
- <span data-ttu-id="4d85c-110">[in] The count of bytes in `pvSig`.</span><span class="sxs-lookup"><span data-stu-id="4d85c-110">[in] The count of bytes in `pvSig`.</span></span>  
+ <span data-ttu-id="53b20-110">pro Počet bajtů v `pvSig`.</span><span class="sxs-lookup"><span data-stu-id="53b20-110">[in] The count of bytes in `pvSig`.</span></span>  
   
  `dwCPlusTypeFlag`  
- <span data-ttu-id="4d85c-111">[in] The type of the property's default value.</span><span class="sxs-lookup"><span data-stu-id="4d85c-111">[in] The type of the property's default value.</span></span>  
+ <span data-ttu-id="53b20-111">pro Typ výchozí hodnoty vlastnosti</span><span class="sxs-lookup"><span data-stu-id="53b20-111">[in] The type of the property's default value.</span></span>  
   
  `pValue`  
- <span data-ttu-id="4d85c-112">[in] The default value for the property.</span><span class="sxs-lookup"><span data-stu-id="4d85c-112">[in] The default value for the property.</span></span>  
+ <span data-ttu-id="53b20-112">pro Výchozí hodnota vlastnosti</span><span class="sxs-lookup"><span data-stu-id="53b20-112">[in] The default value for the property.</span></span>  
   
  `cchValue`  
- <span data-ttu-id="4d85c-113">[in] The count of (Unicode) characters in `pValue`.</span><span class="sxs-lookup"><span data-stu-id="4d85c-113">[in] The count of (Unicode) characters in `pValue`.</span></span>  
+ <span data-ttu-id="53b20-113">pro Počet znaků (Unicode) v `pValue`.</span><span class="sxs-lookup"><span data-stu-id="53b20-113">[in] The count of (Unicode) characters in `pValue`.</span></span>  
   
  `mdSetter`  
- <span data-ttu-id="4d85c-114">[in] The method that sets the property value.</span><span class="sxs-lookup"><span data-stu-id="4d85c-114">[in] The method that sets the property value.</span></span>  
+ <span data-ttu-id="53b20-114">pro Metoda, která nastaví hodnotu vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="53b20-114">[in] The method that sets the property value.</span></span>  
   
  `mdGetter`  
- <span data-ttu-id="4d85c-115">[in] The method that gets the property value.</span><span class="sxs-lookup"><span data-stu-id="4d85c-115">[in] The method that gets the property value.</span></span>  
+ <span data-ttu-id="53b20-115">pro Metoda, která získá hodnotu vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="53b20-115">[in] The method that gets the property value.</span></span>  
   
  `rmdOtherMethods[]`  
- <span data-ttu-id="4d85c-116">[in] An array of other methods associated with the property.</span><span class="sxs-lookup"><span data-stu-id="4d85c-116">[in] An array of other methods associated with the property.</span></span> <span data-ttu-id="4d85c-117">Terminate the array with an `mdTokenNil`.</span><span class="sxs-lookup"><span data-stu-id="4d85c-117">Terminate the array with an `mdTokenNil`.</span></span>  
+ <span data-ttu-id="53b20-116">pro Pole dalších metod přidružených k vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="53b20-116">[in] An array of other methods associated with the property.</span></span> <span data-ttu-id="53b20-117">Ukončete pole pomocí `mdTokenNil`.</span><span class="sxs-lookup"><span data-stu-id="53b20-117">Terminate the array with an `mdTokenNil`.</span></span>  
   
  `pmdProp`  
- <span data-ttu-id="4d85c-118">[out] The `mdProperty` token assigned.</span><span class="sxs-lookup"><span data-stu-id="4d85c-118">[out] The `mdProperty` token assigned.</span></span>  
+ <span data-ttu-id="53b20-118">mimo Byl přiřazen token `mdProperty`.</span><span class="sxs-lookup"><span data-stu-id="53b20-118">[out] The `mdProperty` token assigned.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="4d85c-119">Požadavky</span><span class="sxs-lookup"><span data-stu-id="4d85c-119">Requirements</span></span>  
- <span data-ttu-id="4d85c-120">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="4d85c-120">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="53b20-119">Požadavky</span><span class="sxs-lookup"><span data-stu-id="53b20-119">Requirements</span></span>  
+ <span data-ttu-id="53b20-120">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="53b20-120">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="4d85c-121">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="4d85c-121">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="53b20-121">**Hlavička:** Cor. h</span><span class="sxs-lookup"><span data-stu-id="53b20-121">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="4d85c-122">**Library:** Used as a resource in MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="4d85c-122">**Library:** Used as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="53b20-122">**Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.</span><span class="sxs-lookup"><span data-stu-id="53b20-122">**Library:** Used as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="4d85c-123">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="4d85c-123">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="53b20-123">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="53b20-123">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="4d85c-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="4d85c-124">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="53b20-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="53b20-124">See also</span></span>
 
-- [<span data-ttu-id="4d85c-125">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4d85c-125">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [<span data-ttu-id="4d85c-126">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="4d85c-126">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [<span data-ttu-id="53b20-125">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="53b20-125">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [<span data-ttu-id="53b20-126">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="53b20-126">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

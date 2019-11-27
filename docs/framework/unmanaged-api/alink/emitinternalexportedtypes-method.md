@@ -22,10 +22,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446494"
 ---
-# <a name="emitinternalexportedtypes-method"></a><span data-ttu-id="5dc6c-102">EmitInternalExportedTypes – metoda</span><span class="sxs-lookup"><span data-stu-id="5dc6c-102">EmitInternalExportedTypes Method</span></span>
-<span data-ttu-id="5dc6c-103">Emits types added to the assembly.</span><span class="sxs-lookup"><span data-stu-id="5dc6c-103">Emits types added to the assembly.</span></span> <span data-ttu-id="5dc6c-104">Call this method after known internal types have been added.</span><span class="sxs-lookup"><span data-stu-id="5dc6c-104">Call this method after known internal types have been added.</span></span>  
+# <a name="emitinternalexportedtypes-method"></a><span data-ttu-id="1ffe3-102">EmitInternalExportedTypes – metoda</span><span class="sxs-lookup"><span data-stu-id="1ffe3-102">EmitInternalExportedTypes Method</span></span>
+<span data-ttu-id="1ffe3-103">Vygeneruje typy přidané do sestavení.</span><span class="sxs-lookup"><span data-stu-id="1ffe3-103">Emits types added to the assembly.</span></span> <span data-ttu-id="1ffe3-104">Tuto metodu volejte po přidání známých vnitřních typů.</span><span class="sxs-lookup"><span data-stu-id="1ffe3-104">Call this method after known internal types have been added.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="5dc6c-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5dc6c-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="1ffe3-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1ffe3-105">Syntax</span></span>  
   
 ```cpp  
 HRESULT EmitInternalExportedTypes(  
@@ -33,18 +33,18 @@ HRESULT EmitInternalExportedTypes(
 ) PURE;  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="5dc6c-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="5dc6c-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="1ffe3-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="1ffe3-106">Parameters</span></span>  
  `AssemblyID`  
- <span data-ttu-id="5dc6c-107">ID of assembly.</span><span class="sxs-lookup"><span data-stu-id="5dc6c-107">ID of assembly.</span></span>  
+ <span data-ttu-id="1ffe3-107">ID sestavení</span><span class="sxs-lookup"><span data-stu-id="1ffe3-107">ID of assembly.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="5dc6c-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="5dc6c-108">Return Value</span></span>  
- <span data-ttu-id="5dc6c-109">Returns S_OK if the method succeeds.</span><span class="sxs-lookup"><span data-stu-id="5dc6c-109">Returns S_OK if the method succeeds.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="1ffe3-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="1ffe3-108">Return Value</span></span>  
+ <span data-ttu-id="1ffe3-109">Vrátí S_OK, pokud je metoda úspěšná.</span><span class="sxs-lookup"><span data-stu-id="1ffe3-109">Returns S_OK if the method succeeds.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="5dc6c-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5dc6c-110">Requirements</span></span>  
- <span data-ttu-id="5dc6c-111">Requires alink.h</span><span class="sxs-lookup"><span data-stu-id="5dc6c-111">Requires alink.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="1ffe3-110">Požadavky</span><span class="sxs-lookup"><span data-stu-id="1ffe3-110">Requirements</span></span>  
+ <span data-ttu-id="1ffe3-111">Vyžaduje ALink. h</span><span class="sxs-lookup"><span data-stu-id="1ffe3-111">Requires alink.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5dc6c-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5dc6c-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1ffe3-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1ffe3-112">See also</span></span>
 
-- [<span data-ttu-id="5dc6c-113">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="5dc6c-113">IALink2 Interface</span></span>](ialink2-interface.md)
-- [<span data-ttu-id="5dc6c-114">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="5dc6c-114">IALink Interface</span></span>](ialink-interface.md)
-- [<span data-ttu-id="5dc6c-115">ALink API</span><span class="sxs-lookup"><span data-stu-id="5dc6c-115">ALink API</span></span>](index.md)
+- [<span data-ttu-id="1ffe3-113">IALink2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="1ffe3-113">IALink2 Interface</span></span>](ialink2-interface.md)
+- [<span data-ttu-id="1ffe3-114">IALink – rozhraní</span><span class="sxs-lookup"><span data-stu-id="1ffe3-114">IALink Interface</span></span>](ialink-interface.md)
+- [<span data-ttu-id="1ffe3-115">Rozhraní API ALink</span><span class="sxs-lookup"><span data-stu-id="1ffe3-115">ALink API</span></span>](index.md)

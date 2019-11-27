@@ -22,10 +22,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74431210"
 ---
-# <a name="imetadatadispenserexgetcorsystemdirectory-method"></a><span data-ttu-id="eb0eb-102">IMetaDataDispenserEx::GetCORSystemDirectory – metoda</span><span class="sxs-lookup"><span data-stu-id="eb0eb-102">IMetaDataDispenserEx::GetCORSystemDirectory Method</span></span>
-<span data-ttu-id="eb0eb-103">Gets the directory that holds the current common language runtime (CLR).</span><span class="sxs-lookup"><span data-stu-id="eb0eb-103">Gets the directory that holds the current common language runtime (CLR).</span></span> <span data-ttu-id="eb0eb-104">This method is supported only for use by out-of-process debuggers.</span><span class="sxs-lookup"><span data-stu-id="eb0eb-104">This method is supported only for use by out-of-process debuggers.</span></span> <span data-ttu-id="eb0eb-105">If called from another component, it will return E_NOTIMPL.</span><span class="sxs-lookup"><span data-stu-id="eb0eb-105">If called from another component, it will return E_NOTIMPL.</span></span>  
+# <a name="imetadatadispenserexgetcorsystemdirectory-method"></a><span data-ttu-id="7a8ca-102">IMetaDataDispenserEx::GetCORSystemDirectory – metoda</span><span class="sxs-lookup"><span data-stu-id="7a8ca-102">IMetaDataDispenserEx::GetCORSystemDirectory Method</span></span>
+<span data-ttu-id="7a8ca-103">Načte adresář, který obsahuje aktuální modul CLR (Common Language Runtime).</span><span class="sxs-lookup"><span data-stu-id="7a8ca-103">Gets the directory that holds the current common language runtime (CLR).</span></span> <span data-ttu-id="7a8ca-104">Tato metoda je podporována pouze pro použití vnitroprocesové ladicí program.</span><span class="sxs-lookup"><span data-stu-id="7a8ca-104">This method is supported only for use by out-of-process debuggers.</span></span> <span data-ttu-id="7a8ca-105">Pokud se volá z jiné součásti, vrátí E_NOTIMPL.</span><span class="sxs-lookup"><span data-stu-id="7a8ca-105">If called from another component, it will return E_NOTIMPL.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="eb0eb-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="eb0eb-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="7a8ca-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7a8ca-106">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetCORSystemDirectory (  
@@ -35,26 +35,26 @@ HRESULT GetCORSystemDirectory (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="eb0eb-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="eb0eb-107">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="7a8ca-107">Parametry</span><span class="sxs-lookup"><span data-stu-id="7a8ca-107">Parameters</span></span>  
  `szBuffer`  
- <span data-ttu-id="eb0eb-108">[out] The buffer to receive the directory name.</span><span class="sxs-lookup"><span data-stu-id="eb0eb-108">[out] The buffer to receive the directory name.</span></span>  
+ <span data-ttu-id="7a8ca-108">mimo Vyrovnávací paměť pro získání názvu adresáře.</span><span class="sxs-lookup"><span data-stu-id="7a8ca-108">[out] The buffer to receive the directory name.</span></span>  
   
  `cchBuffer`  
- <span data-ttu-id="eb0eb-109">[in] The size, in bytes, of `szBuffer`.</span><span class="sxs-lookup"><span data-stu-id="eb0eb-109">[in] The size, in bytes, of `szBuffer`.</span></span>  
+ <span data-ttu-id="7a8ca-109">pro Velikost `szBuffer`v bajtech.</span><span class="sxs-lookup"><span data-stu-id="7a8ca-109">[in] The size, in bytes, of `szBuffer`.</span></span>  
   
  `pchBuffer`  
- <span data-ttu-id="eb0eb-110">[out] The number of bytes actually returned in `szBuffer`.</span><span class="sxs-lookup"><span data-stu-id="eb0eb-110">[out] The number of bytes actually returned in `szBuffer`.</span></span>  
+ <span data-ttu-id="7a8ca-110">mimo Počet bajtů, které jsou ve skutečnosti vráceny v `szBuffer`.</span><span class="sxs-lookup"><span data-stu-id="7a8ca-110">[out] The number of bytes actually returned in `szBuffer`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="eb0eb-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="eb0eb-111">Requirements</span></span>  
- <span data-ttu-id="eb0eb-112">**Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="eb0eb-112">**Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="7a8ca-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7a8ca-111">Requirements</span></span>  
+ <span data-ttu-id="7a8ca-112">**Platforma:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7a8ca-112">**Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="eb0eb-113">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="eb0eb-113">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="7a8ca-113">**Hlavička:** Cor. h</span><span class="sxs-lookup"><span data-stu-id="7a8ca-113">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="eb0eb-114">**Library:** Used as a resource in MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="eb0eb-114">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="7a8ca-114">**Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.</span><span class="sxs-lookup"><span data-stu-id="7a8ca-114">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="eb0eb-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="eb0eb-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="7a8ca-115">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="7a8ca-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="eb0eb-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="eb0eb-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7a8ca-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7a8ca-116">See also</span></span>
 
-- [<span data-ttu-id="eb0eb-117">IMetaDataDispenserEx – rozhraní</span><span class="sxs-lookup"><span data-stu-id="eb0eb-117">IMetaDataDispenserEx Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)
-- [<span data-ttu-id="eb0eb-118">IMetaDataDispenser – rozhraní</span><span class="sxs-lookup"><span data-stu-id="eb0eb-118">IMetaDataDispenser Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md)
+- [<span data-ttu-id="7a8ca-117">IMetaDataDispenserEx – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7a8ca-117">IMetaDataDispenserEx Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)
+- [<span data-ttu-id="7a8ca-118">IMetaDataDispenser – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7a8ca-118">IMetaDataDispenser Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md)
