@@ -22,28 +22,28 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74428424"
 ---
-# <a name="imetadataemit2resetenclog-method"></a><span data-ttu-id="c1b3a-102">IMetaDataEmit2::ResetENCLog – metoda</span><span class="sxs-lookup"><span data-stu-id="c1b3a-102">IMetaDataEmit2::ResetENCLog Method</span></span>
-<span data-ttu-id="c1b3a-103">Resets the edit-and-continue log and starts a new session.</span><span class="sxs-lookup"><span data-stu-id="c1b3a-103">Resets the edit-and-continue log and starts a new session.</span></span>  
+# <a name="imetadataemit2resetenclog-method"></a><span data-ttu-id="3452b-102">IMetaDataEmit2::ResetENCLog – metoda</span><span class="sxs-lookup"><span data-stu-id="3452b-102">IMetaDataEmit2::ResetENCLog Method</span></span>
+<span data-ttu-id="3452b-103">Obnoví protokol Edit-and-Continue a spustí novou relaci.</span><span class="sxs-lookup"><span data-stu-id="3452b-103">Resets the edit-and-continue log and starts a new session.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="c1b3a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c1b3a-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="3452b-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3452b-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT ResetENCLog ();  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="c1b3a-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="c1b3a-105">Parameters</span></span>  
- <span data-ttu-id="c1b3a-106">`ResetENCLog` takes no parameters.</span><span class="sxs-lookup"><span data-stu-id="c1b3a-106">`ResetENCLog` takes no parameters.</span></span>  
+## <a name="parameters"></a><span data-ttu-id="3452b-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="3452b-105">Parameters</span></span>  
+ <span data-ttu-id="3452b-106">`ResetENCLog` nepřebírá žádné parametry.</span><span class="sxs-lookup"><span data-stu-id="3452b-106">`ResetENCLog` takes no parameters.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="c1b3a-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c1b3a-107">Requirements</span></span>  
- <span data-ttu-id="c1b3a-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c1b3a-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="3452b-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="3452b-107">Requirements</span></span>  
+ <span data-ttu-id="3452b-108">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="3452b-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="c1b3a-109">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="c1b3a-109">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="3452b-109">**Hlavička:** Cor. h</span><span class="sxs-lookup"><span data-stu-id="3452b-109">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="c1b3a-110">**Library:** Used as a resource in MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="c1b3a-110">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="3452b-110">**Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.</span><span class="sxs-lookup"><span data-stu-id="3452b-110">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="c1b3a-111">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c1b3a-111">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="3452b-111">**Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="3452b-111">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c1b3a-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c1b3a-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="3452b-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3452b-112">See also</span></span>
 
-- [<span data-ttu-id="c1b3a-113">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c1b3a-113">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
-- [<span data-ttu-id="c1b3a-114">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c1b3a-114">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [<span data-ttu-id="3452b-113">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="3452b-113">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [<span data-ttu-id="3452b-114">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="3452b-114">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
