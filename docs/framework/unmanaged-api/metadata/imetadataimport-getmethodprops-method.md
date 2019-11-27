@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437459"
 ---
 # <a name="imetadataimportgetmethodprops-method"></a>IMetaDataImport::GetMethodProps – metoda
-Gets the metadata associated with the method referenced by the specified MethodDef token.  
+Získá metadata přidružená k metodě, na kterou odkazuje zadaný token MethodDef.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,43 +44,43 @@ HRESULT GetMethodProps (
   
 ## <a name="parameters"></a>Parametry  
  `mb`  
- [in] The MethodDef token that represents the method to return metadata for.  
+ pro Token MethodDef, který představuje metodu pro vrácení metadat.  
   
  `pClass`  
- [out] A Pointer to a TypeDef token that represents the type that implements the method.  
+ mimo Ukazatel na token TypeDef, který představuje typ, který implementuje metodu.  
   
  `szMethod`  
- [out] A Pointer to a buffer that has the method's name.  
+ mimo Ukazatel na vyrovnávací paměť, která má název metody.  
   
  `cchMethod`  
- [in] The requested size of `szMethod`.  
+ pro Požadovaná velikost `szMethod`.  
   
  `pchMethod`  
- [out] A Pointer to the size in wide characters of `szMethod`, or in the case of truncation, the actual number of wide characters in the method name.  
+ mimo Ukazatel na velikost v různých znacích `szMethod`, nebo v případě zkrácení, skutečný počet znaků v názvu metody.  
   
  `pdwAttr`  
- [out] A pointer to any flags associated with the method.  
+ mimo Ukazatel na libovolný příznak spojený s metodou.  
   
  `ppvSigBlob`  
- [out] A pointer to the binary metadata signature of the method.  
+ mimo Ukazatel na binární podpis metadat metody.  
   
  `pcbSigBlob`  
- [out] A Pointer to the size in bytes of `ppvSigBlob`.  
+ mimo Ukazatel na velikost v bajtech `ppvSigBlob`.  
   
  `pulCodeRVA`  
- [out] A pointer to the relative virtual address of the method.  
+ mimo Ukazatel na relativní virtuální adresu metody.  
   
  `pdwImplFlags`  
- [out] A pointer to any implementation flags for the method.  
+ mimo Ukazatel na libovolný příznak implementace pro metodu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

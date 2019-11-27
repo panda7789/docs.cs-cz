@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74440203"
 ---
 # <a name="imetadataassemblyemitdefinefile-method"></a>IMetaDataAssemblyEmit::DefineFile – metoda
-Creates a `File` metadata structure containing metadata for assembly referenced by this assembly, and returns the associated metadata token.  
+Vytvoří `File` strukturu metadat obsahující metadata pro sestavení, na které odkazuje toto sestavení, a vrátí přidružený token metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,31 +39,31 @@ HRESULT DefineFile (
   
 ## <a name="parameters"></a>Parametry  
  `szName`  
- [in] The name of the file to be consumed.  
+ pro Název souboru, který se má spotřebovat  
   
  `pbHashValue`  
- [in] A pointer to the hash data associated with the assembly.  
+ pro Ukazatel na data algoritmu hash přidružená k sestavení.  
   
  `cbHashValue`  
- [in] The size in bytes of `pbHashValue`.  
+ pro Velikost v bajtech `pbHashValue`.  
   
  `dwFileFlags`  
- [in] A bitwise combination of `FileFlags` values that specify property settings.  
+ pro Bitová kombinace hodnot `FileFlags`, které určují nastavení vlastností.  
   
  `pmdf`  
- [out] A pointer to the returned `File` token.  
+ mimo Ukazatel na vrácený token `File`.  
   
 ## <a name="remarks"></a>Poznámky  
- One `File` metadata structure must be defined for each file that was part of this assembly at the time that this assembly was built, excluding the file that contains the metadata.  
+ Pro každý soubor, který byl součástí tohoto sestavení v době, kdy bylo sestavení sestaveno, je třeba definovat jednu `File` strukturu metadat, a to s výjimkou souboru, který obsahuje metadata.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforma:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

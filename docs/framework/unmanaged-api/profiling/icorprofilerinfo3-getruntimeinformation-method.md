@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449679"
 ---
 # <a name="icorprofilerinfo3getruntimeinformation-method"></a>ICorProfilerInfo3::GetRuntimeInformation – metoda
-Provides version information about the common language runtime (CLR) that is being profiled.  
+Poskytuje informace o verzi modulu CLR (Common Language Runtime), který je profilace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,43 +43,43 @@ HRESULT GetRuntimeInformation(
   
 ## <a name="parameters"></a>Parametry  
  `pClrInstanceId`  
- [out] The representative ID of a running CLR instance in a process. This is the same as the `ClrInstanceID` that the event tracing for Windows (ETW) startup event reports.  
+ mimo ID zástupce běžící instance CLR v procesu. To je totéž jako `ClrInstanceID`, které sestavy událostí při spuštění trasování událostí pro Windows (ETW).  
   
  `pRuntimeType`  
- [out] The runtime type. This parameter returns `COR_PRF_DESKTOP_CLR` for the desktop version of the CLR, or `COR_PRF_CORE_CLR` for the core version of the CLR used in Silverlight.  
+ mimo Typ modulu runtime. Tento parametr vrátí `COR_PRF_DESKTOP_CLR` verze modulu CLR pro plochu nebo `COR_PRF_CORE_CLR` základní verzi CLR použitou v programu Silverlight.  
   
  `pMajorVersion`  
- [out] The major version number of the CLR.  
+ mimo Hlavní číslo verze modulu CLR.  
   
  `pMinorVersion`  
- [out] The minor version number of the CLR.  
+ mimo Číslo dílčí verze modulu CLR.  
   
  `pBuildVersion`  
- [out] The build version number of the CLR.  
+ mimo Číslo verze buildu modulu CLR.  
   
  `pQFEVersion`  
- [out] The version number of the CLR that is associated with a software update.  
+ mimo Číslo verze modulu CLR, který je spojen s aktualizací softwaru.  
   
  `cchVersionString`  
- [in] The length, in characters, of the buffer that `szVersionString` points to.  
+ pro Délka vyrovnávací paměti v znacích, na kterou `szVersionString` odkazuje.  
   
  `pcchVersionString`  
- [out] The length, in characters, of `szVersionString`.  
+ mimo Délka `szVersionString`znaků.  
   
  `szVersionString`  
- [out] The CLR version string.  
+ mimo Řetězec verze CLR.  
   
 ## <a name="remarks"></a>Poznámky  
- You may pass null for any parameter. However, `pcchVersionString` cannot be null unless `szVersionString` is also null.  
+ Pro libovolný parametr můžete předat hodnotu null. `pcchVersionString` však nesmí mít hodnotu null, pokud `szVersionString` není také null.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

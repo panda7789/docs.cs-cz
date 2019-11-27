@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450054"
 ---
 # <a name="imetadataimportenumpermissionsets-method"></a>IMetaDataImport::EnumPermissionSets – metoda
-Enumerates permissions for the objects in a specified metadata scope.  
+Vytvoří výčet oprávnění pro objekty v zadaném oboru metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,38 +40,38 @@ HRESULT EnumPermissionSets
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [in, out] A pointer to the enumerator. This must be NULL for the first call of this method.  
+ [in, out] Ukazatel na enumerátor. Pro první volání této metody musí mít hodnotu NULL.  
   
  `tk`  
- [in] A metadata token that limits the scope of the search, or NULL to search the widest scope possible.  
+ pro Token metadat, který omezuje rozsah hledání, nebo hodnota NULL pro hledání co nejširšího rozsahu.  
   
  `dwActions`  
- [in] Flags representing the <xref:System.Security.Permissions.SecurityAction> values to include in `rPermission`, or zero to return all actions.  
+ pro Příznaky představující <xref:System.Security.Permissions.SecurityAction> hodnoty, které mají být zahrnuty do `rPermission`nebo nula pro vrácení všech akcí.  
   
  `rPermission`  
- [out] The array used to store the Permission tokens.  
+ mimo Pole použité pro ukládání tokenů oprávnění  
   
  `cMax`  
- [in] The maximum size of the `rPermission` array.  
+ pro Maximální velikost `rPermission` pole  
   
  `pcTokens`  
- [out] The number of Permission tokens returned in `rPermission`.  
+ mimo Počet tokenů oprávnění vrácených v `rPermission`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumPermissionSets` returned successfully.|  
-|`S_FALSE`|There are no tokens to enumerate. In that case, `pcTokens` is zero.|  
+|`S_OK`|`EnumPermissionSets` byla úspěšně vrácena.|  
+|`S_FALSE`|Neexistují žádné tokeny k vytvoření výčtu. V takovém případě je `pcTokens` nula.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

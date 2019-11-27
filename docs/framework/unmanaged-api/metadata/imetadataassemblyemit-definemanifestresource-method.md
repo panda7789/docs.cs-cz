@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74432062"
 ---
 # <a name="imetadataassemblyemitdefinemanifestresource-method"></a>IMetaDataAssemblyEmit::DefineManifestResource – metoda
-Creates a `ManifestResource` structure containing metadata for the specified manifest resource, and returns the associated metadata token.  
+Vytvoří strukturu `ManifestResource` obsahující metadata pro zadaný prostředek manifestu a vrátí přidružený token metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,31 +39,31 @@ HRESULT DefineManifestResource (
   
 ## <a name="parameters"></a>Parametry  
  `szName`  
- [in] The name of the resource.  
+ pro Název prostředku.  
   
  `tkImplementation`  
- [in] A metadata token of type `mdtFile` or `mdtAssemblyRef` that maps to the resource provider. A NULL value indicates that the file in which the metadata is embedded is the resource provider.  
+ pro Token metadat typu `mdtFile` nebo `mdtAssemblyRef`, který se mapuje na poskytovatele prostředků. Hodnota NULL znamená, že soubor, ve kterém jsou vložená metadata, je poskytovatel prostředků.  
   
  `dwOffset`  
- [in] The offset to the beginning of the resource within the file. For resources in standalone files, this will always be zero. If the resource is embedded in a PE (portable executable) file, this is an offset of the resource BLOB, which starts at the location specified in the cor.h header file.  
+ pro Posun na začátek prostředku v rámci souboru. U prostředků v samostatných souborech bude tato hodnota vždy nulová. Pokud je prostředek vložen do přenositelného spustitelného souboru (PE), jedná se o posun objektu BLOB prostředku, který začíná v umístění zadaném v souboru hlaviček cor. h.  
   
  `dwResourceFlags`  
- [in] A bitwise combination of flag values that specify property settings for the resource definition.  
+ pro Bitová kombinace hodnot příznaků, které určují nastavení vlastností pro definici prostředků.  
   
  `pmdmr`  
- [out] A pointer to the returned metadata token.  
+ mimo Ukazatel na vrácený token metadat.  
   
 ## <a name="remarks"></a>Poznámky  
- One `ManifestResource` metadata structure must be defined for each resource that is implemented in each of the assembly's files.  
+ Pro každý prostředek, který je implementován v každém souboru sestavení, musí být definována jedna `ManifestResource` struktura metadat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platforma:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74438290"
 ---
 # <a name="isymunmanagedwriter2definelocalvariable2-method"></a>ISymUnmanagedWriter2::DefineLocalVariable2 – metoda
-Defines a single variable in the current lexical scope. This method can be called multiple times for a variable of the same name that has multiple homes throughout a scope. In this case, however, the values of the `startOffset` and `endOffset` parameters must not overlap.  
+Definuje jednu proměnnou v aktuálním lexikálním oboru. Tuto metodu lze volat vícekrát pro proměnnou se stejným názvem, který má více obydlí v celém rozsahu. V takovém případě se ale hodnoty parametrů `startOffset` a `endOffset` nesmí překrývat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,37 +42,37 @@ HRESULT DefineLocalVariable2(
   
 ## <a name="parameters"></a>Parametry  
  `name`  
- [in] The local variable name.  
+ pro Název místní proměnné.  
   
  `attributes`  
- [in] The local variable attributes.  
+ pro Atributy místních proměnných.  
   
  `sigToken`  
- [in] The metadata token of the signature.  
+ pro Token metadat podpisu  
   
  `addrKind`  
- [in] The address type.  
+ pro Typ adresy.  
   
  `addr1`  
- [in] The first address for the parameter specification.  
+ pro První adresa specifikace parametru.  
   
  `addr2`  
- [in] The second address for the parameter specification.  
+ pro Druhá adresa specifikace parametru.  
   
  `addr3`  
- [in] The third address for the parameter specification.  
+ pro Třetí adresa specifikace parametru.  
   
  `startOffset`  
- [in] The start offset for the variable. Tento parametr je volitelný. If it is 0, this parameter is ignored and the variable is defined throughout the entire scope. If it is a nonzero value, the variable falls within the offsets of the current scope.  
+ pro Počáteční posun pro proměnnou Tento parametr je volitelný. Pokud je 0, tento parametr je ignorován a proměnná je definována v celém rozsahu. Pokud je to nenulová hodnota, proměnná spadá do posunu aktuálního oboru.  
   
  `endOffset`  
- [in] The end offset for the variable. Tento parametr je volitelný. If it is 0, this parameter is ignored and the variable is defined throughout the entire scope. If it is a nonzero value, the variable falls within the offsets of the current scope.  
+ pro Koncový posun proměnné Tento parametr je volitelný. Pokud je 0, tento parametr je ignorován a proměnná je definována v celém rozsahu. Pokud je to nenulová hodnota, proměnná spadá do posunu aktuálního oboru.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl  
+ **Hlavička:** CorSym. idl  
   
 ## <a name="see-also"></a>Viz také:
 

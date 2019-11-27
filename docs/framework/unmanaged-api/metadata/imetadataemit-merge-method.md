@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448053"
 ---
 # <a name="imetadataemitmerge-method"></a>IMetaDataEmit::Merge – metoda
-Adds the specified imported scope to the list of scopes to be merged.  
+Přidá zadaný importovaný obor do seznamu rozsahů, které se mají sloučit.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,25 +37,25 @@ HRESULT Merge (
   
 ## <a name="parameters"></a>Parametry  
  `pImport`  
- [in] A pointer to an [IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) object that identifies the imported scope to be merged.  
+ pro Ukazatel na objekt [IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) , který identifikuje importovaný obor, který se má sloučit.  
   
  `pIMap`  
- [in] A pointer to an [IMapToken](../../../../docs/framework/unmanaged-api/metadata/imaptoken-interface.md) object that specifies the token re-map.  
+ pro Ukazatel na objekt [IMapToken –](../../../../docs/framework/unmanaged-api/metadata/imaptoken-interface.md) , který určuje opětovné mapování tokenu.  
   
  `pHandler`  
- [in] A pointer to an [IUnknown](/cpp/atl/iunknown) object that specifies the errors.  
+ pro Ukazatel na objekt [IUnknown](/cpp/atl/iunknown) , který určuje chyby.  
   
 ## <a name="remarks"></a>Poznámky  
- Call [IMetaDataEmit::MergeEnd](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-mergeend-method.md) to trigger the merger of metadata into a single scope.  
+ Zavolejte [IMetaDataEmit:: MergeEnd –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-mergeend-method.md) , aby se aktivovala fúze metadat do jednoho oboru.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

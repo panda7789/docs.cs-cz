@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74435873"
 ---
 # <a name="icorprofilerinfo2getappdomainstaticaddress-method"></a>ICorProfilerInfo2::GetAppDomainStaticAddress – metoda
-Gets the address of the specified application domain-static field that is in the scope of the specified application domain.  
+Získá adresu zadaného pole domény aplikace (static), které je v oboru zadané domény aplikace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,34 +37,34 @@ RESULT GetAppDomainStaticAddress(
   
 ## <a name="parameters"></a>Parametry  
  `classId`  
- [in] The class ID of the class that contains the requested application domain-static field.  
+ pro ID třídy, která obsahuje požadované pole aplikační doména (static).  
   
  `fieldToken`  
- [in] The metadata token for the requested application domain-static field.  
+ pro Token metadat pro požadované pole aplikační domény – static  
   
  `appDomainId`  
- [in] The ID of the application domain that is the scope for the requested static field.  
+ pro ID domény aplikace, která je oborem požadovaného statického pole.  
   
  `ppAddress`  
- [out] A pointer to the address of the static field that is within the specified application domain.  
+ mimo Ukazatel na adresu statického pole, které je v zadané doméně aplikace.  
   
 ## <a name="remarks"></a>Poznámky  
- The `GetAppDomainStaticAddress` method may return one of the following:  
+ Metoda `GetAppDomainStaticAddress` může vracet jednu z následujících možností:  
   
-- A CORPROF_E_DATAINCOMPLETE HRESULT if the given static field has not been assigned an address in the specified context.  
+- CORPROF_E_DATAINCOMPLETE HRESULT, pokud danému statickému poli nebyla přiřazena adresa v zadaném kontextu.  
   
-- The addresses of objects that may be in the garbage collection heap. These addresses may become invalid after garbage collection, so after garbage collection, profilers should not assume that they are valid.  
+- Adresy objektů, které mohou být v haldě uvolňování paměti. Tyto adresy se můžou po uvolnění paměti stát neplatnými, takže po uvolnění paměti by profilery neměly předpokládat, že jsou platné.  
   
- Before a class’s class constructor is completed, `GetAppDomainStaticAddress` will return CORPROF_E_DATAINCOMPLETE for all its static fields, although some of the static fields may already be initialized and rooting garbage collection objects.  
+ Před dokončením konstruktoru třídy třídy `GetAppDomainStaticAddress` vrátí CORPROF_E_DATAINCOMPLETE pro všechna jeho statická pole, i když některá z statických polí již mohou být inicializována a kořenové objekty uvolňování paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

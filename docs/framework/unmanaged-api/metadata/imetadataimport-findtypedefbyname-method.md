@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437837"
 ---
 # <a name="imetadataimportfindtypedefbyname-method"></a>IMetaDataImport::FindTypeDefByName – metoda
-Gets a pointer to the TypeDef metadata token for the <xref:System.Type> with the specified name.  
+Získá ukazatel na token metadat TypeDef pro <xref:System.Type> se zadaným názvem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,22 +37,22 @@ HRESULT FindTypeDefByName
   
 ## <a name="parameters"></a>Parametry  
  `szTypeDef`  
- [in] The name of the type for which to get the TypeDef token.  
+ pro Název typu, pro který se má získat token TypeDef  
   
  `tkEnclosingClass`  
- [in] A TypeDef or TypeRef token representing the enclosing class. If the type to find is not a nested class, set this value to NULL.  
+ pro Token TypeDef nebo TypeRef představující ohraničující třídu. Pokud typ, který se má najít, není vnořenou třídou, nastavte tuto hodnotu na NULL.  
   
  `ptd`  
- [out] A pointer to the matching TypeDef token.  
+ mimo Ukazatel na shodný token TypeDef.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

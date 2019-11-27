@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437487"
 ---
 # <a name="imetadataimportgetmemberrefprops-method"></a>IMetaDataImport::GetMemberRefProps – metoda
-Gets metadata associated with the member referenced by the specified token.  
+Načte metadata přidružená k členu, na který odkazuje zadaný token.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,34 +41,34 @@ HRESULT GetMemberRefProps (
   
 ## <a name="parameters"></a>Parametry  
  `mr`  
- [in] The MemberRef token to return associated metadata for.  
+ pro Token MemberRef, pro který mají být vrácena přidružená metadata  
   
  `ptk`  
- [out] A TypeDef or TypeRef, or TypeSpec token that represents the class that declares the member, or a ModuleRef token that represents the module class that declares the member, or a MethodDef that represents the member.  
+ mimo Token TypeDef nebo TypeRef nebo token token TypeSpec, který představuje třídu, která deklaruje člen, nebo token Odkaz ModuleRef, který reprezentuje třídu modulu, který deklaruje člen nebo prvek MethodDef, který představuje člena.  
   
  `szMember`  
- [out] A string buffer for the member's name.  
+ mimo Vyrovnávací paměť řetězce pro název člena.  
   
  `cchMember`  
- [in] The requested size in wide characters of `szMember`.  
+ pro Požadovaná velikost v různých znacích `szMember`.  
   
  `pchMember`  
- [out] The returned size in wide characters of `szMember`.  
+ mimo Vrácená velikost v různých znacích `szMember`.  
   
  `ppvSibBlob`  
- [out] A pointer to the binary metadata signature for the member.  
+ mimo Ukazatel na binární podpis metadat pro člena.  
   
  `pbSig`  
- [out] The size in bytes of `ppvSigBlob`.  
+ mimo Velikost v bajtech `ppvSigBlob`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -22,16 +22,16 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448697"
 ---
 # <a name="inotifysource2-interface"></a>INotifySource2 – rozhraní
-Declares a method for setting notification filters.  
+Deklaruje metodu pro nastavení filtrů oznámení.  
   
 ## <a name="methods"></a>Metody  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|[SetNotifyFilter – metoda](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-setnotifyfilter-method.md)|Assigns a notification filter for use with this source.|  
+|[SetNotifyFilter – metoda](../../../../docs/framework/unmanaged-api/diagnostics/inotifysource2-setnotifyfilter-method.md)|Přiřadí filtr oznámení pro použití s tímto zdrojem.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** ProtocolNotify2.idl  
+ **Hlavička:** ProtocolNotify2. idl  
   
 ## <a name="see-also"></a>Viz také:
 

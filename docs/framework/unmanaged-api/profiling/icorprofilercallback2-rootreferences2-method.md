@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74439680"
 ---
 # <a name="icorprofilercallback2rootreferences2-method"></a>ICorProfilerCallback2::RootReferences2 – metoda
-Notifies the profiler about root references after a garbage collection has occurred. This method is an extension of the [ICorProfilerCallback::RootReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-rootreferences-method.md) method.  
+Oznamuje Profiler o kořenových odkazech poté, co došlo k uvolnění paměti. Tato metoda je rozšířením metody [ICorProfilerCallback:: RootReferences –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-rootreferences-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,39 +38,39 @@ HRESULT RootReferences2(
   
 ## <a name="parameters"></a>Parametry  
  `cRootRefs`  
- [in] The number of elements in the `rootRefIds`, `rootKinds`, `rootFlags`, and `rootIds` arrays.  
+ pro Počet prvků v polích `rootRefIds`, `rootKinds`, `rootFlags`a `rootIds`.  
   
  `rootRefIds`  
- [in] An array of object IDs, each of which references either a static object or an object on the stack. Elements in the `rootKinds` array provide information to classify corresponding elements in the `rootRefIds` array.  
+ pro Pole identifikátorů objektů, z nichž každý odkazuje buď na statický objekt, nebo na objekt v zásobníku. Prvky v poli `rootKinds` poskytují informace pro klasifikaci odpovídajících prvků v poli `rootRefIds`.  
   
  `rootKinds`  
- [in] An array of [COR_PRF_GC_ROOT_KIND](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-root-kind-enumeration.md) values that indicate the type of the garbage collection root.  
+ pro Pole hodnot [COR_PRF_GC_ROOT_KIND](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-root-kind-enumeration.md) , které určují typ kořenu uvolňování paměti.  
   
  `rootFlags`  
- [in] An array of [COR_PRF_GC_ROOT_FLAGS](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-root-flags-enumeration.md) values that describe the properties of a garbage collection root.  
+ pro Pole hodnot [COR_PRF_GC_ROOT_FLAGS](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-root-flags-enumeration.md) , které popisují vlastnosti kořenu uvolňování paměti.  
   
  `rootIds`  
- [in] An array of UINT_PTR values that point to an integer that contains additional information about the garbage collection root, depending on the value of the `rootKinds` parameter.  
+ pro Pole hodnot UINT_PTR, které odkazují na celé číslo, které obsahuje další informace o kořenu uvolňování paměti v závislosti na hodnotě `rootKinds` parametru.  
   
- If the type of the root is a stack, the root ID is for the function that contains the variable. If that root ID is 0, the function is an unnamed function that is internal to the CLR. If the type of the root is a handle, the root ID is for the garbage collection handle. For the other root types, the ID is an opaque value and should be ignored.  
+ Pokud je typ kořenového adresáře zásobník, je ID kořenového adresáře pro funkci, která obsahuje proměnnou. Pokud je toto kořenové ID 0, funkce je nepojmenovaná funkce, která je interní pro CLR. Pokud je typ kořene popisovač, ID kořenového adresáře je pro popisovač uvolňování paměti. U ostatních kořenových typů je ID neprůhledná hodnota a měla by být ignorována.  
   
 ## <a name="remarks"></a>Poznámky  
- The `rootRefIds`, `rootKinds`, `rootFlags`, and `rootIds` arrays are parallel arrays. That is, `rootRefIds[i]`, `rootKinds[i]`, `rootFlags[i]`, and `rootIds[i]` all concern the same root.  
+ Pole `rootRefIds`, `rootKinds`, `rootFlags`a `rootIds` jsou paralelní pole. To znamená, `rootRefIds[i]`, `rootKinds[i]`, `rootFlags[i]`a `rootIds[i]` všechny se týkají stejného kořene.  
   
- Both `RootReferences` and `RootReferences2` are called to notify the profiler. Profilers will normally implement one method or the other, but not both, because the information passed in `RootReferences2` is a superset of that passed in `RootReferences`.  
+ Pro upozorňování profileru jsou volány `RootReferences` i `RootReferences2`. Profilery obvykle implementují jednu metodu nebo druhou, ale ne obojí, protože informace předané `RootReferences2` jsou nadmnožinou předané v `RootReferences`.  
   
- It is possible for entries in `rootRefIds` to be zero, which implies that the corresponding root reference is null and does not refer to an object on the managed heap.  
+ Je možné, že položky v `rootRefIds` mají hodnotu nula, což znamená, že odpovídající kořenový odkaz má hodnotu null a neodkazuje na objekt na spravované haldě.  
   
- The object IDs returned by `RootReferences2` are not valid during the callback itself, because the garbage collection might be in the middle of moving objects from old addresses to new addresses. Therefore, profilers should not attempt to inspect objects during a `RootReferences2` call. When [ICorProfilerCallback2::GarbageCollectionFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionfinished-method.md) is called, all objects have been moved to their new locations and can be safely inspected.  
+ ID objektů vrácená `RootReferences2` nejsou během samotného zpětného volání platná, protože uvolňování paměti může být uprostřed přesunutí objektů ze starých adres na nové adresy. Proto by se profilery neměly pokoušet prozkoumat objekty během volání `RootReferences2`. Když je volána metoda [ICorProfilerCallback2:: GarbageCollectionFinished –](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionfinished-method.md) , všechny objekty byly přesunuty do jejich nových umístění a lze je bezpečně zkontrolovat.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

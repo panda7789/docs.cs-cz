@@ -18,51 +18,51 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74345274"
 ---
 # <a name="type-promotion-visual-basic"></a>Propagace typu (Visual Basic)
-When you declare a programming element in a module, Visual Basic promotes its scope to the namespace containing the module. This is known as *type promotion*.  
+Při deklaraci programovacího prvku v modulu Visual Basic propaguje svůj rozsah na obor názvů obsahující modul. Tento postup se označuje jako *propagace typů*.  
   
- The following example shows a skeleton definition of a module and two members of that module.  
+ Následující příklad ukazuje kostru definice modulu a dvou členů tohoto modulu.  
   
  [!code-vb[VbVbalrDeclaredElements#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDeclaredElements/VB/Class1.vb#1)]  
   
- Within `projModule`, programming elements declared at module level are promoted to `projNamespace`. In the preceding example, `basicEnum` and `innerClass` are promoted, but `numberSub` is not, because it is not declared at module level.  
+ V rámci `projModule`jsou programovací prvky deklarované na úrovni modulu povýšeny na `projNamespace`. V předchozím příkladu jsou povýšeny `basicEnum` a `innerClass`, ale `numberSub` není, protože není deklarována na úrovni modulu.  
   
-## <a name="effect-of-type-promotion"></a>Effect of Type Promotion  
- The effect of type promotion is that a qualification string does not need to include the module name. The following example makes two calls to the procedure in the preceding example.  
+## <a name="effect-of-type-promotion"></a>Účinek typu propagace  
+ Účinek typu propagace je, že řetězec kvalifikace nemusí obsahovat název modulu. Následující příklad vytvoří dvě volání procedury v předchozím příkladu.  
   
  [!code-vb[VbVbalrDeclaredElements#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDeclaredElements/VB/Class1.vb#2)]  
   
- In the preceding example, the first call uses complete qualification strings. However, this is not necessary because of type promotion. The second call also accesses the module's members without including `projModule` in the qualification strings.  
+ V předchozím příkladu používá první volání kompletní řetězce kvalifikace. To však není nutné z důvodu propagace typu. Druhé volání přistupuje také ke členům modulu bez zahrnutí `projModule` v řetězcích kvalifikace.  
   
-## <a name="defeat-of-type-promotion"></a>Defeat of Type Promotion  
- If the namespace already has a member with the same name as a module member, type promotion is defeated for that module member. The following example shows a skeleton definition of an enumeration and a module within the same namespace.  
+## <a name="defeat-of-type-promotion"></a>Připraveno k povýšení typu  
+ Pokud obor názvů již obsahuje člena se stejným názvem jako s členem modulu, je pro tohoto člena modulu připraveno typ propagace. Následující příklad znázorňuje kostru definice výčtu a modulu v rámci stejného oboru názvů.  
   
  [!code-vb[VbVbalrDeclaredElements#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDeclaredElements/VB/Class1.vb#3)]  
   
- In the preceding example, Visual Basic cannot promote class `abc` to `thisNameSpace` because there is already an enumeration with the same name at namespace level. To access `abcSub`, you must use the full qualification string `thisNamespace.thisModule.abc.abcSub`. However, class `xyz` is still promoted, and you can access `xyzSub` with the shorter qualification string `thisNamespace.xyz.xyzSub`.  
+ V předchozím příkladu Visual Basic nemůže propagovat třídu `abc` na `thisNameSpace`, protože již existuje výčet se stejným názvem na úrovni oboru názvů. Chcete-li získat přístup k `abcSub`, je nutné použít plný kvalifikační řetězec `thisNamespace.thisModule.abc.abcSub`. Třída `xyz` však stále povýšen a přístup k `xyzSub` pomocí kratšího řetězcového řetězce kvalifikace `thisNamespace.xyz.xyzSub`.  
   
-### <a name="defeat-of-type-promotion-for-partial-types"></a>Defeat of Type Promotion for Partial Types  
- If a class or structure inside a module uses the [Partial](../../../../visual-basic/language-reference/modifiers/partial.md) keyword, type promotion is automatically defeated for that class or structure, whether or not the namespace has a member with the same name. Other elements in the module are still eligible for type promotion.  
+### <a name="defeat-of-type-promotion-for-partial-types"></a>Připravená propagace typu pro částečné typy  
+ Pokud třída nebo struktura uvnitř modulu používá klíčové slovo [Partial](../../../../visual-basic/language-reference/modifiers/partial.md) , typ propagace je automaticky připraven pro tuto třídu nebo strukturu, bez ohledu na to, zda obor názvů obsahuje člena se stejným názvem. Další prvky v modulu jsou stále způsobilé pro povýšení typu.  
   
- **Consequences.** Defeat of type promotion of a partial definition can cause unexpected results and even compiler errors. The following example shows skeleton partial definitions of a class, one of which is inside a module.  
+ **Výsledků.** Připravená propagace typu částečné definice může způsobit neočekávané výsledky a dokonce i chyby kompilátoru. Následující příklad ukazuje kostru částečných definic třídy, z nichž jeden je uvnitř modulu.  
   
  [!code-vb[VbVbalrDeclaredElements#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDeclaredElements/VB/Class1.vb#4)]  
   
- In the preceding example, the developer might expect the compiler to merge the two partial definitions of `sampleClass`. However, the compiler does not consider promotion for the partial definition inside `sampleModule`. As a result, it attempts to compile two separate and distinct classes, both named `sampleClass` but with different qualification paths.  
+ V předchozím příkladu může vývojář očekávat, že kompilátor sloučí dvě částečné definice `sampleClass`. Kompilátor však nepovažuje povýšení na částečnou definici uvnitř `sampleModule`. V důsledku toho se pokusí zkompilovat dvě samostatné a jedinečné třídy s názvem `sampleClass`, ale s různými cestami kvalifikace.  
   
- The compiler merges partial definitions only when their fully qualified paths are identical.  
+ Kompilátor sloučí částečné definice pouze v případě, že jsou jejich plně kvalifikované cesty identické.  
   
-## <a name="recommendations"></a>Recommendations  
- The following recommendations represent good programming practice.  
+## <a name="recommendations"></a>Doporučení  
+ Následující doporučení reprezentují dobrý postup programování.  
   
-- **Unique Names.** When you have full control over the naming of programming elements, it is always a good idea to use unique names everywhere. Identical names require extra qualification and can make your code harder to read. They can also lead to subtle errors and unexpected results.  
+- **Jedinečné názvy.** Pokud máte plnou kontrolu nad pojmenování programovacích prvků, je vždy vhodné použít jedinečné názvy všude. Identické názvy vyžadují dodatečnou kvalifikaci a je možné, že váš kód bude obtížnější číst. Můžou také vést k drobným chybám a neočekávaným výsledkům.  
   
-- **Full Qualification.** When you are working with modules and other elements in the same namespace, the safest approach is to always use full qualification for all programming elements. If type promotion is defeated for a module member and you do not fully qualify that member, you could inadvertently access a different programming element.  
+- **Úplná kvalifikace.** Při práci s moduly a dalšími prvky ve stejném oboru názvů je nejbezpečnější přístup vždy používat úplnou kvalifikaci pro všechny programovací prvky. Pokud je u člena modulu připraveno propagace typu a nejste plně kvalifikováni tohoto člena, mohli byste neúmyslně přistupovat k jinému programovacímu prvku.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Příkaz Module](../../../../visual-basic/language-reference/statements/module-statement.md)
 - [Příkaz Namespace](../../../../visual-basic/language-reference/statements/namespace-statement.md)
 - [Partial](../../../../visual-basic/language-reference/modifiers/partial.md)
-- [Scope in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
+- [Obor v Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
 - [Postupy: Řízení rozsahu proměnné](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-scope-of-a-variable.md)
 - [Odkazy na deklarované elementy](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)

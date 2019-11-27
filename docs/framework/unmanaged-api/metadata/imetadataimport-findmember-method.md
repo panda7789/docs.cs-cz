@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437925"
 ---
 # <a name="imetadataimportfindmember-method"></a>IMetaDataImport::FindMember – metoda
-Gets a pointer to the MemberDef token for field or method that is enclosed by the specified <xref:System.Type> and that has the specified name and metadata signature.  
+Získá ukazatel na memberDef či token pro pole nebo metodu, který je uzavřený pomocí zadaného <xref:System.Type> a který má zadaný název a signaturu metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,38 +39,38 @@ HRESULT FindMember (
   
 ## <a name="parameters"></a>Parametry  
  `td`  
- [in] The TypeDef token for the class or interface that encloses the member to search for. If this value is `mdTokenNil`, the lookup is done for a global-variable or global-function.  
+ pro Token TypeDef pro třídu nebo rozhraní, který obklopuje člena, který se má vyhledat. Pokud je tato hodnota `mdTokenNil`, je vyhledávání provedeno pro globální proměnnou nebo globální funkci.  
   
  `szName`  
- [in] The name of the member to search for.  
+ pro Název hledaného člena.  
   
  `pvSigBlob`  
- [in] A pointer to the binary metadata signature of the member.  
+ pro Ukazatel na binární podpis metadat člena.  
   
  `cbSigBlob`  
- [in] The size in bytes of `pvSigBlob`.  
+ pro Velikost v bajtech `pvSigBlob`.  
   
  `pmb`  
- [out] A pointer to the matching MemberDef token.  
+ mimo Ukazatel na odpovídajícího tokenu memberDef či.  
   
 ## <a name="remarks"></a>Poznámky  
- You specify the member using its enclosing class or interface (`td`), its name (`szName`), and optionally its signature (`pvSigBlob`). There might be multiple members with the same name in a class or interface. In that case, pass the member's signature to find the unique match.  
+ Určíte člena pomocí jeho nadřazené třídy nebo rozhraní (`td`), jeho názvu (`szName`) a volitelně jeho signatury (`pvSigBlob`). Třída nebo rozhraní může obsahovat více členů se stejným názvem. V takovém případě předejte signaturu člena, aby našli jedinečnou shodu.  
   
- The signature passed to `FindMember` must have been generated in the current scope, because signatures are bound to a particular scope. A signature can embed a token that identifies the enclosing class or value type. The token is an index into the local TypeDef table. You cannot build a run-time signature outside the context of the current scope and use that signature as input to input to `FindMember`.  
+ Podpis předaný do `FindMember` musí být vygenerován v aktuálním oboru, protože signatury jsou vázány na konkrétní obor. Podpis může vložit token, který identifikuje ohraničující třídu nebo typ hodnoty. Token je index do místní tabulky TypeDef. Nemůžete sestavit signaturu za běhu mimo kontext aktuálního oboru a použít tento podpis jako vstup do `FindMember`.  
   
- `FindMember` finds only members that were defined directly in the class or interface; it does not find inherited members.  
+ `FindMember` najde pouze členy, které byly definovány přímo ve třídě nebo rozhraní; nenalezne zděděné členy.  
   
 > [!NOTE]
-> `FindMember` is a helper method. It calls [IMetaDataImport::FindMethod](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-findmethod-method.md); if that call does not find a match, `FindMember` then calls [IMetaDataImport::FindField](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-findfield-method.md).  
+> `FindMember` je pomocná metoda. Volá [IMetaDataImport:: FindMethod –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-findmethod-method.md);. Pokud toto volání nenajde shodu, `FindMember` volá [IMetaDataImport:: findfield –](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-findfield-method.md).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

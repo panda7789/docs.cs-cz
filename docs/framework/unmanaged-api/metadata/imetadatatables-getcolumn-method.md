@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74441995"
 ---
 # <a name="imetadatatablesgetcolumn-method"></a>IMetaDataTables::GetColumn – metoda
-Gets a pointer to the value contained in the cell of the specified column and row in the given table.  
+Získá ukazatel na hodnotu obsaženou v buňce zadaného sloupce a řádku v dané tabulce.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,46 +39,46 @@ HRESULT GetColumn (
 ## <a name="parameters"></a>Parametry
 
  `ixTbl`  
- [in] The index of the table.  
+ pro Index tabulky  
   
  `ixCol`  
- [in] The index of the column in the table.  
+ pro Index sloupce v tabulce  
   
  `rid`  
- [in] The index of the row in the table.  
+ pro Index řádku v tabulce  
   
  `pVal`  
- [out] A pointer to the value in the cell.  
+ mimo Ukazatel na hodnotu v buňce.  
  
 ## <a name="remarks"></a>Poznámky
 
-The interpretion of the value returned through `pVal` depends on the column's type. The column type can be determined by calling [IMetaDataTables.GetColumnInfo](imetadatatables-getcolumninfo-method.md).
+Interpretace hodnoty vrácené prostřednictvím `pVal` závisí na typu sloupce. Typ sloupce lze určit voláním [IMetaDataTables. GetColumnInfo](imetadatatables-getcolumninfo-method.md).
 
-- The **GetColumn** method automatically converts columns of type **Rid** or **CodedToken** to full 32-bit `mdToken` values.
-- It also automatically converts 8-bit or 16-bit values to full 32-bit values. 
-- For *heap* type columns, the returned *pVal* will be an index into the corresponding heap.
+- Metoda **GetColumn** automaticky převede sloupce typu **RID** nebo **CodedToken** na úplné hodnoty 32 `mdToken`.
+- Také automaticky převádí 8bitové nebo 16bitové hodnoty na hodnoty Full 32-bit. 
+- Pro sloupce typu *haldy* bude vrácená *Pval* index do odpovídající haldy.
 
-| Column type              | pVal contains | Komentář                          |
+| Typ sloupce              | pVal obsahuje | Komentář                          |
 |--------------------------|---------------|-----------------------------------|
-| `0`..`iRidMax`<br>(0..63)  | mdToken     | *pVal* will contain a full Token. The function automatically converts the Rid into a full token. |
-| `iCodedToken`..`iCodedTokenMax`<br>(64..95) | mdToken | Upon return, *pVal* will contain a full Token. The function automatically decompresses the CodedToken into a full token. |
-| `iSHORT` (96)            | Int16         | Automatically sign-extended to 32-bit.  |
-| `iUSHORT` (97)           | UInt16        | Automatically sign-extended to 32-bit.  |
-| `iLONG` (98)             | Int32         |                                        | 
+| `0`..`iRidMax`<br>(0.. 63)  | mdToken     | *Pval* bude obsahovat úplný token. Funkce automaticky převede identifikátor RID na úplný token. |
+| `iCodedToken`..`iCodedTokenMax`<br>(64.. 95) | mdToken | Po návratu bude *Pval* obsahovat úplný token. Funkce automaticky dekomprimuje CodedToken na úplný token. |
+| `iSHORT` (96)            | Int16         | Automaticky přihlašovat-rozšířené na 32-bit.  |
+| `iUSHORT` (97)           | UInt16        | Automaticky přihlašovat-rozšířené na 32-bit.  |
+| `iLONG` (98)             | Datový typ Int32         |                                        | 
 | `iULONG` (99)            | UInt32        |                                        |
-| `iBYTE` (100)            | Byte          | Automatically sign-extended to 32-bit.  |
-| `iSTRING` (101)          | String heap index | *pVal* is an index into the String heap. Use [IMetadataTables::GetString](imetadatatables-getstring-method.md) to get the actual column String value. |
-| `iGUID` (102)            | Guid heap index | *pVal* is an index into the Guid heap. Use [IMetadataTables::GetGuid](imetadatatables-getguid-method.md) to get the actual column Guid value. |
-| `iBLOB` (103)            | Blob heap index | *pVal* is an index into the Blob heap. Use [IMetadataTables::GetBlob](imetadatatables-getblob-method.md) to get the actual column Blob value. |
+| `iBYTE` (100)            | Byte          | Automaticky přihlašovat-rozšířené na 32-bit.  |
+| `iSTRING` (101)          | Index haldy řetězců | *Pval* je index haldy řetězců. K získání skutečné hodnoty řetězce sloupce použijte [IMetadataTables:: GetString](imetadatatables-getstring-method.md) . |
+| `iGUID` (102)            | Index haldy GUID | *Pval* je index haldy identifikátoru GUID. K získání skutečné hodnoty GUID sloupce použijte [IMetadataTables:: GetGUID](imetadatatables-getguid-method.md) . |
+| `iBLOB` (103)            | Index haldy objektů BLOB | *Pval* je index haldy objektů BLOB. K získání skutečné hodnoty objektu BLOB sloupce použijte [IMetadataTables:: getblob](imetadatatables-getblob-method.md) . |
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.  
   
- **.NET Framework Versions** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Verze .NET Framework** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

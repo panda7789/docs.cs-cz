@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445584"
 ---
 # <a name="setassemblyprops-method"></a>SetAssemblyProps – metoda
-Assigns assembly-level properties.  
+Přiřadí vlastnosti na úrovni sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,25 +37,25 @@ HRESULT SetAssemblyProps(
   
 ## <a name="parameters"></a>Parametry  
  `AssemblyID`  
- ID of the assembly.  
+ ID sestavení  
   
  `FileToken`  
- File that defines the property. Can be NULL if `AssemblyID` does not indicate an unbound netmodule.  
+ Soubor, který definuje vlastnost. Může mít hodnotu NULL, pokud `AssemblyID` neindikuje nevázaný netmodule.  
   
  `Option`  
- Indicates the option to modify.  
+ Určuje možnost, kterou chcete změnit.  
   
  `Value`  
- New value of the option.  
+ Nová hodnota možnosti  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Returns S_OK if the method succeeds.  
+ Vrátí S_OK, pokud je metoda úspěšná.  
   
 ## <a name="requirements"></a>Požadavky  
- Requires alink.h.  
+ Vyžaduje ALink. h.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [IALink – rozhraní](ialink-interface.md)
 - [IALink2 – rozhraní](ialink2-interface.md)
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)

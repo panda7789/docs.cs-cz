@@ -10,143 +10,143 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74444241"
 ---
 # <a name="integrated-windows-authentication-with-extended-protection"></a>Integrované ověřování systému Windows s rozšířenou ochranou
-Enhancements were made that affect how integrated Windows authentication is handled by the <xref:System.Net.HttpWebRequest>, <xref:System.Net.HttpListener>, <xref:System.Net.Mail.SmtpClient>, <xref:System.Net.Security.SslStream>, <xref:System.Net.Security.NegotiateStream>, and related classes in the <xref:System.Net> and related namespaces. Support was added for extended protection to enhance security.  
+Byla provedena vylepšení, která mají vliv na způsob zpracování integrovaného ověřování systému Windows <xref:System.Net.HttpWebRequest>, <xref:System.Net.HttpListener>, <xref:System.Net.Mail.SmtpClient>, <xref:System.Net.Security.SslStream>, <xref:System.Net.Security.NegotiateStream>a související třídy v <xref:System.Net> a souvisejících oborech názvů. Byla přidána podpora pro rozšířenou ochranu za účelem vylepšení zabezpečení.  
   
- These changes can affect applications that use these classes to make web requests and receive responses where integrated Windows authentication is used. This change can also impact web servers and client applications that are configured to use integrated Windows authentication.  
+ Tyto změny mohou ovlivnit aplikace, které používají tyto třídy k vytváření webových požadavků a přijímání odpovědí, kde se používá integrované ověřování systému Windows. Tato změna může mít dopad i na webové servery a klientské aplikace, které jsou nakonfigurované tak, aby používaly integrované ověřování systému Windows.  
   
- These changes can also affect applications that use these classes to make other types of requests and receive responses where integrated Windows authentication is used.  
+ Tyto změny mohou také ovlivnit aplikace, které používají tyto třídy k vytváření dalších typů požadavků a přijímání odpovědí, kde se používá integrované ověřování systému Windows.  
   
- The changes to support extended protection are available only for applications on Windows 7 and Windows Server 2008 R2. The extended protection features are not available on earlier versions of Windows.  
+ Změny pro podporu rozšířené ochrany jsou k dispozici pouze pro aplikace v systémech Windows 7 a Windows Server 2008 R2. Funkce rozšířené ochrany nejsou k dispozici v dřívějších verzích systému Windows.  
   
 ## <a name="overview"></a>Přehled  
- The design of integrated Windows authentication allows for some credential challenge responses to be universal, meaning they can be re-used or forwarded. The challenge responses should be constructed at a minimum with target specific information and preferably also with some channel specific information. Services can then provide extended protection to ensure that credential challenge responses contain service specific information such as a Service Principal Name (SPN). With this information in the credential exchanges, services are able to better protect against malicious use of credential challenge responses that might have been improperly used.  
+ Při návrhu integrovaného ověřování systému Windows je možné, že některé reakce na výzvy přihlašovacích údajů budou univerzální, což znamená, že je můžete znovu použít nebo přeposlání. Odpovědi na výzvy by se měly vytvořit minimálně s konkrétními informacemi o cíli a přednostně i s některými konkrétními informacemi o kanálu. Služby pak můžou poskytovat rozšířenou ochranu a zajistit, aby odpovědi na výzvy přihlašovacích údajů obsahovaly informace specifické pro službu, jako je hlavní název služby (SPN). Díky těmto informacím v výměnách přihlašovacích údajů můžou služby lépe chránit před škodlivým použitím odpovědí na výzvy k pověření, které by mohly být nesprávně využité.  
   
- The extended protection design is an enhancement to authentication protocols designed to mitigate authentication relay attacks. It revolves around the concept of channel and service binding information.  
+ Návrh rozšířené ochrany je vylepšení ověřovacích protokolů navržených pro zmírnění útoků Relay s ověřováním. Roztéká se kolem konceptu informací o vazbě kanálu a služby.  
   
- The overall objectives are the following:  
+ Celkovými cíli jsou tyto:  
   
-1. If the client is updated to support the extended protection, applications should supply a channel binding and service binding information to all supported authentication protocols. Channel binding information can only be supplied when there is a channel (TLS) to bind to. Service binding information should always be supplied.  
+1. Pokud je klient aktualizován na podporu rozšířené ochrany, aplikace by měly poskytnout vazbu kanálu a informace o vazbě služby na všechny podporované ověřovací protokoly. Informace o vazbě kanálu můžou být dodány jenom v případě, že existuje kanál (TLS), ke kterému se má vytvořit vazba. Informace o vazbě služby by měly být vždy dodány.  
   
-2. Updated servers which are properly configured may verify the channel and service binding information when it is present in the client authentication token and reject the authentication attempt if the channel bindings do not match. Depending on the deployment scenario, servers may verify channel binding, service binding or both.  
+2. Aktualizované servery, které jsou správně nakonfigurovány, mohou ověřit informace o vazbě kanálu a služby, pokud jsou k dispozici v tokenu ověřování klienta, a zamítnout pokus o ověření, pokud se vazby kanálu neshodují. V závislosti na scénáři nasazení mohou servery ověřit vazbu kanálu, vazbu služby nebo obojí.  
   
-3. Updated servers have the ability to accept or reject down-level client requests that do not contain the channel binding information based on policy.  
+3. Aktualizované servery mají možnost přijímat nebo odmítat požadavky klientů nižší úrovně, které neobsahují informace o vazbě kanálu na základě zásad.  
   
- Information used by extended protection consists of one or both of the following two parts:  
+ Informace používané rozšířenou ochranou se skládají z jedné nebo obou následujících dvou částí:  
   
-1. A Channel Binding Token or CBT.  
+1. Token vazby kanálu nebo CBT.  
   
-2. Service Binding information in the form of a Service Principal Name or SPN.  
+2. Informace o vazbě služby ve formě hlavního názvu služby nebo hlavního názvu služby (SPN).  
   
- Service Binding information is an indication of a client’s intent to authenticate to a particular service endpoint. It is communicated from client to server with the following properties:  
+ Informace o vazbě služby jsou označením záměru klienta ověřit u konkrétního koncového bodu služby. Je přenášena z klienta na server s následujícími vlastnostmi:  
   
-- The SPN value must be available to the server performing client authentication in clear text form.  
+- Hodnota hlavního názvu služby (SPN) musí být k dispozici serveru, který provádí ověřování klienta ve formě prostého textu.  
   
-- The value of the SPN is public.  
+- Hodnota hlavního názvu služby (SPN) je veřejná.  
   
-- The SPN must be cryptographically protected in transit such that a man-in-the-middle attack cannot insert, remove or modify its value.  
+- Hlavní název služby (SPN) musí být kryptograficky chráněný během přenosu, takže útok prostředníkem nemůže vkládat, odebírat ani upravovat jeho hodnotu.  
   
- A CBT is a property of the outer secure channel (such as TLS) used to tie (bind) it to a conversation over an inner, client-authenticated channel. The CBT must have the following properties (also defined by IETF RFC 5056):  
+ CBT je vlastnost vnějšího zabezpečeného kanálu (například TLS), která se používá k propojení (vazbu) s konverzací přes vnitřní kanál ověřený klientem. CBT musí mít následující vlastnosti (definované v IETF RFC 5056):  
   
-- When an outer channel exists, the value of the CBT must be a property identifying either the outer channel or the server endpoint, independently arrived at by both client and server sides of a conversation.  
+- Pokud existuje vnější kanál, hodnota CBT musí být vlastnost identifikující buď vnější kanál, nebo koncový bod serveru, nezávisle na straně klienta i serveru konverzace.  
   
-- Value of the CBT sent by the client must not be something an attacker can influence.  
+- Hodnota CBT odesílaných klientem nesmí být taková, že by útočník mohl ovlivnit.  
   
-- No guarantees are made about secrecy of the CBT value. This does not however mean that the value of the service binding as well as channel binding information can always be examined by any other but the server performing authentication, as the protocol carrying the CBT may be encrypting it.  
+- Nejsou k dispozici žádné záruky týkající se tajnosti hodnoty CBT. To však neznamená, že hodnota vazby služby a informace o vazbě kanálu mohou být vždy zkontrolovány jiným, ale serverem provádějícím ověřování, protože protokol, který CBT zakládá, může šifrovat.  
   
-- The CBT must be cryptographically integrity protected in transit such that an attacker cannot insert, remove or modify its value.  
+- CBT musí být kryptograficky integritou chráněny během přenosu tak, že Útočník nemůže vložit, odebrat ani změnit jeho hodnotu.  
   
- Channel binding is accomplished by the client transferring the SPN and the CBT to the server in a tamperproof fashion. The server validates the channel binding information in accordance with its policy and rejects authentication attempts for which it does not believe itself to have been the intended target. This way, the two channels become cryptographically bound together.  
+ Vazba kanálu je zajištěna klientem, který přenáší hlavní název služby (SPN) a CBT na server tamperproof. Server ověřuje informace o vazbě kanálu v souladu se svými zásadami a odmítá pokusy o ověření, pro které se nepovažuje za zamýšleného cíle. Tímto způsobem se tyto dva kanály stanou kryptograficky propojeně.  
   
- To preserve compatibility with existing clients and applications, a server may be configured to allow authentication attempts by clients that do not yet support extended protection. This is referred to as a "partially hardened" configuration, in contrast to a "fully hardened" configuration.  
+ Aby se zachovala kompatibilita se stávajícími klienty a aplikacemi, může být server nakonfigurovaný tak, aby umožňoval ověřování pokusů klientů, kteří ještě nepodporují rozšířenou ochranu. To se označuje jako "částečně posílená" konfigurace na rozdíl od "plně zpřísněné" konfigurace.  
   
- Multiple components in the <xref:System.Net> and <xref:System.Net.Security> namespaces perform integrated Windows authentication on behalf of a calling application. This section describes changes to System.Net components to add extended protection in their use of integrated Windows authentication.  
+ Více komponent v oborech názvů <xref:System.Net> a <xref:System.Net.Security> provádí integrované ověřování systému Windows jménem volající aplikace. Tato část popisuje změny součástí System.Net pro přidání rozšířené ochrany při použití integrovaného ověřování systému Windows.  
   
- Extended protection is currently supported on Windows 7. A mechanism is provided so an application can determine if the operating system supports extended protection.  
+ Ve Windows 7 se aktuálně podporuje Rozšířená ochrana. K dispozici je mechanismus, takže aplikace může určit, jestli operační systém podporuje rozšířenou ochranu.  
   
-## <a name="changes-to-support-extended-protection"></a>Changes to Support Extended Protection  
- The authentication process used with integrated Windows authentication, depending on the authentication protocol used, often includes a challenge issued by the destination computer and sent back to the client computer. Extended protection adds new features to this authentication process  
+## <a name="changes-to-support-extended-protection"></a>Změny pro podporu rozšířené ochrany  
+ Proces ověřování použitý s integrovaným ověřováním systému Windows, v závislosti na použitém protokolu ověřování, často zahrnuje výzvu vydanou cílovým počítačem a odesílá se zpátky do klientského počítače. Rozšířená ochrana přidává do tohoto procesu ověřování nové funkce.  
   
- The <xref:System.Security.Authentication.ExtendedProtection> namespace provides support for authentication using extended protection for applications. The <xref:System.Security.Authentication.ExtendedProtection.ChannelBinding> class in this namespace represents a channel binding. The <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> class in this namespace represents the extended protection policy used by the server to validate incoming client connections. Other class members are used with extended protection.  
+ Obor názvů <xref:System.Security.Authentication.ExtendedProtection> poskytuje podporu pro ověřování pomocí rozšířené ochrany pro aplikace. Třída <xref:System.Security.Authentication.ExtendedProtection.ChannelBinding> v tomto oboru názvů představuje vazbu kanálu. Třída <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> v tomto oboru názvů představuje rozšířenou zásadu ochrany, kterou server používá k ověření příchozích připojení klientů. Jiní členové třídy se používají s rozšířenou ochranou.  
   
- For server applications, these classes include the following:  
+ Pro serverové aplikace tyto třídy zahrnují následující:  
   
- A <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> that has the following elements:  
+ <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy>, který obsahuje následující prvky:  
   
-- An <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.OSSupportsExtendedProtection%2A> property that indicates whether the operating system supports integrated windows authentication with extended protection.  
+- Vlastnost <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.OSSupportsExtendedProtection%2A>, která indikuje, jestli operační systém podporuje integrované ověřování systému Windows s rozšířenou ochranou.  
   
-- A <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement> value that indicates when the extended protection policy should be enforced.  
+- Hodnota <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement>, která indikuje, kdy se mají vyhovět zásady rozšířené ochrany.  
   
-- A <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario> value that indicates the deployment scenario. This influences how extended protection is checked.  
+- Hodnota <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario>, která indikuje scénář nasazení. To ovlivňuje způsob, jakým je zaškrtnutá Rozšířená ochrana.  
   
-- An optional <xref:System.Security.Authentication.ExtendedProtection.ServiceNameCollection> that contains the custom SPN list that is used to match against the SPN provided by the client as the intended target of the authentication.  
+- Volitelný <xref:System.Security.Authentication.ExtendedProtection.ServiceNameCollection>, který obsahuje vlastní seznam SPN, který se používá pro porovnání s hlavním názvem služby, který poskytuje klient jako zamýšlený cíl ověřování.  
   
-- An optional <xref:System.Security.Authentication.ExtendedProtection.ChannelBinding> that contains a custom channel binding to use for validation. This scenario is not a common case  
+- Volitelný <xref:System.Security.Authentication.ExtendedProtection.ChannelBinding>, který obsahuje vlastní vazbu kanálu, která se má použít k ověření. Tento scénář není běžným případem.  
   
- The <xref:System.Security.Authentication.ExtendedProtection.Configuration> namespace provides support for configuration of authentication using extended protection for applications.  
+ Obor názvů <xref:System.Security.Authentication.ExtendedProtection.Configuration> poskytuje podporu pro konfiguraci ověřování pomocí rozšířené ochrany pro aplikace.  
   
- A number of feature changes were made to support extended protection in the existing <xref:System.Net> namespace. These changes include the following:  
+ V existujícím oboru názvů <xref:System.Net> bylo provedeno množství změn funkcí pro podporu rozšířené ochrany. Mezi tyto změny patří následující:  
   
-- A new <xref:System.Net.TransportContext> class added to the <xref:System.Net> namespace that represents a transport context.  
+- Nová třída <xref:System.Net.TransportContext> přidána do <xref:System.Net> oboru názvů, který představuje přenosový kontext.  
   
-- New <xref:System.Net.HttpWebRequest.EndGetRequestStream%2A> and <xref:System.Net.HttpWebRequest.GetRequestStream%2A> overload methods in the <xref:System.Net.HttpWebRequest> class that allow retrieving the <xref:System.Net.TransportContext> to support extended protection for client applications.  
+- Nové metody přetížení <xref:System.Net.HttpWebRequest.EndGetRequestStream%2A> a <xref:System.Net.HttpWebRequest.GetRequestStream%2A> ve třídě <xref:System.Net.HttpWebRequest>, které umožňují načíst <xref:System.Net.TransportContext> k podpoře rozšířené ochrany pro klientské aplikace.  
   
-- Additions to the <xref:System.Net.HttpListener> and <xref:System.Net.HttpListenerRequest> classes to support server applications.  
+- Přidání do tříd <xref:System.Net.HttpListener> a <xref:System.Net.HttpListenerRequest> pro podporu serverových aplikací.  
   
- A feature change was made to support extended protection for SMTP client applications in the existing <xref:System.Net.Mail> namespace:  
+ Byla provedena změna funkce pro podporu rozšířené ochrany pro klientské aplikace SMTP v existujícím oboru názvů <xref:System.Net.Mail>:  
   
-- A <xref:System.Net.Mail.SmtpClient.TargetName%2A> property in the <xref:System.Net.Mail.SmtpClient> class that represents the SPN to use for authentication when using extended protection for SMTP client applications.  
+- Vlastnost <xref:System.Net.Mail.SmtpClient.TargetName%2A> ve třídě <xref:System.Net.Mail.SmtpClient>, která představuje hlavní název služby (SPN), který se má použít pro ověřování při použití rozšířené ochrany pro klientské aplikace SMTP.  
   
- A number of feature changes were made to support extended protection in the existing <xref:System.Net.Security> namespace. These changes include the following:  
+ V existujícím oboru názvů <xref:System.Net.Security> bylo provedeno množství změn funkcí pro podporu rozšířené ochrany. Mezi tyto změny patří následující:  
   
-- New <xref:System.Net.Security.NegotiateStream.BeginAuthenticateAsClient%2A> and <xref:System.Net.Security.NegotiateStream.AuthenticateAsClient%2A> overload methods in the <xref:System.Net.Security.NegotiateStream> class that allow passing a CBT to support extended protection for client applications.  
+- Nové metody přetížení <xref:System.Net.Security.NegotiateStream.BeginAuthenticateAsClient%2A> a <xref:System.Net.Security.NegotiateStream.AuthenticateAsClient%2A> ve třídě <xref:System.Net.Security.NegotiateStream>, které umožňují předávání CBT k podpoře rozšířené ochrany pro klientské aplikace.  
   
-- New <xref:System.Net.Security.NegotiateStream.BeginAuthenticateAsServer%2A> and <xref:System.Net.Security.NegotiateStream.AuthenticateAsServer%2A> overload methods in the <xref:System.Net.Security.NegotiateStream> class that allow passing an <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> to support extended protection for server applications.  
+- Nové metody přetížení <xref:System.Net.Security.NegotiateStream.BeginAuthenticateAsServer%2A> a <xref:System.Net.Security.NegotiateStream.AuthenticateAsServer%2A> ve třídě <xref:System.Net.Security.NegotiateStream>, které umožňují předávání <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> k podpoře rozšířené ochrany pro serverové aplikace.  
   
-- A new <xref:System.Net.Security.SslStream.TransportContext%2A> property in the <xref:System.Net.Security.SslStream> class to support extended protection for client and server applications.  
+- Nová vlastnost <xref:System.Net.Security.SslStream.TransportContext%2A> ve třídě <xref:System.Net.Security.SslStream> pro podporu rozšířené ochrany pro klientské a serverové aplikace.  
   
- A <xref:System.Net.Configuration.SmtpNetworkElement> property was added to support configuration of extended protection for SMTP clients in the <xref:System.Net.Security> namespace.  
+ Byla přidána vlastnost <xref:System.Net.Configuration.SmtpNetworkElement>, která podporuje konfiguraci rozšířené ochrany pro klienty SMTP v oboru názvů <xref:System.Net.Security>.  
   
-## <a name="extended-protection-for-client-applications"></a>Extended Protection for Client Applications  
- Extended protection support for most client applications happens automatically. The <xref:System.Net.HttpWebRequest> and <xref:System.Net.Mail.SmtpClient> classes support extended protection whenever the underlying version of Windows supports extended protection. An <xref:System.Net.HttpWebRequest> instance sends an SPN constructed from the <xref:System.Uri>. By default, an <xref:System.Net.Mail.SmtpClient> instance sends an SPN constructed from the host name of the SMTP mail server.  
+## <a name="extended-protection-for-client-applications"></a>Rozšířená ochrana pro klientské aplikace  
+ Rozšířená podpora ochrany většiny klientských aplikací probíhá automaticky. Třídy <xref:System.Net.HttpWebRequest> a <xref:System.Net.Mail.SmtpClient> podporují rozšířenou ochranu vždy, když příslušná verze systému Windows podporuje rozšířenou ochranu. Instance <xref:System.Net.HttpWebRequest> odesílá hlavní název služby (SPN) vytvořený z <xref:System.Uri>. Ve výchozím nastavení instance <xref:System.Net.Mail.SmtpClient> odesílá hlavní název služby (SPN) sestavený z názvu hostitele poštovního serveru SMTP.  
   
- For custom authentication, client applications can use the <xref:System.Net.HttpWebRequest.EndGetRequestStream%28System.IAsyncResult%2CSystem.Net.TransportContext%40%29?displayProperty=nameWithType> or <xref:System.Net.HttpWebRequest.GetRequestStream%28System.Net.TransportContext%40%29?displayProperty=nameWithType> methods in the <xref:System.Net.HttpWebRequest> class that allow retrieving the <xref:System.Net.TransportContext> and the CBT using the <xref:System.Net.TransportContext.GetChannelBinding%2A> method.  
+ Pro vlastní ověřování mohou klientské aplikace používat metody <xref:System.Net.HttpWebRequest.EndGetRequestStream%28System.IAsyncResult%2CSystem.Net.TransportContext%40%29?displayProperty=nameWithType> nebo <xref:System.Net.HttpWebRequest.GetRequestStream%28System.Net.TransportContext%40%29?displayProperty=nameWithType> ve třídě <xref:System.Net.HttpWebRequest>, které umožňují načíst <xref:System.Net.TransportContext> a CBT pomocí metody <xref:System.Net.TransportContext.GetChannelBinding%2A>.  
   
- The SPN to use for integrated Windows authentication sent by an <xref:System.Net.HttpWebRequest> instance to a given service can be overridden by setting the <xref:System.Net.AuthenticationManager.CustomTargetNameDictionary%2A> property.  
+ Hlavní název služby (SPN), který se má použít pro integrované ověřování systému Windows odeslané instancí <xref:System.Net.HttpWebRequest> do dané služby, lze přepsat nastavením vlastnosti <xref:System.Net.AuthenticationManager.CustomTargetNameDictionary%2A>.  
   
- The <xref:System.Net.Mail.SmtpClient.TargetName%2A> property can be used to set a custom SPN to use for integrated Windows authentication for the SMTP connection.  
+ Vlastnost <xref:System.Net.Mail.SmtpClient.TargetName%2A> lze použít k nastavení vlastního hlavního názvu služby (SPN) pro použití integrovaného ověřování systému Windows pro připojení SMTP.  
   
-## <a name="extended-protection-for-server-applications"></a>Extended Protection for Server Applications  
- <xref:System.Net.HttpListener> automatically provides mechanisms for validating service bindings when performing HTTP authentication.  
+## <a name="extended-protection-for-server-applications"></a>Rozšířená ochrana pro serverové aplikace  
+ <xref:System.Net.HttpListener> automaticky poskytuje mechanismy pro ověřování vazeb služby při provádění ověřování protokolem HTTP.  
   
- The most secure scenario is to enable extended protection for HTTPS:// prefixes. In this case, set <xref:System.Net.HttpListener.ExtendedProtectionPolicy%2A?displayProperty=nameWithType> to an <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> with <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement> set to <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> or <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always>, and <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario> set to <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario.TransportSelected> A value of  <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> puts <xref:System.Net.HttpListener> in partially hardened mode, while <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always> corresponds to fully hardened mode.  
+ Nejbezpečnějším scénářem je povolení rozšířené ochrany pro HTTPS://předpony. V takovém případě nastavte <xref:System.Net.HttpListener.ExtendedProtectionPolicy%2A?displayProperty=nameWithType> na <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> s <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement> nastavenou na <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> nebo <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always>a <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario> nastavte na <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario.TransportSelected> <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> <xref:System.Net.HttpListener> <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always> v částečně zpřísněném režimu, zatímco odpovídá plně posílenému režimu.  
   
- In this configuration when a request is made to the server through an outer secure channel, the outer channel is queried for a channel binding. This channel binding is passed to the authentication SSPI calls, which validate that the channel binding in the authentication blob matches. There are three possible outcomes:  
+ V této konfiguraci, když se na Server provede požadavek přes vnější zabezpečený kanál, se pro vazbu kanálu dotáže na vnější kanál. Tato vazba kanálu je předána ověřovacím voláním SSPI, která ověřují, zda vazba kanálu v objektu BLOB ověřování odpovídá. Existují tři možné výsledky:  
   
-1. The server’s underlying operating system does not support extended protection. The request will not be exposed to the application, and an unauthorized (401) response will be returned to the client. A message will be logged to the <xref:System.Net.HttpListener> trace source specifying the reason for the failure.  
+1. Základní operační systém serveru nepodporuje rozšířenou ochranu. Požadavek se nezveřejňuje aplikaci a klientovi se vrátí Neautorizovaná odpověď (401). Do zdroje trasování <xref:System.Net.HttpListener> se zaprotokoluje zpráva s určením důvodu selhání.  
   
-2. The SSPI call fails indicating that either the client specified a channel binding that did not match the expected value retrieved from the outer channel or the client failed to supply a channel binding when the extended protection policy on the server was configured for <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always>. In both cases, the request will not be exposed to the application, and an unauthorized (401) response will be returned to the client. A message will be logged to the <xref:System.Net.HttpListener> trace source specifying the reason for the failure.  
+2. Volání rozhraní SSPI se nezdařilo, což znamená, že klient zadal vazbu kanálu, která neodpovídá očekávané hodnotě načtené z vnějšího kanálu, nebo když klient nedodá vazbu kanálu, pokud je zásada rozšířené ochrany na serveru nakonfigurovaná pro <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always>. V obou případech se požadavek do aplikace nezveřejňuje a klientovi se vrátí Neautorizovaná odpověď (401). Do zdroje trasování <xref:System.Net.HttpListener> se zaprotokoluje zpráva s určením důvodu selhání.  
   
-3. The client specifies the correct channel binding or is allowed to connect without specifying a channel binding since the extended protection policy on the server is configured with <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> The request is returned to the application for processing. No service name check is performed automatically. An application may choose to perform its own service name validation using the <xref:System.Net.HttpListenerRequest.ServiceName%2A> property, but under these circumstances it is redundant.  
+3. Klient Určuje správnou vazbu kanálu nebo se smí připojit bez zadání vazby kanálu, protože rozšířené zásady ochrany na serveru jsou nakonfigurovány s <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> je požadavek vrácen do aplikace ke zpracování. Neprovádí se automatická kontroly názvu služby. Aplikace se může rozhodnout provést vlastní ověření názvu služby pomocí vlastnosti <xref:System.Net.HttpListenerRequest.ServiceName%2A>, ale za těchto okolností je redundantní.  
   
- If an application makes its own SSPI calls to perform authentication based on blobs passed back and forth within the body of an HTTP request and wishes to support channel binding, it needs to retrieve the expected channel binding from the outer secure channel using <xref:System.Net.HttpListener> in order to pass it to native Win32 [AcceptSecurityContext](/windows/win32/api/sspi/nf-sspi-acceptsecuritycontext) function. To do this, use the <xref:System.Net.HttpListenerRequest.TransportContext%2A> property and call <xref:System.Net.TransportContext.GetChannelBinding%2A> method to retrieve the CBT. Only endpoint bindings are supported. If anything other <xref:System.Security.Authentication.ExtendedProtection.ChannelBindingKind.Endpoint> is specified, a <xref:System.NotSupportedException> will be thrown. If the underlying operating system supports channel binding, the <xref:System.Net.TransportContext.GetChannelBinding%2A> method will return a <xref:System.Security.Authentication.ExtendedProtection.ChannelBinding><xref:System.Runtime.InteropServices.SafeHandle> wrapping a pointer to a channel binding suitable for passing to [AcceptSecurityContext](/windows/win32/api/sspi/nf-sspi-acceptsecuritycontext) function as the pvBuffer member of a SecBuffer structure passed in the `pInput` parameter. The <xref:System.Security.Authentication.ExtendedProtection.ChannelBinding.Size%2A> property contains the length, in bytes, of the channel binding. If the underlying operating system does not support channel bindings, the function will return `null`.  
+ Pokud aplikace vytvoří vlastní volání rozhraní SSPI k provedení ověřování na základě objektů BLOB předaných zpátky a v těle požadavku HTTP a chce podporovat vazby kanálu, musí načíst očekávanou vazbu kanálu z vnějšího zabezpečeného kanálu pomocí <xref:System.Net.HttpListener>, aby ji předala nativní funkce Win32 [Funkce AcceptSecurityContext](/windows/win32/api/sspi/nf-sspi-acceptsecuritycontext) . K tomu použijte vlastnost <xref:System.Net.HttpListenerRequest.TransportContext%2A> a zavolejte metodu <xref:System.Net.TransportContext.GetChannelBinding%2A> k načtení CBT. Jsou podporovány pouze vazby koncového bodu. Pokud je zadána jakákoli jiná <xref:System.Security.Authentication.ExtendedProtection.ChannelBindingKind.Endpoint>, bude vyvolána <xref:System.NotSupportedException>. Pokud podkladový operační systém podporuje vazbu kanálu, metoda <xref:System.Net.TransportContext.GetChannelBinding%2A> vrátí <xref:System.Security.Authentication.ExtendedProtection.ChannelBinding><xref:System.Runtime.InteropServices.SafeHandle> zabalení ukazatele na vazbu kanálu vhodnou pro předání do funkce [Funkce AcceptSecurityContext](/windows/win32/api/sspi/nf-sspi-acceptsecuritycontext) jako člen pvBuffery struktury SecBuffer předané v parametru `pInput`. Vlastnost <xref:System.Security.Authentication.ExtendedProtection.ChannelBinding.Size%2A> obsahuje délku vazby kanálu v bajtech. Pokud podkladový operační systém nepodporuje vazby kanálu, funkce vrátí `null`.  
   
- Another possible scenario is to enable extended protection for HTTP:// prefixes when proxies are not used. In this case, set <xref:System.Net.HttpListener.ExtendedProtectionPolicy%2A?displayProperty=nameWithType> to an <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> with <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement> set to <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> or <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always>, and <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario> set to <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario.TransportSelected> A value of  <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> puts <xref:System.Net.HttpListener> in partially hardened mode, while <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always> corresponds to fully hardened mode.  
+ Dalším možným scénářem je povolit rozšířenou ochranu pro HTTP://předpony, když se proxy servery nepoužívají. V takovém případě nastavte <xref:System.Net.HttpListener.ExtendedProtectionPolicy%2A?displayProperty=nameWithType> na <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> s <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement> nastavenou na <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> nebo <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always>a <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario> nastavte na <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario.TransportSelected> <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> <xref:System.Net.HttpListener> <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always> v částečně zpřísněném režimu, zatímco odpovídá plně posílenému režimu.  
   
- A default list of allowed service names is created based on the prefixes which have been registered with the <xref:System.Net.HttpListener>. This default list can be examined through the <xref:System.Net.HttpListener.DefaultServiceNames%2A> property. If this list is not comprehensive, an application can specify a custom service name collection in the constructor for the <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> class which will be used instead of the default service name list.  
+ Na základě předpon, které jsou zaregistrované ve <xref:System.Net.HttpListener>, se vytvoří výchozí seznam povolených názvů služeb. Tento výchozí seznam lze prozkoumat pomocí vlastnosti <xref:System.Net.HttpListener.DefaultServiceNames%2A>. Pokud tento seznam není vyčerpávající, aplikace může určit vlastní kolekci názvů služby v konstruktoru pro třídu <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy>, která bude použita namísto názvu výchozího seznamu služby.  
   
- In this configuration, when a request is made to the server without an outer secure channel authentication proceeds normally without a channel binding check. If the authentication succeeds, the context is queried for the service name that the client provided and validated against the list of acceptable service names. There are four possible outcomes:  
+ Když se v této konfiguraci provede požadavek na server bez ověření vnějšího zabezpečeného kanálu, pokračuje normálně bez kontroly vazby kanálu. Pokud je ověření úspěšné, je kontext dotazován na název služby, který klient zadal a ověřil v seznamu přijatelných názvů služeb. Existují čtyři možné výsledky:  
   
-1. The server’s underlying operating system does not support extended protection. The request will not be exposed to the application, and an unauthorized (401) response will be returned to the client. A message will be logged to the <xref:System.Net.HttpListener> trace source specifying the reason for the failure.  
+1. Základní operační systém serveru nepodporuje rozšířenou ochranu. Požadavek se nezveřejňuje aplikaci a klientovi se vrátí Neautorizovaná odpověď (401). Do zdroje trasování <xref:System.Net.HttpListener> se zaprotokoluje zpráva s určením důvodu selhání.  
   
-2. The client’s underlying operating system does not support extended protection. In the <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> configuration, the authentication attempt will succeed and the request will be returned to the application. In the <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always> configuration, the authentication attempt will fail. The request will not be exposed to the application, and an unauthorized (401) response will be returned to the client. A message will be logged to the <xref:System.Net.HttpListener> trace source specifying the reason for the failure.  
+2. Základní operační systém klienta nepodporuje rozšířenou ochranu. V konfiguraci <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> bude pokus o ověření úspěšný a požadavek bude vrácen do aplikace. V konfiguraci <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always> se pokus o ověření nezdaří. Požadavek se nezveřejňuje aplikaci a klientovi se vrátí Neautorizovaná odpověď (401). Do zdroje trasování <xref:System.Net.HttpListener> se zaprotokoluje zpráva s určením důvodu selhání.  
   
-3. The client’s underlying operating system supports extended protection, but the application did not specify a service binding. The request will not be exposed to the application, and an unauthorized (401) response will be returned to the client. A message will be logged to the <xref:System.Net.HttpListener> trace source specifying the reason for the failure.  
+3. Základní operační systém klienta podporuje rozšířenou ochranu, ale aplikace neurčila vazbu služby. Požadavek se nezveřejňuje aplikaci a klientovi se vrátí Neautorizovaná odpověď (401). Do zdroje trasování <xref:System.Net.HttpListener> se zaprotokoluje zpráva s určením důvodu selhání.  
   
-4. The client specified a service binding. The service binding is compared to the list of allowed service bindings. If it matches, the request is returned to the application. Otherwise, the request will not be exposed to the application, and an unauthorized (401) response will be automatically returned to the client. A message will be logged to the <xref:System.Net.HttpListener> trace source specifying the reason for the failure.  
+4. Klient zadal vazbu služby. Vazba služby je porovnána se seznamem povolených vazeb služby. Pokud se shoduje, požadavek se vrátí do aplikace. V opačném případě se požadavek do aplikace nezveřejňuje a klientovi se automaticky vrátí Neautorizovaná odpověď (401). Do zdroje trasování <xref:System.Net.HttpListener> se zaprotokoluje zpráva s určením důvodu selhání.  
   
- If this simple approach using an allowed list of acceptable service names is insufficient, an application may provide its own service name validation by querying the <xref:System.Net.HttpListenerRequest.ServiceName%2A> property. In cases 1 and 2 above, the property will return `null`. In case 3, it will return an empty string. In case 4, the service name specified by the client will be returned.  
+ Pokud tento jednoduchý přístup pomocí seznamu povolených přijatelných názvů služeb nestačí, může aplikace poskytnout vlastní ověření názvu služby pomocí dotazu na vlastnost <xref:System.Net.HttpListenerRequest.ServiceName%2A>. V případech 1 a 2 výše bude vlastnost vracet `null`. V případě 3 se vrátí prázdný řetězec. V případě 4 se vrátí název služby zadaný klientem.  
   
- These extended protection features can also be used by server applications for authentication with other types of requests and when trusted proxies are used.  
+ Tyto funkce rozšířené ochrany můžou používat serverové aplikace pro ověřování s jinými typy požadavků a při použití důvěryhodných proxy serverů.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -38,7 +38,7 @@ ms.locfileid: "74346443"
 ---
 # <a name="sub-statement-visual-basic"></a>Sub – příkaz (Visual Basic)
 
-Declares the name, parameters, and code that define a `Sub` procedure.
+Deklaruje název, parametry a kód, které definují proceduru `Sub`.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -55,15 +55,15 @@ End Sub
 
 - `attributelist`
 
-  Volitelné. See [Attribute List](attribute-list.md).
+  Volitelná. Viz [seznam atributů](attribute-list.md).
 
 - `Partial`
 
-  Volitelné. Indicates definition of a partial method. See [Partial Methods](../../../visual-basic/programming-guide/language-features/procedures/partial-methods.md).
+  Volitelná. Označuje definici částečné metody. Viz [částečné metody](../../../visual-basic/programming-guide/language-features/procedures/partial-methods.md).
 
 - `accessmodifier`
 
-  Volitelné. Can be one of the following:
+  Volitelná. Může být jedna z následujících akcí:
 
   - [Public](../modifiers/public.md)
 
@@ -77,11 +77,11 @@ End Sub
 
   - [Private Protected](../../language-reference/modifiers/private-protected.md)
 
-  See [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).
+  Podívejte [se na úrovně přístupu v Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).
 
 - `proceduremodifiers`
 
-  Volitelné. Can be one of the following:
+  Volitelná. Může být jedna z následujících akcí:
 
   - [Overloads](../modifiers/overloads.md)
 
@@ -99,91 +99,91 @@ End Sub
 
 - `Shared`
 
-  Volitelné. See [Shared](../modifiers/shared.md).
+  Volitelná. Viz [Shared](../modifiers/shared.md).
 
 - `Shadows`
 
-  Volitelné. See [Shadows](../modifiers/shadows.md).
+  Volitelná. Viz [Shadows](../modifiers/shadows.md).
 
 - `Async`
 
-  Volitelné. See [Async](../modifiers/async.md).
+  Volitelná. Viz [Async](../modifiers/async.md).
 
 - `name`
 
-  Požadováno. Name of the procedure. See [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md). To create a constructor procedure for a class, set the name of a `Sub` procedure to the `New` keyword. For more information, see [Object Lifetime: How Objects Are Created and Destroyed](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md).
+  Požadováno. Název procedury. Viz [deklarované názvy elementů](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md). Chcete-li vytvořit proceduru konstruktoru pro třídu, nastavte název `Sub` procedury na klíčové slovo `New`. Další informace naleznete v tématu [Doba života objektu: vytváření a zničení objektů](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md).
 
 - `typeparamlist`
 
-  Volitelné. List of type parameters for a generic procedure. See [Type List](type-list.md).
+  Volitelná. Seznam parametrů typu pro obecný postup Viz [seznam typů](type-list.md).
 
 - `parameterlist`
 
-  Volitelné. List of local variable names representing the parameters of this procedure. See [Parameter List](parameter-list.md).
+  Volitelná. Seznam názvů místních proměnných, které představují parametry tohoto postupu. Viz [seznam parametrů](parameter-list.md).
 
 - `Implements`
 
-  Volitelné. Indicates that this procedure implements one or more `Sub` procedures, each one defined in an interface implemented by this procedure's containing class or structure. See [Implements Statement](implements-statement.md).
+  Volitelná. Označuje, že tento postup implementuje jeden nebo více `Sub` procedur, každý z nich definovaný v rozhraní implementovaném touto procedurou obsahuje třídu nebo strukturu. Viz [příkaz Implements](implements-statement.md).
 
 - `implementslist`
 
-  Required if `Implements` is supplied. List of `Sub` procedures being implemented.
+  Vyžaduje se, pokud je dodána `Implements`. Seznam `Sub`ch procedur, které jsou implementovány.
 
   `implementedprocedure [ , implementedprocedure ... ]`
 
-  Each `implementedprocedure` has the following syntax and parts:
+  Každý `implementedprocedure` má následující syntaxi a části:
 
   `interface.definedname`
 
-  |Part|Popis|
+  |Částí|Popis|
   |---|---|
-  |`interface`|Požadováno. Name of an interface implemented by this procedure's containing class or structure.|
-  |`definedname`|Požadováno. Name by which the procedure is defined in `interface`.|
+  |`interface`|Požadováno. Název rozhraní implementovaného touto procedurou obsahuje třídu nebo strukturu.|
+  |`definedname`|Požadováno. Název, podle kterého je procedura definovaná v `interface`.|
 
 - `Handles`
 
-  Volitelné. Indicates that this procedure can handle one or more specific events. See [Handles](handles-clause.md).
+  Volitelná. Označuje, že tento postup může zpracovávat jednu nebo více konkrétních událostí. Viz [Handles](handles-clause.md).
 
 - `eventlist`
 
-  Required if `Handles` is supplied. List of events this procedure handles.
+  Vyžaduje se, pokud je dodána `Handles`. Seznam událostí, které tato procedura zpracovává
 
   `eventspecifier [ , eventspecifier ... ]`
 
-  Each `eventspecifier` has the following syntax and parts:
+  Každý `eventspecifier` má následující syntaxi a části:
 
   `eventvariable.event`
 
-  |Part|Popis|
+  |Částí|Popis|
   |---|---|
-  |`eventvariable`|Požadováno. Object variable declared with the data type of the class or structure that raises the event.|
-  |`event`|Požadováno. Name of the event this procedure handles.|
+  |`eventvariable`|Požadováno. Objektová proměnná deklarovaná s datovým typem třídy nebo struktury, která vyvolává událost.|
+  |`event`|Požadováno. Název události, kterou tato procedura zpracovává|
 
 - `statements`
 
-  Volitelné. Block of statements to run within this procedure.
+  Volitelná. Blok příkazů, které mají být spuštěny v rámci tohoto postupu.
 
 - `End Sub`
 
-  Terminates the definition of this procedure.
+  Ukončí definici tohoto postupu.
 
 ## <a name="remarks"></a>Poznámky
 
-All executable code must be inside a procedure. Use a `Sub` procedure when you don't want to return a value to the calling code. Use a `Function` procedure when you want to return a value.
+Veškerý spustitelný kód musí být v rámci procedury. Pokud nechcete vracet hodnotu volajícímu kódu, použijte `Sub` proceduru. Pokud chcete vrátit hodnotu, použijte `Function` proceduru.
 
-## <a name="defining-a-sub-procedure"></a>Defining a Sub Procedure
+## <a name="defining-a-sub-procedure"></a>Definování procedury Sub
 
-You can define a `Sub` procedure only at the module level. The declaration context for a sub procedure must, therefore, be a class, a structure, a module, or an interface and can't be a source file, a namespace, a procedure, or a block. For more information, see [Declaration Contexts and Default Access Levels](declaration-contexts-and-default-access-levels.md).
+Můžete definovat `Sub` proceduru pouze na úrovni modulu. Kontext deklarace pro proceduru Sub musí tedy být třída, struktura, modul nebo rozhraní a nemůže se jednat o zdrojový soubor, obor názvů, proceduru nebo blok. Další informace najdete v tématu [deklarace kontextů a výchozích úrovní přístupu](declaration-contexts-and-default-access-levels.md).
 
-`Sub` procedures default to public access. You can adjust their access levels by using the access modifiers.
+výchozími postupy `Sub` jsou veřejné přístupy. Úrovně přístupu můžete upravit pomocí modifikátorů přístupu.
 
-If the procedure uses the `Implements` keyword, the containing class or structure must have an `Implements` statement that immediately follows its `Class` or `Structure` statement. The `Implements` statement must include each interface that's specified in `implementslist`. However, the name by which an interface defines the `Sub` (in `definedname`) doesn't have to match the name of this procedure (in `name`).
+Pokud procedura používá klíčové slovo `Implements`, obsahující třídu nebo strukturu musí mít příkaz `Implements`, který následuje bezprostředně za `Class` nebo `Structure` příkaz. Příkaz `Implements` musí zahrnovat každé rozhraní, které je určeno v `implementslist`. Název, kterým rozhraní definuje `Sub` (v `definedname`), ale nemusí odpovídat názvu tohoto postupu (v `name`).
 
-## <a name="returning-from-a-sub-procedure"></a>Returning from a Sub Procedure
+## <a name="returning-from-a-sub-procedure"></a>Vrácení z procedury Sub
 
-When a `Sub` procedure returns to the calling code, execution continues with the statement after the statement that called it.
+Když se `Sub` procedura vrátí k volajícímu kódu, provádění pokračuje příkazem po příkazu, který ho volal.
 
-The following example shows a return from a `Sub` procedure.
+Následující příklad ukazuje návrat z `Sub` proceduře.
 
 ```vb
 Sub mySub(ByVal q As String)
@@ -191,46 +191,46 @@ Sub mySub(ByVal q As String)
 End Sub
 ```
 
-The `Exit Sub` and `Return` statements cause an immediate exit from a `Sub` procedure. Any number of `Exit Sub` and `Return` statements can appear anywhere in the procedure, and you can mix `Exit Sub` and `Return` statements.
+Příkazy `Exit Sub` a `Return` způsobují bezprostřední ukončení `Sub`ho postupu. Libovolný počet `Exit Sub` a `Return` příkazů se může objevit kdekoli v proceduře a můžete kombinovat `Exit Sub` a `Return` příkazy.
 
-## <a name="calling-a-sub-procedure"></a>Calling a Sub Procedure
+## <a name="calling-a-sub-procedure"></a>Volání procedury Sub
 
-You call a `Sub` procedure by using the procedure name in a statement and then following that name with its argument list in parentheses. You can omit the parentheses only if you don't supply any arguments. However, your code is more readable if you always include the parentheses.
+Proceduru `Sub` zavoláte pomocí názvu procedury v příkazu a potom následujícím názvem se seznamem argumentů v závorkách. Závorky můžete vynechat pouze v případě, že nezadáte žádné argumenty. Váš kód je však čitelnější, pokud vždy zahrnete závorky.
 
-A `Sub` procedure and a `Function` procedure  can have parameters and perform a series of statements. However, a `Function` procedure returns a value, and a `Sub` procedure doesn't. Therefore, you can't use a `Sub` procedure in an expression.
+Procedura `Sub` a procedura `Function` mohou mít parametry a provádět sérii příkazů. Nicméně procedura `Function` vrátí hodnotu a `Sub` procedura ne. Proto nemůžete ve výrazu použít `Sub` proceduru.
 
-You can use the `Call` keyword when you call a `Sub` procedure, but that keyword isn't recommended for most uses. For more information, see [Call Statement](call-statement.md).
+Klíčové slovo `Call` můžete použít při volání `Sub` procedury, ale toto klíčové slovo se pro většinu použití nedoporučuje. Další informace naleznete v tématu [Call Statement](call-statement.md).
 
-Visual Basic sometimes rearranges arithmetic expressions to increase internal efficiency. For that reason, if your argument list includes expressions that call other procedures, you shouldn't assume that those expressions will be called in a particular order.
+Visual Basic někdy mění uspořádání aritmetických výrazů a zvyšuje tak vnitřní efektivitu. Z tohoto důvodu, pokud seznam argumentů obsahuje výrazy, které volají jiné procedury, neměli byste předpokládat, že tyto výrazy budou volány v určitém pořadí.
 
-## <a name="async-sub-procedures"></a>Async Sub Procedures
+## <a name="async-sub-procedures"></a>Asynchronní procedury Sub
 
-By using the Async feature, you can invoke asynchronous functions without using explicit callbacks or manually splitting your code across multiple functions or lambda expressions.
+Pomocí asynchronní funkce můžete vyvolat asynchronní funkce bez použití explicitního zpětného volání nebo ruční rozdělení kódu napříč více funkcemi nebo lambda výrazy.
 
-If you mark a procedure with the [Async](../modifiers/async.md) modifier, you can use the [Await](../../../visual-basic/language-reference/operators/await-operator.md) operator in the procedure. When control reaches an `Await` expression in the `Async` procedure, control returns to the caller, and progress in the procedure is suspended until the awaited task completes. When the task is complete, execution can resume in the procedure.
+Pokud označíte proceduru modifikátorem [Async](../modifiers/async.md) , můžete použít operátor [await](../../../visual-basic/language-reference/operators/await-operator.md) v proceduře. Když ovládací prvek dosáhne `Await` výraz v proceduře `Async`, ovládací prvek se vrátí volajícímu a průběh procedury je pozastaven, dokud se nedokončí očekávaný úkol. Po dokončení úlohy může provádění pokračovat postupem.
 
 > [!NOTE]
-> An `Async` procedure returns to the caller when either the first awaited object that’s not yet complete is encountered or the end of the `Async` procedure is reached, whichever occurs first.
+> `Async` procedura se vrátí volajícímu, když buď dojde k prvnímu očekávanému objektu, který ještě nebyl dokončen, nebo je dosaženo konce `Async` postupu, podle toho, co nastane dříve.
 
-You can also mark a [Function Statement](function-statement.md) with the `Async` modifier. An `Async` function can have a return type of <xref:System.Threading.Tasks.Task%601> or <xref:System.Threading.Tasks.Task>. An example later in this topic shows an `Async` function that has a return type of <xref:System.Threading.Tasks.Task%601>.
+Můžete také označit [příkaz funkce](function-statement.md) pomocí modifikátoru `Async`. `Async` funkce může mít návratový typ <xref:System.Threading.Tasks.Task%601> nebo <xref:System.Threading.Tasks.Task>. Příklad dále v tomto tématu ukazuje funkci `Async`, která má návratový typ <xref:System.Threading.Tasks.Task%601>.
 
-`Async` `Sub` procedures are primarily used for event handlers, where a value can't be returned. An `Async` `Sub` procedure can't be awaited, and the caller of an `Async` `Sub` procedure can't catch exceptions that the `Sub` procedure throws.
+procedury `Async` `Sub` jsou primárně používány pro obslužné rutiny událostí, kde nelze vrátit hodnotu. Procedura `Async` `Sub` nemůže být očekávána a volající procedury `Async` `Sub` nemůže zachytit výjimky, které vyvolá procedura `Sub`.
 
-An `Async` procedure can't declare any [ByRef](../modifiers/byref.md) parameters.
+Procedura `Async` nemůže deklarovat žádné parametry [ByRef](../modifiers/byref.md) .
 
-For more information about `Async` procedures, see [Asynchronous Programming with Async and Await](../../../visual-basic/programming-guide/concepts/async/index.md), [Control Flow in Async Programs](../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md), and [Async Return Types](../../../visual-basic/programming-guide/concepts/async/async-return-types.md).
+Další informace o `Async` postupy naleznete v tématu [asynchronní programování s modifikátorem Async a await](../../../visual-basic/programming-guide/concepts/async/index.md), [řízení toku v asynchronních programech](../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md)a [Asynchronní návratové typy](../../../visual-basic/programming-guide/concepts/async/async-return-types.md).
 
 ## <a name="example"></a>Příklad
 
-The following example uses the `Sub` statement to define the name, parameters, and code that form the body of a `Sub` procedure.
+Následující příklad používá příkaz `Sub` k definování názvu, parametrů a kódu, který tvoří tělo `Sub`ho postupu.
 
 [!code-vb[VbVbalrStatements#58](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#58)]
 
 ## <a name="example"></a>Příklad
 
-In the following example, `DelayAsync` is an `Async` `Function` that has a return type of <xref:System.Threading.Tasks.Task%601>. `DelayAsync` has a `Return` statement that returns an integer. Therefore, the function declaration of `DelayAsync` must have a return type of `Task(Of Integer)`. Because the return type is `Task(Of Integer)`, the evaluation of the `Await` expression in `DoSomethingAsync` produces an integer, as the following statement shows: `Dim result As Integer = Await delayTask`.
+V následujícím příkladu je `DelayAsync` `Async` `Function`, který má návratový typ <xref:System.Threading.Tasks.Task%601>. `DelayAsync` má příkaz `Return`, který vrací celé číslo. Proto deklarace funkce `DelayAsync` musí mít návratový typ `Task(Of Integer)`. Vzhledem k tomu, že návratový typ je `Task(Of Integer)`, vyhodnocení výrazu `Await` v `DoSomethingAsync` vytvoří celé číslo, jak ukazuje následující příkaz: `Dim result As Integer = Await delayTask`.
 
-The `startButton_Click` procedure is an example of an `Async Sub` procedure. Because `DoSomethingAsync` is an `Async` function, the task for the call to `DoSomethingAsync` must be awaited, as the following statement shows: `Await DoSomethingAsync()`. The `startButton_Click` `Sub` procedure must be defined with the `Async` modifier because it has an `Await` expression.
+Procedura `startButton_Click` je příkladem `Async Sub` postupu. Vzhledem k tomu, že `DoSomethingAsync` je `Async` funkce, musí být úkol pro volání `DoSomethingAsync` očekáván, jak ukazuje následující příkaz: `Await DoSomethingAsync()`. Procedura `startButton_Click` `Sub` musí být definována s modifikátorem `Async`, protože obsahuje výraz `Await`.
 
 [!code-vb[csAsyncMethod#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/csasyncmethod/vb/mainwindow.xaml.vb#1)]
 
@@ -241,7 +241,7 @@ The `startButton_Click` procedure is an example of an `Async Sub` procedure. Bec
 - [Seznam parametrů](parameter-list.md)
 - [Příkaz Dim](dim-statement.md)
 - [Příkaz Call](call-statement.md)
-- [Of](of-clause.md)
+- [Tohoto](of-clause.md)
 - [Pole parametrů](../../../visual-basic/programming-guide/language-features/procedures/parameter-arrays.md)
 - [Postupy: Použití obecné třídy](../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)
 - [Řešení potíží s procedurami](../../../visual-basic/programming-guide/language-features/procedures/troubleshooting-procedures.md)

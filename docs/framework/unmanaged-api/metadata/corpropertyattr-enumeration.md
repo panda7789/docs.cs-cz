@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450138"
 ---
 # <a name="corpropertyattr-enumeration"></a>CorPropertyAttr – výčet
-Contains values that describe the metadata of a property.  
+Obsahuje hodnoty, které popisují metadata vlastnosti.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,18 +42,18 @@ typedef enum CorPropertyAttr {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`prSpecialName`|Specifies that the property is special, and that its name describes how.|  
-|`prReservedMask`|Reserved for internal use by the common language runtime.|  
-|`prRTSpecialName`|Specifies that the common language runtime metadata internal APIs should check the encoding of the property name.|  
-|`prHasDefault`|Specifies that the property has a default value.|  
-|`prUnused`|Unused.|  
+|`prSpecialName`|Určuje, že vlastnost je zvláštní a že její název popisuje, jak.|  
+|`prReservedMask`|Vyhrazeno pro interní použití modulem CLR (Common Language Runtime).|  
+|`prRTSpecialName`|Určuje, že vnitřní rozhraní API pro Common Language Runtime metadata by měla kontrolovat kódování názvu vlastnosti.|  
+|`prHasDefault`|Určuje, že vlastnost má výchozí hodnotu.|  
+|`prUnused`|Nepoužívané.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **Hlavička:** CorHdr. h  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

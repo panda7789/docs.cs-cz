@@ -14,7 +14,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74431367"
 ---
 # <a name="ialink2-interface"></a>IALink2 – rozhraní
-Complements the [IALink Interface](ialink-interface.md) by declaring methods that operate on newer metadata interfaces such as [IMetaDataEmit2 Interface](../metadata/imetadataemit2-interface.md). Additionally, IALink2 declares methods that provide additional usage flexibility over the original IALink interfaces.  
+Doplňuje [rozhraní IALink –](ialink-interface.md) deklarováním metod, které pracují s novějšími rozhraními metadat, jako je například [rozhraní IMetaDataEmit2](../metadata/imetadataemit2-interface.md). Ialink2 – navíc deklaruje metody, které poskytují větší flexibilitu využití v původních rozhraních IALink –.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [AddFile2 – metoda](addfile2-method.md)  
@@ -41,6 +41,6 @@ Complements the [IALink Interface](ialink-interface.md) by declaring methods tha
   
 ## <a name="see-also"></a>Viz také:
 
-- [ALink API](index.md)
+- [Rozhraní API ALink](index.md)
 - [IALink – rozhraní](ialink-interface.md)
 - [Al.exe (linker sestavení)](../../tools/al-exe-assembly-linker.md)

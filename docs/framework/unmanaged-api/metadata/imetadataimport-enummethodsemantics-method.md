@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450073"
 ---
 # <a name="imetadataimportenummethodsemantics-method"></a>IMetaDataImport::EnumMethodSemantics – metoda
-Enumerates the properties and the property-change events to which the specified method is related.  
+Vytvoří výčet vlastností a událostí změny vlastností, na které se vztahuje zadaná metoda.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,38 +39,38 @@ HRESULT EnumMethodSemantics (
   
 ## <a name="parameters"></a>Parametry  
  `phEnum`  
- [in, out] A pointer to the enumerator. This must be NULL for the first call of this method.  
+ [in, out] Ukazatel na enumerátor. Pro první volání této metody musí mít hodnotu NULL.  
   
  `mb`  
- [in] A MethodDef token that limits the scope of the enumeration.  
+ pro Token MethodDef omezující obor výčtu.  
   
  `rEventProp`  
- [out] The array used to store the events or properties.  
+ mimo Pole, které se používá k uložení událostí nebo vlastností.  
   
  `cMax`  
- [in] The maximum size of the `rEventProp` array.  
+ pro Maximální velikost `rEventProp` pole  
   
  `pcEventProp`  
- [out] The number of events or properties returned in `rEventProp`.  
+ mimo Počet událostí nebo vlastností vrácených v `rEventProp`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|`S_OK`|`EnumMethodSemantics` returned successfully.|  
-|`S_FALSE`|There are no events or properties to enumerate. In that case, `pcEventProp` is zero.|  
+|`S_OK`|`EnumMethodSemantics` byla úspěšně vrácena.|  
+|`S_FALSE`|Neexistují žádné události ani vlastnosti k zobrazení výčtu. V takovém případě je `pcEventProp` nula.|  
   
 ## <a name="remarks"></a>Poznámky  
- Many common language runtime types define *Property*`Changed` events and `On`*Property*`Changed` methods related to their properties. For example, the <xref:System.Windows.Forms.Control?displayProperty=nameWithType> type defines a <xref:System.Windows.Forms.Control.Font%2A> property, a <xref:System.Windows.Forms.Control.FontChanged> event, and an <xref:System.Windows.Forms.Control.OnFontChanged%2A> method. The set accessor method of the <xref:System.Windows.Forms.Control.Font%2A> property calls <xref:System.Windows.Forms.Control.OnFontChanged%2A> method, which in turn raises the <xref:System.Windows.Forms.Control.FontChanged> event. You would call `EnumMethodSemantics` using the MethodDef for <xref:System.Windows.Forms.Control.OnFontChanged%2A> to get references to the <xref:System.Windows.Forms.Control.Font%2A> property and the <xref:System.Windows.Forms.Control.FontChanged> event.  
+ Mnoho typů modulu CLR (Common Language Runtime) definuje *vlastnosti*`Changed` události a `On`*vlastností*`Changed` metod souvisejících s jejich vlastnostmi. Například typ <xref:System.Windows.Forms.Control?displayProperty=nameWithType> definuje vlastnost <xref:System.Windows.Forms.Control.Font%2A>, událost <xref:System.Windows.Forms.Control.FontChanged> a metodu <xref:System.Windows.Forms.Control.OnFontChanged%2A>. Metoda set přistupující objekt vlastnosti <xref:System.Windows.Forms.Control.Font%2A> volá metodu <xref:System.Windows.Forms.Control.OnFontChanged%2A>, která zase vyvolá událost <xref:System.Windows.Forms.Control.FontChanged>. Chcete-li získat odkazy na vlastnost <xref:System.Windows.Forms.Control.Font%2A> a událost <xref:System.Windows.Forms.Control.FontChanged>, zavolejte `EnumMethodSemantics` pomocí vlastnosti MethodDef pro <xref:System.Windows.Forms.Control.OnFontChanged%2A>.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

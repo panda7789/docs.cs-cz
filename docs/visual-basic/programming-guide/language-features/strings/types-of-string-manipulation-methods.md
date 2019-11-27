@@ -13,36 +13,36 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346274"
 ---
 # <a name="types-of-string-manipulation-methods-in-visual-basic"></a>Typy metod manipulace s řetězci v jazyce Visual Basic
-There are several different ways to analyze and manipulate your strings. Some of the methods are a part of the Visual Basic language, and others are inherent in the `String` class.  
+Existuje několik různých způsobů, jak analyzovat a manipulovat s řetězci. Některé metody jsou součástí jazyka Visual Basic a další jsou podstatou `String` třídy.  
   
-## <a name="visual-basic-language-and-the-net-framework"></a>Visual Basic Language and the .NET Framework  
- Visual Basic methods are used as inherent functions of the language. They may be used without qualification in your code. The following example shows typical use of a Visual Basic string-manipulation command:  
+## <a name="visual-basic-language-and-the-net-framework"></a>Visual Basic jazyk a .NET Framework  
+ Metody Visual Basic jsou používány jako podstatné funkce jazyka. Je možné je použít bez kvalifikace ve vašem kódu. Následující příklad ukazuje typické použití Visual Basic příkazu pro manipulaci s řetězci:  
   
  [!code-vb[VbVbalrStrings#44](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#44)]  
   
- In this example, the `Mid` function performs a direct operation on `aString` and assigns the value to `bString`.  
+ V tomto příkladu funkce `Mid` provede přímou operaci na `aString` a přiřadí hodnotu `bString`.  
   
- For a list of Visual Basic string manipulation methods, see [String Manipulation Summary](../../../../visual-basic/language-reference/keywords/string-manipulation-summary.md).  
+ Seznam metod manipulace s řetězci Visual Basic naleznete v tématu [Souhrn manipulace s řetězci](../../../../visual-basic/language-reference/keywords/string-manipulation-summary.md).  
   
-### <a name="shared-methods-and-instance-methods"></a>Shared Methods and Instance Methods  
- You can also manipulate strings with the methods of the `String` class. There are two types of methods in `String`: *shared* methods and *instance* methods.  
+### <a name="shared-methods-and-instance-methods"></a>Sdílené metody a metody instance  
+ Můžete také manipulovat s řetězci pomocí metod třídy `String`. Existují dva typy metod v `String`: *sdílené* metody a metody *instance* .  
   
-#### <a name="shared-methods"></a>Shared Methods  
- A shared method is a method that stems from the `String` class itself and does not require an instance of that class to work. These methods can be qualified with the name of the class (`String`) rather than with an instance of the `String` class. Příklad:  
+#### <a name="shared-methods"></a>Sdílené metody  
+ Sdílená metoda je metoda, která vychází z `String` samotné třídy a nevyžaduje, aby instance této třídy fungovala. Tyto metody mohou být kvalifikovány s názvem třídy (`String`) namísto instance `String` třídy. Příklad:  
   
  [!code-vb[VbVbalrStrings#45](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#45)]  
   
- In the preceding example, the <xref:System.String.Copy%2A?displayProperty=nameWithType> method is a static method, which acts upon an expression it is given and assigns the resulting value to `bString`.  
+ V předchozím příkladu je metoda <xref:System.String.Copy%2A?displayProperty=nameWithType> statická metoda, která funguje na výrazu, který je dán, a přiřazuje výslednou hodnotu `bString`.  
   
-#### <a name="instance-methods"></a>Instance Methods  
- Instance methods, by contrast, stem from a particular instance of `String` and must be qualified with the instance name. Příklad:  
+#### <a name="instance-methods"></a>Metody instance  
+ Metody instance naproti tomu vyplývají z konkrétní instance `String` a musí být kvalifikovány názvem instance. Příklad:  
   
  [!code-vb[VbVbalrStrings#46](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#46)]  
   
- In this example, the <xref:System.String.Substring%2A?displayProperty=nameWithType> method is a method of the instance of `String` (that is, `aString`). It performs an operation on `aString` and assigns that value to `bString`.  
+ V tomto příkladu je metoda <xref:System.String.Substring%2A?displayProperty=nameWithType> metodou instance `String` (to znamená `aString`). Provede operaci na `aString` a přiřadí tuto hodnotu `bString`.  
   
- For more information, see the documentation for the <xref:System.String> class.  
+ Další informace naleznete v dokumentaci k třídě <xref:System.String>.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Introduction to Strings in Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)
+- [Seznámení s řetězci v Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)

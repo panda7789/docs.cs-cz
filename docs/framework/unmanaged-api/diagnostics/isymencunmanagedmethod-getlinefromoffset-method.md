@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448648"
 ---
 # <a name="isymencunmanagedmethodgetlinefromoffset-method"></a>ISymENCUnmanagedMethod::GetLineFromOffset – metoda
-Gets the line information associated with an offset. If the offset parameter (`dwOffset`) is not a sequence point, this method gets the line information associated with the previous offset.  
+Získá informace o řádku přidružené k posunu. Pokud parametr posunutí (`dwOffset`) není bodem sekvence, tato metoda získá informace o řádku přidružené k předchozímu posunu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,28 +39,28 @@ HRESULT GetLineFromOffset(
   
 ## <a name="parameters"></a>Parametry  
  `dwOffset`  
- [in] A `ULONG32` that contains the offset.  
+ pro `ULONG32`, který obsahuje posun.  
   
  `pline`  
- [out] A pointer to a `ULONG32` that receives the line.  
+ mimo Ukazatel na `ULONG32`, který obdrží řádek.  
   
  `pcolumn`  
- [out] A pointer to a `ULONG32` that receives the column.  
+ mimo Ukazatel na `ULONG32`, který přijímá sloupec.  
   
  `pendLine`  
- [out] A pointer to a `ULONG32` that receives the end line.  
+ mimo Ukazatel na `ULONG32`, který obdrží koncovou čáru.  
   
  `pendColumn`  
- [out] A pointer to a `ULONG32` that receives the end column.  
+ mimo Ukazatel na `ULONG32`, který obdrží sloupec end.  
   
  `pdwStartOffset`  
- [out] A pointer to a `ULONG32` that receives the associated sequence point.  
+ mimo Ukazatel na `ULONG32`, který obdrží přidružený bod sekvence.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

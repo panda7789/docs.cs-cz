@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74441762"
 ---
 # <a name="imetadataemitsetclasslayout-method"></a>IMetaDataEmit::SetClassLayout – metoda
-Completes the layout of fields for a class that has been defined by a prior call to [DefineTypeDef Method](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md).  
+Dokončí rozložení polí pro třídu, která byla definována před voláním [metody definetypedef –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,34 +38,34 @@ HRESULT SetClassLayout (
   
 ## <a name="parameters"></a>Parametry  
  `td`  
- [in] An `mdTypeDef` token that specifies the class to be laid out.  
+ pro Token `mdTypeDef`, který určuje třídu, která má být rozložena.  
   
  `dwPackSize`  
- [in] The packing size: 1, 2, 4, 8 or 16 bytes. The packing size is the number of bytes between adjacent fields.  
+ pro Velikost balení: 1, 2, 4, 8 nebo 16 bajtů. Velikost balení je počet bajtů mezi sousedními poli.  
   
  `rFieldOffsets`  
- [in] An array of [COR_FIELD_OFFSET](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md) structures, each of which specifies a field of the class and the field's offset within the class. Terminate the array with `mdTokenNil`.  
+ pro Pole struktur [COR_FIELD_OFFSET](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md) , z nichž každý určuje pole třídy a posun pole v rámci třídy. Ukončete pole pomocí `mdTokenNil`.  
   
  `ulClassSize`  
- [in] The size, in bytes, of the class.  
+ pro Velikost třídy (v bajtech).  
   
 ## <a name="remarks"></a>Poznámky  
- The class is initially defined by calling the [IMetaDataEmit::DefineTypeDef](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md) method, and specifying one of three layouts for the fields of the class: automatic, sequential, or explicit. Normally, you would use automatic layout and let the runtime choose the best way to lay out the fields.  
+ Třída je zpočátku definována voláním metody [IMetaDataEmit::D efinetypedef](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md) a zadáním jednoho ze tří rozložení pro pole třídy: Automatic, sekvenční nebo Explicit. Normálně byste použili automatické rozložení a umožnili modulu runtime zvolit nejlepší způsob rozložení polí.  
   
- However, you might want the fields laid out according to the arrangement that unmanaged code uses. In this case, choose either sequential or explicit layout and call `SetClassLayout` to complete the layout of the fields:  
+ Můžete však chtít, aby pole byla rozložena podle uspořádání, které používá nespravovaný kód. V takovém případě vyberte buď sekvenční nebo explicitní rozložení, a volání `SetClassLayout` pro dokončení rozložení polí:  
   
-- Sequential layout: Specify the packing size. A field is aligned according to either its natural size or the packing size, whichever results in the smaller offset of the field. Set `rFieldOffsets` and `ulClassSize` to zero.  
+- Sekvenční rozložení: Určete velikost balení. Pole je zarovnáno podle jeho přirozené velikosti nebo velikosti balení, podle toho, co je výsledkem menšího posunu pole. Nastavte `rFieldOffsets` a `ulClassSize` na nulu.  
   
-- Explicit layout: Either specify the offset of each field or specify the class size and the packing size.  
+- Explicitní rozložení: buď zadejte posunutí jednotlivých polí, nebo zadejte velikost třídy a velikost balení.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

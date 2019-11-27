@@ -26,7 +26,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344432"
 ---
 # <a name="option-compare-statement"></a>Option Compare – příkaz
-Declares the default comparison method to use when comparing string data.  
+Deklaruje výchozí metodu porovnání, která se má použít při porovnávání řetězcových dat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,52 +38,52 @@ Option Compare { Binary | Text }
   
 |Termín|Definice|  
 |---|---|  
-|`Binary`|Volitelné. Results in string comparisons based on a sort order derived from the internal binary representations of the characters.<br /><br /> This type of comparison is useful especially if the strings can contain characters that are not to be interpreted as text. In this case, you do not want to bias comparisons with alphabetical equivalences, such as case insensitivity.|  
-|`Text`|Volitelné. Results in string comparisons based on a case-insensitive text sort order determined by your system's locale.<br /><br /> This type of comparison is useful if your strings contain all text characters, and you want to compare them taking into account alphabetic equivalences such as case insensitivity and closely related letters. For example, you might want to consider `A` and `a` to be equal, and `Ä` and `ä` to come before `B` and `b`.|  
+|`Binary`|Volitelná. Výsledkem porovnání řetězců na základě pořadí řazení odvozeného z interních binárních reprezentace znaků.<br /><br /> Tento typ porovnání je užitečný hlavně v případě, že řetězce můžou obsahovat znaky, které nemusíte interpretovat jako text. V takovém případě nebudete chtít porovnání posunu s abecedními ekvivalenty, jako je například nerozlišování velkých a malých písmen.|  
+|`Text`|Volitelná. Výsledkem porovnání řetězců na základě pořadí řazení textu bez rozlišování velkých a malých písmen, které určuje národní prostředí vašeho systému.<br /><br /> Tento typ porovnání je užitečný v případě, že řetězce obsahují všechny textové znaky a chcete je porovnat s ohledem na abecední ekvivalenty, jako je například nerozlišování velkých a malých písmen a úzce související písmena. Například můžete chtít zvážit `A` a `a`, které mají být stejné, a `Ä` a `ä` k předcházet `B` a `b`.|  
   
 ## <a name="remarks"></a>Poznámky  
- If used, the `Option Compare` statement must appear in a file before any other source code statements.  
+ Při použití musí být příkaz `Option Compare` uveden v souboru před jakýmkoli jiným příkazy zdrojového kódu.  
   
- The `Option Compare` statement specifies the string comparison method (`Binary` or `Text`).  The default text comparison method is `Binary`.  
+ Příkaz `Option Compare` určuje metodu porovnání řetězců (`Binary` nebo `Text`).  Výchozí metoda porovnání textu je `Binary`.  
   
- A `Binary` comparison compares the numeric Unicode value of each character in each string. A `Text` comparison compares each Unicode character based on its lexical meaning in the current culture.  
+ Porovnání `Binary` porovnává číselnou hodnotu Unicode každého znaku v každém řetězci. Porovnání `Text` porovnává každý znak Unicode na základě jeho lexikálního významu v aktuální jazykové verzi.  
   
- In Microsoft Windows, sort order is determined by the code page. For more information, see [Code Pages](/cpp/c-runtime-library/code-pages).  
+ V systému Microsoft Windows je pořadí řazení určeno znakovou stránkou. Další informace najdete v tématu [znakové stránky](/cpp/c-runtime-library/code-pages).  
   
- In the following example, characters in the English/European code page (ANSI 1252) are sorted by using `Option Compare Binary`, which produces a typical binary sort order.  
+ V následujícím příkladu jsou znaky na znakové stránce angličtina/Evropa (ANSI 1252) řazeny pomocí `Option Compare Binary`, což vytváří typické binární pořadí řazení.  
   
  `A < B < E < Z < a < b < e < z < À < Ê < Ø < à < ê < ø`  
   
- When the same characters in the same code page are sorted by using `Option Compare Text`, the following text sort order is produced.  
+ Když jsou stejné znaky na stejné znakové stránce seřazené pomocí `Option Compare Text`, vytvoří se následující textové pořadí řazení.  
   
  `(A=a) < (À = à) < (B=b) < (E=e) < (Ê = ê) < (Z=z) < (Ø = ø)`  
   
-## <a name="when-an-option-compare-statement-is-not-present"></a>When an Option Compare Statement Is Not Present  
- If the source code does not contain an `Option Compare` statement, the **Option Compare** setting on the [Compile Page, Project Designer (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic) is used. If you use the command-line compiler, the setting specified by the [-optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md) compiler option is used.  
+## <a name="when-an-option-compare-statement-is-not-present"></a>Pokud není k dispozici příkaz Option Compare  
+ Pokud zdrojový kód neobsahuje příkaz `Option Compare`, je použita **možnost porovnat** nastavení na [stránce kompilovat, návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic) . Použijete-li kompilátor příkazového řádku, je použito nastavení určené možností kompilátoru [-OptionCompare –](../../../visual-basic/reference/command-line-compiler/optioncompare.md) .  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-#### <a name="to-set-option-compare-in-the-ide"></a>To set Option Compare in the IDE  
+#### <a name="to-set-option-compare-in-the-ide"></a>Nastavení možnosti Compare v integrovaném vývojovém prostředí  
   
-1. In **Solution Explorer**, select a project. On the **Project** menu, click **Properties**.  
+1. V **Průzkumník řešení**vyberte projekt. V nabídce **projekt** klikněte na příkaz **vlastnosti**.  
   
-2. Click the **Compile** tab.  
+2. Klikněte na kartu **kompilovat** .  
   
-3. Set the value in the **Option Compare** box.  
+3. Nastavte hodnotu v poli **Porovnat možnost** .  
   
- When you create a project, the **Option Compare** setting on the **Compile** tab is set to the **Option Compare** setting in the **Options** dialog box. To change this setting, on the **Tools** menu, click **Options**. In the **Options** dialog box, expand **Projects and Solutions**, and then click **VB Defaults**. The initial default setting in **VB Defaults** is **Binary**.  
+ Při vytváření projektu je **možnost porovnat** nastavení na kartě **kompilovat** nastavena na **možnost porovnat** nastavení v dialogovém okně **Možnosti** . Chcete-li toto nastavení změnit, v nabídce **nástroje** klikněte na příkaz **Možnosti**. V dialogovém okně **Možnosti** rozbalte **projekty a řešení**a potom klikněte na **výchozí hodnoty VB**. Počáteční výchozí nastavení ve **výchozích hodnotách VB** je **binární**.  
   
-#### <a name="to-set-option-compare-on-the-command-line"></a>To set Option Compare on the command line  
+#### <a name="to-set-option-compare-on-the-command-line"></a>Nastavení možnosti Compare v příkazovém řádku  
   
-- Include the [-optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md) compiler option in the **vbc** command.  
+- Do příkazu **Vbc** zahrňte možnost kompilátoru [-OptionCompare –](../../../visual-basic/reference/command-line-compiler/optioncompare.md) .  
   
 ## <a name="example"></a>Příklad  
- The following example uses the `Option Compare` statement to set the binary comparison as the default string comparison method. To use this code, uncomment the `Option Compare Binary` statement, and put it at the top of the source file.  
+ Následující příklad používá příkaz `Option Compare` pro nastavení binárního porovnání jako výchozí metody porovnání řetězců. Chcete-li použít tento kód, odkomentujte příkaz `Option Compare Binary` a umístěte jej do horní části zdrojového souboru.  
   
  [!code-vb[VbVbalrStatements#45](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#45)]  
   
 ## <a name="example"></a>Příklad  
- The following example uses the `Option Compare` statement to set the case-insensitive text sort order as the default string comparison method. To use this code, uncomment the `Option Compare Text` statement, and put it at the top of the source file.  
+ Následující příklad používá příkaz `Option Compare` pro nastavení pořadí řazení textu bez rozlišení velkých a malých písmen jako výchozí metodu porovnání řetězců. Chcete-li použít tento kód, odkomentujte příkaz `Option Compare Text` a umístěte jej do horní části zdrojového souboru.  
   
  [!code-vb[VbVbalrStatements#46](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#46)]  
   
@@ -96,8 +96,8 @@ Option Compare { Binary | Text }
 - <xref:Microsoft.VisualBasic.Strings.StrComp%2A>
 - [-optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md)
 - [Operátory porovnání](../../../visual-basic/language-reference/operators/comparison-operators.md)
-- [Comparison Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
+- [Operátory porovnávání v Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
 - [Operátor Like](../../../visual-basic/language-reference/operators/like-operator.md)
-- [Funkce řetězce](../../../visual-basic/language-reference/functions/string-functions.md)
+- [Řetězcové funkce](../../../visual-basic/language-reference/functions/string-functions.md)
 - [Příkaz Option Explicit](../../../visual-basic/language-reference/statements/option-explicit-statement.md)
 - [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)

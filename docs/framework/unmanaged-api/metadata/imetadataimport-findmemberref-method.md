@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437952"
 ---
 # <a name="imetadataimportfindmemberref-method"></a>IMetaDataImport::FindMemberRef – metoda
-Gets a pointer to the MemberRef token for the member reference that is enclosed by the specified <xref:System.Type> and that has the specified name and metadata signature.  
+Získá ukazatel na token MemberRef pro odkaz na člena, který je uzavřený zadaným <xref:System.Type> a který má zadaný název a signaturu metadat.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,35 +39,35 @@ HRESULT FindMemberRef (
   
 ## <a name="parameters"></a>Parametry  
  `td`  
- [in] The TypeRef token for the class or interface that encloses the member reference to search for. If this value is `mdTokenNil`, the lookup is done for a global variable or a global-function reference.  
+ pro Token TypeRef pro třídu nebo rozhraní, které obklopují odkaz na člena pro hledání. Pokud je tato hodnota `mdTokenNil`, vyhledávání je provedeno pro globální proměnnou nebo odkaz globální funkce.  
   
  `szName`  
- [in] The name of the member reference to search for.  
+ pro Název odkazu na člena, který se má vyhledat  
   
  `pvSigBlob`  
- [in] A pointer to the binary metadata signature of the member reference.  
+ pro Ukazatel na binární podpis metadat odkazu na člena.  
   
  `cbSigBlob`  
- [in] The size in bytes of `pvSigBlob`.  
+ pro Velikost v bajtech `pvSigBlob`.  
   
  `pmr`  
- [out] A pointer to the matching MemberRef token.  
+ mimo Ukazatel na shodný token MemberRef.  
   
 ## <a name="remarks"></a>Poznámky  
- You specify the member using its enclosing class or interface (`td`), its name (`szName`), and optionally its signature (`pvSigBlob`).  
+ Určíte člena pomocí jeho nadřazené třídy nebo rozhraní (`td`), jeho názvu (`szName`) a volitelně jeho signatury (`pvSigBlob`).  
   
- The signature passed to `FindMemberRef` must have been generated in the current scope, because signatures are bound to a particular scope. A signature can embed a token that identifies the enclosing class or value type. The token is an index into the local TypeDef table. You cannot build a run-time signature outside the context of the current scope and use that signature as input to `FindMemberRef`.  
+ Podpis předaný do `FindMemberRef` musí být vygenerován v aktuálním oboru, protože signatury jsou vázány na konkrétní obor. Podpis může vložit token, který identifikuje ohraničující třídu nebo typ hodnoty. Token je index do místní tabulky TypeDef. Nemůžete sestavit signaturu za běhu mimo kontext aktuálního oboru a použít tento podpis jako vstup pro `FindMemberRef`.  
   
- `FindMemberRef` finds only member references that were defined directly in the class or interface; it does not find inherited member references.  
+ `FindMemberRef` vyhledá pouze odkazy členů, které byly definovány přímo ve třídě nebo rozhraní; nenalezne zděděné odkazy členů.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

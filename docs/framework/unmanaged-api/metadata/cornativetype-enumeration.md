@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436513"
 ---
 # <a name="cornativetype-enumeration"></a>CorNativeType – výčet
-Contains values that describe native unmanaged types.  
+Obsahuje hodnoty, které popisují nativní nespravované typy.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -91,58 +91,58 @@ typedef enum CorNativeType {
 |------------|-----------------|  
 |`NATIVE_TYPE_END`|Zastaralé.|  
 |`NATIVE_TYPE_VOID`|Zastaralé.|  
-|`NATIVE_TYPE_BOOLEAN`|A 4-byte Boolean value, where TRUE is non-zero and FALSE is zero.|  
-|`NATIVE_TYPE_I1`|A signed 8-bit integer value.|  
-|`NATIVE_TYPE_U1`|An unsigned 8-bit integer value.|  
-|`NATIVE_TYPE_I2`|A signed 16-bit integer value.|  
-|`NATIVE_TYPE_U2`|An unsigned 16-bit integer value.|  
-|`NATIVE_TYPE_I4`|A signed 32-bit integer value.|  
-|`NATIVE_TYPE_U4`|An unsigned 32-bit integer value.|  
-|`NATIVE_TYPE_I8`|A signed 64-bit integer value.|  
-|`NATIVE_TYPE_U8`|An unsigned 64-bit integer value.|  
-|`NATIVE_TYPE_R4`|A 4-byte floating-point numeric value.|  
-|`NATIVE_TYPE_R8`|An 8-byte floating-point numeric value.|  
+|`NATIVE_TYPE_BOOLEAN`|Kladná logická hodnota o velikosti 4 bajty, kde TRUE je nenulová a hodnota FALSE je nula.|  
+|`NATIVE_TYPE_I1`|8bitové celé číslo se znaménkem.|  
+|`NATIVE_TYPE_U1`|16bitová celočíselná hodnota bez znaménka.|  
+|`NATIVE_TYPE_I2`|16bitová celočíselná hodnota se znaménkem.|  
+|`NATIVE_TYPE_U2`|16bitová celočíselná hodnota bez znaménka.|  
+|`NATIVE_TYPE_I4`|Podepsaná hodnota se znaménkem 32.|  
+|`NATIVE_TYPE_U4`|Celočíselná hodnota bez znaménka 32-bit.|  
+|`NATIVE_TYPE_I8`|Podepsaná hodnota se znaménkem 64.|  
+|`NATIVE_TYPE_U8`|Celočíselná hodnota bez znaménka 64-bit.|  
+|`NATIVE_TYPE_R4`|Číselná hodnota s plovoucí desetinnou čárkou a 4 bajty.|  
+|`NATIVE_TYPE_R8`|Číselná hodnota s plovoucí desetinnou čárkou o velikosti 8 bajtů.|  
 |`NATIVE_TYPE_SYSCHAR`|Zastaralé.|  
 |`NATIVE_TYPE_VARIANT`|Zastaralé.|  
-|`NATIVE_TYPE_CURRENCY`|A numeric COM type that corresponds to the managed <xref:System.Decimal> type.|  
+|`NATIVE_TYPE_CURRENCY`|Číselný typ COM, který odpovídá spravovanému typu <xref:System.Decimal>.|  
 |`NATIVE_TYPE_PTR`|Zastaralé.|  
 |`NATIVE_TYPE_DECIMAL`|Zastaralé.|  
 |`NATIVE_TYPE_DATE`|Zastaralé.|  
-|`NATIVE_TYPE_BSTR`|COM Interop.|  
-|`NATIVE_TYPE_LPSTR`|An LPSTR string value.|  
-|`NATIVE_TYPE_LPWSTR`|An LPWSTR string value.|  
-|`NATIVE_TYPE_LPTSTR`|An LPTSTR string value.|  
-|`NATIVE_TYPE_FIXEDSYSSTRING`|A fixed, system-defined string value.|  
+|`NATIVE_TYPE_BSTR`|Zprostředkovatel komunikace s objekty COM.|  
+|`NATIVE_TYPE_LPSTR`|Hodnota řetězce typem LPStr.|  
+|`NATIVE_TYPE_LPWSTR`|Hodnota řetězce LPWSTR.|  
+|`NATIVE_TYPE_LPTSTR`|Hodnota řetězce LPTSTR.|  
+|`NATIVE_TYPE_FIXEDSYSSTRING`|Pevná, systémem definovaná řetězcová hodnota.|  
 |`NATIVE_TYPE_OBJECTREF`|Zastaralé.|  
-|`NATIVE_TYPE_IUNKNOWN`|COM Interop.|  
-|`NATIVE_TYPE_IDISPATCH`|COM Interop.|  
-|`NATIVE_TYPE_STRUCT`|A native structure value.|  
-|`NATIVE_TYPE_INTF`|COM Interop.|  
-|`NATIVE_TYPE_SAFEARRAY`|COM Interop.|  
-|`NATIVE_TYPE_FIXEDARRAY`|A fixed-length array value.|  
-|`NATIVE_TYPE_INT`|A native 16-bit signed integer value.|  
-|`NATIVE_TYPE_UINT`|A native 16-bit unsigned integer value.|  
-|`NATIVE_TYPE_NESTEDSTRUCT`|Zastaralé.<br /><br /> Use NATIVE_TYPE_STRUCT.|  
-|`NATIVE_TYPE_BYVALSTR`|COM Interop.|  
-|`NATIVE_TYPE_ANSIBSTR`|COM Interop.|  
-|`NATIVE_TYPE_TBSTR`|COM Interop.<br /><br /> Select BSTR or ANSIBSTR depending on the platform.|  
-|`NATIVE_TYPE_VARIANTBOOL`|A 2-byte Boolean value, where TRUE is -1 and FALSE is zero.|  
-|`NATIVE_TYPE_FUNC`|A function pointer.|  
-|`NATIVE_TYPE_ASANY`|A reference to any native type.|  
-|`NATIVE_TYPE_ARRAY`|A reference to an array with members of an unspecified type.|  
-|`NATIVE_TYPE_LPSTRUCT`|A 32-bit integer pointer to a structure.|  
-|`NATIVE_TYPE_CUSTOMMARSHALER`|A custom marshaler native type.<br /><br /> This must be followed by a string of the following format: "Native type name/0Custom marshaler type name/0Optional cookie/0" or "{Native type GUID}/0Custom marshaler type name/0Optional cookie/0"|  
-|`NATIVE_TYPE_ERROR`|COM Interop.<br /><br /> With ELEMENT_TYPE_I4 this type maps to VT_HRESULT.|  
-|`NATIVE_TYPE_IINSPECTABLE`|A native `IInspectable` type.|  
-|`NATIVE_TYPE_HSTRING`|A native `HString`.|  
-|`NATIVE_TYPE_MAX`|An invalid value.|  
+|`NATIVE_TYPE_IUNKNOWN`|Zprostředkovatel komunikace s objekty COM.|  
+|`NATIVE_TYPE_IDISPATCH`|Zprostředkovatel komunikace s objekty COM.|  
+|`NATIVE_TYPE_STRUCT`|Hodnota nativní struktury.|  
+|`NATIVE_TYPE_INTF`|Zprostředkovatel komunikace s objekty COM.|  
+|`NATIVE_TYPE_SAFEARRAY`|Zprostředkovatel komunikace s objekty COM.|  
+|`NATIVE_TYPE_FIXEDARRAY`|Hodnota pole s pevnou délkou.|  
+|`NATIVE_TYPE_INT`|Nativní 16bitové celočíselné hodnoty se znaménkem.|  
+|`NATIVE_TYPE_UINT`|Nativní 16bitová hodnota unsigned integer.|  
+|`NATIVE_TYPE_NESTEDSTRUCT`|Zastaralé.<br /><br /> Použijte NATIVE_TYPE_STRUCT.|  
+|`NATIVE_TYPE_BYVALSTR`|Zprostředkovatel komunikace s objekty COM.|  
+|`NATIVE_TYPE_ANSIBSTR`|Zprostředkovatel komunikace s objekty COM.|  
+|`NATIVE_TYPE_TBSTR`|Zprostředkovatel komunikace s objekty COM.<br /><br /> V závislosti na platformě vyberte BSTR nebo ANSIBSTR.|  
+|`NATIVE_TYPE_VARIANTBOOL`|Logická hodnota 2 bajtů, kde TRUE je-1 a FALSE je nula.|  
+|`NATIVE_TYPE_FUNC`|Ukazatel na funkci.|  
+|`NATIVE_TYPE_ASANY`|Odkaz na jakýkoliv nativní typ.|  
+|`NATIVE_TYPE_ARRAY`|Odkaz na pole se členy nespecifikovaného typu.|  
+|`NATIVE_TYPE_LPSTRUCT`|Ne32ý celočíselný ukazatel na strukturu.|  
+|`NATIVE_TYPE_CUSTOMMARSHALER`|Vlastní nativní typ zařazovacího modulu.<br /><br /> Musí následovat řetězec v následujícím formátu: "název nativního typu/0Custom zařazovacího typu/0Optional soubor cookie/0" nebo "{Native GUID} název typu/0Optional soubor cookie/0"|  
+|`NATIVE_TYPE_ERROR`|Zprostředkovatel komunikace s objekty COM.<br /><br /> ELEMENT_TYPE_I4 tento typ mapuje na VT_HRESULT.|  
+|`NATIVE_TYPE_IINSPECTABLE`|Nativní typ `IInspectable`.|  
+|`NATIVE_TYPE_HSTRING`|Nativní `HString`.|  
+|`NATIVE_TYPE_MAX`|Neplatná hodnota.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **Hlavička:** CorHdr. h  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

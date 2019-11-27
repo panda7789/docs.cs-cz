@@ -13,18 +13,18 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344389"
 ---
 # <a name="how-to-create-a-string-from-an-array-of-char-values-visual-basic"></a>Postupy: Vytvoření řetězce z pole znakových hodnot (Visual Basic)
-This example creates the string "abcd" from individual characters.  
+Tento příklad vytvoří řetězec "abcd" z jednotlivých znaků.  
   
 ## <a name="example"></a>Příklad  
  [!code-vb[VbVbalrStrings#61](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#61)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- This method has no special requirements.  
+ Tato metoda nemá žádné zvláštní požadavky.  
   
- The syntax `"a"c`, where a single `c` follows a single character in quotation marks, is used to create a character literal.  
+ Syntaxe `"a"c`, kde jedna `c` sleduje jeden znak v uvozovkách, slouží k vytvoření znakového literálu.  
   
 ## <a name="robust-programming"></a>Robustní programování  
- Null characters (equivalent to `Chr(0)`) in the string lead to unexpected results when using the string. The null character will be included with the string, but characters following the null character will not be displayed in some situations.  
+ Znaky null (ekvivalentní `Chr(0)`) v řetězci mají za následek neočekávané výsledky při použití řetězce. Znak null bude zahrnut spolu s řetězcem, ale v některých situacích se nezobrazí znaky, které následují za znakem null.  
   
 ## <a name="see-also"></a>Viz také:
 

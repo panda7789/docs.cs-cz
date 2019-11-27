@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74438125"
 ---
 # <a name="isymunmanagedwriter3openmethod2-method"></a>ISymUnmanagedWriter3::OpenMethod2 – metoda
-Opens a method and provides its real section offset in the image.  
+Otevře metodu a poskytne její skutečný posun oddílu v obrázku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,19 +36,19 @@ HRESULT OpenMethod2(
   
 ## <a name="parameters"></a>Parametry  
  `method`  
- [in] The metadata token for the method to be opened.  
+ pro Token metadat pro metodu, která se má otevřít  
   
  `isect`  
- [in] The section offset in the image.  
+ pro Posun oddílu v obrázku  
   
  `offset`  
- [in] The offset in the image.  
+ pro Posun v obrázku  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

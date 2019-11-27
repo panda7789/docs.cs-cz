@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448306"
 ---
 # <a name="isymunmanagedreadergetdocumentversion-method"></a>ISymUnmanagedReader::GetDocumentVersion – metoda
-Gets the specified version of the specified document. The document version starts at 1 and is incremented each time the document is updated using the [UpdateSymbolStore](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-updatesymbolstore-method.md) method. If the `pbCurrent` parameter is `true`, this is the latest version of the document.  
+Načte zadanou verzi zadaného dokumentu. Verze dokumentu začíná 1 a při každém aktualizování dokumentu pomocí metody [UpdateSymbolStore –](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-updatesymbolstore-method.md) se zvýší. Pokud je parametr `pbCurrent` `true`, jedná se o nejnovější verzi dokumentu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,19 +36,19 @@ HRESULT GetDocumentVersion (
   
 ## <a name="parameters"></a>Parametry  
  `pDoc`  
- [in] The specified document.  
+ pro Zadaný dokument.  
   
  `version`  
- [out] A pointer to a variable that receives the version of the specified document.  
+ mimo Ukazatel na proměnnou, která přijímá verzi zadaného dokumentu.  
   
  `pbCurrent`  
- [out] A pointer to a variable that receives `true` if this is the latest version of the document, or `false` if it isn't the latest version.  
+ mimo Ukazatel na proměnnou, která přijímá `true`, pokud se jedná o nejnovější verzi dokumentu, nebo `false`, pokud se nejedná o nejnovější verzi.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

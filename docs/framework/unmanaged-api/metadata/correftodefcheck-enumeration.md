@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450131"
 ---
 # <a name="correftodefcheck-enumeration"></a>CorRefToDefCheck – výčet
-Specifies flags to control which referenced items are converted to their definitions in order to optimize the code.  
+Určuje příznaky pro řízení, které odkazované položky jsou převedeny na jejich definice za účelem optimalizace kódu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,18 +40,18 @@ typedef enum CorRefToDefCheck {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`MDRefToDefDefault`|Specifies that type references and member references should be converted to definitions. This is the default value (`MDTypeRefToDef` &#124; `MDMemberRefToDef`).|  
-|`MDRefToDefAll`|Specifies that all referenced items should be converted to definitions.|  
-|`MDRefToDefNone`|Specifies that no referenced items should be converted to definitions.|  
-|`MDTypeRefToDef`|Specifies that only type references should be converted to type definitions.|  
-|`MDMemberRefToDef`|Specifies that only member references should be converted to definitions. That is, member references should be converted to either method definitions or field definitions.|  
+|`MDRefToDefDefault`|Určuje, že se odkazy na typy a odkazy členů mají převést na definice. Toto je výchozí hodnota (`MDTypeRefToDef` &#124; `MDMemberRefToDef`).|  
+|`MDRefToDefAll`|Určuje, že všechny odkazované položky by měly být převedeny na definice.|  
+|`MDRefToDefNone`|Určuje, že žádné odkazované položky by měly být převedeny na definice.|  
+|`MDTypeRefToDef`|Určuje, že se mají převést pouze odkazy typu na definice typu.|  
+|`MDMemberRefToDef`|Určuje, že by měly být převedeny pouze odkazy členů na definice. To znamená, že odkazy členů by měly být převedeny na buď definice metod, nebo definice polí.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **Hlavička:** CorHdr. h  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

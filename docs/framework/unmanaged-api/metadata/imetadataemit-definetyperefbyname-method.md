@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74434379"
 ---
 # <a name="imetadataemitdefinetyperefbyname-method"></a>IMetaDataEmit::DefineTypeRefByName – metoda
-Gets a metadata token for a type that is defined in the specified scope, which is outside the current scope.  
+Získá token metadat pro typ, který je definován v zadaném oboru, který je mimo aktuální obor.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,32 +37,32 @@ HRESULT DefineTypeRefByName (
   
 ## <a name="parameters"></a>Parametry  
  `tkResolutionScope`  
- [in] The token specifying the resolution scope. The following token types are valid:  
+ pro Token určující rozlišovací obor. Platné jsou následující typy tokenů:  
   
-- `mdModuleRef`, if the type is defined in the same assembly in which the caller is defined.  
+- `mdModuleRef`, pokud je typ definován ve stejném sestavení, ve kterém je definován volající.  
   
-- `mdAssemblyRef`, if the type is defined in an assembly other than the one in which the caller is defined.  
+- `mdAssemblyRef`, pokud je typ definován v jiném sestavení, než v němž je definován volající.  
   
-- `mdTypeRef`, if the type is a nested type.  
+- `mdTypeRef`, pokud je typ vnořený typ.  
   
-- `mdModule`, if the type is defined in the same module in which the caller is defined.  
+- `mdModule`, pokud je typ definován ve stejném modulu, ve kterém je definován volající.  
   
-- Null, if the type is defined globally.  
+- Null, pokud je typ definován globálně.  
   
  `szName`  
- [in] The name of the target type in Unicode.  
+ pro Název cílového typu v kódování Unicode.  
   
  `ptr`  
- [out] A pointer to the `mdTypeRef` token that is assigned to the type.  
+ mimo Ukazatel na token `mdTypeRef`, který je přiřazen k typu.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74442864"
 ---
 # <a name="icorprofilerinfo4getrejitids-method"></a>ICorProfilerInfo4::GetReJITIDs – metoda
-Returns an array of IDs that identify all JIT-recompiled versions of the specified function that are still allocated. This includes JIT-recompiled versions of functions that have been subsequently reverted but not yet freed (for example, when the application domain that contains the reverted function is still in use).  
+Vrátí pole ID, které identifikují všechny verze rekompilovaných kompilátorů JIT zadané funkce, které jsou stále přiděleny. To zahrnuje verze rekompilovaných funkcí JIT, které byly následně obnoveny, ale nebyly dosud uvolněny (například pokud je stále používána doména aplikace obsahující vrácená funkce).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,28 +37,28 @@ HRESULT GetReJITIDs (
   
 ## <a name="parameters"></a>Parametry  
  `functionId`  
- [in] The `FunctionID` of the function instance for which to enumerate versions.  
+ pro `FunctionID` instance funkce, pro kterou chcete vytvořit výčet verzí.  
   
  `cReJitIds`  
- [in] The number of JIT-recompiled IDs allocated in the `reJitIds` array.  
+ pro Počet ID rekompilovaných rekompilovaných JIT přidělených v poli `reJitIds`.  
   
  `pcReJitIds`  
- [out] The actual number of JIT-recompiled IDs.  
+ mimo Skutečný počet rekompilovaných ID JIT.  
   
  `reJitIds`  
- [out] A caller-allocated array that will contain the JIT-recompiled IDs for the specified function.  
+ mimo Pole přidělené volajícím, které bude obsahovat ID rekompilovaných JIT pro danou funkci.  
   
 ## <a name="remarks"></a>Poznámky  
- `GetReJITIDs` enumerates the active JIT-recompiled IDs for a given function instance. It follows the same usage pattern as other `ICorProfilerInfo` functions that accept caller-allocated buffers.  
+ `GetReJITIDs` vytvoří výčet aktivních rekompilovaných ID JIT pro danou instanci funkce. Řídí se stejným vzorem použití jako s jinými `ICorProfilerInfo` funkcemi, které přijímají vyrovnávací paměti přidělené volajícím.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

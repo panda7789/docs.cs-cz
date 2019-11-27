@@ -12,25 +12,25 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74329556"
 ---
 # <a name="error-in-loading-dll-visual-basic"></a>Chyba při načítání knihovny DLL (Visual Basic)
-A dynamic-link library (DLL) is a library specified in the `Lib` clause of a `Declare` statement. Possible causes for this error include:  
+Knihovna DLL (Dynamic-Link Library) je knihovna určená v klauzuli `Lib` příkazu `Declare`. Mezi možné příčiny této chyby patří:  
   
-- The file is not DLL executable.  
+- Soubor není spustitelný soubor DLL.  
   
-- The file is not a Microsoft Windows DLL.  
+- Soubor není knihovna DLL systému Microsoft Windows.  
   
-- The DLL references another DLL that is not present.  
+- Knihovna DLL odkazuje na jinou knihovnu DLL, která není k dispozici.  
   
-- The DLL or referenced DLL is not in a directory specified in the path.  
+- Knihovna DLL nebo odkazovaná knihovna DLL nejsou v adresáři zadaném v cestě.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
-- If the file is a source-text file and therefore not DLL executable, it must be compiled and linked to a DLL-executable form.  
+- Pokud se jedná o zdrojový textový soubor, a proto ne spustitelný soubor DLL, musí být zkompilován a propojen s formulářem spustitelného souboru DLL.  
   
-- If the file is not a Microsoft Windows DLL, obtain the Microsoft Windows equivalent.  
+- Pokud soubor není knihovna DLL systému Microsoft Windows, Získejte ekvivalent systému Microsoft Windows.  
   
-- If the DLL references another DLL that is not present, obtain the referenced DLL and make it available.  
+- Pokud knihovna DLL odkazuje na jinou knihovnu DLL, která není k dispozici, Získejte odkazovanou knihovnu DLL a zpřístupněte ji.  
   
-- If the DLL or referenced DLL is not in a directory specified by the path, move the DLL to a referenced directory.  
+- Pokud knihovna DLL nebo odkazovaná knihovna DLL není v adresáři určeném cestou, přesuňte knihovnu DLL do odkazovaného adresáře.  
   
 ## <a name="see-also"></a>Viz také:
 

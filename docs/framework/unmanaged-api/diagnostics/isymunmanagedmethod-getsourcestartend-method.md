@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448860"
 ---
 # <a name="isymunmanagedmethodgetsourcestartend-method"></a>ISymUnmanagedMethod::GetSourceStartEnd – metoda
-Gets the start and end document positions for the source of this method. The first array position is the start, and the second array position is the end.  
+Získá pozice počátečního a koncového dokumentu pro zdroj této metody. První pozice pole je začátek a druhá pozice pole je konec.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,22 +37,22 @@ HRESULT GetSourceStartEnd(
   
 ## <a name="parameters"></a>Parametry  
  `docs`  
- [in] The starting and ending source documents.  
+ pro Počáteční a koncové zdrojové dokumenty.  
   
  `lines`  
- [in] The starting and ending lines in the corresponding source documents.  
+ pro Počáteční a koncové řádky v odpovídajících zdrojových dokumentech.  
   
  `columns`  
- [in] The starting and ending columns in the corresponding source documents.  
+ pro Počáteční a koncové sloupce v odpovídajících zdrojových dokumentech.  
   
  `pRetVal`  
- [out] `true` if positions were defined; otherwise, `false`.  
+ [out] `true`, pokud byly definovány pozice; v opačném případě `false`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

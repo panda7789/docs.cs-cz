@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450109"
 ---
 # <a name="corregflags-enumeration"></a>CorRegFlags – výčet
-Provides flag values used for registration when installing a module or composite image.  
+Poskytuje hodnoty příznaku používané k registraci při instalaci modulu nebo složené image.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,18 +39,18 @@ typedef enum
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`regNoCopy`|Specifies that files should not be copied into the destination.|  
-|`regConfig`|Specifies that the module or composite is a configuration.|  
-|`regHasRefs`|Specifies that the module or composite has class references.|  
+|`regNoCopy`|Určuje, že soubory by neměly být kopírovány do cílového umístění.|  
+|`regConfig`|Určuje, že modul nebo kompozitní je konfigurace.|  
+|`regHasRefs`|Určuje, že modul nebo složený z odkazů na třídy.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **Hlavička:** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Knihovna:** Zahrnuto jako prostředek v knihovně MsCorEE. dll  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

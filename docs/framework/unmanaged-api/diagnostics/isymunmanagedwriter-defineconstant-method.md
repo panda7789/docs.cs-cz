@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74428058"
 ---
 # <a name="isymunmanagedwriterdefineconstant-method"></a>ISymUnmanagedWriter::DefineConstant – metoda
-Defines a name for a constant value.  
+Definuje název pro konstantní hodnotu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,22 +37,22 @@ HRESULT DefineConstant(
   
 ## <a name="parameters"></a>Parametry  
  `name`  
- [in] A pointer to a `WCHAR` that defines the constant name.  
+ pro Ukazatel na `WCHAR`, který definuje název konstanty.  
   
  `value`  
- [in] The value of the constant.  
+ pro Hodnota konstanty.  
   
  `cSig`  
- [in] The size of the `signature` array.  
+ pro Velikost pole `signature`.  
   
  `signature`  
- [in] The type signature for the constant.  
+ pro Podpis typu konstanty.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 

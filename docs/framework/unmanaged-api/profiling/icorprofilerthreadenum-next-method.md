@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74447607"
 ---
 # <a name="icorprofilerthreadenumnext-method"></a>ICorProfilerThreadEnum::Next – metoda
-Gets the specified number of contiguous threads from a sequential collection of threads, starting at the enumerator's current position in the sequence.  
+Získá zadaný počet souvislých vláken ze sekvenční kolekce vláken počínaje aktuální pozicí čítače výčtu v sekvenci.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,30 +37,30 @@ HRESULT Next (    [in]  ULONG      celt,
   
 ## <a name="parameters"></a>Parametry  
  `celt`  
- [in] The number of threads to retrieve.  
+ pro Počet vláken, která se mají načíst.  
   
  `ids`  
- [out] An array of `ThreadID` values, each of which represents a retrieved thread.  
+ mimo Pole hodnot `ThreadID`, z nichž každá představuje načtené vlákno.  
   
  `pceltFetched`  
- [out] A pointer to the number of threads actually returned in the `ids` array.  
+ mimo Ukazatel na počet vláken skutečně vrácených v poli `ids`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- This method returns the following specific HRESULTs as well as HRESULT errors that indicate method failure.  
+ Tato metoda vrací následující konkrétní hodnoty HRESULT a také chyby HRESULT, které naznačují selhání metody.  
   
 |HRESULT|Popis|  
 |-------------|-----------------|  
-|S_OK|`celt` elements were returned.|  
-|S_FALSE|Fewer than `celt` elements were returned, which indicates that the enumeration is complete.|  
+|S_OK|byly vráceny `celt` prvky.|  
+|S_FALSE|Bylo vráceno méně než `celt` prvků, což naznačuje, že byl výčet dokončen.|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl, CorProf.h  
+ **Hlavička:** CorProf. idl, CorProf. h  
   
- **Library:** CorGuids.lib  
+ **Knihovna:** CorGuids. lib  
   
- **.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 

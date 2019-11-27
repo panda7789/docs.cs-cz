@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446326"
 ---
 # <a name="isymunmanagedscopegetlocals-method"></a>ISymUnmanagedScope::GetLocals – metoda
-Gets the local variables defined within this scope.  
+Získá místní proměnné definované v rámci tohoto oboru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,19 +37,19 @@ HRESULT GetLocals(
   
 ## <a name="parameters"></a>Parametry  
  `cLocals`  
- [in] A `ULONG32` that indicates the size of the `locals` array.  
+ pro `ULONG32`, která určuje velikost `locals` pole.  
   
  `pcLocals`  
- [out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the local variables.  
+ mimo Ukazatel na `ULONG32`, který přijímá velikost vyrovnávací paměti vyžadované k uložení místních proměnných.  
   
  `locals`  
- [out] The array that receives the local variables.  
+ mimo Pole, které přijímá místní proměnné.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK, pokud je metoda úspěšná; v opačném případě E_FAIL nebo nějaký jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
- **Header:** CorSym.idl, CorSym.h  
+ **Hlavička:** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Viz také:
 
