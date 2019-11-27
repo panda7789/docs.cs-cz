@@ -22,10 +22,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74434312"
 ---
-# <a name="imetadataemitgettokenfromsig-method"></a><span data-ttu-id="40298-102">IMetaDataEmit::GetTokenFromSig – metoda</span><span class="sxs-lookup"><span data-stu-id="40298-102">IMetaDataEmit::GetTokenFromSig Method</span></span>
-<span data-ttu-id="40298-103">Gets a token for the specified metadata signature.</span><span class="sxs-lookup"><span data-stu-id="40298-103">Gets a token for the specified metadata signature.</span></span>  
+# <a name="imetadataemitgettokenfromsig-method"></a><span data-ttu-id="5adad-102">IMetaDataEmit::GetTokenFromSig – metoda</span><span class="sxs-lookup"><span data-stu-id="5adad-102">IMetaDataEmit::GetTokenFromSig Method</span></span>
+<span data-ttu-id="5adad-103">Získá token pro zadaný podpis metadat.</span><span class="sxs-lookup"><span data-stu-id="5adad-103">Gets a token for the specified metadata signature.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="40298-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="40298-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="5adad-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5adad-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetTokenFromSig (   
@@ -35,26 +35,26 @@ HRESULT GetTokenFromSig (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="40298-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="40298-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="5adad-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="5adad-105">Parameters</span></span>  
  `pvSig`  
- <span data-ttu-id="40298-106">[in] The signature to be persisted and stored.</span><span class="sxs-lookup"><span data-stu-id="40298-106">[in] The signature to be persisted and stored.</span></span>  
+ <span data-ttu-id="5adad-106">pro Signatura, která se má zachovat a uložit.</span><span class="sxs-lookup"><span data-stu-id="5adad-106">[in] The signature to be persisted and stored.</span></span>  
   
  `cbSig`  
- <span data-ttu-id="40298-107">[in] The count of bytes in `pvSig`.</span><span class="sxs-lookup"><span data-stu-id="40298-107">[in] The count of bytes in `pvSig`.</span></span>  
+ <span data-ttu-id="5adad-107">pro Počet bajtů v `pvSig`.</span><span class="sxs-lookup"><span data-stu-id="5adad-107">[in] The count of bytes in `pvSig`.</span></span>  
   
  `pmsig`  
- <span data-ttu-id="40298-108">[out] The `mdSignature` token assigned.</span><span class="sxs-lookup"><span data-stu-id="40298-108">[out] The `mdSignature` token assigned.</span></span>  
+ <span data-ttu-id="5adad-108">mimo Byl přiřazen token `mdSignature`.</span><span class="sxs-lookup"><span data-stu-id="5adad-108">[out] The `mdSignature` token assigned.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="40298-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="40298-109">Requirements</span></span>  
- <span data-ttu-id="40298-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="40298-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="5adad-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5adad-109">Requirements</span></span>  
+ <span data-ttu-id="5adad-110">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5adad-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="40298-111">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="40298-111">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="5adad-111">**Hlavička:** Cor. h</span><span class="sxs-lookup"><span data-stu-id="5adad-111">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="40298-112">**Library:** Used as a resource in MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="40298-112">**Library:** Used as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="5adad-112">**Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.</span><span class="sxs-lookup"><span data-stu-id="5adad-112">**Library:** Used as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="40298-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="40298-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="5adad-113">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="5adad-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="40298-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="40298-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5adad-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5adad-114">See also</span></span>
 
-- [<span data-ttu-id="40298-115">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="40298-115">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [<span data-ttu-id="40298-116">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="40298-116">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [<span data-ttu-id="5adad-115">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="5adad-115">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [<span data-ttu-id="5adad-116">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="5adad-116">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

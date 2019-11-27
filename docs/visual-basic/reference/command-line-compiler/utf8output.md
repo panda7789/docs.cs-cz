@@ -13,33 +13,33 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350839"
 ---
-# <a name="-utf8output-visual-basic"></a><span data-ttu-id="fa877-102">-utf8output (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="fa877-102">-utf8output (Visual Basic)</span></span>
-<span data-ttu-id="fa877-103">Displays compiler output using UTF-8 encoding.</span><span class="sxs-lookup"><span data-stu-id="fa877-103">Displays compiler output using UTF-8 encoding.</span></span>  
+# <a name="-utf8output-visual-basic"></a><span data-ttu-id="7ecc8-102">-Utf8Output – (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7ecc8-102">-utf8output (Visual Basic)</span></span>
+<span data-ttu-id="7ecc8-103">Zobrazí výstup kompilátoru pomocí kódování UTF-8.</span><span class="sxs-lookup"><span data-stu-id="7ecc8-103">Displays compiler output using UTF-8 encoding.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="fa877-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="fa877-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="7ecc8-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7ecc8-104">Syntax</span></span>  
   
 ```console  
 -utf8output[+ | -]  
 ```  
   
-## <a name="arguments"></a><span data-ttu-id="fa877-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="fa877-105">Arguments</span></span>  
- <span data-ttu-id="fa877-106">`+` &#124; `-`</span><span class="sxs-lookup"><span data-stu-id="fa877-106">`+` &#124; `-`</span></span>  
- <span data-ttu-id="fa877-107">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="fa877-107">Optional.</span></span> <span data-ttu-id="fa877-108">The default for this option is `-utf8output-`, which means compiler output does not use UTF-8 encoding.</span><span class="sxs-lookup"><span data-stu-id="fa877-108">The default for this option is `-utf8output-`, which means compiler output does not use UTF-8 encoding.</span></span> <span data-ttu-id="fa877-109">Specifying `-utf8output` is the same as specifying `-utf8output+`.</span><span class="sxs-lookup"><span data-stu-id="fa877-109">Specifying `-utf8output` is the same as specifying `-utf8output+`.</span></span>  
+## <a name="arguments"></a><span data-ttu-id="7ecc8-105">Argumenty</span><span class="sxs-lookup"><span data-stu-id="7ecc8-105">Arguments</span></span>  
+ <span data-ttu-id="7ecc8-106">`+` &#124; `-`</span><span class="sxs-lookup"><span data-stu-id="7ecc8-106">`+` &#124; `-`</span></span>  
+ <span data-ttu-id="7ecc8-107">Volitelná.</span><span class="sxs-lookup"><span data-stu-id="7ecc8-107">Optional.</span></span> <span data-ttu-id="7ecc8-108">Výchozí hodnota pro tuto možnost je `-utf8output-`, což znamená, že výstup kompilátoru nepoužívá kódování UTF-8.</span><span class="sxs-lookup"><span data-stu-id="7ecc8-108">The default for this option is `-utf8output-`, which means compiler output does not use UTF-8 encoding.</span></span> <span data-ttu-id="7ecc8-109">Určení `-utf8output` je stejné jako určení `-utf8output+`.</span><span class="sxs-lookup"><span data-stu-id="7ecc8-109">Specifying `-utf8output` is the same as specifying `-utf8output+`.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="fa877-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="fa877-110">Remarks</span></span>  
- <span data-ttu-id="fa877-111">In some international configurations, compiler output cannot be displayed correctly in the console.</span><span class="sxs-lookup"><span data-stu-id="fa877-111">In some international configurations, compiler output cannot be displayed correctly in the console.</span></span> <span data-ttu-id="fa877-112">In such situations, use `-utf8output` and redirect compiler output to a file.</span><span class="sxs-lookup"><span data-stu-id="fa877-112">In such situations, use `-utf8output` and redirect compiler output to a file.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="7ecc8-110">Poznámky</span><span class="sxs-lookup"><span data-stu-id="7ecc8-110">Remarks</span></span>  
+ <span data-ttu-id="7ecc8-111">V některých mezinárodních konfiguracích nelze výstup kompilátoru v konzole zobrazit správně.</span><span class="sxs-lookup"><span data-stu-id="7ecc8-111">In some international configurations, compiler output cannot be displayed correctly in the console.</span></span> <span data-ttu-id="7ecc8-112">V takových situacích použijte `-utf8output` a přesměrujte výstup kompilátoru do souboru.</span><span class="sxs-lookup"><span data-stu-id="7ecc8-112">In such situations, use `-utf8output` and redirect compiler output to a file.</span></span>  
   
 > [!NOTE]
-> <span data-ttu-id="fa877-113">The `-utf8output` option is not available from within the Visual Studio development environment; it is available only when compiling from the command line.</span><span class="sxs-lookup"><span data-stu-id="fa877-113">The `-utf8output` option is not available from within the Visual Studio development environment; it is available only when compiling from the command line.</span></span>  
+> <span data-ttu-id="7ecc8-113">Možnost `-utf8output` není k dispozici ve vývojovém prostředí sady Visual Studio; je k dispozici pouze při kompilaci z příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="7ecc8-113">The `-utf8output` option is not available from within the Visual Studio development environment; it is available only when compiling from the command line.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="fa877-114">Příklad</span><span class="sxs-lookup"><span data-stu-id="fa877-114">Example</span></span>  
- <span data-ttu-id="fa877-115">The following code compiles `In.vb` and directs the compiler to display output using UTF-8 encoding.</span><span class="sxs-lookup"><span data-stu-id="fa877-115">The following code compiles `In.vb` and directs the compiler to display output using UTF-8 encoding.</span></span>  
+## <a name="example"></a><span data-ttu-id="7ecc8-114">Příklad</span><span class="sxs-lookup"><span data-stu-id="7ecc8-114">Example</span></span>  
+ <span data-ttu-id="7ecc8-115">Následující kód zkompiluje `In.vb` a nasměruje kompilátor, aby zobrazoval výstup pomocí kódování UTF-8.</span><span class="sxs-lookup"><span data-stu-id="7ecc8-115">The following code compiles `In.vb` and directs the compiler to display output using UTF-8 encoding.</span></span>  
   
 ```console  
 vbc -utf8output in.vb  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="fa877-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="fa877-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7ecc8-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7ecc8-116">See also</span></span>
 
-- [<span data-ttu-id="fa877-117">Visual Basic Command-Line Compiler</span><span class="sxs-lookup"><span data-stu-id="fa877-117">Visual Basic Command-Line Compiler</span></span>](../../../visual-basic/reference/command-line-compiler/index.md)
-- [<span data-ttu-id="fa877-118">Příkazové řádky ukázkové kompilace</span><span class="sxs-lookup"><span data-stu-id="fa877-118">Sample Compilation Command Lines</span></span>](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [<span data-ttu-id="7ecc8-117">Visual Basic Kompilátor příkazového řádku</span><span class="sxs-lookup"><span data-stu-id="7ecc8-117">Visual Basic Command-Line Compiler</span></span>](../../../visual-basic/reference/command-line-compiler/index.md)
+- [<span data-ttu-id="7ecc8-118">Příkazové řádky ukázkové kompilace</span><span class="sxs-lookup"><span data-stu-id="7ecc8-118">Sample Compilation Command Lines</span></span>](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

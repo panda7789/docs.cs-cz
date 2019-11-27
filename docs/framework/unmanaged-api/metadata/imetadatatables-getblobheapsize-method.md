@@ -22,10 +22,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74442036"
 ---
-# <a name="imetadatatablesgetblobheapsize-method"></a><span data-ttu-id="5e295-102">IMetaDataTables::GetBlobHeapSize – metoda</span><span class="sxs-lookup"><span data-stu-id="5e295-102">IMetaDataTables::GetBlobHeapSize Method</span></span>
-<span data-ttu-id="5e295-103">Gets the size, in bytes, of the binary large object (BLOB) heap.</span><span class="sxs-lookup"><span data-stu-id="5e295-103">Gets the size, in bytes, of the binary large object (BLOB) heap.</span></span>  
+# <a name="imetadatatablesgetblobheapsize-method"></a><span data-ttu-id="f29a6-102">IMetaDataTables::GetBlobHeapSize – metoda</span><span class="sxs-lookup"><span data-stu-id="f29a6-102">IMetaDataTables::GetBlobHeapSize Method</span></span>
+<span data-ttu-id="f29a6-103">Získá velikost haldy binárních rozsáhlých objektů (BLOB) v bajtech.</span><span class="sxs-lookup"><span data-stu-id="f29a6-103">Gets the size, in bytes, of the binary large object (BLOB) heap.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="5e295-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5e295-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f29a6-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f29a6-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetBlobHeapSize (  
@@ -33,20 +33,20 @@ HRESULT GetBlobHeapSize (
 );   
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="5e295-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="5e295-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="f29a6-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="f29a6-105">Parameters</span></span>  
  `pcbBlobs`  
- <span data-ttu-id="5e295-106">[out] A pointer to the size, in bytes, of the BLOB heap.</span><span class="sxs-lookup"><span data-stu-id="5e295-106">[out] A pointer to the size, in bytes, of the BLOB heap.</span></span>  
+ <span data-ttu-id="f29a6-106">mimo Ukazatel na velikost haldy objektů BLOB v bajtech.</span><span class="sxs-lookup"><span data-stu-id="f29a6-106">[out] A pointer to the size, in bytes, of the BLOB heap.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="5e295-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="5e295-107">Requirements</span></span>  
- <span data-ttu-id="5e295-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5e295-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="f29a6-107">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f29a6-107">Requirements</span></span>  
+ <span data-ttu-id="f29a6-108">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f29a6-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="5e295-109">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="5e295-109">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="f29a6-109">**Hlavička:** Cor. h</span><span class="sxs-lookup"><span data-stu-id="f29a6-109">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="5e295-110">**Library:** Used as a resource in MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="5e295-110">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="f29a6-110">**Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.</span><span class="sxs-lookup"><span data-stu-id="f29a6-110">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="5e295-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="5e295-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="f29a6-111">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f29a6-111">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5e295-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5e295-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f29a6-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f29a6-112">See also</span></span>
 
-- [<span data-ttu-id="5e295-113">IMetaDataTables – rozhraní</span><span class="sxs-lookup"><span data-stu-id="5e295-113">IMetaDataTables Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)
-- [<span data-ttu-id="5e295-114">IMetaDataTables2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="5e295-114">IMetaDataTables2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)
+- [<span data-ttu-id="f29a6-113">IMetaDataTables – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f29a6-113">IMetaDataTables Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)
+- [<span data-ttu-id="f29a6-114">IMetaDataTables2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f29a6-114">IMetaDataTables2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)

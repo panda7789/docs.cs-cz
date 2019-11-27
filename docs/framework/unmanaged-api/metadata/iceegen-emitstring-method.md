@@ -22,12 +22,12 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436379"
 ---
-# <a name="iceegenemitstring-method"></a><span data-ttu-id="2071e-102">ICeeGen::EmitString – metoda</span><span class="sxs-lookup"><span data-stu-id="2071e-102">ICeeGen::EmitString Method</span></span>
-<span data-ttu-id="2071e-103">Emits the specified string into the code base.</span><span class="sxs-lookup"><span data-stu-id="2071e-103">Emits the specified string into the code base.</span></span>  
+# <a name="iceegenemitstring-method"></a><span data-ttu-id="44c16-102">ICeeGen::EmitString – metoda</span><span class="sxs-lookup"><span data-stu-id="44c16-102">ICeeGen::EmitString Method</span></span>
+<span data-ttu-id="44c16-103">Vygeneruje zadaný řetězec do základu kódu.</span><span class="sxs-lookup"><span data-stu-id="44c16-103">Emits the specified string into the code base.</span></span>  
   
- <span data-ttu-id="2071e-104">This method is obsolete and should not be used.</span><span class="sxs-lookup"><span data-stu-id="2071e-104">This method is obsolete and should not be used.</span></span>  
+ <span data-ttu-id="44c16-104">Tato metoda je zastaralá a neměla by se používat.</span><span class="sxs-lookup"><span data-stu-id="44c16-104">This method is obsolete and should not be used.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="2071e-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2071e-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="44c16-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="44c16-105">Syntax</span></span>  
   
 ```cpp  
 HRESULT EmitString (  
@@ -36,22 +36,22 @@ HRESULT EmitString (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="2071e-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="2071e-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="44c16-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="44c16-106">Parameters</span></span>  
  `lpString`  
- <span data-ttu-id="2071e-107">[in] The string to emit.</span><span class="sxs-lookup"><span data-stu-id="2071e-107">[in] The string to emit.</span></span>  
+ <span data-ttu-id="44c16-107">pro Řetězec, který se má vygenerovat</span><span class="sxs-lookup"><span data-stu-id="44c16-107">[in] The string to emit.</span></span>  
   
  `RVA`  
- <span data-ttu-id="2071e-108">[out] The relative virtual address of the emitted string.</span><span class="sxs-lookup"><span data-stu-id="2071e-108">[out] The relative virtual address of the emitted string.</span></span>  
+ <span data-ttu-id="44c16-108">mimo Relativní virtuální adresa emitovaného řetězce.</span><span class="sxs-lookup"><span data-stu-id="44c16-108">[out] The relative virtual address of the emitted string.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="2071e-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2071e-109">Requirements</span></span>  
- <span data-ttu-id="2071e-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2071e-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="44c16-109">Požadavky</span><span class="sxs-lookup"><span data-stu-id="44c16-109">Requirements</span></span>  
+ <span data-ttu-id="44c16-110">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="44c16-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="2071e-111">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="2071e-111">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="44c16-111">**Hlavička:** Cor. h</span><span class="sxs-lookup"><span data-stu-id="44c16-111">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="2071e-112">**Library:** Used as a resource in MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="2071e-112">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="44c16-112">**Knihovna:** Používá se jako prostředek v knihovně MsCorEE. dll.</span><span class="sxs-lookup"><span data-stu-id="44c16-112">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="2071e-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="2071e-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="44c16-113">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="44c16-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="2071e-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2071e-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="44c16-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="44c16-114">See also</span></span>
 
-- [<span data-ttu-id="2071e-115">ICeeGen – rozhraní</span><span class="sxs-lookup"><span data-stu-id="2071e-115">ICeeGen Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)
+- [<span data-ttu-id="44c16-115">ICeeGen – rozhraní</span><span class="sxs-lookup"><span data-stu-id="44c16-115">ICeeGen Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md)

@@ -22,10 +22,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445441"
 ---
-# <a name="imetadataemitsetmoduleprops-method"></a><span data-ttu-id="f2d65-102">IMetaDataEmit::SetModuleProps – metoda</span><span class="sxs-lookup"><span data-stu-id="f2d65-102">IMetaDataEmit::SetModuleProps Method</span></span>
-<span data-ttu-id="f2d65-103">Updates references to a module defined by a prior call to [IMetaDataEmit::DefineModuleRef](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definemoduleref-method.md).</span><span class="sxs-lookup"><span data-stu-id="f2d65-103">Updates references to a module defined by a prior call to [IMetaDataEmit::DefineModuleRef](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definemoduleref-method.md).</span></span>  
+# <a name="imetadataemitsetmoduleprops-method"></a><span data-ttu-id="8ef14-102">IMetaDataEmit::SetModuleProps – metoda</span><span class="sxs-lookup"><span data-stu-id="8ef14-102">IMetaDataEmit::SetModuleProps Method</span></span>
+<span data-ttu-id="8ef14-103">Aktualizuje odkazy na modul definovaný předchozím voláním [IMetaDataEmit::D efinemoduleref](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definemoduleref-method.md).</span><span class="sxs-lookup"><span data-stu-id="8ef14-103">Updates references to a module defined by a prior call to [IMetaDataEmit::DefineModuleRef](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definemoduleref-method.md).</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="f2d65-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f2d65-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="8ef14-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="8ef14-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT SetModuleProps (   
@@ -33,20 +33,20 @@ HRESULT SetModuleProps (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="f2d65-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="f2d65-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="8ef14-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="8ef14-105">Parameters</span></span>  
  `szName`  
- <span data-ttu-id="f2d65-106">[in] The module name in Unicode.</span><span class="sxs-lookup"><span data-stu-id="f2d65-106">[in] The module name in Unicode.</span></span> <span data-ttu-id="f2d65-107">This is the file name only and not the full path name.</span><span class="sxs-lookup"><span data-stu-id="f2d65-107">This is the file name only and not the full path name.</span></span>  
+ <span data-ttu-id="8ef14-106">pro Název modulu v kódování Unicode.</span><span class="sxs-lookup"><span data-stu-id="8ef14-106">[in] The module name in Unicode.</span></span> <span data-ttu-id="8ef14-107">Toto je pouze název souboru, nikoli název úplné cesty.</span><span class="sxs-lookup"><span data-stu-id="8ef14-107">This is the file name only and not the full path name.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="f2d65-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f2d65-108">Requirements</span></span>  
- <span data-ttu-id="f2d65-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f2d65-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="8ef14-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="8ef14-108">Requirements</span></span>  
+ <span data-ttu-id="8ef14-109">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="8ef14-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="f2d65-110">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="f2d65-110">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="8ef14-110">**Hlavička:** Cor. h</span><span class="sxs-lookup"><span data-stu-id="8ef14-110">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="f2d65-111">**Library:** Used as a resource in MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="f2d65-111">**Library:** Used as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="8ef14-111">**Knihovna:** Používá se jako prostředek v knihovně MSCorEE. dll.</span><span class="sxs-lookup"><span data-stu-id="8ef14-111">**Library:** Used as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="f2d65-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f2d65-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="8ef14-112">**Verze .NET Framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="8ef14-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f2d65-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f2d65-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8ef14-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8ef14-113">See also</span></span>
 
-- [<span data-ttu-id="f2d65-114">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f2d65-114">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
-- [<span data-ttu-id="f2d65-115">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f2d65-115">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+- [<span data-ttu-id="8ef14-114">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="8ef14-114">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [<span data-ttu-id="8ef14-115">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="8ef14-115">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

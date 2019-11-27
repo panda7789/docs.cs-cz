@@ -22,10 +22,10 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74439316"
 ---
-# <a name="icorprofilercallback4rejitcompilationfinished-method"></a><span data-ttu-id="6efab-102">ICorProfilerCallback4::ReJITCompilationFinished – metoda</span><span class="sxs-lookup"><span data-stu-id="6efab-102">ICorProfilerCallback4::ReJITCompilationFinished Method</span></span>
-<span data-ttu-id="6efab-103">Notifies the profiler that the just-in-time (JIT) compiler has finished recompiling a function.</span><span class="sxs-lookup"><span data-stu-id="6efab-103">Notifies the profiler that the just-in-time (JIT) compiler has finished recompiling a function.</span></span>  
+# <a name="icorprofilercallback4rejitcompilationfinished-method"></a><span data-ttu-id="bd495-102">ICorProfilerCallback4::ReJITCompilationFinished – metoda</span><span class="sxs-lookup"><span data-stu-id="bd495-102">ICorProfilerCallback4::ReJITCompilationFinished Method</span></span>
+<span data-ttu-id="bd495-103">Upozorní profileru, že kompilátor JIT (just-in-time) dokončil opětovné kompilování funkce.</span><span class="sxs-lookup"><span data-stu-id="bd495-103">Notifies the profiler that the just-in-time (JIT) compiler has finished recompiling a function.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="6efab-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6efab-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="bd495-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="bd495-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT ReJITCompilationFinished(  
@@ -34,33 +34,33 @@ HRESULT ReJITCompilationFinished(
     [in] BOOL       fIsSafeToBlock);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="6efab-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="6efab-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="bd495-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="bd495-105">Parameters</span></span>  
  `functionId`  
- <span data-ttu-id="6efab-106">[in] The ID of the function that was recompiled.</span><span class="sxs-lookup"><span data-stu-id="6efab-106">[in] The ID of the function that was recompiled.</span></span>  
+ <span data-ttu-id="bd495-106">pro ID funkce, která byla znovu zkompilována.</span><span class="sxs-lookup"><span data-stu-id="bd495-106">[in] The ID of the function that was recompiled.</span></span>  
   
  `rejitId`  
- <span data-ttu-id="6efab-107">[in] The identity of the JIT-recompiled function.</span><span class="sxs-lookup"><span data-stu-id="6efab-107">[in] The identity of the JIT-recompiled function.</span></span>  
+ <span data-ttu-id="bd495-107">pro Identita funkce Rekompilované JIT.</span><span class="sxs-lookup"><span data-stu-id="bd495-107">[in] The identity of the JIT-recompiled function.</span></span>  
   
  `hrStatus`  
- <span data-ttu-id="6efab-108">[in] A value that indicates whether the JIT recompilation was successful.</span><span class="sxs-lookup"><span data-stu-id="6efab-108">[in] A value that indicates whether the JIT recompilation was successful.</span></span>  
+ <span data-ttu-id="bd495-108">pro Hodnota, která označuje, zda byla opětovná kompilace JIT úspěšná.</span><span class="sxs-lookup"><span data-stu-id="bd495-108">[in] A value that indicates whether the JIT recompilation was successful.</span></span>  
   
  `fIsSafeToBlock`  
- <span data-ttu-id="6efab-109">[in] `true` to indicate that blocking may cause the runtime to wait for the calling thread to return from this callback; `false` to indicate that blocking will not affect the operation of the runtime.</span><span class="sxs-lookup"><span data-stu-id="6efab-109">[in] `true` to indicate that blocking may cause the runtime to wait for the calling thread to return from this callback; `false` to indicate that blocking will not affect the operation of the runtime.</span></span>  
+ <span data-ttu-id="bd495-109">[in] `true` označuje, že blokování může způsobit, že modul runtime počká, než se volající vlákno vrátí z tohoto zpětného volání. `false` k označení, že blokování nebude mít vliv na operaci modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="bd495-109">[in] `true` to indicate that blocking may cause the runtime to wait for the calling thread to return from this callback; `false` to indicate that blocking will not affect the operation of the runtime.</span></span>  
   
- <span data-ttu-id="6efab-110">A value of `true` does not harm the runtime, but can affect the profiling results.</span><span class="sxs-lookup"><span data-stu-id="6efab-110">A value of `true` does not harm the runtime, but can affect the profiling results.</span></span>  
+ <span data-ttu-id="bd495-110">Hodnota `true` nepoškozuje modul runtime, ale může ovlivnit výsledky profilace.</span><span class="sxs-lookup"><span data-stu-id="bd495-110">A value of `true` does not harm the runtime, but can affect the profiling results.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="6efab-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="6efab-111">Requirements</span></span>  
- <span data-ttu-id="6efab-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="6efab-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="bd495-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="bd495-111">Requirements</span></span>  
+ <span data-ttu-id="bd495-112">**Platformy:** Viz [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="bd495-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="6efab-113">**Header:** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="6efab-113">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="bd495-113">**Hlavička:** CorProf. idl, CorProf. h</span><span class="sxs-lookup"><span data-stu-id="bd495-113">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="6efab-114">**Library:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="6efab-114">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="bd495-114">**Knihovna:** CorGuids. lib</span><span class="sxs-lookup"><span data-stu-id="bd495-114">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="6efab-115">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="6efab-115">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
+ <span data-ttu-id="bd495-115">**Verze .NET Framework:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="bd495-115">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="6efab-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6efab-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="bd495-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bd495-116">See also</span></span>
 
-- [<span data-ttu-id="6efab-117">ICorProfilerCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="6efab-117">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [<span data-ttu-id="6efab-118">ICorProfilerCallback4 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="6efab-118">ICorProfilerCallback4 Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md)
-- [<span data-ttu-id="6efab-119">JITCompilationStarted – metoda</span><span class="sxs-lookup"><span data-stu-id="6efab-119">JITCompilationStarted Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationstarted-method.md)
-- [<span data-ttu-id="6efab-120">ReJITCompilationStarted – metoda</span><span class="sxs-lookup"><span data-stu-id="6efab-120">ReJITCompilationStarted Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejitcompilationstarted-method.md)
+- [<span data-ttu-id="bd495-117">ICorProfilerCallback – rozhraní</span><span class="sxs-lookup"><span data-stu-id="bd495-117">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [<span data-ttu-id="bd495-118">ICorProfilerCallback4 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="bd495-118">ICorProfilerCallback4 Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md)
+- [<span data-ttu-id="bd495-119">JITCompilationStarted – metoda</span><span class="sxs-lookup"><span data-stu-id="bd495-119">JITCompilationStarted Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationstarted-method.md)
+- [<span data-ttu-id="bd495-120">ReJITCompilationStarted – metoda</span><span class="sxs-lookup"><span data-stu-id="bd495-120">ReJITCompilationStarted Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejitcompilationstarted-method.md)
