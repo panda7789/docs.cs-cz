@@ -1,5 +1,7 @@
-- name: 'Průvodce jazykem F#'
-  href: index.md
+- name: 'Dokumentace k F#'
+  href: index.yml
+- name: 'Co je F#'
+  href: what-is-fsharp.md
 - name: Začínáme
   href: get-started/index.md
   items:
@@ -13,8 +15,6 @@
       href: get-started/get-started-command-line.md
     - name: 'Začínáme s jazykem F# v sadě Visual Studio pro Mac'
       href: get-started/get-started-with-visual-studio-for-mac.md
-- name: 'Co je F#'
-  href: what-is-fsharp.md
 - name: 'Prohlídka jazyka F#'
   href: tour.md
 - name: Kurzy
@@ -39,6 +39,14 @@
           href: tutorials/type-providers/troubleshooting-type-providers.md
     - name: 'F# Interactive'
       href: tutorials/fsharp-interactive/index.md
+- name: 'Co je nového v jazyce F#'
+  items:
+    - name: 'F# 4.7'
+      href: whats-new/fsharp-47.md
+    - name: 'F# 4.6'
+      href: whats-new/fsharp-46.md
+    - name: 'F# 4.5'
+      href: whats-new/fsharp-45.md
 - name: 'Referenční dokumentace jazyka F#'
   href: language-reference/index.md
   items:
@@ -55,7 +63,7 @@
           href: language-reference/symbol-and-operator-reference/bitwise-operators.md
         - name: Operátory s povolenou hodnotou Null
           href: language-reference/symbol-and-operator-reference/nullable-operators.md
-    - name: Functions
+    - name: Funkce
       href: language-reference/functions/index.md
       items:
         - name: let – vazby
@@ -208,7 +216,7 @@
       href: language-reference/attributes.md
     - name: 'Správa prostředků: Klíčové slovo use'
       href: language-reference/resource-management-the-use-keyword.md
-    - name: Obory názvů
+    - name: Jmenné prostory
       href: language-reference/namespaces.md
     - name: Moduly
       href: language-reference/modules.md
