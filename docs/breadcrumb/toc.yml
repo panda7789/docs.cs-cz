@@ -115,7 +115,7 @@
           tocHref: /dotnet/core/
           topicHref: /dotnet/core/index
           items:
-            - name: Kompatibilita
+            - name: Změny způsobující chyby
               tocHref: /dotnet/core/compatibility/
               topicHref: /dotnet/core/compatibility/index
             - name: Konfigurace běhového prostředí
@@ -127,10 +127,6 @@
             - name: Průvodce instalací
               tocHref: /dotnet/core/install/
               topicHref: /dotnet/core/install/index
-              items:
-                - name: Správci balíčků pro Linux
-                  tocHref: /dotnet/core/install/
-                  topicHref: /dotnet/core/install/index
         - name: .NET Framework
           tocHref: /dotnet/framework/
           topicHref: /dotnet/framework/index

@@ -1,0 +1,69 @@
+### YamlMime:Landing
+title: F#nápovědě
+summary: Naučte se vytvářet aplikace pomocí F# programovacího jazyka v .NET.
+metadata:
+  title: F#dokumentace – Začínáme, kurzy, reference.
+  description: Naučte F# F#se programovat – vývojářům nově a zkušeným F# vývojářům a .NET
+  ms.topic: landing-page
+  author: cartermp
+  ms.author: phcart
+  ms.date: 11/25/2019
+  ms.openlocfilehash: 7aef8012a5ef58c1c0a142dce8baf7ccb73f50fa
+  ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+  ms.translationtype: HT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 11/27/2019
+  ms.locfileid: "74553049"
+landingContent:
+- title: Informace k programu vF#
+  linkLists:
+  - linkListType: get-started
+    links:
+    - text: Co je F#to?
+      url: what-is-fsharp.md
+    - text: Instalace F#
+      url: get-started/install-fsharp.md
+    - text: Začínáme s nástrojem F# v aplikaci Visual Studio
+      url: get-started/get-started-visual-studio.md
+    - text: Začínáme s nástrojem F# v Visual Studio Code
+      url: get-started/get-started-vscode.md
+  - linkListType: download
+    links:
+    - text: Stáhnout .NET Core SDK
+      url: https://dotnet.microsoft.com/download
+- title: F#Základy
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Prohlídka jazyka F#
+      url: tour.md
+    - text: Úvod do funkčního programování v F#
+      url: introduction-to-functional-programming/index.md
+    - text: Funkce první třídy
+      url: introduction-to-functional-programming/first-class-functions.md
+  - linkListType: concept
+    links:
+    - text: Příručka stylu jazyka F#
+      url: style-guide/index.md
+    - text: Pravidla formátování kódu F#
+      url: style-guide/formatting.md
+    - text: Zásady kódování jazyka F#
+      url: style-guide/conventions.md
+  - linkListType: tutorial
+    links:
+    - text: Asynchronní programování vF#
+      url: tutorials/asynchronous-and-concurrent-programming/async.md
+- title: F#Referenční dokumentace jazyka
+  linkLists:
+  - linkListType: reference
+    links:
+    - text: Referenční dokumentace jazyka
+      url: language-reference/index.md
+    - text: Reference k klíčovému slovu
+      url: language-reference/keyword-reference.md
+    - text: Reference k symbolům a operátorovi
+      url: language-reference/symbol-and-operator-reference/index.md
+    - text: Funkce
+      url: language-reference/functions/index.md
+    - text: F#druhy
+      url: language-reference/fsharp-types.md
