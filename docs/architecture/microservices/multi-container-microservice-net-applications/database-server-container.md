@@ -2,12 +2,12 @@
 title: Použití databázového serveru, který se používá jako kontejner
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Používáte databázový server, který běží jako kontejner? jenom pro vývoj. Vysvětlení, proč.
 ms.date: 10/02/2018
-ms.openlocfilehash: a508ba734525b24e2f3f00408e2c59c8c00f1898
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: 371d622dc39681edb0b52e723faccbf611b7797c
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291303"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74568434"
 ---
 # <a name="using-a-database-server-running-as-a-container"></a>Použití databázového serveru, který se používá jako kontejner
 
@@ -162,7 +162,7 @@ Pokud ale spustíte Redis v produkčním prostředí, je lepší vyhledat řeše
 
 Redis poskytuje image Docker s Redis. Tato bitová kopie je k dispozici z Docker Hub na této adrese URL:
 
-<https://hub.docker.com/\_/redis/>
+<https://hub.docker.com/_/redis/>
 
 Kontejner Docker Redis můžete přímo spustit spuštěním následujícího příkazu Docker CLI na příkazovém řádku:
 
