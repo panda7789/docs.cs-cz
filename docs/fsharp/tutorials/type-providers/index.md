@@ -1,44 +1,43 @@
 ---
 title: Zprostředkovatelé typů
-description: Zjistěte, jak F# poskytovatel typu je komponenta, která poskytuje typy, vlastnosti a metody pro použití ve svých programech.
+description: Přečtěte si F# , jak je poskytovatel typu komponentou, která poskytuje typy, vlastnosti a metody pro použití ve svých programech.
 ms.date: 04/02/2018
-ms.openlocfilehash: 5fa9de229caa2ec3ba4a248ca5cd1c8aa5adb230
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 7fa0ff6b5f2b0bc978df2988f22b2042acc22320
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645169"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552921"
 ---
 # <a name="type-providers"></a>Zprostředkovatelé typů
 
-Poskytovatel typů jazyka F# je komponenta, která poskytuje typy, vlastnosti a metody pro váš program. Zprostředkovatelé typů generovat, co jsou označovány jako **poskytuje typy**, které jsou generovány F# kompilátoru a jsou založené na externí zdroj dat.
+Poskytovatel typů jazyka F# je komponenta, která poskytuje typy, vlastnosti a metody pro váš program. Zprostředkovatelé typů generují, co jsou známé jako **poskytnuté typy**, které jsou generovány F# kompilátorem a jsou založeny na externím zdroji dat.
 
-Například F# poskytovatel typů pro SQL můžete vygenerovat typy, které představují tabulky a sloupce v relační databázi. Ve skutečnosti se jedná, co [SQLProvider](https://fsprojects.github.io/SQLProvider/) zprostředkovatel typu nemá.
+Například poskytovatel F# typů pro SQL může generovat typy reprezentující tabulky a sloupce v relační databázi. Ve skutečnosti to dělá poskytovatel typu [SQLProvider](https://fsprojects.github.io/SQLProvider/) .
 
-Za předpokladu, že typy, závisí na vstupních parametrů zprostředkovateli typu. Takové zadání může být vzorový zdroj dat (např. soubor schématu JSON), odkazuje přímo na externí službu nebo připojovací řetězec pro zdroj dat adresy URL. Poskytovatel typů dokáže také zajistit, že skupiny typů byly rozbaleny dle potřeby; To znamená jsou rozbaleny Pokud typy ve skutečnosti odkazuje váš program. To umožňuje přímou integraci rozsáhlých informačních prostorů přístupných na vyžádání, jako jsou například online datové trhy, způsobem využívajícím silné typy.
+Poskytnuté typy závisí na vstupních parametrech pro poskytovatele typu. Tento vstup může být ukázkový zdroj dat (například soubor schématu JSON), adresa URL ukazující přímo na externí službu nebo připojovací řetězec ke zdroji dat. Poskytovatel typu taky může zajistit, aby se skupiny typů rozšířily jenom na vyžádání. To znamená, že jsou rozbaleny v případě, že váš program ve skutečnosti odkazuje na typy. To umožňuje přímou integraci rozsáhlých informačních prostorů přístupných na vyžádání, jako jsou například online datové trhy, způsobem využívajícím silné typy.
 
-## <a name="generative-and-erased-type-providers"></a>Zprostředkovatelé typů tvoří a mazání
+## <a name="generative-and-erased-type-providers"></a>Regenerační a mazání Poskytovatelé typů
 
-Poskytovatelé typů jsou ve dvou formách: Tvoří a mazání.
+Poskytovatelé typů přicházejí ve dvou formách: regenerační a vymazáno.
 
-Tvoří poskytovatelů typů vytvořit typy, které lze zapsat jako typy .NET do sestavení, ve kterém se vytváří. To umožňuje jejich využít z kódu v jiných sestaveních. To znamená, že zadaný reprezentaci zdroje dat obecně musí být ten, který je možné použít k reprezentaci s typy .NET.
+Typy, které mohou být vytvořeny jako typy .NET, do sestavení, ve kterém jsou vytvářeny, poskytovatelé typů. To umožňuje, aby byly spotřebovány z kódu v jiných sestaveních. To znamená, že zadaná reprezentace zdroje dat musí být obvykle ta, která je proveditelná pro reprezentaci typů .NET.
 
-Mazání poskytovatelů typů vytvořit typy, které můžete používat jen v sestavení nebo projekt, který se generují z. Typy jsou dočasné; To znamená nejsou zapsány do sestavení a nemůže být zaplněny kódem v jiných sestaveních. Může obsahovat *zpožděné* členy, abyste mohli používat k dispozici typy z potenciálně nekonečné informační prostor. Jsou vhodné pro použití malou část velké a propojených zdroj.
+Mazání poskytovatelů typů vytvoří typy, které lze spotřebovat pouze v sestavení nebo projektu, ze kterého jsou vygenerovány. Typy jsou dočasné; To znamená, že nejsou zapsány do sestavení a nemohou být spotřebovány kódem v jiných sestaveních. Můžou obsahovat *Zpožděné* členy, které vám umožní používat poskytnuté typy z potenciálně neomezeného informačního prostoru. Jsou užitečné pro použití malé podmnožiny velkého a propojeného zdroje dat.
 
-## <a name="commonly-used-type-providers"></a>Nejčastěji používané zprostředkovatelů typů
+## <a name="commonly-used-type-providers"></a>Běžně využívané Poskytovatelé typů
 
-Následující knihovny nejběžněji používanými obsahovat poskytovatelů typů pro různé účely:
+Následující široce používané knihovny obsahují poskytovatele typů pro různá použití:
 
-- [FSharp.Data](https://fsharp.github.io/FSharp.Data/) obsahuje typ zprostředkovatelů pro JSON, XML, CSV a HTML dokumentů formátů a prostředky.
-- [SQLProvider](https://fsprojects.github.io/SQLProvider/) poskytuje přístup k relaci databáze pomocí mapování objektu s silného typu a F# dotazů LINQ na tyto datové zdroje.
-- [FSharp.Data.SqlClient](https://fsprojects.github.io/FSharp.Data.SqlClient/) sadu poskytovatelů typů pro kompilaci změnami vkládání T-SQL v F#.
-- [Zprostředkovatel Azure typu úložiště](https://fsprojects.github.io/AzureStorageTypeProvider/) poskytuje typy pro Azure Blobs, Tables a Queues, umožňuje přístup k těmto prostředkům, aniž byste museli zadat názvy prostředků jako řetězce v celém programu.
-- [FSharp.Data.GraphQL](https://fsprojects.github.io/FSharp.Data.GraphQL/index.html) obsahuje **GraphQLProvider**, která poskytuje typy založené na serveru GraphQL zadaný pomocí adresy URL.
+- [FSharp. data](https://fsharp.github.io/FSharp.Data/) zahrnují poskytovatele typů pro formáty dokumentů JSON, XML, CSV a HTML.
+- [SQLProvider](https://fsprojects.github.io/SQLProvider/) poskytuje přístup se silnými typy ke vztahu databází prostřednictvím mapování objektů F# a dotazů LINQ na tyto zdroje dat.
+- [FSharp. data. SqlClient](https://fsprojects.github.io/FSharp.Data.SqlClient/) má sadu zprostředkovatelů typů pro kontrolované vkládání T-SQL v F#době kompilace.
+- [Zprostředkovatel typu Azure Storage](https://fsprojects.github.io/AzureStorageTypeProvider/) poskytuje typy pro objekty blob, tabulky a fronty Azure, které umožňují přístup k těmto prostředkům bez nutnosti zadávat názvy prostředků jako řetězce v celém programu.
+- [FSharp. data. GraphQL](https://fsprojects.github.io/FSharp.Data.GraphQL/index.html) obsahuje **GraphQLProvider**, které poskytuje typy založené na serveru GraphQL určeném adresou URL.
 
-V případě potřeby můžete [vytvořte vlastní vlastní poskytovatele typů](creating-a-type-provider.md), nebo odkaz na poskytovatele typů vytvořené jinými uživateli. Předpokládejme například organizaci, která má datovou službu poskytující velké a zvyšující se množství pojmenovaných datových sad, přičemž každá z nich má vlastní stabilní schéma dat. Můžete vytvořit poskytovatele typů, který schémata přečte a nabídne programátorům nejnovější dostupné datové sady se silnými typy.
+V případě potřeby můžete [vytvořit vlastní poskytovatele typů](creating-a-type-provider.md)nebo poskytovatele odkazů, které vytvořili jiní uživatelé. Předpokládejme například organizaci, která má datovou službu poskytující velké a zvyšující se množství pojmenovaných datových sad, přičemž každá z nich má vlastní stabilní schéma dat. Můžete vytvořit poskytovatele typů, který schémata přečte a nabídne programátorům nejnovější dostupné datové sady se silnými typy.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Kurz: Vytvoření zprostředkovatele typů](creating-a-type-provider.md)
+- [Kurz: vytvoření poskytovatele typu](creating-a-type-provider.md)
 - [Referenční dokumentace jazyka F#](../../language-reference/index.md)
-- [Visual F#](../../index.md)

@@ -5,12 +5,12 @@ author: mairaw
 ms.author: mairaw
 ms.date: 09/23/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: d0ea5aefa62dd4029610ab8a7f7ce9ed52a59600
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: ccff6256b56daccdf8105fd5ad31e81bb892c2a8
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74283927"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552954"
 ---
 # <a name="welcome-to-net"></a>Vítá vás .NET
 
@@ -48,7 +48,7 @@ Tato dokumentace se věnuje šířce .NET napříč platformami a jazyky. Může
 - [Průvodce platformou .NET Core](core/index.md)
 - [Průvodce rozhraním .NET Framework](framework/index.md)
 - [Průvodce jazykem C#](csharp/index.yml)
-- [Průvodce jazykem F#](fsharp/index.md)
+- [Průvodce jazykem F#](fsharp/index.yml)
 - [Průvodce jazykem Visual Basic](visual-basic/index.md)
 - [Průvodce ML.NET](machine-learning/index.yml)
 - [.NET pro Apache Spark](spark/index.yml)

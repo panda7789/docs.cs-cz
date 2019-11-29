@@ -2,12 +2,12 @@
 title: Referenční dokumentace jazyka F#
 description: Umožňuje F# najít informace o funkcích jazyka z tohoto odkazu na jazykové tokeny, koncepty, typy, výrazy a témata konstrukce podporovaná kompilátorem.
 ms.date: 05/16/2016
-ms.openlocfilehash: ac7e268b28d6bb654e4443d04695cb15fe756e9f
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: bd9894176fa736b9eed939d72972e676e2bd2671
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424992"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552896"
 ---
 # <a name="f-language-reference"></a>Referenční dokumentace jazyka F#
 
@@ -110,7 +110,3 @@ V následující tabulce jsou uvedena témata, která popisují speciální kons
 |[Možnosti kompilátoru](compiler-options.md)|Popisuje možnosti příkazového řádku pro F# kompilátor.|
 |[Direktivy kompilátoru](compiler-directives.md)|Popisuje direktivy procesoru a direktivy kompilátoru.|
 |[Identifikátory zdrojového řádku, souboru a cesty](source-line-file-path-identifiers.md)|Popisuje identifikátory `__LINE__`, `__SOURCE_DIRECTORY__` a `__SOURCE_FILE__`, což jsou předdefinované hodnoty, které umožňují přístup ke zdrojovému číslu řádku, adresáři a názvu souboru ve vašem kódu.|
-
-## <a name="see-also"></a>Viz také:
-
-- [Visual F#](../index.md)

@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 11/06/2019
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: 2f65e9dc39a4cd1076af1a70dfedfa671f20b42d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
-ms.translationtype: MT
+ms.openlocfilehash: 6e9af6c84c81b1244e10fa7d5955ab67d34b1f0a
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450875"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552206"
 ---
 # <a name="install-the-net-core-sdk"></a>Instalace .NET Core SDK
 
@@ -26,12 +26,16 @@ V tomto článku se naučíte, jak nainstalovat .NET Core SDK. .NET Core SDK slo
 
 .NET Core můžete nainstalovat také jako součást integrovaného vývojového prostředí (IDE), které jsou podrobně popsané v následujících částech.
 
+::: zone pivot="os-windows,os-macos"
+
 ## <a name="install-with-an-installer"></a>Instalace pomocí instalačního programu
 
 Windows i macOS mají samostatné instalační programy, které je možné použít k instalaci sady .NET Core 3,0 SDK.
 
 - Procesory Windows [x64](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-3.0.100-windows-x64-installer) | [procesory x32](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-3.0.100-windows-x86-installer)
 - macOS [procesory x64](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-3.0.100-macos-x64-installer)
+
+::: zone-end
 
 ::: zone pivot="os-linux"
 
@@ -47,15 +51,15 @@ Windows i macOS mají samostatné instalační programy, které je možné použ
 
 Pokud používáte Visual Studio pro vývoj aplikací .NET Core, v následující tabulce je popsána minimální požadovaná verze sady Visual Studio na základě cílové verze .NET Core SDK.
 
-| Verze .NET Core SDK | Verze Visual Studio                      |
+| Verze .NET Core SDK | Verze sady Visual Studio                      |
 | --------------------- | ------------------------------------------ |
 | 3,0                   | Visual Studio 2019 verze 16,3 nebo vyšší. |
-| 2.2                   | Visual Studio 2017 verze 15,9 nebo vyšší. |
-| 2.1                   | Visual Studio 2017 verze 15,7 nebo vyšší. |
+| 2,2                   | Visual Studio 2017 verze 15,9 nebo vyšší. |
+| 2,1                   | Visual Studio 2017 verze 15,7 nebo vyšší. |
 
 Pokud již máte nainstalováno Visual Studio, můžete si ověřit verzi pomocí následujících kroků.
 
-01. Otevřít Visual Studio.
+01. Otevřete Visual Studio.
 01. Vyberte **nápovědu** > **o Microsoft Visual Studio**.
 01. Přečtěte si číslo verze v dialogovém okně **o produktu** .
 

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - C# language, types
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
-ms.openlocfilehash: 7d101e72a94ec1fecf44d4c883efb4f74e6d1d88
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 27560449daa18741a53e3affa33e08afa40d006a
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739211"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552497"
 ---
 # <a name="types-c-programming-guide"></a>Typy (Průvodce programováním v C#)
 
@@ -39,12 +39,12 @@ Informace uložené v typu mohou zahrnovat následující:
 
 - Druhy operací, které jsou povoleny.
 
-Kompilátor používá informace o typu k ujištění, že všechny operace, které jsou provedeny ve vašem kódu, jsou *typově bezpečné*. Například pokud deklarujete proměnnou typu [int](../../language-reference/builtin-types/integral-numeric-types.md), kompilátor vám umožní použít proměnnou v operaci sčítání a odčítání. Pokud se pokusíte provést stejné operace s proměnnou typu [bool](../../language-reference/keywords/bool.md), kompilátor vygeneruje chybu, jak je znázorněno v následujícím příkladu:
+Kompilátor používá informace o typu k ujištění, že všechny operace, které jsou provedeny ve vašem kódu, jsou *typově bezpečné*. Například pokud deklarujete proměnnou typu [int](../../language-reference/builtin-types/integral-numeric-types.md), kompilátor vám umožní použít proměnnou v operaci sčítání a odčítání. Pokud se pokusíte provést stejné operace s proměnnou typu [bool](../../language-reference/builtin-types/bool.md), kompilátor vygeneruje chybu, jak je znázorněno v následujícím příkladu:
 
 [!code-csharp[csProgGuideTypes#42](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#42)]
 
 > [!NOTE]
-> C a C++ vývojáři Všimněte si, že C#v není hodnota [bool](../../language-reference/keywords/bool.md) převoditelná na [int](../../language-reference/builtin-types/integral-numeric-types.md).
+> C a C++ vývojáři Všimněte si, že C#v není hodnota [bool](../../language-reference/builtin-types/bool.md) převoditelná na [int](../../language-reference/builtin-types/integral-numeric-types.md).
 
 Kompilátor vloží informace o typu do spustitelného souboru jako metadata. Modul CLR (Common Language Runtime) používá tato metadata v době běhu k dalšímu zajištění bezpečnosti typu při přidělování a uvolňování paměti.
 
@@ -58,7 +58,7 @@ Typy parametrů metody a návratové hodnoty jsou uvedeny v signatuře metody. N
 
 [!code-csharp[csProgGuideTypes#35](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#35)]
 
-Po deklarování proměnné nemůže být znovu deklarována s novým typem a nelze jí přiřadit hodnotu, která není kompatibilní s deklarovaným typem. Například nelze deklarovat [int](../../language-reference/builtin-types/integral-numeric-types.md) a přiřadit jí logickou hodnotu [true](../../language-reference/keywords/true-literal.md). Hodnoty lze však převést na jiné typy, například když jsou přiřazeny k novým proměnným nebo předány jako argumenty metody. *Konverze typu* , která nezpůsobí ztrátu dat, je automaticky prováděna kompilátorem. Převod, který může způsobit ztrátu dat, vyžaduje *přetypování* ve zdrojovém kódu.
+Po deklarování proměnné nemůže být znovu deklarována s novým typem a nelze jí přiřadit hodnotu, která není kompatibilní s deklarovaným typem. Například nelze deklarovat [int](../../language-reference/builtin-types/integral-numeric-types.md) a přiřadit jí logickou hodnotu `true`. Hodnoty lze však převést na jiné typy, například když jsou přiřazeny k novým proměnným nebo předány jako argumenty metody. *Konverze typu* , která nezpůsobí ztrátu dat, je automaticky prováděna kompilátorem. Převod, který může způsobit ztrátu dat, vyžaduje *přetypování* ve zdrojovém kódu.
 
 Další informace naleznete v tématu [přetypování a převody typu](./casting-and-type-conversions.md).
 

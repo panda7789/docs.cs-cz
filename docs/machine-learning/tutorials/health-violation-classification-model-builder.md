@@ -3,15 +3,15 @@ title: 'Kurz: klasifikace porušení stavu pomocí Tvůrce modelů'
 description: Tento kurz ukazuje, jak vytvořit model klasifikace s více třídami pomocí Tvůrce modelů ML.NET ke klasifikaci závažnosti porušení stavu Restaurace v San Francisco.
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 10/30/2019
+ms.date: 11/21/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: cbe20183d317ac6fe39a937e1cfa8a5e3df81b74
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 07729e1667f8aa3aba74576943d79eaa3bcd14d8
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73977212"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552884"
 ---
 # <a name="tutorial-classify-the-severity-of-restaurant-health-violations-with-model-builder"></a>Kurz: klasifikace závažnosti porušení stavu restaurací pomocí Tvůrce modelů
 
@@ -24,7 +24,7 @@ V tomto kurzu se naučíte:
 > - Příprava a pochopení dat
 > - Zvolte scénář
 > - Načtení dat z databáze
-> - Trénování modelu
+> - Výuka modelu
 > - Vyhodnocení modelu
 > - Použití modelu pro předpovědi
 
@@ -41,7 +41,7 @@ Tato ukázka vytvoří konzolovou aplikaci C# .NET Core, která kategorizuje riz
 
 ## <a name="create-a-console-application"></a>Vytvoření konzolové aplikace
 
-1. Vytvořte  **C# konzolovou aplikaci .NET Core** nazvanou "RestaurantViolations".
+1. Vytvořte  **C# konzolovou aplikaci .NET Core** nazvanou "RestaurantViolations". Ujistěte se, že **umístění řešení a projekt ve stejném adresáři** není **zaškrtnuté** (vs 2019), nebo je **zaškrtnuté** políčko **vytvořit adresář pro řešení** (vs 2017).
 
 ## <a name="prepare-and-understand-the-data"></a>Příprava a pochopení dat
 
@@ -87,7 +87,7 @@ Tvůrce modelů přijímá data z databáze SQL Server nebo místního souboru v
 1. Ponechte výchozí výběry sloupců, **InspectionType** a **ViolationDescription**, zaškrtněte rozevírací seznam **vstupní sloupce (funkce)** .
 1. Vyberte odkaz **výuka** , který se přesune k dalšímu kroku v Tvůrci modelů.
 
-## <a name="train-the-model"></a>Trénování modelu
+## <a name="train-the-model"></a>Výuka modelu
 
 Úkolem strojového učení, který se používá ke studiu modelu klasifikace problému v tomto kurzu, je klasifikace s více třídami. V průběhu procesu školení modelů vlacích sestaví model modelování samostatné modely pomocí různých algoritmů a nastavení třídy s více třídami, aby bylo možné najít nejlepší model pro datovou sadu.
 

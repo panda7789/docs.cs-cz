@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 11/06/2019
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: 395978a2e471260254caf3da8421adf2413c132c
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
-ms.translationtype: MT
+ms.openlocfilehash: d39e5912cf2ae73631c2f1192adb516e84dfed32
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450854"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552197"
 ---
 # <a name="install-the-net-core-runtime"></a>Instalace modulu runtime .NET Core
 
@@ -24,12 +24,16 @@ V tomto článku se dozvíte, jak stáhnout a nainstalovat modul runtime .NET Co
 - [Soubory ke stažení pro .NET Core 2,2](https://dotnet.microsoft.com/download/dotnet-core/2.2)
 - [Soubory ke stažení pro .NET Core 2,1](https://dotnet.microsoft.com/download/dotnet-core/2.1)
 
+::: zone pivot="os-windows,os-macos"
+
 ## <a name="install-with-an-installer"></a>Instalace pomocí instalačního programu
 
 Windows i macOS mají samostatné instalační programy, které je možné použít k instalaci modulu runtime .NET Core 3,0.
 
 - Procesory Windows [x64](https://dotnet.microsoft.com/download/thank-you/dotnet-runtime-3.0.0-windows-x64-installer) | [procesory x32](https://dotnet.microsoft.com/download/thank-you/dotnet-runtime-3.0.0-windows-x86-installer)
 - macOS [procesory x64](https://dotnet.microsoft.com/download/thank-you/dotnet-runtime-3.0.0-macos-x64-installer)
+
+::: zone-end
 
 ::: zone pivot="os-linux"
 

@@ -5,12 +5,12 @@ author: richlander
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 7b77b6c1-8367-4602-bff3-91e4c05ac643
-ms.openlocfilehash: ba3d5209571019f8ac38702939332fd953307202
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: bfa9c24ef4cd2c418c91e00318aa47b889078d40
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447993"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552661"
 ---
 # <a name="framework-libraries"></a>Knihovny architektury
 
@@ -32,7 +32,7 @@ Rozhraní .NET zahrnuje sadu primitivních typů, které se používají (do rů
 * <xref:System.Single?displayProperty=nameWithType> ([float](../csharp/language-reference/builtin-types/floating-point-numeric-types.md)) – 32 typ s plovoucí desetinnou čárkou.
 * <xref:System.Decimal?displayProperty=nameWithType> ([Decimal](../csharp/language-reference/builtin-types/floating-point-numeric-types.md)) – typ desítkového typu 128.
 * <xref:System.Byte?displayProperty=nameWithType> ([Byte](../csharp/language-reference/builtin-types/integral-numeric-types.md)) – 8bitové celé číslo bez znaménka představující bajt paměti.
-* <xref:System.Boolean?displayProperty=nameWithType> ([bool](../csharp/language-reference/keywords/bool.md)) – typ boolean reprezentující `true` nebo `false`.
+* <xref:System.Boolean?displayProperty=nameWithType> ([bool](../csharp/language-reference/builtin-types/bool.md)) – typ Boolean reprezentující `true` nebo `false`.
 * <xref:System.Char?displayProperty=nameWithType> ([char](../csharp/language-reference/builtin-types/char.md)) – 16bitový číselný typ, který představuje znak Unicode.
 * <xref:System.String?displayProperty=nameWithType> ([String](../csharp/language-reference/builtin-types/reference-types.md#the-string-type)) – představuje řadu znaků. Liší se od `char[]`, ale umožňuje indexování do jednotlivých individuálních `char` v `string`.
 

@@ -9,16 +9,16 @@ helpviewer_keywords:
 - operator associativity [C#]
 - expressions [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 78233b9a18f4369ebb086f2016af3f945b6a654a
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 11c544e7fc923b0820141fb2e096ef7707f0a95f
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039019"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552476"
 ---
 # <a name="c-operators-c-reference"></a>C#operátory (C# Referenční dokumentace)
 
-C#poskytuje několik operátorů podporovaných integrovanými typy. Například [aritmetické operátory](arithmetic-operators.md) provádějí aritmetické operace s numerickými operandy a logické [logické operátory](boolean-logical-operators.md) provádějí logické operace s [logickými operandy](../keywords/bool.md) . Některé operátory mohou být [přetíženy](operator-overloading.md). S přetížením operátorů můžete určit chování operátoru pro operandy uživatelsky definovaného typu.
+C#poskytuje několik operátorů podporovaných integrovanými typy. Například [aritmetické operátory](arithmetic-operators.md) provádějí aritmetické operace s numerickými operandy a logické [logické operátory](boolean-logical-operators.md) provádějí logické operace s [logickými operandy](../builtin-types/bool.md) . Některé operátory mohou být [přetíženy](operator-overloading.md). S přetížením operátorů můžete určit chování operátoru pro operandy uživatelsky definovaného typu.
 
 Ve [výrazu](../../programming-guide/statements-expressions-operators/expressions.md), priority operátoru a asociativita určují pořadí, ve kterém jsou operace prováděny. Pomocí závorek můžete změnit pořadí vyhodnocování stanovené prioritou operátoru a asociativita.
 
@@ -47,8 +47,8 @@ V následující tabulce jsou uvedeny C# operátory od nejvyšší priority k ne
 | [x.. požadované](member-access-operators.md#range-operator-) | Rozsah |
 | [x * y](arithmetic-operators.md#multiplication-operator-), [x/y](arithmetic-operators.md#division-operator-), [x% y](arithmetic-operators.md#remainder-operator-) | Multiplikativní|
 | [x + y](arithmetic-operators.md#addition-operator-), [x – y](arithmetic-operators.md#subtraction-operator--) | Přičítáním |
-| [x \< \< y](bitwise-and-shift-operators.md#left-shift-operator-), [x > > y](bitwise-and-shift-operators.md#right-shift-operator-) | Posouvá |
-| [x \< y](comparison-operators.md#less-than-operator-), [x > y](comparison-operators.md#greater-than-operator-), [x \< = y](comparison-operators.md#less-than-or-equal-operator-), [x > = y](comparison-operators.md#greater-than-or-equal-operator-), [je](type-testing-and-cast.md#is-operator), [jako](type-testing-and-cast.md#as-operator) | Relační testování a testování typu |
+| [x \<\< y](bitwise-and-shift-operators.md#left-shift-operator-), [x > > y](bitwise-and-shift-operators.md#right-shift-operator-) | Posouvá |
+| [x \< y](comparison-operators.md#less-than-operator-), [x > y](comparison-operators.md#greater-than-operator-), [x \<= y](comparison-operators.md#less-than-or-equal-operator-), [x > = y](comparison-operators.md#greater-than-or-equal-operator-), [je](type-testing-and-cast.md#is-operator), [jako](type-testing-and-cast.md#as-operator) | Relační testování a testování typu |
 | [x = = y](equality-operators.md#equality-operator-), [x! = y](equality-operators.md#inequality-operator-) | Rovnost |
 | `x & y` | Logická [logický operátor and](boolean-logical-operators.md#logical-and-operator-) nebo [BITOVÝ logický operátor and](bitwise-and-shift-operators.md#logical-and-operator-) |
 | `x ^ y` | [Logická logická hodnota XOR](boolean-logical-operators.md#logical-exclusive-or-operator-) nebo [bitový logický operátor XOR](bitwise-and-shift-operators.md#logical-exclusive-or-operator-) |
@@ -64,7 +64,7 @@ V následující tabulce jsou uvedeny C# operátory od nejvyšší priority k ne
 Pokud mají operátory stejnou prioritu, asociativita operátor určuje pořadí, ve kterém jsou operace provedeny:
 
 - Operátory *asociativní zleva* jsou vyhodnocovány v pořadí zleva doprava. S výjimkou [operátorů přiřazení](assignment-operator.md) a [operátorů slučování null](null-coalescing-operator.md)jsou všechny binární operátory asociativní. Například `a + b - c` je vyhodnocen jako `(a + b) - c`.
-- Operátory *asociativní zprava* jsou vyhodnocovány v pořadí zprava doleva. Operátory přiřazení, operátory slučování null a [podmíněný operátor `?:`](conditional-operator.md) jsou asociativní zprava. Například `x = y = z` se vyhodnotí jako `x = (y = z)`.
+- Operátory *asociativní zprava* jsou vyhodnocovány v pořadí zprava doleva. Operátory přiřazení, operátory slučování null a [podmíněný operátor `?:`](conditional-operator.md) jsou asociativní zprava. Například `x = y = z` je vyhodnocen jako `x = (y = z)`.
 
 Pomocí závorek změňte pořadí hodnocení, které je asociativita operátorem:
 
@@ -85,7 +85,7 @@ Nesouvisí s prioritou operátorů a asociativita, jsou operandy ve výrazu vyho
 |`a / b + c * d`|a, b,/, c, d, *, +|
 |`a / (b + c) * d`|a, b, c, +,/, d, *|
 
-Obvykle jsou vyhodnocovány všechny operandy operátoru. Některé operátory však vyhodnocuje operandy podmíněně. To znamená, že hodnota operandu úplně vlevo takového operátoru definuje, zda má být vyhodnocen (nebo které) jiné operandy. Tyto operátory jsou podmínkou podmíněného logického operátoru [and (`&&`)](boolean-logical-operators.md#conditional-logical-and-operator-) a [OR (`||`)](boolean-logical-operators.md#conditional-logical-or-operator-) , [operátory sloučení s hodnotou null `??` a `??=`](null-coalescing-operator.md), [operátory s hodnotou null `?.` a `?[]`](member-access-operators.md#null-conditional-operators--and-)a [ podmíněný operátor `?:`](conditional-operator.md). Další informace naleznete v popisu každého operátoru.
+Obvykle jsou vyhodnocovány všechny operandy operátoru. Některé operátory však vyhodnocuje operandy podmíněně. To znamená, že hodnota operandu úplně vlevo takového operátoru definuje, zda má být vyhodnocen (nebo které) jiné operandy. Tyto operátory jsou podmínkou podmíněného logického operátoru [and (`&&`)](boolean-logical-operators.md#conditional-logical-and-operator-) a [OR (`||`)](boolean-logical-operators.md#conditional-logical-or-operator-) , [operátory sloučení s hodnotou null `??` a `??=`](null-coalescing-operator.md), [operátory s hodnotou null `?.` a `?[]`](member-access-operators.md#null-conditional-operators--and-)a [podmíněný operátor `?:`](conditional-operator.md). Další informace naleznete v popisu každého operátoru.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 

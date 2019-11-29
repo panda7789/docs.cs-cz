@@ -3,15 +3,15 @@ title: 'Kurz: předpověď cen pomocí regrese pomocí Tvůrce modelů'
 description: V tomto kurzu se naučíte, jak vytvořit regresní model pomocí Tvůrce modelů ML.NET pro předpověď cen, konkrétně v New Yorku City taxislužby tarifs.
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 10/08/2019
+ms.date: 11/21/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: bd6acd83df4d2d5f19d30da847212d60b1576199
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: ed2afe307492b6d38e7e2f9d8ae02dafbb5ae1f4
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73977357"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552932"
 ---
 # <a name="tutorial-predict-prices-using-regression-with-model-builder"></a>Kurz: předpověď cen pomocí regrese pomocí Tvůrce modelů
 
@@ -23,7 +23,7 @@ V tomto kurzu se naučíte:
 > [!div class="checklist"]
 >
 > - Příprava a pochopení dat
-> - Zvolit scénář
+> - Zvolte scénář
 > - Načtení dat
 > - Výuka modelu
 > - Vyhodnocení modelu
@@ -32,13 +32,13 @@ V tomto kurzu se naučíte:
 > [!NOTE]
 > Tvůrce modelů je aktuálně ve verzi Preview.
 
-## <a name="pre-requisites"></a>Předpoklady
+## <a name="pre-requisites"></a>Požadavky
 
 Seznam požadavků a pokyny k instalaci najdete v [Průvodci instalací modelu modelů](../how-to-guides/install-model-builder.md).
 
 ## <a name="create-a-console-application"></a>Vytvoření konzolové aplikace
 
-1. Vytvořte **konzolovou aplikaci .NET Core** nazvanou "TaxiFarePrediction".
+1. Vytvořte  **C# konzolovou aplikaci .NET Core** nazvanou "TaxiFarePrediction". Ujistěte se, že **umístění řešení a projekt ve stejném adresáři** není **zaškrtnuté** (vs 2019), nebo je **zaškrtnuté** políčko **vytvořit adresář pro řešení** (vs 2017).
 
 ## <a name="prepare-and-understand-the-data"></a>Příprava a pochopení dat
 
@@ -70,7 +70,7 @@ Každý řádek v sadě `taxi-fare-train.csv` dat obsahuje podrobnosti o cestác
 
 `label` je sloupec, který chcete předpovědět. Při provádění regresní úlohy je cílem předpovědět číselnou hodnotu. V tomto scénáři odhadu cen se předpokládá, že náklady na taxislužby jízdní část budou předpovězeny. Proto je **fare_amount** jmenovka. Identifikované `features` jsou vstupy, které modelu udělíte pro předpověď `label`. V tomto případě se zbývající sloupce s výjimkou **trip_time_in_secs** používají jako funkce nebo vstupy pro předpověď množství tarifů.
 
-## <a name="choose-a-scenario"></a>Zvolit scénář
+## <a name="choose-a-scenario"></a>Zvolte scénář
 
 Abyste mohli model vyškolit, musíte si vybrat ze seznamu dostupných scénářů strojového učení, které poskytuje tvůrce modelů. V tomto případě je scénář `Price Prediction`.
 
@@ -167,13 +167,13 @@ V tomto kurzu jste zjistili, jak:
 > [!div class="checklist"]
 >
 > - Příprava a pochopení dat
-> - Zvolit scénář
+> - Zvolte scénář
 > - Načtení dat
 > - Výuka modelu
 > - Vyhodnocení modelu
 > - Použití modelu pro předpovědi
 
-### <a name="additional-resources"></a>Další prostředky
+### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 Další informace o tématech uvedených v tomto kurzu najdete v následujících zdrojích informací:
 

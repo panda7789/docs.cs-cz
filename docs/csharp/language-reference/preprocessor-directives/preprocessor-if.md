@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - '#if directive [C#]'
 ms.assetid: 48cabbff-ca82-491f-a56a-eeccd528c7c2
-ms.openlocfilehash: 561a628c60888a8d4f3c50c8413784e1ed210599
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: e467a890e971e6c6f2c681ee503d7c7ead19a1e4
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73035994"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552446"
 ---
 # <a name="if-c-reference"></a>#if (referenční dokumentace jazyka C#)
 
@@ -24,7 +24,7 @@ Když C# kompilátor narazí na direktivu`#if`a následně na něj následuje di
 #endif
 ```
 
-Operátory [==](../operators/equality-operators.md#equality-operator-) (rovnost) a [! =](../operators/equality-operators.md#inequality-operator-) (nerovnost) lze použít pouze pro test na [hodnotu true](../keywords/true-literal.md) nebo [false](../keywords/false-literal.md). Hodnota true znamená, že je symbol definován. Příkaz `#if DEBUG` má stejný význam jako `#if (DEBUG == true)`. Můžete použít operátory [&&](../operators/boolean-logical-operators.md#conditional-logical-and-operator-) (a), [ &#124; ](../operators/boolean-logical-operators.md#conditional-logical-or-operator-) (nebo), a [!](../operators/boolean-logical-operators.md#logical-negation-operator-) (ne) k vyhodnocení, zda bylo definováno více symbolů. Symboly a operátory je také možné seskupovat pomocí závorek.
+Operátory [==](../operators/equality-operators.md#equality-operator-) (rovnost) a [! =](../operators/equality-operators.md#inequality-operator-) (nerovnost) lze použít pouze k testování hodnot [bool](../builtin-types/bool.md) `true` nebo `false`. Hodnota true znamená, že je symbol definován. Příkaz `#if DEBUG` má stejný význam jako `#if (DEBUG == true)`. Můžete použít operátory [&&](../operators/boolean-logical-operators.md#conditional-logical-and-operator-) (a), [ &#124; ](../operators/boolean-logical-operators.md#conditional-logical-or-operator-) (nebo), a [!](../operators/boolean-logical-operators.md#logical-negation-operator-) (ne) k vyhodnocení, zda bylo definováno více symbolů. Symboly a operátory je také možné seskupovat pomocí závorek.
 
 ## <a name="remarks"></a>Poznámky
 

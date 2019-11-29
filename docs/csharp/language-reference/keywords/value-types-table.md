@@ -6,12 +6,12 @@ helpviewer_keywords:
 - value types [C#], table
 - types [C#], value types
 ms.assetid: 67d8f631-b6e3-4d83-9910-5ec497f8c5f3
-ms.openlocfilehash: c470bbdff6cb08732f063afb9b325e44d9ca4d6b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 2f2d81d90f6d68f1bada40c81f0f28febd51bd1f
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428461"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552352"
 ---
 # <a name="value-types-table-c-reference"></a>Tabulka typů hodnot (C# Referenční dokumentace)
 
@@ -19,7 +19,7 @@ V následující tabulce jsou uvedeny C# typy hodnot:
 
 |Typ hodnoty|Kategorie|
 |----------------|--------------|
-|[bool](bool.md)|Logická hodnota|
+|[bool](../builtin-types/bool.md)|Boolean|
 |`byte`|Unsigned, Numeric, [integrál](../builtin-types/integral-numeric-types.md)|
 |[char](../builtin-types/char.md)|Unsigned, Numeric, [integrál](../builtin-types/integral-numeric-types.md)|
 |`decimal`|Číselná, [plovoucí desetinná](../builtin-types/floating-point-numeric-types.md) čárka|

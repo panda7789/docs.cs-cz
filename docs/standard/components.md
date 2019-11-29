@@ -5,12 +5,12 @@ author: cartermp
 ms.author: mairaw
 ms.date: 08/23/2017
 ms.technology: dotnet-standard
-ms.openlocfilehash: b55b2f9266477a0bb12c39840c9f2108a5c0f0c4
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 4e787377bf954de3be499ae0fc74ef274a61e129
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74283922"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552876"
 ---
 # <a name="net-architectural-components"></a>Komponenty architektury .NET
 
@@ -111,5 +111,5 @@ Oficiální dokumenty ISO/IEC jsou k dispozici na stránce Standard ISO/IEC – 
 - [Průvodce platformou .NET Core](../core/index.md)
 - [Průvodce rozhraním .NET Framework](../framework/index.md)
 - [Průvodce jazykem C#](../csharp/index.yml)
-- [Průvodce jazykem F#](../fsharp/index.md)
+- [Průvodce jazykem F#](../fsharp/index.yml)
 - [Průvodce VB.NET](../visual-basic/index.md)

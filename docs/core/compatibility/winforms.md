@@ -2,12 +2,12 @@
 title: Model Windows Forms zásadní změny – .NET Core
 description: Obsahuje seznam nejnovějších změn v model Windows Forms pro .NET Core.
 ms.date: 11/21/2019
-ms.openlocfilehash: 7b086ff41b41aa210b53a46700fc92ea4adb4077
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
-ms.translationtype: MT
+ms.openlocfilehash: 612f67be8f782033c9408133fcaa965f5826024c
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74429218"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74551956"
 ---
 # <a name="breaking-changes-in-windows-forms"></a>Průlomové změny v model Windows Forms
 
@@ -68,3 +68,7 @@ Následuje seznam nejnovějších změn v model Windows Forms verze .NET Core.
 ## <a name="net-core-31"></a>.NET Core 3,1
 
 [!INCLUDE[Removed controls](~/includes/core-changes/windowsforms/remove-controls-3.1.md)]
+
+***
+
+[!INCLUDE[CellFormatting event](~/includes/core-changes/windowsforms/cellformatting-event-not-raised.md)]

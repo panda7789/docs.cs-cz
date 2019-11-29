@@ -2,12 +2,12 @@
 title: O platformě .NET Core
 description: Přečtěte si o .NET Core.
 ms.date: 09/17/2019
-ms.openlocfilehash: a1127a39d67b6c24994a2957298c62d87703950d
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 4fe16475e18eb88e88fb33d30508f9ef5c9f2cd5
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73416748"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552245"
 ---
 # <a name="about-net-core"></a>O platformě .NET Core
 
@@ -29,17 +29,17 @@ C#, Visual Basic a F# jazyky lze použít k psaní aplikací a knihoven pro .NET
 - [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
 - Text podvápna
 - Vim
- 
+
 Tato integrace je součástí, a to přispěvateli projektů [OmniSharp](https://www.omnisharp.net/) a [Ionide](http://ionide.io) .
 
 ## <a name="apis"></a>API
 
 Rozhraní .NET Core zpřístupňuje rozhraní API pro mnoho scénářů, z nichž několik sleduje:
 
-- Primitivní typy, jako například [bool](../csharp/language-reference/keywords/bool.md) a [int](../csharp/language-reference/builtin-types/integral-numeric-types.md).
+- Primitivní typy, například <xref:System.Boolean?displayProperty=nameWithType> a <xref:System.Int32?displayProperty=nameWithType>.
 - Kolekce, například <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> a <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType>.
-- Typy nástrojů, například <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> a <xref:System.IO.FileStream?displayProperty=nameWithType>.
-- Datové typy, například <xref:System.Data.DataSet?displayProperty=nameWithType> a [negenerickými](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/).
+- Typy nástrojů, například <xref:System.Net.Http.HttpClient?displayProperty=nameWithType>a <xref:System.IO.FileStream?displayProperty=nameWithType>.
+- Datové typy, například <xref:System.Data.DataSet?displayProperty=nameWithType>a [negenerickými](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/).
 - Vysoce výkonné typy, například <xref:System.Numerics.Vector?displayProperty=nameWithType> a [kanály](https://devblogs.microsoft.com/dotnet/system-io-pipelines-high-performance-io-in-net/).
 
 .NET Core poskytuje kompatibilitu s rozhraními API .NET Framework a mono implementací specifikace [.NET Standard](../standard/net-standard.md) .

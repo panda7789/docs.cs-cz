@@ -6,12 +6,12 @@ helpviewer_keywords:
 - .NET Framework, getting started
 - getting started [.NET Framework]
 ms.assetid: c693fd34-88fe-4d90-b332-19eeadf3b7e7
-ms.openlocfilehash: ca2a4e6c44a26889a2fffa5cc5fa2cbba3eab782
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 563416f1ca9ddb9cb9bb7e78b9e13406983bdf9f
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74281822"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552793"
 ---
 # <a name="get-started-with-the-net-framework"></a>Začínáme s .NET Framework
 
@@ -65,7 +65,7 @@ Pokud chcete vyvíjet .NET Framework aplikace nebo komponenty, udělejte toto:
 
 1. Pokud není předinstalována v operačním systému, nainstalujte verzi .NET Framework, na kterou bude vaše aplikace cílit. Nejnovější produkční verze je .NET Framework 4,8. Je předinstalována ve Windows 10 Květen 2019 Update a je k dispozici ke stažení v dřívějších verzích operačního systému Windows. Požadavky na systém .NET Framework najdete v tématu [požadavky na systém](system-requirements.md). Informace o instalaci jiných verzí .NET Framework najdete v [Průvodci instalací](../install/guide-for-developers.md)nástroje. Další balíčky .NET Framework jsou vydány mimo pásmo, což znamená, že jsou vydávány na základě provozu mimo jakýkoli pravidelný nebo plánovaný cyklus vydaných verzí. Informace o těchto balíčcích najdete v tématu [.NET Framework a vzdálené verze](the-net-framework-and-out-of-band-releases.md).
 
-2. Vyberte jazyky, které podporuje .NET Framework, které máte v úmyslu použít k vývoji aplikací. K dispozici je řada jazyků, včetně [Visual Basic](../../visual-basic/index.md), [C#](../../csharp/index.yml), [F#](../../fsharp/index.md)a [ C++/CLI](/cpp/dotnet/dotnet-programming-with-cpp-cli-visual-cpp) od Microsoftu. (Programovací jazyk, který umožňuje vyvíjet aplikace pro .NET Framework, dodržuje [specifikaci Common Language Infrastructure (CLI)](https://visualstudio.microsoft.com/license-terms/ecma-c-common-language-infrastructure-standards/).)
+2. Vyberte jazyky, které podporuje .NET Framework, které máte v úmyslu použít k vývoji aplikací. K dispozici je řada jazyků, včetně [Visual Basic](../../visual-basic/index.md), [C#](../../csharp/index.yml), [F#](../../fsharp/index.yml)a [ C++/CLI](/cpp/dotnet/dotnet-programming-with-cpp-cli-visual-cpp) od Microsoftu. (Programovací jazyk, který umožňuje vyvíjet aplikace pro .NET Framework, dodržuje [specifikaci Common Language Infrastructure (CLI)](https://visualstudio.microsoft.com/license-terms/ecma-c-common-language-infrastructure-standards/).)
 
 3. Vyberte a nainstalujte vývojové prostředí, které chcete použít k vytvoření aplikací a který podporuje vybraný programovací jazyk nebo jazyky. Integrované vývojové prostředí (IDE) Microsoftu pro aplikace .NET Framework je [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link). Je k dispozici v řadě edicí.
 

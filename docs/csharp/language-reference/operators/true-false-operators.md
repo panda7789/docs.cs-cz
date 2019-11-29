@@ -6,16 +6,16 @@ helpviewer_keywords:
 - false operator [C#]
 - true operator [C#]
 ms.assetid: 81a888fd-011e-4589-b242-6c261fea505e
-ms.openlocfilehash: 780c63e5a8f3f0d82559565b3319fe54507e3d21
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: f65ed3b362080d7a8afe89e22bd132d1fc190b06
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73036128"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552466"
 ---
 # <a name="true-and-false-operators-c-reference"></a>operátory true a false (C# Referenční dokumentace)
 
-Operátor `true` vrátí hodnotu [bool](../keywords/bool.md) `true`, která značí, že jeho operand je jednoznačně true. Operátor `false` vrací hodnotu `bool` `true` k indikaci, že jeho operand je jednoznačně false. Operátory `true` a `false` nezaručují vzájemné doplnění. To znamená, že operátor `true` i `false` může vrátit hodnotu `bool` `false` pro stejný operand. Pokud typ definuje jeden ze dvou operátorů, musí také definovat jiný operátor.
+Operátor `true` vrátí hodnotu [bool](../builtin-types/bool.md) `true`, která značí, že jeho operand je jednoznačně true. Operátor `false` vrací hodnotu `bool` `true` k indikaci, že jeho operand je jednoznačně false. Operátory `true` a `false` nezaručují vzájemné doplnění. To znamená, že operátor `true` i `false` může vrátit hodnotu `bool` `false` pro stejný operand. Pokud typ definuje jeden ze dvou operátorů, musí také definovat jiný operátor.
 
 > [!TIP]
 > `bool?` typ použijte, pokud potřebujete podporovat logiku se třemi hodnotami (například při práci s databázemi, které podporují logický typ se třemi hodnotami). C#poskytuje operátory`&`a`|`, které podporují logiku se třemi hodnotami s operandy`bool?`. Další informace naleznete v části s [možnou hodnotou null logických operátorů](boolean-logical-operators.md#nullable-boolean-logical-operators) v článku [Boolean Logical Operators](boolean-logical-operators.md) .
@@ -45,5 +45,3 @@ Wait!
 
 - [C#odkaz](../index.md)
 - [Operátory jazyka C#](index.md)
-- [true – literál](../keywords/true-literal.md)
-- [FALSE – literál](../keywords/false-literal.md)

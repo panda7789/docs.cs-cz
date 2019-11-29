@@ -1,17 +1,17 @@
 ---
 title: 'Kurz: analýza klasifikace mínění-Binary'
 description: V tomto kurzu se dozvíte, jak vytvořit aplikaci Razor Pages, která klasifikuje mínění z komentářů k webu a provede příslušnou akci. Binární mínění klasifikátoru používá tvůrce modelů v aplikaci Visual Studio.
-ms.date: 10/08/2019
+ms.date: 11/21/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 5e5b60a53db70b33ed798bcf33497b74911ba727
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: e919341130c6778207f324dd9eb3b3f54c8a9c68
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974799"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74551850"
 ---
 # <a name="tutorial-analyze-sentiment-of-website-comments-in-a-web-application-using-mlnet-model-builder"></a>Kurz: analýza mínění komentářů k webu ve webové aplikaci pomocí Tvůrce modelů ML.NET
 
@@ -25,7 +25,7 @@ V tomto kurzu se naučíte:
 >
 > - Vytvoření aplikace ASP.NET Core Razor Pages
 > - Příprava a pochopení dat
-> - Zvolit scénář
+> - Zvolte scénář
 > - Načtení dat
 > - Výuka modelu
 > - Vyhodnocení modelu
@@ -36,7 +36,7 @@ V tomto kurzu se naučíte:
 
 Zdrojový kód pro tento kurz najdete v úložišti [dotnet/machinelearning-Samples](https://github.com/dotnet/machinelearning-samples) .
 
-## <a name="pre-requisites"></a>Předpoklady
+## <a name="pre-requisites"></a>Požadavky
 
 Seznam požadavků a pokyny k instalaci najdete v [Průvodci instalací modelu modelů](../how-to-guides/install-model-builder.md).
 
@@ -48,7 +48,7 @@ Seznam požadavků a pokyny k instalaci najdete v [Průvodci instalací modelu m
     1. V dialogovém okně Nový projekt vyberte uzel  **C# vizuálu** následovaný **webovým** uzlem.
     1. Pak vyberte šablonu projektu **ASP.NET Core webové aplikace** .
     1. Do textového pole **název** zadejte "SentimentRazor".
-    1. Zaškrtávací políčko **vytvořit adresář pro řešení** by mělo být ve výchozím nastavení zaškrtnuté. Pokud tomu tak není, ověřte ji.
+    1. Ujistěte se, že **umístění řešení a projekt ve stejném adresáři** není **zaškrtnuté** (vs 2019), nebo je **zaškrtnuté** políčko **vytvořit adresář pro řešení** (vs 2017).
     1. Klikněte na tlačítko **OK** .
     1. Zvolte **Webová aplikace** v okně, které zobrazuje různé typy ASP.NET Core projektů, a pak vyberte tlačítko **OK** .
 
@@ -60,11 +60,11 @@ Každý řádek v datové sadě *Wikipedii-Detox-250-line-data. TSV* představuj
 
 | Mínění | SentimentText |
 | :---: | :---: |
-první | = = HRUBÉ = = Dude, jste hrubé nahráli obrázek Carl, nebo jiný.
-první | = = OK! = = IM VANDALIZE VOLNĚ ŽIJÍCÍ NA WIKIWEBU A POTOM!!!
-0,8 | Doufám, že vám to pomůže.
+1 | = = HRUBÉ = = Dude, jste hrubé nahráli obrázek Carl, nebo jiný.
+1 | = = OK! = = IM VANDALIZE VOLNĚ ŽIJÍCÍ NA WIKIWEBU A POTOM!!!
+0 | Doufám, že vám to pomůže.
 
-## <a name="choose-a-scenario"></a>Zvolit scénář
+## <a name="choose-a-scenario"></a>Zvolte scénář
 
 ![Průvodce tvůrcem modelů v aplikaci Visual Studio](./media/sentiment-analysis-model-builder/model-builder-screen.png)
 
@@ -292,13 +292,13 @@ V tomto kurzu jste zjistili, jak:
 >
 > - Vytvoření aplikace ASP.NET Core Razor Pages
 > - Příprava a pochopení dat
-> - Zvolit scénář
+> - Zvolte scénář
 > - Načtení dat
 > - Výuka modelu
 > - Vyhodnocení modelu
 > - Použití modelu pro předpovědi
 
-### <a name="additional-resources"></a>Další prostředky
+### <a name="additional-resources"></a>Další materiály a zdroje informací
 
 Další informace o tématech uvedených v tomto kurzu najdete v následujících zdrojích informací:
 

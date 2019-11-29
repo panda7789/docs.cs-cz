@@ -9,12 +9,12 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: b264be5d2589455562a19ef55b5ddf1a4e74ce15
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: c797b1e9a80030ce6a97fccb14da2c51d753a1dc
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428449"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552336"
 ---
 # <a name="value-types-c-reference"></a>Typy hodnot (C# referenční)
 
@@ -42,7 +42,7 @@ Každý typ hodnoty má implicitní konstruktor bez parametrů, který inicializ
 
 - [Integrální typy](../builtin-types/integral-numeric-types.md): číselné typy integer a typ [znaku](../builtin-types/char.md)
 - [Typy s plovoucí desetinnou čárkou](../builtin-types/floating-point-numeric-types.md)
-- [bool](bool.md)
+- [bool](../builtin-types/bool.md)
 
 Jednoduché typy jsou identifikovány pomocí klíčových slov, ale tato klíčová slova jsou jednoduše aliasy pro předdefinované typy struktury v oboru názvů <xref:System>. Například [int](../builtin-types/integral-numeric-types.md) je alias <xref:System.Int32?displayProperty=nameWithType>. Úplný seznam aliasů najdete v tématu [tabulka předdefinovaných typů](built-in-types-table.md).
 

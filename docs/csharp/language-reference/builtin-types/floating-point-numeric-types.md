@@ -18,12 +18,12 @@ helpviewer_keywords:
 - floating-point numbers [C#], float keyword
 - double data type [C#]
 - decimal keyword [C#]
-ms.openlocfilehash: 4d71f7eea3f574e483dc4250f5c87e1ffd551f2f
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 23aa33c6887db48a12f995efc5e1e2220d30216c
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72771908"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552281"
 ---
 # <a name="floating-point-numeric-types-c-reference"></a>Číselné typy s plovoucí desetinnouC# čárkou (referenční)
 
@@ -46,14 +46,14 @@ double a = 12.3;
 System.Double b = 12.3;
 ```
 
-Výchozí hodnota každého typu s plovoucí desetinnou čárkou je nula, `0`. Každý z typů s plovoucí desetinnou čárkou má konstanty `MinValue` a `MaxValue`, které poskytují minimální a maximální hodnotu konečné hodnoty tohoto typu. Typy `float` a `double` také poskytují konstanty, které nepředstavují hodnoty nečíselné a nekonečno. Například typ `double` poskytuje následující konstanty: <xref:System.Double.NaN?displayProperty=nameWithType>, <xref:System.Double.NegativeInfinity?displayProperty=nameWithType> a <xref:System.Double.PositiveInfinity?displayProperty=nameWithType>.
+Výchozí hodnota každého typu s plovoucí desetinnou čárkou je nula, `0`. Každý z typů s plovoucí desetinnou čárkou má `MinValue` a `MaxValue` konstanty, které poskytují minimální a maximální konečnou hodnotu tohoto typu. Typy `float` a `double` také poskytují konstanty, které nepředstavují hodnoty nečíselné a nekonečno. Například typ `double` poskytuje následující konstanty: <xref:System.Double.NaN?displayProperty=nameWithType>, <xref:System.Double.NegativeInfinity?displayProperty=nameWithType>a <xref:System.Double.PositiveInfinity?displayProperty=nameWithType>.
 
-Vzhledem k tomu, že typ `decimal` má větší přesnost a menší rozsah než obě `float` a `double`, je vhodné pro finanční a peněžní výpočty.
+Vzhledem k tomu, že typ `decimal` má větší přesnost a menší rozsah než `float` a `double`, je vhodné pro finanční a peněžní výpočty.
 
 Ve výrazu můžete kombinovat [integrální](integral-numeric-types.md) typy a typy s plovoucí desetinnou čárkou. V tomto případě jsou integrální typy převedeny na typy s plovoucí desetinnou čárkou. Vyhodnocení výrazu je provedeno podle následujících pravidel:
 
-- Pokud je jeden z typů s plovoucí desetinnou čárkou `double`, výraz se vyhodnotí jako `double` nebo [bool](../keywords/bool.md) v relačních porovnáních a porovnávání rovnosti.
-- Pokud ve výrazu není žádný typ `double`, výraz se vyhodnotí jako `float` nebo [bool](../keywords/bool.md) v relačních porovnáních a porovnávání rovnosti.
+- Pokud je jeden z typů s plovoucí desetinnou čárkou `double`, výraz se vyhodnotí jako `double`nebo [bool](bool.md) v relačních porovnáních a porovnávání rovnosti.
+- Pokud ve výrazu není žádný typ `double`, výraz se vyhodnotí jako `float`nebo [bool](bool.md) v relačních porovnáních a porovnávání rovnosti.
 
 Výraz s plovoucí desetinnou čárkou může obsahovat následující sady hodnot:
 

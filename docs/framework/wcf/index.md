@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF]
 - WCF [WCF]
 ms.assetid: 149348a6-bf82-4ccc-9604-fa7cc88c0749
-ms.openlocfilehash: 34c6cb8cbe815e33658f38ee0e6aff581ea0ff74
-ms.sourcegitcommit: 9b2ef64c4fc10a4a10f28a223d60d17d7d249ee8
+ms.openlocfilehash: 836913dd35d127d181c753341a7c39c453242a8f
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "72961158"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552684"
 ---
 # <a name="develop-service-oriented-applications-with-wcf"></a>Vývoj aplikací orientovaných na služby pomocí WCF
 
@@ -71,9 +71,6 @@ Tato část dokumentace poskytuje informace o Windows Communication Foundation (
 
  [Obecné referenční](general-reference.md)\
  Oddíl popisuje prvky, které se používají ke konfiguraci Windows Communication Foundation klientů a služeb.
-
- [Názory a komunita](feedback-and-community.md)\
- Informace o tom, jak poskytnout zpětnou vazbu k Windows Communication Foundation
 
  [Informace o ochraně osobních údajů](privacy-information.md)\
  Informace týkající se WCF a ochrany osobních údajů

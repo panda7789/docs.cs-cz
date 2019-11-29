@@ -6,23 +6,23 @@ ms.date: 07/29/2019
 helpviewer_keywords:
 - default [C#]
 - parameterless constructor [C#]
-ms.openlocfilehash: 2f1ad5cc029b93261153e46d854cd8bf3e31ce92
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 48aa294fa9e37e2e138444e493faa5474011097e
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428538"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74551826"
 ---
 # <a name="default-values-table-c-reference"></a>Tabulka výchozích hodnot (C# Referenční dokumentace)
 
 Následující tabulka ukazuje výchozí hodnoty C# typů:
 
-|Typ|Výchozí hodnota|
+|Type|Výchozí hodnota|
 |---------|------------------|
 |Libovolný typ odkazu|`null`|
 |Libovolný [vestavěný celočíselný numerický typ](../builtin-types/integral-numeric-types.md)|0 (nula)|
 |Libovolný [vestavěný číselný typ s plovoucí desetinnou](../builtin-types/floating-point-numeric-types.md) čárkou|0 (nula)|
-|[bool](bool.md)|`false`|
+|[bool](../builtin-types/bool.md)|`false`|
 |[char](../builtin-types/char.md)|`'\0'` (U + 0000)|
 |[enum](enum.md)|Hodnota vytvořená výrazem `(E)0`, kde `E` je identifikátor výčtu.|
 |[struct](struct.md)|Hodnota vytvořená nastavením všech polí typu hodnoty na jejich výchozí hodnoty a všechna pole typu odkaz na `null`.|

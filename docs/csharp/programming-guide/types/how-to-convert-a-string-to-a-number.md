@@ -8,12 +8,12 @@ helpviewer_keywords:
 - converting strings to int [C#]
 - strings [C#], converting to int
 ms.assetid: 467b9979-86ee-4afd-b734-30299cda91e3
-ms.openlocfilehash: c39602afbece4faaf6599a5c76f5746defffe03a
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 8cd5a54bead2790d8e6e4c8e4a5649352f12869d
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73417636"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552402"
 ---
 # <a name="how-to-convert-a-string-to-a-number-c-programming-guide"></a>Postupy: Převedení řetězce na číslo (Průvodce programováním v C#)
 
@@ -21,7 +21,7 @@ Můžete převést [řetězec](../../language-reference/builtin-types/reference-
   
  Pokud máte řetězec, je poněkud efektivnější a jednoduše zavolejte metodu `TryParse` (například [`int.TryParse("11", out number)`](xref:System.Int32.TryParse%2A)) nebo metodu `Parse` (například [`var number = int.Parse("11")`](xref:System.Int32.Parse%2A)).  Použití metody <xref:System.Convert> je užitečnější pro obecné objekty, které implementují <xref:System.IConvertible>.  
   
- Můžete použít metody `Parse` nebo `TryParse` na číselném typu, který řetězec obsahuje, například typ <xref:System.Int32?displayProperty=nameWithType>.  Metoda <xref:System.Convert.ToInt32%2A?displayProperty=nameWithType> používá <xref:System.Int32.Parse%2A> interně.  Metoda `Parse` vrátí převedený počet; Metoda `TryParse` vrací hodnotu <xref:System.Boolean>, která označuje, zda byl převod úspěšný, a vrátí převedený počet v [parametru`out`](../../language-reference/keywords/out.md). Pokud řetězec nemá platný formát, `Parse` vyvolá výjimku, zatímco `TryParse` vrátí [false](../../language-reference/keywords/false-literal.md). Při volání metody `Parse` byste měli vždy použít zpracování výjimek k zachycení <xref:System.FormatException> v případě, že operace analýzy neproběhne úspěšně.  
+ Můžete použít metody `Parse` nebo `TryParse` na číselném typu, který řetězec obsahuje, například typ <xref:System.Int32?displayProperty=nameWithType>.  Metoda <xref:System.Convert.ToInt32%2A?displayProperty=nameWithType> používá <xref:System.Int32.Parse%2A> interně.  Metoda `Parse` vrátí převedený počet; Metoda `TryParse` vrací hodnotu <xref:System.Boolean>, která označuje, zda byl převod úspěšný, a vrátí převedený počet v [parametru`out`](../../language-reference/keywords/out.md). Pokud řetězec nemá platný formát, `Parse` vyvolá výjimku, zatímco `TryParse` vrátí `false`. Při volání metody `Parse` byste měli vždy použít zpracování výjimek k zachycení <xref:System.FormatException> v případě, že operace analýzy neproběhne úspěšně.  
   
 ## <a name="calling-the-parse-and-tryparse-methods"></a>Volání metod Parse a TryParse
 
