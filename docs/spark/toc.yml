@@ -21,6 +21,8 @@
   items:
     - name: Ladění aplikace
       href: how-to-guides/debug.md
+    - name: Odesílání úloh do HDInsightu
+      href: how-to-guides/hdinsight-deploy-methods.md
 - name: Odkaz
   items:
     - name: Referenční dokumentace ke knihovně API

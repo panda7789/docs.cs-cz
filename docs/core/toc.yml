@@ -73,7 +73,8 @@
       href: whats-new/dotnet-core-2-1.md
     - name: Co je nového v .NET Core 2.0
       href: whats-new/dotnet-core-2-0.md
-- name: Kompatibilita aplikací
+- name: Změny způsobující chyby
+  displayName: app compatibility
   href: compatibility/
 - name: Kurzy
   href: tutorials/index.md
@@ -236,7 +237,7 @@
       href: tools/custom-templates.md
     - name: Povolení dokončování pomocí TABULÁTORU
       href: tools/enable-tab-autocomplete.md
-    - name: Telemetrická data
+    - name: Telemetrie
       href: tools/telemetry.md
     - name: global.json – přehled
       href: tools/global-json.md
@@ -332,12 +333,16 @@
       href: porting/libraries.md
     - name: Uspořádání projektů pro .NET Core
       href: porting/project-structure.md
-    - name: Nástroje pro pomoc s přenosem aplikací do .NET Core
+    - name: Nástroje
       href: porting/tools.md
     - name: Použití sady Windows Compatibility Pack
       href: porting/windows-compat-pack.md
     - name: Portování projektů Windows Forms
-      href: porting/winforms.md
+      items:
+        - name: Postup při portování projektu
+          href: porting/winforms.md
+        - name: Změny způsobující chyby
+          href: porting/winforms-breaking-changes.md
     - name: Portování projektů WPF
       href: porting/wpf.md
 - name: Načítání závislostí
