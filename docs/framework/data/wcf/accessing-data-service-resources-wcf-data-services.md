@@ -8,15 +8,15 @@ helpviewer_keywords:
 - WCF Data Services, getting started
 - WCF Data Services, accessing data
 ms.assetid: 9665ff5b-3e3a-495d-bf83-d531d5d060ed
-ms.openlocfilehash: cf6877dd67ad9e17a43be5eafb84a2ecf21d7190
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 7eea23ba3dc5e9cc327d9cdfba10c72af7525c30
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975437"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74569407"
 ---
 # <a name="accessing-data-service-resources-wcf-data-services"></a>Přístup k prostředkům datové služby (WCF Data Services)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] podporuje protokol OData (Open Data Protocol), který vystavuje vaše data jako informační kanál s prostředky, které jsou adresovatelné pomocí identifikátorů URI. Tyto prostředky jsou reprezentovány podle konvencí vztahů mezi entitami [model EDM (Entity Data Model)](../adonet/entity-data-model.md). V tomto modelu entity představují provozní jednotky dat, které jsou typy dat v doméně aplikace, jako jsou například zákazníci, objednávky, položky a produkty. Data entit jsou přístupná a se mění pomocí sémantiky representational state transfer (REST), konkrétně standardní příkazy HTTP GET, PUT, POST a DELETE.  
+WCF Data Services podporuje protokol OData (Open Data Protocol), který vystavuje vaše data jako informační kanál s prostředky, které jsou adresovatelné pomocí identifikátorů URI. Tyto prostředky jsou reprezentovány podle konvencí vztahů mezi entitami [model EDM (Entity Data Model)](../adonet/entity-data-model.md). V tomto modelu entity představují provozní jednotky dat, které jsou typy dat v doméně aplikace, jako jsou například zákazníci, objednávky, položky a produkty. Data entit jsou přístupná a se mění pomocí sémantiky representational state transfer (REST), konkrétně standardní příkazy HTTP GET, PUT, POST a DELETE.  
   
 ## <a name="addressing-resources"></a>Adresování prostředků  
  Ve službě OData vyřešíte všechna data vystavená datovým modelem pomocí identifikátoru URI. Například následující identifikátor URI vrátí informační kanál, který je sadou entit Customers, která obsahuje položky pro všechny instance typu entity zákazníka:  
@@ -56,7 +56,7 @@ ms.locfileid: "73975437"
   
  Položky ve vráceném informačním kanálu jsou řazeny také podle hodnoty vlastnosti ShipCity objednávek.  
   
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] podporuje následující možnosti dotazů na systém OData:  
+ WCF Data Services podporuje následující možnosti dotazů na systém OData:  
   
 |Možnost dotazu|Popis|  
 |------------------|-----------------|  

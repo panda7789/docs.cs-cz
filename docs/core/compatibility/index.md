@@ -1,15 +1,15 @@
 ---
-title: Vyhodnotit přerušující změny – .NET Core
-description: Přečtěte si o způsobech, kterými se .NET Core snaží zachovat kompatibilitu pro vývojáře napříč verzemi .NET.
+title: Typy přerušujících změn – .NET Core
+description: Přečtěte si, jak se .NET Core pokusí zachovat kompatibilitu pro vývojáře napříč verzemi .NET a jaký druh změny se považuje za zásadní změnu.
 ms.date: 06/10/2019
-ms.openlocfilehash: 3ad3cbe36ee09d371e26dc7da36a31207a6c1b25
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 5624a35a0d71224faf9adc5df2b02a529e650314
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73973653"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74567708"
 ---
-# <a name="evaluate-breaking-changes-in-net-core"></a>Vyhodnotit poslední změny v .NET Core
+# <a name="changes-that-affect-compatibility"></a>Změny ovlivňující kompatibilitu
 
 V průběhu své historie se .NET pokusilo udržet vysokou úroveň kompatibility z verze na verzi a v různých charakterech rozhraní .NET. To platí i pro .NET Core. I když .NET Core se dá považovat za novou technologii, která je nezávislá na .NET Framework, dva hlavní faktory omezují schopnost .NET Core odchýlit se od .NET Framework:
 
@@ -19,19 +19,19 @@ V průběhu své historie se .NET pokusilo udržet vysokou úroveň kompatibilit
 
 Společně s kompatibilitou mezi implementacemi .NET očekávají vývojáři vysokou úroveň kompatibility napříč verzemi .NET Core. Konkrétně kód napsaný pro starší verzi rozhraní .NET Core by měl běžet plynule v novější verzi .NET Core. Mnoho vývojářů předpokládá, že nová rozhraní API nalezená v nově vydaných verzích rozhraní .NET Core by měla být také kompatibilní s předběžnými verzemi, ve kterých byla tato rozhraní API zavedena.
 
-Tento článek popisuje kategorie změn kompatibility (nebo zásadní změny) a způsob, jakým tým .NET vyhodnocuje změny v každé z těchto kategorií. Porozumění způsobu, jakým tým .NET získává možné nepotřebné změny, je zvláště užitečné pro vývojáře, kteří otevírají žádosti o přijetí změn v úložišti [dotnet/corefx](https://github.com/dotnet/corefx) GitHubu, které upravují chování existujících rozhraní API.
+Tento článek popisuje kategorie změn kompatibility (nebo zásadní změny) a způsob, jakým tým .NET vyhodnocuje změny v každé z těchto kategorií. Porozumění způsobu, jakým tým .NET přistupuje k možným nepřípadným změnám, je zvláště užitečné pro vývojáře, kteří otevřou žádosti o přijetí změn v úložišti [dotnet/corefx](https://github.com/dotnet/corefx) GitHubu, které upravují chování existujících rozhraní API.
 
 > [!NOTE]
 > Definici kategorií kompatibility, jako je binární kompatibilita a zpětná kompatibilita, najdete v tématu [přerušující kategorie změn](categories.md).
 
-Následující části popisují kategorie změn provedených v rozhraních API .NET Core a jejich dopad na kompatibilitu aplikací. Ikona ✔️ označuje, že je povolen určitý druh změny, ❌ indikuje, že není povolený, a ❓ indikuje změnu, která může nebo nemusí být povolená. Změny v této poslední kategorii vyžadují rozhodnutí a vyhodnocení toho, jak bylo předchozí chování předvídatelné, zjevné a konzistentní.
+Následující části popisují kategorie změn provedených v rozhraních API .NET Core a jejich dopad na kompatibilitu aplikací. Ikona ✔️ označuje, že je povolen určitý druh změny, ❌ indikuje, že není povolený, a ❓ indikuje změnu, která může nebo nemusí být povolená. Změny v této poslední kategorii vyžadují posouzení a vyhodnocení toho, jak by bylo předchozí chování předvídatelné, zjevné a konzistentní.
 
 > [!NOTE]
 > Kromě toho, že slouží jako vodítko, jak jsou vyhodnocovány změny knihoven .NET Core, mohou vývojáři knihovny použít také k vyhodnocení změn ve svých knihovnách, které cílí na více implementací a verzí rozhraní .NET.
 
 ## <a name="modifications-to-the-public-contract"></a>Úpravy veřejné smlouvy
 
-Změny v této kategorii *upravují* oblast veřejného povrchu typu. Většina změn v této kategorii není povolená, protože narušují *zpětnou kompatibilitu* (schopnost aplikace, která byla vyvinutá pomocí předchozí verze rozhraní API, aby se spustila bez překompilace na novější verzi).
+Změny v této kategorii upravují oblast veřejného povrchu typu. Většina změn v této kategorii není povolená, protože narušují *zpětnou kompatibilitu* (schopnost aplikace, která byla vyvinutá pomocí předchozí verze rozhraní API, aby se spustila bez překompilace na novější verzi).
 
 ### <a name="types"></a>Typy
 

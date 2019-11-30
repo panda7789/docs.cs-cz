@@ -6,12 +6,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 10/22/2019
-ms.openlocfilehash: 9cb2568aa36af9ced0525660962966375d69e35b
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 8c2d586a444412abd67198ad7f295e81cb3101fb
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74140678"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74567325"
 ---
 # <a name="whats-new-in-net-core-30"></a>Co je nového v .NET Core 3.0
 
@@ -192,7 +192,7 @@ Je nutné zadat jednu z následujících hodnot. Pokud je nastavení vynecháno,
 Vraťte se k nejvyšší verzi opravy. Tím se zakáže dílčí verze s posunem.
 - **Vedlejší**\
 V případě, že chybí požadovaná dílčí verze, převeďte nahoru na nejnižší nižší verzi. Pokud je k dispozici požadovaná dílčí verze, použije se zásada **LatestPatch** .
-- **Hlavní** \
+- **Hlavní**\
 Pokud chybí požadovaná hlavní verze, převeďte ji nahoru na nejnižší nejvyšší hlavní verzi a nejnižší podverzi. Pokud je k dispozici požadovaná hlavní verze, použije se **vedlejší** zásada.
 - **LatestMinor**\
 Převeďte do nejvyšší dílčí verze, i když je k dispozici požadovaná dílčí verze. Určeno pro scénáře hostování součástí.
@@ -333,7 +333,7 @@ Balíčky GPIO obsahují rozhraní API pro zařízení *GPIO*, *SPI*, *I2C*a *PW
 > [!NOTE]
 > **ARM64** Podpora Windows není ještě dostupná.
 
-## <a name="security"></a>Zabezpečení
+## <a name="security"></a>Zabezpečení –
 
 ### <a name="tls-13--openssl-111-on-linux"></a>TLS 1,3 & OpenSSL 1.1.1 v systému Linux
 
@@ -439,10 +439,10 @@ Mezi aktualizace pro analýzu a formátování patří:
 
 Mezi nová rozhraní <xref:System.Math?displayProperty=nameWithType> API patří:
 
-- <xref:System.Math.BitIncrement(System.Double)> a <xref:System.Math.BitDecrement(System.Double)> \
+- <xref:System.Math.BitIncrement(System.Double)> a <xref:System.Math.BitDecrement(System.Double)>\
 Odpovídá `nextUp` a `nextDown` operace IEEE. Vrátí nejmenší číslo s plovoucí desetinnou čárkou, které porovná větší nebo menší než vstup (v uvedeném pořadí). `Math.BitIncrement(0.0)` například vrátí `double.Epsilon`.
 
-- <xref:System.Math.MaxMagnitude(System.Double,System.Double)> a <xref:System.Math.MinMagnitude(System.Double,System.Double)> \
+- <xref:System.Math.MaxMagnitude(System.Double,System.Double)> a <xref:System.Math.MinMagnitude(System.Double,System.Double)>\
 Odpovídá `maxNumMag` a `minNumMag` operace IEEE, vrací hodnotu, která je větší nebo menší v rozsahu dvou vstupů (v uvedeném pořadí). `Math.MaxMagnitude(2.0, -3.0)` například vrátí `-3.0`.
 
 - <xref:System.Math.ILogB(System.Double)>\
@@ -520,4 +520,4 @@ V mnoha případech, kdy vyvíjíte aplikaci, chcete použít nešifrované při
 ## <a name="next-steps"></a>Další kroky
 
 - [Přečtěte si o nejnovějších změnách mezi .NET Core 2,2 a 3,0.](../compatibility/2.2-3.0.md)
-- [Přečtěte si o nejnovějších změnách mezi .NET Framework a .NET Core 3,0.](../compatibility/framework-core.md)
+- [Přečtěte si o nejnovějších změnách mezi .NET Framework a .NET Core 3,0 pro aplikace model Windows Forms.](../porting/winforms-breaking-changes.md)

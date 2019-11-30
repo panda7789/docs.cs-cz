@@ -5,30 +5,30 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1767f3a7-29d2-4834-a763-7d169693fa8b
-ms.openlocfilehash: a64a09195101cd4b1ec3c6f990dd09d54466aea0
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: bc2338191bbf6922f56c833ebf115c5b21d92b00
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975416"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74569317"
 ---
 # <a name="calling-service-operations-wcf-data-services"></a>Volání operací služby (WCF Data Services)
-Protokol OData (Open Data Protocol) definuje operace služeb pro datovou službu. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] umožňuje definovat takové operace jako metody pro datovou službu. Podobně jako u jiných prostředků datové služby se tyto operace služby řeší pomocí identifikátorů URI. Operace služby může vracet kolekce typů entit, instance typu jedna entita a primitivní typy, jako je například celé číslo a řetězec. Operace služby může také vracet `null` (`Nothing` v Visual Basic). Klientská knihovna [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] se dá použít pro přístup k operacím služby, které podporují požadavky HTTP GET. Tyto druhy operací služby jsou definovány jako metody, které používají <xref:System.ServiceModel.Web.WebGetAttribute>. Další informace najdete v tématu [provozní operace](service-operations-wcf-data-services.md).  
+Protokol OData (Open Data Protocol) definuje operace služeb pro datovou službu. WCF Data Services umožňuje definovat takové operace jako metody pro datovou službu. Podobně jako u jiných prostředků datové služby se tyto operace služby řeší pomocí identifikátorů URI. Operace služby může vracet kolekce typů entit, instance typu jedna entita a primitivní typy, jako je například celé číslo a řetězec. Operace služby může také vracet `null` (`Nothing` v Visual Basic). Klientská knihovna WCF Data Services se dá použít pro přístup k operacím služby, které podporují požadavky HTTP GET. Tyto druhy operací služby jsou definovány jako metody, které používají <xref:System.ServiceModel.Web.WebGetAttribute>. Další informace najdete v tématu [provozní operace](service-operations-wcf-data-services.md).  
   
- Operace služby jsou zpřístupněny v metadatech vrácených datovou službou, která implementuje OData. V metadatech se operace služby reprezentují jako `FunctionImport` prvky. Při generování silně typovaného <xref:System.Data.Services.Client.DataServiceContext>nástroje Přidat odkaz na službu a DataSvcUtil. exe ignorují tento prvek. Z tohoto důvodu nenajdete metodu v kontextu, který lze použít k přímému volání operace služby. Můžete ale i nadále používat klienta [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] k volání operací služby jedním z těchto dvou způsobů:  
+ Operace služby jsou zpřístupněny v metadatech vrácených datovou službou, která implementuje OData. V metadatech se operace služby reprezentují jako `FunctionImport` prvky. Při generování silně typovaného <xref:System.Data.Services.Client.DataServiceContext>nástroje Přidat odkaz na službu a DataSvcUtil. exe ignorují tento prvek. Z tohoto důvodu nenajdete metodu v kontextu, který lze použít k přímému volání operace služby. Můžete ale i nadále používat klienta WCF Data Services k volání operací služby jedním z těchto dvou způsobů:  
   
 - Voláním metody <xref:System.Data.Services.Client.DataServiceContext.Execute%2A> v <xref:System.Data.Services.Client.DataServiceContext>zadejte identifikátor URI operace služby spolu s případnými parametry. Tato metoda se používá pro volání jakékoli operace GET Service.  
   
 - Pomocí metody <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> v <xref:System.Data.Services.Client.DataServiceContext> vytvořit objekt <xref:System.Data.Services.Client.DataServiceQuery%601>. Při volání <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A>je název operace služby zadán do parametru `entitySetName`. Tato metoda vrací objekt <xref:System.Data.Services.Client.DataServiceQuery%601>, který volá operaci služby při vyčíslení nebo při volání metody <xref:System.Data.Services.Client.DataServiceQuery%601.Execute%2A>. Tato metoda se používá k volání operace GET Service, která vrací kolekci. Jeden parametr lze zadat pomocí metody <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A>. Objekt <xref:System.Data.Services.Client.DataServiceQuery%601> vrácený touto metodou lze dále sestavovat proti podobně jako jakýkoli objekt dotazu. Další informace najdete v tématu [dotazování datové služby](querying-the-data-service-wcf-data-services.md).  
   
 ## <a name="considerations-for-calling-service-operations"></a>Předpoklady pro volání operací služby  
- Při použití klienta [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] k volání operací služby platí následující požadavky.  
+ Při použití klienta WCF Data Services k volání operací služby platí následující požadavky.  
   
 - Při asynchronním přístupu k datové službě je nutné použít ekvivalentní asynchronní <xref:System.Data.Services.Client.DataServiceContext.BeginExecute%2A>/<xref:System.Data.Services.Client.DataServiceContext.EndExecute%2A> metody v <xref:System.Data.Services.Client.DataServiceContext> nebo <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A>/<xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A> <xref:System.Data.Services.Client.DataServiceQuery%601>metody na.  
   
-- Klientská knihovna [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] nemůže vyhodnotit výsledky z operace služby, která vrací kolekci primitivních typů.  
+- Klientská knihovna WCF Data Services nemůže vyhodnotit výsledky z operace služby, která vrací kolekci primitivních typů.  
   
-- Klientská knihovna [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] nepodporuje volání operací POST Service. Operace služby, které jsou volány serverem HTTP POST, jsou definovány pomocí <xref:System.ServiceModel.Web.WebInvokeAttribute> s parametrem `Method="POST"`. Chcete-li volat operaci služby pomocí požadavku HTTP POST, je místo toho nutné použít <xref:System.Net.HttpWebRequest>.  
+- Klientská knihovna WCF Data Services nepodporuje volání operací POST Service. Operace služby, které jsou volány serverem HTTP POST, jsou definovány pomocí <xref:System.ServiceModel.Web.WebInvokeAttribute> s parametrem `Method="POST"`. Chcete-li volat operaci služby pomocí požadavku HTTP POST, je místo toho nutné použít <xref:System.Net.HttpWebRequest>.  
   
 - <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> nelze použít k volání operace GET Service, která vrací jeden výsledek, z entity nebo primitivního typu nebo který vyžaduje více než jeden vstupní parametr. Místo toho je nutné volat metodu <xref:System.Data.Services.Client.DataServiceContext.Execute%2A>.  
   
@@ -37,7 +37,7 @@ Protokol OData (Open Data Protocol) definuje operace služeb pro datovou službu
 - Použijete-li <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> k volání operace služby, Klientská knihovna automaticky řídí znaky dodané do <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> tím, že provádí procentuální kódování rezervovaných znaků, jako je ampersand (&) a uvozovací znaky jednoduchých uvozovek v řetězcích. Když však zavoláte jednu z metod *Execute* pro volání operace služby, musíte si pamatovat, že chcete provést tyto uvozovací znaky všech uživatelem zadaných hodnot řetězce. Jednoduché uvozovky v identifikátorech URI jsou řídicí znaky jako páry jednoduchých uvozovek.  
   
 ## <a name="examples-of-calling-service-operations"></a>Příklady volání operací služby  
- Tato část obsahuje následující příklady volání operací služby pomocí klientské knihovny [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]:  
+ Tato část obsahuje následující příklady volání operací služby pomocí klientské knihovny WCF Data Services:  
   
 - [Volání metody Execute&lt;T&gt; k vrácení kolekce entit](calling-service-operations-wcf-data-services.md#ExecuteIQueryable)  
   

@@ -8,22 +8,22 @@ helpviewer_keywords:
 - WCF Data Services, binary data
 - WCF Data Services, streams
 ms.assetid: aeccc45c-d5c5-4671-ad63-a492ac8043ac
-ms.openlocfilehash: e088383adf2345f9a2698d0f8794765461cdbaad
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 9a09908a2a998d5da739b28aefda3d5aecdc08e0
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975016"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74568736"
 ---
 # <a name="working-with-binary-data-wcf-data-services"></a>Práce s binárními daty (WCF Data Services)
 
-Klientská knihovna [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] umožňuje načíst a aktualizovat binární data z informačního kanálu OData (Open Data Protocol) jedním z následujících způsobů:
+Klientská knihovna WCF Data Services umožňuje načíst a aktualizovat binární data z informačního kanálu OData (Open Data Protocol) jedním z následujících způsobů:
 
 - Jako vlastnost primitivního typu entity. Toto je doporučená metoda pro práci s malými binárními datovými objekty, které je možné snadno načíst do paměti. V tomto případě binární vlastnost je vlastnost entity zveřejněná datovým modelem a datová služba serializace binární data jako binární kódovaný kód XML ve zprávě odpovědi Base-64.
 
 - Jako samostatný binární datový proud prostředků. Toto je doporučená metoda pro přístup k datům binárních rozsáhlých objektů (BLOB), které mohou představovat fotografii, video nebo jakýkoli jiný typ binárních kódovaných dat, a jejich změny.
 
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] implementuje streamování binárních dat pomocí protokolu HTTP, jak je definováno v OData. V tomto mechanismu se binární data považují za mediální prostředek, který je oddělený od, ale s entitou, která se nazývá záznam pro Media Link. Další informace najdete v tématu [poskytovatel streamování](streaming-provider-wcf-data-services.md).
+WCF Data Services implementuje streamování binárních dat pomocí protokolu HTTP, jak je definováno v OData. V tomto mechanismu se binární data považují za mediální prostředek, který je oddělený od, ale s entitou, která se nazývá záznam pro Media Link. Další informace najdete v tématu [poskytovatel streamování](streaming-provider-wcf-data-services.md).
 
 > [!TIP]
 > Podrobný příklad vytvoření klientské aplikace Windows Presentation Foundation (WPF), která stahuje soubory binárních imagí ze služby OData, která ukládá fotky, najdete v [části post Data Services zprostředkovatele streamování – část 2: přístup k datovému proudu mediálních prostředků z klienta](https://go.microsoft.com/fwlink/?LinkId=201637). Pokud si chcete stáhnout vzorový kód pro službu Stream Photo data Service podanou v blogovém příspěvku, podívejte se na [ukázku služby streamování fotek data](https://go.microsoft.com/fwlink/?LinkId=198988) v galerii kódu na webu MSDN.
@@ -34,11 +34,11 @@ Entita, která má související datový proud mediálních prostředků, je v m
 
 [!code-xml[Astoria Photo Streaming Service#HasStream](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria_photo_streaming_service/xml/photodata.edmx#hasstream)]
 
-Zbývající příklady v tomto tématu ukazují, jak používat a měnit datový proud mediálních prostředků. Úplný příklad toho, jak používat datový proud mediálních prostředků v .NET Framework klientské aplikace pomocí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientské knihovny, najdete v příspěvku [přístup k datovému proudu mediálních prostředků z klienta](https://go.microsoft.com/fwlink/?LinkID=201637).
+Zbývající příklady v tomto tématu ukazují, jak používat a měnit datový proud mediálních prostředků. Úplný příklad toho, jak používat datový proud mediálních prostředků v .NET Framework klientské aplikace pomocí WCF Data Services klientské knihovny, najdete v příspěvku [přístup k datovému proudu mediálních prostředků z klienta](https://go.microsoft.com/fwlink/?LinkID=201637).
 
 ## <a name="accessing-the-binary-resource-stream"></a>Přístup k binárnímu datovému proudu prostředků
 
-Klientská knihovna [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] poskytuje metody pro přístup k datovým proudům binárních prostředků z datové služby založené na OData. Při stahování mediálního prostředku můžete použít buď identifikátor URI mediálního prostředku, nebo můžete získat binární datový proud, který obsahuje data mediálních prostředků. Data prostředků médií můžete také nahrát jako binární datový proud.
+Klientská knihovna WCF Data Services poskytuje metody pro přístup k datovým proudům binárních prostředků z datové služby založené na OData. Při stahování mediálního prostředku můžete použít buď identifikátor URI mediálního prostředku, nebo můžete získat binární datový proud, který obsahuje data mediálních prostředků. Data prostředků médií můžete také nahrát jako binární datový proud.
 
 > [!TIP]
 > Podrobný příklad vytvoření klientské aplikace Windows Presentation Foundation (WPF), která stahuje soubory binárních imagí ze služby OData, která ukládá fotky, najdete v [části post Data Services zprostředkovatele streamování – část 2: přístup k datovému proudu mediálních prostředků z klienta](https://go.microsoft.com/fwlink/?LinkId=201637). Pokud si chcete stáhnout vzorový kód pro službu Stream Photo data Service podanou v blogovém příspěvku, podívejte se na [ukázku služby streamování fotek data](https://go.microsoft.com/fwlink/?LinkId=198988) v galerii kódu na webu MSDN.

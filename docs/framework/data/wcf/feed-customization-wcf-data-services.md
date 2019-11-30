@@ -10,22 +10,22 @@ helpviewer_keywords:
 - Atom Publishing Protocol [WCF Data Services]
 - WCF Data Services, customizing feeds
 ms.assetid: 0d1a39bc-6462-4683-bd7d-e74e0fd28a85
-ms.openlocfilehash: 56c91fd1e9ea4a2e35bacbebab0f489e337cfec5
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 08df16be9df6d55ab9f1426e205e56d9609ce72e
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975288"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74569226"
 ---
 # <a name="feed-customization-wcf-data-services"></a>Přizpůsobení informačního kanálu (WCF Data Services)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] používá protokol OData (Open Data Protocol) k vystavování dat jako informačního kanálu. OData podporuje formáty Atom i JavaScript Object Notation (JSON) pro datové kanály. Při použití informačního kanálu Atom poskytuje OData standardní metodu pro serializaci dat, jako jsou například entity a vztahy, do formátu XML, který může být součástí textu zprávy HTTP. OData definuje výchozí mapování vlastností entit mezi daty, která jsou obsažená v entitách a elementech Atom. Další informace najdete v tématu [Formát OData: Atom](https://go.microsoft.com/fwlink/?LinkID=185794).  
+WCF Data Services používá protokol OData (Open Data Protocol) k vystavování dat jako informačního kanálu. OData podporuje formáty Atom i JavaScript Object Notation (JSON) pro datové kanály. Při použití informačního kanálu Atom poskytuje OData standardní metodu pro serializaci dat, jako jsou například entity a vztahy, do formátu XML, který může být součástí textu zprávy HTTP. OData definuje výchozí mapování vlastností entit mezi daty, která jsou obsažená v entitách a elementech Atom. Další informace najdete v tématu [Formát OData: Atom](https://go.microsoft.com/fwlink/?LinkID=185794).  
   
  Můžete mít scénář aplikace, který vyžaduje, aby data vlastnosti vrácená datovou službou byla serializována vlastním způsobem, nikoli ve formátu standardního informačního kanálu. Pomocí protokolu OData můžete v datovém kanálu upravit serializaci tak, aby vlastnosti entity mohly být namapovány na nepoužívané prvky a atributy položky nebo na vlastní prvky položky v informačním kanálu.  
   
 > [!NOTE]
 > Přizpůsobení informačního kanálu se podporuje jenom pro kanály Atom. Vlastní kanály nejsou vraceny, pokud je pro vrácený kanál požadován formát JSON.  
   
- Pomocí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]můžete definovat alternativní mapování vlastností entit pro datovou část Atom ručním použitím atributů na typy entit v datovém modelu. Poskytovatel zdroje dat datové služby určuje, jak byste měli tyto atributy použít.  
+ Pomocí WCF Data Services můžete definovat alternativní mapování vlastností entit pro datovou část Atom ručním použitím atributů na typy entit v datovém modelu. Poskytovatel zdroje dat datové služby určuje, jak byste měli tyto atributy použít.  
   
 > [!IMPORTANT]
 > Když definujete vlastní kanály, musíte zaručit, že všechny vlastnosti entity, které mají definované vlastní mapování, jsou zahrnuté do projekce. Pokud v projekci není obsažena vlastnost mapované entity, může dojít ke ztrátě dat. Další informace najdete v tématu [projekce dotazů](query-projections-wcf-data-services.md).  
@@ -50,7 +50,7 @@ ms.locfileid: "73975288"
 |Název atributu|Popis|  
 |--------------------|-----------------|  
 |`FC_ContentKind`|Určuje typ obsahu. Následující klíčová slova definují typy obsahu syndikace.<br /><br /> `text:` hodnota vlastnosti se v informačním kanálu zobrazí jako text.<br /><br /> `html:` hodnota vlastnosti se v informačním kanálu zobrazí jako HTML.<br /><br /> `xhtml:` hodnota vlastnosti se zobrazí v informačním kanálu jako HTML ve formátu XML.<br /><br /> Tato klíčová slova jsou ekvivalentní hodnotám výčtu <xref:System.Data.Services.Common.SyndicationTextContentKind> použitým u poskytovatele reflexe.<br /><br /> Tento atribut není podporován, je-li použit atribut `FC_NsPrefix` a `FC_NsUri`.<br /><br /> Když zadáte hodnotu `xhtml` atributu `FC_ContentKind`, je nutné zajistit, aby hodnota vlastnosti obsahovala správně formátovaný kód XML. Datová služba vrátí hodnotu bez provedení jakékoli transformace. Musíte také zajistit, aby všechny předpony XML elementů v vráceném kódu XML měly obor názvů URI a předponu definovanou v mapovaném informačním kanálu.|  
-|`FC_KeepInContent`|Označuje, že hodnota odkazované vlastnosti by měla být zahrnutá v části obsah informačního kanálu i v mapovaném umístění. Platné hodnoty jsou `true` a `false`. Chcete-li, aby výsledný kanál byl zpětně kompatibilní s dřívějšími verzemi [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], zadejte hodnotu `true`, abyste se ujistili, že hodnota je zahrnuta v části obsah informačního kanálu.|  
+|`FC_KeepInContent`|Označuje, že hodnota odkazované vlastnosti by měla být zahrnutá v části obsah informačního kanálu i v mapovaném umístění. Platné hodnoty jsou `true` a `false`. Chcete-li, aby výsledný kanál byl zpětně kompatibilní s dřívějšími verzemi WCF Data Services, zadejte hodnotu `true`, abyste se ujistili, že hodnota je zahrnuta v části obsah informačního kanálu.|  
 |`FC_NsPrefix`|Předpona oboru názvů elementu XML v mapování bez syndikace. Tento atribut musí být použit s atributem `FC_NsUri` a nelze jej použít s atributem `FC_ContentKind`.|  
 |`FC_NsUri`|Identifikátor URI oboru názvů elementu XML v mapování bez syndikace. Tento atribut musí být použit s atributem `FC_NsPrefix` a nelze jej použít s atributem `FC_ContentKind`.|  
 |`FC_SourcePath`|Cesta k vlastnosti entity, na kterou se vztahuje pravidlo mapování kanálu Tento atribut je podporován pouze v případě, že je použit v prvku `EntityType`.<br /><br /> Vlastnost <xref:System.Data.Services.Common.EntityPropertyMappingAttribute.SourcePath%2A> nemůže odkazovat přímo na složitý typ. U komplexních typů je nutné použít výraz cesty, kde jsou názvy vlastností odděleny znakem zpětného lomítka (`/`). Například následující hodnoty jsou povoleny pro typ entity `Person` s vlastností Integer `Age` a komplexní vlastností.<br /><br /> `Address`:<br /><br /> `Age`<br /><br /> `Address/Street`<br /><br /> Vlastnost <xref:System.Data.Services.Common.EntityPropertyMappingAttribute.SourcePath%2A> nelze nastavit na hodnotu, která obsahuje mezeru nebo jakýkoli jiný znak, který není platný v názvu vlastnosti.|  
@@ -83,7 +83,7 @@ ms.locfileid: "73975288"
 ## <a name="feed-customization-considerations"></a>Požadavky na přizpůsobení informačního kanálu  
  Při definování mapování vlastních kanálů byste měli vzít v úvahu následující skutečnosti:  
   
-- Klient [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] považuje mapované prvky v informačním kanálu za prázdné, pokud obsahují pouze prázdné znaky. Z tohoto důvodu nejsou namapované prvky, které obsahují pouze prázdné znaky, nematerializované na klientovi se stejným prázdným znakem. Chcete-li zachovat toto prázdné místo na klientovi, je nutné nastavit hodnotu `KeepInContext` na `true` v atributu mapování informačního kanálu.  
+- Klient WCF Data Services považuje mapované prvky v informačním kanálu za prázdné, pokud obsahují pouze prázdné znaky. Z tohoto důvodu nejsou namapované prvky, které obsahují pouze prázdné znaky, nematerializované na klientovi se stejným prázdným znakem. Chcete-li zachovat toto prázdné místo na klientovi, je nutné nastavit hodnotu `KeepInContext` na `true` v atributu mapování informačního kanálu.  
   
 ## <a name="versioning-requirements"></a>Požadavky na správu verzí  
  Přizpůsobení informačního kanálu má následující požadavky na správu verzí protokolu OData:  

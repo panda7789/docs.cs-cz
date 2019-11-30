@@ -4,36 +4,36 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF Data Services, providers
 ms.assetid: ef5ba300-6d7c-455e-a7bd-d0cc6d211ad4
-ms.openlocfilehash: c3e160f96be2a95262776994152a06b42b475887
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 0eeb223093d709cfe2722c2ad7cf622164eab32f
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70779803"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74568872"
 ---
 # <a name="reflection-provider-wcf-data-services"></a>Zprostředkovatel reflexe (WCF Data Services)
 
-Kromě vystavení dat z datového modelu prostřednictvím Entity Framework [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] může vystavovat data, která nejsou definovaná v modelu založeném na entitách. Zprostředkovatel reflexe zpřístupňuje data ve třídách, které vracejí <xref:System.Linq.IQueryable%601> typy, které implementují rozhraní. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]používá reflexi k odvození datového modelu pro tyto třídy a může překládat dotazy založené na adresách na prostředky do dotazů založených na jazyce LINQ (Language <xref:System.Linq.IQueryable%601> Integrated Query) na vystavených typech.
+Kromě vystavení dat z datového modelu prostřednictvím Entity Framework může WCF Data Services vystavovat data, která nejsou definovaná v modelu založeném na entitách. Zprostředkovatel reflexe zpřístupňuje data v třídách, které vracejí typy implementující rozhraní <xref:System.Linq.IQueryable%601>. WCF Data Services používá reflexi k odvození datového modelu pro tyto třídy a může překládat dotazy založené na adresách na prostředky do dotazů založených na jazyce LINQ (Language Integrated Query) na vystavených <xref:System.Linq.IQueryable%601>ch typů.
 
 > [!NOTE]
-> <xref:System.Linq.Queryable.AsQueryable%2A> Metodu můžete použít k <xref:System.Linq.IQueryable%601> vrácení rozhraní z <xref:System.Collections.Generic.IEnumerable%601> libovolné třídy, která implementuje rozhraní. To umožňuje použití většiny obecných typů kolekcí jako zdroje dat pro datovou službu.
+> Metodu <xref:System.Linq.Queryable.AsQueryable%2A> lze použít k vrácení rozhraní <xref:System.Linq.IQueryable%601> z libovolné třídy, která implementuje rozhraní <xref:System.Collections.Generic.IEnumerable%601>. To umožňuje použití většiny obecných typů kolekcí jako zdroje dat pro datovou službu.
 
-Zprostředkovatel reflexe podporuje hierarchie typů. Další informace najdete v tématu [jak: Vytvořte datovou službu pomocí poskytovatele](create-a-data-service-using-rp-wcf-data-services.md)reflexe.
+Zprostředkovatel reflexe podporuje hierarchie typů. Další informace najdete v tématu [Postupy: vytvoření datové služby pomocí poskytovatele reflexe](create-a-data-service-using-rp-wcf-data-services.md).
 
 ## <a name="inferring-the-data-model"></a>Odvození datového modelu
 
 Když vytvoříte datovou službu, zprostředkovatel odvodí datový model pomocí reflexe. Následující seznam ukazuje, jak poskytovatel reflexe odvodí datový model:
 
-- Kontejner entity – třída, která zpřístupňuje data jako vlastnosti, které vracejí <xref:System.Linq.IQueryable%601> instanci. Když řešíte datový model založený na reflexi, kontejner entity představuje kořen služby. Pro daný obor názvů je podporována pouze jedna třída kontejneru entity.
+- Kontejner entity – třída, která zpřístupňuje data jako vlastnosti, které vracejí instanci <xref:System.Linq.IQueryable%601>. Když řešíte datový model založený na reflexi, kontejner entity představuje kořen služby. Pro daný obor názvů je podporována pouze jedna třída kontejneru entity.
 
-- Sady entit – vlastnosti, které <xref:System.Linq.IQueryable%601> vracejí instance, se považují za sady entit. Sady entit jsou řešeny přímo jako prostředky v dotazu. <xref:System.Linq.IQueryable%601> Instance daného typu může vracet pouze jedna vlastnost kontejneru entity.
+- Sady entit – vlastnosti, které vracejí <xref:System.Linq.IQueryable%601> instance, jsou považovány za sady entit. Sady entit jsou řešeny přímo jako prostředky v dotazu. Instance <xref:System.Linq.IQueryable%601> daného typu může vracet pouze jedna vlastnost kontejneru entity.
 
-- Typy entit – typ `T` <xref:System.Linq.IQueryable%601> , který sada entit vrátí. Třídy, které jsou součástí hierarchie dědičnosti, jsou přeloženy poskytovatelem reflexe do ekvivalentní hierarchie typů entit.
+- Typy entit – typ `T` <xref:System.Linq.IQueryable%601>, který sada entit vrátí. Třídy, které jsou součástí hierarchie dědičnosti, jsou přeloženy poskytovatelem reflexe do ekvivalentní hierarchie typů entit.
 
-- Klíče entit – každá třída dat, která je typem entity, musí mít vlastnost Key. Tato vlastnost je označena <xref:System.Data.Services.Common.DataServiceKeyAttribute> atributem (`[DataServiceKeyAttribute]`).
+- Klíče entit – každá třída dat, která je typem entity, musí mít vlastnost Key. Tato vlastnost je označena atributem <xref:System.Data.Services.Common.DataServiceKeyAttribute> (`[DataServiceKeyAttribute]`).
 
     > [!NOTE]
-    > <xref:System.Data.Services.Common.DataServiceKeyAttribute> Atribut byste měli použít pouze pro vlastnost, která může být použita k jednoznačné identifikaci instance typu entity. Tento atribut je ignorován při použití pro navigační vlastnost.
+    > Atribut <xref:System.Data.Services.Common.DataServiceKeyAttribute> byste měli použít pouze pro vlastnost, která může být použita k jednoznačné identifikaci instance typu entity. Tento atribut je ignorován při použití pro navigační vlastnost.
 
 - Vlastnosti typu entity – jiné než klíč entity, považuje poskytovatel reflexe přístupné, neindexerové vlastnosti třídy, která je typu entity, takto:
 
@@ -41,12 +41,12 @@ Když vytvoříte datovou službu, zprostředkovatel odvodí datový model pomoc
 
   - Pokud vlastnost vrátí typ, který je také typem entity, pak je vlastnost považována za navigační vlastnost, která představuje "jeden" konec vztahu 1:1 nebo 1:1.
 
-  - Pokud vlastnost vrátí <xref:System.Collections.Generic.IEnumerable%601> typ entity, pak je vlastnost považována za navigační vlastnost, která představuje "mnoho" na konci relace 1: n nebo m:n.
+  - Vrátí-li vlastnost <xref:System.Collections.Generic.IEnumerable%601> typu entity, bude vlastnost považována za navigační vlastnost, která představuje "mnoho" na konci relace 1: n nebo m:n.
 
   - Pokud návratový typ vlastnosti je typ hodnoty, pak vlastnost představuje komplexní typ.
 
 > [!NOTE]
-> Na rozdíl od datového modelu, který je založen na relačním modelu entity, modely založené na zprostředkovateli reflexe nerozumí relačním datům. K vystavení relačních dat prostřednictvím [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]nástroje byste měli použít Entity Framework.
+> Na rozdíl od datového modelu, který je založen na relačním modelu entity, modely založené na zprostředkovateli reflexe nerozumí relačním datům. K vystavení relačních dat prostřednictvím WCF Data Services byste měli použít Entity Framework.
 
 ## <a name="data-type-mapping"></a>Mapování datových typů
 
@@ -73,9 +73,9 @@ Pokud je datový model odvozen z .NET Framework třídy, jsou primitivní typy v
 
 ## <a name="enabling-updates-in-the-data-model"></a>Povolení aktualizací v datovém modelu
 
-Aby bylo možné zajistit aktualizace dat, která jsou zveřejněna prostřednictvím tohoto druhu datového modelu, Zprostředkovatel reflexe <xref:System.Data.Services.IUpdatable> definuje rozhraní. Toto rozhraní instruuje datovou službu o tom, jak uchovat aktualizace vystavených typů. Aby bylo možné povolit aktualizace prostředků, které jsou definovány datovým modelem, třída kontejneru entity musí implementovat <xref:System.Data.Services.IUpdatable> rozhraní. Příklad implementace <xref:System.Data.Services.IUpdatable> rozhraní naleznete v tématu [How to: Vytvořte datovou službu pomocí LINQ to SQL zdroje](create-a-data-service-using-linq-to-sql-wcf.md)dat.
+Pro umožnění aktualizace dat, která jsou zveřejněna prostřednictvím tohoto druhu datového modelu, Zprostředkovatel reflexe definuje rozhraní <xref:System.Data.Services.IUpdatable>. Toto rozhraní instruuje datovou službu o tom, jak uchovat aktualizace vystavených typů. Aby bylo možné povolit aktualizace prostředků, které jsou definovány datovým modelem, třída kontejneru entit musí implementovat rozhraní <xref:System.Data.Services.IUpdatable>. Příklad implementace rozhraní <xref:System.Data.Services.IUpdatable> naleznete v tématu [How to: Create a data Service using a LINQ to SQL source data](create-a-data-service-using-linq-to-sql-wcf.md).
 
-<xref:System.Data.Services.IUpdatable> Rozhraní vyžaduje, aby následující členové byli implementováni, aby bylo možné aktualizace rozšířit na zdroj dat pomocí poskytovatele reflexe:
+Rozhraní <xref:System.Data.Services.IUpdatable> vyžaduje implementaci následujících členů, aby bylo možné aktualizace rozšířit na zdroj dat pomocí poskytovatele reflexe:
 
 |Člen|Popis|
 |------------|-----------------|
@@ -94,11 +94,11 @@ Aby bylo možné zajistit aktualizace dat, která jsou zveřejněna prostřednic
 
 ## <a name="handling-concurrency"></a>Ošetření souběžnosti
 
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]podporuje optimistický model souběžnosti tím, že umožňuje definovat Token souběžnosti pro entitu. Tento token souběžnosti, který obsahuje jednu nebo více vlastností entity, používá datová služba k určení, zda došlo ke změně v datech, která jsou požadována, aktualizována nebo odstraněna. Pokud se hodnoty tokenu získané z eTag v požadavku liší od aktuální hodnoty entity, vyvolá datová služba výjimku. <xref:System.Data.Services.ETagAttribute> Je použita na typ entity k definování tokenu souběžnosti v poskytovateli reflexe. Token souběžnosti nemůže obsahovat vlastnost klíče ani navigační vlastnost. Další informace najdete v tématu [aktualizace datové služby](updating-the-data-service-wcf-data-services.md).
+WCF Data Services podporuje model souběžnosti, protože umožňuje definovat Token souběžnosti pro entitu. Tento token souběžnosti, který obsahuje jednu nebo více vlastností entity, používá datová služba k určení, zda došlo ke změně v datech, která jsou požadována, aktualizována nebo odstraněna. Pokud se hodnoty tokenu získané z eTag v požadavku liší od aktuální hodnoty entity, vyvolá datová služba výjimku. <xref:System.Data.Services.ETagAttribute> se použije na typ entity k definování tokenu souběžnosti v poskytovateli reflexe. Token souběžnosti nemůže obsahovat vlastnost klíče ani navigační vlastnost. Další informace najdete v tématu [aktualizace datové služby](updating-the-data-service-wcf-data-services.md).
 
 ## <a name="using-linq-to-sql-with-the-reflection-provider"></a>Použití LINQ to SQL se zprostředkovatelem reflexe
 
-Vzhledem k tomu, že Entity Framework je nativně podporován ve výchozím nastavení, je doporučeným poskytovatelem dat pro [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]použití relačních dat s. Můžete však použít poskytovatele reflexe k použití třídy LINQ to SQL s datovou službou. Sady výsledků, které jsou vráceny metodami <xref:System.Data.Linq.DataContext> vygenerovanými LINQ to SQL Návrhář relací objektů (Návrhář O/ <xref:System.Linq.IQueryable%601> R) implementují rozhraní. <xref:System.Data.Linq.Table%601> To umožňuje poskytovateli reflexi přistupovat k těmto metodám a vracet data entit z SQL Server pomocí generovaných LINQ to SQL tříd. Protože však LINQ to SQL neimplementuje <xref:System.Data.Services.IUpdatable> rozhraní, je nutné přidat částečnou třídu, která rozšiřuje existující <xref:System.Data.Linq.DataContext> <xref:System.Data.Services.IUpdatable> částečnou třídu pro přidání implementace. Další informace najdete v tématu [jak: Vytvořte datovou službu pomocí LINQ to SQL zdroje](create-a-data-service-using-linq-to-sql-wcf.md)dat.
+Vzhledem k tomu, že Entity Framework je nativně podporován ve výchozím nastavení, je doporučeným poskytovatelem dat pro použití relačních dat s WCF Data Services. Můžete však použít poskytovatele reflexe k použití třídy LINQ to SQL s datovou službou. <xref:System.Data.Linq.Table%601> sady výsledků, které jsou vráceny metodami v <xref:System.Data.Linq.DataContext> generované LINQ to SQL Návrhář relací objektů (Návrhář O/R) implementují rozhraní <xref:System.Linq.IQueryable%601>. To umožňuje poskytovateli reflexi přistupovat k těmto metodám a vracet data entit z SQL Server pomocí generovaných LINQ to SQL tříd. Protože ale LINQ to SQL neimplementuje rozhraní <xref:System.Data.Services.IUpdatable>, je nutné přidat částečnou třídu, která rozšiřuje existující <xref:System.Data.Linq.DataContext> částečnou třídu pro přidání <xref:System.Data.Services.IUpdatable> implementace. Další informace najdete v tématu [Postupy: vytvoření datové služby pomocí zdroje dat LINQ to SQL](create-a-data-service-using-linq-to-sql-wcf.md).
 
 ## <a name="see-also"></a>Viz také:
 

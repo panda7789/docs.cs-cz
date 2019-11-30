@@ -8,15 +8,15 @@ helpviewer_keywords:
 - WCF Data Services, changing data
 - WCF Data Services, client library
 ms.assetid: 00d993be-ffed-4dea-baf7-6eea982cdb54
-ms.openlocfilehash: 02bcb8f12cd7f230d60c3b3c58174a54405ff955
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 060cdab4f486782e6ad60511fadad95a41255dec
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975113"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74568813"
 ---
 # <a name="updating-the-data-service-wcf-data-services"></a>Aktualizace datové služby (WCF Data Services)
-Když použijete klientskou knihovnu [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] ke zpracování informačního kanálu OData (Open Data Protocol), knihovna přeloží položky v informačním kanálu do instancí klientských datových služeb. Tyto třídy datové služby jsou sledovány pomocí <xref:System.Data.Services.Client.DataServiceContext>, ke kterému patří <xref:System.Data.Services.Client.DataServiceQuery%601>. Klient sleduje změny entit, které vytváříte pomocí metod v <xref:System.Data.Services.Client.DataServiceContext>. Tyto metody umožňují klientovi sledovat přidané a odstraněné entity a také změny, které provedete v hodnotách vlastností nebo vztahy mezi instancemi entit. Tyto sledované změny jsou odesílány zpět do datové služby jako operace založené na REST při volání metody <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A>.  
+Když použijete klientskou knihovnu WCF Data Services ke zpracování informačního kanálu OData (Open Data Protocol), knihovna přeloží položky v informačním kanálu do instancí klientských datových služeb. Tyto třídy datové služby jsou sledovány pomocí <xref:System.Data.Services.Client.DataServiceContext>, ke kterému patří <xref:System.Data.Services.Client.DataServiceQuery%601>. Klient sleduje změny entit, které vytváříte pomocí metod v <xref:System.Data.Services.Client.DataServiceContext>. Tyto metody umožňují klientovi sledovat přidané a odstraněné entity a také změny, které provedete v hodnotách vlastností nebo vztahy mezi instancemi entit. Tyto sledované změny jsou odesílány zpět do datové služby jako operace založené na REST při volání metody <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A>.  
   
 > [!NOTE]
 > Použijete-li instanci <xref:System.Data.Services.Client.DataServiceCollection%601> pro svázání dat s ovládacími prvky, změny provedené v datech v rámci vázaného ovládacího prvku jsou automaticky hlášeny do <xref:System.Data.Services.Client.DataServiceContext>. Další informace najdete v tématu [vázání dat na ovládací prvky](binding-data-to-controls-wcf-data-services.md).  
@@ -67,7 +67,7 @@ Když použijete klientskou knihovnu [!INCLUDE[ssAstoria](../../../../includes/s
 ## <a name="creating-and-modifying-relationship-links"></a>Vytváření a úpravy propojení vztahů  
  Když přidáte novou entitu pomocí metody <xref:System.Data.Services.Client.DataServiceContext.AddObject%2A> nebo příslušné metody *AddTo* třídy <xref:System.Data.Services.Client.DataServiceContext>, kterou dialogové okno **Přidat odkaz na službu** vygeneruje, všechny relace mezi novou entitou a související entitou nejsou automaticky definované.  
   
- Můžete vytvořit a změnit vztahy mezi instancemi entit a klientské knihovny tyto změny odrážejí v datové službě. Vztahy mezi entitami jsou definovány jako asociace v modelu a <xref:System.Data.Services.Client.DataServiceContext> v kontextu sleduje každou relaci jako objekt propojení. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] poskytuje následující metody třídy <xref:System.Data.Services.Client.DataServiceContext> k vytvoření, úpravě a odstranění těchto odkazů:  
+ Můžete vytvořit a změnit vztahy mezi instancemi entit a klientské knihovny tyto změny odrážejí v datové službě. Vztahy mezi entitami jsou definovány jako asociace v modelu a <xref:System.Data.Services.Client.DataServiceContext> v kontextu sleduje každou relaci jako objekt propojení. WCF Data Services poskytuje následující metody třídy <xref:System.Data.Services.Client.DataServiceContext> k vytvoření, úpravě a odstranění těchto odkazů:  
   
 |Metoda|Popis|  
 |------------|-----------------|  

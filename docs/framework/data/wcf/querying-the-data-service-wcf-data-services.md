@@ -9,16 +9,16 @@ helpviewer_keywords:
 - WCF Data Services, querying
 - WCF Data Services, accessing data
 ms.assetid: 823e9444-27aa-4f1f-be8e-0486d67f54c0
-ms.openlocfilehash: e37a1654bdc62937bbb27c293a110293c9928645
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 99fe377e8fff193c4f8bb566946b95c61c1b3693
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975157"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74568884"
 ---
 # <a name="querying-the-data-service-wcf-data-services"></a>Dotazování na datovou službu (WCF Data Services)
 
-Klientská knihovna [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] umožňuje spouštět dotazy na datovou službu pomocí známých .NET Framework programovacích vzorů, včetně použití jazyka LINQ (Language Integrated Query). Klientská knihovna překládá dotaz, který je definován v klientovi jako instance třídy <xref:System.Data.Services.Client.DataServiceQuery%601>, do zprávy požadavku HTTP GET. Knihovna obdrží zprávu s odpovědí a přeloží ji do instancí tříd služby Klient data Service. Tyto třídy jsou sledovány <xref:System.Data.Services.Client.DataServiceContext>, do kterých <xref:System.Data.Services.Client.DataServiceQuery%601> patří.
+Klientská knihovna WCF Data Services umožňuje spouštět dotazy na datovou službu pomocí známých .NET Framework programovacích vzorů, včetně použití jazyka LINQ (Language Integrated Query). Klientská knihovna překládá dotaz, který je definován v klientovi jako instance třídy <xref:System.Data.Services.Client.DataServiceQuery%601>, do zprávy požadavku HTTP GET. Knihovna obdrží zprávu s odpovědí a přeloží ji do instancí tříd služby Klient data Service. Tyto třídy jsou sledovány <xref:System.Data.Services.Client.DataServiceContext>, do kterých <xref:System.Data.Services.Client.DataServiceQuery%601> patří.
 
 ## <a name="data-service-queries"></a>Dotazy na datovou službu
 
@@ -45,11 +45,11 @@ Následující dotaz, když se spustí, vrátí všechny `Customers` entit ve sl
 
 Další informace najdete v tématu [Postupy: spouštění dotazů datové služby](how-to-execute-data-service-queries-wcf-data-services.md).
 
-Klient [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] podporuje dotazy na objekty s pozdní vazbou, například při použití *dynamického* typu v C#. Z důvodu výkonu byste však měli vždy vytvářet dotazy silného typu proti datové službě. Klient nepodporuje typ <xref:System.Tuple> a dynamické objekty.
+Klient WCF Data Services podporuje dotazy na objekty s pozdní vazbou, například při použití *dynamického* typu v C#. Z důvodu výkonu byste však měli vždy vytvářet dotazy silného typu proti datové službě. Klient nepodporuje typ <xref:System.Tuple> a dynamické objekty.
 
 ## <a name="linq-queries"></a>Dotazy LINQ
 
-Vzhledem k tomu, že třída <xref:System.Data.Services.Client.DataServiceQuery%601> implementuje rozhraní <xref:System.Linq.IQueryable%601> definované technologií LINQ, knihovna klienta [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] je schopna transformovat dotazy LINQ proti sadě entit na identifikátor URI, který představuje výraz dotazu vyhodnocený proti prostředku datové služby. Následující příklad je dotaz LINQ, který je ekvivalentní předchozímu <xref:System.Data.Services.Client.DataServiceQuery%601>, který vrací `Orders`, které mají náklady na dopravné více než $30 a jsou výsledkem ceny za přepravné:
+Vzhledem k tomu, že třída <xref:System.Data.Services.Client.DataServiceQuery%601> implementuje rozhraní <xref:System.Linq.IQueryable%601> definované technologií LINQ, knihovna klienta WCF Data Services je schopna transformovat dotazy LINQ proti sadě entit na identifikátor URI, který představuje výraz dotazu vyhodnocený proti prostředku datové služby. Následující příklad je dotaz LINQ, který je ekvivalentní předchozímu <xref:System.Data.Services.Client.DataServiceQuery%601>, který vrací `Orders`, které mají náklady na dopravné více než $30 a jsou výsledkem ceny za přepravné:
 
 [!code-csharp[Astoria Northwind Client#AddQueryOptionsLinqSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#addqueryoptionslinqspecific)]
 [!code-vb[Astoria Northwind Client#AddQueryOptionsLinqSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#addqueryoptionslinqspecific)]
@@ -67,7 +67,7 @@ Další informace najdete v tématu věnovaném [hlediskům LINQ](linq-considera
 
 ## <a name="adding-query-options"></a>Přidání možností dotazu
 
-Dotazy na datovou službu podporují všechny možnosti dotazů, které [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]s poskytují. Zavoláte metodu <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> pro připojení možností dotazu k instanci <xref:System.Data.Services.Client.DataServiceQuery%601>. <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> vrátí novou instanci <xref:System.Data.Services.Client.DataServiceQuery%601>, která je ekvivalentní původnímu dotazu, ale s nastavenou možností nového dotazu. Následující dotaz po provedení vrátí `Orders`, které jsou filtrovány hodnotou `Freight` a seřazeny podle `OrderID`, sestupně:
+Dotazy na datové služby podporují všechny možnosti dotazů, které poskytuje služba WCF Data Service. Zavoláte metodu <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> pro připojení možností dotazu k instanci <xref:System.Data.Services.Client.DataServiceQuery%601>. <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> vrátí novou instanci <xref:System.Data.Services.Client.DataServiceQuery%601>, která je ekvivalentní původnímu dotazu, ale s nastavenou možností nového dotazu. Následující dotaz po provedení vrátí `Orders`, které jsou filtrovány hodnotou `Freight` a seřazeny podle `OrderID`, sestupně:
 
 [!code-csharp[Astoria Northwind Client#AddQueryOptionsSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#addqueryoptionsspecific)]
 [!code-vb[Astoria Northwind Client#AddQueryOptionsSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#addqueryoptionsspecific)]
@@ -118,7 +118,7 @@ Instance typu entity, které představují entity v datové službě, jsou vytvo
 
 - <xref:System.Data.Services.Client.QueryOperationResponse.GetContinuation%2A> – vrátí objekt <xref:System.Data.Services.Client.DataServiceQueryContinuation>, který obsahuje identifikátor URI další stránky výsledků.
 
-Ve výchozím nastavení [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] vrátí pouze data, která jsou explicitně vybrána identifikátorem URI dotazu. Díky tomu máte možnost explicitně načíst další data z datové služby, když je to potřeba. Požadavek se pošle do datové služby pokaždé, když explicitně načtete data z datové služby. Data, která je možné explicitně načíst, zahrnují související entity, data stránkované odpovědi a binární datové proudy.
+Ve výchozím nastavení WCF Data Services vrátí pouze data, která jsou explicitně vybrána identifikátorem URI dotazu. Díky tomu máte možnost explicitně načíst další data z datové služby, když je to potřeba. Požadavek se pošle do datové služby pokaždé, když explicitně načtete data z datové služby. Data, která je možné explicitně načíst, zahrnují související entity, data stránkované odpovědi a binární datové proudy.
 
 > [!NOTE]
 > Vzhledem k tomu, že datová služba může vracet stránkované odpovědi, doporučujeme, aby vaše aplikace používala programovací model pro zpracování odpovědi stránkované datové služby. Další informace najdete v tématu [načítání odloženého obsahu](loading-deferred-content-wcf-data-services.md).

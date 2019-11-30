@@ -9,15 +9,15 @@ helpviewer_keywords:
 - querying the data service [WCF Data Services]
 - WCF Data Services, querying
 ms.assetid: cc4ec9e9-348f-42a6-a78e-1cd40e370656
-ms.openlocfilehash: 4792850221da69be79b064313792dcd7ad226788
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 41f1d1f0ca04dff0faa9eb070882f845ef4827d2
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975219"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74568964"
 ---
 # <a name="linq-considerations-wcf-data-services"></a>Otázky LINQ (WCF Data Services)
-Toto téma poskytuje informace o způsobu, jakým se dotazy LINQ skládají a provádějí při použití [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klienta a omezení použití LINQ k dotazování datové služby, která implementuje rozhraní Open Data Protocol (OData). Další informace o sestavování a spouštění dotazů pro datovou službu založenou na protokolu OData najdete v tématu [dotazování datové služby](querying-the-data-service-wcf-data-services.md).  
+Toto téma poskytuje informace o způsobu, jakým se dotazy LINQ skládají a provádějí při použití WCF Data Services klienta a omezení použití LINQ k dotazování datové služby, která implementuje rozhraní Open Data Protocol (OData). Další informace o sestavování a spouštění dotazů pro datovou službu založenou na protokolu OData najdete v tématu [dotazování datové služby](querying-the-data-service-wcf-data-services.md).  
   
 ## <a name="composing-linq-queries"></a>Vytváření dotazů LINQ  
  LINQ umožňuje vytvářet dotazy proti kolekci objektů, které implementují <xref:System.Collections.Generic.IEnumerable%601>. Dialogové okno **Přidat odkaz na službu** v aplikaci Visual Studio a nástroj DataSvcUtil. exe slouží k vygenerování reprezentace služby OData jako třídy kontejneru entit, která dědí z <xref:System.Data.Services.Client.DataServiceContext>, a také objektů, které představují entity vracené v informačních kanálech. Tyto nástroje také generují vlastnosti třídy kontejneru entit pro kolekce, které jsou zpřístupněny jako informační kanály služby. Každá z těchto vlastností třídy, která zapouzdřuje datovou službu, vrací <xref:System.Data.Services.Client.DataServiceQuery%601>. Vzhledem k tomu, že třída <xref:System.Data.Services.Client.DataServiceQuery%601> implementuje rozhraní <xref:System.Linq.IQueryable%601> definované technologií LINQ, můžete vytvořit dotaz LINQ na informační kanály vystavené datovou službou, které jsou přeloženy knihovnou klienta na identifikátor URI žádosti o dotaz, který je odeslán do datové služby při spuštění.  
@@ -43,7 +43,7 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
 [!code-csharp[Astoria Northwind Client#AddQueryOptionsLinqExpressionSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#addqueryoptionslinqexpressionspecific)]      
 [!code-vb[Astoria Northwind Client#AddQueryOptionsLinqExpressionSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#addqueryoptionslinqexpressionspecific)]    
   
- Klient [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] je schopen přeložit oba druhy složených dotazů do identifikátoru URI dotazu a můžete roztáhnout dotaz LINQ připojením metod dotazu do výrazu dotazu. Při vytváření dotazů LINQ přidáním syntaxe metody do výrazu dotazu nebo <xref:System.Data.Services.Client.DataServiceQuery%601>se operace přidávají do identifikátoru URI dotazu v pořadí, ve kterém jsou metody volány. To je ekvivalentní volání metody <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> pro přidání jednotlivých možností dotazu k identifikátoru URI dotazu.  
+ Klient WCF Data Services je schopen přeložit oba druhy složených dotazů do identifikátoru URI dotazu a můžete roztáhnout dotaz LINQ připojením metod dotazu do výrazu dotazu. Při vytváření dotazů LINQ přidáním syntaxe metody do výrazu dotazu nebo <xref:System.Data.Services.Client.DataServiceQuery%601>se operace přidávají do identifikátoru URI dotazu v pořadí, ve kterém jsou metody volány. To je ekvivalentní volání metody <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> pro přidání jednotlivých možností dotazu k identifikátoru URI dotazu.  
   
 ## <a name="executing-linq-queries"></a>Provádění dotazů LINQ  
  Některé metody dotazů LINQ, například <xref:System.Linq.Enumerable.First%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%29> nebo <xref:System.Linq.Enumerable.Single%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%29>, při připojení k dotazu způsobí, že se dotaz spustí. Dotaz je také proveden při implicitním vyčíslení výsledků, například během `foreach` smyčky nebo při přiřazení dotazu do `List` kolekce. Další informace najdete v tématu [dotazování datové služby](querying-the-data-service-wcf-data-services.md).  
@@ -135,7 +135,7 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
  Oba předchozí příklady jsou přeloženy na identifikátor URI dotazu: `http://localhost:12345/northwind.svc/Orders()?$orderby=OrderDate desc&$skip=50&$top=25`.  
   
 <a name="expand"></a>   
-### <a name="expand"></a>Rozbalovací  
+### <a name="expand"></a>Rozbalit  
  Při dotazování na datovou službu OData můžete požádat o to, aby entity související s entitou, která cílí na dotaz, zahrnovaly vrácený kanál. Metoda <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A> je volána v <xref:System.Data.Services.Client.DataServiceQuery%601> pro sadu entit, na kterou cílí dotaz LINQ, s názvem sady entit, který jste zadali jako parametr `path`. Další informace najdete v tématu [načítání odloženého obsahu](loading-deferred-content-wcf-data-services.md).  
   
  Následující příklady ukazují ekvivalentní způsoby použití metody <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A> v dotazu:  

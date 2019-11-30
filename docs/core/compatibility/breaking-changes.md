@@ -1,17 +1,31 @@
 ---
 title: Zásadní změny v .NET Core
 description: Přečtěte si o nejnovějších změnách v každé verzi .NET Core.
-ms.date: 08/12/2019
-ms.openlocfilehash: 92ebb627240bce3d9b20dca51263732d1856c2a4
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.date: 11/27/2019
+ms.openlocfilehash: 30459ca1178c0d62427138b22dd42f11cd2c2475
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739761"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74568038"
 ---
-# <a name="net-core-breaking-changes"></a>Zásadní změny v .NET Core
+# <a name="breaking-change-selectors"></a>Odrušující selektory změn
 
-Následující selektor verzí poskytuje filtrovaný seznam průlomových změn pro .NET Core, ASP.NET Core a EF Core. Cílové verze zahrnují nejen hlavní verze, například .NET Core 2,2 a .NET Core 3,0, ale také verze Preview, jako je například .NET Core 3,0 Preview 7.
+Následující selektory verzí a oblastí poskytují filtrovaný seznam použitelných nezměněných změn mezi různými verzemi .NET Core, ASP.NET Core a EF Core. V obsahu můžete také procházet články verze a kategorie.
+
+## <a name="by-version"></a>Podle verze
+
+Vyberte verzi .NET Core, na kterou aktuálně cílíte, a potom verzi .NET Core, na kterou chcete migrovat:
+
+[!INCLUDE[versionselector](~/includes/core-changes/versionselector.md)]
+
+## <a name="by-area"></a>Podle oblasti
+
+Vyberte oblast technologie .NET Core, které vás zajímá. Jednotlivé změny jsou seřazené podle verze .NET Core.
+
+[!INCLUDE[categoryselector](~/includes/core-changes/categoryselector.md)]
+
+## <a name="github-issues-and-announcements"></a>Problémy a oznámení GitHubu
 
 Můžete si také prohlédnout jednotlivé problémy, které podrobně popisují zásadní změny v .NET Core v následujících úložištích GitHub:
 
@@ -19,14 +33,6 @@ Můžete si také prohlédnout jednotlivé problémy, které podrobně popisují
 - Pro ASP.NET Core úložiště [ASPNET/oznámení](https://github.com/aspnet/Announcements/issues?q=is%3Aissue+is%3Aopen+label%3A%22Breaking+change%22+label%3A3.0.0) .
 - Pro Entity Framework Core úložiště [ASPNET/EntityFrameworkCore](https://github.com/aspnet/EntityFrameworkCore/issues?q=is%3Aopen+is%3Aissue+label%3Abreaking-change) .
 
-## <a name="breaking-changes-by-version"></a>Průlomové změny podle verze
+## <a name="see-also"></a>Viz také:
 
-Vyberte verzi .NET Core, na kterou aktuálně cílíte, a potom verzi .NET Core, na kterou chcete migrovat:
-
-[!INCLUDE[versionselector](~/includes/core-changes/versionselector.md)]
-
-## <a name="breaking-changes-by-category"></a>Zásadní změny podle kategorie
-
-Vyberte oblast technologie .NET Core, které vás zajímá. Jednotlivé změny jsou seřazené podle verze .NET Core.
-
-[!INCLUDE[cateegoryselector](~/includes/core-changes/categoryselector.md)]
+- [Migrace z .NET Framework do .NET Core](../porting/index.md)

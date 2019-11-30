@@ -7,17 +7,17 @@ dev_langs:
 helpviewer_keywords:
 - WCF Data Services, configuring
 ms.assetid: 59efd4c8-cc7a-4800-a0a4-d3f8abe6c55c
-ms.openlocfilehash: 4db0cd1b954b2beb6cc9eb32280fe06845a7385b
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 80878c18143eaa603e624c8be63f11af91cfcfb6
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974831"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74569306"
 ---
 # <a name="configuring-the-data-service-wcf-data-services"></a>Konfigurace datové služby (WCF Data Services)
-Pomocí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]můžete vytvářet datové služby, které zpřístupňují kanály protokolu OData (Open Data Protocol). Data v těchto kanálech můžou pocházet z nejrůznějších zdrojů dat. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] používá poskytovatele dat k vystavování těchto dat jako datový kanál OData. Tito poskytovatelé zahrnují poskytovatele Entity Framework, poskytovatele reflexe a sadu vlastních rozhraní poskytovatele datových služeb. Implementace zprostředkovatele definuje datový model pro službu. Další informace najdete v tématu [poskytovatelé Data Services](data-services-providers-wcf-data-services.md).  
+Pomocí WCF Data Services můžete vytvářet datové služby, které zpřístupňují kanály protokolu OData (Open Data Protocol). Data v těchto kanálech můžou pocházet z nejrůznějších zdrojů dat. WCF Data Services používá poskytovatele dat k vystavování těchto dat jako datový kanál OData. Tito poskytovatelé zahrnují poskytovatele Entity Framework, poskytovatele reflexe a sadu vlastních rozhraní poskytovatele datových služeb. Implementace zprostředkovatele definuje datový model pro službu. Další informace najdete v tématu [poskytovatelé Data Services](data-services-providers-wcf-data-services.md).  
   
- V [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]datová služba je třída, která dědí z třídy <xref:System.Data.Services.DataService%601>, kde typ datové služby je kontejner entity datového modelu. Tento kontejner entity obsahuje jednu nebo více vlastností, které vracejí <xref:System.Linq.IQueryable%601>, které slouží k přístupu k sadám entit v datovém modelu.  
+ V WCF Data Services datová služba je třída, která dědí z třídy <xref:System.Data.Services.DataService%601>, kde typ datové služby je kontejner entity datového modelu. Tento kontejner entity obsahuje jednu nebo více vlastností, které vracejí <xref:System.Linq.IQueryable%601>, které slouží k přístupu k sadám entit v datovém modelu.  
   
  Chování datové služby jsou definována členy třídy <xref:System.Data.Services.DataServiceConfiguration> a členy třídy <xref:System.Data.Services.DataServiceBehavior>, která je k dispozici z vlastnosti <xref:System.Data.Services.DataServiceConfiguration.DataServiceBehavior%2A> třídy <xref:System.Data.Services.DataServiceConfiguration>. Třída <xref:System.Data.Services.DataServiceConfiguration> je dodávána metodě `InitializeService`, která je implementovaná datovou službou, jako v následující implementaci datové služby Northwind:  
   
@@ -39,7 +39,7 @@ Pomocí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]můžete vytv
 |<xref:System.Data.Services.DataServiceConfiguration.MaxExpandCount%2A>|Umožňuje omezit velikost odpovědi tím, že omezuje počet souvisejících entit, které mohou být zahrnuty v jednom požadavku pomocí operátoru dotazu `$expand`. Další informace najdete v tématu věnovaném [konvencím OData: URI](https://go.microsoft.com/fwlink/?LinkId=185564) a [načítání odloženého obsahu](loading-deferred-content-wcf-data-services.md).|  
 |<xref:System.Data.Services.DataServiceConfiguration.MaxExpandDepth%2A>|Umožňuje omezit velikost odpovědi tím, že omezí hloubku grafu souvisejících entit, které mohou být zahrnuty do jedné žádosti pomocí operátoru dotazu `$expand`. Další informace najdete v tématu věnovaném [konvencím OData: URI](https://go.microsoft.com/fwlink/?LinkId=185564) a [načítání odloženého obsahu](loading-deferred-content-wcf-data-services.md).|  
 |<xref:System.Data.Services.DataServiceConfiguration.MaxObjectCountOnInsert%2A>|Umožňuje omezit počet entit, které mají být vloženy, které mohou být obsaženy v jednom požadavku POST.|  
-|<xref:System.Data.Services.DataServiceBehavior.MaxProtocolVersion%2A>|Definuje verzi protokolu Atom, který je používán datovou službou. Je-li hodnota <xref:System.Data.Services.DataServiceBehavior.MaxProtocolVersion%2A> nastavena na hodnotu menší, než je maximální hodnota <xref:System.Data.Services.Common.DataServiceProtocolVersion>, nejsou klienti přistupující k datové službě k dispozici nejnovější funkce [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]. Další informace najdete v tématu [Správa verzí datových služeb](data-service-versioning-wcf-data-services.md).|  
+|<xref:System.Data.Services.DataServiceBehavior.MaxProtocolVersion%2A>|Definuje verzi protokolu Atom, který je používán datovou službou. Je-li hodnota <xref:System.Data.Services.DataServiceBehavior.MaxProtocolVersion%2A> nastavena na hodnotu menší, než je maximální hodnota <xref:System.Data.Services.Common.DataServiceProtocolVersion>, nejsou klienti přistupující k datové službě k dispozici nejnovější funkce WCF Data Services. Další informace najdete v tématu [Správa verzí datových služeb](data-service-versioning-wcf-data-services.md).|  
 |<xref:System.Data.Services.DataServiceConfiguration.MaxResultsPerCollection%2A>|Umožňuje omezit velikost odpovědi tím, že omezí počet entit v každé sadě entit, která se vrátí jako datový kanál.|  
 |<xref:System.Data.Services.DataServiceConfiguration.RegisterKnownType%2A>|Přidá datový typ do seznamu typů, které jsou rozpoznávány datovou službou.|  
 |<xref:System.Data.Services.DataServiceConfiguration.SetEntitySetAccessRule%2A>|Nastaví přístupová práva pro prostředky sady entit, které jsou k dispozici v datové službě. Pro parametr Name lze zadat hodnotu hvězdičky (`*`) pro nastavení přístupu pro všechny zbývající sady entit na stejnou úroveň. Doporučujeme nastavit přístup k sadám entit tak, aby poskytovaly nejnižší oprávnění k prostředkům datové služby, které vyžadují klientské aplikace. Další informace najdete v tématu [zabezpečení WCF Data Services](securing-wcf-data-services.md). Příklady minimálních přístupových práv vyžadovaných pro daný identifikátor URI a akci HTTP najdete v tabulce v části [minimální požadavky na přístup k prostředkům](configuring-the-data-service-wcf-data-services.md#accessRequirements) .|  

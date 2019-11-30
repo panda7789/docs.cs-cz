@@ -10,12 +10,12 @@ helpviewer_keywords:
 - query projection [WCF Data Services]
 - WCF Data Services, querying
 ms.assetid: a09f4985-9f0d-48c8-b183-83d67a3dfe5f
-ms.openlocfilehash: 17475cccf461371a909660bfe3f8db29bf1fa2fe
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 03fa40a895d322a8b5ad543f75424ef5b379672b
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975176"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74568898"
 ---
 # <a name="query-projections-wcf-data-services"></a>Projekce dotazů (WCF Data Services)
 
@@ -112,7 +112,7 @@ Při definování projekce dotazu platí následující další požadavky.
 
 - Pokud projekce obsahuje navigační vlastnost, související objekty jsou načteny implicitně bez nutnosti volat metodu <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A>. Metoda <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A> není podporována pro použití v projektovém dotazu.
 
-- Dotazy na projekce dotazů na klientovi se překládají na použití možnosti dotaz `$select` v identifikátoru URI požadavku. Když se dotaz se projekcí provede v předchozí verzi [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], která nepodporuje možnost dotazu `$select`, vrátí se chyba. K tomu může dojít také v případě, že je <xref:System.Data.Services.DataServiceBehavior.MaxProtocolVersion%2A> <xref:System.Data.Services.DataServiceBehavior> datové služby nastaveno na hodnotu <xref:System.Data.Services.Common.DataServiceProtocolVersion.V1>. Další informace najdete v tématu [Správa verzí datových služeb](data-service-versioning-wcf-data-services.md).
+- Dotazy na projekce dotazů na klientovi se překládají na použití možnosti dotaz `$select` v identifikátoru URI požadavku. Když se dotaz se projekcí provede v předchozí verzi WCF Data Services, která nepodporuje možnost dotazu `$select`, vrátí se chyba. K tomu může dojít také v případě, že je <xref:System.Data.Services.DataServiceBehavior.MaxProtocolVersion%2A> <xref:System.Data.Services.DataServiceBehavior> datové služby nastaveno na hodnotu <xref:System.Data.Services.Common.DataServiceProtocolVersion.V1>. Další informace najdete v tématu [Správa verzí datových služeb](data-service-versioning-wcf-data-services.md).
 
 Další informace najdete v tématu [Postup: výsledky dotazu na projekt](how-to-project-query-results-wcf-data-services.md).
 

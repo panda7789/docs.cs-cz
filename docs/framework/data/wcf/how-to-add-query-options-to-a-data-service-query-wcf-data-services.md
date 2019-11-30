@@ -9,15 +9,15 @@ helpviewer_keywords:
 - WCF Data Services, querying
 - WCF Data Services, accessing data
 ms.assetid: e4258526-557e-4e96-91e1-2175400c7c8f
-ms.openlocfilehash: f7b0557938d1419b79c3191cf8f9110cab2f5ce6
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 7b5a9c15f2d46c89abf8fb5bc0f4be99e501a267
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70790782"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74569185"
 ---
 # <a name="how-to-add-query-options-to-a-data-service-query-wcf-data-services"></a>Postupy: Přidání možností dotazu do dotazu datové služby (WCF Data Services)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]umožňuje zadávat dotazy na datovou službu z .NET Framework klientské aplikace založené na vygenerovaných třídách klientské datové služby. Nejjednodušší je vytvořit výraz dotazu LINQ (Language Integrated Query), který obsahuje požadované možnosti dotazu. Můžete také volat řadu metod dotazů LINQ pro vytvoření ekvivalentního dotazu. Nakonec můžete použít <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> metodu pro přidání možností dotazu do dotazu. V každém z těchto případů identifikátor URI generovaný klientem zahrnuje požadovanou sadu entit s použitými možnostmi zvolených dotazů. Další informace najdete v tématu [dotazování datové služby](querying-the-data-service-wcf-data-services.md).  
+WCF Data Services umožňuje dotazovat se na datovou službu z klientské aplikace založené na .NET Framework pomocí vygenerovaných tříd klientské datové služby. Nejjednodušší je vytvořit výraz dotazu LINQ (Language Integrated Query), který obsahuje požadované možnosti dotazu. Můžete také volat řadu metod dotazů LINQ pro vytvoření ekvivalentního dotazu. Nakonec můžete pomocí metody <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> přidat do dotazu možnosti dotazu. V každém z těchto případů identifikátor URI generovaný klientem zahrnuje požadovanou sadu entit s použitými možnostmi zvolených dotazů. Další informace najdete v tématu [dotazování datové služby](querying-the-data-service-wcf-data-services.md).  
   
  V příkladu v tomto tématu se používá ukázková datová služba Northwind a automaticky vygenerované třídy klientské datové služby. Tato služba a klientské datové třídy se vytvoří po dokončení [WCF Data Services rychlý Start](quickstart-wcf-data-services.md).  
   
@@ -34,13 +34,13 @@ ms.locfileid: "70790782"
  [!code-vb[Astoria Northwind Client#AddQueryOptionsLinqExpression](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#addqueryoptionslinqexpression)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak použít <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> metodu k vytvoření typu <xref:System.Data.Services.Client.DataServiceQuery%601> , který je ekvivalentní předchozím příkladům.  
+ Následující příklad ukazuje, jak použít metodu <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> k vytvoření <xref:System.Data.Services.Client.DataServiceQuery%601>, který je ekvivalentní předchozím příkladům.  
   
  [!code-csharp[Astoria Northwind Client#AddQueryOptions](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#addqueryoptions)]
  [!code-vb[Astoria Northwind Client#AddQueryOptions](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#addqueryoptions)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak použít `$orderby` možnost dotazu pro filtrování i řazení vrácených objednávek do objektů pomocí vlastnosti dopravného.  
+ Následující příklad ukazuje, jak použít možnost dotazu `$orderby` pro filtrování i řazení vrácených objednávek do objektů podle vlastnosti dopravného.  
   
  [!code-csharp[Astoria Northwind Client#OrderWithFilter](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#orderwithfilter)]
  [!code-vb[Astoria Northwind Client#OrderWithFilter](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#orderwithfilter)]  
@@ -48,4 +48,4 @@ ms.locfileid: "70790782"
 ## <a name="see-also"></a>Viz také:
 
 - [Dotazování v datové službě](querying-the-data-service-wcf-data-services.md)
-- [Postupy: Výsledky dotazu projektu](how-to-project-query-results-wcf-data-services.md)
+- [Postupy: Výsledky dotazů na projekt](how-to-project-query-results-wcf-data-services.md)

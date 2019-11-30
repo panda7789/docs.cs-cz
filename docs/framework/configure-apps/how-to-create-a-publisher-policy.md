@@ -7,12 +7,12 @@ helpviewer_keywords:
 - GAC (global assembly cache), publisher policy assembly
 - global assembly cache, publisher policy assembly
 ms.assetid: 8046bc5d-2fa9-4277-8a5e-6dcc96c281d9
-ms.openlocfilehash: 346671d4febd5f3999f1f4fbf2fe4b7e475ae5fa
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 313af6046fda8dd8905e8bda4e8c4aec187ef8bf
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040192"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74568406"
 ---
 # <a name="how-to-create-a-publisher-policy"></a>Postupy: Vytváření zásad vydavatele
 
@@ -74,7 +74,7 @@ V tomto příkazu:
   > [!NOTE]
   > Možnost cílení na konkrétní architekturu procesoru je k dispozici od .NET Framework 2,0.
 
-Možnost cílení na konkrétní architekturu procesoru je k dispozici od .NET Framework 2,0. Následující příkaz vytvoří sestavení zásad vydavatele s názvem `policy.1.0.myAssembly` ze souboru zásad vydavatele s názvem `pub.config`, přiřadí sestavení silný název pomocí páru klíčů v souboru `sgKey.snk` a určí, že sestavení cílí na procesor x86. Architektura.
+Možnost cílení na konkrétní architekturu procesoru je k dispozici od .NET Framework 2,0. Následující příkaz vytvoří sestavení zásad vydavatele s názvem `policy.1.0.myAssembly` ze souboru zásad vydavatele s názvem `pub.config`, přiřadí sestavení silný název pomocí páru klíčů v souboru `sgKey.snk` a určí, že sestavení cílí na architekturu procesoru x86.
 
 ```console
 al /link:pub.config /out:policy.1.0.myAssembly.dll /keyfile:sgKey.snk /platform:x86
@@ -105,7 +105,7 @@ gacutil /i policy.1.0.myAssembly.dll
 ```
 
 > [!IMPORTANT]
-> Sestavení zásady vydavatele nelze přidat do globální mezipaměti sestavení (GAC), pokud původní soubor zásad vydavatele není umístěn ve stejném adresáři jako sestavení.
+> Sestavení zásad vydavatele nelze přidat do globální mezipaměti sestavení (GAC), pokud původní soubor zásad vydavatele zadaný v `/link` argumentu není umístěn ve stejném adresáři jako sestavení.
 
 ## <a name="see-also"></a>Viz také:
 

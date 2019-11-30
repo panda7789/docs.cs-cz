@@ -2,12 +2,12 @@
 title: Konfigurace run-time
 description: Naučte se konfigurovat aplikace .NET Core pomocí nastavení konfigurace za běhu.
 ms.date: 11/13/2019
-ms.openlocfilehash: f7074b07bdd5aca23b6caae78952d630d905c489
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: e3922f6df81198b5e122f16d5cfc4b6d15cbb4ae
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74283987"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74567381"
 ---
 # <a name="net-core-run-time-configuration-settings"></a>Nastavení konfigurace runtime .NET Core
 

@@ -9,15 +9,15 @@ helpviewer_keywords:
 - WCF Data Services, client library
 - data binding, WCF Data Services
 ms.assetid: b32e1d49-c214-4cb1-867e-88fbb3d08c8d
-ms.openlocfilehash: 605ff7a9acaaa217f0e482579968757dd451aed9
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: ab75380738064a001b12e79d1481d053622077ef
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974837"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74569327"
 ---
 # <a name="binding-data-to-controls-wcf-data-services"></a>Vázání dat na ovládací prvky (WCF Data Services)
-Pomocí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]můžete navazovat ovládací prvky, jako jsou ovládací prvky `ComboBox` a `ListView`, na instanci třídy <xref:System.Data.Services.Client.DataServiceCollection%601>. Tato kolekce, která dědí z třídy <xref:System.Collections.ObjectModel.ObservableCollection%601>, obsahuje data z informačního kanálu typu Open Data Protocol (OData). Tato třída reprezentuje dynamický sběr dat, který poskytuje oznámení, když se položky přidají nebo odeberou. Použijete-li instanci <xref:System.Data.Services.Client.DataServiceCollection%601> pro datovou vazbu, aplikace [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klientské knihovny tyto události zpracuje, aby bylo zajištěno, že objekty sledované <xref:System.Data.Services.Client.DataServiceContext> zůstávají synchronizovány s daty v vázaném prvku uživatelského rozhraní.  
+Pomocí WCF Data Services můžete navazovat ovládací prvky, jako jsou ovládací prvky `ComboBox` a `ListView`, na instanci třídy <xref:System.Data.Services.Client.DataServiceCollection%601>. Tato kolekce, která dědí z třídy <xref:System.Collections.ObjectModel.ObservableCollection%601>, obsahuje data z informačního kanálu typu Open Data Protocol (OData). Tato třída reprezentuje dynamický sběr dat, který poskytuje oznámení, když se položky přidají nebo odeberou. Použijete-li instanci <xref:System.Data.Services.Client.DataServiceCollection%601> pro datovou vazbu, aplikace WCF Data Services klientské knihovny tyto události zpracuje, aby bylo zajištěno, že objekty sledované <xref:System.Data.Services.Client.DataServiceContext> zůstávají synchronizovány s daty v vázaném prvku uživatelského rozhraní.  
   
  Třída <xref:System.Data.Services.Client.DataServiceCollection%601> (nepřímo) implementuje rozhraní <xref:System.Collections.Specialized.INotifyCollectionChanged> a upozorní kontext, když jsou objekty přidány nebo odebrány z kolekce. Objekty typu datové služby použité s <xref:System.Data.Services.Client.DataServiceCollection%601> musí implementovat rozhraní <xref:System.ComponentModel.INotifyPropertyChanged>, aby se zobrazila výstraha <xref:System.Data.Services.Client.DataServiceCollection%601> v případě, že se změnily vlastnosti objektů v kolekci vazeb.  
   
@@ -86,7 +86,7 @@ Pomocí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]můžete nava
 - `entityCollectionChanged` – metoda, která se volá při přidání nebo odebrání objektu z kolekce vazeb. Tento <xref:System.Func%602> delegát přijímá objekt <xref:System.Data.Services.Client.EntityCollectionChangedParams> a vrátí logickou hodnotu, která označuje, zda výchozí chování volání <xref:System.Data.Services.Client.DataServiceContext.AddObject%2A> pro <xref:System.Collections.Specialized.NotifyCollectionChangedAction.Add> akci nebo <xref:System.Data.Services.Client.DataServiceContext.DeleteObject%2A> pro akci <xref:System.Collections.Specialized.NotifyCollectionChangedAction.Remove> na <xref:System.Data.Services.Client.DataServiceContext>by mělo stále probíhat.  
   
 > [!NOTE]
-> [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] neprovede žádné ověření vlastního chování, které implementujete v těchto delegátech.  
+> WCF Data Services neprovede žádné ověření vlastního chování, které implementujete v těchto delegátech.  
   
  V následujícím příkladu je akce <xref:System.Collections.Specialized.NotifyCollectionChangedAction.Remove> přizpůsobena pro volání metody <xref:System.Data.Services.Client.DataServiceContext.DeleteLink%2A> a <xref:System.Data.Services.Client.DataServiceContext.DeleteObject%2A> k odebrání `Orders_Details` entit, které patří k odstraněné `Orders` entitě. Tato vlastní akce se provede, protože závislé entity se při odstranění nadřazené entity neodstraní automaticky.  
   

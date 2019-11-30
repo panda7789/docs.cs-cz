@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF Data Services, client library
 - WCF Data Services, getting started
 ms.assetid: 90872d0c-e989-4490-b3e9-54afb10d33d4
-ms.openlocfilehash: ccf003b915876a30eeb27b39066168fb22950292
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 26fd25a268204ad2644a07b6a56967cc5d2df95e
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975098"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74568834"
 ---
 # <a name="using-a-data-service-in-a-client-application-wcf-data-services"></a>Použití datové služby v klientské aplikaci (WCF Data Services)
 Ke službě, která zpřístupňuje informační kanál protokolu OData (Open Data Protocol), můžete přistupovat zadáním identifikátoru URI do webového prohlížeče. Identifikátor URI poskytuje adresu prostředku a žádosti se odesílají na tyto adresy pro přístup k datům, která tento prostředek představuje, nebo jejich změnu. Prohlížeč vydá příkaz HTTP GET a vrátí požadovaný prostředek jako kanál OData. Další informace najdete v tématu [přístup ke službě z webového prohlížeče](accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md).  
@@ -45,7 +45,7 @@ Ke službě, která zpřístupňuje informační kanál protokolu OData (Open Da
  Formát zprávy datové části je požadován v hlavičce zprávy s požadavkem protokolu HTTP. Další informace najdete v tématu [OData: Operations](https://go.microsoft.com/fwlink/?LinkID=185792).  
   
 ## <a name="accessing-and-changing-data-using-client-libraries"></a>Přístup k datům a jejich změna pomocí klientských knihoven  
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] obsahuje klientské knihovny, které vám umožní snadněji využívat informační kanál OData z .NET Framework klientské aplikace založené na technologii Silverlight. Tyto knihovny zjednodušují posílání a přijímání zpráv HTTP. Také přeloží datovou část zprávy na objekty CLR, které představují data entity. Klientské knihovny nástroje jsou dvě základní třídy <xref:System.Data.Services.Client.DataServiceContext> a <xref:System.Data.Services.Client.DataServiceQuery%601>. Tyto třídy vám umožní dotazovat se na datovou službu a pak pracovat s vrácenými daty entity jako s objekty CLR. Další informace najdete v tématu [WCF Data Services Klientská knihovna](wcf-data-services-client-library.md) a [WCF Data Services (Silverlight)](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838234(v=vs.95)).  
+ WCF Data Services obsahuje klientské knihovny, které vám umožní snadněji využívat informační kanál OData z .NET Framework klientské aplikace založené na technologii Silverlight. Tyto knihovny zjednodušují posílání a přijímání zpráv HTTP. Také přeloží datovou část zprávy na objekty CLR, které představují data entity. Klientské knihovny nástroje jsou dvě základní třídy <xref:System.Data.Services.Client.DataServiceContext> a <xref:System.Data.Services.Client.DataServiceQuery%601>. Tyto třídy vám umožní dotazovat se na datovou službu a pak pracovat s vrácenými daty entity jako s objekty CLR. Další informace najdete v tématu [WCF Data Services Klientská knihovna](wcf-data-services-client-library.md) a [WCF Data Services (Silverlight)](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838234(v=vs.95)).  
   
  Pomocí dialogového okna **Přidat odkaz na službu** v aplikaci Visual Studio můžete přidat odkaz na datovou službu. Tento nástroj požaduje metadata služby z odkazované datové služby a generuje <xref:System.Data.Services.Client.DataServiceContext> reprezentující datovou službu, a generuje také třídy služby data klienta, které představují entity. Další informace najdete v tématu [generování klientské knihovny datové služby](generating-the-data-service-client-library-wcf-data-services.md).  
   

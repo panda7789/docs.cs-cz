@@ -2,16 +2,24 @@
 title: Přerušující kategorie změn – .NET Core
 description: Přečtěte si o způsobech, kterými jsou zásadní změny zařazené do kategorií v .NET Core.
 ms.date: 06/10/2019
-ms.openlocfilehash: 68bc51b6662de070ef901b73fb75ff3aced95726
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 4569c1ab19cb9bfa3e16aa8d5f941705eb926fa7
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739361"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74567924"
 ---
 # <a name="breaking-change-categories"></a>Kategorie změn způsobujících chyby
 
-*Kompatibilita* odkazuje na schopnost zkompilovat nebo spustit kód ve verzi implementace rozhraní .NET, která je jiná než ta, se kterou byl kód původně vyvinut. Konkrétní změna může mít vliv na kompatibilitu šesti různými způsoby. [Jednotlivé druhy změn, které jsou zváženy při hodnocení kompatibility](index.md) , spadají do prvních pěti kategorií.
+*Kompatibilita* odkazuje na schopnost zkompilovat nebo spustit kód ve verzi implementace rozhraní .NET, která je jiná než ta, se kterou byl kód původně vyvinut. Konkrétní změna může mít vliv na kompatibilitu šesti různými způsoby. [Jednotlivé druhy změn](index.md) , které jsou zváženy při hodnocení kompatibility, spadají do následujících kategorií:
+
+- [Změna chování](#behavioral-change)
+- [binární kompatibilita](#binary-compatibility)
+- [Kompatibilita zdrojů](#source-compatibility)
+- [Kompatibilita při návrhu](#design-time-compatibility)
+- [zpětná kompatibilita](#backwards-compatibility)
+
+[Dopředná kompatibilita](#forward-compatibility) není cílem rozhraní .NET Core.
 
 ## <a name="behavioral-change"></a>Změna chování
 

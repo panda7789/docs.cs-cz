@@ -6,23 +6,16 @@ ms.author: adegeo
 ms.date: 11/06/2019
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: d39e5912cf2ae73631c2f1192adb516e84dfed32
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
-ms.translationtype: HT
+ms.openlocfilehash: fbe9b9e12dc53d9ab6570299e03f2b0a8868fb53
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552197"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74567270"
 ---
 # <a name="install-the-net-core-runtime"></a>Instalace modulu runtime .NET Core
 
 V tomto článku se dozvíte, jak stáhnout a nainstalovat modul runtime .NET Core. Modul runtime .NET Core se používá ke spouštění aplikací vytvořených pomocí .NET Core.
-
-.NET Core můžete stáhnout a nainstalovat přímo s jedním z následujících odkazů:
-
-- [Soubory ke stažení pro .NET Core 3,1 Preview 3](https://dotnet.microsoft.com/download/dotnet-core/3.1)
-- [Soubory ke stažení pro .NET Core 3,0](https://dotnet.microsoft.com/download/dotnet-core/3.0)
-- [Soubory ke stažení pro .NET Core 2,2](https://dotnet.microsoft.com/download/dotnet-core/2.2)
-- [Soubory ke stažení pro .NET Core 2,1](https://dotnet.microsoft.com/download/dotnet-core/2.1)
 
 ::: zone pivot="os-windows,os-macos"
 
@@ -30,8 +23,8 @@ V tomto článku se dozvíte, jak stáhnout a nainstalovat modul runtime .NET Co
 
 Windows i macOS mají samostatné instalační programy, které je možné použít k instalaci modulu runtime .NET Core 3,0.
 
-- Procesory Windows [x64](https://dotnet.microsoft.com/download/thank-you/dotnet-runtime-3.0.0-windows-x64-installer) | [procesory x32](https://dotnet.microsoft.com/download/thank-you/dotnet-runtime-3.0.0-windows-x86-installer)
-- macOS [procesory x64](https://dotnet.microsoft.com/download/thank-you/dotnet-runtime-3.0.0-macos-x64-installer)
+- Procesory Windows [x64 (64-bit)](https://dotnet.microsoft.com/download/dotnet-core/3.0) | procesory [x86 (32 bitů)](https://dotnet.microsoft.com/download/dotnet-core/3.0)
+- macOS [procesory x64 (64 bitů)](https://dotnet.microsoft.com/download/dotnet-core/3.0)
 
 ::: zone-end
 
@@ -70,6 +63,15 @@ Skript ve výchozím nastavení instaluje nejnovější verzi [LTS (Long Term su
 ```
 
 ::: zone-end
+
+## <a name="all-net-core-downloads"></a>Všechny soubory ke stažení pro .NET Core
+
+.NET Core můžete stáhnout a nainstalovat přímo s jedním z následujících odkazů:
+
+- [Soubory ke stažení pro .NET Core 3,1 Preview](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+- [Soubory ke stažení pro .NET Core 3,0](https://dotnet.microsoft.com/download/dotnet-core/3.0)
+- [Soubory ke stažení pro .NET Core 2,2](https://dotnet.microsoft.com/download/dotnet-core/2.2)
+- [Soubory ke stažení pro .NET Core 2,1](https://dotnet.microsoft.com/download/dotnet-core/2.1)
 
 ## <a name="docker"></a>Docker
 

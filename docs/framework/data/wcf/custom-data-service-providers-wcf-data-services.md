@@ -4,17 +4,17 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF Data Services, providers
 ms.assetid: e702ecdb-3419-4743-92a9-c3c0e7d44082
-ms.openlocfilehash: fd76f456665da76138b927d85a53924e8169c30a
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: c5f6bd001a5198f14bf05c0730f3988d54142eae
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975376"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74569252"
 ---
 # <a name="custom-data-service-providers-wcf-data-services"></a>Vlastní zprostředkovatelé datových služeb (WCF Data Services)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] obsahuje sadu zprostředkovatelů, které vám umožní definovat datový model na základě datových typů s pozdní vazbou.  
+WCF Data Services obsahuje sadu zprostředkovatelů, které vám umožní definovat datový model na základě datových typů s pozdní vazbou.  
   
-|Zprostředkovatele|Popis|  
+|Zprostředkovatel|Popis|  
 |--------------|-----------------|  
 |Poskytovatel metadat|Toto je základní poskytovatel vlastní datové služby, který umožňuje definovat vlastní datový model za běhu implementací rozhraní <xref:System.Data.Services.Providers.IDataServiceMetadataProvider>.|  
 |Poskytovatel dotazů|Tento poskytovatel vám umožní spouštět dotazy proti vlastnímu datovému modelu definovanému pomocí rozhraní <xref:System.Data.Services.Providers.IDataServiceMetadataProvider>. Poskytovatel dotazu je vytvořen implementací rozhraní <xref:System.Data.Services.Providers.IDataServiceQueryProvider>.|  

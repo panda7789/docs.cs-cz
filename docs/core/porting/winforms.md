@@ -1,20 +1,19 @@
 ---
-title: Port model Windows Forms aplikace do .NET Core 3,0
-description: Naučíte se, jak portovat .NET Framework model Windows Forms aplikace do .NET Core 3,0 pro Windows.
+title: Port model Windows Forms aplikace do .NET Core
+description: Naučíte se, jak portovat .NET Framework model Windows Forms aplikace do .NET Core pro Windows.
 author: Thraka
 ms.author: adegeo
 ms.date: 03/01/2019
-ms.custom: ''
-ms.openlocfilehash: 64920f1d226fcc8265d0be252d4751f2ba278cc1
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 959b506fe23691e160d7e88e0ae61cc71c1f3421
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73973281"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74567278"
 ---
 # <a name="how-to-port-a-windows-forms-desktop-app-to-net-core"></a>Postup při portování model Windows Forms desktopové aplikace do .NET Core
 
-Tento článek popisuje, jak přenést vaši desktopovou aplikaci založenou na model Windows Forms z .NET Framework na .NET Core 3,0. Sada .NET Core 3,0 SDK obsahuje podporu pro model Windows Forms aplikace. Model Windows Forms je prostředí jenom pro Windows a běží jenom v systému Windows. V tomto příkladu se k vytvoření a správě projektu používá rozhraní příkazového řádku .NET Core SDK.
+Tento článek popisuje, jak přenést model Windows Forms desktopové aplikace z .NET Framework na .NET Core 3,0 nebo novější. Sada .NET Core 3,0 SDK obsahuje podporu pro model Windows Forms aplikace. Model Windows Forms je prostředí jenom pro Windows a běží jenom v systému Windows. V tomto příkladu se k vytvoření a správě projektu používá rozhraní příkazového řádku .NET Core SDK.
 
 V tomto článku se k identifikaci typů souborů používaných k migraci používají různé názvy. Při migraci projektu budou soubory pojmenovány jinak, takže je bude možné navzájem narovnávat na ty, které jsou uvedeny níže:
 
@@ -30,15 +29,15 @@ V tomto článku se k identifikaci typů souborů používaných k migraci použ
 - [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) pro každou práci návrháře, kterou chcete provést.
 
   Nainstalujte následující úlohy sady Visual Studio:
-  - Vývoj pro desktopy .NET
-  - Vývoj pro různé platformy .NET
+  - Vývoj desktopových aplikací pomocí .NET
+  - Vývoj pro různé platformy .NET Core
 
 - Pracovní model Windows Forms projekt v řešení, které sestaví a spouští bez problémů.
-- Projekt musí být kódován v C#. 
-- Nainstalujte nejnovější verzi [.NET Core 3,0](https://aka.ms/netcore3download) Preview.
+- Projekt kódovaný v C#.
+- [.NET Core](https://dotnet.microsoft.com/download/dotnet-core) 3,0 nebo novější.
 
->[!NOTE]
->**Visual Studio 2017** nepodporuje projekty .net Core 3,0. **Visual Studio 2019** podporuje projekty .net Core 3,0, ale ještě nepodporuje Visual Designer pro .net core 3,0 model Windows Forms projekty. Chcete-li používat vizuálního návrháře, musíte mít ve svém řešení projekt .NET model Windows Forms, který sdílí soubory formulářů s projektem .NET Core.
+> [!NOTE]
+> **Visual Studio 2017** nepodporuje projekty .net Core 3,0. **Visual Studio 2019** podporuje projekty .net Core 3,0, ale ještě nepodporuje Visual Designer pro .net core 3,0 model Windows Forms projekty. Chcete-li použít vizuálního návrháře, musíte mít projekt .NET model Windows Forms v řešení, které sdílí soubory formulářů s projektem .NET Core.
 
 ### <a name="consider"></a>Byste
 
@@ -117,7 +116,7 @@ dotnet sln add .\MyFormsAppCore\MyFormsCore.csproj
 
 Model Windows Forms projekty, které byly vytvořeny pomocí .NET Framework obsahují `AssemblyInfo.cs` soubor, který obsahuje atributy sestavení, jako je například verze sestavení, která má být vygenerována. Projekty ve stylu sady SDK automaticky generují tyto informace na základě souboru projektu sady SDK. Pokud má oba typy "informace o sestavení", dojde ke konfliktu. Tento problém vyřešíte tak, že zakážete automatickou generaci, což vynutí, aby projekt používal existující `AssemblyInfo.cs` soubor.
 
-Existují tři nastavení, která lze přidat do hlavního uzlu `<PropertyGroup>`. 
+Existují tři nastavení, která lze přidat do hlavního uzlu `<PropertyGroup>`.
 
 - **GenerateAssemblyInfo**\
 Když nastavíte tuto vlastnost na `false`, negenerují se atributy sestavení. Tím se vyhnete konfliktu s existujícím `AssemblyInfo.cs`m souboru z projektu .NET Framework.
@@ -148,7 +147,7 @@ Přidejte tyto tři prvky do uzlu `<PropertyGroup>` v souboru `MyFormsCore.cspro
 
 ## <a name="add-source-code"></a>Přidat zdrojový kód
 
-Nyní projekt **MyFormsCore. csproj** nekompiluje žádný kód. Projekty .NET Core standardně do aktuálního adresáře a všech podřízených adresářů automaticky zahrnují veškerý zdrojový kód. Je nutné nakonfigurovat projekt tak, aby zahrnoval kód z .NET Framework projektu pomocí relativní cesty. Pokud váš .NET Framework projekt používal soubory **. resx** pro ikony a prostředky pro vaše formuláře, budete je muset zahrnout. 
+Nyní projekt **MyFormsCore. csproj** nekompiluje žádný kód. Projekty .NET Core standardně do aktuálního adresáře a všech podřízených adresářů automaticky zahrnují veškerý zdrojový kód. Je nutné nakonfigurovat projekt tak, aby zahrnoval kód z .NET Framework projektu pomocí relativní cesty. Pokud váš .NET Framework projekt používal soubory **. resx** pro ikony a prostředky pro vaše formuláře, budete je muset zahrnout.
 
 Do projektu přidejte následující `<ItemGroup>` uzel. Každý příkaz zahrnuje vzor glob souboru, který obsahuje podřízené adresáře.
 
@@ -163,7 +162,7 @@ Alternativně můžete vytvořit `<Compile>` nebo `<EmbeddedResource>` záznam p
 
 ## <a name="add-nuget-packages"></a>Přidat balíčky NuGet
 
-Přidejte každý balíček NuGet, na který odkazuje .NET Framework projekt, do projektu .NET Core. 
+Přidejte každý balíček NuGet, na který odkazuje .NET Framework projekt, do projektu .NET Core.
 
 Pravděpodobně vaše aplikace .NET Framework model Windows Forms má soubor **Packages. config** , který obsahuje seznam všech balíčků NuGet, na které odkazuje váš projekt. Můžete se podívat na tento seznam a určit, které balíčky NuGet se mají přidat do projektu .NET Core. Pokud například projekt .NET Framework odkazoval na balíčky NuGet `MetroFramework`, `MetroFramework.Design`a `MetroFramework.Fonts`, přidejte do projektu každý z nich pomocí sady Visual Studio nebo .NET Core CLI z adresáře **SolutionFolder –** :
 
@@ -243,7 +242,7 @@ Tady je příklad toho, co by soubor projektu knihovny ovládacích prvků model
 <Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    
+
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
 
@@ -251,12 +250,12 @@ Tady je příklad toho, co by soubor projektu knihovny ovládacích prvků model
     <AssemblyName>MyCoreControls</AssemblyName>
     <RootNamespace>WindowsFormsControlLibrary1</RootNamespace>
   </PropertyGroup>
-  
+
   <ItemGroup>
     <Compile Include="..\MyFormsControls\**\*.cs" />
     <EmbeddedResource Include="..\MyFormsControls\**\*.resx" />
   </ItemGroup>
-  
+
 </Project>
 ```
 
@@ -276,7 +275,7 @@ Předchozí příkaz přidá následující do projektu **MyFormsCore. csproj** 
   </ItemGroup>
 ```
 
-## <a name="problems-compiling"></a>Kompilace problémů
+## <a name="compilation-problems"></a>Problémy s kompilací
 
 Pokud máte problémy s kompilací vašich projektů, můžete používat jenom některá rozhraní API jenom pro Windows, která jsou k dispozici v .NET Framework, ale nejsou dostupná v .NET Core. Do projektu se můžete pokusit přidat balíček NuGet [sady Windows Compatibility Pack][compat-pack] . Tento balíček se spouští jenom ve Windows a přidává asi 20 000 rozhraní API Windows do projektů .NET Core a .NET Standard.
 
@@ -297,7 +296,7 @@ Předchozí příkaz přidá následující do projektu **MyFormsCore. csproj** 
 Jak je popsáno v tomto článku, Visual Studio 2019 podporuje pouze Návrháře formulářů v .NET Frameworkch projektech. Vytvořením souběžného projektu .NET Core můžete testovat projekt pomocí .NET Core při použití projektu .NET Framework k návrhu formulářů. Váš soubor řešení zahrnuje projekty .NET Framework i .NET Core. Přidejte a navrhněte formuláře a ovládací prvky v projektu .NET Framework a na základě vzorů glob souborů, které jsme přidali do projektů .NET Core, budou všechny nové nebo změněné soubory automaticky zahrnuty v projektech .NET Core.
 
 Jakmile aplikace Visual Studio 2019 podporuje Návrhář formulářů, můžete zkopírovat nebo vložit obsah souboru projektu .NET Core do souboru projektu .NET Framework. Pak odstraňte vzory glob souborů přidané pomocí `<Source>` a `<EmbeddedResource>` položky. Opravte cesty pro všechny odkazy na projekt, které vaše aplikace používá. Tím se efektivně upgraduje .NET Framework projekt na projekt .NET Core.
- 
+
 ## <a name="next-steps"></a>Další kroky
 
 - Přečtěte si další informace o sadě [Windows Compatibility Pack][compat-pack].

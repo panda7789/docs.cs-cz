@@ -10,12 +10,12 @@ helpviewer_keywords:
 - streaming data provider [WCF Data Services]
 - WCF Data Services, streams
 ms.assetid: f0978fe4-5f9f-42aa-a5c2-df395d7c9495
-ms.openlocfilehash: da575c65902ec8751c12482d0c8d0abd523623e4
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: a5793eae92ffdfa65872c93273bd7cfefdc6f674
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975122"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74568810"
 ---
 # <a name="streaming-provider-wcf-data-services"></a>Zprostředkovatel streamování (WCF Data Services)
 
@@ -25,7 +25,7 @@ Datová služba může vystavovat rozsáhlá binární data objektů. Tato biná
 
 - Položka odkazu na média – entita, která má odkaz na související datový proud mediálních prostředků.
 
-Pomocí [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)]definujete binární datový proud prostředku implementací poskytovatele dat streamování. Implementace poskytovatele streamování poskytuje datovou službu pomocí datového proudu mediálních prostředků přidruženého ke konkrétní entitě jako objekt <xref:System.IO.Stream>. Tato implementace umožňuje datové službě přijímat a vracet mediální prostředky přes HTTP jako binární datové proudy zadaného typu MIME.
+Pomocí WCF Data Services definujete binární datový proud prostředku implementací poskytovatele dat streamování. Implementace poskytovatele streamování poskytuje datovou službu pomocí datového proudu mediálních prostředků přidruženého ke konkrétní entitě jako objekt <xref:System.IO.Stream>. Tato implementace umožňuje datové službě přijímat a vracet mediální prostředky přes HTTP jako binární datové proudy zadaného typu MIME.
 
 Konfigurace datové služby pro podporu streamování binárních dat vyžaduje následující kroky:
 
@@ -79,7 +79,7 @@ Chcete-li vytvořit datovou službu, která podporuje binární datové proudy, 
 
 ## <a name="creating-the-streaming-data-service"></a>Vytvoření služby streamování dat
 
-Aby modul runtime [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] poskytoval přístup k implementaci <xref:System.Data.Services.Providers.IDataServiceStreamProvider>, je nutné, aby datová služba, kterou vytvoříte, také implementovala rozhraní <xref:System.IServiceProvider>. Následující příklad ukazuje, jak implementovat metodu <xref:System.IServiceProvider.GetService%2A> pro vrácení instance `PhotoServiceStreamProvider` třídy, která implementuje <xref:System.Data.Services.Providers.IDataServiceStreamProvider>.
+Aby modul runtime WCF Data Services poskytoval přístup k implementaci <xref:System.Data.Services.Providers.IDataServiceStreamProvider>, je nutné, aby datová služba, kterou vytvoříte, také implementovala rozhraní <xref:System.IServiceProvider>. Následující příklad ukazuje, jak implementovat metodu <xref:System.IServiceProvider.GetService%2A> pro vrácení instance `PhotoServiceStreamProvider` třídy, která implementuje <xref:System.Data.Services.Providers.IDataServiceStreamProvider>.
 
 [!code-csharp[Astoria Photo Streaming Service#PhotoServiceStreamingProvider](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_photo_streaming_service/cs/photodata.svc.cs#photoservicestreamingprovider)]
 [!code-vb[Astoria Photo Streaming Service#PhotoServiceStreamingProvider](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_photo_streaming_service/vb/photodata.svc.vb#photoservicestreamingprovider)]
@@ -99,7 +99,7 @@ Ve výchozím nastavení omezuje služba Internetová informační služba (IIS)
 
 ## <a name="using-data-streams-in-a-client-application"></a>Použití datových proudů v klientské aplikaci
 
-Klientská knihovna [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] umožňuje načíst a aktualizovat tyto vystavené prostředky jako binární datové proudy na klientovi. Další informace najdete v tématu [práce s binárními daty](working-with-binary-data-wcf-data-services.md).
+Klientská knihovna WCF Data Services umožňuje načíst a aktualizovat tyto vystavené prostředky jako binární datové proudy na klientovi. Další informace najdete v tématu [práce s binárními daty](working-with-binary-data-wcf-data-services.md).
 
 ## <a name="considerations-for-working-with-a-streaming-provider"></a>Pokyny pro práci s poskytovatelem streamování
 

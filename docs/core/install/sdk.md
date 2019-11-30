@@ -6,25 +6,16 @@ ms.author: adegeo
 ms.date: 11/06/2019
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: 6e9af6c84c81b1244e10fa7d5955ab67d34b1f0a
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
-ms.translationtype: HT
+ms.openlocfilehash: 54819b409422e8bda9efe25478aa3424683a380b
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552206"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74567471"
 ---
 # <a name="install-the-net-core-sdk"></a>Instalace .NET Core SDK
 
 V tomto článku se naučíte, jak nainstalovat .NET Core SDK. .NET Core SDK slouží k vytváření aplikací a knihoven .NET Core. Modul runtime .NET Core je vždy nainstalován společně se sadou SDK.
-
-.NET Core můžete stáhnout a nainstalovat přímo s jedním z následujících odkazů:
-
-- [Soubory ke stažení pro .NET Core 3,1 Preview 3](https://dotnet.microsoft.com/download/dotnet-core/3.1)
-- [Soubory ke stažení pro .NET Core 3,0](https://dotnet.microsoft.com/download/dotnet-core/3.0)
-- [Soubory ke stažení pro .NET Core 2,2](https://dotnet.microsoft.com/download/dotnet-core/2.2)
-- [Soubory ke stažení pro .NET Core 2,1](https://dotnet.microsoft.com/download/dotnet-core/2.1)
-
-.NET Core můžete nainstalovat také jako součást integrovaného vývojového prostředí (IDE), které jsou podrobně popsané v následujících částech.
 
 ::: zone pivot="os-windows,os-macos"
 
@@ -32,8 +23,8 @@ V tomto článku se naučíte, jak nainstalovat .NET Core SDK. .NET Core SDK slo
 
 Windows i macOS mají samostatné instalační programy, které je možné použít k instalaci sady .NET Core 3,0 SDK.
 
-- Procesory Windows [x64](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-3.0.100-windows-x64-installer) | [procesory x32](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-3.0.100-windows-x86-installer)
-- macOS [procesory x64](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-3.0.100-macos-x64-installer)
+- Procesory Windows [x64 (64-bit)](https://dotnet.microsoft.com/download/dotnet-core/3.0) | procesory [x86 (32 bitů)](https://dotnet.microsoft.com/download/dotnet-core/3.0)
+- macOS [procesory x64 (64 bitů)](https://dotnet.microsoft.com/download/dotnet-core/3.0)
 
 ::: zone-end
 
@@ -41,7 +32,30 @@ Windows i macOS mají samostatné instalační programy, které je možné použ
 
 ## <a name="install-with-a-package-manager"></a>Instalace pomocí Správce balíčků
 
-.NET Core SDK můžete nainstalovat pomocí mnoha běžných správců balíčků pro Linux. Další informace najdete v tématu [Správce balíčků pro Linux – instalace .NET Core](linux-package-manager-rhel7.md).
+.NET Core SDK můžete nainstalovat pomocí mnoha běžných správců balíčků pro Linux. Další informace najdete v tématu [Správce balíčků pro Linux – instalace .NET Core](linux-package-managers.md).
+
+## <a name="download-and-manually-install"></a>Stažení a ruční instalace
+
+K extrakci sady SDK a zpřístupnění příkazů v terminálu nejprve [Stáhněte](#all-net-core-downloads) binární verzi .NET Core. Pak otevřete terminál a spusťte následující příkazy.
+
+```bash
+mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-3.0.101-linux-musl-x64.tar.gz -C $HOME/dotnet
+export DOTNET_ROOT=$HOME/dotnet
+export PATH=$PATH:$HOME/dotnet
+```
+
+> [!TIP]
+> Výše uvedené příkazy zpřístupní pouze příkazy sady .NET SDK dostupné pro relaci terminálu, ve které byla spuštěna.
+>
+> Úpravou profilu prostředí můžete tyto příkazy trvale přidat. K dispozici je řada různých prostředí pro Linux a každá má jiný profil. Příklad:
+>
+> - **Prostředí bash**: *~/. bash_profile*, *~/.bashrc*
+> - **Korn shell**: *~/.KSHRC* nebo *. Profile*
+> - **Prostředí Z**: *~/.zshrc* nebo *. zprofile*
+> 
+> Upravte příslušný zdrojový soubor pro prostředí a přidejte `:$HOME/dotnet` na konec existujícího příkazu `PATH`. Pokud není zahrnutý žádný příkaz `PATH`, přidejte nový řádek s `export PATH=$PATH:$HOME/dotnet`.
+>
+> Přidejte také `export DOTNET_ROOT=$HOME/dotnet` na konec souboru.
 
 ::: zone-end
 
@@ -53,6 +67,7 @@ Pokud používáte Visual Studio pro vývoj aplikací .NET Core, v následujíc�
 
 | Verze .NET Core SDK | Verze sady Visual Studio                      |
 | --------------------- | ------------------------------------------ |
+| 3,1 Preview           | Visual Studio 2019 verze 16,4 Preview nebo vyšší. |
 | 3,0                   | Visual Studio 2019 verze 16,3 nebo vyšší. |
 | 2,2                   | Visual Studio 2017 verze 15,9 nebo vyšší. |
 | 2,1                   | Visual Studio 2017 verze 15,7 nebo vyšší. |
@@ -90,14 +105,14 @@ Visual Studio pro Mac nainstaluje .NET Core SDK při výběru úlohy **.NET Core
 
 ::: zone-end
 
-## <a name="install-from-visual-studio-code"></a>Nainstalovat z Visual Studio Code
+## <a name="install-alongside-visual-studio-code"></a>Nainstalovat společně Visual Studio Code
 
 Visual Studio Code je výkonný a prostý Editor zdrojového kódu, který běží na vašem počítači. Visual Studio Code je k dispozici pro Windows, macOS a Linux.
 
-I když Visual Studio Code nepřináší podporu .NET Core, je přidání podpory .NET Core jednoduché.
+I když Visual Studio Code nepřichází s automatizovaným instalačním programem .NET Core, jako je Visual Studio, přidání podpory .NET Core je jednoduché.
 
 01. [Stáhněte a nainstalujte Visual Studio Code](https://code.visualstudio.com/Download).
-01. [Stáhněte a nainstalujte .NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core/3.0).
+01. [Stáhněte a nainstalujte .NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core).
 01. [Nainstalujte C# rozšíření z webu Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp).
 
 ::: zone pivot="os-windows"
@@ -127,6 +142,15 @@ Skript ve výchozím nastavení instaluje nejnovější verzi [LTS (Long Term su
 ```
 
 ::: zone-end
+
+## <a name="all-net-core-downloads"></a>Všechny soubory ke stažení pro .NET Core
+
+.NET Core můžete stáhnout a nainstalovat přímo s jedním z následujících odkazů:
+
+- [Soubory ke stažení pro .NET Core 3,1 Preview](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+- [Soubory ke stažení pro .NET Core 3,0](https://dotnet.microsoft.com/download/dotnet-core/3.0)
+- [Soubory ke stažení pro .NET Core 2,2](https://dotnet.microsoft.com/download/dotnet-core/2.2)
+- [Soubory ke stažení pro .NET Core 2,1](https://dotnet.microsoft.com/download/dotnet-core/2.1)
 
 ## <a name="docker"></a>Docker
 

@@ -5,18 +5,18 @@ helpviewer_keywords:
 - WCF Data Services, client library
 - WCF Data Services, querying
 ms.assetid: f0dbf7b0-0292-4e31-9ae4-b98288336dc1
-ms.openlocfilehash: 68b04ac59d1b73d6e66a5a7836ce1bfe30d9c681
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 7a2b201e5690c4304e663e9429c54f377e05f556
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975195"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74568907"
 ---
 # <a name="object-materialization-wcf-data-services"></a>Materializace objektů (WCF Data Services)
 
 Při použití dialogového okna **Přidat odkaz na službu** ke využívání informačního kanálu protokolu OData (Open Data Protocol) v klientské aplikaci založené na .NET Framework se pro každý typ entity v datovém modelu, který je vystavený informačním kanálem, vygenerují ekvivalentní datové třídy. Další informace najdete v tématu [generování klientské knihovny datové služby](generating-the-data-service-client-library-wcf-data-services.md). Data entity, která jsou vrácena dotazem, jsou vyhodnocena jako instance jedné z těchto generovaných tříd služby data a klienta. Informace o možnostech sloučení a rozlišení identity pro sledované objekty najdete v tématu [Správa kontextu datové služby](managing-the-data-service-context-wcf-data-services.md).
 
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] také umožňuje definovat vlastní třídy klientské datové služby místo použití datových tříd generovaných nástrojem. To vám umožňuje používat vlastní datové třídy, označované také jako "obyčejné, staré" objekty CLR (POCO) datové třídy. Při použití těchto typů vlastních datových tříd byste měli mít atribut datové třídy buď <xref:System.Data.Services.Common.DataServiceKeyAttribute>, nebo <xref:System.Data.Services.Common.DataServiceEntityAttribute> a zajistěte, aby názvy typů v klientovi odpovídaly názvům typu v datovém modelu datové služby.
+WCF Data Services také umožňuje definovat vlastní třídy klientské datové služby místo použití datových tříd generovaných nástrojem. To vám umožňuje používat vlastní datové třídy, označované také jako "obyčejné, staré" objekty CLR (POCO) datové třídy. Při použití těchto typů vlastních datových tříd byste měli mít atribut datové třídy buď <xref:System.Data.Services.Common.DataServiceKeyAttribute>, nebo <xref:System.Data.Services.Common.DataServiceEntityAttribute> a zajistěte, aby názvy typů v klientovi odpovídaly názvům typu v datovém modelu datové služby.
 
 Poté, co Knihovna obdrží zprávu odpovědi na dotaz, materializuje vrácená data z datového kanálu OData do instancí tříd klientských dat služby, které jsou typu dotazu. Obecný proces pro vyhodnocování těchto objektů je následující:
 
