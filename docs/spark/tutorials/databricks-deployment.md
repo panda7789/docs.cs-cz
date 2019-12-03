@@ -4,12 +4,12 @@ description: Zjistěte, jak nasadit rozhraní .NET pro Apache Spark aplikaci do 
 ms.date: 05/17/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: c1c1a57fb2b79826218f8ed94d568b37d4689560
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: e79b4c5bf38416cf45776488559bd0b2d5582361
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73454274"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716468"
 ---
 # <a name="tutorial-deploy-a-net-for-apache-spark-application-to-databricks"></a>Kurz: nasazení rozhraní .NET pro Apache Spark aplikaci do datacihlů
 
@@ -50,7 +50,7 @@ V této části vytvoříte Azure Databricks pracovní prostor pomocí Azure Por
     |---------|---------|
     |**Název pracovního prostoru**     | Zadejte název pracovního prostoru datacihly.        |
     |**Formě**     | V rozevíracím seznamu vyberte své předplatné Azure.        |
-    |**Skupina prostředků**     | Určete, zda chcete vytvořit novou skupinu prostředků, nebo použít existující. Skupina prostředků je kontejner, který obsahuje související prostředky pro řešení Azure. Další informace najdete v tématu [Přehled skupiny prostředků Azure](/azure/azure-databricks/azure-resource-manager/resource-group-overview). |
+    |**Skupina prostředků**     | Určete, zda chcete vytvořit novou skupinu prostředků, nebo použít existující. Skupina prostředků je kontejner, který uchovává související prostředky pro řešení Azure. Další informace najdete v tématu [Přehled skupiny prostředků Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview). |
     |**Poloha**     | Vyberte upřednostňovanou oblast. Informace o dostupných oblastech najdete v tématu [služby Azure dostupné v jednotlivých oblastech](https://azure.microsoft.com/regions/services/).        |
     |**Cenová úroveň**     |  Vyberte si mezi **standardem**, **Premium**nebo **zkušební verzí**. Další informace o těchto úrovních najdete na stránce s [cenami pro datacihly](https://azure.microsoft.com/pricing/details/databricks/).       |
     |**Virtual Network**     |   Ne       |
