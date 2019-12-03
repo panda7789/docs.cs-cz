@@ -1,62 +1,62 @@
 ---
 title: Vytvoření nového projektu ASP.NET Core gRPC – gRPC pro vývojáře WCF
-description: Naučte se vytvořit projekt gRPC pomocí sady Visual Studio nebo z příkazového řádku.
+description: Naučte se vytvořit projekt gRPC pomocí sady Visual Studio nebo příkazového řádku.
 ms.date: 09/02/2019
-ms.openlocfilehash: 992c3f57be25ae2517d41437170dc287f58934b6
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: ea6d7658404f61fedb25d7de7ddedb7c51437383
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73967897"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74711437"
 ---
 # <a name="create-a-new-aspnet-core-grpc-project"></a>Vytvoření nového projektu gRPC ASP.NET Core
 
-.NET Core přináší výkonný nástroj CLI, `dotnet`, který umožňuje vytvářet a spravovat projekty a řešení z příkazového řádku. Nástroj je úzce integrovaný se sadou Visual Studio, takže vše je dostupné i prostřednictvím známého rozhraní grafického uživatelského rozhraní (GUI). V této kapitole se zobrazí obě možnosti vytvoření nového projektu ASP.NET Core gRPC: nejprve pomocí sady Visual Studio a pak pomocí .NET Core CLI.
+.NET Core SDK se dodává s výkonným nástrojem CLI, `dotnet`, který umožňuje vytvářet a spravovat projekty a řešení z příkazového řádku. Sada SDK je úzce integrovaná se sadou Visual Studio, takže vše je také k dispozici prostřednictvím známého grafického uživatelského rozhraní. Tato kapitola ukazuje jak vytvořit nový projekt ASP.NET Core gRPC.
 
-## <a name="create-the-project-using-visual-studio"></a>Vytvoření projektu pomocí sady Visual Studio
+## <a name="create-the-project-by-using-visual-studio"></a>Vytvoření projektu pomocí sady Visual Studio
 
 > [!IMPORTANT]
-> K vývoji jakékoli aplikace ASP.NET Core 3,0 budete potřebovat Visual Studio 2019,3 nebo novější s nainstalovanou úlohou **vývoj pro ASP.NET a web** .
+> K vývoji jakékoli aplikace ASP.NET Core 3,0 budete potřebovat Visual Studio 2019 16,3 nebo novější s nainstalovanou úlohou **vývoj pro ASP.NET a web** .
 
-Vytvoří prázdné řešení s názvem **TraderSys** ze šablony *prázdného řešení* . Přidejte složku řešení s názvem `src`, klikněte pravým tlačítkem myši na složku a zvolte možnost **přidat** > **Nový projekt** z kontextové nabídky. Do vyhledávacího pole šablony zadejte `grpc` a měli byste vidět šablonu projektu s názvem `gRPC Service`.
+Vytvoří prázdné řešení s názvem **TraderSys** ze šablony *prázdného řešení* . Přidejte složku řešení s názvem `src`. Potom klikněte pravým tlačítkem na složku a zvolte **přidat** > **Nový projekt**. Do vyhledávacího pole šablony zadejte `grpc` a měli byste vidět šablonu projektu s názvem `gRPC Service`.
 
-![Dialogové okno Přidat nový projekt zobrazující šablonu projektu služby gRPC](media/create-project/new-grpc-project.png)
+![Snímek obrazovky s dialogovým oknem přidat nový projekt](media/create-project/new-grpc-project.png)
 
-Kliknutím na tlačítko **Další** pokračujte v dialogovém okně **Konfigurovat projekt** a pojmenujte projekt `TraderSys.Portfolios`a přidejte podadresář `src` do **umístění**.
+Kliknutím na tlačítko **Další** pokračujte v dialogovém okně **Konfigurovat nový projekt** . Pojmenujte projekt `TraderSys.Portfolios`a přidejte podadresář `src` do **umístění**.
 
-![Dialogové okno Konfigurace projektu](media/create-project/configure-project.png)
+![Snímek obrazovky s dialogem Konfigurovat nový projekt](media/create-project/configure-project.png)
 
-Kliknutím na tlačítko **Další** pokračujte v dialogovém okně **Nový projekt gRPC** .
+Kliknutím na tlačítko **Další** pokračujte v dialogovém okně **vytvořit novou službu gRPC** .
 
-![Dialog Nový projekt gRPC](media/create-project/create-new-grpc-service.png)
+![Snímek obrazovky s dialogovým oknem vytvořit novou službu gRPC](media/create-project/create-new-grpc-service.png)
 
-V současnosti existují omezené možnosti pro vytvoření služby. Docker se zavede později v knize, takže nechejte toto políčko zatím nezaškrtnuté a stačí kliknout na **vytvořit**. Váš první projekt ASP.NET Core 3,0 gRPC se vygeneruje a přidá do řešení. Pokud nechcete mít informace o práci s `dotnet CLI`, přejděte k části [ukázkový kód](#clean-up-the-example-code) .
+V současnosti máte omezené možnosti pro vytvoření služby. Docker se zavede později, takže teď nechte tuto možnost nevybranou. Stačí vybrat **vytvořit**. Váš první projekt ASP.NET Core 3,0 gRPC se vygeneruje a přidá do řešení. Pokud nechcete mít informace o práci s `dotnet CLI`, přejděte k části [ukázkový kód](#clean-up-the-example-code) .
 
-## <a name="create-the-project-using-the-net-core-cli"></a>Vytvoření projektu pomocí .NET Core CLI
+## <a name="create-the-project-by-using-the-net-core-cli"></a>Vytvoření projektu pomocí .NET Core CLI
 
 Tato část se zabývá vytvářením řešení a projektů z příkazového řádku.
 
-Vytvořte řešení, jak je znázorněno níže. Příznak `-o` (nebo `--output`) určuje výstupní adresář, který se vytvoří v aktuálním adresáři, pokud neexistuje. Řešení bude mít stejný název jako adresář, tj. `TraderSys.sln`. Pomocí příznaku `-n` (nebo `--name`) můžete zadat jiný název.
+Vytvořte řešení, jak je znázorněno v následujícím příkazu. Příznak `-o` (nebo `--output`) určuje výstupní adresář, který se vytvoří v aktuálním adresáři, pokud ještě neexistuje. Řešení má stejný název jako adresář: `TraderSys.sln`. Pomocí příznaku `-n` (nebo `--name`) můžete zadat jiný název.
 
 ```dotnetcli
 dotnet new sln -o TraderSys
 cd TraderSys
 ```
 
-ASP.NET Core 3,0 obsahuje šablonu CLI pro služby gRPC Services. Vytvořte nový projekt pomocí této šablony, který umístí do podadresáře `src`, jako je konvence pro ASP.NET Core projekty. Projekt bude pojmenován za adresářem (tj. `TraderSys.Portfolios.csproj`), pokud neurčíte jiný název s příznakem `-n`.
+ASP.NET Core 3,0 obsahuje šablonu CLI pro služby gRPC Services. Vytvořte nový projekt pomocí této šablony a zadáte ho do podadresáře `src`, stejně jako se jedná o konvenční pro ASP.NET Core projekty. Projekt je pojmenován za adresářem (`TraderSys.Portfolios.csproj`), pokud neurčíte jiný název s příznakem `-n`.
 
 ```dotnetcli
 dotnet new grpc -o src/TraderSys.Portfolios
 ```
 
-Nakonec přidejte projekt do řešení pomocí příkazu `dotnet sln`.
+Nakonec přidejte projekt do řešení pomocí příkazu `dotnet sln`:
 
 ```dotnetcli
 dotnet sln add src/TraderSys.Portfolios
 ```
 
 > [!TIP]
-> Vzhledem k tomu, že daný adresář obsahuje pouze jeden soubor `.csproj`, můžete se zbavit zadání pouze adresáře, do kterého se má ukládat text.
+> Vzhledem k tomu, že konkrétní adresář obsahuje pouze jeden soubor `.csproj`, můžete zadat pouze adresář a uložit tak jeho zadání.
 
 Toto řešení teď můžete otevřít v aplikaci Visual Studio 2019, Visual Studio Code nebo libovolnému editoru, kterému dáváte přednost.
 
@@ -66,7 +66,7 @@ Nyní jste vytvořili ukázkovou službu pomocí šablony gRPC, která byla pře
 
 ### <a name="rename-and-edit-the-proto-file"></a>Přejmenujte a upravte soubor.
 
-Pokračujte a přejmenujte soubor `Protos/greet.proto` na `Protos/portfolios.proto` a otevřete ho v editoru. Odstraňte vše za `package` řádek, potom změňte názvy `option csharp_namespace`, `package` a `service` a odeberte výchozí `SayHello` službu, aby kód vypadal takto.
+Pokračujte a přejmenujte soubor `Protos/greet.proto` na `Protos/portfolios.proto`a otevřete ho v editoru. Odstraňte vše za `package` řádek. Pak změňte `option csharp_namespace`, `package` a `service` jména a odeberte výchozí `SayHello` službu. Kód nyní vypadá takto:
 
 ```protobuf
 syntax = "proto3";
@@ -85,7 +85,7 @@ service Portfolios {
 
 Pokud soubor `greet.proto` přejmenujete v integrovaném vývojovém prostředí (IDE), jako je například Visual Studio, odkaz na tento soubor se automaticky aktualizuje v souboru `.csproj`. Ale v některých dalších editorech, jako je například Visual Studio Code, není tento odkaz automaticky aktualizován, takže je nutné ručně upravit soubor projektu.
 
-V cílících sestavení gRPC je k dispozici prvek `Protobuf` položky, který umožňuje určit, které `.proto` soubory by měly být kompilovány a které formy generování kódu jsou vyžadovány (tj. "Server" nebo "klient").
+V cílících sestavení gRPC je k dispozici prvek `Protobuf` položky, který umožňuje určit, které `.proto` soubory by měly být kompilovány a jaký formulář pro generování kódu je vyžadován (tj. "Server" nebo "klient").
 
 ```xml
 <ItemGroup>
@@ -93,9 +93,9 @@ V cílících sestavení gRPC je k dispozici prvek `Protobuf` položky, který u
 </ItemGroup>
 ```
 
-### <a name="rename-the-greeterservice-class"></a>Přejmenovat třídu GreeterService
+### <a name="rename-the-greeterservice-class"></a>Přejmenovat třídu `GreeterService`
 
-Třída `GreeterService` je ve složce `Services` a dědí z `Greeter.GreeterBase`. Přejmenujte jej na `PortfolioService` a změňte základní třídu na `Portfolios.PortfoliosBase`. Odstraňte metody `override`.
+Třída `GreeterService` je ve složce `Services` a dědí z `Greeter.GreeterBase`. Přejmenujte jej na `PortfolioService`a změňte základní třídu na `Portfolios.PortfoliosBase`. Odstraňte metody `override`.
 
 ```csharp
 public class PortfolioService : Portfolios.PortfoliosBase

@@ -2,35 +2,35 @@
 title: Vytváření klientských knihoven gRPC – gRPC pro vývojáře WCF
 description: Diskuze za sdílené klientské knihovny/balíčky pro služby gRPC Services.
 ms.date: 09/02/2019
-ms.openlocfilehash: 2135fe8b24a2311a31cb2bed191d290b1112bc66
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: bb58cb3cda4b0cbb3a5d34129961349bcb0093e9
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73967873"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74711460"
 ---
 # <a name="create-grpc-client-libraries"></a>Vytváření klientských knihoven gRPC
 
-Není nutné distribuovat klientské knihovny pro aplikaci gRPC. Můžete vytvořit sdílenou knihovnu `.proto` souborů v rámci vaší organizace a jiné týmy můžou tyto soubory použít k vygenerování kódu klienta ve svých vlastních projektech. Pokud ale máte soukromé úložiště NuGet a spousta dalších týmů používá .NET Core, vytváření a publikování balíčků NuGet klienta jako součást projektu služby může být dobrým způsobem, jak sdílet a propagovat vaši službu.
+Není nutné distribuovat klientské knihovny pro aplikaci gRPC. Můžete vytvořit sdílenou knihovnu `.proto` souborů v rámci vaší organizace a jiné týmy můžou tyto soubory použít k vygenerování kódu klienta ve svých vlastních projektech. Pokud ale máte soukromé úložiště NuGet a spousta dalších týmů používá .NET Core, můžete vytvořit a publikovat klientské balíčky NuGet jako součást projektu služby. To může být dobrý způsob, jak sdílet a propagovat vaši službu.
 
-Jednou z výhod distribuce klientské knihovny je, že můžete vylepšit vygenerované třídy gRPC a Protobuf s využitím užitečných metod a vlastností "pohodlí". V klientském kódu, jako na serveru, jsou všechny třídy deklarovány jako `partial` tak, aby je bylo možné roztáhnout bez úprav generovaného kódu. To znamená, že je snadné přidat konstruktory, metody, počítané vlastnosti a další základní typy.
+Jednou z výhod distribuce klientské knihovny je, že můžete vylepšit vygenerované třídy gRPC a Protobuf s využitím užitečných metod a vlastností "pohodlí". V klientském kódu, jako na serveru, jsou všechny třídy deklarovány jako `partial`, takže je můžete roztáhnout bez úprav generovaného kódu. To znamená, že je snadné přidat konstruktory, metody a počítané vlastnosti do základních typů.
 
 > [!CAUTION]
-> **Neměli byste používat vlastní** kód pro poskytování základních funkcí, protože by to znamenalo, že by byla funkce omezena na týmy .NET pomocí sdílené knihovny, a ne pro týmy, které používají jiné jazyky nebo platformy, jako je Python nebo Java.
+> Nepoužívejte vlastní kód k poskytování základních funkcí. Nechcete omezit tyto základní funkce na týmy .NET, které používají sdílenou knihovnu, a Neposkytněte je týmům, které používají jiné jazyky nebo platformy, jako je Python nebo Java.
 
-V prostředí s více platformami, kde různé týmy často používají různé programovací jazyky a rozhraní nebo kde je vaše rozhraní API externě přístupné, stačí, když `.proto` soubory sdílíte, aby vývojáři mohli vygenerovat své vlastní klienty, je nejlepším způsobem, jak zajistit, aby bylo možné získat přístup ke službě gRPC, abyste měli k dispozici co nejvíc týmů.
+Zajistěte, aby ke službě gRPC mohli přistupovat co nejvíce týmů. Nejlepším způsobem, jak to provést, je sdílet soubory `.proto`, aby vývojáři mohli vygenerovat své vlastní klienty. To platí zejména v prostředí s více platformami, kde různé týmy často používají různé programovací jazyky a architektury nebo kde je vaše rozhraní API externě přístupné.
 
 ## <a name="useful-extensions"></a>Užitečná rozšíření
 
 V rozhraní .NET existují dvě běžně používaná rozhraní pro práci s datovými proudy objektů: <xref:System.Collections.Generic.IEnumerable%601> a <xref:System.IObservable%601>. Počínaje .NET Core 3,0 a C# 8,0 je k dispozici <xref:System.Collections.Generic.IAsyncEnumerable%601> rozhraní pro asynchronní zpracování datových proudů a syntaxi `await foreach` pro použití rozhraní. V této části najdete opakovaně použitelný kód pro použití těchto rozhraní pro gRPC streamy.
 
-S klientskými knihovnami .NET Core gRPC existuje metoda rozšíření `ReadAllAsync` pro `IAsyncStreamReader<T>`, která vytvoří `IAsyncEnumerable<T>`. Pro vývojáře, kteří používají reaktivní programování, může to vypadat stejně jako metoda rozšíření pro vytváření `IObservable<T>`.
+S klientskými knihovnami .NET Core gRPC existuje metoda rozšíření `ReadAllAsync` pro `IAsyncStreamReader<T>`, která vytvoří rozhraní `IAsyncEnumerable<T>`. Pro vývojáře, kteří používají reaktivní programování, může ekvivalentní metoda rozšíření vytvořit `IObservable<T>` rozhraní vypadat jako v příkladu v následující části.
 
 ### <a name="iobservable"></a>IObservable
 
-Rozhraní `IObservable<T>` je "reaktivní" inverzní `IEnumerable<T>`. Místo přijímání položek z datového proudu umožňuje reaktivní přístup streamování nabízených položek odběrateli. To je velmi podobné datovým proudům gRPC a je snadné zabalit `IObservable<T>` kolem `IAsyncStreamReader<T>`.
+Rozhraní `IObservable<T>` je "reaktivní" inverzní `IEnumerable<T>`. Místo přijímání položek z datového proudu umožňuje reaktivní přístup streamování nabízených položek odběrateli. To je velmi podobné datovým proudům gRPC a je snadné zabalit `IObservable<T>` rozhraní kolem `IAsyncStreamReader<T>`ho rozhraní.
 
-Tento kód je delší než `IAsyncEnumerable<T>` kód, protože C# nemá integrovanou podporu pro práci s observables, takže třídu implementace je třeba vytvořit ručně. Je to ale obecná třída, takže jediná implementace bude fungovat napříč všemi typy.
+Tento kód je delší než `IAsyncEnumerable<T>` kód, protože C# nemá integrovanou podporu pro práci s observables. Je nutné vytvořit třídu implementace ručně. Je to ale obecná třída, takže jediná implementace funguje napříč všemi typy.
 
 ```csharp
 using System;
@@ -63,9 +63,9 @@ namespace Grpc.Core
 ```
 
 > [!IMPORTANT]
-> Tato možná implementace umožňuje pouze volání metody `Subscribe` pouze jednou, protože více předplatitelů, kteří se pokoušejí o čtení z datového proudu, by způsobilo chaos. Existují operátory, jako je například `Replay` v [System. Reactive. Linq](https://www.nuget.org/packages/System.Reactive.Linq) , které umožňují ukládání do vyrovnávací paměti a opakované sdílení observables, které lze použít s touto implementací.
+> Tato možná implementace umožňuje, aby byla metoda `Subscribe` volána pouze jednou, protože více odběratelů, kteří se pokoušejí o čtení z datového proudu, by způsobilo chaos. Existují operátory, například `Replay` v [System. Reactive. Linq](https://www.nuget.org/packages/System.Reactive.Linq), které umožňují ukládání do vyrovnávací paměti a opakované sdílení observables, které lze použít s touto implementací.
 
-Třída `GrpcStreamSubscription` zpracovává výčet `IAsyncStreamReader`.
+Třída `GrpcStreamSubscription` zpracovává výčet `IAsyncStreamReader`:
 
 ```csharp
 public class GrpcStreamSubscription : IDisposable
@@ -145,9 +145,9 @@ namespace Grpc.Core
 }
 ```
 
-## <a name="summary"></a>Souhrn
+## <a name="summary"></a>Přehled
 
-Modely `IAsyncEnumerable` a `IObservable` jsou dobře podporované a dobře dokumentované způsoby práce s asynchronními datovými proudy dat v rozhraní .NET. gRPC datové proudy jsou dobře namapované na obě paradigma, nabízí těsnou integraci s moderními rozhraními .NET Core a reaktivními nebo asynchronními programovacími styly.
+Modely `IAsyncEnumerable` a `IObservable` jsou dobře podporované a dobře dokumentované způsoby práce s asynchronními datovými proudy dat v rozhraní .NET. gRPC datové proudy se dobře mapují na oba paradigma, nabízí těsnou integraci s .NET Core a reaktivním a asynchronním programováním stylů.
 
 >[!div class="step-by-step"]
 >[Předchozí](streaming-versus-repeated.md)

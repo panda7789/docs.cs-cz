@@ -2,12 +2,12 @@
 title: Sítě – gRPC pro vývojáře WCF
 description: Použití sítě k směrování a vyrovnání požadavků na služby gRPC Services v clusteru Kubernetes.
 ms.date: 09/02/2019
-ms.openlocfilehash: d20275082973f30bddbb342da90454401d4f019b
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: cc4855b1ed27e29076e4f13f5c5d3dffa63a6554
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73966971"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74711279"
 ---
 # <a name="service-meshes"></a>Sítě – sítě
 
@@ -17,11 +17,11 @@ Síť je součást infrastruktury, která přebírá řízení žádostí o slu�
 - Vyrovnávání zatížení
 - Odolnost proti chybám
 - Šifrování
-- Monitorování
+- Sledování
 
 Sítě Kubernetes fungují přidáním dalšího kontejneru, který se označuje jako *proxy vozíku*, do každého pod tím, co je zahrnuto do sítě. Proxy přebírá všechny příchozí a odchozí síťové požadavky, což umožňuje, aby konfigurace a Správa síťových aspektů byly oddělené od kontejnerů aplikací a v mnoha případech bez nutnosti provádět změny kódu aplikace.
 
-Proveďte [příklad předchozí kapitoly](kubernetes.md#testing-the-application), ve kterém byly všechny požadavky gRPC z webové aplikace směrovány do jediné instance služby gRPC. Důvodem je, že název hostitele služby se přeloží na IP adresu a tato IP adresa se uloží do mezipaměti po dobu života instance `HttpClientHandler`. Můžete to vyřešit tak, že ručně vyřešíte vyhledávání DNS nebo vytváříte více klientů, ale tím se kód aplikace významně nemění bez nutnosti přidat jakoukoli firmu nebo hodnotu zákazníka.
+Proveďte [příklad předchozí kapitoly](kubernetes.md#test-the-application), ve kterém byly všechny požadavky gRPC z webové aplikace směrovány do jediné instance služby gRPC. Důvodem je, že název hostitele služby se přeloží na IP adresu a tato IP adresa se uloží do mezipaměti po dobu života instance `HttpClientHandler`. Můžete to vyřešit tak, že ručně vyřešíte vyhledávání DNS nebo vytváříte více klientů, ale tím se kód aplikace významně nemění bez nutnosti přidat jakoukoli firmu nebo hodnotu zákazníka.
 
 Pomocí sítě služby se požadavky z kontejneru aplikace odesílají na proxy vozík, který je může rozmístit inteligentně napříč všemi instancemi jiné služby. Síť může také:
 

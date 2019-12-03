@@ -2,30 +2,30 @@
 title: Přihlašovací údaje kanálu – gRPC pro vývojáře WCF
 description: Postup implementace a použití přihlašovacích údajů gRPC kanálu v ASP.NET Core 3,0.
 ms.date: 09/02/2019
-ms.openlocfilehash: b424db49337a2dc6e3d0245d36349e3f408cdf6c
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 133de2c732e72844f249f11bfe22b5980b828b89
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73967951"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74711495"
 ---
 # <a name="channel-credentials"></a>Přihlašovací údaje kanálu
 
-Jak název naznačuje, jsou přihlašovací údaje kanálu připojené k základnímu gRPC kanálu. Standardní forma přihlašovacích údajů kanálu používá ověřování klientským certifikátem, kde klient poskytuje certifikát TLS při navazování připojení, které se ověří serverem před tím, než povolí provedení jakýchkoli volání.
+Jak název naznačuje, jsou přihlašovací údaje kanálu připojené k základnímu gRPC kanálu. Standardní forma přihlašovacích údajů kanálu používá ověřování klientským certifikátem. V tomto procesu klient poskytuje certifikát TLS při navazování připojení a potom tento server ověří před tím, než povolí provedení jakýchkoli volání.
 
-Přihlašovací údaje kanálu můžou být kombinovány s přihlašovacími údaji volání, aby poskytovaly komplexní zabezpečení pro službu gRPC. Pověření kanálu prokáže, že klientská aplikace má povolen přístup ke službě a přihlašovací údaje volání poskytují informace o osobě pomocí klientské aplikace.
+K zajištění komplexního zabezpečení služby gRPC můžete kombinovat přihlašovací údaje kanálu s přihlašovacími údaji volání. Pověření kanálu prokáže, že klientská aplikace má povolen přístup ke službě a přihlašovací údaje volání poskytují informace o osobě, která používá klientskou aplikaci.
 
-Ověřování klientským certifikátem funguje pro gRPC stejným způsobem jako při práci s ASP.NET Core. Proces konfigurace se tady shrnuje, ale další informace najdete v článku [Konfigurace ověřování certifikátů v ASP.NET Core](https://docs.microsoft.com/aspnet/core/security/authentication/certauth?view=aspnetcore-3.0) .
+Ověřování klientským certifikátem funguje pro gRPC stejným způsobem jako při práci s ASP.NET Core. Další informace najdete v tématu [Konfigurace ověřování certifikátů v ASP.NET Core](/aspnet/core/security/authentication/certauth).
 
 Pro účely vývoje můžete použít certifikát podepsaný svým držitelem, ale v produkčním prostředí byste měli použít správný certifikát HTTPS podepsaný důvěryhodnou autoritou.
 
-## <a name="adding-certificate-authentication-to-the-server"></a>Přidání ověřování certifikátu na server
+## <a name="add-certificate-authentication-to-the-server"></a>Přidat ověřování certifikátu na server
 
-Ověřování certifikátu je třeba nakonfigurovat na úrovni hostitele, například na serveru Kestrel, a v kanálu ASP.NET Core.
+Nakonfigurujte ověřování certifikátů na úrovni hostitele (například na serveru Kestrel) a v kanálu ASP.NET Core.
 
-### <a name="configuring-certificate-validation-on-kestrel"></a>Konfigurace ověřování certifikátů v Kestrel
+### <a name="configure-certificate-validation-on-kestrel"></a>Konfigurace ověření certifikátu v Kestrel
 
-Kestrel ASP.NET Core (Server HTTP Server) můžete nakonfigurovat tak, aby vyžadovala klientský certifikát, a případně provést nějaké ověření poskytnutého certifikátu před přijetím příchozích připojení. Tato konfigurace se provádí v metodě `CreateWebHostBuilder` `Program` třídy, nikoli v `Startup`.
+Kestrel ASP.NET Core (Server HTTP Server) můžete nakonfigurovat tak, aby vyžadovala klientský certifikát, a případně provést nějaké ověření poskytnutého certifikátu před přijetím příchozích připojení. To provedete v metodě `CreateWebHostBuilder` `Program` třídy, nikoli v `Startup`.
 
 ```csharp
 public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -48,11 +48,11 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
 
 ```
 
-Nastavení `ClientCertificateMode.RequireCertificate` způsobí, že Kestrel okamžitě odmítne všechny žádosti o připojení, které neposkytují klientský certifikát, ale certifikát neověří. Přidání zpětného volání `ClientCertificateValidation` umožňuje Kestrel ověřit certifikát klienta (v tomto případě zajistěte, aby byl vydán stejnou *certifikační autoritou* jako certifikát serveru) v okamžiku, kdy se připojení provedlo, před zapojením kanálu ASP.NET Core.
+Nastavení `ClientCertificateMode.RequireCertificate` způsobí, že Kestrel okamžitě odmítne všechny žádosti o připojení, které neposkytují klientský certifikát, ale toto nastavení sám o sobě neověří certifikát, který je k dispozici. Přidejte `ClientCertificateValidation` zpětné volání, aby bylo možné povolit Kestrel ověřování klientského certifikátu v okamžiku, kdy se připojení provedlo, než se zapojí kanál ASP.NET Core. (V tomto případě zpětné volání zajistí, že byla vydána stejnou *certifikační autoritou* jako certifikát serveru.) 
 
-### <a name="adding-aspnet-core-certificate-authentication"></a>Přidání ověřování certifikátů ASP.NET Core
+### <a name="add-aspnet-core-certificate-authentication"></a>Přidat ověřování certifikátů ASP.NET Core
 
-Ověřování certifikátu zajišťuje balíček NuGet [Microsoft. AspNetCore. Authentication. Certificate](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Certificate) .
+Balíček NuGet [Microsoft. AspNetCore. Authentication. Certificate](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Certificate) zajišťuje ověřování certifikátů.
 
 Přidejte službu ověřování certifikátů v metodě `ConfigureServices` a do kanálu ASP.NET Core v metodě `Configure` přidejte ověřování a autorizaci.
 
@@ -93,9 +93,9 @@ public class Startup
 }
 ```
 
-## <a name="providing-channel-credentials-in-the-client-application"></a>Poskytování přihlašovacích údajů kanálu v klientské aplikaci
+## <a name="provide-channel-credentials-in-the-client-application"></a>Zadání přihlašovacích údajů kanálu v klientské aplikaci
 
-Při použití balíčku `Grpc.Net.Client` se certifikáty konfigurují na instanci služby <xref:System.Net.Http.HttpClient>, která je k dispozici pro `GrpcChannel` používané pro připojení.
+Pomocí balíčku `Grpc.Net.Client` nakonfigurujete certifikáty pro <xref:System.Net.Http.HttpClient> instanci, která je k dispozici pro `GrpcChannel` používané pro připojení.
 
 ```csharp
 class Program
@@ -122,11 +122,11 @@ class Program
 }
 ```
 
-## <a name="combining-channelcredentials-and-callcredentials"></a>Kombinování ChannelCredentials a CallCredentials
+## <a name="combine-channelcredentials-and-callcredentials"></a>Kombinování ChannelCredentials a CallCredentials
 
-Server můžete nakonfigurovat tak, aby používal ověřování pomocí certifikátu i tokenu, a to tak, že použije změny certifikátu na server Kestrel a použije middleware nosiče JWT v ASP.NET Core.
+Server můžete nakonfigurovat tak, aby používal ověřování pomocí certifikátu i tokenu. Provedete to tak, že použijete změny certifikátu na server Kestrel a pomocí middlewaru JWT nosiče v ASP.NET Core.
 
-K poskytnutí ChannelCredentials i CallCredentials na straně klienta použijte metodu `ChannelCredentials.Create` pro použití přihlašovacích údajů volání. Ověřování certifikátů je stále nutné použít pomocí <xref:System.Net.Http.HttpClient> instance: Pokud předáte argumenty konstruktoru `SslCredentials`, interní kód klienta vyvolá výjimku. Parametr `SslCredentials` je zahrnutý jenom v metodě `Create` `Grpc.Net.Client` balíčku, aby se zachovala kompatibilita s `Grpc.Core` balíčkem.
+Chcete-li v klientovi poskytnout `ChannelCredentials` i `CallCredentials`, použijte k použití přihlašovacích údajů volání metodu `ChannelCredentials.Create`. I nadále je nutné použít ověřování certifikátů pomocí <xref:System.Net.Http.HttpClient> instance. Pokud předáte argumenty `SslCredentials` konstruktoru, interní kód klienta vyvolá výjimku. Parametr `SslCredentials` je zahrnutý jenom v metodě `Create` `Grpc.Net.Client` balíčku, aby se zachovala kompatibilita s `Grpc.Core` balíčkem.
 
 ```csharp
 var handler = new HttpClientHandler();
@@ -151,7 +151,7 @@ var grpc = new Portfolios.PortfoliosClient(channel);
 ```
 
 > [!TIP]
-> Metodu `ChannelCredentials.Create` pro klienta bez ověřování certifikátů můžete použít jako užitečný způsob, jak předat přihlašovací údaje tokenu při každém volání na kanálu.
+> Metodu `ChannelCredentials.Create` můžete použít pro klienta bez ověření certifikátu. Toto je užitečný způsob, jak předat přihlašovací údaje tokenu při každém volání na kanálu.
 
 Verze [ukázkové FullStockTicker aplikace gRPC s přidaným certifikátovým ověřováním](https://github.com/dotnet-architecture/grpc-for-wcf-developers/tree/master/FullStockTickerSample/grpc/FullStockTickerAuth/FullStockTicker) je na GitHubu.
 

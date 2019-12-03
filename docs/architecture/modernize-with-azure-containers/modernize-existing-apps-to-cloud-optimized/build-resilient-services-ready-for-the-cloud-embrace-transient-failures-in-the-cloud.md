@@ -2,12 +2,12 @@
 title: Vytvářejte odolné služby připravené pro Cloud. Zpracování přechodných selhání v cloudu
 description: Modernizovat stávající aplikace .NET pomocí cloudu Azure a kontejnerů Windows | Vytvářejte odolné služby připravené pro Cloud. Zpracování přechodných selhání v cloudu
 ms.date: 04/30/2018
-ms.openlocfilehash: e6fae8140b55cb0308dca9f4b77e961501b41f8f
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: e516dc675ceb8def25c6d676bced0ea7f253b2d5
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73739392"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74711252"
 ---
 # <a name="build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud"></a>Vytváření odolných služeb připravených pro Cloud: zapojení přechodných selhání do cloudu
 
@@ -27,7 +27,7 @@ Podobný scénář může nastat v aplikaci, která používá služby HTTP. Sí
 
 Odolná aplikace jako ta, která je znázorněna na obrázku 4-9, by měla implementovat techniky, jako je "opakování s exponenciálním omezení rychlosti", aby aplikace mohla mít možnost zpracovávat přechodné chyby v prostředcích. V aplikacích byste také měli použít "okruhy okruhů". Přepínací modul okruhů zastaví aplikaci, aby se pokusil o přístup k prostředku, když je skutečně dlouhodobá chyba. Když použijete přerušení obvodu, aplikace zabrání tomu, aby provoking odepření služby.
 
-![Diagram částečných selhání zpracovávaných opakovanými pokusy pomocí exponenciálního omezení rychlostiu.](./media/build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud/retry-partial-failures.png)
+![Diagram částečných selhání zpracovávaných opakovanými pokusy pomocí exponenciálního omezení rychlostiu.](./media/retry-partial-failures.png)
 
 **Obrázek 4-9.** Částečné chyby zpracovávané opakováním exponenciálního omezení rychlostiu
 

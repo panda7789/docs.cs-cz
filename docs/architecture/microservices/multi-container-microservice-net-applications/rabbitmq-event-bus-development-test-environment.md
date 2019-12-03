@@ -2,12 +2,12 @@
 title: Implementace sběrnice událostí pomocí RabbitMQ pro vývojové nebo testovací prostředí
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Použijte RabbitMQ k implementaci zasílání zpráv služby Event Bus pro integrační události pro vývojová nebo testovací prostředí.
 ms.date: 10/02/2018
-ms.openlocfilehash: 211348caec3c101435fcdd99bd96fd8e17a6456b
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: ba1cea9384893955ae0743ac8d6a34c350224cd5
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739506"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74711202"
 ---
 # <a name="implementing-an-event-bus-with-rabbitmq-for-the-development-or-test-environment"></a>Implementace sběrnice událostí pomocí RabbitMQ pro vývojové nebo testovací prostředí
 
@@ -108,6 +108,20 @@ Každý typ události má související kanál pro získání událostí z Rabbi
 
 Metoda přihlášení k odběru akceptuje objekt IIntegrationEventHandler, který je jako metoda zpětného volání v aktuální mikroslužbě, a příslušný objekt IntegrationEvent. Kód pak přidá tuto obslužnou rutinu události do seznamu obslužných rutin událostí, které mohou mít každý typ události Integration pro každou klientskou mikroslužbu. Pokud kód klienta ještě není přihlášený k odběru události, kód vytvoří kanál pro typ události, aby mohl přijímat události ve stylu nabízených oznámení z RabbitMQ, pokud je tato událost publikována z jakékoli jiné služby.
 
+Jak je uvedeno výše, sběrnice událostí implementovaná v eShopOnContainers má jenom a vzdělávací účely, protože zpracovává jenom hlavní scénáře, takže není připravené na produkci.
+
+V produkčních scénářích se podívejte na další níže uvedené prostředky, specifické pro RabbitMQ a [implementaci komunikace založené na událostech mezi mikroslužbami](./integration-event-based-microservice-communications.md#additional-resources) .
+
+## <a name="additional-resources"></a>Další materiály a zdroje informací
+
+Řešení připravená pro produkční prostředí s podporou pro RabbitMQ.
+
+- **EasyNetQ** – Open Source klient .NET API pro RabbitMQ \
+  <http://easynetq.com/>
+
+- **MassTransit** \
+  <https://masstransit-project.com/>
+  
 >[!div class="step-by-step"]
 >[Předchozí](integration-event-based-microservice-communications.md)
 >[Další](subscribe-events.md)
