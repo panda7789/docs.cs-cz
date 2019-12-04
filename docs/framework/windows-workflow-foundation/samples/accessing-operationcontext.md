@@ -2,21 +2,21 @@
 title: Přístup k OperationContext
 ms.date: 03/30/2017
 ms.assetid: 4e92efe8-7e79-41f3-b50e-bdc38b9f41f8
-ms.openlocfilehash: dea990e275125dc1cd2255b88e506d363c3ac78e
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: b8a09aff7b5a30b5267fbdbd7bd6391996f359c7
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989380"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715092"
 ---
 # <a name="accessing-operationcontext"></a>Přístup k OperationContext
-Tato ukázka předvádí, jak se aktivity<xref:System.ServiceModel.Activities.Receive> zasílání zpráv (a <xref:System.ServiceModel.Activities.Send>) dají použít s aktivitou vlastního <xref:System.ServiceModel.OperationContext.Current%2A> oboru pro přístup a připojení nebo načtení vlastní hlavičky zprávy v odchozí nebo příchozí zprávě.  
+Tato ukázka předvádí, jak se dají aktivity zasílání zpráv (<xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.Send>) použít s aktivitou vlastního oboru pro přístup k <xref:System.ServiceModel.OperationContext.Current%2A> a připojení nebo načtení vlastní hlavičky zprávy v odchozí nebo příchozí zprávě.  
   
 ## <a name="demonstrates"></a>Demonstruje  
- Aktivity zasílání <xref:System.ServiceModel.Activities.ISendMessageCallback>zpráv <xref:System.ServiceModel.Activities.IReceiveMessageCallback>,,.  
+ Aktivity zasílání zpráv, <xref:System.ServiceModel.Activities.ISendMessageCallback><xref:System.ServiceModel.Activities.IReceiveMessageCallback>.  
   
 ## <a name="discussion"></a>Účely  
- V této ukázce se dozvíte, jak používat<xref:System.ServiceModel.Activities.ISendMessageCallback>body <xref:System.ServiceModel.Activities.IReceiveMessageCallback>rozšiřitelnosti ()) v aktivitách zasílání zpráv pro přístup <xref:System.ServiceModel.OperationContext.Current%2A>. Zpětná volání jsou registrována v rámci modulu runtime pracovního postupu jako <xref:System.Activities.IExecutionProperty> implementace, kterou po spuštění vybraly aktivity zasílání zpráv. Ovlivněny budou všechny aktivity zasílání zpráv ve <xref:System.Activities.IExecutionProperty> stejném oboru jako tato implementace. Konkrétně tato ukázka používá vlastní aktivitu oboru k vykonání chování zpětného volání. Používá se v pracovním postupu klienta k zahrnutí <xref:System.Activities.WorkflowApplication.Id%2A> pracovního postupu jako odchozího <xref:System.ServiceModel.Channels.MessageHeader>. <xref:System.ServiceModel.Activities.ISendMessageCallback> Tato hlavička se pak ve službě vybrala pomocí <xref:System.ServiceModel.Activities.IReceiveMessageCallback> a hodnota hlavičky se vytiskne na konzolu.  
+ V této ukázce se dozvíte, jak používat body rozšiřitelnosti (<xref:System.ServiceModel.Activities.ISendMessageCallback>) <xref:System.ServiceModel.Activities.IReceiveMessageCallback>) v aktivitách zasílání zpráv pro přístup k <xref:System.ServiceModel.OperationContext.Current%2A>. Zpětná volání jsou registrována v rámci modulu runtime pracovního postupu jako implementace <xref:System.Activities.IExecutionProperty>, kterou po spuštění vybraly aktivity zasílání zpráv. Tím jsou ovlivněny všechny aktivity zasílání zpráv ve stejném oboru jako implementace <xref:System.Activities.IExecutionProperty>. Konkrétně tato ukázka používá vlastní aktivitu oboru k vykonání chování zpětného volání. <xref:System.ServiceModel.Activities.ISendMessageCallback> se v pracovním postupu klienta používá k zahrnutí <xref:System.Activities.WorkflowApplication.Id%2A> pracovního postupu jako odchozího <xref:System.ServiceModel.Channels.MessageHeader>. Tato hlavička se pak ve službě vybrala pomocí <xref:System.ServiceModel.Activities.IReceiveMessageCallback> a hodnota hlavičky se vytiskne na konzolu.  
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
@@ -41,6 +41,6 @@ Tato ukázka předvádí, jak se aktivity<xref:System.ServiceModel.Activities.Re
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Services\Accessing Operation Context`

@@ -2,12 +2,12 @@
 title: Stream
 ms.date: 03/30/2017
 ms.assetid: 58a3db81-20ab-4627-bf31-39d30b70b4fe
-ms.openlocfilehash: 3f52ba01dfd3290e4b0f728e5832a11f2f9c3eeb
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: d4166ac0258001b3e4eb0b8ece0f5163863359a4
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045471"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716662"
 ---
 # <a name="stream"></a>Stream
 Ukázka streamu demonstruje použití komunikace režimu přenosu datového proudu. Služba zveřejňuje několik operací, které odesílají a přijímají streamy. Tato ukázka je v místním prostředí hostovaná. Klient i služba jsou konzolové programy.  
@@ -36,14 +36,14 @@ public interface IStreamingSample
 }  
 ```  
   
- Operace přijme některá vstupní data jako řetězec, který je uložen do vyrovnávací paměti, a `Stream`vrátí, který je datovým proudem. `GetStream` Naopak `UploadStream` přebírá `Stream` v (streamované) a vrací `bool` (ve vyrovnávací paměti). `EchoStream`přijímá a vrací `Stream` a je příkladem operace, jejíž vstupní a výstupní zprávy jsou přenášeny datovým proudem. Nakonec neprovede žádné vstupy a `Stream` vrátí (streamované). `GetReversedStream`  
+ Operace `GetStream` přijímá některá vstupní data jako řetězec, který je uložen do vyrovnávací paměti a vrací `Stream`, která je vysílána do datového proudu. Naopak `UploadStream` přebírá v `Stream` (streamované) a vrací `bool` (ve vyrovnávací paměti). `EchoStream` přebírá a vrací `Stream` a je příkladem operace, jejíž vstupní a výstupní zprávy jsou přenášeny datovým proudem. Nakonec `GetReversedStream` nepřevádí žádné vstupy a vrátí `Stream` (streamované).  
   
 ## <a name="enabling-streamed-transfers"></a>Povolení přenosů odeslaných datovým proudem  
- Definování kontraktů operací, jak je popsáno výše, poskytuje streamování na úrovni programovacího modelu. Pokud tam zastavíte, přenos bude ukládat celý obsah zprávy do vyrovnávací paměti. Chcete-li povolit streamování přenosu, vyberte režim přenosu na elementu vazby přenosu. Element `TransferMode` Binding má vlastnost, která může být nastavena na `Streamed` `Buffered`,, `StreamedRequest`nebo `StreamedResponse`. Nastavení režimu přenosu pro `Streamed` povolení komunikace streamování v obou směrech. Nastavení režimu `StreamedRequest` přenosu nebo `StreamedResponse` povolení komunikace streamování pouze v žádosti nebo odpovědi v uvedeném pořadí.  
+ Definování kontraktů operací, jak je popsáno výše, poskytuje streamování na úrovni programovacího modelu. Pokud tam zastavíte, přenos bude ukládat celý obsah zprávy do vyrovnávací paměti. Chcete-li povolit streamování přenosu, vyberte režim přenosu na elementu vazby přenosu. Element Binding má vlastnost `TransferMode`, kterou lze nastavit na `Buffered`, `Streamed`, `StreamedRequest`nebo `StreamedResponse`. Nastavení režimu přenosu na `Streamed` povolí komunikaci streamování v obou směrech. Nastavení režimu přenosu na `StreamedRequest` nebo `StreamedResponse` povolí komunikaci streamování pouze v žádosti nebo odpovědi.  
   
- Vlastnost zpřístupňuje vlastnost vazby jako `NetTcpBinding` a `NetNamedPipeBinding`. `basicHttpBinding` `TransferMode` Pro jiné přenosy je nutné vytvořit vlastní vazbu pro nastavení režimu přenosu.  
+ `basicHttpBinding` zpřístupňuje vlastnost `TransferMode` ve vazbě jako `NetTcpBinding` a `NetNamedPipeBinding`. Pro jiné přenosy je nutné vytvořit vlastní vazbu pro nastavení režimu přenosu.  
   
- Následující konfigurační kód z ukázky ukazuje nastavení `TransferMode` vlastnosti pro streamování `basicHttpBinding` na a vlastní vazby http:  
+ Následující konfigurační kód z ukázky ukazuje nastavení vlastnosti `TransferMode` na streamování v `basicHttpBinding` a vlastní vazby HTTP:  
   
 ```xml  
 <!-- An example basicHttpBinding using streaming. -->  
@@ -61,12 +61,12 @@ public interface IStreamingSample
 </customBinding>  
 ```  
   
- Kromě nastavení `transferMode` na `Streamed`, `maxReceivedMessageSize` předchozí konfigurační kód nastaví na 64 MB. V rámci mechanismu ochrany je `maxReceivedMessageSize` limit maximální povolené velikosti zpráv na příjmu. Výchozí hodnota `maxReceivedMessageSize` je 64 KB, což je obvykle příliš nízké pro scénáře streamování.  
+ Kromě nastavení `transferMode` `Streamed`, předchozí konfigurační kód nastaví `maxReceivedMessageSize` na 64 MB. Jako mechanismus ochrany `maxReceivedMessageSize` umístí limit maximální povolené velikosti zpráv při příjmu. Výchozí `maxReceivedMessageSize` je 64 KB, což je obvykle příliš nízké pro scénáře streamování.  
   
 ## <a name="processing-data-as-it-is-streamed"></a>Zpracování dat při streamování  
- Operace `GetStream` `UploadStream` a všechnysetýkajíposílánídatpřímozesouboruneboukládánípřijatýchdatpřímodosouboru.`EchoStream` V některých případech však existuje požadavek na odeslání nebo přijetí velkých objemů dat a provádění určitého zpracování datových bloků dat při jejich posílání nebo přijímání. Jedním ze způsobů, jak tyto scénáře vyřešit, je napsat vlastní datový proud (třídu, která je <xref:System.IO.Stream>odvozena z), která zpracovává data při čtení nebo zápisu. Tato operace je `ReverseStream` příkladem této operace a třídy. `GetReversedStream`  
+ Provozní `GetStream`, `UploadStream` a `EchoStream` se zabývat odesláním dat přímo ze souboru nebo uložení přijatých dat přímo do souboru. V některých případech však existuje požadavek na odeslání nebo přijetí velkých objemů dat a provádění určitého zpracování datových bloků dat při jejich posílání nebo přijímání. Jedním ze způsobů, jak tyto scénáře vyřešit, je napsat vlastní datový proud (třída odvozená z <xref:System.IO.Stream>), která zpracovává data při čtení nebo zápisu. Příkladem je `GetReversedStream` operace a `ReverseStream` třídy.  
   
- `GetReversedStream`Vytvoří a vrátí novou instanci `ReverseStream`. Ke skutečnému zpracování dochází jako systém čte z tohoto `ReverseStream` objektu. `ReverseStream.Read` Implementace načte blok bajtů z podkladového souboru, obrátí je a potom vrátí obrácené bajty. Tím se nevrátí celý obsah souboru. v jednom okamžiku vrátí jeden blok bajtů. Toto je příklad, který ukazuje, jak lze provádět zpracování datového proudu při čtení nebo zápisu obsahu z a do datového proudu.  
+ `GetReversedStream` vytvoří a vrátí novou instanci `ReverseStream`. Ke skutečnému zpracování dojde, když systém čte z tohoto objektu `ReverseStream`. Implementace `ReverseStream.Read` čte blok bajtů z podkladového souboru, obrátí je a potom vrátí obrácené bajty. Tím se nevrátí celý obsah souboru. v jednom okamžiku vrátí jeden blok bajtů. Toto je příklad, který ukazuje, jak lze provádět zpracování datového proudu při čtení nebo zápisu obsahu z a do datového proudu.  
   
 ```csharp
 class ReverseStream : Stream  
@@ -113,7 +113,7 @@ class ReverseStream : Stream
 ```  
   
 ## <a name="running-the-sample"></a>Spuštění ukázky  
- Chcete-li spustit ukázku, nejprve Sestavte službu i klienta podle pokynů na konci tohoto dokumentu. Pak spusťte službu a klienta ve dvou různých oknech konzoly. Po spuštění klienta počká, až bude služba připravena, po stisknutí klávesy ENTER. Klient pak zavolá metody `GetStream()` `UploadStream()` a `GetReversedStream()` nejprve zavolá protokol HTTP a potom přes protokol TCP. Tady je příklad výstupu služby následovaný ukázkovým výstupem z klienta:  
+ Chcete-li spustit ukázku, nejprve Sestavte službu i klienta podle pokynů na konci tohoto dokumentu. Pak spusťte službu a klienta ve dvou různých oknech konzoly. Po spuštění klienta počká, až bude služba připravena, po stisknutí klávesy ENTER. Klient pak zavolá metody `GetStream()`, `UploadStream()` a `GetReversedStream()` nejdříve přes protokol HTTP a potom přes protokol TCP. Tady je příklad výstupu služby následovaný ukázkovým výstupem z klienta:  
   
  Výstup služby:  
   
@@ -169,7 +169,7 @@ Press <ENTER> to terminate client.
   
 1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
 3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
@@ -181,6 +181,6 @@ Press <ENTER> to terminate client.
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Service\Stream`  

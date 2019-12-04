@@ -5,15 +5,15 @@ helpviewer_keywords:
 - service behaviors, instancing sample
 - Instancing Sample [Windows Communication Foundation]
 ms.assetid: c290fa54-f6ae-45a1-9186-d9504ebc6ee6
-ms.openlocfilehash: 1e755a28ff4ce6450db4189783fa688002ebe8eb
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 868d88cff1c398009f136fe50f6cc3fe8c62d8e1
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045560"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715760"
 ---
 # <a name="instancing"></a>Vytváření instancí
-Ukázka vytváření instancí předvádí nastavení chování vytváření instancí, které určuje, jak se vytvářejí instance třídy služby v reakci na požadavky klientů. Ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), která implementuje `ICalculator` kontrakt služby. Tato ukázka definuje nový kontrakt, `ICalculatorInstance`který dědí z. `ICalculator` Kontrakt určený v `ICalculatorInstance` rámci poskytuje tři další operace pro kontrolu stavu instance služby. Změnou nastavení vytváření instancí můžete sledovat změnu v chování spuštěním klienta.  
+Ukázka vytváření instancí předvádí nastavení chování vytváření instancí, které určuje, jak se vytvářejí instance třídy služby v reakci na požadavky klientů. Ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), která implementuje kontrakt služby `ICalculator`. Tato ukázka definuje nový kontrakt `ICalculatorInstance`, který dědí z `ICalculator`. Kontrakt určený `ICalculatorInstance` poskytuje tři další operace pro kontrolu stavu instance služby. Změnou nastavení vytváření instancí můžete sledovat změnu v chování spuštěním klienta.  
   
  V této ukázce je klient Konzolová aplikace (. exe) a služba je hostována službou Internetová informační služba (IIS).  
   
@@ -22,13 +22,13 @@ Ukázka vytváření instancí předvádí nastavení chování vytváření ins
   
  K dispozici jsou následující režimy vytváření instancí:  
   
-- <xref:System.ServiceModel.InstanceContextMode.PerCall>: Pro každou žádost klienta se vytvoří nová instance služby.  
+- <xref:System.ServiceModel.InstanceContextMode.PerCall>: pro každou žádost klienta se vytvoří nová instance služby.  
   
-- <xref:System.ServiceModel.InstanceContextMode.PerSession>: Pro každou novou relaci klienta se vytvoří nová instance, která se udržuje po dobu života této relace (vyžaduje vazbu, která podporuje relaci).  
+- <xref:System.ServiceModel.InstanceContextMode.PerSession>: pro každou novou relaci klienta se vytvoří nová instance, která se udržuje po dobu života této relace (vyžaduje vazbu, která podporuje relaci).  
   
-- <xref:System.ServiceModel.InstanceContextMode.Single>: Jediná instance třídy Service zpracovává všechny žádosti klientů po dobu života aplikace.  
+- <xref:System.ServiceModel.InstanceContextMode.Single>: jediná instance třídy Service zpracovává všechny žádosti klientů po dobu života aplikace.  
   
- Třída služby určuje chování vytváření instancí s `[ServiceBehavior(InstanceContextMode=<setting>)]` atributem, jak je znázorněno v následujícím příkladu kódu. Změnou řádků, které jsou zakomentovány, můžete sledovat chování každého režimu instance. Po změně režimu vytváření instancí nezapomeňte znovu sestavit službu. Neexistují žádná nastavení týkající se vytváření instancí, která by bylo možné v klientovi zadat.  
+ Třída služby určuje chování vytváření instancí s atributem `[ServiceBehavior(InstanceContextMode=<setting>)]`, jak je znázorněno v následujícím příkladu kódu. Změnou řádků, které jsou zakomentovány, můžete sledovat chování každého režimu instance. Po změně režimu vytváření instancí nezapomeňte znovu sestavit službu. Neexistují žádná nastavení týkající se vytváření instancí, která by bylo možné v klientovi zadat.  
   
 ```csharp
 // Enable one of the following instance modes to compare instancing behaviors.  
@@ -126,7 +126,7 @@ static void Main()
   
 1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
 3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
@@ -135,6 +135,6 @@ static void Main()
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Behaviors\Instancing`  

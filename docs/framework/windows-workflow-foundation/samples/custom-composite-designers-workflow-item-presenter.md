@@ -2,15 +2,15 @@
 title: Návrháři vlastního skládání – místo pro položku pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: f85224cf-9e30-44a5-9a81-3bc438a34364
-ms.openlocfilehash: 239f7ccd81d5bb60eed32298220df215b09e3e47
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 31dfae70a8b95bdfd457efe7a20ce44c2ba9c61f
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70038375"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715188"
 ---
 # <a name="custom-composite-designers---workflow-item-presenter"></a>Návrháři vlastního skládání – místo pro položku pracovního postupu
-<xref:System.Activities.Presentation.WorkflowItemPresenter> Je typ klíče v programovacím modelu Návrháře WF, který umožňuje vytvoření "ukládací zóny", kde lze umístit libovolnou aktivitu. V této ukázce se dozvíte, jak vytvořit Návrhář aktivity, který je povrchem "ukládací zóny".
+<xref:System.Activities.Presentation.WorkflowItemPresenter> je typ klíče v programovacím modelu Návrháře WF, který umožňuje vytvoření "ukládací zóny", kde lze umístit libovolnou aktivitu. V této ukázce se dozvíte, jak vytvořit Návrhář aktivity, který je povrchem "ukládací zóny".
 
  Tato ukázka demonstruje:
 
@@ -25,7 +25,7 @@ ms.locfileid: "70038375"
 ## <a name="sample-details"></a>Podrobnosti ukázky
  Kód pro tuto ukázku ukazuje:
 
-- Návrhář vlastní aktivity je sestaven pro `SimpleNativeActivity` třídu.
+- Návrhář vlastní aktivity je sestaven pro třídu `SimpleNativeActivity`.
 
 - Vytvoření vlastního návrháře aktivit pomocí <xref:System.Activities.Presentation.WorkflowItemPresenter>.
 
@@ -63,7 +63,7 @@ ms.locfileid: "70038375"
 </sap:ActivityDesigner>
 ```
 
- Všimněte si použití datové vazby WPF k vytvoření vazby na `ModelItem.Body`. `ModelItem`je vlastnost <xref:System.Activities.Presentation.ActivityDesigner> , která odkazuje na podkladový objekt, pro který je Návrhář používán, v tomto případě **SimpleNativeActivity**.
+ Všimněte si, že použití datové vazby WPF pro vazbu na `ModelItem.Body`. `ModelItem` je vlastnost na <xref:System.Activities.Presentation.ActivityDesigner>, která odkazuje na podkladový objekt, pro který je Návrhář používán, v tomto případě **SimpleNativeActivity**.
 
 #### <a name="to-setup-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky
 
@@ -76,7 +76,7 @@ ms.locfileid: "70038375"
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\CustomActivities\CustomActivityDesigners\WorkflowItemPresenter`  
   

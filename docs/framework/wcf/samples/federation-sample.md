@@ -2,18 +2,18 @@
 title: Ukázka federace
 ms.date: 03/30/2017
 ms.assetid: 7e9da0ca-e925-4644-aa96-8bfaf649d4bb
-ms.openlocfilehash: d3a326f08e78edb79908485361f161c1b6da6625
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 271790e08476533fc1d83e22c5a0daf2f1eaa42a
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044978"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716929"
 ---
 # <a name="federation-sample"></a>Ukázka federace
 Tato ukázka demonstruje federované zabezpečení.  
   
 ## <a name="sample-details"></a>Podrobnosti ukázky  
- Windows Communication Foundation (WCF) poskytuje podporu pro nasazení federovaných architektur zabezpečení prostřednictvím `wsFederationHttpBinding`. `wsFederationHttpBinding` Poskytuje zabezpečenou, spolehlivou a interoperabilní vazbu, která zahrnuje použití http jako základního přenosového mechanismu pro komunikaci typu požadavek/odpověď a text/XML jako formát přenosu pro kódování. Další informace o federaci v WCF najdete v článku [federace](../../../../docs/framework/wcf/feature-details/federation.md).  
+ Windows Communication Foundation (WCF) poskytuje podporu pro nasazení federovaných architektur zabezpečení prostřednictvím `wsFederationHttpBinding`. `wsFederationHttpBinding` poskytuje zabezpečenou, spolehlivou a interoperabilní vazbu, která zahrnuje použití HTTP jako základního přenosového mechanismu pro komunikaci typu požadavek/odpověď a text/XML jako formát přenosu pro kódování. Další informace o federaci v WCF najdete v článku [federace](../../../../docs/framework/wcf/feature-details/federation.md).  
   
  Scénář se skládá ze 4 kusů:  
   
@@ -25,7 +25,7 @@ Tato ukázka demonstruje federované zabezpečení.
   
 - Klient BookStore  
   
- Služba Bookstore podporuje dvě operace, `BrowseBooks` a. `BuyBook` Umožňuje anonymní přístup k `BrowseBooks` operaci, ale vyžaduje ověřený přístup pro přístup k této `BuyBooks` operaci. Ověřování má formu tokenu vydaného službou BookStore STS. Konfigurační soubor pro službu BookStore odkazuje na klienty služby BookStore STS pomocí `wsFederationHttpBinding`.  
+ Služba BookStore podporuje dvě operace `BrowseBooks` a `BuyBook`. Umožňuje anonymní přístup k operaci `BrowseBooks`, ale vyžaduje ověřený přístup pro přístup k operaci `BuyBooks`. Ověřování má formu tokenu vydaného službou BookStore STS. Konfigurační soubor pro službu BookStore směřuje klienty k knihkupectví STS pomocí `wsFederationHttpBinding`.  
   
 ```xml  
 <wsFederationHttpBinding>  
@@ -45,7 +45,7 @@ Tato ukázka demonstruje federované zabezpečení.
 </wsFederationHttpBinding>  
 ```  
   
- BookStore STS pak vyžaduje, aby se klienti ověřovali pomocí tokenu vydaného službou HomeRealm STS. Konfigurační soubor pro službu BookStore STS se znovu odkazuje na klienty služby HomeRealm STS pomocí `wsFederationHttpBinding`.  
+ BookStore STS pak vyžaduje, aby se klienti ověřovali pomocí tokenu vydaného službou HomeRealm STS. Konfigurační soubor pro službu BookStore STS se znovu odkazuje na HomeRealm STS pomocí `wsFederationHttpBinding`.  
   
 ```xml  
 <wsFederationHttpBinding>  
@@ -65,7 +65,7 @@ Tato ukázka demonstruje federované zabezpečení.
 </wsFederationHttpBinding>  
 ```  
   
- Sekvence událostí při přístupu k `BuyBook` operaci je následující:  
+ Sekvence událostí při přístupu k operaci `BuyBook` je následující:  
   
 1. Klient se ověřuje pomocí pověření služby HomeRealm STS prostřednictvím přihlašovacích údajů systému Windows.  
   
@@ -77,7 +77,7 @@ Tato ukázka demonstruje federované zabezpečení.
   
 5. Klient se ověřuje pro službu BookStore pomocí tokenu vydaného službou BookStore STS.  
   
-6. Klient přistupuje `BuyBook` k operaci.  
+6. Klient přistupuje k operaci `BuyBook`.  
   
  V následujících pokynech se dozvíte, jak nastavit a spustit tuto ukázku.  
   
@@ -89,7 +89,7 @@ Tato ukázka demonstruje federované zabezpečení.
 1. Otevřete okno příkazového řádku sady SDK. V ukázkové cestě spusťte Setup. bat. Tím se vytvoří virtuální adresáře vyžadované pro ukázku a nainstalují se požadované certifikáty s příslušnými oprávněními.  
   
     > [!NOTE]
-    > Dávkový soubor Setup. bat je navržený tak, aby se spouštěl z příkazového řádku Windows SDK. Vyžaduje, aby proměnná prostředí MSSDK odkazovala na adresář, ve kterém je sada SDK nainstalována. Tato proměnná prostředí se automaticky nastaví v rámci Windows SDK příkazového řádku. V [!INCLUDE[wv](../../../../includes/wv-md.md)]systému je potřeba zajistit, aby byla nainstalovaná Kompatibilita správy služby IIS 6,0, protože nastavení používá skripty Správce služby IIS. Spuštění skriptu pro nastavení v systému [!INCLUDE[wv](../../../../includes/wv-md.md)] vyžaduje oprávnění správce.  
+    > Dávkový soubor Setup. bat je navržený tak, aby se spouštěl z příkazového řádku Windows SDK. Vyžaduje, aby proměnná prostředí MSSDK odkazovala na adresář, ve kterém je sada SDK nainstalována. Tato proměnná prostředí se automaticky nastaví v rámci Windows SDK příkazového řádku. Na [!INCLUDE[wv](../../../../includes/wv-md.md)]je potřeba zajistit, aby byla nainstalovaná Kompatibilita správy služby IIS 6,0, protože nastavení používá skripty Správce služby IIS. Spuštění skriptu pro nastavení na [!INCLUDE[wv](../../../../includes/wv-md.md)] vyžaduje oprávnění správce.  
   
 2. Otevřete FederationSample. sln v aplikaci Visual Studio a v nabídce **sestavení** vyberte **Sestavit řešení** . Tím se vytvoří společné soubory projektu, služba Bookstore, Bookstore STS, HomeRealm STS a nasadí je ve službě IIS. Tím se také vytvoří klientská aplikace pro Bookstore a ve složce FederationSample\BookStoreClient\bin\Debug se umístí spustitelný soubor BookStoreClient. exe.  
   
@@ -113,6 +113,6 @@ Tato ukázka demonstruje federované zabezpečení.
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\Federation`  

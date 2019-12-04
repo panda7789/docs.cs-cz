@@ -2,32 +2,32 @@
 title: Aktivace protokolem TCP
 ms.date: 03/30/2017
 ms.assetid: bf8c215c-0228-4f4f-85c2-e33794ec09a7
-ms.openlocfilehash: e3bfbe9d7e7a6efafc8bf1e281e1f7a99c9c5fbe
-ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
+ms.openlocfilehash: c1a2c0de5fbb666ec3b68ec3da31cc27f8234cbd
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67487518"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716599"
 ---
 # <a name="tcp-activation"></a>Aktivace protokolem TCP
 
-Tato ukázka předvádí, který je hostitelem služby, které používá služby aktivační procesů Windows (WAS) k aktivaci služby, která komunikuje přes protokol net.tcp. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).
+Tato ukázka demonstruje hostování služby, která používá aktivační služby procesů systému Windows (WAS) k aktivaci služby, která komunikuje přes protokol net. TCP. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).
 
 > [!NOTE]
-> Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.
 
 > [!IMPORTANT]
-> Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).
+> Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Hosting\WASHost\TCPActivation`
 
-Ukázka se skládá z programu konzoly klienta (.exe) a služby knihovny (.dll) hostované v pracovním procesu aktivoval WAS. Činnost klienta je vidět v okně konzoly.
+Ukázka se skládá z programu klientské konzoly (. exe) a knihovny služeb (. dll) hostované v pracovním procesu aktivovaném nástrojem WAS. Aktivita klienta se zobrazí v okně konzoly.
 
-Služba implementuje kontrakt, který definuje vzor komunikace požadavek odpověď. Smlouva je definován `ICalculator` rozhraní, které zveřejňuje matematických operací (přidat, odečítání, násobení a rozdělit), jak je znázorněno v následujícím ukázkovém kódu:
+Služba implementuje kontrakt definující způsob komunikace požadavek-odpověď. Kontrakt je definován rozhraním `ICalculator`, které zpřístupňuje matematické operace (sčítání, odčítání, násobení a dělení), jak je znázorněno v následujícím ukázkovém kódu:
 
 ```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]
@@ -44,7 +44,7 @@ public interface ICalculator
 }
 ```
 
-Implementace služby vypočítá a vrátí odpovídající výsledek:
+Implementace služby vypočítá a vrátí příslušný výsledek:
 
 ```csharp
 // Service class that implements the service contract.
@@ -69,9 +69,9 @@ public class CalculatorService : ICalculator
 }
 ```
 
-Ukázka používá variantu net.tcp vazby s povoleno sdílení portu TCP a zabezpečení vypnuto. Pokud chcete použít zabezpečený TCP vazby, změňte režim zabezpečení serveru na požadované nastavení a znovu spusťte Svcutil.exe na straně klienta se vygenerovat soubor aktualizace klienta konfigurace.
+Ukázka používá variantu připojení NET. TCP se zapnutým sdílením portů TCP a vypnuté zabezpečení. Pokud chcete použít zabezpečenou vazbu TCP, změňte režim zabezpečení serveru na požadované nastavení a znovu spusťte Svcutil. exe na straně klienta, čímž vygenerujete konfigurační soubor klienta aktualizace.
 
-Následující příklad ukazuje konfiguraci pro službu:
+Následující příklad ukazuje konfiguraci služby:
 
 ```xml
 <system.serviceModel>
@@ -109,7 +109,7 @@ Následující příklad ukazuje konfiguraci pro službu:
   </system.serviceModel>
 ```
 
-Jak je znázorněno v následujícím ukázkovém kódu, je nakonfigurovaný koncový bod klienta:
+Koncový bod klienta je nakonfigurován tak, jak je znázorněno v následujícím ukázkovém kódu:
 
 ```xml
 <system.serviceModel>
@@ -128,7 +128,7 @@ Jak je znázorněno v následujícím ukázkovém kódu, je nakonfigurovaný kon
 </system.serviceModel>
 ```
 
-Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně Klient vypnutí klient.
+Při spuštění ukázky se v okně konzoly klienta zobrazí požadavky na operace a odpovědi. V okně klienta stiskněte klávesu ENTER pro vypnutí klienta.
 
 ```console
 Add(100,15.99) = 115.99
@@ -139,36 +139,36 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.
 ```
 
-### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku
+### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky
 
-1. Ujistěte se, že služba IIS 7.0 je nainstalována. Služba IIS 7.0 je vyžadováno pro aktivaci WAS.
+1. Ujistěte se, že je nainstalovaná služba IIS 7,0. Pro aktivaci byla požadována služba IIS 7,0.
 
-2. Ujistěte se, jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+2. Ujistěte se, že jste provedli [jednorázovou proceduru nastavení Windows Communication Foundation ukázek](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
 
-    Kromě toho je třeba nainstalovat jiným protokolem než HTTP aktivačních komponent WCF:
+    Kromě toho musíte nainstalovat komponenty WCF, které nejsou součástí aktivace přes protokol HTTP:
 
-    1. Z **Start** nabídce zvolte **ovládací panely**.
+    1. V nabídce **Start** klikněte na položku **Ovládací panely**.
 
     2. Vyberte **programy a funkce**.
 
-    3. Klikněte na tlačítko **součásti Windows zapnout nebo vypnout**.
+    3. Klikněte na **zapnout nebo vypnout součásti systému Windows**.
 
-    4. Rozbalte **rozhraní Microsoft .NET Framework 3.0** uzlu a kontrolu **Aktivace jiným protokolem než HTTP Windows Communication Foundation** funkce.
+    4. Rozbalte uzel **Microsoft .NET Framework 3,0** a podívejte se na funkci **Windows Communication Foundation aktivace jiným protokolem než http** .
 
-3. Konfigurace WAS pro podporu Aktivace protokolem TCP.
+3. Při konfiguraci byla podpora aktivace protokolem TCP podporována.
 
-    V zájmu usnadnění práce následující dva kroky jsou implementovány v dávkovém souboru volá AddNetTcpSiteBinding.cmd nachází v adresáři ukázkové.
+    Následující dva kroky jsou implementovány v dávkovém souboru s názvem AddNetTcpSiteBinding. cmd, který je umístěn v ukázkovém adresáři.
 
-    1. Kvůli podpoře aktivace net.tcp, musíte ji nejdřív svázat výchozí webový server k portu net.tcp. To lze provést pomocí Appcmd.exe, která se instaluje s sada nástrojů pro správu Internetové informační služby 7.0 (IIS). Z příkazového řádku na úrovni správce spusťte následující příkaz:
+    1. Aby bylo možné podporovat NET. TCP Activation, musí být výchozí webová stránka nejprve svázána s portem NET. TCP. To lze provést pomocí nástroje Appcmd. exe, který je nainstalován se sadou nástrojů pro správu Internetová informační služba 7,0 (IIS). Na příkazovém řádku na úrovni správce spusťte následující příkaz:
 
         ```console
         %windir%\system32\inetsrv\appcmd.exe set site "Default Web Site" -+bindings.[protocol='net.tcp',bindingInformation='808:*']
         ```
 
         > [!TIP]
-        > Tento příkaz je jeden řádek textu. Tento příkaz přidá vazbu webu net.tcp výchozí webový server naslouchá na portu TCP 808 s libovolný název hostitele.
+        > Tento příkaz je jedním řádkem textu. Tento příkaz přidá vazbu sítě NET. TCP na výchozí webovou stránku, která naslouchá na portu TCP 808 s libovolným názvem hostitele.
 
-    2. Přestože všechny aplikace v rámci lokality sdílejí společné vazby net.tcp, každá aplikace můžete povolit podporu net.tcp jednotlivě. Pokud chcete povolit net.tcp /servicemodelsamples aplikace, spusťte následující příkaz z příkazového řádku na úrovni správce:
+    2. I když všechny aplikace v rámci lokality sdílí společnou vazbu NET. TCP, každá aplikace může povolit podporu NET. TCP samostatně. Pokud chcete povolit NET. TCP pro aplikaci/ServiceModelSamples, spusťte následující příkaz z příkazového řádku na úrovni správce:
 
         ```console
         %windir%\system32\inetsrv\appcmd.exe set app
@@ -176,17 +176,17 @@ Press <ENTER> to terminate client.
         ```
 
         > [!NOTE]
-        > Tento příkaz je jeden řádek textu. Tento příkaz umožňuje aplikaci /servicemodelsamples přistupovat pomocí obou `http://localhost/servicemodelsamples` a `net.tcp://localhost/servicemodelsamples`.
+        > Tento příkaz je jedním řádkem textu. Tento příkaz umožňuje, aby aplikace/ServiceModelSamples byla dostupná pomocí `http://localhost/servicemodelsamples` i `net.tcp://localhost/servicemodelsamples`.
 
-4. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+4. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
 
-5. Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
+5. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
 
-    Odeberte net.tcp vazby webu, kterou jste přidali pro tuto ukázku.
+    Odeberte vazbu na lokalitu NET. TCP, kterou jste přidali pro tuto ukázku.
 
-    V zájmu usnadnění práce následující dva kroky jsou implementovány v dávkovém souboru volá RemoveNetTcpSiteBinding.cmd nachází v adresáři ukázkové.
+    Následující dva kroky jsou implementovány v dávkovém souboru s názvem RemoveNetTcpSiteBinding. cmd, který je umístěn v ukázkovém adresáři.
 
-    1. Odebrání net.tcp ze seznamu povolených protokolů spuštěním následujícího příkazu z příkazového řádku na úrovni správce:
+    1. Ze seznamu povolených protokolů odeberte NET. TCP spuštěním následujícího příkazu z příkazového řádku na úrovni správce:
 
         ```console
         %windir%\system32\inetsrv\appcmd.exe set app
@@ -196,7 +196,7 @@ Press <ENTER> to terminate client.
         > [!NOTE]
         > Tento příkaz musí být zadán jako jeden řádek textu.
 
-    2. Odeberte vazbu webu net.tcp spuštěním následujícího příkazu z příkazového řádku na úrovni správce:
+    2. Odeberte vazbu sítě NET. TCP spuštěním následujícího příkazu z příkazového řádku na úrovni správce:
 
         ```console
         %windir%\system32\inetsrv\appcmd.exe set site "Default Web Site"
@@ -204,8 +204,8 @@ Press <ENTER> to terminate client.
         ```
 
         > [!NOTE]
-        > Tento příkaz musí být zadán v jako jeden řádek textu.
+        > Tento příkaz musí být zadán jako jeden řádek textu.
 
 ## <a name="see-also"></a>Viz také:
 
-- [Hostování AppFabric a ukázky trvalosti](https://go.microsoft.com/fwlink/?LinkId=193961)
+- [Hostování technologie AppFabric a ukázky trvalosti](https://go.microsoft.com/fwlink/?LinkId=193961)

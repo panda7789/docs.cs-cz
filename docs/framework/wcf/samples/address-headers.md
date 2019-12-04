@@ -2,29 +2,29 @@
 title: Hlavičky adresy
 ms.date: 03/30/2017
 ms.assetid: b0c94d4a-3bde-4b4d-bb6d-9f12bc3a6940
-ms.openlocfilehash: 4ccb309178251b32068d6cdbb81874322f991bb9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3bc8512fb2492a7249c81fc33a3c7b83904f1ccd
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62002947"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715232"
 ---
 # <a name="address-headers"></a>Hlavičky adresy
 
-Hlavičky adresy ukázka demonstruje, jak klienti můžete předávat parametry referenční dokumentace ke službě pomocí Windows Communication Foundation (WCF).
+Ukázka hlaviček adres ukazuje, jak mohou klienti předat parametry odkazu do služby pomocí Windows Communication Foundation (WCF).
 
 > [!NOTE]
-> Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.
+> Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.
 
-Specifikace WS-Addressing koncept odkazem na koncový bod jako způsob, jak vyřešit konkrétní koncový bod webové služby. Ve službě WCF, jsou modelovány pomocí koncového bodu odkazy `EndpointAddress` class - `EndpointAddress` je typ pole adresu `ServiceEndpoint` třídy.
+Specifikace WS-Addressing definuje pojem reference koncového bodu jako způsob, jak adresovat konkrétní koncový bod webové služby. V WCF jsou odkazy na koncový bod modelovány pomocí `EndpointAddress` třídy – `EndpointAddress` je typ pole Adresa třídy `ServiceEndpoint`.
 
-Referenční model koncový bod je, že každý odkaz můžete provést některé odkaz parametry, které přidávají další identifikační údaje. Ve službě WCF, jsou tyto parametry odkazů nemodelují jako instance `AddressHeader` třídy.
+Součástí referenčního modelu koncového bodu je, že každý odkaz může mít několik referenčních parametrů, které přidávají dodatečné identifikační informace. V rámci WCF jsou tyto parametry odkazu modelovány jako instance `AddressHeader` třídy.
 
-V této ukázce klienta přidá odkaz na parametr, aby `EndpointAddress` koncového bodu klienta. Služba hledá tento odkaz na parametr a použije její hodnotu v logice jeho operace služby "Hello".
+V této ukázce klient přidá parametr reference do `EndpointAddress` koncového bodu klienta. Služba vyhledá tento parametr odkazu a použije jeho hodnotu v logice jeho operace služby Hello.
 
 ## <a name="client"></a>Klient
 
-Pro klienta k odesílání referenční parametr, musíte přidat `AddressHeader` k `EndpointAddress` z `ServiceEndpoint`. Protože `EndpointAddress` třída je neměnný, je nutné provést úpravu adresy koncového bodu pomocí `EndpointAddressBuilder` třídy. Následující kód inicializuje klientovi umožní odeslat referenční parametr jako součást její zprávy.
+Aby mohl klient odeslat odkazový parametr, musí přidat `AddressHeader` do `EndpointAddress` `ServiceEndpoint`. Vzhledem k tomu, že třída `EndpointAddress` je neměnná, musí být úprava adresy koncového bodu provedena pomocí `EndpointAddressBuilder` třídy. Následující kód inicializuje klienta, aby odesílal parametr reference jako součást jeho zprávy.
 
 ```csharp
 HelloClient client = new HelloClient();
@@ -36,15 +36,15 @@ builder.Headers.Add(header);
 client.Endpoint.Address = builder.ToEndpointAddress();
 ```
 
-Kód vytvoří `EndpointAddressBuilder` pomocí původní `EndpointAddress` jako počáteční hodnota. Potom přidá hlavičku adresu nově vytvořeného; volání `CreateAddressHeader` vytvoří hlavičku s konkrétním názvem, obor názvů a hodnotou. V tomto poli hodnota je "John". Po přidání záhlaví do Tvůrce `ToEndpointAddress()` metoda převede zpátky do adresy koncového bodu (neměnné), které je přiřazeno zpět do pole adresy koncový bod klienta (proměnlivé) Tvůrce.
+Kód vytvoří `EndpointAddressBuilder` jako počáteční hodnotu pomocí původní `EndpointAddress`. Pak přidá nově vytvořenou hlavičku adresy; volání `CreateAddressHeader` vytvoří hlavičku s určitým názvem, oborem názvů a hodnotou. Tady je hodnota "Jan". Po přidání hlavičky do Tvůrce `ToEndpointAddress()` metoda převede (mutable) tvůrce zpátky na (neměnný) adresu koncového bodu, která se přiřadí zpátky do pole Adresa koncového bodu klienta.
 
-Když klient teď volá `Console.WriteLine(client.Hello());`, služba je schopná k získání hodnoty tohoto parametru adresu, jak je vidět ve výsledném výstupu z klienta.
+Když teď klient volá `Console.WriteLine(client.Hello());`, může služba získat hodnotu tohoto parametru adresy, jak je vidět ve výsledném výstupu klienta.
 
 `Hello, John`
 
 ## <a name="server"></a>Server
 
-Provádění operace služby `Hello()` používá aktuální `OperationContext` ke kontrole hodnot hlavičky v příchozí zprávě.
+Implementace `Hello()` operací služby používá aktuální `OperationContext` k zkontrolování hodnot hlaviček v příchozí zprávě.
 
 ```csharp
 string id = null;
@@ -67,21 +67,21 @@ for (int i = 0;
 return "Hello, " + id;
 ```
 
-Kód Iteruje přes všechny hlavičky v příchozí zprávě, hledá hlavičky, které jsou parametry odkazu s konkrétním názvem a. Po nalezení parametr přečte hodnotu parametru a uloží jej do proměnné "id".
+Kód projde všemi záhlavími příchozí zprávy a hledá hlavičky, které jsou referenčními parametry s konkrétním názvem a. Když je parametr nalezen, přečte hodnotu parametru a uloží jej do proměnné "ID".
 
-#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku
+#### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky
 
-1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
 
-2. K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
 
-3. Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
+3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
 
 > [!IMPORTANT]
-> Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Client\AddressHeaders`

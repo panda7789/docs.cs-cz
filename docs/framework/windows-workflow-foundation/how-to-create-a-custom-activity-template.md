@@ -2,20 +2,20 @@
 title: 'Postupy: Vytvoření vlastní šablony aktivity'
 ms.date: 03/30/2017
 ms.assetid: 6760a5cc-6eb8-465f-b4fa-f89b39539429
-ms.openlocfilehash: 4ec84658dbe3039a4d7d714f8da183e6a5eb6ca4
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: f910d1367c941dbc319421d402cae8f4194872e5
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989715"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715257"
 ---
 # <a name="how-to-create-a-custom-activity-template"></a>Postupy: Vytvoření vlastní šablony aktivity
 
-Vlastní šablony aktivit slouží k přizpůsobení konfigurace aktivit, včetně vlastních složených aktivit, aby uživatelé nemuseli vytvářet jednotlivé aktivity jednotlivě a nakonfigurovali jejich vlastnosti a další nastavení ručně. Tyto vlastní šablony mohou být k dispozici v sadě **nástrojů** na [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] nebo v přehostujícím návrháři, ze kterých je uživatelé mohou přetahovat na předkonfigurovaný návrhovou plochu. [!INCLUDE[wfd2](../../../includes/wfd2-md.md)]dodává se dobrými příklady takových šablon: [Návrhář šablon SendAndReceiveReply](/visualstudio/workflow-designer/sendandreceivereply-template-designer) a [Návrhář šablon ReceiveAndSendReply](/visualstudio/workflow-designer/receiveandsendreply-template-designer) v kategorii [Návrháři aktivity zasílání zpráv](/visualstudio/workflow-designer/messaging-activity-designers) .
+Vlastní šablony aktivit slouží k přizpůsobení konfigurace aktivit, včetně vlastních složených aktivit, aby uživatelé nemuseli vytvářet jednotlivé aktivity jednotlivě a nakonfigurovali jejich vlastnosti a další nastavení ručně. Tyto vlastní šablony mohou být k dispozici v sadě **nástrojů** na Návrhář postupu provádění systému Windows nebo v přehostujícím návrháři, ze kterých je uživatelé mohou přetáhnout na předem nakonfigurovanou návrhovou plochu. Návrhář postupu provádění lodí s dobrými příklady takových šablon: [Návrhář šablony SendAndReceiveReply](/visualstudio/workflow-designer/sendandreceivereply-template-designer) a [Návrhář šablon ReceiveAndSendReply](/visualstudio/workflow-designer/receiveandsendreply-template-designer) v kategorii [Návrháři aktivity zasílání zpráv](/visualstudio/workflow-designer/messaging-activity-designers) .
 
- První postup v tomto tématu popisuje, jak vytvořit šablonu vlastní aktivity pro aktivitu **zpoždění** a druhá procedura stručně popisuje, jak ji zpřístupnit v [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] nástroji, abyste ověřili, že vlastní šablona funguje.
+ První postup v tomto tématu popisuje, jak vytvořit šablonu vlastní aktivity pro aktivitu **zpoždění** a druhá procedura stručně popisuje, jak ji zpřístupnit v Návrhář postupu provádění, abyste ověřili, že vlastní šablona funguje.
 
- Vlastní šablony aktivit musí implementovat <xref:System.Activities.Presentation.IActivityTemplateFactory>. Rozhraní má jedinou <xref:System.Activities.Presentation.IActivityTemplateFactory.Create%2A> metodu, se kterou můžete vytvořit a nakonfigurovat instance aktivit použité v šabloně.
+ Vlastní šablony aktivit musí implementovat <xref:System.Activities.Presentation.IActivityTemplateFactory>. Rozhraní má jednu <xref:System.Activities.Presentation.IActivityTemplateFactory.Create%2A> metodu, pomocí které můžete vytvořit a nakonfigurovat instance aktivit použité v šabloně.
 
 ## <a name="to-create-a-template-for-the-delay-activity"></a>Vytvoření šablony pro aktivitu zpoždění
 
@@ -23,7 +23,7 @@ Vlastní šablony aktivit slouží k přizpůsobení konfigurace aktivit, včetn
 
 2. V nabídce **soubor** přejděte na příkaz **Nový**a vyberte možnost **projekt**.
 
-     **Nový projekt** zobrazí se dialogové okno.
+     Otevře se dialogové okno **Nový projekt** .
 
 3. V podokně **typy projektů** vyberte **pracovní postup** z **vizuálních C#**  projektů nebo skupin **Visual Basic** v závislosti na jazykové předvolbách.
 
@@ -53,7 +53,7 @@ Vlastní šablony aktivit slouží k přizpůsobení konfigurace aktivit, včetn
     using System.Windows;
     ```
 
-13. Implementujte `MyDelayActivity` třídu spoužitímnásledujícíhokódu.<xref:System.Activities.Presentation.IActivityTemplateFactory> Tím se nakonfiguruje zpoždění na dobu 10 sekund.
+13. Implementujte <xref:System.Activities.Presentation.IActivityTemplateFactory> pomocí `MyDelayActivity` třídy s následujícím kódem. Tím se nakonfiguruje zpoždění na dobu 10 sekund.
 
     ```csharp
     public sealed class MyDelayActivity : IActivityTemplateFactory
@@ -76,7 +76,7 @@ Vlastní šablony aktivit slouží k přizpůsobení konfigurace aktivit, včetn
 
 1. V **Průzkumník řešení** klikněte pravým tlačítkem na řešení DelayActivityTemplate a zvolte **Přidat** a pak **Nový projekt** . otevře se dialogové okno **Přidat nový projekt** .
 
-2. Vyberte šablonu **Konzolová aplikace pracovního postupu** , pojmenujte ji `CustomActivityTemplateApp`a klikněte na tlačítko **OK**.
+2. Vyberte šablonu **Konzolová aplikace pracovního postupu** , pojmenujte ji `CustomActivityTemplateApp`a potom klikněte na tlačítko **OK**.
 
 3. V **Průzkumník řešení** klikněte pravým tlačítkem na adresář odkazy projektu CustomActivityTemplateApp a výběrem možnosti **Přidat odkaz** otevřete dialogové okno **Přidat odkaz** .
 
@@ -90,7 +90,7 @@ Vlastní šablony aktivit slouží k přizpůsobení konfigurace aktivit, včetn
 
 8. Otevřete soubor Workflow1. XAML a otevřete **sadu nástrojů**.
 
-9. Vyhledejte šablonu **MyDelayActivity** v kategorii **DelayActivityTemplate** . Přetáhněte ji na návrhovou plochu. V okně **vlastnosti** potvrďte, že `Duration` vlastnost byla nastavena na 10 sekund.
+9. Vyhledejte šablonu **MyDelayActivity** v kategorii **DelayActivityTemplate** . Přetáhněte ji na návrhovou plochu. V okně **vlastnosti** potvrďte, že vlastnost `Duration` byla nastavena na 10 sekund.
 
 ## <a name="example"></a>Příklad
  Soubor MyDelayActivity.cs by měl obsahovat následující kód.

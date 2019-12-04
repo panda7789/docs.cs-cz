@@ -2,12 +2,12 @@
 title: Ukázka zabezpečení zjišťování
 ms.date: 03/30/2017
 ms.assetid: b8db01f4-b4a1-43fe-8e31-26d4e9304a65
-ms.openlocfilehash: dfc0dfcd3b4d814a158b328ef202d5438e583a8c
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 8469b69baabcd2ba9185956c276554b4bb929d85
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039818"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74712058"
 ---
 # <a name="discovery-security-sample"></a>Ukázka zabezpečení zjišťování
 Specifikace zjišťování nevyžaduje, aby koncové body, které jsou součástí procesu zjišťování, byly zabezpečené. Zvýšením počtu zpráv zjišťování se zabezpečením sníží riziko různých typů útoků (Změna zprávy, odmítnutí služby, opětovné přehrání, falšování identity). Tato ukázka implementuje vlastní kanály, které počítají a ověřují signatury zpráv pomocí formátu kompaktního podpisu (popsaného v části 8,2 specifikace WS-Discovery). Ukázka podporuje [specifikaci zjišťování 2005](https://go.microsoft.com/fwlink/?LinkId=177912) i [verzi 1,1](https://go.microsoft.com/fwlink/?LinkId=179677).  
@@ -35,23 +35,23 @@ Specifikace zjišťování nevyžaduje, aby koncové body, které jsou součást
 ```  
   
 > [!NOTE]
-> `PrefixList` Byla přidána do protokolu verze zjišťování 2008.  
+> `PrefixList` bylo přidáno do protokolu verze zjišťování 2008.  
   
- Pro výpočet podpisu ukázka určuje rozšířené položky podpisu. Signatura XML (`SignedInfo`) se vytvoří `ds` pomocí předpony oboru názvů, jak vyžaduje specifikace WS-Discovery. V podpisu je odkazováno tělo a všechny hlavičky v názvech oborů zjišťování a adresování, takže je nelze považovat za neoprávněně. Každý odkazovaný element je transformován pomocí exkluzivního kanonikalizace (http://www.w3.org/2001/10/xml-exc-c14n# ) a pak je vypočítána hodnota digest SHA-1 (http://www.w3.org/2000/09/xmldsig#sha1 ). V závislosti na všech odkazovaných prvcích a jejich hodnotách Digest se hodnota signatury vypočítá pomocí algoritmu http://www.w3.org/2000/09/xmldsig#rsa-sha1 RSA ().  
+ Pro výpočet podpisu ukázka určuje rozšířené položky podpisu. Signatura XML (`SignedInfo`) se vytvoří pomocí `ds` předpony oboru názvů, jak to vyžaduje specifikace WS-Discovery. V podpisu je odkazováno tělo a všechny hlavičky v názvech oborů zjišťování a adresování, takže je nelze považovat za neoprávněně. Každý odkazovaný element je transformován pomocí exkluzivního kanonikalizace (http://www.w3.org/2001/10/xml-exc-c14n# ) a pak je vypočítána hodnota digest SHA-1 (http://www.w3.org/2000/09/xmldsig#sha1 ). V závislosti na všech odkazovaných prvcích a jejich hodnotách Digest se hodnota signatury vypočítá pomocí algoritmu RSA (http://www.w3.org/2000/09/xmldsig#rsa-sha1 ).  
   
- Zprávy jsou podepsány pomocí certifikátu zadaného klientem. Při vytvoření prvku vazby je nutné zadat umístění úložiště, název a název subjektu certifikátu. `KeyId` V kompaktním podpisu představuje identifikátor klíče podpisového tokenu, který je identifikátorem klíče subjektu (Ski) podpisového tokenu, nebo (Pokud není k dispozici) hodnota hash SHA-1 veřejného klíče podpisového tokenu.  
+ Zprávy jsou podepsány pomocí certifikátu zadaného klientem. Při vytvoření prvku vazby je nutné zadat umístění úložiště, název a název subjektu certifikátu. `KeyId` v kompaktním podpisu představuje identifikátor klíče podpisového tokenu, který je identifikátorem klíče subjektu (SKI) podpisového tokenu, nebo (Pokud není k dispozici) hodnota hash SHA-1 veřejného klíče podpisového tokenu.  
   
 ## <a name="secure-channel-listener"></a>Naslouchací proces zabezpečeného kanálu  
- Naslouchací proces zabezpečeného kanálu vytváří vstupní nebo duplexní kanály, které ověřují kompaktní podpis v přijatých zprávách. Chcete-li ověřit podpis, `KeyId` je k výběru certifikátu ze zadaného úložiště použit parametr zadaný v kompaktním podpisu připojeném ke zprávě. Pokud zpráva nemá podpis nebo se její podpis nepovede, jsou zprávy vyřazené. Chcete-li použít zabezpečenou vazbu, ukázka definuje objekt pro vytváření, <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> který <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> vytvoří vlastní a s přidaným prvkem zabezpečené vazby zjišťování. Tyto zabezpečené koncové body lze použít v posluchačích oznámení zjišťování a zjistitelných službách.  
+ Naslouchací proces zabezpečeného kanálu vytváří vstupní nebo duplexní kanály, které ověřují kompaktní podpis v přijatých zprávách. K ověření podpisu se k výběru certifikátu ze zadaného úložiště používá `KeyId` zadaná v kompaktním podpisu připojeném ke zprávě. Pokud zpráva nemá podpis nebo se její podpis nepovede, jsou zprávy vyřazené. Chcete-li použít zabezpečenou vazbu, ukázka definuje objekt pro vytváření, který vytváří vlastní <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> a <xref:System.ServiceModel.Discovery.UdpAnnouncementEndpoint> s přidaným prvkem zabezpečené vazby zjišťování. Tyto zabezpečené koncové body lze použít v posluchačích oznámení zjišťování a zjistitelných službách.  
   
 ## <a name="sample-details"></a>Podrobnosti ukázky  
  Ukázka zahrnuje knihovny a 4 konzolové aplikace:  
   
-- **DiscoverySecurityChannels**: Knihovna, která zveřejňuje zabezpečenou vazbu. Knihovna vypočítá a ověří kompaktní podpis pro odchozí a příchozí zprávy.  
+- **DiscoverySecurityChannels**: knihovna, která zveřejňuje zabezpečenou vazbu. Knihovna vypočítá a ověří kompaktní podpis pro odchozí a příchozí zprávy.  
   
-- **Služba**: Služba, která zveřejňuje kontrakt ICalculatorService, který je hostován v místním prostředí. Služba je označená jako zjistitelná. Uživatel Určuje podrobnosti certifikátu používaného k podepisování zpráv zadáním umístění úložiště a názvu subjektu nebo jiného jedinečného identifikátoru pro certifikát a úložištěm, kde jsou umístěny klientské certifikáty (certifikáty použité pro kontrolovat podpis příchozích zpráv). Na základě těchto informací se sestaví a použije UdpDiscoveryEndpoint s přidaným zabezpečením.  
+- **Služba**: služba, která zveřejňuje kontrakt ICalculatorService, který je hostovaný v místním prostředí. Služba je označená jako zjistitelná. Uživatel Určuje podrobnosti certifikátu používaného k podepisování zpráv zadáním umístění úložiště a názvu subjektu nebo jiného jedinečného identifikátoru pro certifikát a úložištěm, kde jsou umístěny klientské certifikáty (certifikáty použité pro kontrolovat podpis příchozích zpráv). Na základě těchto informací se sestaví a použije UdpDiscoveryEndpoint s přidaným zabezpečením.  
   
-- **Klient**: Tato třída se pokusí zjistit ICalculatorService a volat metody ve službě. Znovu se vytvoří <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> a s přidaným zabezpečením se sestaví a použije k podepsání a ověření zpráv.  
+- **Klient**: Tato třída se pokusí zjistit ICalculatorService a volat metody ve službě. Znovu se vytvoří <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> s přidaným zabezpečením a použije se k podepsání a ověření zpráv.  
   
 - **AnnouncementListener**: Samoobslužná služba, která naslouchá online a offline oznámením a používá koncový bod zabezpečeného oznámení.  
   
@@ -71,6 +71,6 @@ Specifikace zjišťování nevyžaduje, aby koncové body, které jsou součást
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\DiscoveryScenario`  

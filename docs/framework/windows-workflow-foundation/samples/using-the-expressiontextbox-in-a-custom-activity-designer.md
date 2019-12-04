@@ -2,22 +2,22 @@
 title: Použití ExpressionTextBox v návrháři vlastní aktivity
 ms.date: 03/30/2017
 ms.assetid: f82e73e7-a256-4a4d-82b7-c0d62f4ab5e7
-ms.openlocfilehash: bfac07d64cd5e30c3475d4e269c16597905ea829
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 6b581b42c882c12425a17b9a518f8957ca10898a
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045358"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715539"
 ---
 # <a name="using-the-expressiontextbox-in-a-custom-activity-designer"></a>Použití ExpressionTextBox v návrháři vlastní aktivity
-<xref:System.Activities.Presentation.View.ExpressionTextBox> V této ukázce se dozvíte, jak používat v Návrháři vlastní aktivity. Vlastní aktivita `MultiAssign`přiřadí dvě řetězcové hodnoty dvěma řetězcovým proměnným. Některé <xref:System.Activities.Presentation.View.ExpressionTextBox> ovládací prvky přiváží k <xref:System.Activities.InArgument>s a některé <xref:System.Activities.OutArgument>vazby na s.
+V této ukázce se dozvíte, jak používat <xref:System.Activities.Presentation.View.ExpressionTextBox> v Návrháři vlastní aktivity. Vlastní aktivita `MultiAssign`přiřadí dvě řetězcové hodnoty dvěma řetězcovým proměnným. Některé ovládací prvky <xref:System.Activities.Presentation.View.ExpressionTextBox> vážou <xref:System.Activities.InArgument>s a některá vazba na <xref:System.Activities.OutArgument>s.
 
 ## <a name="sample-details"></a>Podrobnosti ukázky
- `ArgumentToExpressionConverter` Je konvertor typu, který se používá při vytváření výrazů vazby k argumentům. Musí být nastavené na `In` nebo `Out` podle potřeby. `ConverterParameter` `InOut`není podporováno.
+ `ArgumentToExpressionConverter` je konvertor typu, který se používá při vytváření výrazů vazby k argumentům. `ConverterParameter` musí být nastavená na `In` nebo `Out` podle potřeby. `InOut` se nepodporuje.
 
- `UseLocationExpression` Atribut se `OutArgument`používá pro s k určení, že výraz by měl být výraz L-hodnoty ("levá hodnota" nebo "hodnota umístění"). Ve většině případů je výraz L-hodnoty platným Visual Basic identifikátor, který označuje, že `OutArgument` vracená je proměnná nebo název argumentu.
+ Atribut `UseLocationExpression` se používá v `OutArgument`s k určení, že výraz by měl být výraz L-hodnota ("levá hodnota" nebo "hodnota umístění"). Ve většině případů je výraz L-hodnoty platným Visual Basicm identifikátorem, který označuje, že `OutArgument` vracená je proměnná nebo název argumentu.
 
- Atribut je v tomto příkladu nastaven na jeden a `MinLines` není nastaven. `MaxLines` To znamená, že <xref:System.Activities.Presentation.View.ExpressionTextBox> je pevná velikost jednoho řádku bez ohledu na množství textu zadaného uživatelem. Aby bylo umožněno <xref:System.Activities.Presentation.View.ExpressionTextBox> zvětšení podle uživatelského vstupu, je nastavena `MaxLines` větší než `MinLines`.
+ Atribut `MaxLines` je v tomto příkladu nastaven na jeden a `MinLines` není nastaven. To znamená, že <xref:System.Activities.Presentation.View.ExpressionTextBox> je pevná velikost jednoho řádku bez ohledu na množství textu zadaného uživatelem. Aby bylo možné <xref:System.Activities.Presentation.View.ExpressionTextBox> zvětšit tak, aby odpovídaly vstupu uživatele, nastavte `MaxLines` větší než `MinLines`.
 
  ExpressionTextBox může být svázána pouze s argumenty a nelze jej svázat s vlastnostmi CLR.
 
@@ -42,7 +42,7 @@ ms.locfileid: "70045358"
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\CustomActivities\CustomActivityDesigners\ExpressionTextBox`  
   

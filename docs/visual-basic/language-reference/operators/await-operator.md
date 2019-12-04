@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Await operator [Visual Basic]
 - Await [Visual Basic]
 ms.assetid: 6b1ce283-e92b-4ba7-b081-7be7b3d37af9
-ms.openlocfilehash: c2389ff0c94afc2156e594f5d93535d1ed0107a8
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: e0c617ce32f80bdde1bcfda31da40ae610e07452
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74336267"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74712352"
 ---
 # <a name="await-operator-visual-basic"></a>Await – operátor (Visual Basic)
 
@@ -23,7 +23,7 @@ Metoda, ve které je použit `Await`, musí mít modifikátor [Async](../../../v
 > [!NOTE]
 > Klíčová slova `Async` a `Await` byla zavedena v sadě Visual Studio 2012. Úvod do asynchronního programování naleznete v tématu [asynchronní programování s Async a await](../../../visual-basic/programming-guide/concepts/async/index.md).
 
-Úkol, pro který použijete operátor `Await`, je obvykle návratovou hodnotou z volání metody, která implementuje [asynchronní vzor založený na úlohách](https://go.microsoft.com/fwlink/?LinkId=204847), to znamená <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601>.
+Úkol, pro který použijete operátor `Await`, je obvykle návratovou hodnotou z volání metody, která implementuje [asynchronní vzor založený na úlohách](https://www.microsoft.com/download/details.aspx?id=19957), to znamená <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601>.
 
 V následujícím kódu metoda <xref:System.Net.Http.HttpClient> <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> vrátí `getContentsTask`, `Task(Of Byte())`. Úkol je příslib, který vytvoří skutečné bajtové pole po dokončení operace. Operátor `Await` se použije pro `getContentsTask` k pozastavení provádění v `SumPageSizesAsync`, dokud `getContentsTask` nedokončí. Mezitím se ovládací prvek vrátí volajícímu `SumPageSizesAsync`. Po dokončení `getContentsTask` se výraz `Await` vyhodnotí jako bajtové pole.
 

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Manifest Generation and Editing tool
 - Mage.exe
 ms.assetid: 77dfe576-2962-407e-af13-82255df725a1
-ms.openlocfilehash: aa2ad9222460f8732397f8b1c72e36085bbe4a21
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 3752ac7108a9fcd55b61b32b889a717ef7c0faff
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449430"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74714476"
 ---
 # <a name="mageexe-manifest-generation-and-editing-tool"></a>Mage.exe (generování manifestu a nástroj pro úpravy)
 
@@ -35,7 +35,7 @@ V následující tabulce jsou uvedeny příkazy podporované nástrojem *Mage. e
 |Příkaz|Popis|
 |-------------|-----------------|
 |**-CC, ClearApplicationCache**|Odstraní všechny aplikace fungující pouze v režimu online z mezipaměti stažených aplikací.|
-|**-n,-nový** *typ souboru [newOptions]*|Vytvoří nový soubor daného typu. Platnými typy jsou:<br /><br /> -   `Deployment`: vytvoří nový manifest nasazení.<br />-   `Application`: vytvoří nový manifest aplikace.<br /><br /> Nezadáte-li s tímto příkazem žádné další parametry, bude vytvořen soubor odpovídajícího typu s odpovídajícími výchozími značkami a hodnotami atributů.<br /><br /> Použijte možnost **-ToFile** (viz následující tabulka) a zadejte název souboru a cestu k novému souboru.<br /><br /> Použijte možnost **-FromDirectory** (viz následující tabulka) k vytvoření manifestu aplikace se všemi sestaveními pro aplikaci přidanou do > části manifestu \<závislostí.|
+|**-n,-nový** *typ souboru [newOptions]*|Vytvoří nový soubor daného typu. Platné typy:<br /><br /> -   `Deployment`: vytvoří nový manifest nasazení.<br />-   `Application`: vytvoří nový manifest aplikace.<br /><br /> Nezadáte-li s tímto příkazem žádné další parametry, bude vytvořen soubor odpovídajícího typu s odpovídajícími výchozími značkami a hodnotami atributů.<br /><br /> Použijte možnost **-ToFile** (viz následující tabulka) a zadejte název souboru a cestu k novému souboru.<br /><br /> Použijte možnost **-FromDirectory** (viz následující tabulka) k vytvoření manifestu aplikace se všemi sestaveními pro aplikaci přidanou do > části manifestu \<závislostí.|
 |**-u,-Update** *[FilePath] [updateOptions]*|Provede jednu nebo více změn souboru manifestu. Typ upravovaného souboru není třeba zadávat. Nástroj Mage.exe soubor zkontroluje sadou heuristik a určí, zda jde o manifest nasazení nebo manifest aplikace.<br /><br /> Pokud jste už soubor s certifikátem podepsali, **příkaz Update** odebere blok signatury klíče. Důvodem je skutečnost, že podpis klíče obsahuje hodnotu hash souboru, která je úpravou souboru zneplatněna.<br /><br /> Použijte možnost **-ToFile** (viz následující tabulka) a zadejte nový název souboru a cestu namísto přepsání stávajícího souboru.|
 |**-s,-Sign** `[signOptions]`|Použije k podpisu souboru pár klíčů nebo certifikát X509. Podpisy jsou do souboru vloženy jako prvky jazyka XML.<br /><br /> Při podepisování manifestu, který určuje hodnotu **-TimestampUri** , musíte být připojeni k Internetu.|
 |**-ver,-Verify** *[manifest-filename]*|Ověřuje, jestli je manifest správně podepsaný. Nelze kombinovat s jinými příkazy. <br/><br/>**K dispozici v .NET Framework 4,7 a novějších verzích.**|
@@ -68,9 +68,9 @@ Následující tabulka ukazuje možnosti podporované příkazy `-New` a `-Updat
 |**-ti,-TimestampUri** `uri`||Manifesty aplikací.<br /><br /> Manifesty nasazení.|Adresa URL služby vytváření digitálního časového razítka. Vytvoření časového razítka v manifestu umožňuje vyhnout se nutnosti znovu manifesty podepsat, pokud by digitální certifikát vypršel ještě před nasazením další verze aplikace. Další informace naleznete v tématu [Členové programu kořenového certifikátu systému Windows](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn265983(v=ws.11)).|
 |**-t,-ToFile** `filePath`|New<br />-Deployment: Deploy. Application<br />-Application: Application. exe. manifest<br />Update<br />– Vstupní soubor.|Všechny typy souborů.|Určí výstupní cestu vytvořeného nebo upraveného souboru.<br /><br /> Pokud **-ToFile** není k dispozici při použití **-New**, výstup se zapíše do aktuálního pracovního adresáře. Pokud není zadán **příkaz-ToFile** při použití **-Update**, nástroj *Mage. exe* zapíše soubor zpět do vstupního souboru.|
 |**-TR,-TrustLevel** `level`|Dle zóny, v níž se adresa URL aplikace nachází.|Manifesty aplikací.|Úroveň důvěryhodnosti, která bude aplikacím udělena na klientských počítačích. Mezi hodnoty patří „Internet“, „Intranet“ a „FullTrust“.|
-|**– um, – UseManifestForTrust** `willUseForTrust`|False|Manifesty aplikací.|Určí, zda bude při spuštění aplikace na klientském počítači použit pro rozhodování o důvěryhodnosti digitální podpis manifestu aplikace. Hodnota „true“ nebo „t“ určí, že pro rozhodnutí o důvěryhodnosti bude použit manifest aplikace. Hodnota „false“ nebo „f“ určí, že bude použit podpis manifestu nasazení.|
-|**-v, verze** `versionNumber`|1.0.0.0|Manifesty aplikací.<br /><br /> Manifesty nasazení.|Verze nasazení. Argument musí být platný řetězec verze formátu "*n. n. n. n*", kde "*n*" je celé číslo bez znaménka 32-bit.|
-|**– WPF,-WPFBrowserApp**`isWPFApp`|false (nepravda)|Manifesty aplikací.<br /><br /> Manifesty nasazení.|Tento příznak použijte pouze tehdy, je-li aplikace aplikací Windows Presentation Foundation (WPF), která bude hostována v aplikaci Internet Explorer a není samostatně spustitelná. Platnými hodnotami jsou „true“ nebo „t“ a „false“ nebo „f“.<br /><br /> Pro manifesty aplikace vloží atribut `hostInBrowser` pod element `entryPoint` manifestu aplikace.<br /><br /> V případě manifestů nasazení nastaví atribut `install` u elementu `deployment` na hodnotu false a uloží manifest nasazení s příponou. XBAP. Zadáním tohoto argumentu spolu s argumentem **-install** dojde k chybě, protože aplikace hostovaná v prohlížeči nemůže být nainstalovaná, offline aplikace.|
+|**– um, – UseManifestForTrust** `willUseForTrust`|Nepravda|Manifesty aplikací.|Určí, zda bude při spuštění aplikace na klientském počítači použit pro rozhodování o důvěryhodnosti digitální podpis manifestu aplikace. Hodnota „true“ nebo „t“ určí, že pro rozhodnutí o důvěryhodnosti bude použit manifest aplikace. Hodnota „false“ nebo „f“ určí, že bude použit podpis manifestu nasazení.|
+|**-v, verze** `versionNumber`|adresu|Manifesty aplikací.<br /><br /> Manifesty nasazení.|Verze nasazení. Argument musí být platný řetězec verze formátu "*n. n. n. n*", kde "*n*" je celé číslo bez znaménka 32-bit.|
+|**– WPF,-WPFBrowserApp**`isWPFApp`|false|Manifesty aplikací.<br /><br /> Manifesty nasazení.|Tento příznak použijte pouze tehdy, je-li aplikace aplikací Windows Presentation Foundation (WPF), která bude hostována v aplikaci Internet Explorer a není samostatně spustitelná. Platnými hodnotami jsou „true“ nebo „t“ a „false“ nebo „f“.<br /><br /> Pro manifesty aplikace vloží atribut `hostInBrowser` pod element `entryPoint` manifestu aplikace.<br /><br /> V případě manifestů nasazení nastaví atribut `install` u elementu `deployment` na hodnotu false a uloží manifest nasazení s příponou. XBAP. Zadáním tohoto argumentu spolu s argumentem **-install** dojde k chybě, protože aplikace hostovaná v prohlížeči nemůže být nainstalovaná, offline aplikace.|
 
 ## <a name="sign-command-options"></a>Možnosti příkazu Sign
 
@@ -115,33 +115,33 @@ Když přidáváte nebo odebíráte sestavení z existujícího manifestu nebo z
 
 Následující tabulky obsahují tyto funkce a omezení:
 
-|Verze manifestu|Funkce|Mage v2.0|Mage v4.0|
+|Verze manifestu|Operace|Mage v2.0|Mage v4.0|
 |----------------------|---------------|---------------|---------------|
-|Manifest pro aplikace určené pro rozhraní .NET Framework verze 2.0 nebo 3.x|Otevřenost|OK|OK|
+|Manifest pro aplikace určené pro rozhraní .NET Framework verze 2.0 nebo 3.x|Otevřené|OK|OK|
 ||Zavřít|OK|OK|
 ||Uložit|OK|OK|
 ||Znovu podepsat|OK|OK|
-||Nová|OK|Nepodporuje se|
+||Nový|OK|Není podporováno|
 ||Aktualizovat (viz níže)|OK|OK|
-|Manifest pro aplikace cílené na rozhraní .NET Framework verze 4|Otevřenost|OK|OK|
+|Manifest pro aplikace cílené na rozhraní .NET Framework verze 4|Otevřené|OK|OK|
 ||Zavřít|OK|OK|
 ||Uložit|OK|OK|
 ||Znovu podepsat|OK|OK|
-||Nová|Nepodporuje se|OK|
-||Aktualizovat (viz níže)|Nepodporuje se|OK|
+||Nový|Není podporováno|OK|
+||Aktualizovat (viz níže)|Není podporováno|OK|
 
 |Verze manifestu|Podrobnosti o operaci Aktualizovat|Mage v2.0|Mage v4.0|
 |----------------------|------------------------------|---------------|---------------|
 |Manifest pro aplikace určené pro rozhraní .NET Framework verze 2.0 nebo 3.x|Upravit sestavení|OK|OK|
 ||Přidat sestavení|OK|OK|
 ||Odstranit sestavení|OK|OK|
-|Manifest pro aplikace cílené na rozhraní .NET Framework verze 4|Upravit sestavení|Nepodporuje se|OK|
-||Přidat sestavení|Nepodporuje se|OK|
-||Odstranit sestavení|Nepodporuje se|OK|
+|Manifest pro aplikace cílené na rozhraní .NET Framework verze 4|Upravit sestavení|Není podporováno|OK|
+||Přidat sestavení|Není podporováno|OK|
+||Odstranit sestavení|Není podporováno|OK|
 
- Nástroj Mage. exe vytvoří nové manifesty, které cílí na [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]. Aplikace ClickOnce cílené na [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)] lze spustit jak v [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)], tak i v plné verzi .NET Framework 4. Pokud je vaše aplikace cílena na plnou verzi .NET Framework 4 a nelze ji spustit v [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)], odeberte prvek `<framework>` klienta pomocí textového editoru a znovu podepište manifest.
+ Nástroj Mage. exe vytvoří nové manifesty, které cílí na profil klienta .NET Framework 4. Aplikace ClickOnce cílené na profil klienta .NET Framework 4 lze spustit jak v klientském profilu .NET Framework 4, tak i v plné verzi .NET Framework 4. Pokud je vaše aplikace cílena na plnou verzi .NET Framework 4 a nelze ji spustit v klientském profilu .NET Framework 4, odeberte prvek `<framework>` klienta pomocí textového editoru a znovu podepište manifest.
 
-Následuje vzorový `<framework>` element, který cílí na [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]:
+Následuje ukázkový element `<framework>`, který cílí na profil klienta .NET Framework 4:
 
 ```xml
 <framework targetVersion="4.0" profile="client" supportedRuntime="4.0.20506" />

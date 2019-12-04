@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 41a0b9f8-15a2-431a-bc35-e310b2953b03
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 445cf4178b90719f923b66a7778f60c1bc846766
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: 87e756445255f1bd2417a06dfa611eba23208575
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204977"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716744"
 ---
 # <a name="using-portable-class-library-with-model-view-view-model"></a>Používání knihovny přenosných tříd spolu s modelem MVVM (Model-View-View Model)
 Můžete použít .NET Framework [přenosné knihovny tříd](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md) k implementaci vzoru Model-View-View Model (MVVM) a sdílet sestavení napříč různými platformami.
@@ -30,7 +30,7 @@ Můžete použít .NET Framework [přenosné knihovny tříd](../../../docs/stan
  Toto téma neposkytuje obecné informace o vzoru MVVM. Poskytuje pouze informace o tom, jak použít přenosnou knihovnu tříd k implementaci MVVM. Další informace o MVVM najdete v tématu [rychlý Start MVVM s Prism Library 5,0 pro WPF](https://docs.microsoft.com/previous-versions/msp-n-p/gg430857(v=pandp.40)).
 
 ## <a name="classes-that-support-mvvm"></a>Třídy, které podporují MVVM
- Při cílení na .NET Framework 4,5, [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)], Silverlight nebo Windows Phone 7,5 pro váš přenosný projekt knihovny tříd jsou k dispozici následující třídy pro implementaci MVVM vzoru:
+ Při cílení na .NET Framework 4,5, .NET pro Windows 8. x Store aplikace, Silverlight nebo Windows Phone 7,5 pro váš přenosný projekt knihovny tříd jsou k dispozici následující třídy pro implementaci MVVM vzoru:
 
 - <xref:System.Collections.ObjectModel.ObservableCollection%601?displayProperty=nameWithType> – třída
 
@@ -86,7 +86,7 @@ Můžete použít .NET Framework [přenosné knihovny tříd](../../../docs/stan
  [!code-csharp[PortableClassLibraryMVVM#5](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/mainpageviewmodel.cs#5)]
  [!code-vb[PortableClassLibraryMVVM#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/portableclasslibrarymvvm/vb/customerviewmodel.vb#5)]  
   
-### <a name="view"></a>Zobrazit  
+### <a name="view"></a>Podívejte se na téma .  
  Z aplikace .NET Framework 4,5, aplikace pro Store v systému Windows 8. x, aplikace založené na technologii Silverlight nebo aplikace Windows Phone 7,5 můžete odkazovat na sestavení, které obsahuje model a zobrazení projektů modelu.  Pak vytvoříte zobrazení, které komunikuje s modelem zobrazení. Následující příklad ukazuje zjednodušenou aplikaci Windows Presentation Foundation (WPF), která načítá a aktualizuje data z modelu zobrazení. Podobná zobrazení můžete vytvořit v aplikacích Silverlight, Windows Phone nebo Windows 8. x Store.  
   
  [!code-xaml[PortableClassLibraryMVVM#6](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/mainwindow.xaml#6)]  

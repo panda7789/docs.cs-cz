@@ -2,21 +2,21 @@
 title: Vlastní zabezpečený koncový bod metadat
 ms.date: 03/30/2017
 ms.assetid: 9e369e99-ea4a-49ff-aed2-9fdf61091a48
-ms.openlocfilehash: 32e6e0238637f9c2ef6814ace35ccb0b78110b60
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 92fa468caf331fadcd6cab0ab57b34858053c1b5
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928685"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715451"
 ---
 # <a name="custom-secure-metadata-endpoint"></a>Vlastní zabezpečený koncový bod metadat
-Tato ukázka předvádí, jak implementovat službu pomocí zabezpečeného koncového bodu metadat, který používá jednu z vazeb mimo Metadata Exchange a jak nakonfigurovat nástroj pro nástroj pro dokládání [metadat (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nebo klienty, aby načetl metadata z takového koncový bod metadat K dispozici jsou dvě systémové vazby pro vystavování koncových bodů metadat: mexHttpBinding a mexHttpsBinding. mexHttpBinding se používá k vystavení koncového bodu metadat přes protokol HTTP nezabezpečeným způsobem. mexHttpsBinding se používá k vystavení koncového bodu metadat přes HTTPS zabezpečeným způsobem. Tento příklad ukazuje, jak vystavit zabezpečený koncový bod <xref:System.ServiceModel.WSHttpBinding>metadat pomocí. Tuto možnost byste měli udělat, když chcete změnit nastavení zabezpečení vazby, ale nechcete používat protokol HTTPS. Pokud použijete mexHttpsBinding, váš koncový bod metadat bude zabezpečený, ale neexistuje žádný způsob, jak upravit nastavení vazby.  
+Tato ukázka předvádí, jak implementovat službu pomocí zabezpečeného koncového bodu metadat, který používá jednu z vazeb mimo Metadata Exchange a jak nakonfigurovat nástroj pro nástroj pro dokládání [metadat (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nebo klienty, aby z takového koncového bodu metadat načetl metadata. K dispozici jsou dvě systémové vazby pro vystavování koncových bodů metadat: mexHttpBinding a mexHttpsBinding. mexHttpBinding se používá k vystavení koncového bodu metadat přes protokol HTTP nezabezpečeným způsobem. mexHttpsBinding se používá k vystavení koncového bodu metadat přes HTTPS zabezpečeným způsobem. Tento příklad ukazuje, jak vystavit zabezpečený koncový bod metadat pomocí <xref:System.ServiceModel.WSHttpBinding>. Tuto možnost byste měli udělat, když chcete změnit nastavení zabezpečení vazby, ale nechcete používat protokol HTTPS. Pokud použijete mexHttpsBinding, váš koncový bod metadat bude zabezpečený, ale neexistuje žádný způsob, jak upravit nastavení vazby.  
   
 > [!NOTE]
 > Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
-## <a name="service"></a>Služba  
- Služba v této ukázce má dva koncové body. Koncový bod aplikace obsluhuje `ICalculator` kontrakt `WSHttpBinding` s `ReliableSession` povoleným a `Message` zabezpečením pomocí certifikátů. Koncový bod metadat také používá `WSHttpBinding`se stejným nastavením zabezpečení, ale bez. `ReliableSession` Tady je příslušná konfigurace:  
+## <a name="service"></a>Service  
+ Služba v této ukázce má dva koncové body. Koncový bod aplikace obsluhuje kontrakt `ICalculator` v `WSHttpBinding` s povoleným `ReliableSession` a `Message` zabezpečení pomocí certifikátů. Koncový bod metadat také používá `WSHttpBinding`se stejným nastavením zabezpečení, ale bez `ReliableSession`. Tady je příslušná konfigurace:  
   
 ```xml  
 <services>   
@@ -50,14 +50,14 @@ Tato ukázka předvádí, jak implementovat službu pomocí zabezpečeného konc
  </bindings>  
 ```  
   
- V řadě dalších ukázek používá koncový bod metadat výchozí `mexHttpBinding`, což není bezpečné. Tato metadata jsou zabezpečená pomocí `WSHttpBinding` `Message` zabezpečení. Aby klienti metadat mohli tato metadata načíst, musí být nakonfigurovány s vyhovující vazbou. Tato ukázka ukazuje dva takové klienty.  
+ V řadě dalších ukázek používá koncový bod metadat výchozí `mexHttpBinding`, což není bezpečné. Tato metadata jsou zabezpečená pomocí `WSHttpBinding` se zabezpečením `Message`. Aby klienti metadat mohli tato metadata načíst, musí být nakonfigurovány s vyhovující vazbou. Tato ukázka ukazuje dva takové klienty.  
   
  První klient používá Svcutil. exe k načtení metadat a generuje kód klienta a konfiguraci v době návrhu. Vzhledem k tomu, že služba používá pro metadata jinou než výchozí vazbu, musí být nástroj Svcutil. exe specificky nakonfigurován tak, aby mohl získat metadata ze služby pomocí této vazby.  
   
- Druhý klient používá nástroj `MetadataResolver` k dynamickému načítání metadat pro známý kontrakt a následné vyvolání operací na dynamicky generovaného klientovi.  
+ Druhý klient používá `MetadataResolver` k dynamickému načítání metadat pro známý kontrakt a následnému vyvolání operací na dynamicky generovaného klientovi.  
   
 ## <a name="svcutil-client"></a>Klient Svcutil  
- Při použití výchozí vazby k hostování `IMetadataExchange` koncového bodu můžete spustit Svcutil. exe s adresou tohoto koncového bodu:  
+ Při použití výchozí vazby k hostování `IMetadataExchange`ho koncového bodu můžete spustit Svcutil. exe s adresou tohoto koncového bodu:  
   
 ```console  
 svcutil http://localhost/servicemodelsamples/service.svc/mex  
@@ -81,7 +81,7 @@ svcutil http://localhost/servicemodelsamples/service.svc/mex
 svcutil http://localhost/servicemodelsamples/service.svc/mex  
 ```  
   
- hledá koncový bod s názvem "http" a kontrakt `IMetadataExchange` pro konfiguraci vazby a chování komunikačního výměny s koncovým bodem metadat. Zbytek souboru Svcutil. exe. config v ukázce určuje přihlašovací údaje konfigurace a chování vazby, aby odpovídaly konfiguraci serveru koncového bodu metadat.  
+ vyhledá koncový bod s názvem "http" a kontrakt `IMetadataExchange` pro konfiguraci vazby a chování komunikačního výměny s koncovým bodem metadat. Zbytek souboru Svcutil. exe. config v ukázce určuje přihlašovací údaje konfigurace a chování vazby, aby odpovídaly konfiguraci serveru koncového bodu metadat.  
   
  Aby Svcutil. exe mohl vybrat konfiguraci v Svcutil. exe. config, Svcutil. exe musí být ve stejném adresáři jako konfigurační soubor. V důsledku toho je nutné zkopírovat Svcutil. exe z jeho umístění instalace do adresáře, který obsahuje soubor Svcutil. exe. config. Pak z tohoto adresáře spusťte následující příkaz:  
   
@@ -89,12 +89,12 @@ svcutil http://localhost/servicemodelsamples/service.svc/mex
 .\svcutil.exe http://localhost/servicemodelsamples/service.svc/mex  
 ```  
   
- Úvodní ". \\"zajistí, že se spustí kopie Svcutil. exe v tomto adresáři (ta, která má odpovídající Svcutil. exe. config).  
+ Úvodní ".\\"zajistí, že se spustí kopie Svcutil. exe v této složce (ta, která má odpovídající Svcutil. exe. config).  
   
 ## <a name="metadataresolver-client"></a>Klient třídy MetadataResolver  
- Pokud klient zná kontrakt a postup, jak se v době návrhu spojit s metadaty, může klient dynamicky zjistit vazbu a adresu koncových bodů aplikace pomocí `MetadataResolver`. Tento ukázkový klient ukazuje, jak nakonfigurovat vazbu a přihlašovací údaje používané `MetadataResolver` vytvořením a `MetadataExchangeClient`konfigurací.  
+ Pokud klient zná kontrakt a postup, jak se v době návrhu spojit s metadaty, může klient dynamicky zjistit vazbu a adresu koncových bodů aplikace pomocí `MetadataResolver`. Tento ukázkový klient ukazuje, jak nakonfigurovat vazbu a přihlašovací údaje používané pomocí `MetadataResolver` vytvořením a konfigurací `MetadataExchangeClient`.  
   
- Stejné informace o vazbách a certifikátech, které se objevily v souboru Svcutil. exe. config, `MetadataExchangeClient`lze zadat imperativně na těchto počítačích:  
+ Stejné informace o vazbách a certifikátech, které se objevily v souboru Svcutil. exe. config, lze zadat imperativně na `MetadataExchangeClient`:  
   
 ```csharp  
 // Specify the Metadata Exchange binding and its security mode  
@@ -110,7 +110,7 @@ mexClient.SoapCredentials.ServiceCertificate.SetDefaultCertificate(    StoreLoca
     X509FindType.FindBySubjectName, "localhost");  
 ```  
   
- Po `mexClient` nakonfigurování můžeme vypsat kontrakty, které vás zajímají, a použít `MetadataResolver` k načtení seznamu koncových bodů s těmito kontrakty:  
+ Po nakonfigurovaném `mexClient` můžeme vypsat kontrakty, které vás zajímají, a pomocí `MetadataResolver` načíst seznam koncových bodů s těmito kontrakty:  
   
 ```csharp  
 // The contract we want to fetch metadata for  
@@ -122,13 +122,13 @@ EndpointAddress mexAddress = new EndpointAddress(ConfigurationManager.AppSetting
 ServiceEndpointCollection endpoints = MetadataResolver.Resolve(contracts, mexAddress, mexClient);  
 ```  
   
- Nakonec můžeme použít informace z těchto koncových bodů k inicializaci vazby a adresy `ChannelFactory` použité k vytvoření kanálů pro komunikaci s koncovými body aplikace.  
+ Nakonec můžeme použít informace z těchto koncových bodů k inicializaci vazby a adresy `ChannelFactory` používané k vytváření kanálů pro komunikaci s koncovými body aplikace.  
   
 ```csharp  
 ChannelFactory<ICalculator> cf = new ChannelFactory<ICalculator>(endpoint.Binding, endpoint.Address);  
 ```  
   
- Klíčovým bodem tohoto ukázkového klienta je Ukázat, že pokud používáte `MetadataResolver`, a musíte zadat vlastní vazby nebo chování pro komunikaci výměny metadat, můžete `MetadataExchangeClient` použít k zadání těchto vlastních nastavení.  
+ Klíčovým bodem tohoto ukázkového klienta je Ukázat, že pokud používáte `MetadataResolver`, a musíte zadat vlastní vazby nebo chování pro komunikaci se serverem Exchange s metadaty, můžete použít `MetadataExchangeClient` k zadání těchto vlastních nastavení.  
   
 #### <a name="to-set-up-and-build-the-sample"></a>Nastavení a sestavení ukázky  
   
@@ -148,21 +148,21 @@ ChannelFactory<ICalculator> cf = new ChannelFactory<ICalculator>(endpoint.Bindin
   
 #### <a name="to-run-the-sample-across-machines"></a>Spuštění ukázky napříč počítači  
   
-1. Na serveru spusťte `setup.bat service`. Při `setup.bat` spuštění`service` s argumentem se vytvoří certifikát služby s plně kvalifikovaným názvem domény počítače a vyexportuje certifikát služby do souboru s názvem Service. cer.  
+1. Na serveru spusťte `setup.bat service`. Spuštění `setup.bat` s argumentem `service` vytvoří certifikát služby s plně kvalifikovaným názvem domény počítače a vyexportuje certifikát služby do souboru s názvem Service. cer.  
   
-2. Na serveru upravte Web. config tak, aby odrážel nový název certifikátu. To znamená, že změníte `findValue` atribut [ \<v serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md) elementu na plně kvalifikovaný název domény počítače.  
+2. Na serveru upravte Web. config tak, aby odrážel nový název certifikátu. To znamená, že změníte atribut `findValue` v elementu [\<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md) na plně kvalifikovaný název domény počítače.  
   
 3. Zkopírujte soubor Service. cer z adresáře služby do adresáře klienta v klientském počítači.  
   
-4. Na straně klienta spusťte `setup.bat client`. Při `setup.bat` spuštění`client` s argumentem se vytvoří klientský certifikát s názvem Client.com a exportuje se klientský certifikát do souboru s názvem Client. cer.  
+4. Na straně klienta spusťte `setup.bat client`. Spuštění `setup.bat` s argumentem `client` vytvoří klientský certifikát s názvem Client.com a vyexportuje klientský certifikát do souboru s názvem Client. cer.  
   
-5. V souboru `MetadataResolverClient` App. config v klientském počítači změňte hodnotu adresy koncového bodu MEX tak, aby odpovídala nové adrese vaší služby. To provedete tak, že nahradíte localhost názvem domény pro plně kvalifikovaný název domény serveru. Také změňte výskyt "localhost" v souboru metadataResolverClient.cs na nový název certifikátu služby (plně kvalifikovaný název domény serveru). Proveďte stejnou věc pro soubor App. config projektu SvcutilClient.  
+5. V souboru App. config `MetadataResolverClient` na klientském počítači změňte hodnotu adresy koncového bodu MEX tak, aby odpovídala nové adrese vaší služby. To provedete tak, že nahradíte localhost názvem domény pro plně kvalifikovaný název domény serveru. Také změňte výskyt "localhost" v souboru metadataResolverClient.cs na nový název certifikátu služby (plně kvalifikovaný název domény serveru). Proveďte stejnou věc pro soubor App. config projektu SvcutilClient.  
   
 6. Zkopírujte soubor Client. cer z adresáře klienta do adresáře služby na serveru.  
   
 7. Na straně klienta spusťte `ImportServiceCert.bat`. Tím se certifikát služby importuje ze souboru Service. cer do úložiště CurrentUser-TrustedPeople.  
   
-8. Na tomto serveru `ImportClientCert.bat`tento příkaz importuje klientský certifikát ze souboru Client. cer do úložiště LocalMachine-TrustedPeople.  
+8. Na serveru spusťte `ImportClientCert.bat`, naimportuje klientský certifikát ze souboru Client. cer do úložiště LocalMachine-TrustedPeople.  
   
 9. Na počítači služby Sestavte projekt služby v aplikaci Visual Studio a ve webovém prohlížeči vyberte stránku s usnadněním, abyste ověřili, že je spuštěná.  
   
@@ -182,6 +182,6 @@ ChannelFactory<ICalculator> cf = new ChannelFactory<ICalculator>(endpoint.Bindin
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Metadata\CustomMexEndpoint`  

@@ -1,5 +1,5 @@
 ---
-title: Ukázka Začínáme
+title: Ukázky Začínáme
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,14 +7,14 @@ dev_langs:
 helpviewer_keywords:
 - basic samples [WCF], getting started
 ms.assetid: 967a3d94-0261-49ff-b85a-20bb07f1af20
-ms.openlocfilehash: 5f5418da63b2bc5fc9b20f5c262890b7a06ce5dd
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 3282daff166a8fe56841a41bfe8bd9dd69f9d4c8
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989925"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716946"
 ---
-# <a name="getting-started-sample"></a>Ukázka Začínáme
+# <a name="getting-started-sample"></a>Ukázky Začínáme
 
 Ukázka Začínáme ukazuje, jak implementovat typickou službu a typický klient pomocí Windows Communication Foundation (WCF). Tato ukázka je základem pro všechny ostatní základní ukázkové technologie.
 
@@ -26,7 +26,7 @@ Ukázka Začínáme ukazuje, jak implementovat typickou službu a typický klien
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\GettingStarted\GettingStarted`
 
@@ -34,7 +34,7 @@ Služba popisuje operace, které provádí v kontraktu služby, který zveřejň
 
 Klient obsahuje definici kontraktu služby a proxy třídy pro přístup ke službě. Proxy kód se generuje z metadat služby pomocí nástroje pro nástroj pro [metadata ServiceModel (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).
 
-V [!INCLUDE[wv](../../../../includes/wv-md.md)]systému je služba hostovaná v aktivační službě Windows (WAS). V [!INCLUDE[wxp](../../../../includes/wxp-md.md)] systémech [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]a je hostovaný pomocí Internetová informační služba (IIS) a ASP.NET. Hostování služby ve službě IIS nebo služba mohla být aktivována automaticky při prvním otevření.
+V [!INCLUDE[wv](../../../../includes/wv-md.md)]je služba hostovaná v aktivační službě systému Windows (WAS). Na [!INCLUDE[wxp](../../../../includes/wxp-md.md)] a [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]je hostovaný službou Internetová informační služba (IIS) a ASP.NET. Hostování služby ve službě IIS nebo služba mohla být aktivována automaticky při prvním otevření.
 
 > [!NOTE]
 > Pokud byste chtěli začít s ukázkou, která hostuje službu v konzolové aplikaci namísto služby IIS, přečtěte si ukázku pro [sebe v samostatném hostiteli](../../../../docs/framework/wcf/samples/self-host.md) .
@@ -43,7 +43,7 @@ Služba a klient určují podrobnosti přístupu v nastavení konfiguračního s
 
 Služba konfiguruje chování za běhu k publikování metadat.
 
-Služba implementuje kontrakt definující způsob komunikace požadavek-odpověď. Kontrakt je definován `ICalculator` rozhraním, které zpřístupňuje matematické operace (sčítání, odčítání, násobení a dělení). Klient provede požadavky na určitou matematickou operaci a službu s výsledkem. Služba implementuje `ICalculator` kontrakt, který je definován v následujícím kódu.
+Služba implementuje kontrakt definující způsob komunikace požadavek-odpověď. Kontrakt je definován rozhraním `ICalculator`, které zpřístupňuje matematické operace (sčítání, odčítání, násobení a dělení). Klient provede požadavky na určitou matematickou operaci a službu s výsledkem. Služba implementuje kontrakt `ICalculator`, který je definován v následujícím kódu.
 
 ```vb
 ' Define a service contract.
@@ -140,11 +140,11 @@ Služba zpřístupňuje koncový bod pro komunikaci se službou, definovaný pom
 </services>
 ```
 
-Služba zpřístupňuje koncový bod na základní adrese poskytované službou IIS nebo hostitelem. Vazba je nakonfigurovaná se standardem <xref:System.ServiceModel.WSHttpBinding>, který poskytuje komunikaci HTTP a standardní protokoly webových služeb pro účely adresování a zabezpečení. Smlouva je `ICalculator` implementovaná službou.
+Služba zpřístupňuje koncový bod na základní adrese poskytované službou IIS nebo hostitelem. Vazba je nakonfigurovaná se standardním <xref:System.ServiceModel.WSHttpBinding>, která poskytuje komunikaci HTTP a standardní protokoly webových služeb pro účely adresování a zabezpečení. Smlouva je `ICalculator` implementovaná službou.
 
-Jak je nakonfigurováno, může být služba k `http://localhost/servicemodelsamples/service.svc` dispozici klientovi ve stejném počítači. Aby mohli klienti na vzdálených počítačích přistupovat ke službě, je třeba zadat plně kvalifikovaný název domény namísto localhost.
+Jak je nakonfigurováno, může být služba k dispozici na `http://localhost/servicemodelsamples/service.svc` klienta ve stejném počítači. Aby mohli klienti na vzdálených počítačích přistupovat ke službě, je třeba zadat plně kvalifikovaný název domény namísto localhost.
 
-Rozhraní ve výchozím nastavení nevystavuje metadata. V takovém případě služba zapíná <xref:System.ServiceModel.Description.ServiceMetadataBehavior> a zpřístupňuje koncový bod výměny metadat (MEX) na adrese. `http://localhost/servicemodelsamples/service.svc/mex` Následující konfigurace to demonstruje.
+Rozhraní ve výchozím nastavení nevystavuje metadata. V takovém případě služba zapíná <xref:System.ServiceModel.Description.ServiceMetadataBehavior> a zpřístupňuje koncový bod výměny metadat (MEX) v `http://localhost/servicemodelsamples/service.svc/mex`. Následující konfigurace to demonstruje.
 
 ```xaml
 <system.serviceModel>
@@ -279,11 +279,11 @@ Ukázka Začínáme zobrazuje standardní způsob, jak vytvořit službu a klien
 
 1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
 
-2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
 
 3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
 
 ## <a name="see-also"></a>Viz také:
 
 - [Postupy: Hostování služby WCF ve spravované aplikaci](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md)
-- [Postupy: Hostování služby WCF ve službě IIS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)
+- [Postupy: Hostování služby WCF v IIS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)

@@ -2,22 +2,22 @@
 title: Používání standardních koncových bodů
 ms.date: 03/30/2017
 ms.assetid: ecd6a62f-9619-4778-a497-6f888087a9ea
-ms.openlocfilehash: a2af1ae793166d1ed3742782b911ded30d0b9d35
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2b210bfe683669aeebf54a1701f07d492e6abdb4
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662394"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715349"
 ---
 # <a name="usage-of-standard-endpoints"></a>Používání standardních koncových bodů
 
-Tato ukázka demonstruje použití standardních koncových bodů v konfiguračních souborech služby. Standardní koncový bod umožňuje uživatelům zjednodušit definic koncových bodů s použitím jedné vlastnosti k popisu adresa, vazba a kontrakt kombinaci s další vlastnosti přidružené k němu. Tato ukázka předvádí, jak definovat a implementovat vlastní standardní koncový bod a tom, jak definovat konkrétní vlastnosti v koncovém bodě.
+Tato ukázka předvádí, jak používat standardní koncové body v konfiguračních souborech služby. Standardní koncový bod umožňuje uživateli zjednodušit definice koncových bodů pomocí jedné vlastnosti pro popis kombinace adresy, vazby a kontraktu s dalšími vlastnostmi, které jsou k ní přidružené. Tato ukázka předvádí, jak definovat a implementovat vlastní koncový bod Standard a jak definovat konkrétní vlastnosti v koncovém bodu.
 
-## <a name="sample-details"></a>Ukázka podrobnosti
+## <a name="sample-details"></a>Podrobnosti ukázky
 
-Koncové body služby je možné zadat tak poskytuje tři parametry: adresa, vazba a kontrakt. Další parametry, které může být zadán zahrnují konfiguraci chování, záhlaví, identifikátor URI příposlechu a tak dále. V některých případech, některé nebo všechny adresy vazby a kontrakty mají hodnoty, které nelze změnit. Z tohoto důvodu je možné použít standardní koncové body. Mezi příklady těchto koncových bodů patří koncové body metadat systému exchange a zjišťování koncových bodů. Standardní koncové body také zlepšit použitelnost tím, že konfigurace koncových bodů služby bez nutnosti poskytnout informace, které pevné nebo vytvořte svoje vlastní standardní koncové body, například použitelnosti zadáním přiměřené sadu výchozí hodnoty a snížit tak množství podrobností konfigurační soubory.
+Koncové body služby je možné zadat zadáním tří parametrů: adresa, vazba a kontrakt. Mezi další parametry, které lze zadat, patří konfigurace chování, hlavičky, identifikátor URI naslouchání atd. V některých případech mají některé nebo všechny adresy, vazby a kontrakty hodnoty, které se nedají změnit. Z tohoto důvodu je možné použít standardní koncové body. Mezi příklady takových koncových bodů patří koncové body výměny metadat a koncové body zjišťování. Standardní koncové body také zlepšují použitelnost tím, že umožňují konfiguraci koncových bodů služby bez nutnosti poskytovat informace o pevné povaze nebo vytvářet vlastní standardní koncové body, například pro zlepšení použitelnosti poskytnutím přiměřené sady výchozích hodnoty, čímž se sníží úroveň podrobností konfiguračních souborů.
 
-Tento příklad se skládá ze dvou projektů: služba, která definuje dva standardní koncové body a klienta, který komunikuje se službou. Způsob, jakým jsou definovány standardních koncových bodů služby v konfiguračním souboru se zobrazuje v následujícím příkladu.
+Tato ukázka se skládá ze dvou projektů: služby, která definuje dva standardní koncové body a klienta, který komunikuje se službou. Způsob definování standardních koncových bodů pro službu v konfiguračním souboru je znázorněno v následujícím příkladu.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -50,9 +50,9 @@ Tento příklad se skládá ze dvou projektů: služba, která definuje dva stan
 </configuration>
 ```
 
-První koncový bod definovaný pro službu je druhu `customEndpoint`, jejichž definice si můžete prohlédnout ve `<standardEndpoints>` oddílu, ve kterém vlastnost `property` přiřazena hodnota `true`. To platí koncový bod přizpůsobit pomocí nové vlastnosti. Druhý koncový bod odpovídá koncový bod metadat, ve kterém jsou pevné hodnoty adresa, vazba a kontrakt.
+Prvním koncovým bodem definovaným pro službu je `customEndpoint`, jehož definici lze zobrazit v části `<standardEndpoints>`, ve které je `property` vlastnosti přiřazena hodnota `true`. Jedná se o případ přizpůsobený koncovému bodu s novou vlastností. Druhý koncový bod odpovídá koncovému bodu metadat, ve kterém jsou opraveny hodnoty adresy, vazby a kontraktu.
 
-K definování elementu koncový bod standard, která je odvozena z třídy `StandardEndpointElement` musí být vytvořeny. V případě této ukázce `CustomEndpointElement` třída je definována, jak je znázorněno v následujícím příkladu.
+Pro definování elementu standardního koncového bodu musí být vytvořena třída, která je odvozena od `StandardEndpointElement`. V případě této ukázky byla definována třída `CustomEndpointElement`, jak je znázorněno v následujícím příkladu.
 
 ```csharp
 public class CustomEndpointElement : StandardEndpointElement
@@ -105,7 +105,7 @@ public class CustomEndpointElement : StandardEndpointElement
 }
 ```
 
-V `CreateServiceEndpoint` funkce, `CustomEndpoint` je vytvořen objekt. Jeho definice můžete vidět v následujícím příkladu:
+Ve funkci `CreateServiceEndpoint` je vytvořen objekt `CustomEndpoint`. Jeho definice je uvedena v následujícím příkladu:
 
 ```csharp
 public class CustomEndpoint : ServiceEndpoint
@@ -135,38 +135,38 @@ public class CustomEndpoint : ServiceEndpoint
 }
 ```
 
- K provedení komunikace mezi klienta a služby, se vytvoří odkaz na službu klienta ke službě. Při ukázku je sestavení a spuštění, spustí služba a klient komunikuje s ním. Všimněte si, že by měl pokaždé, když se některé změny ve službě aktualizovat odkaz na službu.
+ K provedení komunikace mezi službou a klientem se v klientovi vytvoří odkaz na službu. Při sestavení a spuštění ukázky se služba spustí a klient s ním komunikuje. Všimněte si, že odkaz na službu by se měl aktualizovat při každé změně ve službě.
 
-#### <a name="to-use-this-sample"></a>Pro fungování této ukázky
+#### <a name="to-use-this-sample"></a>Použití této ukázky
 
-1. Pomocí sady Visual Studio 2012, otevřete soubor StandardEndpoints.sln.
+1. Pomocí sady Visual Studio 2012 otevřete soubor oddílu StandardEndpoints. sln.
 
-2. Povolte více projektů se spustí.
+2. Povolit spuštění více projektů.
 
-    1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na řešení standardních koncových bodů a potom vyberte **vlastnosti**.
+    1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na standardní řešení koncových bodů a pak vyberte **vlastnosti**.
 
-    2. V **společné vlastnosti**vyberte **spouštěný projekt**a potom klikněte na tlačítko **více projektů po spuštění**.
+    2. V nabídce **běžné vlastnosti**vyberte možnost **projekt po spuštění**a pak klikněte na **více projektů po spuštění**.
 
-    3. Přesunout projekt služby na začátku seznamu, s **akce** nastavena na **Start**.
+    3. Přesuňte projekt služby na začátek seznamu a **akci** nastavte na **Spustit**.
 
-    4. Přesunout projektu klienta po projekt služby také s **akce** nastavena na **Start**.
+    4. Přesuňte klientský projekt po projektu služby a **akci** nastavte na **Spustit**.
 
-         Toto nastavení určuje, že klientský projekt je proveden po projekt služby.
+         To určuje, že projekt klienta je proveden po projektu služby.
 
-3. Abyste mohli spustit řešení, stiskněte klávesu F5.
+3. Pokud chcete řešení spustit, stiskněte klávesu F5.
 
 > [!NOTE]
-> Pokud tyto kroky nefungují, ujistěte se, že vaše prostředí je správně nastavený, pomocí následujících kroků:
+> Pokud tyto kroky nefungují, ujistěte se, že máte správně nastavené prostředí, a to pomocí následujících kroků:
 >
-> 1. Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](one-time-setup-procedure-for-the-wcf-samples.md).
-> 2. Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](building-the-samples.md).
-> 3. Spusťte ukázku v jedné nebo více konfigurací počítače, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](running-the-samples.md).
+> 1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](one-time-setup-procedure-for-the-wcf-samples.md).
+> 2. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).
+> 3. Chcete-li spustit ukázku v jedné nebo více konfiguracích počítačů, postupujte podle pokynů v [části spuštění ukázek Windows Communication Foundation](running-the-samples.md).
 
 > [!IMPORTANT]
-> Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\StandardEndpoints`

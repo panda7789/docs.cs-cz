@@ -2,12 +2,12 @@
 title: Základní vazby u zabezpečení přenosu
 ms.date: 03/30/2017
 ms.assetid: f49b1de6-0254-4362-8ef2-fccd8ff9688b
-ms.openlocfilehash: 5f3afdf4648f9e3f9fbef7c2aad39da4dfc67a2c
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 6c7426de0a2d2b0001442960819dd385f7b9ea9e
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70990172"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716071"
 ---
 # <a name="basicbinding-with-transport-security"></a>Základní vazby u zabezpečení přenosu
 
@@ -18,7 +18,7 @@ Tato ukázka demonstruje použití zabezpečení přenosu SSL se základní vazb
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Basic\TransportSecurity`
 
@@ -56,7 +56,7 @@ Kód programu v ukázce je stejný jako u služby [Začínáme](../../../../docs
 </system.serviceModel>
 ```
 
-Vzhledem k tomu, že certifikát použitý v této ukázce je testovací certifikát vytvořený pomocí nástroje MakeCert. exe, zobrazí se výstraha zabezpečení při pokusu o přístup k HTTPS: adresa v prohlížeči https://localhost/servicemodelsamples/service.svc, jako je například. Aby mohl klient služby Windows Communication Foundation (WCF) pracovat s testovacím certifikátem, je do klienta přidán nějaký další kód, který výstrahu zabezpečení potlačí. Tento kód a doprovodná třída nejsou nutné při použití skutečných certifikátů.
+Vzhledem k tomu, že certifikát použitý v této ukázce je testovací certifikát vytvořený pomocí nástroje MakeCert. exe, zobrazí se výstraha zabezpečení při pokusu o přístup k HTTPS: adresa v prohlížeči, jako je například https://localhost/servicemodelsamples/service.svc. Aby mohl klient služby Windows Communication Foundation (WCF) pracovat s testovacím certifikátem, je do klienta přidán nějaký další kód, který výstrahu zabezpečení potlačí. Tento kód a doprovodná třída nejsou nutné při použití skutečných certifikátů.
 
 ```csharp
 // This code is required only for test certificates such as those
@@ -87,6 +87,6 @@ Press <ENTER> to terminate client.
 
 3. Ujistěte se, že jste provedli [pokyny k instalaci certifikátu serveru Internetová informační služba (IIS)](../../../../docs/framework/wcf/samples/iis-server-certificate-installation-instructions.md).
 
-4. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+4. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
 
 5. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).

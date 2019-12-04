@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 6fa7d044-ae12-4c54-b8ee-50915607a565
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 15d6262fb5e7dfb99759f0f85c9a197157713300
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: 4629139a7c89c0808e97bbe64b7d02441aec1dea
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204945"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74714487"
 ---
 # <a name="net-framework-support-for-windows-store-apps-and-windows-runtime"></a>Podpora pro aplikace pro web Windows Store a prostředí Windows Runtime v rozhraní .NET Framework
 
@@ -30,9 +30,9 @@ ms.locfileid: "74204945"
 
 Toto téma popisuje podporu, kterou .NET Framework poskytuje pro všechny tři kategorie, a popisuje scénáře pro prostředí Windows Runtime součásti. První část obsahuje základní informace o vztahu mezi .NET Framework a prostředí Windows Runtime a vysvětluje některé oddities, se kterými se můžete setkat v systému help a integrovaném vývojovém prostředí (IDE). [Druhá část](#WindowsRuntimeComponents) popisuje scénáře pro vývoj komponent prostředí Windows Runtime.
 
-## <a name="the-basics"></a>Základní informace
+## <a name="the-basics"></a>Základy
 
-.NET Framework podporuje tři vývojové scénáře, které jsou uvedeny dříve, poskytováním [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]a podporou samotného prostředí Windows Runtime.
+.NET Framework podporuje tři vývojové scénáře uvedené výše, protože poskytuje .NET pro Windows 8. x Store apps a podporuje prostředí Windows Runtime sebe sama.
 
 - [Obory názvů .NET Framework a prostředí Windows Runtime](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)#net-framework-and-windows-runtime-namespaces) poskytují zjednodušené zobrazení knihoven tříd .NET Framework a zahrnují pouze typy a členy, které můžete použít k vytvoření aplikací pro Store systému Windows 8. x a prostředí Windows Runtime komponent.
 
@@ -42,7 +42,7 @@ Toto téma popisuje podporu, kterou .NET Framework poskytuje pro všechny tři k
 
   - Také se odeberou funkce, které jednoduše zabalí rozhraní API operačního systému, protože prostředí Windows Runtime je snadné volat ze spravovaného kódu.
 
-  Další informace o [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]najdete v tématu [Přehled rozhraní .NET pro aplikace pro Windows Store](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)). Informace o procesu výběru rozhraní API najdete v tématu věnovaném záznamu .NET [pro aplikace stylu Metro](https://devblogs.microsoft.com/dotnet/net-for-metro-style-apps/) na blogu .NET.
+  Další informace o rozhraní .NET pro aplikace Store pro Windows 8. x najdete v tématu [Přehled rozhraní .NET pro aplikace pro Windows Store](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)). Informace o procesu výběru rozhraní API najdete v tématu věnovaném záznamu .NET [pro aplikace stylu Metro](https://devblogs.microsoft.com/dotnet/net-for-metro-style-apps/) na blogu .NET.
 
 - [Prostředí Windows Runtime](/uwp/api/) poskytuje prvky uživatelského rozhraní pro vytváření aplikací pro Windows 8. x Store a poskytuje přístup k funkcím operačního systému. Podobně jako .NET Framework má prostředí Windows Runtime metadata, která umožňují kompilátorům C# a Visual Basic použít prostředí Windows Runtime způsobem, který používají knihovny tříd .NET Framework. .NET Framework usnadňuje používání prostředí Windows Runtime skrytím některých rozdílů:
 

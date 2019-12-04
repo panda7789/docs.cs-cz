@@ -2,12 +2,12 @@
 title: 'Přenos: UDP'
 ms.date: 03/30/2017
 ms.assetid: 738705de-ad3e-40e0-b363-90305bddb140
-ms.openlocfilehash: fab15b1d4dab61de37f4b609a6e43c5f4a32fb75
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: f7dea8a95490377226acd09a3463b102d42834d6
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74138699"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74711928"
 ---
 # <a name="transport-udp"></a>Přenos: UDP
 Ukázka přenosu UDP demonstruje, jak implementovat jednosměrovou vysílání UDP a vícesměrové vysílání jako vlastní přenos Windows Communication Foundation (WCF). Ukázka popisuje doporučený postup pro vytvoření vlastního přenosu ve službě WCF pomocí architektury kanálů a následujících osvědčených postupů pro WCF. Postup vytvoření vlastního přenosu je následující:  
@@ -81,7 +81,7 @@ Ukázka přenosu UDP demonstruje, jak implementovat jednosměrovou vysílání U
  V této ukázce je implementace továrny obsažena v UdpChannelFactory.cs a implementace naslouchacího procesu je obsažena v UdpChannelListener.cs. Implementace <xref:System.ServiceModel.Channels.IChannel> jsou v UdpOutputChannel.cs a UdpInputChannel.cs.  
   
 ### <a name="the-udp-channel-factory"></a>Objekt pro vytváření kanálů UDP  
- `UdpChannelFactory` jsou odvozeny z <xref:System.ServiceModel.Channels.ChannelFactoryBase>. Ukázka Přepisuje <xref:System.ServiceModel.Channels.ChannelFactoryBase.GetProperty%2A> k poskytnutí přístupu k verzi zprávy kodéru zpráv. Ukázka také přepisuje <xref:System.ServiceModel.Channels.ChannelFactoryBase.OnClose%2A>, takže můžeme při přechodu na Stavový počítač vytrhnout naši instanci <xref:System.ServiceModel.Channels.BufferManager>.  
+ Třída `UdpChannelFactory` se odvozuje od třídy <xref:System.ServiceModel.Channels.ChannelFactoryBase>. Ukázka Přepisuje <xref:System.ServiceModel.Channels.ChannelFactoryBase.GetProperty%2A> k poskytnutí přístupu k verzi zprávy kodéru zpráv. Ukázka také přepisuje <xref:System.ServiceModel.Channels.ChannelFactoryBase.OnClose%2A>, takže můžeme při přechodu na Stavový počítač vytrhnout naši instanci <xref:System.ServiceModel.Channels.BufferManager>.  
   
 #### <a name="the-udp-output-channel"></a>Výstupní kanál UDP  
  `UdpOutputChannel` implementuje <xref:System.ServiceModel.Channels.IOutputChannel>. Konstruktor ověřuje argumenty a vytvoří cílový objekt <xref:System.Net.EndPoint> objektu na základě <xref:System.ServiceModel.EndpointAddress>, který je předaný.  
@@ -477,6 +477,6 @@ svcutil http://localhost:8000/udpsample/ /reference:UdpTransport\bin\UdpTranspor
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Transport\Udp`

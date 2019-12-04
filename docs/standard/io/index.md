@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 4f4a33a9-66b7-4cd7-a285-4ad3e4276cd2
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 889271ca41fb84b44757adfffc61ffbfbc0a03a8
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: d59ff7f66076fc56ebb27841105fad07a7c7fee1
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204799"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716272"
 ---
 # <a name="file-and-stream-io"></a>I/O souborů a proudů
 
@@ -143,11 +143,11 @@ Viz [izolované úložiště](isolated-storage.md).
 
 ## <a name="io-operations-in-windows-store-apps"></a>Vstupně-výstupní operace v aplikacích pro Windows Store
 
-[!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] obsahuje mnoho typů pro čtení a zápis do datových proudů; Tato sada ale neobsahuje všechny .NET Framework vstupně-výstupních typech.
+Aplikace pro Store .NET pro Windows 8. x obsahují mnoho typů pro čtení a zápis do datových proudů. Tato sada ale neobsahuje všechny .NET Framework vstupně-výstupních typech.
 
 Některé důležité rozdíly při používání vstupně-výstupních operací v aplikacích pro Store ve Windows 8. x:
 
-- Typy, které se konkrétně týkají operací se soubory, například <xref:System.IO.File>, <xref:System.IO.FileInfo>, <xref:System.IO.Directory> a <xref:System.IO.DirectoryInfo>, nejsou součástí [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]. Místo toho použijte typy v oboru názvů <xref:Windows.Storage?displayProperty=nameWithType> prostředí Windows Runtime, například <xref:Windows.Storage.StorageFile> a <xref:Windows.Storage.StorageFolder>.
+- Typy, které se konkrétně týkají operací se soubory, například <xref:System.IO.File>, <xref:System.IO.FileInfo>, <xref:System.IO.Directory> a <xref:System.IO.DirectoryInfo>, nejsou součástí rozhraní .NET pro aplikace Store pro Windows 8. x. Místo toho použijte typy v oboru názvů <xref:Windows.Storage?displayProperty=nameWithType> prostředí Windows Runtime, například <xref:Windows.Storage.StorageFile> a <xref:Windows.Storage.StorageFolder>.
 
 - Izolované úložiště není k dispozici; místo toho použijte [data aplikací](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)).
 

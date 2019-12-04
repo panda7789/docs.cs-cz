@@ -2,12 +2,12 @@
 title: Prvek ws2007FederationHttpBinding
 ms.date: 03/30/2017
 ms.assetid: 91c1b477-a96e-4bf5-9330-5e9312113371
-ms.openlocfilehash: ad56665b5b6648fb93a9f31f18167a964b4cba92
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 2f924bdcbf9082d9d43e02d82c9d00c32ebcaacf
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834659"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74714973"
 ---
 # <a name="ws-2007-federation-http-binding"></a>Prvek ws2007FederationHttpBinding
 
@@ -37,7 +37,7 @@ Ukázka zpřístupní `ICalculator` kontraktu pomocí elementu `ws2007Federation
 </bindings>
 ```
 
-V [> zabezpečení\<](../../configure-apps/file-schema/wcf/security-element-of-ws2007federationhttpbinding.md)určuje hodnota `security`, který režim zabezpečení má být použit. V této ukázce se používá `message` zabezpečení. to je důvod, proč je [>\<zpráva](../../configure-apps/file-schema/wcf/message-element-of-ws2007federationhttpbinding.md) zadaná uvnitř [\<zabezpečení >](../../configure-apps/file-schema/wcf/security-element-of-ws2007federationhttpbinding.md). [> Element vystavitele\<](../../configure-apps/file-schema/wcf/issuer.md) v [\<zprávě >](../../configure-apps/file-schema/wcf/message-element-of-ws2007federationhttpbinding.md) Určuje adresu a vazbu pro STS, která vydává token zabezpečení pro klienta, aby se klient mohl ověřit pro `ICalculator` službu.
+V [> zabezpečení\<](../../configure-apps/file-schema/wcf/security-element-of-ws2007federationhttpbinding.md)určuje hodnota `security`, který režim zabezpečení má být použit. V této ukázce se používá `message` zabezpečení. to je důvod, proč je [\<zpráva](../../configure-apps/file-schema/wcf/message-element-of-ws2007federationhttpbinding.md) zadaná uvnitř [\<zabezpečení >](../../configure-apps/file-schema/wcf/security-element-of-ws2007federationhttpbinding.md). [> Element vystavitele\<](../../configure-apps/file-schema/wcf/issuer.md) v [\<zprávě >](../../configure-apps/file-schema/wcf/message-element-of-ws2007federationhttpbinding.md) Určuje adresu a vazbu pro STS, která vydává token zabezpečení pro klienta, aby se klient mohl ověřit pro `ICalculator` službu.
   
 Konfigurace této vazby ve službě je uvedena v následujícím kódu:
 
@@ -64,7 +64,7 @@ Konfigurace této vazby ve službě je uvedena v následujícím kódu:
 </bindings>
 ```
 
-V [> zabezpečení\<](../../configure-apps/file-schema/wcf/security-element-of-ws2007federationhttpbinding.md)určuje hodnota `security`, který režim zabezpečení má být použit. V této ukázce se používá `message` zabezpečení. to je důvod, proč je [>\<zpráva](../../configure-apps/file-schema/wcf/message-element-of-ws2007federationhttpbinding.md) zadaná uvnitř [\<zabezpečení >](../../configure-apps/file-schema/wcf/security-element-of-ws2007federationhttpbinding.md). [\<issuerMetadata >](../../configure-apps/file-schema/wcf/issuermetadata.md) elementu `ws2007FederationHttpBinding` uvnitř [\<zprávy >](../../configure-apps/file-schema/wcf/message-element-of-ws2007federationhttpbinding.md) Určuje adresu a identitu koncového bodu, který lze použít k načtení metadat pro službu STS.
+V [> zabezpečení\<](../../configure-apps/file-schema/wcf/security-element-of-ws2007federationhttpbinding.md)určuje hodnota `security`, který režim zabezpečení má být použit. V této ukázce se používá `message` zabezpečení. to je důvod, proč je [\<zpráva](../../configure-apps/file-schema/wcf/message-element-of-ws2007federationhttpbinding.md) zadaná uvnitř [\<zabezpečení >](../../configure-apps/file-schema/wcf/security-element-of-ws2007federationhttpbinding.md). [\<issuerMetadata >](../../configure-apps/file-schema/wcf/issuermetadata.md) elementu `ws2007FederationHttpBinding` uvnitř [\<zprávy >](../../configure-apps/file-schema/wcf/message-element-of-ws2007federationhttpbinding.md) Určuje adresu a identitu koncového bodu, který lze použít k načtení metadat pro službu STS.
 
 Chování služby se zobrazí v následujícím kódu:
 
@@ -126,6 +126,6 @@ Soubor *Setup. bat* , který je součástí této ukázky, vám umožní nakonfi
 > 
 > `<InstallDrive>:\WF_WCF_Samples`
 > 
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři:
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři:
 > 
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\WS\WS2007FederationHttp`

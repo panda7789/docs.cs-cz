@@ -2,22 +2,22 @@
 title: Ukázka třídy XMLSerializer
 ms.date: 03/30/2017
 ms.assetid: 7d134453-9a35-4202-ba77-9ca3a65babc3
-ms.openlocfilehash: ae8e4f7c9be427ec5107318443816c8ade6c5085
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 07211ff61091107d469a482cc60783b30621ee21
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044475"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74714508"
 ---
 # <a name="xmlserializer-sample"></a>Ukázka třídy XMLSerializer
-Tato ukázka demonstruje způsob serializace a deserializace typů, které <xref:System.Xml.Serialization.XmlSerializer>jsou kompatibilní s rozhraním. Výchozím formátovacím modulem Windows Communication Foundation (WCF) <xref:System.Runtime.Serialization.DataContractSerializer> je třída. Třídu lze použít k serializaci a deserializaci typů, <xref:System.Runtime.Serialization.DataContractSerializer> Pokud třídu nelze použít. <xref:System.Xml.Serialization.XmlSerializer> Často se jedná o případ, kdy je vyžadována přesná kontrola nad XML – například pokud datový kus musí být atribut XML, nikoli XML element. Při vytváření klientů <xref:System.Xml.Serialization.XmlSerializer> pro jiné služby než WCF se taky často automaticky zvolí.  
+Tato ukázka demonstruje způsob serializace a deserializace typů, které jsou kompatibilní s <xref:System.Xml.Serialization.XmlSerializer>. Výchozím formátovacím modulem Windows Communication Foundation (WCF) je třída <xref:System.Runtime.Serialization.DataContractSerializer>. Třídu <xref:System.Xml.Serialization.XmlSerializer> lze použít k serializaci a deserializaci typů, pokud nelze použít třídu <xref:System.Runtime.Serialization.DataContractSerializer>. Často se jedná o případ, kdy je vyžadována přesná kontrola nad XML – například pokud datový kus musí být atribut XML, nikoli XML element. Při vytváření klientů pro služby jiného typu než WCF se taky často automaticky zvolí <xref:System.Xml.Serialization.XmlSerializer>.  
   
  V této ukázce je klient Konzolová aplikace (. exe) a služba je hostována službou Internetová informační služba (IIS).  
   
 > [!NOTE]
 > Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
- <xref:System.ServiceModel.ServiceContractAttribute> A<xref:System.ServiceModel.XmlSerializerFormatAttribute> musí se použít na rozhraní, jak je znázorněno v následujícím ukázkovém kódu.  
+ <xref:System.ServiceModel.ServiceContractAttribute> a <xref:System.ServiceModel.XmlSerializerFormatAttribute> je nutné použít na rozhraní, jak je znázorněno v následujícím ukázkovém kódu.  
   
 ```csharp  
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples"), XmlSerializerFormat]  
@@ -34,7 +34,7 @@ public interface IXmlSerializerCalculator
 }  
 ```  
   
- Veřejné členy `ComplexNumber` třídy jsou serializovány pomocí <xref:System.Xml.Serialization.XmlSerializer> atributů XML. <xref:System.Runtime.Serialization.DataContractSerializer> Nelze použít k vytvoření tohoto typu instance XML.  
+ Veřejné členy třídy `ComplexNumber` jsou serializovány <xref:System.Xml.Serialization.XmlSerializer> jako atributy XML. <xref:System.Runtime.Serialization.DataContractSerializer> nelze použít k vytvoření tohoto typu instance XML.  
   
 ```csharp  
 public class ComplexNumber  
@@ -70,7 +70,7 @@ public class ComplexNumber
 }  
 ```  
   
- Implementace služby vypočítá a vrátí příslušný výsledek – přijímá a vrací hodnoty `ComplexNumber` typu.  
+ Implementace služby vypočítá a vrátí příslušný výsledek – přijímá a vrací hodnoty typu `ComplexNumber`.  
   
 ```csharp  
 public class XmlSerializerCalculatorService : IXmlSerializerCalculator  
@@ -84,7 +84,7 @@ public class XmlSerializerCalculatorService : IXmlSerializerCalculator
 }  
 ```  
   
- Implementace klienta také používá složitá čísla. Kontrakt služby i datové typy jsou definovány ve zdrojovém souboru generatedClient.cs, který byl vygenerován [nástrojem ServiceModel Metadata Utility (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) z metadat služby. Svcutil. exe může zjistit, že kontrakt není serializovatelný pomocí <xref:System.Runtime.Serialization.DataContractSerializer> a v tomto případě se vrátí k `XmlSerializable` vygenerování typů. Pokud chcete vynutit použití <xref:System.Xml.Serialization.XmlSerializer>, můžete předat možnost příkazu/Serializer: XmlSerializer (použít XmlSerializer) do nástroje Svcutil. exe.  
+ Implementace klienta také používá složitá čísla. Kontrakt služby i datové typy jsou definovány ve zdrojovém souboru generatedClient.cs, který byl vygenerován [nástrojem ServiceModel Metadata Utility (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) z metadat služby. Svcutil. exe může zjistit, že se kontrakt neserializovat <xref:System.Runtime.Serialization.DataContractSerializer> a v tomto případě se vrátí k vygenerování `XmlSerializable` typů. Pokud chcete vynutit použití <xref:System.Xml.Serialization.XmlSerializer>, můžete pro nástroj Svcutil. exe předat možnost příkazového řádku/Serializer: XmlSerializer (použít XmlSerializer).  
   
 ```csharp  
 // Create a client.  
@@ -121,7 +121,7 @@ Press <ENTER> to terminate client.
   
 1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
 3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
@@ -130,6 +130,6 @@ Press <ENTER> to terminate client.
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Client\Interop\XmlSerializer`  

@@ -2,21 +2,21 @@
 title: Korelace dotazů zprávy LINQ
 ms.date: 03/30/2017
 ms.assetid: b746872e-57b1-4514-b337-53398a0e0deb
-ms.openlocfilehash: 202d65914d32245952f308d3115ec93231f95f15
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: a4b0ed058cfe8d3d487342c9feefdf1b1efe07c8
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989328"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715589"
 ---
 # <a name="linq-message-query-correlation"></a>Korelace dotazů zprávy LINQ
-Tato ukázka předvádí, jak provést korelaci založenou na obsahu <xref:System.ServiceModel.Dispatcher.MessageQuery> pomocí vlastní implementace na rozdíl od systému poskytnutého <xref:System.ServiceModel.XPathMessageQuery>systémem.  
+Tato ukázka předvádí, jak provést korelaci založenou na obsahu pomocí vlastní implementace <xref:System.ServiceModel.Dispatcher.MessageQuery>, a to na rozdíl od <xref:System.ServiceModel.XPathMessageQuery>poskytovaných systémem.  
   
 ## <a name="demonstrates"></a>Demonstruje  
  Vlastní <xref:System.ServiceModel.Dispatcher.MessageQuery>, korelace na základě obsahu.  
   
 ## <a name="discussion"></a>Účely  
- Tento příklad ukazuje, jak lze z <xref:System.ServiceModel.Dispatcher.MessageQuery> základní třídy roztáhnout pro účely korelace. Vlastní implementace `LinqMessageQuery`umožňuje uživatelům poskytnout XName k vyhledání ve zprávě pomocí XLinq. Data načtená dotazem slouží k vytvoření korelačního klíče pro odeslání zpráv do příslušné instance pracovního postupu.  
+ Tento příklad ukazuje, jak lze od <xref:System.ServiceModel.Dispatcher.MessageQuery> základní třídy pro účely korelace roztáhnout. Vlastní implementace, `LinqMessageQuery`, umožňuje uživatelům poskytnout XName k hledání ve zprávě pomocí XLinq. Data načtená dotazem slouží k vytvoření korelačního klíče pro odeslání zpráv do příslušné instance pracovního postupu.  
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
@@ -39,6 +39,6 @@ Tato ukázka předvádí, jak provést korelaci založenou na obsahu <xref:Syste
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Services\LinqMessageQueryCorrelation`

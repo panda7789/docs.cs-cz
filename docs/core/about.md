@@ -2,12 +2,12 @@
 title: O platformě .NET Core
 description: Přečtěte si o .NET Core.
 ms.date: 09/17/2019
-ms.openlocfilehash: 4fe16475e18eb88e88fb33d30508f9ef5c9f2cd5
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: b3cdc8d4aeaf85765b51543069a5f279e84f8623
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552245"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74711208"
 ---
 # <a name="about-net-core"></a>O platformě .NET Core
 
@@ -40,7 +40,7 @@ Rozhraní .NET Core zpřístupňuje rozhraní API pro mnoho scénářů, z nich�
 - Kolekce, například <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> a <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType>.
 - Typy nástrojů, například <xref:System.Net.Http.HttpClient?displayProperty=nameWithType>a <xref:System.IO.FileStream?displayProperty=nameWithType>.
 - Datové typy, například <xref:System.Data.DataSet?displayProperty=nameWithType>a [negenerickými](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/).
-- Vysoce výkonné typy, například <xref:System.Numerics.Vector?displayProperty=nameWithType> a [kanály](https://devblogs.microsoft.com/dotnet/system-io-pipelines-high-performance-io-in-net/).
+- Vysoce výkonné typy, například <xref:System.Numerics.Vector?displayProperty=nameWithType> a [kanály](../standard/io/pipelines.md).
 
 .NET Core poskytuje kompatibilitu s rozhraními API .NET Framework a mono implementací specifikace [.NET Standard](../standard/net-standard.md) .
 

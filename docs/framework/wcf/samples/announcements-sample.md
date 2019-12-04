@@ -2,20 +2,20 @@
 title: Ukázka oznámení
 ms.date: 03/30/2017
 ms.assetid: 954a75e4-9a97-41d6-94fc-43765d4205a9
-ms.openlocfilehash: 1acf51ebe36872424be1e0fdda65a7d18aa737f2
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 57b61dbd82338aafd248285c9cb11ecdf58d25bb
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045799"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716153"
 ---
 # <a name="announcements-sample"></a>Ukázka oznámení
 
 V této ukázce se dozvíte, jak používat funkci oznámení funkce zjišťování. Oznámení umožňují službám posílat zprávy oznámení, které obsahují metadata o službě. Ve výchozím nastavení se při spuštění služby pošle oznámení o signálu Hello a pošle se oznámení bye při ukončení služby. Tato oznámení můžou být vícesměrové vysílání nebo se můžou poslat Point-to-Point. Tato ukázka se skládá ze dvou projektů služby a klienta.
 
-## <a name="service"></a>Služba
+## <a name="service"></a>Service
 
-Tento projekt obsahuje službu kalkulačky s místním hostováním. `Main` V metodě se vytvoří hostitel služby a do něj se přidá koncový bod služby. Dále se vytvoří <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> . Chcete-li povolit oznámení, je nutné do <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior>přidat koncový bod oznámení. V tomto případě se jako koncový bod oznámení přidá standardní koncový bod pomocí vícesměrového vysílání UDP. Vysílá oznámení přes dobře známou adresu UDP.
+Tento projekt obsahuje službu kalkulačky s místním hostováním. V metodě `Main` se vytvoří hostitel služby a do něj se přidá koncový bod služby. V dalším kroku se vytvoří <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior>. Aby bylo možné povolit oznámení, musí být do <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior>přidán koncový bod oznámení. V tomto případě se jako koncový bod oznámení přidá standardní koncový bod pomocí vícesměrového vysílání UDP. Vysílá oznámení přes dobře známou adresu UDP.
 
 ```csharp
 Uri baseAddress = new Uri("http://localhost:8000/" + Guid.NewGuid().ToString());
@@ -51,7 +51,7 @@ announcementService.OnlineAnnouncementReceived += OnOnlineEvent;
 announcementService.OfflineAnnouncementReceived += OnOfflineEvent;
 ```
 
-Metody `OnOnlineEvent` a`OnOfflineEvent` zpracovávají zprávy o oznámeních Hello a bye v uvedeném pořadí.
+Metody `OnOnlineEvent` a `OnOfflineEvent` zpracovávají zprávy o oznámeních Hello a bye v uvedeném pořadí.
 
 ```csharp
 static void OnOnlineEvent(object sender, AnnouncementEventArgs e)
@@ -86,6 +86,6 @@ static void OnOfflineEvent(object sender, AnnouncementEventArgs e)
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Discovery\Announcements`

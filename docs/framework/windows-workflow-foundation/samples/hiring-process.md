@@ -2,23 +2,23 @@
 title: Proces náboru
 ms.date: 03/30/2017
 ms.assetid: d5fcacbb-c884-4b37-a5d6-02b1b8eec7b4
-ms.openlocfilehash: 16975aaa56c8fde09fa6f57781f13280c147e73e
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 02968acfc762550c9010dd0ed29acbca845e08bb
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70038164"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715980"
 ---
 # <a name="hiring-process"></a>Proces náboru
 Tato ukázka předvádí, jak implementovat obchodní proces pomocí aktivit zasílání zpráv a dvou pracovních postupů hostovaných jako služby pracovních postupů. Tyto pracovní postupy jsou součástí infrastruktury IT fiktivní společnosti s názvem contoso, Inc.  
   
- Proces pracovního postupu (implementovaný <xref:System.Activities.Statements.Flowchart>jako) žádá o autorizaci od několika správců v organizaci. `HiringRequest` Pro dosažení tohoto cíle používá pracovní postup jiné stávající služby v organizaci (v našem případě službu doručených zpráv a organizační datovou službu implementovali jako služby pro jednoduché Windows Communication Foundation (WCF)).  
+ Proces pracovního postupu `HiringRequest` (implementovaný jako <xref:System.Activities.Statements.Flowchart>) žádá o autorizaci od několika správců v organizaci. Pro dosažení tohoto cíle používá pracovní postup jiné stávající služby v organizaci (v našem případě službu doručených zpráv a organizační datovou službu implementovali jako služby pro jednoduché Windows Communication Foundation (WCF)).  
   
- Pracovní postup (implementovaný <xref:System.Activities.Statements.Sequence>jako) publikuje odeslání úlohy na externím webu péče společnosti Contoso a spravuje získávání obnovení. `ResumeRequest` Publikování úlohy je dostupné na externím webu po určitou dobu (do vypršení časového limitu) nebo až do doby, kdy se zaměstnanec od společnosti Contoso rozhodne ji odebrat.  
+ Pracovní postup `ResumeRequest` (implementovaný jako <xref:System.Activities.Statements.Sequence>) zveřejňuje odeslání úlohy na externím webu péče společnosti Contoso a spravuje získávání obnovení. Publikování úlohy je dostupné na externím webu po určitou dobu (do vypršení časového limitu) nebo až do doby, kdy se zaměstnanec od společnosti Contoso rozhodne ji odebrat.  
   
  Tato ukázka demonstruje následující funkce [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]:  
   
-- <xref:System.Activities.Statements.Flowchart>a <xref:System.Activities.Statements.Sequence> pracovní postupy pro modelování obchodních procesů.  
+- pracovní postupy <xref:System.Activities.Statements.Flowchart> a <xref:System.Activities.Statements.Sequence> pro modelování obchodních procesů.  
   
 - Služby pracovních postupů.  
   
@@ -38,11 +38,11 @@ Tato ukázka předvádí, jak implementovat obchodní proces pomocí aktivit zas
   
 - Složení aktivit.  
   
-- <xref:System.Activities.Statements.Parallel>soutěž.  
+- <xref:System.Activities.Statements.Parallel> aktivity.  
   
-- <xref:System.Activities.Statements.CancellationScope>akce.  
+- <xref:System.Activities.Statements.CancellationScope> aktivita  
   
-- Trvalé časovače<xref:System.Activities.Statements.Delay> (aktivita).  
+- Trvalé časovače (<xref:System.Activities.Statements.Delay> aktivita).  
   
 - Převody.  
   
@@ -53,7 +53,7 @@ Tato ukázka předvádí, jak implementovat obchodní proces pomocí aktivit zas
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WF\Application\HiringProcess`  
   
@@ -82,9 +82,9 @@ Tato ukázka předvádí, jak implementovat obchodní proces pomocí aktivit zas
   
     1. Tento proces může přejít do stavu přijato nebo odmítnuto.  
   
-    2. Pokud je proces přijat, spustí se nová instance `ResumeRequest` pracovního postupu (`ResumeRequest` je propojena s HiringRequest. csproj prostřednictvím odkazu na službu).  
+    2. Pokud je proces přijat, spustí se nová instance pracovního postupu `ResumeRequest` (`ResumeRequest` je propojena s HiringRequest. csproj prostřednictvím odkazu na službu.)  
   
- Jakmile manažeři schválí zařazení nového zaměstnance, HR musí příslušný kandidát najít. Tento proces provádí druhý pracovní postup (`ResumeRequest`definovaný v ResumeRequestService. csproj). Tento pracovní postup definuje proces odeslání účtování úlohy s příležitostí k práci na externím webu společnosti Contoso, přijímá životopisy od žadatelů a monitoruje stav odeslání úlohy. Pozice jsou k dispozici pro pevné časové období (do vypršení časového limitu) nebo do doby, než se rozhodne zaměstnanec z společnosti Contoso ji odebrat. `ResumeRequest` Pracovní postup se skládá z následujících kroků:  
+ Jakmile manažeři schválí zařazení nového zaměstnance, HR musí příslušný kandidát najít. Tento proces provádí druhý pracovní postup (`ResumeRequest`definovaný v ResumeRequestService. csproj). Tento pracovní postup definuje proces odeslání účtování úlohy s příležitostí k práci na externím webu společnosti Contoso, přijímá životopisy od žadatelů a monitoruje stav odeslání úlohy. Pozice jsou k dispozici pro pevné časové období (do vypršení časového limitu) nebo do doby, než se rozhodne zaměstnanec z společnosti Contoso ji odebrat. Pracovní postup `ResumeRequest` sestává z následujících kroků:  
   
 1. Zaměstnanci z typů společnosti Contoso v informacích o pozici a dobu trvání časového limitu. Jakmile zaměstnanci tyto informace zaúčtují, pozice se zveřejní na webu péče o péči.  
   
@@ -95,7 +95,7 @@ Tato ukázka předvádí, jak implementovat obchodní proces pomocí aktivit zas
 ## <a name="projects-in-the-sample"></a>Projekty v ukázce  
  V následující tabulce jsou uvedeny projekty v ukázkovém řešení.  
   
-|Project|Popis|  
+|Projekt|Popis|  
 |-------------|-----------------|  
 |ContosoHR|Obsahuje kontrakty dat, obchodní objekty a třídy úložiště.|  
 |HiringRequestService|Obsahuje definici pracovního postupu procesu žádosti o zařazení.<br /><br /> Tento projekt je implementován jako Konzolová aplikace, která hostuje pracovní postup (soubor XAML) jako službu.|  
@@ -108,28 +108,28 @@ Tato ukázka předvádí, jak implementovat obchodní proces pomocí aktivit zas
 ## <a name="feature-summary"></a>Souhrn funkcí  
  Následující tabulka popisuje, jak se v této ukázce používají jednotlivé funkce.  
   
-|Funkce|Popis|Project|  
+|Funkce|Popis|Projekt|  
 |-------------|-----------------|-------------|  
 |Vývojový diagram|Obchodní proces je reprezentován jako vývojový diagram. Tento popis vývojového diagramu představuje proces stejným způsobem jako obchodní oddělení v programu Tabule.|HiringRequestService|  
 |Služby pracovních postupů|Vývojový diagram s definicí procesu je hostovaný ve službě (v tomto příkladu je služba hostovaná v konzolové aplikaci).|HiringRequestService|  
 |Aktivity zasílání zpráv|Vývojový diagram používá aktivity zasílání zpráv dvěma způsoby:<br /><br /> – Chcete-li získat informace od uživatele (pro přijímání rozhodnutí a souvisejících informací v každém kroku schválení).<br />– Pro interakci s ostatními stávajícími službami (InboxService a OrgDataService, které se používají prostřednictvím odkazů na služby).|HiringRequestService|  
 |Korelace na základě obsahu|Zprávy o schválení korelují s vlastností ID žádosti o přijetí:<br /><br /> – Při spuštění procesu se korelační popisovač inicializuje s ID požadavku.<br />-Příchozí zprávy o schválení korelují podle ID (první parametr každé zprávy schválení je ID žádosti).|HiringRequestService / ResumeRequestService|  
-|Vlastní aktivity (deklarativní a kód založený na kódu)|V této ukázce je několik vlastních aktivit:<br /><br /> -   `SaveActionTracking`: Tato aktivita emituje vlastní <xref:System.Activities.Tracking.TrackingRecord> (pomocí <xref:System.Activities.NativeActivityContext.Track%2A>). Tato aktivita se vytvořila s použitím imperativního rozšíření <xref:System.Activities.NativeActivity>kódu.<br />-   `GetEmployeesByPositionTypes`: Tato aktivita obdrží seznam ID typu pozice a vrátí seznam osob, které mají tuto pozici ve společnosti Contoso. Tato aktivita se vytvořila deklarativně (pomocí návrháře aktivit).<br />-   `SaveHiringRequestInfo`: Tato aktivita ukládá informace o `HiringRequest` (pomocí `HiringRequestRepository.Save`). Tato aktivita se vytvořila s použitím imperativního rozšíření <xref:System.Activities.CodeActivity>kódu.|HiringRequestService|  
-|Trvalost SQL Server poskytované systémem|<xref:System.ServiceModel.Activities.WorkflowServiceHost> Instance, která je hostitelem definice procesu vývojového diagramu, je nakonfigurovaná tak, aby používala systémovou SQL Server trvalost.|HiringRequestService / ResumeRequestService|  
-|Vlastní sledování|Ukázka zahrnuje vlastního účastníka sledování, který ukládá historii a `HiringRequestProcess` (Tento záznam obsahuje akci, kterou provede a kdy). Zdrojový kód je ve složce sledování HiringRequestService.|HiringRequestService|  
+|Vlastní aktivity (deklarativní a kód založený na kódu)|V této ukázce je několik vlastních aktivit:<br /><br /> -   `SaveActionTracking`: Tato aktivita vygeneruje vlastní <xref:System.Activities.Tracking.TrackingRecord> (pomocí <xref:System.Activities.NativeActivityContext.Track%2A>). Tato aktivita se vytvořila pomocí imperativního kódu, který rozšiřuje <xref:System.Activities.NativeActivity>.<br />-   `GetEmployeesByPositionTypes`: Tato aktivita obdrží seznam identifikátorů typu pozice a vrátí seznam osob, které mají tuto pozici ve společnosti Contoso. Tato aktivita se vytvořila deklarativně (pomocí návrháře aktivit).<br />-   `SaveHiringRequestInfo`: Tato aktivita ukládá informace o `HiringRequest` (pomocí `HiringRequestRepository.Save`). Tato aktivita se vytvořila pomocí imperativního kódu, který rozšiřuje <xref:System.Activities.CodeActivity>.|HiringRequestService|  
+|Trvalost SQL Server poskytované systémem|Instance <xref:System.ServiceModel.Activities.WorkflowServiceHost>, která je hostitelem definice procesu vývojového diagramu, je nakonfigurovaná tak, aby používala stálost SQL Server poskytovanou systémem.|HiringRequestService / ResumeRequestService|  
+|Vlastní sledování|Ukázka zahrnuje vlastního účastníka sledování, který ukládá historii `HiringRequestProcess` (Tato akce znamená, jakou akci byly provedeny, kdy a kdy). Zdrojový kód je ve složce sledování HiringRequestService.|HiringRequestService|  
 |Sledování ETW|Sledování ETW zadané systémem se konfiguruje v souboru App. config ve službě HiringRequestService.|HiringRequestService|  
 |Složení aktivit|Definice procesu využívá bezplatné složení <xref:System.Activities.Activity>. Vývojový diagram obsahuje několik sekvencí a paralelních aktivit, které zároveň obsahují další aktivity (a tak dále).|HiringRequestService|  
-|Paralelní aktivity|-   <xref:System.Activities.Statements.ParallelForEach%601>slouží k registraci do doručené pošty správců generálního ředitele a lidských zdrojů (čeká se na krok schvalování dvou správců lidských zdrojů).<br />-   <xref:System.Activities.Statements.Parallel>slouží k provádění některých úloh čištění v dokončeném a odmítnutém postupu.|HiringRequestService|  
+|Paralelní aktivity|-   <xref:System.Activities.Statements.ParallelForEach%601> se používá k registraci do doručené pošty správců generálního ředitelů a lidských zdrojů (čeká se na krok schvalování dvou správců lidských zdrojů).<br />k provedení některých úloh vyčištění v dokončených a odmítnutých krocích se používá -   <xref:System.Activities.Statements.Parallel>.|HiringRequestService|  
 |Zrušení modelu|Vývojový diagram používá <xref:System.Activities.Statements.CancellationScope> k vytvoření chování zrušení (v tomto případě provede nějaké vyčištění).|HiringRequestService|  
-|Účastník Persistence zákazníka|`HiringRequestPersistenceParticipant`uloží data z proměnné pracovního postupu do tabulky uložené v databázi společnosti Contoso HR.|HiringRequestService|  
-|Služby pracovních postupů|`ResumeRequestService`je implementováno pomocí služeb pracovního postupu. Informace o definici a službě pracovního postupu jsou obsaženy v ResumeRequestService. xamlx. Služba je nakonfigurovaná tak, aby používala trvalost a sledování.|ResumeRequestService|  
-|Trvalé časovače|`ResumeRequestService`pomocí trvalých časovačů definuje dobu trvání zaúčtování úlohy (po vypršení časového limitu je publikování úlohy uzavřeno).|ResumeRequestService|  
-|Transakce|<xref:System.Activities.Statements.TransactionScope>slouží k zajištění konzistence dat v rámci provádění několika aktivit (při přijetí nového obnovení).|ResumeRequestService|  
-|Transakce|Vlastní účastník trvalosti (`HiringRequestPersistenceParticipant`) a vlastní sledování účastníka`HistoryFileTrackingParticipant`() používají stejnou transakci.|HiringRequestService|  
+|Účastník Persistence zákazníka|`HiringRequestPersistenceParticipant` ukládá data z proměnné pracovního postupu do tabulky uložené v databázi společnosti Contoso HR.|HiringRequestService|  
+|Služby pracovních postupů|`ResumeRequestService` je implementováno pomocí služeb pracovního postupu. Informace o definici a službě pracovního postupu jsou obsaženy v ResumeRequestService. xamlx. Služba je nakonfigurovaná tak, aby používala trvalost a sledování.|ResumeRequestService|  
+|Trvalé časovače|`ResumeRequestService` používá k definování trvání zaúčtování úlohy trvalé časovače (po vypršení časového limitu je publikování úlohy uzavřeno).|ResumeRequestService|  
+|Transakce|<xref:System.Activities.Statements.TransactionScope> slouží k zajištění konzistence dat v rámci provádění několika aktivit (při přijetí nového obnovení).|ResumeRequestService|  
+|Transakce|Vlastní účastník trvalosti (`HiringRequestPersistenceParticipant`) a vlastní účastník sledování (`HistoryFileTrackingParticipant`) používají stejnou transakci.|HiringRequestService|  
 |Použití [!INCLUDE[wf1](../../../../includes/wf1-md.md)] v aplikacích ASP.NET.|K pracovním postupům se dostanete ze dvou aplikací ASP.NET.|InternalClient / CareersWebSite|  
   
 ## <a name="data-storage"></a>Úložiště dat  
- Data jsou uložena ve SQL Server databázi s názvem `ContosoHR` (skript pro vytvoření této databáze se nachází `DbSetup` ve složce). Instance pracovních postupů jsou uloženy ve SQL Server databázi s `InstanceStore` názvem (skripty pro vytvoření úložiště instancí jsou součástí [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] distribuce).  
+ Data jsou uložena v databázi SQL Server s názvem `ContosoHR` (skript pro vytvoření této databáze se nachází ve složce `DbSetup`). Instance pracovních postupů jsou uloženy v databázi SQL Server s názvem `InstanceStore` (skripty pro vytvoření úložiště instancí jsou součástí distribuce [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)]).  
   
  Obě databáze jsou vytvořeny spuštěním skriptu Setup. cmd z Developer Command Prompt pro aplikaci Visual Studio.  
   
@@ -143,7 +143,7 @@ Tato ukázka předvádí, jak implementovat obchodní proces pomocí aktivit zas
   
 3. Spusťte Setup. cmd.  
   
-4. Ověřte, že tyto dvě `ContosoHR` databáze `InstanceStore` a byly vytvořeny v SQL Express.  
+4. Ověřte, že se v SQL Express vytvořily tyto dvě databáze `ContosoHR` a `InstanceStore`.  
   
 #### <a name="to-set-up-the-solution-for-execution"></a>Nastavení řešení pro provádění  
   
@@ -159,17 +159,17 @@ Tato ukázka předvádí, jak implementovat obchodní proces pomocí aktivit zas
   
 1. Po sestavení řešení stiskněte kombinaci kláves CTRL + F5 a spusťte bez ladění. Ověřte, zda byly spuštěny všechny služby.  
   
-2. V řešení klikněte pravým tlačítkem na **InternalClient** a pak vyberte **Zobrazit v prohlížeči**. Zobrazí se výchozí stránka `InternalClient` pro. Zajistěte, aby služba běžela, a klikněte na odkaz.  
+2. V řešení klikněte pravým tlačítkem na **InternalClient** a pak vyberte **Zobrazit v prohlížeči**. Zobrazí se výchozí stránka pro `InternalClient`. Zajistěte, aby služba běžela, a klikněte na odkaz.  
   
 3. Zobrazí se modul **HiringRequest** . Můžete postupovat podle scénáře, který je zde popsán.  
   
-4. Po dokončení můžete `ResumeRequest`Spustit. `HiringRequest` Můžete postupovat podle scénáře, který je zde popsán.  
+4. Po dokončení `HiringRequest` můžete `ResumeRequest`spustit. Můžete postupovat podle scénáře, který je zde popsán.  
   
-5. `ResumeRequest` Když je publikovaný, je k dispozici na veřejném webu (Web péče společnosti Contoso). Chcete-li zobrazit zaúčtování úlohy (a použít pro pozici), přejděte na web pro péči o péče.  
+5. Když je `ResumeRequest` publikovaný, je k dispozici na veřejném webu (na webu péče společnosti Contoso). Chcete-li zobrazit zaúčtování úlohy (a použít pro pozici), přejděte na web pro péči o péče.  
   
 6. V řešení klikněte pravým tlačítkem na **CareersWebSite** a vyberte **Zobrazit v prohlížeči**.  
   
-7. Přejděte zpátky na `InternalClient` kliknutím pravým tlačítkem myši na **InternalClient** v řešení a výběrem možnosti **Zobrazit v prohlížeči**.  
+7. Kliknutím pravým tlačítkem myši na **InternalClient** v řešení a výběrem **zobrazení v prohlížeči**přejděte zpět na `InternalClient`.  
   
 8. Přejděte do části **jobpostings** kliknutím na odkaz **účtování úlohy** v horní nabídce Doručená pošta. Můžete postupovat podle scénáře, který je zde popsán.  
   
@@ -209,13 +209,13 @@ Tato ukázka předvádí, jak implementovat obchodní proces pomocí aktivit zas
   
 3. HR může také přestat shromažďovat pokračování (například po identifikaci správného kandidáta).  
   
-## <a name="troubleshooting"></a>Poradce při potížích  
+## <a name="troubleshooting"></a>Odstraňování problémů  
   
 1. Ujistěte se, že používáte aplikaci Visual Studio s oprávněními správce.  
   
 2. Pokud se řešení nepodařilo sestavit, ověřte následující:  
   
-    - Odkaz na `ContosoHR` není `InternalClient` v projektech nebo `CareersWebSite` nalezen.  
+    - Odkaz na `ContosoHR` v projektech `InternalClient` nebo `CareersWebSite` chybí.  
   
 3. Pokud se řešení nepovede spustit, ověřte následující:  
   
@@ -223,7 +223,7 @@ Tato ukázka předvádí, jak implementovat obchodní proces pomocí aktivit zas
   
     2. Odkazy na službu jsou aktualizované.  
   
-        1. Otevřete složku App_WebReferences.  
+        1. Otevřete složku App_WebReferences  
   
         2. Klikněte pravým tlačítkem myši na **Contoso** a vyberte **aktualizovat odkazy na web/služby**.  
   

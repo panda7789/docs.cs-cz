@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Net profile TCP
 ms.assetid: e8475fe6-0ecd-407a-8e7e-45860561bb74
-ms.openlocfilehash: f2dee85f3d84d840b33d81277419ab22e88e8556
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: dc417300eb6f62b89a1c07a4f2291b7366e410b1
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928596"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716552"
 ---
 # <a name="default-nettcpbinding"></a>Výchozí NetTcpBinding
 Tato ukázka demonstruje použití <xref:System.ServiceModel.NetTcpBinding> vazby. Tato ukázka je založená na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) , která implementuje službu kalkulačky. V této ukázce je služba hostovaná v místním prostředí. Klient i služba jsou konzolové aplikace.  
@@ -22,11 +22,11 @@ Tato ukázka demonstruje použití <xref:System.ServiceModel.NetTcpBinding> vazb
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\TCP\Default`  
   
- Vazba je určena v konfiguračních souborech pro klienta a službu. Typ vazby je určen v `binding` atributu [ \<koncového bodu >](../../configure-apps/file-schema/wcf/endpoint-element.md) elementu, jak je znázorněno v následující ukázkové konfiguraci.  
+ Vazba je určena v konfiguračních souborech pro klienta a službu. Typ vazby je určen v atributu `binding` elementu [\<koncového bodu >](../../configure-apps/file-schema/wcf/endpoint-element.md) , jak je znázorněno v následující ukázkové konfiguraci.  
   
 ```xml  
 <endpoint address=""  
@@ -34,7 +34,7 @@ Tato ukázka demonstruje použití <xref:System.ServiceModel.NetTcpBinding> vazb
           contract="Microsoft.ServiceModel.Samples.ICalculator" />  
 ```  
   
- Předchozí příklad ukazuje, jak nakonfigurovat koncový bod pro použití `netTcpBinding` vazby s výchozím nastavením. Pokud chcete nakonfigurovat `netTcpBinding` vazbu a změnit některá její nastavení, je nutné definovat konfiguraci vazby. Koncový bod musí odkazovat na konfiguraci vazby podle názvu s `bindingConfiguration` atributem. V této ukázce se konfigurace vazby jmenuje `Binding1` a je definována tak, jak je znázorněno v následující ukázkové konfiguraci.  
+ Předchozí příklad ukazuje, jak nakonfigurovat koncový bod pro použití vazby `netTcpBinding` s výchozími nastaveními. Pokud chcete nakonfigurovat vazbu `netTcpBinding` a změnit některá její nastavení, je nutné definovat konfiguraci vazby. Koncový bod musí odkazovat na konfiguraci vazby podle názvu s atributem `bindingConfiguration`. V této ukázce je konfigurace vazby pojmenována `Binding1` a je definována tak, jak je znázorněno v následující ukázkové konfiguraci.  
   
 ```xml  
 <services>  
@@ -102,7 +102,7 @@ Press ENTER to terminate client.
   
 2. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-3. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
 4. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   

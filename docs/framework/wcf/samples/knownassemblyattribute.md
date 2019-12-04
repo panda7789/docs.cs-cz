@@ -2,15 +2,15 @@
 title: KnownAssemblyAttribute
 ms.date: 03/30/2017
 ms.assetid: b3bc7f31-95ff-46e1-8308-d206ec426f6e
-ms.openlocfilehash: 5a911e0ae49955c5b089bb231f94e4afc0c05c97
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 6e3708fb386760ae067de0e86e4315114c85113c
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039542"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74714906"
 ---
 # <a name="knownassemblyattribute"></a>KnownAssemblyAttribute
-Tento příklad ukazuje, jak lze přizpůsobit procesy serializace a deserializace pomocí <xref:System.Runtime.Serialization.DataContractResolver> třídy. Tento příklad ukazuje, jak dynamicky přidat známé typy během serializace a deserializace.  
+Tato ukázka předvádí, jak lze upravit procesy serializace a deserializace pomocí třídy <xref:System.Runtime.Serialization.DataContractResolver>. Tento příklad ukazuje, jak dynamicky přidat známé typy během serializace a deserializace.  
   
 ## <a name="sample-details"></a>Podrobnosti ukázky  
  Tato ukázka se skládá ze čtyř projektů. Jedna z nich odpovídá službě, aby byla hostována službou IIS, která definuje následující kontrakt služby.  
@@ -187,11 +187,11 @@ public interface IDataContractCalculator
 }  
 ```  
   
- Definice kontraktu služby je označena `KnownAssembly` atributem. Tento atribut obsahuje název knihovny typů, které jsou všechny známy za běhu v rámci služby i klienta.  
+ Definice kontraktu služby je označena atributem `KnownAssembly`. Tento atribut obsahuje název knihovny typů, které jsou všechny známy za běhu v rámci služby i klienta.  
   
- Atribut implementuje `IContractBehavior` , aby bylo `DataContractSerializer` možnédefinovatadefinovánoprokaždéchováníoperace.`DataContractResolver` `KnownAssembly` Při `DataContractResolver` vytvoření odráží na sestavení a vytvoří slovník s mapováním mezi typy a názvy, které se mají použít při serializaci a deserializaci různých typů. V takovém `ResolveType` případě musí typy `ResolveName` a vyhledávat data požadovaná ve slovníku.  
+ Atribut `KnownAssembly` implementuje `IContractBehavior`, aby bylo možné definovat `DataContractSerializer` `DataContractResolver` definovány pro každé chování operace. `DataContractResolver` odráží sestavení při jeho vytvoření a vytvoří slovník s mapováním mezi typy a názvy, které se mají použít při serializaci a deserializaci různých typů. V takovém případě musí typy `ResolveType` a `ResolveName` vyhledávat data požadovaná ve slovníku.  
   
- V následujícím příkladu je uvedena definiceprotutoukázku.`DataContractResolver`  
+ V následujícím příkladu je uvedena `DataContractResolver` definovaná pro tuto ukázku.  
   
 ```csharp
 public class MyDataContractResolver : DataContractResolver  
@@ -320,7 +320,7 @@ public class ComplexNumberWithMagnitude : ComplexNumber
 }  
 ```  
   
- Všimněte si `ComplexNumber` , že není nutné staticky `ComplexNumberWithMagnitude` znát typ, protože se za běhu označuje jako známý.  
+ Všimněte si, že `ComplexNumber` nemusí staticky znát `ComplexNumberWithMagnitude` typ, protože se mu říká za běhu.  
   
  Při sestavení a spuštění ukázky se jedná o očekávaný výstup získaný v klientovi:  
   
@@ -358,7 +358,7 @@ Lists combined:
   
 6. Ujistěte se, že jste provedli [jednorázovou proceduru nastavení pro ukázky Windows Communication Foundation](https://go.microsoft.com/fwlink/?LinkId=150774).  
   
-7. Při sestavování řešení postupujte podle pokynů v tématu sestavování [Windows Communication Foundation ukázka](https://go.microsoft.com/fwlink/?LinkId=150775).  
+7. Při sestavování řešení postupujte podle pokynů v tématu [Sestavování Windows Communication Foundation ukázka](https://go.microsoft.com/fwlink/?LinkId=150775).  
   
 8. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](https://go.microsoft.com/fwlink/?LinkId=150776).  
   
@@ -367,6 +367,6 @@ Lists combined:
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\KnownAssemblyAttribute`  

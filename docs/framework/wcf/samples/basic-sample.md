@@ -2,12 +2,12 @@
 title: Základní ukázka
 ms.date: 03/30/2017
 ms.assetid: c1910bc1-3d0a-4fa6-b12a-4ed6fe759620
-ms.openlocfilehash: 07015c61ccab303d0fe38e65077d984ff40ce357
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 5d0470fefff86ee3a88fa290be5f349c38ca8276
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045710"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716085"
 ---
 # <a name="basic-sample"></a>Základní ukázka
 
@@ -16,9 +16,9 @@ V této ukázce se dozvíte, jak nastavit službu jako zjistitelnou a jak hledat
 > [!NOTE]
 > Tato ukázka implementuje zjišťování v kódu.  Ukázku, která implementuje zjišťování v konfiguraci, najdete v tématu [Configuration](../../../../docs/framework/wcf/samples/configuration-sample.md).
 
-## <a name="service"></a>Služba
+## <a name="service"></a>Service
 
-Toto je jednoduchá implementace služby Kalkulačka. Kód související se zjišťováním lze nalézt v `Main` <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> umístění, kde je přidán do hostitele služby a <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> je přidán, jak je znázorněno v následujícím kódu.
+Toto je jednoduchá implementace služby Kalkulačka. Kód související se zjišťováním najdete v `Main`, kde se do hostitele služby přidá <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> a přidá se <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint>, jak je znázorněno v následujícím kódu.
 
 ```csharp
 using (ServiceHost serviceHost = new ServiceHost(typeof(CalculatorService), baseAddress))
@@ -37,7 +37,7 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(CalculatorService), base
 
 ## <a name="client"></a>Klient
 
-Klient nástroje používá <xref:System.ServiceModel.Discovery.DynamicEndpoint> k vyhledání služby. <xref:System.ServiceModel.Discovery.DynamicEndpoint>Standardní koncový bod při otevření klienta vyřeší koncový bod služby. V takovém případě <xref:System.ServiceModel.Discovery.DynamicEndpoint> vyhledá službu na základě kontraktu služby. <xref:System.ServiceModel.Discovery.DynamicEndpoint> Provádí hledání<xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> ve výchozím nastavení. Jakmile nalezne koncový bod služby, klient se k této službě připojí přes určenou vazbu.
+Klient nástroje používá <xref:System.ServiceModel.Discovery.DynamicEndpoint> k vyhledání služby. <xref:System.ServiceModel.Discovery.DynamicEndpoint>standardního koncového bodu při otevření klienta vyřeší koncový bod služby. V takovém případě <xref:System.ServiceModel.Discovery.DynamicEndpoint> službu vyhledá na základě kontraktu služby. <xref:System.ServiceModel.Discovery.DynamicEndpoint> provede hledání <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> ve výchozím nastavení. Jakmile nalezne koncový bod služby, klient se k této službě připojí přes určenou vazbu.
 
 ```csharp
 public static void Main()
@@ -47,7 +47,7 @@ public static void Main()
 }
 ```
 
-Klient definuje metodu s názvem `InvokeCalculatorService` , která <xref:System.ServiceModel.Discovery.DiscoveryClient> používá třídu pro hledání služeb. Dědí z <xref:System.ServiceModel.Description.ServiceEndpoint>, takže`InvokeCalculatorService` může být předán metodě. <xref:System.ServiceModel.Discovery.DynamicEndpoint> Příklad následně používá <xref:System.ServiceModel.Discovery.DynamicEndpoint> k vytvoření `CalculatorServiceClient` instance a volání různých operací služby kalkulačky.
+Klient definuje metodu nazvanou `InvokeCalculatorService`, která používá třídu <xref:System.ServiceModel.Discovery.DiscoveryClient> k hledání služeb. <xref:System.ServiceModel.Discovery.DynamicEndpoint> dědí z <xref:System.ServiceModel.Description.ServiceEndpoint>, takže jej lze předat metodě `InvokeCalculatorService`. V příkladu se pak pomocí <xref:System.ServiceModel.Discovery.DynamicEndpoint> vytvoří instance `CalculatorServiceClient` a zavolá různé operace služby kalkulačky.
 
 ```csharp
 static void InvokeCalculatorService(ServiceEndpoint serviceEndpoint)
@@ -100,6 +100,6 @@ static void InvokeCalculatorService(ServiceEndpoint serviceEndpoint)
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Discovery\Basic`

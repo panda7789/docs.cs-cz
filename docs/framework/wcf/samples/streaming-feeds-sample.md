@@ -2,12 +2,12 @@
 title: Ukázka informačních kanálů streamování
 ms.date: 03/30/2017
 ms.assetid: 1f1228c0-daaa-45f0-b93e-c4a158113744
-ms.openlocfilehash: ede1dbb4f5c682b8182dda4888a9cbd373b95dd8
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 9d40a07b81474a283a8edbeb7aca1aa7ab3993b2
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976377"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716637"
 ---
 # <a name="streaming-feeds-sample"></a>Ukázka informačních kanálů streamování
 Tato ukázka předvádí, jak spravovat informační kanály syndikace, které obsahují velký počet položek. Ukázka na serveru ukazuje, jak zpozdit vytvoření jednotlivých objektů <xref:System.ServiceModel.Syndication.SyndicationItem> v rámci informačního kanálu až do chvíle, kdy je položka zapsána do síťového datového proudu.  
@@ -18,7 +18,7 @@ Tato ukázka předvádí, jak spravovat informační kanály syndikace, které o
   
  Tato ukázka využívá vizuální C# iterátory (pomocí `yield return` konstrukce klíčového slova). Další informace o iterátorech najdete v tématu používání iterátorů na webu MSDN.  
   
-## <a name="service"></a>Služba  
+## <a name="service"></a>Service  
  Služba implementuje základní kontrakt <xref:System.ServiceModel.Web.WebGetAttribute>, který se skládá z jedné operace, jak je znázorněno v následujícím kódu.  
   
 ```csharp  
@@ -114,7 +114,7 @@ private IEnumerable<SyndicationItem> DelayReadItems(XmlReader reader, Syndicatio
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Syndication\StreamingFeeds`  
   

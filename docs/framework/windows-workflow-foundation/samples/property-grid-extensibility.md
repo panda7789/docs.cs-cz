@@ -1,44 +1,44 @@
 ---
-title: Rozšiřitelnost mřížky vlastností – ukázky WF
+title: Rozšiřitelnost mřížky vlastností – ukázka WF
 ms.date: 03/30/2017
 ms.assetid: 3530c3a3-756d-4712-9f10-fb2897414d3a
-ms.openlocfilehash: 1cc8b8b34d6236e263f95439da84994e35d627ed
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: 130d8702795bccf0d5f28b5c0940bd7c25be3556
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67170356"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715607"
 ---
-# <a name="property-grid-extensibility"></a>Rozšiřitelnost mřížky vlastností
+# <a name="property-grid-extensibility"></a>Rozšíření mřížky vlastností
 
-Vývojář můžete přizpůsobit mřížkou, který se zobrazí při výběru v návrháři pro danou aktivitu. To můžete udělat vytvořit bohaté možnosti úprav. Tato ukázka předvádí, jak to lze provést.
+Vývojář může přizpůsobit mřížku vlastností, která se zobrazí při výběru dané aktivity v návrháři. To se dá udělat, aby se vytvořilo prostředí s bohatou úpravou. Tato ukázka ukazuje, jak to lze provést.
 
 ## <a name="demonstrates"></a>Demonstruje
 
-Rozšiřitelnost mřížky vlastností Návrháře pracovního postupu.
+Rozšiřitelnost mřížky vlastností návrháře pracovního postupu.
 
 > [!IMPORTANT]
-> Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Designer\PropertyGridExtensibility`
 
-## <a name="discussion"></a>Diskuse
+## <a name="discussion"></a>Účely
 
-K rozšíření mřížkou, vývojář má možností pro přizpůsobení vzhledu vložené editor mřížky vlastností nebo zadejte, který se zobrazí dialogové okno pro pokročilejší úpravy plochu. Existují dva různé editory jsme vám ukázali v této ukázce; editor vložené a editor dialogového okna.
+Chcete-li rozšířit mřížku vlastností, vývojář obsahuje možnosti přizpůsobení vloženého vzhledu editoru mřížky vlastností nebo poskytnutí dialogového okna, které se zobrazí pro pokročilejší editační plochu. V této ukázce jsou znázorněny dva různé editory. vložený Editor a editor dialogových oken.
 
-## <a name="inline-editor"></a>Vložené editoru
+## <a name="inline-editor"></a>Vložený Editor
 
-Vložená ukázka editoru ukazuje následující:
+Ukázka vloženého editoru znázorňuje následující:
 
-- Umožňuje vytvořit typ, který je odvozen z <xref:System.Activities.Presentation.PropertyEditing.PropertyValueEditor>.
+- Vytvoří typ, který je odvozen z <xref:System.Activities.Presentation.PropertyEditing.PropertyValueEditor>.
 
-- V konstruktoru <xref:System.Activities.Presentation.PropertyEditing.PropertyValueEditor.InlineEditorTemplate%2A> hodnota se nastaví pomocí datové šablony Windows Presentation Foundation (WPF). To může být vázaný na šablonu XAML, ale v této ukázce kódu slouží k inicializaci datové vazby.
+- V konstruktoru je hodnota <xref:System.Activities.Presentation.PropertyEditing.PropertyValueEditor.InlineEditorTemplate%2A> nastavena pomocí šablony dat Windows Presentation Foundation (WPF). Tato možnost může být vázána na šablonu XAML, ale v této ukázce se pro inicializaci datové vazby používá kód.
 
-- Šablony má kontext dat objektu <xref:System.Activities.Presentation.PropertyEditing.PropertyValue> vykreslen v mřížce vlastností položky. Poznámka: v následujícím kódu (z CustomInlineEditor.cs), který tento kontext pak vytvoří vazbu na `Value` vlastnost.
+- Datová šablona má kontext dat <xref:System.Activities.Presentation.PropertyEditing.PropertyValue> položky vykreslené v mřížce vlastností. Všimněte si, že v následujícím kódu (z CustomInlineEditor.cs) se tento kontext váže k vlastnosti `Value`.
 
     ```csharp
     FrameworkElementFactory stack = new FrameworkElementFactory(typeof(StackPanel));
@@ -51,7 +51,7 @@ Vložená ukázka editoru ukazuje následující:
     stack.AppendChild(slider);
     ```
 
-- Protože aktivity a návrháři jsou ve stejném sestavení, můžete registraci atributy návrháře aktivit provést v statický konstruktor aktivity, jak je znázorněno v následujícím příkladu od SimpleCodeActivity.cs.
+- Vzhledem k tomu, že aktivita a Návrhář jsou ve stejném sestavení, probíhá registrace atributů návrháře aktivit ve statickém konstruktoru samotné aktivity, jak je znázorněno v následujícím příkladu z SimpleCodeActivity.cs.
 
     ```csharp
     static SimpleCodeActivity()
@@ -65,13 +65,13 @@ Vložená ukázka editoru ukazuje následující:
 
 ## <a name="dialog-editor"></a>Editor dialogových oken
 
-Ukázka editoru dialogového okna ukazuje následující:
+Ukázka v editoru dialogových oken ukazuje následující:
 
-1. Umožňuje vytvořit typ, který je odvozen z <xref:System.Activities.Presentation.PropertyEditing.DialogPropertyValueEditor>.
+1. Vytvoří typ, který je odvozen z <xref:System.Activities.Presentation.PropertyEditing.DialogPropertyValueEditor>.
 
-2. Nastaví <xref:System.Activities.Presentation.PropertyEditing.PropertyValueEditor.InlineEditorTemplate%2A> hodnotu v konstruktoru s WPF datové šablony. To je možné vytvořit v XAML, ale v této ukázce, tím se vytvoří v kódu.
+2. Nastaví hodnotu <xref:System.Activities.Presentation.PropertyEditing.PropertyValueEditor.InlineEditorTemplate%2A> v konstruktoru pomocí šablony dat WPF. To lze vytvořit v jazyce XAML, ale v této ukázce je vytvořena v kódu.
 
-3. Šablony má kontext dat objektu <xref:System.Activities.Presentation.PropertyEditing.PropertyValue> vykreslen v mřížce vlastností položky. V následujícím kódu, poté vytvoří vazbu `Value` vlastnost. Je důležité zahrnout také <xref:System.Activities.Presentation.PropertyEditing.EditModeSwitchButton> poskytnout tlačítka, které vyvolá dialogové okno v FilePickerEditor.cs.
+3. Datová šablona má kontext dat <xref:System.Activities.Presentation.PropertyEditing.PropertyValue> položky vykreslené v mřížce vlastností. V následujícím kódu se pak vytvoří vazba na vlastnost `Value`. Je důležité také zahrnout <xref:System.Activities.Presentation.PropertyEditing.EditModeSwitchButton> k poskytnutí tlačítka, které vyvolává dialog v FilePickerEditor.cs.
 
     ```csharp
     this.InlineEditorTemplate = new DataTemplate();
@@ -94,7 +94,7 @@ Ukázka editoru dialogového okna ukazuje následující:
     this.InlineEditorTemplate.VisualTree = stack;
     ```
 
-4. Přepsání <xref:System.Activities.Presentation.PropertyEditing.DialogPropertyValueEditor.ShowDialog%2A> metoda v typu návrháře pro zpracování zobrazení dialogového okna. V této ukázce základní <xref:System.Windows.Forms.FileDialog> se zobrazí.
+4. Přepíše metodu <xref:System.Activities.Presentation.PropertyEditing.DialogPropertyValueEditor.ShowDialog%2A> v typu návrháře pro zpracování zobrazení dialogového okna. V této ukázce se zobrazuje základní <xref:System.Windows.Forms.FileDialog>.
 
     ```csharp
     public override void ShowDialog(PropertyValue propertyValue, IInputElement commandSource)
@@ -107,7 +107,7 @@ Ukázka editoru dialogového okna ukazuje následující:
     }
     ```
 
-5. Protože aktivity a návrháři jsou ve stejném sestavení, můžete registraci atributy návrháře aktivit provést v statický konstruktor aktivity, jak je znázorněno v následujícím příkladu od SimpleCodeActivity.cs.
+5. Vzhledem k tomu, že aktivita a Návrhář jsou ve stejném sestavení, probíhá registrace atributů návrháře aktivit ve statickém konstruktoru samotné aktivity, jak je znázorněno v následujícím příkladu z SimpleCodeActivity.cs.
 
     ```csharp
     static SimpleCodeActivity()
@@ -119,19 +119,19 @@ Ukázka editoru dialogového okna ukazuje následující:
     }
     ```
 
-## <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku
+## <a name="to-set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky
 
-1. Sestavte řešení a pak otevřete Workflow1.xaml.
+1. Sestavte řešení a pak otevřete Workflow1. XAML.
 
-2. Přetáhněte **SimpleCodeActivity** z panelu nástrojů do plátna návrháře.
+2. Přetáhněte **SimpleCodeActivity** z panelu nástrojů na plátno návrháře.
 
-3. Klikněte na tlačítko **SimpleCodeActivity** a pak otevřete mřížky vlastností níž se nachází na ovládacím prvku posuvník a soubor výběru ovládacího prvku.
+3. Klikněte na **SimpleCodeActivity** a pak otevřete mřížku vlastností, kde je ovládací prvek posuvníku a ovládací prvek pro výdej souboru.
 
 > [!IMPORTANT]
-> Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Designer\PropertyGridExtensibility`

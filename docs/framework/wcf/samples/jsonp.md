@@ -2,15 +2,15 @@
 title: JSONP
 ms.date: 03/30/2017
 ms.assetid: c13b4d7b-dac7-4ffd-9f84-765c903511e1
-ms.openlocfilehash: 1fc85838d7491f94b8da1e0ab458d6d021cd2b32
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 82fa0bb09ebdf3ca2325872c2b884f4940de17ed
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989781"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715722"
 ---
 # <a name="jsonp"></a>JSONP
-Tato ukázka demonstruje, jak podporovat JSON s odsazením (JSONP) ve službách WCF REST. JSONP je konvence, která se používá k vyvolání skriptů mezi doménami generováním značek skriptu v aktuálním dokumentu. Výsledek je vrácen v zadané funkci zpětného volání. JSONP je založen na nápadu, který značky `<script src="http://..." >` , jako je například, může vyhodnotit skripty z jakékoli domény a skript načtený těmito značkami je vyhodnocen v rámci oboru, ve kterém již mohou být definovány jiné funkce.
+Tato ukázka demonstruje, jak podporovat JSON s odsazením (JSONP) ve službách WCF REST. JSONP je konvence, která se používá k vyvolání skriptů mezi doménami generováním značek skriptu v aktuálním dokumentu. Výsledek je vrácen v zadané funkci zpětného volání. JSONP je založen na nápadu, který značky, jako je `<script src="http://..." >`, může vyhodnotit skripty z jakékoli domény a skript načtený těmito značkami je vyhodnocen v rámci oboru, ve kterém již mohou být definovány jiné funkce.
 
 ## <a name="demonstrates"></a>Demonstruje
  Skriptování mezi doménami pomocí JSONP.
@@ -24,7 +24,7 @@ proxy.set_enableJsonp(true);
 proxy.GetCustomer(onSuccess, onFail, null);
 ```
 
- Webová stránka může zavolat službu WCF REST, protože služba používá <xref:System.ServiceModel.Description.WebScriptEndpoint> sadu s `crossDomainScriptAccessEnabled` nastavenou na `true`. Obě tyto konfigurace jsou provedeny v souboru \<Web. config v prvku System. ServiceModel >.
+ Webová stránka může zavolat službu WCF REST, protože služba používá <xref:System.ServiceModel.Description.WebScriptEndpoint> s `crossDomainScriptAccessEnabled` nastavenou na `true`. Obě tyto konfigurace jsou provedeny v souboru Web. config pod prvkem \<System. serviceModel >.
 
 ```xml
 <system.serviceModel>
@@ -37,13 +37,13 @@ proxy.GetCustomer(onSuccess, onFail, null);
 </system.serviceModel>
 ```
 
- ScriptManager spravuje interakci se službou a skrývá složitost ruční implementace přístupu JSONP. Když `crossDomainScriptAccessEnabled` je nastavené `true` na a formát odpovědi pro operaci je JSON, infrastruktura WCF zkontroluje identifikátor URI žádosti pro parametr řetězce dotazu zpětného volání a zabalí odpověď JSON s hodnotou řetězce dotazu zpětného volání. ukazatele. V ukázce webová stránka volá službu WCF REST s následujícím identifikátorem URI.
+ ScriptManager spravuje interakci se službou a skrývá složitost ruční implementace přístupu JSONP. Pokud je `crossDomainScriptAccessEnabled` nastaveno na `true` a formát odpovědi pro operaci je JSON, infrastruktura WCF zkontroluje identifikátor URI žádosti pro parametr řetězce dotazu zpětného volání a zabalí odpověď JSON s hodnotou parametru řetězce dotazu zpětného volání. V ukázce webová stránka volá službu WCF REST s následujícím identifikátorem URI.
 
 ```http
 http://localhost:33695/CustomerService/GetCustomer?callback=Sys._json0
 ```
 
- Vzhledem k tomu `JsonPCallback`, že parametr řetězce dotazu zpětného volání má hodnotu, služba WCF vrátí odpověď JSONP zobrazenou v následujícím příkladu.
+ Vzhledem k tomu, že parametr řetězce dotazu zpětného volání má hodnotu `JsonPCallback`, služba WCF vrátí odpověď JSONP zobrazenou v následujícím příkladu.
 
 ```json
 Sys._json0({"__type":"Customer:#Microsoft.Samples.Jsonp","Address":"1 Example Way","Name":"Bob"});
@@ -58,7 +58,7 @@ Sys._json0({"__type":"Customer:#Microsoft.Samples.Jsonp","Address":"1 Example Wa
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\AJAX\JSONP`  
   

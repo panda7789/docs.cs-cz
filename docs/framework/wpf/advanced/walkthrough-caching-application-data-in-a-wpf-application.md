@@ -9,12 +9,12 @@ helpviewer_keywords:
 - caching [.NET Framework]
 - caching [WPF]
 ms.assetid: dac2c9ce-042b-4d23-91eb-28f584415cef
-ms.openlocfilehash: f0082bd99b154f87ab90bee7a89afdb8405f6623
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: 922d91466731b331cc409cc362c4ada2c287916a
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920318"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715888"
 ---
 # <a name="walkthrough-caching-application-data-in-a-wpf-application"></a>Návod: Ukládání aplikačních dat do mezipaměti v aplikaci WPF
 Ukládání do mezipaměti umožňuje ukládat data v paměti pro rychlý přístup. Po opětovném přístup k datům mohou aplikace získat data z mezipaměti, nikoli načíst je z původního zdroje. To může zvýšit výkon a škálovatelnost. Ukládání do mezipaměti navíc zpřístupňuje data v případě, že zdroj dat není dočasně k dispozici.
@@ -78,7 +78,7 @@ Ukládání do mezipaměti umožňuje ukládat data v paměti pro rychlý přís
      Návrhář WPF se otevře v **návrhovém** zobrazení a zobrazí soubor MainWindow. XAML. Visual Studio vytvoří složku **moje projekt** , soubor Application. XAML a soubor MainWindow. XAML.
 
 ## <a name="targeting-the-net-framework-and-adding-a-reference-to-the-caching-assemblies"></a>Cílení na .NET Framework a přidání odkazu na sestavení pro ukládání do mezipaměti
- Ve výchozím nastavení aplikace WPF cílí na [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)]. Chcete-li použít obor názvů <xref:System.Runtime.Caching> v aplikaci WPF, musí aplikace cílit na .NET Framework 4 (ne na [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)]) a musí zahrnovat odkaz na obor názvů.
+ Ve výchozím nastavení aplikace WPF cílí na profil klienta .NET Framework 4. Chcete-li použít obor názvů <xref:System.Runtime.Caching> v aplikaci WPF, musí aplikace cílit na .NET Framework 4 (nikoli na profil klienta .NET Framework 4) a musí zahrnovat odkaz na obor názvů.
 
  Dalším krokem je proto změnit cíl .NET Framework a přidat odkaz na obor názvů <xref:System.Runtime.Caching>.
 
@@ -97,7 +97,7 @@ Ukládání do mezipaměti umožňuje ukládat data v paměti pro rychlý přís
 
      Zobrazí se dialogové okno **Upřesnit nastavení kompilátoru** .
 
-4. V seznamu **cílové rozhraní (všechny konfigurace)** vyberte .NET Framework 4. (Nevybírejte [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)].)
+4. V seznamu **cílové rozhraní (všechny konfigurace)** vyberte .NET Framework 4. (Nevybírejte .NET Framework 4 profil klienta.)
 
 5. Klikněte na tlačítko **OK**.
 

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Data Contract
 ms.assetid: b124e9e0-cb73-4ae0-b9c3-e6cdf5eced98
-ms.openlocfilehash: a1599afa184fe4b4228305051018e6a8cb9efed9
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: fbcc93826ebe2857345823176ddc0054b7e62eea
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045759"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716111"
 ---
 # <a name="basic-data-contract"></a>Základní kontrakt dat
 
@@ -38,7 +38,7 @@ public interface ICalculator
 }
 ```
 
- Atributy <xref:System.Runtime.Serialization.DataContractAttribute> `ComplexNumber` a <xref:System.Runtime.Serialization.DataMemberAttribute> byly aplikovány na definici třídy, aby označovala, která pole třídy lze předávat prostřednictvím sítě mezi klientem a službou, jak je znázorněno v následujícím ukázkovém kódu.
+ Atributy <xref:System.Runtime.Serialization.DataContractAttribute> a <xref:System.Runtime.Serialization.DataMemberAttribute> byly aplikovány na definici třídy `ComplexNumber` k určení, která pole třídy lze předávat prostřednictvím sítě mezi klientem a službou, jak je znázorněno v následujícím ukázkovém kódu.
 
 ```csharp
 [DataContract(Namespace="http://Microsoft.ServiceModel.Samples")]
@@ -57,7 +57,7 @@ public class ComplexNumber
 }
 ```
 
-Implementace služby vypočítá a vrátí příslušný výsledek, přijme a vrátí čísla `ComplexNumber` typu.
+Implementace služby vypočítá a vrátí příslušný výsledek, přijímá a vrací čísla `ComplexNumber`ho typu.
 
 ```csharp
 // This is the service class that implements the service contract.
@@ -135,7 +135,7 @@ Press <ENTER> to terminate client.
 
 1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
 
-2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+2. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
 
 3. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
 
@@ -144,6 +144,6 @@ Press <ENTER> to terminate client.
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\Basic`

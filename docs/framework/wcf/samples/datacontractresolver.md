@@ -2,15 +2,15 @@
 title: DataContractResolver
 ms.date: 03/30/2017
 ms.assetid: 6c200c02-bc14-4b8d-bbab-9da31185b805
-ms.openlocfilehash: 224ffcf277f9ceaf6b1f970ad6f92480f5857999
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 101c33ca197be9dff52a73c844dd0b006e62b2ac
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045078"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716596"
 ---
 # <a name="datacontractresolver"></a>DataContractResolver
-Tento příklad ukazuje, jak lze přizpůsobit procesy serializace a deserializace pomocí <xref:System.Runtime.Serialization.DataContractResolver> třídy. Tento příklad ukazuje, jak použít DataContractResolver k namapování typů CLR do a z reprezentace xsi: Type během serializace a deserializace.
+Tato ukázka předvádí, jak lze upravit procesy serializace a deserializace pomocí třídy <xref:System.Runtime.Serialization.DataContractResolver>. Tento příklad ukazuje, jak použít DataContractResolver k namapování typů CLR do a z reprezentace xsi: Type během serializace a deserializace.
 
 ## <a name="sample-details"></a>Podrobnosti ukázky
  Ukázka definuje následující typy CLR.
@@ -47,7 +47,7 @@ namespace Types
 }
 ```
 
- Ukázka načte sestavení, extrahuje každý z těchto typů a pak je serializace a deserializace. Je zapojen do procesu serializace předáním instance <xref:System.Runtime.Serialization.DataContractResolver>odvozené třídy do <xref:System.Runtime.Serialization.DataContractSerializer> konstruktoru, jak je znázorněno v následujícím příkladu. <xref:System.Runtime.Serialization.DataContractResolver>
+ Ukázka načte sestavení, extrahuje každý z těchto typů a pak je serializace a deserializace. <xref:System.Runtime.Serialization.DataContractResolver> je zapojen do procesu serializace předáním instance <xref:System.Runtime.Serialization.DataContractResolver>odvozené třídy do konstruktoru <xref:System.Runtime.Serialization.DataContractSerializer>, jak je znázorněno v následujícím příkladu.
 
 ```csharp
 this.serializer = new DataContractSerializer(typeof(Object), null, int.MaxValue, false, true, null, new MyDataContractResolver(assembly));
@@ -97,9 +97,9 @@ public void deserialize(Type type)
 }
 ```
 
- Vzhledem <xref:System.Runtime.Serialization.DataContractResolver> <xref:System.Runtime.Serialization.DataContractResolver.TryResolveType%2A> ktomu`xsi:type`, že vlastní je předán do konstruktoru,jevolánaběhemserializacepromapovánítypuCLRnaekvivalentní.<xref:System.Runtime.Serialization.DataContractSerializer> Podobně je volána během deserializace pro `xsi:type` mapování na ekvivalentní typ CLR. <xref:System.Runtime.Serialization.DataContractResolver.ResolveName%2A> V této ukázce <xref:System.Runtime.Serialization.DataContractResolver> je definován tak, jak je znázorněno v následujícím příkladu.
+ Vzhledem k tomu, že vlastní <xref:System.Runtime.Serialization.DataContractResolver> jsou předány do konstruktoru <xref:System.Runtime.Serialization.DataContractSerializer>, <xref:System.Runtime.Serialization.DataContractResolver.TryResolveType%2A> je volána během serializace pro mapování typu CLR na ekvivalentní `xsi:type`. Podobně <xref:System.Runtime.Serialization.DataContractResolver.ResolveName%2A> je volána během deserializace pro mapování `xsi:type` na ekvivalentní typ CLR. V této ukázce je <xref:System.Runtime.Serialization.DataContractResolver> definován tak, jak je znázorněno v následujícím příkladu.
 
- Následující příklad kódu je třída odvozená z <xref:System.Runtime.Serialization.DataContractResolver>.
+ Následující příklad kódu je třída odvozená od <xref:System.Runtime.Serialization.DataContractResolver>.
 
 ```csharp
 class MyDataContractResolver : DataContractResolver
@@ -161,7 +161,7 @@ class MyDataContractResolver : DataContractResolver
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\DataContractResolver`  
   

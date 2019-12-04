@@ -2,12 +2,12 @@
 title: Služby WCF a Trasování událostí pro Windows
 ms.date: 03/30/2017
 ms.assetid: eda4355d-0bd0-4dc9-80a2-d2c832152272
-ms.openlocfilehash: e1ee7154e2ad5b22ff0debcdd15d5809fc55df13
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 93663cbc33b6fab9b34bb02187e5b04192f5c13d
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044520"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715269"
 ---
 # <a name="wcf-services-and-event-tracing-for-windows"></a>Služby WCF a Trasování událostí pro Windows
 Tato ukázka předvádí, jak použít analytické trasování v Windows Communication Foundation (WCF) k vygenerování událostí v trasování událostí pro Windows (ETW). Analytická trasování jsou události vydávané na klíčových místech v zásobníku WCF, které umožňují řešení potíží se službami WCF v produkčním prostředí.
@@ -30,13 +30,13 @@ Tato ukázka předvádí, jak použít analytické trasování v Windows Communi
 
 4. Spusťte testovacího klienta WCF (WcfTestClient. exe).
 
-     Testovací klient služby WCF (WcfTestClient. exe) je umístěný na `\<Visual Studio 2012 Install Dir>\Common7\IDE\WcfTestClient.exe`adrese.  Výchozí instalační adresář sady Visual Studio 2012 je `C:\Program Files\Microsoft Visual Studio 10.0`.
+     Testovací klient služby WCF (WcfTestClient. exe) je umístěný na adrese `\<Visual Studio 2012 Install Dir>\Common7\IDE\WcfTestClient.exe`.  Výchozí instalační adresář sady Visual Studio 2012 je `C:\Program Files\Microsoft Visual Studio 10.0`.
 
 5. V rámci testovacího klienta WCF přidejte službu tak, že vyberete **soubor**a pak **přidáte službu**.
 
      Do vstupního pole přidejte adresu koncového bodu. Výchozí hodnota je `http://localhost:1378/Calculator.svc`.
 
-6. Otevřete Prohlížeč událostí aplikace.
+6. Otevřete aplikaci Prohlížeč událostí.
 
      Před vyvoláním služby spusťte Prohlížeč událostí a zajistěte, aby protokol událostí naslouchal sledování událostí vygenerovaných ze služby WCF.
 
@@ -52,7 +52,7 @@ Tato ukázka předvádí, jak použít analytické trasování v Windows Communi
 
 #### <a name="to-test-the-service"></a>Testování služby
 
-1. Přepněte zpátky na testovacího klienta WCF a dvakrát klikněte `Divide` a ponechte výchozí hodnoty, které určují jmenovatele 0.
+1. Přepněte zpátky na testovacího klienta WCF a dvakrát klikněte na `Divide` a ponechte výchozí hodnoty, které určují jmenovatele 0.
 
      Pokud je jmenovatel 0, vyvolá služba chybu.
 
@@ -62,7 +62,7 @@ Tato ukázka předvádí, jak použít analytické trasování v Windows Communi
 
      Události analytického trasování WCF se zobrazí v prohlížeči událostí. Všimněte si, že protože služba vyvolala chybu, zobrazí se v prohlížeči událostí událost trasování chyby.
 
-3. Opakujte kroky 1 a 2, ale s platnými vstupy. Hodnota `N2` parametru může být libovolné číslo jiné než 0.
+3. Opakujte kroky 1 a 2, ale s platnými vstupy. Hodnota parametru `N2` může být libovolné číslo jiné než 0.
 
      Aktualizujte analytickou kanál, aby se zobrazily události WCF, které neobsahují žádné chybové události.
 
@@ -83,7 +83,7 @@ Tato ukázka předvádí, jak použít analytické trasování v Windows Communi
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\ETWTracing`  
   

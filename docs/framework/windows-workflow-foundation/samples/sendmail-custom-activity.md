@@ -2,44 +2,44 @@
 title: Vlastní aktivita SendMail
 ms.date: 03/30/2017
 ms.assetid: 947a9ae6-379c-43a3-9cd5-87f573a5739f
-ms.openlocfilehash: 5797620c4938d7dcffb1f506b682141336b21eab
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: b1e2d58a09362569d4d408f6e1c9e589aa6bda76
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70988985"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715571"
 ---
 # <a name="sendmail-custom-activity"></a>Vlastní aktivita SendMail
-V této ukázce se dozvíte, jak vytvořit vlastní aktivitu, která <xref:System.Activities.AsyncCodeActivity> se odvozuje z k odeslání e-mailu pomocí protokolu SMTP pro použití v rámci aplikace pracovního postupu. Vlastní aktivita využívá možnosti <xref:System.Net.Mail.SmtpClient> k asynchronnímu posílání e-mailů a k odesílání e-mailů s ověřováním. Poskytuje také některé funkce koncového uživatele, jako je režim testu, nahrazení tokenu, šablony souborů a cesta pro vyřazení testu.  
+V této ukázce se dozvíte, jak vytvořit vlastní aktivitu, která se odvozuje z <xref:System.Activities.AsyncCodeActivity> k odeslání e-mailu pomocí protokolu SMTP pro použití v rámci aplikace pracovního postupu. Vlastní aktivita využívá možnosti <xref:System.Net.Mail.SmtpClient> k asynchronnímu posílání e-mailů a k odesílání e-mailů s ověřováním. Poskytuje také některé funkce koncového uživatele, jako je režim testu, nahrazení tokenu, šablony souborů a cesta pro vyřazení testu.  
   
- Následující tabulka popisuje argumenty pro `SendMail` aktivitu.  
+ Následující tabulka popisuje argumenty aktivity `SendMail`.  
   
-|Name|Typ|Popis|  
+|Name|Type|Popis|  
 |-|-|-|  
 |Hostitel|String|Adresa hostitele serveru SMTP.|  
 |Port|String|Port služby SMTP v hostiteli.|  
 |enableSsl|bool|Určuje, jestli <xref:System.Net.Mail.SmtpClient> k šifrování připojení používá SSL (Secure Sockets Layer) (SSL).|  
-|UserName|String|Uživatelské jméno pro nastavení přihlašovacích údajů pro ověření vlastnosti <xref:System.Net.Mail.SmtpClient.Credentials%2A> Sender.|  
-|Heslo|String|Heslo pro nastavení přihlašovacích údajů pro ověření vlastnosti Sender <xref:System.Net.Mail.SmtpClient.Credentials%2A> .|  
-|Subject|<xref:System.Activities.InArgument%601>\<> řetězců|Předmět zprávy|  
-|Tělo|<xref:System.Activities.InArgument%601>\<> řetězců|Text zprávy|  
-|Přílohy|<xref:System.Activities.InArgument%601>\<> řetězců|Kolekce příloh používaná k ukládání dat připojených k této e-mailové zprávě|  
-|From|<xref:System.Net.Mail.MailAddress>|Z adresy pro tuto e-mailovou zprávu.|  
-|Chcete-li|<xref:System.Activities.InArgument%601>\<<xref:System.Net.Mail.MailAddressCollection>>|Kolekce adres, která obsahuje příjemce této e-mailové zprávy.|  
+|UserName|String|Uživatelské jméno pro nastavení přihlašovacích údajů pro ověření vlastnosti odesílatele <xref:System.Net.Mail.SmtpClient.Credentials%2A>.|  
+|Heslo|String|Heslo pro nastavení přihlašovacích údajů pro ověření vlastnosti odesílatele <xref:System.Net.Mail.SmtpClient.Credentials%2A>.|  
+|Předmět|řetězec \<<xref:System.Activities.InArgument%601>|Předmět zprávy|  
+|Text|řetězec \<<xref:System.Activities.InArgument%601>|Text zprávy|  
+|Přílohy|řetězec \<<xref:System.Activities.InArgument%601>|Kolekce příloh používaná k ukládání dat připojených k této e-mailové zprávě|  
+|Od|<xref:System.Net.Mail.MailAddress>|Z adresy pro tuto e-mailovou zprávu.|  
+|Pro|<xref:System.Activities.InArgument%601>\<<xref:System.Net.Mail.MailAddressCollection>>|Kolekce adres, která obsahuje příjemce této e-mailové zprávy.|  
 |CC|<xref:System.Activities.InArgument%601>\<<xref:System.Net.Mail.MailAddressCollection>>|Kolekce adres, která obsahuje příjemce kopie (CC) pro tuto e-mailovou zprávu.|  
-|BCC|<xref:System.Activities.InArgument%601>\<<xref:System.Net.Mail.MailAddressCollection>>|Kolekce adres, která obsahuje příjemce skryté kopie (BCC) pro tuto e-mailovou zprávu.|  
-|Tokeny|<xref:System.Activities.InArgument%601>< řetězec\<IDictionary, > řetězce >|Tokeny, které mají být nahrazeny v těle. Tato funkce umožňuje uživatelům zadat v těle některé hodnoty, než je lze později nahradit tokeny poskytnutými pomocí této vlastnosti.|  
-|BodyTemplateFilePath|String|Cesta k šabloně pro tělo `SendMail` Aktivita zkopíruje obsah tohoto souboru do vlastnosti body.<br /><br /> Šablona může obsahovat tokeny, které jsou nahrazeny obsahem vlastnosti tokeny.|  
+|SKRYT|<xref:System.Activities.InArgument%601>\<<xref:System.Net.Mail.MailAddressCollection>>|Kolekce adres, která obsahuje příjemce skryté kopie (BCC) pro tuto e-mailovou zprávu.|  
+|Tokeny|<xref:System.Activities.InArgument%601>< IDictionary\<String, String > >|Tokeny, které mají být nahrazeny v těle. Tato funkce umožňuje uživatelům zadat v těle některé hodnoty, než je lze později nahradit tokeny poskytnutými pomocí této vlastnosti.|  
+|BodyTemplateFilePath|String|Cesta k šabloně pro tělo Aktivita `SendMail` kopíruje obsah tohoto souboru do vlastnosti body.<br /><br /> Šablona může obsahovat tokeny, které jsou nahrazeny obsahem vlastnosti tokeny.|  
 |TestMailTo|<xref:System.Net.Mail.MailAddress>|Když je tato vlastnost nastavená, všechny e-maily se odešlou na adresu uvedenou v ní.<br /><br /> Tato vlastnost je určena pro použití při testování pracovních postupů. Například pokud chcete zajistit, aby byly všechny e-maily odeslány bez jejich odeslání skutečným příjemcům.|  
 |TestDropPath|String|Když je tato vlastnost nastavená, všechny e-maily se uloží i do zadaného souboru.<br /><br /> Tato vlastnost je určena k použití při testování nebo ladění pracovních postupů, abyste se ujistili, že formát a obsah odchozích e-mailů je vhodný.|  
   
 ## <a name="solution-contents"></a>Obsah řešení  
  Řešení obsahuje dva projekty.  
   
-|Project|Popis|Důležité soubory|  
+|Projekt|Popis|Důležité soubory|  
 |-------------|-----------------|---------------------|  
-|SendMail|Aktivita SendMail|1.  SendMail.cs: implementace hlavní aktivity<br />2.  SendMailDesigner. XAML a SendMailDesigner.xaml.cs: Návrhář pro aktivitu SendMail<br />3.  MailTemplateBody. htm: Šablona pro odeslání e-mailu.|  
-|SendMailTestClient|Klient pro otestování aktivity SendMail  Tento projekt znázorňuje dva způsoby volání aktivity SendMail: deklarativně a programově.|1.  Sequence1. XAML: pracovní postup, který vyvolá aktivitu SendMail.<br />2.  Program.cs: vyvolá Sequence1 a také vytvoří pracovní postup programově, který používá SendMail.|  
+|SendMail|Aktivita SendMail|1. SendMail.cs: implementace hlavní aktivity<br />2. SendMailDesigner. XAML a SendMailDesigner.xaml.cs: Návrhář pro aktivitu SendMail<br />3. MailTemplateBody. htm: Šablona pro odeslání e-mailu.|  
+|SendMailTestClient|Klient pro otestování aktivity SendMail  Tento projekt znázorňuje dva způsoby volání aktivity SendMail: deklarativně a programově.|1. Sequence1. XAML: pracovní postup, který vyvolá aktivitu SendMail.<br />2. Program.cs: vyvolá Sequence1 a také vytvoří pracovní postup programově, který používá SendMail.|  
   
 ## <a name="further-configuration-of-the-sendmail-activity"></a>Další konfigurace aktivity SendMail  
  I když v ukázce není zobrazený, můžou uživatelé provádět i konfiguraci aktivity SendMail. Další tři části ukazují, jak to uděláte.  
@@ -67,7 +67,7 @@ new SendMail
 ```  
   
 ### <a name="sending-an-email-using-a-template"></a>Odeslání e-mailu pomocí šablony  
- Tento fragment kódu ukazuje, jak odeslat e-mail pomocí tokenů šablony v těle. Všimněte si, že při `BodyTemplateFilePath` nastavování vlastnosti není nutné zadávat hodnotu vlastnosti tělo (obsah souboru šablony bude zkopírován do těla).  
+ Tento fragment kódu ukazuje, jak odeslat e-mail pomocí tokenů šablony v těle. Všimněte si, že při nastavování vlastnosti `BodyTemplateFilePath` nepotřebujeme zadat hodnotu vlastnosti tělo (obsah souboru šablony se zkopíruje do těla).  
   
 ```csharp  
 new SendMail  
@@ -84,7 +84,7 @@ new SendMail
 ```  
   
 ### <a name="sending-mails-in-testing-mode"></a>Odesílání e-mailů v testovacím režimu  
- Tento fragment kódu ukazuje, jak nastavit vlastnosti dvou testů: `TestMailTo` nastavením na všechny zprávy se `john.doe@contoso.con` pošle (bez ohledu na hodnoty do, kopie, Skrytá kopie). Nastavením TestDropPath všech odchozích e-mailů se také zaznamená v zadané cestě. Tyto vlastnosti lze nastavit nezávisle (nejsou v relaci).  
+ Tento fragment kódu ukazuje, jak nastavit vlastnosti dvou testů: nastavením `TestMailTo` na všechny zprávy bude odesláno do `john.doe@contoso.con` (bez ohledu na hodnoty do, kopie, Skrytá kopie). Nastavením TestDropPath všech odchozích e-mailů se také zaznamená v zadané cestě. Tyto vlastnosti lze nastavit nezávisle (nejsou v relaci).  
   
 ```csharp  
 new SendMail  
@@ -107,11 +107,11 @@ new SendMail
   
  Další informace o nastavení serveru SMTP najdete na následujících odkazech.  
   
-- [Microsoft Technet](https://go.microsoft.com/fwlink/?LinkId=166060)  
+- [Microsoft TechNet](https://go.microsoft.com/fwlink/?LinkId=166060)  
   
 - [Konfigurace služby SMTP (IIS 6,0)](https://go.microsoft.com/fwlink/?LinkId=150456)  
   
-- [IIS 7.0: Konfigurace e-mailu SMTP](https://go.microsoft.com/fwlink/?LinkId=150457)  
+- [IIS 7,0: Konfigurace e-mailu SMTP](https://go.microsoft.com/fwlink/?LinkId=150457)  
   
 - [Jak nainstalovat službu SMTP](https://go.microsoft.com/fwlink/?LinkId=150458)  
   
@@ -136,6 +136,6 @@ new SendMail
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\SendMail`

@@ -5,16 +5,16 @@ helpviewer_keywords:
 - Manifest Generation and Editing tool
 - MageUI.exe
 ms.assetid: f9e130a6-8117-49c4-839c-c988f641dc14
-ms.openlocfilehash: 99f522181232d16b9913ba3c55f34274b75d8966
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 7d09e1283be8ec75df89957e91f0d8411c125b3b
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449410"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74714458"
 ---
 # <a name="mageuiexe-manifest-generation-and-editing-tool-graphical-client"></a>MageUI.exe (generování manifestu a nástroj pro úpravy, grafický klient)
 
-Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádku Mage.exe, ale používá uživatelské rozhraní (UI) založené na systému Windows. Pomocí tohoto nástroje je možné vytvářet, upravovat a podepisovat manifesty nasazení a aplikací. Nové manifesty, které jsou vytvořeny pomocí nástroje MageUI. exe, cílí na [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]. Pro straší verze rozhraní .NET Framework byste měli použít starší verze nástroje MageUI.exe. Nástroj MageUI. exe při přidávání nebo odebírání sestavení z manifestu nebo opětovného podepisování stávajících manifestů neaktualizuje manifest na cílovou [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]. Další informace naleznete v tématu [Mage. exe (Manifest Generation and Editing Tool)](mage-exe-manifest-generation-and-editing-tool.md).
+Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádku Mage.exe, ale používá uživatelské rozhraní (UI) založené na systému Windows. Pomocí tohoto nástroje je možné vytvářet, upravovat a podepisovat manifesty nasazení a aplikací. Nové manifesty, které jsou vytvořeny pomocí nástroje MageUI. exe, cílí na profil klienta .NET Framework 4. Pro straší verze rozhraní .NET Framework byste měli použít starší verze nástroje MageUI.exe. Nástroj MageUI. exe při přidávání nebo odebírání sestavení z manifestu nebo opětovného podepisování stávajících manifestů neaktualizuje manifest na cílový profil klienta .NET Framework 4. Další informace naleznete v tématu [Mage. exe (Manifest Generation and Editing Tool)](mage-exe-manifest-generation-and-editing-tool.md).
 
  Tento nástroj je automaticky nainstalován se sadou Visual Studio. Chcete-li spustit nástroj, použijte Developer Command Prompt pro Visual Studio (nebo příkazový řádek sady Visual Studio v systému Windows 7). Další informace najdete v tématu [výzvy k zadání příkazu](developer-command-prompt-for-vs.md).
 
@@ -92,9 +92,9 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
 |----------------|-----------------|  
 |**Jméno**|Požadováno. Název manifestu aplikace. Obvykle je stejný jako název souboru.|  
 |**Verze**|Požadováno. Číslo verze nasazení ve formátu n. n. *n*. n. Vyžaduje se pouze první hlavní číslo buildu. Například pro verzi 1,0 aplikace, platné hodnoty by zahrnovaly `1`, `1.0`, `1.0.0`a `1.0.0.0`.|  
-|**Mobilních**|Volitelná. Architektura počítače, na které se dá toto nasazení spustit Výchozí hodnota je `msil`nebo převodní jazyk Microsoft, což je výchozí formát všech spravovaných sestavení. Toto pole změňte, pokud jste předem zkompilováni sestavení v aplikaci pro konkrétní architekturu. Další informace o předběžné kompilaci naleznete v souboru [Ngen. exe (generátor nativních imagí)](ngen-exe-native-image-generator.md).|  
-|**Jazykových**|Volitelná. Kód země a oblasti ve dvou částech, ve kterých se tato aplikace spouští. Výchozí hodnota je `neutral`.|  
-|**Token veřejného klíče**|Volitelná. Veřejný klíč, se kterým byl podepsán tento manifest aplikace. Pokud se jedná o nový nebo nepodepsaný manifest, toto pole se zobrazí jako `Unsigned`.|  
+|**Mobilních**|Volitelné. Architektura počítače, na které se dá toto nasazení spustit Výchozí hodnota je `msil`nebo převodní jazyk Microsoft, což je výchozí formát všech spravovaných sestavení. Toto pole změňte, pokud jste předem zkompilováni sestavení v aplikaci pro konkrétní architekturu. Další informace o předběžné kompilaci naleznete v souboru [Ngen. exe (generátor nativních imagí)](ngen-exe-native-image-generator.md).|  
+|**Jazykových**|Volitelné. Kód země a oblasti ve dvou částech, ve kterých se tato aplikace spouští. Výchozí hodnota je `neutral`.|  
+|**Token veřejného klíče**|Volitelné. Veřejný klíč, se kterým byl podepsán tento manifest aplikace. Pokud se jedná o nový nebo nepodepsaný manifest, toto pole se zobrazí jako `Unsigned`.|  
   
 ### <a name="description-tab"></a>Karta Popis  
  Tyto informace jsou obvykle k dispozici v manifestu nasazení. Tato pole lze změnit pouze v případě, že je na kartě **Možnosti aplikace** zaškrtnuto políčko **použít informace o důvěryhodnosti manifestu aplikace** .  
@@ -149,9 +149,9 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
 |----------------|-----------------|  
 |**Jméno**|Požadováno. Název manifestu nasazení. Obvykle je stejný jako název souboru.|  
 |**Verze**|Požadováno. Číslo verze nasazení ve formátu n. n. *n*. n. Vyžaduje se pouze první hlavní číslo buildu. Například pro verzi 1,0 aplikace, platné hodnoty by zahrnovaly `1`, `1.0`, `1.0.0`a `1.0.0.0`.|  
-|**Mobilních**|Volitelná. Architektura počítače, na které se dá toto nasazení spustit Výchozí hodnota je `msil`, nebo Microsoft Intermediate Language, což je výchozí formát všech spravovaných sestavení. Toto pole změňte, pokud jste v aplikaci zkompilováni sestavení pro konkrétní architekturu.|  
-|**Jazykových**|Volitelná. Kód země/oblasti ve dvou částech, ve kterém se tato aplikace spouští. Výchozí hodnota je `neutral`.|  
-|**Token veřejného klíče**|Volitelná. Veřejný klíč, se kterým byl podepsán tento manifest nasazení. Pokud se jedná o nový nebo nepodepsaný manifest, toto pole se zobrazí jako `Unsigned`.|  
+|**Mobilních**|Volitelné. Architektura počítače, na které se dá toto nasazení spustit Výchozí hodnota je `msil`, nebo Microsoft Intermediate Language, což je výchozí formát všech spravovaných sestavení. Toto pole změňte, pokud jste v aplikaci zkompilováni sestavení pro konkrétní architekturu.|  
+|**Jazykových**|Volitelné. Kód země/oblasti ve dvou částech, ve kterém se tato aplikace spouští. Výchozí hodnota je `neutral`.|  
+|**Token veřejného klíče**|Volitelné. Veřejný klíč, se kterým byl podepsán tento manifest nasazení. Pokud se jedná o nový nebo nepodepsaný manifest, toto pole se zobrazí jako `Unsigned`.|  
   
 ### <a name="description-tab"></a>Karta Popis  
   
@@ -159,15 +159,15 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
 |----------------|-----------------|  
 |**Microsoft**|Požadováno. Jméno osoby nebo organizace zodpovědné za aplikaci. Tato hodnota se používá jako název složky nabídky Start.|  
 |**Produktu**|Požadováno. Úplný název produktu Pokud jste vybrali možnost **instalovat místně** pro prvek **Typ aplikace** na kartě **Možnosti nasazení** , bude tento název zobrazen v odkazu nabídky **Start** a v části **Přidat nebo odebrat programy** pro tuto aplikaci.|  
-|**Umístění podpory**|Volitelná. Adresa URL, ze které mohou zákazníci získat nápovědu a podporu pro aplikaci.|  
+|**Umístění podpory**|Volitelné. Adresa URL, ze které mohou zákazníci získat nápovědu a podporu pro aplikaci.|  
   
 ### <a name="deployment-options-tab"></a>Karta Možnosti nasazení  
   
 |Prvek uživatelského rozhraní (UI)|Popis|  
 |----------------|-----------------|  
-|**Typ aplikace**|Volitelná. Určuje, jestli se tato aplikace nainstaluje do klientského počítače (**místně se nainstaluje**), běží online (**jenom online**), nebo je aplikace WPF, která běží v prohlížeči (**aplikace prohlížeče WPF**). Výchozí nastavení se **instaluje místně**.|  
-|**Počáteční umístění**|Volitelná. Adresa URL, ze které má být aplikace skutečně spuštěna. Užitečné při nasazování aplikace z disku CD, který by se měl aktualizovat z webu.|  
-|**Zahrnout počáteční umístění (ProviderURL) v manifestu**|Volitelná. Určuje adresu URL, na které technologie ClickOnce vyhledá aktualizace aplikace.|  
+|**Typ aplikace**|Volitelné. Určuje, jestli se tato aplikace nainstaluje do klientského počítače (**místně se nainstaluje**), běží online (**jenom online**), nebo je aplikace WPF, která běží v prohlížeči (**aplikace prohlížeče WPF**). Výchozí nastavení se **instaluje místně**.|  
+|**Počáteční umístění**|Volitelné. Adresa URL, ze které má být aplikace skutečně spuštěna. Užitečné při nasazování aplikace z disku CD, který by se měl aktualizovat z webu.|  
+|**Zahrnout počáteční umístění (ProviderURL) v manifestu**|Volitelné. Určuje adresu URL, na které technologie ClickOnce vyhledá aktualizace aplikace.|  
 |**Automaticky spouštět aplikaci po instalaci**|Požadováno. Určuje, že aplikace ClickOnce by se měla spustit hned po počáteční instalaci z adresy URL. Ve výchozím nastavení je zaškrtnuté políčko.|  
 |**Povolení parametrů adresy URL, které se mají předat aplikaci**|Požadováno. Povoluje přenos parametrů dat do aplikace ClickOnce prostřednictvím řetězce dotazu, který je připojený k adrese URL manifestu nasazení. Výchozím nastavením je zaškrtnutí políčka zrušeno.|  
 |**Použít příponu souboru. deploy**|Požadováno. Pokud je tato možnost vybrána, všechny soubory v manifestu aplikace musí mít příponu. deploy. Výchozím nastavením je zaškrtnutí políčka zrušeno.|  
@@ -180,7 +180,7 @@ Nástroj MageUI.exe podporuje stejné funkce jako nástroj příkazového řádk
 |**Tato aplikace by měla vyhledávat aktualizace**|Určuje, zda má ClickOnce vyhledat aktualizace aplikace. Pokud toto políčko není zaškrtnuté, aplikace nebude kontrolovat aktualizace, pokud ji neaktualizujete programově pomocí rozhraní API v oboru názvů <xref:System.Deployment.Application>.|  
 |**Vyberte, kdy má aplikace vyhledat aktualizace.**|Poskytuje dvě možnosti pro kontroly aktualizací:<br /><br /> -   **před spuštěním aplikace**. Tato aktualizace je provedena před spuštěním aplikace.<br />-   **po spuštění aplikace**. Po inicializaci hlavní formy aplikace se spustí Tato aktualizace a spustí se při příštím spuštění aplikace.|  
 |**Aktualizace frekvence kontroly**|Určuje, jak často by měla technologie ClickOnce vyhledávat aktualizace:<br /><br /> -   **kontrolovat při každém spuštění aplikace**. ClickOnce provede kontrolu aktualizace pokaždé, když uživatel otevře aplikaci.<br />-   **kontrolovat každých**: vyberte časový interval a jednotku (hodiny, dny nebo týdny), které musí uplynout před kontrolou aktualizací.|  
-|**Zadat minimální požadovanou verzi této aplikace**|Volitelná. Určuje, že konkrétní verze aplikace je požadovaná instalace, která uživatelům brání v práci se starší verzí.|  
+|**Zadat minimální požadovanou verzi této aplikace**|Volitelné. Určuje, že konkrétní verze aplikace je požadovaná instalace, která uživatelům brání v práci se starší verzí.|  
 |**Verze**|Povinné, pokud je zaškrtnuté políčko **pro tuto aplikaci zadat minimální požadovanou verzi** . Zadané číslo verze musí být ve formátu *n. n. n*. n. Vyžaduje se pouze první hlavní číslo buildu. Například pro verzi 1,0 aplikace, platné hodnoty by zahrnovaly `1`, `1.0`, `1.0.0`a `1.0.0.0`.|  
   
 ### <a name="application-reference-tab"></a>Karta odkaz na aplikaci  

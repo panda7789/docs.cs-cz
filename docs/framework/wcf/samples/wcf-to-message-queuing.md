@@ -2,12 +2,12 @@
 title: Z WCF do Řízení front zpráv
 ms.date: 03/30/2017
 ms.assetid: 78d0d0c9-648e-4d4a-8f0a-14d9cafeead9
-ms.openlocfilehash: 34ac2dd8b6e01e2d7ae6f7978e1b09af174b71dd
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 1cbc1251a8e4eaaaf4b47357851dd681ae326f25
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70038629"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715061"
 ---
 # <a name="windows-communication-foundation-to-message-queuing"></a>Z WCF do Řízení front zpráv
 Tato ukázka předvádí, jak může aplikace Windows Communication Foundation (WCF) odeslat zprávu do aplikace řízení front zpráv (MSMQ). Služba je samoobslužná Konzolová aplikace, která vám umožní sledovat službu přijímající zprávy zařazené do fronty. Službu a klienta nemusíte spouštět ve stejnou dobu.
@@ -32,7 +32,7 @@ static void Main(string[] args)
 }
 ```
 
- Při přijetí zprávy ve frontě je vyvolána obslužná rutina `ProcessOrder` zprávy.
+ Při přijetí zprávy ve frontě je vyvolána obslužná rutina zprávy `ProcessOrder`.
 
 ```csharp
 public static void ProcessOrder(Object source,
@@ -98,7 +98,7 @@ client.Close();
 
  Klient pro odeslání zprávy služby MSMQ do fronty používá vlastního klienta. Vzhledem k tomu, že aplikace, která přijímá a zpracovává zprávu, je aplikace služby MSMQ a ne aplikace WCF, není mezi těmito dvěma aplikacemi žádný implicitní kontrakt služby. Proto nemůžeme vytvořit proxy pomocí nástroje Svcutil. exe v tomto scénáři.
 
- Vlastní klient je v podstatě stejný pro všechny aplikace WCF, které používají `MsmqIntegration` vazbu k posílání zpráv. Na rozdíl od jiných klientů nezahrnuje rozsah operací služby. Jedná se pouze o operaci Odeslat zprávu.
+ Vlastní klient je v podstatě stejný pro všechny aplikace WCF, které používají vazbu `MsmqIntegration` k posílání zpráv. Na rozdíl od jiných klientů nezahrnuje rozsah operací služby. Jedná se pouze o operaci Odeslat zprávu.
 
 ```csharp
 [System.ServiceModel.ServiceContractAttribute(Namespace = "http://Microsoft.ServiceModel.Samples")]
@@ -146,9 +146,9 @@ public partial class OrderProcessorClient : System.ServiceModel.ClientBase<IOrde
   
     4. Zaškrtněte políčko **transakční** .  
   
-    5. Jako `ServiceModelSamplesTransacted` název nové fronty zadejte.  
+    5. Jako název nové fronty zadejte `ServiceModelSamplesTransacted`.  
   
-3. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
 4. Chcete-li spustit ukázku v konfiguraci s jedním počítačem, postupujte podle pokynů v [části spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
@@ -169,11 +169,11 @@ public partial class OrderProcessorClient : System.ServiceModel.ClientBase<IOrde
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\WcfToMsmq`  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Výměna zpráv pomocí koncových bodů WCF a aplikací služby Řízení front zpráv](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)
+- [Postupy: Výměna zpráv s koncovými body WCF a aplikací pro řazení zpráv do front](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)
 - [Řízení front zpráv](https://go.microsoft.com/fwlink/?LinkId=94968)

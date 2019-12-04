@@ -2,37 +2,37 @@
 title: Aktivita ThrottledParallelForEach
 ms.date: 03/30/2017
 ms.assetid: f2855b5f-e9a7-433d-96a4-40fc31025215
-ms.openlocfilehash: 2694173e203fae9b620e9594d6d4a494bdedafef
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 340e4ff154b63221ec911c872a1154bdb672cf8c
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65637763"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715911"
 ---
 # <a name="throttled-parallel-foreach"></a>Aktivita ThrottledParallelForEach
 
-`ThrottleParallelForEach` Aktivity se podobá <xref:System.Activities.Statements.ParallelForEach%601> činnost s jednou výjimkou, že umožňuje nastavení faktor souběžnost chcete omezit počet souběžných větve ke spuštění. `ThrottleParallelForEach` Aktivity je odvozena z <xref:System.Activities.NativeActivity>, protože je potřeba naplánovat dalších aktivit (podřízené aktivity) a to je k dispozici pouze prostřednictvím <xref:System.Activities.NativeActivityContext> třídy.
+Aktivita `ThrottleParallelForEach` je podobná aktivitě <xref:System.Activities.Statements.ParallelForEach%601> s jednou výjimkou, kterou umožňuje nastavit faktor souběžnosti, aby se omezil počet souběžných větví, které se mají spustit. Aktivita `ThrottleParallelForEach` je odvozena z <xref:System.Activities.NativeActivity>, protože potřebuje naplánovat jiné aktivity (podřízené aktivity) a je přístupná pouze prostřednictvím třídy <xref:System.Activities.NativeActivityContext>.
 
 ## <a name="projects"></a>Projekty
 
-|**ProjectName**|**Popis**|**Hlavní soubory**|
+|**Názevprojektu**|**Popis**|**Hlavní soubory**|
 |-|-|-|
-|ThrottledParallelForEach|Obsahuje `ThrottledParallelForEach` aktivita a její návrháře.|ThrottledParallelForEach.cs<br /><br /> `ThrottledParallelForEach` Definici aktivity.|
-|CodeTestClient|Ukázková aplikace klienta, který konfiguruje a spustí pracovní postup s `ThrottledParallelForEach` pomocí imperativního kódu.|Program.cs<br /><br /> Definuje a spouští instanci ukázkového pracovního postupu.|
+|ThrottledParallelForEach|Obsahuje aktivitu `ThrottledParallelForEach` a její Návrhář.|ThrottledParallelForEach.cs<br /><br /> Definice aktivity `ThrottledParallelForEach`.|
+|CodeTestClient|Ukázková klientská aplikace, která konfiguruje a spustí pracovní postup s `ThrottledParallelForEach` pomocí imperativního kódu.|Program.cs<br /><br /> Definuje a spustí instanci ukázkového pracovního postupu.|
 
-## <a name="to-use-this-sample"></a>Pro fungování této ukázky
+## <a name="to-use-this-sample"></a>Použití této ukázky
 
-1. Pomocí sady Visual Studio 2010, otevřete soubor ThrottledParallelForEach.sln.
+1. Pomocí sady Visual Studio 2010 otevřete soubor ThrottledParallelForEach. sln.
 
-2. Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.
+2. Pro sestavení řešení stiskněte kombinaci kláves CTRL + SHIFT + B.
 
-3. Abyste mohli spustit řešení, stiskněte klávesu F5.
+3. Pokud chcete řešení spustit, stiskněte klávesu F5.
 
 > [!IMPORTANT]
-> Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).
+> Ukázky už můžou být na vašem počítači nainstalované. Než budete pokračovat, vyhledejte následující (výchozí) adresář.
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\ThrottledParallelForEach`

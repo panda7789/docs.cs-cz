@@ -2,16 +2,16 @@
 title: Ukázková dokumentace k Windows workflowu (WF)
 ms.date: 09/24/2018
 ms.assetid: e0aef017-4381-4f2f-a904-6e1ed898687e
-ms.openlocfilehash: c4c04732f3562d7624c9daaefe8e47839b9bdd72
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 24858d1b8d904bb32b2cee01d8ed5d710f97b15f
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141935"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715961"
 ---
 # <a name="windows-workflow-wf-samples"></a>Ukázky Windows Workflow
 
-Ukázky pro [Windows Workflow můžete stáhnout](https://go.microsoft.com/fwlink/?LinkId=150780) , které poskytují pokyny k různým aspektům programovací model Windows Workflow Foundation (WF).
+Ukázky pro [Windows Workflow můžete stáhnout](https://www.microsoft.com/download/details.aspx?id=21459) , které poskytují pokyny k různým aspektům programovací model Windows Workflow Foundation (WF).
 
 Články v této části popisují některé ukázky v balíčku ke stažení. Úplnou sadu dokumentace, která se zabývá všemi ukázkami, najdete v části [ukázky WF .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd483375(v%3dvs.100)) .
 

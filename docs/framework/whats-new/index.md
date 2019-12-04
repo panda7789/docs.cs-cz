@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: ffcb288995975433bdd915362fccca03f345b5f5
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: c651f5c02bd49acc593c585395bc52e9ee64f870
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74281657"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74714497"
 ---
 # <a name="whats-new-in-the-net-framework"></a>Co je nového v .NET Framework
 
@@ -434,7 +434,7 @@ Můžete přidat SameSite pro soubory cookie <xref:System.Web.Security.FormsAuth
 
 <a name="net472" />
 
-#### <a name="networking"></a>Sítě
+#### <a name="networking"></a>Síťové služby
 
 **Implementace vlastností HttpClientHandler**
 
@@ -630,7 +630,7 @@ Změny uvolňování paměti (GC) v .NET Framework 4.7.1 vylepšit celkový výk
 
 <a name="net471"/>
 
-#### <a name="networking"></a>Sítě
+#### <a name="networking"></a>Síťové služby
 
 **Podpora SHA-2 pro Message. HashAlgorithm**
 
@@ -699,7 +699,7 @@ V .NET Framework 4,7 <xref:System.Runtime.Serialization.Json.DataContractJsonSer
 
 <a name="net47" />
 
-#### <a name="networking"></a>Sítě
+#### <a name="networking"></a>Síťové služby
 
 .NET Framework 4,7 přidává následující funkci související se sítí:
 
@@ -841,7 +841,7 @@ End Class
 
 Pak můžete vytvořit soubor prostředků, dataanotace. Localization. fr. resx, jehož klíč je řetězec chybové zprávy a jehož hodnota je lokalizovaná chybová zpráva. Soubor se musí nacházet ve složce `App.LocalResources`. Například následující je klíč a jeho hodnota v lokalizované chybové zprávě jazyka francouzštiny (FR):
 
-| Název                                 | Hodnota                                     |
+| Name                                 | Hodnota                                     |
 | ------------------------------------ | ----------------------------------------- |
 | Hodnocení musí být v rozmezí od 1 do 10. | La doit être tvoří meziplatformní 1 et 10. |
 
@@ -1041,11 +1041,11 @@ Doba blokování fondu připojení pro aplikaci, která se připojuje k Azure SQ
 
 - .database.windows.net
 
-- .database.chinacloudapi.cn
+- . database.chinacloudapi.cn
 
-- .database.usgovcloudapi.net
+- . database.usgovcloudapi.net
 
-- .database.cloudapi.de
+- . database.cloudapi.de
 
 <xref:System.Data.SqlClient.PoolBlockingPeriod.AlwaysBlock>
 
@@ -1134,7 +1134,7 @@ Pokud používáte NetTcp se zabezpečením přenosu a typem přihlašovacích �
 
 - Vlastnost <xref:System.ServiceModel.TcpTransportSecurity.SslProtocols%2A?displayProperty=nameWithType>
 
-- Oddíl [>\<transportu](../configure-apps/file-schema/wcf/transport-of-nettcpbinding.md) v části [\<NetTcpBinding >](../configure-apps/file-schema/wcf/nettcpbinding.md)
+- Oddíl [\<transportu](../configure-apps/file-schema/wcf/transport-of-nettcpbinding.md) v části [\<NetTcpBinding >](../configure-apps/file-schema/wcf/nettcpbinding.md)
 
 - Část [\<sslStreamSecurity >](../configure-apps/file-schema/wcf/sslstreamsecurity.md) oddílu [\<CustomBinding >](../configure-apps/file-schema/wcf/custombinding.md)
 
@@ -1900,7 +1900,7 @@ Nové funkce v ASP.NET 4.5.1 najdete v tématu [ASP.NET and Web Tools for Visual
 
 <a name="v45" />
 
-## <a name="whats-new-in-net-framework-45"></a>Co je nového v .NET Framework 4,5
+## <a name="whats-new-in-net-framework-45"></a>Novinky v rozhraní .NET Framework 4.5
 
 ### <a name="base-classes"></a>Základní třídy
 
@@ -2116,13 +2116,13 @@ Další informace najdete v tématu [co je nového v programovací model Windows
 
 <a name="tailored" />
 
-### [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]
+### <a name="net-for-windows-8x-store-apps"></a>Aplikace .NET pro Windows 8.x Store
 
-Aplikace pro Store ve Windows 8. x jsou navržené pro konkrétní faktory a využívají sílu operačního systému Windows. K dispozici je podmnožina .NET Framework 4,5 nebo 4.5.1 pro sestavování aplikací Windows 8. x Store pro C# Windows pomocí nebo Visual Basic. Tato podmnožina se nazývá [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] a je popsána v [přehledu](https://go.microsoft.com/fwlink/?LinkId=228491) na stránce Windows Dev Center.
+Aplikace pro Store ve Windows 8. x jsou navržené pro konkrétní faktory a využívají sílu operačního systému Windows. K dispozici je podmnožina .NET Framework 4,5 nebo 4.5.1 pro sestavování aplikací Windows 8. x Store pro C# Windows pomocí nebo Visual Basic. Tato podmnožina se nazývá .NET pro aplikace Windows 8. x Store a je popsána v [přehledu](https://go.microsoft.com/fwlink/?LinkId=228491) na stránce Windows Dev Center.
 
 ### <a name="portable-class-libraries-a-nameportable-"></a>Knihovny přenosných tříd <a name="portable" />
 
-Přenosná knihovna tříd projektu v aplikaci Visual Studio 2012 (a novějších verzích) umožňuje psát a sestavovat spravovaná sestavení, která fungují na více .NET Framework platformách. Pomocí přenosného projektu knihovny tříd zvolíte platformy (například Windows Phone a [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]) k cíli. Dostupné typy a členy v projektu jsou automaticky omezeny na společné typy a členy napříč těmito platformami. Další informace naleznete v tématu [Přenosná knihovna tříd](../../standard/cross-platform/cross-platform-development-with-the-portable-class-library.md).
+Přenosná knihovna tříd projektu v aplikaci Visual Studio 2012 (a novějších verzích) umožňuje psát a sestavovat spravovaná sestavení, která fungují na více .NET Framework platformách. Pomocí přenositelného projektu knihovny tříd zvolíte platformy (například Windows Phone a .NET pro aplikace pro Windows 8. x Store) k cíli. Dostupné typy a členy v projektu jsou automaticky omezeny na společné typy a členy napříč těmito platformami. Další informace naleznete v tématu [Přenosná knihovna tříd](../../standard/cross-platform/cross-platform-development-with-the-portable-class-library.md).
 
 ## <a name="see-also"></a>Viz také:
 

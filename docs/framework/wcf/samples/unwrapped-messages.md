@@ -2,15 +2,15 @@
 title: Nerozbalené zprávy
 ms.date: 03/30/2017
 ms.assetid: 019657bd-1f9b-4315-ad74-eaa4e7551ff6
-ms.openlocfilehash: 9609160885a46d76c5df54538fc088a3d025ca3b
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 4d6525393bb65dd6361b8d195f3a71991102daa1
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044608"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716738"
 ---
 # <a name="unwrapped-messages"></a>Nerozbalené zprávy
-Tento příklad ukazuje nezabalené zprávy. Ve výchozím nastavení je tělo zprávy formátováno tak, že parametry operace služby jsou zabaleny. Následující ukázka ukazuje `Add` zprávu `ICalculator` požadavku služby v zabaleném režimu.  
+Tento příklad ukazuje nezabalené zprávy. Ve výchozím nastavení je tělo zprávy formátováno tak, že parametry operace služby jsou zabaleny. Následující ukázka ukazuje zprávu žádosti o `Add` do služby `ICalculator` v zabaleném režimu.  
   
 ```xml  
 <s:Envelope   
@@ -28,7 +28,7 @@ Tento příklad ukazuje nezabalené zprávy. Ve výchozím nastavení je tělo z
 </s:Envelope>  
 ```  
   
- Prvek v těle zprávy balí `n1` parametry a `n2`. `<Add>` Naproti tomu následující příklad ukazuje ekvivalentní zprávu v nezabaleném režimu.  
+ Prvek `<Add>` v těle zprávy balí parametry `n1` a `n2`. Naproti tomu následující příklad ukazuje ekvivalentní zprávu v nezabaleném režimu.  
   
 ```xml  
 <s:Envelope   
@@ -45,12 +45,12 @@ Tento příklad ukazuje nezabalené zprávy. Ve výchozím nastavení je tělo z
 </MessageLogTraceRecord>  
 ```  
   
- Nezabalená zpráva nezabalí `n1` parametry a `n2` v obsahujícím elementu, jsou přímými podřízenými elementy SOAP těla elementu.  
+ Rozbalení zprávy nezalomí `n1` a `n2` parametrů v obsahujícím elementu, jsou přímými podřízenými elementy SOAP těla elementu.  
   
 > [!NOTE]
 > Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.  
   
- V této ukázce je vytvořena nezabalená zpráva pomocí <xref:System.ServiceModel.MessageContractAttribute> typu parametru operace služby a typu vrácené hodnoty, jak je znázorněno v následujícím ukázkovém kódu.  
+ V této ukázce je vytvořena nezabalená zpráva pomocí <xref:System.ServiceModel.MessageContractAttribute> typu parametru operace služby a návratového typu hodnoty, jak je znázorněno v následujícím ukázkovém kódu.  
   
 ```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -89,7 +89,7 @@ public class ResponseMessage
 }  
 ```  
   
- Aby bylo možné zobrazit zprávy odesílané a přijímané, Tato ukázka používá trasování. Kromě toho <xref:System.ServiceModel.WSHttpBinding> byl nakonfigurován bez zabezpečení pro snížení počtu zpráv, které protokoluje.  
+ Aby bylo možné zobrazit zprávy odesílané a přijímané, Tato ukázka používá trasování. Kromě toho je <xref:System.ServiceModel.WSHttpBinding> nakonfigurovaný bez zabezpečení, aby se snížil počet zpráv, které protokoluje.  
   
  Výsledný protokol trasování (c:\logs\Message.log) lze zobrazit pomocí [nástroje Service Trace Viewer (SvcTraceViewer. exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md). Chcete-li zobrazit obsah zprávy, vyberte **zprávy** v levém a pravém podokně nástroje Prohlížeč trasování služby. Protokoly trasování v této ukázce jsou nakonfigurovány tak, aby se vygenerovaly do složky C:\Logs. Před spuštěním ukázky vytvořte tuto složku a poskytněte uživateli síťová služba oprávnění k zápisu do tohoto adresáře.  
   
@@ -99,7 +99,7 @@ public class ResponseMessage
   
 2. Vytvořte adresář C:\Logs. pro protokolování zpráv. Udělte síťové službě uživateli oprávnění zapisovat pro tento adresář.  
   
-3. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
 4. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
@@ -108,6 +108,6 @@ public class ResponseMessage
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Message\Unwrapped`  

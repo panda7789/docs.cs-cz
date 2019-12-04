@@ -2,12 +2,12 @@
 title: Objektově orientované programování (C#)
 ms.date: 07/20/2015
 ms.assetid: 89574786-65ef-4335-88bc-fbacd094f183
-ms.openlocfilehash: 121d2e43f6896179756067e661be6d7960a1ee64
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 1de150f6eb4be893ca1afce6bd16afde5752c986
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73418049"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74711824"
 ---
 # <a name="object-oriented-programming-c"></a>Objektově orientované programování (C#)
 
@@ -77,7 +77,7 @@ struct SampleStruct
 }
 ```
 
-Další informace naleznete v tématu:
+Další informace najdete v části .
 
 - [class](../../language-reference/keywords/class.md)
 
@@ -131,7 +131,7 @@ class SampleClass
 
 Většina vlastností má metody nebo postupy pro nastavení a získání hodnoty vlastnosti. Můžete však vytvořit vlastnosti jen pro čtení nebo jen pro zápis a omezit tak jejich úpravu nebo čtení. V C#nástroji můžete vynechat metodu vlastnosti `get` nebo `set`. Automaticky implementované vlastnosti ale nemůžou být jen pro čtení nebo jen pro zápis.
 
-Další informace naleznete v tématu:
+Další informace najdete v části .
 
 - [get](../../language-reference/keywords/get.md)
 
@@ -158,13 +158,13 @@ Třída může mít několik implementací nebo *přetížení*stejné metody, k
 Přetížení metody:
 
 ```csharp
-public int sampleMethod(string sampleParam) {};
+public int sampleMethod(string sampleParam) {}
 public int sampleMethod(int sampleParam) {}
 ```
 
 Ve většině případů deklarujete metodu v rámci definice třídy. Nicméně podporuje C# také *metody rozšíření* , které umožňují přidat metody do existující třídy mimo skutečnou definici třídy.
 
-Další informace naleznete v tématu:
+Další informace najdete v části .
 
 - [Metody](../classes-and-structs/methods.md)
 
@@ -186,9 +186,7 @@ public class SampleClass
 }
 ```
 
-Další informace naleznete v tématu:
-
-[Konstruktory](../classes-and-structs/constructors.md).
+Další informace naleznete v tématu [konstruktory](../classes-and-structs/constructors.md).
 
 #### <a name="Finalizers"></a>Finalizační metody
 
@@ -268,7 +266,7 @@ SampleClass sampleObject = new SampleClass
     { FirstProperty = "A", SecondProperty = "B" };
 ```
 
-Další informace naleznete v tématu:
+Další informace najdete v části .
 
 - [new – operátor](../../language-reference/operators/new-operator.md)
 
@@ -338,7 +336,7 @@ Chcete-li určit, že třída může být použita pouze jako základní třída
 public abstract class B { }
 ```
 
-Další informace naleznete v tématu:
+Další informace najdete v části .
 
 - [sealed](../../language-reference/keywords/sealed.md)
 
@@ -382,7 +380,7 @@ class SampleClass : ISampleInterface
 }
 ```
 
-Další informace naleznete v tématu:
+Další informace najdete v části .
 
 [Rozhraní](../interfaces/index.md)
 
@@ -408,7 +406,7 @@ SampleGeneric<string> sampleObject = new SampleGeneric<string>();
 sampleObject.Field = "Sample string";
 ```
 
-Další informace naleznete v tématu:
+Další informace najdete v části .
 
 - [Obecné typy](../../../standard/generics/index.md)
 
@@ -446,7 +444,7 @@ class SampleClass
 }
 ```
 
-Další informace naleznete v tématu:
+Další informace najdete v části .
 
 - [Delegáty](../delegates/index.md)
 

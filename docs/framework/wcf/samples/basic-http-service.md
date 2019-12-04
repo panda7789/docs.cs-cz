@@ -2,12 +2,12 @@
 title: Základní služba HTTP
 ms.date: 03/30/2017
 ms.assetid: 27048b43-8a54-4f2a-9952-594bbfab10ad
-ms.openlocfilehash: ec716b41efb3dde6e5afdb386d797e402d924b56
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 8dfcd5a751bcef6aa24b5cb4a200c8820c43fe81
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045161"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716092"
 ---
 # <a name="basic-http-service"></a>Základní služba HTTP
 
@@ -15,15 +15,15 @@ Tato ukázka předvádí, jak implementovat službu RPC založenou na protokolu 
 
 ## <a name="sample-details"></a>Podrobnosti ukázky
 
-Služba WCF zveřejňuje 2 operace `EchoWithGet` a `EchoWithPost`, která vrací řetězec, který byl předán jako vstup.
+Služba WCF zpřístupňuje 2 operace, `EchoWithGet` a `EchoWithPost`, což vrátí řetězec, který byl předán jako vstup.
 
-Operace je opatřena poznámkou <xref:System.ServiceModel.Web.WebGetAttribute>, která indikuje, že operace zpracovává `GET` požadavky HTTP. `EchoWithGet` Vzhledem k <xref:System.ServiceModel.Web.WebGetAttribute> tomu <xref:System.UriTemplate>, že explicitně nespecifikuje, operace očekává, že vstupní řetězec bude předán pomocí parametru řetězce dotazu s názvem `s`. Všimněte si, že formát identifikátoru URI, který služba očekává, lze přizpůsobit pomocí <xref:System.ServiceModel.Web.WebGetAttribute.UriTemplate%2A> vlastnosti.
+Operace `EchoWithGet` je označena <xref:System.ServiceModel.Web.WebGetAttribute>, která indikuje, že operace zpracovává požadavky HTTP `GET`. Vzhledem k tomu, že <xref:System.ServiceModel.Web.WebGetAttribute> explicitně neurčuje <xref:System.UriTemplate>, operace očekává, že vstupní řetězec bude předán pomocí parametru řetězce dotazu s názvem `s`. Všimněte si, že formát identifikátoru URI, který služba očekává, lze přizpůsobit pomocí vlastnosti <xref:System.ServiceModel.Web.WebGetAttribute.UriTemplate%2A>.
 
-Tato `EchoWithPost` operace je opatřena poznámkami <xref:System.ServiceModel.Web.WebInvokeAttribute>, což znamená, že se `GET` nejedná o operaci (má vedlejší účinky). Vzhledem k <xref:System.ServiceModel.Web.WebInvokeAttribute> tomu `Method`, že explicitně nespecifikuje, operace zpracovává `POST` požadavky HTTP, které mají řetězec v textu požadavku (například ve formátu XML, například). Všimněte si, že metoda HTTP a formát identifikátoru URI pro požadavek lze přizpůsobit pomocí <xref:System.ServiceModel.Web.WebInvokeAttribute.Method%2A> vlastností a. <xref:System.ServiceModel.Web.WebInvokeAttribute.UriTemplate>
+Operace `EchoWithPost` je Poznáma s <xref:System.ServiceModel.Web.WebInvokeAttribute>, což znamená, že se nejedná o operaci `GET` (má vedlejší účinky). Vzhledem k tomu, že <xref:System.ServiceModel.Web.WebInvokeAttribute> explicitně neurčuje `Method`, operace zpracovává požadavky HTTP `POST`, které mají řetězec v textu žádosti (například ve formátu XML, např.). Všimněte si, že metoda HTTP a formát identifikátoru URI pro požadavek lze přizpůsobit pomocí <xref:System.ServiceModel.Web.WebInvokeAttribute.Method%2A> a <xref:System.ServiceModel.Web.WebInvokeAttribute.UriTemplate>ch vlastností v uvedeném pořadí.
 
-Soubor App. config nakonfiguruje službu WCF s výchozím <xref:System.ServiceModel.Description.WebHttpEndpoint> nastavením, které <xref:System.ServiceModel.Description.WebHttpEndpoint.HelpEnabled%2A> má vlastnost nastavenou na `true`. Výsledkem je, že infrastruktura WCF vytvoří na `http://localhost:8000/Customers/help` stránce pro automatickou nápovědu založenou na HTML, která poskytuje informace o tom, jak vytvořit požadavky HTTP ke službě a jak využívat odpověď HTTP služby.
+Soubor App. config konfiguruje službu WCF s výchozím <xref:System.ServiceModel.Description.WebHttpEndpoint>, která má vlastnost <xref:System.ServiceModel.Description.WebHttpEndpoint.HelpEnabled%2A> nastavenou na `true`. V důsledku toho infrastruktura WCF vytvoří na `http://localhost:8000/Customers/help` stránku s automatickou podporou HTML, která poskytuje informace o tom, jak vytvořit požadavky HTTP ke službě a jak používat odpověď HTTP služby.
 
-Program.cs ukazuje, jak lze pomocí objektu pro vytváření kanálů WCF volat služby a zpracovávat odpovědi. Všimněte si, že toto je pouze jeden způsob, jak získat přístup ke službě WCF. Ke službě je také možné přistupovat pomocí jiných tříd .NET Framework, jako <xref:System.Net.HttpWebRequest> jsou a. <xref:System.Net.WebClient>
+Program.cs ukazuje, jak lze pomocí objektu pro vytváření kanálů WCF volat služby a zpracovávat odpovědi. Všimněte si, že toto je pouze jeden způsob, jak získat přístup ke službě WCF. Ke službě je také možné přistupovat pomocí jiných tříd .NET Framework, jako je <xref:System.Net.HttpWebRequest> a <xref:System.Net.WebClient>.
 
 Ukázka se skládá ze samoobslužné služby a klienta spouštěného v konzolové aplikaci. Při spuštění konzolové aplikace klient provede požadavky na službu a zapíše příslušné informace z odpovědí do okna konzoly.
 
@@ -40,6 +40,6 @@ Ukázka se skládá ze samoobslužné služby a klienta spouštěného v konzolo
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Web\BasicHttpService`
