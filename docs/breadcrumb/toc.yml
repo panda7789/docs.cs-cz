@@ -60,7 +60,7 @@
               tocHref: /dotnet/standard/collections/
               topicHref: /dotnet/standard/collections/index
               items:
-                - name: Kolekce se zabezpečenými vlákny
+                - name: Kolekce bezpečné pro přístup z více vláken
                   tocHref: /dotnet/standard/collections/thread-safe/
                   topicHref: /dotnet/standard/collections/thread-safe/index
             - name: Vývoj pro různé platformy pomocí .NET
@@ -75,13 +75,13 @@
             - name: "Pokyny k\_návrhu architektury"
               tocHref: /dotnet/standard/design-guidelines/
               topicHref: /dotnet/standard/design-guidelines/index
-            - name: Zpracování a generování událostí
+            - name: Zpracování a vyvolávání událostí
               tocHref: /dotnet/standard/events/
               topicHref: /dotnet/standard/events/index
             - name: Zpracování a generování výjimek
               tocHref: /dotnet/standard/exceptions/
               topicHref: /dotnet/standard/exceptions/index
-            - name: Kolekce paměti
+            - name: Uvolnění paměti
               tocHref: /dotnet/standard/garbage-collection/
               topicHref: /dotnet/standard/garbage-collection/index
             - name: "Obecné typy v\_.NET"
@@ -90,7 +90,7 @@
             - name: Globalizace a lokalizace
               tocHref: /dotnet/standard/globalization-localization/
               topicHref: /dotnet/standard/globalization-localization/index
-            - name: I/O souborů a proudů
+            - name: Vstup/výstup souborů a streamů
               tocHref: /dotnet/standard/io/
               topicHref: /dotnet/standard/io/index
             - name: Typy související s Memory a Span
@@ -115,18 +115,57 @@
           tocHref: /dotnet/core/
           topicHref: /dotnet/core/index
           items:
-            - name: Změny způsobující chyby
-              tocHref: /dotnet/core/compatibility/
-              topicHref: /dotnet/core/compatibility/index
-            - name: Konfigurace běhového prostředí
-              tocHref: /dotnet/core/run-time-config/
-              topicHref: /dotnet/core/run-time-config/index
-            - name: Nástroje
-              tocHref: /dotnet/core/tools/
-              topicHref: /dotnet/core/tools/index
             - name: Průvodce instalací
               tocHref: /dotnet/core/install/
               topicHref: /dotnet/core/install/index
+            - name: Co je nového
+              tocHref: /dotnet/core/whats-new/
+              topicHref: /dotnet/core/whats-new/dotnet-core-3-0
+            - name: Změny způsobující chyby
+              tocHref: /dotnet/core/compatibility/
+              topicHref: /dotnet/core/compatibility/index
+            - name: Kurzy
+              tocHref: /dotnet/core/tutorials/
+              topicHref: /dotnet/core/tutorials/index
+            - name: Konfigurace běhového prostředí
+              tocHref: /dotnet/core/run-time-config/
+              topicHref: /dotnet/core/run-time-config/index
+            - name: Nativní interoperabilita
+              tocHref: /dotnet/core/native-interop/
+              topicHref: /dotnet/core/native-interop/expose-components-to-com
+            - name: Migrace
+              tocHref: /dotnet/core/migration/
+              topicHref: /dotnet/core/migration/index
+            - name: Nasazení
+              tocHref: /dotnet/core/deploying/
+              topicHref: /dotnet/core/deploying/index
+            - name: Docker
+              tocHref: /dotnet/core/docker/
+              topicHref: /dotnet/core/docker/introduction
+            - name: Diagnostické nástroje
+              tocHref: /dotnet/core/diagnostics/
+              topicHref: /dotnet/core/diagnostics/index
+            - name: Testování jednotek
+              tocHref: /dotnet/core/testing/
+              topicHref: /dotnet/core/testing/index
+            - name: Správa verzí
+              tocHref: /dotnet/core/versions/
+              topicHref: /dotnet/core/versions/index
+            - name: Nástroje
+              tocHref: /dotnet/core/tools/
+              topicHref: /dotnet/core/tools/index
+            - name: Další nástroje
+              tocHref: /dotnet/core/additional-tools/
+              topicHref: /dotnet/core/additional-tools/index
+            - name: Přenos
+              tocHref: /dotnet/core/porting/
+              topicHref: /dotnet/core/porting/index
+            - name: Načítání závislostí
+              tocHref: /dotnet/core/dependency-loading/
+              topicHref: /dotnet/core/dependency-loading/overview
+            - name: Sestavení .NET Core
+              tocHref: /dotnet/core/build/
+              topicHref: /dotnet/core/build/index
         - name: .NET Framework
           tocHref: /dotnet/framework/
           topicHref: /dotnet/framework/index
@@ -157,16 +196,16 @@
                     - name: Schéma nastavení sítě
                       tocHref: /dotnet/framework/configure-apps/file-schema/network/
                       topicHref: /dotnet/framework/configure-apps/file-schema/network/index
-                    - name: Schéma nastavení běhového prostředí
+                    - name: Schéma nastavení modulu runtime
                       tocHref: /dotnet/framework/configure-apps/file-schema/runtime/
                       topicHref: /dotnet/framework/configure-apps/file-schema/runtime/index
                     - name: Schéma nastavení spouštění
                       tocHref: /dotnet/framework/configure-apps/file-schema/startup/
                       topicHref: /dotnet/framework/configure-apps/file-schema/startup/index
-                    - name: Trasování a ladění schématu nastavení
+                    - name: Schéma nastavení trasování a ladění
                       tocHref: /dotnet/framework/configure-apps/file-schema/trace-debug/
                       topicHref: /dotnet/framework/configure-apps/file-schema/trace-debug/index
-                    - name: Konfigurační schéma služby WCF
+                    - name: Schéma konfigurace WCF
                       tocHref: /dotnet/framework/configure-apps/file-schema/wcf/
                       topicHref: /dotnet/framework/configure-apps/file-schema/wcf/index
                     - name: Syntaxe direktivy WCF
@@ -175,10 +214,10 @@
                     - name: Schéma nastavení webu
                       tocHref: /dotnet/framework/configure-apps/file-schema/web/
                       topicHref: /dotnet/framework/configure-apps/file-schema/web/index
-                    - name: Konfigurační schéma pro Windows Identity Foundation
+                    - name: Schéma konfigurace Windows Identity Foundation
                       tocHref: /dotnet/framework/configure-apps/file-schema/windows-identity-foundation/
                       topicHref: /dotnet/framework/configure-apps/file-schema/windows-identity-foundation/index
-                    - name: Konfigurační schéma pro Windows Workflow Foundation
+                    - name: Schéma konfigurace programovacího modelu Windows Workflow Foundation
                       tocHref: /dotnet/framework/configure-apps/file-schema/windows-workflow-foundation
                       topicHref: /dotnet/framework/configure-apps/file-schema/windows-workflow-foundation/index
                     - name: Konfigurační oddíl pro model Windows Forms
@@ -251,7 +290,7 @@
             - name: Dynamické programování v rozhraní .NET Framework
               tocHref: /dotnet/framework/reflection-and-codedom/
               topicHref: /dotnet/framework/reflection-and-codedom/index
-            - name: Prostředky v aplikacích klasické pracovní plochy
+            - name: Prostředky v desktopových aplikacích
               tocHref: /dotnet/framework/resources/
               topicHref: /dotnet/framework/resources/index
             - name: Zabezpečení v rozhraní .NET Framework
@@ -305,7 +344,7 @@
                   tocHref: /dotnet/framework/wcf/diagnostics/
                   topicHref: /dotnet/framework/wcf/diagnostics/index
                   items:
-                    - name: Analytické trasování s ETW
+                    - name: Analytické trasování pomocí Trasování událostí pro Windows
                       tocHref: /dotnet/framework/wcf/diagnostics/etw/
                       topicHref: /dotnet/framework/wcf/diagnostics/etw/index
                     - name: Protokolování událostí ve WCF
@@ -352,14 +391,14 @@
                 - name: Rozšiřování formulářových aplikací Windows
                   tocHref: /dotnet/framework/winforms/advanced/
                   topicHref: /dotnet/framework/winforms/advanced/index
-                - name: Ovládací prvky Windows Forms
+                - name: Windows Forms – ovládací prvky
                   tocHref: /dotnet/framework/winforms/controls/
                   topicHref: /dotnet/framework/winforms/controls/index
             - name: Windows Presentation Foundation
               tocHref: /dotnet/framework/wpf/
               topicHref: /dotnet/framework/wpf/index
               items:
-                - name: Rozšířené (Windows Presentation Foundation)
+                - name: Upřesnit
                   tocHref: /dotnet/framework/wpf/advanced/
                   topicHref: /dotnet/framework/wpf/advanced/index
                 - name: Vývoj aplikací
@@ -377,10 +416,10 @@
                 - name: Grafika a multimédia
                   tocHref: /dotnet/framework/wpf/graphics-multimedia/
                   topicHref: /dotnet/framework/wpf/graphics-multimedia/index
-            - name: XAML Services
+            - name: Služby XAML
               tocHref: /dotnet/framework/xaml-services/
               topicHref: /dotnet/framework/xaml-services/index
-        - name: Průvodce pro desktop – WPF (Windows Presentation Foundation)
+        - name: Průvodce pro desktop – WPF
           tocHref: /dotnet/desktop-wpf/
           topicHref: /dotnet/desktop-wpf/index
           items:
@@ -553,7 +592,7 @@
         - name: 'Průvodce jazykem F#'
           tocHref: /dotnet/fsharp/
           topicHref: /dotnet/fsharp/index
-        - name: Průvodce Visual Basicem
+        - name: Průvodce jazykem Visual Basic
           tocHref: /dotnet/visual-basic/
           topicHref: /dotnet/visual-basic/index
           items:
@@ -604,7 +643,7 @@
                 - name: Tok řízení
                   tocHref: /dotnet/visual-basic/programming-guide/language-features/control-flow/
                   topicHref: /dotnet/visual-basic/programming-guide/language-features/control-flow/index
-                - name: Datové typy
+                - name: Typy dat
                   tocHref: /dotnet/visual-basic/programming-guide/language-features/data-types/
                   topicHref: /dotnet/visual-basic/programming-guide/language-features/data-types/index
                 - name: Deklarované elementy
@@ -640,7 +679,7 @@
                 - name: XML
                   tocHref: /dotnet/visual-basic/programming-guide/language-features/xml/
                   topicHref: /dotnet/visual-basic/programming-guide/language-features/xml/index
-            - name: Zprostředkovatel komunikace s objekty COM
+            - name: zprostředkovatel komunikace s objekty COM
               tocHref: /dotnet/visual-basic/programming-guide/com-interop/
               topicHref: /dotnet/visual-basic/programming-guide/com-interop/index
             - name: Referenční dokumentace jazyka
