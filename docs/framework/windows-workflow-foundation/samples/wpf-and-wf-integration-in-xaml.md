@@ -2,24 +2,24 @@
 title: Integrace WPF a WF v XAML
 ms.date: 03/30/2017
 ms.assetid: a4f53b48-fc90-4315-bca0-ba009562f488
-ms.openlocfilehash: 547049488a1bf97d5f5ef03a71278b8f653293a2
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: e873e3ca8a2b07cfc4de332b0af3f5bfd25f2d40
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045328"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74710939"
 ---
 # <a name="wpf-and-wf-integration-in-xaml"></a>Integrace WPF a WF v XAML
 Tento příklad ukazuje, jak vytvořit aplikaci, která používá funkce Windows Presentation Foundation (WPF) a programovací model Windows Workflow Foundation (WF) v jednom dokumentu XAML. K tomu ukázka používá programovací model Windows Workflow Foundation (WF) a rozšiřitelnost XAML.
 
 ## <a name="sample-details"></a>Podrobnosti ukázky
- Soubor: ShowWindow. XAML se deserializace do <xref:System.Activities.Statements.Sequence> aktivity se dvěma řetězcovými proměnnými, které jsou zpracovávány aktivitami sekvence: `ShowWindow` a. `WriteLine` Výstup aktivity do okna konzoly, který výraz přiřadí <xref:System.Activities.Statements.WriteLine.Text%2A> vlastnosti. <xref:System.Activities.Statements.WriteLine> `ShowWindow` Aktivita zobrazí okno WPF jako součást logiky provádění. <xref:System.Activities.ActivityContext.DataContext%2A> Okno obsahuje proměnné deklarované v sekvenci. Ovládací prvky okna deklarované v `ShowWindow` aktivitě používají datovou vazbu k manipulaci s těmito proměnnými. Nakonec okno obsahuje ovládací prvek tlačítko. Událost pro tlačítko je zpracována <xref:System.Activities.ActivityDelegate> s názvem `MarkupExtension` , který obsahuje `CloseWindow` aktivitu. `Click` `MarkUpExtension`vyvolá obsaženou aktivitu, která poskytuje jako kontext všechny objekty, které jsou označeny objektem `x:Name`, a také v <xref:System.Activities.ActivityContext.DataContext%2A> obsahujícím okně. Proto je `CloseWindow.InArgument<Window>` možné svázat pomocí výrazu, který odkazuje na název okna.
+ Soubor: ShowWindow. XAML se deserializace do aktivity <xref:System.Activities.Statements.Sequence> se dvěma řetězcovými proměnnými, které jsou manipulovány aktivitami sekvence: `ShowWindow` a `WriteLine`. Výstup aktivity <xref:System.Activities.Statements.WriteLine> do okna konzoly, který výraz přiřadí vlastnosti <xref:System.Activities.Statements.WriteLine.Text%2A>. Aktivita `ShowWindow` zobrazuje okno WPF jako součást logiky provádění. <xref:System.Activities.ActivityContext.DataContext%2A> okna obsahuje proměnné deklarované v sekvenci. Ovládací prvky okna deklarované v aktivitě `ShowWindow` používají datovou vazbu k manipulaci s těmito proměnnými. Nakonec okno obsahuje ovládací prvek tlačítko. Událost `Click` pro tlačítko je zpracována <xref:System.Activities.ActivityDelegate> s názvem `MarkupExtension`, který obsahuje aktivitu `CloseWindow`. `MarkUpExtension` vyvolá obsaženou aktivitu, která poskytuje jako kontext všechny objekty identifikované `x:Name`a také <xref:System.Activities.ActivityContext.DataContext%2A> obsahujícího okna. Proto je možné `CloseWindow.InArgument<Window>` svázat pomocí výrazu, který odkazuje na název okna.
 
- Aktivita je odvozena <xref:System.Activities.AsyncCodeActivity%601> z třídy pro zobrazení okna WPF a dokončení při zavření okna. `ShowWindow` Vlastnost je typu `Func<Window>` , který umožňuje, aby bylo okno vytvořeno na vyžádání pro každé spuštění aktivity. `Window` `Window` Vlastnost<xref:System.Xaml.XamlDeferringLoader> používá k povolení tohoto odloženého zkušebního modelu. `FuncFactoryDeferringLoader` Umožňujezachytitačístběhemserializaceapak`XamlReader` číst během provádění aktivity.
+ Aktivita `ShowWindow` odvozena z <xref:System.Activities.AsyncCodeActivity%601> třídy pro zobrazení okna WPF a dokončení při zavření okna. Vlastnost `Window` je typu `Func<Window>`, který umožňuje vytvořit okno na vyžádání pro každé spuštění aktivity. Vlastnost `Window` používá <xref:System.Xaml.XamlDeferringLoader> k povolení tohoto odloženého zkušebního modelu. `FuncFactoryDeferringLoader` umožňuje zachytit `XamlReader` během serializace a pak číst během provádění aktivity.
 
- Dobře zapsaná aktivita nikdy neblokuje vlákno Scheduleru. `ShowWindow` Aktivitu však nelze dokončit, dokud nebude zavřeno okno, které zobrazuje. Tato aktivita dosahuje tohoto chování odvozením z <xref:System.Activities.AsyncCodeActivity>, <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> voláním <xref:System.Activities.WorkflowInvoker.BeginInvoke%2A> metody v metodě a zobrazením okna v modálním okně. `ShowWindow` Delegát je vyvolán prostřednictvím WPF <xref:System.ServiceModel.InstanceContext.SynchronizationContext%2A>. `ShowWindow` Aktivita přiřazujevlastnost`Window.DataContext`vlastnosti , aby poskytovala libovolné datové vazby ovládací prvky pro přístup k proměnným v oboru. <xref:System.Activities.ActivityContext.DataContext%2A>
+ Dobře zapsaná aktivita nikdy neblokuje vlákno Scheduleru. Aktivitu `ShowWindow` však nelze dokončit, dokud nebude zavřeno okno, které zobrazuje. Aktivita `ShowWindow` dosahuje tohoto chování odvozením od <xref:System.Activities.AsyncCodeActivity>, voláním metody <xref:System.Activities.WorkflowInvoker.BeginInvoke%2A> v metodě <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> a zobrazením okna v modálním případě. Delegát je vyvolán prostřednictvím <xref:System.ServiceModel.InstanceContext.SynchronizationContext%2A>WPF. Aktivita `ShowWindow` přiřadí vlastnosti `Window.DataContext` vlastnost <xref:System.Activities.ActivityContext.DataContext%2A>, která poskytne přístup k proměnným v oboru dat ovládacími prvky.
 
- Poslední bod zájmu v této ukázce je <xref:System.Workflow.ComponentModel.Serialization.MarkupExtension> volaný. `DelegateActivityExtension` `ProvideValue` Metoda tohoto rozšíření značek vrací delegáta, který vyvolá vloženou aktivitu. Tato aktivita běží v prostředí, které zahrnuje kontext dat WPF a všechny `x:Name` hodnoty v oboru. V metodě je toto prostředí poskytováno aktivitě <xref:System.Activities.Hosting.SymbolResolver> prostřednictvím rozšíření. `GenericInvoke` Toto rozšíření se přidá do <xref:System.Activities.WorkflowInvoker> , které se pak použije k vyvolání vložené aktivity při vyvolání delegáta rozšíření značek.
+ Poslední bod zájmu v této ukázce je <xref:System.Workflow.ComponentModel.Serialization.MarkupExtension> s názvem `DelegateActivityExtension`. Metoda `ProvideValue` tohoto rozšíření značek vrací delegáta, který vyvolá vloženou aktivitu. Tato aktivita běží v prostředí, které zahrnuje kontext dat WPF a všechny `x:Name` hodnoty v oboru. V metodě `GenericInvoke` se toto prostředí poskytuje aktivitě prostřednictvím rozšíření <xref:System.Activities.Hosting.SymbolResolver>. Toto rozšíření je přidáno do <xref:System.Activities.WorkflowInvoker>, který je poté použit k vyvolání vložené aktivity při vyvolání delegáta rozšíření značek.
 
 > [!NOTE]
 > Výchozí Návrhář nepodporuje aktivitu: ShowWindow; v takovém případě se soubor: ShowWindow. XAML nezobrazuje správně v návrháři.
@@ -41,6 +41,6 @@ Tento příklad ukazuje, jak vytvořit aplikaci, která používá funkce Window
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\WPFWFIntegration`

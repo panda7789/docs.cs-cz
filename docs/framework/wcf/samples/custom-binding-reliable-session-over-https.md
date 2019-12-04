@@ -2,12 +2,12 @@
 title: Spolehlivá relace vlastních vazeb přes HTTPS
 ms.date: 03/30/2017
 ms.assetid: 16aaa80d-3ffe-47c4-8b16-ec65c4d25f8d
-ms.openlocfilehash: d4845a1058f42dab35919eb7bb83b16b45e42ff3
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: b83f7af2cd4d0518454a5147904c21c9ffbbbf21
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70990018"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74710978"
 ---
 # <a name="custom-binding-reliable-session-over-https"></a>Spolehlivá relace vlastních vazeb přes HTTPS
 Tato ukázka demonstruje použití zabezpečení přenosu SSL u spolehlivých relací. Spolehlivé relace implementují protokol zasílání zpráv WS-Reliable. Zabezpečenou spolehlivou relaci můžete zajistit vytvořením protokolu WS-Security přes spolehlivé relace. V některých případech ale můžete zvolit, abyste místo toho používali zabezpečení přenosu HTTP s protokolem SSL.  
@@ -17,14 +17,14 @@ Tato ukázka demonstruje použití zabezpečení přenosu SSL u spolehlivých re
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.  
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Custom\ReliableSessionOverHttps`  
   
 ## <a name="sample-details"></a>Podrobnosti ukázky  
  Protokol SSL zajišťuje zabezpečení paketů samotných. Je důležité si uvědomit, že se liší od zabezpečení spolehlivé relace pomocí konverzace WS-Secure.  
   
- Chcete-li používat spolehlivou relaci přes protokol HTTPS, je nutné vytvořit vlastní vazbu. Tato ukázka je založená na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) , která implementuje službu kalkulačky. Vlastní vazba je vytvořena pomocí elementu vazby spolehlivé relace a [ \<httpsTransport >](../../../../docs/framework/configure-apps/file-schema/wcf/httpstransport.md). Následující konfigurace je vlastní vazbou.  
+ Chcete-li používat spolehlivou relaci přes protokol HTTPS, je nutné vytvořit vlastní vazbu. Tato ukázka je založená na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) , která implementuje službu kalkulačky. Vlastní vazba se vytvoří pomocí elementu vazby spolehlivé relace a [\<httpsTransport >](../../../../docs/framework/configure-apps/file-schema/wcf/httpstransport.md). Následující konfigurace je vlastní vazbou.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -102,7 +102,7 @@ Tato ukázka demonstruje použití zabezpečení přenosu SSL u spolehlivých re
   
  Zadaná adresa používá schéma https://.  
   
- Vzhledem k tomu, že certifikát použitý v této ukázce je testovací certifikát vytvořený pomocí nástroje MakeCert. exe, zobrazí se výstraha zabezpečení při pokusu o přístup k protokolu HTTPS https://localhost/servicemodelsamples/service.svc: adresa, například, z prohlížeče. Aby mohl klient služby Windows Communication Foundation (WCF) pracovat s testovacím certifikátem, byl do klienta přidán nějaký další kód pro potlačení výstrahy zabezpečení. Tento kód a doprovodná třída nejsou při použití produkčních certifikátů vyžadovány.  
+ Vzhledem k tomu, že certifikát použitý v této ukázce je testovací certifikát vytvořený pomocí nástroje MakeCert. exe, zobrazí se výstraha zabezpečení při pokusu o přístup k protokolu https: adresa, například https://localhost/servicemodelsamples/service.svc, z prohlížeče. Aby mohl klient služby Windows Communication Foundation (WCF) pracovat s testovacím certifikátem, byl do klienta přidán nějaký další kód pro potlačení výstrahy zabezpečení. Tento kód a doprovodná třída nejsou při použití produkčních certifikátů vyžadovány.  
 
 ```csharp
 // This code is required only for test certificates like those created by Makecert.exe.  
@@ -132,6 +132,6 @@ Press <ENTER> to terminate client.
   
 3. Ujistěte se, že jste provedli [pokyny k instalaci certifikátu serveru Internetová informační služba (IIS)](../../../../docs/framework/wcf/samples/iis-server-certificate-installation-instructions.md).  
   
-4. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu sestavování [ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+4. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
 5. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  

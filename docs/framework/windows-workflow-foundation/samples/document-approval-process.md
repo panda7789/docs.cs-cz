@@ -2,12 +2,12 @@
 title: Proces schválení dokumentu
 ms.date: 03/30/2017
 ms.assetid: 9b240937-76a7-45cd-8823-7f82c34d03bd
-ms.openlocfilehash: 20167cd1c06c2ae57dfe48fd07ab3a0e2adf9927
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: cee43aff991f9482de7b3172174eb0e786ec1fe6
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70038227"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74710845"
 ---
 # <a name="document-approval-process"></a>Proces schválení dokumentu
 
@@ -18,7 +18,7 @@ Tato ukázka předvádí použití mnoha funkcí programovací model Windows Wor
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek. Tato ukázka se nachází v následujícím adresáři.
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WF\Application\DocumentApprovalProcess`
 
@@ -90,7 +90,7 @@ Proces schvalování vychází z pohledu aplikace schvalování Manager v zobraz
 
 2. Pro sestavení řešení stiskněte kombinaci kláves CTRL + SHIFT + B.
 
-3. Chcete-li spustit řešení, spusťte aplikaci Správce schvalování kliknutím pravým tlačítkem na projekt ApprovalManager v **Průzkumník řešení** a kliknutím na položku **ladit**->**Spustit** novou instanci z místní nabídky.
+3. Chcete-li spustit řešení, spusťte aplikaci Správce schvalování kliknutím pravým tlačítkem myši na projekt ApprovalManager v **Průzkumník řešení** a kliknutím na položku **ladění**->**Spustit** novou instanci z nabídky klikněte pravým tlačítkem myši.
 
     Počkejte, až bude výstup správce, a dejte vám jistotu, že je připravený.
 
@@ -104,11 +104,11 @@ Proces schvalování vychází z pohledu aplikace schvalování Manager v zobraz
 
 4. Klikněte na **Vyhledat**a počkejte, než se aktivuje tlačítko **přihlášení k odběru** .
 
-5. Zadejte libovolné uživatelské jméno a klikněte na **přihlásit k odběru**. Pro jednoho klienta použijte `UserType1` a druhý typ. `UserType2`
+5. Zadejte libovolné uživatelské jméno a klikněte na **přihlásit k odběru**. Pro jednoho klienta použijte `UserType1` a druhý typ `UserType2`.
 
-6. `UserType1` V klientovi vyberte typ jednoho schválení z rozevírací nabídky a zadejte název a obsah dokumentu. Klikněte na **žádost o schválení**.
+6. V klientovi `UserType1` v rozevírací nabídce vyberte typ jednoho schválení a zadejte název a obsah dokumentu. Klikněte na **žádost o schválení**.
 
-7. `UserType2` V klientovi se zobrazí dokument, který čeká na schválení. Vyberte ji a stiskněte **schválit** nebo **zamítnout**. Výsledky by se měly zobrazit v `UserType1` klientovi.
+7. V klientovi `UserType2` se zobrazí dokument čeká na schválení. Vyberte ji a stiskněte **schválit** nebo **zamítnout**. Výsledky by se měly zobrazit ve `UserType1` klientovi.
 
 ##### <a name="to-run-the-quorum-approval-scenario"></a>Spuštění scénáře schválení kvora
 
@@ -120,11 +120,11 @@ Proces schvalování vychází z pohledu aplikace schvalování Manager v zobraz
 
 4. Klikněte na **Vyhledat**a počkejte, než se aktivuje tlačítko **přihlášení k odběru** .
 
-5. Zadejte libovolné uživatelské jméno a klikněte na **přihlásit k odběru**. Pro jedno použití `UserType1` klienta a druhý dva typy `UserType2`.
+5. Zadejte libovolné uživatelské jméno a klikněte na **přihlásit k odběru**. Pro jednoho klienta použijte `UserType1` a druhý `UserType2`typu.
 
-6. `UserType1` V klientovi vyberte typ schválení kvora z rozevírací nabídky a zadejte název a obsah dokumentu. Klikněte na **žádost o schválení**. To vyžaduje, aby dva `UserType2` klienti schválili nebo odmítli dokument. I když `UserType2` musí oba klienti reagovat, musí schválit dokument, jenom jeden klient, aby ho schválil.
+6. V klientovi `UserType1` v rozevírací nabídce vyberte typ schválení kvora a zadejte název a obsah dokumentu. Klikněte na **žádost o schválení**. Tím se vyžádá, že dva klienti `UserType2` schvalují nebo odmítnou dokument. I když musí oba klienti `UserType2` reagovat, musí dokument schválit jenom jeden klient, aby ho bylo možné schválit.
 
-7. `UserType2` V klientech se zobrazí dokument čeká na schválení. Vyberte ji a stiskněte **schválit** nebo **zamítnout**. Výsledky by se měly zobrazit v `UserType1` klientovi.
+7. V klientech `UserType2` se zobrazí dokument čeká na schválení. Vyberte ji a stiskněte **schválit** nebo **zamítnout**. Výsledky by se měly zobrazit ve `UserType1` klientovi.
 
 ##### <a name="to-run-the-complex-approval-scenario"></a>Spuštění scénáře komplexního schválení
 
@@ -136,15 +136,15 @@ Proces schvalování vychází z pohledu aplikace schvalování Manager v zobraz
 
 4. Klikněte na **Vyhledat**a počkejte, než se aktivuje tlačítko **přihlášení k odběru** .
 
-5. Zadejte libovolné uživatelské jméno a klikněte na **přihlásit k odběru**. Pro jednoho klienta používá `UserType1`nástroj ve dvou typech `UserType2`a při posledním použití `UserType3`.
+5. Zadejte libovolné uživatelské jméno a klikněte na **přihlásit k odběru**. Pro jednoho klienta použijte `UserType1`, ve dvou případech používá typ `UserType2`a při posledním `UserType3`použití.
 
-6. `UserType1` V klientovi vyberte typ jednoho schválení z rozevírací nabídky a zadejte název a obsah dokumentu. Klikněte na **žádost o schválení**.
+6. V klientovi `UserType1` v rozevírací nabídce vyberte typ jednoho schválení a zadejte název a obsah dokumentu. Klikněte na **žádost o schválení**.
 
-7. `UserType2` V klientech se zobrazí dokument čeká na schválení. Vyberte ji a stiskněte **schválit**, dokument se předává `UserType3` klientovi.
+7. V klientech `UserType2` se zobrazí dokument čeká na schválení. Vyberte ji a stiskněte **schválit**, dokument se předává klientovi `UserType3`.
 
-    Pokud dokument schválí první `UserType2` kvorum, dokument se předává `UserType3` klientovi.
+    Pokud je dokument schválený prvním `UserType2` kvora, dokument se předává klientovi `UserType3`.
 
-8. Schvalte nebo odmítněte dokument z `UserType3` klienta. Výsledky by se měly zobrazit v `UserType1` klientovi.
+8. Umožňuje schválit nebo odmítnout dokument z klienta `UserType3`. Výsledky by se měly zobrazit ve `UserType1` klientovi.
 
 ##### <a name="to-clean-up"></a>Vyčištění
 
