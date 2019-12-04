@@ -2,18 +2,18 @@
 title: KnownAssemblyAttribute
 ms.date: 03/30/2017
 ms.assetid: b3bc7f31-95ff-46e1-8308-d206ec426f6e
-ms.openlocfilehash: 5a911e0ae49955c5b089bb231f94e4afc0c05c97
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 6e3708fb386760ae067de0e86e4315114c85113c
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039542"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74714906"
 ---
-# <a name="knownassemblyattribute"></a><span data-ttu-id="f1734-102">KnownAssemblyAttribute</span><span class="sxs-lookup"><span data-stu-id="f1734-102">KnownAssemblyAttribute</span></span>
-<span data-ttu-id="f1734-103">Tento příklad ukazuje, jak lze přizpůsobit procesy serializace a deserializace pomocí <xref:System.Runtime.Serialization.DataContractResolver> třídy.</span><span class="sxs-lookup"><span data-stu-id="f1734-103">This sample demonstrates how the serialization and deserialization processes can be customized by using the <xref:System.Runtime.Serialization.DataContractResolver> class.</span></span> <span data-ttu-id="f1734-104">Tento příklad ukazuje, jak dynamicky přidat známé typy během serializace a deserializace.</span><span class="sxs-lookup"><span data-stu-id="f1734-104">This sample shows how to dynamically add known types during serialization and deserialization.</span></span>  
+# <a name="knownassemblyattribute"></a><span data-ttu-id="43f9b-102">KnownAssemblyAttribute</span><span class="sxs-lookup"><span data-stu-id="43f9b-102">KnownAssemblyAttribute</span></span>
+<span data-ttu-id="43f9b-103">Tato ukázka předvádí, jak lze upravit procesy serializace a deserializace pomocí třídy <xref:System.Runtime.Serialization.DataContractResolver>.</span><span class="sxs-lookup"><span data-stu-id="43f9b-103">This sample demonstrates how the serialization and deserialization processes can be customized by using the <xref:System.Runtime.Serialization.DataContractResolver> class.</span></span> <span data-ttu-id="43f9b-104">Tento příklad ukazuje, jak dynamicky přidat známé typy během serializace a deserializace.</span><span class="sxs-lookup"><span data-stu-id="43f9b-104">This sample shows how to dynamically add known types during serialization and deserialization.</span></span>  
   
-## <a name="sample-details"></a><span data-ttu-id="f1734-105">Podrobnosti ukázky</span><span class="sxs-lookup"><span data-stu-id="f1734-105">Sample Details</span></span>  
- <span data-ttu-id="f1734-106">Tato ukázka se skládá ze čtyř projektů.</span><span class="sxs-lookup"><span data-stu-id="f1734-106">This sample is composed of four projects.</span></span> <span data-ttu-id="f1734-107">Jedna z nich odpovídá službě, aby byla hostována službou IIS, která definuje následující kontrakt služby.</span><span class="sxs-lookup"><span data-stu-id="f1734-107">One of them corresponds to the service, to be hosted by IIS, which defines the following service contract.</span></span>  
+## <a name="sample-details"></a><span data-ttu-id="43f9b-105">Podrobnosti ukázky</span><span class="sxs-lookup"><span data-stu-id="43f9b-105">Sample Details</span></span>  
+ <span data-ttu-id="43f9b-106">Tato ukázka se skládá ze čtyř projektů.</span><span class="sxs-lookup"><span data-stu-id="43f9b-106">This sample is composed of four projects.</span></span> <span data-ttu-id="43f9b-107">Jedna z nich odpovídá službě, aby byla hostována službou IIS, která definuje následující kontrakt služby.</span><span class="sxs-lookup"><span data-stu-id="43f9b-107">One of them corresponds to the service, to be hosted by IIS, which defines the following service contract.</span></span>  
   
 ```csharp
 // Definition of a service contract.  
@@ -38,7 +38,7 @@ public interface IDataContractCalculator
 }  
 ```  
   
- <span data-ttu-id="f1734-108">Kontrakt služby je implementován, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="f1734-108">The service contract is implemented as shown in the following example.</span></span>  
+ <span data-ttu-id="43f9b-108">Kontrakt služby je implementován, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="43f9b-108">The service contract is implemented as shown in the following example.</span></span>  
   
 ```csharp
 // Service class that implements the service contract.  
@@ -84,7 +84,7 @@ public interface IDataContractCalculator
 }  
 ```  
   
- <span data-ttu-id="f1734-109">Jiný projekt odpovídá klientovi, který komunikuje se serverem a vyvolává metody, které zveřejňuje.</span><span class="sxs-lookup"><span data-stu-id="f1734-109">Another project corresponds to the client, which communicates with the server and invokes the methods that it exposes.</span></span> <span data-ttu-id="f1734-110">V následujícím příkladu je uvedena definice klienta.</span><span class="sxs-lookup"><span data-stu-id="f1734-110">The definition of the client is shown in the following example.</span></span>  
+ <span data-ttu-id="43f9b-109">Jiný projekt odpovídá klientovi, který komunikuje se serverem a vyvolává metody, které zveřejňuje.</span><span class="sxs-lookup"><span data-stu-id="43f9b-109">Another project corresponds to the client, which communicates with the server and invokes the methods that it exposes.</span></span> <span data-ttu-id="43f9b-110">V následujícím příkladu je uvedena definice klienta.</span><span class="sxs-lookup"><span data-stu-id="43f9b-110">The definition of the client is shown in the following example.</span></span>  
   
 ```csharp  
  // Client implementation code.  
@@ -187,11 +187,11 @@ public interface IDataContractCalculator
 }  
 ```  
   
- <span data-ttu-id="f1734-111">Definice kontraktu služby je označena `KnownAssembly` atributem.</span><span class="sxs-lookup"><span data-stu-id="f1734-111">The definition of the service contract is marked with the `KnownAssembly` attribute.</span></span> <span data-ttu-id="f1734-112">Tento atribut obsahuje název knihovny typů, které jsou všechny známy za běhu v rámci služby i klienta.</span><span class="sxs-lookup"><span data-stu-id="f1734-112">This attribute contains the name of a library of types, which all become known at runtime by both the service and the client.</span></span>  
+ <span data-ttu-id="43f9b-111">Definice kontraktu služby je označena atributem `KnownAssembly`.</span><span class="sxs-lookup"><span data-stu-id="43f9b-111">The definition of the service contract is marked with the `KnownAssembly` attribute.</span></span> <span data-ttu-id="43f9b-112">Tento atribut obsahuje název knihovny typů, které jsou všechny známy za běhu v rámci služby i klienta.</span><span class="sxs-lookup"><span data-stu-id="43f9b-112">This attribute contains the name of a library of types, which all become known at runtime by both the service and the client.</span></span>  
   
- <span data-ttu-id="f1734-113">Atribut implementuje `IContractBehavior` , aby bylo `DataContractSerializer` možnédefinovatadefinovánoprokaždéchováníoperace.`DataContractResolver` `KnownAssembly`</span><span class="sxs-lookup"><span data-stu-id="f1734-113">The `KnownAssembly` attribute implements `IContractBehavior` in order to define a `DataContractSerializer` with a `DataContractResolver` defined for each of the operation behaviors.</span></span> <span data-ttu-id="f1734-114">Při `DataContractResolver` vytvoření odráží na sestavení a vytvoří slovník s mapováním mezi typy a názvy, které se mají použít při serializaci a deserializaci různých typů.</span><span class="sxs-lookup"><span data-stu-id="f1734-114">The `DataContractResolver` reflects over the assembly when it is created, and creates the dictionary with the mapping between types and names to be used when serializing and deserializing the different types.</span></span> <span data-ttu-id="f1734-115">V takovém `ResolveType` případě musí typy `ResolveName` a vyhledávat data požadovaná ve slovníku.</span><span class="sxs-lookup"><span data-stu-id="f1734-115">In that way, the `ResolveType` and `ResolveName` types must look up the data required in the dictionary.</span></span>  
+ <span data-ttu-id="43f9b-113">Atribut `KnownAssembly` implementuje `IContractBehavior`, aby bylo možné definovat `DataContractSerializer` `DataContractResolver` definovány pro každé chování operace.</span><span class="sxs-lookup"><span data-stu-id="43f9b-113">The `KnownAssembly` attribute implements `IContractBehavior` in order to define a `DataContractSerializer` with a `DataContractResolver` defined for each of the operation behaviors.</span></span> <span data-ttu-id="43f9b-114">`DataContractResolver` odráží sestavení při jeho vytvoření a vytvoří slovník s mapováním mezi typy a názvy, které se mají použít při serializaci a deserializaci různých typů.</span><span class="sxs-lookup"><span data-stu-id="43f9b-114">The `DataContractResolver` reflects over the assembly when it is created, and creates the dictionary with the mapping between types and names to be used when serializing and deserializing the different types.</span></span> <span data-ttu-id="43f9b-115">V takovém případě musí typy `ResolveType` a `ResolveName` vyhledávat data požadovaná ve slovníku.</span><span class="sxs-lookup"><span data-stu-id="43f9b-115">In that way, the `ResolveType` and `ResolveName` types must look up the data required in the dictionary.</span></span>  
   
- <span data-ttu-id="f1734-116">V následujícím příkladu je uvedena definiceprotutoukázku.`DataContractResolver`</span><span class="sxs-lookup"><span data-stu-id="f1734-116">The `DataContractResolver` defined for this sample is shown in the following example.</span></span>  
+ <span data-ttu-id="43f9b-116">V následujícím příkladu je uvedena `DataContractResolver` definovaná pro tuto ukázku.</span><span class="sxs-lookup"><span data-stu-id="43f9b-116">The `DataContractResolver` defined for this sample is shown in the following example.</span></span>  
   
 ```csharp
 public class MyDataContractResolver : DataContractResolver  
@@ -275,7 +275,7 @@ public class MyDataContractResolver : DataContractResolver
    }  
 ```  
   
- <span data-ttu-id="f1734-117">Knihovna typů použitá v této ukázce je uvedena v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="f1734-117">The library of types used in this sample is shown in the following example.</span></span>  
+ <span data-ttu-id="43f9b-117">Knihovna typů použitá v této ukázce je uvedena v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="43f9b-117">The library of types used in this sample is shown in the following example.</span></span>  
   
 ```csharp 
  [DataContract]  
@@ -320,9 +320,9 @@ public class ComplexNumberWithMagnitude : ComplexNumber
 }  
 ```  
   
- <span data-ttu-id="f1734-118">Všimněte si `ComplexNumber` , že není nutné staticky `ComplexNumberWithMagnitude` znát typ, protože se za běhu označuje jako známý.</span><span class="sxs-lookup"><span data-stu-id="f1734-118">Note that `ComplexNumber` does not need to statically know the `ComplexNumberWithMagnitude` type, because it becomes known at runtime.</span></span>  
+ <span data-ttu-id="43f9b-118">Všimněte si, že `ComplexNumber` nemusí staticky znát `ComplexNumberWithMagnitude` typ, protože se mu říká za běhu.</span><span class="sxs-lookup"><span data-stu-id="43f9b-118">Note that `ComplexNumber` does not need to statically know the `ComplexNumberWithMagnitude` type, because it becomes known at runtime.</span></span>  
   
- <span data-ttu-id="f1734-119">Při sestavení a spuštění ukázky se jedná o očekávaný výstup získaný v klientovi:</span><span class="sxs-lookup"><span data-stu-id="f1734-119">When the sample is built and executed, this is the expected output obtained in the client:</span></span>  
+ <span data-ttu-id="43f9b-119">Při sestavení a spuštění ukázky se jedná o očekávaný výstup získaný v klientovi:</span><span class="sxs-lookup"><span data-stu-id="43f9b-119">When the sample is built and executed, this is the expected output obtained in the client:</span></span>  
   
 ```console  
 Add(1 + 2i, 3 + 4i) = 4 + 6i  
@@ -344,29 +344,29 @@ Lists combined:
 4 + 4i  
 ```  
   
-#### <a name="to-set-up-run-and-build-the-sample"></a><span data-ttu-id="f1734-120">Nastavení, spuštění a sestavení ukázky</span><span class="sxs-lookup"><span data-stu-id="f1734-120">To set up, run, and build the sample</span></span>  
+#### <a name="to-set-up-run-and-build-the-sample"></a><span data-ttu-id="43f9b-120">Nastavení, spuštění a sestavení ukázky</span><span class="sxs-lookup"><span data-stu-id="43f9b-120">To set up, run, and build the sample</span></span>  
   
-1. <span data-ttu-id="f1734-121">Klikněte pravým tlačítkem na **KnownAssemblyAttribute** řešení a vyberte **vlastnosti**.</span><span class="sxs-lookup"><span data-stu-id="f1734-121">Right-click the solution **KnownAssemblyAttribute** and select **Properties**.</span></span>  
+1. <span data-ttu-id="43f9b-121">Klikněte pravým tlačítkem na **KnownAssemblyAttribute** řešení a vyberte **vlastnosti**.</span><span class="sxs-lookup"><span data-stu-id="43f9b-121">Right-click the solution **KnownAssemblyAttribute** and select **Properties**.</span></span>  
   
-2. <span data-ttu-id="f1734-122">V nabídce **běžné vlastnosti**vyberte možnost **projekt po spuštění**a pak klikněte na **více projektů po spuštění**.</span><span class="sxs-lookup"><span data-stu-id="f1734-122">In **Common Properties**, select **Startup Project**, and then click **Multiple startup projects**.</span></span>  
+2. <span data-ttu-id="43f9b-122">V nabídce **běžné vlastnosti**vyberte možnost **projekt po spuštění**a pak klikněte na **více projektů po spuštění**.</span><span class="sxs-lookup"><span data-stu-id="43f9b-122">In **Common Properties**, select **Startup Project**, and then click **Multiple startup projects**.</span></span>  
   
-3. <span data-ttu-id="f1734-123">Přidejte **spouštěcí** akci do projektů **služby** a **klienta** .</span><span class="sxs-lookup"><span data-stu-id="f1734-123">Add the **Start** action to the **Service** and **Client** projects.</span></span>  
+3. <span data-ttu-id="43f9b-123">Přidejte **spouštěcí** akci do projektů **služby** a **klienta** .</span><span class="sxs-lookup"><span data-stu-id="43f9b-123">Add the **Start** action to the **Service** and **Client** projects.</span></span>  
   
-4. <span data-ttu-id="f1734-124">Klikněte na **OK**a stisknutím klávesy **F5** spusťte ukázku.</span><span class="sxs-lookup"><span data-stu-id="f1734-124">Click **OK**, and press **F5** to run the sample.</span></span>  
+4. <span data-ttu-id="43f9b-124">Klikněte na **OK**a stisknutím klávesy **F5** spusťte ukázku.</span><span class="sxs-lookup"><span data-stu-id="43f9b-124">Click **OK**, and press **F5** to run the sample.</span></span>  
   
-5. <span data-ttu-id="f1734-125">Pokud aplikace nefunguje správně, postupujte podle těchto kroků a ujistěte se, že je vaše prostředí správně nastavené:</span><span class="sxs-lookup"><span data-stu-id="f1734-125">If the application does not run properly, follow these steps to make sure your environment has been properly set up:</span></span>  
+5. <span data-ttu-id="43f9b-125">Pokud aplikace nefunguje správně, postupujte podle těchto kroků a ujistěte se, že je vaše prostředí správně nastavené:</span><span class="sxs-lookup"><span data-stu-id="43f9b-125">If the application does not run properly, follow these steps to make sure your environment has been properly set up:</span></span>  
   
-6. <span data-ttu-id="f1734-126">Ujistěte se, že jste provedli [jednorázovou proceduru nastavení pro ukázky Windows Communication Foundation](https://go.microsoft.com/fwlink/?LinkId=150774).</span><span class="sxs-lookup"><span data-stu-id="f1734-126">Ensure that you have performed the [One-Time Set Up Procedure for the Windows Communication Foundation Samples](https://go.microsoft.com/fwlink/?LinkId=150774).</span></span>  
+6. <span data-ttu-id="43f9b-126">Ujistěte se, že jste provedli [jednorázovou proceduru nastavení pro ukázky Windows Communication Foundation](https://go.microsoft.com/fwlink/?LinkId=150774).</span><span class="sxs-lookup"><span data-stu-id="43f9b-126">Ensure that you have performed the [One-Time Set Up Procedure for the Windows Communication Foundation Samples](https://go.microsoft.com/fwlink/?LinkId=150774).</span></span>  
   
-7. <span data-ttu-id="f1734-127">Při sestavování řešení postupujte podle pokynů v tématu sestavování [Windows Communication Foundation ukázka](https://go.microsoft.com/fwlink/?LinkId=150775).</span><span class="sxs-lookup"><span data-stu-id="f1734-127">To build the solution, follow the instructions in [Building the Windows Communication Foundation Sample](https://go.microsoft.com/fwlink/?LinkId=150775).</span></span>  
+7. <span data-ttu-id="43f9b-127">Při sestavování řešení postupujte podle pokynů v tématu [Sestavování Windows Communication Foundation ukázka](https://go.microsoft.com/fwlink/?LinkId=150775).</span><span class="sxs-lookup"><span data-stu-id="43f9b-127">To build the solution, follow the instructions in [Building the Windows Communication Foundation Sample](https://go.microsoft.com/fwlink/?LinkId=150775).</span></span>  
   
-8. <span data-ttu-id="f1734-128">Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](https://go.microsoft.com/fwlink/?LinkId=150776).</span><span class="sxs-lookup"><span data-stu-id="f1734-128">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](https://go.microsoft.com/fwlink/?LinkId=150776).</span></span>  
+8. <span data-ttu-id="43f9b-128">Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](https://go.microsoft.com/fwlink/?LinkId=150776).</span><span class="sxs-lookup"><span data-stu-id="43f9b-128">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](https://go.microsoft.com/fwlink/?LinkId=150776).</span></span>  
   
 > [!IMPORTANT]
-> <span data-ttu-id="f1734-129">Ukázky už můžou být na vašem počítači nainstalované.</span><span class="sxs-lookup"><span data-stu-id="f1734-129">The samples may already be installed on your machine.</span></span> <span data-ttu-id="f1734-130">Než budete pokračovat, vyhledejte následující (výchozí) adresář.</span><span class="sxs-lookup"><span data-stu-id="f1734-130">Check for the following (default) directory before continuing.</span></span>  
+> <span data-ttu-id="43f9b-129">Ukázky už můžou být na vašem počítači nainstalované.</span><span class="sxs-lookup"><span data-stu-id="43f9b-129">The samples may already be installed on your machine.</span></span> <span data-ttu-id="43f9b-130">Než budete pokračovat, vyhledejte následující (výchozí) adresář.</span><span class="sxs-lookup"><span data-stu-id="43f9b-130">Check for the following (default) directory before continuing.</span></span>  
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> <span data-ttu-id="f1734-131">Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázek.</span><span class="sxs-lookup"><span data-stu-id="f1734-131">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="f1734-132">Tato ukázka se nachází v následujícím adresáři.</span><span class="sxs-lookup"><span data-stu-id="f1734-132">This sample is located in the following directory.</span></span>  
+> <span data-ttu-id="43f9b-131">Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples.</span><span class="sxs-lookup"><span data-stu-id="43f9b-131">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="43f9b-132">Tato ukázka se nachází v následujícím adresáři.</span><span class="sxs-lookup"><span data-stu-id="43f9b-132">This sample is located in the following directory.</span></span>  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\KnownAssemblyAttribute`  
