@@ -1,6 +1,6 @@
 - name: Průvodce rozhraním .NET Framework
   href: index.md
-- name: Co je nového
+- name: Co je nového?
   href: whats-new/
 - name: Začínáme
   href: get-started/
@@ -15,7 +15,7 @@
       href: app-domains/
     - name: Prostředky v aplikacích klasické pracovní plochy
       href: resources/
-    - name: Usnadnění
+    - name: Přístupnost
       href: ui-automation/
     - name: "Data a\_modelování"
       href: data/
@@ -42,8 +42,6 @@
       href: configure-apps/
     - name: Kompilování aplikací pomocí .NET Native
       href: net-native/
-    - name: Windows Identity Foundation
-      href: security/
     - name: 'Ladění, trasování a profilace'
       href: debug-trace-profile/
     - name: Nasazení

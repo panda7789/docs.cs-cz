@@ -17,6 +17,8 @@
       href: tutorials/amazon-emr-spark-deployment.md
     - name: Nasazení do Databricks
       href: tutorials/databricks-deployment.md
+    - name: Strukturované streamování
+      href: tutorials/streaming.md
 - name: Návody
   items:
     - name: Ladění aplikace
@@ -25,13 +27,13 @@
       href: how-to-guides/hdinsight-deploy-methods.md
 - name: Odkaz
   items:
-    - name: Referenční dokumentace ke knihovně API
+    - name: Referenční materiály k rozhraní API
       href: 'https://docs.microsoft.com/dotnet/api/?view=spark-dotnet'
-- name: Prostředky
+- name: Zdroje a prostředky
   items:
     - name: Přehled prostředků
       href: resources/index.md
-    - name: GitHub
+    - name: GitHubu
       href: 'https://github.com/dotnet/spark'
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/.net-spark'

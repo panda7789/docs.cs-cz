@@ -47,21 +47,21 @@
   items:
     - name: 'Začínáme s jazykem C# a nástrojem Visual Studio Code'
       href: tutorials/with-visual-studio-code.md
-    - name: 'Vytvoření aplikace Hello World v jazyce C# pomocí .NET Core v sadě Visual Studio 2017'
+    - name: 'Vytvoření aplikace Hello World v jazyce C# v sadě Visual Studio'
       href: tutorials/with-visual-studio.md
-    - name: Vytvoření aplikace Hello World v jazyce Visual Basic pomocí .NET Core v sadě Visual Studio 2017
+    - name: Vytvoření aplikace Hello World v jazyce Visual Basic v sadě Visual Studio
       href: tutorials/vb-with-visual-studio.md
-    - name: 'Ladění aplikace Hello World v jazyce C# nebo Visual Basic .NET Core pomocí sady Visual Studio 2017'
+    - name: Ladění aplikace pomocí sady Visual Studio
       href: tutorials/debugging-with-visual-studio.md
-    - name: Publikování aplikace Hello World pomocí sady Visual Studio 2017
+    - name: Publikace aplikace pomocí sady Visual Studio
       href: tutorials/publishing-with-visual-studio.md
-    - name: 'Vytvoření knihovny .NET Standard pomocí jazyka C# a platformy .NET Core v sadě Visual Studio 2017'
+    - name: 'Vytvoření knihovny .NET Standard pomocí jazyka C# v sadě Visual Studio'
       href: tutorials/library-with-visual-studio.md
-    - name: Vytvoření knihovny .NET Standard pomocí jazyka Visual Basic a platformy .NET Core v sadě Visual Studio 2017
+    - name: Vytvoření knihovny .NET Standard pomocí jazyka Visual Basic v sadě Visual Studio
       href: tutorials/vb-library-with-visual-studio.md
-    - name: Testování knihovny .NET Standard pomocí platformy .NET Core v sadě Visual Studio 2017
+    - name: Testování knihovny .NET Standard v sadě Visual Studio
       href: tutorials/testing-library-with-visual-studio.md
-    - name: Využití knihovny .NET Standard v sadě Visual Studio 2017
+    - name: Využití knihovny .NET Standard v sadě Visual Studio
       href: tutorials/consuming-library-with-visual-studio.md
 - name: Co je nového v .NET Core
   items:
@@ -171,7 +171,7 @@
           href: diagnostics/dotnet-dump.md
         - name: dotnet-trace
           href: diagnostics/dotnet-trace.md
-- name: Testování částí
+- name: Testování jednotek
   href: testing/index.md
   items:
     - name: Osvědčené postupy pro testování částí
@@ -200,7 +200,7 @@
       href: testing/unit-testing-published-output.md
     - name: Live Unit Testing pro projekty .NET Core pomocí sady Visual Studio
       href: /visualstudio/test/live-unit-testing-start
-- name: Průběžná integrace
+- name: Kontinuální integrace
   href: tools/using-ci-with-cli.md
 - name: Správa verzí
   href: versions/index.md
@@ -235,7 +235,7 @@
       href: tools/extensibility.md
     - name: Vlastní šablony
       href: tools/custom-templates.md
-    - name: Povolení dokončování pomocí TABULÁTORU
+    - name: Povolení dokončování pomocí tabulátoru
       href: tools/enable-tab-autocomplete.md
     - name: Telemetrie
       href: tools/telemetry.md
