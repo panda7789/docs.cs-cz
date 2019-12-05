@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - defining service contracts [WCF]
 ms.assetid: 036fae20-7c55-4002-b71d-ac4466e167a3
-ms.openlocfilehash: 0d569d12b5bc555a07e94fa89c5a19f52f4a6b6c
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 9ddb3fe637cd0402f0ce850bc523ae8cb0c5dc37
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72318401"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74801972"
 ---
 # <a name="designing-and-implementing-services"></a>Navrhování a implementace služeb
 V této části se dozvíte, jak definovat a implementovat kontrakty WCF. Kontrakt služby určuje, co koncový bod komunikuje s vnějším světem. Na přesnější úrovni je to prohlášení o sadě konkrétních zpráv uspořádaných do základních vzorů výměny zpráv (MEPs), jako je například požadavek/odpověď, jednosměrné a duplexní využití. Je-li kontrakt služby logicky spojenou sadou výměn zpráv, je operace služby jediným výměnou zpráv. Například operace `Hello` musí zjevně akceptovat jednu zprávu (takže volající může oznámení pozdravu) a může nebo nemusí vracet zprávu (v závislosti na povýšení operace).  
@@ -46,7 +46,7 @@ V této části se dozvíte, jak definovat a implementovat kontrakty WCF. Kontra
   
 4. Kategorií příkazy týkající se komunikační infrastruktury potřebné k úspěšnému zpracování zpráv. Mezi tyto podrobnosti patří například to, jestli a jaké jsou požadavky na zabezpečení, aby bylo možné navázat úspěšnou komunikaci.  
   
- Aby bylo možné tyto informace předat jiným aplikacím na mnoha platformách (včetně platforem jiných výrobců než Microsoftu), smlouvy služby XML jsou veřejně vyjádřeny ve standardních formátech XML, jako je například [Web Services Description Language](https://go.microsoft.com/fwlink/?LinkId=94952) (WSDL) a [schématu XML](https://go.microsoft.com/fwlink/?LinkId=94953) (XSD), mimo jiné. Vývojáři pro mnoho platforem můžou tyto informace o veřejné smlouvě využít k vytváření aplikací, které můžou komunikovat se službou, protože rozumí jazyk specifikace a protože tyto jazyky jsou navržené tak, aby umožňovaly vzájemnou operaci. popisem veřejných formulářů, formátů a protokolů, které služba podporuje. Další informace o tom, jak WCF zpracovává tento druh informací, najdete v tématu [metadata](./feature-details/metadata.md).  
+ Aby bylo možné tyto informace předat jiným aplikacím na mnoha platformách (včetně platforem jiných výrobců než Microsoftu), smlouvy služby XML jsou veřejně vyjádřeny ve standardních formátech XML, jako je například [Web Services Description Language](https://www.w3.org/TR/2001/NOTE-wsdl-20010315) (WSDL) a [schématu XML](https://www.w3.org/XML/Schema) (XSD), mimo jiné. Vývojáři pro mnoho platforem můžou tyto informace o veřejné smlouvě využít k vytváření aplikací, které můžou komunikovat se službou, protože rozumí jazyk specifikace a protože tyto jazyky jsou navržené tak, aby umožňovaly vzájemnou operaci. popisem veřejných formulářů, formátů a protokolů, které služba podporuje. Další informace o tom, jak WCF zpracovává tento druh informací, najdete v tématu [metadata](./feature-details/metadata.md).  
   
  Kontrakty můžou být vyjádřené mnoha způsoby a i když jsou jazyky WSDL a XSD vynikajícími jazyky pro usnadnění přístupu ke službám, jsou obtížné použít přímo a jsou jenom popisy služby, nikoli implementace servisních smluv. Proto aplikace WCF používají spravované atributy, rozhraní a třídy pro definování struktury služby a její implementaci.  
   

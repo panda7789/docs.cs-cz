@@ -2,12 +2,12 @@
 title: Výkon Windows Workflow Foundation 4
 ms.date: 03/30/2017
 ms.assetid: 67d2b3e8-3777-49f8-9084-abbb33b5a766
-ms.openlocfilehash: 9a7e1dd2c5ab92ace955aa3b3095f2ed04ee3272
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 6e6669cd41795c356e4b7b30f19d93bd8dfa917a
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74283225"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802645"
 ---
 # <a name="windows-workflow-foundation-4-performance"></a>Výkon Windows Workflow Foundation 4
 
@@ -17,7 +17,7 @@ ms.locfileid: "74283225"
 
 ## <a name="terminology"></a>Terminologie
 
- Verze [!INCLUDE[wf1](../../../includes/wf1-md.md)] představená v .NET Framework 4 bude pro zbytek tohoto tématu označovat jako WF4. [!INCLUDE[wf1](../../../includes/wf1-md.md)] byla představena v .NET Framework 3,0 a měla několik menších revizí prostřednictvím .NET Framework 3,5 SP1. Verze modelu Workflow Foundation pro .NET Framework 3,5 bude pro zbytek tohoto tématu označovat jako WF3. WF3 se dodává v .NET Framework 4 vedle sebe s WF4. Další informace o migraci artefaktů WF3 do WF4 naleznete v tématu: [Průvodce migrací programovací model Windows Workflow Foundation 4](https://go.microsoft.com/fwlink/?LinkID=153313).
+ Verze [!INCLUDE[wf1](../../../includes/wf1-md.md)] představená v .NET Framework 4 bude pro zbytek tohoto tématu označovat jako WF4. [!INCLUDE[wf1](../../../includes/wf1-md.md)] byla představena v .NET Framework 3,0 a měla několik menších revizí prostřednictvím .NET Framework 3,5 SP1. Verze modelu Workflow Foundation pro .NET Framework 3,5 bude pro zbytek tohoto tématu označovat jako WF3. WF3 se dodává v .NET Framework 4 vedle sebe s WF4. Další informace o migraci artefaktů WF3 do WF4 naleznete v tématu: [Průvodce migrací programovací model Windows Workflow Foundation 4](migration-guidance.md).
 
  Windows Communication Foundation (WCF) je jednotný programovací model Microsoftu pro vytváření aplikací orientovaných na služby. Byl nejprve představen jako součást .NET 3,0 společně s WF3 a teď je jednou z klíčových součástí .NET Framework.
 
@@ -284,7 +284,7 @@ Následující diagram znázorňuje základní pracovní postup kompenzace. Prac
 
  I u složitých pracovních postupů s hodně hloubkou a vysokým počtem aktivit jsou výsledky výkonu konzistentní s ostatními čísly propustnosti, které jsou uvedené dříve v tomto článku.  WF4's propustnost je rychlejší a musí se porovnávat podle logaritmické stupnice.
 
-### <a name="memory"></a>Memory (Paměť)
+### <a name="memory"></a>Paměť
  Režie paměti programovací model Windows Workflow Foundation se měří ve dvou klíčových oblastech: složitost pracovního postupu a počet definicí pracovních postupů.  Měření paměti byla provedena na pracovní stanici Windows 7 64.  Existuje mnoho způsobů, jak získat měření velikosti pracovní sady, jako jsou čítače výkonu monitorování, prostředí cyklického dotazování. WorkingSet nebo použití nástroje, jako je VMMap, který je k dispozici v [VMMap](/sysinternals/downloads/vmmap). Kombinace metod byla použita k získání a ověření výsledků každého testu.
 
 ### <a name="workflow-complexity-test"></a>Test složitosti pracovního postupu
@@ -301,7 +301,7 @@ Následující diagram znázorňuje základní pracovní postup kompenzace. Prac
  Jedním z jasných trendů, které je potřeba odvšimnout v tomto grafu, je, že vnořování má poměrně minimální dopad na využití paměti v WF3 i WF4.  Nejvýznamnější dopad na paměť pochází z počtu aktivit v daném pracovním postupu.  S ohledem na data z sekvence 1000, komplexní hloubky 5 sekvence 5 a složitá hloubka 7 sekvence 1, je zřejmé, že když počet aktivit vstoupí do tisíců, zvýšení využití paměti bude poznatelný.  V extrémním případě (hloubka 7 sekvence 1), kde se nacházejí ne29K aktivity, WF4 používá téměř 79% méně paměti než WF3.
 
 ### <a name="multiple-workflow-definitions-test"></a>Test vícenásobných pracovních postupů
- Měření paměti na definici pracovního postupu je rozděleno do dvou různých testů z důvodu dostupných možností pro hostování pracovních postupů v WF3 a WF4.  Testy jsou spouštěny jiným způsobem než test složitosti pracovního postupu v tom, že daný pracovní postup je instance a proveden pouze jednou pro každou definici.  Důvodem je, že definice pracovního postupu a jeho hostitel zůstane v paměti pro celou dobu životnosti domény AppDomain.  Paměť používaná při spuštění dané instance pracovního postupu by měla být vyčištěna během uvolňování paměti.  Pokyny k migraci pro WF4 obsahují podrobnější informace o možnostech hostování. Další informace najdete v tématu [Migrace WF kuchařka: Hostování pracovního postupu](https://go.microsoft.com/fwlink/?LinkID=153313).
+ Měření paměti na definici pracovního postupu je rozděleno do dvou různých testů z důvodu dostupných možností pro hostování pracovních postupů v WF3 a WF4.  Testy jsou spouštěny jiným způsobem než test složitosti pracovního postupu v tom, že daný pracovní postup je instance a proveden pouze jednou pro každou definici.  Důvodem je, že definice pracovního postupu a jeho hostitel zůstane v paměti pro celou dobu životnosti domény AppDomain.  Paměť používaná při spuštění dané instance pracovního postupu by měla být vyčištěna během uvolňování paměti.  Pokyny k migraci pro WF4 obsahují podrobnější informace o možnostech hostování. Další informace najdete v tématu [Migrace WF kuchařka: Hostování pracovního postupu](migration-guidance.md).
 
  Vytvoření mnoha definicí pracovních postupů pro test definice pracovního postupu lze provést několika způsoby.  Například jedna by mohla použít generování kódu k vytvoření sady 1000 pracovních postupů, které jsou identické s výjimkou názvu a uložení každého z těchto pracovních postupů do samostatných souborů.  Tento přístup byl proveden pro test hostovaný v konzole.  V WF3 se ke spuštění definice pracovního postupu použila třída <xref:System.Workflow.Runtime.WorkflowRuntime>.  WF4 může buď pomocí <xref:System.Activities.WorkflowApplication> vytvořit jednu instanci pracovního postupu nebo přímo použít <xref:System.Activities.WorkflowInvoker> ke spuštění aktivity, jako by šlo o volání metody.  <xref:System.Activities.WorkflowApplication> je hostitel jedné instance pracovního postupu a má pro <xref:System.Workflow.Runtime.WorkflowRuntime> paritu funkcí, které byly použity v tomto testu.
 
@@ -434,7 +434,7 @@ public class Workflow1 : Activity
  Monitorování stavu má přibližně 3% dopad na propustnost.  Náklady na základní profil jsou přibližně 8%.
 
 ## <a name="interop"></a>Zprostředkovatel komunikace
- WF4 je skoro úplný přepis [!INCLUDE[wf1](../../../includes/wf1-md.md)], takže pracovní postupy a aktivity WF3 nejsou přímo kompatibilní s WF4.  Mnoho zákazníků, kteří programovací model Windows Workflow Foundation brzkém rozhodnutím, bude mít interní nebo vlastní definice pracovních postupů třetích stran a vlastní aktivity pro WF3.  Jedním ze způsobů, jak usnadnit přechod na WF4, je použití aktivity spolupráce, která může provádět aktivity WF3 z pracovního postupu WF4.  Doporučuje se, aby se <xref:System.Activities.Statements.Interop> aktivita používala pouze v případě potřeby. Další informace o migraci na WF4 najdete v [pokynech k migraci WF4](https://go.microsoft.com/fwlink/?LinkID=153313).
+ WF4 je skoro úplný přepis [!INCLUDE[wf1](../../../includes/wf1-md.md)], takže pracovní postupy a aktivity WF3 nejsou přímo kompatibilní s WF4.  Mnoho zákazníků, kteří programovací model Windows Workflow Foundation brzkém rozhodnutím, bude mít interní nebo vlastní definice pracovních postupů třetích stran a vlastní aktivity pro WF3.  Jedním ze způsobů, jak usnadnit přechod na WF4, je použití aktivity spolupráce, která může provádět aktivity WF3 z pracovního postupu WF4.  Doporučuje se, aby se <xref:System.Activities.Statements.Interop> aktivita používala pouze v případě potřeby. Další informace o migraci na WF4 najdete v [pokynech k migraci WF4](migration-guidance.md).
 
 ### <a name="environment-setup"></a>Nastavení prostředí
  ![Nastavení prostředí pro test výkonnosti pracovního postupu](./media/performance/performance-test-environment.gif)
@@ -451,5 +451,5 @@ V následující tabulce jsou uvedeny výsledky spuštění pracovního postupu 
 
  Existuje významné zvýšení výkonu při použití zprostředkovatele komunikace přes rovnou WF3.  Nicméně při porovnání s aktivitami WF4 je nárůst zanedbatelný.
 
-## <a name="summary"></a>Souhrn
+## <a name="summary"></a>Přehled
  Velké investice do výkonu pro WF4 se v mnoha důležitých oblastech vyplácejí.  Výkon součásti pro jednotlivé pracovní postupy je v některých případech rychlejší v WF4 ve srovnání s WF3 z důvodu [!INCLUDE[wf1](../../../includes/wf1-md.md)]ho modulu runtime pro štíhlou dobu.  Hodnoty latence jsou také výrazně lepší.  To znamená, že snížení výkonu při použití [!INCLUDE[wf1](../../../includes/wf1-md.md)] na rozdíl od ručního kódování služeb orchestrace WCF je velmi malé, protože přináší přidané výhody použití [!INCLUDE[wf1](../../../includes/wf1-md.md)].  Výkon trvalosti se zvýšil o faktor 2,5-3,0.  Sledování stavu pomocí sledování pracovního postupu teď má velmi malou režii.  K dispozici je komplexní sada průvodců migrací, které zvažuje přesun z WF3 do WF4.  To vše by mělo WF4 být atraktivní možností pro psaní složitých aplikací.

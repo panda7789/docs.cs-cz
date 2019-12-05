@@ -2,12 +2,12 @@
 title: Použití aktivit pracovních postupů .NET Framework 3.0 v rozhraní .NET Framework 4 pomocí aktivity interoperability
 ms.date: 03/30/2017
 ms.assetid: 71f112ba-abb0-46f7-b05f-a5d2eb9d0c5c
-ms.openlocfilehash: de0a0474f0a996ce8c781064f56c03b483ca1bb9
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: fb9536d5ee7a31039d77deffc3c0b0c7a6263b66
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74283197"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802567"
 ---
 # <a name="using-net-framework-30-wf-activities-in-net-framework-4-with-the-interop-activity"></a>Použití aktivit pracovních postupů .NET Framework 3.0 v rozhraní .NET Framework 4 pomocí aktivity interoperability
 Aktivita <xref:System.Activities.Statements.Interop> je aktivita [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] (WF 4,5), která zabalí aktivitu .NET Framework 3,5 (WF 3,5) v rámci pracovního postupu [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]. Aktivita WF 3 může být jedna koncová aktivita nebo celá struktura aktivit. Spuštění (včetně zrušení a zpracování výjimek) a trvalá aktivita .NET Framework 3,5 nastane v kontextu [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] instance pracovního postupu, která je spuštěna.  
@@ -24,7 +24,7 @@ Aktivita <xref:System.Activities.Statements.Interop> je aktivita [!INCLUDE[netfx
   
 - Aktivita WF 3 musí mít veřejný konstruktor bez parametrů.  
   
-- Z důvodu omezení typů rozhraní, které může aktivita <xref:System.Activities.Statements.Interop> podporovat, <xref:System.Workflow.Activities.HandleExternalEventActivity> a <xref:System.Workflow.Activities.CallExternalMethodActivity> nelze použít přímo, ale odvozené aktivity vytvořené pomocí nástroje aktivita komunikace pracovního postupu (WCA. exe) lze použít. Podrobnosti najdete v tématu o [programovací model Windows Workflow Foundationch nástrojích](https://go.microsoft.com/fwlink/?LinkId=178889) .  
+- Z důvodu omezení typů rozhraní, které může aktivita <xref:System.Activities.Statements.Interop> podporovat, <xref:System.Workflow.Activities.HandleExternalEventActivity> a <xref:System.Workflow.Activities.CallExternalMethodActivity> nelze použít přímo, ale odvozené aktivity vytvořené pomocí nástroje aktivita komunikace pracovního postupu (WCA. exe) lze použít. Podrobnosti najdete v tématu o programovací model[ Windows Workflow Foundationch nástrojích](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms734408(v=vs.90)).  
   
 ## <a name="configuring-a-wf-3-activity-within-an-interop-activity"></a>Konfigurace aktivity WF 3 v rámci aktivity spolupráce  
  Aby bylo možné konfigurovat a předávat data do a z aktivity WF 3 v rámci hranice mezioperace, vlastnosti aktivity WF 3 a vlastnosti metadat jsou zpřístupněny <xref:System.Activities.Statements.Interop> aktivitou. Vlastnosti metadat aktivity WF 3 (například <xref:System.Workflow.ComponentModel.Activity.Name%2A>) jsou zpřístupněny prostřednictvím kolekce <xref:System.Activities.Statements.Interop.ActivityMetaProperties%2A>. Toto je kolekce párů název-hodnota používané k definování hodnot vlastností metadat aktivity WF 3. Vlastnost metadat je vlastnost se zálohovaná vlastností závislosti, pro kterou je nastaven příznak <xref:System.Workflow.ComponentModel.DependencyPropertyOptions.Metadata>.  

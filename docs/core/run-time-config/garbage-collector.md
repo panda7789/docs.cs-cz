@@ -1,14 +1,14 @@
 ---
 title: Nastavení konfigurace pro kolektor paměti
-description: Přečtěte si o nastaveních modulu runtime pro konfiguraci způsobu, jakým systém uvolňování paměti spravuje paměť.
+description: Přečtěte si o nastaveních modulu runtime pro konfiguraci způsobu, jakým systém uvolňování paměti spravuje paměť pro aplikace .NET Core.
 ms.date: 11/13/2019
 ms.topic: reference
-ms.openlocfilehash: 220b94e92f61fd44d2ab13291e41b8007a287cc7
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: e7f6877a3cbc7f28776a93b9126f4b64026487fa
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428708"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74800625"
 ---
 # <a name="run-time-configuration-options-for-garbage-collection"></a>Možnosti konfigurace běhu pro uvolňování paměti
 
@@ -38,7 +38,7 @@ Pro výběr charakteru uvolňování paměti použijte následující nastavení
 | | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
 | **runtimeconfig. JSON** | `System.GC.Server` | `false` – pracovní stanice<br/>`true` – Server | .NET Core 1,0 |
-| **Proměnná prostředí** | `COMPlus_gcServer` | 0 – pracovní stanice<br/>1 – Server | .NET Core 1,0 |
+| **Proměnná prostředí** | `COMPlus_gcServer` | `0` – pracovní stanice<br/>`1` – Server | .NET Core 1,0 |
 | **App. config pro .NET Framework** | [GCServer](../../framework/configure-apps/file-schema/runtime/gcserver-element.md) | `false` – pracovní stanice<br/>`true` – Server |  |
 
 ### <a name="systemgcconcurrentcomplus_gcconcurrent"></a>System. GC. souběžné/COMPlus_gcConcurrent
@@ -110,13 +110,13 @@ Další informace o některých těchto nastaveních najdete v tématu [středn�
   Pokud má 64 počítač s Windows více skupin PROCESORů, to znamená, že existuje více než 64 procesorů, povolení tohoto elementu rozšiřuje uvolňování paměti napříč všemi skupinami CPU. Systém uvolňování paměti používá všechny jádra k vytváření a vyrovnání hald.
 
 - Platí pro uvolňování paměti serveru (GC) pouze v 64 operačních systémech Windows.
-- Výchozí: zakázáno (0).
+- Výchozí: zakázáno (`0`).
 - Další informace najdete v tématu [zlepšení konfigurace procesoru pro GC na počítačích s > 64 procesory](https://devblogs.microsoft.com/dotnet/making-cpu-configuration-better-for-gc-on-machines-with-64-cpus/) na blogu s Maoni Stephens.
 
 | | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
 | **runtimeconfig. JSON** | NEUŽÍVÁ SE. | NEUŽÍVÁ SE. | NEUŽÍVÁ SE. |
-| **Proměnná prostředí** | `COMPlus_GCCpuGroup` | 0 – zakázáno<br/>1 – povoleno | .NET Core 1,0 |
+| **Proměnná prostředí** | `COMPlus_GCCpuGroup` | `0` – zakázáno<br/>`1` – povoleno | .NET Core 1,0 |
 | **App. config pro .NET Framework** | [GCCpuGroup](../../framework/configure-apps/file-schema/runtime/gccpugroup-element.md) | `false` – zakázáno<br/>`true` – povoleno |  |
 
 > [!NOTE]
@@ -131,7 +131,7 @@ Další informace o některých těchto nastaveních najdete v tématu [středn�
 | | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
 | **runtimeconfig. JSON** | `System.GC.NoAffinitize` | `false` – spřažení<br/>`true` – spřažení | .NET Core 3.0 |
-| **Proměnná prostředí** | `COMPlus_GCNoAffinitize` | 0 – spřažení<br/>1 – spřažení | .NET Core 3.0 |
+| **Proměnná prostředí** | `COMPlus_GCNoAffinitize` | `0` – spřažení<br/>`1` – spřažení | .NET Core 3.0 |
 | **App. config pro .NET Framework** | [GCNoAffinitize](../../framework/configure-apps/file-schema/runtime/gcnoaffinitize-element.md) | `false` – spřažení<br/>`true` – spřažení | 4.6.2 |
 
 ### <a name="systemgcheaphardlimitcomplus_gcheaphardlimit"></a>System. GC. HeapHardLimit/COMPlus_GCHeapHardLimit
@@ -166,34 +166,34 @@ Další informace o některých těchto nastaveních najdete v tématu [středn�
 | | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
 | **runtimeconfig. JSON** | `System.GC.RetainVM` | `false` – vydání na operační systém<br/>`true` – vložit do úsporného režimu| .NET Core 1,0 |
-| **Proměnná prostředí** | `COMPlus_GCRetainVM` | 0 – vydání z verze na operační systém<br/>1 – vložit do úsporného režimu | .NET Core 1,0 |
+| **Proměnná prostředí** | `COMPlus_GCRetainVM` | `0` – vydání na operační systém<br/>`1` – vložit do úsporného režimu | .NET Core 1,0 |
 
 ## <a name="large-pages"></a>Velké stránky
 
 ### <a name="complus_gclargepages"></a>COMPlus_GCLargePages
 
 - Určuje, zda mají být při nastavení vynuceného limitu haldy použity velké stránky.
-- Výchozí: zakázáno (0).
+- Výchozí: zakázáno (`0`).
 - Toto je experimentální nastavení.
 
 | | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
 | **runtimeconfig. JSON** | NEUŽÍVÁ SE. | NEUŽÍVÁ SE. | NEUŽÍVÁ SE. |
-| **Proměnná prostředí** | `COMPlus_GCLargePages` | 0 – zakázáno<br/>1 – povoleno | .NET Core 3.0 |
+| **Proměnná prostředí** | `COMPlus_GCLargePages` | `0` – zakázáno<br/>`1` – povoleno | .NET Core 3.0 |
 
 ## <a name="large-objects"></a>Velké objekty
 
 ### <a name="complus_gcallowverylargeobjects"></a>COMPlus_gcAllowVeryLargeObjects
 
 - Konfiguruje podporu uvolňování paměti na 64ech platforem pro pole, která jsou v celkové velikosti větší než 2 gigabajty (GB).
-- Výchozí: povoleno (1).
+- Výchozí: povoleno (`1`).
 - Tato možnost může být zastaralá v budoucí verzi .NET.
 
 | | Název nastavení | Hodnoty | Představená verze |
 | - | - | - | - |
 | **runtimeconfig. JSON** | NEUŽÍVÁ SE. | NEUŽÍVÁ SE. | NEUŽÍVÁ SE. |
-| **Proměnná prostředí** | `COMPlus_gcAllowVeryLargeObjects` | 1 – povoleno<br/> 0 – zakázáno | .NET Core 1,0 |
-| **App. config pro .NET Framework** | [gcAllowVeryLargeObjects](../../framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md) | 1 – povoleno<br/> 0 – zakázáno | .NET Framework 4.5 |
+| **Proměnná prostředí** | `COMPlus_gcAllowVeryLargeObjects` | `1` – povoleno<br/> `0` – zakázáno | .NET Core 1,0 |
+| **App. config pro .NET Framework** | [gcAllowVeryLargeObjects](../../framework/configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md) | `1` – povoleno<br/> `0` – zakázáno | .NET Framework 4.5 |
 
 ## <a name="large-object-heap-threshold"></a>Prahová hodnota haldy velkých objektů
 

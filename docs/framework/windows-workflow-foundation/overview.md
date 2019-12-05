@@ -2,45 +2,45 @@
 title: Přehled Windows Workflow
 ms.date: 03/30/2017
 ms.assetid: fc44adbe-1412-49ae-81af-0298be44aae6
-ms.openlocfilehash: 285ab75f7f67bbb9ffa18367eff126c04227f193
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
+ms.openlocfilehash: ada5ec75d130c9c518c5129db6c12b61c3acbf45
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65876144"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802528"
 ---
 # <a name="windows-workflow-overview"></a>Přehled Windows Workflow
-Pracovní postup je sada elemental jednotky nazvané *aktivity* , které jsou uloženy jako model, který popisuje proces reálného světa. Pracovní postupy umožňují popsat pořadí spuštění a závislé vztahy mezi částmi krátkodobé nebo dlouho probíhající práce. Tato práce prochází modelu od začátku do konce a aktivity mohou být prováděny osobami nebo funkcemi systému.  
+Pracovní postup je sada jednotek prvků s názvem *aktivity* , které se ukládají jako model, který popisuje reálný proces. Pracovní postupy představují způsob, jak popsat pořadí spouštění a závislé vztahy mezi částmi krátkodobé nebo dlouhodobé práce. Tato práce prochází modelem od začátku do konce a aktivity můžou provádět lidé nebo funkce systému.  
   
-## <a name="workflow-run-time-engine"></a>Modul runtime pracovního postupu  
- Každou spuštěnou instanci pracovního postupu se vytvářejí a udržují modul runtime v procesu hostitelský proces komunikuje prostřednictvím jednoho z následujících akcí:  
+## <a name="workflow-run-time-engine"></a>Běhový modul workflowu  
+ Každá spuštěná instance pracovního postupu je vytvořena a udržována modulem runtime spouštěným v procesu, který komunikuje s hostitelským procesem pomocí jedné z následujících možností:  
   
-- A <xref:System.Activities.WorkflowInvoker>, která vyvolá pracovní postup jako metodu.  
+- <xref:System.Activities.WorkflowInvoker>, který vyvolá pracovní postup, jako je metoda.  
   
-- A <xref:System.Activities.WorkflowApplication> explicitní kontrolu nad tím provádění instance jednoho pracovního postupu.  
+- <xref:System.Activities.WorkflowApplication> pro explicitní kontrolu nad prováděním jedné instance pracovního postupu.  
   
-- A <xref:System.ServiceModel.WorkflowServiceHost> založenou na zprávách interakcí ve scénářích s více instancemi.  
+- <xref:System.ServiceModel.WorkflowServiceHost> pro interakce založené na zprávách ve scénářích s více instancemi.  
   
- Každá z těchto tříd obtéká modul runtime aktivity core vyjádřené <xref:System.Activities.ActivityInstance> zodpovědná za spuštění aktivity. Může být několik <xref:System.Activities.ActivityInstance> objektů v rámci domény aplikace spuštěny souběžně.  
+ Každá z těchto tříd balí modul runtime základní aktivity reprezentovaný jako <xref:System.Activities.ActivityInstance> zodpovědný za spuštění aktivity. V doméně aplikace může běžet několik <xref:System.Activities.ActivityInstance> objektů současně.  
   
- Každý z předchozí tři hostitele objektů interakce je vytvořen ze stromu aktivit, které jsou uvedené jako aplikace pracovního postupu. Pomocí těchto typů nebo vlastního hostitele, která obaluje <xref:System.Activities.ActivityInstance>, pracovní postupy mohou být provedeny uvnitř jakýkoli proces Windows včetně konzolové aplikace, aplikace založené na formulářích, služby Windows, webové stránky ASP.NET a Windows Communication Foundation (WCF) služby.  
+ Každý z předchozích tří objektů interakce hostitele je vytvořen ze stromové struktury aktivit, které jsou označovány jako program pracovního postupu. Pomocí těchto typů nebo vlastního hostitele, který zabalí <xref:System.Activities.ActivityInstance>, lze pracovní postupy spustit v jakémkoli procesu systému Windows, včetně konzolových aplikací, aplikací založených na formulářích, služeb systému Windows, webů ASP.NET a služeb Windows Communication Foundation (WCF).  
   
- ![Komponenty pracovní postup v hostitelském procesu](./media/44c79d1d-178b-4487-87ed-3e33015a3842.gif "44c79d1d-178b-4487-87ed-3e33015a3842")  
-Komponenty pracovní postup v hostitelském procesu  
+ ![Komponenty pracovního postupu v hostitelském procesu](./media/44c79d1d-178b-4487-87ed-3e33015a3842.gif "44c79d1d-178b-4487-87ed-3e33015a3842")  
+Komponenty pracovního postupu v hostitelském procesu  
   
 ## <a name="interaction-between-workflow-components"></a>Interakce mezi komponentami pracovního postupu  
- Následující diagram ukazuje, jak komponenty pracovního postupu komunikovat mezi sebou.  
+ Následující diagram znázorňuje, jak komponenty pracovního postupu vzájemně komunikují.  
   
- ![Diagram znázorňující, jak pracují komponenty pracovního postupu.](./media/overview/workflow-component-interatction.gif)  
+ ![Diagram, který ukazuje, jak komponenty pracovního postupu pracují.](./media/overview/workflow-component-interatction.gif)  
   
- Na předchozím obrázku <xref:System.Activities.WorkflowInvoker.Invoke%2A> metodu <xref:System.Activities.WorkflowInvoker> třída se používá pro vyvolání několika instancí pracovních postupů. <xref:System.Activities.WorkflowInvoker> se používá pro zjednodušené pracovní postupy, které nepotřebují správy z hostitele; pracovní postupy, které je třeba Správa z hostitele (například <xref:System.Activities.Bookmark> obnovení) je třeba spustit pomocí <xref:System.Activities.WorkflowApplication.Run%2A> místo. Není to nutné čekat pro jednu instanci pracovního postupu k dokončení před vyvoláním modul runtime podporuje spuštění více instancí pracovního postupu současně.  Vyvolá pracovní postupy jsou následující:  
+ V předchozím diagramu je metoda <xref:System.Activities.WorkflowInvoker.Invoke%2A> <xref:System.Activities.WorkflowInvoker> třídy použita k vyvolání několika instancí pracovního postupu. <xref:System.Activities.WorkflowInvoker> se používá pro zjednodušené pracovní postupy, které nepotřebují správu od hostitele. pracovní postupy, které vyžadují správu od hostitele (například <xref:System.Activities.Bookmark> obnovení), je třeba spustit pomocí <xref:System.Activities.WorkflowApplication.Run%2A>. Před vyvoláním jiného není nutné čekat na dokončení jedné instance pracovního postupu. Běhový modul podporuje souběžné spouštění více instancí pracovního postupu.  Vyvolané pracovní postupy jsou následující:  
   
-- A <xref:System.Activities.Statements.Sequence> aktivitu, která obsahuje <xref:System.Activities.Statements.WriteLine> podřízené aktivity. A <xref:System.Activities.Variable> nadřazené aktivity je vázána na <xref:System.Activities.InArgument> podřízené aktivity. Další informace o proměnných, argumentů a vazbu, naleznete v tématu [proměnné a argumenty](variables-and-arguments.md).  
+- <xref:System.Activities.Statements.Sequence> aktivita obsahující <xref:System.Activities.Statements.WriteLine> podřízenou aktivitu. <xref:System.Activities.Variable> nadřazené aktivity je vázán na <xref:System.Activities.InArgument> podřízené aktivity. Další informace o proměnných, argumentech a vazbách naleznete v tématu [Variables a Arguments](variables-and-arguments.md).  
   
-- Volá se, vlastní aktivita `ReadLine`. <xref:System.Activities.OutArgument> z `ReadLine` aktivity je vrácena volající <xref:System.Activities.WorkflowInvoker.Invoke%2A> metody.  
+- Vlastní aktivita s názvem `ReadLine`. Volajícímu <xref:System.Activities.WorkflowInvoker.Invoke%2A> metodu vrátí <xref:System.Activities.OutArgument> `ReadLine` aktivity.  
   
-- Vlastní aktivitu, která je odvozena z <xref:System.Activities.CodeActivity> abstraktní třídy. <xref:System.Activities.CodeActivity> Můžete přístup k funkcím za běhu (například sledování a vlastnosti) pomocí <xref:System.Activities.CodeActivityContext> , který je k dispozici jako parametr <xref:System.Activities.CodeActivity.Execute%2A> metoda. Další informace o těchto funkcích za běhu, naleznete v tématu [pracovního postupu pro sledování a trasování](workflow-tracking-and-tracing.md) a [běhové vlastnosti pracovního postupu](workflow-execution-properties.md).  
+- Vlastní aktivita odvozená z <xref:System.Activities.CodeActivity> abstraktní třídy. <xref:System.Activities.CodeActivity> může přistupovat k funkcím modulu runtime (například ke sledování a vlastnostem) pomocí <xref:System.Activities.CodeActivityContext>, který je k dispozici jako parametr metody <xref:System.Activities.CodeActivity.Execute%2A>. Další informace o těchto funkcích runtime najdete v tématu [sledování pracovních postupů a trasování](workflow-tracking-and-tracing.md) a [Vlastnosti spuštění pracovního postupu](workflow-execution-properties.md).  
   
 ## <a name="see-also"></a>Viz také:
 
-- [BizTalk Server 2006 nebo pracovního postupu? Volba správného pracovního postupu nástroje pro váš projekt](https://go.microsoft.com/fwlink/?LinkId=154901)
+- [BizTalk Server 2006 nebo WF? Výběr správného nástroje pro pracovní postup pro váš projekt](https://docs.microsoft.com/previous-versions/dotnet/articles/cc303238(v=msdn.10))

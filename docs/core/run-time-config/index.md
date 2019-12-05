@@ -2,12 +2,12 @@
 title: Konfigurace run-time
 description: Naučte se konfigurovat aplikace .NET Core pomocí nastavení konfigurace za běhu.
 ms.date: 11/13/2019
-ms.openlocfilehash: e3922f6df81198b5e122f16d5cfc4b6d15cbb4ae
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 2665026347e94d26026821beb2bfcf8441f755f6
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74567381"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74801913"
 ---
 # <a name="net-core-run-time-configuration-settings"></a>Nastavení konfigurace runtime .NET Core
 
@@ -26,11 +26,11 @@ ms.locfileid: "74567381"
 
 - [Proměnné prostředí](#environment-variables)
 
-Články v této části dokumentace jsou uspořádány podle kategorie, například ladění a uvolňování paměti. Pro *runtimeconfig. JSON* se zobrazí dostupné možnosti konfigurace (jenom .NET Core), *App. config* (jenom .NET Framework) a proměnné prostředí.
+Články v této části dokumentace jsou uspořádány podle kategorie, například ladění a uvolňování paměti. V případě potřeby se pro *runtimeconfig. JSON* zobrazí možnosti konfigurace (jenom .NET Core), *App. config* (jenom .NET Framework) a proměnné prostředí.
 
 ## <a name="runtimeconfigjson"></a>runtimeconfig. JSON
 
-Zadejte možnosti konfigurace modulu runtime v části **configProperties** souboru *runtimeconfig. JSON* . Tato část obsahuje formulář:
+Zadejte možnosti konfigurace modulu runtime v části **configProperties** souboru *runtimeconfig. JSON* aplikace. Tato část obsahuje formulář:
 
 ```json
 {

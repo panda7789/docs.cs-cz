@@ -6,16 +6,16 @@ helpviewer_keywords:
 - testing, UI Automation
 - UI Automation, automated testing
 ms.assetid: 3a0435c0-a791-4ad7-ba92-a4c1d1231fde
-ms.openlocfilehash: a22474d943212e35310a0e8bcf6643c4a99c0389
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 2da0f994e809ff0ea9cd3165cd788ac467a87aef
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039405"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74800786"
 ---
 # <a name="using-ui-automation-for-automated-testing"></a>Použití automatizace uživatelského rozhraní pro automatizované testování
 > [!NOTE]
-> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v oboru názvů <xref:System.Windows.Automation>. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API pro Windows Automation: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
+> Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v oboru názvů <xref:System.Windows.Automation>. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API pro Windows Automation: automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).  
   
  Tento přehled popisuje, jak může být [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] užitečné jako architektura pro programový přístup v rámci automatizovaných testovacích scénářů.  
   
@@ -37,13 +37,13 @@ ms.locfileid: "73039405"
 > S jinými modely usnadnění musí vývojáři shromažďovat informace přímo z jednotlivých tlačítek, nabídek nebo jiných ovládacích prvků. Každý typ ovládacího prvku bohužel přichází v desítkách malých variant. Jinými slovy, i když deset variací (pushbutton) může fungovat stejným způsobem a provádět stejnou funkci, musí být všechny zpracovány jako jedinečné ovládací prvky. Neexistuje žádný způsob, jak zjistit, že tyto ovládací prvky jsou funkčně ekvivalentní. Byly vyvinuty vzory ovládacích prvků, které by představovaly toto chování obecného ovládacího prvku. Další informace najdete v tématu [Přehled vzorů ovládacích prvků automatizace uživatelského rozhraní](ui-automation-control-patterns-overview.md).  
   
 ### <a name="implementing-ui-automation"></a>Implementace automatizace uživatelského rozhraní  
- Jak bylo zmíněno dříve, bez sjednocení modelu, který poskytuje [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], musí testovací nástroje a vývojáři znát informace specifické pro rozhraní, aby bylo možné vystavit vlastnosti a chování ovládacích prvků v daném rozhraní. Vzhledem k tomu, že v operačních systémech Windows může být v jednom okamžiku k dispozici několik různých rozhraní uživatelského rozhraní, včetně [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)], [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]a Windows Presentation Foundation (WPF), může se jednat o úlohu těžké k otestování více aplikací s ovládacími prvky, které vypadá podobně. Například následující tabulka popisuje názvy vlastností specifické pro rozhraní, které jsou vyžadovány k načtení názvu (nebo textu) přidruženého k ovládacímu prvku tlačítko a zobrazení jedné ekvivalentní [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnosti.  
+ Jak bylo zmíněno dříve, bez sjednocení modelu, který poskytuje [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], musí testovací nástroje a vývojáři znát informace specifické pro rozhraní, aby bylo možné vystavit vlastnosti a chování ovládacích prvků v daném rozhraní. Vzhledem k tomu, že v operačních systémech Windows může být v jednom okamžiku k dispozici několik různých rozhraní uživatelského rozhraní, včetně [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)], [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]a Windows Presentation Foundation (WPF), může to být úkol těžké k testování více aplikací s ovládacími prvky, které vypadají podobně. Například následující tabulka popisuje názvy vlastností specifické pro rozhraní, které jsou vyžadovány k načtení názvu (nebo textu) přidruženého k ovládacímu prvku tlačítko a zobrazení jedné ekvivalentní [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnosti.  
   
 |Typ ovládacího prvku automatizace uživatelského rozhraní|Architektura uživatelského rozhraní|Vlastnost specifická pro rozhraní|Vlastnost automatizace uživatelského rozhraní|  
 |--------------------------------|------------------|---------------------------------|----------------------------|  
 |Tlačítko|Windows Presentation Foundation|Obsah|NameProperty|  
-|Tlačítko|Win32|Popisku|NameProperty|  
-|Image|HTML|ALT|NameProperty|  
+|Tlačítko|Win32|Titulek|NameProperty|  
+|Obrázek|HTML|ALT|NameProperty|  
   
  Zprostředkovatelé automatizace uživatelského rozhraní zodpovídají za mapování vlastností konkrétního rozhraní pro příslušné ovládací prvky na ekvivalentní [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnosti.  
   
@@ -100,7 +100,7 @@ ms.locfileid: "73039405"
   
 - MSAABridge zpřístupňuje informace [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] pro aktivní klienty přístupnosti. Primárním cílem přemostění [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] k aktivnímu usnadnění je umožnit všem aktivním klientům usnadnění pracovat s jakýmkoli rozhraním, které je implementované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].  
   
-## <a name="security"></a>Zabezpečení  
+## <a name="security"></a>Zabezpečení –  
  Informace o zabezpečení najdete v tématu [Přehled zabezpečení automatizace uživatelského rozhraní](ui-automation-security-overview.md).  
   
 ## <a name="see-also"></a>Viz také:

@@ -2,12 +2,12 @@
 title: Používání vývojářských nástrojů WCF
 ms.date: 03/30/2017
 ms.assetid: 054adb87-c244-4d5a-83d1-0b2b44bd454b
-ms.openlocfilehash: afa62a63aa955dc868791da635418331f93e9e87
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 59913f4c00c32699d788e2a0244798fc652361be
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73420683"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802404"
 ---
 # <a name="using-the-wcf-development-tools"></a>Používání vývojářských nástrojů WCF
 Tato část popisuje vývojové nástroje sady Visual Studio, které vám můžou pomoct při vývoji WCFservice.  
@@ -43,7 +43,7 @@ Tato část popisuje vývojové nástroje sady Visual Studio, které vám můžo
 netsh http add urlacl url=http://+:8001/MyService user=<domain>\<user>  
 ```  
   
- Další informace o nástroji Netsh. exe najdete v tématu [použití nástroje Netsh. exe a přepínačů příkazového řádku](https://go.microsoft.com/fwlink/?LinkId=97877).  
+ Další informace o nástroji Netsh. exe najdete v tématu [použití nástroje Netsh. exe a přepínačů příkazového řádku](https://docs.microsoft.com/previous-versions/tn-archive/bb490939(v=technet.10)).  
   
 ## <a name="see-also"></a>Viz také:
 

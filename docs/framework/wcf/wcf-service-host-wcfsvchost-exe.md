@@ -2,12 +2,12 @@
 title: Hostitel služby WCF (WcfSvcHost.exe)
 ms.date: 03/30/2017
 ms.assetid: 8643a63d-a357-4c39-bd6c-cdfdf71e370e
-ms.openlocfilehash: a4efa0d5a46eb0d8e6eef08fd17c38f7db3e7e9e
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: c855fe7cc804fac14348990b7a6f5f84a0956b0c
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423840"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802399"
 ---
 # <a name="wcf-service-host-wcfsvchostexe"></a>Hostitel služby WCF (WcfSvcHost.exe)
 
@@ -15,7 +15,7 @@ Hostitel služby Windows Communication Foundation (WCF) (WcfSvcHost. exe) umož�
 
 ## <a name="wcf-service-host"></a>Hostitel služby WCF
 
-Hostitel služby WCF vypíše služby v projektu služby WCF, načte konfiguraci projektu a vytvoří instanci hostitele pro každou službu, kterou najde. Nástroj je integrován do sady Visual Studio prostřednictvím šablony služby WCF a je vyvolána při zahájení ladění projektu.
+Hostitel služby WCF vytvoří výčet služby v projektu služby WCF, načte konfiguraci projektu a vytvoří instanci hostitele pro každou službu, kterou zjistí. Nástroj je integrován do sady Visual Studio prostřednictvím šablony služby WCF a je vyvolána při zahájení ladění projektu.
 
 Pomocí hostitele služby WCF můžete hostovat službu WCF (v projektu knihovny služby WCF), aniž byste museli psát další kód nebo potvrzování konkrétního hostitele během vývoje.
 
@@ -33,7 +33,7 @@ Nezapomeňte však, že nástroj vám nepomůže nakonfigurovat hostitele. Pro t
 
 ## <a name="scenarios-for-using-wcf-service-host-inside-visual-studio"></a>Scénáře použití hostitele služby WCF v rámci sady Visual Studio
 
-V následující tabulce jsou uvedeny všechny parametry v dialogovém okně **argumenty příkazového řádku** , které lze najít kliknutím pravým tlačítkem myši na projekt v **Průzkumníku řešení** v aplikaci Visual Studio, výběrem možnosti **vlastnosti**a následným výběrem **ladění** a kliknutím na tlačítko **spustit projekt**. Tyto parametry jsou užitečné při konfiguraci hostitele služby WCF.
+V následující tabulce jsou uvedeny všechny parametry v dialogovém okně **argumenty příkazového řádku** , které lze najít kliknutím pravým tlačítkem myši na projekt v **Průzkumníku řešení** v aplikaci Visual Studio, výběrem **vlastností**a výběrem karty **ladění** a kliknutím na položku **spustit projekt**. Tyto parametry jsou užitečné při konfiguraci hostitele služby WCF.
 
 |Parametr|Význam|
 |---------------|-------------|
@@ -45,13 +45,13 @@ V následující tabulce jsou uvedeny všechny parametry v dialogovém okně **a
 
 Po vytvoření nového projektu služby WCF a stisknutím klávesy F5 ke spuštění ladicího programu začne hostitel služby WCF hostovat všechny služby, které najde ve vašem projektu. Testovací klient WCF se automaticky otevře a zobrazí seznam koncových bodů služby, které jsou definovány v konfiguračním souboru. Z hlavního okna můžete testovat parametry a vyvolat službu.
 
-Chcete-li se ujistit, že se používá klient testu WCF, klikněte pravým tlačítkem myši na projekt v **Průzkumníku řešení** v aplikaci Visual Studio, vyberte možnost **vlastnosti**a pak vyberte kartu **ladění** . klikněte na tlačítko **spustit projekt** a ujistěte se, že se v části  **Dialogové okno argumenty příkazového řádku** .
+Chcete-li se ujistit, že se používá klient testu WCF, klikněte pravým tlačítkem myši na projekt v **Průzkumníku řešení** v aplikaci Visual Studio, vyberte možnost **vlastnosti**a pak vyberte kartu **ladění** . klikněte na tlačítko **spustit projekt** a ověřte, zda se v dialogovém okně **argumenty příkazového řádku** zobrazí následující.
 
 `/client:WcfTestClient.exe`
 
 #### <a name="using-a-custom-client"></a>Použití vlastního klienta
 
-Chcete-li použít vlastního klienta, klikněte pravým tlačítkem myši na projekt v **Průzkumníku řešení** v aplikaci Visual Studio, vyberte možnost **vlastnosti**a poté vyberte kartu **ladit** . klikněte na možnost **spustit projekt** a v **argumentech příkazového řádku upravte parametr `/client`.** dialog, který odkazuje na vlastního klienta, jak je uvedeno v následujícím příkladu.
+Chcete-li použít vlastního klienta, klikněte pravým tlačítkem myši na projekt v **Průzkumníku řešení** v aplikaci Visual Studio, vyberte možnost **vlastnosti**a pak vyberte kartu **ladění** . klikněte na tlačítko **spustit projekt** a v dialogovém okně **argumenty příkazového řádku** upravte parametr `/client` tak, aby odkazoval na vlastního klienta, jak je uvedeno v následujícím příkladu.
 
 `/client:"path/CustomClient.exe"`
 
@@ -67,7 +67,7 @@ Pokud například používáte šablonu knihovny syndikace Service, můžete pou
 
 #### <a name="specifying-no-client"></a>Bez zadání klienta
 
-Chcete-li určit, že po hostování služby WCF nebude použit žádný klient, klikněte pravým tlačítkem myši na projekt v **Průzkumníku řešení** v aplikaci Visual Studio, vyberte možnost **vlastnosti**a poté vyberte kartu **ladit** . klikněte na tlačítko **spustit projekt** a ponechte **příkaz Dialogové okno argumenty řádku** je prázdné.
+Chcete-li určit, že po hostování služby WCF nebude použit žádný klient, klikněte pravým tlačítkem myši na projekt v **Průzkumníku řešení** v aplikaci Visual Studio, vyberte možnost **vlastnosti**a poté vyberte kartu **ladit** . klikněte na tlačítko **spustit projekt** a nechejte dialogové okno **argumenty příkazového řádku** prázdné.
 
 #### <a name="using-a-custom-host"></a>Použití vlastního hostitele
 
@@ -119,7 +119,7 @@ Přístup můžete upravit pomocí nástroje Netsh. exe v [!INCLUDE[wv](../../..
 netsh http add urlacl url=http://+:8001/MyService user=<domain>\<user>
 ```
 
-Další informace o nástroji Netsh. exe najdete v části "[použití nástroje Netsh. exe a přepínačů příkazového řádku](https://go.microsoft.com/fwlink/?LinkId=97877)".
+Další informace o nástroji Netsh. exe najdete v části "[použití nástroje Netsh. exe a přepínačů příkazového řádku](https://docs.microsoft.com/previous-versions/tn-archive/bb490939(v=technet.10))".
 
 ## <a name="see-also"></a>Viz také:
 

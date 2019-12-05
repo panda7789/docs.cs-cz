@@ -2,15 +2,15 @@
 title: Vlastnosti úložiště instancí pracovních postupů SQL
 ms.date: 03/30/2017
 ms.assetid: 5bf75f3c-8f33-450d-967f-6ee862c14c67
-ms.openlocfilehash: dcd493bbc85638bfb77d75b9900f15c726a95d2d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5ad32bc1683fe903abe68809037ffbabd088a32b
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64617363"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802489"
 ---
 # <a name="properties-of-sql-workflow-instance-store"></a>Vlastnosti úložiště instancí pracovních postupů SQL
-Témata v této části obsahují podrobnosti o vlastnostech Store Instance pracovního postupu SQL.  
+Témata v této části poskytují podrobné informace o vlastnostech úložiště instance pracovního postupu SQL.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
@@ -28,5 +28,5 @@ Témata v této části obsahují podrobnosti o vlastnostech Store Instance prac
   
 ## <a name="see-also"></a>Viz také:
 
-- [Windows Server App Fabric Instance Store](https://go.microsoft.com/fwlink/?LinkId=201201)
-- [Databáze trvalosti SQL serveru App Fabric](https://go.microsoft.com/fwlink/?LinkId=201202)
+- [Úložiště instancí Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ff383417(v=azure.10))
+- [Aplikační Fabric SQL Server Persistence databáze](https://docs.microsoft.com/previous-versions/appfabric/ee790819(v=azure.10))

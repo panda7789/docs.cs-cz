@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: aff939d7-9e49-46f2-a8cd-938d3020e94e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 94d435d8f50683c24e7ca28100fbf5abf0fdcc19
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: 33583f430e5af2f3fa7027233febd9ec61f85a3f
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204781"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802450"
 ---
 # <a name="isolated-storage"></a>Izolované úložiště
 <a name="top"></a>Pro desktopové aplikace je izolované úložiště mechanismus pro ukládání dat, který poskytuje izolaci a bezpečnost definováním standardizovaných způsobů asociace kódu s uloženými daty. Standardizace poskytuje také další výhody. Správci mohou používat nástroje, které jsou navrženy pro manipulaci izolovaného úložiště, a nakonfigurovat kapacitu úložiště souborů, nastavit zásady zabezpečení a odstranit nepoužívaná data. Díky izolovanému úložišti váš kód pro zadání bezpečných umístění v systému souborů již nevyžaduje jedinečné cesty a data jsou chráněna před ostatními aplikacemi, které mají přístup pouze k izolovanému úložišti. Pevně zakódovaná informace, která označuje oblast umístění aplikace, není vyžadována.
@@ -51,7 +51,7 @@ Toto téma obsahuje následující oddíly:
 
 - [Příbuzná témata](#related_topics)
 
-- [Odkazy](#reference)
+- [Reference](#reference)
 
 <a name="data_compartments_and_stores"></a>
 
@@ -118,7 +118,7 @@ Někdy je vhodné ověřit změnu izolovaného úložiště pomocí systému sou
 |Windows 2000, Windows XP, Windows Server 2003 (upgrade z Windows NT 4.0)|Úložiště podporující cestovní profily =<br /><br /> \<kořenová_složka_systému > \Profiles\\< Uživatel\>\Application data<br /><br /> Úložiště bez možnosti cestovního profilu =<br /><br /> \<kořenová_složka_systému > \Profiles\\< Uživatel\>\Local Settings\Application \ data|
 |Windows 2000 – čistá instalace (a upgrady ze systému Windows 98 a Windows NT 3.51)|Úložiště podporující cestovní profily =<br /><br /> \<SYSTEMDRIVE > \Documents and Settings\\< uživateli\>\Application data<br /><br /> Úložiště bez možnosti cestovního profilu =<br /><br /> \<SYSTEMDRIVE > \Documents and Settings\\< Uživatel\>\Local Settings\Application data|
 |Windows XP, Windows Server 2003 – čistá instalace (a upgrady ze systému Windows 2000 a Windows 98)|Úložiště podporující cestovní profily =<br /><br /> \<SYSTEMDRIVE > \Documents and Settings\\< uživateli\>\Application data<br /><br /> Úložiště bez možnosti cestovního profilu =<br /><br /> \<SYSTEMDRIVE > \Documents and Settings\\< Uživatel\>\Local Settings\Application data|
-|[!INCLUDE[win8](../../../includes/win8-md.md)], Windows 7, Windows Server 2008, Windows Vista|Úložiště podporující cestovní profily =<br /><br /> \<SYSTEMDRIVE > \Users\\< User\>\AppData\Roaming<br /><br /> Úložiště bez možnosti cestovního profilu =<br /><br /> \<SYSTEMDRIVE > \Users\\< User\>\AppData\Local|
+|Windows 8, Windows 7, Windows Server 2008, Windows Vista|Úložiště podporující cestovní profily =<br /><br /> \<SYSTEMDRIVE > \Users\\< User\>\AppData\Roaming<br /><br /> Úložiště bez možnosti cestovního profilu =<br /><br /> \<SYSTEMDRIVE > \Users\\< User\>\AppData\Local|
 
 <a name="isolated_storage_tasks"></a>
 
@@ -175,7 +175,7 @@ Mnoho aplikací používá databáze k ukládání a izolaci dat. V tomto příp
 |[Postupy: Hledání existujících souborů a adresářů v izolovaném úložišti](../../../docs/standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md)|Znázorňuje způsob čtení struktury adresářů a souborů v izolovaném úložišti.|
 |[Postupy: Čtení a zápis do souborů v izolovaném úložišti](../../../docs/standard/io/how-to-read-and-write-to-files-in-isolated-storage.md)|Poskytuje příklad zápisu řetězce do souboru izolovaného úložiště a jeho zpětné čtení.|
 |[Postupy: Odstraňování souborů a adresářů v izolovaném úložišti](../../../docs/standard/io/how-to-delete-files-and-directories-in-isolated-storage.md)|Znázorňuje způsob odstraňování souborů a adresářů izolovaného úložiště.|
-|[Vstup/výstup souborů a datových proudů](../../../docs/standard/io/index.md)|Objasňuje způsob vytváření synchronního a asynchronního přístupu k datovým proudům souborů a dat.|
+|[Vstup/výstup souborů a streamů](../../../docs/standard/io/index.md)|Objasňuje způsob vytváření synchronního a asynchronního přístupu k datovým proudům souborů a dat.|
 
 <a name="reference"></a>
 

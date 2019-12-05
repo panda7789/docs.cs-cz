@@ -2,18 +2,18 @@
 title: Vytvoření projektu LINQ to DataSet v aplikaci Visual Studio
 ms.date: 08/15/2018
 ms.assetid: 49ba6cb0-cdd2-4571-aeaa-25bf0f40e9b3
-ms.openlocfilehash: 8b905c65575c3c567459d843b2a5d1606bc63228
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 91032766248b11e51b90aa788b1c64c140347c25
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70783774"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802023"
 ---
-# <a name="how-to-create-a-linq-to-dataset-project-in-visual-studio"></a>Postupy: Vytvoření projektu LINQ to DataSet v aplikaci Visual Studio
+# <a name="how-to-create-a-linq-to-dataset-project-in-visual-studio"></a>Postupy: vytvoření projektu LINQ to DataSet v aplikaci Visual Studio
 
-Různé typy projektů LINQ vyžadují určité odkazy na sestavení a importované obory názvů (Visual Basic) [](../../../csharp/language-reference/keywords/using-directive.md) nebo direktivyC#using (). Minimální požadavek pro LINQ je odkaz na *System. Core. dll* a `using` direktivu pro <xref:System.Linq>.
+Různé typy projektů LINQ vyžadují určité odkazy na sestavení a importované obory názvů (Visual Basic) [](../../../csharp/language-reference/keywords/using-directive.md) nebo direktivyC#using (). Minimální požadavek pro LINQ je odkaz na *System. Core. dll* a direktivu `using` pro <xref:System.Linq>.
 
-Tyto požadavky jsou zadány ve výchozím nastavení, pokud vytvoříte C# nový projekt konzolové aplikace v aplikaci Visual Studio 2017. Pokud upgradujete projekt ze starší verze sady Visual Studio, bude pravděpodobně nutné dodat tyto odkazy související s LINQ ručně.
+Tyto požadavky jsou zadány ve výchozím nastavení, pokud vytvoříte C# nový projekt konzolové aplikace v aplikaci Visual Studio 2017 nebo novější verzi. Pokud upgradujete projekt ze starší verze sady Visual Studio, bude pravděpodobně nutné dodat tyto odkazy související s LINQ ručně.
 
 LINQ to DataSet vyžaduje dva další odkazy na *System. data. dll* a *System. data. DataSetExtensions. dll*.
 
@@ -35,7 +35,7 @@ Použijte následující postup, chcete-li povolit funkci LINQ to DataSet v exis
    using System.Linq;
    ```
 
-1. Volitelně můžete přidat `using` direktivu (nebo `Imports` příkaz) pro **System. data. Common** nebo **System. data. SqlClient**v závislosti na tom, jak se připojujete k databázi.
+1. Volitelně můžete přidat direktivu `using` (nebo `Imports` příkaz) pro **System. data. Common** nebo **System. data. SqlClient**v závislosti na tom, jak se připojujete k databázi.
 
 ## <a name="see-also"></a>Viz také:
 

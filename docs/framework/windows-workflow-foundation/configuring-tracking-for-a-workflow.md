@@ -2,12 +2,12 @@
 title: Konfigurace sledování pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: 905adcc9-30a0-4918-acd6-563f86db988a
-ms.openlocfilehash: 25edef2edc23a3823a892c64809df21f333478db
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 97b25873e9f20d5d390b7a59531b3a5af32296df
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458898"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802671"
 ---
 # <a name="configuring-tracking-for-a-workflow"></a>Konfigurace sledování pracovního postupu
 
@@ -50,7 +50,7 @@ instance.Extensions.Add(trackingParticipant);
 
 ### <a name="configuring-workflow-service-tracking"></a>Konfigurace sledování služby pracovního postupu
 
-Pracovní postup může být vystavený jako služba WCF při hostování v hostiteli služby <xref:System.ServiceModel.Activities.WorkflowServiceHost>. <xref:System.ServiceModel.Activities.WorkflowServiceHost> je specializovaná implementace rozhraní ServiceHost .NET pro službu založenou na pracovních postupech. V této části se dozvíte, jak nakonfigurovat sledování pro službu [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] Workflow Service spuštěnou v <xref:System.ServiceModel.Activities.WorkflowServiceHost>. Je nakonfigurována pomocí souboru Web. config (pro službu hostovanou na webu) nebo souboru App. config (pro službu hostovanou v samostatné aplikaci, jako je například Konzolová aplikace), zadáním chování služby nebo prostřednictvím kódu přidáním konkrétního chování pro sledování do kolekce <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> pro hostitele služby.
+Pracovní postup může být vystavený jako služba WCF při hostování v hostiteli služby <xref:System.ServiceModel.Activities.WorkflowServiceHost>. <xref:System.ServiceModel.Activities.WorkflowServiceHost> je specializovaná implementace rozhraní ServiceHost .NET pro službu založenou na pracovních postupech. V této části se dozvíte, jak nakonfigurovat sledování pro službu [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] Workflow Service spuštěnou v <xref:System.ServiceModel.Activities.WorkflowServiceHost>. Je nakonfigurována pomocí souboru Web. config (pro službu hostovanou na webu) nebo souboru App. config (pro službu hostovanou v samostatné aplikaci, jako je například Konzolová aplikace), zadáním chování služby nebo prostřednictvím kódu přidáním určitého chování pro sledování do kolekce <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> pro hostitele služby.
 
 Pro službu pracovního postupu, která je hostována v <xref:System.ServiceModel.WorkflowServiceHost>, můžete přidat <xref:System.Activities.Tracking.EtwTrackingParticipant> pomocí <`behavior`> elementu v konfiguračním souboru, jak je znázorněno v následujícím příkladu.
 
@@ -134,7 +134,7 @@ if (null != workflowServiceHost)
 ```
 
 > [!NOTE]
-> Další informace o sledování profilů najdete v tématu [sledování profilů](https://go.microsoft.com/fwlink/?LinkId=201310).
+> Další informace o sledování profilů najdete v tématu [sledování profilů](tracking-profiles.md).
 
 ### <a name="configuring-tracking-using-workflowinvoker"></a>Konfigurace sledování pomocí WorkflowInvoker
 
@@ -196,7 +196,7 @@ Pokud je třeba události zapsat do konkrétního protokolu aplikace, použijte 
     </system.serviceModel>
     ```
 
-2. Zkopírujte soubor manifestu z%windir%\Microsoft.NET\Framework\\\<nejnovější verzi [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]> \Microsoft.Windows.ApplicationServer.Applications.man na dočasné umístění a přejmenujte ho na Microsoft. Windows. ApplicationServer. Applications_Provider1. Man
+2. Zkopírujte soubor manifestu z%windir%\Microsoft.NET\Framework\\\<nejnovější verzi [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]> \Microsoft.Windows.ApplicationServer.Applications.man na dočasné umístění a přejmenujte ho na Microsoft. Windows. ApplicationServer. Applications_Provider1. Man.
 
 3. Změňte identifikátor GUID v souboru manifestu na nový identifikátor GUID.
 
@@ -222,7 +222,7 @@ Pokud je třeba události zapsat do konkrétního protokolu aplikace, použijte 
 
 6. Vygenerujte DLL prostředku pomocí následujících kroků.
 
-    1. Nainstalujte Windows SDK. Windows SDK obsahuje kompilátor zpráv ([MC. exe](https://go.microsoft.com/fwlink/?LinkId=184606)) a kompilátor prostředků ([RC. exe](https://go.microsoft.com/fwlink/?LinkId=184605)).
+    1. Nainstalujte Windows SDK. Windows SDK obsahuje kompilátor zpráv ([MC. exe](/windows/win32/wes/message-compiler--mc-exe-)) a kompilátor prostředků ([RC. exe](/windows/win32/menurc/using-rc-the-rc-command-line-)).
 
     2. Na příkazovém řádku Windows SDK spusťte příkaz MC. exe na novém souboru manifestu.
 
@@ -250,7 +250,7 @@ Pokud je třeba události zapsat do konkrétního protokolu aplikace, použijte 
         <provider name="Microsoft-Windows-Application Server-Applications_Provider1" guid="{2720e974-9fe9-477a-bb60-81fe3bf91eec}" symbol="Microsoft_Windows_ApplicationServer_ApplicationEvents" resourceFileName="<dll directory>\Microsoft.Windows.ApplicationServer.Applications_Provider1.dll" messageFileName="<dll directory>\Microsoft.Windows.ApplicationServer.Applications_Provider1.dll">
         ```
 
-    7. K registraci manifestu použijte [wevtutil](https://go.microsoft.com/fwlink/?LinkId=184608) .
+    7. K registraci manifestu použijte [wevtutil](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732848(v=ws.10)) .
 
         ```console
         wevtutil im Microsoft.Windows.ApplicationServer.Applications_Provider1.man
@@ -258,5 +258,5 @@ Pokud je třeba události zapsat do konkrétního protokolu aplikace, použijte 
 
 ## <a name="see-also"></a>Viz také:
 
-- [Monitorování Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201273)
-- [Monitorování aplikací pomocí prostředků infrastruktury aplikace](https://go.microsoft.com/fwlink/?LinkId=201275)
+- [Monitorování Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677251(v=azure.10))
+- [Monitorování aplikací pomocí prostředků infrastruktury aplikace](https://docs.microsoft.com/previous-versions/appfabric/ee677276(v=azure.10))

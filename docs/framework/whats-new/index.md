@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: c651f5c02bd49acc593c585395bc52e9ee64f870
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 82a2c1780c6e0e1d94a206b9b959d8e1944fd0a9
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74714497"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802319"
 ---
 # <a name="whats-new-in-the-net-framework"></a>Co je nového v .NET Framework
 
@@ -28,9 +28,9 @@ Tento článek shrnuje klíčové nové funkce a vylepšení v následujících 
 - [.NET 2015 a .NET Framework 4,6](#v46)
 - [.NET Framework 4.5.2](#v452)
 - [.NET Framework 4.5.1](#v451)
-- [.NET Framework 4,5](#v45)
+- [.NET Framework 4.5](#v45)
 
-Tento článek neposkytuje úplné informace o každé nové funkci a může se změnit. Obecné informace o .NET Framework najdete v tématu [Začínáme](../get-started/index.md). Podporované platformy najdete v tématu [požadavky na systém](../get-started/system-requirements.md). Odkazy na stažení a pokyny k instalaci najdete v [Průvodci instalací](../install/guide-for-developers.md)nástroje.
+Tento článek neposkytuje úplné informace o každé nové vlastnosti a může se měnit. Obecné informace o .NET Framework najdete v tématu [Začínáme](../get-started/index.md). Podporované platformy najdete v tématu [požadavky na systém](../get-started/system-requirements.md). Odkazy na stažení a pokyny k instalaci najdete v [Průvodci instalací](../install/guide-for-developers.md)nástroje.
 
 > [!NOTE]
 > .NET Framework tým také uvolní funkce mimo pásmo s nástrojem NuGet, aby rozšířila podporu platforem a zavedla nové funkce, jako jsou neměnné kolekce a typy vektorů s podporou SIMD. Další informace najdete v tématech [Další knihovny tříd a rozhraní API](../additional-apis/index.md) a [.NET Framework a vzdálené verze](../get-started/the-net-framework-and-out-of-band-releases.md).
@@ -183,7 +183,7 @@ Pokud chcete povolit podporu pro škálování ve smíšeném režimu s vysokým
 
 <a name="clr48" />
 
-#### <a name="common-language-runtime"></a>Modul CLR (Common Language Runtime)
+#### <a name="common-language-runtime"></a>Common language runtime
 
 Modul runtime v .NET Framework 4,8 obsahuje následující změny a vylepšení:
 
@@ -352,7 +352,7 @@ Podpora dekomprese pomocí rozhraní Windows API je ve výchozím nastavení pov
 
 .NET Framework 4.7.2 přidá do <xref:System.Collections.Generic.SortedSet%601> a <xref:System.Collections.Generic.HashSet%601> typů mnoho nových rozhraní API. Zde jsou některé z nich:
 
-- `TryGetValue` metody, které přesahují vzor try použitý v jiných typech kolekcí těchto dvou typů. Metody jsou:
+- `TryGetValue` metody, které přesahují vzor try použitý v jiných typech kolekcí těchto dvou typů. Existují tyto metody:
 
   - [veřejné bool HashSet –\<T >. TryGetValue (T equalValue; out T actualValue)](xref:System.Collections.Generic.SortedSet%601.TryGetValue%2A)
   - [veřejné bool SortedSet\<T >. TryGetValue (T equalValue; out T actualValue)](xref:System.Collections.Generic.SortedSet%601.TryGetValue%2A)
@@ -438,7 +438,7 @@ Můžete přidat SameSite pro soubory cookie <xref:System.Web.Security.FormsAuth
 
 **Implementace vlastností HttpClientHandler**
 
-.NET Framework 4.7.1 přidal do <xref:System.Net.Http.HttpClientHandler?displayProperty=nameWithType> třídy osm vlastností. Nicméně dvě vyvolaly <xref:System.PlatformNotSupportedException>. .NET Framework 4.7.2 nyní poskytuje implementaci těchto vlastností. Vlastnosti jsou:
+.NET Framework 4.7.1 přidal do <xref:System.Net.Http.HttpClientHandler?displayProperty=nameWithType> třídy osm vlastností. Nicméně dvě vyvolaly <xref:System.PlatformNotSupportedException>. .NET Framework 4.7.2 nyní poskytuje implementaci těchto vlastností. Mezi vlastnosti patří:
 
 - <xref:System.Net.Http.HttpClientHandler.CheckCertificateRevocationList>
 - <xref:System.Net.Http.HttpClientHandler.SslProtocols>
@@ -784,7 +784,7 @@ Rozhraní API pro tisk v WPF ve třídě <xref:System.Printing.PrintQueue?displa
 
 - [Kategorie znaků](#Strings)
 
-- [Kryptografick](#Crypto462)
+- [Kryptografie](#Crypto462)
 
 - [SqlClient](#SQLClient)
 
@@ -800,7 +800,7 @@ Rozhraní API pro tisk v WPF ve třídě <xref:System.Printing.PrintQueue?displa
 
 - [Vylepšení ladění](#Debug462)
 
-Seznam nových rozhraní API přidaných do .NET Framework 4.6.2 najdete v tématu [.NET Framework změn rozhraní API 4.6.2](https://github.com/Microsoft/dotnet/blob/master/releases/net462/dotnet462-api-changes.md) na GitHubu. Seznam vylepšení funkcí a oprav chyb v .NET Framework 4.6.2 najdete v článku [.NET Framework 4.6.2 seznam změn](https://go.microsoft.com/fwlink/?LinkId=708778) na GitHubu.  Další informace najdete v tématu [oznámení .NET Framework 4.6.2](https://devblogs.microsoft.com/dotnet/announcing-net-framework-4-6-2/) na blogu .NET.
+Seznam nových rozhraní API přidaných do .NET Framework 4.6.2 najdete v tématu [.NET Framework změn rozhraní API 4.6.2](https://github.com/Microsoft/dotnet/blob/master/releases/net462/dotnet462-api-changes.md) na GitHubu. Seznam vylepšení funkcí a oprav chyb v .NET Framework 4.6.2 najdete v článku [.NET Framework 4.6.2 seznam změn](https://github.com/Microsoft/dotnet/blob/master/releases/net462/dotnet462-changes.md) na GitHubu. Další informace najdete v tématu [oznámení .NET Framework 4.6.2](https://devblogs.microsoft.com/dotnet/announcing-net-framework-4-6-2/) na blogu .NET.
 
 <a name="ASPNET462" />
 
@@ -1033,7 +1033,7 @@ Je-li povoleno sdružování připojení a dojde k vypršení časového limitu 
 
 Toto chování není vhodné při připojování k databázím Azure SQL, protože pokusy o připojení mohou selhat s přechodem k přechodným chybám, které se obvykle obnovují rychle. Pro lepší optimalizaci možností opakovaného pokusu o připojení se při selhání připojení k databázím Azure SQL odstraní chování při blokování fondu připojení.
 
-Přidání nového klíčového slova `PoolBlockingPeriod` umožňuje vybrat dobu blokování, která nejlépe vyhovuje vaší aplikaci. Mezi hodnoty patří:
+Přidání nového klíčového slova `PoolBlockingPeriod` umožňuje vybrat dobu blokování, která nejlépe vyhovuje vaší aplikaci. Mezi tyto hodnoty patří:
 
 <xref:System.Data.SqlClient.PoolBlockingPeriod.Auto>
 
@@ -1041,11 +1041,11 @@ Doba blokování fondu připojení pro aplikaci, která se připojuje k Azure SQ
 
 - .database.windows.net
 
-- . database.chinacloudapi.cn
+- .database.chinacloudapi.cn
 
-- . database.usgovcloudapi.net
+- .database.usgovcloudapi.net
 
-- . database.cloudapi.de
+- .database.cloudapi.de
 
 <xref:System.Data.SqlClient.PoolBlockingPeriod.AlwaysBlock>
 
@@ -1095,7 +1095,7 @@ AppContext.SetSwitch(disableCngCertificates, False)
 
 **Lepší podpora více pravidel úprav více letního času pomocí třídy DataContractJsonSerializer**
 
-Zákazníci mohou použít nastavení konfigurace aplikace k určení, zda třída <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> podporuje více pravidel úprav pro jedno časové pásmo. Toto je funkce výslovného souhlasu. Pokud ho chcete povolit, přidejte do souboru App. config následující nastavení:
+Zákazníci mohou použít nastavení konfigurace aplikace k určení, zda třída <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> podporuje více pravidel úprav pro jedno časové pásmo. Tato funkce je dostupná na vyžádání. Pokud ho chcete povolit, přidejte do souboru App. config následující nastavení:
 
 ```xml
 <runtime>
@@ -1196,7 +1196,7 @@ V .NET Framework 4.6.2 bylo programovací model Windows Workflow Foundation vyle
 
 **Podpora C# výrazů a IntelliSense v nově hostovaném návrháři WF**
 
-Počínaje .NET Framework 4,5 podporuje C# WF výrazy v návrháři sady Visual Studio i v pracovních postupech kódu. Opětovné hostování Návrhář postupu provádění je klíčovou funkcí WF, která umožňuje, aby se Návrhář postupu provádění v aplikaci mimo Visual Studio (například v WPF).  Programovací model Windows Workflow Foundation poskytuje možnost podporovat C# výrazy a IntelliSense v nově hostovaném Návrhář postupu provádění. Další informace najdete na [blogu programovací model Windows Workflow Foundation](https://go.microsoft.com/fwlink/?LinkID=809042&clcid=0x409).
+Počínaje .NET Framework 4,5 podporuje C# WF výrazy v návrháři sady Visual Studio i v pracovních postupech kódu. Opětovné hostování Návrhář postupu provádění je klíčovou funkcí WF, která umožňuje, aby se Návrhář postupu provádění v aplikaci mimo Visual Studio (například v WPF).  Programovací model Windows Workflow Foundation poskytuje možnost podporovat C# výrazy a IntelliSense v nově hostovaném Návrhář postupu provádění. Další informace najdete na [blogu programovací model Windows Workflow Foundation](https://blogs.msdn.microsoft.com/workflowteam/2016/07/20/building-c-expressions-support-and-intellisense-in-the-rehosted-workflow-designer/).
 
 `Availability of IntelliSense when a customer rebuilds a workflow project from Visual Studio` ve verzích .NET Framework před .NET Framework 4.6.2 je technologie IntelliSense Návrháře WF poškozená, když zákazník znovu sestaví projekt pracovního postupu ze sady Visual Studio. I když je sestavení projektu úspěšné, typy pracovních postupů nejsou v Návrháři nalezeny a upozornění z IntelliSense pro chybějící typy pracovních postupů se zobrazí v okně **Seznam chyb** . .NET Framework 4.6.2 řeší tento problém a zpřístupňuje IntelliSense.
 
@@ -1248,7 +1248,7 @@ Převedená aplikace klasické pracovní plochy získala identitu aplikace podob
 
 .NET Framework 4.6.1 zahrnuje nové funkce v následujících oblastech:
 
-- [Kryptografick](#Crypto)
+- [Kryptografie](#Crypto)
 
 - [ADO.NET](#ADO.NET461)
 
@@ -1262,11 +1262,11 @@ Převedená aplikace klasické pracovní plochy získala identitu aplikace podob
 
 Další informace o .NET Framework 4.6.1 najdete v následujících tématech:
 
-- [Seznam změn .NET Framework 4.6.1](https://go.microsoft.com/fwlink/?LinkId=622964)
+- [Seznam změn .NET Framework 4.6.1](https://github.com/Microsoft/dotnet/blob/master/releases/net461/dotnet461-changes.md)
 
 - [Kompatibilita aplikací v 4.6.1](../migration-guide/application-compatibility.md)
 
-- [Rozdíl .NET Framework rozhraní API](https://go.microsoft.com/fwlink/?LinkId=622989) (na GitHubu)
+- [Rozdíl .NET Framework rozhraní API](https://github.com/Microsoft/dotnet/blob/master/releases/net461/dotnet461-api-changes.md) (na GitHubu)
 
 <a name="Crypto" />
 
@@ -1324,7 +1324,7 @@ Stejně jako v předchozích verzích .NET Framework se detekuje jazyk pro <xref
 
 - Aktuální jazyková verze vlákna.
 
-Další informace o podpoře jazyků v subsystému WPF najdete v [blogovém příspěvku WPF o funkcích .NET Framework 4.6.1](https://go.microsoft.com/fwlink/?LinkID=691819).
+Další informace o podpoře jazyků v subsystému WPF najdete v [blogovém příspěvku WPF o funkcích .NET Framework 4.6.1](https://devblogs.microsoft.com/wpf/wpf-in-net-4-6-1/).
 
 **Další podpora pro vlastní slovníky pro jednotlivé uživatele**
 
@@ -1349,7 +1349,7 @@ V úložišti GitHub [Microsoft/WPF-Samples](https://github.com/Microsoft/WPF-Sa
 
 **Rozšíření DirectX**
 
-WPF obsahuje [balíček NuGet](https://go.microsoft.com/fwlink/?LinkID=691342) , který poskytuje nové implementace <xref:System.Windows.Interop.D3DImage>, které usnadňují spolupráci s obsahem DX10 a DX11. Kód pro tento balíček je otevřený source a je dostupný [na GitHubu](https://github.com/Microsoft/WPFDXInterop).
+WPF obsahuje [balíček NuGet](https://www.nuget.org/packages/Microsoft.Wpf.Interop.DirectX-x86/) , který poskytuje nové implementace <xref:System.Windows.Interop.D3DImage>, které usnadňují spolupráci s obsahem DX10 a DX11. Kód pro tento balíček je otevřený source a je dostupný [na GitHubu](https://github.com/Microsoft/WPFDXInterop).
 
 <a name="WWF461" />
 
@@ -1468,7 +1468,7 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
 - **Vylepšení zavaděče sestavení**
 
-  Zavaděč sestavení nyní používá paměť efektivněji uvolněním sestavení IL po načtení odpovídající image NGEN. Tato změna snižuje virtuální paměť, což je zvláště užitečné pro velké 32ové aplikace (jako je například Visual Studio), a také šetří fyzickou paměť.
+  Zavaděč sestavení teď využívá efektivněji paměť, protože po zavedení odpovídající image NGEN uvolňuje sestavení IL. Tato změna snižuje využití virtuální paměti, což je obzvlášť přínosné pro velké 32bitové aplikace (jako je Visual Studio), a šetří taky fyzickou paměť.
 
 - **Změny knihovny základních tříd**
 
@@ -1582,9 +1582,9 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
     Je výhodné použít pro přepínače konzistentní formát, protože se jedná o formální kontrakt, který je zpřístupněný knihovnou. Níže jsou uvedené dva zjevné formáty.
 
-    - *Přepínač*. *obor názvů*. *přepínač*
+    - *Přepínač*. *obor názvů*.*switchName*
 
-    - *Přepínač*. *Knihovna*. *přepínač*
+    - *Přepínač*. *Knihovna*.*switchName*
 
   - **Změny asynchronního vzoru založeného na úlohách (klepnutím)**
 
@@ -1733,7 +1733,7 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
   Tato funkce se rozšířila v .NET Framework 4,6, aby zahrnovala typy <xref:System.Windows.Forms.DomainUpDown>, <xref:System.Windows.Forms.NumericUpDown>, <xref:System.Windows.Forms.DataGridViewComboBoxColumn>, <xref:System.Windows.Forms.DataGridViewColumn> a <xref:System.Windows.Forms.ToolStripSplitButton> a obdélník určený <xref:System.Drawing.Design.PaintValueEventArgs.Bounds%2A> vlastností, který se používá při kreslení <xref:System.Drawing.Design.UITypeEditor>.
 
-  Toto je funkce výslovného souhlasu. Pokud ho chcete povolit, nastavte element `EnableWindowsFormsHighDpiAutoResizing` na `true` v konfiguračním souboru aplikace (App. config):
+  Tato funkce je dostupná na vyžádání. Pokud ho chcete povolit, nastavte element `EnableWindowsFormsHighDpiAutoResizing` na `true` v konfiguračním souboru aplikace (App. config):
 
   ```xml
   <appSettings>
@@ -1755,7 +1755,7 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
 - **Open Source .NET Framework balíčky**
 
-  Balíčky rozhraní .NET Core, jako jsou neměnné kolekce, [rozhraní SIMD API](https://go.microsoft.com/fwlink/?LinkID=518639)a síťové rozhraní API, jako jsou ty, které se nacházejí v oboru názvů <xref:System.Net.Http>, jsou teď dostupné jako open source balíčky na [GitHubu](https://github.com/). Přístup k kódu naleznete v tématu [CoreFx na GitHubu](https://github.com/dotnet/corefx). Další informace a o tom, jak přispívat do těchto balíčků, najdete v tématu [.NET Core a open source](../get-started/net-core-and-open-source.md), [Domovská stránka .NET na GitHubu](https://github.com/dotnet/home).
+  Balíčky rozhraní .NET Core, jako jsou neměnné kolekce, [rozhraní SIMD API](https://www.nuget.org/packages/Microsoft.Bcl.Simd)a síťové rozhraní API, jako jsou ty, které se nacházejí v oboru názvů <xref:System.Net.Http>, jsou teď dostupné jako open source balíčky na [GitHubu](https://github.com/). Přístup k kódu naleznete v tématu [CoreFx na GitHubu](https://github.com/dotnet/corefx). Další informace a o tom, jak přispívat do těchto balíčků, najdete v tématu [.NET Core a open source](../get-started/net-core-and-open-source.md), [Domovská stránka .NET na GitHubu](https://github.com/dotnet/home).
 
 <a name="v452" />
 
@@ -1776,7 +1776,7 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
   - <xref:System.Windows.Forms.DataGridView>
   - <xref:System.Windows.Forms.DataGridViewComboBoxColumn>
 
-  Toto je funkce výslovného souhlasu. Pokud ho chcete povolit, nastavte element `EnableWindowsFormsHighDpiAutoResizing` na `true` v konfiguračním souboru aplikace (App. config):
+  Tato funkce je dostupná na vyžádání. Pokud ho chcete povolit, nastavte element `EnableWindowsFormsHighDpiAutoResizing` na `true` v konfiguračním souboru aplikace (App. config):
 
   ```xml
   <appSettings>
@@ -1860,13 +1860,13 @@ V případě Ngen soubory PDB může NGen vytvořit PDB, který obsahuje mapová
 
 Mezi nové funkce a vylepšení základních tříd v .NET Framework 4.5.1 patří:
 
-- Automatické přesměrování vazby pro sestavení. Počínaje Visual Studio 2013 se při kompilování aplikace, která cílí na .NET Framework 4.5.1, dají přesměrování vazby přidat do konfiguračního souboru aplikace, pokud vaše aplikace nebo její součásti odkazují na více verzí stejného sestavení. Tuto funkci můžete také povolit pro projekty, které cílí na starší verze .NET Framework. Další informace najdete v tématu [Postup: povolení a zákaz automatického přesměrování vazby](../configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md).
+- Automatické přesměrování vazby pro sestavení. Počínaje Visual Studio 2013 se při kompilování aplikace, která cílí na .NET Framework 4.5.1, dají přesměrování vazby přidat do konfiguračního souboru aplikace, pokud vaše aplikace nebo její součásti odkazují na více verzí stejného sestavení. Můžete také povolit tuto funkci pro projekty, které jsou cíleny na starší verze rozhraní.NET Framework. Další informace najdete v tématu [Postup: povolení a zákaz automatického přesměrování vazby](../configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md).
 
-- Možnost shromažďovat diagnostické informace, které vývojářům pomůžou zlepšit výkon serverových a cloudových aplikací. Další informace naleznete v tématu metody <xref:System.Diagnostics.Tracing.EventSource.WriteEventWithRelatedActivityId%2A> a <xref:System.Diagnostics.Tracing.EventSource.WriteEventWithRelatedActivityIdCore%2A> ve třídě <xref:System.Diagnostics.Tracing.EventSource>.
+- Schopnost shromažďovat diagnostické informace umožňující vývojářům zvyšovat výkon serverových a cloudových aplikací. Další informace viz metody <xref:System.Diagnostics.Tracing.EventSource.WriteEventWithRelatedActivityId%2A> a <xref:System.Diagnostics.Tracing.EventSource.WriteEventWithRelatedActivityIdCore%2A> ve třídě <xref:System.Diagnostics.Tracing.EventSource>.
 
-- Schopnost explicitně komprimovat haldu velkých objektů (LOH) během uvolňování paměti. Další informace najdete v tématu vlastnost <xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType>.
+- Schopnost explicitně komprimovat haldy pro velké objekty (LOH) během uvolnění paměti. Další informace najdete v tématu vlastnost <xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType>.
 
-- Další vylepšení výkonu, jako je například pozastavení aplikace ASP.NET, vícejazykové vylepšení JIT a rychlejší spuštění aplikace po aktualizaci .NET Framework. Podrobnosti najdete v příspěvku na blogu [.NET Framework 4.5.1](https://devblogs.microsoft.com/dotnet/announcing-the-net-framework-4-5-1-preview/) a v blogovém příspěvku o [pozastavení aplikace ASP.NET](https://devblogs.microsoft.com/dotnet/asp-net-app-suspend-responsive-shared-net-web-hosting/) .
+- Další výkonnostní zlepšení, jako je pozastavení aplikace technologie ASP.NET, vylepšení vícejádrové JIT a rychlejší spuštění aplikace, po aktualizaci rozhraní.NET Framework. Podrobnosti najdete v příspěvku na blogu [.NET Framework 4.5.1](https://devblogs.microsoft.com/dotnet/announcing-the-net-framework-4-5-1-preview/) a v blogovém příspěvku o [pozastavení aplikace ASP.NET](https://devblogs.microsoft.com/dotnet/asp-net-app-suspend-responsive-shared-net-web-hosting/) .
 
 Mezi vylepšení model Windows Forms patří:
 
@@ -1886,13 +1886,13 @@ Mezi vylepšení model Windows Forms patří:
 
 Vylepšení při ladění .NET Frameworkch aplikací v Visual Studio 2013 zahrnují:
 
-- Návratové hodnoty v ladicím programu sady Visual Studio. Při ladění spravované aplikace v Visual Studio 2013 zobrazí okno Automatické hodnoty návratové typy a hodnoty pro metody. Tyto informace jsou k dispozici pro stolní počítače, Windows Store a aplikace Windows Phone. Další informace naleznete v tématu [Kontrola vrácených hodnot volání metody](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/dn323257(v=vs.120)).
+- Návratové hodnoty v ladicím programu Visual Studio. Při ladění spravované aplikace v Visual Studio 2013 zobrazí okno Automatické hodnoty návratové typy a hodnoty pro metody. Tyto informace jsou k dispozici pro stolní počítače, Windows Store a aplikace Windows Phone. Další informace naleznete v tématu [Kontrola vrácených hodnot volání metody](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/dn323257(v=vs.120)).
 
-- Upravit a pokračovat pro 64 aplikace Visual Studio 2013 podporuje funkci upravit a pokračovat pro 64 spravované aplikace pro stolní počítače, Windows Store a Windows Phone. Stávající omezení zůstávají v platnosti pro 32 i pro 64-bitové aplikace (viz poslední část článku [podporované změny kóduC#()](/visualstudio/debugger/supported-code-changes-csharp) ).
+- Možnost Upravit a pokračovat pro 64bitové aplikace. Visual Studio 2013 podporuje funkci upravit a pokračovat pro 64 spravované aplikace pro stolní počítače, Windows Store a Windows Phone. Stávající omezení zůstávají v platnosti pro 32 i pro 64-bitové aplikace (viz poslední část článku [podporované změny kóduC#()](/visualstudio/debugger/supported-code-changes-csharp) ).
 
-- Asynchronní ladění. Aby bylo snazší ladit asynchronní aplikace v Visual Studio 2013, zásobník volání skrývá kód infrastruktury poskytnutý kompilátory pro podporu asynchronního programování a také řetězení v logických nadřazených snímcích, aby bylo možné sledovat provádění logických programů. zřejmě. Okno úkoly nahrazuje okno paralelní úkoly a zobrazuje úkoly, které se vztahují k určité zarážce, a také zobrazí všechny další úkoly, které jsou v aplikaci aktuálně aktivní nebo naplánované. O této funkci si můžete přečíst v části "asynchronní ladění" v [oznámení .NET Framework 4.5.1](https://devblogs.microsoft.com/dotnet/announcing-the-net-framework-4-5-1-preview/).
+- Asynchronní ladění. Aby bylo snazší ladit asynchronní aplikace v Visual Studio 2013, zásobník volání skrývá kód infrastruktury poskytnutý kompilátory pro podporu asynchronního programování a také řetězení v logických nadřazených snímcích, aby bylo možné sledovat provádění logických programů. zřejmě. Okno Úlohy nahrazuje okno Paralelní úlohy a zobrazuje úlohy, které se týkají konkrétní zarážky, a také zobrazuje všechny úkoly, které jsou aktuálně aktivní nebo plánované v aplikaci. O této funkci si můžete přečíst v části "asynchronní ladění" v [oznámení .NET Framework 4.5.1](https://devblogs.microsoft.com/dotnet/announcing-the-net-framework-4-5-1-preview/).
 
-- Lepší podpora výjimek pro součásti prostředí Windows Runtime. V [!INCLUDE[win81](../../../includes/win81-md.md)]výjimky, které vznikají v aplikacích pro Windows Store, uchovávají informace o chybě, která způsobila výjimku, i přes hranice jazyka. O této funkci si můžete přečíst v části vývoj aplikací pro Windows Store v [oznámení .NET Framework 4.5.1](https://devblogs.microsoft.com/dotnet/announcing-the-net-framework-4-5-1-preview/).
+- Lepší podpora výjimek v součástech Runtime systému Windows. V Windows 8.1 výjimky, které vznikají v aplikacích pro Windows Store, uchovávají informace o chybě, která způsobila výjimku, i přes hranice jazyka. O této funkci si můžete přečíst v části vývoj aplikací pro Windows Store v [oznámení .NET Framework 4.5.1](https://devblogs.microsoft.com/dotnet/announcing-the-net-framework-4-5-1-preview/).
 
 Počínaje Visual Studio 2013 můžete použít [Nástroj pro optimalizaci spravovaného profilu (nástroj Mpgo. exe)](../tools/mpgo-exe-managed-profile-guided-optimization-tool.md) k optimalizaci aplikací pro Windows 8. x Store a aplikací klasické pracovní plochy.
 
@@ -1904,35 +1904,35 @@ Nové funkce v ASP.NET 4.5.1 najdete v tématu [ASP.NET and Web Tools for Visual
 
 ### <a name="base-classes"></a>Základní třídy
 
-- Schopnost snížit restart systému tím, že během nasazení detekuje a zavírá aplikace .NET Framework 4. Viz [snížení počtu restartování systému během instalace .NET Framework 4,5](../deployment/reducing-system-restarts.md).
+- Schopnost snížit počet restartů systému pomocí detekce a zavření aplikací rozhraní .NET Framework 4 během nasazení. Viz [snížení počtu restartování systému během instalace .NET Framework 4,5](../deployment/reducing-system-restarts.md).
 
-- Podpora pro pole, která jsou větší než 2 gigabajty (GB) na 64-bitových platformách. Tato funkce se dá povolit v konfiguračním souboru aplikace. Viz [\<gcAllowVeryLargeObjects > prvek](../configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md), který také uvádí další omezení velikosti objektu a velikosti pole.
+- Podpora pro pole, které jsou větší než 2 gigabajty (GB) na 64bitových platformách. Tuto funkci lze povolit v konfiguračním souboru aplikace. Viz [\<gcAllowVeryLargeObjects > prvek](../configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md), který také uvádí další omezení velikosti objektu a velikosti pole.
 
-- Lepší výkon při uvolňování paměti na pozadí pro servery. Pokud používáte systém uvolňování paměti serveru v .NET Framework 4,5, automatické uvolňování paměti na pozadí je povoleno. V tématu [základní informace o uvolňování paměti](../../standard/garbage-collection/fundamentals.md) najdete v části uvolňování paměti serveru na pozadí.
+- Lepší výkon pomocí sběru plýtvání na pozadí pro servery. Pokud používáte systém uvolňování paměti serveru v .NET Framework 4,5, automatické uvolňování paměti na pozadí je povoleno. V tématu [základní informace o uvolňování paměti](../../standard/garbage-collection/fundamentals.md) najdete v části uvolňování paměti serveru na pozadí.
 
-- Kompilace JIT (just-in-time), která je volitelně dostupná pro procesory s více jádry ke zlepšení výkonu aplikace. Podívejte se na téma <xref:System.Runtime.ProfileOptimization>.
+- Kompilace pozadí za běhu (JIT), která je volitelně k dispozici také u vícejádrových procesorů pro zvýšení výkonu aplikace. Podívejte se na téma <xref:System.Runtime.ProfileOptimization>.
 
 - Možnost omezit dobu, po kterou se modul regulárních výrazů pokusí přeložit regulární výraz předtím, než vyprší jeho časový limit. Podívejte se na vlastnost <xref:System.Text.RegularExpressions.Regex.MatchTimeout%2A?displayProperty=nameWithType>.
 
-- Možnost definovat výchozí jazykovou verzi pro doménu aplikace. Podívejte se na třídu <xref:System.Globalization.CultureInfo>.
+- Možnost definovat výchozí kulturu pro doménu aplikace. Podívejte se na třídu <xref:System.Globalization.CultureInfo>.
 
 - Podpora konzoly pro kódování Unicode (UTF-16). Podívejte se na třídu <xref:System.Console>.
 
-- Podpora správy verzí pro kulturní řazení řetězců a porovnávání dat. Podívejte se na třídu <xref:System.Globalization.SortVersion>.
+- Podpora verzního objednávání kultury řetězce a porovnávání dat. Podívejte se na třídu <xref:System.Globalization.SortVersion>.
 
-- Lepší výkon při načítání prostředků. Viz [balení a nasazení prostředků](../resources/packaging-and-deploying-resources-in-desktop-apps.md).
+- Lepší výkon při načítání zdrojů. Viz [balení a nasazení prostředků](../resources/packaging-and-deploying-resources-in-desktop-apps.md).
 
-- Vylepšení komprese zip ke zmenšení velikosti komprimovaného souboru. Viz obor názvů <xref:System.IO.Compression?displayProperty=nameWithType>.
+- Vylepšení komprese ZIP ke zmenšení velikosti komprimovaného souboru. Viz obor názvů <xref:System.IO.Compression?displayProperty=nameWithType>.
 
-- Možnost přizpůsobit kontext reflexe pro přepsání výchozího chování reflexe prostřednictvím třídy <xref:System.Reflection.Context.CustomReflectionContext>.
+- Možnost přizpůsobit kontext odrazu, aby potlačil výchozí chování odrazu prostřednictvím třídy <xref:System.Reflection.Context.CustomReflectionContext>.
 
-- Podpora verze 2008 mezinárodních názvů domén v aplikacích (IDNA) standard při použití <xref:System.Globalization.IdnMapping?displayProperty=nameWithType> třídy v [!INCLUDE[win8](../../../includes/win8-md.md)].
+- Podpora verze 2008 mezinárodních názvů domén v aplikacích (IDNA) standard při použití třídy <xref:System.Globalization.IdnMapping?displayProperty=nameWithType> v systému Windows 8.
 
-- Delegování porovnání řetězců k operačnímu systému, které implementuje kódování Unicode 6,0, pokud je .NET Framework použito v [!INCLUDE[win8](../../../includes/win8-md.md)]. Při spuštění na jiných platformách .NET Framework zahrnuje vlastní data porovnání řetězců, která implementují Unicode 5. x. Viz třída <xref:System.String> a oddíl poznámky třídy <xref:System.Globalization.SortVersion>.
+- Delegování porovnání řetězců k operačnímu systému, které implementuje kódování Unicode 6,0, pokud je .NET Framework použito v systému Windows 8. Při spuštění na jiných platformách obsahuje rozhraní.NET Framework vlastní řetězec porovnání dat, který implementuje Unicode 5.x. Viz třída <xref:System.String> a část s poznámkami <xref:System.Globalization.SortVersion>.
 
-- Možnost vypočítat kódy hash pro řetězce na základě domény aplikace. Viz [\<UseRandomizedStringHashAlgorithm > elementu](../configure-apps/file-schema/runtime/userandomizedstringhashalgorithm-element.md).
+- Možnost spočítat hodnoty hash pro řetězce na základě domény aplikace. Viz [\<UseRandomizedStringHashAlgorithm > elementu](../configure-apps/file-schema/runtime/userandomizedstringhashalgorithm-element.md).
 
-- Podpora reflexe typu je rozdělená mezi <xref:System.Type> a <xref:System.Reflection.TypeInfo> třídy. Podívejte [se na reflexi v .NET Framework pro aplikace pro Windows Store](../reflection-and-codedom/reflection-for-windows-store-apps.md).
+- Podpora reflexe typů byla rozdělena mezi třídy <xref:System.Type> a <xref:System.Reflection.TypeInfo>. Podívejte [se na reflexi v .NET Framework pro aplikace pro Windows Store](../reflection-and-codedom/reflection-for-windows-store-apps.md).
 
 ### <a name="managed-extensibility-framework-mef"></a>Managed Extensibility Framework (MEF)
 
@@ -1940,17 +1940,17 @@ V .NET Framework 4,5 obsahuje Managed Extensibility Framework (MEF) tyto nové f
 
 - Podpora pro obecné typy.
 
-- Programovací model založený na konvencích, který umožňuje vytvářet části na základě konvencí pojmenování, nikoli atributů.
+- Programovací model podle úmluvy, který umožňuje vytvořit části na základě konvencí pojmenování, nikoli atributů.
 
-- Více oborů.
+- Více rozsahů.
 
-- Podmnožina MEF, kterou můžete použít při vytváření aplikací pro Windows 8. x Store. Tato podmnožina je k dispozici jako [balíček ke stažení](https://go.microsoft.com/fwlink/?LinkId=256238) z galerie NuGet. Chcete-li nainstalovat balíček, otevřete projekt v aplikaci Visual Studio, v nabídce **projekt** vyberte možnost **Spravovat balíčky NuGet** a vyhledejte balíček `Microsoft.Composition` v režimu online.
+- Podmnožina MEF, kterou můžete použít při vytváření aplikací pro Windows 8. x Store. Tato podmnožina je k dispozici jako [balíček ke stažení](https://www.nuget.org/packages/Microsoft.Composition) z galerie NuGet. Chcete-li nainstalovat balíček, otevřete projekt v aplikaci Visual Studio, v nabídce **projekt** vyberte možnost **Spravovat balíčky NuGet** a vyhledejte balíček `Microsoft.Composition` v režimu online.
 
 Další informace naleznete v tématu [Managed Extensibility Framework (MEF)](../mef/index.md).
 
 ### <a name="asynchronous-file-operations"></a>Asynchronní operace se soubory
 
-V .NET Framework 4,5 byly do jazyků C# a Visual Basic přidány nové asynchronní funkce. Tyto funkce přidávají model založený na úlohách pro provádění asynchronních operací. Chcete-li použít tento nový model, použijte asynchronní metody v I/O třídách. Viz [asynchronní vstupně-výstupní operace se soubory](../../standard/io/asynchronous-file-i-o.md).
+V .NET Framework 4,5 byly do jazyků C# a Visual Basic přidány nové asynchronní funkce. Tyto funkce přidají modelu provádění asynchronních operací podle úloh. Pokud chcete použít tento nový model, použijte asynchronní metody tříd I/O. Viz [asynchronní vstupně-výstupní operace se soubory](../../standard/io/asynchronous-file-i-o.md).
 
 <a name="tools" />
 
@@ -1958,19 +1958,19 @@ V .NET Framework 4,5 byly do jazyků C# a Visual Basic přidány nové asynchron
 
 V .NET Framework 4,5 umožňuje generátor souboru prostředků (Resgen. exe) vytvořit soubor. resw pro použití v aplikacích Windows 8. x Store ze souboru. Resources vloženého do sestavení .NET Framework. Další informace naleznete v tématu [Resgen. exe (generátor zdrojových souborů)](../tools/resgen-exe-resource-file-generator.md).
 
-Optimalizace na základě spravovaného profilu (nástroj Mpgo. exe) umožňuje zlepšit dobu spuštění aplikace, využití paměti (velikost pracovní sady) a propustnost optimalizací sestavení nativních imagí. Nástroj příkazového řádku generuje data profilu pro sestavení aplikace nativní bitové kopie. Viz [nástroj Mpgo. exe (Nástroj pro optimalizaci spravovaného profilu)](../tools/mpgo-exe-managed-profile-guided-optimization-tool.md). Počínaje Visual Studio 2013 můžete použít nástroj nástroj Mpgo. exe k optimalizaci aplikací Windows 8. x Store a aplikací klasické pracovní plochy.
+Optimalizace řízená spravovanými profily (Mpgo.exe) umožňuje zlepšit dobu spuštění aplikace, využití paměti (velikost pracovní sady) a propustnost optimalizací sestavení nativních bitových kopií. Nástroj příkazového řádku generuje data profilu pro sestavení nativních bitových kopií aplikace. Viz [nástroj Mpgo. exe (Nástroj pro optimalizaci spravovaného profilu)](../tools/mpgo-exe-managed-profile-guided-optimization-tool.md). Počínaje Visual Studio 2013 můžete použít nástroj nástroj Mpgo. exe k optimalizaci aplikací Windows 8. x Store a aplikací klasické pracovní plochy.
 
 <a name="parallel" />
 
 ### <a name="parallel-computing"></a>Paralelní výpočetní prostředí
 
-.NET Framework 4,5 obsahuje několik nových funkcí a vylepšení paralelního zpracování. Mezi ně patří Vylepšený výkon, zvýšené řízení, vylepšená podpora pro asynchronní programování, nová knihovna toku dat a vylepšená podpora pro paralelní ladění a analýzu výkonu. Informace o [tom, co je nového pro paralelismus v .net 4,5](https://go.microsoft.com/fwlink/?LinkId=235061) , najdete v blogu věnovaném paralelnímu programování pomocí .NET.
+.NET Framework 4,5 obsahuje několik nových funkcí a vylepšení paralelního zpracování. Zahrnují vylepšený výkon, lepší kontrolu, vylepšenou podporu pro asynchronní programování, nové knihovny datového toku a vylepšenou podporu pro paralelní analýzy ladění a výkonu. Informace o [tom, co je nového pro paralelismus v .net 4,5](https://devblogs.microsoft.com/pfxteam/whats-new-for-parallelism-in-net-4-5/) , najdete v blogu věnovaném paralelnímu programování pomocí .NET.
 
 <a name="web" />
 
 ### <a name="web"></a>Web
 
-ASP.NET 4,5 a 4.5.1 přidávají vazbu modelu pro webové formuláře, podporu WebSocket, asynchronní obslužné rutiny, vylepšení výkonu a mnoho dalších funkcí. Další informace naleznete v následujících zdrojích:
+Technologie ASP.NET 4.5 a 4.5.1 přidá vazby modelu pro webové formuláře, podporu WebSocket, asynchronní obslužné rutiny, vylepšení výkonu a mnoho dalších funkcí. Další informace naleznete v následujících zdrojích:
 
 - [ASP.NET 4,5 a Visual Studio 2012](https://docs.microsoft.com/previous-versions/aspnet/hh420390(v=vs.110))
 
@@ -1978,21 +1978,21 @@ ASP.NET 4,5 a 4.5.1 přidávají vazbu modelu pro webové formuláře, podporu W
 
 ### <a name="networking-a-namenetworking-"></a><a name="networking" /> sítě
 
-.NET Framework 4,5 poskytuje nové programovací rozhraní pro aplikace HTTP. Další informace najdete v tématu nové obory názvů <xref:System.Net.Http?displayProperty=nameWithType> a <xref:System.Net.Http.Headers?displayProperty=nameWithType>.
+.NET Framework 4,5 poskytuje nové programovací rozhraní pro aplikace HTTP. Další informace naleznete v novém oboru názvů <xref:System.Net.Http?displayProperty=nameWithType> a <xref:System.Net.Http.Headers?displayProperty=nameWithType>.
 
-Podpora je také k dispozici pro nové programovací rozhraní pro příjem a interakci s připojením protokolu WebSocket pomocí existující <xref:System.Net.HttpListener> a souvisejících tříd. Další informace naleznete v tématu nový obor názvů <xref:System.Net.WebSockets> a třída <xref:System.Net.HttpListener>.
+Podpora je součástí nového programovacího rozhraní pro přijímání a interakci s připojením WebSocket pomocí stávající <xref:System.Net.HttpListener> a souvisejících tříd. Více informací naleznete v nové verzi <xref:System.Net.WebSockets> prostor pro název třídy <xref:System.Net.HttpListener>.
 
 Kromě toho .NET Framework 4,5 zahrnuje následující vylepšení sítě:
 
-- Podpora identifikátoru URI kompatibilního se specifikací RFC. Další informace naleznete v tématu <xref:System.Uri> a související třídy.
+- Podpora standardu URI splňující podmínky RFC. Další informace naleznete v části <xref:System.Uri> a v souvisejících třídách.
 
-- Podpora pro analýzu mezinárodních názvů domén (IDN). Další informace naleznete v tématu <xref:System.Uri> a související třídy.
+- Podpora pro analýzu mezinárodního názvu domény (IDN). Další informace naleznete v části <xref:System.Uri> a v souvisejících třídách.
 
-- Podpora mezinárodní adresy e-mailové adresy (EAI). Další informace najdete v tématu obor názvů <xref:System.Net.Mail>.
+- Podpora zmezinárodnění e-mailových adres (EAI). Další informace najdete v tématu obor názvů <xref:System.Net.Mail>.
 
 - Vylepšená podpora protokolu IPv6. Další informace najdete v tématu obor názvů <xref:System.Net.NetworkInformation>.
 
-- Podpora soketu s duálním režimem. Další informace naleznete v tématu třídy <xref:System.Net.Sockets.Socket> a <xref:System.Net.Sockets.TcpListener>.
+- Podpora soketu v duálním režimu. Další informace naleznete v tématu třídy <xref:System.Net.Sockets.Socket> a <xref:System.Net.Sockets.TcpListener>.
 
 <a name="client" />
 
@@ -2000,23 +2000,23 @@ Kromě toho .NET Framework 4,5 zahrnuje následující vylepšení sítě:
 
 V .NET Framework 4,5 Windows Presentation Foundation (WPF) obsahuje změny a vylepšení v následujících oblastech:
 
-- Nový ovládací prvek <xref:System.Windows.Controls.Ribbon.Ribbon>, který umožňuje implementovat uživatelské rozhraní pásu karet, které je hostitelem panelu nástrojů pro rychlý přístup, nabídky aplikace a karet.
+- Nový ovládací prvek <xref:System.Windows.Controls.Ribbon.Ribbon> umožňující provádět implementaci pás uživatelského rozhraní, který je hostitelem panelu nástrojů Rychlý přístup, nabídky aplikace a karet.
 
-- Nové rozhraní <xref:System.ComponentModel.INotifyDataErrorInfo>, které podporuje synchronní a asynchronní ověřování dat.
+- Nové rozhraní <xref:System.ComponentModel.INotifyDataErrorInfo>, které podporuje synchronní a asynchronní ověření dat.
 
-- Nové funkce pro třídy <xref:System.Windows.Controls.VirtualizingPanel> a <xref:System.Windows.Threading.Dispatcher>
+- Nové funkce pro třídy <xref:System.Windows.Controls.VirtualizingPanel> a <xref:System.Windows.Threading.Dispatcher>.
 
-- Vylepšený výkon při zobrazování rozsáhlých sad seskupených dat a přístup k kolekcím na vláknech, která nejsou v uživatelském rozhraní.
+- Vylepšený výkon při zobrazování velkých sad seskupených dat, a to přístupem ke kolekcím na vláknech mimo uživatelské rozhraní.
 
-- Vázání dat na statické vlastnosti, datovou vazbu na vlastní typy, které implementují rozhraní <xref:System.Reflection.ICustomTypeProvider> a načítání informací o vazbách dat z výrazu vazby.
+- Vázání dat na statické vlastnosti, vázání dat na vlastní typy, které implementují rozhraní <xref:System.Reflection.ICustomTypeProvider>, a načítání informací o vázání dat z vazbového výrazu.
 
-- Změna umístění dat při změně hodnot (živé tvarování).
+- Přemístění dat jako změny hodnot (živé tvarování).
 
-- Možnost kontrolovat, zda je kontext dat pro kontejner položek odpojen.
+- Možnost zkontrolovat, zda je kontext dat pro kontejner položek odpojen.
 
 - Možnost nastavit dobu, která má uplynout mezi změnami vlastností a aktualizacemi zdrojů dat.
 
-- Vylepšená podpora pro implementaci slabých vzorů událostí. Události nyní také mohou přijímat rozšíření značek.
+- Vylepšená podpora pro implementaci vzorců slabých událostí. Události mohou nyní rovněž přijímat rozšíření značek.
 
 <a name="windows_communication_foundation" />
 
@@ -2026,39 +2026,39 @@ V .NET Framework 4,5 byly přidány následující funkce, které zjednodušují
 
 - Zjednodušení generovaných konfiguračních souborů.
 
-- Podpora vývoje pro první kontrakt.
+- Podpora rozvoje prvního kontraktu.
 
-- Možnost snazší konfigurace režimu kompatibility ASP.NET.
+- Možnost snadno konfigurovat režim kompatibility ASP.NET.
 
-- Změny ve výchozích hodnotách vlastností přenosu snižují pravděpodobnost, že je budete muset nastavit.
+- Změny ve výchozích hodnotách vlastností přenosu snižují pravděpodobnost, že je bude nutné nastavit.
 
-- Aktualizuje třídu <xref:System.Xml.XmlDictionaryReaderQuotas>, aby se snížila pravděpodobnost, že bude nutné ručně nakonfigurovat kvóty pro čtečky slovníku XML.
+- Aktualizuje třídu <xref:System.Xml.XmlDictionaryReaderQuotas>, aby byla snížena pravděpodobnost nutnosti ručně konfigurovat kvóty pro čtenáře slovníku XML.
 
-- Ověření konfiguračních souborů WCF nástrojem Visual Studio v rámci procesu sestavení, aby bylo možné zjistit chyby konfigurace před spuštěním aplikace.
+- Ověření konfiguračních souborů WCF aplikací Visual Studio je částí procesu sestavení, takže můžete zjistit chyby konfigurace před spuštěním aplikace.
 
 - Nová podpora asynchronního streamování.
 
-- Nové mapování protokolu HTTPS, které usnadňuje vystavení koncového bodu přes HTTPS pomocí Internetová informační služba (IIS).
+- Nový protokol HTTPS mapování pro usnadnění vystavení koncového bodu přes HTTPS pomocí Internet Information Services (IIS).
 
 - Možnost generovat metadata v jednom dokumentu WSDL připojením `?singleWSDL` k adrese URL služby.
 
-- Podpora WebSockets podporuje true obousměrnou komunikaci přes porty 80 a 443 s charakteristikami výkonu podobným přenosu protokolu TCP.
+- Webové sockety umožňují skutečnou obousměrnou komunikaci na portech 80 a 443 s charakteristikami výkonu, které jsou podobné jako u přenosu TCP.
 
-- Podpora konfigurace služeb v kódu.
+- Podpora konfigurace služeb v kódu.
 
-- Popisy editoru XML.
+- Popisy tlačítek editoru XML.
 
-- Podpora ukládání <xref:System.ServiceModel.ChannelFactory> do mezipaměti.
+- <xref:System.ServiceModel.ChannelFactory> podpora ukládání do mezipaměti.
 
-- Podpora komprese binárního kodéru
+- Podpora komprese binárního kodéru.
 
-- Podpora pro přenos UDP, který vývojářům umožňuje psát služby, které používají zprávy "oheň a zapomenout". Klient pošle zprávu službě a neočekává odpověď ze služby.
+- Podpora pro přenos UDP, který umožňuje vývojářům zapisovat služby využívající zprávy „vypal a zapomeň“. Klient odešle zprávu službě a neočekává od služby žádnou odpověď.
 
-- Možnost podporovat více režimů ověřování na jednom koncovém bodu WCF při použití přenosu protokolu HTTP a zabezpečení přenosu.
+- Možnost podporovat více režimů ověřování v jednom koncovém bodu WCF při použití přenosového protokolu HTTP a zabezpečení přenosu.
 
 - Podpora služeb WCF, které používají mezinárodní názvy domén (IDN).
 
-Další informace najdete v tématu [co je nového v Windows Communication Foundation](https://go.microsoft.com/fwlink/?LinkId=228173).
+Další informace najdete v tématu [co je nového v Windows Communication Foundation](../wcf/whats-new.md).
 
 <a name="windows_workflow_foundation" />
 
@@ -2066,68 +2066,69 @@ Další informace najdete v tématu [co je nového v Windows Communication Found
 
 V .NET Framework 4,5 byly do programovací model Windows Workflow Foundation (WF) přidány některé nové funkce, včetně těchto:
 
-- Pracovní postupy stavového stroje, které byly poprvé představeny jako součást .NET Framework 4.0.1 ([.NET Framework 4 Platform Update 1](https://go.microsoft.com/fwlink/?LinkID=215092)). Tato aktualizace obsahuje několik nových tříd a aktivit, které vývojářům umožnili vytvářet pracovní postupy stavového počítače. Tyto třídy a aktivity byly aktualizovány, aby .NET Framework 4,5 zahrnovaly:
+- Pracovní postupy stavového stroje, které byly poprvé představeny jako součást .NET Framework 4.0.1 ([.NET Framework 4 Platform Update 1](https://blogs.msdn.microsoft.com/endpoint/2011/04/18/microsoft-net-framework-4-platform-update-1/)). Tato aktualizace je zahrnuta v několika nových třídách a činnostech, které vývojářům umožňují vytvářet pracovní postupy stavu počítače. Tyto třídy a aktivity byly aktualizovány, aby .NET Framework 4,5 zahrnovaly:
 
-  - Možnost nastavovat zarážky na stavech.
+  - Možnost nastavit zarážky na stavy.
 
-  - Možnost Kopírovat a vkládat přechody v Návrháři postupu.
+  - Možnost kopírování a vkládání přechodů v návrháři pracovního postupu.
 
-  - Podpora návrháře pro vytvoření přechodu na sdílené triggery
+  - Podpora návrhářů pro sdílené vytváření aktivačních přechodů.
 
-  - Aktivity pro vytváření pracovních postupů stavového počítače, mezi které patří: <xref:System.Activities.Statements.StateMachine>, <xref:System.Activities.Statements.State>a <xref:System.Activities.Statements.Transition>.
+  - Aktivity vytváření pracovních postupů pro stavové stroje, včetně: <xref:System.Activities.Statements.StateMachine>, <xref:System.Activities.Statements.State> a <xref:System.Activities.Statements.Transition>.
 
-- Rozšířené funkce Návrhář postupu provádění, například následující:
+- Rozšířené funkce Návrháře postupu provádění, jako jsou následující:
 
   - Rozšířené možnosti hledání pracovních postupů v aplikaci Visual Studio, včetně **rychlého hledání** a **hledání v souborech**.
 
-  - Schopnost automaticky vytvořit aktivitu sekvence, když se do aktivity kontejneru přidá druhá podřízená aktivita, a zahrnout obě aktivity do aktivity sekvence.
+  - Možnost automaticky vytvořit sekvenční aktivitu, když je do kontejnerové činnosti přidána druhá podřízená aktivita, a do sekvenční aktivity zahrnout obě aktivity.
 
-  - Podpora posouvání, která umožňuje změnit viditelnou část pracovního postupu bez použití posuvníků.
+  - Podpora posouvání umožňuje změnit viditelnou část pracovního postupu bez použití posuvníků.
 
   - Nové zobrazení **Osnova dokumentu** , které zobrazuje součásti pracovního postupu v zobrazení osnovy ve stylu stromu a umožňuje v zobrazení **Osnova dokumentu** vybrat komponentu.
 
-  - Možnost přidávat poznámky k aktivitám.
+  - Možnost přidání poznámek k činnostem.
 
-  - Možnost definovat a spotřebovat delegáty aktivit pomocí návrháře pracovních postupů.
+  - Možnost definovat a využívat delegáty aktivity pomocí nástroje Workflow Designer.
 
-  - Automatické připojení a automatické vložení pro aktivity a přechody v pracovních postupech stavového stroje a vývojového diagramu.
+  - Automatické připojení a automatické vložení činností a přechodů v pracovních postupech stavového počítače a vývojového diagramu.
 
-- Úložiště informací o stavu zobrazení pracovního postupu v jednom prvku v souboru XAML, takže můžete snadno vyhledat a upravit informace o stavu zobrazení.
+- Úložiště zobrazí informace o stavu pracovního postupu v jednom elementu souboru XAML, takže snadno můžete najít a upravit informace o zobrazení stavu.
 
-- Aktivita kontejneru oboru NoPersistScope, která zabraňuje zachování podřízených aktivit.
+- Aktivita kontejneru NoPersistScope bránící přetrvání podřízených aktivit.
 
-- Podpora pro C# výrazy:
+- Podpora pro výrazy jazyka C#:
 
-  - Projekty pracovního postupu, které používají Visual Basic, budou používat výrazy C# Visual Basic a projekty pracovního C# postupu budou používat výrazy.
+  - Projekty pracovního postupu, které používají jazyk Visual Basic, budou používat výrazy jazyka Visual Basic a projekty pracovního postupu C# budou používat výrazy jazyka C#.
 
-  - C#projekty pracovního postupu, které byly vytvořeny v aplikaci Visual Studio 2010 a které mají Visual Basic výrazy C# jsou kompatibilní s projekty C# pracovního postupu, které používají výrazy.
+  - Projekty pracovního postupu C# vytvořené v aplikaci Visual Studio 2010, které obsahují výrazy v jazyce Visual Basic, jsou kompatibilní s projekty pracovního postupu C#, které používají výrazy jazyka C#.
 
 - Vylepšení správy verzí:
 
-  - Nová třída <xref:System.Activities.WorkflowIdentity>, která poskytuje mapování mezi trvalou instancí pracovního postupu a její definicí pracovního postupu.
+  - Nová třída  <xref:System.Activities.WorkflowIdentity>, která poskytuje mapování mezi trvalými instancemi pracovního postupu jejich definicí pracovního postupu.
 
-  - Souběžné spouštění více verzí pracovních postupů ve stejném hostiteli, včetně <xref:System.ServiceModel.Activities.WorkflowServiceHost>.
+  - Souběžné spuštění několika verzí pracovního postupu u stejného hostitele, včetně <xref:System.ServiceModel.Activities.WorkflowServiceHost>.
 
-  - V případě dynamické aktualizace je možné změnit definici trvalé instance pracovního postupu.
+  - V režimu dynamické aktualizace je možnost upravit definici trvalé instance práce.
 
-- Vývoj služby pracovního postupu prvního kontraktu, který poskytuje podporu pro automatické generování aktivit, které se shodují s existující smlouvou služby.
+- Vývoj služby stavící do popředí smlouvu v pracovním postupu, který poskytuje podporu pro automatické generování činností, které odpovídají existující smlouvě o službách.
 
-Další informace najdete v tématu [co je nového v programovací model Windows Workflow Foundation](https://go.microsoft.com/fwlink/?LinkId=228176).
+Další informace najdete v tématu [co je nového v programovací model Windows Workflow Foundation](../windows-workflow-foundation/whats-new-in-wf-in-dotnet.md).
 
 <a name="tailored" />
 
 ### <a name="net-for-windows-8x-store-apps"></a>Aplikace .NET pro Windows 8.x Store
 
-Aplikace pro Store ve Windows 8. x jsou navržené pro konkrétní faktory a využívají sílu operačního systému Windows. K dispozici je podmnožina .NET Framework 4,5 nebo 4.5.1 pro sestavování aplikací Windows 8. x Store pro C# Windows pomocí nebo Visual Basic. Tato podmnožina se nazývá .NET pro aplikace Windows 8. x Store a je popsána v [přehledu](https://go.microsoft.com/fwlink/?LinkId=228491) na stránce Windows Dev Center.
+Aplikace pro Store ve Windows 8. x jsou navržené pro konkrétní faktory a využívají sílu operačního systému Windows. K dispozici je podmnožina .NET Framework 4,5 nebo 4.5.1 pro sestavování aplikací Windows 8. x Store pro C# Windows pomocí nebo Visual Basic. Tato podmnožina se nazývá .NET pro aplikace Windows 8. x Store a je popsána v [přehledu](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140)).
 
 ### <a name="portable-class-libraries-a-nameportable-"></a>Knihovny přenosných tříd <a name="portable" />
 
-Přenosná knihovna tříd projektu v aplikaci Visual Studio 2012 (a novějších verzích) umožňuje psát a sestavovat spravovaná sestavení, která fungují na více .NET Framework platformách. Pomocí přenositelného projektu knihovny tříd zvolíte platformy (například Windows Phone a .NET pro aplikace pro Windows 8. x Store) k cíli. Dostupné typy a členy v projektu jsou automaticky omezeny na společné typy a členy napříč těmito platformami. Další informace naleznete v tématu [Přenosná knihovna tříd](../../standard/cross-platform/cross-platform-development-with-the-portable-class-library.md).
+Přenosná knihovna tříd projektu v aplikaci Visual Studio 2012 (a novějších verzích) umožňuje psát a sestavovat spravovaná sestavení, která fungují na více .NET Framework platformách. Pomocí přenositelného projektu knihovny tříd zvolíte platformy (například Windows Phone a .NET pro aplikace pro Windows 8. x Store) k cíli. Dostupné typy a členy v projektu jsou automaticky omezeny na běžnými typy a členy v těchto platformách. Další informace naleznete v tématu [Přenosná knihovna tříd](../../standard/cross-platform/cross-platform-development-with-the-portable-class-library.md).
 
 ## <a name="see-also"></a>Viz také:
 
 - [Rozhraní .NET Framework a nesvázaná vydání](../get-started/the-net-framework-and-out-of-band-releases.md)
 - [Co je nového v přístupnosti v .NET Framework](whats-new-in-accessibility.md)
-- [Co je nového v aplikaci Visual Studio 2017](/visualstudio/ide/whats-new-visual-studio-2017)
+- [Co je nového v sadě Visual Studio 2017](/visualstudio/ide/whats-new-visual-studio-2017)
+- [Co je nového v aplikaci Visual Studio 2019](/visualstudio/ide/whats-new-visual-studio-2019)
 - [ASP.NET](/aspnet)
 - [Co je nového C++ v aplikaci Visual Studio](/cpp/what-s-new-for-visual-cpp-in-visual-studio)

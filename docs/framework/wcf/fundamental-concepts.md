@@ -7,12 +7,12 @@ helpviewer_keywords:
 - fundamentals [WCF]
 - Windows Communication Foundation [WCF], concepts
 ms.assetid: 3e7e0afd-7913-499d-bafb-eac7caacbc7a
-ms.openlocfilehash: 9dcaa5f73dd8a4ec1943cb7fc840feee889563b8
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 360479a2ba17c4542d61a737856d23992296e276
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72319850"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802309"
 ---
 # <a name="fundamental-windows-communication-foundation-concepts"></a>Základní koncepty služby Windows Communication Foundation
 
@@ -71,7 +71,7 @@ Služba WCF se zveřejňuje na světě jako kolekce koncových bodů.
 **Koncový bod infrastruktury**  
  Koncový bod, který je zpřístupněný infrastrukturou, aby usnadnil funkčnost, kterou vyžaduje nebo poskytuje služba, která se nevztahují k kontraktu služby. Například služba může mít koncový bod infrastruktury, který poskytuje informace o metadatech.
 
-**Adresáře**  
+**Adresa**  
  Určuje umístění, kde jsou přijímány zprávy. Je zadaný jako identifikátor URI (Uniform Resource Identifier). Část schématu identifikátoru URI pojmenovává transportní mechanismus, který se má použít pro přístup k adrese, například HTTP a TCP. Hierarchická část identifikátoru URI obsahuje jedinečné umístění, ve kterém je formát závislý na transportním mechanismu.
 
 Adresa koncového bodu umožňuje vytvořit jedinečné adresy koncových bodů pro každý koncový bod ve službě nebo za určitých podmínek pro sdílení adresy mezi koncovými body. Následující příklad ukazuje adresu pomocí protokolu HTTPS s jiným než výchozím portem:
@@ -90,7 +90,7 @@ HTTPS://cohowinery:8005/ServiceModelSamples/CalculatorService
  Komponenta, která řídí různé aspekty běhu služby, koncového bodu, konkrétní operace nebo klienta. Chování jsou seskupena podle rozsahu: běžné chování ovlivňuje všechny koncové body globálně, chování služby ovlivňuje pouze aspekty související se službami, chování koncového bodu ovlivňuje pouze vlastnosti související s koncovým bodem a chování na úrovni provozu ovlivní konkrétní Operations. Například jedno chování služby je omezování, které určuje, jak služba reaguje, když nadměrné zprávy hrozí zahlcením možností manipulace. Chování koncového bodu na druhé straně řídí pouze aspekty, které jsou relevantní pro koncové body, například jak a kde najít bezpečnostní pověření.
 
 **Vazby poskytované systémem**  
- WCF zahrnuje řadu vazeb poskytovaných systémem. Jedná se o kolekce prvků vazby, které jsou optimalizované pro konkrétní scénáře. Například <xref:System.ServiceModel.WSHttpBinding> je navržená pro interoperabilitu se službami, které implementují různé specifikace WS-\*. Tyto předdefinované vazby šetří čas tím, že prezentují jenom možnosti, které se dají správně použít pro konkrétní scénář. Pokud předdefinovaná vazba nesplňuje vaše požadavky, můžete vytvořit vlastní vazbu.
+ WCF zahrnuje řadu vazeb poskytovaných systémem. Jedná se o kolekce prvků vazby, které jsou optimalizované pro konkrétní scénáře. Například <xref:System.ServiceModel.WSHttpBinding> je navržený pro interoperabilitu se službami, které implementují různé specifikace WS-\*. Tyto předdefinované vazby šetří čas tím, že prezentují jenom možnosti, které se dají správně použít pro konkrétní scénář. Pokud předdefinovaná vazba nesplňuje vaše požadavky, můžete vytvořit vlastní vazbu.
 
 **Konfigurace versus kódování**  
  Kontrolu aplikace lze provádět buď prostřednictvím kódu, prostřednictvím konfigurace, nebo kombinací obou. Konfigurace má výhodu povolit jiným uživatelům než vývojář (například správce sítě) nastavit parametry klienta a služby po zápisu kódu a bez nutnosti překompilovat. Konfigurace neumožňuje nastavit jenom hodnoty, jako jsou adresy koncových bodů, ale také umožňuje další kontrolu tím, že vám umožní přidat koncové body, vazby a chování. Kódování umožňuje vývojářům zachovat přísnou kontrolu nad všemi komponentami služby nebo klienta. všechna nastavení prováděná prostřednictvím konfigurace lze zkontrolovat a v případě potřeby přepsat kódem.
@@ -102,7 +102,7 @@ HTTPS://cohowinery:8005/ServiceModelSamples/CalculatorService
  Spojuje více souvisejících operací s jednou funkční jednotkou. Kontrakt může definovat nastavení na úrovni služby, jako je například obor názvů služby, odpovídající kontrakt zpětného volání a další taková nastavení. Ve většině případů je smlouva definována vytvořením rozhraní v programovacím jazyce podle vašeho výběru a použitím atributu <xref:System.ServiceModel.ServiceContractAttribute> na rozhraní. Skutečný výsledek kódu služby implementuje rozhraní.
 
 **Kontrakt operace**  
- Kontrakt operace definuje parametry a návratový typ operace. Při vytváření rozhraní, které definuje kontrakt služby, značíte kontrakt operace použitím atributu <xref:System.ServiceModel.OperationContractAttribute> na každou definici metody, která je součástí smlouvy. Operace lze modelovat jako přebírání jedné zprávy a vrácení jedné zprávy nebo při přijetí sady typů a vrácení typu. V druhém případě systém určí formát pro zprávy, které je potřeba vyměňovat pro danou operaci.
+ Kontrakt operace definuje parametry a návratový typ operace. Při vytváření rozhraní, které definuje kontrakt služby, značíte kontrakt operace použitím atributu <xref:System.ServiceModel.OperationContractAttribute> pro každou definici metody, která je součástí smlouvy. Operace lze modelovat jako přebírání jedné zprávy a vrácení jedné zprávy nebo při přijetí sady typů a vrácení typu. V druhém případě systém určí formát pro zprávy, které je potřeba vyměňovat pro danou operaci.
 
 **Kontrakt zprávy**  
  Popisuje formát zprávy. Například deklaruje, zda by měly prvky zprávy jít v záhlavích versus text, jakou úroveň zabezpečení má být použita na prvky zprávy atd.
@@ -144,13 +144,13 @@ Metadata, která služba zveřejňuje, obsahují dokumenty schématu XML, které
 Pokud je povoleno, metadata pro službu jsou automaticky generována službou WCF kontrolou služby a jejích koncových bodů. Chcete-li publikovat metadata ze služby, je nutné explicitně povolit chování metadat.
 
 **Zabezpečení**  
- V rámci služby WCF zahrnuje důvěrnost (šifrování zpráv pro předcházení odposlouchávání), integritu (prostředky pro detekci manipulace se zprávou), ověřování (prostředky pro ověření serverů a klientů) a autorizaci (řízení přístupu k prostředky). Tyto funkce jsou poskytovány buď pomocí stávajících mechanismů zabezpečení, jako je TLS přes HTTP (označované také jako HTTPS), nebo implementací jednoho nebo více různých specifikací zabezpečení WS-\*.
+ V rámci služby WCF zahrnuje důvěrnost (šifrování zpráv pro předcházení odposlouchávání), integritu (prostředky pro detekci manipulace se zprávou), ověřování (prostředky pro ověření serverů a klientů) a autorizaci (řízení přístupu k prostředky). Tyto funkce se poskytují buď pomocí stávajících mechanismů zabezpečení, jako je TLS přes HTTP (označované také jako HTTPS), nebo implementací jednoho nebo více různých specifikací zabezpečení WS-\*.
 
 **Režim zabezpečení přenosu**  
  Určuje, že mechanismy přenosové vrstvy (například HTTPS) poskytují důvěrnost, integritu a ověřování. Při použití přenosu, jako je HTTPS, má tento režim výhodu efektivního výkonu a pochopení z důvodu jeho prevalence v Internetu. Nevýhodou je, že tento druh zabezpečení se používá samostatně na každém segmentu směrování v komunikační cestě, což znamená, že komunikace je náchylná k útoku "muž v prostředním".
 
 **Režim zabezpečení zpráv**  
- Určuje, že zabezpečení je zajištěno implementací jedné nebo více specifikací zabezpečení, jako je například specifikace s názvem [specifikace Web Services Security: zabezpečení zpráv SOAP](https://go.microsoft.com/fwlink/?LinkId=94684). Každá zpráva obsahuje nezbytné mechanismy pro zajištění zabezpečení během přenosu a umožňuje přijímačům detekovat manipulaci a dešifrovat zprávy. V tomto smyslu je zabezpečení zapouzdřeno v rámci každé zprávy a zajišťuje komplexní zabezpečení napříč více segmenty směrování. Vzhledem k tomu, že informace o zabezpečení se stávají součástí zprávy, je také možné zahrnout do zprávy více druhů přihlašovacích údajů (tyto údaje jsou označovány jako _deklarace_). Tento přístup má taky možnost Povolit zabezpečenou cestu prostřednictvím jakéhokoli přenosu, včetně několika přenosů mezi zdrojem a cílem. Nevýhodou tohoto přístupu je složitá složitost používaných kryptografických mechanismů, což vede k důsledkům v souvislosti s výkonem.
+ Určuje, že zabezpečení je zajištěno implementací jedné nebo více specifikací zabezpečení, jako je například specifikace s názvem [specifikace Web Services Security: zabezpečení zpráv SOAP](http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0.pdf). Každá zpráva obsahuje nezbytné mechanismy pro zajištění zabezpečení během přenosu a umožňuje přijímačům detekovat manipulaci a dešifrovat zprávy. V tomto smyslu je zabezpečení zapouzdřeno v rámci každé zprávy a zajišťuje komplexní zabezpečení napříč více segmenty směrování. Vzhledem k tomu, že informace o zabezpečení se stávají součástí zprávy, je také možné zahrnout do zprávy více druhů přihlašovacích údajů (tyto údaje jsou označovány jako _deklarace_). Tento přístup má taky možnost Povolit zabezpečenou cestu prostřednictvím jakéhokoli přenosu, včetně několika přenosů mezi zdrojem a cílem. Nevýhodou tohoto přístupu je složitá složitost používaných kryptografických mechanismů, což vede k důsledkům v souvislosti s výkonem.
 
 **Přenos pomocí režimu zabezpečení přihlašovacích údajů zprávy**  
  Určuje použití přenosové vrstvy k zajištění důvěrnosti, ověřování a integrity zpráv, zatímco každá ze zpráv může obsahovat více přihlašovacích údajů, které jsou vyžadovány příjemcem zprávy.

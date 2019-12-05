@@ -2,12 +2,12 @@
 title: Šablony Visual Studia pro WCF
 ms.date: 03/30/2017
 ms.assetid: 6a608575-3535-4190-89da-911e24c8374f
-ms.openlocfilehash: 1b4a600e4ed19b967bcaeb6d880ea181b7c2d61f
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: ec73036921632bc855e79239f1fc578587de7ca3
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197190"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802343"
 ---
 # <a name="wcf-visual-studio-templates"></a>Šablony Visual Studia pro WCF
 Šablony sady Visual Studio pro Windows Communication Foundation (WCF) jsou předdefinované šablony projektů a položek, které můžete použít v aplikaci Visual Studio k rychlému vytváření služeb WCF a okolních aplikací.  
@@ -45,7 +45,7 @@ ms.locfileid: "73197190"
  Šablona automaticky vytvoří web (který se má nasadit do virtuálního adresáře) a hostuje službu.  
   
 ### <a name="wcf-web-site-template"></a>Šablona webu WCF  
- Šablona webu WCF je k dispozici v dialogovém okně Nový projekt v části **Visual C#\Web Site\WCF Service** a **Visual Basic\Web Site\WCF Service**. Tím se vytvoří stejné soubory jako v šabloně aplikace služby WCF, ale uspořádají se, jako by se jednalo o ASP.NET Web. Vytvoří se složky App_Code a App_Data.  
+ Šablona webu WCF je k dispozici v dialogovém okně Nový projekt v části **Visual C#\Web Site\WCF Service** a **Visual Basic\Web Site\WCF Service**. Tím se vytvoří stejné soubory jako v šabloně aplikace služby WCF, ale uspořádají se, jako by se jednalo o ASP.NET Web. Vytvoří se App_Code a App_Data složky.  
   
 ### <a name="wcf-service-item-template"></a>Šablona položky služby WCF  
  Šablona položky služby WCF je vlastní šablona, která poskytuje rychlý způsob, jak přidat služby WCF do stávajících projektů sady Visual Studio.  
@@ -72,7 +72,7 @@ ms.locfileid: "73197190"
  Změníte-li adresu kanálu, je nutné také změnit adresu na kartě **ladění** . Pokud to neuděláte, pokusí se Internet Explorer otevřít informační kanál na výchozí adrese a selhat.  
   
 ### <a name="ajax-enabled-wcf-service-item-template"></a>Šablona položky služby WCF s povoleným AJAX  
- Tato šablona zveřejňuje ovládací prvek AJAX jako službu WCF. Další informace o ovládacích prvcích AJAX naleznete v [dokumentaci k ovládacímu prvku AJAX](https://go.microsoft.com/fwlink/?LinkId=96717).  
+ Tato šablona zveřejňuje ovládací prvek AJAX jako službu WCF. Další informace o ovládacích prvcích AJAX naleznete v [dokumentaci k ovládacímu prvku AJAX](https://docs.microsoft.com/aspnet/ajax/).  
   
 ### <a name="silverlight-enabled-wcf-service-item-template"></a>Šablona položky služby WCF s povolenou technologií Silverlight  
  Tato šablona vytvoří webovou službu, která poskytuje data pro klienta Silverlight nebo front-end. Šablonu lze přidat do projektu webu nebo webové aplikace, chcete-li vytvořit službu WCF, která zahrnuje kód a konfiguraci služby, které podporují komunikaci s klientem Silverlight. Pak můžete použít **Přidat odkaz na službu** k přidání klientského proxy serveru k klientovi a k výměně dat mezi klientem Silverlight a službou WCF s podporou technologie Silverlight.  

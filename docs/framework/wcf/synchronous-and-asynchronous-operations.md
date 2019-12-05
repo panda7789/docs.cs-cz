@@ -8,12 +8,12 @@ helpviewer_keywords:
 - service contracts [WCF], synchronous operations
 - service contracts [WCF], asynchronous operations
 ms.assetid: db8a51cb-67e6-411b-9035-e5821ed350c9
-ms.openlocfilehash: 39a7db3fb7dc3651f2cf6c850e7ebb5525e24963
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 143cc0f4566d86f1d42ebd11063f9af3c1ec331f
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74281634"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802437"
 ---
 # <a name="synchronous-and-asynchronous-operations"></a>Synchronní a asynchronní operace
 Toto téma popisuje implementaci a volání asynchronních operací služby.  
@@ -107,7 +107,7 @@ public class AsyncExample
 }  
 ```  
   
- Další informace o asynchronním vzoru založeném na událostech naleznete v tématu [asynchronní vzor založený na událostech](https://go.microsoft.com/fwlink/?LinkId=232515).  
+ Další informace o asynchronním vzoru založeném na událostech naleznete v tématu [asynchronní vzor založený na událostech](../../standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md).  
   
 #### <a name="iasyncresult-asynchronous-pattern"></a>Asynchronní vzor IAsyncResult  
  Operace služby může být implementována asynchronním způsobem pomocí .NET Framework asynchronního programovacího vzoru a označením `<Begin>` metody s vlastností <xref:System.ServiceModel.OperationContractAttribute.AsyncPattern%2A> nastavenou na `true`. V tomto případě je asynchronní operace vystavena v metadatech ve stejném tvaru jako synchronní operace: je vystavena jako jediná operace se zprávou požadavku a zprávou s korelační odpovědí. Modely programování klientů pak mají možnost zvolit. Mohou představovat tento model jako synchronní operaci nebo jako asynchronní, tak dlouho, jak je vyvolána služba Výměna zpráv odezvy požadavku.  

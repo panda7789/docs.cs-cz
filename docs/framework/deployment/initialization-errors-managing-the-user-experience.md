@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 680a7382-957f-4f6e-b178-4e866004a07e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3cd881044d45a276ec361d24097b59b8ce76b7e4
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: cadcb5c2e85f046b5c1c561c17663b7c94829f4f
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975690"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802239"
 ---
 # <a name="net-framework-initialization-errors-managing-the-user-experience"></a>Chyby inicializace .NET Framework: Správa prostředí uživatele
 
@@ -80,14 +80,14 @@ CLR obsahuje sadu hostitelů pro celou řadu scénářů a tito hostitelé zobra
 
 ## <a name="windows-8-behavior-and-ui"></a>Chování Windows 8 a uživatelské rozhraní
 
-Systém aktivace CLR poskytuje stejné chování a uživatelské rozhraní v [!INCLUDE[win8](../../../includes/win8-md.md)] jako v jiných verzích operačního systému Windows, s výjimkou případů, kdy dojde k potížím při načítání CLR 2,0. [!INCLUDE[win8](../../../includes/win8-md.md)] zahrnuje .NET Framework 4,5, které používá CLR 4,5. [!INCLUDE[win8](../../../includes/win8-md.md)] ale neobsahuje .NET Framework 2,0, 3,0 nebo 3,5, které všechny používají CLR 2,0. V důsledku toho aplikace, které závisí na CLR 2,0, se ve výchozím nastavení nespouštějí na [!INCLUDE[win8](../../../includes/win8-md.md)]. Místo toho se zobrazí následující dialogové okno, které uživatelům umožní nainstalovat .NET Framework 3,5. Uživatelé také mohou povolit .NET Framework 3,5 v Ovládacích panelech. Obě možnosti jsou popsány v článku [instalace .NET Framework 3,5 ve Windows 10, Windows 8.1 a Windows 8](../install/dotnet-35-windows-10.md).
+Systém aktivace CLR poskytuje stejné chování a uživatelské rozhraní ve Windows 8 jako v ostatních verzích operačního systému Windows, s výjimkou případů, kdy dojde k potížím při načítání CLR 2,0. Systém Windows 8 obsahuje .NET Framework 4,5, který používá CLR 4,5. Systém Windows 8 však neobsahuje .NET Framework 2,0, 3,0 nebo 3,5, které všechny používají CLR 2,0. V důsledku toho aplikace, které závisí na CLR 2,0, ve výchozím nastavení neběží ve Windows 8. Místo toho se zobrazí následující dialogové okno, které uživatelům umožní nainstalovat .NET Framework 3,5. Uživatelé také mohou povolit .NET Framework 3,5 v Ovládacích panelech. Obě možnosti jsou popsány v článku [instalace .NET Framework 3,5 ve Windows 10, Windows 8.1 a Windows 8](../install/dotnet-35-windows-10.md).
 
-![Dialogové okno pro 3,5 instalaci v systému Windows 8](./media/initialization-errors-managing-the-user-experience/install-framework-on-demand-dialog.png "Výzva k instalaci .NET Framework 3,5 na vyžádání")
+![Dialogové okno pro 3,5 instalaci v systému Windows 8](./media/initialization-errors-managing-the-user-experience/install-framework-on-demand-dialog.png "Výzva k instalaci rozhraní .NET Framework 3.5 na vyžádání")
 
 > [!NOTE]
-> .NET Framework 4,5 nahrazuje .NET Framework 4 (CLR 4) v počítači uživatele. Proto se aplikace .NET Framework 4 spouštějí bez problémů bez zobrazení tohoto dialogového okna v [!INCLUDE[win8](../../../includes/win8-md.md)].
+> .NET Framework 4,5 nahrazuje .NET Framework 4 (CLR 4) v počítači uživatele. Proto se aplikace .NET Framework 4 spouštějí bez problémů bez zobrazení tohoto dialogového okna ve Windows 8.
 
-Když je nainstalovaná .NET Framework 3,5, můžou uživatelé spouštět aplikace, které na svých [!INCLUDE[win8](../../../includes/win8-md.md)]ch počítačích závisejí na .NET Framework 2,0, 3,0 nebo 3,5. Můžou taky spouštět .NET Framework 1,0 a 1,1 aplikace za předpokladu, že tyto aplikace nejsou explicitně nakonfigurované tak, aby se spouštěly jenom v .NET Framework 1,0 nebo 1,1. Viz [migrace z .NET Framework 1,1](../migration-guide/migrating-from-the-net-framework-1-1.md).
+Když je nainstalovaná .NET Framework 3,5, můžou uživatelé spouštět aplikace, které jsou na svých počítačích s Windows 8 závislé na .NET Framework 2,0, 3,0 nebo 3,5. Můžou taky spouštět .NET Framework 1,0 a 1,1 aplikace za předpokladu, že tyto aplikace nejsou explicitně nakonfigurované tak, aby se spouštěly jenom v .NET Framework 1,0 nebo 1,1. Viz [migrace z .NET Framework 1,1](../migration-guide/migrating-from-the-net-framework-1-1.md).
 
 Počínaje .NET Framework 4,5 byl vylepšeno protokolování aktivace CLR, aby zahrnovalo položky protokolu, které se zaznamenávají, kdy a proč se zobrazila chybová zpráva o inicializaci. Další informace naleznete v tématu [How to: Debug CLR problémy Activation](how-to-debug-clr-activation-issues.md).
 

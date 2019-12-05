@@ -2,12 +2,12 @@
 title: Co je nového v .NET Core 2.0
 description: Přečtěte si o nových funkcích, které najdete v .NET Core.
 ms.date: 08/13/2017
-ms.openlocfilehash: fcac4255e7370f31ea6c26771fdd7d341bafe38b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 115b3adc72b6798c6a7bac9cc18044a8822808a6
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73100842"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74801890"
 ---
 # <a name="whats-new-in-net-core-20"></a>Co je nového v .NET Core 2.0
 
@@ -136,7 +136,7 @@ Chcete-li změnit cílení projektu v aplikaci Visual Studio, otevřete kartu **
 
 Kdykoli upravíte kód, Live Unit Testing automaticky spustí všechny ovlivněné testy jednotek na pozadí a zobrazí výsledky a pokrytí kódu živě v prostředí sady Visual Studio. .NET Core 2,0 teď podporuje Live Unit Testing. Dříve byla Live Unit Testing k dispozici pouze pro .NET Framework aplikace.
 
-Další informace najdete v tématu [Live Unit Testing se sadou Visual Studio 2017](/visualstudio/test/live-unit-testing) a v části [Live Unit Testing Nejčastější dotazy](/visualstudio/test/live-unit-testing-faq).
+Další informace najdete v tématu [Live Unit Testing se sadou Visual Studio](/visualstudio/test/live-unit-testing) a v části [Live Unit Testing Nejčastější dotazy](/visualstudio/test/live-unit-testing-faq).
 
 ### <a name="better-support-for-multiple-target-frameworks"></a>Lepší podpora pro více cílových rozhraní
 

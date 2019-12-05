@@ -2,12 +2,12 @@
 title: O platformě .NET Core
 description: Přečtěte si o .NET Core.
 ms.date: 09/17/2019
-ms.openlocfilehash: b3cdc8d4aeaf85765b51543069a5f279e84f8623
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 22530e861f6a13a6930b2fb35c91b4f7a95a17c7
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74711208"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74801958"
 ---
 # <a name="about-net-core"></a>O platformě .NET Core
 
@@ -52,11 +52,11 @@ Na rozhraní .NET Core bylo postaveno více platforem:
 - [Windows 10 Univerzální platforma Windows (UWP)](https://developer.microsoft.com/windows)
 - [Tizen](https://developer.tizen.org/development/training/.net-application)
 
-## <a name="composition"></a>Složení
+## <a name="composition"></a>Skládání
 
 .NET Core se skládá z následujících částí:
 
-- [Modul runtime .NET Core](https://github.com/dotnet/coreclr), který poskytuje systém typů, načítání sestavení, systém uvolňování paměti, nativní spolupráci a další základní služby. [Knihovny .NET Core Framework](https://github.com/dotnet/corefx) poskytují primitivní datové typy, typy kompozic aplikací a základní nástroje.
+- [Modul runtime .NET Core](https://github.com/dotnet/runtime/tree/master/src/coreclr), který poskytuje systém typů, načítání sestavení, systém uvolňování paměti, nativní spolupráci a další základní služby. [Knihovny .NET Core Framework](https://github.com/dotnet/runtime/tree/master/src/libraries) poskytují primitivní datové typy, typy kompozic aplikací a základní nástroje.
 - [Běhový modul ASP.NET](https://github.com/aspnet/home), který poskytuje rozhraní pro vytváření moderních cloudových aplikací připojených k Internetu, jako jsou webové aplikace, aplikace IoT a mobilní back-endy.
 - [Nástroje .NET Core CLI](https://github.com/dotnet/cli) a jazykové kompilátory ([Roslyn](https://github.com/dotnet/roslyn) a [F#](https://github.com/microsoft/visualfsharp)), které umožňují prostředí pro vývojáře .NET Core.
 - [Nástroj dotnet](https://github.com/dotnet/core-setup), který se používá ke spouštění aplikací .NET Core a nástrojů rozhraní příkazového řádku. Vybírá modul runtime a hostuje modul runtime, poskytuje zásady načítání sestavení a spouští aplikace a nástroje.
@@ -79,17 +79,17 @@ Produkt je rozdělen do několika částí a umožňuje v různých časech při
 
 Lidé často žádají, jak je .NET Core implementováno, aby podporovalo více operačních systémů. Obvykle se dotazují, jestli existují samostatné implementace nebo když se používá [Podmíněná kompilace](https://en.wikipedia.org/wiki/Conditional_compilation) . Je to obojí se silným posunem směrem k podmíněné kompilaci.
 
-V následujícím grafu vidíte, že velká většina [CoreFX](https://github.com/dotnet/corefx) je neutrální kód platformy, který je sdílen napříč všemi platformami. Kód neutrální pro platformu je možné implementovat jako jedno přenosné sestavení, které se používá na všech platformách.
+V následujícím grafu vidíte, že velká většina [knihoven .NET Core](https://github.com/dotnet/runtime/tree/master/src/libraries) je kód neutrální platformy, který je sdílen napříč všemi platformami. Kód neutrální pro platformu je možné implementovat jako jedno přenosné sestavení, které se používá na všech platformách.
 
 ![CoreFX: řádky kódu na platformu](../images/corefx-platforms-loc.png)
 
-Implementace Windows a UNIX mají stejnou velikost. Systém Windows má větší implementaci, protože CoreFX implementuje některé funkce pouze pro systém Windows, například [Microsoft. Win32. Registry](https://github.com/dotnet/corefx/tree/master/src/Microsoft.Win32.Registry) , ale ještě neimplementuje mnoho konceptů pouze pro systém UNIX. Uvidíte také, že většina implementací systémů Linux a macOS je sdílena v rámci implementace systému UNIX, zatímco implementace týkající se systémů Linux a macOS mají přibližně stejnou velikost.
+Implementace Windows a UNIX mají stejnou velikost. Systém Windows má větší implementaci, protože knihovny .NET Core implementují některé funkce pouze pro systém Windows, například [Microsoft. Win32. Registry](https://github.com/dotnet/runtime/tree/master/src/libraries/Microsoft.Win32.Registry) , ale ještě neimplementují mnoho konceptů pouze pro systém UNIX. Uvidíte také, že většina implementací systémů Linux a macOS je sdílena v rámci implementace systému UNIX, zatímco implementace týkající se systémů Linux a macOS mají přibližně stejnou velikost.
 
 Rozhraní .NET Core obsahuje kombinaci knihoven specifických pro platformu a platforem neutrálních na platformě. Vzor si můžete prohlédnout v několika příkladech:
 
-- [CoreCLR](https://github.com/dotnet/coreclr) je specifický pro platformu. Sestavuje se nad subsystémy operačního systému, jako je správce paměti a Plánovač vláken.
-- [System.IO](https://github.com/dotnet/corefx/tree/master/src/System.IO) a [System. Security. Cryptography.](https://github.com/dotnet/corefx/tree/master/src/System.Security.Cryptography.Algorithms) Algorithms jsou specifické pro platformu, protože rozhraní API pro úložiště a kryptografii se v každém operačním systému liší.
-- [System. Collections](https://github.com/dotnet/corefx/tree/master/src/System.Collections) a [System. Linq](https://github.com/dotnet/corefx/tree/master/src/System.Linq) jsou neutrální vzhledem k tomu, že vytvářejí a pracují nad datovými strukturami.
+- [CoreCLR](https://github.com/dotnet/runtime/tree/master/src/coreclr) je specifický pro platformu. Sestavuje se nad subsystémy operačního systému, jako je správce paměti a Plánovač vláken.
+- [System.IO](https://github.com/dotnet/runtime/tree/master/src/libraries/System.IO) a [System. Security. Cryptography.](https://github.com/dotnet/runtime/tree/master/src/libraries/System.Security.Cryptography.Algorithms) Algorithms jsou specifické pro platformu, protože rozhraní API pro úložiště a kryptografii se v každém operačním systému liší.
+- [System. Collections](https://github.com/dotnet/runtime/tree/master/src/libraries/System.Collections) a [System. Linq](https://github.com/dotnet/runtime/tree/master/src/libraries/System.Linq) jsou neutrální vzhledem k tomu, že vytvářejí a pracují nad datovými strukturami.
 
 ## <a name="comparisons-to-other-net-implementations"></a>Porovnání s jinými implementacemi .NET
 

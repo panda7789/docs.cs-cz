@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 6fa7d044-ae12-4c54-b8ee-50915607a565
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4629139a7c89c0808e97bbe64b7d02441aec1dea
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: dd7e045bf54b09fe2a229efefc0218eb3f2f731a
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74714487"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802749"
 ---
 # <a name="net-framework-support-for-windows-store-apps-and-windows-runtime"></a>Podpora pro aplikace pro web Windows Store a prostředí Windows Runtime v rozhraní .NET Framework
 
@@ -30,7 +30,7 @@ ms.locfileid: "74714487"
 
 Toto téma popisuje podporu, kterou .NET Framework poskytuje pro všechny tři kategorie, a popisuje scénáře pro prostředí Windows Runtime součásti. První část obsahuje základní informace o vztahu mezi .NET Framework a prostředí Windows Runtime a vysvětluje některé oddities, se kterými se můžete setkat v systému help a integrovaném vývojovém prostředí (IDE). [Druhá část](#WindowsRuntimeComponents) popisuje scénáře pro vývoj komponent prostředí Windows Runtime.
 
-## <a name="the-basics"></a>Základy
+## <a name="the-basics"></a>Základní informace
 
 .NET Framework podporuje tři vývojové scénáře uvedené výše, protože poskytuje .NET pro Windows 8. x Store apps a podporuje prostředí Windows Runtime sebe sama.
 
@@ -137,7 +137,7 @@ Scénáře podporované komponentami spravované prostředí Windows Runtime zá
 - Typy v komponentě mohou být odvozeny z prostředí Windows Runtime typů. Ovládací prvky lze odvozovat z primitivních typů ovládacích prvků v oboru názvů <xref:Windows.UI.Xaml.Controls.Primitives> nebo z více dokončených ovládacích prvků, jako je například <xref:Windows.UI.Xaml.Controls.Button>.
 
   > [!IMPORTANT]
-  > Počínaje [!INCLUDE[win8](../../../includes/win8-md.md)] a .NET Framework 4,5 musí být všechny veřejné typy v spravované prostředí Windows Runtime komponentě zapečetěné. Typ v jiné součásti prostředí Windows Runtime nelze z nich odvodit. Pokud chcete ve své komponentě poskytnout polymorfní chování, můžete vytvořit rozhraní a implementovat ho v polymorfních typech.
+  > Počínaje systémem Windows 8 a .NET Framework 4,5 musí být všechny veřejné typy v komponentě spravovaného prostředí Windows Runtime zapečetěné. Typ v jiné součásti prostředí Windows Runtime nelze z nich odvodit. Pokud chcete ve své komponentě poskytnout polymorfní chování, můžete vytvořit rozhraní a implementovat ho v polymorfních typech.
 
 - Všechny parametry a návratové typy na veřejných typech ve vaší komponentě musí být prostředí Windows Runtime typy (včetně prostředí Windows Runtimech typů, které vaše komponenta definuje).
 

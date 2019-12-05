@@ -2,26 +2,26 @@
 title: 'Postupy: povolení trvalosti SQL pro pracovní postupy a služby pracovních postupů'
 ms.date: 03/30/2017
 ms.assetid: ca7bf77f-3e5d-4b23-b17a-d0b60f46411d
-ms.openlocfilehash: 4dc5648d748372828c5b9a36441bfb02eef045e1
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: bef95dbeaaa96678a66ba94494a0207c7314c326
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460873"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802580"
 ---
 # <a name="how-to-enable-sql-persistence-for-workflows-and-workflow-services"></a>Postupy: povolení trvalosti SQL pro pracovní postupy a služby pracovních postupů
 
 Toto téma popisuje, jak nakonfigurovat funkci úložiště instance pracovního postupu SQL tak, aby umožňovala trvalé uchovávání pracovních postupů a služeb pracovních postupů programově i pomocí konfiguračního souboru.
 
-Windows Server App Fabric zjednodušuje proces konfigurace trvalosti. Další informace najdete v tématu [Konfigurace trvalosti aplikace App Fabric](https://go.microsoft.com/fwlink/?LinkId=201204).
+Windows Server App Fabric zjednodušuje proces konfigurace trvalosti. Další informace najdete v tématu [Konfigurace trvalosti aplikace App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee790848(v=azure.10)).
 
 Před použitím funkce úložiště instance pracovního postupu SQL vytvořte databázi, kterou funkce používá k zachování instancí pracovního postupu. Program pro nastavení [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] kopíruje soubory skriptu SQL přidružené k funkci úložiště instancí pracovních postupů SQL do složky%WINDIR%\Microsoft.NET\Framework\v4.xxx\SQL\EN. Tyto soubory skriptu spusťte v databázi SQL Server 2005 nebo SQL Server 2008, kterou chcete, aby úložiště instancí pracovních postupů SQL použilo k zachování instancí pracovního postupu. Nejprve spusťte soubor SqlWorkflowInstanceStoreSchema. SQL a potom spusťte soubor SqlWorkflowInstanceStoreLogic. SQL.
 
 > [!NOTE]
 > Chcete-li vyčistit databázi trvalosti, aby měla novou databázi, spusťte skripty v%WINDIR%\Microsoft.NET\Framework\v4.xxx\SQL\EN v uvedeném pořadí.
 >
-> 1. SqlWorkflowInstanceStoreSchema. SQL
-> 2. SqlWorkflowInstanceStoreLogic. SQL
+> 1. SqlWorkflowInstanceStoreSchema.sql
+> 2. SqlWorkflowInstanceStoreLogic.sql
 
 > [!IMPORTANT]
 > Pokud nevytvoříte databázi trvalosti, funkce úložiště instance pracovního postupu SQL vyvolá výjimku, která je podobná následujícímu, když se hostitel pokusí uchovat pracovní postupy.
@@ -152,7 +152,7 @@ workflowServiceHost.DurableInstancingOptions.InstanceStore = sqlInstanceStoreObj
 ```
 
 > [!IMPORTANT]
-> Doporučujeme Neukládat citlivé informace, jako jsou uživatelská jména a hesla, do souboru Web. config. Pokud ukládáte citlivé informace do souboru Web. config, měli byste zabezpečený přístup k souboru Web. config pomocí seznamů Access Control systému souborů (ACL). Kromě toho můžete také zabezpečit konfigurační hodnoty v rámci konfiguračního souboru, jak je uvedeno v části [šifrování informací o konfiguraci pomocí chráněné konfigurace](https://go.microsoft.com/fwlink/?LinkId=178419).
+> Doporučujeme Neukládat citlivé informace, jako jsou uživatelská jména a hesla, do souboru Web. config. Pokud ukládáte citlivé informace do souboru Web. config, měli byste zabezpečený přístup k souboru Web. config pomocí seznamů Access Control systému souborů (ACL). Kromě toho můžete také zabezpečit konfigurační hodnoty v rámci konfiguračního souboru, jak je uvedeno v části [šifrování informací o konfiguraci pomocí chráněné konfigurace](https://docs.microsoft.com/en-us/previous-versions/aspnet/53tyfkaw(v=vs.100)).
 
 ### <a name="machineconfig-elements-related-to-the-sql-workflow-instance-store-feature"></a>Elementy Machine. config související s funkcí úložiště instance pracovního postupu SQL
 

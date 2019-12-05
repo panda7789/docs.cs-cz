@@ -2,12 +2,12 @@
 title: Odstraňování potíží s instalací
 ms.date: 03/30/2017
 ms.assetid: 1644f885-c408-4d5f-a5c7-a1a907bc8acd
-ms.openlocfilehash: 586defea0f761f8b6dea691b778d221cff62c7cf
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: becf2576528dc0011a77597b3665d77f6907a3cc
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74281609"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802424"
 ---
 # <a name="troubleshooting-setup-issues"></a>Odstraňování potíží s instalací
 Toto téma popisuje, jak řešit problémy s nastavením Windows Communication Foundation (WCF).  
@@ -52,7 +52,7 @@ Toto téma popisuje, jak řešit problémy s nastavením Windows Communication F
   
  Aby bylo možné vyřešit dříve popsané potíže, je nutné provést následující kroky.  
   
-1. Spusťte [WMI Diagnosis Utility verze 2,0,](https://go.microsoft.com/fwlink/?LinkId=94685) abyste mohli opravit službu WMI. Další informace o použití tohoto nástroje najdete v tématu [WMI Diagnosis Utility](https://go.microsoft.com/fwlink/?LinkId=94686) .  
+1. Spusťte [WMI Diagnosis Utility verze 2,0,](https://go.microsoft.com/fwlink/?LinkId=94685) abyste mohli opravit službu WMI. Další informace o použití tohoto nástroje najdete v článku o [WMI Diagnosis Utility](https://docs.microsoft.com/previous-versions/tn-archive/ff404265(v%3dmsdn.10)) .  
   
  Opravte instalaci .NET Framework 3,0 pomocí apletu **Přidat nebo odebrat programy** umístěného v **Ovládacích panelech**nebo odinstalujte nebo přeinstalujte .NET Framework 3,0.  
   

@@ -2,12 +2,12 @@
 title: Řízení spotřeby prostředků a zlepšení výkonu
 ms.date: 03/30/2017
 ms.assetid: 9a829669-5f76-4c88-80ec-92d0c62c0660
-ms.openlocfilehash: 976eb1e4a507d3c09bbc6e030985cbc3143b5946
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 16d6f29235455ff30e115b7aff3425412bc7ba6a
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320608"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802254"
 ---
 # <a name="controlling-resource-consumption-and-improving-performance"></a>Řízení spotřeby prostředků a zlepšení výkonu
 Toto téma popisuje různé vlastnosti v různých oblastech architektury Windows Communication Foundation (WCF), které pracují na řízení spotřeby prostředků a vlivu na metriky výkonu.
@@ -44,7 +44,8 @@ Toto téma popisuje různé vlastnosti v různých oblastech architektury Window
  Nástroj pro měření [metadat třídy (Svcutil. exe)](servicemodel-metadata-utility-tool-svcutil-exe.md) může zlepšit výkon spuštění těchto aplikací vygenerováním potřebného kódu serializace z kompilovaných sestavení pro aplikaci. Další informace naleznete v tématu [How to: vylepšení doby spouštění klientských aplikací WCF pomocí objektu XmlSerializer](./feature-details/startup-time-of-wcf-client-applications-using-the-xmlserializer.md).
 
 ## <a name="performance-issues-when-hosting-wcf-services-under-aspnet"></a>Problémy s výkonem při hostování služeb WCF pod ASP.NET
- Když je služba WCF hostovaná v rámci služby IIS a ASP.NET, nastavení konfigurace služby IIS a ASP.NET může ovlivnit propustnost a paměť služby WCF.  Další informace o výkonu ASP.NET najdete v tématu [zlepšení výkonu ASP.NET](https://go.microsoft.com/fwlink/?LinkId=186462).  Jedno nastavení, které může mít nezamýšlené důsledky, je <xref:System.Web.Configuration.ProcessModelSection.MinWorkerThreads%2A>, což je vlastnost <xref:System.Web.Configuration.ProcessModelSection>. Pokud má vaše aplikace pevný nebo malý počet klientů, nastavení <xref:System.Web.Configuration.ProcessModelSection.MinWorkerThreads%2A> na 2 může poskytovat zvýšení propustnosti na počítači s více procesory, který má využití CPU blízko až 100%. Toto zvýšení výkonu přináší náklady: zvýší se taky využití paměti, což může snížit škálovatelnost.
+
+Když je služba WCF hostovaná v rámci služby IIS a ASP.NET, nastavení konfigurace služby IIS a ASP.NET může ovlivnit propustnost a paměť služby WCF.  Další informace o výkonu ASP.NET najdete v tématu [zlepšení výkonu ASP.NET](https://docs.microsoft.com/previous-versions/msp-n-p/ff647787(v=pandp.10)). Jedno nastavení, které může mít nezamýšlené důsledky, je <xref:System.Web.Configuration.ProcessModelSection.MinWorkerThreads%2A>, což je vlastnost <xref:System.Web.Configuration.ProcessModelSection>. Pokud má vaše aplikace pevný nebo malý počet klientů, nastavení <xref:System.Web.Configuration.ProcessModelSection.MinWorkerThreads%2A> na 2 může poskytovat zvýšení propustnosti na počítači s více procesory, který má využití CPU blízko až 100%. Toto zvýšení výkonu přináší náklady: zvýší se taky využití paměti, což může snížit škálovatelnost.
 
 ## <a name="see-also"></a>Viz také:
 

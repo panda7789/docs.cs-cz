@@ -1,22 +1,22 @@
 ---
-title: 'Postupy: Vytvoření datové služby pomocí zdroje dat Entity Framework ADO.NET (WCF Data Services)'
+title: 'Postupy: vytvoření datové služby pomocí zdroje dat Entity Framework ADO.NET (WCF Data Services)'
 ms.date: 08/24/2018
 helpviewer_keywords:
 - WCF Data Services, providers
 - WCF Data Services, Entity Framework
 ms.assetid: 6d11fec8-0108-42f5-8719-2a7866d04428
-ms.openlocfilehash: 8c597738d656b32e7b4c75246027b726f425c6ef
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 0aea4c21b5ea34cb0e8d944d37c879e918d6b27e
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053008"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74800573"
 ---
-# <a name="how-to-create-a-data-service-using-an-adonet-entity-framework-data-source-wcf-data-services"></a>Postupy: Vytvoření datové služby pomocí zdroje dat Entity Framework ADO.NET (WCF Data Services)
+# <a name="how-to-create-a-data-service-using-an-adonet-entity-framework-data-source-wcf-data-services"></a>Postupy: vytvoření datové služby pomocí zdroje dat Entity Framework ADO.NET (WCF Data Services)
 
 WCF Data Services zpřístupňuje data entit jako datovou službu. Tato data entity poskytuje rozhraní ADO. NETEntity, pokud je zdrojem dat relační databáze. V tomto tématu se dozvíte, jak vytvořit datový model založený Entity Framework ve webové aplikaci Visual Studio, která je založena na stávající databázi a pomocí tohoto datového modelu vytvořit novou datovou službu.
 
-Entity Framework také poskytuje nástroj příkazového řádku, který může vygenerovat Entity Framework model mimo projekt sady Visual Studio. Další informace najdete v tématu [jak: K vygenerování modelu a mapování souborů](../adonet/ef/how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md)použijte EdmGen. exe.
+Entity Framework také poskytuje nástroj příkazového řádku, který může vygenerovat Entity Framework model mimo projekt sady Visual Studio. Další informace naleznete v tématu [How to: use EdmGen. exe ke generování modelu a mapování souborů](../adonet/ef/how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md).
 
 ## <a name="to-add-an-entity-framework-model-that-is-based-on-an-existing-database-to-an-existing-web-application"></a>Přidání modelu Entity Framework, který je založen na existující databázi, do existující webové aplikace
 
@@ -43,7 +43,7 @@ Entity Framework také poskytuje nástroj příkazového řádku, který může 
     > [!NOTE]
     > Objekty zahrnuté v datovém modelu nejsou automaticky zpřístupněny datovou službou. Musí být výslovně vystaveny samotným službám. Další informace najdete v tématu [konfigurace datové služby](configuring-the-data-service-wcf-data-services.md).
 
-9. Kliknutím na **Dokončit** dokončete průvodce.
+9. Kliknutím na **Dokončit** průvodce dokončete.
 
      Tím se vytvoří výchozí datový model založený na konkrétní databázi. Entity Framework umožňuje přizpůsobit datový model. Další informace najdete v tématu [úlohy nástroje model EDM (Entity Data Model) Tools](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738480(v=vs.100)).
 
@@ -53,20 +53,20 @@ Entity Framework také poskytuje nástroj příkazového řádku, který může 
 
 2. V **prohlížeči modelů**klikněte pravým tlačítkem na model, klikněte na **vlastnosti**a potom si poznamenejte název kontejneru entity.
 
-3. V **Průzkumník řešení**klikněte pravým tlačítkem na název projektu ASP.NET a pak klikněte na **Přidat** > **novou položku**.
+3. V **Průzkumník řešení**klikněte pravým tlačítkem myši na název projektu ASP.NET a potom klikněte na **Přidat** > **Nová položka**.
 
 4. V dialogovém okně **Přidat novou položku** vyberte šablonu **Služba WCF Data Service** ve **webové** kategorii.
 
    ![Šablona položky datové služby WCF v aplikaci Visual Studio 2015](./media/wcf-data-service-item-template.png)
 
    > [!NOTE]
-   > Šablona **WCF Data Service** je k dispozici v aplikaci visual Studio 2015, ale ne v aplikaci visual Studio 2017.
+   > Šablona **WCF Data Service** je k dispozici v aplikaci visual Studio 2015, ale ne v aplikaci visual Studio 2017 nebo novější.
 
 5. Zadejte název služby a klikněte na tlačítko **OK**.
 
      Visual Studio vytvoří kód XML a soubory kódu pro novou službu. Ve výchozím nastavení se otevře okno Editor kódu.
 
-6. V kódu pro datovou službu nahraďte komentář `/* TODO: put your data source class name here */` v definici třídy definující datovou službu typem, který dědí <xref:System.Data.Objects.ObjectContext> z třídy a který je kontejner entit datového modelu, který byl zaznamenán v kroku 2.
+6. V kódu pro datovou službu nahraďte komentář `/* TODO: put your data source class name here */` v definici třídy definující datovou službu s typem, který dědí z třídy <xref:System.Data.Objects.ObjectContext> a který je kontejnerem entity datového modelu, který byl zaznamenán v kroku 2.
 
 7. V kódu pro datovou službu povolte autorizovaným klientům přístup k sadám entit, které datová služba zpřístupňuje. Další informace najdete v tématu [Vytvoření datové služby](creating-the-data-service.md).
 
@@ -76,5 +76,5 @@ Entity Framework také poskytuje nástroj příkazového řádku, který může 
 
 - [Definování datových služeb WCF Data Services](defining-wcf-data-services.md)
 - [Zprostředkovatelé datových služeb](data-services-providers-wcf-data-services.md)
-- [Postupy: Vytvoření datové služby pomocí zprostředkovatele reflexe](create-a-data-service-using-rp-wcf-data-services.md)
-- [Postupy: Vytvoření datové služby pomocí LINQ to SQL zdroje dat](create-a-data-service-using-linq-to-sql-wcf.md)
+- [Postupy: Vytvoření datové služby pomocí zprostředkovatel reflexe](create-a-data-service-using-rp-wcf-data-services.md)
+- [Postupy: Vytvoření datové služby pomocí zdroje dat LINQ to SQL](create-a-data-service-using-linq-to-sql-wcf.md)

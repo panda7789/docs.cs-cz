@@ -6,12 +6,12 @@ helpviewer_keywords:
 - types, obsolete in .NET Framework 4.5
 - obsolete types [.NET Framework]
 ms.assetid: e636d024-0fac-45eb-b721-25a8c0ceca8f
-ms.openlocfilehash: 748045c6e9d84ec71faa69ccfb9861472eb306e2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b7932a553f39e1f1da2a3946878d6224099da8da
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124121"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802684"
 ---
 # <a name="obsolete-types-in-the-net-framework"></a>Zastaralé typy v .NET Framework
 
@@ -19,55 +19,55 @@ ms.locfileid: "73124121"
 
 - [Zastaralé typy v systémových sestaveních](#obsolete_types_in_system_assemblies)
 
-  - [knihovna mscorlib. dll](#mscorlib)
+  - [mscorlib.dll](#mscorlib)
 
-  - [System. Core. dll](#Core)
+  - [System.Core.dll](#Core)
 
-  - [System. data. dll](#data)
+  - [System.Data.dll](#data)
 
-  - [System. data. OracleClient. dll](#oracleclient)
+  - [System.Data.OracleClient.dll](#oracleclient)
 
-  - [System. Design. dll](#design)
+  - [System.Design.dll](#design)
 
-  - [System. dll](#system)
+  - [System.dll](#system)
 
-  - [System. EnterpriseServices. dll](#enterpriseservices)
+  - [System.EnterpriseServices.dll](#enterpriseservices)
 
-  - [System. NET. dll](#net)
+  - [System.Net.dll](#net)
 
-  - [System. ServiceModel. dll](#servicemodel)
+  - [System.ServiceModel.dll](#servicemodel)
 
-  - [System. Web. dll](#web)
+  - [System.Web.dll](#web)
 
-  - [System. Web. Mobile. dll](#mobile)
+  - [System.Web.Mobile.dll](#mobile)
 
-  - [System. Workflow. Activities. dll](#workflow_activities)
+  - [System.Workflow.Activities.dll](#workflow_activities)
 
-  - [System. Workflow. ComponentModel. dll](#workflow_componentmodel)
+  - [System.Workflow.ComponentModel.dll](#workflow_componentmodel)
 
-  - [System. Workflow. Runtime. dll](#workflow_runtime)
+  - [System.Workflow.Runtime.dll](#workflow_runtime)
 
-  - [System. WorkflowServices. dll](#workflowservices)
+  - [System.WorkflowServices.dll](#workflowservices)
 
-  - [System. XAML. dll](#xaml)
+  - [System.Xaml.dll](#xaml)
 
-  - [System. XML. dll](#xml)
+  - [System.Xml.dll](#xml)
 
-  - [WindowsBase. dll](#WindowsBase)
+  - [WindowsBase.dll](#WindowsBase)
 
 - [Zastaralé typy v sestaveních společnosti Microsoft](#obsolete_types_in_microsoft_assemblies)
 
   - [IEHost. dll a IEExec. exe](#IEHost)
 
-  - [Microsoft. Build. Engine. dll](#Engine)
+  - [Microsoft.Build.Engine.dll](#Engine)
 
-  - [Microsoft. JScript. dll](#jscript)
+  - [Microsoft.JScript.dll](#jscript)
 
-  - [Microsoft. VisualBasic. Compatibility. dll](#VBCompat)
+  - [Microsoft.VisualBasic.Compatibility.dll](#VBCompat)
 
-  - [Microsoft. VisualBasic. Compatibility. data. dll](#VBCompatData)
+  - [Microsoft.VisualBasic.Compatibility.Data.dll](#VBCompatData)
 
-  - [Microsoft. VisualC. dll](#visualc)
+  - [Microsoft.VisualC.dll](#visualc)
 
 <a name="obsolete_types_in_system_assemblies"></a>
 
@@ -79,7 +79,7 @@ V následujících tabulkách jsou uvedeny typy, které byly deklarovány jako z
 
 ### <a name="assembly-mscorlibdll"></a>Sestavení: mscorlib. dll
 
-|Typ|Zpráva|
+|Type|Zpráva|
 |----------|-------------|
 |<xref:System.ExecutionEngineException?displayProperty=nameWithType>|Tento typ dřív označil nespecifikovanou závažnou chybu v modulu runtime. Modul runtime již nevyvolává tuto výjimku, takže tento typ je zastaralý.|
 |<xref:System.Collections.CaseInsensitiveHashCodeProvider?displayProperty=nameWithType>|Místo toho prosím použijte <xref:System.StringComparer?displayProperty=nameWithType>.|
@@ -143,9 +143,9 @@ V následujících tabulkách jsou uvedeny typy, které byly deklarovány jako z
 
 <a name="Core"></a>
 
-### <a name="assembly-systemcoredll"></a>Sestavení: System. Core. dll
+### <a name="assembly-systemcoredll"></a>Assembly: System.Core.dll
 
-|Typ|Zpráva|
+|Type|Zpráva|
 |----------|-------------|
 |<xref:System.Runtime.CompilerServices.ExecutionScope?displayProperty=nameWithType>|Použití tohoto typu vygeneruje chybu kompilátoru.<br /><br /> Nepoužívejte tento typ.|
 
@@ -153,9 +153,9 @@ V následujících tabulkách jsou uvedeny typy, které byly deklarovány jako z
 
 <a name="data"></a>
 
-### <a name="assembly-systemdatadll"></a>Sestavení: System. data. dll
+### <a name="assembly-systemdatadll"></a>Assembly: System.Data.dll
 
-|Typ|Zpráva|
+|Type|Zpráva|
 |----------|-------------|
 |<xref:System.Data.DataSysDescriptionAttribute?displayProperty=nameWithType>|<xref:System.Data.DataSysDescriptionAttribute> se už nepoužívá.|
 |<xref:System.Data.PropertyAttributes?displayProperty=nameWithType>|<xref:System.Data.PropertyAttributes> se už nepoužívá.|
@@ -166,9 +166,9 @@ V následujících tabulkách jsou uvedeny typy, které byly deklarovány jako z
 
 <a name="oracleclient"></a>
 
-### <a name="assembly-systemdataoracleclientdll"></a>Sestavení: System. data. OracleClient. dll
+### <a name="assembly-systemdataoracleclientdll"></a>Assembly: System.Data.OracleClient.dll
 
-|Typ|Zpráva|
+|Type|Zpráva|
 |----------|-------------|
 |<xref:System.Data.OracleClient.OracleClientFactory?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OracleClientFactory> se už nepoužívá.|
 |<xref:System.Data.OracleClient.OracleCommand?displayProperty=nameWithType>|<xref:System.Data.OracleClient.OracleCommand> se už nepoužívá.|
@@ -185,7 +185,7 @@ V následujících tabulkách jsou uvedeny typy, které byly deklarovány jako z
 
 ### <a name="assembly-systemdesigndll"></a>Sestavení: System. Design. dll
 
-|Typ|Zpráva|
+|Type|Zpráva|
 |----------|-------------|
 |<xref:System.ComponentModel.Design.LocalizationExtenderProvider?displayProperty=nameWithType>|Tato třída je zastaralá. Místo nich se používá <xref:System.ComponentModel.Design.Serialization.CodeDomLocalizationProvider?displayProperty=nameWithType>.|
 |<xref:System.Web.UI.Design.DataBindingCollectionConverter?displayProperty=nameWithType>|Použití tohoto typu není doporučeno, protože úpravy datových vazeb se spouští prostřednictvím <xref:System.ComponentModel.Design.DesignerActionList?displayProperty=nameWithType> namísto mřížky vlastností.|
@@ -208,7 +208,7 @@ V následujících tabulkách jsou uvedeny typy, které byly deklarovány jako z
 
 ### <a name="assembly-systemdll"></a>Sestavení: System. dll
 
-|Typ|Zpráva|
+|Type|Zpráva|
 |----------|-------------|
 |<xref:System.ComponentModel.IComNativeDescriptorHandler?displayProperty=nameWithType>|Toto rozhraní je zastaralé. Místo toho přidejte <xref:System.ComponentModel.TypeDescriptionProvider?displayProperty=nameWithType> pro popisovač typu <xref:System.ComponentModel.TypeDescriptor.ComObjectType%2A?displayProperty=nameWithType>.|
 |<xref:System.ComponentModel.RecommendedAsConfigurableAttribute?displayProperty=nameWithType>|Místo toho použijte <xref:System.ComponentModel.SettingsBindableAttribute?displayProperty=nameWithType> pro práci s novým modelem nastavení.|
@@ -222,9 +222,9 @@ V následujících tabulkách jsou uvedeny typy, které byly deklarovány jako z
 
 <a name="enterpriseservices"></a>
 
-### <a name="assembly-systementerpriseservicesdll"></a>Sestavení: System. EnterpriseServices. dll
+### <a name="assembly-systementerpriseservicesdll"></a>Assembly: System.EnterpriseServices.dll
 
-|Typ|Zpráva|
+|Type|Zpráva|
 |----------|-------------|
 |<xref:System.EnterpriseServices.RegistrationHelperTx?displayProperty=nameWithType>|Třída <xref:System.EnterpriseServices.RegistrationHelperTx> je zastaralá.|
 
@@ -232,9 +232,9 @@ V následujících tabulkách jsou uvedeny typy, které byly deklarovány jako z
 
 <a name="net"></a>
 
-### <a name="assembly-systemnetdll"></a>Sestavení: System. NET. dll
+### <a name="assembly-systemnetdll"></a>Assembly: System.Net.dll
 
-|Typ|Zpráva|
+|Type|Zpráva|
 |----------|-------------|
 |<xref:System.Net.INetworkProgress?displayProperty=nameWithType>|První zastaralá v .NET Framework 4,5.<br /><br /> Použití tohoto typu vygeneruje chybu kompilátoru.<br /><br /> Toto rozhraní API podporuje infrastrukturu rozhraní .NET Framework a není určeno pro použití přímo v kódu.|
 |<xref:System.Net.IUnsafeWebRequestCreate?displayProperty=nameWithType>|První zastaralá v .NET Framework 4,5.<br /><br /> Použití tohoto typu vygeneruje chybu kompilátoru.<br /><br /> Toto rozhraní API podporuje infrastrukturu rozhraní .NET Framework a není určeno pro použití přímo v kódu.|
@@ -250,9 +250,9 @@ V následujících tabulkách jsou uvedeny typy, které byly deklarovány jako z
 
 <a name="servicemodel"></a>
 
-### <a name="assembly-systemservicemodeldll"></a>Sestavení: System. ServiceModel. dll
+### <a name="assembly-systemservicemodeldll"></a>Assembly: System.ServiceModel.dll
 
-|Typ|Zpráva|
+|Type|Zpráva|
 |----------|-------------|
 |<xref:System.ServiceModel.NetPeerTcpBinding?displayProperty=nameWithType>|První zastaralá v .NET Framework 4,5.<br /><br /> Funkce rovnocenného kanálu je zastaralá a v budoucnu se odebere.|
 |<xref:System.ServiceModel.Channels.HttpCookieContainerBindingElement?displayProperty=nameWithType>|První zastaralá v .NET Framework 4,5.<br /><br /> Tento typ je zastaralý. Pokud chcete povolit <xref:System.Net.CookieContainer>http, použijte vlastnost `AllowCookies` u vazby HTTP nebo na <xref:System.ServiceModel.Channels.HttpTransportBindingElement>.|
@@ -267,224 +267,224 @@ V následujících tabulkách jsou uvedeny typy, které byly deklarovány jako z
 
 <a name="web"></a>
 
-### <a name="assembly-systemwebdll"></a>Sestavení: System. Web. dll
+### <a name="assembly-systemwebdll"></a>Assembly: System.Web.dll
 
-|Typ|Zpráva|
+|Type|Zpráva|
 |----------|-------------|
-|<xref:System.Web.Configuration.PassportAuthentication?displayProperty=nameWithType>|Tento typ je zastaralý. Produkt Passport Authentication již není podporován a byl nahrazen [účtem Microsoft](https://go.microsoft.com/fwlink/?LinkId=733413) .|
+|<xref:System.Web.Configuration.PassportAuthentication?displayProperty=nameWithType>|Tento typ je zastaralý. Produkt Passport Authentication již není podporován a byl nahrazen [účtem Microsoft](https://account.microsoft.com/account/Account?destrt=home-index) .|
 |<xref:System.Web.Mail.MailAttachment?displayProperty=nameWithType>|Doporučená alternativa je <xref:System.Net.Mail.Attachment?displayProperty=nameWithType>.|
 |<xref:System.Web.Mail.MailEncoding?displayProperty=nameWithType>|Doporučená alternativa je <xref:System.Net.Mime.TransferEncoding?displayProperty=nameWithType>.|
 |<xref:System.Web.Mail.MailFormat?displayProperty=nameWithType>|Doporučená alternativa je <xref:System.Net.Mail.MailMessage.IsBodyHtml%2A?displayProperty=nameWithType>.|
 |<xref:System.Web.Mail.MailMessage?displayProperty=nameWithType>|Doporučená alternativa je <xref:System.Net.Mail.MailMessage?displayProperty=nameWithType>.|
 |<xref:System.Web.Mail.MailPriority?displayProperty=nameWithType>|Doporučená alternativa je <xref:System.Net.Mail.MailPriority?displayProperty=nameWithType>.|
 |<xref:System.Web.Mail.SmtpMail?displayProperty=nameWithType>|Doporučená alternativa je <xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType>.|
-|<xref:System.Web.Security.PassportAuthenticationEventArgs?displayProperty=nameWithType>|Tento typ je zastaralý. Produkt Passport Authentication již není podporován a byl nahrazen [účtem Microsoft](https://go.microsoft.com/fwlink/?LinkId=733413) .|
-|<xref:System.Web.Security.PassportAuthenticationEventHandler?displayProperty=nameWithType>|Tento typ je zastaralý. Produkt Passport Authentication již není podporován a byl nahrazen [účtem Microsoft](https://go.microsoft.com/fwlink/?LinkId=733413) .|
-|<xref:System.Web.Security.PassportAuthenticationModule?displayProperty=nameWithType>|Tento typ je zastaralý. Produkt Passport Authentication již není podporován a byl nahrazen [účtem Microsoft](https://go.microsoft.com/fwlink/?LinkId=733413) .|
-|<xref:System.Web.Security.PassportIdentity?displayProperty=nameWithType>|Tento typ je zastaralý. Produkt Passport Authentication již není podporován a byl nahrazen [účtem Microsoft](https://go.microsoft.com/fwlink/?LinkId=733413) .|
-|<xref:System.Web.Security.PassportPrincipal?displayProperty=nameWithType>|Tento typ je zastaralý. Produkt Passport Authentication již není podporován a byl nahrazen [účtem Microsoft](https://go.microsoft.com/fwlink/?LinkId=733413) .|
+|<xref:System.Web.Security.PassportAuthenticationEventArgs?displayProperty=nameWithType>|Tento typ je zastaralý. Produkt Passport Authentication již není podporován a byl nahrazen [účtem Microsoft](https://account.microsoft.com/account/Account?destrt=home-index) .|
+|<xref:System.Web.Security.PassportAuthenticationEventHandler?displayProperty=nameWithType>|Tento typ je zastaralý. Produkt Passport Authentication již není podporován a byl nahrazen [účtem Microsoft](https://account.microsoft.com/account/Account?destrt=home-index) .|
+|<xref:System.Web.Security.PassportAuthenticationModule?displayProperty=nameWithType>|Tento typ je zastaralý. Produkt Passport Authentication již není podporován a byl nahrazen [účtem Microsoft](https://account.microsoft.com/account/Account?destrt=home-index) .|
+|<xref:System.Web.Security.PassportIdentity?displayProperty=nameWithType>|Tento typ je zastaralý. Produkt Passport Authentication již není podporován a byl nahrazen [účtem Microsoft](https://account.microsoft.com/account/Account?destrt=home-index) .|
+|<xref:System.Web.Security.PassportPrincipal?displayProperty=nameWithType>|Tento typ je zastaralý. Produkt Passport Authentication již není podporován a byl nahrazen [účtem Microsoft](https://account.microsoft.com/account/Account?destrt=home-index) .|
 |<xref:System.Web.UI.ObjectConverter?displayProperty=nameWithType>|Doporučená alternativa je <xref:System.Convert?displayProperty=nameWithType> a <xref:System.String.Format%2A?displayProperty=nameWithType>.|
 
 [Zpět na začátek](#introduction)
 
 <a name="mobile"></a>
 
-### <a name="assembly-systemwebmobiledll"></a>Sestavení: System. Web. Mobile. dll
+### <a name="assembly-systemwebmobiledll"></a>Assembly: System.Web.Mobile.dll
 
-|Typ|Zpráva|
+|Type|Zpráva|
 |----------|-------------|
-|<xref:System.Web.Mobile.CookielessData?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.Mobile.DeviceFilterElement?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.Mobile.DeviceFilterElementCollection?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.Mobile.DeviceFiltersSection?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.Mobile.ErrorHandlerModule?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.Mobile.MobileCapabilities?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.Mobile.MobileDeviceCapabilitiesSectionHandler?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.Mobile.MobileErrorInfo?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.Mobile.MobileFormsAuthentication?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.Design.MobileControls.IMobileDesigner?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.Design.MobileControls.IMobileWebFormServices?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.Design.MobileControls.MobileResource?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.Design.MobileControls.Converters.DataFieldConverter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.Design.MobileControls.Converters.DataMemberConverter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.AdRotator?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Alignment?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ArrayListCollectionBase?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.BaseValidator?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.BooleanOption?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Calendar?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Command?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.CommandFormat?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.CompareValidator?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Constants?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ControlElement?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ControlElementCollection?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ControlPager?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.CustomValidator?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.DesignerAdapterAttribute?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.DeviceElement?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.DeviceElementCollection?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.DeviceOverridableAttribute?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.DeviceSpecific?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.DeviceSpecificChoice?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.DeviceSpecificChoiceCollection?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.DeviceSpecificChoiceControlBuilder?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.DeviceSpecificChoiceTemplateBuilder?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.DeviceSpecificChoiceTemplateContainer?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.DeviceSpecificControlBuilder?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ErrorFormatterPage?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.FontInfo?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.FontSize?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Form?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.FormControlBuilder?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.FormMethod?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.IControlAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Image?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.IObjectListFieldCollection?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.IPageAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ItemPager?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ITemplateable?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Label?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Link?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.List?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ListCommandEventArgs?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ListCommandEventHandler?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ListControlBuilder?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ListDataBindEventArgs?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ListDataBindEventHandler?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ListDecoration?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ListSelectType?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.LiteralLink?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.LiteralText?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.LiteralTextContainerControlBuilder?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.LiteralTextControlBuilder?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.LoadItemsEventArgs?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.LoadItemsEventHandler?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.MobileControl?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.MobileControlBuilder?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.MobileControlsSection?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.MobileControlsSectionHandler?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.MobileListItem?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.MobileListItemCollection?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.MobileListItemType?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.MobilePage?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.MobileTypeNameConverter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.MobileUserControl?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ObjectList?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ObjectListCommand?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ObjectListCommandCollection?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ObjectListCommandEventArgs?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ObjectListCommandEventHandler?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ObjectListControlBuilder?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ObjectListDataBindEventArgs?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ObjectListDataBindEventHandler?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ObjectListField?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ObjectListFieldCollection?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ObjectListItem?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ObjectListItemCollection?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ObjectListSelectEventArgs?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ObjectListSelectEventHandler?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ObjectListShowCommandsEventArgs?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ObjectListShowCommandsEventHandler?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ObjectListTitleAttribute?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ObjectListViewMode?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.PagedControl?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.PagerStyle?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Panel?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.PanelControlBuilder?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.PersistNameAttribute?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.PhoneCall?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.RangeValidator?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.RegularExpressionValidator?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.RequiredFieldValidator?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.SelectionList?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Style?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.StyleSheet?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.StyleSheetControlBuilder?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.TemplateContainer?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.TextBox?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.TextBoxControlBuilder?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.TextControl?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.TextView?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.TextViewElement?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.ValidationSummary?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Wrapping?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.ChtmlCalendarAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.ChtmlCommandAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.ChtmlFormAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.ChtmlImageAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.ChtmlLinkAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.ChtmlMobileTextWriter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.ChtmlPageAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.ChtmlPhoneCallAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.ChtmlSelectionListAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.ChtmlTextBoxAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.ControlAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlCalendarAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlCommandAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlControlAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlFormAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlImageAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlLabelAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlLinkAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlListAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlLiteralTextAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlMobileTextWriter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlObjectListAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlPageAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlPanelAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlPhoneCallAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlSelectionListAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlTextBoxAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlTextViewAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlValidationSummaryAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.HtmlValidatorAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.MobileTextWriter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.MultiPartWriter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.UpWmlMobileTextWriter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.UpWmlPageAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.WmlCalendarAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.WmlCommandAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.WmlControlAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.WmlFormAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.WmlImageAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.WmlLabelAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.WmlLinkAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.WmlListAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.WmlLiteralTextAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.WmlMobileTextWriter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.WmlObjectListAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.WmlPageAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.WmlPanelAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.WmlPhoneCallAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.WmlPostFieldType?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.WmlSelectionListAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.WmlTextBoxAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.WmlTextViewAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.WmlValidationSummaryAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.WmlValidatorAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.Doctype?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.StyleSheetLocation?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlCalendarAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlCommandAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlControlAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlCssHandler?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlFormAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlImageAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlLabelAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlLinkAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlListAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlLiteralTextAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlMobileTextWriter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlObjectListAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlPageAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlPanelAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlPhoneCallAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlSelectionListAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlTextBoxAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlTextViewAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlValidationSummaryAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
-|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlValidatorAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](https://go.microsoft.com/fwlink/?LinkId=157231).|
+|<xref:System.Web.Mobile.CookielessData?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.Mobile.DeviceFilterElement?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.Mobile.DeviceFilterElementCollection?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.Mobile.DeviceFiltersSection?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.Mobile.ErrorHandlerModule?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.Mobile.MobileCapabilities?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.Mobile.MobileDeviceCapabilitiesSectionHandler?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.Mobile.MobileErrorInfo?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.Mobile.MobileFormsAuthentication?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.Design.MobileControls.IMobileDesigner?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.Design.MobileControls.IMobileWebFormServices?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.Design.MobileControls.MobileResource?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.Design.MobileControls.Converters.DataFieldConverter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.Design.MobileControls.Converters.DataMemberConverter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.AdRotator?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Alignment?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ArrayListCollectionBase?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.BaseValidator?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.BooleanOption?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Calendar?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Command?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.CommandFormat?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.CompareValidator?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Constants?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ControlElement?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ControlElementCollection?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ControlPager?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.CustomValidator?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.DesignerAdapterAttribute?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.DeviceElement?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.DeviceElementCollection?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.DeviceOverridableAttribute?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.DeviceSpecific?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.DeviceSpecificChoice?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.DeviceSpecificChoiceCollection?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.DeviceSpecificChoiceControlBuilder?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.DeviceSpecificChoiceTemplateBuilder?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.DeviceSpecificChoiceTemplateContainer?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.DeviceSpecificControlBuilder?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ErrorFormatterPage?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.FontInfo?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.FontSize?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Form?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.FormControlBuilder?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.FormMethod?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.IControlAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Image?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.IObjectListFieldCollection?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.IPageAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ItemPager?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ITemplateable?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Label?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Link?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.List?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ListCommandEventArgs?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ListCommandEventHandler?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ListControlBuilder?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ListDataBindEventArgs?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ListDataBindEventHandler?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ListDecoration?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ListSelectType?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.LiteralLink?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.LiteralText?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.LiteralTextContainerControlBuilder?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.LiteralTextControlBuilder?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.LoadItemsEventArgs?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.LoadItemsEventHandler?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.MobileControl?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.MobileControlBuilder?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.MobileControlsSection?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.MobileControlsSectionHandler?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.MobileListItem?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.MobileListItemCollection?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.MobileListItemType?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.MobilePage?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.MobileTypeNameConverter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.MobileUserControl?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ObjectList?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ObjectListCommand?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ObjectListCommandCollection?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ObjectListCommandEventArgs?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ObjectListCommandEventHandler?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ObjectListControlBuilder?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ObjectListDataBindEventArgs?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ObjectListDataBindEventHandler?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ObjectListField?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ObjectListFieldCollection?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ObjectListItem?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ObjectListItemCollection?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ObjectListSelectEventArgs?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ObjectListSelectEventHandler?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ObjectListShowCommandsEventArgs?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ObjectListShowCommandsEventHandler?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ObjectListTitleAttribute?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ObjectListViewMode?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.PagedControl?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.PagerStyle?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Panel?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.PanelControlBuilder?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.PersistNameAttribute?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.PhoneCall?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.RangeValidator?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.RegularExpressionValidator?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.RequiredFieldValidator?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.SelectionList?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Style?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.StyleSheet?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.StyleSheetControlBuilder?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.TemplateContainer?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.TextBox?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.TextBoxControlBuilder?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.TextControl?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.TextView?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.TextViewElement?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.ValidationSummary?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Wrapping?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.ChtmlCalendarAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.ChtmlCommandAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.ChtmlFormAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.ChtmlImageAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.ChtmlLinkAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.ChtmlMobileTextWriter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.ChtmlPageAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.ChtmlPhoneCallAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.ChtmlSelectionListAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.ChtmlTextBoxAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.ControlAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlCalendarAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlCommandAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlControlAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlFormAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlImageAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlLabelAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlLinkAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlListAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlLiteralTextAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlMobileTextWriter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlObjectListAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlPageAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlPanelAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlPhoneCallAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlSelectionListAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlTextBoxAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlTextViewAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlValidationSummaryAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.HtmlValidatorAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.MobileTextWriter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.MultiPartWriter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.UpWmlMobileTextWriter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.UpWmlPageAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.WmlCalendarAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.WmlCommandAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.WmlControlAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.WmlFormAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.WmlImageAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.WmlLabelAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.WmlLinkAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.WmlListAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.WmlLiteralTextAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.WmlMobileTextWriter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.WmlObjectListAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.WmlPageAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.WmlPanelAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.WmlPhoneCallAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.WmlPostFieldType?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.WmlSelectionListAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.WmlTextBoxAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.WmlTextViewAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.WmlValidationSummaryAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.WmlValidatorAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.Doctype?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.StyleSheetLocation?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlCalendarAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlCommandAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlControlAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlCssHandler?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlFormAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlImageAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlLabelAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlLinkAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlListAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlLiteralTextAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlMobileTextWriter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlObjectListAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlPageAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlPanelAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlPhoneCallAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlSelectionListAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlTextBoxAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlTextViewAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlValidationSummaryAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
+|<xref:System.Web.UI.MobileControls.Adapters.XhtmlAdapters.XhtmlValidatorAdapter?displayProperty=nameWithType>|Sestavení System. Web. Mobile. dll je zastaralé a již by se nemělo používat. Informace o vývoji mobilních aplikací ASP.NET najdete v tématu [ASP.NET pro mobilní zařízení](/aspnet/mobile/overview).|
 
 [Zpět na začátek](#introduction)
 
@@ -492,7 +492,7 @@ V následujících tabulkách jsou uvedeny typy, které byly deklarovány jako z
 
 ### <a name="assembly-systemworkflowactivitiesdll"></a>Sestavení: System. Workflow. Activities. dll
 
-|Typ|Zpráva|
+|Type|Zpráva|
 |----------|-------------|
 |Všechny typy v oboru názvů <xref:System.Workflow.Activities?displayProperty=nameWithType>|První zastaralá v .NET Framework 4,5.<br /><br /> System. Workflow. typy\* jsou zastaralé. Místo toho prosím použijte nové typy z <xref:System.Activities>.\*.|
 |<xref:System.Workflow.Activities.Configuration.ActiveDirectoryRoleFactoryConfiguration?displayProperty=nameWithType>|První zastaralá v .NET Framework 4,5.<br /><br /> System. Workflow. typy\* jsou zastaralé. Místo toho prosím použijte nové typy z <xref:System.Activities>.\*.|
@@ -504,9 +504,9 @@ V následujících tabulkách jsou uvedeny typy, které byly deklarovány jako z
 
 <a name="workflow_componentmodel"></a>
 
-### <a name="assembly-systemworkflowcomponentmodeldll"></a>Sestavení: System. Workflow. ComponentModel. dll
+### <a name="assembly-systemworkflowcomponentmodeldll"></a>Assembly: System.Workflow.ComponentModel.dll
 
-|Typ|Zpráva|
+|Type|Zpráva|
 |----------|-------------|
 |Všechny typy v oboru názvů <xref:System.Workflow.ComponentModel> s výjimkou <xref:System.Workflow.ComponentModel.GetValueOverride?displayProperty=nameWithType> a <xref:System.Workflow.ComponentModel.SetValueOverride?displayProperty=nameWithType>|První zastaralá v .NET Framework 4,5.<br /><br /> System. Workflow. typy\* jsou zastaralé. Místo toho prosím použijte nové typy z <xref:System.Activities>.\*.|
 |Všechny typy v oboru názvů <xref:System.Workflow.ComponentModel.Compiler> s výjimkou <xref:System.Workflow.ComponentModel.Compiler.ValidationError?displayProperty=nameWithType> a <xref:System.Workflow.ComponentModel.Compiler.ValidationErrorCollection?displayProperty=nameWithType>|První zastaralá v .NET Framework 4,5.<br /><br /> System. Workflow. typy\* jsou zastaralé. Místo toho prosím použijte nové typy z <xref:System.Activities>.\*.|
@@ -525,7 +525,7 @@ V následujících tabulkách jsou uvedeny typy, které byly deklarovány jako z
 
 ### <a name="assembly-systemworkflowruntimedll"></a>Sestavení: System. Workflow. Runtime. dll
 
-|Typ|Zpráva|
+|Type|Zpráva|
 |----------|-------------|
 |<xref:System.Activities.Statements.Interop?displayProperty=nameWithType>|První zastaralá v .NET Framework 4,5.<br /><br />Typy Workflow Foundation 3,0 jsou zastaralé. Místo toho použijte typy pracovního postupu 4,0 z <xref:System.Activities>.\*.|
 |<xref:System.Activities.Tracking.InteropTrackingRecord?displayProperty=nameWithType>|První zastaralá v .NET Framework 4,5.<br /><br />Typy Workflow Foundation 3,0 jsou zastaralé. Místo toho použijte typy pracovního postupu 4,0 z <xref:System.Activities>.\*.|
@@ -539,9 +539,9 @@ V následujících tabulkách jsou uvedeny typy, které byly deklarovány jako z
 
 <a name="workflowservices"></a>
 
-### <a name="assembly-systemworkflowservicesdll"></a>Sestavení: System. WorkflowServices. dll
+### <a name="assembly-systemworkflowservicesdll"></a>Assembly: System.WorkflowServices.dll
 
-|Typ|Zpráva|
+|Type|Zpráva|
 |----------|-------------|
 |<xref:System.ServiceModel.WorkflowServiceHost?displayProperty=nameWithType>|První zastaralá v .NET Framework 4,5.<br /><br /> Typy WF 3 jsou zastaralé. Místo toho prosím použijte nové typy WF 4 z <xref:System.Activities>.\*.|
 |<xref:System.ServiceModel.Activation.WorkflowServiceHostFactory?displayProperty=nameWithType>|První zastaralá v .NET Framework 4,5.<br /><br /> Typy WF 3 jsou zastaralé. Místo toho prosím použijte nové typy WF 4 z <xref:System.Activities>.\*.|
@@ -569,9 +569,9 @@ V následujících tabulkách jsou uvedeny typy, které byly deklarovány jako z
 
 <a name="xaml"></a>
 
-### <a name="assembly-systemxamldll"></a>Sestavení: System. XAML. dll
+### <a name="assembly-systemxamldll"></a>Assembly: System.Xaml.dll
 
-|Typ|Zpráva|
+|Type|Zpráva|
 |----------|-------------|
 |<xref:System.Windows.Markup.AcceptedMarkupExtensionExpressionTypeAttribute?displayProperty=nameWithType>|Toto není používáno analyzátorem XAML. Podívejte se prosím na <xref:System.Windows.Markup.XamlSetMarkupExtensionAttribute?displayProperty=nameWithType>.|
 
@@ -579,9 +579,9 @@ V následujících tabulkách jsou uvedeny typy, které byly deklarovány jako z
 
 <a name="xml"></a>
 
-### <a name="assembly-systemxmldll"></a>Sestavení: System. XML. dll
+### <a name="assembly-systemxmldll"></a>Assembly: System.Xml.dll
 
-|Typ|Zpráva|
+|Type|Zpráva|
 |----------|-------------|
 |<xref:System.Xml.IApplicationResourceStreamResolver?displayProperty=nameWithType>|První zastaralá v .NET Framework 4,5.<br /><br /> Použití tohoto typu vygeneruje chybu kompilátoru.<br /><br /> Toto rozhraní API podporuje infrastrukturu rozhraní .NET Framework a není určeno pro použití přímo v kódu.|
 |<xref:System.Xml.Schema.XmlSchemaCollection?displayProperty=nameWithType>|Pro kompilaci a ověřování schématu použijte <xref:System.Xml.Schema.XmlSchemaSet?displayProperty=nameWithType>.|
@@ -595,7 +595,7 @@ V následujících tabulkách jsou uvedeny typy, které byly deklarovány jako z
 
 ### <a name="assembly-windowsbasedll"></a>Sestavení: WindowsBase. dll
 
-|Typ|Zpráva|
+|Type|Zpráva|
 |----------|-------------|
 |<xref:System.Windows.Markup.IReceiveMarkupExtension?displayProperty=nameWithType>|<xref:System.Windows.Markup.IReceiveMarkupExtension?displayProperty=nameWithType> se už nepoužívá. Toto rozhraní se už nepoužívá.|
 
@@ -619,7 +619,7 @@ Z .NET Framework byla odebrána sestavení IEHost. dll a IEExec. exe. Všechny j
 
 ### <a name="assembly-microsoftbuildenginedll"></a>Sestavení: Microsoft. Build. Engine. dll
 
-|Typ|Zpráva|
+|Type|Zpráva|
 |----------|-------------|
 |<xref:Microsoft.Build.BuildEngine.Engine?displayProperty=nameWithType>|Tato třída je zastaralá. Místo toho prosím použijte <xref:Microsoft.Build.Evaluation.ProjectCollection?displayProperty=nameWithType> ze sestavení *Microsoft. Build* .|
 |<xref:Microsoft.Build.BuildEngine.Project?displayProperty=nameWithType>|Tato třída je zastaralá. Místo toho prosím použijte <xref:Microsoft.Build.Evaluation.ProjectCollection?displayProperty=nameWithType> ze sestavení *Microsoft. Build* .|
@@ -628,9 +628,9 @@ Z .NET Framework byla odebrána sestavení IEHost. dll a IEExec. exe. Všechny j
 
 <a name="jscript"></a>
 
-### <a name="assembly-microsoftjscriptdll"></a>Sestavení: Microsoft. JScript. dll
+### <a name="assembly-microsoftjscriptdll"></a>Assembly: Microsoft.JScript.dll
 
-|Typ|Zpráva|
+|Type|Zpráva|
 |----------|-------------|
 |<xref:Microsoft.JScript.Vsa.BaseVsaEngine?displayProperty=nameWithType>|Tento typ se v aplikaci Visual Studio 2005 nepoužívá. pro tuto funkci neexistuje žádná náhrada. Další nápovědu najdete v dokumentaci k <xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType>.|
 |<xref:Microsoft.JScript.Vsa.BaseVsaSite?displayProperty=nameWithType>|Tento typ se v aplikaci Visual Studio 2005 nepoužívá. pro tuto funkci neexistuje žádná náhrada. Další nápovědu najdete v dokumentaci k <xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType>.|
@@ -659,7 +659,7 @@ Z .NET Framework byla odebrána sestavení IEHost. dll a IEExec. exe. Všechny j
 
 Informace o migraci z Visual Basic 6 najdete v tématu [centrum prostředků Visual Basic 6,0](https://docs.microsoft.com/previous-versions/visualstudio/visual-basic-6/visual-basic-6.0-documentation).
 
-|Typ|Zpráva|
+|Type|Zpráva|
 |----------|-------------|
 |<xref:Microsoft.VisualBasic.Compatibility.VB6.BaseControlArray?displayProperty=nameWithType>|Tento člen je zastaralý.|
 |<xref:Microsoft.VisualBasic.Compatibility.VB6.BaseOcxArray?displayProperty=nameWithType>|Tento člen je zastaralý.|
@@ -735,7 +735,7 @@ Informace o migraci z Visual Basic 6 najdete v tématu [centrum prostředků Vis
 
 ### <a name="assembly-microsoftvisualbasiccompatibilitydatadll"></a>Sestavení: Microsoft. VisualBasic. Compatibility. data. dll
 
-|Typ|Zpráva|
+|Type|Zpráva|
 |----------|-------------|
 |<xref:Microsoft.VisualBasic.Compatibility.VB6.ADODC?displayProperty=nameWithType>|Tento člen je zastaralý.|
 |<xref:Microsoft.VisualBasic.Compatibility.VB6.ADODC.BOFActionEnum?displayProperty=nameWithType>|Tento člen je zastaralý.|
@@ -793,7 +793,7 @@ Informace o migraci z Visual Basic 6 najdete v tématu [centrum prostředků Vis
 
 ### <a name="assembly-microsoftvisualcdll"></a>Sestavení: Microsoft. VisualC. dll
 
-|Typ|Zpráva|
+|Type|Zpráva|
 |----------|-------------|
 |<xref:Microsoft.VisualC.DebugInfoInPDBAttribute?displayProperty=nameWithType>|Microsoft. VisualC. dll je zastaralé sestavení a existuje pouze pro zpětnou kompatibilitu.|
 |<xref:Microsoft.VisualC.DecoratedNameAttribute?displayProperty=nameWithType>|Microsoft. VisualC. dll je zastaralé sestavení a existuje pouze pro zpětnou kompatibilitu.|

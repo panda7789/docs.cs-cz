@@ -2,18 +2,20 @@
 title: Izolace sítě pro aplikace z obchodu Microsoft Store
 ms.date: 03/30/2017
 ms.assetid: b064497c-d956-46b8-838d-7a0223c7e200
-ms.openlocfilehash: 34b8865781079f45a68d3dd1aab7fbd66c703d50
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 390a0281f03b08322cc1bee469b601fd5a1547c4
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447416"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802161"
 ---
 # <a name="network-isolation-for-windows-store-apps"></a>Izolace sítě pro aplikace z obchodu Microsoft Store
-Třídy v oborech názvů <xref:System.Net>, <xref:System.Net.Http>a <xref:System.Net.Http.Headers> lze použít k vývoji aplikací pro Windows Store nebo aplikací klasické pracovní plochy. Při použití v aplikaci pro Windows Store jsou třídy v těchto oborech názvů ovlivněny izolací sítě, což je součást modelu zabezpečení aplikace, kterou používá [!INCLUDE[win8](../../../includes/win8-md.md)]. V manifestu aplikace musí být povoleny vhodné síťové funkce pro aplikaci pro Windows Store, aby mohl systém povolit přístup k síti.  
+
+Třídy v oborech názvů <xref:System.Net>, <xref:System.Net.Http>a <xref:System.Net.Http.Headers> lze použít k vývoji aplikací pro Windows Store nebo aplikací klasické pracovní plochy. Při použití v aplikaci pro Windows Store jsou třídy v těchto oborech názvů ovlivněny izolací sítě, což je součást modelu zabezpečení aplikace, kterou používá systém Windows 8. V manifestu aplikace musí být povoleny vhodné síťové funkce pro aplikaci pro Windows Store, aby mohl systém povolit přístup k síti.  
   
 ## <a name="checklist-for-network-isolation"></a>Kontrolní seznam pro izolaci sítě  
- Pomocí tohoto kontrolního seznamu se ujistěte, že je pro vaši aplikaci pro Windows Store nakonfigurovaná izolace sítě.  
+
+Pomocí tohoto kontrolního seznamu se ujistěte, že je pro vaši aplikaci pro Windows Store nakonfigurovaná izolace sítě.  
   
 1. Určete směr požadavků na přístup k síti, které aplikace potřebuje. Může to být buď odchozí požadavky iniciované klientem, nebo příchozí nevyžádaný požadavek, nebo může být kombinací obou těchto typů síťových požadavků.  
   
@@ -23,7 +25,7 @@ Třídy v oborech názvů <xref:System.Net>, <xref:System.Net.Http>a <xref:Syste
   
 4. Nasaďte a spusťte aplikaci pro testování pomocí nástrojů pro izolaci sítě, které jsou k dispozici pro řešení potíží.  
   
- Podrobnější informace o tom, jak nakonfigurovat možnosti sítě a nástroje pro izolaci používané pro řešení potíží s izolací sítě, najdete v tématu [Konfigurace možností izolace sítě](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10)) v dokumentaci pro vývojáře Windows 8. x Store.
+Podrobnější informace o tom, jak nakonfigurovat možnosti sítě a nástroje pro izolaci používané pro řešení potíží s izolací sítě, najdete v tématu [Konfigurace možností izolace sítě](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10)) v dokumentaci pro vývojáře Windows 8. x Store.
   
 ## <a name="see-also"></a>Viz také:
 

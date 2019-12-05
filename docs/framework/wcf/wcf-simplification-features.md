@@ -2,12 +2,12 @@
 title: Funkce zjednodušení WCF
 ms.date: 03/30/2017
 ms.assetid: 4535a511-6064-4da0-b361-80262a891663
-ms.openlocfilehash: 85c50e5939a5e63202d57bca08393b9b79308f57
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: dd944ad2963e29fd3aa9254f3a37f2c2b98ce70d
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321218"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802385"
 ---
 # <a name="wcf-simplification-features"></a>Funkce zjednodušení WCF
 
@@ -88,13 +88,13 @@ Služba WCF poskytuje ASP.NET režim kompatibility pro udělení přístupu výv
 
 - Do WCF se přidala nová podpora pro asynchronní streamování. Pokud chcete povolit asynchronní streamování, přidejte do hostitele služby chování koncového bodu <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior> a nastavte jeho vlastnost <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior.AsynchronousSendEnabled%2A> na `true`. Tato možnost může přinést škálovatelnost, když služba odesílá streamované zprávy více klientům, které se čtou pomalu. WCF již neblokuje jedno vlákno na klienta a uvolní vlákno pro obsluhu jiného klienta.
 
-- Odebrala se omezení týkající se ukládání zpráv do vyrovnávací paměti, když je služba IIS hostovaná. V předchozích verzích služby WCF při přijímání zprávy pro službu hostovanou službou IIS, která používala přenos zpráv, ASP.NET by mohla celou zprávu ukládat do vyrovnávací paměti před odesláním do WCF. To by způsobilo velkou spotřebu paměti. Toto ukládání do vyrovnávací paměti se odebralo v .NET 4,5 a teď můžou služby WCF hostované službou IIS začít zpracovávat příchozí datový proud před přijetím celé zprávy a tím umožnit skutečné streamování. Díky tomu může WCF reagovat okamžitě na zprávy a povolit Vylepšený výkon. Navíc už nemusíte zadávat hodnotu pro `maxRequestLength`, omezení velikosti ASP.NET příchozích požadavků. Je-li tato vlastnost nastavena, je ignorována. Další informace o `maxRequestLength` naleznete v části [\<httpRuntime > elementu konfigurace](https://go.microsoft.com/fwlink/?LinkId=223344). Pořád budete muset nakonfigurovat maxAllowedContentLength. Další informace najdete v tématu [omezení požadavků služby IIS](https://go.microsoft.com/fwlink/?LinkId=225908).
+- Odebrala se omezení týkající se ukládání zpráv do vyrovnávací paměti, když je služba IIS hostovaná. V předchozích verzích služby WCF při přijímání zprávy pro službu hostovanou službou IIS, která používala přenos zpráv, ASP.NET by mohla celou zprávu ukládat do vyrovnávací paměti před odesláním do WCF. To by způsobilo velkou spotřebu paměti. Toto ukládání do vyrovnávací paměti se odebralo v .NET 4,5 a teď můžou služby WCF hostované službou IIS začít zpracovávat příchozí datový proud před přijetím celé zprávy a tím umožnit skutečné streamování. Díky tomu může WCF reagovat okamžitě na zprávy a povolit Vylepšený výkon. Navíc už nemusíte zadávat hodnotu pro `maxRequestLength`, omezení velikosti ASP.NET příchozích požadavků. Je-li tato vlastnost nastavena, je ignorována. Další informace o `maxRequestLength` naleznete v části [\<httpRuntime > elementu konfigurace](https://docs.microsoft.com/previous-versions/dotnet/netframework-1.1/e1f13641(v=vs.71)). Pořád budete muset nakonfigurovat maxAllowedContentLength. Další informace najdete v tématu [omezení požadavků služby IIS](https://docs.microsoft.com/previous-versions/iis/settings-schema/ms689462(v=vs.90)).
 
 ## <a name="new-transport-default-values"></a>Nové výchozí hodnoty přenosu
 
 Následující tabulka popisuje nastavení, která se změnila a kde najít další informace.
 
-|Vlastnost|Zapnuto|Nové výchozí|Další informace|
+|Vlastnost|Zapnout|Nové výchozí|Další informace|
 |--------------|--------|-----------------|----------------------|
 |channelInitializationTimeout|<xref:System.ServiceModel.NetTcpBinding>|30 sekund|Tato vlastnost určuje, jak dlouho může připojení TCP trvat při ověřování pomocí protokolu rámců .NET. Klient potřebuje odeslat některá počáteční data předtím, než server bude mít dostatek informací k provedení ověření. Tento časový limit je úmyslně menší než ReceiveTimeout (10 min), aby škodlivé neověřené klienty neudržovaly připojení na server po dlouhou dobu. Výchozí hodnota je 30 sekund. Další informace o <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ChannelInitializationTimeout%2A>|
 |listenBacklog|<xref:System.ServiceModel.NetTcpBinding>|16 * počet procesorů|Tato vlastnost na úrovni soketu popisuje počet požadavků čekajících na přijetí k zařazení do fronty. Pokud nevyřízená fronta nevyřízených položek vyplní, budou nové požadavky na soket odmítnuty. Další informace o <xref:System.ServiceModel.NetTcpBinding.ListenBacklog%2A>|

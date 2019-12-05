@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF Data Services, quick-start example
 - WCF Data Services, Entity Data Model (EDM) service
 ms.assetid: 7b18ca1e-d4d6-4c7a-afb9-ce3cebb98a8d
-ms.openlocfilehash: d0002182c5ae519c36348acdd2587bca499fe72e
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: df3151dfd3628231d84d2d128c61d1c0b6b0d48e
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975143"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74800362"
 ---
 # <a name="quickstart-wcf-data-services"></a>Rychlý Start (WCF Data Services)
 
@@ -26,7 +26,7 @@ K dokončení tohoto rychlého startu je nutné nainstalovat následující komp
 
 - Visual Studio
 
-- Instance SQL Server. To zahrnuje SQL Server Express, který je součástí výchozí instalace sady Visual Studio 2015 nebo jako součást úlohy **ukládání a zpracování dat** v aplikaci Visual Studio 2017.
+- Instance SQL Server. To zahrnuje SQL Server Express, který je součástí výchozí instalace sady Visual Studio 2015 nebo jako součást úlohy **ukládání a zpracování dat** v aplikaci Visual Studio 2017 nebo novější.
 
 - Ukázkovou databázi Northwind Pokud si chcete stáhnout tuto ukázkovou databázi, přečtěte si část [databáze pro stahování a ukázkové databáze pro SQL Server](https://go.microsoft.com/fwlink/?linkid=24758).
 

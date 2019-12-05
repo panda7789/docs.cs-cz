@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF [WCF], what's new
 - Windows Communication Foundation [WCF], what's new
 ms.assetid: 7e93fe73-af93-46b5-9f63-32f761ee40cf
-ms.openlocfilehash: 0a065676d81b36f32729bb08c23025825e94d3bc
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: e01b3a39a004e963e5bb66c5fa71433cb4e7204a
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320461"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802372"
 ---
 # <a name="whats-new-in-windows-communication-foundation-45"></a>Co je nového ve WCF 4.5
 
@@ -40,7 +40,7 @@ Přenositelné podmnožiny projektů umožňují programátorům sestavení .NET
 
 ### <a name="aspnet-compatibility-mode-default-changed"></a>Režim kompatibility ASP.NET se ve výchozím nastavení změnil
 
-Služba WCF poskytuje ASP.NET režim kompatibility pro udělení přístupu vývojářům úplný přístup k funkcím v kanálu HTTP ASP.NET při psaní služeb WCF. Chcete-li použít tento režim, je nutné nastavit atribut `aspNetCompatibilityEnabled` na hodnotu true v části [\<serviceHostingEnvironment >](../configure-apps/file-schema/wcf/servicehostingenvironment.md) souboru Web. config. Kromě toho musí mít všechny služby v této doméně appDomain vlastnost `RequirementsMode` ve své <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> nastavené na <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed> nebo <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required>. Ve výchozím nastavení je <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> nastavená na <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed>. Další informace najdete v tématu [služby WCF a ASP.NET](./feature-details/wcf-services-and-aspnet.md).
+Služba WCF poskytuje ASP.NET režim kompatibility pro udělení přístupu vývojářům úplný přístup k funkcím v kanálu HTTP ASP.NET při psaní služeb WCF. Chcete-li použít tento režim, je nutné nastavit atribut `aspNetCompatibilityEnabled` na hodnotu true v části [\<serviceHostingEnvironment >](../configure-apps/file-schema/wcf/servicehostingenvironment.md) souboru Web. config. Kromě toho musí mít kterákoli služba v této doméně appDomain vlastnost `RequirementsMode` v <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> nastavená na <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed> nebo <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required>. Ve výchozím nastavení je <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> nyní nastaveno na <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed>. Další informace najdete v tématu [služby WCF a ASP.NET](./feature-details/wcf-services-and-aspnet.md).
 
 ### <a name="new-transport-default-values"></a>Nové výchozí hodnoty přenosu
 
@@ -78,13 +78,13 @@ WebSockets je technologie, která poskytuje skutečnou obousměrnou komunikaci p
 
 Následující tabulka popisuje nastavení, která se změnila a kde najít další informace.
 
-|Vlastnost|On|Nové výchozí|Další informace najdete v tématu.|
+|Vlastnost|Zapnout|Nové výchozí|Další informace najdete v tématu .|
 |--------------|--------|-----------------|------------------------------|
 |channelInitializationTimeout|<xref:System.ServiceModel.NetTcpBinding>|30 sekund|<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ChannelInitializationTimeout%2A>|
 |listenBacklog|<xref:System.ServiceModel.NetTcpBinding>|12 * počet procesorů|<xref:System.ServiceModel.NetTcpBinding.ListenBacklog%2A>|
-|maxPendingAccepts|ConnectionOrientedTransportBindingElement<br /><br /> SMSvcHost. exe|2 * počet procesorů pro přenos<br /><br /> 4 \* počet procesorů pro SMSvcHost. exe|<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingAccepts%2A> [Konfigurace služby sdílení portů Net. TCP](./feature-details/configuring-the-net-tcp-port-sharing-service.md)|
+|maxPendingAccepts|ConnectionOrientedTransportBindingElement<br /><br /> SMSvcHost.exe|2 * počet procesorů pro přenos<br /><br /> 4 \* počet procesorů pro SMSvcHost. exe|<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingAccepts%2A> [Konfigurace služby sdílení portů Net. TCP](./feature-details/configuring-the-net-tcp-port-sharing-service.md)|
 |maxPendingConnections|ConnectionOrientedTransportBindingElement|12 * počet procesorů|<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingConnections%2A>|
-|receiveTimeout|SMSvcHost. exe|30 sekund|[Konfigurace služby sdílení portů Net.TCP](./feature-details/configuring-the-net-tcp-port-sharing-service.md)|
+|receiveTimeout|SMSvcHost.exe|30 sekund|[Konfigurace služby sdílení portů Net.TCP](./feature-details/configuring-the-net-tcp-port-sharing-service.md)|
 
 ## <a name="xml-editor-tooltips"></a>Popisy editoru XML
 
@@ -92,11 +92,11 @@ Editor XML sady Visual Studio nyní poskytuje popisy pro každý prvek konfigura
 
 ## <a name="configuring-wcf-services-in-code"></a>Konfigurace služeb WCF v kódu
 
-Windows Communication Foundation (WCF) umožňuje vývojářům nakonfigurovat služby pomocí konfiguračních souborů nebo kódu. Konfigurační soubory jsou užitečné, když po nasazení potřebujete nakonfigurovat službu. Při použití konfiguračních souborů potřebuje IT specialista aktualizovat pouze konfigurační soubor, není nutné znovu zkompilována. Konfigurační soubory ale mohou být složité a obtížné udržovat. Neexistuje žádná podpora pro ladění konfiguračních souborů a konfigurační prvky jsou odkazovány pomocí názvů, které usnadňují a obtíže při vytváření konfiguračních souborů. WCF také umožňuje nakonfigurovat služby v kódu. V dřívějších verzích WCF (4,0 a starší) konfigurace služeb v kódu byla v rámci scénářů s vlastním hostováním velmi snadná, třída <xref:System.ServiceModel.ServiceHost> umožňuje nakonfigurovat koncové body a chování před voláním třídy ServiceHost. Open. Ve scénářích, kde se nachází web, ale nemáte přístup ke třídě <xref:System.ServiceModel.ServiceHost>. Pro konfiguraci webové hostované služby jste museli vytvořit `System.ServiceModel.ServiceHostFactory`, která vytvořila <xref:System.ServiceModel.Activation.ServiceHostFactory> a provedla jakoukoli potřebnou konfiguraci. Počínaje verzí .NET 4,5 nabízí WCF snazší způsob, jak v kódu nakonfigurovat služby hostované v místním prostředí i na webu. Další informace najdete v tématu [Konfigurace služeb WCF v kódu](configuring-wcf-services-in-code.md).
+Windows Communication Foundation (WCF) umožňuje vývojářům nakonfigurovat služby pomocí konfiguračních souborů nebo kódu. Konfigurační soubory jsou užitečné, když po nasazení potřebujete nakonfigurovat službu. Při použití konfiguračních souborů potřebuje IT specialista aktualizovat pouze konfigurační soubor, není nutné znovu zkompilována. Konfigurační soubory ale mohou být složité a obtížné udržovat. Neexistuje žádná podpora pro ladění konfiguračních souborů a konfigurační prvky jsou odkazovány pomocí názvů, které usnadňují a obtíže při vytváření konfiguračních souborů. WCF také umožňuje nakonfigurovat služby v kódu. V dřívějších verzích WCF (4,0 a starší) konfigurace služeb v kódu byla v rámci scénářů s vlastním hostováním velmi snadná, <xref:System.ServiceModel.ServiceHost> třídy vám umožňují nakonfigurovat koncové body a chování před voláním třídy ServiceHost. Open. Ve scénářích, kde se nachází web, ale nemáte přístup k třídě <xref:System.ServiceModel.ServiceHost>. Pro konfiguraci webové hostované služby jste museli vytvořit `System.ServiceModel.ServiceHostFactory`, která vytvořila <xref:System.ServiceModel.Activation.ServiceHostFactory> a provedla všechny potřebné konfigurace. Počínaje verzí .NET 4,5 nabízí WCF snazší způsob, jak v kódu nakonfigurovat služby hostované v místním prostředí i na webu. Další informace najdete v tématu [Konfigurace služeb WCF v kódu](configuring-wcf-services-in-code.md).
 
 ## <a name="channelfactory-caching"></a>Třída ChannelFactory pro ukládání do mezipaměti
 
-Klientské aplikace WCF používají ke tvorbě komunikačního kanálu se službou WCF třídu <xref:System.ServiceModel.ChannelFactory%601>. Vytváření instancí <xref:System.ServiceModel.ChannelFactory%601> má za následek určitou režii, protože zahrnuje následující operace:
+Klientské aplikace WCF používají třídu <xref:System.ServiceModel.ChannelFactory%601> k vytvoření komunikačního kanálu se službou WCF. Vytváření instancí <xref:System.ServiceModel.ChannelFactory%601> způsobí určitou režii, protože zahrnuje následující operace:
 
 1. Sestavování stromu <xref:System.ServiceModel.Description.ContractDescription>
 
@@ -114,7 +114,7 @@ Počínaje WCF 4,5 binární kodér WCF přidá podporu pro kompresi. Typ kompre
 
 ## <a name="udp"></a>UDP
 
-Byla přidána podpora pro přenos UDP, který vývojářům umožňuje psát služby, které používají zasílání zpráv "Fire and zapomene". Klient pošle zprávu službě a neočekává odpověď ze služby.
+Byla přidána podpora pro přenos UDP, který vývojářům umožňuje psát služby, které používají zasílání zpráv "Fire and zapomene". Klient odešle zprávu službě a neočekává od služby žádnou odpověď.
 
 ## <a name="multiple-authentication-support"></a>Podpora více ověřování
 
@@ -126,7 +126,7 @@ Přidala se podpora, aby služba WCF mohla používat mezinárodní názvy domé
 
 ## <a name="httpclient"></a>HttpClient
 
-Byla přidána nová třída s názvem <xref:System.Net.Http.HttpClient>, která zajistí mnohem snazší práci s požadavky HTTP. Další informace najdete v tématu [vytváření aplikací v sociálních sítích a jejich připojení ke službám http](https://go.microsoft.com/fwlink/?LinkId=231886) a [ukázce klienta http](https://code.msdn.microsoft.com/windowsapps/HttpClient-sample-55700664).
+Přidala se nová třída s názvem <xref:System.Net.Http.HttpClient>, která zajistí mnohem snazší práci s požadavky HTTP. Další informace najdete v tématu [vytváření aplikací v sociálních sítích a jejich připojení ke službám http](https://channel9.msdn.com/Events/BUILD/BUILD2011/PLAT-581T) a [ukázce klienta http](https://code.msdn.microsoft.com/windowsapps/HttpClient-sample-55700664).
 
 ## <a name="configuration-intellisense"></a>Technologie IntelliSense pro konfiguraci
 
@@ -159,4 +159,4 @@ IHttpCookieContainerManager cookieManager = factory.GetProperty<IHttpCookieConta
 System.Net.CookieContainer container = cookieManager.CookieContainer;
 ```
 
-Pak můžete načíst nebo nastavit soubory cookie z <xref:System.Net.CookieContainer>. Pokud je AllowCookies nastavené na hodnotu false, můžete soubory cookie ručně načíst pomocí <xref:System.ServiceModel.OperationContext> a odeslat je do jiných požadavků pomocí jiného <xref:System.ServiceModel.OperationContext> nebo pomocí kontroly zpráv. Rozhraní IHttpCookieContainerManager umožňuje ověřit uživatele pomocí služby a použít ověřovací soubor cookie vrácený touto službou k ověřování s ostatními službami.
+Pak můžete načíst nebo nastavit soubory cookie z <xref:System.Net.CookieContainer>. Pokud je AllowCookies nastaveno na hodnotu false, můžete soubory cookie ručně načíst pomocí <xref:System.ServiceModel.OperationContext> a odeslat je do jiných požadavků pomocí jiného <xref:System.ServiceModel.OperationContext> nebo kontroly zpráv. Rozhraní IHttpCookieContainerManager umožňuje ověřit uživatele pomocí služby a použít ověřovací soubor cookie vrácený touto službou k ověřování s ostatními službami.

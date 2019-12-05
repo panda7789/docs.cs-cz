@@ -2,12 +2,12 @@
 title: Schéma databáze trvalosti
 ms.date: 03/30/2017
 ms.assetid: 34f69f4c-df81-4da7-b281-a525a9397a5c
-ms.openlocfilehash: 65d8b2f7a6283d65823e1a186239d398ee4a530a
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 025e04acb0d9cf75ea54814274c1875f8661eb88
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70038326"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802502"
 ---
 # <a name="persistence-database-schema"></a>Schéma databáze trvalosti
 Toto téma popisuje veřejné pohledy, které podporuje úložiště instance pracovního postupu SQL.  
@@ -18,16 +18,16 @@ Toto téma popisuje veřejné pohledy, které podporuje úložiště instance pr
 |Název sloupce|Typ sloupce|Popis|  
 |-----------------|-----------------|-----------------|  
 |InstanceId|uniqueidentifier|ID instance pracovního postupu|  
-|PendingTimer|DateTime|Indikuje, že je pracovní postup zablokovaný u aktivity zpoždění a bude obnoven po vypršení platnosti časovače. Tato hodnota může být null, pokud pracovní postup není blokovaný čekáním na vypršení platnosti časovače.|  
-|CreationTime|DateTime|Určuje, kdy byl pracovní postup vytvořen.|  
-|LastUpdatedTime|DateTime|Označuje čas, kdy byl pracovní postup naposledy trvale uložen do databáze.|  
+|PendingTimer|Datum a čas|Indikuje, že je pracovní postup zablokovaný u aktivity zpoždění a bude obnoven po vypršení platnosti časovače. Tato hodnota může být null, pokud pracovní postup není blokovaný čekáním na vypršení platnosti časovače.|  
+|CreationTime|Datum a čas|Určuje, kdy byl pracovní postup vytvořen.|  
+|LastUpdatedTime|Datum a čas|Označuje čas, kdy byl pracovní postup naposledy trvale uložen do databáze.|  
 |ServiceDeploymentId|BigInt|Slouží jako cizí klíč k zobrazení [ServiceDeployments]. Pokud je aktuální instance pracovního postupu instancí služby hostované na webu, pak má tento sloupec hodnotu, v opačném případě je nastavená na hodnotu NULL.|  
 |SuspensionExceptionName|Nvarchar(450)|Určuje typ výjimky (např. InvalidOperationException), která způsobila pozastavení pracovního postupu.|  
 |SuspensionReason|Nvarchar (max)|Indikuje, proč se instance pracovního postupu pozastavila. Pokud výjimka způsobila pozastavení instance, pak tento sloupec obsahuje zprávu spojenou s výjimkou.<br /><br /> Pokud byla instance ručně pozastavena, pak tento sloupec obsahuje důvod uživatele určený k pozastavení instance.|  
 |ActiveBookmarks|Nvarchar (max)|Pokud je instance pracovního postupu nečinná, tato vlastnost indikuje, na kterých záložkách je instance zablokovaná. Pokud instance není nečinná, je tento sloupec NULL.|  
-|CurrentMachine|Nvarchar (128)|Označuje, že název počítače v současné době má instanci pracovního postupu načtenou v paměti.|  
+|CurrentMachine|nvarchar (128)|Označuje, že název počítače v současné době má instanci pracovního postupu načtenou v paměti.|  
 |LastMachine|Nvarchar(450)|Označuje poslední počítač, který načte instanci pracovního postupu.|  
-|ExecutionStatus|Nvarchar(450)|Určuje aktuální stav provádění pracovního postupu. Mezi možné stavy patří **provádění**, nečinné, **Uzavřeno**.|  
+|ExecutionStatus|Nvarchar(450)|Určuje aktuální stav provádění pracovního postupu. Mezi možné stavy patří **provádění**, **nečinné**, **Uzavřeno**.|  
 |IsInitialized|bit|Označuje, zda instance pracovního postupu byla inicializována. Inicializovaná instance pracovního postupu je instance pracovního postupu, která byla alespoň jednou trvalá.|  
 |Pozastaveno|bit|Označuje, zda byla instance pracovního postupu pozastavena.|  
 |IsCompleted|bit|Označuje, zda byla instance pracovního postupu dokončena. **Poznámka:**  IIF vlastnost **InstanceCompletionAction** je nastavená na **DeleteAll**, instance se po dokončení odeberou ze zobrazení.|  
@@ -38,9 +38,9 @@ Toto téma popisuje veřejné pohledy, které podporuje úložiště instance pr
 |WriteOnlyComplexDataProperties|Varbinary (max)|Obsahuje vlastnosti dat serializované instance, které se při načtení instance neposkytují zpět do modulu runtime pracovního postupu.<br /><br /> Odserializátor by vyžadoval znalost všech typů objektů uložených v tomto objektu BLOB.|  
 |IdentityName|Nvarchar (max)|Název definice pracovního postupu|  
 |IdentityPackage|Nvarchar (max)|Informace o balíčku, které byly zadány v době, kdy byl pracovní postup vytvořen (například název sestavení).|  
-|Sestavení|BigInt|Číslo sestavení verze pracovního postupu|  
-|Hlavní|BigInt|Hlavní číslo verze pracovního postupu.|  
-|Vedlejší|BigInt|Vedlejší číslo verze pracovního postupu|  
+|Sestavit|BigInt|Číslo sestavení verze pracovního postupu|  
+|Závažná|BigInt|Hlavní číslo verze pracovního postupu.|  
+|Méně závažná|BigInt|Vedlejší číslo verze pracovního postupu|  
 |Revize|BigInt|Číslo revize verze pracovního postupu|  
   
 > [!CAUTION]
@@ -62,7 +62,7 @@ Toto téma popisuje veřejné pohledy, které podporuje úložiště instance pr
   
 1. Odstranění položek z tohoto zobrazení je nákladné, protože před provedením této operace musí být uzamčena celá databáze. To je nezbytné, aby se zabránilo situaci, kdy by mohla instance pracovního postupu odkazovat na neexistující položku ServiceDeployment. Odstranit z tohoto zobrazení pouze během doby mimo špičku nebo okna údržby.  
   
-2. Při každém pokusu o odstranění řádku ServiceDeployment, na který se odkazuje pomocí položek v zobrazení Instances, dojde k tomu, že nebudete mít za následek no-op. ServiceDeployment řádky můžete odstranit pouze s nulovými odkazy.  
+2. Při každém pokusu o odstranění řádku ServiceDeployment, na který se odkazuje pomocí položek v zobrazení **Instances** , dojde k tomu, že nebudete mít za následek no-op. ServiceDeployment řádky můžete odstranit pouze s nulovými odkazy.  
   
 ## <a name="instancepromotedproperties-view"></a>Zobrazení InstancePromotedProperties  
  Zobrazení **InstancePromotedProperties** obsahuje informace pro všechny propagované vlastnosti, které jsou určeny uživatelem. Propagovaná vlastnost je funkce jako vlastnost první třídy, kterou může uživatel použít v dotazech k načtení instancí.  Uživatel například může přidat povýšení PurchaseOrder, která vždy uloží náklady Objednávky do sloupce **hodnota1** . To umožní uživateli dotazovat se na všechny nákupní objednávky, jejichž náklady přesahují určitou hodnotu.  
@@ -78,4 +78,4 @@ Toto téma popisuje veřejné pohledy, které podporuje úložiště instance pr
  Zobrazení InstancePromotedProperties je vázáno na schéma, což znamená, že uživatelé mohou přidávat indexy na jeden nebo více sloupců, aby bylo možné optimalizovat dotazy proti tomuto zobrazení.  
   
 > [!NOTE]
-> Indexované zobrazení vyžaduje větší úložiště a zvyšuje režijní náklady na zpracování. Další informace najdete [v tématu zvýšení výkonu pomocí indexovaných zobrazení SQL Server 2008](https://go.microsoft.com/fwlink/?LinkId=179529) .
+> Indexované zobrazení vyžaduje větší úložiště a zvyšuje režijní náklady na zpracování. Další informace najdete [v tématu zvýšení výkonu pomocí indexovaných zobrazení SQL Server 2008](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/dd171921(v=sql.100)) .

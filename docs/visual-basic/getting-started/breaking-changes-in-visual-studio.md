@@ -4,16 +4,16 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - breaking changes [Visual Basic]
 ms.assetid: 708fb176-35eb-4cbc-a6e7-a04c6e3bdaff
-ms.openlocfilehash: 35f230aae85b6a971185c576b98898a45734de90
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 5637c293359751a4dfccfc754e4206b178a59770
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73973971"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802063"
 ---
 # <a name="visual-basic-breaking-changes-in-visual-studio"></a>Zásadní změny v jazyce Visual Basic v sadě Visual Studio
 
-Nejnovější dokumentaci k sadě Visual Studio 2017 najdete [tady](https://docs.microsoft.com/visualstudio/).
+Nejnovější dokumentaci k sadě Visual Studio naleznete v dokumentaci k sadě [Visual Studio](/visualstudio/).
 
 Žádné změny v Visual Basic v aplikaci Visual Studio 2015 nebudou bránit aplikaci, která byla vytvořena v Visual Basic v Visual Studio 2013 kompilaci nebo změny chování takové aplikace v době běhu.  
   

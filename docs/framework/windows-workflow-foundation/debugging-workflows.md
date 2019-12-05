@@ -2,12 +2,12 @@
 title: Ladění pracovních postupů
 ms.date: 03/30/2017
 ms.assetid: b23b4814-ebb1-4c51-b7a9-469f4da7a96d
-ms.openlocfilehash: 3947e61161b0e2108fa48fbc7e33fb7601645a1b
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: 2bfc50215697636f1771d6bb35510fbf9e0b435d
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291485"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802632"
 ---
 # <a name="debugging-workflows"></a>Ladění pracovních postupů
 
@@ -31,7 +31,7 @@ Ladění pracovního postupu také podporuje použití infrastruktury sady Visua
 
 ## <a name="remote-debugging"></a>Vzdálené ladění
 
-Vzdálené ladění programovací model Windows Workflow Foundation (WF) funguje stejně jako vzdálené ladění pro jiné součásti sady Visual Studio. Informace o použití vzdáleného ladění naleznete v tématu [How to: Enable Remote Debugging](https://go.microsoft.com/fwlink/?LinkId=196257).
+Vzdálené ladění programovací model Windows Workflow Foundation (WF) funguje stejně jako vzdálené ladění pro jiné součásti sady Visual Studio. Informace o použití vzdáleného ladění naleznete v tématu [How to: Enable Remote Debugging](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/febz73k0(v=vs.100)).
 
 > [!NOTE]
 > Pokud je aplikace pracovního postupu cílena na architekturu x86 a je hostována v počítači s 64 bitovým operačním systémem, nebude vzdálené ladění fungovat, pokud není nainstalována aplikace Visual Studio na vzdáleném počítači, nebo cíl pro aplikaci pracovního postupu se změní na **Libovolný procesor**.

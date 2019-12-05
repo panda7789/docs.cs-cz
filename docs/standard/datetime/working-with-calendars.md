@@ -13,14 +13,14 @@ helpviewer_keywords:
 - international applications [.NET], calendars
 - culture, calendars
 ms.assetid: 0c1534e5-979b-4c8a-a588-1c24301aefb3
-ms.openlocfilehash: 7795fa8d348a3053e6d999d007a558b418cafbd3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: de8e5a03c769a22f3320c7785706555898bf8c1c
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132520"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802736"
 ---
-# <a name="working-with-calendars"></a>Práce s kalendáři
+# <a name="work-with-calendars"></a>Práce s kalendáři
 
 Ačkoli hodnoty data a času představují konkrétní časový okamžik, je řetězcové vyjádření závislé na jazykové verzi a závisí jak na konvencích použitých k zobrazení hodnoty data a času podle konkrétní jazykové verze, tak na kalendáři používaném danou jazykovou verzí. Toto téma popisuje podporu pro kalendáře v rozhraní .NET a popisuje použití tříd kalendáře při práci s hodnotami data.
 
@@ -82,7 +82,7 @@ Následující příklad znázorňuje změnu kalendáře používaného jazykovo
 
 ## <a name="dates-and-calendars"></a>Data a kalendáře
 
-S výjimkou konstruktorů, které obsahují parametr typu <xref:System.Globalization.Calendar> a povolují prvky data (tj. měsíc, den a rok), aby odrážely hodnoty v určeném kalendáři, hodnoty <xref:System.DateTime> a <xref:System.DateTimeOffset> jsou vždy založené na Gregoriánský kalendář. To například znamená, že vlastnost <xref:System.DateTime.Year%2A?displayProperty=nameWithType> vrátí rok v gregoriánském kalendáři a vlastnost <xref:System.DateTime.Day%2A?displayProperty=nameWithType> vrátí den v měsíci v gregoriánském kalendáři.
+S výjimkou konstruktorů, které obsahují parametr typu <xref:System.Globalization.Calendar> a povolují prvky data (tj. měsíc, den a rok) k tomu, aby odrážely hodnoty v určeném kalendáři, hodnoty <xref:System.DateTime> a <xref:System.DateTimeOffset> jsou vždy založené na gregoriánském kalendáři. To například znamená, že vlastnost <xref:System.DateTime.Year%2A?displayProperty=nameWithType> vrátí rok v gregoriánském kalendáři a vlastnost <xref:System.DateTime.Day%2A?displayProperty=nameWithType> vrátí den v měsíci v gregoriánském kalendáři.
 
 > [!IMPORTANT]
 > Je důležité mít na paměti, že existuje rozdíl mezi hodnotou data a řetězcovým vyjádřením tohoto data. První zmíněná položka je založena na gregoriánském kalendáři, druhá zmíněná položka pak vychází z aktuálního kalendáře konkrétní jazykové verze.
@@ -92,7 +92,7 @@ Následující příklad ukazuje tento rozdíl mezi vlastnostmi <xref:System.Dat
 [!code-csharp[Conceptual.Calendars#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.calendars/cs/datesandcalendars2.cs#3)]
 [!code-vb[Conceptual.Calendars#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.calendars/vb/datesandcalendars2.vb#3)]
 
-### <a name="instantiating-dates-based-on-a-calendar"></a>Vytváření instancí kalendářních dat na základě kalendáře
+### <a name="instantiate-dates-based-on-a-calendar"></a>Vytvoření instance kalendářních dat na základě kalendáře
 
 Vzhledem k tomu, že hodnoty <xref:System.DateTime> a <xref:System.DateTimeOffset> jsou založeny na gregoriánském kalendáři, je nutné volat přetížený konstruktor, který obsahuje parametr typu <xref:System.Globalization.Calendar> pro vytvoření instance hodnoty data, pokud chcete použít hodnoty den, měsíc nebo rok z jiného kalendáře. Můžete také volat jedno z přetížení konkrétního <xref:System.Globalization.Calendar.ToDateTime%2A?displayProperty=nameWithType> v kalendáři pro vytvoření instance <xref:System.DateTime> objektu na základě hodnot konkrétního kalendáře.
 
@@ -101,7 +101,7 @@ Následující příklad vytvoří instanci jedné <xref:System.DateTime> hodnot
 [!code-csharp[Conceptual.Calendars#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.calendars/cs/instantiatehcdate1.cs#4)]
 [!code-vb[Conceptual.Calendars#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.calendars/vb/instantiatehcdate1.vb#4)]
 
-### <a name="representing-dates-in-the-current-calendar"></a>Reprezentace dat v aktuálním kalendáři
+### <a name="represent-dates-in-the-current-calendar"></a>Znázornit data v aktuálním kalendáři
 
 Metoda formátování data a času používá při konverzi dat do řetězců vždy aktuální kalendář. To znamená, že řetězcové vyjádření roku, měsíce a dne v měsíci odpovídá aktuálnímu kalendáři a nemusí nutně zohledňovat gregoriánský kalendář.
 
@@ -110,7 +110,7 @@ Následující příklad znázorňuje vliv aktuálního kalendáře na řetězco
 [!code-csharp[Conceptual.Calendars#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.calendars/cs/currentcalendar1.cs#5)]
 [!code-vb[Conceptual.Calendars#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.calendars/vb/currentcalendar1.vb#5)]
 
-### <a name="representing-dates-in-a-non-current-calendar"></a>Reprezentace dat v neaktuálním kalendáři
+### <a name="represent-dates-in-a-non-current-calendar"></a>Představuje data v neaktuálním kalendáři.
 
 Chcete-li znázornit datum pomocí kalendáře, který není aktuálním kalendářem konkrétní jazykové verze, je nutné volat metody objektu <xref:System.Globalization.Calendar>. Například metody <xref:System.Globalization.Calendar.GetYear%2A?displayProperty=nameWithType>, <xref:System.Globalization.Calendar.GetMonth%2A?displayProperty=nameWithType>a <xref:System.Globalization.Calendar.GetDayOfMonth%2A?displayProperty=nameWithType> převádějí rok, měsíc a den na hodnoty, které odpovídají konkrétnímu kalendáři.
 
@@ -131,7 +131,7 @@ Existuje však jedna důležitá výjimka. Výchozí (neinicializovaná) hodnota
 [!code-csharp[Conceptual.Calendars#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.calendars/cs/minsupporteddatetime1.cs#11)]
 [!code-vb[Conceptual.Calendars#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.calendars/vb/minsupporteddatetime1.vb#11)]
 
-## <a name="working-with-eras"></a>Práce s mazáním
+## <a name="work-with-eras"></a>Práce s mazáním
 
 Data v kalendářích jsou obvykle rozdělena do období. Třídy <xref:System.Globalization.Calendar> v rozhraní .NET však nepodporují každé období definované kalendářem a většina tříd <xref:System.Globalization.Calendar> podporuje pouze jedno období. Pouze třídy <xref:System.Globalization.JapaneseCalendar> a <xref:System.Globalization.JapaneseLunisolarCalendar> podporují více mazání.
 
@@ -140,7 +140,7 @@ Data v kalendářích jsou obvykle rozdělena do období. Třídy <xref:System.
 >
 > - [Zpracování nového období v japonském kalendáři v rozhraní .NET](https://devblogs.microsoft.com/dotnet/handling-a-new-era-in-the-japanese-calendar-in-net/), který obsahuje funkce přidané do .NET pro podporu kalendářů s více nástroji pro mazání a popisuje osvědčené postupy pro použití při zpracování kalendářů s více obdobími.
 > - [Připravte svoji aplikaci na změnu v japonském období](/windows/uwp/design/globalizing/japanese-era-change), která poskytuje informace o testování vašich aplikací ve Windows, aby se zajistila jejich připravenost na změnu období.
-> - [Shrnutí nových aktualizací pro .NET Framework v rámci japonského období](https://support.microsoft.com/help/4477957/new-japanese-era-updates-for-net-framework), které obsahují .NET Framework aktualizace pro jednotlivé verze systému Windows, které se vztahují k novému japonskému období v japonštině, poznamenejte si nové .NET Framework funkce pro podporu více období a zahrnuje věci Vyhledejte v testování vašich aplikací.
+> - [Shrnutí nových aktualizací pro .NET Framework v rámci japonského období](https://support.microsoft.com/help/4477957/new-japanese-era-updates-for-net-framework), které obsahují .NET Framework aktualizace pro jednotlivé verze Windows, které se vztahují k novému japonskému období, poznamenejte si nové .NET Framework funkce pro podporu více období a zahrnete do testování vašich aplikací věci, které byste měli hledat.
 
 Období ve většině kalendářních prostředí označuje extrémně dlouhou dobu. V gregoriánském kalendáři například aktuální období zahrnuje více než dvě MILLENNIA. Pro <xref:System.Globalization.JapaneseCalendar> a <xref:System.Globalization.JapaneseLunisolarCalendar>se jedná o dva kalendáře, které podporují více mazání. Období odpovídá období reignu císaře. Podpora vícenásobného mazání, zejména pokud je horní limit aktuálního období neznámý, přináší zvláštní výzvy.
 
@@ -169,7 +169,7 @@ Název, který odpovídá určitému číslu období, lze načíst předáním �
 
 Kromě toho řetězec „o“ vlastního formátu data a času obsahuje název období kalendáře v řetězcovém vyjádření data a času. Další informace naleznete v tématu [Vlastní řetězce formátu data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md).
 
-### <a name="instantiating-a-date-with-an-era"></a>Vytvoření instance data s obdobím
+### <a name="instantiatie-a-date-with-an-era"></a>Vytvoření instance a data pomocí období
 
 Pro dvě <xref:System.Globalization.Calendar> třídy, které podporují více mazání, může být datum, které se skládá z konkrétního roku, měsíce a dne v hodnotě měsíce, nejednoznačné. Například všechna mazání podporovaná <xref:System.Globalization.JapaneseCalendar> mají roky, jejichž číslo je 1. Pokud není období stanoveno, pak metody data a času a kalendáře obvykle předpokládají, že hodnoty patří do aktuálního období. To platí pro <xref:System.DateTime.%23ctor%2A> a <xref:System.DateTimeOffset.%23ctor%2A> konstruktory, které zahrnují parametry typu <xref:System.Globalization.Calendar>a také metody [JapaneseCalendar. ToDateTime](xref:System.Globalization.Calendar.ToDateTime(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)) a [JapaneseLunisolarCalendar. ToDateTime](xref:System.Globalization.Calendar.ToDateTime(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)) . V následujícím příkladu je vytvořena instance data, která představuje 1. ledna v nespecifikovaném období. Pokud tento příklad spustíte, pokud je Reiwa období aktuálním obdobím, datum se interpretuje jako druhý rok období Reiwa. Období 令和 předchází roku v řetězci vráceném metodou <xref:System.DateTime.ToString(System.String,System.IFormatProvider)?displayProperty=nameWithType> a odpovídá 1. ledna 2020 v gregoriánském kalendáři. (Období Reiwa začíná v roce 2019 gregoriánského kalendáře.)
 
@@ -187,7 +187,7 @@ Pokud se však změní období, záměr tohoto kódu se změní na nejednoznačn
 
   - Metoda <xref:System.Globalization.Calendar.ToDateTime(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)> třídy <xref:System.Globalization.JapaneseCalendar> nebo <xref:System.Globalization.JapaneseLunisolarCalendar>
 
-  - Metoda analýzy <xref:System.DateTime> nebo <xref:System.DateTimeOffset>, například <xref:System.DateTime.Parse%2A>, <xref:System.DateTime.TryParse%2A>, <xref:System.DateTime.ParseExact%2A>nebo <xref:System.DateTime.TryParseExact%2A>, která obsahuje řetězec, který má být analyzován, a volitelně také <xref:System.Globalization.DateTimeStyles> argument, pokud je aktuální jazyková verze Japonsko-Japonsko ("ja-JP") a v kalendáři této jazykové verze je <xref:System.Globalization.JapaneseCalendar>. Řetězec, který se má analyzovat, musí zahrnovat období.
+  - Metoda analýzy <xref:System.DateTime> nebo <xref:System.DateTimeOffset>, například <xref:System.DateTime.Parse%2A>, <xref:System.DateTime.TryParse%2A>, <xref:System.DateTime.ParseExact%2A>nebo <xref:System.DateTime.TryParseExact%2A>, která obsahuje řetězec, který má být analyzován, a volitelně také <xref:System.Globalization.DateTimeStyles> argument, pokud je aktuální jazyková verze Japonsko-Japonsko ("ja-JP") a kalendář této jazykové verze je <xref:System.Globalization.JapaneseCalendar>. Řetězec, který se má analyzovat, musí zahrnovat období.
 
   - Metoda analýzy <xref:System.DateTime> nebo <xref:System.DateTimeOffset>, která obsahuje parametr `provider` typu <xref:System.IFormatProvider>. `provider` musí být buď objekt <xref:System.Globalization.CultureInfo>, který představuje jazykovou verzi Japanese-Japonsko ("ja-JP"), jejíž aktuální kalendář je <xref:System.Globalization.JapaneseCalendar>, nebo objekt <xref:System.Globalization.DateTimeFormatInfo>, jehož vlastnost <xref:System.Globalization.DateTimeFormatInfo.Calendar> je <xref:System.Globalization.JapaneseCalendar>. Řetězec, který se má analyzovat, musí zahrnovat období.
 
@@ -216,7 +216,7 @@ Následující příklad se pokusí vytvořit instanci data v 65th roce Showa ob
 
 Pokud jsou nespolehlivé kontroly rozsahu nežádoucí, můžete obnovit striktní kontroly rozsahu mnoha různými způsoby v závislosti na verzi rozhraní .NET, na které je aplikace spuštěná:
 
-- **.NET Core:** Do konfiguračního souboru *. Netcore. Runtime. JSON* můžete přidat následující:
+- **.NET Core:** Do konfiguračního souboru *. Netcore. Runtime. JSON* přidejte následující:
 
   ```json
   "runtimeOptions": {
@@ -226,7 +226,7 @@ Pokud jsou nespolehlivé kontroly rozsahu nežádoucí, můžete obnovit striktn
   }
   ```
 
-- **.NET Framework 4,6 nebo novější:** Můžete nastavit následující přepínač AppContext:
+- **.NET Framework 4,6 nebo novější:** V souboru *App. config* nastavte následující přepínač AppContext:
 
   ```xml
   <?xml version="1.0" encoding="utf-8"?>
@@ -237,14 +237,14 @@ Pokud jsou nespolehlivé kontroly rozsahu nežádoucí, můžete obnovit striktn
   </configuration>
   ```
 
-- **.NET Framework 4.5.2 nebo novější:** Můžete nastavit následující hodnotu registru:
+- **.NET Framework 4.5.2 nebo novější:** Nastavte následující hodnotu registru:
 
    |  |  |
    |--|--|
-   |Key | HKEY_LOCAL_MACHINE\Software\Microsoft\.NETFramework\AppContext |
-   |Name | Switch. System. Globalization. EnforceJapaneseEraYearRanges |
-   |Typ | REG_SZ |
-   |Hodnota | true |
+   | **Key** | **HKEY_LOCAL_MACHINE \Software\Microsoft\\. NETFramework\AppContext** |
+   | **Jméno** | Switch.System.Globalization.EnforceJapaneseEraYearRanges |
+   | **Typ** | REG_SZ |
+   | **Hodnota** | true |
 
 U povolených striktních kontrol rozsahu vyvolá předchozí příklad <xref:System.ArgumentOutOfRangeException> a zobrazí následující výstup:
 
@@ -256,7 +256,7 @@ Parameter name: year
    at Example.Main()
 ```
 
-### <a name="representing-dates-in-calendars-with-multiple-eras"></a>Reprezentace dat v kalendářích s vícenásobným smazáním
+### <a name="represent-dates-in-calendars-with-multiple-eras"></a>Znázornit data v kalendářích s vícenásobným smazáním
 
 Pokud objekt <xref:System.Globalization.Calendar> podporuje mazání a je aktuálním kalendářem <xref:System.Globalization.CultureInfo> objektu, je období zahrnuto v řetězcové reprezentaci hodnoty data a času pro vzor úplného data a času, dlouhého data a krátkého data. Následující příklad zobrazuje tyto vzorce dat, kdy je nastavena aktuální jazyková verze Japonština (Japonsko) a aktuálním kalendářem je japonský kalendář.
 
@@ -271,12 +271,12 @@ Specifikátor vlastního formátu „o“ zahrnuje období ve výsledném řetě
 [!code-csharp[Conceptual.Calendars#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.calendars/cs/formatstrings2.cs#9)]
 [!code-vb[Conceptual.Calendars#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.calendars/vb/formatstrings2.vb#9)]
 
-V případech, kdy řetězcová reprezentace data vyjádřena v kalendáři, který není aktuálním kalendářem, třída <xref:System.Globalization.Calendar> zahrnuje <xref:System.Globalization.Calendar.GetEra%2A?displayProperty=nameWithType> metodu, kterou lze použít společně s metodami <xref:System.Globalization.Calendar.GetYear%2A?displayProperty=nameWithType>, <xref:System.Globalization.Calendar.GetMonth%2A?displayProperty=nameWithType>a <xref:System.Globalization.Calendar.GetDayOfMonth%2A?displayProperty=nameWithType> pro jednoznačné označení data i období, ke kterému patří. Následující příklad používá třídu <xref:System.Globalization.JapaneseLunisolarCalendar> k poskytnutí obrázku. Všimněte si však, že pro období ve výsledném řetězci, který obsahuje smysluplný název nebo zkratku namísto celého čísla pro období, vyžaduje vytvoření instance <xref:System.Globalization.DateTimeFormatInfo>ho objektu a <xref:System.Globalization.JapaneseCalendar> jeho aktuálního kalendáře. (<xref:System.Globalization.JapaneseLunisolarCalendar> kalendář nemůže být aktuálním kalendářem žádné jazykové verze, ale v tomto případě dva kalendáře sdílejí stejné mazání.)
+V případech, kdy je řetězcová reprezentace data vyjádřena v kalendáři, který není aktuálním kalendářem, třída <xref:System.Globalization.Calendar> zahrnuje <xref:System.Globalization.Calendar.GetEra%2A?displayProperty=nameWithType> metodu, kterou lze použít společně s metodami <xref:System.Globalization.Calendar.GetYear%2A?displayProperty=nameWithType>, <xref:System.Globalization.Calendar.GetMonth%2A?displayProperty=nameWithType>a <xref:System.Globalization.Calendar.GetDayOfMonth%2A?displayProperty=nameWithType> pro jednoznačné označení data a období, ke kterému patří. Následující příklad používá třídu <xref:System.Globalization.JapaneseLunisolarCalendar> k poskytnutí obrázku. Všimněte si však, že pro období ve výsledném řetězci, který obsahuje smysluplný název nebo zkratku namísto celého čísla pro období, vyžaduje vytvoření instance <xref:System.Globalization.DateTimeFormatInfo>ho objektu a <xref:System.Globalization.JapaneseCalendar> jeho aktuálního kalendáře. (<xref:System.Globalization.JapaneseLunisolarCalendar> kalendář nemůže být aktuálním kalendářem žádné jazykové verze, ale v tomto případě dva kalendáře sdílejí stejné mazání.)
 
 [!code-csharp[Conceptual.Calendars#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.calendars/cs/formatstrings3.cs#10)]
 [!code-vb[Conceptual.Calendars#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.calendars/vb/formatstrings3.vb#10)]
 
-V japonských kalendářích se první rok období posuzování označuje jako Gannen (元年). Například místo Heisei 1 se první rok období Heisei dá popsat jako Heisei Gannen. Rozhraní .NET přijme tuto úmluvu v operacích formátování pro data a časy formátované pomocí následujících standardních nebo vlastních formátovacích řetězců pro datum a čas, když se používají s objektem <xref:System.Globalization.CultureInfo>, který představuje jazykovou verzi Japanese-Japonsko ("ja-JP") s <xref:System.Globalization.JapaneseCalendar> Deník
+V japonských kalendářích se první rok období posuzování označuje jako Gannen (元年). Například místo Heisei 1 se první rok období Heisei dá popsat jako Heisei Gannen. Rozhraní .NET přijme tuto úmluvu v operacích formátování pro data a časy formátované pomocí následujících standardních nebo vlastních formátovacích řetězců pro datum a čas, když se používají s objektem <xref:System.Globalization.CultureInfo>, který představuje jazykovou verzi Japanese-Japonsko ("ja-JP") s třídou <xref:System.Globalization.JapaneseCalendar>:
 
 - [Vzor dlouhého data](../base-types/standard-date-and-time-format-strings.md#LongDate), který je označen řetězcem standardního formátu data a času "D".
 - [Vzor úplného formátu data a dlouhého času](../base-types/standard-date-and-time-format-strings.md#FullDateLongTime), který je označen řetězcem standardního formátu data a času "F".
@@ -291,7 +291,7 @@ Například následující příklad zobrazuje datum v prvním roce Heisei obdob
 
 Pokud je toto chování nežádoucí při formátování operací, můžete obnovit předchozí chování, které vždy představuje první rok v období od "1" místo "Gannen", a to v závislosti na verzi rozhraní .NET:
 
-- **.NET Core:** Do konfiguračního souboru *. Netcore. Runtime. JSON* můžete přidat následující:
+- **.NET Core:** Do konfiguračního souboru *. Netcore. Runtime. JSON* přidejte následující:
 
   ```json
   "runtimeOptions": {
@@ -301,7 +301,7 @@ Pokud je toto chování nežádoucí při formátování operací, můžete obno
   }
   ```
 
-- **.NET Framework 4,6 nebo novější:** Můžete nastavit následující přepínač AppContext:
+- **.NET Framework 4,6 nebo novější:** V souboru *App. config* nastavte následující přepínač AppContext:
 
   ```xml
   <?xml version="1.0" encoding="utf-8"?>
@@ -312,14 +312,14 @@ Pokud je toto chování nežádoucí při formátování operací, můžete obno
   </configuration>
   ```
 
-- **.NET Framework 4.5.2 nebo novější:** Můžete nastavit následující hodnotu registru:
+- **.NET Framework 4.5.2 nebo novější:** Nastavte následující hodnotu registru:
 
    |  |  |
    |--|--|
-   |Key | HKEY_LOCAL_MACHINE\Software\Microsoft\.NETFramework\AppContext |
-   |Name | Switch. System. Globalization. FormatJapaneseFirstYearAsANumber |
-   |Typ | REG_SZ |
-   |Hodnota | true |
+   | **Key** | **HKEY_LOCAL_MACHINE \Software\Microsoft\\. NETFramework\AppContext** |
+   | **Jméno** | Switch. System. Globalization. FormatJapaneseFirstYearAsANumber |
+   | **Typ** | REG_SZ |
+   | **Hodnota** | true |
 
 V případě, že je podpora Gannen v případě zakázaných operací formátování, předchozí příklad zobrazí následující výstup:
 
@@ -329,7 +329,7 @@ Japanese calendar date: 平成1年8月18日 (Gregorian: Friday, August 18, 1989)
 
 Rozhraní .NET bylo také aktualizováno, aby operace analýzy data a času podporovaly řetězce, které obsahují rok reprezentovaný buď 1 nebo Gannen. I když byste to neměli potřebovat, můžete obnovit předchozí chování a rozpoznává pouze "1" jako první rok období. To lze provést následujícím způsobem v závislosti na verzi rozhraní .NET:
 
-- **.NET Core:** Do konfiguračního souboru *. Netcore. Runtime. JSON* můžete přidat následující:
+- **.NET Core:** Do konfiguračního souboru *. Netcore. Runtime. JSON* přidejte následující:
 
   ```json
   "runtimeOptions": {
@@ -339,7 +339,7 @@ Rozhraní .NET bylo také aktualizováno, aby operace analýzy data a času podp
   }
   ```
 
-- **.NET Framework 4,6 nebo novější:** Můžete nastavit následující přepínač AppContext:
+- **.NET Framework 4,6 nebo novější:** V souboru *App. config* nastavte následující přepínač AppContext:
 
   ```xml
   <?xml version="1.0" encoding="utf-8"?>
@@ -350,14 +350,14 @@ Rozhraní .NET bylo také aktualizováno, aby operace analýzy data a času podp
   </configuration>
   ```
 
-- **.NET Framework 4.5.2 nebo novější:** Můžete nastavit následující hodnotu registru:
+- **.NET Framework 4.5.2 nebo novější:** Nastavte následující hodnotu registru:
 
    |  |  |
-   |--|--|  
-   |Key | HKEY_LOCAL_MACHINE\Software\Microsoft\.NETFramework\AppContext |
-   |Name | Switch. System. Globalization. EnforceLegacyJapaneseDateParsing |
-   |Typ | REG_SZ |
-   |Hodnota | true | 
+   |--|--|
+   | **Key** | **HKEY_LOCAL_MACHINE \Software\Microsoft\\. NETFramework\AppContext** |
+   | **Jméno** | Switch.System.Globalization.EnforceLegacyJapaneseDateParsing |
+   | **Typ** | REG_SZ |
+   | **Hodnota** | true |
 
 ## <a name="see-also"></a>Viz také:
 

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - graphics rendering tiers [WPF]
 - graphics [WPF], rendering tiers
 ms.assetid: 08dd1606-02a2-4122-9351-c0afd2ec3a70
-ms.openlocfilehash: c6856002288a46e78d1e1373201cf149407a814f
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 4c9acc3ef806eabea05d1b64080275293c83e895
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974019"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802137"
 ---
 # <a name="graphics-rendering-tiers"></a>Vrstvy vykreslování grafiky
 Vrstva vykreslování definuje úroveň grafických funkcí a výkonu grafického hardwaru pro zařízení, které spouští aplikaci [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -54,7 +54,7 @@ Vrstva vykreslování definuje úroveň grafických funkcí a výkonu grafickéh
   
  V následující tabulce jsou uvedeny rozdíly v požadavcích na hardware grafiky pro vrstvu vykreslování 1 a vrstvu vykreslování 2:  
   
-|Funkce|Vrstva 1|Úroveň 2|  
+|Funkce|Úroveň 1|Úroveň 2|  
 |-------------|------------|------------|  
 |Verze DirectX|Musí být větší než nebo rovno 9,0.|Musí být větší než nebo rovno 9,0.|  
 |Video RAM|Musí být větší než nebo rovno 60MB.|Musí být větší než nebo rovno 120MB.|  
@@ -78,7 +78,7 @@ Vrstva vykreslování definuje úroveň grafických funkcí a výkonu grafickéh
   
 |Funkce|Poznámky|  
 |-------------|-----------|  
-|vyhlazení 3D|Trojrozměrné vyhlazení se podporuje jenom v operačních systémech, které podporují WDDM (Windows Display Driver Model), jako je třeba Windows Vista a [!INCLUDE[win7](../../../../includes/win7-md.md)].|  
+|vyhlazení 3D|vytváření koncových aliasů pro 3D se podporuje jenom v operačních systémech, které podporují WDDM (Windows Display Driver Model), jako je Windows Vista a Windows 7.|  
   
  Následující funkce a možnosti **nejsou hardwarově** urychleny:  
   
@@ -89,7 +89,7 @@ Vrstva vykreslování definuje úroveň grafických funkcí a výkonu grafickéh
 |Obsah v dlaždicích, který používá <xref:System.Windows.Media.TileBrush>|Veškerý obsah v dlaždicích, ve kterém je vlastnost <xref:System.Windows.Media.TileBrush.TileMode%2A> <xref:System.Windows.Media.TileBrush> nastavena na <xref:System.Windows.Media.TileMode.Tile>.|  
 |Plochy, které překračují maximální velikost textury grafického hardwaru|Pro většinu grafických hardwarových zařízení jsou velikosti velkých povrchů 2048x2048 nebo 4096x4096 pixelů.|  
 |Jakákoli operace, jejíž požadavek na video RAM překračuje paměť hardwaru grafiky|Pomocí nástroje pro perforaci, který je součástí [sady Performance Suite WPF](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa969767(v=vs.100)) v Windows SDK, můžete monitorovat využití paměti aplikace video.|  
-|Vrstvená okna|Vrstvená okna umožňují [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikacím vykreslovat obsah na obrazovku v neobdélníkovém okně. V operačních systémech, které podporují model WDDM (Windows Display Driver Model), jako je například Windows Vista a [!INCLUDE[win7](../../../../includes/win7-md.md)], jsou vrstvená okna hardwarově urychlená. V jiných systémech, například [!INCLUDE[winxp](../../../../includes/winxp-md.md)], se vrstvená okna vykreslují softwarem bez hardwarové akcelerace.<br /><br /> Můžete povolit vrstvená okna v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nastavením následujících vlastností <xref:System.Windows.Window>:<br /><br /> -   <xref:System.Windows.Window.WindowStyle%2A> = <xref:System.Windows.WindowStyle.None><br />-   <xref:System.Windows.Window.AllowsTransparency%2A> = `true`<br />-   <xref:System.Windows.Controls.Control.Background%2A> = <xref:System.Windows.Media.Brushes.Transparent%2A>|  
+|Vrstvená okna|Vrstvená okna umožňují [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikacím vykreslovat obsah na obrazovku v neobdélníkovém okně. V operačních systémech, které podporují Windows Display Driver Model (WDDM), jako je Windows Vista a Windows 7, jsou vrstvená okna hardwarově urychlená. V jiných systémech, například [!INCLUDE[winxp](../../../../includes/winxp-md.md)], se vrstvená okna vykreslují softwarem bez hardwarové akcelerace.<br /><br /> Můžete povolit vrstvená okna v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] nastavením následujících vlastností <xref:System.Windows.Window>:<br /><br /> -   <xref:System.Windows.Window.WindowStyle%2A> = <xref:System.Windows.WindowStyle.None><br />-   <xref:System.Windows.Window.AllowsTransparency%2A> = `true`<br />-   <xref:System.Windows.Controls.Control.Background%2A> = <xref:System.Windows.Media.Brushes.Transparent%2A>|  
   
 <a name="other_resources"></a>   
 ## <a name="other-resources"></a>Další zdroje  
@@ -98,7 +98,7 @@ Vrstva vykreslování definuje úroveň grafických funkcí a výkonu grafickéh
 ### <a name="graphics-rendering-registry-settings"></a>Nastavení registru pro vykreslení grafiky  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje čtyři nastavení registru pro řízení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vykreslování:  
   
-|Nastavením|Popis|  
+|Nastavení|Popis|  
 |-------------|-----------------|  
 |**Zakázat možnost hardwarové akcelerace**|Určuje, jestli má být povolená hardwarová akcelerace.|  
 |**Maximální hodnota pro více vzorků**|Určuje stupeň vícenásobného vzorkování pro antialiasing 3D obsah.|  
@@ -117,7 +117,7 @@ Vrstva vykreslování definuje úroveň grafických funkcí a výkonu grafickéh
   
  Sada Performance Suite WPF poskytuje bohatou a grafickou zobrazení dat výkonu. Další informace o nástrojích výkonu WPF naleznete v tématu [sada Performance Suite WPF](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa969767(v=vs.100)).  
   
-### <a name="directx-diagnostic-tool"></a>Nástroj pro diagnostiku rozhraní DirectX  
+### <a name="directx-diagnostic-tool"></a>Nástroji pro diagnostiku rozhraní DirectX  
  Nástroj Dxdiag. exe pro diagnostiku rozhraní DirectX je navržený tak, aby pomohl řešit problémy související s rozhraním DirectX. Výchozí instalační složka nástroje pro diagnostiku rozhraní DirectX:  
   
  `~\Windows\System32`  

@@ -2,12 +2,12 @@
 title: Specifické funkce Windows Workflow Foundation
 ms.date: 03/30/2017
 ms.assetid: e84d12da-a055-45f6-b4d1-878d127b46b6
-ms.openlocfilehash: 0c312eed1a5ba064771e7cc4c260b43d97b16315
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 869d6108edaa7f32101b6fe8d077e4eba7eef6b5
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141881"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802593"
 ---
 # <a name="windows-workflow-foundation-feature-specifics"></a>Specifické funkce Windows Workflow Foundation
 
@@ -95,15 +95,15 @@ Schéma konfigurace WCF je složité a poskytuje uživatelům mnoho obtížnéch
 
 ### <a name="getting-started"></a>Začínáme
 
-- [Příručka pro vývojáře k WCF 4,0](https://go.microsoft.com/fwlink/?LinkId=204940)
+- [Příručka pro vývojáře k WCF 4,0](https://docs.microsoft.com/previous-versions/dotnet/articles/ee354381(v=msdn.10))
 
-- [Objekt pro vytváření kanálů konfigurace](https://go.microsoft.com/fwlink/?LinkId=204941)
+- [Objekt pro vytváření kanálů konfigurace](xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601)
 
-- [Element standardního koncového bodu](https://go.microsoft.com/fwlink/?LinkId=204942)
+- [Element standardního koncového bodu](xref:System.ServiceModel.Configuration.StandardEndpointElement)
 
-- [Vylepšení konfigurace služby v .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=204943)
+- [Vylepšení konfigurace služby v .NET Framework 4](https://blogs.msdn.microsoft.com/endpoint/2009/06/30/service-configuration-improvements-in-net-4/)
 
-- [Běžná chyba uživatele v rozhraní .NET 4: zadání názvu konfigurace služby WF/WCF](https://go.microsoft.com/fwlink/?LinkId=204944)
+- [Běžná chyba uživatele v rozhraní .NET 4: zadání názvu konfigurace služby WF/WCF](https://blogs.msdn.microsoft.com/endpoint/2009/11/09/common-user-mistake-in-net-4-mistyping-the-wfwcf-service-configuration-name/)
 
 ### <a name="simplified-configuration-scenarios"></a>Zjednodušené scénáře konfigurace
 
@@ -125,11 +125,11 @@ V rozhraní .NET 3,5 bylo při návrhu známých typů zjištěno několik omeze
 
 ### <a name="getting-started"></a>Začínáme
 
-- [Dokumentace k rozhraní API překladače kontraktů dat](https://go.microsoft.com/fwlink/?LinkId=204946)
+- [Dokumentace k rozhraní API překladače kontraktů dat](xref:System.Runtime.Serialization.DataContractResolver)
 
-- [Představení překladače kontraktů dat](https://go.microsoft.com/fwlink/?LinkId=204947)
+- [Představení překladače kontraktů dat](https://blogs.msdn.microsoft.com/youssefm/2009/06/05/configuring-known-types-dynamically-introducing-the-datacontractresolver/)
 
-- Vzory
+- Ukázky:
 
   - [DataContractResolver](../wcf/samples/datacontractresolver.md)
 
@@ -161,7 +161,7 @@ Vývojové diagramy jsou dobře známé paradigmaty, které vizuálně reprezent
 
   - <xref:System.Activities.Statements.FlowSwitch%601>
 
-- Vzory
+- Ukázky:
 
   - [Zpracování chyb v aktivitě FlowChart pomocí TryCatch](./samples/fault-handling-in-a-flowchart-activity-using-trycatch.md)
 
@@ -195,7 +195,7 @@ Procesní aktivity poskytují mechanismus pro modelování sekvenčního řízen
 
 - V aplikaci Visual Studio 2012 vytvořte konzolovou aplikaci pracovního postupu. Přidejte procedurální aktivity v Návrháři pracovních postupů.
 
-- Vzory
+- Ukázky:
 
   - [Proces náboru](./samples/hiring-process.md)
 
@@ -287,7 +287,7 @@ Směrovací služba v .NET 4 je navržená tak, aby se tyto problémy lépe vyř
 
 2. Ukázky: [ukázky&#93; služby &#91;Routing Services WCF](../wcf/samples/routing-services.md)
 
-3. Blog: [pravidla směrování!](https://go.microsoft.com/fwlink/?LinkId=204956)
+3. Blog: [pravidla směrování!](https://blogs.msdn.microsoft.com/RoutingRules/)
 
 ### <a name="routing-scenarios"></a>Scénáře směrování
 

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - what's new [Visual Basic]
 - Visual Basic, what's new
 ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
-ms.openlocfilehash: 1efcee0ac3bdba1b7e1379a0ac072ea714add756
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 45763504c2d25596b0adfb4b8a0236b332d89e8c
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423908"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802047"
 ---
 # <a name="whats-new-for-visual-basic"></a>Co je nového pro Visual Basic
 
@@ -84,7 +84,7 @@ End Sub
 
 **Konverze optimalizované na celočíselnou desetinnou čárku**
 
-V předchozích verzích Visual Basic se konverze [dvojitých](../language-reference/data-types/double-data-type.md) a [jednoduchých](../language-reference/data-types/single-data-type.md) hodnot na celá čísla, která nabízí relativně špatný výkon. Visual Basic 15,8 významně vylepšuje výkon převodů s plovoucí desetinnou čárkou na celá čísla, Pokud předáte hodnotu vrácenou některou z následujících metod pro jednu z hodnot [vnitřních Visual Basicch funkcí pro převod celého čísla](../language-reference/functions/type-conversion-functions.md) (CByte, CShort, CInt, CLng, CSByte, CUShort, CUInt, CULng) nebo pokud je hodnota vrácená některou z následujících metod implicitně převedena na celočíselný typ, pokud je [možnost Strict](../language-reference/statements/option-strict-statement.md) nastavena na `Off`:
+V předchozích verzích Visual Basic se konverze [dvojitých](../language-reference/data-types/double-data-type.md) a [jednoduchých](../language-reference/data-types/single-data-type.md) hodnot na celá čísla, která nabízí relativně špatný výkon. Visual Basic 15,8 významně vylepšuje výkon převodů s plovoucí desetinnou čárkou na celá čísla, Pokud předáte hodnotu vrácenou některou z následujících metod pro jednu z hodnot [vnitřní Visual Basic celočíselné funkce pro převod](../language-reference/functions/type-conversion-functions.md) (CByte, CShort, CInt, CLng, CSByte, CUShort, CUInt, CULng) nebo pokud je hodnota vrácená některou z následujících metod implicitně převedena na celočíselný typ, pokud je [možnost Strict](../language-reference/statements/option-strict-statement.md) nastavena na `Off`:
 
 - <xref:Microsoft.VisualBasic.Conversion.Fix(System.Double)?displayProperty=nameWithType>
 - <xref:Microsoft.VisualBasic.Conversion.Fix(System.Object)?displayProperty=nameWithType>
@@ -148,7 +148,7 @@ Chcete-li použít znak podtržítka jako úvodní oddělovač, je nutné přida
 
 [**Odvození pojmenované řazené kolekce členů**](../programming-guide/language-features/data-types/tuples.md#inferred-tuple-element-names)
 
-Pokud přiřadíte hodnotu prvků řazené kolekce členů z proměnných, Visual Basic odvodí název prvků řazené kolekce členů z odpovídajících názvů proměnných; nemusíte explicitně pojmenovat prvek řazené kolekce členů. Následující příklad používá odvození k vytvoření řazené kolekce členů se třemi pojmenovanými prvky, `state`, `stateName` a `capital`.
+Pokud přiřadíte hodnotu prvků řazené kolekce členů z proměnných, Visual Basic odvodí název prvků řazené kolekce členů z odpovídajících názvů proměnných; nemusíte explicitně pojmenovat prvek řazené kolekce členů. Následující příklad používá odvození k vytvoření řazené kolekce členů se třemi pojmenovanými prvky, `state`, `stateName`a `capital`.
 
 [!code-vb[Inferred tuple names](../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/named-tuples/program.vb#2)]
 
@@ -238,7 +238,7 @@ Můžete mít literály kalendářních dat ve formátu RRRR-MM-DD `#2015-03-17 
 
 Vlastnosti rozhraní jen pro čtení můžete implementovat pomocí vlastnosti. Rozhraní garantuje minimální funkčnost a neukončí implementující třídu, která umožňuje nastavit vlastnost.
 
-[TypeOf \<expr > IsNot \<type >](../../visual-basic/language-reference/operators/typeof-operator.md)
+[TypeOf \<expr > IsNot \<typ >](../../visual-basic/language-reference/operators/typeof-operator.md)
 
 Pro lepší čitelnost kódu můžete nyní použít `TypeOf` s `IsNot`.
 
@@ -291,4 +291,5 @@ Nyní kompilátor použije normální pravidla pro rozlišení přetížení k v
 
 ## <a name="see-also"></a>Viz také:
 
-- [Co je nového v aplikaci Visual Studio 2017](/visualstudio/ide/whats-new-visual-studio-2017)
+- [Co je nového v sadě Visual Studio 2017](/visualstudio/ide/whats-new-visual-studio-2017)
+- [Co je nového v aplikaci Visual Studio 2019](/visualstudio/ide/whats-new-visual-studio-2019)
