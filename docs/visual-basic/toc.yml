@@ -1,5 +1,5 @@
 - name: Průvodce Visual Basicem
-  href: index.md
+  href: index.yml
 - name: Co je nového v jazyce Visual Basic
   href: getting-started/whats-new.md
 - name: Začínáme
@@ -26,7 +26,7 @@
         - name: "Přístup k\_aplikačním webovým službám"
           href: developing-apps/programming/accessing-application-web-services.md
           items:
-            - name: 'Postup: Asynchronní volání webové služby'
+            - name: 'Postupy: Asynchronní volání webové služby'
               href: developing-apps/programming/how-to-call-a-web-service-asynchronously.md
         - name: "Přístup k\_nastavení aplikace"
           href: developing-apps/programming/app-settings/index.md
@@ -96,7 +96,7 @@
       href: programming-guide/program-structure/main-procedure.md
     - name: Odkazy a příkaz Imports
       href: programming-guide/program-structure/references-and-the-imports-statement.md
-    - name: Obory názvů
+    - name: Jmenné prostory
       href: programming-guide/program-structure/namespaces.md
     - name: Konvence vytváření názvů
       href: programming-guide/program-structure/naming-conventions.md
@@ -104,11 +104,11 @@
       href: programming-guide/program-structure/coding-conventions.md
     - name: Podmíněná kompilace
       href: programming-guide/program-structure/conditional-compilation.md
-    - name: 'Postup: Přerušení a kombinování příkazů v kódu'
+    - name: 'Postupy: Přerušení a kombinování příkazů v kódu'
       href: programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md
-    - name: 'Postup: Sbalení a skrytí sekcí kódu'
+    - name: 'Postupy: Sbalení a skrytí sekcí kódu'
       href: programming-guide/program-structure/how-to-collapse-and-hide-sections-of-code.md
-    - name: 'Postup: Vytváření popisků příkazů'
+    - name: 'Postupy: Vytváření popisků příkazů'
       href: programming-guide/program-structure/how-to-label-statements.md
     - name: Speciální znaky v kódu
       href: programming-guide/program-structure/special-characters-in-code.md
@@ -131,7 +131,7 @@
       href: programming-guide/language-features/constants-enums/index.md
     - name: Tok řízení
       href: programming-guide/language-features/control-flow/index.md
-    - name: Typy dat
+    - name: Datové typy
       href: programming-guide/language-features/data-types/index.md
       items:
         - name: Znaky typu
@@ -148,14 +148,14 @@
         - name: Složené datové typy
           href: programming-guide/language-features/data-types/composite-data-types.md
           items:
-            - name: 'Postup: Uchování více než jedné hodnoty v proměnné'
+            - name: 'Postupy: Uchování více než jedné hodnoty v proměnné'
               href: programming-guide/language-features/data-types/how-to-hold-more-than-one-value-in-a-variable.md
         - name: Obecné typy
           href: programming-guide/language-features/data-types/generic-types.md
           items:
-            - name: 'Postup: Definice třídy, která poskytne identické funkce pro různé datové typy'
+            - name: 'Postupy: Definice třídy, která poskytne identické funkce pro různé datové typy'
               href: programming-guide/language-features/data-types/how-to-define-a-class-that-can-provide-identical-functionality.md
-            - name: 'Postup: Použití obecné třídy'
+            - name: 'Postupy: Použití obecné třídy'
               href: programming-guide/language-features/data-types/how-to-use-a-generic-class.md
         - name: Obecné procedury
           href: programming-guide/language-features/data-types/generic-procedures.md
@@ -172,14 +172,14 @@
               href: programming-guide/language-features/data-types/implicit-and-explicit-conversions.md
             - name: Převody mezi řetězci a ostatními typy
               href: programming-guide/language-features/data-types/conversions-between-strings-and-other-types.md
-            - name: 'Postup: Převedení objektu na jiný typ'
+            - name: 'Postupy: Převedení objektu na jiný typ'
               href: programming-guide/language-features/data-types/how-to-convert-an-object-to-another-type.md
             - name: Převody polí
               href: programming-guide/language-features/data-types/array-conversions.md
         - name: Struktury
           href: programming-guide/language-features/data-types/structures.md
           items:
-            - name: 'Postup: Deklarace struktury'
+            - name: 'Postupy: Deklarace struktury'
               href: programming-guide/language-features/data-types/how-to-declare-a-structure.md
             - name: Proměnné struktury
               href: programming-guide/language-features/data-types/structure-variables.md
@@ -229,15 +229,15 @@
   items:
     - name: Představení zprostředkovatele komunikace s objekty COM
       href: programming-guide/com-interop/introduction-to-com-interop.md
-    - name: 'Postup: Odkaz na objekty COM'
+    - name: 'Postupy: Odkaz na objekty COM'
       href: programming-guide/com-interop/how-to-reference-com-objects.md
-    - name: 'Postup: Práce s ovládacími prvky ActiveX'
+    - name: 'Postupy: Práce s ovládacími prvky ActiveX'
       href: programming-guide/com-interop/how-to-work-with-activex-controls.md
     - name: 'Návod: Volání rozhraní API systému Windows'
       href: programming-guide/com-interop/walkthrough-calling-windows-apis.md
-    - name: 'Postup: Volání rozhraní API systému Windows'
+    - name: 'Postupy: Volání rozhraní API systému Windows'
       href: programming-guide/com-interop/how-to-call-windows-apis.md
-    - name: 'Postup: Volání funkce Windows, která přebírá typy bez znaménka'
+    - name: 'Postupy: Volání funkce Windows, která přebírá typy bez znaménka'
       href: programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md
     - name: 'Návod: Vytváření objektů COM'
       href: programming-guide/com-interop/walkthrough-creating-com-objects.md
@@ -348,14 +348,14 @@
           href: language-reference/directives/if-then-else-directives.md
         - name: '#Region – direktiva'
           href: language-reference/directives/region-directive.md
-    - name: Functions
+    - name: Funkce
       href: language-reference/functions/index.md
       items:
         - name: Převodní funkce
           href: language-reference/functions/conversion-functions.md
         - name: Matematické funkce
           href: language-reference/functions/math-functions.md
-        - name: Funkce pro práci s řetězci
+        - name: Funkce řetězce
           href: language-reference/functions/string-functions.md
         - name: Funkce pro převod typů
           href: language-reference/functions/type-conversion-functions.md
@@ -369,7 +369,7 @@
       items:
         - name: Ansi
           href: language-reference/modifiers/ansi.md
-        - name: Sestavení
+        - name: Assembly
           href: language-reference/modifiers/assembly.md
         - name: Async
           href: language-reference/modifiers/async.md
@@ -387,7 +387,7 @@
           href: language-reference/modifiers/in-generic-modifier.md
         - name: Iterátor
           href: language-reference/modifiers/iterator.md
-        - name: Klíč
+        - name: Key
           href: language-reference/modifiers/key.md
         - name: Modul
           href: language-reference/modifiers/module-keyword.md
@@ -415,7 +415,7 @@
           href: language-reference/modifiers/paramarray.md
         - name: Částečné
           href: language-reference/modifiers/partial.md
-        - name: Private
+        - name: Soukromé
           href: language-reference/modifiers/private.md
         - name: Private Protected
           href: language-reference/modifiers/private-protected.md
@@ -429,9 +429,9 @@
           href: language-reference/modifiers/readonly.md
         - name: Shadows
           href: language-reference/modifiers/shadows.md
-        - name: Sdílená
+        - name: Shared
           href: language-reference/modifiers/shared.md
-        - name: Statická
+        - name: Static
           href: language-reference/modifiers/static.md
         - name: Kódování Unicode
           href: language-reference/modifiers/unicode.md
@@ -1161,7 +1161,7 @@
           href: language-reference/error-messages/path-not-found.md
         - name: Chyba přístupu k cestě nebo k souboru
           href: language-reference/error-messages/path-file-access-error.md
-        - name: Oprávnění se zamítlo
+        - name: Oprávnění byla odepřena.
           href: language-reference/error-messages/permission-denied.md
         - name: Volání procedury nebo argument nejsou platné.
           href: language-reference/error-messages/procedure-call-or-argument-is-not-valid.md
@@ -1294,7 +1294,7 @@
         - name: Sestavení z příkazového řádku
           href: reference/command-line-compiler/building-from-the-command-line.md
           items:
-            - name: 'Postup: Volání kompilátoru příkazového řádku'
+            - name: 'Postupy: Volání kompilátoru příkazového řádku'
               href: reference/command-line-compiler/how-to-invoke-the-command-line-compiler.md
             - name: Příkazové řádky ukázkové kompilace
               href: reference/command-line-compiler/sample-compilation-command-lines.md
@@ -1417,5 +1417,5 @@
       href: reference/language-specification/
 - name: Ukázkové aplikace
   href: sample-applications.md
-- name: Názorné postupy
+- name: Postupy
   href: walkthroughs.md

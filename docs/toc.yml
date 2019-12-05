@@ -11,9 +11,9 @@
 - name: 'Průvodce jazykem C#'
   href: csharp/index.yml
 - name: 'Průvodce jazykem F#'
-  href: fsharp/
+  href: fsharp/index.yml
 - name: Průvodce jazykem Visual Basic
-  href: visual-basic/
+  href: visual-basic/index.yml
 - name: Průvodce ML.NET
   href: machine-learning/index.yml
 - name: Průvodce rozhraním .NET for Apache Spark
