@@ -8,28 +8,28 @@ helpviewer_keywords:
 - TextPattern class
 - classes, TextPattern
 ms.assetid: b51206f2-1281-4ad0-9820-ea39d88ae577
-ms.openlocfilehash: b7985e6cf3eaa810a893b0b5183a1c141a041768
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: bd19d02ade7c7826f6c0b26d894bcd48827e7ccb
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71040504"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74800857"
 ---
-# <a name="ui-automation-text-pattern"></a><span data-ttu-id="b5b20-102">Vzor ovládacích prvků text pro automatizaci uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="b5b20-102">UI Automation Text Pattern</span></span>
+# <a name="ui-automation-text-pattern"></a><span data-ttu-id="e653b-102">Vzor ovládacích prvků text pro automatizaci uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="e653b-102">UI Automation Text Pattern</span></span>
 > [!NOTE]
-> <span data-ttu-id="b5b20-103">Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované <xref:System.Windows.Automation> v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="b5b20-103">This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace.</span></span> <span data-ttu-id="b5b20-104">Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API služby Windows Automation: Automatizace](https://go.microsoft.com/fwlink/?LinkID=156746)uživatelského rozhraní.</span><span class="sxs-lookup"><span data-stu-id="b5b20-104">For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).</span></span>  
+> <span data-ttu-id="e653b-103">Tato dokumentace je určena pro .NET Framework vývojářů, kteří chtějí používat spravované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v oboru názvů <xref:System.Windows.Automation>.</span><span class="sxs-lookup"><span data-stu-id="e653b-103">This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace.</span></span> <span data-ttu-id="e653b-104">Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]najdete v tématu [rozhraní API pro Windows Automation: automatizace uživatelského rozhraní](/windows/win32/winauto/entry-uiauto-win32).</span><span class="sxs-lookup"><span data-stu-id="e653b-104">For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](/windows/win32/winauto/entry-uiauto-win32).</span></span>  
   
- <span data-ttu-id="b5b20-105">Toto téma obsahuje přehledy a postupy, které vám pomůžou začít pracovat v programování pro textové prvky v [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)].</span><span class="sxs-lookup"><span data-stu-id="b5b20-105">This topic contains overviews and how-to topics to help you get started in programming for text elements in [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)].</span></span>  
+ <span data-ttu-id="e653b-105">Toto téma obsahuje přehledy a postupy, které vám pomůžou začít s programováním pro textové prvky v [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)].</span><span class="sxs-lookup"><span data-stu-id="e653b-105">This topic contains overviews and how-to topics to help you get started in programming for text elements in [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)].</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="b5b20-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="b5b20-106">In This Section</span></span>  
- [<span data-ttu-id="b5b20-107">Přehled prvku TextPattern automatizace uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="b5b20-107">UI Automation TextPattern Overview</span></span>](ui-automation-textpattern-overview.md)  
- [<span data-ttu-id="b5b20-108">TextPattern a vložené objekty – přehled</span><span class="sxs-lookup"><span data-stu-id="b5b20-108">TextPattern and Embedded Objects Overview</span></span>](textpattern-and-embedded-objects-overview.md)  
- [<span data-ttu-id="b5b20-109">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="b5b20-109">How-to Topics</span></span>](ui-automation-text-pattern-how-to-topics.md)  
+## <a name="in-this-section"></a><span data-ttu-id="e653b-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="e653b-106">In This Section</span></span>  
+ [<span data-ttu-id="e653b-107">Přehled prvku TextPattern automatizace uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="e653b-107">UI Automation TextPattern Overview</span></span>](ui-automation-textpattern-overview.md)  
+ [<span data-ttu-id="e653b-108">TextPattern a vložené objekty – přehled</span><span class="sxs-lookup"><span data-stu-id="e653b-108">TextPattern and Embedded Objects Overview</span></span>](textpattern-and-embedded-objects-overview.md)  
+ [<span data-ttu-id="e653b-109">Témata s postupy</span><span class="sxs-lookup"><span data-stu-id="e653b-109">How-to Topics</span></span>](ui-automation-text-pattern-how-to-topics.md)  
   
-## <a name="reference"></a><span data-ttu-id="b5b20-110">Reference</span><span class="sxs-lookup"><span data-stu-id="b5b20-110">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="e653b-110">Odkaz</span><span class="sxs-lookup"><span data-stu-id="e653b-110">Reference</span></span>  
  <xref:System.Windows.Automation.Text>  
   
-## <a name="see-also"></a><span data-ttu-id="b5b20-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b5b20-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e653b-111">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e653b-111">See also</span></span>
 
-- [<span data-ttu-id="b5b20-112">Vzory ovládacích prvků pro automatizaci uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="b5b20-112">UI Automation Control Patterns</span></span>](ui-automation-control-patterns.md)
-- [<span data-ttu-id="b5b20-113">Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty</span><span class="sxs-lookup"><span data-stu-id="b5b20-113">UI Automation Control Patterns for Clients</span></span>](ui-automation-control-patterns-for-clients.md)
+- [<span data-ttu-id="e653b-112">Vzory ovládacích prvků pro automatizaci uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="e653b-112">UI Automation Control Patterns</span></span>](ui-automation-control-patterns.md)
+- [<span data-ttu-id="e653b-113">Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty</span><span class="sxs-lookup"><span data-stu-id="e653b-113">UI Automation Control Patterns for Clients</span></span>](ui-automation-control-patterns-for-clients.md)
