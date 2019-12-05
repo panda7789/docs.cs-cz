@@ -293,9 +293,6 @@
             - name: Prostředky v desktopových aplikacích
               tocHref: /dotnet/framework/resources/
               topicHref: /dotnet/framework/resources/index
-            - name: Zabezpečení v rozhraní .NET Framework
-              tocHref: /dotnet/framework/security/
-              topicHref: /dotnet/framework/security/index
             - name: .NET Framework – nástroje
               tocHref: /dotnet/framework/tools/
               topicHref: /dotnet/framework/tools/index
