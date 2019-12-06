@@ -25,15 +25,17 @@
       href: how-to-guides/debug.md
     - name: Odesílání úloh do HDInsightu
       href: how-to-guides/hdinsight-deploy-methods.md
+    - name: Odesílání úloh do Databricks
+      href: how-to-guides/databricks-deploy-methods.md
 - name: Odkaz
   items:
-    - name: Referenční materiály k rozhraní API
+    - name: Referenční dokumentace ke knihovně API
       href: 'https://docs.microsoft.com/dotnet/api/?view=spark-dotnet'
-- name: Zdroje a prostředky
+- name: Prostředky
   items:
     - name: Přehled prostředků
       href: resources/index.md
-    - name: GitHubu
+    - name: GitHub
       href: 'https://github.com/dotnet/spark'
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/.net-spark'

@@ -109,8 +109,18 @@
   items:
     - name: Nastavení
       href: run-time-config/index.md
+    - name: Nastavení kompilace
+      href: run-time-config/compilation.md
+    - name: Nastavení ladění a profilace
+      href: run-time-config/debugging-profiling.md
     - name: Nastavení systému uvolňování paměti
       href: run-time-config/garbage-collector.md
+    - name: Nastavení globalizace
+      href: run-time-config/globalization.md
+    - name: Nastavení sítě
+      href: run-time-config/networking.md
+    - name: Nastavení dělení na vlákna
+      href: run-time-config/threading.md
 - name: Nativní interoperabilita
   items:
     - name: Vystavení komponent .NET Core pro COM
