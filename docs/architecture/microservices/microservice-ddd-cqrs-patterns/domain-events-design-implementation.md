@@ -2,12 +2,12 @@
 title: Události domény. návrh a implementace
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Získejte podrobné zobrazení událostí domény, klíčový koncept k navázání komunikace mezi agregacemi.
 ms.date: 10/08/2018
-ms.openlocfilehash: f427ed5216af11b90c5a8cede15806a11aedc76d
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 3bba18d4a77b47abee55c16bae8a64ed27ac9aba
+ms.sourcegitcommit: 68a4b28242da50e1d25aab597c632767713a6f81
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74835543"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74884225"
 ---
 # <a name="domain-events-design-and-implementation"></a>Doménové události: Návrh a implementace
 
@@ -342,7 +342,7 @@ Nakonec je důležité si všimnout, že někdy budete chtít rozšířit událo
 
 Jak je uvedeno, pomocí událostí domény explicitně implementujte vedlejší účinky změn ve vaší doméně. Chcete-li použít DDD, použijte k explicitní implementaci vedlejších efektů v rámci jednoho nebo více agregací události domény. Navíc a kvůli lepší škálovatelnosti a menšímu dopadu na zámky databáze používejte konečnou konzistenci mezi agregacemi v rámci stejné domény.
 
-Referenční aplikace používá [MediatR](https://github.com/jbogard/MediatR) k šíření událostí domény synchonously napříč agregacemi v rámci jedné transakce. Můžete ale použít i některé implementace AMQP, jako je [RabbitMQ](https://www.rabbitmq.com/) nebo [Azure Service Bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-messaging-overview) k asynchronnímu šíření událostí domény, a to pomocí konečné konzistence, ale jak je uvedeno výše, musíte vzít v úvahu potřebu kompenzačních akcí v případě selhání.
+Referenční aplikace používá [MediatR](https://github.com/jbogard/MediatR) k synchronnímu šíření událostí domény napříč agregacemi v rámci jedné transakce. Můžete ale použít i některé implementace AMQP, jako je [RabbitMQ](https://www.rabbitmq.com/) nebo [Azure Service Bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-messaging-overview) k asynchronnímu šíření událostí domény, a to pomocí konečné konzistence, ale jak je uvedeno výše, musíte vzít v úvahu potřebu kompenzačních akcí v případě selhání.
 
 ## <a name="additional-resources"></a>Další materiály a zdroje informací
 
