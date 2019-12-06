@@ -5,15 +5,13 @@ metadata:
   title: C#dokumentace – Začínáme, kurzy, reference.
   description: Seznámení C# s programováním – pro zahájení vývojářů, vývojářů novinek C#a zkušeností C# a vývojářů .NET
   ms.topic: landing-page
-  author: billwagner
-  ms.author: wiwagn
   ms.date: 11/19/2019
-  ms.openlocfilehash: 5af88b8a75ecd3cfca7c93b08cb262f161498903
-  ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+  ms.openlocfilehash: fa778c4610dbfe8320d488098b5bfd39de8e4705
+  ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 11/21/2019
-  ms.locfileid: "74284015"
+  ms.lasthandoff: 12/05/2019
+  ms.locfileid: "74835469"
 landingContent:
 - title: Informace k programu vC#
   linkLists:
@@ -63,7 +61,7 @@ landingContent:
       url: tutorials/working-with-linq.md
     - text: Formátování textu pomocí interpolace řetězce
       url: tutorials/string-interpolation.md
-    - text: Procházet všechny kurzy
+    - text: Projít všechny kurzy
       url: tutorials/index.md
 - title: Nové funkce v C# 8,0
   linkLists:
