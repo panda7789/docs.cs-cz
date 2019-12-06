@@ -3,15 +3,15 @@ title: Instalace .NET Core SDK v systémech Windows, Linux a macOS – .NET Core
 description: Přečtěte si, jak nainstalovat .NET Core v systému Windows, Linux a macOS. Objevte závislosti potřebné pro vývoj aplikací .NET Core.
 author: thraka
 ms.author: adegeo
-ms.date: 11/06/2019
+ms.date: 12/04/2019
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: 290bdfb05b328bb311e6ff5ef493048b05985899
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 5ac2d7897ee4c6707669e4f9104317aeb2e1f473
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74801940"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74835680"
 ---
 # <a name="install-the-net-core-sdk"></a>Instalace .NET Core SDK
 
@@ -21,10 +21,10 @@ V tomto článku se naučíte, jak nainstalovat .NET Core SDK. .NET Core SDK slo
 
 ## <a name="install-with-an-installer"></a>Instalace pomocí instalačního programu
 
-Systém Windows obsahuje samostatné instalační programy, které lze použít k instalaci sady .NET Core 3,0 SDK:
+Systém Windows obsahuje samostatné instalační programy, které lze použít k instalaci sady .NET Core 3,1 SDK:
 
-- [Procesory x64 (64 bitů)](https://dotnet.microsoft.com/download/dotnet-core/3.0) 
-- [Procesory x86 (32 bitů)](https://dotnet.microsoft.com/download/dotnet-core/3.0)
+- [Procesory x64 (64 bitů)](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+- [Procesory x86 (32 bitů)](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 
 ::: zone-end
 
@@ -32,9 +32,9 @@ Systém Windows obsahuje samostatné instalační programy, které lze použít 
 
 ## <a name="install-with-an-installer"></a>Instalace pomocí instalačního programu
 
-macOS má samostatné instalační programy, které se dají použít k instalaci sady .NET Core 3,0 SDK:
+macOS má samostatné instalační programy, které se dají použít k instalaci sady .NET Core 3,1 SDK:
 
-- [Procesory x64 (64 bitů)](https://dotnet.microsoft.com/download/dotnet-core/3.0)
+- [Procesory x64 (64 bitů)](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 
 ::: zone-end
 
@@ -49,7 +49,7 @@ macOS má samostatné instalační programy, které se dají použít k instalac
 K extrakci sady SDK a zpřístupnění příkazů v terminálu nejprve [Stáhněte](#all-net-core-downloads) binární verzi .NET Core. Pak otevřete terminál a spusťte následující příkazy.
 
 ```bash
-mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-3.0.101-linux-musl-x64.tar.gz -C $HOME/dotnet
+mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-3.1.101-linux-musl-x64.tar.gz -C $HOME/dotnet
 export DOTNET_ROOT=$HOME/dotnet
 export PATH=$PATH:$HOME/dotnet
 ```
@@ -77,7 +77,7 @@ Pokud používáte Visual Studio pro vývoj aplikací .NET Core, v následujíc�
 
 | Verze .NET Core SDK | Verze sady Visual Studio                      |
 | --------------------- | ------------------------------------------ |
-| 3,1 Preview           | Visual Studio 2019 verze 16,4 Preview nebo vyšší. |
+| 3.1                   | Visual Studio 2019 verze 16,4 nebo vyšší. |
 | 3,0                   | Visual Studio 2019 verze 16,3 nebo vyšší. |
 | 2.2                   | Visual Studio 2017 verze 15,9 nebo vyšší. |
 | 2.1                   | Visual Studio 2017 verze 15,7 nebo vyšší. |
@@ -109,7 +109,7 @@ Při instalaci nebo úpravách sady Visual Studio vyberte jednu z následující
 
 ## <a name="install-with-visual-studio-for-mac"></a>Instalace pomocí Visual Studio pro Mac
 
-Visual Studio pro Mac nainstaluje .NET Core SDK při výběru úlohy **.NET Core** . Chcete-li začít s vývojem .NET Core v macOS, přečtěte si téma [instalace sady Visual Studio 2019 for Mac](/visualstudio/mac/installation).
+Visual Studio pro Mac nainstaluje .NET Core SDK při výběru úlohy **.NET Core** . Chcete-li začít s vývojem .NET Core v macOS, přečtěte si téma [instalace sady Visual Studio 2019 for Mac](/visualstudio/mac/installation). Pro nejnovější vydání .NET Core 3,1 je nutné použít Visual Studio pro Mac 8,4 Preview.
 
 [![macOS sady Visual Studio 2019 pro Mac s funkcí úlohy .NET Core](media/install-sdk/mac-install-selection.png)](media/install-sdk/mac-install-selection.png#lightbox)
 
@@ -178,7 +178,7 @@ Další informace o použití .NET Core v kontejneru Docker najdete v tématu [�
 
 - [Kurz: C# kurz Hello World](../tutorials/with-visual-studio.md).
 - [Kurz: kurz Hello World Visual Basic](../tutorials/vb-with-visual-studio.md).
-- [Kurz: vytvoření nové aplikace pomocí Visual Studio Code](https://code.visualstudio.com/docs/languages/dotnet).
+- [Kurz: vytvoření nové aplikace pomocí Visual Studio Code](../tutorials/with-visual-studio-code.md).
 - [Kurz: kontejnerizace aplikace .NET Core](../docker/build-container.md)
 
 ::: zone-end
@@ -186,7 +186,14 @@ Další informace o použití .NET Core v kontejneru Docker najdete v tématu [�
 ::: zone pivot="os-macos"
 
 - [Kurz: Začínáme s MacOS](../tutorials/using-on-mac-vs.md).
-- [Kurz: vytvoření nové aplikace pomocí Visual Studio Code](https://code.visualstudio.com/docs/languages/dotnet).
+- [Kurz: vytvoření nové aplikace pomocí Visual Studio Code](../tutorials/with-visual-studio-code.md).
+- [Kurz: kontejnerizace aplikace .NET Core](../docker/build-container.md)
+
+::: zone-end
+
+::: zone pivot="os-linux"
+
+- [Kurz: vytvoření nové aplikace pomocí Visual Studio Code](../tutorials/with-visual-studio-code.md).
 - [Kurz: kontejnerizace aplikace .NET Core](../docker/build-container.md)
 
 ::: zone-end

@@ -4,42 +4,42 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - programming [WF], persistence
 ms.assetid: 39e69d1f-b771-4c16-9e18-696fa43b65b2
-ms.openlocfilehash: afe47975a393db3074222ebf0461f5b73fb6442d
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c49e287c6132103d4bb85a8ae892a76f9b582274
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64655798"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837529"
 ---
 # <a name="workflow-persistence"></a>Trvalost pracovního postupu
-Trvalost pracovního postupu je trvalý zachycení stavu instance pracovního postupu, nezávisle na informace o procesu nebo počítač. To se provádí k poskytování známého bodu obnovení pro instanci pracovního postupu v případě selhání systému, nebo pro zachování paměti podle uvolnění instancí pracovních postupů, které nejsou aktivně provádějící práce nebo přesunout do jiného stavu instance pracovního postupu z jednoho uzlu uzel v serverové farmě.  
+Trvalost pracovního postupu je trvalé zachycení stavu instance pracovního postupu, nezávisle na informacích o procesu nebo počítači. K tomu je potřeba zajistit dobře známý bod obnovení instance pracovního postupu v případě selhání systému nebo zachovat paměť uvolněním instancí pracovních postupů, které aktivně nepracují, nebo přesunutím stavu instance pracovního postupu z jednoho uzlu do druhého. uzel v serverové farmě.  
   
- Trvalost umožňuje procesu flexibilitu, škálovatelnost, zotavení i v případě selhání a možnost spravovat efektivněji paměť. Proces trvalého zahrnuje identifikaci bod trvalost, shromažďují data, která mají být uloženy a nakonec delegování skutečnou velikost úložiště dat do poskytovatele trvalého chování.  
+ Trvalost umožňuje zpracovat flexibilitu, škálovatelnost, obnovení při selhání a možnost efektivněji spravovat paměť. Proces trvalosti zahrnuje identifikaci trvalého bodu, shromažďování dat, která mají být uložena, a nakonec delegace skutečného úložiště dat k poskytovateli trvalosti.  
   
- K povolení trvalosti pro pracovní postup, je nutné přidružit úložiště instance s **WorkflowApplication** nebo **hostitele služby pracovního postupu** jak je uvedeno v [jak: Povolení trvalosti pro pracovní postupy a služby pracovních postupů](how-to-enable-persistence-for-workflows-and-workflow-services.md). **WorkflowApplication** a **hostitele služby pracovního postupu** použití v úložišti instancí, které jsou k nim má přiřazené k povolení uchování instance pracovního postupu do trvalého úložiště a načtení instance pracovního postupu do paměť podle data instance pracovního postupu, který je uložen v úložišti stálost.  
+ Chcete-li povolit trvalost pro pracovní postup, je třeba přidružit úložiště instancí k aplikaci **WorkflowApplication** nebo **WorkflowServiceHost** , jak je uvedeno v tématu [Postupy: povolení trvalosti pro pracovní postupy a služby pracovních postupů](how-to-enable-persistence-for-workflows-and-workflow-services.md). Aplikace **WorkflowApplication** a **WorkflowServiceHost** používají úložiště instancí, které jsou k nim přidružené, aby bylo možné replikovat instance pracovních postupů do úložiště trvalosti a načítat instance pracovního postupu do paměti na základě dat instance pracovního postupu, která jsou uložená v úložišti trvalosti.  
   
- [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] Se dodává s **SqlWorkflowInstanceStore** třídu, která umožňuje trvalost dat a metadata o instance pracovního postupu do databáze serveru SQL Server 2005 nebo SQL Server 2008. Zobrazit [Store Instance pracovního postupu SQL](sql-workflow-instance-store.md) další podrobnosti.  
+ [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] dodává se třídou **SqlWorkflowInstanceStore** , která umožňuje Trvalost dat a metadat o instancích pracovního postupu do databáze SQL Server 2005 nebo SQL Server 2008. Další podrobnosti najdete v tématu [úložiště instancí pracovních postupů SQL](sql-workflow-instance-store.md) .  
   
- K ukládání a načítání dat specifické pro aplikaci společně s informace související s instancí pracovního postupu, můžete vytvořit účastníci trvalosti, které rozšiřují <xref:System.Activities.Persistence.PersistenceParticipant> třídy. Trvalého účastníka se účastní procesu trvalost uložit vlastní serializovat data do trvalého úložiště, načtení dat z úložiště instancí do paměti a provádět žádná další logika v rámci transakce trvalosti. Další informace najdete v tématu [účastníci trvalosti](persistence-participants.md).  
+ Chcete-li uložit a načíst data specifická pro aplikaci spolu s informacemi souvisejícími s instancí pracovního postupu, můžete vytvořit účastníky trvalého chování, které rozšiřuje třídu <xref:System.Activities.Persistence.PersistenceParticipant>. Účastník trvalosti se účastní procesu trvalosti, aby ušetřil vlastní serializovatelný data do úložiště Persistence, načetla data z úložiště instance do paměti a prováděla další logiku v rámci transakce trvalosti. Další informace najdete v tématu [trvalé účastníky](persistence-participants.md).  
   
- Windows Server App Fabric zjednodušuje proces konfigurace trvalosti. Další informace najdete v tématu [koncepty trvalosti pomocí systému Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201200)  
+ Windows Server App Fabric zjednodušuje proces konfigurace trvalosti. Další informace najdete v tématu [Koncepty trvalosti s Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677272(v=azure.10)) .  
   
-## <a name="implicit-persistence-points"></a>Implicitní body trvalosti  
- Následující seznam obsahuje příklady podmínek, na kterých je trvalá pracovního postupu při úložiště instance je přiřazen pracovní postup.  
+## <a name="implicit-persistence-points"></a>Implicitní trvalé body trvalosti  
+ Následující seznam obsahuje příklady podmínek, při kterých je pracovní postup trvale uložený v případě, že je k pracovnímu postupu přidruženo úložiště instancí.  
   
-- Když **TransactionScope** dokončení aktivity nebo **TransactedReceiveScope** dokončení aktivity.  
+- Po dokončení aktivity **TransactionScope** nebo dokončení aktivity **TransactedReceiveScope** .  
   
-- Jakmile se instance pracovního postupu změní nečinnosti a **WorkflowIdleBehavior** je nastavena na hostitele pracovního postupu. K tomu dojde, například při použití zasílání zpráv aktivity nebo **zpoždění** aktivity.  
+- Když instance pracovního postupu vznikne nečinný a v hostiteli pracovního postupu je nastavená možnost **WorkflowIdleBehavior** . K tomu dochází například při použití aktivity zasílání zpráv nebo aktivity **zpoždění** .  
   
-- Když aplikace WorkflowApplication změní na nečinnosti a **PersistableIdle** aplikace je nastavena na **PersistableIdleAction.Persist**.  
+- Když je aplikace WorkflowApplication v nečinnosti a vlastnost **PersistableIdle** aplikace je nastavena na **PersistableIdleAction. trvalá**.  
   
-- Pokud hostitelská aplikace je nastaven na zachovat nebo uvolnit instance pracovního postupu.  
+- Pokud je hostitelská aplikace pokyn k uchování nebo uvolnění instance pracovního postupu.  
   
-- Když instance pracovního postupu je ukončen nebo dokončení.  
+- Když se instance pracovního postupu ukončí nebo dokončí.  
   
-- Když **trvalého** aktivity spustí.  
+- Když se spustí **trvalá** aktivita.  
   
-- Instance pracovního postupu vyvinuté pomocí předchozí verze Windows Workflow Foundation Pokud nalezne bod trvalost během interoperabilní provádění.  
+- Když instance pracovního postupu vyvinutá v předchozí verzi programovací model Windows Workflow Foundation narazí na bod trvalosti během vzájemně ovladatelného provádění.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   

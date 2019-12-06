@@ -2,12 +2,12 @@
 title: Nástroj WorkFlow Service Registration (WFServicesReg.exe)
 ms.date: 03/30/2017
 ms.assetid: 9e92c87b-99c5-4e8d-9d53-7944cc2b47d3
-ms.openlocfilehash: 6b1a0b990b1657e724f527b5beccce0e8a6391a6
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: cf5ea345c900dec0e4859d81fcb272c1ba3d3df6
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74281674"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837750"
 ---
 # <a name="workflow-service-registration-tool-wfservicesregexe"></a>Nástroj WorkFlow Service Registration (WFServicesReg.exe)
 Nástroj pro registraci služby Workflow Services (WFServicesReg. exe) je samostatný nástroj, který se dá použít k přidání, odebrání nebo opravě elementů konfigurace pro služby programovací model Windows Workflow Foundation (WF).  
@@ -60,7 +60,7 @@ WFServicesReg.exe [-c | -r | -v | -m | -i]
   
  V 64 bitových počítačích nástroj zaregistruje v režimu WOW mapy skriptů, pokud je povolený přepínač `Enable32BitAppOnWin64`, nebo nativní 64é mapy skriptů, pokud je přepínač `Enable32BitAppOnWin64` zakázaný.  
   
- V počítačích [!INCLUDE[wv](../../../includes/wv-md.md)] a Windows Server 2008 (IIS 7,0 a vyšší) jsou registrovány dvě sady obslužných rutin. XOML a. Rules: jeden pro integrovaný režim a jeden pro klasický režim.  
+ V počítačích se systémem Windows Vista a Windows Server 2008 (IIS 7,0 a vyšší) jsou registrovány dvě sady obslužných rutin. XOML a. Rules: jeden pro integrovaný režim a jeden pro klasický režim.  
   
  Na 64ch bitových počítačích jsou registrovány tři sady obslužných rutin (bez ohledu na stav přepínače `Enable32BitAppOnWin64`): jeden pro integrovaný režim, jeden pro integrovaný režim WOW a jeden pro nativní 64 klasický režim.  
   

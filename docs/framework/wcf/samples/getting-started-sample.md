@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - basic samples [WCF], getting started
 ms.assetid: 967a3d94-0261-49ff-b85a-20bb07f1af20
-ms.openlocfilehash: 3282daff166a8fe56841a41bfe8bd9dd69f9d4c8
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 59f9edf67c03fb7d8670058eca8ea672a6f64c02
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74716946"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837867"
 ---
 # <a name="getting-started-sample"></a>Ukázky Začínáme
 
@@ -34,7 +34,7 @@ Služba popisuje operace, které provádí v kontraktu služby, který zveřejň
 
 Klient obsahuje definici kontraktu služby a proxy třídy pro přístup ke službě. Proxy kód se generuje z metadat služby pomocí nástroje pro nástroj pro [metadata ServiceModel (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).
 
-V [!INCLUDE[wv](../../../../includes/wv-md.md)]je služba hostovaná v aktivační službě systému Windows (WAS). Na [!INCLUDE[wxp](../../../../includes/wxp-md.md)] a [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]je hostovaný službou Internetová informační služba (IIS) a ASP.NET. Hostování služby ve službě IIS nebo služba mohla být aktivována automaticky při prvním otevření.
+V systému Windows Vista je služba hostována v aktivační službě systému Windows (WAS). Na [!INCLUDE[wxp](../../../../includes/wxp-md.md)] a [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]je hostovaný službou Internetová informační služba (IIS) a ASP.NET. Hostování služby ve službě IIS nebo služba mohla být aktivována automaticky při prvním otevření.
 
 > [!NOTE]
 > Pokud byste chtěli začít s ukázkou, která hostuje službu v konzolové aplikaci namísto služby IIS, přečtěte si ukázku pro [sebe v samostatném hostiteli](../../../../docs/framework/wcf/samples/self-host.md) .

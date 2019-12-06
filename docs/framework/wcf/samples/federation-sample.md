@@ -2,12 +2,12 @@
 title: Ukázka federace
 ms.date: 03/30/2017
 ms.assetid: 7e9da0ca-e925-4644-aa96-8bfaf649d4bb
-ms.openlocfilehash: 271790e08476533fc1d83e22c5a0daf2f1eaa42a
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: c143ad9315df94a2d836a2c2c742ffa9a7728511
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74716929"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837880"
 ---
 # <a name="federation-sample"></a>Ukázka federace
 Tato ukázka demonstruje federované zabezpečení.  
@@ -89,7 +89,7 @@ Tato ukázka demonstruje federované zabezpečení.
 1. Otevřete okno příkazového řádku sady SDK. V ukázkové cestě spusťte Setup. bat. Tím se vytvoří virtuální adresáře vyžadované pro ukázku a nainstalují se požadované certifikáty s příslušnými oprávněními.  
   
     > [!NOTE]
-    > Dávkový soubor Setup. bat je navržený tak, aby se spouštěl z příkazového řádku Windows SDK. Vyžaduje, aby proměnná prostředí MSSDK odkazovala na adresář, ve kterém je sada SDK nainstalována. Tato proměnná prostředí se automaticky nastaví v rámci Windows SDK příkazového řádku. Na [!INCLUDE[wv](../../../../includes/wv-md.md)]je potřeba zajistit, aby byla nainstalovaná Kompatibilita správy služby IIS 6,0, protože nastavení používá skripty Správce služby IIS. Spuštění skriptu pro nastavení na [!INCLUDE[wv](../../../../includes/wv-md.md)] vyžaduje oprávnění správce.  
+    > Dávkový soubor Setup. bat je navržený tak, aby se spouštěl z příkazového řádku Windows SDK. Vyžaduje, aby proměnná prostředí MSSDK odkazovala na adresář, ve kterém je sada SDK nainstalována. Tato proměnná prostředí se automaticky nastaví v rámci Windows SDK příkazového řádku. V systému Windows Vista je nutné zajistit, aby byla nainstalovaná Kompatibilita správy služby IIS 6,0, protože nastavení používá skripty Správce služby IIS. Spuštění skriptu pro nastavení v systému Windows Vista vyžaduje oprávnění správce.  
   
 2. Otevřete FederationSample. sln v aplikaci Visual Studio a v nabídce **sestavení** vyberte **Sestavit řešení** . Tím se vytvoří společné soubory projektu, služba Bookstore, Bookstore STS, HomeRealm STS a nasadí je ve službě IIS. Tím se také vytvoří klientská aplikace pro Bookstore a ve složce FederationSample\BookStoreClient\bin\Debug se umístí spustitelný soubor BookStoreClient. exe.  
   

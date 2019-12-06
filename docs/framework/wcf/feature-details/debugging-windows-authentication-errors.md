@@ -8,19 +8,19 @@ helpviewer_keywords:
 - WCF, authentication
 - WCF, Windows authentication
 ms.assetid: 181be4bd-79b1-4a66-aee2-931887a6d7cc
-ms.openlocfilehash: 20ca8f049298f75412da4c8a7e58975954f67741
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 52e968706ef4ca703a26e613e681cff3c30ba181
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968863"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74838023"
 ---
 # <a name="debugging-windows-authentication-errors"></a>Ladění chyb ověřování systému Windows
 Při použití ověřování systému Windows jako mechanismu zabezpečení zpracovává rozhraní SSPI (Security Support Provider Interface) procesy zabezpečení. Pokud dojde k chybám zabezpečení ve vrstvě SSPI, jsou umístěny na základě Windows Communication Foundation (WCF). Toto téma poskytuje strukturu a sadu otázek, které vám pomůžou diagnostikovat chyby.  
   
  Přehled protokolu Kerberos najdete v tématu [Vysvětlení protokolu Kerberos](https://go.microsoft.com/fwlink/?LinkID=86946). Přehled rozhraní SSPI naleznete v tématu [SSPI](https://go.microsoft.com/fwlink/?LinkId=88941).  
   
- Pro ověřování systému Windows WCF typicky používá zprostředkovatele zabezpečení (SSP), který provádí vzájemné ověřování protokolu Kerberos mezi klientem a službou. Pokud protokol Kerberos není k dispozici, ve výchozím nastavení se služba WCF vrátí do programu NT LAN Manager (NTLM). Můžete ale nakonfigurovat WCF na použití jenom protokolu Kerberos (a vyvolat výjimku, pokud není k dispozici protokol Kerberos). Můžete také nakonfigurovat WCF tak, aby používal omezené formuláře protokolu Kerberos.  
+ Pro ověřování systému Windows WCF typicky používá zprostředkovatele *zabezpečení (* SSP), který provádí vzájemné ověřování protokolu Kerberos mezi klientem a službou. Pokud protokol Kerberos není k dispozici, ve výchozím nastavení se služba WCF vrátí do programu NT LAN Manager (NTLM). Můžete ale nakonfigurovat WCF na použití jenom protokolu Kerberos (a vyvolat výjimku, pokud není k dispozici protokol Kerberos). Můžete také nakonfigurovat WCF tak, aby používal omezené formuláře protokolu Kerberos.  
   
 ## <a name="debugging-methodology"></a>Metodologie ladění  
  Základní metoda je následující:  
@@ -40,21 +40,21 @@ Při použití ověřování systému Windows jako mechanismu zabezpečení zpra
 |-|----------------|------------------|-----------------|--------------------|  
 |Místní uživatel|NTLM|NTLM|NTLM|NTLM|  
 |Místní systém|Anonymní protokol NTLM|Anonymní protokol NTLM|Anonymní protokol NTLM|Anonymní protokol NTLM|  
-|Uživatel domény|NTLM|NTLM|Sdílené|Sdílené|  
-|Počítač domény|NTLM|NTLM|Sdílené|Sdílené|  
+|Uživatel domény|NTLM|NTLM|Kerberos|Kerberos|  
+|Počítač domény|NTLM|NTLM|Kerberos|Kerberos|  
   
  Mezi ně patří konkrétně tyto čtyři typy účtů:  
   
-- Místní uživatel: Jenom počítač – profil uživatele. Například: `MachineName\Administrator` nebo `MachineName\ProfileName`.  
+- Místní uživatel: uživatelský profil pouze počítač. Například: `MachineName\Administrator` nebo `MachineName\ProfileName`.  
   
-- Místní systém: Integrovaný systém účtů na počítači, který není připojený k doméně.  
+- Místní systém: integrovaný systém účtů na počítači, který není připojený k doméně.  
   
-- Uživatel domény: Uživatelský účet v doméně systému Windows. Například: `DomainName\ProfileName`.  
+- Uživatel domény: uživatelský účet v doméně systému Windows. Například: `DomainName\ProfileName`.  
   
-- Počítač domény: Proces s identitou počítače běžící na počítači připojeném k doméně systému Windows. Například: `MachineName\Network Service`.  
+- Počítač domény: proces s identitou počítače běžící na počítači připojeném k doméně systému Windows. Například: `MachineName\Network Service`.  
   
 > [!NOTE]
-> Pověření služby je zachyceno při <xref:System.ServiceModel.ICommunicationObject.Open%2A> volání metody <xref:System.ServiceModel.ServiceHost> třídy. Přihlašovací údaje klienta se čtou při každém odeslání zprávy klientem.  
+> Pověření služby je zachyceno při volání metody <xref:System.ServiceModel.ICommunicationObject.Open%2A> třídy <xref:System.ServiceModel.ServiceHost>. Přihlašovací údaje klienta se čtou při každém odeslání zprávy klientem.  
   
 ## <a name="common-windows-authentication-problems"></a>Běžné problémy s ověřováním systému Windows  
  Tato část popisuje některé běžné problémy s ověřováním systému Windows a možné nápravy.  
@@ -69,7 +69,7 @@ Při použití ověřování systému Windows jako mechanismu zabezpečení zpra
  K získání hlavního názvu služby (SPN) pro účet vaší služby musíte být správcem domény služby Active Directory. Další informace najdete v tématu o [technickém dodatku Kerberos pro Windows](https://go.microsoft.com/fwlink/?LinkID=88330).  
   
 #### <a name="kerberos-protocol-direct-requires-the-service-to-run-under-a-domain-machine-account"></a>Protokol Kerberos Direct vyžaduje, aby služba běžela pod účtem počítače domény.  
- K `ClientCredentialType` tomu dochází, je-li vlastnost `Windows` nastavena na <xref:System.ServiceModel.MessageSecurityOverHttp.NegotiateServiceCredential%2A> hodnotu a vlastnost je `false`nastavena na hodnotu, jak je znázorněno v následujícím kódu.  
+ K tomu dochází, je-li vlastnost `ClientCredentialType` nastavena na hodnotu `Windows` a vlastnost <xref:System.ServiceModel.MessageSecurityOverHttp.NegotiateServiceCredential%2A> je nastavena na `false`, jak je znázorněno v následujícím kódu.  
   
  [!code-csharp[C_DebuggingWindowsAuth#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_debuggingwindowsauth/cs/source.cs#1)]
  [!code-vb[C_DebuggingWindowsAuth#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_debuggingwindowsauth/vb/source.vb#1)]  
@@ -81,24 +81,24 @@ Při použití ověřování systému Windows jako mechanismu zabezpečení zpra
   
  K implementaci protokolu Kerberos s vyjednáváním přihlašovacích údajů proveďte následující kroky:  
   
-1. Implementujte delegování <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> nastavením na <xref:System.Security.Principal.TokenImpersonationLevel.Delegation>.  
+1. Implementujte delegování nastavením <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> na <xref:System.Security.Principal.TokenImpersonationLevel.Delegation>.  
   
 2. Vyžadovat vyjednávání SSPI:  
   
-    1. Používáte-li standardní vazby, nastavte `NegotiateServiceCredential` vlastnost na `true`hodnotu.  
+    1. Pokud používáte standardní vazby, nastavte vlastnost `NegotiateServiceCredential` na hodnotu `true`.  
   
-    2. Pokud používáte vlastní vazby, nastavte `AuthenticationMode` atribut `Security` elementu na `SspiNegotiated`.  
+    2. Pokud používáte vlastní vazby, nastavte atribut `AuthenticationMode` elementu `Security` na `SspiNegotiated`.  
   
 3. Vyžaduje, aby vyjednávání SSPI používalo protokol Kerberos, a to tak, že nepovolí použití NTLM:  
   
-    1. Udělejte to v kódu s následujícím příkazem:`ChannelFactory.Credentials.Windows.AllowNtlm = false`  
+    1. Udělejte to v kódu s následujícím příkazem: `ChannelFactory.Credentials.Windows.AllowNtlm = false`  
   
-    2. Nebo to můžete provést v konfiguračním souboru nastavením `allowNtlm` atributu na. `false` Tento atribut je součástí [ \<> Windows](../../../../docs/framework/configure-apps/file-schema/wcf/windows-of-clientcredentials-element.md).  
+    2. Nebo to můžete provést v konfiguračním souboru nastavením atributu `allowNtlm` na `false`. Tento atribut je součástí [\<> Windows](../../../../docs/framework/configure-apps/file-schema/wcf/windows-of-clientcredentials-element.md).  
   
 ### <a name="ntlm-protocol"></a>Protokol NTLM  
   
 #### <a name="negotiate-ssp-falls-back-to-ntlm-but-ntlm-is-disabled"></a>Vyjednání SSP se vrátí do protokolu NTLM, ale protokol NTLM je zakázán.  
- Vlastnost je nastavena na `false`, což způsobí, že Windows Communication Foundation (WCF) vyvolá výjimku, pokud je použit protokol NTLM. <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> Všimněte si, že nastavení této `false` vlastnosti na nemusí bránit v posílání přihlašovacích údajů NTLM přes tento kabel.  
+ Vlastnost <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> je nastavena na hodnotu `false`, která způsobuje, že Windows Communication Foundation (WCF) vyvolá výjimku, pokud se používá protokol NTLM. Všimněte si, že nastavení této vlastnosti na `false` nemusí bránit posílání přihlašovacích údajů protokolu NTLM po drátě.  
   
  Následující příklad ukazuje, jak zakázat použití funkce Fallback na NTLM.  
   
@@ -109,7 +109,7 @@ Při použití ověřování systému Windows jako mechanismu zabezpečení zpra
  Pověření klienta nejsou ve službě platná. Ověřte, že uživatelské jméno a heslo jsou správně nastaveny a odpovídají účtu, který je známý pro počítač, na kterém je služba spuštěná. Protokol NTLM používá zadaná pověření pro přihlášení k počítači služby. I když jsou přihlašovací údaje platné v počítači, kde je spuštěný klient nástroje, přihlášení se nezdaří, pokud nejsou přihlašovací údaje v počítači služby platné.  
   
 #### <a name="anonymous-ntlm-logon-occurs-but-anonymous-logons-are-disabled-by-default"></a>Dojde k anonymnímu přihlášení NTLM, ale anonymní přihlášení jsou ve výchozím nastavení zakázaná.  
- Při vytváření klienta <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> je vlastnost nastavena na <xref:System.Security.Principal.TokenImpersonationLevel.Anonymous>, jak je znázorněno v následujícím příkladu, ale ve výchozím nastavení Server nepovoluje anonymní přihlašování. K tomu dochází, protože výchozí hodnota <xref:System.ServiceModel.Security.WindowsServiceCredential.AllowAnonymousLogons%2A> vlastnosti <xref:System.ServiceModel.Security.WindowsServiceCredential> třídy je `false`.  
+ Při vytváření klienta je vlastnost <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> nastavena na hodnotu <xref:System.Security.Principal.TokenImpersonationLevel.Anonymous>, jak je znázorněno v následujícím příkladu, ale ve výchozím nastavení Server nepovoluje anonymní přihlašování. K tomu dochází, protože výchozí hodnota vlastnosti <xref:System.ServiceModel.Security.WindowsServiceCredential.AllowAnonymousLogons%2A> třídy <xref:System.ServiceModel.Security.WindowsServiceCredential> je `false`.  
   
  Následující kód klienta se pokusí povolit anonymní přihlašování (Všimněte si, že výchozí vlastnost je `Identification`).  
   
@@ -128,7 +128,7 @@ Při použití ověřování systému Windows jako mechanismu zabezpečení zpra
 ### <a name="other-problems"></a>Jiné problémy  
   
 #### <a name="client-credentials-are-not-set-correctly"></a>Přihlašovací údaje klienta nejsou nastavené správně.  
- Ověřování systému Windows používá <xref:System.ServiceModel.Security.WindowsClientCredential> instanci vrácenou <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> vlastností <xref:System.ServiceModel.ClientBase%601> třídy, nikoli <xref:System.ServiceModel.Security.UserNamePasswordClientCredential>. Následující příklad ukazuje nesprávný příklad.  
+ Ověřování systému Windows používá instanci <xref:System.ServiceModel.Security.WindowsClientCredential> vrácenou vlastností <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A> třídy <xref:System.ServiceModel.ClientBase%601>, nikoli <xref:System.ServiceModel.Security.UserNamePasswordClientCredential>. Následující příklad ukazuje nesprávný příklad.  
   
  [!code-csharp[C_DebuggingWindowsAuth#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_debuggingwindowsauth/cs/source.cs#2)]
  [!code-vb[C_DebuggingWindowsAuth#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_debuggingwindowsauth/vb/source.vb#2)]  
@@ -139,10 +139,10 @@ Při použití ověřování systému Windows jako mechanismu zabezpečení zpra
  [!code-vb[C_DebuggingWindowsAuth#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_debuggingwindowsauth/vb/source.vb#3)]  
   
 #### <a name="sspi-is-not-available"></a>Rozhraní SSPI není k dispozici.  
- Následující operační systémy nepodporují ověřování systému Windows, pokud se používají jako server: [!INCLUDE[wxp](../../../../includes/wxp-md.md)]Home Edition, [!INCLUDE[wxp](../../../../includes/wxp-md.md)] edice Media Center Edition a [!INCLUDE[wv](../../../../includes/wv-md.md)]Home Edition.  
+ Následující operační systémy nepodporují ověřování Windows, když se používají jako server: [!INCLUDE[wxp](../../../../includes/wxp-md.md)] Home Edition, [!INCLUDE[wxp](../../../../includes/wxp-md.md)] Media Center Edition a Windows Vista Home Edition.  
   
 #### <a name="developing-and-deploying-with-different-identities"></a>Vývoj a nasazení s různými identitami  
- Pokud vyvíjíte aplikaci na jednom počítači a nasadíte ji na jiný počítač a použijete k ověřování na každém počítači různé typy účtů, může docházet k různým chování. Předpokládejme například, že vyvíjíte aplikaci na počítači se systémem Windows XP pro pomocí `SSPI Negotiated` režimu ověřování. Použijete-li k ověřování pomocí místní uživatelský účet, bude použit protokol NTLM. Po dokončení vývoje aplikace službu nasadíte na počítač s Windows serverem 2003, na kterém běží pod účtem domény. V tomto okamžiku klient nebude moci ověřit službu, protože bude používat protokol Kerberos a řadič domény.  
+ Pokud vyvíjíte aplikaci na jednom počítači a nasadíte ji na jiný počítač a použijete k ověřování na každém počítači různé typy účtů, může docházet k různým chování. Předpokládejme například, že vyvíjíte aplikaci na počítači se systémem Windows XP pro pomocí režimu ověřování `SSPI Negotiated`. Použijete-li k ověřování pomocí místní uživatelský účet, bude použit protokol NTLM. Po dokončení vývoje aplikace službu nasadíte na počítač s Windows serverem 2003, na kterém běží pod účtem domény. V tomto okamžiku klient nebude moci ověřit službu, protože bude používat protokol Kerberos a řadič domény.  
   
 ## <a name="see-also"></a>Viz také:
 

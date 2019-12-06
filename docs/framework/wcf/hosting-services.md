@@ -4,14 +4,14 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting services [WCF]
 ms.assetid: 192be927-6be2-4fda-98f0-e513c4881acc
-ms.openlocfilehash: 634e34eceeb3d3b8828a6d5ed85b6194bcf8586c
-ms.sourcegitcommit: 9b2ef64c4fc10a4a10f28a223d60d17d7d249ee8
+ms.openlocfilehash: b914d5d9f578c5ce13dfc1c520f1b26f8af1fa76
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "72961155"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837919"
 ---
-# <a name="hosting-services"></a>Služby hostování
+# <a name="hosting-services"></a>Hostingové služby
 
 Aby bylo možné stát aktivní, musí být služba hostována v prostředí runtime, které je vytvoří a řídí její kontext a dobu života. Služba Windows Communication Foundation (WCF) je navržena tak, aby běžela v jakémkoli procesu systému Windows, který podporuje spravovaný kód.
 
@@ -22,7 +22,7 @@ Tyto možnosti hostování se spouštějí v rámci konzolové aplikace na serve
 ## <a name="hosting-options"></a>Možnosti hostování
 
 ### <a name="self-host-in-a-managed-application"></a>Samoobslužné hostování ve spravované aplikaci
- Služby WCF je možné hostovat v jakékoli spravované aplikaci. Tato možnost je nejpružnější, protože vyžaduje, aby se nasadila minimální infrastruktura. Kód pro službu vložíte do spravovaného kódu aplikace a pak vytvoříte a otevřete instanci <xref:System.ServiceModel.ServiceHost>, abyste službu mohli zpřístupnit. Další informace najdete v tématu [Postup: hostování služby WCF ve spravované aplikaci](how-to-host-a-wcf-service-in-a-managed-application.md).
+ Služby WCF je možné hostovat v jakékoli spravované aplikaci. Tato možnost je nejpružnější, protože vyžaduje, aby se nasadila minimální infrastruktura. Kód pro službu vložíte do spravovaného kódu aplikace a pak vytvoříte a otevřete instanci <xref:System.ServiceModel.ServiceHost>, aby služba byla k dispozici. Další informace najdete v tématu [Postup: hostování služby WCF ve spravované aplikaci](how-to-host-a-wcf-service-in-a-managed-application.md).
 
  Tato možnost umožňuje dva běžné scénáře: služby WCF běžící uvnitř konzolových aplikací a bohatých klientských aplikací, jako jsou například na základě Windows Presentation Foundation (WPF) nebo model Windows Forms (WinForms). Hostování služby WCF v konzolové aplikaci je obvykle užitečné během fáze vývoje aplikace. Díky tomu se dají snadno ladit, snadno získat trasovací informace a zjistit, co se děje uvnitř aplikace, a snadno se pohybovat, když je zkopírujete do nových umístění. Tato možnost hostování také usnadňuje použití bohatých klientských aplikací, jako jsou WPF a WinForms, ke komunikaci s vnějším světem. Například klient pro spolupráci Peer-to-peer, který používá WPF pro své uživatelské rozhraní a také hostuje službu WCF, která umožňuje ostatním klientům připojit se k němu a sdílet informace.
 
@@ -35,18 +35,18 @@ Tyto možnosti hostování se spouštějí v rámci konzolové aplikace na serve
  Služby hostované službou IIS můžou používat jenom přenos HTTP. Jeho implementace ve službě IIS 5,1 zavedla určitá omezení [!INCLUDE[wxp](../../../includes/wxp-md.md)]. Aktivace založená na zprávách poskytovaná službou WCF 5,1 na [!INCLUDE[wxp](../../../includes/wxp-md.md)] blokuje všechny ostatní samoobslužné služby WCF ve stejném počítači, aby komunikovaly pomocí portu 80. Služby WCF lze spustit ve stejné doméně nebo fondu aplikací nebo pracovním procesu jako jiné aplikace, pokud jsou hostovány službou IIS 6,0 na [!INCLUDE[ws2003](../../../includes/ws2003-md.md)]. Vzhledem k tomu, že WCF a IIS 6,0 obě používají zásobník HTTP v režimu jádra (HTTP. sys), služba IIS 6,0 může sdílet port 80 s ostatními místně hostovanými službami WCF běžícími na stejném počítači, na rozdíl od služby IIS 5,1.
 
 ### <a name="windows-process-activation-service-was"></a>Aktivační služba procesů systému Windows (WAS)
- Aktivační služba procesů systému Windows (WAS) je nový mechanismus aktivace procesu pro [!INCLUDE[lserver](../../../includes/lserver-md.md)], který je také k dispozici v [!INCLUDE[wv](../../../includes/wv-md.md)]. Zachovává známý model procesu služby IIS 6,0 (fondy aplikací a aktivace procesů založené na zprávách) a funkce hostování (například rychlá ochrana při selhání, monitorování stavu a recyklace), ale odstraní závislost na HTTP z aktivace. Architektura. Služba IIS 7,0 používala k provedení aktivace založené na zprávách přes HTTP. K dalším součástem WCF se taky připojíte tak, aby poskytovaly aktivaci na základě zpráv přes jiné protokoly, které podporuje WCF, jako je například TCP, MSMQ a pojmenované kanály. To umožňuje aplikacím, které používají komunikační protokoly, používat funkce služby IIS, jako je recyklace procesů, rychlá ochrana proti selhání a společný konfigurační systém, který byl dostupný jenom pro aplikace založené na protokolu HTTP.
+ Aktivační služba procesů systému Windows (WAS) je nový mechanismus aktivace procesu pro [!INCLUDE[lserver](../../../includes/lserver-md.md)], která je také k dispozici v systému Windows Vista. Zachovává známý model procesu služby IIS 6,0 (fondy aplikací a aktivace procesů založené na zprávách) a funkce hostování (například rychlá ochrana při selhání, monitorování stavu a recyklace), ale odstraní závislost na HTTP z aktivace. Architektura. Služba IIS 7,0 používala k provedení aktivace založené na zprávách přes HTTP. K dalším součástem WCF se taky připojíte tak, aby poskytovaly aktivaci na základě zpráv přes jiné protokoly, které podporuje WCF, jako je například TCP, MSMQ a pojmenované kanály. To umožňuje aplikacím, které používají komunikační protokoly, používat funkce služby IIS, jako je recyklace procesů, rychlá ochrana proti selhání a společný konfigurační systém, který byl dostupný jenom pro aplikace založené na protokolu HTTP.
 
  Tato možnost hostování vyžaduje, aby byla správně nakonfigurovaná, ale nevyžaduje, abyste v rámci aplikace napsali žádný hostující kód. Další informace o tom, jak nakonfigurovat hostování, najdete v tématu [How to: Host a WCF Service in was](./feature-details/how-to-host-a-wcf-service-in-was.md).
 
 ## <a name="choose-a-hosting-environment"></a>Zvolit hostitelské prostředí
  Následující tabulka shrnuje některé klíčové výhody a scénáře spojené s jednotlivými možnostmi hostování.
 
-|Hostitelské prostředí|Běžné scénáře|Klíčové výhody a omezení|
+|Hostitelské prostředí|Typické scénáře|Klíčové výhody a omezení|
 |-------------------------|----------------------|----------------------------------|
 |Spravovaná aplikace (místní hostování)|-Konzolové aplikace používané během vývoje.<br />– Rich DataGridView a klientské aplikace WPF přistupující ke službám.|Disket.<br />– Snadné nasazení.<br />– Nejedná se o podnikové řešení pro služby.|
 |Služby systému Windows (dřív označované jako služby NT)|– Dlouhodobě běžící služba WCF hostovaná mimo službu IIS.|– Služba neaktivuje dobu života procesu řízenou operačním systémem, nikoli zprávou.<br />– Podporováno všemi verzemi systému Windows.<br />– Zabezpečení prostředí.|
-|IIS 5,1, IIS 6,0|– Souběžně běžící služba WCF s ASP.NET obsahem na internetu pomocí protokolu HTTP.|– Zpracování recyklace.<br />-Nečinné vypnutí.<br />– Monitorování stavu procesu.<br />– Aktivace založená na zprávách.<br />– Jenom HTTP.|
+|IIS 5.1, IIS 6.0|– Souběžně běžící služba WCF s ASP.NET obsahem na internetu pomocí protokolu HTTP.|– Zpracování recyklace.<br />-Nečinné vypnutí.<br />– Monitorování stavu procesu.<br />– Aktivace založená na zprávách.<br />– Jenom HTTP.|
 |Aktivační služba procesů systému Windows (WAS)|– Spuštění služby WCF bez instalace IIS na internetu s použitím různých přenosových protokolů.|– Služba IIS se nevyžaduje.<br />– Zpracování recyklace.<br />-Nečinné vypnutí.<br />– Monitorování stavu procesu.<br />– Aktivace založená na zprávách.<br />– Funguje s HTTP, TCP, Named Pipes a MSMQ.|
 |Internetová informační služba 7,0|– Spuštění služby WCF s obsahem ASP.NET<br />– Spuštění služby WCF na internetu s použitím různých přenosových protokolů.|– WAS výhody.<br />– Integrováno s obsahem ASP.NET a IIS.|
 
@@ -54,13 +54,13 @@ Tyto možnosti hostování se spouštějí v rámci konzolové aplikace na serve
 
 |Hostitelské prostředí|Dostupnost platformy|Podporované přenosy|Recyklace procesů a AppDomain|
 |-------------------------|---------------------------|--------------------------|-------------------------------------|
-|Spravované aplikace (místní hostování)|[!INCLUDE[wxp](../../../includes/wxp-md.md)], [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], [!INCLUDE[wv](../../../includes/wv-md.md)],<br /><br /> [!INCLUDE[lserver](../../../includes/lserver-md.md)]|HTTP<br /><br /> NET. TCP,<br /><br /> NET. pipe,<br /><br /> NET. MSMQ|Ne|
-|Služby systému Windows (dřív označované jako služby NT)|[!INCLUDE[wxp](../../../includes/wxp-md.md)], [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], [!INCLUDE[wv](../../../includes/wv-md.md)],<br /><br /> [!INCLUDE[lserver](../../../includes/lserver-md.md)]|HTTP<br /><br /> NET. TCP,<br /><br /> NET. pipe,<br /><br /> NET. MSMQ|Ne|
-|SLUŽBA IIS 5,1|[!INCLUDE[wxp](../../../includes/wxp-md.md)]|HTTP|Ano|
+|Spravované aplikace (místní hostování)|[!INCLUDE[wxp](../../../includes/wxp-md.md)], [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], Windows Vista,<br /><br /> [!INCLUDE[lserver](../../../includes/lserver-md.md)]|HTTP,<br /><br /> NET. TCP,<br /><br /> NET. pipe,<br /><br /> NET. MSMQ|Ne|
+|Služby systému Windows (dřív označované jako služby NT)|[!INCLUDE[wxp](../../../includes/wxp-md.md)], [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], Windows Vista,<br /><br /> [!INCLUDE[lserver](../../../includes/lserver-md.md)]|HTTP,<br /><br /> NET. TCP,<br /><br /> NET. pipe,<br /><br /> NET. MSMQ|Ne|
+|IIS 5.1|[!INCLUDE[wxp](../../../includes/wxp-md.md)]|HTTP|Ano|
 |Internetová informační služba 6.0|[!INCLUDE[ws2003](../../../includes/ws2003-md.md)]|HTTP|Ano|
-|Aktivační služba procesů systému Windows (WAS)|[!INCLUDE[wv](../../../includes/wv-md.md)][!INCLUDE[lserver](../../../includes/lserver-md.md)]|HTTP<br /><br /> NET. TCP,<br /><br /> NET. pipe,<br /><br /> NET. MSMQ|Ano|
+|Aktivační služba procesů systému Windows (WAS)|Windows Vista, [!INCLUDE[lserver](../../../includes/lserver-md.md)]|HTTP,<br /><br /> NET. TCP,<br /><br /> NET. pipe,<br /><br /> NET. MSMQ|Ano|
 
- Je důležité si uvědomit, že při používání služby nebo jakéhokoli rozšíření z nedůvěryhodného hostitele dojde k ohrožení zabezpečení. Všimněte si také, že při otevření <xref:System.ServiceModel.ServiceHost> v zosobnění musí aplikace zajistit, že uživatel není odhlášený, například ukládáním <xref:System.Security.Principal.WindowsIdentity> uživatele do mezipaměti.
+ Je důležité si uvědomit, že při používání služby nebo jakéhokoli rozšíření z nedůvěryhodného hostitele dojde k ohrožení zabezpečení. Všimněte si také, že při otevření <xref:System.ServiceModel.ServiceHost> v oblasti zosobnění musí aplikace zajišťovat, že uživatel není odhlášený, například ukládáním <xref:System.Security.Principal.WindowsIdentity> uživatele do mezipaměti.
 
 ## <a name="see-also"></a>Viz také:
 

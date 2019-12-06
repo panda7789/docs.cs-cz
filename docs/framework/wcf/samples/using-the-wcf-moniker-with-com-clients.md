@@ -2,12 +2,12 @@
 title: Použití monikeru služby WCF u klientů modelu COM
 ms.date: 03/30/2017
 ms.assetid: e2799bfe-88bd-49d7-9d6d-ac16a9b16b04
-ms.openlocfilehash: faaf8e80402ddaef85dcf8d7bfe9b1da202227c9
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: bcac9e344e2d981f9f165480cb84ac37c99fa5b0
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715291"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837776"
 ---
 # <a name="using-the-wcf-moniker-with-com-clients"></a>Použití monikeru služby WCF u klientů modelu COM
 Tato ukázka předvádí, jak použít moniker služby Windows Communication Foundation (WCF) k integraci webových služeb do vývojových prostředí založených na modelu COM, jako je například systém Microsoft Office jazyk Visual Basic for Application (Office VBA) nebo Visual Basic 6,0. Tato ukázka se skládá z klienta Windows Script Host (. vbs), podpůrné klientské knihovny (. dll) a knihovny služeb (. dll) hostované službou Internetová informační služba (IIS). Služba je služba kalkulačky a klient modelu COM volá matematické operace – přidat, odečíst, vynásobit a rozdělit – u služby. Aktivita klienta se zobrazí v okně se zprávou okna.  
@@ -191,7 +191,7 @@ WScript.Echo "MEX service moniker: 9 * 81.25 = " & mexServiceMoniker.Multiply(9,
 3. Z Developer Command Prompt pro Visual Studio otevřete složku \client\bin ve složce specifické pro jazyk.  
   
     > [!NOTE]
-    > Pokud používáte [!INCLUDE[wv](../../../../includes/wv-md.md)], [!INCLUDE[lserver](../../../../includes/lserver-md.md)], Windows 7 nebo Windows Server 2008 R2, ujistěte se, že jste spustili příkazový řádek s oprávněními správce.  
+    > Pokud používáte Windows Vista, [!INCLUDE[lserver](../../../../includes/lserver-md.md)], Windows 7 nebo Windows Server 2008 R2, ujistěte se, že jste spustili příkazový řádek s oprávněními správce.  
   
 4. Zadejte `tlbexp.exe client.dll /out:CalcProxy.tlb` pro export knihovny DLL do souboru TLB. Očekává se "upozornění exportéra knihovny typů", ale nejedná se o problém, protože obecný typ není povinný.  
   
@@ -221,7 +221,7 @@ WScript.Echo "MEX service moniker: 9 * 81.25 = " & mexServiceMoniker.Multiply(9,
   
 6. Zkopírujte knihovnu Client. dll ze složky \client\bin ve složce pro konkrétní jazyk do adresáře v klientském počítači.  
   
-7. Z příkazového řádku přejděte do cílového adresáře v klientském počítači. Pokud používáte [!INCLUDE[wv](../../../../includes/wv-md.md)] nebo [!INCLUDE[lserver](../../../../includes/lserver-md.md)], ujistěte se, že se příkazový řádek spouští jako správce.  
+7. Z příkazového řádku přejděte do cílového adresáře v klientském počítači. Pokud používáte systém Windows Vista nebo [!INCLUDE[lserver](../../../../includes/lserver-md.md)], nezapomeňte spustit příkazový řádek jako správce.  
   
 8. Zadejte `tlbexp.exe client.dll /out:CalcProxy.tlb` pro export knihovny DLL do souboru TLB. Očekává se "upozornění exportéra knihovny typů", ale nejedná se o problém, protože obecný typ není povinný.  
   

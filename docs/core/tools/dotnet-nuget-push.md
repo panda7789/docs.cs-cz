@@ -2,13 +2,13 @@
 title: dotnet – příkaz push NuGet
 description: Příkaz dotnet NuGet push odešle balíček na server a publikuje ho.
 author: karann-msft
-ms.date: 06/26/2019
-ms.openlocfilehash: 3299f79ec62aebdcdbef38f1e8b09a2dc5529ec4
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.date: 12/04/2019
+ms.openlocfilehash: 5e80295a570adc30a06d86b6735cb0387e39d5a3
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117489"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74835516"
 ---
 # <a name="dotnet-nuget-push"></a>dotnet nuget push
 
@@ -20,19 +20,19 @@ ms.locfileid: "71117489"
 
 ## <a name="name"></a>Name
 
-`dotnet nuget push`– Odešle balíček na server a publikuje ho.
+`dotnet nuget push` – odešle balíček na server a publikuje ho.
 
 ## <a name="synopsis"></a>Stručný obsah
 
 ```dotnetcli
 dotnet nuget push [<ROOT>] [-d|--disable-buffering] [--force-english-output] [--interactive] [-k|--api-key] [-n|--no-symbols]
-    [--no-service-endpoint] [-s|--source] [-sk|--symbol-api-key] [-ss|--symbol-source] [-t|--timeout]
+    [--no-service-endpoint] [-s|--source] [--skip-duplicate] [-sk|--symbol-api-key] [-ss|--symbol-source] [-t|--timeout]
 dotnet nuget push [-h|--help]
 ```
 
 ## <a name="description"></a>Popis
 
-`dotnet nuget push` Příkaz odešle balíček na server a publikuje ho. Příkaz push používá podrobnosti serveru a přihlašovacích údajů, které se našly v konfiguračním souboru NuGet systému nebo v řetězci konfiguračních souborů. Další informace o konfiguračních souborech najdete v tématu [Konfigurace chování NuGet](/nuget/consume-packages/configuring-nuget-behavior). Výchozí konfigurace NuGet se získá načtením *%AppData%\NuGet\NuGet.config* (Windows) nebo *$Home/.local/share* (Linux/MacOS) a následným načtením jakékoli sady *NuGet. config* nebo *. NuGet\NuGet.config* počínaje kořenem jednotka a končí v aktuálním adresáři.
+Příkaz `dotnet nuget push` odešle balíček na server a publikuje ho. Příkaz push používá podrobnosti serveru a přihlašovacích údajů, které se našly v konfiguračním souboru NuGet systému nebo v řetězci konfiguračních souborů. Další informace o konfiguračních souborech najdete v tématu [Konfigurace chování NuGet](/nuget/consume-packages/configuring-nuget-behavior). Výchozí konfigurace NuGet se získá tak, že se načtou *%AppData%\NuGet\NuGet.config* (Windows) nebo *$Home/.local/share* (Linux/MacOS) a pak se načte jakákoli soubor *NuGet. config* nebo *. NuGet\NuGet.config* počínaje kořenovým adresářem jednotky a končí aktuálním adresářem.
 
 ## <a name="arguments"></a>Arguments
 
@@ -52,7 +52,7 @@ dotnet nuget push [-h|--help]
 
 * **`-h|--help`**
 
-Vypíše krátkou nápovědu k příkazu.
+  Vypíše krátkou nápovědu k příkazu.
 
 * **`--interactive`**
 
@@ -72,8 +72,12 @@ Vypíše krátkou nápovědu k příkazu.
 
 * **`-s|--source <SOURCE>`**
 
-  Určuje adresu URL serveru. Tato možnost je povinná, pokud `DefaultPushSource` konfigurační hodnota není nastavená v konfiguračním souboru NuGet.
+  Určuje adresu URL serveru. Tato možnost je povinná, pokud v konfiguračním souboru NuGet není nastavená hodnota `DefaultPushSource` config.
 
+* **`--skip-duplicate`**
+
+  Při nahrávání více balíčků na server HTTP (S) zachází s každou odpovědí na 409 konfliktů jako s upozorněním, aby bylo možné pokračovat v nabízení. K dispozici od verze .NET Core 3,1 SDK.
+                                 
 * **`-sk|--symbol-api-key <API_KEY>`**
 
   Klíč rozhraní API pro server symbolů.
@@ -94,7 +98,7 @@ Vypíše krátkou nápovědu k příkazu.
   dotnet nuget push foo.nupkg -k 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
   ```
 
-* Vložení *foo. nupkg* do vlastního zdroje `https://customsource`nabízených oznámení zadání klíče rozhraní API:
+* Vložení *foo. nupkg* do vlastního `https://customsource`zdroje nabízených oznámení zadání klíče rozhraní API:
 
   ```dotnetcli
   dotnet nuget push foo.nupkg -k 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -s https://customsource/
@@ -126,4 +130,10 @@ Vypíše krátkou nápovědu k příkazu.
   
   > [!NOTE]
   > Pokud tento příkaz nefunguje, může to být způsobeno chybou, která existovala ve starších verzích sady SDK (.NET Core 2,1 SDK a starších verzích).
-  > Pokud to chcete opravit, upgradujte verzi sady SDK nebo spusťte následující příkaz:`dotnet nuget push **/*.nupkg`
+  > Pokud to chcete opravit, upgradujte verzi sady SDK nebo spusťte následující příkaz: `dotnet nuget push **/*.nupkg`
+  
+* Vloží všechny soubory *. nupkg* i v případě, že server http (S) vrátí odpověď na konflikt 409:
+
+  ```dotnetcli
+  dotnet nuget push *.nupkg --skip-duplicate
+  ```

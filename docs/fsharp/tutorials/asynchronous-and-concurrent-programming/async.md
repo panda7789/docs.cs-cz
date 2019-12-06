@@ -2,12 +2,12 @@
 title: Asynchronní programování vF#
 description: Naučte F# se, jak poskytuje čistou podporu pro asynchronii na základě programovacího modelu na úrovni jazyka odvozeného od konceptů základních funkcí programování.
 ms.date: 12/17/2018
-ms.openlocfilehash: 1ede4a5c1e26df271ac94f9b2c216ac84fb38f59
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 583b0f5154e6ad8875b21503cfb78f70a069ff7b
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72395794"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837100"
 ---
 # <a name="async-programming-in-f"></a>Asynchronní programování v F\#
 
@@ -127,6 +127,7 @@ let main argv =
     argv
     |> Array.map printTotalFileBytes
     |> Async.Sequential
+    |> Async.Ignore
     |> Async.RunSynchronously
     |> ignore
 ```
@@ -149,7 +150,7 @@ Podpis:
 computation: Async<'T> - timeout: ?int -> Async<Async<'T>>
 ```
 
-Kdy použít:
+Ideální v těchto situacích:
 
 - Pokud chcete spustit více asynchronních výpočtů současně, nikoli v jednom okamžiku, ale nemusíte je naplánovat paralelně.
 - Pokud chcete vytvořit propojení životnosti podřízeného výpočtu s nadřazeným výpočtem.
@@ -161,7 +162,7 @@ Co je potřeba sledovat:
 
 ### <a name="asyncstartimmediate"></a>Async. StartImmediate –
 
-Spustí asynchronní výpočet, který se spouští okamžitě na aktuálním vlákně operačního systému. To je užitečné, pokud potřebujete během výpočtu aktualizovat něco v volajícím vlákně. Například pokud asynchronní výpočet musí aktualizovat uživatelské rozhraní (například aktualizace indikátoru průběhu), je třeba použít `Async.StartImmediate`.
+Spustí asynchronní výpočet počínaje okamžitě na aktuálním vlákně operačního systému. To je užitečné, pokud potřebujete během výpočtu aktualizovat něco v volajícím vlákně. Například pokud asynchronní výpočet musí aktualizovat uživatelské rozhraní (například aktualizace indikátoru průběhu), je třeba použít `Async.StartImmediate`.
 
 Podpis:
 
@@ -169,7 +170,7 @@ Podpis:
 computation: Async<unit> - cancellationToken: ?CancellationToken -> unit
 ```
 
-Kdy použít:
+Ideální v těchto situacích:
 
 - Pokud potřebujete něco aktualizovat v volajícím vlákně uprostřed asynchronního výpočtu.
 
@@ -179,7 +180,7 @@ Co je potřeba sledovat:
 
 ### <a name="asyncstartastask"></a>Async. Startastask –
 
-Provede výpočet ve fondu vláken. Vrátí <xref:System.Threading.Tasks.Task%601>, který bude dokončen v odpovídajícím stavu po ukončení výpočtu (vytvoří výsledek, vyvolá výjimku nebo se zruší). Pokud není k dispozici žádný token zrušení, použije se výchozí token zrušení.
+Spustí výpočet ve fondu vláken. Vrátí <xref:System.Threading.Tasks.Task%601>, který bude dokončen v odpovídajícím stavu po ukončení výpočtu (vytvoří výsledek, vyvolá výjimku nebo se zruší). Pokud není k dispozici žádný token zrušení, použije se výchozí token zrušení.
 
 Podpis:
 
@@ -187,7 +188,7 @@ Podpis:
 computation: Async<'T> - taskCreationOptions: ?TaskCreationOptions - cancellationToken: ?CancellationToken -> Task<'T>
 ```
 
-Kdy použít:
+Ideální v těchto situacích:
 
 - Pokud potřebujete zavolat do rozhraní .NET API, které očekává <xref:System.Threading.Tasks.Task%601> pro reprezentaci výsledku asynchronního výpočtu.
 
@@ -244,7 +245,7 @@ Podpis:
 task: Task<'T>  -> Async<'T>
 ```
 
-Kdy použít:
+Ideální v těchto situacích:
 
 - Když spotřebováváte rozhraní .NET API, které vrací <xref:System.Threading.Tasks.Task%601> v rámci F# asynchronního výpočtu.
 
@@ -262,7 +263,7 @@ Podpis:
 computation: Async<'T> -> Async<Choice<'T, exn>>
 ```
 
-Kdy použít:
+Ideální v těchto situacích:
 
 - Při provádění asynchronní práce, která může selhat s výjimkou a chcete tuto výjimku zpracovat v volajícím.
 
@@ -280,7 +281,7 @@ Podpis:
 computation: Async<'T> -> Async<unit>
 ```
 
-Kdy použít:
+Ideální v těchto situacích:
 
 - Pokud máte asynchronní výpočet, jehož výsledek není potřeba. To se podobá kódu `ignore` pro neasynchronní kód.
 

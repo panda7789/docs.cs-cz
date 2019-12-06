@@ -2,12 +2,12 @@
 title: Fronty nedoručených zpráv
 ms.date: 03/30/2017
 ms.assetid: ff664f33-ad02-422c-9041-bab6d993f9cc
-ms.openlocfilehash: 70007289e457588e94128a573ced4b28e238acf4
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 244920eb9a0cdb33f4d5d83b939fe1166f4f5fcd
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74710878"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837906"
 ---
 # <a name="dead-letter-queues"></a>Fronty nedoručených zpráv
 Tato ukázka předvádí, jak zpracovávat a zpracovávat zprávy, které selhaly při doručování. Vychází ze vzorových [vazeb v transakční službě MSMQ](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) . V této ukázce se používá vazba `netMsmqBinding`. Služba je samoobslužná Konzolová aplikace, která vám umožní sledovat službu přijímající zprávy zařazené do fronty.
@@ -16,7 +16,7 @@ Tato ukázka předvádí, jak zpracovávat a zpracovávat zprávy, které selhal
 > Postup nastavení a pokyny pro sestavení pro tuto ukázku najdete na konci tohoto tématu.
 
 > [!NOTE]
-> Tato ukázka demonstruje každou frontu nedoručených zpráv aplikace, která je k dispozici pouze na [!INCLUDE[wv](../../../../includes/wv-md.md)]. Ukázku můžete upravit tak, aby používala výchozí systémové fronty pro službu MSMQ 3,0 na [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wxp](../../../../includes/wxp-md.md)].
+> Tato ukázka předvádí každou frontu nedoručených zpráv aplikace, která je k dispozici pouze v systému Windows Vista. Ukázku můžete upravit tak, aby používala výchozí systémové fronty pro službu MSMQ 3,0 na [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wxp](../../../../includes/wxp-md.md)].
 
  V komunikaci ve frontě klient komunikuje se službou pomocí fronty. Klient přesněji odesílá zprávy do fronty. Služba přijímá zprávy z fronty. Službu a klient proto nemusí běžet současně, aby bylo možné komunikovat pomocí fronty.
 
@@ -30,9 +30,9 @@ Tato ukázka předvádí, jak zpracovávat a zpracovávat zprávy, které selhal
 
 - `System`: fronta nedoručených zpráv systému se používá k ukládání nedoručených zpráv. Fronta nedoručených zpráv systému je sdílena všemi aplikacemi spuštěnými v počítači.
 
-- `Custom`: k ukládání nedoručených zpráv se používá vlastní fronta nedoručených zpráv, která je určená pomocí vlastnosti <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A>. Tato funkce je k dispozici pouze na [!INCLUDE[wv](../../../../includes/wv-md.md)]. Tato část se používá, když aplikace musí používat vlastní frontu nedoručených zpráv místo jejího sdílení s jinými aplikacemi spuštěnými ve stejném počítači.
+- `Custom`: k ukládání nedoručených zpráv se používá vlastní fronta nedoručených zpráv, která je určená pomocí vlastnosti <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A>. Tato funkce je k dispozici pouze v systému Windows Vista. Tato část se používá, když aplikace musí používat vlastní frontu nedoručených zpráv místo jejího sdílení s jinými aplikacemi spuštěnými ve stejném počítači.
 
-- <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> vlastnost pro vyjádření konkrétní fronty, která se má použít jako fronta nedoručených zpráv. Tato dostupnost je k dispozici pouze v [!INCLUDE[wv](../../../../includes/wv-md.md)].
+- <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> vlastnost pro vyjádření konkrétní fronty, která se má použít jako fronta nedoručených zpráv. Tato dostupnost je k dispozici pouze v systému Windows Vista.
 
  V této ukázce klient pošle dávku zpráv službě v rámci rozsahu transakce a určí libovolně nízkou hodnotu "Time to Live" pro tyto zprávy (přibližně 2 sekundy). Klient také určuje vlastní frontu nedoručených zpráv, která má být použita k zařazování zpráv, jejichž platnost vypršela.
 

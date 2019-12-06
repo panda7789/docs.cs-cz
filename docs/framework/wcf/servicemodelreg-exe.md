@@ -2,12 +2,12 @@
 title: Nástroj ServiceModel Registration (ServiceModelReg.exe)
 ms.date: 03/30/2017
 ms.assetid: 396ec5ae-e34f-4c64-a164-fcf50e86b6ac
-ms.openlocfilehash: aa9fc1b2338007db240fb10a9af35754107b07d0
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 2b2580a43270cc221de9cfdf0894a59a040ba307
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424878"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837763"
 ---
 # <a name="servicemodel-registration-tool-servicemodelregexe"></a>Nástroj ServiceModel Registration (ServiceModelReg.exe)
 Tento nástroj příkazového řádku poskytuje možnost spravovat registraci komponent WCF a WF na jednom počítači. Za normálních okolností byste neměli tento nástroj používat, protože komponenty technologie WCF a WF se nakonfigurují po instalaci. Pokud ale máte problémy s aktivací služby, můžete se pokusit zaregistrovat komponenty pomocí tohoto nástroje.  
@@ -24,7 +24,7 @@ ServiceModelReg.exe[(-ia|-ua|-r)|((-i|-u) -c:<command>)] [-v|-q] [-nologo] [-?]
  %SystemRoot%\Microsoft.Net\Framework\v3.0\Windows Communication Foundation \  
   
 > [!NOTE]
-> Pokud je nástroj pro registraci ServiceModel spuštěný na [!INCLUDE[wv](../../../includes/wv-md.md)], dialogové okno **funkce systému Windows** nemusí odrážet možnost **Windows Communication Foundation aktivace protokolem HTTP** v rámci **Microsoft .NET Framework 3,0** je zapnutá. K dialogovému oknu **funkcí Windows** se dostanete tak, že kliknete na **Start**, pak na **Spustit** a pak zadáte **optionalfeatures**.  
+> Když se nástroj pro registraci ServiceModel v systému Windows Vista spustí, dialog **funkcí Windows** se nemusí projevit, protože je zapnutá možnost **Windows Communication Foundation aktivace protokolem HTTP** pod **Microsoft .NET Framework 3,0** . K dialogovému oknu **funkcí Windows** se dostanete tak, že kliknete na **Start**, pak na **Spustit** a pak zadáte **optionalfeatures**.  
   
  V následujících tabulkách jsou popsány možnosti, které lze použít s ServiceModelReg. exe.  
   

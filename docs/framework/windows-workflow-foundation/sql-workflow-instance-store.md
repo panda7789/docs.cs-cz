@@ -2,23 +2,23 @@
 title: Úložiště instancí pracovních postupů SQL
 ms.date: 03/30/2017
 ms.assetid: 8cd2f8a5-4bf8-46ea-8909-c7fdb314fabc
-ms.openlocfilehash: 7cdd852795283660b8077e14686ad7ce4af76673
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1764017369e82cfbed38be06b4a36847576b5fc0
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626196"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837633"
 ---
 # <a name="sql-workflow-instance-store"></a>Úložiště instancí pracovních postupů SQL
-[!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] Se dodává s SQL Store Instance pracovního postupu, který umožňuje pracovní postupy pro zachování informací o stavu instance pracovního postupu v databázi serveru SQL Server 2005 nebo SQL Server 2008. Tato funkce jsou primárně implementované ve formě <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> třída, která je odvozena z abstraktní <xref:System.Runtime.DurableInstancing.InstanceStore> třídy rozhraní trvalosti. Funkce SQL Store Instance pracovního postupu se považuje za SQL poskytovatele trvalého chování, které je konkrétní implementace rozhraní API, které hostitel používá k odesílání příkazů trvalost do úložiště trvalosti.  
+[!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] se dodává s úložištěm instance pracovního postupu SQL, které umožňuje pracovním postupům zachovat informace o stavu pracovních postupů v databázi SQL Server 2005 nebo SQL Server 2008. Tato funkce je primárně implementována ve formě <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> třídy, která je odvozena z abstraktní <xref:System.Runtime.DurableInstancing.InstanceStore> třídy rozhraní Persistence. Funkce úložiště instance pracovního postupu SQL představuje poskytovatele trvalosti SQL, což je konkrétní implementace rozhraní API trvalosti, kterou hostitel používá k odeslání příkazů trvalosti do úložiště.  
   
- Store Instance pracovního postupu SQL podporuje pracovních postupů v místním prostředí nebo služeb pracovních postupů, které používají <xref:System.Activities.WorkflowApplication> nebo <xref:System.ServiceModel.WorkflowServiceHost> a také služeb hostovaných v používal <xref:System.ServiceModel.WorkflowServiceHost>. Funkce SQL Store Instance pracovního postupu služby v místním prostředí můžete nakonfigurovat prostřednictvím kódu programu pomocí objektového modelu vystavené funkci. Můžete nakonfigurovat tuto funkci pro služby hostované <xref:System.ServiceModel.WorkflowServiceHost> jak prostřednictvím kódu programu pomocí objektového modelu a taky pomocí konfiguračního souboru XML.  
+ Úložiště instancí pracovních postupů SQL podporuje pracovní postupy v místním prostředí nebo služby pracovních postupů, které používají <xref:System.Activities.WorkflowApplication> nebo <xref:System.ServiceModel.WorkflowServiceHost>, jakož i služby hostované službou používaly <xref:System.ServiceModel.WorkflowServiceHost>. Funkci úložiště instance pracovního postupu SQL pro samoobslužné služby můžete nakonfigurovat programově pomocí modelu objektu vystaveného funkcí. Tuto funkci můžete nakonfigurovat pro služby hostované <xref:System.ServiceModel.WorkflowServiceHost> programově pomocí objektového modelu a také pomocí konfiguračního souboru XML.  
   
- Funkce SQL pracovního postupu Instance Store (**SqlWorkflowInstanceStore** třídy) neimplementuje <xref:System.ServiceModel.Persistence.PersistenceProviderFactory> a proto se nebude poskytovat podpora trvalosti pro trvalé služby WCF – pracovní postup. Také neimplementuje <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService> a proto se nebude poskytovat podpora trvalosti pro pracovní postupy 3.x. Tato funkce podporuje pracovní postupy trvalosti pro pouze WF 4.0 (a novější) a služby pracovních postupů. Tato funkce také nepodporuje všechny databáze než SQL Server 2005 a SQL Server 2008.  
+ Funkce úložiště instance pracovního postupu SQL (třída**SqlWorkflowInstanceStore** ) neimplementuje <xref:System.ServiceModel.Persistence.PersistenceProviderFactory>, a proto nenabízí podporu trvalosti pro odolné služby WCF bez pracovního postupu. Neimplementuje také <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService>, a proto nenabízí podporu trvalého pracovního postupu 3. x. Funkce podporuje stálost jenom pro pracovní postupy WF 4,0 (a novější) a služby pracovních postupů. Tato funkce také nepodporuje žádné jiné databáze než SQL Server 2005 a SQL Server 2008.  
   
- Témata v této části popisují vlastnosti a funkce Store Instance pracovního postupu SQL a poskytují podrobné informace o konfiguraci úložiště.  
+ Témata v této části popisují vlastnosti a funkce úložiště instancí pracovních postupů SQL a poskytují podrobné informace o konfiguraci úložiště.  
   
- Windows Server App Fabric poskytuje své vlastní úložiště instancí a nástrojů pro zjednodušení konfigurace a použití v úložišti instancí. Další informace najdete v tématu [systému Windows Server App Fabric Instance Store](https://go.microsoft.com/fwlink/?LinkId=201201). Další informace viz databáze trvalosti SQL serveru v aplikaci Fabric [databáze trvalosti SQL serveru v aplikaci Fabric](https://go.microsoft.com/fwlink/?LinkId=201202)  
+ Windows Server App Fabric nabízí vlastní ukládání instancí a nástroje, které zjednodušují konfiguraci a používání úložiště instancí. Další informace najdete v tématu [úložiště instancí Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ff383417(v=azure.10)). Další informace o SQL Server databáze trvalosti App Fabric najdete v tématu [App fabric SQL Server Persistence Database](https://docs.microsoft.com/previous-versions/appfabric/ee790819(v=azure.10)) .  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
@@ -38,4 +38,4 @@ ms.locfileid: "64626196"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Ukázky trvalosti](https://go.microsoft.com/fwlink/?LinkID=177735)
+- [Ukázky trvalosti](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd699769(v=vs.100))

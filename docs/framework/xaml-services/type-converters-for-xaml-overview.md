@@ -6,12 +6,12 @@ helpviewer_keywords:
 - XAML [XAML Services], TypeConverter
 - type conversion for XAML [XAML Services]
 ms.assetid: 51a65860-efcb-4fe0-95a0-1c679cde66b7
-ms.openlocfilehash: b54731cc1aba1a47ed6b11f2bff5c596a53fd4b5
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 65210d8224b145ab23c7bc9ed76997c0892a5f59
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458517"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837256"
 ---
 # <a name="type-converters-for-xaml-overview"></a>Přehled převaděčů typů pro jazyk XAML
 Převaděče typů poskytují logiku pro zapisovač objektů, který se převede z řetězce v kódu XAML na konkrétní objekty v grafu objektů. V .NET Framework služby XAML musí být konvertor typu třída, která je odvozena od <xref:System.ComponentModel.TypeConverter>. Některé převaděče také podporují cestu pro uložení XAML a lze je použít k serializaci objektu do řetězcové notace v kódu serializace. Toto téma popisuje, jak a kdy jsou vyvolány převaděče typu v jazyce XAML, a poskytuje rady pro implementaci pro přepsání metody <xref:System.ComponentModel.TypeConverter>.  
@@ -60,7 +60,7 @@ Převaděče typů poskytují logiku pro zapisovač objektů, který se převede
  <xref:System.ComponentModel.TypeConverter.CanConvertTo%2A> a <xref:System.ComponentModel.TypeConverter.CanConvertFrom%2A> jsou metody podpory, které se používají, když se služba dotazuje na možnosti implementace <xref:System.ComponentModel.TypeConverter>. Tyto metody je nutné implementovat pro návrat `true` pro případy specifické pro typ, které odpovídají metody převodu vašeho převaděče. Pro účely XAML to obecně znamená <xref:System.String> typ.  
   
 ### <a name="culture-information-and-type-converters-for-xaml"></a>Informace o jazykové verzi a převaděče typů pro jazyk XAML  
- Každá implementace <xref:System.ComponentModel.TypeConverter> může jednoznačně interpretovat, co je platný řetězec pro převod, a může také použít nebo ignorovat popis typu, který je předán jako parametr. Důležitým aspektem konverze typu kultura a XAML je následující: i když použití lokalizovatelných řetězců jako hodnot atributů je v jazyce XAML podporováno, nelze použít tyto lokalizovatelné řetězce jako vstup konvertoru typu s konkrétními požadavky na jazykovou verzi. Toto omezení je způsobeno tím, že převaděče typů pro hodnoty atributů XAML zahrnují chování zpracování XAML ve fixním jazyce, které používá `en-US` jazykové verzi. Další informace o důvodech návrhu pro toto omezení naleznete v tématu Specifikace jazyka XAML ([\[MS-XAML\]](https://go.microsoft.com/fwlink/?LinkId=114525)) nebo [globalizace a lokalizace WPF](../wpf/advanced/wpf-globalization-and-localization-overview.md).  
+ Každá implementace <xref:System.ComponentModel.TypeConverter> může jednoznačně interpretovat, co je platný řetězec pro převod, a může také použít nebo ignorovat popis typu, který je předán jako parametr. Důležitým aspektem konverze typu kultura a XAML je následující: i když použití lokalizovatelných řetězců jako hodnot atributů je v jazyce XAML podporováno, nelze použít tyto lokalizovatelné řetězce jako vstup konvertoru typu s konkrétními požadavky na jazykovou verzi. Toto omezení je způsobeno tím, že převaděče typů pro hodnoty atributů XAML zahrnují chování zpracování XAML ve fixním jazyce, které používá `en-US` jazykové verzi. Další informace o důvodech návrhu pro toto omezení naleznete v tématu Specifikace jazyka XAML ([\[MS-XAML\]](https://docs.microsoft.com/previous-versions/msp-n-p/ff650760(v=pandp.10))) nebo [globalizace a lokalizace WPF](../wpf/advanced/wpf-globalization-and-localization-overview.md).  
   
  Jako příklad, kdy může být jazyková verze příčinou problému, některé jazykové verze používají čárku namísto tečky jako oddělovač desetinných míst pro čísla ve formě řetězce. Toto použití koliduje s chováním, které má mnoho existujících převaděčů typů, což je použití čárky jako oddělovače. Předání jazykové verze prostřednictvím `xml:lang` ve okolním kódu XAML problém nevyřeší.  
   

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Auditování událostí zabezpečení služby Windows Communication Foundation'
+title: 'Postupy: auditování událostí zabezpečení Windows Communication Foundation'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,45 +7,45 @@ dev_langs:
 helpviewer_keywords:
 - security [WCF], auditing events
 ms.assetid: e71e9587-3336-46a2-9a9e-d72a1743ecec
-ms.openlocfilehash: 634489ced9b437d7b273eb5fa1092165cc6a935f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: b96c68c06099db2f396d16772cfaa8aee37390fe
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62047961"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74838010"
 ---
-# <a name="how-to-audit-windows-communication-foundation-security-events"></a>Postupy: Auditování událostí zabezpečení služby Windows Communication Foundation
-Windows Communication Foundation (WCF) umožňuje protokolovat události zabezpečení do protokolu událostí Windows, který lze zobrazit pomocí prohlížeče událostí Windows. Toto téma vysvětluje, jak nastavit aplikaci tak, aby protokoly událostí zabezpečení. Další informace o auditování WCF najdete v tématu [auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md).  
+# <a name="how-to-audit-windows-communication-foundation-security-events"></a>Postupy: auditování událostí zabezpečení Windows Communication Foundation
+Windows Communication Foundation (WCF) umožňuje protokolovat události zabezpečení do protokolu událostí systému Windows, který lze zobrazit pomocí Prohlížeč událostí systému Windows. Toto téma vysvětluje, jak nastavit aplikaci tak, aby protokoloval události zabezpečení. Další informace o auditování WCF najdete v tématu [auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md).  
   
 ### <a name="to-audit-security-events-in-code"></a>Auditování událostí zabezpečení v kódu  
   
-1. Zadejte umístění protokolu auditu. Chcete-li to provést, nastavte <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.AuditLogLocation%2A> vlastnost <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior> třídy do jednoho z <xref:System.ServiceModel.AuditLogLocation> hodnot výčtu, jak je znázorněno v následujícím kódu.  
+1. Zadejte umístění protokolu auditu. Chcete-li to provést, nastavte vlastnost <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.AuditLogLocation%2A> třídy <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior> na jednu z hodnot výčtu <xref:System.ServiceModel.AuditLogLocation>, jak je znázorněno v následujícím kódu.  
   
      [!code-csharp[AuditingSecurityEvents#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/auditingsecurityevents/cs/auditingsecurityevents.cs#2)]
      [!code-vb[AuditingSecurityEvents#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/auditingsecurityevents/vb/auditingsecurityevents.vb#2)]  
   
-     <xref:System.ServiceModel.AuditLogLocation> Výčet má tři hodnoty: `Application`, `Security`, nebo `Default`. Hodnota jednoho z protokolů zobrazit v prohlížeči událostí určuje buď protokolu zabezpečení nebo v protokolu aplikace. Pokud používáte `Default` hodnotu, skutečné protokolu bude záviset na aplikace běží na operační systém. Pokud je povolené auditování a umístění protokolu není zadán, výchozí hodnota je `Security` protokolu pro platformy, které podporují zápis do protokolu zabezpečení; v opačném případě bude zapisovat do `Application` protokolu. Pouze [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wv](../../../../includes/wv-md.md)] podporovat zápis do protokolu zabezpečení ve výchozím nastavení.  
+     Výčet <xref:System.ServiceModel.AuditLogLocation> má tři hodnoty: `Application`, `Security`nebo `Default`. Hodnota určuje jeden z protokolů viditelných v Prohlížeč událostí, buď protokol zabezpečení, nebo protokol aplikace. Pokud použijete `Default` hodnotu, bude skutečný protokol záviset na operačním systému, ve kterém je aplikace spuštěná. Pokud je povolené auditování a umístění protokolu není zadané, použije se výchozí protokol `Security` pro platformy, které podporují zápis do protokolu zabezpečení. v opačném případě bude zapisovat do protokolu `Application`. Ve výchozím nastavení podporuje pouze [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a Windows Vista do protokolu zabezpečení.  
   
-2. Nastavte typy událostí auditu. Současně je můžete auditovat události autorizaci na úrovni zpráv nebo událostí na úrovni služby. Chcete-li to provést, nastavte <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.ServiceAuthorizationAuditLevel%2A> vlastnost nebo <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.MessageAuthenticationAuditLevel%2A> vlastnost na jednu z <xref:System.ServiceModel.AuditLevel> hodnot výčtu, jak je znázorněno v následujícím kódu.  
+2. Nastavte typy událostí, které se mají auditovat. Současně můžete auditovat události na úrovni služby nebo události autorizace na úrovni zprávy. Chcete-li to provést, nastavte vlastnost <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.ServiceAuthorizationAuditLevel%2A> nebo vlastnost <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.MessageAuthenticationAuditLevel%2A> na jednu z hodnot výčtu <xref:System.ServiceModel.AuditLevel>, jak je znázorněno v následujícím kódu.  
   
      [!code-csharp[AuditingSecurityEvents#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/auditingsecurityevents/cs/auditingsecurityevents.cs#3)]
      [!code-vb[AuditingSecurityEvents#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/auditingsecurityevents/vb/auditingsecurityevents.vb#3)]  
   
-3. Určete, zda potlačit nebo zveřejnit chyby týkající se událostí auditování protokolu aplikace. Nastavte <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> vlastnost buď `true` nebo `false`, jak je znázorněno v následujícím kódu.  
+3. Určete, zda se mají potlačit nebo vystavení selhání aplikace v souvislosti s událostmi auditu protokolu. Vlastnost <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> nastavte buď na `true` nebo `false`, jak je znázorněno v následujícím kódu.  
   
      [!code-csharp[AuditingSecurityEvents#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/auditingsecurityevents/cs/auditingsecurityevents.cs#4)]
      [!code-vb[AuditingSecurityEvents#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/auditingsecurityevents/vb/auditingsecurityevents.vb#4)]  
   
-     Výchozí hodnota `SuppressAuditFailure` vlastnost `true`tak, aby selhání auditovat nemá vliv na aplikaci. V opačném případě je vyvolána výjimka. Všechny úspěšné auditu se zapisují podrobné trasování. Auditovat všechny chyby trasování bude zapsáno na úrovni chyby.  
+     Výchozí vlastnost `SuppressAuditFailure` je `true`, aby nedošlo k neovlivnění selhání při auditování aplikace. V opačném případě je vyvolána výjimka. U všech úspěšných auditů se zapíše podrobné trasování. V případě jakéhokoli neúspěšného auditu se trasování zapisuje na úroveň chyby.  
   
-4. Odstranit existující <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior> z kolekce chování, které jsou součástí popis <xref:System.ServiceModel.ServiceHost>. Kolekce chování přistupuje <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> vlastnost, která pak přistupuje z <xref:System.ServiceModel.ServiceHostBase.Description%2A> vlastnost. Pak přidejte nové <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior> do stejné kolekce, jak je znázorněno v následujícím kódu.  
+4. Odstraní existující <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior> z kolekce chování nalezené v popisu <xref:System.ServiceModel.ServiceHost>. Kolekce chování je k dispozici pomocí vlastnosti <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A>, která je zase k dispozici z vlastnosti <xref:System.ServiceModel.ServiceHostBase.Description%2A>. Pak přidejte novou <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior> do stejné kolekce, jak je znázorněno v následujícím kódu.  
   
      [!code-csharp[AuditingSecurityEvents#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/auditingsecurityevents/cs/auditingsecurityevents.cs#5)]
      [!code-vb[AuditingSecurityEvents#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/auditingsecurityevents/vb/auditingsecurityevents.vb#5)]  
   
 ### <a name="to-set-up-auditing-in-configuration"></a>Nastavení auditování v konfiguraci  
   
-1. Chcete-li nastavit auditování v konfiguraci, přidejte [ \<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) element [ \<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) část souboru web.config. Pak přidejte [ \<serviceSecurityAudit >](../../../../docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md) elementu a nastavte různé atributy, jak je znázorněno v následujícím příkladu.  
+1. Chcete-li nastavit auditování v konfiguraci, přidejte [\<chování >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) elementu do [\<části > chování](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) souboru Web. config. Pak přidejte [\<prvek > serviceSecurityAudit](../../../../docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md) a nastavte různé atributy, jak je znázorněno v následujícím příkladu.  
   
     ```xml  
     <behaviors>  
@@ -58,7 +58,7 @@ Windows Communication Foundation (WCF) umožňuje protokolovat události zabezpe
     </behaviors>  
     ```  
   
-2. Chování služby, je nutné zadat, jak je znázorněno v následujícím příkladu.  
+2. Je nutné zadat chování služby, jak je znázorněno v následujícím příkladu.  
   
     ```xml  
     <services>  
@@ -73,19 +73,19 @@ Windows Communication Foundation (WCF) umožňuje protokolovat události zabezpe
     ```  
   
 ## <a name="example"></a>Příklad  
- Následující kód vytvoří instanci <xref:System.ServiceModel.ServiceHost> třídy a přidá nový <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior> jeho kolekce chování.  
+ Následující kód vytvoří instanci třídy <xref:System.ServiceModel.ServiceHost> a přidá novou <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior> do kolekce chování.  
   
  [!code-csharp[AuditingSecurityEvents#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/auditingsecurityevents/cs/auditingsecurityevents.cs#1)]
  [!code-vb[AuditingSecurityEvents#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/auditingsecurityevents/vb/auditingsecurityevents.vb#1)]  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- Nastavení <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> vlastnost `true`, potlačí všechny chyby Generovat audity zabezpečení (Pokud nastavena na `false`, je vyvolána výjimka). Nicméně pokud povolíte následující Windows **místní nastavení zabezpečení** vlastnost, nepovedlo se generovat události auditu způsobí, že Windows vypnout okamžitě:  
+ Nastavení vlastnosti <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> na `true`potlačí jakékoli selhání při generování auditů zabezpečení (Pokud je nastaveno na `false`, je vyvolána výjimka). Pokud ale povolíte následující vlastnost **místního nastavení zabezpečení** systému Windows, selhání při generování událostí auditu způsobí, že se systém Windows okamžitě vypne:  
   
- **Audit: Vypnout systém okamžitě, je-li možno protokolovat audity zabezpečení**  
+ **Audit: není-li možné protokolovat audity zabezpečení, okamžitě vypnout systém.**  
   
- Chcete-li nastavena vlastnost, otevřete **místní nastavení zabezpečení** dialogové okno. V části **nastavení zabezpečení**, klikněte na tlačítko **místní zásady**. Pak klikněte na tlačítko **možnosti zabezpečení**.  
+ Chcete-li nastavit vlastnost, otevřete dialogové okno **místní nastavení zabezpečení** . V části **nastavení zabezpečení**klikněte na **místní zásady**. Pak klikněte na **Možnosti zabezpečení**.  
   
- Pokud <xref:System.ServiceModel.AuditLogLocation> je nastavena na <xref:System.ServiceModel.AuditLogLocation.Security> a **auditování přístupu k objektům** kódu není nastavený **místní zásady zabezpečení**, události auditu se zapisují do protokolu zabezpečení. Všimněte si, že se vrátí bez chyby, ale položky auditu se zapisují do protokolu zabezpečení.  
+ Pokud je vlastnost <xref:System.ServiceModel.AuditLogLocation> nastavena na hodnotu <xref:System.ServiceModel.AuditLogLocation.Security> a **Auditovat přístup k objektům** v **místních zásadách zabezpečení**, události auditu nebudou zapsány do protokolu zabezpečení. Všimněte si, že se nevrátí žádná chyba, ale záznamy auditu se nezapisují do protokolu zabezpečení.  
   
 ## <a name="see-also"></a>Viz také:
 

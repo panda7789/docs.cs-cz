@@ -2,12 +2,12 @@
 title: Jednorázový postup nastavení pro ukázky Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: a5848ffd-3eb5-432d-812e-bd948ccb6bca
-ms.openlocfilehash: 7dbc4a1b5235c0cb6aa154379358c7761bc4ab1d
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: cfe50cb2bb017292b69f578bfff2bf84bf6ba8f0
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141854"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837828"
 ---
 # <a name="one-time-setup-procedure-for-the-windows-communication-foundation-samples"></a>Jednorázový postup nastavení pro ukázky Windows Communication Foundation
 
@@ -16,7 +16,7 @@ Většina ukázek Windows Communication Foundation (WCF) se hostuje v Internetov
 Virtuální adresář **ServiceModelSamples** se používá k sestavování a spouštění všech ukázek, které používají službu HOSTOVANOU službou IIS. Toto je jediný virtuální adresář, který je nutný ke spuštění ukázek. Při vytváření ukázky se nahradí všechny dříve nasazené služby v tomto virtuálním adresáři. v tomto virtuálním adresáři bude nasazená a dostupná jenom naposledy vytvořená ukázka.
 
 > [!NOTE]
-> Všechny příkazy musíte spustit pod účtem místního správce. Pokud používáte Windows 7, [!INCLUDE[windowsver](../../../../includes/windowsver-md.md)]nebo Windows Server 2008 R2, musíte spustit taky příkazový řádek se zvýšenými oprávněními. Provedete to tak, že kliknete pravým tlačítkem myši na ikonu příkazového řádku a potom kliknete na **Spustit jako správce**. Všechny příkazy v tomto tématu musí být spuštěny v příkazovém řádku, který má odpovídající nastavení cesty.  Nejjednodušší způsob, jak to zajistit, je použít příkazový řádek sady Visual Studio. Chcete-li otevřít tuto výzvu, klikněte na tlačítko **Start**, vyberte možnost **všechny programy**, přejděte dolů k **aplikaci Visual studio 2010**, vyberte možnost **Visual Studio Tools**, klikněte pravým tlačítkem myši na položku **Visual Studio Command Prompt (2010)** a poté klikněte na příkaz **Spustit jako správce** . Pokud máte nainstalovánu jednu z nainstalovaných edicí Visual Studio Express, Tento příkazový řádek není k dispozici a bude nutné přidat "C:\Windows\Microsoft.Net\Framework\v4.0" do systémové cesty.
+> Všechny příkazy musíte spustit pod účtem místního správce. Pokud používáte Windows 7, [!INCLUDE[windowsver](../../../../includes/windowsver-md.md)]nebo Windows Server 2008 R2, musíte spustit taky příkazový řádek se zvýšenými oprávněními. Provedete to tak, že kliknete pravým tlačítkem myši na ikonu příkazového řádku a potom kliknete na **Spustit jako správce**. Všechny příkazy v tomto tématu musí být spuštěny v příkazovém řádku, který má odpovídající nastavení cesty.  Nejjednodušší způsob, jak to zajistit, je použít příkazový řádek sady Visual Studio. Pokud chcete otevřít tuto výzvu, klikněte na **Start**, vyberte **všechny programy**, přejděte dolů k **Visual Studio 2010**, vyberte **Visual Studio Tools**, klikněte pravým tlačítkem na **příkazový řádek sady Visual Studio (2010)** a pak klikněte na **Spustit jako správce**. Pokud máte nainstalovánu jednu z nainstalovaných edicí Visual Studio Express, Tento příkazový řádek není k dispozici a bude nutné přidat "C:\Windows\Microsoft.Net\Framework\v4.0" do systémové cesty.
 
 ### <a name="one-time-setup-procedure-for-wcf-samples"></a>Jednorázový postup nastavení pro ukázky WCF
 
@@ -63,7 +63,7 @@ Virtuální adresář **ServiceModelSamples** se používá k sestavování a sp
     > [!NOTE]
     > Pokud tento krok není dokončený, všechny ukázky hostované službou IIS při sestavování nebudou úspěšné. Ujistěte se, že jste správně nastavili oprávnění, nebo spusťte příkazový řádek sady SDK a příkazový řádek sady Visual Studio (2012) jako správce.
 
-11. Vytvořte v počítači adresář C:\Logs.; může to očekávat několik ukázek. Ujistěte se, že příslušný účet má udělený přístup pro zápis do této složky. Pro Windows 7, [!INCLUDE[wv](../../../../includes/wv-md.md)]a Windows Server 2008 R2 je tento účet **Network Service**. Pro [!INCLUDE[lserver](../../../../includes/lserver-md.md)]účet je NT Authority\Network Service. Pro [!INCLUDE[wxp](../../../../includes/wxp-md.md)] a [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]je účet ASPNET.
+11. Vytvořte v počítači adresář C:\Logs.; může to očekávat několik ukázek. Ujistěte se, že příslušný účet má udělený přístup pro zápis do této složky. U systémů Windows 7, Windows Vista a Windows Server 2008 R2 je tento účet **síťovou službou**. Pro [!INCLUDE[lserver](../../../../includes/lserver-md.md)]účet je NT Authority\Network Service. Pro [!INCLUDE[wxp](../../../../includes/wxp-md.md)] a [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]je účet ASPNET.
 
 12. Spusťte soubor setupCertTool. bat. Tento soubor je umístěný ve složce \<InstallPath > \ WF_WCF_Samples \WCF\Setup\.  Tento skript provede následující úlohy:
 

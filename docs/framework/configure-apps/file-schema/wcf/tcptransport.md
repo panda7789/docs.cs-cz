@@ -2,18 +2,18 @@
 title: <tcpTransport>
 ms.date: 03/30/2017
 ms.assetid: 8fcd18c1-9958-42e7-b442-7903f7bdb563
-ms.openlocfilehash: 6761d090206e55e58001ea2bb885eaa69f26d9eb
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: cf2abd460dcf19346d9efb41e9a5ccef99120fbb
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73738653"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837061"
 ---
-# <a name="tcptransport"></a>\<tcpTransport >
+# <a name="tcptransport"></a>\<tcpTransport>
 Definuje přenos TCP, který může kanál použít k přenosu zpráv pro vlastní vazbu.  
   
-[ **\<configuration >** ](../configuration-element.md) \
-&nbsp; &nbsp;[ **\<system. serviceModel >** ](system-servicemodel.md) \
+[**konfigurační >\<** ](../configuration-element.md)\
+&nbsp;&nbsp;[ **\<System. serviceModel >** ](system-servicemodel.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;[ **\<vazeb >** ](bindings.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<customBinding >** ](custombinding.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<vazeb >** \
@@ -62,8 +62,8 @@ Definuje přenos TCP, který může kanál použít k přenosu zpráv pro vlastn
 |maxPendingConnections|Získá nebo nastaví maximální počet připojení čekajících na odeslání ve službě.|  
 |maxReceivedMessageSize|Získá a nastaví maximální povolenou velikost zprávy, kterou lze přijmout.|  
 |portSharingEnabled|Logická hodnota, která určuje, zda je pro toto připojení povoleno sdílení portu TCP. Pokud je toto `false`, bude každá vazba používat vlastní výhradní port. Výchozí hodnota je `false`.<br /><br /> Toto nastavení je relevantní pouze pro služby. Klienti nejsou ovlivněni.<br /><br /> Použití tohoto nastavení vyžaduje povolení služby sdílení portů služby Windows Communication Foundation (WCF) TCP změnou typu spuštění na ruční nebo automatické.|  
-|teredoEnabled|Logická hodnota určující, zda je povolena Teredo (technologie pro oslovování klientů, kteří jsou za branami firewall). Výchozí hodnota je `false`.<br /><br /> Tato vlastnost umožňuje technologii Teredo pro základní soket TCP. Další informace najdete v tématu [Přehled technologie Teredo](https://go.microsoft.com/fwlink/?LinkId=95339).<br /><br /> Tato vlastnost se vztahuje pouze na [!INCLUDE[wxpsp2](../../../../../includes/wxpsp2-md.md)] a [!INCLUDE[ws2003](../../../../../includes/ws2003-md.md)]. [!INCLUDE[wv](../../../../../includes/wv-md.md)] má pro Teredo možnost konfigurace na úrovni počítače, takže při spuštění systému Vista se tato vlastnost ignoruje. Teredo vyžaduje, aby v počítačích klientů a služeb byla nainstalovaná služba Microsoft IPv6 stack a správně nakonfigurovaná pro použití Teredo. Další informace o konfiguraci Teredo najdete v tématu [Přehled technologie Teredo](https://go.microsoft.com/fwlink/?LinkId=95339). Další informace najdete v tématu věnovaném [technologickým centrům Windows serveru 2003](https://go.microsoft.com/fwlink/?LinkId=49888).|  
-|Třídy TransferMode|Získává nebo nastavuje hodnotu, která indikuje, jestli se zprávy ukládají do vyrovnávací paměti nebo streamují s přenosem orientovaným na připojení.|  
+|teredoEnabled|Logická hodnota určující, zda je povolena Teredo (technologie pro oslovování klientů, kteří jsou za branami firewall). Výchozí hodnota je `false`.<br /><br /> Tato vlastnost umožňuje technologii Teredo pro základní soket TCP. Další informace najdete v tématu [Přehled technologie Teredo](https://go.microsoft.com/fwlink/?LinkId=95339).<br /><br /> Tato vlastnost se vztahuje pouze na [!INCLUDE[wxpsp2](../../../../../includes/wxpsp2-md.md)] a [!INCLUDE[ws2003](../../../../../includes/ws2003-md.md)]. Systém Windows Vista má pro Teredo možnost konfigurace na úrovni počítače, takže při spuštění systému Vista se tato vlastnost ignoruje. Teredo vyžaduje, aby v počítačích klientů a služeb byla nainstalovaná služba Microsoft IPv6 stack a správně nakonfigurovaná pro použití Teredo. Další informace o konfiguraci Teredo najdete v tématu [Přehled technologie Teredo](https://go.microsoft.com/fwlink/?LinkId=95339). Další informace najdete v tématu věnovaném [technologickým centrům Windows serveru 2003](https://go.microsoft.com/fwlink/?LinkId=49888).|  
+|transferMode|Získává nebo nastavuje hodnotu, která indikuje, jestli se zprávy ukládají do vyrovnávací paměti nebo streamují s přenosem orientovaným na připojení.|  
 |connectionPoolSettings|Určuje další nastavení fondu připojení pro vazbu pojmenovaného kanálu.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
@@ -91,4 +91,4 @@ Definuje přenos TCP, který může kanál použít k přenosu zpráv pro vlastn
 - [Vazby](../../../wcf/bindings.md)
 - [Rozšíření vazeb](../../../wcf/extending/extending-bindings.md)
 - [Vlastní vazby](../../../wcf/extending/custom-bindings.md)
-- [\<customBinding >](custombinding.md)
+- [\<customBinding>](custombinding.md)

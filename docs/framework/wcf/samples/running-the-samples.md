@@ -2,17 +2,17 @@
 title: Spouštění ukázek Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: db8a83da-95c1-4a21-a9d2-48caeb6398ea
-ms.openlocfilehash: df984f2464084948cdaa51dab96554de9400911f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 04bac7bad1a6ccfa23d37c391047cb8d58ee4f4d
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965502"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837802"
 ---
 # <a name="running-the-windows-communication-foundation-samples"></a>Spouštění ukázek Windows Communication Foundation
 Ukázky Windows Communication Foundation (WCF) je možné spustit v konfiguraci s jedním počítačem nebo mezi počítači. Jak je uvedeno, ukázky jsou připravené k provozu na jednom počítači. V konfiguraci mezi počítači je potřeba upravit nastavení konfiguračního souboru ukázky. Následující postupy vysvětlují, jak spustit ukázku ve stejném počítači a konfiguracích pro více počítačů. Všimněte si, že existují změny v krocích pro služby hostované v Internetová informační služba (IIS) a ve vzorcích pro místní hostování. Většina ukázek je hostována ve službě IIS; informace o tom, jak je hostovaný, najdete v ukázkovém souboru Readme.  
   
- V [!INCLUDE[wv](../../../../includes/wv-md.md)]systému se v ukázkách, které nejsou hostované ve službě IIS, vyžaduje zvýšená oprávnění k registraci naslouchacího procesu pomocí HTTP. sys. Použijte Httpcfg. exe k registraci adres naslouchání služby u účtu, pod kterým je služba spuštěná, nebo spusťte službu z příkazového řádku spuštěného s oprávněními správce.  
+ V systému Windows Vista se v ukázkách, které nejsou hostované ve službě IIS, vyžaduje zvýšená oprávnění k registraci naslouchacího procesu pomocí HTTP. sys. Použijte Httpcfg. exe k registraci adres naslouchání služby u účtu, pod kterým je služba spuštěná, nebo spusťte službu z příkazového řádku spuštěného s oprávněními správce.  
   
 > [!NOTE]
 > Před vytvořením nebo spuštěním kterékoli z ukázek služby WCF se ujistěte, že jste provedli [jednorázovou proceduru nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
@@ -23,7 +23,7 @@ Ukázky Windows Communication Foundation (WCF) je možné spustit v konfiguraci 
   
 2. Pokud je služba v místním prostředí, spusťte Service. exe z \service\bin ze složky specifické pro daný jazyk. Aktivita služby se zobrazí v okně konzoly služby.  
   
-3. Spusťte soubor Client. exe z\\\client\bin ze složky specifické pro jazyk. Aktivita klienta se zobrazí v okně konzoly klienta.  
+3. Spusťte soubor Client. exe z \client\bin\\ze složky pro konkrétní jazyk. Aktivita klienta se zobrazí v okně konzoly klienta.  
   
 4. Pokud klient a služba nejsou schopné komunikovat, přečtěte si [tipy pro řešení potíží s ukázkami služby WCF](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90)).  
   
@@ -53,7 +53,7 @@ Ukázky Windows Communication Foundation (WCF) je možné spustit v konfiguraci 
   
     1. Pokud služba není spuštěná pod účtem domény, otevřete soubor konfigurace klienta a změňte hodnotu adresy definice koncového bodu tak, aby odpovídala nové adrese vaší služby. Nahraďte všechny odkazy na "localhost" plně kvalifikovaným názvem domény v adrese.  
   
-    2. Pokud je služba spuštěna pod účtem domény, znovu vygenerujte konfiguraci klienta spuštěním Svcutil. exe proti této službě. Další informace o spuštění Svcutil. exe najdete v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md). Místo konfiguračního souboru v ukázce použijte vygenerovaný soubor. Vygenerovaný konfigurační soubor obsahuje další informace o identitě a obsahuje všechna nastavení potřebná pro připojení ke koncovému bodu služby, i když se jedná o výchozí nastavení. Další informace o identitě najdete v tématu Identita [a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)a [ \<> identity](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md).  
+    2. Pokud je služba spuštěna pod účtem domény, znovu vygenerujte konfiguraci klienta spuštěním Svcutil. exe proti této službě. Další informace o spuštění Svcutil. exe najdete v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md). Místo konfiguračního souboru v ukázce použijte vygenerovaný soubor. Vygenerovaný konfigurační soubor obsahuje další informace o identitě a obsahuje všechna nastavení potřebná pro připojení ke koncovému bodu služby, i když se jedná o výchozí nastavení. Další informace o identitě najdete v tématech [Identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)a [\<> identity](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md).  
   
 4. Na klientském počítači spusťte soubor Client. exe z příkazového řádku.  
   
@@ -69,7 +69,7 @@ Ukázky Windows Communication Foundation (WCF) je možné spustit v konfiguraci 
   
     3. Zaškrtněte políčko **Zobrazit procesy všech uživatelů** .  
   
-    4. Vyberte hostitelský pracovní proces W3wp. exe, který se má ladit (v systému Windows XP vyberte program ASPNet_wp. exe).  
+    4. Vyberte hostitelský pracovní proces W3wp. exe, který se má ladit (vyberte ASPNet_wp. exe v systému Windows XP).  
   
 3. Nyní můžete nastavit zarážky v kódu služby a povolit zarážky na výjimky.  
   

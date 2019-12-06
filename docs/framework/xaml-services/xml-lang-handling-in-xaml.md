@@ -7,12 +7,12 @@ helpviewer_keywords:
 - RFC 3066 standard [XAML Services]
 - standards [XAML Services], RFC 3066
 ms.assetid: 7aac0078-a1c5-41f8-b8b0-975510d9dca0
-ms.openlocfilehash: 98bfabba96e5805b96c63eb02233b15eae233cc0
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: b3f236b2378d6af78f034856e3ba0f7a9e17993c
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740565"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837139"
 ---
 # <a name="xmllang-handling-in-xaml"></a>Práce s atributem xml:lang v jazyce XAML
 Atribut `xml:lang` je atribut definovaný v jazyce XML, který deklaruje informace o jazyku a jazykové verzi elementu v jazyce XML. Stejný význam atributu v jazyce XAML přetrvává; platí však některé další požadavky.  
@@ -27,7 +27,7 @@ Atribut `xml:lang` je atribut definovaný v jazyce XML, který deklaruje informa
   
 |||  
 |-|-|  
-|*rfc3066lang*|Řetězec, který je odvozen z standardu [RFC 3066](https://go.microsoft.com/fwlink/?LinkId=132454) a označuje jazyk nebo jazykovou oblast. Pokud se jedná o druhý, jazyk a oblast jsou oddělené jedním spojovníkem. Další informace o hodnotách a formátu najdete v tématu <xref:System.Windows.Markup.XmlLanguage>.|  
+|*rfc3066lang*|Řetězec, který je odvozen z standardu [RFC 3066](https://www.ietf.org/rfc/rfc3066.txt) a označuje jazyk nebo jazykovou oblast. Pokud se jedná o druhý, jazyk a oblast jsou oddělené jedním spojovníkem. Další informace o hodnotách a formátu najdete v tématu <xref:System.Windows.Markup.XmlLanguage>.|  
   
 ## <a name="remarks"></a>Poznámky  
  Definice atributu `xml:lang` v [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] je odvozena z `xml:lang` definovaná jako "speciální atribut" konsorcium World Wide Web (W3C) pro XML. Informace o jazyku a jazykové verzi jsou potenciálně zpracovávány různými způsoby podle prvků v závislosti na jejich implementacích. Neexistuje však žádný výchozí [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] zpracování atributu `xml:lang`.  

@@ -2,12 +2,12 @@
 title: Řešení potíží se zasíláním zpráv zařazovaných do front
 ms.date: 03/30/2017
 ms.assetid: a5f2836f-018d-42f5-a571-1e97e64ea5b0
-ms.openlocfilehash: dcff128a7718245fa765c57d3af80665699f4891
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 2999d1ab4129c72c231b6dc80480d8bfef5186fa
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976042"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837308"
 ---
 # <a name="troubleshooting-queued-messaging"></a>Řešení potíží se zasíláním zpráv zařazovaných do front
 
@@ -17,7 +17,7 @@ Tato část obsahuje nejčastější dotazy a pomoc při odstraňování potíž
 
 **Otázka:** Použil (a) jsem WCF beta 1 a nainstaloval (a) opravu hotfix služby MSMQ. Musím tuto opravu hotfix odebrat?
 
-**A:** Ano. Tato oprava hotfix již není podporována. WCF teď funguje v MSMQ bez požadavku na opravu hotfix.
+**Odpověď:** Ano. Tato oprava hotfix již není podporována. WCF teď funguje v MSMQ bez požadavku na opravu hotfix.
 
 **Otázka:** Existují dvě vazby pro službu MSMQ: <xref:System.ServiceModel.NetMsmqBinding> a <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>. Co mám použít a kdy?
 
@@ -25,7 +25,7 @@ Tato část obsahuje nejčastější dotazy a pomoc při odstraňování potíž
 
 **Otázka:** Je potřeba upgradovat službu MSMQ, aby používala vazby <xref:System.ServiceModel.NetMsmqBinding> a `MsmqIntegration`?
 
-**A:** Ne. Obě vazby fungují s MSMQ 3,0 na [!INCLUDE[wxp](../../../../includes/wxp-md.md)] a [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]. Při upgradu na službu MSMQ 4,0 v [!INCLUDE[wv](../../../../includes/wv-md.md)]budou některé funkce vazby dostupné.
+**Odpověď:** Ne. Obě vazby fungují s MSMQ 3,0 na [!INCLUDE[wxp](../../../../includes/wxp-md.md)] a [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]. Při upgradu na službu MSMQ 4,0 v systému Windows Vista budou některé funkce vazeb dostupné.
 
 **Otázka:** Jaké funkce <xref:System.ServiceModel.NetMsmqBinding> a <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> vazby jsou k dispozici ve službě MSMQ 4,0, ale ne v MSMQ 3,0?
 
@@ -41,13 +41,13 @@ Další informace najdete v tématu [rozdíly ve funkcích služby Řízení fro
 
 **Otázka:** Můžu použít MSMQ 3,0 na jedné straně komunikace ve frontě a MSMQ 4,0 na druhé straně?
 
-**A:** Ano.
+**Odpověď:** Ano.
 
 **Otázka:** Chci integrovat stávající aplikace služby MSMQ s novými klienty nebo servery WCF. Potřebuji upgradovat obě strany infrastruktury služby MSMQ?
 
-**A:** Ne. Nemusíte upgradovat na žádnou stranu na službu MSMQ 4,0.
+**Odpověď:** Ne. Nemusíte upgradovat na žádnou stranu na službu MSMQ 4,0.
 
-## <a name="troubleshooting"></a>Poradce při potížích
+## <a name="troubleshooting"></a>Odstraňování problémů
 
 Tato část obsahuje odpovědi na nejčastější problémy při odstraňování potíží. Některé problémy, které jsou známá omezením, jsou popsány také v poznámkách k verzi.
 
@@ -89,9 +89,9 @@ Pokud jsou záruky žádné (<xref:System.ServiceModel.MsmqBindingBase.ExactlyOn
 
 **Otázka:** Moje služba vyvolá v procesu SvcHost. Open se zprávou "požadavky na EndpointListener nelze splnit rozhraním ListenerFactory". Proč?
 
-Určitého. Podívejte se na kontrakt služby. Možná jste zapomněli do všech operací služby umístit "IsOneWay =`true`". Fronty podporují pouze jednosměrné operace služby.
+A. Podívejte se na kontrakt služby. Možná jste zapomněli do všech operací služby umístit "IsOneWay =`true`". Fronty podporují pouze jednosměrné operace služby.
 
-**Otázka:** Ve frontě jsou zprávy, ale není vyvolána žádná operace služby. Jaký je problém?
+**Otázka:** Ve frontě jsou zprávy, ale není vyvolána žádná operace služby. V čem je problém?
 
 **A:** Zjistěte, jestli hostitel služby selhal. Můžete se podívat na trasování nebo implementaci `IErrorHandler`. Selhání hostitele služby ve výchozím nastavení, pokud je zjištěna nezpracovatelná zpráva.
 
@@ -134,9 +134,9 @@ Fronta nedoručených zpráv systému, stejně jako jakákoli vlastní fronta ne
 
 **A:** Při použití vazby integrace služby MSMQ je nutné použít schéma MSMQ. FormatName. Například MSMQ. FormatName: DIRECT = OS: .\private $ \OrdersQueue. Když ale zadáte vlastní frontu nedoručených zpráv, musíte použít schéma NET. MSMQ.
 
-**Otázka:** Když používám název veřejného nebo privátního formátu a otevřete hostitele služby na [!INCLUDE[wv](../../../../includes/wv-md.md)], zobrazí se chybová zpráva. Proč?
+**Otázka:** Když používám název veřejného nebo privátního formátu a v systému Windows Vista se otevře hostitel služby, zobrazí se chybová zpráva. Proč?
 
-**A:** Integrační kanál WCF na [!INCLUDE[wv](../../../../includes/wv-md.md)] kontroluje, zda lze pro hlavní frontu aplikace otevřít podfrontu pro zpracování nezpracovatelných zpráv. Název podfronty je odvozen z identifikátoru URI služby MSMQ. FormatName předaného do naslouchacího procesu. Název podfronty v MSMQ může být pouze název přímého formátu. Zobrazí se chyba. Změňte identifikátor URI fronty na název přímého formátu.
+**A:** Kanál pro integraci WCF v systému Windows Vista kontroluje, zda lze otevřít podfrontu pro hlavní frontu aplikace pro zpracování nezpracovatelných zpráv. Název podfronty je odvozen z identifikátoru URI služby MSMQ. FormatName předaného do naslouchacího procesu. Název podfronty v MSMQ může být pouze název přímého formátu. Zobrazí se chyba. Změňte identifikátor URI fronty na název přímého formátu.
 
 **Otázka:** Při příjmu zprávy z aplikace služby MSMQ se zpráva nachází ve frontě a není přečtena přijímající aplikací WCF. Proč?
 
@@ -154,11 +154,11 @@ Dalším řešením je získat <xref:System.ServiceModel.MsmqTransportSecurity> 
 
 Ještě dalším řešením je instalace služby MSMQ s integrací služby Active Directory.
 
-**Otázka:** Když pošlu zprávu s výchozí vazbou (zapnuté zabezpečení přenosu) ve službě Active Directory do fronty, zobrazí se zpráva "interní certifikát nebyl nalezen". Návody opravit?
+**Otázka:** Když pošlu zprávu s výchozí vazbou (zapnuté zabezpečení přenosu) ve službě Active Directory do fronty, zobrazí se zpráva "interní certifikát nebyl nalezen". Jak to vyřeším?
 
 **A:** To znamená, že certifikát ve službě Active Directory pro odesílatele musí být obnoven. Provedete to tak, že otevřete **Ovládací panely**, **Nástroje pro správu**, **Správa počítače**, kliknete pravým tlačítkem myši na položku **MSMQ**a vyberete možnost **vlastnosti**. Vyberte kartu **certifikát uživatele** a klikněte na tlačítko **obnovit** .
 
-**Otázka:** Když pošlu zprávu pomocí <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate> a určíte certifikát, který se má použít, zobrazí se zpráva "Neplatný certifikát". Návody opravit?
+**Otázka:** Když pošlu zprávu pomocí <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate> a určíte certifikát, který se má použít, zobrazí se zpráva "Neplatný certifikát". Jak to vyřeším?
 
 **A:** Nemůžete použít úložiště certifikátů místního počítače s režimem certifikátu. Je nutné zkopírovat certifikát z úložiště certifikátů počítače do úložiště s aktuálním uživatelem pomocí modulu snap-in Certifikáty. Získání modulu snap-in certifikáty:
 
@@ -180,13 +180,13 @@ Ještě dalším řešením je instalace služby MSMQ s integrací služby Activ
 
 **A:** V režimu pracovní skupiny, aby Vzdálená aplikace získala přístup do fronty, aplikace musí mít oprávnění pro přístup do fronty. Přidejte do seznamu řízení přístupu (ACL) fronty možnost anonymní přihlášení a udělte jí oprávnění ke čtení.
 
-**Otázka:** Když klient síťové služby (nebo jakýkoli klient, který nemá účet domény) odešle zprávu ve frontě, odeslání se nezdařila s neplatným certifikátem. Návody opravit?
+**Otázka:** Když klient síťové služby (nebo jakýkoli klient, který nemá účet domény) odešle zprávu ve frontě, odeslání se nezdařila s neplatným certifikátem. Jak to vyřeším?
 
 **A:** Ověřte konfiguraci vazby. Výchozí vazba má zapnuté zabezpečení přenosu MSMQ pro podepsání zprávy. Vypnout.
 
 ### <a name="remote-transacted-receives"></a>Vzdáleně transakční příjem
 
-**Otázka:** Když mám frontu na počítači a a službu WCF, která čte zprávy z fronty v počítači B (scénář vzdáleného příjmu v provozu), zprávy se z fronty nečtou. Trasovací informace indikují, že se příjem nezdařil, zpráva "transakce nemůže být importována". Jak to můžu vyřešit?
+**Otázka:** Když mám frontu na počítači a a službu WCF, která čte zprávy z fronty v počítači B (scénář vzdáleného příjmu v provozu), zprávy se z fronty nečtou. Trasovací informace indikují, že se příjem nezdařil, zpráva "transakce nemůže být importována". Co můžete dělat na tento problém vyřešit?
 
 **A:** Existují tři možné příčiny:
 
@@ -200,7 +200,7 @@ Ještě dalším řešením je instalace služby MSMQ s integrací služby Activ
 
 - Ujistěte se, že je MSDTC v seznamu výjimek v nastavení **brány firewall pro připojení k Internetu** .
 
-- Ujistěte se, že používáte [!INCLUDE[wv](../../../../includes/wv-md.md)]. Funkce MSMQ on [!INCLUDE[wv](../../../../includes/wv-md.md)] podporuje vzdálené čtení v transakčním režimu. Funkce MSMQ ve starších verzích Windows nepodporuje vzdálené čtení v režimu Transact.
+- Ujistěte se, že používáte systém Windows Vista. Služba MSMQ v systému Windows Vista podporuje vzdálené čtení v transakčním režimu. Funkce MSMQ ve starších verzích Windows nepodporuje vzdálené čtení v režimu Transact.
 
 **Otázka:** Když je služba čtena z fronty jako síťová služba, například na webovém hostiteli, proč se při čtení z fronty vyvolá výjimka odepření přístupu?
 
@@ -208,7 +208,7 @@ Ještě dalším řešením je instalace služby MSMQ s integrací služby Activ
 
 **Otázka:** Můžu pomocí aktivační služby MSMQ aktivovat aplikace na základě zpráv ve frontě ve vzdáleném počítači?
 
-**A:** Ano. K tomu je nutné nakonfigurovat aktivační službu MSMQ tak, aby běžela jako síťová služba, a do fronty ve vzdáleném počítači přidat přístup k síťové službě.
+**Odpověď:** Ano. K tomu je nutné nakonfigurovat aktivační službu MSMQ tak, aby běžela jako síťová služba, a do fronty ve vzdáleném počítači přidat přístup k síťové službě.
 
 ## <a name="using-custom-msmq-bindings-with-receivecontext-enabled"></a>Použití vlastních vazeb MSMQ s povoleným kontextem ReceiveContext
 

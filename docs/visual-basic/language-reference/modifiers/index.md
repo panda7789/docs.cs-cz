@@ -2,12 +2,12 @@
 title: Modifikátory
 ms.date: 07/20/2015
 ms.assetid: a49a0e51-d700-4705-9196-3e0eb582dda6
-ms.openlocfilehash: 0379a0d0571a66bda4df06f5c2d3282d80034cae
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 2056cdc69c7d89b78e9b269fc919a0e0f6b76bf4
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351545"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74838283"
 ---
 # <a name="modifiers-visual-basic"></a>Modifikátory (Visual Basic)
 Témata v tomto oddílu dokumentu Visual Basic modifikátory modulu runtime.  
@@ -89,5 +89,3 @@ Témata v tomto oddílu dokumentu Visual Basic modifikátory modulu runtime.
   
 ## <a name="related-sections"></a>Související oddíly  
  [Referenční příručka jazyka Visual Basic](../../../visual-basic/language-reference/index.md)  
-  
- [Visual Basic](../../../visual-basic/index.md)

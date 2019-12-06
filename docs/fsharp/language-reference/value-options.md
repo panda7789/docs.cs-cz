@@ -1,13 +1,13 @@
 ---
 title: Možnosti pro hodnoty
 description: Přečtěte si F# o typu možnosti hodnoty, což je verze struktury typu možnosti.
-ms.date: 02/06/2019
-ms.openlocfilehash: 4dc3f7217943345b7aaf1165fd648ab2e01bd727
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.date: 12/04/2019
+ms.openlocfilehash: 0e9882ab4acdf2757705ef6022516d3572d87ef2
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424023"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837113"
 ---
 # <a name="value-options"></a>Možnosti pro hodnoty
 
@@ -63,15 +63,13 @@ V tuto chvíli existuje jedna vlastnost pro hodnoty možností: `Value`. <xref:S
 
 ## <a name="value-option-functions"></a>Hodnoty možností funkcí
 
-V současné době je k dispozici jedna funkce vázaná na modul pro hodnoty možností `defaultValueArg`:
+Modul `ValueOption` v FSharp. Core obsahuje ekvivalentní funkce modulu `Option`. Existuje několik rozdílů v názvu, například `defaultValueArg`:
 
 ```fsharp
 val defaultValueArg : arg:'T voption -> defaultValue:'T -> 'T
 ```
 
-Stejně jako u funkce `defaultArg` `defaultValueArg` vrátí podkladovou hodnotu dané hodnoty, pokud existuje; v opačném případě vrátí zadanou výchozí hodnotu.
-
-V tuto chvíli nejsou k dispozici žádné další funkce vázané na modul pro možnosti hodnoty.
+To funguje stejně jako `defaultArg` v modulu `Option`, ale místo toho pracuje s možností hodnoty.
 
 ## <a name="see-also"></a>Viz také:
 

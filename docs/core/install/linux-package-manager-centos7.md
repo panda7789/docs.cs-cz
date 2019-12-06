@@ -3,13 +3,13 @@ title: Instalace .NET Core na CentOS 7 – správce balíčků – .NET Core
 description: Pomocí Správce balíčků nainstalujte .NET Core SDK a modul runtime v CentOS 7.
 author: thraka
 ms.author: adegeo
-ms.date: 11/06/2019
-ms.openlocfilehash: 62b07342197addaa5c7d962c08c4ff1d7121eff8
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.date: 12/04/2019
+ms.openlocfilehash: cb65811d5cae5c747c2660b4b10486f3162b9f33
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74451078"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74836939"
 ---
 # <a name="centos-7-package-manager---install-net-core"></a>Správce balíčků CentOS 7 – instalace .NET Core
 
@@ -17,7 +17,7 @@ ms.locfileid: "74451078"
 
 Tento článek popisuje, jak pomocí Správce balíčků nainstalovat .NET Core na CentOS 7. Pokud instalujete modul runtime, doporučujeme nainstalovat modul [runtime ASP.NET Core](#install-the-aspnet-core-runtime), protože zahrnuje modul runtime .NET Core i ASP.NET Core.
 
-## <a name="register-microsoft-key-and-feed"></a>Registrace klíče a kanálu Microsoft
+## <a name="register-microsoft-key-and-feed"></a>Registrace klíče Microsoft a informačního kanálu
 
 Před instalací .NET budete potřebovat:
 
@@ -25,7 +25,7 @@ Před instalací .NET budete potřebovat:
 - registrace úložiště produktu
 - Nainstalovat požadované závislosti
 
-Tento postup je třeba provést pouze jednou pro každý počítač.
+Stačí to provést jednou na jednom počítači.
 
 Otevřete terminál a spusťte následující příkaz.
 
@@ -38,7 +38,7 @@ sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-
 Aktualizujte produkty, které jsou k dispozici pro instalaci, a poté nainstalujte .NET Core SDK. V terminálu spusťte následující příkaz.
 
 ```bash
-sudo yum install dotnet-sdk-3.0
+sudo yum install dotnet-sdk-3.1
 ```
 
 ## <a name="install-the-aspnet-core-runtime"></a>Instalace modulu runtime ASP.NET Core
@@ -46,7 +46,7 @@ sudo yum install dotnet-sdk-3.0
 Aktualizujte produkty, které jsou k dispozici pro instalaci, a pak nainstalujte modul runtime ASP.NET. V terminálu spusťte následující příkaz.
 
 ```bash
-sudo yum install aspnetcore-runtime-3.0
+sudo yum install aspnetcore-runtime-3.1
 ```
 
 ## <a name="install-the-net-core-runtime"></a>Instalace modulu runtime .NET Core
@@ -54,7 +54,7 @@ sudo yum install aspnetcore-runtime-3.0
 Aktualizujte produkty, které jsou k dispozici pro instalaci, a pak nainstalujte modul runtime .NET Core. V terminálu spusťte následující příkaz.
 
 ```bash
-sudo yum install dotnet-runtime-3.0
+sudo yum install dotnet-runtime-3.1
 ```
 
 ## <a name="how-to-install-other-versions"></a>Jak nainstalovat další verze

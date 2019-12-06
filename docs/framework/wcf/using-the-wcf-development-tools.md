@@ -2,12 +2,12 @@
 title: Používání vývojářských nástrojů WCF
 ms.date: 03/30/2017
 ms.assetid: 054adb87-c244-4d5a-83d1-0b2b44bd454b
-ms.openlocfilehash: 59913f4c00c32699d788e2a0244798fc652361be
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 8253a9136b2310deeb7c6d162a9f190c13ba02da
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802404"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837724"
 ---
 # <a name="using-the-wcf-development-tools"></a>Používání vývojářských nástrojů WCF
 Tato část popisuje vývojové nástroje sady Visual Studio, které vám můžou pomoct při vývoji WCFservice.  
@@ -37,7 +37,7 @@ Tato část popisuje vývojové nástroje sady Visual Studio, které vám můžo
 ## <a name="using-the-tools-without-administrator-privilege"></a>Používání nástrojů bez oprávnění správce  
  Aby uživatelé bez oprávnění správce mohli vyvíjet služby WCF, vytvoří se seznam ACL (Access Control) pro obor názvů "http://+:8731/Design_Time_Addresses" při instalaci sady Visual Studio. Seznam řízení přístupu (ACL) je nastavený na (uživatelské rozhraní), které zahrnuje všechny interaktivní uživatele přihlášené k počítači. Správci mohou přidat nebo odebrat uživatele z tohoto seznamu ACL nebo otevřít další porty. Tento seznam ACL umožňuje odesílat a přijímat data v šablonách WCF nebo WF v jejich výchozí konfiguraci. Také umožňuje uživatelům používat automatické hostování služby WCF (wcfSvcHost. exe) bez udělení oprávnění správce.  
   
- Přístup můžete upravit pomocí nástroje Netsh. exe v [!INCLUDE[wv](../../../includes/wv-md.md)] pod účtem správce se zvýšenými oprávněními. Následuje příklad použití nástroje Netsh. exe.  
+ Přístup můžete upravit pomocí nástroje Netsh. exe v systému Windows Vista pod účtem správce se zvýšenými oprávněními. Následuje příklad použití nástroje Netsh. exe.  
   
 ```console  
 netsh http add urlacl url=http://+:8001/MyService user=<domain>\<user>  

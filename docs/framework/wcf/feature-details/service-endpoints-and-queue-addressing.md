@@ -2,107 +2,107 @@
 title: Koncové body služby a adresování front
 ms.date: 03/30/2017
 ms.assetid: 7d2d59d7-f08b-44ed-bd31-913908b83d97
-ms.openlocfilehash: b31c000fa15b2651a965deff0b4deecf681b992b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 6bdd3b0966f85ff456e0e2ed0b6da773046201dc
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64586182"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837984"
 ---
 # <a name="service-endpoints-and-queue-addressing"></a>Koncové body služby a adresování front
-Toto téma popisuje, jak klienti adres služby, které načítají z fronty a mapování koncových bodů služby do fronty. Následující obrázek znázorňuje Připomínáme, classic, že nasazení aplikace Windows Communication Foundation (WCF) zařazených do fronty.  
+Toto téma popisuje, jak klienti adresují služby, které čtou z front a jak se mapují koncové body služby na fronty. Jako připomenutí znázorňuje následující ilustrace nasazení aplikace ve frontě Windows Communication Foundation (WCF).  
   
- ![Ve frontě diagramu aplikace](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "distribuované obrázek fronty")  
+ ![Diagram aplikace ve frontě](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "Distribuované – fronta – obrázek")  
   
- Pro klienta k odeslání zprávy do služby Klient adresy zprávy do cílové fronty. Služba čtení zpráv z fronty nastaví adresu naslouchání do cílové fronty. Adresování ve službě WCF je Uniform Resource Identifier URI názvy front služby Řízení front zpráv (MSMQ) nejsou založené na identifikátor URI. Proto je důležité pochopit, jak řešit fronty vytvořené ve službě MSMQ pomocí technologie WCF.  
+ Aby mohl klient odeslat zprávu do služby, klient adresuje zprávu do cílové fronty. Aby služba četla zprávy z fronty, nastaví její adresu naslouchání na cílovou frontu. Adresování ve službě WCF je založené na identifikátoru URI (Uniform Resource Identifier), zatímco názvy front služby Řízení front zpráv (MSMQ) nejsou založené na identifikátoru URI. Proto je důležité pochopit, jak se ve službě MSMQ vytvořily fronty vytvořené pomocí WCF.  
   
 ## <a name="msmq-addressing"></a>Adresování MSMQ  
- K identifikaci fronty používaný službou MSMQ cesty a názvy ve formátu. Cesty zadejte název hostitele a `QueueName`. Volitelně může být `Private$` mezi název hostitele a `QueueName` označuje soukromou frontu, která není publikována ve službě Active Directory directory.  
+ Služba MSMQ používá k identifikaci fronty cesty a názvy formátu. Cesty určují název hostitele a `QueueName`. Volitelně může `Private$` mezi názvem hostitele a `QueueName` označit soukromou frontu, která není publikována v adresářové službě Active Directory.  
   
- Názvy cest se mapují na "FormatNames" k určení dalších aspektů na adrese, včetně směrování a fronty přenosu protokolu správce. Správce fronty podporuje dva protokoly přenosu: nativní protokol služby MSMQ a protokol spolehlivého zasílání zpráv na SOAP (SRMP).  
+ Názvy cest jsou namapovány na "FormatNames" k určení dalších aspektů adresy, včetně směrování a přenosového protokolu pro správce fronty. Správce fronty podporuje dva protokoly přenosů: nativní protokol MSMQ a protokol SRMP (SOAP Reliable Messaging Protocol).  
   
- Další informace o názvech cestu a formátu MSMQ najdete v tématu [o služby Řízení front zpráv](https://go.microsoft.com/fwlink/?LinkId=94837).  
+ Další informace o cestách a názvech formátu MSMQ najdete v tématu [o službě Řízení front zpráv](https://go.microsoft.com/fwlink/?LinkId=94837).  
   
 ## <a name="netmsmqbinding-and-service-addressing"></a>NetMsmqBinding a adresování služeb  
- Při přiřazování zpráv do služby, je vybrán schéma v identifikátoru URI podle přenosu používá pro komunikaci. Každý přenos ve službě WCF má jedinečné schéma. Schéma musí odpovídat povaze přenosu používá pro komunikaci. Například net.tcp net.pipe, HTTP a tak dále.  
+ Při adresování zprávy službě se vybere schéma v identifikátoru URI na základě přenosu používaného pro komunikaci. Každý přenos v rámci WCF má jedinečné schéma. Schéma musí odrážet povahu přenosu používaného pro komunikaci. Například NET. TCP, NET. pipe, HTTP atd.  
   
- Služby MSMQ zařadí do fronty ve WCF zpřístupňuje přenosu schéma net.msmq. Všechny zákazníky a vyřešené používá schéma net.msmq zprávy pomocí `NetMsmqBinding` přes kanál zařazených do fronty přenosu služby MSMQ.  
+ Přenos ve frontě MSMQ ve službě WCF zpřístupňuje schéma NET. MSMQ. Všechny zprávy, které jsou adresovány pomocí schématu NET. MSMQ, se odesílají pomocí `NetMsmqBinding` přes transportní kanál MSMQ ve frontě.  
   
- Adresování fronty ve WCF je založena na vzoru následující:  
+ Adresování fronty ve službě WCF je založené na následujícím vzoru:  
   
- NET.MSMQ: / / \< *název hostitele*> / [privátní /] \< *název fronty*>  
+ NET. MSMQ://\<*název hostitele*>/[Private/] \<*název fronty*>  
   
  kde:  
   
 - \<*název hostitele*> je název počítače, který je hostitelem cílové fronty.  
   
-- [privátní] je volitelné. Používá se při adresování cílové fronty, která je soukromé fronty. K vyřešení veřejné fronty, nesmíte zadat privátní. Všimněte si, že na rozdíl od služby MSMQ cesty, neexistuje žádný "$" ve formě identifikátoru URI WCF.  
+- [Private] je volitelné. Používá se při adresování cílové fronty, která je privátní frontou. Pokud chcete adresovat veřejnou frontu, nesmíte zadat Private. Všimněte si, že na rozdíl od cest služby MSMQ není ve formuláři identifikátoru URI WCF žádná "$".  
   
-- \<*Název fronty*> je název fronty. Název fronty najdete také dílčí. Thus, \<*queue-name*> = \<*name-of-queue*>[;*sub-queue-name*].  
+- \<*Queue-name*> je název fronty. Název fronty může také odkazovat na dílčí frontu. Proto \<*Queue-name*> = \<*název > Queue*[; *Název podřízené fronty*].  
   
- Test1: K adresování soukromé fronty PurchaseOrders hostované na počítač abc atadatum.com, identifikátor URI by net.msmq://abc.adatum.com/private/PurchaseOrders.  
+ Priklad1: aby se PurchaseOrders privátní fronta hostovaná v počítači abc atadatum.com, identifikátor URI by byl NET. MSMQ://abc.adatum.com/private/PurchaseOrders.  
   
- Priklad2: K vyřešení veřejné fronty AccountsPayable hostované na počítači def atadatum.com identifikátoru URI by net.msmq://def.adatum.com/AccountsPayable.  
+ Example2: Pokud chcete adresovat AccountsPayable veřejné fronty hostované na počítači atadatum.com, identifikátor URI by byl NET. MSMQ://def.adatum.com/AccountsPayable.  
   
- Adresa fronty se používá jako identifikátor URI naslouchání naslouchací proces ke čtení zpráv z. Jinými slovy adresa fronty je ekvivalentní k naslouchání TCP portu soketu.  
+ Adresa fronty se používá jako identifikátor URI poslechu naslouchacího procesu ke čtení zpráv z. Jinými slovy, adresa fronty je ekvivalentní portu TCP soketu.  
   
- Koncový bod, který čte z fronty, musíte zadat adresu fronty pomocí stejné schéma, které jste zadali dříve při otevření hostitele ServiceHost. Příklady najdete v tématu [vazby Net MSMQ](../../../../docs/framework/wcf/samples/net-msmq-binding.md).  
+ Koncový bod, který čte z fronty, musí specifikovat adresu fronty za použití stejného schématu zadaného dříve při otevírání třídy ServiceHost. Příklady najdete v tématu o [vytváření vazeb v síti MSMQ](../../../../docs/framework/wcf/samples/net-msmq-binding.md).  
   
-### <a name="multiple-contracts-in-a-queue"></a>Více kontraktů ve frontě  
- Různé smlouvy můžete implementovat zprávy ve frontě. V takovém případě je důležité, že je PRAVDA, pokud chcete úspěšně číst a zpracovávat všechny zprávy jednu z následujících:  
+### <a name="multiple-contracts-in-a-queue"></a>Několik kontraktů ve frontě  
+ Zprávy ve frontě můžou implementovat různé kontrakty. V takovém případě je nutné, aby jedna z následujících podmínek byla úspěšně čtena a zpracována všechny zprávy:  
   
-- Zadejte koncový bod pro službu, která implementuje všechny kontrakty. Toto je doporučený postup.  
+- Zadejte koncový bod pro službu, která implementuje všechny smlouvy. Toto je doporučený postup.  
   
-- Zadejte několik koncových bodů s různé kontrakty, ale ujistěte se, že všechny koncové body používat stejné `NetMsmqBinding` objektu. Dispatching logika ServiceModel používá pumpu zpráv, který čte zprávy z přenosový kanál pro odesílání, který nakonec zrušit spojuje zprávy na základě smlouvy do různých koncových bodů. Pro dvojice identifikátoru URI/vytváření vazby vlastností listenurimode nastavenou na se vytvoří pumpu zpráv. Adresa fronty se používá jako identifikátor URI naslouchání naslouchací proces ve frontě. Všechny koncové body pomocí stejného objektu vazby zajistí, že jeden zprávy odeslané používá číst zprávy a rušit multiplexovaný do příslušných koncových bodů s podle smlouvy.  
+- Zadejte více koncových bodů s různými kontrakty, ale zajistěte, aby všechny koncové body používaly stejný objekt `NetMsmqBinding`. Logika odeslání ve ServiceModel používá čerpadlo zpráv, které čte zprávy z transportního kanálu pro odesílání, což nakonec demultiplexuje zprávy na základě kontraktu na různé koncové body. Vytvoří se čerpadlo zpráv pro dvojici identifikátorů URI a vazeb pro poslech. Adresa fronty se používá pro naslouchací proces zařazený do fronty jako identifikátor URI poslechu. Když všechny koncové body používají stejný objekt vazby, zajistí se použití jediného pumpy zpráv ke čtení zprávy a demultiplexování do relevantních koncových bodů na základě kontraktu.  
   
-### <a name="srmp-messaging"></a>SRMP zasílání zpráv  
- Jak bylo uvedeno výše můžete použít protokol SRMP k frontě přenosů. To se běžně používá, když přenos pomocí protokolu HTTP odesílá zprávy mezi fronty přenosu a cílové fronty.  
+### <a name="srmp-messaging"></a>Zprávy SRMP  
+ Jak je popsáno výše, můžete použít protokol SRMP pro přenosy front-Queue. To se běžně používá, když přenos HTTP přenáší zprávy mezi frontou přenosů a cílovou frontou.  
   
- Pro použití protokolu přenosu SRMP, adresa zpráv pomocí net.msmq schéma identifikátoru URI, jak již bylo zmíněno dříve a zadejte volbu SRMP nebo zabezpečené SRMP v `QueueTransferProtocol` vlastnost `NetMsmqBinding`.  
+ Chcete-li použít přenosový protokol SRMP, adresujte zprávy pomocí schématu identifikátoru URI NET. MSMQ, jak bylo zmíněno dříve, a určete volbu protokolu SRMP nebo zabezpečeného protokolu SRMP ve vlastnosti `QueueTransferProtocol` `NetMsmqBinding`.  
   
- Zadání `QueueTransferProtocol` vlastnost je jen pro odesílání funkce. Tento údaj klientem, který typ fronty přenosu protokol se má použít.  
+ Zadáním vlastnosti `QueueTransferProtocol` je funkce pouze pro odesílání. Označuje klienta, který druh přenosového protokolu fronty se má použít.  
   
-### <a name="using-active-directory"></a>Pomocí služby Active Directory  
- Služby MSMQ obsahuje podporu pro integraci služby Active Directory. Když je služba MSMQ nainstalovaná s integrací služby Active Directory, musí být počítač součástí domény Windows. Služby Active Directory se používá k publikování fronty pro zjišťování; Tyto fronty se nazývají *veřejné fronty*. Při řešení do fronty, fronta možné vyřešit pomocí služby Active Directory. To se podobá použití systému DNS (Domain Name) překládání IP adresy z názvu sítě. `UseActiveDirectory` Vlastnost `NetMsmqBinding` je logická hodnota, která označuje, zda kanálu ve frontě musí používat Active Directory k vyřešení fronty identifikátoru URI. Ve výchozím nastavení nastavena na `false`. Pokud `UseActiveDirectory` je nastavena na `true`, pak kanálu ve frontě net.msmq:// URI převést na formát názvu pomocí služby Active Directory.  
+### <a name="using-active-directory"></a>Používání služby Active Directory  
+ Služba MSMQ je dodávána s podporou integrace služby Active Directory. Když je služba MSMQ nainstalována s integrací služby Active Directory, musí být počítač součástí domény systému Windows. Služba Active Directory se používá k publikování front pro zjišťování; takové fronty se nazývají *veřejné fronty*. Při adresování fronty je možné tuto frontu přeložit pomocí služby Active Directory. To se podobá tomu, jak se používá služba DNS (Domain Name System) k překladu IP adresy síťového názvu. Vlastnost `UseActiveDirectory` v `NetMsmqBinding` je logická hodnota, která označuje, jestli kanál zařazený do fronty musí použít službu Active Directory k překladu identifikátoru URI fronty. Ve výchozím nastavení je nastavená na `false`. Pokud je vlastnost `UseActiveDirectory` nastavena na hodnotu `true`, kanál ve frontě používá službu Active Directory k převodu NET. MSMQ://URI na název formátu.  
   
- `UseActiveDirectory` Vlastnost má smysl pouze pro klienta, který odesílá zprávy, protože se používá pro překlad adres fronty, při odesílání zpráv.  
+ Vlastnost `UseActiveDirectory` má smysl jenom pro klienta, který posílá zprávu, protože se používá k překladu adresy fronty při posílání zpráv.  
   
-### <a name="mapping-netmsmq-uri-to-message-queuing-format-names"></a>Mapovací identifikátor URI net.msmq ke zprávě fronty názvy ve formátu souboru  
- Kanálu ve frontě zpracovává mapování názvu identifikátoru URI net.msmq poskytuje kanál názvy ve formátu MSMQ. Následující tabulka shrnuje pravidla použít k mapování mezi nimi.  
+### <a name="mapping-netmsmq-uri-to-message-queuing-format-names"></a>Mapování identifikátoru URI NET. MSMQ na názvy formátů služby Řízení front zpráv  
+ Kanál kanálu zpracovává mapování názvu identifikátoru URI NET. MSMQ, který je zadaný pro kanál, na názvy formátu MSMQ. Následující tabulka shrnuje pravidla používaná k mapování mezi nimi.  
   
-|Adresa WCF URI na základě fronty|Použijte vlastnost služby Active Directory|Vlastnost fronty přenosu protokolu|Výsledný formát názvů MSMQ|  
+|Adresa fronty na základě identifikátoru URI WCF|Použít vlastnost služby Active Directory|Vlastnost protokolu přenosu fronty|Výsledné názvy formátu MSMQ|  
 |----------------------------------|-----------------------------------|--------------------------------------|---------------------------------|  
 |Net.msmq://\<machine-name>/private/abc|False (výchozí)|Nativní (výchozí)|DIRECT=OS:machine-name\private$\abc|  
-|Net.msmq://\<machine-name>/private/abc|False|SRMP|DIRECT=http://machine/msmq/private$/abc|  
-|Net.msmq://\<machine-name>/private/abc|Pravda|Nativní|VEŘEJNÉ = některé guid (identifikátor GUID fronty)|  
+|Net.msmq://\<machine-name>/private/abc|Nepravda|SRMP|DIRECT=http://machine/msmq/private $/abc|  
+|Net.msmq://\<machine-name>/private/abc|Pravda|Nativní|PUBLIC = nějaký identifikátor GUID (identifikátor GUID fronty)|  
   
-### <a name="reading-messages-from-the-dead-letter-queue-or-the-poison-message-queue"></a>Čtení zpráv z fronty nedoručených zpráv nebo Poison zpráv fronty  
- Chcete-li načíst zprávy z fronty poison zpráv, která je dílčí cílové fronty, otevřete `ServiceHost` adresou dílčí fronty.  
+### <a name="reading-messages-from-the-dead-letter-queue-or-the-poison-message-queue"></a>Načítají se zprávy z fronty nedoručených zpráv nebo z fronty pro nepoškozené zprávy.  
+ Chcete-li číst zprávy z fronty nezpracovatelných zpráv, která je podfrontou cílové fronty, otevřete `ServiceHost` s adresou podfronty.  
   
- Příklad: Služba, která čte z fronty zpráv poison PurchaseOrders soukromou frontu z místního počítače chcete řešit net.msmq://localhost/private/PurchaseOrders;poison.  
+ Příklad: služba, která čte z fronty nezpracovatelných zpráv PurchaseOrders soukromé fronty z místního počítače, bude adresovat NET. MSMQ://localhost/private/PurchaseOrders; jed.  
   
- Ke čtení zpráv z fronty nedoručených zpráv transakcí systému, identifikátor URI musí být ve tvaru: net.msmq://localhost/system$; DeadXact.  
+ Chcete-li číst zprávy z fronty nedoručených zpráv transakčního systému, musí být identifikátor URI ve tvaru: NET. MSMQ://localhost/System $;D eadXact.  
   
- Ke čtení zpráv z fronty nedoručených zpráv netransakční systému, identifikátor URI musí být ve tvaru: net.msmq://localhost/system$; nedoručených zpráv.  
+ Chcete-li číst zprávy z fronty nedoručených zpráv netransakčního systému, identifikátor URI musí být ve tvaru: NET. MSMQ://localhost/System $;D eadLetter.  
   
- Pokud používáte vlastní frontu nedoručených zpráv, mějte na paměti, že fronta nedoručených zpráv musí být umístěn v místním počítači. Identifikátor URI fronty nedoručených zpráv v důsledku toho je omezen na formuláři:  
+ Pokud používáte vlastní frontu nedoručených zpráv, musí být fronta nedoručených zpráv v místním počítači. V takovém případě je identifikátor URI pro frontu nedoručených zpráv omezený na formát:  
   
- NET.MSMQ: //localhost/ [privátní /] \< *vlastní dead písmeno fronty name*>.  
+ NET. MSMQ://localhost/[Private/] \<*vlastní-nedoručené-písmeno-Queue-name*>.  
   
- Služby WCF ověřuje, že byly všechny zprávy, které obdrží řešit do konkrétní fronty, který naslouchá. Pokud cílové fronty zprávy do fronty, které se nachází v neodpovídá, službu nezpracovává zprávy. Jedná se o problém, který služby naslouchání do fronty nedoručených zpráv musí řešit, protože všechny zprávy ve frontě nedoručených měl být doručena jinde. Ke čtení zpráv z fronty nedoručených zpráv, nebo z nezpracovatelných fronty `ServiceBehavior` s <xref:System.ServiceModel.AddressFilterMode.Any> parametr je nutné použít. Příklad najdete v tématu [fronty nedoručených zpráv](../../../../docs/framework/wcf/samples/dead-letter-queues.md).  
+ Služba WCF ověřuje, že všechny zprávy, které obdrží, byly adresovány do konkrétní fronty, na které naslouchá. Pokud cílová fronta zprávy nesouhlasí s frontou, ve které se nachází, služba zprávu nezpracovává. Jedná se o problém, který musí splňovat služby, které naslouchá frontě nedoručených zpráv, protože jakékoli zprávy ve frontě nedoručených zpráv byly určeny k doručování jinde. Chcete-li číst zprávy z fronty nedoručených zpráv nebo z fronty poškození, je nutné použít `ServiceBehavior` s parametrem <xref:System.ServiceModel.AddressFilterMode.Any>. Příklad najdete v tématu [fronty nedoručených zpráv](../../../../docs/framework/wcf/samples/dead-letter-queues.md).  
   
 ## <a name="msmqintegrationbinding-and-service-addressing"></a>MsmqIntegrationBinding a adresování služeb  
- `MsmqIntegrationBinding` Se používá ke komunikaci s tradiční aplikacím služby MSMQ. K usnadnění vzájemná spolupráce s existující aplikaci služby MSMQ, WCF podporuje adresování pouze název formátu. Díky tomu se zprávy odesílané pomocí této vazby musí odpovídat schéma identifikátoru URI:  
+ `MsmqIntegrationBinding` se používá ke komunikaci s tradičními aplikacemi služby MSMQ. Pro usnadnění spolupráce s existující aplikací služby MSMQ podporuje WCF pouze adresování názvů formátu. Proto zprávy odeslané pomocí této vazby musí odpovídat schématu identifikátoru URI:  
   
- msmq.formatname:\<*MSMQ-format-name*>>  
+ MSMQ. FormatName:\<*MSMQ-Format-name*>>  
   
- Název formátu MSMQ je ve formátu určeném služby MSMQ v [o služby Řízení front zpráv](https://go.microsoft.com/fwlink/?LinkId=94837).  
+ Služba MSMQ-Format-Name má formu určenou službou MSMQ v části [o službě Řízení front zpráv](https://go.microsoft.com/fwlink/?LinkId=94837).  
   
- Všimněte si, že můžete použít pouze názvů v přímém formátu a názvy veřejných a privátních formátu (vyžaduje integrace služby Active Directory) při příjmu zprávy z fronty pomocí `MsmqIntegrationBinding`. Doporučujeme však, že používáte názvů v přímém formátu. Třeba na [!INCLUDE[wv](../../../../includes/wv-md.md)], pomocí žádným jiným názvem formátu způsobí chybu, protože systém se pokusí otevřít dílčí fronty, která se dá otevřít jenom pomocí přímého názvu formátu.  
+ Všimněte si, že při přijímání zpráv z fronty pomocí `MsmqIntegrationBinding`můžete použít pouze přímé názvy formátů a názvy veřejného a privátního formátu (vyžaduje integraci služby Active Directory). Doporučuje se ale používat přímé názvy formátů. Například v systému Windows Vista může použití jiného názvu formátu způsobit chybu, protože systém se pokusí otevřít dílčí frontu, která se dá otevřít jenom s přímými názvy formátu.  
   
- Při adresování pomocí SRMP `MsmqIntegrationBinding`, neexistuje žádný požadavek na přidání /msmq/ v přímém formátu název, který pomůže Internetové informační služby (IIS) s odesíláním. Příklad: Při adresování protokolu abc pomocí SRMP místo přímé fronty =http://adatum.com/msmq/private$/ abc, měli byste použít přímo =http://adatum.com/private$/ abc.  
+ Při adresování SRMP pomocí `MsmqIntegrationBinding`neexistuje žádný požadavek na přidání/MSMQ/v přímém názvu formátu tak, aby se Internetová informační služba (IIS) s odesíláním usnadnil. Příklad: při adresování fronty ABC pomocí protokolu SRMP místo DIRECT =http://adatum.com/msmq/private $/ABC byste měli použít DIRECT =http://adatum.com/private $/ABC.  
   
- Všimněte si, že nemůžete použít net.msmq:// adresování s `MsmqIntegrationBinding`. Protože `MsmqIntegrationBinding` podporuje volného tvaru MSMQ formát názvu adresování, můžete použít službu WCF používající tuto vazbu použít vícesměrové vysílání a distribuční seznam funkcí ve službě MSMQ. Jedinou výjimkou je určení `CustomDeadLetterQueue` při použití `MsmqIntegrationBinding`. Musí být formulář net.msmq://, podobně jako na to, jak je určen pomocí `NetMsmqBinding`.  
+ Všimněte si, že nemůžete použít NET. MSMQ://Addressing with `MsmqIntegrationBinding`. Vzhledem k tomu, že `MsmqIntegrationBinding` podporuje adresování názvů ve formátu MSMQ, můžete použít službu WCF, která pomocí této vazby používá funkce vícesměrového a distribučního seznamu ve službě MSMQ. Jedna výjimka určuje `CustomDeadLetterQueue` při použití `MsmqIntegrationBinding`. Musí mít formát NET. MSMQ://, podobně jako jeho zadání pomocí `NetMsmqBinding`.  
   
 ## <a name="see-also"></a>Viz také:
 

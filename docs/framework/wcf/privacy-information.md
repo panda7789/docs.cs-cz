@@ -6,12 +6,12 @@ helpviewer_keywords:
 - WCF, privacy information
 - privacy information [WCF]
 ms.assetid: c9553724-f3e7-45cb-9ea5-450a22d309d9
-ms.openlocfilehash: 0b277728d2f2c224d5e45e3990ab2fd588bc81d3
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: c5500b8fd8b35081e83e2e9279dc4f236ef3c7b0
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72318698"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837932"
 ---
 # <a name="windows-communication-foundation-privacy-information"></a>Windows Communication Foundation – informace o ochraně osobních údajů
 Společnost Microsoft se zavazuje chránit ochranu osobních údajů koncových uživatelů. Když sestavíte aplikaci pomocí Windows Communication Foundation (WCF), verze 3,0, může vaše aplikace ovlivnit ochranu osobních údajů koncových uživatelů. Vaše aplikace může například explicitně shromažďovat kontaktní údaje uživatele nebo může vyžádat nebo odeslat informace prostřednictvím internetu na web. Pokud do své aplikace vložíte technologii Microsoftu, může mít tato technologie vlastní chování, které může mít vliv na ochranu osobních údajů. WCF neodesílá žádné informace společnosti Microsoft z vaší aplikace, pokud jste vy nebo koncový uživatel nezvolili odeslání na nás.  
@@ -21,7 +21,7 @@ Společnost Microsoft se zavazuje chránit ochranu osobních údajů koncových 
   
  Záhlaví mohou obsahovat směrování zpráv, informace o zabezpečení, transakce a další informace v závislosti na službách, které aplikace používá. Zprávy jsou obvykle ve výchozím nastavení zašifrovány. Jedinou výjimkou je použití `BasicHttpBinding`, které bylo navrženo pro použití s nezabezpečenými staršími webovými službami. Jako návrhář aplikace zodpovídáte za finální návrh. Zprávy v těle protokolu SOAP obsahují data specifická pro aplikaci; Tato data, jako jsou osobní údaje definované aplikací, je ale možné zabezpečit pomocí funkcí šifrování a utajení WCF. V následujících částech jsou popsány funkce, které mohou mít vliv na ochranu osobních údajů.  
   
-## <a name="messaging"></a>Zasílání zpráv  
+## <a name="messaging"></a>Messaging  
  Každá zpráva WCF má hlavičku adresy, která určuje cíl zprávy a kam má odpověď jít.  
   
  Součást Address adresy koncového bodu je identifikátor URI (Uniform Resource Identifier), který identifikuje koncový bod. Adresa může být síťová nebo logická adresa. Adresa může obsahovat název počítače (název hostitele, plně kvalifikovaný název domény) a IP adresu. Adresa koncového bodu může obsahovat také globálně jedinečný identifikátor (GUID) nebo kolekci identifikátorů GUID pro dočasné adresování, které slouží k nerozlišujeí jednotlivých adres. Každá zpráva obsahuje ID zprávy, která je identifikátorem GUID. Tato funkce se řídí referenčním standardem WS-Addressing.  
@@ -44,7 +44,7 @@ Společnost Microsoft se zavazuje chránit ochranu osobních údajů koncových 
   
  Ověřování může mít za následek zabezpečenou relaci vytvořenou mezi komunikujícími koncovými body. Relace je identifikována identifikátorem GUID, který vydrží životnost relace zabezpečení. Následující tabulka ukazuje, co se zachová a kde.  
   
-|Data|Úložiště|  
+|Datové|Úložiště|  
 |----------|-------------|  
 |Přihlašovací údaje pro prezentace, jako je uživatelské jméno, certifikáty X. 509, tokeny Kerberos a odkazy na přihlašovací údaje.|Standardní mechanismy správy přihlašovacích údajů systému Windows, jako je například úložiště certifikátů systému Windows.|  
 |Informace o členství uživatele, například uživatelská jména a hesla.|ASP.NET poskytovatelé členství.|  
@@ -54,7 +54,7 @@ Společnost Microsoft se zavazuje chránit ochranu osobních údajů koncových 
 ## <a name="auditing"></a>Auditování  
  Auditování zaznamenává úspěšné a neúspěšné události ověřování a autorizace. Záznamy auditu obsahují následující data: identifikátor URI služby, identifikátor URI akce a identifikaci volajícího.  
   
- Auditování také zaznamenává, když správce změní konfiguraci protokolování zpráv (zapnutí nebo vypnutí), protože protokolování zpráv může protokolovat data specifická pro aplikaci v záhlavích a subjektech. V případě [!INCLUDE[wxp](../../../includes/wxp-md.md)]záznam se zaznamená do protokolu událostí aplikace. Pro [!INCLUDE[wv](../../../includes/wv-md.md)] a [!INCLUDE[ws2003](../../../includes/ws2003-md.md)]se záznam zaznamená do protokolu událostí zabezpečení.  
+ Auditování také zaznamenává, když správce změní konfiguraci protokolování zpráv (zapnutí nebo vypnutí), protože protokolování zpráv může protokolovat data specifická pro aplikaci v záhlavích a subjektech. V případě [!INCLUDE[wxp](../../../includes/wxp-md.md)]záznam se zaznamená do protokolu událostí aplikace. V případě systému Windows Vista a [!INCLUDE[ws2003](../../../includes/ws2003-md.md)]záznam se zaznamená do protokolu událostí zabezpečení.  
   
 ## <a name="transactions"></a>Transakce  
  Funkce transakcí poskytuje transakční služby pro aplikaci WCF.  

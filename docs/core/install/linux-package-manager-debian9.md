@@ -3,13 +3,13 @@ title: Instalace .NET Core v Debian 9 – správce balíčků – .NET Core
 description: Pomocí Správce balíčků nainstalujte .NET Core SDK a modul runtime v Debian 9.
 author: thraka
 ms.author: adegeo
-ms.date: 11/06/2019
-ms.openlocfilehash: e0aed17a7283a1d032aa8d6da723bc5b115d91a3
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.date: 12/04/2019
+ms.openlocfilehash: b8b6a3039efcc2fbd15e0c3948984086c619bd44
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74451036"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74836932"
 ---
 # <a name="debian-9-package-manager---install-net-core"></a>Správce balíčků Debian 9 – instalace .NET Core
 
@@ -17,7 +17,7 @@ ms.locfileid: "74451036"
 
 Tento článek popisuje, jak pomocí Správce balíčků nainstalovat .NET Core na Debian 9. Pokud instalujete modul runtime, doporučujeme nainstalovat modul [runtime ASP.NET Core](#install-the-aspnet-core-runtime), protože zahrnuje modul runtime .NET Core i ASP.NET Core.
 
-## <a name="register-microsoft-key-and-feed"></a>Registrace klíče a kanálu Microsoft
+## <a name="register-microsoft-key-and-feed"></a>Registrace klíče Microsoft a informačního kanálu
 
 Před instalací .NET budete potřebovat:
 
@@ -25,7 +25,7 @@ Před instalací .NET budete potřebovat:
 - registrace úložiště produktu
 - Nainstalovat požadované závislosti
 
-Tento postup je třeba provést pouze jednou pro každý počítač.
+Stačí to provést jednou na jednom počítači.
 
 Otevřete terminál a spusťte následující příkazy.
 
@@ -46,7 +46,7 @@ Aktualizujte produkty, které jsou k dispozici pro instalaci, a poté nainstaluj
 sudo apt-get update
 sudo apt-get install apt-transport-https
 sudo apt-get update
-sudo apt-get install dotnet-sdk-3.0
+sudo apt-get install dotnet-sdk-3.1
 ```
 
 ## <a name="install-the-aspnet-core-runtime"></a>Instalace modulu runtime ASP.NET Core
@@ -57,7 +57,7 @@ Aktualizujte produkty, které jsou k dispozici pro instalaci, a pak nainstalujte
 sudo apt-get update
 sudo apt-get install apt-transport-https
 sudo apt-get update
-sudo apt-get install aspnetcore-runtime-3.0
+sudo apt-get install aspnetcore-runtime-3.1
 ```
 
 ## <a name="install-the-net-core-runtime"></a>Instalace modulu runtime .NET Core
@@ -68,7 +68,7 @@ Aktualizujte produkty, které jsou k dispozici pro instalaci, a pak nainstalujte
 sudo apt-get update
 sudo apt-get install apt-transport-https
 sudo apt-get update
-sudo apt-get install dotnet-runtime-3.0
+sudo apt-get install dotnet-runtime-3.1
 ```
 
 ## <a name="how-to-install-other-versions"></a>Jak nainstalovat další verze

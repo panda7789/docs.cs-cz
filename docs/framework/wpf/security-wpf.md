@@ -13,12 +13,12 @@ helpviewer_keywords:
 - XBAP security [WPF]
 - Internet Explorer security settings [WPF]
 ms.assetid: ee1baea0-3611-4e36-9ad6-fcd5205376fb
-ms.openlocfilehash: 939c9c6b8a8a8822174f08d5c0b50ef051264ee1
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 75e6c7b4886bd490c462e9128eca7ec13f233824
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802094"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837295"
 ---
 # <a name="security-wpf"></a>Zabezpečení (WPF)
 <a name="introduction"></a>Při vývoji samostatné aplikace a aplikací hostovaných v prohlížeči Windows Presentation Foundation (WPF), je nutné vzít v úvahu model zabezpečení. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] samostatné aplikace jsou spouštěny s neomezenými oprávněními (sada oprávnění CAS**FullTrust** ), ať už nasazené pomocí Instalační služba systému Windows (. msi), XCOPY nebo ClickOnce. Nasazení částečného vztahu důvěryhodnosti – samostatné aplikace WPF pomocí technologie ClickOnce nejsou podporovány. Hostitelská aplikace s plnou důvěryhodností však může vytvořit <xref:System.AppDomain> s částečným vztahem důvěryhodnosti pomocí modelu .NET Framework doplňku. Další informace najdete v tématu [Přehled doplňků WPF](./app-development/wpf-add-ins-overview.md).  
@@ -87,7 +87,7 @@ ms.locfileid: "74802094"
   
 <a name="InternetExplorerSecuritySettings"></a>   
 ## <a name="web-browsing-software-security-settings"></a>Webové procházení – nastavení zabezpečení softwaru  
- Nastavení zabezpečení v počítači určuje přístup k vašemu softwaru pro procházení webu. Software pro procházení webu zahrnuje všechny aplikace nebo komponenty, které používají rozhraní [WinInet](https://go.microsoft.com/fwlink/?LinkId=179379) nebo [Urlmon](https://go.microsoft.com/fwlink/?LinkId=179383) API, včetně aplikací Internet Explorer a PresentationHost. exe.  
+ Nastavení zabezpečení v počítači určuje přístup k vašemu softwaru pro procházení webu. Software pro procházení webu zahrnuje všechny aplikace nebo komponenty, které používají rozhraní [WinInet](/windows/win32/wininet/portal) nebo [Urlmon](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa767916(v=vs.85)) API, včetně aplikací Internet Explorer a PresentationHost. exe.  
   
  Internet Explorer poskytuje mechanismus, pomocí kterého můžete nakonfigurovat funkce, které mohou být spuštěny nástrojem nebo z aplikace Internet Explorer, včetně následujících:  
   
@@ -148,14 +148,14 @@ ms.locfileid: "74802094"
   
 <a name="webbrowser_control_and_feature_controls"></a>   
 ## <a name="webbrowser-control-and-feature-controls"></a>Ovládací prvek WebBrowser a ovládací prvky funkcí  
- Pro hostování webového obsahu lze použít ovládací prvek WPF <xref:System.Windows.Controls.WebBrowser>. Ovládací prvek WPF <xref:System.Windows.Controls.WebBrowser> obtéká základní ovládací prvek ActiveX WebBrowser. WPF poskytuje určitou podporu pro zabezpečení vaší aplikace při použití ovládacího prvku WPF <xref:System.Windows.Controls.WebBrowser> k hostování nedůvěryhodného webového obsahu. Některé funkce zabezpečení však musí použít přímo aplikace pomocí ovládacího prvku <xref:System.Windows.Controls.WebBrowser>. Další informace o ovládacím prvku ActiveX WebBrowser najdete v tématu [přehledy a kurzy ovládacích prvků WebBrowser](https://go.microsoft.com/fwlink/?LinkId=179388).  
+ Pro hostování webového obsahu lze použít ovládací prvek WPF <xref:System.Windows.Controls.WebBrowser>. Ovládací prvek WPF <xref:System.Windows.Controls.WebBrowser> obtéká základní ovládací prvek ActiveX WebBrowser. WPF poskytuje určitou podporu pro zabezpečení vaší aplikace při použití ovládacího prvku WPF <xref:System.Windows.Controls.WebBrowser> k hostování nedůvěryhodného webového obsahu. Některé funkce zabezpečení však musí použít přímo aplikace pomocí ovládacího prvku <xref:System.Windows.Controls.WebBrowser>. Další informace o ovládacím prvku ActiveX WebBrowser najdete v tématu [přehledy a kurzy ovládacích prvků WebBrowser](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa752041(v=vs.85)).  
   
 > [!NOTE]
 > Tato část platí také pro ovládací prvek <xref:System.Windows.Controls.Frame>, protože používá <xref:System.Windows.Controls.WebBrowser> k přechodu na obsah HTML.  
   
  Pokud se <xref:System.Windows.Controls.WebBrowser> ovládací prvek WPF používá k hostování nedůvěryhodného webového obsahu, měla by vaše aplikace používat <xref:System.AppDomain> s částečným vztahem důvěryhodnosti k lepšímu izolování kódu aplikace před potenciálně škodlivým kódem skriptu HTML. To platí zejména v případě, že vaše aplikace pracuje s hostovaným skriptem pomocí metody <xref:System.Windows.Controls.WebBrowser.InvokeScript%2A> a vlastnosti <xref:System.Windows.Controls.WebBrowser.ObjectForScripting%2A>. Další informace najdete v tématu [Přehled doplňků WPF](./app-development/wpf-add-ins-overview.md).  
   
- Pokud vaše aplikace používá ovládací prvek WPF <xref:System.Windows.Controls.WebBrowser>, další způsob, jak zvýšit zabezpečení a zmírnit útoky, je povolit ovládací prvky funkce Internet Exploreru. Ovládací prvky funkcí jsou přidání do Internet Exploreru, které správcům a vývojářům umožňují konfigurovat funkce aplikace Internet Explorer a aplikací, které jsou hostiteli ovládacího prvku WebBrowser ActiveX, který <xref:System.Windows.Controls.WebBrowser> ovládací prvek WPF. Ovládací prvky funkcí lze konfigurovat pomocí funkce [CoInternetSetFeatureEnabled](https://go.microsoft.com/fwlink/?LinkId=179394) nebo změnou hodnot v registru. Další informace o ovládacích prvcích funkcí naleznete v tématu [Úvod do ovládacích prvků funkcí](https://go.microsoft.com/fwlink/?LinkId=179390) a [Internet Feature Controls](https://go.microsoft.com/fwlink/?LinkId=179392).  
+ Pokud vaše aplikace používá ovládací prvek WPF <xref:System.Windows.Controls.WebBrowser>, další způsob, jak zvýšit zabezpečení a zmírnit útoky, je povolit ovládací prvky funkce Internet Exploreru. Ovládací prvky funkcí jsou přidání do Internet Exploreru, které správcům a vývojářům umožňují konfigurovat funkce aplikace Internet Explorer a aplikací, které jsou hostiteli ovládacího prvku WebBrowser ActiveX, který <xref:System.Windows.Controls.WebBrowser> ovládací prvek WPF. Ovládací prvky funkcí lze konfigurovat pomocí funkce [CoInternetSetFeatureEnabled](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537168(v=vs.85)) nebo změnou hodnot v registru. Další informace o ovládacích prvcích funkcí naleznete v tématu [Úvod do ovládacích prvků funkcí](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537184(v=vs.85)) a [Internet Feature Controls](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/general-info/ee330720(v=vs.85)).  
   
  Pokud vyvíjíte samostatnou aplikaci WPF, která používá ovládací prvek WPF <xref:System.Windows.Controls.WebBrowser>, WPF automaticky povolí následující ovládací prvky funkce pro vaši aplikaci.  
   
@@ -184,7 +184,7 @@ ms.locfileid: "74802094"
  Ovládací prvky funkcí jsou aplikovány procesem vytvoření instance objektu ActiveX WebBrowser. Proto pokud vytváříte samostatnou aplikaci, která může přejít na nedůvěryhodný obsah, měli byste zvážit možnost povolit další ovládací prvky funkcí.  
   
 > [!NOTE]
-> Toto doporučení je založené na obecných doporučeních pro zabezpečení hostitelů MSHTML a SHDOCVW. Další informace najdete v tématu [Nejčastější dotazy k zabezpečení hostitele MSHTML: část i části II](https://go.microsoft.com/fwlink/?LinkId=179396) a [Nejčastější dotazy k zabezpečení hostitele MSHTML: část II z části II](https://go.microsoft.com/fwlink/?LinkId=179415).  
+> Toto doporučení je založené na obecných doporučeních pro zabezpečení hostitelů MSHTML a SHDOCVW. Další informace najdete v tématu [Nejčastější dotazy k zabezpečení hostitele MSHTML: část i části II](https://msrc-blog.microsoft.com/archive/2009/04/02/the-mshtml-host-security-faq.aspx) a [Nejčastější dotazy k zabezpečení hostitele MSHTML: část II z části II](https://msrc-blog.microsoft.com/archive/2009/04/03/the-mshtml-host-security-faq-part-ii-of-ii.aspx).  
   
  Pro váš spustitelný soubor zvažte povolení následujících ovládacích prvků funkce nastavením hodnoty registru na 1.  
   
@@ -209,7 +209,7 @@ ms.locfileid: "74802094"
   
  Pokud spustíte aplikaci prohlížeče XAML s částečným vztahem důvěryhodnosti (XBAP), která obsahuje ovládací prvek WPF <xref:System.Windows.Controls.WebBrowser> v aplikaci Windows Internet Explorer, WPF hostuje ovládací prvek ActiveX WebBrowser v adresním prostoru procesu aplikace Internet Explorer. Vzhledem k tomu, že ovládací prvek ActiveX WebBrowser je hostován v procesu Internet Exploreru, jsou všechny ovládací prvky funkcí pro Internet Explorer povoleny také pro ovládací prvek ActiveX WebBrowser.  
   
- Aplikace XBAP spuštěné v aplikaci Internet Explorer také dostanou další úroveň zabezpečení ve srovnání se standardními samostatnými aplikacemi. Toto dodatečné zabezpečení je způsobeno tím, že aplikace Internet Explorer, a proto ovládací prvek ActiveX WebBrowser, běží v chráněném režimu ve výchozím nastavení v systémech Windows Vista a Windows 7. Další informace o chráněném režimu najdete v tématu [porozumění a práce v chráněném režimu Internet Explorer](https://go.microsoft.com/fwlink/?LinkId=179393).  
+ Aplikace XBAP spuštěné v aplikaci Internet Explorer také dostanou další úroveň zabezpečení ve srovnání se standardními samostatnými aplikacemi. Toto dodatečné zabezpečení je způsobeno tím, že aplikace Internet Explorer, a proto ovládací prvek ActiveX WebBrowser, běží v chráněném režimu ve výchozím nastavení v systémech Windows Vista a Windows 7. Další informace o chráněném režimu najdete v tématu [porozumění a práce v chráněném režimu Internet Explorer](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/).  
   
 > [!NOTE]
 > Pokud se pokusíte spustit XBAP, který obsahuje ovládací prvek WPF <xref:System.Windows.Controls.WebBrowser> v prohlížeči Firefox, zatímco v zóně Internet, bude vyvolána <xref:System.Security.SecurityException>. Důvodem je zásada zabezpečení WPF.  
@@ -266,7 +266,7 @@ ms.locfileid: "74802094"
   
 |Plošný|Prostředek|  
 |----------|--------------|  
-|Spravovaný kód|[Postupy zabezpečení pro aplikace a vzory a postupy](https://go.microsoft.com/fwlink/?LinkId=117426)|  
+|Spravovaný kód|[Postupy zabezpečení pro aplikace a vzory a postupy](https://docs.microsoft.com/previous-versions/msp-n-p/ff650760(v=pandp.10))|  
 |CAS|[Zabezpečení přístupu kódu](../misc/code-access-security.md)|  
 |ClickOnce|[ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment)|  
 |[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]|[Částečné zabezpečení důvěryhodnosti WPF](wpf-partial-trust-security.md)|  
@@ -276,7 +276,7 @@ ms.locfileid: "74802094"
 - [Částečné zabezpečení důvěryhodnosti WPF](wpf-partial-trust-security.md)
 - [Strategie zabezpečení WPF – zabezpečení platformy](wpf-security-strategy-platform-security.md)
 - [Strategie zabezpečení WPF – engineering zabezpečení](wpf-security-strategy-security-engineering.md)
-- [Postupy zabezpečení pro aplikace a vzory a postupy](https://go.microsoft.com/fwlink/?LinkId=117426)
+- [Postupy zabezpečení pro aplikace a vzory a postupy](https://docs.microsoft.com/previous-versions/msp-n-p/ff650760(v=pandp.10))
 - [Zabezpečení přístupu kódu](../misc/code-access-security.md)
 - [ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment)
 - [Přehled XAML (WPF)](../../desktop-wpf/fundamentals/xaml.md)

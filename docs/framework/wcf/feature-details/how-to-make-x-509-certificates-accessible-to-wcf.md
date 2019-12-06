@@ -9,12 +9,12 @@ helpviewer_keywords:
 - certificates [WCF], making X.509 certificates accessible to WCF
 - X.509 certificates [WCF], making accessible to WCF
 ms.assetid: a54e407c-c2b5-4319-a648-60e43413664b
-ms.openlocfilehash: 401371bf01a62a20f2834cb76df19d9ddaacf83d
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: abd074701ca667abe4590f4f17a044b34325e874
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70972357"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837399"
 ---
 # <a name="how-to-make-x509-certificates-accessible-to-wcf"></a>Postupy: Zpřístupnění certifikátů X.509 pro WCF
 Aby byl certifikát X. 509 přístupný Windows Communication Foundation (WCF), kód aplikace musí určovat název a umístění úložiště certifikátů. V určitých případech musí mít identita procesu přístup k souboru, který obsahuje privátní klíč přidružený k certifikátu X. 509. K získání privátního klíče přidruženého k certifikátu X. 509 v úložišti certifikátů musí mít WCF oprávnění k tomu. Ve výchozím nastavení má přístup k privátnímu klíči certifikátu pouze vlastník a systémový účet.  
@@ -36,16 +36,16 @@ Aby byl certifikát X. 509 přístupný Windows Communication Foundation (WCF), 
   
     2. Určete umístění a název úložiště certifikátů, ve kterém je certifikát uložený.  
   
-         Úložiště certifikátů, ve kterém je certifikát uložený, je zadané buď v kódu aplikace, nebo v konfiguraci. Například následující příklad určuje, že certifikát je umístěn v `CurrentUser` úložišti certifikátů s názvem. `My`  
+         Úložiště certifikátů, ve kterém je certifikát uložený, je zadané buď v kódu aplikace, nebo v konfiguraci. Například následující příklad určuje, že certifikát je umístěn v úložišti certifikátů `CurrentUser` s názvem `My`.  
   
          [!code-csharp[x509Accessible#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/x509accessible/cs/source.cs#1)]
          [!code-vb[x509Accessible#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/x509accessible/vb/source.vb#1)]  
   
     3. Pomocí nástroje [FindPrivateKey](../../../../docs/framework/wcf/samples/findprivatekey.md) určete, kde se privátní klíč pro certifikát nachází v počítači.  
   
-         Nástroj [FindPrivateKey](../../../../docs/framework/wcf/samples/findprivatekey.md) vyžaduje název úložiště certifikátů, umístění úložiště certifikátů a něco, co certifikát jedinečně identifikuje. Nástroj přijme buď název předmětu certifikátu, nebo jeho kryptografický otisk jako jedinečný identifikátor. Další informace o tom, jak určit kryptografický otisk certifikátu, najdete v tématu [How to: Načtení kryptografického otisku certifikátu](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md).  
+         Nástroj [FindPrivateKey](../../../../docs/framework/wcf/samples/findprivatekey.md) vyžaduje název úložiště certifikátů, umístění úložiště certifikátů a něco, co certifikát jedinečně identifikuje. Nástroj přijme buď název předmětu certifikátu, nebo jeho kryptografický otisk jako jedinečný identifikátor. Další informace o tom, jak určit kryptografický otisk pro certifikát, naleznete v tématu [How to: Načtení kryptografického otisku certifikátu](../../../../docs/framework/wcf/feature-details/how-to-retrieve-the-thumbprint-of-a-certificate.md).  
   
-         Následující příklad kódu používá nástroj [FindPrivateKey](../../../../docs/framework/wcf/samples/findprivatekey.md) k určení umístění privátního klíče pro certifikát v `My` úložišti v `CurrentUser` nástroji s kryptografickým otiskem `46 dd 0e 7a ed 0b 7a 31 9b 02 a3 a0 43 7a d8 3f 60 40 92 9d`.  
+         Následující příklad kódu používá nástroj [FindPrivateKey](../../../../docs/framework/wcf/samples/findprivatekey.md) k určení umístění privátního klíče pro certifikát v `My` storu v `CurrentUser` s kryptografickým otiskem `46 dd 0e 7a ed 0b 7a 31 9b 02 a3 a0 43 7a d8 3f 60 40 92 9d`.  
   
         ```console
         findprivatekey.exe My CurrentUser -t "46 dd 0e 7a ed 0b 7a 31 9b 02 a3 a0 43 7a d8 3f 60 40 92 9d" -a  
@@ -59,8 +59,8 @@ Aby byl certifikát X. 509 přístupný Windows Communication Foundation (WCF), 
         |--------------|----------------------|  
         |Klient (aplikace konzoly nebo WinForms).|Aktuálně přihlášený uživatel.|  
         |Služba, která je samostatně hostována.|Aktuálně přihlášený uživatel.|  
-        |Služba, která je hostovaná ve službě[!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]IIS 6,0 () nebo[!INCLUDE[wv](../../../../includes/wv-md.md)]IIS 7,0 ().|SÍŤOVÁ SLUŽBA|  
-        |Služba, která je hostována ve službě IIS 5[!INCLUDE[wxp](../../../../includes/wxp-md.md)]. X ().|`<processModel>` Řízeno prvkem v souboru Machine. config. Výchozí účet je ASPNET.|  
+        |Služba, která je hostována ve službě IIS 6,0 ([!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]) nebo IIS 7,0 (Windows Vista).|SÍŤOVÁ SLUŽBA|  
+        |Služba, která je hostována ve službě IIS 5. X ([!INCLUDE[wxp](../../../../includes/wxp-md.md)]).|Ovládáno `<processModel>` prvkem v souboru Machine. config. Výchozí účet je ASPNET.|  
   
     5. Udělte oprávnění ke čtení souboru, který obsahuje privátní klíč, k účtu, pod kterým běží WCF, pomocí nástroje, jako je Icacls. exe.  
   

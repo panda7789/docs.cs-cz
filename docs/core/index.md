@@ -2,14 +2,14 @@
 title: Průvodce platformou .NET Core
 description: .NET Core je modulární a vysoce výkonná implementace .NET pro vytváření aplikací pro Windows, Linux a Mac. Seznamte se s .NET Core, abyste mohli začít.
 author: richlander
-ms.date: 09/23/2019
+ms.date: 12/04/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: 95f18ca09852ce139a4b99ed7aef4802d4883e13
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: b2622dba53d64c9dcf58e852d57de117fe79eb2e
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216219"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837009"
 ---
 # <a name="net-core-guide"></a>Průvodce platformou .NET Core
 
@@ -25,20 +25,20 @@ Stáhněte si [.NET Core SDK](https://www.microsoft.com/net/download) a vyzkouš
 
 Pokud hledáte jinou verzi rozhraní .NET Core, jsou všechny verze .NET Core k dispozici na webu [soubory ke stažení pro .NET](https://dotnet.microsoft.com/download/dotnet-core) Core.
 
-## <a name="net-core-30"></a>.NET Core 3.0
+## <a name="net-core-31"></a>.NET Core 3,1
 
-Nejnovější verze je .NET Core 3,0. Mezi nové funkce patří podpora stolních počítačů s Windows pomocí Windows Presentation Foundation (WPF) a C# model Windows Forms, úplného vytváření zásobníku pro web s Blazor, nová vylepšení pro signál a službu C# Azure Signal Service C# , nové funkce jazyka s 8 a mnoho dalšího. Úplný seznam nových funkcí v rozhraní .NET Core 3,0 najdete v tématu [co je nového v rozhraní .NET core 3,0](./whats-new/dotnet-core-3-0.md).
+Nejnovější verze je .NET Core 3,1. Což zahrnuje menší vylepšení .NET Core 3,0. .NET Core 3,1 je ale dlouhodobě podporovanou verzí. Další informace o verzi .NET Core 3,1 najdete v článku [novinky v rozhraní .NET core 3,1](./whats-new/dotnet-core-3-1.md).
 
 ## <a name="create-your-first-application"></a>Vytvoření první aplikace
 
-Po instalaci .NET Core SDK otevřete příkazový řádek. Zadáním následujících `dotnet` příkazů vytvořte a spusťte C# aplikaci:
+Po instalaci .NET Core SDK otevřete příkazový řádek. Zadejte následující `dotnet` příkazy pro vytvoření a spuštění C# aplikace:
 
 ```dotnetcli
 dotnet new console
 dotnet run
 ```
 
-Měl by se zobrazit následující výstup:
+Měli byste vidět následující výstup:
 
 ```output
 Hello World!

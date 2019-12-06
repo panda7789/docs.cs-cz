@@ -4,22 +4,22 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - HTTP activation [WCF]
 ms.assetid: 33a7054a-73ec-464d-83e5-b203aeded658
-ms.openlocfilehash: 70eab39e4bb24dfd1cdd6abc5216e50126ef1f4c
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 0a7be97ec157638db3eb2d656fe263b37b8d676c
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70972184"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837412"
 ---
 # <a name="how-to-install-and-configure-wcf-activation-components"></a>Postupy: Instalace a konfigurace aktivačních komponent WCF
 
-Toto téma popisuje kroky potřebné k nastavení aktivační služby procesů systému Windows (označované také jako) na [!INCLUDE[wv](../../../../includes/wv-md.md)] služby hostitelských Windows Communication Foundation (WCF), které nekomunikují přes síťové protokoly HTTP. Následující části popisují kroky pro tuto konfiguraci:
+Toto téma popisuje kroky potřebné k nastavení aktivační služby procesů systému Windows (označované také jako) v systému Windows Vista pro hostování služby Windows Communication Foundation (WCF), které nekomunikují přes síťové protokoly HTTP. Následující části popisují kroky pro tuto konfiguraci:
 
 - Nainstalujte (nebo potvrďte instalaci produktu) aktivační komponenty WCF.
 
-- Konfigurace měla podporovat protokol jiného typu než HTTP. Následující postup slouží ke [!INCLUDE[wv](../../../../includes/wv-md.md)] konfiguraci aktivace protokolem TCP.
+- Konfigurace měla podporovat protokol jiného typu než HTTP. Následující postup nakonfiguruje Windows Vista pro aktivaci protokolem TCP.
 
-Po instalaci a konfiguraci nástroje si přečtěte téma [How to: Hostování služby WCF ve was](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md) pro postupy vytvoření služby WCF, která zveřejňuje koncový bod bez http, který využívá.
+Po instalaci a konfiguraci nástroje se podívejte na téma [Postupy: hostování služby WCF ve službě was](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md) pro postupy vytvoření služby WCF, která zveřejňuje koncový bod bez http, který využívá.
 
 ## <a name="to-install-the-wcf-non-http-activation-components"></a>Instalace součástí technologie WCF pro aktivaci bez protokolu HTTP
 
@@ -52,7 +52,7 @@ Po instalaci a konfiguraci nástroje si přečtěte téma [How to: Hostování s
     ```
 
     > [!NOTE]
-    > Tento příkaz je jedním řádkem textu. Tento příkaz umožňuje, aby\<aplikace/*WCF aplikace*> k dispozici pomocí `http://localhost/<WCF Application>` a `net.tcp://localhost/<WCF Application>`.
+    > Tento příkaz je jedním řádkem textu. Tento příkaz umožňuje, aby se aplikace/\<*WCF aplikace*> k dispozici pomocí `http://localhost/<WCF Application>` i `net.tcp://localhost/<WCF Application>`.
 
      Odeberte vazbu na lokalitu NET. TCP, kterou jste přidali pro tuto ukázku.
 

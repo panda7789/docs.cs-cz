@@ -10,15 +10,15 @@ helpviewer_keywords:
 - x:ClassModifier attribute [XAML Services]
 - ClassModifier attribute in XAML [XAML Services]
 ms.assetid: ef30ab78-d334-4668-917d-c9f66c3b6aea
-ms.openlocfilehash: 5daff0567c1b1415fe994f6e39b4079cb2ab7346
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: a24277a4d5fbc4870157b6c8ba00ba71ba61e656
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053822"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837230"
 ---
 # <a name="xclassmodifier-directive"></a>x:ClassModifier – direktiva
-V případě, že `x:Class` je k dispozici i chování kompilace XAML, upraví. `class` Konkrétně místo vytvoření částečného, který `Public` má úroveň přístupu (výchozí nastavení), je `NotPublic` zadaný `x:Class` s úrovní přístupu. Toto chování ovlivňuje úroveň přístupu pro třídu ve vygenerovaných sestaveních.  
+Upravuje chování kompilace XAML, pokud je k dispozici také `x:Class`. Konkrétně místo vytvoření částečného `class`, který má úroveň přístupu `Public` (výchozí nastavení), je zadaný `x:Class` vytvořen s úrovní přístupu `NotPublic`. Toto chování ovlivňuje úroveň přístupu pro třídu ve vygenerovaných sestaveních.  
   
 ## <a name="xaml-attribute-usage"></a>Použití atributu XAML  
   
@@ -32,26 +32,26 @@ V případě, že `x:Class` je k dispozici i chování kompilace XAML, upraví. 
   
 |||  
 |-|-|  
-|*NotPublic*|Přesný řetězec, který se má předat <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> a <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> který se liší v závislosti na programovacím jazyku na pozadí, který používáte. Viz poznámky.|  
+|*NotPublic*|Přesný řetězec, který má být předána <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> a <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> se liší v závislosti na programovacím jazyku na pozadí, který používáte. Viz poznámky.|  
   
 ## <a name="dependencies"></a>Závislosti  
- [x:Class](x-class-directive.md) musí být také zadáno na stejném elementu a tento prvek musí být kořenovým elementem na stránce. Další informace naleznete v [ \[části MS-XAML\] 4.3.1.8](https://go.microsoft.com/fwlink/?LinkId=114525).  
+ [x:Class](x-class-directive.md) musí být také zadáno na stejném elementu a tento prvek musí být kořenovým elementem na stránce. Další informace naleznete v tématu [\[MS-XAML\] oddílu 4.3.1.8](https://docs.microsoft.com/previous-versions/msp-n-p/ff650760(v=pandp.10)).  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnota `x:ClassModifier` v .NET Framework použití služeb XAML se liší podle programovacího jazyka. Řetězec, který se má použít, závisí na tom, <xref:System.CodeDom.Compiler.CodeDomProvider> jak jednotlivé jazyky implementují své a konvertory typů, které <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> vrátí <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType>, aby definovali význam pro a a zda se u tohoto jazyka rozlišují malá a velká písmena.  
+ Hodnota `x:ClassModifier` v .NET Framework použití služeb XAML se liší podle programovacího jazyka. Řetězec, který se má použít, závisí na tom, jak jednotlivé jazyky implementují své <xref:System.CodeDom.Compiler.CodeDomProvider> a převaděče typu, které vrátí, aby definovali význam pro <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> a <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType>a zda se u tohoto jazyka rozlišují malá a velká písmena.  
   
-- Řetězec C#, který se má předat k určení <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> , `internal`je.  
+- Řetězec C#, který se má předat určit <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType>, je `internal`.  
   
-- Pro Microsoft Visual Basic .NET je <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> `Friend`řetězec, který se má předat, označovat.  
+- Pro Microsoft Visual Basic .NET je řetězec, který se má předat, označit jako <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> `Friend`.  
   
 - Pro C++/CLI neexistují žádné cíle, které podporují kompilaci XAML. Proto hodnota, která má být předána, není určena.  
   
- <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> Můžete také zadat (`public` v C#, `Public` v Visual Basic). zadání <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> je však nečasto provedeno, protože <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> je již výchozím chováním.  
+ Můžete také zadat <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> (`public` v C#`Public` v Visual Basic); určení <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> však není často prováděno, protože <xref:System.Reflection.TypeAttributes.Public?displayProperty=nameWithType> je již výchozím chováním.  
   
- Další hodnoty s ekvivalentními omezeními na `private` úrovni uživatelského kódu, jako je například v C#, nejsou relevantní `x:ClassModifier` , protože vnořené odkazy na třídy nejsou <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> v jazyce XAML podporovány, a proto má modifikátor stejný účinek. .  
+ Jiné hodnoty s ekvivalentními omezeními na úrovni uživatelského kódu, jako je například C#`private` v, nejsou relevantní pro `x:ClassModifier`, protože vnořené odkazy na třídy nejsou v jazyce XAML podporovány a proto má modifikátor <xref:System.Reflection.TypeAttributes.NotPublic?displayProperty=nameWithType> stejný účinek.  
   
 ## <a name="security-notes"></a>Poznámky k zabezpečení  
- Úroveň přístupu, jak je uvedeno `x:ClassModifier` v, je stále předmětem výkladu konkrétních platforem a jejich schopností. WPF obsahuje možnosti pro načtení a vytvoření instance typů, `x:ClassModifier` kde `internal`je, pokud je tato třída odkazována z prostředku WPF prostřednictvím odkazu identifikátoru URI balíčku. V důsledku tohoto případu a potenciálně jiným způsobem, jako je implementováno jinými rozhraními, nespoléhá výhradně na `x:ClassModifier` to, abyste zablokovali všechny možné pokusy o vytvoření instance.  
+ Úroveň přístupu deklarovaná v `x:ClassModifier` stále podléhá výkladu konkrétními rozhraními a jejich schopnostmi. WPF obsahuje možnosti pro načtení a vytvoření instance typů, kde `x:ClassModifier` je `internal`, pokud je tato třída odkazována z prostředku WPF prostřednictvím odkazu na identifikátor URI balíčku. Jako důsledek tohoto případu a potenciálně jiné, jako je implementováno jinými rozhraními, nespoléhá výhradně na `x:ClassModifier` k blokování všech možných pokusů o vytvoření instance.  
   
 ## <a name="see-also"></a>Viz také:
 

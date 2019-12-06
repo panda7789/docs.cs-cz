@@ -2,26 +2,26 @@
 title: Sledování proměnných a argumentů
 ms.date: 03/30/2017
 ms.assetid: 8f3d9d30-d899-49aa-b7ce-a8d0d32c4ff0
-ms.openlocfilehash: 75ec8124200b146965214d161d0e6f246888542c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c5d3fe6626c22184edd83de6aedad8589ab2ef35
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64640985"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837542"
 ---
 # <a name="variable-and-argument-tracking"></a>Sledování proměnných a argumentů
-Při sledování provádění pracovního postupu, je často užitečné extrahovat data. Tímto způsobem další kontext při přístupu k sledování záznamů příspěvek provádění. V [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)], můžete extrahovat všechny viditelné proměnné nebo argumentu v rámci oboru žádnou aktivitu v pracovním postupu pomocí sledování. Sledování profily umožňují snadno extrahovat data.  
+Při sledování provádění pracovního postupu je často užitečné extrahovat data. To poskytuje další kontext při přístupu ke sledování záznamu po provedení. V [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]můžete extrahovat všechny viditelné proměnné nebo argumenty v rámci rozsahu jakékoli aktivity pracovního postupu pomocí sledování. Sledování profilů usnadňuje extrahování dat.  
   
 ## <a name="variables-and-arguments"></a>Proměnné a argumenty  
- Pokud aktivita vyzařuje ActivityStateRecord se extrahují proměnné a argumenty.  Proměnná je k dispozici pro extrahování, pouze pokud je v rámci oboru aktivity. Tímto způsobem je zadána proměnná extrahovaným v rámci aktivity:  
+ Proměnné a argumenty jsou extrahovány, když aktivita vygeneruje ActivityStateRecord.  Proměnná je k dispozici pro extrakci pouze v případě, že je v rámci rozsahu aktivity. Proměnná, která se má extrahovat v rámci aktivity, je specifikována následujícím způsobem:  
   
-- Pokud proměnná je určen název proměnné, sledování vypadá pro proměnné v rámci aktuální aktivitu sledován a v nadřazené aktivity. Proměnná vyhledává v aktuálním oboru aktivity a v nadřazeném oboru.  
+- Pokud je proměnná určena názvem proměnné, pak sledování vyhledá proměnnou v rámci aktuální aktivity, která je sledována a v nadřazených aktivitách. Proměnná je prohledávána v oboru aktuální aktivity a v nadřazeném oboru.  
   
-- Pokud proměnné extrahovaným je určené vlastností name = "*", pak se extrahují všechny proměnné v rámci aktuální aktivitu sledován. V tomto případě proměnné, které jsou v oboru, ale definované v nadřazeném prvku, které nejsou extrahována aktivity.  
+- Pokud proměnné, které mají být extrahovány, jsou určeny pomocí názvu = "\*", pak jsou extrahovány všechny proměnné v rámci aktuální aktivity, které jsou sledovány. V tomto případě proměnné, které jsou v oboru, ale nejsou definovány v nadřazených aktivitách, nejsou extrahovány.  
   
- Při extrahování argumenty, argumenty extrahovat závisí na stavu aktivity. Když stav aktivity je zpracování, pak pouze `InArguments` jsou k dispozici pro extrakci. Pro všechny ostatní aktivity stavu (uzavřeno, Faulted, zrušeno) všechny argumenty, InArguments a OutArguments, jsou k dispozici pro extrakci.  
+ Při extrakci argumentů závisí argumenty, které jsou extrahovány, na stav aktivity. Když je spuštěn stav aktivity, jsou k extrakci k dispozici pouze `InArguments`. Pro extrakci jsou k dispozici všechny argumenty pro všechny ostatní stavy aktivity (uzavřeno, chyba, zrušeno).  
   
- Následující příklad ukazuje k dotazu stavu aktivity, který extrahuje proměnné a argumenty při aktivity `Closed` sledování záznam je vygenerován. Proměnné a argumenty může být extrahována pouze pomocí <xref:System.Activities.Tracking.ActivityStateRecord> a tedy přihlášení k odběru v rámci sledovacích profilu pomocí <xref:System.Activities.Tracking.ActivityStateQuery>.  
+ Následující příklad ukazuje dotaz na stav aktivity, který extrahuje proměnné a argumenty při vygenerování záznamu sledování `Closed` aktivity. Proměnné a argumenty lze extrahovat pouze pomocí <xref:System.Activities.Tracking.ActivityStateRecord> a proto se přihlásí k odběru v rámci profilu sledování pomocí <xref:System.Activities.Tracking.ActivityStateQuery>.  
   
 ```xml  
 <activityStateQuery activityName="SendEmailActivity">  
@@ -37,16 +37,16 @@ Při sledování provádění pracovního postupu, je často užitečné extraho
 </activityStateQuery>  
 ```  
   
-## <a name="protecting-information-stored-within-variables-and-arguments"></a>Ochrana informací uložených v proměnné a argumenty  
- Sledované proměnné nebo argumentu je ve výchozím nastavení nastavena jako viditelná modulem runtime pracovního postupu. Pracovní postup vývojář chránil přístup podle následujících kroků:  
+## <a name="protecting-information-stored-within-variables-and-arguments"></a>Ochrana informací uložených v proměnných a argumentech  
+ Sledovaná proměnná nebo argument je ve výchozím nastavení viditelná modulem runtime WF. Vývojář pracovního postupu může chránit před tím, že provádí následující kroky:  
   
-1. Šifrování hodnotu proměnné.  
+1. Zašifrujte hodnotu proměnné.  
   
-2. Ovládací prvek pro vytváření profilu sledování, aby se zabránilo extrakce proměnné nebo argumentu.  
+2. Řízení vytváření profilu sledování, aby se zabránilo extrakci proměnné nebo argumentu.  
   
-3. Pro vlastní sledování účastníci Ujistěte se, že kód WF nesmí vyzradit citlivé informace, které je uložený v proměnných nebo argumentů.  
+3. Pro vlastní účastníky sledování zajišťuje, že kód WF nezveřejňuje citlivé informace, které jsou uloženy v proměnných nebo argumentech.  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Windows Server App Fabric monitorování](https://go.microsoft.com/fwlink/?LinkId=201273)
-- [Monitorování aplikací pomocí App Fabric](https://go.microsoft.com/fwlink/?LinkId=201275)
+- [Monitorování Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677251(v=azure.10))
+- [Monitorování aplikací pomocí prostředků infrastruktury aplikace](https://docs.microsoft.com/previous-versions/appfabric/ee677276(v=azure.10))
