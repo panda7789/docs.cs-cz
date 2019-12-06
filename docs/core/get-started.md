@@ -4,12 +4,12 @@ description: Vyhledejte prostředky, které se naučíte sestavovat aplikace .NE
 author: thraka
 ms.author: adegeo
 ms.date: 09/19/2019
-ms.openlocfilehash: 78066f2904f6a874b71165e4fe1769b6b778ae41
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 89db6d79336c01315983133d9041904d88cba301
+ms.sourcegitcommit: 68a4b28242da50e1d25aab597c632767713a6f81
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428865"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74884251"
 ---
 # <a name="get-started-with-net-core"></a>Začínáme s .NET Core
 
@@ -28,7 +28,7 @@ dotnet new console --output sample1
 dotnet run --project sample1
 ```
 
-Měl by se zobrazit následující výstup:
+Měli byste vidět následující výstup:
 
 ```console
 Hello World!
@@ -50,7 +50,7 @@ Můžete začít vyvíjet aplikace .NET Core pomocí následujících podrobnýc
 - [Sestavte knihovnu tříd pomocí Visual Basic a .NET Core v aplikaci Visual Studio 2017.](./tutorials/vb-library-with-visual-studio.md)  
 - Podívejte se na video o [tom, jak nainstalovat a používat Visual Studio Code a .NET Core](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core/).
 - Podívejte se na video o [instalaci a používání sady Visual Studio 2017 a .NET Core](https://channel9.msdn.com/Blogs/dotnet/Get-Started-NET-Core-Visual-Studio-2017/).
-- [Začínáme s .NET Core pomocí příkazového řádku.](tutorials/using-with-xplat-cli.md)
+- [Začínáme s .NET Core pomocí příkazového řádku.](tutorials/cli-create-console-app.md)
 
 Seznam podporovaných verzí Windows najdete v článku [závislosti a požadavky .NET Core](install/dependencies.md?tabs=netcore30&pivots=os-windows) .
 
@@ -58,7 +58,7 @@ Seznam podporovaných verzí Windows najdete v článku [závislosti a požadavk
 
 Můžete začít s vývojem aplikace .NET Core pomocí těchto podrobných kurzů:
 
-- [Začínáme s .NET Core pomocí příkazového řádku.](tutorials/using-with-xplat-cli.md)
+- [Začínáme s .NET Core pomocí příkazového řádku.](tutorials/cli-create-console-app.md)
 - Podívejte se na video o [zahájení práce s Visual Studio Code C# používání a .NET Core v Ubuntu](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-Csharp-dotnet-Core-Ubuntu).
 
 Seznam podporovaných distribuce a verzí pro Linux najdete v článku [závislosti a požadavky .NET Core](install/dependencies.md?tabs=netcore30&pivots=os-linux) .
@@ -69,7 +69,7 @@ Můžete začít s vývojem aplikace .NET Core pomocí těchto podrobných kurz�
 
 - Podívejte se na video o [zahájení práce s Visual Studio Code C# používání a .NET Core v MacOS](https://channel9.msdn.com/Blogs/dotnet/Get-started-VSCode-NET-Core-Mac).
 - [Začínáme s .NET Core v macOS s využitím Visual Studio Code.](tutorials/using-on-macos.md)
-- [Začínáme s .NET Core pomocí příkazového řádku.](tutorials/using-with-xplat-cli.md)
+- [Začínáme s .NET Core pomocí příkazového řádku.](tutorials/cli-create-console-app.md)
 - [Začínáme s .NET Core v macOS pomocí Visual Studio pro Mac.](tutorials/using-on-mac-vs.md)
 - [Sestavte kompletní řešení .NET Core na macOS pomocí Visual Studio pro Mac.](tutorials/using-on-mac-vs-full-solution.md)
 

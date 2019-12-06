@@ -5,12 +5,12 @@ author: richlander
 ms.date: 03/16/2017
 titleSuffix: ''
 ms.custom: seodec18
-ms.openlocfilehash: 7b6265cb652e6f3db702584295fac948d06ad5fc
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 1355b3b0fa72a13263229848b3de2c6b9ccb3392
+ms.sourcegitcommit: 68a4b28242da50e1d25aab597c632767713a6f81
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73420844"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74884199"
 ---
 # <a name="learn-net-core-and-the-net-core-sdk-tools-by-exploring-these-tutorials"></a>Prozkoumejte tyto kurzy a Naučte se .NET Core a nástroje pro .NET Core SDK.
 
@@ -39,11 +39,11 @@ Následující kurzy jsou k dispozici pro získání informací o .NET Core.
 
 ## <a name="building-applications-with-the-net-core-cli-tools"></a>Sestavování aplikací pomocí .NET Core CLIch nástrojů
 
-- [Začínáme s .NET Core v systému Windows, Linux nebo macOS pomocí nástrojů pro .NET Core CLI](using-with-xplat-cli.md)
+- [Začínáme s .NET Core v systému Windows, Linux nebo macOS pomocí nástrojů pro .NET Core CLI](cli-create-console-app.md)
 - [Organizování a testování projektů pomocí .NET Core CLIch nástrojů](testing-with-cli.md)
 - [Začínáme sF#](../../fsharp/get-started/get-started-command-line.md)
 
-## <a name="other"></a>Ostatní
+## <a name="other"></a>Další
 
 - [Testování částí v .NET Core pomocí testu dotnet](../testing/unit-testing-with-dotnet-test.md)
 - [Testování částí pomocí MSTest a .NET Core](../testing/unit-testing-with-mstest.md)

@@ -3,12 +3,12 @@ title: C#Struktura programu – prohlídka C# jazyka
 description: Seznamte se se základními stavebními bloky C# programu
 ms.date: 08/10/2016
 ms.assetid: 984f0314-507f-47a0-af56-9011243f5e65
-ms.openlocfilehash: 5102c72d68108f698a0456b9c14e6713778f4325
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 5e095e71549ed3eec6c73e6a134fdb5a64fb63c0
+ms.sourcegitcommit: 68a4b28242da50e1d25aab597c632767713a6f81
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834154"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74884381"
 ---
 # <a name="program-structure"></a>Struktura programu
 
@@ -27,7 +27,7 @@ csc /t:library acme.cs
 zkompiluje příklad jako knihovnu (kód bez `Main` vstupní bod) a vytvoří sestavení s názvem `acme.dll`.
 
 > [!IMPORTANT]
-> Výše uvedené příklady používají `csc` jako kompilátor příkazového C# řádku. Tento kompilátor je spustitelný soubor systému Windows. Chcete- C# li používat na jiných platformách, měli byste použít nástroje pro .NET Core. Ekosystém .NET Core používá `dotnet` CLI ke správě sestavení příkazového řádku. To zahrnuje správu závislostí a vyvolávání C# kompilátoru. Úplný popis těchto nástrojů na platformách, které podporuje .NET Core, najdete v [tomto kurzu](../../core/tutorials/using-with-xplat-cli.md) .
+> Výše uvedené příklady používají `csc` jako kompilátor příkazového C# řádku. Tento kompilátor je spustitelný soubor systému Windows. Chcete- C# li používat na jiných platformách, měli byste použít nástroje pro .NET Core. Ekosystém .NET Core používá `dotnet` CLI ke správě sestavení příkazového řádku. To zahrnuje správu závislostí a vyvolávání C# kompilátoru. Úplný popis těchto nástrojů na platformách, které podporuje .NET Core, najdete v [tomto kurzu](../../core/tutorials/cli-create-console-app.md) .
 
 Sestavení obsahují spustitelný kód ve formě instrukcí pro převodní jazyk (IL) a symbolické informace ve formě metadat. Před provedením je kód IL v sestavení automaticky převeden na kód specifický pro procesor pomocí kompilátoru JIT (just-in-time) modulu CLR (Common Language Runtime) .NET.
 

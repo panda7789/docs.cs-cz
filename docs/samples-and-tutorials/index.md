@@ -4,12 +4,12 @@ description: Informace o ukázkách a kurzech pro .NET Core, ASP.NET Core a C# j
 author: BillWagner
 ms.author: wiwagn
 ms.date: 04/11/2017
-ms.openlocfilehash: 7953d178e9a24fc42f11b6bc5c866805ec381137
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 5132415a6be03787111aaed8d027d436bb6820fe
+ms.sourcegitcommit: 68a4b28242da50e1d25aab597c632767713a6f81
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423575"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74884433"
 ---
 # <a name="net-samples-and-tutorials"></a>Ukázky a kurzy .NET
 
@@ -25,7 +25,7 @@ V této příručce se dozvíte, jak vytvořit webovou aplikaci ASP.NET Core a s
 
 ### <a name="tutorials"></a>Kurzy
 
-**[Psaní konzolových aplikací .NET Core pomocí nástrojů rozhraní příkazového řádku: podrobný průvodce](../core/tutorials/using-with-xplat-cli.md)**
+**[Psaní konzolových aplikací .NET Core pomocí nástrojů rozhraní příkazového řádku: podrobný průvodce](../core/tutorials/cli-create-console-app.md)**
 
 V této příručce se dozvíte, jak používat nástroje .NET Core CLI k vytváření konzolových aplikací pro různé platformy. Začíná základní konzolovou aplikací a nakonec zahrnuje více projektů, včetně testování. Pomocí těchto funkcí můžete postupně sestavovat své znalosti. [Dokončená ukázka](https://github.com/dotnet/samples/tree/master/core/console-apps) je k dispozici v úložišti dotnet/Samples na GitHubu.
 
@@ -112,6 +112,6 @@ Mnoho témat zobrazuje zdrojový kód a ukázky, které jsou k dispozici pro zob
 1. Přejděte do složek úložiště do umístění ukázky. Relativní cesta k umístění ukázky se zobrazí v adresním řádku prohlížeče, když přejdete na odkaz na ukázku.
 1. Chcete-li spustit ukázku, máte několik možností:
    * Použijte příkaz [DOTNET CLI Tools](../core/tools/index.md): v okně konzoly přejděte do složky ukázky a použijte příkazy dotnet CLI.
-   * Použijte [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) nebo [Visual Studio pro Mac](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link): Otevřete ukázku tak, že vyberete **soubor > otevřít > projekt/řešení** z řádku nabídek, přejít do ukázkové složky projektu a vybrat soubor projektu ( *. csproj* nebo *. fsproj* ).
+   * Použijte [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) nebo [Visual Studio pro Mac](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link): Otevřete ukázku tak, že vyberete **soubor > otevřít > projekt/řešení** z řádku nabídek, přejdete do ukázkové složky projektu a vyberete soubor projektu ( *. csproj* nebo *. fsproj*).
    * Použít [Visual Studio Code](https://code.visualstudio.com/): Otevřete ukázku tak, že v řádku nabídek vyberete **soubor > otevřít složku** a vyberete složku projektu ukázky.
    * Použijte jiné integrované vývojové prostředí (IDE), které podporuje projekty .NET Core.
