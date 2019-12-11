@@ -64,5 +64,7 @@
           href: how-to-use-named-pipes-for-network-interprocess-communication.md
     - name: Kanály
       href: pipelines.md
+    - name: Práce s vyrovnávacími paměťmi
+      href: buffers.md
     - name: Soubory mapované paměti
       href: memory-mapped-files.md
