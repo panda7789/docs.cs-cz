@@ -5,12 +5,12 @@ helpviewer_keywords:
 - controls, UI Automation support for
 - UI Automation, support for standard controls
 ms.assetid: 3770ea8a-2655-4add-9c59-fe0610ad5084
-ms.openlocfilehash: c59352f908c5f4a1fd2ca6dd631d26bb5d69f09a
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 314526c1164f70e6b261df1a6f11ddce2b5fa240
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74441220"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74960079"
 ---
 # <a name="ui-automation-support-for-standard-controls"></a>Podpora automatizace uživatelského rozhraní pro standardní ovládací prvky
 > [!NOTE]
@@ -26,7 +26,7 @@ ms.locfileid: "74441220"
 ## <a name="win32-controls"></a>Ovládací prvky Win32  
  Většina [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)]ch ovládacích prvků je k dispozici [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] prostřednictvím poskytovatelů na straně klienta v UIAutomationClientsideProviders. dll. Toto sestavení je automaticky registrováno pro použití s klientskými aplikacemi automatizace uživatelského rozhraní.  
   
- Plná podpora je k dispozici pouze pro ovládací prvky z verze 6 souboru ComCtrl32. dll (k dispozici v [!INCLUDE[TLA#tla_winxp](../../../includes/tlasharptla-winxp-md.md)] a novějším).  
+ Plná podpora je k dispozici pouze pro ovládací prvky z verze 6 souboru *Comctrl32. dll*.  
   
  Podporovány jsou následující ovládací prvky.  
   
@@ -55,7 +55,7 @@ ms.locfileid: "74441220"
 |#32768|Nabídka|  
 |#32768|MenuItem|  
 |msctls_progress32|ProgressBar|  
-|RichEdit|dokumentů. Viz poznámka.|  
+|RichEdit|Dokumentů. Viz poznámka.|  
 |RichEdit20A|Dokument|  
 |RichEdit20W|Dokument|  
 |RichEdit50W|Dokument|  
@@ -63,7 +63,7 @@ ms.locfileid: "74441220"
 |msctls_trackbar32|Posuvník|  
 |msctls_updown32|Číselník|  
 |msctls_statusbar32|StatusBar|  
-|SysTabControl32|Tabulátor|  
+|SysTabControl32|Karta|  
 |SysTabControl32|TabItem|  
 |ToolbarWindow32|ToolBar|  
 |ToolbarWindow32|MenuItem|  
@@ -87,8 +87,8 @@ ms.locfileid: "74441220"
 |SysPager|Číselník|  
 |SysDateTimePick32|Vlastní|  
 |SysMonthCal32|Kalendář|  
-|MS_WINNOTE|okna|  
-|VBBubble|okna|  
+|MS_WINNOTE|Popis tlačítka|  
+|VBBubble|Popis tlačítka|  
 |ScrollBar (při použití jako samostatného ovládacího prvku)|Posuvník|  
 |SuperGrid|Vlastní|  
   

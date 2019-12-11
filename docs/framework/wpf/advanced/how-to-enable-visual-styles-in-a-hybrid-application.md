@@ -8,63 +8,63 @@ helpviewer_keywords:
 - hybrid applications [WPF interoperability]
 - visual styles [Windows Forms]
 ms.assetid: 95de9b9c-d804-405c-b2d1-49a88c1e0fe1
-ms.openlocfilehash: 81a56c41d1aaa5924bb6ff1d3437000be412f886
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.openlocfilehash: 251c53a8665d2eae7c3b5bb23b0a388009362dcc
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64912436"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74960109"
 ---
 # <a name="how-to-enable-visual-styles-in-a-hybrid-application"></a>Postupy: Povolení vizuálních stylů v hybridní aplikaci
-Toto téma ukazuje, jak povolit [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)] styly vizuál na [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] konání ovládacího prvku [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]– aplikace založené na.  
+Toto téma ukazuje, jak povolit vizuální styly v ovládacím prvku [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] hostovaném v aplikaci založené na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
- Pokud vaše aplikace volá <xref:System.Windows.Forms.Application.EnableVisualStyles%2A> metoda, většina vašich [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky budou automaticky používat vizuální styly, když vaše aplikace běží na [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)]. Další informace najdete v tématu [vykreslování ovládacích prvků s vizuálními styly](../../winforms/controls/rendering-controls-with-visual-styles.md).  
+ Pokud vaše aplikace volá metodu <xref:System.Windows.Forms.Application.EnableVisualStyles%2A>, většina ovládacích prvků [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] bude automaticky používat vizuální styly. Další informace naleznete v tématu [vykreslování ovládacích prvků pomocí vizuálních stylů](../../winforms/controls/rendering-controls-with-visual-styles.md).  
   
- Výpis úplného kódu úkoly uvedené v tomto tématu, naleznete v tématu [povolení vizuálních stylů v hybridní aplikace ukázku](https://go.microsoft.com/fwlink/?LinkID=159986).  
+ Úplný výpis kódu úloh, které jsou znázorněny v tomto tématu, naleznete v tématu [Povolení vizuálních stylů v ukázce hybridní aplikace](https://go.microsoft.com/fwlink/?LinkID=159986).  
   
-## <a name="enabling-windows-forms-visual-styles"></a>Povolení Windows Forms vizuální styly  
+## <a name="enabling-windows-forms-visual-styles"></a>Povolení model Windows Formsch vizuálních stylů  
   
-#### <a name="to-enable-windows-forms-visual-styles"></a>K povolení vizuálních stylů Windows Forms  
+#### <a name="to-enable-windows-forms-visual-styles"></a>Povolení model Windows Formsch vizuálních stylů  
   
-1. Vytvoření [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] projekt aplikace s názvem `HostingWfWithVisualStyles`.  
+1. Vytvořte projekt aplikace [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] s názvem `HostingWfWithVisualStyles`.  
   
-2. V Průzkumníku řešení přidejte odkazy na následující sestavení.  
+2. V Průzkumník řešení přidejte odkazy na následující sestavení.  
   
     - WindowsFormsIntegration  
   
     - System.Windows.Forms  
   
-3. V sadě nástrojů klikněte dvakrát na <xref:System.Windows.Controls.Grid> ikonu umístit <xref:System.Windows.Controls.Grid> prvek na návrhové ploše.  
+3. Na panelu nástrojů poklikejte na ikonu <xref:System.Windows.Controls.Grid> a umístěte <xref:System.Windows.Controls.Grid> prvek na návrhovou plochu.  
   
-4. V okně Vlastnosti nastavte hodnoty <xref:System.Windows.FrameworkElement.Height%2A> a <xref:System.Windows.FrameworkElement.Width%2A> vlastností **automaticky**.  
+4. V okno Vlastnosti nastavte hodnoty vlastností <xref:System.Windows.FrameworkElement.Height%2A> a <xref:System.Windows.FrameworkElement.Width%2A> na **auto**.  
   
-5. V zobrazení návrhu nebo v XAML zobrazení, vyberte <xref:System.Windows.Window>.  
+5. V zobrazení zobrazení Návrh nebo XAML vyberte <xref:System.Windows.Window>.  
   
-6. V okně Vlastnosti klikněte na tlačítko **události** kartu.  
+6. V okno Vlastnosti klikněte na kartu **události** .  
   
-7. Dvakrát klikněte <xref:System.Windows.FrameworkElement.Loaded> událostí.
+7. Dvakrát klikněte na událost <xref:System.Windows.FrameworkElement.Loaded>.
   
-8. V souboru MainWindow.xaml.vb nebo MainWindow.xaml.cs, vložte následující kód pro zpracování <xref:System.Windows.FrameworkElement.Loaded> událostí.  
+8. V souboru MainWindow. XAML. vb nebo MainWindow.xaml.cs vložte následující kód pro zpracování události <xref:System.Windows.FrameworkElement.Loaded>.  
   
      [!code-csharp[HostingWfWithVisualStyles#11](~/samples/snippets/csharp/VS_Snippets_Wpf/HostingWfWithVisualStyles/CSharp/HostingWfWithVisualStyles/Window1.xaml.cs#11)]
      [!code-vb[HostingWfWithVisualStyles#11](~/samples/snippets/visualbasic/VS_Snippets_Wpf/HostingWfWithVisualStyles/VisualBasic/HostingWfWithVisualStyles/Window1.xaml.vb#11)]  
   
-9. Stisknutím klávesy F5 sestavte a spusťte aplikaci.  
+9. Stisknutím klávesy F5 aplikaci sestavíte a spustíte.  
   
-     [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] Vymalování s vizuálními styly ovládacího prvku.  
+     Ovládací prvek [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] je vykreslen pomocí vizuálních stylů.  
   
-## <a name="disabling-windows-forms-visual-styles"></a>Zakázání Windows Forms vizuální styly  
- Zakázat vizuálních stylů, jednoduše odeberte volání <xref:System.Windows.Forms.Application.EnableVisualStyles%2A> metody.  
+## <a name="disabling-windows-forms-visual-styles"></a>Zákaz model Windows Formsch vizuálních stylů  
+ Chcete-li zakázat vizuální styly, jednoduše odeberte volání metody <xref:System.Windows.Forms.Application.EnableVisualStyles%2A>.  
   
-#### <a name="to-disable-windows-forms-visual-styles"></a>Chcete-li zakázat vizuálních stylů Windows Forms  
+#### <a name="to-disable-windows-forms-visual-styles"></a>Zakázání vizuálních stylů model Windows Forms  
   
-1. Otevřete soubor MainWindow.xaml.vb nebo MainWindow.xaml.cs v editoru kódu.  
+1. V editoru kódu otevřete MainWindow. XAML. vb nebo MainWindow.xaml.cs.  
   
-2. Odkomentujte volání <xref:System.Windows.Forms.Application.EnableVisualStyles%2A> metody.  
+2. Odkomentujte volání metody <xref:System.Windows.Forms.Application.EnableVisualStyles%2A>.  
   
-3. Stisknutím klávesy F5 sestavte a spusťte aplikaci.  
+3. Stisknutím klávesy F5 aplikaci sestavíte a spustíte.  
   
-     [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] Vymalování ovládací prvek se stylem systému výchozí.  
+     Ovládací prvek [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] je vykreslen s výchozím stylem systému.  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - strings [C#], searching with String methods
 - strings [C#], searching with regular expressions
 ms.assetid: fb1d9a6d-598d-4a35-bd5f-b86012edcb2b
-ms.openlocfilehash: 4a1eb818dfd8fb48b003ca184dd533f73d342662
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 15ea77d13a93d88bd996a22b6fe1aaad81df572d
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73973111"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74959699"
 ---
 # <a name="how-to-search-strings"></a>Jak hledat řetězce
 
@@ -43,7 +43,7 @@ Následující příklad kódu vyhledá ve větě slovo "" nebo "jejich", ignoru
 
 Vzor hledání popisuje hledaný text. Následující tabulka popisuje jednotlivé prvky vzoru vyhledávání. (Následující tabulka používá jednu `\`, která musí být uvozená jako `\\` v C# řetězci).
 
-| Vzorku  | Význam     |
+| vzorku  | Význam     |
 | -------- |-------------|
 | the      | odpovídá textu "The" |
 | (eir)?   | porovnává 0 nebo 1 výskyt "EIR" |
@@ -52,13 +52,13 @@ Vzor hledání popisuje hledaný text. Následující tabulka popisuje jednotliv
 [!code-csharp-interactive[Search using regular expressions](../../../samples/snippets/csharp/how-to/strings/SearchStrings.cs#3)]
   
 > [!TIP]
-> Metody `string` jsou obvykle lepší volby při hledání přesný řetězec. Regulární výrazy jsou lepší při hledání určitého vzoru je zdrojový řetězec.
+> Metody `string` jsou obvykle lepší volby při hledání přesný řetězec. Regulární výrazy jsou lepší při hledání určitého vzoru ve zdrojovém řetězci.
 
 ## <a name="does-a-string-follow-a-pattern"></a>Sleduje řetězec vzor?
 
 Následující kód používá regulární výrazy k ověření formátu každého řetězce v poli. Ověřování vyžaduje, aby měl každý řetězec formu telefonního čísla, ve kterém jsou tři skupiny číslic oddělené pomlčkami, první dvě skupiny obsahují tři číslice a třetí skupina obsahuje čtyři číslice. Vzor hledání používá `^\\d{3}-\\d{3}-\\d{4}$`regulárních výrazů. Další informace najdete v tématu [Jazyk regulárních výrazů – rychlé reference](../../standard/base-types/regular-expression-language-quick-reference.md).
 
-| Vzorku  | Význam                             |
+| vzorku  | Význam                             |
 | -------- |-------------------------------------|
 | ^        | odpovídá začátku řetězce |
 | \d{3}    | odpovídá přesně 3 číslicovým znakům  |

@@ -2,12 +2,12 @@
 title: Prvek ws2007FederationHttpBinding
 ms.date: 03/30/2017
 ms.assetid: 91c1b477-a96e-4bf5-9330-5e9312113371
-ms.openlocfilehash: 2f924bdcbf9082d9d43e02d82c9d00c32ebcaacf
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 74f21494c08f33a61eb1e1b0a102638cff59a970
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74714973"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74960188"
 ---
 # <a name="ws-2007-federation-http-binding"></a>Prvek ws2007FederationHttpBinding
 
@@ -119,7 +119,7 @@ Soubor *Setup. bat* , který je součástí této ukázky, vám umožní nakonfi
 
 1. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](building-the-samples.md).
 
-2. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](running-the-samples.md). Pokud používáte [!INCLUDE[windowsver](../../../../includes/windowsver-md.md)], musíte spustit *Service. exe*, *Client. exe*a *SecurityTokenService. exe* se zvýšenými oprávněními (pravým tlačítkem myši klikněte na soubory a pak klikněte na **Spustit jako správce**).
+2. Chcete-li spustit ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v části [spuštění ukázek Windows Communication Foundation](running-the-samples.md). Pokud používáte systém Windows Vista, musíte spustit *Service. exe*, *Client. exe*a *SecurityTokenService. exe* se zvýšenými oprávněními (klikněte pravým tlačítkem na soubory a pak klikněte na **Spustit jako správce**).
 
 > [!IMPORTANT]
 > Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář:

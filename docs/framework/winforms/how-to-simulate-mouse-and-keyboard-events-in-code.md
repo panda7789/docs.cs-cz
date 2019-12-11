@@ -12,12 +12,12 @@ helpviewer_keywords:
 - mouse clicks [Windows Forms], simulating
 - mouse [Windows Forms], event simulation
 ms.assetid: 6abcb67e-3766-4af2-9590-bf5dabd17e41
-ms.openlocfilehash: 9fac74aacf6b902a25438151db247a1a4aee1f4c
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 52f89df8d7f28f0e00c3becd9005b46e52b5532c
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802476"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74960202"
 ---
 # <a name="how-to-simulate-mouse-and-keyboard-events-in-code"></a>Postupy: Simulace událostí myši a klávesnice v kódu
 
@@ -72,7 +72,7 @@ I když můžete simulovat vstup z klávesnice pomocí výše popsaných strateg
 1. Aktivujte okno aplikace, které bude přijímat stisknutí kláves, a potom zavolejte metodu <xref:System.Windows.Forms.SendKeys.Send%2A> nebo <xref:System.Windows.Forms.SendKeys.SendWait%2A>. Vzhledem k tomu, že neexistuje žádná spravovaná metoda pro aktivaci jiné aplikace, je nutné použít nativní metody systému Windows k vynucení fokusu na jiné aplikace. Následující příklad kódu používá vyvolání platformy pro volání metod `FindWindow` a `SetForegroundWindow` k aktivaci okna aplikace kalkulačky a následné volání <xref:System.Windows.Forms.SendKeys.SendWait%2A> pro vydání řady výpočtů do aplikace kalkulačky.
 
     > [!NOTE]
-    > Správné parametry `FindWindow` volání, které vyhledává aplikaci kalkulačky, se liší v závislosti na vaší verzi systému Windows.  Následující kód vyhledá aplikaci kalkulačky ve Windows 7. V [!INCLUDE[windowsver](../../../includes/windowsver-md.md)]změňte první parametr na "SciCalc". K určení správných parametrů můžete použít nástroj Spy + +, který je součástí sady Visual Studio.
+    > Správné parametry `FindWindow` volání, které vyhledává aplikaci kalkulačky, se liší v závislosti na vaší verzi systému Windows.  Následující kód vyhledá aplikaci kalkulačky ve Windows 7. V systému Windows Vista změňte první parametr na "SciCalc". K určení správných parametrů můžete použít nástroj Spy + +, který je součástí sady Visual Studio.
 
     [!code-cpp[System.Windows.Forms.SimulateKeyPress#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.SimulateKeyPress/cpp/form1.cpp#5)]
     [!code-csharp[System.Windows.Forms.SimulateKeyPress#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.SimulateKeyPress/CS/form1.cs#5)]

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - developer's guide, deploying .NET Framework
 - deployment [.NET Framework], developer's guide
 ms.assetid: 094d043e-33c4-40ba-a503-e0b20b55f4cf
-ms.openlocfilehash: 62777356dae6e2dce9753b832f08ab2fa2cb5881
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 1b7fccc673f82986a53dcb3dfcb68e8575b99dfd
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74801885"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74959997"
 ---
 # <a name="net-framework-deployment-guide-for-developers"></a>Průvodce nasazením .NET Framework pro vývojáře
 Toto téma poskytuje informace pro vývojáře, kteří chtějí nainstalovat jakoukoli verzi .NET Framework z .NET Framework 4,5 na [!INCLUDE[net_current](../../../includes/net-current-version.md)] s jejich aplikacemi.
@@ -51,7 +51,7 @@ Odkazy ke stažení najdete v části [redistribuovatelné balíčky](#redistrib
 
 - Pro instalaci .NET Framework 4,5 a jeho verzí musíte mít oprávnění správce.
 
-- .NET Framework 4,5 je součástí systému Windows 8 a [!INCLUDE[winserver8](../../../includes/winserver8-md.md)], takže je nemusíte nasazovat do vaší aplikace v těchto operačních systémech. Podobně .NET Framework 4.5.1 je součástí Windows 8.1 a Windows Serveru 2012 R2. .NET Framework 4.5.2 není součástí žádného operačního systému. .NET Framework 4,6 je součástí Windows 10, aktualizace .NET Framework 4.6.1 je součástí Windows 10 listopad Update a .NET Framework 4.6.2 je součástí aktualizace Windows 10 pro výročí.  .NET Framework 4,7 je součástí Windows 10 Creators Update, .NET Framework 4.7.1 je součástí Windows 10 Creators Updates a .NET Framework 4.7.2 je součástí Windows 10 říjen 2018 Update a Windows 10. dubna 2018 Update. .NET Framework 4,8 je součástí aktualizace Windows 10. května 2019. Úplný seznam požadavků na hardware a software najdete v tématu [požadavky na systém](../get-started/system-requirements.md).
+- .NET Framework 4,5 je součástí systémů Windows 8 a Windows Server 2012, takže je nemusíte nasazovat do vaší aplikace v těchto operačních systémech. Podobně .NET Framework 4.5.1 je součástí Windows 8.1 a Windows Serveru 2012 R2. .NET Framework 4.5.2 není součástí žádného operačního systému. .NET Framework 4,6 je součástí Windows 10, aktualizace .NET Framework 4.6.1 je součástí Windows 10 listopad Update a .NET Framework 4.6.2 je součástí aktualizace Windows 10 pro výročí.  .NET Framework 4,7 je součástí Windows 10 Creators Update, .NET Framework 4.7.1 je součástí Windows 10 Creators Updates a .NET Framework 4.7.2 je součástí Windows 10 říjen 2018 Update a Windows 10. dubna 2018 Update. .NET Framework 4,8 je součástí aktualizace Windows 10. května 2019. Úplný seznam požadavků na hardware a software najdete v tématu [požadavky na systém](../get-started/system-requirements.md).
 
 - Počínaje .NET Framework 4,5 mohou uživatelé zobrazit seznam spuštěných .NET Framework aplikací během instalace a snadno je zavřít. To může pomoci zabránit restartování systému způsobenému instalací rozhraní .NET Framework. Viz [snížení počtu restartování systému](reducing-system-restarts.md).
 

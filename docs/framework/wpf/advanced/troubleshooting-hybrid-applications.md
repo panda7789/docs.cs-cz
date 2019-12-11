@@ -9,12 +9,12 @@ helpviewer_keywords:
 - hybrid applications [WPF interoperability]
 - message loops [WPF]
 ms.assetid: f440c23f-fa5d-4d5a-852f-ba61150e6405
-ms.openlocfilehash: f3cddcd6cd90e7e43ea6af67725e709673f7650f
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 46d8f00f9328e9c0a4df596b709195ae42d651bf
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73978341"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74960126"
 ---
 # <a name="troubleshooting-hybrid-applications"></a>Řešení potíží s hybridními aplikacemi
 <a name="introduction"></a>Toto téma uvádí některé běžné problémy, ke kterým může dojít při vytváření hybridních aplikací, které používají technologie [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] i [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)].  
@@ -32,7 +32,7 @@ ms.locfileid: "73978341"
  Třídy <xref:System.Windows.Forms.Integration.WindowsFormsHost> a <xref:System.Windows.Forms.Integration.ElementHost> mohou hostovat pouze jeden podřízený ovládací prvek nebo prvek. Chcete-li hostovat více než jeden ovládací prvek nebo prvek, musíte jako podřízený obsah použít kontejner. Můžete například přidat [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] tlačítko a ovládací prvky zaškrtávací políčko ovládacímu prvku <xref:System.Windows.Forms.Panel?displayProperty=nameWithType> a pak přiřadit panel k <xref:System.Windows.Forms.Integration.WindowsFormsHost.Child%2A> vlastnosti ovládacího prvku <xref:System.Windows.Forms.Integration.WindowsFormsHost>. Ovládací prvky tlačítko a zaškrtávací políčko však nelze přidat odděleně ke stejnému ovládacímu prvku <xref:System.Windows.Forms.Integration.WindowsFormsHost>.  
   
 <a name="scaling"></a>   
-## <a name="scaling"></a>Změně  
+## <a name="scaling"></a>Škálování  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] mají různé modely škálování. Některé transformace škálování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] jsou smysluplné pro [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ovládací prvky, ale jiné ne. Například škálování ovládacího prvku [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] na 0 bude fungovat, ale pokud se pokusíte škálovat stejný ovládací prvek zpět na nenulovou hodnotu, zůstane velikost ovládacího prvku 0. Další informace najdete v tématu [požadavky na rozložení pro element WindowsFormsHost](layout-considerations-for-the-windowsformshost-element.md).  
   
 <a name="adapter"></a>   
@@ -86,7 +86,7 @@ ms.locfileid: "73978341"
   
 <a name="enabling_visual_styles"></a>   
 ## <a name="enabling-visual-styles"></a>Povolení vizuálních stylů  
- [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)] vizuální styly v ovládacím prvku [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] nesmí být povoleny. Metoda <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType> je volána v šabloně [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] aplikace. I když tato metoda není volána ve výchozím nastavení, pokud použijete sadu Visual Studio k vytvoření projektu, zobrazí se [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)] vizuálních stylů pro ovládací prvky, pokud je k dispozici verze 6,0 souboru Comctl32. dll. Před vytvořením popisovačů ve vlákně je třeba zavolat metodu <xref:System.Windows.Forms.Application.EnableVisualStyles%2A>. Další informace najdete v tématu [Postup: Povolení vizuálních stylů v hybridní aplikaci](how-to-enable-visual-styles-in-a-hybrid-application.md).  
+ Vizuální styly systému Microsoft Windows XP v ovládacím prvku [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] nemusí být povoleny. Metoda <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType> je volána v šabloně [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] aplikace. I když tato metoda není volána ve výchozím nastavení, pokud použijete sadu Visual Studio k vytvoření projektu, získáte vizuální styly Microsoft Windows XP pro ovládací prvky, pokud je k dispozici verze 6,0 souboru Comctl32. dll. Před vytvořením popisovačů ve vlákně je třeba zavolat metodu <xref:System.Windows.Forms.Application.EnableVisualStyles%2A>. Další informace najdete v tématu [Postup: Povolení vizuálních stylů v hybridní aplikaci](how-to-enable-visual-styles-in-a-hybrid-application.md).  
   
 <a name="licensed_controls"></a>   
 ## <a name="licensed-controls"></a>Licencované ovládací prvky  

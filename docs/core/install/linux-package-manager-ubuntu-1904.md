@@ -4,12 +4,12 @@ description: Pomocí Správce balíčků nainstalujte .NET Core SDK a modul runt
 author: thraka
 ms.author: adegeo
 ms.date: 12/04/2019
-ms.openlocfilehash: 98ceb0ae7f3fbd99c4be412fd1e19928793c348f
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 69bfc3395f5cd92ed54850e5ea8b76eba7f27d83
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74836890"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74959744"
 ---
 # <a name="ubuntu-1904-package-manager---install-net-core"></a>Správce balíčků Ubuntu 19,04 – instalace .NET Core
 
@@ -34,7 +34,7 @@ wget -q https://packages.microsoft.com/config/ubuntu/19.04/packages-microsoft-pr
 sudo dpkg -i packages-microsoft-prod.deb
 ```
 
-## <a name="install-the-net-core-sdk"></a>Instalace .NET Core SDK
+## <a name="install-the-net-core-sdk"></a>Install the .NET Core SDK
 
 Aktualizujte produkty, které jsou k dispozici pro instalaci, a poté nainstalujte .NET Core SDK. V terminálu spusťte následující příkazy.
 
@@ -94,7 +94,7 @@ Pokud to nefunguje, můžete spustit ruční instalaci pomocí následujících 
 
 ```bash
 sudo apt-get install -y gpg
-wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor microsoft.asc.gpg
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor -o microsoft.asc.gpg
 sudo mv microsoft.asc.gpg /etc/apt/trusted.gpg.d/
 wget -q https://packages.microsoft.com/config/ubuntu/19.04/prod.list
 sudo mv prod.list /etc/apt/sources.list.d/microsoft-prod.list

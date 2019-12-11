@@ -10,12 +10,12 @@ helpviewer_keywords:
 - managed execution process
 - common language runtime, managed execution process
 ms.assetid: 476b03dc-2b12-49a7-b067-41caeaa2f533
-ms.openlocfilehash: 5ead3d1ac37b3c7ee50f18a81530720205678de2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 0ce7182af33a795188d01ac457b9d45b8ad305dd
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121996"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74960383"
 ---
 # <a name="managed-execution-process"></a>Proces spravovaného spouštění
 <a name="introduction"></a>Proces spravovaného spuštění zahrnuje následující kroky, které jsou podrobně popsány dále v tomto tématu:  
@@ -95,7 +95,7 @@ ms.locfileid: "73121996"
   
  Během provádění obdrží spravovaný kód služby, jako je například uvolňování paměti, zabezpečení, spolupráce s nespravovaným kódem, podpora ladění mezi jazyky, vylepšené nasazení a podpora správy verzí.  
   
- V operačním systému [!INCLUDE[winxp](../../includes/winxp-md.md)] a [!INCLUDE[windowsver](../../includes/windowsver-md.md)] společnosti Microsoft ověřuje zavaděč spravované moduly kontrolou bitu v hlavičce souboru COFF. Nastavený bit označuje spravovaný modul. Pokud zavaděč odhalí spravované moduly, načte soubor mscoree.dll a poté `_CorValidateImage` nebo `_CorImageUnloading` upozorní zavaděč ve chvíli, kdy jsou bitové kopie spravovaného modulu načteny nebo uvolněny. `_CorValidateImage` provádí následující akce:  
+ V systému Microsoft Windows Vista zavaděč operačního systému kontroluje spravované moduly prozkoumáním bitu v hlavičce COFF. Nastavený bit označuje spravovaný modul. Pokud zavaděč odhalí spravované moduly, načte soubor mscoree.dll a poté `_CorValidateImage` nebo `_CorImageUnloading` upozorní zavaděč ve chvíli, kdy jsou bitové kopie spravovaného modulu načteny nebo uvolněny. `_CorValidateImage` provádí následující akce:  
   
 1. Zajistí, aby byl kód platným spravovaným kódem.  
   

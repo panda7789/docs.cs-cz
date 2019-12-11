@@ -11,18 +11,15 @@ helpviewer_keywords:
 - drop and drag [Windows Forms], insertion marks
 - insertion marks
 ms.assetid: 88d0a15b-25fd-4dc3-a685-297351311940
-ms.openlocfilehash: f5de00fd41b24fc1a7f1ff4484c3a126e98952a1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 62d105dc3c0b9aabc3699c12259e1624ac31a3a0
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69967837"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74960440"
 ---
 # <a name="how-to-display-an-insertion-mark-in-a-windows-forms-listview-control"></a>Postupy: Zobrazení značky vložení v ovládacím prvku Windows Forms ListView
-Značka vložení v <xref:System.Windows.Forms.ListView> ovládacím prvku zobrazí uživatele bodu, kam budou vloženy přetažené položky. Když uživatel přetáhne položku do bodu mezi dvěma ostatními položkami, zobrazí se na této značce očekávané nové umístění.  
-  
-> [!NOTE]
-> Funkce značek vložení je k dispozici pouze [!INCLUDE[WinXpFamily](../../../../includes/winxpfamily-md.md)] v případě, <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType> že vaše aplikace volá metodu. V předchozích operačních systémech žádný kód týkající se značky vložení nemá žádný vliv a značka vložení se nezobrazí. Další informace naleznete v tématu <xref:System.Windows.Forms.ListViewInsertionMark>.  
+Značka vložení v ovládacím prvku <xref:System.Windows.Forms.ListView> zobrazuje uživatele bodu, kde budou vloženy přetažené položky. Když uživatel přetáhne položku do bodu mezi dvěma ostatními položkami, zobrazí se na této značce očekávané nové umístění.  
   
  Následující obrázek ukazuje značku vložení:  
   
@@ -47,4 +44,4 @@ Značka vložení v <xref:System.Windows.Forms.ListView> ovládacím prvku zobra
 - <xref:System.Windows.Forms.ListViewInsertionMark>
 - [Ovládací prvek ListView](listview-control-windows-forms.md)
 - [Přehled ovládacího prvku ListView](listview-control-overview-windows-forms.md)
-- [Návod: Provádění operace přetažení v model Windows Forms](../advanced/walkthrough-performing-a-drag-and-drop-operation-in-windows-forms.md)
+- [Návod: Provádění operace přetažení v modelu Windows Forms](../advanced/walkthrough-performing-a-drag-and-drop-operation-in-windows-forms.md)

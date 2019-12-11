@@ -2,12 +2,12 @@
 title: 'Přenos: Ukázka vlastních transakcí přes UDP'
 ms.date: 03/30/2017
 ms.assetid: 6cebf975-41bd-443e-9540-fd2463c3eb23
-ms.openlocfilehash: 09ce715da4cf4d4fb4c959f63af3bb2c8c68b841
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 00e6d593e185cd09ea66e88f38cf1d8e71785704
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74712006"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74960408"
 ---
 # <a name="transport-custom-transactions-over-udp-sample"></a>Přenos: Ukázka vlastních transakcí přes UDP
 Tato ukázka je založena na ukázce [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) v[rozšíření přenosu](../../../../docs/framework/wcf/samples/transport-extensibility.md)služby Windows Communication Foundation (WCF). Rozšiřuje ukázku přenosu UDP pro podporu toku vlastní transakce a demonstruje použití vlastnosti <xref:System.ServiceModel.Channels.TransactionMessageProperty>.  
@@ -178,7 +178,7 @@ if (transaction != null)
   
 1. Při sestavování řešení postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-2. Aktuální vzorek by měl být spuštěn podobně jako ukázka [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) . Pokud ho chcete spustit, spusťte službu pomocí UdpTestService. exe. Pokud používáte [!INCLUDE[windowsver](../../../../includes/windowsver-md.md)], musíte službu spustit se zvýšenými oprávněními. Provedete to tak, že kliknete pravým tlačítkem na UdpTestService. exe v Průzkumníkovi souborů a kliknete na **Spustit jako správce**.  
+2. Aktuální vzorek by měl být spuštěn podobně jako ukázka [Transport: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) . Pokud ho chcete spustit, spusťte službu pomocí UdpTestService. exe. Pokud používáte systém Windows Vista, musíte službu spustit se zvýšenými oprávněními. Provedete to tak, že kliknete pravým tlačítkem na UdpTestService. exe v Průzkumníkovi souborů a kliknete na **Spustit jako správce**.  
   
 3. Tím se vytvoří následující výstup.  
   
