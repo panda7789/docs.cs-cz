@@ -21,7 +21,7 @@ Stavový počítač je dobře známé paradigma pro vývoj programů. K sestavov
   
 - <xref:System.Activities.Statements.Transition>  
   
- Chcete-li vytvořit pracovní postup stavového stroje, jsou do aktivity <xref:System.Activities.Statements.StateMachine> přidány stavy a k řízení toku mezi stavy se používají přechody. Následující snímek obrazovky popisuje, jak v [kurzu Začínáme](getting-started-tutorial.md) [vytvořit pracovní postup stavového stroje](how-to-create-a-state-machine-workflow.md), zobrazuje pracovní postup stavového stroje se třemi stavy a třemi přechody. **Inicializační cíl** je počáteční stav a představuje první stav v pracovním postupu. To je určeno řádkem, který je z **počátečního** uzlu od začátku. Konečný stav pracovního postupu má název **FinalState**a představuje bod, ve kterém byl pracovní postup dokončen.  
+ Chcete-li vytvořit pracovní postup stavového stroje, jsou do aktivity <xref:System.Activities.Statements.StateMachine> přidány stavy a k řízení toku mezi stavy se používají přechody. Následující snímek obrazovky v kroku [Začínáme kurzu](getting-started-tutorial.md) [postupy: Vytvoření pracovního postupu stavového stroje](how-to-create-a-state-machine-workflow.md)zobrazuje pracovní postup stavového stroje se třemi stavy a třemi přechody. **Inicializační cíl** je počáteční stav a představuje první stav v pracovním postupu. To je určeno řádkem, který je z **počátečního** uzlu od začátku. Konečný stav pracovního postupu má název **FinalState**a představuje bod, ve kterém byl pracovní postup dokončen.  
   
  ![Obrázek zobrazující pracovní postup dokončeného stavového počítače.](./media/state-machine-workflows/complete-state-machine-workflow.jpg)  
   
@@ -59,12 +59,12 @@ Stavový počítač je dobře známé paradigma pro vývoj programů. K sestavov
 > [!NOTE]
 > Všimněte si, že pokud je <xref:System.Activities.Statements.Transition.Condition%2A> přechodu vyhodnocen jako `False` (nebo všechny podmínky přechodu sdílené triggery vyhodnoceny na `False`), přechod nebude proveden a všechny aktivační události pro všechny přechody ze stavu budou přeplánovány.  
   
- Další informace o vytváření pracovních postupů stavových počítačů najdete v tématu [Postupy: vytvoření pracovního postupu stavového stroje](how-to-create-a-state-machine-workflow.md), [návrháře aktivit StateMachine](/visualstudio/workflow-designer/statemachine-activity-designer), návrháře aktivity [stavu](/visualstudio/workflow-designer/state-activity-designer), [Návrháře aktivity FinalState](/visualstudio/workflow-designer/finalstate-activity-designer)a [Návrháře přechodu aktivit](/visualstudio/workflow-designer/transition-activity-designer).  
+ Další informace o vytváření pracovních postupů stavových počítačů najdete v tématu [: Vytvořte pracovní postup stavového stroje](how-to-create-a-state-machine-workflow.md), [Návrhář aktivity StateMachine](/visualstudio/workflow-designer/statemachine-activity-designer), Návrhář aktivity [stavu](/visualstudio/workflow-designer/state-activity-designer), [Návrhář aktivity FinalState](/visualstudio/workflow-designer/finalstate-activity-designer)a [Návrhář aktivity přechodu](/visualstudio/workflow-designer/transition-activity-designer).  
   
 ## <a name="state-machine-terminology"></a>Terminologie stavového stroje  
  Tato část definuje slovník stavového počítače použitý v rámci tohoto tématu.  
   
- Stát  
+ State  
  Jednotka Basic, která vytváří Stavový počítač. Stavový počítač může být v každém okamžiku v jednom stavu.  
   
  Akce vstupu  
@@ -79,7 +79,7 @@ Stavový počítač je dobře známé paradigma pro vývoj programů. K sestavov
  Sdílený přechod  
  Přechod, který sdílí stav zdroje a Trigger s jedním nebo více přechody, ale má jedinečnou podmínku a akci.  
   
- Aktivační událost  
+ Trigger  
  Spuštění aktivity, která způsobí, že dojde k přechodu.  
   
  Podmínka  
@@ -102,7 +102,7 @@ Stavový počítač je dobře známé paradigma pro vývoj programů. K sestavov
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: Vytvoření pracovního postupu stavového stroje](how-to-create-a-state-machine-workflow.md)
+- [Postupy: Vytvoření](how-to-create-a-state-machine-workflow.md) pracovního postupu stavového stroje
 - [Návrhář aktivity StateMachine](/visualstudio/workflow-designer/statemachine-activity-designer)
 - [Návrhář aktivity State](/visualstudio/workflow-designer/state-activity-designer)
 - [Návrhář aktivity FinalState](/visualstudio/workflow-designer/finalstate-activity-designer)
