@@ -2,7 +2,6 @@
 documentType: LandingData
 title: Doprovodné materiály k architektuře aplikací .NET
 metadata:
-  document_id: na
   title: Doprovodné materiály k architektuře aplikací .NET
   meta.description: 'Learn about recommended practices for architecting, designing and building .NET software.'
   ms.topic: landing-page
@@ -21,7 +20,7 @@ sections:
       - html: <ul><li><p><a href="modern-web-apps-azure/index">Architekt moderních webových aplikací pomocí ASP.NET Core a Azure</a></p>
       - html: '<p>Tato příručka představuje úvod k doporučeným procesům architektury, návrhu a nasazení, které budete používat k sestavování aplikací ASP.NET a ASP.NET Core a hostování těchto aplikací v Azure.</p></li></ul>'
       - html: <ul><li><p><a href="microservices/index">Architekty aplikací založených na kontejnerech a mikroslužbách</a></p>
-      - html: <p>Tato příručka je Úvod k vývoji aplikací založených na mikroslužbách a jejich správě pomocí kontejnerů. Popisuje přístupy k návrhu a implementaci architektury pomocí .NET Core a kontejnerů Docker.</p></li></ul>
+      - html: <p>Tato příručka je Úvod k vývoji aplikací založených na mikroslužbách a jejich správě pomocí kontejnerů. Věnuje se návrhům architektury a přístupům k implementaci pomocí kontejnerů .NET Core a Docker.</p></li></ul>
       - html: '<ul><li><p><a href="serverless/index">Aplikace bez serveru: architektura, vzory a implementace v Azure</a></p>'
       - html: '<p>Toto je průvodce pro sestavování aplikací bez serveru s příklady pomocí Azure. Popisuje různé přístupy k architektuře a navrhování, výhody a výzvy, které jsou součástí bez serveru, a poskytuje scénáře a případy použití pro aplikace bez serveru.</p></li></ul>'
   - title: Náhled elektronických knih
