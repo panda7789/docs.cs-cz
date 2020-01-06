@@ -5,8 +5,6 @@
 - name: Začínáme
   href: getting-started/index.md
   items:
-    - name: Zásadní změny v jazyce Visual Basic v sadě Visual Studio
-      href: getting-started/breaking-changes-in-visual-studio.md
     - name: 'Další zdroje informací pro programátory, kteří používají Visual Basic'
       href: getting-started/additional-resources.md
 - name: Vývoj aplikací
