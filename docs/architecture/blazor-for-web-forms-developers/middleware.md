@@ -4,24 +4,24 @@ description: Přečtěte si o zpracování požadavků HTTP pomocí modulů, obs
 author: danroth27
 ms.author: daroth
 ms.date: 10/11/2019
-ms.openlocfilehash: b0be6109b9226bddbb9cbe4cebf114fd2b2a6114
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: 3ecc109c54f88b5b06a1474f7c6e262d426a78a9
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291152"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337479"
 ---
 # <a name="modules-handlers-and-middleware"></a>Moduly, obslužné rutiny a middleware
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Aplikace ASP.NET Core je postavená na řadě middlewaru. Middleware jsou obslužné rutiny, které jsou uspořádány do kanálu pro zpracování požadavků a odpovědí. V aplikaci webového formuláře obslužné rutiny a moduly HTTP vyřeší podobné problémy. V ASP.NET Core jsou moduly, obslužné rutiny, *Global.asax.cs*a životní cyklus aplikace nahrazeny middlewarem. V této kapitole se dozvíte, jaký middleware v kontextu aplikace Blazor.
+Aplikace ASP.NET Core je postavená na řadě *middlewaru*. Middleware jsou obslužné rutiny, které jsou uspořádány do kanálu pro zpracování požadavků a odpovědí. V aplikaci webového formuláře obslužné rutiny a moduly HTTP vyřeší podobné problémy. V ASP.NET Core jsou moduly, obslužné rutiny, *Global.asax.cs*a životní cyklus aplikace nahrazeny middlewarem. V této kapitole se dozvíte, jaký middleware v kontextu aplikace Blazor.
 
 ## <a name="overview"></a>Přehled
 
 Kanál požadavků ASP.NET Core se skládá z posloupnosti delegátů požadavku a volají se jeden po druhém. Následující diagram znázorňuje tento koncept. Vlákno provádění postupuje po směru černé šipky.
 
-![Kanálu](media/middleware/request-delegate-pipeline.png)
+![kanálu](media/middleware/request-delegate-pipeline.png)
 
 V předchozím diagramu chybí koncept událostí životního cyklu. Tento koncept je základem způsobu, jakým jsou zpracovávány požadavky webových formulářů ASP.NET. Tento systém usnadňuje důvod k tomu, ke kterému procesu dochází, a umožňuje vkládat middleware do libovolného místa. Middleware se spustí v pořadí, ve kterém se přidá do kanálu požadavků. Jsou také přidány v kódu místo konfiguračních souborů, obvykle v *Startup.cs*.
 
@@ -35,11 +35,11 @@ ASP.NET 4. x zahrnuje mnoho modulů. Podobným způsobem má ASP.NET Core také 
 
 V následující tabulce jsou uvedeny náhradní middleware a součásti v ASP.NET Core.
 
-|Modul                 |ASP.NET 4. x – modul           |Možnost ASP.NET Core|
+|– modul                 |ASP.NET 4. x – modul           |Možnost ASP.NET Core|
 |-----------------------|-----------------------------|-------------------|
 |Chyby protokolu HTTP            |`CustomErrorModule`          |[Middleware stránky stavového kódu](/aspnet/core/fundamentals/error-handling#usestatuscodepages)|
 |Výchozí dokument       |`DefaultDocumentModule`      |[Middleware výchozích souborů](/aspnet/core/fundamentals/static-files#serve-a-default-document)|
-|procházení adresářů     |`DirectoryListingModule`     |[Middleware procházení adresářů](/aspnet/core/fundamentals/static-files#enable-directory-browsing)|
+|Procházení adresářů     |`DirectoryListingModule`     |[Middleware procházení adresářů](/aspnet/core/fundamentals/static-files#enable-directory-browsing)|
 |Dynamická komprese    |`DynamicCompressionModule`   |[Middleware pro kompresi odpovědí](/aspnet/core/performance/response-compression)|
 |Trasování chybných žádostí|`FailedRequestsTracingModule`|[Protokolování ASP.NET Core](/aspnet/core/fundamentals/logging/index#tracesource-provider)|
 |Ukládání souborů do mezipaměti           |`FileCacheModule`            |[Middleware pro ukládání odpovědí do mezipaměti](/aspnet/core/performance/caching/middleware)|
@@ -52,7 +52,7 @@ V následující tabulce jsou uvedeny náhradní middleware a součásti v ASP.N
 |Přepsání adresy URL&#8224;   |`RewriteModule`              |[Middleware pro přepis adres URL](/aspnet/core/fundamentals/url-rewriting)|
 |Statická komprese     |`StaticCompressionModule`    |[Middleware pro kompresi odpovědí](/aspnet/core/performance/response-compression)|
 |Statický obsah         |`StaticFileModule`           |[Middleware statických souborů](/aspnet/core/fundamentals/static-files)|
-|Autorizace adres URL      |`UrlAuthorizationModule`     |[ASP.NET Core identity](/aspnet/core/security/authentication/identity)|
+|Autorizace URL      |`UrlAuthorizationModule`     |[ASP.NET Core identity](/aspnet/core/security/authentication/identity)|
 
 Tento seznam není vyčerpávající, ale měl by poskytnout představu o tom, jaké mapování existuje mezi oběma rozhraními. Podrobnější seznam najdete v tématu [moduly IIS s ASP.NET Core](/aspnet/core/host-and-deploy/iis/modules).
 

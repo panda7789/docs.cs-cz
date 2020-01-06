@@ -4,12 +4,12 @@ description: Naučte se sestavovat znovu použitelné součásti uživatelského
 author: danroth27
 ms.author: daroth
 ms.date: 09/18/2019
-ms.openlocfilehash: 79919b183a4eb759f0b27c97500ee71c9378770b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5e5ca128bea2e77d795cede17df73963d9b49a48
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73088102"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337398"
 ---
 # <a name="build-reusable-ui-components-with-blazor"></a>Sestavení opakovaně použitelných součástí uživatelského rozhraní pomocí Blazor
 
@@ -62,12 +62,12 @@ Nebo můžete vygenerovat seznam položek pomocí normální C# smyčky `foreach
 
 Direktivy Razor, například direktivy ve webových formulářích ASP.NET, řídí mnoho aspektů, jak je kompilována komponenta Razor. Příklady zahrnují komponentu:
 
-- Obor názvů
+- Názvový prostor
 - Základní třída
 - Implementovaná rozhraní
 - Obecné parametry
 - Importované obory názvů
-- Tras
+- Trasy
 
 Direktivy Razor začínají znakem `@` a obvykle se používají na začátku nového řádku na začátku souboru. Například Direktiva `@namespace` definuje obor názvů komponenty:
 
@@ -131,7 +131,7 @@ Chcete-li přidat členy do třídy komponenty Razor, použijte direktivu `@code
 }
 ```
 
-Vzhledem k tomu, že C#je Razor založen na, musí být zkompilován C# z projektu ( *. csproj*). Nemůžete kompilovat soubory *. Razor* z projektu VB ( *. vbproj*). Stále můžete odkazovat na projekty VB z projektu Blazor. Opak je pravda.
+Vzhledem k tomu, že C#je Razor založen na, musí být zkompilován C# z projektu ( *. csproj*). Soubory *. Razor* nemůžete kompilovat z Visual Basicho projektu ( *. vbproj*). Stále můžete odkazovat na Visual Basic projekty z projektu Blazor. Opak je pravda.
 
 Úplný odkaz na syntaxe Razor naleznete v tématu [syntaxe Razor reference for ASP.NET Core](/aspnet/core/mvc/views/razor).
 

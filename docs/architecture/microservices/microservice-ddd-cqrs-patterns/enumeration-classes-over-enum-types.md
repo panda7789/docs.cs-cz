@@ -2,20 +2,20 @@
 title: Použití tříd Enumeration místo typů výčtů
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Mazat, jak lze použít třídy výčtu namísto výčtů jako způsob, jak vyřešit některá omezení.
 ms.date: 10/08/2018
-ms.openlocfilehash: 255bccab0e1fe71e00c0d0b47c8af05f80cb760b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6752adb28b1bd0982c66fa2d021b04b999447c6e
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73093868"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337677"
 ---
 # <a name="use-enumeration-classes-instead-of-enum-types"></a>Použijte třídy výčtu místo typů Enum.
 
-[Výčty](../../../csharp/language-reference/keywords/enum.md) (nebo *výčtové typy* pro Short) jsou obálka s dynamickým jazykem kolem integrálního typu. Můžete chtít omezit jejich použití na, pokud ukládáte jednu hodnotu z uzavřené sady hodnot. Dobrým příkladem je klasifikace založená na velikostech (malá, střední, Velká). Používání výčtů pro tok řízení nebo robustnější abstrakce může být [zápach kódu](https://deviq.com/code-smells/). Tento typ použití vede k křehkému kódu s mnoha příkazy toku řízení, které kontrolují hodnoty výčtu.
+[Výčty](../../../csharp/language-reference/builtin-types/enum.md) (nebo *výčtové typy* pro Short) jsou obálka s dynamickým jazykem kolem integrálního typu. Můžete chtít omezit jejich použití na, pokud ukládáte jednu hodnotu z uzavřené sady hodnot. Dobrým příkladem je klasifikace založená na velikostech (malá, střední, Velká). Používání výčtů pro tok řízení nebo robustnější abstrakce může být [zápach kódu](https://deviq.com/code-smells/). Tento typ použití vede k křehkému kódu s mnoha příkazy toku řízení, které kontrolují hodnoty výčtu.
 
 Místo toho můžete vytvořit třídy výčtu, které umožňují všechny bohatě orientované funkce pro objektově orientovaný jazyk.
 
-Nejedná se však o důležité téma a v mnoha případech pro jednoduchost můžete i nadále používat běžné [typy výčtu](../../../csharp/language-reference/keywords/enum.md) , pokud je to vaše preference. Přesto se použití tříd výčtu podrobněji týká konceptů souvisejících s firmou.
+Nejedná se však o důležité téma a v mnoha případech pro jednoduchost můžete i nadále používat běžné [typy výčtu](../../../csharp/language-reference/builtin-types/enum.md) , pokud je to vaše preference. Přesto se použití tříd výčtu podrobněji týká konceptů souvisejících s firmou.
 
 ## <a name="implement-an-enumeration-base-class"></a>Implementace základní třídy výčtu
 

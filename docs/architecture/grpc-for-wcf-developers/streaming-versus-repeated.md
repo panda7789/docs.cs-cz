@@ -1,13 +1,13 @@
 ---
-title: služby streamování gRPC versus opakující se pole – gRPC pro vývojáře WCF
-description: Porovnávání opakujících se polí se službami streamování jako způsob předávání kolekcí dat pomocí gRPC.
+title: Služby streamování vs. opakující se pole – gRPC pro vývojáře WCF
+description: Porovnejte opakující se pole se službami streamování jako způsoby předávání kolekcí dat pomocí gRPC.
 ms.date: 09/02/2019
-ms.openlocfilehash: f2f13776586607ed489c45ebb324c0c5713bed99
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 46586ab08df6b136cdafb990ce8be75435a6bf6c
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73966927"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337869"
 ---
 # <a name="grpc-streaming-services-versus-repeated-fields"></a>služby streamování gRPC versus opakující se pole
 

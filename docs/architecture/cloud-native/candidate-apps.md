@@ -3,12 +3,12 @@ title: Kandidátské aplikace pro cloudové nativní
 description: Seznamte se s typy aplikací, které využívají nativní přístup z cloudu.
 author: robvet
 ms.date: 08/20/2019
-ms.openlocfilehash: 328af4081d830cf1a7959a37c2155090ec4da3ff
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 2087ef0c327a82419be95552293d1b56742b73c7
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73968299"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337435"
 ---
 # <a name="candidate-apps-for-cloud-native"></a>Kandidátské aplikace pro cloudové nativní
 
@@ -40,7 +40,7 @@ Bezplatná elektronická kniha Microsoftu [modernizovat stávající aplikace .N
 
 **Obrázek 1-10**. Strategie migrace starších verzí úloh
 
-Monolitické aplikace, které jsou nepostradatelné, přináší z provozu rychlou migraci ([připravenou pro cloudovou infrastrukturu](https://docs.microsoft.com/dotnet/standard/modernize-with-azure-and-containers/lift-and-shift-existing-apps-azure-iaas)). V tomto případě se místní úloha znovu hostuje na cloudový virtuální počítač beze změn. Tento přístup používá [model IaaS (infrastruktura jako služba)](https://azure.microsoft.com/overview/what-is-iaas/). Azure obsahuje několik nástrojů, jako je například ([Azure Migrate](https://aka.ms/azuremigrate), [Azure Site Recovery](https://azure.microsoft.com/services/site-recovery/)a [Azure Database Migration Service](https://azure.microsoft.com/campaigns/database-migration/)), aby bylo možné tento přesun usnadnit. I když tato strategie může přinést určitou úsporu nákladů, takové aplikace se většinou nemusely rozdávat a využívat výhody cloud computingu.
+Monolitické aplikace, které jsou nepostradatelné, přináší z provozu rychlou migraci ([připravenou pro cloudovou infrastrukturu](../modernize-with-azure-containers/lift-and-shift-existing-apps-azure-iaas.md)). V tomto případě se místní úloha znovu hostuje na cloudový virtuální počítač beze změn. Tento přístup používá [model IaaS (infrastruktura jako služba)](https://azure.microsoft.com/overview/what-is-iaas/). Azure obsahuje několik nástrojů, jako je například ([Azure Migrate](https://aka.ms/azuremigrate), [Azure Site Recovery](https://azure.microsoft.com/services/site-recovery/)a [Azure Database Migration Service](https://azure.microsoft.com/campaigns/database-migration/)), aby bylo možné tento přesun usnadnit. I když tato strategie může přinést určitou úsporu nákladů, takové aplikace se většinou nemusely rozdávat a využívat výhody cloud computingu.
 
 Monolitické aplikace, které jsou důležité pro obchodní často, využívají výhod vylepšené migrace za provozu a posunutí (*optimalizované pro Cloud*). Tento přístup zahrnuje optimalizace nasazení, které umožňují klíčovou službu Cloud Services – bez změny základní architektury aplikace. Například můžete aplikaci [kontejnerizace](https://docs.microsoft.com/virtualization/windowscontainers/about/) a nasadit ji na produkt Orchestrator, jako je třeba [Služba Azure Kubernetes](https://azure.microsoft.com/services/kubernetes-service/), která je popsána dále v této příručce. V cloudu může aplikace využívat jiné cloudové služby, jako jsou databáze, fronty zpráv, monitorování a distribuované ukládání do mezipaměti.
 
@@ -64,7 +64,7 @@ Pokud se vy a váš tým domníváte, že se jedná o cloudový nativní příst
 
 Správná strategie migrace závisí na prioritách organizace a na systémech, které cílíte. V mnoha případech může být výhodnější zvýšit náklady na Cloud – optimalizuje aplikaci monolitické nebo do N-vrstvé aplikace přidat hrubě odstupňované služby. V těchto případech můžete plně využívat možnosti cloudového PaaSu, jako jsou ty, které nabízí Azure App Service.
 
-## <a name="summary"></a>Souhrn
+## <a name="summary"></a>Přehled
 
 V této kapitole jsme představili výpočetní prostředí pro Cloud. Poskytli jsme definici společně s klíčovými možnostmi, které zajišťují cloudovou nativní aplikaci. Prohlédli jsme se na typech aplikací, které by mohly tuto investici a úsilí zdůvodnit.
 

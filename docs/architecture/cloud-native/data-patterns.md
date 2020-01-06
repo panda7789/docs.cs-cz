@@ -2,12 +2,12 @@
 title: Vzorky dat nativní pro cloud
 description: Architekt cloudových nativních aplikací .NET pro Azure | Modely nativních dat v cloudu
 ms.date: 06/30/2019
-ms.openlocfilehash: 0d251f3046fcd3f3a2f5d856a123a35d3f7ecff2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9e90409b0b633796b452cfcfecb3896e79002d4d
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73087700"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337425"
 ---
 # <a name="cloud-native-data-patterns"></a>Vzorky dat nativní pro cloud
 
@@ -63,13 +63,13 @@ I když dotazy napříč mikroslužbami jsou náročné, implementace transakce 
 
 **Obrázek 5-8**. Implementace transakce napříč mikroslužbami
 
-Všimněte si, jak na předchozím obrázku pět nezávislých mikroslužeb se účastní transakce distribuovaného *vytvoření objednávky* . Nicméně transakce pro každý z pěti jednotlivých mikroslužeb musí být úspěšná, nebo všechny musí operaci přerušit a vrátit zpět. I když je integrovaná transakční podpora k dispozici v rámci každé mikroslužby, není podpora distribuované transakce napříč všemi pěti službami podporovaná.
+Všimněte si, jak na předchozím obrázku pět nezávislých mikroslužeb se účastní transakce distribuovaného *vytvoření objednávky* . Nicméně transakce pro každý z pěti jednotlivých mikroslužeb musí být úspěšná, nebo všechny musí přerušit a vrátit zpět operaci. I když je integrovaná transakční podpora k dispozici v rámci každé mikroslužby, není podpora distribuované transakce napříč všemi pěti službami podporovaná.
 
 Vzhledem k tomu, že je transakční podpora pro tuto operaci zásadní pro zachování konzistence dat v jednotlivých mikroslužbách, je nutné programově sestavit distribuovanou transakci.
 
 Oblíbeným vzorem pro programové přidávání transakcí je [Saga vzor](https://blog.couchbase.com/saga-pattern-implement-business-transactions-using-microservices-part/). Je implementováno seskupením místních transakcí společně a sekvenčním vyvoláním každého z nich. Pokud místní transakce dojde k chybě, Saga přeruší operaci a vyvolá sadu [kompenzačních transakcí](https://docs.microsoft.com/azure/architecture/patterns/compensating-transaction) pro vrácení změn provedených předchozími místními transakcemi. Obrázek 5-9 ukazuje neúspěšnou transakci se vzorem Saga.
 
-![Vrácení zpět ve vzoru Saga](./media/saga-rollback-operation.png)
+![Vracení zpět ve vzoru Saga](./media/saga-rollback-operation.png)
 
 **Obrázek 5-9**. Vrácení transakce zpět
 
@@ -139,7 +139,7 @@ Databáze NoSQL je možné rozdělit do kategorií podle následujících čtyř
 
 Databáze NoSQL můžou být optimalizované tak, aby se zabývat velkými objemy dat, hlavně když jsou data relativně jednoduchá. Vezměte v úvahu databázi NoSQL v těchto případech:
 
-- Vaše úloha vyžaduje velké a vysoké souběžnosti.
+- Vaše zatížení vyžaduje velký rozsah a vysokou souběžnost.
 - Máte velký počet uživatelů.
 - Data je možné vyjádřit jednoduše bez relací.
 - Budete potřebovat geograficky distribuovat data.

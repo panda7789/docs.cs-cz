@@ -2,12 +2,12 @@
 title: Ukládání dat v Azure
 description: Architekt cloudových nativních aplikací .NET pro Azure | Ukládání dat v Azure
 ms.date: 06/30/2019
-ms.openlocfilehash: 1a86cecf005c6dbdfda5cf4cacfafaad4711c076
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5ba05f53faf65334f6269af8ae2c54d81e6b0779
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73087765"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337457"
 ---
 # <a name="data-storage-in-azure"></a>Ukládání dat v Azure
 
@@ -63,7 +63,7 @@ Kromě tradičního Microsoft SQL Serverového zásobníku nabízí Azure taky s
 
 - [Škálování](https://docs.microsoft.com/azure/mysql/concepts-high-availability) podle potřeby během několika sekund.
 
-- Zabezpečené pro ochranu citlivých dat a v pohybu.
+- Zabezpečení pro ochranu neaktivních uložených dat i přenášených dat.
 
 - [Automatické zálohování](https://docs.microsoft.com/azure/mysql/concepts-backup) a [obnovení k bodu v čase](https://docs.microsoft.com/azure/mysql/concepts-backup) po dobu až 35 dnů.
 
@@ -141,7 +141,7 @@ U Cosmos DB [rozhraní API pro více domovských](https://docs.microsoft.com/azu
 
 ### <a name="multi-model-support"></a>Podpora více modelů
 
-Cosmos DB je *multi-modelová datová platforma* , která umožňuje interakci s daty pomocí řady podporovaných modelů NoSQL, včetně dokumentů, párů klíč-hodnota, nejrůznějších reprezentace a grafů. Interně jsou data uložena v jednoduchém formátu [struktury](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/using-structs) tvořeném primitivními datovými typy, včetně řetězců, logických hodnot a čísel. Pro každý požadavek databázový stroj přeloží data na znázornění modelu, kterou jste vybrali. Můžete si vybrat z vlastního Cosmos DB rozhraní API založeného na SQL nebo kterékoli z [rozhraní API kompatibility](https://www.wikiwand.com/en/Cosmos_DB) zobrazených na obrázku 5-14.
+Cosmos DB je *multi-modelová datová platforma* , která umožňuje interakci s daty pomocí řady podporovaných modelů NoSQL, včetně dokumentů, párů klíč-hodnota, nejrůznějších reprezentace a grafu. Interně jsou data uložena v jednoduchém formátu [struktury](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/using-structs) , který se skládá z primitivních datových typů, včetně řetězců, logických hodnot a čísel. Pro každý požadavek databázový stroj přeloží data na znázornění modelu, kterou jste vybrali. Můžete si vybrat z vlastního Cosmos DB rozhraní API založeného na SQL nebo kterékoli z [rozhraní API kompatibility](https://www.wikiwand.com/en/Cosmos_DB) zobrazených na obrázku 5-14.
 
 ![Poskytovatelé Cosmos DB](./media/cosmos-db-providers.png)
 
@@ -149,7 +149,7 @@ Cosmos DB je *multi-modelová datová platforma* , která umožňuje interakci s
 
 Všimněte si na obrázku 5-14, jak Cosmos DB podporuje [Table Storage](https://azure.microsoft.com/services/storage/tables/). Jak Cosmos DB, tak [Azure Table Storage](https://docs.microsoft.com/azure/cosmos-db/table-storage-overview) sdílet stejný podkladový model tabulek a vystavit mnoho stejných operací s tabulkou. [Cosmos DB rozhraní API pro tabulky](https://docs.microsoft.com/azure/cosmos-db/table-introduction) ale poskytuje řadu prémiových vylepšení, která nejsou k dispozici v rozhraní API pro Azure Storage. Tyto funkce jsou kontrastní na obrázku 5-15.
 
-![rozhraní API pro tabulky Azure](./media/azure-table-api.png)
+![Azure Table API](./media/azure-table-api.png)
 
 **Obrázek 5-15**: rozhraní API pro tabulky Azure
 

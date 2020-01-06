@@ -2,12 +2,12 @@
 title: Cloud Native DevOps
 description: Architekt cloudových nativních aplikací .NET pro Azure | Cloud Native DevOps
 ms.date: 06/30/2019
-ms.openlocfilehash: 2b3dd47eeeb69d63f5ae39705abb9d1d51295645
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d152989061964d78c8be97b69df413b975058319
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73087543"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337404"
 ---
 # <a name="cloud-native-devops"></a>Cloud Native DevOps
 
@@ -59,7 +59,7 @@ Každá z těchto komponent poskytuje některé výhody pro cloudové nativní a
 
 Uspořádání kódu pro nativní cloudové aplikace může být náročné. Pro cloudové aplikace, které se navzájem vzájemně komunikují, se místo jedné aplikace obří může jednat o web s menšími aplikacemi. Stejně jako u všech věcí v computingu si nejlepší uspořádání kódu zůstane otevřené otázky. K dispozici jsou příklady úspěšných aplikací s různými druhy rozložení, ale dvě varianty vypadají nejvíc oblíbenosti.
 
-Než se pustíte do samotné vlastní správy zdrojového kódu, je pravděpodobné, že se rozhodují, kolik projektů je vhodné. V rámci jednoho projektu je podporována podpora více úložišť a vytváření kanálů. Hrací panely jsou trochu složitější, ale je možné, že je můžete snadno přiřadit více týmům v rámci jednoho projektu. V jednom projektu Azure DevOps je sice možné podporovat stovky i tisíce vývojářů. V takovém případě je pravděpodobný nejlepší přístup, protože poskytuje všem vývojářům možnost pracovat z a snížit tak nejasnost najít tuto aplikaci, když vývojáři nezjistí, ve kterých projektech se nachází.
+Než se pustíte do samotné vlastní správy zdrojového kódu, je pravděpodobné, že se rozhodují, kolik projektů je vhodné. V rámci jednoho projektu je podporována podpora více úložišť a vytváření kanálů. Panely jsou trochu složitější, ale existují i úkoly, které je možné snadno přiřadit více týmům v rámci jednoho projektu. V jednom projektu Azure DevOps je sice možné podporovat stovky i tisíce vývojářů. V takovém případě je pravděpodobný nejlepší přístup, protože poskytuje všem vývojářům možnost pracovat z a snížit tak nejasnost najít tuto aplikaci, když vývojáři nezjistí, ve kterých projektech se nachází.
 
 Rozdělení kódu pro mikroslužby v rámci projektu Azure DevOps může být trochu náročnější.
 
@@ -238,11 +238,11 @@ Konečný výsledek sestavení je kolekce souborů označovaných jako artefakty
 
 ### <a name="azure-devops-releases"></a>Verze Azure DevOps
 
-Sestavení se postará o zkompilování softwaru do balíčku s přípravnou, ale artefakty ještě musí být vloženy do testovacího prostředí, aby bylo možné dokončit průběžné doručování. V takovém případě Azure DevOps používá samostatný nástroj nazvaný releases. Vydává využití stejné knihovny, které jsou k dispozici pro sestavení, ale zavádí koncept "fáze". Fáze je izolované prostředí, do kterého se balíček nainstaluje. Například produkt může využívat vývoj, QA a produkční prostředí. Kód se průběžně doručuje do vývojového prostředí, kde pro něj můžete spouštět automatizované testy. Po dokončení těchto testů se tato verze přesune do prostředí QA pro manuální testování. Nakonec je kód přesunut do produkčního prostředí, kde je viditelný pro každého.
+Sestavení se postará o zkompilování softwaru do balíčku s přípravnou, ale artefakty ještě musí být vloženy do testovacího prostředí, aby bylo možné dokončit průběžné doručování. V takovém případě Azure DevOps používá samostatný nástroj nazvaný releases. Nástroj releases používá stejné knihovny, které byly k dispozici pro sestavení, ale představují koncept "fáze". Fáze je izolované prostředí, do kterého se balíček nainstaluje. Například produkt může využívat vývoj, QA a produkční prostředí. Kód se průběžně doručuje do vývojového prostředí, kde pro něj můžete spouštět automatizované testy. Po dokončení těchto testů se tato verze přesune do prostředí QA pro manuální testování. Nakonec je kód přesunut do produkčního prostředí, kde je viditelný pro každého.
 
 ![Obrázek 11-9 příklad kanálu vydaných verzí s fázemi vývoje, QA a výroby](./media/release-pipeline.png)
 
-Každou fázi sestavení lze automaticky aktivovat dokončením předchozí fáze. V mnoha případech to však není žádoucí. Přesun kódu do produkčního prostředí může vyžadovat schválení od někoho. Vydání tyto verze podporují tím, že umožňují schvalovatele v každém kroku kanálu vydání. Pravidla je možné nastavit tak, aby se určitá osoba nebo skupina osob před tím, než se začne do produkčního prostředí, odhlásila na vydané verzi. Tyto brány umožňují ruční kontroly kvality a také dodržování zákonných požadavků souvisejících s řízením toho, co se v produkčním prostředí týká.
+Každou fázi sestavení lze automaticky aktivovat dokončením předchozí fáze. V mnoha případech to však není žádoucí. Přesun kódu do produkčního prostředí může vyžadovat schválení od někoho. Nástroj releases to podporuje tím, že povoluje schvalovatele v každém kroku kanálu vydání. Pravidla je možné nastavit tak, aby se určitá osoba nebo skupina osob před tím, než se začne do produkčního prostředí, odhlásila na vydané verzi. Tyto brány umožňují ruční kontroly kvality a také dodržování zákonných požadavků souvisejících s řízením toho, co se v produkčním prostředí týká.
 
 ### <a name="everybody-gets-a-build-pipeline"></a>Každý získá kanál sestavení
 

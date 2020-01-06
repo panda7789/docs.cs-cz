@@ -4,12 +4,12 @@ description: Naučte se, jak získat přístup k migraci existující aplikace w
 author: twsouthwick
 ms.author: tasou
 ms.date: 09/19/2019
-ms.openlocfilehash: b6604e000eaf79bcd8da15d72a3d85713c620851
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 52f463c66c2980d59a93f3210b3cfd825bec33da
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73191935"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337454"
 ---
 # <a name="migrate-from-aspnet-web-forms-to-blazor"></a>Migrace z webových formulářů ASP.NET na Blazor
 
@@ -252,7 +252,7 @@ Další informace o spuštění aplikace najdete v tématu [spuštění aplikace
 
 ## <a name="migrate-http-modules-and-handlers-to-middleware"></a>Migrace modulů a obslužných rutin HTTP do middlewaru
 
-Moduly a obslužné rutiny HTTP jsou běžné vzory ve webových formulářích pro řízení kanálu požadavků protokolu HTTP. Třídy, které implementují `IHttpModule` nebo `IHttpHandler`, by mohly být zaregistrované a zpracovávat příchozí požadavky. Webové formuláře nakonfigurují moduly a obslužné rutiny v souboru *Web. config* . Webové formuláře jsou také silně založené na zpracování událostí životního cyklu aplikace. ASP.NET Core místo toho používá middleware. Middleware jsou registrovány v metodě `Configure` `Startup` třídy. Pořadí spouštění middlewaru je určeno pořadím registrace.
+Moduly a obslužné rutiny HTTP jsou běžné vzory ve webových formulářích pro řízení kanálu požadavků protokolu HTTP. Třídy, které implementují `IHttpModule` nebo `IHttpHandler`, by mohly být zaregistrované a zpracovávat příchozí požadavky. Webové formuláře nakonfigurují moduly a obslužné rutiny v souboru *Web. config* . Webové formuláře jsou také silně založené na zpracování událostí životního cyklu aplikace. ASP.NET Core místo toho používá middleware. Middleware je zaregistrován v metodě `Configure` `Startup` třídy. Pořadí spouštění middlewaru je určeno pořadím registrace.
 
 V části [Povolit proces po spuštění](#enable-startup-process) byla událost životního cyklu vyvolána webovými formuláři jako metoda `Application_BeginRequest`. Tato událost není k dispozici v ASP.NET Core. Jedním ze způsobů, jak toto chování dosáhnout, je implementovat middleware, jak je vidět v příkladu souboru *Startup.cs* . Tento middleware provádí stejnou logiku a následně přenáší řízení na další obslužnou rutinu v kanálu middlewaru.
 
@@ -277,7 +277,7 @@ Projekt eShop umožňuje základní statický přístup k souborům. K dispozici
 
 ## <a name="migrate-runtime-bundling-and-minification-setup"></a>Migrace modulů runtime a nastavení minifikace
 
-Sdružování a minifikace jsou techniky optimalizace výkonu pro omezení počtu a velikosti požadavků serveru na načtení určitých typů souborů. JavaScript a CSS často přecházejí z nějaké formy sdružování nebo minifikace před odesláním klientovi. Ve webových formulářích ASP.NET jsou tyto optimalizace zpracovávány za běhu. Optimalizační konvence jsou definovány souborem *app_start/BundleConfig. cs* . V ASP.NET Core je přijímánější deklarativní přístup. Soubor obsahuje seznam souborů, které se mají minifikovaného, spolu s konkrétními nastaveními minifikace.
+Sdružování a minifikace jsou techniky optimalizace výkonu pro omezení počtu a velikosti požadavků serveru na načtení určitých typů souborů. JavaScript a CSS často přecházejí z nějaké formy sdružování nebo minifikace před odesláním klientovi. Ve webových formulářích ASP.NET jsou tyto optimalizace zpracovávány za běhu. Optimalizační konvence jsou definovány *app_start soubor/bundleconfig.cs* . V ASP.NET Core je přijímánější deklarativní přístup. Soubor obsahuje seznam souborů, které se mají minifikovaného, spolu s konkrétními nastaveními minifikace.
 
 Další informace o sdružování a minifikace najdete v tématu [statické prostředky sady prostředků a minimalizuje v ASP.NET Core](/aspnet/core/client-side/bundling-and-minification).
 
@@ -642,7 +642,7 @@ Další informace o technikách, které identifikují nezbytné změny v podpoř
 
 ASP.NET Core je přepracované verze ASP.NET a obsahuje některé změny, které nemusí zpočátku vypadat zjevně. Hlavní změny:
 
-- Žádný kontext synchronizace, což znamená, že žádná `HttpContext.Current`, `Thread.CurrentPrincipal` nebo jiné statické přistupující objekty
+- Žádný kontext synchronizace, což znamená, že žádná `HttpContext.Current`, `Thread.CurrentPrincipal`nebo jiné statické přistupující objekty
 - Bez stínového kopírování
 - Žádná fronta žádostí
 

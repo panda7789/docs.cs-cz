@@ -2,12 +2,12 @@
 title: Odolnost platformy Azure
 description: Architekt cloudových nativních aplikací .NET pro Azure | Odolnost cloudové infrastruktury s Azure
 ms.date: 06/30/2019
-ms.openlocfilehash: 02d661952c860da25442b0fa9fed0d5f93abe023
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 8b33c1cec1633c9fb25ae2b02e51f8be01c22941
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72520769"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337379"
 ---
 # <a name="azure-platform-resiliency"></a>Odolnost platformy Azure
 
@@ -26,7 +26,7 @@ Porozumět tomu, jak tyto charakteristiky vzájemně spolupracují a jak ovlivň
 
 Selhání se liší v rozsahu dopadu. Selhání hardwaru, jako je například selhání disku, může ovlivnit jeden uzel v clusteru. Neúspěšný síťový přepínač může mít vliv na celý stojan serveru. Méně běžné chyby, jako je například výpadek napájení, můžou rušit celé datové centrum. Jenom zřídka, celá oblast bude nedostupná.
 
-[Redundance](https://docs.microsoft.com/azure/architecture/guide/design-principles/redundancy) je jedním ze způsobů, jak zajistit odolnost aplikace. Přesná úroveň redundance závisí na vašich obchodních požadavcích a ovlivní jak náklady, tak i složitost vašeho systému. Nasazení ve více oblastech je například dražší a složitější pro správu než nasazení v jedné oblasti. Budete potřebovat provozní postupy pro správu převzetí služeb při selhání a navrácení služeb po obnovení. Dodatečné náklady a složitost můžou být odůvodněné u některých obchodních scénářů a ne u jiných.
+[Redundance](https://docs.microsoft.com/azure/architecture/guide/design-principles/redundancy) je jedním ze způsobů, jak zajistit odolnost aplikace. Přesná úroveň redundance závisí na vašich obchodních požadavcích a ovlivní jak náklady, tak i složitost vašeho systému. Nasazení ve více oblastech je například dražší a složitější pro správu než nasazení v jedné oblasti. Budete potřebovat provozní postupy pro správu převzetí služeb při selhání a navrácení služeb po obnovení. Další náklady a složitost můžou být akceptovatelné pro některé obchodní scénáře, ale ne pro jiné.
 
 Chcete-li architekt redundanci, je třeba určit kritické cesty v aplikaci a pak zjistit, jestli je v každé pozici v cestě redundance? Pokud by se podsystém nezdařil, aplikace převezme služby něco jiného? Nakonec budete potřebovat jasné porozumění funkcím integrovaným do cloudové platformy Azure, které můžete využít ke splnění požadavků na redundanci. Tady jsou doporučení pro redundanci architektury:
 
@@ -78,9 +78,9 @@ Doporučujeme, abyste provedli osvědčené postupy implementace programových o
 
 - *Azure Redis Cache.* Klient Redis StackExchange používá třídu Správce připojení, která zahrnuje opakování při neúspěšných pokusech. Počet opakovaných pokusů, konkrétní zásady opakování a doba čekání jsou konfigurovatelné.
 
-- *Azure Service Bus.* Klient Service Bus zpřístupňuje [třídu RetryPolicy](xref:Microsoft.ServiceBus.RetryPolicy) , která se dá nakonfigurovat s Back-off intervalem, počtem opakování a <xref:Microsoft.ServiceBus.RetryExponential.TerminationTimeBuffer>, která určuje maximální dobu, kterou může operace trvat. Výchozí zásada má devět maximálních pokusů o opakování s omezení rychlosti obdobím 30 sekund mezi pokusy.
+- *Azure Service Bus.* Klient Service Bus zpřístupňuje [třídu RetryPolicy](xref:Microsoft.ServiceBus.RetryPolicy) , která se dá nakonfigurovat s Back-off intervalem, počtem opakování a <xref:Microsoft.ServiceBus.RetryExponential.TerminationTimeBuffer%2A>, která určuje maximální dobu, kterou může operace trvat. Výchozí zásada má devět maximálních pokusů o opakování s omezení rychlosti obdobím 30 sekund mezi pokusy.
 
-- *Azure SQL Database.* Při použití knihovny [Entity Framework Core](https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency) je k dispozici podpora opakování.
+- *Azure SQL Database* Při použití knihovny [Entity Framework Core](https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency) je k dispozici podpora opakování.
 
 - *Azure Storage.* Klientská knihovna pro úložiště podporuje operace opakování. Strategie se liší napříč tabulkami, objekty BLOB a frontami služby Azure Storage. I když je funkce geografické redundance povolená, alternativní pokusy se přepínají mezi primárními a sekundárními umístěními služby úložiště.
 

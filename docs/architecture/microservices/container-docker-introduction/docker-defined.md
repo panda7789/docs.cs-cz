@@ -2,12 +2,12 @@
 title: Co je Docker?
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Co je Docker?
 ms.date: 08/31/2018
-ms.openlocfilehash: 215d756c631440c99a3a8ad8128ec61fef3bc26d
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: a53845d3bbcf24f3eaeb98b9e08b6f35a023c30e
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740078"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337710"
 ---
 # <a name="what-is-docker"></a>Co je Docker?
 
@@ -19,7 +19,7 @@ ms.locfileid: "73740078"
 
 Kontejnery Docker můžou běžet kdekoli, místně v datacentru zákazníka, v externím poskytovateli služeb nebo v cloudu v Azure. Kontejnery imagí Docker mohou běžet nativně v systémech Linux a Windows. Image Windows ale můžou běžet jenom na hostitelích s Windows a image Linux můžou běžet na hostitelích Linux a na hostitelích se systémem Windows (s využitím virtuálního počítače Hyper-V Linux), kde hostitel znamená Server nebo virtuální počítač.
 
-Vývojáři můžou používat vývojová prostředí v systému Windows, Linux nebo macOS. Ve vývojovém počítači Vývojář spustí hostitele Docker, ve kterém jsou nasazené image Docker, včetně aplikace a jejích závislostí. Vývojáři, kteří pracují se systémem Linux nebo na Macu, používají hostitele Docker, který je založený na systému Linux, a mohou vytvářet bitové kopie pouze pro kontejnery Linux. (Vývojáři pracující na Macu můžou upravovat kód nebo spouštět Docker CLI z macOS, ale v době psaní tohoto zápisu se kontejnery nespouštějí přímo v macOS.) Vývojáři, kteří pracují v systému Windows, mohou vytvářet bitové kopie pro kontejnery systému Linux nebo Windows.
+Vývojáři můžou používat vývojová prostředí v systému Windows, Linux nebo macOS. Ve vývojovém počítači Vývojář spustí hostitele Docker, ve kterém jsou nasazené image Docker, včetně aplikace a jejích závislostí. Vývojáři, kteří pracují se systémem Linux nebo na macOS, používají hostitele Docker, který je založený na systému Linux, a mohou vytvářet bitové kopie pouze pro kontejnery Linux. (Vývojáři pracující na macOS můžou upravovat kód nebo spouštět Docker CLI z macOS, ale v době psaní tohoto zápisu se kontejnery nespouštějí přímo na macOS.) Vývojáři, kteří pracují v systému Windows, mohou vytvářet bitové kopie pro kontejnery systému Linux nebo Windows.
 
 Pro hostování kontejnerů ve vývojových prostředích a poskytování dalších vývojářských nástrojů nabízejí Docker dodávané [komunity Docker Edition (CE)](https://www.docker.com/community-edition) pro Windows nebo pro MacOS. Tyto produkty pro hostování kontejnerů nainstalují potřebný virtuální počítač (hostitel Docker). Docker také zpřístupňuje [verzi Docker Enterprise Edition (EE)](https://www.docker.com/enterprise-edition), která je navržená pro podnikový vývoj a je používána týmy IT, které vytvářejí, dodávají a spouštějí rozsáhlé podnikové aplikace v produkčním prostředí.
 
@@ -35,7 +35,7 @@ Obrázky pro tyto kontejnery jsou vytvářeny stejným způsobem a fungují stej
 
 Obrázek 2-3 ukazuje porovnání mezi virtuálními počítači a kontejnery Docker.
 
-| Virtuální počítače | Kontejnery Docker |
+| Virtual Machines | Kontejnery Docker |
 | -----------------| ------------------|
 |![Diagram znázorňující hardwarový nebo softwarový zásobník tradičního virtuálního počítače](./media/docker-defined/virtual-machine-hardware-software.png)|![Diagram znázorňující hardware/softwarový zásobník kontejnerů Docker.](./media/docker-defined/docker-container-hardware-software.png)|
 |Virtuální počítače zahrnují aplikaci, požadované knihovny, binární soubory a úplný hostovaný operační systém. Úplná virtualizace vyžaduje více prostředků než containering. | Kontejnery zahrnují aplikaci a všechny její závislosti. Sdílí ale jádro operačního systému s jinými kontejnery spuštěnými jako izolované procesy v prostoru uživatele v hostitelském operačním systému. (Kromě kontejnerů technologie Hyper-V, kde se každý kontejner spouští ve speciálním virtuálním počítači na kontejner.) |
