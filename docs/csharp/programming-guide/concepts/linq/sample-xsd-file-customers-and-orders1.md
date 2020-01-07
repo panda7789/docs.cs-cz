@@ -1,20 +1,20 @@
 ---
-title: 'Ukázkový soubor XSD: Zákazníci a objednávky'
+title: 'Ukázkový soubor XSD: zákazníci a objednávky'
 ms.date: 07/20/2015
 ms.assetid: ef9911a3-7ac4-44fd-b36e-a0c0ad0a157d
-ms.openlocfilehash: 15c510e8c450f0952de14f9eb2272143e4ae0b2d
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: ff893053e5ed29b95a0ede1f172915df2e83ffa2
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69591144"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346479"
 ---
-# <a name="sample-xsd-file-customers-and-orders"></a><span data-ttu-id="4210b-102">Ukázkový soubor XSD: Zákazníci a objednávky</span><span class="sxs-lookup"><span data-stu-id="4210b-102">Sample XSD File: Customers and Orders</span></span>
-<span data-ttu-id="4210b-103">Následující soubor XSD se v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci používá v různých příkladech.</span><span class="sxs-lookup"><span data-stu-id="4210b-103">The following XSD file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="4210b-104">Tento soubor obsahuje definici schématu pro [ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).</span><span class="sxs-lookup"><span data-stu-id="4210b-104">This file contains a schema definition for the [Sample XML File: Customers and Orders (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).</span></span> <span data-ttu-id="4210b-105">Schéma používá `xs:key` funkce a `CustomerID` `CustomerID` `Order` `Customer` schématu XSD k určení toho, že atribut prvku je klíč, a k navázání vztahu mezi prvkem v jednotlivých prvcích a `xs:keyref` atribut v každém `Customer`elementu. `CustomerID`</span><span class="sxs-lookup"><span data-stu-id="4210b-105">The schema uses the `xs:key` and `xs:keyref` features of XSD to establish that the `CustomerID` attribute of the `Customer` element is a key, and to establish a relationship between the `CustomerID` element in each `Order` element and the `CustomerID` attribute in each `Customer` element.</span></span>  
+# <a name="sample-xsd-file-customers-and-orders"></a><span data-ttu-id="496e3-102">Ukázkový soubor XSD: zákazníci a objednávky</span><span class="sxs-lookup"><span data-stu-id="496e3-102">Sample XSD File: Customers and Orders</span></span>
+<span data-ttu-id="496e3-103">Následující soubor XSD se používá v různých příkladech v dokumentaci k [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="496e3-103">The following XSD file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="496e3-104">Tento soubor obsahuje definici schématu pro [ukázkový soubor XML: zákazníci a objednávky (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).</span><span class="sxs-lookup"><span data-stu-id="496e3-104">This file contains a schema definition for the [Sample XML File: Customers and Orders (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).</span></span> <span data-ttu-id="496e3-105">Schéma používá funkce `xs:key` a `xs:keyref` XSD k určení toho, že atribut `CustomerID` prvku `Customer` je klíč a k navázání vztahu mezi `CustomerID` prvkem v každém `Order` elementu a atributem `CustomerID` v každém elementu `Customer`.</span><span class="sxs-lookup"><span data-stu-id="496e3-105">The schema uses the `xs:key` and `xs:keyref` features of XSD to establish that the `CustomerID` attribute of the `Customer` element is a key, and to establish a relationship between the `CustomerID` element in each `Order` element and the `CustomerID` attribute in each `Customer` element.</span></span>  
   
- <span data-ttu-id="4210b-106">Příklad psaní dotazů LINQ, které využijí tohoto vztahu pomocí `Join` klauzule, naleznete v tématu [How to: Spojit dvě kolekce (LINQ to XML) (C#)](./how-to-join-two-collections-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="4210b-106">For an example of writing LINQ queries that take advantage of this relationship using the `Join` clause, see [How to: Join Two Collections (LINQ to XML) (C#)](./how-to-join-two-collections-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="496e3-106">Příklad psaní dotazů LINQ, které využijí tohoto vztahu pomocí klauzule `Join`, naleznete v tématu [How to join Two (LINQ to XML) (C#)](./how-to-join-two-collections-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="496e3-106">For an example of writing LINQ queries that take advantage of this relationship using the `Join` clause, see [How to join two collections (LINQ to XML) (C#)](./how-to-join-two-collections-linq-to-xml.md).</span></span>  
   
-## <a name="customersordersxsd"></a><span data-ttu-id="4210b-107">CustomersOrders. xsd</span><span class="sxs-lookup"><span data-stu-id="4210b-107">CustomersOrders.xsd</span></span>  
+## <a name="customersordersxsd"></a><span data-ttu-id="496e3-107">CustomersOrders. xsd</span><span class="sxs-lookup"><span data-stu-id="496e3-107">CustomersOrders.xsd</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  

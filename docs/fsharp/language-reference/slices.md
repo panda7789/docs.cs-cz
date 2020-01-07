@@ -1,25 +1,25 @@
 ---
-title: Řezy (F#)
-description: Přečtěte si, jak používat řezy pro F# existující datové typy a jak definovat vlastní řezy pro jiné datové typy.
-ms.date: 01/22/2019
-ms.openlocfilehash: 2f7b87cda87aad1fdac05b4e14b16f454f8c0461
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+title: Řezy
+description: Naučte se, jak používat řezy F# pro existující datové typy a jak definovat vlastní řezy pro jiné datové typy.
+ms.date: 12/23/2019
+ms.openlocfilehash: 3911139c7ce656043817eb23d30f3686555b6efe
+ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73733373"
+ms.lasthandoff: 12/29/2019
+ms.locfileid: "75545111"
 ---
-# <a name="slices"></a><span data-ttu-id="cf739-103">Řezy</span><span class="sxs-lookup"><span data-stu-id="cf739-103">Slices</span></span>
+# <a name="slices"></a><span data-ttu-id="9ec8b-103">Řezy</span><span class="sxs-lookup"><span data-stu-id="9ec8b-103">Slices</span></span>
 
-<span data-ttu-id="cf739-104">V F#je řez podmnožinou datového typu.</span><span class="sxs-lookup"><span data-stu-id="cf739-104">In F#, a slice is a subset of a data type.</span></span> <span data-ttu-id="cf739-105">Aby bylo možné převzít řezy z datového typu, musí datový typ definovat buď metodu `GetSlice`, nebo v [rozšíření typu](type-extensions.md) , které je v oboru.</span><span class="sxs-lookup"><span data-stu-id="cf739-105">To be able to take a slice from a data type, the data type must either define a `GetSlice` method or in a [type extension](type-extensions.md) that is in scope.</span></span> <span data-ttu-id="cf739-106">Tento článek vysvětluje, jak vzít řezy z existujících F# typů a jak definovat vlastní.</span><span class="sxs-lookup"><span data-stu-id="cf739-106">This article explains how to take slices from existing F# types and how to define your own.</span></span>
+<span data-ttu-id="9ec8b-104">V F#je řez podmnožinou libovolného datového typu, který má metodu `GetSlice` v definici nebo v [rozšíření typu](type-extensions.md)v rámci oboru.</span><span class="sxs-lookup"><span data-stu-id="9ec8b-104">In F#, a slice is a subset of any data type that has a `GetSlice` method in its definition or in an in-scope [type extension](type-extensions.md).</span></span> <span data-ttu-id="9ec8b-105">Nejčastěji se používá u F# polí a seznamů.</span><span class="sxs-lookup"><span data-stu-id="9ec8b-105">It is most commonly used with F# arrays and lists.</span></span> <span data-ttu-id="9ec8b-106">Tento článek vysvětluje, jak vzít řezy z existujících F# typů a jak definovat vlastní řezy.</span><span class="sxs-lookup"><span data-stu-id="9ec8b-106">This article explains how to take slices from existing F# types and how to define your own slices.</span></span>
 
-<span data-ttu-id="cf739-107">Řezy se podobají [indexerům](./members/indexed-properties.md), ale místo toho, aby vydávaly jedinou hodnotu z podkladové datové struktury, poskytují více.</span><span class="sxs-lookup"><span data-stu-id="cf739-107">Slices are similar to [indexers](./members/indexed-properties.md), but instead of yielding a single value from the underlying data structure, they yield multiple ones.</span></span>
+<span data-ttu-id="9ec8b-107">Řezy se podobají [indexerům](./members/indexed-properties.md), ale místo toho, aby vydávaly jedinou hodnotu z podkladové datové struktury, poskytují více.</span><span class="sxs-lookup"><span data-stu-id="9ec8b-107">Slices are similar to [indexers](./members/indexed-properties.md), but instead of yielding a single value from the underlying data structure, they yield multiple ones.</span></span>
 
-<span data-ttu-id="cf739-108">F#v současné době má vnitřní podporu pro vytváření řezů řetězců, seznamů, polí a 2D polí.</span><span class="sxs-lookup"><span data-stu-id="cf739-108">F# currently has intrinsic support for slicing strings, lists, arrays, and 2D arrays.</span></span>
+<span data-ttu-id="9ec8b-108">F#v současné době má vnitřní podporu pro vytváření řezů řetězců, seznamů, polí a 2D polí.</span><span class="sxs-lookup"><span data-stu-id="9ec8b-108">F# currently has intrinsic support for slicing strings, lists, arrays, and 2D arrays.</span></span>
 
-## <a name="basic-slicing-with-f-lists-and-arrays"></a><span data-ttu-id="cf739-109">Základní řezy se F# seznamy a poli</span><span class="sxs-lookup"><span data-stu-id="cf739-109">Basic slicing with F# lists and arrays</span></span>
+## <a name="basic-slicing-with-f-lists-and-arrays"></a><span data-ttu-id="9ec8b-109">Základní řezy se F# seznamy a poli</span><span class="sxs-lookup"><span data-stu-id="9ec8b-109">Basic slicing with F# lists and arrays</span></span>
 
-<span data-ttu-id="cf739-110">Nejběžnější typy dat, které jsou rozdělené, jsou F# seznamy a pole.</span><span class="sxs-lookup"><span data-stu-id="cf739-110">The most common data types that are sliced are F# lists and arrays.</span></span> <span data-ttu-id="cf739-111">Následující příklad ukazuje, jak to provést se seznamy:</span><span class="sxs-lookup"><span data-stu-id="cf739-111">The following example demonstrates how to do this with lists:</span></span>
+<span data-ttu-id="9ec8b-110">Nejběžnější typy dat, které jsou rozdělené, jsou F# seznamy a pole.</span><span class="sxs-lookup"><span data-stu-id="9ec8b-110">The most common data types that are sliced are F# lists and arrays.</span></span> <span data-ttu-id="9ec8b-111">Následující příklad ukazuje, jak to provést se seznamy:</span><span class="sxs-lookup"><span data-stu-id="9ec8b-111">The following example demonstrates how to do this with lists:</span></span>
 
 ```fsharp
 // Generate a list of 100 integers
@@ -38,7 +38,7 @@ let unboundedEnd = fullList.[94..]
 printfn "Unbounded end slice: %A" unboundedEnd
 ```
 
-<span data-ttu-id="cf739-112">Pole řezů je stejně jako v seznamech řezů:</span><span class="sxs-lookup"><span data-stu-id="cf739-112">Slicing arrays is just like slicing lists:</span></span>
+<span data-ttu-id="9ec8b-112">Pole řezů je stejně jako v seznamech řezů:</span><span class="sxs-lookup"><span data-stu-id="9ec8b-112">Slicing arrays is just like slicing lists:</span></span>
 
 ```fsharp
 // Generate an array of 100 integers
@@ -57,11 +57,11 @@ let unboundedEnd = fullArray.[94..]
 printfn "Unbounded end slice: %A" unboundedEnd
 ```
 
-## <a name="slicing-multidimensional-arrays"></a><span data-ttu-id="cf739-113">Vytváření řezů multidimenzionálních polí</span><span class="sxs-lookup"><span data-stu-id="cf739-113">Slicing multidimensional arrays</span></span>
+## <a name="slicing-multidimensional-arrays"></a><span data-ttu-id="9ec8b-113">Vytváření řezů multidimenzionálních polí</span><span class="sxs-lookup"><span data-stu-id="9ec8b-113">Slicing multidimensional arrays</span></span>
 
-<span data-ttu-id="cf739-114">F#podporuje multidimenzionální pole v F# základní knihovně.</span><span class="sxs-lookup"><span data-stu-id="cf739-114">F# supports multidimensional arrays in the F# core library.</span></span> <span data-ttu-id="cf739-115">Stejně jako u jednorozměrného pole mohou být také užitečné řezy multidimenzionálních polí.</span><span class="sxs-lookup"><span data-stu-id="cf739-115">As with one-dimensional arrays, slices of multidimensional arrays can also be useful.</span></span> <span data-ttu-id="cf739-116">Zavedení dalších dimenzí však vyžaduje mírně odlišnou syntaxi, takže můžete pořizovat řezy konkrétních řádků a sloupců.</span><span class="sxs-lookup"><span data-stu-id="cf739-116">However, the introduction of additional dimensions mandates a slightly different syntax so that you can take slices of specific rows and columns.</span></span>
+<span data-ttu-id="9ec8b-114">F#podporuje multidimenzionální pole v F# základní knihovně.</span><span class="sxs-lookup"><span data-stu-id="9ec8b-114">F# supports multidimensional arrays in the F# core library.</span></span> <span data-ttu-id="9ec8b-115">Stejně jako u jednorozměrného pole mohou být také užitečné řezy multidimenzionálních polí.</span><span class="sxs-lookup"><span data-stu-id="9ec8b-115">As with one-dimensional arrays, slices of multidimensional arrays can also be useful.</span></span> <span data-ttu-id="9ec8b-116">Zavedení dalších dimenzí však vyžaduje mírně odlišnou syntaxi, takže můžete pořizovat řezy konkrétních řádků a sloupců.</span><span class="sxs-lookup"><span data-stu-id="9ec8b-116">However, the introduction of additional dimensions mandates a slightly different syntax so that you can take slices of specific rows and columns.</span></span>
 
-<span data-ttu-id="cf739-117">Následující příklady ukazují, jak vytvořit řezy 2D pole:</span><span class="sxs-lookup"><span data-stu-id="cf739-117">The following examples demonstrate how to slice a 2D array:</span></span>
+<span data-ttu-id="9ec8b-117">Následující příklady ukazují, jak vytvořit řezy 2D pole:</span><span class="sxs-lookup"><span data-stu-id="9ec8b-117">The following examples demonstrate how to slice a 2D array:</span></span>
 
 ```fsharp
 // Generate a 3x3 2D matrix
@@ -89,13 +89,13 @@ let twoByTwo = A.[0..1,0..1]
 printfn "%A" twoByTwo
 ```
 
-<span data-ttu-id="cf739-118">F# Základní knihovna nedefinuje`GetSlice`pro 3D pole.</span><span class="sxs-lookup"><span data-stu-id="cf739-118">The F# core library does not define `GetSlice`for 3D arrays.</span></span> <span data-ttu-id="cf739-119">Pokud chcete rozdělit takové nebo jiné pole více dimenzí, je nutné definovat člena `GetSlice` sami.</span><span class="sxs-lookup"><span data-stu-id="cf739-119">If you wish to slice those or other arrays of more dimensions, you must define the `GetSlice` member yourself.</span></span>
+<span data-ttu-id="9ec8b-118">F# Základní knihovna aktuálně nedefinuje `GetSlice` pro 3D pole.</span><span class="sxs-lookup"><span data-stu-id="9ec8b-118">The F# core library does not currently define `GetSlice` for 3D arrays.</span></span> <span data-ttu-id="9ec8b-119">Pokud chcete rozdělit 3D pole nebo jiná pole více dimenzí, definujte `GetSlice` člena sami.</span><span class="sxs-lookup"><span data-stu-id="9ec8b-119">If you wish to slice 3D arrays or other arrays of more dimensions, define the `GetSlice` member yourself.</span></span>
 
-## <a name="defining-slices-for-other-data-structures"></a><span data-ttu-id="cf739-120">Definování řezů pro jiné datové struktury</span><span class="sxs-lookup"><span data-stu-id="cf739-120">Defining slices for other data structures</span></span>
+## <a name="defining-slices-for-other-data-structures"></a><span data-ttu-id="9ec8b-120">Definování řezů pro jiné datové struktury</span><span class="sxs-lookup"><span data-stu-id="9ec8b-120">Defining slices for other data structures</span></span>
 
-<span data-ttu-id="cf739-121">F# Základní knihovna definuje řezy pro omezené sady typů.</span><span class="sxs-lookup"><span data-stu-id="cf739-121">The F# core library defines slices for a limited set of types.</span></span> <span data-ttu-id="cf739-122">Pokud chcete definovat řezy pro více datových typů, můžete tak učinit buď v samotné definici typu, nebo v rozšíření typu.</span><span class="sxs-lookup"><span data-stu-id="cf739-122">If you wish to define slices for more data types, you can do so either in the type definition itself or in a type extension.</span></span>
+<span data-ttu-id="9ec8b-121">F# Základní knihovna definuje řezy pro omezené sady typů.</span><span class="sxs-lookup"><span data-stu-id="9ec8b-121">The F# core library defines slices for a limited set of types.</span></span> <span data-ttu-id="9ec8b-122">Pokud chcete definovat řezy pro více datových typů, můžete tak učinit buď v samotné definici typu, nebo v rozšíření typu.</span><span class="sxs-lookup"><span data-stu-id="9ec8b-122">If you wish to define slices for more data types, you can do so either in the type definition itself or in a type extension.</span></span>
 
-<span data-ttu-id="cf739-123">Tady je příklad, jak můžete definovat řezy pro třídu <xref:System.ArraySegment%601>, abyste umožnili pohodlné manipulaci s daty:</span><span class="sxs-lookup"><span data-stu-id="cf739-123">For example, here's how you might define slices for the <xref:System.ArraySegment%601> class to allow for convenient data manipulation:</span></span>
+<span data-ttu-id="9ec8b-123">Tady je příklad, jak můžete definovat řezy pro třídu <xref:System.ArraySegment%601>, abyste umožnili pohodlné manipulaci s daty:</span><span class="sxs-lookup"><span data-stu-id="9ec8b-123">For example, here's how you might define slices for the <xref:System.ArraySegment%601> class to allow for convenient data manipulation:</span></span>
 
 ```fsharp
 open System
@@ -110,9 +110,9 @@ let arr = ArraySegment [| 1 .. 10 |]
 let slice = arr.[2..5] //[ 3; 4; 5]
 ```
 
-### <a name="use-inlining-to-avoid-boxing-if-it-is-necessary"></a><span data-ttu-id="cf739-124">Použít vkládání k zamezení zabalení, pokud je to nezbytné</span><span class="sxs-lookup"><span data-stu-id="cf739-124">Use inlining to avoid boxing if it is necessary</span></span>
+### <a name="use-inlining-to-avoid-boxing-if-it-is-necessary"></a><span data-ttu-id="9ec8b-124">Použít vkládání k zamezení zabalení, pokud je to nezbytné</span><span class="sxs-lookup"><span data-stu-id="9ec8b-124">Use inlining to avoid boxing if it is necessary</span></span>
 
-<span data-ttu-id="cf739-125">Pokud definujete řezy pro typ, který je ve skutečnosti strukturou, doporučujeme, abyste `inline` `GetSlice` člen.</span><span class="sxs-lookup"><span data-stu-id="cf739-125">If you are defining slices for a type that is actually a struct, we recommend that you `inline` the `GetSlice` member.</span></span> <span data-ttu-id="cf739-126">F# Kompilátor optimalizuje volitelné argumenty a vyloučí případné přidělení haldy jako výsledek vytváření řezů.</span><span class="sxs-lookup"><span data-stu-id="cf739-126">The F# compiler optimizes away the optional arguments, avoiding any heap allocations as a result of slicing.</span></span> <span data-ttu-id="cf739-127">To je důležité pro vytváření řezů, jako je například <xref:System.Span%601>, které nelze přidělit haldě.</span><span class="sxs-lookup"><span data-stu-id="cf739-127">This is critically important for slicing constructs such as <xref:System.Span%601> that cannot be allocated on the heap.</span></span>
+<span data-ttu-id="9ec8b-125">Pokud definujete řezy pro typ, který je ve skutečnosti strukturou, doporučujeme, abyste `inline` `GetSlice` člen.</span><span class="sxs-lookup"><span data-stu-id="9ec8b-125">If you are defining slices for a type that is actually a struct, we recommend that you `inline` the `GetSlice` member.</span></span> <span data-ttu-id="9ec8b-126">F# Kompilátor optimalizuje volitelné argumenty a vyloučí případné přidělení haldy jako výsledek vytváření řezů.</span><span class="sxs-lookup"><span data-stu-id="9ec8b-126">The F# compiler optimizes away the optional arguments, avoiding any heap allocations as a result of slicing.</span></span> <span data-ttu-id="9ec8b-127">To je důležité pro vytváření řezů, jako je například <xref:System.Span%601>, které nelze přidělit haldě.</span><span class="sxs-lookup"><span data-stu-id="9ec8b-127">This is critically important for slicing constructs such as <xref:System.Span%601> that cannot be allocated on the heap.</span></span>
 
 ```fsharp
 open System
@@ -142,6 +142,17 @@ printSpan sp.[0..3] // [|1; 2; 3|]
 printSpan sp.[1..2] // |2; 3|]
 ```
 
-## <a name="see-also"></a><span data-ttu-id="cf739-128">Viz také:</span><span class="sxs-lookup"><span data-stu-id="cf739-128">See also</span></span>
+## <a name="built-in-f-slices-are-end-inclusive"></a><span data-ttu-id="9ec8b-128">Předdefinované řezy jsou F# na konci včetně.</span><span class="sxs-lookup"><span data-stu-id="9ec8b-128">Built-in F# slices are end-inclusive</span></span>
 
-- [<span data-ttu-id="cf739-129">Indexované vlastnosti</span><span class="sxs-lookup"><span data-stu-id="cf739-129">Indexed properties</span></span>](./members/indexed-properties.md)
+<span data-ttu-id="9ec8b-129">Všechny vnitřní řezy v F# nástroji jsou na konci včetně. To znamená, že horní mez je obsažena v řezu.</span><span class="sxs-lookup"><span data-stu-id="9ec8b-129">All intrinsic slices in F# are end-inclusive; that is, the upper bound is included in the slice.</span></span> <span data-ttu-id="9ec8b-130">V daném řezu pomocí počátečního `x` indexu a ukončení `y`indexu bude výsledný řez obsahovat hodnotu *YTH* .</span><span class="sxs-lookup"><span data-stu-id="9ec8b-130">For a given slice with starting index `x` and ending index `y`, the resulting slice will include the *yth* value.</span></span>
+
+```fsharp
+// Define a new list
+let xs = [1 .. 10]
+
+printfn "%A" xs.[2..5] // Includes the 5th index
+```
+
+## <a name="see-also"></a><span data-ttu-id="9ec8b-131">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9ec8b-131">See also</span></span>
+
+- [<span data-ttu-id="9ec8b-132">Indexované vlastnosti</span><span class="sxs-lookup"><span data-stu-id="9ec8b-132">Indexed properties</span></span>](./members/indexed-properties.md)
