@@ -2,12 +2,12 @@
 title: Samoobslužné aplikace gRPC – gRPC pro vývojáře WCF
 description: Nasazení ASP.NET Corech aplikací gRPC jako samoobslužných služeb.
 ms.date: 09/02/2019
-ms.openlocfilehash: 59f6275dbf85442bca3a98a1521597ef40e9675b
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 00b4ad50eae629b5b36a890d1eecf7119386c74c
+ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73967215"
+ms.lasthandoff: 12/29/2019
+ms.locfileid: "75545065"
 ---
 # <a name="self-hosted-grpc-applications"></a>Samoobslužné aplikace gRPC
 
@@ -34,7 +34,7 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
 
 Nyní můžete aplikaci publikovat buď ze sady Visual Studio, a to tak, že kliknete pravým tlačítkem na projekt a zvolíte možnost *publikovat* z kontextové nabídky nebo z .NET Core CLI.
 
-Při publikování aplikace .NET Core se můžete rozhodnout pro vytvoření nasazení *závislého na rozhraní* nebo *samostatného* nasazení. Nasazení závislá na rozhraní vyžadují, aby byl na hostiteli, na kterém je spuštěný, nainstalovaný sdílený modul .NET Core Shared. Samostatně obsažená nasazení jsou publikována s úplnou kopií modulu runtime .NET Core a architekturou a lze ji spustit na jakémkoli hostiteli. Další informace, včetně výhod a nevýhod každého přístupu, naleznete v dokumentaci k [nasazení aplikace .NET Core](https://docs.microsoft.com/dotnet/core/deploying/) .
+Při publikování aplikace .NET Core se můžete rozhodnout pro vytvoření nasazení *závislého na rozhraní* nebo *samostatného* nasazení. Nasazení závislá na rozhraní vyžadují, aby byl na hostiteli, na kterém je spuštěný, nainstalovaný sdílený modul .NET Core Shared. Samostatně obsažená nasazení jsou publikována s úplnou kopií modulu runtime .NET Core a architekturou a lze ji spustit na jakémkoli hostiteli. Další informace, včetně výhod a nevýhod každého přístupu, naleznete v dokumentaci k [nasazení aplikace .NET Core](../../core/deploying/index.md) .
 
 Chcete-li publikovat samostatné sestavení aplikace, které nevyžaduje instalaci modulu runtime .NET Core 3,0 na hostitele, zadejte modul runtime, který bude součástí aplikace pomocí příznaku `-r` (nebo `--runtime`).
 
@@ -77,13 +77,13 @@ public static IHostBuilder CreateHostBuilder(string[] args) =>
 > [!NOTE]
 > Pokud aplikace není spuštěna jako služba pro Linux, `UseSystemd` metoda neprovede žádné akce.
 
-Nyní publikujte aplikaci (Buď závislou na rozhraní, nebo samostatnou pro příslušný modul runtime pro Linux, například `linux-x64`), buď ze sady Visual Studio, kliknutím pravým tlačítkem myši na projekt a výběrem možnosti *publikovat* z místní nabídky nebo z .NET Core CLI pomocí následujícího příkazu.
+Nyní publikujte aplikaci (Buď závislou na rozhraní, nebo samostatnou pro příslušné prostředí Linux Runtime), například `linux-x64`), buď ze sady Visual Studio, kliknutím pravým tlačítkem myši na projekt a výběrem možnosti *publikovat* z místní nabídky nebo z .NET Core CLI pomocí následujícího příkazu.
 
 ```console
 dotnet publish -c Release -r linux-x64 -o ./publish
 ```
 
-Zkopírujte celý obsah adresáře `publish` do instalační složky na hostiteli se systémem Linux. Registrace služby vyžaduje speciální soubor, který se označuje jako "soubor jednotky", který se má přidat do adresáře `/etc/systemd/system`. K vytvoření souboru v této složce budete potřebovat oprávnění root. Pojmenujte soubor s identifikátorem, který chcete použít `systemd` a rozšířením `.service`. Například, `/etc/systemd/system/myapp.service`.
+Zkopírujte celý obsah adresáře `publish` do instalační složky na hostiteli se systémem Linux. Registrace služby vyžaduje speciální soubor, který se označuje jako "soubor jednotky", který se má přidat do adresáře `/etc/systemd/system`. K vytvoření souboru v této složce budete potřebovat oprávnění root. Pojmenujte soubor s identifikátorem, který chcete použít `systemd` a rozšířením `.service`. Například `/etc/systemd/system/myapp.service`.
 
 Soubor služby používá formát INI, jak je znázorněno v tomto příkladu.
 
@@ -150,7 +150,7 @@ Další informace o dotazování systémového deníku z příkazového řádku 
 
 Při spuštění aplikace gRPC v produkčním prostředí byste měli použít certifikát TLS od důvěryhodné certifikační autority (CA). Tato certifikační autorita může být veřejná certifikační autoritou nebo interní pro vaši organizaci.
 
-Na hostitelích s Windows může být certifikát načtený z zabezpečeného [úložiště certifikátů](https://docs.microsoft.com/windows/win32/seccrypto/managing-certificates-with-certificate-stores) pomocí [třídy X509Store](https://docs.microsoft.com/dotnet/api/system.security.cryptography.x509certificates.x509store?view=netcore-3.0). Třídu `X509Store` lze také použít s úložištěm klíčů OpenSSL na některých hostitelích se systémem Linux.
+Na hostitelích s Windows může být certifikát načtený z zabezpečeného [úložiště certifikátů](/windows/win32/seccrypto/managing-certificates-with-certificate-stores) pomocí třídy <xref:System.Security.Cryptography.X509Certificates.X509Store>. Třídu `X509Store` lze také použít s úložištěm klíčů OpenSSL na některých hostitelích se systémem Linux.
 
 Certifikáty mohou být také vytvořeny pomocí jednoho z [konstruktorů X509Certificate2](https://docs.microsoft.com/dotnet/api/system.security.cryptography.x509certificates.x509certificate.-ctor?view=netcore-3.0), buď ze souboru (například `.pfx` chráněný silným heslem), nebo z binárních dat načtených ze zabezpečené služby úložiště, jako je například [Azure Key Vault](https://azure.microsoft.com/services/key-vault/).
 

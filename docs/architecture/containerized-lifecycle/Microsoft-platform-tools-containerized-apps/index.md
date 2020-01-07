@@ -3,10 +3,10 @@ title: Úvod k platformě a nástrojům Microsoft pro kontejnerizované aplikace
 description: Získejte informace o tom, jak Microsoft nabízí podporu životního cyklu aplikací Docker.
 ms.date: 02/15/2019
 ms.openlocfilehash: 9c8c0f5688bf226351abfc7bf52d4ace05f8c6d8
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 01/06/2020
 ms.locfileid: "73738086"
 ---
 # <a name="introduction-to-the-microsoft-platform-andtools-for-containerized-apps"></a>Seznámení s platformou a nástroji Microsoftu pro kontejnery aplikací
@@ -31,7 +31,7 @@ Tabulka 3-1 ukazuje, že záměrem programu Microsoft DevOps pro kontejnerové a
 | ---------------------------| ----------------------------------------------------| --------------------------------------------------------------------------------|
 | Platforma pro aplikace Docker   | • Microsoft Visual Studio a Visual Studio Code<br /> • .NET<br /> • Microsoft Azure služba Kubernetes (AKS)<br /> • Service Fabric Azure<br /> • Azure Container Registry<br /> | • Jakýkoliv Editor kódu (například subvápno)<br /> • Libovolný jazyk (Node. js, Java, přejít atd.)<br /> • Všechny nástroje Orchestrator a Scheduler<br /> • Libovolný registr Docker<br /> |
 | DevOps pro aplikace Docker     | • Azure DevOps Services<br /> • Microsoft Team Foundation Server<br /> • Služba Azure Kubernetes (AKS)<br /> • Service Fabric Azure<br /> | • GitHub, Git, podverze atd.<br /> • Jenkinse, Puppet, rychlost, CircleCI, Travis CI atd.<br /> • Místní prostředí Docker Datacenter, Docker Swarm, Mesos DC/OS, Kubernetes atd.<br /> |
-| Správa a monitorování  | • Azure Monitor | • Marathon, Chronos atd.<br />|
+| Monitorování a správa  | • Azure Monitor | • Marathon, Chronos atd.<br />|
 
 Platforma a nástroje Microsoftu pro kontejnerové aplikace Docker, jak je definováno v tabulce 3-1, tvoří tyto komponenty:
 
@@ -39,7 +39,7 @@ Platforma a nástroje Microsoftu pro kontejnerové aplikace Docker, jak je defin
 
 - **DevOps pro aplikace Docker** Vývojáři vytvářející aplikace Docker můžou použít [Azure DevOps Services](https://azure.microsoft.com/services/devops/) nebo jakýkoli jiný produkt třetí strany, jako je Jenkinse, a sestavit komplexní automatizovanou správu životního cyklu aplikací (ALM).
 
-  S Azure DevOps Services můžou vývojáři vytvářet DevOps zaměřené na kontejner pro rychlý a iterativní proces, který pokrývá řízení zdrojového kódu odkudkoli (Azure DevOps Services-Git, GitHub, jakékoli vzdálené úložiště Git nebo dílčí verze), kontinuální integrace (CI). , interní testy jednotek, testy integrace mezi kontejnery/službami, průběžné doručování (CD) a správa verzí (RM). Vývojáři také mohou automatizovat své verze aplikace Docker ve službě Azure Kubernetes Service (AKS), od vývoje až po pracovní a produkční prostředí.
+  Pomocí Azure DevOps Services mohou vývojáři vytvořit DevOps zaměřené na kontejner pro rychlý a iterativní proces, který pokrývá řízení zdrojového kódu odkudkoli (Azure DevOps Services-Git, GitHub, libovolné vzdálené úložiště Git nebo dílčí verze), průběžná integrace (CI), interní testy jednotek, mezikontejnerové a integrační testy, průběžné doručování (CD) a Správa vydaných verzí (RM). Vývojáři také mohou automatizovat své verze aplikace Docker ve službě Azure Kubernetes Service (AKS), od vývoje až po pracovní a produkční prostředí.
 
 - **Správa a monitorování** Může spravovat a monitorovat produkční aplikace a služby několika způsoby integrací obou perspektiv do konsolidovaného prostředí.
 

@@ -3,10 +3,10 @@ title: Seedwork (opakovaně použitelné základní třídy a rozhraní pro dom�
 description: Architektura mikroslužeb .NET pro kontejnerové aplikace .NET | Použijte koncept seedwork jako výchozí bod pro zahájení implementace pro doménový model orientovaný na DDD.
 ms.date: 10/08/2018
 ms.openlocfilehash: f53988b92a05fb54f3f05d9f463450d1a11a0843
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 12/25/2019
 ms.locfileid: "73737213"
 ---
 # <a name="seedwork-reusable-base-classes-and-interfaces-for-your-domain-model"></a>Seedwork (opakovaně použitelné základní třídy a rozhraní pro doménový model)
@@ -115,7 +115,7 @@ Samotná úložiště nesmí být v doménovém modelu implementovaná pomocí E
 
 Vzor vztahující se k tomuto postupu (umístění rozhraní úložiště do vrstvy doménové struktury) je model odděleného rozhraní. Jak [je vysvětleno](https://www.martinfowler.com/eaaCatalog/separatedInterface.html) v Martinu Fowlera, "použijte oddělené rozhraní k definování rozhraní v jednom balíčku, ale jeho implementaci v jiném. Tímto způsobem klient, který potřebuje závislost na rozhraní, může zcela nevědět o implementaci. "
 
-Po použití vzoru odděleného rozhraní umožňuje aplikační vrstvě (v tomto případě projekt webového rozhraní API pro mikroslužeb) závislosti na požadavcích definovaných v doménovém modelu, ale ne na přímé závislosti na infrastruktuře/trvalost. vrstvení. Navíc můžete pomocí injektáže závislosti izolovat implementaci, která je implementována v infrastruktuře/trvalosti vrstvy pomocí úložišť.
+Po použití vzoru odděleného rozhraní umožňuje aplikační vrstvě (v tomto případě projekt webového rozhraní API pro mikroslužeb) závislosti na požadavcích definovaných v doménovém modelu, ale ne na přímé závislosti na vrstvě infrastruktury/trvalosti. Navíc můžete pomocí injektáže závislosti izolovat implementaci, která je implementována v infrastruktuře/trvalosti vrstvy pomocí úložišť.
 
 Například následující příklad s rozhraním IOrderRepository definuje, které operace bude třída OrderRepository potřebovat implementovat na vrstvu infrastruktury. V aktuální implementaci aplikace kód pouze potřebuje přidat nebo aktualizovat Objednávky do databáze, protože dotazy jsou rozděleny podle zjednodušeného přístupu CQRS.
 
