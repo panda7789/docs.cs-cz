@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Implementovat události rozhraní – C# Průvodce programováním'
+title: Postup implementace událostí rozhraní – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - interfaces [C#], event implementation in classes
 - events [C#], in interfaces
 ms.assetid: 63527447-9535-4880-8e95-35e2075827df
-ms.openlocfilehash: 574ea9927a22c24c356d84652fd29692c519247b
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: MT
+ms.openlocfilehash: cd2192d6146a431559f5cd9dd1a80da577695d66
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69590514"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346342"
 ---
-# <a name="how-to-implement-interface-events-c-programming-guide"></a>Postupy: Implementace událostí rozhraní (C# Průvodce programováním)
+# <a name="how-to-implement-interface-events-c-programming-guide"></a>Postup implementace událostí rozhraní (C# Průvodce programováním)
 [Rozhraní](../../language-reference/keywords/interface.md) může deklarovat [událost](../../language-reference/keywords/event.md). Následující příklad ukazuje, jak implementovat události rozhraní ve třídě. Pravidla jsou v podstatě stejná jako při implementaci libovolné metody rozhraní nebo vlastnosti.  
   
 ## <a name="to-implement-interface-events-in-a-class"></a>Implementace událostí rozhraní ve třídě  
@@ -52,9 +52,9 @@ namespace ImplementInterfaceEvents
 ```  
   
 ## <a name="example"></a>Příklad  
-Následující příklad ukazuje, jak zpracovat méně běžnou situaci, ve které vaše třída dědí ze dvou nebo více rozhraní a každé rozhraní obsahuje událost se stejným názvem. V takovém případě je nutné zadat explicitní implementaci rozhraní alespoň pro jednu z událostí. Když napíšete explicitní implementaci rozhraní pro událost, musíte také napsat `add` přístupové objekty události a. `remove` Tyto jsou obvykle poskytovány kompilátorem, ale v tomto případě je kompilátor nemůže poskytnout.  
+Následující příklad ukazuje, jak zpracovat méně běžnou situaci, ve které vaše třída dědí ze dvou nebo více rozhraní a každé rozhraní obsahuje událost se stejným názvem. V takovém případě je nutné zadat explicitní implementaci rozhraní alespoň pro jednu z událostí. Když napíšete explicitní implementaci rozhraní pro událost, musíte také zapsat `add` a `remove` přistupující objekty události. Tyto jsou obvykle poskytovány kompilátorem, ale v tomto případě je kompilátor nemůže poskytnout.  
   
-Poskytnutím vlastních přístupových objektů můžete určit, jestli jsou tyto dvě události reprezentované stejnou událostí ve vaší třídě, nebo různými událostmi. Například pokud by události měly být vyvolány v různých časech podle specifikací rozhraní, můžete každou událost přidružit k samostatné implementaci ve vaší třídě. V následujícím příkladu předplatitelé určují, která `OnDraw` událost bude přijímat přetypováním odkazu na obrazec do `IShape` nebo `IDrawingObject`.  
+Poskytnutím vlastních přístupových objektů můžete určit, jestli jsou tyto dvě události reprezentované stejnou událostí ve vaší třídě, nebo různými událostmi. Například pokud by události měly být vyvolány v různých časech podle specifikací rozhraní, můžete každou událost přidružit k samostatné implementaci ve vaší třídě. V následujícím příkladu předplatitelé určují, které `OnDraw` události budou obdržet přetypováním odkazu na obrazec do `IShape` nebo `IDrawingObject`.  
   
  [!code-csharp[csProgGuideEvents#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideEvents/CS/Events.cs#10)]
   
@@ -64,4 +64,4 @@ Poskytnutím vlastních přístupových objektů můžete určit, jestli jsou ty
 - [Události](./index.md)
 - [Delegáti](../delegates/index.md)
 - [Implementace explicitního rozhraní](../interfaces/explicit-interface-implementation.md)
-- [Postupy: Vyvolat události třídy Base v odvozených třídách](./how-to-raise-base-class-events-in-derived-classes.md)
+- [Postup vyvolání událostí třídy Base v odvozených třídách](./how-to-raise-base-class-events-in-derived-classes.md)

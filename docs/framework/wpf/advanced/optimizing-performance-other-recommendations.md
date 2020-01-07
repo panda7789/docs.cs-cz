@@ -11,12 +11,12 @@ helpviewer_keywords:
 - ScrollBarVisibility enumeration [WPF]
 - brushes [WPF], performance
 ms.assetid: d028cc65-7e97-4a4f-9859-929734eaf40d
-ms.openlocfilehash: 6b4a5379145ebdffde0d5b76d8c7b9ab57261007
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: b6d99d90a3da232e1873ebe8433e01ceb2977de6
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975793"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636429"
 ---
 # <a name="optimizing-performance-other-recommendations"></a>Optimalizace výkonu: Další doporučení
 <a name="introduction"></a>Toto téma poskytuje doporučení pro výkon kromě těch, které jsou pokryty v tématech v části [optimalizace výkonu aplikace WPF](optimizing-wpf-application-performance.md) .  
@@ -64,13 +64,13 @@ ms.locfileid: "73975793"
   
 <a name="Avoid_Using_ScrollBarVisibility"></a>   
 ## <a name="avoid-using-scrollbarvisibilityauto"></a>Nepoužívejte ScrollBarVisibility = auto.  
- Kdykoli je to možné, vyhněte se použití <xref:System.Windows.Controls.ScrollBarVisibility.Auto?displayProperty=nameWithType> hodnoty vlastností `HorizontalScrollBarVisibility` a `VerticalScrollBarVisibility`. Tyto vlastnosti jsou definovány pro objekty <xref:System.Windows.Controls.RichTextBox>, <xref:System.Windows.Controls.ScrollViewer> a <xref:System.Windows.Controls.TextBox> a jako připojená vlastnost pro objekt <xref:System.Windows.Controls.ListBox>. Místo toho nastavte <xref:System.Windows.Controls.ScrollBarVisibility> na <xref:System.Windows.Controls.ScrollBarVisibility.Disabled>, <xref:System.Windows.Controls.ScrollBarVisibility.Hidden> nebo <xref:System.Windows.Controls.ScrollBarVisibility.Visible>.  
+ Kdykoli je to možné, vyhněte se použití <xref:System.Windows.Controls.ScrollBarVisibility.Auto?displayProperty=nameWithType> hodnoty vlastností `HorizontalScrollBarVisibility` a `VerticalScrollBarVisibility`. Tyto vlastnosti jsou definovány pro objekty <xref:System.Windows.Controls.RichTextBox>, <xref:System.Windows.Controls.ScrollViewer>a <xref:System.Windows.Controls.TextBox> a jako připojená vlastnost pro objekt <xref:System.Windows.Controls.ListBox>. Místo toho nastavte <xref:System.Windows.Controls.ScrollBarVisibility> na <xref:System.Windows.Controls.ScrollBarVisibility.Disabled>, <xref:System.Windows.Controls.ScrollBarVisibility.Hidden>nebo <xref:System.Windows.Controls.ScrollBarVisibility.Visible>.  
   
  Hodnota <xref:System.Windows.Controls.ScrollBarVisibility.Auto> je určena pro případy, kdy je omezen prostor, a v případě potřeby by se měly zobrazovat posuvníky. Může být například užitečné použít tuto <xref:System.Windows.Controls.ScrollBarVisibility> hodnotu s <xref:System.Windows.Controls.ListBox> 30 položek na rozdíl od <xref:System.Windows.Controls.TextBox> se stovkami řádků textu.  
   
 <a name="FontCache"></a>   
 ## <a name="configure-font-cache-service-to-reduce-start-up-time"></a>Nakonfigurujte Cache Service písma, aby se snížil čas spuštění.  
- Služba mezipaměť písem [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sdílí data písma mezi [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikacemi. První spouštěná aplikace [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] spustí tuto službu, pokud služba ještě není spuštěná. Pokud používáte systém Windows Vista, můžete Windows Presentation Foundation nastavit službu 3.0.0.0 (WPF) Font cache (WPF) z ručního (výchozí) na automaticky (zpožděné spuštění) a snížit tak počáteční dobu spuštění [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací.  
+ Služba mezipaměť písem WPF sdílí data písma mezi aplikacemi WPF. První spuštěná aplikace WPF spustí tuto službu, pokud služba ještě není spuštěná. Pokud používáte systém Windows Vista, můžete Windows Presentation Foundation nastavit službu 3.0.0.0 (WPF) Font cache (WPF) z ručního (výchozí) na automaticky (zpožděné spuštění) a snížit tak počáteční čas spuštění aplikací WPF.  
   
 ## <a name="see-also"></a>Viz také:
 

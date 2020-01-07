@@ -1,15 +1,15 @@
 ---
-title: Instalace rozhraní .NET Framework 3.5 v systému Windows 10, Windows 8.1 a Windows 8
+title: Instalace .NET Framework 3,5 ve Windows 10, 8,1, 8
 description: Přečtěte si, jak nainstalovat .NET Framework 3,5 ve Windows 10, Windows 8.1 a Windows 8.
 author: rlander
 ms.author: mairaw
 ms.date: 07/16/2018
-ms.openlocfilehash: 949f73febe2eb2ad7155bddd2b7b7514eddfe6c9
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
-ms.translationtype: MT
+ms.openlocfilehash: 16bc8b48d3e54cf3094b6bcc7a47ef863fa639b2
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72319135"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344831"
 ---
 # <a name="install-the-net-framework-35-on-windows-10-windows-81-and-windows-8"></a>Instalace rozhraní .NET Framework 3.5 v systému Windows 10, Windows 8.1 a Windows 8
 
@@ -29,13 +29,13 @@ Pokud se pokusíte spustit aplikaci, která vyžaduje .NET Framework 3,5, může
 
 .NET Framework 3,5 můžete povolit prostřednictvím ovládacího panelu systému Windows. Tato možnost vyžaduje připojení k Internetu.
 
-1. Stiskněte klávesu Windows ![Screenshot loga Windows Key. ](./media/dotnet-35-windows-10/windows-keyboard-logo.png) na klávesnici zadejte "funkce systému Windows" a stiskněte klávesu ENTER. Zobrazí se dialogové okno **zapnout nebo vypnout funkce systému Windows** .
+1. Stiskněte klávesu Windows ![snímek obrazovky s logem Windows Key.](./media/dotnet-35-windows-10/windows-keyboard-logo.png) na klávesnici zadejte "funkce systému Windows" a stiskněte klávesu ENTER. Zobrazí se dialogové okno **zapnout nebo vypnout funkce systému Windows** .
 
 2. Zaškrtněte políčko **.NET Framework 3,5 (zahrnuje rozhraní .net 2,0 a 3,0)** , vyberte **OK**a po zobrazení výzvy restartujte počítač.
 
    ![Snímek obrazovky s instalací rozhraní .NET pomocí ovládacích panelů](./media/dotnet-35-windows-10/dotnet-control-panel.png)
 
-   Nemusíte vybírat podřízené položky pro aktivaci pomocí **protokolu HTTP služby Windows Communication Foundation (WCF)** a **Windows Communication Foundation (WCF) bez protokolu HTTP** , pokud nejste vývojář nebo správce serveru, který to vyžaduje. možnost.
+   Nemusíte vybírat podřízené položky pro aktivaci pomocí **protokolu HTTP služby Windows Communication Foundation (WCF)** a **Windows Communication Foundation (WCF) bez protokolu HTTP** , pokud nejste vývojář nebo správce serveru, který tuto funkci vyžaduje.
 
 ## <a name="troubleshoot-the-installation-of-the-net-framework-35"></a>Řešení potíží s instalací .NET Framework 3,5
 

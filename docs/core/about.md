@@ -2,12 +2,12 @@
 title: O platformě .NET Core
 description: Přečtěte si o .NET Core.
 ms.date: 09/17/2019
-ms.openlocfilehash: 22530e861f6a13a6930b2fb35c91b4f7a95a17c7
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: ed153e817746a88277c191dfb14c465ff2d8bfa1
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74801958"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344910"
 ---
 # <a name="about-net-core"></a>O platformě .NET Core
 
@@ -58,7 +58,7 @@ Na rozhraní .NET Core bylo postaveno více platforem:
 
 - [Modul runtime .NET Core](https://github.com/dotnet/runtime/tree/master/src/coreclr), který poskytuje systém typů, načítání sestavení, systém uvolňování paměti, nativní spolupráci a další základní služby. [Knihovny .NET Core Framework](https://github.com/dotnet/runtime/tree/master/src/libraries) poskytují primitivní datové typy, typy kompozic aplikací a základní nástroje.
 - [Běhový modul ASP.NET](https://github.com/aspnet/home), který poskytuje rozhraní pro vytváření moderních cloudových aplikací připojených k Internetu, jako jsou webové aplikace, aplikace IoT a mobilní back-endy.
-- [Nástroje .NET Core CLI](https://github.com/dotnet/cli) a jazykové kompilátory ([Roslyn](https://github.com/dotnet/roslyn) a [F#](https://github.com/microsoft/visualfsharp)), které umožňují prostředí pro vývojáře .NET Core.
+- [Nástroje .NET Core CLI](https://github.com/dotnet/sdk) a jazykové kompilátory ([Roslyn](https://github.com/dotnet/roslyn) a [F#](https://github.com/microsoft/visualfsharp)), které umožňují prostředí pro vývojáře .NET Core.
 - [Nástroj dotnet](https://github.com/dotnet/core-setup), který se používá ke spouštění aplikací .NET Core a nástrojů rozhraní příkazového řádku. Vybírá modul runtime a hostuje modul runtime, poskytuje zásady načítání sestavení a spouští aplikace a nástroje.
 
 Tyto součásti jsou distribuovány následujícími způsoby:

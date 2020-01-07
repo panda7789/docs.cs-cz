@@ -11,15 +11,15 @@ helpviewer_keywords:
 - WPF [WPF], localization
 - Windows Presentation Foundation [WPF], localization
 ms.assetid: e96f9764-4e3f-4d1c-bf20-3fb890118aae
-ms.openlocfilehash: 0d01f7536c120f51372961d944804cfe0063fb9f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 80e0bf641c46eb1461769f5a85950982258c78f5
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62010277"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559419"
 ---
 # <a name="globalization-and-localization"></a>Globalizace a lokalizace
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje rozsáhlou podporu pro vývoj globalizovaných aplikací.  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje rozsáhlou podporu pro vývoj aplikací připravených pro použití ve světě.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled globalizace a lokalizace WPF](wpf-globalization-and-localization-overview.md)  
@@ -27,7 +27,7 @@ ms.locfileid: "62010277"
  [Přehled automatického rozložení](use-automatic-layout-overview.md)  
  [Atributy a komentáře lokalizace](localization-attributes-and-comments.md)  
  [Přehled obousměrných funkcí v rozhraní WPF](bidirectional-features-in-wpf-overview.md)  
- [Témata s postupy](globalization-and-localization-how-to-topics.md)  
+ [Postupy](globalization-and-localization-how-to-topics.md)  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Globalization>  
@@ -36,6 +36,6 @@ ms.locfileid: "62010277"
   
  <xref:System.Resources.NeutralResourcesLanguageAttribute>  
   
- [Práce s atributem xml:lang v jazyce XAML](../../xaml-services/xml-lang-handling-in-xaml.md)  
+ [Práce s atributem xml:lang v jazyce XAML](../../../desktop-wpf/xaml-services/xml-language-handling.md)  
   
 ## <a name="related-sections"></a>Související oddíly

@@ -2,12 +2,12 @@
 title: Jak kombinovat dotazy LINQ s regulárními výrazy
 ms.date: 07/20/2015
 ms.assetid: 3da1bd10-b0d8-4d5b-a637-966891c13592
-ms.openlocfilehash: 27fc46056ad78567339ca0c5818aef38d0fbb9a6
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: a091418be1f7cc30d42a98f80ebae2d36d29b5d8
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348421"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337548"
 ---
 # <a name="how-to-combine-linq-queries-with-regular-expressions-visual-basic"></a>Jak kombinovat dotazy LINQ s regulárními výrazy (Visual Basic)
 
@@ -84,9 +84,9 @@ End Class
 
 Všimněte si, že můžete také zadat dotaz na objekt <xref:System.Text.RegularExpressions.MatchCollection>, který je vrácený `RegEx` vyhledávání. V tomto příkladu se ve výsledcích vytvoří pouze hodnota každé shody. Je ale také možné použít LINQ k provádění všech druhů filtrování, řazení a seskupování v této kolekci. Vzhledem k tomu, že <xref:System.Text.RegularExpressions.MatchCollection> je neobecná <xref:System.Collections.IEnumerable> kolekce, je nutné explicitně uvést typ proměnné rozsahu v dotazu.
 
-## <a name="compiling-the-code"></a>Kompilování kódu
+## <a name="compile-the-code"></a>Kompilace kódu
 
-Vytvořte projekt konzolové aplikace VB.NET, zkopírujte a vložte ukázku kódu a upravte hodnotu spouštěcího objektu ve vlastnostech projektu.
+Vytvořte projekt konzolové aplikace Visual Basic, zkopírujte a vložte ukázku kódu a upravte hodnotu spouštěcího objektu ve vlastnostech projektu.
 
 ## <a name="see-also"></a>Viz také:
 

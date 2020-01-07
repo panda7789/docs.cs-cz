@@ -1,17 +1,17 @@
 ---
-title: Řezy (F#)
-description: Přečtěte si, jak používat řezy pro F# existující datové typy a jak definovat vlastní řezy pro jiné datové typy.
-ms.date: 01/22/2019
-ms.openlocfilehash: 2f7b87cda87aad1fdac05b4e14b16f454f8c0461
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+title: Řezy
+description: Naučte se, jak používat řezy F# pro existující datové typy a jak definovat vlastní řezy pro jiné datové typy.
+ms.date: 12/23/2019
+ms.openlocfilehash: 3911139c7ce656043817eb23d30f3686555b6efe
+ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73733373"
+ms.lasthandoff: 12/29/2019
+ms.locfileid: "75545111"
 ---
 # <a name="slices"></a>Řezy
 
-V F#je řez podmnožinou datového typu. Aby bylo možné převzít řezy z datového typu, musí datový typ definovat buď metodu `GetSlice`, nebo v [rozšíření typu](type-extensions.md) , které je v oboru. Tento článek vysvětluje, jak vzít řezy z existujících F# typů a jak definovat vlastní.
+V F#je řez podmnožinou libovolného datového typu, který má metodu `GetSlice` v definici nebo v [rozšíření typu](type-extensions.md)v rámci oboru. Nejčastěji se používá u F# polí a seznamů. Tento článek vysvětluje, jak vzít řezy z existujících F# typů a jak definovat vlastní řezy.
 
 Řezy se podobají [indexerům](./members/indexed-properties.md), ale místo toho, aby vydávaly jedinou hodnotu z podkladové datové struktury, poskytují více.
 
@@ -89,7 +89,7 @@ let twoByTwo = A.[0..1,0..1]
 printfn "%A" twoByTwo
 ```
 
-F# Základní knihovna nedefinuje`GetSlice`pro 3D pole. Pokud chcete rozdělit takové nebo jiné pole více dimenzí, je nutné definovat člena `GetSlice` sami.
+F# Základní knihovna aktuálně nedefinuje `GetSlice` pro 3D pole. Pokud chcete rozdělit 3D pole nebo jiná pole více dimenzí, definujte `GetSlice` člena sami.
 
 ## <a name="defining-slices-for-other-data-structures"></a>Definování řezů pro jiné datové struktury
 
@@ -140,6 +140,17 @@ printSpan sp.[0..] // [|1; 2; 3; 4; 5|]
 printSpan sp.[..5] // [|1; 2; 3; 4; 5|]
 printSpan sp.[0..3] // [|1; 2; 3|]
 printSpan sp.[1..2] // |2; 3|]
+```
+
+## <a name="built-in-f-slices-are-end-inclusive"></a>Předdefinované řezy jsou F# na konci včetně.
+
+Všechny vnitřní řezy v F# nástroji jsou na konci včetně. To znamená, že horní mez je obsažena v řezu. V daném řezu pomocí počátečního `x` indexu a ukončení `y`indexu bude výsledný řez obsahovat hodnotu *YTH* .
+
+```fsharp
+// Define a new list
+let xs = [1 .. 10]
+
+printfn "%A" xs.[2..5] // Includes the 5th index
 ```
 
 ## <a name="see-also"></a>Viz také:

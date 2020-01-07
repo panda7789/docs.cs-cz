@@ -10,12 +10,12 @@ helpviewer_keywords:
 - operating systems supported
 - hardware requirements
 ms.assetid: 298275e2-da1d-4618-9f74-6a3567832350
-ms.openlocfilehash: 0137066b3a351d60bf1cc2e06640030ba1216d03
-ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
+ms.openlocfilehash: f853663bef4dd0de7ac61e706dedf8c6a19b5b51
+ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74960060"
+ms.lasthandoff: 12/29/2019
+ms.locfileid: "75545009"
 ---
 # <a name="net-framework-system-requirements"></a>.NET Framework požadavky na systém
 
@@ -72,13 +72,13 @@ Informace o životním cyklu podpory verze .NET Framework najdete v tématu [ži
 
 - V systémech Windows 7 .NET Framework vyžaduje systém Windows 7 SP1. Pokud jste v systému Windows 7 a ještě jste nenainstalovali aktualizaci Service Pack 1, musíte to provést před instalací .NET Framework.
 
-- .NET Framework 4,5 se podporuje v Windows Preinstallation Environment (Windows PE). V prostředí Windows PE nejsou podporovány všechny funkce.
+- .NET Framework 4,5 se podporuje v Windows Preinstallation Environment (Windows PE). V systému Windows PE nejsou podporovány všechny funkce.
 
 - .NET Framework 4 také podporuje platformu IA64.
 
 - U všech platforem doporučujeme upgradovat na nejnovější aktualizaci Service Pack systému Windows a nainstalovat důležité aktualizace, které jsou k dispozici od [web Windows Update](https://support.microsoft.com/help/12373/windows-update-faq) , abyste zajistili nejlepší kompatibilitu a zabezpečení.
 
-- V 64 operačních systémech podporuje .NET Framework rozhraní WOW64 (32-bit Processing v počítači s 64) a | nativní zpracování 64.
+- V 64 operačních systémech podporuje .NET Framework rozhraní WOW64 (32-bit Processing v počítači s 64) a 64 nativní 16bitové zpracování.
 
 ## <a name="supported-server-operating-systems"></a>Podporované serverové operační systémy
 
@@ -96,7 +96,7 @@ Informace o životním cyklu podpory verze .NET Framework najdete v tématu [ži
 
  **Poznámky:**
 
-- Windows Server 2012 zahrnuje .NET Framework 4,5, takže ho nemusíte instalovat samostatně. Podobně [!INCLUDE[winblue_server_2](../../../includes/winblue-server-2-md.md)] zahrnuje .NET Framework 4.5.1.
+- Windows Server 2012 zahrnuje .NET Framework 4,5, takže ho nemusíte instalovat samostatně. Podobně Windows Server 2012 R2 zahrnuje .NET Framework 4.5.1.
 
 - .NET Framework má omezené podpory pro roli jádra serveru s Windows Serverem 2008 R2 SP1 nebo novějším. Seznam nepodporovaných rozhraní API najdete v tématu [funkce jádra serveru .NET](https://docs.microsoft.com/previous-versions//dd745015(v=vs.85)) .
 
@@ -104,9 +104,9 @@ Informace o životním cyklu podpory verze .NET Framework najdete v tématu [ži
 
 - V systému Windows Server 2008 SP2 není .NET Framework v roli jádro serveru podporováno.
 
-- U všech platforem doporučujeme upgradovat na nejnovější aktualizaci Service Pack systému Windows a důležité aktualizace, které jsou dostupné z [web Windows Update](https://support.microsoft.com/help/12373/windows-update-faq) , abyste zajistili nejlepší kompatibilitu a zabezpečení. U některých operačních systémů může být požadována instalace nejnovější aktualizace Service Pack pro systém Windows.
+- U všech platforem doporučujeme upgradovat na nejnovější aktualizaci Service Pack systému Windows a důležité aktualizace, které jsou dostupné z [web Windows Update](https://support.microsoft.com/help/12373/windows-update-faq) , abyste zajistili nejlepší kompatibilitu a zabezpečení. V některých operačních systémech může být nutné nainstalovat nejnovější aktualizaci Service Pack systému Windows.
 
-- Na 64bitových operačních systémech rozhraní .NET Framework podporuje obě WOW64 (32bitové zpracování na 64bitovém počítači) a nativní 64bitové zpracování.
+- V 64 operačních systémech podporuje .NET Framework rozhraní WOW64 (32-bit Processing v počítači s 64) a 64 nativní 16bitové zpracování.
 
 ## <a name="see-also"></a>Viz také:
 

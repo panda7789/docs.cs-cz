@@ -1,5 +1,5 @@
 ---
-title: Životnost
+title: Doba platnosti
 ms.date: 07/20/2015
 helpviewer_keywords:
 - static variables [Visual Basic], lifetime
@@ -10,12 +10,12 @@ helpviewer_keywords:
 - lifetime [Visual Basic], Visual Basic
 - lifetime [Visual Basic]
 ms.assetid: bd91e390-690a-469a-9946-8dca70bc14e7
-ms.openlocfilehash: 05a39388e8aa9681af60cf86a3df8346d744b69e
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 293537ad33c8e751d49d820fc57ea525e68bc203
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345316"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347765"
 ---
 # <a name="lifetime-in-visual-basic"></a>Doba platnosti v jazyce Visual Basic
 *Životnost* deklarovaného prvku je doba, během které je možné ho použít. Proměnné jsou jedinými prvky, které mají dobu života. Pro účely tohoto účelu Kompilátor považuje parametry procedury a vrátí funkce jako zvláštní případy proměnných. Životnost proměnné představuje časové období, během kterého může uchovávat hodnotu. Jeho hodnota se může změnit během své životnosti, ale vždycky uchovává nějakou hodnotu.  
@@ -65,10 +65,10 @@ ms.locfileid: "74345316"
   
  Pokud byla `applesSold` deklarována bez použití `Static`, předchozí akumulované hodnoty nebudou zachovány v rámci volání `runningTotal`. Při příštím `runningTotal`, `applesSold` by byl znovu vytvořen a inicializován na hodnotu 0 a `runningTotal` by měla jednoduše vracet stejnou hodnotu, se kterou byla volána.  
   
-### <a name="compiling-the-code"></a>Probíhá kompilace kódu  
+### <a name="compile-the-code"></a>Kompilace kódu  
  Hodnotu statické lokální proměnné můžete inicializovat jako součást její deklarace. Pokud deklarujete pole, které má být `Static`, můžete inicializovat jeho pořadí (počet rozměrů), délku jednotlivých dimenzí a hodnoty jednotlivých prvků.  
   
-### <a name="security"></a>Zabezpečení  
+### <a name="security"></a>Zabezpečení –  
  V předchozím příkladu můžete vytvořením stejné životnosti tím, že deklarujete `applesSold` na úrovni modulu. Pokud jste změnili rozsah proměnné tímto způsobem, ale k tomuto postupu již nebude mít výhradní přístup. Vzhledem k tomu, že jiné postupy mohly získat přístup k `applesSold` a změně její hodnoty, může být průběžný součet nespolehlivý a může být obtížné zachovat kód.  
   
 ## <a name="see-also"></a>Viz také:

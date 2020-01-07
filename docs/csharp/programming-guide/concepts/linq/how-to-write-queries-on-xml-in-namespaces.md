@@ -1,16 +1,16 @@
 ---
-title: 'Postupy: Zápis dotazů do XML v oborechC#názvů ()'
+title: Zápis dotazů na XML v oborech názvů (C#)
 ms.date: 07/20/2015
 ms.assetid: 7c54df81-15e4-4091-8c81-a87637029130
-ms.openlocfilehash: 1ded47ced44bebfda92b96f4dc908f1c1b2bbf6b
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: a8b8d55daaad1ae00e43fed897080ed7a62fafab
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253204"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337377"
 ---
-# <a name="how-to-write-queries-on-xml-in-namespaces-c"></a>Postupy: Zápis dotazů do XML v oborechC#názvů ()
-Chcete-li zapsat dotaz na XML, který je v oboru názvů, je <xref:System.Xml.Linq.XName> nutné použít objekty, které mají správný obor názvů.  
+# <a name="how-to-write-queries-on-xml-in-namespaces-c"></a>Zápis dotazů na XML v oborech názvů (C#)
+Chcete-li zapsat dotaz na XML, který je v oboru názvů, je nutné použít <xref:System.Xml.Linq.XName> objekty, které mají správný obor názvů.  
   
  C#Nejběžnějším přístupem je inicializovat <xref:System.Xml.Linq.XNamespace> pomocí řetězce, který obsahuje identifikátor URI, potom použít přetížení operátoru sčítání ke kombinování oboru názvů s místním názvem.  
   

@@ -1,15 +1,15 @@
 ---
-title: Návrh s použitím typů odkazů s možnou hodnotou null
-description: Tento rozšířený kurz poskytuje Úvod k odkazům s možnou hodnotou null. Naučíte se vyjádřit svůj návrh na to, kdy mohou být referenční hodnoty null, a nechat vynutit kompilátor, pokud nesmí mít hodnotu null.
+title: Upgrade na typy odkazů s možnou hodnotou null
+description: Tento rozšířený kurz ukazuje, jak migrovat existující kód s odkazem s možnou hodnotou null.
 ms.date: 02/19/2019
 ms.technology: csharp-null-safety
 ms.custom: mvc
-ms.openlocfilehash: d0faea19ac1c7c7f28d9775fc3b69c71a752fbcb
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 75bc8d278efb66363212e3e000154ffc70f373bf
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73969349"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75634908"
 ---
 # <a name="tutorial-migrate-existing-code-with-nullable-reference-types"></a>Kurz: migrace stávajícího kódu s odkazy s možnou hodnotou null
 
@@ -36,7 +36,7 @@ Ukázková aplikace, kterou migrujete, je webová aplikace čtečky informační
 
 Ukázková aplikace obsahuje knihovnu testů jednotek, která ověřuje hlavní funkčnost aplikace. Tento projekt usnadňuje upgrade bezpečně, pokud změníte jakoukoli implementaci na základě vygenerovaných upozornění. Počáteční kód si můžete stáhnout z úložiště [dotnet/Samples](https://github.com/dotnet/samples/tree/master/csharp/tutorials/nullable-reference-migration/start) GitHub.
 
-Váš cíl migrace projektu by měl být využívat nové funkce jazyka, aby bylo jasné vyjádřit záměr na hodnotu null proměnných, a tak učinit tak, že kompilátor negeneruje upozornění, když máte kontext anotace s možnou hodnotou null a Výstražný kontext s možnou hodnotou null je nastaven na `enabled`.
+Váš cíl migrace projektu by měl být vycházet z toho, aby využíval nové funkce jazyka, aby bylo jasné vyjádřit záměr na hodnotu null proměnných, a tak učinit takovým způsobem, že kompilátor negeneruje upozornění, když máte kontext poznámky s možnou hodnotou null a kontext s možnou hodnotou null nastaven na `enabled`.
 
 ## <a name="upgrade-the-projects-to-c-8"></a>Upgradovat projekty na C# 8
 

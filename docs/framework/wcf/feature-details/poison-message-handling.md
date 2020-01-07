@@ -2,12 +2,12 @@
 title: Zpracování škodlivých zpráv
 ms.date: 03/30/2017
 ms.assetid: 8d1c5e5a-7928-4a80-95ed-d8da211b8595
-ms.openlocfilehash: 3eba16097648bee1ea80cf62ab3bca900ddf6280
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: ff1eaec99308b06250722b290b7005ac21731570
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837347"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337648"
 ---
 # <a name="poison-message-handling"></a>Zpracování škodlivých zpráv
 *Nezpracovatelná zpráva* je zpráva, že překročila maximální počet pokusů o doručení do aplikace. K této situaci může dojít, když aplikace založená na frontě nemůže zpracovat zprávu z důvodu chyb. Pro splnění požadavků na spolehlivost přijímá aplikace zařazené do fronty zprávy v rámci transakce. Přerušení transakce, ve které byla přijata zpráva zařazená do fronty, opustí zprávu ve frontě, aby se zpráva opakovala v rámci nové transakce. Pokud se problém, který způsobil přerušování transakce, neopraví, přijímající aplikace může zablokovat ve smyčce příjem a přerušit stejnou zprávu, dokud nedosáhnete maximálního počtu pokusů o doručení a výsledků nepoškozených zpráv.  
@@ -21,7 +21,7 @@ ms.locfileid: "74837347"
   
 - `ReceiveRetryCount`. Celočíselná hodnota, která určuje maximální počet pokusů o doručení zprávy z fronty aplikace do aplikace. Výchozí hodnota je 5. To je dostačující v případech, kdy se problém okamžitě vyřeší, například s dočasným zablokování v databázi.  
   
-- `MaxRetryCycles`. Celočíselná hodnota, která určuje maximální počet cyklů opakování. Cyklus opakování se skládá z přenosu zprávy z fronty aplikace do podfronty opakování a po nastavitelném zpoždění z podfronty opakování zpět do fronty aplikace pro opakované pokusy o doručení. Výchozí hodnota je 2. V systému Windows Vista se zpráva pokusí o maximum (`ReceiveRetryCount` + 1) * (`MaxRetryCycles` + 1) krát. `MaxRetryCycles` se ignoruje v [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
+- `MaxRetryCycles`. Celočíselná hodnota, která určuje maximální počet cyklů opakování. Cyklus opakování se skládá z přenosu zprávy z fronty aplikace do podfronty opakování a po nastavitelném zpoždění z podfronty opakování zpět do fronty aplikace pro opakované pokusy o doručení. Výchozí hodnota je 2. V systému Windows Vista se zpráva pokusí o maximum (`ReceiveRetryCount` + 1) * (`MaxRetryCycles` + 1) krát. `MaxRetryCycles` se na Windows serveru 2003 a [!INCLUDE[wxp](../../../../includes/wxp-md.md)]ignoruje.  
   
 - `RetryCycleDelay`. Časová prodleva mezi opakovanými cykly Výchozí hodnota je 30 minut. `MaxRetryCycles` a `RetryCycleDelay` společně poskytují mechanismus, který řeší problém, kdy se problém opakuje po pravidelném zpoždění. Například tato operace zpracovává uzamčenou sadu řádků v SQL Server čeká na potvrzení transakce.  
   
@@ -39,12 +39,12 @@ ms.locfileid: "74837347"
   
 - ((ReceiveRetryCount + 1) * (MaxRetryCycles + 1)) v systému Windows Vista.  
   
-- (ReceiveRetryCount + 1) na [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
+- (ReceiveRetryCount + 1) na Windows serveru 2003 a [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
   
 > [!NOTE]
 > U zprávy, která byla úspěšně doručena, nejsou provedeny žádné opakované pokusy.  
   
- Aby bylo možné sledovat počet pokusů o přečtení zprávy, systém Windows Vista udržuje vlastnost odolné zprávy, která počítá počet přerušení a vlastnost Count Move, která spočítá počet pokusů o přesunutí zprávy mezi frontou a podfrontou aplikace. Kanál WCF je používá k výpočtu počtu opakování příjmu a počtu cyklů opakování. V [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wxp](../../../../includes/wxp-md.md)]je počet přerušování udržován v paměti kanálem WCF a je resetován, pokud aplikace nebude úspěšná. Kanál WCF také může uchovávat počty přerušení až 256 zpráv v paměti. Pokud je přečtena zpráva 257th, je počet přerušení nejstarší zprávy resetován.  
+ Aby bylo možné sledovat počet pokusů o přečtení zprávy, systém Windows Vista udržuje vlastnost odolné zprávy, která počítá počet přerušení a vlastnost Count Move, která spočítá počet pokusů o přesunutí zprávy mezi frontou a podfrontou aplikace. Kanál WCF je používá k výpočtu počtu opakování příjmu a počtu cyklů opakování. V systému Windows Server 2003 a [!INCLUDE[wxp](../../../../includes/wxp-md.md)]je počet přerušování uchováván v paměti kanálu WCF a je obnoven, pokud aplikace nebude úspěšná. Kanál WCF také může uchovávat počty přerušení až 256 zpráv v paměti. Pokud je přečtena zpráva 257th, je počet přerušení nejstarší zprávy resetován.  
   
  Vlastnosti počet přerušení a přesunutí jsou k dispozici pro operaci služby prostřednictvím kontextu operace. Následující příklad kódu ukazuje, jak k nim přistupovat.  
   
@@ -66,7 +66,7 @@ ms.locfileid: "74837347"
   
  Aplikace může vyžadovat určitý druh automatizovaného zpracování nepoškozených zpráv, které přesouvají poškozené zprávy do fronty nezpracovatelných zpráv, aby služba mohla přistupovat ke zbytku zpráv ve frontě. Jediným scénářem použití mechanismu obslužné rutiny chyb pro naslouchání výjimkám nepoškozených zpráv je, pokud je nastavení <xref:System.ServiceModel.Configuration.MsmqBindingElementBase.ReceiveErrorHandling%2A> nastaveno na hodnotu <xref:System.ServiceModel.ReceiveErrorHandling.Fault>. Ukázka nezpracovatelné zprávy pro službu Řízení front zpráv 3,0 ukazuje toto chování. Následující postup popisuje kroky, které je třeba provést pro zpracování nezpracovatelných zpráv, včetně osvědčených postupů:  
   
-1. Ujistěte se, že vaše nastavení poškození odráží požadavky vaší aplikace. Při práci s nastavením se ujistěte, že rozumíte rozdílům mezi možnostmi služby Řízení front zpráv v systému Windows Vista, [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]a [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
+1. Ujistěte se, že vaše nastavení poškození odráží požadavky vaší aplikace. Při práci s nastavením se ujistěte, že rozumíte rozdílům mezi možnostmi služby Řízení front zpráv v systému Windows Vista, Windows Server 2003 a [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
   
 2. V případě potřeby implementujte `IErrorHandler` pro zpracování chyb nepoškozených zpráv. Vzhledem k tomu, že nastavení `ReceiveErrorHandling` na `Fault` vyžaduje ruční mechanismus k přesunutí nepoškozené zprávy z fronty nebo opravu externího závislého problému, je typické použití implementace `IErrorHandler`, pokud je `ReceiveErrorHandling` nastaveno na `Fault`, jak je znázorněno v následujícím kódu.  
   
@@ -95,13 +95,13 @@ ms.locfileid: "74837347"
  Zpracování nezpracovatelných zpráv nekončí při umístění zprávy do fronty nezpracovatelných zpráv. Zprávy ve frontě nepoškozených zpráv musí být pořád přečtené a zpracovávané. Při čtení zpráv z konečné podfronty poškození lze použít podmnožinu nastavení zpracování nezpracovatelných zpráv. Příslušná nastavení jsou `ReceiveRetryCount` a `ReceiveErrorHandling`. Můžete nastavit `ReceiveErrorHandling` pro vyřazení, zamítnutí nebo selhání. `MaxRetryCycles` je ignorováno a je vyvolána výjimka, pokud je `ReceiveErrorHandling` nastavena na hodnotu přesunout.  
   
 ## <a name="windows-vista-windows-server-2003-and-windows-xp-differences"></a>Rozdíly v systémech Windows Vista, Windows Server 2003 a Windows XP  
- Jak bylo uvedeno dříve, ne všechna nastavení zpracování nezpracovatelných zpráv platí pro [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wxp](../../../../includes/wxp-md.md)]. Následující klíčové rozdíly mezi službou Řízení front zpráv v [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], [!INCLUDE[wxp](../../../../includes/wxp-md.md)]a Windows Vista jsou relevantní pro zpracování nezpracovatelných zpráv:  
+ Jak bylo uvedeno dříve, ne všechna nastavení zpracování nezpracovatelných zpráv platí pro Windows Server 2003 a [!INCLUDE[wxp](../../../../includes/wxp-md.md)]. Následující klíčové rozdíly mezi službou Řízení front zpráv v systému Windows Server 2003, [!INCLUDE[wxp](../../../../includes/wxp-md.md)]a Windows Vista jsou relevantní pro zpracování nezpracovatelných zpráv:  
   
-- Služba Řízení front zpráv v systému Windows Vista podporuje dílčí fronty, zatímco [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wxp](../../../../includes/wxp-md.md)] podfronty nepodporují. Podfronty se používají při zpracování nezpracovatelných zpráv. Fronty opakování a nepoškozená fronta jsou podfronty aplikací, které jsou vytvořeny na základě nastavení zpracování nezpracovatelných zpráv. `MaxRetryCycles` určuje, kolik opakovaných podfront se má vytvořit. Proto při spuštění v [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] nebo [!INCLUDE[wxp](../../../../includes/wxp-md.md)]se `MaxRetryCycles` ignorují a `ReceiveErrorHandling.Move` nejsou povoleny.  
+- Služba Řízení front zpráv v systému Windows Vista podporuje dílčí fronty, přičemž systémy Windows Server 2003 a [!INCLUDE[wxp](../../../../includes/wxp-md.md)] nepodporují dílčí fronty. Podfronty se používají při zpracování nezpracovatelných zpráv. Fronty opakování a nepoškozená fronta jsou podfronty aplikací, které jsou vytvořeny na základě nastavení zpracování nezpracovatelných zpráv. `MaxRetryCycles` určuje, kolik opakovaných podfront se má vytvořit. Proto se při spuštění na Windows serveru 2003 nebo [!INCLUDE[wxp](../../../../includes/wxp-md.md)]`MaxRetryCycles` ignorují a `ReceiveErrorHandling.Move` se nepovoluje.  
   
-- Služba Řízení front zpráv v systému Windows Vista podporuje negativní potvrzení, ale [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wxp](../../../../includes/wxp-md.md)] ne. Negativní potvrzení od přijímacího správce fronty způsobí, že odesílajícímu správci fronty umístí odmítnutou zprávu do fronty nedoručených zpráv. V takovém případě není `ReceiveErrorHandling.Reject` u [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wxp](../../../../includes/wxp-md.md)]povolen.  
+- Služba Řízení front zpráv v systému Windows Vista podporuje negativní potvrzení, ale systémy Windows Server 2003 a [!INCLUDE[wxp](../../../../includes/wxp-md.md)] ne. Negativní potvrzení od přijímacího správce fronty způsobí, že odesílajícímu správci fronty umístí odmítnutou zprávu do fronty nedoručených zpráv. V takovém případě se `ReceiveErrorHandling.Reject` nepovoluje s Windows serverem 2003 a [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
   
-- Služba Řízení front zpráv v systému Windows Vista podporuje vlastnost zprávy, která udržuje počet pokusů o doručení zprávy. Tato vlastnost počet přerušení není pro [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] a [!INCLUDE[wxp](../../../../includes/wxp-md.md)]k dispozici. Služba WCF udržuje počet přerušení v paměti, takže je možné, že tato vlastnost nesmí obsahovat přesnou hodnotu, pokud je stejná zpráva čtena více než jednou službou WCF ve farmě.  
+- Služba Řízení front zpráv v systému Windows Vista podporuje vlastnost zprávy, která udržuje počet pokusů o doručení zprávy. Tato vlastnost počet přerušení není k dispozici v systému Windows Server 2003 a [!INCLUDE[wxp](../../../../includes/wxp-md.md)]. Služba WCF udržuje počet přerušení v paměti, takže je možné, že tato vlastnost nesmí obsahovat přesnou hodnotu, pokud je stejná zpráva čtena více než jednou službou WCF ve farmě.  
   
 ## <a name="see-also"></a>Viz také:
 

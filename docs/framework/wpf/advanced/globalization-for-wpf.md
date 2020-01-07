@@ -7,12 +7,12 @@ helpviewer_keywords:
 - international user interface [WPF], XAML
 - globalization [WPF]
 ms.assetid: 4571ccfe-8a60-4f06-9b37-7ac0b1c2d10f
-ms.openlocfilehash: 1d6430ba5969d8a05db47baf9521d2409e596c23
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 769afe4d301a7b0fafd26018255f98b6faa29887
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740869"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559432"
 ---
 # <a name="globalization-for-wpf"></a>Globalizace pro WPF
 V tomto tématu se seznámíte s problémy, které byste měli znát při psaní [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací pro globální trh. Programovací prvky globalizace jsou definovány v rozhraní .NET v oboru názvů <xref:System.Globalization>.
@@ -45,7 +45,7 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
 
 <a name="lang_attrib"></a>
 ### <a name="language-attribute"></a>Atribut Language
- [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] používá [XML: lang](../../xaml-services/xml-lang-handling-in-xaml.md) pro reprezentaci atributu Language elementu.  Chcete-li využít výhod <xref:System.Globalization.CultureInfo> třídy, musí být hodnotou atributu Language hodnota jeden z názvů jazykové verze předdefinované <xref:System.Globalization.CultureInfo>. [XML: lang](../../xaml-services/xml-lang-handling-in-xaml.md) je dědičná ve stromové struktuře elementů (podle pravidel XML, ne nutně z důvodu dědičnosti vlastností závislosti) a její výchozí hodnota je prázdný řetězec, pokud není explicitně přiřazen.
+ [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] používá [XML: lang](../../../desktop-wpf/xaml-services/xml-language-handling.md) pro reprezentaci atributu Language elementu.  Chcete-li využít výhod <xref:System.Globalization.CultureInfo> třídy, musí být hodnotou atributu Language hodnota jeden z názvů jazykové verze předdefinované <xref:System.Globalization.CultureInfo>. [XML: lang](../../../desktop-wpf/xaml-services/xml-language-handling.md) je dědičná ve stromové struktuře elementů (podle pravidel XML, ne nutně z důvodu dědičnosti vlastností závislosti) a její výchozí hodnota je prázdný řetězec, pokud není explicitně přiřazen.
 
  Atribut Language je velmi užitečný pro určení dialektů. Francouzština má například jinou kontrolu pravopisu, slovníku a výslovnost ve Francii, v Quebec, Belgii a Švýcarsku. Také čínské, japonské a korejské body kódu pro sdílení v kódování Unicode, ale grafické tvary se liší a používají zcela jiná písma.
 
@@ -71,7 +71,7 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
 
 - Arabština
 
-- Bengálština
+- bengálština
 
 - Koncový
 
@@ -81,7 +81,7 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
 
 - Gudžarátština
 
-- Západní
+- Gurmukhi
 
 - Hebrejština
 
@@ -89,15 +89,15 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
 
 - Kannadština
 
-- Laoský
+- Lao
 
 - Znak
 
-- Malajalámština
+- Malajálamština
 
 - Mongolština
 
-- Udijština
+- Odia
 
 - Slabika
 
@@ -119,9 +119,9 @@ Následující příklad ukazuje odkaz hexadecimálního znaku. Všimněte si, �
 
 - Korejština – staré hangul
 
-- Le
+- Myanmar
 
-- Sinhálské
+- Sinhala
 
  Všechny systémové moduly pro psaní podporují písma OpenType. Písma OpenType můžou zahrnovat tabulky rozložení OpenType, které umožňují tvůrcům písem navrhovat lepší mezinárodní a špičková typografická písma. Tabulky rozložení písma OpenType obsahují informace o substitucích glyfů, umístění glyfů, zdůvodnění a umístění standardních hodnot a umožňují aplikacím pro zpracování textu zlepšit rozložení textu.
 

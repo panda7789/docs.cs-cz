@@ -1,16 +1,16 @@
 ---
-title: Přehled zabezpečení – WCF
+title: Přehled zabezpečení
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Communication Foundation, security
 - WCF, security
 ms.assetid: f478c80d-792d-4e7a-96bd-a2ff0b6f65f9
-ms.openlocfilehash: ae03684449e902c0d05744a19671169f2e0b8be2
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 58057709e2d5c5e34d0aa37158ea9b033840f840
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69949346"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344707"
 ---
 # <a name="windows-communication-foundation-security-overview"></a>Přehled zabezpečení Windows Communication Foundation
 Windows Communication Foundation (WCF) je distribuovaná programovací platforma založená na zprávách SOAP a zabezpečení zpráv mezi klienty a službami je nezbytné pro ochranu dat. WCF poskytuje všestrannou a interoperabilní platformu pro výměnu zabezpečených zpráv na základě stávající bezpečnostní infrastruktury a uznávaných standardů zabezpečení pro zprávy SOAP.  
@@ -27,7 +27,7 @@ Windows Communication Foundation (WCF) je distribuovaná programovací platforma
   
 - Sledování síťového provozu pro získání citlivých informací. Například v případě online bankovnictví klient požaduje přenos finančních prostředků z jednoho účtu na jiný. Uživatel se zlými úmysly zachycuje zprávu a má číslo účtu a heslo, později provede přenos prostředků z ohroženého účtu.  
   
-- Neautorizovaných entit fungujících jako služby bez vědomí klienta. V tomto scénáři uživatel se zlými úmysly funguje jako online služba a zachycuje zprávy od klienta za účelem získání citlivých informací. Pak neautorizovaným pomocí odcizených dat přenáší prostředky z ohroženého účtu. Tento útok je známý taky útokem na *útok phishing*.  
+- Neautorizovaných entit fungujících jako služby bez vědomí klienta. V tomto scénáři uživatel se zlými úmysly funguje jako online služba a zachycuje zprávy od klienta za účelem získání citlivých informací. Pak neautorizovaným pomocí odcizených dat přenáší prostředky z ohroženého účtu. Tento útok je známý taky *útokem na útok phishing*.  
   
 - Změna zpráv, aby se získal jiný výsledek než volající zamýšlený. Například změna čísla účtu, na který je vklad vytvořen, umožňuje prostředkům přejít na neautorizovaný účet.  
   
@@ -68,9 +68,9 @@ Windows Communication Foundation (WCF) je distribuovaná programovací platforma
 ### <a name="standards-and-interoperability"></a>Standardy a interoperabilita  
  V celém světě s velkými existujícími nasazeními je homogenita zřídka. Distribuované výpočetní a komunikační platformy musí spolupracovat s nabídkou různých výrobců. Stejně tak musí být zabezpečení také vzájemně ovladatelné.  
   
- Aby bylo možné zapnout interoperabilní systémy zabezpečení, společnosti, které jsou aktivní v oboru webových služeb, jsou vytvořeny řadou standardů. Konkrétně k zabezpečení bylo navrženo několik významných standardů: WS-Security: Zabezpečení zpráv SOAP (přijatý tělem standardů OASIS a dříve označované jako WS-Security), WS-Trust, WS-SecureConversation a WS-SecurityPolicy.  
+ Aby bylo možné zapnout interoperabilní systémy zabezpečení, společnosti, které jsou aktivní v oboru webových služeb, jsou vytvořeny řadou standardů. Konkrétně o zabezpečení bylo navrženo několik významných standardů: WS-Security: SOAP Message Security (přijatý OASIS standardy Standards a dříve označované jako WS-Security), WS-Trust, WS-SecureConversation a WS-SecurityPolicy.  
   
- WCF podporuje širokou škálu scénářů interoperability. Třída je zaměřená na základní profil zabezpečení (BSP) <xref:System.ServiceModel.WSHttpBinding> a třída je zaměřená na nejnovější standardy zabezpečení, jako je WS-Security 1,1 a WS-SecureConversation. <xref:System.ServiceModel.BasicHttpBinding> Díky dodržování těchto standardů může zabezpečení WCF spolupracovat a integrovat s webovými službami hostovanými v operačních systémech a platformách jiných než Microsoft Windows.  
+ WCF podporuje širokou škálu scénářů interoperability. <xref:System.ServiceModel.BasicHttpBinding> třídy cílí na základní profil zabezpečení (BSP) a <xref:System.ServiceModel.WSHttpBinding>á Třída cílí na nejnovější standardy zabezpečení, jako je WS-Security 1,1 a WS-SecureConversation. Díky dodržování těchto standardů může zabezpečení WCF spolupracovat a integrovat s webovými službami hostovanými v operačních systémech a platformách jiných než Microsoft Windows.  
   
 ## <a name="wcf-security-functional-areas"></a>Oblasti funkčnosti zabezpečení WCF  
  Zabezpečení WCF je rozdělené do tří funkčních oblastí: přenos zabezpečení, řízení přístupu a auditování. Následující části stručně popisují tyto oblasti a poskytují odkazy na Další informace.  
@@ -87,15 +87,15 @@ Windows Communication Foundation (WCF) je distribuovaná programovací platforma
   
  Další informace o těchto rozdílech najdete v tématu [zabezpečení služeb a klientů](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md).  
   
- Třetí režim zabezpečení používá předchozí režimy a přináší výhody obou. Tento režim je volán `TransportWithMessageCredential`. V tomto režimu se k ověřování serveru používá zabezpečení zprávy a zabezpečení přenosu se používá k ověření serveru a zajištění důvěrnosti a integrity zpráv. Díky tomu `TransportWithMessageCredential` je režim zabezpečení skoro stejně rychlý jako režim zabezpečení přenosu a poskytuje rozšiřitelné ověřování klientů stejným způsobem jako zabezpečení zpráv. Na rozdíl od režimu zabezpečení zpráv ale neposkytuje kompletní zabezpečení.  
+ Třetí režim zabezpečení používá předchozí režimy a přináší výhody obou. Tento režim se nazývá `TransportWithMessageCredential`. V tomto režimu se k ověřování serveru používá zabezpečení zprávy a zabezpečení přenosu se používá k ověření serveru a zajištění důvěrnosti a integrity zpráv. Díky tomu je režim zabezpečení `TransportWithMessageCredential` skoro stejně rychlý jako režim zabezpečení přenosu a poskytuje rozšiřitelné ověřování klientů stejným způsobem jako zabezpečení zpráv. Na rozdíl od režimu zabezpečení zpráv ale neposkytuje kompletní zabezpečení.  
   
-### <a name="access-control"></a>Řízení přístupu  
+### <a name="access-control"></a>Access Control  
  *Řízení přístupu* se také označuje jako autorizace. *Autorizace* umožňuje různým uživatelům mít různá oprávnění k zobrazení dat. Například protože soubory lidských zdrojů společnosti obsahují citlivá data zaměstnanců, smějí zobrazovat data zaměstnanců pouze manažeři. Kromě toho mohou manažeři zobrazit pouze data pro své přímé sestavy. V tomto případě je řízení přístupu založeno jak na roli ("správce"), tak i na konkrétní identitě správce (aby se zabránilo jednomu manažerovi v prohlížení záznamů zaměstnanců jiného manažera).  
   
- Ve službě WCF jsou funkce řízení přístupu poskytovány prostřednictvím integrace s modulem CLR (Common Language Runtime <xref:System.Security.Permissions.PrincipalPermissionAttribute> ) a sadou rozhraní API, která se označují jako *model identity*. Podrobnosti o řízení přístupu a autorizaci na základě deklarací najdete v tématu [rozšíření zabezpečení](../../../../docs/framework/wcf/extending/extending-security.md).  
+ Ve službě WCF jsou funkce řízení přístupu poskytovány prostřednictvím integrace s modulem CLR (Common Language Runtime) <xref:System.Security.Permissions.PrincipalPermissionAttribute> a prostřednictvím sady rozhraní API, které se označují jako *model identity*. Podrobnosti o řízení přístupu a autorizaci na základě deklarací najdete v tématu [rozšíření zabezpečení](../../../../docs/framework/wcf/extending/extending-security.md).  
   
 ### <a name="auditing"></a>Auditování  
- *Auditování* je protokolování událostí zabezpečení do protokolu událostí systému Windows. Můžete protokolovat události související se zabezpečením, jako jsou například selhání ověřování (nebo úspěšné). Další informace najdete v tématu [auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md). Podrobnosti o programování naleznete v [tématu How to: Auditovat události](../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md)zabezpečení.  
+ *Auditování* je protokolování událostí zabezpečení do protokolu událostí systému Windows. Můžete protokolovat události související se zabezpečením, jako jsou například selhání ověřování (nebo úspěšné). Další informace najdete v tématu [auditování](../../../../docs/framework/wcf/feature-details/auditing-security-events.md). Podrobnosti o programování najdete v tématu [Postupy: Auditovat události zabezpečení](../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md).  
   
 ## <a name="see-also"></a>Viz také:
 

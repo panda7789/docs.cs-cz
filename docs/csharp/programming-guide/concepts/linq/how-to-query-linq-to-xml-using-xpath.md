@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: Dotazování na LINQ to XML pomocí jazyka XPath (C#)'
+title: Postup dotazování LINQ to XML pomocí XPath (C#)
 ms.date: 07/20/2015
 ms.assetid: ee5af263-4ab1-45e5-b792-33a3221b426d
-ms.openlocfilehash: 639d9ba8af9ae663bc245028cf4bf57f318d397d
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 61878febd9b4880872b7bc58e4de04b37cff96f8
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66485177"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344808"
 ---
-# <a name="how-to-query-linq-to-xml-using-xpath-c"></a>Postupy: Dotazování na LINQ to XML pomocí jazyka XPath (C#)
-Toto téma představuje rozšiřující metody, které vám umožní dotazovat stromu XML pomocí XPath. Podrobné informace o použití těchto metod rozšíření najdete v tématu <xref:System.Xml.XPath.Extensions?displayProperty=nameWithType>.  
+# <a name="how-to-query-linq-to-xml-using-xpath-c"></a>Postup dotazování LINQ to XML pomocí XPath (C#)
+Toto téma představuje rozšiřující metody, které umožňují dotazování stromu XML pomocí XPath. Podrobné informace o použití těchto rozšiřujících metod naleznete v tématu <xref:System.Xml.XPath.Extensions?displayProperty=nameWithType>.  
   
- Pokud nemáte velmi konkrétní důvod pro dotazování pomocí XPath, jako je například příliš často používá starší verzi kódu s LINQ to XML pomocí jazyka XPath se nedoporučuje. Nebude provádět dotazy XPath a jednak [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy.  
+ Pokud nemáte konkrétní důvod pro dotazování pomocí XPath, jako je například rozsáhlé použití starší verze kódu, použití XPath s LINQ to XML se nedoporučuje. Dotazy XPath nebudou provedeny ani [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazy.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří malý stromu XML a používá <xref:System.Xml.XPath.Extensions.XPathSelectElements%2A> vybrat sadu elementů.  
+ Následující příklad vytvoří malý strom XML a používá <xref:System.Xml.XPath.Extensions.XPathSelectElements%2A> pro výběr sady prvků.  
   
 ```csharp  
 XElement root = new XElement("Root",  

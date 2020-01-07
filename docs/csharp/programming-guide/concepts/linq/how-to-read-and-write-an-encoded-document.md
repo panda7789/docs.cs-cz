@@ -1,22 +1,22 @@
 ---
-title: 'Postupy: Čtení a zápis kódovaného dokumentu (C#)'
+title: Čtení a zápis kódovaného dokumentu (C#)
 ms.date: 07/20/2015
 ms.assetid: 84f64e71-39a6-42c6-ad68-f052bb158a03
-ms.openlocfilehash: a611fe064401c0da80d76ef8c64cd58d9b0fb5d6
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: fa28c26845a0c6019943e0532ea0692a6dffd5a9
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253476"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347666"
 ---
-# <a name="how-to-read-and-write-an-encoded-document-c"></a>Postupy: Čtení a zápis kódovaného dokumentu (C#)
+# <a name="how-to-read-and-write-an-encoded-document-c"></a>Čtení a zápis kódovaného dokumentu (C#)
 Chcete-li vytvořit kódovaný dokument XML, přidejte <xref:System.Xml.Linq.XDeclaration> do stromu XML a nastavte kódování na požadovaný název kódové stránky.  
   
- Libovolná hodnota vrácená <xref:System.Text.Encoding.WebName%2A> hodnotou je platná hodnota.  
+ Jakákoli hodnota vrácená <xref:System.Text.Encoding.WebName%2A> je platná hodnota.  
   
- Při čtení kódovaného dokumentu <xref:System.Xml.Linq.XDeclaration.Encoding%2A> bude vlastnost nastavena na název kódové stránky.  
+ Při čtení kódovaného dokumentu bude vlastnost <xref:System.Xml.Linq.XDeclaration.Encoding%2A> nastavena na název kódové stránky.  
   
- Nastavíte <xref:System.Xml.Linq.XDeclaration.Encoding%2A> -li na platný název kódové stránky, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] bude serializace se zadaným kódováním.  
+ Nastavíte-li <xref:System.Xml.Linq.XDeclaration.Encoding%2A> na platný název kódové stránky, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] bude serializován se zadaným kódováním.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad vytvoří dva dokumenty, jednu s kódováním UTF-8 a jednu s kódováním UTF-16. Poté načte dokumenty a vytiskne kódování do konzoly.  

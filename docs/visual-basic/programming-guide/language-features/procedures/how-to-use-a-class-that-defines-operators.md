@@ -11,12 +11,12 @@ helpviewer_keywords:
 - return values [Visual Basic], Operator procedures
 - operator overloading
 ms.assetid: 7ccce94a-6ca0-47d1-9f3f-13385d34f5d5
-ms.openlocfilehash: 9ec4b4c07910100dd02cc86e882b44aa7dbd2ced
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 455c839702b90738ec5aea37c1b09d72eba42ff4
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346041"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347882"
 ---
 # <a name="how-to-use-a-class-that-defines-operators-visual-basic"></a>Postupy: Použití třídy, která definuje operátory (Visual Basic).
 Pokud používáte třídu nebo strukturu, která definuje své vlastní operátory, můžete k těmto operátorům přistupovat z Visual Basic.  
@@ -32,7 +32,7 @@ Pokud používáte třídu nebo strukturu, která definuje své vlastní operát
   
  Struktura <xref:System.Data.SqlTypes.SqlString> definuje operátor převodu ([CType funkce](../../../../visual-basic/language-reference/functions/ctype-function.md)) z `String` na <xref:System.Data.SqlTypes.SqlString> a další od <xref:System.Data.SqlTypes.SqlString> až po `String`. Příkaz, který přiřazuje `title` pro `jobTitle` používá první operátor a volání funkce <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> používá sekundu.  
   
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
+## <a name="compile-the-code"></a>Kompilace kódu  
  Ujistěte se, že třída nebo struktura, kterou používáte, definuje operátor, který chcete použít. Nepředpokládají, že třída nebo struktura definovala každý operátor, který je k dispozici pro přetížení. Seznam dostupných operátorů naleznete v tématu [příkaz operator](../../../../visual-basic/language-reference/statements/operator-statement.md).  
   
  Zahrňte příslušný příkaz `Imports` pro řetězec SQL na začátku zdrojového souboru (v tomto případě <xref:System.Data.SqlTypes>).  

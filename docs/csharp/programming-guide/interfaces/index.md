@@ -6,12 +6,12 @@ helpviewer_keywords:
 - interfaces [C#]
 - C# language, interfaces
 ms.assetid: 2feda177-ce11-432d-81b4-d50f5f35fd37
-ms.openlocfilehash: 77326b37baebc3ade12336b1b3735ed1da497afc
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.openlocfilehash: d03917353a9e6879ccb3b368d7d190aeeacb702c
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120160"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635233"
 ---
 # <a name="interfaces-c-programming-guide"></a>Rozhraní (Průvodce programováním v C#)
 
@@ -62,17 +62,17 @@ Rozhraní má následující vlastnosti:
 [Implementace explicitního rozhraní](explicit-interface-implementation.md)  
  Vysvětluje, jak vytvořit člena třídy, který je specifický pro rozhraní.  
   
- [Postupy: Explicitní implementace členů rozhraní](how-to-explicitly-implement-interface-members.md)  
+ [Postup explicitní implementace členů rozhraní](how-to-explicitly-implement-interface-members.md)  
  Poskytuje příklad explicitní implementace členů rozhraní.  
   
- [Postupy: Explicitní implementace členů dvou rozhraní](how-to-explicitly-implement-members-of-two-interfaces.md)  
+ [Postup explicitní implementace členů dvou rozhraní](how-to-explicitly-implement-members-of-two-interfaces.md)  
  Poskytuje příklad, jak explicitně implementovat členy rozhraní s děděním.  
   
 ## <a name="BKMK_RelatedSections"></a>Související oddíly
 
 - [Vlastnosti rozhraní](../classes-and-structs/interface-properties.md)  
 - [Indexery v rozhraní](../indexers/indexers-in-interfaces.md)  
-- [Postupy: implementace událostí rozhraní](../events/how-to-implement-interface-events.md)  
+- [Postup implementace událostí rozhraní](../events/how-to-implement-interface-events.md)
 - [Třídy a struktury](../classes-and-structs/index.md)  
 - [Dědičnost](../classes-and-structs/inheritance.md)  
 - [Metody](../classes-and-structs/methods.md)  
