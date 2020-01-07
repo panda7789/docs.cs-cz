@@ -5,18 +5,18 @@ helpviewer_keywords:
 - Visual Basic [WPF], event handlers
 - event handlers [WPF], Visual Basic
 ms.assetid: ad4eb9aa-3afc-4a71-8cf6-add3fbea54a1
-ms.openlocfilehash: 9a3d579019db4d2b59a0252dbe63b4a6a0468849
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 5625b63f2a2162f8f188476bfd61bde4c717f1dd
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458297"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559856"
 ---
 # <a name="visual-basic-and-wpf-event-handling"></a>Zpracování událostí v jazyku Visual Basic a WPF
 Pro jazyk Microsoft Visual Basic .NET konkrétně můžete použít klíčové slovo `Handles` pro konkrétní jazyk k přidružení obslužných rutin událostí k instancím namísto připojení obslužných rutin událostí k atributům nebo použití metody <xref:System.Windows.UIElement.AddHandler%2A>. Nicméně metoda `Handles` pro připojování obslužných rutin k instancím má určitá omezení, protože syntaxe `Handles` nepodporuje některé ze specifických funkcí směrovaných událostí systému [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
 ## <a name="using-handles-in-a-wpf-application"></a>Použití "Handles" v aplikaci WPF  
- Obslužné rutiny událostí, které jsou připojeny k instancím a událostem `Handles` musí být definovány v rámci částečné deklarace třídy instance, což je také požadavek obslužných rutin události, které jsou přiřazeny prostřednictvím hodnot atributů u elementů. `Handles` lze zadat pouze pro element na stránce, která má hodnotu vlastnosti <xref:System.Windows.FrameworkContentElement.Name%2A> (nebo je deklarována [direktiva x:Name](../../xaml-services/x-name-directive.md) ). Důvodem je, že <xref:System.Windows.FrameworkContentElement.Name%2A> v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] vytvoří odkaz na instanci, který je nezbytný k podpoře *instance.* formát odkazu na událost vyžadovaný syntaxí `Handles`. Jediným prvkem, který lze použít pro `Handles` bez odkazu <xref:System.Windows.FrameworkContentElement.Name%2A> je instance kořenového prvku, která definuje částečnou třídu.  
+ Obslužné rutiny událostí, které jsou připojeny k instancím a událostem `Handles` musí být definovány v rámci částečné deklarace třídy instance, což je také požadavek obslužných rutin události, které jsou přiřazeny prostřednictvím hodnot atributů u elementů. `Handles` lze zadat pouze pro element na stránce, která má hodnotu vlastnosti <xref:System.Windows.FrameworkContentElement.Name%2A> (nebo je deklarována [direktiva x:Name](../../../desktop-wpf/xaml-services/xname-directive.md) ). Důvodem je, že <xref:System.Windows.FrameworkContentElement.Name%2A> v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] vytvoří odkaz na instanci, který je nezbytný k podpoře *instance.* formát odkazu na událost vyžadovaný syntaxí `Handles`. Jediným prvkem, který lze použít pro `Handles` bez odkazu <xref:System.Windows.FrameworkContentElement.Name%2A> je instance kořenového prvku, která definuje částečnou třídu.  
   
  Můžete přiřadit stejnou obslužnou rutinu více prvků oddělením *instance.* odkazy na události po `Handles` čárkami.  
   
@@ -37,7 +37,7 @@ Pro jazyk Microsoft Visual Basic .NET konkrétně můžete použít klíčové s
 > Nepoužívejte syntaxi `Handles` v kódu Visual Basic při určení obslužné rutiny události pro stejnou událost v jazyce XAML. V tomto případě je obslužná rutina události volána dvakrát.  
   
 ## <a name="how-wpf-implements-handles-functionality"></a>Jak WPF implementuje funkce Handles  
- Když je [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] stránka kompilována, zprostředkující soubor deklaruje `Friend` `WithEvents` odkazy na všechny prvky na stránce, které mají <xref:System.Windows.FrameworkContentElement.Name%2A> sadu vlastností (nebo deklarované [direktivy x:Name](../../xaml-services/x-name-directive.md) ). Každá pojmenovaná instance je potenciálně prvkem, který lze přiřadit k obslužné rutině prostřednictvím `Handles`.  
+ Když je [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] stránka kompilována, zprostředkující soubor deklaruje `Friend` `WithEvents` odkazy na všechny prvky na stránce, které mají <xref:System.Windows.FrameworkContentElement.Name%2A> sadu vlastností (nebo deklarované [direktivy x:Name](../../../desktop-wpf/xaml-services/xname-directive.md) ). Každá pojmenovaná instance je potenciálně prvkem, který lze přiřadit k obslužné rutině prostřednictvím `Handles`.  
   
 > [!NOTE]
 > V rámci sady Visual Studio může IntelliSense zobrazit dokončení, pro které prvky jsou k dispozici pro `Handles` odkaz na stránku. To však může trvat jeden průchod kompilace, aby zprostředkující soubor mohl naplnit všechny `Friends` odkazy.  

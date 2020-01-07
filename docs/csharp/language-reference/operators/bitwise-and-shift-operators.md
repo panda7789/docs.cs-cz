@@ -29,12 +29,12 @@ helpviewer_keywords:
 - ^ operator [C#]
 - bitwise logical OR operator [C#]
 - '| operator [C#]'
-ms.openlocfilehash: 27f7cf46bd3e344503f74527df34506d38ad4545
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: f14b92aba270eab845ca50e5407da3502b5c4087
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428445"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345345"
 ---
 # <a name="bitwise-and-shift-operators-c-reference"></a>Operátory bitových a posunutí (C# referenční)
 
@@ -172,9 +172,9 @@ Následující příklad ukazuje toto chování:
 
 ## <a name="enumeration-logical-operators"></a>Logické operátory výčtu
 
-Operátory `~`, `&`, `|`a `^` jsou podporovány také jakýmkoli [výčtovým](../keywords/enum.md) typem. Pro operandy se stejným výčtovým typem je logická operace provedena na odpovídajících hodnotách základního integrálního typu. Například pro jakékoli `x` a `y` typu výčtu `T` s podkladovým typem `U`výraz `x & y` vytvoří stejný výsledek jako výraz `(T)((U)x & (U)y)`.
+Operátory `~`, `&`, `|`a `^` jsou podporovány také jakýmkoli [výčtovým](../builtin-types/enum.md) typem. Pro operandy se stejným výčtovým typem je logická operace provedena na odpovídajících hodnotách základního integrálního typu. Například pro jakékoli `x` a `y` typu výčtu `T` s podkladovým typem `U`výraz `x & y` vytvoří stejný výsledek jako výraz `(T)((U)x & (U)y)`.
 
-Obvykle používáte bitové logické operátory s výčtovým typem, který je definován pomocí atributu [Flags](xref:System.FlagsAttribute) . Další informace naleznete v části [výčtové typy jako bitové příznaky](../../programming-guide/enumeration-types.md#enumeration-types-as-bit-flags) v článku [výčtové typy](../../programming-guide/enumeration-types.md) .
+Obvykle používáte bitové logické operátory s výčtovým typem, který je definován pomocí atributu [Flags](xref:System.FlagsAttribute) . Další informace naleznete v části [výčtové typy jako bitové příznaky](../builtin-types/enum.md#enumeration-types-as-bit-flags) v článku [výčtové typy](../builtin-types/enum.md) .
 
 ## <a name="operator-overloadability"></a>Přetížení operátoru
 

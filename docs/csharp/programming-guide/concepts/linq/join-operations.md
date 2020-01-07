@@ -2,12 +2,12 @@
 title: Operace join (C#)
 ms.date: 07/20/2015
 ms.assetid: 5105e0da-1267-4c00-837a-f0e9602279b8
-ms.openlocfilehash: 456894dd07f512d7e694ad0056b1e861dc3012c5
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 86d85c7de16887fbe3001dc548d940d9c114e634
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423382"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635597"
 ---
 # <a name="join-operations-c"></a>Operace join (C#)
 *Spojení* dvou zdrojů dat je přidružení objektů v jednom zdroji dat s objekty, které sdílejí společný atribut v jiném zdroji dat.  
@@ -34,11 +34,11 @@ ms.locfileid: "73423382"
 - [Anonymní typy](../../classes-and-structs/anonymous-types.md)
 - [Formulování spojení a dotazů napříč produkty](../../../../framework/data/adonet/sql/linq/formulate-joins-and-cross-product-queries.md)
 - [join – klauzule](../../../language-reference/keywords/join-clause.md)
-- [Postupy: spojení pomocí složených klíčů](../../../linq/join-by-using-composite-keys.md)
-- [Postupy: spojení obsahu z nepodobných souborů (LINQ) (C#)](./how-to-join-content-from-dissimilar-files-linq.md)
-- [Postupy: řazení výsledků klauzule JOIN](../../../linq/order-the-results-of-a-join-clause.md)
-- [Postupy: provádění vlastních operací spojení](../../../linq/perform-custom-join-operations.md)
-- [Postupy: provádění seskupených spojení](../../../linq/perform-grouped-joins.md)
-- [Postupy: provádění vnitřních spojení](../../../linq/perform-inner-joins.md)
-- [Postupy: provedení levých vnějších spojení](../../../linq/perform-left-outer-joins.md)
-- [Postupy: naplnění kolekcí objektů z více zdrojů (LINQ)C#()](./how-to-populate-object-collections-from-multiple-sources-linq.md)
+- [Spojení pomocí složených klíčů](../../../linq/join-by-using-composite-keys.md)
+- [Postup připojení obsahu z nepodobných souborů (LINQ) (C#)](./how-to-join-content-from-dissimilar-files-linq.md)
+- [Řazení výsledků klauzule join](../../../linq/order-the-results-of-a-join-clause.md)
+- [Provádění vlastních operací spojování](../../../linq/perform-custom-join-operations.md)
+- [Provádění seskupených spojení](../../../linq/perform-grouped-joins.md)
+- [Provádění vnitřních spojení](../../../linq/perform-inner-joins.md)
+- [Provedení levých vnějších spojení](../../../linq/perform-left-outer-joins.md)
+- [Jak naplnit kolekce objektů z více zdrojů (LINQ) (C#)](./how-to-populate-object-collections-from-multiple-sources-linq.md)

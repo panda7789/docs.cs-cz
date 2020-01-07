@@ -11,29 +11,29 @@ helpviewer_keywords:
 - inferring type information [LINQ in Visual Basic]
 - relationships [LINQ in Visual Basic]
 ms.assetid: b5ff4da5-f3fd-4a8e-aaac-1cbf52fa16f6
-ms.openlocfilehash: 8c201abef924766d52b1adb084970a24ebea2b50
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: e839271ac254a5e96f8c99f59397016fb99540aa
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350569"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636910"
 ---
 # <a name="type-relationships-in-query-operations-visual-basic"></a>Vztahy typů v operacích dotazu (Visual Basic)
 
-Proměnné používané v [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] operacích dotazů jsou silného typu a musí být vzájemně kompatibilní. Silné zadání se používá ve zdroji dat, v samotném dotazu a v provádění dotazu. Následující ilustrace identifikuje výrazy používané k popisu [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]ho dotazu. Další informace o částech dotazu najdete v tématu [základní operace dotazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md).
+Proměnné používané v operacích dotazu LINQ (Language-Integrated Query) jsou silného typu a musí být vzájemně kompatibilní. Silné zadání se používá ve zdroji dat, v samotném dotazu a v provádění dotazu. Následující ilustrace identifikuje výrazy používané k popisu dotazu LINQ. Další informace o částech dotazu najdete v tématu [základní operace dotazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md).
 
 ![Snímek obrazovky znázorňující dotaz pseudokódu s zvýrazněnými prvky](./media/type-relationships-in-query-operations/linq-query-description-terms.png)
 
 Typ proměnné rozsahu v dotazu musí být kompatibilní s typem prvků ve zdroji dat. Typ proměnné dotazu musí být kompatibilní s elementem Sequence definovaným v klauzuli `Select`. Nakonec musí být typ elementů sekvence také kompatibilní s typem řídicí proměnné smyčky, která je použita v příkazu `For Each`, který spouští dotaz. Toto silné zadání usnadňuje identifikaci chyb typu v době kompilace.
 
-Visual Basic usnadňuje silné psaní implementací místního typu, označovaného také jako *implicitní psaní*. Tato funkce se používá v předchozím příkladu a zobrazí se v ní [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] ukázky a dokumentace. V Visual Basic je odvození místního typu provedeno jednoduše pomocí příkazu `Dim` bez klauzule `As`. V následujícím příkladu je `city` silně typované jako řetězec.
+Visual Basic usnadňuje silné psaní implementací místního typu, označovaného také jako *implicitní psaní*. Tato funkce se používá v předchozím příkladu a zobrazí se v ní v ukázkách a dokumentaci pro LINQ. V Visual Basic je odvození místního typu provedeno jednoduše pomocí příkazu `Dim` bez klauzule `As`. V následujícím příkladu je `city` silně typované jako řetězec.
 
 [!code-vb[VbLINQTypeRels#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQTypeRels/VB/Class1.vb#1)]
 
 > [!NOTE]
 > Odvození místního typu funguje pouze v případě, že je `Option Infer` nastaveno na `On`. Další informace naleznete v tématu [příkaz Option include](../../../../visual-basic/language-reference/statements/option-infer-statement.md).
 
-Nicméně i v případě, že použijete místní odvození typu v dotazu, jsou přítomny stejné vztahy typů mezi proměnné ve zdroji dat, proměnnou dotazu a smyčkou provedení dotazu. Při psaní [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazů nebo při práci s ukázkami a příklady kódu v dokumentaci je vhodné mít základní znalosti těchto vztahů s těmito typy.
+Nicméně i v případě, že použijete místní odvození typu v dotazu, jsou přítomny stejné vztahy typů mezi proměnné ve zdroji dat, proměnnou dotazu a smyčkou provedení dotazu. Při psaní dotazů LINQ nebo při práci s ukázkami a příklady kódu v dokumentaci je vhodné mít základní znalosti těchto vztahů typů.
 
 Možná budete muset zadat explicitní typ pro proměnnou rozsahu, která se neshoduje s typem vráceným ze zdroje dat. Typ proměnné rozsahu lze zadat pomocí klauzule `As`. Výsledkem je ale chyba, pokud je převod [zužujícího převodu](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md) a `Option Strict` je nastavené na `On`. Proto doporučujeme, abyste provedli převod na hodnoty načtené ze zdroje dat. Hodnoty z datového zdroje můžete převést na typ proměnné explicitní rozsah pomocí metody <xref:System.Linq.Enumerable.Cast%2A>. Hodnoty vybrané v klauzuli `Select` lze také přetypovat na explicitní typ, který se liší od typu proměnné rozsahu. Tyto body jsou znázorněny v následujícím kódu.
 
@@ -41,7 +41,7 @@ Možná budete muset zadat explicitní typ pro proměnnou rozsahu, která se nes
 
 ## <a name="queries-that-return-entire-elements-of-the-source-data"></a>Dotazy, které vracejí celé prvky zdrojových dat
 
-Následující příklad ukazuje operaci [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu, která vrací sekvenci prvků vybraných ze zdrojových dat. Zdroj, `names`obsahuje pole řetězců a výstup dotazu je sekvence obsahující řetězce, které začínají písmenem M.
+Následující příklad ukazuje operaci dotazu LINQ, která vrací sekvenci prvků vybraných ze zdrojových dat. Zdroj, `names`obsahuje pole řetězců a výstup dotazu je sekvence obsahující řetězce, které začínají písmenem M.
 
 [!code-vb[VbLINQTypeRels#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQTypeRels/VB/Class1.vb#2)]
 

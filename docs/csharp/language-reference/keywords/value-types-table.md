@@ -6,12 +6,12 @@ helpviewer_keywords:
 - value types [C#], table
 - types [C#], value types
 ms.assetid: 67d8f631-b6e3-4d83-9910-5ec497f8c5f3
-ms.openlocfilehash: 2f2d81d90f6d68f1bada40c81f0f28febd51bd1f
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
-ms.translationtype: MT
+ms.openlocfilehash: 5619f163dc3050a37a23d824bd17ee1f67e4bebe
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552352"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345385"
 ---
 # <a name="value-types-table-c-reference"></a>Tabulka typů hodnot (C# Referenční dokumentace)
 
@@ -24,7 +24,7 @@ V následující tabulce jsou uvedeny C# typy hodnot:
 |[char](../builtin-types/char.md)|Unsigned, Numeric, [integrál](../builtin-types/integral-numeric-types.md)|
 |`decimal`|Číselná, [plovoucí desetinná](../builtin-types/floating-point-numeric-types.md) čárka|
 |`double`|Číselná, [plovoucí desetinná](../builtin-types/floating-point-numeric-types.md) čárka|
-|[enum](enum.md)|Výčet|
+|[enum](../builtin-types/enum.md)|Výčet|
 |`float`|Číselná, [plovoucí desetinná](../builtin-types/floating-point-numeric-types.md) čárka|
 |`int`|Signed, Numeric, [integrál](../builtin-types/integral-numeric-types.md)|
 |`long`|Signed, Numeric, [integrál](../builtin-types/integral-numeric-types.md)|

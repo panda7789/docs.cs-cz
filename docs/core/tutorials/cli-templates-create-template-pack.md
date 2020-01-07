@@ -2,19 +2,19 @@
 title: Vytvoření balíčku šablon pro dotnet New
 description: Naučte se vytvořit soubor CSPROJ, který vytvoří balíček šablon pro příkaz dotnet New.
 author: thraka
-ms.date: 06/25/2019
+ms.date: 12/10/2019
 ms.topic: tutorial
 ms.author: adegeo
-ms.openlocfilehash: 520af5022e061236c0cfe80379679d9c7b5896b2
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: a4723d6d63c5739123fad774bc75fae7c9fd6703
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117404"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75340179"
 ---
-# <a name="tutorial-create-a-template-pack"></a>Kurz: Vytvoření sady šablon
+# <a name="tutorial-create-a-template-pack"></a>Kurz: vytvoření balíčku šablon
 
-Pomocí .NET Core můžete vytvářet a nasazovat šablony, které generují projekty, soubory i prostředky. Tento kurz je třetí částí série, která vás seznámí s postupem vytvoření, instalace a odinstalace šablon pro použití s `dotnet new` příkazem.
+Pomocí .NET Core můžete vytvářet a nasazovat šablony, které generují projekty, soubory i prostředky. Tento kurz je třetí částí série, která vás seznámí s postupem vytvoření, instalace a odinstalace, šablon pro použití s příkazem `dotnet new`.
 
 V této části série se naučíte:
 
@@ -29,27 +29,27 @@ V této části série se naučíte:
 
 * Dokončete [část 1](cli-templates-create-item-template.md) a [část 2](cli-templates-create-project-template.md) této série kurzů.
 
-  V tomto kurzu se používají dvě šablony vytvořené v první dvou částech tohoto kurzu. Je možné použít jinou šablonu, pokud zkopírujete šablonu jako složku do složky _working\templates\\_  .
+  V tomto kurzu se používají dvě šablony vytvořené v první dvou částech tohoto kurzu. Můžete použít jinou šablonu, pokud zkopírujete šablonu jako složku do složky _working\templates\\_ .
 
-* Otevřete terminál a přejděte do složky _working\templates\\_  .
+* Otevřete terminál a přejděte do složky _work\\_ .
 
 ## <a name="create-a-template-pack-project"></a>Vytvoření projektu Template Pack
 
 Template Pack je jeden nebo více šablon zabalených do souboru. Při instalaci nebo odinstalaci balíčku se všechny šablony obsažené v balíčku přidají nebo odeberou v uvedeném pořadí. Předchozí části této série kurzů se pracovaly jenom s jednotlivými šablonami. Chcete-li sdílet nesbalenou šablonu, je nutné zkopírovat složku šablony a nainstalovat ji prostřednictvím této složky. Vzhledem k tomu, že balíček šablon může obsahovat více než jednu šablonu a je jedním souborem, sdílení je snazší.
 
-Balíčky šablon jsou reprezentovány souborem balíčku NuGet ( _. nupkg_). A podobně jako jakýkoli balíček NuGet můžete nahrát balíček šablony do informačního kanálu NuGet. `dotnet new -i` Příkaz podporuje instalaci balíčku šablon z informačního kanálu balíčku NuGet. Kromě toho můžete nainstalovat sadu šablon přímo ze souboru _. nupkg_ .
+Balíčky šablon jsou reprezentovány souborem balíčku NuGet ( _. nupkg_). A podobně jako jakýkoli balíček NuGet můžete nahrát balíček šablony do informačního kanálu NuGet. Příkaz `dotnet new -i` podporuje instalaci balíčku šablon z informačního kanálu balíčku NuGet. Kromě toho můžete nainstalovat sadu šablon přímo ze souboru _. nupkg_ .
 
 Obvykle používáte soubor C# projektu ke kompilaci kódu a vytvoření binárního souboru. Projekt však lze použít také k vygenerování balíčku šablon. Změnou nastavení v _. csproj_můžete zabránit tomu, aby se v kompilování kódu a místo toho zahrnuly všechny prostředky vašich šablon jako prostředky. Při sestavení tohoto projektu vytvoří balíček NuGet sady Template Pack.
 
-Balíček, který vytvoříte, bude obsahovat [šablonu položky](cli-templates-create-item-template.md) a [šablonu balíčku](cli-templates-create-project-template.md) , která byla dříve vytvořena. Vzhledem k tomu, že jsme tyto dvě šablony seskupili do složky _working\templates\\_  , můžeme použít _pracovní_ složku pro soubor _. csproj_ .
+Balíček, který vytvoříte, bude obsahovat [šablonu položky](cli-templates-create-item-template.md) a [šablonu balíčku](cli-templates-create-project-template.md) , která byla dříve vytvořena. Vzhledem k tomu, že se tyto dvě šablony seskupují do složky _working\templates\\_ , můžeme použít _pracovní_ složku pro soubor _. csproj_ .
 
-V terminálu přejděte do _pracovní_ složky. Vytvořte nový projekt a nastavte jeho název na `templatepack` výstupní složku na aktuální.
+V terminálu přejděte do _pracovní_ složky. Vytvořte nový projekt a nastavte jeho název na `templatepack` a výstupní složku do aktuální složky.
 
 ```dotnetcli
 dotnet new console -n templatepack -o .
 ```
 
-Parametr nastaví název souboru _. csproj_ na `-o` _templatepack. csproj_ a parametry vytvoří soubory v aktuálním adresáři. `-n` Měl by se zobrazit výsledek podobný následujícímu výstupu.
+Parametr `-n` nastaví soubor _. csproj_ filename na _templatepack. csproj_ a parametry `-o` vytvoří soubory v aktuálním adresáři. Měl by se zobrazit výsledek podobný následujícímu výstupu.
 
 ```console
 C:\working> dotnet new console -n templatepack -o .
@@ -91,13 +91,13 @@ Potom v oblíbeném editoru otevřete soubor _templatepack. csproj_ a nahraďte 
 </Project>
 ```
 
-`<PropertyGroup>` Nastavení v souboru XML výše je rozděleno do tří skupin. První skupina se zabývá vlastnostmi vyžadovanými pro balíček NuGet. Aby bylo `<Package` možné balíček v informačním kanálu NuGet identifikovat, musí se tato tři nastavení udělat s vlastnostmi balíčku NuGet. `<PacakgeId>` Konkrétně se používá k odinstalování sady šablon s jedním názvem, nikoli cestou k adresáři. Dá se použít taky k instalaci balíčku šablon z informačního kanálu NuGet. Zbývající nastavení `<Title>` , jako je třeba `<Tags>` a musí dělat s metadaty zobrazenými v informačním kanálu NuGet. Další informace o nastaveních NuGet naleznete v tématu [vlastnosti NuGet a MSBuild](/nuget/reference/msbuild-targets).
+Nastavení `<PropertyGroup>` v souboru XML výše je rozděleno do tří skupin. První skupina se zabývá vlastnostmi vyžadovanými pro balíček NuGet. Tři `<Package` nastavení musí udělat s vlastnostmi balíčku NuGet k identifikaci balíčku na informačním kanálu NuGet. Konkrétně hodnota `<PacakgeId>` slouží k odinstalování sady šablon s jedním názvem, nikoli cestou k adresáři. Dá se použít taky k instalaci balíčku šablon z informačního kanálu NuGet. Zbývající nastavení, například `<Title>` a `<Tags>` musí dělat s metadaty zobrazenými v informačním kanálu NuGet. Další informace o nastaveních NuGet naleznete v tématu [vlastnosti NuGet a MSBuild](/nuget/reference/msbuild-targets).
 
 Nastavení `<TargetFramework>` musí být nastavené tak, aby nástroj MSBuild běžel správně při spuštění příkazu Pack pro zkompilování a sbalení projektu.
 
 Poslední tři nastavení musí udělat s tím, že správně nakonfigurujete projekt tak, aby zahrnoval šablony do příslušné složky v balíčku NuGet, když se vytvoří.
 
-`<ItemGroup>` Obsahuje dvě nastavení. Nejprve nastavení zahrnuje vše ve složce šablony jako obsah. `<Content>` Také je nastavené pro vyloučení složky _bin_ nebo složky _obj_ , aby se zabránilo zahrnutí zkompilovaného kódu (Pokud jste otestovali a nakompilováni šablony). Za druhé `<Compile>` nastavení vyloučí všechny soubory kódu z kompilace bez ohledu na to, kde se nacházejí. Toto nastavení brání projektu, který se používá k vytvoření sady šablon z pokusu o zkompilování kódu v hierarchii složek _šablon_ .
+`<ItemGroup>` obsahuje dvě nastavení. Nejprve nastavení `<Content>` zahrnuje vše ve složce _šablony_ jako obsah. Také je nastavené pro vyloučení složky _bin_ nebo složky _obj_ , aby se zabránilo zahrnutí zkompilovaného kódu (Pokud jste otestovali a nakompilováni šablony). Druhé nastavení `<Compile>` vyloučí všechny soubory kódu z kompilace bez ohledu na to, kde se nacházejí. Toto nastavení brání projektu, který se používá k vytvoření sady šablon z pokusu o zkompilování kódu v hierarchii složek _šablon_ .
 
 ## <a name="build-and-install"></a>Sestavení a instalace
 
@@ -120,7 +120,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
   Successfully created package 'C:\working\bin\Debug\AdatumCorporation.Utility.Templates.1.0.0.nupkg'.
 ```
 
-Dále nainstalujte soubor Template Pack pomocí `dotnet new -i PATH_TO_NUPKG_FILE` příkazu.
+Dále nainstalujte soubor Template Pack pomocí příkazu `dotnet new -i PATH_TO_NUPKG_FILE`.
 
 ```console
 C:\working> dotnet new -i C:\working\bin\Debug\AdatumCorporation.Utility.Templates.1.0.0.nupkg
@@ -140,11 +140,11 @@ Example templates: async project                  consoleasync          [C#]    
 Class library                                     classlib              [C#], F#, VB      Common/Library
 ```
 
-Pokud jste nahráli balíček NuGet do kanálu NuGet, `dotnet new -i PACKAGEID` můžete použít `PACKAGEID` příkaz, který `<PackageId>` je stejný jako nastavení ze souboru _. csproj_ . ID tohoto balíčku je stejné jako identifikátor balíčku NuGet.
+Pokud jste nahráli balíček NuGet do informačního kanálu NuGet, můžete použít příkaz `dotnet new -i PACKAGEID`, kde `PACKAGEID` je stejný jako nastavení `<PackageId>` ze souboru _. csproj_ . ID tohoto balíčku je stejné jako identifikátor balíčku NuGet.
 
 ## <a name="uninstall-the-template-pack"></a>Odinstalace balíčku šablon
 
-Bez ohledu na to, jakým způsobem jste balíček šablon nainstalovali, buď pomocí souboru _. nupkg_ přímo nebo pomocí kanálu NuGet, je odebrání balíčku šablon stejné. `<PackageId>` Použijte šablonu, kterou chcete odinstalovat. Seznam šablon, které jsou nainstalovány, můžete získat spuštěním `dotnet new -u` příkazu.
+Bez ohledu na to, jakým způsobem jste balíček šablon nainstalovali, buď pomocí souboru _. nupkg_ přímo nebo pomocí kanálu NuGet, je odebrání balíčku šablon stejné. Použijte `<PackageId>` šablony, kterou chcete odinstalovat. Seznam šablon, které jsou nainstalovány, můžete získat spuštěním příkazu `dotnet new -u`.
 
 ```console
 C:\working> dotnet new -u
@@ -176,7 +176,7 @@ Currently installed items:
       Example templates: string extensions (stringext) C#
 ```
 
-Spusťte `dotnet new -u AdatumCorporation.Utility.Templates` pro odinstalaci šablony. `dotnet new` Příkaz zobrazí výstup informací o nápovědě, které by měly vynechat šablony, které jste předtím nainstalovali.
+K odinstalaci šablony spusťte `dotnet new -u AdatumCorporation.Utility.Templates`. Příkaz `dotnet new` zobrazí výstup informací o nápovědě, které by měly vynechat šablony, které jste nainstalovali dříve.
 
 Blahopřejeme! nainstalovali jste a odinstalovali balíček šablon. 
 

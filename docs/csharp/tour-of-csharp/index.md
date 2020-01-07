@@ -3,16 +3,18 @@ title: Prohlídka C# – C# Průvodce
 description: Začínáte C#? Seznamte se se základy jazyka.
 ms.date: 04/05/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: b497ff05b29ce349fe2be3f8b9bc1a8697d6b30b
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
-ms.translationtype: MT
+ms.openlocfilehash: 7398703dc75e7ad7ab8da497eb39e8eeba6d1eba
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774079"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346862"
 ---
 # <a name="a-tour-of-the-c-language"></a>Prohlídka C# jazyka
 
-C#(vyslovit "viz Sharp") je jednoduchý, moderní, objektově orientovaný programovací jazyk, který je typově bezpečný. C#má své kořeny v řadě jazyků C a bude se okamžitě seznámit s programátory jazyka C C++,, Java a JavaScriptu. Tato prohlídka poskytuje přehled o hlavních součástech jazyka. Pokud chcete prozkoumat jazyk pomocí interaktivních příkladů, vyzkoušejte naše [Úvod do C# ](../tutorials/intro-to-csharp/index.md) kurzů.
+C#(vyslovit "viz Sharp") je jednoduchý, moderní, objektově orientovaný programovací jazyk, který je typově bezpečný. C#má své kořeny v řadě jazyků C a bude se okamžitě seznámit s programátory jazyka C C++,, Java a JavaScriptu.
+
+Tato prohlídka poskytuje přehled hlavních součástí jazyka v C# 7 a novějších verzích. Pokud chcete prozkoumat jazyk pomocí interaktivních příkladů, zkuste [Úvod do C# ](../tutorials/intro-to-csharp/index.md) kurzů.
 
 C#je objektově orientovaný jazyk, ale C# dále zahrnuje podporu pro programování ***orientované na komponenty*** . Moderní návrh softwaru se stále spoléhá na softwarové komponenty ve formě integrovaných a samoobslužných balíčků funkcí. Klíč k takovým součástem je, že prezentují programovací model s vlastnostmi, metodami a událostmi. mají atributy, které poskytují deklarativní informace o komponentě. a obsahují vlastní dokumentaci. C#poskytuje jazykové konstrukce pro podporu přímo těchto konceptů C# a vytváří tak velmi přirozený jazyk pro vytváření a používání softwarových komponent.
 
@@ -28,7 +30,7 @@ Program "Hello, World" se tradičně používá k zavedení programovacího jazy
 
 [!code-csharp[Hello World](~/samples/snippets/csharp/tour/hello/Program.cs)]
 
-C#zdrojové soubory mají obvykle `.cs` příponu souboru. Za předpokladu, že program "Hello, World" je uložen v souboru *Hello.cs*, program může být zkompilován pomocí příkazového řádku:
+C#zdrojové soubory mají obvykle `.cs`příponu souboru. Za předpokladu, že program "Hello, World" je uložen v souboru *Hello.cs*, program může být zkompilován pomocí příkazového řádku:
 
 ```console
 csc hello.cs
@@ -49,7 +51,9 @@ Třída `Hello` deklarovaná programem "Hello, World" má jednoho člena, metodu
 
 Výstup programu je vytvořen metodou `WriteLine` `Console` třídy v oboru názvů `System`. Tuto třídu poskytují standardní knihovny tříd, které jsou ve výchozím nastavení automaticky odkazovány kompilátorem.
 
-Máte spoustu dalších informací o C#. Následující témata obsahují přehled prvků C# jazyka. Tato přehledy poskytnou základní informace o všech prvcích jazyka a poskytují informace potřebné k podrobně hlouběji do prvků C# jazyka:
+## <a name="elements-of-the-c-language"></a>Prvky C# jazyka
+
+Máte spoustu dalších informací o C#. Následující témata obsahují přehled prvků C# jazyka. Tato přehledy poskytují základní informace o všech prvcích jazyka a poskytují informace potřebné k podrobně hlubší:
 
 - [Struktura programu](program-structure.md)
   - Naučte se klíčové organizační koncepty v C# jazyce: ***programy***, ***obory názvů***, ***typy***, ***členy***a ***sestavení***.
@@ -67,12 +71,13 @@ Máte spoustu dalších informací o C#. Následující témata obsahují přehl
   - ***Pole*** je datová struktura, která obsahuje počet proměnných, které jsou dostupné prostřednictvím počítaných indexů.
 - [Rozhraní](interfaces.md)
   - ***Rozhraní*** definuje kontrakt, který může být implementován pomocí tříd a struktur. Rozhraní může obsahovat metody, vlastnosti, události a indexery. Rozhraní neposkytuje implementace členů, které definuje – určuje pouze členy, které musí být poskytnuty třídami nebo strukturami, které implementují rozhraní.
-- [Výčty](enums.md)
-  - ***Typ výčtu*** je jedinečný typ hodnoty se sadou pojmenovaných konstant.
-- [Delegáty](delegates.md)
+- [Delegáti](delegates.md)
   - ***Typ delegáta*** představuje odkazy na metody s konkrétním seznamem parametrů a návratovým typem. Delegáti umožňují zacházet s metodami jako s entitami, které lze přiřadit proměnným a předávat jako parametry. Delegáti jsou podobní pojmu ukazatelů na funkce nalezené v některých jiných jazycích, ale na rozdíl od ukazatelů na funkce jsou delegáti objektově orientované a typově bezpečné.
 - [Atributy](attributes.md)
   - ***Atributy*** umožňují programům určit další deklarativní informace o typech, členech a jiných entitách.
+  
+> [!NOTE]
+> Tyto články se vztahují C# na 7,0 a novější verzi. Některé funkce nemusí být k dispozici v dřívějších verzích.
 
 > [!div class="step-by-step"]
 > [Next](program-structure.md)

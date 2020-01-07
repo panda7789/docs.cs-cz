@@ -5,12 +5,12 @@ helpviewer_keywords:
 - globalization [WPF], about globalization
 - localization [WPF], about localization
 ms.assetid: 56e5a5c8-6c96-4d19-b8e1-a5be1dc564af
-ms.openlocfilehash: b8777e1402bef1708136a5f81a641beb8c761905
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: c2b78b990969fb5bc9814ebda8ffcf38efa458b1
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740707"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559921"
 ---
 # <a name="wpf-globalization-and-localization-overview"></a>Přehled globalizace a lokalizace WPF
 
@@ -42,7 +42,7 @@ Při návrhu [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]
 
 - Povolte <xref:System.Windows.Controls.TextBlock.TextWrapping%2A> <xref:System.Windows.Controls.TextBlock>, aby se zabránilo oříznutí.
 
-- Nastavte atribut `xml:lang`. Tento atribut popisuje jazykovou verzi konkrétního prvku a jeho podřízených elementů. Hodnota této vlastnosti mění chování některých funkcí v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Například změní chování při dělení slov, kontrolu pravopisu, nahrazování čísel, složité tvarování skriptů a Fallback písma. Další informace o nastavení [zpracování XML: lang v jazyce XAML](../../xaml-services/xml-lang-handling-in-xaml.md)naleznete v tématu [globalizace pro WPF](globalization-for-wpf.md) .
+- Nastavte atribut `xml:lang`. Tento atribut popisuje jazykovou verzi konkrétního prvku a jeho podřízených elementů. Hodnota této vlastnosti mění chování některých funkcí v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Například změní chování při dělení slov, kontrolu pravopisu, nahrazování čísel, složité tvarování skriptů a Fallback písma. Další informace o nastavení [zpracování XML: lang v jazyce XAML](../../../desktop-wpf/xaml-services/xml-language-handling.md)naleznete v tématu [globalizace pro WPF](globalization-for-wpf.md) .
 
 - Vytvořte vlastní složené písmo, abyste získali lepší kontrolu nad písmy, která se používají v různých jazycích. Ve výchozím nastavení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používá GlobalUserInterface. složené písmo v adresáři Windows\Fonts.
 
@@ -148,7 +148,7 @@ Všimněte si, že v příkladu se používá funkce sdílené velikosti <xref:S
 
 `xml:lang="en-US"`
 
-Všimněte si [XML: zpracování jazyka v jazyce XAML](../../xaml-services/xml-lang-handling-in-xaml.md) , které je umístěno v kořenovém prvku [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Tato vlastnost popisuje jazykovou verzi daného prvku a jeho podřízených objektů. Tuto hodnotu používá několik funkcí v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a měla by být během lokalizace patřičně měnit. Tato hodnota změní jazyk slovníku, který se používá k dělení slov a pravopisné kontrolní výrazy. Má vliv také na zobrazení číslic a na způsob, jakým způsobem záložní systém písem vybere písmo, které se má použít. Nakonec vlastnost ovlivňuje způsob zobrazení čísel a způsob, jakým jsou napsány texty v složitých skriptech. Výchozí hodnota je "en-US".
+Všimněte si [XML: zpracování jazyka v jazyce XAML](../../../desktop-wpf/xaml-services/xml-language-handling.md) , které je umístěno v kořenovém prvku [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Tato vlastnost popisuje jazykovou verzi daného prvku a jeho podřízených objektů. Tuto hodnotu používá několik funkcí v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a měla by být během lokalizace patřičně měnit. Tato hodnota změní jazyk slovníku, který se používá k dělení slov a pravopisné kontrolní výrazy. Má vliv také na zobrazení číslic a na způsob, jakým způsobem záložní systém písem vybere písmo, které se má použít. Nakonec vlastnost ovlivňuje způsob zobrazení čísel a způsob, jakým jsou napsány texty v složitých skriptech. Výchozí hodnota je "en-US".
 
 **Sestavení satelitního sestavení prostředků**
 
@@ -180,37 +180,37 @@ Pro úpravu tohoto souboru použijte oblíbený editor CSV, který podporuje kó
 
 |Klíč prostředku|Kategorie lokalizace|Hodnota|
 |-|-|-|
-|Button_1: System. Windows. Controls. Button. $Content|Tlačítko|OK|
-|Button_2: System. Windows. Controls. Button. $Content|Tlačítko|operaci|
-|Button_3: System. Windows. Controls. Button. $Content|Tlačítko|Procházet...|
-|ComboBox_1: System. Windows. Controls. ComboBox. $Content|ComboBox||
-|TextBlock_1: System. Windows. Controls. TextBlock. $Content|Text|Zadejte název programu, složky, dokumentu nebo internetového prostředku a otevře se vám Windows.|
-|TextBlock_2: System. Windows. Controls. TextBlock. $Content|Text|Otevírají|
-|Window_1: System. Windows. Window. title|Název|Spustit|
+|Button_1:System.Windows.Controls.Button.$Content|Tlačítko|OK|
+|Button_2:System.Windows.Controls.Button.$Content|Tlačítko|Zrušit|
+|Button_3:System.Windows.Controls.Button.$Content|Tlačítko|Procházet...|
+|ComboBox_1:System.Windows.Controls.ComboBox.$Content|ComboBox||
+|TextBlock_1:System.Windows.Controls.TextBlock.$Content|Text|Zadejte název programu, složky, dokumentu nebo zdroje v internetu a systém Windows jej otevře.|
+|TextBlock_2:System.Windows.Controls.TextBlock.$Content|Text|Open (Otevřený):|
+|Window_1:System.Windows.Window.Title|Název|Spustit|
 
 Lokalizace aplikace do němčiny by vyžadovala následující překlady:
 
 |Klíč prostředku|Kategorie lokalizace|Hodnota|
 |-|-|-|
-|Button_1: System. Windows. Controls. Button. $Content|Tlačítko|OK|
-|Button_2: System. Windows. Controls. Button. $Content|Tlačítko|Abbrechen|
-|Button_3: System. Windows. Controls. Button. $Content|Tlačítko|Durchsuchen...|
-|ComboBox_1: System. Windows. Controls. ComboBox. $Content|ComboBox||
-|TextBlock_1: System. Windows. Controls. TextBlock. $Content|Text|Geben Sie den Namen eines, Ordners, dokumenty oder einer Internetresource a.|
-|TextBlock_2: System. Windows. Controls. TextBlock. $Content|Text|Öffnen:|
-|Window_1: System. Windows. Window. title|Název|Spustit|
+|Button_1:System.Windows.Controls.Button.$Content|Tlačítko|OK|
+|Button_2:System.Windows.Controls.Button.$Content|Tlačítko|Abbrechen|
+|Button_3:System.Windows.Controls.Button.$Content|Tlačítko|Durchsuchen...|
+|ComboBox_1:System.Windows.Controls.ComboBox.$Content|ComboBox||
+|TextBlock_1:System.Windows.Controls.TextBlock.$Content|Text|Geben Sie den Namen eines, Ordners, dokumenty oder einer Internetresource a.|
+|TextBlock_2:System.Windows.Controls.TextBlock.$Content|Text|Öffnen:|
+|Window_1:System.Windows.Window.Title|Název|Spustit|
 
 **Vytváří**
 
 Poslední krok lokalizace zahrnuje vytvoření nově lokalizovaného satelitního sestavení. To lze provést pomocí následujícího příkazu LocBaml:
 
-**LocBaml. exe/Generate RunDialog. Resources. dll/trans: RunDialog. Resources. dll. CSV/out:. /CUL: de-DE DE**
+**LocBaml.exe /generate RunDialog.resources.dll /trans:RunDialog.resources.dll.CSV /out: . /cul:de-DE**
 
 V případě německého okna platí, že pokud je tento soubor. dll umístěný ve složce de-DE vedle hlavního sestavení, tento prostředek se automaticky načte místo do složky en-US. Pokud nemáte verzi Windows k otestování, nastavte jazykovou verzi na libovolnou jazykovou verzi Windows, kterou používáte (například `en-US`), a nahraďte původní knihovny DLL prostředků.
 
 **Načítání satelitních prostředků**
 
-|MyDialog. exe|en-US\MyDialog.resources.dll|de-DE\MyDialog.resources.dll|
+|MyDialog.exe|en-US\MyDialog.resources.dll|de-DE\MyDialog.resources.dll|
 |------------------|------------------------------------|------------------------------------|
 |Kód|Původní anglická verze BAML|Lokalizovaný BAML|
 |Kulturně neutrální prostředky|Další prostředky v angličtině|Další prostředky lokalizované do němčiny|
@@ -247,7 +247,7 @@ Všimněte si vlastnosti <xref:System.Windows.FrameworkElement.FlowDirection%2A>
 
 Všimněte si, že i když se změní kořenový <xref:System.Windows.FrameworkElement.FlowDirection%2A>, jsou štětce barevného přechodu pozadí převráceny správně:
 
-**FlowDirection = "LeftToRight"**
+**FlowDirection="LeftToRight"**
 
 ![Snímek obrazovky zobrazující tok přechodu zleva doprava](./media/wpf-globalization-and-localization-overview/gradient-flow-left-right.png)
 
@@ -265,11 +265,11 @@ Existuje mnoho případů, kdy může být obsah dvojznačný a obtížné ho p�
 
 [!code-xaml[GlobalizationHomepage#LocalizationComment](~/samples/snippets/csharp/VS_Snippets_Wpf/GlobalizationHomepage/CS/Homepage.xaml#localizationcomment)]
 
-Tento komentář se bude přidružit k TextBlock_1's obsahu a v případě nástroje LocBaml (viz [lokalizace aplikace](how-to-localize-an-application.md)), může se zobrazit v šesté sloupci řádku TextBlock_1 ve výstupním souboru. CSV:
+Tento komentář se bude přidružit k obsahu TextBlock_1 a v případě nástroje LocBaml (viz [lokalizace aplikace](how-to-localize-an-application.md)), může se zobrazit v šesté sloupci TextBlock_1 řádku ve výstupním souboru. CSV:
 
-|Klíč prostředku|Kategorie|čitelný|Upravitelná|Komentář|Hodnota|
+|Klíč prostředku|Kategorie|Čitelný|Upravitelná|Komentář|Hodnota|
 |-|-|-|-|-|-|
-|TextBlock_1: System. Windows. Controls. TextBlock. $Content|Text|PODMÍNKA|PODMÍNKA|Tento znak se používá jako ozdobné pravidlo.|&#124;|
+|TextBlock_1:System.Windows.Controls.TextBlock.$Content|Text|PRAVDA|PRAVDA|Tento znak se používá jako ozdobné pravidlo.|&#124;|
 
 Komentáře lze umístit na obsah nebo vlastnost libovolného elementu pomocí následující syntaxe:
 

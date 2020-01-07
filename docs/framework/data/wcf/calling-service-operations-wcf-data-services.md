@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1767f3a7-29d2-4834-a763-7d169693fa8b
-ms.openlocfilehash: bc2338191bbf6922f56c833ebf115c5b21d92b00
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 1b8a00c7716a60daec4e4f6af6ae8e3a7a45e943
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74569317"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346177"
 ---
 # <a name="calling-service-operations-wcf-data-services"></a>Volání operací služby (WCF Data Services)
 Protokol OData (Open Data Protocol) definuje operace služeb pro datovou službu. WCF Data Services umožňuje definovat takové operace jako metody pro datovou službu. Podobně jako u jiných prostředků datové služby se tyto operace služby řeší pomocí identifikátorů URI. Operace služby může vracet kolekce typů entit, instance typu jedna entita a primitivní typy, jako je například celé číslo a řetězec. Operace služby může také vracet `null` (`Nothing` v Visual Basic). Klientská knihovna WCF Data Services se dá použít pro přístup k operacím služby, které podporují požadavky HTTP GET. Tyto druhy operací služby jsou definovány jako metody, které používají <xref:System.ServiceModel.Web.WebGetAttribute>. Další informace najdete v tématu [provozní operace](service-operations-wcf-data-services.md).  
@@ -32,7 +32,7 @@ Protokol OData (Open Data Protocol) definuje operace služeb pro datovou službu
   
 - <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> nelze použít k volání operace GET Service, která vrací jeden výsledek, z entity nebo primitivního typu nebo který vyžaduje více než jeden vstupní parametr. Místo toho je nutné volat metodu <xref:System.Data.Services.Client.DataServiceContext.Execute%2A>.  
   
-- Zvažte vytvoření metody rozšíření pro silně typované <xref:System.Data.Services.Client.DataServiceContext> částečné třídy, které jsou generovány nástroji, které používají <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> nebo metodu <xref:System.Data.Services.Client.DataServiceContext.Execute%2A> pro volání operace služby. To umožňuje volat operace služby přímo z kontextu. Další informace najdete v blogu [operace služby a klient WCF Data Services](https://go.microsoft.com/fwlink/?LinkId=215668).  
+- Zvažte vytvoření metody rozšíření pro silně typované <xref:System.Data.Services.Client.DataServiceContext> částečné třídy, které jsou generovány nástroji, které používají <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> nebo metodu <xref:System.Data.Services.Client.DataServiceContext.Execute%2A> pro volání operace služby. To umožňuje volat operace služby přímo z kontextu. Další informace najdete v blogu [operace služby a klient WCF Data Services](https://blogs.msdn.microsoft.com/astoriateam/2010/05/26/service-operations-and-the-wcf-data-services-client/).  
   
 - Použijete-li <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> k volání operace služby, Klientská knihovna automaticky řídí znaky dodané do <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> tím, že provádí procentuální kódování rezervovaných znaků, jako je ampersand (&) a uvozovací znaky jednoduchých uvozovek v řetězcích. Když však zavoláte jednu z metod *Execute* pro volání operace služby, musíte si pamatovat, že chcete provést tyto uvozovací znaky všech uživatelem zadaných hodnot řetězce. Jednoduché uvozovky v identifikátorech URI jsou řídicí znaky jako páry jednoduchých uvozovek.  
   

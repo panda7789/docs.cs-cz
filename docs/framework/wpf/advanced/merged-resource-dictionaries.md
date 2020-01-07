@@ -5,12 +5,12 @@ helpviewer_keywords:
 - merged resource dictionaries [WPF]
 - dictionaries [WPF], merged resources
 ms.assetid: d159531f-05d4-49fd-b951-c332de51e5bc
-ms.openlocfilehash: 6647e52ef8477221dd5849a19809a34fb06189a6
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 899955a9f3302e67de4efa0ce0cb6baf6bf0ec5d
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73455416"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559778"
 ---
 # <a name="merged-resource-dictionaries"></a>Slovníky sloučených prostředků
 prostředky [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] podporují funkci sloučeného slovníku prostředků. Tato funkce poskytuje způsob, jak definovat část prostředků [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace mimo kompilovaná [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] aplikace. Prostředky je pak možné sdílet mezi aplikacemi a jsou taky pohodlnější izolované pro lokalizaci.  
@@ -20,7 +20,7 @@ prostředky [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-wincli
   
  [!code-xaml[ResourceMergeDictionary#MergedXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/ResourceMergeDictionary/CS/default.xaml#mergedxaml)]  
   
- Všimněte si, že <xref:System.Windows.ResourceDictionary> element nemá [direktivu x:Key –](../../xaml-services/x-key-directive.md), která je obecně nutná pro všechny položky v kolekci prostředků. Ale další odkaz <xref:System.Windows.ResourceDictionary> v rámci kolekce <xref:System.Windows.ResourceDictionary.MergedDictionaries%2A> je zvláštní případ vyhrazený pro tento scénář sloučeného slovníku prostředků. <xref:System.Windows.ResourceDictionary>, který zavádí sloučený slovník prostředků, nemůže mít [direktivu x:Key –](../../xaml-services/x-key-directive.md). Každý <xref:System.Windows.ResourceDictionary> v rámci kolekce <xref:System.Windows.ResourceDictionary.MergedDictionaries%2A> obvykle určuje atribut <xref:System.Windows.ResourceDictionary.Source%2A>. Hodnota <xref:System.Windows.ResourceDictionary.Source%2A> by měla být identifikátor URI (Uniform Resource Identifier), který se překládá na umístění souboru prostředků, který se má sloučit. Cíl tohoto identifikátoru URI musí být jiný [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor s <xref:System.Windows.ResourceDictionary> jako jeho kořenový element.  
+ Všimněte si, že <xref:System.Windows.ResourceDictionary> element nemá [direktivu x:Key –](../../../desktop-wpf/xaml-services/xkey-directive.md), která je obecně nutná pro všechny položky v kolekci prostředků. Ale další odkaz <xref:System.Windows.ResourceDictionary> v rámci kolekce <xref:System.Windows.ResourceDictionary.MergedDictionaries%2A> je zvláštní případ vyhrazený pro tento scénář sloučeného slovníku prostředků. <xref:System.Windows.ResourceDictionary>, který zavádí sloučený slovník prostředků, nemůže mít [direktivu x:Key –](../../../desktop-wpf/xaml-services/xkey-directive.md). Každý <xref:System.Windows.ResourceDictionary> v rámci kolekce <xref:System.Windows.ResourceDictionary.MergedDictionaries%2A> obvykle určuje atribut <xref:System.Windows.ResourceDictionary.Source%2A>. Hodnota <xref:System.Windows.ResourceDictionary.Source%2A> by měla být identifikátor URI (Uniform Resource Identifier), který se překládá na umístění souboru prostředků, který se má sloučit. Cíl tohoto identifikátoru URI musí být jiný [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubor s <xref:System.Windows.ResourceDictionary> jako jeho kořenový element.  
   
 > [!NOTE]
 > Je možné definovat prostředky v rámci <xref:System.Windows.ResourceDictionary>, který je zadaný jako sloučený slovník, a to buď jako alternativu k určení <xref:System.Windows.ResourceDictionary.Source%2A>, nebo kromě jakýchkoli prostředků, které jsou zahrnuté ze zadaného zdroje. Nejedná se však o běžný scénář. hlavním scénářem pro sloučené slovníky je sloučení prostředků z umístění externích souborů. Chcete-li určit prostředky v rámci značky stránky, je obvykle třeba je definovat v hlavním <xref:System.Windows.ResourceDictionary> a nikoli ve sloučených slovnících.  
