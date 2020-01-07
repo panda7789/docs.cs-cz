@@ -6,12 +6,12 @@ helpviewer_keywords:
 - dynamic [C#], about dynamic type
 - dynamic type [C#]
 ms.assetid: 3828989d-c967-4a51-b948-857ebc8fdf26
-ms.openlocfilehash: 248f0410aa8fc7c4aa92b844bda19f51fcf09c6d
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: MT
+ms.openlocfilehash: aa1e8ce53038fce24854561e83db1c086b5b276e
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73417598"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635012"
 ---
 # <a name="using-type-dynamic-c-programming-guide"></a>Použití typu Dynamic (C# Průvodce programováním)
 
@@ -54,7 +54,7 @@ Naopak implicitní převod lze dynamicky použít na jakýkoli výraz typu `dyna
 
 ## <a name="overload-resolution-with-arguments-of-type-dynamic"></a>Rozlišení přetěžování s argumenty typu Dynamic
 
-K rozlišení přetěžování dochází za běhu místo v době kompilace, pokud jeden nebo více argumentů ve volání metody má typ `dynamic`, nebo pokud je příjemce volání metody typu `dynamic`. V následujícím příkladu, pokud je jediná dostupná `exampleMethod2` metoda definována pro převzetí řetězcového argumentu, odeslání `d1` jako argument nezpůsobí chybu kompilátoru, ale vyvolá výjimku za běhu. Rozlišení přetěžování se v době běhu nezdařilo, protože typ modulu runtime `d1` je `int` a `exampleMethod2` vyžaduje řetězec.
+K rozlišení přetěžování dochází za běhu místo v době kompilace, pokud jeden nebo více argumentů ve volání metody má typ `dynamic`, nebo pokud je příjemce volání metody typu `dynamic`. V následujícím příkladu, pokud je jediná dostupná `exampleMethod2` metoda definována pro převzetí řetězcového argumentu, odeslání `d1` jako argument nezpůsobí chybu kompilátoru, ale vyvolá výjimku za běhu. Rozlišení přetěžování se v době běhu nezdařilo, protože typ modulu runtime `d1` je `int`a `exampleMethod2` vyžaduje řetězec.
 
 [!code-csharp[CsProgGuideTypes#55](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/usingdynamic.cs#55)]
 
@@ -72,11 +72,11 @@ Mnoho metod modelu COM umožňuje variace typů argumentů a návratového typu 
 
 [!code-csharp[csOfficeWalkthrough#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csofficewalkthrough/cs/thisaddin.cs#13)]
 
-## <a name="related-topics"></a>Související témata
+## <a name="related-topics"></a>Příbuzná témata
 
 |Název|Popis|
 |-----------|-----------------|
 |[dynamic](../../language-reference/builtin-types/reference-types.md)|Popisuje použití klíčového slova `dynamic`.|
 |[Přehled DLR (Dynamic Language Runtime)](../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md)|Poskytuje přehled o DLR, což je běhové prostředí, které přidává sadu služeb pro dynamické jazyky do modulu CLR (Common Language Runtime).|
 |[Návod: vytváření a používání dynamických objektů](walkthrough-creating-and-using-dynamic-objects.md)|Poskytuje podrobné pokyny pro vytvoření vlastního dynamického objektu a pro vytvoření projektu, který přistupuje k knihovně `IronPython`.|
-|[Postupy: Přístup k objektům Interop sady Office pomocí funkcí Visual C#](../interop/how-to-access-office-onterop-objects.md)|Ukazuje, jak vytvořit projekt, který používá pojmenované a nepovinné argumenty, typ `dynamic` a další vylepšení, která usnadňují přístup k objektům rozhraní Office API.|
+|[Přístup k objektům Interop sady Office pomocí C# funkcí](../interop/how-to-access-office-onterop-objects.md)|Ukazuje, jak vytvořit projekt, který používá pojmenované a nepovinné argumenty, typ `dynamic` a další vylepšení, která usnadňují přístup k objektům rozhraní Office API.|

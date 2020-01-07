@@ -2,17 +2,17 @@
 title: 'Postupy: streamování fragmentů XML s přístupem k informacím záhlaví'
 ms.date: 07/20/2015
 ms.assetid: effd10df-87c4-4d7a-8a9a-1434d829dca5
-ms.openlocfilehash: 489e128e86a47e0e7f76c14a6cf1baf80fb0c406
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 325609b9f8cf1feebcb4be1fcfd0122e12100156
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74332454"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636689"
 ---
 # <a name="how-to-stream-xml-fragments-with-access-to-header-information-visual-basic"></a>Postupy: streamování fragmentů XML s přístupem k informacím hlavičky (Visual Basic)
 Někdy je nutné číst libovolně velké soubory XML a napsat aplikaci tak, aby paměti aplikace byly předvídatelné. Pokud se pokusíte naplnit strom XML velkým souborem XML, využití paměti bude úměrné velikosti souboru, tedy nadměrné. Proto byste měli místo toho použít metodu streamování.  
   
- Jednou z možností je napsat aplikaci pomocí <xref:System.Xml.XmlReader>. Je však vhodné použít [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] k dotazování stromu XML. Pokud se jedná o tento případ, můžete napsat vlastní metodu osy. Další informace naleznete v tématu [How to: Write a LINQ to XML Axis Method (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-write-a-linq-to-xml-axis-method.md).  
+ Jednou z možností je napsat aplikaci pomocí <xref:System.Xml.XmlReader>. Můžete však chtít použít LINQ k dotazování stromu XML. Pokud se jedná o tento případ, můžete napsat vlastní metodu osy. Další informace naleznete v tématu [How to: Write a LINQ to XML Axis Method (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-write-a-linq-to-xml-axis-method.md).  
   
  Chcete-li napsat vlastní metodu osy, napíšete malou metodu, která používá <xref:System.Xml.XmlReader> ke čtení uzlů, dokud nedosáhne jednoho z uzlů, které vás zajímají. Metoda pak zavolá <xref:System.Xml.Linq.XNode.ReadFrom%2A>, které čtou z <xref:System.Xml.XmlReader> a vytvoří instanci fragmentu XML. Pak můžete napsat dotazy LINQ na vlastní metodu osy.  
   
@@ -203,7 +203,7 @@ Public Class StreamCustomerItemEnumerator
 End Class  
 ```  
   
- Tento kód generuje následující výstup:  
+ Výsledkem tohoto kódu je následující výstup:  
   
 ```xml  
 <Root>  

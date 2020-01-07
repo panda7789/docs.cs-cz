@@ -2,22 +2,22 @@
 title: Modul snap-in konzoly MMC WS-AtomicTransaction Configuration
 ms.date: 03/30/2017
 ms.assetid: 23592973-1d51-44cc-b887-bf8b0d801e9e
-ms.openlocfilehash: 04380a2a30aba85efb98ee8f9e24d0a6223a18a3
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 04f9a014c3cb3ffd127ccc82fdda731e20136c52
+ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320328"
+ms.lasthandoff: 12/29/2019
+ms.locfileid: "75544643"
 ---
 # <a name="ws-atomictransaction-configuration-mmc-snap-in"></a>Modul snap-in konzoly MMC WS-AtomicTransaction Configuration
 Modul snap-in konzoly MMC pro konfiguraci WS-AtomicTransaction se používá ke konfiguraci části Nastavení WS-AtomicTransaction na místních i vzdálených počítačích.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud používáte [!INCLUDE[wxp](../../../includes/wxp-md.md)] nebo [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], modul snap-in konzoly MMC můžete najít tak, že přejdete na **Ovládací panely nebo nástroje pro správu/služby komponent/** , kliknete pravým tlačítkem na položku **Tento počítač**a vyberete **vlastnosti**. Toto je stejné umístění, kde můžete nakonfigurovat MSDTC. Možnosti, které jsou k dispozici pro konfiguraci, jsou seskupeny na kartě **WS-AT** .  
+ Pokud používáte [!INCLUDE[wxp](../../../includes/wxp-md.md)] nebo Windows Server 2003, modul snap-in konzoly MMC můžete najít tak, že přejdete na **Ovládací panely nebo nástroje pro správu/služby komponent/** , kliknete pravým tlačítkem na položku **Tento počítač**a vyberete **vlastnosti**. Toto je stejné umístění, kde můžete nakonfigurovat MSDTC. Možnosti, které jsou k dispozici pro konfiguraci, jsou seskupeny na kartě **WS-AT** .  
   
- Pokud používáte systém Windows Vista nebo [!INCLUDE[lserver](../../../includes/lserver-md.md)], modul snap-in konzoly MMC lze najít kliknutím na tlačítko **Start** a zadáním `dcomcnfg.exe` do **vyhledávacího** pole. Po otevření konzoly MMC přejděte do uzlu **Computer\Distributed Transaction COORDINATOR\LOCAL DTC** , klikněte pravým tlačítkem a vyberte **vlastnosti**. Možnosti, které jsou k dispozici pro konfiguraci, jsou seskupeny na kartě **WS-AT** .  
+ Pokud používáte systém Windows Vista nebo Windows Server 2008, modul snap-in konzoly MMC lze najít kliknutím na tlačítko **Start** a zadáním `dcomcnfg.exe` do **vyhledávacího** pole. Po otevření konzoly MMC přejděte do uzlu **Computer\Distributed Transaction COORDINATOR\LOCAL DTC** , klikněte pravým tlačítkem a vyberte **vlastnosti**. Možnosti, které jsou k dispozici pro konfiguraci, jsou seskupeny na kartě **WS-AT** .  
   
- Pomocí předchozích kroků můžete spustit modul snap-in pro konfiguraci místního počítače. Pokud chcete nakonfigurovat vzdálený počítač, měli byste najít název vzdáleného počítače v **Ovládacích panelech/nástrojích pro správu/služby komponent/** a provést podobný postup, pokud používáte [!INCLUDE[wxp](../../../includes/wxp-md.md)] nebo [!INCLUDE[ws2003](../../../includes/ws2003-md.md)]. Pokud používáte systém Windows Vista nebo [!INCLUDE[lserver](../../../includes/lserver-md.md)], postupujte podle předchozích kroků pro Vista a [!INCLUDE[lserver](../../../includes/lserver-md.md)], ale použijte uzel **DTC (Distributed Transaction Coordinator\Local DTC** ) pod uzlem vzdáleného počítače.  
+ Pomocí předchozích kroků můžete spustit modul snap-in pro konfiguraci místního počítače. Pokud chcete nakonfigurovat vzdálený počítač, měli byste najít název vzdáleného počítače v **Ovládacích panelech/nástrojích pro správu/služby komponent/** a provést podobný postup, pokud používáte [!INCLUDE[wxp](../../../includes/wxp-md.md)] nebo Windows Server 2003. Pokud používáte systém Windows Vista nebo Windows Server 2008, postupujte podle předchozích kroků pro Vista a Windows Server 2008, ale použijte uzel **DTC (Distributed Transaction Coordinator\Local DTC** ) pod uzlem vzdáleného počítače.  
   
  Chcete-li použít uživatelské rozhraní poskytované nástrojem, je nutné zaregistrovat soubor WsatUI. dll, který je umístěn v následující cestě.  
   
@@ -63,7 +63,7 @@ regasm.exe /codebase WsatUI.dll
   
  **Autorizované účty**  
   
- Kliknutím na tlačítko **Vybrat** vyvoláte editor seznamu Access Control Windows, kde můžete zadat uživatele nebo skupinu, které se můžou účastnit transakcí WS-Atomic zaškrtnutím políčka **Povolit** nebo **Odepřít** ve **účasti** . Skupina oprávnění  
+ Kliknutím na tlačítko **Vybrat** vyvoláte editor seznamu Access Control Windows, kde můžete zadat uživatele nebo skupinu, které se mohou účastnit transakcí WS-Atomic zaškrtnutím políčka **Povolit** nebo **Odepřít** ve skupině oprávnění **účasti** .  
   
  **Autorizované certifikáty**  
   
@@ -77,7 +77,7 @@ regasm.exe /codebase WsatUI.dll
   
  Kliknutím na tlačítko **Možnosti** aktivujete stránku, kde můžete zadat další nastavení.  
   
- Pole s kombinací **úrovně trasování** umožňuje vybrat libovolnou platnou hodnotu výčtu <xref:System.Diagnostics.TraceLevel>. Pomocí zaškrtávacích políček můžete také určit, jestli chcete provádět trasování aktivit, šíření aktivit nebo shromažďovat osobní údaje.  
+ Pole se kombinací **úrovně trasování** umožňuje vybrat libovolnou platnou hodnotu výčtu <xref:System.Diagnostics.TraceLevel>. Pomocí zaškrtávacích políček můžete také určit, jestli chcete provádět trasování aktivit, šíření aktivit nebo shromažďovat osobní údaje.  
   
  Můžete také zadat relace protokolování do pole Skupina **relace protokolování** .  
   

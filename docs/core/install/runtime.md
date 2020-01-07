@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 12/04/2019
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: 8f4a895ad66dea3063a32f785e4c521196266978
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: a45cb570ccf572a699359598319fd3867fb5e5dd
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74835726"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75340962"
 ---
 # <a name="install-the-net-core-runtime"></a>Instalace modulu runtime .NET Core
 
@@ -42,7 +42,32 @@ macOS má samostatné instalační programy, které se dají použít k instalac
 
 ## <a name="install-with-a-package-manager"></a>Instalace pomocí Správce balíčků
 
-Modul runtime .NET Core můžete nainstalovat pomocí mnoha běžných správců balíčků pro Linux. Další informace najdete v tématu [Správce balíčků pro Linux – instalace .NET Core](linux-package-manager-rhel7.md).
+Modul runtime .NET Core můžete nainstalovat pomocí mnoha běžných správců balíčků pro Linux. Další informace najdete v tématu [Správce balíčků pro Linux – instalace .NET Core](linux-package-managers.md).
+
+Instalace pomocí Správce balíčků se podporuje jenom v architektuře x64. Pokud instalujete modul runtime .NET Core s jinou architekturou, jako je například ARM, postupujte podle pokynů v části [Stažení a ruční instalace](#download-and-manually-install) . Další informace o podporovaných architekturách najdete v tématu [závislosti a požadavky .NET Core](dependencies.md).
+
+## <a name="download-and-manually-install"></a>Stažení a ruční instalace
+
+Chcete-li extrahovat modul runtime a zpřístupnit příkazy .NET Core CLI v terminálu, nejprve [Stáhněte](#all-net-core-downloads) binární verzi .NET Core. Pak otevřete terminál a spusťte následující příkazy.
+
+```bash
+mkdir -p $HOME/dotnet && tar zxf aspnetcore-runtime-3.1.0-linux-x64.tar.gz -C $HOME/dotnet
+export DOTNET_ROOT=$HOME/dotnet
+export PATH=$PATH:$HOME/dotnet
+```
+
+> [!TIP]
+> Předchozí příkazy `export` zpřístupňují pouze příkazy .NET Core CLI dostupné pro relaci terminálu, ve které byla spuštěna.
+>
+> Úpravou profilu prostředí můžete tyto příkazy trvale přidat. K dispozici je řada různých prostředí pro Linux a každá má jiný profil. Příklad:
+>
+> - **Prostředí bash**: *~/. bash_profile*, *~/.bashrc*
+> - **Korn shell**: *~/.KSHRC* nebo *. Profile*
+> - **Prostředí Z**: *~/.zshrc* nebo *. zprofile*
+> 
+> Upravte příslušný zdrojový soubor pro prostředí a přidejte `:$HOME/dotnet` na konec existujícího příkazu `PATH`. Pokud není zahrnutý žádný příkaz `PATH`, přidejte nový řádek s `export PATH=$PATH:$HOME/dotnet`.
+>
+> Přidejte také `export DOTNET_ROOT=$HOME/dotnet` na konec souboru.
 
 ::: zone-end
 

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, strings
 - strings [C#]
 ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
-ms.openlocfilehash: c6e29781f566fac0fd1219ac842a4838d631afb6
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
-ms.translationtype: MT
+ms.openlocfilehash: 46820fe4137f5080b956cd1345d3e95c2e06f9ca
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73969721"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635077"
 ---
 # <a name="strings-c-programming-guide"></a>Řetězce (Průvodce programováním v C#)
 Řetězec je objekt typu <xref:System.String> jehož hodnota je text. Interně je text uložen jako sekvenční kolekce objektů <xref:System.Char> jen pro čtení. Na konci C# řetězce se nenachází ukončovací znak null; C# řetězec tedy může obsahovat libovolný počet vložených znaků null (' \ 0 '). Vlastnost <xref:System.String.Length%2A> řetězce představuje počet `Char` objektů, které obsahuje, nikoli počet znaků Unicode. Pro přístup k jednotlivým bodům kódu Unicode v řetězci použijte objekt <xref:System.Globalization.StringInfo>.  
@@ -52,11 +52,11 @@ ms.locfileid: "73969721"
   
 |Řídicí sekvence|Název znaku|Kódování Unicode|  
 |---------------------|--------------------|----------------------|  
-|\\|Jednoduchá uvozovka|0x0027|  
+|\\'|Jednoduchá uvozovka|0x0027|  
 |\\"|Dvojité uvozovky|0x0022|  
 |\\\\ |Zpětné lomítko|0x005C|  
-|\ 0|Null|0x0000|  
-|\a|Upozornění|0x0007|  
+|\0|Null|0x0000|  
+|\a|Výstraha|0x0007|  
 |\b|Backspace|0x0008|  
 |\f|Informační kanál formuláře|0x000C|  
 |\n|Nový řádek|0x000A|  
@@ -65,7 +65,7 @@ ms.locfileid: "73969721"
 |\v|Vertikální tabulátor|0x000B|  
 |\u|Řídicí sekvence Unicode (UTF-16)|`\uHHHH` (rozsah: 0000-FFFF; příklad: `\u00E7` = "ç")|  
 |\U|Řídicí sekvence Unicode (UTF-32)|`\U00HHHHHH` (rozsah: 000000-10FFFF; příklad: `\U0001F47D` = "&#x1F47D;")|  
-|Uprav|Řídicí sekvence Unicode podobně jako "\u" s výjimkou proměnné délky|`\xH[H][H][H]` (rozsah: 0-FFFF; příklad: `\x00E7` nebo `\x0E7` nebo `\xE7` = "ç")|  
+|\x|Řídicí sekvence Unicode podobně jako "\u" s výjimkou proměnné délky|`\xH[H][H][H]` (rozsah: 0-FFFF; příklad: `\x00E7` nebo `\x0E7` nebo `\xE7` = "ç")|  
   
 > [!WARNING]
 > Při použití řídicí sekvence `\x` a zadání méně než 4 hex číslic, pokud jsou znaky, které bezprostředně následují řídicí sekvence, platné šestnáctkové číslice (tj. 0-9, A-F a a-F), budou interpretovány jako součást řídicí sekvence. Například `\xA1` vytvoří "&#161;", což je kódový bod U + 00A1. Nicméně, pokud je další znak "A" nebo "a", pak bude řídicí sekvence místo interpretovat jako `\xA1A` a vytvoří "&#x0A1A;", což je kódový bod U + 0A1A. V takových případech zadáním všech 4 hex číslic (například `\x00A1`) zabráníte případnému případnému mylnému výkladu.  
@@ -100,7 +100,7 @@ Další informace o formátování typů .NET naleznete [v tématu formátován�
   
  [!code-csharp[csProgGuideStrings#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#8)]  
   
- Pokud metody <xref:System.String> neposkytují funkce, které je nutné pro úpravu jednotlivých znaků v řetězci, lze použít objekt <xref:System.Text.StringBuilder> pro úpravu jednotlivých znaků "In-Place" a poté vytvořit nový řetězec pro uložení výsledků pomocí <xref:System.Text.StringBuilder> způsobů. V následujícím příkladu Předpokládejme, že je nutné upravit původní řetězec určitým způsobem a následně uložit výsledky pro budoucí použití:  
+ Pokud metody <xref:System.String> neposkytují funkce, které je nutné pro úpravu jednotlivých znaků v řetězci, lze použít objekt <xref:System.Text.StringBuilder> pro úpravu jednotlivých znaků "In-Place" a poté vytvořit nový řetězec pro uložení výsledků pomocí metod <xref:System.Text.StringBuilder>. V následujícím příkladu Předpokládejme, že je nutné upravit původní řetězec určitým způsobem a následně uložit výsledky pro budoucí použití:  
   
  [!code-csharp[csProgGuideStrings#27](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#27)]  
   
@@ -125,7 +125,7 @@ string s = String.Empty;
  [!code-csharp[TestStringBuilder#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/TestStringBuilder.cs)]
   
 ## <a name="strings-extension-methods-and-linq"></a>Řetězce, rozšiřující metody a LINQ  
- Vzhledem k tomu, že typ <xref:System.String> implementuje <xref:System.Collections.Generic.IEnumerable%601>, můžete použít metody rozšíření definované ve třídě <xref:System.Linq.Enumerable> v řetězcích. Aby se zabránilo vizuálnímu zbytečným, jsou tyto metody vyloučeny z technologie IntelliSense pro <xref:System.String> typ, ale jsou však k dispozici. Můžete také použít [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] výrazy dotazů na řetězce. Další informace naleznete v tématu [LINQ and Strings](../concepts/linq/linq-and-strings.md).  
+ Vzhledem k tomu, že typ <xref:System.String> implementuje <xref:System.Collections.Generic.IEnumerable%601>, můžete použít metody rozšíření definované ve třídě <xref:System.Linq.Enumerable> v řetězcích. Aby se zabránilo vizuálnímu zbytečným, jsou tyto metody vyloučeny z technologie IntelliSense pro <xref:System.String> typ, ale jsou však k dispozici. Výrazy dotazů LINQ můžete použít také pro řetězce. Další informace naleznete v tématu [LINQ and Strings](../concepts/linq/linq-and-strings.md).  
   
 ## <a name="related-topics"></a>Související témata  
   

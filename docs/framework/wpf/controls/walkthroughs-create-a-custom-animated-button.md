@@ -6,12 +6,12 @@ helpviewer_keywords:
 - buttons [WPF]
 - animation [WPF], buttons [WPF]
 ms.assetid: e9532c72-460f-4898-9332-613fa21d746a
-ms.openlocfilehash: a3990a7dc446c264e0865e15dadcdaf3ba0a0ff6
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 0f881c19516eb42a71e6cd91d612caf8f5cf7b5e
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460061"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636182"
 ---
 # <a name="walkthroughs-create-a-custom-animated-button"></a>Návod: Vytvoření tlačítka s vlastní animací
 Jak je název navržený, Windows Presentation Foundation (WPF) je skvělé, aby pro zákazníky prováděla bohatou prezentační prostředí. Tyto návody ukazují, jak přizpůsobit vzhled a chování tlačítka (včetně animací). Toto vlastní nastavení se provádí pomocí stylu a šablony, takže toto vlastní tlačítko lze snadno použít pro všechna tlačítka v aplikaci. Následující ilustrace znázorňuje přizpůsobené tlačítko, které vytvoříte.
@@ -28,8 +28,8 @@ Jak je název navržený, Windows Presentation Foundation (WPF) je skvělé, aby
 ## <a name="related-sections"></a>Související oddíly
  [Styly a šablonování](../../../desktop-wpf/fundamentals/styles-templates-overview.md) Popisuje, jak lze pomocí stylů a šablon určit vzhled a chování ovládacích prvků.
 
- [Přehled animace](../graphics-multimedia/animation-overview.md) Popisuje, jak lze objekty animovat pomocí [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] animace a systém časování.
+ [Přehled animace](../graphics-multimedia/animation-overview.md) Popisuje, jak mohou být objekty animovány pomocí animačního systému WPF a časování.
 
  [Přehled malování plnými barvami a přechody](../graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md) Popisuje, jak použít objekty štětce k malování plných barev, lineárních přechodů a paprskových přechodů.
 
- [Přehled efektů rastrového obrázku](../graphics-multimedia/bitmap-effects-overview.md) Popisuje efekty rastrových obrázků podporované nástrojem [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] a vysvětluje, jak je použít.
+ [Přehled efektů rastrového obrázku](../graphics-multimedia/bitmap-effects-overview.md) Popisuje efekty rastrového obrázku podporované WPF a vysvětluje, jak je použít.

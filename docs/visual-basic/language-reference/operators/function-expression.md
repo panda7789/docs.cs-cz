@@ -6,12 +6,12 @@ helpviewer_keywords:
 - functions [Visual Basic], function expressions
 - lambda expressions [Visual Basic], function expression
 ms.assetid: e8a47a45-4b8a-4f45-a623-7653625dffbc
-ms.openlocfilehash: d14d7c9bc701b5e06c51202c07c3b79832aba7cc
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 454c4e3d926640934a8edc4fcb16e4308a89dd50
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74331082"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75632334"
 ---
 # <a name="function-expression-visual-basic"></a>Function – výraz (Visual Basic)
 Deklaruje parametry a kód, které definují výraz lambda funkce.  
@@ -30,7 +30,7 @@ End Function
   
 |Termín|Definice|  
 |---|---|  
-|`parameterlist`|Volitelná. Seznam místních názvů proměnných, které reprezentují parametry tohoto postupu. Závorky musí být přítomny i v případě, že je seznam prázdný. Viz [seznam parametrů](../../../visual-basic/language-reference/statements/parameter-list.md).|  
+|`parameterlist`|Volitelné. Seznam místních názvů proměnných, které reprezentují parametry tohoto postupu. Závorky musí být přítomny i v případě, že je seznam prázdný. Viz [seznam parametrů](../../../visual-basic/language-reference/statements/parameter-list.md).|  
 |`expression`|Požadováno. Jeden výraz. Typ výrazu je návratový typ funkce.|  
 |`statements`|Požadováno. Seznam příkazů, které vrací hodnotu pomocí příkazu `Return`. (Viz [návratový příkaz](../../../visual-basic/language-reference/statements/return-statement.md).) Typ vrácené hodnoty je návratový typ funkce.|  
   
@@ -72,7 +72,7 @@ End Function
  [!code-vb[VbVbalrLambdas#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#14)]  
   
 ## <a name="example"></a>Příklad  
- Lambda výrazy tvoří mnoho operátorů dotazování v [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]a lze je použít explicitně v dotazech založených na metodách. Následující příklad ukazuje typický dotaz [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] následovaný překladem dotazu do formátu metody.  
+ Výrazy lambda jsou základem mnoha operátorů dotazu v jazyce LINQ (Language-Integrated Query) a lze je použít explicitně v dotazech založených na metodách. Následující příklad ukazuje typický dotaz LINQ následovaný překladem dotazu do formátu metody.  
   
 ```vb  
 Dim londonCusts = From cust In db.Customers  

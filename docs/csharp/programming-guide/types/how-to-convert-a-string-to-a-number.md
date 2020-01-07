@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: převod řetězce na číslo- C# programový průvodce'
+title: Postup převodu řetězce na číslo – C# programovací Průvodce
 ms.custom: seodec18
 ms.date: 02/11/2019
 helpviewer_keywords:
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - converting strings to int [C#]
 - strings [C#], converting to int
 ms.assetid: 467b9979-86ee-4afd-b734-30299cda91e3
-ms.openlocfilehash: 8cd5a54bead2790d8e6e4c8e4a5649352f12869d
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
-ms.translationtype: MT
+ms.openlocfilehash: a22b3af659630e947490858915e638e601b5f18f
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552402"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635038"
 ---
-# <a name="how-to-convert-a-string-to-a-number-c-programming-guide"></a>Postupy: Převedení řetězce na číslo (Průvodce programováním v C#)
+# <a name="how-to-convert-a-string-to-a-number-c-programming-guide"></a>Převod řetězce na číslo (C# Průvodce programováním)
 
 Můžete převést [řetězec](../../language-reference/builtin-types/reference-types.md) na číslo voláním metody `Parse` nebo `TryParse`, která se nachází na různých číselných typech (`int`, `long`, `double`atd.), nebo pomocí metod ve třídě <xref:System.Convert?displayProperty=nameWithType>.  
   
@@ -58,5 +58,5 @@ V následující tabulce jsou uvedeny některé z metod <xref:System.Convert> t�
 ## <a name="see-also"></a>Viz také:
 
 - [Typy](./index.md)
-- [Postupy: Určení, zda řetězec reprezentuje číselnou hodnotu](../strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)
+- [Jak zjistit, zda řetězec představuje číselnou hodnotu](../strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)
 - [Ukázka: nástroj formátování WinForms pro .NET CoreC#()](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-cs)

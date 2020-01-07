@@ -2,74 +2,74 @@
 title: Služby WCF a ASP.NET
 ms.date: 03/30/2017
 ms.assetid: b980496a-f0b0-4319-8e55-a0f0fa32da70
-ms.openlocfilehash: d42787492b00b8e0a5a732d641947fec61b5ff96
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 0a64e277d3465b77a2553d6b9c3901f09a6e1a52
+ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67663685"
+ms.lasthandoff: 12/29/2019
+ms.locfileid: "75544737"
 ---
 # <a name="wcf-services-and-aspnet"></a>Služby WCF a ASP.NET
 
-Toto téma popisuje hostování Windows Communication Foundation (WCF) služby-souběžně s technologií ASP.NET a hostování v režim kompatibility ASP.NET.
+Toto téma popisuje služby hostování Windows Communication Foundation (WCF) vedle sebe pomocí ASP.NET a jejich hostování v režimu kompatibility ASP.NET.
 
-## <a name="hosting-wcf-side-by-side-with-aspnet"></a>Hostování WCF – souběžně s rozhraním ASP.NET
+## <a name="hosting-wcf-side-by-side-with-aspnet"></a>Hostování WCF vedle sebe pomocí ASP.NET
 
-Služby WCF hostované v Internetové informační služby (IIS) mohou být umístěny s. Stránky ASPX a ASMX webovými službami v rámci jednoho, běžné domény aplikace. Technologie ASP.NET poskytuje běžné služby infrastruktury, jako je Správa domény aplikace a dynamická kompilace pro WCF a ASP.NET HTTP runtime. Výchozí konfigurace pro službu WCF je vedle sebe s technologií ASP.NET.
+Služby WCF hostované ve službě Internetová informační služba (IIS) se můžou nacházet pomocí. Stránky ASPX a webové služby ASMX v rámci jedné běžné aplikační domény. ASP.NET poskytuje běžné služby infrastruktury, jako je například Správa AppDomain a dynamická kompilace pro WCF i modul HTTP runtime ASP.NET. Výchozí konfigurace pro WCF je souběžná s ASP.NET.
 
-![Snímek obrazovky s informacemi služby WCF a ASP .NET: sdílení stavu.](./media/wcf-services-and-aspnet/windows-communication-foundation-services-asp-dotnet-configuration.gif)
+![Snímek obrazovky zobrazující služby WCF a ASP .NET: stav sdílení](./media/wcf-services-and-aspnet/windows-communication-foundation-services-asp-dotnet-configuration.gif)
 
-Modul runtime ASP.NET HTTP zpracovává požadavky ASP.NET, ale není součástí zpracování požadavků určených pro služby WCF, i když tyto služby jsou hostované v téže doméně AppDomain, jako je ASP.NET obsahu. Místo toho modelu služby WCF zachycuje zprávy adresované do služby WCF a směruje je do zásobníku/kanál přenosu WCF.
+Modul runtime ASP.NET HTTP zpracovává požadavky ASP.NET, ale nepodílí se na zpracování požadavků určených pro služby WCF, i když jsou tyto služby hostovány ve stejné doméně AppDomain jako obsah ASP.NET. Místo toho model služby WCF zachycuje zprávy adresované službám WCF a směruje je prostřednictvím zásobníku přenosu nebo kanálu WCF.
 
-Výsledky vedle sebe modelu jsou následující:
+Výsledky souběžného modelu jsou následující:
 
-- ASP.NET a WCF služby můžou sdílet stavu domény aplikace. Protože dvou platforem mohou existovat vedle sebe v téže doméně AppDomain, WCF můžete také sdílet stavu domény aplikace s ASP.NET (včetně statických proměnných, události a tak dále).
+- Služby ASP.NET a WCF můžou sdílet stav domény AppDomain. Vzhledem k tomu, že dvě architektury mohou existovat ve stejné doméně AppDomain, může WCF také sdílet stav domény AppDomain s ASP.NET (včetně statických proměnných, událostí atd.).
 
-- Služby WCF se chovají, nezávisle na hostování prostředí a přenosu. Modul runtime ASP.NET HTTP je záměrně spjat s IIS/ASP.NET hostování prostředí a komunikaci pomocí protokolu HTTP. Naopak WCF slouží chovat konzistentně napříč hostitelská prostředí (WCF chová konzistentně obě uvnitř i vně služby IIS) a mezi přenosu (služby hostované ve službě IIS 7.0 a novější má konzistenci napříč všechny koncové body, které zveřejňuje, i v případě, Některé z těchto koncových bodů použít jiné protokoly než HTTP).
+- Služby WCF se chovají konzistentně, nezávisle na hostitelském prostředí a přenosu. Běhový modul HTTP ASP.NET je záměrně spojený s hostitelským prostředím služby IIS/ASP. NET a komunikace HTTP. Služba WCF je naopak navržena tak, aby se chovala konzistentně napříč hostitelskými prostředími (WCF se chová konzistentně uvnitř i vně služby IIS) a napříč přenosem (služba hostovaná ve službě IIS 7,0 a novější má konzistentní chování ve všech koncových bodech, které zpřístupňuje), i když Některé z těchto koncových bodů používají jiné protokoly než HTTP).
 
-- V doméně AppDomain funkce, které jsou implementovány modulem HTTP runtime použít obsah ASP.NET, ale ne WCF. Mnoho funkcí specifické platformy aplikace ASP.NET se nevztahují na služby WCF hostované v doméně AppDomain, která obsahuje obsahu ASP.NET. Mezi tyto funkce patří:
+- V rámci třídy AppDomain se funkce implementované modulem HTTP runtime vztahují na obsah ASP.NET, ale ne na WCF. Mnoho funkcí specifických pro protokol HTTP platformy aplikace ASP.NET se nevztahuje na služby WCF hostované v doméně AppDomain, která obsahuje obsah ASP.NET. Mezi tyto funkce patří následující:
 
-  - HttpContext: <xref:System.Web.HttpContext.Current%2A> je vždy `null` při přístupu z v rámci služby WCF. Místo nich se používá <xref:System.ServiceModel.Channels.RequestContext>.
+  - HttpContext: <xref:System.Web.HttpContext.Current%2A> je vždy `null` při použití v rámci služby WCF. Místo nich se používá <xref:System.ServiceModel.Channels.RequestContext>.
 
-  - Autorizace na základě souboru: Model zabezpečení WCF neumožňuje použití do souboru .svc služby při rozhodování o tom, jestli žádost o služby je autorizovaný seznam řízení přístupu (ACL).
+  - Ověřování na základě souborů: model zabezpečení WCF nepovoluje přístup k seznamu řízení přístupu (ACL), který se používá pro soubor. svc služby při rozhodování, zda je žádost o službu autorizována.
 
-  - Autorizace adres URL podle konfigurace: Obdobně model zabezpečení WCF nedrží se žádná pravidla ověřování na základě adresy URL zadaná v jeho System.Web \<autorizace > konfiguračního prvku. Tato nastavení jsou ignorovány požadavkům WCF, pokud se služba nachází v prostoru adresy URL zabezpečuje ASP. Autorizačních pravidel adres URL vaší sítě.
+  - Autorizace adresy URL založené na konfiguraci: podobně, model zabezpečení WCF nedodržuje žádná autorizační pravidla založená na adrese URL zadaná v části System. Web \<Authorization > konfiguračního elementu. Tato nastavení se u požadavků WCF ignorují, pokud se služba nachází v prostoru URL zabezpečeném pomocí ASP. NETTO autorizační pravidla URL.
 
-  - Rozšiřitelnost HttpModule: Infrastruktury hostování WCF zachycuje WCF při požadavků <xref:System.Web.HttpApplication.PostAuthenticateRequest> nevrací zpracování do kanálu HTTP technologie ASP.NET a je vyvolána událost. Moduly, které jsou naprogramovány tak, aby zachytávat žádosti v pozdějších fázích kanálu není zachytávat žádosti WCF.
+  - Rozšiřitelnost HttpModule: infrastruktura hostování WCF zachycuje požadavky WCF při vyvolání události <xref:System.Web.HttpApplication.PostAuthenticateRequest> a nevrátí zpracování do kanálu HTTP ASP.NET. Moduly, které jsou kódované pro zachycení požadavků v pozdějších fázích kanálu, nezachycují požadavky WCF.
 
-  - Zosobnění technologie ASP.NET: Ve výchozím nastavení, WCF požaduje vždy spustí jako identita, procesu služby IIS i v případě, že technologie ASP.NET je nastavit pro povolení zosobnění pomocí vaší System.Web \<identity impersonate = "true" / > Možnosti konfigurace.
+  - Zosobnění ASP.NET: ve výchozím nastavení se požadavky WCF vždy spouštějí jako identita procesu IIS, a to i v případě, že ASP.NET je nastavená tak, aby povolovala zosobnění pomocí možnosti System. Web \<identity impersonate = "true"/> Konfigurace.
 
-Tato omezení platí pouze pro služby WCF hostované v IIS aplikace. Chování obsahu ASP.NET nemá vliv na přítomnost WCF.
+Tato omezení platí jenom pro služby WCF hostované v aplikaci IIS. Chování ASP.NET obsahu není ovlivněno přítomností služby WCF.
 
-Aplikace WCF, které vyžadují funkce tradičně poskytované službou kanálu HTTP byste zvážit použití ekvivalenty WCF, které jsou hostiteli a přenosu nezávislé:
+Aplikace WCF, které vyžadují funkčnost, tradičně poskytované kanálem HTTP, by měly uvažovat o použití ekvivalentů WCF, což jsou nezávislé na hostiteli a přenosu:
 
-- <xref:System.ServiceModel.OperationContext> místo <xref:System.Web.HttpContext>.
+- místo <xref:System.Web.HttpContext><xref:System.ServiceModel.OperationContext>.
 
-- <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> místo ASP. Autorizační soubor nebo adresa URL vaší sítě.
+- místo ASP <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>. Ověřování souboru nebo adresy URL netto.
 
-- <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector> nebo vlastní kanály namísto z modulů HTTP na základě úrovní.
+- místo modulů HTTP <xref:System.ServiceModel.Dispatcher.IDispatchMessageInspector> nebo vlastní vrstvené kanály.
 
-- Zosobnění pro každou operaci pomocí technologie WCF místo System.Web zosobnění.
+- Zosobnění pro každou operaci pomocí WCF namísto zosobnění System. Web.
 
-Alternativně můžete zvážit, službami v režimu kompatibility ASP.NET na WCF.
+Případně můžete zvážit spuštění služeb v režimu kompatibility ASP.NET WCF.
 
-## <a name="hosting-wcf-services-in-aspnet-compatibility-mode"></a>Hostování služby WCF v režim kompatibility ASP.NET
+## <a name="hosting-wcf-services-in-aspnet-compatibility-mode"></a>Hostování služeb WCF v režimu kompatibility ASP.NET
 
-I když modelu WCF je určená chovat konzistentně napříč hostitelských prostředích a přenosy, jsou často scénáře, kde aplikace nevyžaduje, aby tento stupeň flexibilitu. Režim kompatibility ASP.NET na WCF je vhodné pro scénáře, které nevyžadují, aby možnost hostitele mimo službu IIS, nebo pro komunikaci pomocí jiné protokoly než HTTP, ale všechny funkce technologie ASP.NET webové aplikace platformy, které používají.
+I když je model WCF navržený tak, aby se choval konzistentně napříč hostitelskými prostředími a přenosy, často se jedná o scénáře, kdy aplikace nevyžaduje tuto míru flexibility. Režim kompatibility ASP.NET WCF je vhodný pro scénáře, které nevyžadují schopnost hostovat mimo službu IIS nebo komunikovat přes jiné protokoly než HTTP, ale používá všechny funkce platformy webové aplikace ASP.NET.
 
-Na rozdíl od výchozí konfiguraci vedle sebe, kde infrastruktury hostování WCF zachycuje zpráv WCF a směruje je mimo kanálu protokolu HTTP, služby WCF spuštění v režimu kompatibility ASP.NET plně účastnit životního cyklu požadavku ASP.NET HTTP. V režimu kompatibility služby WCF pomocí kanálu HTTP prostřednictvím <xref:System.Web.IHttpHandler> implementace, podobně jako na způsob, jak požadavky pro stránky ASPX a ASMX webovými službami jsou zpracovány. V důsledku toho WCF se chová stejně jako ASMX s ohledem na tyto funkce technologie ASP.NET:
+Na rozdíl od výchozí souběžné konfigurace, kde infrastruktura hostování WCF zachycuje zprávy WCF a směruje je z kanálu HTTP, se služby WCF běžící v režimu kompatibility ASP.NET plně podílejí v životním cyklu žádosti ASP.NET HTTP. V režimu kompatibility používají služby WCF kanál HTTP prostřednictvím implementace <xref:System.Web.IHttpHandler>, podobně jako zpracování požadavků na stránky ASPX a webové služby ASMX. V důsledku toho se WCF chová stejně jako ASMX s ohledem na následující funkce ASP.NET:
 
-- <xref:System.Web.HttpContext>: WCF služby spuštěné v režimu kompatibility ASP.NET dostanete <xref:System.Web.HttpContext.Current%2A> a jeho přidruženého stavu.
+- <xref:System.Web.HttpContext>: služby WCF spuštěné v režimu kompatibility ASP.NET mají přístup k <xref:System.Web.HttpContext.Current%2A> a jeho přidruženému stavu.
 
-- Autorizace na základě souboru: WCF služby spuštěné v režimu kompatibility ASP.NET může být zabezpečené pomocí souboru systému seznamy řízení přístupu (ACL) se připojuje k souboru .svc služby.
+- Autorizace na základě souborů: služby WCF běžící v režimu kompatibility ASP.NET můžou být zabezpečené připojením seznamů řízení přístupu (ACL) systému souborů do souboru. svc služby.
 
-- Konfigurovatelné autorizace adres URL: ASP. NET. adresa URL autorizační pravidla se vynucují s ohledem požadavky WCF při spuštění služby WCF v režim kompatibility ASP.NET.
+- Konfigurovatelná autorizace adresy URL: ASP. Autorizační pravidla adresy URL netto se vynutily pro požadavky WCF, když je služba WCF spuštěná v režimu kompatibility ASP.NET.
 
-- <xref:System.Web.HttpModuleCollection> rozšíření: Protože WCF služby spuštěné v režimu kompatibility ASP.NET plně účastnit životního cyklu požadavku ASP.NET HTTP, jakýkoli modul HTTP nakonfigurované v kanálu HTTP je moct pracovat s WCF požadavky před i po vyvolání služby.
+- rozšíření <xref:System.Web.HttpModuleCollection>: vzhledem k tomu, že se služby WCF běžící v režimu kompatibility ASP.NET plně účastní životního cyklu žádosti ASP.NET HTTP, jakýkoli modul HTTP konfigurovaný v kanálu HTTP je schopný pracovat na žádostech WCF před i po vyvolání služby.
 
-- Zosobnění technologie ASP.NET: Spuštění pomocí technologie ASP.NET aktuální identitu služby WCF zosobnit podproces, který může být jiný než identitu procesu služby IIS, pokud je povoleno zosobnění technologie ASP.NET pro aplikaci. Pokud zosobnění technologie ASP.NET a WCF zosobnění jsou povoleny pro konkrétní službu operace, implementace služby takže v konečném důsledku se spustí pomocí identity získané z WCF.
+- Zosobnění ASP.NET: služby WCF běží pomocí aktuální identity ASP.NET zosobněného vlákna, které se může lišit od identity procesu služby IIS, pokud je pro aplikaci povolené zosobnění ASP.NET. Pokud jsou pro určitou operaci služby povolené zosobnění ASP.NET a zosobnění WCF, implementace služby se nakonec spustí pomocí identity získané od služby WCF.
 
-Režim kompatibility ASP.NET na WCF je povolené na úrovni aplikace provede následující konfigurací (umístěný v souboru Web.config aplikace):
+Režim kompatibility ASP.NET WCF je povolený na úrovni aplikace prostřednictvím následující konfigurace (umístěná v souboru Web. config aplikace):
 
 ```xml
 <system.serviceModel>
@@ -77,9 +77,9 @@ Režim kompatibility ASP.NET na WCF je povolené na úrovni aplikace provede ná
 </system.serviceModel>
 ```
 
-Výchozí hodnota je "`true`" Pokud nejsou zadané. Tuto hodnotu nastavíte na "`false`" označuje, že všechny služby WCF v aplikaci spuštěná nebude spuštěn v režimu kompatibility ASP.NET.
+Tato hodnota je standardně `false`, pokud není zadána. Hodnota `false` označuje, že všechny služby WCF spuštěné v aplikaci nebudou spuštěny v režimu kompatibility ASP.NET.
 
-Protože režim kompatibility ASP.NET znamená sémantikou zpracování požadavku, které jsou zásadně liší od výchozího WCF, implementací jednotlivé služby mají možnost řízení, zda jsou provozovány v rámci aplikace, pro které technologie ASP.NET Režim kompatibility se povolila. Služby můžete použít <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> označující, jestli podporují režim kompatibility ASP.NET. Výchozí hodnota tohoto atributu je <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed>.
+Vzhledem k tomu, že režim kompatibility ASP.NET zahrnuje sémantiku zpracování požadavků, která se zásadním rozdílem liší od výchozího nastavení WCF, jednotlivé implementace služeb mají možnost řídit, jestli se spouštějí v aplikaci, pro kterou ASP.NET Režim kompatibility byl povolen. Služby můžou použít <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> k označení, jestli podporují režim kompatibility ASP.NET. Výchozí hodnota pro tento atribut je <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed>.
 
 ```csharp
 [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
@@ -87,23 +87,23 @@ public class CalculatorService : ICalculatorSession
 {//Implement calculator service methods.}
 ```
 
-Následující tabulka ukazuje, jak nastavení režimu kompatibility celé aplikace komunikuje s jednotlivé služby uvedené úrovně podpory:
+Následující tabulka ukazuje, jak nastavení režimu kompatibility v rámci aplikace komunikuje s úrovní podpory, která je uvedena v jednotlivých službách:
 
-|Nastavení režimu kompatibility celou aplikaci|[AspNetCompatibilityRequirementsMode]<br /><br /> Nastavení|Pozorovaných výsledků|
+|Nastavení režimu kompatibility na úrovni aplikace|[AspNetCompatibilityRequirementsMode]<br /><br /> Nastavení|Zjištěný výsledek|
 |--------------------------------------------------|---------------------------------------------------------|---------------------|
-|aspNetCompatibilityEnabled = "`true`"|<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required>|Služba úspěšně aktivuje.|
-|aspNetCompatibilityEnabled = "`true`"|<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed>|Služba úspěšně aktivuje.|
-|aspNetCompatibilityEnabled = "`true`"|<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.NotAllowed>|Když služba přijímá zprávy, dojde k chybě aktivace.|
-|aspNetCompatibilityEnabled = "`false`"|<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required>|Když služba přijímá zprávy, dojde k chybě aktivace.|
-|aspNetCompatibilityEnabled = "`false`"|<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed>|Služba úspěšně aktivuje.|
-|aspNetCompatibilityEnabled = "`false`"|<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.NotAllowed>|Služba úspěšně aktivuje.|
+|aspNetCompatibilityEnabled = "`true`"|<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required>|Služba se úspěšně aktivovala.|
+|aspNetCompatibilityEnabled = "`true`"|<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed>|Služba se úspěšně aktivovala.|
+|aspNetCompatibilityEnabled = "`true`"|<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.NotAllowed>|Pokud služba obdrží zprávu, dojde k chybě aktivace.|
+|aspNetCompatibilityEnabled = "`false`"|<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required>|Pokud služba obdrží zprávu, dojde k chybě aktivace.|
+|aspNetCompatibilityEnabled = "`false`"|<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed>|Služba se úspěšně aktivovala.|
+|aspNetCompatibilityEnabled = "`false`"|<xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.NotAllowed>|Služba se úspěšně aktivovala.|
 
 > [!NOTE]
-> Služba IIS 7.0 a WAS umožňuje služeb WCF pro komunikaci pomocí jiné protokoly než HTTP. WCF služby spuštěné v aplikacích, které mají povolený režim kompatibility ASP.NET, ale nemáte oprávnění zpřístupňují koncové body jiným protokolem než HTTP. Taková konfigurace generuje výjimku aktivace, když služba přijímá jeho první zprávu.
+> Služba IIS 7,0 a byla umožněna službě WCF komunikovat přes jiné protokoly než HTTP. Služby WCF spuštěné v aplikacích, které mají povolený režim kompatibility ASP.NET, však nejsou povoleny pro zobrazení koncových bodů jiných než HTTP. Taková konfigurace vygeneruje výjimku aktivace, když služba obdrží svou první zprávu.
 
-Další informace o povolení režim kompatibility ASP.NET pro služby WCF najdete v tématu <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode> a [režim kompatibility ASP.NET](../samples/aspnet-compatibility.md) vzorku.
+Další informace o povolení režimu kompatibility ASP.NET pro služby WCF najdete v tématu <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode> a ukázka [kompatibility ASP.NET](../samples/aspnet-compatibility.md) .
 
 ## <a name="see-also"></a>Viz také:
 
 - <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute>
-- [Hostování funkcí systému Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))
+- [Funkce hostování technologie Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))

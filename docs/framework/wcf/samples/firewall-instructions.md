@@ -2,12 +2,12 @@
 title: Pokyny k bráně firewall
 ms.date: 03/30/2017
 ms.assetid: a7dc429f-65ac-4faf-974a-77d5fb977fe1
-ms.openlocfilehash: 3c94f0edbb244b6c378cc32f05c34fd029d253ff
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: e2c4dd8e784599a5e110e7454d9d0e709cbc5776
+ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837841"
+ms.lasthandoff: 12/29/2019
+ms.locfileid: "75544774"
 ---
 # <a name="firewall-instructions"></a>Pokyny k bráně firewall
 Musíte povolit několik portů nebo programů v bráně firewall, aby mohli ukázky Windows Communication Foundation (WCF) fungovat. Řada ukázek komunikuje pomocí portů v rozsahu 8000-8003 a portu 9000. Brána firewall je ve výchozím nastavení zapnutá a brání přístupu k těmto portům. Pokud chcete bránu firewall povolit pro ukázky, proveďte v závislosti na vašich požadavcích a prostředí zabezpečení jeden z následujících postupů:  
@@ -36,7 +36,7 @@ Musíte povolit několik portů nebo programů v bráně firewall, aby mohli uk�
   
     - V systému Windows 7 nebo Windows Server 2008 R2 klikněte na možnost **Povolení programu nebo funkce přes bránu Windows Firewall**. Klikněte na **změnit nastavení**, připustit **jiný program...** .  
   
-    - V systému Windows Vista nebo [!INCLUDE[lserver](../../../../includes/lserver-md.md)]klikněte na možnost **Povolení programu přes bránu Windows Firewall**.  
+    - V systému Windows Vista nebo Windows Server 2008 klikněte na možnost **Povolení programu přes bránu Windows Firewall**.  
   
 4. Na kartě **výjimky** klikněte na **Přidat program**.  
   
@@ -72,7 +72,7 @@ Musíte povolit několik portů nebo programů v bráně firewall, aby mohli uk�
   
     10. Klikněte na **odchozí pravidla** a opakujte kroky c až h.  
   
-3. V systému Windows Vista nebo [!INCLUDE[lserver](../../../../includes/lserver-md.md)]postupujte podle následujících kroků.  
+3. V systému Windows Vista nebo Windows Server 2008 postupujte podle těchto kroků.  
   
     1. Klikněte na možnost **Povolení programu přes bránu Windows Firewall**.  
   

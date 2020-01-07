@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: převod mezi hexadecimálními řetězci a číselnými typy C# – Průvodce programováním'
+title: Jak převádět mezi hexadecimálními řetězci a číselnými C# typy – Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - strings [C#], converting hexadecimal strings
 - hexadecimal strings [C#]
 ms.assetid: 7115c49f-7d1d-40c3-8bd9-aae0cc1d46b6
-ms.openlocfilehash: 8b72734f9b617fed2ff65977c9a0e60f46424ae8
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
-ms.translationtype: MT
+ms.openlocfilehash: 26c2aa12c9c67c59d1ba6fbd20bf675b947b3967
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74429437"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635025"
 ---
-# <a name="how-to-convert-between-hexadecimal-strings-and-numeric-types-c-programming-guide"></a>Postupy: Převod mezi hexadecimálními řetězci a číselnými typy (Průvodce programováním v C#)
+# <a name="how-to-convert-between-hexadecimal-strings-and-numeric-types-c-programming-guide"></a>Jak převádět mezi hexadecimálními řetězci a číselnýmiC# typy (Průvodce programováním)
 Tyto příklady vám ukážou, jak provádět následující úlohy:  
   
 - Získá hexadecimální hodnotu každého znaku v [řetězci](../../language-reference/builtin-types/reference-types.md).  
@@ -57,4 +57,4 @@ Tyto příklady vám ukážou, jak provádět následující úlohy:
 
 - [Standardní řetězce číselného formátu](../../../standard/base-types/standard-numeric-format-strings.md)
 - [Typy](./index.md)
-- [Postupy: Určení, zda řetězec reprezentuje číselnou hodnotu](../strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)
+- [Jak zjistit, zda řetězec představuje číselnou hodnotu](../strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)

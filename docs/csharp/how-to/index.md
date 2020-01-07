@@ -2,12 +2,12 @@
 title: Články (C# průvodce)
 description: Kolekce rychlých tipů a krátkých a podrobných ukázek kódu
 ms.date: 12/20/2017
-ms.openlocfilehash: 855ea90d22174c2b7c0b53a526c47a5edbe5496d
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: e6cb657726b82a1710bbcd596fe48037b5c26352
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73736885"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75339223"
 ---
 # <a name="how-to-c"></a>Postupy (C#)
 
@@ -15,13 +15,13 @@ V části Postupy v C# příručce můžete najít rychlé odpovědi na běžné
 
 ## <a name="general-c-concepts"></a>Obecné C# koncepty
 
-K dispozici jsou několik tipů a rad, C# které představují běžné postupy pro vývojáře.
+K dispozici je několik tipů a rad, C# které představují běžné postupy pro vývojáře:
 
 - [Inicializujte objekty pomocí inicializátoru objektu](../programming-guide/classes-and-structs/how-to-initialize-objects-by-using-an-object-initializer.md).
 - [Přečtěte si o rozdílech mezi předáním struktury a třídy metodě](../programming-guide/classes-and-structs/how-to-know-the-difference-passing-a-struct-and-passing-a-class-to-a-method.md).
 - [Použijte přetížení operátoru](../language-reference/operators/operator-overloading.md).
 - [Implementujte a zavolejte vlastní metodu rozšíření](../programming-guide/classes-and-structs/how-to-implement-and-call-a-custom-extension-method.md).
-- I C# programátoři mohou chtít [použít `My` obor názvů z VB](../programming-guide/namespaces/how-to-use-the-my-namespace.md).
+- I C# programátoři mohou chtít [použít `My` obor názvů z Visual Basic](../programming-guide/namespaces/how-to-use-the-my-namespace.md).
 - [Vytvořte novou metodu pro `enum` typ pomocí rozšiřujících metod](../programming-guide/classes-and-structs/how-to-create-a-new-method-for-an-enumeration.md).
 
 ### <a name="class-and-struct-members"></a>Členové třídy a struktury

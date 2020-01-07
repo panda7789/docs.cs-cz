@@ -12,12 +12,12 @@ helpviewer_keywords:
 - graphics features [WPF]
 - transition effects [WPF]
 ms.assetid: 1817d9dc-3d6c-46cb-afc8-63b0bae35e37
-ms.openlocfilehash: 150b742c2195c07abf2b2823871627b0ba827580
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: f9d27ce50376c3a494a546a23cd5d7409b4c475a
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72919991"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636624"
 ---
 # <a name="graphics-and-multimedia"></a>Grafika a multimédia
 
@@ -59,11 +59,11 @@ WPF zahrnuje podporu pro vysoce kvalitní 2D grafiku. Mezi tyto funkce patří �
 
 ### <a name="2-d-shapes"></a>2D obrazce
 
-[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje knihovnu běžně používaných dvojrozměrných 2D tvarů, jako jsou obdélníky a tři tečky, které jsou znázorněny na následujícím obrázku.
+WPF poskytuje knihovnu běžně používaných dvojrozměrných 2D tvarů, jako jsou obdélníky a tři tečky, které jsou znázorněny na následujícím obrázku.
 
 ![Diagram znázorňující elipsy a obdélníky.](./media/index/two-deminsional-shapes-ellipses-rectangles.png)
 
-Tyto vnitřní [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] obrazce nejsou pouze tvary: Jedná se o programovatelné prvky, které implementují mnoho funkcí, které očekáváte od nejběžnějších ovládacích prvků, které zahrnují vstup z klávesnice a myši. Následující příklad ukazuje, jak zpracovat událost <xref:System.Windows.UIElement.MouseUp> vyvolána kliknutím na <xref:System.Windows.Shapes.Ellipse> elementu.
+Tyto vnitřní tvary WPF nejsou pouze tvary: Jedná se o programovatelné prvky, které implementují mnoho funkcí, které očekáváte od nejběžnějších ovládacích prvků, které zahrnují vstup z klávesnice a myši. Následující příklad ukazuje, jak zpracovat událost <xref:System.Windows.UIElement.MouseUp> vyvolána kliknutím na <xref:System.Windows.Shapes.Ellipse> elementu.
 
 ```xaml
 <Window
@@ -101,7 +101,7 @@ Další informace naleznete v tématu [Shapes and Basic Drawing in WPF Overview]
 
 ### <a name="2-d-geometries"></a>2D geometrií
 
-Když 2D obrazce, které [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytují, nejsou dostačující, můžete použít podporu [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] pro geometrií a cesty a vytvořit vlastní. Následující obrázek ukazuje, jak lze použít geometrií k vytváření tvarů, jako štětec kresby a k vystřihování dalších [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] prvků.
+Když 2D obrazce, které WPF poskytuje, nejsou dostačující, můžete použít podporu WPF pro geometrií a cesty a vytvořit vlastní. Následující obrázek ukazuje, jak lze použít geometrií k vytváření tvarů, jako štětec kresby a k vystřihování dalších prvků WPF.
 
 ![Snímek obrazovky znázorňující, jak můžete pomocí geometrií vytvořit obrazce.](./media/index/use-geometries-create-shapes.png)
 
@@ -109,7 +109,7 @@ Další informace najdete v tématu [geometrie Overview](geometry-overview.md). 
 
 ### <a name="2-d-effects"></a>2D efekty
 
-[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje knihovnu 2D tříd, které lze použít k vytvoření celé řady efektů. Funkce 2D vykreslování [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje možnost malovat [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prvky, které mají přechody, bitmapy, kresby a videa; a k manipulaci s nimi použijte otáčení, škálování a zkosení. Následující ilustrace obsahuje příklad mnoha efektů, které lze dosáhnout pomocí [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] štětce.
+WPF poskytuje knihovnu 2D tříd, které lze použít k vytvoření celé řady efektů. Funkce 2D vykreslování WPF poskytuje možnost malovat [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prvky, které mají přechody, bitmapy, kresby a videa; a k manipulaci s nimi použijte otáčení, škálování a zkosení. Následující ilustrace obsahuje příklad mnoha efektů, které lze dosáhnout pomocí štětců WPF.
 
 ![Ilustrace znázorňující různé prvky WPF štětců a malování.](./media/index/brushes-paint-elements.png)
 
@@ -119,7 +119,7 @@ Další informace najdete v tématu [Přehled štětců WPF](wpf-brushes-overvie
 
 ## <a name="3-d-rendering"></a>trojrozměrné vykreslování
 
-[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje sadu 3D možností vykreslování, které se integrují s podporou 2D grafiky v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], aby bylo možné vytvořit zajímavější rozložení, [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]a vizualizaci dat. Na jednom konci spektra [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] umožňuje vykreslování 2D imagí na povrchy 3D tvarů, které ukazují následující ilustrace.
+WPF poskytuje sadu 3D možností vykreslování, které se integrují s podporou 2D grafiky v WPF, aby bylo možné vytvořit zajímavější rozložení, [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]a vizualizaci dat. Na jednom konci spektra umožňuje WPF vykreslování 2D imagí na povrchy 3D tvarů, které ukazují následující ilustrace.
 
 ![Snímek obrazovky s ukázkami znázorňující 3D obrazce s různými texturami](./media/index/visual-three-dimensional-shape.png)
 
@@ -129,7 +129,7 @@ Další informace najdete v tématu [Přehled 3D grafiky](3-d-graphics-overview.
 
 ## <a name="animation"></a>Animace
 
-Pomocí animace můžete měnit, protřepe, zesílit a mizet ovládací prvky a prvky. a k vytváření zajímavých přechodů stránky a dalších. Vzhledem k tomu, že [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] umožňuje animovat většinu vlastností, nejenom můžete animovat většinu objektů [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], můžete také použít [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] k animaci vlastních objektů, které vytvoříte.
+Pomocí animace můžete měnit, protřepe, zesílit a mizet ovládací prvky a prvky. a k vytváření zajímavých přechodů stránky a dalších. Vzhledem k tomu, že WPF umožňuje animovat většinu vlastností, nestačí pouze animovat většinu objektů WPF, můžete také použít WPF k animaci vlastních objektů, které vytvoříte.
 
 ![Snímek obrazovky s animovanou datovou krychlí](./media/index/animate-custom-objects.png)
 
@@ -137,13 +137,13 @@ Další informace najdete v tématu [Přehled animací](animation-overview.md). 
 
 <a name="media"></a>
 
-## <a name="media"></a>Média
+## <a name="media"></a>Médium
 
 Obrázky, videa a zvuky jsou mediální a bohatě náročné způsoby, jak vyjádřit informace a uživatelské prostředí.
 
-### <a name="images"></a>Image
+### <a name="images"></a>Obrázky
 
-Obrázky, které obsahují ikony, pozadí a dokonce i části animací, jsou základní součástí většiny aplikací. Vzhledem k tomu, že je často potřeba použít image, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] zpřístupňuje možnost pracovat s nimi různými způsoby. Následující ilustrace znázorňuje pouze jeden z těchto způsobů.
+Obrázky, které obsahují ikony, pozadí a dokonce i části animací, jsou základní součástí většiny aplikací. Vzhledem k tomu, že je často potřeba použít image, WPF nabízí možnost pracovat s nimi různými způsoby. Následující ilustrace znázorňuje pouze jeden z těchto způsobů.
 
 ![Ukázka stylu snímku obrazovky](../controls/./media/stylingintro-eventtriggers.png "StylingIntro_EventTriggers")
 
@@ -151,7 +151,7 @@ Další informace najdete v tématu [Přehled imagí](imaging-overview.md).
 
 ### <a name="video-and-audio"></a>Video a zvuk
 
-Základní funkcí grafické schopnosti [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] je poskytnout nativní podporu pro práci s multimédii, která zahrnuje video a zvuk. Následující příklad ukazuje, jak vložit přehrávač médií do aplikace.
+Základní funkcí grafických schopností WPF je poskytnout nativní podporu pro práci s multimédii, která zahrnuje video a zvuk. Následující příklad ukazuje, jak vložit přehrávač médií do aplikace.
 
 ```xaml
 <MediaElement Source="media\numbers.wmv" Width="450" Height="250" />

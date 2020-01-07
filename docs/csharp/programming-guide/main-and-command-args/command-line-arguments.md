@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - command-line arguments [C#]
 ms.assetid: 0e597e0d-ea7a-41ba-a38a-0198122f3c26
-ms.openlocfilehash: f74f374f13aef5135b81d59f94bc2c6913766763
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
-ms.translationtype: MT
+ms.openlocfilehash: 88f30376f9c7684e64dd593becfa0ff8711a08ec
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039307"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635259"
 ---
 # <a name="command-line-arguments-c-programming-guide"></a>Argumenty příkazového řádku (Průvodce programováním v C#)
 
@@ -33,7 +33,7 @@ Můžete také převést řetězcové argumenty na číselné typy pomocí tří
 long num = Int64.Parse(args[0]);
 ```
 
-Je také možné použít C# typ `long`, který aliasy`Int64`:
+Je také možné použít C# typ `long`, který aliasy `Int64`:
 
 ```csharp
 long num = long.Parse(args[0]);
@@ -79,6 +79,6 @@ Chcete-li zkompilovat a spustit aplikaci z příkazového řádku, postupujte po
 - <xref:System.Environment?displayProperty=nameWithType>
 - [Průvodce programováním v jazyce C#](../index.md)
 - [Argumenty Main() a příkazového řádku](index.md)
-- [Postupy: Zobrazení argumentů příkazového řádku](how-to-display-command-line-arguments.md)
+- [Dsplay argumenty příkazového řádku](how-to-display-command-line-arguments.md)
 - [Návratové hodnoty Main()](main-return-values.md)
 - [Třídy](../classes-and-structs/classes.md)

@@ -2,25 +2,25 @@
 title: Funkční konstrukce (LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: 57a82bcf-de03-4f1c-a0c8-9a76e989d542
-ms.openlocfilehash: 46cf4dbaf190182467cbbe1094070b2da0854c68
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: e55b0010a5f75eee8137d1e9bcefc573b5e07e72
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66486036"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635753"
 ---
 # <a name="functional-construction-linq-to-xml-c"></a>Funkční konstrukce (LINQ to XML) (C#)
-[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] poskytuje efektivní způsob, jak vytvořit XML elementů s názvem *funkční konstrukce*. Funkční konstrukce je schopnost vytvářet stromu XML v jediném příkazu.  
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] poskytuje účinný způsob, jak vytvořit prvky XML nazvané *funkční konstrukce*. Funkční konstrukce je schopnost vytvořit strom XML v jednom příkazu.  
   
- Existuje několik klíčových funkcích služby [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] programovací rozhraní, která umožňují funkční konstrukce:  
+ Existuje několik klíčových funkcí rozhraní [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] API, které umožňují konstrukci funkčnosti:  
   
-- <xref:System.Xml.Linq.XElement> Konstruktoru přijímá různé typy argumentů pro obsah. Například lze předat jiné <xref:System.Xml.Linq.XElement> objekt, který bude podřízený element. Můžete předat <xref:System.Xml.Linq.XAttribute> objekt, který bude atribut prvku. Nebo můžete předat jakéhokoli jiného typu objektu, který je převeden na řetězec a stane se textového obsahu elementu.  
+- Konstruktor <xref:System.Xml.Linq.XElement> přebírá různé typy argumentů pro obsah. Například můžete předat další objekt <xref:System.Xml.Linq.XElement>, který se stal podřízeným prvkem. Můžete předat objekt <xref:System.Xml.Linq.XAttribute>, který se stal atributem elementu. Nebo můžete předat jakýkoli jiný typ objektu, který je převeden na řetězec a který se změní na textový obsah elementu.  
   
-- <xref:System.Xml.Linq.XElement> Přebírá konstruktor `params` pole typu <xref:System.Object>tak, aby libovolný počet objektů, které můžete předat konstruktoru. To umožňuje vytvořit element, který se složitým obsahem.  
+- Konstruktor <xref:System.Xml.Linq.XElement> přebírá `params` pole typu <xref:System.Object>, takže můžete konstruktoru předat libovolný počet objektů. To umožňuje vytvořit prvek, který má složitý obsah.  
   
-- Pokud objekt implementuje <xref:System.Collections.Generic.IEnumerable%601>, je vytvořena kolekce v objektu a jsou přidány všechny položky v kolekci. Pokud kolekce obsahuje <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XAttribute> objekty, každá položka v kolekci se přidá samostatně. To je důležité, protože to umožňuje předat výsledky [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu do konstruktoru.  
+- Pokud objekt implementuje <xref:System.Collections.Generic.IEnumerable%601>, je vyhodnocena kolekce v objektu a jsou přidány všechny položky v kolekci. Pokud kolekce obsahuje objekty <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XAttribute>, každá položka v kolekci se přidá samostatně. To je důležité, protože umožňuje předat výsledky dotazu LINQ do konstruktoru.  
   
- Tyto funkce umožňují napsat kód k vytvoření stromu XML. Následuje příklad:  
+ Tyto funkce umožňují napsat kód pro vytvoření stromu XML. Tady je příklad:  
   
 ```csharp  
 XElement contacts =  
@@ -38,7 +38,7 @@ XElement contacts =
     );  
 ```  
   
- Tyto funkce umožňují také napsat kód, který používá výsledky [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazuje při vytváření stromu XML, následujícím způsobem:  
+ Tyto funkce také umožňují napsat kód, který používá výsledky dotazů LINQ při vytváření stromu XML takto:  
   
 ```csharp  
 XElement srcTree = new XElement("Root",  

@@ -4,20 +4,20 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - LINQ [C#], features supporting LINQ
 ms.assetid: 524b0078-ebfd-45a7-b390-f2ceb9d84797
-ms.openlocfilehash: af7bf487ff4ed250025b946f0948c269fcc5bf09
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 9fc8adaa49d02f8b69c2db6e94a28b9fab36b3b0
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73418565"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635792"
 ---
 # <a name="c-features-that-support-linq"></a>Funkce C# podporující LINQ
 
-V následující části jsou představeny nové jazykové konstrukce představené v C# 3,0. I když jsou tyto nové funkce využité pro určitý stupeň s [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy, nejsou omezené na [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] a dají se použít v jakémkoli kontextu, kde je najdete užitečné.
+V následující části jsou představeny nové jazykové konstrukce představené v C# 3,0. I když jsou tyto nové funkce použity ve stupních s dotazy LINQ, nejsou omezeny na LINQ a je možné je použít v jakémkoli kontextu, kde je najdete užitečné.
 
 ## <a name="query-expressions"></a>Výrazy dotazu
 
-Výrazy dotazů používají deklarativní syntaxi podobnou syntaxi SQL nebo XQuery pro dotazování přes kolekce IEnumerable. Syntaxe dotazu v době kompilace je převedena na volání metody do implementace standardních metod rozšíření operátoru dotazu na poskytovatele [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]. Aplikace řídí standardní operátory dotazů, které jsou v oboru, zadáním příslušného oboru názvů s direktivou `using`. Následující výraz dotazu přebírá pole řetězců, seskupuje je podle prvního znaku v řetězci a řadí skupiny.
+Výrazy dotazů používají deklarativní syntaxi podobnou syntaxi SQL nebo XQuery pro dotazování přes kolekce IEnumerable. Syntaxe dotazu v čase kompilace je převedena na volání metody do implementace metod rozšíření standardních operátorů dotazu poskytovatele LINQ. Aplikace řídí standardní operátory dotazů, které jsou v oboru, zadáním příslušného oboru názvů s direktivou `using`. Následující výraz dotazu přebírá pole řetězců, seskupuje je podle prvního znaku v řetězci a řadí skupiny.
 
 ```csharp
 var query = from str in stringArray
@@ -66,7 +66,7 @@ Zdroj dat může mít více vlastností ležící pod digestoří, než `Custome
 var newLargeOrderCustomers = IncomingOrders.Where(x => x.OrderSize > 5).Select(y => new Customer { Name = y.Name, Phone = y.Phone });
 ```
 
-Další informace naleznete v tématu:
+Další informace najdete v části .
 
 - [Inicializátory objektu a kolekce](../../classes-and-structs/object-and-collection-initializers.md)
 
@@ -82,17 +82,17 @@ select new {name = cust.Name, phone = cust.Phone};
 
 Další informace najdete v tématu [anonymní typy](../../classes-and-structs/anonymous-types.md).
 
-## <a name="extension-methods"></a>Metody rozšíření
+## <a name="extension-methods"></a>Rozšiřující metody
 
-Rozšiřující metoda je statická metoda, která může být přidružena k typu, aby mohla být volána jako metoda instance typu. Tato funkce umožňuje přidat nové metody do stávajících typů, aniž by bylo nutné je skutečně upravovat. Standardní operátory dotazu jsou sada rozšiřujících metod, které poskytují [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] funkce dotazů pro jakýkoli typ, který implementuje <xref:System.Collections.Generic.IEnumerable%601>.
+Rozšiřující metoda je statická metoda, která může být přidružena k typu, aby mohla být volána jako metoda instance typu. Tato funkce umožňuje přidat nové metody do stávajících typů, aniž by bylo nutné je skutečně upravovat. Standardní operátory dotazu jsou sada rozšiřujících metod, které poskytují funkce dotazů LINQ pro jakýkoli typ, který implementuje <xref:System.Collections.Generic.IEnumerable%601>.
 
 Další informace naleznete v tématu [metody rozšíření](../../classes-and-structs/extension-methods.md).
 
 ## <a name="lambda-expressions"></a>Lambda – výrazy
 
-Výraz lambda je vložená funkce, která používá operátor = > pro oddělení vstupních parametrů z těla funkce a může být převedena v době kompilace na delegáta nebo strom výrazu. V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] programování dojde při přímé volání metody do standardních operátorů dotazů na lambda výrazy.
+Výraz lambda je vložená funkce, která používá operátor = > pro oddělení vstupních parametrů z těla funkce a může být převedena v době kompilace na delegáta nebo strom výrazu. V programování LINQ dojde k vyvolání výrazů lambda při přímém volání metody do standardních operátorů dotazu.
 
-Další informace naleznete v tématu:
+Další informace najdete v části .
 
 - [Anonymní funkce](../../statements-expressions-operators/anonymous-functions.md)
 

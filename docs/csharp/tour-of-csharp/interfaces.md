@@ -1,43 +1,43 @@
 ---
-title: C#Rozhraní – připravuje C# jazyka
-description: Definování kontraktů implementovaných typů v rozhraníC#
+title: C#Rozhraní – prohlídka C# jazyka
+description: Rozhraní definují smlouvy implementované typy vC#
 ms.date: 08/10/2016
 ms.assetid: a9bf82f4-efd1-4216-bd34-4ef0fa48c968
-ms.openlocfilehash: 240ddfb321c5a89c8aada4353845915d0e242ae0
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: d10d9f69cebe9a05cdff9b9ff5d817237bf8c56f
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634558"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346831"
 ---
 # <a name="interfaces"></a>Rozhraní
 
-***Rozhraní*** definuje kontrakt, který může být implementována třídy a struktury. Rozhraní může obsahovat metody, vlastnosti, události a indexery. Rozhraní neposkytuje implementace členů definuje – pouze Určuje členy, které je třeba dodat ze třídy nebo struktury, které implementují rozhraní.
+***Rozhraní*** definuje kontrakt, který může být implementován pomocí tříd a struktur. Rozhraní může obsahovat metody, vlastnosti, události a indexery. Rozhraní neposkytuje implementace členů, které definuje – určuje pouze členy, které musí být poskytnuty třídami nebo strukturami, které implementují rozhraní.
 
-Rozhraní může využívat ***vícenásobná dědičnost***. V následujícím příkladu, rozhraní `IComboBox` zdědí vlastnosti z obou `ITextBox` a `IListBox`.
+Rozhraní mohou využívat ***vícenásobnou dědičnost***. V následujícím příkladu rozhraní `IComboBox` dědí z `ITextBox` a `IListBox`.
 
 [!code-csharp[InterfacesOne](../../../samples/snippets/csharp/tour/interfaces/Program.cs#L5-L17)]
 
-Třídy a struktury mohou implementovat více rozhraní. V následujícím příkladu třída `EditBox` implementuje oba `IControl` a `IDataBound`.
+Třídy a struktury mohou implementovat více rozhraní. V následujícím příkladu třída `EditBox` implementuje `IControl` a `IDataBound`.
 
 [!code-csharp[InterfacesTwo](../../../samples/snippets/csharp/tour/interfaces/Program.cs#L19-L27)]
 
-Pokud konkrétní rozhraní implementuje, třídy nebo struktury, instance této třídy nebo struktury lze implicitně převést na tento typ rozhraní. Příklad
+Pokud třída nebo struktura implementuje konkrétní rozhraní, instance této třídy nebo struktury lze implicitně převést na tento typ rozhraní. Příklad
 
 [!code-csharp[InterfacesThree](../../../samples/snippets/csharp/tour/interfaces/Program.cs#L33-L35)]
 
-V případech, kde není instance znám staticky implementovat určité rozhraní je možné dynamického přetypování. Například následující příkazy použijte k získání objektu dynamického přetypování `IControl` a `IDataBound` implementace rozhraní. Protože je za běhu skutečný typ objektu `EditBox`, úspěšné položky CAST.
+V případech, kdy instance není staticky známá pro implementaci konkrétního rozhraní, lze použít dynamické přetypování typu. Například následující příkazy používají přetypování dynamického typu k získání `IControl` a `IDataBound` rozhraní objektu. Vzhledem k tomu, že je skutečný typ objektu run-time `EditBox`, přetypování je úspěšné.
 
 [!code-csharp[InterfacesFour](../../../samples/snippets/csharp/tour/interfaces/Program.cs#L40-L42)]
 
-V předchozím `EditBox` třídy, `Paint` metodu z `IControl` rozhraní a `Bind` metodu z `IDataBound` rozhraní jsou implementovány pomocí veřejné členy. C#také podporuje explicitní ***implementace členů rozhraní***, povolení dané třídy nebo struktury předejděte tomu, aby veřejné členy. Implementace explicitního rozhraní člen je zapsáno s použitím rozhraní plně kvalifikovaný název člena. Například `EditBox` třída může implementovat `IControl.Paint` a `IDataBound.Bind` metod pomocí explicitní implementace členů rozhraní následujícím způsobem.
+V předchozí třídě `EditBox` jsou implementovány `Paint` metoda z rozhraní `IControl` a metoda `Bind` z rozhraní `IDataBound` pomocí veřejných členů. C#podporuje také explicitní ***implementace členů rozhraní***, což umožňuje třídě nebo struktuře zabránit členům Public. Explicitní implementace člena rozhraní je zapsána pomocí plně kvalifikovaného názvu člena rozhraní. Například třída `EditBox` by mohla implementovat metody `IControl.Paint` a `IDataBound.Bind` pomocí explicitních implementací členů rozhraní následujícím způsobem.
 
 [!code-csharp[InterfacesFive](../../../samples/snippets/csharp/tour/interfaces/Program.cs#L60-L64)]
 
-Explicitní rozhraní členy jsou přístupné pouze prostřednictvím typu rozhraní. Například provádění `IControl.Paint` zadaný podle předchozí EditBox třídy lze vyvolat pouze první převedením `EditBox` odkaz `IControl` typu rozhraní.
+K explicitním členům rozhraní lze přistupovat pouze prostřednictvím typu rozhraní. Například implementace `IControl.Paint` poskytovaná předchozí třídou EditBox lze vyvolat pouze první převod `EditBox` odkaz na typ rozhraní `IControl`.
 
 [!code-csharp[InterfacesFive](../../../samples/snippets/csharp/tour/interfaces/Program.cs#L71-L74)]
 
 >[!div class="step-by-step"]
 >[Předchozí](arrays.md)
->[další](enums.md)
+>[Další](delegates.md)

@@ -7,17 +7,17 @@ helpviewer_keywords:
 - extension methods [C#]
 - methods [C#], extension
 ms.assetid: 175ce3ff-9bbf-4e64-8421-faeb81a0bb51
-ms.openlocfilehash: 5cce8eb3ad36208c3d376bc8c94da484e9f9181e
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
-ms.translationtype: MT
+ms.openlocfilehash: 66c8dee059d65f6628bf38edecf2f5abec320eea
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73971057"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635831"
 ---
 # <a name="extension-methods-c-programming-guide"></a>Metody rozšíření (Průvodce programováním v C#)
 Metody rozšíření umožňují „přidávat“ metody ke stávajícím typům bez vytváření nového odvozeného typu, rekompilace nebo jiné změny původního typu. Metody rozšíření jsou zvláštním druhem statické metody, jsou však volány tak, jako kdyby byly metodami instance rozšířeného typu. Pro kód klienta napsané C#v F# a Visual Basic neexistuje žádný zřejmý rozdíl mezi voláním metody rozšíření a metodami, které jsou ve skutečnosti definovány v typu.  
   
- Nejběžnější metody rozšíření jsou operátory pro dotazování [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] Standard, které přidávají funkce dotazu do stávajících <xref:System.Collections.IEnumerable?displayProperty=nameWithType> a <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType>ch typů. Chcete-li použít standardní operátory dotazu, nejprve je přeneste do rozsahu s `using System.Linq` direktivou. Pak jakýkoli typ, který implementuje <xref:System.Collections.Generic.IEnumerable%601>, se zobrazí jako metody instance, jako je například <xref:System.Linq.Enumerable.GroupBy%2A>, <xref:System.Linq.Enumerable.OrderBy%2A>, <xref:System.Linq.Enumerable.Average%2A>a tak dále. Tyto další metody lze zobrazit v dokončování příkazů technologie IntelliSense, pokud zadáte "tečka" po instanci <xref:System.Collections.Generic.IEnumerable%601>ho typu, jako je <xref:System.Collections.Generic.List%601> nebo <xref:System.Array>.  
+ Nejběžnější metody rozšíření jsou operátory dotazů LINQ Standard, které přidávají funkce dotazu do stávajících <xref:System.Collections.IEnumerable?displayProperty=nameWithType> a <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> typů. Chcete-li použít standardní operátory dotazu, nejprve je přeneste do rozsahu s `using System.Linq` direktivou. Pak jakýkoli typ, který implementuje <xref:System.Collections.Generic.IEnumerable%601>, se zobrazí jako metody instance, jako je například <xref:System.Linq.Enumerable.GroupBy%2A>, <xref:System.Linq.Enumerable.OrderBy%2A>, <xref:System.Linq.Enumerable.Average%2A>a tak dále. Tyto další metody lze zobrazit v dokončování příkazů technologie IntelliSense, pokud zadáte "tečka" po instanci <xref:System.Collections.Generic.IEnumerable%601>ho typu, jako je <xref:System.Collections.Generic.List%601> nebo <xref:System.Array>.  
   
  Následující příklad ukazuje, jak volat standardní operátor dotazu `OrderBy` metodu v poli celých čísel. Výraz v závorkách je výraz lambda. Velký počet operátorů standardního dotazu používá výrazy lambda jako parametry. To však metody rozšíření nepožadují. Další informace naleznete v tématu [lambda výrazy](../statements-expressions-operators/lambda-expressions.md).  
   

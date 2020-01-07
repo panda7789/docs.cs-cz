@@ -3,12 +3,12 @@ title: Třídy a objekty – Úvod do C# kurzu
 description: Vytvoření prvního C# programu a prozkoumání konceptů orientovaných na objekty
 ms.date: 10/11/2017
 ms.custom: mvc
-ms.openlocfilehash: e4cf7912de69946289c0594944b8ac3a8c252ac2
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 06d1a30abc0d031badcba4ec60f7deb3c670a3ae
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73736838"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75634947"
 ---
 # <a name="explore-object-oriented-programming-with-classes-and-objects"></a>Prozkoumat objektově orientované programování pomocí tříd a objektů
 
@@ -16,7 +16,7 @@ V tomto kurzu se očekává, že máte počítač, který můžete použít pro 
 
 ## <a name="create-your-application"></a>Vytvoření aplikace
 
-Pomocí okna terminálu vytvořte adresář s názvem *Classes*. V takovém případě sestavíte svou aplikaci. Přejděte do tohoto adresáře a zadejte `dotnet new console` v okně konzoly. Tento příkaz vytvoří vaši aplikaci. Otevřete *program.cs*. Mělo by to vypadat takto:
+Pomocí okna terminálu vytvořte adresář s názvem *Classes*. V takovém případě sestavíte svou aplikaci. Přejděte do tohoto adresáře a zadejte `dotnet new console` v okně konzoly. Tento příkaz vytvoří vaši aplikaci. Otevřete *program.cs*. By měl vypadat nějak takto:
 
 ```csharp
 using System;
@@ -73,7 +73,7 @@ namespace classes
 
 Než začnete pracovat, Podívejme se na to, co jste vytvořili.  Deklarace `namespace` poskytuje způsob, jak logicky organizovat váš kód. Tento kurz je poměrně malý, takže veškerý kód se vloží do jednoho oboru názvů. 
 
-`public class BankAccount` definuje třídu nebo typ, který vytváříte. Vše uvnitř `{` a `}`, které následuje deklarace třídy, definuje chování třídy. Existuje pět ***členů*** třídy `BankAccount`. První tři jsou ***vlastnosti***. Vlastnosti jsou datové prvky a mohou mít kód, který vynutil ověřování nebo jiná pravidla. Poslední dvě jsou ***metody***. Metody jsou bloky kódu, které provádějí jednu funkci. Čtení názvů jednotlivých členů by mělo poskytnout dostatek informací pro vás nebo jiného vývojáře, aby bylo možné pochopit, co třída dělá.
+`public class BankAccount` definuje třídu nebo typ, který vytváříte. Vše uvnitř `{` a `}`, které následuje deklarace třídy, definuje stav a chování třídy. Existuje pět ***členů*** třídy `BankAccount`. První tři jsou ***vlastnosti***. Vlastnosti jsou datové prvky a mohou mít kód, který vynutil ověřování nebo jiná pravidla. Poslední dvě jsou ***metody***. Metody jsou bloky kódu, které provádějí jednu funkci. Čtení názvů jednotlivých členů by mělo poskytnout dostatek informací pro vás nebo jiného vývojáře, aby bylo možné pochopit, co třída dělá.
 
 ## <a name="open-a-new-account"></a>Otevřít nový účet
 
@@ -89,7 +89,7 @@ public BankAccount(string name, decimal initialBalance)
 }
 ```
 
-Konstruktory jsou volány při vytváření objektu pomocí [`new`](../../language-reference/operators/new-operator.md). Řádek `Console.WriteLine("Hello World!");` v *program.cs* nahraďte následujícím řádkem (nahraďte `<name>` názvem):
+Konstruktory jsou volány při vytváření objektu pomocí [`new`](../../language-reference/operators/new-operator.md). Řádek `Console.WriteLine("Hello World!");` v *program.cs* nahraďte následujícím kódem (nahraďte `<name>` názvem):
 
 ```csharp
 var account = new BankAccount("<name>", 1000);
@@ -106,7 +106,7 @@ Přidejte následující deklaraci člena do třídy `BankAccount`:
 private static int accountNumberSeed = 1234567890;
 ```
 
-Toto je datový člen. Je to `private`, což znamená, že k němu lze přistupovat pouze pomocí kódu v rámci `BankAccount` třídy. Jedná se o způsob, jak oddělit veřejné zodpovědnosti (jako je třeba číslo účtu) od soukromé implementace (způsob generování čísel účtů). Je také `static`, což znamená, že je sdílen všemi objekty `BankAccount`. Hodnota proměnné, která není statická, je jedinečná pro každou instanci objektu `BankAccount`. Přidejte následující dva řádky do konstruktoru pro přiřazení čísla účtu:
+Toto je datový člen. Je to `private`, což znamená, že k němu lze přistupovat pouze pomocí kódu v rámci `BankAccount` třídy. Jedná se o způsob, jak oddělit veřejné zodpovědnosti (jako je třeba číslo účtu) od soukromé implementace (jak se generují čísla účtů). Je také `static`, což znamená, že je sdílen všemi objekty `BankAccount`. Hodnota proměnné, která není statická, je jedinečná pro každou instanci objektu `BankAccount`. Přidejte následující dva řádky do konstruktoru pro přiřazení čísla účtu:
 
 ```csharp
 this.Number = accountNumberSeed.ToString();
@@ -119,7 +119,7 @@ Výsledky zobrazíte zadáním `dotnet run`.
 
 Třída bankovního účtu musí přijímat vklady a stažení, aby fungovaly správně. Pojďme implementovat vklady a stažení, a to vytvořením deníku každé transakce pro účet. Který má několik výhod v rámci jednoduché aktualizace zůstatku každé transakce. Historii lze použít k auditování všech transakcí a ke správě každodenních zůstatků. Vynásobením zůstatku z historie všech transakcí v případě potřeby budou všechny chyby v jedné transakci, které jsou opraveny, správně promítnuty do zůstatku následujícího výpočtu.
 
-Pojďme začít vytvořením nového typu reprezentujícího transakci. Toto je jednoduchý typ, který nemá žádné zodpovědnosti. Potřebuje několik vlastností. Vytvořte nový soubor s názvem *Transaction.cs*. Přidejte do něj následující kód:
+Pojďme začít vytvořením nového typu reprezentujícího transakci. Toto je jednoduchý typ, který nemá žádné zodpovědnosti. Potřebuje několik vlastností. Vytvořte nový soubor s názvem *Transaction.cs*. Přidejte do ní následující kód:
 
 [!code-csharp[Transaction](~/samples/csharp/classes-quickstart/Transaction.cs)]
 

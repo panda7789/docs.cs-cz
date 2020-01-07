@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, about C# language
 - Visual C#, about
 ms.assetid: 0a2dff4e-cd84-42ff-8141-e89889b24081
-ms.openlocfilehash: cf9c0ad345ce8762e700bb46b431804dccb79409
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
-ms.translationtype: MT
+ms.openlocfilehash: a9dddb4a3e7af2ca76bb5d3f953cc36c6142623a
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74283067"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636000"
 ---
 # <a name="introduction-to-the-c-language-and-the-net-framework"></a>Úvod do jazyka C# a rozhraní .NET Framework
 
@@ -22,7 +22,7 @@ C#je elegantní a typově bezpečný objektově orientovaný jazyk, který umož
   
 ## <a name="c-language"></a>Jazyk C#
 
- C#syntaxe je velice expresná, ale je také jednoduchá a snadno se učí. Syntaxe složené závorky C# se dá okamžitě rozpoznat pro všechny známé pomocí jazyka C C++ nebo Java. Vývojáři, kteří znají některý z těchto jazyků, obvykle mohou začít pracovat v C# rámci velmi krátkého času. C#syntaxe zjednodušuje mnoho složitosti C++ a poskytuje výkonné funkce, jako jsou typy hodnot s možnou hodnotou null, výčty, delegáti, výrazy lambda a přímý přístup do paměti, které se v jazyce Java nenašly. C#podporuje obecné metody a typy, které poskytují zvýšenou bezpečnost typů a výkon a iterátory, které umožňují implementátorům tříd kolekcí definovat vlastní chování iterací, které je jednoduché pro použití klientským kódem. [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] výrazy vytvoří dotaz silně typované konstrukce jazyka první třídy.  
+ C#syntaxe je velice expresná, ale je také jednoduchá a snadno se učí. Syntaxe složené závorky C# se dá okamžitě rozpoznat pro všechny známé pomocí jazyka C C++ nebo Java. Vývojáři, kteří znají některý z těchto jazyků, obvykle mohou začít pracovat v C# rámci velmi krátkého času. C#syntaxe zjednodušuje mnoho složitosti C++ a poskytuje výkonné funkce, jako jsou typy hodnot s možnou hodnotou null, výčty, delegáti, výrazy lambda a přímý přístup do paměti, které se v jazyce Java nenašly. C#podporuje obecné metody a typy, které poskytují zvýšenou bezpečnost typů a výkon a iterátory, které umožňují implementátorům tříd kolekcí definovat vlastní chování iterací, které je jednoduché pro použití klientským kódem. Výrazy integrované v jazyce Query (LINQ) vytvářejí dotaz silného typu na konstrukci jazyka první třídy.  
   
  Jako objektově orientovaný jazyk C# podporuje koncepty zapouzdření, dědičnosti a polymorfismu. Všechny proměnné a metody, včetně metody `Main`, vstupního bodu aplikace, jsou zapouzdřeny v rámci definice třídy. Třída může dědit přímo z jedné nadřazené třídy, ale může implementovat libovolný počet rozhraní. Metody, které přepisují virtuální metody v nadřazené třídě, vyžadují klíčové slovo `override` jako způsob, jak se vyhnout náhodnému předefinování. V C#je struktura jako odlehčená třída; Jedná se o typ přidělený zásobníkem, který může implementovat rozhraní, ale nepodporuje dědění.  
   
@@ -36,7 +36,7 @@ C#je elegantní a typově bezpečný objektově orientovaný jazyk, který umož
   
 - Vložené dokumentační komentáře XML.  
   
-- [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)], která poskytuje integrované možnosti dotazování napříč různými zdroji dat.  
+- LINQ (Language-Integrated Query), které poskytuje integrované možnosti dotazování napříč různými zdroji dat.  
   
  Pokud potřebujete pracovat s jiným softwarem Windows, jako jsou objekty COM nebo nativní knihovny DLL Win32, můžete to provést C# pomocí procesu s názvem "Interoperabilita". Interoperabilita C# umožňuje programům provádět téměř cokoli, co C++ může provést nativní aplikace. C#dokonce podporuje ukazatele a pojem "nebezpečný" kód pro případy, kdy přímý přístup do paměti je naprosto kritický.  
   
@@ -48,7 +48,7 @@ C#je elegantní a typově bezpečný objektově orientovaný jazyk, který umož
   
 - Podrobné informace o konkrétních aspektech C# jazyka najdete v [ C# referenčních](../language-reference/index.md)informacích.  
   
-- Další informace o [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]naleznete v tématu [LINQ (jazykově integrovaný dotaz)](../programming-guide/concepts/linq/index.md).  
+- Další informace o LINQ naleznete v tématu [LINQ (jazykově integrovaný dotaz)](../programming-guide/concepts/linq/index.md).  
 
 ## <a name="net-framework-platform-architecture"></a>Architektura platformy .NET Framework
 
@@ -60,7 +60,7 @@ C#je elegantní a typově bezpečný objektově orientovaný jazyk, který umož
   
  ![Ze zdrojového&#35; kódu jazyka C k provedení počítače](./media/introduction-to-the-csharp-language-and-the-net-framework/net-architecture-relationships.png)  
   
- Interoperabilita jazyka je klíčovou funkcí .NET Framework. Vzhledem k tomu, že kód IL C# generovaný kompilátorem odpovídá specifikaci CTS (Common Type Specification), kód Il generovaný z C# může pracovat s kódem, který byl vygenerován z verzí rozhraní .NET Visual Basic, vizuálu C++nebo z více než 20 dalších Jazyky vyhovující standardu CTS. Jedno sestavení může obsahovat více modulů napsaných v různých jazycích .NET a typy mohou odkazovat na sebe stejně, jako kdyby byly napsány ve stejném jazyce.  
+ Interoperabilita jazyka je klíčovou funkcí .NET Framework. Vzhledem k tomu, že kód IL C# generovaný kompilátorem odpovídá specifikaci CTS (Common Type Specification), kód Il generovaný z C# může pracovat s kódem, který byl vygenerován z verzí rozhraní .NET Visual Basic, vizuálu C++nebo z více než 20 dalších jazyků odpovídajících standardu CTS. Jedno sestavení může obsahovat více modulů napsaných v různých jazycích .NET a typy mohou odkazovat na sebe stejně, jako kdyby byly napsány ve stejném jazyce.  
   
  Kromě běhových služeb .NET Framework obsahuje také rozsáhlou knihovnu více než 4000 tříd uspořádaných do oborů názvů, které poskytují širokou škálu užitečných funkcí pro vše od vstupu a výstupu souborů k manipulaci s řetězci do XML. analýza, pro model Windows Forms ovládací prvky. Typická C# aplikace často používá knihovnu tříd .NET Framework pro zpracování běžných "rutinních" instalací.  
   

@@ -2,12 +2,12 @@
 title: Začínáme s F# nástroji příkazového řádku
 description: Naučte se vytvářet jednoduché řešení Multi-Project na F# používání .NET Core CLI v jakémkoli operačním systému (Windows, MacOS nebo Linux).
 ms.date: 03/26/2018
-ms.openlocfilehash: f9177e653273e5a2191407c4fb22343ded11fece
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: aa3ed84660a951eeafc11a00ea3831f587b6d876
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117922"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559484"
 ---
 # <a name="get-started-with-f-with-the-net-core-cli"></a>Začněte s F# .NET Core CLI
 
@@ -38,10 +38,10 @@ FSNetCore
 
 Změňte adresáře na *FSNetCore*.
 
-Použijte příkaz, vytvořte projekt knihovny tříd ve složce src s názvem Library. `dotnet new`
+Použijte příkaz `dotnet new`, vytvořte projekt knihovny tříd ve složce **Src** s názvem Library.
 
 ```dotnetcli
-dotnet new classlib -lang F# -o src/Library
+dotnet new classlib -lang "F#" -o src/Library
 ```
 
 Po spuštění předchozího příkazu se vytvoří následující adresářová struktura:
@@ -55,7 +55,7 @@ Po spuštění předchozího příkazu se vytvoří následující adresářová
             └── Library.fsproj
 ```
 
-Nahraďte obsah `Library.fs` následujícím kódem:
+Obsah `Library.fs` nahraďte následujícím kódem:
 
 ```fsharp
 module Library
@@ -72,7 +72,7 @@ Do projektu knihovny přidejte balíček NuGet Newtonsoft. JSON.
 dotnet add src/Library/Library.fsproj package Newtonsoft.Json
 ```
 
-Přidejte projekt do řešení pomocí příkazu [dotnet sln Add:](../../core/tools/dotnet-sln.md) `FSNetCore` `Library`
+Přidejte `Library` projekt do řešení `FSNetCore` pomocí příkazu [dotnet sln Add](../../core/tools/dotnet-sln.md) :
 
 ```dotnetcli
 dotnet sln add src/Library/Library.fsproj
@@ -82,10 +82,10 @@ Spusťte `dotnet build` pro sestavení projektu. Nevyřešené závislosti budou
 
 ### <a name="write-a-console-application-that-consumes-the-class-library"></a>Zapsat konzolovou aplikaci, která využívá knihovnu tříd
 
-Použijte příkaz a vytvořte konzolovou aplikaci ve složce src s názvem App. `dotnet new`
+Použijte příkaz `dotnet new` a vytvořte konzolovou aplikaci ve složce **Src** s názvem App.
 
 ```dotnetcli
-dotnet new console -lang F# -o src/App
+dotnet new console -lang "F#" -o src/App
 ```
 
 Po spuštění předchozího příkazu se vytvoří následující adresářová struktura:
@@ -102,7 +102,7 @@ Po spuštění předchozího příkazu se vytvoří následující adresářová
             └── Library.fsproj
 ```
 
-Obsah `Program.fs` souboru nahraďte následujícím kódem:
+Obsah souboru `Program.fs` nahraďte následujícím kódem:
 
 ```fsharp
 open System
@@ -119,21 +119,21 @@ let main argv =
     0 // return an integer exit code
 ```
 
-Přidejte odkaz na `Library` projekt pomocí příkazu [dotnet Add Reference](../../core/tools/dotnet-add-reference.md).
+Přidejte odkaz na projekt `Library` pomocí příkazu [dotnet Add Reference](../../core/tools/dotnet-add-reference.md).
 
 ```dotnetcli
 dotnet add src/App/App.fsproj reference src/Library/Library.fsproj
 ```
 
-Přidejte projekt do řešení pomocí `dotnet sln add`příkazu: `FSNetCore` `App`
+Přidejte `App` projekt do řešení `FSNetCore` pomocí příkazu `dotnet sln add`:
 
 ```dotnetcli
 dotnet sln add src/App/App.fsproj
 ```
 
-Obnovte závislosti `dotnet restore` NuGet a spusťte příkaz `dotnet build` pro sestavení projektu.
+Obnovte závislosti NuGet `dotnet restore` a spusťte `dotnet build` a sestavte projekt.
 
-Změňte adresář na `src/App` projekt konzoly a spusťte předaný `Hello World` projekt jako argumenty:
+Změňte adresář na projekt konzoly `src/App` a spusťte `Hello World` projektu jako argumenty:
 
 ```console
 cd src/App

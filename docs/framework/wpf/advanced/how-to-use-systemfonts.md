@@ -9,12 +9,12 @@ helpviewer_keywords:
 - fonts [WPF], system fonts
 - classes [WPF], SystemFonts
 ms.assetid: 3f46a4ec-2225-408a-8123-8838a8f7057a
-ms.openlocfilehash: 63ba7a6fb1c8776cc35c0e6f07a6b78f5b3d93d0
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 157565ceb9057049aef8b2bf274847d58c6b8dc8
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459518"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559960"
 ---
 # <a name="how-to-use-systemfonts"></a>Postupy: Používání tipů SystemFonts
 Tento příklad ukazuje, jak použít statické prostředky třídy <xref:System.Windows.SystemFonts>, aby bylo možné styl nebo přizpůsobení tlačítka.  
@@ -42,7 +42,7 @@ Tento příklad ukazuje, jak použít statické prostředky třídy <xref:System
 - [Vykreslení oblasti systémovým štětcem](../graphics-multimedia/how-to-paint-an-area-with-a-system-brush.md)
 - [Používání třídy SystemParameters](how-to-use-systemparameters.md)
 - [Použití klíčů systémových písem](how-to-use-system-fonts-keys.md)
-- [Témata s postupy](resources-how-to-topics.md)
-- [x:Static – rozšíření značek](../../xaml-services/x-static-markup-extension.md)
+- [Postupy](resources-how-to-topics.md)
+- [x:Static – rozšíření značek](../../../desktop-wpf/xaml-services/xstatic-markup-extension.md)
 - [Prostředky XAML](../../../desktop-wpf/fundamentals/xaml-resources-define.md)
 - [Rozšíření značek DynamicResource](dynamicresource-markup-extension.md)

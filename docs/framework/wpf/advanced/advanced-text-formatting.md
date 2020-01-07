@@ -9,17 +9,17 @@ helpviewer_keywords:
 - text [WPF]
 - typography [WPF], text formatting
 ms.assetid: f0a7986e-f5b2-485c-a27d-f8e922022212
-ms.openlocfilehash: 2c120c6d71cb22bc38909f980b2f6faf2b5c3663
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: d509de02cd1b3f645ee439c0b0eb33fd1ddbdb07
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72395221"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636104"
 ---
 # <a name="advanced-text-formatting"></a>Upřesněné formátování textu
-Windows Presentation Foundation (WPF) poskytuje robustní sadu rozhraní API pro zahrnutí textu do aplikace. Rozhraní API pro rozložení a [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)], jako je například <xref:System.Windows.Controls.TextBlock>, poskytují nejběžnější a obecné prvky použití pro textovou prezentaci. Kreslicí rozhraní API, například <xref:System.Windows.Media.GlyphRunDrawing> a <xref:System.Windows.Media.FormattedText>, poskytují způsob, jak zahrnout formátovaný text do kreseb. Na nejvyšší úrovni [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje nástroj rozšiřitelného formátování textu pro řízení všech aspektů textové prezentace, jako je Správa úložiště textu, Správa formátování textových běhů a Správa vložených objektů.  
+Windows Presentation Foundation (WPF) poskytuje robustní sadu rozhraní API pro zahrnutí textu do aplikace. Rozhraní API pro rozložení a [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)], jako je například <xref:System.Windows.Controls.TextBlock>, poskytují nejběžnější a všeobecně používané prvky pro textovou prezentaci. Kreslicí rozhraní API, například <xref:System.Windows.Media.GlyphRunDrawing> a <xref:System.Windows.Media.FormattedText>, poskytují způsob, jak zahrnout formátovaný text do kreseb. Na nejvyšší úrovni poskytuje WPF nástroj rozšiřitelný nástroj formátování textu pro řízení všech aspektů textové prezentace, jako je Správa úložiště textu, Správa formátování textových běhů a Správa vložených objektů.  
   
- Toto téma poskytuje Úvod do [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] formátování textu. Zaměřuje se na implementaci klienta a použití nástroje pro formátování [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]ho textu.  
+ Toto téma poskytuje Úvod do formátování textu WPF. Zaměřuje se na implementaci klienta a použití nástroje pro formátování textu WPF.  
   
 > [!NOTE]
 > Všechny příklady kódu v tomto dokumentu najdete v [ukázce Rozšířené formátování textu](https://go.microsoft.com/fwlink/?LinkID=159965).  
@@ -30,13 +30,13 @@ Windows Presentation Foundation (WPF) poskytuje robustní sadu rozhraní API pro
   
 <a name="section1"></a>   
 ## <a name="advanced-text-formatting"></a>Upřesněné formátování textu  
- Ovládací prvky rozložení textu a [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytují vlastnosti formátování, které umožňují snadno zahrnout formátovaný text do aplikace. Tyto ovládací prvky zpřístupňují několik vlastností, které umožňují zpracování prezentace textu, včetně řezu písma, velikosti a barvy. V běžných případech tyto ovládací prvky mohou ve vaší aplikaci zpracovat většinu textových prezentací. Některé pokročilé scénáře však vyžadují řízení ukládání textu a prezentaci textu. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje pro tento účel nástroj rozšiřitelného formátování textu.  
+ Ovládací prvky rozložení textu a [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] v WPF poskytují vlastnosti formátování, které umožňují snadno zahrnout formátovaný text do aplikace. Tyto ovládací prvky zpřístupňují několik vlastností, které umožňují zpracování prezentace textu, včetně řezu písma, velikosti a barvy. V běžných případech tyto ovládací prvky mohou ve vaší aplikaci zpracovat většinu textových prezentací. Některé pokročilé scénáře však vyžadují řízení ukládání textu a prezentaci textu. WPF poskytuje pro tento účel rozšiřitelný modul formátování textu.  
   
- Funkce Rozšířené formátování textu nalezené v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestávají z modulu formátování textu, textového úložiště, textu a vlastností formátování. Modul formátování textu, <xref:System.Windows.Media.TextFormatting.TextFormatter>, vytvoří řádky textu, které se mají použít pro prezentaci. Toho je dosaženo inicializací procesu formátování řádku a voláním <xref:System.Windows.Media.TextFormatting.TextFormatter.FormatLine%2A>formátovacího modulu textu. Formátování textu načte text spouštěný z vašeho textového úložiště voláním metody <xref:System.Windows.Media.TextFormatting.TextSource.GetTextRun%2A> Storu. Objekty <xref:System.Windows.Media.TextFormatting.TextRun> jsou poté vytvořeny do <xref:System.Windows.Media.TextFormatting.TextLine> objektů pomocí formátovacího modulu textu a dány vaší aplikaci pro kontrolu nebo zobrazení.  
+ Funkce rozšířeného formátování textu nalezené v technologii WPF se skládají z nástroje formátování textu, textového úložiště, textu se spouští a vlastností formátování. Modul formátování textu, <xref:System.Windows.Media.TextFormatting.TextFormatter>, vytvoří řádky textu, které se mají použít pro prezentaci. Toho je dosaženo inicializací procesu formátování řádku a voláním <xref:System.Windows.Media.TextFormatting.TextFormatter.FormatLine%2A>formátovacího modulu textu. Formátování textu načte text spouštěný z vašeho textového úložiště voláním metody <xref:System.Windows.Media.TextFormatting.TextSource.GetTextRun%2A> Storu. Objekty <xref:System.Windows.Media.TextFormatting.TextRun> jsou poté vytvořeny do <xref:System.Windows.Media.TextFormatting.TextLine> objektů pomocí formátovacího modulu textu a dány vaší aplikaci pro kontrolu nebo zobrazení.  
   
 <a name="section2"></a>   
 ## <a name="using-the-text-formatter"></a>Použití formátovacího textu  
- <xref:System.Windows.Media.TextFormatting.TextFormatter> je modul pro formátování [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] textu a poskytuje služby pro formátování a zalamování textových řádků. Formátování textu může zpracovávat různé formáty textových znaků a odstavcové styly a zahrnuje podporu pro mezinárodní rozložení textu.  
+ <xref:System.Windows.Media.TextFormatting.TextFormatter> je modul pro formátování textu WPF a poskytuje služby pro formátování a zalamování textových řádků. Formátování textu může zpracovávat různé formáty textových znaků a odstavcové styly a zahrnuje podporu pro mezinárodní rozložení textu.  
   
  Na rozdíl od tradičního textového rozhraní API <xref:System.Windows.Media.TextFormatting.TextFormatter> komunikuje s klientem rozložení textu prostřednictvím sady metod zpětného volání. Vyžaduje, aby klient poskytoval tyto metody v implementaci třídy <xref:System.Windows.Media.TextFormatting.TextSource>. Následující diagram znázorňuje interakci rozložení textu mezi klientskou aplikací a <xref:System.Windows.Media.TextFormatting.TextFormatter>.  
   
@@ -67,7 +67,7 @@ Windows Presentation Foundation (WPF) poskytuje robustní sadu rozhraní API pro
   
  V následující tabulce jsou uvedeny některé z předdefinovaných <xref:System.Windows.Media.TextFormatting.TextRun> objektů.  
   
-|Typ TextRun|Využití|  
+|Typ TextRun|Použití|  
 |------------------|-----------|  
 |<xref:System.Windows.Media.TextFormatting.TextCharacters>|Specializovaný text, který se používá k předání reprezentace znaků glyfů zpátky do formátovacího modulu textu.|  
 |<xref:System.Windows.Media.TextFormatting.TextEmbeddedObject>|Specializovaný text, který se používá k poskytnutí obsahu při měření, testování přístupů a vykreslování, se provádí v celém rozsahu, jako je například tlačítko nebo obrázek v rámci textu.|  

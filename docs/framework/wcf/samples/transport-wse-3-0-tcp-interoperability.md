@@ -2,12 +2,12 @@
 title: 'Přenos: Součinnost TCP ve WSE 3.0'
 ms.date: 03/30/2017
 ms.assetid: 5f7c3708-acad-4eb3-acb9-d232c77d1486
-ms.openlocfilehash: 6541ddf322a2084601daf2f1271ac5c888073f8f
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 8166e1c378bc745eb8c9f37d6982642e754813cb
+ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423877"
+ms.lasthandoff: 12/29/2019
+ms.locfileid: "75544625"
 ---
 # <a name="transport-wse-30-tcp-interoperability"></a>Přenos: Součinnost TCP ve WSE 3.0
 Ukázka přenosu interoperability TCP v WSE 3,0 ukazuje, jak implementovat relaci duplexního připojení TCP jako vlastní přenos Windows Communication Foundation (WCF). Také ukazuje, jak můžete použít rozšiřitelnost vrstvy kanálu na rozhraní s existujícími nasazenými systémy. Následující kroky ukazují, jak vytvořit tento vlastní přenos WCF:  
@@ -133,7 +133,7 @@ Ukázka přenosu interoperability TCP v WSE 3,0 ukazuje, jak implementovat relac
   
  Při spuštění ukázky se očekává následující výstup.  
   
- Klient:  
+ Client:  
   
 ```console  
 Calling soap://stockservice.contoso.com/wse/samples/2003/06/TcpSyncStockService  
@@ -157,7 +157,7 @@ Received Body: to me.
 Press enter.  
 ```  
   
- WebServer  
+ Server:  
   
 ```console  
 Listening for messages at soap://stockservice.contoso.com/wse/samples/2003/06/TcpSyncStockService  
@@ -175,7 +175,7 @@ Symbols:
 1. Ke spuštění této ukázky musíte mít WSE 3,0 a nainstalovanou ukázku WSE `TcpSyncStockService`. WSE 3,0 si můžete stáhnout [z webu MSDN](https://go.microsoft.com/fwlink/?LinkId=95000).  
   
 > [!NOTE]
-> Vzhledem k tomu, že WSE 3,0 není v [!INCLUDE[lserver](../../../../includes/lserver-md.md)]podporován, nelze nainstalovat nebo spustit ukázku `TcpSyncStockService` na tomto operačním systému.  
+> Vzhledem k tomu, že WSE 3,0 není v systému Windows Server 2008 podporován, nelze nainstalovat nebo spustit ukázku `TcpSyncStockService` v tomto operačním systému.  
   
 1. Po instalaci ukázky `TcpSyncStockService` udělejte toto:  
   

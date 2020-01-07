@@ -10,15 +10,15 @@ helpviewer_keywords:
 - data sources [LINQ in C#], data transformations
 - data transformations [LINQ in C#]
 ms.assetid: 674eae9e-bc72-4a88-aed3-802b45b25811
-ms.openlocfilehash: 8dd57a43f814d7e41ec74af3eeb6d797fef41c9c
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 393e3bd24c4bc8b89064e01e1048b24254f5f83b
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73418623"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635948"
 ---
 # <a name="data-transformations-with-linq-c"></a>Transformace dat pomocí LINQ (C#)
-[!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] není pouze o načítání dat. Je to také výkonný nástroj pro transformaci dat. Pomocí [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]ho dotazu můžete jako vstup použít zdrojovou sekvenci a upravit ji mnoha způsoby, abyste mohli vytvořit novou výstupní sekvenci. Samotnou sekvenci můžete změnit, aniž byste museli měnit prvky řazením a seskupením. Ale pravděpodobně nejúčinnější funkce [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazů je schopnost vytvářet nové typy. To je dosaženo v klauzuli [Select](../../../language-reference/keywords/select-clause.md) . Můžete například provádět následující úlohy:  
+Dotaz integrovaný na jazyku (LINQ) není pouze o načítání dat. Je to také výkonný nástroj pro transformaci dat. Pomocí dotazu LINQ můžete jako vstup použít zdrojovou sekvenci a upravit ji mnoha způsoby, abyste mohli vytvořit novou výstupní sekvenci. Samotnou sekvenci můžete změnit, aniž byste museli měnit prvky řazením a seskupením. Ale pravděpodobně nejúčinnější funkce dotazů LINQ je schopnost vytvářet nové typy. To je dosaženo v klauzuli [Select](../../../language-reference/keywords/select-clause.md) . Například můžete provádět následující úlohy:  
   
 - Sloučí více vstupních sekvencí do jedné výstupní sekvence, která má nový typ.  
   
@@ -31,7 +31,7 @@ ms.locfileid: "73418623"
  Jsou to jenom několik příkladů. Tyto transformace je samozřejmě možné v jednom dotazu zkombinovat různými způsoby. Kromě toho se výstupní sekvence jednoho dotazu dá použít jako vstupní sekvence nového dotazu.  
   
 ## <a name="joining-multiple-inputs-into-one-output-sequence"></a>Spojování více vstupů do jedné výstupní sekvence  
- Můžete použít [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotaz k vytvoření výstupní sekvence, která obsahuje prvky z více než jedné vstupní sekvence. Následující příklad ukazuje, jak kombinovat dvě datové struktury v paměti, ale stejné zásady lze použít pro kombinování dat z XML nebo SQL nebo datových zdrojů. Předpokládejme následující dva typy tříd:  
+ Dotaz LINQ můžete použít k vytvoření výstupní sekvence, která obsahuje prvky z více než jedné vstupní sekvence. Následující příklad ukazuje, jak kombinovat dvě datové struktury v paměti, ale stejné zásady lze použít pro kombinování dat z XML nebo SQL nebo datových zdrojů. Předpokládejme následující dva typy tříd:  
   
  [!code-csharp[CsLINQGettingStarted#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#7)]  
   
@@ -61,7 +61,7 @@ ms.locfileid: "73418623"
  Další informace naleznete v tématu [Inicializátory objektů a kolekcí](../../classes-and-structs/object-and-collection-initializers.md) a [anonymní typy](../../classes-and-structs/anonymous-types.md).  
   
 ## <a name="transforming-in-memory-objects-into-xml"></a>Transformace objektů v paměti do jazyka XML  
- [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy usnadňují transformaci dat mezi datovými strukturami v paměti, databázemi SQL, ADO.NET datasadami a datovými proudy XML nebo dokumenty. Následující příklad transformuje objekty v datové struktuře v paměti do elementů XML.  
+ Dotazy LINQ usnadňují transformaci dat mezi datovými strukturami v paměti, databázemi SQL, ADO.NET datasadami a datovými proudy XML nebo dokumenty. Následující příklad transformuje objekty v datové struktuře v paměti do elementů XML.  
   
  [!code-csharp[CsLINQGettingStarted#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#9)]  
   

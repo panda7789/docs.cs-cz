@@ -10,16 +10,16 @@ helpviewer_keywords:
 - casting [C#]
 - converting types [C#]
 ms.assetid: 568df58a-d292-4b55-93ba-601578722878
-ms.openlocfilehash: 33195ef77e2f51e52cd9ed69a11b12bed8d9ead1
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
-ms.translationtype: MT
+ms.openlocfilehash: 7285b69ea34be087705c1163a94310d43b2f6f02
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73969612"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635064"
 ---
 # <a name="casting-and-type-conversions-c-programming-guide"></a>Přetypování a převody typůC# (Průvodce programováním)
 
-Vzhledem C# k tomu, že je staticky zadán v době kompilace, poté, co je deklarována proměnná, nelze ji deklarovat znovu ani přiřadit hodnotu jiného typu, pokud tento typ není implicitně převeden na typ proměnné. `string` například nelze implicitně převést na `int`. Proto po deklaraci `i` jako `int` nemůžete k ní přiřadit řetězec "Hello", jak ukazuje následující kód:
+Vzhledem C# k tomu, že je staticky zadán v době kompilace, poté, co je deklarována proměnná, nelze ji deklarovat znovu ani přiřadit hodnotu jiného typu, pokud tento typ není implicitně převeden na typ proměnné. `string` například nelze implicitně převést na `int`. Proto po deklaraci `i` jako `int`nemůžete k ní přiřadit řetězec "Hello", jak ukazuje následující kód:
   
 ```csharp  
 int i;  
@@ -30,11 +30,11 @@ i = "Hello"; // error CS0029: Cannot implicitly convert type 'string' to 'int'
   
 - **Implicitní převody**: nevyžaduje se žádná speciální syntaxe, protože převod je typově bezpečný a neztratí se žádná data. Příklady zahrnují převody z menších na větší integrální typy a převody z odvozených tříd na základní třídy.  
   
-- **Explicitní převody (přetypování)**: explicitní převody vyžadují [operátor přetypování `()`](../../language-reference/operators/type-testing-and-cast.md#cast-operator-). Přetypování je požadováno v případě, že může dojít ke ztrátě informací v převodu nebo v případě, že převod nemusí být úspěšný z jiných důvodů. Mezi typické příklady patří číselný převod na typ, který má menší přesnost nebo menší rozsah, a převod instance základní třídy na odvozenou třídu.  
+- **Explicitní převody (přetypování)** : explicitní převody vyžadují [operátor přetypování `()`](../../language-reference/operators/type-testing-and-cast.md#cast-operator-). Přetypování je požadováno v případě, že může dojít ke ztrátě informací v převodu nebo v případě, že převod nemusí být úspěšný z jiných důvodů. Mezi typické příklady patří číselný převod na typ, který má menší přesnost nebo menší rozsah, a převod instance základní třídy na odvozenou třídu.  
   
 - **Uživatelem definované převody**: uživatelsky definované převody jsou prováděny speciálními metodami, které můžete definovat pro povolení explicitních a implicitních převodů mezi vlastními typy, které nemají základní třídu odvozenou od atributu Base Class. Další informace naleznete v tématu [uživatelsky definované operátory převodu](../../language-reference/operators/user-defined-conversion-operators.md).  
   
-- **Převody s podpůrnými třídami**: pro převod mezi nekompatibilními typy, jako jsou například celá čísla a <xref:System.DateTime?displayProperty=nameWithType> objekty nebo hexadecimální řetězce a pole bajtů, lze použít třídu <xref:System.BitConverter?displayProperty=nameWithType>, třídu <xref:System.Convert?displayProperty=nameWithType> a metody `Parse` předdefinovaných číselných typů, jako je například <xref:System.Int32.Parse%2A?displayProperty=nameWithType>. Další informace naleznete v tématu [Postupy: převod bajtového pole na typ int](./how-to-convert-a-byte-array-to-an-int.md), [Postupy: převod řetězce na číslo](./how-to-convert-a-string-to-a-number.md)a [Postupy: převod mezi hexadecimálními řetězci a číselnými typy](./how-to-convert-between-hexadecimal-strings-and-numeric-types.md).  
+- **Převody s podpůrnými třídami**: pro převod mezi nekompatibilními typy, jako jsou například celá čísla a <xref:System.DateTime?displayProperty=nameWithType> objekty nebo hexadecimální řetězce a pole bajtů, lze použít třídu <xref:System.BitConverter?displayProperty=nameWithType>, třídu <xref:System.Convert?displayProperty=nameWithType> a metody `Parse` předdefinovaných číselných typů, jako je například <xref:System.Int32.Parse%2A?displayProperty=nameWithType>. Další informace naleznete v tématu [Jak převést bajtové pole na int](./how-to-convert-a-byte-array-to-an-int.md), [Jak převést řetězec na číslo](./how-to-convert-a-string-to-a-number.md)a [Jak převádět mezi hexadecimálními řetězci a číselnými typy](./how-to-convert-between-hexadecimal-strings-and-numeric-types.md).
   
 ## <a name="implicit-conversions"></a>Implicitní převody
 
@@ -96,4 +96,4 @@ Další informace naleznete v části [převody](~/_csharplang/spec/conversions.
 - [() cast – operátor](../../language-reference/operators/type-testing-and-cast.md#cast-operator-)
 - [Uživatelsky definované operátory převodu](../../language-reference/operators/user-defined-conversion-operators.md)
 - [Převod generalizované typu](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/yy580hbd(v=vs.120))
-- [Postupy: Převedení řetězce na číslo](./how-to-convert-a-string-to-a-number.md)
+- [Jak převést řetězec na číslo](./how-to-convert-a-string-to-a-number.md)

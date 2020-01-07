@@ -7,16 +7,16 @@ dev_langs:
 helpviewer_keywords:
 - WPF application [WPF], building
 ms.assetid: a58696fd-bdad-4b55-9759-136dfdf8b91c
-ms.openlocfilehash: bf673195f06475daf8341fd17cd701b84a970b39
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 48536d8fba3f86c2883e48cd4e5cf9a3a8752fcd
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740663"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636312"
 ---
 # <a name="building-a-wpf-application-wpf"></a>Sestavení aplikace WPF (WPF)
 
-Aplikace Windows Presentation Foundation (WPF) mohou být sestaveny jako .NET Framework spustitelné soubory (. exe), knihovny (. dll) nebo kombinace obou typů sestavení. Toto téma ukazuje, jak sestavit [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace a popisuje klíčové kroky v procesu sestavení.
+Aplikace Windows Presentation Foundation (WPF) mohou být sestaveny jako .NET Framework spustitelné soubory (. exe), knihovny (. dll) nebo kombinace obou typů sestavení. Toto téma ukazuje, jak sestavit aplikace WPF a popisuje klíčové kroky v procesu sestavení.
 
 <a name="Building_a_WPF_Application_using_Command_Line"></a>
 
@@ -34,7 +34,7 @@ Aplikace WPF může být zkompilována následujícími způsoby:
 
 ## <a name="wpf-build-pipeline"></a>Kanál sestavení WPF
 
-Při sestavení projektu [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] je vyvolána kombinace cílů specifických pro jazyk a [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. Proces provádění těchto cílů se nazývá kanál sestavení a klíčové kroky jsou znázorněny na následujícím obrázku.
+Při sestavení projektu WPF je vyvolána kombinace cílů specifických pro jazyk a WPF. Proces provádění těchto cílů se nazývá kanál sestavení a klíčové kroky jsou znázorněny na následujícím obrázku.
 
 ![Proces sestavení WPF](./media/wpfbuildsystem-figure1.png "WPFBuildSystem_Figure1")
 
@@ -48,7 +48,7 @@ Před sestavením nástroj MSBuild určí umístění důležitých nástrojů a
 
 - Adresáře Windows SDK.
 
-- Umístění [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] referenčních sestavení.
+- Umístění referenčních sestavení WPF.
 
 - Vlastnost pro cesty pro vyhledávání sestavení.
 
@@ -58,7 +58,7 @@ První umístění, kde MSBuild vyhledává sestavení, je referenční adresá�
 
 ### <a name="resolving-references"></a>Řešení odkazů
 
-Proces sestavení vyhledá a vytvoří vazby sestavení potřebných k sestavení projektu aplikace. Tato logika je obsažena v úloze `ResolveAssemblyReference`. Všechna sestavení deklarovaná jako `Reference` v souboru projektu jsou k dispozici pro úlohu spolu s informacemi o cestách pro vyhledávání a metadatech na sestaveních, která jsou již v systému nainstalována. Úkol vyhledá sestavení a používá metadata nainstalovaného sestavení k vyfiltrování těchto základních [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení, která se nemusí zobrazit ve výstupních manifestech. To se provádí, aby se zabránilo redundantním informacím v manifestech ClickOnce. Například vzhledem k tomu, že PresentationFramework. dll lze považovat za zástupce aplikace založené na a pro [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] a navíc vzhledem k tomu, že všechna [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení existují na stejném umístění na každém počítači, který má .NET Framework nainstalován, je není nutné zahrnout všechny informace o všech .NET Frameworkch referenčních sestavení v manifestech.
+Proces sestavení vyhledá a vytvoří vazby sestavení potřebných k sestavení projektu aplikace. Tato logika je obsažena v úloze `ResolveAssemblyReference`. Všechna sestavení deklarovaná jako `Reference` v souboru projektu jsou k dispozici pro úlohu spolu s informacemi o cestách pro vyhledávání a metadatech na sestaveních, která jsou již v systému nainstalována. Úkol vyhledá sestavení a používá metadata nainstalovaného sestavení k vyfiltrování těchto základních sestavení WPF, která se nemusí zobrazit ve výstupních manifestech. To se provádí, aby se zabránilo redundantním informacím v manifestech ClickOnce. Například vzhledem k tomu, že PresentationFramework. dll lze považovat za zástupce aplikace založené na a pro WPF a vzhledem k tomu, že všechna sestavení WPF existují na stejném umístění na každém počítači, který má .NET Framework nainstalován, není nutné zahrnout vše informace o všech .NET Framework odkazujících na sestavení v manifestech.
 
 <a name="Markup_Compilation___Pass_1"></a>
 
@@ -142,17 +142,17 @@ Manifest aplikace (soubor. exe. manifest) popisuje sestavení aplikace a závisl
 
 Tyto soubory manifestu jsou vždy vytvořeny pro XBAP. U nainstalovaných aplikací nejsou vytvořeny, pokud není vlastnost `GenerateManifests` zadána v souboru projektu s hodnotou `true`.
 
-Aplikace XBAP získají dvě další oprávnění nad rámec těchto oprávnění přiřazených k běžným aplikacím Internet Zone: <xref:System.Security.Permissions.WebBrowserPermission> a <xref:System.Security.Permissions.MediaPermission>. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] systém sestavení deklaruje tato oprávnění v manifestu aplikace.
+Aplikace XBAP získají dvě další oprávnění nad rámec těchto oprávnění přiřazených k běžným aplikacím Internet Zone: <xref:System.Security.Permissions.WebBrowserPermission> a <xref:System.Security.Permissions.MediaPermission>. Systém sestavení WPF deklaruje tato oprávnění v manifestu aplikace.
 
 <a name="Incremental_Build_Support"></a>
 
 ## <a name="incremental-build-support"></a>Podpora přírůstkového sestavení
 
-Systém sestavení [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje podporu pro přírůstková sestavení. Je poměrně inteligentní informace o detekci změn provedených v kódu nebo kódu a kompiluje pouze ty artefakty, které jsou ovlivněné změnou. Mechanismus přírůstkového sestavení používá následující soubory:
+Systém sestavení WPF poskytuje podporu pro přírůstková sestavení. Je poměrně inteligentní informace o detekci změn provedených v kódu nebo kódu a kompiluje pouze ty artefakty, které jsou ovlivněné změnou. Mechanismus přírůstkového sestavení používá následující soubory:
 
-- Soubor _MarkupCompiler. cache aplikace $ (*AssemblyName*) pro zachování aktuálního stavu kompilátoru.
+- Soubor $ (*AssemblyName*) _MarkupCompiler. cache pro zachování aktuálního stavu kompilátoru.
 
-- Soubor $ (*AssemblyName*) _MarkupCompiler. lref pro ukládání souborů [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] s odkazy na místně definované typy.
+- Soubor $ (*AssemblyName*) _MarkupCompiler. lref pro ukládání [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souborů do mezipaměti s odkazy na lokálně definované typy.
 
 Následuje sada pravidel pro přírůstkové sestavení:
 

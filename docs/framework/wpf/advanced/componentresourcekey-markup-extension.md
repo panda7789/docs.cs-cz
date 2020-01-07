@@ -8,12 +8,12 @@ helpviewer_keywords:
 - ComponentResourceKey markup extension [WPF]
 - XAML [WPF], ComponentResourceKey markup extension
 ms.assetid: d6bcdbe6-61b3-40a7-b381-4e02185b5a85
-ms.openlocfilehash: 85e6862d59284df1b51bf5ea7fbba786fe0492d7
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 2ccc4f3154996a4e442a4092833f5c9ed9c8938a
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458965"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559458"
 ---
 # <a name="componentresourcekey-markup-extension"></a>ComponentResourceKey – rozšíření značek
 Definuje a odkazuje na klíče pro prostředky, které jsou načteny z externích sestavení. Díky tomu může vyhledávání prostředků určovat cílový typ v sestavení, nikoli explicitní slovník prostředků v sestavení nebo třídě.  
@@ -47,7 +47,7 @@ Definuje a odkazuje na klíče pro prostředky, které jsou načteny z externíc
 |||  
 |-|-|  
 |`targetTypeName`|Název veřejného typu modulu CLR (Common Language Runtime), který je definován v sestavení prostředků.|  
-|`targetID`|Klíč pro prostředek Po vyhledání prostředků se `targetID` podobá [direktivě x:Key –](../../xaml-services/x-key-directive.md) prostředku.|  
+|`targetID`|Klíč pro prostředek Po vyhledání prostředků se `targetID` podobá [direktivě x:Key –](../../../desktop-wpf/xaml-services/xkey-directive.md) prostředku.|  
   
 ## <a name="remarks"></a>Poznámky  
  Jak je vidět výše, použití rozšíření značek {`ComponentResourceKey`} se nachází na dvou místech:  
@@ -66,7 +66,7 @@ Definuje a odkazuje na klíče pro prostředky, které jsou načteny z externíc
   
  Uvedená syntaxe komprimace spoléhá na signaturu konstruktoru <xref:System.Windows.ComponentResourceKey.%23ctor%2A?displayProperty=nameWithType> a použití pozičního parametru rozšíření značek. Pořadí, ve kterém jsou předány `targetTypeName` a `targetID`, je důležité. Podrobná syntaxe spoléhá na <xref:System.Windows.ComponentResourceKey.%23ctor%2A?displayProperty=nameWithType> konstruktor bez parametrů a poté nastaví <xref:System.Windows.ComponentResourceKey.TypeInTargetAssembly%2A> a <xref:System.Windows.ComponentResourceKey.ResourceId%2A> způsobem, který je podobný syntaxi true atributu v elementu Object. V podrobné syntaxi není pořadí, ve kterém jsou vlastnosti nastaveny, důležité. Vztah a mechanismy těchto dvou alternativ (Compact a verbose) jsou podrobněji popsány v tématu [rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md).  
   
- Technicky, hodnota pro `targetID` může být libovolný objekt, nemusí se jednat o řetězec. Nejběžnějším využitím v subsystému WPF je však zarovnat `targetID` hodnoty pomocí formulářů, které jsou řetězcem, a kde jsou tyto řetězce platné v [gramatice gramatiky](../../xaml-services/xamlname-grammar.md).  
+ Technicky, hodnota pro `targetID` může být libovolný objekt, nemusí se jednat o řetězec. Nejběžnějším využitím v subsystému WPF je však zarovnat `targetID` hodnoty pomocí formulářů, které jsou řetězcem, a kde jsou tyto řetězce platné v [gramatice gramatiky](../../../desktop-wpf/xaml-services/xamlname-grammar.md).  
   
  `ComponentResourceKey` lze použít v syntaxi elementu Object. V takovém případě je nutné zadat hodnotu vlastností <xref:System.Windows.ComponentResourceKey.TypeInTargetAssembly%2A> a <xref:System.Windows.ComponentResourceKey.ResourceId%2A>, aby bylo možné správně inicializovat rozšíření.  
   

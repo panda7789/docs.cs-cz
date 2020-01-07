@@ -6,12 +6,12 @@ helpviewer_keywords:
 - UI Automation, server-side provider implementation
 - provider implementation, UI Automation
 ms.assetid: 6acc6d08-bd67-4e2e-915c-9c1d34eb86fe
-ms.openlocfilehash: 35754d49bf223e7afcdec32e8b24cfb749f48aa6
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 25f22d5e8caacc69643f6d79e109ebaa94159d80
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446845"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75632308"
 ---
 # <a name="server-side-ui-automation-provider-implementation"></a>Implementace zprostředkovatele automatizace uživatelského rozhraní na straně serveru
 
@@ -20,7 +20,7 @@ ms.locfileid: "74446845"
 
 Tato část popisuje, jak implementovat zprostředkovatele automatizace uživatelského rozhraní na straně serveru pro vlastní ovládací prvek.
 
-Implementace prvků Windows Presentation Foundation (WPF) a ne[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] prvky (například ty, které jsou navrženy pro [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]), jsou zásadním rozdílem. prvky [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] poskytují podporu pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] prostřednictvím třídy odvozené od <xref:System.Windows.Automation.Peers.AutomationPeer>. Prvky bez[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] poskytují podporu prostřednictvím implementací rozhraní poskytovatele.
+Implementace pro prvky Windows Presentation Foundation (WPF) a non-WPF elementy (například ty, které jsou navrženy pro [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]), jsou zásadním rozdílem. Prvky WPF poskytují podporu pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] prostřednictvím třídy odvozené z <xref:System.Windows.Automation.Peers.AutomationPeer>. Prvky jiného typu než WPF poskytují podporu prostřednictvím implementací rozhraní poskytovatele.
 
 <a name="Security_Considerations"></a>
 
@@ -40,7 +40,7 @@ Další informace o tomto tématu naleznete v tématu [automatizace uživatelsk�
 
 ## <a name="provider-implementation-by-non-wpf-elements"></a>Implementace poskytovatele pomocí elementů, které nejsou WPF
 
-Vlastní ovládací prvky, které nejsou součástí [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] Framework, ale které jsou napsány ve spravovaném kódu (nejčastěji se jedná o [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] ovládacích prvků), poskytují podporu pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] implementací rozhraní. Každý prvek musí implementovat alespoň jedno rozhraní uvedené v první tabulce v následující části. Kromě toho, pokud prvek podporuje jeden nebo více vzorů ovládacích prvků, musí implementovat příslušné rozhraní pro každý model ovládacího prvku.
+Vlastní ovládací prvky, které nejsou součástí architektury WPF, ale které jsou napsány ve spravovaném kódu (nejčastěji se jedná o [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] ovládacích prvků), poskytují podporu pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] implementací rozhraní. Každý prvek musí implementovat alespoň jedno rozhraní uvedené v první tabulce v následující části. Kromě toho, pokud prvek podporuje jeden nebo více vzorů ovládacích prvků, musí implementovat příslušné rozhraní pro každý model ovládacího prvku.
 
 Váš projekt poskytovatele [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] musí odkazovat na následující sestavení:
 

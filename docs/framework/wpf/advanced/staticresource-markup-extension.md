@@ -8,15 +8,15 @@ helpviewer_keywords:
 - XAML [WPF], StaticResource markup extension
 - StaticResource markup extensions [WPF]
 ms.assetid: 97af044c-71f1-4617-9a94-9064b68185d2
-ms.openlocfilehash: b15e2c0bac5610c6f1b10a640254236987c0bcf5
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: aa7f69e8871295006c3c5a9c7d0a70d0ecbd6d7e
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458733"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559817"
 ---
 # <a name="staticresource-markup-extension"></a>StaticResource – rozšíření značek
-Poskytuje hodnotu pro libovolný atribut [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] vlastnosti vyhledáním odkazu na již definovaný prostředek. Chování vyhledávání pro tento prostředek je obdobou vyhledávání při načítání, což bude hledat prostředky, které byly dříve načteny z kódu aktuální [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky a také do jiných zdrojů aplikací, a vygeneruje tuto hodnotu prostředku jako vlastnost. hodnota v objektech runtime.  
+Poskytuje hodnotu pro libovolný atribut [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] vlastnosti vyhledáním odkazu na již definovaný prostředek. Chování vyhledávání pro tento prostředek je obdobou vyhledávání při načítání, což bude hledat prostředky, které byly dříve načteny ze značky aktuální [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] stránky a také do jiných zdrojů aplikace, a vygeneruje hodnotu tohoto prostředku jako hodnotu vlastnosti v objektech modulu runtime.  
   
 ## <a name="xaml-attribute-usage"></a>Použití atributu XAML  
   
@@ -38,16 +38,16 @@ Poskytuje hodnotu pro libovolný atribut [!INCLUDE[TLA2#tla_xaml](../../../../in
   
 |||  
 |-|-|  
-|`key`|Klíč pro požadovaný prostředek. Tento klíč byl původně přiřazen [direktivou x:Key –](../../xaml-services/x-key-directive.md) , pokud byl prostředek vytvořen v kódu, nebo byl zadán jako parametr `key` při volání <xref:System.Windows.ResourceDictionary.Add%2A?displayProperty=nameWithType>, pokud byl prostředek vytvořen v kódu.|  
+|`key`|Klíč pro požadovaný prostředek. Tento klíč byl původně přiřazen [direktivou x:Key –](../../../desktop-wpf/xaml-services/xkey-directive.md) , pokud byl prostředek vytvořen v kódu, nebo byl zadán jako parametr `key` při volání <xref:System.Windows.ResourceDictionary.Add%2A?displayProperty=nameWithType>, pokud byl prostředek vytvořen v kódu.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 > [!IMPORTANT]
 > `StaticResource` se nesmí pokusit vytvořit dopředný odkaz na prostředek, který je v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] souboru definován lexikálním. Pokus o provedení této akce není podporován a i v případě, že takový odkaz neselže, bude při pokusu o přemístění v případě, že se prohledávají vnitřní tabulky hash reprezentující <xref:System.Windows.ResourceDictionary>, vyhledána pokuta výkonu při načítání. Pro dosažení nejlepších výsledků upravte složení svých slovníků prostředků tak, aby bylo možné vyhnout se odkazům na dopředné odkazy. Pokud se vám nedaří dopředný odkaz, použijte místo toho [rozšíření značek DynamicResource](dynamicresource-markup-extension.md) .  
   
- Zadaný <xref:System.Windows.StaticResourceExtension.ResourceKey%2A> by měl odpovídat existujícímu prostředku identifikovanému pomocí [direktivy x:Key –](../../xaml-services/x-key-directive.md) na některé úrovni stránky, aplikaci, dostupných motivech ovládacích prvků a externích prostředků nebo systémových prostředků. K vyhledávání prostředků dochází v tomto pořadí. Další informace o chování vyhledávání prostředků pro statické a dynamické prostředky naleznete v tématu [prostředky XAML](../../../desktop-wpf/fundamentals/xaml-resources-define.md).  
+ Zadaný <xref:System.Windows.StaticResourceExtension.ResourceKey%2A> by měl odpovídat existujícímu prostředku identifikovanému pomocí [direktivy x:Key –](../../../desktop-wpf/xaml-services/xkey-directive.md) na některé úrovni stránky, aplikaci, dostupných motivech ovládacích prvků a externích prostředků nebo systémových prostředků. K vyhledávání prostředků dochází v tomto pořadí. Další informace o chování vyhledávání prostředků pro statické a dynamické prostředky naleznete v tématu [prostředky XAML](../../../desktop-wpf/fundamentals/xaml-resources-define.md).  
   
- Klíč prostředků může být libovolný řetězec definovaný v gramatice v kódu [XAML](../../xaml-services/xamlname-grammar.md). Klíč prostředků může být také jiné typy objektů, například <xref:System.Type>. <xref:System.Type> klíč je zásadní pro to, jak lze ovládací prvky stylovat pomocí motivů pomocí implicitního klíče stylu. Další informace najdete v tématu [Přehled tvorby řízení](../controls/control-authoring-overview.md).  
+ Klíč prostředků může být libovolný řetězec definovaný v gramatice v kódu [XAML](../../../desktop-wpf/xaml-services/xamlname-grammar.md). Klíč prostředků může být také jiné typy objektů, například <xref:System.Type>. <xref:System.Type> klíč je zásadní pro to, jak lze ovládací prvky stylovat pomocí motivů pomocí implicitního klíče stylu. Další informace najdete v tématu [Přehled tvorby řízení](../controls/control-authoring-overview.md).  
   
  Alternativním deklarativním způsobem, který odkazuje na prostředek, je [rozšíření značek DynamicResource](dynamicresource-markup-extension.md).  
   

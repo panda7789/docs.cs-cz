@@ -5,15 +5,15 @@ helpviewer_keywords:
 - Visual Basic, LINQ features
 - LINQ [Visual Basic], features supporting LINQ
 ms.assetid: c821bb50-b6f6-4cf9-8aba-2717e465bd3a
-ms.openlocfilehash: e81d0434aa60e0c7b316b72fb78ebfe2a3782cbb
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 57c0566f9a76715e48b20f2e6493aa1a506c64be
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353519"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636858"
 ---
 # <a name="visual-basic-features-that-support-linq"></a>Funkce Visual Basic podporující LINQ
-Název [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] odkazuje na technologii v Visual Basic, která podporuje syntaxi dotazů a jiné jazykové konstrukce přímo v jazyce. Pomocí [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]nemusíte učit nový jazyk, abyste se mohli dotazovat na externí zdroj dat. Pomocí Visual Basic můžete zadávat dotazy na data v relačních databázích, v úložištích XML nebo v objektech. Tato integrace možností dotazů do jazyka umožňuje v době kompilace provádět kontrolu chyb syntaxe a zabezpečení typů. Tato integrace také zajišťuje, že už znáte většinu toho, co potřebujete znát k psaní bohatých a proměnlivých dotazů v Visual Basic.  
+Názvový jazyk integrovaný dotaz (LINQ) odkazuje na technologii v Visual Basic, která podporuje syntaxi dotazů a jiné jazykové konstrukce přímo v jazyce. Pomocí LINQ se nemusíte učit nový jazyk a dotazovat se na externí zdroj dat. Pomocí Visual Basic můžete zadávat dotazy na data v relačních databázích, v úložištích XML nebo v objektech. Tato integrace možností dotazů do jazyka umožňuje v době kompilace provádět kontrolu chyb syntaxe a zabezpečení typů. Tato integrace také zajišťuje, že už znáte většinu toho, co potřebujete znát k psaní bohatých a proměnlivých dotazů v Visual Basic.  
   
  V následujících částech jsou popsány jazykové konstrukce, které podporují LINQ dostatečně podrobně, aby bylo možné začít číst úvodní dokumentaci, příklady kódu a ukázkové aplikace. Můžete také kliknout na odkazy a najít podrobnější vysvětlení způsobu, jakým jsou tyto funkce jazyka spojeny, a umožnit tak dotaz integrovaný do jazyka. Dobrým místem pro začátek je [Návod: zápis dotazů v Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/walkthrough-writing-queries.md).  
   
@@ -56,7 +56,7 @@ Název [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] odkazuje na techn
  Další informace najdete v tématu [anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).  
   
 ## <a name="extension-methods"></a>Rozšiřující metody  
- Metody rozšíření umožňují přidat metody do datového typu nebo rozhraní mimo definici. Tato funkce vám umožňuje přidat nové metody do existujícího typu, aniž by bylo nutné upravovat typ. Standardní operátory dotazu jsou vlastní sadou rozšiřujících metod, které poskytují [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] funkce dotazů pro jakýkoli typ, který implementuje <xref:System.Collections.Generic.IEnumerable%601>. Mezi další rozšíření <xref:System.Collections.Generic.IEnumerable%601> patří <xref:System.Linq.Enumerable.Count%2A>, <xref:System.Linq.Enumerable.Union%2A>a <xref:System.Linq.Enumerable.Intersect%2A>.  
+ Metody rozšíření umožňují přidat metody do datového typu nebo rozhraní mimo definici. Tato funkce vám umožňuje přidat nové metody do existujícího typu, aniž by bylo nutné upravovat typ. Standardní operátory dotazu jsou vlastní sadou rozšiřujících metod, které poskytují funkce dotazů LINQ pro jakýkoli typ, který implementuje <xref:System.Collections.Generic.IEnumerable%601>. Mezi další rozšíření <xref:System.Collections.Generic.IEnumerable%601> patří <xref:System.Linq.Enumerable.Count%2A>, <xref:System.Linq.Enumerable.Union%2A>a <xref:System.Linq.Enumerable.Intersect%2A>.  
   
  Následující metoda rozšíření přidá metodu Print do třídy <xref:System.String>.  
   
@@ -77,7 +77,7 @@ Název [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] odkazuje na techn
   
  [!code-vb[VbLINQVbFeatures#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#12)]  
   
- V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]výrazy lambda jsou základem mnoha standardních operátorů dotazu. Kompilátor vytvoří výrazy lambda pro zachycení výpočtů, které jsou definovány v základních metodách dotazů, například `Where`, `Select`, `Order By`, `Take While`a dalších.  
+ V LINQ jsou výrazy lambda základem mnoha standardních operátorů dotazu. Kompilátor vytvoří výrazy lambda pro zachycení výpočtů, které jsou definovány v základních metodách dotazů, například `Where`, `Select`, `Order By`, `Take While`a dalších.  
   
  Například následující kód definuje dotaz, který vrátí všechny vyšší studenty ze seznamu studentů.  
   

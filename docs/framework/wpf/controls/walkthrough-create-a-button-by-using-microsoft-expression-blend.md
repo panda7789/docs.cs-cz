@@ -6,16 +6,16 @@ helpviewer_keywords:
 - converting [WPF], shape to button
 - Expression Blend [WPF Designer]
 ms.assetid: ff5037c2-bba7-4cae-8abb-6475b686c48e
-ms.openlocfilehash: e1fdc3ef51e8658e07bc555238229bed9116e165
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 10d049288cf560dadedf7bc5e624deb7c42aae81
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460091"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636169"
 ---
 # <a name="walkthrough-create-a-button-by-using-microsoft-expression-blend"></a>Návod: Vytvoření tlačítka použitím nástroje Microsoft Expression Blend
 
-Tento návod vás provede procesem vytvoření přizpůsobeného tlačítka [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] pomocí nástroje Microsoft Expression Blend.
+Tento názorný postup vás provede procesem vytvoření přizpůsobeného tlačítka WPF pomocí nástroje Microsoft Expression Blend.
 
 > [!IMPORTANT]
 > Microsoft Expression Blend funguje tak, že generuje [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], která je pak zkompilována, aby mohl spustitelný program. Pokud byste raději pracovali s XAML přímo, existuje další návod, který vytvoří stejnou aplikaci jako tento kód pomocí XAML se sadou Visual Studio, nikoli Blend. Další informace najdete v tématu [Vytvoření tlačítka pomocí XAML](walkthrough-create-a-button-by-using-xaml.md) .
@@ -40,7 +40,7 @@ V první části tohoto návodu vytvoříte vlastní pohled na vlastní tlačít
 
 5. Pojmenujte projekt `CustomButton` a stiskněte **OK**.
 
-V tomto okamžiku máte prázdný [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] projekt. Aplikaci můžete spustit stisknutím klávesy F5. Jak budete chtít očekávat, aplikace se skládá pouze z prázdného okna. V dalším kroku vytvoříte zaoblený obdélník a převedete ho na tlačítko.
+V tomto okamžiku máte prázdný projekt WPF. Aplikaci můžete spustit stisknutím klávesy F5. Jak budete chtít očekávat, aplikace se skládá pouze z prázdného okna. V dalším kroku vytvoříte zaoblený obdélník a převedete ho na tlačítko.
 
 ### <a name="to-convert-a-rectangle-to-a-button"></a>Převod obdélníku na tlačítko
 

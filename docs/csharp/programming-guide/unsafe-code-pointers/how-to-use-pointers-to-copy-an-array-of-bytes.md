@@ -1,25 +1,25 @@
 ---
-title: 'Postupy: Použití ukazatelů ke kopírování pole bajtů - C# Průvodce programováním'
+title: Použití ukazatelů ke kopírování pole průvodce C# programováním bajtů
 ms.custom: seodec18
 ms.date: 04/20/2018
 helpviewer_keywords:
 - byte arrays [C#]
 - arrays [C#], byte
 - pointers [C#], to copy bytes
-ms.openlocfilehash: d174f51fa1709a70b98473a4dbbad89b9c62c22a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: 2673b5a7b87e90618c3a8e579e34e7c7e80efa81
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61708909"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75634999"
 ---
-# <a name="how-to-use-pointers-to-copy-an-array-of-bytes--c-programming-guide"></a>Postupy: Použití ukazatelů ke kopírování pole bajtů (C# Průvodce programováním v)
+# <a name="how-to-use-pointers-to-copy-an-array-of-bytes-c-programming-guide"></a>Použití ukazatelů ke kopírování pole bajtů (C# Průvodce programováním)
 
-Následující příklad používá ukazatelů ke kopírování bajtů z jednoho pole do jiného.
+Následující příklad používá ukazatele ke kopírování bajtů z jednoho pole do jiného.
 
-Tento příklad používá [unsafe](../../language-reference/keywords/unsafe.md) – klíčové slovo, které vám umožní použít ukazatele ve `Copy` metody. [Oprava](../../language-reference/keywords/fixed-statement.md) prohlášení se používá k deklaraci ukazatele na zdrojové a cílové pole. `fixed` Příkaz *PIN kódy* indexy pole zdrojové a cílové umístění v paměti, aby nebude možné přesunout uvolňováním paměti. Bloky paměti pro pole nepřipnuté, pokud `fixed` bloku je dokončena. Protože `Copy` metoda v tomto příkladu používá `unsafe` – klíčové slovo, se musí být kompilována s [-unsafe](../../language-reference/compiler-options/unsafe-compiler-option.md) – možnost kompilátoru.
+V tomto příkladu se používá klíčové slovo [unsafe](../../language-reference/keywords/unsafe.md) , které umožňuje použití ukazatelů v metodě `Copy`. Příkaz [fixed](../../language-reference/keywords/fixed-statement.md) slouží k deklaraci ukazatelů na zdrojová a cílová pole. *Příkaz `fixed`* přiřadí umístění zdrojových a cílových polí v paměti tak, aby se nepřesunuly pomocí uvolňování paměti. Bloky paměti pro pole jsou po dokončení bloku `fixed` nepřipnutý. Vzhledem k tomu, že metoda `Copy` v tomto příkladu používá klíčové slovo `unsafe`, musí být kompilována s možností kompilátoru [-unsafe](../../language-reference/compiler-options/unsafe-compiler-option.md) .
 
-V tomto příkladu přistupuje k prvky obou polí pomocí indexů spíše než druhý nespravovaného ukazatele. Deklarace `pSource` a `pTarget` připíná ukazatele pole. Tato funkce je dostupná, od C# 7.3.
+Tento příklad přistupuje k prvkům obou polí pomocí indexů místo druhého nespravovaného ukazatele. Deklarace `pSource` a ukazatelů `pTarget` přiřadí pole. Tato funkce je k dispozici C# od 7,3.
 
 ## <a name="example"></a>Příklad
 
@@ -29,5 +29,5 @@ V tomto příkladu přistupuje k prvky obou polí pomocí indexů spíše než d
 
 - [Průvodce programováním v jazyce C#](../index.md)
 - [Nebezpečný kód a ukazatele](index.md)
-- [-unsafe (možnosti kompilátoru C#)](../../language-reference/compiler-options/unsafe-compiler-option.md)
+- [-UNSAFEC# (možnosti kompilátoru)](../../language-reference/compiler-options/unsafe-compiler-option.md)
 - [Uvolňování paměti](../../../standard/garbage-collection/index.md)

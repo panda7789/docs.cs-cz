@@ -5,12 +5,12 @@ ms.date: 04/20/2018
 helpviewer_keywords:
 - unsafe code [C#], pointers
 - pointers [C#]
-ms.openlocfilehash: b9b9f145f8f2d945fa06d53efa89f5754766963f
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: MT
+ms.openlocfilehash: 1f394d3fe5a2cb03c39cb0416e4ae44d6e340a4e
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423132"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345642"
 ---
 # <a name="pointer-types-c-programming-guide"></a>Typy ukazatelů (Průvodce programováním v C#)
 
@@ -87,5 +87,6 @@ Další informace naleznete v části [typy ukazatelů](~/_csharplang/spec/unsaf
 - [Průvodce programováním v jazyce C#](../index.md)
 - [Nebezpečný kód a ukazatele](index.md)
 - [Převody ukazatele](pointer-conversions.md)
-- [Typy](/dotnet/csharp/language-reference/keywords)
+- [Typy odkazů](../../language-reference/keywords/reference-types.md)
+- [Typy hodnot](../../language-reference/keywords/value-types.md)
 - [unsafe](../../language-reference/keywords/unsafe.md)

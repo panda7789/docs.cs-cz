@@ -10,12 +10,12 @@ helpviewer_keywords:
 - extending glass frames into applications [WPF]
 - glass frames [WPF], extending into applications
 ms.assetid: 74388a3a-4b69-4a9d-ba1f-e107636bd660
-ms.openlocfilehash: ae4d7f23729f5bd39558902a58d33c6c45572d85
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: a702456895cfdbd44a58059befefb69deee5afa3
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73977011"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636195"
 ---
 # <a name="extend-glass-frame-into-a-wpf-application"></a>Rozšíření skleněného rámečku do aplikace WPF
 
@@ -30,7 +30,7 @@ Následující obrázek znázorňuje skleněný rámec rozšířený na adresní
 
 ![Snímek obrazovky znázorňující skleněný rámec rozšířený na adresní řádek IE7](./media/extend-glass-frame-into-a-wpf-application/internet-explorer-glass-frame-extended-address-bar.png)
 
-Pokud chcete roztáhnout skleněný rámec na [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikaci, je potřeba mít přístup k nespravovanému rozhraní API. Následující příklad kódu provádí vyvolání platformy (PInvoke) pro rozhraní API, které je potřeba k rozšiřování rámce do klientské oblasti. Každé z těchto rozhraní API je deklarováno ve třídě s názvem **NonClientRegionAPI**.
+Chcete-li zvětšit skleněný rámec v aplikaci WPF, je vyžadován přístup k nespravovanému rozhraní API. Následující příklad kódu provádí vyvolání platformy (PInvoke) pro rozhraní API, které je potřeba k rozšiřování rámce do klientské oblasti. Každé z těchto rozhraní API je deklarováno ve třídě s názvem **NonClientRegionAPI**.
 
 ```csharp
 [StructLayout(LayoutKind.Sequential)]
@@ -66,7 +66,7 @@ End Function
 
 ## <a name="example"></a>Příklad
 
-Chcete-li použít funkci [DwmExtendFrameIntoClientArea](/windows/desktop/api/dwmapi/nf-dwmapi-dwmextendframeintoclientarea) , je nutné získat popisovač okna. V [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]lze popisovač okna získat z vlastnosti <xref:System.Windows.Interop.HwndSource.Handle%2A> <xref:System.Windows.Interop.HwndSource>. V následujícím příkladu je rámec rozšířen do oblasti klienta na události <xref:System.Windows.FrameworkElement.Loaded> okna.
+Chcete-li použít funkci [DwmExtendFrameIntoClientArea](/windows/desktop/api/dwmapi/nf-dwmapi-dwmextendframeintoclientarea) , je nutné získat popisovač okna. V rámci WPF lze popisovač okna získat z vlastnosti <xref:System.Windows.Interop.HwndSource.Handle%2A> <xref:System.Windows.Interop.HwndSource>. V následujícím příkladu je rámec rozšířen do oblasti klienta na události <xref:System.Windows.FrameworkElement.Loaded> okna.
 
 ```csharp
 void OnLoaded(object sender, RoutedEventArgs e)
@@ -145,7 +145,7 @@ Následující příklad ukazuje jednoduché okno, ve kterém je rámec rozší�
 </Window>
 ```
 
-Následující obrázek znázorňuje skleněný rámec rozšířený do [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace:
+Následující obrázek znázorňuje skleněný rámec rozšířený do aplikace WPF:
 
 ![Snímek obrazovky znázorňující skleněný rámec rozšířený do aplikace WPF](./media/extend-glass-frame-into-a-wpf-application/glass-frame-extended-wpf-application.png)
 

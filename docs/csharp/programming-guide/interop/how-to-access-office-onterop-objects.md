@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: přístup k objektům Interop Office pomocí vizuálních C# funkcí C# – Průvodce programováním'
+title: Přístup k objektům Interop Office – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -10,16 +10,16 @@ helpviewer_keywords:
 - named arguments [C#], Office programming
 - Office programming [C#]
 ms.assetid: 041b25c2-3512-4e0f-a4ea-ceb2999e4d5e
-ms.openlocfilehash: b6e45858b64ea1bf87ca0e73001a5cf07ddfd58b
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: MT
+ms.openlocfilehash: 63a3bf422e19bbfb644b809aa9f4573bfdbd42bd
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73417705"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635220"
 ---
-# <a name="how-to-access-office-interop-objects-by-using-visual-c-features-c-programming-guide"></a>Postupy: přístup k objektům Interop Office pomocí vizuálních C# funkcíC# (Průvodce programováním)
+# <a name="how-to-access-office-interop-objects-c-programming-guide"></a>Přístup k objektům Interop Office (C# Průvodce programováním)
 
-Vizuál C# obsahuje funkce, které zjednodušují přístup k OBJEKTŮM rozhraní API Office. Nové funkce zahrnují pojmenované a nepovinné argumenty, nový typ s názvem `dynamic` a možnost předat argumenty odkazovým parametrům v metodách modelu COM, jako kdyby byly parametry hodnoty.
+C#obsahuje funkce, které zjednodušují přístup k objektům rozhraní API systému Office. Nové funkce zahrnují pojmenované a nepovinné argumenty, nový typ s názvem `dynamic`a možnost předat argumenty odkazovým parametrům v metodách modelu COM, jako kdyby byly parametry hodnoty.
 
 V tomto tématu použijete nové funkce k psaní kódu, který vytvoří a zobrazí systém Microsoft Office excelový list. Potom napíšete kód pro přidání dokumentu aplikace Office Word, který obsahuje ikonu, která je propojena s listem aplikace Excel.
 
@@ -31,7 +31,7 @@ K dokončení tohoto Názorného postupu musíte mít v počítači nainstalovan
 
 1. Spusťte Visual Studio.
 
-2. V nabídce **soubor** přejděte na příkaz **Nový**a klikněte na **projekt**. Zobrazí se dialogové okno **Nový projekt** .
+2. V nabídce **soubor** přejděte na příkaz **Nový**a klikněte na **projekt**. **Nový projekt** zobrazí se dialogové okno.
 
 3. V podokně **Nainstalované šablony** rozbalte **vizuál C#** a pak klikněte na **Windows**.
 
@@ -57,7 +57,7 @@ K dokončení tohoto Názorného postupu musíte mít v počítači nainstalovan
 
 1. V **Průzkumník řešení**klikněte pravým tlačítkem na soubor *program.cs* a pak klikněte na **Zobrazit kód**.
 
-2. Přidejte následující direktivy `using` do horní části souboru kódu:
+2. Do horní části souboru kódu přidejte následující direktivy `using`:
 
      [!code-csharp[csProgGuideOfficeHowTo#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#1)]
 
@@ -79,11 +79,11 @@ K dokončení tohoto Názorného postupu musíte mít v počítači nainstalovan
 
      [!code-csharp[csProgGuideOfficeHowTo#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#4)]
 
-2. Na konec `DisplayInExcel` přidejte následující kód. Kód vloží hodnoty do prvních dvou sloupců prvního řádku listu.
+2. Na konec `DisplayInExcel`přidejte následující kód. Kód vloží hodnoty do prvních dvou sloupců prvního řádku listu.
 
      [!code-csharp[csProgGuideOfficeHowTo#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#5)]
 
-3. Na konec `DisplayInExcel` přidejte následující kód. Smyčka `foreach` umístí informace ze seznamu účtů do prvního dvou sloupců po sobě jdoucích řádků listu.
+3. Na konec `DisplayInExcel`přidejte následující kód. Smyčka `foreach` umístí informace ze seznamu účtů do prvního dvou sloupců po sobě jdoucích řádků listu.
 
      [!code-csharp[csProgGuideOfficeHowTo#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#7)]
 
@@ -103,7 +103,7 @@ K dokončení tohoto Názorného postupu musíte mít v počítači nainstalovan
 
      [!code-csharp[csProgGuideOfficeHowTo#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#8)]
 
-2. Stiskněte klávesy CTRL + F5.
+2. Stisknutím kláves CTRL + F5.
 
      Zobrazí se excelový list obsahující data ze dvou účtů.
 
@@ -123,15 +123,15 @@ K dokončení tohoto Názorného postupu musíte mít v počítači nainstalovan
 
      [!code-csharp[csProgGuideOfficeHowTo#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#10)]
 
-2. Na konec `Main` přidejte následující příkaz.
+2. Na konec `Main`přidejte následující příkaz.
 
      [!code-csharp[csProgGuideOfficeHowTo#11](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#11)]
 
-3. Na konec `DisplayInExcel` přidejte následující příkaz. Metoda `Copy` přidá list do schránky.
+3. Na konec `DisplayInExcel`přidejte následující příkaz. Metoda `Copy` přidá list do schránky.
 
      [!code-csharp[csProgGuideOfficeHowTo#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#12)]
 
-4. Stiskněte klávesy CTRL + F5.
+4. Stisknutím kláves CTRL + F5.
 
      Zobrazí se dokument aplikace Word obsahující ikonu. Dvojitým kliknutím na ikonu přeneste list do popředí.
 
@@ -179,4 +179,4 @@ Následující kód ukazuje kompletní příklad.
 - [dynamic](../../language-reference/builtin-types/reference-types.md)
 - [Použití typu dynamic](../types/using-type-dynamic.md)
 - [Pojmenované a nepovinné argumenty](../classes-and-structs/named-and-optional-arguments.md)
-- [Postupy: Použití pojmenovaných a nepovinných argumentů v programování pro sadu Office](../classes-and-structs/how-to-use-named-and-optional-arguments-in-office-programming.md)
+- [Použití pojmenovaných a nepovinných argumentů v programování pro Office](../classes-and-structs/how-to-use-named-and-optional-arguments-in-office-programming.md)

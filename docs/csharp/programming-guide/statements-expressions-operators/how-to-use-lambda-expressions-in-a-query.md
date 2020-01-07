@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: použití výrazů lambda v průvodci C# programováním dotazů'
+title: Použití výrazů lambda v průvodci C# programováním dotazů
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - lambda expressions [C#], in LINQ
 ms.assetid: 3cac4d25-d11f-4abd-9e7c-0f02e97ae06d
-ms.openlocfilehash: e7e7da211599b5ce0263377ecaf25b404399ce9c
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: MT
+ms.openlocfilehash: e66239174d5598d7cf532d21426a9e15d5075085
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423170"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635116"
 ---
-# <a name="how-to-use-lambda-expressions-in-a-query-c-programming-guide"></a>Postupy: Použití výrazů lambda v dotazu (Průvodce programováním v C#)
+# <a name="how-to-use-lambda-expressions-in-a-query-c-programming-guide"></a>Použití výrazů lambda v dotazu (C# Průvodce programováním)
 Lambda výrazy nepoužíváte přímo v syntaxi dotazu, ale můžete je použít v voláních metody a výrazy dotazů mohou obsahovat volání metody. Některé operace dotazu je ve skutečnosti možné vyjádřit pouze v syntaxi metody. Další informace o rozdílu mezi syntaxí dotazu a syntaxí metody naleznete [v tématu Syntaxe dotazu a syntaxe metody v jazyce LINQ](../concepts/linq/query-syntax-and-method-syntax-in-linq.md).  
   
 ## <a name="example"></a>Příklad  
@@ -28,7 +28,7 @@ Lambda výrazy nepoužíváte přímo v syntaxi dotazu, ale můžete je použít
  [!code-csharp[csProgGuideLINQ#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideLINQ/CS/csrefLINQHowTos.cs#2)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Chcete-li spustit tento kód, zkopírujte a vložte metodu do `StudentClass`, který je k dispozici v tématu [Postupy: vytvoření dotazu na kolekci objektů](../../linq/query-a-collection-of-objects.md) a jejich volání z metody `Main`.  
+ Chcete-li spustit tento kód, zkopírujte a vložte metodu do `StudentClass`, který je k dispozici v [dotazu na kolekci objektů](../../linq/query-a-collection-of-objects.md) a zavolejte ji z metody `Main`.
   
 ## <a name="see-also"></a>Viz také:
 

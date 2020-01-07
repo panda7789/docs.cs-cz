@@ -1,33 +1,36 @@
 ---
 title: Jak nainstalovat nástroj rozhraní příkazového řádku ML.NET (CLI)
-description: Přehled a instalace nástroje rozhraní příkazového řádku ML.NET (CLI).
-ms.date: 04/16/2019
-ms.custom: ''
-ms.openlocfilehash: feeb4832b5bbd39f28ac2c6f6caa40d60b4f3aa9
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+description: Naučte se instalovat, upgradovat, downgradovat a odinstalovat nástroj rozhraní příkazového řádku ML.NET (CLI).
+ms.date: 12/18/2019
+ms.author: nakersha
+author: natke
+ms.openlocfilehash: 07b6e924ed9c6b0c278a86539ebe7d750f9ced37
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73977085"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636585"
 ---
 # <a name="how-to-install-the-mlnet-command-line-interface-cli-tool"></a>Jak nainstalovat nástroj rozhraní příkazového řádku ML.NET (CLI)
 
-ML.NET CLI (rozhraní příkazového řádku) je nástroj, který můžete spustit na jakémkoli příkazovém řádku (Windows, Mac nebo Linux) pro vytváření kvalitních ML.NET modelů a zdrojového kódu na základě školení datových sad, které poskytnete.
+Naučte se, jak nainstalovat rozhraní příkazového řádku (ML.NET) CLI do systému Windows, Mac nebo Linux.
+
+ML.NET CLI generuje kvalitní ML.NET modely a zdrojový kód s využitím automatizovaného strojového učení (AutoML) a datové sady školení.
 
 > [!NOTE]
 > Toto téma odkazuje na ML.NET CLI a ML.NET AutoML, které jsou momentálně ve verzi Preview, a materiál může být změněn.
 
-## <a name="pre-requisites"></a>Předpoklady
+## <a name="pre-requisites"></a>Požadavky
 
 - [Sada .NET Core 2,2 SDK](https://dotnet.microsoft.com/download/dotnet-core/2.2)
 
 - Volitelné [Visual Studio 2017 nebo 2019](https://visualstudio.microsoft.com/vs/)
 
-Můžete buď spustit vygenerované C# projekty kódu v aplikaci Visual Studio F5 nebo pomocí `dotnet run` (.NET Core CLI).
+Vygenerované C# projekty kódu se sadou Visual Studio můžete spustit stisknutím klávesy `F5` nebo pomocí `dotnet run` (.NET Core CLI).
 
 Poznámka: když po instalaci [sady .NET Core 2,2 SDK](https://dotnet.microsoft.com/download/dotnet-core/2.2) nefunguje příkaz `dotnet tool`, odhlaste se z Windows a znovu se přihlaste.
 
-## <a name="install"></a>Instalace
+## <a name="install"></a>Instalace produktu
 
 Rozhraní příkazového řádku ML.NET je nainstalováno jako jakýkoli jiný globální nástroj dotnet. Použijete příkaz `dotnet tool install` .NET Core CLI.
 
@@ -120,7 +123,7 @@ V počítači, ve kterém chcete povolit dokončování, budete muset provést d
 
 ML.NET CLI se dá nainstalovat do výchozího adresáře nebo do konkrétního umístění. Výchozí adresáře jsou:
 
-| JINÉHO          | Cesta                          |
+| OS          | Cesta                          |
 |-------------|-------------------------------|
 | Linux/macOS | `$HOME/.dotnet/tools`         |
 | Windows     | `%USERPROFILE%\.dotnet\tools` |
@@ -134,7 +137,7 @@ V takovém případě .NET Core CLI nepřidá toto umístění automaticky do pr
 
 ## <a name="see-also"></a>Viz také:
 
-- [Kurz k Začínáme pomocí nástroje CLI ML.NET](../tutorials/mlnet-cli.md)
-- [Automatické učení modelů pomocí nástroje CLI ML.NET](../automate-training-with-cli.md)
+- [ML.NET CLI – přehled](../automate-training-with-cli.md)
+- [Kurz: analýza mínění pomocí rozhraní příkazového řádku ML.NET](../tutorials/sentiment-analysis-cli.md)
 - [Referenční příručka k příkazu ML.NET CLI pro automatické učení](../reference/ml-net-cli-reference.md)
 - [Telemetrie v ML.NET CLI](../resources/ml-net-cli-telemetry.md)

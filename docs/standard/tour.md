@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 05/22/2017
 ms.technology: dotnet-standard
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.openlocfilehash: 274fea83c474d4b67aab919b604eda893d8204d7
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: 0154910b91df0b2f72daebe802e4c75bbca964bb
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552868"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337582"
 ---
 # <a name="tour-of-net"></a>Prohlídka technologie .NET
 
@@ -27,13 +27,13 @@ Informace o tom, jak nastavit vývojové prostředí pro spuštění ukázek kó
 
 Rozhraní .NET podporuje více programovacích jazyků. Implementace rozhraní .NET implementují rozhraní [Common Language Infrastructure (CLI)](https://visualstudio.microsoft.com/license-terms/ecma-c-common-language-infrastructure-standards/), které kromě jiného určuje interoperabilitu modulu runtime a jazyka nezávislého na jazyce. To znamená, že zvolíte libovolný jazyk .NET pro sestavování aplikací a služeb v rozhraní .NET.
 
-Microsoft aktivně vyvíjí a podporuje tři jazyky .NET: C#, F#a Visual Basic (VB). 
+Microsoft aktivně vyvíjí a podporuje tři jazyky .NET: C#, F#a Visual Basic. 
 
 * C#je jednoduchý, výkonný, typově bezpečný a objektově orientovaný a přitom zachovává expresivity a elegance jazyků ve stylu jazyka C. Kdokoli, kdo zná jazyk C a podobné jazyky, najde v přizpůsobení několik C#problémů. Další informace o nástroji C#najdete v [ C# příručce](../csharp/index.yml) .
 
 * F#je programovací jazyk, který je pro více platforem, který podporuje také tradiční objekty orientované a imperativní programování. Další informace o nástroji F#najdete v [ F# příručce](../fsharp/index.yml) .
 
-* Visual Basic je jednoduchý jazyk, pomocí kterého se naučíte vytvářet nejrůznější aplikace, které běží na .NET. V rámci jazyků .NET je syntaxe jazyka VB nejblíže běžnému lidskému jazyku, často usnadňuje práci s vývojem softwaru pro lidi.
+* Visual Basic je jednoduchý jazyk, pomocí kterého se naučíte vytvářet nejrůznější aplikace, které běží na .NET. V rámci jazyků .NET je syntaxe Visual Basic nejblíže běžnému lidskému jazyku, často usnadňuje lidem novému vývoji softwaru.
 
 ## <a name="automatic-memory-management"></a>Automatická správa paměti
 
@@ -47,7 +47,7 @@ Neexistuje žádné podobné klíčové slovo, které by bylo možné zrušit p�
 
 Systém uvolňování paměti je jednou ze služeb, které pomůžou zajistit *bezpečnost paměti*. Program je bezpečný pro paměť, pokud přistupuje pouze k přidělené paměti. Modul runtime například zajišťuje, že aplikace nemá přístup k nepřidělené paměti mimo hranice pole.
 
-V následujícím příkladu vyvolá modul runtime výjimku `InvalidIndexException` pro vymáhání zabezpečení paměti:
+V následujícím příkladu vyvolá modul runtime výjimku <xref:System.IndexOutOfRangeException> pro vymáhání zabezpečení paměti:
 
 [!code-csharp[MemoryManagement](../../samples/csharp/snippets/tour/MemoryManagement.csx#L4-L5)]
 
@@ -65,7 +65,7 @@ Další podrobnosti najdete v následujících tématech:
 
 * Další C#informace naleznete v tématu [using –C# příkaz (Referenční dokumentace)](../csharp/language-reference/keywords/using-statement.md) .
 * F#Informace najdete v tématu [Správa prostředků: klíčové slovo use](../fsharp/language-reference/resource-management-the-use-keyword.md).
-* Pro jazyk VB si přečtěte téma [using – příkaz (Visual Basic)](../visual-basic/language-reference/statements/using-statement.md) .
+* Visual Basic najdete v tématu [příkaz using (Visual Basic)](../visual-basic/language-reference/statements/using-statement.md) .
 
 ## <a name="type-safety"></a>Bezpečnost typů
 
@@ -79,11 +79,11 @@ Bezpečnost typů se také používá k vymáhání zapouzdření tím, že zaru
 
 [!code-csharp[TypeSafety](../../samples/csharp/snippets/tour/TypeSafety.csx#L3-L3)]
 
-C#, VB a F# podpora *odvození místního typu*. Odvození typu znamená, že kompilátor odvodit typ výrazu na levé straně z výrazu na pravé straně. To neznamená, že bezpečnost typů je přerušena nebo se nepoužívá. Výsledný typ má silný typ se všemi, který implikuje. Z předchozího příkladu je přepsána `dog` pro zavedení odvození typu a zbývající část příkladu je beze změny:
+C#, Visual Basic a F# podpora *odvození místního typu*. Odvození typu znamená, že kompilátor odvodit typ výrazu na levé straně z výrazu na pravé straně. To neznamená, že bezpečnost typů je přerušena nebo se nepoužívá. Výsledný typ má silný typ se všemi, který implikuje. Z předchozího příkladu je přepsána `dog` pro zavedení odvození typu a zbývající část příkladu je beze změny:
 
 [!code-csharp[TypeSafety](../../samples/csharp/snippets/tour/TypeSafety.csx#L28-L34)]
 
-F#má ještě další možnosti odvození typu, než odvození typu místní metody, které najdete C# v a VB. Další informace najdete v tématu [odvození typu](../fsharp/language-reference/type-inference.md).
+F#má ještě další možnosti odvození typu, než odvození typu místní metody, které se C# nacházejí v a Visual Basic. Další informace najdete v tématu [odvození typu](../fsharp/language-reference/type-inference.md).
 
 ## <a name="delegates-and-lambdas"></a>Delegáty a výrazy lambda
 
@@ -97,7 +97,7 @@ V rozhraní .NET se delegáti běžně používají v obslužných rutinách ud�
 
 Obecné typy umožňují programátorům zavést *parametr typu* při navrhování tříd, které umožňují kódu klienta (uživatelům typu) zadat přesný typ pro použití namísto parametru typu.
 
-Byly přidány obecné typy, které programátorům pomůžou implementovat generické datové struktury. Před jejich příchodem pro typ, jako je například `List` typ, který má být obecný, by bylo nutné pracovat s prvky, které byly typu `object`. Došlo k různým výkonům a sémantickým problémům společně s možnými drobnými chybami za běhu. Nejustrm z nich je, když datová struktura obsahuje, například celá čísla i řetězce a `InvalidCastException` je vyvolána při práci se členy seznamu.
+Byly přidány obecné typy, které programátorům pomůžou implementovat generické datové struktury. Před jejich příchodem, aby bylo možné typ, jako je například `List` typ obecný, pracovat s prvky, které byly typu `object`. Došlo k různým výkonům a sémantickým problémům společně s možnými malými chybami v době běhu. Obvyklou chybou za běhu je, když datová struktura obsahuje, například celá čísla i řetězce a při zpracování členů seznamu je vyvolána <xref:System.InvalidCastException>.
 
 Následující příklad ukazuje základní program spuštěný pomocí instance <xref:System.Collections.Generic.List%601>ch typů:
 
@@ -113,7 +113,7 @@ Chcete-li získat další informace o asynchronním programování v rozhraní .
 
 ## <a name="language-integrated-query-linq"></a>LINQ (Language Integrated Query)
 
-LINQ je výkonná sada funkcí pro C# a VB, která umožňuje psaní jednoduchého deklarativního kódu pro práci na datech. Data mohou být v mnoha formách (například objekty v paměti, databáze SQL nebo dokumentu XML), ale kód jazyka LINQ, který zapisujete, se obvykle neliší od zdroje dat.
+LINQ je výkonná sada funkcí pro C# a Visual Basic, která umožňuje psaní jednoduchého deklarativního kódu pro práci na datech. Data mohou být v mnoha formách (například objekty v paměti, databáze SQL nebo dokumentu XML), ale kód jazyka LINQ, který zapisujete, se obvykle neliší od zdroje dat.
 
 Další informace a příklady naleznete v tématu [LINQ (Language Integrated Query)](using-linq.md) .
 

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XAML browser applications (XBAP)
 - browser-hosted applications [WPF]
 ms.assetid: 3a7a86a8-75d5-4898-96b9-73da151e5e16
-ms.openlocfilehash: fb7ad54f61d9dcfe94379aef14930a0395da5291
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: a4d3b808aee14d5d2f29053b0c60798f9f626e8c
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424593"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636325"
 ---
 # <a name="wpf-xaml-browser-applications-overview"></a>Přehled aplikací Prohlížeče WPF XAML
 <a name="introduction"></a>Aplikace prohlížeče XAML (XBAP) spojují funkce webových aplikací a aplikací s bohatou funkční verzí. Podobně jako webové aplikace mohou být aplikace XBAP nasazeny na webový server a spouštěny z aplikace Internet Explorer nebo Firefox. Podobně jako aplikace s bohatou platností můžou aplikace XBAP využívat možnosti WPF. Vývoj aplikací XBAP je také podobný vývoji s bohatou podporou klientů. Toto téma poskytuje jednoduchý, vysoce základní Úvod k vývoji XBAP a popisuje, kde se vývoj v XBAP liší od standardního vysoce výkonného vývoje klienta.
@@ -51,7 +51,7 @@ ms.locfileid: "73424593"
 |Manifest aplikace (. manifest)|Obsahuje metadata přidružená k aplikaci a má příponu. manifest.|
 |Manifest nasazení (. XBAP)|Tento soubor obsahuje informace, které ClickOnce používá k nasazení aplikace a má příponu. XBAP.|
 
- Nasadíte aplikace XBAP na webový server, například Microsoft Internetová informační služba (IIS) 5,0 nebo novější verze. Nemusíte instalovat .NET Framework na webový server, ale musíte registrovat [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] typy MIME (Multipurpose Internet Mail Extensions) a přípony názvů souborů. Další informace najdete v tématu [Konfigurace iis 5,0 a iis 6,0 pro nasazení aplikací WPF](how-to-configure-iis-5-0-and-iis-6-0-to-deploy-wpf-applications.md).
+ Nasadíte aplikace XBAP na webový server, například Microsoft Internetová informační služba (IIS) 5,0 nebo novější verze. Nemusíte instalovat .NET Framework na webový server, ale musíte registrovat typy MIME (Multipurpose Multipurpose Internet Mail Extensions) a přípony názvů souborů. Další informace najdete v tématu [Konfigurace iis 5,0 a iis 6,0 pro nasazení aplikací WPF](how-to-configure-iis-5-0-and-iis-6-0-to-deploy-wpf-applications.md).
 
  Pro přípravu XBAP pro nasazení zkopírujte do webového serveru soubor. exe a přidružené manifesty. Vytvořte stránku HTML obsahující hypertextový odkaz pro otevření manifestu nasazení, což je soubor s příponou. XBAP. Když uživatel klikne na odkaz na soubor. XBAP, ClickOnce automaticky zpracuje mechanismus stažení a spuštění aplikace. Následující příklad kódu ukazuje stránku HTML obsahující hypertextový odkaz, který odkazuje na XBAP.
 
@@ -101,9 +101,9 @@ ms.locfileid: "73424593"
 
 1. V aplikaci Visual Studio otevřete vlastnosti projektu.
 
-2. Na kartě **zabezpečení** klikněte na **Upřesnit**.
+2. Na kartě **Zabezpečení** klikněte na **Upřesnit**.
 
-     Zobrazí se dialogové okno Upřesnit nastavení zabezpečení.
+     Zobrazí se dialog Upřesnit nastavení zabezpečení.
 
 3. Ujistěte se, že je zaškrtnuté políčko **udělit aplikaci přístup ke svému webu** , a pak klikněte na **OK**.
 
@@ -113,7 +113,7 @@ ms.locfileid: "73424593"
 
      Zobrazí se dialogové okno Možnosti Internetu.
 
-6. Klikněte na kartu **Upřesnit** .
+6. Klikněte na tlačítko **Upřesnit** kartu.
 
 7. V seznamu **Nastavení** v části **zabezpečení**zaškrtněte políčko **povolený aktivní obsah, který se má v souborech v mém počítači spustit** .
 
@@ -166,9 +166,9 @@ ms.locfileid: "73424593"
 ### <a name="deploying-a-full-trust-xbap"></a>Nasazení plně důvěryhodného XBAP
  Při nasazení plně důvěryhodného prostředí XBAP, které nedodržuje model důvěryhodného nasazení ClickOnce, bude chování při spuštění aplikace uživatelem záviset na zóně zabezpečení. V některých případech se uživateli při pokusu o instalaci zobrazí upozornění. Uživatel může zvolit pokračování nebo instalaci zrušit. Následující tabulka popisuje chování aplikace pro každou zónu zabezpečení a to, co je třeba udělat, aby aplikace přijímala úplný vztah důvěryhodnosti.
 
-|Zóna zabezpečení|Předvídatelně|Získání úplné důvěryhodnosti|
+|Zóna zabezpečení|Chování|Získání úplné důvěryhodnosti|
 |-------------------|--------------|------------------------|
-|Místní počítač|Automatický úplný vztah důvěryhodnosti|Není nutné provádět žádnou akci.|
+|Místní počítač|Automatický úplný vztah důvěryhodnosti|Není potřeba provádět žádnou akci.|
 |Intranetové a důvěryhodné weby|Dotázat se na úplný vztah důvěryhodnosti|Přihlaste se k aplikaci XBAP pomocí certifikátu, aby se uživateli zobrazila výzva ke zdroji v příkazovém řádku.|
 |Internet|Neúspěch s "důvěryhodným neuděleným"|Podepište aplikaci XBAP pomocí certifikátu.|
 

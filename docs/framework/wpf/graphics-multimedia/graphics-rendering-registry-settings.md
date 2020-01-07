@@ -8,12 +8,12 @@ helpviewer_keywords:
 - troubleshooting graphics rendering [WPF]
 - graphics [WPF], rendering
 ms.assetid: f4b41b42-327d-407c-b398-3ed5f505df8b
-ms.openlocfilehash: adb4848e844ff091c45ec9a8a2e6d36f01c3cf91
-ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
+ms.openlocfilehash: 53f25be3bc38d88aa7723f6a0858317ee5ce6143
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74960150"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559648"
 ---
 # <a name="graphics-rendering-registry-settings"></a>Nastavení registru pro vykreslení grafiky
 Toto téma poskytuje přehled nastavení registru [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vykreslování grafiky, která mají vliv na [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace.  
@@ -24,7 +24,7 @@ Toto téma poskytuje přehled nastavení registru [!INCLUDE[TLA2#tla_winclient](
   
 <a name="xpdmandwddm"></a>   
 ## <a name="what-are-xpdm-and-wddm"></a>Co jsou XPDM a WDDM?  
- Některá nastavení registru pro vykreslování grafiky mají různé výchozí hodnoty v závislosti na tom, jestli vaše grafická karta používá ovladač XPDM nebo WDDM. XPDM je model ovladače zobrazení Microsoft Windows XP a WDDM je model ovladače zobrazení systému Windows. WDDM je k dispozici na počítačích se systémy Windows Vista a Windows 7. XPDM je k dispozici na počítačích se systémy Windows Vista, Microsoft Windows XP a [!INCLUDE[TLA#tla_winnetsvrfam](../../../../includes/tlasharptla-winnetsvrfam-md.md)]. Další informace o WDDM najdete v tématu [Průvodce návrhem zobrazovacího modelu Windows Vista](https://go.microsoft.com/fwlink/?LinkId=178394).  
+ Některá nastavení registru pro vykreslování grafiky mají různé výchozí hodnoty v závislosti na tom, jestli vaše grafická karta používá ovladač XPDM nebo WDDM. XPDM je model ovladače zobrazení Microsoft Windows XP a WDDM je model ovladače zobrazení systému Windows. WDDM je k dispozici na počítačích se systémy Windows Vista a Windows 7. XPDM je k dispozici na počítačích se systémy Windows Vista, Microsoft Windows XP a Microsoft Windows Server 2003. Další informace o WDDM najdete v tématu [Průvodce návrhem zobrazovacího modelu Windows Vista](https://go.microsoft.com/fwlink/?LinkId=178394).  
   
 <a name="registry_settings"></a>   
 ## <a name="registry-settings"></a>Nastavení registru  

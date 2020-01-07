@@ -5,12 +5,12 @@ helpviewer_keywords:
 - PropertyPath object [WPF]
 - XAML [WPF], PropertyPath object
 ms.assetid: 0e3cdf07-abe6-460a-a9af-3764b4fd707f
-ms.openlocfilehash: f9176e61915b6c5cc05f120eade69a6d19cc4e6a
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 17c8982a66960626a5d049fa2da90f5f2d995d14
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740779"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559765"
 ---
 # <a name="propertypath-xaml-syntax"></a>PropertyPath – syntaxe v jazyce XAML
 
@@ -113,7 +113,7 @@ Chcete-li odkazovat na ukazatel aktuálního záznamu pro scénář zobrazení k
 <object Path="[index1,index2...]" .../>
 ```
 
-or
+nebo
 
 ```xaml
 <object Path="propertyName[index,index2...]" .../>
@@ -192,7 +192,7 @@ Aby bylo možné podporovat klonování pro animaci <xref:System.Windows.Freezab
 
 `propertyName2` musí být název vlastnosti závislosti, která existuje na objektu, který je hodnotou `propertyName`. Jinými slovy `propertyName2` musí existovat jako vlastnost Dependency u typu, který je <xref:System.Windows.DependencyProperty.PropertyType%2A>`propertyName`.
 
-Nepřímý cíl animací je nutný z důvodu použitých stylů a šablon. Aby bylo možné cílit na animaci, potřebujete <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> v cílovém objektu a tento název je vytvořen pomocí [x:Name](../../xaml-services/x-name-directive.md) nebo <xref:System.Windows.FrameworkElement.Name%2A>. I když prvky šablony a stylu také mohou mít názvy, jsou tyto názvy platné pouze v rámci namescope stylu a šablony. (Pokud se šablony a styly sdílí obory názvů WPF s označením aplikace, názvy nejdou být jedinečné. Styly a šablony jsou doslova sdílené mezi instancemi a by perpetuate duplicitní názvy.) Proto pokud jednotlivé vlastnosti prvku, který chcete animovat, pochází ze stylu nebo šablony, je nutné začít s pojmenovanou instancí elementu, která není ze šablony stylu, a poté cílit do vizuálního stromu Style nebo Template, aby byla přijata vlastnost. chcete animovat.
+Nepřímý cíl animací je nutný z důvodu použitých stylů a šablon. Aby bylo možné cílit na animaci, potřebujete <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> v cílovém objektu a tento název je vytvořen pomocí [x:Name](../../../desktop-wpf/xaml-services/xname-directive.md) nebo <xref:System.Windows.FrameworkElement.Name%2A>. I když prvky šablony a stylu také mohou mít názvy, jsou tyto názvy platné pouze v rámci namescope stylu a šablony. (Pokud se šablony a styly sdílí obory názvů WPF s označením aplikace, názvy nejdou být jedinečné. Styly a šablony jsou doslova sdílené mezi instancemi a by perpetuate duplicitní názvy.) Proto pokud jednotlivé vlastnosti prvku, který chcete animovat, pochází ze stylu nebo šablony, je nutné začít s pojmenovanou instancí elementu, která není ze šablony stylu, a poté cílit do vizuálního stromu Style nebo Template, aby byla přijata vlastnost. chcete animovat.
 
 Například vlastnost <xref:System.Windows.Controls.Panel.Background%2A> <xref:System.Windows.Controls.Panel> je kompletní <xref:System.Windows.Media.Brush> (ve skutečnosti <xref:System.Windows.Media.SolidColorBrush>), která pochází ze šablony motivů. Chcete-li <xref:System.Windows.Media.Brush> zcela animovat, musí být BrushAnimation (pravděpodobně jeden pro každý typ <xref:System.Windows.Media.Brush>) a neexistuje žádný takový typ. K animaci štětce můžete místo toho animovat vlastnosti určitého typu <xref:System.Windows.Media.Brush>. Musíte získat od <xref:System.Windows.Media.SolidColorBrush> ke svému <xref:System.Windows.Media.SolidColorBrush.Color%2A>, abyste mohli použít <xref:System.Windows.Media.Animation.ColorAnimation>. Cesta k vlastnosti tohoto příkladu by byla `Background.Color`.
 

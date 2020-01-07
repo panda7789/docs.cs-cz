@@ -12,12 +12,12 @@ helpviewer_keywords:
 - syntax [WPF], object elements
 - binding declarations [WPF]
 ms.assetid: b97fd626-4c0d-4761-872a-2bca5820da2c
-ms.openlocfilehash: bc3a139db80066c9cad5199c7734fe66a8639400
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 8fea61c463928ee69ef5dd0dfbf107f89c5384ff
+ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460028"
+ms.lasthandoff: 12/29/2019
+ms.locfileid: "75544464"
 ---
 # <a name="binding-declarations-overview"></a>Přehled deklarací připojení
 
@@ -110,9 +110,9 @@ Pomocí vlastnosti <xref:System.Windows.Data.Binding.Path%2A> určete zdrojovou 
 
 - Pokud nastavíte <xref:System.Windows.Data.Binding.Path%2A> v jazyce XAML, budete také muset řídicí (pomocí entit XML) určit určité znaky, které jsou speciální pro definici jazyka XML:
 
-  - Pomocí `&` vydejte znak "&".
+  - Pomocí `&amp;` vydejte znak "&".
 
-  - Pomocí `>` zařídí koncovou značku ">".
+  - Pomocí `&gt;` zařídí koncovou značku ">".
 
 - Pokud navíc popíšete celou vazbu v atributu pomocí syntaxe rozšíření značek, je nutné řídicí znaky (pomocí zpětného lomítka \\), které jsou speciální pro analyzátor rozšíření značek [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]:
 
@@ -134,7 +134,7 @@ Výchozí chování je následující, pokud není uvedeno v deklaraci.
 
 - Pokud nenastavíte <xref:System.Windows.Data.Binding.ConverterCulture%2A>, modul vazby používá vlastnost `Language` cílového objektu vazby. V jazyce XAML je tato hodnota nastavena na "en-US" nebo dědí hodnotu z kořenového prvku (nebo libovolného elementu) stránky, pokud byla jedna explicitně nastavena.
 
-- Pokud vazba již má kontext dat (například zděděný datový kontext z nadřazeného elementu) a jakákoliv položka nebo kolekce vracené kontextem je vhodná pro vazbu bez nutnosti úpravy cesty, deklarace vazby nemůže mít vůbec žádné klauzule: `{Binding}` to často způsob, jakým je vazba určena pro stylování dat, kde vazba funguje na kolekci. Další informace naleznete v části "celé objekty používané jako zdroj vazby" v tématu [Přehled zdrojů vazby](binding-sources-overview.md).
+- Dokud vazba již má kontext dat (například zděděný datový kontext z nadřazeného elementu) a jakákoliv položka nebo kolekce vrácená tímto kontextem je vhodná pro vazbu bez nutnosti úpravy cesty, deklarace vazby nemůže mít žádné klauzule vůbec: `{Binding}` to je často způsob, jakým je vazba určena pro stylování dat, kde vazba funguje na kolekci. Další informace naleznete v části "celé objekty používané jako zdroj vazby" v tématu [Přehled zdrojů vazby](binding-sources-overview.md).
 
 - Výchozí <xref:System.Windows.Data.Binding.Mode%2A> se v závislosti na vlastnosti závislosti, která je vázaná, liší. Režim vazby můžete vždy deklarovat explicitně, aby bylo zajištěno, že vaše vazba bude mít požadované chování. Obecně platí, že uživatelsky upravitelné vlastnosti ovládacího prvku, jako je například <xref:System.Windows.Controls.TextBox.Text%2A?displayProperty=nameWithType> a <xref:System.Windows.Controls.Primitives.RangeBase.Value%2A?displayProperty=nameWithType>, jsou ve výchozím nastavení obousměrné vazby, zatímco většina ostatních vlastností je nastavena jako jednosměrná vazba.
 
@@ -143,6 +143,6 @@ Výchozí chování je následující, pokud není uvedeno v deklaraci.
 ## <a name="see-also"></a>Viz také:
 
 - [Přehled datových vazeb](../../../desktop-wpf/data/data-binding-overview.md)
-- [Témata s postupy](data-binding-how-to-topics.md)
+- [Postupy](data-binding-how-to-topics.md)
 - [Datová vazba](../advanced/optimizing-performance-data-binding.md)
 - [PropertyPath – syntaxe v jazyce XAML](../advanced/propertypath-xaml-syntax.md)

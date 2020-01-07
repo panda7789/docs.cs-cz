@@ -6,15 +6,15 @@ helpviewer_keywords:
 - Visual Basic code, XML
 - XML [Visual Basic], manipulating
 ms.assetid: da32cffb-198d-41b1-9af3-260fe32e3b7d
-ms.openlocfilehash: 2565f43c1014bf0fa9fab1618fedfd1bd6bdb7ca
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: bb5aed5099d81f8c8898cd61523b90a43f27db78
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74330444"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636156"
 ---
 # <a name="manipulating-xml-in-visual-basic"></a>Zacházení s XML v jazyce Visual Basic
-Můžete použít *literály XML* k načtení XML z externího zdroje, jako je například řetězec, soubor nebo datový proud. Pak můžete použít [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] k manipulaci s XML a použít [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] k dotazování XML.  
+Můžete použít *literály XML* k načtení XML z externího zdroje, jako je například řetězec, soubor nebo datový proud. Pak můžete použít [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] k manipulaci s XML a k dotazování XML použít LINQ (Language-Integrated Query).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Postupy: Načtení XML ze souboru, řetězce nebo streamu](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md)  

@@ -14,12 +14,12 @@ helpviewer_keywords:
 - parameters [C#], optional
 - named and optional arguments [C#]
 ms.assetid: 839c960c-c2dc-4d05-af4d-ca5428e54008
-ms.openlocfilehash: 30475b637202d3b614ac968897e467956bc78646
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
-ms.translationtype: MT
+ms.openlocfilehash: 7bfaed94c055a6c5f3b1de747be66c49dd9eb915
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73970510"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635870"
 ---
 # <a name="named-and-optional-arguments-c-programming-guide"></a>Pojmenované a nepovinné argumenty (Průvodce programováním v C#)
 C#4 zavádí pojmenované a volitelné argumenty. *Pojmenované argumenty* umožňují zadat argument pro konkrétní parametr přiřazením argumentu s názvem parametru, nikoli zadáním pozice parametru v seznamu parametrů. *Volitelné argumenty* umožňují vynechat argumenty pro některé parametry. Oba postupy lze použít s metodami, indexery, konstruktory a delegáty.  
@@ -70,7 +70,7 @@ C#4 zavádí pojmenované a volitelné argumenty. *Pojmenované argumenty* umož
   
 - konstantní výraz;  
   
-- výraz `new ValType()` formuláře, kde `ValType` je hodnotový typ, jako je například [výčet](../../language-reference/keywords/enum.md) nebo [Struktura](./structs.md);  
+- výraz `new ValType()`formuláře, kde `ValType` je hodnotový typ, jako je například [výčet](../../language-reference/builtin-types/enum.md) nebo [Struktura](structs.md);  
   
 - výraz výchozí hodnoty formuláře [(ValType)](../../language-reference/operators/default.md), kde `ValType` je hodnotový typ.  
   
@@ -94,7 +94,7 @@ C#4 zavádí pojmenované a volitelné argumenty. *Pojmenované argumenty* umož
 > Můžete také deklarovat volitelné parametry pomocí třídy <xref:System.Runtime.InteropServices.OptionalAttribute> .NET. parametry `OptionalAttribute` nevyžadují výchozí hodnotu.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu má konstruktor pro `ExampleClass` jeden parametr, který je nepovinný. Metoda instance `ExampleMethod` má jeden povinný parametr, `required` a dva volitelné parametry, `optionalstr` a `optionalint`. Kód v `Main` ukazuje různé způsoby, jak lze vyvolat konstruktor a metodu.  
+ V následujícím příkladu má konstruktor pro `ExampleClass` jeden parametr, který je nepovinný. Metoda instance `ExampleMethod` má jeden povinný parametr, `required`a dva volitelné parametry, `optionalstr` a `optionalint`. Kód v `Main` ukazuje různé způsoby, jak lze vyvolat konstruktor a metodu.  
   
  [!code-csharp[csProgGuideNamedAndOptional#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/optional.cs#2)]  
   
@@ -113,7 +113,7 @@ C#4 zavádí pojmenované a volitelné argumenty. *Pojmenované argumenty* umož
   
  [!code-csharp[csProgGuideNamedAndOptional#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/namedandoptcom.cs#13)]  
   
- Další informace a příklady najdete v tématu [použití pojmenovaných a nepovinných argumentů v programování pro systém Office](./how-to-use-named-and-optional-arguments-in-office-programming.md) a [Postup: přístup k objektům C# Interop sady Office pomocí vizuálních funkcí](../interop/how-to-access-office-onterop-objects.md).  
+ Další informace a příklady najdete v tématu [použití pojmenovaných a nepovinných argumentů v programování pro systém Office](./how-to-use-named-and-optional-arguments-in-office-programming.md) a [přístup k objektům C# Interop sady Office pomocí funkcí](../interop/how-to-access-office-onterop-objects.md).  
   
 ## <a name="overload-resolution"></a>Rozlišení přetěžování  
  Použití pojmenovaných a nepovinných argumentů má vliv na rozlišení přetížení následujícími způsoby:  
@@ -124,12 +124,12 @@ C#4 zavádí pojmenované a volitelné argumenty. *Pojmenované argumenty* umož
   
 - Pokud jsou dva kandidáty odůvodněné stejně dobré, preference směřuje k kandidátovi, který nemá nepovinné parametry pro to, které argumenty byly ve volání vynechány. Jedná se o důsledek Obecné předvolby v řešení přetížení pro kandidáty, které mají méně parametrů.  
   
-## <a name="c-language-specification"></a>Specifikace jazyka C#  
+## <a name="c-language-specification"></a>C# – jazyková specifikace  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Postupy: použití pojmenovaných a nepovinných argumentů v programování pro systém Office](./how-to-use-named-and-optional-arguments-in-office-programming.md)
+- [Použití pojmenovaných a nepovinných argumentů v programování pro Office](./how-to-use-named-and-optional-arguments-in-office-programming.md)
 - [Použití typu dynamic](../types/using-type-dynamic.md)
 - [Použití konstruktorů](./using-constructors.md)
 - [Použití indexerů](../indexers/using-indexers.md)

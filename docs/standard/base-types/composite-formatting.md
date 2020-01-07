@@ -13,19 +13,19 @@ helpviewer_keywords:
 - composite formatting
 - objects [.NET Framework], formatting multiple objects
 ms.assetid: 87b7d528-73f6-43c6-b71a-f23043039a49
-ms.openlocfilehash: 12666ca5ad8f223f2fba4a63a7cc7525601367a2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ae0ba0bf15b6a02df5130d34d277322897826697
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73091561"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75338516"
 ---
 # <a name="composite-formatting"></a>Složené formátování
 
 Funkce složeného formátování .NET přebírá seznam objektů a složený řetězec formátu jako vstup. Složený řetězec formátu se skládá z pevného textu smíšeného s indexovanými zástupnými symboly nazvanými „položky formátu“, které odpovídají objektům v seznamu. Výsledkem operace formátování je výsledný řetězec, který se skládá z původního pevného textu smíšeného s řetězcovou reprezentací objektů v seznamu.  
   
 > [!IMPORTANT]
-> Namísto použití složených formátovacích řetězců můžete použít *interpolované řetězce* , pokud jazyk a jazykovou verzi, kterou používáte, podporuje. Interpolovaná řetězcová událost je řetězec, který obsahuje *interpolované výrazy*. Každý interpolující výraz je vyřešen s hodnotou výrazu a je zahrnut ve výsledném řetězci při přiřazení řetězce. Další informace naleznete v tématu [interpolace řetězce (C# referenční)](../../csharp/language-reference/tokens/interpolated.md) a [interpolované řetězce (Visual Basic odkaz)](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md).
+> Namísto použití složených formátovacích řetězců můžete použít *interpolované řetězce* , pokud jazyk a jazykovou verzi, kterou používáte, podporuje. Interpolovaný řetězec je řetězec, který obsahuje *interpolovaných výrazů*. Každý interpolovaný výraz je přeložit výraz hodnotu a zahrnuté ve výsledném řetězci, když se přiřadí řetězec. Další informace naleznete v tématu [interpolace řetězce (C# referenční)](../../csharp/language-reference/tokens/interpolated.md) a [interpolované řetězce (Visual Basic odkaz)](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md).
 
 Funkce složeného formátování je podporována například následujícími metodami:  
   
@@ -55,7 +55,7 @@ Funkce složeného formátování je podporována například následujícími m
 ## <a name="format-item-syntax"></a>Syntaxe položky formátu  
  Jednotlivé položky formátu mají následující podobu a skládají se z následujících součástí:  
   
- `{` *index*[`,`*zarovnání*] [`:`*formatString*]`}`  
+ `{` *index*[`,`*alignment*][`:`*formatString*]`}`  
   
  Jsou požadovány odpovídající složené závorky ("{" a "}").  
   
@@ -81,11 +81,11 @@ Funkce složeného formátování je podporována například následujícími m
  [!code-vb[Formatting.Composite#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/alignment1.vb#8)]  
   
 ### <a name="format-string-component"></a>Součást Řetězec formátu  
- Volitelná komponenta *formatString* je řetězec formátu, který je vhodný pro typ objektu, který se formátuje. Zadejte standardní nebo vlastní řetězec číselného formátu, pokud je odpovídajícím objektem číselná hodnota, standardní nebo vlastní řetězec formátu data a času, pokud je odpovídajícím objektem objekt <xref:System.DateTime> nebo [řetězec formátu výčtu](../../../docs/standard/base-types/enumeration-format-strings.md) , pokud odpovídající objekt je hodnota výčtu. Pokud není zadán vlastnost *formatString* , je použit obecný specifikátor formátu ("G") pro číselný, datum a čas nebo typ výčtu. Dvojtečka je povinná, pokud je zadána vlastnost *formatString* .  
+ Volitelná komponenta *formatString* je řetězec formátu, který je vhodný pro typ objektu, který se formátuje. Zadejte standardní nebo vlastní řetězec číselného formátu, pokud je odpovídajícím objektem číselná hodnota, standardní nebo vlastní řetězec formátu data a času, pokud je odpovídajícím objektem objekt <xref:System.DateTime>, nebo [řetězec formátu výčtu](../../../docs/standard/base-types/enumeration-format-strings.md) , pokud je odpovídajícím objektem hodnota výčtu. Pokud není zadán vlastnost *formatString* , je použit obecný specifikátor formátu ("G") pro číselný, datum a čas nebo typ výčtu. Dvojtečka je povinná, pokud je zadána vlastnost *formatString* .  
   
  Následující tabulka uvádí seznam typů nebo kategorií typů v knihovně tříd rozhraní .NET Framework, které podporují předdefinovanou množinu řetězců formátu, a obsahuje odkazy na témata, která poskytují seznam jednotlivých řetězců formátu. Formátování řetězců poskytuje rozšířitelný mechanismus, který umožňuje definovat nové řetězce formátu pro všechny existující typy a také definovat množinu řetězců formátu podporovaných typem definovaného aplikací. Další informace najdete v tématech <xref:System.IFormattable> a <xref:System.ICustomFormatter> rozhraní.  
   
-|Typ nebo kategorie typů|Další informace naleznete v tématu|  
+|Typ nebo kategorie typů|Viz .|  
 |---------------------------|---------|  
 |Typy data a času (<xref:System.DateTime>, <xref:System.DateTimeOffset>)|[Standardní řetězce formátu data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)<br /><br /> [Vlastní řetězce formátu data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)|  
 |Výčtové typy (všechny typy odvozené od <xref:System.Enum?displayProperty=nameWithType>)|[Výčet řetězců formátu](../../../docs/standard/base-types/enumeration-format-strings.md)|  

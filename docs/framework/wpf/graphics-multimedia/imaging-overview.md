@@ -21,12 +21,12 @@ helpviewer_keywords:
 - decoding image formats [WPF]
 - rotating images [WPF]
 ms.assetid: 72aad87a-e6f3-4937-94cd-a18b7766e990
-ms.openlocfilehash: b60f2871062a12d3bee91a9c6d9883222b3034f4
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: a4151ff610c67ac762f0096c6a136f4475317782
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73733577"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636637"
 ---
 # <a name="imaging-overview"></a>Přehled obrázků
 Toto téma poskytuje Úvod do komponenty Microsoft Windows Presentation Foundation Imaging. WPF Imaging umožňuje vývojářům zobrazovat, transformovat a formátovat obrázky.  
@@ -48,7 +48,7 @@ Toto téma poskytuje Úvod do komponenty Microsoft Windows Presentation Foundati
   
 - Podpora pro osobní metadata v souboru.  
   
-- Spravovaná komponenta využívá nespravovanou infrastrukturu k zajištění bezproblémové integrace imagí s jinými [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] funkcemi, jako jsou [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)], animace a grafika. Spravovaná komponenta také přináší výhody modelu rozšiřitelnosti kodeku Windows Presentation Foundation (WPF), která umožňuje automatické rozpoznávání nových formátů obrázků v aplikacích [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
+- Spravovaná komponenta využívá nespravovanou infrastrukturu k zajištění bezproblémové integrace imagí s dalšími funkcemi WPF, jako jsou [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)], animace a grafika. Spravovaná komponenta také přináší výhody modelu rozšiřitelnosti kodeku pro Windows Presentation Foundation (WPF), která umožňuje automatické rozpoznávání nových formátů obrázků v aplikacích WPF.  
   
  Většina spravovaných rozhraní API pro Imaging pro WPF se nachází v oboru názvů <xref:System.Windows.Media.Imaging?displayProperty=nameWithType>, i když je v oboru názvů <xref:System.Windows.Media?displayProperty=nameWithType> několik důležitých typů, například <xref:System.Windows.Media.ImageBrush> a <xref:System.Windows.Media.ImageDrawing> nacházející se v oboru názvů <xref:System.Windows.Controls.Image>.  
   
@@ -59,7 +59,7 @@ Toto téma poskytuje Úvod do komponenty Microsoft Windows Presentation Foundati
 
  Kodek slouží k dekódování nebo kódování konkrétního formátu média. Obrázky WPF obsahují kodek pro formáty BMP, JPEG, PNG, TIFF, Windows Media Photo, GIF a ICON. Každý z těchto kodeků umožňuje aplikacím dekódovat a s výjimkou ikony zakódovat příslušné formáty obrázků.  
   
- <xref:System.Windows.Media.Imaging.BitmapSource> je důležitou třídou použitou při dekódování a kódování imagí. Je základním stavebním blokem kanálu pro zpracování obrazu WPF a představuje jednu konstantní sadu pixelů v určité velikosti a rozlišení. <xref:System.Windows.Media.Imaging.BitmapSource> může být individuální rámec obrázku s více snímky, nebo může být výsledkem transformace provedené na <xref:System.Windows.Media.Imaging.BitmapSource>. Je nadřazeným prvkem mnoha primárních tříd používaných v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]ch bitových kopiích, jako je například <xref:System.Windows.Media.Imaging.BitmapFrame>.  
+ <xref:System.Windows.Media.Imaging.BitmapSource> je důležitou třídou použitou při dekódování a kódování imagí. Je základním stavebním blokem kanálu pro zpracování obrazu WPF a představuje jednu konstantní sadu pixelů v určité velikosti a rozlišení. <xref:System.Windows.Media.Imaging.BitmapSource> může být individuální rámec obrázku s více snímky, nebo může být výsledkem transformace provedené na <xref:System.Windows.Media.Imaging.BitmapSource>. Je nadřazeným prvkem mnoha primárních tříd, které se používají v grafickém rozhraní WPF, jako je například <xref:System.Windows.Media.Imaging.BitmapFrame>.  
   
  <xref:System.Windows.Media.Imaging.BitmapFrame> slouží k uložení skutečných dat bitmapy formátu obrázku. Mnoho formátů obrázků podporuje pouze jeden <xref:System.Windows.Media.Imaging.BitmapFrame>, i když formáty jako GIF a TIFF podporují více snímků na obrázek. Tyto rámce jsou používány dekodéry jako vstupní data a jsou předávány kodérům pro vytváření souborů imagí.  
   
@@ -69,7 +69,7 @@ Toto téma poskytuje Úvod do komponenty Microsoft Windows Presentation Foundati
  [!code-vb[BitmapFrameExample#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BitmapFrameExample/VB/BitmapFrame.vb#10)]  
   
 ### <a name="image-format-decoding"></a>Dekódování formátu obrázku  
- Dekódování obrázku je převod formátu obrázku na data obrázku, který může být použit systémem. Data obrázku pak můžete použít k zobrazení, zpracování nebo kódování v jiném formátu. Výběr dekodéru je založen na formátu obrázku. Výběr kodeku je automatický, pokud se nezadá konkrétní dekodér. Příklady v části [zobrazení obrázků v](#_displayingimages) subsystému WPF ukazují automatické dekódování. Dekodéry vlastního formátu vyvinuté pomocí nespravovaných rozhraní WPF Imaging a zaregistrovaných v systému se automaticky účastní výběru dekodéru. To umožňuje, aby se vlastní formáty zobrazovaly automaticky v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]ch aplikacích.  
+ Dekódování obrázku je převod formátu obrázku na data obrázku, který může být použit systémem. Data obrázku pak můžete použít k zobrazení, zpracování nebo kódování v jiném formátu. Výběr dekodéru je založen na formátu obrázku. Výběr kodeku je automatický, pokud se nezadá konkrétní dekodér. Příklady v části [zobrazení obrázků v](#_displayingimages) subsystému WPF ukazují automatické dekódování. Dekodéry vlastního formátu vyvinuté pomocí nespravovaných rozhraní WPF Imaging a zaregistrovaných v systému se automaticky účastní výběru dekodéru. To umožňuje, aby se vlastní formáty zobrazovaly automaticky v aplikacích WPF.  
   
  Následující příklad demonstruje použití dekodéru rastrového obrázku k dekódování obrázku formátu BMP.  
   
@@ -106,7 +106,7 @@ Toto téma poskytuje Úvod do komponenty Microsoft Windows Presentation Foundati
  [!code-vb[ImageElementExample_snip#ImageSimpleExampleInlineCode1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ImageElementExample_snip/VB/ImageSimpleExample.xaml.vb#imagesimpleexampleinlinecode1)]  
   
 #### <a name="rotating-converting-and-cropping-images"></a>Otáčení, převádění a ořezávání imagí  
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] umožňuje uživatelům transformovat obrázky pomocí vlastností <xref:System.Windows.Media.Imaging.BitmapImage> nebo pomocí dalších objektů <xref:System.Windows.Media.Imaging.BitmapSource>, jako je například <xref:System.Windows.Media.Imaging.CroppedBitmap> nebo <xref:System.Windows.Media.Imaging.FormatConvertedBitmap>. Tyto transformace obrázků mohou škálovat nebo otáčet obrázek, měnit formát pixelu obrázku nebo oříznout obrázek.  
+ WPF umožňuje uživatelům transformovat obrázky pomocí vlastností <xref:System.Windows.Media.Imaging.BitmapImage> nebo pomocí dalších objektů <xref:System.Windows.Media.Imaging.BitmapSource>, jako je <xref:System.Windows.Media.Imaging.CroppedBitmap> nebo <xref:System.Windows.Media.Imaging.FormatConvertedBitmap>. Tyto transformace obrázků mohou škálovat nebo otáčet obrázek, měnit formát pixelu obrázku nebo oříznout obrázek.  
   
  Otočení obrázku se provádí pomocí vlastnosti <xref:System.Windows.Media.Imaging.BitmapImage.Rotation%2A> <xref:System.Windows.Media.Imaging.BitmapImage>. Rotace se dají provádět jenom v přírůstcích po 90 stupních. V následujícím příkladu je obrázek otočen 90 stupňů.  
   
@@ -181,7 +181,7 @@ Různá nastavení Stretch
   
 <a name="_extensibility"></a>   
 ## <a name="codec-extensibility"></a>Rozšiřitelnost kodeku  
- Základní funkcí programu WPF Imaging je model rozšíření pro nové kodeky obrázků. Tato nespravovaná rozhraní umožňují vývojářům kodeků integrovat kodeky s [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], takže nové formáty obrázků lze automaticky použít [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací.  
+ Základní funkcí programu WPF Imaging je model rozšíření pro nové kodeky obrázků. Tato nespravovaná rozhraní umožňují vývojářům kodeků integrovat kodeky s WPF, takže nové formáty obrázků mohou být automaticky používány aplikacemi WPF.  
   
  Ukázku rozhraní API pro rozšiřitelnost najdete v [ukázkovém kodeku Win32](https://go.microsoft.com/fwlink/?LinkID=160052). Tato ukázka předvádí, jak vytvořit dekodér a kodér pro vlastní formát obrázku.  
   

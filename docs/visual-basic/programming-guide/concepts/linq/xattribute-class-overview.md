@@ -2,18 +2,18 @@
 title: Přehled třídy XAttribute
 ms.date: 07/20/2015
 ms.assetid: 7781580a-9583-4a1b-ae1e-91c5936eb0b1
-ms.openlocfilehash: 00aeeec3f251ecd1d21a313290326b3ba49d63d3
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: ceafe5478e41fb4c2038fd9300ef7b1ee6cb8411
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349330"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636650"
 ---
 # <a name="xattribute-class-overview-visual-basic"></a>Přehled třídy XAttribute (Visual Basic)
 Atributy jsou páry název-hodnota, které jsou přidruženy k elementu. Třída <xref:System.Xml.Linq.XAttribute> představuje atributy XML.  
   
 ## <a name="overview"></a>Přehled  
- Práce s atributy v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] je podobná práci s prvky. Jejich konstruktory jsou podobné. Metody, které použijete k načtení kolekcí, jsou podobné. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] výraz dotazu pro kolekci atributů vypadá velmi podobně jako [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] výraz dotazu pro kolekci prvků.  
+ Práce s atributy v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] je podobná práci s prvky. Jejich konstruktory jsou podobné. Metody, které použijete k načtení kolekcí, jsou podobné. Výraz dotazu LINQ pro kolekci atributů vypadá velmi podobně jako výraz dotazu LINQ pro kolekci prvků.  
   
  Pořadí, ve kterém byly přidány atributy do prvku, je zachováno. To znamená, že při iteraci pomocí atributů se zobrazí ve stejném pořadí, v jakém byly přidány.  
   

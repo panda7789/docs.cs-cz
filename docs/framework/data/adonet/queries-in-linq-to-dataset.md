@@ -5,21 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c1a78fa8-9f0c-40bc-a372-5575a48708fe
-ms.openlocfilehash: 15a27c743f54a8ba6ea52edfde08731d8b439645
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 092dbb5227e5f9e0ae2a62656a300d2367bcf16b
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73735404"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75634791"
 ---
 # <a name="queries-in-linq-to-dataset"></a>Dotazy v LINQ to DataSet
-Dotaz je výraz, který načítá data ze zdroje dat. Dotazy jsou obvykle vyjádřené ve specializovaném dotazovacím jazyce, jako je SQL pro relační databáze a XQuery pro XML. Proto se vývojářům musel naučit nový dotazovací jazyk pro každý typ zdroje dat nebo formátu dat, který dotazuje. [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] nabízí jednodušší a konzistentní model pro práci s daty napříč různými druhy datových zdrojů a formátů. V [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]ch dotazech vždy pracujete s programováním objektů.  
+Dotaz je výraz, který načítá data ze zdroje dat. Dotazy jsou obvykle vyjádřené ve specializovaném dotazovacím jazyce, jako je SQL pro relační databáze a XQuery pro XML. Proto se vývojářům musel naučit nový dotazovací jazyk pro každý typ zdroje dat nebo formátu dat, který dotazuje. LINQ (Language-Integrated Query) nabízí jednodušší a konzistentní model pro práci s daty napříč různými druhy datových zdrojů a formátů. V dotazu LINQ vždy pracujete s programováním objektů.  
   
- Operace [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] dotazu se skládá ze tří akcí: získat zdroje dat nebo zdroje, vytvořit dotaz a spustit dotaz.  
+ Operace dotazu LINQ se skládá ze tří akcí: získat zdroje dat nebo zdroje, vytvořit dotaz a spustit dotaz.  
   
- Zdroje dat, které implementují obecné rozhraní <xref:System.Collections.Generic.IEnumerable%601>, se dají dotazovat prostřednictvím [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]. Volání <xref:System.Data.DataTableExtensions.AsEnumerable%2A> na <xref:System.Data.DataTable> vrátí objekt, který implementuje obecné rozhraní <xref:System.Collections.Generic.IEnumerable%601>, které slouží jako zdroj dat pro LINQ to DataSet dotazy.  
+ Zdroje dat, které implementují obecné rozhraní <xref:System.Collections.Generic.IEnumerable%601>, se dají dotazovat prostřednictvím LINQ. Volání <xref:System.Data.DataTableExtensions.AsEnumerable%2A> na <xref:System.Data.DataTable> vrátí objekt, který implementuje obecné rozhraní <xref:System.Collections.Generic.IEnumerable%601>, které slouží jako zdroj dat pro LINQ to DataSet dotazy.  
   
- V dotazu zadáte přesně informace, které chcete načíst ze zdroje dat. Dotaz může také určit, jak se mají tyto informace seřadit, seskupit a tvarovat před tím, než se vrátí. V [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]je dotaz uložen v proměnné. Pokud je dotaz navržen tak, aby vracel sekvenci hodnot, proměnná dotazu musí být vyčíslitelného typu. Tato proměnná dotazu neprovádí žádnou akci a nevrátí žádná data. ukládá pouze informace o dotazu. Po vytvoření dotazu musíte spustit dotaz, aby se načetla nějaká data.  
+ V dotazu zadáte přesně informace, které chcete načíst ze zdroje dat. Dotaz může také určit, jak se mají tyto informace seřadit, seskupit a tvarovat před tím, než se vrátí. V LINQ je dotaz uložen v proměnné. Pokud je dotaz navržen tak, aby vracel sekvenci hodnot, proměnná dotazu musí být vyčíslitelného typu. Tato proměnná dotazu neprovádí žádnou akci a nevrátí žádná data. ukládá pouze informace o dotazu. Po vytvoření dotazu musíte spustit dotaz, aby se načetla nějaká data.  
   
  V dotazu, který vrací sekvenci hodnot, samotná proměnná dotazu nikdy nedrží výsledky dotazu a ukládá pouze příkazy dotazu. Provedení dotazu je odloženo, dokud se proměnná dotazu neopakuje přes `foreach` nebo smyčka `For Each`. Tato operace se nazývá *odložené provedení*; To znamená, že provádění dotazů probíhá určitou dobu po sestavení dotazu. To znamená, že můžete spustit dotaz tak často, jak chcete. To je užitečné, když například máte databázi, která je aktualizována jinými aplikacemi. V aplikaci můžete vytvořit dotaz, který načte nejnovější informace a opakovaně spustí dotaz, a to tak, že se aktualizované informace pokaždé vrátí.  
   
@@ -39,7 +39,7 @@ Dotaz je výraz, který načítá data ze zdroje dat. Dotazy jsou obvykle vyjád
  [!code-vb[DP LINQ to DataSet Examples#SelectSimple1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#selectsimple1)]  
   
 ### <a name="method-based-query-syntax"></a>Syntaxe dotazů založená na metodách  
- Druhý způsob, jak formulovat LINQ to DataSet dotazy, je použití dotazů založených na metodách. Syntaxe dotazu založená na metodách je sekvence volání přímých metod [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] metodám operátoru a předání výrazů lambda jako parametrů. Další informace naleznete v tématu [lambda výrazy](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).  
+ Druhý způsob, jak formulovat LINQ to DataSet dotazy, je použití dotazů založených na metodách. Syntaxe dotazu založená na metodách je sekvence volání přímých metod operátorů LINQ a předávání výrazů lambda jako parametrů. Další informace naleznete v tématu [lambda výrazy](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md).  
   
  V tomto příkladu se používá <xref:System.Linq.Enumerable.Select%2A> k vrácení všech řádků z `Product` a zobrazení názvů produktů.  
   
@@ -52,7 +52,7 @@ Dotaz je výraz, který načítá data ze zdroje dat. Dotazy jsou obvykle vyjád
  [!code-csharp[DP LINQ to DataSet Examples#Composing](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#composing)]
  [!code-vb[DP LINQ to DataSet Examples#Composing](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#composing)]  
   
- Po provedení dotazu nelze sestavit žádné další dotazy a všechny následné dotazy budou používat operátory [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] v paměti. K provedení dotazu dojde při iteraci nad proměnnou dotazu v příkazu `foreach` nebo `For Each` nebo voláním jednoho z operátorů konverze [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)], které způsobují okamžité provedení. Mezi tyto operátory patří následující: <xref:System.Linq.Enumerable.ToList%2A>, <xref:System.Linq.Enumerable.ToArray%2A>, <xref:System.Linq.Enumerable.ToLookup%2A>a <xref:System.Linq.Enumerable.ToDictionary%2A>.  
+ Po provedení dotazu nelze sestavit žádné další dotazy a všechny následné dotazy budou používat operátory LINQ v paměti. K provedení dotazu dojde při iteraci nad proměnnou dotazu v příkazu `foreach` nebo `For Each` nebo voláním jednoho z operátorů převodu LINQ, které způsobují okamžité provedení. Mezi tyto operátory patří následující: <xref:System.Linq.Enumerable.ToList%2A>, <xref:System.Linq.Enumerable.ToArray%2A>, <xref:System.Linq.Enumerable.ToLookup%2A>a <xref:System.Linq.Enumerable.ToDictionary%2A>.  
   
  V následujícím příkladu vrátí první dotaz všechny produkty seřazené podle ceny seznamu. Metoda <xref:System.Linq.Enumerable.ToArray%2A> slouží k vynucení okamžitého provedení dotazu:  
   

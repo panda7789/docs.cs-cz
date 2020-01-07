@@ -17,15 +17,15 @@ helpviewer_keywords:
 - join clause [LINQ in C#]
 - group clause [LINQ in C#]
 ms.assetid: a7ea3421-1cf4-4df7-832a-aa22fe6379e9
-ms.openlocfilehash: 361101258caca763502f92d897866c75bc8d7da2
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 91c038303c1ad7c2530964d3102aae49090c4c2a
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73418726"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635935"
 ---
 # <a name="basic-linq-query-operations-c"></a>Základní operace dotazů LINQ (C#)
-Toto téma poskytuje stručný úvod do [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] výrazů dotazů a některé z typických typů operací, které v dotazu provedete. Podrobnější informace najdete v následujících tématech:  
+Toto téma poskytuje stručný úvod do výrazů LINQ Query a některé z typických typů operací, které v dotazu provedete. Podrobnější informace najdete v následujících tématech:  
   
  [Výrazy dotazů LINQ](../../../linq/index.md)  
   
@@ -34,17 +34,17 @@ Toto téma poskytuje stručný úvod do [!INCLUDE[vbteclinq](~/includes/vbteclin
  [Návod: zápis dotazů vC#](./walkthrough-writing-queries-linq.md)  
   
 > [!NOTE]
-> Pokud už jste obeznámeni s dotazovacím jazykem, jako je SQL nebo XQuery, můžete většinu tohoto tématu přeskočit. Přečtěte si o klauzuli`from` v další části, kde se dozvíte o pořadí klauzulí v [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] výrazy dotazu.  
+> Pokud už jste obeznámeni s dotazovacím jazykem, jako je SQL nebo XQuery, můžete většinu tohoto tématu přeskočit. Přečtěte si o klauzuli`from` v další části, kde se dozvíte o pořadí klauzulí ve výrazech dotazů LINQ.  
   
 ## <a name="obtaining-a-data-source"></a>Získání zdroje dat  
- V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu je prvním krokem určení zdroje dat. V C# nástroji as ve většině programovacích jazyků musí být před použitím deklarována proměnná. V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]m dotazu je klauzule `from` nejprve první, aby bylo možné zavést zdroj dat (`customers`) a *proměnnou rozsahu* (`cust`).  
+ V dotazu LINQ je prvním krokem určení zdroje dat. V C# nástroji as ve většině programovacích jazyků musí být před použitím deklarována proměnná. V dotazu LINQ je klauzule `from` první, aby se zavedl zdroj dat (`customers`) a *Proměnná rozsahu* (`cust`).  
   
  [!code-csharp[csLINQGettingStarted#23](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#23)]  
   
  Proměnná rozsahu je stejná jako proměnná iterace ve smyčce `foreach`, s tím rozdílem, že ve výrazu dotazu nedochází k žádným skutečným iteracím. Při spuštění dotazu bude proměnná rozsahu sloužit jako odkaz na každý následný prvek v `customers`. Protože kompilátor může odvodit typ `cust`, nemusíte ho explicitně určovat. Další proměnné rozsahu mohou být zavedeny klauzulí `let`. Další informace naleznete v [klauzuli let](../../../language-reference/keywords/let-clause.md).  
   
 > [!NOTE]
-> U neobecných zdrojů dat, jako je například <xref:System.Collections.ArrayList>, musí být proměnná rozsahu explicitně typu. Další informace najdete v tématu [Postup: dotazování objektu ArrayList pomocí LINQ (C#)](./how-to-query-an-arraylist-with-linq.md) a [klauzule FROM](../../../language-reference/keywords/from-clause.md).  
+> U neobecných zdrojů dat, jako je například <xref:System.Collections.ArrayList>, musí být proměnná rozsahu explicitně typu. Další informace najdete v tématu [Postup dotazování objektu ArrayList pomocí LINQ (C#)](./how-to-query-an-arraylist-with-linq.md) a [klauzule FROM](../../../language-reference/keywords/from-clause.md).  
   
 ## <a name="filtering"></a>Filtrování  
  Pravděpodobně nejběžnější operace dotazu je použití filtru ve formě logického výrazu. Filtr způsobí, že dotaz vrátí pouze prvky, pro které je výraz pravdivý. Výsledek je vytvořen pomocí klauzule `where`. Filtr v důsledku určuje, které prvky mají být vyloučeny ze zdrojové sekvence. V následujícím příkladu jsou vráceny pouze `customers`, kteří mají adresu v Londýně.  
@@ -84,11 +84,11 @@ Toto téma poskytuje stručný úvod do [!INCLUDE[vbteclinq](~/includes/vbteclin
  Další informace naleznete v tématu [Group](../../../language-reference/keywords/group-clause.md)Group.  
   
 ## <a name="joining"></a>Spojování  
- Operace join vytvořte přidružení mezi sekvencemi, které nejsou explicitně modelovány ve zdrojích dat. Můžete například provést připojení a vyhledat všechny zákazníky a distributory, kteří mají stejné umístění. V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] klauzule `join` vždy funguje na kolekcích objektů namísto přímo v databázových tabulkách.  
+ Operace join vytvořte přidružení mezi sekvencemi, které nejsou explicitně modelovány ve zdrojích dat. Můžete například provést připojení a vyhledat všechny zákazníky a distributory, kteří mají stejné umístění. V jazyce LINQ klauzule `join` vždy funguje na kolekcích objektů namísto přímo v databázových tabulkách.  
   
  [!code-csharp[csLINQGettingStarted#36](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#36)]  
   
- V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] nemusíte používat `join` tak často jako v jazyce SQL, protože cizí klíče v [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] jsou reprezentovány v objektovém modelu jako vlastnosti, které obsahují kolekci položek. Například objekt `Customer` obsahuje kolekci objektů `Order`. Místo toho, abyste mohli provádět spojení, získáte přístup k objednávkám pomocí zápisu teček:  
+ V LINQ není nutné používat `join` tak často jako v jazyce SQL, protože cizí klíče v technologii LINQ jsou reprezentovány v objektovém modelu jako vlastnosti, které obsahují kolekci položek. Například objekt `Customer` obsahuje kolekci objektů `Order`. Místo toho, abyste mohli provádět spojení, získáte přístup k objednávkám pomocí zápisu teček:  
   
 ```csharp
 from order in Customer.Orders...  
@@ -97,7 +97,7 @@ from order in Customer.Orders...
  Další informace najdete v tématu [klauzule JOIN](../../../language-reference/keywords/join-clause.md).  
   
 ## <a name="selecting-projections"></a>Výběr (projekce)  
- Klauzule `select` generuje výsledky dotazu a určuje "tvar" nebo typ každého vráceného elementu. Můžete například určit, jestli se výsledky budou skládat z kompletních `Customer` objektů, jenom jednoho člena, podmnožiny členů nebo nějakého jiného typu výsledku založeného na výpočtu nebo vytvoření nového objektu. Když klauzule `select` vytvoří jinou než kopii zdrojového elementu, operace se nazývá *projekce*. Použití projekce k transformaci dat je výkonná schopnost [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] výrazů dotazů. Další informace najdete v tématu [transformace dat pomocí LINQ (C#)](./data-transformations-with-linq.md) a [klauzule SELECT](../../../language-reference/keywords/select-clause.md).  
+ Klauzule `select` generuje výsledky dotazu a určuje "tvar" nebo typ každého vráceného elementu. Můžete například určit, jestli se výsledky budou skládat z kompletních `Customer` objektů, jenom jednoho člena, podmnožiny členů nebo nějakého jiného typu výsledku založeného na výpočtu nebo vytvoření nového objektu. Když klauzule `select` vytvoří jinou než kopii zdrojového elementu, operace se nazývá *projekce*. Použití projekce k transformaci dat je výkonná schopnost výrazů dotazů LINQ. Další informace najdete v tématu [transformace dat pomocí LINQ (C#)](./data-transformations-with-linq.md) a [klauzule SELECT](../../../language-reference/keywords/select-clause.md).  
   
 ## <a name="see-also"></a>Viz také:
 

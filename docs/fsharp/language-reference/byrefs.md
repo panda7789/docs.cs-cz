@@ -2,12 +2,12 @@
 title: Parametry ByRef
 description: Seznamte se s typy ByRef a ByRef jako F#v, které se používají pro programování na nízké úrovni.
 ms.date: 11/04/2019
-ms.openlocfilehash: 2c46cea2329b6817dd753e67c6702fb163ce2193
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: a6d3d69c4a163be9ecef7e33c284c4a73e800405
+ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976818"
+ms.lasthandoff: 12/29/2019
+ms.locfileid: "75545132"
 ---
 # <a name="byrefs"></a>Parametry ByRef
 
@@ -82,7 +82,7 @@ Pokud pouze píšete ukazatel namísto čtení, zvažte použití `outref<'T>` m
 
 ### <a name="inref-semantics"></a>Sémantika Inref
 
-Vezměte v úvahu následující kód:
+Uvažujte následující kód:
 
 ```fsharp
 let f (x: inref<SomeStruct>) = x.SomeField
@@ -104,7 +104,7 @@ Všechna tato pravidla dohromady znamenají, že držitel `inref`ového ukazatel
 
 ### <a name="outref-semantics"></a>Sémantika Outref
 
-Účelem `outref<'T>` je označit, že ukazatel by měl být čten pouze z. Neočekávaně `outref<'T>` povoluje čtení základní hodnoty navzdory jejímu názvu. Jedná se o účely kompatibility. Sémanticky, `outref<'T>` se neliší od `byref<'T>`.
+Účelem `outref<'T>` je označit, že ukazatel by měl zapisovat pouze do. Neočekávaně `outref<'T>` povoluje čtení základní hodnoty navzdory jejímu názvu. Jedná se o účely kompatibility. Sémanticky, `outref<'T>` se neliší od `byref<'T>`.
 
 ### <a name="interop-with-c"></a>Spolupráce s C\#
 

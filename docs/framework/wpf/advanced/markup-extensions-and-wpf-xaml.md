@@ -15,12 +15,12 @@ helpviewer_keywords:
 - characters [WPF], curly brace
 - DynamicResource markup extensions [WPF]
 ms.assetid: 618dc745-8b14-4886-833f-486d2254bb78
-ms.openlocfilehash: 7ba2beae4ef8176764a5caaff609c365f283e285
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: a9e0657aa9f9dd4de0ff3f8788c686bf1535b1ad
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459825"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559791"
 ---
 # <a name="markup-extensions-and-wpf-xaml"></a>Rozšíření značek a WPF XAML
 Toto téma představuje koncept rozšíření značek pro jazyk XAML, včetně pravidel jejich syntaxe, účelu a modelu objektu třídy, který je v nich umístěn. Rozšíření značek jsou obecná funkce jazyka XAML a implementace .NET služeb XAML. Toto téma konkrétně popisuje rozšíření značek pro použití v jazyce WPF XAML.  
@@ -41,16 +41,16 @@ Toto téma představuje koncept rozšíření značek pro jazyk XAML, včetně p
 ## <a name="xaml-defined-markup-extensions"></a>Rozšíření značek definovaná v jazyce XAML  
  Existuje několik rozšíření značek, která nejsou specifická pro implementaci WPF jazyka XAML, ale jsou místo toho implementace vnitřních prvků nebo funkcí jazyka XAML jako jazyk. Tato rozšíření značek jsou implementována v sestavení System. XAML jako součást obecných .NET Framework služeb XAML a jsou v oboru názvů XAML jazyka XAML. V souvislosti s běžným používáním značek jsou tato rozšíření značek obvykle identifikovatelná předponou `x:` v použití. Základní třída <xref:System.Windows.Markup.MarkupExtension> (také definovaná v souboru System. XAML) poskytuje vzor, který by měly používat všechna rozšíření značek, aby bylo možné je podporovat v prohlížečích XAML a v modulech pro zápis XAML, včetně v jazyce WPF XAML.  
   
-- `x:Type` poskytuje objekt <xref:System.Type> pro pojmenovaný typ. Toto zařízení se často používá v šablonách a stylech. Podrobnosti najdete v tématu [rozšíření značek x:Type](../../xaml-services/x-type-markup-extension.md).  
+- `x:Type` poskytuje objekt <xref:System.Type> pro pojmenovaný typ. Toto zařízení se často používá v šablonách a stylech. Podrobnosti najdete v tématu [rozšíření značek x:Type](../../../desktop-wpf/xaml-services/xtype-markup-extension.md).  
   
-- `x:Static` vytváří statické hodnoty. Hodnoty pocházejí z entit kódu typu hodnoty, které nejsou přímo typu hodnoty cílové vlastnosti, ale lze je vyhodnotit na tento typ. Podrobnosti najdete v tématu [rozšíření značek x:static](../../xaml-services/x-static-markup-extension.md).  
+- `x:Static` vytváří statické hodnoty. Hodnoty pocházejí z entit kódu typu hodnoty, které nejsou přímo typu hodnoty cílové vlastnosti, ale lze je vyhodnotit na tento typ. Podrobnosti najdete v tématu [rozšíření značek x:static](../../../desktop-wpf/xaml-services/xstatic-markup-extension.md).  
   
-- `x:Null` určuje `null` jako hodnotu vlastnosti a lze ji použít buď pro atributy, nebo hodnoty prvků vlastností. Podrobnosti najdete v tématu [rozšíření značek x:null](../../xaml-services/x-null-markup-extension.md).  
+- `x:Null` určuje `null` jako hodnotu vlastnosti a lze ji použít buď pro atributy, nebo hodnoty prvků vlastností. Podrobnosti najdete v tématu [rozšíření značek x:null](../../../desktop-wpf/xaml-services/xnull-markup-extension.md).  
   
-- `x:Array` poskytuje podporu pro vytváření obecných polí v syntaxi jazyka XAML, v případech, kdy podpora kolekce poskytovaná základními prvky WPF a modely řízení záměrně nepoužívá. Podrobnosti najdete v tématu [rozšíření značek x:Array](../../xaml-services/x-array-markup-extension.md).  
+- `x:Array` poskytuje podporu pro vytváření obecných polí v syntaxi jazyka XAML, v případech, kdy podpora kolekce poskytovaná základními prvky WPF a modely řízení záměrně nepoužívá. Podrobnosti najdete v tématu [rozšíření značek x:Array](../../../desktop-wpf/xaml-services/xarray-markup-extension.md).  
   
 > [!NOTE]
-> Předpona `x:` se používá pro typické mapování oboru názvů XAML vnitřních prvků jazyka XAML, v kořenovém elementu souboru XAML nebo v produkčním prostředí. Například šablony sady Visual Studio pro aplikace WPF iniciují soubor XAML pomocí tohoto `x:` mapování. Můžete zvolit jiný token předpony ve vlastním mapování oboru názvů XAML, ale tato dokumentace bude předpokládat výchozí `x:` mapování jako způsob identifikace těch entit, které jsou definovanou součástí oboru názvů XAML pro jazyk XAML, na rozdíl od Výchozí obor názvů WPF nebo jiné obory názvů jazyka XAML, které nesouvisí s konkrétním rozhraním.  
+> Předpona `x:` se používá pro typické mapování oboru názvů XAML vnitřních prvků jazyka XAML, v kořenovém elementu souboru XAML nebo v produkčním prostředí. Například šablony sady Visual Studio pro aplikace WPF iniciují soubor XAML pomocí tohoto `x:` mapování. Můžete zvolit jiný token předpony ve vlastním mapování oboru názvů XAML, ale tato dokumentace bude předpokládat výchozí `x:` mapování jako způsob identifikace entit, které jsou definovány součástí oboru názvů XAML pro jazyk XAML, na rozdíl od výchozího oboru názvů WPF nebo jiných oborů názvů jazyka XAML, které nesouvisí s konkrétním rozhraním.  
   
 <a name="WPF_Specific_Markup_Extensions"></a>   
 ## <a name="wpf-specific-markup-extensions"></a>Rozšíření značek specifická pro WPF  
@@ -74,7 +74,7 @@ Toto téma představuje koncept rozšíření značek pro jazyk XAML, včetně p
 ## <a name="extension-classes"></a>Třídy rozšíření \*  
  Pro obecné kódování kódu XAML a pro rozšíření značek specifických pro WPF je chování jednotlivých rozšíření značek identifikováno pro procesor XAML prostřednictvím třídy `*Extension`, která je odvozena z <xref:System.Windows.Markup.MarkupExtension>a poskytuje implementaci <xref:System.Windows.Markup.StaticExtension.ProvideValue%2A> metody. Tato metoda pro každé rozšíření poskytuje objekt, který je vrácen při vyhodnocování rozšíření značek. Vrácený objekt je obvykle vyhodnocován v závislosti na různých tokenech řetězců, které jsou předány příponě značek.  
   
- Například třída <xref:System.Windows.StaticResourceExtension> poskytuje Surface pro skutečné vyhledávání prostředků, aby jeho implementace <xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A> vrátila požadovaný objekt, se vstupem této konkrétní implementace je řetězec, který se používá k vyhledání prostředek podle jeho `x:Key`. Většina této podrobnosti implementace je neimportovaná, pokud používáte existující rozšíření značek.  
+ Například třída <xref:System.Windows.StaticResourceExtension> poskytuje povrchovou implementaci skutečného vyhledávání prostředků, aby jeho implementace <xref:System.Windows.Markup.MarkupExtension.ProvideValue%2A> vrátila požadovaný objekt, se vstupem této konkrétní implementace je řetězec, který se používá k vyhledání prostředku pomocí jeho `x:Key`. Většina této podrobnosti implementace je neimportovaná, pokud používáte existující rozšíření značek.  
   
  Některá rozšíření značek nepoužívají argumenty řetězcového tokenu. To je způsobeno tím, že vrací statickou nebo konzistentní hodnotu, nebo protože kontext, který má být vrácen, je k dispozici prostřednictvím jedné ze služeb předaných prostřednictvím parametru `serviceProvider`.  
   
@@ -92,13 +92,13 @@ Toto téma představuje koncept rozšíření značek pro jazyk XAML, včetně p
   
 - Pokud jednotlivé samostatné tokeny obsahují znaménka rovná se, pak procesor XAML nejprve zavolá konstruktor bez parametrů pro rozšíření značek. Pak každá dvojice název = hodnota je interpretována jako název vlastnosti, který existuje v rozšíření značek, a hodnotu, která se má přiřadit k této vlastnosti.  
   
-- Pokud dojde k paralelnímu výsledku mezi chováním konstruktoru a chováním nastavení vlastnosti v rozšíření značek, nezáleží na tom, jaké chování používáte. Je běžné použití pro použití *vlastností*`=`*hodnoty* pro rozšíření značek, které mají více než jednu nastavitelnou vlastnost, pokud je pouze to, protože vede pouze k úmyslnému označení a je méně pravděpodobně neúmyslně transponovat konstruktor. ukazatelů. (Pokud zadáte páry Property = hodnota, tyto vlastnosti mohou být v libovolném pořadí.) Navíc není nijak zaručeno, že rozšíření značek poskytuje parametr konstruktoru, který nastaví každou ze svých vlastností. Například <xref:System.Windows.Data.Binding> je rozšíření značek s mnoha vlastnostmi, které lze nastavit pomocí rozšíření ve formě *vlastností*`=`*hodnoty* , ale <xref:System.Windows.Data.Binding> podporuje pouze dva konstruktory: konstruktor bez parametrů a jeden, který nastaví počáteční cesta.  
+- Pokud dojde k paralelnímu výsledku mezi chováním konstruktoru a chováním nastavení vlastnosti v rozšíření značek, nezáleží na tom, jaké chování používáte. Je běžné použití pro použití *vlastností*`=`*hodnoty* pro rozšíření značek, které mají více než jednu nastavitelnou vlastnost, pokud je pouze to, protože je váš kód přesnější a méně pravděpodobně nechtěně přeřadí parametry konstruktoru. (Pokud zadáte páry Property = hodnota, tyto vlastnosti mohou být v libovolném pořadí.) Navíc není nijak zaručeno, že rozšíření značek poskytuje parametr konstruktoru, který nastaví každou ze svých vlastností. Například <xref:System.Windows.Data.Binding> je rozšíření značek s mnoha vlastnostmi, které lze nastavit pomocí rozšíření ve formě *vlastností*`=`*hodnoty* , ale <xref:System.Windows.Data.Binding> podporuje pouze dva konstruktory: konstruktor bez parametrů a druhý, který nastaví počáteční cestu.  
   
 - Literálovou čárku nelze předat rozšíření značek bez řídicího znaku.  
   
 <a name="EscapeSequences"></a>   
 ## <a name="escape-sequences-and-markup-extensions"></a>Řídicí sekvence a rozšíření značek  
- Zpracování atributů v procesoru XAML používá složené závorky jako indikátory sekvence rozšíření kódu. V případě potřeby je také možné vytvořit literálovou hodnotu atributu znak složené závorky, a to tak, že zadáte řídicí sekvenci s použitím prázdné páry složené závorky, za kterou následuje literální složená závorka. Viz [{} sekvence escape – rozšíření značek](../../xaml-services/escape-sequence-markup-extension.md).  
+ Zpracování atributů v procesoru XAML používá složené závorky jako indikátory sekvence rozšíření kódu. V případě potřeby je také možné vytvořit literálovou hodnotu atributu znak složené závorky, a to tak, že zadáte řídicí sekvenci s použitím prázdné páry složené závorky, za kterou následuje literální složená závorka. Viz [{} sekvence escape – rozšíření značek](../../../desktop-wpf/xaml-services/escape-sequence-markup-extension.md).  
   
 <a name="Nesting"></a>   
 ## <a name="nesting-markup-extensions-in-xaml-usage"></a>Vnořování rozšíření značek v použití XAML  
@@ -114,14 +114,14 @@ Toto téma představuje koncept rozšíření značek pro jazyk XAML, včetně p
 ## <a name="markup-extensions-and-property-element-syntax"></a>Rozšíření značek a syntaxe elementu vlastnosti  
  Při použití jako prvku objektu, který vyplní hodnotu prvku vlastnosti, je třída rozšíření značek vizuálně neodlišená od typického elementu, který je v jazyce back-Type, který lze použít v jazyce XAML. Praktický rozdíl mezi typickým prvkem objektu a příponou značek je, že rozšíření značek je buď vyhodnoceno na zadanou hodnotu, nebo odloženo jako výraz. Proto se mechanismy pro jakékoli možné chyby typu pro rozšíření značek liší, podobně jako vlastnost s pozdní vazbou je zpracována v jiných programovacích modelech. Běžný prvek objektu bude vyhodnocen pro shodu typu s cílovou vlastností, která je nastavena při analýze XAML.  
   
- Většina rozšíření značek, pokud se používá v syntaxi elementu objektu pro vyplnění elementu Property, by neměla mít obsah nebo žádnou další syntaxi elementu Property v rámci. Proto byste zavřeli značku prvku objektu a neposkytovali žádné podřízené prvky. Vždy, když je nalezen libovolný element objektu procesorem XAML, je volán konstruktor této třídy, který vytvoří instanci objektu vytvořeného z analyzovaného prvku. Třída rozšíření značek se neliší: Pokud chcete, aby bylo rozšíření značek použitelné v syntaxi elementu Object, je nutné poskytnout konstruktor bez parametrů. Některá existující rozšíření značek mají alespoň jednu požadovanou hodnotu vlastnosti, která musí být zadána pro efektivní inicializaci. Pokud ano, hodnota této vlastnosti je obvykle dána jako atribut vlastnosti prvku Object. V [oboru názvů XAML (x:) V případě jazykových funkcí](../../xaml-services/xaml-namespace-x-language-features.md) a referenčních stránek [rozšíření WPF XAML](wpf-xaml-extensions.md) jsou uvedena rozšíření značek, která mají požadované vlastnosti (a názvy požadovaných vlastností). Referenční stránky také označují, zda je pro konkrétní rozšíření značek zakázána buď syntaxe elementu objektu, nebo syntaxe atributu. Významným případem je [rozšíření značek x:Array](../../xaml-services/x-array-markup-extension.md), které nepodporuje syntaxi atributu, protože obsah tohoto pole musí být zadaný v označení jako obsah. Obsah pole je zpracováván jako obecné objekty, proto není vhodný žádný výchozí konvertor typu pro atribut. [Rozšíření značek x:Array](../../xaml-services/x-array-markup-extension.md) vyžaduje také parametr `type`.  
+ Většina rozšíření značek, pokud se používá v syntaxi elementu objektu pro vyplnění elementu Property, by neměla mít obsah nebo žádnou další syntaxi elementu Property v rámci. Proto byste zavřeli značku prvku objektu a neposkytovali žádné podřízené prvky. Vždy, když je nalezen libovolný element objektu procesorem XAML, je volán konstruktor této třídy, který vytvoří instanci objektu vytvořeného z analyzovaného prvku. Třída rozšíření značek se neliší: Pokud chcete, aby bylo rozšíření značek použitelné v syntaxi elementu Object, je nutné poskytnout konstruktor bez parametrů. Některá existující rozšíření značek mají alespoň jednu požadovanou hodnotu vlastnosti, která musí být zadána pro efektivní inicializaci. Pokud ano, hodnota této vlastnosti je obvykle dána jako atribut vlastnosti prvku Object. V [oboru názvů XAML (x:) V případě jazykových funkcí](../../../desktop-wpf/xaml-services/namespace-language-features.md) a referenčních stránek [rozšíření WPF XAML](wpf-xaml-extensions.md) jsou uvedena rozšíření značek, která mají požadované vlastnosti (a názvy požadovaných vlastností). Referenční stránky také označují, zda je pro konkrétní rozšíření značek zakázána buď syntaxe elementu objektu, nebo syntaxe atributu. Významným případem je [rozšíření značek x:Array](../../../desktop-wpf/xaml-services/xarray-markup-extension.md), které nepodporuje syntaxi atributu, protože obsah tohoto pole musí být zadaný v označení jako obsah. Obsah pole je zpracováván jako obecné objekty, proto není vhodný žádný výchozí konvertor typu pro atribut. [Rozšíření značek x:Array](../../../desktop-wpf/xaml-services/xarray-markup-extension.md) vyžaduje také parametr `type`.  
   
 ## <a name="see-also"></a>Viz také:
 
 - [Přehled XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md)
-- [Jazykové funkce oboru názvů jazyka XAML (x:)](../../xaml-services/xaml-namespace-x-language-features.md)
+- [Jazykové funkce oboru názvů jazyka XAML (x:)](../../../desktop-wpf/xaml-services/namespace-language-features.md)
 - [Rozšíření WPF XAML](wpf-xaml-extensions.md)
 - [Rozšíření značek StaticResource](staticresource-markup-extension.md)
 - [Rozšíření značek datové vazby](binding-markup-extension.md)
 - [Rozšíření značek DynamicResource](dynamicresource-markup-extension.md)
-- [x:Type – rozšíření značek](../../xaml-services/x-type-markup-extension.md)
+- [x:Type – rozšíření značek](../../../desktop-wpf/xaml-services/xtype-markup-extension.md)

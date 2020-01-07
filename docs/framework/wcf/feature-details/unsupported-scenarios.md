@@ -2,12 +2,12 @@
 title: Nepodporované scénáře
 ms.date: 03/30/2017
 ms.assetid: 72027d0f-146d-40c5-9d72-e94392c8bb40
-ms.openlocfilehash: 67a4e64208e00f9124b3cdc53d743c060274dac2
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 87c0d9984fe823eae0e3cc281ebda55bc33a541e
+ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837971"
+ms.lasthandoff: 12/29/2019
+ms.locfileid: "75544789"
 ---
 # <a name="unsupported-scenarios"></a>Nepodporované scénáře
 Z různých důvodů nepodporuje Windows Communication Foundation (WCF) některé konkrétní scénáře zabezpečení. Například [!INCLUDE[wxp](../../../../includes/wxp-md.md)] Home Edition neimplementuje ověřovací protokoly SSPI nebo Kerberos, a proto WCF nepodporuje spouštění služby s ověřováním systému Windows na této platformě. Další mechanismy ověřování, jako je uživatelské jméno/heslo a integrované ověřování HTTP/HTTPS, se podporují při použití WCF v systému Windows XP Home Edition.  
@@ -62,7 +62,7 @@ Z různých důvodů nepodporuje Windows Communication Foundation (WCF) někter�
  Šifrování AES kompatibilní se standardem FIPS nefunguje v duplexních voláních v rámci zosobnění na úrovni identifikace.  
   
 ### <a name="cngksp-certificates"></a>CNG/KSP – certifikáty  
- *Kryptografické rozhraní API: nové generace (CNG)* je dlouhodobá náhrada za rozhraní CryptoAPI. Toto rozhraní API je k dispozici v nespravovaném kódu v systému Windows Vista, [!INCLUDE[lserver](../../../../includes/lserver-md.md)] a novějších verzích systému Windows.  
+ *Kryptografické rozhraní API: nové generace (CNG)* je dlouhodobá náhrada za rozhraní CryptoAPI. Toto rozhraní API je k dispozici v nespravovaném kódu v systémech Windows Vista, Windows Server 2008 a novějších verzích Windows.  
   
  .NET Framework 4.6.1 a starší verze tyto certifikáty nepodporují, protože využívají starší rozhraní CryptoAPI ke zpracování certifikátů CNG/KSP. Použití těchto certifikátů s .NET Framework 4.6.1 a staršími verzemi způsobí výjimku.  
   

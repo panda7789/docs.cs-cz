@@ -9,12 +9,12 @@ helpviewer_keywords:
 - group keyword [C#]
 - group clause [C#]
 ms.assetid: c817242e-b12c-4baa-a57e-73ee138f34d1
-ms.openlocfilehash: dd14a4baf9967f41690e7978b8b6cf57c9275e36
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
-ms.translationtype: MT
+ms.openlocfilehash: 59bffc3df7155780fab90f9959ed99a21bda8eba
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428505"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635922"
 ---
 # <a name="group-clause-c-reference"></a>group – klauzule (Referenční dokumentace jazyka C#)
 
@@ -54,7 +54,7 @@ Následující příklad ukazuje použití bool hodnoty pro klíč k rozdělení
 
 ### <a name="grouping-by-numeric-range"></a>Seskupení podle číselného rozsahu
 
-Následující příklad používá výraz pro vytvoření číselné skupiny klíčů, které reprezentují rozsah percentilu. Všimněte si, že použití [let](let-clause.md) jako vhodného umístění pro uložení výsledku volání metody, takže nemusíte volat metodu dvakrát v klauzuli `group`. Další informace o bezpečném použití metod ve výrazech dotazů naleznete v tématu [How to: Handle Exceptions in Query Expressions](../../linq/handle-exceptions-in-query-expressions.md).
+Následující příklad používá výraz pro vytvoření číselné skupiny klíčů, které reprezentují rozsah percentilu. Všimněte si, že použití [let](let-clause.md) jako vhodného umístění pro uložení výsledku volání metody, takže nemusíte volat metodu dvakrát v klauzuli `group`. Další informace o bezpečném použití metod ve výrazech dotazů naleznete v tématu [zpracování výjimek ve výrazech dotazů](../../linq/handle-exceptions-in-query-expressions.md).
 
 [!code-csharp[cscsrefQueryKeywords#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Group.cs#15)]
 
@@ -66,7 +66,7 @@ Pokud chcete seskupit prvky podle více než jednoho klíče, použijte složen�
 group person by new {name = person.surname, city = person.city};
 ```
 
-Pojmenovaný typ použijte v případě, že je nutné předat proměnnou dotazu jiné metodě. Vytvořte speciální třídu s použitím automaticky implementovaných vlastností klíčů a potom přepište metody <xref:System.Object.Equals%2A> a <xref:System.Object.GetHashCode%2A>. Můžete také použít strukturu. v takovém případě není nutné tyto metody přepsat bezpodmínečně. Další informace najdete v tématu [implementace odlehčené třídy s automaticky implementovanými vlastnostmi](../../programming-guide/classes-and-structs/how-to-implement-a-lightweight-class-with-auto-implemented-properties.md) a [Postupy: dotaz na duplicitní soubory ve stromové struktuře adresáře](../../programming-guide/concepts/linq/how-to-query-for-duplicate-files-in-a-directory-tree-linq.md). Druhý článek obsahuje příklad kódu, který ukazuje, jak použít složený klíč s pojmenovaným typem.
+Pojmenovaný typ použijte v případě, že je nutné předat proměnnou dotazu jiné metodě. Vytvořte speciální třídu s použitím automaticky implementovaných vlastností klíčů a potom přepište metody <xref:System.Object.Equals%2A> a <xref:System.Object.GetHashCode%2A>. Můžete také použít strukturu. v takovém případě není nutné tyto metody přepsat bezpodmínečně. Další informace najdete v tématu [implementace odlehčené třídy s automaticky implementovanými vlastnostmi](../../programming-guide/classes-and-structs/how-to-implement-a-lightweight-class-with-auto-implemented-properties.md) a [Postup dotazování na duplicitní soubory v adresářovém stromu](../../programming-guide/concepts/linq/how-to-query-for-duplicate-files-in-a-directory-tree-linq.md). Druhý článek obsahuje příklad kódu, který ukazuje, jak použít složený klíč s pojmenovaným typem.
 
 ## <a name="example"></a>Příklad
 

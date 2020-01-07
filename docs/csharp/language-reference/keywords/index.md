@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Visual C#, keywords
 - '@ keyword'
 ms.assetid: e929b0f2-4b92-4d37-8060-23d323b098ad
-ms.openlocfilehash: 91dbe36efd58c2455df5b38ac4bc6b1b56bc452f
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: 4919aed8f5b1d134f3bbfce437228d1a67911a1b
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552186"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345435"
 ---
 # <a name="c-keywords"></a>Klíčová slova jazyka C#
 
@@ -28,10 +28,10 @@ Klíčová slova jsou předdefinovaná, rezervované identifikátory, které maj
 |[break](break.md)|[byte](../builtin-types/integral-numeric-types.md)|[case](switch.md)|[catch](try-catch.md)|  
 |[char](../builtin-types/char.md)|[checked](checked.md)|[class](class.md)|[const](const.md)|  
 |[continue](continue.md)|[decimal](../builtin-types/floating-point-numeric-types.md)|[default](default.md)|[delegate](../builtin-types/reference-types.md)|  
-|[do](do.md)|[double](../builtin-types/floating-point-numeric-types.md)|[ostatních](if-else.md)|[enum](enum.md)|  
+|[do](do.md)|[double](../builtin-types/floating-point-numeric-types.md)|[else](if-else.md)|[enum](../builtin-types/enum.md)|  
 |[event](event.md)|[explicit](../operators/user-defined-conversion-operators.md)|[extern](extern.md)|[false](../builtin-types/bool.md)|  
 |[finally](try-finally.md)|[určí](fixed-statement.md)|[float](../builtin-types/floating-point-numeric-types.md)|[for](for.md)|  
-|[foreach](foreach-in.md)|[goto](goto.md)|[Přestože](if-else.md)|[implicit](../operators/user-defined-conversion-operators.md)|  
+|[foreach](foreach-in.md)|[goto](goto.md)|[if](if-else.md)|[implicit](../operators/user-defined-conversion-operators.md)|  
 |[in](in.md)|[int](../builtin-types/integral-numeric-types.md)|[interface](interface.md)|[internal](internal.md)|
 |[is](is.md)|[lock](lock-statement.md)|[long](../builtin-types/integral-numeric-types.md)|[namespace](namespace.md)|
 |[new](../operators/new-operator.md)|[null](null.md)|[object](../builtin-types/reference-types.md)|[operator](../operators/operator-overloading.md)|
@@ -51,11 +51,11 @@ Klíčová slova jsou předdefinovaná, rezervované identifikátory, které maj
   
 ||||  
 |---|---|---|  
-|[add](add.md)|[zástupný](extern-alias.md)|[ascending](ascending.md)|
+|[add](add.md)|[alias](extern-alias.md)|[ascending](ascending.md)|
 |[async](async.md)|[await](../operators/await.md)|[by](by.md)|
 |[descending](descending.md)|[dynamic](../builtin-types/reference-types.md)|[equals](equals.md)|
-|[Výsledkem](from-clause.md)|[get](get.md)|[global](../operators/namespace-alias-qualifier.md)|
-|[skupiny](group-clause.md)|[into](into.md)|[zúčastnit](join-clause.md)|
+|[from](from-clause.md)|[get](get.md)|[global](../operators/namespace-alias-qualifier.md)|
+|[skupiny](group-clause.md)|[into](into.md)|[join](join-clause.md)|
 |[aplikaci](let-clause.md)|[nameof](../operators/nameof.md)|[on](on.md)|
 |[OrderBy](orderby-clause.md)|[částečný (typ)](partial-type.md)|[Partial (metoda)](partial-method.md)|
 |[remove](remove.md)|[vybrali](select-clause.md)|[set](set.md)|

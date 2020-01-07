@@ -7,17 +7,17 @@ helpviewer_keywords:
 - LINQ to XML [Visual Basic], XML literals
 - literals [Visual Basic], XML
 ms.assetid: 37987c15-4ab8-471b-bd45-399816bfb57f
-ms.openlocfilehash: e5d2465d145f4059600121c6cef30bb2c74a8c1c
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 4eaa9399ca0038e3142886abf2161266f8c77782
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346191"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636078"
 ---
 # <a name="xml-literals-overview-visual-basic"></a>Přehled literálů XML (Visual Basic)
 *Literál XML* umožňuje začlenit XML přímo do kódu Visual Basic. Syntaxe literálu XML představuje [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objektů a je podobná syntaxi XML 1,0. To usnadňuje vytváření elementů XML a dokumentů programově, protože váš kód má stejnou strukturu jako finální XML.  
   
- Visual Basic zkompiluje literály XML do objektů [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] poskytuje jednoduchý objektový model pro vytváření a manipulaci s XML a tento model se dobře integruje s [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]. Další informace najdete v tématu <xref:System.Xml.Linq.XElement>.  
+ Visual Basic zkompiluje literály XML do objektů [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] poskytuje jednoduchý objektový model pro vytváření a manipulaci s XML a tento model se dobře integruje s LINQ (Language-Integrated Query). Další informace najdete v tématu <xref:System.Xml.Linq.XElement>.  
   
  Výraz Visual Basic lze vložit do literálu XML. V době běhu aplikace vytvoří objekt [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] pro každý literál, který zahrnuje hodnoty vložených výrazů. To umožňuje zadat dynamický obsah uvnitř literálu XML. Další informace najdete v tématu [vložené výrazy v XML](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md).  
   

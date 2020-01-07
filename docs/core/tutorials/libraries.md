@@ -4,12 +4,12 @@ description: Naučte se vytvářet knihovny .NET Core pomocí nástrojů .NET Co
 author: cartermp
 ms.date: 05/01/2017
 ms.custom: seodec18
-ms.openlocfilehash: dcd454f0bd1739597fc27dccf2849fc259767292
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: MT
+ms.openlocfilehash: 13c8541d1045f9130b3b5b260769a50fdc2316ba
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73420463"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559536"
 ---
 # <a name="developing-libraries-with-cross-platform-tools"></a>Vývoj knihoven pomocí nástrojů pro různé platformy
 
@@ -23,14 +23,14 @@ V části tohoto dokumentu, které se týkají .NET Framework verzí, potřebuje
 
 Kromě toho, pokud chcete podporovat starší .NET Framework cíle, je nutné nainstalovat sady Target/Developer Packs pro starší verze architektury ze [stránky archivu stahování v rozhraní .NET](https://dotnet.microsoft.com/download/archives). Další informace najdete v této tabulce:
 
-| Verze .NET Framework | Co stáhnout                                       |
+| Verze rozhraní .NET Framework | Co stáhnout                                       |
 | ---------------------- | ------------------------------------------------------ |
 | 4.6.1                  | .NET Framework 4.6.1 targeting pack                    |
 | 4.6                    | Sada targeting pack .NET Framework 4,6                      |
 | 4.5.2                  | .NET Framework 4.5.2 Developer Pack                    |
 | 4.5.1                  | .NET Framework 4.5.1 Developer Pack                    |
-| 4.5                    | Sada Windows SDK pro aplikace pro Windows 8         |
-| 4,0                    | Windows SDK pro Windows 7 a .NET Framework 4         |
+| 4,5                    | Sada Windows SDK pro aplikace pro Windows 8         |
+| 4.0                    | Windows SDK pro Windows 7 a .NET Framework 4         |
 | 2,0, 3,0 a 3,5      | Runtime .NET Framework 3,5 SP1 (nebo Windows 8 + verze) |
 
 ## <a name="how-to-target-the-net-standard"></a>Jak cílit na .NET Standard
@@ -76,15 +76,15 @@ Pokud chcete dosáhnout maximálního počtu vývojářů a projektů, použijte
 | ---------------------- | -------- |
 | .NET Framework 2.0     | `net20`  |
 | .NET Framework 3.0     | `net30`  |
-| .NET Framework 3.5     | `net35`  |
-| .NET Framework 4,0     | `net40`  |
+| .NET Framework 3.5     | `net35`  |
+| .NET Framework 4.0     | `net40`  |
 | .NET Framework 4.5     | `net45`  |
 | .NET Framework 4.5.1   | `net451` |
 | .NET Framework 4.5.2   | `net452` |
 | .NET Framework 4.6     | `net46`  |
 | .NET Framework 4.6.1   | `net461` |
 | .NET Framework 4.6.2   | `net462` |
-| .NET Framework 4,7     | `net47`  |
+| Rozhraní .NET framework 4.7     | `net47`  |
 | .NET Framework 4,8     | `net48`  |
 
 Pak tento TFM vložíte do oddílu `TargetFramework` souboru projektu. Tady je příklad, jak byste měli napsat knihovnu, která cílí na .NET Framework 4,0:
@@ -308,7 +308,7 @@ mkdir AwesomeLibrary.Core && cd AwesomeLibrary.Core && dotnet new classlib
 cd ..
 mkdir AwesomeLibrary.CSharp && cd AwesomeLibrary.CSharp && dotnet new classlib
 cd ..
-mkdir AwesomeLibrary.FSharp && cd AwesomeLibrary.FSharp && dotnet new classlib -lang F#
+mkdir AwesomeLibrary.FSharp && cd AwesomeLibrary.FSharp && dotnet new classlib -lang "F#"
 cd ..
 dotnet sln add AwesomeLibrary.Core/AwesomeLibrary.Core.csproj
 dotnet sln add AwesomeLibrary.CSharp/AwesomeLibrary.CSharp.csproj

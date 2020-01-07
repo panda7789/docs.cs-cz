@@ -13,19 +13,19 @@ helpviewer_keywords:
 - XBAP security [WPF]
 - Internet Explorer security settings [WPF]
 ms.assetid: ee1baea0-3611-4e36-9ad6-fcd5205376fb
-ms.openlocfilehash: 75e6c7b4886bd490c462e9128eca7ec13f233824
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 612b99354310c18030cefce4e6f02fab8ed20f83
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837295"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636767"
 ---
 # <a name="security-wpf"></a>Zabezpečení (WPF)
-<a name="introduction"></a>Při vývoji samostatné aplikace a aplikací hostovaných v prohlížeči Windows Presentation Foundation (WPF), je nutné vzít v úvahu model zabezpečení. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] samostatné aplikace jsou spouštěny s neomezenými oprávněními (sada oprávnění CAS**FullTrust** ), ať už nasazené pomocí Instalační služba systému Windows (. msi), XCOPY nebo ClickOnce. Nasazení částečného vztahu důvěryhodnosti – samostatné aplikace WPF pomocí technologie ClickOnce nejsou podporovány. Hostitelská aplikace s plnou důvěryhodností však může vytvořit <xref:System.AppDomain> s částečným vztahem důvěryhodnosti pomocí modelu .NET Framework doplňku. Další informace najdete v tématu [Přehled doplňků WPF](./app-development/wpf-add-ins-overview.md).  
+<a name="introduction"></a>Při vývoji samostatné aplikace a aplikací hostovaných v prohlížeči Windows Presentation Foundation (WPF), je nutné vzít v úvahu model zabezpečení. Samostatné aplikace WPF jsou spouštěny s neomezenými oprávněními (sada oprávnění CAS**FullTrust** ), ať už nasazené pomocí Instalační služba systému Windows (. msi), XCOPY nebo ClickOnce. Nasazení částečného vztahu důvěryhodnosti – samostatné aplikace WPF pomocí technologie ClickOnce nejsou podporovány. Hostitelská aplikace s plnou důvěryhodností však může vytvořit <xref:System.AppDomain> s částečným vztahem důvěryhodnosti pomocí modelu .NET Framework doplňku. Další informace najdete v tématu [Přehled doplňků WPF](./app-development/wpf-add-ins-overview.md).  
   
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace hostované v prohlížeči jsou hostovány aplikací Windows Internet Explorer nebo Firefox a může se jednat buď o aplikace prohlížeče XAML (XBAP), nebo volné [!INCLUDE[TLA#tla_xaml](../../../includes/tlasharptla-xaml-md.md)] dokumenty. Další informace najdete v tématu [Přehled aplikací WPF XAML browser](./app-development/wpf-xaml-browser-applications-overview.md).  
+ Aplikace hostované v prohlížeči WPF jsou hostované v aplikacích Windows Internet Explorer nebo Firefox a můžou být buď aplikace prohlížeče XAML (XBAP), nebo volné [!INCLUDE[TLA#tla_xaml](../../../includes/tlasharptla-xaml-md.md)] dokumenty. Další informace najdete v tématu [Přehled aplikací WPF XAML browser](./app-development/wpf-xaml-browser-applications-overview.md).  
   
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace hostované v prohlížeči se spouštějí v izolovaném prostoru zabezpečení s částečnou důvěryhodností, což je ve výchozím nastavení omezeno na výchozí sadu oprávnění pro**internetovou** zónu CAS. Tato možnost efektivně izoluje [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace hostované v prohlížeči z klientského počítače stejným způsobem, jako byste očekávali izolaci typických webových aplikací. XBAP může zvýšit oprávnění, až na úplný vztah důvěryhodnosti, v závislosti na zóně zabezpečení adresy URL nasazení a konfiguraci zabezpečení klienta. Další informace najdete v tématu [zabezpečení částečné důvěryhodnosti WPF](wpf-partial-trust-security.md).  
+ Aplikace hostované v prohlížeči WPF se spouštějí v izolovaném prostoru zabezpečení s částečnou důvěryhodností, což je ve výchozím nastavení omezené na výchozí sadu oprávnění pro**internetovou** zónu CAS. To efektivně izoluje aplikace hostované v prohlížeči WPF z klientského počítače stejným způsobem, jakým byste očekávali izolaci typických webových aplikací. XBAP může zvýšit oprávnění, až na úplný vztah důvěryhodnosti, v závislosti na zóně zabezpečení adresy URL nasazení a konfiguraci zabezpečení klienta. Další informace najdete v tématu [zabezpečení částečné důvěryhodnosti WPF](wpf-partial-trust-security.md).  
   
  Toto téma popisuje model zabezpečení pro samostatnou aplikaci Windows Presentation Foundation (WPF) a aplikace hostované v prohlížeči.  
   
@@ -45,7 +45,7 @@ ms.locfileid: "74837295"
   
 <a name="SafeTopLevelNavigation"></a>   
 ## <a name="safe-navigation"></a>Bezpečná navigace  
- Pro XBAP [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] rozlišuje dva typy navigace: aplikace a prohlížeč.  
+ Pro XBAP rozlišuje WPF dva typy navigace: aplikace a prohlížeč.  
   
  *Navigace v aplikaci* je navigace mezi položkami obsahu v rámci aplikace, jejímž hostitelem je prohlížeč. *Navigace v prohlížeči* je navigace, která mění obsah a adresu URL umístění samotného prohlížeče. Vztah mezi navigací aplikace (obvykle XAML) a navigace v prohlížeči (obvykle HTML) je znázorněna na následujícím obrázku:
   
@@ -220,7 +220,7 @@ ms.locfileid: "74837295"
   
  Nicméně je možné, že sestavení APTCA vykazuje chybu zabezpečení po instalaci do GAC. Po zjištění chyby zabezpečení mohou vydavatelé sestavení vytvořit aktualizaci zabezpečení, která vyřeší problém s existujícími instalacemi, a chránit před instalacemi, které mohou nastat po zjištění problému. Jednou z možností aktualizace je odinstalování sestavení, i když by mohlo dojít k přerušení jiných plně důvěryhodných klientských aplikací, které používají sestavení.  
   
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] poskytuje mechanismus, pomocí kterého je možné zakázat sestavení APTCA pro částečně důvěryhodná aplikace XBAP bez odinstalování sestavení APTCA.  
+ WPF poskytuje mechanismus, pomocí kterého je možné zakázat sestavení APTCA pro částečně důvěryhodné aplikace XBAP bez odinstalování sestavení APTCA.  
   
  Chcete-li zakázat sestavení APTCA, je nutné vytvořit speciální klíč registru:  
   
@@ -262,14 +262,14 @@ ms.locfileid: "74837295"
   
 <a name="BestPractices"></a>   
 ## <a name="resources-for-developing-wpf-applications-that-promote-security"></a>Prostředky pro vývoj aplikací WPF, které podporují zabezpečení  
- Níže jsou uvedené další materiály, které vám pomohou vyvíjet [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] aplikace, které podporují zabezpečení:  
+ Níže jsou uvedené další zdroje informací, které vám pomohou vyvíjet aplikace WPF, které podporují zabezpečení:  
   
 |Plošný|Prostředek|  
 |----------|--------------|  
 |Spravovaný kód|[Postupy zabezpečení pro aplikace a vzory a postupy](https://docs.microsoft.com/previous-versions/msp-n-p/ff650760(v=pandp.10))|  
 |CAS|[Zabezpečení přístupu kódu](../misc/code-access-security.md)|  
 |ClickOnce|[ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment)|  
-|[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]|[Částečné zabezpečení důvěryhodnosti WPF](wpf-partial-trust-security.md)|  
+|WPF|[Částečné zabezpečení důvěryhodnosti WPF](wpf-partial-trust-security.md)|  
   
 ## <a name="see-also"></a>Viz také:
 

@@ -4,19 +4,19 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - analytic tracing [WCF], overview
 ms.assetid: ae55e9cc-0809-442f-921f-d644290ebf15
-ms.openlocfilehash: f6ffed3d9f0bf5e3dc5698d51276eb1db276993c
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: f1a24e34375e98d4bfb48c1e2fd84290e08f6eea
+ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837490"
+ms.lasthandoff: 12/29/2019
+ms.locfileid: "75544759"
 ---
 # <a name="analytic-tracing-overview"></a>Analytické trasování – přehled
 Analytické trasování v [!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)] je funkce pro sledování událostí s vysokým výkonem a s nízkou mírou podrobností nastavenou na trasování událostí pro Windows (ETW). ETW běží na úrovni jádra, aby významně snížila nároky na operace trasování. Efektivně ukládá do vyrovnávací paměti události režimu jádra a uživatele a umožňuje dynamické povolení protokolování bez nutnosti restartování služby. Data trasování jsou k dispozici v protokolech událostí poté, co byly vygenerovány a přijímány.  
   
  Další informace o trasování událostí pro Windows najdete v tématu [vylepšení ladění a ladění výkonu pomocí ETW](https://go.microsoft.com/fwlink/?LinkId=164781).  
   
- Kromě použití protokolů událostí systému Windows, zabezpečení a aplikací k analýze aplikace, systém Windows Vista a [!INCLUDE[lserver](../../../../../includes/lserver-md.md)] zavedly další protokoly v uzlu aplikace a služby na nejvyšší úrovni. Účelem těchto nových protokolů je ukládat události pro konkrétní aplikaci nebo konkrétní komponentu namísto globálních událostí, které mají vliv na systém (například typ událostí, které může protokol událostí zabezpečení zaznamenat). [!INCLUDE[netfx_current_short](../../../../../includes/netfx-current-short-md.md)] sjednocuje a koreluje protokolování událostí trasování WCF, protokolů zpráv WCF a [!INCLUDE[wf1](../../../../../includes/wf1-md.md)] sledování záznamů do protokolů aplikací a služeb.  
+ Kromě použití protokolů událostí systému Windows, zabezpečení a aplikací k analýze aplikace systémy Windows Vista a Windows Server 2008 zavedly další protokoly pod uzlem protokoly aplikací a služeb na nejvyšší úrovni. Účelem těchto nových protokolů je ukládat události pro konkrétní aplikaci nebo konkrétní komponentu namísto globálních událostí, které mají vliv na systém (například typ událostí, které může protokol událostí zabezpečení zaznamenat). [!INCLUDE[netfx_current_short](../../../../../includes/netfx-current-short-md.md)] sjednocuje a koreluje protokolování událostí trasování WCF, protokolů zpráv WCF a [!INCLUDE[wf1](../../../../../includes/wf1-md.md)] sledování záznamů do protokolů aplikací a služeb.  
   
 ## <a name="concepts-and-capabilities"></a>Koncepty a možnosti  
  Následující koncepty a možnosti se vztahují na analytické trasování WCF.  

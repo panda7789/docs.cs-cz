@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: použití vyvolání platformy pro přehrání souboru Wave – C# Průvodce programováním'
+title: Použití vyvolání platformy k přehrání souboru WAV – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -8,16 +8,16 @@ helpviewer_keywords:
 - wav files
 - .wav files
 ms.assetid: f7f62f53-e026-4c40-b221-3a26adb0c2c5
-ms.openlocfilehash: 6c2313f7b600bc1670c944f6a93868c1bc4c7c16
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
-ms.translationtype: MT
+ms.openlocfilehash: 082bd4b51e06332b0fecc633cc0501cafa8e7ff8
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039330"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635285"
 ---
-# <a name="how-to-use-platform-invoke-to-play-a-wave-file-c-programming-guide"></a>Postupy: Použití vyvolání platformy pro přehrání souboru wave (Průvodce programováním v C#)
+# <a name="how-to-use-platform-invoke-to-play-a-wav-file-c-programming-guide"></a>Jak použít vyvolání platformy k přehrání souboru WAV (C# Průvodce programováním)
 
-Následující C# příklad kódu ukazuje, jak použít služby vyvolání platformy k přehrání zvukového souboru Wave v operačním systému Windows.
+Následující C# příklad kódu ukazuje, jak použít služby vyvolání platformy k přehrání zvukového souboru WAV v operačním systému Windows.
 
 ## <a name="example"></a>Příklad
 
@@ -29,7 +29,7 @@ Dialogové okno **otevřít soubory** je filtrováno tak, aby zobrazovalo pouze 
 
 [!code-csharp[csProgGuideInterop#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInterop/CS/WinSound.cs#3)]
 
-## <a name="compiling-the-code"></a>Kompilování kódu
+## <a name="compiling-the-code"></a>Zkompilování kódu
 
 1. V aplikaci Visual C# Studio vytvořte nový projekt aplikace model Windows Forms a pojmenujte ho **WinSound**.
 

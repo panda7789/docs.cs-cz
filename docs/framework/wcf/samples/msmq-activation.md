@@ -2,12 +2,12 @@
 title: Aktivace MSMQ
 ms.date: 03/30/2017
 ms.assetid: e3834149-7b8c-4a54-806b-b4296720f31d
-ms.openlocfilehash: be33e3d9377c30058c7a2ee06543c11f10251ebd
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 2afcfbee69f8257e4ed0b1c352ef29e4af9ddb84
+ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74714777"
+ms.lasthandoff: 12/29/2019
+ms.locfileid: "75544717"
 ---
 # <a name="msmq-activation"></a>Aktivace MSMQ
 
@@ -19,13 +19,13 @@ Tato ukázka předvádí, jak hostovat aplikace v aktivační službě procesů 
 > [!NOTE]
 > Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.
 >
-> \<InstallDrive >: \ WF_WCF_Samples
+> \<InstallDrive>:\WF_WCF_Samples
 >
 > Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech ukázek WCF a [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Tato ukázka se nachází v následujícím adresáři.
 >
-> \<InstallDrive >: \Samples\WCFWFCardSpace\WCF\Basic\Services\Hosting\WASHost\MsmqActivation.
+> \<InstallDrive>:\Samples\WCFWFCardSpace\WCF\Basic\Services\Hosting\WASHost\MsmqActivation.
 
-Aktivační služba procesů systému Windows (WAS): nový mechanismus aktivace procesu pro [!INCLUDE[lserver](../../../../includes/lserver-md.md)]poskytuje funkce, které byly dříve dostupné jenom pro aplikace založené na protokolu HTTP, do aplikací, které používají protokoly bez protokolu HTTP. Windows Communication Foundation (WCF) používá rozhraní naslouchacího adaptéru k sdělování požadavků na aktivaci přijatých přes protokoly jiného typu než HTTP podporované službou WCF, jako je například TCP, pojmenované kanály a služba MSMQ. Funkce pro příjem požadavků přes protokoly jiné než HTTP je hostována spravovanými službami systému Windows, které jsou spuštěny v SMSvcHost. exe.
+Aktivační služba procesů systému Windows (WAS) nový mechanismus aktivace procesu pro Windows Server 2008 poskytuje funkce, které byly dříve dostupné jenom pro aplikace založené na protokolu HTTP, do aplikací, které používají protokoly jiného typu než HTTP. Windows Communication Foundation (WCF) používá rozhraní naslouchacího adaptéru k sdělování požadavků na aktivaci přijatých přes protokoly jiného typu než HTTP podporované službou WCF, jako je například TCP, pojmenované kanály a služba MSMQ. Funkce pro příjem požadavků přes protokoly jiné než HTTP je hostována spravovanými službami systému Windows, které jsou spuštěny v SMSvcHost. exe.
 
 Služba NET. MSMQ Listener Adapter (NetMsmqActivator) aktivuje aplikace zařazené do fronty na základě zpráv ve frontě.
 
@@ -335,7 +335,7 @@ Ve výchozím nastavení se u `netMsmqBinding` vazby vazeb povoluje zabezpečen�
 
      Chcete-li změnit identitu, pod kterou se aktivační služba spouští:
 
-    1. Spusťte Services. msc.
+    1. Run Services.msc.
 
     2. Klikněte pravým tlačítkem na **adaptér NET. MsmqListener**a vyberte **vlastnosti**.
 

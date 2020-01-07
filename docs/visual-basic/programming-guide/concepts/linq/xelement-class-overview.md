@@ -2,12 +2,12 @@
 title: Přehled třídy XElement
 ms.date: 07/20/2015
 ms.assetid: 52331fcd-6023-4d19-b423-7b24f2d86ded
-ms.openlocfilehash: ff751a14abf9a9cb5d64e44e601c5d0ca6218c7d
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 2e5a1e161345df39ff5c006f751fb293cad60510
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349310"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636663"
 ---
 # <a name="xelement-class-overview-visual-basic"></a>Přehled třídy XElement (Visual Basic)
 Třída <xref:System.Xml.Linq.XElement> je jednou ze základních tříd v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Představuje XML element. Tuto třídu můžete použít k vytváření elementů. změnit obsah elementu; Přidání, změna nebo odstranění podřízených elementů; přidejte atributy k elementu; nebo serializovat obsah elementu v textovém formuláři. Můžete také vzájemně spolupracovat s jinými třídami v <xref:System.Xml?displayProperty=nameWithType>, jako jsou <xref:System.Xml.XmlReader>, <xref:System.Xml.XmlWriter>a <xref:System.Xml.Xsl.XslCompiledTransform>.  
@@ -44,7 +44,7 @@ Dim contacts As XElement = _
     </Contacts>  
 ```  
   
- Další velmi běžné postupy pro vytváření stromu XML zahrnuje použití výsledků [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu k naplnění stromu XML, jak je znázorněno v následujícím příkladu:  
+ Další velmi obvyklá technika pro vytváření stromu XML zahrnuje použití výsledků dotazu LINQ k naplnění stromu XML, jak je znázorněno v následujícím příkladu:  
   
 ```vb  
 Dim srcTree As XElement = _  
@@ -84,12 +84,12 @@ Console.WriteLine(xmlTree)
  Další informace naleznete v tématu [serializace stromů XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/serializing-xml-trees.md).  
   
 ### <a name="retrieving-xml-data-via-axis-methods"></a>Načítání dat XML přes metody osy  
- Můžete použít metody osy k načtení atributů, podřízených prvků, následníků a nadřazených prvků. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy fungují na metodách osy a poskytují několik flexibilních a výkonných způsobů, jak procházet a zpracovávat strom XML.  
+ Můžete použít metody osy k načtení atributů, podřízených prvků, následníků a nadřazených prvků. Dotazy LINQ pracují na metodách osy a poskytují několik flexibilních a výkonných způsobů navigace ve stromu XML a zpracování.  
   
  Další informace najdete v tématu [LINQ to XML osy (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md).  
   
 ### <a name="querying-xml-trees"></a>Dotazování na stromy XML  
- Můžete zapisovat [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy, které extrahují data ze stromu XML.  
+ Můžete zapisovat dotazy LINQ, které extrahují data ze stromu XML.  
   
  Další informace najdete v tématu [dotazování na stromy XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/querying-xml-trees.md).  
   

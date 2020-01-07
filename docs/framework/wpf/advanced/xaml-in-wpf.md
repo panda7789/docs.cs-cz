@@ -7,12 +7,12 @@ helpviewer_keywords:
 - XAML [WPF]
 - Extensible Application Markup Language [WPF]
 ms.assetid: 5d858575-a83b-42df-ad3f-047ed2d6e3c8
-ms.openlocfilehash: cea6809ebf9a4ae516d59bd99bf8126d2e874788
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: b43da2723fb618bc44a14e8102c8d59e6ecc0c11
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459564"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559843"
 ---
 # <a name="xaml-in-wpf"></a>XAML ve WPF
 
@@ -28,10 +28,10 @@ ms.locfileid: "73459564"
 [Obory názvů XAML a mapování oboru názvů pro WPF XAML](xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)  
 [Obory názvů WPF XAML](wpf-xaml-namescopes.md)  
 [Vložené styly a šablony](inline-styles-and-templates.md)  
-[Zpracování prázdných míst v jazyce XAML](../../xaml-services/whitespace-processing-in-xaml.md)  
+[Zpracování prázdných míst v jazyce XAML](../../../desktop-wpf/xaml-services/white-space-processing.md)  
 [TypeConverters a XAML](typeconverters-and-xaml.md)  
-[Znakové entity XML a jazyk XAML](../../xaml-services/xml-character-entities-and-xaml.md)  
-[Jazykové funkce oboru názvů jazyka XAML (x:)](../../xaml-services/xaml-namespace-x-language-features.md)  
+[Znakové entity XML a jazyk XAML](../../../desktop-wpf/xaml-services/xml-character-entities.md)  
+[Jazykové funkce oboru názvů jazyka XAML (x:)](../../../desktop-wpf/xaml-services/namespace-language-features.md)  
 [Rozšíření WPF XAML](wpf-xaml-extensions.md)  
 [Jazykové funkce kompatibility značek (mc:)](markup-compatibility-mc-language-features.md)  
   

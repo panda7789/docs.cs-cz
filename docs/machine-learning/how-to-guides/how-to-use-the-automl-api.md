@@ -1,14 +1,14 @@
 ---
 title: Jak používat automatizované rozhraní API pro ML.NET
 description: Rozhraní ML.NET Automated ML API automatizuje proces vytváření modelů a vygeneruje model připravený pro nasazení. Seznamte se s možnostmi, které můžete použít ke konfiguraci automatizovaných úloh strojového učení.
-ms.date: 11/7/2019
+ms.date: 12/18/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: c1c18decc48bc1499aa55210becff305cdec4a53
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: b322c484282d025033d747d2093f7b5b4d216fde
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73977121"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636559"
 ---
 # <a name="how-to-use-the-mlnet-automated-machine-learning-api"></a>Jak používat automatizované rozhraní API pro strojové učení ML.NET
 
@@ -37,7 +37,8 @@ Než začnete vytvářet experiment, určete druh problému strojového učení,
 
 * Binární klasifikace
 * Klasifikace s více třídami
-* Nevýhody
+* Regrese
+* Doporučení
 
 ## <a name="create-experiment-settings"></a>Vytvořit nastavení experimentu
 
@@ -55,17 +56,23 @@ Vytvořit nastavení experimentu pro stanovený typ úkolu ML:
   var experimentSettings = new MulticlassExperimentSettings();
   ```
 
-* Nevýhody
+* Regrese
 
   ```csharp
   var experimentSettings = new RegressionExperimentSettings();
+  ```
+
+* Doporučení
+
+  ```csharp
+  var experimentSettings = new RecommendationExperimentSettings();
   ```
 
 ## <a name="configure-experiment-settings"></a>Konfigurovat nastavení experimentu
 
 Experimenty jsou vysoce konfigurovatelné. Úplný seznam nastavení konfigurace najdete v [dokumentaci k rozhraní AutoML API](https://docs.microsoft.com/dotnet/api/microsoft.ml.automl?view=ml-dotnet-preview) .
 
-Mezi příklady patří:
+Možné příklady:
 
 1. Zadejte maximální dobu, po kterou může experiment běžet.
 
@@ -110,38 +117,39 @@ Seznam podporovaných školitelů na úlohu ML najdete na odpovídajícím odkaz
 * [Podporované binární algoritmy klasifikace](xref:Microsoft.ML.AutoML.BinaryClassificationTrainer)
 * [Podporované algoritmy klasifikace s více třídami](xref:Microsoft.ML.AutoML.MulticlassClassificationTrainer)
 * [Podporované algoritmy regrese](xref:Microsoft.ML.AutoML.RegressionTrainer)
+* [Podporované algoritmy doporučení](xref:Microsoft.ML.AutoML.RecommendationTrainer)
 
 ## <a name="optimizing-metric"></a>Optimalizace metriky
 
 Optimalizace metriky, jak je znázorněno v příkladu výše, Určuje metriku, která má být optimalizována během školení modelu. Optimalizace metriky, kterou můžete vybrat, je určená typem úlohy, kterou zvolíte. Níže je uveden seznam dostupných metrik.
 
-|[Binární klasifikace](xref:Microsoft.ML.AutoML.BinaryClassificationMetric) | [Klasifikace s více třídami](xref:Microsoft.ML.AutoML.MulticlassClassificationMetric) |[Nevýhody](xref:Microsoft.ML.AutoML.RegressionMetric)
+|[Binární klasifikace](xref:Microsoft.ML.AutoML.BinaryClassificationMetric) | [Klasifikace s více třídami](xref:Microsoft.ML.AutoML.MulticlassClassificationMetric) |[Regrese & doporučení](xref:Microsoft.ML.AutoML.RegressionMetric)
 |-- |-- |--
-|Údajů| LogLoss | RSquared
+|Přesnost| LogLoss | RSquared
 |AreaUnderPrecisionRecallCurve | LogLossReduction | MeanAbsoluteError
 |AreaUnderRocCurve | MacroAccuracy | MeanSquaredError
-|F1Score | Mikropřesnost | RootMeanSquaredError
+|F1Score | MicroAccuracy | RootMeanSquaredError
 |NegativePrecision | TopKAccuracy
 |NegativeRecall |
 |PositivePrecision
 |PositiveRecall
 
-## <a name="data-pre-processing-and-featurization"></a>Předběžné zpracování dat a featurization
+## <a name="data-pre-processing-and-featurization"></a>Předběžné zpracování dat a snadné
 
 > [!NOTE]
-> Sloupec funkce podporuje pouze typy <xref:System.Boolean>, <xref:System.Single> a <xref:System.String>.
+> Sloupec funkce podporuje pouze typy <xref:System.Boolean>, <xref:System.Single>a <xref:System.String>.
 
 Předběžné zpracování dat probíhá ve výchozím nastavení a k provedení následujících kroků dojde automaticky:
 
 1. Vyřadit funkce bez užitečných informací
 
-    Vyřaďte funkce bez užitečných informací ze školicích a ověřovacích sad. Mezi ně patří funkce se všemi chybějícími hodnotami, stejnou hodnotou ve všech řádcích nebo s velmi vysokou mohutnosti (například hodnoty hash, ID nebo identifikátory GUID).
+    Vyřaďte ze sady pro trénování a ověření funkce s žádnou užitečnou informaci. Patří mezi funkce s všechny hodnoty, které chybí, stejnou hodnotu napříč všemi řádky nebo s velmi vysokou kardinalitu (například hodnoty hash ID nebo identifikátory GUID).
 
 1. Chybí indikace hodnoty a imputace.
 
     Vyplňte chybějící buňky s hodnotou výchozí hodnotou pro datový typ. Přidejte funkce indikátoru se stejným počtem slotů jako vstupní sloupec. Hodnota ve funkcích s připojeným indikátorem je `1`, pokud hodnota ve sloupci Input chybí a `0` jinak.
 
-1. Generování dalších funkcí
+1. Generovat další funkce
 
     Pro funkce textu: funkce typu penalta v aplikaci Word s využitím unigrams a Tri-Character-gramů.
 
@@ -174,7 +182,7 @@ Jakmile nakonfigurujete nastavení experimentu, budete připraveni vytvořit exp
 RegressionExperiment experiment = mlContext.Auto().CreateRegressionExperiment(experimentSettings);
 ```
 
-## <a name="run-the-experiment"></a>Spuštění experimentu
+## <a name="run-the-experiment"></a>Spusťte experiment.
 
 Spuštění experimentu aktivuje předběžné zpracování dat, výběr výukového algoritmu a ladění předaných parametrů. AutoML bude nadále generovat kombinace featurization, výukových algoritmů a parametrů, dokud není dosaženo `MaxExperimentTimeInSeconds` nebo je experiment ukončen.
 
@@ -195,15 +203,15 @@ AutoML poskytuje přetíženou metodu spuštění experimentu, která umožňuje
 experiment.Execute(trainDataView);
 ```
 
-### <a name="custom-validation-dataset"></a>Vlastní ověřovací datová sada
+### <a name="custom-validation-dataset"></a>Vlastní ověření datové sady
 
-Použijte vlastní ověřovací datovou sadu, pokud není přijatelné náhodné rozdělení, což je obvykle případ s daty časových řad. Můžete zadat vlastní ověřovací datovou sadu. Model bude vyhodnocen proti zadané datové sadě ověřování místo jedné nebo více náhodných datových sad.
+Použijte vlastní ověřovací datovou sadu, pokud není přijatelné náhodné rozdělení, což je obvykle případ s daty časových řad. Můžete zadat vlastní ověření datové sady. Model bude vyhodnocen proti zadané datové sadě ověřování místo jedné nebo více náhodných datových sad.
 
 ```csharp
 experiment.Execute(trainDataView, validationDataView);
 ```
 
-## <a name="explore-model-metrics"></a>Prozkoumat metriky modelu
+## <a name="explore-model-metrics"></a>Zkoumání metrik model
 
 Po každé iteraci experimentu ML se budou ukládat metriky související s touto úlohou.
 
@@ -219,7 +227,7 @@ Níže jsou uvedené všechny dostupné metriky na ML:
 
 * [Binární metriky klasifikace](xref:Microsoft.ML.AutoML.BinaryClassificationMetric)
 * [Metriky klasifikace s více třídami](xref:Microsoft.ML.AutoML.MulticlassClassificationMetric)
-* [Regresní metriky](xref:Microsoft.ML.AutoML.RegressionMetric)
+* [Regrese & metriky doporučení](xref:Microsoft.ML.AutoML.RegressionMetric)
 
 ## <a name="see-also"></a>Viz také:
 

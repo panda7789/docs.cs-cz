@@ -1,16 +1,16 @@
 ---
-title: oboru názvů jazyka XAML (x:)
+title: kompatibility značek (mc:)
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Visual Basic code, elements of
 - Visual Basic code
 ms.assetid: b0b21730-298c-47e6-9a2f-cc81f628067b
-ms.openlocfilehash: 8cb0b017410e991628bad59a6986ba37426c913f
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 0c8496d4e452da92e0ae994f0b246cc16723c06e
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345068"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636572"
 ---
 # <a name="visual-basic-language-features"></a>Funkce jazyka Visual Basic
 Následující témata zavádějí a projednávají základní součásti Visual Basic, objektově orientovaného programovacího jazyka. Po vytvoření uživatelského rozhraní pro aplikaci pomocí formulářů a ovládacích prvků musíte napsat kód, který definuje chování aplikace. Stejně jako u všech moderních programovacích jazyků Visual Basic podporuje řadu běžných programovacích konstrukcí a elementů jazyka.  
@@ -41,7 +41,7 @@ Následující témata zavádějí a projednávají základní součásti Visual
  [Delegáti](../../../visual-basic/programming-guide/language-features/delegates/index.md)  
  Poskytuje Úvod k delegátům a způsobu jejich použití v Visual Basic.  
   
- [Statické a pozdní vazby](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)  
+ [Statické a dynamické vazby](../../../visual-basic/programming-guide/language-features/early-late-binding/index.md)  
  Popisuje vazbu, která je provedena kompilátorem v případě, že je objekt přiřazen objektu proměnné a rozdíly mezi objekty s časnou vazbou a objekty s pozdní vazbou.  
   
  [Typy chyb](../../../visual-basic/programming-guide/language-features/error-types.md)  
@@ -54,7 +54,7 @@ Následující témata zavádějí a projednávají základní součásti Visual
  Popisuje, jaká rozhraní jsou a jak je můžete používat ve svých aplikacích.  
   
  [LINQ](../../../visual-basic/programming-guide/language-features/linq/index.md)  
- Obsahuje odkazy na témata, která zavádějí [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] funkce a programování.  
+ Obsahuje odkazy na témata, která zavádějí funkce LINQ (Language-Integrated Query) a programování.  
   
  [Objekty a třídy](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)  
  Poskytuje přehled objektů a tříd, způsob jejich použití, jejich vzájemných vztahů a vlastnosti, metody a události, které zveřejňuje.  

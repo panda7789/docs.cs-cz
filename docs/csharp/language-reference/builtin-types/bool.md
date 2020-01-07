@@ -8,12 +8,12 @@ helpviewer_keywords:
 - bool data type [C#]
 - Boolean [C#]
 ms.assetid: 551cfe35-2632-4343-af49-33ad12da08e2
-ms.openlocfilehash: 1e79de6d9e5cf973ce394bfb06871777c562c8ac
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: 577ccd3bb9a20964dcdfc79ef2028854e4a55dc6
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74553035"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75342702"
 ---
 # <a name="bool-c-reference"></a>bool (C# Referenční dokumentace)
 
@@ -29,15 +29,15 @@ Můžete použít `true` a `false` literály k inicializaci `bool` proměnné ne
 
 [!code-csharp-interactive[bool literals](~/samples/csharp/language-reference/builtin-types/BoolType.cs#Literals)]
 
-## <a name="conversions"></a>Převody
-
-C#poskytuje pouze dva převody, které zahrnují `bool` typ. Jedná se o implicitní převod na odpovídající typ `bool?` s možnou hodnotou null a explicitní převod z `bool?` typu. Nicméně rozhraní .NET poskytuje další metody, které lze použít pro převod na nebo z `bool`ho typu. Další informace naleznete v části [Převod do a z logických hodnot](/dotnet/api/system.boolean#converting-to-and-from-boolean-values) na referenční stránce rozhraní API <xref:System.Boolean?displayProperty=nameWithType>.
-
 ## <a name="three-valued-boolean-logic"></a>Logická logika se třemi hodnotami
 
 Použijte `bool?` typ s možnou hodnotou null, pokud potřebujete podporovat logiku se třemi hodnotami, například při práci s databázemi, které podporují logický typ se třemi hodnotami. Pro operandy `bool?` jsou předdefinované operátory `&` a `|` podporovány v rámci logiky se třemi hodnotami. Další informace naleznete v části s [možnou hodnotou null logických operátorů](../operators/boolean-logical-operators.md#nullable-boolean-logical-operators) v článku [Boolean Logical Operators](../operators/boolean-logical-operators.md) .
 
 Další informace o typech hodnot s možnou hodnotou null naleznete v tématu [typy hodnot s možnou hodnotou null](nullable-value-types.md).
+
+## <a name="conversions"></a>Převody
+
+C#poskytuje pouze dva převody, které zahrnují `bool` typ. Jedná se o implicitní převod na odpovídající typ `bool?` s možnou hodnotou null a explicitní převod z `bool?` typu. Nicméně rozhraní .NET poskytuje další metody, které lze použít pro převod na nebo z `bool`ho typu. Další informace naleznete v části [Převod do a z logických hodnot](/dotnet/api/system.boolean#converting-to-and-from-boolean-values) na referenční stránce rozhraní API <xref:System.Boolean?displayProperty=nameWithType>.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 

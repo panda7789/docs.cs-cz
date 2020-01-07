@@ -5,12 +5,12 @@ author: pkulikov
 ms.date: 11/15/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18, title-hack-0516
-ms.openlocfilehash: a7199ce2e5217eaadfa10893eb1fbb3417e9be20
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
-ms.translationtype: MT
+ms.openlocfilehash: 77c077df27c856855322b27d6101218d59d29173
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204839"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75336664"
 ---
 # <a name="tutorial-categorize-iris-flowers-using-k-means-clustering-with-mlnet"></a>Kurz: kategorizace Iris květin pomocí k-znamená Clustering pomocí ML.NET
 
@@ -118,9 +118,9 @@ V metodě `Main` nahraďte `Console.WriteLine("Hello World!");` řádek následu
 
 Třída <xref:Microsoft.ML.MLContext?displayProperty=nameWithType> představuje prostředí strojového učení a poskytuje mechanismy pro protokolování a vstupní body pro načítání dat, školení modelů, předpovědi a další úkoly. To je srovnatelné v koncepčním používání `DbContext` v Entity Framework.
 
-## <a name="setup-data-loading"></a>Načítání dat instalace
+## <a name="set-up-data-loading"></a>Nastavení načítání dat
 
-Do metody `Main` přidejte následující kód, který nastaví způsob načtení dat:
+Přidejte následující kód do metody `Main` pro nastavení způsobu načítání dat:
 
 [!code-csharp[Create text loader](~/samples/machine-learning/tutorials/IrisFlowerClustering/Program.cs#CreateDataView)]
 
@@ -133,7 +133,7 @@ Pro účely tohoto kurzu se studijní kanál úlohy clusteringu skládá ze dvou
 - Zřetězí načtené sloupce do jednoho sloupce **funkce** , který používá clustering Trainer;
 - pomocí <xref:Microsoft.ML.Trainers.KMeansTrainer> Trainer můžete vytvořit výuku modelu pomocí algoritmu k, který je více než clustering.
 
-Do `Main` metody přidejte následující kód:
+Do metody `Main` přidejte následující kód:
 
 [!code-csharp[Create pipeline](~/samples/machine-learning/tutorials/IrisFlowerClustering/Program.cs#CreatePipeline)]
 
@@ -145,7 +145,7 @@ Postup, který jste přidali v předchozích částech, připravil kanál pro š
 
 [!code-csharp[Train the model](~/samples/machine-learning/tutorials/IrisFlowerClustering/Program.cs#TrainModel)]
 
-### <a name="save-the-model"></a>Uložit model
+### <a name="save-the-model"></a>Uložení modelu
 
 V tomto okamžiku máte model, který lze integrovat do jakékoli existující nebo nové aplikace .NET. Chcete-li uložit model do souboru. zip, přidejte následující kód do metody `Main`:
 

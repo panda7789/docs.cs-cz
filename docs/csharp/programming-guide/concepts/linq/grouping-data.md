@@ -2,12 +2,12 @@
 title: Seskupování dat (C#)
 ms.date: 07/20/2015
 ms.assetid: e414e9e4-343a-4e6e-858f-4a30c5e64492
-ms.openlocfilehash: e7f10b121a7a1c599d88731a806fe784eb1a7e66
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 7ef3d3c9097d7a9478605565518ac8975feb9fe2
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423407"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635740"
 ---
 # <a name="grouping-data-c"></a>Seskupování dat (C#)
 Seskupení odkazuje na operaci vložení dat do skupin, aby elementy v každé skupině sdílely společný atribut.  
@@ -64,8 +64,8 @@ foreach (var group in query)
 - <xref:System.Linq>
 - [Přehled standardních operátorů dotazůC#()](./standard-query-operators-overview.md)
 - [group – klauzule](../../../language-reference/keywords/group-clause.md)
-- [Postupy: vytvoření vnořené skupiny](../../../linq/create-a-nested-group.md)
-- [Postupy: seskupování souborů podle přípony (LINQ) (C#)](./how-to-group-files-by-extension-linq.md)
-- [Postupy: Seskupení výsledků dotazu](../../../linq/group-query-results.md)
-- [Postupy: provádění poddotazů u operace seskupení](../../../linq/perform-a-subquery-on-a-grouping-operation.md)
-- [Postupy: rozdělení souboru na více souborů pomocí skupin (LINQ) (C#)](./how-to-split-a-file-into-many-files-by-using-groups-linq.md)
+- [Vytvoření vnořené skupiny](../../../linq/create-a-nested-group.md)
+- [Postup seskupení souborů podle přípony (LINQ) (C#)](./how-to-group-files-by-extension-linq.md)
+- [Seskupení výsledků dotazu](../../../linq/group-query-results.md)
+- [Provádění poddotazů na skupinách](../../../linq/perform-a-subquery-on-a-grouping-operation.md)
+- [Rozdělení souboru na více souborů pomocí skupin (LINQ) (C#)](./how-to-split-a-file-into-many-files-by-using-groups-linq.md)

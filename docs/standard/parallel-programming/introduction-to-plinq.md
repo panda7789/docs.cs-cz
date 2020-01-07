@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, introduction to
 ms.assetid: eaa720d8-8999-4eb7-8df5-3c19ca61cad0
-ms.openlocfilehash: 938bae09eab4e95c0ec875a8681cc276325b976b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ed1b2df57c118a0ebb6b5ffa4326b3e2eac81dec
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129043"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75632360"
 ---
 # <a name="introduction-to-plinq"></a>Úvod do PLINQ
 
@@ -21,7 +21,7 @@ ms.locfileid: "73129043"
 
 LINQ (Language-Integrated Query) byl představen v .NET Framework 3,5. Nabízí jednotný model pro dotazování libovolného <xref:System.Collections.IEnumerable?displayProperty=nameWithType> nebo <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> zdroje dat bezpečným způsobem. LINQ to Objects je název pro dotazy LINQ, které jsou spouštěny proti kolekcím v paměti, jako jsou <xref:System.Collections.Generic.List%601> a pole. V tomto článku se předpokládá, že máte základní znalosti jazyka LINQ. Další informace naleznete v tématu [LINQ (Language-Integrated Query) C# ](../../csharp/programming-guide/concepts/linq/index.md) nebo [LINQ (Language-Integrated Query)-Visual Basic](../../visual-basic/programming-guide/concepts/linq/index.md).
 
-Paralelní LINQ (PLINQ) je paralelní implementace vzoru LINQ. Dotaz PLINQ v mnoha způsobech připomíná neparalelní LINQ to Objects dotaz. PLINQ dotazy, stejně jako sekvenční [!INCLUDE[vbteclinq](../../../includes/vbteclinq-md.md)] dotazy, pracují na všech paměťových <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601> zdroji dat a mají odložené provádění, což znamená, že se nespustí, dokud nebude dotaz vyhodnocen. Hlavním rozdílem je, že PLINQ se pokouší plně využívat všechny procesory systému. Provádí to rozdělením zdroje dat na segmenty a následným spuštěním dotazu na každém segmentu v samostatných pracovních vláknech paralelně na více procesorech. V mnoha případech paralelní spouštění dotazu funguje výrazně rychleji.
+Paralelní LINQ (PLINQ) je paralelní implementace vzoru LINQ. Dotaz PLINQ v mnoha způsobech připomíná neparalelní LINQ to Objects dotaz. PLINQ dotazy, stejně jako sekvenční dotazy LINQ, pracují na jakémkoli v paměti <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601> zdroji dat a mají odložené provádění, což znamená, že se nespustí, dokud se dotaz nevytvoří. Hlavním rozdílem je, že PLINQ se pokouší plně využívat všechny procesory systému. Provádí to rozdělením zdroje dat na segmenty a následným spuštěním dotazu na každém segmentu v samostatných pracovních vláknech paralelně na více procesorech. V mnoha případech paralelní spouštění dotazu funguje výrazně rychleji.
 
 Pomocí paralelního provádění PLINQ může dosáhnout výrazného zlepšení výkonu oproti staršímu kódu pro určité typy dotazů, často pouze přidáním operace <xref:System.Linq.ParallelEnumerable.AsParallel%2A> dotazování do zdroje dat. Paralelismus však může zavádět své vlastní složitosti a ne všechny operace dotazů se v PLINQ rychleji spouštět. Ve skutečnosti paralelně zpomaluje některé dotazy. Proto byste měli pochopit, jak problémy, jako je řazení, ovlivňují paralelní dotazy. Další informace naleznete v tématu [Principy zrychlení v PLINQ](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md).
 
@@ -34,7 +34,7 @@ Zbývající část tohoto článku poskytuje přehled hlavních tříd PLINQ a 
 
 Třída <xref:System.Linq.ParallelEnumerable?displayProperty=nameWithType> zpřístupňuje téměř všechny funkce PLINQ. Do sestavení System. Core. dll se zkompiluje a zbývající typy <xref:System.Linq?displayProperty=nameWithType> oboru názvů. Výchozí C# a Visual Basic projekty v aplikaci Visual Studio odkazují na sestavení a importují obor názvů.
 
-<xref:System.Linq.ParallelEnumerable> zahrnuje implementace všech standardních operátorů dotazu, které LINQ to Objects podporuje, i když se o ně nepokusí paralelizovat každé z nich. Pokud nejste obeznámeni s [!INCLUDE[vbteclinq](../../../includes/vbteclinq-md.md)], přečtěte si téma [ÚvodC#do LINQ ()](../../csharp/programming-guide/concepts/linq/index.md) a [Úvod do LINQ (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/introduction-to-linq.md).
+<xref:System.Linq.ParallelEnumerable> zahrnuje implementace všech standardních operátorů dotazu, které LINQ to Objects podporuje, i když se o ně nepokusí paralelizovat každé z nich. Pokud neznáte LINQ, přečtěte si téma [Úvod do LINQC#()](../../csharp/programming-guide/concepts/linq/index.md) a [Úvod do LINQ (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/introduction-to-linq.md).
 
 Kromě standardních operátorů dotazu obsahuje Třída <xref:System.Linq.ParallelEnumerable> sadu metod, které povolují chování specifické pro paralelní spuštění. Tyto metody specifické pro PLINQ jsou uvedeny v následující tabulce.
 
@@ -94,7 +94,7 @@ Když je PLINQ dotaz spuštěn paralelně, jeho výsledky z každého pracovníh
 
 ## <a name="the-forall-operator"></a>Operátor ForAll
 
-V sekvenčních [!INCLUDE[vbteclinq](../../../includes/vbteclinq-md.md)]ch dotazech je provádění odloženo, dokud se dotaz nevytvoří ve smyčce `foreach` (`For Each` ve Visual Basic) nebo vyvoláním metody, jako je například <xref:System.Linq.ParallelEnumerable.ToList%2A>, <xref:System.Linq.ParallelEnumerable.ToArray%2A> nebo <xref:System.Linq.ParallelEnumerable.ToDictionary%2A>. V PLINQ můžete také použít `foreach` k provedení dotazu a iterování výsledků. `foreach` sám o sobě ale neběží paralelně. proto je potřeba, aby se výstup ze všech paralelních úloh sloučil zpátky do vlákna, na kterém je smyčka spuštěná. V PLINQ můžete použít `foreach`, pokud je třeba zachovat konečné řazení výsledků dotazu, a také pokaždé, když zpracováváte výsledky sériovým způsobem, například při volání `Console.WriteLine` pro každý prvek. Pro rychlejší provádění dotazů, pokud není potřeba pořadí řazení, a kdy se zpracování výsledků může provádět paralelně, použijte metodu <xref:System.Linq.ParallelEnumerable.ForAll%2A> pro spuštění PLINQ dotazu. <xref:System.Linq.ParallelEnumerable.ForAll%2A> neprovádí tento finální krok sloučení. Následující příklad kódu ukazuje, jak použít metodu <xref:System.Linq.ParallelEnumerable.ForAll%2A>. Tady se používá <xref:System.Collections.Concurrent.ConcurrentBag%601?displayProperty=nameWithType>, protože je optimalizovaný pro více vláken, která se přidávají souběžně, aniž by se musely odebírat žádné položky.
+V sekvenčních dotazech LINQ je provádění odloženo, dokud se dotaz nevytvoří ve smyčce `foreach` (`For Each` ve Visual Basic) nebo vyvoláním metody, jako je <xref:System.Linq.ParallelEnumerable.ToList%2A>, <xref:System.Linq.ParallelEnumerable.ToArray%2A> nebo <xref:System.Linq.ParallelEnumerable.ToDictionary%2A>. V PLINQ můžete také použít `foreach` k provedení dotazu a iterování výsledků. `foreach` sám o sobě ale neběží paralelně. proto je potřeba, aby se výstup ze všech paralelních úloh sloučil zpátky do vlákna, na kterém je smyčka spuštěná. V PLINQ můžete použít `foreach`, pokud je třeba zachovat konečné řazení výsledků dotazu, a také pokaždé, když zpracováváte výsledky sériovým způsobem, například při volání `Console.WriteLine` pro každý prvek. Pro rychlejší provádění dotazů, pokud není potřeba pořadí řazení, a kdy se zpracování výsledků může provádět paralelně, použijte metodu <xref:System.Linq.ParallelEnumerable.ForAll%2A> pro spuštění PLINQ dotazu. <xref:System.Linq.ParallelEnumerable.ForAll%2A> neprovádí tento finální krok sloučení. Následující příklad kódu ukazuje, jak použít metodu <xref:System.Linq.ParallelEnumerable.ForAll%2A>. Tady se používá <xref:System.Collections.Concurrent.ConcurrentBag%601?displayProperty=nameWithType>, protože je optimalizovaný pro více vláken, která se přidávají souběžně, aniž by se musely odebírat žádné položky.
 
 [!code-csharp[PLINQ#4](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinq2_cs.cs#4)]
 [!code-vb[PLINQ#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinq2_vb.vb#4)]

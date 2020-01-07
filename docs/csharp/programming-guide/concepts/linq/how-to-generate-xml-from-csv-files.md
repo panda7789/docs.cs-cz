@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: Generování XML ze souborů CSV (C#)'
+title: Generování XML ze souborů CSV (C#)
 ms.date: 07/20/2015
 ms.assetid: 57b9ccde-f983-4a21-ae61-70ecede30307
-ms.openlocfilehash: bcae061bd5899f4ae5cbb89f8e05079bc9222312
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
+ms.openlocfilehash: 643c05cb440165c4461c3e9c80e69701241ab8d1
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66486780"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635805"
 ---
-# <a name="how-to-generate-xml-from-csv-files-c"></a>Postupy: Generování XML ze souborů CSV (C#)
-Tento příklad ukazuje způsob použití [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ke generování souboru XML ze souboru hodnot oddělených čárkami (CSV).  
+# <a name="how-to-generate-xml-from-csv-files-c"></a>Generování XML ze souborů CSV (C#)
+Tento příklad ukazuje, jak použít LINQ (Language-Integrated Query) a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] k vygenerování souboru XML ze souboru hodnot oddělených čárkami (CSV).  
   
 ## <a name="example"></a>Příklad  
- Následující kód provede [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotaz na pole řetězců.  
+ Následující kód provede dotaz LINQ na poli řetězců.  
   
- Použije dotaz `let` klauzule pro každý řetězec rozdělit do pole polí.  
+ Dotaz používá klauzuli `let` pro rozdělení každého řetězce do pole polí.  
   
 ```csharp  
 // Create the text file.  
@@ -48,7 +48,7 @@ XElement cust = new XElement("Root",
 Console.WriteLine(cust);  
 ```  
   
- Tento kód vytvoří následující výstup:  
+ Výsledkem tohoto kódu je následující výstup:  
   
 ```xml  
 <Root>  

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Visual Basic code, walkthroughs
 - walkthroughs [Visual Basic]
 ms.assetid: e4e1f849-e1ce-4cf7-8483-d9b4c4887a8e
-ms.openlocfilehash: a6e45e31e2678ce05dc0f637ed1121b54d8d6cbb
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 76f9b428bc5f613296e24d893f49f124bb13c089
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74352833"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636039"
 ---
 # <a name="visual-basic-language-walkthroughs"></a>Návody pro jazyk Visual Basic
 
@@ -35,7 +35,7 @@ Návody poskytují podrobné pokyny pro běžné scénáře, díky kterým je do
  Popisuje, jak deklarovat třídu a její pole, vlastnosti, metody a události.
 
 - [Zápis dotazů v Visual Basic](programming-guide/concepts/linq/walkthrough-writing-queries.md)  
- Ukazuje, jak lze použít funkce jazyka Visual Basic k zápisu [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] výrazů dotazů.
+ Ukazuje, jak lze použít funkce jazyka Visual Basic k psaní výrazů LINQ (Language-Integrated Query).
 
 - [Implementace IEnumerable (Of T) v Visual Basic](programming-guide/language-features/control-flow/walkthrough-implementing-ienumerable-of-t.md)  
  Ukazuje, jak vytvořit třídu, která implementuje rozhraní `IEnumerable(Of String)` a třídu, která implementuje rozhraní `IEnumerator(Of String)` pro čtení textového souboru v jednom řádku.

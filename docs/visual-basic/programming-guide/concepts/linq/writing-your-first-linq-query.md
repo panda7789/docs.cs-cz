@@ -1,25 +1,25 @@
 ---
-title: Napište svůj první dotaz LINQ
+title: Vytvoření prvního dotazu v jazyce LINQ
 ms.date: 07/20/2015
 helpviewer_keywords:
 - queries [LINQ in Visual Basic], writing
 - LINQ queries [Visual Basic]
 - LINQ [Visual Basic], writing queries
 ms.assetid: 4affb732-3e9b-4479-aa31-1f9bd8183cbe
-ms.openlocfilehash: a9fe4241972815a04ec9c6a51a45760d72a8bbb2
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: addf35afa2a4c88faf73ebc3d60fbcf9c4db1518
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349337"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636702"
 ---
 # <a name="writing-your-first-linq-query-visual-basic"></a>Napište svůj první dotaz LINQ (Visual Basic)
 *Dotaz* je výraz, který načítá data ze zdroje dat. Dotazy jsou vyjádřeny ve vyhrazeném dotazovacím jazyce. V průběhu času byly vyvinuty různé jazyky pro různé typy zdrojů dat, například SQL pro relační databáze a XQuery pro XML. To umožňuje vývojářům aplikací zjistit nový dotazovací jazyk pro každý typ zdroje dat nebo formátu dat, který je podporovaný.  
   
- [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] zjednodušuje situaci tím, že nabízí jednotný model pro práci s daty napříč různými druhy datových zdrojů a formátů. V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]m dotazu vždy pracujete s objekty. Použijete stejné základní vzory kódování pro dotazování a transformaci dat v dokumentech XML, databázích SQL, ADO.NET datových sadách a entitách, .NET Framework kolekcích a jakémkoli jiném zdroji nebo formátu, pro který je poskytovatel [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] k dispozici. Tento dokument popisuje tři fáze vytváření a používání základních dotazů [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)].  
+ LINQ (Language-Integrated Query) zjednodušuje situaci tím, že nabízí jednotný model pro práci s daty napříč různými druhy datových zdrojů a formátů. V dotazu LINQ budete vždy pracovat s objekty. Použijete stejné základní vzory kódování pro dotazování a transformaci dat v dokumentech XML, databázích SQL, ADO.NET datových sadách a entitách, .NET Framework kolekcích a jakémkoli jiném zdroji nebo formátu, pro který je poskytovatel LINQ k dispozici. Tento dokument popisuje tři fáze vytváření a používání základních dotazů LINQ.  
   
 ## <a name="three-stages-of-a-query-operation"></a>Tři fáze operace dotazu  
- [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] operací dotazů se skládá ze tří akcí:  
+ Operace dotazů LINQ se skládají ze tří akcí:  
   
 1. Získání zdroje dat nebo zdrojů.  
   
@@ -27,7 +27,7 @@ ms.locfileid: "74349337"
   
 3. Spusťte dotaz.  
   
- V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]se provedení dotazu liší od vytvoření dotazu. Nenačtete žádná data pouhým vytvořením dotazu. Tento bod je podrobněji popsán dále v tomto tématu.  
+ V LINQ je spuštění dotazu odlišné od vytvoření dotazu. Nenačtete žádná data pouhým vytvořením dotazu. Tento bod je podrobněji popsán dále v tomto tématu.  
   
  Následující příklad znázorňuje tři části operace dotazu. V příkladu se jako vhodný zdroj dat pro demonstrační účely používá pole celých čísel. Stejné koncepty se však vztahují i na jiné zdroje dat.  
   
@@ -41,11 +41,11 @@ ms.locfileid: "74349337"
  `0 2 4 6`  
   
 ## <a name="the-data-source"></a>Zdroj dat  
- Vzhledem k tomu, že zdroj dat v předchozím příkladu je pole, implicitně podporuje obecné <xref:System.Collections.Generic.IEnumerable%601> rozhraní. Je to fakt, který umožňuje použít pole jako zdroj dat pro [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotaz. Typy, které podporují <xref:System.Collections.Generic.IEnumerable%601> nebo odvozené rozhraní, jako je obecný <xref:System.Linq.IQueryable%601>, se nazývají *Queryable typy*.  
+ Vzhledem k tomu, že zdroj dat v předchozím příkladu je pole, implicitně podporuje obecné <xref:System.Collections.Generic.IEnumerable%601> rozhraní. Je to fakt, který umožňuje použít pole jako zdroj dat pro dotaz LINQ. Typy, které podporují <xref:System.Collections.Generic.IEnumerable%601> nebo odvozené rozhraní, jako je obecný <xref:System.Linq.IQueryable%601>, se nazývají *Queryable typy*.  
   
- Jako implicitně Queryable typ pole nevyžaduje žádné úpravy nebo speciální zacházení, které slouží jako zdroj dat [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]. Totéž platí pro jakýkoli typ kolekce, který podporuje <xref:System.Collections.Generic.IEnumerable%601>, včetně obecných <xref:System.Collections.Generic.List%601>, <xref:System.Collections.Generic.Dictionary%602>a dalších tříd v knihovně tříd .NET Framework.  
+ Jako implicitně Queryable typ pole nevyžaduje žádné úpravy nebo speciální zacházení, které slouží jako zdroj dat LINQ. Totéž platí pro jakýkoli typ kolekce, který podporuje <xref:System.Collections.Generic.IEnumerable%601>, včetně obecných <xref:System.Collections.Generic.List%601>, <xref:System.Collections.Generic.Dictionary%602>a dalších tříd v knihovně tříd .NET Framework.  
   
- Pokud zdrojová data ještě <xref:System.Collections.Generic.IEnumerable%601>neimplementují, je nutné, aby poskytovatel [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] implementoval funkce *standardních operátorů dotazů* pro daný zdroj dat. Například [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] zpracovává práci dokumentu XML do Queryable <xref:System.Xml.Linq.XElement> typu, jak je znázorněno v následujícím příkladu. Další informace o standardních operátorech dotazu najdete v tématu [Přehled standardních operátorů dotazů (Visual Basic)](standard-query-operators-overview.md).  
+ Pokud zdrojová data ještě <xref:System.Collections.Generic.IEnumerable%601>neimplementují, je k implementaci funkcí *standardních operátorů dotazu* pro daný zdroj dat nutný poskytovatel LINQ. Například [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] zpracovává práci dokumentu XML do Queryable <xref:System.Xml.Linq.XElement> typu, jak je znázorněno v následujícím příkladu. Další informace o standardních operátorech dotazu najdete v tématu [Přehled standardních operátorů dotazů (Visual Basic)](standard-query-operators-overview.md).  
   
  [!code-vb[VbLINQFirstQuery#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#2)]  
   
@@ -57,10 +57,10 @@ Dim db As New DataContext("C:\Northwind\Northwnd.mdf")
 Dim customers As Table(Of Customer) = db.GetTable(Of Customer)  
 ```  
   
- Další informace o tom, jak vytvořit konkrétní typy zdrojů dat, najdete v dokumentaci pro různé poskytovatele [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]. (Seznam těchto zprostředkovatelů naleznete v tématu [LINQ (jazykově integrovaný dotaz)](../../../../visual-basic/programming-guide/concepts/linq/index.md).) Základní pravidlo je jednoduché: [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zdroj dat je libovolný objekt, který podporuje obecné rozhraní <xref:System.Collections.Generic.IEnumerable%601>, nebo rozhraní, které z něj dědí.  
+ Další informace o tom, jak vytvořit konkrétní typy zdrojů dat, naleznete v dokumentaci pro různé zprostředkovatele LINQ. (Seznam těchto zprostředkovatelů naleznete v tématu [LINQ (jazykově integrovaný dotaz)](../../../../visual-basic/programming-guide/concepts/linq/index.md).) Základní pravidlo je jednoduché: zdroj dat LINQ je libovolný objekt, který podporuje obecné rozhraní <xref:System.Collections.Generic.IEnumerable%601>, nebo rozhraní, které z něj dědí.  
   
 > [!NOTE]
-> Typy jako <xref:System.Collections.ArrayList> podporující neobecné <xref:System.Collections.IEnumerable> rozhraní lze také použít jako [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zdroje dat. Příklad, který používá <xref:System.Collections.ArrayList>, naleznete v tématu [How to: Query objektu ArrayList with LINQ (Visual Basic)](how-to-query-an-arraylist-with-linq.md).  
+> Typy jako <xref:System.Collections.ArrayList> podporující neobecné <xref:System.Collections.IEnumerable> rozhraní lze také použít jako zdroje dat LINQ. Příklad, který používá <xref:System.Collections.ArrayList>, naleznete v tématu [How to: Query objektu ArrayList with LINQ (Visual Basic)](how-to-query-an-arraylist-with-linq.md).  
   
 ## <a name="the-query"></a>Dotaz  
  V dotazu určíte, jaké informace chcete načíst ze zdroje dat nebo zdrojů. Máte také možnost určit, jak se tyto informace mají seřadit, seskupit nebo strukturovat před tím, než se vrátí. Pokud chcete povolit vytváření dotazů, Visual Basic zahrnul do jazyka novou syntaxi dotazu.  
@@ -69,7 +69,7 @@ Dim customers As Table(Of Customer) = db.GetTable(Of Customer)
   
  [!code-vb[VbLINQFirstQuery#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#1)]  
   
- Výraz dotazu obsahuje tři klauzule: `From`, `Where`a `Select`. Konkrétní funkce a účel každé klauzule dotazového výrazu jsou popsány v tématu [základní operace dotazů (Visual Basic)](basic-query-operations.md). Další informace najdete v tématu [dotazy](../../../../visual-basic/language-reference/queries/index.md). Všimněte si, že v [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]je definice dotazu často uložená v proměnné a provede se později. Proměnná dotazu, například `evensQuery` v předchozím příkladu, musí být typu Queryable. Typ `evensQuery` je `IEnumerable(Of Integer)`přiřazený kompilátorem pomocí odvození místního typu.  
+ Výraz dotazu obsahuje tři klauzule: `From`, `Where`a `Select`. Konkrétní funkce a účel každé klauzule dotazového výrazu jsou popsány v tématu [základní operace dotazů (Visual Basic)](basic-query-operations.md). Další informace najdete v tématu [dotazy](../../../../visual-basic/language-reference/queries/index.md). Všimněte si, že v LINQ je definice dotazu často uložená v proměnné a provede se později. Proměnná dotazu, například `evensQuery` v předchozím příkladu, musí být typu Queryable. Typ `evensQuery` je `IEnumerable(Of Integer)`přiřazený kompilátorem pomocí odvození místního typu.  
   
  Je důležité si uvědomit, že proměnná dotazu sám neprovede žádnou akci a nevrátí žádná data. Ukládá pouze definici dotazu. V předchozím příkladu je to smyčka `For Each`, která spouští dotaz.  
   
@@ -77,7 +77,7 @@ Dim customers As Table(Of Customer) = db.GetTable(Of Customer)
  Provádění dotazů je oddělené od vytvoření dotazu. Vytvoření dotazu definuje dotaz, ale provádění je aktivováno jiným mechanismem. Dotaz může být proveden hned po definování (*okamžité provedení*), nebo může být definice uložena a dotaz může být proveden později (*odložené spuštění*).  
   
 ### <a name="deferred-execution"></a>Odložené provedení  
- Typický dotaz [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] se podobá v předchozím příkladu, ve kterém je `evensQuery` definována. Vytvoří dotaz, ale nespustí ho hned. Místo toho je definice dotazu uložena v proměnné dotazu `evensQuery`. Dotaz spouštíte později, obvykle pomocí `For Each` smyčky, která vrací sekvenci hodnot, nebo použitím standardního operátoru dotazu, jako je například `Count` nebo `Max`. Tento proces se označuje jako *odložené provádění*.  
+ Typický dotaz LINQ se podobá v předchozím příkladu, ve kterém je definována `evensQuery`. Vytvoří dotaz, ale nespustí ho hned. Místo toho je definice dotazu uložena v proměnné dotazu `evensQuery`. Dotaz spouštíte později, obvykle pomocí `For Each` smyčky, která vrací sekvenci hodnot, nebo použitím standardního operátoru dotazu, jako je například `Count` nebo `Max`. Tento proces se označuje jako *odložené provádění*.  
   
  [!code-vb[VbLINQFirstQuery#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQFirstQuery/VB/Class1.vb#7)]  
   

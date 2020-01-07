@@ -1,6 +1,6 @@
 ---
-title: Postup nastavení proměnných prostředí pro příkazový řádek sady Visual Studio
-ms.date: 09/29/2017
+title: Jak nastavit proměnné prostředí pro příkazový řádek sady Visual Studio
+ms.date: 12/20/2019
 f1_keywords:
 - cs.build.commandline
 helpviewer_keywords:
@@ -15,27 +15,27 @@ helpviewer_keywords:
 - Visual C# compiler, enabling
 - compiling source code, from command line
 ms.assetid: 7ec09480-5612-4f6a-8d00-ad90ea9bca5d
-ms.openlocfilehash: 3b69a92d28663bbbd34245435a69aea80d20fdc9
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 99e2a837877494dd4c7e0106047bce3cc39a9282
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73972833"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75342368"
 ---
-# <a name="how-to-set-environment-variables-for-the-visual-studio-command-line"></a>Postup nastavení proměnných prostředí pro příkazový řádek sady Visual Studio
+# <a name="how-to-set-environment-variables-for-the-visual-studio-command-line"></a>Jak nastavit proměnné prostředí pro příkazový řádek sady Visual Studio
 
 Soubor VsDevCmd. bat nastaví příslušné proměnné prostředí pro povolení sestavení příkazového řádku.
 
 > [!NOTE]
-> Soubor VsDevCmd. bat je nový soubor dodávaný se sadou Visual Studio 2017. Visual Studio 2015 a starší verze používaly VSVARS32. bat pro stejný účel. Tento soubor byl uložen ve složce \Program Files\Microsoft Visual Studio\\*verze*\Common7\Tools nebo Program Files (x86) \Microsoft visual Studio\\*verze*\Common7\Tools.
+> Visual Studio 2015 a starší verze používaly VSVARS32. bat, nikoli VsDevCmd. bat pro stejný účel. Tento soubor byl uložen ve složce \Program Files\Microsoft Visual Studio\\*verze*\Common7\Tools nebo Program Files (x86) \Microsoft visual Studio\\*verze*\Common7\Tools.
 
 Pokud je aktuální verze sady Visual Studio nainstalována na počítači, který má také starší verzi sady Visual Studio, neměli byste spouštět VsDevCmd. bat a VSVARS32. BAT z různých verzí ve stejném okně příkazového řádku. Místo toho byste měli spustit příkaz pro každou verzi ve vlastním okně.
 
 ### <a name="to-run-vsdevcmdbat"></a>Spuštění VsDevCmd. BAT
 
-1. V nabídce **Start** otevřete **Developer Command Prompt pro vs 2017**.  Je ve složce **Visual Studio 2017** .
+1. V nabídce **Start** otevřete **Developer Command Prompt pro vs 2019**.  Je ve složce **Visual Studio 2019** .
 
-2. Přejděte do složky \Program Files\Microsoft Visual Studio\\*verze*\\*nabídce*\Common7\Tools nebo \Program Files (x86) \Microsoft visual Studio\\*verze*\\*Nabídka*\Common7\Tools podadresář instalace.  (*Verze* je *2017* pro aktuální verzi. *Nabídka* je jedním z firem *Enterprise*, *Professional* nebo *Community*.)
+2. Přejděte do složky \Program Files\Microsoft Visual Studio\\*verze*\\*nabídce*\Common7\Tools nebo \Program Files (x86) \Microsoft visual Studio\\*verze*\\*Nabídka*\Common7\Tools podadresář instalace.  (*Verze* je *2019* pro aktuální verzi. *Nabídka* je jedním z firem *Enterprise*, *Professional* nebo *Community*.)
 
 3. Spusťte VsDevCmd. bat zadáním **VsDevCmd**.
 

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Office programming [C#]
 - Office programming [Visual Basic]
 ms.assetid: 519cff31-f80b-4f0e-a56b-26358d0f8c51
-ms.openlocfilehash: d4a2562324259bda0bab523849449d584736b2ae
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 6c27442cb5c0c4172f503c945849e47560c2b33d
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423187"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635350"
 ---
 # <a name="walkthrough-office-programming-c-and-visual-basic"></a>Postupy: Programování pro Office (C# a Visual Basic)
 
@@ -38,7 +38,7 @@ Abyste mohli dokončit tento postup, musíte mít v počítači nainstalovanou a
 
 3. V podokně **Nainstalované šablony** rozbalte **Visual Basic** nebo **C#vizuál**, rozbalte **Office**a potom klikněte na rok verze produktu Office.
 
-4. V podokně **šablony** klikněte na možnost **Excel \<version > doplňku**.
+4. V podokně **šablony** klikněte na možnost **Excel \<verze > doplňku**.
 
 5. Podívejte se na horní část podokna **šablony** , abyste se ujistili, že se v poli **cílová architektura** zobrazí **.NET Framework 4**nebo novější verze.
 
@@ -52,7 +52,7 @@ Abyste mohli dokončit tento postup, musíte mít v počítači nainstalovanou a
 
 1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na název projektu a pak klikněte na **Přidat odkaz**. Zobrazí se dialogové okno **Přidat odkaz** .
 
-2. Na kartě **sestavení** vyberte **Microsoft. Office. Interop. Excel**, verze `<version>.0.0.0` (pro klíč k číslům verze produktu Office, viz [verze Microsoft](https://en.wikipedia.org/wiki/Microsoft_Office#Versions)), v seznamu **název součásti** a pak podržte klávesu CTRL a Vyberte **Microsoft. Office. Interop. Word**, `version <version>.0.0.0`. Pokud nevidíte sestavení, možná bude nutné zajistit, aby byly nainstalovány a zobrazovány (viz [Postup: instalace primárních sestavení vzájemné spolupráce pro systém Office](/visualstudio/vsto/how-to-install-office-primary-interop-assemblies)).
+2. Na kartě **sestavení** vyberte **Microsoft. Office. Interop. Excel**, verze `<version>.0.0.0` (pro klíč k číslům verze produktu Office, viz [verze Microsoft](https://en.wikipedia.org/wiki/Microsoft_Office#Versions)), v seznamu **název součásti** a pak stiskněte klávesu CTRL a vyberte **Microsoft. Office. Interop. Word**, `version <version>.0.0.0`. Pokud nevidíte sestavení, možná bude nutné zajistit, aby byly nainstalovány a zobrazovány (viz [Postup: instalace primárních sestavení vzájemné spolupráce pro systém Office](/visualstudio/vsto/how-to-install-office-primary-interop-assemblies)).
 
 3. Klikněte na tlačítko **OK**.
 
@@ -68,7 +68,7 @@ Abyste mohli dokončit tento postup, musíte mít v počítači nainstalovanou a
 
 ### <a name="to-create-a-list-of-bank-accounts"></a>Vytvoření seznamu bankovních účtů
 
-1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na název projektu, klikněte na **Přidat**a potom klikněte na **Třída**. Pojmenujte třídu Account. vb, pokud používáte Visual Basic nebo Account.cs, pokud používáte C#. Klikněte na tlačítko **Přidat**.
+1. V **Průzkumník řešení**klikněte pravým tlačítkem myši na název projektu, klikněte na **Přidat**a potom klikněte na **Třída**. Pojmenujte třídu Account. vb, pokud používáte Visual Basic nebo Account.cs, pokud používáte C#. Klikněte na tlačítko **Add** (Přidat).
 
 2. Nahraďte definici `Account` třídy následujícím kódem. Definice tříd používají *automaticky implementované vlastnosti*. Další informace najdete v tématu věnovaném [automaticky implementovaným vlastnostem](../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md).
 
@@ -106,7 +106,7 @@ Abyste mohli dokončit tento postup, musíte mít v počítači nainstalovanou a
 
          Nemůžete vytvořit indexované vlastnosti, které vlastníte. Funkce podporuje jenom spotřebu stávajících indexovaných vlastností.
 
-         Další informace najdete v tématu [Postupy: Použití indexovaných vlastností při programování zprostředkovatele komunikace s objekty COM](./how-to-use-indexed-properties-in-com-interop-rogramming.md).
+         Další informace najdete v tématu [Použití indexovaných vlastností v programování zprostředkovatele komunikace s objekty COM](./how-to-use-indexed-properties-in-com-interop-rogramming.md).
 
 2. Přidejte následující kód na konec `DisplayInExcel` a upravte šířku sloupců tak, aby odpovídaly obsahu.
 
@@ -114,13 +114,13 @@ Abyste mohli dokončit tento postup, musíte mít v počítači nainstalovanou a
 
      [!code-vb[csOfficeWalkthrough#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/csofficewalkthrough/vb/thisaddin.vb#7)]
 
-     Tyto doplňky ukazují další funkci v C#systému: zpracovávání `Object` hodnot vrácených hostiteli com, jako je například sada Office, jako kdyby byly typu [dynamické](../../language-reference/builtin-types/reference-types.md). K tomu dochází automaticky při **Vložení typů spolupráce** do výchozí hodnoty, `True` nebo ekvivalentní, pokud je na sestavení odkazováno pomocí možnosti kompilátoru [-Link](../../language-reference/compiler-options/link-compiler-option.md) . Typ `dynamic` umožňuje pozdní vazbu, která je již k dispozici v Visual Basic a zabraňuje explicitnímu přetypování vyžadovanému v C# 3,0 a starších verzích jazyka.
+     Tyto doplňky ukazují další funkci v C#systému: zpracovávání `Object` hodnot vrácených hostiteli com, jako je například sada Office, jako kdyby byly typu [dynamické](../../language-reference/builtin-types/reference-types.md). K tomu dochází automaticky při **Vložení typů spolupráce** do výchozí hodnoty, `True`nebo ekvivalentní, pokud je na sestavení odkazováno pomocí možnosti kompilátoru [-Link](../../language-reference/compiler-options/link-compiler-option.md) . Typ `dynamic` umožňuje pozdní vazbu, která je již k dispozici v Visual Basic a zabraňuje explicitnímu přetypování vyžadovanému v C# 3,0 a starších verzích jazyka.
 
      Například `excelApp.Columns[1]` vrátí `Object`a `AutoFit` je metoda [rozsahu](<xref:Microsoft.Office.Interop.Excel.Range>) aplikace Excel. Bez `dynamic`je nutné přetypování objektu vráceného `excelApp.Columns[1]` jako instance `Range` před voláním metody `AutoFit`.
 
      [!code-csharp[csOfficeWalkthrough#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csofficewalkthrough/cs/thisaddin.cs#8)]
 
-     Další informace o vkládání typů spolupráce naleznete v tématu procedury "Vyhledání odkazu PIA" a "obnovení závislosti PIA" dále v tomto tématu. Další informace o `dynamic` naleznete v tématu [dynamické](../../language-reference/builtin-types/reference-types.md) nebo [použití typu Dynamic](../types/using-type-dynamic.md).
+     Další informace o vkládání typů spolupráce naleznete v tématu procedury "Vyhledání odkazu PIA" a "obnovení závislosti PIA" dále v tomto tématu. Další informace o `dynamic`naleznete v tématu [dynamické](../../language-reference/builtin-types/reference-types.md) nebo [použití typu Dynamic](../types/using-type-dynamic.md).
 
 ### <a name="to-invoke-displayinexcel"></a>Pro vyvolání DisplayInExcel
 
@@ -140,7 +140,7 @@ Abyste mohli dokončit tento postup, musíte mít v počítači nainstalovanou a
 
      [!code-vb[csOfficeWalkthrough#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/csofficewalkthrough/vb/thisaddin.vb#10)]
 
-     Tento kód ukazuje několik nových funkcí v C#nástroji: schopnost vynechat klíčové slovo `ref` v programování com, pojmenované argumenty a volitelné argumenty. Tyto funkce již existují v Visual Basic. Metoda [PasteSpecial](<xref:Microsoft.Office.Interop.Word.Selection.PasteSpecial%2A>) má sedm parametrů, přičemž všechny jsou definovány jako volitelné referenční parametry. Pojmenované a volitelné argumenty umožňují určit parametry, ke kterým chcete získat přístup podle názvu a odeslat argumenty pouze do těchto parametrů. V tomto příkladu jsou odesílány argumenty, které označují, že by měl být vytvořen odkaz na sešit ve schránce (parametr `Link`) a zda se má odkaz zobrazit v dokumentu aplikace Word jako ikona (`DisplayAsIcon` parametru). Vizuál C# také umožňuje vynechat klíčové slovo `ref` pro tyto argumenty.
+     Tento kód ukazuje několik nových funkcí v C#nástroji: schopnost vynechat klíčové slovo `ref` v programování com, pojmenované argumenty a volitelné argumenty. Tyto funkce již existují v Visual Basic. Metoda [PasteSpecial](<xref:Microsoft.Office.Interop.Word.Selection.PasteSpecial%2A>) má sedm parametrů, přičemž všechny jsou definovány jako volitelné referenční parametry. Pojmenované a volitelné argumenty umožňují určit parametry, ke kterým chcete získat přístup podle názvu a odeslat argumenty pouze do těchto parametrů. V tomto příkladu jsou odesílány argumenty, které označují, že by měl být vytvořen odkaz na sešit ve schránce (parametr `Link`) a zda se má odkaz zobrazit v dokumentu aplikace Word jako ikona (`DisplayAsIcon`parametru). Vizuál C# také umožňuje vynechat klíčové slovo `ref` pro tyto argumenty.
 
 ### <a name="to-run-the-application"></a>Spuštění aplikace
 
@@ -154,11 +154,11 @@ Abyste mohli dokončit tento postup, musíte mít v počítači nainstalovanou a
 
 1. Spusťte aplikaci znovu, ale neklepejte na tlačítko **Vyčistit řešení**.
 
-2. Vyberte **Spustit**. Vyhledejte **Microsoft Visual Studio \<version >** a otevřete příkazový řádek pro vývojáře.
+2. Vyberte **Spustit**. Vyhledejte **Microsoft Visual Studio \<verze >** a otevřete příkazový řádek pro vývojáře.
 
 3. Do okna Developer Command Prompt pro aplikaci Visual Studio zadejte `ildasm` a potom stiskněte klávesu ENTER. Zobrazí se okno IL DASM.
 
-4. V nabídce **soubor** v okně DASM Il vyberte **soubor**  > **otevřít**. Dvakrát klikněte na **Visual Studio \<version >** a dvakrát klikněte na **projekty**. Otevřete složku pro váš projekt a vyhledejte složku bin/Debug pro *váš projekt název*. dll. Dvakrát klikněte na *název projektu*. dll. Nové okno zobrazuje atributy vašeho projektu, Kromě odkazů na jiné moduly a sestavení. Všimněte si, že obory názvů `Microsoft.Office.Interop.Excel` a `Microsoft.Office.Interop.Word` jsou zahrnuty v sestavení. Ve výchozím nastavení v aplikaci Visual Studio importuje kompilátor typy, které potřebujete, z odkazovaného PIA do sestavení.
+4. V nabídce **soubor** v okně DASM Il vyberte **soubor** > **otevřít**. Dvakrát klikněte na **Visual Studio \<verze >** a pak dvakrát klikněte na **projekty**. Otevřete složku pro váš projekt a vyhledejte složku bin/Debug pro *váš projekt název*. dll. Dvakrát klikněte na *název projektu*. dll. Nové okno zobrazuje atributy vašeho projektu, Kromě odkazů na jiné moduly a sestavení. Všimněte si, že obory názvů `Microsoft.Office.Interop.Excel` a `Microsoft.Office.Interop.Word` jsou zahrnuty v sestavení. Ve výchozím nastavení v aplikaci Visual Studio importuje kompilátor typy, které potřebujete, z odkazovaného PIA do sestavení.
 
      Další informace najdete v tématu [Postup: zobrazení obsahu sestavení](../../../standard/assembly/view-contents.md).
 
@@ -203,7 +203,7 @@ Abyste mohli dokončit tento postup, musíte mít v počítači nainstalovanou a
 - [Použití typu dynamic](../types/using-type-dynamic.md)
 - [Výrazy lambda (Visual Basic)](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)
 - [Výrazy lambda (C#)](../statements-expressions-operators/lambda-expressions.md)
-- [Postupy: Použití indexovaných vlastností při programování zprostředkovatele komunikace s objekty COM](./how-to-use-indexed-properties-in-com-interop-rogramming.md)
+- [Použití indexovaných vlastností v programování zprostředkovatele komunikace s objekty COM](./how-to-use-indexed-properties-in-com-interop-rogramming.md)
 - [Návod: Vložení informací o typu ze sestavení sady Microsoft Office v sadě Visual Studio](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ee317478(v%3dvs.120))
 - [Návod: Vložení typů ze spravovaných sestavení](../../../standard/assembly/embed-types-visual-studio.md)
 - [Návod: Vytvoření prvního doplňku VSTO pro Excel](/visualstudio/vsto/walkthrough-creating-your-first-vsto-add-in-for-excel)

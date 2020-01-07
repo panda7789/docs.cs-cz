@@ -1,5 +1,5 @@
 ---
-title: odebrat kontextové klíčové slovo - C# odkaz
+title: odebrat kontextové klíčové slovo C# – odkaz
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -7,24 +7,24 @@ f1_keywords:
 helpviewer_keywords:
 - remove event accessor [C#]
 ms.assetid: c8223426-c17b-4fe2-8406-01564cf1dd2b
-ms.openlocfilehash: b5c604cbb0fef158750b0fa487374ab293795fc7
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
-ms.translationtype: MT
+ms.openlocfilehash: 568b979c8b2e859dcfa87a3c3446132c740ff14c
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65633725"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635909"
 ---
 # <a name="remove-c-reference"></a>remove (Referenční dokumentace jazyka C#)
 
-`remove` Kontextové klíčové slovo se používá k definování přístupový objekt vlastní událost, která je volána, když kód klienta ruší registraci z vaší [události](event.md). Pokud zadáte vlastní `remove` přístupový objekt, je třeba zadat také [přidat](add.md) přistupujícího objektu.
+Klíčové slovo `remove` slouží k definování vlastního přístupového objektu události, který je vyvolán, když se kód klienta odhlásí od vaší [události](event.md). Pokud zadáte vlastní přistupující objekt `remove`, musíte také zadat přistupující objekt [Add](add.md) .
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje událost s vlastní [přidat](add.md) a `remove` přistupující objekty. Úplný příklad naleznete v tématu [jak:  Implementace událostí rozhraní](../../programming-guide/events/how-to-implement-interface-events.md).
+Následující příklad ukazuje událost s vlastními přistupujícími objekty [Add](add.md) a `remove`. Úplný příklad naleznete v tématu [jak implementovat události rozhraní](../../programming-guide/events/how-to-implement-interface-events.md).
 
  [!code-csharp[csrefKeywordsContextual#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsContextual/CS/csrefKeywordsContextual.cs#15)]
 
-Obvykle není potřeba poskytovat vlastní vlastních přístupových objektů událostí. Přístupové objekty, které jsou automaticky generovány v kompilátoru při deklaraci události postačí pro většinu scénářů.
+Většinou nemusíte poskytovat vlastní přístupové objekty vlastních událostí. Přistupující objekty, které kompilátor generuje automaticky při deklaraci události, jsou pro většinu scénářů dostačující.
 
 ## <a name="see-also"></a>Viz také:
 

@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Zobrazit argumenty příkazového řádku C# – Průvodce programováním'
+title: Postup zobrazení argumentů příkazového řádku – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - command-line arguments [C#], displaying
 ms.assetid: b8479f2d-9e05-4d38-82da-2e61246e5437
-ms.openlocfilehash: ba732930d08c74433d6ea7b38e7dc3a9fddf594c
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: MT
+ms.openlocfilehash: 3ae2f65696c6661ab4f732b604267116996162b2
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69923853"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635168"
 ---
-# <a name="how-to-display-command-line-arguments-c-programming-guide"></a>Postupy: Zobrazit argumenty příkazového řádkuC# (Průvodce programováním)
-Argumenty poskytované spustitelnému souboru na příkazovém řádku jsou přístupné prostřednictvím volitelného parametru `Main`. Argumenty jsou k dispozici ve formě pole řetězců. Každý prvek pole obsahuje jeden argument. Odeberou se prázdné místo mezi argumenty. Například zvažte tyto vyvolání příkazového řádku fiktivního spustitelného souboru:  
+# <a name="how-to-display-command-line-arguments-c-programming-guide"></a>Postup zobrazení argumentů příkazového řádku (C# Průvodce programováním)
+Argumenty poskytované spustitelnému souboru na příkazovém řádku jsou přístupné prostřednictvím volitelného parametru pro `Main`. Argumenty jsou k dispozici ve formě pole řetězců. Každý prvek pole obsahuje jeden argument. Odeberou se prázdné místo mezi argumenty. Například zvažte tyto vyvolání příkazového řádku fiktivního spustitelného souboru:  
   
 |Vstup na příkazovém řádku|Pole řetězců předaných do Main|  
 |----------------------------|-------------------------------------|  

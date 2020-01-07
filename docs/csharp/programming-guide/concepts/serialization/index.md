@@ -1,79 +1,91 @@
 ---
 title: Serializace (C#)
-ms.date: 04/26/2018
-ms.openlocfilehash: 638fdbd31912ffeb284d734e1f8ce2ecd879b540
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.date: 01/02/2020
+ms.openlocfilehash: 1d2bda9022b7e43744dd8a0286eff88914cf65a3
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61680114"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635727"
 ---
 # <a name="serialization-c"></a>Serializace (C#)
 
-Serializace je proces převodu objektu do datového proudu bajtů k uložení objektu nebo přenést na paměti, databázi nebo souboru. Jejich hlavním účelem je pro uložení stavu objektu, aby bylo možné ho v případě potřeby znovu vytvořit. Reverzní proces se nazývá deserializace.
+Serializace je proces převodu objektu na datový proud bajtů pro uložení objektu nebo jeho odeslání do paměti, databáze nebo souboru. Hlavním účelem je uložit stav objektu, aby bylo možné ho v případě potřeby znovu vytvořit. Reverzní proces se nazývá deserializace.
 
-## <a name="how-serialization-works"></a>Principy serializace
+## <a name="how-serialization-works"></a>Princip serializace
 
 Tento obrázek ukazuje celkový proces serializace:
 
-![Obrázek serializace](./media/index/serialization-process.gif)
+![Grafika serializace](./media/index/serialization-process.gif)
 
-Je objekt serializován do datového proudu, který nese nejen data, ale informace o typu objektu, například jeho název verze, jazykovou verzi a sestavení. Z tohoto datového proudu mohou být uloženy v databázi, soubor nebo paměti.
+Objekt je serializován do datového proudu, který data přenáší. Datový proud může obsahovat také informace o typu objektu, jako je jeho verze, jazyková verze a název sestavení. Z tohoto datového proudu může být objekt uložen v databázi, souboru nebo paměti.
 
-### <a name="uses-for-serialization"></a>Možnosti použití serializace
+### <a name="uses-for-serialization"></a>Použití pro serializaci
 
-Serializace umožňuje vývojářům uložit stav objektu a znovu ho podle potřeby, poskytují úložiště pro objekty, stejně jako data systému exchange. Prostřednictvím serializace, Vývojář můžete provádět akce, jako je odesílání objektu k vzdálené aplikaci prostřednictvím webové služby, předávání objektů z jedné domény, předávání objektů přes bránu firewall jako řetězec XML nebo zabezpečení nebo informace o uživateli napříč aplikacemi.
+Serializace umožňuje vývojářům uložit stav objektu a v případě potřeby ho vytvořit znovu, což poskytuje úložiště objektů i výměnu dat. Pomocí serializace může vývojář provádět následující akce:
 
-### <a name="making-an-object-serializable"></a>Umožnění serializace objektu
+* Odeslání objektu do vzdálené aplikace pomocí webové služby
+* Předání objektu z jedné domény do druhé
+* Předání objektu přes bránu firewall jako řetězce JSON nebo XML
+* Údržba informací o zabezpečení nebo specifických pro uživatele napříč aplikacemi
 
-K serializaci objektu, je nutné objekt, který má být serializován, stream tak, aby obsahovala serializovaný objekt a s <xref:System.Runtime.Serialization.Formatter>. <xref:System.Runtime.Serialization> obsahuje třídy, které jsou potřebné pro serializaci a deserializaci objektů.
+## <a name="json-serialization"></a>Serializace JSON
 
-Použít <xref:System.SerializableAttribute> atribut typu k označení, že lze serializovat instance tohoto typu. Výjimka je vyvolána, pokud při pokusu o serializaci, ale typ nemá <xref:System.SerializableAttribute> atribut.
+Obor názvů <xref:System.Text.Json> obsahuje třídy pro serializaci a deserializaci JavaScript Object Notation (JSON). JSON je otevřený standard, který se běžně používá pro sdílení dat na celém webu.
 
-Pokud nechcete, aby pole v rámci vaší třídě může být serializovatelný, použije <xref:System.NonSerializedAttribute> atribut. Obsahuje-li pole serializovatelného typu ukazatel, popisovač nebo některé datová struktura, která je specifická pro konkrétní prostředí a pole nemůže být rekonstituován smysluplně v jiném prostředí, můžete chtít provést neserializovatelné.
+Serializace JSON serializace veřejné vlastnosti objektu do řetězce, bajtového pole nebo datového proudu, který odpovídá [specifikaci JSON specifikace RFC 8259](https://tools.ietf.org/html/rfc8259). Chcete-li řídit způsob, jakým <xref:System.Text.Json.JsonSerializer> serializace nebo deserializace instance třídy:
 
-Pokud serializovaná třídy obsahuje odkazy na objekty jiné třídy, které jsou označeny <xref:System.SerializableAttribute>, tyto objekty se také serializovat.
+* Použití objektu <xref:System.Text.Json.JsonSerializerOptions>
+* Použití atributů z oboru názvů <xref:System.Text.Json.Serialization> na třídy nebo vlastnosti
+* [Implementace vlastních převaděčů](../../../../standard/serialization/system-text-json-converters-how-to.md)
 
-## <a name="binary-and-xml-serialization"></a>Binární mapování a serializace XML
+## <a name="binary-and-xml-serialization"></a>Binární a XML serializace
 
-Můžete použít nebo binární serializace XML. Binární serializace, všichni členové serializují dokonce členové, které jsou jen pro čtení, a výkon je zvýšen. Serializace XML obsahuje kód lépe čitelný a větší pružnost využití pro zajištění spolupráce a sdílení objektu.
+Obor názvů <xref:System.Runtime.Serialization> obsahuje třídy pro binární serializaci a serializaci XML a deserializaci.
 
-### <a name="binary-serialization"></a>Binární serializace
+Binární serializace používá binární kódování pro vytváření kompaktní serializace pro použití, jako je úložiště nebo síťové datové proudy založené na soketu. V binární serializaci jsou serializováni všichni členové, dokonce i členové, kteří jsou jen pro čtení, a výkon je vylepšen. 
 
-Binární serializace používá k vytvoření compact serializace pro použití jako úložiště nebo síťové sokety datové proudy binární kódování.
+Serializace XML serializace veřejné pole a vlastnosti objektu nebo parametry a návratové hodnoty metod do datového proudu XML, který odpovídá konkrétnímu dokumentu XSD (XML Schema Definition Language). Serializace XML má za následek třídy silného typu s veřejnými vlastnostmi a poli, které jsou převedeny na XML. <xref:System.Xml.Serialization> obsahuje třídy pro serializaci a deserializaci kódu XML. Můžete použít atributy na třídy a členy třídy pro řízení způsobu, jakým <xref:System.Xml.Serialization.XmlSerializer> serializace nebo deserializace instance třídy.
 
-### <a name="xml-serialization"></a>serializace XML
+### <a name="making-an-object-serializable"></a>Vytvoření objektu, který je serializovatelný
 
-Serializace XML serializuje veřejné polí a vlastností objektu, nebo parametry a návratovými hodnotami metod do datový proud XML, který odpovídá určitého dokumentu schématu XML definice jazyk (XSD). Výsledky serializace XML v silného typu třídy s veřejné vlastnosti a pole, které jsou převedeny na XML. <xref:System.Xml.Serialization> obsahuje třídy, které jsou potřebné pro serializaci a deserializaci XML.
+Pro binární nebo XML serializaci budete potřebovat:
 
-Použití atributů na třídy a třídy členy lze řídit způsob, jakým <xref:System.Xml.Serialization.XmlSerializer> serializuje a deserializuje instance třídy.
+* Objekt, který se má serializovat
+* Datový proud, který obsahuje serializovaný objekt
+* Instance <xref:System.Runtime.Serialization.Formatter?displayProperty=fullName>
 
-## <a name="basic-and-custom-serialization"></a>Základní a vlastní serializace
+Použijte atribut <xref:System.SerializableAttribute> pro typ k označení toho, že instance typu mohou být serializovány. Pokud se pokusíte serializovat, ale typ nemá atribut <xref:System.SerializableAttribute>, je vyvolána výjimka.
 
-Serializace lze provést dvěma způsoby, základní a vlastní. Základní serializace rozhraní .NET Framework používá k serializaci objektu automaticky.
+Chcete-li zabránit serializaci pole, použijte atribut <xref:System.NonSerializedAttribute>. Pokud pole serializovatelný typ obsahuje ukazatel, popisovač nebo jinou strukturu dat, která je specifická pro konkrétní prostředí, a pole nemůže být smysluplně reustaveno v jiném prostředí, pak pravděpodobně budete chtít provést neserializaci.
 
-### <a name="basic-serialization"></a>Základní serializace
+Pokud serializovaná třída obsahuje odkazy na objekty jiných tříd, které jsou označeny <xref:System.SerializableAttribute>, budou tyto objekty také serializovány.
 
-Jediným požadavkem v základní serializace je, že objekt má <xref:System.SerializableAttribute> atribut. <xref:System.NonSerializedAttribute> Je možné zabránit serializována konkrétních polí.
+### <a name="basic-and-custom-serialization"></a>Základní a vlastní serializace
 
-Pokud používáte základní serializace, Správa verzí objektů může způsobovat problémy. Vlastní serializace byste použili, když jsou důležité, Správa verzí – potíže. Základní serializace je nejjednodušší způsob, jak provést serializace, ale neposkytuje velkou kontrolu nad tímto procesem.
+Binární a XML serializace lze provádět dvěma způsoby, Basic a Custom.
 
-### <a name="custom-serialization"></a>Vlastní serializace
+Základní serializace používá .NET Framework k automatickému serializaci objektu. Jediným požadavkem je, že třída má použit atribut <xref:System.SerializableAttribute>. <xref:System.NonSerializedAttribute> lze použít k udržení serializace konkrétních polí.
 
-Ve vlastní serializace je zadat přesně objektů, které bude serializována a jak provést. Musí být třída označena <xref:System.SerializableAttribute> a implementovat <xref:System.Runtime.Serialization.ISerializable> rozhraní.
+Když použijete základní serializaci, může vytváření verzí objektů způsobovat problémy. Pokud jsou důležité problémy se správou verzí, použijte vlastní serializaci. Základní serializace představuje nejjednodušší způsob, jak provést serializaci, ale neposkytuje velkou kontrolu nad procesem.
 
-Pokud chcete, aby váš objekt mohl deserializovat vlastní způsobem, je nutné použít vlastního konstruktoru.
+Ve vlastní serializaci můžete přesně určit, které objekty budou serializovány a jak budou provedeny. Třída musí být označena <xref:System.SerializableAttribute> a implementovat rozhraní <xref:System.Runtime.Serialization.ISerializable>. Pokud chcete, aby byl objekt reserializován vlastním způsobem, použijte vlastní konstruktor.
 
 ## <a name="designer-serialization"></a>Serializace návrháře
 
-Serializace návrháře je zvláštní forma serializace, která zahrnuje druh objektu trvalost spojené s vývojovými nástroji. Návrháře serializace je proces převodu grafu objektu do zdrojového souboru, který lze později obnovit grafu objektů. Zdrojový soubor může obsahovat kód, značek nebo dokonce i informace o tabulce SQL.
+Serializace návrháře je speciální forma serializace, která zahrnuje druh trvalosti objektů přidružených k vývojářským nástrojům. Serializace návrháře je proces převodu objektu grafu na zdrojový soubor, který lze později použít k obnovení grafu objektu. Zdrojový soubor může obsahovat kód, značku nebo dokonce informace o tabulce SQL.
 
-## <a name="BKMK_RelatedTopics"></a> Související témata a příklady  
-[Návod: Uchování objektu v sadě Visual Studio (C#)](walkthrough-persisting-an-object-in-visual-studio.md)  
-Ukazuje, jak serializace může být použita k uchování dat objektu mezi instancemi, umožňuje uložení hodnot a načíst je dalším je vytvořena instance objektu.
+## <a name="BKMK_RelatedTopics"></a>Související témata a příklady  
 
-[Postupy: Čtení dat objektů ze souboru XML (C#)](how-to-read-object-data-from-an-xml-file.md)  
- Znázorňuje způsob čtení dat objektů, které se předtím zapsala do souboru XML pomocí <xref:System.Xml.Serialization.XmlSerializer> třídy.
+[Přehled System. text. JSON](../../../../standard/serialization/system-text-json-overview.md) Ukazuje, jak získat knihovnu `System.Text.Json`.
 
-[Postupy: Zápis dat objektů do souboru XML (C#)](how-to-write-object-data-to-an-xml-file.md)  
-Ukazuje, jak zapsat objekt ze třídy do souboru XML pomocí <xref:System.Xml.Serialization.XmlSerializer> třídy.
+[Postup serializace a deserializace JSON v rozhraní .NET](../../../../standard/serialization/system-text-json-how-to.md). Ukazuje, jak číst a zapisovat data objektů do a z JSON pomocí třídy <xref:System.Text.Json.JsonSerializer>.
+
+[Návod: uchování objektu v aplikaci Visual Studio (C#)](walkthrough-persisting-an-object-in-visual-studio.md)  
+Ukazuje, jak lze použít serializaci k uchování dat objektu mezi instancemi, což umožňuje ukládat hodnoty a načíst je při příštím vytvoření instance objektu.
+
+[Čtení dat objektů ze souboru XML (C#)](how-to-read-object-data-from-an-xml-file.md)  
+Ukazuje, jak číst data objektů, která byla dříve zapsána do souboru XML pomocí třídy <xref:System.Xml.Serialization.XmlSerializer>.
+
+[Zápis dat objektů do souboru XML (C#)](how-to-write-object-data-to-an-xml-file.md)  
+Ukazuje, jak napsat objekt z třídy do souboru XML pomocí třídy <xref:System.Xml.Serialization.XmlSerializer>.

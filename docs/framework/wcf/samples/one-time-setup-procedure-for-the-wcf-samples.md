@@ -2,12 +2,12 @@
 title: Jednorázový postup nastavení pro ukázky Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: a5848ffd-3eb5-432d-812e-bd948ccb6bca
-ms.openlocfilehash: 95bba89546e6667cc36fa06a0090aa8e9570fc7e
-ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
+ms.openlocfilehash: b0f452ba7aabcaa5ea995acba1873029c67f0f5d
+ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74960134"
+ms.lasthandoff: 12/29/2019
+ms.locfileid: "75544664"
 ---
 # <a name="one-time-setup-procedure-for-the-windows-communication-foundation-samples"></a>Jednorázový postup nastavení pro ukázky Windows Communication Foundation
 
@@ -63,7 +63,7 @@ Virtuální adresář **ServiceModelSamples** se používá k sestavování a sp
     > [!NOTE]
     > Pokud tento krok není dokončený, všechny ukázky hostované službou IIS při sestavování nebudou úspěšné. Ujistěte se, že jste správně nastavili oprávnění, nebo spusťte příkazový řádek sady SDK a příkazový řádek sady Visual Studio (2012) jako správce.
 
-11. Vytvořte v počítači adresář C:\Logs.; může to očekávat několik ukázek. Ujistěte se, že příslušný účet má udělený přístup pro zápis do této složky. U systémů Windows 7, Windows Vista a Windows Server 2008 R2 je tento účet **síťovou službou**. Pro [!INCLUDE[lserver](../../../../includes/lserver-md.md)]účet je NT Authority\Network Service. Pro [!INCLUDE[wxp](../../../../includes/wxp-md.md)] a [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]je účet ASPNET.
+11. Vytvořte v počítači adresář C:\Logs.; může to očekávat několik ukázek. Ujistěte se, že příslušný účet má udělený přístup pro zápis do této složky. U systémů Windows 7, Windows Vista a Windows Server 2008 R2 je tento účet **síťovou službou**. Pro Windows Server 2008 je tento účet NT Authority\Network Service. Pro [!INCLUDE[wxp](../../../../includes/wxp-md.md)] a Windows Server 2003 je účet ASPNET.
 
 12. Spusťte soubor setupCertTool. bat. Tento soubor je umístěný ve složce \<InstallPath > \ WF_WCF_Samples \WCF\Setup\.  Tento skript provede následující úlohy:
 

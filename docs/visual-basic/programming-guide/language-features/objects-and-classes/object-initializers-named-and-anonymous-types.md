@@ -10,12 +10,12 @@ helpviewer_keywords:
 - initializers [Visual Basic]
 - named types [Visual Basic]
 ms.assetid: e2df3807-a70f-49dd-ac94-f1e07f472b1b
-ms.openlocfilehash: 20e46d7ecc206abb28240075d9ec5f764ab78d01
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: e6ffc649d7eb841c2d009b0ec1237975f46e2d2d
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346132"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636806"
 ---
 # <a name="object-initializers-named-and-anonymous-types-visual-basic"></a>Inicializátory objektů: pojmenované a anonymní typy (Visual Basic)
 Inicializátory objektů umožňují určit vlastnosti složitého objektu pomocí jediného výrazu. Lze je použít k vytvoření instancí pojmenovaných typů a anonymních typů.  
@@ -105,7 +105,7 @@ Inicializátory objektů umožňují určit vlastnosti složitého objektu pomoc
   
  Vzhledem k tomu, že název typu není k dispozici, nelze použít klauzuli `As` k deklaraci `cust13`. Jeho typ musí být odvozený. Bez použití pozdní vazby omezuje použití anonymních typů na lokální proměnné.  
   
- Anonymní typy poskytují kritickou podporu pro [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy. Další informace o použití anonymních typů v dotazech naleznete v tématu [anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md) a [Úvod do LINQ v Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md).  
+ Anonymní typy poskytují kritickou podporu pro dotazy LINQ. Další informace o použití anonymních typů v dotazech naleznete v tématu [anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md) a [Úvod do LINQ v Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md).  
   
 ### <a name="remarks-about-anonymous-types"></a>Poznámky k anonymním typům  
   

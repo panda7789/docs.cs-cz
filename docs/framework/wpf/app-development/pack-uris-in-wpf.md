@@ -9,12 +9,12 @@ helpviewer_keywords:
 - loading non-resource files
 - application management [WPF]
 ms.assetid: 43adb517-21a7-4df3-98e8-09e9cdf764c4
-ms.openlocfilehash: efaf55220a41526b8952f01b8225f8336a4e8657
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: e20053c451d12c6a8493d5d7fcfc72fe3d3d764e
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459666"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636377"
 ---
 # <a name="pack-uris-in-wpf"></a>Sbalení URI v technologii WPF
 
@@ -38,7 +38,7 @@ Identifikátory URI se navíc dají použít k identifikaci a načítání soubo
 
 - Původní lokalita aplikace.
 
-Pro zajištění konzistentního mechanismu pro identifikaci a načítání těchto typů souborů z těchto umístění [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] využívá rozšiřitelnost *schématu identifikátoru URI*. Toto téma obsahuje přehled schématu, popisuje, jak vytvořit identifikátory URI balíčku pro celou řadu scénářů, popisuje absolutní a relativní identifikátory URI a rozlišení identifikátoru URI před zobrazením způsobu použití identifikátorů URI balíčku z kódu a kódu.
+Pro zajištění konzistentního mechanismu pro identifikaci a načítání těchto typů souborů z těchto umístění WPF využívá rozšíření *schématu identifikátoru URI*. Toto téma obsahuje přehled schématu, popisuje, jak vytvořit identifikátory URI balíčku pro celou řadu scénářů, popisuje absolutní a relativní identifikátory URI a rozlišení identifikátoru URI před zobrazením způsobu použití identifikátorů URI balíčku z kódu a kódu.
 
 <a name="The_Pack_URI_Scheme"></a>
 
@@ -52,7 +52,7 @@ Pro identifikaci částí používá specifikace OPC rozšiřitelnost RFC 2396 (
 
 Schéma, které je určeno identifikátorem URI, je definováno jeho předponou; protokol HTTP, FTP a soubor jsou známé příklady. Schéma identifikátoru URI balíčku používá jako své schéma "sadu" a obsahuje dvě komponenty: autorita a cesta. Následuje formát pro identifikátor URI balíčku.
 
-*cesta* /*autority* Pack://
+*cesta*/*autority* Pack://
 
 *Autorita* určuje typ balíčku, který součást obsahuje, zatímco *cesta* určuje umístění součásti v rámci balíčku.
 
@@ -72,7 +72,7 @@ Balíčky a části jsou analogické pro aplikace a soubory, kde aplikace (balí
 
 - Lokalita se zdrojovými soubory.
 
-Pro přístup k těmto typům souborů podporuje [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] dva autority: application:///a siteoforigin:///. Autorita application:///identifikuje datové soubory aplikace, které jsou známy v době kompilace, včetně souborů prostředků a obsahu. Autorita siteoforigin:///identifikuje web se zdrojovými soubory. Rozsah jednotlivých autorit je znázorněn na následujícím obrázku.
+Pro přístup k těmto typům souborů podporuje WPF dva autority: application:///a siteoforigin:///. Autorita application:///identifikuje datové soubory aplikace, které jsou známy v době kompilace, včetně souborů prostředků a obsahu. Autorita siteoforigin:///identifikuje web se zdrojovými soubory. Rozsah jednotlivých autorit je znázorněn na následujícím obrázku.
 
 ![Diagram identifikátoru URI balíčku](./media/pack-uris-in-wpf/wpf-pack-uri-scheme.png)
 
@@ -139,7 +139,7 @@ Následující příklad ukazuje identifikátor URI balíčku pro soubor prostř
 
 `pack://application:,,,/ReferencedAssembly;v1.0.0.1;component/ResourceFile.xaml`
 
-Všimněte si, že syntaxe identifikátoru URI balíčku pro odkazované soubory prostředků sestavení se dá použít jenom s autoritou application:///. Například následující příkaz není podporován v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].
+Všimněte si, že syntaxe identifikátoru URI balíčku pro odkazované soubory prostředků sestavení se dá použít jenom s autoritou application:///. Například následující příkaz není podporován v technologii WPF.
 
 `pack://siteoforigin:,,,/SomeAssembly;component/ResourceFile.xaml`
 
@@ -184,7 +184,7 @@ Následující příklad ukazuje identifikátor URI balíčku pro [!INCLUDE[TLA2
 
 <a name="Page_Files"></a>
 
-## <a name="page-files"></a>Stránkovací soubory
+## <a name="page-files"></a>Soubory stránek
 
 Soubory XAML, které jsou konfigurovány jako MSBuild `Page` položky, jsou zkompilovány do sestavení stejným způsobem jako soubory prostředků. V důsledku toho mohou být MSBuild `Page` položky identifikovány pomocí identifikátorů URI Pack pro soubory prostředků.
 
@@ -251,7 +251,7 @@ Tento identifikátor URI absolutního balíčku může odkazovat buď na soubor 
 
 `/ResourceOrContentFile.xaml`
 
-Aby bylo možné určit typ souboru, na který odkazuje identifikátor URI balíčku, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] přeložit identifikátory URI pro soubory prostředků v místních sestaveních a souborech obsahu pomocí následujících heuristik:
+Aby bylo možné určit typ souboru, na který odkazuje identifikátor URI balíčku, rozpozná WPF identifikátory URI pro soubory prostředků v místních sestavení a souborech obsahu pomocí následujících heuristik:
 
 1. Sondujte metadata sestavení pro atribut <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute>, který se shoduje s identifikátorem URI balíčku.
 
@@ -265,7 +265,7 @@ Aby bylo možné určit typ souboru, na který odkazuje identifikátor URI balí
 
 Rozlišení identifikátoru URI se nevztahuje na identifikátory URI, které odkazují na následující:
 
-- Soubory obsahu v odkazovaných sestaveních: tyto typy souborů nejsou [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]podporovány.
+- Soubory obsahu v odkazovaných sestaveních: tyto typy souborů rozhraní WPF nepodporují.
 
 - Vložené soubory v odkazovaných sestaveních: identifikátory URI, které je identifikují, jsou jedinečné, protože zahrnují název odkazovaného sestavení a příponu `;component`.
 
@@ -277,7 +277,7 @@ Jedno zjednodušení, které umožňuje rozlišení URI balíčku, je, že kód 
 
 ## <a name="programming-with-pack-uris"></a>Programování s identifikátory URI balíčku
 
-Mnoho tříd [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] implementuje vlastnosti, které lze nastavit pomocí identifikátorů URI Pack, včetně:
+Mnoho tříd WPF implementuje vlastnosti, které lze nastavit pomocí identifikátorů URI Pack, včetně:
 
 - <xref:System.Windows.Application.StartupUri%2A?displayProperty=nameWithType>
 
@@ -397,13 +397,13 @@ Tabulka 4: identifikátory URI relativních balíčků v kódu
 
 ### <a name="common-pack-uri-scenarios"></a>Scénáře identifikátoru URI pro Common Pack
 
-V předchozích částech byly popsány postupy sestavení identifikátorů URI pro identifikaci prostředků, obsahu a umístění původních souborů. V [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]jsou tyto konstrukce používány různými způsoby a následující oddíly obsahují několik běžných použití.
+V předchozích částech byly popsány postupy sestavení identifikátorů URI pro identifikaci prostředků, obsahu a umístění původních souborů. V rámci WPF jsou tyto konstrukce používány různými způsoby a následující oddíly obsahují několik běžných použití.
 
 <a name="Specifying_the_UI_to_Show_when_an_Application_Starts"></a>
 
 #### <a name="specifying-the-ui-to-show-when-an-application-starts"></a>Určení uživatelského rozhraní, které se zobrazí při spuštění aplikace
 
-<xref:System.Windows.Application.StartupUri%2A> určuje první [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], který se má zobrazit při spuštění aplikace [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. Pro samostatné aplikace může být [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] okno, jak je znázorněno v následujícím příkladu.
+<xref:System.Windows.Application.StartupUri%2A> určuje první [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], který se má zobrazit při spuštění aplikace WPF. Pro samostatné aplikace může být [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] okno, jak je znázorněno v následujícím příkladu.
 
 [!code-xaml[PackURIOverviewSnippets#StartupUriWindow](~/samples/snippets/csharp/VS_Snippets_Wpf/PackURIOverviewSnippets/CS/Copy of App.xaml#startupuriwindow)]
 
@@ -411,7 +411,7 @@ Samostatné aplikace a aplikace prohlížeče XAML (XBAP) mohou také určit str
 
 [!code-xaml[PackURIOverviewSnippets#StartupUriPage](~/samples/snippets/csharp/VS_Snippets_Wpf/PackURIOverviewSnippets/CS/App.xaml#startupuripage)]
 
-Pokud je aplikace samostatnou aplikací a je určena Stránka s <xref:System.Windows.Application.StartupUri%2A>, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] otevře <xref:System.Windows.Navigation.NavigationWindow> pro hostování stránky. Pro XBAP se stránka zobrazuje v prohlížeči hostitele.
+Pokud je aplikace samostatnou aplikací a je určena Stránka s <xref:System.Windows.Application.StartupUri%2A>, WPF otevře <xref:System.Windows.Navigation.NavigationWindow> pro hostování stránky. Pro XBAP se stránka zobrazuje v prohlížeči hostitele.
 
 <a name="Navigating_to_a_Page"></a>
 
@@ -423,7 +423,7 @@ Následující příklad ukazuje, jak přejít na stránku.
 [!code-xaml[NavigationOverviewSnippets#HyperlinkXAML2](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/PageWithHyperlink.xaml#hyperlinkxaml2)]
 [!code-xaml[NavigationOverviewSnippets#HyperlinkXAML3](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/PageWithHyperlink.xaml#hyperlinkxaml3)]
 
-Další informace o různých způsobech navigace v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]najdete v tématu [Přehled navigace](navigation-overview.md).
+Další informace o různých způsobech navigace v WPF naleznete v tématu [Přehled navigace](navigation-overview.md).
 
 <a name="Specifying_a_Window_Icon"></a>
 
@@ -439,7 +439,7 @@ Další informace najdete v tématu <xref:System.Windows.Window.Icon%2A>.
 
 #### <a name="loading-image-audio-and-video-files"></a>Načítání obrázků, zvukových souborů a videosouborů
 
-[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] umožňuje aplikacím využívat širokou škálu typů médií, které je možné identifikovat a načíst pomocí identifikátorů URI Pack, jak je znázorněno v následujících příkladech.
+WPF umožňuje aplikacím využívat širokou škálu typů médií, které je možné identifikovat a načíst pomocí identifikátorů URI Pack, jak je znázorněno v následujících příkladech.
 
 [!code-xaml[MediaPlayerVideoSample#VideoPackURIAtSOO](~/samples/snippets/csharp/VS_Snippets_Wpf/MediaPlayerVideoSample/CS/HomePage.xaml#videopackuriatsoo)]
 
@@ -457,7 +457,7 @@ Slovníky prostředků (<xref:System.Windows.ResourceDictionary>) lze použít k
 
 [!code-xaml[ResourceDictionarySnippets#ResourceDictionaryPackURI](~/samples/snippets/csharp/VS_Snippets_Wpf/ResourceDictionarySnippets/CS/App.xaml#resourcedictionarypackuri)]
 
-Přehled motivů v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]naleznete v tématu [stylování a šablonování](../../../desktop-wpf/fundamentals/styles-templates-overview.md).
+Přehled motivů v WPF naleznete v tématu [stylování a šablonování](../../../desktop-wpf/fundamentals/styles-templates-overview.md).
 
 ## <a name="see-also"></a>Viz také:
 

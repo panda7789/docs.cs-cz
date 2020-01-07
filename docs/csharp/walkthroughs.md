@@ -6,12 +6,12 @@ helpviewer_keywords:
 - walkthroughs [Visual Studio], Visual C#
 - Visual C#, walkthroughs
 ms.assetid: 2d07b972-ef69-4676-9aef-e1784728e1ff
-ms.openlocfilehash: a997cc62b03a0d92d5ef76173981f5a9e287b13a
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: 11a58ddf246c77cf4372e940b184413054b10778
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204594"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75634921"
 ---
 # <a name="c-walkthroughs"></a>Postupy pro C#
 Návody poskytují podrobné pokyny pro běžné scénáře, díky kterým je dobré začít se zajímat o produkt nebo konkrétní oblast funkcí.  
@@ -48,7 +48,7 @@ Návody poskytují podrobné pokyny pro běžné scénáře, díky kterým je do
  Ukazuje některé běžně prováděné úkoly, jako je například přidání nebo odebrání karty v `TabControl`, ukotvení ovládacího prvku pro svůj nadřazený prvek a změna orientace ovládacího prvku `SplitContainer`.  
   
  [Zápis dotazů v C# (LINQ)](./programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
- Ukazuje funkce C# jazyka, které se používají k zápisu [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] výrazů dotazů.  
+ Ukazuje funkce C# jazyka, které se používají k zápisu výrazů dotazů LINQ.  
   
  [Manipulace s daty (C#) (LINQ to SQL)](../framework/data/adonet/sql/linq/walkthrough-manipulating-data-csharp.md)  
  Popisuje [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] scénář pro přidávání, úpravu a odstraňování dat v databázi.  
@@ -71,5 +71,5 @@ Návody poskytují podrobné pokyny pro běžné scénáře, díky kterým je do
   
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programováním v C#](./programming-guide/index.md)
+- [Průvodce programováním v jazyce C#](./programming-guide/index.md)
 - [Ukázky sady Visual Studio](/visualstudio/ide/visual-studio-ide)

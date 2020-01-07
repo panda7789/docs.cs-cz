@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - controls [WPF], listed by category
 ms.assetid: f8a1f78e-d9fa-4367-9ec6-f084577e83bb
-ms.openlocfilehash: 41cbe57f1e3711bb4e18b2b4da28c26ebbd2bc60
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 5958793015d409678b67cdc7eedcb4289f5e885c
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005704"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636208"
 ---
 # <a name="controls-by-category"></a>Řízení podle kategorie
 Ovládací prvky Windows Presentation Foundation (WPF) lze logicky seskupovat do několika kategorií. Tyto kategorie lze použít k výběru vhodného ovládacího prvku pro váš scénář tím, že vám pomohou zjistit, které ovládací prvky mají podobné vzorce nebo funkce používání.  
@@ -140,7 +140,7 @@ Ovládací prvky Windows Presentation Foundation (WPF) lze logicky seskupovat do
 - <xref:System.Windows.Controls.ToolTip>  
   
 ## <a name="documents"></a>Dokumenty  
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] zahrnuje několik specializovaných ovládacích prvků pro zobrazení dokumentů. Tyto ovládací prvky optimalizují možnosti čtení na základě scénáře cíleného uživatele.  
+ WPF obsahuje několik specializovaných ovládacích prvků pro zobrazení dokumentů. Tyto ovládací prvky optimalizují možnosti čtení na základě scénáře cíleného uživatele.  
   
 - <xref:System.Windows.Controls.DocumentViewer>  
   
@@ -161,8 +161,8 @@ Ovládací prvky Windows Presentation Foundation (WPF) lze logicky seskupovat do
   
 - <xref:System.Windows.Controls.PasswordBox>  
   
-## <a name="media"></a>Média  
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] zahrnuje integrovanou podporu pro hostování zvukového a obrazového obsahu a také [kodeky] pro nejoblíbenější formáty obrázků.  
+## <a name="media"></a>Médium  
+ WPF zahrnuje integrovanou podporu pro hostování zvukového a obrazového obsahu a také [kodeky] pro nejoblíbenější formáty obrázků.  
   
 - <xref:System.Windows.Controls.Image>  
   

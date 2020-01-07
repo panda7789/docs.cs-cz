@@ -2,112 +2,114 @@
 title: Průvodce interoperabilitou protokolů webových služeb
 ms.date: 03/30/2017
 ms.assetid: f2981678-ebdb-433d-899b-467f7df95fb2
-ms.openlocfilehash: ffa7da4c723a2cd0054f4f79dd22792a9db67068
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1b949880b3ebbaf121b79a958d17cf5708affcf3
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64648392"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636143"
 ---
 # <a name="web-services-protocols-interoperability-guide"></a>Průvodce interoperabilitou protokolů webových služeb
-Windows Communication Foundation (WCF) implementuje řadu protokoly webové služby. Mnohé z těchto protokolů zahrnout několik možností a bodů rozšiřitelnosti ponecháno na rozhodnutí implementátora. Toto téma obsahuje seznam protokoly webové služby, které implementuje WCF. Další témata v této části poskytují podrobné informace o implementaci pro každý protokol podporován.  
-  
-## <a name="web-services-protocols-implemented-by-wcf"></a>Protokoly implementované WCF webových služeb  
- WCF poskytuje podporu pro webové služby (WS) protokoly infrastruktury prostřednictvím kanálů a protokoly aplikací pomocí funkce kontrakty webových služeb. Vzájemná funkční spolupráce pro aplikační protokoly se provádí prostřednictvím jazyk pro popis schématu XML (XSD) 1.0 a Web Services Description Language (WSDL) 1.1.  
-  
- Poskytuje interoperabilitu protokoly infrastruktury WS-* specifikace. Kanály WCF poskytovat podporu pro několik WS -\* protokoly infrastruktury. Kanály WCF se konfigurují pomocí elementů vazby. Následující tabulky obsahují seznam všech WS -\* infrastruktury protokoly implementované zprostředkovatelem různé prvky vazeb WCF.  
-  
- <xref:System.ServiceModel.Channels.HttpTransportBindingElement> podporuje specifikace v následující tabulce.  
-  
-|Specifikace/dokumentu|Odkaz|  
-|-----------------------------|----------|  
-|HTTP 1.1|[RFC 2616](https://go.microsoft.com/fwlink/?LinkId=90372)|  
-|Ze SOAP 1.1 vazbu protokolu HTTP|[Simple Object Access Protocol (SOAP) 1.1](https://go.microsoft.com/fwlink/?LinkId=90520), část 7|  
-|Ze SOAP 1.2 vazbu protokolu HTTP|[Verze SOAP 1.2 – část 2: Adjuncts (Second Edition)](https://go.microsoft.com/fwlink/?LinkId=95329), část 7|  
-  
- <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> a <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> podporují požadavky v následující tabulce.  
-  
-|Specifikace/dokumentu|Odkaz|  
-|-----------------------------|----------|  
-|XML|[Extensible Markup Language (XML) 1.0 (čtvrtým vydáním)](https://go.microsoft.com/fwlink/?LinkId=15139)|  
-|PROTOKOL SOAP 1.1|[Simple Object Access Protocol (SOAP) 1.1](https://go.microsoft.com/fwlink/?LinkId=96687)|  
-|Ze SOAP 1.2 Core|[Verze SOAP 1.2 – část 1: Zasílání zpráv Framework (Second Edition)](https://go.microsoft.com/fwlink/?LinkId=94664)|  
-|WS-Addressing 2004/08|[Základní adresování (WS-Addressing) na webové služby](https://go.microsoft.com/fwlink/?LinkId=81239)|  
-|W3C webových služeb adresování Core 1.0-|[Webové služby adresování Core 1.0-](https://go.microsoft.com/fwlink/?LinkId=96688)|  
-|W3C webových služeb adresování 1.0 - vazba SOAP|[Webové služby adresování 1.0 - vazba SOAP](https://go.microsoft.com/fwlink/?LinkId=96689)|  
-|W3C webových služeb adresování 1.0 - WSDL vazby *|[Webové služby adresování 1.0 - Vazba WSDL](https://go.microsoft.com/fwlink/?LinkId=96690)|  
-|Adresování 1.0 metadat W3C webové služby|[Webové služby adresování 1.0 - metadat](https://www.w3.org/TR/ws-addr-metadata/)|  
-|Vazba WSDL SOAP1.1|[Web Services Description Language (WSDL) 1.1](https://go.microsoft.com/fwlink/?LinkId=96160)|  
-|Vazba WSDL SOAP1.2|[Rozšíření WSDL 1.1 vazbu pro protokol SOAP 1.2](https://go.microsoft.com/fwlink/?LinkId=96691)|  
-  
- <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> podporuje specifikace v následující tabulce.  
-  
-|Specifikace/dokumentu|Odkaz|  
-|-----------------------------|----------|  
-|XOP|[XML – binární optimalizované balení](https://go.microsoft.com/fwlink/?LinkId=96714)|  
-|MTOM + SOAP1.2 vazby|[Mechanismus optimalizaci přenosu zprávy protokolu SOAP](https://go.microsoft.com/fwlink/?LinkId=96713)|  
-|MTOM SOAP 1.1 vazbu|[Ze SOAP 1.1 vazbu pro MTOM 1.0](https://go.microsoft.com/fwlink/?LinkId=96712)|  
-|MTOM WS-PolicyAssertions|K publikování.|  
-  
- <xref:System.ServiceModel.Channels.SecurityBindingElement> podporuje specifikace v následující tabulce.  
-  
-|Specifikace/dokumentu|Odkaz|  
-|-----------------------------|----------|  
-|WSS: Zabezpečení zpráv SOAP 1.0|[Zabezpečení webové služby: Zabezpečení zpráv SOAP 1.0](https://go.microsoft.com/fwlink/?LinkId=94684)|  
-|WSS: Token uživatelského jména profilu 1.0|[Webové služby UsernameToken profil zabezpečení 1.0](https://go.microsoft.com/fwlink/?LinkId=95334)<br /><br /> vyžadovat Password/@Type= PasswordText (výchozí)|  
-|WSS: Token profilu X.509 1.0|[Webové služby zabezpečení X.509 certifikátu tokenu profilu](https://go.microsoft.com/fwlink/?LinkId=95335)|  
-|WSS: SAML 1.1 Token profilu 1.0|[Zabezpečení webové služby: Profil tokenu SAML](https://go.microsoft.com/fwlink/?LinkId=96693)|  
-|WSS: Zabezpečení zpráv SOAP 1.1|[Zabezpečení webové služby: Zabezpečení zpráv SOAP 1.1](https://go.microsoft.com/fwlink/?LinkId=91240)|  
-|Doplněk WSS uživatelské jméno Token Profile 1.1|[Webové služby zabezpečení UsernameToken Profile 1.1](https://go.microsoft.com/fwlink/?LinkId=95331)<br /><br /> neimplementují založené na heslech odvození klíče;<br /><br /> vyžadovat Password/@Type= PasswordText (výchozí)|  
-|WSS: X509 token Profile 1.1|[Webové služby zabezpečení X.509 certifikátu tokenu Profile 1.1](https://go.microsoft.com/fwlink/?LinkId=95332)|  
-|WSS: Token protokolu Kerberos Profile 1.1|[Webové služby Security Token protokolu Kerberos Profile 1.1](https://go.microsoft.com/fwlink/?LinkId=95333)|  
-|WSS: SAML 1.1 Token Profile 1.1|[Webové služby zabezpečení SAML Token Profile 1.1](https://go.microsoft.com/fwlink/?LinkId=96694)|  
-|WS-Secure Conversation|[Webové služby zabezpečené konverzace jazyka](https://go.microsoft.com/fwlink/?LinkId=95317)|  
-|WS-Trust 1.4|[Důvěřovat webových služeb jazyka](https://go.microsoft.com/fwlink/?LinkId=169514)|  
-|WS-SecurityPolicy 2005/07|[Webové služby zabezpečené konverzace jazyka](https://go.microsoft.com/fwlink/?LinkId=95317)<br /><br /> Ve znění chyby odeslání technického výboru OASIS WS-SX.<br /><br /> [zprávy ws-sx](https://go.microsoft.com/fwlink/?LinkId=96700)|  
-|WS-ReliableMessaging 1.1|[Protokol spolehlivého zasílání zpráv verze 1.1](../../../../docs/framework/wcf/feature-details/reliable-messaging-protocol-version-1-1.md)|  
-  
- <xref:System.ServiceModel.Channels.TransactionFlowBindingElement> podporuje specifikace v následující tabulce.  
-  
-|Specifikace/dokumentu|Odkaz|  
-|-----------------------------|----------|  
-|Koordinace WS|[Koordinace webové služby](https://go.microsoft.com/fwlink/?LinkId=95324)|  
-|WS-AtomicTransaction|[Webové služby atomické transakce](https://go.microsoft.com/fwlink/?LinkId=95323)|  
-  
- <xref:System.ServiceModel.Description.MetadataExporter>, <xref:System.ServiceModel.Description.MetadataImporter>, <xref:System.ServiceModel.Description.WsdlExporter>, <xref:System.ServiceModel.Description.WsdlImporter>, A <xref:System.ServiceModel.Description.MetadataResolver> třídy poskytují podporu pro následující specifikace metadat:  
-  
-- [XML schématu část 1: Struktury druhé vydání](https://go.microsoft.com/fwlink/?LinkId=3536)  
-  
-- [XML schématu část 2: Datové typy druhé vydání](https://go.microsoft.com/fwlink/?LinkId=40138)  
-  
-- [WSDL 1.1](https://go.microsoft.com/fwlink/?LinkId=96160)  
-  
-- [1.2 WS-Policy](https://go.microsoft.com/fwlink/?LinkId=96705)  
-  
-- [1.5 WS-Policy](https://go.microsoft.com/fwlink/?LinkId=96706)  
-  
-- [WS-PolicyAttachment 1.2](https://go.microsoft.com/fwlink/?LinkId=96707)  
-  
-- [WS-MetadataExchange 1.1](https://go.microsoft.com/fwlink/?LinkId=94868)  
-  
-- [Přenos WS Get pro načtení metadat](https://go.microsoft.com/fwlink/?LinkId=96708)  
-  
- Kromě toho jsou implementovány následující profily vzájemná funkční spolupráce mezi WCF:  
-  
-- [Basic Profile 1.1](https://go.microsoft.com/fwlink/?LinkId=69313)  
-  
-- [Simple SOAP vazby 1.0](https://go.microsoft.com/fwlink/?LinkId=96710)  
-  
-- [1.0 pracovní profil základní zabezpečení návrhu](https://go.microsoft.com/fwlink/?LinkId=96711)  
-  
+
+Windows Communication Foundation (WCF) implementuje několik protokolů webových služeb. Mnohé z těchto protokolů zahrnují řadu možností a bodů rozšíření, které jsou ponechány na uvážení implementátora. Toto téma poskytuje seznam protokolů webových služeb, které WCF implementuje. Další témata v této části poskytují podrobné informace o implementaci pro každý podporovaný protokol.
+
+## <a name="web-services-protocols-implemented-by-wcf"></a>Protokoly webových služeb implementované službou WCF
+
+Služba WCF poskytuje podporu pro protokoly infrastruktury webových služeb (WS) prostřednictvím kanálů a aplikačních protokolů webových služeb prostřednictvím funkce smlouvy. Vzájemná funkční spolupráce pro aplikační protokoly se dosahuje prostřednictvím schématu XML Description Language 1,0 (XSD) a jazyka WSDL (Web Services Description Language) 1,1.
+
+Interoperabilita protokolů infrastruktury je poskytována specifikacemi WS-*. Kanály WCF poskytují podporu pro určitý počet protokolů infrastruktury WS-\*. Kanály WCF jsou nakonfigurovány pomocí prvků vazby. Následující tabulky obsahují úplný seznam protokolů infrastruktury WS-\* implementovaných různými prvky vazby WCF.
+
+<xref:System.ServiceModel.Channels.HttpTransportBindingElement> podporuje specifikace v následující tabulce.
+
+|Specifikace/dokument|Odkaz|
+|-----------------------------|----------|
+|HTTP 1,1|[RFC 2616](https://www.rfc-editor.org/rfc/rfc2616.txt)|
+|Vazba SOAP 1,1 HTTP|[Protokol SOAP (Simple Object Access Protocol) 1,1](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/), část 7|
+|Vazba SOAP 1,2 HTTP|[SOAP verze 1,2 část 2: Adjuncts (Second Edition)](https://www.w3.org/TR/soap12-part2/), část 7|
+
+<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> a <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> podporují specifikace v následující tabulce.
+
+|Specifikace/dokument|Odkaz|
+|-----------------------------|----------|
+|XML|[Jazyk XML (eXtensible Markup Language) (XML) 1,0 (čtvrtá edice)](https://www.w3.org/TR/REC-xml/)|
+|PROTOKOL SOAP 1,1|[Protokol SOAP (Simple Object Access Protocol) 1,1](https://www.w3.org/TR/2000/NOTE-SOAP-20000508/)|
+|Jádro protokolu SOAP 1,2|[SOAP verze 1,2 část 1: architektura pro zasílání zpráv (druhá edice)](https://www.w3.org/TR/2007/REC-soap12-part1-20070427/)|
+|WS-Addressing 2004/08|[Adresování webových služeb (WS-Addressing)](https://www.w3.org/Submission/2004/SUBM-ws-addressing-20040810/)|
+|Webové služby W3C Addressing 1,0 – jádro|[Webové služby Addressing 1,0 – Core](https://www.w3.org/TR/2006/REC-ws-addr-core-20060509/)|
+|Webové služby W3C Addressing 1,0 – vazba SOAP|[Webové služby Addressing 1,0 – vazba SOAP](https://www.w3.org/TR/2006/REC-ws-addr-soap-20060509/)|
+|Webové služby W3C Addressing 1,0-Binding WSDL *|[Webové služby Addressing 1,0 – Vazba WSDL](https://www.w3.org/TR/2006/CR-ws-addr-wsdl-20060529/)|
+|Webové služby W3C Addressing 1,0 metadata|[Webové služby Addressing 1,0 – metadata](https://www.w3.org/TR/ws-addr-metadata/)|
+|Vazba WSDL SOAP 1.1|[Jazyk WSDL (Web Services Description Language) 1,1](https://www.w3.org/TR/wsdl/)|
+|Vazba WSDL SOAP 1.2|[Rozšíření vazby WSDL 1,1 pro SOAP 1,2](https://www.w3.org/Submission/wsdl11soap12/)|
+
+<xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement> podporuje specifikace v následující tabulce.
+
+|Specifikace/dokument|Odkaz|
+|-----------------------------|----------|
+|XOP|[Binární optimalizované balení XML](https://www.w3.org/TR/xop10/)|
+|Vazba MTOM + SOAP 1.2|[Mechanismus optimalizace přenosu zpráv SOAP](https://www.w3.org/TR/soap12-mtom/)|
+|Vazba MTOM SOAP 1,1|[Vazba SOAP 1,1 pro MTOM 1,0](https://www.w3.org/Submission/soap11mtom10/)|
+|MTOM WS-PolicyAssertions|[Kontrolní výraz zásad serializace MTOM (WS-MTOMPolicy)](https://www.w3.org/Submission/WS-MTOMPolicy/)|
+
+<xref:System.ServiceModel.Channels.SecurityBindingElement> podporuje specifikace v následující tabulce.
+
+|Specifikace/dokument|Odkaz|
+|-----------------------------|----------|
+|WSS: zabezpečení zpráv SOAP 1,0|[Specifikace Web Services Security: zabezpečení zprávy SOAP 1,0](https://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0.pdf)|
+|WSS: Profil tokenu uživatelského jména 1,0|[Specifikace Web Services Security UsernameToken Profile 1,0](https://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0.pdf)<br /><br /> vyžadovat Password/@Type= PasswordText (výchozí)|
+|WSS: X. 509 – profil tokenu 1,0|[Specifikace Web Services Security profil tokenu certifikátu X. 509](https://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0.pdf)|
+|WSS: Profil tokenu SAML 1,1 1,0|[Specifikace Web Services Security: Profil tokenu SAML](https://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.0.pdf)|
+|WSS: zabezpečení zpráv SOAP 1,1|[Specifikace Web Services Security: zabezpečení zprávy SOAP 1,1](https://www.oasis-open.org/committees/download.php/16790/wss-v1.1-spec-os-SOAPMessageSecurity.pdf)|
+|Token uživatelského jména WSS – profil 1,1|[Specifikace Web Services Security UsernameToken Profile 1,1](https://www.oasis-open.org/committees/download.php/16782/wss-v1.1-spec-os-UsernameTokenProfile.pdf)<br /><br /> Neimplementujte odvození klíče založené na heslech;<br /><br /> vyžadovat Password/@Type= PasswordText (výchozí)|
+|WSS: Profil tokenu x509 1,1|[Specifikace Web Services Security profil tokenu certifikátu X. 509 1,1](https://www.oasis-open.org/committees/download.php/16785/wss-v1.1-spec-os-x509TokenProfile.pdf)|
+|WSS: Profil tokenu protokolu Kerberos 1,1|[Specifikace Web Services Security profil tokenu Kerberos 1,1](https://www.oasis-open.org/committees/download.php/16788/wss-v1.1-spec-os-KerberosTokenProfile.pdf)|
+|WSS: Profil tokenu SAML 1,1 1,1|[Specifikace Web Services Security profil tokenu SAML 1,1](https://www.oasis-open.org/committees/download.php/16768/wss-v1.1-spec-os-SAMLTokenProfile.pdf)|
+|Konverzace WS-Secure|[Jazyk zabezpečené konverzace webové služby](https://specs.xmlsoap.org/ws/2005/02/sc/ws-secureconversation.pdf)|
+|WS-Trust 1,4|[Jazyk důvěryhodnosti webových služeb](https://docs.oasis-open.org/ws-sx/ws-trust/200802)|
+|WS-SecurityPolicy 2005/07|[Jazyk zabezpečené konverzace webové služby](https://specs.xmlsoap.org/ws/2005/02/sc/ws-secureconversation.pdf)<br /><br /> Jak bylo upraveno službou seznam chyb odeslané technickému výboru OASIS WS-SX.<br /><br /> [zpráva WS-SX](https://lists.oasis-open.org/archives/ws-sx/200512/msg00017.html)|
+|WS-ReliableMessaging 1,1|[Protokol spolehlivého zasílání zpráv verze 1.1](reliable-messaging-protocol-version-1-1.md)|
+
+<xref:System.ServiceModel.Channels.TransactionFlowBindingElement> podporuje specifikace v následující tabulce.
+
+|Specifikace/dokument|Odkaz|
+|-----------------------------|----------|
+|WS-koordinace|[Koordinace webových služeb](https://docs.microsoft.com/previous-versions/ms951231(v=msdn.10))|
+|WS-AtomicTransaction|[Transakce Atom webové služby](https://specs.xmlsoap.org/ws/2004/10/wsat/wsat.pdf)|
+
+Třídy <xref:System.ServiceModel.Description.MetadataExporter>, <xref:System.ServiceModel.Description.MetadataImporter>, <xref:System.ServiceModel.Description.WsdlExporter>, <xref:System.ServiceModel.Description.WsdlImporter>a <xref:System.ServiceModel.Description.MetadataResolver> poskytují podporu pro následující specifikace metadat:
+
+- [Schéma XML – část 1: struktury druhé edice](https://www.w3.org/TR/xmlschema-1/)
+
+- [Schéma XML – část 2: datové typy druhé edice](https://www.w3.org/TR/xmlschema-2/)
+
+- [WSDL 1,1](https://www.w3.org/TR/wsdl/)
+
+- [WS-Policy 1,2](https://www.w3.org/Submission/2006/SUBM-WS-Policy-20060425/)
+
+- [WS-Policy 1,5](https://www.w3.org/TR/ws-policy/)
+
+- [WS-PolicyAttachment 1,2](https://www.w3.org/Submission/2006/SUBM-WS-PolicyAttachment-20060425/)
+
+- [WS-MetadataExchange 1,1](https://specs.xmlsoap.org/ws/2004/09/mex/WS-MetadataExchange.pdf)
+
+- [WS-Transfer get pro načtení metadat](https://www.w3.org/Submission/2006/SUBM-WS-Transfer-20060315/)
+
+Kromě toho jsou v rámci WCF implementovány následující profily vzájemné spolupráce:
+
+- [Základní profil 1,1](http://www.ws-i.org/Profiles/BasicProfile-1.1-2004-08-24.html)
+
+- [Jednoduchá vazba SOAP 1,0](http://www.ws-i.org/Profiles/SimpleSoapBindingProfile-1.0-2004-08-24.html)
+
+- [Pracovní koncept základního profilu zabezpečení 1,0](http://www.ws-i.org/Profiles/BasicSecurityProfile-1.0-2006-03-29.html)
+
 ## <a name="see-also"></a>Viz také:
 
-- [Protokoly webových služeb podporované vazbami interoperability poskytnutými systémem](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md)
-- [Protokoly zasílání zpráv](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)
-- [Schéma kontraktů dat – referenční informace](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)
-- [WSDL a zásady](../../../../docs/framework/wcf/feature-details/wsdl-and-policy.md)
-- [Protokoly zabezpečení](../../../../docs/framework/wcf/feature-details/security-protocols.md)
-- [Protokol spolehlivého zasílání zpráv verze 1.0](../../../../docs/framework/wcf/feature-details/reliable-messaging-protocol-version-1-0.md)
-- [Protokol spolehlivého zasílání zpráv verze 1.1](../../../../docs/framework/wcf/feature-details/reliable-messaging-protocol-version-1-1.md)
-- [Protokoly transakcí](../../../../docs/framework/wcf/feature-details/transaction-protocols.md)
-- [Protokol kontextové výměny](../../../../docs/framework/wcf/feature-details/context-exchange-protocol.md)
+- [Protokoly webových služeb podporované vazbami interoperability poskytnutými systémem](web-services-protocols-supported-by-system-provided-interoperability-bindings.md)
+- [Protokoly zasílání zpráv](messaging-protocols.md)
+- [Schéma kontraktů dat – referenční informace](data-contract-schema-reference.md)
+- [WSDL a zásady](wsdl-and-policy.md)
+- [Protokoly zabezpečení](security-protocols.md)
+- [Protokol spolehlivého zasílání zpráv verze 1.0](reliable-messaging-protocol-version-1-0.md)
+- [Protokol spolehlivého zasílání zpráv verze 1.1](reliable-messaging-protocol-version-1-1.md)
+- [Protokoly transakcí](transaction-protocols.md)
+- [Protokol kontextové výměny](context-exchange-protocol.md)

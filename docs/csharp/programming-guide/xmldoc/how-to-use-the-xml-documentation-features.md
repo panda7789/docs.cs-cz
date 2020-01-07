@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: použití funkcí dokumentace XML – C# Průvodce programováním'
+title: Použití funkcí dokumentace XML – C# Průvodce programováním
 ms.custom: seodec18
 ms.date: 06/01/2018
 helpviewer_keywords:
 - XML documentation [C#]
 - C# language, XML documentation features
 ms.assetid: 8f33917b-9577-4c9a-818a-640dbbb0b399
-ms.openlocfilehash: 3e59783a7f306d3d2a510fe3337a4c6490dcb3e8
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
-ms.translationtype: MT
+ms.openlocfilehash: 40b90bd12687becacddf2e75c39057683b43b945
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72523461"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75634986"
 ---
-# <a name="how-to-use-the-xml-documentation-features"></a>Postupy: použití funkcí dokumentace XML
+# <a name="how-to-use-the-xml-documentation-features"></a>Jak používat funkce dokumentace XML
 
 Následující příklad obsahuje základní přehled o typu, který je dokumentován.
 
@@ -107,7 +107,7 @@ Příklad vygeneruje soubor. XML s následujícím obsahem:
 </doc>
 ```
 
-## <a name="compiling-the-code"></a>Kompilování kódu
+## <a name="compiling-the-code"></a>Zkompilování kódu
 
 Chcete-li zkompilovat příklad, zadejte následující příkazový řádek:
 
@@ -127,7 +127,7 @@ Dokumentace XML začíná na///. Při vytváření nového projektu Průvodce vl
 
   - Atribut `cref` lze připojit k libovolné značce k poskytnutí odkazu na prvek kódu. Kompilátor ověřuje, zda tento prvek kódu existuje. Pokud se ověření nepovedlo, kompilátor vydá upozornění. Kompilátor respektuje jakékoli `using` příkazy, pokud hledá typ popsaný v atributu `cref`.
 
-  - Značka \<summary > je používána technologií IntelliSense v aplikaci Visual Studio k zobrazení dalších informací o typu nebo členu.
+  - Inteligentní > Značka \<je používána technologií IntelliSense v aplikaci Visual Studio k zobrazení dalších informací o typu nebo členu.
 
     > [!NOTE]
     > Soubor XML neposkytuje úplné informace o typu a členech (například neobsahuje žádné informace o typu). Chcete-li získat úplné informace o typu nebo členu, je nutné použít soubor dokumentace spolu s reflexí pro skutečný typ nebo člen.

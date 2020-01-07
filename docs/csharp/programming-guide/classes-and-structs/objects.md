@@ -6,12 +6,12 @@ helpviewer_keywords:
 - objects [C#], about objects
 - variables [C#]
 ms.assetid: af4a5230-fbf3-4eea-95e1-8b883c2f845c
-ms.openlocfilehash: 1b3ceb2671a4c21f1df89599c9b8c0bc107a7435
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: MT
+ms.openlocfilehash: 25e7051f0ceaa035c58af541f0b32e5d24dd0323
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73419272"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635779"
 ---
 # <a name="objects-c-programming-guide"></a>Objekty (Průvodce programováním v C#)
 Definice třídy nebo struktury je jako podrobný plán, který určuje, co může typ provádět. Objekt je v podstatě blok paměti, který byl přidělen a nakonfigurován podle podrobného plánu. Program může vytvořit mnoho objektů stejné třídy. Objekty se také nazývají instance a mohou být uloženy buď v pojmenované proměnné, nebo v poli nebo v kolekci. Kód klienta je kód, který používá tyto proměnné pro volání metod a přístup k veřejným vlastnostem objektu. V objektově orientovaném jazyce C#, jako je typický program, se skládá z více objektů, které pracují dynamicky.  
@@ -46,7 +46,7 @@ Definice třídy nebo struktury je jako podrobný plán, který určuje, co mů�
   
  <xref:System.ValueType?displayProperty=nameWithType> implementace `Equals` používá reflexi, protože musí být schopna určit, která pole jsou v libovolné struktuře. Při vytváření vlastních struktur přepište metodu `Equals` k poskytnutí efektivního algoritmu rovnosti, který je specifický pro váš typ.  
   
-- Chcete-li určit, zda jsou hodnoty polí ve dvou instancích třídy stejné, je možné použít metodu <xref:System.Object.Equals%2A> nebo [operátor = =](../../language-reference/operators/equality-operators.md#equality-operator-). Je však možné je použít pouze v případě, že třída přepsala nebo přetížena k poskytnutí vlastní definice toho, co "rovnost" znamená pro objekty daného typu. Třída může také implementovat rozhraní <xref:System.IEquatable%601> nebo rozhraní <xref:System.Collections.Generic.IEqualityComparer%601>. Obě rozhraní poskytují metody, které lze použít k testování rovnosti hodnoty. Při návrhu vlastních tříd, které přepíší `Equals`, nezapomeňte postupovat podle pokynů uvedených v tématu [Postupy: definování rovnosti hodnoty pro typ](../statements-expressions-operators/how-to-define-value-equality-for-a-type.md) a <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>.  
+- Chcete-li určit, zda jsou hodnoty polí ve dvou instancích třídy stejné, je možné použít metodu <xref:System.Object.Equals%2A> nebo [operátor = =](../../language-reference/operators/equality-operators.md#equality-operator-). Je však možné je použít pouze v případě, že třída přepsala nebo přetížena k poskytnutí vlastní definice toho, co "rovnost" znamená pro objekty daného typu. Třída může také implementovat rozhraní <xref:System.IEquatable%601> nebo rozhraní <xref:System.Collections.Generic.IEqualityComparer%601>. Obě rozhraní poskytují metody, které lze použít k testování rovnosti hodnoty. Při návrhu vlastních tříd, které přepíší `Equals`, nezapomeňte postupovat podle pokynů uvedených v tématu [Definování rovnosti hodnoty pro typ](../statements-expressions-operators/how-to-define-value-equality-for-a-type.md) a <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>.
   
 ## <a name="related-sections"></a>Související oddíly  
  Další informace:  

@@ -2,18 +2,18 @@
 title: 'Postupy: generování XML ze souborů CSV'
 ms.date: 07/20/2015
 ms.assetid: fe4dbc87-7b0d-40bf-88c3-5d706ee89a4d
-ms.openlocfilehash: 2e2d76fdae8473e47e397f2559f3051c47a180fd
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 79b609c3a706db4c8b4c082fbeaf143632a75033
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344596"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636819"
 ---
 # <a name="how-to-generate-xml-from-csv-files-visual-basic"></a>Postupy: generování XML ze souborů CSV (Visual Basic)
-Tento příklad ukazuje, jak použít [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] k vygenerování souboru XML ze souboru hodnot oddělených čárkami (CSV).  
+Tento příklad ukazuje, jak použít LINQ (Language-Integrated Query) a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] k vygenerování souboru XML ze souboru hodnot oddělených čárkami (CSV).  
   
 ## <a name="example"></a>Příklad  
- Následující kód provede [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotaz na pole řetězců.  
+ Následující kód provede dotaz LINQ na poli řetězců.  
   
 ```vb  
       ' Create the text file.  
@@ -48,7 +48,7 @@ Dim cust As XElement = _
 Console.WriteLine(cust)  
 ```  
   
- Tento kód generuje následující výstup:  
+ Výsledkem tohoto kódu je následující výstup:  
   
 ```xml  
 <Root>  

@@ -29,12 +29,12 @@ helpviewer_keywords:
 - attribute syntax [XAML]
 - XAML [WPF], property element syntax
 ms.assetid: 67cce290-ca26-4c41-a797-b68aabc45479
-ms.openlocfilehash: 10bd924664a469be26174fadf3892ee56aa33856
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 2c6a8662236b614545e7fb8545b7b60e1b08b6bd
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740639"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559830"
 ---
 # <a name="xaml-syntax-in-detail"></a>Podrobná syntaxe XAML
 Toto téma definuje výrazy, které se používají k popisu prvků syntaxe jazyka XAML. Tyto výrazy se často používají během zbývající části této dokumentace, a to jak pro dokumentaci WPF, tak pro ostatní architektury, které používají XAML, nebo základní koncepty XAML povolené podporou jazyka XAML na úrovni System. XAML. Toto téma se rozbalí na základní terminologii představené v tématu [Přehled XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md).  
@@ -86,7 +86,7 @@ Toto téma definuje výrazy, které se používají k popisu prvků syntaxe jazy
  Syntaxe atributu je syntaxe kódu XAML, která nastavuje hodnotu pro vlastnost deklarováním atributu pro existující prvek objektu. Název atributu musí odpovídat názvu člena CLR vlastnosti třídy, která vrátí příslušný prvek objektu. Za názvem atributu následuje operátor přiřazení (=). Hodnota atributu musí být řetězec uzavřený v uvozovkách.  
   
 > [!NOTE]
-> Pomocí střídajících se uvozovek můžete umístit literální znak citace do atributu. Například můžete použít jednoduché uvozovky jako způsob deklarace řetězce, který obsahuje znak dvojité uvozovky v rámci něj. Bez ohledu na to, jestli používáte jednoduché nebo dvojité uvozovky, byste měli použít párové dvojice pro otevření a zavření řetězce hodnoty atributu. K dispozici jsou také řídicí sekvence nebo jiné techniky, které jsou k dispozici pro práci s omezeními znaků zavedenými konkrétní syntaxí XAML. Viz [Entity znaků XML a XAML](../../xaml-services/xml-character-entities-and-xaml.md).  
+> Pomocí střídajících se uvozovek můžete umístit literální znak citace do atributu. Například můžete použít jednoduché uvozovky jako způsob deklarace řetězce, který obsahuje znak dvojité uvozovky v rámci něj. Bez ohledu na to, jestli používáte jednoduché nebo dvojité uvozovky, byste měli použít párové dvojice pro otevření a zavření řetězce hodnoty atributu. K dispozici jsou také řídicí sekvence nebo jiné techniky, které jsou k dispozici pro práci s omezeními znaků zavedenými konkrétní syntaxí XAML. Viz [Entity znaků XML a XAML](../../../desktop-wpf/xaml-services/xml-character-entities.md).  
   
  Aby bylo možné nastavit atribut pomocí syntaxe atributu, musí být vlastnost veřejná a musí být zapisovatelná. Hodnota vlastnosti v systému typů zálohování musí být typ hodnoty, nebo musí být odkazový typ, který může být vytvořen nebo odkazován procesorem XAML při přístupu k příslušnému typu zálohování.  
   
@@ -101,7 +101,7 @@ Toto téma definuje výrazy, které se používají k popisu prvků syntaxe jazy
   
 1. Pokud procesor XAML narazí na složenou závorku nebo prvek objektu, který je odvozen z <xref:System.Windows.Markup.MarkupExtension>, pak je odkazované rozšíření značek nejprve vyhodnoceno, nikoli zpracování hodnoty jako řetězec a objekt vrácený příponou označení se používá jako hodnota. V mnoha případech je objekt vrácený příponou označení odkazem na existující objekt nebo výraz, který odloží vyhodnocení do doby běhu a není nově vytvořeným objektem.  
   
-2. Je-li vlastnost deklarována s atributem <xref:System.ComponentModel.TypeConverter>nebo typ hodnoty této vlastnosti je deklarován s atributem <xref:System.ComponentModel.TypeConverter>, je hodnota řetězce atributu odeslána do převaděče typu jako vstup převodu a konvertor vrátí nový objekt případě.  
+2. Je-li vlastnost deklarována s atributem <xref:System.ComponentModel.TypeConverter>nebo typ hodnoty této vlastnosti je deklarován s atributem <xref:System.ComponentModel.TypeConverter>, je hodnota řetězce atributu odeslána do převaděče typu jako vstup převodu a konvertor vrátí novou instanci objektu.  
   
 3. Pokud není <xref:System.ComponentModel.TypeConverter>, je proveden pokus o přímý převod na typ vlastnosti. Tato konečná úroveň je přímý převod na hodnotu analyzátoru Native mezi primitivními typy jazyka XAML nebo kontrolu názvů pojmenovaných konstant ve výčtu (Analyzátor pak přistupuje k hodnotám odpovídajícího typu).  
   
@@ -144,7 +144,7 @@ Toto téma definuje výrazy, které se používají k popisu prvků syntaxe jazy
   
  [!code-xaml[XAMLOvwSupport#ContextMenu](~/samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/Page1.xaml#contextmenu)]  
   
- Hodnota v rámci elementu vlastnosti může být také předána jako vnitřní text, v případech, kdy je typ vlastnosti určen jako primitivní typ hodnoty, například <xref:System.String>nebo výčet, kde je zadán název. Tato dvě použití jsou poněkud neobvyklá, protože každý z těchto případů může použít také jednodušší syntaxi atributu. Jeden scénář pro naplnění elementu Property s řetězcem je pro vlastnosti, které nejsou vlastností obsahu XAML, ale stále se používají pro reprezentace textu uživatelského rozhraní a specifické prázdné prvky, jako je například přeloženy, jsou požadovány pro zobrazení v tomto textu uživatelského rozhraní. Syntaxe atributu nemůže zachovat přeloženy, ale syntaxe elementu vlastnosti může být, pokud je aktivní zachování významného volného místa (podrobnosti najdete [v tématu Zpracování prázdných znaků v jazyce XAML](../../xaml-services/whitespace-processing-in-xaml.md)). Dalším scénářem je, že [direktiva x:UID –](../../xaml-services/x-uid-directive.md) lze použít na prvek vlastnosti, a tak označit hodnotu v rámci jako hodnotu, která by měla být lokalizována do výstupu WPF nebo jinými technikami.  
+ Hodnota v rámci elementu vlastnosti může být také předána jako vnitřní text, v případech, kdy je typ vlastnosti určen jako primitivní typ hodnoty, například <xref:System.String>nebo výčet, kde je zadán název. Tato dvě použití jsou poněkud neobvyklá, protože každý z těchto případů může použít také jednodušší syntaxi atributu. Jeden scénář pro naplnění elementu Property s řetězcem je pro vlastnosti, které nejsou vlastností obsahu XAML, ale stále se používají pro reprezentace textu uživatelského rozhraní a specifické prázdné prvky, jako je například přeloženy, jsou požadovány pro zobrazení v tomto textu uživatelského rozhraní. Syntaxe atributu nemůže zachovat přeloženy, ale syntaxe elementu vlastnosti může být, pokud je aktivní zachování významného volného místa (podrobnosti najdete [v tématu Zpracování prázdných znaků v jazyce XAML](../../../desktop-wpf/xaml-services/white-space-processing.md)). Dalším scénářem je, že [direktiva x:UID –](../../../desktop-wpf/xaml-services/xuid-directive.md) lze použít na prvek vlastnosti, a tak označit hodnotu v rámci jako hodnotu, která by měla být lokalizována do výstupu WPF nebo jinými technikami.  
   
  Element Property není reprezentován v logickém stromu WPF. Prvek vlastnosti je pouze konkrétní syntaxí pro nastavení vlastnosti a není elementem, který obsahuje instanci nebo objekt, který ho má zálohovat. (Podrobnosti o konceptu logického stromu naleznete v tématu [stromy v](trees-in-wpf.md)subsystému WPF.)  
   
@@ -158,7 +158,7 @@ Toto téma definuje výrazy, které se používají k popisu prvků syntaxe jazy
   
 - Typ implementuje <xref:System.Collections.IDictionary>.  
   
-- Typ je odvozen z <xref:System.Array> (Další informace o polích v jazyce XAML naleznete v tématu [X:Array Markup Extension](../../xaml-services/x-array-markup-extension.md)).  
+- Typ je odvozen z <xref:System.Array> (Další informace o polích v jazyce XAML naleznete v tématu [X:Array Markup Extension](../../../desktop-wpf/xaml-services/xarray-markup-extension.md)).  
   
  Pokud typ vlastnosti je kolekce, pak typ odvozený kolekce nemusí být specifikován v označení jako element Object. Místo toho prvky, které mají být položky v kolekci, jsou zadány jako jeden nebo více podřízených prvků prvku vlastnosti. Každá taková položka je vyhodnocena na objekt během načítání a přidána do kolekce voláním metody `Add` odvozené kolekce. Například vlastnost <xref:System.Windows.Style.Triggers%2A> <xref:System.Windows.Style> přebírá specializovaný typ kolekce <xref:System.Windows.TriggerCollection>, který implementuje <xref:System.Collections.IList>. Není nutné vytvářet instance <xref:System.Windows.TriggerCollection>ho prvku objektu ve značce. Místo toho zadáte jednu nebo více položek <xref:System.Windows.Trigger> jako prvky v prvku vlastnosti `Style.Triggers`, kde <xref:System.Windows.Trigger> (nebo odvozená třída) je typ očekávaný jako typ položky pro silně typované a implicitní <xref:System.Windows.TriggerCollection>.  
   
@@ -231,7 +231,7 @@ Toto téma definuje výrazy, které se používají k popisu prvků syntaxe jazy
   
  [!code-xaml[XAMLOvwSupport#SyntaxContent](~/samples/snippets/csharp/VS_Snippets_Wpf/XAMLOvwSupport/CSharp/page5.xaml#syntaxcontent)]  
   
- Všimněte si, že ani element Property pro <xref:System.Windows.Controls.Panel.Children%2A> ani element pro <xref:System.Windows.Controls.UIElementCollection> není v označení požadováno. Toto je návrhová funkce jazyka XAML tak, aby rekurzivní prvky, které definují [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], byly intuitivnější jako strom vnořených elementů s přímými vztahy mezi nadřazenými a podřízenými prvky, aniž by se musely zasahovat do značek prvků vlastností nebo objekty kolekce. Ve skutečnosti <xref:System.Windows.Controls.UIElementCollection> nelze zadat explicitně v označení jako prvek Object, a to designem. Vzhledem k tomu, že jeho zamýšlené použití je jako implicitní kolekce, <xref:System.Windows.Controls.UIElementCollection> nevystavuje veřejný konstruktor bez parametrů, a proto nemůže být vytvořena instance jako element Object.  
+ Všimněte si, že ani element Property pro <xref:System.Windows.Controls.Panel.Children%2A> ani element pro <xref:System.Windows.Controls.UIElementCollection> není v označení požadováno. Toto je návrhová funkce jazyka XAML tak, aby rekurzivní prvky, které definují [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], byly intuitivnější jako strom vnořených elementů s přímými vztahy mezi nadřazenými a podřízenými prvky, aniž by se musely zasahovat do značek prvků vlastností nebo objektů kolekcí. Ve skutečnosti <xref:System.Windows.Controls.UIElementCollection> nelze zadat explicitně v označení jako prvek Object, a to designem. Vzhledem k tomu, že jeho zamýšlené použití je jako implicitní kolekce, <xref:System.Windows.Controls.UIElementCollection> nevystavuje veřejný konstruktor bez parametrů, a proto nemůže být vytvořena instance jako element Object.  
   
 ### <a name="mixing-property-elements-and-object-elements-in-an-object-with-a-content-property"></a>Kombinování prvků vlastností a elementů objektů v objektu s vlastností obsahu  
  Specifikace jazyka XAML deklaruje, že procesor XAML může vynucuje, aby prvky objektu, které jsou použity k vyplnění vlastnosti obsahu XAML v rámci elementu Object, musí být souvislé a nesmí být smíšená. Toto omezení proti kombinování prvků vlastností a obsahu je vynutilo [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] procesory XAML.  
@@ -242,7 +242,7 @@ Toto téma definuje výrazy, které se používají k popisu prvků syntaxe jazy
   
 <a name="xaml_namespaces"></a>   
 ## <a name="xaml-namespaces"></a>Obory názvů jazyka XAML  
- Žádná z předchozích příkladů syntaxe neurčila obor názvů XAML jiný než výchozí obor názvů XAML. V typických aplikacích [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je výchozím oborem názvů XAML jako [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obor názvů. Můžete zadat obory názvů XAML jiné než výchozí obor názvů XAML a nadále používat podobnou syntaxi. Ale potom kdekoli, kde je třída pojmenována, která není přístupná v rámci výchozího oboru názvů XAML, musí před název třídy být předpona oboru názvů XAML namapována na odpovídající obor názvů CLR. Například `<custom:Example/>` je syntaxe element objektu pro vytvoření instance `Example` třídy, kde obor názvů CLR obsahující tuto třídu (a případně i informace o externím sestavení, který obsahuje typy zálohování) byl dříve namapován na `custom` směr.  
+ Žádná z předchozích příkladů syntaxe neurčila obor názvů XAML jiný než výchozí obor názvů XAML. V typických aplikacích [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je výchozím oborem názvů XAML jako [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] obor názvů. Můžete zadat obory názvů XAML jiné než výchozí obor názvů XAML a nadále používat podobnou syntaxi. Ale potom kdekoli, kde je třída pojmenována, která není přístupná v rámci výchozího oboru názvů XAML, musí před název třídy být předpona oboru názvů XAML namapována na odpovídající obor názvů CLR. Například `<custom:Example/>` je syntaxe element objektu pro vytvoření instance `Example` třídy, kde obor názvů CLR obsahující tuto třídu (a případně i informace o externím sestavení, který obsahuje typy zálohování) byl dříve namapován na předponu `custom`.  
   
  Další informace o oborech názvů XAML naleznete v tématu [obory názvů XAML a mapování oboru názvů pro WPF XAML](xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md).  
   
@@ -254,9 +254,9 @@ Toto téma definuje výrazy, které se používají k popisu prvků syntaxe jazy
   
  `<Button Style="{StaticResource MyStyle}">My button</Button>`  
   
- Zde `StaticResource` identifikuje třídu <xref:System.Windows.StaticResourceExtension> poskytující implementaci rozšíření značek. Další řetězec `MyStyle` slouží jako vstup pro nevýchozí konstruktor <xref:System.Windows.StaticResourceExtension>, kde parametr, který je pořízen z řetězce rozšíření, deklaruje požadovaný <xref:System.Windows.ResourceKey>. `MyStyle` se očekává, že bude hodnota [x:key –](../../xaml-services/x-key-directive.md) <xref:System.Windows.Style> definovaná jako prostředek. Použití [rozšíření značek StaticResource](staticresource-markup-extension.md) vyžaduje, aby se prostředek použil k poskytnutí hodnoty vlastnosti <xref:System.Windows.Style> prostřednictvím logiky vyhledávání statických prostředků v době načítání.  
+ Zde `StaticResource` identifikuje třídu <xref:System.Windows.StaticResourceExtension> poskytující implementaci rozšíření značek. Další řetězec `MyStyle` slouží jako vstup pro nevýchozí konstruktor <xref:System.Windows.StaticResourceExtension>, kde parametr, který je pořízen z řetězce rozšíření, deklaruje požadovaný <xref:System.Windows.ResourceKey>. `MyStyle`očekává se, že bude [x:Key](../../../desktop-wpf/xaml-services/xkey-directive.md) hodnota <xref:System.Windows.Style> – definovaná jako prostředek. Použití [rozšíření značek StaticResource](staticresource-markup-extension.md) vyžaduje, aby se prostředek použil k poskytnutí hodnoty vlastnosti <xref:System.Windows.Style> prostřednictvím logiky vyhledávání statických prostředků v době načítání.  
   
- Další informace o rozšíření značek naleznete v tématu [rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md). Odkaz na rozšíření značek a jiné programovací funkce XAML povolené v obecné implementaci .NET XAML naleznete v tématu [obor názvů XAML (x:). Jazykové funkce](../../xaml-services/xaml-namespace-x-language-features.md). Pro rozšíření značek specifická pro WPF naleznete informace v tématu [rozšíření WPF XAML](wpf-xaml-extensions.md).  
+ Další informace o rozšíření značek naleznete v tématu [rozšíření značek a WPF XAML](markup-extensions-and-wpf-xaml.md). Odkaz na rozšíření značek a jiné programovací funkce XAML povolené v obecné implementaci .NET XAML naleznete v tématu [obor názvů XAML (x:). Jazykové funkce](../../../desktop-wpf/xaml-services/namespace-language-features.md). Pro rozšíření značek specifická pro WPF naleznete informace v tématu [rozšíření WPF XAML](wpf-xaml-extensions.md).  
   
 <a name="attached_properties"></a>   
 ## <a name="attached-properties"></a>Přidružené vlastnosti  
@@ -289,7 +289,7 @@ Toto téma definuje výrazy, které se používají k popisu prvků syntaxe jazy
  Následující části popisují použití XAML, která jsou technicky podporována procesory XAML, ale která vytváří podrobné možnosti nebo jiné estetické problémy, které jsou v konfliktu se soubory jazyka XAML, když vyvíjíte aplikace, které obsahují zdroje XAML.  
   
 ### <a name="optional-property-element-usages"></a>Volitelné použití prvků vlastností  
- Volitelné použití prvků vlastností zahrnuje explicitní zápis vlastností obsahu elementu, které procesor XAML považuje za implicitní. Například při deklaraci obsahu <xref:System.Windows.Controls.Menu>můžete zvolit explicitní deklaraci <xref:System.Windows.Controls.ItemsControl.Items%2A> kolekce <xref:System.Windows.Controls.Menu> jako značku prvku vlastnosti `<Menu.Items>` a umístit každou <xref:System.Windows.Controls.MenuItem> do `<Menu.Items>`namísto použití implicitního chování procesoru XAML, že všechny podřízené prvky <xref:System.Windows.Controls.Menu> musí být <xref:System.Windows.Controls.MenuItem> a umístěny do kolekce <xref:System.Windows.Controls.ItemsControl.Items%2A>. Někdy mohou volitelné používání pomáhat vizuálně objasnit strukturu objektu, jak je znázorněno v označení. Nebo někdy explicitní použití prvku vlastnosti se může vyhnout kódu, který je technicky funkční, ale vizuálně matoucí, jako jsou například vnořená rozšíření značek v rámci hodnoty atributu.  
+ Volitelné použití prvků vlastností zahrnuje explicitní zápis vlastností obsahu elementu, které procesor XAML považuje za implicitní. Například při deklaraci obsahu <xref:System.Windows.Controls.Menu>můžete zvolit explicitní deklaraci <xref:System.Windows.Controls.ItemsControl.Items%2A> kolekce <xref:System.Windows.Controls.Menu> jako značky prvku `<Menu.Items>` vlastnosti a umístit každou <xref:System.Windows.Controls.MenuItem> do `<Menu.Items>`, místo použití implicitního chování procesoru XAML, že všechny podřízené elementy <xref:System.Windows.Controls.Menu> musí být <xref:System.Windows.Controls.MenuItem> a jsou umístěny do <xref:System.Windows.Controls.ItemsControl.Items%2A> kolekce. Někdy mohou volitelné používání pomáhat vizuálně objasnit strukturu objektu, jak je znázorněno v označení. Nebo někdy explicitní použití prvku vlastnosti se může vyhnout kódu, který je technicky funkční, ale vizuálně matoucí, jako jsou například vnořená rozšíření značek v rámci hodnoty atributu.  
   
 ### <a name="full-typenamemembername-qualified-attributes"></a>Úplný název typu typeName. Members – kvalifikované atributy  
  *TypeName*. formulář *člena* pro atribut ve skutečnosti pracuje obecnější, než pouze směrovaný případ události. V jiných situacích je však formulář nadbytečný a měli byste se vyhnout, pokud jde pouze o důvody pro styl značek a čitelnost. V následujícím příkladu jsou všechny tři odkazy na atribut <xref:System.Windows.Controls.Control.Background%2A> zcela ekvivalentní:  
@@ -316,7 +316,7 @@ Toto téma definuje výrazy, které se používají k popisu prvků syntaxe jazy
 ## <a name="see-also"></a>Viz také:
 
 - [Přehled XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md)
-- [Jazykové funkce oboru názvů jazyka XAML (x:)](../../xaml-services/xaml-namespace-x-language-features.md)
+- [Jazykové funkce oboru názvů jazyka XAML (x:)](../../../desktop-wpf/xaml-services/namespace-language-features.md)
 - [Rozšíření WPF XAML](wpf-xaml-extensions.md)
 - [Přehled vlastností závislosti](dependency-properties-overview.md)
 - [TypeConverters a XAML](typeconverters-and-xaml.md)

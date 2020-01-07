@@ -9,12 +9,12 @@ helpviewer_keywords:
 - interoperability, about interoperability
 - platform invoke
 ms.assetid: c025b2e0-2357-4c27-8461-118f0090aeff
-ms.openlocfilehash: 1342711ca17b0d2bf5122f4c749514e3b96c9ad7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: MT
+ms.openlocfilehash: 2e1b31817873324fd320a9dcbabaf5ef26fa7b74
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69921816"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635181"
 ---
 # <a name="interoperability-overview-c-programming-guide"></a>Přehled interoperability (Průvodce programováním v C#)
 Téma popisuje metody pro povolení interoperability mezi C# spravovaným kódem a nespravovaným kódem.  
@@ -22,7 +22,7 @@ Téma popisuje metody pro povolení interoperability mezi C# spravovaným kódem
 ## <a name="platform-invoke"></a>Vyvolání platformy  
  *Vyvolání platformy* je služba, která umožňuje spravovanému kódu volat nespravované funkce, které jsou implementované v knihovně DLL (Dynamic Link Library), například v rozhraní Microsoft Windows API. Vyhledá a vyvolá exportovanou funkci a zařadí argumenty (celá čísla, řetězce, pole, struktury atd.) v rámci hranice mezioperace podle potřeby.  
   
- Další informace naleznete v tématu spotřebovávání nespravovaných [ [funkcí knihovny DLL](../../../framework/interop/consuming-unmanaged-dll-functions.md) a postup: K přehrání souboru](./how-to-use-platform-invoke-to-play-a-wave-file.md)Wave použijte vyvolání platformy.  
+Další informace naleznete v tématu [spotřebovávání nespravovaných funkcí DLL](../../../framework/interop/consuming-unmanaged-dll-functions.md) a [použití vyvolání platformy k přehrání souboru WAV](./how-to-use-platform-invoke-to-play-a-wave-file.md).
   
 > [!NOTE]
 > Modul CLR ( [Common Language Runtime](../../../standard/clr.md) ) spravuje přístup k systémovým prostředkům. Volání nespravovaného kódu, který je mimo CLR, obchází tento mechanismus zabezpečení a proto představuje bezpečnostní riziko. Nespravovaný kód například může volat prostředky v nespravovaném kódu přímo, obejít mechanismy zabezpečení CLR. Další informace najdete v tématu [zabezpečení v .NET](../../../standard/security/index.md).  
@@ -30,7 +30,7 @@ Téma popisuje metody pro povolení interoperability mezi C# spravovaným kódem
 ## <a name="c-interop"></a>interoperabilita C++  
  Můžete použít C++ spolupráci, označovanou také jako pouze funguje (IJW), k zabalení nativní C++ třídy, aby ji bylo možné spotřebovat kódem, který je vytvořen v C# jiném .NET Frameworkovém jazyce. Chcete-li to provést, C++ napíšete kód pro zabalení NATIVNÍ knihovny DLL nebo komponenty modelu COM. Na rozdíl od jiných .NET Framework jazyků má C++ vizuál podporu interoperability, která umožňuje umístění spravovaného a nespravovaného kódu ve stejné aplikaci a dokonce i ve stejném souboru. Potom sestavíte C++ kód pomocí přepínače **/CLR** pro vytvoření spravovaného sestavení. Nakonec přidáte odkaz na sestavení v C# projektu a použijete zabalené objekty stejně, jako byste používali jiné spravované třídy.  
   
-## <a name="exposing-com-components-to-c"></a>Vystavení komponent modelu COM v jazyce C\#
+## <a name="exposing-com-components-to-c"></a>Vystavení komponent modelu COM pro C\#
  Komponentu modelu COM můžete využívat z C# projektu. Obecné kroky jsou následující:  
   
 1. Vyhledejte komponentu modelu COM, kterou chcete použít, a zaregistrujte ji. K registraci nebo zrušení registrace knihovny COM použijte Regsvr32. exe.  
@@ -54,7 +54,7 @@ Téma popisuje metody pro povolení interoperability mezi C# spravovaným kódem
   
 2. Vygenerujte knihovnu typů modelu COM a zaregistrujte ji pro použití v modelu COM.  
   
-     Můžete upravit vlastnosti vizuálního C# projektu a automaticky registrovat C# sestavení pro zprostředkovatele komunikace s objekty com. Visual Studio používá modul [Regasm. exe (Nástroj pro registraci sestavení)](../../../framework/tools/regasm-exe-assembly-registration-tool.md), pomocí `/tlb` přepínače příkazového řádku, který přebírá spravované sestavení jako vstup pro vygenerování knihovny typů. Tato knihovna typů popisuje `public` typy v sestavení a přidává položky registru, aby klienti modelu COM mohli vytvořit spravované třídy.  
+     Můžete upravit vlastnosti vizuálního C# projektu a automaticky registrovat C# sestavení pro zprostředkovatele komunikace s objekty com. Visual Studio používá modul [Regasm. exe (Nástroj pro registraci sestavení)](../../../framework/tools/regasm-exe-assembly-registration-tool.md)s použitím přepínače příkazového řádku `/tlb`, který převezme spravované sestavení jako vstup, a vygeneruje knihovnu typů. Tato knihovna typů popisuje typy `public` v sestavení a přidává položky registru, aby klienti modelu COM mohli vytvořit spravované třídy.  
   
  Další informace najdete v tématu vystavení [.NET Framework komponent do modelu COM](../../../framework/interop/exposing-dotnet-components-to-com.md) a [Ukázkové třídy com](./example-com-class.md).  
   

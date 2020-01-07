@@ -12,12 +12,12 @@ helpviewer_keywords:
 - C# language, XML code comments
 - XML documentation comments [C#]
 ms.assetid: 803b7f7b-7428-4725-b5db-9a6cff273199
-ms.openlocfilehash: 6405b094ccc50499bfeb4db4522f0ec9b01f68ad
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
-ms.translationtype: MT
+ms.openlocfilehash: 08357017a29f05c11e316e037497b1ee24d06eff
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72523482"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75634973"
 ---
 # <a name="xml-documentation-comments-c-programming-guide"></a>Dokumentační komentáře XML (Průvodce programováním v C#)
 V jazyce Visual C# můžete vytvářet dokumentaci ke kódu zadáním prvků XML do zvláštních polí komentáře (označeno třemi lomítky) ve zdrojovém kódu přímo před blok kódu, na který se komentáře vztahují, například:  
@@ -44,14 +44,14 @@ public class MyClass {}
   
 - [Oddělovače pro značky dokumentace](./delimiters-for-documentation-tags.md)  
   
-- [Postup: Používání funkcí dokumentace XML](./how-to-use-the-xml-documentation-features.md)  
+- [Jak používat funkce dokumentace XML](./how-to-use-the-xml-documentation-features.md)
   
 ## <a name="related-sections"></a>Související oddíly  
- Další informace naleznete v tématu:  
+ Další informace najdete v části .  
   
 - [-doc (zpracování dokumentačních komentářů)](../../language-reference/compiler-options/doc-compiler-option.md)  
   
-## <a name="c-language-specification"></a>Specifikace jazyka C#  
+## <a name="c-language-specification"></a>C# – jazyková specifikace  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Viz také:

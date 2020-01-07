@@ -7,18 +7,18 @@ helpviewer_keywords:
 - LINQ [Visual Basic], writing queries
 - writing LINQ queries [Visual Basic]
 ms.assetid: f0045808-b9fe-4d31-88d1-473d9957211e
-ms.openlocfilehash: 6a9f229697ce3d6328c6fb09d18d4cc2627eab10
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 6d2e472cc996c42aa091ed95c6954d0879c98372
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351018"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636754"
 ---
 # <a name="walkthrough-writing-queries-in-visual-basic"></a>Návod: Zápis dotazů ve Visual Basic
 
-Tento návod ukazuje, jak lze pomocí Visual Basicch funkcí jazyka napsat [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] výrazy dotazu. Návod ukazuje, jak vytvořit dotazy na seznam objektů studenta, jak spustit dotazy a jak je upravit. Dotazy obsahují několik funkcí, včetně inicializátorů objektů, místního typu odvození a anonymních typů.
+Tento návod ukazuje, jak lze použít funkce jazyka Visual Basic k psaní výrazů LINQ (Language-Integrated Query). Návod ukazuje, jak vytvořit dotazy na seznam objektů studenta, jak spustit dotazy a jak je upravit. Dotazy obsahují několik funkcí, včetně inicializátorů objektů, místního typu odvození a anonymních typů.
 
-Po dokončení tohoto Názorného postupu budete připraveni přejít k ukázkám a dokumentaci pro konkrétního poskytovatele [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], kterého vás zajímá. mezi poskytovatele [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] patří [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], LINQ to DataSet a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].
+Po dokončení tohoto Názorného postupu budete připraveni přejít k ukázkám a dokumentaci pro konkrétního poskytovatele LINQ, kterého vás zajímá. Mezi zprostředkovatelé LINQ patří [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], LINQ to DataSet a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].
 
 ## <a name="create-a-project"></a>Vytvořit projekt
 
@@ -133,13 +133,13 @@ Vyhledávání výsledků dotazu je snazší, pokud jsou v zadaném pořadí. Vr
 
 ## <a name="additional-examples"></a>Další příklady
 
-Teď, když rozumíte základům, najdete v následujícím seznamu Další příklady, které znázorňují flexibilitu a výkon [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazů. Každý příklad předchází stručný popis toho, co dělá. Umístěte ukazatel myši na výslednou proměnnou dotazu pro každý dotaz, aby se zobrazil odvozený typ. Výsledky můžete vytvořit pomocí `For Each` smyčky.
+Teď, když rozumíte základům, následuje seznam dalších příkladů, které ilustrují flexibilitu a sílu dotazů LINQ. Každý příklad předchází stručný popis toho, co dělá. Umístěte ukazatel myši na výslednou proměnnou dotazu pro každý dotaz, aby se zobrazil odvozený typ. Výsledky můžete vytvořit pomocí `For Each` smyčky.
 
 [!code-vb[VbLINQWalkthrough#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQWalkthrough/VB/Class1.vb#7)]
 
 ## <a name="additional-information"></a>Další informace
 
-Jakmile se seznámíte se základními koncepty práce s dotazy, můžete si přečíst dokumentaci a ukázky pro konkrétní typ poskytovatele [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], který vás zajímá:
+Jakmile se seznámíte se základními koncepty práce s dotazy, jste připraveni si přečíst dokumentaci a ukázky pro konkrétního typu poskytovatele LINQ, o který vás zajímá:
 
 - [LINQ to Objects](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
 

@@ -2,12 +2,12 @@
 title: Přehled OS LINQ to XML (C#)
 ms.date: 07/20/2015
 ms.assetid: 516792fb-461d-40a8-8a50-9993a51258fc
-ms.openlocfilehash: b984232f03815ac78b792af2289f15eeb0578cd5
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: c8b64731925f37d54bded62fae4ccae9933ffbe9
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73418203"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635519"
 ---
 # <a name="linq-to-xml-axes-overview-c"></a>Přehled OS LINQ to XML (C#)
 Po vytvoření stromu XML nebo načtení dokumentu XML do stromu XML můžete zadat dotaz na nalezení prvků a atributů a načíst jejich hodnoty. Kolekce se načítají přes *metody osy*, označované také jako *osy*. Některé osy jsou metody v <xref:System.Xml.Linq.XElement> a <xref:System.Xml.Linq.XDocument> třídy, které vracejí <xref:System.Collections.Generic.IEnumerable%601> kolekce. Některé osy jsou rozšiřující metody ve třídě <xref:System.Xml.Linq.Extensions>. Osy, které jsou implementovány jako metody rozšíření, pracují na kolekcích a vracejí kolekce.  
@@ -16,7 +16,7 @@ Po vytvoření stromu XML nebo načtení dokumentu XML do stromu XML můžete za
   
  Kromě metod osy, které vrací kolekce, existují dvě další metody, které se běžně používají v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dotazů. Metoda <xref:System.Xml.Linq.XContainer.Element%2A> vrací jeden <xref:System.Xml.Linq.XElement>. Metoda <xref:System.Xml.Linq.XElement.Attribute%2A> vrací jeden <xref:System.Xml.Linq.XAttribute>.  
   
- Pro mnoho účelů [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy poskytují nejúčinnější způsob, jak kontrolovat strom, extrahovat z něj data a transformovat ho. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy fungují na objektech, které implementují <xref:System.Collections.Generic.IEnumerable%601>a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] osy vrací <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement> kolekcí a <xref:System.Collections.Generic.IEnumerable%601> kolekcí <xref:System.Xml.Linq.XAttribute>. Tyto kolekce budete potřebovat k provádění dotazů.  
+ Pro mnoho účelů LINQ dotazy poskytují nejúčinnější způsob, jak kontrolovat strom, extrahovat z něj data a transformovat ho. Dotazy LINQ pracují na objektech, které implementují <xref:System.Collections.Generic.IEnumerable%601>, a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] OS vrací <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement> kolekcí a <xref:System.Collections.Generic.IEnumerable%601> kolekcí <xref:System.Xml.Linq.XAttribute>. Tyto kolekce budete potřebovat k provádění dotazů.  
   
  Kromě metod osy, které načítají kolekce prvků a atributů, existují metody osy, které umožňují iterovat ve stromové struktuře Skvělé podrobnosti. Například místo řešení prvků a atributů můžete pracovat s uzly stromu. Uzly jsou jemnějším stupněm členitosti než prvky a atributy. Při práci s uzly můžete prozkoumávat komentáře XML, textové uzly, instrukce pro zpracování a další. Tato funkce je důležitá, například pro někoho, kdo napisuje textový procesor a chce uložit dokumenty jako XML. Většina programátorů XML je však primárně dotčena prvky, atributy a jejich hodnotami.  
   

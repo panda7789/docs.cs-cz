@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: převod pole bajtů na programový průvodce pro celé C# číslo'
+title: Postup převodu pole bajtů na programový průvodce pro celé C# číslo
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - conversions [C#], byte array to int
 - byte arrays [C#], converting to int
 ms.assetid: d6ac20e2-448e-4aea-99b9-faf04c6f1e79
-ms.openlocfilehash: cb6252069302a28f8a85247aa4584a9284b26c4d
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
-ms.translationtype: MT
+ms.openlocfilehash: a553d8778997a2323c54c72be8e68aff590a7c7d
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73195464"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635051"
 ---
-# <a name="how-to-convert-a-byte-array-to-an-int-c-programming-guide"></a>Postupy: Převedení pole bajtů na typ int (Průvodce programováním v C#)
+# <a name="how-to-convert-a-byte-array-to-an-int-c-programming-guide"></a>Převod pole bajtů na typ int (C# Průvodce programováním)
 
 Tento příklad ukazuje, jak použít třídu <xref:System.BitConverter> k převedení pole bajtů na typ [int](../../language-reference/builtin-types/integral-numeric-types.md) a zpět na pole bajtů. Po čtení bajtů z sítě může být nutné převést bajty z bajtů na vestavěný datový typ. Kromě metody [ToInt32 – (Byte\[\], Int32)](xref:System.BitConverter.ToInt32(System.Byte[],System.Int32)) v příkladu v následující tabulce jsou uvedeny metody třídy <xref:System.BitConverter>, které převádějí bajty (z pole bajtů) na jiné předdefinované typy.
 
@@ -32,7 +32,7 @@ Tento příklad ukazuje, jak použít třídu <xref:System.BitConverter> k přev
 
 ## <a name="example"></a>Příklad
 
-Tento příklad inicializuje pole bajtů, obrátí pole, pokud je architektura počítače Little-endian (to znamená, že je nejdříve uložený nejméně významný bajt), a potom zavolá metodu [ToInt32 – (byte\[\], Int32)](xref:System.BitConverter.ToInt32(System.Byte[],System.Int32)) pro převod čtyř bajtů. v poli do `int`. Druhý argument pro [ToInt32 – (Byte\[\], Int32)](xref:System.BitConverter.ToInt32(System.Byte[],System.Int32)) Určuje počáteční index pole bajtů.
+Tento příklad inicializuje pole bajtů, obrátí pole, pokud je architektura počítače Little-endian (to znamená, že je nejdříve uložený nejméně významný bajt), a potom zavolá metodu [ToInt32 – (byte\[\], Int32)](xref:System.BitConverter.ToInt32(System.Byte[],System.Int32)) , která převede čtyři bajty v poli na `int`. Druhý argument pro [ToInt32 – (Byte\[\], Int32)](xref:System.BitConverter.ToInt32(System.Byte[],System.Int32)) Určuje počáteční index pole bajtů.
 
 > [!NOTE]
 > Výstup se může lišit v závislosti na endian vaší architektury počítače.

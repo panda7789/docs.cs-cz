@@ -2,12 +2,12 @@
 title: 'Postupy: streamování fragmentů XML ze třídy XmlReader'
 ms.date: 07/20/2015
 ms.assetid: f67ce598-4a12-4dcb-9a07-24deca02a111
-ms.openlocfilehash: abefc8c6e75ae41c47135a2e89cdb3be6a8e5cd6
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 42d3edb390035d20f506388974000aa204312109
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346228"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636793"
 ---
 # <a name="how-to-stream-xml-fragments-from-an-xmlreader-visual-basic"></a>Postupy: streamování fragmentů XML ze třídy XmlReader (Visual Basic)
 V případě potřeby zpracování velkých souborů XML nemusí být možné načíst celý strom XML do paměti. Toto téma ukazuje, jak streamovat fragmenty pomocí <xref:System.Xml.XmlReader>.  
@@ -23,7 +23,7 @@ V případě potřeby zpracování velkých souborů XML nemusí být možné na
  Téma [Postupy: provedení transformace streamování velkých dokumentů XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-perform-streaming-transform-of-large-xml-documents.md) obsahuje příklad použití LINQ to XML k transformaci extrémně velkých dokumentů XML při zachování malých nároků na paměť.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad vytvoří vlastní metodu osy. Můžete se k němu dotázat pomocí [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu. Vlastní metoda osy, `StreamRootChildDoc`, je metoda, která je určena specificky pro čtení dokumentu, který má opakující se `Child` element.  
+ Tento příklad vytvoří vlastní metodu osy. Můžete se k němu dotázat pomocí dotazu LINQ. Vlastní metoda osy, `StreamRootChildDoc`, je metoda, která je určena specificky pro čtení dokumentu, který má opakující se `Child` element.  
   
 ```vb  
 Module Module1  

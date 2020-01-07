@@ -5,12 +5,12 @@ ms.date: 08/02/2017
 helpviewer_keywords:
 - Main method [C#], return values
 ms.assetid: c2f5a1d8-1676-4bea-bc7e-44a97e72d5bc
-ms.openlocfilehash: 13d1eda178a4c2580af67ef5a7198e7f0884a7d6
-ms.sourcegitcommit: 68a4b28242da50e1d25aab597c632767713a6f81
-ms.translationtype: MT
+ms.openlocfilehash: aa3d3032f083682f94c75c400710640b9408e973
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74884394"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635363"
 ---
 # <a name="main-return-values-c-programming-guide"></a>Návratové hodnoty Main ()C# (Průvodce programováním)
 
@@ -51,7 +51,7 @@ if ($LastExitCode -eq 0) {
 Write-Host "Return value = " $LastExitCode
 ```
 
-## <a name="sample-output"></a>Ukázkový výstup
+## <a name="sample-output"></a>Výstup ukázky
 
 ```txt
 Execution succeeded
@@ -98,4 +98,4 @@ Když vstupní bod aplikace vrátí `Task` nebo `Task<int>`, kompilátor vygener
 - [Průvodce programováním v jazyce C#](../index.md)
 - [C#Odkaz](../index.md)
 - [Argumenty Main() a příkazového řádku](index.md)
-- [Postupy: Zobrazení argumentů příkazového řádku](./how-to-display-command-line-arguments.md)
+- [Jak zobrazit argumenty příkazového řádku](./how-to-display-command-line-arguments.md)

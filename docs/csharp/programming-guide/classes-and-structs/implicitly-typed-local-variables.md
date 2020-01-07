@@ -6,12 +6,12 @@ helpviewer_keywords:
 - implicitly-typed local variables [C#]
 - var [C#]
 ms.assetid: b9218fb2-ef5d-4814-8a8e-2bc29b0bbc9b
-ms.openlocfilehash: dab708bfbc33458bc2664c0d04757f0badcc2575
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
-ms.translationtype: MT
+ms.openlocfilehash: 2d791e233ea869381de3a1c29f79d81d549904e0
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141602"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635818"
 ---
 # <a name="implicitly-typed-local-variables-c-programming-guide"></a>Implicitně typované lokální proměnné (C# Průvodce programováním)
 
@@ -49,7 +49,7 @@ Další informace najdete v tématu [použití implicitního typu lokálních pr
 
 ## <a name="var-and-anonymous-types"></a>var a anonymní typy
 
-V mnoha případech je použití `var` volitelné a je pouze syntaktické pohodlí. Nicméně pokud je proměnná inicializována pomocí anonymního typu, je nutné deklarovat proměnnou jako `var`, pokud potřebujete získat přístup k vlastnostem objektu v pozdějším bodě. Toto je běžný scénář v [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] výrazy dotazů. Další informace najdete v tématu [anonymní typy](anonymous-types.md).
+V mnoha případech je použití `var` volitelné a je pouze syntaktické pohodlí. Nicméně pokud je proměnná inicializována pomocí anonymního typu, je nutné deklarovat proměnnou jako `var`, pokud potřebujete získat přístup k vlastnostem objektu v pozdějším bodě. Toto je běžný scénář ve výrazech dotazů LINQ. Další informace najdete v tématu [anonymní typy](anonymous-types.md).
 
 Z perspektivy zdrojového kódu nemá anonymní typ žádný název. Proto pokud byla proměnná dotazu inicializována pomocí `var`, pak jediným způsobem, jak získat přístup k vlastnostem v vrácené sekvenci objektů, je použití `var` jako typ proměnné iterace v příkazu `foreach`.
 
@@ -69,7 +69,7 @@ Následující omezení platí pro implicitně typové deklarace proměnných:
 
 - Pokud je typ s názvem `var` v oboru, pak bude klíčové slovo `var` přeloženo na tento název typu a nebude zpracováno jako součást implicitně typové deklarace lokální proměnné.
 
-Implicitní zadání pomocí klíčového slova `var` lze použít pouze pro proměnné v oboru místních metod. Implicitní psaní není k dispozici pro pole třídy, C# protože by Kompilátor narazil na logické rozhraní Paradox při zpracování kódu: kompilátor musí znát typ pole, ale nemůže určit typ, dokud není výraz přiřazení analyzován. výraz nelze vyhodnotit bez znalosti typu. Vezměte v úvahu následující kód:
+Implicitní zadání pomocí klíčového slova `var` lze použít pouze pro proměnné v oboru místních metod. Implicitní psaní není k dispozici pro pole třídy, C# protože by Kompilátor narazil na logický Paradox při zpracování kódu: kompilátor musí znát typ pole, ale nemůže určit typ, dokud není výraz přiřazení analyzován, a výraz nelze vyhodnotit bez znalosti typu. Uvažujte následující kód:
 
 ```csharp
 private var bookTitles;

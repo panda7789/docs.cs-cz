@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - structured navigation [WPF]
 ms.assetid: 025d30ef-fec5-436d-ad7a-5d5483331c26
-ms.openlocfilehash: 09c3c57f3ac1009416a5c67b37c035fe30cd5b5e
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 5e8c27d017ed4bf8a7dcc2dda18877c9ed8dba69
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425330"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636338"
 ---
 # <a name="structured-navigation-overview"></a>Přehled strukturované navigace
 
@@ -135,7 +135,7 @@ Na volanou stránku není nutné předávat parametry. Místo toho můžete prov
 
   - Načte a použije parametry uložené v <xref:System.Windows.Application.Properties%2A>.
 
-Ale jak vidíte za chvíli, budete potřebovat použít kód pro vytvoření instance a přejít na volanou stránku, kde můžete shromažďovat data vrácená volanou stránkou. Z tohoto důvodu musí být <xref:System.Windows.Navigation.PageFunction%601> udržována v neaktivním stavu. v opačném případě při příštím přechodu na <xref:System.Windows.Navigation.PageFunction%601>[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] vytvoří instance <xref:System.Windows.Navigation.PageFunction%601> pomocí konstruktoru bez parametrů.
+Ale jak vidíte za chvíli, budete potřebovat použít kód pro vytvoření instance a přejít na volanou stránku, kde můžete shromažďovat data vrácená volanou stránkou. Z tohoto důvodu musí být <xref:System.Windows.Navigation.PageFunction%601> udržována v neaktivním stavu. v opačném případě při příštím přechodu na <xref:System.Windows.Navigation.PageFunction%601>WPF vytvoří instanci <xref:System.Windows.Navigation.PageFunction%601> pomocí konstruktoru bez parametrů.
 
 Před vrácením volané stránky však musí vracet data, která lze načíst volající stránkou.
 

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - object initializers [C#]
 - collection initializers [C#]
 ms.assetid: c58f3db5-d7d4-4651-bd2d-5a3a97357f61
-ms.openlocfilehash: 837be04208d438f15b4cc7c7124a47ef6c038cb2
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
-ms.translationtype: MT
+ms.openlocfilehash: ac04bf3e6d683caa330643820a89c6cc4f62c780
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73455437"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635987"
 ---
 # <a name="object-and-collection-initializers-c-programming-guide"></a>Inicializátory objektu a kolekce (Průvodce programováním v C#)
 
@@ -58,13 +58,13 @@ public string this[char c, int i] {  set { ... }; }
 
 ## <a name="object-initializers-with-anonymous-types"></a>Inicializátory objektů s anonymními typy
 
-I když se Inicializátory objektů dají použít v jakémkoli kontextu, jsou zvláště užitečné v [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] výrazech dotazů. Výrazy dotazů často využívají [anonymní typy](./anonymous-types.md), které lze inicializovat pouze pomocí inicializátoru objektu, jak je znázorněno v následující deklaraci.  
+I když Inicializátory objektů lze použít v jakémkoli kontextu, jsou zvláště užitečné ve výrazech dotazů LINQ. Výrazy dotazů často využívají [anonymní typy](./anonymous-types.md), které lze inicializovat pouze pomocí inicializátoru objektu, jak je znázorněno v následující deklaraci.  
 
 ```csharp
 var pet = new { Age = 10, Name = "Fluffy" };  
 ```
 
-Anonymní typy umožňují klauzuli `select` ve výrazu dotazu [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] k transformaci objektů původní sekvence na objekty, jejichž hodnota a tvar se mohou lišit od původní hodnoty. Tato možnost je užitečná, pokud chcete uložit pouze část informace z jednotlivých objektů v sekvenci. V následujícím příkladu Předpokládejme, že objekt produktu (`p`) obsahuje mnoho polí a metod a že máte zájem pouze vytvořit sekvenci objektů, které obsahují název produktu a jednotkovou cenu.  
+Anonymní typy umožňují klauzuli `select` ve výrazu dotazu LINQ pro transformaci objektů původní sekvence na objekty, jejichž hodnota a tvar se mohou lišit od původní hodnoty. Tato možnost je užitečná, pokud chcete uložit pouze část informace z jednotlivých objektů v sekvenci. V následujícím příkladu Předpokládejme, že objekt produktu (`p`) obsahuje mnoho polí a metod a že máte zájem pouze vytvořit sekvenci objektů, které obsahují název produktu a jednotkovou cenu.  
   
 [!code-csharp[ObjectInitializer3](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/object-collection-initializers/BasicObjectInitializers.cs#AnonymousUse)]  
 

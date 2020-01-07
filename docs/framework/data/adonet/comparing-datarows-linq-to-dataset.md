@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8fe0eadf-297b-487c-8d4b-7816753c2883
-ms.openlocfilehash: 30a782f5e37e867c7a0e4dfd800f4b2c2836d070
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: fbd642fb3da6d664df9076b8d7576865d516727e
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784936"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75634895"
 ---
 # <a name="comparing-datarows-linq-to-dataset"></a>Porovnání hodnot DataRows (LINQ to DataSet)
-[!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)]definuje různé nastavené operátory pro porovnání zdrojových elementů, aby bylo vidět, zda jsou stejné. [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]poskytuje následující operátory set:  
+LINQ (Language-Integrated Query) definuje různé nastavené operátory pro porovnání zdrojových elementů, aby bylo vidět, zda jsou stejné. LINQ poskytuje následující operátory set:  
   
 - <xref:System.Linq.Enumerable.Distinct%2A>  
   
@@ -23,9 +23,9 @@ ms.locfileid: "70784936"
   
 - <xref:System.Linq.Enumerable.Except%2A>  
   
- Tyto operátory porovnávají zdrojové prvky voláním <xref:System.Collections.Generic.IEqualityComparer%601.GetHashCode%2A> metod <xref:System.Collections.Generic.IEqualityComparer%601.Equals%2A> a u každé kolekce prvků. V případě <xref:System.Data.DataRow>, tyto operátory provádějí porovnání odkazů, což obecně není ideální chování pro operace set pro tabulková data. Pro operace set je obvykle vhodné určit, zda jsou hodnoty prvků stejné a nikoli odkazy na prvky. Proto byla třída přidána do LINQ to DataSet. <xref:System.Data.DataRowComparer> Tato třída se dá použít k porovnání hodnot řádků.  
+ Tyto operátory porovnávají zdrojové prvky voláním metody <xref:System.Collections.Generic.IEqualityComparer%601.GetHashCode%2A> a <xref:System.Collections.Generic.IEqualityComparer%601.Equals%2A> v každé kolekci prvků. V případě <xref:System.Data.DataRow>tyto operátory provádějí porovnání odkazů, což obecně není ideální chování pro operace set přes tabulková data. Pro operace set je obvykle vhodné určit, zda jsou hodnoty prvků stejné a nikoli odkazy na prvky. Proto byla třída <xref:System.Data.DataRowComparer> přidána do LINQ to DataSet. Tato třída se dá použít k porovnání hodnot řádků.  
   
- Třída obsahuje implementaci porovnání hodnot pro <xref:System.Data.DataRow>, takže tuto třídu lze použít pro operace set, jako je například <xref:System.Linq.Enumerable.Distinct%2A>. <xref:System.Data.DataRowComparer> Tato třída nemůže být vytvořena přímo. místo toho je třeba použít <xref:System.Data.DataRowComparer%601> vlastnostkvráceníinstance.<xref:System.Data.DataRowComparer.Default%2A> Metoda je pak volána a dva <xref:System.Data.DataRow> objekty, které mají být porovnány, jsou předány jako vstupní parametry. <xref:System.Data.DataRowComparer%601.Equals%2A> Metoda vrátí `true` , zda je seřazená sada hodnot sloupců v obou <xref:System.Data.DataRow> objektech shodná. v opačném `false`případě. <xref:System.Data.DataRowComparer%601.Equals%2A>  
+ Třída <xref:System.Data.DataRowComparer> obsahuje implementaci porovnání hodnot pro <xref:System.Data.DataRow>, takže tuto třídu lze použít pro operace set, jako je například <xref:System.Linq.Enumerable.Distinct%2A>. Tato třída nemůže být vytvořena přímo. místo toho je nutné použít vlastnost <xref:System.Data.DataRowComparer.Default%2A> k vrácení instance <xref:System.Data.DataRowComparer%601>. Pak se zavolá metoda <xref:System.Data.DataRowComparer%601.Equals%2A> a dva objekty <xref:System.Data.DataRow>, které se mají porovnat, jsou předány jako vstupní parametry. Metoda <xref:System.Data.DataRowComparer%601.Equals%2A> vrátí `true`, pokud je seřazená sada hodnot sloupců v obou <xref:System.Data.DataRow>ch objektech rovna hodnotě; v opačném případě `false`.  
   
 ## <a name="example"></a>Příklad  
  Tento příklad používá `Intersect` k vrácení kontaktů, které se zobrazí v obou tabulkách.  

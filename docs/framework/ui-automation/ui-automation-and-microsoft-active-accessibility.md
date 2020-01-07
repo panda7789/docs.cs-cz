@@ -7,12 +7,12 @@ helpviewer_keywords:
 - UI Automation, Microsoft Active Accessibility
 - Active Accessibility, UI Automation compared to
 ms.assetid: 87bee662-0a3e-4232-a421-20e7a5968321
-ms.openlocfilehash: 96998b2e625c7e395dd61d6905bc437ef1ca697d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: f9fc7e2e1a6d5ee26f04b239723c6b7d4283dbce
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436634"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75632316"
 ---
 # <a name="ui-automation-and-microsoft-active-accessibility"></a>Automatizace uživatelského rozhraní a technologie Microsoft Active Accessibility
 > [!NOTE]
@@ -28,7 +28,7 @@ ms.locfileid: "74436634"
   
 <a name="Support_in_Windows_Presentation_Foundation_"></a>   
 ## <a name="support-in-windows-presentation-foundation"></a>Podpora v Windows Presentation Foundation  
- Windows Presentation Foundation (WPF) je nový model pro vytváření uživatelských rozhraní. prvky [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] neobsahují nativní podporu pro aktivní přístupnost; podporují ale [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], což zahrnuje přemostění podpory aktivních klientů usnadnění. Funkce přístupnosti [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)], jako je bohatá podpora pro text, můžou plně využít jenom klienti napsané konkrétně pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].  
+ Windows Presentation Foundation (WPF) je nový model pro vytváření uživatelských rozhraní. Prvky WPF neobsahují nativní podporu pro aktivní přístupnost; podporují ale [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], což zahrnuje přemostění podpory aktivních klientů usnadnění. Plně výhodou funkcí usnadnění, jako je bohatá podpora pro text, mohou využívat pouze klienti zapsané speciálně pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)].  
   
 <a name="Servers_and_Clients_compare"></a>   
 ## <a name="servers-and-clients"></a>Servery a klienti  
@@ -98,7 +98,7 @@ ms.locfileid: "74436634"
 |ROLE_SYSTEM_SPINBUTTON|Číselník|  
 |ROLE_SYSTEM_SPLITBUTTON|Tlačítko rozdělení|  
 |ROLE_SYSTEM_STATUSBAR|Stavový řádek|  
-|ROLE_SYSTEM_PAGETABLIST|Tabulátor|  
+|ROLE_SYSTEM_PAGETABLIST|Karta|  
 |ROLE_SYSTEM_PAGETAB|Položka karty|  
 |ROLE_SYSTEM_TABLE|Tabulka|  
 |ROLE_SYSTEM_STATICTEXT|Text|  
@@ -126,7 +126,7 @@ ms.locfileid: "74436634"
   
 |Přístup k vlastnosti aktivního přístupnosti|ID vlastnosti [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|Poznámky|  
 |-----------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|-------------|  
-|`get_accKeyboardShortcut`|<xref:System.Windows.Automation.AutomationElement.AccessKeyProperty> nebo <xref:System.Windows.Automation.AutomationElement.AcceleratorKeyProperty>|`AccessKeyProperty` má přednost, pokud jsou obě přítomny.|  
+|`get_accKeyboardShortcut`|<xref:System.Windows.Automation.AutomationElement.AccessKeyProperty> Nebo <xref:System.Windows.Automation.AutomationElement.AcceleratorKeyProperty>|`AccessKeyProperty` má přednost, pokud jsou obě přítomny.|  
 |`get_accName`|<xref:System.Windows.Automation.AutomationElement.NameProperty>||  
 |`get_accRole`|<xref:System.Windows.Automation.AutomationElement.ControlTypeProperty>|Viz předchozí tabulka pro mapování rolí na typy ovládacích prvků.|  
 |`get_accValue`|<xref:System.Windows.Automation.ValuePattern.ValueProperty?displayProperty=nameWithType><br /><br /> <xref:System.Windows.Automation.RangeValuePattern.ValueProperty?displayProperty=nameWithType>|Platné pouze pro typy ovládacích prvků, které podporují ValuePattern nebo RangeValuePattern. Hodnoty ovládacích RangeValue jsou normalizovány na 0-100, aby byly konzistentní s chováním MSAA. Položky hodnot používají řetězec.|  
@@ -244,7 +244,7 @@ ms.locfileid: "74436634"
 |Bez ekvivalentu|<xref:System.Windows.Automation.AutomationElement.ToolTipOpenedEvent>|  
   
 <a name="Security_compare"></a>   
-## <a name="security"></a>Zabezpečení  
+## <a name="security"></a>Zabezpečení –  
  Některé scénáře přizpůsobení `IAccessible` vyžadují zalomení základní `IAccessible` a volání do něj. To má vliv na zabezpečení, protože částečně důvěryhodná komponenta by neměla být zprostředkující v cestě kódu.  
   
  [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] model odstraňuje nutnost volání zprostředkovatelů do jiného kódu poskytovatele. Služba [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Core provádí veškerou nezbytnou agregaci.  

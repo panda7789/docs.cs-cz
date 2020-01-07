@@ -2,15 +2,15 @@
 title: Agregační dotazy
 ms.date: 03/30/2017
 ms.assetid: 13ec5580-05ce-4a1f-9d3d-8660be7891a2
-ms.openlocfilehash: e61b16d6337c9b40f9e94052869a4c5592291d71
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 8defefb39974bea150fed84b0e7404b43882c41c
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70248106"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75634739"
 ---
 # <a name="aggregate-queries"></a>Agregační dotazy
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]`Count` `Max` podporujeoperátory`Min`Aggregate ,,`Sum` , a. `Average` Všimněte si následujících vlastností agregačních operátorů [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]v:  
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje agregační operátory `Average`, `Count`, `Max`, `Min`a `Sum`. Všimněte si následujících vlastností agregačních operátorů v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]:  
   
 - Agregované dotazy jsou spouštěny okamžitě.  
   
@@ -26,26 +26,26 @@ ms.locfileid: "70248106"
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Vrácení průměrné hodnoty z číselné posloupnosti](return-the-average-value-from-a-numeric-sequence.md)  
- Ukazuje, jak použít <xref:System.Linq.Enumerable.Average%2A> operátor.  
+ Ukazuje, jak použít operátor <xref:System.Linq.Enumerable.Average%2A>.  
   
  [Počet elementů v posloupnosti](count-the-number-of-elements-in-a-sequence.md)  
- Ukazuje, jak použít <xref:System.Linq.Enumerable.Count%2A> operátor.  
+ Ukazuje, jak použít operátor <xref:System.Linq.Enumerable.Count%2A>.  
   
  [Nalezení maximální hodnoty v číselné posloupnosti](find-the-maximum-value-in-a-numeric-sequence.md)  
- Ukazuje, jak použít <xref:System.Linq.Enumerable.Max%2A> operátor.  
+ Ukazuje, jak použít operátor <xref:System.Linq.Enumerable.Max%2A>.  
   
  [Nalezení minimální hodnoty v číselné posloupnosti](find-the-minimum-value-in-a-numeric-sequence.md)  
- Ukazuje, jak použít <xref:System.Linq.Enumerable.Min%2A> operátor.  
+ Ukazuje, jak použít operátor <xref:System.Linq.Enumerable.Min%2A>.  
   
  [Nalezení součtu hodnot v číselné posloupnosti](compute-the-sum-of-values-in-a-numeric-sequence.md)  
- Ukazuje, jak použít <xref:System.Linq.Enumerable.Sum%2A> operátor.  
+ Ukazuje, jak použít operátor <xref:System.Linq.Enumerable.Sum%2A>.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Příklady dotazů](query-examples.md)  
  Obsahuje odkazy na [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dotazy v Visual Basic a C#.  
   
  [Koncepty dotazů](query-concepts.md)  
- Obsahuje odkazy na témata, která vysvětlují [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] koncepty pro [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]návrh dotazů v nástroji.  
+ Obsahuje odkazy na témata, která vysvětlují koncepty pro návrh dotazů LINQ v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
   
  [Úvod do dotazů LINQ (C#)](../../../../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md)  
- Vysvětluje, jak dotazy fungují [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)]v.
+ Vysvětluje, jak dotazy fungují v LINQ.

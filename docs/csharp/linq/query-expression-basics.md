@@ -1,180 +1,180 @@
 ---
-title: Základy výrazů dotazů (LINQ v JAZYKU C#)
-description: Představuje koncepty související s výrazy dotazu
+title: Základy výrazů dotazů (LINQ in C#)
+description: Představuje koncepty související s výrazy dotazu.
 ms.date: 11/30/2016
 ms.assetid: 027db1f8-346f-44d2-a16e-043fcea3a4e0
-ms.openlocfilehash: 96ef75fe702e60eaa38acef77a73a5ea7f2076f4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 5ebe2163df47c60c677d7ac911ce0f65529835eb
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61688602"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635857"
 ---
 # <a name="query-expression-basics"></a>Základy výrazů dotazů
 
-Tento článek představuje základní koncepty související s výrazy dotazů v jazyce C#.
+V tomto článku se seznámíte se základními koncepty týkajícími se výrazů dotazů v C#.
 
-## <a name="what-is-a-query-and-what-does-it-do"></a>Co je dotaz a co to dělá?
+## <a name="what-is-a-query-and-what-does-it-do"></a>Co je dotaz a co dělá?
 
-A *dotazu* je sada instrukcí, které popisují, jaká data pro načtení do daného zdroje dat (nebo zdroje) a jaké tvar a organizaci by měl mít vrácená data. Dotaz se liší od výsledky, které vytvoří.
+*Dotaz* je sada instrukcí, která popisuje, jaká data se mají načíst z daného zdroje dat (nebo zdrojů) a jaký tvar a organizace vrácená data mají mít. Dotaz se liší od výsledků, které vytváří.
 
-Obecně platí zdroj dat je logicky uspořádaná jako sekvenci prvků stejného typu. Například tabulky databáze SQL obsahuje posloupnosti řádků. V souboru XML je "sekvence" elementů XML (i když tyto funkce jsou uspořádané hierarchicky ve stromové struktuře). Kolekci v paměť obsahuje pouze sekvenci objektů.
+Obecně jsou zdrojová data uspořádána logicky jako sekvence prvků stejného druhu. Například tabulka SQL Database obsahuje posloupnost řádků. V souboru XML je "sekvence" prvků XML (i když jsou uspořádány hierarchicky ve stromové struktuře). Kolekce v paměti obsahuje sekvenci objektů.
 
-Z hlediska aplikace konkrétní typ a strukturu původní zdroj dat není důležité. Aplikace vždy zobrazí zdroj dat jako <xref:System.Collections.Generic.IEnumerable%601> nebo <xref:System.Linq.IQueryable%601> kolekce. Například v technologii LINQ to XML, zdrojová data jsou dostupná jako `IEnumerable` \< <xref:System.Xml.Linq.XElement>>.
+Z pohledu aplikace není konkrétní typ a struktura původních zdrojových dat důležité. Aplikace vždy uvidí zdrojová data jako <xref:System.Collections.Generic.IEnumerable%601> nebo <xref:System.Linq.IQueryable%601> kolekci. Například v LINQ to XML se zdrojová data zobrazují jako `IEnumerable`\<<xref:System.Xml.Linq.XElement>>.
 
-Zadaný této zdrojové sekvence, dotaz může proveďte jednu z tři věci:
+V této zdrojové sekvenci může dotaz provádět jednu ze tří věcí:
 
-- Načtení podmnožiny prvků k vytvoření nového pořadí beze změny jednotlivé prvky. Dotaz může pak řazení nebo seskupení vrácené posloupnosti různými způsoby, jak je znázorněno v následujícím příkladu (Předpokládejme `scores` je `int[]`):
+- Načte podmnožinu prvků pro vytvoření nové sekvence bez změny jednotlivých prvků. Dotaz pak může seřadit nebo seskupit vrácenou posloupnost různými způsoby, jak je znázorněno v následujícím příkladu (Předpokládejme, `scores` je `int[]`):
 
     [!code-csharp[csrefQueryExpBasics#45](~/samples/snippets/csharp/concepts/linq/query-expression-basics_1.cs)]
 
-- Načíst řadu prvků, jako v předchozím příkladu, ale transformují je na nový typ objektu. Například dotaz může načíst pouze poslední názvy z určité záznamy o zákaznících ve zdroji dat. Nebo může načíst úplný záznam a pak přes ni vytvořit jiného typu objektů v paměti do mezipaměti nebo dokonce data XML před generováním pořadí konečný výsledek. Následující příklad ukazuje projekce ze `int` k `string`. Všimněte si nového typu `highScoresQuery`.
+- Načte sekvenci prvků jako v předchozím příkladu, ale transformuje je na nový typ objektu. Dotaz může například načíst pouze poslední názvy z určitých záznamů zákazníka ve zdroji dat. Nebo může načíst úplný záznam a pak ho použít k vytvoření dalšího typu objektu v paměti nebo dokonce dat XML před generováním výsledné sekvence výsledků. Následující příklad ukazuje projekci z `int` na `string`. Všimněte si nového typu `highScoresQuery`.
 
     [!code-csharp[csrefQueryExpBasics#46](~/samples/snippets/csharp/concepts/linq/query-expression-basics_2.cs)]
 
-- Načtěte hodnotu singleton zdrojových dat, jako například:
+- Načtěte hodnotu typu Singleton týkající se zdrojových dat, jako například:
 
-  - Počet prvků, které splňují určité podmínky.
+  - Počet prvků, které odpovídají určité podmínce.
 
-  - Prvek, který má nejvyšší či nejnižší hodnotu.
+  - Prvek, který má největší nebo nejnižší hodnotu.
 
-  - První prvek, který odpovídá podmínce nebo součet konkrétní hodnoty v zadané sadě prvků. Například následující dotaz vrátí počet skóre větší než 80 z `scores` celočíselné pole:
+  - První prvek, který odpovídá podmínce, nebo součet konkrétních hodnot v zadané sadě prvků. Například následující dotaz vrátí počet skóre větší než 80 z `scores` pole s celými čísly:
 
     [!code-csharp[csrefQueryExpBasics#47](~/samples/snippets/csharp/concepts/linq/query-expression-basics_3.cs)]
 
-    V předchozím příkladu, Všimněte si použití závorek okolo výrazu dotazu před voláním `Count` metody. To lze vyjádřit pomocí nové proměnné k ukládání konkrétních výsledků. Tato technika je lépe čitelný, protože udržuje odděleně od dotaz, který ukládá výsledek proměnné, která ukládá dotaz.
+    V předchozím příkladu si poznamenejte použití závorek kolem výrazu dotazu před voláním metody `Count`. Můžete to také vyjádřit pomocí nové proměnné pro uložení konkrétního výsledku. Tato technika je čitelnější, protože uchovává proměnnou, která ukládá dotaz odděleně od dotazu, který ukládá výsledek.
 
     [!code-csharp[csrefQueryExpBasics#48](~/samples/snippets/csharp/concepts/linq/query-expression-basics_4.cs)]
 
-V předchozím příkladu je dotaz proveden při volání funkce `Count`, protože `Count` musí iteraci přes výsledky, aby bylo možné zjistit počet prvků vrácených `highScoresQuery`.
+V předchozím příkladu je dotaz proveden při volání `Count`, protože `Count` musí iterovat na výsledky, aby bylo možné určit počet prvků vrácených `highScoresQuery`.
 
 ## <a name="what-is-a-query-expression"></a>Co je výraz dotazu?
 
-A *výrazu dotazu* je dotaz vyjádřené v syntaxi dotazu. Výraz dotazu je typů prvotřídní jazykové konstrukce. Je stejně jako libovolný jiný výraz a je možné v libovolném kontextu, ve kterém je platný výraz jazyka C#. Výraz dotazu obsahuje sadu klauzulí napsané v deklarativní syntaxe podobně jako SQL nebo výraz XQuery. Každou klauzuli zase obsahuje jeden nebo více výrazy jazyka C# a tyto výrazy mohou sami být výrazu dotazu nebo obsahovat výraz dotazu.
+*Výraz dotazu* je dotaz vyjádřený v syntaxi dotazu. Výraz dotazu je konstrukce jazyka první třídy. Funguje stejně jako jakýkoli jiný výraz a lze jej použít v jakémkoli kontextu, ve kterém je C# výraz platný. Výraz dotazu se skládá ze sady klauzulí napsaných v deklarativní syntaxi, podobně jako SQL nebo XQuery. Každá klauzule zase obsahuje jeden nebo více C# výrazů a tyto výrazy mohou být buď výraz dotazu, nebo obsahují výraz dotazu.
 
-Výraz dotazu musí začínat [z](../language-reference/keywords/from-clause.md) klauzule a musí končit [vyberte](../language-reference/keywords/select-clause.md) nebo [skupiny](../language-reference/keywords/group-clause.md) klauzuli. Mezi první `from` klauzule a poslední `select` nebo `group` klauzule, může obsahovat jeden nebo více z těchto klauzulí volitelné: [kde](../language-reference/keywords/where-clause.md), [orderby](../language-reference/keywords/orderby-clause.md), [spojení ](../language-reference/keywords/join-clause.md), [nechat](../language-reference/keywords/let-clause.md) a dokonce i další [z](../language-reference/keywords/from-clause.md) klauzule. Můžete také použít [do](../language-reference/keywords/into.md) – klíčové slovo umožňující výsledek `join` nebo `group` klauzuli, která bude sloužit jako zdroj pro další klauzule dotazu ve stejném výrazu dotazu.
+Výraz dotazu musí začínat klauzulí [from](../language-reference/keywords/from-clause.md) a musí končit klauzulí [Select](../language-reference/keywords/select-clause.md) nebo [Group](../language-reference/keywords/group-clause.md) . Mezi první klauzulí `from` a poslední klauzulí `select` nebo `group` může obsahovat jednu nebo více z těchto volitelných klauzulí: [WHERE](../language-reference/keywords/where-clause.md), [OrderBy](../language-reference/keywords/orderby-clause.md), [Join](../language-reference/keywords/join-clause.md), [let](../language-reference/keywords/let-clause.md) a ještě další klauzule [from](../language-reference/keywords/from-clause.md) . Můžete také použít klíčové slovo [into](../language-reference/keywords/into.md) k povolení výsledku `join` nebo `group` klauzule, která slouží jako zdroj pro další klauzule dotazu ve stejném výrazu dotazu.
 
-### <a name="query-variable"></a>Proměnné dotazu
+### <a name="query-variable"></a>Proměnná dotazu
 
-V technologii LINQ, proměnná dotazu je jakákoli proměnná, která ukládá *dotazu* místo *výsledky* dotazu. Přesněji řečeno, proměnná dotazu je vždy Výčtový typ, který vytvoří řadu prvků, když ho je procházena `foreach` příkazu nebo přímého volání jeho `IEnumerator.MoveNext` metoda.
+V LINQ je proměnná dotazu jakákoli proměnná, která namísto *výsledků* dotazu ukládá *dotaz* . Přesněji řečeno je proměnná dotazu vždy vyčíslitelného typu, který vytvoří sekvenci prvků při iteraci v příkazu `foreach` nebo přímého volání své `IEnumerator.MoveNext` metody.
 
-Následující příklad kódu ukazuje výraz jednoduchý dotaz s jedním zdrojem dat, jednu klauzuli filtrování, jednu klauzuli pořadí a žádná transformace zdrojové elementy. `select` Končí klauzule dotazu.
+Následující příklad kódu ukazuje jednoduchý výraz dotazu s jedním zdrojem dat, jednou klauzulí filtrování, jednou klauzulí řazení a bez transformace zdrojových elementů. Klauzule `select` ukončí dotaz.
 
 [!code-csharp[csrefQueryExpBasics#49](~/samples/snippets/csharp/concepts/linq/query-expression-basics_5.cs)]
 
-V předchozím příkladu `scoreQuery` je *proměnné dotazu* které se někdy označuje jako jenom *dotazu*. Ukládá žádná data skutečný výsledek, který je vytvořen v proměnné dotazu `foreach` smyčky. A když `foreach` spuštění příkazů výsledky dotazu nevrací prostřednictvím proměnné dotazu `scoreQuery`. Místo toho jsou vráceny prostřednictvím proměnné iterace `testScore`. `scoreQuery` Proměnnou můžete provést iteraci za sekundu `foreach` smyčky. To se vytvářejí stejné výsledky, tak dlouho, dokud ho ani zdroj dat byl změněn.
+V předchozím příkladu je `scoreQuery` *proměnnou dotazu,* která je někdy označována jako pouze *dotaz*. Proměnná dotazu ukládá žádná skutečná data výsledků, která jsou vytvořena ve smyčce `foreach`. A když se příkaz `foreach` spustí, výsledky dotazu se nevrátí pomocí proměnné dotazu `scoreQuery`. Místo toho jsou vráceny prostřednictvím proměnné iterace `testScore`. Proměnnou `scoreQuery` lze iterovat v druhé smyčce `foreach`. Výsledkem bude stejné výsledky, pokud to není ani upravený zdroj dat.
 
-Proměnné dotazu může uložit dotaz, který je vyjádřena v syntaxi dotazu nebo syntaxe využívající metody nebo kombinaci obojího. V následujících příkladech obě `queryMajorCities` a `queryMajorCities2` jsou proměnné dotazu:
+Proměnná dotazu může uložit dotaz, který je vyjádřen v syntaxi dotazu nebo syntaxi metody, nebo kombinaci dvou. V následujících příkladech jsou proměnné dotazu `queryMajorCities` i `queryMajorCities2`:
 
 [!code-csharp[csrefQueryExpBasics#50](~/samples/snippets/csharp/concepts/linq/query-expression-basics_6.cs)]
 
-Na druhé straně následující dva příklady ukazovat proměnné, které nejsou proměnné dotazu, i když každá je inicializován pomocí dotazu. Nejsou se proměnné dotazu, protože jsou v nich uložené výsledky:
+Na druhé straně následující dva příklady znázorňují proměnné, které nejsou proměnné dotazů, i když každá z nich je inicializována s dotazem. Nejedná se o proměnné dotazů, protože ukládají výsledky:
 
 [!code-csharp[csrefQueryExpBasics#51](~/samples/snippets/csharp/concepts/linq/query-expression-basics_7.cs)]
 
-Další informace o různých způsobech rychlé dotazy, naleznete v tématu [syntaxe využívající dotazy a syntaxe využívající metody v LINQ](../programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md).
+Další informace o různých způsobech, jak vyjádřit dotazy, naleznete [v tématu Syntaxe dotazu a syntaxe metody v jazyce LINQ](../programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md).
 
-#### <a name="explicit-and-implicit-typing-of-query-variables"></a>Explicitní a implicitní zadáním proměnné dotazu
+#### <a name="explicit-and-implicit-typing-of-query-variables"></a>Explicitní a implicitní zadání proměnných dotazu
 
-Tato dokumentace obvykle poskytuje explicitní typ proměnné dotazu chcete-li zobrazit typ vztahu mezi proměnné dotazu a [klauzule select](../language-reference/keywords/select-clause.md). Ale můžete také použít [var](../language-reference/keywords/var.md) – klíčové slovo, abyste instruovali kompilátor k odvození typu proměnné dotazu (nebo jakoukoli jinou místní proměnnou) v době kompilace. Například příklad dotazu, které se zobrazilo dříve v tomto tématu se dají vyjádřit také pomocí implicitního zápisu:
+Tato dokumentace obvykle poskytuje explicitní typ proměnné dotazu, aby se zobrazil vztah typu mezi proměnnou dotazu a [klauzulí Select](../language-reference/keywords/select-clause.md). Můžete však také použít klíčové slovo [var](../language-reference/keywords/var.md) k tomu, aby kompilátor mohl odvodit typ proměnné dotazu (nebo jakékoli jiné místní proměnné) v době kompilace. Například příklad dotazu, který byl zobrazen dříve v tomto tématu, lze vyjádřit také pomocí implicitního zadání:
 
 [!code-csharp[csrefQueryExpBasics#52](~/samples/snippets/csharp/concepts/linq/query-expression-basics_8.cs)]
 
-Další informace najdete v tématu [implicitně typované lokální proměnné](../programming-guide/classes-and-structs/implicitly-typed-local-variables.md) a [vztahy typů v LINQ dotaz operace](../programming-guide/concepts/linq/type-relationships-in-linq-query-operations.md).
+Další informace naleznete v tématu [implicitně typované lokální proměnné](../programming-guide/classes-and-structs/implicitly-typed-local-variables.md) a [vztahy typů v operacích dotazu LINQ](../programming-guide/concepts/linq/type-relationships-in-linq-query-operations.md).
 
 ### <a name="starting-a-query-expression"></a>Spuštění výrazu dotazu
 
-Výraz dotazu musí začínat `from` klauzuli. Určuje zdroj dat spolu s proměnnou rozsahu. Proměnná rozsahu představuje každý prvek po sobě jdoucích ze zdrojové sekvence, jak procházet řízený zdrojové sekvence. Proměnná rozsahu je silně typováno podle typu ve zdroji dat prvků. V následujícím příkladu protože `countries` je pole `Country` objekty, proměnná rozsahu je také zadán jako `Country`. Vzhledem k tomu, že proměnná rozsahu je silně typováno, můžete použít operátor tečky pro přístup k libovolné dostupné členy typu.
+Výraz dotazu musí začínat klauzulí `from`. Určuje zdroj dat spolu s proměnnou rozsahu. Proměnná Range reprezentuje každý následný prvek ve zdrojové sekvenci, protože je zdrojová sekvence procházena. Proměnná rozsahu je typově silný na základě typu prvků ve zdroji dat. V následujícím příkladu, protože `countries` je pole `Country` objektů, proměnná rozsahu je také zadána jako `Country`. Vzhledem k tomu, že je proměnná rozsahu silného typu, můžete použít operátor tečka pro přístup k některým z dostupných členů typu.
 
 [!code-csharp[csrefQueryExpBasics#53](~/samples/snippets/csharp/concepts/linq/query-expression-basics_9.cs)]
 
-Proměnná rozsahu je v oboru, dokud nebude ukončen dotaz středníkem nebo s *pokračování* klauzuli.
+Proměnná rozsahu je v oboru, dokud se neukončí dotaz buď středníkem, nebo klauzulí *pokračování* .
 
-Výraz dotazu může obsahovat více `from` klauzule. Pomocí dalších `from` klauzule pokud každý prvek ve zdrojové sekvenci je samotný soubor, nebo obsahuje kolekci. Například předpokládejme, že máte kolekci `Country` objektů, z nichž každý obsahuje kolekci `City` objektů s názvem `Cities`. Dotaz `City` objekty v každém `Country`, použijte dva `from` klauzule, jak je znázorněno zde:
+Výraz dotazu může obsahovat více klauzulí `from`. Pokud je každý prvek ve zdrojové sekvenci sám kolekcí nebo obsahuje kolekci, použijte další klauzule `from`. Předpokládejme například, že máte kolekci `Country` objektů, z nichž každá obsahuje kolekci objektů `City` s názvem `Cities`. Chcete-li zadat dotaz na objekty `City` v každém `Country`, použijte dvě klauzule `from`, jak je znázorněno zde:
 
 [!code-csharp[csrefQueryExpBasics#54](~/samples/snippets/csharp/concepts/linq/query-expression-basics_10.cs)]
 
-Další informace najdete v tématu [klauzule from](../language-reference/keywords/from-clause.md).
+Další informace naleznete v tématu [from – klauzule](../language-reference/keywords/from-clause.md).
 
 ### <a name="ending-a-query-expression"></a>Ukončení výrazu dotazu
 
-Buď musí končit výrazu dotazu `group` klauzule nebo `select` klauzuli.
+Výraz dotazu musí být ukončen buď klauzulí `group`, nebo klauzulí `select`.
 
 #### <a name="group-clause"></a>group – klauzule
 
-Použití `group` klauzule, která vytvoří posloupnost skupiny uspořádané podle klíče, který zadáte. Klíč může být libovolného datového typu. Například následující dotaz vytvoří posloupnost skupiny, která obsahuje jeden nebo více `Country` objekty a jehož klíč je `char` hodnotu.
+Použijte klauzuli `group` pro vytvoření posloupnosti skupin uspořádaných podle klíče, který zadáte. Klíč může být libovolný datový typ. Následující dotaz například vytvoří sekvenci skupin, které obsahují jeden nebo více `Country` objektů a jejichž klíč je `char` hodnota.
 
 [!code-csharp[csrefQueryExpBasics#55](~/samples/snippets/csharp/concepts/linq/query-expression-basics_11.cs)]
 
-Další informace o seskupování najdete v tématu [group – klauzule](../language-reference/keywords/group-clause.md).
+Další informace o seskupování naleznete v tématu [Group Group](../language-reference/keywords/group-clause.md).
 
 #### <a name="select-clause"></a>select – klauzule (C#)
 
-Použití `select` klauzule, která vytvoří všechny ostatní typy pořadí. Jednoduchý `select` klauzule generuje pouze sekvenci objektů stejného typu jako objekty, které jsou obsaženy ve zdroji dat. V tomto příkladu zdroj dat obsahuje `Country` objekty. `orderby` Klauzule právě Seřadí prvky do nového pořadí a `select` klauzule generuje sekvenci uspořádaný `Country` objekty.
+Použijte klauzuli `select` k tvorbě všech ostatních typů sekvencí. Jednoduchá klauzule `select` pouze vytvoří sekvenci stejného typu objektů jako objekty, které jsou obsaženy ve zdroji dat. V tomto příkladu zdroj dat obsahuje `Country` objekty. Klauzule `orderby` pouze Seřadí prvky do nové objednávky a klauzule `select` vytvoří sekvenci přeřazených objektů `Country`.
 
 [!code-csharp[csrefQueryExpBasics#56](~/samples/snippets/csharp/concepts/linq/query-expression-basics_12.cs)]
 
-`select` Klauzule je možné získat zdrojová data sekvencí nových typů. Je také název této transformace *projekce*. V následujícím příkladu `select` klauzule *projekty* sekvenci anonymních typů, která obsahuje pouze podmnožinu polí v původní elementu. Všimněte si, že nové objekty jsou inicializovány pomocí inicializátoru objektu.
+Klauzuli `select` lze použít pro transformaci zdrojových dat do sekvencí nových typů. Tato transformace se také nazývá *projekce*. V následujícím příkladu *obsahuje klauzule `select`* sekvenci anonymních typů, které obsahují pouze podmnožinu polí v původním prvku. Všimněte si, že nové objekty jsou inicializovány pomocí inicializátoru objektu.
 
 [!code-csharp[csrefQueryExpBasics#57](~/samples/snippets/csharp/concepts/linq/query-expression-basics_13.cs)]
 
-Další informace o tom, jak, který `select` klauzuli lze použít transformují zdrojová data, přečtěte si téma [klauzule select](../language-reference/keywords/select-clause.md).
+Další informace o všech způsobech, jak lze použít klauzuli `select` pro transformaci zdrojových dat, naleznete v tématu [Select klauzule](../language-reference/keywords/select-clause.md).
 
 #### <a name="continuations-with-into"></a>Pokračování s "do"
 
-Můžete použít `into` – klíčové slovo v `select` nebo `group` klauzule vytvořit dočasné identifikátor, který ukládá dotaz. To proveďte, když musíte provádět operace dalších dotazů na dotazu po seskupení nebo vyberte operaci. V následujícím příkladu `countries` se seskupí podle naplnění oblastí 10 milionů. Poté, co tyto skupiny jsou vytvořené, další klauzule filtru některé skupiny a pak řazení skupin ve vzestupném pořadí. K provedení dalších operací, pokračování reprezentována `countryGroup` je povinný.
+Pomocí klíčového slova `into` v klauzuli `select` nebo `group` můžete vytvořit dočasný identifikátor, který ukládá dotaz. Tuto akci proveďte v případě, že je nutné provést další operace dotazování pro dotaz po operaci seskupení nebo výběru. V následujícím příkladu se `countries` seskupují podle populace v rozsahu 10 000 000. Po vytvoření těchto skupin se v dalších klauzulích odfiltrují některé skupiny a pak se skupiny seřadí ve vzestupném pořadí. Pro provedení těchto dalších operací je vyžadováno pokračování reprezentované `countryGroup`.
 
 [!code-csharp[csrefQueryExpBasics#58](~/samples/snippets/csharp/concepts/linq/query-expression-basics_14.cs)]
 
-Další informace najdete v tématu [do](../language-reference/keywords/into.md).
+Další informace najdete [v tématu.](../language-reference/keywords/into.md)
 
-### <a name="filtering-ordering-and-joining"></a>Filtrování, řazení a propojení
+### <a name="filtering-ordering-and-joining"></a>Filtrování, řazení a spojování
 
-Mezi počáteční `from` klauzule a konec `select` nebo `group` klauzule, všechny ostatní klauzule (`where`, `join`, `orderby`, `from`, `let`) jsou volitelné. Libovolné volitelné klauzule lze nula doby nebo více než jednou v textu dotazu.
+Mezi počáteční klauzulí `from` a koncová klauzule `select` nebo `group` jsou všechny ostatní klauzule (`where`, `join`, `orderby`, `from`, `let`) volitelné. Kterákoli z volitelných klauzulí může být v těle dotazu použita v nenulovém nebo více časech.
 
 #### <a name="where-clause"></a>where – klauzule
 
-Použití `where` klauzule můžete filtrovat prvky ze zdroje dat založené na jeden nebo více výrazů predikátu. `where` Klauzule v následujícím příkladu má jeden predikát s dvě podmínky.
+Použijte klauzuli `where` pro filtrování prvků ze zdrojových dat na základě jednoho nebo více výrazů predikátů. Klauzule `where` v následujícím příkladu má jeden predikát se dvěma podmínkami.
 
 [!code-csharp[csrefQueryExpBasics#59](~/samples/snippets/csharp/concepts/linq/query-expression-basics_15.cs)]
 
-Další informace najdete v tématu [kde klauzule](../language-reference/keywords/where-clause.md).
+Další informace naleznete v tématu [Where klauzule](../language-reference/keywords/where-clause.md).
 
 #### <a name="orderby-clause"></a>orderby – klauzule
 
-Použití `orderby` klauzule seřadit výsledky ve vzestupném nebo sestupném pořadí. Můžete také určit pořadí řazení sekundární. Následující příklad provede primární řazení `country` objektů pomocí `Area` vlastnost. Pak pomocí provádí sekundární řazení `Population` vlastnost.
+Použijte klauzuli `orderby` pro řazení výsledků ve vzestupném nebo sestupném pořadí. Můžete také zadat sekundární objednávky řazení. Následující příklad provádí primární řazení na `country` objekty pomocí vlastnosti `Area`. Pak provede sekundární řazení pomocí vlastnosti `Population`.
 
 [!code-csharp[csrefQueryExpBasics#60](~/samples/snippets/csharp/concepts/linq/query-expression-basics_16.cs)]
 
-`ascending` – Klíčové slovo je volitelné, je výchozí pořadí řazení, pokud není zadána žádná objednávka. Další informace najdete v tématu [klauzule orderby](../language-reference/keywords/orderby-clause.md).
+Klíčové slovo `ascending` je volitelné; Jedná se o výchozí pořadí řazení, pokud není zadána žádná objednávka. Další informace naleznete v tématu [OrderBy klauzule](../language-reference/keywords/orderby-clause.md).
 
 #### <a name="join-clause"></a>join – klauzule
 
-Použití `join` klauzuli spojení a/nebo zkombinovat prvky z jednoho zdroje dat s prvky z jiného zdroje dat založené na porovnání rovnosti mezi klíči zadaného v jednotlivých prvcích. V technologii LINQ spojení operace provádějí v pořadí, jehož prvky jsou různé typy objektů. Po připojení dvou sekvencí, je nutné použít `select` nebo `group` příkaz a zadejte které elementy pro ukládání do výstupní sekvenci. Anonymního typu můžete použít také ke sloučení vlastnosti ze všech sad přidružených elementů do nový typ pro výstupní sekvenci. V následujícím příkladu `prod` objekty, jejichž `Category` vlastnost odpovídá jednomu z kategorií v `categories` pole řetězců. Produkty jehož `Category` neodpovídá libovolný řetězec v `categories` , budou odfiltrovány. `select` Příkaz projekty nového typu, jehož vlastnosti pocházejí z obou `cat` a `prod`.
+Použijte klauzuli `join` pro přidružení a/nebo kombinování prvků z jednoho zdroje dat s prvky z jiného zdroje dat na základě porovnání rovnosti mezi zadanými klíči v každém elementu. V LINQ jsou operace join prováděny na sekvencích objektů, jejichž prvky jsou různé typy. Po spojení dvou sekvencí je nutné použít příkaz `select` nebo `group` k určení prvku, který má být uložen ve výstupní sekvenci. Můžete také použít anonymní typ ke kombinování vlastností z každé sady přidružených prvků do nového typu pro výstupní sekvenci. Následující příklad přidruží `prod` objektů, jejichž vlastnost `Category` odpovídá jedné z kategorií v poli `categories` řetězců. Produkty, jejichž `Category` se neshodují s žádným řetězcem v `categories` jsou odfiltrovány. Příkaz `select` vytvoří nový typ, jehož vlastnosti jsou odebírány z `cat` a `prod`.
 
 [!code-csharp[csrefQueryExpBasics#61](~/samples/snippets/csharp/concepts/linq/query-expression-basics_17.cs)]
 
-Spojení skupiny můžete také provádět pomocí ukládání výsledků `join` operace do dočasné proměnné s použitím [do](../language-reference/keywords/into.md) – klíčové slovo. Další informace najdete v tématu [klauzule join](../language-reference/keywords/join-clause.md).
+Můžete také provést spojení se skupinou, a to uložením výsledků `join` operace do dočasné proměnné pomocí klíčového slova [into](../language-reference/keywords/into.md) . Další informace najdete v tématu [klauzule JOIN](../language-reference/keywords/join-clause.md).
 
 #### <a name="let-clause"></a>let – klauzule 
 
-Použití `let` klauzule, která uloží výsledek výrazu, jako je například volání metody v nové proměnné rozsahu. V následujícím příkladu proměnná rozsahu `firstName` ukládá první prvek pole řetězců, které vrací `Split`.
+Použijte klauzuli `let` pro uložení výsledku výrazu, jako je například volání metody, do nové proměnné rozsahu. V následujícím příkladu proměnná rozsahu `firstName` ukládá první prvek pole řetězců, který je vrácen `Split`.
 
 [!code-csharp[csrefQueryExpBasics#62](~/samples/snippets/csharp/concepts/linq/query-expression-basics_18.cs)]
 
-Další informace najdete v tématu [let – klauzule](../language-reference/keywords/let-clause.md).
+Další informace naleznete v [klauzuli let](../language-reference/keywords/let-clause.md).
 
 ### <a name="subqueries-in-a-query-expression"></a>Poddotazy ve výrazu dotazu
 
-Klauzule dotazu mohou obsahovat výraz dotazu, který se někdy označuje jako *poddotaz*. Každý poddotaz spustí vlastní `from` klauzuli, která není nutně cesta ke stejnému zdroji dat v prvním `from` klauzuli. Například následující dotaz ukazuje výraz dotazu, který se používá v příkazu select k načtení výsledků operace seskupení.
+Klauzule dotazu může obsahovat výraz dotazu, který se někdy označuje jako *poddotaz*. Každý poddotaz začíná svou vlastní klauzulí `from`, která nutně neukazuje na stejný zdroj dat v první klauzuli `from`. Následující dotaz například ukazuje výraz dotazu, který se používá v příkazu SELECT k načtení výsledků operace seskupení.
 
 [!code-csharp[csrefQueryExpBasics#63](~/samples/snippets/csharp/concepts/linq/query-expression-basics_19.cs)]
 
-Další informace najdete v tématu [postupy: provádění poddotazů na operace seskupení](perform-a-subquery-on-a-grouping-operation.md).
+Další informace najdete v tématu věnovaném [provádění poddotazů u operace seskupení](perform-a-subquery-on-a-grouping-operation.md).
 
 ## <a name="see-also"></a>Viz také:
 
-- [Průvodce programovacího jazyka C#](../programming-guide/index.md)
-- [LINQ (Language Integrated Query)](index.md)
+- [C#Průvodce programováním](../programming-guide/index.md)
+- [ (LINQ)](index.md)
 - [Klíčová slova dotazu (LINQ)](../language-reference/keywords/query-keywords.md)
-- [Přehled standardních operátorů dotazu](../programming-guide/concepts/linq/standard-query-operators-overview.md)
+- [Přehled standardních operátorů dotazů](../programming-guide/concepts/linq/standard-query-operators-overview.md)

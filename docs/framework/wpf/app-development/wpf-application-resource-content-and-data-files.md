@@ -17,21 +17,21 @@ helpviewer_keywords:
 - application development [WPF], files
 - application management [WPF]
 ms.assetid: 7ad2943b-3961-41d3-8fc6-1582d43f5d99
-ms.openlocfilehash: a31dc2c5431c8201607462e8bdef4b8bae0fb41d
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: d966116db09c2baef7deabf5d01138e8445098be
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460911"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636260"
 ---
 # <a name="wpf-application-resource-content-and-data-files"></a>Zdroj, obsah a datové soubory zdroje aplikací WPF
 Aplikace Microsoft Windows jsou často závislé na souborech, které obsahují data, která nejsou spustitelná, například [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], obrázky, videa a zvuky. Windows Presentation Foundation (WPF) nabízí speciální podporu pro konfiguraci, identifikaci a používání těchto typů datových souborů, které se nazývají datové soubory aplikace. Tato podpora se otáčí kolem konkrétní sady typů datových souborů aplikace, včetně:  
   
-- **Soubory prostředků**: datové soubory, které jsou zkompilovány buď do spustitelného souboru, nebo knihovny [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení.  
+- **Soubory prostředků**: datové soubory, které jsou kompilovány buď do spustitelného souboru, nebo do knihovny WPF sestavení.  
   
-- **Soubory obsahu**: samostatné datové soubory, které mají explicitní přidružení se spustitelným souborem [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení.  
+- **Soubory obsahu**: samostatné datové soubory, které mají explicitní přidružení se spustitelným sestavením WPF.  
   
-- **Lokalita se zdrojovými soubory**: samostatné datové soubory, které nemají žádné spojení se spustitelným souborem [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sestavení.  
+- **Lokalita se zdrojovými soubory**: samostatné datové soubory, které nemají žádné spojení se spustitelným sestavením WPF.  
   
  Jedním z důležitých rozdílů mezi těmito třemi typy souborů je, že soubory prostředků a soubory obsahu jsou známy v době sestavování. sestavení má explicitní znalosti. Pro weby, které mají zdrojové soubory, ale sestavení nemusí mít žádná vědomí vůbec nebo implicitně znát odkaz na identifikátor URI (Uniform Resource Identifier). v opačném případě není nijak zaručeno, že již existuje odkazovaná lokalita zdrojového souboru.  
   
@@ -55,7 +55,7 @@ Aplikace Microsoft Windows jsou často závislé na souborech, které obsahují 
 > Soubory prostředků popsané v této části se liší od souborů prostředků popsaných v tématu [prostředky XAML](../../../desktop-wpf/fundamentals/xaml-resources-define.md) a liší se od vložených nebo propojených prostředků popsaných v tématu [Správa prostředků aplikace (.NET)](/visualstudio/ide/managing-application-resources-dotnet).  
   
 ### <a name="configuring-resource-files"></a>Konfigurace souborů prostředků  
- V [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]soubor prostředků je soubor, který je součástí projektu nástroje Microsoft Build Engine (MSBuild) jako položka `Resource`.  
+ V WPF je soubor prostředků soubor, který je součástí projektu nástroje Microsoft Build Engine (MSBuild) jako položka `Resource`.  
   
 ```xml  
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ... >  
@@ -80,7 +80,7 @@ Aplikace Microsoft Windows jsou často závislé na souborech, které obsahují 
  [!code-csharp[WPFAssemblyResourcesSnippets#LoadAPageResourceFileManuallyCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/ApplicationGetResourceStreamSnippetWindow.xaml.cs#loadapageresourcefilemanuallycode)]
  [!code-vb[WPFAssemblyResourcesSnippets#LoadAPageResourceFileManuallyCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/VisualBasic/ResourcesSample/ApplicationGetResourceStreamSnippetWindow.xaml.vb#loadapageresourcefilemanuallycode)]  
   
- Když zavoláte <xref:System.Windows.Application.GetResourceStream%2A> máte přístup k <xref:System.IO.Stream>, je nutné provést další práci, která je převedená na typ vlastnosti, se kterou budete nastavovat. Místo toho můžete [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] postarat o otevření a převod <xref:System.IO.Stream> načtením souboru prostředků přímo do vlastnosti typu pomocí kódu.  
+ Když zavoláte <xref:System.Windows.Application.GetResourceStream%2A> máte přístup k <xref:System.IO.Stream>, je nutné provést další práci, která je převedená na typ vlastnosti, se kterou budete nastavovat. Místo toho je možné nechat, aby se WPF postaral o otevření a převod <xref:System.IO.Stream> načtením souboru prostředků přímo do vlastnosti typu pomocí kódu.  
   
  Následující příklad ukazuje, jak načíst <xref:System.Windows.Controls.Page> přímo do <xref:System.Windows.Controls.Frame> (`pageFrame`) pomocí kódu.  
   
@@ -92,7 +92,7 @@ Aplikace Microsoft Windows jsou často závislé na souborech, které obsahují 
  [!code-xaml[WPFAssemblyResourcesSnippets#LoadPageResourceFileFromXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/ApplicationGetResourceStreamSnippetWindow.xaml#loadpageresourcefilefromxaml)]  
   
 ### <a name="application-code-files-as-resource-files"></a>Soubory s kódem aplikace jako soubory prostředků  
- Pomocí identifikátorů URI balíčků, včetně oken, stránek, toků dokumentů a slovníků prostředků, se dají odkazovat speciální sady [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]ch souborů s kódem aplikace. Můžete například nastavit vlastnost <xref:System.Windows.Application.StartupUri%2A?displayProperty=nameWithType> s identifikátorem URI balíčku, který odkazuje na okno nebo stránku, které chcete načíst při spuštění aplikace.  
+ Pomocí identifikátorů URI balíčků, včetně oken, stránek, toků dokumentů a slovníků prostředků, se dá odkazovat speciální sada souborů s kódem aplikace WPF. Můžete například nastavit vlastnost <xref:System.Windows.Application.StartupUri%2A?displayProperty=nameWithType> s identifikátorem URI balíčku, který odkazuje na okno nebo stránku, které chcete načíst při spuštění aplikace.  
   
  [!code-xaml[WPFAssemblyResourcesSnippets#SetApplicationStartupURI](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/App.xaml#setapplicationstartupuri)]  
   
@@ -160,7 +160,7 @@ Aplikace Microsoft Windows jsou často závislé na souborech, které obsahují 
  [!code-csharp[WPFAssemblyResourcesSnippets#LoadAPageContentFileManuallyCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/ApplicationGetContentStreamSnippetWindow.xaml.cs#loadapagecontentfilemanuallycode)]
  [!code-vb[WPFAssemblyResourcesSnippets#LoadAPageContentFileManuallyCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/VisualBasic/ResourcesSample/ApplicationGetContentStreamSnippetWindow.xaml.vb#loadapagecontentfilemanuallycode)]  
   
- Když zavoláte <xref:System.Windows.Application.GetContentStream%2A> máte přístup k <xref:System.IO.Stream>, je nutné provést další práci, která je převedená na typ vlastnosti, se kterou budete nastavovat. Místo toho můžete [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] postarat o otevření a převod <xref:System.IO.Stream> načtením souboru prostředků přímo do vlastnosti typu pomocí kódu.  
+ Když zavoláte <xref:System.Windows.Application.GetContentStream%2A> máte přístup k <xref:System.IO.Stream>, je nutné provést další práci, která je převedená na typ vlastnosti, se kterou budete nastavovat. Místo toho je možné nechat, aby se WPF postaral o otevření a převod <xref:System.IO.Stream> načtením souboru prostředků přímo do vlastnosti typu pomocí kódu.  
   
  Následující příklad ukazuje, jak načíst <xref:System.Windows.Controls.Page> přímo do <xref:System.Windows.Controls.Frame> (`pageFrame`) pomocí kódu.  
   
@@ -195,7 +195,7 @@ Aplikace Microsoft Windows jsou často závislé na souborech, které obsahují 
 > Web se zdrojovými soubory není uložen v mezipaměti aplikace prohlížeče XAML (XBAP) na klientském počítači, zatímco soubory obsahu jsou. V důsledku toho se stáhnou jenom v případě, že je to výslovně požadováno. Pokud aplikace prohlížeče XAML (XBAP) obsahuje velké mediální soubory, nakonfigurujete je jako lokalita původních souborů znamená, že počáteční spuštění aplikace je mnohem rychlejší a soubory se stáhnou jenom na vyžádání.  
   
 ### <a name="configuring-site-of-origin-files"></a>Probíhá konfigurace serveru počátečních souborů  
- Pokud je vaše lokalita se zdrojovými soubory v době kompilace neexistující nebo neznámá, je nutné použít tradiční mechanismy nasazení, aby bylo zajištěno, že požadované soubory budou k dispozici v době běhu, včetně buď `XCopy` programu příkazového řádku nebo programu Microsoft Windows Instalační.  
+ Pokud je vaše lokalita se zdrojovými soubory v době kompilace neexistující nebo neznámá, je nutné použít tradiční mechanismy nasazení, aby bylo zajištěno, že požadované soubory jsou k dispozici v době běhu, včetně buď `XCopy` programu příkazového řádku nebo Instalační služba systému Windows společnosti Microsoft.  
   
  Pokud v době kompilace znáte soubory, které by měly být umístěny v lokalitě původu, ale přesto chcete se vyhnout explicitní závislosti, můžete tyto soubory přidat do projektu MSBuild jako položku `None`. Stejně jako u souborů obsahu je potřeba nastavit atribut MSBuild `CopyToOutputDirectory`, abyste určili, že je lokalita zdrojového souboru zkopírována do umístění, které je relativní k sestavenému sestavení, zadáním hodnoty `Always` nebo `PreserveNewest` hodnoty.  
   
@@ -222,7 +222,7 @@ Aplikace Microsoft Windows jsou často závislé na souborech, které obsahují 
  [!code-csharp[WPFAssemblyResourcesSnippets#LoadAPageSOOFileManuallyCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/SOOPage.xaml.cs#loadapagesoofilemanuallycode)]
  [!code-vb[WPFAssemblyResourcesSnippets#LoadAPageSOOFileManuallyCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/VisualBasic/ResourcesSample/SOOPage.xaml.vb#loadapagesoofilemanuallycode)]  
   
- Když zavoláte <xref:System.Windows.Application.GetRemoteStream%2A> máte přístup k <xref:System.IO.Stream>, je nutné provést další práci, která je převedená na typ vlastnosti, se kterou budete nastavovat. Místo toho můžete [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] postarat o otevření a převod <xref:System.IO.Stream> načtením souboru prostředků přímo do vlastnosti typu pomocí kódu.  
+ Když zavoláte <xref:System.Windows.Application.GetRemoteStream%2A> máte přístup k <xref:System.IO.Stream>, je nutné provést další práci, která je převedená na typ vlastnosti, se kterou budete nastavovat. Místo toho je možné nechat, aby se WPF postaral o otevření a převod <xref:System.IO.Stream> načtením souboru prostředků přímo do vlastnosti typu pomocí kódu.  
   
  Následující příklad ukazuje, jak načíst <xref:System.Windows.Controls.Page> přímo do <xref:System.Windows.Controls.Frame> (`pageFrame`) pomocí kódu.  
   
