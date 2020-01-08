@@ -1,0 +1,95 @@
+- name: Referenční dokumentace jazyka XAML
+  href: index.md
+  items:
+    - name: 'Jazykové funkce kompatibility značek (mc:)'
+      href: namespace-language-features.md
+      items:
+        - name: Funkce jazyka XAML 2009 (nikoli WPF)
+          href: xaml-2009-language-features.md
+          items:
+            - name: Předdefinované typy obecných primitiv jazyka XAML
+              href: types-for-primitives.md
+            - name: 'x:Arguments – direktiva'
+              href: xarguments-directive.md
+            - name: 'x:FactoryMethod – direktiva'
+              href: xfactorymethod-directive.md
+            - name: 'x:Reference – rozšíření značek'
+              href: xreference-markup-extension.md
+        - name: 'x:Array – rozšíření značek'
+          href: xarray-markup-extension.md
+        - name: 'x:Class – direktiva'
+          href: xclass-directive.md
+        - name: 'x:ClassModifier – direktiva'
+          href: xclassmodifier-directive.md
+        - name: 'x:Code – vnitřní typ jazyka XAML'
+          href: xcode-intrinsic-xaml-type.md
+        - name: 'x:FieldModifier – direktiva'
+          href: xfieldmodifier-directive.md
+        - name: 'x:Key – direktiva'
+          href: xkey-directive.md
+        - name: 'x:Member – direktiva'
+          href: xmember-directive.md
+        - name: 'x:Members – direktiva'
+          href: xmembers-directive.md
+        - name: 'x:Name – direktiva'
+          href: xname-directive.md
+        - name: 'x:Null – rozšíření značek'
+          href: xnull-markup-extension.md
+        - name: 'x:Property – direktiva'
+          href: xproperty-directive.md
+        - name: 'x:Shared – atribut'
+          href: xshared-attribute.md
+        - name: 'x:Static – rozšíření značek'
+          href: xstatic-markup-extension.md
+        - name: 'x:Subclass – direktiva'
+          href: xsubclass-directive.md
+        - name: 'x:Type – rozšíření značek'
+          href: xtype-markup-extension.md
+        - name: 'x:TypeArguments – direktiva'
+          href: xtypearguments-directive.md
+        - name: 'x:Uid – direktiva'
+          href: xuid-directive.md
+        - name: 'x:XData – vnitřní typ jazyka XAML'
+          href: xdata-intrinsic-xaml-type.md
+        - name: XamlName – gramatika
+          href: xamlname-grammar.md
+        - name: '{} – řídicí sekvence / rozšíření značek'
+          href: escape-sequence-markup-extension.md
+        - name: "Práce s\_atributem xml:lang v\_jazyce XAML"
+          href: xml-language-handling.md
+        - name: "Práce s\_atributem xml:space v\_jazyce XAML"
+          href: xml-space-handling.md
+    - name: "Typy migrované z\_prostředí WPF do oboru názvů System.Xaml"
+      href: types-migrated-from-wpf-to-system.md
+    - name: Principy struktur a koncepcí datových proudů uzlů XAML
+      href: understanding-xaml-node-stream-structures-and-concepts.md
+    - name: "Třída XAMLServices a základní čtení a zápis v\_jazyku XAML"
+      href: basic-reading-writing.md
+    - name: Převaděče typů a rozšíření značek pro jazyk XAML
+      href: type-converters-and-markup-extensions.md
+      items:
+        - name: Přehled rozšíření značek pro jazyk XAML
+          href: markup-extensions-overview.md
+        - name: Přehled převaděčů typů pro jazyk XAML
+          href: type-converters-overview.md
+        - name: Kontexty služby dostupné pro převaděče typů a rozšíření značek
+          href: service-contexts-with-type-converters-and-markup-extensions.md
+    - name: "Obecné typy v\_jazyku XAML"
+      href: generics.md
+    - name: "Definování vlastních typů pro práci s\_technologií .NET Framework XAML Services"
+      href: define-custom-types.md
+      items:
+        - name: "Atributy CLR související s\_jazykem XAML pro vlastní typy a knihovny"
+          href: clr-attributes-with-custom-types-and-libraries.md
+        - name: "Kolekce a typy kolekcí v\_jazyku XAML"
+          href: collections-and-types.md
+    - name: Obory názvů jazyka XAML
+      href: namespaces.md
+    - name: Výchozí kontext schématu XAML a kontext WPF schématu XAML
+      href: default-schema-context.md
+    - name: Důležité informace o zabezpečení pro jazyk XAML
+      href: security-considerations.md
+    - name: Zpracování prázdných znaků v jazyku XAML
+      href: white-space-processing.md
+    - name: Znakové entity XML a jazyk XAML
+      href: xml-character-entities.md

@@ -7,13 +7,13 @@
   items:
     - name: 'Instalace F#'
       href: get-started/install-fsharp.md
-    - name: 'Začínáme s jazykem F# v sadě Visual Studio'
+    - name: 'F# v sadě Visual Studio'
       href: get-started/get-started-visual-studio.md
-    - name: 'Začínáme s jazykem F# v editoru Visual Studio Code'
+    - name: 'F# v sadě Visual Studio Code'
       href: get-started/get-started-vscode.md
-    - name: 'Začínáme s jazykem F# v .NET Core CLI'
+    - name: 'F# s rozhraním příkazového řádku .NET Core'
       href: get-started/get-started-command-line.md
-    - name: 'Začínáme s jazykem F# v sadě Visual Studio pro Mac'
+    - name: 'F# v sadě Visual Studio pro Mac'
       href: get-started/get-started-with-visual-studio-for-mac.md
 - name: 'Prohlídka jazyka F#'
   href: tour.md

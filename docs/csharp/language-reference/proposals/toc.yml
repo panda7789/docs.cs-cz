@@ -78,3 +78,5 @@
           href: ../../../../_csharplang/proposals/csharp-8.0/null-coalescing-assignment.md
         - name: Členy instance Readonly
           href: ../../../../_csharplang/proposals/csharp-8.0/readonly-instance-members.md
+        - name: Vnoření stackalloc
+          href: ../../../../_csharplang/proposals/csharp-8.0/nested-stackalloc.md

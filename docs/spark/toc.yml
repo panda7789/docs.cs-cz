@@ -17,6 +17,8 @@
       href: tutorials/amazon-emr-spark-deployment.md
     - name: Nasazení do Databricks
       href: tutorials/databricks-deployment.md
+    - name: Dávkové zpracování
+      href: tutorials/batch-processing.md
     - name: Strukturované streamování
       href: tutorials/streaming.md
 - name: Návody
