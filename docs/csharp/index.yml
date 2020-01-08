@@ -6,12 +6,12 @@ metadata:
   description: Seznámení C# s programováním – pro zahájení vývojářů, vývojářů novinek C#a zkušeností C# a vývojářů .NET
   ms.topic: landing-page
   ms.date: 11/19/2019
-  ms.openlocfilehash: fa778c4610dbfe8320d488098b5bfd39de8e4705
-  ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+  ms.openlocfilehash: 2bec49d0832a7d00d0fea247166a9ec073f37e11
+  ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
   ms.translationtype: MT
   ms.contentlocale: cs-CZ
-  ms.lasthandoff: 12/05/2019
-  ms.locfileid: "74835469"
+  ms.lasthandoff: 12/25/2019
+  ms.locfileid: "75339161"
 landingContent:
 - title: Informace k programu vC#
   linkLists:
@@ -95,6 +95,10 @@ landingContent:
       url: tutorials/mixins-with-default-interface-methods.md
     - text: Práce s podmnožinami pomocí rozsahů a indexů
       url: tutorials/ranges-indexes.md
+  - linkListType: reference
+    links:
+    - text: Přerušující změny C# v kompilátoru
+      url: whats-new/breaking-changes.md
 - title: Referenční dokumentace jazyka C#
   linkLists:
   - linkListType: reference

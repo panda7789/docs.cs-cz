@@ -1,23 +1,23 @@
 ---
-title: 'Postupy: Projekt a nový typ (LINQ to XML) (C#)'
+title: Jak projektovat nový typ (LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: 48145cf9-1e0b-4e73-bbfd-28fc04800dc4
-ms.openlocfilehash: 32c3de9f4dd967cf0aafa7f4e571d8714ca41e3a
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 3a54677fa0fa2845dd635f89ddb7ed1c5c279e03
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253509"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345723"
 ---
-# <a name="how-to-project-a-new-type-linq-to-xml-c"></a><span data-ttu-id="8a825-102">Postupy: Projekt a nový typ (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="8a825-102">How to: Project a New Type (LINQ to XML) (C#)</span></span>
+# <a name="how-to-project-a-new-type-linq-to-xml-c"></a><span data-ttu-id="539a9-102">Jak projektovat nový typ (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="539a9-102">How to project a new type (LINQ to XML) (C#)</span></span>
 
-<span data-ttu-id="8a825-103">Další příklady v této části obsahují dotazy, které vracejí <xref:System.Collections.Generic.IEnumerable%601> výsledky `int` <xref:System.Xml.Linq.XElement> <xref:System.Collections.Generic.IEnumerable%601> od, z `string`a do <xref:System.Collections.Generic.IEnumerable%601> .</span><span class="sxs-lookup"><span data-stu-id="8a825-103">Other examples in this section have shown queries that return results as <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement>, <xref:System.Collections.Generic.IEnumerable%601> of `string`, and <xref:System.Collections.Generic.IEnumerable%601> of `int`.</span></span> <span data-ttu-id="8a825-104">Jedná se o běžné typy výsledků, ale nejsou vhodné pro všechny scénáře.</span><span class="sxs-lookup"><span data-stu-id="8a825-104">These are common result types, but they are not appropriate for every scenario.</span></span> <span data-ttu-id="8a825-105">V mnoha případech budete chtít, aby dotazy vracely <xref:System.Collections.Generic.IEnumerable%601> nějaký jiný typ.</span><span class="sxs-lookup"><span data-stu-id="8a825-105">In many cases you will want your queries to return an <xref:System.Collections.Generic.IEnumerable%601> of some other type.</span></span>
+<span data-ttu-id="539a9-103">Další příklady v této části obsahují dotazy, které vracejí výsledky jako <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Xml.Linq.XElement>, <xref:System.Collections.Generic.IEnumerable%601> `string`a <xref:System.Collections.Generic.IEnumerable%601> `int`.</span><span class="sxs-lookup"><span data-stu-id="539a9-103">Other examples in this section have shown queries that return results as <xref:System.Collections.Generic.IEnumerable%601> of <xref:System.Xml.Linq.XElement>, <xref:System.Collections.Generic.IEnumerable%601> of `string`, and <xref:System.Collections.Generic.IEnumerable%601> of `int`.</span></span> <span data-ttu-id="539a9-104">Jedná se o běžné typy výsledků, ale nejsou vhodné pro všechny scénáře.</span><span class="sxs-lookup"><span data-stu-id="539a9-104">These are common result types, but they are not appropriate for every scenario.</span></span> <span data-ttu-id="539a9-105">V mnoha případech budete chtít, aby dotazy vracely <xref:System.Collections.Generic.IEnumerable%601> nějakého jiného typu.</span><span class="sxs-lookup"><span data-stu-id="539a9-105">In many cases you will want your queries to return an <xref:System.Collections.Generic.IEnumerable%601> of some other type.</span></span>
 
-## <a name="example"></a><span data-ttu-id="8a825-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="8a825-106">Example</span></span>
+## <a name="example"></a><span data-ttu-id="539a9-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="539a9-106">Example</span></span>
 
-<span data-ttu-id="8a825-107">Tento příklad ukazuje, jak vytvořit instanci objektů v `select` klauzuli.</span><span class="sxs-lookup"><span data-stu-id="8a825-107">This example shows how to instantiate objects in the `select` clause.</span></span> <span data-ttu-id="8a825-108">Kód nejprve definuje novou třídu s konstruktorem a poté upraví `select` příkaz tak, aby výraz byl novou instancí nové třídy.</span><span class="sxs-lookup"><span data-stu-id="8a825-108">The code first defines a new class with a constructor, and then modifies the `select` statement so that the expression is a new instance of the new class.</span></span>
+<span data-ttu-id="539a9-107">Tento příklad ukazuje, jak vytvořit instanci objektů v klauzuli `select`.</span><span class="sxs-lookup"><span data-stu-id="539a9-107">This example shows how to instantiate objects in the `select` clause.</span></span> <span data-ttu-id="539a9-108">Kód nejprve definuje novou třídu s konstruktorem a poté upraví příkaz `select` tak, aby výraz byl novou instancí nové třídy.</span><span class="sxs-lookup"><span data-stu-id="539a9-108">The code first defines a new class with a constructor, and then modifies the `select` statement so that the expression is a new instance of the new class.</span></span>
 
-<span data-ttu-id="8a825-109">V tomto příkladu se používá následující dokument XML: [Ukázkový soubor XML: Typická nákupní objednávka (LINQ to XML)](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md).</span><span class="sxs-lookup"><span data-stu-id="8a825-109">This example uses the following XML document: [Sample XML File: Typical Purchase Order (LINQ to XML)](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md).</span></span>
+<span data-ttu-id="539a9-109">Tento příklad používá následující dokument XML: [vzorový soubor XML: typická nákupní objednávka (LINQ to XML)](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md).</span><span class="sxs-lookup"><span data-stu-id="539a9-109">This example uses the following XML document: [Sample XML File: Typical Purchase Order (LINQ to XML)](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md).</span></span>
 
 ```csharp
 class NameQty 
@@ -49,9 +49,9 @@ class Program {
 }
 ```
 
-<span data-ttu-id="8a825-110">Tento příklad používá <xref:System.Xml.Linq.XContainer.Element%2A> metodu, která byla představena v tématu [postupy: Načtení jednoho podřízeného elementu (LINQ to XML) (C#)](how-to-retrieve-a-single-child-element-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="8a825-110">This example uses the <xref:System.Xml.Linq.XContainer.Element%2A> method that was introduced in the topic [How to: Retrieve a Single Child Element (LINQ to XML) (C#)](how-to-retrieve-a-single-child-element-linq-to-xml.md).</span></span> <span data-ttu-id="8a825-111">Používá také přetypování k načtení hodnot prvků, které jsou vráceny <xref:System.Xml.Linq.XContainer.Element%2A> metodou.</span><span class="sxs-lookup"><span data-stu-id="8a825-111">It also uses casts to retrieve the values of the elements that are returned by the <xref:System.Xml.Linq.XContainer.Element%2A> method.</span></span>  
+<span data-ttu-id="539a9-110">Tento příklad používá metodu <xref:System.Xml.Linq.XContainer.Element%2A>, která byla představena v tématu [jak načíst jeden podřízený prvek (LINQ to XML) (C#)](how-to-retrieve-a-single-child-element-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="539a9-110">This example uses the <xref:System.Xml.Linq.XContainer.Element%2A> method that was introduced in the topic [How to retrieve a single child element (LINQ to XML) (C#)](how-to-retrieve-a-single-child-element-linq-to-xml.md).</span></span> <span data-ttu-id="539a9-111">Používá také přetypování k načtení hodnot prvků, které jsou vráceny metodou <xref:System.Xml.Linq.XContainer.Element%2A>.</span><span class="sxs-lookup"><span data-stu-id="539a9-111">It also uses casts to retrieve the values of the elements that are returned by the <xref:System.Xml.Linq.XContainer.Element%2A> method.</span></span>  
 
-<span data-ttu-id="8a825-112">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="8a825-112">This example produces the following output:</span></span>
+<span data-ttu-id="539a9-112">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="539a9-112">This example produces the following output:</span></span>
 
 ```output
 Lawnmower:1
