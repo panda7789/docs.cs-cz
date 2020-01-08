@@ -2,22 +2,22 @@
 title: 'Postupy: Změna dokumentu Office Open XML'
 ms.date: 07/20/2015
 ms.assetid: 1cefd7f5-8e39-44c4-869c-f8021538a777
-ms.openlocfilehash: 623376a68ee2f032fb53d51b61c4c5881b0b9e18
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: a6d546b064afe7020e5d3287351e946e182f03e6
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74336016"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337893"
 ---
-# <a name="how-to-modify-an-office-open-xml-document-visual-basic"></a><span data-ttu-id="e87ae-102">Postupy: Úprava dokumentu Office Open XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="e87ae-102">How to: Modify an Office Open XML Document (Visual Basic)</span></span>
-<span data-ttu-id="e87ae-103">Toto téma představuje příklad, který otevře dokument Office Open XML, upraví ho a uloží ho.</span><span class="sxs-lookup"><span data-stu-id="e87ae-103">This topic presents an example that opens an Office Open XML document, modifies it, and saves it.</span></span>  
+# <a name="how-to-modify-an-office-open-xml-document-visual-basic"></a><span data-ttu-id="b6ac3-102">Postupy: Úprava dokumentu Office Open XML (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b6ac3-102">How to: Modify an Office Open XML Document (Visual Basic)</span></span>
+<span data-ttu-id="b6ac3-103">Toto téma představuje příklad, který otevře dokument Office Open XML, upraví ho a uloží ho.</span><span class="sxs-lookup"><span data-stu-id="b6ac3-103">This topic presents an example that opens an Office Open XML document, modifies it, and saves it.</span></span>  
   
- <span data-ttu-id="e87ae-104">Další informace o Office Open XML najdete v tématu [Eric White blog](http://www.ericwhite.com).</span><span class="sxs-lookup"><span data-stu-id="e87ae-104">For more information on Office Open XML, see [Eric White's Blog](http://www.ericwhite.com).</span></span>  
+ <span data-ttu-id="b6ac3-104">Další informace o Office Open XML najdete v tématu [Eric White blog](http://www.ericwhite.com).</span><span class="sxs-lookup"><span data-stu-id="b6ac3-104">For more information on Office Open XML, see [Eric White's Blog](http://www.ericwhite.com).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="e87ae-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="e87ae-105">Example</span></span>  
- <span data-ttu-id="e87ae-106">Tento příklad vyhledá první element odstavce v dokumentu.</span><span class="sxs-lookup"><span data-stu-id="e87ae-106">This example finds the first paragraph element in the document.</span></span> <span data-ttu-id="e87ae-107">Načte text z odstavce a pak odstraní veškerý text, který je v odstavci spuštěn.</span><span class="sxs-lookup"><span data-stu-id="e87ae-107">It retrieves the text from the paragraph, and then deletes all text runs in the paragraph.</span></span> <span data-ttu-id="e87ae-108">Vytvoří nový běh textu, který se skládá z textu prvního odstavce, který byl převeden na velká písmena.</span><span class="sxs-lookup"><span data-stu-id="e87ae-108">It creates a new text run that consists of the first paragraph text that has been converted to upper case.</span></span> <span data-ttu-id="e87ae-109">Poté rozbalí změněné XML do otevřeného balíčku XML a zavře ho.</span><span class="sxs-lookup"><span data-stu-id="e87ae-109">It then serializes the changed XML into the Open XML package and closes it.</span></span>  
+## <a name="example"></a><span data-ttu-id="b6ac3-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="b6ac3-105">Example</span></span>  
+ <span data-ttu-id="b6ac3-106">Tento příklad vyhledá první element odstavce v dokumentu.</span><span class="sxs-lookup"><span data-stu-id="b6ac3-106">This example finds the first paragraph element in the document.</span></span> <span data-ttu-id="b6ac3-107">Načte text z odstavce a pak odstraní veškerý text, který je v odstavci spuštěn.</span><span class="sxs-lookup"><span data-stu-id="b6ac3-107">It retrieves the text from the paragraph, and then deletes all text runs in the paragraph.</span></span> <span data-ttu-id="b6ac3-108">Vytvoří nový běh textu, který se skládá z textu prvního odstavce, který byl převeden na velká písmena.</span><span class="sxs-lookup"><span data-stu-id="b6ac3-108">It creates a new text run that consists of the first paragraph text that has been converted to upper case.</span></span> <span data-ttu-id="b6ac3-109">Poté rozbalí změněné XML do otevřeného balíčku XML a zavře ho.</span><span class="sxs-lookup"><span data-stu-id="b6ac3-109">It then serializes the changed XML into the Open XML package and closes it.</span></span>  
   
- <span data-ttu-id="e87ae-110">Tento příklad používá třídy nalezené v sestavení WindowsBase.</span><span class="sxs-lookup"><span data-stu-id="e87ae-110">This example uses classes found in the WindowsBase assembly.</span></span> <span data-ttu-id="e87ae-111">Používá typy v oboru názvů <xref:System.IO.Packaging?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="e87ae-111">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
+ <span data-ttu-id="b6ac3-110">Tento příklad používá třídy nalezené v sestavení WindowsBase.</span><span class="sxs-lookup"><span data-stu-id="b6ac3-110">This example uses classes found in the WindowsBase assembly.</span></span> <span data-ttu-id="b6ac3-111">Používá typy v oboru názvů <xref:System.IO.Packaging?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="b6ac3-111">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
   
 ```vb  
 Imports <xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">  
@@ -67,7 +67,7 @@ Module Module1
         Return (e.<w:r>.<w:t>).StringConcatenate(Function(element) CStr(element))  
     End Function  
   
-    ' Following function is required because VB does not support short circuit evaluation  
+    ' Following function is required because Visual Basic does not support short circuit evaluation  
     Private Function GetStyleOfParagraph(ByVal styleNode As XElement, _  
                                          ByVal defaultStyle As String) As String  
         If (styleNode Is Nothing) Then  
@@ -135,14 +135,14 @@ Module Module1
 End Module  
 ```  
   
- <span data-ttu-id="e87ae-112">Pokud po spuštění tohoto programu otevřete `SampleDoc.docx`, vidíte, že tento program převedl první odstavec v dokumentu na velká písmena.</span><span class="sxs-lookup"><span data-stu-id="e87ae-112">If you open `SampleDoc.docx` after running this program, you can see that this program converted the first paragraph in the document to upper case.</span></span>  
+ <span data-ttu-id="b6ac3-112">Pokud po spuštění tohoto programu otevřete `SampleDoc.docx`, vidíte, že tento program převedl první odstavec v dokumentu na velká písmena.</span><span class="sxs-lookup"><span data-stu-id="b6ac3-112">If you open `SampleDoc.docx` after running this program, you can see that this program converted the first paragraph in the document to upper case.</span></span>  
   
- <span data-ttu-id="e87ae-113">Když spustíte s ukázkovým dokumentem Open XML popsaným v [tématu vytvoření zdrojového dokumentu XML pro Office (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md), tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="e87ae-113">When run with the sample Open XML document described in [Creating the Source Office Open XML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md), this example produces the following output:</span></span>  
+ <span data-ttu-id="b6ac3-113">Když spustíte s ukázkovým dokumentem Open XML popsaným v [tématu vytvoření zdrojového dokumentu XML pro Office (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md), tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="b6ac3-113">When run with the sample Open XML document described in [Creating the Source Office Open XML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md), this example produces the following output:</span></span>  
   
 ```console  
 New first paragraph: >PARSING WORDPROCESSINGML WITH LINQ TO XML<  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="e87ae-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e87ae-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b6ac3-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b6ac3-114">See also</span></span>
 
-- [<span data-ttu-id="e87ae-115">Pokročilé techniky dotazů (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="e87ae-115">Advanced Query Techniques (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+- [<span data-ttu-id="b6ac3-115">Pokročilé techniky dotazů (LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="b6ac3-115">Advanced Query Techniques (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

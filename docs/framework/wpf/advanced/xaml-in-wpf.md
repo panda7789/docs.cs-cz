@@ -7,42 +7,42 @@ helpviewer_keywords:
 - XAML [WPF]
 - Extensible Application Markup Language [WPF]
 ms.assetid: 5d858575-a83b-42df-ad3f-047ed2d6e3c8
-ms.openlocfilehash: cea6809ebf9a4ae516d59bd99bf8126d2e874788
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: b43da2723fb618bc44a14e8102c8d59e6ecc0c11
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459564"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559843"
 ---
-# <a name="xaml-in-wpf"></a><span data-ttu-id="12a96-102">XAML ve WPF</span><span class="sxs-lookup"><span data-stu-id="12a96-102">XAML in WPF</span></span>
+# <a name="xaml-in-wpf"></a><span data-ttu-id="c4946-102">XAML ve WPF</span><span class="sxs-lookup"><span data-stu-id="c4946-102">XAML in WPF</span></span>
 
-[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] <span data-ttu-id="12a96-103">je jazyk značek pro deklarativní programování aplikací.</span><span class="sxs-lookup"><span data-stu-id="12a96-103">is a markup language for declarative application programming.</span></span> [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <span data-ttu-id="12a96-104">implementuje implementaci procesoru XAML a poskytuje podporu jazyka XAML.</span><span class="sxs-lookup"><span data-stu-id="12a96-104">implements a XAML processor implementation and provides XAML language support.</span></span> <span data-ttu-id="12a96-105">[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] typy jsou implementovány tak, aby mohly poskytnout požadovaný typ pro reprezentaci jazyka XAML.</span><span class="sxs-lookup"><span data-stu-id="12a96-105">The [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] types are implemented such that they can provide the required type backing for a XAML representation.</span></span> <span data-ttu-id="12a96-106">Obecně můžete vytvořit většinu uživatelského rozhraní aplikace [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v kódu XAML.</span><span class="sxs-lookup"><span data-stu-id="12a96-106">In general, you can create the majority of your [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application UI in XAML markup.</span></span>  
+[!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] <span data-ttu-id="c4946-103">je jazyk značek pro deklarativní programování aplikací.</span><span class="sxs-lookup"><span data-stu-id="c4946-103">is a markup language for declarative application programming.</span></span> [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] <span data-ttu-id="c4946-104">implementuje implementaci procesoru XAML a poskytuje podporu jazyka XAML.</span><span class="sxs-lookup"><span data-stu-id="c4946-104">implements a XAML processor implementation and provides XAML language support.</span></span> <span data-ttu-id="c4946-105">[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] typy jsou implementovány tak, aby mohly poskytnout požadovaný typ pro reprezentaci jazyka XAML.</span><span class="sxs-lookup"><span data-stu-id="c4946-105">The [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] types are implemented such that they can provide the required type backing for a XAML representation.</span></span> <span data-ttu-id="c4946-106">Obecně můžete vytvořit většinu uživatelského rozhraní aplikace [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v kódu XAML.</span><span class="sxs-lookup"><span data-stu-id="c4946-106">In general, you can create the majority of your [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application UI in XAML markup.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="12a96-107">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="12a96-107">In This Section</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="c4946-107">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="c4946-107">In This Section</span></span>  
 
-[<span data-ttu-id="12a96-108">Přehled XAML (WPF)</span><span class="sxs-lookup"><span data-stu-id="12a96-108">XAML Overview (WPF)</span></span>](xaml-overview-wpf.md)  
-[<span data-ttu-id="12a96-109">Podrobná syntaxe XAML</span><span class="sxs-lookup"><span data-stu-id="12a96-109">XAML Syntax In Detail</span></span>](xaml-syntax-in-detail.md)  
-[<span data-ttu-id="12a96-110">Podkladový kód a kód XAML v subsystému WPF</span><span class="sxs-lookup"><span data-stu-id="12a96-110">Code-Behind and XAML in WPF</span></span>](code-behind-and-xaml-in-wpf.md)  
-[<span data-ttu-id="12a96-111">XAML a vlastní třídy pro WPF</span><span class="sxs-lookup"><span data-stu-id="12a96-111">XAML and Custom Classes for WPF</span></span>](xaml-and-custom-classes-for-wpf.md)  
-[<span data-ttu-id="12a96-112">Rozšíření značek a WPF XAML</span><span class="sxs-lookup"><span data-stu-id="12a96-112">Markup Extensions and WPF XAML</span></span>](markup-extensions-and-wpf-xaml.md)  
-[<span data-ttu-id="12a96-113">Obory názvů XAML a mapování oboru názvů pro WPF XAML</span><span class="sxs-lookup"><span data-stu-id="12a96-113">XAML Namespaces and Namespace Mapping for WPF XAML</span></span>](xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)  
-[<span data-ttu-id="12a96-114">Obory názvů WPF XAML</span><span class="sxs-lookup"><span data-stu-id="12a96-114">WPF XAML Namescopes</span></span>](wpf-xaml-namescopes.md)  
-[<span data-ttu-id="12a96-115">Vložené styly a šablony</span><span class="sxs-lookup"><span data-stu-id="12a96-115">Inline Styles and Templates</span></span>](inline-styles-and-templates.md)  
-[<span data-ttu-id="12a96-116">Zpracování prázdných míst v jazyce XAML</span><span class="sxs-lookup"><span data-stu-id="12a96-116">White-space Processing in XAML</span></span>](../../xaml-services/whitespace-processing-in-xaml.md)  
-[<span data-ttu-id="12a96-117">TypeConverters a XAML</span><span class="sxs-lookup"><span data-stu-id="12a96-117">TypeConverters and XAML</span></span>](typeconverters-and-xaml.md)  
-[<span data-ttu-id="12a96-118">Znakové entity XML a jazyk XAML</span><span class="sxs-lookup"><span data-stu-id="12a96-118">XML Character Entities and XAML</span></span>](../../xaml-services/xml-character-entities-and-xaml.md)  
-[<span data-ttu-id="12a96-119">Jazykové funkce oboru názvů jazyka XAML (x:)</span><span class="sxs-lookup"><span data-stu-id="12a96-119">XAML Namespace (x:) Language Features</span></span>](../../xaml-services/xaml-namespace-x-language-features.md)  
-[<span data-ttu-id="12a96-120">Rozšíření WPF XAML</span><span class="sxs-lookup"><span data-stu-id="12a96-120">WPF XAML Extensions</span></span>](wpf-xaml-extensions.md)  
-[<span data-ttu-id="12a96-121">Jazykové funkce kompatibility značek (mc:)</span><span class="sxs-lookup"><span data-stu-id="12a96-121">Markup Compatibility (mc:) Language Features</span></span>](markup-compatibility-mc-language-features.md)  
+[<span data-ttu-id="c4946-108">Přehled XAML (WPF)</span><span class="sxs-lookup"><span data-stu-id="c4946-108">XAML Overview (WPF)</span></span>](xaml-overview-wpf.md)  
+[<span data-ttu-id="c4946-109">Podrobná syntaxe XAML</span><span class="sxs-lookup"><span data-stu-id="c4946-109">XAML Syntax In Detail</span></span>](xaml-syntax-in-detail.md)  
+[<span data-ttu-id="c4946-110">Podkladový kód a kód XAML v subsystému WPF</span><span class="sxs-lookup"><span data-stu-id="c4946-110">Code-Behind and XAML in WPF</span></span>](code-behind-and-xaml-in-wpf.md)  
+[<span data-ttu-id="c4946-111">XAML a vlastní třídy pro WPF</span><span class="sxs-lookup"><span data-stu-id="c4946-111">XAML and Custom Classes for WPF</span></span>](xaml-and-custom-classes-for-wpf.md)  
+[<span data-ttu-id="c4946-112">Rozšíření značek a WPF XAML</span><span class="sxs-lookup"><span data-stu-id="c4946-112">Markup Extensions and WPF XAML</span></span>](markup-extensions-and-wpf-xaml.md)  
+[<span data-ttu-id="c4946-113">Obory názvů XAML a mapování oboru názvů pro WPF XAML</span><span class="sxs-lookup"><span data-stu-id="c4946-113">XAML Namespaces and Namespace Mapping for WPF XAML</span></span>](xaml-namespaces-and-namespace-mapping-for-wpf-xaml.md)  
+[<span data-ttu-id="c4946-114">Obory názvů WPF XAML</span><span class="sxs-lookup"><span data-stu-id="c4946-114">WPF XAML Namescopes</span></span>](wpf-xaml-namescopes.md)  
+[<span data-ttu-id="c4946-115">Vložené styly a šablony</span><span class="sxs-lookup"><span data-stu-id="c4946-115">Inline Styles and Templates</span></span>](inline-styles-and-templates.md)  
+[<span data-ttu-id="c4946-116">Zpracování prázdných míst v jazyce XAML</span><span class="sxs-lookup"><span data-stu-id="c4946-116">White-space Processing in XAML</span></span>](../../../desktop-wpf/xaml-services/white-space-processing.md)  
+[<span data-ttu-id="c4946-117">TypeConverters a XAML</span><span class="sxs-lookup"><span data-stu-id="c4946-117">TypeConverters and XAML</span></span>](typeconverters-and-xaml.md)  
+[<span data-ttu-id="c4946-118">Znakové entity XML a jazyk XAML</span><span class="sxs-lookup"><span data-stu-id="c4946-118">XML Character Entities and XAML</span></span>](../../../desktop-wpf/xaml-services/xml-character-entities.md)  
+[<span data-ttu-id="c4946-119">Jazykové funkce oboru názvů jazyka XAML (x:)</span><span class="sxs-lookup"><span data-stu-id="c4946-119">XAML Namespace (x:) Language Features</span></span>](../../../desktop-wpf/xaml-services/namespace-language-features.md)  
+[<span data-ttu-id="c4946-120">Rozšíření WPF XAML</span><span class="sxs-lookup"><span data-stu-id="c4946-120">WPF XAML Extensions</span></span>](wpf-xaml-extensions.md)  
+[<span data-ttu-id="c4946-121">Jazykové funkce kompatibility značek (mc:)</span><span class="sxs-lookup"><span data-stu-id="c4946-121">Markup Compatibility (mc:) Language Features</span></span>](markup-compatibility-mc-language-features.md)  
   
-## <a name="related-sections"></a><span data-ttu-id="12a96-122">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="12a96-122">Related Sections</span></span>  
+## <a name="related-sections"></a><span data-ttu-id="c4946-122">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="c4946-122">Related Sections</span></span>  
 
-[<span data-ttu-id="12a96-123">Architektura WPF</span><span class="sxs-lookup"><span data-stu-id="12a96-123">WPF Architecture</span></span>](wpf-architecture.md)  
-[<span data-ttu-id="12a96-124">Základní elementy</span><span class="sxs-lookup"><span data-stu-id="12a96-124">Base Elements</span></span>](base-elements.md)  
-[<span data-ttu-id="12a96-125">Strom elementu a serializace</span><span class="sxs-lookup"><span data-stu-id="12a96-125">Element Tree and Serialization</span></span>](element-tree-and-serialization.md)  
-[<span data-ttu-id="12a96-126">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="12a96-126">Properties</span></span>](properties-wpf.md)  
-[<span data-ttu-id="12a96-127">Události</span><span class="sxs-lookup"><span data-stu-id="12a96-127">Events</span></span>](events-wpf.md)  
-[<span data-ttu-id="12a96-128">Vstup</span><span class="sxs-lookup"><span data-stu-id="12a96-128">Input</span></span>](input-wpf.md)  
-[<span data-ttu-id="12a96-129">Prostředky</span><span class="sxs-lookup"><span data-stu-id="12a96-129">Resources</span></span>](resources-wpf.md)  
-[<span data-ttu-id="12a96-130">Styly a šablony</span><span class="sxs-lookup"><span data-stu-id="12a96-130">Styling and Templating</span></span>](../../../desktop-wpf/fundamentals/styles-templates-overview.md)  
-[<span data-ttu-id="12a96-131">Model vláken</span><span class="sxs-lookup"><span data-stu-id="12a96-131">Threading Model</span></span>](threading-model.md)
+[<span data-ttu-id="c4946-123">Architektura WPF</span><span class="sxs-lookup"><span data-stu-id="c4946-123">WPF Architecture</span></span>](wpf-architecture.md)  
+[<span data-ttu-id="c4946-124">Základní elementy</span><span class="sxs-lookup"><span data-stu-id="c4946-124">Base Elements</span></span>](base-elements.md)  
+[<span data-ttu-id="c4946-125">Strom elementu a serializace</span><span class="sxs-lookup"><span data-stu-id="c4946-125">Element Tree and Serialization</span></span>](element-tree-and-serialization.md)  
+[<span data-ttu-id="c4946-126">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="c4946-126">Properties</span></span>](properties-wpf.md)  
+[<span data-ttu-id="c4946-127">Události</span><span class="sxs-lookup"><span data-stu-id="c4946-127">Events</span></span>](events-wpf.md)  
+[<span data-ttu-id="c4946-128">Vstup</span><span class="sxs-lookup"><span data-stu-id="c4946-128">Input</span></span>](input-wpf.md)  
+[<span data-ttu-id="c4946-129">Prostředky</span><span class="sxs-lookup"><span data-stu-id="c4946-129">Resources</span></span>](resources-wpf.md)  
+[<span data-ttu-id="c4946-130">Styly a šablony</span><span class="sxs-lookup"><span data-stu-id="c4946-130">Styling and Templating</span></span>](../../../desktop-wpf/fundamentals/styles-templates-overview.md)  
+[<span data-ttu-id="c4946-131">Model vláken</span><span class="sxs-lookup"><span data-stu-id="c4946-131">Threading Model</span></span>](threading-model.md)
