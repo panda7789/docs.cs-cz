@@ -2,12 +2,12 @@
 title: 'Postupy: Provádění stromů výrazů'
 ms.date: 07/20/2015
 ms.assetid: 9dfb5ab3-f48f-417e-975f-f8f6f1cdc18d
-ms.openlocfilehash: 82801728596449869e5124c3fc92c9c0673f5dd9
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 2a2749eaed5279d04b72eb77b066c83de9722fa9
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74332982"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346009"
 ---
 # <a name="how-to-execute-expression-trees-visual-basic"></a>Postupy: spouštění stromů výrazů (Visual Basic)
 V tomto tématu se dozvíte, jak spustit strom výrazu. Provádění stromu výrazů může vracet hodnotu nebo může provést pouze akci, jako je například volání metody.  
@@ -42,7 +42,7 @@ MsgBox(result)
 ' 8  
 ```  
   
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
+## <a name="compile-the-code"></a>Kompilace kódu  
   
 - Zahrňte obor názvů System. Linq. Expressions.  
   

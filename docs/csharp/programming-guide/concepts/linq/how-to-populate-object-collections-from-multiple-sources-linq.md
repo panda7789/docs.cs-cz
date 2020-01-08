@@ -1,28 +1,28 @@
 ---
-title: 'Postupy: Naplnit kolekce objektů z více zdrojů (LINQ)C#()'
+title: Jak naplnit kolekce objektů z více zdrojů (LINQ) (C#)
 ms.date: 06/12/2018
 ms.assetid: 8ad7d480-b46c-4ccc-8c57-76f2d04ccc6d
-ms.openlocfilehash: c00257db7f3c06cab55cd48f7472f07dd7b2a664
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 3d841e5ca25afde94674af0fedc9a824c382be5b
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69593050"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345759"
 ---
-# <a name="how-to-populate-object-collections-from-multiple-sources-linq-c"></a>Postupy: Naplnit kolekce objektů z více zdrojů (LINQ)C#()
+# <a name="how-to-populate-object-collections-from-multiple-sources-linq-c"></a>Jak naplnit kolekce objektů z více zdrojů (LINQ) (C#)
 
 Tento příklad ukazuje, jak sloučit data z různých zdrojů do sekvence nových typů.
 
 > [!NOTE]
-> Nepokoušejte se připojit data v paměti nebo data v systému souborů s daty, která jsou stále v databázi. Takové spojení mezi doménami může vracet nedefinované výsledky z důvodu různých způsobů, kterými je možné definovat operace join pro databázové dotazy a jiné typy zdrojů. Kromě toho existuje riziko, že taková operace by mohla způsobit výjimku z důvodu nedostatku paměti, pokud je objem dat v databázi dostatečně velký. Chcete-li spojit data z databáze s daty v paměti, nejprve zavolejte `ToList` nebo `ToArray` v databázovém dotazu a potom proveďte spojení se vrácenou kolekcí.
+> Nepokoušejte se připojit data v paměti nebo data v systému souborů s daty, která jsou stále v databázi. Takové spojení mezi doménami může vracet nedefinované výsledky z důvodu různých způsobů, kterými je možné definovat operace join pro databázové dotazy a jiné typy zdrojů. Kromě toho existuje riziko, že taková operace by mohla způsobit výjimku z důvodu nedostatku paměti, pokud je objem dat v databázi dostatečně velký. Chcete-li spojit data z databáze s daty v paměti, nejdříve zavolejte `ToList` nebo `ToArray` na dotaz databáze a pak proveďte spojení se vrácenou kolekcí.
 
 ## <a name="to-create-the-data-file"></a>Vytvoření datového souboru
 
-Zkopírujte soubory Names. csv a výsledky. CSV do složky projektu, jak je popsáno v [tématu How to: Připojení obsahu z nepodobných souborů (LINQ)C#(](./how-to-join-content-from-dissimilar-files-linq.md))
+Zkopírujte soubory Names. csv a výsledků. CSV do složky projektu, jak je popsáno v tématu [Postup připojení obsahu z nepodobných souborů (LINQ) (C#)](./how-to-join-content-from-dissimilar-files-linq.md).
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak použít pojmenovaný typ `Student` k ukládání sloučených dat ze dvou kolekcí v paměti řetězců, které simulují data tabulky ve formátu CSV. První kolekce řetězců představuje jména a ID studentů a druhá kolekce představuje ID studenta (v prvním sloupci) a čtyři skóre zkoušek. ID se používá jako cizí klíč.
+Následující příklad ukazuje způsob použití pojmenovaného typu `Student` k uložení sloučených dat ze dvou kolekcí v paměti řetězců, které simulují data tabulky ve formátu CSV. První kolekce řetězců představuje jména a ID studentů a druhá kolekce představuje ID studenta (v prvním sloupci) a čtyři skóre zkoušek. ID se používá jako cizí klíč.
 
 ```csharp
 using System;
@@ -41,8 +41,8 @@ class PopulateCollection
 {
     static void Main()
     {
-        // These data files are defined in How to: Join Content from
-        // Dissimilar Files (LINQ).
+        // These data files are defined in How to join content from
+        // dissimilar files (LINQ).
 
         // Each line of names.csv consists of a last name, a first name, and an
         // ID number, separated by commas. For example, Omelchenko,Svetlana,111
@@ -107,7 +107,7 @@ class PopulateCollection
  */
 ```
 
-V klauzuli [Select](../../../language-reference/keywords/select-clause.md) se inicializátor objektu používá k vytvoření instance každého nového `Student` objektu pomocí dat z těchto dvou zdrojů.
+V klauzuli [Select](../../../language-reference/keywords/select-clause.md) se inicializátor objektu používá k vytvoření instance každého nového objektu `Student` pomocí dat z těchto dvou zdrojů.
 
 Pokud nepotřebujete ukládat výsledky dotazu, anonymní typy můžou být vhodnější než pojmenované typy. Pojmenované typy jsou požadovány, Pokud předáte výsledky dotazu mimo metodu, ve které je dotaz proveden. Následující příklad provádí stejný úkol jako předchozí příklad, ale používá anonymní typy namísto pojmenovaných typů:
 

@@ -2,12 +2,12 @@
 title: Řešení potíží se zasíláním zpráv zařazovaných do front
 ms.date: 03/30/2017
 ms.assetid: a5f2836f-018d-42f5-a571-1e97e64ea5b0
-ms.openlocfilehash: 2999d1ab4129c72c231b6dc80480d8bfef5186fa
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: ed114cc9a37fff549e8bfc874765252fd18893a9
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837308"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345581"
 ---
 # <a name="troubleshooting-queued-messaging"></a>Řešení potíží se zasíláním zpráv zařazovaných do front
 
@@ -25,7 +25,7 @@ Tato část obsahuje nejčastější dotazy a pomoc při odstraňování potíž
 
 **Otázka:** Je potřeba upgradovat službu MSMQ, aby používala vazby <xref:System.ServiceModel.NetMsmqBinding> a `MsmqIntegration`?
 
-**Odpověď:** Ne. Obě vazby fungují s MSMQ 3,0 na [!INCLUDE[wxp](../../../../includes/wxp-md.md)] a [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]. Při upgradu na službu MSMQ 4,0 v systému Windows Vista budou některé funkce vazeb dostupné.
+**Odpověď:** Ne. Obě vazby fungují s MSMQ 3,0 na [!INCLUDE[wxp](../../../../includes/wxp-md.md)] a ve Windows serveru 2003. Při upgradu na službu MSMQ 4,0 v systému Windows Vista budou některé funkce vazeb dostupné.
 
 **Otázka:** Jaké funkce <xref:System.ServiceModel.NetMsmqBinding> a <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> vazby jsou k dispozici ve službě MSMQ 4,0, ale ne v MSMQ 3,0?
 

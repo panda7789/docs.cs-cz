@@ -2,14 +2,15 @@
 title: Z WCF do Řízení front zpráv
 ms.date: 03/30/2017
 ms.assetid: 78d0d0c9-648e-4d4a-8f0a-14d9cafeead9
-ms.openlocfilehash: 1cbc1251a8e4eaaaf4b47357851dd681ae326f25
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 2e37a6efac6b979645b2dbb338b64f698b3b97e0
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715061"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344615"
 ---
 # <a name="windows-communication-foundation-to-message-queuing"></a>Z WCF do Řízení front zpráv
+
 Tato ukázka předvádí, jak může aplikace Windows Communication Foundation (WCF) odeslat zprávu do aplikace řízení front zpráv (MSMQ). Služba je samoobslužná Konzolová aplikace, která vám umožní sledovat službu přijímající zprávy zařazené do fronty. Službu a klienta nemusíte spouštět ve stejnou dobu.
 
  Služba přijímá zprávy z objednávek front a procesů. Služba vytvoří transakční frontu a nastaví zprávu s oznámením o přijetí zprávy, jak je znázorněno v následujícím ukázkovém kódu.
@@ -130,49 +131,49 @@ public partial class OrderProcessorClient : System.ServiceModel.ClientBase<IOrde
  Když spustíte ukázku, aktivity klienta a služby se zobrazí v oknech konzoly služby i klienta. Můžete vidět, že služba přijímá zprávy z klienta. V každém okně konzoly stiskněte klávesu ENTER a ukončete službu a klienta. Počítejte s tím, že protože se používá služba zařazování do fronty, klient a služba nemusí být spuštěny ve stejnou dobu. Můžete třeba spustit klienta, vypnout ho a pak službu spustit a zároveň se jim budou zobrazovat zprávy.
 
 > [!NOTE]
-> Tato ukázka vyžaduje instalaci služby Řízení front zpráv. Projděte si pokyny k instalaci ve [službě Řízení front zpráv](https://go.microsoft.com/fwlink/?LinkId=94968).  
-  
-### <a name="to-setup-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
-  
-1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
-  
-2. Pokud je služba spuštěna jako první, zkontroluje, zda je fronta k dispozici. Pokud fronta není přítomna, služba ji vytvoří. Službu můžete nejdřív spustit, abyste mohli vytvořit frontu, nebo ji můžete vytvořit pomocí Správce fronty MSMQ. Pomocí těchto kroků vytvořte ve Windows 2008 frontu.  
-  
-    1. Otevřete Správce serveru v aplikaci Visual Studio 2012.  
-  
-    2. Rozbalte kartu **funkce** .  
-  
-    3. Klikněte pravým tlačítkem na **fronty soukromých zpráv**a vyberte **Nový**, **soukromá fronta**.  
-  
-    4. Zaškrtněte políčko **transakční** .  
-  
-    5. Jako název nové fronty zadejte `ServiceModelSamplesTransacted`.  
-  
-3. Pokud chcete vytvořit C# edici nebo Visual Basic .NET, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
-  
-4. Chcete-li spustit ukázku v konfiguraci s jedním počítačem, postupujte podle pokynů v [části spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
-  
-### <a name="to-run-the-sample-across-computers"></a>Spuštění ukázky mezi počítači  
-  
-1. Zkopírujte programové soubory služby ze složky \service\bin\ ve složce specifické pro daný jazyk do počítače služby.  
-  
-2. Zkopírujte soubory klientského programu ze složky \client\bin\ ve složce specifické pro daný jazyk do klientského počítače.  
-  
-3. V souboru Client. exe. config změňte adresu koncového bodu klienta tak, aby určovala název počítače služby místo ".".  
-  
-4. Na počítači služby spusťte z příkazového řádku Service. exe.  
-  
-5. V klientském počítači spusťte z příkazového řádku soubor Client. exe.  
-  
+> Tato ukázka vyžaduje instalaci služby Řízení front zpráv. Projděte si pokyny k instalaci ve [službě Řízení front zpráv](https://go.microsoft.com/fwlink/?LinkId=94968).
+
+## <a name="set-up-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky
+
+1. Ujistěte se, že jste provedli [postup jednorázového nastavení pro Windows Communication Foundation ukázky](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+
+2. Pokud je služba spuštěna jako první, zkontroluje, zda je fronta k dispozici. Pokud fronta není přítomna, služba ji vytvoří. Službu můžete nejdřív spustit, abyste mohli vytvořit frontu, nebo ji můžete vytvořit pomocí Správce fronty MSMQ. Pomocí těchto kroků vytvořte ve Windows 2008 frontu.
+
+    1. Otevřete Správce serveru v aplikaci Visual Studio 2012.
+
+    2. Rozbalte kartu **funkce** .
+
+    3. Klikněte pravým tlačítkem na **fronty soukromých zpráv**a potom vyberte **Nový** > **soukromá fronta**.
+
+    4. Zaškrtněte políčko **transakční** .
+
+    5. Jako název nové fronty zadejte `ServiceModelSamplesTransacted`.
+
+3. Pokud chcete vytvořit C# edici nebo Visual Basic, postupujte podle pokynů v tématu [sestavování ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+
+4. Chcete-li spustit ukázku v konfiguraci s jedním počítačem, postupujte podle pokynů v [části spuštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
+
+## <a name="run-the-sample-across-computers"></a>Spuštění ukázky napříč počítači
+
+1. Zkopírujte programové soubory služby ze složky \service\bin\ ve složce specifické pro daný jazyk do počítače služby.
+
+2. Zkopírujte soubory klientského programu ze složky \client\bin\ ve složce specifické pro daný jazyk do klientského počítače.
+
+3. V souboru Client. exe. config změňte adresu koncového bodu klienta tak, aby určovala název počítače služby místo ".".
+
+4. Na počítači služby spusťte z příkazového řádku Service. exe.
+
+5. V klientském počítači spusťte z příkazového řádku soubor Client. exe.
+
 > [!IMPORTANT]
-> Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.  
->   
-> `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.  
->   
-> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\WcfToMsmq`  
-  
+> Ukázky již mohou být nainstalovány v počítači. Než budete pokračovat, vyhledejte následující (výchozí) adresář.
+>
+> `<InstallDrive>:\WF_WCF_Samples`
+>
+> Pokud tento adresář neexistuje, přečtěte si [ukázky Windows Communication Foundation (WCF) a programovací model Windows Workflow Foundation (WF) pro .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) ke stažení všech Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] Samples. Tato ukázka se nachází v následujícím adresáři.
+>
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\WcfToMsmq`
+
 ## <a name="see-also"></a>Viz také:
 
 - [Postupy: Výměna zpráv s koncovými body WCF a aplikací pro řazení zpráv do front](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)

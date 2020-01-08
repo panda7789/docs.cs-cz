@@ -2,12 +2,12 @@
 title: 'Postupy: načtení odstavců z dokumentu Office Open XML'
 ms.date: 07/20/2015
 ms.assetid: 66053f21-9217-473c-a6f3-a0897be07756
-ms.openlocfilehash: cfb4c106a7c2c70f220d5a5d20a64870753c3389
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 8755dc40fe64d4ff37ed66006f757ec1b32334a1
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347533"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347060"
 ---
 # <a name="how-to-retrieve-paragraphs-from-an-office-open-xml-document-visual-basic"></a>Postupy: načtení odstavců z dokumentu Office Open XML (Visual Basic)
 Toto téma představuje příklad, který otevře dokument Office Open XML a načte kolekci všech odstavců v dokumentu.  
@@ -71,7 +71,7 @@ Module Module1
         Return (e.<w:r>.<w:t>).StringConcatenate(Function(element) CStr(element))  
     End Function  
   
-    ' Following function is required because VB does not support short circuit evaluation  
+    ' Following function is required because Visual Basic does not support short circuit evaluation  
     Private Function GetStyleOfParagraph(ByVal styleNode As XElement, ByVal defaultStyle As String) _  
                 As String  
         If (styleNode Is Nothing) Then  

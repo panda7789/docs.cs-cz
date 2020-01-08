@@ -32,12 +32,12 @@ helpviewer_keywords:
 - hat operator [C#]
 - .. operator [C#]
 - range operator [C#]
-ms.openlocfilehash: ba2a8cd4995b9baab2071d3fb3c7980e45565692
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: e69cc5a9634f0b5232562782557645894f94ce2e
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039001"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345306"
 ---
 # <a name="member-access-operators-c-reference"></a>Operátory přístupu členů (C# referenční)
 
@@ -109,7 +109,13 @@ void TraceMethod() {}
 
 ## <a name="null-conditional-operators--and-"></a>Podmíněné operátory s hodnotou null?. ani? []
 
-K dispozici v 6 nebo novějším, operátor s hodnotou null používá pro přístup člena přístup,`?.`nebo element,`?[]`, operaci na jeho operand pouze v C# případě, že se tento operand vyhodnocuje jako hodnota, která není null. Pokud je operand vyhodnocen jako `null`, je výsledek použití operátoru `null`. Podmíněný operátor přístupu člena s hodnotou null `?.` je také označován jako operátor Elvis.
+K dispozici v 6 nebo novějším, operátor s hodnotou null používá pro přístup C# [člena přístup](#member-access-operator-), `?.`nebo [k elementu](#indexer-operator-), `?[]`, operaci na jeho operand pouze v případě, že je tento operand vyhodnocen jako jiný než null; v opačném případě vrátí `null`. To je
+
+- Pokud se `a` vyhodnotí jako `null`, výsledek `a?.x` nebo `a?[x]` je `null`.
+- Pokud je `a` vyhodnocena jako nenulová, výsledek `a?.x` nebo `a?[x]` je stejný jako výsledek `a.x` nebo `a[x]`v uvedeném pořadí.
+
+  > [!NOTE]
+  > Pokud `a.x` nebo `a[x]` vyvolá výjimku, `a?.x` nebo `a?[x]` by vyvolal stejnou výjimku pro `a`, který není null. Například pokud `a` je instance pole, která není null a `x` je mimo hranice `a`, `a?[x]` by vyvolala <xref:System.IndexOutOfRangeException>.
 
 Operátory podmíněné hodnotou null jsou krátkodobé okruhy. To znamená, že pokud jedna operace v řetězci podmíněného člena nebo operace přístupu k elementu vrátí `null`, zbytek řetězu se nespustí. V následujícím příkladu není `B` vyhodnocena, pokud `A` vyhodnocena `null` a `C` nejsou vyhodnoceny, pokud `A` nebo `B` vyhodnocena jako `null`:
 
@@ -123,6 +129,8 @@ Následující příklad ukazuje použití operátorů `?.` a `?[]`:
 [!code-csharp-interactive[null-conditional operators](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#NullConditional)]
 
 Předchozí příklad také používá [operátor slučování null `??`](null-coalescing-operator.md) k určení alternativního výrazu pro vyhodnocení pro případ, že je `null`výsledek operace podmíněného hodnoty null.
+
+Podmíněný operátor přístupu člena s hodnotou null `?.` je také označován jako operátor Elvis.
 
 ### <a name="thread-safe-delegate-invocation"></a>Volání delegáta bezpečné pro přístup z více vláken
 
@@ -160,7 +168,7 @@ Pomocí závorek můžete také upravit pořadí, ve kterém se mají vyhodnocov
 
 ## <a name="index-from-end-operator-"></a>Index z operátoru end ^
 
-K dispozici v C# 8,0 a novějším, operátor`^`označuje pozici elementu na konci sekvence. Pro sekvenci délky `length``^n` odkazuje na prvek s posunem `length - n` od začátku sekvence. Například `^1` odkazuje na poslední prvek sekvence a `^length` odkazuje na první prvek sekvence.
+K dispozici v C# 8,0 a novějším, operátor `^` označuje pozici elementu na konci sekvence. Pro sekvenci délky `length``^n` odkazuje na prvek s posunem `length - n` od začátku sekvence. Například `^1` odkazuje na poslední prvek sekvence a `^length` odkazuje na první prvek sekvence.
 
 [!code-csharp[index from end](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#IndexFromEnd)]
 
@@ -170,7 +178,7 @@ Můžete také použít operátor `^` s [operátorem Range](#range-operator-) a 
 
 ## <a name="range-operator-"></a>Operátor rozsahu..
 
-K dispozici v C# 8,0 a novějším, operátor`..`Určuje začátek a konec rozsahu indexů jako své operandy. Levý operand je *Celková* začátek rozsahu. Pravý operand je *výhradním* koncem rozsahu. Jedním z operandů může být index od začátku nebo po konci sekvence, jak ukazuje následující příklad:
+K dispozici v C# 8,0 a novějším, operátor `..` Určuje začátek a konec rozsahu indexů jako své operandy. Levý operand je *Celková* začátek rozsahu. Pravý operand je *výhradním* koncem rozsahu. Jedním z operandů může být index od začátku nebo po konci sekvence, jak ukazuje následující příklad:
 
 [!code-csharp[range examples](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#Ranges)]
 

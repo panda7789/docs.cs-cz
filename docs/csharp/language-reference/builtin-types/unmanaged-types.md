@@ -3,19 +3,19 @@ title: Nespravované typy C# – referenční informace
 ms.date: 09/06/2019
 helpviewer_keywords:
 - unmanaged type [C#]
-ms.openlocfilehash: 81eef59ceb20bcae6c749dd59578ce35da253826
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: 97aa4dd629e385dbe9641d82a7da21a0aaa63e92
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204475"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75342578"
 ---
 # <a name="unmanaged-types-c-reference"></a>Nespravované typyC# (Referenční dokumentace)
 
 Typ je **nespravovaný typ** , pokud se jedná o některý z následujících typů:
 
 - `sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`, `char`, `float`, `double`, `decimal`nebo `bool`
-- Libovolný typ [výčtu](../keywords/enum.md)
+- Libovolný typ [výčtu](enum.md)
 - Libovolný typ [ukazatele](../../programming-guide/unsafe-code-pointers/pointer-types.md)
 - Libovolný uživatelsky definovaný typ [struktury](../keywords/struct.md) , který obsahuje pole nespravovaných typů a v C# 7,3 a starších verzích není konstruovaný typ (typ, který obsahuje alespoň jeden argument typu).
 

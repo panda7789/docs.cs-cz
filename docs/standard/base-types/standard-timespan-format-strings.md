@@ -17,12 +17,12 @@ helpviewer_keywords:
 - standard TimeSpan format strings
 - formatting [.NET Framework], time intervals
 ms.assetid: 9f6c95eb-63ae-4dcc-9c32-f81985c75794
-ms.openlocfilehash: c699ed68606293b1a49a540e00636cf7f56bdf2f
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: ec06edc16829c6d4caf8c760922aac1471e365c2
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73972097"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346633"
 ---
 # <a name="standard-timespan-format-strings"></a>Standardní řetězce formátu TimeSpan
 
@@ -42,9 +42,9 @@ V následující tabulce jsou uvedeny specifikátory formátu standardního čas
   
 |Specifikátor formátu|Name|Popis|Příklady|  
 |----------------------|----------|-----------------|--------------|  
-|r|Konstantní (invariantní) formát|Tento specifikátor není závislý na jazykové verzi. Převezme `[-][d'.']hh':'mm':'ss['.'fffffff]`formuláře.<br /><br /> (Řetězce formátu "t" a "T" vytváří stejné výsledky.)<br /><br /> Další informace: [specifikátor formátu konstanty ("c")](#the-constant-c-format-specifier).|`TimeSpan.Zero` – > 00:00:00<br /><br /> `New TimeSpan(0, 0, 30, 0)` – > 00:30:00<br /><br /> `New TimeSpan(3, 17, 25, 30, 500)`-> 3.17:25:30.5000000|  
+|r|Konstantní (invariantní) formát|Tento specifikátor není závislý na jazykové verzi. Převezme `[-][d'.']hh':'mm':'ss['.'fffffff]`formuláře.<br /><br /> (Řetězce formátu "t" a "T" vytváří stejné výsledky.)<br /><br /> Další informace: [specifikátor formátu konstanty ("c")](#the-constant-c-format-specifier).|`TimeSpan.Zero` -> 00:00:00<br /><br /> `New TimeSpan(0, 0, 30, 0)` -> 00:30:00<br /><br /> `New TimeSpan(3, 17, 25, 30, 500)` -> 3.17:25:30.5000000|  
 |"g"|Obecný krátký formát|Tento specifikátor výstupuje pouze to, co je potřeba. Je závislá na jazykové verzi a má `[-][d':']h':'mm':'ss[.FFFFFFF]`formuláře.<br /><br /> Další informace: [specifikátor obecného krátkého formátu ("g")](#the-general-short-g-format-specifier).|`New TimeSpan(1, 3, 16, 50, 500)`-> 1:3: 16:50.5 (EN-US)<br /><br /> `New TimeSpan(1, 3, 16, 50, 500)`-> 1:3: 16:50, 5 (fr-FR)<br /><br /> `New TimeSpan(1, 3, 16, 50, 599)`-> 1:3: 16:50.599 (EN-US)<br /><br /> `New TimeSpan(1, 3, 16, 50, 599)`-> 1:3: 16:50599 (fr-FR)|  
-|"G"|Obecný formát Long|Tento specifikátor vždy vypíše dny a sedm zlomkových číslic. Je závislá na jazykové verzi a má `[-]d':'hh':'mm':'ss.fffffff`formuláře.<br /><br /> Další informace: [specifikátor obecného dlouhého formátu ("G")](#the-general-long-g-format-specifier).|`New TimeSpan(18, 30, 0)`-> 0:18:30:00.0000000 (EN-US)<br /><br /> `New TimeSpan(18, 30, 0)`-> 0:18:30:00, 0000000 (fr-FR)|  
+|"G"|Obecný formát Long|Tento specifikátor vždy vypíše dny a sedm zlomkových číslic. Je závislá na jazykové verzi a má `[-]d':'hh':'mm':'ss.fffffff`formuláře.<br /><br /> Další informace: [specifikátor obecného dlouhého formátu ("G")](#the-general-long-g-format-specifier).|`New TimeSpan(18, 30, 0)`-> 0:18:30:00.0000000 (EN-US)<br /><br /> `New TimeSpan(18, 30, 0)` -> 0:18:30:00,0000000 (fr-FR)|  
 
 ## <a name="the-constant-c-format-specifier"></a>Specifikátor formátu konstanty ("c")  
  Specifikátor formátu "c" Vrací řetězcovou reprezentaci hodnoty <xref:System.TimeSpan> v následujícím tvaru:  
@@ -56,10 +56,10 @@ V následující tabulce jsou uvedeny specifikátory formátu standardního čas
 |Prvek|Popis|  
 |-------------|-----------------|  
 |*-*|Volitelné záporné znaménko, které označuje záporný časový interval.|  
-|*trojrozměrné*|Volitelný počet dnů bez úvodní nuly.|  
-|*HH*|Počet hodin, které jsou v rozsahu od "00" do "23".|  
-|*výšce*|Počet minut, které jsou v rozsahu od "00" do "59".|  
-|*SS*|Počet sekund, které jsou v rozsahu od "0" do "59".|  
+|*d*|Volitelný počet dnů bez úvodní nuly.|  
+|*hh*|Počet hodin, které jsou v rozsahu od "00" do "23".|  
+|*mm*|Počet minut, které jsou v rozsahu od "00" do "59".|  
+|*ss*|Počet sekund, které jsou v rozsahu od "0" do "59".|  
 |*fffffff*|Volitelná desetinná část sekundy.  Jeho hodnota může být v rozsahu od "0000001" (jedna značka nebo 1 10-millionth sekundy) na "9999999" (9 999 999 10-Desetimiliontiny sekundy nebo jedna sekunda méně než jedna značka).|  
   
  Na rozdíl od specifikátorů formátu "g" a "G" specifikátor formátu "c" nezohledňuje jazykovou verzi. Vytváří řetězcovou reprezentaci <xref:System.TimeSpan> hodnoty, která je invariantovaná a je společná pro všechny předchozí verze .NET Framework před .NET Framework 4. "c" je výchozí řetězec formátu <xref:System.TimeSpan>; Metoda <xref:System.TimeSpan.ToString?displayProperty=nameWithType> formátuje hodnotu časového intervalu pomocí formátovacího řetězce "c".  
@@ -75,17 +75,17 @@ V následující tabulce jsou uvedeny specifikátory formátu standardního čas
 ## <a name="the-general-short-g-format-specifier"></a>Obecný specifikátor krátkého formátu ("g")  
  Specifikátor formátu "g" <xref:System.TimeSpan> vrátí řetězcovou reprezentaci hodnoty <xref:System.TimeSpan> v kompaktní podobě tím, že zahrne pouze prvky, které jsou nezbytné. Má následující formát:  
   
- [-] [*d*:] *h*:*mm*:*SS*[. *FFFFFFF*]  
+ [-][*d*:]*h*:*mm*:*ss*[.*FFFFFFF*]  
   
  Prvky v hranatých závorkách ([a]) jsou volitelné. Dvojtečka (:) je literálový symbol. Zbývající prvky jsou popsány v následující tabulce.  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
 |*-*|Volitelné záporné znaménko, které označuje záporný časový interval.|  
-|*trojrozměrné*|Volitelný počet dnů bez úvodní nuly.|  
-|*y*|Počet hodin, které jsou v rozsahu od "0" do "23", bez počátečních nul.|  
-|*výšce*|Počet minut, které jsou v rozsahu od "00" do "59".|  
-|*SS*|Počet sekund, které jsou v rozsahu od "00" do "59"..|  
+|*d*|Volitelný počet dnů bez úvodní nuly.|  
+|*h*|Počet hodin, které jsou v rozsahu od "0" do "23", bez počátečních nul.|  
+|*mm*|Počet minut, které jsou v rozsahu od "00" do "59".|  
+|*ss*|Počet sekund, které jsou v rozsahu od "00" do "59"..|  
 |*.*|Oddělovač zlomků sekund Je ekvivalentní s vlastností <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A> zadané jazykové verze bez přepsání uživatelem.|  
 |*FFFFFFF*|Zlomky sekund. Zobrazí se co nejvíce číslic.|  
   
@@ -106,10 +106,10 @@ V následující tabulce jsou uvedeny specifikátory formátu standardního čas
 |Prvek|Popis|  
 |-------------|-----------------|  
 |*-*|Volitelné záporné znaménko, které označuje záporný časový interval.|  
-|*trojrozměrné*|Počet dnů bez úvodní nuly.|  
-|*HH*|Počet hodin, které jsou v rozsahu od "00" do "23".|  
-|*výšce*|Počet minut, které jsou v rozsahu od "00" do "59".|  
-|*SS*|Počet sekund, které jsou v rozsahu od "00" do "59".|  
+|*d*|Počet dnů bez úvodní nuly.|  
+|*hh*|Počet hodin, které jsou v rozsahu od "00" do "23".|  
+|*mm*|Počet minut, které jsou v rozsahu od "00" do "59".|  
+|*ss*|Počet sekund, které jsou v rozsahu od "00" do "59".|  
 |*.*|Oddělovač zlomků sekund Je ekvivalentní s vlastností <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A> zadané jazykové verze bez přepsání uživatelem.|  
 |*fffffff*|Zlomky sekund.|  
   

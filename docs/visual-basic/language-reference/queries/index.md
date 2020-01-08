@@ -5,15 +5,15 @@ helpviewer_keywords:
 - queries [Visual Basic]
 - LINQ, queries
 ms.assetid: 8edc717c-4a24-4cbc-9c16-11f479c935db
-ms.openlocfilehash: a4a926d089a8bec1abaa47404f6c9112687e6df2
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: d23e18527fadce031f56bed3ae4c5a5c17b12e18
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350441"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636728"
 ---
 # <a name="queries-visual-basic"></a>Dotazy (Visual Basic)
-Visual Basic umožňuje vytvořit ve svém kódu [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] výrazy.  
+Visual Basic umožňuje vytváření výrazů LINQ (Language-Integrated Query) ve vašem kódu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Klauzule Aggregate](../../../visual-basic/language-reference/queries/aggregate-clause.md)  

@@ -1,13 +1,13 @@
 ---
-title: Typy F#
+title: Typy
 description: Seznamte se s typy, které se F# používají v F# nástroji a jak jsou typy pojmenovány a popsány.
 ms.date: 05/16/2016
-ms.openlocfilehash: 8f2526dce46d53a92c01c9347e1ed97681a45ecc
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 70d79525318c8d2eb0711d6a1b50be1ac0cf0226
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425309"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75348218"
 ---
 # <a name="f-types"></a>Typy F#
 
@@ -33,18 +33,18 @@ V F# kódu je často nutné napsat názvy typů. Každý typ má syntaktický tv
 
 V následující tabulce jsou uvedeny aspekty syntaxe typu pro F# typy.
 
-|Typ|Syntaxe typu|Příklady|
+|Type|Syntaxe typu|Příklady|
 |----|-----------|--------|
-|primitivní typ|*název typu*|`int`<br /><br />`float`<br /><br />`string`|
+|Primitivní typ|*název typu*|`int`<br /><br />`float`<br /><br />`string`|
 |agregační typ (třída, struktura, sjednocení, záznam, výčet atd.)|*název typu*|`System.DateTime`<br /><br />`Color`|
-|zkratka typu|*typ – zkratka – název*|`bigint`|
-|plně kvalifikovaný typ|*obory názvů. typ – název*<br /><br />or<br /><br />*moduly. Type-Name*<br /><br />or<br /><br />*obory názvů. Modules. Type-Name*|`System.IO.StreamWriter`|
+|zkratka typu|*type-abbreviation-name*|`bigint`|
+|plně kvalifikovaný typ|*namespaces.type-name*<br /><br />nebo<br /><br />*modules.type-name*<br /><br />nebo<br /><br />*namespaces.modules.type-name*|`System.IO.StreamWriter`|
 |pole|*název typu*[] nebo<br /><br />pole *název typu*|`int[]`<br /><br />`array<int>`<br /><br />`int array`|
 |dvojrozměrné pole|*název typu*[,]|`int[,]`<br /><br />`float[,]`|
 |trojrozměrné pole|*název typu*[,,]|`float[,,]`|
-|Řazené kolekce členů|typ *-název1* &#42; *typ – název2* ...|Například `(1,'b',3)` má typ `int * char * int`|
-|obecný typ|*typ parametr-* Type- *název-typu*<br /><br />or<br /><br />*Generic-type-name*&lt;*Type-parameter-list*&gt;|`'a list`<br /><br />`list<'a>`<br /><br />`Dictionary<'key, 'value>`|
-|konstruovaný typ (obecný typ, který má zadaný argument konkrétního typu)|*typ-argument* *Obecné-typ – název*<br /><br />or<br /><br />*Generic-type-name*&lt;*Type-argument-seznam*&gt;|`int option`<br /><br />`string list`<br /><br />`int ref`<br /><br />`option<int>`<br /><br />`list<string>`<br /><br />`ref<int>`<br /><br />`Dictionary<int, string>`|
+|tuple|typ *-název1* &#42; *typ – název2* ...|Například `(1,'b',3)` má typ `int * char * int`|
+|obecný typ|*typ parametr-* Type- *název-typu*<br /><br />nebo<br /><br />*Generic-type-name*&lt;*Type-parameter-list*&gt;|`'a list`<br /><br />`list<'a>`<br /><br />`Dictionary<'key, 'value>`|
+|konstruovaný typ (obecný typ, který má zadaný argument konkrétního typu)|*typ-argument* *Obecné-typ – název*<br /><br />nebo<br /><br />*Generic-type-name*&lt;*Type-argument-seznam*&gt;|`int option`<br /><br />`string list`<br /><br />`int ref`<br /><br />`option<int>`<br /><br />`list<string>`<br /><br />`ref<int>`<br /><br />`Dictionary<int, string>`|
 |typ funkce, která má jeden parametr|*parametr-typ1* -&gt; *návratový typ*|Funkce, která přebírá `int` a vrací `string` typu `int -> string`|
 |typ funkce, která má více parametrů|*parametr-typ1* -&gt; *parametr-typ2* -&gt;...-&gt; *návratový typ*|Funkce, která přebírá `int` a `float` a vrací `string` typu `int -> float -> string`|
 |vyšší pořadí funkce jako parametr|(*typ funkce*)|`List.map` je typu `('a -> 'b) -> 'a list -> 'b list`|
@@ -68,7 +68,7 @@ V následující tabulce jsou uvedeny aspekty syntaxe typu pro F# typy.
 |[Třídy](classes.md)|Popisuje typ třídy, typ objektu, který odpovídá typu odkazu .NET. Typy tříd mohou obsahovat členy, vlastnosti, implementovaná rozhraní a základní typ.|
 |[Struktury](structures.md)|Popisuje typ `struct`, typ objektu, který odpovídá typu hodnoty .NET. Typ `struct` obvykle představuje malou agregaci dat.|
 |[Rozhraní](interfaces.md)|Popisuje typy rozhraní, které jsou typy reprezentující sadu členů, které poskytují určité funkce, ale neobsahují žádná data. Typ rozhraní musí být implementován typem objektu, aby byl užitečný.|
-|[Delegáty](delegates.md)|Popisuje typ delegáta, který představuje funkci jako objekt.|
+|[Delegáti](delegates.md)|Popisuje typ delegáta, který představuje funkci jako objekt.|
 |[Výčty](enumerations.md)|Popisuje typy výčtů, jejichž hodnoty patří do sady pojmenovaných hodnot.|
 |[Atributy](attributes.md)|Popisuje atributy, které se používají k zadání metadat pro jiný typ.|
 |[Typy výjimek](./exception-handling/exception-types.md)|Popisuje výjimky, které určují informace o chybě.|

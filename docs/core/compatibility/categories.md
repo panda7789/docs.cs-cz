@@ -2,12 +2,12 @@
 title: Přerušující kategorie změn – .NET Core
 description: Přečtěte si o způsobech, kterými jsou zásadní změny zařazené do kategorií v .NET Core.
 ms.date: 06/10/2019
-ms.openlocfilehash: 4569c1ab19cb9bfa3e16aa8d5f941705eb926fa7
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 32cf55dc3ba0b16bae8cfe6179211150b2c90e2c
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74567924"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75343602"
 ---
 # <a name="breaking-change-categories"></a>Kategorie změn způsobujících chyby
 
@@ -18,8 +18,7 @@ ms.locfileid: "74567924"
 - [Kompatibilita zdrojů](#source-compatibility)
 - [Kompatibilita při návrhu](#design-time-compatibility)
 - [zpětná kompatibilita](#backwards-compatibility)
-
-[Dopředná kompatibilita](#forward-compatibility) není cílem rozhraní .NET Core.
+- [dopředná kompatibilita](#forward-compatibility) (nejedná se o cíl .NET Core)
 
 ## <a name="behavioral-change"></a>Změna chování
 
@@ -43,7 +42,7 @@ Kompatibilita v době návrhu označuje zachování prostředí v době návrhu 
 
 Zpětná kompatibilita znamená, že stávajícímu spotřebiteli rozhraní API může běžet na nové verzi, a přitom se chová stejným způsobem. Změny chování a změny binární kompatibility mají vliv na zpětnou kompatibilitu. Pokud se příjemce nedokáže při spuštění v novější verzi rozhraní API spustit jinak, je rozhraní API *zpětně nekompatibilní*.
 
-Změny, které mají vliv na zpětnou kompatibilitu, se důrazně nedoporučují, protože vývojáři ve výchozím nastavení očekávají zpětnou kompatibilitu v novějších verzích rozhraní API.
+Změny, které mají vliv na zpětnou kompatibilitu, se nedoporučuje, protože vývojáři očekávají zpětnou kompatibilitu v novějších verzích rozhraní API.
 
 ## <a name="forward-compatibility"></a>Dopředná kompatibilita
 

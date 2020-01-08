@@ -1,13 +1,13 @@
 ---
-title: Postup dotazování na obsah souborů ve složce (LINQ)
+title: Jak vytvářet dotazy na obsah souborů ve složce (LINQ)
 ms.date: 07/20/2015
 ms.assetid: edacbcd3-f3e4-4429-a8be-28a58dc0dd70
-ms.openlocfilehash: 02ffa398c495ca5af77685d62299c59cfc3b9d9c
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 3ad5fd6c893d590d46be67e6320ac5b915829f4b
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347617"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346038"
 ---
 # <a name="how-to-query-the-contents-of-files-in-a-folder-linq-visual-basic"></a>Postup dotazování na obsah souborů ve složce (LINQ) (Visual Basic)
 
@@ -73,9 +73,9 @@ Module Module1
 End Module
 ```
 
-## <a name="compiling-the-code"></a>Kompilování kódu
+## <a name="compile-the-code"></a>Kompilace kódu
 
-Vytvořte projekt konzolové aplikace VB.NET, zkopírujte a vložte ukázku kódu a upravte hodnotu spouštěcího objektu ve vlastnostech projektu.
+Vytvořte projekt konzolové aplikace Visual Basic, zkopírujte a vložte ukázku kódu a upravte hodnotu spouštěcího objektu ve vlastnostech projektu.
 
 ## <a name="see-also"></a>Viz také:
 

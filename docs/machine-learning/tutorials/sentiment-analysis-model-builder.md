@@ -6,12 +6,12 @@ author: luisquintanilla
 ms.author: luquinta
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: e919341130c6778207f324dd9eb3b3f54c8a9c68
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: 670c4dd1ac9da496f59d12d2e880cf269d64f309
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74551850"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344969"
 ---
 # <a name="tutorial-analyze-sentiment-of-website-comments-in-a-web-application-using-mlnet-model-builder"></a>Kurz: analýza mínění komentářů k webu ve webové aplikaci pomocí Tvůrce modelů ML.NET
 
@@ -27,7 +27,7 @@ V tomto kurzu se naučíte:
 > - Příprava a pochopení dat
 > - Zvolte scénář
 > - Načtení dat
-> - Výuka modelu
+> - Trénování modelu
 > - Vyhodnocení modelu
 > - Použití modelu pro předpovědi
 
@@ -49,7 +49,7 @@ Seznam požadavků a pokyny k instalaci najdete v [Průvodci instalací modelu m
     1. Pak vyberte šablonu projektu **ASP.NET Core webové aplikace** .
     1. Do textového pole **název** zadejte "SentimentRazor".
     1. Ujistěte se, že **umístění řešení a projekt ve stejném adresáři** není **zaškrtnuté** (vs 2019), nebo je **zaškrtnuté** políčko **vytvořit adresář pro řešení** (vs 2017).
-    1. Klikněte na tlačítko **OK** .
+    1. Vyberte tlačítko **OK**.
     1. Zvolte **Webová aplikace** v okně, které zobrazuje různé typy ASP.NET Core projektů, a pak vyberte tlačítko **OK** .
 
 ## <a name="prepare-and-understand-the-data"></a>Příprava a pochopení dat
@@ -83,7 +83,7 @@ Tvůrce modelů přijímá data ze dvou zdrojů, SQL Server databáze nebo míst
 1. Ponechte výchozí hodnoty rozevíracího seznamu **vstupních sloupců (funkce)** .
 1. Vyberte odkaz **výuka** , který se přesune k dalšímu kroku v nástroji Tvůrce modelů.
 
-## <a name="train-the-model"></a>Výuka modelu
+## <a name="train-the-model"></a>Trénování modelu
 
 Úkolem strojového učení, který se používá k výuce modelu analýzy mínění v tomto kurzu, je binární klasifikace. V průběhu procesu školení modelů vlacích sestavuje samostatné modely pomocí různých binárních algoritmů klasifikace a nastavení, aby bylo možné najít nejlepší model pro datovou sadu.
 
@@ -287,14 +287,14 @@ Pokud potřebujete odkazovat na projekty vygenerované tvůrcem modelu později 
 
 ## <a name="next-steps"></a>Další kroky
 
-V tomto kurzu jste zjistili, jak:
+V tomto kurzu jste se naučili:
 > [!div class="checklist"]
 >
 > - Vytvoření aplikace ASP.NET Core Razor Pages
 > - Příprava a pochopení dat
 > - Zvolte scénář
 > - Načtení dat
-> - Výuka modelu
+> - Trénování modelu
 > - Vyhodnocení modelu
 > - Použití modelu pro předpovědi
 
@@ -304,4 +304,4 @@ Další informace o tématech uvedených v tomto kurzu najdete v následujícíc
 
 - [Scénáře tvůrce modelů](../automate-training-with-model-builder.md#scenarios)
 - [Binární klasifikace](../resources/glossary.md#binary-classification)
-- [Metriky modelu binární klasifikace](../resources/metrics.md#metrics-for-binary-classification)
+- [Metriky modelu binární klasifikace](../resources/metrics.md#evaluation-metrics-for-binary-classification)

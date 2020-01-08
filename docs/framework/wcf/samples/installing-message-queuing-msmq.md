@@ -2,18 +2,18 @@
 title: Instalace služby Řízení front zpráv (MSMQ)
 ms.date: 03/30/2017
 ms.assetid: 7ddcd497-3e04-427e-bc04-3610ad98b01e
-ms.openlocfilehash: 118143f2d434e9f4399c3e9141743fc0254b61ab
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: e6d6a3a2e1bc0a0c936e4b8594eab836b559e5a7
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039615"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344738"
 ---
 # <a name="installing-message-queuing-msmq"></a>Instalace služby Řízení front zpráv (MSMQ)
 Následující postupy ukazují, jak nainstalovat službu Řízení front zpráv 4,0 a službu Řízení front zpráv 3,0.  
   
 > [!NOTE]
-> Služba Řízení front zpráv 4,0 není dostupná [!INCLUDE[wxp](../../../../includes/wxp-md.md)] v [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]a.  
+> Služba Řízení front zpráv 4,0 není k dispozici v [!INCLUDE[wxp](../../../../includes/wxp-md.md)] a Windows Server 2003.  
   
 #### <a name="to-install-message-queuing-40-on-windows-server-2008-or-windows-server-2008-r2"></a>Instalace služby Řízení front zpráv 4,0 v systému Windows Server 2008 nebo Windows Server 2008 R2  
   
@@ -41,7 +41,7 @@ Následující postupy ukazují, jak nainstalovat službu Řízení front zpráv
   
     - Podpora protokolu HTTP služby MSMQ.  
   
-4. Klikněte na **OK**.  
+4. Klikněte na tlačítko **OK**.  
   
 5. Pokud se zobrazí výzva k restartování počítače, kliknutím na tlačítko **OK** dokončete instalaci.  
   
@@ -54,7 +54,7 @@ Následující postupy ukazují, jak nainstalovat službu Řízení front zpráv
 3. Vyberte možnost Služba Řízení front zpráv a klikněte na tlačítko **Podrobnosti**.  
   
     > [!NOTE]
-    > Pokud používáte [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], vyberte aplikační server pro přístup do služby Řízení front zpráv.  
+    > Pokud používáte systém Windows Server 2003, vyberte aplikační server pro přístup do služby Řízení front zpráv.  
   
 4. Zajistěte, aby byla na stránce podrobností vybrána možnost Podpora služby MSMQ HTTP.  
   

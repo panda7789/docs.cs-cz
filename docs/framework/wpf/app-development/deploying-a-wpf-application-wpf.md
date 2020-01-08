@@ -5,15 +5,15 @@ helpviewer_keywords:
 - WPF applications [WPF], deployment
 - deployment [WPF], applications
 ms.assetid: 12cadca0-b32c-4064-9a56-e6a306dcc76d
-ms.openlocfilehash: a1441f0cc3a7ac715a173be12e68c055ce36ff00
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: d67919ba38c2e306672966ddc2f62140ef92b638
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460130"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636299"
 ---
 # <a name="deploying-a-wpf-application-wpf"></a>Nasazení aplikace WPF (WPF)
-Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasadit. Windows a .NET Framework zahrnují několik technologií nasazení. Technologie nasazení, která se používá k nasazení aplikace [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], závisí na typu aplikace. Toto téma poskytuje stručný přehled každé technologie nasazení a způsobu jejich použití ve spojení s požadavky na nasazení každého typu aplikace [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
+Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasadit. Windows a .NET Framework zahrnují několik technologií nasazení. Technologie nasazení, která se používá k nasazení aplikace WPF, závisí na typu aplikace. Toto téma poskytuje stručný přehled každé technologie nasazení a způsobu jejich použití ve spojení s požadavky nasazení každého typu aplikace WPF.  
 
 <a name="Deployment_Technologies"></a>   
 ## <a name="deployment-technologies"></a>Technologie nasazení  
@@ -63,7 +63,7 @@ Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasad
   
 <a name="Deploying_WPF_Applications"></a>   
 ## <a name="deploying-wpf-applications"></a>Nasazení aplikací WPF  
- Možnosti nasazení pro aplikaci [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] závisí na typu aplikace. Z perspektivy nasazení má [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] tři významné typy aplikací:  
+ Možnosti nasazení pro aplikaci WPF závisí na typu aplikace. V perspektivě nasazení má WPF tři významné typy aplikací:  
   
 - Samostatné aplikace.  
   
@@ -79,7 +79,7 @@ Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasad
 ### <a name="deploying-markup-only-xaml-applications"></a>Nasazení aplikací XAML pouze s označením  
  Stránky [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pouze s označením jsou obvykle publikovány na webové servery, například HTML stránky a lze je zobrazit pomocí aplikace Internet Explorer. Stránky [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pouze s označením jsou spouštěny v izolovaném prostoru zabezpečení s částečnou důvěryhodností s omezeními, která jsou definována sadou oprávnění zóny Internetu. To poskytuje ekvivalentní bezpečnostní izolovaný prostor (sandbox) pro webové aplikace založené na HTML.  
   
- Další informace o zabezpečení pro [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikace najdete v tématu [zabezpečení](../security-wpf.md).  
+ Další informace o zabezpečení pro aplikace WPF najdete v tématu [zabezpečení](../security-wpf.md).  
   
  Do místního systému souborů lze pomocí příkazu XCopy nebo Instalační služba systému Windows nainstalovat pouze stránky [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] pouze s označením. Tyto stránky lze zobrazit pomocí aplikace Internet Explorer nebo Průzkumníka Windows.  
   
@@ -112,7 +112,7 @@ Po sestavení aplikací Windows Presentation Foundation (WPF) je nutné je nasad
   
 <a name="Installing__NET_Framework_3_0"></a>   
 ## <a name="installing-the-net-framework"></a>Instalace rozhraní .NET Framework  
- Chcete-li spustit aplikaci [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], musí být na klientovi nainstalována aplikace Microsoft .NET Framework. Internet Explorer automaticky zjišťuje, zda jsou klienti nainstalovány s .NET Framework při zobrazení [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] aplikací hostovaných v prohlížeči. Pokud .NET Framework není nainstalován, aplikace Internet Explorer vyzve uživatele k jeho instalaci.  
+ Chcete-li spustit aplikaci WPF, musí být na klientovi nainstalována aplikace Microsoft .NET Framework. Internet Explorer automaticky zjišťuje, zda jsou klienti nainstalovány s .NET Framework při zobrazení aplikací hostovaných v prohlížeči WPF. Pokud .NET Framework není nainstalován, aplikace Internet Explorer vyzve uživatele k jeho instalaci.  
   
  Aby bylo možné zjistit, zda .NET Framework nainstalováno, obsahuje aplikace Internet Explorer aplikaci zaváděcího nástroje, která je registrována jako záložní obslužná rutina MIME (Multipurpose Multipurpose Internet Mail Extensions) pro soubory obsahu s následujícími příponami:. XAML,. XPS,. XBAP. a. Application. Pokud přejdete na tyto typy souborů a .NET Framework není nainstalován v klientovi, aplikace zaváděcího nástroje požaduje oprávnění k její instalaci. Pokud není k dispozici oprávnění, .NET Framework ani aplikace nainstalována nejsou.  
   

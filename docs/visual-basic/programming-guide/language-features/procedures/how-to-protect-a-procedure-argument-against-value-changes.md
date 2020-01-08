@@ -14,12 +14,12 @@ helpviewer_keywords:
 - arguments [Visual Basic], ByRef
 - arguments [Visual Basic], changing value
 ms.assetid: d2b7c766-ce16-4d2c-8d79-3fc0e7ba2227
-ms.openlocfilehash: 36092eb597b5b20e1da42cd9d15ab8633636cfb1
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 75c718c83f36e2f0b2c4cfb5504c2d740eaa3520
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344860"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347904"
 ---
 # <a name="how-to-protect-a-procedure-argument-against-value-changes-visual-basic"></a>Postupy: Ochrana argumentu procedury proti změnám hodnoty (Visual Basic)
 Pokud procedura deklaruje parametr jako typ [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), Visual Basic poskytne kód procedury přímý odkaz na programovací element podkladové argumentu v volajícím kódu. To umožňuje proceduře změnit hodnotu podkladové hodnoty argumentu ve volajícím kódu. V některých případech by volající kód mohl chtít chránit proti takové změně.  
@@ -39,7 +39,7 @@ Pokud procedura deklaruje parametr jako typ [ByRef](../../../../visual-basic/lan
   
  Druhý `MsgBox` volání zobrazí "po nahrazení (n): 11, 21, 31, 41". Vzhledem k tomu, že `n` je předán `ByVal`, `replace` nemůže změnit proměnnou `n` ve volání kódu přiřazením nového pole k tomuto poli. Když `replace` vytvoří novou instanci pole `k` a přiřadí ji k lokální proměnné `a`, ztratí odkaz na `n` předaný volajícím kódem. Když změní členy `a`, bude ovlivněn pouze místní pole `k`. Proto `replace` nezvyšuje hodnoty `n` pole v volajícím kódu.  
   
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
+## <a name="compile-the-code"></a>Kompilace kódu  
  Výchozí hodnotou v Visual Basic je předání argumentů podle hodnoty. Nicméně je dobrým programovacím postupem, jak zahrnout klíčové slovo [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) nebo [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) s každým deklarovaným parametrem. To usnadňuje čtení kódu.  
   
 ## <a name="see-also"></a>Viz také:

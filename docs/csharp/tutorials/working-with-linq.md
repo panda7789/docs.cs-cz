@@ -4,34 +4,34 @@ description: V tomto kurzu se naučíte generovat sekvence pomocí LINQ, metody 
 ms.date: 10/29/2018
 ms.technology: csharp-linq
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
-ms.openlocfilehash: b25cd1763511f460537bccaf6011a3d23390ea72
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 8984fdf0ff26726b6d05e8bee8a9e8ae1c350ea7
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039176"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345610"
 ---
-# <a name="working-with-linq"></a>Práce s jazykem LINQ
+# <a name="work-with-language-integrated-query-linq"></a>Práce s jazykem integrovaným dotazem (LINQ)
 
 ## <a name="introduction"></a>Úvod
 
-V tomto kurzu se naučíte funkcemi v .NET Core a C# v jazyce. Naučíte se:
+V tomto kurzu se naučíte funkcemi v .NET Core a C# v jazyce. Naučíte se tyto dovednosti:
 
-- Jak generovat sekvence pomocí LINQ.
-- Jak zapisovat metody, které lze snadno použít v dotazech LINQ.
-- Jak rozlišovat mezi Eager a opožděným hodnocením.
+- Generujte sekvence pomocí LINQ.
+- Metody zápisu, které lze snadno použít v dotazech LINQ.
+- Rozlišuje mezi Eager a opožděným hodnocením.
 
 Tyto techniky se naučíte vytvořením aplikace, která předvádí jednu ze základních dovedností libovolného Magician: Faro se [náhodně](https://en.wikipedia.org/wiki/Faro_shuffle)rozhodnou. Stručně je Faro náhodné, když rozdělíte balíček karet přesně na polovinu, pak se náhodně ponechá každou jednu kartu od poloviny a znovu sestaví původní balíček.
 
 Magicians tento postup použijte, protože každá karta je ve známém umístění po každém náhodném umístění a pořadí je opakující se vzor.
 
-Pro vaše účely je to světle srdce, které se používá při manipulaci s sekvencemi dat. Aplikace, kterou sestavíte, vytvoří balíček karet a pak provede sekvenci přepisování a pokaždé zapíše sekvenci. Také porovnáte aktualizované pořadí s původní objednávkou.
+Pro vaše účely je to světle srdce, které se používá při manipulaci s sekvencemi dat. Aplikace, kterou sestavíte, sestaví balíček karet a pak provede sekvenci přepisování a pokaždé zapíše sekvenci. Také porovnáte aktualizované pořadí s původní objednávkou.
 
 V tomto kurzu se používá několik kroků. Po každém kroku můžete spustit aplikaci a zobrazit průběh. V úložišti GitHub/Samples můžete také zobrazit [ukázku dokončeno](https://github.com/dotnet/samples/blob/master/csharp/getting-started/console-linq) . Pokyny ke stažení najdete v tématu [ukázky a kurzy](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
 ## <a name="prerequisites"></a>Požadavky
 
-Budete muset nastavit počítač, aby běžel .NET Core. Pokyny k instalaci najdete na stránce pro [stažení jádra .NET](https://dotnet.microsoft.com/download) . Tuto aplikaci můžete spustit ve Windows, Ubuntu Linux, OS X nebo v kontejneru Docker. Budete muset nainstalovat svůj oblíbený editor kódu. Níže uvedené popisy používají [Visual Studio Code](https://code.visualstudio.com/) , což je Open Source Editor pro různé platformy. Můžete ale použít jakékoli nástroje, se kterými máte v pohodlí.
+Budete muset nastavit počítač tak, aby běžel .NET Core. Pokyny k instalaci najdete na stránce pro [stažení jádra .NET](https://dotnet.microsoft.com/download) . Tuto aplikaci můžete spustit v systému Windows, Ubuntu Linux nebo OS X nebo v kontejneru Docker. Budete muset nainstalovat svůj oblíbený editor kódu. Níže uvedené popisy používají [Visual Studio Code](https://code.visualstudio.com/) , což je Open Source Editor pro různé platformy. Můžete ale použít jakékoli nástroje, se kterými máte v pohodlí.
 
 ## <a name="create-the-application"></a>Vytvoření aplikace
 
@@ -39,7 +39,7 @@ Prvním krokem je vytvoření nové aplikace. Otevřete příkazový řádek a v
 
 Pokud jste to ještě nikdy C# nepoužili, [Tento kurz](console-teleprompter.md) vysvětluje strukturu C# programu. Můžete si ho přečíst a pak se sem vrátit a získat další informace o LINQ.
 
-## <a name="creating-the-data-set"></a>Vytvoření datové sady
+## <a name="create-the-data-set"></a>Vytvoření datové sady
 
 Než začnete, ujistěte se, že jsou na začátku `Program.cs` souboru generovaného `dotnet new console`následující řádky:
 
@@ -118,7 +118,7 @@ Pokračujte a spusťte ukázku, kterou jste v tomto okamžiku vytvořili. V bal�
 
 ![Okno konzoly zobrazující, že aplikace vypisuje 52 karet.](./media/working-with-linq/console-52-card-application.png)
 
-## <a name="manipulating-the-order"></a>Manipulace s objednávkou
+## <a name="manipulate-the-order"></a>Manipulace s objednávkou
 
 V dalším kroku se zaměřte na to, jak se budou karty v balíčku přemíchat. Prvním krokem v jakémkoli dobrým náhodném případě je rozdělení balíčku na dvě. Metody <xref:System.Linq.Enumerable.Take%2A> a <xref:System.Linq.Enumerable.Skip%2A>, které jsou součástí rozhraní API LINQ, poskytují tuto funkci za vás. Umístěte je pod `foreach` smyčka:
 
@@ -350,9 +350,9 @@ Kromě technologie LINQ jste se dozvěděli o magicians techniky použití pro �
 
 Další informace o LINQ najdete v těchto tématech:
 
-- [LINQ (Language Integrated Query)](../programming-guide/concepts/linq/index.md)
-  - [Úvod do jazyka LINQ](../programming-guide/concepts/linq/index.md)
-  - [Základní operace dotazů LINQ (C#)](../programming-guide/concepts/linq/basic-linq-query-operations.md)
-  - [Transformace dat pomocí LINQ (C#)](../programming-guide/concepts/linq/data-transformations-with-linq.md)
-  - [Syntaxe dotazu a syntaxe metody v LINQ (C#)](../programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md)
-  - [Funkce C# podporující LINQ](../programming-guide/concepts/linq/features-that-support-linq.md)
+- [ (LINQ)](../programming-guide/concepts/linq/index.md)
+- [Úvod do LINQ](../programming-guide/concepts/linq/index.md)
+- [Základní operace dotazů LINQ (C#)](../programming-guide/concepts/linq/basic-linq-query-operations.md)
+- [Transformace dat pomocí LINQ (C#)](../programming-guide/concepts/linq/data-transformations-with-linq.md)
+- [Syntaxe dotazu a syntaxe metody v LINQ (C#)](../programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md)
+- [Funkce C# podporující LINQ](../programming-guide/concepts/linq/features-that-support-linq.md)

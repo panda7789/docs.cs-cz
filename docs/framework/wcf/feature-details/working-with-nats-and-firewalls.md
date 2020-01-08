@@ -5,12 +5,12 @@ helpviewer_keywords:
 - firewalls [WCF]
 - NATs [WCF]
 ms.assetid: 74db0632-1bf0-428b-89c8-bd53b64332e7
-ms.openlocfilehash: 7e907f234afd0fc5e81d586ed456279f684c29de
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: bfbff63c8c2cdb76d5f6d84424a9b03233744dae
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837945"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347109"
 ---
 # <a name="working-with-nats-and-firewalls"></a>Práce s překlady adres (NAT) a bránami firewall
 Klient a server síťového připojení často nemají přímou a otevřenou cestu pro komunikaci. Pakety se filtrují, směrují, analyzují a transformují na počítačích koncových bodů a na zprostředkujících počítačích v síti. Překlad síťových adres (NAT) a bran firewall jsou běžné příklady mezilehlých aplikací, které se můžou účastnit síťové komunikace.  
@@ -32,7 +32,7 @@ Klient a server síťového připojení často nemají přímou a otevřenou ces
  Běžnou konfigurací pro bránu firewall pro domácí uživatele je zakázat příchozí připojení, pokud se předtím nevytvořilo odchozí připojení k tomuto počítači. Běžnou konfigurací brány firewall pro firmy uživatele je zakázat příchozí připojení na všech portech, s výjimkou výslovně identifikované skupiny. Příkladem je brána firewall, která zakazuje připojení na všech portech s výjimkou portů 80 a 443 pro poskytování služby HTTP a HTTPS. Spravované brány firewall existují pro domácí i firemní uživatele, kteří můžou na počítači povolit důvěryhodného uživatele nebo procesy, aby změnili konfiguraci brány firewall. Spravované brány firewall jsou běžnější pro domácí uživatele, u kterých neexistuje podniková zásada řízení využití sítě.  
   
 ## <a name="using-teredo"></a>Pomocí Teredo  
- Teredo je přechodová technologie IPv6, která umožňuje přímou adresovatelnost počítačů za překladem adres (NAT). Teredo spoléhá na použití serveru, který může být veřejně a globálně směrován pro inzerování potenciálních připojení. Server Teredo uděluje klientovi aplikace a serveru společný bod schůzky, na kterém mohou informace o připojení systému Exchange. Počítače pak vyžádají dočasnou adresu Teredo a pakety se procházejí tunelem přes stávající síť. Podpora Teredo v rámci WCF vyžaduje povolení podpory IPv6 a Teredo v operačním systému. [!INCLUDE[wxp](../../../../includes/wxp-md.md)] a novější operační systémy podporují technologii Teredo. Systém Windows Vista a novější operační systémy podporují protokol IPv6 ve výchozím nastavení a vyžadují, aby uživatel povolil technologii Teredo. [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)] a [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] vyžadují, aby uživatel povolil protokol IPv6 i Teredo. Další informace najdete v tématu [Přehled technologie Teredo](https://go.microsoft.com/fwlink/?LinkId=87571).  
+ Teredo je přechodová technologie IPv6, která umožňuje přímou adresovatelnost počítačů za překladem adres (NAT). Teredo spoléhá na použití serveru, který může být veřejně a globálně směrován pro inzerování potenciálních připojení. Server Teredo uděluje klientovi aplikace a serveru společný bod schůzky, na kterém mohou informace o připojení systému Exchange. Počítače pak vyžádají dočasnou adresu Teredo a pakety se procházejí tunelem přes stávající síť. Podpora Teredo v rámci WCF vyžaduje povolení podpory IPv6 a Teredo v operačním systému. [!INCLUDE[wxp](../../../../includes/wxp-md.md)] a novější operační systémy podporují technologii Teredo. Systém Windows Vista a novější operační systémy podporují protokol IPv6 ve výchozím nastavení a vyžadují, aby uživatel povolil technologii Teredo. [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)] a Windows Server 2003 vyžadují, aby uživatel povolil protokol IPv6 i Teredo. Další informace najdete v tématu [Přehled technologie Teredo](https://go.microsoft.com/fwlink/?LinkId=87571).  
   
 ## <a name="choosing-a-transport-and-message-exchange-pattern"></a>Výběr modelu přenosu a výměny zpráv  
  Výběr přenosu a MEP je proces se třemi kroky:  

@@ -1,15 +1,15 @@
 ---
-title: 'Postupy: Vyhledání rozdílového nastavení mezi dvěma seznamy (LINQ) (C#)'
+title: Jak najít množinu rozdílů mezi dvěma seznamy (LINQ) (C#)
 ms.date: 07/20/2015
 ms.assetid: 8e8945f0-4aba-439d-8d5d-c8d1eeef4e71
-ms.openlocfilehash: 9e2a42a466a71d4e351df89398be197197a54042
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 227405428a1b418cbe6ceb3d0e3274595307e5ef
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74140986"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345940"
 ---
-# <a name="how-to-find-the-set-difference-between-two-lists-linq-c"></a>Postupy: Vyhledání rozdílového nastavení mezi dvěma seznamy (LINQ) (C#)
+# <a name="how-to-find-the-set-difference-between-two-lists-linq-c"></a>Jak najít množinu rozdílů mezi dvěma seznamy (LINQ) (C#)
 Tento příklad ukazuje, jak použít LINQ k porovnání dvou seznamů řetězců a výstupu těchto řádků, které jsou v names1. txt, ale ne v names2. txt.  
   
 ### <a name="to-create-the-data-files"></a>Vytvoření datových souborů  

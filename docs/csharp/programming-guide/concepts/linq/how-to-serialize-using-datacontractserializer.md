@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: Serializace pomocí třídyC#DataContractSerializer ()'
+title: Postup serializace pomocí třídy DataContractSerializerC#()
 ms.date: 07/20/2015
 ms.assetid: 3320ecbf-cdbe-480e-979c-2c14bbef9988
-ms.openlocfilehash: 2b4800e2c6d210d62ab3093b673898a147c1f92d
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: c75455ce7c7943194ab43ac0150f5b9392f92e16
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253346"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347412"
 ---
-# <a name="how-to-serialize-using-datacontractserializer-c"></a>Postupy: Serializace pomocí třídyC#DataContractSerializer ()
+# <a name="how-to-serialize-using-datacontractserializer-c"></a>Postup serializace pomocí třídy DataContractSerializerC#()
 Toto téma ukazuje příklad, který serializace a deserializace používá <xref:System.Runtime.Serialization.DataContractSerializer>.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří počet objektů, které obsahují <xref:System.Xml.Linq.XElement> objekty. Pak je rozkonstruuje do textových souborů a poté je deserializace z textových souborů.  
+ Následující příklad vytvoří počet objektů, které obsahují objekty <xref:System.Xml.Linq.XElement>. Pak je rozkonstruuje do textových souborů a poté je deserializace z textových souborů.  
   
 ```csharp  
 using System;  

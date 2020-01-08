@@ -3,12 +3,12 @@ title: Použití modelu syntaxe .NET Compiler Platform SDK
 description: Tento přehled poskytuje pochopení typů, které používáte pro pochopení a manipulaci se syntaxmi uzlů.
 ms.date: 10/15/2017
 ms.custom: mvc
-ms.openlocfilehash: 940d2756ef7735ee96d38d0286f99fadf7b81dc6
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 2cfd3c8bc8f47421c7992f7fea28c7b156450147
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774104"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346931"
 ---
 # <a name="work-with-syntax"></a>Práce se syntaxí
 
@@ -35,9 +35,9 @@ Uzly syntaxe jsou jedním z primárních prvků stromové struktury syntaxe. Tyt
 
 Všechny uzly syntaxe jsou uzly bez terminálů ve stromu syntaxe, což znamená, že mají vždy jiné uzly a tokeny jako podřízené objekty. Jako podřízený uzel jiného uzlu má každý uzel nadřazený uzel, ke kterému lze přistupovat prostřednictvím vlastnosti <xref:Microsoft.CodeAnalysis.SyntaxNode.Parent?displayProperty=nameWithType>. Vzhledem k tomu, že uzly a stromy jsou neměnné, nadřazený uzel se nikdy nemění. Kořen stromu má nadřazený prvek s hodnotou null.
 
-Každý uzel má <xref:Microsoft.CodeAnalysis.SyntaxNode.ChildNodes?displayProperty=nameWithType> metodu, která vrátí seznam podřízených uzlů v sekvenčním pořadí na základě jejich pozice ve zdrojovém textu. Tento seznam neobsahuje tokeny. Každý uzel obsahuje také metody pro prohlédnutí následníků, jako jsou <xref:Microsoft.CodeAnalysis.SyntaxNode.DescendantNodes%2A>, <xref:Microsoft.CodeAnalysis.SyntaxNode.DescendantTokens%2A> nebo <xref:Microsoft.CodeAnalysis.SyntaxNode.DescendantTrivia%2A>, které reprezentují seznam všech uzlů, tokenů nebo minihryů, které existují v podstromu, který je v tomto uzlu rootem.
+Každý uzel má <xref:Microsoft.CodeAnalysis.SyntaxNode.ChildNodes?displayProperty=nameWithType> metodu, která vrátí seznam podřízených uzlů v sekvenčním pořadí na základě jejich pozice ve zdrojovém textu. Tento seznam neobsahuje tokeny. Každý uzel obsahuje také metody pro prohlédnutí následníků, jako jsou <xref:Microsoft.CodeAnalysis.SyntaxNode.DescendantNodes%2A>, <xref:Microsoft.CodeAnalysis.SyntaxNode.DescendantTokens%2A>nebo <xref:Microsoft.CodeAnalysis.SyntaxNode.DescendantTrivia%2A>, které reprezentují seznam všech uzlů, tokenů nebo minihryů, které existují v podstromu, který je v tomto uzlu rootem.
 
-Kromě toho každá podtřída uzlu syntaxe zveřejňuje všechny stejné podřízené objekty prostřednictvím vlastností silného typu. Například třída Node <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax> obsahuje tři další vlastnosti, které jsou specifické pro binární operátory: <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Left>, <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.OperatorToken> a <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Right>. Typ <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Left> a <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Right> je <xref:Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax> a typ <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.OperatorToken> je <xref:Microsoft.CodeAnalysis.SyntaxToken>.
+Kromě toho každá podtřída uzlu syntaxe zveřejňuje všechny stejné podřízené objekty prostřednictvím vlastností silného typu. Například třída Node <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax> obsahuje tři další vlastnosti, které jsou specifické pro binární operátory: <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Left>, <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.OperatorToken>a <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Right>. Typ <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Left> a <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Right> je <xref:Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax>a typ <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.OperatorToken> je <xref:Microsoft.CodeAnalysis.SyntaxToken>.
 
 Některé uzly syntaxe mají volitelné podřízené objekty. Například <xref:Microsoft.CodeAnalysis.CSharp.Syntax.IfStatementSyntax> má volitelný <xref:Microsoft.CodeAnalysis.CSharp.Syntax.ElseClauseSyntax>. Pokud podřízená položka není k dispozici, vlastnost vrátí hodnotu null.
 
@@ -61,7 +61,7 @@ K minihry se dostanete tak, že zkontrolujete kolekce <xref:Microsoft.CodeAnalys
 
 Na rozdíl od syntaktických uzlů a tokenů syntaxe minihry neobsahuje rodiče. Vzhledem k tomu, že jsou součástí stromu a každá z nich je přidružena k jednomu tokenu, můžete získat přístup k tokenu, ke kterému je přidruženo, pomocí vlastnosti <xref:Microsoft.CodeAnalysis.SyntaxTrivia.Token?displayProperty=nameWithType>.
 
-## <a name="spans"></a>Přes
+## <a name="spans"></a>Rozpětí
 
 Každý uzel, token nebo minihry ví svou polohu v rámci zdrojového textu a počtu znaků, ze kterých se skládá. Pozice textu je reprezentována jako 32ová celá čísla, což je index `char` založený na nule. Objekt <xref:Microsoft.CodeAnalysis.Text.TextSpan> je počáteční pozice a počet znaků, který je reprezentován jako celé číslo. Pokud má <xref:Microsoft.CodeAnalysis.Text.TextSpan> nulovou délku, odkazuje na umístění mezi dvěma znaky.
 
@@ -85,13 +85,13 @@ Uzel příkazu uvnitř bloku má rozpětí vyznačené jednotlivými svislými p
 
 ## <a name="kinds"></a>Druzí
 
-Každý uzel, token nebo minihry má vlastnost <xref:Microsoft.CodeAnalysis.SyntaxNode.RawKind?displayProperty=nameWithType> typu <xref:System.Int32?displayProperty=nameWithType>, která identifikuje přesný reprezentovaný prvek syntaxe. Tuto hodnotu lze přetypovat na výčet specifický pro jazyk; každý jazyk C# nebo VB má jeden `SyntaxKind` výčet (<xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind?displayProperty=nameWithType> a <xref:Microsoft.CodeAnalysis.VisualBasic.SyntaxKind?displayProperty=nameWithType>), který obsahuje seznam všech možných uzlů, tokenů a minihry prvků v gramatice. Tento převod lze provést automaticky přístupem k metodám rozšíření <xref:Microsoft.CodeAnalysis.CSharp.CSharpExtensions.Kind*?displayProperty=nameWithType> nebo <xref:Microsoft.CodeAnalysis.VisualBasic.VisualBasicExtensions.Kind*?displayProperty=nameWithType>.
+Každý uzel, token nebo minihry má vlastnost <xref:Microsoft.CodeAnalysis.SyntaxNode.RawKind?displayProperty=nameWithType> typu <xref:System.Int32?displayProperty=nameWithType>, která identifikuje přesný reprezentovaný prvek syntaxe. Tuto hodnotu lze přetypovat na výčet specifický pro jazyk. Každý jazyk C# nebo Visual Basic má jeden `SyntaxKind` výčet (<xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind?displayProperty=nameWithType> a <xref:Microsoft.CodeAnalysis.VisualBasic.SyntaxKind?displayProperty=nameWithType>, v uvedeném pořadí), který obsahuje seznam všech možných uzlů, tokenů a minihry prvků v gramatice. Tento převod lze provést automaticky přístupem k metodám rozšíření <xref:Microsoft.CodeAnalysis.CSharp.CSharpExtensions.Kind*?displayProperty=nameWithType> nebo <xref:Microsoft.CodeAnalysis.VisualBasic.VisualBasicExtensions.Kind*?displayProperty=nameWithType>.
 
 Vlastnost <xref:Microsoft.CodeAnalysis.SyntaxToken.RawKind> umožňuje snadnou nejednoznačnost typů uzlů syntaxe, které sdílejí stejnou třídu Node. Pro tokeny a minihry je tato vlastnost jediným způsobem, jak odlišit jeden typ prvku od jiného.
 
-Například jedna třída <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax> má <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Left>, <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.OperatorToken> a <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Right> jako podřízené objekty. Vlastnost <xref:Microsoft.CodeAnalysis.CSharp.CSharpExtensions.Kind*> rozlišuje, zda se jedná o <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind.AddExpression>, <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind.SubtractExpression> nebo <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind.MultiplyExpression> druh uzlu syntaxe.
+Například jedna třída <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax> má <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Left>, <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.OperatorToken>a <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Right> jako podřízené objekty. Vlastnost <xref:Microsoft.CodeAnalysis.CSharp.CSharpExtensions.Kind*> rozlišuje, zda se jedná o <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind.AddExpression>, <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind.SubtractExpression>nebo <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind.MultiplyExpression> druh uzlu syntaxe.
 
-## <a name="errors"></a>Vyskytl
+## <a name="errors"></a>Chyby
 
 I v případě, že zdrojový text obsahuje syntaktické chyby, je zveřejněn úplný strom syntaxe, který je k dispozici jako kulatý trippable do zdroje. Když analyzátor nalezne kód, který není v souladu s definovanou syntaxí jazyka, používá jeden ze dvou postupů pro vytvoření stromu syntaxe.
 

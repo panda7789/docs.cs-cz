@@ -4,19 +4,19 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - what's new [Visual Basic]
 ms.assetid: ddba5545-ff6e-46c3-8967-5c4280db5aca
-ms.openlocfilehash: ea6754d9d93a7d400ac3494b01b850374e9ec02d
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 50d6c9ffb484dfbc6d33ed1a3e9a1f03f240990b
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74354184"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636533"
 ---
 # <a name="linq-in-visual-basic"></a>LINQ v jazyce Visual Basic
-Tato část obsahuje přehledy, příklady a základní informace, které vám pomůžou pochopit a používat Visual Basic a [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)].  
+Tato část obsahuje přehledy, příklady a informace na pozadí, které vám pomůžou pochopit a používat Visual Basic a LINQ (Language-Integrated Query).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Úvod do jazyka LINQ v Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
- Obsahuje úvod do [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] poskytovatelé, operátory, struktury dotazů a jazykové funkce.  
+ Poskytuje Úvod k poskytovatelům LINQ, operátorům, struktuře dotazů a jazykovým funkcím.  
   
  [Postupy: dotazování databáze](../../../../visual-basic/programming-guide/language-features/linq/how-to-query-a-database-by-using-linq.md)  
  Poskytuje příklad, jak se připojit k databázi SQL Server a spustit dotaz pomocí LINQ.  

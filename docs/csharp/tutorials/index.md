@@ -2,22 +2,22 @@
 title: Kurzy k jazyku C#
 description: Prozkoumejte C# tyto kurzy a Naučte se C# sestavovat C# programy a naučit se funkce jazyka.
 ms.date: 10/25/2018
-ms.openlocfilehash: 3f3ca31c0fdeb5d7c60b25c4b45399569cc919b4
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 8adbec3311c7a0e88475734312ecc3621042c3f3
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73417102"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346802"
 ---
 # <a name="c-tutorials"></a>Kurzy k jazyku C#
 
-Vítá vás C# kurzy. Ty začínají interaktivními lekcemi, které můžete spustit v prohlížeči. Pozdější kurzy a pokročilejší kurzy vám pomůžou při práci s nástroji pro vývoj v .NET C# a vytváření programů na vašem počítači.
+Vítá vás C# kurzy. Tento kurz začíná interaktivní lekcí, kterou si můžete spustit v prohlížeči. Pozdější kurzy a pokročilejší kurzy vám pomůžou při práci s nástroji pro vývoj v .NET C# a vytváření programů na vašem počítači.
 
 ## <a name="introduction-to-c-interactive-tutorials"></a>Úvod k C# interaktivním kurzům
 
 Pokud chcete spustit průzkum ve formátu videa, [ C# série videí 101](https://aka.ms/dotnet3-csharp) poskytuje Úvod do. C# Dozvíte se o konceptech, které můžete prozkoumat v těchto kurzech.
 
-První lekce vysvětlují C# koncepty s použitím malých fragmentů kódu. Naučíte se základy C# syntaxe a práci s datovými typy, jako jsou řetězce, čísla a logické hodnoty. Je to vše interaktivní a vy budete psát a spouštět kód během několika minut. Tyto první lekce nepředpokládají žádné předchozí znalosti programování nebo C# jazyka.
+První lekce vysvětluje C# koncepty pomocí malých utržků kódu. Dozvíte se základy C# syntaxe a postup při práci s datovými typy, jako jsou řetězce, čísla a logické hodnoty. Celá lekce je interativní, vyzkoušíte si psaní i spouštění kódu. Pro první lekci nepotřebujete žádné předchozí znalosti programování nebo jazyka C#.
 
 ## <a name="hello-worldintro-to-csharphello-worldyml"></a>[Hello World](intro-to-csharp/hello-world.yml)
 
