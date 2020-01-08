@@ -1,5 +1,7 @@
 - name: Vítejte
   href: welcome.md
+- name: Co je nového v dokumentaci .NET
+  href: whats-new/index.yml
 - name: Průvodce technologií .NET
   href: standard/
 - name: Průvodce platformou .NET Core

@@ -46,7 +46,7 @@
         - name: Předpovídání cen (Model Builder a regrese)
           href: tutorials/predict-prices-with-model-builder.md
         - name: Analýza mínění pomocí rozhraní příkazového řádku ML.NET
-          href: tutorials/mlnet-cli.md
+          href: tutorials/sentiment-analysis-cli.md
         - name: Analýza mínění v Razor Pages (Model Builder a binární klasifikace)
           href: tutorials/sentiment-analysis-model-builder.md
         - name: Kategorizace porušení stavu (Model Builder a vícetřídová klasifikace)
@@ -57,13 +57,13 @@
           href: how-to-guides/matchup-app-infer-net.md
 - name: Koncepty
   items:
-    - name: Úlohy ML.NET (typy modelů)
+    - name: Úlohy ML.NET
       href: resources/tasks.md
     - name: Algoritmy
       href: how-to-choose-an-ml-net-algorithm.md
     - name: Transformace dat
       href: resources/transforms.md
-    - name: Metriky
+    - name: Metriky vyhodnocení modelu
       href: resources/metrics.md
     - name: Vylepšení přesnosti modelu
       href: resources/improve-machine-learning-model-ml-net.md

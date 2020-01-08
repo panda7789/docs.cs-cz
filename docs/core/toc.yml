@@ -42,23 +42,23 @@
           href: install/linux-package-manager-sles12.md
         - name: SLES 15
           href: install/linux-package-manager-sles15.md
+    - name: Instalace lokalizované technologie IntelliSense
+      href: install/localized-intellisense.md
 - name: Začínáme
   href: get-started.md
   items:
     - name: 'Začínáme s jazykem C# a nástrojem Visual Studio Code'
       href: tutorials/with-visual-studio-code.md
-    - name: 'Vytvoření aplikace Hello World v jazyce C# v sadě Visual Studio'
+    - name: Začínáme s .NET Core v systému macOS pomocí sady Visual Studio Code
+      href: tutorials/using-on-macos.md
+    - name: Vytvoření první konzolové aplikace v sadě Visual Studio
       href: tutorials/with-visual-studio.md
-    - name: Vytvoření aplikace Hello World v jazyce Visual Basic v sadě Visual Studio
-      href: tutorials/vb-with-visual-studio.md
     - name: Ladění aplikace pomocí sady Visual Studio
       href: tutorials/debugging-with-visual-studio.md
     - name: Publikace aplikace pomocí sady Visual Studio
       href: tutorials/publishing-with-visual-studio.md
-    - name: 'Vytvoření knihovny .NET Standard pomocí jazyka C# v sadě Visual Studio'
+    - name: Vytvoření knihovny .NET Standard v sadě Visual Studio
       href: tutorials/library-with-visual-studio.md
-    - name: Vytvoření knihovny .NET Standard pomocí jazyka Visual Basic v sadě Visual Studio
-      href: tutorials/vb-library-with-visual-studio.md
     - name: Testování knihovny .NET Standard v sadě Visual Studio
       href: tutorials/testing-library-with-visual-studio.md
     - name: Využití knihovny .NET Standard v sadě Visual Studio
@@ -89,8 +89,6 @@
           href: tutorials/cli-templates-create-project-template.md
         - name: 3 – Vytvoření sady šablon
           href: tutorials/cli-templates-create-template-pack.md
-    - name: Začínáme s .NET Core v systému macOS
-      href: tutorials/using-on-macos.md
     - name: Začínáme s .NET Core pomocí sady Visual Studio pro Mac
       href: tutorials/using-on-mac-vs.md
     - name: Sestavení kompletního řešení .NET Core v macOS
@@ -183,6 +181,10 @@
           href: diagnostics/dotnet-dump.md
         - name: dotnet-trace
           href: diagnostics/dotnet-trace.md
+    - name: Kurzy diagnostiky .NET Core
+      items:
+        - name: Ladění nevrácené paměti
+          href: diagnostics/debug-memory-leak.md
 - name: Testování částí
   href: testing/index.md
   items:
@@ -249,7 +251,7 @@
       href: tools/custom-templates.md
     - name: Povolení dokončování pomocí tabulátoru
       href: tools/enable-tab-autocomplete.md
-    - name: Telemetrická data
+    - name: Telemetrie
       href: tools/telemetry.md
     - name: global.json – přehled
       href: tools/global-json.md
@@ -326,6 +328,8 @@
 - name: Další nástroje platformy .NET Core
   href: additional-tools/index.md
   items:
+    - name: Nástroj pro odinstalaci .NET Core
+      href: additional-tools/uninstall-tool.md
     - name: WCF Web Service Reference Provider
       href: additional-tools/wcf-web-service-reference-guide.md
     - name: dotnet-svcutil

@@ -24,7 +24,7 @@
           href: tutorials/intro-to-csharp/list-collection.yml
         - name: Práce ve vašem místním prostředí
           items:
-            - name: Nastavení vašeho prostředí
+            - name: Nastavení prostředí
               href: tutorials/intro-to-csharp/local-environment.md
             - name: 'Čísla v jazyce C#'
               href: tutorials/intro-to-csharp/numbers-in-csharp-local.md
@@ -62,7 +62,7 @@
       href: tutorials/console-webapiclient.md
     - name: 'Dědičnost v jazyce C# a technologii .NET'
       href: tutorials/inheritance.md
-    - name: Práce s jazykem LINQ
+    - name: Práce s LINQ
       href: tutorials/working-with-linq.md
     - name: Používání atributů
       href: tutorials/attributes.md
@@ -86,8 +86,6 @@
       href: tour-of-csharp/arrays.md
     - name: Rozhraní
       href: tour-of-csharp/interfaces.md
-    - name: Výčty
-      href: tour-of-csharp/enums.md
     - name: Delegáty
       href: tour-of-csharp/delegates.md
     - name: Atributy
@@ -106,6 +104,8 @@
       href: whats-new/csharp-7.md
     - name: 'C# 6'
       href: whats-new/csharp-6.md
+    - name: Nejnovější změny v kompilátoru
+      href: whats-new/breaking-changes.md
     - name: 'Historie verzí jazyka C#'
       href: whats-new/csharp-version-history.md
     - name: Vztahy mezi jazykem a architekturou
@@ -166,7 +166,7 @@
           href: modern-events.md
         - name: Rozlišování delegátů a událostí
           href: distinguish-delegates-events.md
-    - name: LINQ (Language Integrated Query)
+    - name: LINQ (Language-Integrated Query)
       items:
         - name: Přehled jazyka LINQ
           href: linq/index.md
@@ -304,7 +304,7 @@
           href: programming-guide/main-and-command-args/index.md
         - name: Argumenty příkazového řádku
           href: programming-guide/main-and-command-args/command-line-arguments.md
-        - name: 'Postupy: Zobrazení argumentů příkazového řádku'
+        - name: Jak zobrazit argumenty příkazového řádku
           href: programming-guide/main-and-command-args/how-to-display-command-line-arguments.md
         - name: Návratové hodnoty Main()
           href: programming-guide/main-and-command-args/main-return-values.md
@@ -464,51 +464,51 @@
                   items:
                     - name: Jak počítat výskyty slova v řetězci (LINQ)
                       href: programming-guide/concepts/linq/how-to-count-occurrences-of-a-word-in-a-string-linq.md
-                    - name: 'Postupy: Vytvoření dotazu na věty obsahující zadanou množinu slov (LINQ)'
+                    - name: Jak vytvořit dotaz na věty obsahující zadanou množinu slov (LINQ)
                       href: programming-guide/concepts/linq/how-to-query-for-sentences-that-contain-a-specified-set-of-words-linq.md
-                    - name: 'Postupy: Vytvoření dotazu na znaky v řetězci (LINQ)'
+                    - name: Jak vytvořit dotaz na znaky v řetězci (LINQ)
                       href: programming-guide/concepts/linq/how-to-query-for-characters-in-a-string-linq.md
                     - name: Jak kombinovat dotazy LINQ s regulárními výrazy
                       href: programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md
-                    - name: 'Postupy: Hledání množinových rozdílů mezi dvěma seznamy (LINQ)'
+                    - name: Jak najít množinový rozdíl mezi dvěma seznamy (LINQ)
                       href: programming-guide/concepts/linq/how-to-find-the-set-difference-between-two-lists-linq.md
-                    - name: 'Postupy: Řazení nebo filtrování textových dat podle libovolného slova či pole (LINQ)'
+                    - name: Jak řadit nebo filtrovat textová data podle libovolného slova či pole (LINQ)
                       href: programming-guide/concepts/linq/how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md
-                    - name: 'Postupy: Změna pořadí polí v souboru s oddělovači (LINQ)'
+                    - name: Jak změnit pořadí polí v souboru s oddělovači (LINQ)
                       href: programming-guide/concepts/linq/how-to-reorder-the-fields-of-a-delimited-file-linq.md
                     - name: Jak kombinovat a porovnávat kolekce řetězců (LINQ)
                       href: programming-guide/concepts/linq/how-to-combine-and-compare-string-collections-linq.md
-                    - name: 'Postupy: Vyplňování kolekcí objektů z více zdrojů (LINQ)'
+                    - name: Jak naplnit kolekce objektů z více zdrojů (LINQ)
                       href: programming-guide/concepts/linq/how-to-populate-object-collections-from-multiple-sources-linq.md
-                    - name: 'Postupy: Rozdělení souboru na více souborů pomocí skupin (LINQ)'
+                    - name: Jak rozdělit soubor na více souborů pomocí skupin (LINQ)
                       href: programming-guide/concepts/linq/how-to-split-a-file-into-many-files-by-using-groups-linq.md
-                    - name: 'Postupy: Spojení obsahu z nepodobných souborů (LINQ)'
+                    - name: Jak spojit obsah z nepodobných souborů (LINQ)
                       href: programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md
                     - name: Jak kombinovat počítat hodnoty sloupce v textovém souboru CSV (LINQ)
                       href: programming-guide/concepts/linq/how-to-compute-column-values-in-a-csv-text-file-linq.md
                 - name: LINQ a reflexe
                   href: programming-guide/concepts/linq/linq-and-reflection.md
-                - name: 'Postupy: Vytvoření dotazu na metadata sestavení s reflexí (LINQ)'
+                - name: Jak vytvořit dotaz na metadata sestavení s reflexí (LINQ)
                   href: programming-guide/concepts/linq/how-to-query-an-assembly-s-metadata-with-reflection-linq.md
                 - name: LINQ a souborové adresáře
                   items:
                     - name: Přehled
                       href: programming-guide/concepts/linq/linq-and-file-directories.md
-                    - name: 'Postupy: Vytvoření dotazu na soubory s konkrétním atributem či názvem'
+                    - name: Jak vytvořit dotaz na soubory s konkrétním atributem či názvem
                       href: programming-guide/concepts/linq/how-to-query-for-files-with-a-specified-attribute-or-name.md
-                    - name: 'Postupy: Seskupování souborů podle přípony (LINQ)'
+                    - name: Jak seskupovat soubory podle přípony (LINQ)
                       href: programming-guide/concepts/linq/how-to-group-files-by-extension-linq.md
-                    - name: 'Postupy: Vytvoření dotazu na celkový počet bajtů v sadě složek (LINQ)'
+                    - name: Jak vytvořit dotaz na celkový počet bajtů v sadě složek (LINQ)
                       href: programming-guide/concepts/linq/how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders-linq.md
                     - name: Jak porovnat obsah dvou složek (LINQ)
                       href: programming-guide/concepts/linq/how-to-compare-the-contents-of-two-folders-linq.md
-                    - name: 'Postupy: Vytvoření dotazu na největší soubor či soubory v adresářovém stromu (LINQ)'
+                    - name: Jak vytvořit dotaz na největší soubor či soubory v adresářovém stromu (LINQ)
                       href: programming-guide/concepts/linq/how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq.md
-                    - name: 'Postupy: Vytvoření dotazu na duplicitní soubory v adresářovém stromu (LINQ)'
+                    - name: Jak vytvořit dotaz na duplicitní soubory v adresářovém stromu (LINQ)
                       href: programming-guide/concepts/linq/how-to-query-for-duplicate-files-in-a-directory-tree-linq.md
-                    - name: 'Postupy: Vytvoření dotazu na obsah souborů ve složce (LINQ)'
+                    - name: Jak vytvářet dotazy na obsah souborů ve složce (LINQ)
                       href: programming-guide/concepts/linq/how-to-query-the-contents-of-files-in-a-folder-lin.md
-                - name: 'Postupy: Vytvoření dotazu na ArrayList pomocí jazyka LINQ'
+                - name: Jak vytvořit dotaz na ArrayList pomocí LINQ
                   href: programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md
                 - name: Jak přidat vlastní metody do dotazů LINQ
                   href: programming-guide/concepts/linq/how-to-add-custom-methods-for-linq-queries.md
@@ -546,9 +546,9 @@
                           href: programming-guide/concepts/linq/creating-xml-trees-linq-to-xml-2.md
                         - name: Analýza XML
                           items:
-                            - name: 'Postupy: Analýza řetězce'
+                            - name: Jak analyzovat řetězec
                               href: programming-guide/concepts/linq/how-to-parse-a-string.md
-                            - name: 'Postupy: Načtení XML ze souboru'
+                            - name: Jak načíst XML ze souboru
                               href: programming-guide/concepts/linq/how-to-load-xml-from-a-file.md
                             - name: Zachování prázdných znaků při načítání nebo analýze XML
                               href: programming-guide/concepts/linq/preserving-white-space-while-loading-or-parsing-xml1.md
@@ -556,11 +556,11 @@
                               href: programming-guide/concepts/linq/how-to-catch-parsing-errors.md
                             - name: Jak vytvořit strom ze třídy XmlReader
                               href: programming-guide/concepts/linq/how-to-create-a-tree-from-an-xmlreader.md
-                            - name: 'Postupy: Streamování fragmentů XML ze třídy XmlReader'
+                            - name: Jak streamovat fragmenty XML ze třídy XmlReader
                               href: programming-guide/concepts/linq/how-to-stream-xml-fragments-from-an-xmlreader.md
-                        - name: 'Postupy: Naplnění stromu XML pomocí třídy XmlWriter (LINQ to XML)'
+                        - name: Jak naplnit strom XML pomocí třídy XmlWriter (LINQ to XML)
                           href: programming-guide/concepts/linq/how-to-populate-an-xml-tree-with-an-xmlwriter-linq-to-xml.md
-                        - name: 'Postupy: Ověření pomocí XSD (LINQ to XML)'
+                        - name: Jak ověřovat pomocí XSD (LINQ to XML)
                           href: programming-guide/concepts/linq/how-to-validate-using-xsd-linq-to-xml.md
                         - name: Platný obsah objektů XElement a XDocument
                           href: programming-guide/concepts/linq/valid-content-of-xelement-and-xdocument-objects3.md
@@ -574,7 +574,7 @@
                           href: programming-guide/concepts/linq/how-to-control-namespace-prefixes-linq-to-xml.md
                         - name: 'Obor výchozích názvových prostorů v jazyce C#'
                           href: programming-guide/concepts/linq/scope-of-default-namespaces.md
-                        - name: 'Postupy: Vytváření dotazů na XML v názvových prostorech'
+                        - name: Jak vytvářet dotazy na XML v názvových prostorech
                           href: programming-guide/concepts/linq/how-to-write-queries-on-xml-in-namespaces.md
                     - name: Serializace stromů XML
                       items:
@@ -590,23 +590,23 @@
                       items:
                         - name: Přehled os LINQ to XML
                           href: programming-guide/concepts/linq/linq-to-xml-axes-overview.md
-                        - name: 'Postupy: Načtení kolekce elementů (LINQ to XML)'
+                        - name: Jak načíst kolekci elementů (LINQ to XML)
                           href: programming-guide/concepts/linq/how-to-retrieve-a-collection-of-elements-linq-to-xml.md
-                        - name: 'Postupy: Načtení hodnoty elementu (LINQ to XML)'
+                        - name: Jak načíst hodnotu elementu (LINQ to XML)
                           href: programming-guide/concepts/linq/how-to-retrieve-the-value-of-an-element-linq-to-xml.md
                         - name: Jak filtrovat názvy elementů (LINQ to XML)
                           href: programming-guide/concepts/linq/how-to-filter-on-element-names-linq-to-xml.md
                         - name: Jak zřetězit volání metod osy (LINQ to XML)
                           href: programming-guide/concepts/linq/how-to-chain-axis-method-calls-linq-to-xml.md
-                        - name: 'Postupy: Načtení jednoho podřízeného elementu (LINQ to XML)'
+                        - name: Jak načíst jeden podřízený element (LINQ to XML)
                           href: programming-guide/concepts/linq/how-to-retrieve-a-single-child-element-linq-to-xml.md
-                        - name: 'Postupy: Načtení kolekce atributů (LINQ to XML)'
+                        - name: Jak načíst kolekci atributů (LINQ to XML)
                           href: programming-guide/concepts/linq/how-to-retrieve-a-collection-of-attributes-linq-to-xml.md
-                        - name: 'Postupy: Načtení jednoho atributu (LINQ to XML)'
+                        - name: Jak načíst jeden atribut (LINQ to XML)
                           href: programming-guide/concepts/linq/how-to-retrieve-a-single-attribute-linq-to-xml.md
-                        - name: 'Postupy: Načtení hodnoty atributu (LINQ to XML)'
+                        - name: Jak načíst hodnotu atributu (LINQ to XML)
                           href: programming-guide/concepts/linq/how-to-retrieve-the-value-of-an-attribute-linq-to-xml.md
-                        - name: 'Postupy: Načtení mělké hodnoty elementu'
+                        - name: Jak načíst mělkou hodnotu elementu
                           href: programming-guide/concepts/linq/how-to-retrieve-the-shallow-value-of-an-element.md
                     - name: Dotazování na stromy XML
                       items:
@@ -622,59 +622,59 @@
                               href: programming-guide/concepts/linq/how-to-find-descendants-with-a-specific-element-name.md
                             - name: Jak najít jednoho potomka pomocí metody Descendants
                               href: programming-guide/concepts/linq/how-to-find-a-single-descendant-using-the-descendants-method.md
-                            - name: 'Postupy: Vytváření dotazů s komplexním filtrováním'
+                            - name: Jak vytvářet dotazy s komplexním filtrováním
                               href: programming-guide/concepts/linq/how-to-write-queries-with-complex-filtering.md
                             - name: Jak filtrovat volitelný element
                               href: programming-guide/concepts/linq/how-to-filter-on-an-optional-element.md
                             - name: Jak najít všechny uzly v názvovém prostoru
                               href: programming-guide/concepts/linq/how-to-find-all-nodes-in-a-namespace.md
-                            - name: 'Postupy: Řazení elementů'
+                            - name: Jak řadit elementy
                               href: programming-guide/concepts/linq/how-to-sort-elements.md
-                            - name: 'Postupy: Řazení elementů u více klíčů'
+                            - name: Jak řadit elementy u více klíčů
                               href: programming-guide/concepts/linq/how-to-sort-elements-on-multiple-keys.md
                             - name: Jak vypočítat mezilehlé hodnoty
                               href: programming-guide/concepts/linq/how-to-calculate-intermediate-values.md
-                            - name: 'Postupy: Vytvoření dotazu, který vyhledá elementy na základě kontextu'
+                            - name: 'Jak vytvořit dotaz, který najde elementy na základě kontextu'
                               href: programming-guide/concepts/linq/how-to-write-a-query-that-finds-elements-based-on-context.md
                             - name: Jak ladit prázdné sady výsledků dotazu
                               href: programming-guide/concepts/linq/how-to-debug-empty-query-results-sets.md
                         - name: Projekce a transformace (LINQ to XML)
                           items:
-                            - name: 'Postupy: Práce se slovníky pomocí LINQ to XML'
+                            - name: Jak pracovat se slovníky pomocí LINQ to XML
                               href: programming-guide/concepts/linq/how-to-work-with-dictionaries-using-linq-to-xml.md
-                            - name: 'Postupy: Transformace tvaru stromu XML'
+                            - name: Jak transformovat tvar stromu XML
                               href: programming-guide/concepts/linq/how-to-transform-the-shape-of-an-xml-tree.md
                             - name: Jak řídit typ projekce
                               href: programming-guide/concepts/linq/how-to-control-the-type-of-a-projection.md
-                            - name: 'Postupy: Projektování nového typu (LINQ to XML)'
+                            - name: Jak projektovat nový typ (LINQ to XML)
                               href: programming-guide/concepts/linq/how-to-project-a-new-type-linq-to-xml.md
-                            - name: 'Postupy: Projektování grafu objektu'
+                            - name: Jak projektovat graf objektu
                               href: programming-guide/concepts/linq/how-to-project-an-object-graph.md
-                            - name: 'Postupy: Projektování anonymního typu'
+                            - name: Jak projektovat anonymní typ
                               href: programming-guide/concepts/linq/how-to-project-an-anonymous-type.md
-                            - name: 'Postupy: Generování textových souborů z XML'
+                            - name: Jak generovat textové soubory z XML
                               href: programming-guide/concepts/linq/how-to-generate-text-files-from-xml.md
-                            - name: 'Postupy: Generování XML ze souborů CSV'
+                            - name: Jak generovat XML ze souborů CSV
                               href: programming-guide/concepts/linq/how-to-generate-xml-from-csv-files.md
                         - name: Pokročilé techniky dotazování (LINQ to XML)
                           items:
-                            - name: 'Postupy: Spojení dvou kolekcí (LINQ to XML)'
+                            - name: Jak spojit dvě kolekce (LINQ to XML)
                               href: programming-guide/concepts/linq/how-to-join-two-collections-linq-to-xml.md
                             - name: Jak vytvořit hierarchii pomocí seskupení
                               href: programming-guide/concepts/linq/how-to-create-hierarchy-using-grouping.md
-                            - name: 'Postupy: Dotazování na LINQ to XML pomocí jazyka XPath'
+                            - name: Jak dotazovat LINQ to XML pomocí jazyka XPath
                               href: programming-guide/concepts/linq/how-to-query-linq-to-xml-using-xpath.md
-                            - name: 'Postupy: Zápis metody osy LINQ to XML'
+                            - name: Jak vytvořit metodu osy LINQ to XML
                               href: programming-guide/concepts/linq/how-to-write-a-linq-to-xml-axis-method.md
-                            - name: 'Postupy: Provádění transformací streamovaní textu do XML'
+                            - name: Jak provést transformace streamování textu do XML
                               href: programming-guide/concepts/linq/how-to-perform-streaming-transformations-of-text-to-xml.md
-                            - name: 'Postupy: Výpis všech uzlů ve stromu'
+                            - name: Jak vypsat všechny uzly ve stromu
                               href: programming-guide/concepts/linq/how-to-list-all-nodes-in-a-tree.md
-                            - name: 'Postupy: Načtení odstavců z dokumentu Office Open XML'
+                            - name: Jak načíst odstavce z dokumentu Office Open XML
                               href: programming-guide/concepts/linq/how-to-retrieve-paragraphs-from-an-office-open-xml-document.md
-                            - name: 'Postupy: Změna dokumentu Office Open XML'
+                            - name: Jak změnit dokument Office Open XML
                               href: programming-guide/concepts/linq/how-to-modify-an-office-open-xml-document.md
-                            - name: 'Postupy: Naplnění stromu XML ze souborového systému'
+                            - name: Jak naplnit strom XML ze systému souborů
                               href: programming-guide/concepts/linq/how-to-populate-an-xml-tree-from-the-file-system.md
                         - name: LINQ to XML pro uživatele jazyka XPath
                           items:
@@ -684,7 +684,7 @@
                               href: programming-guide/concepts/linq/how-to-find-a-child-element-xpath-linq-to-xml.md
                             - name: Jak najít seznam podřízených elementů (XPath – LINQ to XML)
                               href: programming-guide/concepts/linq/how-to-find-a-list-of-child-elements-xpath-linq-to-xml.md
-                            - name: 'Postupy: Vyhledání kořenového elementu (XPath – LINQ to XML)'
+                            - name: Jak najít kořenový element (XPath – LINQ to XML)
                               href: programming-guide/concepts/linq/how-to-find-the-root-element-xpath-linq-to-xml.md
                             - name: Jak najít následnické elementy (XPath – LINQ to XML)
                               href: programming-guide/concepts/linq/how-to-find-descendant-elements-xpath-linq-to-xml.md
@@ -812,21 +812,21 @@
                           href: programming-guide/concepts/linq/programming-with-nodes.md
                         - name: Chyby smíšeného deklarativního a imperativního kódu (LINQ to XML)
                           href: programming-guide/concepts/linq/mixed-declarative-code-imperative-code-bugs-linq-to-xml.md
-                        - name: 'Postupy: Streamování fragmentů XML pomocí přístupu k informacím hlavičky'
+                        - name: Jak streamovat fragmenty XML pomocí přístupu k informacím v hlavičce
                           href: programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md
-                        - name: 'Postupy: Provedení streamované transformace velkých dokumentů XML'
+                        - name: Jak provést transformaci streamování velkých dokumentů XML
                           href: programming-guide/concepts/linq/how-to-perform-streaming-transform-of-large-xml-documents.md
-                        - name: 'Postupy: Čtení a zápis kódovaného dokumentu'
+                        - name: Jak číst a zapisovat zakódovaný dokument
                           href: programming-guide/concepts/linq/how-to-read-and-write-an-encoded-document.md
                         - name: Transformace stromu XML pomocí XSLT
                           href: programming-guide/concepts/linq/using-xslt-to-transform-an-xml-tree.md
-                        - name: 'Postupy: Transformace stromů LINQ to XML ve stylu XSLT pomocí poznámek'
+                        - name: Jak transformovat stromy LINQ to XML ve stylu XSLT pomocí poznámek
                           href: programming-guide/concepts/linq/how-to-use-annotations-to-transform-linq-to-xml-trees-in-an-xslt-style.md
                         - name: 'Serializace grafů objektů, které obsahují objekty XElement'
                           items:
-                            - name: 'Postupy: Serializace pomocí třídy XmlSerializer'
+                            - name: Jak serializovat pomocí třídy XmlSerializer
                               href: programming-guide/concepts/linq/how-to-serialize-using-xmlserializer.md
-                            - name: 'Postupy: Serializace pomocí třídy DataContractSerializer'
+                            - name: Jak serializovat pomocí třídy DataContractSerializer
                               href: programming-guide/concepts/linq/how-to-serialize-using-datacontractserializer.md
                     - name: Zabezpečení LINQ to XML
                       href: programming-guide/concepts/linq/linq-to-xml-security.md
@@ -874,9 +874,9 @@
           items:
             - name: Přehled
               href: programming-guide/concepts/serialization/index.md
-            - name: 'Postupy: Zápis dat objektů do souboru XML'
+            - name: Jak zapisovat data objektu do souboru XML
               href: programming-guide/concepts/serialization/how-to-write-object-data-to-an-xml-file.md
-            - name: 'Postupy: Čtení dat objektů ze souboru XML'
+            - name: Jak číst data objektu ze souboru XML
               href: programming-guide/concepts/serialization/how-to-read-object-data-from-an-xml-file.md
             - name: 'Návod: Uchování objektu v sadě Visual Studio'
               href: programming-guide/concepts/serialization/walkthrough-persisting-an-object-in-visual-studio.md
@@ -896,15 +896,15 @@
               href: programming-guide/statements-expressions-operators/anonymous-functions.md
             - name: Výrazy lambda
               href: programming-guide/statements-expressions-operators/lambda-expressions.md
-            - name: "Postupy: Použití výrazů lambda v\_dotazu"
+            - name: "Jak používat výrazy lambda v\_dotazu"
               href: programming-guide/statements-expressions-operators/how-to-use-lambda-expressions-in-a-query.md
         - name: Rovnost a porovnání rovnosti
           items:
             - name: Porovnání rovnosti
               href: programming-guide/statements-expressions-operators/equality-comparisons.md
-            - name: 'Postupy: Definování rovnosti hodnoty pro typ'
+            - name: Jak definovat rovnost hodnoty pro typ
               href: programming-guide/statements-expressions-operators/how-to-define-value-equality-for-a-type.md
-            - name: 'Postupy: Testování rovnosti (identity) odkazů'
+            - name: Jak testovat rovnost (identitu) odkazů
               href: programming-guide/statements-expressions-operators/how-to-test-for-reference-equality-identity.md
     - name: Typy
       items:
@@ -914,11 +914,11 @@
           href: programming-guide/types/casting-and-type-conversions.md
         - name: Zabalení a rozbalení
           href: programming-guide/types/boxing-and-unboxing.md
-        - name: 'Postupy: Převedení pole bajtů na typ int'
+        - name: Jak převést pole bajtů na celé číslo
           href: programming-guide/types/how-to-convert-a-byte-array-to-an-int.md
-        - name: 'Postupy: Převedení řetězce na číslo'
+        - name: Jak převést řetězec na číslo
           href: programming-guide/types/how-to-convert-a-string-to-a-number.md
-        - name: 'Postupy: Převody mezi hexadecimálními řetězci a číselnými typy'
+        - name: Jak převádět mezi hexadecimálními řetězci a číselnými typy
           href: programming-guide/types/how-to-convert-between-hexadecimal-strings-and-numeric-types.md
         - name: Použití typu dynamic
           href: programming-guide/types/using-type-dynamic.md
@@ -1036,7 +1036,7 @@
           href: programming-guide/classes-and-structs/object-and-collection-initializers.md
         - name: Jak inicializovat objekty pomocí inicializátoru objektů
           href: programming-guide/classes-and-structs/how-to-initialize-objects-by-using-an-object-initializer.md
-        - name: 'Postupy: Inicializace slovníku pomocí inicializátoru kolekce'
+        - name: Jak inicializovat slovník pomocí inicializátoru kolekce
           href: programming-guide/classes-and-structs/how-to-initialize-a-dictionary-with-a-collection-initializer.md
         - name: Vnořené typy
           href: programming-guide/classes-and-structs/nested-types.md
@@ -1052,12 +1052,10 @@
           href: programming-guide/interfaces/index.md
         - name: Implementace explicitního rozhraní
           href: programming-guide/interfaces/explicit-interface-implementation.md
-        - name: 'Postupy: Explicitní implementace členů rozhraní'
+        - name: Jak explicitně implementovat členy rozhraní
           href: programming-guide/interfaces/how-to-explicitly-implement-interface-members.md
-        - name: 'Postupy: Explicitní implementace členů dvou rozhraní'
+        - name: Jak explicitně implementovat členy dvou rozhraní
           href: programming-guide/interfaces/how-to-explicitly-implement-members-of-two-interfaces.md
-    - name: Výčtové typy
-      href: programming-guide/enumeration-types.md
     - name: Delegáty
       items:
         - name: Přehled
@@ -1066,9 +1064,9 @@
           href: programming-guide/delegates/using-delegates.md
         - name: "Delegáti s\_pojmenovanými vs. Anonymní metody"
           href: programming-guide/delegates/delegates-with-named-vs-anonymous-methods.md
-        - name: "Postupy: Kombinování delegátů (vícesměroví delegáti) (Průvodce programováním v\_C#)"
+        - name: "Jak kombinovat delegáty (vícesměrové delegáty) (Průvodce programováním v\_C#)"
           href: programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md
-        - name: 'Postupy: Deklarování, vytváření instancí a použití delegáta'
+        - name: 'Jak deklarovat, vytvořit instanci a používat delegáta'
           href: programming-guide/delegates/how-to-declare-instantiate-and-use-a-delegate.md
     - name: Pole
       items:
@@ -1092,7 +1090,7 @@
       items:
         - name: Programování s řetězci
           href: programming-guide/strings/index.md
-        - name: 'Postupy: Určení, zda řetězec reprezentuje číselnou hodnotu'
+        - name: 'Jak určit, jestli řetězec představuje číselnou hodnotu'
           href: programming-guide/strings/how-to-determine-whether-a-string-represents-a-numeric-value.md
     - name: Indexery
       items:
@@ -1108,15 +1106,15 @@
       items:
         - name: Přehled
           href: programming-guide/events/index.md
-        - name: 'Postupy: Přihlášení a odhlášení odběru událostí'
+        - name: Jak přihlásit a odhlásit odběr událostí
           href: programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md
-        - name: 'Postupy: Publikování událostí odpovídajících směrnicím rozhraní .NET Framework'
+        - name: Jak publikovat události vyhovující pravidlům rozhraní .NET Framework
           href: programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md
-        - name: 'Postupy: Vyvolávání událostí třídy Base v odvozených třídách'
+        - name: "Jak vyvolávat události základní třídy v\_odvozených třídách"
           href: programming-guide/events/how-to-raise-base-class-events-in-derived-classes.md
-        - name: 'Postupy: Implementace událostí rozhraní'
+        - name: Jak implementovat události rozhraní
           href: programming-guide/events/how-to-implement-interface-events.md
-        - name: 'Postupy: Implementace vlastních přístupových objektů událostí'
+        - name: Jak implementovat vlastní přístupové objekty událostí
           href: programming-guide/events/how-to-implement-custom-event-accessors.md
     - name: Obecné typy
       items:
@@ -1150,7 +1148,7 @@
           href: programming-guide/namespaces/index.md
         - name: Používání oboru názvů
           href: programming-guide/namespaces/using-namespaces.md
-        - name: 'Postupy: Použití oboru názvů My'
+        - name: Jak používat obor názvů My
           href: programming-guide/namespaces/how-to-use-the-my-namespace.md
     - name: Nezabezpečený kód a ukazatele
       items:
@@ -1164,7 +1162,7 @@
               href: programming-guide/unsafe-code-pointers/pointer-types.md
             - name: Převody ukazatele
               href: programming-guide/unsafe-code-pointers/pointer-conversions.md
-            - name: 'Postupy: Použití ukazatelů ke kopírování pole bajtů'
+            - name: Jak používat ukazatele ke kopírování pole bajtů
               href: programming-guide/unsafe-code-pointers/how-to-use-pointers-to-copy-an-array-of-bytes.md
     - name: Dokumentační komentáře XML
       items:
@@ -1176,7 +1174,7 @@
           href: programming-guide/xmldoc/processing-the-xml-file.md
         - name: Oddělovače pro značky dokumentace
           href: programming-guide/xmldoc/delimiters-for-documentation-tags.md
-        - name: 'Postupy: Používání funkcí dokumentace XML'
+        - name: Jak používat funkce dokumentace XML
           href: programming-guide/xmldoc/how-to-use-the-xml-documentation-features.md
         - name: Referenční informace ke značkám dokumentace
           items:
@@ -1230,33 +1228,33 @@
           href: programming-guide/exceptions/creating-and-throwing-exceptions.md
         - name: Výjimky generované kompilátorem
           href: programming-guide/exceptions/compiler-generated-exceptions.md
-        - name: 'Postupy: Zpracování výjimky pomocí příkazu try-catch'
+        - name: Jak ošetřit výjimku pomocí bloku try-catch
           href: programming-guide/exceptions/how-to-handle-an-exception-using-try-catch.md
-        - name: 'Postupy: Spuštění kódu čištění pomocí příkazu finally'
+        - name: Jak provést vyčištění kódu pomocí příkazu finally
           href: programming-guide/exceptions/how-to-execute-cleanup-code-using-finally.md
-        - name: 'Postupy: Zachycení výjimky nekompatibilní se specifikací CLS'
+        - name: Jak zachytit výjimku nekompatibilní se specifikací CLS
           href: programming-guide/exceptions/how-to-catch-a-non-cls-exception.md
     - name: Systém souborů a registr
       items:
         - name: Přehled
           href: programming-guide/file-system/index.md
-        - name: 'Postupy: Iterace v adresářovém stromě'
+        - name: Jak iterovat přes adresářový strom
           href: programming-guide/file-system/how-to-iterate-through-a-directory-tree.md
-        - name: 'Postupy: Získávání informací o souborech, složkách a jednotkách'
+        - name: 'Jak získat informace o souborech, složkách a jednotkách'
           href: programming-guide/file-system/how-to-get-information-about-files-folders-and-drives.md
-        - name: 'Postupy: Vytváření souborů nebo složek'
+        - name: Jak vytvořit soubor nebo složku
           href: programming-guide/file-system/how-to-create-a-file-or-folder.md
-        - name: 'Postupy: Kopírování, odstraňování a přesouvání souborů a složek'
+        - name: 'Jak kopírovat, odstraňovat a přesouvat soubory a složky'
           href: programming-guide/file-system/how-to-copy-delete-and-move-files-and-folders.md
-        - name: 'Postupy: Poskytnutí dialogového okna průběhu pro operace se soubory'
+        - name: Jak zobrazit dialogové okno průběhu pro operace se soubory
           href: programming-guide/file-system/how-to-provide-a-progress-dialog-box-for-file-operations.md
-        - name: 'Postupy: Zápis do textového souboru'
+        - name: Jak zapisovat do textového souboru
           href: programming-guide/file-system/how-to-write-to-a-text-file.md
-        - name: 'Postupy: Čtení z textového souboru'
+        - name: "Jak číst z\_textového souboru"
           href: programming-guide/file-system/how-to-read-from-a-text-file.md
-        - name: 'Postupy: Čtení textového souboru po řádcích (Průvodce programováním v C#)'
+        - name: Jak číst textový soubor po řádcích
           href: programming-guide/file-system/how-to-read-a-text-file-one-line-at-a-time.md
-        - name: 'Postupy: Vytvoření klíče v registru (Visual C#)'
+        - name: "Jak vytvořit klíč v\_registru"
           href: programming-guide/file-system/how-to-create-a-key-in-the-registry.md
     - name: Interoperabilita
       items:
@@ -1264,11 +1262,11 @@
           href: programming-guide/interop/index.md
         - name: Přehled interoperability
           href: programming-guide/interop/interoperability-overview.md
-        - name: "Postupy: Přístup k\_objektům Interop sady Office pomocí funkcí Visual C#"
+        - name: "Jak získat přístup k\_objektům interoperability Office pomocí funkcí jazyka C#"
           href: programming-guide/interop/how-to-access-office-onterop-objects.md
-        - name: 'Postupy: Použití indexovaných vlastností při programování zprostředkovatele komunikace s objekty COM'
+        - name: Jak použít indexované vlastnosti při programování interoperability COM
           href: programming-guide/interop/how-to-use-indexed-properties-in-com-interop-rogramming.md
-        - name: 'Postupy: Použití vyvolání platformy pro přehrání souboru wave'
+        - name: Jak použít vyvolání platformy k přehrání souboru WAV
           href: programming-guide/interop/how-to-use-platform-invoke-to-play-a-wave-file.md
         - name: "Návod: Programování pro Office (C# a\_Visual Basic)"
           href: programming-guide/interop/walkthrough-office-programming.md
@@ -1304,8 +1302,9 @@
                 - name: char
                   href: language-reference/builtin-types/char.md
                   displayName: 'Unicode, character, UTF-16'
-                - name: enum
-                  href: language-reference/keywords/enum.md
+                - name: Výčtové typy
+                  href: language-reference/builtin-types/enum.md
+                  displayName: 'enum, bit flags, bit field'
                 - name: struct
                   href: language-reference/keywords/struct.md
                 - name: Typy hodnot s povolenou hodnotou Null
@@ -1580,7 +1579,7 @@
         - name: Operátory převodu definované uživatelem
           href: language-reference/operators/user-defined-conversion-operators.md
           displayName: 'implicit, explicit'
-        - name: Operátory související s ukazatelem
+        - name: Operátory související s ukazateli
           href: language-reference/operators/pointer-related-operators.md
           displayName: '&, *, ->, [], +, -, ++, --, ==, !=, <, >, <=, >=, dereference, address-of, indirection'
         - name: Operátory přiřazení
